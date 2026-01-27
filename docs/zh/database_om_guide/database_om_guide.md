@@ -6,6 +6,7 @@ label: 数据库运维指南
 isManual: true
 description: openGauss数据库常用的运维操作指导，方便管理员更好地使用openGauss
 sections:
+
   - label: 启停openGauss
     href: ./start_stop_opengauss.md
   - label: 查看状态

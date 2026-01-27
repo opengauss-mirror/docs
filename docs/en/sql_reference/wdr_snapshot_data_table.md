@@ -3,4 +3,3 @@
 The naming rule of a WDR snapshot data table is  **snap\_**_\{Source data table\}_.
 
 WDR snapshot data tables come from all views in  [DBE\_PERF Schema](dbe_perf_schema.md).
-

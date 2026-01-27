@@ -45,13 +45,13 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
    “Non-SSL connection”表示未使用SSL方式连接数据库。如果需要高安全性时，请[使用SSL连接](../developer_guide/connecting_to_a_database_using_ssl_jdbc.md)。
 
-3.  首次登录建议修改密码。命令如下。
+3. 首次登录建议修改密码。命令如下。
 
     ```
     openGauss=# ALTER ROLE omm IDENTIFIED BY '$$$$$$$$' REPLACE 'XXXXXXXX';
     ```
 
-4.  退出数据库。
+4. 退出数据库。
 
     ```
     openGauss=# \q
@@ -59,9 +59,9 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
 ## 密态数据库连接操作
 
-1.  以操作系统用户omm登录数据库主节点。
+1. 以操作系统用户omm登录数据库主节点。
 
-2.  连接数据库。
+2. 连接数据库。
 
     数据库安装完成后，默认生成名称为postgres的数据库。第一次连接数据库时可以连接到此数据库。
 
@@ -83,7 +83,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     openGauss=#
     ```
 
-3.  退出数据库。
+3. 退出数据库。
 
     ```
     openGauss=# \q
@@ -91,8 +91,8 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
 ## 远程连接数据库
 
-1.  完成远程连接配置，操作步骤参见[配置服务端远程连接](configuring_remote_connections_to_the_server.md)。
-2.  在客户端机器（10.10.0.30）上，上传客户端工具包并配置gsql的执行环境变量。此处以openEuler环境为例。
+1. 完成远程连接配置，操作步骤参见[配置服务端远程连接](configuring_remote_connections_to_the_server.md)。
+2. 在客户端机器（10.10.0.30）上，上传客户端工具包并配置gsql的执行环境变量。此处以openEuler环境为例。
 
     a.  以root用户登录客户端机器。
 
@@ -105,8 +105,8 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     c.  获取软件安装包中的“openGauss-Libpq-x.x.x-openEuler20.03-x86_64.tar.gz”上传到“/tmp/tools”路径下。
 
     >[!NOTE]说明
-    > -   软件包相对位置为安装时所放位置，根据实际情况填写。
-    > -   不同的操作系统，工具包文件名称会有差异。请根据实际的操作系统类型选择对应的工具包。
+    > - 软件包相对位置为安装时所放位置，根据实际情况填写。
+    > - 不同的操作系统，工具包文件名称会有差异。请根据实际的操作系统类型选择对应的工具包。
 
     d.  解压文件。
 
@@ -144,7 +144,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     source ~/.bashrc
     ```
 
-3.  连接数据库。
+3. 连接数据库。
 
     数据库安装完成后，默认生成名称为postgres的数据库。第一次连接数据库时可以连接到此数据库。
 
@@ -156,7 +156,5 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
     >[!NOTE]说明
     > 
-    >-   连接openGauss的机器与openGauss不在同一网段时，-h指定的IP地址应为Manager界面上所设的coo.cooListenIp2（应用访问IP）的取值。  
-    >-   禁止使用omm用户进行远程连接数据库。  
-
-
+    >- 连接openGauss的机器与openGauss不在同一网段时，-h指定的IP地址应为Manager界面上所设的coo.cooListenIp2（应用访问IP）的取值。  
+    >- 禁止使用omm用户进行远程连接数据库。  

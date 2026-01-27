@@ -2,7 +2,7 @@
 
 在不使用索引的情况下也可以进行全文检索。
 
--   一个简单查询：将body字段中包含america的每一行打印出来。
+- 一个简单查询：将body字段中包含america的每一行打印出来。
 
     ```
     openGauss=# DROP SCHEMA IF EXISTS tsearch CASCADE;
@@ -50,6 +50,7 @@
     上面的查询指定english配置来解析和规范化字符串。当然也可以省略此配置，通过default\_text\_search\_config进行配置设置：
 
     ```
+
 openGauss=# SHOW default_text_search_config;
      default_text_search_config 
     ----------------------------
@@ -66,7 +67,7 @@ openGauss=# SHOW default_text_search_config;
     (4 rows)
     ```
     
--   一个复杂查询：检索出在title或者body字段中包含north和america的最近10篇文档：
+- 一个复杂查询：检索出在title或者body字段中包含north和america的最近10篇文档：
 
     ```
     openGauss=# SELECT title FROM tsearch.pgweb WHERE to_tsvector(title || ' ' || body) @@ to_tsquery('north & america') ORDER BY last_mod_date DESC LIMIT 10;
@@ -80,5 +81,3 @@ openGauss=# SHOW default_text_search_config;
     为了清晰，举例中没有调用coalesce函数在两个字段中查找包含NULL的行。
 
     以上例子均在没有索引的情况下进行查询。对于大多数应用程序来说，这个方法很慢。因此除了偶尔的特定搜索，文本搜索在实际使用中通常需要创建索引。
-
-

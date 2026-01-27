@@ -15,12 +15,11 @@ SELECT
 
 ## 参数说明<a name="section36303203424"></a>
 
--   **GROUP BY子句**
+- **GROUP BY子句**
 
     将查询结果按某一列或多列的值分组，值相等的为一组。
 
     GROUP BY在一个SELECT语句中，放在WHRER子句的后面，ORDER BY 句的前面。
-
 
 ## 示例<a name="section1172527518"></a>
 
@@ -38,4 +37,3 @@ openGauss=# SELECT c_first_name, sum(Amount)  FROM customer_t1 GROUP BY c_first_
  Lily         | 3000
 (6 rows)
 ```
-

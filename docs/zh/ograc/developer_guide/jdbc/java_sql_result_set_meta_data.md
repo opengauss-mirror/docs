@@ -162,5 +162,3 @@ java.sql.ResultSetMetaData是对ResultSet对象相关信息的具体描述。
 </tr>
 </tbody>
 </table>
-
-

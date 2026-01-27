@@ -91,7 +91,6 @@ This section describes hardware and software requirements of openGauss. It is re
 </tbody>
 </table>
 
-
 **Software Dependency Requirements**
 
 [Table 3](#en-us_topic_0283136474_table1212531681911)  describes the openGauss software dependency requirements.
@@ -167,27 +166,26 @@ Take openEuler OS as an example. Assume that the openGauss information is listed
 
 Currently, the installation can be performed only when the firewall is disabled.
 
-1.  <a name="en-us_topic_0283136490_en-us_topic_0241802566_li17785744465"></a>Set the value of  **SELINUX**  in the  **/etc/selinux/config**  file to  **disabled**.
-    1.  Run the  **vim**  command to open the  **config**  file.
+1. <a name="en-us_topic_0283136490_en-us_topic_0241802566_li17785744465"></a>Set the value of  **SELINUX**  in the  **/etc/selinux/config**  file to  **disabled**.
+    1. Run the  **vim**  command to open the  **config**  file.
 
         ```
         vim /etc/selinux/config
         ```
 
-    2.  Change the value of  **SELINUX**  to  **disabled**  and run the  **:wq**  command to save the change and exit.
+    2. Change the value of  **SELINUX**  to  **disabled**  and run the  **:wq**  command to save the change and exit.
 
         ```
         SELINUX=disabled
         ```
 
-
-2.  Restart the OS.
+2. Restart the OS.
 
     ```
     reboot
     ```
 
-3.  Check whether the firewall is disabled.
+3. Check whether the firewall is disabled.
 
     ```
     systemctl status firewalld
@@ -197,14 +195,14 @@ Currently, the installation can be performed only when the firewall is disabled.
 
     If the firewall status is  **inactive \(dead\)**, you do not need to disable the firewall.
 
-4.  <a name="en-us_topic_0283136490_li17330102819394"></a>Disable the firewall service.
+4. <a name="en-us_topic_0283136490_li17330102819394"></a>Disable the firewall service.
 
     ```
     systemctl disable firewalld.service
     systemctl stop firewalld.service
     ```
 
-5.  Repeat steps 1 to 4 on other hosts.
+5. Repeat steps 1 to 4 on other hosts.
 
 **Setting Character Set Parameters**
 
@@ -218,13 +216,13 @@ vim /etc/profile
 
 Ensure that the time zone and time on each database node are consistent.
 
-1.  Run the following command to check whether the time and time zone of each database node are consistent: If the time and time zone of each database node are inconsistent, perform steps  [2](#en-us_topic_0283136490_li1238816343545)  to  [3](#en-us_topic_0283136490_li153615819546).
+1. Run the following command to check whether the time and time zone of each database node are consistent: If the time and time zone of each database node are inconsistent, perform steps  [2](#en-us_topic_0283136490_li1238816343545)  to  [3](#en-us_topic_0283136490_li153615819546).
 
     ```
     date
     ```
 
-2.  <a name="en-us_topic_0283136490_li1238816343545"></a>Run the following command to copy the  **/etc/localtime**  file to the  **/usr/share/zoneinfo/**  directory of each database node:
+2. <a name="en-us_topic_0283136490_li1238816343545"></a>Run the following command to copy the  **/etc/localtime**  file to the  **/usr/share/zoneinfo/**  directory of each database node:
 
     ```
     cp /usr/share/zoneinfo/$Locale/$Time zone /etc/localtime
@@ -233,12 +231,11 @@ Ensure that the time zone and time on each database node are consistent.
     >[!NOTE]NOTE 
     >*$Locale/$Time zone*  indicates the locale and time zone to be set, for example,  **Asia/Shanghai**.
 
-3.  <a name="en-us_topic_0283136490_li153615819546"></a>Run the  **date -s**  command to set the time of each database node to the same time. For example:
+3. <a name="en-us_topic_0283136490_li153615819546"></a>Run the  **date -s**  command to set the time of each database node to the same time. For example:
 
     ```
     date -s "Sat Sep 27 16:00:07 CST 2020"
     ```
-
 
 **\(Optional\) Disabling the Swap Memory**
 
@@ -269,7 +266,6 @@ On each database node, disable RemoveIPC. For CentOS, skip this step.
    RemoveIPC=no
    ```
 
-
 2. Change the value of  **RemoveIPC**  in the  **/usr/lib/systemd/system/systemd-logind.service**  file to  **no**.
 
    a. Run the  **vim**  command to open the  **systemd-logind.service**  file.
@@ -284,22 +280,21 @@ On each database node, disable RemoveIPC. For CentOS, skip this step.
    RemoveIPC=no
    ```
 
-
-3.  Reload configuration parameters.
+3. Reload configuration parameters.
 
     ```
     systemctl daemon-reload
     systemctl restart systemd-logind
     ```
 
-4.  Check whether the modification takes effect.
+4. Check whether the modification takes effect.
 
     ```
     loginctl show-session | grep RemoveIPC
     systemctl show systemd-logind | grep RemoveIPC
     ```
 
-5.  Repeat steps  [1](#en-us_topic_0283136490_en-us_topic_0241802566_li17785744465)  to  [4](#en-us_topic_0283136490_li17330102819394)  on other hosts.
+5. Repeat steps  [1](#en-us_topic_0283136490_en-us_topic_0241802566_li17785744465)  to  [4](#en-us_topic_0283136490_li17330102819394)  on other hosts.
 
 ## **Disabling the History Command**
 

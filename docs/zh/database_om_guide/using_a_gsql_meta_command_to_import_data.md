@@ -38,47 +38,47 @@ gsql工具提供了元命令\\copy进行数据导入。
 
 ## 参数说明<a name="zh-cn_topic_0237121136_zh-cn_topic_0117407672_section5126610110100"></a>
 
--   table
+- table
 
     表的名称（可以有模式修饰）。
 
     取值范围：已存在的表名。
 
--   column\_list
+- column\_list
 
     可选的待拷贝字段列表。
 
     取值范围：任意字段。如果没有声明字段列表，将使用所有字段。
 
--   query
+- query
 
     其结果将被拷贝。
 
     取值范围：一个必须用圆括弧包围的SELECT或VALUES命令。
 
--   filename
+- filename
 
     文件的绝对路径。执行copy命令的用户必须有此路径的写权限。
 
--   stdin
+- stdin
 
     声明输入是来自标准输入。
 
--   stdout
+- stdout
 
     声明输出打印到标准输出。
 
--   pstdin
+- pstdin
 
     声明输入是来自gsql的标准输入。
 
--   pstout
--   声明输出打印到gsql的标准输出。
--   binary
+- pstout
+- 声明输出打印到gsql的标准输出。
+- binary
 
     使用二进制格式存储和读取，而不是以文本的方式。在二进制模式下，不能声明DELIMITER、NULL、CSV选项。指定binary类型后，不能再通过option或copy\_option指定CSV、FIXED、TEXT等类型。
 
--   delimiter \[ as \] 'character'
+- delimiter \[ as \] 'character'
 
     指定数据文件行数据的字段分隔符。
 
@@ -86,19 +86,19 @@ gsql工具提供了元命令\\copy进行数据导入。
 
     默认值：
 
-    -   TEXT格式的默认分隔符是水平制表符（tab）。
-    -   CSV格式的默认分隔符为逗号字符“,”。
-    -   FIXED格式没有分隔符。
+    - TEXT格式的默认分隔符是水平制表符（tab）。
+    - CSV格式的默认分隔符为逗号字符“,”。
+    - FIXED格式没有分隔符。
 
         >[!NOTE]说明
-        >-   分隔符中不能包含\\r或\\n。
-        >-   分隔符不能和null参数相同。
-        >-   CSV格式数据的分隔符不能和quote参数相同。
-        >-   TEXT格式数据的分隔符不能包含如下字符中任意字符： \\.abcdefghijklmnopqrstuvwxyz0123456789。
-        >-   数据文件中单行数据长度需<1GB，如果分隔符较长且数据列较多的情况下，会影响导出有效数据的长度。
-        >-   分隔符推荐使用多字符和不可见字符。多字符例如'\$^&'，设置方法为delimiter '$^&'；不可见字符例如0x07，0x08，0x1b等，设置方法为 delimiter E'\\x1b'。
+        >- 分隔符中不能包含\\r或\\n。
+        >- 分隔符不能和null参数相同。
+        >- CSV格式数据的分隔符不能和quote参数相同。
+        >- TEXT格式数据的分隔符不能包含如下字符中任意字符： \\.abcdefghijklmnopqrstuvwxyz0123456789。
+        >- 数据文件中单行数据长度需<1GB，如果分隔符较长且数据列较多的情况下，会影响导出有效数据的长度。
+        >- 分隔符推荐使用多字符和不可见字符。多字符例如'\$^&'，设置方法为delimiter '$^&'；不可见字符例如0x07，0x08，0x1b等，设置方法为 delimiter E'\\x1b'。
 
--   null \[ as \] 'string'
+- null \[ as \] 'string'
 
     用来指定数据文件中空值的表示。
 
@@ -106,15 +106,15 @@ gsql工具提供了元命令\\copy进行数据导入。
 
     默认值：
 
-    -   CSV格式下默认值是一个没有引号的空字符串。
-    -   在TEXT格式下默认值是\\N（包括'\\\\'和'N'两个字符）。
+    - CSV格式下默认值是一个没有引号的空字符串。
+    - 在TEXT格式下默认值是\\N（包括'\\\\'和'N'两个字符）。
 
         >[!NOTE]说明
-        >-   null值不能包含\\r或\\n。
-        >-   null值不能和分隔符、quote参数相同。
-        >-   在CSV格式下，COPY TO导出模式下，为避免数据混淆，当null值与字段内的取值相同时，会将字段数据用quote字符包裹，以作区分。
+        >- null值不能包含\\r或\\n。
+        >- null值不能和分隔符、quote参数相同。
+        >- 在CSV格式下，COPY TO导出模式下，为避免数据混淆，当null值与字段内的取值相同时，会将字段数据用quote字符包裹，以作区分。
 
--   header
+- header
 
     指定导出数据文件是否包含标题行，标题行一般用来描述表中每个字段的信息。header只能用于CSV，FIXED格式的文件中。
 
@@ -126,56 +126,56 @@ gsql工具提供了元命令\\copy进行数据导入。
 
     默认值：false
 
--   quote \[ as \] 'character'
+- quote \[ as \] 'character'
 
     CSV格式文件下的引号字符。
 
     默认值：""。
 
     >[!NOTE]说明
-    >   
-    >-   quote参数不能和分隔符、null参数相同。  
-    >-   quote参数只能是单字节的字符。  
-    >-   推荐不可见字符作为quote，例如0x07、0x08、0x1b等。
+    > 
+    >- quote参数不能和分隔符、null参数相同。  
+    >- quote参数只能是单字节的字符。  
+    >- 推荐不可见字符作为quote，例如0x07、0x08、0x1b等。
 
--   escape \[ as \] 'character'
+- escape \[ as \] 'character'
 
     CSV格式下，用来指定逃逸字符，逃逸字符后的字符会被当作字段内容处理。逃逸字符只能指定为单字节字符。
 
     默认值：双引号。当与quote值相同时，会被替换为'\\0'。
 
--   force quote column\_list | \*
+- force quote column\_list | \*
 
     在CSV COPY TO模式下，强制在每个声明的字段周围对所有非NULL值都使用引号包围。NULL输出不会被引号包围。
 
     取值范围：已存在的字段。
 
--   force not null column\_list
+- force not null column\_list
 
     在CSV COPY FROM模式下，指定的字段输入不能为空。
 
     取值范围：已存在的字段。
 
--   force null column\_list
+- force null column\_list
 
     在CSV COPY FROM模式下，指定的字段输入表示空值的字符串设为空。
 
     取值范围：已存在的字段。
 
--   without escaping
+- without escaping
 
     在TEXT格式中，不对'\\'和后面的字符进行转义。
 
     取值范围：仅支持TEXT格式。
 
--   compatible \_illegal\_chars
+- compatible \_illegal\_chars
 
     导入非法字符容错参数。此语法仅对COPY FROM导入有效。
 
     取值范围：true/on，false/off。
 
-    -   参数为true/on，则导入时遇到非法字符进行容错处理，非法字符转换后入库，不报错，不中断导入。
-    -   参数为false/off，导入时遇到非法字符进行报错，中断导入。
+    - 参数为true/on，则导入时遇到非法字符进行容错处理，非法字符转换后入库，不报错，不中断导入。
+    - 参数为false/off，导入时遇到非法字符进行报错，中断导入。
 
     缺省值：false/off
 
@@ -188,6 +188,7 @@ gsql工具提供了元命令\\copy进行数据导入。
     >（2）对于其他非法字符，容错后转换为问号；
     >
     >（3）若compatible\_illegal\_chars为true/on标识导入时对于非法字符进行容错处理，则若NULL、DELIMITER、QUOTE、ESCAPE设置为空格或问号则会通过如"illegal chars conversion may confuse COPY escape 0x20"等报错信息提示用户修改可能引起混淆的参数以避免导入错误。
+>
 ## 任务示例<a name="zh-cn_topic_0237121136_zh-cn_topic_0117407672_section49087436203946"></a>
 
 1. 创建目标表a。
@@ -227,12 +228,9 @@ gsql工具提供了元命令\\copy进行数据导入。
 
    从本地文件拷贝数据到目标表a。假设存在本地文件/home/omm/2.csv。
 
-   -   分隔符为“，”。
-   -   在导入过程中，若数据源文件比外表定义的列数多，则忽略行尾多出来的列。
+   - 分隔符为“，”。
+   - 在导入过程中，若数据源文件比外表定义的列数多，则忽略行尾多出来的列。
 
    ```
    \copy a FROM '/home/omm/2.csv' WITH (delimiter',',IGNORE_EXTRA_DATA 'on');
    ```
-
-
-

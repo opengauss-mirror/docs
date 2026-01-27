@@ -12,53 +12,50 @@ pssh [OPTIONS]
 
 ## Parameter Description<a name="section14185451151019"></a>
 
--   --help
+- --help
 
     Displays help information.
 
--   -H HOSTNAME
+- -H HOSTNAME
 
     Specifies the host list.
 
--   -h HOSTFILE
+- -h HOSTFILE
 
     Specifies the full path of the file to be written into the host list.
 
--   -t TIMEOUT
+- -t TIMEOUT
 
     Specifies the connection timeout interval, in seconds. The default value is  **300s**.
 
--   -p PARALLEL
+- -p PARALLEL
 
     Specifies the maximum number of concurrent tasks. The default value is  **32**.
 
--   -o OUTDIR
+- -o OUTDIR
 
     Specifies the full file path of the execution result.
 
--   -e ERRDIR
+- -e ERRDIR
 
     Specifies the full path of the error information output file.
 
--   -P
+- -P
 
     Specifies the command executed on the online remote host.
 
--   -s
+- -s
 
     Displays the execution result.
 
--   -x EXTRA
+- -x EXTRA
 
     Specifies the extra command line parameters.
 
--   -i
+- -i
 
     Displays the output and errors of all nodes.
 
-
--   -O OPT
+- -O OPT
 
     Specifies the added SSH parameters in offline mode.
-
-

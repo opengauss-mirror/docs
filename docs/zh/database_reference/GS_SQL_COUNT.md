@@ -2,9 +2,9 @@
 
 GS\_SQL\_COUNT视图显示数据库当前节点当前时刻执行的五类语句（SELECT、INSERT、UPDATE、DELETE、MERGE INTO）统计信息。
 
--   普通用户查询GS\_SQL\_COUNT视图仅能看到该用户当前节点的统计信息；管理员权限用户查询GS\_SQL\_COUNT视图则能看到所有用户当前节点的统计信息。
--   当openGauss或该节点重启时，计数将清零，并重新开始计数 。
--   计数以节点收到的查询数为准，包括openGauss内部进行的查询。
+- 普通用户查询GS\_SQL\_COUNT视图仅能看到该用户当前节点的统计信息；管理员权限用户查询GS\_SQL\_COUNT视图则能看到所有用户当前节点的统计信息。
+- 当openGauss或该节点重启时，计数将清零，并重新开始计数 。
+- 计数以节点收到的查询数为准，包括openGauss内部进行的查询。
 
 **表 1**  GS\_SQL\_COUNT字段
 
@@ -201,4 +201,3 @@ GS\_SQL\_COUNT视图显示数据库当前节点当前时刻执行的五类语句
 </tr>
 </tbody>
 </table>
-

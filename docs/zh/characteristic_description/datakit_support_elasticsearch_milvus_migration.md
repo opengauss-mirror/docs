@@ -49,4 +49,3 @@
 ## 参考文档
 
 使用本特性完成 Elasticsearch/Milvus 迁移，请参考[DataKit相关文档](https://docs.opengauss.org/zh/docs/latest/datakit/datakit.html)。
-

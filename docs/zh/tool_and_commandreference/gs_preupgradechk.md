@@ -15,31 +15,29 @@ gs_preupgradechk工具用来检查集群中cpu、内存、磁盘、网络、进�
   若为环境变量分离的模式安装的数据库，普通用户需要source环境变量分离文件ENVFILE。
   若为环境变量不分离的模式安装的数据库，普通用户需要source ~/.bashrc。
 
-
 ## 语法<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_s991d75846f4c48a298084c67b46b40ee"></a>
 
--   检查操作系统信息
+- 检查操作系统信息
 
     ```
     gs_preupgradechk -i ITEM [-l LOGFILE]
     ```
 
--   显示帮助信息
+- 显示帮助信息
 
     ```
     gs_preupgradechk -? | --help 
     ```
 
--   显示版本号信息
+- 显示版本号信息
 
     ```
     gs_preupgradechk -V | --version
     ```
 
-
 ## 参数说明<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_s79c5f0d8e9e742deacd81d9e296c2960"></a>
 
--   -i
+- -i
 
     列表编号。格式：-i A或-i A1,A2。
 
@@ -47,20 +45,19 @@ gs_preupgradechk工具用来检查集群中cpu、内存、磁盘、网络、进�
 
     详细的检查项请参见[表1](#zh-cn_topic_0237152331_zh-cn_topic_0059778883_t5348bfc47f50450687012eacb1a1ba4e)。
 
--   -l
+- -l
 
     指定日志文件及存放路径。
 
     默认值：$GAUSSLOG/om/gs\_preupgradechk-YYYY-MM-DD\_hhmmss.log。
 
--   -?, --help
+- -?, --help
 
     显示帮助信息。
 
--   -V, --version
+- -V, --version
 
     显示版本号信息。
-
 
 **表 1**  操作系统检查项
 
@@ -124,7 +121,6 @@ gs_preupgradechk工具用来检查集群中cpu、内存、磁盘、网络、进�
 </tr>       
 </tbody>
 </table>
-
 
 ## 示例<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_s0a0dfe17cef247ad9b50e77ed84aff9f"></a>
 

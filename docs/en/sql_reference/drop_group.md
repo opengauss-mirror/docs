@@ -23,4 +23,3 @@ See  [Parameter Description](drop_role.md#en-us_topic_0283136937_en-us_topic_023
 ## Helpful Links<a name="en-us_topic_0283137231_en-us_topic_0237122139_en-us_topic_0059778284_s1629a6ec030447bc9463ea522ac72d2a"></a>
 
 [CREATE GROUP](create_group.md),  [ALTER GROUP](alter_group.md), and  [DROP ROLE](drop_role.md)
-

@@ -16,16 +16,15 @@ DROP COLUMN ENCRYPTION KEY [ IF EXISTS ] column_encryption_key_name [CASCADE];
 
 ## Parameter Description<a name="en-us_topic_0059778607_sad5ef99cc3a043838c29c5bdde9caab3"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     If a specified CEK does not exist, a notice rather than an error is issued.
 
--   **column\_encryption\_key\_name**
+- **column\_encryption\_key\_name**
 
     Name of a CEK to be deleted.
 
     Value range: a string. It is the name of an existing CEK.
-
 
 ## Examples<a name="section162746130164"></a>
 
@@ -35,4 +34,3 @@ openGauss=# DROP COLUMN ENCRYPTION KEY ImgCEK CASCADE;
 ERROR:  cannot drop column setting: imgcek cascadely because encrypted column depend on it.
 HINT:  we have to drop encrypted column: name, ... before drop column setting: imgcek cascadely.
 ```
-

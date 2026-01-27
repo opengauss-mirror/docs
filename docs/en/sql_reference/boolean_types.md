@@ -25,14 +25,13 @@
 </tbody>
 </table>
 
--   Valid literal values for the "true" state include:
+- Valid literal values for the "true" state include:
 
     **TRUE**,  **'t'**,  **'true'**,  **'y'**,  **'yes'**,  **'1'**,  **'TRUE'**,  **true**, and an integer ranging from 1 to 2^63 – 1 or from –1 to –2^63.
 
--   Valid literal values for the "false" state include:
+- Valid literal values for the "false" state include:
 
     **FALSE**,  **'f'**,  **'false'**,  **'n'**,  **'no'**,  **'0'**,  **0**,  **'FALSE'**, and  **false**.
-
 
 **TRUE**  and  **FALSE**  are standard expressions, compatible with SQL statements.
 
@@ -70,4 +69,3 @@ openGauss=# SELECT * FROM bool_type_t1 WHERE bt_col1 = 't';
 -- Delete the table.
 openGauss=# DROP TABLE bool_type_t1;
 ```
-

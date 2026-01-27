@@ -6,9 +6,9 @@ gs_ctl是openGauss提供的数据库服务控制工具，可以用来启停数�
 
 gs_ctl工具由操作系统用户omm执行。
 
--   启动、停止、重启openGauss节点。
--   在不停止数据库的情况下，重新加载配置文件（postgresql.conf，pg\_hba.conf）。
--   主备切换、主备状态查询、重建和重建状态查询。
+- 启动、停止、重启openGauss节点。
+- 在不停止数据库的情况下，重新加载配置文件（postgresql.conf，pg\_hba.conf）。
+- 主备切换、主备状态查询、重建和重建状态查询。
 
 gs_ctl build工具支持打印进度，根据已经传输完成的文件大小比上需要传输的总文件大小进行进度打印。
 
@@ -18,19 +18,19 @@ gs_ctl build工具支持打印进度，根据已经传输完成的文件大小�
 
 gs_ctl参数可分为如下几类：
 
--   option参数，详细请参见[表1](#table145081017222)。
--   公共参数，详细请参见[表2](#zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_t09253ddb2a8a4d4a8ba32b103310bb68)。
--   start和restart模式的参数，详细请参见[表3](#zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_t6d75b31bab9540b284e45222396ae38b)。
--   stop和restart模式的参数，详细请参见[表4](#zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_t5406d28e9445424c9fcf63658cffc13a)。
--   switchover模式的参数，详细请参见[表5](#zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_tb40c07f148df463c8012b9e7183fdb31)。
--   build参数，详细请参见[表6](#zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_t22fb7e7152bf4c939f6316c48cb80b5b)。
--   query参数，详细请参见[表7](#zh-cn_topic_0287275989_table198621411133319)。
--   member参数，详细请参见[表8](#table1055392110383)。
--   changerole参数，详细参见[表9](#table591372895218)。
--   setrunmode参数，详细参见[表10](#table1451519418810)。
--   stack参数，详细参见[表11](#table14515194188888)。
--   copy参数，详细参见[表12](#table1451519418811)。
--   资源池化build参数，详细请参见[表13](#table1451519418812)。
+- option参数，详细请参见[表1](#table145081017222)。
+- 公共参数，详细请参见[表2](#zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_t09253ddb2a8a4d4a8ba32b103310bb68)。
+- start和restart模式的参数，详细请参见[表3](#zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_t6d75b31bab9540b284e45222396ae38b)。
+- stop和restart模式的参数，详细请参见[表4](#zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_t5406d28e9445424c9fcf63658cffc13a)。
+- switchover模式的参数，详细请参见[表5](#zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_tb40c07f148df463c8012b9e7183fdb31)。
+- build参数，详细请参见[表6](#zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_t22fb7e7152bf4c939f6316c48cb80b5b)。
+- query参数，详细请参见[表7](#zh-cn_topic_0287275989_table198621411133319)。
+- member参数，详细请参见[表8](#table1055392110383)。
+- changerole参数，详细参见[表9](#table591372895218)。
+- setrunmode参数，详细参见[表10](#table1451519418810)。
+- stack参数，详细参见[表11](#table14515194188888)。
+- copy参数，详细参见[表12](#table1451519418811)。
+- 资源池化build参数，详细请参见[表13](#table1451519418812)。
 
 **表 1**  option参数
 
@@ -149,8 +149,6 @@ gs_ctl参数可分为如下几类：
 </tr>
 </tbody>
 </table>
-
-
 
 **表 2**  公共参数
 
@@ -442,7 +440,6 @@ gs_ctl参数可分为如下几类：
 </tbody>
 </table>
 
-
 **表 7**  query参数
 
 <a name="zh-cn_topic_0287275989_table198621411133319"></a>
@@ -620,7 +617,6 @@ gs_ctl参数可分为如下几类：
 </tbody>
 </table>
 
-
 **表 11**  stack参数
 
 <a name="table14515194188888"></a>
@@ -642,7 +638,6 @@ gs_ctl参数可分为如下几类：
 </tr>
 </tbody>
 </table>
-
 
 **表 12**  copy参数
 

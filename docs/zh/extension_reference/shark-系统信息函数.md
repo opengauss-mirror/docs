@@ -79,6 +79,7 @@
     描述：返回数据库对象的oid。如果没有查询权限或者对象不存在则返回NULL。
     
     第二个参数object_type支持以下类型
+
 <table aria-label="表 1" class="table table-sm margin-top-none">
     <thead>
         <tr>
@@ -166,7 +167,6 @@
     16666
     (1 row)
     ```
-
 
 - objectproperty(oid, property)
 

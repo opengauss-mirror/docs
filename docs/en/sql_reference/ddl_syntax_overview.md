@@ -576,4 +576,3 @@ To process SQL statements, the stored procedure process assigns a memory segment
 </tr>
 </tbody>
 </table>
-

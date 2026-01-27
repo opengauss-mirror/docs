@@ -37,8 +37,9 @@
 该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 0，1。
--   0表示默认关闭。
--   1表示默认开启。
+
+- 0表示默认关闭。
+- 1表示默认开启。
 
 **默认值**： 0
 
@@ -69,8 +70,9 @@
 该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 0，1。
--   0表示默认关闭。
--   1表示默认开启。
+
+- 0表示默认关闭。
+- 1表示默认开启。
 
 **默认值**： 1
 
@@ -92,8 +94,7 @@
 
 **取值范围**： 布尔型
 
--   on/true表示对hll开启内存优化模式。
--   off/false表示不开启内存优化模式。
+- on/true表示对hll开启内存优化模式。
+- off/false表示不开启内存优化模式。
 
 **默认值**： off
-

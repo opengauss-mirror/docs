@@ -14,7 +14,7 @@ The disk space is insufficient.
 
 ## Procedure<a name="section1643310207377"></a>
 
--   Run the following command to check the disk usage. The  **Avail**  column indicates the available disk space, and the  **Use%**  column indicates the percentage of disk space that has been used.
+- Run the following command to check the disk usage. The  **Avail**  column indicates the available disk space, and the  **Use%**  column indicates the percentage of disk space that has been used.
 
 ```
 [root@openeuler123 mnt]# df -h
@@ -35,8 +35,7 @@ tmpfs                       255G  1.0M  255G   1% /tmp
 
     -   If the disk space usage exceeds 60%, you must clear or expand the disk space.
 
-
--   Run the following command to check the size of the data directory.
+- Run the following command to check the size of the data directory.
 
     ```
      du --max-depth=1 -h /mnt/ 
@@ -46,16 +45,14 @@ tmpfs                       255G  1.0M  255G   1% /tmp
 
     ```
     [root@openGauss36 mnt]# du --max-depth=1 -h /mnt
-    83G	/mnt/data3
-    71G	/mnt/data2
-    365G	/mnt/data1
-    518G	/mnt
+    83G /mnt/data3
+    71G /mnt/data2
+    365G /mnt/data1
+    518G /mnt
     ```
 
--   Clean up the disk space. You are advised to periodically back up audit logs to other storage devices. The recommended log retention period is one month.  **pg\_log**  stores database process run logs which help database administrators locate faults. You can delete error logs if you view them every day and handle errors in time.
+- Clean up the disk space. You are advised to periodically back up audit logs to other storage devices. The recommended log retention period is one month.  **pg\_log**  stores database process run logs which help database administrators locate faults. You can delete error logs if you view them every day and handle errors in time.
 
--   Delete useless data. Back up data that is not used frequently or used for a certain period of time to storage media with lower costs, and clean the backup data to free up disk space.
+- Delete useless data. Back up data that is not used frequently or used for a certain period of time to storage media with lower costs, and clean the backup data to free up disk space.
 
--   If the disk space is still insufficient, expand the disk capacity.
-
-
+- If the disk space is still insufficient, expand the disk capacity.

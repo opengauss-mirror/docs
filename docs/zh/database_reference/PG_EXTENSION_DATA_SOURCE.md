@@ -80,5 +80,3 @@ PG\_Extension_DATA\_SOURCE系统表存储外部数据源对象的信息。一个
 </tr>
 </tbody>
 </table>
-
-

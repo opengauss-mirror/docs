@@ -19,6 +19,7 @@ openGauss开源社区上提供了安装包的获取方式。
    ```
 
     执行ls命令，显示类似如下信息：
+
      ```
      total 143M
      -rwx------  1 omm omm    0 Sep 25 09:29 openGauss-CM-x.x.x-openEuler20.03-x86_64.sha256

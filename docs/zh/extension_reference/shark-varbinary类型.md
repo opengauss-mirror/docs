@@ -61,6 +61,7 @@ typacl         |
 ```
 
 **示例2：** 简单使用
+
 ```
 CREATE TABLE t1 (id int, a VARBINARY(1));
 CREATE TABLE t2 (id int, a VARBINARY(16));
@@ -68,6 +69,7 @@ CREATE TABLE t3 (id int, a VARBINARY(MAX));
 ```
 
 **示例3：** 类型转换
+
 ```
 test_varbinary=# select 'hello world'::varbinary;
 -[ RECORD 1 ]-----------------------

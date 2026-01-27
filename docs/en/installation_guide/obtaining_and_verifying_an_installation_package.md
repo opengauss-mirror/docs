@@ -4,12 +4,12 @@ You can obtain the installation package from the openGauss open-source community
 
 ## Procedure<a name="en-us_topic_0283136484_en-us_topic_0241802590_en-us_topic_0085434667_en-us_topic_0059782060_section62223956163549"></a>
 
-1.  Download the installation package of the corresponding platform from the openGauss community.
-    1.  Log in to the openGauss open-source community at  [https://opengauss.org/en/download/](https://opengauss.org/en/download/), select  **3.1.0**  in the  **Version**  field, and download the corresponding Enterprise-Edition installation package.
+1. Download the installation package of the corresponding platform from the openGauss community.
+    1. Log in to the openGauss open-source community at  [https://opengauss.org/en/download/](https://opengauss.org/en/download/), select  **3.1.0**  in the  **Version**  field, and download the corresponding Enterprise-Edition installation package.
 
-    2.  Click  **Download**.
+    2. Click  **Download**.
 
-2.  Verify the installation package.
+2. Verify the installation package.
 
     Decompress the installation package and check whether the installation directory and files are complete. Run the following commands in the directory where the installation package is stored:
 
@@ -29,5 +29,3 @@ You can obtain the installation package from the openGauss open-source community
     -rw------- 1 root root       65 Dec 25 15:34 upgrade_sql.sha256
     -rw------- 1 root root   134747 Dec 25 15:34 upgrade_sql.tar.gz
     ```
-
-

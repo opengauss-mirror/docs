@@ -6,13 +6,13 @@
 
 ## Precautions<a name="en-us_topic_0059779060_s8aed237cc11e48bcb20d63f3ed081327"></a>
 
--   When  **enable\_nonsysadmin\_execute\_direct**  is set to  **off**, only the system administrator and monitoring administrator can execute  **EXECUTE DIRECT**.
--   To ensure data consistency across nodes, only the  **SELECT**  statement can be used. Transaction statements, DDL, and DML cannot be used.
--   When the stddev aggregation calculation is performed on a specified DN using such statements, the result set is returned in triplet. For example, \{3, 8, 30\} indicates that the count result is 3, the sum result is 8, and the sum of squares is 30. When the AVG aggregation calculation is performed on a specified DN using such statements, the result set is returned in a binary tuple. For example, \{4,2\} indicates that the sum result is 4 and the count result is 2. Note: When data is stored in columns, the result of calling the AVG function is not defined. Use the  **stddev\_samp**  function.
--   When multiple nodes are specified, aggregate functions are not supported. If the query contains an aggregate function, the message "EXECUTE DIRECT on multinode not support agg functions." is returned.
--   CNs do not store user table data. Therefore, do not execute  **SELECT**  for querying user tables on a CN.
--   If the SQL statement to be executed is also  **EXECUTE DIRECT**, do not nest it into  **EXECUTE DIRECT**; instead, directly execute the inner  **EXECUTE DIRECT**.
--   The query result of the aggregate function is inconsistent with that on the CN. Multiple pieces of information are returned. The  **array\_avg**  function is not supported.
+- When  **enable\_nonsysadmin\_execute\_direct**  is set to  **off**, only the system administrator and monitoring administrator can execute  **EXECUTE DIRECT**.
+- To ensure data consistency across nodes, only the  **SELECT**  statement can be used. Transaction statements, DDL, and DML cannot be used.
+- When the stddev aggregation calculation is performed on a specified DN using such statements, the result set is returned in triplet. For example, \{3, 8, 30\} indicates that the count result is 3, the sum result is 8, and the sum of squares is 30. When the AVG aggregation calculation is performed on a specified DN using such statements, the result set is returned in a binary tuple. For example, \{4,2\} indicates that the sum result is 4 and the count result is 2. Note: When data is stored in columns, the result of calling the AVG function is not defined. Use the  **stddev\_samp**  function.
+- When multiple nodes are specified, aggregate functions are not supported. If the query contains an aggregate function, the message "EXECUTE DIRECT on multinode not support agg functions." is returned.
+- CNs do not store user table data. Therefore, do not execute  **SELECT**  for querying user tables on a CN.
+- If the SQL statement to be executed is also  **EXECUTE DIRECT**, do not nest it into  **EXECUTE DIRECT**; instead, directly execute the inner  **EXECUTE DIRECT**.
+- The query result of the aggregate function is inconsistent with that on the CN. Multiple pieces of information are returned. The  **array\_avg**  function is not supported.
 
 ## Syntax<a name="en-us_topic_0059779060_s24ab1cb591b54a43af5fe6d87cc067a1"></a>
 
@@ -23,28 +23,27 @@ EXECUTE DIRECT ON { COORDINATORS | DATANODES | ALL } query;
 
 ## Parameter Description<a name="en-us_topic_0059779060_s5c57cb1e5e8740dcb15254b0ee05e666"></a>
 
--   nodename
+- nodename
 
     Specifies the node name.
 
     Value range: an existing node name
 
--   query
+- query
 
     Specifies the SQL statement to be executed.
 
--   COORDINATORS
+- COORDINATORS
 
     Runs the query statement on all CNs.
 
--   DATANODES
+- DATANODES
 
     Runs the query statement on all DNs.
 
--   ALL
+- ALL
 
     Runs the query statement on all CNs and DNs.
-
 
 ## Examples<a name="en-us_topic_0059779060_s11a931f26ab344c1aab49ebd522ee0ad"></a>
 
@@ -75,4 +74,3 @@ openGauss=# SELECT count(*) FROM tpcds.customer_address;
  50000
 (1 row)
 ```
-

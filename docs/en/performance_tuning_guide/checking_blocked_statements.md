@@ -4,8 +4,8 @@ During database running, query statements are blocked in some service scenarios 
 
 ## Procedure<a name="en-us_topic_0237121491_en-us_topic_0073253543_en-us_topic_0040046536_section19654526113952"></a>
 
-1.  Log in as the OS user  **omm**  to a database node.
-2.  Run the following command to connect to the database:
+1. Log in as the OS user  **omm**  to a database node.
+2. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -23,7 +23,7 @@ During database running, query statements are blocked in some service scenarios 
     postgres=# 
     ```
 
-3.  View blocked query statements and details about the tables and schemas that block the query statements.
+3. View blocked query statements and details about the tables and schemas that block the query statements.
 
     ```
     SELECT w.query as waiting_query,
@@ -41,7 +41,7 @@ During database running, query statements are blocked in some service scenarios 
 
     The thread ID, user details, query status, as well as details about the tables and schemas that block the query statements are returned.
 
-4.  Run the following command to terminate the required session, where  **139834762094352**  is the thread ID:
+4. Run the following command to terminate the required session, where  **139834762094352**  is the thread ID:
 
     ```
     SELECT PG_TERMINATE_BACKEND(139834762094352);
@@ -66,5 +66,3 @@ During database running, query statements are blocked in some service scenarios 
 
     >[!NOTE]NOTE   
     >If the  **PG\_TERMINATE\_BACKEND**  function is used to terminate the background threads of the session, the  **gsql**  client will be reconnected rather than be logged out.  
-
-

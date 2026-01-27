@@ -6,7 +6,7 @@ You can run the  **iostat**  or  **pidstat**  command, or use openGauss heath ch
 
 Use one of the following methods to check the server I/O:
 
--   Run the  **iostat**  command to check the I/O usage. This command focuses on the I/O usage and the amount of data read and written on a single hard disk per second.
+- Run the  **iostat**  command to check the I/O usage. This command focuses on the I/O usage and the amount of data read and written on a single hard disk per second.
 
     ```
     iostat -xm 1  // 1 indicates the interval.
@@ -20,7 +20,7 @@ Use one of the following methods to check the server I/O:
 
     **rMB/s**  indicates the number of megabytes of data read per second,  **wMB/s**  indicates that of data written per second, and  **%util**  indicates the disk usage.
 
--   Run the  **pidstat**  command to check the I/O usage. This command focuses on the amount of data read and written on a single process per second.
+- Run the  **pidstat**  command to check the I/O usage. This command focuses on the amount of data read and written on a single process per second.
 
     ```
     pidstat -d 1 10  // 1 indicates the interval and 10 indicates that the top 10 processes with the busiest I/O will be displayed.
@@ -31,7 +31,7 @@ Use one of the following methods to check the server I/O:
 
     **kB\_rd/s**  indicates the number of kilobytes of data read per second, and  **kB\_wr/s**  indicates that of data written per second.
 
--   Run the  **gs\_checkperf**  command as user  **omm**  to check the I/O usage in openGauss.
+- Run the  **gs\_checkperf**  command as user  **omm**  to check the I/O usage in openGauss.
 
     ```
     gs_checkperf
@@ -52,18 +52,17 @@ Use one of the following methods to check the server I/O:
 
     You can also run the  **gs\_checkperf --detail**  command to query performance details of each node.
 
-
 ## Analyzing Performance Parameters<a name="en-us_topic_0237121488_en-us_topic_0073253548_en-us_topic_0040046485_section401001449238"></a>
 
-1.  Check whether the disk usage exceeds 60%. Disk usage exceeding 60% is called high.
+1. Check whether the disk usage exceeds 60%. Disk usage exceeding 60% is called high.
 
     ```
     df -T
     ```
 
-2.  Perform the following operations to reduce I/O usage if the I/O usage keeps high:
-    -   Reduce the number of concurrent tasks.
-    -   Do  **VACUUM FULL**  for related tables.
+2. Perform the following operations to reduce I/O usage if the I/O usage keeps high:
+    - Reduce the number of concurrent tasks.
+    - Do  **VACUUM FULL**  for related tables.
 
         ```
         vacuum full tablename;
@@ -71,6 +70,3 @@ Use one of the following methods to check the server I/O:
 
         >[!NOTE]NOTE   
         >You are advised to do  **VACUUM FULL**  during the system idle time because this operation will cause heavy I/O load in a short period.  **VACUUM FULL**  during the system busy time does not facilitate the I/O decrease.  
-
-
-

@@ -50,4 +50,3 @@ PG\_STATIO\_SYS\_SEQUENCES视图显示命名空间中所有序列的IO状态信�
 </tr>
 </tbody>
 </table>
-

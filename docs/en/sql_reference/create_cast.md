@@ -22,31 +22,31 @@ CREATE CAST (source_type AS target_type)
 
 ## Parameter Description<a name="section62781959163314"></a>
 
--   **source\_type**
+- **source\_type**
 
     Type of the source data to be converted.
 
--   **target\_type**
+- **target\_type**
 
     Type of the target data to be converted.
 
--   **function\_name\(argument\_type \[, ...\]\)**
+- **function\_name\(argument\_type \[, ...\]\)**
 
     Function used for conversion. The function name can be modified with a schema name. If it is not modified with a schema name, the function will be found in the schema search path. The result data type of the function must match the target type of the conversion. Its parameters are discussed below.
 
--   **WITHOUT FUNCTION**
+- **WITHOUT FUNCTION**
 
     Indicates that the source type is a binary castable to the target type, so no function is needed to perform this conversion.
 
--   **WITH INOUT**
+- **WITH INOUT**
 
     Indicates that the conversion is an I/O conversion, which is performed by calling the output function of the source data type and transferring the result to the input function of the target data type.
 
--   **AS ASSIGNMENT**
+- **AS ASSIGNMENT**
 
     Indicates that the conversion can be implicitly called in assignment mode.
 
--   **AS IMPLICIT**
+- **AS IMPLICIT**
 
     Indicates that the transformation can be implicitly called in any environment.
 
@@ -59,7 +59,6 @@ CREATE CAST (source_type AS target_type)
     If the source type and target type of a type conversion are different and more than one parameter is received, it indicates that only one step is required to convert one type to another and the length conversion is performed at the same time. If no such item is available, converting to a type that uses a type modifier involves two steps, one to convert between data types, and the other to apply a conversion specified by the modifier.
 
     Currently, domain type conversion does not take effect. Transformations are typically targeted to the domain-related data types to which they belong.
-
 
 ## Example<a name="section14411351193419"></a>
 
@@ -74,4 +73,3 @@ CREATE CAST (bigint AS int4) WITH FUNCTION int4(bigint) AS ASSIGNMENT;
 ## Compatibility<a name="section9989313154010"></a>
 
 The CREATE CAST instruction complies with the SQL standard. Except that the SQL does not have extra parameters that can be forcibly converted to binary types or implement functions.
-

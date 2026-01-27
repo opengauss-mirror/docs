@@ -73,14 +73,14 @@ numwait desc;
 
 If such an issue occurs, you can use the following methods to check whether statistics in tables or columns has been collected using  **ANALYZE**.
 
-1.  Execute  **EXPLAIN VERBOSE**  to analyze the execution plan and check the warning information:
+1. Execute  **EXPLAIN VERBOSE**  to analyze the execution plan and check the warning information:
 
     ```
     WARNING:Statistics in some tables or columns(public.lineitem.l_receiptdate, public.lineitem.l_commitdate, public.lineitem.l_orderkey, public.lineitem.l_suppkey, public.orders.o_orderstatus, public.orders.o_orderkey) are not collected.
     HINT:Do analyze for them in order to generate optimized plan.
     ```
 
-2.  Check whether the following information exists in the log file in the  **pg\_log**  directory. If it does, the poor query performance was caused by the lack of statistics in some tables or columns.
+2. Check whether the following information exists in the log file in the  **pg\_log**  directory. If it does, the poor query performance was caused by the lack of statistics in some tables or columns.
 
     ```
     2017-06-14 17:28:30.336 CST 140644024579856 20971684 [BACKEND] LOG:Statistics in some tables or columns(public.lineitem.l_receiptdate, public.lineitem.l_commitdate, public.lineitem.l_orderkey, public.linei
@@ -88,6 +88,4 @@ If such an issue occurs, you can use the following methods to check whether stat
     2017-06-14 17:28:30.336 CST 140644024579856 20971684 [BACKEND] HINT:Do analyze for them in order to generate optimized plan.
     ```
 
-
 By using any of the preceding methods, you can identify tables or columns whose statistics have not been collected using  **ANALYZE**. You can execute  **ANALYZE**  to warnings or tables and columns recorded in logs to resolve the problem.
-

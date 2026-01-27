@@ -67,5 +67,3 @@ openGauss=# DROP TABLE customer_demographics_t1;
 ## 相关链接<a name="zh-cn_topic_0283136750_zh-cn_topic_0237122053_zh-cn_topic_0059778271_s51afa4e9c2fd4b07b11d4eb49fe546b8"></a>
 
 [SET TRANSACTION](set_transaction.md)，[COMMIT | END](commit_end.md)，[ROLLBACK](rollback.md)
-
-

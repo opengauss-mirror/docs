@@ -146,4 +146,3 @@ PG\_TOTAL\_USER\_RESOURCE\_INFO视图显示所有用户资源使用情况，需�
 </tr>
 </tbody>
 </table>
-

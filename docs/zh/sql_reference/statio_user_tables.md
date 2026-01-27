@@ -3,6 +3,7 @@
 STATIO\_USER\_TABLES视图显示命名空间中所有用户关系表的IO状态信息。
 
 示例：
+
 ```sql
 openGauss=# select * from DBE_PERF.STATIO_USER_TABLES;
  relid |   schemaname    |    relname    | heap_blks_read | heap_blks_hit | idx_blks_read | idx_blks_hit | toast_blks_read | toast_blks_hit | tidx_blks_read | tidx_blks_hit 

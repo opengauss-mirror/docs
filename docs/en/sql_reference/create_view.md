@@ -21,7 +21,7 @@ CREATE [ OR REPLACE ] [DEFINER = user] [ TEMP | TEMPORARY ] VIEW view_name [ ( c
 
 ## Parameter Description<a name="en-us_topic_0283137480_en-us_topic_0237122126_en-us_topic_0059779377_s09c14680fd2e44bcb52cb2f114096621"></a>
 
--   **OR REPLACE**
+- **OR REPLACE**
 
     Redefines the view if it already exists.
 
@@ -29,23 +29,23 @@ CREATE [ OR REPLACE ] [DEFINER = user] [ TEMP | TEMPORARY ] VIEW view_name [ ( c
 
   Specify user as the owner of the view. This option is used in B-compatible mode.
 
--   **TEMP | TEMPORARY**
+- **TEMP | TEMPORARY**
 
     Creates a temporary view.
 
--   **view\_name**
+- **view\_name**
 
     Specifies the name \(optionally schema-qualified\) of the view to be created.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **column\_name**
+- **column\_name**
 
     Specifies an optional list of names to be used for columns of the view. If not given, the column names are deduced from the query.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **view\_option\_name \[= view\_option\_value\]**
+- **view\_option\_name \[= view\_option\_value\]**
 
     Specifies an optional parameter for a view.
 
@@ -53,7 +53,7 @@ CREATE [ OR REPLACE ] [DEFINER = user] [ TEMP | TEMPORARY ] VIEW view_name [ ( c
 
     Value range: Boolean type,  **TRUE**, and  **FALSE**.
 
--   **query**
+- **query**
 
     Specifies a  **SELECT**  or  **VALUES**  statement that will provide the columns and rows of the view.
 

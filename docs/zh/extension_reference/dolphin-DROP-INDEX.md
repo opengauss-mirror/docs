@@ -21,7 +21,7 @@ DROP INDEX [ CONCURRENTLY ] [ IF EXISTS ]
 
 ## 参数说明<a name="zh-cn_topic_0283136794_zh-cn_topic_0237122140_zh-cn_topic_0059779018_s99e6f6efb9f3448f9de8894607958cd3"></a>
 
--   **CONCURRENTLY**
+- **CONCURRENTLY**
 
     以不加锁的方式删除索引。删除索引时，一般会阻塞其他语句对该索引所依赖表的访问。加此关键字，可实现删除过程中不做阻塞。
 
@@ -29,24 +29,23 @@ DROP INDEX [ CONCURRENTLY ] [ IF EXISTS ]
 
     普通DROP INDEX命令可以在事务内执行，但是DROP INDEX CONCURRENTLY不可以在事务内执行。
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     如果指定的索引不存在，则发出一个notice而不是抛出一个错误。
 
--   **index\_name**
+- **index\_name**
 
     要删除的索引名。
 
     取值范围：已存在的索引。
 
--   **CASCADE | RESTRICT**
-    -   CASCADE：表示允许级联删除依赖于该索引的对象。
-    -   RESTRICT（缺省值）：表示有依赖与此索引的对象存在，则该索引无法被删除。
+- **CASCADE | RESTRICT**
+    - CASCADE：表示允许级联删除依赖于该索引的对象。
+    - RESTRICT（缺省值）：表示有依赖与此索引的对象存在，则该索引无法被删除。
 
--   **ALGORITHM**
+- **ALGORITHM**
     
     指定算法，可选项：DEFAULT、INPLACE、COPY。当前只做语法兼容，暂无实际功能。
-
 
 ## 示例<a name="zh-cn_topic_0283136794_zh-cn_topic_0237122140_zh-cn_topic_0059779018_s95dd4a9a45334e81be4841d86d7a47f1"></a>
 
@@ -55,4 +54,3 @@ DROP INDEX [ CONCURRENTLY ] [ IF EXISTS ]
 ## 相关链接<a name="zh-cn_topic_0283136794_zh-cn_topic_0237122140_zh-cn_topic_0059779018_s299c55b981d1489986df6a6cf27b73d1"></a>
 
 [ALTER INDEX](../sql_reference/alter_index.md)，[CREATE INDEX](../sql_reference/create_index.md)
-

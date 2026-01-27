@@ -11,18 +11,17 @@ CREATE TABLE table_name
 
 ## 参数说明<a name="section932010594419"></a>
 
--   **table\_name**
+- **table\_name**
 
     要创建的表名。
 
--   **column\_name**
+- **column\_name**
 
     新表中要创建的字段名。
 
--   **data\_type**
+- **data\_type**
 
     字段的数据类型。
-
 
 ## 示例<a name="section199331334134317"></a>
 
@@ -44,4 +43,3 @@ openGauss=# CREATE TABLE customer_t1
 ```
  CREATE TABLE
 ```
-

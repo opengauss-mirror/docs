@@ -10,13 +10,13 @@
 
 In addition to comparative operators, you can also use the following sentence structure:
 
--   BETWEEN operator
+- BETWEEN operator
 
     **a  BETWEEN  x  AND  y**  is equivalent to  **a \>= x AND a <= y**.
 
     **a  NOT BETWEEN  x  AND y**  is equivalent to  **a < x OR a \> y**.
 
--   To check whether a value is null, use:
+- To check whether a value is null, use:
 
     expression IS NULL
 
@@ -31,9 +31,8 @@ In addition to comparative operators, you can also use the following sentence st
     >[!TIP]NOTICE 
     >Do not write  **expression=NULL**  or  **expression<\>\(!=\)NULL**, because  **NULL**  represents an unknown value, and these expressions cannot determine whether two unknown values are equal.
 
-
--   is distinct from/is not distinct from
-    -   is distinct from
+- is distinct from/is not distinct from
+    - is distinct from
 
         If the data types and values of A and B are different, the value is  **true**.
 
@@ -41,7 +40,7 @@ In addition to comparative operators, you can also use the following sentence st
 
         Empty values are considered the same.
 
-    -   is not distinct from
+    - is not distinct from
 
         If the data types and values of A and B are different, the value is  **false**.
 
@@ -49,7 +48,7 @@ In addition to comparative operators, you can also use the following sentence st
 
         Empty values are considered the same.
 
--   <=\> NULL-safe equality operator
+- <=\> NULL-safe equality operator
 
     The comparison of NULL values is added on the basis of the comparison of '='. If neither the left nor right value of the operator is NULL, the result is the same as that of '='.
 
@@ -60,8 +59,8 @@ In addition to comparative operators, you can also use the following sentence st
     Null values are considered the same.
 
     >[!NOTE]NOTE
-    >-   The usage of the <=\> operator is the same as that of IS NOT DISTINCT FROM.
-    >-   This operator is valid only when GaussDB Kernel or openGauss is compatible with the MY type (that is, sql\_compatibility = 'B'). Other types do not support this operator.
+    >- The usage of the <=\> operator is the same as that of IS NOT DISTINCT FROM.
+    >- This operator is valid only when GaussDB Kernel or openGauss is compatible with the MY type (that is, sql\_compatibility = 'B'). Other types do not support this operator.
 
 ## Pseudocolumn<a name="en-us_topic_0283137643_section104921036122717"></a>
 

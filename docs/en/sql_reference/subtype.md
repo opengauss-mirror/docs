@@ -1,7 +1,9 @@
 # SUBTYPE
 
 ## Brief
+
 openGauss supprt subtype in PLSQL. Subtype allow user to build subtype from exists type, and use subtype as exits type. There are Uncontrained Subtype amd Contrained Subtype in openGauss.
+
 - Uncontrained Subtype: An unconstrained subtype has the same set of values as its base type, so it is only another name for the base type.
   - Unconstrained subtypes of the same base type are interchangeable with each other and with the base type. No data type conversion occurs.
 - Contrained Subtype: A constrained subtype has only a subset of the values of its base type. 
@@ -9,23 +11,28 @@ openGauss supprt subtype in PLSQL. Subtype allow user to build subtype from exis
   - A constrained subtype can be implicitly converted to another constrained subtype with the same base type only if the source value does not violate a constraint of the target subtype.
 
 ## Syntax
+
 ### Uncontrained Subtype
+
 ```
     SUBTYPE subtype_name IS base_type
 ```
+
 - subtype_name: name of created subtype 
 - base_type: base type of created subtype
 
 ### Contrained Subtype
+
 ```
     SUBTYPE subtype_name IS base_type [precision [, scale ] [ NOT NULL ] ]
 ```
+
 - subtype_name: name of created subtype 
 - base_type: base type of created subtype
 - If the base type lets you specify size, precision and scale, then you can specify them for its subtypes
 
-
 ## Examples
+
 ```
 -- Uncontrained Subtype
 DECLARE

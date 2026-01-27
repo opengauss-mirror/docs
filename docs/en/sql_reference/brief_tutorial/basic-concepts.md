@@ -51,7 +51,7 @@ It is a logical unit of work performed within a DBMS, and treated in a coherent 
 
 In addition, a transaction is the basic unit for recovery and concurrency control. It must have the ACID feature.
 
--   Atomicity: Operations in a transaction must be either all performed or none performed because a transaction is an integral unit of work.
--   Consistency: A transaction must change a database from one consistent state to another consistent state. Consistency is closely related to atomicity.
--   Isolation: The execution of a transaction cannot be interfered by other transactions. It means that operations and data used in a transaction are isolated from those in other concurrent transactions. Concurrent transactions are independent of each other.
--   Durability or Permanence: Once a transaction is committed, the data in the database is changed permanently. Subsequent operations or faults should not have any impact on them.
+- Atomicity: Operations in a transaction must be either all performed or none performed because a transaction is an integral unit of work.
+- Consistency: A transaction must change a database from one consistent state to another consistent state. Consistency is closely related to atomicity.
+- Isolation: The execution of a transaction cannot be interfered by other transactions. It means that operations and data used in a transaction are isolated from those in other concurrent transactions. Concurrent transactions are independent of each other.
+- Durability or Permanence: Once a transaction is committed, the data in the database is changed permanently. Subsequent operations or faults should not have any impact on them.

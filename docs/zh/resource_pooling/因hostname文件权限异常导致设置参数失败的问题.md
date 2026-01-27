@@ -3,6 +3,7 @@
 ## 一、 问题现象
 
 资源池化环境安装成功后，出现部分节点参数设置失败信息：
+
 ``` shell
     Total nodes: 3. Failed nodes: 2.
     Failed node names:
@@ -10,11 +11,13 @@
         [openGaussxxx]
     ALL: Failure to perform gs_guc!
 ```
+
 同时，如果在该用户下使用`ssh`通过`host name`连接其他节点，直接报错失败。
 
 ## 二、 定位方法
 
 上述问题的主要原因为`host`权限异常、或文件丢失，进而导致使用、依赖`ssh`指令的工具失效，因此需要到`/etc`目录下检查`hostname`文件是否存在，以及权限是否正常，预期为：
+
 ```shell
     -rw-r--r--. 1 root root  13 Nov 22 15:33 /etc/hostname
 ```

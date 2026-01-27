@@ -10,8 +10,8 @@
 
 **取值范围**： 布尔型
 
--   on表示优先将字符串转为数字。
--   off表示不优先将字符串转为数字。
+- on表示优先将字符串转为数字。
+- off表示不优先将字符串转为数字。
 
 **默认值**：on
 
@@ -65,15 +65,15 @@
 
 **参数说明**： 控制表达式expr = NULL（或NULL = expr）当做expr IS NULL处理。如果expr得出NULL值则返回真，否则返回假。
 
--   正确的SQL标准兼容的expr = NULL总是返回NULL（未知）。
--   Microsoft Access里的过滤表单生成的查询使用expr = NULL来测试空值。打开这个选项，可以使用该接口来访问数据库。
+- 正确的SQL标准兼容的expr = NULL总是返回NULL（未知）。
+- Microsoft Access里的过滤表单生成的查询使用expr = NULL来测试空值。打开这个选项，可以使用该接口来访问数据库。
 
 该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 布尔型
 
--   on表示控制表达式expr = NULL（或NULL = expr）当做expr IS NULL处理。
--   off表示不控制，即expr = NULL总是返回NULL（未知）。
+- on表示控制表达式expr = NULL（或NULL = expr）当做expr IS NULL处理。
+- off表示不控制，即expr = NULL总是返回NULL（未知）。
 
 **默认值**： off
 
@@ -98,8 +98,8 @@
 
 **取值范围**： 布尔型
 
--   on表示支持数据库的扩展特性。
--   off表示不支持数据库的扩展特性。
+- on表示支持数据库的扩展特性。
+- off表示不支持数据库的扩展特性。
 
 **默认值**： off
 
@@ -111,19 +111,19 @@
 
 **取值范围**： 枚举型
 
--   A表示同O数据库兼容。
--   B表示同MY数据库兼容。
--   C表示同TD数据库兼容。
--   PG表示同POSTGRES数据库兼容。
--   D表示同S数据库兼容。
+- A表示同O数据库兼容。
+- B表示同MY数据库兼容。
+- C表示同TD数据库兼容。
+- PG表示同POSTGRES数据库兼容。
+- D表示同S数据库兼容。
 
 **默认值**： A
 
 >[!TIP]须知
 >
->-   该参数只能在执行[CREATE DATABASE](../sql_reference/create_database.md)命令创建数据库时通过dbcompatibility设置。
+>- 该参数只能在执行[CREATE DATABASE](../sql_reference/create_database.md)命令创建数据库时通过dbcompatibility设置。
 >
->-   在数据库中，该参数只能是确定的一个值，要么始终设置为A，要么始终设置为B，请勿任意改动，否则会导致数据库行为不一致。
+>- 在数据库中，该参数只能是确定的一个值，要么始终设置为A，要么始终设置为B，请勿任意改动，否则会导致数据库行为不一致。
 
 ## b\_format\_behavior\_compat\_options<a name="section533544693812"></a>
 
@@ -137,8 +137,8 @@
 
 >[!NOTE]说明
 >
->-   当前只支持[表1 兼容性B模式配置项](#table18793103274617)。
->-   配置多个兼容性配置项时，相邻配置项用逗号隔开，例如：set b\_format\_behavior\_compat\_options='enable\_set\_variables,set\_session\_transaction';
+>- 当前只支持[表1 兼容性B模式配置项](#table18793103274617)。
+>- 配置多个兼容性配置项时，相邻配置项用逗号隔开，例如：set b\_format\_behavior\_compat\_options='enable\_set\_variables,set\_session\_transaction';
 
 **表 1**  兼容性B模式配置项
 
@@ -195,7 +195,6 @@
 </tbody>
 </table>
 
-
 ## enable_set_variable_b_format<a name="zh-cn_topic_0283137574_zh-cn_topic_0237124754_section1980108261141"></a>
 
 **参数说明**： 在MY数据库模式下是否支持自定义用户变量的功能。
@@ -219,9 +218,9 @@
 
 >[!NOTE]说明
 >
->-   当前只支持[表2 兼容性配置项](#zh-cn_topic_0283137574_zh-cn_topic_0237124754_table182861153114812)。
+>- 当前只支持[表2 兼容性配置项](#zh-cn_topic_0283137574_zh-cn_topic_0237124754_table182861153114812)。
 >
->-   配置多个兼容性配置项时，相邻配置项用逗号隔开，例如：set behavior\_compat\_options='end\_month\_calculate,display\_leading\_zero';
+>- 配置多个兼容性配置项时，相邻配置项用逗号隔开，例如：set behavior\_compat\_options='end\_month\_calculate,display\_leading\_zero';
 
 **表 2**  兼容性配置项
 
@@ -912,8 +911,8 @@ NOTICE:  44
 
 >[!NOTE]说明
 >
->-   当前只支持[表3 兼容性配置项](#table18793103274618)。
->-   配置多个兼容性配置项时，相邻配置项用逗号隔开，例如：set plsql\_compile\_check\_options='for\_loop,outparam';
+>- 当前只支持[表3 兼容性配置项](#table18793103274618)。
+>- 配置多个兼容性配置项时，相邻配置项用逗号隔开，例如：set plsql\_compile\_check\_options='for\_loop,outparam';
 
 **表 3**  兼容性配置项
 
@@ -951,8 +950,8 @@ NOTICE:  44
 
 >[!NOTE]说明
 >
->-   该参数打开后，作为关键字使用的部分功能会失效，请谨慎使用。
->-   当设置非关键字时，会有警告提示，设置的非关键字标识符将会被跳过。
+>- 该参数打开后，作为关键字使用的部分功能会失效，请谨慎使用。
+>- 当设置非关键字时，会有警告提示，设置的非关键字标识符将会被跳过。
 
 ## plpgsql.variable\_conflict<a name="section644112422314"></a>
 
@@ -962,9 +961,9 @@ NOTICE:  44
 
 **取值范围**：字符串
 
--   error表示遇到存储过程变量和表的列名同名则编译报错。
--   use\_variable表示存储过程变量和表的列名同名则优先使用变量。
--   use\_column表示存储过程变量和表的列名同名则优先使用列名。
+- error表示遇到存储过程变量和表的列名同名则编译报错。
+- use\_variable表示存储过程变量和表的列名同名则优先使用变量。
+- use\_column表示存储过程变量和表的列名同名则优先使用列名。
 
 **默认值**：error
 
@@ -979,8 +978,8 @@ NOTICE:  44
 
 **取值范围**： 布尔型
 
--   on表示启动超长字符串自动截断功能。
--   off表示停止超长字符串自动截断功能。
+- on表示启动超长字符串自动截断功能。
+- off表示停止超长字符串自动截断功能。
 
 **默认值**： off
 
@@ -992,8 +991,8 @@ NOTICE:  44
 
 **取值范围**： 布尔型
 
--   on表示开启列名以大写形式返回给客户端。
--   off表示关闭列名以大写形式返回给客户端。
+- on表示开启列名以大写形式返回给客户端。
+- off表示关闭列名以大写形式返回给客户端。
 
 **默认值**：off
 
@@ -1006,8 +1005,8 @@ NOTICE:  44
 
 **取值范围**： 布尔型
 
--   on：在分布式模式中，表示允许lastval函数的使用；在单机模式中，表示nextval函数不可以下推到并行算子。
--   off：在分布式模式中，表示不允许lastval函数的使用；在单机模式中，表示nextval函数可以下推到并行算子。
+- on：在分布式模式中，表示允许lastval函数的使用；在单机模式中，表示nextval函数不可以下推到并行算子。
+- off：在分布式模式中，表示不允许lastval函数的使用；在单机模式中，表示nextval函数可以下推到并行算子。
 
 **默认值**： off
 
@@ -1087,6 +1086,6 @@ NOTICE:  44
 | btrim                                           | btrim函数的codegen，是btrim运行时生成特化代码用的。目前要使用需要满足一下三个条件：表为列存表，设置enable_codegen=on，设置codegen_cost_threshold=0 |
 | substr(列存版)                                  | 与substr相同，不过是列存版                                   |
 
-
 ## enable_custom_parser
+
 该参数当前版本不支持。

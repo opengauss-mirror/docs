@@ -43,4 +43,3 @@ PG\_GTT\_ATTACHED\_PIDS视图查看哪些会话正在使用全局临时表，调
 </tr>
 </tbody>
 </table>
-

@@ -13,21 +13,21 @@
 
 ## 语法格式<a name="zh-cn_topic_0283137270_zh-cn_topic_0237122078_zh-cn_topic_0059777507_s918cfbbb9e5d4554a22b92cdbaa77d86"></a>
 
--   重命名表空间的语法。
+- 重命名表空间的语法。
 
     ```
     ALTER TABLESPACE tablespace_name 
         RENAME TO new_tablespace_name [ alter_option_list  [ ... ] ];
     ```
 
--   设置表空间所有者的语法。
+- 设置表空间所有者的语法。
 
     ```
     ALTER TABLESPACE tablespace_name 
         OWNER TO new_owner [ alter_option_list  [ ... ] ];
     ```
 
--   设置表空间属性的语法。
+- 设置表空间属性的语法。
 
     ```
     ALTER TABLESPACE tablespace_name 
@@ -35,7 +35,7 @@
          [ alter_option_list  [ ... ] ];
     ```
 
--   重置表空间属性的语法。
+- 重置表空间属性的语法。
 
     ```
     ALTER TABLESPACE tablespace_name 
@@ -43,7 +43,7 @@
          [ alter_option_list  [ ... ] ];
     ```
 
--   设置表空间限额的语法。
+- 设置表空间限额的语法。
 
     ```
     ALTER TABLESPACE tablespace_name 
@@ -57,13 +57,13 @@
 
 ## 参数说明<a name="zh-cn_topic_0283137270_zh-cn_topic_0237122078_zh-cn_topic_0059777507_s089537de861942ffac3f726a79d2a900"></a>
 
--   **tablespace\_name**
+- **tablespace\_name**
 
     要修改的表空间。
 
     取值范围：已存在的表空间名。
 
--   **new\_tablespace\_name**
+- **new\_tablespace\_name**
 
     表空间的新名称。
 
@@ -71,52 +71,48 @@
 
     取值范围：字符串，符合标识符命名规范。
 
--   **new\_owner**
+- **new\_owner**
 
     表空间的新所有者。
 
     取值范围：已存在的用户名。
 
--   **tablespace\_option**
+- **tablespace\_option**
 
     设置或者重置表空间的参数。
 
     取值范围：
 
-    -   seq\_page\_cost：设置优化器计算一次顺序获取磁盘页面的开销。缺省为1.0。
-    -   random\_page\_cost：设置优化器计算一次非顺序获取磁盘页面的开销。缺省为4.0。
+    - seq\_page\_cost：设置优化器计算一次顺序获取磁盘页面的开销。缺省为1.0。
+    - random\_page\_cost：设置优化器计算一次非顺序获取磁盘页面的开销。缺省为4.0。
 
         >[!NOTE]说明
-        >-   random\_page\_cost是相对于seq\_page\_cost的取值，等于或者小于seq\_page\_cost时毫无意义。
-
-        >-   默认值为4.0的前提条件是，优化器采用索引来扫描表数据，并且表数据在cache中命中率可以90%左右。
-
-        >-   如果表数据空间要比物理内存小，那么减小该值到一个适当水平；相反地，如果表数据在cache中命中率要低于90%，那么适当增大该值。
-
-        >-   如果采用了类似于SSD的随机访问代价较小的存储器，可以适当减小该值，以反映真正的随机扫描代价。
-
+        >- random\_page\_cost是相对于seq\_page\_cost的取值，等于或者小于seq\_page\_cost时毫无意义。
+        >- 默认值为4.0的前提条件是，优化器采用索引来扫描表数据，并且表数据在cache中命中率可以90%左右。
+        >- 如果表数据空间要比物理内存小，那么减小该值到一个适当水平；相反地，如果表数据在cache中命中率要低于90%，那么适当增大该值。
+        >- 如果采用了类似于SSD的随机访问代价较小的存储器，可以适当减小该值，以反映真正的随机扫描代价。
 
     value的取值范围：正的浮点类型。
 
--   **RESIZE MAXSIZE**
+- **RESIZE MAXSIZE**
 
     重新设置表空间限额的数值。
 
     取值范围：
 
-    -   UNLIMITED，该表空间不设置限额。
-    -   由space\_size来确定，其格式参考[CREATE TABLESPACE](../sql_reference/create_tablespace.md)。
+    - UNLIMITED，该表空间不设置限额。
+    - 由space\_size来确定，其格式参考[CREATE TABLESPACE](../sql_reference/create_tablespace.md)。
 
         >[!NOTE]说明
-        >-   若调整后的限额值比当前表空间实际使用的值要小，调整操作可以执行成功，后续用户需要将该表空间的使用值降低到新限额值之下，才能继续往该表空间中写入数据。
-        
-        >-   修改参数MAXSIZE时也可使用：
+        >- 若调整后的限额值比当前表空间实际使用的值要小，调整操作可以执行成功，后续用户需要将该表空间的使用值降低到新限额值之下，才能继续往该表空间中写入数据。
+        >- 修改参数MAXSIZE时也可使用：
+        >
         >```
         >ALTER TABLESPACE tablespace_name RESIZE MAXSIZE
         > { 'UNLIMITED' | 'space_size'};
         >```
 
--   **engine\_name**
+- **engine\_name**
 
     无实际意义。
 

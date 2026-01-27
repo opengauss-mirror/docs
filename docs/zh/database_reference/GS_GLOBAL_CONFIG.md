@@ -29,5 +29,3 @@ GS\_GLOBAL\_CONFIG记录了数据库实例初始化时，用户指定的参数�
 </tr>
 </tbody>
 </table>
-
-

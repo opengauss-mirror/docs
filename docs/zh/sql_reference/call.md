@@ -106,5 +106,3 @@ end test_overload;
 openGauss=# call test_overload.testp(1);--调用忽略出参
 openGauss=# call test_overload.testp(1,2);--调用包含出参
 ```
-
-

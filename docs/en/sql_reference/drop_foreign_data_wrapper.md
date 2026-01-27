@@ -12,19 +12,17 @@ DROP FOREIGN DATA WRAPPER [ IF EXISTS ] name [ CASCADE | RESTRICT ]
 
 ## Parameter Description
 
--   **name**
+- **name**
 
     Specifies the name of an FDW to be dropped.
 
--   **CASCADE**
+- **CASCADE**
 
     Automatically drops objects (such as servers) that depend on the FDW.
 
-
--   **RESTRICT**
+- **RESTRICT**
 
     Refuses to drop the FDW if there is any dependency on the FDW. This option is the default option.
-
 
 ## Examples
 

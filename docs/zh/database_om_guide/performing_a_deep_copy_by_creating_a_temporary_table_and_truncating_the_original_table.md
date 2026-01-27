@@ -6,7 +6,7 @@
 
 ## 操作步骤<a name="zh-cn_topic_0237121144_zh-cn_topic_0165787116_section1098017411363"></a>
 
-1.  使用CREATE TABLE AS语句创建表customer\_t的临时表副本customer\_t\_temp。
+1. 使用CREATE TABLE AS语句创建表customer\_t的临时表副本customer\_t\_temp。
 
     ```
     CREATE TEMP TABLE customer_t_temp AS SELECT * FROM customer_t;
@@ -15,22 +15,20 @@
     >[!NOTE]说明  
     >与使用永久表相比，使用临时表可以提高性能，但存在丢失数据的风险。临时表只在当前会话可见，本会话结束后将自动删除。如果数据丢失是不可接受的，请使用永久表。  
 
-2.  截断当前表customer\_t。
+2. 截断当前表customer\_t。
 
     ```
     TRUNCATE customer_t;
     ```
 
-3.  使用INSERT INTO…SELECT语句从副本中向原始表中填充数据。
+3. 使用INSERT INTO…SELECT语句从副本中向原始表中填充数据。
 
     ```
     INSERT INTO customer_t (SELECT * FROM customer_t_temp);
     ```
 
-4.  删除临时表副本customer\_t\_temp。
+4. 删除临时表副本customer\_t\_temp。
 
     ```
     DROP TABLE customer_t_temp;
     ```
-
-

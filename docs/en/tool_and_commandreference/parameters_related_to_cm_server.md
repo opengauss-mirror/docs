@@ -254,8 +254,8 @@ Default value: **43200**
 
 **Value range:** an integer, **0** or **1**. You need to restart cm\_server for the modification to take effect. This parameter cannot be enabled for non-DR clusters. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
--   **0**: The DR cluster is disabled.
--   **1**: The DR cluster is enabled.
+- **0**: The DR cluster is disabled.
+- **1**: The DR cluster is enabled.
 
 **Default value**: **0**
 
@@ -265,8 +265,8 @@ Default value: **43200**
 
 **Value range**: Boolean You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
--   **on**, **yes**, **true**, or **1**: The DCF function is enabled.
--   **off**, **no**, **false**, or **0**: The DCF function is disabled.
+- **on**, **yes**, **true**, or **1**: The DCF function is enabled.
+- **off**, **no**, **false**, or **0**: The DCF function is disabled.
 
 **Default value**: **off**
 
@@ -298,7 +298,6 @@ Default value: **43200**
 
   >[!TIP]NOTICE
   >To ensure security, you are advised not to disable it. After this function is disabled, the CM **does not** use encrypted communication and all information is transmitted in plaintext, which may bring security risks such as eavesdropping, tampering, and spoofing.
-
 
 ## ssl\_cert\_expire\_alert\_threshold<a name="section8148443183416"></a>
 
@@ -380,7 +379,7 @@ Default value: **180**
 
 **Parameter description**: Specifies whether to enable the E2E RTO function. After this function is enabled, the hang-up detection period and network detection timeout time are shortened. The CM can reach the E2E RTO indicator (RTO for a single instance ≤ 10s; RTO for combined faults ≤ 30s).
 
-**Value range:** an integer, **0** or **1**. The value **1 **indicates enabled, while the value **0** indicates disabled.You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
+**Value range:** an integer, **0** or **1**. The value **1**indicates enabled, while the value **0** indicates disabled.You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **0**
 
@@ -422,9 +421,9 @@ No default value. Set this parameter during installation.
 
 **Value range**: a string. The modification of this parameter takes effect after reloading. For details about how to modify parameters, see [Parameters for set cm](cm_ctl.md#table10437204416514). In share\_disk mode, you are not advised to change the arbitration mode.
 
--   quorum
--   paxos
--   share\_disk
+- quorum
+- paxos
+- share\_disk
 
 **Default value**: **quorum**
 
@@ -435,8 +434,6 @@ No default value. Set this parameter during installation.
 **Value range**: an integer, in the range \[0,1000\] (unit: second). **0**: No arbitration is performed. The modification of this parameter takes effect after reloading. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **300**
-
-
 
 ## delay\_arbitrate\_timeout<a name="section1410893910156"></a>
 

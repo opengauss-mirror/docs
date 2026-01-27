@@ -57,4 +57,3 @@ GLOBAL\_STATIO\_ALL\_SEQUENCES包含各节点的数据库中每个序列的每�
 </tr>
 </tbody>
 </table>
-

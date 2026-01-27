@@ -73,5 +73,3 @@ openGauss支持的Schema如下表所示。
 </tr>
 </tbody>
 </table>
-
-

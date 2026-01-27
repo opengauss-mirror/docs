@@ -35,4 +35,3 @@ openGauss=# DROP RESOURCE LABEL IF EXISTS res_label1, res_label2, res_label3;
 ## Helpful Links<a name="en-us_topic_0059778399_s41faee269a414537919479fb56fc5a4d"></a>
 
 [ALTER RESOURCE LABEL](alter_resource_label.md)  and  [CREATE RESOURCE LABEL](create_resource_label.md)
-

@@ -36,6 +36,7 @@ openGauss的Bloom索引特性是一种节省空间的数据结构，用于测试
 - **使用bloom索引**
 
 为表创建bloom索引，签名长度为80bits, 列1的值哈希到3个bit位，列2的值哈希到4个bit位。
+
 ```
 CREATE TABLE tst (i int4, t text);
 CREATE INDEX bloomidx ON tst USING bloom (i, t) WITH (length=80, col1 = 3, col2 = 4);

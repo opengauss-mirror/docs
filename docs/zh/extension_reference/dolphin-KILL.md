@@ -6,10 +6,9 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--   KILL语法在非线程池模式和线程池模式下均有效。
--   一般结合SHOW PROCESSSLIST的查询结果Id字段使用。
--   也可以结合select sessionid from pg_stat_activity where (过滤条件) 使用
-
+- KILL语法在非线程池模式和线程池模式下均有效。
+- 一般结合SHOW PROCESSSLIST的查询结果Id字段使用。
+- 也可以结合select sessionid from pg_stat_activity where (过滤条件) 使用
 
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
@@ -138,4 +137,3 @@ openGauss=# show processlist;
 22-06-27 14:00:53.163338+08 | 2022-06-27 14:04:35.418518+08 |      0 | active | show processlist;
 (9 rows)
 ```
-

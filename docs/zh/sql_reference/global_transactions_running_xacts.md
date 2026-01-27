@@ -2,7 +2,6 @@
 
 显示集群中各个节点运行事务的信息。
 
-
 **表 1**  GLOBAL\_TRANSACTIONS\_RUNNING\_XACTS字段
 
 <a name="table1459315314513"></a>

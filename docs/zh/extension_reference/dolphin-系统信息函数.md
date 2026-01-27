@@ -2,7 +2,7 @@
 
 ## dolphin-会话信息函数<a name="zh-cn_topic_0283136950_zh-cn_topic_0237121987_zh-cn_topic_0059777618_seb0ac642d9594cfe9a06d3d304c6dc75"></a>
 
--   database\(\)
+- database\(\)
 
     描述：当前数据库模式的名称。
 
@@ -20,7 +20,7 @@
 
     备注：database返回在搜索路径中第一个顺位有效的模式名。（如果搜索路径为空则返回NULL，没有有效的模式名也返回NULL）。如果创建表或者其他命名对象时没有声明目标模式，则将使用这些对象的模式。
 
--   current_role\(\)
+- current_role\(\)
 
     描述：当前执行环境下的用户名。
 
@@ -38,7 +38,7 @@
 
     备注：current_role()是用于权限检查的用户标识。通常，他表示会话用户，但是可以通过SET ROLE改变他。在函数执行的过程中随着属性SECURITY DEFINER的改变，其值也会改变。
 
--   uuid_short\(\)
+- uuid_short\(\)
 
     描述：当前数据库的uuid_short信息。
 
@@ -54,7 +54,7 @@
     (1 row)
     ```
 
--   dolphin_version\(\)
+- dolphin_version\(\)
 
     描述：dolphin版本信息。返回一个描述dolphin插件版本信息的字符串。
 
@@ -70,7 +70,7 @@
     (1 row)
     ```
 
--   dolphin_types\(\)
+- dolphin_types\(\)
 
     描述：dolphin新增类型信息。返回一个描述dolphin新增类型信息的二维字符串数组, 每个数组内的信息依次是：类型名、是否支持精度、是否支持范围。
 

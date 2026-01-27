@@ -669,5 +669,3 @@ openGauss=# COPY tpcds.ship_mode_t1 FROM '/home/omm/ds_ship_mode.dat' FIXED FORM
 --删除tpcds.ship_mode_t1。
 openGauss=# DROP TABLE tpcds.ship_mode_t1;
 ```
-
-

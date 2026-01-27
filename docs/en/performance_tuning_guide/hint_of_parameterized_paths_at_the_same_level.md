@@ -59,6 +59,6 @@ openGauss=# explain select /*+predpush_same_level(t1, t2)*/ * from t1, t2 where 
 ```
 
 >[!TIP]NOTICE 
->-   **predpush\_same\_level**  can specify multiple  **src**  parameters in the same condition.
->-   If the specified  **src**  and  **dest**  conditions do not exist or do not meet the parameterized path requirements, this hint does not take effect.
-
+>
+>- **predpush\_same\_level**  can specify multiple  **src**  parameters in the same condition.
+>- If the specified  **src**  and  **dest**  conditions do not exist or do not meet the parameterized path requirements, this hint does not take effect.

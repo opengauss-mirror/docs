@@ -11,4 +11,3 @@ The possible cause is that the value of the GUC parameter  **max\_process\_memor
 ## Procedure<a name="en-us_topic_0283137168_section12618818144413"></a>
 
 Use the  **gs\_guc**  tool to adjust the value of  **max\_process\_memory**. Note that you need to restart the instance for the modification to take effect.
-

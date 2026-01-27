@@ -167,5 +167,3 @@ openGauss lists common implicit data type conversions in  [Table 1](#en-us_topic
 </tr>
 </tbody>
 </table>
-
-

@@ -55,4 +55,3 @@ Recovery instance ID:                 0
 Cluster status:                       normal
 Cluster run mode:                     primary cluster
 ```
-

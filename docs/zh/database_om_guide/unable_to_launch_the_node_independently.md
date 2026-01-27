@@ -1,11 +1,14 @@
 # 无法单独拉起节点
 
 ## 现象
+
 单独gs_ctl start单个节点无法拉起一直在等待，进入日志显示如下错误。
 ![Alt text](image-3.png)
 
 ## 原因
+
 没有同时拉起主备节点。
 
 ## 解决方案
+
 cm_config.ini文件里，把REFORMER_ID设置为0，BITMAP_ONLINE设置为1，便可以单独拉起节点。

@@ -60,4 +60,3 @@ openGauss=# SELECT * FROM ts_token_type('default');
     23 | entity          | XML entity
 (23 rows)
 ```
-

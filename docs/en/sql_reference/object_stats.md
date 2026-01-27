@@ -218,4 +218,3 @@ Object stats contains three tables: User Tables stats, User index stats, and Bad
 </tr>
 </tbody>
 </table>
-

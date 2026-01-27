@@ -37,4 +37,3 @@ openGauss=# select * from test1 limit 1;
 (1 row)
 
 ```
-

@@ -6,7 +6,9 @@ oG_datasync_full_migration是一个用Java编写的SQLServer到openGauss的离�
 全量对象支持表、约束、索引、外键、视图、函数、触发器、存储过程和序列的复制。
 
 ## 注意事项
+
 ### 一般性限制
+
 - 工具支持的SQLServer版本为2016+，openGauss版本为7.0.0+
 - 创建openGauss迁移库时需要指定编码格式与SQLServer一致
 - 列存储索引、全文索引、xml索引、包含列索引以及索引的填充因子暂不支持迁移
@@ -19,21 +21,27 @@ oG_datasync_full_migration是一个用Java编写的SQLServer到openGauss的离�
 - 视图、函数、触发器和存储过程目前仅支持迁移流程，迁移成功还需语法兼容
 
 ### 对象迁移限制
+
 - 由于内核兼容性在持续增强，对象迁移采用先透传再翻译的原则进行，即先直接透传对象创建语句在openGauss端执行，若执行失败，再借助开源三方件druid进行翻译。
 
 ## 使用指南
+
 ### 安装方法
-安装包下载地址：https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/full-oG_datasync_full_migration-7.0.0rc2.tar.gz
+
+安装包下载地址：<https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/full-oG_datasync_full_migration-7.0.0rc2.tar.gz>
 其中7.0.0rc2表示当前版本号。
 下载完成后，解压压缩包
 
 ```
 tar -zxvf oG_datasync_full_migration-7.0.0rc2.tar.gz
 ```
+
 解压后的oG_datasync_full_migration文件夹中有一个config文件夹以及一个jar包，config文件夹下存储配置文件模板。
 
 ### 配置文件说明
+
 配置文件使用yaml文件规则配置，需要特别注意对齐，缩进表示层级关系，缩进时不允许使用Tab键，只允许使用空格，缩进的空格数目不重要，但相同层级的元素左侧需要对齐。
+
 ```
 # global settings
 # 是否记录进度
@@ -126,8 +134,8 @@ isRecordSnapshot: No
 
   `java -jar oG_datasync_full_migration-7.0.0rc2.jar --start sequence --source sqlserver --config /**/**/config.yml`
 
-
 ## 默认的类型转换规则
+
 ### 列类型转换
 
 | SQL Server       | openGauss                      | 备注                                                                    |

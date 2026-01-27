@@ -6,8 +6,8 @@
 
 ## Precautions<a name="en-us_topic_0283137306_en-us_topic_0237122138_en-us_topic_0059778261_s8faef0d4b5934393b67d84ec2e34b07d"></a>
 
--   If a function involves operations on temporary tables,  **DROP FUNCTION**  cannot be used.
--   Only the function owner or a user granted with the DROP permission can run the  **DROP FUNCTION**  command. The system administrator has this permission by default.
+- If a function involves operations on temporary tables,  **DROP FUNCTION**  cannot be used.
+- Only the function owner or a user granted with the DROP permission can run the  **DROP FUNCTION**  command. The system administrator has this permission by default.
 
 ## Syntax<a name="en-us_topic_0283137306_en-us_topic_0237122138_en-us_topic_0059778261_s1aad0e4026434244b8879b36ec9adaff"></a>
 
@@ -18,28 +18,27 @@ DROP FUNCTION [ IF EXISTS ] function_name
 
 ## Parameter Description<a name="en-us_topic_0283137306_en-us_topic_0237122138_en-us_topic_0059778261_sf080415ead494e02bd48dbc9ec81a573"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Reports a notice instead of an error if the specified function does not exist.
 
--   **function\_name**
+- **function\_name**
 
     Specifies the name of the function to be deleted.
 
     Value range: an existing function name
 
--   **argmode**
+- **argmode**
 
     Specifies the parameter mode of the function.
 
--   **argname**
+- **argname**
 
     Specifies the parameter name of the function.
 
--   **argtype**
+- **argtype**
 
     Specifies the parameter type of the function.
-
 
 ## Examples<a name="en-us_topic_0283137306_en-us_topic_0237122138_en-us_topic_0059778261_s4c0a49238b6c41bdbf9c9cbd3aabcf08"></a>
 
@@ -48,4 +47,3 @@ For details, see  [Examples](create_function.md#en-us_topic_0283136560_en-us_top
 ## Helpful Links<a name="en-us_topic_0283137306_en-us_topic_0237122138_en-us_topic_0059778261_sf722b7d9e13547449d559364553b790a"></a>
 
 [ALTER FUNCTION](alter_function.md)  and  [CREATE FUNCTION](create_function.md)
-

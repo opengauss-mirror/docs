@@ -17,25 +17,22 @@ DROP FOREIGN TABLE [ IF EXISTS ]
 
 ## Parameter Description<a name="en-us_topic_0283137169_section4910646204920"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Reports a notice instead of an error if the specified table does not exist.
 
--   **table\_name**
+- **table\_name**
 
     Table name
 
     Value range: an existing table name
 
--   **CASCADE | RESTRICT**
+- **CASCADE | RESTRICT**
 
-    -   **CASCADE**: automatically drops the objects \(such as views\) that depend on the table.
+    - **CASCADE**: automatically drops the objects \(such as views\) that depend on the table.
 
-    -   **RESTRICT**: refuses to drop the table if any objects depend on it. This is the default action.
-
-
+    - **RESTRICT**: refuses to drop the table if any objects depend on it. This is the default action.
 
 ## Helpful Links<a name="en-us_topic_0283137169_section1811945514913"></a>
 
 [ALTER FOREIGN TABLE](alter_foreign_table.md)  and  [CREATE FOREIGN TABLE](create_foreign_table.md)
-

@@ -22,16 +22,16 @@ gaussdb --fenced -k /user-set-dir-path -D /user-set-dir-path &
 
 ## 使用指导<a name="section823619213143"></a>
 
--   创建Extension
+- 创建Extension
 
-    -   当编译的plpython为python2时：
+    - 当编译的plpython为python2时：
 
         ```
         openGauss=# create Extension plpythonu;
         CREATE Extension
         ```
 
-    -   当编译的plpython为python3时：
+    - 当编译的plpython为python3时：
 
         ```
         openGauss=# create Extension plpython3u;
@@ -40,8 +40,7 @@ gaussdb --fenced -k /user-set-dir-path -D /user-set-dir-path &
 
     下面示例是以python2为例。
 
-
--   创建plpython-fenced UDF
+- 创建plpython-fenced UDF
 
     ```
     openGauss=# create or replace function pymax(a int, b int)
@@ -57,7 +56,7 @@ gaussdb --fenced -k /user-set-dir-path -D /user-set-dir-path &
     CREATE FUNCTION
     ```
 
--   查看UDF信息
+- 查看UDF信息
 
     ```
     openGauss=# select * from pg_proc where proname='pymax';
@@ -103,8 +102,8 @@ gaussdb --fenced -k /user-set-dir-path -D /user-set-dir-path &
     proargsrc        |
     ```
 
--   运行UDF
-    -   创建一个数据表：
+- 运行UDF
+    - 创建一个数据表：
 
         ```
         openGauss=# create table temp (a int ,b int) ;
@@ -113,7 +112,7 @@ gaussdb --fenced -k /user-set-dir-path -D /user-set-dir-path &
         INSERT 0 5
         ```
 
-    -   运行UDF：
+    - 运行UDF：
 
         ```
         openGauss=# select pymax(a,b) from temp;
@@ -126,6 +125,3 @@ gaussdb --fenced -k /user-set-dir-path -D /user-set-dir-path &
              6
         (5 rows)
         ```
-
-
-

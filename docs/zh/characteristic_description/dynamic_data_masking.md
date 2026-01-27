@@ -78,7 +78,6 @@ CREATE MASKING POLICY msk_name randommasking ON LABEL(label_for_name) FILTER ON 
 </tbody>
 </table>
 
-
 每个脱敏函数规格如下：
 
 <a name="table3119163316"></a>

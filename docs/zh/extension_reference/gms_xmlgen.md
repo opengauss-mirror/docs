@@ -391,6 +391,7 @@ openGauss$# /
 
 ANONYMOUS BLOCK EXECUTE
 ```
+
 - gms_xmlgen.newcontextfromhierarchy(queryString in varchar2)
   
   获取分层查询的xml结果，结果第1列必须是int或者number类型，第2列必须是xml或者xmltype类型。QueryString必须是包含CONNECT BY子句的分层查询。

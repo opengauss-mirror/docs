@@ -4,11 +4,11 @@ shark实现了一种与异常处理的类似的错误处理机制，当TRY控制
 
 ## 注意事项
 
--   本章节只包含shark新增的语法。
+- 本章节只包含shark新增的语法。
 
 ## 语法格式
 
--   BEGIN TRY
+- BEGIN TRY
     { sql_statement | statement_block }
     END TRY
     BEGIN CATCH
@@ -16,14 +16,13 @@ shark实现了一种与异常处理的类似的错误处理机制，当TRY控制
     END CATCH
     [ ; ]
 
-
 ## 参数说明
 
--   **sql_statement**
+- **sql_statement**
 
     除事务管理语句外的任意SQL语句。
 
--   **statement_block**
+- **statement_block**
 
     除事务管理语句外的任意SQL语句块。
 

@@ -18,28 +18,27 @@
 
 ## Syntax<a name="en-us_topic_0237152331_en-us_topic_0059778883_s991d75846f4c48a298084c67b46b40ee"></a>
 
--   Check OS information.
+- Check OS information.
 
     ```
     gs_checkos -i ITEM [-f HOSTFILE] [-h HOSTNAME] [-X XMLFILE] [--detail] [-o OUTPUT] [-l LOGFILE] 
     ```
 
--   Display help information.
+- Display help information.
 
     ```
     gs_checkos -? | --help 
     ```
 
--   Display the version number.
+- Display the version number.
 
     ```
     gs_checkos -V | --version
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0237152331_en-us_topic_0059778883_s79c5f0d8e9e742deacd81d9e296c2960"></a>
 
--   -i
+- -i
 
     Specifies the number of a check item. The format is **-i A**, **-i B1**, and **-i A1 -i A2** or **-i A1,A2**.
 
@@ -53,7 +52,7 @@
 
     [Table 1](#Table 1) lists the check items.
 
--   -f
+- -f
 
     Specifies the file of a host name list.
 
@@ -62,40 +61,39 @@
 
     Value range: a host name list
 
--   -h
+- -h
 
     Specifies the name of a host to be checked. You can specify multiple hosts and separate the host names with commas (,).
 
     Value range: openGauss host name. If no host is specified, the current host is checked.
 
--   -X
+- -X
 
     Specifies the openGauss XML configuration file.
 
--   --detail
+- --detail
 
     Displays detailed check results.
 
--   -o
+- -o
 
     Specifies the file for saving OS check reports.
 
     If this parameter is not specified, OS check results are displayed on the screen.
 
--   -l
+- -l
 
     Specifies a log file and its storage path.
 
     Default value: **/tmp/gs\_checkos/gs\_checkos-YYYY-MM-DD\_hhmmss.log**
 
--   -?, --help
+- -?, --help
 
     Display the help information.
 
--   -V, --version
+- -V, --version
 
     Displays version information.
-
 
 **Table 1** OS check items<a id="Table 1"></a>
 
@@ -273,19 +271,17 @@ The <td class="cellrowborder" valign="top" width="29.24%" headers="mcps1.2.4.1.2
 </tbody>
 </table>
 
-
-
 >[!NOTE]NOTE
 >
-> -   A6 is checked based on the **\[/etc/sysctl.conf\]** and **\[SUGGEST:/etc/sysctl.conf\]** domains in the **check\_list.conf** configuration file.
->    If the parameter value in **\[/etc/sysctl.conf\]** differs from the actual value, An **Abnormal** message is displayed during the check of A6. You can set the parameter by using B1.
->    If the parameter value in **\[SUGGEST:/etc/sysctl.conf\]** differs from the actual value, a **Warning** message is displayed during the check of A6. B1 does not set the parameter. You need to manually set the parameter as needed.
+> - A6 is checked based on the **\[/etc/sysctl.conf\]** and **\[SUGGEST:/etc/sysctl.conf\]** domains in the **check\_list.conf** configuration file.
+> If the parameter value in **\[/etc/sysctl.conf\]** differs from the actual value, An **Abnormal** message is displayed during the check of A6. You can set the parameter by using B1.
+> If the parameter value in **\[SUGGEST:/etc/sysctl.conf\]** differs from the actual value, a **Warning** message is displayed during the check of A6. B1 does not set the parameter. You need to manually set the parameter as needed.
 >
-> -   A7 is checked based on the **open file** parameter in the **\[/etc/security/limits.conf\]** domain in the **check\_list.conf** configuration file. You can set the parameter using B2.
+> - A7 is checked based on the **open file** parameter in the **\[/etc/security/limits.conf\]** domain in the **check\_list.conf** configuration file. You can set the parameter using B2.
 >
-> -   The **mtu**, **rx**, and **tx** parameters of item A11 need to be checked based on the **\[/sbin/ifconfig\]** domain in the **check\_list.conf** configuration file. You can set the **rx** and **tx** parameters using item B5 and set the **mtu** parameter manually.
+> - The **mtu**, **rx**, and **tx** parameters of item A11 need to be checked based on the **\[/sbin/ifconfig\]** domain in the **check\_list.conf** configuration file. You can set the **rx** and **tx** parameters using item B5 and set the **mtu** parameter manually.
 >
-> -   Use configured **gs\_checkos** kernel parameter value and file handles parameter value to restart the new session.
+> - Use configured **gs\_checkos** kernel parameter value and file handles parameter value to restart the new session.
 
 ## OS Parameters<a name="en-us_topic_0237152331_section15489145820128"></a>
 
@@ -535,27 +531,25 @@ The <td class="cellrowborder" valign="top" width="52.04520452045204%" headers="m
 </tbody>
 </table>
 
-
 ## File System Parameters<a name="en-us_topic_0237152331_section975717139147"></a>
 
--   soft nofile
+- soft nofile
 
     Indicates the soft limit. The number of file handles used by a user can exceed this value, but an alarm message will be sent if the value is exceeded.
 
     Recommended value: **1000000**
 
--   hard nofile
+- hard nofile
 
     Indicates the hard limit. The number of file handles used by a user cannot exceed this value.
 
     Recommended value: **1000000**
 
--   stack size
+- stack size
 
     Specifies the thread stack size.
 
     Recommended value: **3072**
-
 
 ## Examples<a name="en-us_topic_0237152331_en-us_topic_0059778883_s0a0dfe17cef247ad9b50e77ed84aff9f"></a>
 

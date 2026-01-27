@@ -37,12 +37,11 @@ gs\_cgroup工具为使用数据库的操作系统用户创建Cgroups配置文件
       gs_cgroup -d -S class1 -G grp1
   ```
 
-  ​	删除当前用户已建的“grp1”Cgroups。
+  ​ 删除当前用户已建的“grp1”Cgroups。
 
   ```
    gs_cgroup -d -S class1
   ```
-
 
   ​    删除当前用户已建的“class1”Cgroups。
 
@@ -63,7 +62,6 @@ b.  更新限制资源配额。
 ```
 gs_cgroup --fixed -u -S class1 -G grp1 -g 30
 ```
-
 
 ​    更新当前用户的class1 Cgroups下属grp1 Cgroups限制使用CPU核数范围占上一级class1可用核数的30%。
 
@@ -341,24 +339,21 @@ ABORT: BlockTime=1200 ElapsedTime=2400
                                                 - Low (shares: 1024, cpus: 0-20, weight: 100)
                                 - TopWD:1 (shares: 9000, cpus: 0-20, weight: 900)
 
-
-
-
 ## 参数说明<a name="zh-cn_topic_0059777958_s2d970209405e437385b0b3d8666e825e"></a>
 
--   -a \[--abort\]
+- -a \[--abort\]
 
     对满足设定的异常阈值的作业执行终止动作。
 
--   -b pct
+- -b pct
 
     Backend Cgroups占用Top Backend资源的百分比，需同时指定“-B backendname”参数。
 
     取值范围
 
-    -   为1 \~ 99。在不进行设置的情况下，默认CPU配额设置为Vacuum控制组占20%，DefaultBackend控制组占80%。Vacuum和DefaultBackend控制组配额之和设置应小于100%。
+    - 为1 \~ 99。在不进行设置的情况下，默认CPU配额设置为Vacuum控制组占20%，DefaultBackend控制组占80%。Vacuum和DefaultBackend控制组配额之和设置应小于100%。
 
--   -B name
+- -B name
 
     Backend Cgroups名称，仅可指定“-u”参数来更新此Cgroups的资源配额。
 
@@ -366,19 +361,19 @@ ABORT: BlockTime=1200 ElapsedTime=2400
 
     取值范围：字符串，最长为64个字节。
 
--   -c
+- -c
 
     创建Cgroups并指定其标识。
 
     普通用户指定“-c”和“-S classname”可以创建新的Class Cgroups，如果再指定“-G groupname”则创建属于Class Cgroups的Workload Cgroups，新的Workload Cgroups位于Class Cgroups的最底层（4层是最底层）。
 
--   -d
+- -d
 
     删除Cgroups及标识。
 
     普通用户指定“-d”和“-S classname”可以删除已有的Class Cgroups，如果再指定“-G groupname”则删除属于Class Cgroups的Workload Cgroups，并将附属的线程重置到“DefaultClass:DefaultWD:1”Cgroups中；若删除的Workload Cgroups位于Class Cgroups的高层（1层是最高层），则需调整低层的Cgroups的层级，重建新的Cgroups附属的线程加载到新的Cgroups。
 
--   -E data
+- -E data
 
     设定异常阈值，目前阈值包括：blocktime、elapsedtime、allcputime、spillsize、broadcastsize以及qualificationtime和cpuskewpercent，指定多个阈值时用“，”分隔。参数值0表示取消设置，设置不合法的值时会提示。
 
@@ -461,21 +456,21 @@ ABORT: BlockTime=1200 ElapsedTime=2400
     </tbody>
     </table>
 
--   -h \[--help\]
+- -h \[--help\]
 
     显示命令帮助信息。
 
--   -H
+- -H
 
     用户环境中$GAUSSHOME信息。
 
     取值范围：字符串，最长为1023个字符。
 
--   -f
+- -f
 
     设置Gaussdb控制组使用的核数范围，范围必须是a-b或a的形式。其他控制组可以使用--fixed进行设置核数范围。
 
--   --fixed
+- --fixed
 
     设置控制组使用的核数范围比例占上一层级的百分比或者设置IO资源。
 
@@ -485,13 +480,13 @@ ABORT: BlockTime=1200 ElapsedTime=2400
 
     设置IO资源配额时，与'-R' '-r' '-W' '-w'一起使用。
 
--   -g pct
+- -g pct
 
     指定Workload Cgroups的资源占用“Class”Cgroups资源的百分比，需同时指定“-G groupname”参数；用于创建“-c”或更新“-u”Workload Cgroups。
 
     取值范围为1 \~ 99。默认Workload控制组CPU配额设置为20%。各Workload控制组配额之和应小于99%。
 
--   -G name
+- -G name
 
     指定Workload Cgroups的名称，需同时指定“-S classname”参数来表示该group属于哪个Class Cgroups；可以连同“-c”参数创建新的Cgroups、“-d”参数删除此Cgroups及“-u”更新此Cgroups的资源配额；需要注意，此名称不可是Timeshare Cgroups的默认名称，如“Low”、“Medium”、“High”或“Rush”。
 
@@ -499,110 +494,110 @@ ABORT: BlockTime=1200 ElapsedTime=2400
 
     取值范围：字符串，最长为28个字节。
 
--   -N \[--group\] name
+- -N \[--group\] name
 
     可以将组名简写成class:wg。
 
--   -p
+- -p
 
     显示Cgroups配置文件的信息。
 
--   -P
+- -P
 
     显示Cgroups树形结构信息。
 
--   --penalty
+- --penalty
 
     对满足设定的异常阈值的作业执行降级动作，如果没有设定任何操作，则该操作将为默认操作。
 
--   -r data
+- -r data
 
     仅用于更新I/O资源读数据上限，用于设置“blkio.throttle.read\_bps\_device”的数值；为字符串类型，该字符串由“major:minor value”构成，其中major为要访问的磁盘的主设备号，minor为要访问的磁盘的次设备号，value为设备每秒读操作次数上限数值，取值范围为0 \~ ULONG\_MAX，其中取值0用来初始化此字段为空；需和“-u”参数及Cgroups名称一同使用；如果Class Cgroups和Workload Cgroups的名称同时指定，则只应用到Workload Cgroups。
 
     取值范围：字符串，最长为32个字符。
 
--   -R data
+- -R data
 
     仅用于更新IO资源每秒读操作次数上限，用于设置“blkio.throttle.read\_iops\_device”的数值；取值信息同“-r”参数；需和“-u”参数及Cgroups名称一同使用；如果Class Cgroups和Workload Cgroups的名称同时指定，则只应用到Workload Cgroups。
 
     取值范围：字符串，最长为32个字符。
 
--   --recover
+- --recover
 
     仅用于回退Class控制组和Workload控制组的增删改操作，且只能回退一步。
 
--   --revert
+- --revert
 
     恢复控制组为默认状态。
 
--   -D mpoint
+- -D mpoint
 
     指定的挂载点，默认的挂载点“/dev/cgroup/subsystem”。
 
--   -m
+- -m
 
     挂载cgroup。
 
--   -M
+- -M
 
     取消挂载cgroup。
 
--   -U
+- -U
 
     数据库用户名称。
 
--   --refresh
+- --refresh
 
     刷新控制组状态。
 
--   -s pct
+- -s pct
 
     指定Class Cgroups的资源占用“Top Class”Cgroups资源的百分比，需同时指定“-S classname”参数；用于创建“-c”或更新“-u”Class Cgroups。
 
     取值范围为1-99。默认Class控制组的CPU配额设置为20%，R6C10版本中，Class控制组的CPU配额设置为40%，升级过程中，不会对此配额做更新。新创建的Class控制组的CPU配额以及默认的DefaultClass之和应小于100%。
 
--   -S name
+- -S name
 
     指定Class group的名称；可以连同“-c”参数创建新的Cgroups、“-d”参数删除此Cgroups及“-u”更新此Cgroups的资源配额。创建子Class名称不能带‘：’。
 
     取值范围：字符串，最长为31个字节。
 
--   -t percent
+- -t percent
 
     指定Top Cgroups（Root、Gaussdb:omm、Backend和Class Cgroups）占用资源的百分比，需同时指定“-T name”参数。若指定“-T Root”所在的Cgroups，其在Cgroups配置文件中显示的名称为“Root”，此数值代表的含义是blkio.weight值的百分比，最小值为10%，CPU资源配额如cpu.shares的数值不可修改；若指定“Gaussdb:omm” Cgroups，则表示占用整个系统CPU资源的百分比（可根据Root Cgroups的默认CPU配额1024得出该组的cpu.shares数值，此数值默认当前系统仅含有1套数据库环境），对于IO资源配额为1000，不再变化;若指定“Class”或“Backend”Cgroups，则表示资源占用“Gaussdb”Cgroups资源的百分比。
 
     取值范围为1 \~ 99。默认Class控制组配额为60%， Backend控制组配额为40%。修改Class控制组配额，同时会自动更新Backend控制组配额，使两者之和保持100%。
 
--   -T name
+- -T name
 
     指定Top Cgroups的名称。
 
     取值范围：字符串，最长为64个字节。
 
--   -u
+- -u
 
     更新Cgroups。
 
--   -V \[--version\]
+- -V \[--version\]
 
     显示gs\_cgroup工具的版本信息。
 
--   -w data
+- -w data
 
     仅用于更新I/O资源每秒写数据上限，用于设置“blkio.throttle.write\_bps\_device”的数值。取值信息同“-r”参数，需和“-u”参数及Cgroups名称一同使用。如果Class Cgroups和Workload Cgroups的名称同时指定，则只应用到Workload Cgroups。
 
     取值范围：字符串，最长为32个字符。
 
--   -W data
+- -W data
 
     仅用于更新IO资源每秒写操作次数上限，用于设置“blkio.throttle.write\_iops\_device”的数值。取值信息同“-r”参数，需和“-u”参数及Cgroups名称一同使用。如果Class Cgroups和Workload Cgroups的名称同时指定，则只应用到Workload Cgroups。
 
     取值范围：字符串，最长为32个字符。
 
-
 >[!NOTE]说明
 >
 >对于磁盘major:minor的编号获取，可以通过下面方式。如获取/mpp目录对应的磁盘编号：
+>
 >```
 >> df 
 >Filesystem      1K-blocks      Used  Available Use% Mounted on
@@ -617,8 +612,6 @@ ABORT: BlockTime=1200 ElapsedTime=2400
 >brw-rw---- 1 root disk 8, 48 Feb 26 11:20 /dev/sdd
 >```
 
-
 >[!TIP]须知
 >这里一定要查sdd的磁盘号，不能是sdd1的磁盘号。否则执行时会报错。
 >如果更新IO的限额配置信息超过了可允许的最大配置字串，则新的更新不存储在配置文件中。如当前设置的字串长度为96，更新IO的磁盘数量大于8个，则有可能超出字串限制，更新成功，但是不存储在配置文件中。
-

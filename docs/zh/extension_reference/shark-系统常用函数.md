@@ -419,6 +419,7 @@
     返回值类型：double precision
 
     示例：
+
     ```
     openGauss=# select atan2(1.2, 2.5);
          atan2      
@@ -436,6 +437,7 @@
     返回值类型：int
 
     示例：
+
     ```
     openGauss=# select charindex('aaa', 'aaa bbb ccc aaa');
      charindex 
@@ -495,6 +497,7 @@
     返回值类型：bigint
 
     示例
+
     ```
     openGauss=# select datediff_big(second, timestamp'1997-12-31 23:59:59', timestamp'1998-12-31 23:59:59');
      datediff_big 
@@ -515,6 +518,7 @@
     - D库中，length默认值为30，该默认值主要适用于字符串相关类型，目前D兼容模式下`char`和`varchar`及其别名类型都适用该length默认值
 
     示例：
+
     ```
     openGauss=# select cast(123456789 AS char) as result;
              result             
@@ -736,7 +740,6 @@
         </tbody>
     </table>
 
-    
     **表3** money样式
 
     <table aria-label="表 3" class="table table-sm margin-top-none">
@@ -767,6 +770,7 @@
     </table>
 
     示例：
+
     ```
     openGauss=# select convert(varchar, timestamp'2012-03-23 00:12:23', 1) as result;
       result  
@@ -1272,4 +1276,3 @@
      5
     (1 row)
     ```
-

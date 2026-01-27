@@ -13,42 +13,42 @@ gs_encrypt [OPTION]... PLAINTEXT
 ```
 
 >[!NOTE]NOTE 
->-   *PLAINTEXT*  does not follow a short or long option.
->-   *PLAINTEXT*  indicates the plaintext string to be encrypted.
+>
+>- *PLAINTEXT*  does not follow a short or long option.
+>- *PLAINTEXT*  indicates the plaintext string to be encrypted.
 
 ## Parameter Description<a name="section13415675164452"></a>
 
--   -?, --help
+- -?, --help
 
     Displays help information.
 
--   -V, --version
+- -V, --version
 
     Displays version information.
 
--   -k  *PASSWORD*, --key=*PASSWORD*
+- -k  *PASSWORD*, --key=*PASSWORD*
 
     Password entered by a user. It is used to derive the key for encryption. The password must contain 8 to 16 characters, including at least three types of the following: uppercase letters, lowercase letters, digits, and special characters.
 
--   -v  *VectorValue*, --vector=*VectorValue*
+- -v  *VectorValue*, --vector=*VectorValue*
 
     Salt value entered by a user. It is used to scramble passwords during one-way password hash calculation. The string must contain 16 characters.
 
--   -f  *FilePrefix*, --file-prefix=*FilePrefix*
+- -f  *FilePrefix*, --file-prefix=*FilePrefix*
 
     Prefix of the cipher and rand files used for encryption. The cipher and rand files must be stored in  **$GAUSSHOME/bin**.
 
--   -B  *Value*, --key-base64=*Value*
+- -B  *Value*, --key-base64=*Value*
 
     Base64 plaintext key used for encryption.
 
--   -D  *Value*, --vector-base64=*Value*
+- -D  *Value*, --vector-base64=*Value*
 
     Base64 random string used for encryption. The length of the string before base64 encoding must be 16 characters.
 
     >[!NOTE]NOTE 
     >For security purposes, you are advised to set  **HISTCONTROL**  to  **ignorespace**  before using the gs\_encrypt tool to forcibly not record sensitive historical commands and add a space before the  **gs\_encrypt**  command.
-
 
 ## Examples<a name="section18560463164452"></a>
 
@@ -66,7 +66,7 @@ G0R7Y2oROfuiEjWtUBx9+eHP3I21A1wMOJ2onVQIiAsxMjM0NTY3ODkwMTIzNDU2
 
 Example 2: Encrypt a plaintext string by using cipher and rand files \(invoke the files by entering their prefixes\).
 
-1.  Run the following commands to generate the cipher and rand files:
+1. Run the following commands to generate the cipher and rand files:
 
     ```
     gs_guc generate -S Mppdb@123 -D $GAUSSHOME/bin -o test
@@ -78,7 +78,7 @@ Example 2: Encrypt a plaintext string by using cipher and rand files \(invoke th
     gs_guc encrypt -S ***
     ```
 
-2.  Perform the encryption operation.
+2. Perform the encryption operation.
 
     ```
     gs_encrypt -f test test_encrypt
@@ -90,10 +90,9 @@ Example 2: Encrypt a plaintext string by using cipher and rand files \(invoke th
     tSWpR8aFyF4GHVIVO7QNXhEMNlTcqRMrk172nAf2hLgSQwhcFWyP7X0QVS0SONon
     ```
 
-
 Example 3: Encrypt a plaintext string by using a Base64 key and a Base64 vector.
 
-1.  Enter the key encrypted using Base64.
+1. Enter the key encrypted using Base64.
 
     ```
     python
@@ -107,7 +106,7 @@ Example 3: Encrypt a plaintext string by using a Base64 key and a Base64 vector.
     R2F1c3NAMTIz
     ```
 
-2.  Enter the vector ciphertext encrypted using Base64.
+2. Enter the vector ciphertext encrypted using Base64.
 
     ```
     >>> print base64.b64encode("1234567890abcdef");
@@ -119,7 +118,7 @@ Example 3: Encrypt a plaintext string by using a Base64 key and a Base64 vector.
     MTIzNDU2Nzg5MGFiY2RlZg==
     ```
 
-3.  Perform the encryption operation.
+3. Perform the encryption operation.
 
     ```
     gs_encrypt -B R2F1c3NAMTIz -D MTIzNDU2Nzg5MGFiY2RlZg==  test_encrypt

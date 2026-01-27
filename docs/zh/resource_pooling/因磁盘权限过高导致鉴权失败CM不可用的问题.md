@@ -17,6 +17,7 @@ LOG: open gaussdb state file "/.../.../dn1/gaussdb.state" failed, could not get 
 2024-10-09 11:07:58.966 tid=313678  ERROR: [get_connection: 1526]: fail to read pid file (/.../.../dn1/postmaster.pid).
 2024-10-09 11:07:58.966 tid=313678  ERROR: failed to connect to datanode:/.../.../dn1
 ```
+
 可以看到，是`CM`目录权限不足。
 
 ## 问题根因

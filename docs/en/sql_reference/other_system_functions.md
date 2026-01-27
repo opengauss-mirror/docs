@@ -3878,21 +3878,19 @@ The built-in functions and operators of openGauss are inherited from the open-so
 
 The following table lists the functions used by openGaussGaussDB Kernel to implement internal system functions. You are not advised to use these functions. If you need to use them, contact Huawei technical support.
 
--   pv\_compute\_pool\_workload\(\)
+- pv\_compute\_pool\_workload\(\)
 
     Description: Provides the current load information of the cloud acceleration database instance.
 
     Return type: record
 
-
--   locktag\_decode\(locktag text\)
+- locktag\_decode\(locktag text\)
 
     Description: Parses lock details from  **locktag**.
 
     Return type: text
 
-
--   smgreq\(a smgr, b smgr\)
+- smgreq\(a smgr, b smgr\)
 
     Description: Compares two smgrs to check whether they are the same.
 
@@ -3900,7 +3898,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: Boolean
 
--   smgrne\(a smgr, b smgr\)
+- smgrne\(a smgr, b smgr\)
 
     Description: Checks whether the two smgrs are different.
 
@@ -3908,7 +3906,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: Boolean
 
--   xidin4
+- xidin4
 
     Description: Inputs a 4-byte xid.
 
@@ -3916,7 +3914,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: xid32
 
--   set\_hashbucket\_info
+- set\_hashbucket\_info
 
     Description: Sets hash bucket information.
 
@@ -3924,7 +3922,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: Boolean
 
--   hs\_concat
+- hs\_concat
 
     Description: Concatenates two pieces of hstore data.
 
@@ -3932,7 +3930,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: hstore
 
--   hs\_contained
+- hs\_contained
 
     Description: Determines whether two hstore data records are included. The return value is of the Boolean type.
 
@@ -3940,7 +3938,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: Boolean
 
--   hs\_contains
+- hs\_contains
 
     Description: Determines whether two hstore data records are included. The return value is of the Boolean type.
 
@@ -3948,7 +3946,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: Boolean
 
--   hstore
+- hstore
 
     Description: Converts parameters to the hstore type.
 
@@ -3956,7 +3954,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: hstore
 
--   hstore\_in
+- hstore\_in
 
     Description: Receives hstore data in string format.
 
@@ -3964,7 +3962,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: hstore
 
--   hstore\_out
+- hstore\_out
 
     Description: Sends hstore data in string format.
 
@@ -3972,7 +3970,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: cstring
 
--   hstore\_send
+- hstore\_send
 
     Description: Sends hstore data in bytea format.
 
@@ -3980,7 +3978,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: bytea
 
--   hstore\_to\_array
+- hstore\_to\_array
 
     Description: Sends hstore data in text array format.
 
@@ -3988,7 +3986,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: text\[\]
 
--   hstore\_to\_matrix
+- hstore\_to\_matrix
 
     Description: Sends hstore data in text array format.
 
@@ -3996,7 +3994,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: text\[\]
 
--   hstore\_version\_diag
+- hstore\_version\_diag
 
     Description: Sends hstore data in integer array format.
 
@@ -4004,7 +4002,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: integer
 
--   int1send
+- int1send
 
     Description: Packs unsigned 1-byte integers into the internal data buffer stream.
 
@@ -4012,7 +4010,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: bytea
 
--   isdefined
+- isdefined
 
     Description: Checks whether a specified key exists.
 
@@ -4020,7 +4018,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: Boolean
 
--   listagg
+- listagg
 
     Description: Specifies aggregate functions of the list type.
 
@@ -4028,7 +4026,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: text
 
--   log\_fdw\_validator
+- log\_fdw\_validator
 
     Description: Specifies validation functions.
 
@@ -4036,7 +4034,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: void
 
--   nvarchar2typmodin
+- nvarchar2typmodin
 
     Description: Obtains the typmod information of the varchar type.
 
@@ -4044,7 +4042,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: integer
 
--   nvarchar2typmodout
+- nvarchar2typmodout
 
     Description: Obtains the typmod information of the varchar type, constructs a character string, and returns the character string.
 
@@ -4052,7 +4050,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: cstring
 
--   read\_disable\_conn\_file
+- read\_disable\_conn\_file
 
     Description: Reads forbidden connection files.
 
@@ -4060,7 +4058,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: disconn\_mode text, disconn\_host text, disconn\_port text, local\_host text, local\_port text, redo\_finished text
 
--   regex\_like\_m
+- regex\_like\_m
 
     Description: Specifies the regular expression match, which is used to determine whether a character string complies with a specified regular expression.
 
@@ -4068,7 +4066,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: Boolean
 
--   update\_pgjob
+- update\_pgjob
 
     Description: Updates a job.
 
@@ -4076,7 +4074,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: void
 
--   enum\_cmp
+- enum\_cmp
 
     Description: Specifies the enumeration comparison function, which is used to determine whether two enumeration classes are equal and determine their relative sizes.
 
@@ -4084,7 +4082,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: integer
 
--   enum\_eq
+- enum\_eq
 
     Description: Specifies the enumeration comparison function, which is used to implement the equal sign \(=\).
 
@@ -4092,7 +4090,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: Boolean
 
--   enum\_first
+- enum\_first
 
     Description: Returns the first element in the enumeration class.
 
@@ -4100,7 +4098,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: anyenum
 
--   enum\_ge
+- enum\_ge
 
     Description: Specifies the enumeration comparison function, which is used to implement the greater-than sign \(\>\) and equal sign \(=\).
 
@@ -4108,7 +4106,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: Boolean
 
--   enum\_gt
+- enum\_gt
 
     Description: Specifies the enumeration comparison function, which is used to implement the greater-than sign \(\>\).
 
@@ -4116,7 +4114,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: Boolean
 
--   enum\_in
+- enum\_in
 
     Description: Specifies the enumeration comparison function, which is used to determine whether an element is in an enumeration class.
 
@@ -4124,7 +4122,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: anyenum
 
--   enum\_larger
+- enum\_larger
 
     Description: Specifies the enumeration comparison function, which is used to implement the greater-than sign \(\>\).
 
@@ -4132,7 +4130,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: anyenum
 
--   enum\_last
+- enum\_last
 
     Description: Returns the last element in the enumeration class.
 
@@ -4140,7 +4138,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: anyenum
 
--   enum\_le
+- enum\_le
 
     Description: Specifies the enumeration comparison function, which is used to implement the less-than sign \(<\) and equal sign \(=\).
 
@@ -4148,7 +4146,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: Boolean
 
--   enum\_lt
+- enum\_lt
 
     Description: Specifies the enumeration comparison function, which is used to implement the less-than sign \(<\).
 
@@ -4156,7 +4154,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: Boolean
 
--   enum\_smaller
+- enum\_smaller
 
     Description: Specifies the enumeration comparison function, which is used to implement the less-than sign \(<\).
 
@@ -4164,7 +4162,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: Boolean
 
--   node\_oid\_name
+- node\_oid\_name
 
     Description: Not supported.
 
@@ -4172,7 +4170,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: cstring
 
--   pg\_buffercache\_pages
+- pg\_buffercache\_pages
 
     Description: Reads status data from a shared buffer.
 
@@ -4278,7 +4276,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
     </tbody>
     </table>
 
--   pg\_check\_xidlimit
+- pg\_check\_xidlimit
 
     Description: Checks whether nextxid is greater than or equal to xidwarnlimit.
 
@@ -4286,7 +4284,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: Boolean
 
--   pg\_comm\_delay
+- pg\_comm\_delay
 
     Description: Displays the delay status of the communication library of a single DN.
 
@@ -4294,7 +4292,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: text, text, integer, integer, integer, integer
 
--   pg\_comm\_recv\_stream
+- pg\_comm\_recv\_stream
 
     Description: Displays the receiving stream status of all communication libraries on a single DN.
 
@@ -4302,7 +4300,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: text, bigint, text, bigint, integer, integer, integer, text, bigint, integer, integer, integer, bigint, bigint, bigint, bigint, bigint
 
--   pg\_comm\_send\_stream
+- pg\_comm\_send\_stream
 
     Description: Displays the sending stream status of all communication libraries on a single DN.
 
@@ -4310,7 +4308,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: text, bigint, text, bigint, integer, integer, integer, text, bigint, integer, integer, integer, bigint, bigint, bigint, bigint, bigint
 
--   pg\_comm\_status
+- pg\_comm\_status
 
     Description: Displays the communication status of a single DN.
 
@@ -4318,7 +4316,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: text, integer, integer, bigint, bigint, bigint, bigint, bigint, integer, integer, integer, integer, integer
 
--   pg\_log\_comm\_status
+- pg\_log\_comm\_status
 
     Description: Prints some logs on the DN.
 
@@ -4326,7 +4324,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: Boolean
 
--   pg\_parse\_clog
+- pg\_parse\_clog
 
     Description: Parses clog to obtain the status of xid.
 
@@ -4334,7 +4332,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: xid xid, status text
 
--   pg\_pool\_ping
+- pg\_pool\_ping
 
     Description: Sets PoolerPing.
 
@@ -4342,7 +4340,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: SETOF boolean
 
--   pg\_resume\_bkp\_flag
+- pg\_resume\_bkp\_flag
 
     Description: Obtains the delay xlong flag for backup and restoration.
 
@@ -4381,33 +4379,31 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
        base/11874/16447   |         4096 |       262144 |         80650
        base/11874/16447.1 |         4096 |        65726 |         80650
 
--   pgfadvise\_NORMAL
+- pgfadvise\_NORMAL
 
     Description: Sets the NORMAL flag for the current relationship.
 
--   pgfadvise\_SEQUENTIAL
+- pgfadvise\_SEQUENTIAL
 
     Description: Sets the SEQUENTIAL flag for the current relationship.
 
--   pgfadvise\_RANDOM
+- pgfadvise\_RANDOM
 
     Description: Sets the RANDOM flag for the current relationship.
 
--   pgfadvise\_loader
+- pgfadvise\_loader
 
     Description: Allows direct interaction with the page cache. It may be used to load and/or unload a page from memory according to varbit representing a mapping of the page to be loaded/unloaded.
 
     Parameters:
-    -   The first parameter specifies the table name or index name. Partitioned tables and level-2 partitioned tables are supported. Column-store tables and segment-page tables are not supported.
-    -   The second parameter is **forkname**. The data of each relationship is stored in a so-called fork. Generally, the default value of **forkname** is **main**. This parameter can be omitted.
-    -   The third parameter specifies a relationship type. A character needs to be transferred. For a common relationship, the value of this parameter is **'r'**. For a partitioned table, the value of this parameter is **'p'**. For a level-2 partitioned table, the value of this parameter is **'s'**.
-    -   The fourth parameter: For a partition table, this parameter indicates the name of the partition. For a level-2 partitioned table, this parameter indicates the name of the level-2 partition. For an ordinary table, set this parameter to **NULL**. If other values are transferred, the query of the ordinary table is not affected.
-    -   The fifth parameter specifies the segment number.
-    -   The sixth parameter returns a Boolean value, indicating whether to perform the load operation.
-    -   The seventh parameter returns a Boolean value, indicating whether to perform the unload operation.
-    -   The eighth parameter is databit. This parameter is generally obtained by using pgfincore().
-
-
+    - The first parameter specifies the table name or index name. Partitioned tables and level-2 partitioned tables are supported. Column-store tables and segment-page tables are not supported.
+    - The second parameter is **forkname**. The data of each relationship is stored in a so-called fork. Generally, the default value of **forkname** is **main**. This parameter can be omitted.
+    - The third parameter specifies a relationship type. A character needs to be transferred. For a common relationship, the value of this parameter is **'r'**. For a partitioned table, the value of this parameter is **'p'**. For a level-2 partitioned table, the value of this parameter is **'s'**.
+    - The fourth parameter: For a partition table, this parameter indicates the name of the partition. For a level-2 partitioned table, this parameter indicates the name of the level-2 partition. For an ordinary table, set this parameter to **NULL**. If other values are transferred, the query of the ordinary table is not affected.
+    - The fifth parameter specifies the segment number.
+    - The sixth parameter returns a Boolean value, indicating whether to perform the load operation.
+    - The seventh parameter returns a Boolean value, indicating whether to perform the unload operation.
+    - The eighth parameter is databit. This parameter is generally obtained by using pgfincore().
 
     Example: The relationship name is  **pgbench\_accounts**, the segment number is 0, and any varbit mapping is used.
 
@@ -4445,7 +4441,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
     base/11874/16447 |         4096 |         80867 |       262144 |              0
     ```
 
--   pgfincore
+- pgfincore
 
     Description: Provides information about the file system cache \(page cache\).
 
@@ -4463,18 +4459,18 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     For a specified relationship, the function returns the following column:
 
-    -   **relpath**: path of the relationship.
-    -   **segment**: number of the segment to be analyzed.
-    -   **os\_page\_size**: size of a page.
-    -   **rel\_os\_pages**: total number of pages of the relationship.
-    -   **pages\_mem**: total number of pages of the relationship in the page cache. \(not from the PostgreSQL shared buffer, but from the operating system cache\).
-    -   **group\_mem**: number of groups of adjacent pages\_mem.
-    -   **os\_page\_free**: number of idle pages in the OS page cache.
-    -   **databit**: varbit mapping of the file. To output this column, use  **pgfincore\('pgbench\_accounts', true\)**  to activate it. If no data is inserted into a table and true is used to activate the table, no value is displayed for this column.
-    -   **pages\_dirty**: If the HAVE\_FINCORE constant is defined, the platform provides related information, which is similar to  **pages\_mem**  except for dirty pages.
-    -   **group\_dirty**: If the HAVE\_FINCORE constant is defined, the platform provides related information, which is similar to  **group\_mem**  except for dirty pages.
+    - **relpath**: path of the relationship.
+    - **segment**: number of the segment to be analyzed.
+    - **os\_page\_size**: size of a page.
+    - **rel\_os\_pages**: total number of pages of the relationship.
+    - **pages\_mem**: total number of pages of the relationship in the page cache. \(not from the PostgreSQL shared buffer, but from the operating system cache\).
+    - **group\_mem**: number of groups of adjacent pages\_mem.
+    - **os\_page\_free**: number of idle pages in the OS page cache.
+    - **databit**: varbit mapping of the file. To output this column, use  **pgfincore\('pgbench\_accounts', true\)**  to activate it. If no data is inserted into a table and true is used to activate the table, no value is displayed for this column.
+    - **pages\_dirty**: If the HAVE\_FINCORE constant is defined, the platform provides related information, which is similar to  **pages\_mem**  except for dirty pages.
+    - **group\_dirty**: If the HAVE\_FINCORE constant is defined, the platform provides related information, which is similar to  **group\_mem**  except for dirty pages.
 
--   pgsysconf
+- pgsysconf
 
     Description: Outputs the size of the operating system block and the number of free pages in the operating system page buffer.
 
@@ -4487,7 +4483,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
              4096 |         80431 |        4094174
     ```
 
--   pgsysconf\_pretty
+- pgsysconf\_pretty
 
     Description: The function is similar to the preceding function. The difference is that the function converts the unit for easy reading.
 
@@ -4501,7 +4497,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
     
     ```
 
--   pgfincore\_drawer
+- pgfincore\_drawer
 
     Description: A very simple renderer. This function requires a varbit parameter. Generally, the value of this parameter comes from the  **databit**  return column of the  **pgfincore**  function. The value of the  **databit**  column consists of 0 and 1. If the value is  **0**, it indicates that the page is not in the page cache of the operating system. If the value is  **1**, it indicates that the page is in the page cache of the operating system.
 
@@ -4519,7 +4515,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
        ...    
     ```
 
--   psortoptions
+- psortoptions
 
     Description: Returns the psort attribute.
 
@@ -4527,7 +4523,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: bytea
 
--   xideq4
+- xideq4
 
     Description: Compares two values of the xid type to check whether they are the same.
 
@@ -4535,7 +4531,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: Boolean
 
--   xideqint8
+- xideqint8
 
     Description: Compares values of the xid type and int8 type to check whether they are the same.
 
@@ -4543,7 +4539,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: Boolean
 
--   xidlt
+- xidlt
 
     Description: Returns whether xid1 < xid2 is true.
 
@@ -4551,11 +4547,10 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Return type: Boolean
 
--   xidlt4
+- xidlt4
 
     Description: Returns whether xid1 < xid2 is true.
 
     Parameter: xid32, xid32
 
     Return type: Boolean
-

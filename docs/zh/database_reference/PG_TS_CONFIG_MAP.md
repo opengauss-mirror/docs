@@ -53,4 +53,3 @@ PG\_TS\_CONFIG\_MAP系统表包含为每个文本搜索配置的解析器的每�
 </tr>
 </tbody>
 </table>
-

@@ -6,11 +6,11 @@
 
 ## Precautions<a name="en-us_topic_0283137549_en-us_topic_0237122153_en-us_topic_0059779073_s8573862b21234deaa562c0502d4cae55"></a>
 
--   Only the tablespace owner or a user granted with the DROP permission can run the  **DROP TABLESPACE**  command. The system administrator has this permission by default.
--   The tablespace to be deleted should not contain any database objects. Otherwise, an error will be reported.
--   **DROP TABLESPACE**  cannot be rolled back and therefore cannot be run in transaction blocks.
--   During execution of  **DROP TABLESPACE**, database queries by other sessions using  **\\db**  may fail and need to be reattempted.
--   If  **DROP TABLESPACE**  fails to be executed, run  **DROP TABLESPACE IF EXISTS**.
+- Only the tablespace owner or a user granted with the DROP permission can run the  **DROP TABLESPACE**  command. The system administrator has this permission by default.
+- The tablespace to be deleted should not contain any database objects. Otherwise, an error will be reported.
+- **DROP TABLESPACE**  cannot be rolled back and therefore cannot be run in transaction blocks.
+- During execution of  **DROP TABLESPACE**, database queries by other sessions using  **\\db**  may fail and need to be reattempted.
+- If  **DROP TABLESPACE**  fails to be executed, run  **DROP TABLESPACE IF EXISTS**.
 
 ## Syntax<a name="en-us_topic_0283137549_en-us_topic_0237122153_en-us_topic_0059779073_s6c3564e4565e4a808f931d50ab12c041"></a>
 
@@ -20,16 +20,15 @@ DROP TABLESPACE [ IF EXISTS ] tablespace_name;
 
 ## Parameter Description<a name="en-us_topic_0283137549_en-us_topic_0237122153_en-us_topic_0059779073_sd3609e09c22149eba3e6e64c989573b6"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Reports a notice instead of an error if the specified tablespace does not exist.
 
--   **tablespace\_name**
+- **tablespace\_name**
 
     Specifies the name of the tablespace to be deleted.
 
     Value range: an existing tablespace name
-
 
 ## Examples<a name="en-us_topic_0283137549_en-us_topic_0237122153_en-us_topic_0059779073_sbcb08a6a5edc433b951080b230808c35"></a>
 
@@ -41,8 +40,6 @@ See  [Examples](create_tablespace.md#en-us_topic_0283137328_en-us_topic_02371221
 
 ## Suggestions<a name="en-us_topic_0283137549_en-us_topic_0237122153_en-us_topic_0059779073_section29255108114255"></a>
 
--   drop database
+- drop database
 
     Do not delete databases during transactions.
-
-

@@ -14,23 +14,21 @@ LOCK [ TABLE ] name  IN lock_mode MODE
 
 ## 参数说明<a name="section6973139183420"></a>
 
--   **name**
+- **name**
 
     要锁定的表的名称。
 
--   **lock\_mode**
+- **lock\_mode**
 
     锁的模式。基本的有：
 
-    -   **ACCESS EXCLUSIVE**
+    - **ACCESS EXCLUSIVE**
 
         这个模式保证其所有者（事务）是可以访问该表的唯一事务。也是缺省锁模式。
 
-    -   **ACCESS SHARE**
+    - **ACCESS SHARE**
 
         只读取表而不修改的锁模式。
-
-
 
 ## 示例<a name="zh-cn_topic_0283136808_zh-cn_topic_0237122168_zh-cn_topic_0059778442_s9884bdbe455b460a9a2dde267283b75b"></a>
 
@@ -69,4 +67,3 @@ openGauss=# DELETE FROM graderecord WHERE name ='Alan';
 
 openGauss=# COMMIT;
 ```
-

@@ -112,7 +112,6 @@ gs_om -t kerberos -m install -U USER --krb-server IP1 --krb-standby IP2
 gs_om -t kerberos -m install -U USER --krb-client
 ```
 
-
 使环境变量配置生效：
 
 ```bash

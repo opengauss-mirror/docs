@@ -2,7 +2,7 @@
 
 ## Set Operators<a name="section423710350429"></a>
 
--   =
+- =
 
     Parameter type: nest-table
 
@@ -27,7 +27,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   <\>
+- <\>
 
     Parameter type: nest-table
 
@@ -52,10 +52,9 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
-
 ## MULTISET<a name="section1678113016436"></a>
 
--   MULTISET UNION \[ALL | DISTINCT\]
+- MULTISET UNION \[ALL | DISTINCT\]
 
     Parameter type: nest-table
 
@@ -91,7 +90,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   MULTISET EXCEPT \[ALL | DISTINCT\]
+- MULTISET EXCEPT \[ALL | DISTINCT\]
 
     Parameter type: nest-table
 
@@ -127,7 +126,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   MULTISET INTERSECT \[ALL | DISTINCT\]
+- MULTISET INTERSECT \[ALL | DISTINCT\]
 
     Parameter type: nest-table
 
@@ -163,10 +162,9 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
-
 ## Set Types<a name="section1525493416436"></a>
 
--   exists\(idx\)
+- exists\(idx\)
 
     Parameter: *idx* is of the int4 or varchar type.
 
@@ -211,7 +209,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   extend\[\(count\[, idx\]\)\]
+- extend\[\(count\[, idx\]\)\]
 
     Parameters: *idx* and *count* are of the int4 type.
 
@@ -264,7 +262,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   delete\[\(idx1\[, idx2\]\)\]
+- delete\[\(idx1\[, idx2\]\)\]
 
     Parameters: *idx1* and *idx2* are of the int4 or varchar2 type.
 
@@ -317,7 +315,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   trim\[\(n\)\]
+- trim\[\(n\)\]
 
     Parameter: *n* is of the int4 type.
 
@@ -347,7 +345,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   count
+- count
 
     Parameter: none
 
@@ -382,7 +380,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   first
+- first
 
     Parameter: none
 
@@ -417,7 +415,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   last
+- last
 
     Parameter: none
 
@@ -452,7 +450,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   prior\(idx\)
+- prior\(idx\)
 
     Parameter: *idx* is of the int or varchar type.
 
@@ -487,7 +485,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   next\(idx\)
+- next\(idx\)
 
     Parameter: *idx* is of the int or varchar type.
 
@@ -522,7 +520,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   limit
+- limit
 
     Parameter: none
 
@@ -544,10 +542,9 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
-
 ## Set-related Functions<a name="section139035984313"></a>
 
--   unnest\_table\(anynesttable\)
+- unnest\_table\(anynesttable\)
 
     Description: Returns a set of elements in a nest-table.
 
@@ -590,8 +587,7 @@
     (1 row)
     ```
 
-
--   unnest\_table\(anyindexbytable\)
+- unnest\_table\(anyindexbytable\)
 
     Description: Returns the set of elements in an index-by table sorted by index.
 

@@ -14,12 +14,12 @@ The operator name is a character string consisting of the following characters:
 
 When selecting a name, note the following restrictions:
 
--   -- and /\* cannot appear anywhere in the operator name, because they are regarded as the beginning of a comment.
--   A multi-character operator cannot end with + or - unless the name contains at least one of the following characters:
+- -- and /\* cannot appear anywhere in the operator name, because they are regarded as the beginning of a comment.
+- A multi-character operator cannot end with + or - unless the name contains at least one of the following characters:
 
     \~ ! @ \# % ^ & | \` ?
 
--   =\> The operator name is no longer used.
+- =\> The operator name is no longer used.
 
 Operator! = is mapped to <\> when being entered. Therefore, the two names are always equivalent.
 
@@ -45,43 +45,43 @@ CREATE OPERATOR name (
 
 ## Parameter Description<a name="section16332145219811"></a>
 
--   **name**
+- **name**
 
     Operator to be defined. The available characters are listed above. The name can be schema-qualified, for example, CREATE OPERATOR myschema.+ \(...\). If there is no schema, the operator is created in the current schema. Two operators in the same schema can have the same name as long as they operate on different data types. This is a reloading process.
 
--   **function\_name**
+- **function\_name**
 
     Function used to implement the operator.
 
--   **left\_type**
+- **left\_type**
 
     Parameter data type on the left of the operator, if any. This parameter can be omitted if the left operator is used.
 
--   **right\_type**
+- **right\_type**
 
     Parameter data type on the right of the operator, if any. This parameter can be omitted if the right-view operator is used.
 
--   **com\_op**
+- **com\_op**
 
     Exchange operator corresponding to the operator.
 
--   **neg\_op**
+- **neg\_op**
 
     Negative operator corresponding to the operator.
 
--   **res\_proc**
+- **res\_proc**
 
     This operator constrains the selectivity evaluation function.
 
--   **join\_proc**
+- **join\_proc**
 
     This operator joins the selectivity evaluation function.
 
--   **HASHES**
+- **HASHES**
 
     Indicates that the operator supports hash joins.
 
--   **MERGES**
+- **MERGES**
 
     Indicates that this operator supports a merge join.
 
@@ -90,7 +90,6 @@ CREATE OPERATOR name (
     ```
     COMMUTATOR = OPERATOR(myschema.===) ,
     ```
-
 
 ## Example<a name="section64461832121211"></a>
 
@@ -108,4 +107,3 @@ CREATE OPERATOR === (
     HASHES, MERGES
 );
 ```
-

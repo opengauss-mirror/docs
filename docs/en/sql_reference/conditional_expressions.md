@@ -4,7 +4,7 @@ Data that meets the requirements specified by conditional expressions are filter
 
 Conditional expressions include the following types:
 
--   CASE
+- CASE
 
     **CASE**  expressions are similar to the  **CASE**  statements in other coding languages.
 
@@ -15,9 +15,9 @@ Conditional expressions include the following types:
 
     A  **CASE**  clause can be used in a valid expression.  **condition**  is an expression that returns a value of Boolean type.
 
-    -   If the result is true, the result of the  **CASE**  expression is the required result.
-    -   If the result is false, the following  **WHEN**  or  **ELSE**  clauses are processed in the same way.
-    -   If every  **WHEN condition**  is false, the result of the expression is the result of the  **ELSE**  clause. If the  **ELSE**  clause is omitted and has no match condition, the result is NULL.
+    - If the result is true, the result of the  **CASE**  expression is the required result.
+    - If the result is false, the following  **WHEN**  or  **ELSE**  clauses are processed in the same way.
+    - If every  **WHEN condition**  is false, the result of the expression is the result of the  **ELSE**  clause. If the  **ELSE**  clause is omitted and has no match condition, the result is NULL.
 
     Example:
 
@@ -45,7 +45,7 @@ Conditional expressions include the following types:
     openGauss=# DROP TABLE tpcds.case_when_t1;
     ```
 
--   DECODE
+- DECODE
 
     [Figure 2](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f8e62b15fa92349339fcdb77fcc5fef4d)  shows the syntax of a  **DECODE**  expression.
 
@@ -64,7 +64,7 @@ Conditional expressions include the following types:
     (1 row)
     ```
 
--   COALESCE
+- COALESCE
 
     [Figure 3](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f1877c9f8d2ac4964828a6eaaddf5f35f)  shows the syntax of a  **COALESCE**  expression.
 
@@ -104,7 +104,7 @@ Conditional expressions include the following types:
     (1 row)
     ```
 
--   NULLIF
+- NULLIF
 
     [Figure 4](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f6c5bc64bf5de4b728ed1d73d97768e6e)  shows the syntax of a  **NULLIF**  expression.
 
@@ -144,7 +144,7 @@ Conditional expressions include the following types:
     (1 row)
     ```
 
--   GREATEST \(maximum value\) and LEAST \(minimum value\)
+- GREATEST \(maximum value\) and LEAST \(minimum value\)
 
     [Figure 5](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f23a83b0f987a49e0b6890280568afbd2)  shows the syntax of a  **GREATEST**  expression.
 
@@ -182,7 +182,7 @@ Conditional expressions include the following types:
 
     [Conditional Expression Functions](conditional_expression_functions.md)  describes the examples.
 
--   NVL
+- NVL
 
     [Figure 7](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f69cd4e01dd6e4280b756eb98d3c77c91)  shows the syntax of an  **NVL**  expression.
 
@@ -209,5 +209,3 @@ Conditional expressions include the following types:
      Hello World
     (1 row)
     ```
-
-

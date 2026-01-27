@@ -6,54 +6,54 @@
 
 ## Precautions<a name="section1779345110485"></a>
 
--   When a standby database instance that can be connected is removed, the database service running on this standby database instance is automatically stopped, and the GRPC certificate \(stored in  *$GAUSSHOME***/share/sslcert/grpc/**\) on the standby database instance is automatically deleted. However, the applications on the standby database instance are not deleted.
+- When a standby database instance that can be connected is removed, the database service running on this standby database instance is automatically stopped, and the GRPC certificate \(stored in  *$GAUSSHOME***/share/sslcert/grpc/**\) on the standby database instance is automatically deleted. However, the applications on the standby database instance are not deleted.
 
--   If only one primary node is left in the database after the deletion, the system prompts you to restart the current node. In this case, you are advised to restart the node based on the service operating environment.
--   If the target standby database instance cannot be connected before the operation, you need to manually stop or delete the database service on the database instance after it is restored, and delete the GRPC certificate \(stored in  *$GAUSSHOME***/share/sslcert/grpc/**\) from the standby database instance.
--   The standby node can be dropped only from the primary/standby database installed in OM mode. The database installed in compilation mode is not supported.
--   If the standby node to be removed is in synchronous replication mode and a transaction is being performed on the primary node when the deletion command is executed, the transaction submission will be suspended for a short period of time. After the deletion is complete, the transaction processing can continue.
--   After the target standby node is removed, if you are not sure whether the target standby node is required anymore, use the following method to reject the remote connection through SSH from the target standby node to avoid misoperations:
-    -   On the current primary node, modify the  **/etc/ssh/sshd\_config**  file as user  **root **and add the following record. If a DenyUsers record exists, append the following record after the existing one.
+- If only one primary node is left in the database after the deletion, the system prompts you to restart the current node. In this case, you are advised to restart the node based on the service operating environment.
+- If the target standby database instance cannot be connected before the operation, you need to manually stop or delete the database service on the database instance after it is restored, and delete the GRPC certificate \(stored in  *$GAUSSHOME***/share/sslcert/grpc/**\) from the standby database instance.
+- The standby node can be dropped only from the primary/standby database installed in OM mode. The database installed in compilation mode is not supported.
+- If the standby node to be removed is in synchronous replication mode and a transaction is being performed on the primary node when the deletion command is executed, the transaction submission will be suspended for a short period of time. After the deletion is complete, the transaction processing can continue.
+- After the target standby node is removed, if you are not sure whether the target standby node is required anymore, use the following method to reject the remote connection through SSH from the target standby node to avoid misoperations:
+    - On the current primary node, modify the  **/etc/ssh/sshd\_config**  file as user  **root**and add the following record. If a DenyUsers record exists, append the following record after the existing one.
 
         ```
         `DenyUsers omm@10.11.12.13`
         ```
 
-        After the modification, you need to restart the SSH service for the modification to take effect. After the modification, user  **omm **cannot remotely log in to the primary node from the target standby node.
+        After the modification, you need to restart the SSH service for the modification to take effect. After the modification, user  **omm**cannot remotely log in to the primary node from the target standby node.
 
-    -   On the current primary node, add the target standby node to the  **/etc/hosts.deny**  file \(for example,  **sshd:10.11.12.13:deny**\) to reject the remote connection through SSH from the target standby node \(valid for all users\). This method requires that the sshd service be bound to the libwrap library.
+    - On the current primary node, add the target standby node to the  **/etc/hosts.deny**  file \(for example,  **sshd:10.11.12.13:deny**\) to reject the remote connection through SSH from the target standby node \(valid for all users\). This method requires that the sshd service be bound to the libwrap library.
 
--   After the target standby node is removed and is no longer required, run the  **gs\\\_uninstall --delete-data -L**  command on the target standby node to uninstall openGauss. Note that the  **-L **option must be added.
+- After the target standby node is removed and is no longer required, run the  **gs\\\_uninstall --delete-data -L**  command on the target standby node to uninstall openGauss. Note that the  **-L**option must be added.
 
--   When the streaming DR function is used, this tool is not supported.
+- When the streaming DR function is used, this tool is not supported.
 
--   If the CM component exists, the last standby node cannot be deleted.
+- If the CM component exists, the last standby node cannot be deleted.
 
 ## Prerequisite<a name="section171227231492"></a>
 
--   Perform standby node deletion only on the primary node.
--   Do not perform an primary/standby switchover or failover on other standby nodes at the same time.
--   Do not run the  **gs\_expansion **command on the primary node for scale-out at the same time.
--   Do not run the  **gs\_dropnode **command twice at the same time.
--   Before deletion, ensure that the database management user  **omm**  trust relationship has been established between the primary and standby nodes.
--   Run this command as a database administrator, for example,  **omm**.
--   Before running commands, run the  **source**  command to import environment variables of a database on the primary node. If the database is installed in separate environment variable mode, run the  **source**  command to import the separate environment variables. If they are not separated, run the  **source**  command to import the .bashrc configuration file of the sub-user. Generally, the file path is  **/home/\[user\]/.bashrc**.
+- Perform standby node deletion only on the primary node.
+- Do not perform an primary/standby switchover or failover on other standby nodes at the same time.
+- Do not run the  **gs\_expansion**command on the primary node for scale-out at the same time.
+- Do not run the  **gs\_dropnode**command twice at the same time.
+- Before deletion, ensure that the database management user  **omm**  trust relationship has been established between the primary and standby nodes.
+- Run this command as a database administrator, for example,  **omm**.
+- Before running commands, run the  **source**  command to import environment variables of a database on the primary node. If the database is installed in separate environment variable mode, run the  **source**  command to import the separate environment variables. If they are not separated, run the  **source**  command to import the .bashrc configuration file of the sub-user. Generally, the file path is  **/home/\[user\]/.bashrc**.
 
 ## Syntax<a name="section4295914175012"></a>
 
--   Drop a standby node.
+- Drop a standby node.
 
 ```
 gs_dropnode -U USER -G GROUP -h hostlist  
 ```
 
--   Display help information.
+- Display help information.
 
 ```
 gs_dropnode -? | --help
 ```
 
--   Display version information.
+- Display version information.
 
 ```
 gs_dropnode -V | --version
@@ -61,30 +61,25 @@ gs_dropnode -V | --version
 
 ## Parameter Description<a name="section1473361065420"></a>
 
--   -U
+- -U
 
     Specifies the OS username of openGauss.
 
-
--   -G
+- -G
 
     Specifies the OS user group of openGauss.
 
-
--   -h
+- -h
 
     Specifies IP address of the standby node to be dropped. If there are multiple nodes, use commas \(,\) to separate them.
 
-
--   -?, --help
+- -?, --help
 
     Displays help information.
 
-
--   -V, --version
+- -V, --version
 
     Displays version information.
-
 
 ## Example<a name="section11522956105012"></a>
 

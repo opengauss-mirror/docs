@@ -6,11 +6,11 @@ A subquery can be used with the SELECT, INSERT, UPDATE, and DELETE statements.
 
 The subquery must comply with the following rules:
 
--   The subquery must be enclosed in parentheses.
--   The subquery can have only one column in the  **SELECT**  clause, unless there are multiple columns in the main query to compare with the columns selected by the subquery.
--   **ORDER BY**  cannot be used in the subquery, although it can be used in the main query.  **GROUP BY**  can be used in the subquery with the same function as  **ORDER BY**.
--   The subquery returns more than one row. It can be used only with multi-value operators, such as IN.
--   The BETWEEN operator cannot be used with the subquery, but it can be used inside the subquery.
+- The subquery must be enclosed in parentheses.
+- The subquery can have only one column in the  **SELECT**  clause, unless there are multiple columns in the main query to compare with the columns selected by the subquery.
+- **ORDER BY**  cannot be used in the subquery, although it can be used in the main query.  **GROUP BY**  can be used in the subquery with the same function as  **ORDER BY**.
+- The subquery returns more than one row. It can be used only with multi-value operators, such as IN.
+- The BETWEEN operator cannot be used with the subquery, but it can be used inside the subquery.
 
 ## Subquery in the SELECT Statement<a name="section18631621173410"></a>
 
@@ -172,4 +172,3 @@ openGauss=# SELECT *  FROM  customer_t1;
           4421 | Admin         | Local        |             |   3000
 (4 rows)
 ```
-

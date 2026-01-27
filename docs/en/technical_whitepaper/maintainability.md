@@ -6,13 +6,13 @@ The workload diagnosis report \(WDR\) generates a performance report between two
 
 The WDR performance snapshot data is stored in the snapshot schema of the **postgres** database. The default collection and retention policies are as follows:
 
--   A snapshot is collected every hour \(wdr\_snapshot\_interval=1h\).
--   It is retained for 8 days \(wdr\_snapshot\_retention\_days=8\).
+- A snapshot is collected every hour \(wdr\_snapshot\_interval=1h\).
+- It is retained for 8 days \(wdr\_snapshot\_retention\_days=8\).
 
 WDR depends on the following two components:
 
--   SNAPSHOT: The performance snapshot can be configured to collect a certain amount of performance data from the kernel at a specified interval and store the data in the user tablespace. Any snapshot can be used as a performance baseline for comparison with other snapshots.
--   WDR Reporter: This tool analyzes the overall system performance based on two snapshots, calculates the changes of more specific performance indicators between the two time periods, and generates summarized and detailed performance data. For details, see  [Table 1](#en-us_concept_0283139006_en-us_concept_0238164494_table14895120191613)  and  [Table 2](#en-us_concept_0283139006_en-us_concept_0238164494_table23331848193120).
+- SNAPSHOT: The performance snapshot can be configured to collect a certain amount of performance data from the kernel at a specified interval and store the data in the user tablespace. Any snapshot can be used as a performance baseline for comparison with other snapshots.
+- WDR Reporter: This tool analyzes the overall system performance based on two snapshots, calculates the changes of more specific performance indicators between the two time periods, and generates summarized and detailed performance data. For details, see  [Table 1](#en-us_concept_0283139006_en-us_concept_0238164494_table14895120191613)  and  [Table 2](#en-us_concept_0283139006_en-us_concept_0238164494_table23331848193120).
 
 **Table  1**  Summarized diagnosis report
 
@@ -127,8 +127,8 @@ WDR depends on the following two components:
 
 Benefits:
 
--   WDR is the main method for diagnosing long-term performance problems. Based on the performance baseline of a snapshot, performance analysis is performed from multiple dimensions, helping DBAs understand the system load, performance of each component, and performance bottlenecks.
--   Snapshots are also an important data source for subsequent performance problem self-diagnosis and self-optimization suggestions.
+- WDR is the main method for diagnosing long-term performance problems. Based on the performance baseline of a snapshot, performance analysis is performed from multiple dimensions, helping DBAs understand the system load, performance of each component, and performance bottlenecks.
+- Snapshots are also an important data source for subsequent performance problem self-diagnosis and self-optimization suggestions.
 
 ## Slow SQL Diagnosis<a name="section565313549522"></a>
 

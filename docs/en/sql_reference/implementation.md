@@ -15,4 +15,3 @@ If consistent response time \(of entity cleanup and of update\) is more importan
 ## Partial Match Algorithm<a name="en-us_topic_0283137368_en-us_topic_0237122201_en-us_topic_0059778495_s9dc41ea95b9144c38d709b0b9a43fe9e"></a>
 
 GIN can support "partial match" queries, in which the query does not determine an exact match for one or more keys, but the possible matches fall within a narrow range of key values \(within the key sorting order determined by the  **compare**  support method\). The  **extractQuery**  method, instead of returning a key value to be matched exactly, returns a key value that is the lower bound of the range to be searched, and sets the  **pmatch**  flag true. The key range is then scanned using the  **comparePartial**  method.  **comparePartial**  must return zero for a matching index key, less than zero for a non-match that is still within the range to be searched, or greater than zero if the index key is past the range that could match.
-

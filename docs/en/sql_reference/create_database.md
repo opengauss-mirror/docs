@@ -6,9 +6,9 @@ Creates a database. By default, the new database will be created only by cloning
 
 ## Precautions<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_s818d4df5d095482f86d8e7258a75df1b"></a>
 
--   Only system administrators or users with the **CREATEDB** permission can create a database.
--   **CREATE DATABASE** cannot be executed within a transaction block.
--   During the database creation, an error message indicating that permission denied is displayed, possibly because the permission on the data directory in the file system is insufficient. If an error message, indicating no space left on device is displayed, the possible cause is that the disk space is used up.
+- Only system administrators or users with the **CREATEDB** permission can create a database.
+- **CREATE DATABASE** cannot be executed within a transaction block.
+- During the database creation, an error message indicating that permission denied is displayed, possibly because the permission on the data directory in the file system is insufficient. If an error message, indicating no space left on device is displayed, the possible cause is that the disk space is used up.
 
 ## Syntax<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_s819ed4de9ed04006954df8016e5e4858"></a>
 
@@ -26,19 +26,19 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
 ## Parameter Description<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_s1d6127a393bf4f6d8fdac63105932d16"></a>
 
--   **database\_name**
+- **database\_name**
 
     Database name
 
     Value range: String, which must comply with the naming convention.
 
--   **OWNER \[ = \] user\_name**
+- **OWNER \[ = \] user\_name**
 
     Specifies the owner of the new database. By default, the owner of a new database is the current user.
 
     Value range: an existing user name.
 
--   **TEMPLATE \[ = \] template**
+- **TEMPLATE \[ = \] template**
 
     Specifies a template name, that is, the template from which the database is created. openGauss creates a database by copying data from a template database. openGauss has two default template databases **template0** and **template1** and a default user database **postgres**.
 
@@ -710,12 +710,12 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
   >[!TIP]NOTICE
   >
-  >-   The character set encoding of the new database must be compatible with the local settings (**LC\_COLLATE** and **LC\_CTYPE**).
+  >- The character set encoding of the new database must be compatible with the local settings (**LC\_COLLATE** and **LC\_CTYPE**).
 
-  >-   When the specified character encoding set is **GBK**, some uncommon Chinese characters cannot be used directly as object names. This is because the byte encoding overlaps with the ASCII characters @A-Z\[\\\]^\_\`a-z\{|\} when the second byte of the GBK ranges from 0x40 to 0x7E. **@\[\\\]^\_'\{|\}** is an operator in the database. If it is used directly as an object name, a syntax error will be reported. For example, the GBK hexadecimal code is **0x8240**, and the second byte is **0x40**, which is the same as the ASCII character @. Therefore, the character cannot be used as an object name. If you do need to use these characters, you can enclose them with double quotation marks ("") when creating and accessing objects to avoid this problem.
-  >-  If the client encoding is A and the server encoding is B, the conversion between encoding formats A and B must exist in the database. For example: If the encoding format on the server is gb18030, the error message "Conversion between GB18030 and GBK is not supported." is displayed when you set the encoding format on the client to **gbk** because the current database does not support conversion between gb18030 and gbk. For details about all encoding formats supported by the database, see the pg\_conversion system catalog.
+  >- When the specified character encoding set is **GBK**, some uncommon Chinese characters cannot be used directly as object names. This is because the byte encoding overlaps with the ASCII characters @A-Z\[\\\]^\_\`a-z\{|\} when the second byte of the GBK ranges from 0x40 to 0x7E. **@\[\\\]^\_'\{|\}** is an operator in the database. If it is used directly as an object name, a syntax error will be reported. For example, the GBK hexadecimal code is **0x8240**, and the second byte is **0x40**, which is the same as the ASCII character @. Therefore, the character cannot be used as an object name. If you do need to use these characters, you can enclose them with double quotation marks ("") when creating and accessing objects to avoid this problem.
+  >- If the client encoding is A and the server encoding is B, the conversion between encoding formats A and B must exist in the database. For example: If the encoding format on the server is gb18030, the error message "Conversion between GB18030 and GBK is not supported." is displayed when you set the encoding format on the client to **gbk** because the current database does not support conversion between gb18030 and gbk. For details about all encoding formats supported by the database, see the pg\_conversion system catalog.
 
--   **LC\_COLLATE \[ = \] lc\_collate**
+- **LC\_COLLATE \[ = \] lc\_collate**
 
     Specifies the character set used by the new database. For example, this parameter is set by running **lc\_collate = 'zh\_CN.gbk'**.
 
@@ -723,7 +723,7 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
     Value range: A valid order type.
 
--   **LC\_CTYPE \[ = \] lc\_ctype**
+- **LC\_CTYPE \[ = \] lc\_ctype**
 
     Specifies the character class used by the new database. For example, this parameter is set by running **lc\_ctype = 'zh\_CN.gbk'**. The use of this parameter affects the classification of characters, such as uppercase letters, lowercase letters, and digits. The default is to use the character classification of the template database.
 
@@ -737,36 +737,35 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
   >[!NOTE]NOTE
   >
-  >-   For A compatibility, the database treats empty strings as **NULL** and replaces DATE with TIMESTAMP\(0\) WITHOUT TIME ZONE.
+  >- For A compatibility, the database treats empty strings as **NULL** and replaces DATE with TIMESTAMP\(0\) WITHOUT TIME ZONE.
 
-  >-   When a character string is converted to an integer, if the input is invalid, the input will be converted to 0 due to B compatibility, and an error will be reported due to other compatibility issues.
+  >- When a character string is converted to an integer, if the input is invalid, the input will be converted to 0 due to B compatibility, and an error will be reported due to other compatibility issues.
 
-  >-   For PG compatibility, CHAR and VARCHAR are counted by character. For other compatibility types, they are counted by byte. For example, for the UTF-8 character set, CHAR\(3\) can store three Chinese characters in PG compatibility scenarios, but can store only one Chinese character in other compatibility scenarios.
+  >- For PG compatibility, CHAR and VARCHAR are counted by character. For other compatibility types, they are counted by byte. For example, for the UTF-8 character set, CHAR\(3\) can store three Chinese characters in PG compatibility scenarios, but can store only one Chinese character in other compatibility scenarios.
 
--   **TABLESPACE \[ = \] tablespace\_name**
+- **TABLESPACE \[ = \] tablespace\_name**
 
     Specifies the name of the tablespace that will be associated with the new database.
 
     Value range: an existing tablespace name.
 
--   **CONNECTION LIMIT \[ = \] connlimit**
+- **CONNECTION LIMIT \[ = \] connlimit**
 
     Specifies the maximum number of concurrent connections that can be made to the new database.
 
     >[!TIP]NOTICE
     >
-    >-   This limit does not apply to sysadmin.
+    >- This limit does not apply to sysadmin.
     
->-   connlimit is calculated separately for each primary database node. Number of connections of the openGauss = connlimit x Number of normal CN master database nodes.
+>- connlimit is calculated separately for each primary database node. Number of connections of the openGauss = connlimit x Number of normal CN master database nodes.
 
     Value range: An integer greater than or equal to **-1**. The default value **-1** means no limit.
 
-
 The restrictions on character encoding are as follows:
 
--   If the locale is set to **C** (or **POSIX**), all encoding types are allowed. For other locale settings, the character encoding must be the same as that of the locale.
--   If the character encoding mode is SQL\_ASCII and the modifier is an administrator, the character encoding mode can be different from the locale setting.
--   The encoding and region settings must match the template database, except that **template0** is used as a template. This is because other databases might contain data that does not match the specified encoding, or might contain indexes whose sort ordering is affected by **LC\_COLLATE** and **LC\_CTYPE**. Copying such data will invalidate the indexes in the new database. **template0** does not contain any data or indexes that may be affected.
+- If the locale is set to **C** (or **POSIX**), all encoding types are allowed. For other locale settings, the character encoding must be the same as that of the locale.
+- If the character encoding mode is SQL\_ASCII and the modifier is an administrator, the character encoding mode can be different from the locale setting.
+- The encoding and region settings must match the template database, except that **template0** is used as a template. This is because other databases might contain data that does not match the specified encoding, or might contain indexes whose sort ordering is affected by **LC\_COLLATE** and **LC\_CTYPE**. Copying such data will invalidate the indexes in the new database. **template0** does not contain any data or indexes that may be affected.
 
 ## Examples<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_s6be7b8abbb4b4aceb9dae686434d672c"></a>
 
@@ -828,11 +827,10 @@ openGauss=# DROP DATABASE ora_compatible_db;
 
 ## Optimization Suggestion<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_section8189694144220"></a>
 
--   **create database**
+- **create database**
 
     Database cannot be created in a transaction.
 
-
--   **ENCODING   LC\_COLLATE     LC\_CTYPE**
+- **ENCODING   LC\_COLLATE     LC\_CTYPE**
 
     If the new database Encoding does not match the template database (SQL\_ASCII) (**'GBK'**, **'UTF8'**, **'LATIN1'**, or **'GB18030'**), **template \[=\] template0** must be specified.

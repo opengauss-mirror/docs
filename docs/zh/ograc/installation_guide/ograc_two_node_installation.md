@@ -11,6 +11,7 @@
     - 内存：8GB
     - CPU：4核（16位）
     - 磁盘空闲空间：100GB
+
 ---
 
 ## 安装准备
@@ -56,7 +57,9 @@ yum install -y wget python3 python3-devel iputils iproute --skip-broken
 ---
 
 ### 2. 获取安装包并传输到各个安装节点
+
 创建安装目录（这里以`/data`目录举例，不建议将安装目录存放在`/home`下，以免存在不可预期的权限问题）
+
 ```shell
 mkdir /data/ograc
 ```
@@ -191,7 +194,9 @@ cd /data/ograc/ograc_connector/action
     "gcc_home": "/dev/gcc-disk"
 }
 ```
+
 其中，各字段含义如下：
+
 - deploy_mode：安装模式，当前默认推荐使用dss安装；
 - deploy_user：安装管理用户；
 - node_id：节点序号，从0开始；

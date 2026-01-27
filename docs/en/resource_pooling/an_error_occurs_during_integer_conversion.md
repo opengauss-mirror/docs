@@ -15,4 +15,3 @@ Some data types cannot be converted to the target data type.
 ## Procedure<a name="section2142103410214"></a>
 
 Gradually narrow down the range of SQL statements to determine the data types that cannot be converted.
-

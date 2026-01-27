@@ -6,10 +6,10 @@
 
 ## Precautions<a name="en-us_topic_0283137624_en-us_topic_0237122093_en-us_topic_0059778518_s1a808d6187aa43c5bda33df14effd78f"></a>
 
--   Each object stores only one comment. Therefore, you need to modify a comment and issue a new  **COMMENT**  command to the same object. To delete the comment, write  **NULL**  at the position of the text string. When an object is deleted, the comment is automatically deleted.
--   Currently, there is no security protection for viewing comments. Any user connected to a database can view all the comments for objects in the database. For shared objects such as databases, roles, and tablespaces, comments are stored globally so any user connected to any database in the cluster can see all the comments for shared objects. Therefore, do not put security-critical information in comments.
--   To comment objects, you must be an object owner or user granted the COMMENT permission. The system administrator has this permission by default.
--   Roles do not have owners, so the rule for  **COMMENT ON ROLE**  is that you must be an administrator to comment on an administrator role, or have the  **CREATEROLE**  permission to comment on non-administrator roles. A system administrator can comment on all objects.
+- Each object stores only one comment. Therefore, you need to modify a comment and issue a new  **COMMENT**  command to the same object. To delete the comment, write  **NULL**  at the position of the text string. When an object is deleted, the comment is automatically deleted.
+- Currently, there is no security protection for viewing comments. Any user connected to a database can view all the comments for objects in the database. For shared objects such as databases, roles, and tablespaces, comments are stored globally so any user connected to any database in the cluster can see all the comments for shared objects. Therefore, do not put security-critical information in comments.
+- To comment objects, you must be an object owner or user granted the COMMENT permission. The system administrator has this permission by default.
+- Roles do not have owners, so the rule for  **COMMENT ON ROLE**  is that you must be an administrator to comment on an administrator role, or have the  **CREATEROLE**  permission to comment on non-administrator roles. A system administrator can comment on all objects.
 
 ## Syntax<a name="en-us_topic_0283137624_en-us_topic_0237122093_en-us_topic_0059778518_sc17f26ffc35449b285334777c0405013"></a>
 
@@ -52,68 +52,67 @@ COMMENT ON
 
 ## Parameter Description<a name="en-us_topic_0283137624_en-us_topic_0237122093_en-us_topic_0059778518_s56dde1ab6b0149328413f05ffc3c73b8"></a>
 
--   **agg\_name**
+- **agg\_name**
 
     Specifies the new name of an aggregate function.
 
--   **agg\_type**
+- **agg\_type**
 
     Specifies the data type of the aggregate function parameters.
 
--   **source\_type**
+- **source\_type**
 
     Specifies the source data type of the cast.
 
--   **target\_type**
+- **target\_type**
 
     Specifies the target data type of the cast.
 
--   **object\_name**
+- **object\_name**
 
     Specifies the name of an object.
 
--   **table\_name.column\_name**
+- **table\_name.column\_name**
 
     **view\_name.column\_name**
 
     Specifies the column whose comment is defined or modified. You can add the table name or view name as the prefix.
 
--   **constraint\_name**
+- **constraint\_name**
 
     Specifies the table constraint whose comment is defined or modified.
 
--   **table\_name**
+- **table\_name**
 
     Specifies the name of a table.
 
--   **function\_name**
+- **function\_name**
 
     Specifies the function whose comment is defined or modified.
 
--   **argname,argmode,argtype**
+- **argname,argmode,argtype**
 
     Specifies the schema, name, and type of the function parameters.
 
--   **large\_object\_oid**
+- **large\_object\_oid**
 
     Specifies the OID of the large object whose comment is defined or modified.
 
--   **operator\_name**
+- **operator\_name**
 
     Specifies the name of the operator.
 
--   **left\_type,right\_type**
+- **left\_type,right\_type**
 
     Specifies the data type of the operator parameters \(optionally schema-qualified\). If the prefix or suffix operator does not exist, the  **NONE**  option can be added.
 
--   **trigger\_name**
+- **trigger\_name**
 
     Specifies the trigger name.
 
--   **text**
+- **text**
 
     Specifies the comment content.
-
 
 ## Examples<a name="en-us_topic_0283137624_en-us_topic_0237122093_en-us_topic_0059778518_s57de72dc01404015a1a8a938238ad917"></a>
 
@@ -151,4 +150,3 @@ openGauss=# DROP VIEW tpcds.customer_details_view_v2;
 -- Delete the tpcds.customer_demographics_t2 table.
 openGauss=# DROP TABLE tpcds.customer_demographics_t2;
 ```
-

@@ -50,4 +50,3 @@ GS\_OS\_RUN\_INFO视图显示当前操作系统运行的状态信息。
 </tr>
 </tbody>
 </table>
-

@@ -39,7 +39,7 @@ ABORT                             ALTER TABLE                       CREATE DATAB
 
 ```
 
-You can run the  **\\h **_name_  command to view detailed syntax information. For example:
+You can run the  **\\h**_name_  command to view detailed syntax information. For example:
 
 ```
 openGauss=# \h ABORT
@@ -96,4 +96,3 @@ SELECT id, name FROM t1;
 </table>
 
 For details about the SQL syntax, see  [Appendix: SQL Syntax](appendix-sql-syntax.md).
-

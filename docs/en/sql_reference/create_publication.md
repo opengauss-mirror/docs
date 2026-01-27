@@ -6,12 +6,12 @@
 
 ## Precautions<a name="section412011394429"></a>
 
--   If neither  **FOR TABLE**  nor  **FOR ALL TABLES**  is specified, a publication starts with a set of empty tables. Tables can be added later.
--   Creating a publication does not start replication. It defines only one group and filtering logic for future subscribers. To create a publication, the caller must have the  **CREATE**  permission on the current database. \(The system administrator does not need to perform a check on this.\)
--   To add a table to a publication, the caller must have ownership of the table. The  **FOR ALL TABLES**  clause requires that the caller be a user with the  **SYSADMIN**  permission.
--   Tables in the internal schemas of the database, including  **blockchain**,  **cstore**,  **db4ai**,  **dbe\_pldebugger**,  **dbe\_pldeveloper**,  **pkg\_service**,  **snapshot**, and  **sqladvisor**, are not published.
--   Tables added to a publication that publishes UPDATE or DELETE operations must already have  **REPLICA IDENTITY**  defined or have a primary key; otherwise, these operations will be prohibited in those tables.
--   The  **COPY... FROM**  command is used to publish INSERT operations. It cannot be used to publish TRUNCATE and DDL operations.
+- If neither  **FOR TABLE**  nor  **FOR ALL TABLES**  is specified, a publication starts with a set of empty tables. Tables can be added later.
+- Creating a publication does not start replication. It defines only one group and filtering logic for future subscribers. To create a publication, the caller must have the  **CREATE**  permission on the current database. \(The system administrator does not need to perform a check on this.\)
+- To add a table to a publication, the caller must have ownership of the table. The  **FOR ALL TABLES**  clause requires that the caller be a user with the  **SYSADMIN**  permission.
+- Tables in the internal schemas of the database, including  **blockchain**,  **cstore**,  **db4ai**,  **dbe\_pldebugger**,  **dbe\_pldeveloper**,  **pkg\_service**,  **snapshot**, and  **sqladvisor**, are not published.
+- Tables added to a publication that publishes UPDATE or DELETE operations must already have  **REPLICA IDENTITY**  defined or have a primary key; otherwise, these operations will be prohibited in those tables.
+- The  **COPY... FROM**  command is used to publish INSERT operations. It cannot be used to publish TRUNCATE and DDL operations.
 
 ## Syntax<a name="section52689257424"></a>
 
@@ -24,27 +24,25 @@ CREATE PUBLICATION name
 
 ## Parameter Description<a name="section581153212424"></a>
 
--   **name**
+- **name**
 
     Specifies the name of a new publication.
 
--   **FOR TABLE**
+- **FOR TABLE**
 
     Specifies the list of tables to be added to a publication. Only persistent base tables can be published. Temporary tables, unlogged tables, foreign tables, MOTs, materialized views, and regular views cannot be published.
 
--   **FOR ALL TABLES**
+- **FOR ALL TABLES**
 
     Marks a publication as replicating changes of all tables in the database, including tables to be created.
 
--   **WITH \( publication\_parameter \[= value\] \[, ... \] \)**
+- **WITH \( publication\_parameter \[= value\] \[, ... \] \)**
 
     Specifies the optional parameters for a publication. The following parameters are supported:
 
-    -   **publish \(string\)**
+    - **publish \(string\)**
 
         Specifies which DML operations can be published to subscribers. The value of this parameter is a list of operations separated by commas \(,\). The allowed operations are INSERT, UPDATE, and DELETE. If this parameter is not specified, all operations are published by default. The default value is  **'insert, update, delete'**.
-
-
 
 ## Examples<a name="section109371845154215"></a>
 

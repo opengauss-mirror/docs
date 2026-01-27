@@ -9,17 +9,18 @@ Implicit cursor operations, such as definition, open, value-grant, and close ope
 Format call:  **SQL%**
 
 >[!NOTE]NOTE 
->-   **INSERT**,  **UPDATE**,  **DELETE**, and  **SELECT**  statements do not need defined cursors.
->-   In O-compatible mode, if the GUC parameter  **behavior\_compat\_options**  is set to  **compat\_cursor**, implicit cursors are valid across stored procedures.
+>
+>- **INSERT**,  **UPDATE**,  **DELETE**, and  **SELECT**  statements do not need defined cursors.
+>- In O-compatible mode, if the GUC parameter  **behavior\_compat\_options**  is set to  **compat\_cursor**, implicit cursors are valid across stored procedures.
 
 ## Attributes<a name="en-us_topic_0283136644_en-us_topic_0237122245_en-us_topic_0059778352_sbc470b788a0c40af9e3f1dcf2d963894"></a>
 
 An implicit cursor has the following attributes:
 
--   **SQL%FOUND**: Boolean attribute, which returns  **TRUE**  if the last fetch returns a row.
--   **SQL%NOTFOUND**: Boolean attribute, which works opposite to the  **SQL%FOUND**  attribute.
--   **SQL%ROWCOUNT**: numeric attribute, which returns the number of records fetched from the cursor.
--   **SQL%ISOPEN**: Boolean attribute, whose value is always  **FALSE**. Close implicit cursors immediately after an SQL statement is run.
+- **SQL%FOUND**: Boolean attribute, which returns  **TRUE**  if the last fetch returns a row.
+- **SQL%NOTFOUND**: Boolean attribute, which works opposite to the  **SQL%FOUND**  attribute.
+- **SQL%ROWCOUNT**: numeric attribute, which returns the number of records fetched from the cursor.
+- **SQL%ISOPEN**: Boolean attribute, whose value is always  **FALSE**. Close implicit cursors immediately after an SQL statement is run.
 
 ## Examples<a name="en-us_topic_0283136644_en-us_topic_0237122245_en-us_topic_0059778352_s56d5099e16904d0bb9800bc6a8acf21c"></a>
 
@@ -43,4 +44,3 @@ CALL proc_cursor3();
 -- Delete the stored procedure and the temporary table.
 DROP PROCEDURE proc_cursor3;
 ```
-

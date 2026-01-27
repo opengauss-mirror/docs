@@ -71,4 +71,3 @@ GS\_ENCRYPTED\_COLUMNS系统表记录密态等值特性中表的加密列相关�
 </tr>
 </tbody>
 </table>
-

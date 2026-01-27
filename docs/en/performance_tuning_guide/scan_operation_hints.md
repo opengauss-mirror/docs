@@ -12,10 +12,10 @@ These hints specify a scan operation, which can be  **tablescan**,  **indexscan*
 
 ## Parameter Description<a name="en-us_topic_0237121537_section35087980143822"></a>
 
--   **no**  indicates that the specified hint will not be used for a join.
+- **no**  indicates that the specified hint will not be used for a join.
 
--   _table_  specifies the table to be scanned. You can specify only one table. Use a table alias \(if any\) instead of a table name.
--   _index_  indicates the index for  **indexscan**  or  **indexonlyscan**. You can specify only one index.
+- _table_  specifies the table to be scanned. You can specify only one table. Use a table alias \(if any\) instead of a table name.
+- _index_  indicates the index for  **indexscan**  or  **indexonlyscan**. You can specify only one index.
 
 >[!NOTE]NOTE   
 >**indexscan**  and  **indexonlyscan**  hints can be used only when the specified index belongs to the table.  
@@ -39,4 +39,3 @@ select /*+ indexscan(item i) */ i_product_name product_name ...
 **item**  is scanned based on an index. The optimized plan is as follows:
 
 ![](figures/en-us_image_0253037239.png)
-

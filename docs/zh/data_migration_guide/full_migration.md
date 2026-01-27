@@ -24,11 +24,11 @@ ARM+openEuler 20.03 或 X86+CentOS 7
 
 | 系统名称       | 系统架构 | 下载链接                                                     |
 | :------------- | -------- | ------------------------------------------------------------ |
-| centos7        | x86_64   | https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/centos7/PortalControl-6.0.0-x86_64.tar.gz |
-| openEuler20.03 | x86_64   | https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler20.03/PortalControl-6.0.0-x86_64.tar.gz |
-| openEuler20.03 | aarch64  | https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler20.03/PortalControl-6.0.0-aarch64.tar.gz |
-| openEuler22.03 | x86_64   | https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler22.03/PortalControl-6.0.0-x86_64.tar.gz |
-| openEuler22.03 | aarch64  | https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler22.03/PortalControl-6.0.0-aarch64.tar.gz |
+| centos7        | x86_64   | <https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/centos7/PortalControl-6.0.0-x86_64.tar.gz> |
+| openEuler20.03 | x86_64   | <https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler20.03/PortalControl-6.0.0-x86_64.tar.gz> |
+| openEuler20.03 | aarch64  | <https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler20.03/PortalControl-6.0.0-aarch64.tar.gz> |
+| openEuler22.03 | x86_64   | <https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler22.03/PortalControl-6.0.0-x86_64.tar.gz> |
+| openEuler22.03 | aarch64  | <https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler22.03/PortalControl-6.0.0-aarch64.tar.gz> |
 
 - 根据系统版本下载对应版本的portal（这里以centos系统x86架构为例）
 
@@ -140,6 +140,7 @@ ARM+openEuler 20.03 或 X86+CentOS 7
     ```
     NameError:name '_mysql' is not defined
     ```
+
     原因：缺少扩展包。
   
     解决方法：查看堆栈信息，找到上一个Error查看具体信息，如果报错信息为找不到libmariadb.so.*文件，例如：
@@ -173,6 +174,7 @@ ARM+openEuler 20.03 或 X86+CentOS 7
    ```
    fatal error: Python.h: No such file or directory
    ```
+
    原因：root用户下缺少python扩展包。
 
    解决方法： 请尝试在root用户下执行以下命令安装python扩展包，然后重新安装chameleon，安装扩展包只要成功其中一个即可。

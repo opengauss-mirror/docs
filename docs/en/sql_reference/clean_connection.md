@@ -21,34 +21,33 @@ CLEAN CONNECTION
 
 ## Parameters<a name="en-us_topic_0059779060_s5c57cb1e5e8740dcb15254b0ee05e666"></a>
 
--   **CHECK**
+- **CHECK**
 
     This parameter can be specified only when the node list is specified as **TO ALL**. Setting this parameter will check whether a database is accessed by other sessions before its connections are cleared. If any sessions are detected before **DROP DATABASE** is executed, an error will be reported and the database will not be deleted.
 
--   **FORCE**
+- **FORCE**
 
     This parameter can be specified only when the node list is specified as **TO ALL**. Setting this parameter will send **SIGTERM** signals to all the threads related to the specified **dbname** and **username** and forcibly shut them down.
 
--   **COORDINATOR \( nodename \[,  ... \] \) | NODE \( nodename \[, ... \] \) | ALL**
+- **COORDINATOR \( nodename \[,  ... \] \) | NODE \( nodename \[, ... \] \) | ALL**
 
     Deletes connections to a specified instance. There are three scenarios:
 
-    -   Deletes connections on a specified CN. openGauss does not support this scenario.
-    -   Deletes connections on a specified DN. openGauss does not support this scenario.
-    -   Deletes connections on all nodes\(TO ALL\). openGauss supports only this scenario.
+    - Deletes connections on a specified CN. openGauss does not support this scenario.
+    - Deletes connections on a specified DN. openGauss does not support this scenario.
+    - Deletes connections on all nodes\(TO ALL\). openGauss supports only this scenario.
 
--   **dbname**
+- **dbname**
 
     Deletes connections to a specified database. If this parameter is not specified, connections to all databases will be deleted.
 
     Value range: an existing database name
 
--   **username**
+- **username**
 
     Deletes connections of a specific user. If this parameter is not specified, connections of all users will be deleted.
 
     Value range: an existing username
-
 
 ## Examples<a name="en-us_topic_0059779060_s11a931f26ab344c1aab49ebd522ee0ad"></a>
 

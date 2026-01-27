@@ -69,9 +69,10 @@
 </table>
 
 >[!NOTE]NOTE 
->1.  In addition to the restriction on the size of each column, the total size of each tuple cannot exceed 1 GB minus 1 byte and is affected by the control header information of the column, the control header information of the tuple, and whether null fields exist in the tuple.
->2.  NCHAR is the alias of the bpchar type, and NCHAR\(n\) is the alias of the VARCHAR\(n\) type.
->3.  Only advanced packages related to dbe\_lob support CLOBs whose size is greater than 1 GB. System functions do not support CLOBs whose size is greater than 1 GB.
+>
+>1. In addition to the restriction on the size of each column, the total size of each tuple cannot exceed 1 GB minus 1 byte and is affected by the control header information of the column, the control header information of the tuple, and whether null fields exist in the tuple.
+>2. NCHAR is the alias of the bpchar type, and NCHAR\(n\) is the alias of the VARCHAR\(n\) type.
+>3. Only advanced packages related to dbe\_lob support CLOBs whose size is greater than 1 GB. System functions do not support CLOBs whose size is greater than 1 GB.
 
 In openGauss, there are two other fixed-length character types, as shown in  [Table 2](#en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_tf74658686f5e4d979adf0ac04769ea16). The  **name**  type exists only for the storage of identifiers in the internal system catalogs and is not intended for use by general users. Its length is currently defined as 64 bytes \(63 usable characters plus terminator\). The type  **"char"**  only uses one byte of storage. It is internally used in the system catalogs as a simplistic enumeration type.
 
@@ -156,4 +157,3 @@ openGauss=# SELECT ct_col1, char_length(ct_col1) FROM char_type_t2;
 -- Delete data.
 openGauss=# DROP TABLE char_type_t2;
 ```
-

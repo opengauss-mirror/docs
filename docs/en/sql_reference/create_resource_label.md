@@ -14,35 +14,33 @@ Only users with the  **poladmin**  or  **sysadmin**  permission, or the initial 
 CREATE RESOURCE LABEL [IF NOT EXISTS] label_name ADD label_item_list[, ...]*;
 ```
 
--   label\_item\_list
+- label\_item\_list
 
     ```
     resource_type(resource_path[, ...]*)
     ```
 
--   resource\_type
+- resource\_type
 
     ```
     TABLE | COLUMN | SCHEMA | VIEW | FUNCTION
     ```
 
-
 ## Parameter Description<a name="section2852173114389"></a>
 
--   **label\_name**
+- **label\_name**
 
     Specifies the resource label name, which must be unique.
 
     Value range: a string. It must comply with the naming convention.
 
--   **resource\_type**
+- **resource\_type**
 
     Specifies the type of database resources to be labeled.
 
--   **resource\_path**
+- **resource\_path**
 
     Specifies the path of database resources.
-
 
 ## Examples<a name="section7854941155112"></a>
 
@@ -79,4 +77,3 @@ openGauss=# CREATE RESOURCE LABEL IF NOT EXISTS func_label add FUNCTION(func_for
 ## Helpful Links<a name="en-us_topic_0059778277_s4693856e1f6240dc98de7d6faf52f136"></a>
 
 [ALTER RESOURCE LABEL](alter_resource_label.md)  and  [DROP RESOURCE LABEL](drop_resource_label.md)
-

@@ -92,5 +92,3 @@ WLM\_USER\_RESOURCE\_RUNTIME视图显示所有用户资源使用情况，需要�
 </tr>
 </tbody>
 </table>
-
-

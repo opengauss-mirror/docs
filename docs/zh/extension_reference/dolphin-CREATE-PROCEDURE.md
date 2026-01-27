@@ -67,7 +67,7 @@ CREATE [ OR REPLACE ] PROCEDURE procedure_name
        | LANGUAGE lang_name
        | { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA }
     ][ ... ]
-	routine_body
+ routine_body
 ```
 
 - 创建存储过程紧跟单条查询语句。
@@ -89,7 +89,7 @@ CREATE [ OR REPLACE ] PROCEDURE procedure_name
        | LANGUAGE lang_name
        | { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA }
     ][ ... ]
-	select_stmt
+ select_stmt
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_scd93d84d9e624b5e831d78d47a830ca4"></a>

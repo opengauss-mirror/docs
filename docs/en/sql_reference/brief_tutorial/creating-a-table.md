@@ -11,18 +11,17 @@ CREATE TABLE table_name
 
 ## Parameter Description<a name="section932010594419"></a>
 
--   **table\_name**
+- **table\_name**
 
     Specifies the name of the table to be created.
 
--   **column\_name**
+- **column\_name**
 
     Specifies the name of the column to be created in the new table.
 
--   **data\_type**
+- **data\_type**
 
     Specifies the data type of the column.
-
 
 ## Examples<a name="section199331334134317"></a>
 
@@ -44,4 +43,3 @@ If the following information is displayed, the table has been created:
 ```
  CREATE TABLE
 ```
-

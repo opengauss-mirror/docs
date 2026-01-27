@@ -1,6 +1,6 @@
 # Event Trigger Functions<a name="EN-US_TOPIC_0289014904"></a>
 
--   pg\_event\_trigger\_ddl\_commands
+- pg\_event\_trigger\_ddl\_commands
 
     Description: Reports running DDL commands in the ddl_command_end event trigger.
 
@@ -29,7 +29,7 @@
     END; $$ LANGUAGE plpgsql;
     ```
 
--   pg\_event\_trigger\_dropped\_objects
+- pg\_event\_trigger\_dropped\_objects
 
     Description: Makes the list of deleted objects visible to users in the sql\_drop event trigger.
 
@@ -63,7 +63,7 @@
     $$;
     ```
 
--   pg\_event\_trigger\_table\_rewrite\_oid
+- pg\_event\_trigger\_table\_rewrite\_oid
 
     Description: Makes the overwritten object OIDs visible to users in the table\_rewrite event trigger.
 
@@ -87,7 +87,7 @@
     $$;
     ```
 
--   pg\_event\_trigger\_table\_rewrite\_reason
+- pg\_event\_trigger\_table\_rewrite\_reason
 
     Description: Makes reasons for rewriting objects visible to users in the table\_rewrite event trigger.
 

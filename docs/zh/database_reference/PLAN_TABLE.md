@@ -3,6 +3,7 @@
 PLAN\_TABLE显示用户通过执行EXPLAIN PLAN收集到的计划信息。计划信息的生命周期是session级别，session退出后相应的数据将被清除。同时不同session和不同user间的数据是相互隔离的。
 
 示例：
+
 ```sql
 openGauss=# select * from PLAN_TABLE;
  statement_id | plan_id | id | operation | options | object_name | object_type | object_owner | projection | cost | cardinality 
@@ -88,8 +89,7 @@ openGauss=# select * from PLAN_TABLE;
 
 >[!NOTE]说明
 >
->-   object\_type取值范围为[PG\_CLASS](PG_CLASS.md)中定义的relkind类型（TABLE普通表，INDEX索引，SEQUENCE序列，VIEW视图，COMPOSITE TYPE复合类型，TOASTVALUE TOAST表）和计划使用到的rtekind\(SUBQUERY,JOIN,FUNCTION,VALUES,CTE,REMOTE\_QUERY\)。
->-   object\_owner对于RTE来说是计划中使用的对象描述，非用户定义的类型不存在object\_owner。
->-   statement\_id、object\_name、object\_owner、projection字段内容遵循用户定义的大小写存储，其它字段内容采用大写存储。
->-   支持用户对PLAN\_TABLE进行SELECT和DELETE操作，不支持其它DML操作。
-
+>- object\_type取值范围为[PG\_CLASS](PG_CLASS.md)中定义的relkind类型（TABLE普通表，INDEX索引，SEQUENCE序列，VIEW视图，COMPOSITE TYPE复合类型，TOASTVALUE TOAST表）和计划使用到的rtekind\(SUBQUERY,JOIN,FUNCTION,VALUES,CTE,REMOTE\_QUERY\)。
+>- object\_owner对于RTE来说是计划中使用的对象描述，非用户定义的类型不存在object\_owner。
+>- statement\_id、object\_name、object\_owner、projection字段内容遵循用户定义的大小写存储，其它字段内容采用大写存储。
+>- 支持用户对PLAN\_TABLE进行SELECT和DELETE操作，不支持其它DML操作。

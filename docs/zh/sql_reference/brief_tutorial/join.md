@@ -4,12 +4,12 @@ JOIN子句用于把来自两个或多个表的行结合起来，基于这些表�
 
 在openGauss中，JOIN有五种连接类型：
 
--   CROSS JOIN ：交叉连接
--   INNER JOIN：内连接
--   LEFT OUTER JOIN：左外连接
--   RIGHT OUTER JOIN：右外连接
--   FULL OUTER JOIN：全外连接
--   ASOF JOIN：时间连接
+- CROSS JOIN ：交叉连接
+- INNER JOIN：内连接
+- LEFT OUTER JOIN：左外连接
+- RIGHT OUTER JOIN：右外连接
+- FULL OUTER JOIN：全外连接
+- ASOF JOIN：时间连接
 
 以表table1和表table2为例说明不同连接类型，表数据如下：
 
@@ -184,4 +184,3 @@ ASOF JOIN prices p ON h.ticker = p.ticker AND h.wh >= p.wh order by h.ticker;
 (4 rows)
 
 ```
-

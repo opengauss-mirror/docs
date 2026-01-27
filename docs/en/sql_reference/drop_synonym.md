@@ -18,22 +18,21 @@ DROP [ PUBLIC ] SYNONYM [ IF EXISTS ] synonym_name [ CASCADE | RESTRICT ];
 
 ## Parameter Description<a name="en-us_topic_0283137394_en-us_topic_0237122151_en-us_topic_0059778429_sb1cba40c50ea4d648126cedd1ac258ff"></a>
 
--   **PUBLIC**
+- **PUBLIC**
 
     Deletes a public synonym. If you do not specify PUBLIC, a private synonym is deleted.
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Reports a notice instead of an error if the specified synonym does not exist.
 
--   **synonym\_name**
+- **synonym\_name**
 
     Specifies the name \(optionally schema-qualified\) of the synonym to be deleted.
 
--   **CASCADE | RESTRICT**
-    -   **CASCADE**: automatically deletes the objects \(such as views\) that depend on the synonym.
-    -   **RESTRICT**: refuses to delete the synonym if any objects depend on it. This is the default action.
-
+- **CASCADE | RESTRICT**
+    - **CASCADE**: automatically deletes the objects \(such as views\) that depend on the synonym.
+    - **RESTRICT**: refuses to delete the synonym if any objects depend on it. This is the default action.
 
 ## Examples<a name="en-us_topic_0283137394_en-us_topic_0237122151_en-us_topic_0059778429_s029ee990ffb541b389848c4b246ecfcb"></a>
 

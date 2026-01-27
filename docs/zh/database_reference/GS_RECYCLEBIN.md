@@ -3,6 +3,7 @@
 gs\_recyclebin描述了回收站对象的详细信息。
 
 示例：
+
 ```sql
 openGauss=# select * from gs_recyclebin;
  rcybaseid | rcydbid | rcyrelid | rcyname | rcyoriginname | rcyoperation | rcytype | rcyrecyclecsn | rcyrecycletime | rcycreatecsn | rcychangecsn | rcynamespace | rcyowner | rcytablespace | rcyrelfilenode | rcycanrestore | rcycanpurge | rcyfrozenxid | rcyfrozenxid64 
@@ -164,5 +165,3 @@ openGauss=# select * from gs_recyclebin;
 </tr>
 </tbody>
 </table>
-
-

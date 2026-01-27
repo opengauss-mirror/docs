@@ -17,18 +17,16 @@ DROP PROCEDURE [ IF EXISTS ] procedure_name
 
 ## Parameter Description<a name="en-us_topic_0283137697_en-us_topic_0237122145_en-us_topic_0059778377_s080d001d1a1d451cb6e4965bea42c9e9"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Reports a notice instead of an error if the specified stored procedure does not exist.
 
--   **procedure\_name**
+- **procedure\_name**
 
     Specifies the name of the stored procedure to be deleted.
 
     Value range: an existing stored procedure name
 
-
 ## Helpful Links<a name="en-us_topic_0283137697_en-us_topic_0237122145_en-us_topic_0059778377_s79db76d7068b489c8b96c2c51494ee04"></a>
 
 [CREATE PROCEDURE](create_procedure.md)
-

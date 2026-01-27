@@ -50,4 +50,3 @@ PG\_DIRECTORY系统表用于保存用户添加的directory对象可以通过CREA
 </tr>
 </tbody>
 </table>
-

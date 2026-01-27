@@ -18,10 +18,9 @@ SELECT
 
 ## 参数说明<a name="section1376271572414"></a>
 
--   **HAVING子句**
+- **HAVING子句**
 
     与GROUP BY子句配合用来选择特殊的组。HAVING子句将组的一些属性与一个常数值比较，只有满足HAVING子句中的逻辑表达式的组才会被提取出来。
-
 
 ## 示例<a name="section9965828102619"></a>
 
@@ -58,4 +57,3 @@ openGauss=# SELECT c_first_name FROM customer_t1 GROUP BY c_first_name HAVING co
  Lily
 (2 rows)
 ```
-

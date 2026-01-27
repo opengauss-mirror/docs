@@ -6,9 +6,9 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--   本章节只包含dolphin新增的语法，原openGauss的语法未做删除和修改。
--   增加values()空值插入操作，根据sql_mode的不同会有不一样的插入效果。
--   新增set_clause_values子句。
+- 本章节只包含dolphin新增的语法，原openGauss的语法未做删除和修改。
+- 增加values()空值插入操作，根据sql_mode的不同会有不一样的插入效果。
+- 新增set_clause_values子句。
 
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
@@ -33,9 +33,9 @@ INSERT [/*+ plan_hint */] [IGNORE] [INTO] table_name [partition_clause] [ AS ali
 
   若执行的SQL语句违反了表的非空约束，使用此hint可将Error降级为Warning，并根据GUC参数sql_ignore_strategy的值采用以下策略的一种继续执行：
 
-    -   sql_ignore_strategy为ignore_null时，忽略违反非空约束的行的INSERT操作，并继续执行剩余数据操作。
+    - sql_ignore_strategy为ignore_null时，忽略违反非空约束的行的INSERT操作，并继续执行剩余数据操作。
 
-    -   sql_ignore_strategy为overwrite_null时，将违反约束的null值覆写为目标类型的默认值，并继续执行剩余数据操作。
+    - sql_ignore_strategy为overwrite_null时，将违反约束的null值覆写为目标类型的默认值，并继续执行剩余数据操作。
 
     >[!NOTE]说明
     >
@@ -53,25 +53,25 @@ INSERT [/*+ plan_hint */] [IGNORE] [INTO] table_name [partition_clause] [ AS ali
 
   执行INSERT语句时，若发现新值与目标列类型不匹配，使用此hint可将Error降级为Warning，并根据新值与目标列的具体类型采取以下策略的一种继续执行：
 
-    -   当新值类型与列类型同为数值类型时：
+    - 当新值类型与列类型同为数值类型时：
 
         若新值在列类型的范围内，则直接进行插入；若新值在列类型范围外，则以列类型的最大/最小值替代。
 
-    -   当新值类型与列类型同为字符串类型时：
+    - 当新值类型与列类型同为字符串类型时：
 
         若新值长度在列类型限定范围内，则以直接进行插入；若新值长度在列类型的限定范围外，则保留列类型长度限制的前n个字符。
 
-    -   若遇到新值类型与列类型不可转换时：
+    - 若遇到新值类型与列类型不可转换时：
 
         插入列类型的默认值。
 
   IGNORE关键字不支持列存，无法在列存表中生效。
 
--   **VALUES()**
+- **VALUES()**
 
     当GUC参数sql_mode为stric_all_tables时，为所有列插入NULL，否则如果对应字段名有缺省值，插入缺省值，如果没有缺省值，判断对应字段是否有not_null约束，没有插入NULL，有则插入类型基础值，具体基础值参考视图pg_type_basic_value。
 
--   **set_clause_values**
+- **set_clause_values**
 
     一种insert into table_name set column_name = value, column_name = value, ...依次类推。set_clause_values是指set column_name = value，多个列插入值用逗号分隔。
     该是insert into 的一种扩展语法。为防止insert into 时字段顺序与值顺序混乱造成写入错误。
@@ -81,6 +81,7 @@ INSERT [/*+ plan_hint */] [IGNORE] [INTO] table_name [partition_clause] [ AS ali
 ### IGNORE关键字
 
 为使用ignore_error hint，需要创建B兼容模式的数据库，名称为db_ignore。
+
 ```
 create database db_ignore dbcompatibility 'B';
 \c db_ignore

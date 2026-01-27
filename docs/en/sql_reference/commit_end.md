@@ -16,14 +16,13 @@ Only the creator of a transaction or a system administrator can run the  **COMMI
 
 ## Parameter Description<a name="en-us_topic_0283137519_en-us_topic_0237122094_en-us_topic_0059779032_sd6836b044d0a45f3861bf79721a4292b"></a>
 
--   **COMMIT | END**
+- **COMMIT | END**
 
     Commits the current transaction and makes all changes made by the transaction become visible to others.
 
--   **WORK | TRANSACTION**
+- **WORK | TRANSACTION**
 
     Specifies an optional keyword, which has no effect except increasing readability.
-
 
 ## Examples<a name="en-us_topic_0283137519_en-us_topic_0237122094_en-us_topic_0059779032_s3f09e6158972457085b1ef2184fe2f39"></a>
 
@@ -64,4 +63,3 @@ openGauss=# DROP TABLE tpcds.customer_demographics_t2;
 ## Helpful Links<a name="en-us_topic_0283137519_en-us_topic_0237122094_en-us_topic_0059779032_s652dd12556d94ac0a003244758ed74e8"></a>
 
 [ROLLBACK](rollback.md)
-

@@ -64,4 +64,3 @@ PG\_STAT\_DATABASE\_CONFLICTS视图显示数据库冲突状态的统计信息。
 </tr>
 </tbody>
 </table>
-

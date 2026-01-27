@@ -10,8 +10,8 @@
 
 ## 操作步骤<a name="zh-cn_topic_0237088792_zh-cn_topic_0059777801_sac68001dd22f4446a51ead8f9d58bee2"></a>
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  执行如下命令会在本服务器指定目录下生成配置文件。
+1. 以操作系统用户omm登录数据库主节点。
+2. 执行如下命令会在本服务器指定目录下生成配置文件。
 
     ```
     gs_om -t generateconf -X /opt/software/openGauss/clusterconfig.xml --distribute
@@ -21,18 +21,17 @@
 
     >[!NOTE]说明 
     >
-    >-  执行命令后，日志信息中会有新文件的存放的目录。以一主两备环境为例，打开新文件存放目录，会出现3个以主机名命名的配置文件，需要用这3个文件分别替换对应主机的配置文件。
+    >- 执行命令后，日志信息中会有新文件的存放的目录。以一主两备环境为例，打开新文件存放目录，会出现3个以主机名命名的配置文件，需要用这3个文件分别替换对应主机的配置文件。
     >
-    >-  若不使用-\-distribute参数，需执行步骤[3](#zh-cn_topic_0237088792_zh-cn_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e)将静态配置文件分配到对应节点；若使用-\-distribute参数，则会将生成的静态配置文件自动分配到对应节点，无需执行步骤[3](#zh-cn_topic_0237088792_zh-cn_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e)。
+    >- 若不使用-\-distribute参数，需执行步骤[3](#zh-cn_topic_0237088792_zh-cn_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e)将静态配置文件分配到对应节点；若使用-\-distribute参数，则会将生成的静态配置文件自动分配到对应节点，无需执行步骤[3](#zh-cn_topic_0237088792_zh-cn_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e)。
 
-3.  <a name="zh-cn_topic_0237088792_zh-cn_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e"></a>（可选）分别替换3台主机的/opt/gaussdb/app/bin目录下损坏的静态配置文件。
+3. <a name="zh-cn_topic_0237088792_zh-cn_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e"></a>（可选）分别替换3台主机的/opt/gaussdb/app/bin目录下损坏的静态配置文件。
 
     这里以其中一台主机为例进行介绍。
 
     ```
     mv /opt/huawei/wisequery/script/static_config_files/cluster_static_config_SIA1000056771  /opt/gaussdb/app/bin/cluster_static_config
     ```
-
 
 ## 示例<a name="zh-cn_topic_0237088792_zh-cn_topic_0059777801_sec4df58bf58241cf9224729643c51d55"></a>
 
@@ -60,4 +59,3 @@ total 456
 -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat2
 -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat3
 ```
-

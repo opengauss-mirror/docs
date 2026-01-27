@@ -9,23 +9,24 @@ DROP EVENT TRIGGER deletes an event trigger.
 Only the super user or system administrator has the permission to delete an event trigger.
 
 ## Syntax<a name="en-us_topic_0283137186_en-us_topic_0237121256_en-us_topic_0059777895_sf4510c6bdb844b3b3de9831a1fed9107"></a>
+
 DROP EVENT TRIGGER [ IF EXISTS ] name [ CASCADE | RESTRICT ];
 
 ## Parameter Description<a name="en-us_topic_0283731186_en-us_topic_0237151226_en-us_topic_0059777895_se717dd5fd464489bb3502495c62d3a9e"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Reports a notice instead of an error if the specified event trigger does not exist.
 
--   **name**
+- **name**
 
     Specifies the name of the event trigger to be deleted.
 
     Value range: all existing event triggers.
 
--   **CASCADE | RESTRICT**
-    -   **CASCADE**: automatically deletes the objects that depend on the trigger.
-    -   **RESTRICT**: refuses to delete the trigger if any objects depend on it. This is the default action.   
+- **CASCADE | RESTRICT**
+    - **CASCADE**: automatically deletes the objects that depend on the trigger.
+    - **RESTRICT**: refuses to delete the trigger if any objects depend on it. This is the default action.   
 
 ## Examples<a name="en-us_topic_0283137186_en-us_topic_0237122156_en-us_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
 

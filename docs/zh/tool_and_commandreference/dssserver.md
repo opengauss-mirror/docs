@@ -25,7 +25,7 @@ dssserver -h
 
 dssserver作为一个独立的进程，在启动之前需要提供配置文件dss\_inst.ini，相关的配置参数整理如下：
 
--   LSNR\_PATH
+- LSNR\_PATH
 
     **参数说明**： dssserver进程需要的socket文件路径。
 
@@ -37,7 +37,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
     >
     >+ om安装后的默认值为$DSS\_HOME
 
--   LOG\_HOME
+- LOG\_HOME
 
     **参数说明**： 日志路径。
 
@@ -45,7 +45,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： ""
 
--   \_LOG\_BACKUP\_FILE\_COUNT
+- \_LOG\_BACKUP\_FILE\_COUNT
 
     **参数说明**： 日志文件最多保留的个数。
 
@@ -53,7 +53,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： 20
 
--   \_LOG\_MAX\_FILE\_SIZE
+- \_LOG\_MAX\_FILE\_SIZE
 
     **参数说明**： 单个日志文件最大大小。
 
@@ -61,7 +61,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： 256M
 
--   INST\_ID
+- INST\_ID
 
     **参数说明**： 实例号，每个主备下的dssserver进程各不相同。
 
@@ -73,7 +73,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
     >
     >+ om安装后的默认值为0~63中的某个值
 
--   STORAGE\_MODE
+- STORAGE\_MODE
 
     **参数说明**： DSS对应的存储设备类型，磁阵的话配置为SHARE_DISK或者CLUSTER_RAID，非磁阵配置成DISK。
 
@@ -85,7 +85,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
     >
     >+ om安装后的默认值为SHARE_DISK
 
--   \_LOG\_LEVEL
+- \_LOG\_LEVEL
 
     **参数说明**： 日志级别。
 
@@ -93,7 +93,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： 519
 
--   MAX\_SESSION\_NUMS
+- MAX\_SESSION\_NUMS
 
     **参数说明**： 最大的会话连接数量。
 
@@ -101,7 +101,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： 8192
 
--   DISK\_LOCK\_INTERVAL
+- DISK\_LOCK\_INTERVAL
 
     **参数说明**： 磁盘锁加锁超时时间。
 
@@ -109,7 +109,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： 100
 
--   DLOCK\_RETRY\_COUNT
+- DLOCK\_RETRY\_COUNT
 
     **参数说明**： 磁盘加锁重试次数。
 
@@ -117,7 +117,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： 50
 
--   \_AUDIT\_BACKUP\_FILE\_COUNT
+- \_AUDIT\_BACKUP\_FILE\_COUNT
 
     **参数说明**： 审计备份文件个数。
 
@@ -125,7 +125,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： 20
 
--   \_AUDIT\_MAX\_FILE\_SIZE
+- \_AUDIT\_MAX\_FILE\_SIZE
 
     **参数说明**： 审计备份文件最大大小。
 
@@ -133,7 +133,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： 256M
 
--   \_LOG\_FILE\_PERMISSIONS
+- \_LOG\_FILE\_PERMISSIONS
 
     **参数说明**： 日志文件权限。
 
@@ -141,14 +141,14 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： 600
 
--   \_LOG\_PATH\_PERMISSIONS
+- \_LOG\_PATH\_PERMISSIONS
 
     **参数说明**： 日志路径权限。
 
     **取值范围**： 整型，700\~777。
 
     **默认值**： 700
--   LOG\_COMPRESSED
+- LOG\_COMPRESSED
 
     **参数说明**： 控制日志转储支持压缩的功能。日志压缩时间计入dss业务执行时间中，开启日志压缩功能下，请勿将日志文件设置过大，否则将影响dss业务执行时间。
 
@@ -156,7 +156,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： FALSE   
 
--   \_SHM\_KEY
+- \_SHM\_KEY
 
     **参数说明**： 共享内存KEY。
 
@@ -168,7 +168,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
     >
     >+ om安装后的默认值为1~64中的某个值
 
--   DSS\_NODES\_LIST
+- DSS\_NODES\_LIST
 
     **参数说明**： dss instance节点之间mes通信url。
 
@@ -176,7 +176,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： 0:127.0.0.1:1611
 
--   INTERCONNECT\_TYPE
+- INTERCONNECT\_TYPE
 
     **参数说明**： 通信协议类型。
 
@@ -184,7 +184,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： TCP
 
--   INTERCONNECT\_CHANNEL\_NUM
+- INTERCONNECT\_CHANNEL\_NUM
 
     **参数说明**： 内部通信mes链接通道个数。
 
@@ -192,7 +192,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： 2
 
--   WORK\_THREAD\_COUNT
+- WORK\_THREAD\_COUNT
 
     **参数说明**： 内部通信mes工作线程数量。
 
@@ -200,7 +200,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： 2
 
--   RECV\_MSG\_POOL\_SIZE
+- RECV\_MSG\_POOL\_SIZE
 
     **参数说明**： 消息接收内存池大小。
 
@@ -208,7 +208,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： 42M
 
--   MES\_ELAPSED\_SWITCH
+- MES\_ELAPSED\_SWITCH
 
     **参数说明**： 内部通信mes统计计数时延开关。
 
@@ -216,7 +216,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： FALSE
 
--   _DISK\_LOCK\_FILE\_PATH
+- _DISK\_LOCK\_FILE\_PATH
 
     **参数说明**：STORAGE\_MODE为DISK时，所用锁的文件保存路径。
 
@@ -224,7 +224,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： /tmp
 
--   SSL\_CA
+- SSL\_CA
 
     **参数说明**： CA服务器的根证书。
 
@@ -232,7 +232,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： NA，表示没有CA服务器根证书。
 
--   SSL\_KEY
+- SSL\_KEY
 
     **参数说明**： 指定服务器私钥文件，用以对公钥加密的数据进行解密。
 
@@ -240,7 +240,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： NA，表示没有服务器私钥。
 
--   SSL\_CRL
+- SSL\_CRL
 
     **参数说明**： 证书吊销列表。如果客户端证书在改列表中，则当前客户端证书被视为无效证书。
 
@@ -248,7 +248,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： NA，表示没有吊销列表。
 
--   SSL\_CERT
+- SSL\_CERT
 
     **参数说明**： 指定服务器证书文件路径，证书文件的内容包含服务器端的公钥，公钥会被发送给对端来对数据进行加密。
 
@@ -256,7 +256,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： NA，表示没有服务器证书。
 
--   SSL\_CIPHER
+- SSL\_CIPHER
 
     **参数说明**： SSL通讯使用的加密算法。
 
@@ -264,7 +264,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**：""
 
--   SSL\_PWD\_CIPHERTEXT
+- SSL\_PWD\_CIPHERTEXT
 
     **参数说明**： 私钥密码。
 
@@ -272,7 +272,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： NA，表示私钥文件没有加密。
 
--   SSL\_CERT\_NOTIFY\_TIME
+- SSL\_CERT\_NOTIFY\_TIME
 
     **参数说明**： SSL服务器证书到期前提醒的天数。
 
@@ -280,7 +280,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： 30
 
--   POOL\_NAMES
+- POOL\_NAMES
 
     **参数说明**： 存储池配置。
 
@@ -288,7 +288,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**：""
 
--   IMAGE\_NAMES
+- IMAGE\_NAMES
 
     **参数说明**： image配置。
 
@@ -296,7 +296,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： 空
 
--   CEPH\_CONFIG
+- CEPH\_CONFIG
 
     **参数说明**： ceph集群配置文件。
 
@@ -304,7 +304,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： "/etc/ceph/ceph.conf"
 
--   VOLUME\_TYPES
+- VOLUME\_TYPES
 
     **参数说明**： 卷类型。
 
@@ -312,7 +312,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**：""
 
--   DSS\_CM\_SO\_NAME
+- DSS\_CM\_SO\_NAME
 
     **参数说明**： cm的二进制文件名。
 
@@ -324,7 +324,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
     >
     >+ om安装后的默认值为libclient.so
 
--   CLUSTER\_RUN\_MODE
+- CLUSTER\_RUN\_MODE
 
     **参数说明**： DORADO双集群启动模式。
 
@@ -332,29 +332,28 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**："cluster_primary"
     
-
--   \_BLACKBOX\_DETAIL\_ON
+- \_BLACKBOX\_DETAIL\_ON
 
     **参数说明**： 黑匣子日志开启时，是否要打印共享内存信息。
 
     **取值范围**： 布尔型，FALSE/TRUE。TRUE表示当黑匣子日志开启时，打印共享内存信息；FALSE表示当黑匣子开启时，不打印共享内存信息。如果黑匣子功能没有开启，则该参数不生效。
 
     **默认值**： FALSE
--   \_ENABLE\_CORE\_STATE\_COLLECT
+- \_ENABLE\_CORE\_STATE\_COLLECT
 
     **参数说明**：控制节点异常coredump时，是否会在DSS_HOME目录下生成临时文件dss.core.file。
 
     **取值范围**： 布尔型，FALSE/TRUE。TRUE表示节点异常coredump时，会在DSS_HOME目录下生成临时文件dss.core.file；FALSE表示节点异常coredump时，不会在DSS_HOME目录下生成临时文件dss.core.file。
 
     **默认值**： FALSE
--   DELAY\_CLEAN\_INTERVAL
+- DELAY\_CLEAN\_INTERVAL
 
     **参数说明**： 主机后台延时清理线程的执行时间间隔。
 
     **取值范围**： 整型，5\~1000000。单位：秒。
 
     **默认值**： 300
--   WORK\_THREADS
+- WORK\_THREADS
 
     **参数说明**： 控制单个reactor线程池线程的数量。
 
@@ -362,7 +361,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： 16
 
--   IO\_THREADS
+- IO\_THREADS
 
     **参数说明**： 控制reactor的数量。
 
@@ -370,7 +369,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： 2
 
--   DSS\_NODES\_LIST
+- DSS\_NODES\_LIST
 
     **参数说明**： DSS节点列表，记录集群中各DSS实例进行mes通信的url。
 
@@ -378,31 +377,35 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： 0|127.0.0.1|1611
 
-
 ## 日志<a name="zh-cn_topic_0287276000_zh-cn_topic_0237152404_zh-cn_topic_0059777816_s2298a1889844418daec3743b9a4b57fb"></a>
+
 DSS日志类型如下：
--   RUN日志
+
+- RUN日志
 
 打印数据库DSS模式下DSS运行RUN级别信息。如果DSS运行故障，且开启RUN级别日志，请查看dsscmd.rlog和dssinstance.rlog。
 
 日志目录：默认为$DSS_HOME/log/run。
--   DEBUG日志
+
+- DEBUG日志
 
 打印数据库DSS模式下DSS运行DEBUG级别信息。如果DSS运行故障，且开启DEBUG级别日志，请查看dsscmd.dlog和dssinstance.dlog。
 
 日志目录：默认为$DSS_HOME/log/debug。
--   操作日志
+
+- 操作日志
 
 打印数据库DSS模式下DSS运行OPER级别信息。如果DSS运行故障，且开启OPER级别日志，请查看dsscmd.olog。
 
 日志目录：默认为$DSS_HOME/log/oper。
 
--   审计日志
+- 审计日志
 
 打印数据库DSS模式下DSS运行审计数据或者元数据进行修改或查询的信息。
 
 日志目录：默认为$DSS_HOME/log/audit。
--   黑匣子日志
+
+- 黑匣子日志
 
 打印数据库DSS模式下，dssserver进程异常终止时的异常基本信息。黑匣子日志默认开启，如需关闭，需配置参数_LOG_LEVEL=0, 重启dssserver后生效。
 

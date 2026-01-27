@@ -12,26 +12,25 @@ SET column_name = { expression | DEFAULT }
 
 ## 参数说明<a name="section24508283118"></a>
 
--   **table\_name**
+- **table\_name**
 
     要更新的表名，可以使用模式修饰。例如，myshcema.table。
 
     取值范围：已存在的表名称。
 
--   **expression**
+- **expression**
 
     赋给字段的值或表达式。
 
--   **column\_name**
+- **column\_name**
 
     要修改的字段名。
 
     取值范围：已存在的字段名。
 
--   **condition**
+- **condition**
 
     一个返回Boolean类型结果的表达式。只有这个表达式返回true的行才会被更新。
-
 
 ## 示例<a name="section1401745151110"></a>
 
@@ -61,4 +60,3 @@ UPDATE 9
 openGauss=# UPDATE customer_t1 SET c_customer_id = 'Admin', c_first_name = 'Local' WHERE c_customer_sk = 4421; 
 UPDATE 1
 ```
-

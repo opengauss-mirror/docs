@@ -12,26 +12,25 @@ pg_archivecleanup [OPTION]... ARCHIVELOCATION OLDESTKEPTWALFILE
 
 ## 参数说明<a name="section9655840194219"></a>
 
--   -d
+- -d
 
     在stderr上打印调试日志。
 
--   -n
+- -n
 
     打印将要删除的文件名。
 
--   -V,--version
+- -V,--version
 
     打印pg\_archivecleanup的版本并退出。
 
--   -x Extension
+- -x Extension
 
     当该程序用作单独的工具时，提供一个扩展选项，只选择对应扩展名格式的文件。
 
--   -?,--help
+- -?,--help
 
     显示关于pg\_archivecleanup命令行参数的帮助信息。
-
 
 ## 示例<a name="section111861451184417"></a>
 
@@ -50,4 +49,3 @@ archive_cleanup_command = 'pg_archivecleanup /mnt/server/archiverdir %r'
 ```
 
 恢复完成后从归档目录中清除不再需要的文件。
-

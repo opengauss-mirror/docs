@@ -46,7 +46,6 @@ Only the owner of a publication and the system administrator can execute **ALTER
   ALTER PUBLICATION name RENAME TO new_name
   ```
 
-
 ## Parameter Description<a name="section1338317414277"></a>
 
 - **name**
@@ -68,7 +67,6 @@ Only the owner of a publication and the system administrator can execute **ALTER
 - **new\_name**
 
   Specifies the new name of a publication.
-
 
 ## Examples<a name="section5652932173112"></a>
 

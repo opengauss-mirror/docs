@@ -27,9 +27,9 @@ Use the  **buildDockerImage.sh**  script to build a Docker image. This script is
     sha256sum openGauss-Server-X.X.X-CentOS7-x86_64.tar.bz2 > sha256_file_amd64 
 >
 > ```
-
+>
 > - Before the installation, obtain the  **openEuler\_aarch64.repo**  file from Huawei open-source image website and save it to the  **openGauss-server-master/docker/dockerfiles/6.0.0**  folder. Run the following command to obtain the  **openEuler\_aarch64.repo**  file.
-
+>
 > ```
 >
    wget -O openEuler_aarch64.repo <https://mirrors.huaweicloud.com/repository/conf/openeuler_aarch64.repo>

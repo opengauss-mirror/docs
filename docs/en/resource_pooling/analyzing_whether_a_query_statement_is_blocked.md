@@ -10,8 +10,8 @@ A query statement uses a lock to protect the data objects that it wants to acces
 
 ## Procedure<a name="section16731125079"></a>
 
-1.  Log in to the host as the OS user  **omm**.
-2.  Run the following command to connect to the database:
+1. Log in to the host as the OS user  **omm**.
+2. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -19,13 +19,13 @@ A query statement uses a lock to protect the data objects that it wants to acces
 
     **postgres**  is the name of the database, and  **8000**  is the port number.
 
-3.  Find the thread ID of the faulty session from the current active session view.
+3. Find the thread ID of the faulty session from the current active session view.
 
     ```
     SELECT w.query AS waiting_query, w.pid AS w_pid, w.usename AS w_user, l.query AS locking_query, l.pid AS l_pid, l.usename AS l_user, t.schemaname || '.' || t.relname AS tablename FROM pg_stat_activity w JOIN pg_locks l1 ON w.pid = l1.pid AND NOT l1.granted JOIN pg_locks l2 ON l1.relation = l2.relation AND l2.granted JOIN pg_stat_activity l ON l2.pid = l.pid JOIN pg_stat_user_tables t ON l1.relation = t.relid WHERE w.waiting = true;
     ```
 
-4.  Terminate the session using its thread ID.
+4. Terminate the session using its thread ID.
 
     ```
     SELECT pg_terminate_backend(139834762094352);
@@ -46,5 +46,3 @@ A query statement uses a lock to protect the data objects that it wants to acces
     FATAL:  terminating connection due to administrator command 
     FATAL:  terminating connection due to administrator command The connection to the server was lost. Attempting reset: Succeeded.
     ```
-
-

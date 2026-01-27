@@ -3,15 +3,17 @@
 ## 问题现象
 
 日志里出现如下错误：
+
 ```
 This error usually means that PostgreSQL's request for a shared  memory segment 
 exceeded available memory or swap space,  or exceeded your kernel's SHMALL parameter.  
 You can either  reduce the request size or reconfigure the kernel with larger SHMALL. 
 ```
 
-
 ## 原因分析
+
 使用`free`命令查看内存使用情况，发现`shared`内存的确占用了很大一部分。
+
 ```
 # free -g
               total        used        free      shared  buff/cache   available
@@ -56,7 +58,9 @@ key        shmid      owner      perms      bytes      nattch     status
 经过定位，这部分内存是由于使用`kill -9`命令来退出数据库进程，导致没有调用`IpcMemoryDelete`函数来清理共享内存，造成了内存泄漏。
 
 ## 处理方法
+
 使用`ipcrm`释放无属主的共享内存，例如，释放`shmid`为`3604486`的共享内存，命令如下所示。
+
 ```
 ipcrm -m 3604486
 ```

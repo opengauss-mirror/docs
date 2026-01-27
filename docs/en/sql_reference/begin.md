@@ -12,7 +12,7 @@ None
 
 ## Syntax<a name="en-us_topic_0283137310_en-us_topic_0237122087_en-us_topic_0059778122_s9591de70a4254764b3ec5daed66d030a"></a>
 
--   Enable an anonymous block.
+- Enable an anonymous block.
 
     ```
     [DECLARE [declare_statements]] 
@@ -22,7 +22,7 @@ None
     /
     ```
 
--   Start a transaction.
+- Start a transaction.
 
     ```
     BEGIN [ WORK | TRANSACTION ]
@@ -34,19 +34,17 @@ None
       ];
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0283137310_en-us_topic_0237122087_en-us_topic_0059778122_scabeb8532e944460bef66392557a9480"></a>
 
--   **declare\_statements**
+- **declare\_statements**
 
     Declares a variable, including its name and type, for example,  **sales\_cnt int**.
 
--   **execution\_statements**
+- **execution\_statements**
 
     Specifies the statement to be executed in an anonymous block.
 
     Value range: DML operations \(such as select, insert, delete, and update\) or registered functions in the system catalog.
-
 
 ## Examples<a name="en-us_topic_0283137310_section41260277018"></a>
 
@@ -55,4 +53,3 @@ None
 ## Helpful Links<a name="en-us_topic_0283137310_en-us_topic_0237122087_en-us_topic_0059778122_section552105014012"></a>
 
 [START TRANSACTION](start_transaction.md)
-

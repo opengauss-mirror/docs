@@ -3,6 +3,7 @@
 ## Precautions
 
 Compatibility restrictions:
+
 - This function takes effect only in B-compatible mode.
 
 - Currently, only some syntax and functions of the complete syntax in the MySQL database are supported.

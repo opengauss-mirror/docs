@@ -16,20 +16,19 @@ DROP SCHEMA [ IF EXISTS ] schema_name [, ...] [ CASCADE | RESTRICT ];
 
 ## Parameter Description<a name="en-us_topic_0283137271_en-us_topic_0237122148_en-us_topic_0059778467_s265f3ed4c0e4402a8a7c984e6ac1fe33"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Reports a notice instead of an error if the specified schema does not exist.
 
--   **schema\_name**
+- **schema\_name**
 
     Specifies the name of the schema to be deleted.
 
     Value range: an existing schema name
 
--   **CASCADE | RESTRICT**
-    -   **CASCADE**: automatically deletes all the objects contained in the schema.
-    -   **RESTRICT**: refuses to delete the schema if the schema contains objects. This is the default action.
-
+- **CASCADE | RESTRICT**
+    - **CASCADE**: automatically deletes all the objects contained in the schema.
+    - **RESTRICT**: refuses to delete the schema if the schema contains objects. This is the default action.
 
 >[!TIP]NOTICE 
 >Schemas beginning with  **pg\_temp**  or  **pg\_toast\_temp**  are for internal use. Do not delete them. Otherwise, unexpected consequences may be incurred.
@@ -44,4 +43,3 @@ See  [Examples](create_schema.md#en-us_topic_0283137491_en-us_topic_0237122113_e
 ## Helpful Links<a name="en-us_topic_0283137271_en-us_topic_0237122148_en-us_topic_0059778467_s344eb8c77efa4c209c358dd81f79034f"></a>
 
 [ALTER SCHEMA](alter_schema.md)  and  [CREATE SCHEMA](create_schema.md)
-

@@ -11,9 +11,9 @@ For details about the variable declaration syntax, see  [Figure 1](#en-us_topic_
 
 The above syntax diagram is explained as follows:
 
--   **variable\_name**  indicates the name of a variable.
--   **type**  indicates the type of a variable.
--   **value**  indicates the initial value of the variable. \(If the initial value is not given, NULL is taken as the initial value.\)  **value**  can also be an expression.
+- **variable\_name**  indicates the name of a variable.
+- **type**  indicates the type of a variable.
+- **value**  indicates the initial value of the variable. \(If the initial value is not given, NULL is taken as the initial value.\)  **value**  can also be an expression.
 
 **Examples**
 
@@ -63,16 +63,18 @@ my_employee2 cur -- For the cursor defined in a package, %ROWTYPE can be omitted
 ```
 
 ROWTYPE for cursor supports the following features:
--   Turn on the precompile switch can detect whether the table involved in the cursor exists or not, and whether the corresponding columns in the table exist or not, so that it can throw an error when creating a function, procedure, or package.
--   Turn off the precompile switch can create functions, stored procedures, and packages successfully regardless of the existence of the cursor's table or columns in the table.
--   Variables defined by ROWTYPE can be assigned values even if there is no data in the table involved in the cursor.
--   if a column table involved in the cursor has a default value, ROWTYPE only gets the type and does not inherit the default value and constraints.
--   Support for data insertion in PL using ROWTYPE non-virtualized columns.
--   Re-query the table structure involved in the cursor each time when executing functions, procedures, or packages to accommodate changes in the table structure.
--   Can assign a value to a RECORD type variable using the variables defined by the cur%ROWTYPE.
--   Can assign default values to variables defined by the cur%ROWTYPE.
+
+- Turn on the precompile switch can detect whether the table involved in the cursor exists or not, and whether the corresponding columns in the table exist or not, so that it can throw an error when creating a function, procedure, or package.
+- Turn off the precompile switch can create functions, stored procedures, and packages successfully regardless of the existence of the cursor's table or columns in the table.
+- Variables defined by ROWTYPE can be assigned values even if there is no data in the table involved in the cursor.
+- if a column table involved in the cursor has a default value, ROWTYPE only gets the type and does not inherit the default value and constraints.
+- Support for data insertion in PL using ROWTYPE non-virtualized columns.
+- Re-query the table structure involved in the cursor each time when executing functions, procedures, or packages to accommodate changes in the table structure.
+- Can assign a value to a RECORD type variable using the variables defined by the cur%ROWTYPE.
+- Can assign default values to variables defined by the cur%ROWTYPE.
 
 Test case:
+
 ```
 -- Turn on the precompile switch
 set behavior_compat_options='allow_procedure_compile_check';
@@ -131,15 +133,15 @@ INFO:  3
 ```
 
 >[!TIP]NOTICE 
->-   **%TYPE**  cannot reference the type of a composite variable or a record variable, a column type of the record type, a column type of a variable of the cross-package composite type, or a column type of a cursor variable of the cross-package type.
->-   **%ROWTYPE**  cannot reference the type of a composite variable or a record variable and the type of a cross-package cursor.
->-   **%ROWTYPE** cannot reference nested cursors.
+>
+>- **%TYPE**  cannot reference the type of a composite variable or a record variable, a column type of the record type, a column type of a variable of the cross-package composite type, or a column type of a cursor variable of the cross-package type.
+>- **%ROWTYPE**  cannot reference the type of a composite variable or a record variable and the type of a cross-package cursor.
+>- **%ROWTYPE** cannot reference nested cursors.
 
 ## Scope of a Variable<a name="en-us_topic_0283136825_en-us_topic_0237122221_en-us_topic_0059777427_s22f3ff2c9c4344a99fd2a028a86620bf"></a>
 
 The scope of a variable indicates the accessibility and availability of the variable in code block. In other words, a variable takes effect only within its scope.
 
--   To define a function scope, a variable must declare and create a  **BEGIN-END**  block in the declaration section. The necessity of such declaration is also determined by block structure, which requires that a variable has different scopes and lifetime during a process.
--   A variable can be defined multiple times in different scopes, and inner definition can cover outer one.
--   A variable defined in an outer block can also be used in a nested block. However, the outer block cannot access variables in the nested block.
-
+- To define a function scope, a variable must declare and create a  **BEGIN-END**  block in the declaration section. The necessity of such declaration is also determined by block structure, which requires that a variable has different scopes and lifetime during a process.
+- A variable can be defined multiple times in different scopes, and inner definition can cover outer one.
+- A variable defined in an outer block can also be used in a nested block. However, the outer block cannot access variables in the nested block.

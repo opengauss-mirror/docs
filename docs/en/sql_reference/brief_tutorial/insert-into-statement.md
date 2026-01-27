@@ -12,39 +12,38 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
 
 ## Parameter Description<a name="section932010594419"></a>
 
--   **table\_name**
+- **table\_name**
 
     Specifies the name of the target table where data will be inserted.
 
     Value range: an existing table name
 
--   **column\_name**
+- **column\_name**
 
     Specifies the name of a column in the target table.
 
-    -   The column name can be qualified with a subcolumn name or an array subscript, if needed.
-    -   Each column not present in the column list will be filled with a default value, either its declared default value or  **NULL**  if there is none. Inserting data into only some columns of a composite type leaves the other columns  **NULL**.
-    -   The target column names \(specified by  **column\_name**\) can be listed in any order. If no list of column names is given at all, the default is all the columns of the table in their declared order.
-    -   The target columns are the first  _N_  column names, if there are only  _N_  columns provided by the  **value**  clause.
-    -   The values provided by the  **value**  clause are associated with the corresponding columns from left to right in the table.
+    - The column name can be qualified with a subcolumn name or an array subscript, if needed.
+    - Each column not present in the column list will be filled with a default value, either its declared default value or  **NULL**  if there is none. Inserting data into only some columns of a composite type leaves the other columns  **NULL**.
+    - The target column names \(specified by  **column\_name**\) can be listed in any order. If no list of column names is given at all, the default is all the columns of the table in their declared order.
+    - The target columns are the first  _N_  column names, if there are only  _N_  columns provided by the  **value**  clause.
+    - The values provided by the  **value**  clause are associated with the corresponding columns from left to right in the table.
 
     Value range: an existing column
 
--   **expression**
+- **expression**
 
     Specifies an expression or a value to assign to the corresponding column.
 
-    -   If single-quotation marks are inserted in a column, the single-quotation marks need to be used for escape.
-    -   If the expression for any column is not of the correct data type, automatic type conversion will be attempted. If the attempt fails, data insertion fails, and the system returns an error message.
+    - If single-quotation marks are inserted in a column, the single-quotation marks need to be used for escape.
+    - If the expression for any column is not of the correct data type, automatic type conversion will be attempted. If the attempt fails, data insertion fails, and the system returns an error message.
 
--   **DEFAULT**
+- **DEFAULT**
 
     Specifies the default value of a column. The value is  **NULL**  if no specified default value has been assigned to it.
 
-
 ## Examples<a name="section16704153143"></a>
 
--   Insert a row of data into the  **customer\_t1**  table.
+- Insert a row of data into the  **customer\_t1**  table.
 
     Data values are arranged in the same order as the columns in the table and are separated by commas \(,\). Generally, column values are text values \(constants\), but they can also be scalar expressions.
 
@@ -79,7 +78,7 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
     INSERT 0 1
     ```
 
--   To insert multiple rows of data into a table, run the following command:
+- To insert multiple rows of data into a table, run the following command:
 
     ```
     openGauss=# INSERT INTO customer_t1 (c_customer_sk, c_customer_id, c_first_name,Amount) VALUES 
@@ -90,5 +89,3 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
     ```
 
     You can also insert multiple rows of data by running the command for inserting one row of data for multiple times. However, you are advised to run this command to improve efficiency.
-
-

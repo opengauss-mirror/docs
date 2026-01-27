@@ -8,13 +8,13 @@
 
 ### 注册、绑定集群<a name="section414219541089"></a>
 
-1.  注册集群
+1. 注册集群
 
     ```
     curl -X 'POST' 'https://x.x.x.x:x/v1/api/clusters/register' -H 'accept: application/json' -H 'Content-Type: application/json' --cacert /path/xxx.crt --key /path/xxx.key --cert /path/xxx.crt -d '{ "cluster_name": "cluster1", "host": "10.x.x.x", "port": "1", "username": "user", "password": "db_password"}' --pass "***"
     ```
 
-2.  绑定集群
+2. 绑定集群
 
     ```
     curl -X 'PUT' 'https://x.x.x.x:x/v1/api/clusters?instance=10.x.x.x:1&user_id=test_user&session_id=test_session' -H 'accept: application/json' -H 'Content-Type: application/json' --cacert /path/xxx.crt --key /path/xxx.key --cert /path/xxx.crt --pass "***"
@@ -24,13 +24,13 @@
 
 ### 绑定大语言模型<a name="section6312161011917"></a>
 
-1.  查询可用的大语言模型
+1. 查询可用的大语言模型
 
     ```
     curl -X 'GET' 'https://x.x.x.x:x/v1/api/llms' -H 'accept: application/json' -H 'Content-Type: application/json' --cacert /path/xxx.crt --key /path/xxx.key --cert /path/xxx.crt --pass "***"
     ```
 
-2.  绑定大语言模型
+2. 绑定大语言模型
 
     ```
     curl -X 'PUT' 'https://x.x.x.x:x/v1/api/llms?name=xxx&user_id=xxx&session_id=xxx' -H 'accept: application/json' -H 'Content-Type: application/json' --cacert /path/xxx.crt --key /path/xxx.key --cert /path/xxx.crt --pass "***"

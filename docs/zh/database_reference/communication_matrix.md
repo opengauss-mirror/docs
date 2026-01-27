@@ -817,7 +817,6 @@
 
 </tr>
 
-
 <tr id="row176802453613"><td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.1 "><p id="p969192463618"><a name="p969192463618"></a><a name="p969192463618"></a>UWAL服务运行服务器</p>
 </td>
 
@@ -863,7 +862,6 @@
 <td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>无</p>
 </td>
 </tr>
-
 
 <tr id="row176802453613"><td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.1 "><p id="p969192463618"><a name="p969192463618"></a><a name="p969192463618"></a>UWAL服务运行服务器</p>
 </td>
@@ -911,7 +909,6 @@
 </td>
 </tr>
 
-
 <tr id="row176802453613"><td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.1 "><p id="p969192463618"><a name="p969192463618"></a><a name="p969192463618"></a>分布式锁服务运行服务器</p>
 </td>
 
@@ -958,7 +955,6 @@
 </td>
 </tr>
 
-
 <tr id="row176802453613"><td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.1 "><p id="p969192463618"><a name="p969192463618"></a><a name="p969192463618"></a>分布式锁服务运行服务器</p>
 </td>
 
@@ -1004,7 +1000,6 @@
 <td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>RDMA场景，用于交换数据面建链的必要信息，不涉及用户数据，无需认证和加密。即使本链被劫持、伪造等等，均不影响数据面的安全</p>
 </td>
 </tr>
-
 
 <tr id="row176802453613"><td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.1 "><p id="p969192463618"><a name="p969192463618"></a><a name="p969192463618"></a>分布式锁服务运行服务器</p>
 </td>
@@ -1055,4 +1050,3 @@
 </tbody>
 
 </table>
-

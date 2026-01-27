@@ -13,21 +13,19 @@ SELECT
 
 ## 参数说明<a name="zh-cn_topic_0000001225258419_section11566195673011"></a>
 
--   **WHERE子句**
+- **WHERE子句**
 
     WHERE子句构成一个行选择表达式，用来缩小SELECT查询的范围。在WHERE子句中可以使用比较运算符或逻辑运算符，例如 \>, <, =, LIKE, NOT 等等。
 
-
--   **condition**
+- **condition**
 
     condition是返回值为布尔型的任意表达式，任何不满足该条件的行都不会被检索。
-
 
 ## 示例<a name="zh-cn_topic_0000001225258419_section36861642133019"></a>
 
 使用逻辑运算符读取表customer\_t1。
 
--   **AND**
+- **AND**
 
     找到c\_customer\_id为hello且c\_customer\_sk为3869的行。
 
@@ -42,7 +40,7 @@ SELECT
     (4 rows)
     ```
 
--   **OR**
+- **OR**
 
     找到c\_customer\_sk大于6985或者c\_customer\_id为hello的行。
 
@@ -58,7 +56,7 @@ SELECT
     (5 rows)
     ```
 
--   **NOT NULL**
+- **NOT NULL**
 
     找到customer\_t1中c\_last\_name字段不为空的行。
 
@@ -69,7 +67,7 @@ SELECT
     (0 rows)
     ```
 
--   **BETWEEN**
+- **BETWEEN**
 
     找到c\_customer\_sk在4000和9000之间的行。
 
@@ -81,5 +79,3 @@ SELECT
               4421 | Admin         | Local        |             |   3000
     (2 rows)
     ```
-
-

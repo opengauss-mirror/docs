@@ -1,17 +1,21 @@
 # 因数据库启动首轮Reform失败导致节点退出的问题
 
 ## 一、问题现象
+
 在资源池化场景中，当一个稳定集群出现异常，例如有节点重启、节点被踢出集群、节点加入集群等，DMS需要处理这一情况，将集群从不稳定状态转变为稳定状态，这一过程在资源池化架构下称之为reform。其中，某一数据库节点启动时触发的reform称为该节点的first reform（或启动轮reform）。在reform期间，如果出现新的节点状态变化，例如有节点在reform期间起停，则会导致本轮reform失败，DMS会基于当前的集群状态重新组织新的reform，用于将集群变为新的稳定状态。在目前DMS的设计中，数据库节点的启动轮reform对于该节点是不允许失败的，如果某个节点的启动轮reform失败，DMS会促使该节点退出，然后由CM重新拉起该节点，并由DMS触发新的一轮reform，将集群变为新的稳定状态。
 
 ## 二、定位方法
+
 以三节点集群为例，记为0节点、1节点、2节点，其中0节点为主节点，执行`kill -9 xxx`强行停止0节点，在0节点状态为Starting时，执行`kill -9 xxx`强行停止1节点或2节点。会发现0节点再次重启。
 
-查看相应时间段的pg_log日志（目录：$GAUSSLOG/pg_log/dn_600X），可以发现如下告警信息` WARNING:  [SS reform][db sync wait] Node:0 first-round reform failed, shutdown now`，数据库节点发现first-round reform失败后，就会向postmaster线程发送SIGTERM信号，然后走数据库退出流程。
+查看相应时间段的pg_log日志（目录：$GAUSSLOG/pg_log/dn_600X），可以发现如下告警信息`WARNING:  [SS reform][db sync wait] Node:0 first-round reform failed, shutdown now`，数据库节点发现first-round reform失败后，就会向postmaster线程发送SIGTERM信号，然后走数据库退出流程。
+
 ```
 2024-09-19 17:14:12.592 66ebeab1.1 [unknown] 281466178961424 [unknown] 0 dn_6001_6002_6003 01000  0 [BACKEND] WARNING:  [SS reform][db sync wait] Node:0 first-round reform failed, shutdown now
 2024-09-19 17:14:12.592 66ebeab1.1 [unknown] 281466178961424 [unknown] 0 dn_6001_6002_6003 00000  0 [BACKEND] LOG:  received fast shutdown request
 2024-09-19 17:14:12.592 66ebeab1.1 [unknown] 281466178961424 [unknown] 0 dn_6001_6002_6003 00000  0 [BACKEND] LOG:  send to startup shutdown request
 ```
+
 ```
 2024-09-19 17:14:16.557 66ebeb64.6536 [unknown] 281429379690368 dn_6001 0 dn_6001_6002_6003 00000  0 [DBL_WRT] LOG:  Double write exit
 2024-09-19 17:14:16.557 66ebeb64.6536 [unknown] 281429379690368 dn_6001 0 dn_6001_6002_6003 00000  0 [DBL_WRT] LOG:  Double write exit
@@ -42,7 +46,9 @@
 2024-09-19 17:14:37.782 [MOT] <TID:3140211/04092> <SID:-----/-----> [INFO]     <Memory>             Kernel allocation MM Layer Pre-Shutdown Report report:
   NUMA Interleaved memory usage: Current = 1 MB, Peak = 1 MB
 ```
+
 查看相应时间段的DMS日志（目录：$GAUSSLOG/pg_log/DMS/run），DMS频繁报错2节点通信异常，最后打印日志`INFO>[mes]: disconnect node 2.`，可以看出是由于2节点断开连接，本轮reform失败，由于0节点是first-round reform，因此0节点退出。
+
 ```
 UTC+8 2024-09-19 17:14:37.353|DMS|3140211|INFO>[mes] mes_close_send_pipe_nolock priority=4, inst_id=2, channel_id=31 [mes_tcp.c:420]
 UTC+8 2024-09-19 17:14:37.353|DMS|3140211|INFO>[mes] mes_close_send_pipe priority=4, inst_id=2, channel_id=31 [mes_tcp.c:405]
@@ -65,7 +71,9 @@ UTC+8 2024-09-19 17:14:42.459|DMS|3452914|INFO>[LOG] file '/usr1/ertao/openGauss
 UTC+8 2024-09-19 17:14:42.459|DMS|3452914|INFO>[DMS] dms_init start [dms_process.c:1387]
 UTC+8 2024-09-19 17:14:42.459|DMS|3452914|INFO>[DMS] dms_set_global_dms start [dms_process.c:1339]
 ```
+
 0节点退出后，cm会检测出0节点退出，自动拉起0节点，集群最后会恢复稳定状态。
+
 ```
 [xxxxxxxx@xxxxxxxxx111 dn_6001]$ cm_ctl query -Cv
 [  CMServer State   ]
@@ -103,7 +111,9 @@ node            instance state            | node            instance state      
 ```
 
 ## 三、问题根因
+
 在目前DMS的设计中，数据库节点的启动轮reform对于该节点是不允许失败的，如果某节点的启动轮reform失败，DMS会控制该节点退出，然后由CM重新拉起该节点，并由DMS触发新的一轮reform，将集群变为新的稳定状态。在此过程中，用户不需要手动介入，只需要等待reform结束，即`cm_ctl query -Cv`查询结果，各节点状态都为`Normal`。
 
 ## 四、解决方案
+
 该问题为reform特殊场景，不需要手动接入，只需要等待reform结束即可。

@@ -336,7 +336,6 @@ wait\_status列的等待状态有以下状态。
 </tbody>
 </table>
 
-
 当wait\_status为acquire lwlock、acquire lock或者wait io时，表示有等待事件。正在等待获取wait\_event列对应类型的轻量级锁、事务锁，或者正在进行IO。
 
 其中，wait\_status值为acquire lwlock（轻量级锁）时对应的wait\_event等待事件类型与描述信息如下。（wait\_event为Extension时，表示此时的轻量级锁是动态分配的锁，未被监控。）
@@ -1261,7 +1260,6 @@ wait\_status列的等待状态有以下状态。
 </tr>
 </tbody>
 </table>
-
 
 当wait\_status值为acquire lock（事务锁）时对应的wait\_event等待事件类型与描述信息如下。
 

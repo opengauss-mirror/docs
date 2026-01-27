@@ -6,42 +6,40 @@
 
 ## Precautions<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_sfccb497f01564edb804ecee58fe2698c"></a>
 
--   Only the owner of a schema or users granted with the  **ALTER**  permission on the schema can run the  **ALTER SCHEMA**  command. The system administrator has this permission by default. To change the owner of a schema, you must be the owner of the schema or system administrator and a member of the new owner role.
--   Only the initial user is allowed to change the owner of the  **pg\_catalog**  system schema.
+- Only the owner of a schema or users granted with the  **ALTER**  permission on the schema can run the  **ALTER SCHEMA**  command. The system administrator has this permission by default. To change the owner of a schema, you must be the owner of the schema or system administrator and a member of the new owner role.
+- Only the initial user is allowed to change the owner of the  **pg\_catalog**  system schema.
 
 ## Syntax<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_s794bdb8d97844eb7aa7d1d6cdf896ac9"></a>
 
--   Alter the tamper-proof attribute of a schema.
+- Alter the tamper-proof attribute of a schema.
 
     ```
     ALTER SCHEMA schema_name { WITH | WITHOUT } BLOCKCHAIN
     ```
 
-
--   Rename a schema.
+- Rename a schema.
 
     ```
     ALTER SCHEMA schema_name 
         RENAME TO new_name;
     ```
 
--   Change the owner of a schema.
+- Change the owner of a schema.
 
     ```
     ALTER SCHEMA schema_name 
         OWNER TO new_owner;
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_s8277cc73aecc4f20845d2ddf456a20e7"></a>
 
--   **schema\_name**
+- **schema\_name**
 
     Specifies the name of an existing schema.
 
     Value range: an existing schema name.
 
--   **RENAME TO new\_name**
+- **RENAME TO new\_name**
 
     Rename a schema. If a non-administrator user wants to change the schema name, the user must have the  **CREATE**  permission on the database.
 
@@ -49,7 +47,7 @@
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **OWNER TO new\_owner**
+- **OWNER TO new\_owner**
 
     Change the owner of a schema. To do this as a non-administrator, you must be a direct or indirect member of the new owner role, and that role must have the  **CREATE**  permission on the database.
 
@@ -57,10 +55,9 @@
 
     Value range: an existing username or role name.
 
--   **\{ WITH | WITHOUT \} BLOCKCHAIN**
+- **\{ WITH | WITHOUT \} BLOCKCHAIN**
 
     Alters the tamper-proof attribute of a schema. Common row-store tables with the tamper-proof attribute are tamper-proof history tables, excluding foreign tables, temporary tables, and system catalogs. The tamper-proof attribute can be altered only when no table is contained in the schema. In addition, the temporary table mode is not supported. Alter the tamper-proof attribute in the  **toast table**  schema,  **dbe\_perf**  schema, and  **blockchain**  schema.
-
 
 ## Examples<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_sd7a0dca78f6844d79a0ec70fb4213769"></a>
 
@@ -85,4 +82,3 @@ openGauss=# DROP USER jack;
 ## Helpful Links<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_seadab16e00ee41c383d8cba1759ed7c8"></a>
 
 [CREATE SCHEMA](create_schema.md)  and  [DROP SCHEMA](drop_schema.md)
-

@@ -43,4 +43,3 @@ GS\_GSC\_MEMORY\_DETAIL视图描述当前节点当前进程的全局SysCache的�
 </tr>
 </tbody>
 </table>
-

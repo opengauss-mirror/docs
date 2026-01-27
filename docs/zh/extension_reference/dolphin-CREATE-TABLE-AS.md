@@ -37,7 +37,6 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE table_name
     CREATE TABLE t_new (WITH temp_t(a, b) AS (SELECT a, b FROM t_old) SELECT * FROM temp_t);
     ```
 
-
 ## 示例<a name="zh-cn_topic_0283136662_zh-cn_topic_0237122118_zh-cn_topic_0059777601_sa7f2698f298f4001b3a283cb912f1f4d"></a>
 
 ```
@@ -64,4 +63,3 @@ openGauss=# DROP TABLE tpcds.store_returns;
 ## 相关链接<a name="zh-cn_topic_0283136662_zh-cn_topic_0237122118_zh-cn_topic_0059777601_sa0d9dc1ba4fb4ce58ecdfe391f0561d3"></a>
 
 [CREATE TABLE](../sql_reference/create_table.md)，[SELECT](../sql_reference/select.md)
-

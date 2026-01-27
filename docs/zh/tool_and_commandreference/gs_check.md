@@ -6,80 +6,79 @@ gs_check改进增强，统一化当前系统中存在的各种检查工具，例
 
 ## 注意事项<a name="zh-cn_topic_0237152330_section4290135616319"></a>
 
--   必须指定-i或-e参数，-i会检查指定的单项，-e会检查对应场景配置中的多项。
--   如果-i参数中不包含root类检查项或-e场景配置列表中没有root类检查项，则不需要交互输入root权限的用户及其密码。
--   可使用--skip-root-items跳过检查项中包含的root类检查，以免需要输入root权限用户及密码。
--   MTU值不一致时可能导致检查缓慢或进程停止响应，当巡检工具出现提示时请修改各节点MTU值一致后再进行巡检。
--   交换机不支持当前设置的MTU值时，即使MTU值一致也会出现通信问题引起进程停止响应，需要根据交换机调整MTU大小。
+- 必须指定-i或-e参数，-i会检查指定的单项，-e会检查对应场景配置中的多项。
+- 如果-i参数中不包含root类检查项或-e场景配置列表中没有root类检查项，则不需要交互输入root权限的用户及其密码。
+- 可使用--skip-root-items跳过检查项中包含的root类检查，以免需要输入root权限用户及密码。
+- MTU值不一致时可能导致检查缓慢或进程停止响应，当巡检工具出现提示时请修改各节点MTU值一致后再进行巡检。
+- 交换机不支持当前设置的MTU值时，即使MTU值一致也会出现通信问题引起进程停止响应，需要根据交换机调整MTU大小。
 
 ## 语法<a name="zh-cn_topic_0237152330_zh-cn_topic_0059777799_sfac1bdc734c0446b9ec13d0ae74a4553"></a>
 
--   单项检查：
+- 单项检查：
 
     ```
     gs_check -i ITEM [...] [-U USER] [-L] [-l LOGFILE] [-o OUTPUTDIR] [--skip-root-items][--set][--routing]
     ```
 
--   场景检查：
+- 场景检查：
 
     ```
     gs_check -e SCENE_NAME [-U USER] [-L] [-l LOGFILE] [-o OUTPUTDIR] [--skip-root-items] [--time-out=SECS][--set][--routing][--skip-items]
     ```
 
--   显示帮助信息：
+- 显示帮助信息：
 
     ```
     gs_check -? | --help
     ```
 
--   显示版本号信息：
+- 显示版本号信息：
 
     ```
     gs_check -V | --version
     ```
 
-
 ## 参数说明<a name="zh-cn_topic_0237152330_zh-cn_topic_0059777799_s99b57308f5c84719abe48819d2880cf0"></a>
 
--   -U
+- -U
 
     运行openGauss的用户名称。
 
     取值范围：运行openGauss的用户名称。
 
--   -L
+- -L
 
     本地执行。
 
--   -i
+- -i
 
     指定检查项。格式-i CheckXX详细的检查项请参见[表1 openGauss状态检查表](#zh-cn_topic_0237152330_zh-cn_topic_0059777799_t48caf3ebc47a4dce88ed8b7132976edd)。
 
--   -e
+- -e
 
     场景检查项。默认的场景有inspect（例行巡检）、upgrade（升级前巡检）、binary\_upgrade（就地升级前巡检）、health（健康检查巡检）、install（安装）等，用户可以根据需求自己编写场景。
 
--   -l
+- -l
 
     指定日志文件路径，指定路径时需添加.log后缀。
 
--   -o
+- -o
 
     指定检查结果输出文件夹路径。
 
--   --skip-root-items
+- --skip-root-items
 
     跳过需要root权限执行的检查项。
 
--   --skip-items
+- --skip-items
 
     跳过指定的检查项。
 
--   --format
+- --format
 
     设置结果报告的格式。
 
--   --set
+- --set
 
     修复支持设置的Abnormal项。
 
@@ -87,23 +86,23 @@ gs_check改进增强，统一化当前系统中存在的各种检查工具，例
 
     检查ID，仅被内部check进程使用。
 
--   --time-out
+- --time-out
 
     设置超时时间。单位为秒，默认为1500s，若用户自定义超时时间不得少于1500s。
 
--   --routing
+- --routing
 
     指定业务IP的网段，格式为IP地址:子网掩码。
 
--   --disk-threshold="PERCENT"
+- --disk-threshold="PERCENT"
 
     检查磁盘占用时可选指定告警阈值，可指定1-99之间的整数，不输入则默认为90。检查其他项时不需要该参数。
 
--   -?, --help
+- -?, --help
 
     显示帮助信息。
 
--   -V, --version
+- -V, --version
 
     显示版本号信息。
 
@@ -833,23 +832,17 @@ gs_check改进增强，统一化当前系统中存在的各种检查工具，例
 </tbody>
 </table>
 
-
-
-
-
-
-
 >[!NOTE]说明
 >CheckNetSpeed检查项：
 >
->-   CheckNetSpeed不支持-L本地检查模式，-L模式无法构造网络压力，检查的结果不准确。
->-   在节点数小于6时，speed\_test构造的网络压力可能无法跑满带宽，可能会造成检查结果不准确。
+>- CheckNetSpeed不支持-L本地检查模式，-L模式无法构造网络压力，检查的结果不准确。
+>- 在节点数小于6时，speed\_test构造的网络压力可能无法跑满带宽，可能会造成检查结果不准确。
 
 ## 用户自定义场景<a name="zh-cn_topic_0237152330_section1111595434113"></a>
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  在script/gspylib/inspection/config路径下新建场景配置文件scene\_XXX.xml。
-3.  将检查项写进场景配置文件中，书写格式为：
+1. 以操作系统用户omm登录数据库主节点。
+2. 在script/gspylib/inspection/config路径下新建场景配置文件scene\_XXX.xml。
+3. 将检查项写进场景配置文件中，书写格式为：
 
     ```
     <?xml version="1.0" encoding="utf-8" ?>
@@ -866,7 +859,7 @@ gs_check改进增强，统一化当前系统中存在的各种检查工具，例
 
     注：用户需自行保证自定义xml的正确性
 
-4.  在home/package/script/gspylib/inspection/config执行如下命令，将此文件分发至执行检查的各个节点
+4. 在home/package/script/gspylib/inspection/config执行如下命令，将此文件分发至执行检查的各个节点
 
     ```
     scp scene_upgrade.xml SIA1000068994：home/package/script/gspylib/inspection/config/
@@ -876,16 +869,15 @@ gs_check改进增强，统一化当前系统中存在的各种检查工具，例
     >
     >home/package/script/gspylib/inspection/config就是新建的场景配置文件的绝对路径。
 
-5.  换至omm用户，执行以下命令查看检查结果。
+5. 换至omm用户，执行以下命令查看检查结果。
 
     ```
     gs_check  -e XXX
     ```
 
-
 ## 用户自定义检查项<a name="zh-cn_topic_0237152330_section1497431723111"></a>
 
-1.  新增巡检项配置，修改script/gspylib/inspection/config/items.xml文件，格式如下：
+1. 新增巡检项配置，修改script/gspylib/inspection/config/items.xml文件，格式如下：
 
     ```
     <checkitem id="10010" name="CheckCPU">
@@ -910,25 +902,25 @@ gs_check改进增强，统一化当前系统中存在的各种检查工具，例
     </checkitems>
     ```
 
-    -   id：巡检项id。
-    -   name：巡检项脚本名， 和巡检项脚本文件名相同。
-    -   title: 巡检项描述名称 （支持多语言）。
+    - id：巡检项id。
+    - name：巡检项脚本名， 和巡检项脚本文件名相同。
+    - title: 巡检项描述名称 （支持多语言）。
 
         <zh\>：中文版检查内容。
 
         <en\>：英文版检查内容。
 
-    -   standard：巡检项标准说明（支持多语言）。
-    -   suggestion： 巡检项修复建议说明（支持多语言）。
-    -   threshold：巡检项阈值定义，多值之间使用分号隔开，示例Key1=Value1;Key2=Value2。
-    -   category： 巡检项分类，可选参数：os，device，network，cluster，database，other。
-    -   permission： 巡检项需要的执行权限，可选参数：root，user默认为user（普通用户）。
-    -   scope：巡检项执行的节点范围，可选参数：cn-仅在数据库主节点执行，local-仅在当前节点执行，all-在openGauss所有节点执行，默认为all。
-    -   analysis：巡检项执行结果分析方式，default-检查每个节点的结果，所有节点检查项通过，则最终检查通过，consistent-openGauss内所有节点一致性检查，单节点仅返回结果，各个节点结果一致则判定检查通过，custom-自定义结果分析方式，默认为default。
+    - standard：巡检项标准说明（支持多语言）。
+    - suggestion： 巡检项修复建议说明（支持多语言）。
+    - threshold：巡检项阈值定义，多值之间使用分号隔开，示例Key1=Value1;Key2=Value2。
+    - category： 巡检项分类，可选参数：os，device，network，cluster，database，other。
+    - permission： 巡检项需要的执行权限，可选参数：root，user默认为user（普通用户）。
+    - scope：巡检项执行的节点范围，可选参数：cn-仅在数据库主节点执行，local-仅在当前节点执行，all-在openGauss所有节点执行，默认为all。
+    - analysis：巡检项执行结果分析方式，default-检查每个节点的结果，所有节点检查项通过，则最终检查通过，consistent-openGauss内所有节点一致性检查，单节点仅返回结果，各个节点结果一致则判定检查通过，custom-自定义结果分析方式，默认为default。
 
     注：用户需保证自定义xml的正确性
 
-2.  新建检查脚本，脚本名称格式遵循CheckXXXX.py，必须以Check开头，脚本放置在script/gspylib/inspection/items目录下，该目录下脚本安装巡检项分类组织，每个分类一个单独的文件夹，巡检项脚本放置在对应的分类文件夹中。格式如下：
+2. 新建检查脚本，脚本名称格式遵循CheckXXXX.py，必须以Check开头，脚本放置在script/gspylib/inspection/items目录下，该目录下脚本安装巡检项分类组织，每个分类一个单独的文件夹，巡检项脚本放置在对应的分类文件夹中。格式如下：
 
     ```
     class CheckCPU(BaseItem):
@@ -972,23 +964,23 @@ gs_check改进增强，统一化当前系统中存在的各种检查工具，例
 
     所有脚本基于BaseItem基类开发，基类定义的通用的检查流程，通用的检查结果分析方法，默认的结果输出格式。可扩展方法：
 
-    -   doCheck:  该方法包含该检查项具体的检查方法，检查结果格式如下：
+    - doCheck:  该方法包含该检查项具体的检查方法，检查结果格式如下：
 
         result.rst ---   检查结果状态，可选参数:
 
-        -   OK – 检查项完成，结果通过。
-        -   NA – 当前节点不涉及该检查项。
-        -   NG – 检查项完成，结果不通过。
-        -   WARNING – 检查项完成，结果警告。
-        -   ERROR – 检查项发生内部错误，未完成检查。
+        - OK – 检查项完成，结果通过。
+        - NA – 当前节点不涉及该检查项。
+        - NG – 检查项完成，结果不通过。
+        - WARNING – 检查项完成，结果警告。
+        - ERROR – 检查项发生内部错误，未完成检查。
 
-    -   preCheck: 检查前条件判定，内置两种实现：cnPreCheck – 用于检查当前执行节点是否包含数据库主节点实例，localPreCheck – 用于检查当前执行节点是否指定节点。可通过巡检项配置文件中的scope参数进行配置。 可重载该方法实现自定义的前置检查
-    -   postAnalysis：检查结果分析方法，内置两种实现：default、consistent。可通过巡检项配置文件中的analysis参数进行配置。可重载该方法实现自定义的结果分析。
+    - preCheck: 检查前条件判定，内置两种实现：cnPreCheck – 用于检查当前执行节点是否包含数据库主节点实例，localPreCheck – 用于检查当前执行节点是否指定节点。可通过巡检项配置文件中的scope参数进行配置。 可重载该方法实现自定义的前置检查
+    - postAnalysis：检查结果分析方法，内置两种实现：default、consistent。可通过巡检项配置文件中的analysis参数进行配置。可重载该方法实现自定义的结果分析。
 
     注：用户自定义的检查项名称不得与已有检查项名称相同，同时用户需保证自定义检查项脚本的规范性。
 
-3.  将此脚本分发至所有的执行节点。
-4.  以omm用户登录，执行以下命令，查看结果。
+3. 将此脚本分发至所有的执行节点。
+4. 以omm用户登录，执行以下命令，查看结果。
 
     本地执行：
 
@@ -1001,7 +993,6 @@ gs_check改进增强，统一化当前系统中存在的各种检查工具，例
     ```
     gs_check  -i  CheckXXX
     ```
-
 
 ## 操作系统参数<a name="zh-cn_topic_0237152330_zh-cn_topic_0059777799_s8b7df4cd80bf4a84927d84af2d49b32d"></a>
 
@@ -1251,27 +1242,25 @@ gs_check改进增强，统一化当前系统中存在的各种检查工具，例
 </tbody>
 </table>
 
-
 ## 文件系统参数<a name="zh-cn_topic_0237152330_zh-cn_topic_0059777799_s6bc6e27aba3d44139c026373229dcd89"></a>
 
--   soft nofile
+- soft nofile
 
     说明：soft nofile表示软限制，用户使用的文件句柄数量可以超过该限制，但是如果超过会有告警信息。
 
     推荐取值：1000000
 
--   hard nofile
+- hard nofile
 
     说明：hard nofile表示硬限制，是一个严格的限制，用户使用的文件句柄数量一定不能超过该设置。
 
     推荐取值：1000000
 
--   stack size
+- stack size
 
     说明：线程堆栈大小。
 
     推荐值：3072
-
 
 ## 示例<a name="zh-cn_topic_0237152330_zh-cn_topic_0059777799_s1c980bdf925b48829d69ccedb086c313"></a>
 
@@ -1341,4 +1330,3 @@ For more information please refer to /opt/huawei/wisequery/script/gspylib/inspec
 ## 相关命令<a name="zh-cn_topic_0237152330_zh-cn_topic_0059777799_sca573acef30b4169bd3e6f0d5501021c"></a>
 
 [gs\_checkos](gs_checkos.md)，[gs\_checkperf](gs_checkperf.md)
-

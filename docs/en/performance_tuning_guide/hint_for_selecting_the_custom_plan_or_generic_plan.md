@@ -6,22 +6,22 @@ For query statements and DML statements executed in PBE mode, the optimizer gene
 
 ## Syntax<a name="section530131664410"></a>
 
--   To select the custom plan, run the following statement:
+- To select the custom plan, run the following statement:
 
     ```
     use_cplan
     ```
 
--   To select the generic plan, run the following statement:
+- To select the generic plan, run the following statement:
 
     ```
     use_gplan
     ```
 
-
 >[!NOTE]NOTE 
->-   For SQL statements that are executed in non-PBE mode, setting this hint does not affect the execution mode.
->-   This hint has a higher priority than cost-based selection and the  **plan\_cache\_mode**  parameter. That is, this hint does not take effect for statements for which  **plan\_cache\_mode**  cannot be forcibly set to specify an execution mode.
+>
+>- For SQL statements that are executed in non-PBE mode, setting this hint does not affect the execution mode.
+>- This hint has a higher priority than cost-based selection and the  **plan\_cache\_mode**  parameter. That is, this hint does not take effect for statements for which  **plan\_cache\_mode**  cannot be forcibly set to specify an execution mode.
 
 ## Examples<a name="section41303128143838"></a>
 
@@ -49,4 +49,3 @@ explain execute p(1);
 In the following plan, the filtering condition is the input parameter to be added, that is, the plan is a Generic plan.
 
 ![](figures/en-us_image_0000001097739076.png)
-

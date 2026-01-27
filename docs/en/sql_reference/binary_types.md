@@ -79,8 +79,9 @@
 </table>
 
 >[!NOTE]NOTE 
->-   In addition to the size limitation on each column, the total size of each tuple is 1073733621 bytes \(1 GB to 8203 bytes\).
->-   BYTEAWITHOUTORDERWITHEQUALCOL, BYTEAWITHOUTORDERCOL, \_BYTEAWITHOUTORDERWITHEQUALCOL, and \_BYTEAWITHOUTORDERCOL cannot be directly used to create a table.
+>
+>- In addition to the size limitation on each column, the total size of each tuple is 1073733621 bytes \(1 GB to 8203 bytes\).
+>- BYTEAWITHOUTORDERWITHEQUALCOL, BYTEAWITHOUTORDERCOL, \_BYTEAWITHOUTORDERWITHEQUALCOL, and \_BYTEAWITHOUTORDERCOL cannot be directly used to create a table.
 
 Example:
 

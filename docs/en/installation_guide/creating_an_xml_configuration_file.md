@@ -4,7 +4,6 @@ Before installing the openGauss, you need to create the **cluster\_config.xml** 
 
 The following describes how to create an XML configuration file based on the deployment solution of one primary node and one standby node.
 
-
 ## Configuring the Database Name and Directories
 
 Obtain the XML file template from **script/gspylib/etc/conf/cluster\_config\_template.xml**. The following configuration is only an example. You can replace it as required. Each line is described with a comment.
@@ -58,15 +57,15 @@ Obtain the XML file template from **script/gspylib/etc/conf/cluster\_config\_tem
 
 >[!TIP]NOTICE
 >
->-   The **/opt/huawei/install/om** directory is used to store tools such as the mutual trust tool. To avoid permission problems, do not store instance data in the directory.
->-   The installation and data directories must be empty or do not exist. Otherwise, the installation may fail.
->-   When configuring database instances, ensure that the configured directories are not coupled with each other. This means that the configured directories must not be associated with each other. If any directory is deleted, the other directories will not be deleted accordingly. For example, **gaussdbAppPath** is **/opt/huawei/install/app** and **gaussdbLogPath** is **/opt/huawei/install/app/omm**. When the **gaussdbAppPath** directory is deleted, the **gaussdbLogPath** directory will also be deleted, causing unexpected problems.
->-   If the installation script is required to automatically create installation users, ensure that the configured directories are not coupled with the default user directories created by the system.
->-   The openGauss and instance paths cannot contain the following special characters: "|", ";", "&", "$", "<", "\>", "\`", "\\\\", "'", "\\"", "\{", "\}", "\(", "\)", "\[", "\]", "\~", "\*", and "?".
->-   When configuring the database node name, run the **hostname** command to obtain the host name of the database node and replace **node1\_hostname** and **node2\_hostname** in the example with the obtained host name.
->-   During **dcf\_config** configuration, the roles include leader, follower, passive, and logger. The roles that can vote include leader, follower, and logger. During role networking configuration, at least three roles can vote. Therefore, at least three nodes are required in DCF mode.
->-   Exercise caution when configuring all parameters that contain disk information in the shared storage. During the installation, the tool performs low formatting on the disks configured in all parameters. The disks in all parameters must be unique.
->-   The IP address in the shared storage must be the same as the data IP address of the DN. The DSS port number is the database port number plus 10, and the DMS port number is the database port number plus 20.
+>- The **/opt/huawei/install/om** directory is used to store tools such as the mutual trust tool. To avoid permission problems, do not store instance data in the directory.
+>- The installation and data directories must be empty or do not exist. Otherwise, the installation may fail.
+>- When configuring database instances, ensure that the configured directories are not coupled with each other. This means that the configured directories must not be associated with each other. If any directory is deleted, the other directories will not be deleted accordingly. For example, **gaussdbAppPath** is **/opt/huawei/install/app** and **gaussdbLogPath** is **/opt/huawei/install/app/omm**. When the **gaussdbAppPath** directory is deleted, the **gaussdbLogPath** directory will also be deleted, causing unexpected problems.
+>- If the installation script is required to automatically create installation users, ensure that the configured directories are not coupled with the default user directories created by the system.
+>- The openGauss and instance paths cannot contain the following special characters: "|", ";", "&", "$", "<", "\>", "\`", "\\\\", "'", "\\"", "\{", "\}", "\(", "\)", "\[", "\]", "\~", "\*", and "?".
+>- When configuring the database node name, run the **hostname** command to obtain the host name of the database node and replace **node1\_hostname** and **node2\_hostname** in the example with the obtained host name.
+>- During **dcf\_config** configuration, the roles include leader, follower, passive, and logger. The roles that can vote include leader, follower, and logger. During role networking configuration, at least three roles can vote. Therefore, at least three nodes are required in DCF mode.
+>- Exercise caution when configuring all parameters that contain disk information in the shared storage. During the installation, the tool performs low formatting on the disks configured in all parameters. The disks in all parameters must be unique.
+>- The IP address in the shared storage must be the same as the data IP address of the DN. The DSS port number is the database port number plus 10, and the DMS port number is the database port number plus 20.
 
 **Table 1** Parameter description
 
@@ -196,8 +195,6 @@ Obtain the XML file template from **script/gspylib/etc/conf/cluster\_config\_tem
 </tbody>
 </table>
 
-
-
 ## Configuring the Basic Host Information
 
 >[!NOTE]NOTE
@@ -270,6 +267,7 @@ The content is an example and can be replaced as required. Each line of informat
 >Only one IP address can be configured for all IP parameters (including **backIp**, **sshIp**, and **listenIp**) in the configuration file. Excessive IP addresses are ignored.
 >For example, you can configure **backIp1** and **backIp2** in the XML configuration file as follows:
 >When the file is parsed, only **backIp1** takes effect.
+>
 >```
 ><PARAM name="backIp1" value="192.168.0.1"/>
 ><PARAM name="backIp2" value="192.168.0.2"/>
@@ -351,9 +349,6 @@ The content is an example and can be replaced as required. Each line of informat
 </tbody>
 </table>
 
-
-
-
 ## Configuring the CM Server (Primary/Non-Primary) Information
 
 **Configure the following information for the non-primary CMS nodes:**
@@ -428,7 +423,6 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
 </tbody>
 </table>
 
-
 **Table 3** Database instance data directories
 
 <a name="table15838192510429"></a>
@@ -458,11 +452,6 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
 </tr>
 </tbody>
 </table>
-
-
-
-
-
 
 ## Examples
 
@@ -503,10 +492,10 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <PARAM name="backIp1" value="192.168.0.1"/>
             <PARAM name="sshIp1" value="192.168.0.1"/>
                
-	    <!--dbnode-->
-	    <PARAM name="dataNum" value="1"/>
-	    <PARAM name="dataPortBase" value="15400"/>
-	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn"/>
+     <!--dbnode-->
+     <PARAM name="dataNum" value="1"/>
+     <PARAM name="dataPortBase" value="15400"/>
+     <PARAM name="dataNode1" value="/opt/huawei/install/data/dn"/>
             <PARAM name="dataNode1_syncNum" value="0"/>
         </DEVICE>
     </DEVICELIST>
@@ -550,10 +539,10 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <PARAM name="backIp1" value="192.168.0.1"/>
             <PARAM name="sshIp1" value="192.168.0.1"/>
             
-	    <!--dn-->
+     <!--dn-->
             <PARAM name="dataNum" value="1"/>
-	    <PARAM name="dataPortBase" value="15400"/>
-	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn"/>
+     <PARAM name="dataPortBase" value="15400"/>
+     <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn"/>
             <PARAM name="dataNode1_syncNum" value="0"/>
         </DEVICE>
 
@@ -567,7 +556,7 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <!-- IP address of node 2. If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
             <PARAM name="backIp1" value="192.168.0.2"/>
             <PARAM name="sshIp1" value="192.168.0.2"/>
-	</DEVICE>
+ </DEVICE>
     </DEVICELIST>
 </ROOT>
 ```
@@ -601,21 +590,21 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <PARAM name="backIp1" value="192.168.0.1"/>
             <PARAM name="sshIp1" value="192.168.0.1"/>
             
-      	<!-- Primary CM -->
-	    <PARAM name="cmsNum" value="1"/> 
-	    <PARAM name="cmDir" value="/opt/huawei/install/cm"/> 
-	    <PARAM name="cmServerPortBase" value="15300"/> 
-	    <PARAM name="cmServerListenIp1" value="192.168.0.1,192.168.0.2,192.168.0.3"/> 
-	    <PARAM name="cmServerHaIp1" value="192.168.0.1,192.168.0.2,192.168.0.3"/> 
-	    <!-- CM server level. Currently, only 1 is supported. -->
-	    <PARAM name="cmServerlevel" value="1"/> 
-	    <!-- Host names of the primary and standby CMS nodes -->
-	    <PARAM name="cmServerRelation" value="node1_hostname,node2_hostname,node3_hostname"/>       
-	   
+       <!-- Primary CM -->
+     <PARAM name="cmsNum" value="1"/> 
+     <PARAM name="cmDir" value="/opt/huawei/install/cm"/> 
+     <PARAM name="cmServerPortBase" value="15300"/> 
+     <PARAM name="cmServerListenIp1" value="192.168.0.1,192.168.0.2,192.168.0.3"/> 
+     <PARAM name="cmServerHaIp1" value="192.168.0.1,192.168.0.2,192.168.0.3"/> 
+     <!-- CM server level. Currently, only 1 is supported. -->
+     <PARAM name="cmServerlevel" value="1"/> 
+     <!-- Host names of the primary and standby CMS nodes -->
+     <PARAM name="cmServerRelation" value="node1_hostname,node2_hostname,node3_hostname"/>       
+    
        <!--dn-->
          <PARAM name="dataNum" value="1"/>
-	    <PARAM name="dataPortBase" value="26000"/>
-	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn"/>
+     <PARAM name="dataPortBase" value="26000"/>
+     <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn"/>
         <PARAM name="dataNode1_syncNum" value="0"/>
         </DEVICE>
 
@@ -630,7 +619,7 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
              <!-- cm --> 
             <PARAM name="cmDir" value="/opt/huawei/install/cm"/> 
             <PARAM name="cmServerPortStandby" value="15300"/> 
-	</DEVICE>
+ </DEVICE>
 
         <!-- Node deployment information on node 3. The value of name is the host name. -->
         <DEVICE sn="node3_hostname">
@@ -644,12 +633,12 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <!-- cm --> 
             <PARAM name="cmDir" value="/opt/huawei/install/cm"/> 
             <PARAM name="cmServerPortStandby" value="15300"/> 
-	</DEVICE>
+ </DEVICE>
     </DEVICELIST>
 </ROOT>
 ```
 
-###  Configuration file for one primary node and two standby nodes
+### Configuration file for one primary node and two standby nodes
 
 ```
 <?xml version="1.0" encoding="UTF-8"?> 
@@ -685,10 +674,10 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <PARAM name="cmServerlevel" value="1"/> 
             <PARAM name="cmServerRelation" value="node1_hostname,node2_hostname,node3_hostname"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
-	    <!--dn--> 
+     <!--dn--> 
             <PARAM name="dataNum" value="1"/> 
-	    <PARAM name="dataPortBase" value="15400"/> 
-	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn"/> 
+     <PARAM name="dataPortBase" value="15400"/> 
+     <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn"/> 
             <PARAM name="dataNode1_syncNum" value="0"/> 
         </DEVICE> 
  
@@ -703,7 +692,7 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
-	</DEVICE> 
+ </DEVICE> 
  
         <!-- Node deployment information on node 3. The value of name is the host name. -->
         <DEVICE sn="node3_hostname"> 
@@ -716,7 +705,7 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
-	</DEVICE> 
+ </DEVICE> 
     </DEVICELIST> 
 </ROOT>
 ```
@@ -757,10 +746,10 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <PARAM name="cmServerlevel" value="1"/> 
             <PARAM name="cmServerRelation" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
-	    <!--dn--> 
+     <!--dn--> 
             <PARAM name="dataNum" value="1"/> 
-	    <PARAM name="dataPortBase" value="15400"/> 
-	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn,node4_hostname,/opt/huawei/install/data/dn"/>
+     <PARAM name="dataPortBase" value="15400"/> 
+     <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn,node4_hostname,/opt/huawei/install/data/dn"/>
             <PARAM name="dataNode1_syncNum" value="0"/>
         </DEVICE> 
  
@@ -775,7 +764,7 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
-	</DEVICE> 
+ </DEVICE> 
  
         <!-- Node deployment information on node 3. The value of name is the host name. -->
         <DEVICE sn="node3_hostname"> 
@@ -788,7 +777,7 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
-	</DEVICE> 
+ </DEVICE> 
  
         <!-- Node deployment information on node 4. The value of name is the host name. -->
         <DEVICE sn="node4_hostname"> 
@@ -801,7 +790,7 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
-	</DEVICE> 
+ </DEVICE> 
     </DEVICELIST> 
 </ROOT>
 ```
@@ -842,10 +831,10 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <PARAM name="cmServerlevel" value="1"/> 
             <PARAM name="cmServerRelation" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname,node5_hostname"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
-	    <!--dn--> 
+     <!--dn--> 
             <PARAM name="dataNum" value="1"/> 
-	    <PARAM name="dataPortBase" value="15400"/> 
-	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn,node4_hostname,/opt/huawei/install/data/dn,node5_hostname,/opt/huawei/install/data/dn"/> 
+     <PARAM name="dataPortBase" value="15400"/> 
+     <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn,node4_hostname,/opt/huawei/install/data/dn,node5_hostname,/opt/huawei/install/data/dn"/> 
             <PARAM name="dataNode1_syncNum" value="0"/> 
         </DEVICE> 
  
@@ -860,7 +849,7 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
-	</DEVICE> 
+ </DEVICE> 
  
         <!-- Node deployment information on node 3. The value of name is the host name. -->
         <DEVICE sn="node3_hostname"> 
@@ -873,7 +862,7 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
-	</DEVICE> 
+ </DEVICE> 
  
         <!-- Node deployment information on node 4. The value of name is the host name. -->
         <DEVICE sn="node4_hostname"> 
@@ -886,7 +875,7 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
-	</DEVICE> 
+ </DEVICE> 
  
         <!-- If only one NIC is available for the server, set <b>backIP1/<b> and <b>sshIP1</b> to the same IP address. -->
         <DEVICE sn="node5_hostname"> 
@@ -899,7 +888,7 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
-	</DEVICE> 
+ </DEVICE> 
     </DEVICELIST> 
 </ROOT>
 ```
@@ -940,10 +929,10 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <PARAM name="cmServerlevel" value="1"/> 
             <PARAM name="cmServerRelation" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname,node5_hostname"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
-	    <!--dn--> 
+     <!--dn--> 
             <PARAM name="dataNum" value="1"/> 
-	    <PARAM name="dataPortBase" value="15400"/> 
-	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn,node4_hostname,/opt/huawei/install/data/dn,node5_hostname,/opt/huawei/install/data/dn"/> 
+     <PARAM name="dataPortBase" value="15400"/> 
+     <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn,node4_hostname,/opt/huawei/install/data/dn,node5_hostname,/opt/huawei/install/data/dn"/> 
             <!-- Replace "hostname" in "syncNode_hostname" with your host name. -->
             <PARAM name="syncNode_node1_hostname" value="ANY 2(node2_hostname, node4_hostname), ANY 1(node3_hostname, node5_hostname)"/> 
         </DEVICE> 
@@ -961,7 +950,7 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
-	</DEVICE> 
+ </DEVICE> 
  
         <!-- Node deployment information on node 3. The value of name is the host name. -->
         <DEVICE sn="node3_hostname"> 
@@ -976,7 +965,7 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
-	</DEVICE> 
+ </DEVICE> 
  
         <!-- Node deployment information on node 4. The value of name is the host name. -->
         <DEVICE sn="node4_hostname"> 
@@ -991,7 +980,7 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
-	</DEVICE> 
+ </DEVICE> 
  
         <!-- If only one NIC is available for the server, set <b>backIP1/<b> and <b>sshIP1</b> to the same IP address. -->
         <DEVICE sn="node5_hostname"> 
@@ -1006,7 +995,7 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
-	</DEVICE> 
+ </DEVICE> 
     </DEVICELIST> 
 </ROOT>
 ```

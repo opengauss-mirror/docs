@@ -21,19 +21,17 @@ SHUTDOWN
 
 ## Parameter Description<a name="en-us_topic_0283136791_en-us_topic_0237122191_en-us_topic_0059779163_s96f32bd65e9e46f4bf15eb3c1663af3a"></a>
 
--   **""**
+- **""**
 
     If the shutdown mode is not specified, the default mode  **fast**  is used.
 
-
--   **fast**
+- **fast**
 
     Rolls back all active transactions, forcibly disconnects the client, and shuts down the database node without waiting for the client to disconnect.
 
--   **immediate**
+- **immediate**
 
     Shuts down the server forcibly. Fault recovery will occur on the next startup.
-
 
 ## Examples<a name="en-us_topic_0283136791_en-us_topic_0237122191_en-us_topic_0059779163_s9926ef8e79984fac9b05d0b6bd0e8fd5"></a>
 
@@ -44,4 +42,3 @@ openGauss=# SHUTDOWN;
 -- Shut down the current database node in fast mode.
 openGauss=# SHUTDOWN FAST;
 ```
-

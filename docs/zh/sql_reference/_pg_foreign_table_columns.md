@@ -42,5 +42,3 @@
 </tr>
 </tbody>
 </table>
-
-

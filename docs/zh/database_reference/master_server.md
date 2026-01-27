@@ -8,9 +8,9 @@
 
 >[!TIP]须知
 >
->-   当前连接的同步备机是列表中的第一个名称。如果当前同步备机失去连接，则它会立即更换下一个优先级更高的备机，并将此备机的名称放入列表中。
+>- 当前连接的同步备机是列表中的第一个名称。如果当前同步备机失去连接，则它会立即更换下一个优先级更高的备机，并将此备机的名称放入列表中。
 >
->-   备机名称可以通过设置环境变量PGAPPNAME指定。
+>- 备机名称可以通过设置环境变量PGAPPNAME指定。
 
 **取值范围**： 字符串。当取值为\*，表示匹配任意提供同步复制的备机名称。支持按如下格式配置：
 
@@ -19,6 +19,7 @@
 - ***standby_name*** [, ...]
 
 >[!NOTE]说明
+>
 >- 其中 ***num_sync*** 是事务需要等待其回复的同步复制的备机的数量，***standby_name*** 是备机的名称，FIRST以及ANY指定从所列服务器中选取同步复制的备机的策略。
 >
 >- ANY N \(node1,node2,...\) 表示在括号内任选N个主机名称作为同步复制的备机名称列表。例如，ANY 1 \(node1,node2\) 表示在node1和node2中任选一个作为同步复制的备机名称。
@@ -31,14 +32,14 @@
 >
 >- 若使用gs_guc工具设置该参数，需要如下设置：
 >
->  ```
->  gs_guc reload -Z datanode -N @NODE_NAME@ -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(dn_instanceId1, dn_instanceId2)'";
+> ```
+> gs_guc reload -Z datanode -N @NODE_NAME@ -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(dn_instanceId1, dn_instanceId2)'";
 >  ```
 >
->  或者：
+> 或者：
 >
->  ```
->  gs_guc reload -Z datanode -N @NODE_NAME@ -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(AZ1, AZ2)'";
+> ```
+> gs_guc reload -Z datanode -N @NODE_NAME@ -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(AZ1, AZ2)'";
 >  ```
 
 **默认值**： \*
@@ -58,8 +59,8 @@
 
 **取值范围**： 布尔型
 
--   on表示在有同步备机故障且与主机断开连接时，主机不因同步备故障而阻塞。比如有两个同步备机，一个故障，另一个正常，这个时候主机事务只会等好的这个同步备，而不被故障的同步备所阻塞；再比如走quorum协议时，一主三备，配置ANY 2\(node2,node3,node4\)，当node2、node4故障，node3正常时，主机业务同样不被阻塞。
--   off表示在有同步备机故障时，阻塞主机。注意: 如果在同步备机故障，又关闭了主机的最大可用模式时，可能由于主机的后台业务线程(比如WDR等)产生的事务所造成的阻塞，进而导致checkpoint相关的操作也同时等待。如果需要避免该情况，请打开最大可用或者将同步备机删除。对于一主一同步备场景，当关闭主机的最大可用模式时，备机出现故障可能会造成主机事务阻塞，但保证主备可靠性；当开启主机的最大可用模式时，备机出现故障不阻塞主机事务，但可能影响主备可靠性。
+- on表示在有同步备机故障且与主机断开连接时，主机不因同步备故障而阻塞。比如有两个同步备机，一个故障，另一个正常，这个时候主机事务只会等好的这个同步备，而不被故障的同步备所阻塞；再比如走quorum协议时，一主三备，配置ANY 2\(node2,node3,node4\)，当node2、node4故障，node3正常时，主机业务同样不被阻塞。
+- off表示在有同步备机故障时，阻塞主机。注意: 如果在同步备机故障，又关闭了主机的最大可用模式时，可能由于主机的后台业务线程(比如WDR等)产生的事务所造成的阻塞，进而导致checkpoint相关的操作也同时等待。如果需要避免该情况，请打开最大可用或者将同步备机删除。对于一主一同步备场景，当关闭主机的最大可用模式时，备机出现故障可能会造成主机事务阻塞，但保证主备可靠性；当开启主机的最大可用模式时，备机出现故障不阻塞主机事务，但可能影响主备可靠性。
 
 **默认值**：off
 
@@ -75,8 +76,8 @@
 
 **取值范围**： 整形，范围0\~INT_MAX，单位为秒。
 
--   0表示不设置keep_sync_window超时时间窗口, 即直接进入最大可用模式。
--   其余表示keep_sync_window超时时间窗口的大小。
+- 0表示不设置keep_sync_window超时时间窗口, 即直接进入最大可用模式。
+- 其余表示keep_sync_window超时时间窗口的大小。
 
 **默认值**：0
 
@@ -92,14 +93,14 @@
 
 >[!TIP]须知
 >
->-   此参数属于性能测试参数，用于测试带有备机和不带备机的性能参数。关闭参数后，不能进行切换、故障等异常场景测试，否则会出现主备从不一致的情况。
->-   此参数属于受控参数，不建议正常业务场景下关闭此参数。
->-   当前版本默认不支持主备从部署模式。
+>- 此参数属于性能测试参数，用于测试带有备机和不带备机的性能参数。关闭参数后，不能进行切换、故障等异常场景测试，否则会出现主备从不一致的情况。
+>- 此参数属于受控参数，不建议正常业务场景下关闭此参数。
+>- 当前版本默认不支持主备从部署模式。
 
 **取值范围**： 布尔型
 
--   on表示打开主备、主从同步。
--   off表示关闭主备、主从同步。
+- on表示打开主备、主从同步。
+- off表示关闭主备、主从同步。
 
 **默认值**：on
 
@@ -111,13 +112,13 @@
 
 >[!TIP]须知
 >
->-   此参数目前不允许正常业务场景下改变其值，即关闭WAL日志、数据页混合复制模式。
->-   当前版本默认不支持主备从部署模式。
+>- 此参数目前不允许正常业务场景下改变其值，即关闭WAL日志、数据页混合复制模式。
+>- 当前版本默认不支持主备从部署模式。
 
 **取值范围**： 布尔型
 
--   on表示打开WAL日志、数据页混合复制模式。
--   off表示关闭WAL日志、数据页混合复制模式。
+- on表示打开WAL日志、数据页混合复制模式。
+- off表示关闭WAL日志、数据页混合复制模式。
 
 **默认值**：off
 
@@ -141,6 +142,7 @@
 该参数属于SIGHUP类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**：
+
   - on: 开启。
   - off: 关闭。
 
@@ -174,8 +176,8 @@
 
 **取值范围**： 布尔型
 
--   on表示导入数据行存表时主备数据采用数据页的方式进行同步。当replication\_type参数为1时，不允许设置为on，如果此时用guc工具设置成on，会强制改为off。
--   off表示导入数据行存表时主备数据采用日志（Xlog）方式进行同步。
+- on表示导入数据行存表时主备数据采用数据页的方式进行同步。当replication\_type参数为1时，不允许设置为on，如果此时用guc工具设置成on，会强制改为off。
+- off表示导入数据行存表时主备数据采用日志（Xlog）方式进行同步。
 
 **默认值**： off
 
@@ -187,8 +189,8 @@
 
 **取值范围**： 布尔型
 
--   on表示日志中将打印数据复制时每个数据块的状态。
--   off表示日志中不打印数据复制时每个数据块的状态。
+- on表示日志中将打印数据复制时每个数据块的状态。
+- off表示日志中不打印数据复制时每个数据块的状态。
 
 **默认值**： off
 
@@ -200,8 +202,8 @@
 
 **取值范围**： 布尔型
 
--   on表示备机catchup时用增量catchup方式，即从从备本地数据文件扫描获得主备差异数据文件列表，进行主备之间的catchup。
--   off表示备机catchup时用全量catchup方式，即从主机本地所有数据文件扫描获得主备差异数据文件列表，进行主备之间的catchup。
+- on表示备机catchup时用增量catchup方式，即从从备本地数据文件扫描获得主备差异数据文件列表，进行主备之间的catchup。
+- off表示备机catchup时用全量catchup方式，即从主机本地所有数据文件扫描获得主备差异数据文件列表，进行主备之间的catchup。
 
 **默认值**：on
 
@@ -217,8 +219,8 @@
 
 >[!NOTE]说明
 >
->-   单位只能设置为秒。
->-   当前版本默认不支持主备从部署模式。
+>- 单位只能设置为秒。
+>- 当前版本默认不支持主备从部署模式。
 
 ## catchup2normal\_wait\_time<a name="zh-cn_topic_0283137370_section756984271613"></a>
 
@@ -228,9 +230,9 @@
 
 **取值范围**： 整型，范围-1\~10000，单位为毫秒。
 
--   -1表示主机阻塞直到备机数据追赶完成。
--   0表示备机数据追赶时始终不阻塞主机。
--   其余值表示备机数据追赶时阻塞主机的最长时间。例如，取值5000，表示当备机数据追赶完成时间还剩5s时，阻塞主机等待其完成。
+- -1表示主机阻塞直到备机数据追赶完成。
+- 0表示备机数据追赶时始终不阻塞主机。
+- 其余值表示备机数据追赶时阻塞主机的最长时间。例如，取值5000，表示当备机数据追赶完成时间还剩5s时，阻塞主机等待其完成。
 
 **默认值**：-1
 
@@ -242,24 +244,23 @@
 
 **取值范围**： 枚举类型
 
--   all_node: 主机配置为all_node时，表示允许主机向所有备机主动同步配置文件；备机配置为all_node时，表示允许当前备机向其主机发送同步请求，允许当前备机向其所有级联备主动同步配置文件；级联备配置为all_node时，表示允许当前级联备向上一级备机发送同步请求。
--   only_sync_node: 主机配置为only_sync_node时，表示仅允许主机向所有同步备机主动同步配置文件；备机配置为only_sync_node时，表示允许当前备机向其主机发送同步请求，不允许当前备机向其所有级联备机主动同步配置文件；级联备配置为only_sync_node时，表示允许当前级联备向其备机发送同步请求。
--   none_node: 主机配置为none_node时，表示不允许主机向任何备机主动同步配置文件；备机配置为none_node时，表示不允许当前备机向其主机发送同步请求，不允许当前备机向其所有级联备主动同步配置文件；级联备配置为none_node时，表示不允许当前级联备向其备机发送同步请求。
+- all_node: 主机配置为all_node时，表示允许主机向所有备机主动同步配置文件；备机配置为all_node时，表示允许当前备机向其主机发送同步请求，允许当前备机向其所有级联备主动同步配置文件；级联备配置为all_node时，表示允许当前级联备向上一级备机发送同步请求。
+- only_sync_node: 主机配置为only_sync_node时，表示仅允许主机向所有同步备机主动同步配置文件；备机配置为only_sync_node时，表示允许当前备机向其主机发送同步请求，不允许当前备机向其所有级联备机主动同步配置文件；级联备配置为only_sync_node时，表示允许当前级联备向其备机发送同步请求。
+- none_node: 主机配置为none_node时，表示不允许主机向任何备机主动同步配置文件；备机配置为none_node时，表示不允许当前备机向其主机发送同步请求，不允许当前备机向其所有级联备主动同步配置文件；级联备配置为none_node时，表示不允许当前级联备向其备机发送同步请求。
 
 **默认值**： all_node
 
 >[!TIP]须知
 >
->-   在一个包含了主机、备机和级联备的openGauss集群中，主机相对于备机是发送端，备机相对于主机是接收端，备机相对于级联备是发送端，级联备相对于备机是接收端。
+>- 在一个包含了主机、备机和级联备的openGauss集群中，主机相对于备机是发送端，备机相对于主机是接收端，备机相对于级联备是发送端，级联备相对于备机是接收端。
 >
->-   发送端主动向接收端同步配置文件、接收端请求发送端同步配置文件是两个独立的事件，均会使得配置文件同步。若不希望配置文件同步，则需要将集群中所有节点的sync_config_strategy参数配置为none_node；若仅希望主机与同步备机同步配置文件，则需要将主机的sync_config_strategy参数配置为only_sync_node，其余节点配置为none_node；若希望所有节点同步配置文件，则需要将所有节点的sync_config_strategy参数配置为all_node。目前暂不支持自定义指定任意节点间的同步策略。
+>- 发送端主动向接收端同步配置文件、接收端请求发送端同步配置文件是两个独立的事件，均会使得配置文件同步。若不希望配置文件同步，则需要将集群中所有节点的sync_config_strategy参数配置为none_node；若仅希望主机与同步备机同步配置文件，则需要将主机的sync_config_strategy参数配置为only_sync_node，其余节点配置为none_node；若希望所有节点同步配置文件，则需要将所有节点的sync_config_strategy参数配置为all_node。目前暂不支持自定义指定任意节点间的同步策略。
 >
->-   配置参数同步的具体表现为，发送端发送配置文件，对接收端配置文件中的对应参数直接覆盖。若设置了配置文件需要同步的策略，则修改接收端配置参数后，发送端会立刻覆盖接收端的配置参数，使得接收端修改不生效。
+>- 配置参数同步的具体表现为，发送端发送配置文件，对接收端配置文件中的对应参数直接覆盖。若设置了配置文件需要同步的策略，则修改接收端配置参数后，发送端会立刻覆盖接收端的配置参数，使得接收端修改不生效。
 >
->-   即使设置了配置文件需要同步的策略，仍有部分配置参数不会被同步。它们是：
+>- 即使设置了配置文件需要同步的策略，仍有部分配置参数不会被同步。它们是：
 >
 >"application\_name"、  "archive\_command"、  "audit\_directory"、  "available\_zone"、  "comm\_control\_port"、  "comm\_sctp\_port"、  "listen\_addresses"、  "log\_directory"、  "port"、  "replconninfo1"、  "replconninfo2"、 "replconninfo3"、  "replconninfo4"、  "replconninfo5"、  "replconninfo6"、 "replconninfo7"、  "replconninfo8"、  "ssl"、  "ssl\_ca\_file"、  "ssl\_cert\_file"、  "ssl\_ciphers"、  "ssl\_crl\_file"、  "ssl\_key\_file"、  "ssl\_renegotiation\_limit"、  "ssl\_cert\_notify\_time"、  "synchronous\_standby\_names"、  "local\_bind\_address"、  "perf\_directory"、  "query\_log\_directory"、  "asp\_log\_directory"、  "streaming\_router\_port"、  "enable\_upsert\_to\_merge"、  "archive\_dest"、 "recovery\_min\_apply\_delay"、  "sync\_config\_strategy"。
-
 
 ## enable_save_confirmed_lsn<a name="section94339215542"></a>
 
@@ -269,22 +270,22 @@
 
 **取值范围**： 布尔型
 
--   on: 表示启用该功能。在1主多备且配置有同步备机的场景下，在主机每次执行数据变化的事务操作时（DML/DDL），且主机等待与同步备机达成多数派一致性位置时，将与当前同步备达成多数派一致性的位置持久化到磁盘上。持久化的文件对应同步备的复制槽的状态文件。该参数打开后同时影响不指定模式的自动build和增量build，当主机发生故障后，原主作为备机发起build时，检测源端（新主）是否存在相同的confirmed LSN。如果不存在，build失败，避免原主的数据被build覆盖。
--   off: 表示不启用该功能，主机事务提交时的行为与原来保持一致。自动build和增量build的行为与原来保持一致。此时在1主多备且配置有异步备机的场景下，如果主机突然发生故障宕机，而主机此刻达成的多数派一致性位置（比如LSN100）又没有同步到异步备机时，如果强行将异步备机作为新主机启动，且在新主上执行一些事务操作，那么新主上的数据会覆盖LSN100，此时再将原主作为备机发起build，主机上会丢失自己最近一次达成多数派一致性位置LSN100的业务数据。
+- on: 表示启用该功能。在1主多备且配置有同步备机的场景下，在主机每次执行数据变化的事务操作时（DML/DDL），且主机等待与同步备机达成多数派一致性位置时，将与当前同步备达成多数派一致性的位置持久化到磁盘上。持久化的文件对应同步备的复制槽的状态文件。该参数打开后同时影响不指定模式的自动build和增量build，当主机发生故障后，原主作为备机发起build时，检测源端（新主）是否存在相同的confirmed LSN。如果不存在，build失败，避免原主的数据被build覆盖。
+- off: 表示不启用该功能，主机事务提交时的行为与原来保持一致。自动build和增量build的行为与原来保持一致。此时在1主多备且配置有异步备机的场景下，如果主机突然发生故障宕机，而主机此刻达成的多数派一致性位置（比如LSN100）又没有同步到异步备机时，如果强行将异步备机作为新主机启动，且在新主上执行一些事务操作，那么新主上的数据会覆盖LSN100，此时再将原主作为备机发起build，主机上会丢失自己最近一次达成多数派一致性位置LSN100的业务数据。
 
 **默认值**： off
 
 >[!TIP]须知
 >
->-   如果最大可用模式most_available_sync配置为on，且所有同步备机都故障时，该功能不生效。因为没有同步备可以触发该LSN的持久化。
+>- 如果最大可用模式most_available_sync配置为on，且所有同步备机都故障时，该功能不生效。因为没有同步备可以触发该LSN的持久化。
 >
->-   该功能只会影响增量build或不指定build模式的自动build, 如果用户强制指定全量build模式，该功能不生效。
+>- 该功能只会影响增量build或不指定build模式的自动build, 如果用户强制指定全量build模式，该功能不生效。
 >
->-   如果在执行build前，主机的pg_replslot下的文件被人为删除或破坏，本功能不生效。
+>- 如果在执行build前，主机的pg_replslot下的文件被人为删除或破坏，本功能不生效。
 >
->-   该功能开启后，如果主机在等待同步备机达成多数派一致性的过程中被主动停止，不会提示“该事务已在本地提交，可能未同步到远端”，避免上层业务以为数据已经达成一致。
+>- 该功能开启后，如果主机在等待同步备机达成多数派一致性的过程中被主动停止，不会提示“该事务已在本地提交，可能未同步到远端”，避免上层业务以为数据已经达成一致。
 >
->-   该功能开启后，因为等待同步的时间会由于持久化数据而变长，带有同步备的主备集群的性能会受到影响。测试数据显示，与不开启该功能相比，性能约下降20%。
+>- 该功能开启后，因为等待同步的时间会由于持久化数据而变长，带有同步备的主备集群的性能会受到影响。测试数据显示，与不开启该功能相比，性能约下降20%。
 
 ## hadr\_recovery\_time\_target<a name="section166246318304"></a>
 
@@ -324,10 +325,10 @@
 
 >[!TIP]须知
 >
->-   在一个包含了主机、备机和级联备的数据库实例中，主机相对于备机是发送端，备机相对于主机是接收端，备机相对于级联备是发送端，级联备相对于备机是接收端。
->-   发送端主动向接收端同步配置文件、接收端请求发送端同步配置文件是两个独立的事件，均会使得配置文件同步。若不希望配置文件同步，则需要在接收端配置为none\_node，发送端若为备机只能配置为none\_node，发送端若为主机，配置为none\_node时主机与所有备机都不同步，为only\_sync\_node时仅与同步备同步，不与异步备同步。
->-   配置参数同步的具体表现为，发送端发送配置文件，对接收端配置文件中的对应参数直接覆盖。若设置了配置文件需要同步的策略，则修改接收端配置参数后，发送端会立刻覆盖接收端的配置参数，使得接收端修改不生效。
->-   即使设置了配置文件需要同步的策略，仍有部分配置参数不会被同步。包括："application\_name",  "archive\_command",  "audit\_directory",  "available\_zone",  "comm\_control\_port",  "comm\_sctp\_port",  "listen\_addresses",  "log\_directory",  "port",  "replconninfo1",  "replconninfo2",  "replconninfo3",  "replconninfo4",  "replconninfo5",  "replconninfo6",  "replconninfo7",  "replconninfo8", "replconninfo9", "replconninfo10", "replconninfo11", "replconninfo12", "replconninfo13", "replconninfo14", "replconninfo15", "replconninfo16", "replconninfo17", "replconninfo18",  "ssl",  "ssl\_ca\_file",  "ssl\_cert\_file",  "ssl\_ciphers",  "ssl\_crl\_file",  "ssl\_key\_file",  "ssl\_renegotiation\_limit",  "ssl\_cert\_notify\_time",  "synchronous\_standby\_names",  "local\_bind\_address",  "perf\_directory",  "query\_log\_directory",  "asp\_log\_directory",  "streaming\_router\_port",  "enable\_upsert\_to\_merge",  "archive\_dest", "recovery\_min\_apply\_delay",  "sync\_config\_strategy"。
+>- 在一个包含了主机、备机和级联备的数据库实例中，主机相对于备机是发送端，备机相对于主机是接收端，备机相对于级联备是发送端，级联备相对于备机是接收端。
+>- 发送端主动向接收端同步配置文件、接收端请求发送端同步配置文件是两个独立的事件，均会使得配置文件同步。若不希望配置文件同步，则需要在接收端配置为none\_node，发送端若为备机只能配置为none\_node，发送端若为主机，配置为none\_node时主机与所有备机都不同步，为only\_sync\_node时仅与同步备同步，不与异步备同步。
+>- 配置参数同步的具体表现为，发送端发送配置文件，对接收端配置文件中的对应参数直接覆盖。若设置了配置文件需要同步的策略，则修改接收端配置参数后，发送端会立刻覆盖接收端的配置参数，使得接收端修改不生效。
+>- 即使设置了配置文件需要同步的策略，仍有部分配置参数不会被同步。包括："application\_name",  "archive\_command",  "audit\_directory",  "available\_zone",  "comm\_control\_port",  "comm\_sctp\_port",  "listen\_addresses",  "log\_directory",  "port",  "replconninfo1",  "replconninfo2",  "replconninfo3",  "replconninfo4",  "replconninfo5",  "replconninfo6",  "replconninfo7",  "replconninfo8", "replconninfo9", "replconninfo10", "replconninfo11", "replconninfo12", "replconninfo13", "replconninfo14", "replconninfo15", "replconninfo16", "replconninfo17", "replconninfo18",  "ssl",  "ssl\_ca\_file",  "ssl\_cert\_file",  "ssl\_ciphers",  "ssl\_crl\_file",  "ssl\_key\_file",  "ssl\_renegotiation\_limit",  "ssl\_cert\_notify\_time",  "synchronous\_standby\_names",  "local\_bind\_address",  "perf\_directory",  "query\_log\_directory",  "asp\_log\_directory",  "streaming\_router\_port",  "enable\_upsert\_to\_merge",  "archive\_dest", "recovery\_min\_apply\_delay",  "sync\_config\_strategy"。
 
 ## ignore\_standby\_lsn\_window<a name="section1748591005619"></a>
 
@@ -337,16 +338,15 @@
 
 **取值范围**：整形，范围0\~INT_MAX，单位为毫秒。
 
--   0表示不设置ignore_standby_lsn_window超时时间窗口, 即无论同步备的lsn位点多久未推进，主机事务提交均等待该备机同步。
--   其余表示ignore_standby_lsn_window超时时间窗口的大小。
+- 0表示不设置ignore_standby_lsn_window超时时间窗口, 即无论同步备的lsn位点多久未推进，主机事务提交均等待该备机同步。
+- 其余表示ignore_standby_lsn_window超时时间窗口的大小。
 
 **默认值**：0
 
 >[!TIP]须知
 >
->-   仅在most_available_sync配置为on时，该参数才生效。
->-   注意取值的合理性，比如当synchronous_commit=remote_apply，ignore_standby_lsn_window配置的值小于延迟回放时间recovery_min_apply_delay，则由于延迟回放导致备机返回的apply位点不推进，ignore_standby_lsn_window生效，导致主机事务提交不等待该备机回放完成，remote_apply失效。
-
+>- 仅在most_available_sync配置为on时，该参数才生效。
+>- 注意取值的合理性，比如当synchronous_commit=remote_apply，ignore_standby_lsn_window配置的值小于延迟回放时间recovery_min_apply_delay，则由于延迟回放导致备机返回的apply位点不推进，ignore_standby_lsn_window生效，导致主机事务提交不等待该备机回放完成，remote_apply失效。
 
 ## ignore\_feedback\_xmin\_window<a name="section1748591005819"></a>
 
@@ -356,8 +356,7 @@
 
 **取值范围**：整形，范围0\~INT_MAX，单位为毫秒。
 
--   0表示不设置ignore_feedback_xmin_window超时时间窗口, 即无论备机的oldestXmin多久未推进，主机的vacuum都需要考虑该xmin。
--   其余表示ignore_feedback_xmin_window超时时间窗口的大小。
+- 0表示不设置ignore_feedback_xmin_window超时时间窗口, 即无论备机的oldestXmin多久未推进，主机的vacuum都需要考虑该xmin。
+- 其余表示ignore_feedback_xmin_window超时时间窗口的大小。
 
 **默认值**：0
-

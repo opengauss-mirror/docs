@@ -13,7 +13,7 @@ GRANT gs_role_pldebugger to user;
 
 Two clients are required to connect to the database. One client is responsible for executing the debugging interface as the debug end, and the other client is responsible for executing the debugging function to control the execution of stored procedures on the server. The following is an example.
 
--   Prepare for debugging.
+- Prepare for debugging.
 
     Use PG\_PROC to find the OID of the stored procedure to be debugged and execute  **DBE\_PLDEBUGGER.turn\_on\(oid\)**. In this case, the client functions as the server.
 
@@ -21,7 +21,7 @@ Two clients are required to connect to the database. One client is responsible f
     openGauss=# CREATE OR REPLACE PROCEDURE test_debug ( IN  x INT) 
     AS  
     BEGIN
-    	  INSERT INTO t1 (a) VALUES (x);
+       INSERT INTO t1 (a) VALUES (x);
     END;
     /
     CREATE PROCEDURE
@@ -37,8 +37,7 @@ Two clients are required to connect to the database. One client is responsible f
     (1 row)
     ```
 
-
--   Start debugging.
+- Start debugging.
 
     When the server executes the stored procedure, the server hangs before the first SQL statement in the stored procedure and waits for the debugging message sent by the debug end. Debugging is supported only by directly executing a stored procedure and cannot be achieved by invoking an executed stored procedure through a trigger.
 
@@ -205,37 +204,36 @@ Two clients are required to connect to the database. One client is responsible f
     </tbody>
     </table>
 
+- **[DBE\_PLDEBUGGER.turn\_on](dbe_pldebugger_turn_on.md)**  
 
--   **[DBE\_PLDEBUGGER.turn\_on](dbe_pldebugger_turn_on.md)**  
+- **[DBE\_PLDEBUGGER.turn\_off](dbe_pldebugger_turn_off.md)**  
 
--   **[DBE\_PLDEBUGGER.turn\_off](dbe_pldebugger_turn_off.md)**  
+- **[DBE\_PLDEBUGGER.local\_debug\_server\_info](dbe_pldebugger_local_debug_server_info.md)**  
 
--   **[DBE\_PLDEBUGGER.local\_debug\_server\_info](dbe_pldebugger_local_debug_server_info.md)**  
+- **[DBE\_PLDEBUGGER.attach](dbe_pldebugger_attach.md)**  
 
--   **[DBE\_PLDEBUGGER.attach](dbe_pldebugger_attach.md)**  
+- **[DBE\_PLDEBUGGER.info\_locals](dbe_pldebugger_info_locals.md)**  
 
--   **[DBE\_PLDEBUGGER.info\_locals](dbe_pldebugger_info_locals.md)**  
+- **[DBE\_PLDEBUGGER.next](dbe_pldebugger_next.md)**  
 
--   **[DBE\_PLDEBUGGER.next](dbe_pldebugger_next.md)**  
+- **[DBE\_PLDEBUGGER.continue](dbe_pldebugger_continue.md)**  
 
--   **[DBE\_PLDEBUGGER.continue](dbe_pldebugger_continue.md)**  
+- **[DBE\_PLDEBUGGER.abort](dbe_pldebugger_abort.md)**  
 
--   **[DBE\_PLDEBUGGER.abort](dbe_pldebugger_abort.md)**  
+- **[DBE\_PLDEBUGGER.print\_var](dbe_pldebugger_print_var.md)**  
 
--   **[DBE\_PLDEBUGGER.print\_var](dbe_pldebugger_print_var.md)**  
+- **[DBE\_PLDEBUGGER.info\_code](dbe_pldebugger_info_code.md)**  
 
--   **[DBE\_PLDEBUGGER.info\_code](dbe_pldebugger_info_code.md)**  
+- **[DBE\_PLDEBUGGER.step](dbe_pldebugger_step.md)**  
 
--   **[DBE\_PLDEBUGGER.step](dbe_pldebugger_step.md)**  
+- **[DBE\_PLDEBUGGER.add\_breakpoint](dbe_pldebugger_add_breakpoint.md)**  
 
--   **[DBE\_PLDEBUGGER.add\_breakpoint](dbe_pldebugger_add_breakpoint.md)**  
+- **[DBE\_PLDEBUGGER.delete\_breakpoint](dbe_pldebugger_delete_breakpoint.md)**  
 
--   **[DBE\_PLDEBUGGER.delete\_breakpoint](dbe_pldebugger_delete_breakpoint.md)**  
+- **[DBE\_PLDEBUGGER.enable\_breakpoint](dbe_pldebugger_enable_breakpoint.md)**  
 
--   **[DBE\_PLDEBUGGER.enable\_breakpoint](dbe_pldebugger_enable_breakpoint.md)**  
+- **[DBE\_PLDEBUGGER.disable\_breakpoint](dbe_pldebugger_disable_breakpoint.md)**  
 
--   **[DBE\_PLDEBUGGER.disable\_breakpoint](dbe_pldebugger_disable_breakpoint.md)**  
+- **[DBE\_PLDEBUGGER.finish](dbe_pldebugger_finish.md)**  
 
--   **[DBE\_PLDEBUGGER.finish](dbe_pldebugger_finish.md)**  
-
--   **[DBE\_PLDEBUGGER.set\_var](dbe_pldebugger_set_var.md)**  
+- **[DBE\_PLDEBUGGER.set\_var](dbe_pldebugger_set_var.md)**  

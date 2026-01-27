@@ -20,21 +20,21 @@ CALL [schema.|package.] {func_name| procedure_name} ( param_expr );
 
 ## 参数说明<a name="zh-cn_topic_0283137636_zh-cn_topic_0237122088_zh-cn_topic_0059778236_sf183d9684eb54414b8f5c370a1c7038b"></a>
 
--   **schema**
+- **schema**
 
     函数或存储过程所在的模式名称。
 
--   **package**
+- **package**
 
     函数或存储过程所在的package名称。
 
--   **func\_name**
+- **func\_name**
 
     所调用函数或存储过程的名称。
 
     取值范围：已存在的函数名称。
 
--   **param\_expr**
+- **param\_expr**
 
     参数列表可以用符号“:=”或者“=\>”将参数名和参数值隔开，这种方法的好处是参数可以以任意顺序排列。若参数列表中仅出现参数值，则参数值的排列顺序必须和函数或存储过程定义时的相同。
 
@@ -45,7 +45,6 @@ CALL [schema.|package.] {func_name| procedure_name} ( param_expr );
     - 必须使用用户自定义变量作为输出参数。
     - 只能支持调用plpgsql语言的存储过程。
 
-
 ## 示例<a name="zh-cn_topic_0283137636_zh-cn_topic_0237122088_zh-cn_topic_0059778236_s299dc001fa4b48cd9b56412a73db23c0"></a>
 
 ```
@@ -55,8 +54,8 @@ openGauss=# set dolphin.sql_mode = 'block_return_multi_results';
 --创建一个存储过程，返回多个查询语句的结果。
 openGauss=# CREATE   PROCEDURE proc_a_2 ()  as 
 begin
-	select * from t;
-	select * from test_1;
+ select * from t;
+ select * from test_1;
 end;
 /
 
@@ -64,7 +63,7 @@ end;
 openGauss=# call proc_a_2();
 
 ```
+
 ## 相关链接<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_sfe39b39f278f4933914a438f40c63954"></a>
 
 [CALL](../sql_reference/call.md)
-

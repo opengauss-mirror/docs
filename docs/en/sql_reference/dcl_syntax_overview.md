@@ -79,4 +79,3 @@ openGauss allows users to set rights for objects that will be created. For detai
 ## Shutting Down The Current Node<a name="en-us_topic_0283136632_section153781731062"></a>
 
 openGauss allows users to run the  **shutdown**  command to shut down the current database node. For details, see  [SHUTDOWN](shutdown.md).
-

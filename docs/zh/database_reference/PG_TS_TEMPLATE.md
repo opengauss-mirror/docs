@@ -62,4 +62,3 @@ PG\_TS\_TEMPLATE系统表包含定义文本搜索模板的记录。模板是文�
 </tr>
 </tbody>
 </table>
-

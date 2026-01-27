@@ -99,7 +99,7 @@
 </tbody>
 </table>
 
--   PKG\_SERVICE.SQL\_IS\_CONTEXT\_ACTIVE
+- PKG\_SERVICE.SQL\_IS\_CONTEXT\_ACTIVE
 
     This function checks whether a context is registered. This function transfers the ID of the context to be queried. If the context exists,  **TRUE**  is returned. Otherwise,  **FALSE**  is returned.
 
@@ -129,7 +129,7 @@
     </tbody>
     </table>
 
--   PKG\_SERVICE.SQL\_CLEAN\_ALL\_CONTEXTS
+- PKG\_SERVICE.SQL\_CLEAN\_ALL\_CONTEXTS
 
     This function cancels all contexts.
 
@@ -141,7 +141,7 @@
     RETURN VOID;
     ```
 
--   PKG\_SERVICE.SQL\_REGISTER\_CONTEXT
+- PKG\_SERVICE.SQL\_REGISTER\_CONTEXT
 
     This function opens a context, which is the prerequisite for the subsequent operations in the context. This function does not transfer any parameter. It automatically generates context IDs in an ascending order and returns values to integer variables.
 
@@ -153,7 +153,7 @@
     RETURN INTEGER;
     ```
 
--   PKG\_SERVICE.SQL\_UNREGISTER\_CONTEXT
+- PKG\_SERVICE.SQL\_UNREGISTER\_CONTEXT
 
     This function closes a context, which is the end of each operation in the context. If this function is not called when the stored procedure ends, the memory is still occupied by the context. Therefore, remember to close a context when you do not need to use it. If an exception occurs, the stored procedure exits but the context is not closed. Therefore, you are advised to include this interface in the exception handling of the stored procedure.
 
@@ -183,7 +183,7 @@
     </tbody>
     </table>
 
--   PKG\_SERVICE.SQL\_SET\_SQL
+- PKG\_SERVICE.SQL\_SET\_SQL
 
     This function parses the query statement of a given context. The input query statement is executed immediately. Currently, only the  **SELECT**  query statement can be parsed. The statement parameters can be transferred only through the  **TEXT**  type. The length cannot exceed 1 GB.
 
@@ -225,7 +225,7 @@
     </tbody>
     </table>
 
--   PKG\_SERVICE.SQL\_RUN
+- PKG\_SERVICE.SQL\_RUN
 
     This function executes a given context. It receives a context ID first, and the data obtained after execution is used for subsequent operations. Currently, only the  **SELECT**  query statement can be executed.
 
@@ -255,7 +255,7 @@
     </tbody>
     </table>
 
--   PKG\_SERVICE.SQL\_NEXT\_ROW
+- PKG\_SERVICE.SQL\_NEXT\_ROW
 
     This function returns the number of data rows that meet query conditions. Each time the interface is executed, the system obtains a set of new rows until all data is read.
 
@@ -285,7 +285,7 @@
     </tbody>
     </table>
 
--   PKG\_SERVICE.SQL\_GET\_VALUE
+- PKG\_SERVICE.SQL\_GET\_VALUE
 
     This function returns the context element value in a specified position of a context and accesses the data obtained by  **PKG\_SERVICE.SQL\_NEXT\_ROW**.
 
@@ -327,7 +327,7 @@
     </tbody>
     </table>
 
--   PKG\_SERVICE.SQL\_SET\_RESULT\_TYPE
+- PKG\_SERVICE.SQL\_SET\_RESULT\_TYPE
 
     This function defines columns returned from a given context and can be used only for contexts defined by  **SELECT**. The defined columns are identified by the relative positions in the query list. The prototype of  **PKG\_SERVICE.SQL\_SET\_RESULT\_TYPE**  is as follows:
 
@@ -373,7 +373,7 @@
     </tbody>
     </table>
 
--   PKG\_SERVICE.JOB\_CANCEL
+- PKG\_SERVICE.JOB\_CANCEL
 
     The stored procedure  **CANCEL**  deletes a specified job.
 
@@ -419,7 +419,7 @@
     CALL PKG_SERVICE.JOB_CANCEL(101);
     ```
 
--   PKG\_SERVICE.JOB\_FINISH
+- PKG\_SERVICE.JOB\_FINISH
 
     The stored procedure  **FINISH**  disables or enables a scheduled job.
 
@@ -483,7 +483,7 @@
     </tbody>
     </table>
 
--   PKG\_SERVICE.JOB\_SUBMIT
+- PKG\_SERVICE.JOB\_SUBMIT
 
     The stored procedure  **JOB\_SUBMIT**  submits a scheduled job provided by the system.
 
@@ -586,7 +586,7 @@
     SELECT PKG_SERVICE.JOB_SUBMIT (101, 'insert_msg_statistic1;', sysdate, 'sysdate+3.0/24');
     ```
 
--   PKG\_SERVICE.JOB\_UPDATE
+- PKG\_SERVICE.JOB\_UPDATE
 
     The stored procedure  **UPDATE**  modifies user-definable attributes of a job, including the job content, next-execution time, and execution interval.
 
@@ -669,7 +669,7 @@
     CALL PKG_SERVICE.JOB_UPDATE(101, 'insert into tbl_a values(sysdate);', sysdate, 'sysdate + 1.0/1440');
     ```
 
--   PKG\_SERVICE.SUBMIT\_ON\_NODES
+- PKG\_SERVICE.SUBMIT\_ON\_NODES
 
     The stored procedure  **SUBMIT\_ON\_NODES**  creates a scheduled job on a node. Only users  **sysadmin**  and  **monitor admin**  have this permission.
 
@@ -776,11 +776,11 @@
     select pkg_service.submit_on_nodes('CCN', 'postgres', 'select capture_view_to_json(''dbe_perf.statement'', 0);', sysdate, 'interval ''60 second''');
     ```
 
--   PKG\_SERVICE.ISUBMIT\_ON\_NODES
+- PKG\_SERVICE.ISUBMIT\_ON\_NODES
 
     **ISUBMIT\_ON\_NODES**  has the same syntax function as  **SUBMIT\_ON\_NODES**, but the first parameter of  **ISUBMIT\_ON\_NODES**  is an input parameter, that is, a specified job ID. In contrast, that last parameter of  **ISUBMIT\_ON\_NODES**  is an output parameter, indicating the job ID automatically generated by the system. Only users  **sysadmin**  and  **monitor admin**  have this permission.
 
--   PKG\_SERVICE.SQL\_GET\_ARRAY\_RESULT
+- PKG\_SERVICE.SQL\_GET\_ARRAY\_RESULT
 
     This function is used to return the value of the bound OUT parameter of the INT array type and obtain the OUT parameter in a stored procedure.
 
@@ -827,7 +827,7 @@
     </tbody>
     </table>
 
--   PKG\_SERVICE.SQL\_GET\_VARIABLE\_RESULT
+- PKG\_SERVICE.SQL\_GET\_VARIABLE\_RESULT
 
     This function is used to return the value of the bound OUT parameter of non-array type and obtain the OUT parameter in a stored procedure.
 

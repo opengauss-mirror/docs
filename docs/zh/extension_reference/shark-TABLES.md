@@ -4,8 +4,6 @@
 
 **表1** TABLES
 
-
-
 <table aria-label="表1" class="table table-sm margin-top-none">
     <thead>
         <tr>
@@ -75,147 +73,147 @@
             <td>bit</td>
             <td>是否只发布架构</td>
         </tr>
-		<tr>
+  <tr>
             <td>lob_data_space_id</td>
             <td>oid</td>
             <td>对应的 toast 表的 ID</td>
         </tr>
-		<tr>
+  <tr>
             <td>filestream_data_space_id</td>
             <td>int</td>
             <td>返回 NULL</td>
         </tr>
-		<tr>
+  <tr>
             <td>max_column_id_used</td>
             <td>int</td>
             <td>列的最大 ID</td>
         </tr>
-		<tr>
+  <tr>
             <td>lock_on_bulk_load</td>
             <td>bit</td>
             <td>返回 0</td>
         </tr>
-		<tr>
+  <tr>
             <td>uses_ansi_nulls</td>
             <td>bit</td>
             <td>返回 1</td>
         </tr>
-		<tr>
+  <tr>
             <td>is_replicated</td>
             <td>bit</td>
             <td>1 表示为基于事务的发布</td>
         </tr>
-		<tr>
+  <tr>
             <td>has_replication_filter</td>
             <td>bit</td>
             <td>返回 0</td>
         </tr>
-		<tr>
+  <tr>
             <td>is_merge_published</td>
             <td>bit</td>
             <td>返回 0</td>
         </tr>
-		<tr>
+  <tr>
             <td>is_sync_tran_subscribed</td>
             <td>bit</td>
             <td>返回 0</td>
         </tr>
-		<tr>
+  <tr>
             <td>has_unchecked_assembly_data</td>
             <td>bit</td>
             <td>返回 0</td>
         </tr>
-		<tr>
+  <tr>
             <td>text_in_row_limit</td>
             <td>int</td>
             <td>返回 0</td>
         </tr>
-		<tr>
+  <tr>
             <td>large_value_types_out_of_row</td>
             <td>bit</td>
             <td>返回 0</td>
         </tr>
-		<tr>
+  <tr>
             <td>is_tracked_by_cdc</td>
             <td>tinyint</td>
             <td>返回 0</td>
         </tr>
-		<tr>
+  <tr>
             <td>lock_escalation</td>
             <td>tinyint</td>
             <td>返回 1</td>
         </tr>
-		<tr>
+  <tr>
             <td>lock_escalation_desc</td>
             <td>nvarchar(60)</td>
             <td>返回 DISABLE</td>
         </tr>
-		<tr>
+  <tr>
             <td>is_filetable</td>
             <td>bit</td>
             <td>返回 0</td>
         </tr>
-		<tr>
+  <tr>
             <td>is_memory_optimized</td>
             <td>bit</td>
             <td>1 表示该表为MOT表</td>
         </tr>
-		<tr>
+  <tr>
             <td>durability</td>
             <td>tinyint</td>
             <td>返回 0</td>
         </tr>
-		<tr>
+  <tr>
             <td>durability_desc</td>
             <td>nvarchar(60)</td>
             <td>返回 SCHEMA_AND_DATA</td>
         </tr>
-		<tr>
+  <tr>
             <td>temporal_type</td>
             <td>tinyint</td>
             <td>2 为临时表<br/>0 其它情况</td>
         </tr>
-		<tr>
+  <tr>
             <td>temporal_type_desc</td>
             <td>nvarchar(60)</td>
             <td>SYSTEM_VERSIONED_TEMPORAL_TABLE 为临时表<br/>NON_TEMPORAL_TABLE 其它情况</td>
         </tr>
-		<tr>
+  <tr>
             <td>history_table_id</td>
             <td>int</td>
             <td>返回 NULL</td>
         </tr>
-		<tr>
+  <tr>
             <td>is_remote_data_archive_enabled</td>
             <td>bit</td>
             <td>返回 0</td>
         </tr>
-		<tr>
+  <tr>
             <td>is_external</td>
             <td>bit</td>
             <td>1 表示外部表</td>
         </tr>
-		<tr>
+  <tr>
             <td>history_retention_period</td>
             <td>int</td>
             <td>返回 0</td>
         </tr>
-		<tr>
+  <tr>
             <td>history_retention_period_unit</td>
             <td>int</td>
             <td>返回 -1</td>
         </tr>
-		<tr>
+  <tr>
             <td>history_retention_period_unit_desc</td>
             <td>nvarchar(10)</td>
             <td>返回 INFINITE</td>
         </tr>
-		<tr>
+  <tr>
             <td>is_node</td>
             <td>bit</td>
             <td>图数据库的节点表</td>
         </tr>
-		<tr>
+  <tr>
             <td>is_edge</td>
             <td>bit</td>
             <td>图数据库的边表</td>

@@ -10,76 +10,73 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
 
 ## Syntax<a name="section95636533613"></a>
 
--   Establishing a DR Relationship
+- Establishing a DR Relationship
 
     ```
     gs_sdr -t start -m [primary|disaster_standby] [-U DR_USERNAME] [-W DR_PASSWORD] [-X XMLFILE] [--json JSONFILE] [--time-out=SECS] [-l LOGFILE]
     ```
 
--   Promoting DR Instance to Primary
+- Promoting DR Instance to Primary
 
     ```
     gs_sdr -t failover [-l LOGFILE] 
     ```
 
--   Planned Primary/Standby Switchover
+- Planned Primary/Standby Switchover
 
     ```
     gs_sdr -t switchover -m [primary|disaster_standby] [--time-out=SECS] [-l LOGFILE]
     ```
 
--   DR Removal
+- DR Removal
 
     ```
     gs_sdr -t stop [-X XMLFILE] [--json JSONFILE] [-l LOGFILE]
     ```
 
-
--   Monitoring DR Status
+- Monitoring DR Status
 
     ```
     gs_sdr -t query [-l LOGFILE]
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0287275995_section16817173615"></a>
 
 **gs\_sdr** has the following types of parameters:
 
--   Common parameters
-    -   -t
+- Common parameters
+    - -t
 
         Specifies the type of the **gs\_sdr** command.
 
         Value range: **start**, **failover**, **switchover**, **stop**, or **query**.
 
-    -   -l
+    - -l
 
         Specifies a log file and its storage path.
 
         Default value: **$GAUSSLOG/om/gs\_sdr-YYYY-MM-DD\_hhmmss.log**
 
-    -   -?, --help
+    - -?, --help
 
         Display the help information.
 
-    -   -V, --version
+    - -V, --version
 
         Displays version information.
 
-
--   Parameters for establishing DR relationship:
-    -   -m
+- Parameters for establishing DR relationship:
+    - -m
 
         Expected role of the cluster in the DR relationship.
 
         Value range: **primary** or **disaster_standby**.
 
-    -   -U
+    - -U
 
         Name of the DR user with the streaming replication permission.
 
-    -   -W
+    - -W
 
         Password of the DR user.
 
@@ -89,7 +86,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
         >2. If the **-U** and **-W** parameters are not input in the command line, they can be input in interactive mode during the establishment.
         >3. When the **-W** parameter is entered in the command line, other terminals can view the password through the PS command, which poses a security risk. Suggest inputting through interactive mode.
 
-    -   -X
+    - -X
 
         XML file used during cluster installation. DR information can be configured in the XML file for DR establishment. That is, three columns ("localStreamIpmap1", "remoteStreamIpmap1" and remotedataPortBase) can be extended based on the XML file.
 
@@ -112,7 +109,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
         </DEVICE>
         ```
 
-    -   --json
+    - --json
 
         JSON file containing DR information.
 
@@ -129,7 +126,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
         >
         >-Either **-X** or **--json** can be used to configure DR information. If both parameters are delivered in the command, the JSON file prevails.
 
-    -   --time-out=SECS
+    - --time-out=SECS
 
         Specifies the timeout period. The primary cluster waits for the connection to the standby cluster. If the connection times out, the OM script automatically exits. Unit: s
 
@@ -141,17 +138,16 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
         >
         >It is important to note that the build and start clusters each have their own timeout settings. For the build cluster, the default timeout is set at 1,209,600 seconds (14 days), and if the build operation is not completed within this time frame, it will automatically exit. As for the start cluster, the default timeout is set at 3,600*24*7 seconds (one week). That is, if the start operation is not completed within one week, it will automatically exit. If the --time-out=SECS parameter is not specified, then in the build cluster, the process will not automatically exit after a timeout of 1200 seconds; similarly, in the start cluster, it will not automatically exit after a timeout of 1200 seconds.
 
-
--   Parameters for switching a DR node to primary:
+- Parameters for switching a DR node to primary:
     
     None.
     
--   Parameters for removing DR:
-    -   -X
+- Parameters for removing DR:
+    - -X
 
         DR information configured in the XML file during cluster installation. That is, three columns ("localStreamIpmap1", "remoteStreamIpmap1" and remotedataPortBase) need to be extended.
 
-    -   --json
+    - --json
 
         JSON file containing local and peer DR information.
 
@@ -159,12 +155,10 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
         >
         >-For details about how to configure **-X** and **--json**, see the parameters for establishing DR relationship in this section.
 
-
--   DR query parameters:
-    -   None.
+- DR query parameters:
+    - None.
     
     The DR status query result is described as follows:
-
 
 <a name="zh-cn_topic_0287275995_table1171617665"></a>
 <table><thead align="left"><tr id="en-us_topic_0287275995_row918131719617"><th class="cellrowborder" valign="top" width="16.29162916291629%" id="mcps1.1.6.1.1"><p id="en-us_topic_0287275995_p18181171612"><a name="en-us_topic_0287275995_p18181171612"></a><a name="en-us_topic_0287275995_p18181171612"></a>Item</p>
@@ -354,7 +348,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
 
 ## Examples<a name="section1428616494387"></a>
 
--   Establish a DR relationship in a primary cluster.
+- Establish a DR relationship in a primary cluster.
 
     ```
     gs_sdr -t start -m primary -X /opt/install_streaming_primary_cluster.xml --time-out=1200 -U 'hadr_user' -W '******'
@@ -402,7 +396,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
     Successfully do streaming disaster recovery start.
     ```
 
--   Establish a DR relationship in a standby cluster.
+- Establish a DR relationship in a standby cluster.
 
     ```
     gs_sdr -t start -m disaster_standby -X /opt/install_streaming_standby_cluster.xml --time-out=1200 -U 'hadr_user' -W '******'
@@ -441,7 +435,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
     Successfully do streaming disaster recovery start.
     ```
 
--   Demote a primary cluster to standby as planned.
+- Demote a primary cluster to standby as planned.
 
     ```
     gs_sdr -t switchover -m disaster_standby
@@ -474,7 +468,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
     Successfully do streaming disaster recovery switchover.
     ```
 
--   Promote a standby cluster to primary as planned.
+- Promote a standby cluster to primary as planned.
 
     ```
     gs_sdr -t switchover -m primary
@@ -501,7 +495,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
     Successfully do streaming disaster recovery switchover.
     ```
 
--   Promote a DR cluster to primary.
+- Promote a DR cluster to primary.
 
     ```
     gs_sdr -t failover
@@ -542,7 +536,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
     Successfully do streaming disaster recovery failover.
     ```
 
--   Remove a primary cluster DR.
+- Remove a primary cluster DR.
 
     ```
     gs_sdr -t stop -X /opt/install_streaming_standby_cluster.xml
@@ -577,7 +571,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
     Successfully do streaming disaster recovery stop.
     ```
 
--   Query the DR status.
+- Query the DR status.
 
     ```
     gs_sdr -t query

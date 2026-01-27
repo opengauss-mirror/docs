@@ -14,40 +14,38 @@ SELECT
 
 ## 参数说明<a name="zh-cn_topic_0000001224664065_section10349175314912"></a>
 
--   **SELECT列表**
+- **SELECT列表**
 
     指定查询表中列名，可以是部分列或者是全部，通配符\*表示全部列。
 
     列名可以用下面两种形式表达：
 
-    -   手动输入列名，多个列之间用英文逗号（,）分隔。
-    -   可以是FROM子句里面计算出来的字段。
+    - 手动输入列名，多个列之间用英文逗号（,）分隔。
+    - 可以是FROM子句里面计算出来的字段。
 
--   **FROM子句**
+- **FROM子句**
 
     为SELECT声明一个或者多个源表。FROM子句涉及多个元素，常见元素如下。
 
-    -   table\_name
+    - table\_name
 
         表名或视图名，名称前可加上模式名，如：schema\_name.table\_name。表名为最常见的元素。
 
-    -   subquery
+    - subquery
 
         FROM子句中可以出现子查询，创建一个临时表保存子查询的输出。详细请参见[子查询](subquery.md)。
 
-    -   alias
+    - alias
 
         给表或复杂的表引用起一个临时的表别名，以便被其余的查询引用。详情请参见[别名](../aliases.md)。
 
-    -   join\_type
+    - join\_type
 
         有5种类型，详情请参见[JOIN](join.md)。
 
-
-
 ## 示例<a name="section1477911223411"></a>
 
--   读取表customer\_t1中所有的数据。
+- 读取表customer\_t1中所有的数据。
 
     ```
     openGauss=# SELECT * FROM customer_t1;
@@ -65,7 +63,7 @@ SELECT
     (9 rows)
     ```
 
--   读取表customer\_t1中指定字段c\_customer\_sk、c\_customer\_id。
+- 读取表customer\_t1中指定字段c\_customer\_sk、c\_customer\_id。
 
     ```
     openGauss=# SELECT c_customer_sk,c_customer_id FROM customer_t1;
@@ -82,5 +80,3 @@ SELECT
               4421 | Admin
     (9 rows)
     ```
-
-

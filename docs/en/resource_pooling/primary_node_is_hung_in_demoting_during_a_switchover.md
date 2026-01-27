@@ -15,4 +15,3 @@ Run the following command to stop the process of the primary node so that the st
 ```
  kill -9 PID
 ```
-

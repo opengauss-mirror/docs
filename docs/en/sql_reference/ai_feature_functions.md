@@ -1,6 +1,6 @@
 # AI Feature Functions<a name="EN-US_TOPIC_0303599451"></a>
 
--   gs\_index\_advise\(text\)
+- gs\_index\_advise\(text\)
 
     Description: Recommends an index for a single query statement.
 
@@ -10,7 +10,7 @@
 
     [Single-query Index Recommendation](../characteristic_description/aifeature_guide/ai4db_autonomous_database_o_m.md)  describes the examples.
 
--   hypopg\_create\_index\(text\)
+- hypopg\_create\_index\(text\)
 
     Description: Creates a virtual index.
 
@@ -20,7 +20,7 @@
 
     [Virtual Index](../characteristic_description/aifeature_guide/ai4db_autonomous_database_o_m.md)  describes the examples.
 
--   hypopg\_display\_index\(\)
+- hypopg\_display\_index\(\)
 
     Description: Displays information about all created virtual indexes.
 
@@ -30,7 +30,7 @@
 
     [Virtual Index](../characteristic_description/aifeature_guide/ai4db_autonomous_database_o_m.md)  describes the examples.
 
--   hypopg\_drop\_index\(oid\)
+- hypopg\_drop\_index\(oid\)
 
     Description: Deletes a specified virtual index.
 
@@ -40,7 +40,7 @@
 
     [Virtual Index](../characteristic_description/aifeature_guide/ai4db_autonomous_database_o_m.md)  describes the examples.
 
--   hypopg\_reset\_index\(\)
+- hypopg\_reset\_index\(\)
 
     Description: Clears all virtual indexes.
 
@@ -50,7 +50,7 @@
 
     [Virtual Index](../characteristic_description/aifeature_guide/ai4db_autonomous_database_o_m.md)  describes the examples.
 
--   hypopg\_estimate\_size\(oid\)
+- hypopg\_estimate\_size\(oid\)
 
     Description: Estimates the space required for creating a specified index.
 
@@ -60,7 +60,7 @@
 
     [Virtual Index](../characteristic_description/aifeature_guide/ai4db_autonomous_database_o_m.md)  describes the examples.
 
--   check\_engine\_status\(ip text, port text\)
+- check\_engine\_status\(ip text, port text\)
 
     Description: Tests whether a predictor engine provides services on a specified IP address and port.
 
@@ -68,8 +68,7 @@
 
     Return type: text
 
-
--   encode\_plan\_node\(optname text, orientation text, strategy text, options text, dop int8, quals text, projection text\)
+- encode\_plan\_node\(optname text, orientation text, strategy text, options text, dop int8, quals text, projection text\)
 
     Description: Encodes the plan operator information in the input parameters.
 
@@ -80,7 +79,7 @@
     >[!NOTE]NOTE 
     >This function is an internal function. You are not advised to use it directly.
 
--   model\_train\_opt\(template text, model text\)
+- model\_train\_opt\(template text, model text\)
 
     Description: Trains a given query performance prediction model.
 
@@ -88,8 +87,7 @@
 
     Return type: tartup\_time\_accuracy FLOAT8, total\_time\_accuracy FLOAT8, rows\_accuracy FLOAT8, peak\_memory\_accuracy FLOAT8
 
-
--   track\_model\_train\_opt\(ip text, port text\)
+- track\_model\_train\_opt\(ip text, port text\)
 
     Description: Returns the training log address of the specified IP address and port predictor engine.
 
@@ -97,8 +95,7 @@
 
     Return type: text
 
-
--   encode\_feature\_perf\_hist\(datname text\)
+- encode\_feature\_perf\_hist\(datname text\)
 
     Description: Encodes historical plan operators collected in the target database.
 
@@ -106,8 +103,7 @@
 
     Return type: queryid bigint, plan\_node\_id int, parent\_node\_id int, left\_child\_id int, right\_child\_id int, encode text, startup\_time bigint, total\_time bigint, rows bigint, and peak\_memory int
 
-
--   gather\_encoding\_info\(datname text\)
+- gather\_encoding\_info\(datname text\)
 
     Description: Invokes  **encode\_feature\_perf\_hist**  to save the encoded data persistently.
 
@@ -115,8 +111,7 @@
 
     Return type: int
 
-
--   db4ai\_predict\_by\_bool \(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_bool \(text, VARIADIC "any"\)
 
     Description: Obtains a model whose return value is of the Boolean type for model inference. This function is an internal function. You are advised to use the  **PREDICT BY**  syntax for inference.
 
@@ -124,7 +119,7 @@
 
     Return type: Boolean
 
--   db4ai\_predict\_by\_float4\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_float4\(text, VARIADIC "any"\)
 
     Description: Obtains a model whose return value is of the float4 type for model inference. This function is an internal function. You are advised to use the  **PREDICT BY**  syntax for inference.
 
@@ -132,7 +127,7 @@
 
     Return type: float
 
--   db4ai\_predict\_by\_float8\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_float8\(text, VARIADIC "any"\)
 
     Description: Obtains a model whose return value is of the float8 type for model inference. This function is an internal function. You are advised to use the  **PREDICT BY**  syntax for inference.
 
@@ -140,7 +135,7 @@
 
     Return type: float
 
--   db4ai\_predict\_by\_int32\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_int32\(text, VARIADIC "any"\)
 
     Description: Obtains a model whose return value is of the int32 type for model inference. This function is an internal function. You are advised to use the  **PREDICT BY**  syntax for inference.
 
@@ -148,7 +143,7 @@
 
     Return type: int
 
--   db4ai\_predict\_by\_int64\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_int64\(text, VARIADIC "any"\)
 
     Description: Obtains a model whose return value is of the int64 type for model inference. This function is an internal function. You are advised to use the  **PREDICT BY**  syntax for inference.
 
@@ -156,7 +151,7 @@
 
     Return type: int
 
--   db4ai\_predict\_by\_numeric\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_numeric\(text, VARIADIC "any"\)
 
     Description: Obtains a model whose return value is of the numeric type for model inference. This function is an internal function. You are advised to use the  **PREDICT BY**  syntax for inference.
 
@@ -164,7 +159,7 @@
 
     Return type: numeric
 
--   db4ai\_predict\_by\_text\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_text\(text, VARIADIC "any"\)
 
     Description: Obtains a model whose return value is of the character type for model inference. This function is an internal function. You are advised to use the  **PREDICT BY**  syntax for inference.
 
@@ -172,7 +167,7 @@
 
     Return type: text
 
--   db4ai\_predict\_by\_float8\_array\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_float8\_array\(text, VARIADIC "any"\)
 
     Description: Obtains a model whose return value is of the character type for model inference. This function is an internal function. You are advised to use the  **PREDICT BY**  syntax for inference.
 
@@ -180,12 +175,10 @@
 
     Return type: text
 
--   gs\_explain\_model\(text\)
+- gs\_explain\_model\(text\)
 
     Description: Obtains the model whose return value is of the character type for text-based model parsing.
 
     Parameter: model name
 
     Return type: text
-
-

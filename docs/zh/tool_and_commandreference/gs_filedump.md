@@ -9,6 +9,7 @@
 保证数据库目录存在且路径正确。
 
 ## 语法
+
 ```
 gs_filedump [-abcdfhikuxy] [-r relfilenode] [-T reltoastrelid] [-R startblock [endblock]] [-D attrlist] [-S blocksize] [-s segsize] [-n segnumber] FILENAME
 ```
@@ -59,29 +60,31 @@ gs_filedump [-abcdfhikuxy] [-r relfilenode] [-T reltoastrelid] [-R startblock [e
 |------|------|
 | `-m` | 将文件解释为 **pg_filenode.map** 文件并打印内容（所有其他选项将被忽略） |
 
-
 ## 使用举例
 
 + 解析 ustore引擎表。
+
 ```
 gs_filedump -u -ot -D int,timestamp,time,timetz,~  $PGDATA/base/15938/16384
 ```
 
 + 解析 段页式表。
+
 ```
  gs_filedump -o -r 4161 -T 4162 -D int,smallint,bigint,~  $PGDATA/base/15938/1
 ```
 
 + 解析 控制文件。
+
 ```
 gs_filedump -c $PGDATA/global/pg_control
 ```
 
 + 解析 map映射文件。
+
 ```
 gs_filedump -m $PGDATA/global/pg_filenode.map
 ```
-
 
 ### 其他
 

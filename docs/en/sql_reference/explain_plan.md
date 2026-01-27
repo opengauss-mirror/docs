@@ -14,24 +14,23 @@ FOR statement ;
 
 ## Parameter Description<a name="en-us_topic_0283136849_en-us_topic_0237122164_en-us_topic_0165816825_section12263165913464"></a>
 
--   **PLAN**: saves plan information into  **PLAN\_TABLE**. If information is stored successfully, "EXPLAIN SUCCESS" is returned.
--   **STATEMENT\_ID**: tags each query. The tag information will be stored in  **PLAN\_TABLE**.
+- **PLAN**: saves plan information into  **PLAN\_TABLE**. If information is stored successfully, "EXPLAIN SUCCESS" is returned.
+- **STATEMENT\_ID**: tags each query. The tag information will be stored in  **PLAN\_TABLE**.
 
     >[!NOTE]NOTE 
     >If the  **EXPLAIN PLAN**  statement does not contain  **SET STATEMENT\_ID**,  **STATEMENT\_ID**  is empty by default. In addition, the value of  **STATEMENT\_ID**  cannot exceed 30 bytes. Otherwise, an error will be reported.
 
-
 ## Precautions<a name="en-us_topic_0283136849_en-us_topic_0237122164_en-us_topic_0165816825_section74641935135611"></a>
 
--   **EXPLAIN PLAN**  cannot be executed on a database node.
--   Plan information cannot be collected for SQL statements that failed to be executed.
--   Data in  **PLAN\_TABLE**  is in a session-level lifecycle. Sessions are isolated from users, and therefore users can only view the data of the current session and current user.
+- **EXPLAIN PLAN**  cannot be executed on a database node.
+- Plan information cannot be collected for SQL statements that failed to be executed.
+- Data in  **PLAN\_TABLE**  is in a session-level lifecycle. Sessions are isolated from users, and therefore users can only view the data of the current session and current user.
 
 ## Example 1<a name="en-us_topic_0283136849_en-us_topic_0237122164_en-us_topic_0165816825_section1128872085512"></a>
 
 You can perform the following steps to collect execution plans of SQL statements by running  **EXPLAIN PLAN**:
 
-1.  Run the  **EXPLAIN PLAN**  statement.
+1. Run the  **EXPLAIN PLAN**  statement.
 
     >[!NOTE]NOTE 
     >After the  **EXPLAIN PLAN**  statement is executed, plan information is automatically stored in  **PLAN\_TABLE**.  **INSERT**,  **UPDATE**, and  **ANALYZE**  cannot be performed on  **PLAN\_TABLE**.
@@ -62,7 +61,7 @@ You can perform the following steps to collect execution plans of SQL statements
     o_orderpriority;
     ```
 
-2.  Query  **PLAN\_TABLE**.
+2. Query  **PLAN\_TABLE**.
 
     ```
     SELECT * FROM PLAN_TABLE;
@@ -70,10 +69,8 @@ You can perform the following steps to collect execution plans of SQL statements
 
     ![](figures/文档.png)
 
-3.  Delete data from  **PLAN\_TABLE**.
+3. Delete data from  **PLAN\_TABLE**.
 
     ```
     DELETE FROM PLAN_TABLE WHERE xxx;
     ```
-
-

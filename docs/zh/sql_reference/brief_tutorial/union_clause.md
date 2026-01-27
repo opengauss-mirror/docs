@@ -4,7 +4,7 @@ UNION计算多个SELECT语句返回行集合的并集。UNION内部的SELECT语�
 
 ## 语法格式<a name="section1458317131312"></a>
 
--   UNION：结果中如果出现相同的值，仅保留一个。
+- UNION：结果中如果出现相同的值，仅保留一个。
 
     ```
     SELECT column_name(s) FROM table_name1
@@ -12,14 +12,13 @@ UNION计算多个SELECT语句返回行集合的并集。UNION内部的SELECT语�
     SELECT column_name(s) FROM table_name2;
     ```
 
--   UNION ALL：显示所有结果，包括重复的值。
+- UNION ALL：显示所有结果，包括重复的值。
 
     ```
     SELECT column_name(s) FROM table_name1
     UNION ALL
     SELECT column_name(s) FROM table_name2;
     ```
-
 
 ## 示例<a name="section7792919716"></a>
 
@@ -45,7 +44,7 @@ openGauss=# SELECT * FROM table2;
 (4 rows)
 ```
 
--   UNION
+- UNION
 
     列出两张表中所有雇员的姓名，重复值仅保留一个。
 
@@ -62,7 +61,7 @@ openGauss=# SELECT * FROM table2;
     (6 rows)
     ```
 
--   UNION ALL
+- UNION ALL
 
     列出两张表中所有雇员的姓名，包括重复值。
 
@@ -80,5 +79,3 @@ openGauss=# SELECT * FROM table2;
      Grace
     (8 rows)
     ```
-
-

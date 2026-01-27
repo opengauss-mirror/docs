@@ -26,13 +26,16 @@ openGauss=# CREATE Extension gms_inaddr;
 ### 使用Extension<a name="section107391050141118"></a>
 
 #### 函数声明
+
 - GET_HOST_ADDRESS(text name default 'localhost')
   描述：该函数根据参数指定ip获取对应主机名称。
   参数详解：name：需要获取地址的主机名；status：若获取成功，该参数返回对应地址，否则报错。
 - GET_HOST_NAME(text ip default '127.0.0.1')
   描述：该函数根据参数指定主机名获取对应ip。
   参数详解：ip：用于获取主机名的地址；若获取成功，返回主机名，否则报错。
+
 #### 函数使用
+
 测试get_host_name、get_host_addr函数
 
 ```

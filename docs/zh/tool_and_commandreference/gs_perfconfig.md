@@ -1,10 +1,8 @@
 # gs_perfconfig
 
-
 ## 背景信息
 
 openGauss提供了gs_perfconfig工具帮助对openGauss进行性能调整。包括操作系统配置、数据库搭建、数据库参数三个方面，可以给出调整方案或建议，或者直接进行配置调整。
-
 
 ## 前提条件
 
@@ -14,11 +12,12 @@ openGauss提供了gs_perfconfig工具帮助对openGauss进行性能调整。包�
 
 需正确配置或指定环境变量。
 
-
 ## 语法参数
+
 gs_perfconfig的参数一共分为四个大项，对应四个功能动作：调整（`tune`）, 恢复（`recover`）, 预设（`preset`）, 帮助（`help`）。
 
 - **性能配置调整**
+
 ```
 gs_perfconfig tune [ -t [ all,os,setup,guc,suggest ] ] [ --apply ] [ -y ] [ --env ENV_FILE ]
 ```
@@ -38,9 +37,8 @@ gs_perfconfig tune [ -t [ all,os,setup,guc,suggest ] ] [ --apply ] [ -y ] [ --en
 `--env`：
     数据库环境变量。
 
-
-
 - **恢复调整前状态**
+
 ```
 gs_perfconfig recover [ -y ]
 ```
@@ -49,11 +47,12 @@ gs_perfconfig recover [ -y ]
 
 `-y`表示接受回滚过程中，会重启数据库、回退参数配置等操作。
 
-
 - **查看预设**
+
 ```
 gs_perfconfig preset [ /*empty*/ | help | PRESET_NAME]
 ```
+
 在进行调整时，对于涉及到用户业务属性相关的信息，会通过问答的方式进行调查检测，但冗长的调查会让使用体验很差，因此提供预设的方式，对这些信息提前进行配置。
 
 `/*empty*/`：
@@ -65,13 +64,12 @@ gs_perfconfig preset [ /*empty*/ | help | PRESET_NAME]
 `help`：
     打印预设的编辑配置方法、预设所包含的参数与含义。（--help，-h，-? 同样生效）
 
-
 - **帮助**
+
 ```
 gs_perfconfig [ help | --help | -h | -? ]
 ```
     
-
 ## 其他参数
 
 配置环境变量`GS_PERFCONFIG_OPTIONS`，可以控制工具内的一些行为细节。
@@ -86,11 +84,12 @@ gs_perfconfig [ help | --help | -h | -? ]
 
 取值范围：`log`、`msg`、`notice`、`warning`、`error`或`fatal`。
 
-
-
 ## 示例
+
 **使用`tune`命令对参数进行调整**
+
 - 1、默认业务场景(预设场景类似)
+
 ```
 [root@openGauss34 script]# python3 gs_perfconfig tune -t all --apply --env /home/carrot/opengauss.source
 LOG: source env: GAUSSHOME=/data1/carrot/gausshome/5.1.0
@@ -126,6 +125,7 @@ Single answer: a
 ```
 
 - 2、自定义场景。需要一步步进行业务相关内容的调查。
+
 ```
 [root@openGauss34 script]# python3 gs_perfconfig tune -t all --apply --env /home/carrot/text.source
 LOG: source env: GAUSSHOME=/data1/carrot/gausshome/5.1.0
@@ -190,8 +190,8 @@ Please input the path:
 
 ```
 
-
 **恢复到调整前的状态**
+
 ```
 [root@openGauss34 script]# python3 gs_perfconfig recover
 LOG: read environ: GAUSSHOME=/data1/carrot/gausshome/5.1.0
@@ -218,7 +218,9 @@ Are you accepting of the aforementioned circumstances?(y/n)? y
 ```
 
 **查看预设**
+
 - 1、查看所有预设
+
 ```
 Builtin Presets:
     kunpeng-4P-tpcc
@@ -229,6 +231,7 @@ User Presets:
 ```
 
 - 2、查看单个预设
+
 ```
 [root@openGauss34 script]# python3 gs_perfconfig preset default
 Preset name: default
@@ -244,8 +247,8 @@ Detail:
     isolated_xlog: None
 ```
 
-
 - 3、查看预设配置方法
+
 ```
 [root@openGauss34 script]# python3 gs_perfconfig preset help
 The preset configure is a file in JSON format that contains the following parameters:

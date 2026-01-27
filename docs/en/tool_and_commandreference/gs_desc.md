@@ -27,21 +27,25 @@ gs_desc [-h] [-s SEARCHPATH] [-n NAMESPACE [NAMESPACE ...]] -t TABLENAME [TABLEN
 ## Usage Examples
 
 + Specify namespace and table name.
+
 ```
 gs_desc -n public -t tbl01
 ```
 
 + Specify table name only.
+
 ```
 gs_desc -t tbl01
 ```
 
 + Specify multiple table names.
+
 ```
 gs_desc -t tbl01 tbl02
 ```
 
 + Specify search path.
+
 ```
 gs_desc -t tbl01 tbl02 -s /data/
 ```

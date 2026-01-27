@@ -13,17 +13,16 @@ SELECT
 
 ## 参数说明<a name="zh-cn_topic_0000001224939983_section1740863211186"></a>
 
--   **ORDER BY子句**
+- **ORDER BY子句**
 
     对SELECT语句检索得到的数据进行升序或降序排序。对于ORDER BY表达式中包含多列的情况：
 
-    -   首先根据最左边的列进行排序，如果这一列的值相同，则根据下一个表达式进行比较，依此类推。
-    -   如果对于所有声明的表达式都相同，则按随机顺序返回。
-
+    - 首先根据最左边的列进行排序，如果这一列的值相同，则根据下一个表达式进行比较，依此类推。
+    - 如果对于所有声明的表达式都相同，则按随机顺序返回。
 
 ## 示例<a name="zh-cn_topic_0000001224939983_section1629154131916"></a>
 
--   对结果根据c\_customer\_sk字段值进行升序排列。
+- 对结果根据c\_customer\_sk字段值进行升序排列。
 
     ```
     openGauss=# SELECT * FROM customer_t1 ORDER BY c_customer_sk ASC;
@@ -41,7 +40,7 @@ SELECT
     (9 rows)
     ```
 
--   对结果根据c\_customer\_sk字段值进行降序排列。
+- 对结果根据c\_customer\_sk字段值进行降序排列。
 
     ```
     openGauss=# SELECT * FROM customer_t1 ORDER BY c_customer_sk DESC;
@@ -58,5 +57,3 @@ SELECT
               3869 | hello         |              |             |
     (9 rows)
     ```
-
-

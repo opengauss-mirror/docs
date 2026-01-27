@@ -6,14 +6,14 @@ openGauss提供了gs_preinstall工具来帮助完成openGauss的环境配置，�
 
 ## 注意事项<a name="zh-cn_topic_0237152419_zh-cn_topic_0059778992_s87eb073560414bc5ba369786f06cbb10"></a>
 
--   用户需要检查上层目录权限，保证安装用户对安装包和配置文件目录读写执行的权限。
--   xml文件中各主机的名称与IP映射配置正确。
--   普通用户执行gs_preinstall命令，只会检查A1,A2,A3,A4,A5,A8,A12,A13选项。
--   root执行gs_preinstall命令，默认跳过gs_checkos网卡的校验（A11）。
--   使用root用户执行gs_preinstall会清理/etc/hosts中的openGauss映射信息，可能存在已部署数据库连接丢失风险，可以在安装结束后手动添加其它数据库映射至/etc/hosts文件中。
--   gs_preinstall指定的用户不支持使用-d手动选定家目录，仅支持系统默认创建的/home下和用户同名的/home目录。
+- 用户需要检查上层目录权限，保证安装用户对安装包和配置文件目录读写执行的权限。
+- xml文件中各主机的名称与IP映射配置正确。
+- 普通用户执行gs_preinstall命令，只会检查A1,A2,A3,A4,A5,A8,A12,A13选项。
+- root执行gs_preinstall命令，默认跳过gs_checkos网卡的校验（A11）。
+- 使用root用户执行gs_preinstall会清理/etc/hosts中的openGauss映射信息，可能存在已部署数据库连接丢失风险，可以在安装结束后手动添加其它数据库映射至/etc/hosts文件中。
+- gs_preinstall指定的用户不支持使用-d手动选定家目录，仅支持系统默认创建的/home下和用户同名的/home目录。
 -   
--   本产品支持同一操作系统大版本下的小版本混合部署，其支持列表如下：
+- 本产品支持同一操作系统大版本下的小版本混合部署，其支持列表如下：
 
     ```
     CentOS 6.4/6.5/6.6/6.7/6.8/6.9
@@ -21,31 +21,29 @@ openGauss提供了gs_preinstall工具来帮助完成openGauss的环境配置，�
     openEuler
     ```
 
-
 ## 语法<a name="zh-cn_topic_0237152419_zh-cn_topic_0059778992_sec57993efb15427997e842706b81cd12"></a>
 
--   准备openGauss环境
+- 准备openGauss环境
 
     ```
     gs_preinstall -U USER -G GROUP -X XMLFILE [-L] [--skip-os-set] [--env-var="ENVVAR" [...]] [--sep-env-file=MPPRCFILE] [--skip-hostname-set] [-l LOGFILE] [--non-interactive] [--enable-perf-config]
     ```
 
--   显示帮助信息
+- 显示帮助信息
 
     ```
     gs_preinstall -? | --help
     ```
 
--   显示版本号信息
+- 显示版本号信息
 
     ```
     gs_preinstall -V | --version
     ```
 
-
 ## 参数说明<a name="zh-cn_topic_0237152419_zh-cn_topic_0059778992_sa9b846fc7333421891c90ad7a67da129"></a>
 
--   -U
+- -U
 
     运行openGauss的操作系统用户名。
 
@@ -54,32 +52,32 @@ openGauss提供了gs_preinstall工具来帮助完成openGauss的环境配置，�
     >[!NOTE]说明
     >配置-U参数值时，字符串中不能包含“|”、“;”、“&”、“$”、“<”、“\>”、“\`”、“\\\\”、“'”、“\\”、“\{”、“\}”、“\(”、“\)”、“\[”、“\]”、“\~”、“\*”、“?”特殊字符。
 
--   -G
+- -G
 
     运行openGauss的操作系统用户的群组名。
 
     取值范围：字符串，要符合标识符的命名规范。
 
--   -X
+- -X
 
     openGauss配置文件路径。
 
     取值范围：xml文件的存储路径。
 
--   -L
+- -L
 
     指定该参数则仅给当前节点准备好openGauss安装环境。适用于不允许使用root互信的场景和设置安全加固参数PermitRootLogin为no的场景。需要满足如下前提条件：
 
-    1.  安装包和openGauss配置文件已提前上传到所有主机；
-    2.  openGauss安装用户已提前创建好并建立好互信关系；
-    3.  用户需要自己保证各台主机上所执行命令的一致性；
-    4.  手动将所有节点的主机名和ip映射关系写入各个主机的/etc/hosts，并在每个映射关系后边加入注释内容：\#Gauss OM IP Hosts Mapping。
+    1. 安装包和openGauss配置文件已提前上传到所有主机；
+    2. openGauss安装用户已提前创建好并建立好互信关系；
+    3. 用户需要自己保证各台主机上所执行命令的一致性；
+    4. 手动将所有节点的主机名和ip映射关系写入各个主机的/etc/hosts，并在每个映射关系后边加入注释内容：\#Gauss OM IP Hosts Mapping。
 
--   --skip-os-set
+- --skip-os-set
 
     是否设置操作系统参数。默认设置系统参数。如果指定该参数则不设置。
 
--   --env-var="ENVVAR"
+- --env-var="ENVVAR"
 
     配置普通用户环境变量。可以指定多个。
 
@@ -88,21 +86,21 @@ openGauss提供了gs_preinstall工具来帮助完成openGauss的环境配置，�
     >[!NOTE]说明
     >本参数不能指定为openGauss默认创建的环境变量。否则，openGauss的环境变量将被覆盖。openGauss默认创建的环境变量见[表1](#zh-cn_topic_0237152419_zh-cn_topic_0059778992_tb25e10cef2104026bdbbedc439fbcd50)。
 
--   --sep-env-file=MPPRCFILE
+- --sep-env-file=MPPRCFILE
 
     保存环境变量的文件。如果指定该参数，表示将使用环境变量分离的版本。
 
     >[!NOTE]说明
     >不能指定环境变量文件为openGauss相关目录或者和这些目录同名，不能和openGauss用户的目录相同。
 
--   --skip-hostname-set
+- --skip-hostname-set
 
     是否将xml配置文件中主机名与IP的映射关系写入“/etc/hosts”文件中。默认写入，如果指定该参数则不写入。
--   --unused-third-party
+- --unused-third-party
 
     是否使用om提供的三方库。默认使用，如果指定该参数则不使用。
 
--   --one-stop-install
+- --one-stop-install
   
     一站式安装数据库。默认不使用，如果指定该参数，表示通过命令行交互式进行预安装。
 
@@ -114,22 +112,22 @@ openGauss提供了gs_preinstall工具来帮助完成openGauss的环境配置，�
 
   当不明确指定-l，但在XML文件中配置了gaussdbLogPath时，默认值为gaussdbLogPath的值、用户名和om/gs\_preinstall-YYYY-MM-DD\_hhmmss.log的组合。
 
--   --non-interactive
+- --non-interactive
 
     指定前置执行模式。
 
-    -   当不指定该参数时，则为安全交互模式，在此模式下用户需要人机交互输入密码。
-    -   当指定该参数时，为非交互模式，不需要进行人机交互。
+    - 当不指定该参数时，则为安全交互模式，在此模式下用户需要人机交互输入密码。
+    - 当指定该参数时，为非交互模式，不需要进行人机交互。
     
--   --enable-perf-config
+- --enable-perf-config
 
     在preinstall结束后，调用gs_perfconfig调整操作系统配置，以使openGauss获得比较好的性能。
 
--   -?, --help
+- -?, --help
 
     显示帮助信息。
 
--   -V, --version
+- -V, --version
 
     显示版本号信息。
 
@@ -204,7 +202,6 @@ openGauss提供了gs_preinstall工具来帮助完成openGauss的环境配置，�
     </tr>
     </tbody>
     </table>
-
 
 ## 手动设置服务端SYSLOG配置<a name="zh-cn_topic_0237152419_zh-cn_topic_0059778992_s407b3891fb94407a89ecc2fccd58033a"></a>
 
@@ -367,4 +364,3 @@ PreInstallationGuide succeeded.
 ## 相关命令<a name="zh-cn_topic_0237152419_zh-cn_topic_0059778992_s73a8656dd6a14499a72a77a5b5192112"></a>
 
 [gs\_install](gs_install.md)，[gs\_postuninstall](gs_postuninstall.md)
-

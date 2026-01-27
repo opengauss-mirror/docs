@@ -625,4 +625,3 @@ openGauss=# SELECT * FROM reltime_type_tab;
 -- Delete the table.
 openGauss=# DROP TABLE reltime_type_tab;
 ```
-

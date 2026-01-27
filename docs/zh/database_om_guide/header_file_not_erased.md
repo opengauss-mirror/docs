@@ -1,15 +1,19 @@
 # 未擦除头部文件
 
 ## 现象
+
 如果该环境之前安装过数据库，再次安装时出现如下错误。
 
 ![Alt text](../database_om_guide/image-1.png)
 
 ## 原因
+
 再次安装时未擦除头部文件或者未删除data目录。
 
 ## 解决方案
+
 执行命令擦除头部文件或删除data目录。
+
 ```shell
 #擦除头部文件
 dd if=/dev/zero of=/home/test/dss/dev/dss-dba bs=2M count=100 conv=notrunc >/dev/null 2>&1

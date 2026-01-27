@@ -14,7 +14,7 @@ SELECT  DISTINCT [ ON ( expression [, ...] ) ] ]
 
 ## 参数说明<a name="zh-cn_topic_0000001180098772_section15362151918382"></a>
 
--   **DISTINCT \[ ON \( expression \[, ...\] \) \]**
+- **DISTINCT \[ ON \( expression \[, ...\] \) \]**
 
 从SELECT的结果集中删除所有重复的行，使结果集中的每行都是唯一的。
 
@@ -84,4 +84,3 @@ openGauss=# SELECT DISTINCT c_first_name  FROM customer_t1 ;
  Lily
 (6 rows)
 ```
-

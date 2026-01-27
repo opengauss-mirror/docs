@@ -11,7 +11,6 @@ gsql: FATAL:  Could not connect dssserver, vgname: "+data", socketpath: "UDS:/us
 HINT:  Check vgname and socketpath and restart later.
 ```
 
-
 ## 定位方法
 
 通过报错可以看出是套接字文件异常，查看对应的文件，发现套接字丢失。
@@ -36,11 +35,8 @@ HINT:  Check vgname and socketpath and restart later.
 
 - 其他异常问题
 
-
 ## 解决方案
 
 若套接字文件不存在，重启dss节点或重启集群即可修复。
 
 无其他影响。
-
-

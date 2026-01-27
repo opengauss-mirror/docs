@@ -4,58 +4,56 @@
 
 ## 语法格式<a name="section16288959172212"></a>
 
--   创建数据库
+- 创建数据库
 
     ```
     CREATE DATABASE database_name;
     ```
 
--   查看数据库
-    -   使用“\\l”用于查看已经存在的数据库。
+- 查看数据库
+    - 使用“\\l”用于查看已经存在的数据库。
 
         ```
         \l
         ```
 
-    -   使用 “\\c + 数据库名” 进入已存在数据库。
+    - 使用 “\\c + 数据库名” 进入已存在数据库。
 
         ```
         \c database_name
         ```
 
-
--   修改数据库
+- 修改数据库
 
     ```
     ALTER DATABASE database_name RENAME TO new_name;
     ```
 
--   删除数据库
+- 删除数据库
 
     ```
     DROP DATABASE new_name ;
     ```
 
-
 ## 参数说明<a name="section8361031192210"></a>
 
--   database\_name
+- database\_name
 
     要创建、修改或者删除的数据库名称。
 
--   new\_name
+- new\_name
 
     数据库的新名称。
 
-
 ## 示例<a name="section710783817329"></a>
 
--   创建一个新的数据库db\_tpcc。
+- 创建一个新的数据库db\_tpcc。
 
     ```
     openGauss=# CREATE DATABASE db_tpcc;
 
     ```    
+
     当结果显示如下信息，则表示创建成功：
 
     ```
@@ -63,8 +61,7 @@
 
     ```
 
-
--   使用“\\l”用于查看已经存在的数据库。
+- 使用“\\l”用于查看已经存在的数据库。
 
     ```
     openGauss=# \l
@@ -81,7 +78,7 @@
     (5 rows)
     ```
 
--   创建数据库并不会选择使用它。您需要明确的指定使用新创建的数据库。使用 “\\c + 数据库名” 来进入db\_tpcc数据库。
+- 创建数据库并不会选择使用它。您需要明确的指定使用新创建的数据库。使用 “\\c + 数据库名” 来进入db\_tpcc数据库。
 
     ```
     openGauss=# \c db_tpcc
@@ -90,18 +87,19 @@
     db_tpcc=#
     ```
 
--   切换数据库为postgres数据库。
+- 切换数据库为postgres数据库。
 
     ```
     db_tpcc=# \c postgres
     ```
 
--   将db\_tpcc数据库名称修改为tpcc。
+- 将db\_tpcc数据库名称修改为tpcc。
 
     ```
     openGauss=# ALTER DATABASE db_tpcc RENAME TO tpcc;
     
     ```    
+
     当结果显示如下信息，则表示修改成功：
 
     ```
@@ -109,17 +107,16 @@
 
     ```
 
--   删除数据库tpcc。
+- 删除数据库tpcc。
 
     ```
     openGauss=# DROP DATABASE tpcc;
     
     ```    
+
     当结果显示如下信息，则表示删除成功：
 
     ```
     DROP DATABASE
 
     ```
-
-

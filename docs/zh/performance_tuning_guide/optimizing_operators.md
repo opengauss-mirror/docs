@@ -51,4 +51,3 @@ openGauss=#  explain (analyze on, costs off) select * from store_sales_row where
 ![](figures/12-4-5-4-Operator-level-tuning-Example-shuffling-adjustment-Example3.png)
 
 ![](figures/12-4-5-4-Operator-level-tuning-Example-shuffling-adjustment-Example3-1.png)
-

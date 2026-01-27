@@ -34,7 +34,6 @@ ALTER SESSION
 
 ```
 
-
 ## 参数说明
 
 - **COMMIT_WAIT_LOGGING** = { WAIT | NOWAIT }
@@ -74,7 +73,6 @@ ALTER SESSION
   - FALSE : 关闭
     
     关闭后，执行计划中不显示谓语条件。
-
 
 - **_OUTER_JOIN_OPTIMIZATION** = { ON | OFF }
   
@@ -135,7 +133,7 @@ ALTER SESSION
     - CBO_INDEX_CACHING，整型，取值范围[0, 100]，默认值为0，单位为百分比。
     - CBO_INDEX_COST_ADJ，整型，取值范围[1, 10000]，默认值为100，单位为百分比。
 
--   **{ ENABLE | DISABLE } { TRIGGERS | INTERACTIVE TIMEOUT | NOLOGGING | OPTINFO_LOG }**
+- **{ ENABLE | DISABLE } { TRIGGERS | INTERACTIVE TIMEOUT | NOLOGGING | OPTINFO_LOG }**
 
 ||ENABLE (启用)|DISABLE (禁用)|
 |---|---|---|
@@ -157,41 +155,49 @@ ALTER SESSION
     ```
         ALTER SESSION SET COMMIT_MODE = IMMEDIATE;
     ```
+
 - 将当前会话时区设置为东八区（北京时间）。
 
     ```
         ALTER SESSION SET TIME_ZONE = '+08:00';
     ```
+
 - 设置会话的日期显示格式。
 
     ```
         ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD HH24:MI:SS';
     ```
+
 - 如果存在用户user1，将当前会话的默认模式切换到user1。
 
     ```
         ALTER SESSION SET current_schema = user1;
     ```
+
 - 开启执行计划中的谓语信息显示。
 
     ```
         ALTER SESSION SET _SHOW_EXPLAIN_PREDICATE = TRUE;
     ```
+
 - 设置会话锁等待超时时间为0毫秒（即不等待，立即报错）。
 
     ```
         ALTER SESSION SET LOCK_WAIT_TIMEOUT = 0;
     ```
+
 - 启用当前会话的触发器。
 
     ```
         ALTER SESSION ENABLE TRIGGERS;
     ```
+
 - 禁用会话空闲超时检测。
 
     ```
         ALTER SESSION DISABLE INTERACTIVE TIMEOUT;
     ```
+
 - 启用当前会话的NOLOGGING插入模式。
 
     ```

@@ -50,6 +50,3 @@ openGauss=# EXECUTE insert_reason(52, 'AAAAAAAADDAAAAAA', 'reason 52');
 openGauss=# DROP TABLE tpcds.reason;
 openGauss=# DROP TABLE tpcds.reason_t1;
 ```
-
-
-

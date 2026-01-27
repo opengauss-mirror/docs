@@ -18,8 +18,8 @@ gs\_dump支持导出兼容v1版本数据库的文本格式文件。
 
 gs\_dump支持将数据库信息导出至纯文本格式的SQL脚本文件或其他归档文件中。
 
--   纯文本格式的SQL脚本文件：包含将数据库恢复为其保存时的状态所需的SQL语句。通过[gsql](../tool_and_commandreference/gsql.md)运行该SQL脚本文件，可以恢复数据库。即使在其他主机和其他数据库产品上，只要对SQL脚本文件稍作修改，也可以用来重建数据库。
--   归档格式文件：包含将数据库恢复为其保存时的状态所需的数据，可以是tar格式、目录归档格式或自定义归档格式，详见[表1](#zh-cn_topic_0289899246_zh-cn_topic_0287275988_zh-cn_topic_0237152335_zh-cn_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5)。该导出结果必须与gs\_restore配合使用来恢复数据库，gs\_restore工具在导入时，系统允许用户选择需要导入的内容，甚至可以在导入之前对等待导入的内容进行排序。
+- 纯文本格式的SQL脚本文件：包含将数据库恢复为其保存时的状态所需的SQL语句。通过[gsql](../tool_and_commandreference/gsql.md)运行该SQL脚本文件，可以恢复数据库。即使在其他主机和其他数据库产品上，只要对SQL脚本文件稍作修改，也可以用来重建数据库。
+- 归档格式文件：包含将数据库恢复为其保存时的状态所需的数据，可以是tar格式、目录归档格式或自定义归档格式，详见[表1](#zh-cn_topic_0289899246_zh-cn_topic_0287275988_zh-cn_topic_0237152335_zh-cn_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5)。该导出结果必须与gs\_restore配合使用来恢复数据库，gs\_restore工具在导入时，系统允许用户选择需要导入的内容，甚至可以在导入之前对等待导入的内容进行排序。
 
 gs\_dump工具支持使用过程中打印进度。首先在对数据库的全局扫描阶段会打印扫描流程进行到具体哪一步。在转存数据阶段会根据已经完成的对象数比上总对象数打印进度。
 
@@ -86,20 +86,15 @@ gs\_dump可以创建四种不同的导出文件格式，通过**\[**-F或者--fo
 </tbody>
 </table>
 
-
 >[!NOTE]说明
 >
 >可以使用gs\_dump程序将文件压缩为目录归档或自定义归档导出文件，减少导出文件的大小。生成目录归档或自定义归档导出文件时，默认进行中等级别的压缩。gs\_dump程序无法压缩已归档导出文件。
 
-
-
 ### 注意事项<a name="zh-cn_topic_0289899246_zh-cn_topic_0287275988_zh-cn_topic_0237152335_zh-cn_topic_0059777770_s75e900efd4f04a2bb39914ec1d8f971f"></a>
 
--   禁止修改-F c/d/t 格式导出的文件和内容，否则可能无法恢复成功。对于-F p 格式导出的文件，如有需要，可根据需要谨慎编辑导出文件。
--   为了保证数据一致性和完整性，gs\_dump会对需要转储的表设置共享锁。如果表在别的事务中设置了共享锁，gs\_dump会等待锁释放后锁定表。如果无法在指定时间内锁定某个表，转储会失败。用户可以通过指定--lock-wait-timeout选项，自定义等待锁超时时间。
--   不支持加密导出存储过程和函数。
-
-
+- 禁止修改-F c/d/t 格式导出的文件和内容，否则可能无法恢复成功。对于-F p 格式导出的文件，如有需要，可根据需要谨慎编辑导出文件。
+- 为了保证数据一致性和完整性，gs\_dump会对需要转储的表设置共享锁。如果表在别的事务中设置了共享锁，gs\_dump会等待锁释放后锁定表。如果无法在指定时间内锁定某个表，转储会失败。用户可以通过指定--lock-wait-timeout选项，自定义等待锁超时时间。
+- 不支持加密导出存储过程和函数。
 
 ### 语法<a name="zh-cn_topic_0289899246_zh-cn_topic_0287275988_zh-cn_topic_0237152335_zh-cn_topic_0059777770_s884f9e03cedd408cbe7ce5303df97df6"></a>
 
@@ -109,9 +104,9 @@ gs_dump [OPTION]... [DBNAME]
 
 >[!NOTE]说明
 >
->   "DBNAME"前面不需要加短或长选项。"DBNAME指定要连接的数据库。
->   例如：
->   不需要-d，直接指定"DBNAME"。
+> "DBNAME"前面不需要加短或长选项。"DBNAME指定要连接的数据库。
+> 例如：
+> 不需要-d，直接指定"DBNAME"。
 >
 >
 > ```
@@ -130,11 +125,9 @@ gs_dump [OPTION]... [DBNAME]
 >
 >环境变量： PGDATABASE
 
-
-
 ### 参数说明<a name="zh-cn_topic_0289899246_zh-cn_topic_0287275988_zh-cn_topic_0237152335_zh-cn_topic_0059777770_s6822518f650f4ad4ab67d1084cd8ffdd"></a>
 
-#### 通用参数：
+#### 通用参数
 
 - -f, --file=FILENAME
 
@@ -166,9 +159,9 @@ gs_dump [OPTION]... [DBNAME]
 
   取值范围：0\~9
 
-  -   0表示无压缩。
-  -   1表示压缩比最小，处理速度最快。
-  -   9表示压缩比最大，处理速度最慢。
+  - 0表示无压缩。
+  - 1表示压缩比最小，处理速度最快。
+  - 9表示压缩比最大，处理速度最慢。
 
   针对自定义归档格式，该选项指定单个表数据片段的压缩，默认方式是以中等级别进行压缩。tar归档格式和纯文本格式目前不支持压缩。
 
@@ -180,7 +173,7 @@ gs_dump [OPTION]... [DBNAME]
 
   显示gs\_dump命令行参数帮助，然后退出。
 
-#### 转储参数：
+#### 转储参数
 
 - -a, --data-only
 
@@ -212,8 +205,8 @@ gs_dump [OPTION]... [DBNAME]
 
   >[!NOTE]说明
   >
-  >-   当-n已指定时，gs\_dump不会转储已选模式所附着的任何其他数据库对象。因此，无法保证某个指定模式的转储结果能够自行成功地储存到一个空数据库中。
-  >-   当-n指定时，非模式对象不会被转储。
+  >- 当-n已指定时，gs\_dump不会转储已选模式所附着的任何其他数据库对象。因此，无法保证某个指定模式的转储结果能够自行成功地储存到一个空数据库中。
+  >- 当-n指定时，非模式对象不会被转储。
 
   转储支持多个模式的转储。多次输入-n schemaname转储多个模式。
 
@@ -271,13 +264,11 @@ gs_dump [OPTION]... [DBNAME]
 
   >[!NOTE]说明
   >
-  >-   -t参数选项个数必须小于等于100。
-  >-   如果-t参数选项个数大于100，建议使用参数--include-table-file来替换。
-  >-   当-t已指定时，gs\_dump不会转储已选表所附着的任何其他数据库对象。因此，无法保证某个指定表的转储结果能够自行成功地储存到一个空数据库中。当指定表存在相关依赖对象时，建议追加 --include-depend-objs 选项，使备份结果包含依赖于指定表的对象信息。
-  >-   -t tablename只转储在默认搜索路径中可见的表。-t \*.tablename转储数据库下所有模式下的tablename表。-t schema.table转储特定模式中的表。
-  >-   对于表名中包含大写字母的表，在使用-t参数指定导出时需对表名添加\"来导出。如对于表"abC"，导出需指定-t \"abC\"；如对于表schema."abC"，导出需指定-t schema.\"abC\"。  
-
-  
+  >- -t参数选项个数必须小于等于100。
+  >- 如果-t参数选项个数大于100，建议使用参数--include-table-file来替换。
+  >- 当-t已指定时，gs\_dump不会转储已选表所附着的任何其他数据库对象。因此，无法保证某个指定表的转储结果能够自行成功地储存到一个空数据库中。当指定表存在相关依赖对象时，建议追加 --include-depend-objs 选项，使备份结果包含依赖于指定表的对象信息。
+  >- -t tablename只转储在默认搜索路径中可见的表。-t \*.tablename转储数据库下所有模式下的tablename表。-t schema.table转储特定模式中的表。
+  >- 对于表名中包含大写字母的表，在使用-t参数指定导出时需对表名添加\"来导出。如对于表"abC"，导出需指定-t \"abC\"；如对于表schema."abC"，导出需指定-t schema.\"abC\"。  
 
   例如：
 
@@ -311,11 +302,11 @@ gs_dump [OPTION]... [DBNAME]
 
   >[!NOTE]说明
 
-  >-  同--include-table-file，其内容格式如下：
+  >- 同--include-table-file，其内容格式如下：
 
-  >-  schema1.table1
+  >- schema1.table1
 
-  >-  schema2.table2
+  >- schema2.table2
   >-......
 
 - -x, --no-privileges|--no-acl
@@ -432,13 +423,13 @@ gs_dump [OPTION]... [DBNAME]
 
   AES128密钥规则如下：
 
-  -   密钥长度为8\~16个字符。
-  -   至少包含大写字母（A-Z）、小写字母（a-z）、数字（0-9）、非字母数字字符（限定为\~!@\#$%^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?）四类字符中的三类字符。
+  - 密钥长度为8\~16个字符。
+  - 至少包含大写字母（A-Z）、小写字母（a-z）、数字（0-9）、非字母数字字符（限定为\~!@\#$%^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?）四类字符中的三类字符。
 
   >[!NOTE]说明
   >
-  >-   使用gs\_dump工具进行加密导出时，仅支持plain格式导出。通过-F plain导出的数据，需要通过gsql工具进行导入，且如果以加密方式导入，在通过gsql导入时，需要指定--with-key参数。
-  >-   不支持加密导出存储过程和函数。
+  >- 使用gs\_dump工具进行加密导出时，仅支持plain格式导出。通过-F plain导出的数据，需要通过gsql工具进行导入，且如果以加密方式导入，在通过gsql导入时，需要指定--with-key参数。
+  >- 不支持加密导出存储过程和函数。
 
 - --with-salt=RANDVALUES
 
@@ -474,20 +465,17 @@ gs_dump [OPTION]... [DBNAME]
   gs_dump -p port_number postgres -f backup.sql -F plain --dont-overwrite-file
   ```
 
-
 >[!NOTE]说明
 >
->-   -s/--schema-only和-a/--data-only不能同时使用。
->-   -c/--clean和-a/--data-only不能同时使用。
->-   --inserts/--column-inserts和-o/--oids不能同时使用，因为INSERT命令不能设置OIDS。
->-   --role和--rolepassword必须一起使用。
->-   --binary-upgrade-usermap和--binary-upgrade必须一起使用。
->-   --include-depend-objs/--exclude-self需要同-t/--include-table-file参数关联使用才会生效。
->-   --exclude-self必须同--include-depend-objs一起使用。
+>- -s/--schema-only和-a/--data-only不能同时使用。
+>- -c/--clean和-a/--data-only不能同时使用。
+>- --inserts/--column-inserts和-o/--oids不能同时使用，因为INSERT命令不能设置OIDS。
+>- --role和--rolepassword必须一起使用。
+>- --binary-upgrade-usermap和--binary-upgrade必须一起使用。
+>- --include-depend-objs/--exclude-self需要同-t/--include-table-file参数关联使用才会生效。
+>- --exclude-self必须同--include-depend-objs一起使用。
 
-
-
-#### 连接参数：
+#### 连接参数
 
 - -h, --host=HOSTNAME
 
@@ -629,8 +617,6 @@ gs_dump[port='37300'][postgres][2018-06-27 10:37:22]: total time: 37017  ms
   gsql -p 37300 postgres -r -f backup/MPPDB_backup.sql
   ```
 
-
-
 ## gs\_dumpall
 
 ### 背景信息<a name="zh-cn_topic_0289899213_zh-cn_topic_0287276010_zh-cn_topic_0237152336_zh-cn_topic_0059778372_section31221112348"></a>
@@ -647,8 +633,8 @@ gs\_dumpall时生成列不会被转储。
 
 gs\_dumpall在导出openGauss所有数据库时分为两部分：
 
--   gs\_dumpall自身对所有数据库公共的全局对象进行导出，包括有关数据库用户和组、表空间以及属性（例如，适用于数据库整体的访问权限）信息。
--   gs\_dumpall通过调用gs\_dump来完成openGauss中各数据库的SQL脚本文件导出，该脚本文件包含将数据库恢复为其保存时的状态所需要的全部SQL语句。
+- gs\_dumpall自身对所有数据库公共的全局对象进行导出，包括有关数据库用户和组、表空间以及属性（例如，适用于数据库整体的访问权限）信息。
+- gs\_dumpall通过调用gs\_dump来完成openGauss中各数据库的SQL脚本文件导出，该脚本文件包含将数据库恢复为其保存时的状态所需要的全部SQL语句。
 
 以上两部分导出的结果为纯文本格式的SQL脚本文件，使用gsql运行该脚本文件可以恢复openGauss数据库。
 
@@ -656,9 +642,9 @@ gs_dumpall工具支持使用过程中打印进度。会依次对每个数据库�
 
 ### 注意事项<a name="zh-cn_topic_0289899213_zh-cn_topic_0287276010_zh-cn_topic_0237152336_zh-cn_topic_0059778372_s67532b3f6d2a42e183672fae6c4ba753"></a>
 
--   禁止修改导出的文件和内容，否则可能无法恢复成功。
--   为了保证数据一致性和完整性，gs\_dumpall会对需要转储的表设置共享锁。如果某张表在别的事务中设置了共享锁，gs\_dumpall会等待此表的锁释放后锁定此表。如果无法在指定时间内锁定某张表，转储会失败。用户可以通过指定--lock-wait-timeout选项，自定义等待锁超时时间。
--   由于gs\_dumpall读取所有数据库中的表，因此必须以openGauss管理员身份进行连接，才能导出完整文件。在使用gsql执行脚本文件导入时，同样需要管理员权限，以便添加用户和组以及创建数据库。
+- 禁止修改导出的文件和内容，否则可能无法恢复成功。
+- 为了保证数据一致性和完整性，gs\_dumpall会对需要转储的表设置共享锁。如果某张表在别的事务中设置了共享锁，gs\_dumpall会等待此表的锁释放后锁定此表。如果无法在指定时间内锁定某张表，转储会失败。用户可以通过指定--lock-wait-timeout选项，自定义等待锁超时时间。
+- 由于gs\_dumpall读取所有数据库中的表，因此必须以openGauss管理员身份进行连接，才能导出完整文件。在使用gsql执行脚本文件导入时，同样需要管理员权限，以便添加用户和组以及创建数据库。
 
 ### 语法<a name="zh-cn_topic_0289899213_zh-cn_topic_0287276010_zh-cn_topic_0237152336_zh-cn_topic_0059778372_s991ca5afb6574130a742db3732d6f577"></a>
 
@@ -668,7 +654,7 @@ gs_dumpall [OPTION]...
 
 ### 参数说明<a name="zh-cn_topic_0289899213_zh-cn_topic_0287276010_zh-cn_topic_0237152336_zh-cn_topic_0059778372_s8a1ffa824f1b4371a430896ee8fd2020"></a>
 
-#### 通用参数：
+#### 通用参数
 
 - -f, --filename=FILENAME
 
@@ -690,7 +676,7 @@ gs_dumpall [OPTION]...
 
   显示gs\_dumpall命令行参数帮助，然后退出。
 
-#### 转储参数：
+#### 转储参数
 
 - -a, --data-only
 
@@ -792,8 +778,8 @@ gs_dumpall [OPTION]...
 
   AES128密钥规则如下：
 
-  -   密钥长度为8\~16个字符。
-  -   至少包含大写字母（A-Z），小写字母（a-z），数字（0-9），非字母数字字符（限定为\~!@\#$%^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?）四类字符中的三类字符。
+  - 密钥长度为8\~16个字符。
+  - 至少包含大写字母（A-Z），小写字母（a-z），数字（0-9），非字母数字字符（限定为\~!@\#$%^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?）四类字符中的三类字符。
 
 - --include-Extensions
 
@@ -827,19 +813,18 @@ gs_dumpall [OPTION]...
 
   使用管道传输密码，禁止在终端使用。
 
-
 >[!NOTE]说明
 >
->-   -g/--globals-only和-r/--roles-only不能同时使用。
->-   -g/--globals-only和-t/--tablespaces-only不能同时使用。
->-   -r/--roles-only和-t/--tablespaces-only不能同时使用。
->-   -s/--schema-only和-a/--data-only不能同时使用。
->-   -r/--roles-only和-a/--data-only不能同时使用。
->-   -t/--tablespaces-only和-a/--data-only不能同时使用。
->-   -g/--globals-only和-a/--data-only不能同时使用。
->-   --tablespaces-postfix和--binary-upgrade必须一起使用。
->-   --binary-upgrade-usermap和--binary-upgrade必须一起使用。
->-   --parallel-jobs和-f/--file必须一起使用。
+>- -g/--globals-only和-r/--roles-only不能同时使用。
+>- -g/--globals-only和-t/--tablespaces-only不能同时使用。
+>- -r/--roles-only和-t/--tablespaces-only不能同时使用。
+>- -s/--schema-only和-a/--data-only不能同时使用。
+>- -r/--roles-only和-a/--data-only不能同时使用。
+>- -t/--tablespaces-only和-a/--data-only不能同时使用。
+>- -g/--globals-only和-a/--data-only不能同时使用。
+>- --tablespaces-postfix和--binary-upgrade必须一起使用。
+>- --binary-upgrade-usermap和--binary-upgrade必须一起使用。
+>- --parallel-jobs和-f/--file必须一起使用。
 
 连接参数：
 
@@ -911,8 +896,6 @@ gs_dumpall[port='37300'][2018-06-27 09:55:46]: dumpall operation successful
 gs_dumpall[port='37300'][2018-06-27 09:55:46]: total time: 56088  ms
 ```
 
-
-
 ## gs\_restore
 
 ### 背景信息<a name="zh-cn_topic_0289899238_zh-cn_topic_0287275939_zh-cn_topic_0237152343_zh-cn_topic_0059777561_section182531928123515"></a>
@@ -941,14 +924,14 @@ gs_restore [OPTION]... FILE
 
 >[!NOTE]说明
 >
->-   FILE没有短选项或长选项。用来指定归档文件所处的位置。
->-   作为前提条件，需输入dbname或-l选项。不允许用户同时输入dbname和-l选项。
->-   gs\_restore默认是以追加的方式进行数据导入。为避免多次导入造成数据异常，在进行导入时，建议使用“-c”参数，在重新创建数据库对象前，清理（删除）已存在于将要还原的数据库中的数据库对象。
->-   日志打印无开关，若需隐藏日志，请将日志重定向到日志文件。若恢复表数据时，数据量很大，会分批恢复，因此会多次出现“表数据已完成导入”的日志。
+>- FILE没有短选项或长选项。用来指定归档文件所处的位置。
+>- 作为前提条件，需输入dbname或-l选项。不允许用户同时输入dbname和-l选项。
+>- gs\_restore默认是以追加的方式进行数据导入。为避免多次导入造成数据异常，在进行导入时，建议使用“-c”参数，在重新创建数据库对象前，清理（删除）已存在于将要还原的数据库中的数据库对象。
+>- 日志打印无开关，若需隐藏日志，请将日志重定向到日志文件。若恢复表数据时，数据量很大，会分批恢复，因此会多次出现“表数据已完成导入”的日志。
 
 ### 参数说明<a name="zh-cn_topic_0289899238_zh-cn_topic_0287275939_zh-cn_topic_0237152343_zh-cn_topic_0059777561_sc666a8c818084bad8e23afd6e79dd659"></a>
 
-#### 通用参数：
+#### 通用参数
 
 - -d, --dbname=NAME
 
@@ -970,9 +953,9 @@ gs_restore [OPTION]... FILE
 
   取值范围：
 
-  -   c/custom：该归档形式为gs\_dump的自定义格式。
-  -   d/directory：该归档形式是一个目录归档形式。
-  -   t/tar：该归档形式是一个tar归档形式。
+  - c/custom：该归档形式为gs\_dump的自定义格式。
+  - d/directory：该归档形式是一个目录归档形式。
+  - t/tar：该归档形式是一个tar归档形式。
 
 - -l, --list
 
@@ -990,7 +973,7 @@ gs_restore [OPTION]... FILE
 
   显示gs\_restore命令行参数帮助，然后退出。
 
-#### 导入参数：
+#### 导入参数
 
 - -a, --data-only
 
@@ -1162,25 +1145,24 @@ gs_restore [OPTION]... FILE
 
   使用管道传输密码，禁止在终端使用。
 
-
 >[!TIP]须知
 >
->-   如果安装过程中有任何本地数据要添加到template1数据库，请谨慎将gs\_restore的输出载入到一个真正的空数据库中；否则可能会因为被添加对象的定义被复制，而出现错误。要创建一个无本地添加的空数据库，需从template0而非template1复制，例如：
+>- 如果安装过程中有任何本地数据要添加到template1数据库，请谨慎将gs\_restore的输出载入到一个真正的空数据库中；否则可能会因为被添加对象的定义被复制，而出现错误。要创建一个无本地添加的空数据库，需从template0而非template1复制，例如：
 >
 >```
 >CREATE DATABASE foo WITH TEMPLATE template0;
 >```
 >
->-   gs\_restore不能选择性地导入大对象；例如只能导入那些指定表的对象。如果某个归档形式包含大对象，那所有大对象都会被导入或一个都不会被导入。如果此归档对象通过-L、-t或其他选项被排除，那么所有大对象一个都不会被导入。
+>- gs\_restore不能选择性地导入大对象；例如只能导入那些指定表的对象。如果某个归档形式包含大对象，那所有大对象都会被导入或一个都不会被导入。如果此归档对象通过-L、-t或其他选项被排除，那么所有大对象一个都不会被导入。
 
 >[!NOTE]说明
 >
->-  1. -d/--dbname 和 -f/--file 不能同时使用。
+>- 1. -d/--dbname 和 -f/--file 不能同时使用。
 >
->-  2. -s/--schema-only 和 -a/--data-only不能同时使用。
->-  3. -c/--clean 和 -a/--data-only不能同时使用。
->-  4. 使用--single-transaction时，-j/--jobs必须为单任务。
->-  5. --role 和 --rolepassword必须一起使用。
+>- 2. -s/--schema-only 和 -a/--data-only不能同时使用。
+>- 3. -c/--clean 和 -a/--data-only不能同时使用。
+>- 4. 使用--single-transaction时，-j/--jobs必须为单任务。
+>- 5. --role 和 --rolepassword必须一起使用。
 
 连接参数：
 

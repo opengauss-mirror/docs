@@ -6,8 +6,8 @@
 
 ## 背景信息<a name="zh-cn_topic_0059778013_s15667753cb2542158661ae3f96cab067"></a>
 
--   账本数据库校验功能目前提供两种校验接口，分别为：[ledger_hist_check(text, text)](../sql_reference/ledger_database_functions.md)和[ledger_gchain_check(text, text)](../sql_reference/ledger_database_functions.md)。普通用户调用校验接口，仅能校验自己有权限访问的表。
--   校验防篡改用户表和用户历史表的接口为pg\_catalog.ledger\_hist\_check，操作为：
+- 账本数据库校验功能目前提供两种校验接口，分别为：[ledger_hist_check(text, text)](../sql_reference/ledger_database_functions.md)和[ledger_gchain_check(text, text)](../sql_reference/ledger_database_functions.md)。普通用户调用校验接口，仅能校验自己有权限访问的表。
+- 校验防篡改用户表和用户历史表的接口为pg\_catalog.ledger\_hist\_check，操作为：
 
     ```
     SELECT pg_catalog.ledger_hist_check(schema_name text,table_name text);
@@ -15,7 +15,7 @@
 
     如果校验通过，函数返回t，反之则返回f。
 
--   校验防篡改用户表、用户历史表和全局区块表三者是否一致的接口为pg\_catalog.ledger\_gchain\_check，操作为：
+- 校验防篡改用户表、用户历史表和全局区块表三者是否一致的接口为pg\_catalog.ledger\_gchain\_check，操作为：
 
     ```
     SELECT pg_catalog.ledger_gchain_check(schema_name text, table_name text);
@@ -23,10 +23,9 @@
 
     如果校验通过，函数返回t，反之则返回f。
 
-
 ## 操作步骤<a name="section199001315531"></a>
 
-1.  校验防篡改用户表ledgernsp.usertable与其对应的历史表是否一致。
+1. 校验防篡改用户表ledgernsp.usertable与其对应的历史表是否一致。
 
     ```
     openGauss=# SELECT pg_catalog.ledger_hist_check('ledgernsp', 'usertable');
@@ -43,7 +42,7 @@
 
     该结果表明防篡改用户表和用户历史表中记录的结果能够一一对应，保持一致。
 
-2.  查询防篡改用户表ledgernsp.usertable与其对应的历史表以及全局区块表中关于该表的记录是否一致。
+2. 查询防篡改用户表ledgernsp.usertable与其对应的历史表以及全局区块表中关于该表的记录是否一致。
 
     ```
     openGauss=#  SELECT pg_catalog.ledger_gchain_check('ledgernsp', 'usertable');
@@ -59,4 +58,3 @@
     ```
 
     查询结果显示，上述三表中关于ledgernsp.usertable的记录保持一致，未发生篡改行为。
-

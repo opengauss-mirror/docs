@@ -71,5 +71,3 @@ PG\_ATTRDEF系统表存储列的默认值。
 </tr>
 </tbody>
 </table>
-
-

@@ -6,7 +6,7 @@ DBCC CHECKIDENT用于对标识列进行获取或者重置功能。
 
 ## 注意事项<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s8cb7444b58764d99913a4cc61f397f9f"></a>
 
--   对标识列进行获取需要有表的select权限，对标识列执行重置需要有表的update权限。
+- 对标识列进行获取需要有表的select权限，对标识列执行重置需要有表的update权限。
 
 ## 语法格式<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s29888afda1844d6f9fc677f1b59b5b7d"></a>
 

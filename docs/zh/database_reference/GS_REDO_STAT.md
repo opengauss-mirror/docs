@@ -3,6 +3,7 @@
 GS\_REDO\_STAT视图用于统计会话线程日志回放情况。
 
   示例：
+
   ```sql
   openGauss=# select * from gs_redo_stat;
    phywrts | phyblkwrt | writetim | avgiotim | lstiotim | miniotim | maxiowtm 

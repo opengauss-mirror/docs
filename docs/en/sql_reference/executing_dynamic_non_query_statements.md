@@ -14,7 +14,7 @@
 
 The above syntax diagram is explained as follows:
 
-**USING IN **_bind\_argument_  is used to specify the variable whose value is passed to the dynamic SQL statement. The variable is used when a placeholder exists in  _dynamic\_noselect\_string_. That is, a placeholder is replaced by the corresponding  _bind\_argument_  when a dynamic SQL statement is executed. Note that  _bind\_argument_  can only be a value, variable, or expression, and cannot be a database object such as a table name, column name, and data type. If a stored procedure needs to transfer database objects through  _bind\_argument_  to construct dynamic SQL statements \(generally, DDL statements\), you are advised to use double vertical bars \(||\) to concatenate  _dynamic\_select\_clause_  with a database object. In addition, a dynamic PL/SQL block allows duplicate placeholders. That is, a placeholder can correspond to only one  _bind\_argument_.
+**USING IN**_bind\_argument_  is used to specify the variable whose value is passed to the dynamic SQL statement. The variable is used when a placeholder exists in  _dynamic\_noselect\_string_. That is, a placeholder is replaced by the corresponding  _bind\_argument_  when a dynamic SQL statement is executed. Note that  _bind\_argument_  can only be a value, variable, or expression, and cannot be a database object such as a table name, column name, and data type. If a stored procedure needs to transfer database objects through  _bind\_argument_  to construct dynamic SQL statements \(generally, DDL statements\), you are advised to use double vertical bars \(||\) to concatenate  _dynamic\_select\_clause_  with a database object. In addition, a dynamic PL/SQL block allows duplicate placeholders. That is, a placeholder can correspond to only one  _bind\_argument_.
 
 ## Example<a name="en-us_topic_0237122226_en-us_topic_0059777751_sd52a0b806574451cb8d5192b55156f4e"></a>
 
@@ -53,4 +53,3 @@ postgres=# SELECT * FROM sections_t1;
 --Delete the table.
 postgres=# DROP TABLE sections_t1;
 ```
-

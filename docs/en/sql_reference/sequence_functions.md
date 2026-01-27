@@ -2,7 +2,7 @@
 
 The sequence functions provide a simple method to ensure security of multiple users for users to obtain sequence values from sequence objects.
 
--   nextval\(regclass\)
+- nextval\(regclass\)
 
     Description: Specifies an increasing sequence and returns a new value.
 
@@ -36,7 +36,7 @@ The sequence functions provide a simple method to ensure security of multiple us
     (1 row)
     ```
 
--   currval\(regclass\)
+- currval\(regclass\)
 
     Returns the last value of  **nextval**  for a specified sequence in the current session. If  **nextval**  has not been invoked for the specified sequence in the current session, an error is reported when  **currval**  is invoked.
 
@@ -64,7 +64,7 @@ The sequence functions provide a simple method to ensure security of multiple us
     (1 row)
     ```
 
--   lastval\(\)
+- lastval\(\)
 
     Description: Returns the last value of  **nextval**  in the current session. This function is equivalent to  **currval**, but  **lastval**  does not have a parameter. If  **nextval**  has not been invoked in the current session, invoking  **lastval**  will report an error.
 
@@ -80,7 +80,7 @@ The sequence functions provide a simple method to ensure security of multiple us
     (1 row)
     ```
 
--   setval\(regclass, numeric\)
+- setval\(regclass, numeric\)
 
     Description: Sets the current value of a sequence.
 
@@ -96,7 +96,7 @@ The sequence functions provide a simple method to ensure security of multiple us
     (1 row)
     ```
 
--   setval\(regclass, numeric, Boolean\)
+- setval\(regclass, numeric, Boolean\)
 
     Description: Sets the current value of a sequence and the is\_called sign.
 
@@ -119,7 +119,6 @@ The sequence functions provide a simple method to ensure security of multiple us
     >[!TIP]NOTICE 
     >The  **nextval**  function can be executed only on the primary node. It is not supported on standby nodes.
 
-
 - pg\_sequence\_last\_value\(sequence\_oid oid, OUT cache\_value int16, OUT last\_value int16\)
 
   Description: Obtains the parameters of a specified sequence, including the cache value and current value.
@@ -136,13 +135,13 @@ The sequence functions provide a simple method to ensure security of multiple us
   (1 row)
   ```
 
--   last\_insert\_id\(\)
+- last\_insert\_id\(\)
 
     Description: Gets the first auto-generated value that was last successfully inserted for an auto-increment column.
 
     Return type: int16
 
--   last\_insert\_id\(int16\)
+- last\_insert\_id\(int16\)
 
     Description: Sets the return value of the next last\_insert\_id\(\) function and returns the value. If the parameter is NULL, set the return value of the next last\_insert\_id\(\) function to **0**. This function returns NULL.
 
@@ -164,5 +163,5 @@ The sequence functions provide a simple method to ensure security of multiple us
     ```
 
     >[!NOTE]NOTE
-    >-   last\_insert\_id\(\) and last\_insert\_id\(int16\) are session-level functions. If no data is inserted into the auto-increment column in the current session, last\_insert\_id\(\) returns **0**.
-    >-   last\_insert\_id\(\) and last\_insert\_id\(int16\) are available only when **sql\_compatibility** is set to **B**.
+    >- last\_insert\_id\(\) and last\_insert\_id\(int16\) are session-level functions. If no data is inserted into the auto-increment column in the current session, last\_insert\_id\(\) returns **0**.
+    >- last\_insert\_id\(\) and last\_insert\_id\(int16\) are available only when **sql\_compatibility** is set to **B**.

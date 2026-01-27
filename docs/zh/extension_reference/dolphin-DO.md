@@ -38,9 +38,6 @@ DO expr[,expr...];
 
   表达式，多个表达式使用逗号进行分隔，表达式支持的内容参考[表达式](../sql_reference/simple_expressions.md)。
 
-  
-
-
 ## 示例<a name="zh-cn_topic_0283137438_zh-cn_topic_0237122132_zh-cn_topic_0059778658_s414adb8f7846482184cbbd960d4adfcf"></a>
 
 ```

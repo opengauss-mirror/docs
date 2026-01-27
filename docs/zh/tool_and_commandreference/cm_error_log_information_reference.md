@@ -487,4 +487,3 @@ CMSTATE: c3000
 CAUSE: "The cmdline entered by the user is incorrect."
 
 ACTION: "Please check the cmdline entered by the user\(%s\)."
-

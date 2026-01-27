@@ -162,6 +162,7 @@ openGauss自带了两个表空间：pg\_default和pg\_global。
 
             ```
             DROP TABLE
+
           ```
 
     3. 执行如下命令删除表空间fspace。

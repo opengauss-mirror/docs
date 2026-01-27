@@ -18,18 +18,17 @@ SHOW EVENTS
 
 ## Parameter Description<a name="section652211111716"></a>
 
--   \{FROM | IN\} schema\_name
+- \{FROM | IN\} schema\_name
 
     Specifies the schema to be queried. By default, the current schema is queried.
 
--   LIKE 'pattern'
+- LIKE 'pattern'
 
     Matches a scheduled task by name. If this parameter is not specified, all scheduled tasks in the current schema are printed.
 
--   WHERE condition
+- WHERE condition
 
     Forms an expression for row selection to narrow down the query range of **SHOW EVENTS**. **condition** indicates any expression that returns a value of Boolean type. Rows that do not meet this condition will not be retrieved.
-
 
 ## Examples<a name="section192526392717"></a>
 

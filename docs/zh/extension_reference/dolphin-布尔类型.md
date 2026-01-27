@@ -33,4 +33,3 @@ WARNING:  Truncated incorrect DOUBLE value: true
  f
 (1 row)
 ```
-

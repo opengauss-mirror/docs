@@ -1,6 +1,7 @@
 # oGRecorder SDK API 文档
 
 ## 目录
+
 - [初始化与退出](#初始化与退出)
 - [实例管理](#实例管理)
 - [配置管理](#配置管理)
@@ -15,15 +16,18 @@
 ## 初始化与退出
 
 ### gr_init
+
 **接口描述**  
 初始化 SDK 实例，包括日志和通信模块。
 
 **函数原型**  
+
 ```c
 int gr_init(const gr_param_t param);
 ```
 
 **参数**  
+
 - `param`：`wr_param_t` 类型，初始化参数配置（结构体定义）。
 
 **返回值**  
@@ -32,10 +36,12 @@ int gr_init(const gr_param_t param);
 --
 
 ### gr_exit
+
 **接口描述**  
 退出 SDK 实例。
 
 **函数原型**  
+
 ```c
 int gr_exit(void);
 ```
@@ -48,15 +54,18 @@ int gr_exit(void);
 ## 实例管理
 
 ### gr_create_inst
+
 **接口描述**  
 获取 WalRecorder 实例句柄。
 
 **函数原型**  
+
 ```c
 int gr_create_inst(const char *storageServerAddr, gr_instance_handle *inst_handle);
 ```
 
 **参数**  
+
 - `storageServerAddr`：存储服务器地址（当前版本未使用，可传 `NULL`）。
 - `inst_handle`：输出参数，返回实例句柄。
 
@@ -66,15 +75,18 @@ int gr_create_inst(const char *storageServerAddr, gr_instance_handle *inst_handl
 ---
 
 ### gr_delete_inst
+
 **接口描述**  
 删除实例句柄。
 
 **函数原型**  
+
 ```c
 int gr_delete_inst(gr_instance_handle inst_handle);
 ```
 
 **参数**  
+
 - `inst_handle`：要删除的实例句柄。
 
 **返回值**  
@@ -85,15 +97,18 @@ int gr_delete_inst(gr_instance_handle inst_handle);
 ## 配置管理
 
 ### gr_set_conf
+
 **接口描述**  
 设置配置参数。
 
 **函数原型**  
+
 ```c
 int gr_set_conf(gr_instance_handle inst_handle, const char *name, const char *value);
 ```
 
 **参数**  
+
 - `inst_handle`：实例句柄。
 - `name`：配置项名称（字符串类型）。
 - `value`：配置项值（字符串类型）。
@@ -104,15 +119,18 @@ int gr_set_conf(gr_instance_handle inst_handle, const char *name, const char *va
 ---
 
 ### gr_get_conf
+
 **接口描述**  
 获取配置参数内容。
 
 **函数原型**  
+
 ```c
 int gr_get_conf(gr_instance_handle inst_handle, const char *name, char *value);
 ```
 
 **参数**  
+
 - `inst_handle`：实例句柄。
 - `name`：配置项名称（字符串类型）。
 - `value`：输出参数，返回配置项值的缓冲区（需预先分配内存）。
@@ -125,15 +143,18 @@ int gr_get_conf(gr_instance_handle inst_handle, const char *name, char *value);
 ## 错误处理
 
 ### gr_get_error
+
 **接口描述**  
 获取错误码信息。
 
 **函数原型**  
+
 ```c
 int gr_get_error(int *errcode, const char **errmsg);
 ```
 
 **参数**  
+
 - `errorCode`：输入的错误码。
 - `errmsg`：输出参数，返回错误描述信息的缓冲区（需预先分配内存）。
 
@@ -145,15 +166,18 @@ int gr_get_error(int *errcode, const char **errmsg);
 ## VFS 管理
 
 ### gr_vfs_create
+
 **接口描述**  
 创建 VFS。
 
 **函数原型**  
+
 ```c
 int gr_vfs_create(gr_instance_handle inst_handle, const char *vfs_name, unsigned long long attrFlag);
 ```
 
 **参数**  
+
 - `inst_handle`：实例句柄。
 - `vfs_name`：VFS 名称（字符串类型）。
 - `attrFlag`：属性标志（当前版本固定为 `0`）。
@@ -164,15 +188,18 @@ int gr_vfs_create(gr_instance_handle inst_handle, const char *vfs_name, unsigned
 ---
 
 ### gr_vfs_delete
+
 **接口描述**  
 删除 VFS。
 
 **函数原型**  
+
 ```c
 int gr_vfs_delete(gr_instance_handle inst_handle, const char *vfs_name, unsigned long long attrFlag);
 ```
 
 **参数**  
+
 - `inst_handle`：实例句柄。
 - `vfs_name`：VFS 名称（字符串类型）。
 - `attrFlag`：属性标志（当前版本固定为 `0`）。
@@ -183,15 +210,18 @@ int gr_vfs_delete(gr_instance_handle inst_handle, const char *vfs_name, unsigned
 ---
 
 ### gr_vfs_mount
+
 **接口描述**  
 挂载 VFS 并获取句柄。
 
 **函数原型**  
+
 ```c
 int gr_vfs_mount(gr_instance_handle inst_handle, const char *vfs_name, gr_vfs_handle *vfs_handle);
 ```
 
 **参数**  
+
 - `inst_handle`：实例句柄。
 - `vfs_name`：VFS 名称（字符串类型）。
 - `vfs_handle`：输出参数，返回 VFS 句柄。
@@ -202,15 +232,18 @@ int gr_vfs_mount(gr_instance_handle inst_handle, const char *vfs_name, gr_vfs_ha
 ---
 
 ### gr_vfs_unmount
+
 **接口描述**  
 卸载 VFS。
 
 **函数原型**  
+
 ```c
 int gr_vfs_unmount(gr_vfs_handle *vfs_handle);
 ```
 
 **参数**  
+
 - `vfs_handle`：要卸载的 VFS 句柄。
 
 **返回值**  
@@ -219,15 +252,18 @@ int gr_vfs_unmount(gr_vfs_handle *vfs_handle);
 ---
 
 ### gr_vfs_query_file_num
+
 **接口描述**  
 查询 VFS 内文件数量。
 
 **函数原型**  
+
 ```c
 int gr_vfs_query_file_num(gr_vfs_handle vfs_handle, int *file_num);
 ```
 
 **参数**  
+
 - `vfs_handle`：VFS 句柄。
 - `file_num`：输出参数，返回文件数量。
 
@@ -239,15 +275,18 @@ int gr_vfs_query_file_num(gr_vfs_handle vfs_handle, int *file_num);
 ## 文件操作
 
 ### gr_file_create
+
 **接口描述**  
 创建文件并获取句柄。
 
 **函数原型**  
+
 ```c
 int gr_file_create(gr_vfs_handle vfs_handle, const char *name, const FileParameter *param);
 ```
 
 **参数**  
+
 - `vfs_handle`：VFS 句柄。
 - `name`：文件名（字符串类型）。
 - `param`：文件参数（当前版本固定为 `NULL`）。
@@ -258,15 +297,18 @@ int gr_file_create(gr_vfs_handle vfs_handle, const char *name, const FileParamet
 ---
 
 ### gr_file_delete
+
 **接口描述**  
 删除文件。
 
 **函数原型**  
+
 ```c
 int gr_file_delete(gr_vfs_handle vfs_handle, const char *name);
 ```
 
 **参数**  
+
 - `vfs_handle`：VFS 句柄。
 - `name`：文件名（字符串类型）。
 
@@ -276,15 +318,18 @@ int gr_file_delete(gr_vfs_handle vfs_handle, const char *name);
 ---
 
 ### gr_file_open
+
 **接口描述**  
 打开文件并获取句柄。
 
 **函数原型**  
+
 ```c
 int gr_file_open(gr_vfs_handle vfs_handle, const char *name, int flag, gr_file_handle *file_handle);
 ```
 
 **参数**  
+
 - `vfs_handle`：VFS 句柄。  
 - `name`：文件名（字符串类型）。  
 - `flag`：打开标志。  
@@ -301,21 +346,25 @@ int gr_file_open(gr_vfs_handle vfs_handle, const char *name, int flag, gr_file_h
 成功返回 `0`，失败返回错误码。  
 
 **备注**  
+
 - 禁止通过调用`O_CREAT`方式创建文件。  
 - 在worm文件系统中不支持`O_TRUNC`。
 
 ---
 
 ### gr_file_close
+
 **接口描述**  
 关闭文件句柄。
 
 **函数原型**  
+
 ```c
 int gr_file_close(gr_vfs_handle vfs_handle, gr_file_handle *file_handle, bool need_lock);
 ```
 
 **参数**  
+
 - `vfs_handle`：VFS 句柄。
 - `file_handle`：文件句柄。
 - `need_lock`：文件是否进入锁定态，`true`表示文件进入锁定态，`false`表示文件不进入锁定态（Dorado Worm存储中文件有初始态、锁定态、保护态和过期态四种状态）。
@@ -326,15 +375,18 @@ int gr_file_close(gr_vfs_handle vfs_handle, gr_file_handle *file_handle, bool ne
 ---
 
 ### gr_file_pread
+
 **接口描述**  
 同步读操作。
 
 **函数原型**  
+
 ```c
 long long int gr_file_pread(gr_vfs_handle vfs_handle, gr_file_handle file_handle, void *buf, unsigned long long count, long long offset);
 ```
 
 **参数** 
+
 - `vfs_handle`：VFS 句柄，用于标识文件系统的上下文。  
 - `file_handle`：文件句柄，包含要读取的文件信息。  
 - `buf`：读取数据的缓冲区，需预先分配内存，读取的数据将存储在此缓冲区中。  
@@ -347,15 +399,18 @@ long long int gr_file_pread(gr_vfs_handle vfs_handle, gr_file_handle file_handle
 ---
 
 ### gr_file_pwrite
+
 **接口描述**  
 同步写操作。  
 
 **函数原型**  
+
 ```c
 long long int gr_file_pwrite(gr_vfs_handle vfs_handle, gr_file_handle *file_handle, const void *buf, unsigned long long count, long long offset);
 ```
 
 **参数**  
+
 - `vfs_handle`：VFS 句柄，用于标识文件系统的上下文。  
 - `file_handle`：文件句柄，包含要写入的文件信息。  
 - `buf`：写入数据的缓冲区，需包含要写入的数据内容。  
@@ -368,15 +423,18 @@ long long int gr_file_pwrite(gr_vfs_handle vfs_handle, gr_file_handle *file_hand
 ---
 
 ### gr_file_truncate
+
 **接口描述**  
 调整文件大小。
 
 **函数原型**  
+
 ```c
 int gr_file_truncate(gr_vfs_handle vfs_handle, gr_file_handle file_handle, int truncateType, long long offset);
 ```
 
 **参数**  
+
 - `vfs_handle`：VFS 句柄。
 - `file_handle`：文件句柄。
 - `truncateType`：截断类型（当前版本固定为 `0`）。
@@ -388,15 +446,18 @@ int gr_file_truncate(gr_vfs_handle vfs_handle, gr_file_handle file_handle, int t
 ---
 
 ### gr_file_stat
+
 **接口描述**  
 调整文件大小。
 
 **函数原型**  
+
 ```c
 int gr_file_stat(gr_vfs_handle vfs_handle, const char *fileName, long long *offset, unsigned long long *count, int *mode, char **time);
 ```
 
 **参数**  
+
 - `vfs_handle`：VFS 句柄。
 - `fileName`：文件名称。
 - `offset`：输出参数，返回文件已写入偏移量。
@@ -410,15 +471,18 @@ int gr_file_stat(gr_vfs_handle vfs_handle, const char *fileName, long long *offs
 ---
 
 ### gr_file_postpone
+
 **接口描述**
 延长文件过期时间。
 
 **函数原型**
+
 ```c
 int gr_file_postpone(gr_vfs_handle vfs_handle, const char *file, const char *time);
 ```
 
 **参数**
+
 - `vfs_handle`：VFS句柄。
 - `file`：文件名称。
 - `time`：过期时间，输入参数，格式为`%Y-%m-%d %H:%M:%S`，需要晚于当前文件过期时间。
@@ -431,6 +495,7 @@ int gr_file_postpone(gr_vfs_handle vfs_handle, const char *file, const char *tim
 ## 结构体定义
 
 ### gr_param_t
+
 **结构体定义**  
 用于配置 SDK 初始化参数。
 
@@ -448,10 +513,11 @@ typedef struct st_gr_param {
 ## 参数说明
 
 ### attrFlag
+
 - 在 `gr_vfs_create` 和 `gr_vfs_delete` 中，当前版本固定为 `0`。
 
 ### truncateType
+
 - 在 `gr_file_truncate` 中，当前版本固定为 `0`.
 
 ---
-

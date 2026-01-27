@@ -10,7 +10,7 @@ MERGE INTO语句将目标表和源表中数据针对关联条件进行匹配，�
 
 ## 操作步骤<a name="zh-cn_topic_0237121140_zh-cn_topic_0165787112_section116710974218"></a>
 
-1.  创建源表products，并插入数据。
+1. 创建源表products，并插入数据。
 
     ```
     openGauss=# CREATE TABLE products 
@@ -26,7 +26,7 @@ MERGE INTO语句将目标表和源表中数据针对关联条件进行匹配，�
     (1700, 'wait interface', 'books'); 
     ```
 
-2.  创建目标表newproducts，并插入数据。
+2. 创建目标表newproducts，并插入数据。
 
     ```
     openGauss=# CREATE TABLE newproducts 
@@ -43,7 +43,7 @@ MERGE INTO语句将目标表和源表中数据针对关联条件进行匹配，�
     (1666, 'harry potter', 'dvd'); 
     ```
 
-3.  使用MERGE INTO 语句将源表products的数据合并至目标表newproducts。
+3. 使用MERGE INTO 语句将源表products的数据合并至目标表newproducts。
 
     ```
     MERGE INTO newproducts np    
@@ -119,7 +119,7 @@ MERGE INTO语句将目标表和源表中数据针对关联条件进行匹配，�
     </tbody>
     </table>
 
-4.  查询合并后的目标表newproducts。
+4. 查询合并后的目标表newproducts。
 
     ```
     SELECT * FROM newproducts;
@@ -138,4 +138,3 @@ MERGE INTO语句将目标表和源表中数据针对关联条件进行匹配，�
            1700 | wait interface | books
     (6 rows)
     ```
-

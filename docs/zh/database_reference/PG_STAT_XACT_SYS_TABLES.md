@@ -92,4 +92,3 @@ PG\_STAT\_XACT\_SYS\_TABLES视图显示命名空间中系统表的事务状态�
 </tr>
 </tbody>
 </table>
-

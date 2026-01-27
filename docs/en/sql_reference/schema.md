@@ -69,12 +69,12 @@ The following table describes the schemas of openGauss.
 </tbody>
 </table>
 
--   **[Information Schema](information_schema.md)**  
+- **[Information Schema](information_schema.md)**  
 
--   **[DBE\_PERF Schema](dbe_perf_schema.md)**  
+- **[DBE\_PERF Schema](dbe_perf_schema.md)**  
 
--   **[WDR Snapshot Schema](wdr_snapshot_schema.md)**  
+- **[WDR Snapshot Schema](wdr_snapshot_schema.md)**  
 
--   **[DBE\_PLDEBUGGER Schema](dbe_pldebugger_schema.md)**  
+- **[DBE\_PLDEBUGGER Schema](dbe_pldebugger_schema.md)**  
 
--   **[DB4AI Schema](db4ai_schema.md)**  
+- **[DB4AI Schema](db4ai_schema.md)**  

@@ -10,18 +10,18 @@ Common combination solutions for level-2 partitioned tables include range-range 
 
 ## Precautions<a name="en-us_topic_0283136653_en-us_topic_0237122119_en-us_topic_0059777586_s0bb17f15d73a4d978ef028b2686e0f7a"></a>
 
--   A level-2 partitioned table has two partition keys, and each partition key supports only one column. The two partition keys cannot be the same column.
--   If the constraint key of the unique constraint and primary key constraint contains all partition keys, a local index is created for the constraints. Otherwise, a global index is created. If a local unique index is created, all partition keys must be included.
--   When a level-2 partitioned table is created, if the specified level-2 partition is not displayed under the level-1 partition, a level-2 partition with the same range is automatically created.
--   The number of level-2 partitions \(leaf nodes\) in a level-2 partitioned table cannot exceed 1048575. There is no limit on the number of level-1 partitions, but there must be at least one level-2 partition under a level-1 partition.
--   The maximum number of level-2 partitions is 1048575. Generally, it is impossible to create so many partitions, because too many partitions may cause insufficient memory. Create partitions based on the value of  **local\_syscache\_threshold**. The memory used by the level-2 partitioned tables is about \(number of level-2 partitions x 3/1024\) MB. Theoretically, the memory occupied by the partitions cannot be greater than the value of  **local\_syscache\_threshold**. In addition, some space must be reserved for other functions.
--   Level-2 partitioned tables support only row store and do not support column-store and hash bucket.
--   Clusters are not supported.
--   When specifying a partition for query, for example,  **select \* from tablename partition/subpartition**  \(*partitionname*\), ensure that the keywords  **partition**  and  **subpartition**  are correct. If they are incorrect, no error is reported during the query. In this case, the query is performed based on the table alias.
--   Encrypted databases, ledger databases, and row-level security are not supported.
--   In the  **PARTITION FOR \(values\)**  syntax for level-2 partitioned tables, values can only be constants.
--   In the  **PARTITION/SUBPARTITION FOR \(values\)**  syntax for level-2 partitioned tables, if data type conversion is required for values, you are advised to use forcible type conversion to prevent the implicit type conversion result from being inconsistent with the expected result.
--   Currently, the statement specifying a partition cannot perform global index scan.
+- A level-2 partitioned table has two partition keys, and each partition key supports only one column. The two partition keys cannot be the same column.
+- If the constraint key of the unique constraint and primary key constraint contains all partition keys, a local index is created for the constraints. Otherwise, a global index is created. If a local unique index is created, all partition keys must be included.
+- When a level-2 partitioned table is created, if the specified level-2 partition is not displayed under the level-1 partition, a level-2 partition with the same range is automatically created.
+- The number of level-2 partitions \(leaf nodes\) in a level-2 partitioned table cannot exceed 1048575. There is no limit on the number of level-1 partitions, but there must be at least one level-2 partition under a level-1 partition.
+- The maximum number of level-2 partitions is 1048575. Generally, it is impossible to create so many partitions, because too many partitions may cause insufficient memory. Create partitions based on the value of  **local\_syscache\_threshold**. The memory used by the level-2 partitioned tables is about \(number of level-2 partitions x 3/1024\) MB. Theoretically, the memory occupied by the partitions cannot be greater than the value of  **local\_syscache\_threshold**. In addition, some space must be reserved for other functions.
+- Level-2 partitioned tables support only row store and do not support column-store and hash bucket.
+- Clusters are not supported.
+- When specifying a partition for query, for example,  **select \* from tablename partition/subpartition**  \(*partitionname*\), ensure that the keywords  **partition**  and  **subpartition**  are correct. If they are incorrect, no error is reported during the query. In this case, the query is performed based on the table alias.
+- Encrypted databases, ledger databases, and row-level security are not supported.
+- In the  **PARTITION FOR \(values\)**  syntax for level-2 partitioned tables, values can only be constants.
+- In the  **PARTITION/SUBPARTITION FOR \(values\)**  syntax for level-2 partitioned tables, if data type conversion is required for values, you are advised to use forcible type conversion to prevent the implicit type conversion result from being inconsistent with the expected result.
+- Currently, the statement specifying a partition cannot perform global index scan.
 
 ## Syntax<a name="section11556125664117"></a>
 
@@ -45,7 +45,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 )[ { ENABLE | DISABLE } ROW MOVEMENT ];
 ```
 
--   Column constraint:
+- Column constraint:
 
     ```
     [ CONSTRAINT constraint_name ]
@@ -64,7 +64,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     [ COMMENT {=| } 'text' ]
     ```
 
--   Table constraint:
+- Table constraint:
 
     ```
     [ CONSTRAINT [ constraint_name ] ]
@@ -77,121 +77,117 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     [ COMMENT {=| } 'text' ]
     ```
 
-
--   LIKE options:
+- LIKE options:
 
     ```
     { INCLUDING | EXCLUDING } { DEFAULTS | GENERATED | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | RELOPTIONS| ALL }
     ```
 
-
--   Index parameters:
+- Index parameters:
 
     ```
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
     [ USING INDEX TABLESPACE tablespace_name ]
     ```
 
-
 ## Parameter Description<a name="section7923313718"></a>
 
--   **IF NOT EXISTS**
+- **IF NOT EXISTS**
 
     Does not throw an error if a relationship with the same name existed. A notice is issued in this case.
 
--   **subpartition\_table\_name**
+- **subpartition\_table\_name**
 
     Specifies the name of a level-2 partitioned table.
 
     Value range: a string. It must comply with the identifier naming convention.
 
-
--   **column\_name**
+- **column\_name**
 
     Specifies the name of a column to be created in the new table.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **data\_type**
+- **data\_type**
 
     Specifies the data type of the column.
 
--   **COLLATE  collation**
+- **COLLATE  collation**
 
     Assigns a collation to the column \(which must be of a collatable data type\). If no collation is specified, the default collation is used. You can run the  **select \* from pg\_collation;**  command to query collation rules from the  **pg\_collation**  system catalog. The default collation rule is the row starting with  **default**  in the query result.
 
--   **CONSTRAINT constraint\_name**
+- **CONSTRAINT constraint\_name**
 
     Specifies the name of a column or table constraint. The optional constraint clauses specify constraints that new or updated rows must satisfy for an INSERT or UPDATE operation to succeed.
 
     There are two ways to define constraints:
 
-    -   A column constraint is defined as part of a column definition, and it is bound to a particular column.
-    -   A table constraint is not bound to a particular column but can apply to more than one column.
+    - A column constraint is defined as part of a column definition, and it is bound to a particular column.
+    - A table constraint is not bound to a particular column but can apply to more than one column.
 
      >[!TIP]NOTICE
         >constraint\_name is optional in B-compatible mode (**sql\_compatibility = 'B'**). For other modes, constraint\_name must be added.
 
--   **index\_name**
+- **index\_name**
 
     Specifies an index name.
 
     >[!TIP]NOTICE
-    >-   index\_name is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
-    >-   For foreign key constraints, if constraint\_name and index\_name are specified at the same time, constraint\_name is used as the index name.
-    >-   For a unique key constraint, if both constraint\_name and index\_name are specified, index\_name is used as the index name.
+    >- index\_name is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
+    >- For foreign key constraints, if constraint\_name and index\_name are specified at the same time, constraint\_name is used as the index name.
+    >- For a unique key constraint, if both constraint\_name and index\_name are specified, index\_name is used as the index name.
 
--   **USING method**
+- **USING method**
 
     Specifies the name of the index method to be used.
 
     For details about the value range, see [USING method](create_index.md).
 
     >[!TIP]NOTICE
-    >-   The USING method is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
-    >-   In B-compatible mode, if USING method is not specified, the default index method is btree for ASTORE or ubtree for USTORE.
+    >- The USING method is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
+    >- In B-compatible mode, if USING method is not specified, the default index method is btree for ASTORE or ubtree for USTORE.
 
--   **ASC | DESC**
+- **ASC | DESC**
 
     **ASC** specifies an ascending (default) sort order. **DESC** specifies a descending sort order.
 
     >[!TIP]NOTICE
     >ASC|DESC is supported only in B-compatible databases (sql\_compatibility = 'B').
 
--   **LIKE source\_table \[ like\_option ... \]**
+- **LIKE source\_table \[ like\_option ... \]**
 
     Level-2 partitioned tables do not support this function.
 
--   **AUTO\_INCREMENT \[ = \] value**
+- **AUTO\_INCREMENT \[ = \] value**
 
     This clause specifies an initial value for an auto-increment column. The value must be a positive integer and cannot exceed 2<sup>127</sup>-1.
 
     >[!TIP]NOTICE
     >This clause takes effect only when **sql\_compatibility** is set to **B**.
 
--   **WITH \( storage\_parameter \[= value\] \[, ... \] \)**
+- **WITH \( storage\_parameter \[= value\] \[, ... \] \)**
 
     Specifies an optional storage parameter for a table or an index. Optional parameters are as follows:
 
-    -   FILLFACTOR
+    - FILLFACTOR
 
         The fill factor of a table is a percentage from 10 to 100.  **100**  \(complete filling\) is the default value. When a smaller fill factor is specified, INSERT operations fill table pages only to the indicated percentage. The remaining space on each page is reserved for updating rows on that page. This gives UPDATE a chance to place the updated copy of a row on the same page, which is more efficient than placing it on a different page. For a table whose entries are never updated, setting the fill factor to  **100**  \(complete filling\) is the best choice, but in heavily updated tables a smaller fill factor would be appropriate. The parameter has no meaning for column-store tables.
 
         Value range: 10–100
 
-    -   ORIENTATION
+    - ORIENTATION
 
         Determines the data storage mode of the table.
 
         Value range:
 
-        -   **COLUMN**: The data will be stored in columns.
-        -   **ROW**  \(default value\): The data will be stored in rows.
+        - **COLUMN**: The data will be stored in columns.
+        - **ROW**  \(default value\): The data will be stored in rows.
 
             >[!TIP]NOTICE 
             >**ORIENTATION**  cannot be modified.
 
-    -   COMPRESSLEVEL
+    - COMPRESSLEVEL
 
         Specifies the table data compression ratio and duration at the same compression level. This divides a compression level into sublevels, providing more choices for compression ratio and duration. As the value becomes greater, the compression ratio becomes higher and duration longer at the same compression level.
 
@@ -239,42 +235,42 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
         Value range: Boolean value. By default, this function is disabled.
 
-    -   STORAGE\_TYPE
+    - STORAGE\_TYPE
 
         Specifies the storage engine type. This parameter cannot be modified once it is set.
 
         Value range:
 
-        -   **USTORE**  indicates that tables support the inplace-update storage engine. Note that the  **track\_counts**  and  **track\_activities**  parameters must be enabled when the Ustore table is used. Otherwise, space expansion may occur.
-        -   **ASTORE**  indicates that tables support the append-only storage engine.
+        - **USTORE**  indicates that tables support the inplace-update storage engine. Note that the  **track\_counts**  and  **track\_activities**  parameters must be enabled when the Ustore table is used. Otherwise, space expansion may occur.
+        - **ASTORE**  indicates that tables support the append-only storage engine.
 
         Default value:
 
         If no table is specified, data is stored in append-only mode by default.
 
-    -   COMPRESSION
-        -   Value range:  **LOW**,  **MIDDLE**,  **HIGH**,  **YES**, and  **NO**  for column-store tables, with compression level increasing in ascending order. The default value is  **LOW**.
-        -   Row-store tables do not support compression.
+    - COMPRESSION
+        - Value range:  **LOW**,  **MIDDLE**,  **HIGH**,  **YES**, and  **NO**  for column-store tables, with compression level increasing in ascending order. The default value is  **LOW**.
+        - Row-store tables do not support compression.
 
-    -   MAX\_BATCHROW
+    - MAX\_BATCHROW
 
         Specifies the maximum number of records in a storage unit during data loading. The parameter is only valid for column-store tables.
 
         Value range: 10000 to 60000. The default value is  **60000**.
 
-    -   PARTIAL\_CLUSTER\_ROWS
+    - PARTIAL\_CLUSTER\_ROWS
 
         Specifies the number of records to be partially clustered for storage during data loading. The parameter is only valid for column-store tables.
 
         Value range: greater than or equal to  **MAX\_BATCHROW**. You are advised to set this parameter to an integer multiple of  **MAX\_BATCHROW**.
 
-    -   DELTAROW\_THRESHOLD
+    - DELTAROW\_THRESHOLD
 
         A reserved parameter. The parameter is only valid for column-store tables.
 
         Value range: 0 to 9999
 
-    -   segment
+    - segment
 
         The data is stored in segment-page mode. This parameter supports only row-store tables. Column-store tables, temporary tables, and unlogged tables are not supported. The Ustore storage engine is not supported.
 
@@ -282,27 +278,25 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
         Default value:  **off**
 
-
--   **COMPRESS / NOCOMPRESS**
+- **COMPRESS / NOCOMPRESS**
 
     Specifies keyword COMPRESS during the creation of a table, so that the compression feature is triggered in case of BULK INSERT operations. If this feature is enabled, a scan is performed for all tuple data within the page to generate a dictionary and then the tuple data is compressed and stored. If  **NOCOMPRESS**  is specified, the table is not compressed. Row-store tables do not support compression.
 
     Default value:  **NOCOMPRESS**, that is, tuple data is not compressed before storage.
 
--   **TABLESPACE tablespace\_name**
+- **TABLESPACE tablespace\_name**
 
     Specifies that the new table will be created in the  **tablespace\_name**  tablespace. If the tablespace is not specified, the default tablespace is used.
 
--   **PARTITION BY \{RANGE | LIST | HASH\} \(partition\_key\)**
-    -   For  **partition\_key**, the partitioning policy supports only one column of partition keys.
-    -   The data types supported by the partition key are the same as those supported by the level-1 partitioned table.
+- **PARTITION BY \{RANGE | LIST | HASH\} \(partition\_key\)**
+    - For  **partition\_key**, the partitioning policy supports only one column of partition keys.
+    - The data types supported by the partition key are the same as those supported by the level-1 partitioned table.
 
--   **SUBPARTITION BY \{RANGE | LIST | HASH\} \(subpartition\_key\)**
-    -   For  **subpartition\_key**, the partitioning policy supports only one column of partition keys.
-    -   The data types supported by the partition key are the same as those supported by the level-1 partitioned table.
+- **SUBPARTITION BY \{RANGE | LIST | HASH\} \(subpartition\_key\)**
+    - For  **subpartition\_key**, the partitioning policy supports only one column of partition keys.
+    - The data types supported by the partition key are the same as those supported by the level-1 partitioned table.
 
-
--   **\{ ENABLE | DISABLE \} ROW MOVEMENT**
+- **\{ ENABLE | DISABLE \} ROW MOVEMENT**
 
     Specifies whether to enable row movement.
 
@@ -310,20 +304,20 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     Value range:
 
-    -   **ENABLE**  \(default value\): Row movement is enabled.
-    -   **DISABLE**: Row movement is disabled.
+    - **ENABLE**  \(default value\): Row movement is enabled.
+    - **DISABLE**: Row movement is disabled.
 
--   **NOT NULL**
+- **NOT NULL**
 
     The column is not allowed to contain null values.  **ENABLE**  can be omitted.
 
--   **NULL**
+- **NULL**
 
     Indicates that the column is allowed to contain  **NULL**  values. This is the default setting.
 
     This clause is only provided for compatibility with non-standard SQL databases. It is not recommended.
 
--   **CHECK \(condition\) \[ NO INHERIT \]**
+- **CHECK \(condition\) \[ NO INHERIT \]**
 
     Specifies an expression producing a Boolean result where the INSERT or UPDATE operation of new or updated rows can succeed only when the expression result is  **TRUE**  or  **UNKNOWN**; otherwise, an error is thrown and the database is not altered.
 
@@ -333,33 +327,33 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     **ENABLE**  can be omitted.
 
--   **DEFAULT default\_expr**
+- **DEFAULT default\_expr**
 
     Assigns a default data value to a column. The value can be any variable-free expressions. \(Subqueries and cross-references to other columns in the current table are not allowed.\) The data type of the default expression must match that of the column.
 
     The default expression will be used in any INSERT operation that does not specify a value for the column. If there is no default value for a column, then the default value is  **NULL**.
 
--   **GENERATED ALWAYS AS \( generation\_expr \) STORED**
+- **GENERATED ALWAYS AS \( generation\_expr \) STORED**
 
     This clause creates a column as a generated column. The value of the generated column is calculated by  **generation\_expr**  when data is written \(inserted or updated\).  **STORED**  indicates that the value of the generated column is stored as a common column.
 
     >[!NOTE]NOTE 
-    >-   The generation expression cannot refer to data other than the current row in any way. The generation expression cannot reference other generation columns or system columns. The generation expression cannot return a result set. No subquery, aggregate function, or window function can be used. The function called by the generation expression can only be an immutable function.
-    >-   Default values cannot be specified for generated columns.
-    >-   The generated column cannot be used as a part of the partition key.
-    >-   Do not specify the generated column and the CASCADE, SET NULL, and SET DEFAULT actions of the ON UPDATE constraint at the same time. Do not specify the generated column and the SET NULL, and SET DEFAULT actions of the ON DELETE constraint at the same time.
-    >-   The method of modifying and deleting generated columns is the same as that of common columns. Delete the common column that the generated column depends on. The generated column is automatically deleted. The type of the column on which the generated column depends cannot be changed.
-    >-   The generated column cannot be directly written. In the INSERT or UPDATE statement, values cannot be specified for generated columns, but the keyword DEFAULT can be specified.
-    >-   The permission control for generated columns is the same as that for common columns.
-    >-   Columns cannot be generated for column-store tables and MOTs. In foreign tables, only  **postgres\_fdw**  supports generated columns.
+    >- The generation expression cannot refer to data other than the current row in any way. The generation expression cannot reference other generation columns or system columns. The generation expression cannot return a result set. No subquery, aggregate function, or window function can be used. The function called by the generation expression can only be an immutable function.
+    >- Default values cannot be specified for generated columns.
+    >- The generated column cannot be used as a part of the partition key.
+    >- Do not specify the generated column and the CASCADE, SET NULL, and SET DEFAULT actions of the ON UPDATE constraint at the same time. Do not specify the generated column and the SET NULL, and SET DEFAULT actions of the ON DELETE constraint at the same time.
+    >- The method of modifying and deleting generated columns is the same as that of common columns. Delete the common column that the generated column depends on. The generated column is automatically deleted. The type of the column on which the generated column depends cannot be changed.
+    >- The generated column cannot be directly written. In the INSERT or UPDATE statement, values cannot be specified for generated columns, but the keyword DEFAULT can be specified.
+    >- The permission control for generated columns is the same as that for common columns.
+    >- Columns cannot be generated for column-store tables and MOTs. In foreign tables, only  **postgres\_fdw**  supports generated columns.
 
--   **AUTO\_INCREMENT**
+- **AUTO\_INCREMENT**
 
     Specifies an auto-increment column.
 
     For details, see [AUTO\_INCREMENT](create_table.md).
 
--   **UNIQUE index\_parameters**
+- **UNIQUE index\_parameters**
 
     **UNIQUE \( column\_name \[, ... \] \) index\_parameters**
 
@@ -367,7 +361,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     For the purpose of a unique constraint, null is not considered equal.
 
--   **PRIMARY KEY index\_parameters**
+- **PRIMARY KEY index\_parameters**
 
     **PRIMARY KEY \( column\_name \[, ... \] \) index\_parameters**
 
@@ -375,37 +369,37 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     Only one primary key can be specified for a table.
 
--   **ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE]**
+- **ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE]**
 
-	  -   ENABLE( VALIDATE)(default): Enable constraints, create indexes, and enforce constraints on both existing data and newly added data.
-    -   ENABLE NOVALIDATE: Enable constraints and create indexes. For CHECK constraints, the constraints are only enforced for newly added data, regardless of the existing data in the table. For UNIQUE and PRIMARY KEY, indexes need to be established, so the constraints will be enforced for the existing data.
-    -   DISABLE( NOVALIDATE)(default): Disable constraints, delete indexes, and operations such as modifying the data of the constraint columns can be performed.
-    -   DISABLE VALIDATE: Disable constraints and delete indexes. Insertion, update and deletion operations on the table cannot be performed.
+   - ENABLE( VALIDATE)(default): Enable constraints, create indexes, and enforce constraints on both existing data and newly added data.
+    - ENABLE NOVALIDATE: Enable constraints and create indexes. For CHECK constraints, the constraints are only enforced for newly added data, regardless of the existing data in the table. For UNIQUE and PRIMARY KEY, indexes need to be established, so the constraints will be enforced for the existing data.
+    - DISABLE( NOVALIDATE)(default): Disable constraints, delete indexes, and operations such as modifying the data of the constraint columns can be performed.
+    - DISABLE VALIDATE: Disable constraints and delete indexes. Insertion, update and deletion operations on the table cannot be performed.
 
--   **DEFERRABLE | NOT DEFERRABLE**
+- **DEFERRABLE | NOT DEFERRABLE**
 
     They determine whether the constraint is deferrable. A constraint that is not deferrable will be checked immediately after every command. Checking of constraints that are deferrable can be postponed until the end of the transaction using the  **SET CONSTRAINTS**  command.  **NOT DEFERRABLE**  is the default value. Currently, only UNIQUE constraints, primary key constraints, and foreign key constraints accept this clause. All the other constraints are not deferrable.
 
--   **INITIALLY IMMEDIATE | INITIALLY DEFERRED**
+- **INITIALLY IMMEDIATE | INITIALLY DEFERRED**
 
     If a constraint is deferrable, this clause specifies the default time to check the constraint.
 
-    -   If the constraint is  **INITIALLY IMMEDIATE**  \(default value\), it is checked after each statement.
-    -   If the constraint is  **INITIALLY DEFERRED**, it is checked only at the end of the transaction.
+    - If the constraint is  **INITIALLY IMMEDIATE**  \(default value\), it is checked after each statement.
+    - If the constraint is  **INITIALLY DEFERRED**, it is checked only at the end of the transaction.
 
     The constraint check time can be altered using the  **SET CONSTRAINTS**  statement.
 
--   **USING INDEX TABLESPACE tablespace\_name**
+- **USING INDEX TABLESPACE tablespace\_name**
 
     Allows selection of the tablespace in which the index associated with a  **UNIQUE**  or  **PRIMARY KEY**  constraint will be created. If not specified, the index is created in  **default\_tablespace**. If  **default\_tablespace**  is empty, the default tablespace of the database is used.
 
--   COMMENT {=| } 'text':
+- COMMENT {=| } 'text':
 
     In the partition of a partitioned table, this column is meaningless and is used only for syntax compatibility. An alarm is displayed when the syntax is used in the database.
     
 ## Examples<a name="section3608124119220"></a>
 
--   Example 1: Create level-2 partitioned tables of various combination types.
+- Example 1: Create level-2 partitioned tables of various combination types.
 
     ```
     CREATE TABLE list_list
@@ -750,7 +744,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     (6 rows)
     ```
 
--   Example 2: Specify partitions in a level-2 partitioned table using DML.
+- Example 2: Specify partitions in a level-2 partitioned table using DML.
 
     ```
     CREATE TABLE range_list
@@ -981,7 +975,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     (4 rows)
     ```
 
--   Example 3: Truncate a level-2 partitioned table.
+- Example 3: Truncate a level-2 partitioned table.
 
     ```
     CREATE TABLE list_list
@@ -1119,8 +1113,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     
     ```
 
-
--   Example 4: Split a level-2 partitioned table.
+- Example 4: Split a level-2 partitioned table.
 
     ```
     CREATE TABLE list_list

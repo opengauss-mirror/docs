@@ -3,9 +3,10 @@
 PERFORMANCE_SCHEMA.FILE_SUMMARY_BY_INSTANCE视图，通过对数据文件IO的统计，反映数据的IO性能，用以发现IO操作异常等性能问题。兼容Mysql的同名视图，仅在B库创建。
 
 >[!NOTE]说明
->-   很多列openGauss并没有与Mysql相对应的信息，或者暂时不支持的输出，为了最大限度保持兼容性，用NULL填充。
->-   仅统计数据文件相关IO，不统计日志文件，配置文件等IO。
->-   底层访问DBE_PERF.FILE_IOSTAT，其中miniotim，avgiotim，maxiowtm的统计信息不区分读写，但mysql分读、写、等待、misc来统计min,max,avg。为尽量多的展示信息，都使用相同信息做展示。
+>
+>- 很多列openGauss并没有与Mysql相对应的信息，或者暂时不支持的输出，为了最大限度保持兼容性，用NULL填充。
+>- 仅统计数据文件相关IO，不统计日志文件，配置文件等IO。
+>- 底层访问DBE_PERF.FILE_IOSTAT，其中miniotim，avgiotim，maxiowtm的统计信息不区分读写，但mysql分读、写、等待、misc来统计min,max,avg。为尽量多的展示信息，都使用相同信息做展示。
 
 **表 1**  FILE_SUMMARY_BY_INSTANCE字段
 

@@ -66,4 +66,3 @@ PG\_OPFAMILY系统表定义操作符族。
 </table>
 
 定义一个操作符族的大多数信息不在它的PG\_OPFAMILY行里面，而是在相关的行[PG\_AMOP](PG_AMOP.md)，[PG\_AMPROC](PG_AMPROC.md)和[PG\_OPCLASS](PG_OPCLASS.md)里。
-

@@ -2,16 +2,16 @@
 
 **INSTANCE\_TIME**  records time consumption information on the current cluster node. The time consumption information is classified into the following types:
 
--   DB\_TIME: effective time spent by jobs in multi-core scenarios
--   CPU\_TIME: CPU time cost.
--   EXECUTION\_TIME: time spent in the executor.
--   PARSE\_TIME: time spent on parsing SQL statements
--   PLAN\_TIME: time spent on generating plans
--   REWRITE\_TIME: time spent on rewriting SQL statements
--   PL\_COMPILATION\_TIME: compilation time of the PL/pgSQL stored procedure.
--   PL\_COMPILATION\_TIME: compilation time of the PL/pgSQL stored procedure
--   NET\_SEND\_TIME: time spent on the network
--   DATA\_IO\_TIME: time spent on I/Os.
+- DB\_TIME: effective time spent by jobs in multi-core scenarios
+- CPU\_TIME: CPU time cost.
+- EXECUTION\_TIME: time spent in the executor.
+- PARSE\_TIME: time spent on parsing SQL statements
+- PLAN\_TIME: time spent on generating plans
+- REWRITE\_TIME: time spent on rewriting SQL statements
+- PL\_COMPILATION\_TIME: compilation time of the PL/pgSQL stored procedure.
+- PL\_COMPILATION\_TIME: compilation time of the PL/pgSQL stored procedure
+- NET\_SEND\_TIME: time spent on the network
+- DATA\_IO\_TIME: time spent on I/Os.
 
 **Table  1**  INSTANCE\_TIME columns
 
@@ -47,4 +47,3 @@
 </tr>
 </tbody>
 </table>
-

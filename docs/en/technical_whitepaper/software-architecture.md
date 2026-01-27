@@ -6,7 +6,6 @@ openGauss can be deployed in primary/standby mode.  [Figure 1](#fig552153723612)
 
 **Figure  1**  openGauss logical architecture<a name="fig552153723612"></a>  
 
-
 ![](figures/逻辑架构图.png)
 
 **Table  1**  Architecture description
@@ -46,4 +45,3 @@ openGauss can be deployed in primary/standby mode.  [Figure 1](#fig552153723612)
 </tr>
 </tbody>
 </table>
-

@@ -12,4 +12,3 @@ MOT的平均事务速度为2.5倍，MOT延迟为10.5ms，而基于磁盘的表�
 
 **图 2**  低延迟（90<sup>th</sup>%，事务平均）性能基准<a name="fig3108787"></a>  
 ![](figures/Low-latency-90th-transaction-average-performance-benchmark.png)
-

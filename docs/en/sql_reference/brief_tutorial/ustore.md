@@ -12,9 +12,9 @@ Ustore works with the UNDO space to implement more efficient and comprehensive f
 
 ## Core Advantages<a name="section69751648124511"></a>
 
--   **High performance**: For services with different loads, such as insertion, update, and deletion, the performance and resource usage are relatively balanced. The in-place update mode is recommended in frequent update scenarios, featuring higher and more stable performance. It is suitable for typical OLTP service scenarios that require  **short**  transactions,  **frequent**  updates, and  **high**  performance.
--   **Efficient storage**: Maximizes in-place update, greatly saving space. Rollback segments and data pages are stored separately, providing more efficient and stable I/O usage. The UNDO subsystem uses the NUMA-aware design and has better multi-core scalability. The UNDO space is allocated and reclaimed in a unified manner, improving the reuse efficiency and storage space usage.
--   **Fine-grained resource control**: The Ustore engine provides multi-dimensional transaction monitoring. It monitors transaction running based on the transaction running duration, size of the UNDO space used by a single transaction, and overall UNDO space limit to prevent abnormal and unexpected behaviors. This feature enables database administrators to regulate and restrict the use of database system resources.
+- **High performance**: For services with different loads, such as insertion, update, and deletion, the performance and resource usage are relatively balanced. The in-place update mode is recommended in frequent update scenarios, featuring higher and more stable performance. It is suitable for typical OLTP service scenarios that require  **short**  transactions,  **frequent**  updates, and  **high**  performance.
+- **Efficient storage**: Maximizes in-place update, greatly saving space. Rollback segments and data pages are stored separately, providing more efficient and stable I/O usage. The UNDO subsystem uses the NUMA-aware design and has better multi-core scalability. The UNDO space is allocated and reclaimed in a unified manner, improving the reuse efficiency and storage space usage.
+- **Fine-grained resource control**: The Ustore engine provides multi-dimensional transaction monitoring. It monitors transaction running based on the transaction running duration, size of the UNDO space used by a single transaction, and overall UNDO space limit to prevent abnormal and unexpected behaviors. This feature enables database administrators to regulate and restrict the use of database system resources.
 
 Ustore provides stable performance in scenarios where data is frequently updated, enabling service systems to run more stably and adapt to more service scenarios and workloads, especially core financial service scenarios that have higher requirements on performance and stability.
 
@@ -22,7 +22,7 @@ Ustore provides stable performance in scenarios where data is frequently updated
 
 Ustore coexists with the original append update storage engine \(Astore\). Ustore shields the implementation details of the storage layer. The SQL syntax is basically the same as that of the original Astore storage engine. The only difference lies in table creation and index creation.
 
--   **Table creation**
+- **Table creation**
 
     Ustore contains undo logs. Before creating a table, you need to set  **undo\_zone\_count**  in the  **postgresql.conf**  file. This parameter indicates the number of undo logs. The recommended value is  **16384**, that is,  **undo\_zone\_count=16384**. After the configuration is complete, restart the database.
 
@@ -32,16 +32,15 @@ Ustore coexists with the original append update storage engine \(Astore\). Ustor
     undo_zone_count=16384
     ```
 
-    -   **Method 1: Specify the storage engine type when creating a table.**
+    - **Method 1: Specify the storage engine type when creating a table.**
 
     ```
     create table test(id int, name varchar(10)) with (storage_type=ustore);
     ```
 
-    -   **Method 2: Specify Ustore by configuring a GUC parameter.**
+    - **Method 2: Specify Ustore by configuring a GUC parameter.**
 
-
-1.  Before starting a database, set  **enable\_default\_ustore\_table**  to  **on**  in  **postgresql.conf**  to specify that Ustore is used when a user creates a table by default.
+1. Before starting a database, set  **enable\_default\_ustore\_table**  to  **on**  in  **postgresql.conf**  to specify that Ustore is used when a user creates a table by default.
 
     \[postgresql.conf\]
 
@@ -49,14 +48,13 @@ Ustore coexists with the original append update storage engine \(Astore\). Ustor
     enable_default_ustore_table=on
     ```
 
-2.  Create a table.
+2. Create a table.
 
     ```
     create table test(id int, name varchar(10));
     ```
 
-
--   **Index creation**
+- **Index creation**
 
     The index used by Ustore is UBtree. UBtree is developed for the Ustore storage engine and is the only index type supported by Ustore.
 
@@ -72,7 +70,7 @@ Ustore coexists with the original append update storage engine \(Astore\). Ustor
      name   | character varying(10) |           | extended |              |
     ```
 
-    -   **Method 1: If the index type is not specified, a UBtree index is created by default.**
+    - **Method 1: If the index type is not specified, a UBtree index is created by default.**
 
         ```
         openGauss=# create index ubt_idx on test(age);
@@ -92,7 +90,7 @@ Ustore coexists with the original append update storage engine \(Astore\). Ustor
         Options: orientation=row, storage_type=ustore, compression=no
         ```
 
-    -   **Method 2: When creating an index, use the using keyword to set the index type to ubtree.**
+    - **Method 2: When creating an index, use the using keyword to set the index type to ubtree.**
 
         ```
         openGauss=# create index ubt_idx on test using ubtree(age);
@@ -111,6 +109,3 @@ Ustore coexists with the original append update storage engine \(Astore\). Ustor
         Has OIDs: no
         Options: orientation=row, storage_type=ustore, compression=no
         ```
-
-
-

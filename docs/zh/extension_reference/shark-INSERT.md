@@ -6,8 +6,8 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--   本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。原openGauss的INSERT语法请参考章节[INSERT](../sql_reference/insert.md)。
--   新增支持table_hint子句。
+- 本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。原openGauss的INSERT语法请参考章节[INSERT](../sql_reference/insert.md)。
+- 新增支持table_hint子句。
 
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
@@ -21,7 +21,7 @@ INSERT [/*+ plan_hint */] [INTO] table_name [partition_clause] [ AS alias ] [tab
     [ RETURNING {* | {output_expression [ [ AS ] output_name ] }[, ...]} ];
 ```
 
--   其中table\_hint子句table\_hint\_clause为：
+- 其中table\_hint子句table\_hint\_clause为：
 
     ```
     WITH ( <table_hint> [, ...] ) 
@@ -29,11 +29,11 @@ INSERT [/*+ plan_hint */] [INTO] table_name [partition_clause] [ AS alias ] [tab
 
 ## 参数说明<a name="zh-cn_topic_0283137651_zh-cn_topic_0237122194_zh-cn_topic_0059778969_sf3e3262b89854b3d829a94054116838d"></a>
 
--   **JOIN**
+- **JOIN**
 
     JOIN包含 INNER JOIN，LEFT JOIN，RIGHT JOIN，FULL JOIN，CROSS JOIN。
   
--   **WITH ( <table_hint> [, ...] )**
+- **WITH ( <table_hint> [, ...] )**
 
     - 不同于SELECT子句，针对单个hint，WITH可选，针对INSERT子句，WITH必选，table_hint支持给出一个列表选项，列表通过逗号或者空格分隔，即WITH (hint1)、WITH (hint1, hint2, ...)、WITH (hint1 hint2 ...)均支持，(hint1)不支持。
 

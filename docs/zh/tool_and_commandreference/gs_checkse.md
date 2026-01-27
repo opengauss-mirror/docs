@@ -14,28 +14,27 @@ gs_checkse工具用来帮助检查数据库连接配置、文件目录安全、�
 
 ## 语法<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_s991d75846f4c48a298084c67b46b40ee"></a>
 
--   检查数据库安全配置信息
+- 检查数据库安全配置信息
 
     ```
     gs_checkse -i ITEM [-f HOSTFILE] [-h HOSTNAME] [-X XMLFILE] [--detail] [--database=database] [-o OUTPUT] [-l LOGFILE]
     ```
 
--   显示帮助信息
+- 显示帮助信息
 
     ```
     gs_checkse -? | --help 
     ```
 
--   显示版本号信息
+- 显示版本号信息
 
     ```
     gs_checkse -V | --version
     ```
 
-
 ## 参数说明<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_s79c5f0d8e9e742deacd81d9e296c2960"></a>
 
--   -i
+- -i
 
     列表编号。格式：-i A、-i B1、-i A1 -i A2或-i A1,A2。
 
@@ -49,7 +48,7 @@ gs_checkse工具用来帮助检查数据库连接配置、文件目录安全、�
 
     详细的检查项请参见[表1](#zh-cn_topic_0237152331_zh-cn_topic_0059778883_t5348bfc47f50450687012eacb1a1ba4e)。
 
--   -f
+- -f
 
     主机名称列表文件。
 
@@ -58,46 +57,45 @@ gs_checkse工具用来帮助检查数据库连接配置、文件目录安全、�
 
     取值范围：主机名称的列表。
 
--   -h
+- -h
 
     指定需要检查的主机名称，可以同时指定多个主机，主机之间使用“,”分割。
 
     取值范围：openGauss的主机名称。如果不指定主机，则检查当前主机。
 
--   -X
+- -X
 
     openGaussXML配置文件。
 
--   --detail
+- --detail
 
     显示检查结果详情。
 
--   --database=database
+- --database=database
 
     指定要检查的数据库名，若不指定则默认检查postgres数据库。
 
     默认值：postgres。
 
--   -o
+- -o
 
     指定SE检查报告输出到指定的文件。
 
     不指定则将检查结果输出到屏幕上。
 
--   -l
+- -l
 
     指定日志文件及存放路径，若不指定则在日志目录下的用户目录的om目录下。
 
     默认值：${GAUSSLOG}/omm/om/gs\_checkse-YYYY-MM-DD\_hhmmss.log。
 
--   -?, --help
+- -?, --help
 
     显示帮助信息。
 
--   -V, --version
+- -V, --version
 
     显示版本号信息。
-
 
 **表 1**  数据库安全配置检查项
 
@@ -269,16 +267,13 @@ gs_checkse工具用来帮助检查数据库连接配置、文件目录安全、�
 </tbody>
 </table>
 
-
-
 >[!NOTE]说明
 >
-> -   上述检查项和设置项用于确保参数符合预设的默认值。请根据实际需求对这些参数进行相应调整。关于参数的详细检查与设置步骤，请参阅相关的安全基线配置文档以获取更多信息。
+> - 上述检查项和设置项用于确保参数符合预设的默认值。请根据实际需求对这些参数进行相应调整。关于参数的详细检查与设置步骤，请参阅相关的安全基线配置文档以获取更多信息。
 >
-> -   B9选项进行设置umask参数值后，需要用户手动执行`source ~/.bashrc`命令，使配置生效。
+> - B9选项进行设置umask参数值后，需要用户手动执行`source ~/.bashrc`命令，使配置生效。
 >
-> -   使用gs\_checkse设置选项参数时，会进行重启数据库操作使配置生效，请谨慎操作，根据需要进行选项修复执行，以避免数据库重启对正在进行的操作造成影响。
-
+> - 使用gs\_checkse设置选项参数时，会进行重启数据库操作使配置生效，请谨慎操作，根据需要进行选项修复执行，以避免数据库重启对正在进行的操作造成影响。
 
 ## 示例<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_s0a0dfe17cef247ad9b50e77ed84aff9f"></a>
 
@@ -312,4 +307,3 @@ Checking items:
 ## 相关命令<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_s3229172816a643dda00f100421b8a903"></a>
 
 [gs\_check](gs_check.md)，[gs\_checkperf](gs_checkperf.md)，[gs\_checkos](gs_checkos.md)
-

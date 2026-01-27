@@ -50,5 +50,3 @@ USER\_LOGIN用来记录用户登录和退出次数的相关信息。
 </tr>
 </tbody>
 </table>
-
-

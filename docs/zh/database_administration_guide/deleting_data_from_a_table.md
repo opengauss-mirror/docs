@@ -15,6 +15,7 @@ DELETE FROM customer_t1 WHERE c_customer_sk = 3869;
 ```
 DELETE FROM customer_t1;
 ```
+
 或：
 
 ```
@@ -30,4 +31,3 @@ TRUNCATE TABLE customer_t1;
 ```
 DROP TABLE customer_t1;
 ```
-

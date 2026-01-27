@@ -64,5 +64,3 @@ PG\_TABLESPACE系统表存储表空间信息。
 </tr>
 </tbody>
 </table>
-
-

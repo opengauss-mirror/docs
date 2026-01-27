@@ -12,26 +12,25 @@ SET column_name = { expression | DEFAULT }
 
 ## Parameter Description<a name="section24508283118"></a>
 
--   **table\_name**
+- **table\_name**
 
     Specifies the name \(optionally schema-qualified\) of the table to be updated. For example,  **myshcema.table**.
 
     Value range: an existing table name
 
--   **expression**
+- **expression**
 
     Specifies the expression or value to be assigned to a column.
 
--   **column\_name**
+- **column\_name**
 
     Specifies the name of the column to be modified.
 
     Value range: an existing column name
 
--   **condition**
+- **condition**
 
     Specifies an expression that returns a value of Boolean type. Only rows for which this expression returns  **true**  are updated.
-
 
 ## Examples<a name="section1401745151110"></a>
 
@@ -61,4 +60,3 @@ You can run an UPDATE statement to update multiple columns by specifying multipl
 openGauss=# UPDATE customer_t1 SET c_customer_id = 'Admin', c_first_name = 'Local' WHERE c_customer_sk = 4421; 
 UPDATE 1
 ```
-

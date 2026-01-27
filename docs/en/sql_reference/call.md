@@ -16,21 +16,21 @@ CALL [schema.|package.] {func_name| procedure_name} ( param_expr );
 
 ## Parameter Description<a name="en-us_topic_0283137636_en-us_topic_0237122088_en-us_topic_0059778236_sf183d9684eb54414b8f5c370a1c7038b"></a>
 
--   **schema**
+- **schema**
 
     Specifies the name of the schema where a function or stored procedure is located.
 
--   package
+- package
 
     Specifies the name of the package where a function or stored procedure is located.
 
--   **func\_name**
+- **func\_name**
 
     Specifies the name of the function or stored procedure to be called.
 
     Value range: an existing function name.
 
--   **param\_expr**
+- **param\_expr**
 
     Specifies a list of parameters. Use := or =\> to separate a parameter name and its value. This method allows parameters to be placed in any order. If only parameter values are in the list, the value order must be the same as that defined in the function or stored procedure.
 
@@ -38,7 +38,6 @@ CALL [schema.|package.] {func_name| procedure_name} ( param_expr );
 
     >[!NOTE]NOTE 
     >The parameters include input parameters \(whose name and type are separated by IN\) and output parameters \(whose name and type are separated by OUT\). When you run the  **CALL**  statement to call a function or stored procedure, the parameter list must contain an output parameter for non-overloaded functions. You can set the output parameter to a variable or any constant. For details, see  [Examples](#en-us_topic_0283137636_en-us_topic_0237122088_en-us_topic_0059778236_s299dc001fa4b48cd9b56412a73db23c0). For an overloaded package function, the parameter list can have no output parameter, but the function may not be found. If an output parameter is contained, it must be a constant.
-
 
 ## Examples<a name="en-us_topic_0283137636_en-us_topic_0237122088_en-us_topic_0059778236_s299dc001fa4b48cd9b56412a73db23c0"></a>
 
@@ -76,4 +75,3 @@ openGauss=# CALL func_increment_sql(1,2,1);
 -- Delete the function.
 openGauss=# DROP FUNCTION func_increment_sql;
 ```
-

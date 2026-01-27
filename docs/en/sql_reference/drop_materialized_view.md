@@ -16,18 +16,17 @@ DROP MATERIALIZED VIEW [ IF EXISTS ] mv_name [, ...] [ CASCADE | RESTRICT ];
 
 ## Parameter Description<a name="en-us_topic_0283137529_en-us_topic_0237122159_en-us_topic_0059777895_se717dd5fd464489bb0235495c62d3a9e"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Reports a notice instead of an error if the specified materialized view does not exist.
 
--   **mv\_name**
+- **mv\_name**
 
     Name of the materialized view to be deleted.
 
--   **CASCADE | RESTRICT**
-    -   **CASCADE**: automatically deletes the objects that depend on the materialized view.
-    -   **RESTRICT**: refuses to delete the materialized view if any objects depend on it. This is the default action.
-
+- **CASCADE | RESTRICT**
+    - **CASCADE**: automatically deletes the objects that depend on the materialized view.
+    - **RESTRICT**: refuses to delete the materialized view if any objects depend on it. This is the default action.
 
 ## Examples<a name="en-us_topic_0283137529_en-us_topic_0237122159_en-us_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
 

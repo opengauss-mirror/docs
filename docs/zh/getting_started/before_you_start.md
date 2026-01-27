@@ -8,11 +8,11 @@ openGauss正常运行。
 
 ## 操作步骤<a name="zh-cn_topic_0283136717_zh-cn_topic_0237120268_zh-cn_topic_0065727379_section62139327164538"></a>
 
-1.  以操作系统用户omm登录数据库主节点。
+1. 以操作系统用户omm登录数据库主节点。
 
     若不确定数据库主节点部署在哪台服务器，请参考[确认连接信息](confirming_connection_information.md)。
 
-2.  连接数据库。
+2. 连接数据库。
 
     数据库安装完成后，默认生成名称为postgres的数据库。第一次连接数据库时可以连接到此数据库。
 
@@ -72,8 +72,7 @@ openGauss正常运行。
 
     **引申信息：** 关于数据库用户的更多信息请参考[管理用户及权限](../database_administration_guide/default_permission_mechanism.md)。
 
-
-4.  创建数据库。
+4. 创建数据库。
 
     ```
     openGauss=#  CREATE DATABASE db_tpcc OWNER joe;
@@ -157,14 +156,8 @@ openGauss正常运行。
 
    **引申信息：**
 
-   -   默认情况下，新的数据库对象是创建在“$user”模式下的，例如刚刚新建的表。关于模式的更多信息请参考[创建和管理schema](../database_administration_guide/creating_and_managing_schema.md)。
-   -   关于创建表的更多信息请参见[创建和管理表](../database_administration_guide/creating_tables.md)。
-   -   除了创建的表以外，数据库还包含很多系统表。这些系统表包含openGauss安装信息以及openGauss上运行的各种查询和进程的信息。可以通过查询系统表来收集有关数据库的信息。请参见[查看系统表](../database_reference/view_system_tables.md)。
+   - 默认情况下，新的数据库对象是创建在“$user”模式下的，例如刚刚新建的表。关于模式的更多信息请参考[创建和管理schema](../database_administration_guide/creating_and_managing_schema.md)。
+   - 关于创建表的更多信息请参见[创建和管理表](../database_administration_guide/creating_tables.md)。
+   - 除了创建的表以外，数据库还包含很多系统表。这些系统表包含openGauss安装信息以及openGauss上运行的各种查询和进程的信息。可以通过查询系统表来收集有关数据库的信息。请参见[查看系统表](../database_reference/view_system_tables.md)。
 
        openGauss支持行列混合存储，为各种复杂场景下的交互分析提供较高的查询性能，关于存储模型的选择，请参考[规划存储模型](../database_administration_guide/planning_storage_models.md)。
-
-   
-
-
-
-

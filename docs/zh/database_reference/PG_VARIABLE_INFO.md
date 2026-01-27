@@ -92,4 +92,3 @@ PG\_VARIABLE\_INFO视图用于查询openGauss中当前节点的xid、oid的状�
 </tr>
 </tbody>
 </table>
-

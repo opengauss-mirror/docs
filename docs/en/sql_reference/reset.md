@@ -20,28 +20,27 @@ RESET {configuration_parameter | CURRENT_SCHEMA | TIME ZONE | SESSION AUTHORIZAT
 
 ## Parameter Description<a name="en-us_topic_0283137385_en-us_topic_0237122178_en-us_topic_0059779097_s46998dbd2cc84394b47aad2adc8ea141"></a>
 
--   **configuration\_parameter**
+- **configuration\_parameter**
 
     Specifies the name of a settable run-time parameter.
 
     Value range: run-time parameters. You can view them by running the  **SHOW ALL**  statement.
 
--   **CURRENT\_SCHEMA**
+- **CURRENT\_SCHEMA**
 
     Specifies the current schema.
 
--   **TIME ZONE**
+- **TIME ZONE**
 
     Specifies the time zone.
 
--   **SESSION AUTHORIZATION**
+- **SESSION AUTHORIZATION**
 
     Specifies the session authorization.
 
--   **ALL**
+- **ALL**
 
     Resets all settable run-time parameters to default values.
-
 
 ## Examples<a name="en-us_topic_0283137385_en-us_topic_0237122178_en-us_topic_0059779097_sa81e1feab8d2413fb3c8fb7b7c013fcb"></a>
 
@@ -56,4 +55,3 @@ openGauss=# RESET ALL;
 ## Helpful Links<a name="en-us_topic_0283137385_en-us_topic_0237122178_en-us_topic_0059779097_s97f0691750e2467d97f3e904047703d7"></a>
 
 [SET](set.md)  and  [SHOW](show.md)
-

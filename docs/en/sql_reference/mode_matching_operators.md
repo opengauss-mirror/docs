@@ -2,23 +2,23 @@
 
 There are three separate approaches to pattern matching provided by the database: the traditional SQL LIKE operator, the more recent SIMILAR TO operator, and POSIX-style regular expressions. Besides these basic operators, functions can be used to extract or replace matching substrings and to split a string at matching locations.
 
--   LIKE
+- LIKE
 
     Description: Specifies whether the string matches the mode string following  **LIKE**. The LIKE expression returns true if the string matches the supplied pattern. \(As expected, the NOT LIKE expression returns false if LIKE returns true, and vice versa.\)
 
     Matching rules:
 
-    1.  This operator can succeed only when its pattern matches the entire string. If you want to match a sequence in any position within the string, the pattern must begin and end with a percent sign.
-    2.  The underscore \(\_\) represents \(matching\) any single character. Percentage \(%\) indicates the wildcard character of any string.
-    3.  To match a literal underscore or percent sign without matching other characters, the respective character in  **pattern**  must be preceded by the escape character. The default escape character is the backslash but a different one can be selected by using the  **ESCAPE**  clause.
-    4.  To match with escape characters, enter two escape characters. For example, to write a  **pattern**  constant containing a backslash \(\\\), you need to enter two backslashes in SQL statements.
+    1. This operator can succeed only when its pattern matches the entire string. If you want to match a sequence in any position within the string, the pattern must begin and end with a percent sign.
+    2. The underscore \(\_\) represents \(matching\) any single character. Percentage \(%\) indicates the wildcard character of any string.
+    3. To match a literal underscore or percent sign without matching other characters, the respective character in  **pattern**  must be preceded by the escape character. The default escape character is the backslash but a different one can be selected by using the  **ESCAPE**  clause.
+    4. To match with escape characters, enter two escape characters. For example, to write a  **pattern**  constant containing a backslash \(\\\), you need to enter two backslashes in SQL statements.
 
         >[!NOTE]NOTE 
         >When  **standard\_conforming\_strings**  is set to  **off**, any backslashes you write in literal string constants will need to be doubled. So, writing a pattern that matches a single backslash actually involves writing four backslashes in the statement \(you can avoid this by selecting a different escape character with  **ESCAPE**  so that the backslash is no longer a special character of  **LIKE**. But the backslash is still the special character of the character text analyzer, so you still need two backslashes.\)
         >In MySQL-compatible schema, it is also possible to select no escape character by writing  **ESCAPE ''**. This effectively disables the escape mechanism, which makes it impossible to turn off the special meaning of underscore and percent signs in the schema.
 
-    5.  The keyword ILIKE can be used instead of LIKE to make the match case-insensitive.
-    6.  Operator \~\~ is equivalent to LIKE, and operator \~\~\* corresponds to ILIKE.
+    5. The keyword ILIKE can be used instead of LIKE to make the match case-insensitive.
+    6. Operator \~\~ is equivalent to LIKE, and operator \~\~\* corresponds to ILIKE.
 
     Example:
 
@@ -54,15 +54,15 @@ There are three separate approaches to pattern matching provided by the database
     (1 row)
     ```
 
--   SIMILAR TO
+- SIMILAR TO
 
     Description: Returns  **true**  or  **false**  depending on whether the pattern matches the given string. It is similar to  **LIKE**, but differs in that  **SIMILAR TO**  uses the regular expression understanding pattern defined by the SQL standard.
 
     Matching rules:
 
-    1.  Similar to LIKE, this operator succeeds only when its pattern matches the entire string. If you want to match a sequence in any position within the string, the pattern must begin and end with a percent sign.
-    2.  The underscore \(\_\) represents \(matching\) any single character. Percentage \(%\) indicates the wildcard character of any string.
-    3.  SIMILAR TO supports these pattern-matching metacharacters borrowed from POSIX regular expressions:
+    1. Similar to LIKE, this operator succeeds only when its pattern matches the entire string. If you want to match a sequence in any position within the string, the pattern must begin and end with a percent sign.
+    2. The underscore \(\_\) represents \(matching\) any single character. Percentage \(%\) indicates the wildcard character of any string.
+    3. SIMILAR TO supports these pattern-matching metacharacters borrowed from POSIX regular expressions:
 
         <a name="en-us_topic_0283137455_en-us_topic_0237121970_table199321611038"></a>
         <table><thead align="left"><tr id="en-us_topic_0283137455_en-us_topic_0237121970_row3083601711038"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="en-us_topic_0283137455_en-us_topic_0237121970_p6509621711038"><a name="en-us_topic_0283137455_en-us_topic_0237121970_p6509621711038"></a><a name="en-us_topic_0283137455_en-us_topic_0237121970_p6509621711038"></a>Metacharacter</p>
@@ -119,7 +119,7 @@ There are three separate approaches to pattern matching provided by the database
         </tbody>
         </table>
 
-    4.  A preamble escape character disables the special meaning of any of these metacharacters. The rules for using escape characters are the same as those for LIKE.
+    4. A preamble escape character disables the special meaning of any of these metacharacters. The rules for using escape characters are the same as those for LIKE.
 
     Regular expressions:
 
@@ -159,7 +159,7 @@ There are three separate approaches to pattern matching provided by the database
     (1 row)
     ```
 
--   POSIX regular expressions
+- POSIX regular expressions
 
     Description: A regular expression is a character sequence that is an abbreviated definition of a set of strings \(a regular set\). If a string is a member of a regular expression described by a regular expression, the string matches the regular expression. POSIX regular expressions provide a more powerful means for pattern matching than the LIKE and SIMILAR TO operators.  [Table 1](#en-us_topic_0283137455_en-us_topic_0237121970_table6512684711360)  lists all available operators for pattern matching using POSIX regular expressions.
 
@@ -207,8 +207,8 @@ There are three separate approaches to pattern matching provided by the database
 
     Matching rules:
 
-    1.  Unlike LIKE patterns, a regular expression is allowed to match anywhere within a string, unless the regular expression is explicitly anchored to the beginning or end of the string.
-    2.  Besides the metacharacters mentioned above, POSIX regular expressions also support the following pattern matching metacharacters:
+    1. Unlike LIKE patterns, a regular expression is allowed to match anywhere within a string, unless the regular expression is explicitly anchored to the beginning or end of the string.
+    2. Besides the metacharacters mentioned above, POSIX regular expressions also support the following pattern matching metacharacters:
 
         <a name="en-us_topic_0283137455_en-us_topic_0237121970_table23243447154559"></a>
         <table><thead align="left"><tr id="en-us_topic_0283137455_en-us_topic_0237121970_row10310639154559"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="en-us_topic_0283137455_en-us_topic_0237121970_p263474154559"><a name="en-us_topic_0283137455_en-us_topic_0237121970_p263474154559"></a><a name="en-us_topic_0283137455_en-us_topic_0237121970_p263474154559"></a>Metacharacter</p>
@@ -239,18 +239,17 @@ There are three separate approaches to pattern matching provided by the database
 
     POSIX regular expressions support the following functions:
 
-    -   The  [**substring\(string from pa...**](character_processing_functions_and_operators.md)  function provides a method for extracting a substring that matches the POSIX regular expression pattern.
-    -   The  **[•regexp\_count\(string tex...](character_processing_functions_and_operators.md)**  function counts the number of substrings that match the POSIX regular expression pattern.
-    -   The  **[•regexp\_instr\(string tex...](character_processing_functions_and_operators.md)**  function obtains the position of a substring that matches the POSIX regular expression pattern.
-    -   The  **[•regexp\_substr\(string te...](character_processing_functions_and_operators.md)**  function extracts a substring that matches the POSIX regular expression pattern.
-    -   The  [**regexp\_replace\(string, p...**](character_processing_functions_and_operators.md)  function replaces a substring that matches the POSIX regular expression pattern with the new text.
-    -   The  [**regexp\_matches\(string te...**](character_processing_functions_and_operators.md)  function returns a text array consisting of all captured substrings that match a POSIX regular expression pattern.
-    -   The  [**regexp\_split\_to\_table\(st...**](character_processing_functions_and_operators.md)  function splits a string using a POSIX regular expression pattern as a delimiter.
-    -   The  [**regexp\_split\_to\_array\(st...**](character_processing_functions_and_operators.md)  function behaves the same as  **regexp\_split\_to\_table**, except that it returns its result as an array of text.
+    - The  [**substring\(string from pa...**](character_processing_functions_and_operators.md)  function provides a method for extracting a substring that matches the POSIX regular expression pattern.
+    - The  **[•regexp\_count\(string tex...](character_processing_functions_and_operators.md)**  function counts the number of substrings that match the POSIX regular expression pattern.
+    - The  **[•regexp\_instr\(string tex...](character_processing_functions_and_operators.md)**  function obtains the position of a substring that matches the POSIX regular expression pattern.
+    - The  **[•regexp\_substr\(string te...](character_processing_functions_and_operators.md)**  function extracts a substring that matches the POSIX regular expression pattern.
+    - The  [**regexp\_replace\(string, p...**](character_processing_functions_and_operators.md)  function replaces a substring that matches the POSIX regular expression pattern with the new text.
+    - The  [**regexp\_matches\(string te...**](character_processing_functions_and_operators.md)  function returns a text array consisting of all captured substrings that match a POSIX regular expression pattern.
+    - The  [**regexp\_split\_to\_table\(st...**](character_processing_functions_and_operators.md)  function splits a string using a POSIX regular expression pattern as a delimiter.
+    - The  [**regexp\_split\_to\_array\(st...**](character_processing_functions_and_operators.md)  function behaves the same as  **regexp\_split\_to\_table**, except that it returns its result as an array of text.
 
         >[!NOTE]NOTE 
         >The regular expression split functions ignore zero-length matches, which occur at the beginning or end of a string or after the previous match. This is contrary to the strict definition of regular expression matching. The latter is implemented by regexp\_matches, but the former is usually the most commonly used behavior in practice.
-
 
     Example:
 
@@ -311,5 +310,3 @@ There are three separate approaches to pattern matching provided by the database
     ```
 
     Although most regular expression searches can be executed quickly, regular expressions can still be artificially made up of memory that takes a long time and any amount of memory. It is not recommended that you accept the regular expression search mode from the non-security mode source. If you must do this, you are advised to add the statement timeout limit. The search with the SIMILAR TO mode has the same security risks as the SIMILAR TO provides many capabilities that are the same as those of the POSIX- style regular expression. The LIKE search is much simpler than the other two options. Therefore, it is more secure to accept the non-secure mode source search.
-
-

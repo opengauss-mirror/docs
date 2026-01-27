@@ -1,6 +1,7 @@
 # 类型转换
 
 相比原始的openGauss，dolphin插件补全了以下数据类型间相互转换的规则，这些类型包括：
+
 - BIT/TINYINT/SMALLINT/INT/BIGINT
 - UINT1/UINT2/UINT4/UINT8
 - NUMERIC/FLOAT/DOUBLE
@@ -36,8 +37,11 @@
 |JSON|显示为"base64:type16:xxx"，其中xxx为BIT二进制转换为十六进制，"0x"格式字符串的base64编码|如b'1111'::json，结果为"base64:type16:Dw=="，其中Dw==按base64解码为0x0F<br>转换级别为显式|
 
 #### 源类型：数值类型
+
 #### TINYINT/SMALLINT/INT/BIGINT
+
 #### UINT1/UINT2/UINT4/UINT8
+
 #### NUMERIC/FLOAT/DOUBLE
 
 |目标类型|转换规则描述|备注|

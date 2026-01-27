@@ -2,11 +2,11 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137529_zh-cn_topic_0237122159_zh-cn_topic_0059777895_s115556a9029e407ca47ff01fea8de0cb"></a>
 
--   本章节仅包含dolphin新增的条件表达式函数，原openGauss的条件表达式函数请参考[条件表达式函数](../sql_reference/conditional_expression_functions.md)
+- 本章节仅包含dolphin新增的条件表达式函数，原openGauss的条件表达式函数请参考[条件表达式函数](../sql_reference/conditional_expression_functions.md)
 
 ## 条件表达式函数<a name="zh-cn_topic_0283136903_zh-cn_topic_0237121986_zh-cn_topic_0059778809_s67706c61c09047c4bca384689f7f5c08"></a>
 
--   if\(bool, expr1, expr2\)
+- if\(bool, expr1, expr2\)
 
     描述：条件判断函数。若bool值为true，则返回expr1；若bool值为false，则返回expr2
 
@@ -19,6 +19,7 @@
         1
     (1 row)
     ```
+
     ```
     openGauss=# select if(false, 1, 2);
      case
@@ -31,8 +32,8 @@
 
   描述：
 
-    -   如果expr1为NULL，则返回expr2。
-    -   如果expr1非NULL，则返回expr1。
+    - 如果expr1为NULL，则返回expr2。
+    - 如果expr1非NULL，则返回expr1。
 
   示例：
 
@@ -48,8 +49,8 @@
 
 - isnull\( expr \)
 
-    -   如果expr为NULL，则返回true。
-    -   如果expr非NULL，则返回false。
+    - 如果expr为NULL，则返回true。
+    - 如果expr非NULL，则返回false。
 
   示例：
 
@@ -101,8 +102,6 @@
   (1 row)
   ```
 
-
-
 - strcmp(str1, str2)
 
   描述：将str1与str2作比较(两个字符串自左向右逐个字符比较)，若str1=str2，则返回0；若str1>str2，则返回1；若str1<str2，则返回-1。
@@ -132,9 +131,3 @@
        -1
   (1 row)
   ```
-
-  
-
-
-
-

@@ -41,4 +41,3 @@ openGauss=# SELECT * FROM bit_type_t1;
 -- Delete the table.
 openGauss=# DROP TABLE bit_type_t1;
 ```
-

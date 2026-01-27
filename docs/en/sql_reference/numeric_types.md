@@ -177,8 +177,9 @@ openGauss=# DROP TABLE int_type_t2;
 ```
 
 >[!NOTE]NOTE 
->-   Only numbers of the TINYINT, SMALLINT, INTEGER, BIGINT, or INT16 type, that is, integers can be stored. Saving a number with a decimal in any of the data types will result in errors.
->-   The INTEGER type is the common choice, as it offers the best balance between range, storage size, and performance. Generally, use the SMALLINT type only if you are sure that the value range is within the SMALLINT value range. The storage speed of INTEGER is much faster. BIGINT is used only when the range of INTEGER is not large enough.
+>
+>- Only numbers of the TINYINT, SMALLINT, INTEGER, BIGINT, or INT16 type, that is, integers can be stored. Saving a number with a decimal in any of the data types will result in errors.
+>- The INTEGER type is the common choice, as it offers the best balance between range, storage size, and performance. Generally, use the SMALLINT type only if you are sure that the value range is within the SMALLINT value range. The storage speed of INTEGER is much faster. BIGINT is used only when the range of INTEGER is not large enough.
 
 **Table  2**  Arbitrary precision types
 
@@ -262,8 +263,9 @@ openGauss=# DROP TABLE numeric_type_t1;
 ```
 
 >[!NOTE]NOTE 
->-   Compared to the integer types, the arbitrary precision numbers require larger storage space and have lower storage efficiency, operation efficiency, and poorer compression ratio results. The INTEGER type is the common choice when number types are defined. Arbitrary precision numbers are used only when numbers exceed the maximum range indicated by the integers.
->-   When NUMERIC/DECIMAL is used for defining a column, you are advised to specify the precision \(p\) and scale \(s\) for the column.
+>
+>- Compared to the integer types, the arbitrary precision numbers require larger storage space and have lower storage efficiency, operation efficiency, and poorer compression ratio results. The INTEGER type is the common choice when number types are defined. Arbitrary precision numbers are used only when numbers exceed the maximum range indicated by the integers.
+>- When NUMERIC/DECIMAL is used for defining a column, you are advised to specify the precision \(p\) and scale \(s\) for the column.
 
 **Table  3**  Sequence integer
 

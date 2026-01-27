@@ -4,8 +4,8 @@ Low Level Virtual Machine \(LLVM\) dynamic compilation can be used to generate c
 
 LLVM needs to consume extra time to pre-generate intermediate representation \(IR\) and compile it into codes. Therefore, if the data volume is small or if a query itself consumes less time, the performance deteriorates.
 
--   **[LLVM Application Scenarios and Restrictions](llvm_application_scenarios_and_restrictions.md)**  
+- **[LLVM Application Scenarios and Restrictions](llvm_application_scenarios_and_restrictions.md)**  
 
--   **[Other Factors Affecting LLVM Performance](other_factors_affecting_llvm_performance.md)**  
+- **[Other Factors Affecting LLVM Performance](other_factors_affecting_llvm_performance.md)**  
 
--   **[Recommended Suggestions for LLVM](recommended_suggestions_for_llvm.md)**  
+- **[Recommended Suggestions for LLVM](recommended_suggestions_for_llvm.md)**  

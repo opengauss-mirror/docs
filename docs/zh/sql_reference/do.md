@@ -47,5 +47,3 @@ END$$;
 --删除用户webuser。
 openGauss=# DROP USER webuser CASCADE;
 ```
-
-

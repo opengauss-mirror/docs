@@ -55,4 +55,3 @@ PG\_USER\_MAPPING系统表存储从本地用户到远程的映射。
 </tr>
 </tbody>
 </table>
-

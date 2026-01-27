@@ -8,12 +8,12 @@ Range types are useful because they can express multiple element values in a sin
 
 The following built-in ranges are available:
 
--   int4range: integer range.
--   int8range: bigint range.
--   numrange: numeric range.
--   tsrange: range of timestamp without the time zone.
--   tstzrange: range of timestamp with the time zone
--   daterange: date range.
+- int4range: integer range.
+- int8range: bigint range.
+- numrange: numeric range.
+- tsrange: range of timestamp without the time zone.
+- tstzrange: range of timestamp with the time zone
+- daterange: date range.
 
 In addition, you can define your own range types. For details, see  [CREATE TYPE](create_type.md).
 
@@ -154,4 +154,3 @@ CREATE INDEX reservation_idx ON reservation USING GIST (during);
 A GiST or SP-GiST index can accelerate queries involving the following range operators: =, &&, <@, @\>, <<, \>\>, -|-, &<, and &\> \(see  [Range Functions and Operators](range_functions_and_operators.md)\).
 
 In addition, the B-tree and hash index can be created on table columns of the range type. For these index types, basically the only useful range operation is equivalence. Using the corresponding < and \> operators, there is a B-tree sort oder for range value definitions, but that order is fairly arbitrary and is often less useful in the reality. The B-tree and hash support for range types is primarily designed to allow sorting and hashing within a query, rather than creating an index.
-

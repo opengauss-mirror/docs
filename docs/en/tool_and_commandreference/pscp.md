@@ -12,57 +12,54 @@ pscp [OPTIONS]
 
 ## Parameter Description<a name="section7730228131115"></a>
 
--   --help
+- --help
 
     Displays help information.
 
--   -H HOSTNAME
+- -H HOSTNAME
 
     Specifies the host list.
 
--   -h HOSTFILE
+- -h HOSTFILE
 
     Specifies the full path of the file to be written into the host list.
 
--   -t TIMEOUT
+- -t TIMEOUT
 
     Specifies the connection timeout interval, in seconds. The default value is  **300s**.
 
--   -p PARALLEL
+- -p PARALLEL
 
     Specifies the maximum number of concurrent tasks. The default value is  **256**.
 
--   -o OUTDIR
+- -o OUTDIR
 
     Specifies the full file path of the execution result.
 
--   -e ERRDIR
+- -e ERRDIR
 
     Specifies the full path of the error information output file.
 
--   -r
+- -r
 
     Recursively copies a directory.
 
--   -v
+- -v
 
     Enables the diagnosis message function.
 
--   -s
+- -s
 
     Displays the execution result.
 
--   -x EXTRA
+- -x EXTRA
 
     Specifies the extra command line parameters.
 
--   -i
+- -i
 
     Displays the output and errors of all nodes.
 
-
--   -O OPT
+- -O OPT
 
     Specifies the added SCP parameters in offline mode.
-
-

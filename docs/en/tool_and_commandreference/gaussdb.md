@@ -199,8 +199,6 @@ The  **gaussdb**  command can also be called in single-user mode. The primary us
 </tbody>
 </table>
 
-
-
 Parameters described in  [Table 2](#en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_table56695537)  are used for debugging purposes, and in some cases for assisting in recovering severely damaged databases. Do not use these parameters for debugging if databases are providing services for applications.
 
 **Table  2**  Developer options
@@ -387,9 +385,9 @@ In addition to the preceding parameters, all parameters in postgres.conf can be 
 
 ## Environment Variables<a name="en-us_topic_0237152404_en-us_topic_0059777816_sac6ef2b8033a4b3687c3968ca3692932"></a>
 
--   **PGLINETENCODING**: default character encoding used by clients. Clients can overwrite it individually. This value can also be set in the configuration file.
--   **PGDATESTYLE**: default value of the run-time  **DateStyle**  parameter. The use of this environment variable is deprecated.
--   **TZ**: server time zone.
+- **PGLINETENCODING**: default character encoding used by clients. Clients can overwrite it individually. This value can also be set in the configuration file.
+- **PGDATESTYLE**: default value of the run-time  **DateStyle**  parameter. The use of this environment variable is deprecated.
+- **TZ**: server time zone.
 
 ## Error Handling<a name="en-us_topic_0237152404_en-us_topic_0059777816_s93533ab12cab4b3cbdcc08cd129fe243"></a>
 
@@ -412,11 +410,12 @@ If you are certain that no conflicting server is running, you can remove the loc
 A failure message indicating inability to bind to a port might indicate that the port is already in use by a non-openGauss process. This message may also be reported if you terminate  **gaussdb** and immediately restart it using the same port. In this case, you must simply wait a few seconds until the operating system closes the port before trying again. Finally, you may get this error if you specify a port number that your operating system considers it to be reserved. For example, the Unix considers ports whose IDs are under 1024 to be "trusted" and permits only Unix administrators to access the Unix.
 
 >[!TIP]NOTICE   
->-   If possible, do not use SIGKILL to stop the main process. because the operation prevents  **gaussdb** from releasing system resources \(such as shared memory and semaphores\) that it holds before terminating. This might cause problems for starting a fresh process.  
->-   To properly terminate the server process, signals  **SIGTERM**,  **SIGINT**, and  **SIGQUIT** can be used.  **SIGTERM**  will wait for all clients to terminate before exit.  **SIGINT**  will forcibly disconnect all clients, and  **SIGQUIT**  will exit immediately without proper shutdown, resulting in a recovery run during restart.  
->-   The SIGHUP signal will reload the server configuration files. It is also possible to send  **SIGHUP** to an individual server process, but that is usually not sensible.  
->-   To cancel a running query, send the  **SIGINT** signal to the process running that command.  
->-   The main server process uses  **SIGTERM** to tell its subordinate server processes to quit properly and SIGQUIT to terminate without a cleanup. These signals should not be used by users. It is also unwise to send SIGKILL to a server process: The main process will interpret this as a crash and will force all the subordinate processes to quit as part of its standard crash-recovery procedure.  
+>
+>- If possible, do not use SIGKILL to stop the main process. because the operation prevents  **gaussdb** from releasing system resources \(such as shared memory and semaphores\) that it holds before terminating. This might cause problems for starting a fresh process.  
+>- To properly terminate the server process, signals  **SIGTERM**,  **SIGINT**, and  **SIGQUIT** can be used.  **SIGTERM**  will wait for all clients to terminate before exit.  **SIGINT**  will forcibly disconnect all clients, and  **SIGQUIT**  will exit immediately without proper shutdown, resulting in a recovery run during restart.  
+>- The SIGHUP signal will reload the server configuration files. It is also possible to send  **SIGHUP** to an individual server process, but that is usually not sensible.  
+>- To cancel a running query, send the  **SIGINT** signal to the process running that command.  
+>- The main server process uses  **SIGTERM** to tell its subordinate server processes to quit properly and SIGQUIT to terminate without a cleanup. These signals should not be used by users. It is also unwise to send SIGKILL to a server process: The main process will interpret this as a crash and will force all the subordinate processes to quit as part of its standard crash-recovery procedure.  
 
 ## **Usage**<a name="en-us_topic_0237152404_en-us_topic_0059777816_s188b513ab6fb4938a75c0cd8a49cc38c"></a>
 
@@ -429,20 +428,21 @@ gaussdb --single -D /usr/local/pgsql/data other-options my_database
 Use  **-D**  to provide the correct path of the database directory for the server. Besides, specify the name of the existing particular database.
 
 >[!TIP]NOTICE   
->-   In most cases, the single-user mode server treats newline as the command entry terminator. To continue a command across multiple lines, you must type a backslash just before each newline except the last one.  
->-   If you use the -j command line option, then newline does not terminate command entry. In this case, the server will read the standard input until the end-of-file \(EOF\) marker, then process the input as a single command string. Backslashes and newlines are treated as common characters in this case.  
->-   To quit the session, type EOF \(Control+D\). If you have used -j, two consecutive EOFs are needed to exit.  
->-   The single-user mode server does not provide complex line-editing functions \(no command history, for example\). The single-user mode also does not do any background processing, like automatic checkpoints.  
+>
+>- In most cases, the single-user mode server treats newline as the command entry terminator. To continue a command across multiple lines, you must type a backslash just before each newline except the last one.  
+>- If you use the -j command line option, then newline does not terminate command entry. In this case, the server will read the standard input until the end-of-file \(EOF\) marker, then process the input as a single command string. Backslashes and newlines are treated as common characters in this case.  
+>- To quit the session, type EOF \(Control+D\). If you have used -j, two consecutive EOFs are needed to exit.  
+>- The single-user mode server does not provide complex line-editing functions \(no command history, for example\). The single-user mode also does not do any background processing, like automatic checkpoints.  
 
 ## Example<a name="en-us_topic_0237152404_en-us_topic_0059777816_en-us_topic_0058968126_section367683"></a>
 
-1.  Run the following command to start gaussdb in the background using default values:
+1. Run the following command to start gaussdb in the background using default values:
 
     ```
     nohup gaussdb >logfile 2>&1 </dev/null  &
     ```
 
-2.  Run the following command to start gaussdb with a specified port, for example, 1234:
+2. Run the following command to start gaussdb with a specified port, for example, 1234:
 
     ```
     gaussdb --single_node -p 1234 -D data_dir

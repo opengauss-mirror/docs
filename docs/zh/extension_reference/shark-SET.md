@@ -6,15 +6,14 @@
 
 ## 注意事项<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s8cb7444b58764d99913a4cc61f397f9f"></a>
 
--   本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。
--   新增支持set guc参数时to关键词成可选语法。
+- 本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。
+- 新增支持set guc参数时to关键词成可选语法。
 
 ## 语法格式<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s29888afda1844d6f9fc677f1b59b5b7d"></a>
 
 ```
 SET {config_parameter} {value};
 ```
-
 
 ## 示例<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s51d29fa208274032a4e5308b57638421"></a>
 

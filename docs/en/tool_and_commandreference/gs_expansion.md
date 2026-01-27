@@ -6,15 +6,15 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
 
 ## Precautions<a name="section17961256134615"></a>
 
--   The parameter **synchronous\_standby\_names** will not automatically be updated after expansion. If you add a standby node for this parameter, please update manually after expansion.
--   Before expanding a cascade_standby, it is necessary to ensure that there has been already standby in Normal state in the same AZ(Available Zone) as the cascade_standby in current cluster, or that standby in the same AZ as the cascade_standby is being expanding at the same time.
--   Before scaling out the database cluster, you need to pay attention to the CPU, I/O, and network conditions of the primary node and new nodes. You are not advised to perform scale-out when the hardware load is heavy. Otherwise, the scale-out may take a long time or even fail.
--   If the original cluster contains a large amount of data, run the checkpoint on the primary node before the scale-out. Otherwise, the scale-out may take a long time or even fail.
--   When the streaming DR function is used, this tool is not supported.
+- The parameter **synchronous\_standby\_names** will not automatically be updated after expansion. If you add a standby node for this parameter, please update manually after expansion.
+- Before expanding a cascade_standby, it is necessary to ensure that there has been already standby in Normal state in the same AZ(Available Zone) as the cascade_standby in current cluster, or that standby in the same AZ as the cascade_standby is being expanding at the same time.
+- Before scaling out the database cluster, you need to pay attention to the CPU, I/O, and network conditions of the primary node and new nodes. You are not advised to perform scale-out when the hardware load is heavy. Otherwise, the scale-out may take a long time or even fail.
+- If the original cluster contains a large amount of data, run the checkpoint on the primary node before the scale-out. Otherwise, the scale-out may take a long time or even fail.
+- When the streaming DR function is used, this tool is not supported.
 
 ## Prerequisites<a name="section18105194594714"></a>
 
--   The openGauss image package exists on the database host and is decompressed. The capacity is scaled out by running the  **./gs\_expansion**  command in the  **script**  directory.
+- The openGauss image package exists on the database host and is decompressed. The capacity is scaled out by running the  **./gs\_expansion**  command in the  **script**  directory.
 
 - The same users and user groups as those on the primary node have been created on the new standby node.
 
@@ -39,66 +39,63 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
   >[!NOTE]NOTE 
   >For security purposes, the tool in the  **gaussdbToolPath**  directory will be automatically deleted after the pre-installation is complete in enterprise-edition installation mode.
 
-
 ## 
-
 
 ## Syntax<a name="section10648255135011"></a>
 
--   Scale out the standby node.
+- Scale out the standby node.
 
     ```
     ./gs_expansion –U USER –G GROUP –X XMLFILE –h hostlist [-L]
     ```
 
--   Show help information.
+- Show help information.
 
     ```
     ./gs_expansion -? | --help 
     ```
 
--   Show version information.
+- Show version information.
 
     ```
     ./gs_expansion -V | --version 
     ```
 
-
 ## Description<a name="section46642447531"></a>
 
--   -U
+- -U
 
     Specifies the OS username of openGauss.
 
     The user name of the new standby node must be the same as that of the primary node where the database has been installed and must be created in advance.
 
--   -G
+- -G
 
     Specifies the OS user group of openGauss.
 
     The user group of the new standby node must be the same as that of the primary node where the database has been installed.
 
--   -X
+- -X
 
     Specifies the path of the openGauss configuration file.
 
     Value range: storage paths of XML files. The XML file must contain the configuration information about the installed database and all nodes of the new database.
 
--   -h
+- -h
 
     Specifies the IP address of the standby node to be scaled.
 
     The value must be the same as the value of  **backip**  in the XML configuration file. If there are multiple nodes, use commas \(,\) to separate them.
 
--   -L
+- -L
 
     If the standalone database has been installed on the node to be scaled, skip the step of installing the database on the new standby node and directly establish the primary/standby relationship by adding the  **–L**  parameter during scaling.
 
     >[!NOTE]NOTE  
-    >-   The databases installed on the primary and standby nodes must use the same user and user group, and the paths for separating environment variables must be the same.  
-    >-   When the primary and standby nodes are installed, the values of  **gaussdbAppPath**,  **gaussdbLogPath**,  **gaussdbToolPath**, and  **corePath**  in the XML configuration file must be the same.  
-    >-   The data on the scaled standby node must be installed in om mode. The database started in compilation mode does not support scaling out with the primary node.  
-    >-   The database version of new instance need to be same as the primary instance.
+    >- The databases installed on the primary and standby nodes must use the same user and user group, and the paths for separating environment variables must be the same.  
+    >- When the primary and standby nodes are installed, the values of  **gaussdbAppPath**,  **gaussdbLogPath**,  **gaussdbToolPath**, and  **corePath**  in the XML configuration file must be the same.  
+    >- The data on the scaled standby node must be installed in om mode. The database started in compilation mode does not support scaling out with the primary node.  
+    >- The database version of new instance need to be same as the primary instance.
 
 - --time-out=SECS
 
@@ -108,14 +105,13 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
 
   Unit: s
 
--   -?, –help
+- -?, –help
 
     Shows help information.
 
--   -V, –version
+- -V, –version
 
     Shows version information.
-
 
 ## Examples<a name="section14886952175610"></a>
 

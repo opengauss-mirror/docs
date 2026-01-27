@@ -227,5 +227,3 @@ openGauss中只有一份pg\_authid，不是每个数据库有一份。需要有�
 </tr>
 </tbody>
 </table>
-
-

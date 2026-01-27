@@ -90,4 +90,3 @@ The usual logical operators include AND, OR, and NOT. SQL uses a three-valued lo
 
 >[!NOTE]NOTE 
 >The operators AND and OR are commutative, that is, you can switch the left and right operand without affecting the result.
-

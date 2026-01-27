@@ -6,9 +6,9 @@ cm\_agent is a database management component deployed on each database host. It 
 
 The main functions are as follows:
 
--   It starts and stops the instance processes deployed on the local host when the database instance is started or stopped.
--   It monitors the instance status on the local host and sends the status to the CM server.
--   It runs the commands delivered by the CM server after arbitration.
+- It starts and stops the instance processes deployed on the local host when the database instance is started or stopped.
+- It monitors the instance status on the local host and sends the status to the CM server.
+- It runs the commands delivered by the CM server after arbitration.
 
 **Command description:**
 
@@ -21,7 +21,6 @@ The main functions are as follows:
 
     Displays help information about cm\_agent command parameters and exits.
 
-
 - Locations where the log information is recorded:
   - 0
 
@@ -39,7 +38,6 @@ The main functions are as follows:
 
     Empty file, that is, no log information is recorded.
 
-
 - Startup modes:
   - normal
 
@@ -49,14 +47,13 @@ The main functions are as follows:
 
     Startup in abnormal mode.
 
-
 ## cm\_server<a name="section132815414420"></a>
 
 cm\_server is a component used for managing database instances and arbitrating instances. The main functions are as follows:
 
--   Receives the status of each database instance from cm\_agent on each node.
--   Allows you to query the overall status of the database instances.
--   Monitors instance status changes and delivers arbitration commands.
+- Receives the status of each database instance from cm\_agent on each node.
+- Allows you to query the overall status of the database instances.
+- Monitors instance status changes and delivers arbitration commands.
 
 **Command description:**
 
@@ -69,7 +66,6 @@ cm\_server is a component used for managing database instances and arbitrating i
 
     Displays help information about cm\_server command parameters and exits.
 
-
 - Locations where the log information is recorded:
   - 0
 
@@ -87,33 +83,31 @@ cm\_server is a component used for managing database instances and arbitrating i
 
     Empty file, that is, no log information is recorded.
 
-
-
 ## Custom Resource<a name="section43117352044"></a>
 
 Currently, CM can monitor stateless resources. That is, each resource instance has the same role and does not distinguish between primary and standby resources, or resources can perform primary/standby quorum by themselves. CM provides the following functions:
 
--   Resource configuration
+- Resource configuration
 
     The resource configuration file **cm\_resource.json** contains attributes of all custom resources. You can run the **cm\_ctl res** command to modify the configuration file. The modification does not take effect dynamically. After modifying the configuration file, restart the CM for the modification to take effect.
 
--   Client
+- Client
 
     The CM provides a client dynamic library for resource integration and provides the cluster status query, status change notification, and cluster lock capabilities.
 
--   Automatic startup and stop
+- Automatic startup and stop
 
     A script must be provided for starting/stopping and detecting resources. The script path must be configured in the resource configuration file.
 
--   Manual startup and stop
+- Manual startup and stop
 
     You can run the **cm\_ctl start/stop -n -I** command to start or stop resource instances. For details, see [cm_ctl](cm_ctl.md).
 
--   Custom resource status
+- Custom resource status
 
     Custom resources can be in the online, offline, deleted or unknown state. You can run the **cm\_ctl** command to query the state.
     
-    ### Configuration Method
+### Configuration Method
     
     After customized resources are installed, you need to configure the following files to use the customized resource monitoring function:
     
@@ -264,35 +258,34 @@ Currently, CM can monitor stateless resources. That is, each resource instance h
     
     Configuration description: 
     
-    -   **resources**: customized resource object list. The name is fixed and cannot be changed.
-    -   **name**: name of a customized resource object. The value is a string of a maximum of 32 characters (including the end '\0').
-    -   **resources_type**: resource type. The value can be ["APP", "DN"]. **APP** indicates a custom resource, and **DN** indicates a database resource.
-    -   **instances**: list of nodes where customized resources are located.
-    -   **node_id**: ID of the node where the resource instance is located.
-    -   **res_instance_id**: resource instance ID. The value is greater than or equal to 0. Different instances of the same resource have different IDs.
-    -   **script**: location of the resource script.
-    -   **check_interval**: interval for reporting the resource status, in seconds. The value is greater than or equal to 0.
-    -   **time_out**: script execution timeout interval, in seconds. The value is greater than or equal to 0.
-    -   **restart_delay**: restart delay after a fault occurs, in seconds. The value range is [0,1800].
-    -   **restart_period**: If the difference between the current time and the latest restart time is greater than the value of **restart_period**, the number of resource restart times increases by 1.
-    -   **restart_times**: maximum number of restart times in a period. If the number of restart times exceeds the value of **restart_times**, the system does not restart the resource and marks the resource as unavailable. The value range is [0,9999]. The value **0** indicates unlimited restart.
+    - **resources**: customized resource object list. The name is fixed and cannot be changed.
+    - **name**: name of a customized resource object. The value is a string of a maximum of 32 characters (including the end '\0').
+    - **resources_type**: resource type. The value can be ["APP", "DN"]. **APP** indicates a custom resource, and **DN** indicates a database resource.
+    - **instances**: list of nodes where customized resources are located.
+    - **node_id**: ID of the node where the resource instance is located.
+    - **res_instance_id**: resource instance ID. The value is greater than or equal to 0. Different instances of the same resource have different IDs.
+    - **script**: location of the resource script.
+    - **check_interval**: interval for reporting the resource status, in seconds. The value is greater than or equal to 0.
+    - **time_out**: script execution timeout interval, in seconds. The value is greater than or equal to 0.
+    - **restart_delay**: restart delay after a fault occurs, in seconds. The value range is [0,1800].
+    - **restart_period**: If the difference between the current time and the latest restart time is greater than the value of **restart_period**, the number of resource restart times increases by 1.
+    - **restart_times**: maximum number of restart times in a period. If the number of restart times exceeds the value of **restart_times**, the system does not restart the resource and marks the resource as unavailable. The value range is [0,9999]. The value **0** indicates unlimited restart.
     
     >[!WARNING]CAUTION   
     >The resource configuration file must exist on all nodes and be consistent. 
     >Ensure that the resource script can run properly.
 
-
 ## Shared Storage<a name="section135462412052"></a>
 
--   Disk heartbeat
+- Disk heartbeat
 
     The CM Agent on each node periodically writes heartbeat messages to the voting disk. The CM Server obtains the heartbeat messages from the voting disk and uses them as the arbitration basis in primary/standby sharing mode.
 
--   Network heartbeat
+- Network heartbeat
 
     The main logic of the network heartbeat detection between nodes is implemented in the CM Agent. To avoid frequent connection setup, persistent connections are used for heartbeat detection. That is, the CM Agents exchange heartbeat messages through TCP persistent connections. Each CM Agent node periodically broadcasts the heartbeat messages and periodically reports the list information to the CM Server. This function depends on the clock synchronization of each node.
 
--   Arbitration among clusters
+- Arbitration among clusters
 
     The CM Server performs arbitration based on the network heartbeat data, disk heartbeat data, and shared disk status, and selects the leader node among clusters.
 
@@ -312,39 +305,38 @@ Currently, CM can monitor stateless resources. That is, each resource instance h
 
     2. If the number of nodes is the same, the cluster with smaller node IDs is selected.
 
--   Constraints:
-    -   The clocks of cluster nodes must be synchronized.
-    -   Before installing the CM, ensure that the shared disk has at least 150 MB free space. Otherwise, historical data may be affected.
-    -   Before installing the CM, ensure that the voting disk has been cleared. Otherwise, historical data may be affected.
-    -   Heartbeat detection is performed between all nodes in a cluster, which may affect the network in a large cluster. Therefore, heartbeat detection can be enabled for a maximum of 64 nodes. (DMS supports a maximum of 64 nodes, which meets service requirements.)
-    -   The CM cluster supports a maximum of eight standby nodes. Therefore, a maximum of nine copies are supported in a cluster.
-    -   Ensure that the voting disk and shared disk contain at least 1 GB space, which is exclusively used by the CM and cannot be used by other applications.
-    -   The disk heartbeat is enabled only in arbitration mode of the shared storage architecture.
-
+- Constraints:
+    - The clocks of cluster nodes must be synchronized.
+    - Before installing the CM, ensure that the shared disk has at least 150 MB free space. Otherwise, historical data may be affected.
+    - Before installing the CM, ensure that the voting disk has been cleared. Otherwise, historical data may be affected.
+    - Heartbeat detection is performed between all nodes in a cluster, which may affect the network in a large cluster. Therefore, heartbeat detection can be enabled for a maximum of 64 nodes. (DMS supports a maximum of 64 nodes, which meets service requirements.)
+    - The CM cluster supports a maximum of eight standby nodes. Therefore, a maximum of nine copies are supported in a cluster.
+    - Ensure that the voting disk and shared disk contain at least 1 GB space, which is exclusively used by the CM and cannot be used by other applications.
+    - The disk heartbeat is enabled only in arbitration mode of the shared storage architecture.
 
 ## DN Arbitration Supported by CM<a name="section2099617234715"></a>
 
--   The CM supports the following DN arbitration modes:
-    -   Quorum: The synchronous standby node is selected based on the MAJORITY arbitration.
-        -   Description: The CM performs arbitration based on the quorum mode. When DN shards have no primary DN, the CM sends a failover message to the node with the largest term and LSN to promote the node to primary after redoing MAJORITY DNs.
-        -   Constraints: At least a cluster with one primary and two standby nodes are required.
+- The CM supports the following DN arbitration modes:
+    - Quorum: The synchronous standby node is selected based on the MAJORITY arbitration.
+        - Description: The CM performs arbitration based on the quorum mode. When DN shards have no primary DN, the CM sends a failover message to the node with the largest term and LSN to promote the node to primary after redoing MAJORITY DNs.
+        - Constraints: At least a cluster with one primary and two standby nodes are required.
 
-    -   DCF:
-        -   Automatic switchover based on the Paxos protocol:
-            -   Description: In DCF automatic switchover mode, the CM does not select the primary DN. Instead, the CM is only responsible for data collection and stopped resource detection.
-            -   Constraint: Only **cm\_ctl switchover -n NODEID -D DATADIR** can be used for switchover.
-            -   CM configuration: enable\_dcf=ON and dn\_arbitrate\_mode=paxos
-            -   DN configuration: enable\_dcf=ON
+    - DCF:
+        - Automatic switchover based on the Paxos protocol:
+            - Description: In DCF automatic switchover mode, the CM does not select the primary DN. Instead, the CM is only responsible for data collection and stopped resource detection.
+            - Constraint: Only **cm\_ctl switchover -n NODEID -D DATADIR** can be used for switchover.
+            - CM configuration: enable\_dcf=ON and dn\_arbitrate\_mode=paxos
+            - DN configuration: enable\_dcf=ON
 
-        -   General constraint:
-            -   At least a cluster with one primary and two standby nodes are required.
+        - General constraint:
+            - At least a cluster with one primary and two standby nodes are required.
 
-        -   Default installation: DCF automatic switchover mode
+        - Default installation: DCF automatic switchover mode
 
-    -   Shared storage:
-        -   Description: In this scenario, the CM does not select the primary DN. Instead, the CM is only responsible for data collection and stopped resource detection.
-        -   CM configuration: dn\_arbitrate\_mode=share\_disk
-        -   For details about description and constraints, see [Shared Storage](#section135462412052).
+    - Shared storage:
+        - Description: In this scenario, the CM does not select the primary DN. Instead, the CM is only responsible for data collection and stopped resource detection.
+        - CM configuration: dn\_arbitrate\_mode=share\_disk
+        - For details about description and constraints, see [Shared Storage](#section135462412052).
 
 ## Cluster Information Query and Push
 
@@ -396,28 +388,28 @@ By running the CMRestAPI component, the CM supports:
    (1) By default, the CMRestAPI uses the HTTP service and supports the configuration of the access whitelist. You can use the startup parameter **-w** to configure the whitelist file of the access source IP address. Each line in the whitelist file contains one IP address. 
    (2) To use the HTTPS service, you can specify the system parameter **server.ssl** in the JAR package during startup to enable the CMRestAPI to start the HTTPS service, or write related parameters into the **application.properties** file and specify the configuration file in the startup command, or configure the **application.properties** file in the **resource** directory of the source code and compile the file. The following is an example of customized configuration parameters:  
 
-```
--Dserver.port=Service listening port -Dserver.ssl.key-store=Key file path -Dserver.ssl.key-store-password=Key file password -Dserver.ssl.key-store-type=Key type  
-Example: 
-Specify parameters:
+    ```
+    -Dserver.port=Service listening port -Dserver.ssl.key-store=Key file path -Dserver.ssl.key-store-password=Key file password -Dserver.ssl.key-store-type=Key type  
+    Example: 
+    Specify parameters:
 
-Specify system parameters.
-java -jar -Dserver.port=8443 -Dserver.ssl.key-store=/home/omm/keystore.p12 -Dserver.ssl.key-store-password=Abcdef@123 -Dserver.ssl.key-store-type=PKCS12 cmrestapi-xxx.jar -e envFile  
-Specify a configuration file. 
-java -jar -Dspring.config.location=/configpath/application.properties cmrestapi-xxx.jar -e envFile
-```
+    Specify system parameters.
+    java -jar -Dserver.port=8443 -Dserver.ssl.key-store=/home/omm/keystore.p12 -Dserver.ssl.key-store-password=Abcdef@123 -Dserver.ssl.key-store-type=PKCS12 cmrestapi-xxx.jar -e envFile  
+    Specify a configuration file. 
+    java -jar -Dspring.config.location=/configpath/application.properties cmrestapi-xxx.jar -e envFile
+    ```
 
-You can search for and configure more parameters.
+    You can search for and configure more parameters.
 
 2. Memory-related parameters. 
    This program uses the Spring Boot framework. By default, the startup occupies a large amount of memory (about 1 GB). If the number of concurrent requests is small and you do not want the program to occupy a large amount of memory, you can specify some system parameters during startup to reduce the memory usage. The following is an example of the startup parameters:  
 
-```
--XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=56m -Xms128m -Xmx128m -Xmn32m -Xss328k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC  
-Example: java -jar -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=56m -Xms128m -Xmx128m -Xmn32m -Xss328k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC cmrestapi-xxx.jar -e envFile
-```
+    ```
+    -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=56m -Xms128m -Xmx128m -Xmn32m -Xss328k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC  
+    Example: java -jar -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=56m -Xms128m -Xmx128m -Xmn32m -Xss328k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC cmrestapi-xxx.jar -e envFile
+    ```
 
-You can search for and configure more parameters.
+    You can search for and configure more parameters.
 
 3. Customized resource configuration file. 
    This program depends on CM-related processes and instructions. Therefore, this program must run with CM at the same time. You need to configure the customized resource configuration file. For details about the configuration method, see the content related to the customized resource monitoring feature.
@@ -547,6 +539,6 @@ The following is an example of the customized resource file **cm_resource.json**
 >To use the customized resource management function of CM, the process needs to be executed in the backend. Therefore, you need to redirect the log output to the log file or configure the log output options, and use nohup and & to run the program in the backend.
 >This program must run on a node where a database is deployed. If the primary/standby information push function is required during a cluster switchover, this program must run on all database nodes in the cluster.
 
-2. Start the cluster. You can use a browser to access the cluster or node information query interface to query the corresponding information.
-3. Develop the application (for details, see the demo of the source code repository) and start the application.
-4. Register an address for receiving information.
+1. Start the cluster. You can use a browser to access the cluster or node information query interface to query the corresponding information.
+2. Develop the application (for details, see the demo of the source code repository) and start the application.
+3. Register an address for receiving information.

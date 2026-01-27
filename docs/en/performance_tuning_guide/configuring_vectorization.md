@@ -2,10 +2,10 @@ fv# Configuring Vectorization<a name="EN-US_TOPIC_0000001241171615"></a>
 
 The openGauss database supports the row executor and vectorized executor for processing row-store tables and column-store tables, respectively.
 
--   More data is read in one batch at a time, saving I/O resources.
--   There are a large number of records in a batch, and the CPU cache hit rate increases.
--   In pipeline mode, the number of function calls is small.
--   A batch of data is processed at a time, which is efficient.
+- More data is read in one batch at a time, saving I/O resources.
+- There are a large number of records in a batch, and the CPU cache hit rate increases.
+- In pipeline mode, the number of function calls is small.
+- A batch of data is processed at a time, which is efficient.
 
 Therefore, the openGauss database can achieve better query performance for complex analytical queries. However, column-store tables do not perform well in data insertion and update. Therefore, column-store tables cannot be used for services with frequent data insertion and update.
 
@@ -50,4 +50,3 @@ Execution plan of the TPCH Q1 vectorized executor:
  Total runtime: 683225.564 ms
 (11 rows)
 ```
-

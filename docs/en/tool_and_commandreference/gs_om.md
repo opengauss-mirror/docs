@@ -10,25 +10,25 @@ Log in to the OS as the OS user **omm** to run the **gs\_om** command.
 
 ## Syntax <a name="section1241317667"></a>
 
--   Start openGauss.
+- Start openGauss.
 
     ```
     gs_om -t start [-h HOSTNAME] [-D dataDir] [--time-out=SECS] [--security-mode=MODE] [--cluster-number=None] [-l LOGFILE]
     ```
 
--   Stop openGauss.
+- Stop openGauss.
 
     ```
     gs_om -t stop [-h HOSTNAME] [-D dataDir]  [--time-out=SECS] [-m MODE] [-l LOGFILE] 
     ```
 
--   Restart openGauss.
+- Restart openGauss.
 
     ```
     gs_om -t restart [-h HOSTNAME] [-D dataDir] [--time-out=SECS] [--security-mode=MODE] [-l LOGFILE] [-m MODE]
     ```
 
--   Query the openGauss status.
+- Query the openGauss status.
 
     ```
     gs_om -t status [-h HOSTNAME] [-o OUTPUT] [--detail] [--all] [-l LOGFILE]
@@ -41,78 +41,76 @@ Log in to the OS as the OS user **omm** to run the **gs\_om** command.
   gs_om -t generateconf --old-values=old --new-values=new [--distribute] [-l LOGFILE]
   ```
 
--   Generate a dynamic configuration file. Perform this operation after the failover or switchover from the standby node to the primary node.
+- Generate a dynamic configuration file. Perform this operation after the failover or switchover from the standby node to the primary node.
 
     ```
     gs_om -t refreshconf
     ```
 
--   Display the static configurations.
+- Display the static configurations.
 
     ```
     gs_om -t view [-o OUTPUT]
     ```
 
--   Query openGauss status details.
+- Query openGauss status details.
 
     ```
     gs_om -t query [-o OUTPUT]
     ```
 
--   Replace SSL certificates.
+- Replace SSL certificates.
 
     ```
     gs_om -t cert --cert-file=CERTFILE [-l LOGFILE]
     gs_om -t cert --rollback
     ```
 
--   Enable or disable the Kerberos authentication in the database.
+- Enable or disable the Kerberos authentication in the database.
 
     ```
     gs_om -t kerberos -m [install|uninstall] -U USER [-l LOGFILE] [--krb-client|--krb-server]
     ```
 
--   Display help information.
+- Display help information.
 
     ```
     gs_om -? | --help
     ```
 
--   Display the version number.
+- Display the version number.
 
     ```
     gs_om -V | --version
     ```
 
-
 ## Parameter Description<a name="section012816161027"></a>
 
 The **gs\_om** tool can use the following types of parameters:
 
--   Common parameters
-    -   -t
+- Common parameters
+    - -t
 
         Specifies the **gs\_om** command type.
 
         Value range: **start**, **stop**, **status**, **generateconf**, **cert**, **view**, **query**, **refreshconf**, and **kerberos**
 
-    -   -l
+    - -l
 
         Specifies a log file and its storage path.
 
         Default value: *$GAUSSLOG***/om/gs\_om-***YYYY-MM-DD\_hhmmss***.log** (default value for **virtualip**: **/tmp/gs\_virtualip/gs\_om-***YYYY-MM-DD\_hhmmss***.log**)
 
-    -   -?, --help
+    - -?, --help
 
         Displays help information.
 
-    -   -V, --version
+    - -V, --version
 
         Displays version information.
 
-
--   Parameters for starting the openGauss:
-    -   -h
+- Parameters for starting the openGauss:
+    - -h
 
         Specifies the name of the server to be started. Only one server can be started at a time.
 
@@ -120,7 +118,7 @@ The **gs\_om** tool can use the following types of parameters:
 
         If no server name is specified, openGauss is started.
 
-    -   -D
+    - -D
 
         Specifies the path of the database node.
 
@@ -133,7 +131,7 @@ The **gs\_om** tool can use the following types of parameters:
         
         Assume that the database and CM processes of the current instance are stopped. If the **-D** parameter is specified when the instance is started, only the database process will be started. In this case, the database process fails to be started because the CM process does not exist. You can remove the **-D** parameter to start the entire instance.
 
-    -   --time-out=SECS
+    - --time-out=SECS
 
         Specifies the timeout threshold. **gs_om** exits when times out. (Unit: second)
 
@@ -141,24 +139,23 @@ The **gs\_om** tool can use the following types of parameters:
 
         Default value: **300**
 
-    -   --security-mode
+    - --security-mode
 
         Specifies whether to start the database in security mode.
 
         Value range:
 
-        -   **on**: security mode enabled
-        -   **off**: security mode disabled. By default, the security mode is disabled.
+        - **on**: security mode enabled
+        - **off**: security mode disabled. By default, the security mode is disabled.
 
-    -   --cluster-number
+    - --cluster-number
         
         Specifies the kernel running version during startup.
 
         Value range: kernel version
 
-
--   Parameters for stopping the openGauss:
-    -   -h
+- Parameters for stopping the openGauss:
+    - -h
 
         Specifies the name of the server where the instance to be stopped is located. Only one server can be stopped at a time.
 
@@ -166,18 +163,18 @@ The **gs\_om** tool can use the following types of parameters:
 
         If no server name is specified, openGauss is stopped.
 
-    -   -m, --mode=MODE
+    - -m, --mode=MODE
 
         Sets the stop mode.
 
         Value range: the following stop modes are supported.
 
-        -   fast: The data of the primary and standby instance relationship is ensured to be consistent.
-        -   **immediate**: The data of the primary and standby instance relationship is not ensured to be consistent.
+        - fast: The data of the primary and standby instance relationship is ensured to be consistent.
+        - **immediate**: The data of the primary and standby instance relationship is not ensured to be consistent.
 
         Default value: **fast**
 
-    -   --time-out=SECS
+    - --time-out=SECS
 
         Specifies the timeout threshold. **gs_om** exits when times out. (Unit: second)
 
@@ -185,12 +182,11 @@ The **gs\_om** tool can use the following types of parameters:
 
         Default value: **300**
 
-
--   Parameters for checking the status:
+- Parameters for checking the status:
 
     [Table 1](#table1171617665) describes parameters in the query result.
 
-    -   -h
+    - -h
 
         Specifies the name of the server to be queried.
 
@@ -198,33 +194,32 @@ The **gs\_om** tool can use the following types of parameters:
 
         If no server is specified, openGauss is queried.
 
-    -   --az
+    - --az
 
         Specifies the name of the AZ to be queried, for example, **--az=AZ1**.
 
         Value: name of the AZ. If no AZ name is specified, all AZs are queried.
 
-    -   -o
+    - -o
 
         Outputs status information to the specified output file.
 
         If the parameter is not output to the specified file, it is displayed on the screen.
     
-    -   --detail
+    - --detail
     
         Displays detailed information. If the parameter is not specified, only a prompt is displayed indicating whether the server is normal. 
         
         You can run the **gs_ctl query** command on each database node to query and summarize the results to obtain the detailed information about openGauss.
         
-    -    --all
+    - --all
         
         Displays information about all openGauss nodes.
         
         You can run the **gsql **command on each database node to query the system catalog and summarize the results to obtain information about all openGauss nodes. Ensure that **gsql **can be used to query the correct information before using this parameter.
 
-
--   Parameters for generating the configuration file:
-    -   -X
+- Parameters for generating the configuration file:
+    - -X
 
         Specifies the path of the openGauss configuration file.
 
@@ -242,19 +237,18 @@ The **gs\_om** tool can use the following types of parameters:
     
       Value range: **port**, **ip**, **hostname**. You can enter multiple values and separate them with commas (,). The values correspond to **old-values**.
     
-    -   --distribute
+    - --distribute
     
         Publishes the static configuration file to the installation directory of the openGauss instance.
 
-
--   Enable or disable the Kerberos authentication in the database:
-    -   -U
+- Enable or disable the Kerberos authentication in the database:
+    - -U
 
         Specifies a database deployment user.
 
         Value range: a database deployment user
 
-    -   -m
+    - -m
 
         Specifies the operation to be performed.
 
@@ -264,14 +258,13 @@ The **gs\_om** tool can use the following types of parameters:
 
         **uninstall**: disables the Kerberos authentication in a database.
 
-    -   --**krb-server**: installs the Kerberos server authentication.
-    -   --**krb-client**: installs the Kerberos client authentication.
+    - --**krb-server**: installs the Kerberos server authentication.
+    - --**krb-client**: installs the Kerberos client authentication.
 
         Note: You need to use **--krb-server** to install the server authentication first. These two parameters are not required during the uninstallation because the server and client are uninstalled at the same time.
 
-
--   Parameters for replacing the SSL certificate:
-    -   --cert-file
+- Parameters for replacing the SSL certificate:
+    - --cert-file
 
         Specifies the path of the local SSL certificate .zip package.
 
@@ -282,8 +275,6 @@ The **gs\_om** tool can use the following types of parameters:
     - -L
     
       If this parameter is specified, the operation is performed only on the current node.
-
-
 
 **Table 1** Status description
 
@@ -348,7 +339,6 @@ The initial role of the <td class="cellrowborder" valign="top" width="56.08%" he
 </tr>
 </tbody>
 </table>
-
 
 **Table 2** Feature ID description
 
@@ -486,7 +476,7 @@ The initial role of the <td class="cellrowborder" valign="top" width="56.08%" he
 
 ## Examples<a name="section2433171169"></a>
 
--   Start openGauss.
+- Start openGauss.
 
     ```
     gs_om -t start
@@ -568,7 +558,7 @@ The initial role of the <td class="cellrowborder" valign="top" width="56.08%" he
   -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat3
   ```
 
--   Roll back SSL certificates.
+- Roll back SSL certificates.
 
     ```
     gs_om -t cert --rollback 
@@ -577,7 +567,7 @@ The initial role of the <td class="cellrowborder" valign="top" width="56.08%" he
     [plat3] SSL cert files rollback successfully.
     ```
 
--   Register a license.
+- Register a license.
 
     ```
     gs_om -t license -m register -f MTgsMTkK  
@@ -591,7 +581,7 @@ The initial role of the <td class="cellrowborder" valign="top" width="56.08%" he
     License register successfully.
     ```
 
--   Deregister a license.
+- Deregister a license.
 
     ```
     gs_om -t license -m unregister -f MTgsMTkK

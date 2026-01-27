@@ -6,22 +6,22 @@
 
 ## Precautions<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_s8ea536d5b8ff459e9e3614e35f53bc2a"></a>
 
--   The owner of a table, users granted with the  **ALTER**  permission on the table, or users granted with the  **ALTER ANY TABLE**  permission can run the  **ALTER TABLE**  statement. The system administrator has the permission to run the command by default. To modify the owner or schema of a table, you must be the table owner or system administrator and a member of the new owner role.
--   The tablespace of a partitioned table cannot be modified, but the tablespace of the partition can be modified.
--   The storage parameter  **ORIENTATION**  cannot be modified.
--   Currently,  **SET SCHEMA**  can only set schemas to user schemas. It cannot set a schema to a system internal schema.
--   Column-store tables support only the  **PARTIAL CLUSTER KEY**,  **UNIQUE**, and  **PRIMARY KEY**  table-level constraints, but do not support foreign key table-level constraints.
--   In a column-store table, you can perform  **ADD COLUMN**,  **ALTER TYPE**,  **SET STATISTICS**,  **DROP COLUMN**  operations, and change table name and space. The types of new and modified columns should be the  [Data Types](numeric_types.md)  supported by column-store. The  **USING**  option of  **ALTER TYPE**  only supports constant expression and expression involved in the column.
--   The column constraints supported by column-store tables include  **NULL**,  **NOT NULL**,  **DEFAULT**  constant values,  **UNIQUE**, and  **PRIMARY KEY**. Only the  **DEFAULT**  value can be modified \(by using  **SET DEFAULT**  and  **DROP DEFAULT**\). Currently,  **NULL**  and  **NOT NULL**  constraints cannot be modified.
+- The owner of a table, users granted with the  **ALTER**  permission on the table, or users granted with the  **ALTER ANY TABLE**  permission can run the  **ALTER TABLE**  statement. The system administrator has the permission to run the command by default. To modify the owner or schema of a table, you must be the table owner or system administrator and a member of the new owner role.
+- The tablespace of a partitioned table cannot be modified, but the tablespace of the partition can be modified.
+- The storage parameter  **ORIENTATION**  cannot be modified.
+- Currently,  **SET SCHEMA**  can only set schemas to user schemas. It cannot set a schema to a system internal schema.
+- Column-store tables support only the  **PARTIAL CLUSTER KEY**,  **UNIQUE**, and  **PRIMARY KEY**  table-level constraints, but do not support foreign key table-level constraints.
+- In a column-store table, you can perform  **ADD COLUMN**,  **ALTER TYPE**,  **SET STATISTICS**,  **DROP COLUMN**  operations, and change table name and space. The types of new and modified columns should be the  [Data Types](numeric_types.md)  supported by column-store. The  **USING**  option of  **ALTER TYPE**  only supports constant expression and expression involved in the column.
+- The column constraints supported by column-store tables include  **NULL**,  **NOT NULL**,  **DEFAULT**  constant values,  **UNIQUE**, and  **PRIMARY KEY**. Only the  **DEFAULT**  value can be modified \(by using  **SET DEFAULT**  and  **DROP DEFAULT**\). Currently,  **NULL**  and  **NOT NULL**  constraints cannot be modified.
 
--   Auto-increment columns cannot be added, or a column whose  **DEFAULT**  value contains the  **nextval\(\)**  expression cannot be added.
--   Row-access control cannot be enabled for foreign tables and temporary tables.
--   When you delete a  **PRIMARY KEY**  constraint by constraint name, the  **NOT NULL**  constraint is not deleted. If necessary, manually delete the  **NOT NULL**  constraint.
--   When JDBC is used, the  **DEFAULT**  value can be set through  **PrepareStatement**.
+- Auto-increment columns cannot be added, or a column whose  **DEFAULT**  value contains the  **nextval\(\)**  expression cannot be added.
+- Row-access control cannot be enabled for foreign tables and temporary tables.
+- When you delete a  **PRIMARY KEY**  constraint by constraint name, the  **NOT NULL**  constraint is not deleted. If necessary, manually delete the  **NOT NULL**  constraint.
+- When JDBC is used, the  **DEFAULT**  value can be set through  **PrepareStatement**.
 
 ## Syntax<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_s58bdce220c9f4292ba9af919b04ad25c"></a>
 
--   Modify the definition of a table.
+- Modify the definition of a table.
 
     ```
     ALTER TABLE [ IF EXISTS ] { table_name [*] | ONLY table_name | ONLY ( table_name ) }
@@ -67,8 +67,8 @@
         | COMMENT {=| } 'text'
     ```
 
-
 ## Parameter Description <a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_s72f8af90c9784dc9a16e58974d73a31a"></a>
+
 - **ADD table\_constraint \[ NOT VALID \]**
 
   Adds a table constraint.
@@ -186,7 +186,6 @@
 
 - **REPLICA IDENTITY \{ DEFAULT | USING INDEX index\_name | FULL | NOTHING \}**
     
-
   Specifies the record level of old tuples in UPDATE and DELETE statements on a table in logical replication scenarios.
 
     - **DEFAULT** records the old value of the primary key column. If there is no primary key, **DEFAULT** does not record the old value.
@@ -202,8 +201,8 @@
 
   Comments a table object.
 
+- There are several clauses of  **column\_clause**:
 
--   There are several clauses of  **column\_clause**:
 ```
 ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]   
 | MODIFY column_name data_type [ ON UPDATE update_expr ]   
@@ -221,7 +220,9 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 | ALTER [ COLUMN ] column_name RESET ( attribute_option [, ... ] )    
 | ALTER [ COLUMN ] column_name SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN }
 ```
- ## Parameter Description <a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_s72f8af90c9784dc9a16e58974d73a31a"></a> 
+
+## Parameter Description <a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_s72f8af90c9784dc9a16e58974d73a31a"></a> 
+
 - **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]  \[ COMMENT {=| } 'text'\]**
 
   Adds a column to a table. If a column is added with  **ADD COLUMN**, all existing rows in the table are initialized with the column's default value \(**NULL**  if no  **DEFAULT**  clause is specified\).
@@ -248,6 +249,7 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
   ```
   ALTER TABLE table ALTER COLUMN anycol TYPE anytype;
   ```
+
   In this statement,  **anycol**  indicates any column existing in the table and  **anytype**  indicates the type of the prototype of the column.  **ALTER TYPE**  does not change the table except that the table is forcibly rewritten. In this way, the data that is no longer used is deleted.
 - **ALTER \[ COLUMN \] column\_name \{ SET DEFAULT expression | DROP DEFAULT \}**
 
@@ -290,10 +292,12 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
   ```
 
 - **compress\_mode**  of a column is as follows:
+
 ```
 [ DELTA | PREFIX | DICTIONARY | NUMSTR | NOCOMPRESS ]
 ```
--   **table\_constraint\_using\_index**  used to add the primary key constraint or unique constraint based on the unique index is as follows:
+
+- **table\_constraint\_using\_index**  used to add the primary key constraint or unique constraint based on the unique index is as follows:
 
     ```
     [ CONSTRAINT constraint_name ]
@@ -302,16 +306,16 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
         [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
     ```
 
-    -   **table\_constraint**  is as follows:
+    - **table\_constraint**  is as follows:
 
         ```
         [ CONSTRAINT [ constraint_name ] ]
             { CHECK ( expression ) |
-          	  UNIQUE [ idx_name ] [ USING method ] ( { { column_name | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters |
-    	        PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] }[, ... ] ) index_parameters |
-    	        PARTIAL CLUSTER KEY ( column_name [, ... ] ) |
-    	        FOREIGN KEY [ idx_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
-    	          [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
+             UNIQUE [ idx_name ] [ USING method ] ( { { column_name | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters |
+             PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] }[, ... ] ) index_parameters |
+             PARTIAL CLUSTER KEY ( column_name [, ... ] ) |
+             FOREIGN KEY [ idx_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
+               [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
             [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
         ```
 
@@ -322,30 +326,28 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
             [ USING INDEX TABLESPACE tablespace_name ]
         ```
 
-
-
--  Rename a table. The renaming does not affect stored data.
+- Rename a table. The renaming does not affect stored data.
 
     ```
     ALTER TABLE [ IF EXISTS ] table_name 
         RENAME TO new_table_name;
     ```
 
--  Rename the specified column in the table.
+- Rename the specified column in the table.
 
     ```
     ALTER TABLE [ IF EXISTS ] { table_name [*] | ONLY table_name | ONLY ( table_name )}
         RENAME [ COLUMN ] column_name TO new_column_name;
     ```
 
--   Rename the constraint of the table.
+- Rename the constraint of the table.
 
     ```
     ALTER TABLE [ IF EXISTS ] { table_name [*] | ONLY table_name | ONLY ( table_name ) }
         RENAME CONSTRAINT constraint_name TO new_constraint_name;
     ```
 
--   Set the schema of the table.
+- Set the schema of the table.
 
     ```
     ALTER TABLE [ IF EXISTS ] table_name 
@@ -353,58 +355,57 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
     ```
 
     >[!NOTE]NOTE 
-    >-   The schema setting moves the table into another schema. Associated indexes and constraints owned by table columns are migrated as well. Currently, the schema for sequences cannot be changed. If the table has sequences, delete the sequences, and create them again or delete the ownership between the table and sequences. In this way, the table schema can be changed.
-    >-   To change the schema of a table, you must also have the  **CREATE**  permission on the new schema. To add the table as a new child of a parent table, you must own the parent table as well. To alter the owner, you must also be a direct or indirect member of the new owning role, and that role must have the  **CREATE**  permission on the table's schema. These restrictions enforce that the user can only recreate and delete the table. However, a system administrator can alter the ownership of any table anyway.
-    >-   All the actions except for  **RENAME**  and  **SET SCHEMA**  can be combined into a list of multiple alterations to apply in parallel. For example, it is possible to add several columns or alter the type of several columns in a single statement. This is useful with large tables, since only one pass over the tables need be made.
-    >-   Adding a  **CHECK**  or  **NOT NULL**  constraint will scan the table to validate that existing rows meet the constraint.
-    >-   Adding a column with a non-**NULL**  default or changing the type of an existing column will rewrite the entire table. Rewriting a large table may take much time and temporarily needs doubled disk space.
+    >- The schema setting moves the table into another schema. Associated indexes and constraints owned by table columns are migrated as well. Currently, the schema for sequences cannot be changed. If the table has sequences, delete the sequences, and create them again or delete the ownership between the table and sequences. In this way, the table schema can be changed.
+    >- To change the schema of a table, you must also have the  **CREATE**  permission on the new schema. To add the table as a new child of a parent table, you must own the parent table as well. To alter the owner, you must also be a direct or indirect member of the new owning role, and that role must have the  **CREATE**  permission on the table's schema. These restrictions enforce that the user can only recreate and delete the table. However, a system administrator can alter the ownership of any table anyway.
+    >- All the actions except for  **RENAME**  and  **SET SCHEMA**  can be combined into a list of multiple alterations to apply in parallel. For example, it is possible to add several columns or alter the type of several columns in a single statement. This is useful with large tables, since only one pass over the tables need be made.
+    >- Adding a  **CHECK**  or  **NOT NULL**  constraint will scan the table to validate that existing rows meet the constraint.
+    >- Adding a column with a non-**NULL**  default or changing the type of an existing column will rewrite the entire table. Rewriting a large table may take much time and temporarily needs doubled disk space.
 
--   Add columns.
+- Add columns.
 
     ```
     ALTER TABLE [ IF EXISTS ] table_name
         ADD ( { column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]} [, ...] );
     ```
 
--   Update columns.
+- Update columns.
 
     ```
     ALTER TABLE [ IF EXISTS ] table_name 
         MODIFY ( { column_name data_type [ ON UPDATE update_expr ]| column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ] | column_name [ CONSTRAINT constraint_name ] NULL } [, ...] );
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_sf4962205ddf84312a5fd888bc662e5cf"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Sends a notice instead of an error if no tables have identical names. The notice prompts that the table you are querying does not exist.
 
--   **table\_name  \[\*\] | ONLY table\_name | ONLY \( table\_name  \)**
+- **table\_name  \[\*\] | ONLY table\_name | ONLY \( table\_name  \)**
 
     **table\_name**  is the name of the table that you need to modify.
 
     If  **ONLY**  is specified, only the table is modified. If  **ONLY**  is not specified, the table and all subtables are modified. You can add the asterisk \(\*\) option following the table name to specify that all subtables are scanned, which is the default operation.
 
--   **constraint\_name**
+- **constraint\_name**
 
-    -   Specifies the name of an existing constraint to drop in the DROP CONSTRAINT operation.
-    -   Specifies the name of a new constraint in the ADD CONSTRAINT operation.
+    - Specifies the name of an existing constraint to drop in the DROP CONSTRAINT operation.
+    - Specifies the name of a new constraint in the ADD CONSTRAINT operation.
 
         >[!TIP]NOTICE
         >For a new constraint, constraint\_name is optional in B-compatible mode (**sql\_compatibility = 'B'**). For other modes, constraint\_name must be added.
 
--   **index\_name**
+- **index\_name**
 
     Specifies the name of an index.
         
     >[!TIP]NOTICE
     >In the ADD CONSTRAINT operation:
-    >-   index\_name is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
-    >-   For foreign key constraints, if constraint\_name and index\_name are specified at the same time, constraint\_name is used as the index name.
-    >-   For a unique key constraint, if both constraint\_name and index\_name are specified, index\_name is used as the index name.
+    >- index\_name is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
+    >- For foreign key constraints, if constraint\_name and index\_name are specified at the same time, constraint\_name is used as the index name.
+    >- For a unique key constraint, if both constraint\_name and index\_name are specified, index\_name is used as the index name.
 
--   **USING method**
+- **USING method**
 
     Specifies the name of the index method to be used.
 
@@ -412,30 +413,30 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 
     >[!TIP]NOTICE
     >In the ADD CONSTRAINT operation:
-    >-   The USING method is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
-    >-   In B-compatible mode, if USING method is not specified, the default index method is btree for ASTORE or ubtree for USTORE.
+    >- The USING method is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
+    >- In B-compatible mode, if USING method is not specified, the default index method is btree for ASTORE or ubtree for USTORE.
 
--   **ASC | DESC**
+- **ASC | DESC**
 
     **ASC** specifies an ascending (default) sort order. **DESC** specifies a descending sort order.
 
     >[!TIP]NOTICE
     >In ADD CONSTRAINT, ASC|DESC is supported only in B-compatible databases (sql\_compatibility = 'B').
 
--   **expression**
+- **expression**
 
     Specifies an expression index constraint created based on one or more columns of the table. The expression index must be written with surrounding parentheses.
 
     >[!TIP]NOTICE
     >Expression indexes are supported only in B-compatible databases (that is, sql\_compatibility = 'B').
     
--   **storage\_parameter**
+- **storage\_parameter**
 
     Specifies the name of a storage parameter.
 
     The following option is added for creating an index:
 
-    -   parallel\_workers \(int type\)
+    - parallel\_workers \(int type\)
 
         Value range: \[0,32\]. The value  **0**  indicates that concurrency is disabled.
 
@@ -443,66 +444,65 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 
         If this parameter is not set, the number of started bgworker threads is related to the table size. Generally, the number of started bgworker threads does not exceed four.
 
-    -   hasuids \(Boolean type\)
+    - hasuids \(Boolean type\)
 
         Default value:  **off**
 
         If this parameter is set to  **on**, a unique table-level ID is allocated to a tuple when the tuple is updated.
 
-
--   **new\_owner**
+- **new\_owner**
 
     Specifies the name of the new table owner.
 
--   **new\_tablespace**
+- **new\_tablespace**
 
     Specifies the new name of the tablespace to which the table belongs.
 
--   column\_name, column\_1\_name, column\_2\_name
+- column\_name, column\_1\_name, column\_2\_name
 
     Specifies the name of a new or existing column.
 
--   **data\_type**
+- **data\_type**
 
     Specifies the type of a new column or a new type of an existing column.
 
--   **compress\_mode**
+- **compress\_mode**
 
     Compression option of a table field. The clause specifies the compression algorithm preferentially used by the column. Row-store tables do not support compression.
 
--   **collation**
+- **collation**
 
     Specifies the collation rule name of a column. The optional  **COLLATE**  clause specifies a collation for the new column; if omitted, the collation is the default for the new column. You can run the  **select \* from pg\_collation;**  command to query collation rules from the  **pg\_collation**  system catalog. The default collation rule is the row starting with  **default**  in the query result.
 
--   **USING expression**
+- **USING expression**
 
     Specifies how to compute the new column value from the old; if omitted, the default conversion is an assignment cast from old data type to new. A  **USING**  clause must be provided if there is no implicit or assignment cast from the old to new type.
 
     >[!NOTE]NOTE 
     >**USING**  in  **ALTER TYPE**  can specify any expression involving the old values of the row; that is, it can refer to any columns other than the one being cast. This allows general casting to be done with the  **ALTER TYPE**  syntax. Because of this flexibility, the  **USING**  expression is not applied to the column's default value \(if any\); the result might not be a constant expression as required for a default. This means that when there is no implicit or assignment cast from old to new type,  **ALTER TYPE**  might fail to convert the default even though a  **USING**  clause is supplied. In such cases, drop the default with  **DROP DEFAULT**, perform the  **ALTER TYPE**, and then use  **SET DEFAULT**  to add a suitable new default. Similar considerations apply to indexes and constraints involving the column.
 
--   **NOT NULL | NULL**
+- **NOT NULL | NULL**
 
     Sets whether the column allows null values.
 
--   **integer**
+- **integer**
 
     Specifies the constant value of a signed integer. When using  **PERCENT**, the range of  **integer**  is from 0 to 100.
 
--   **attribute\_option**
+- **attribute\_option**
 
     Specifies an attribute option.
 
--   **PLAIN | EXTERNAL | EXTENDED | MAIN**
+- **PLAIN | EXTERNAL | EXTENDED | MAIN**
 
     Specifies a column-store mode.
 
-    -   **PLAIN**  must be used for fixed-length values \(such as integers\). It must be inline and uncompressed.
-    -   **MAIN**  is for inline, compressible data.
-    -   **EXTERNAL**  is for external, uncompressed data. Use of  **EXTERNAL**  will make substring operations on  **text**  and  **bytea**  values run faster, at the penalty of increased storage space.
-    -   **EXTENDED**  is for external, compressed data.  **EXTENDED**  is the default for most data types that support non-**PLAIN**  storage.
+    - **PLAIN**  must be used for fixed-length values \(such as integers\). It must be inline and uncompressed.
+    - **MAIN**  is for inline, compressible data.
+    - **EXTERNAL**  is for external, uncompressed data. Use of  **EXTERNAL**  will make substring operations on  **text**  and  **bytea**  values run faster, at the penalty of increased storage space.
+    - **EXTENDED**  is for external, compressed data.  **EXTENDED**  is the default for most data types that support non-**PLAIN**  storage.
 
--   **CHECK \( expression \)**
+- **CHECK \( expression \)**
 
     New rows or rows to be updated must satisfy for an expression to be true. If any row produces a false result, an error is raised and the database is not modified.
 
@@ -510,7 +510,7 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 
     Currently,  **CHECK \( expression \)**  does not include subqueries and cannot use variables apart from the current column.
 
--   **DEFAULT default\_expr**
+- **DEFAULT default\_expr**
 
     Assigns a default data value for a column. 
 
@@ -518,19 +518,19 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 
     The default expression will be used in any insert operation that does not specify a value for the column. If there is no default value for a column, then the default value is null.
 
--   **UNIQUE index\_parameters**
+- **UNIQUE index\_parameters**
 
     **UNIQUE \( column\_name \[, ... \] \) index\_parameters**
 
     Specifies that a group of one or more columns of a table can contain only unique values.
 
--   **PRIMARY KEY index\_parameters**
+- **PRIMARY KEY index\_parameters**
 
     **PRIMARY KEY \( column\_name \[, ... \] \) index\_parameters**
 
     Specifies that a column or columns of a table can contain only unique \(non-duplicate\) and non-null values.
 
--   **REFERENCES reftable \[ \( refcolum \) \] \[ MATCH matchtype \] \[ ON DELETE action \] \[ ON UPDATE action \] \(column constraint\)**
+- **REFERENCES reftable \[ \( refcolum \) \] \[ MATCH matchtype \] \[ ON DELETE action \] \[ ON UPDATE action \] \(column constraint\)**
 
     **FOREIGN KEY \( column\_name \[, ... \] \) REFERENCES reftable \[ \( refcolumn \[, ... \] \) \] \[ MATCH matchtype \] \[ ON DELETE action \] \[ ON UPDATE action \] \(table constraint\)**
 
@@ -538,82 +538,80 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 
     There are three types of matching between a reference column and a referenced column:
 
-    -   **MATCH FULL**: A column with multiple foreign keys cannot be  **NULL**  unless all foreign key columns are  **NULL**.
-    -   **MATCH SIMPLE**  \(default\): Any unexpected foreign key column can be  **NULL**.
-    -   **MATCH PARTIAL**: This option is not supported currently.
+    - **MATCH FULL**: A column with multiple foreign keys cannot be  **NULL**  unless all foreign key columns are  **NULL**.
+    - **MATCH SIMPLE**  \(default\): Any unexpected foreign key column can be  **NULL**.
+    - **MATCH PARTIAL**: This option is not supported currently.
 
     In addition, when you perform certain operations on the data in the referenced table, the operations are performed on the corresponding columns in the new table.  **ON DELETE**: specifies the operations to be executed after a referenced row in the referenced table is deleted.  **ON UPDATE**: specifies the operation to be performed when the referenced column data in the referenced table is updated. The possible actions of the  **ON DELETE**  and  **ON UPDATE**  clauses are as follows:
 
-    -   **NO ACTION**  \(default\): When a foreign key is deleted or updated, an error indicating that the foreign key constraint is violated is created. If the constraint is deferrable and there are still any referenced rows, this error will occur when the constraint is checked.
-    -   **RESTRICT**: When a foreign key is deleted or updated, an error indicating that the foreign key constraint is violated is created. It is the same as  **NO ACTION**  except that the action cannot be delayed.
-    -   **CASCADE**: deletes any row that references the deleted row from the new table, or update the field value of the referenced row in the new table to the new value of the referenced column.
-    -   **SET NULL**: sets the referenced field to  **NULL**.
-    -   **SET DEFAULT**: sets referenced fields to their default values.
+    - **NO ACTION**  \(default\): When a foreign key is deleted or updated, an error indicating that the foreign key constraint is violated is created. If the constraint is deferrable and there are still any referenced rows, this error will occur when the constraint is checked.
+    - **RESTRICT**: When a foreign key is deleted or updated, an error indicating that the foreign key constraint is violated is created. It is the same as  **NO ACTION**  except that the action cannot be delayed.
+    - **CASCADE**: deletes any row that references the deleted row from the new table, or update the field value of the referenced row in the new table to the new value of the referenced column.
+    - **SET NULL**: sets the referenced field to  **NULL**.
+    - **SET DEFAULT**: sets referenced fields to their default values.
 
--   **ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE]**
+- **ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE]**
 
-	  -   ENABLE( VALIDATE)(default): Enable constraints, create indexes, and enforce constraints on both existing data and newly added data.
-    -   ENABLE NOVALIDATE: Enable constraints and create indexes. For CHECK constraints, the constraints are only enforced for newly added data, regardless of the existing data in the table. For UNIQUE and PRIMARY KEY, indexes need to be established, so the constraints will be enforced for the existing data.
-    -   DISABLE( NOVALIDATE)(default): Disable constraints, delete indexes, and operations such as modifying the data of the constraint columns can be performed.
-    -   DISABLE VALIDATE: Disable constraints and delete indexes. Insertion, update and deletion operations on the table cannot be performed.
+   - ENABLE( VALIDATE)(default): Enable constraints, create indexes, and enforce constraints on both existing data and newly added data.
+    - ENABLE NOVALIDATE: Enable constraints and create indexes. For CHECK constraints, the constraints are only enforced for newly added data, regardless of the existing data in the table. For UNIQUE and PRIMARY KEY, indexes need to be established, so the constraints will be enforced for the existing data.
+    - DISABLE( NOVALIDATE)(default): Disable constraints, delete indexes, and operations such as modifying the data of the constraint columns can be performed.
+    - DISABLE VALIDATE: Disable constraints and delete indexes. Insertion, update and deletion operations on the table cannot be performed.
 
--   **DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE**
+- **DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE**
 
     Sets whether the constraint can be deferrable.
 
-    -   **DEFERRABLE**: deferrable to the end of the transaction and checked using  **SET CONSTRAINTS**.
-    -   **NOT DEFERRABLE**: checks immediately after the execution of each command.
-    -   **INITIALLY IMMEDIATE**: checks immediately after the execution of each statement.
-    -   **INITIALLY DEFERRED**: checks when the transaction ends.
+    - **DEFERRABLE**: deferrable to the end of the transaction and checked using  **SET CONSTRAINTS**.
+    - **NOT DEFERRABLE**: checks immediately after the execution of each command.
+    - **INITIALLY IMMEDIATE**: checks immediately after the execution of each statement.
+    - **INITIALLY DEFERRED**: checks when the transaction ends.
 
         >[!NOTE]NOTE 
         >Ustore tables do not support the  **DEFERRABLE**  and  **INITIALLY DEFERRED**  constraints.
 
-
--   **PARTIAL CLUSTER KEY**
+- **PARTIAL CLUSTER KEY**
 
     Specifies a partial cluster key for storage. When importing data to a column-store table, you can perform local data sorting by specified columns \(single or multiple\).
 
--   **WITH \( \{storage\_parameter = value\} \[, ... \] \)**
+- **WITH \( \{storage\_parameter = value\} \[, ... \] \)**
 
     Specifies an optional storage parameter for a table or an index.
 
--   **tablespace\_name**
+- **tablespace\_name**
 
     Specifies the name of the tablespace where the index locates.
 
--   **COMPRESS|NOCOMPRESS**
-    -   **NOCOMPRESS**: If the  **NOCOMPRESS**  keyword is specified, the existing compression feature of the table will not be changed.
-    -   **COMPRESS**: If the  **COMPRESS**  keyword is specified, the table compression feature will be triggered by batch tuple insertion. Row-store tables do not support compression.
+- **COMPRESS|NOCOMPRESS**
+    - **NOCOMPRESS**: If the  **NOCOMPRESS**  keyword is specified, the existing compression feature of the table will not be changed.
+    - **COMPRESS**: If the  **COMPRESS**  keyword is specified, the table compression feature will be triggered by batch tuple insertion. Row-store tables do not support compression.
 
--   **new\_table\_name**
+- **new\_table\_name**
 
     Specifies the new table name.
 
--   **new\_column\_name**
+- **new\_column\_name**
 
     Specifies the new name of a specific column in a table.
 
--   **new\_constraint\_name**
+- **new\_constraint\_name**
 
     Specifies the new name of a table constraint.
 
--   **new\_schema**
+- **new\_schema**
 
     Specifies the new schema name.
 
--   **CASCADE**
+- **CASCADE**
 
     Automatically drops objects that depend on the dropped column or constraint \(for example, views referencing the column\).
 
--   **RESTRICT**
+- **RESTRICT**
 
     Refuses to drop the column or constraint if there are any dependent objects. This is the default processing.
 
--   **schema\_name**
+- **schema\_name**
 
     Specifies the schema name of a table.
-
 
 ## Examples<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_se4f9dc97861c410bb51554bb58bcd76d"></a>
 

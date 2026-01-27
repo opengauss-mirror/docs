@@ -234,7 +234,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
 
 ## **Functions Supported by JSON/JSONB**<a name="section845725420151"></a>
 
--   array\\\_to\\\_json\\\(anyarray \\\[, pretty\\\_bool\\\]\\\)
+- array\\\_to\\\_json\\\(anyarray \\\[, pretty\\\_bool\\\]\\\)
 
     Description: Returns an array as JSON. A multi-dimensional array becomes a JSON array of arrays. If the value of  **pretty\\\_bool**  is  **true**, a newline character is added between one-dimensional elements.
 
@@ -250,7 +250,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
         (1 row)
     ```
 
--   row\\\_to\\\_json\\\(record \\\[, pretty\\\_bool\\\]\\\)
+- row\\\_to\\\_json\\\(record \\\[, pretty\\\_bool\\\]\\\)
 
     Description: Returns a row as JSON. If the value of  **preretty\\\_bool**  is  **true**, a newline character is added between one-dimensional elements.
 
@@ -265,8 +265,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
          {"f1":1,"f2":"foo"}    (1 row)
     ```
 
-
--   json\_array\_element\(array-json, integer\), jsonb\_array\_element\(array-jsonb, integer\)
+- json\_array\_element\(array-json, integer\), jsonb\_array\_element\(array-jsonb, integer\)
 
     Description: Same as the operator  **\`-\>\`**, which returns the element with the specified subscript in the array.
 
@@ -283,8 +282,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   json\_array\_element\_text\(array-json, integer\), jsonb\_array\_element\_text\(array-jsonb, integer\)
+- json\_array\_element\_text\(array-json, integer\), jsonb\_array\_element\_text\(array-jsonb, integer\)
 
     Description: Same as the operator  **\`-\>\>\`**, which returns the element with the specified subscript in the array.
 
@@ -300,8 +298,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   json\_object\_field\(object-json, text\), jsonb\_object\_field\(object-jsonb, text\)
+- json\_object\_field\(object-json, text\), jsonb\_object\_field\(object-jsonb, text\)
 
     Description: Same as the operator  **\`-\>\`**, which returns the value of a specified key in an object.
 
@@ -317,7 +314,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
--   json\_object\_field\_text\(object-json, text\), jsonb\_object\_field\_text\(object-jsonb, text\)
+- json\_object\_field\_text\(object-json, text\), jsonb\_object\_field\_text\(object-jsonb, text\)
 
     Description: Same as the operator  **\`-\>\`**, which returns the value of a specified key in an object.
 
@@ -333,8 +330,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   json\_extract\_path\(json, VARIADIC text\[\]\), jsonb\_extract\_path\(\(jsonb, VARIADIC text\[\]\)
+- json\_extract\_path\(json, VARIADIC text\[\]\), jsonb\_extract\_path\(\(jsonb, VARIADIC text\[\]\)
 
     Description: Equivalent to the operator  **\`\#\>\`**  searches for JSON based on the path specified by  *$2*  and returns the result.
 
@@ -350,8 +346,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   json\_extract\_path\_op\(json, text\[\]\), jsonb\_extract\_path\_op\(jsonb, text\[\]\)
+- json\_extract\_path\_op\(json, text\[\]\), jsonb\_extract\_path\_op\(jsonb, text\[\]\)
 
     Description: Same as the operator  **\`\#\>\`**, searches for JSON based on the path specified by  *$2*  and returns the result.
 
@@ -367,8 +362,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   json\_extract\_path\_text\(json, VARIADIC text\[\]\), jsonb\_extract\_path\_text\(\(jsonb, VARIADIC text\[\]\)
+- json\_extract\_path\_text\(json, VARIADIC text\[\]\), jsonb\_extract\_path\_text\(\(jsonb, VARIADIC text\[\]\)
 
     Description: Equivalent to the operator  **\`\#\>\`**, searches for JSON based on the path specified by $2 and return the result.
 
@@ -384,8 +378,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   json\_extract\_path\_text\_op\(json, text\[\]\), jsonb\_extract\_path\_text\_op\(jsonb, text\[\]\)
+- json\_extract\_path\_text\_op\(json, text\[\]\), jsonb\_extract\_path\_text\_op\(jsonb, text\[\]\)
 
     Description: Same as the operator  **\`\#\>\`**, searches for JSON based on the path specified by  *$2*  and returns the result.
 
@@ -401,8 +394,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   Json\_array\_elements\(array-json\), jsonb\_array\_elements\(array-jsonb\)
+- Json\_array\_elements\(array-json\), jsonb\_array\_elements\(array-jsonb\)
 
     Description: Splits an array. Each element returns a row.
 
@@ -421,8 +413,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (4 rows)
     ```
 
-
--   Json\_array\_elements\_text\(array-json\), jsonb\_array\_elements\_text\(array-jsonb\)
+- Json\_array\_elements\_text\(array-json\), jsonb\_array\_elements\_text\(array-jsonb\)
 
     Description: Splits an array. Each element returns a row.
 
@@ -441,8 +432,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (4 rows)
     ```
 
-
--   json\_array\_length\(array-json\), jsonb\_array\_length\(array-jsonb\)
+- json\_array\_length\(array-json\), jsonb\_array\_length\(array-jsonb\)
 
     Description: Returns the array length.
 
@@ -458,8 +448,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   json\_each\(object-json\), jsonb\_each\(object-jsonb\)
+- json\_each\(object-json\), jsonb\_each\(object-jsonb\)
 
     Description: Splits each key-value pair of an object into one row and two columns.
 
@@ -477,8 +466,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (3 rows)
     ```
 
-
--   json\_each\_text\(object-json\), jsonb\_each\_text\(object-jsonb\)
+- json\_each\_text\(object-json\), jsonb\_each\_text\(object-jsonb\)
 
     Description: Splits each key-value pair of an object into one row and two columns.
 
@@ -496,8 +484,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (3 rows)
     ```
 
-
--   json\_object\_keys\(object-json\), jsonb\_object\_keys\(object-jsonb\)
+- json\_object\_keys\(object-json\), jsonb\_object\_keys\(object-jsonb\)
 
     Description: Returns all keys at the top layer of the object.
 
@@ -515,8 +502,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (3 rows)
     ```
 
-
--   JSONB deduplication operations:
+- JSONB deduplication operations:
 
     ```
       openGauss=# select jsonb_object_keys('{"f1":"abc","f2":{"f3":"a", "f4":"b"}, "f1":"abcd"}');
@@ -527,8 +513,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (2 rows)
     ```
 
-
--   json\_populate\_record\(anyelement, object-json \[, bool\]\), jsonb\_populate\_record\(anyelement, object-jsonb \[, bool\]\)
+- json\_populate\_record\(anyelement, object-json \[, bool\]\), jsonb\_populate\_record\(anyelement, object-jsonb \[, bool\]\)
 
     Description:  *$1*  must be a compound parameter. Each key-value in the  **object-json**  file is split. The key is used as the column name to match the column name in  *$1*  and fill in the  *$1*  format.
 
@@ -554,8 +539,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   json\_populate\_record\_set\(anyelement, array-json \[, bool\]\), jsonb\_populate\_record\_set\(anyelement, array-jsonb \[, bool\]\)
+- json\_populate\_record\_set\(anyelement, array-json \[, bool\]\), jsonb\_populate\_record\_set\(anyelement, array-jsonb \[, bool\]\)
 
     Description: Performs the preceding operations on each element in the  *$2*  array by referring to the  **json\_populate\_record**  and  **jsonb\_populate\_record**  functions. Therefore, each element in the  *$2*  array must be of the  **object-json**  type.
 
@@ -574,8 +558,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (2 rows)
     ```
 
-
--   json\_typeof\(json\), jsonb\_typeof\(jsonb\)
+- json\_typeof\(json\), jsonb\_typeof\(jsonb\)
 
     Description: Checks the JSON type.
 
@@ -598,8 +581,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (7 rows)
     ```
 
-
--   json\_build\_array\( \[VARIADIC "any"\] \)
+- json\_build\_array\( \[VARIADIC "any"\] \)
 
     Description: Constructs a JSON array from a variable parameter list.
 
@@ -615,8 +597,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   json\_build\_object\( \[VARIADIC "any"\] \)
+- json\_build\_object\( \[VARIADIC "any"\] \)
 
     Description: Constructs a JSON object from a variable parameter list. The number of input parameters must be an even number. Every two input parameters form a key-value pair. Note that the value of a key cannot be null.
 
@@ -632,8 +613,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   json\_to\_record\(object-json, bool\)
+- json\_to\_record\(object-json, bool\)
 
     Description: Like all functions that return  **record**, the caller must explicitly define the structure of the record with an AS clause. The key-value pair of  **object-json**  is split and reassembled. The key is used as a column name to match and fill in the structure of the specified record.
 
@@ -649,10 +629,9 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
+- json\_to\_recordset\(array-json, bool\)
 
--   json\_to\_recordset\(array-json, bool\)
-
-    Description: Executes the preceding function on each element in the array by referring to the** json\_to\_record**  function. Therefore, each element in the array must be  **object-json**.
+    Description: Executes the preceding function on each element in the array by referring to the**json\_to\_record**  function. Therefore, each element in the array must be  **object-json**.
 
     Return type: SETOF record
 
@@ -670,8 +649,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (2 rows)
     ```
 
-
--   json\_object\(text\[\]\), json\_object\(text\[\], text\[\]\)
+- json\_object\(text\[\]\), json\_object\(text\[\], text\[\]\)
 
     Description: Constructs an  **object-json**  from a text array. This is an overloaded function. When the input parameter is a text array, the array length must be an even number, and members are considered as alternate key-value pairs. When two text arrays are used, the first array is considered as a key, and the second array a value. The lengths of the two arrays must be the same. Note that the value of a key cannot be null.
 
@@ -695,8 +673,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   json\_agg\(any\)
+- json\_agg\(any\)
 
     Description: Aggregates values into a JSON array.
 
@@ -725,8 +702,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (3 rows)
     ```
 
-
--   json\_object\_agg\(any, any\)
+- json\_object\_agg\(any, any\)
 
     Description: Aggregates values into a JSON object.
 
@@ -754,8 +730,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (2 rows)
     ```
 
-
--   - jsonb\_contained\(jsonb, jsonb\)
+- - jsonb\_contained\(jsonb, jsonb\)
 
     Description: Same as the operator  **\`<@\`**, determines whether all elements in_ $1_  exist at the top layer of  *$2*.
 
@@ -771,8 +746,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   - jsonb\_contains\(jsonb, jsonb\)
+- - jsonb\_contains\(jsonb, jsonb\)
 
     Description: Same as the operator  **\`@\>\`**, checks whether all top-layer elements in  *$1*  are contained in  *$2*.
 
@@ -788,8 +762,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   - jsonb\_exists\(jsonb, text\)
+- - jsonb\_exists\(jsonb, text\)
 
     Description: Same as the operator  **\`?\`**, determines whether all elements in the string array  *$2*  exist at the top layer of  *$1*  in the form of  **key\\elem\\scalar**.
 
@@ -805,8 +778,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   - jsonb\_exists\_all\(jsonb, text\[\]\)
+- - jsonb\_exists\_all\(jsonb, text\[\]\)
 
     Description: Same as the operator  **\`?&\`**, checks whether all elements in the string array  *$2*  exist at the top layer of  *$1*  in the form of  **key\\elem\\scalar**.
 
@@ -822,8 +794,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   - jsonb\_exists\_any\(jsonb, text\[\]\)
+- - jsonb\_exists\_any\(jsonb, text\[\]\)
 
     Description: Same as the operator  **\`?|\`**, checks whether all elements in the string array  *$2*  exist at the top layer of  *$1*  in the form of  **key\\elem\\scalar**.
 
@@ -839,8 +810,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   - jsonb\_cmp\(jsonb, jsonb\)
+- - jsonb\_cmp\(jsonb, jsonb\)
 
     Description: Compares values. A positive value indicates greater than, a negative value indicates less than, and  **0**  indicates equal.
 
@@ -856,8 +826,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   - jsonb\_eq\(jsonb, jsonb\)
+- - jsonb\_eq\(jsonb, jsonb\)
 
     Description: Same as the operator  **\`=\`**, compares two values.
 
@@ -873,8 +842,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   - jsonb\_ne\(jsonb, jsonb\)
+- - jsonb\_ne\(jsonb, jsonb\)
 
     Description: Same as the operator  **\`<\>\`**, compares two values.
 
@@ -890,8 +858,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   - jsonb\_gt\(jsonb, jsonb\)
+- - jsonb\_gt\(jsonb, jsonb\)
 
     Description: Same as the operator  **\`\>\`**, compares two values.
 
@@ -907,8 +874,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   - jsonb\_ge\(jsonb, jsonb\)
+- - jsonb\_ge\(jsonb, jsonb\)
 
     Description: Same as the operator  **\`\>=\`**, compares two values.
 
@@ -924,8 +890,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   - jsonb\_lt\(jsonb, jsonb\)
+- - jsonb\_lt\(jsonb, jsonb\)
 
     Description: Same as the operator  **\`<\`**, compares two values.
 
@@ -941,8 +906,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   - jsonb\_le\(jsonb, jsonb\)
+- - jsonb\_le\(jsonb, jsonb\)
 
     Description: Same as the operator  **\`<=\`**, compares two values.
 
@@ -958,8 +922,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
-
--   - to\_json\(anyelement\)
+- - to\_json\(anyelement\)
 
     Description: Converts parameters to  **\`json\`**.
 
@@ -975,7 +938,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
       (1 row)
     ```
 
--   - jsonb\_hash\(jsonb\)
+- - jsonb\_hash\(jsonb\)
 
     Description: Performs the hash operation on JSONB.
 
@@ -1072,7 +1035,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
   (1 row)
   ```
 
--   Other functions
+- Other functions
 
     Description: Internal functions used by GIN indexes and JSON\\JSONB aggregate functions.
 

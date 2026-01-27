@@ -6,9 +6,9 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137308_zh-cn_topic_0237122170_section166351045574"></a>
 
--   进行MERGE INTO操作的用户需要同时拥有目标表的UPDATE和INSERT权限，以及源表的SELECT权限。
--   本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。原openGauss的MERGE INTO语法请参考章节[MERGE INTO](../sql_reference/merge_into.md)。
--   新增支持table_hint子句。
+- 进行MERGE INTO操作的用户需要同时拥有目标表的UPDATE和INSERT权限，以及源表的SELECT权限。
+- 本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。原openGauss的MERGE INTO语法请参考章节[MERGE INTO](../sql_reference/merge_into.md)。
+- 新增支持table_hint子句。
 
 ## 语法格式<a name="zh-cn_topic_0283137308_zh-cn_topic_0237122170_section10551749579"></a>
 
@@ -30,7 +30,7 @@ ON ( condition )
 NOTICE: 'subquery' in the UPDATE and INSERT clauses are only avaliable in CENTRALIZED mode!
 ```
 
--   其中table\_hint子句table\_hint\_clause为：
+- 其中table\_hint子句table\_hint\_clause为：
 
     ```
     WITH ( <table_hint> [, ...] ) 
@@ -38,7 +38,7 @@ NOTICE: 'subquery' in the UPDATE and INSERT clauses are only avaliable in CENTRA
 
 ## 参数说明<a name="zh-cn_topic_0283137308_zh-cn_topic_0237122170_section1315653475"></a>
 
--   **WITH ( <table_hint> [, ...] )**
+- **WITH ( <table_hint> [, ...] )**
 
     - 与SELECT子句相同，在未给出WITH时，table_hint仅支持给出一个hint，在给出WITH时，table_hint支持给出一个列表选项，列表通过逗号或者空格分隔，即(hint1)、WITH (hint1)、WITH (hint1, hint2, ...)、WITH (hint1 hint2 ...)均支持。
 

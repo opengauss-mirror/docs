@@ -208,4 +208,3 @@ The following lists common executable scripts of openGauss, which are used only 
 </tr>
 </tbody>
 </table>
-

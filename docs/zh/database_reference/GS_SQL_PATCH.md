@@ -106,4 +106,3 @@ GS\_SQL\_PATCH系统表存储所有SQL\_PATCH的状态信息。
 </tr>
 </tbody>
 </table>
-

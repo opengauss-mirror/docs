@@ -22,27 +22,26 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 语句执行常用的方式为通过Statement和PreparedStatement两种方式：
 
--   Statement：
-    -   execute：返回值是boolean类型，执行查询语句看不到返回值。
-    -   executeQuery：返回值是ResultSet类型，通常用于查询，使用方法为在里面直接写SQL语句。
+- Statement：
+    - execute：返回值是boolean类型，执行查询语句看不到返回值。
+    - executeQuery：返回值是ResultSet类型，通常用于查询，使用方法为在里面直接写SQL语句。
 
--   PreparedStatement：
+- PreparedStatement：
 
     包含Statement两个方法，但使用不太一样，要先在conn.prepareStatement\(\)中写入语句，之后根据需要再执行execute或executeQuery，这两个方法里面入参为空。如果SQL语句中有变量，建议使用PreparedStatement进行操作可以有效防止SQL注入，使用?替换掉变量，之后使用setObject方法对其赋值。
-
 
 ## 创建数据库连接<a name="section1969315347146"></a>
 
 >[!NOTE]说明
 >下面示例中黑体加下划线的字段需要替换成用户自己的信息，其中：  
 >
->-   **<u>127.0.0.1</u>**：数据库所在的主机地址。  
->-   <u>**8080**</u>：数据库连接的端口。  
->-   <u>**test**</u>：连接的数据库名称。如果数据库不存在会报错，使用前请先确认该数据库是否存在。  
->-   **<u>myuser</u>**：连接数据库的用户名。  
->-   **<u>myPassWord</u>**：连接数据库用户的密码。  
+>- **<u>127.0.0.1</u>**：数据库所在的主机地址。  
+>- <u>**8080**</u>：数据库连接的端口。  
+>- <u>**test**</u>：连接的数据库名称。如果数据库不存在会报错，使用前请先确认该数据库是否存在。  
+>- **<u>myuser</u>**：连接数据库的用户名。  
+>- **<u>myPassWord</u>**：连接数据库用户的密码。  
 
--   DriverManager.getConnection\(String url\);
+- DriverManager.getConnection\(String url\);
 
     此连接方法需要在url上面拼接上用户名密码。
 
@@ -82,8 +81,7 @@ JDBC提供了三个方法，用于创建数据库连接。
     }
     ```
 
-
--   DriverManager.getConnection\(String url, Properties info\);
+- DriverManager.getConnection\(String url, Properties info\);
 
     此连接方法的用户名密码等参数均在Properties 对象的实例通过setProperty添加。
 
@@ -125,7 +123,7 @@ JDBC提供了三个方法，用于创建数据库连接。
     }
     ```
 
--   DriverManager.getConnection\(String url, String user, String password\);
+- DriverManager.getConnection\(String url, String user, String password\);
 
     此连接方法需要将用户名和密码作为变量输入。
 
@@ -166,10 +164,9 @@ JDBC提供了三个方法，用于创建数据库连接。
     }
     ```
 
-
 ## 创建表<a name="section1969315347146"></a>
 
--   通过statement执行创表操作。
+- 通过statement执行创表操作。
 
     ```java
     import java.sql.Connection;
@@ -209,7 +206,7 @@ JDBC提供了三个方法，用于创建数据库连接。
     }
     ```
 
--   通过PreparedStatement执行创表操作。
+- 通过PreparedStatement执行创表操作。
 
     ```java
     import java.sql.Connection;
@@ -249,16 +246,16 @@ JDBC提供了三个方法，用于创建数据库连接。
     }
     ```
 
-
 ## 插入操作<a name="section1603173921418"></a>
 
 >[!NOTE]说明
 >插入操作执行前需要确保执行了[创建表](#section1969315347146)操作，表名为test，表结构如下。
+>
 >```
 >create table test (id int,name varchar (10));
 >```
 
--   使用Statement执行插入操作，后面可以跟随查询语句检查插入是否生效。
+- 使用Statement执行插入操作，后面可以跟随查询语句检查插入是否生效。
 
     ```java
     public static void main(String[] args) throws SQLException {
@@ -295,8 +292,7 @@ JDBC提供了三个方法，用于创建数据库连接。
         }
     ```
 
-
--   使用PreparedStatement 执行插入操作，后面可以跟随查询语句检查插入是否生效。
+- 使用PreparedStatement 执行插入操作，后面可以跟随查询语句检查插入是否生效。
 
     ```java
     import java.sql.Connection;
@@ -345,18 +341,17 @@ JDBC提供了三个方法，用于创建数据库连接。
     
     ```
 
-
 ## SELECT操作<a name="section138138476141"></a>
 
 >[!NOTE]说明
 >请先完成[创建表](#section1969315347146)和[插入操作](#section1603173921418)。
 
--   使用prepareStatement执行查询操作可以使用预编译，动态的添加参数也可以执行普通的SQL语句。
+- 使用prepareStatement执行查询操作可以使用预编译，动态的添加参数也可以执行普通的SQL语句。
 
     ```java
     public static void main(String[] args) throws SQLException {
             Connection conn = getConnect();
-    	PreparedStatement preparedStatement=conn.prepareStatement("select * from test where id=?;");
+     PreparedStatement preparedStatement=conn.prepareStatement("select * from test where id=?;");
             preparedStatement.setObject(1,1);
             ResultSet resultSet=preparedStatement.executeQuery();
             while (resultSet.next()){
@@ -387,8 +382,7 @@ JDBC提供了三个方法，用于创建数据库连接。
         }
     ```
 
-
--   使用Statement执行查询语句。
+- 使用Statement执行查询语句。
 
     ```java
      public static void main(String[] args) throws SQLException {
@@ -423,13 +417,12 @@ JDBC提供了三个方法，用于创建数据库连接。
         }
     ```
 
-
 ## 更新操作<a name="section112861325191512"></a>
 
 >[!NOTE]说明
 >请先完成[创建表](#section1969315347146)和[插入操作](#section1603173921418)。
 
--   使用Statement执行更新操作，然后执行查询语句判断更新是否成功。
+- 使用Statement执行更新操作，然后执行查询语句判断更新是否成功。
 
     ```java
     public static void main(String[] args) throws SQLException {
@@ -466,8 +459,7 @@ JDBC提供了三个方法，用于创建数据库连接。
         }
     ```
 
-
--   使用PreparedStatement执行更新操作，然后执行查询语句判断更新是否成功。
+- 使用PreparedStatement执行更新操作，然后执行查询语句判断更新是否成功。
 
     ```java
     import java.sql.Connection;
@@ -515,10 +507,9 @@ JDBC提供了三个方法，用于创建数据库连接。
     }
     ```
 
-
 ## 删除操作<a name="section3947173681519"></a>
 
--   使用Statement进行删除，然后执行查询语句判断删除是否成功。
+- 使用Statement进行删除，然后执行查询语句判断删除是否成功。
 
     ```java
     import java.sql.Connection;
@@ -566,8 +557,7 @@ JDBC提供了三个方法，用于创建数据库连接。
     
     ```
 
-
--   使用preparedStatement进行删除，然后执行查询语句判断删除是否成功。
+- 使用preparedStatement进行删除，然后执行查询语句判断删除是否成功。
 
     ```java
     import java.sql.Connection;
@@ -614,5 +604,3 @@ JDBC提供了三个方法，用于创建数据库连接。
         }
     }
     ```
-
-

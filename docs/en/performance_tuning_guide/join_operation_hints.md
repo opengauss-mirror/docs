@@ -12,9 +12,9 @@ These hints specify the join method, which can be nested loop join, hash join, o
 
 ## Parameter Description<a name="en-us_topic_0237121534_section35948678143011"></a>
 
--   **no**  indicates that the specified hint will not be used for a join.
+- **no**  indicates that the specified hint will not be used for a join.
 
--   _table\_list_  specifies the tables to be joined. The values are the same as those of  **[join\_table\_list](join_order_hints.md#en-us_topic_0237121533_section1280444714345)**  but contain no parentheses.
+- _table\_list_  specifies the tables to be joined. The values are the same as those of  **[join\_table\_list](join_order_hints.md#en-us_topic_0237121533_section1280444714345)**  but contain no parentheses.
 
 For example:
 
@@ -32,4 +32,3 @@ select /*+ nestloop(store_sales store_returns item) */ i_product_name product_na
 **nestloop**  is used for the last join between  **store\_sales**,  **store\_returns**, and  **item**. The optimized plan is as follows:
 
 ![](figures/en-us_image_0253032870.png)
-

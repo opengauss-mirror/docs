@@ -2,7 +2,7 @@
 
 ## Array Operators<a name="en-us_topic_0283137239_en-us_topic_0237121980_en-us_topic_0059777596_s7fe6ac87a6fc4d7c8c7bd46484b9d9c3"></a>
 
--   =
+- =
 
     Description: Specifies whether two arrays are equal.
 
@@ -16,7 +16,7 @@
     (1 row)
     ```
 
--   <\>
+- <\>
 
     Description: Specifies whether two arrays are not equal.
 
@@ -30,7 +30,7 @@
     (1 row)
     ```
 
--   <
+- <
 
     Description: Specifies whether an array is less than another.
 
@@ -44,7 +44,7 @@
     (1 row)
     ```
 
--   \>
+- \>
 
     Description: Specifies whether an array is greater than another.
 
@@ -58,7 +58,7 @@
     (1 row)
     ```
 
--   <=
+- <=
 
     Description: Specifies whether an array is less than another.
 
@@ -72,7 +72,7 @@
     (1 row)
     ```
 
--   \>=
+- \>=
 
     Description: Specifies whether an array is greater than or equal to another.
 
@@ -86,7 +86,7 @@
     (1 row)
     ```
 
--   @\>
+- @\>
 
     Description: Specifies whether an array contains another.
 
@@ -100,7 +100,7 @@
     (1 row)
     ```
 
--   <@
+- <@
 
     Description: Specifies whether an array is contained in another.
 
@@ -114,7 +114,7 @@
     (1 row)
     ```
 
--   &&
+- &&
 
     Description: Specifies whether an array overlaps another \(have common elements\).
 
@@ -128,7 +128,7 @@
     (1 row)
     ```
 
--   ||
+- ||
 
     Description: Array-to-array concatenation
 
@@ -150,7 +150,7 @@
     (1 row)
     ```
 
--   ||
+- ||
 
     Description: Element-to-array concatenation
 
@@ -164,7 +164,7 @@
     (1 row)
     ```
 
--   ||
+- ||
 
     Description: Array-to-element concatenation
 
@@ -178,12 +178,11 @@
     (1 row)
     ```
 
-
 Array comparisons compare the array contents element-by-element, using the default B-tree comparison function for the element data type. In multidimensional arrays, the elements are accessed in row-major order. If the contents of two arrays are equal but the dimensionality is different, the first difference in the dimensionality information determines the sort order.
 
 ## Array Functions<a name="en-us_topic_0283137239_en-us_topic_0237121980_en-us_topic_0059777596_sba9d38cb89864afaac99972eff9a8b00"></a>
 
--   array\_append\(anyarray, anyelement\)
+- array\_append\(anyarray, anyelement\)
 
     Description: Appends an element to the end of an array, and only supports dimension-1 arrays.
 
@@ -199,7 +198,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_prepend\(anyelement, anyarray\)
+- array\_prepend\(anyelement, anyarray\)
 
     Description: Appends an element to the beginning of an array, and only supports dimension-1 arrays.
 
@@ -215,7 +214,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_cat\(anyarray, anyarray\)
+- array\_cat\(anyarray, anyarray\)
 
     Description: Concatenates two arrays, and supports multi-dimensional arrays.
 
@@ -237,7 +236,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_union\(anyarray, anyarray\)
+- array\_union\(anyarray, anyarray\)
 
     Description: Concatenates two arrays, and supports only one-dimensional arrays.
 
@@ -253,7 +252,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_union\_distinct\(anyarray, anyarray\)
+- array\_union\_distinct\(anyarray, anyarray\)
 
     Description: Concatenates two arrays and deduplicates them. Only one-dimensional arrays are supported.
 
@@ -269,7 +268,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_intersect\(anyarray, anyarray\)
+- array\_intersect\(anyarray, anyarray\)
 
     Description: Intersects two arrays. Only one-dimensional arrays are supported.
 
@@ -285,7 +284,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_intersect\_distinct\(anyarray, anyarray\)
+- array\_intersect\_distinct\(anyarray, anyarray\)
 
     Description: Intersects two arrays and deduplicates them. Only one-dimensional arrays are supported.
 
@@ -301,7 +300,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_except\(anyarray, anyarray\)
+- array\_except\(anyarray, anyarray\)
 
     Description: Calculates the difference between two arrays. Only one-dimensional arrays are supported.
 
@@ -317,7 +316,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_except\_distinct\(anyarray, anyarray\)
+- array\_except\_distinct\(anyarray, anyarray\)
 
     Description: Calculates the difference between two arrays and deduplicates them. Only one-dimensional arrays are supported.
 
@@ -333,7 +332,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_ndims\(anyarray\)
+- array\_ndims\(anyarray\)
 
     Description: Returns the number of dimensions of an array.
 
@@ -349,7 +348,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_dims\(anyarray\)
+- array\_dims\(anyarray\)
 
     Description: Returns the low-order flag bits and high-order flag bits of each dimension in an array.
 
@@ -365,7 +364,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_length\(anyarray, int\)
+- array\_length\(anyarray, int\)
 
     Description: Returns the length of the requested array dimension.  **int**  is the requested array dimension.
 
@@ -387,7 +386,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_lower\(anyarray, int\)
+- array\_lower\(anyarray, int\)
 
     Description: Returns lower bound of the requested array dimension.  **int**  is the requested array dimension.
 
@@ -403,7 +402,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_upper\(anyarray, int\)
+- array\_upper\(anyarray, int\)
 
     Description: Returns upper bound of the requested array dimension.  **int**  is the requested array dimension.
 
@@ -419,7 +418,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_upper\(anyarray, int\)
+- array\_upper\(anyarray, int\)
 
     Description: Returns upper bound of the requested array dimension.  **int**  is the requested array dimension.
 
@@ -435,7 +434,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_remove\(anyarray, anyelement\)
+- array\_remove\(anyarray, anyelement\)
 
     Description: Removes all specified elements from an array. Only one-dimensional arrays are supported.
 
@@ -451,7 +450,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_to\_string\(anyarray, text \[, text\]\)
+- array\_to\_string\(anyarray, text \[, text\]\)
 
     Description: Uses the first  **text**  as the new delimiter and the second  **text**  to replace  **NULL**  values.
 
@@ -467,7 +466,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_delete\(anyarray\)
+- array\_delete\(anyarray\)
 
     Description: Clears elements in an array and returns an empty array of the same type.
 
@@ -483,7 +482,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_deleteidx\(anyarray, int\)
+- array\_deleteidx\(anyarray, int\)
 
     Description: Deletes specified subscript elements from an array and returns an array consisting of the remaining elements.
 
@@ -499,11 +498,11 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_extendnull\(anyarray, int\)
+- array\_extendnull\(anyarray, int\)
 
     Description: This API has been discarded and is unavailable currently.
 
--   array\_trim\(anyarray, int\)
+- array\_trim\(anyarray, int\)
 
     Description: Deletes a specified number of elements from the end of an array.
 
@@ -519,7 +518,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_exists\(anyarray, int\)
+- array\_exists\(anyarray, int\)
 
     Description: Checks whether the second parameter is a valid subscript of an array.
 
@@ -535,7 +534,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_next\(anyarray, int\)
+- array\_next\(anyarray, int\)
 
     Description: Returns the subscript of the element following a specified subscript in an array based on the second input parameter.
 
@@ -551,7 +550,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   array\_prior\(anyarray, int\)
+- array\_prior\(anyarray, int\)
 
     Description: Returns the subscript of the element followed by a specified subscript in an array based on the second input parameter.
 
@@ -567,7 +566,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   string\_to\_array\(text, text \[,  text\]\)
+- string\_to\_array\(text, text \[,  text\]\)
 
     Description: Uses the second  **text**  as the new delimiter and the third  **text**  as the substring to be replaced by  **NULL**  values. A substring can be replaced by  **NULL**  values only when it is the same as the third  **text**.
 
@@ -588,7 +587,7 @@ Array comparisons compare the array contents element-by-element, using the defau
     (1 row)
     ```
 
--   unnest\(anyarray\)
+- unnest\(anyarray\)
 
     Description: Expands an array to a set of rows.
 
@@ -605,10 +604,8 @@ Array comparisons compare the array contents element-by-element, using the defau
     (2 rows)
     ```
 
-
 In  **string\_to\_array**, if the delimiter parameter is NULL, each character in the input string will become a separate element in the resulting array. If the delimiter is an empty string, then the entire input string is returned as a one-element array. Otherwise the input string is split at each occurrence of the delimiter string.
 
 In  **string\_to\_array**, if the null-string parameter is omitted or NULL, none of the substrings of the input will be replaced by NULL.
 
 In  **array\_to\_string**, if the null-string parameter is omitted or NULL, any null elements in the array are simply skipped and not represented in the output string.
-

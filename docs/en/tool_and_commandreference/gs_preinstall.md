@@ -6,10 +6,10 @@
 
 ## Precautions<a name="en-us_topic_0237152419_en-us_topic_0059778992_s87eb073560414bc5ba369786f06cbb10"></a>
 
--   You need to check the upper-layer directory permissions to ensure that the user has the read, write, and execution permissions on the installation package and configuration file directory.
--   The mapping between each host name and IP address in the XML configuration file must be correct.
--   Only user  **root**  is authorized to run the  **gs\_preinstall**  command.
--   This product supports hybrid deployment of minor versions under major versions in the same OS. The supported list is as follows:
+- You need to check the upper-layer directory permissions to ensure that the user has the read, write, and execution permissions on the installation package and configuration file directory.
+- The mapping between each host name and IP address in the XML configuration file must be correct.
+- Only user  **root**  is authorized to run the  **gs\_preinstall**  command.
+- This product supports hybrid deployment of minor versions under major versions in the same OS. The supported list is as follows:
 
     ```
     CentOS 6.4/6.5/6.6/6.7/6.8/6.9
@@ -17,31 +17,29 @@
     openEuler
     ```
 
-
 ## Syntax<a name="en-us_topic_0237152419_en-us_topic_0059778992_sec57993efb15427997e842706b81cd12"></a>
 
--   Prepare the openGauss environment.
+- Prepare the openGauss environment.
 
     ```
     gs_preinstall -U USER -G GROUP -X XMLFILE [-L] [--skip-os-set] [--env-var="ENVVAR" [...]] [--sep-env-file=ENVFILE] [--skip-hostname-set] [-l LOGFILE] [--non-interactive]
     ```
 
--   Display help information.
+- Display help information.
 
     ```
     gs_preinstall -? | --help
     ```
 
--   Display version information.
+- Display version information.
 
     ```
     gs_preinstall -V | --version
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0237152419_en-us_topic_0059778992_sa9b846fc7333421891c90ad7a67da129"></a>
 
--   -U
+- -U
 
     Specifies the name of the OS user running openGauss.
 
@@ -50,32 +48,32 @@
     >[!NOTE]NOTE 
     >The value of  **-U**  cannot contain double backslashes \(\\\\\) or the following characters: |;&$<\>\`'\\"\{\}\(\)\[\]\~\*?"
 
--   -G
+- -G
 
     Specifies the name of the OS user group running openGauss.
 
     Value range: a string. It must comply with the naming convention.
 
--   -X
+- -X
 
     Specifies the path of the openGauss configuration file.
 
     Value range: storage paths of XML files
 
--   -L
+- -L
 
     Prepares openGauss installation environment for the current nodes only. This parameter is used in the scenarios where the trust relationship of user  **root**  is not allowed and where the security hardening parameter  **PermitRootLogin**  is set to  **no**. The following prerequisites must be met:
 
-    1.  The installation package and openGauss configuration file have been uploaded to all the hosts.
-    2.  The openGauss installation user has been created and mutual trust relationships have been established.
-    3.  All the commands executed on all the hosts are consistent.
-    4.  The mapping relationships between hostnames and IP addresses of all nodes need to be manually written to /etc/hosts on each host, and the comment content  **\#Gauss OM IP Hosts Mapping**  must be added.
+    1. The installation package and openGauss configuration file have been uploaded to all the hosts.
+    2. The openGauss installation user has been created and mutual trust relationships have been established.
+    3. All the commands executed on all the hosts are consistent.
+    4. The mapping relationships between hostnames and IP addresses of all nodes need to be manually written to /etc/hosts on each host, and the comment content  **\#Gauss OM IP Hosts Mapping**  must be added.
 
--   --skip-os-set
+- --skip-os-set
 
     Specifies whether to set the parameter for the OS. By default, the parameter is set for the OS. If the parameter is specified, the configuration is dropped.
 
--   --env-var="ENVVAR"
+- --env-var="ENVVAR"
 
     Sets the environment variable for common users. You can specify multiple environment variables.
 
@@ -84,18 +82,18 @@
     >[!NOTE]NOTE 
     >This parameter cannot be set to the environment variable created by openGauss by default. Otherwise, the environment variables of the openGauss will be overwritten. [Table 1](#en-us_topic_0237152419_en-us_topic_0059778992_tb25e10cef2104026bdbbedc439fbcd50) lists the environment variables created by openGauss by default. 
 
--   --sep-env-file=ENVFILE
+- --sep-env-file=ENVFILE
 
     Saves environment variable files. If this parameter is specified, the split version of environment variable is used.
 
     >[!NOTE]NOTE 
     >The environment variable file name cannot be specified the same as that of the corresponding openGauss directories or those directories, or the directory of the openGauss user.
 
--   --skip-hostname-set
+- --skip-hostname-set
 
     Specifies whether to write the mapping relationship between the host name and IP address of the XML configuration file to the  **/etc/hosts**  file. By default, the relationship is written to the file. If this parameter is specified, the relationship is not written to the file.
     
- -   --unused-third-party
+ - --unused-third-party
 
     Whether to use the third-party library provided by OM. By default, if this parameter is specified, it will not be used.
 
@@ -107,18 +105,18 @@
 
   When  **-l**  is not specified but  **gaussdbLogPath**  is set in the XML file, the default value of the  **-l**  parameter is a combination of  **gaussdbLogPath**  value, the user name, and  **om/gs\_preinstall-YYYY-MM-DD\_hhmmss.log**.
 
--   --non-interactive
+- --non-interactive
 
     Specifies the preinstallation execution mode.
 
-    -   When this parameter is not specified, the secure interactive mode is used where you need to enter the password for man-machine interaction.
-    -   If this parameter is specified, the non-interactive mode is used and man-machine interaction is not required.
+    - When this parameter is not specified, the secure interactive mode is used where you need to enter the password for man-machine interaction.
+    - If this parameter is specified, the non-interactive mode is used and man-machine interaction is not required.
 
--   -?, --help
+- -?, --help
 
     Displays help information.
 
--   -V, --version
+- -V, --version
 
     Displays version information.
 
@@ -193,7 +191,6 @@
     </tr>
     </tbody>
     </table>
-
 
 ## Manually Setting Syslog on the Server<a name="en-us_topic_0237152419_en-us_topic_0059778992_s407b3891fb94407a89ecc2fccd58033a"></a>
 
@@ -356,4 +353,3 @@ Preinstallation succeeded.
 ## Helpful Links<a name="en-us_topic_0237152419_en-us_topic_0059778992_s73a8656dd6a14499a72a77a5b5192112"></a>
 
 [gs\_install](gs_install.md)  and  [gs\_postuninstall](gs_postuninstall.md)
-

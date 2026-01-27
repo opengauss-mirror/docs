@@ -20,9 +20,9 @@ Views for logical memory management are provided to display the used memory and 
 
 When the specified physical memory is insufficient,  **work\_mem**  determines whether to write additional operator calculation data into temporary tables based on query characteristics and concurrency. This reduces performance by five to 10 times and prolongs the query response time from seconds to minutes.
 
--   For complex serial queries, each query requires five to ten associated operations. Set  **work\_mem**  using the following formula:  **work\_mem**  = 50% of the memory/10.
--   For simple serial queries, each query requires two to five associated operations. Set  **work\_mem**  using the following formula:  **work\_mem**  = 50% of the memory/5.
--   For concurrent queries, set  **work\_mem**  using the following formula:  **work\_mem**  =  **work\_mem**  for serial queries/Number of concurrent SQL statements.
+- For complex serial queries, each query requires five to ten associated operations. Set  **work\_mem**  using the following formula:  **work\_mem**  = 50% of the memory/10.
+- For simple serial queries, each query requires two to five associated operations. Set  **work\_mem**  using the following formula:  **work\_mem**  = 50% of the memory/5.
+- For concurrent queries, set  **work\_mem**  using the following formula:  **work\_mem**  =  **work\_mem**  for serial queries/Number of concurrent SQL statements.
 
 ### Parameter Determining Whether to Spill Execution Operators to Disks<a name="en-us_topic_0237121495_en-us_topic_0073253552_en-us_topic_0062863366_section14594953151011"></a>
 
@@ -39,12 +39,12 @@ In a global concurrent queue,  **max\_active\_statements**  controls the number 
 Set this parameter based on system capacities, such as memory and I/O usage. In a resource pool associated with common users, if the jobs of different priorities occupy different portions, they will be queued by priority first. Then, the jobs of the same priority are queued. Jobs in the queue of highest priority will be woken up first.
 
 >[!NOTE]NOTE   
->-   In a high transactional concurrency scenario, you are advised to set  **max\_active\_statements**  to  **-1**, indicating that global concurrency is not limited.  
->-   In an analytical query scenario, set  **max\_active\_statements**  to the number of CPU cores divided by the number of database nodes. Generally, its value ranges from 5 to 8.  
+>
+>- In a high transactional concurrency scenario, you are advised to set  **max\_active\_statements**  to  **-1**, indicating that global concurrency is not limited.  
+>- In an analytical query scenario, set  **max\_active\_statements**  to the number of CPU cores divided by the number of database nodes. Generally, its value ranges from 5 to 8.  
 
 ### Local Concurrent Queues<a name="en-us_topic_0237121496_en-us_topic_0073253553_en-us_topic_0062863367_section43125250152853"></a>
 
 You can locally control the number of concurrent jobs within the same resource pool on the primary node of the database. The number of concurrent complex jobs are controlled based on their cost.
 
 **parctl\_min\_cost**  is used to determine whether a job is complex.
-

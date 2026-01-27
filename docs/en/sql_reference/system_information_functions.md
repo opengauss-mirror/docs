@@ -2,7 +2,7 @@
 
 ## Session Information Functions<a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_seb0ac642d9594cfe9a06d3d304c6dc75"></a>
 
--   current\_catalog
+- current\_catalog
 
     Description: Name of the current database \(called "catalog" in the SQL standard\)
 
@@ -18,7 +18,7 @@
     (1 row)
     ```
 
--   current\_database\(\)
+- current\_database\(\)
 
     Description: Name of the current database
 
@@ -34,7 +34,7 @@
     (1 row)
     ```
 
--   current\_query\(\)
+- current\_query\(\)
 
     Description: Text of the currently executing query, as submitted by the client \(might contain more than one statement\)
 
@@ -50,7 +50,7 @@
     (1 row)
     ```
 
--   current\_schema\[\(\)\]
+- current\_schema\[\(\)\]
 
     Description: Name of current schema
 
@@ -68,7 +68,7 @@
 
     Remarks:  **current\_schema**  returns the first valid schema name in the search path. \(If the search path is empty or contains no valid schema name,  **NULL**  is returned.\) This is the schema that will be used for any tables or other named objects that are created without specifying a target schema.
 
--   current\_schemas\(Boolean\)
+- current\_schemas\(Boolean\)
 
     Description: Names of schemas in search path
 
@@ -90,11 +90,12 @@
 
     >[!NOTE]NOTE 
     >The search path can be altered at run time by running the following command:
+>
     >```
     >SET search_path TO schema [, schema, ...]
     >```
 
--   current\_user\[\(\)\]
+- current\_user\[\(\)\]
 
     Description: User name of current execution context
 
@@ -112,7 +113,7 @@
 
     Note:  **current\_user**  is the user identifier that is applicable for permission checking. Normally it is equal to the session user, but it can be changed with  [SET ROLE](set_role.md). It also changes during the execution of functions with the attribute  **SECURITY DEFINER**.
 
--   definer\_current\_user
+- definer\_current\_user
 
     Description: User name of current execution context
 
@@ -128,7 +129,7 @@
     (1 row)
     ```
 
--   pg\_current\_sessionid\(\)
+- pg\_current\_sessionid\(\)
 
     Description: Session ID of the current execution context
 
@@ -146,7 +147,7 @@
 
     Note:  **pg\_current\_sessionid\(\)**  is used to obtain the session ID in the current execution context. The structure of the value is  *Timestamp. Session ID*. When  **enable\_thread\_pool**  is set to  **off**, the actual session ID is the thread ID.
 
--   pg\_current\_sessid
+- pg\_current\_sessid
 
     Description: Session ID of the current execution context
 
@@ -164,7 +165,7 @@
 
     Note: In thread pool mode, the session ID of the current session is obtained. In non-thread pool mode, the background thread ID of the current session is obtained.
 
--   pg\_current\_userid
+- pg\_current\_userid
 
     Description: Current user ID.
 
@@ -178,7 +179,7 @@
     (1 row)
     ```
 
--   working\_version\_num\(\)
+- working\_version\_num\(\)
 
     Description: Returns a version number regarding system compatibility.
 
@@ -195,7 +196,7 @@
     
     ```
 
--   tablespace\_oid\_name\(\)
+- tablespace\_oid\_name\(\)
 
     Description: Queries the tablespace name based on the tablespace OID.
 
@@ -211,7 +212,7 @@
     (1 row)
     ```
 
--   inet\_client\_addr\(\)
+- inet\_client\_addr\(\)
 
     Description: Remote connection address.  **inet\_client\_addr**  returns the IP address of the current client.
 
@@ -230,7 +231,7 @@
     (1 row)
     ```
 
--   inet\_client\_port\(\)
+- inet\_client\_port\(\)
 
     Description: Remote connection port. And  **inet\_client\_port**  returns the port number of the current client.
 
@@ -249,7 +250,7 @@
     (1 row)
     ```
 
--   inet\_server\_addr\(\)
+- inet\_server\_addr\(\)
 
     Description: Local connection address.  **inet\_server\_addr**  returns the IP address on which the server accepted the current connection.
 
@@ -268,7 +269,7 @@
     (1 row)
     ```
 
--   inet\_server\_port\(\)
+- inet\_server\_port\(\)
 
     Description: Local connection port.  **inet\_server\_port**  returns the port number. All these functions return NULL if the current connection is via a Unix-domain socket. 
 
@@ -287,7 +288,7 @@
     (1 row)
     ```
 
--   pg\_backend\_pid\(\)
+- pg\_backend\_pid\(\)
 
     Description: Process ID of the server process attached to the current session
 
@@ -303,7 +304,7 @@
     (1 row)
     ```
 
--   pg\_conf\_load\_time\(\)
+- pg\_conf\_load\_time\(\)
 
     Description: Configures load time.  **pg\_conf\_load\_time**  returns the timestamp with time zone when the server configuration files were last loaded.
 
@@ -319,7 +320,7 @@
     (1 row)
     ```
 
--   pg\_my\_temp\_schema\(\)
+- pg\_my\_temp\_schema\(\)
 
     Description: OID of the temporary schema of a session. The value is  **0**  if the OID does not exist.
 
@@ -337,7 +338,7 @@
 
     Note:  **pg\_my\_temp\_schema**  returns the OID of the current session's temporary schema, or zero if it has none \(because it has not created any temporary tables\).  **pg\_is\_other\_temp\_schema**  returns true if the given OID is the OID of another session's temporary schema.
 
--   pg\_is\_other\_temp\_schema\(oid\)
+- pg\_is\_other\_temp\_schema\(oid\)
 
     Description: Specifies whether the schema is the temporary schema of another session.
 
@@ -353,7 +354,7 @@
     (1 row)
     ```
 
--   pg\_listening\_channels\(\)
+- pg\_listening\_channels\(\)
 
     Description: Channel names that the session is currently listening on
 
@@ -370,7 +371,7 @@
 
     Note:  **pg\_listening\_channels**  returns a set of names of channels that the current session is listening to.
 
--   pg\_postmaster\_start\_time\(\)
+- pg\_postmaster\_start\_time\(\)
 
     Description: Server start time  **pg\_postmaster\_start\_time**  returns the  **timestamp with time zone**  when the server started.
 
@@ -386,7 +387,7 @@
     (1 row)
     ```
 
--   pg\_get\_ruledef\(rule\_oid\)
+- pg\_get\_ruledef\(rule\_oid\)
 
     Description: Obtains the  **CREATE RULE**  command for a rule.
 
@@ -402,7 +403,7 @@
     (1 row)
     ```
 
--   sessionid2pid\(\)
+- sessionid2pid\(\)
 
     Description: Obtains PID information from a session ID \(for example, the  **sessid**  column in  **gs\_session\_stat**\).
 
@@ -434,7 +435,7 @@
   public (1 row)
   ```
 
--   pg\_trigger\_depth\(\)
+- pg\_trigger\_depth\(\)
 
     Description: Current nesting level of triggers
 
@@ -450,7 +451,7 @@
     (1 row)
     ```
 
--   session\_user
+- session\_user
 
     Description: Session user name
 
@@ -468,7 +469,7 @@
 
     Note:  **session\_user**  is usually the user who initiated the current database connection, but administrators can change this setting with  [SET SESSION AUTHORIZATION](set_session_authorization.md).
 
--   user
+- user
 
     Description: Equivalent to  **current\_user**.
 
@@ -484,7 +485,7 @@
     (1 row)
     ```
 
--   getpgusername\(\)
+- getpgusername\(\)
 
     Description: Obtains the database username.
 
@@ -500,7 +501,7 @@
     (1 row)
     ```
 
--   getdatabaseencoding\(\)
+- getdatabaseencoding\(\)
 
     Description: Obtains the database encoding mode.
 
@@ -516,7 +517,7 @@
     (1 row)
     ```
 
--   version\(\)
+- version\(\)
 
     Description: Version information.  **version**  returns a string describing a server's version.
 
@@ -532,8 +533,7 @@
     (1 row)
     ```
 
-
--   opengauss\_version\(\)
+- opengauss\_version\(\)
 
     Description: openGauss version information
 
@@ -549,7 +549,7 @@
     (1 row)
     ```
 
--   gs\_deployment\(\)
+- gs\_deployment\(\)
 
     Description: Information about the deployment mode of the current system
 
@@ -566,7 +566,7 @@
     (1 row)
     ```
 
--   get\_hostname\(\)
+- get\_hostname\(\)
 
     Description: Returns the host name of the current node.
 
@@ -582,8 +582,7 @@
     (1 row)
     ```
 
-
--   get\_nodename\(\)
+- get\_nodename\(\)
 
     Description: Returns the name of the current node.
 
@@ -599,8 +598,7 @@
     (1 row)
     ```
 
-
--   get\_schema\_oid\(cstring\)
+- get\_schema\_oid\(cstring\)
 
     Description: Returns the OID of the queried schema.
 
@@ -616,18 +614,17 @@
     (1 row)
     ```
 
--   get\_client\_info\(\)
+- get\_client\_info\(\)
 
     Description: Returns client information.
 
     Return type: record
 
-
 ## Access privilege inquiry function<a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_s8be48efddaf84c7fb405513993705867"></a>
 
 The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inherent permissions implicitly owned by the owner.
 
--   has\_any\_column\_privilege\(user, table, privilege\)
+- has\_any\_column\_privilege\(user, table, privilege\)
 
     Description: Queries whether a specified user has permission for any column of table.
 
@@ -660,7 +657,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Return type: Boolean
 
--   has\_any\_column\_privilege\(table, privilege\)
+- has\_any\_column\_privilege\(table, privilege\)
 
     Description: Queries whether the current user has permission to access any column of table. For details about the valid parameter types, see  [Table 1](#en-us_topic_0283136950_table933075917538).
 
@@ -671,7 +668,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
     >[!NOTE]NOTE 
     >Note that having any of these permissions at the table level implicitly grants it for each column of the table, so  **has\_any\_column\_privilege**  will always return  **true**  if  **has\_table\_privilege**  does for the same parameters. But  **has\_any\_column\_privilege**  also succeeds if there is a column-level grant of the permission for at least one column.
 
--   has\_column\_privilege\(user, table, column, privilege\)
+- has\_column\_privilege\(user, table, column, privilege\)
 
     Description: Specifies whether a specified user has permission for columns.
 
@@ -709,7 +706,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Return type: Boolean
 
--   has\_column\_privilege\(table, column, privilege\)
+- has\_column\_privilege\(table, column, privilege\)
 
     Description: Specifies whether the current user has permission to access columns. For details about the valid parameter types, see  [Table 2](#en-us_topic_0283136950_table9581157145120).
 
@@ -720,7 +717,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
     >[!NOTE]NOTE 
     >Note that having any of these permissions at the table level implicitly grants it for each column of the table.
 
--   has\_cek\_privilege\(user, cek, privilege\)
+- has\_cek\_privilege\(user, cek, privilege\)
 
     Description: Specifies whether a specified user has permission for CEKs. The parameters are described as follows:
 
@@ -769,7 +766,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Return type: Boolean
 
--   has\_cmk\_privilege\(user, cmk, privilege\)
+- has\_cmk\_privilege\(user, cmk, privilege\)
 
     Description: Specifies whether a specified user has permission for CMKs. The parameters are described as follows:
 
@@ -818,7 +815,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Return type: Boolean
 
--   has\_database\_privilege\(user, database, privilege\)
+- has\_database\_privilege\(user, database, privilege\)
 
     Description: Specifies whether a specified user has permission for databases. The parameters are described as follows:
 
@@ -851,7 +848,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Return type: Boolean
 
--   has\_database\_privilege\(database, privilege\)
+- has\_database\_privilege\(database, privilege\)
 
     Description: Specifies whether the current user has permission to access a database. For details about the valid parameter types, see  [Table 5](#en-us_topic_0283136950_table111152337017).
 
@@ -859,7 +856,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Note:  **has\_database\_privilege**  checks whether a user can access a database in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. The desired access permission type must be some combination of  **CREATE**,  **CONNECT**,  **TEMPORARY**,  **ALTER**,  **DROP**,  **COMMENT**  or  **TEMP**  \(which is equivalent to  **TEMPORARY**\).
 
--   has\_directory\_privilege\(user, directory, privilege\)
+- has\_directory\_privilege\(user, directory, privilege\)
 
     Description: Specifies whether a specified user has permission for directories.
 
@@ -892,13 +889,13 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Return type: Boolean
 
--   has\_directory\_privilege\(directory, privilege\)
+- has\_directory\_privilege\(directory, privilege\)
 
     Description: Specifies whether the current user has permission to access a directory. For details about the valid parameter types, see  [Table 6](#en-us_topic_0283136950_table111483362025).
 
     Return type: Boolean
 
--   has\_foreign\_data\_wrapper\_privilege\(user, fdw, privilege\)
+- has\_foreign\_data\_wrapper\_privilege\(user, fdw, privilege\)
 
     Description: Specifies whether a specified user has permission for foreign-data wrappers.
 
@@ -931,7 +928,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Return type: Boolean
 
--   has\_foreign\_data\_wrapper\_privilege\(fdw, privilege\)
+- has\_foreign\_data\_wrapper\_privilege\(fdw, privilege\)
 
     Description: Specifies whether the current user has permission for foreign-data wrappers. For details about the valid parameter types, see  [Table 7](#en-us_topic_0283136950_table3176631131).
 
@@ -939,7 +936,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Note:  **has\_foreign\_data\_wrapper\_privilege**  checks whether a user can access a foreign-data wrapper in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. The desired access permission type must evaluate to  **USAGE**.
 
--   has\_function\_privilege\(user, function, privilege\)
+- has\_function\_privilege\(user, function, privilege\)
 
     Description: Specifies whether a specified user has permission for functions.
 
@@ -972,7 +969,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Return type: Boolean
 
--   has\_function\_privilege\(function, privilege\)
+- has\_function\_privilege\(function, privilege\)
 
     Description: Specifies whether the current user has permission for functions. For details about the valid parameter types, see  [Table 8](#en-us_topic_0283136950_table169651367619).
 
@@ -980,7 +977,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Note:  **has\_function\_privilege**  checks whether a user can access a function in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. When a function is specified by a text string rather than by OID, the allowed input is the same as that for the  **regprocedure**  data type \(see  [OID Types](oid_types.md)\). The access permission type must be  **EXECUTE**,  **ALTER**,  **DROP**, or  **COMMENT**.
 
--   has\_language\_privilege\(user, language, privilege\)
+- has\_language\_privilege\(user, language, privilege\)
 
     Description: Specifies whether a specified user has permission for languages.
 
@@ -1013,7 +1010,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Return type: Boolean
 
--   has\_language\_privilege\(language, privilege\)
+- has\_language\_privilege\(language, privilege\)
 
     Description: Specifies whether the current user has permission for languages. For details about the valid parameter types, see  [Table 9](#en-us_topic_0283136950_table7622265910).
 
@@ -1021,7 +1018,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Note:  **has\_language\_privilege**  checks whether a user can access a procedural language in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. The desired access permission type must evaluate to  **USAGE**.
 
--   has\_nodegroup\_privilege\(user, nodegroup, privilege\)
+- has\_nodegroup\_privilege\(user, nodegroup, privilege\)
 
     Description: Checks whether a user has permission to access a database node.
 
@@ -1054,19 +1051,19 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
     </tbody>
     </table>
 
--   has\_nodegroup\_privilege\(nodegroup, privilege\)
+- has\_nodegroup\_privilege\(nodegroup, privilege\)
 
     Description: Checks whether a user has permission to access a database node. The parameter is similar to  **has\_table\_privilege**. The access permission type must be  **USAGE**,  **CREATE**,  **COMPUTE**,  **ALTER**, or  **CROP**.
 
     Return type: Boolean
 
--   has\_schema\_privilege\(user, schema, privilege\)
+- has\_schema\_privilege\(user, schema, privilege\)
 
     Description: Specifies whether a specified user has permission for schemas.
 
     Return type: Boolean
 
--   has\_schema\_privilege\(schema, privilege\)
+- has\_schema\_privilege\(schema, privilege\)
 
     Description: Specifies whether the current user has permission for schemas.
 
@@ -1074,13 +1071,13 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Note:  **has\_schema\_privilege**  checks whether a user can access a schema in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. The desired access permission type must be some combination of  **CREATE**,  **USAGE**,  **ALTER**,  **DROP**  or  **COMMENT**.
 
--   has\_server\_privilege\(user, server, privilege\)
+- has\_server\_privilege\(user, server, privilege\)
 
     Description: Specifies whether a specified user has permission for foreign servers.
 
     Return type: Boolean
 
--   has\_server\_privilege\(server, privilege\)
+- has\_server\_privilege\(server, privilege\)
 
     Description: Specifies whether the current user has permission for foreign servers.
 
@@ -1088,13 +1085,13 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Note:  **has\_server\_privilege**  checks whether a user can access a foreign server in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. The access permission type must be  **USAGE**,  **ALTER**,  **DROP**, or  **COMMENT**.
 
--   has\_table\_privilege\(user, table, privilege\)
+- has\_table\_privilege\(user, table, privilege\)
 
     Description: Specifies whether a specified user has permission for tables.
 
     Return type: Boolean
 
--   has\_table\_privilege\(table, privilege\)
+- has\_table\_privilege\(table, privilege\)
 
     Description: Specifies whether the current user has permission for tables.
 
@@ -1118,13 +1115,13 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
     (1 row) 
     ```
 
--   has\_tablespace\_privilege\(user, tablespace, privilege\)
+- has\_tablespace\_privilege\(user, tablespace, privilege\)
 
     Description: Specifies whether a specified user has permission for tablespaces.
 
     Return type: Boolean
 
--   has\_tablespace\_privilege\(tablespace, privilege\)
+- has\_tablespace\_privilege\(tablespace, privilege\)
 
     Description: Specifies whether the current user has permission for tablespaces.
 
@@ -1132,13 +1129,13 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Note:  **has\_tablespace\_privilege**  checks whether a user can access a tablespace in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. The access permission type must be  **CREATE**,  **ALTER**,  **DROP**, or  **COMMENT**.
 
--   pg\_has\_role\(user, role, privilege\)
+- pg\_has\_role\(user, role, privilege\)
 
     Description: Specifies whether a specified user has permission for roles.
 
     Return type: Boolean
 
--   pg\_has\_role\(role, privilege\)
+- pg\_has\_role\(role, privilege\)
 
     Description: Specifies whether the current user has permission for roles.
 
@@ -1146,8 +1143,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Note:  **pg\_has\_role**  checks whether a user can access a role in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**, except that  **public**  is not allowed as a user name. The desired access permission type must evaluate to some combination of  **MEMBER**  or  **USAGE**.  **MEMBER**  denotes direct or indirect membership in the role \(that is, the right to do  **SET ROLE**\), while  **USAGE**  denotes the permissions of the role are available without doing  **SET ROLE**.
 
-
--   has\_any\_privilege\(user, privilege\)
+- has\_any\_privilege\(user, privilege\)
 
     Description: Queries whether a specified user has certain ANY permission. If multiple permissions are queried at the same time,  **true**  is returned as long as one permission is obtained.
 
@@ -1201,7 +1197,6 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
     </tbody>
     </table>
 
-
 ## Schema Visibility Inquiry Functions<a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_s8c676f27906a4d0babc4ed2bca955536"></a>
 
 Each function performs the visibility check for one type of database object. For functions and operators, an object in the search path is visible if there is no object of the same name and parameter data type earlier in the path. For operator classes, both name and associated index access method are considered.
@@ -1214,82 +1209,81 @@ For example, a table is said to be visible if its containing schema is in the se
 openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 ```
 
--   pg\_collation\_is\_visible\(collation\_oid\)
+- pg\_collation\_is\_visible\(collation\_oid\)
 
     Description: Specifies whether the collation is visible in search path.
 
     Return type: Boolean
 
--   pg\_conversion\_is\_visible\(conversion\_oid\)
+- pg\_conversion\_is\_visible\(conversion\_oid\)
 
     Description: Specifies whether the conversion is visible in search path.
 
     Return type: Boolean
 
--   pg\_function\_is\_visible\(function\_oid\)
+- pg\_function\_is\_visible\(function\_oid\)
 
     Description: Specifies whether the function is visible in search path.
 
     Return type: Boolean
 
--   pg\_opclass\_is\_visible\(opclass\_oid\)
+- pg\_opclass\_is\_visible\(opclass\_oid\)
 
     Description: Specifies whether the operator class is visible in search path.
 
     Return type: Boolean
 
--   pg\_operator\_is\_visible\(operator\_oid\)
+- pg\_operator\_is\_visible\(operator\_oid\)
 
     Description: Specifies whether the operator is visible in search path.
 
     Return type: Boolean
 
--   pg\_opfamily\_is\_visible\(opclass\_oid\)
+- pg\_opfamily\_is\_visible\(opclass\_oid\)
 
     Description: Specifies whether the operator family is visible in search path.
 
     Return type: Boolean
 
--   pg\_table\_is\_visible\(table\_oid\)
+- pg\_table\_is\_visible\(table\_oid\)
 
     Description: Specifies whether the table is visible in search path.
 
     Return type: Boolean
 
--   pg\_ts\_config\_is\_visible\(config\_oid\)
+- pg\_ts\_config\_is\_visible\(config\_oid\)
 
     Description: Specifies whether the text search configuration is visible in search path.
 
     Return type: Boolean
 
--   pg\_ts\_dict\_is\_visible\(dict\_oid\)
+- pg\_ts\_dict\_is\_visible\(dict\_oid\)
 
     Description: Specifies whether the text search dictionary is visible in search path.
 
     Return type: Boolean
 
--   pg\_ts\_parser\_is\_visible\(parser\_oid\)
+- pg\_ts\_parser\_is\_visible\(parser\_oid\)
 
     Description: Specifies whether the text search parser is visible in search path.
 
     Return type: Boolean
 
--   pg\_ts\_template\_is\_visible\(template\_oid\)
+- pg\_ts\_template\_is\_visible\(template\_oid\)
 
     Description: Specifies whether the text search template is visible in search path.
 
     Return type: Boolean
 
--   pg\_type\_is\_visible\(type\_oid\)
+- pg\_type\_is\_visible\(type\_oid\)
 
     Description: Specifies whether the type \(or domain\) is visible in search path.
 
     Return type: Boolean
 
-
 ## System Catalog Information Functions<a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_s36b999f626b14c599c6350642521a34e"></a>
 
--   format\_type\(type\_oid, typemod\)
+- format\_type\(type\_oid, typemod\)
 
     Description: Obtains the SQL name of a data type.
 
@@ -1305,11 +1299,11 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     (1 row)
     ```
 
--   getdistributekey\(table\_name\)
+- getdistributekey\(table\_name\)
 
     Description: Obtains a distribution column for a hash table. Distribution is not supported in a standalone system and the return value of this function is empty.
 
--   pg\_check\_authid\(role\_oid\)
+- pg\_check\_authid\(role\_oid\)
 
     Description: Checks whether a role name with a given OID exists.
 
@@ -1325,7 +1319,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     (1 row)
     ```
 
--   pg\_describe\_object\(catalog\_id, object\_id, object\_sub\_id\)
+- pg\_describe\_object\(catalog\_id, object\_id, object\_sub\_id\)
 
     Description: Obtains the description of a database object.
 
@@ -1333,13 +1327,13 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     Note:  **pg\_describe\_object**  returns a description of a database object specified by catalog OID, object OID and a \(possibly zero\) sub-object ID. This is useful to determine the identity of an object as stored in the  **pg\_depend**  catalog.
 
--   pg\_get\_constraintdef\(constraint\_oid\)
+- pg\_get\_constraintdef\(constraint\_oid\)
 
     Description: Obtains the definition of a constraint.
 
     Return type: text
 
--   pg\_get\_constraintdef\(constraint\_oid, pretty\_bool\)
+- pg\_get\_constraintdef\(constraint\_oid, pretty\_bool\)
 
     Description: Obtains the definition of a constraint.
 
@@ -1347,13 +1341,13 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     Note:  **pg\_get\_constraintdef**  and  **pg\_get\_indexdef**  respectively reconstruct the creating command for a constraint and an index. 
 
--   pg\_get\_expr\(pg\_node\_tree, relation\_oid\)
+- pg\_get\_expr\(pg\_node\_tree, relation\_oid\)
 
     Description: Decompiles internal form of an expression, assuming that any Vars in it refer to the relationship indicated by the second parameter.
 
     Return type: text
 
--   pg\_get\_expr\(pg\_node\_tree, relation\_oid, pretty\_bool\)
+- pg\_get\_expr\(pg\_node\_tree, relation\_oid, pretty\_bool\)
 
     Description: Decompiles internal form of an expression, assuming that any Vars in it refer to the relationship indicated by the second parameter.
 
@@ -1361,7 +1355,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     Note:  **pg\_get\_expr**  decompiles the internal form of an individual expression, such as the default value for a column. It can be useful when examining the contents of system catalogs. If the expression might contain Vars, specify the OID of the relationship they refer to as the second parameter; if no Vars are expected, zero is sufficient.
 
--   pg\_get\_functiondef\(func\_oid\)
+- pg\_get\_functiondef\(func\_oid\)
 
     Description: Obtains the definition of a function.
 
@@ -1382,7 +1376,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     (1 row)
     ```
 
--   pg\_get\_function\_arguments\(func\_oid\)
+- pg\_get\_function\_arguments\(func\_oid\)
 
     Description: Obtains the parameter list of the function's definition \(with default values\).
 
@@ -1390,7 +1384,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     Note:  **pg\_get\_function\_arguments**  returns the parameter list of a function, in the form it would need to appear in within  **CREATE FUNCTION**.
 
--   pg\_get\_function\_identity\_arguments\(func\_oid\)
+- pg\_get\_function\_identity\_arguments\(func\_oid\)
 
     Description: Obtains the parameter list to identify a function \(without default values\).
 
@@ -1398,7 +1392,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     Note:  **pg\_get\_function\_identity\_arguments**  returns the parameter list necessary to identify a function, in the form it would need to appear in within  **ALTER FUNCTION**. This form omits default values.
 
--   pg\_get\_function\_result\(func\_oid\)
+- pg\_get\_function\_result\(func\_oid\)
 
     Description: Obtains the  **RETURNS**  clause for a function.
 
@@ -1406,7 +1400,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     Note:  **pg\_get\_function\_result**  returns the appropriate  **RETURNS**  clause for the function.
 
--   pg\_get\_indexdef\(index\_oid\)
+- pg\_get\_indexdef\(index\_oid\)
 
     Description: Obtains the  **CREATE INDEX**  command for an index.
 
@@ -1422,7 +1416,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     (1 row)
     ```
 
--   pg\_get\_indexdef\(index\_oid, dump\_schema\_only\)
+- pg\_get\_indexdef\(index\_oid, dump\_schema\_only\)
 
     Description: Obtains the  **CREATE INDEX**  command for indexes in dump scenarios. For an interval partitioned table that contains a local index, if  **dump\_schema\_only**  is set to  **true**, the returned index creation statement does not contain the local index information of the automatically created partition. If  **dump\_schema\_only**  is set to  **false**, the returned index creation statement contains the local index information of the automatically created partition. For a non-interval partitioned table or an interval partitioned table that does not contain a local index, the value of  **dump\_schema\_only**  does not affect the returned result of the function.
 
@@ -1471,7 +1465,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     (1 row
     ```
 
--   pg\_get\_indexdef\(index\_oid, column\_no, pretty\_bool\)
+- pg\_get\_indexdef\(index\_oid, column\_no, pretty\_bool\)
 
     Description: Obtains the  **CREATE INDEX**  command for an index, or definition of just one index column when  **column\_no**  is not zero.
 
@@ -1494,7 +1488,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     Note:  **pg\_get\_functiondef**  returns a complete  **CREATE OR REPLACE FUNCTION**  statement for a function.
 
--   pg\_get\_keywords\(\)
+- pg\_get\_keywords\(\)
 
     Description: Obtains the list of SQL keywords and their categories.
 
@@ -1502,7 +1496,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     Note:  **pg\_get\_keywords**  returns a set of records describing the SQL keywords recognized by the server. The  **word**  column contains the keyword. The  **catcode**  column contains a category code:  **U**  for unreserved,  **C**  for column name,  **T**  for type or function name, or  **R**  for reserved. The  **catdesc**  column contains a possibly-localized string describing the category.
 
--   pg\_get\_userbyid\(role\_oid\)
+- pg\_get\_userbyid\(role\_oid\)
 
     Description: Obtains the role name with a given OID.
 
@@ -1510,7 +1504,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     Note:  **pg\_get\_userbyid**  extracts a role's name given its OID.
 
--   pg\_check\_authid\(role\_id\)
+- pg\_check\_authid\(role\_id\)
 
     Description: Checks whether a user exists based on  **role\_id**.
 
@@ -1526,13 +1520,13 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     (1 row)
     ```
 
--   pg\_get\_viewdef\(view\_name\)
+- pg\_get\_viewdef\(view\_name\)
 
     Description: Obtains the underlying  **SELECT**  command for a view.
 
     Return type: text
 
--   pg\_get\_viewdef\(view\_name, pretty\_bool\)
+- pg\_get\_viewdef\(view\_name, pretty\_bool\)
 
     Description: Obtains the underlying  **SELECT**  command for a view, lines with columns are wrapped to 80 columns if  **pretty\_bool**  is set to  **true**.
 
@@ -1540,25 +1534,25 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     Note:  **pg\_get\_viewdef**  reconstructs the  **SELECT**  query that defines a view. Most of these functions come in two variants. When the function has the parameter  **pretty\_bool**  and the value is true, it can optionally "pretty-print" the result. The pretty-printed format is more readable. The other one is default format which is more likely to be interpreted the same way by future versions of PostgreSQL. Avoid using pretty-printed output for dump purposes. Passing  **false**  for the pretty-print parameter yields the same result as the variant that does not have the parameter at all.
 
--   pg\_get\_viewdef\(view\_oid\)
+- pg\_get\_viewdef\(view\_oid\)
 
     Description: Obtains the underlying  **SELECT**  command for a view.
 
     Return type: text
 
--   pg\_get\_viewdef\(view\_oid, pretty\_bool\)
+- pg\_get\_viewdef\(view\_oid, pretty\_bool\)
 
     Description: Obtains the underlying  **SELECT**  command for a view, lines with columns are wrapped to 80 columns if  **pretty\_bool**  is set to  **true**.
 
     Return type: text
 
--   pg\_get\_viewdef\(view\_oid, wrap\_column\_int\)
+- pg\_get\_viewdef\(view\_oid, wrap\_column\_int\)
 
     Description: Obtains the underlying  **SELECT**  command for a view, wrapping lines with columns as specified, printing is implied.
 
     Return type: text
 
--   pg\_get\_tabledef\(table\_oid\)
+- pg\_get\_tabledef\(table\_oid\)
 
     Description: Obtains a table definition based on  **table\_oid**.
 
@@ -1579,7 +1573,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     Return type: text
 
--   pg\_get\_tabledef\(table\_name\)
+- pg\_get\_tabledef\(table\_name\)
 
     Description: Obtains a table definition based on  **table\_name**.
 
@@ -1602,7 +1596,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     Remarks:  **pg\_get\_tabledef**  reconstructs the  **CREATE**  statement of the table definition, including the table definition, index information, and comments. Users need to create the dependent objects of the table, such as groups, schemas, tablespaces, and servers. The table definition does not include the statements for creating these dependent objects.
 
--   pg\_options\_to\_table\(reloptions\)
+- pg\_options\_to\_table\(reloptions\)
 
     Description: Obtains the set of storage option name/value pairs.
 
@@ -1610,7 +1604,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     Note:  **pg\_options\_to\_table**  returns the set of storage option name/value pairs \(**option\_name**/**option\_value**\) when passed  **pg\_class.reloptions**  or  **pg\_attribute.attoptions**.
 
--   pg\_tablespace\_databases\(tablespace\_oid\)
+- pg\_tablespace\_databases\(tablespace\_oid\)
 
     Description: Obtains the set of database OIDs that have objects in the specified tablespace.
 
@@ -1618,13 +1612,13 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     Note:  **pg\_tablespace\_databases**  allows a tablespace to be examined. It returns the set of OIDs of databases that have objects stored in the tablespace. If this function returns any rows, the tablespace is not empty and cannot be dropped. To display the specific objects populating the tablespace, you will need to connect to the databases identified by  **pg\_tablespace\_databases**  and query their  **pg\_class**  catalogs.
 
--   pg\_tablespace\_location\(tablespace\_oid\)
+- pg\_tablespace\_location\(tablespace\_oid\)
 
     Description: Obtains the path in the file system that this tablespace is located in.
 
     Return type: text
 
--   pg\_typeof\(any\)
+- pg\_typeof\(any\)
 
     Description: Obtains the data type of any value.
 
@@ -1648,7 +1642,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     (1 row)
     ```
 
--   collation for \(any\)
+- collation for \(any\)
 
     Description: Obtains the collation of the parameter.
 
@@ -1668,13 +1662,13 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     The value might be quoted and schema-qualified. If no collation is derived for the argument expression, then a null value is returned. If the parameter is not of a collectable data type, then an error is thrown.
 
--   pg\_extension\_update\_paths\(name\)
+- pg\_extension\_update\_paths\(name\)
 
     Description: Returns the version update path of the specified extension.
 
     Return type: text\(source text\), text\(path text\), text\(target text\)
 
--   pg\_get\_serial\_sequence\(tablename, colname\)
+- pg\_get\_serial\_sequence\(tablename, colname\)
 
     Description: Obtains the sequence of the corresponding table name and column name.
 
@@ -1690,7 +1684,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     (1 row)
     ```
 
--   pg\_sequence\_parameters\(sequence\_oid\)
+- pg\_sequence\_parameters\(sequence\_oid\)
 
     Description: Obtains the parameters of a specified sequence, including the start value, minimum value, maximum value, and incremental value.
 
@@ -1706,10 +1700,9 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     (1 row)
     ```
 
-
 ## Comment Information Functions<a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_s088c996ec385478daa38d9aa9f991d58"></a>
 
--   col\_description\(table\_oid, column\_number\)
+- col\_description\(table\_oid, column\_number\)
 
     Description: Obtains the comment for a table column.
 
@@ -1717,7 +1710,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     Note:  **col\_description**  returns the comment for a table column, which is specified by the OID of its table and its column number.
 
--   obj\_description\(object\_oid, catalog\_name\)
+- obj\_description\(object\_oid, catalog\_name\)
 
     Description: Obtains the comment for a database object.
 
@@ -1727,20 +1720,19 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     **obj\_description**  cannot be used for table columns since columns do not have OIDs of their own.
 
--   obj\_description\(object\_oid\)
+- obj\_description\(object\_oid\)
 
     Description: Obtains the comment for a database object.
 
     Return type: text
 
--   shobj\_description\(object\_oid, catalog\_name\)
+- shobj\_description\(object\_oid, catalog\_name\)
 
     Description: Obtains the comment for a shared database object.
 
     Return type: text
 
     Note:  **shobj\_description**  is used just like  **obj\_description**  except the former is used for retrieving comments on shared objects. Some system catalogs are global to all databases in openGauss, and the comments for objects in them are stored globally as well.
-
 
 ## Transaction IDs and Snapshots<a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_s13629462b1e147b2a9e93634a69e54e7"></a>
 
@@ -1779,67 +1771,67 @@ For example,  **10:20:10,14,15**  means  **xmin=10, xmax=20, xip\_list=10, 14, 1
 
 The following functions provide server transaction information in an exportable form. The main use of these functions is to determine which transactions were committed between two snapshots.
 
--   txid\_current\(\)
+- txid\_current\(\)
 
     Description: Obtains the current transaction ID.
 
     Return type: bigint
 
--   gs\_txid\_oldestxmin\(\)
+- gs\_txid\_oldestxmin\(\)
 
     Description: Obtains the minimum transaction ID \(specified by  **oldesxmin**\).
 
     Return type: bigint
 
--   txid\_current\_snapshot\(\)
+- txid\_current\_snapshot\(\)
 
     Description: Obtains the current snapshot.
 
     Return type: txid\_snapshot
 
--   txid\_snapshot\_xip\(txid\_snapshot\)
+- txid\_snapshot\_xip\(txid\_snapshot\)
 
     Description: Obtains in-progress transaction IDs in a snapshot.
 
     Return type: SETOF bigint
 
--   txid\_snapshot\_xmax\(txid\_snapshot\)
+- txid\_snapshot\_xmax\(txid\_snapshot\)
 
     Description: Obtains  **xmax**  of snapshots.
 
     Return type: bigint
 
--   txid\_snapshot\_xmin\(txid\_snapshot\)
+- txid\_snapshot\_xmin\(txid\_snapshot\)
 
     Description: Obtains  **xmin**  of snapshots.
 
     Return type: bigint
 
--   txid\_visible\_in\_snapshot\(bigint, txid\_snapshot\)
+- txid\_visible\_in\_snapshot\(bigint, txid\_snapshot\)
 
     Description: Specifies whether the transaction ID is visible in a snapshot \(do not use subtransaction IDs\).
 
     Return type: Boolean
 
--   get\_local\_prepared\_xact\(\)
+- get\_local\_prepared\_xact\(\)
 
     Description: Obtains the two-phase residual transaction information of the current node, including the transaction ID, GID of the two-phase transaction, prepared time, owner OID, database OID, and node name of the current node.
 
     Return type: xid, text, timestamptz, oid, oid, text
 
--   get\_remote\_prepared\_xacts\(\)
+- get\_remote\_prepared\_xacts\(\)
 
     Description: Obtains the two-phase residual transaction information of all remote nodes, including the transaction ID, GID of the two-phase transaction, prepared time, owner name, database name, and node name.
 
     Return type: xid, text, timestamptz, name, name, text
 
--   global\_clean\_prepared\_xacts\(text, text\)
+- global\_clean\_prepared\_xacts\(text, text\)
 
     Description: Concurrently cleans two-phase residual transactions. Only the  **gs\_clean**  tool can call this function for the cleaning. In other situations,  **false**  is returned.
 
     Return type: Boolean
 
--   gs\_get\_next\_xid\_csn\(\)
+- gs\_get\_next\_xid\_csn\(\)
 
     Description: Returns the values of  **next\_xid**  and  **next\_csn**  on all nodes globally.
 
@@ -1872,8 +1864,7 @@ The following functions provide server transaction information in an exportable 
     </tbody>
     </table>
 
-
--   slice\(hstore, text\[\]\)
+- slice\(hstore, text\[\]\)
 
     Description: Extracts the subset of the hstore type.
 
@@ -1889,7 +1880,7 @@ The following functions provide server transaction information in an exportable 
     (1 row)
     ```
 
--   slice\_array\(hstore, text\[\]\)
+- slice\_array\(hstore, text\[\]\)
 
     Description: Extracts the set of hstore values.
 
@@ -1905,7 +1896,7 @@ The following functions provide server transaction information in an exportable 
     (1 row)
     ```
 
--   skeys\(hstore\)
+- skeys\(hstore\)
 
     Description: Returns a set of all keys of the hstore type.
 
@@ -1922,20 +1913,19 @@ The following functions provide server transaction information in an exportable 
     (2 rows)
     ```
 
-
--   pg\_control\_system\(\)
+- pg\_control\_system\(\)
 
     Description: Returns the status of the system control file.
 
     Return type: SETOF record
 
--   pg\_control\_checkpoint\(\)
+- pg\_control\_checkpoint\(\)
 
     Description: Returns the system checkpoint status.
 
     Return type: SETOF record
 
--   pv\_builtin\_functions
+- pv\_builtin\_functions
 
     Description: Displays information about all built-in system functions.
 
@@ -1943,7 +1933,7 @@ The following functions provide server transaction information in an exportable 
 
     Return type: proname name, pronamespace oid, proowner oid, prolang oid, procost real, prorows real, provariadic oid, protransform regproc, proisagg boolean, proiswindow boolean, prosecdef boolean, proleakproof boolean, proisstrict boolean, proretset boolean, provolatile "char", pronargs smallint, pronargdefaults smallint, prorettype oid, proargtypes oidvector, proallargtypes integer\[\], proargmodes "char"\[\], proargnames text\[\], proargdefaults pg\_node\_tree, prosrc text, probin text, proconfig text\[\], proacl aclitem\[\], prodefaultargpos int2vector, fencedmode boolean, proshippable boolean, propackage boolean, oid oid
 
--   pv\_thread\_memory\_detail
+- pv\_thread\_memory\_detail
 
     Description: Returns the memory information of each thread.
 
@@ -1951,7 +1941,7 @@ The following functions provide server transaction information in an exportable 
 
     Return type: threadid text, tid bigint, thrdtype text, contextname text, level smallint, parent text, totalsize bigint, freesize bigint, usedsize bigint
 
--   pg\_relation\_compression\_ratio
+- pg\_relation\_compression\_ratio
 
     Description: Queries the compression rate of a table. By default,  **1.0**  is returned.
 
@@ -1959,7 +1949,7 @@ The following functions provide server transaction information in an exportable 
 
     Return type: real
 
--   pg\_relation\_with\_compression
+- pg\_relation\_with\_compression
 
     Description: Specifies whether a table is compressed.
 
@@ -1967,13 +1957,13 @@ The following functions provide server transaction information in an exportable 
 
     Return type: Boolean
 
--   pg\_stat\_file\_recursive
+- pg\_stat\_file\_recursive
 
     Description: Lists all files in a path.
 
     Parameter: location text
 
--   pg\_shared\_memory\_detail
+- pg\_shared\_memory\_detail
 
     Description: Returns usage information about all generated shared memory contexts. For details about each column.
 
@@ -1981,11 +1971,11 @@ The following functions provide server transaction information in an exportable 
 
     Return type: contextname text, level smallint, parent text, totalsize bigint, freesize bigint, usedsize bigint
 
--   get\_gtm\_lite\_status
+- get\_gtm\_lite\_status
 
     **Description**: Returns the backup XID and CSN on the GTM for fault locating. This system function is not supported in GTM-FREE mode.
 
--   gs\_stat\_get\_wlm\_plan\_operator\_info
+- gs\_stat\_get\_wlm\_plan\_operator\_info
 
     Description: Obtains operator plan information from the internal hash table.
 
@@ -1993,7 +1983,7 @@ The following functions provide server transaction information in an exportable 
 
     Return type: datname text, queryid int8, plan\_node\_id int4, startup\_time int8, total\_time int8, actual\_rows int8, max\_peak\_memory int4, query\_dop int4, parent\_node\_id int4, left\_child\_id int4, right\_child\_id int4, operation text, orientation text, strategy text, options text, condition text, projection text
 
--   pg\_stat\_get\_partition\_tuples\_hot\_updated
+- pg\_stat\_get\_partition\_tuples\_hot\_updated
 
     Description: Returns statistics on the number of hot-updated tuples in a partition with a specified partition ID.
 
@@ -2001,7 +1991,7 @@ The following functions provide server transaction information in an exportable 
 
     Return type: bigint
 
--   gs\_session\_memory\_detail\_tp
+- gs\_session\_memory\_detail\_tp
 
     Description: Returns the memory usage of the session. For details, see  **gs\_session\_memory\_detail**.
 
@@ -2009,7 +1999,7 @@ The following functions provide server transaction information in an exportable 
 
     Return type: sessid text, sesstype text, contextname text, level smallint, parent text, totalsize bigint, freesize bigint, usedsize bigint
 
--   gs\_thread\_memory\_detail
+- gs\_thread\_memory\_detail
 
     Description: Returns the memory information of each thread.
 
@@ -2017,43 +2007,43 @@ The following functions provide server transaction information in an exportable 
 
     Return type: threadid text, tid bigint, thrdtype text, contextname text, level smallint, parent text, totalsize bigint, freesize bigint, usedsize bigint
 
--   pg\_stat\_get\_wlm\_realtime\_operator\_info
+- pg\_stat\_get\_wlm\_realtime\_operator\_info
 
     Description: This API has been discarded and is unavailable currently.
 
--   pg\_stat\_get\_wlm\_realtime\_ec\_operator\_info
+- pg\_stat\_get\_wlm\_realtime\_ec\_operator\_info
 
     Description: This API has been discarded and is unavailable currently.
 
--   pg\_stat\_get\_wlm\_operator\_info
+- pg\_stat\_get\_wlm\_operator\_info
 
     Description: This API has been discarded and is unavailable currently.
 
--   pg\_stat\_get\_wlm\_node\_resource\_info
+- pg\_stat\_get\_wlm\_node\_resource\_info
 
     Description: This API has been discarded and is unavailable currently.
 
--   pg\_stat\_get\_session\_wlmstat
+- pg\_stat\_get\_session\_wlmstat
 
     Description: This API has been discarded and is unavailable currently.
 
--   pg\_stat\_get\_wlm\_ec\_operator\_info
+- pg\_stat\_get\_wlm\_ec\_operator\_info
 
     Description: This API has been discarded and is unavailable currently.
 
--   pg\_stat\_get\_wlm\_instance\_info
+- pg\_stat\_get\_wlm\_instance\_info
 
     Description: This API has been discarded and is unavailable currently.
 
--   pg\_stat\_get\_wlm\_instance\_info\_with\_cleanup
+- pg\_stat\_get\_wlm\_instance\_info\_with\_cleanup
 
     Description: This API has been discarded and is unavailable currently.
 
--   pg\_stat\_get\_wlm\_realtime\_session\_info
+- pg\_stat\_get\_wlm\_realtime\_session\_info
 
     Description: This API has been discarded and is unavailable currently.
 
--   pg\_stat\_get\_wlm\_session\_iostat\_info
+- pg\_stat\_get\_wlm\_session\_iostat\_info
 
     Description: Returns the session load I/O information.
 
@@ -2061,7 +2051,6 @@ The following functions provide server transaction information in an exportable 
 
     Return type: threadid bigint, maxcurr\_iops integer, mincurr\_iops integer, maxpeak\_iops integer, minpeak\_iops integer, iops\_limits integer, io\_priority integer, curr\_io\_limits integer
 
--   pg\_stat\_get\_wlm\_statistics
+- pg\_stat\_get\_wlm\_statistics
 
     Description: This API has been discarded and is unavailable currently.
-

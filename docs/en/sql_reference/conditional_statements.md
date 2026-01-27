@@ -4,7 +4,7 @@ Conditional statements are used to decide whether given conditions are met. Oper
 
 openGauss supports five usages of  **IF**:
 
--   IF\_THEN
+- IF\_THEN
 
     **Figure  1**  IF\_THEN::=<a name="en-us_topic_0237122233_en-us_topic_0059778300_f49f3826ed5ce406fb823979bb5693d75"></a>  
     ![](figures/if_then.jpg "if_then")
@@ -19,7 +19,7 @@ openGauss supports five usages of  **IF**:
     END IF;
     ```
 
--   IF\_THEN\_ELSE
+- IF\_THEN\_ELSE
 
     **Figure  2**  IF\_THEN\_ELSE::=<a name="en-us_topic_0237122233_en-us_topic_0059778300_f7793c47dee9842d3979aac9ebde3668d"></a>  
     ![](figures/if_then_else.jpg "if_then_else")
@@ -37,7 +37,7 @@ openGauss supports five usages of  **IF**:
     END IF;
     ```
 
--   IF\_THEN\_ELSE IF
+- IF\_THEN\_ELSE IF
 
     **IF**  statements can be nested in the following way:
 
@@ -53,7 +53,7 @@ openGauss supports five usages of  **IF**:
 
     Actually, this is a way of an  **IF**  statement nesting in the  **ELSE**  part of another  **IF**  statement. Therefore, an  **END IF**  statement is required for each nesting  **IF**  statement and another  **END IF**  statement is required to end the parent  **IF-ELSE**  statement. To set multiple options, use the following form:
 
--   IF\_THEN\_ELSIF\_ELSE
+- IF\_THEN\_ELSIF\_ELSE
 
     **Figure  3**  IF\_THEN\_ELSIF\_ELSE::=<a name="en-us_topic_0237122233_en-us_topic_0059778300_f4be1510408244e98832b9ac2cf1c9ea9"></a>  
     ![](figures/if_then_elsif_else.png "if_then_elsif_else")
@@ -72,7 +72,7 @@ openGauss supports five usages of  **IF**:
     END IF;
     ```
 
--   IF\_THEN\_ELSEIF\_ELSE
+- IF\_THEN\_ELSEIF\_ELSE
 
     **ELSEIF**  is an alias of  **ELSIF**.
 
@@ -98,5 +98,3 @@ openGauss supports five usages of  **IF**:
     -- Delete the stored procedure.
     DROP PROCEDURE proc_control_structure;
     ```
-
-

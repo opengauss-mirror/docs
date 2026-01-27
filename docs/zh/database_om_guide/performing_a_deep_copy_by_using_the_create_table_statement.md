@@ -8,7 +8,7 @@
 
 执行如下步骤对表customer\_t进行深层复制。
 
-1.  使用CREATE TABLE语句创建表customer\_t的副本customer\_t\_copy。
+1. 使用CREATE TABLE语句创建表customer\_t的副本customer\_t\_copy。
 
     ```
     CREATE TABLE customer_t_copy
@@ -19,22 +19,20 @@
     ) ;
     ```
 
-2.  使用INSERT INTO…SELECT语句向副本填充原始表中的数据。
+2. 使用INSERT INTO…SELECT语句向副本填充原始表中的数据。
 
     ```
     INSERT INTO customer_t_copy (SELECT * FROM customer_t);
     ```
 
-3.  删除原始表。
+3. 删除原始表。
 
     ```
     DROP TABLE customer_t;
     ```
 
-4.  使用ALTER TABLE语句将副本重命名为原始表名称。
+4. 使用ALTER TABLE语句将副本重命名为原始表名称。
 
     ```
     ALTER TABLE customer_t_copy RENAME TO customer_t;
     ```
-
-

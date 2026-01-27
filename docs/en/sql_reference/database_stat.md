@@ -103,4 +103,3 @@ The following table describes columns in the Database Stat report.
 </tr>
 </tbody>
 </table>
-

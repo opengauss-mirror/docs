@@ -3,15 +3,17 @@
 ## Symptom
 
 The following error information is recorded in logs.
+
 ```
 This error usually means that PostgreSQL's request for a shared  memory segment 
 exceeded available memory or swap space,  or exceeded your kernel's SHMALL parameter.  
 You can either  reduce the request size or reconfigure the kernel with larger SHMALL. 
 ```
 
-
 ## Cause Analysis
+
 Run the `free` command to check the memory usage. It is found that the `shared` memory occupies a large part.
+
 ```
 # free -g
               total        used        free      shared  buff/cache   available
@@ -56,7 +58,9 @@ key        shmid      owner      perms      bytes      nattch     status
 The cause is that the `kill -9` command is run to exit the database process and the `IpcMemoryDelete` function is not invoked to clear the shared memory. As a result, the memory leakage occurs.
 
 ## Procedure
+
 Run the `ipcrm` command to release the shared memory without owners. For example, to release the shared memory whose `shmid` is `3604486`, run the following command.
+
 ```
 ipcrm -m shid3604486
 ```

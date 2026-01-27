@@ -33,4 +33,3 @@ Cursors are classified into explicit cursors and implicit cursors.  [Table 1](#e
 </tr>
 </tbody>
 </table>
-

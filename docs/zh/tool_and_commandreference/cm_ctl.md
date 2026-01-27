@@ -2,57 +2,55 @@
 
 cm\_ctl是openGauss提供的用来控制数据库实例服务的工具。该工具主要供OM调用，及数据库实例服务自恢复时使用。cm\_ctl的主要功能有：
 
--   启动数据库实例服务、AZ的所有实例、单个主机上的所有实例或单独启动某个实例进程。
--   停止数据库实例服务、AZ的所有实例、单个主机上的所有实例或单独停止某个节点实例进程。
--   重启逻辑数据库实例服务。
--   查询数据库实例状态或者单个主机的状态。
--   切换主备实例或重置实例状态。
--   重建备机。
--   查看数据库实例配置文件。
--   设置日志级别，一主多备数据库实例部署下cm\_server的仲裁模式、AZ之间的切换模式。
--   获取日志级别，一主多备数据库实例部署下cm\_server的仲裁模式、AZ之间的切换模式。
--   检测实例进程状态。
+- 启动数据库实例服务、AZ的所有实例、单个主机上的所有实例或单独启动某个实例进程。
+- 停止数据库实例服务、AZ的所有实例、单个主机上的所有实例或单独停止某个节点实例进程。
+- 重启逻辑数据库实例服务。
+- 查询数据库实例状态或者单个主机的状态。
+- 切换主备实例或重置实例状态。
+- 重建备机。
+- 查看数据库实例配置文件。
+- 设置日志级别，一主多备数据库实例部署下cm\_server的仲裁模式、AZ之间的切换模式。
+- 获取日志级别，一主多备数据库实例部署下cm\_server的仲裁模式、AZ之间的切换模式。
+- 检测实例进程状态。
 
 与cm\_ctl工具相关的文件：
 
--   cluster\_manual\_start
+- cluster\_manual\_start
 
     该文件是数据库实例启停标志文件。文件位于_$GAUSSHOME/bin_下。其中，GAUSSHOME为环境变量。启动数据库实例时，cm\_ctl会删除该文件；停止数据库实例时，cm\_ctl会生成该文件，并向文件写入停止模式。
 
-
--   instance\_manual\_start\_X（X是实例编号）
+- instance\_manual\_start\_X（X是实例编号）
 
     该文件是单个实例启停标志文件。文件位于_$GAUSSHOME/bin_下。其中，GAUSSHOME为环境变量。启动实例时，cm\_ctl会删除该文件；停止实例时，cm\_ctl会生成该文件，并向文件写入停止模式。
 
-
 cm\_ctl的相关约束：
 
--   在集群模式下，使用cm\_ctl集群工具来切换数据库角色，而不是gs\_ctl数据库工具。
+- 在集群模式下，使用cm\_ctl集群工具来切换数据库角色，而不是gs\_ctl数据库工具。
 
 ## 命令说明<a name="zh-cn_topic_0116784021_s03ab48c805584dbda0f4d8f1a36833c2"></a>
 
 cm\_ctl参数可分为如下几类：
 
--   option参数，详细请参见  [表 option参数](#zh-cn_topic_0116784021_table1718281376)。
--   公共参数，详细请参见  [表 公共参数](#zh-cn_topic_0116784021_t73f4b6dad11943ea811a211e6c127669)。
--   start模式的参数，详细参见  [表 start参数](#table45722029132319)。
--   switchover模式的参数，详细请参见  [表 switchover参数](#table12226155814102)。
--   build模式的参数，详细请参见  [表 build参数](#table649003761312)。
--   check模式的参数，详细请参见  [表 check参数](#zh-cn_topic_0116784021_t5582631c9b25449da85855fab919ddfd)。
--   stop模式的参数，详细请参见  [表 stop参数](#zh-cn_topic_0116784021_t7507cabe697c4b4da00814fccee8e559)。
--   query模式的参数，详细请参见  [表 query参数](#zh-cn_topic_0116784021_t19badc48929f4f9abd94b8ac774f06c1)。
--   view模式的参数，详细请参见  [表 view参数](#zh-cn_topic_0116784021_table207722104617)。
--   set模式的参数，详细请参见  [表 set参数](#zh-cn_topic_0116784021_tef5e0858a71c4d21abce8f80e3ba7723) [表 set cm参数](#table10437204416514)。
--   get模式的参数，详情请参见  [表 get参数](#table1599151916313)。
--   setrunmode模式的参数，详细请参见  [表 setrunmode参数](#table1656519521713)。
--   changerole模式的参数，详细请参见  [表 changerole参数](#table326418392182)。
--   changemember功能的参数，详细请参见  [表 changemember参数](#table27311655104911)。
--   reload模式的参数，详细请参见  [表 reload 参数](#table11377594818)。
--   list模式的参数，详细请参见  [表 list参数](#table0914920191018)。
--   encrypt模式的参数，详细请参见  [表 encrypt参数](#table4739105911382)。
--   ddb模式的参数，详细请参见  [表 ddb参数](#table9665145942617)。
--   switch模式的参数，详细请参见  [表 switch参数](#table7591811163812)。
--   res模式的参数，详细请参见  [表 res参数](#table11658339114119)。
+- option参数，详细请参见  [表 option参数](#zh-cn_topic_0116784021_table1718281376)。
+- 公共参数，详细请参见  [表 公共参数](#zh-cn_topic_0116784021_t73f4b6dad11943ea811a211e6c127669)。
+- start模式的参数，详细参见  [表 start参数](#table45722029132319)。
+- switchover模式的参数，详细请参见  [表 switchover参数](#table12226155814102)。
+- build模式的参数，详细请参见  [表 build参数](#table649003761312)。
+- check模式的参数，详细请参见  [表 check参数](#zh-cn_topic_0116784021_t5582631c9b25449da85855fab919ddfd)。
+- stop模式的参数，详细请参见  [表 stop参数](#zh-cn_topic_0116784021_t7507cabe697c4b4da00814fccee8e559)。
+- query模式的参数，详细请参见  [表 query参数](#zh-cn_topic_0116784021_t19badc48929f4f9abd94b8ac774f06c1)。
+- view模式的参数，详细请参见  [表 view参数](#zh-cn_topic_0116784021_table207722104617)。
+- set模式的参数，详细请参见  [表 set参数](#zh-cn_topic_0116784021_tef5e0858a71c4d21abce8f80e3ba7723) [表 set cm参数](#table10437204416514)。
+- get模式的参数，详情请参见  [表 get参数](#table1599151916313)。
+- setrunmode模式的参数，详细请参见  [表 setrunmode参数](#table1656519521713)。
+- changerole模式的参数，详细请参见  [表 changerole参数](#table326418392182)。
+- changemember功能的参数，详细请参见  [表 changemember参数](#table27311655104911)。
+- reload模式的参数，详细请参见  [表 reload 参数](#table11377594818)。
+- list模式的参数，详细请参见  [表 list参数](#table0914920191018)。
+- encrypt模式的参数，详细请参见  [表 encrypt参数](#table4739105911382)。
+- ddb模式的参数，详细请参见  [表 ddb参数](#table9665145942617)。
+- switch模式的参数，详细请参见  [表 switch参数](#table7591811163812)。
+- res模式的参数，详细请参见  [表 res参数](#table11658339114119)。
 
 使用方法:
 
@@ -901,109 +899,109 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 
 ## 命令参考<a name="section129433814222"></a>
 
--   启动实例：
+- 启动实例：
 
     ```
     cm_ctl start [-z AVAILABILITY_ZONE [--cm_arbitration_mode=ARBITRATION_MODE]] | [-n NODEID [-D DATADIR]] [-t SECS]
     ```
 
--   数据库主备倒换：
+- 数据库主备倒换：
 
     ```
     cm_ctl switchover [-z AVAILABILITY_ZONE] | [-n NODEID -D DATADIR [-f]] | [-a] | [-A] [-t SECS]
     ```
 
--   所有备机停止回放，每个分片中选择一个强制升主：
+- 所有备机停止回放，每个分片中选择一个强制升主：
 
     ```
     cm_ctl finishredo
     ```
 
--   重建备节点：
+- 重建备节点：
 
     ```
     cm_ctl build -n NODEID -D DATADIR [-t SECS] [-f] [-b full]
     ```
 
--   检测实例进程运行状态：
+- 检测实例进程运行状态：
 
     ```
     cm_ctl check -B BINNAME -T DATAPATH
     ```
 
--   停止实例：
+- 停止实例：
 
     ```
     cm_ctl stop [[-z AVAILABILITY_ZONE] | [-n NODEID [-D DATADIR [-R]]]] [-t SECS] [-m SHUTDOWN-MODE]
     ```
 
--   查询集群状态：
+- 查询集群状态：
 
     ```
     cm_ctl query [-z ALL] [-l FILENAME] [-v [-C [-s] [-S] [-d] [-i] [-F] [-x] [-p]] | [-r]] [-t SECS] [--minorityAz=AZ_NAME]
     ```
 
--   查看集群配置文件：
+- 查看集群配置文件：
 
     ```
     cm_ctl view [-v | -N | -n NODEID] [-l FILENAME]
     ```
 
--   设置参数：
+- 设置参数：
 
     ```
     cm_ctl set [--log_level=LOG_LEVEL] [--cm_arbitration_mode=ARBITRATION_MODE] [--cm_switchover_az_mode=SWITCHOVER_AZ_MODE]
     ```
 
--   设置CM参数：
+- 设置CM参数：
 
     ```
     cm_ctl set --param --agent | --server [-n NODEID] -k PARAMETER="'value'"
     ```
 
--   获取参数：
+- 获取参数：
 
     ```
     cm_ctl get [--log_level] [--cm_arbitration_mode] [--cm_switchover_az_mode]
     ```
 
--   设置DCF投票数：
+- 设置DCF投票数：
 
     ```
     cm_ctl setrunmode -n NODEID -D DATADIR  [[--xmode=normal] | [--xmode=minority --votenum=NUM]]
     ```
 
--   改变dcf角色信息：
+- 改变dcf角色信息：
 
     ```
     cm_ctl changerole [--role=PASSIVE | --role=FOLLOWER] -n NODEID -D DATADIR [-t SECS]
     ```
 
--   改变dcf节点属性：
+- 改变dcf节点属性：
 
     ```
     cm_ctl changemember [--role=PASSIVE | --role=FOLLOWER] [--group=xx] [--priority=xx] -n NODEID -D DATADIR [-t SECS]
     ```
 
--   动态加载CM参数：
+- 动态加载CM参数：
 
     ```
     cm_ctl reload --param [--agent | --server]
     ```
 
--   列出所有CM参数：
+- 列出所有CM参数：
 
     ```
     cm_ctl list --param [--agent | --server]
     ```
 
--   加密：
+- 加密：
 
     ```
     cm_ctl encrypt [-M MODE] -D DATADIR
     ```
 
--   执行DDB命令行：
+- 执行DDB命令行：
 
     ```
     cm_ctl ddb DDB_CMD
@@ -1012,13 +1010,13 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
     查看DDB命令帮助信息：cm_ctl ddb --help
     ```
 
--   执行switch ddb命令：
+- 执行switch ddb命令：
 
     ```
     cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
     ```
 
--   执行res命令：
+- 执行res命令：
 
     ```
     新增资源：cm_ctl res --add --res_name=[name] --res_attr=[res_info]
@@ -1028,5 +1026,3 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
     删除资源实例：cm_ctl res --edit --res_name=[name] --del_inst=[inst_info]
     检查资源：cm_ctl res --check
     ```
-
-

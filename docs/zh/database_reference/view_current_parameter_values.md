@@ -4,8 +4,8 @@ openGauss安装后，有一套默认的运行参数，为了使openGauss与业�
 
 ## 操作步骤<a name="zh-cn_topic_0237121561_zh-cn_topic_0059778552_s188c1b9187954573b5701cc6013c78e8"></a>
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  使用如下命令连接数据库。
+1. 以操作系统用户omm登录数据库主节点。
+2. 使用如下命令连接数据库。
 
     ```
     gsql -d postgres -p 8000
@@ -23,9 +23,9 @@ openGauss安装后，有一套默认的运行参数，为了使openGauss与业�
     openGauss=# 
     ```
 
-3.  查看数据库运行参数当前取值。
-    -   方法一：使用SHOW命令。
-        -   使用如下命令查看单个参数：
+3. 查看数据库运行参数当前取值。
+    - 方法一：使用SHOW命令。
+        - 使用如下命令查看单个参数：
 
             ```
             SHOW server_version;
@@ -33,28 +33,24 @@ openGauss安装后，有一套默认的运行参数，为了使openGauss与业�
 
             server\_version显示数据库版本信息的参数。
 
-        -   使用如下命令查看所有参数：
+        - 使用如下命令查看所有参数：
 
             ```
             SHOW ALL;
             ```
 
-
-    -   方法二：使用pg\_settings视图。
-        -   使用如下命令查看单个参数：
+    - 方法二：使用pg\_settings视图。
+        - 使用如下命令查看单个参数：
     
             ```
             SELECT * FROM pg_settings WHERE NAME='server_version';
             ```
     
-        -   使用如下命令查看所有参数：
+        - 使用如下命令查看所有参数：
     
             ```
             SELECT * FROM pg_settings;
             ```
-
-
-
 
 ## 示例<a name="zh-cn_topic_0237121561_zh-cn_topic_0059778552_se13d2a46521a4500881363a56a68d6cf"></a>
 
@@ -67,4 +63,3 @@ openGauss=# SHOW server_version;
  9.2.4
 (1 row)
 ```
-

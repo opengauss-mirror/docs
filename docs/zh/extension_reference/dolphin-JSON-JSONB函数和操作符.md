@@ -696,7 +696,6 @@
   (1 row)
   ```
 
-
 * json_type(json_val)
 
   描述：输入为JSON文档，返回数据类型。

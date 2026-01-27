@@ -31,18 +31,16 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
   指定模式的默认字符集，单独指定时会将模式的默认字符序设置为指定的字符集的默认字符序。
 
--  **[ [DEFAULT] COLLATE [ = ] default_collation ]**
+- **[ [DEFAULT] COLLATE [ = ] default_collation ]**
 
   指定模式的默认字符序，单独指定时会将模式的默认字符集设置为指定的字符序对应的字符集。
 
   [!NOTE]说明
 
-  -   B兼容性下，仅在 dolphin.b_compatibility_mode 为on时支持该语法。
-  -   使用该语法时，语法等效于CREATE SCHEMA，实际为创建SCHEMA语法, database\_name 为SCHEMA名称 。
-  -   B兼容性下， dolphin.b_compatibility_mode 为on时，不指定 default_charset 、default_collation ，而指定其他CREATE DATABASE 语法选项，语法仍为CREATE DATABASE语法。
-  -   B兼容性下， dolphin.b_compatibility_mode 为on时，当不指定任何选项，语法等同为CREATE SCHEMA语法；dolphin.b_compatibility_mode 为off时，语法等同为CREATE DATABASE 语法。
-
-
+  - B兼容性下，仅在 dolphin.b_compatibility_mode 为on时支持该语法。
+  - 使用该语法时，语法等效于CREATE SCHEMA，实际为创建SCHEMA语法, database\_name 为SCHEMA名称 。
+  - B兼容性下， dolphin.b_compatibility_mode 为on时，不指定 default_charset 、default_collation ，而指定其他CREATE DATABASE 语法选项，语法仍为CREATE DATABASE语法。
+  - B兼容性下， dolphin.b_compatibility_mode 为on时，当不指定任何选项，语法等同为CREATE SCHEMA语法；dolphin.b_compatibility_mode 为off时，语法等同为CREATE DATABASE 语法。
 
 ## 示例<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s6be7b8abbb4b4aceb9dae686434d672c"></a>
 

@@ -6,12 +6,11 @@ gstrace是openGauss提供的用来跟踪内核代码执行路径、记录内核�
 
 >[!WARNING]注意
 >
->1.  对内核dump指定内存变量的数据用于诊断分析，不存在直接指定任意寄存器或者内存地址的行为。读取的内存地址均是在开发阶段硬编码，没有任意地读取或者修改寄存器或内存的操作。
->2.  Trace点可能涉及敏感数据，收集trace信息前需要同用户协商，授权和许可后方可收集。
->3.  openGauss不会在敏感信息上打点，不会TRACE和用户相关的数据。
->4.  Trace仅用于诊断目的，开启trace将对性能产生一定影响，影响的大小视负载的高低，trace的模块而不同。
->5.  Trace工具的权限为0700，仅限于数据库用户读、写和执行。
-
+>1. 对内核dump指定内存变量的数据用于诊断分析，不存在直接指定任意寄存器或者内存地址的行为。读取的内存地址均是在开发阶段硬编码，没有任意地读取或者修改寄存器或内存的操作。
+>2. Trace点可能涉及敏感数据，收集trace信息前需要同用户协商，授权和许可后方可收集。
+>3. openGauss不会在敏感信息上打点，不会TRACE和用户相关的数据。
+>4. Trace仅用于诊断目的，开启trace将对性能产生一定影响，影响的大小视负载的高低，trace的模块而不同。
+>5. Trace工具的权限为0700，仅限于数据库用户读、写和执行。
 
 >[!NOTE]说明
 >如果进程异常终止，/dev/shm/ 目录下将会有gstrace\_trace\_cfg\_\*残留，可以手动清除。
@@ -119,52 +118,50 @@ COMP_FUNC_PAIR 代表一组模块与函数组合。</li>
 
 ## 示例<a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_section2838131051812"></a>
 
-1.  启动trace
+1. 启动trace
 
     ```
     gstrace start -p 8000
     ```
 
-2.  停止trace
+2. 停止trace
 
     ```
     gstrace stop -p 8000
     ```
 
-3.  查看trace配置
+3. 查看trace配置
 
     ```
     gstrace config -p 8000
     ```
 
-4.  dump trace
+4. dump trace
 
     ```
     gstrace dump -p 8000 -o /data/8000.dump
     ```
 
-5.  解析dump detail信息
+5. 解析dump detail信息
 
     ```
     gstrace detail -f /data/8000.dump -o /data/8000.detail
     ```
 
-6.  解析dump codepath
+6. 解析dump codepath
 
     ```
     gstrace codepath -f /data/8000.dump -o /data/8000.codepath
     ```
 
-7.  分析全局性能
+7. 分析全局性能
 
     ```
     gstrace analyze -f /data/8000.dump -o /data/8000.perf
     ```
 
-8.  分析分片性能
+8. 分析分片性能
 
     ```
     gstrace analyze -f /data/8000.dump -o /data/8000.perf -t 1
     ```
-
-

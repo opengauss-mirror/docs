@@ -18,26 +18,25 @@ ALTER AGGREGATE name ( argtype [ , ... ] ) SET SCHEMA new_schema
 
 ## Parameter Description<a name="section62781959163314"></a>
 
--   **name**
+- **name**
 
     Name \(optionally schema-qualified\) of an existing aggregate function.
 
--   **argtype**
+- **argtype**
 
     Input data type of the aggregate function. To reference a zero-parameter aggregate function, you can write an asterisk \(\*\) instead of a list of input data types.
 
--   **new\_name**
+- **new\_name**
 
     New name of the aggregate function.
 
--   **new\_owner**
+- **new\_owner**
 
     New owner of the aggregate function.
 
--   **new\_schema**
+- **new\_schema**
 
     New schema of the aggregate function.
-
 
 ## Examples<a name="section14411351193419"></a>
 

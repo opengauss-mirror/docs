@@ -13,4 +13,3 @@ The XFS file system is abnormal.
 Try to mount or unmount the file system to check whether the problem can be solved.
 
 If the problem recurs, refer to the file system document, such as  **xfs\_repair**, and ask the system administrator to restore the file system. After the file system is repaired, run the  **gs\_ctl build**  command to restore the damaged DNs.
-

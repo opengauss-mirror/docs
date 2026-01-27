@@ -4,12 +4,10 @@ An autonomous transaction is an independent transaction that is started during t
 
 Autonomous transactions are defined in stored procedures, functions, and anonymous blocks, and are declared using the  **PRAGMA AUTONOMOUS\_TRANSACTION**  keyword.
 
--   **[Stored Procedure Supporting Autonomous Transaction](stored_procedure_supporting_autonomous_transaction.md)**  
+- **[Stored Procedure Supporting Autonomous Transaction](stored_procedure_supporting_autonomous_transaction.md)**  
 
--   **[Anonymous Block Supporting Autonomous Transaction](anonymous_block_supporting_autonomous_transaction.md)**  
+- **[Anonymous Block Supporting Autonomous Transaction](anonymous_block_supporting_autonomous_transaction.md)**  
 
--   **[Function Supporting Autonomous Transaction](function_supporting_autonomous_transaction.md)**  
+- **[Function Supporting Autonomous Transaction](function_supporting_autonomous_transaction.md)**  
 
--   **[Restrictions](restrictions.md)**  
-
-
+- **[Restrictions](restrictions.md)**  

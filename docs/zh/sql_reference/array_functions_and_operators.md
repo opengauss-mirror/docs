@@ -524,7 +524,7 @@
     (2 rows)
     ```
 
--   array\_position\(anyarray, anyelement [, integer]\)
+- array\_position\(anyarray, anyelement [, integer]\)
 
     描述：根据第二个入参返回数组中指定元素的下标，第二个入参的类型必须和数组元素保持一致。可选的第三个入参标识查找的起点。
 
@@ -544,7 +544,6 @@
                 4
     (1 row)
     ```
-
 
 在string\_to\_array中，如果分隔符参数是NULL，输入字符串中的每个字符将在结果数组中变成一个独立的元素。如果分隔符是一个空白字符串，则整个输入的字符串将变为一个元素的数组。否则输入字符串将在每个分隔字符串处分开。
 

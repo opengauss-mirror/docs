@@ -8,28 +8,25 @@ Complete-refresh materialized views can be fully refreshed only. The syntax for 
 
 ### Syntax<a name="section1810714714319"></a>
 
--   Create a complete-refresh materialized view.
+- Create a complete-refresh materialized view.
 
     ```
     CREATE MATERIALIZED VIEW [ view_name ] AS { query_block }; 
     ```
 
-
--   Fullly refresh a materialized view.
+- Fullly refresh a materialized view.
 
     ```
     REFRESH MATERIALIZED VIEW [ view_name ];
     ```
 
-
--   Delete a materialized view.
+- Delete a materialized view.
 
     ```
     DROP MATERIALIZED VIEW [ view_name ];
     ```
 
-
--   Query a materialized view.
+- Query a materialized view.
 
     ```
     SELECT * FROM [ view_name ];
@@ -77,9 +74,9 @@ DROP MATERIALIZED VIEW
 
 ### Supported Scenarios<a name="section794144810159"></a>
 
--   Supports the same query scope as the CREATE TABLE AS statement does.
--   Supports index creation in complete-refresh materialized view.
--   Supports ANALYZE and EXPLAIN.
+- Supports the same query scope as the CREATE TABLE AS statement does.
+- Supports index creation in complete-refresh materialized view.
+- Supports ANALYZE and EXPLAIN.
 
 ### Unsupported Scenarios<a name="section14823202371412"></a>
 

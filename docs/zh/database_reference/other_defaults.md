@@ -35,14 +35,13 @@ dynamic_library_path = '/usr/local/lib/gaussdb:/opt/testgs/lib:$libdir'
 
 **参数说明**： 指定一个或多个共享库，它们在开始连接前预先加载。多个加载库之间用逗号分隔，除了双引号，所有的库名都转换为小写。
 
--   并非只有系统管理员才能更改此选项，因此只能加载安装的标准库目录下plugins子目录中的库文件，数据库管理员有责任确保该目录中的库都是安全的。local\_preload\_libraries中指定的项可以明确含有该目录，例如$libdir/plugins/mylib；也可以仅指定库的名称，例如mylib（等价于$libdir/plugins/mylib）。
--   与shared\_preload\_libraries不同，在会话开始之前加载模块与在会话中使用到该模块的时候临时加载相比并不具有性能优势。相反，这个特性的目的是为了调试或者测量在特定会话中不明确使用LOAD加载的库。例如针对某个用户将该参数设为ALTER USER SET来进行调试。
--   当指定的库未找到时，连接会失败。
--   每一个支持openGauss的库都有一个“magic block”用于确保兼容性，因此不支持openGauss的库不能通过这个方法加载。
+- 并非只有系统管理员才能更改此选项，因此只能加载安装的标准库目录下plugins子目录中的库文件，数据库管理员有责任确保该目录中的库都是安全的。local\_preload\_libraries中指定的项可以明确含有该目录，例如$libdir/plugins/mylib；也可以仅指定库的名称，例如mylib（等价于$libdir/plugins/mylib）。
+- 与shared\_preload\_libraries不同，在会话开始之前加载模块与在会话中使用到该模块的时候临时加载相比并不具有性能优势。相反，这个特性的目的是为了调试或者测量在特定会话中不明确使用LOAD加载的库。例如针对某个用户将该参数设为ALTER USER SET来进行调试。
+- 当指定的库未找到时，连接会失败。
+- 每一个支持openGauss的库都有一个“magic block”用于确保兼容性，因此不支持openGauss的库不能通过这个方法加载。
 
 该参数属于BACKEND类型参数，请参考[表2](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd893d)中对应设置方法进行设置。
 
 **取值范围**： 字符串
 
 **默认值**： 空
-

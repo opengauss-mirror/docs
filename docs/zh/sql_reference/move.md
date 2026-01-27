@@ -72,4 +72,3 @@ openGauss=# END;
 ## 相关链接<a name="zh-cn_topic_0283137573_zh-cn_topic_0237122169_zh-cn_topic_0059778649_s576a05d59d374a6684001f646161ee14"></a>
 
 [CLOSE](close.md)，[FETCH](fetch.md)
-

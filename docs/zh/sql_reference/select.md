@@ -1455,5 +1455,3 @@ openGauss=# SELECT * FROM employees ORDER BY department_id FETCH NEXT 25 PERCENT
 (5 rows)
 
 ```
-
-

@@ -6,8 +6,8 @@
 
 ## Precautions<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--   You must have the  **INSERT** and **DELETE** permission on a table to use REPLACE INTO.
--   REPLACE works exactly like INSERT, except that if an old row in the table has the same value as a new row for a PRIMARY KEY or a UNIQUE index, the old row is deleted before the new row is inserted. 
+- You must have the  **INSERT** and **DELETE** permission on a table to use REPLACE INTO.
+- REPLACE works exactly like INSERT, except that if an old row in the table has the same value as a new row for a PRIMARY KEY or a UNIQUE index, the old row is deleted before the new row is inserted. 
 
 ## Syntax<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
@@ -23,7 +23,7 @@ REPLACE [/*+ plan_hint */] INTO table_name [partition_clause] [ AS alias ] [ ( c
 
 ## Parameter Description<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_s06dfa4f09bfd4e0d9826a80e6a91b0a6"></a>
 
--   **WITH \[ RECURSIVE \] with\_query \[, ...\]**
+- **WITH \[ RECURSIVE \] with\_query \[, ...\]**
 
     Specifies one or more subqueries that can be referenced by name in the main query, which is equivalent to a temporary table.
 
@@ -42,13 +42,13 @@ REPLACE [/*+ plan_hint */] INTO table_name [partition_clause] [ AS alias ] [ ( c
 
     Each subquery can be a  **SELECT**,  **VALUES**,  **INSERT**,  **UPDATE**  or  **DELETE**  statement.
 
--   **table\_name**
+- **table\_name**
 
     Specifies the name of the target table where data will be inserted.
 
     Value range: an existing table name
 
--   **partition\_clause**
+- **partition\_clause**
 
     Inserts data to a specified partition.
 
@@ -63,44 +63,44 @@ REPLACE [/*+ plan_hint */] INTO table_name [partition_clause] [ AS alias ] [ ( c
 
     For details, see  [CREATE TABLE SUBPARTITION](create_table_subpartition.md).
 
--   **column\_name**
+- **column\_name**
 
     Specifies the name of a column in a table.
 
-    -   The column name can be qualified with a subfield name or array subscript, if needed.
-    -   Each column not present in the explicit or implicit column list will be filled with a default value, either its declared default value or **NULL** if there is none. Inserting into only some fields of a composite column leaves the other fields null.
-    -   The target column names **column\_name** can be listed in any order. If no list of column names is given at all, the default is all the columns of the table in their declared order.
-    -   The target columns are the first  _N_  column names, if there are only  _N_  columns supplied by the **value** clause or **query**.
-    -   The values provided by the **value** clause and query are associated with the corresponding columns from left to right in the table.
+    - The column name can be qualified with a subfield name or array subscript, if needed.
+    - Each column not present in the explicit or implicit column list will be filled with a default value, either its declared default value or **NULL** if there is none. Inserting into only some fields of a composite column leaves the other fields null.
+    - The target column names **column\_name** can be listed in any order. If no list of column names is given at all, the default is all the columns of the table in their declared order.
+    - The target columns are the first  _N_  column names, if there are only  _N_  columns supplied by the **value** clause or **query**.
+    - The values provided by the **value** clause and query are associated with the corresponding columns from left to right in the table.
 
     Value range: an existing column
 
--   **expression**
+- **expression**
 
     Specifies an expression or a value to assign to the corresponding column.
 
-    -   If single-quotation marks are inserted in a column, the single-quotation marks need to be used for escape.
-    -   If the expression for any column is not of the correct data type, automatic type conversion will be attempted. If the attempt fails, data insertion fails, and the system returns an error message.
+    - If single-quotation marks are inserted in a column, the single-quotation marks need to be used for escape.
+    - If the expression for any column is not of the correct data type, automatic type conversion will be attempted. If the attempt fails, data insertion fails, and the system returns an error message.
 
--   **DEFAULT**
+- **DEFAULT**
 
     Specifies the default value of a field. The value is  **NULL**  if no default value is assigned to it.
 
--   **query**
+- **query**
 
     Specifies a query statement \(SELECT statement\) that uses the query result as the inserted data.
 
--   **RETURNING**
+- **RETURNING**
 
     Returns the inserted rows. The syntax of the  **RETURNING**  list is identical to that of the output list of  **SELECT**. Note that  **INSERT ON DUPLICATE KEY UPDATE**  does not support the  **RETURNING**  clause.
 
--   **output\_expression**
+- **output\_expression**
 
     Specifies an expression used to calculate the output result of the  **INSERT**  statement after each row is inserted.
 
     Value range: The expression can use any field in the table. You can use the asterisk \(\*\) to return all fields of the inserted row.
 
--   **output\_name**
+- **output\_name**
 
     Specifies a name to use for a returned column.
 

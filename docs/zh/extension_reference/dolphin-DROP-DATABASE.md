@@ -18,11 +18,11 @@ DROP DATABASE [ IF EXISTS ] database_name ;
 
 ## 参数说明<a name="zh-cn_topic_0283137424_zh-cn_topic_0237122133_zh-cn_topic_0059778607_sad5ef99cc3a043838c29c5bdde9caab3"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     如果指定的数据库不存在，则发出一个notice而不是抛出一个错误。
 
--   **database\_name**
+- **database\_name**
 
     要删除的数据库名称。
 
@@ -30,8 +30,7 @@ DROP DATABASE [ IF EXISTS ] database_name ;
     
     >[!NOTE]说明
     
-    -   B兼容性下， dolphin.b_compatibility_mode 为on时，语法等同为无dolphin时的DROP SCHEMA语法；dolphin.b_compatibility_mode 为off时，语法为无dolphin时的DROP DATABASE 语法。
-
+    - B兼容性下， dolphin.b_compatibility_mode 为on时，语法等同为无dolphin时的DROP SCHEMA语法；dolphin.b_compatibility_mode 为off时，语法为无dolphin时的DROP DATABASE 语法。
 
 ## 示例<a name="zh-cn_topic_0283137424_zh-cn_topic_0237122133_zh-cn_topic_0059778607_sabd40dc25b604e1b8c213e7e9f6b5200"></a>
 
@@ -40,4 +39,3 @@ DROP DATABASE [ IF EXISTS ] database_name ;
 ## 相关链接<a name="zh-cn_topic_0283137424_zh-cn_topic_0237122133_zh-cn_topic_0059778607_s5f331542a3f84ab58b896c25bfff41db"></a>
 
 [CREATE DATABASE](dolphin-CREATE-DATABASE.md),  [DROP DATABASE](dolphin-DROP-DATABASE.md)
-

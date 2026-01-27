@@ -50,4 +50,3 @@ GS\_AUDITING\_POLICY\_PRIVILEGES系统表记录统一审计DDL数据库相关操
 </tr>
 </tbody>
 </table>
-
