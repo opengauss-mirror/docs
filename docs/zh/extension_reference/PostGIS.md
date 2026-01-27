@@ -6,44 +6,44 @@ openGauss提供PostGIS Extension（版本为PostGIS-2.4.2）。PostGIS Extension
 
 PostGIS Extension依赖第三方开源软件如下：
 
--   Geos 3.6.2
--   Proj 4.9.2
--   Json 0.12.1
--   Libxml2 2.7.1
--   Gdal 1.11.0
+- Geos 3.6.2
+- Proj 4.9.2
+- Json 0.12.1
+- Libxml2 2.7.1
+- Gdal 1.11.0
 
 ## PostGIS安装
 
 PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz)获取。该Extension需使用GCC-7.3（GNU编译器套件）进行编译安装。
 
--   在整个安装过程中，可使用make    -sj和make install -sj命令并行加速编译，-sj命令极低概率性出现安装错误，如果安装失败则请使用make和make install进行串行安装。
--   对于ARM物理机，在configure时增加如下编译参数：--build=aarch64-unknown-linux-gnu。
+- 在整个安装过程中，可使用make    -sj和make install -sj命令并行加速编译，-sj命令极低概率性出现安装错误，如果安装失败则请使用make和make install进行串行安装。
+- 对于ARM物理机，在configure时增加如下编译参数：--build=aarch64-unknown-linux-gnu。
 
 ### 操作步骤<a name="section193783420183"></a>
 
-1.  GCC-7.3（GNU编译器套件）编译器安装。若数据库实例中已经安装GCC-7.3编译器，可直接跳过本步骤。
+1. GCC-7.3（GNU编译器套件）编译器安装。若数据库实例中已经安装GCC-7.3编译器，可直接跳过本步骤。
 
     PostGIS安装依赖GCC-7.3编译器。GCC-7.3编译器推荐使用源码由低版本的gcc和g++编译器进行升级安装。若数据库实例中没有低版本gcc和g++编译器，可以通过挂载操作系统镜像等方法进行安装，这里不做赘述。GCC-7.3编译器相关依赖软件包，包括gcc-7.3.0、gmp-6.1.0、mpfr-3.1.4、mpc-1.0.3，安装包下载地址分别为：
 
-    https://ftp.gnu.org/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.gz
+    <https://ftp.gnu.org/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.gz>
 
-    https://ftp.gnu.org/gnu/gmp/gmp-6.1.0.tar.xz
+    <https://ftp.gnu.org/gnu/gmp/gmp-6.1.0.tar.xz>
 
-    https://ftp.gnu.org/gnu/mpfr/mpfr-3.1.4.tar.gz
+    <https://ftp.gnu.org/gnu/mpfr/mpfr-3.1.4.tar.gz>
 
-    https://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz
+    <https://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz>
 
     为了校验安装包的完整性，请同时下载安装包的同名的.sig文件和keyring文件：
 
-    https://ftp.gnu.org/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.gz.sig
+    <https://ftp.gnu.org/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.gz.sig>
 
-    https://ftp.gnu.org/gnu/gmp/gmp-6.1.0.tar.xz.sig
+    <https://ftp.gnu.org/gnu/gmp/gmp-6.1.0.tar.xz.sig>
 
-    https://ftp.gnu.org/gnu/mpfr/mpfr-3.1.4.tar.gz.sig
+    <https://ftp.gnu.org/gnu/mpfr/mpfr-3.1.4.tar.gz.sig>
 
-    https://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz.sig
+    <https://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz.sig>
 
-    https://ftp.gnu.org/gnu/gnu-keyring.gpg
+    <https://ftp.gnu.org/gnu/gnu-keyring.gpg>
 
     并使用以下命令验证安装包完整性。
 
@@ -170,7 +170,7 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
     source ~/.bashrc
     ```
 
-2.  确认zlib已安装。
+2. 确认zlib已安装。
 
     Libxml2软件包编译安装依赖zlib无损数据压缩库。omm用户可执行find /usr/ -name libz.a（或者执行find $GAUSSHOME/ -name libz.so）查看zlib是否安装\(如果libz.a存在则zlib已安装\)。
 
@@ -178,8 +178,8 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
 
     安装成功后，可以在/usr/local/lib下找到libz.a。
 
-3.  autoconf和automake安装。JSON-C软件包编译安装依赖autoconf和automake工具。若数据库实例中没有autoconf和automake工具，可以通过挂载操作系统镜像等方法进行安装，这里不做赘述。
-4.  PostGIS依赖库安装。
+3. autoconf和automake安装。JSON-C软件包编译安装依赖autoconf和automake工具。若数据库实例中没有autoconf和automake工具，可以通过挂载操作系统镜像等方法进行安装，这里不做赘述。
+4. PostGIS依赖库安装。
 
     1).  从网站[https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz)获取PostGIS源码至$GAUSSHOME目录，下载压缩包，解压后需将文件夹重命名为postgis-xc。
 
@@ -196,7 +196,7 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
 
     4).  分别编译Geos、Proj、JSON-C、Libxml2、PostGIS并生成相关动态链接库。编译命令为：
 
-    -   Geos
+    - Geos
 
         ```
         cd $GAUSSHOME/postgis-xc/geos-3.6.2
@@ -206,7 +206,7 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
         make install -sj
         ```
 
-    -   Proj
+    - Proj
 
         ```
         cd $GAUSSHOME/postgis-xc/proj-4.9.2
@@ -216,7 +216,7 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
         make install -sj
         ```
 
-    -   JSON-C
+    - JSON-C
 
         ```
         cd $GAUSSHOME/postgis-xc/json-c-json-c-0.12.1-20160607
@@ -226,7 +226,7 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
         make install -sj
         ```
 
-    -   Libxml2
+    - Libxml2
 
         ```
         cd $GAUSSHOME/postgis-xc/libxml2-2.7.1
@@ -241,7 +241,8 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
         ```
         ./configure --prefix=$GAUSSHOME/install/libxml2 --build=aarch64-unknown-linux-gnu 
         ```
-    -   Gdal
+
+    - Gdal
 
         ```
         cd $GAUSSHOME/postgis-xc/gdal-1.11.0
@@ -254,7 +255,7 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
 
         如果编译出现类似/home/carrot/data/openGauss-server/third\_party/buildtools/gcc/res/lib64/libstdc++.la 找不到，可以自建目录，将libstdc++.la拷贝进去，然后再make -sj（如果libstdc++.so出现类似问题，按同样方法处理）。
 
-    -   PostGIS
+    - PostGIS
 
         ```
         cd $GAUSSHOME/postgis-xc/postgis-2.4.2
@@ -268,7 +269,7 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
         ```
 
         如果make -sj报错缺少openGauss头文件，需要从其源码中拷贝到数据库对应的include目录下
-        详情参考third_party仓库下的postgis安装文档 https://gitcode.com/opengauss/openGauss-third_party/tree/master/gpl_dependency/postgis
+        详情参考third_party仓库下的postgis安装文档 <https://gitcode.com/opengauss/openGauss-third_party/tree/master/gpl_dependency/postgis>
         例如缺少：
         （storage/file/fio_device.h
         storage/file/fio_device_com.h
@@ -279,6 +280,7 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
         storage/dss/dss_api_def.h）等头文件的名称
         这些头文件在openGauss-server仓库的src/include目录下，将其复制到\\$GAUSSHOME/include/postgresql/server下即可，但要注意目录层级必须与src/include目录保持一致，比如缺少的头文件是storage/file/fio_device.h，那需要创建的文件就是\\$GAUSSHOME/include/postgresql/server/storage/file/fio_device.h。
         当然，有一个更加直接简单的方法，即执行下面的命令(\$CODE_BASE为openGauss-server的源代码目录)
+
         ```
         mkdir -p $GAUSSHOME/include/postgresql/server/storage/file/
         mkdir -p $GAUSSHOME/include/postgresql/server/storage/dss/
@@ -287,13 +289,17 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
         cp -r $CODE_BASE/src/include/storage/dss/* $GAUSSHOME/include/postgresql/server/storage/dss/
         cp -r $CODE_BASE/src/include/ddes/dms/* $GAUSSHOME/include/postgresql/server/ddes/dms/
         ```
+
         这样就能一下子把所有缺失的头文件都补全进去。
 
         若出现 postgis_topology.c:249:54: error:base operand of '->' has non-pointer type  'FormData_pg_attribute' ...的报错，则将 postgis-2.4.2/topology/postgis_topology.c 下249行的最后一个箭头操作符“->”改为点操作符“.”，然后重新编译。
+
         ```cpp
           topo->geometryOID = SPI_tuptable->tupdesc->attrs[3]->atttypid;
         ```
+
         改为：
+
         ```cpp
           topo->geometryOID = SPI_tuptable->tupdesc->attrs[3].atttypid;
         ```
@@ -405,11 +411,11 @@ gs_om -t postgis -m rmlib
 
 openGauss的PostGIS Extension支持如下数据类型：
 
--   box2d
--   box3d
--   geometry\_dump
--   geometry
--   geography
+- box2d
+- box3d
+- geometry\_dump
+- geometry
+- geography
 
 ### 支持的操作符和函数列表<a name="section1198813519310"></a>
 
@@ -492,11 +498,7 @@ openGauss=# CREATE INDEX indexname ON tablename USING GIST ( geometryfield );
 
 ### 扩展限制<a name="section13902113312416"></a>
 
--   只支持行存表。
--   不支持拓扑对象管理模块Topology和栅格数据处理模块Raster。
--   不支持BRIN索引。
--   spatial\_ref\_sys表在扩容期间只支持查询操作。
-
-
-
-
+- 只支持行存表。
+- 不支持拓扑对象管理模块Topology和栅格数据处理模块Raster。
+- 不支持BRIN索引。
+- spatial\_ref\_sys表在扩容期间只支持查询操作。

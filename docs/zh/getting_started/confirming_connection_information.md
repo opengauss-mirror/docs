@@ -4,8 +4,8 @@
 
 ## 操作步骤<a name="zh-cn_topic_0283137330_zh-cn_topic_0237120290_zh-cn_topic_0062129725_section3641787792727"></a>
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  <a name="zh-cn_topic_0283137330_zh-cn_topic_0237120290_zh-cn_topic_0062129725_li736435692628"></a>使用“gs\_om -t status --detail”命令查询openGauss各实例情况。
+1. 以操作系统用户omm登录数据库主节点。
+2. <a name="zh-cn_topic_0283137330_zh-cn_topic_0237120290_zh-cn_topic_0062129725_li736435692628"></a>使用“gs\_om -t status --detail”命令查询openGauss各实例情况。
 
     ```
     gs_om -t status --detail
@@ -21,7 +21,7 @@
 
     如上部署了数据库主节点实例的服务器IP地址为192.168.0.11。数据库主节点数据路径为“/srv/gaussdb/data1/dbnode”。“P”表示安装时指定的角色为Primary，数据库安装后不再变化，从系统静态文件读取；“Primary”表示实例为主实例；“Normal”表示openGauss可用，且数据有冗余备份，所有进程都在运行，主备关系正常。
 
-3.  确认数据库主节点的端口号。
+3. 确认数据库主节点的端口号。
 
     在[步骤 2](#zh-cn_topic_0283137330_zh-cn_topic_0237120290_zh-cn_topic_0062129725_li736435692628)中查到的数据库主节点数据路径下的postgresql.conf文件中查看端口号信息。示例如下：
 
@@ -42,4 +42,3 @@
     ```
 
     8000为数据库主节点的端口号。
-

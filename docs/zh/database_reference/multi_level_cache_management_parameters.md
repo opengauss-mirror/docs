@@ -11,8 +11,9 @@
 **默认值**： off
 
 >[!NOTE]说明
->-   开关打开后，将原有缓存池划分为Dram Buffer Pool和Nvm Buffer Pool，通过访问频率控制各缓存层次间的页面迁移，实现热数据在内存中，温数据在NVM，冷数据在磁盘中。
->-   只有当enable_nvm为on时，参数nvm_buffers、nvm_file_path、bypass_nvm、bypass_dram才会生效
+>
+>- 开关打开后，将原有缓存池划分为Dram Buffer Pool和Nvm Buffer Pool，通过访问频率控制各缓存层次间的页面迁移，实现热数据在内存中，温数据在NVM，冷数据在磁盘中。
+>- 只有当enable_nvm为on时，参数nvm_buffers、nvm_file_path、bypass_nvm、bypass_dram才会生效
 
 ## nvm\_buffers
 
@@ -33,7 +34,8 @@
 **取值范围**： 字符串，nvm文件路径
 
 >[!NOTE]说明
->-   nvm介质（例如SCM）以App Direct模式通过文件系统接口暴露给应用，openGauss通过对nvm文件进行mmap的方式实现对nvm介质的字节寻址，达到作为openGauss缓存的效果。
+>
+>- nvm介质（例如SCM）以App Direct模式通过文件系统接口暴露给应用，openGauss通过对nvm文件进行mmap的方式实现对nvm介质的字节寻址，达到作为openGauss缓存的效果。
 
 ## bypass\_nvm
 
@@ -56,4 +58,5 @@
 **默认值**： 0.01
 
 >[!NOTE]说明
->-   以默认值0.01为例，当页面在nvm缓存池命中后，有1%的概率会迁移至dram缓存池。
+>
+>- 以默认值0.01为例，当页面在nvm缓存池命中后，有1%的概率会迁移至dram缓存池。

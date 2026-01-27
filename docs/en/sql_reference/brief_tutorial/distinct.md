@@ -14,7 +14,7 @@ SELECT  DISTINCT [ ON ( expression [, ...] ) ] ]
 
 ## Parameter Description<a name="en-us_topic_0000001180098772_section15362151918382"></a>
 
--   **DISTINCT \[ ON \( expression \[, ...\] \) \]**
+- **DISTINCT \[ ON \( expression \[, ...\] \) \]**
 
 Removes all duplicate rows from the result set of the SELECT statement so that each row in the result set is unique.
 
@@ -84,4 +84,3 @@ openGauss=# SELECT DISTINCT c_first_name  FROM customer_t1 ;
  Lily
 (6 rows)
 ```
-

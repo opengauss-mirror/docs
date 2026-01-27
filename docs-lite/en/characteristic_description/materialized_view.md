@@ -27,4 +27,3 @@ Only simple filter queries and UNION ALL statements are supported for base table
 ## Dependencies<a name="section2535204364616"></a>
 
 None.
-

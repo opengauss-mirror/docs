@@ -5,4 +5,3 @@ A  **Snowball**  dictionary is based on a project by Martin Porter and is used f
 A  **Snowball**  dictionary recognizes everything, no matter whether it is able to simplify the word. Therefore, it should be placed at the end of the dictionary list. It is useless to place it before any other dictionary because a token will never pass it through to the next dictionary.
 
 For details about the syntax of  **Snowball**  dictionaries, see  [CREATE TEXT SEARCH DICTIONARY](create-text-search-dictionary.md).
-

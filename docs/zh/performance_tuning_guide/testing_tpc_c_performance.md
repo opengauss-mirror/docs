@@ -1,7 +1,7 @@
 # 测试TPCC性能
 
-1.  下载TPCC标准测试工具BenchmarkSQL5.0。
-2.  将目录lib/postgresql下面的\*.jar 替换为openGauss适配的jar包。
+1. 下载TPCC标准测试工具BenchmarkSQL5.0。
+2. 将目录lib/postgresql下面的\*.jar 替换为openGauss适配的jar包。
 
     ```
     $ pwd 
@@ -13,7 +13,7 @@
 
     openGauss适配的JDBC版本包获取路径为[openGauss-x.x.x-JDBC .tar.gz](https://opengauss.org/zh/download/)。
 
-3.  进入benchmarksql-5.0根目录，输入ant命令进行编译。
+3. 进入benchmarksql-5.0根目录，输入ant命令进行编译。
 
     ```
     $ cd /your path/benchmarksql-5.0/ 
@@ -22,7 +22,7 @@
 
     编译成功后会生成build和dist两个目录。
 
-4.  创建benchmarkSQL配置文件，使用benchmarkSQL前需要配置数据库相关的信息，包括数据库账号、密码、端口、数据库名称。
+4. 创建benchmarkSQL配置文件，使用benchmarkSQL前需要配置数据库相关的信息，包括数据库账号、密码、端口、数据库名称。
 
     ```
     $ cd /your path/benchmarksql-5.0/run 
@@ -76,7 +76,7 @@
     osCollectorDevices=net_enp3s0 blk_nvme0n1 blk_nvme1n1 blk_nvme2n1 blk_nvme3n1
     ```
 
-5.  TPCC导入数据前准备。
+5. TPCC导入数据前准备。
 
     使用如下文件替换benchmarkSQL中的文件，路径为benchmarksql-5.0/run/sql.common/。该文件主要增加了两个表空间和一些附加数据属性。
 
@@ -212,8 +212,8 @@
     ) WITH (FILLFACTOR=80) tablespace example3;
     ```
 
-6.  导入数据。
-    1.  创建数据库用户。
+6. 导入数据。
+    1. 创建数据库用户。
 
         ```
         create user bot identified by 'XXXXXXXX' profile default; 
@@ -221,17 +221,17 @@
         create database tpcc1000 encoding 'UTF8' template=template0 owner tpcc5q;
         ```
 
-    2.  执行如下命令导入数据。
+    2. 执行如下命令导入数据。
 
         ```
         ./runDatabaseBuild.sh props.opengauss.1000w
         ```
 
-7.  <a name="li11139125793619"></a>备份数据。
+7. <a name="li11139125793619"></a>备份数据。
 
     为了方便多次测试，减少导入数据的时间，可以通过停止数据库，将整个数据目录执行一次拷贝对数据库进行备份。
 
-8.  <a name="li1840654753618"></a>对数据进行分盘。
+8. <a name="li1840654753618"></a>对数据进行分盘。
 
     在性能测试过程中，为了增加IO的吞吐量，需要将数据分散到不同的存储介质上。由于机器上有4块NVME盘，可以将数据分散到不同的盘上。将pg\_xlog、tablespace2、tablespace3这三个目录放置在其他3个NVME盘上，并在原有的位置给出指向真实位置的软连接。pg\_xlog位于数据库目录下，tablespace2、tablespace3分别位于数据库目录pg\_location下。对tablespace2分盘的命令如下:
 
@@ -247,7 +247,7 @@
 
     ![](figures/zh-cn_image_0263913306.png)
 
-9.  运行TPCC程序。
+9. 运行TPCC程序。
 
     ```
     numactl –C 0-19,32-51,64-83,96-115 ./runBenchmark.sh props.opengauss.1000w
@@ -266,4 +266,3 @@
     ![](figures/zh-cn_image_0263913310.png)
 
 11. 如果为了避免数据的干扰，需要进行重新测试，可以通过[步骤7](#li11139125793619)备份的数据通过拷贝的方式恢复数据。重复[步骤8](#li1840654753618)\~[步骤10](#li202511145123814)可以重新进行测试。
-

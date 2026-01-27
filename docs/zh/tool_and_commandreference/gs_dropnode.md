@@ -26,74 +26,71 @@ openGauss提供了gs_dropnode工具从一主多备的数据库中移除不需要
 
   方式二：在当前主机上将目标备机加入到/etc/hosts.deny文件中（例如：sshd:10.11.12.13:deny），拒绝从目标备机的远程ssh连接（对所有用户生效），此方法需要系统sshd服务绑定到libwrap库。
 
--   当目标备机被移除后，如果不再需要目标备机，请在目标备机上使用**gs\_uninstall --delete-data -L**命令单点卸载，请注意务必添加-L选项。
+- 当目标备机被移除后，如果不再需要目标备机，请在目标备机上使用**gs\_uninstall --delete-data -L**命令单点卸载，请注意务必添加-L选项。
 
--   当目标备机被移除后，如果需要以单机方式使用目标备机且保留原数据，请在目标备机上先执行**gs\_guc set -D _/gaussdb/data/dbnode_ -c “replconninfo*X*”** 其中 _/gaussdb/data/dbnode_ 表示数据目录，_replconninfoX_ 表示主备集群中的除本节点外的其他节点，比如一主一备则需要配置 _replconninfo1_, 一主两备需要配置 _replconninfo1_ 和 _replconninfo2_, 以此类推；如果无需保留原数据，请先执行**gs\_uninstall --delete-data -L**命令卸载后重新安装。
+- 当目标备机被移除后，如果需要以单机方式使用目标备机且保留原数据，请在目标备机上先执行**gs\_guc set -D _/gaussdb/data/dbnode_ -c “replconninfo*X*”** 其中 _/gaussdb/data/dbnode_ 表示数据目录，_replconninfoX_ 表示主备集群中的除本节点外的其他节点，比如一主一备则需要配置 _replconninfo1_, 一主两备需要配置 _replconninfo1_ 和 _replconninfo2_, 以此类推；如果无需保留原数据，请先执行**gs\_uninstall --delete-data -L**命令卸载后重新安装。
 
 - 当目标备机被移除后，如果需要以备机方式使用目标备机，请参考[gs\_expansion](gs_expansion.md)命令重新将目标备机添加到集群中，资源池化模式不支持重新添加目标备机。
 
--   使用流式容灾功能时，不支持此工具。
+- 使用流式容灾功能时，不支持此工具。
 
--   存在CM组件时，不能删除最后一个备机节点。
+- 存在CM组件时，不能删除最后一个备机节点。
 
--   资源池化模式目前只支持离线扩缩容。
+- 资源池化模式目前只支持离线扩缩容。
 
--   资源池化模式下执行gs_dropnode将中断数据库业务，在实验室环境且低压力条件下测得业务中断时间为1min左右；如果需要执行gs_dropnode命令，请在业务低谷期进行，建议在执行命令前做一次checkpoint。
+- 资源池化模式下执行gs_dropnode将中断数据库业务，在实验室环境且低压力条件下测得业务中断时间为1min左右；如果需要执行gs_dropnode命令，请在业务低谷期进行，建议在执行命令前做一次checkpoint。
 
 ## 前提条件
 
--   删除备节点的操作只能在主节点上执行。
--   操作过程中不允许同时在其他备节点上执行主备倒换或者故障倒换的操作。
--   不允许同时在主节点上执行gs_expansion命令进行扩容。
--   不允许同时执行2次相同的gs_dropnode命令。
--   执行删除操作前，需要确保主节点和备节点之间建立好omm用户（数据库管理用户）的互信。
--   需要使用数据库管理用户（比如omm）执行该命令。
--   执行命令前需要通过source命令导入主机数据库的环境变量。如果当前数据库是分离环境变量方式安装，则source导入分离的环境变量。如果未进行分离，则需要source导入子用户的.bashrc配置文件。一般该文件路径为：/home/[user]/.bashrc。
-
+- 删除备节点的操作只能在主节点上执行。
+- 操作过程中不允许同时在其他备节点上执行主备倒换或者故障倒换的操作。
+- 不允许同时在主节点上执行gs_expansion命令进行扩容。
+- 不允许同时执行2次相同的gs_dropnode命令。
+- 执行删除操作前，需要确保主节点和备节点之间建立好omm用户（数据库管理用户）的互信。
+- 需要使用数据库管理用户（比如omm）执行该命令。
+- 执行命令前需要通过source命令导入主机数据库的环境变量。如果当前数据库是分离环境变量方式安装，则source导入分离的环境变量。如果未进行分离，则需要source导入子用户的.bashrc配置文件。一般该文件路径为：/home/[user]/.bashrc。
 
 ## 语法
 
--   移除备机
+- 移除备机
 
     ```
     gs_dropnode -U USER -G GROUP -h hostlist  
     ```
 
--   显示帮助信息
+- 显示帮助信息
 
     ```
     gs_dropnode -? | --help
     ```
 
--   显示版本号信息
+- 显示版本号信息
 
     ```
     gs_dropnode -V | --version
     ```
 
-
 ## 参数说明
 
--   -U
+- -U
 
     运行openGauss的操作系统用户名。
 
--   -G
+- -G
 
     运行openGauss的操作系统用户组。
 
--   -h
+- -h
 
     指定需要移除的备机的IP地址。如果有多个节点，节点之间以逗号分隔。
 
--   -?, --help
+- -?, --help
 
     显示帮助信息。
 
--   -V, --version
+- -V, --version
 
     显示版本号信息。
-
 
 ## 示例
 
@@ -138,4 +135,3 @@ Do you want to continue to drop the target node (yes/no)? yes
 ## 相关命令
 
 [gs\_expansion](gs_expansion.md)，[gs\_ctl](gs_ctl.md)
-

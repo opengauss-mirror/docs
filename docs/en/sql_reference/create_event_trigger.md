@@ -6,9 +6,9 @@ CREATE EVENT TRIGGER creates an event trigger to execute a specified event trigg
 
 ## Precautions<a name="en-us_topic_0283137165_en-us_topic_0237122123_en-us_topic_0059778166_sd48f2980b9464b1abca65a4747930552"></a>
 
--   Only the super user or system administrator has the permission to create event triggers.
--   If multiple event triggers of the same kind are defined for the same event, they will be fired in alphabetical order by name.
--   Event triggers may affect the performance of DDL operations, depending on the number of event triggers and the complexity of executing the function.
+- Only the super user or system administrator has the permission to create event triggers.
+- If multiple event triggers of the same kind are defined for the same event, they will be fired in alphabetical order by name.
+- Event triggers may affect the performance of DDL operations, depending on the number of event triggers and the complexity of executing the function.
 
 ## Syntax<a name="en-us_topic_0283137165_en-us_topic_0237122123_en-us_topic_0059778166_s93c6eaefe7c447408b7d42ff86e6035f"></a>
 
@@ -19,23 +19,24 @@ CREATE EVENT TRIGGER creates an event trigger to execute a specified event trigg
 
 ## Parameter Description<a name="en-us_topic_0283731165_en-us_topic_0237112223_en-us_topic_0059778166_s65dbaae3763942599852d585997c77dd"></a>
 
--   **name**
+- **name**
 
     Specifies the event trigger name.
 
--   **filter\_variable**
+- **filter\_variable**
 
     Specifies the variable used by the event trigger for filtering. Currently, only TAG is supported.
 
--   **event**
+- **event**
 
     Specifies the events supported by the event trigger. Currently, ddl_command_start, ddl_command_end, sql_drop and table_rewrite are supported.
 
--   **function\_name**
+- **function\_name**
 
     Specifies a user-defined function, which must be declared as taking no parameters and returning data of event_trigger type. This function is executed when an event trigger fires.
 
 ## Examples<a name="en-us_topic_0283137014_en-us_topic_0237122081_en-us_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
+
 ```
 --Create database for testing
 openGauss=# create database test_event_trigger dbcompatibility='PG';
@@ -102,7 +103,6 @@ test_event_trigger=# DROP EVENT TRIGGER regress_event_trigger_end;
 test_event_trigger=# DROP EVENT TRIGGER sql_drop_command;
 test_event_trigger=# DROP EVENT TRIGGER no_rewrite_allowed;
 ```
-
 
 ## Helpful Links<a name="en-us_topic_0283137014_en-us_topic_0237212081_en-us_topic_0059777895_see210f0a4a346d4c8e1c34bd85b3ec05"></a>
 

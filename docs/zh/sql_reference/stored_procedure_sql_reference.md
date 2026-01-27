@@ -20,13 +20,11 @@
 
 更多存储过程的创建及调用办法请参考[CREATE PROCEDURE](create_procedure.md)。
 
-
 - 调用存储过程
 
   ```
   CALL procedure_name ( param_expr );
   ```
-
 
 - 删除存储过程
 
@@ -34,7 +32,6 @@
   DROP PROCEDURE [ IF EXISTS ] procedure_name 
   [ ( [ {[ argname ] [ argmode ] argtype} [, ...] ] ) [ CASCADE | RESTRICT ] ];
   ```
-
 
 ## 参数说明<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_scd93d84d9e624b5e831d78d47a830ca4"></a>
 
@@ -62,7 +59,6 @@
 
     输入输出参数。调用时指定，并且可被改变和返回
 
-
 - **argtype**
 
   参数的数据类型。
@@ -86,7 +82,6 @@
 - **param\_expr**
 
   参数列表。参数间用符号“,”隔开；参数名和参数值用符号 “:=”或者“=\>”隔开。
-
 
 ## 示例<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821"></a>
 

@@ -316,6 +316,7 @@ Install CM tool success.
 自动配置集群节点间的 SSH 互信，使各节点可以免密登录。
 
 **命令格式**
+
 ```bash
 gr_om trust -X <config_file>
 ```
@@ -327,6 +328,7 @@ gr_om trust -X <config_file>
 | `-X <config_file>` | 是 | JSON 配置文件路径 |
 
 **使用示例**
+
 ```bash
 gr_om trust -X /home/omm/cluster.json
 ```
@@ -339,6 +341,7 @@ gr_om trust -X /home/omm/cluster.json
 执行安装前的环境准备工作，包括创建目录、设置权限、配置环境变量等。
 
 **命令格式**
+
 ```bash
 gr_om preinstall -X <config_file>
 ```
@@ -350,9 +353,11 @@ gr_om preinstall -X <config_file>
 | `-X <config_file>` | 是 | JSON 配置文件路径 |
 
 **注意事项**
+
 - 需要 root 权限执行
 
 **使用示例**
+
 ```bash
 gr_om preinstall -X /home/omm/cluster.json
 ```
@@ -365,6 +370,7 @@ gr_om preinstall -X /home/omm/cluster.json
 安装 oGRecorder 集群，包括 GR 组件和 CM 组件。
 
 **命令格式**
+
 ```bash
 gr_om install -X <config_file> --grpkg <gr_package> --cmpkg <cm_package> [--restpkg <rest_package>]
 ```
@@ -379,6 +385,7 @@ gr_om install -X <config_file> --grpkg <gr_package> --cmpkg <cm_package> [--rest
 | `--restpkg <rest_package>` | 否 | CM-RESTAPI 安装包路径 |
 
 **使用示例**
+
 ```bash
 gr_om install \
     -X /home/omm/cluster.json \
@@ -394,6 +401,7 @@ gr_om install \
 生成 GR 通信证书并分发到所有节点，然后重新加载服务使证书生效。
 
 **命令格式**
+
 ```bash
 gr_om gr_certs -X <config_file>
 ```
@@ -405,6 +413,7 @@ gr_om gr_certs -X <config_file>
 | `-X <config_file>` | 是 | JSON 配置文件路径 |
 
 **使用示例**
+
 ```bash
 gr_om gr_certs -X /home/omm/cluster.json
 ```
@@ -417,11 +426,13 @@ gr_om gr_certs -X /home/omm/cluster.json
 查看集群配置信息和静态配置。
 
 **命令格式**
+
 ```bash
 gr_om view <config_file>
 ```
 
 **使用示例**
+
 ```bash
 gr_om view /home/omm/cluster.json
 ```
@@ -434,11 +445,13 @@ gr_om view /home/omm/cluster.json
 根据 JSON 配置文件生成 XML 格式的集群配置。
 
 **命令格式**
+
 ```bash
 gr_om generate-xml <config_file>
 ```
 
 **使用示例**
+
 ```bash
 gr_om generate-xml /home/omm/cluster.json
 ```
@@ -460,6 +473,7 @@ gr_om generate-xml /home/omm/cluster.json
 | 联合升级 | `--grpkg --cmpkg` | 是（全集群） | 全部节点 |
 
 **命令格式**
+
 ```bash
 # GR 滚动升级（所有节点）
 gr_om upgrade -X <config_file> --grpkg <gr_package>
@@ -570,11 +584,13 @@ All package verifications passed!
 卸载 oGRecorder 集群，清理安装目录和相关配置。
 
 **命令格式**
+
 ```bash
 gr_om uninstall -X <config_file>
 ```
 
 **使用示例**
+
 ```bash
 # 1. 先停止集群
 [omm@openGauss install]$ source /home/omm/envfile
@@ -592,6 +608,7 @@ Successfully uninstall oGRecorder.
 ```
 
 **注意事项**
+
 - 卸载前请确保已备份重要数据
 - 卸载操作不可逆
 
@@ -681,4 +698,3 @@ Upgrade aborted due to package verification failure.
 ---
 
 如有特殊环境或报错，请结合实际回显信息进行排查。
-

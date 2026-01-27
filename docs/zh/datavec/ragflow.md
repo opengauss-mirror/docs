@@ -25,6 +25,7 @@
     ```bash
     git clone https://gitee.com/kunpeng_compute/KunpengRAG.git
     cd KunpengRAG/deployment/docker-compose/ragflow
+
 ```
 
 2. 启动 RAGFlow 服务器的最简单方法是运行我们的 [docker-compose.yml](https://gitee.com/kunpeng_compute/KunpengRAG/blob/master/deployment/docker-compose/ragflow/docker-compose.yml) 文件。

@@ -14,23 +14,21 @@ LOCK [ TABLE ] name  IN lock_mode MODE
 
 ## Parameter Description<a name="section6973139183420"></a>
 
--   **name**
+- **name**
 
     Specifies the name of the table to be locked.
 
--   **lock\_mode**
+- **lock\_mode**
 
     Specifies the lock mode. The basic modes are as follows:
 
-    -   **ACCESS EXCLUSIVE**
+    - **ACCESS EXCLUSIVE**
 
         Guarantees that the holder is the only transaction accessing the table in any way. It is the default lock mode.
 
-    -   **ACCESS SHARE**
+    - **ACCESS SHARE**
 
         Indicates the lock mode for reading tables without modifying them.
-
-
 
 ## Examples<a name="en-us_topic_0283136808_en-us_topic_0237122168_en-us_topic_0059778442_s9884bdbe455b460a9a2dde267283b75b"></a>
 
@@ -69,4 +67,3 @@ openGauss=# DELETE FROM graderecord WHERE name ='Alan';
 
 openGauss=# COMMIT;
 ```
-

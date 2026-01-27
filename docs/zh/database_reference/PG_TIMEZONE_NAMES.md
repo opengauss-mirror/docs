@@ -43,4 +43,3 @@ PG\_TIMEZONE\_NAMES视图提供了显示了所有能够被SET TIMEZONE识别的�
 </tr>
 </tbody>
 </table>
-

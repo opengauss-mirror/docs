@@ -4,7 +4,7 @@ To process SQL statements, the stored procedure process assigns a memory segment
 
 ## Syntax<a name="section1579716574370"></a>
 
--   Define a cursor.
+- Define a cursor.
 
     ```
     CURSOR cursor_name
@@ -12,7 +12,7 @@ To process SQL statements, the stored procedure process assigns a memory segment
         FOR query ;
     ```
 
--   Retrieve data by using a created cursor.
+- Retrieve data by using a created cursor.
 
     ```
     FETCH [ direction { FROM | IN } ] cursor_name;
@@ -37,7 +37,7 @@ To process SQL statements, the stored procedure process assigns a memory segment
        | BACKWARD ALL
     ```
 
--   Reposition a cursor without retrieving any data.
+- Reposition a cursor without retrieving any data.
 
     The MOVE statement works exactly like the FETCH statement, except that it only repositions the cursor and does not return rows.
 
@@ -64,68 +64,67 @@ To process SQL statements, the stored procedure process assigns a memory segment
        | BACKWARD ALL
     ```
 
--   Close a cursor and release all resources associated with the cursor.
+- Close a cursor and release all resources associated with the cursor.
 
     ```
     CLOSE { cursor_name | ALL } ;
     ```
 
-
 ## Parameter Description<a name="section1353875110388"></a>
 
--   **cursor\_name**
+- **cursor\_name**
 
     Specifies the name of the cursor to be created or closed.
 
--   **BINARY**
+- **BINARY**
 
     Specifies that data retrieved by a cursor will be returned in binary format, not in text format.
 
--   **NO SCROLL**
+- **NO SCROLL**
 
     Specifies how a cursor retrieves rows.
 
-    -   **NO SCROLL**: specifies that the cursor cannot be used to retrieve rows in a nonsequential fashion.
-    -   Unspecified: Based on the query's execution plan, the system automatically determines whether the cursor can be used to retrieve rows in a nonsequential fashion.
+    - **NO SCROLL**: specifies that the cursor cannot be used to retrieve rows in a nonsequential fashion.
+    - Unspecified: Based on the query's execution plan, the system automatically determines whether the cursor can be used to retrieve rows in a nonsequential fashion.
 
--   **WITH HOLD | WITHOUT HOLD**
+- **WITH HOLD | WITHOUT HOLD**
 
     Specifies whether a cursor can be used after the transaction that created it ends.
 
-    -   **WITH HOLD**: The cursor can be used after the transaction that created it ends.
-    -   **WITHOUT HOLD**: The cursor cannot be used outside of the transaction that created it.
-    -   If neither  **WITH HOLD**  nor  **WITHOUT HOLD**  is specified, the default is  **WITHOUT HOLD**.
-    -   Cross-node transactions \(for example, DDL-contained transactions created in openGauss with multiple DBnode\) do not support  **WITH HOLD**.
+    - **WITH HOLD**: The cursor can be used after the transaction that created it ends.
+    - **WITHOUT HOLD**: The cursor cannot be used outside of the transaction that created it.
+    - If neither  **WITH HOLD**  nor  **WITHOUT HOLD**  is specified, the default is  **WITHOUT HOLD**.
+    - Cross-node transactions \(for example, DDL-contained transactions created in openGauss with multiple DBnode\) do not support  **WITH HOLD**.
 
--   **query**
+- **query**
 
     Uses the  **SELECT**  or  **VALUES**  clause to specify the rows to be returned by a cursor.
 
     Value range:  **SELECT**  or  **VALUES**  clause
 
--   **direction**
+- **direction**
 
     Defines the fetch direction.
 
     Value range:
 
-    -   **NEXT**  \(default value\)
+    - **NEXT**  \(default value\)
 
         Fetches the next row.
 
-    -   PRIOR
+    - PRIOR
 
         Fetches the prior row.
 
-    -   FIRST
+    - FIRST
 
         Fetches the first row of the query \(same as  **ABSOLUTE 1**\).
 
-    -   LAST
+    - LAST
 
         Fetches the last row of the query \(same as  **ABSOLUTE – 1**\).
 
-    -   ABSOLUTE count
+    - ABSOLUTE count
 
         Fetches the  _count_th row of the query.
 
@@ -133,69 +132,67 @@ To process SQL statements, the stored procedure process assigns a memory segment
 
         Value range: a possibly-signed integer
 
-        -   If  **count**  is positive, the  _count_th row of the query will be fetched.
-        -   If  **count**  is negative, the  _abs\(count\)_th row from the end of the query result will be fetched.
-        -   If  **count**  is set to  **0**, the cursor is positioned before the first row.
+        - If  **count**  is positive, the  _count_th row of the query will be fetched.
+        - If  **count**  is negative, the  _abs\(count\)_th row from the end of the query result will be fetched.
+        - If  **count**  is set to  **0**, the cursor is positioned before the first row.
 
-    -   RELATIVE count
+    - RELATIVE count
 
         Fetches the  _count_th succeeding row or the  _count_th prior row.
 
         Value range: a possibly-signed integer
 
-        -   If  **count**  is positive, the  _count_th succeeding rows will be fetched.
-        -   If  **count**  is negative, the  _abs\(count\)_th prior rows will be fetched.
-        -   If the current row contains no data,  **RELATIVE 0**  returns  **NULL**.
+        - If  **count**  is positive, the  _count_th succeeding rows will be fetched.
+        - If  **count**  is negative, the  _abs\(count\)_th prior rows will be fetched.
+        - If the current row contains no data,  **RELATIVE 0**  returns  **NULL**.
 
-    -   count
+    - count
 
         Fetches the next  _count_  rows \(same as  **FORWARD** _count_\).
 
-    -   ALL
+    - ALL
 
         Fetches all remaining rows \(same as  **FORWARD ALL**\).
 
-    -   FORWARD
+    - FORWARD
 
         Fetches the next row \(same as  **NEXT**\).
 
-    -   FORWARD count
+    - FORWARD count
 
         Fetches the  _count_  succeeding rows or  _count_  prior rows.
 
-    -   FORWARD ALL
+    - FORWARD ALL
 
         Fetches all remaining rows.
 
-    -   BACKWARD
+    - BACKWARD
 
         Fetches the prior row \(same as  **PRIOR**\).
 
-    -   BACKWARD count
+    - BACKWARD count
 
         Fetches the prior  _count_  rows \(scanning backwards\).
 
         Value range: a possibly-signed integer
 
-        -   If  **count**  is positive, the prior  _count_  rows will be fetched.
-        -   If  **count**  is a negative, the succeeding  _abs \(count\)_  rows will be fetched.
-        -   **BACKWARD 0**  re-fetches the current row, if any.
+        - If  **count**  is positive, the prior  _count_  rows will be fetched.
+        - If  **count**  is a negative, the succeeding  _abs \(count\)_  rows will be fetched.
+        - **BACKWARD 0**  re-fetches the current row, if any.
 
-    -   BACKWARD ALL
+    - BACKWARD ALL
 
         Fetches all prior rows \(scanning backwards\).
 
-
--   **\{ FROM | IN \} cursor\_name**
+- **\{ FROM | IN \} cursor\_name**
 
     Specifies the cursor name using the keyword  **FROM**  or  **IN**.
 
     Value range: an existing cursor name
 
--   **ALL**
+- **ALL**
 
     Closes all open cursors.
-
 
 ## Examples<a name="section19525201318500"></a>
 
@@ -213,7 +210,7 @@ openGauss=# SELECT * FROM customer_t1;
 (5 rows)
 ```
 
--   Read a table using a cursor.
+- Read a table using a cursor.
 
     ```
     -- Start a transaction.
@@ -242,8 +239,7 @@ openGauss=# SELECT * FROM customer_t1;
     COMMIT
     ```
 
-
--   Read the  **VALUES**  clause using a cursor.
+- Read the  **VALUES**  clause using a cursor.
 
     ```
     -- Start a transaction.
@@ -271,7 +267,7 @@ openGauss=# SELECT * FROM customer_t1;
     COMMIT
     ```
 
--   Use the  **WITH HOLD**  cursor.
+- Use the  **WITH HOLD**  cursor.
 
     ```
     -- Start a transaction.
@@ -304,7 +300,7 @@ openGauss=# SELECT * FROM customer_t1;
     CLOSE CURSOR
     ```
 
--   Use the MOVE statement.
+- Use the MOVE statement.
 
     ```
     -- Start a transaction.
@@ -336,5 +332,3 @@ openGauss=# SELECT * FROM customer_t1;
     openGauss=# END;
     COMMIT
     ```
-
-

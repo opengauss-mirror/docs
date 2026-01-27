@@ -1,14 +1,14 @@
 # Core Database Technologies<a name="EN-US_CONCEPT_0289895656"></a>
 
--   **[Basic Functions Oriented to Application Development](#basic-functions-oriented-to-application-development)**  
+- **[Basic Functions Oriented to Application Development](#basic-functions-oriented-to-application-development)**  
 
--   **[High Performance](#high-performance)**  
+- **[High Performance](#high-performance)**  
 
--   **[High Availability](##high-availability)**  
+- **[High Availability](##high-availability)**  
 
--   **[Maintainability](#maintainability)**  
+- **[Maintainability](#maintainability)**  
 
--   **[Database Security](#database-security)**  
+- **[Database Security](#database-security)**  
 
 ## Basic Functions Oriented to Application Development
 
@@ -58,9 +58,9 @@
 
   Transactions are categorized into single-statement transactions and transaction blocks. Their basic interfaces are as follows:
 
-  -   Start transaction;
-  -   Commit;
-  -   Rollback;
+  - Start transaction;
+  - Commit;
+  - Rollback;
 
   Set transaction \(used for setting the isolation level, read/write mode, and delay mode\). For details about the syntax, see the  *SQLReference*.
 
@@ -70,11 +70,11 @@
 
   A stored procedure is a combination of SQL and PL/SQL. Stored procedures can move the code that executes business rules from the application to the database. Therefore, the code storage can be used by multiple programs at a time.
 
-  1.  Allows customers to modularize program design and encapsulate SQL statement sets, easy to invoke.
-  2.  Caches the compilation results of stored procedures to accelerate SQL statement set execution.
-  3.  Allows system administrators to restrict the permission for executing a specific stored procedure and controls access to the corresponding type of data. This prevents access from unauthorized users and ensures data security.
-  4.  To process SQL statements, the stored procedure process assigns a memory fragment to store context association. Cursors are handles or pointers to context areas. With cursors, stored procedures can control alterations in context areas.
-  5.  Six levels of exception information are supported to facilitate the debugging of stored procedures. Stored procedure debugging is a debugging method. During the development of a stored procedure, you can trace the process executed by the stored procedure step by step and find the error cause or program bug based on the variable value to improve the fault locating efficiency. You can set breakpoints and perform independent debugging.
+  1. Allows customers to modularize program design and encapsulate SQL statement sets, easy to invoke.
+  2. Caches the compilation results of stored procedures to accelerate SQL statement set execution.
+  3. Allows system administrators to restrict the permission for executing a specific stored procedure and controls access to the corresponding type of data. This prevents access from unauthorized users and ensures data security.
+  4. To process SQL statements, the stored procedure process assigns a memory fragment to store context association. Cursors are handles or pointers to context areas. With cursors, stored procedures can control alterations in context areas.
+  5. Six levels of exception information are supported to facilitate the debugging of stored procedures. Stored procedure debugging is a debugging method. During the development of a stored procedure, you can trace the process executed by the stored procedure step by step and find the error cause or program bug based on the variable value to improve the fault locating efficiency. You can set breakpoints and perform independent debugging.
 
   openGauss supports functions and stored procedures in the SQL standard, which enhances the usability of stored procedures. For details about how to use the stored procedures, see the  *SQLReference*.
 
@@ -115,34 +115,33 @@ In a wide table containing a huge amount of data, a query usually only includes 
 
 Row-store tables and column-store tables have their own advantages and disadvantages. You are advised to select a table based on the site requirements.
 
--   Row-store table
+- Row-store table
 
     Row-store tables are created by default. Data is stored by row. Row-store supports adding, deleting, modifying, and querying data of a complete row. Therefore, this storage model applies to scenarios where data needs to be updated frequently.
 
--   Column-store table
+- Column-store table
 
     Data is stored by column. The I/O of data query in a single column is small, and column-store tables occupy less storage space than row-store tables. This storage model applies to scenarios where data is inserted in batches, less updated, and queried for statistical analysis. The performance of single point query and single record insertion in a column-store table is poor.
 
-
 The principles for selecting row-store and column-store tables are as follows:
 
--   Update frequency
+- Update frequency
 
     If data is frequently updated, use a row-store table.
 
--   Insert frequency
+- Insert frequency
 
     If a small amount of data is frequently inserted each time, use a row-store table. If a large amount of data is inserted at a time, use column storage.
 
--   Number of columns
+- Number of columns
 
     If a table is to contain many columns, use a column-store table.
 
--   Number of columns to be queried
+- Number of columns to be queried
 
     If only a small number of columns \(less than 50% of the total\) is queried each time, use a column-store table.
 
--   Compression ratio
+- Compression ratio
 
     The compression ratio of a column-store table is higher than that of a row-store table. The higher the compression ratio is, the more CPU resources will be consumed.
 
@@ -242,10 +241,10 @@ In the openGauss system, data is partitioned horizontally on an instance using a
 
 In common scenarios, a partitioned table has the following advantages over a common table:
 
--   High query performance: You can specify partitions when querying partitioned tables, improving query efficiency.
--   High availability: If a certain partition in a partitioned table is faulty, data in the other partitions is still available.
--   Easy maintenance: If a partition in a partitioned table is faulty, only this partition needs to be repaired.
--   Balanced I/O: Partitions can be mapped to different disks to balance I/O and improve the overall system performance.
+- High query performance: You can specify partitions when querying partitioned tables, improving query efficiency.
+- High availability: If a certain partition in a partitioned table is faulty, data in the other partitions is still available.
+- Easy maintenance: If a partition in a partitioned table is faulty, only this partition needs to be repaired.
+- Balanced I/O: Partitions can be mapped to different disks to balance I/O and improve the overall system performance.
 
 Currently, openGauss supports range partitioned tables, list partitioned tables, and hash partitioned tables.
 
@@ -260,7 +259,6 @@ Currently, openGauss supports range partitioned tables, list partitioned tables,
 - In a hash partitioned table, data is mapped to each partition using the hash algorithm, and each partition stores records with the same hash value.
 
   The hash partitioning function uses the internal hash algorithm to divide records to be inserted into a table into partitions based on a column of the table.
-
 
 If you specify the  **PARTITION**  parameter when running the  **CREATE TABLE**  statement, data in the table will be partitioned.
 
@@ -277,9 +275,9 @@ In a typical OLTP scenario, simple queries account for a large proportion. This 
 **Figure  2**  Kunpeng NUMA architecture optimization<a name="fig1684262417126"></a>  
 ![](figures/kunpeng-numa-architecture-optimization.png "kunpeng-numa-architecture-optimization")
 
-1.  Based on the multi-core NUMA architecture of the Kunpeng processor, openGauss optimizes the NUMA architecture to reduce the cross-core memory access latency and maximize the multi-core Kunpeng computing capability. The key technologies include redo log batch insertion, NUMA distribution of hotspot data, and Clog partitions, greatly improving the processing performance of the TP system.
-2.  Based on the ARMv8.1 architecture used by the Kunpeng chip, openGauss uses the LSE instruction set to implement efficient atomic operations, effectively improving the CPU usage, multi-thread synchronization performance, and XLog write performance.
-3.  Based on the wider L3 cacheline provided by the Kunpeng chip, openGauss optimizes hotspot data access, effectively improving the cache access hit ratio, reducing the cache consistency maintenance overhead, and greatly improving the overall data access performance of the system.
+1. Based on the multi-core NUMA architecture of the Kunpeng processor, openGauss optimizes the NUMA architecture to reduce the cross-core memory access latency and maximize the multi-core Kunpeng computing capability. The key technologies include redo log batch insertion, NUMA distribution of hotspot data, and Clog partitions, greatly improving the processing performance of the TP system.
+2. Based on the ARMv8.1 architecture used by the Kunpeng chip, openGauss uses the LSE instruction set to implement efficient atomic operations, effectively improving the CPU usage, multi-thread synchronization performance, and XLog write performance.
+3. Based on the wider L3 cacheline provided by the Kunpeng chip, openGauss optimizes hotspot data access, effectively improving the cache access hit ratio, reducing the cache consistency maintenance overhead, and greatly improving the overall data access performance of the system.
 
 ### High Concurrency of the Thread Pool<a name="en-us_concept_0283138983_section166741219583"></a>
 
@@ -296,8 +294,6 @@ The Symmetric Multi-Processing \(SMP\) parallel technology of openGauss uses the
 ### Dynamic Build and Execution<a name="section1335965318515"></a>
 
 Based on the query execution plan tree, with the library functions provided by the LLVM, openGauss moves the process of determining the actual execution path from the executor phase to the execution initialization phase. In this way, problems such as function calling, logic condition branch determination, and a large amount of data reading that are related to the original query execution are avoided, to improve the query performance.
-
-
 
 ## High Scalability
 
@@ -394,7 +390,6 @@ Specifications
   
   - Practice: Planned primary/standby database instance switchover, no data loss, RPO = 0, RTO ≤ 20 minutes \(including the processes of demoting the primary database instance to the DR instance and promoting the DR database instance to the primary database instance\)
 
-
 >[!TIP]NOTICE 
 >Tests show that the maximum write rate of SATA SSDs is about 240 MB/s, that of SAS SSDs is over 500 MB/s, and that of NVMe SSDs is even better. Currently, only the performance metric under the SATA SSD hardware specifications is provided. If the hardware conditions do not meet the preceding specifications, the single-shard log generation speed in the primary database instance must be reduced to ensure the RPO and RTO.
 >
@@ -408,8 +403,8 @@ The workload diagnosis report \(WDR\) generates a performance report between two
 
 WDR depends on the following two components:
 
--   SNAPSHOT: The performance snapshot can be configured to collect a certain amount of performance data from the kernel at a specified interval and store the data in the user tablespace. Any snapshot can be used as a performance baseline for comparison with other snapshots.
--   WDR Reporter: This tool analyzes the overall system performance based on two snapshots, calculates the changes of more specific performance indicators between the two time periods, and generates summarized and detailed performance data. For details, see  [Table 1](#en-us_concept_0238164494_table14895120191613)  and  [Table 2](#en-us_concept_0238164494_table23331848193120).
+- SNAPSHOT: The performance snapshot can be configured to collect a certain amount of performance data from the kernel at a specified interval and store the data in the user tablespace. Any snapshot can be used as a performance baseline for comparison with other snapshots.
+- WDR Reporter: This tool analyzes the overall system performance based on two snapshots, calculates the changes of more specific performance indicators between the two time periods, and generates summarized and detailed performance data. For details, see  [Table 1](#en-us_concept_0238164494_table14895120191613)  and  [Table 2](#en-us_concept_0238164494_table23331848193120).
 
 **Table  1**  Summarized diagnosis report
 
@@ -469,7 +464,6 @@ WDR depends on the following two components:
 </tbody>
 </table>
 
-
 **Table  2**  Detailed diagnosis report
 
 <a name="en-us_concept_0238164494_table23331848193120"></a>
@@ -525,11 +519,10 @@ WDR depends on the following two components:
 </tbody>
 </table>
 
-
 Benefits:
 
--   WDR is the main method for diagnosing long-term performance problems. Based on the performance baseline of a snapshot, performance analysis is performed from multiple dimensions, helping DBAs understand the system load, performance of each component, and performance bottlenecks.
--   Snapshots are also an important data source for subsequent performance problem self-diagnosis and self-optimization suggestions.
+- WDR is the main method for diagnosing long-term performance problems. Based on the performance baseline of a snapshot, performance analysis is performed from multiple dimensions, helping DBAs understand the system load, performance of each component, and performance bottlenecks.
+- Snapshots are also an important data source for subsequent performance problem self-diagnosis and self-optimization suggestions.
 
 ### Slow SQL Diagnosis<a name="section11920121884711"></a>
 
@@ -613,7 +606,6 @@ openGauss provides a group of default roles whose names start with  **gs\_role\_
 </tbody>
 </table>
 
-
 ### Database Encryption Authentication<a name="en-us_concept_0283139021_section5666740124910"></a>
 
 The password encryption method based on the RFC5802 mechanism is used for authentication.
@@ -682,7 +674,6 @@ The TLS 1.2 protocol and a highly secure encryption algorithm suite are adopted.
 </tr>
 </tbody>
 </table>
-
 
 ### Row-Level Security<a name="en-us_concept_0283139021_section135874520509"></a>
 

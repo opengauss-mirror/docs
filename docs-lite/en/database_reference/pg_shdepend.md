@@ -96,20 +96,18 @@ Unlike most system catalogs,  **PG\_SHDEPEND**  is shared across all databases i
 
 In all cases, a  **PG\_SHDEPEND**  entry indicates that the referenced object cannot be dropped without also dropping the dependent object. However, there are several subflavors identified by  **deptype**: 
 
--   SHARED\_DEPENDENCY\_OWNER \(o\)
+- SHARED\_DEPENDENCY\_OWNER \(o\)
 
     The referenced object \(which must be a role\) is the owner of the dependent object.
 
--   SHARED\_DEPENDENCY\_ACL \(a\)
+- SHARED\_DEPENDENCY\_ACL \(a\)
 
     The referenced object \(which must be a role\) is mentioned in the access control list \(ACL\) of the dependent object. A  **SHARED\_DEPENDENCY\_ACL**  entry is not made for the owner of the object, since the owner will have a  **SHARED\_DEPENDENCY\_OWNER**  entry anyway.
 
--   SHARED\_DEPENDENCY\_PIN \(p\)
+- SHARED\_DEPENDENCY\_PIN \(p\)
 
     There is no dependent object. This type of entry is a signal that the system itself depends on the referenced object, and so that object must never be deleted. Entries of this type are created only by  **initdb**. The columns for the dependent object contain zeroes.
 
--   SHARED\_DEPENDENCY\_ DBPRIV\(d\)
+- SHARED\_DEPENDENCY\_ DBPRIV\(d\)
 
     The referenced object \(must be a role\) has the ANY permission on the dependent object \(the specified OID of the dependent object corresponds to a row in the  **GS\_DB\_PRIVILEGE**  system catalog\).
-
-

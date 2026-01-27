@@ -14,4 +14,3 @@ After the package body is deleted, the stored procedures and functions in the pa
 DROP PACKAGE [ IF EXISTS ] package_name;
 DROP PACKAGE BODY [ IF EXISTS ] package_name;
 ```
-

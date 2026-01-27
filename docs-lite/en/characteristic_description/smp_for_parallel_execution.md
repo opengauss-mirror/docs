@@ -22,17 +22,16 @@ None.
 
 ## Constraints<a name="section51513617597"></a>
 
--   Index scanning cannot be executed in parallel.
--   MergeJoin cannot be executed in parallel.
--   WindowAgg order by cannot be executed in parallel.
--   The cursor cannot be executed in parallel.
--   Queries in stored procedures and functions cannot be executed in parallel.
--   Subplans and initplans cannot be queried in parallel, and operators that contain subqueries cannot be executed in parallel, either.
--   Query statements that contain the median operation cannot be executed in parallel.
--   Queries with global temporary tables cannot be executed in parallel.
--   Updating materialized views cannot be executed in parallel.
+- Index scanning cannot be executed in parallel.
+- MergeJoin cannot be executed in parallel.
+- WindowAgg order by cannot be executed in parallel.
+- The cursor cannot be executed in parallel.
+- Queries in stored procedures and functions cannot be executed in parallel.
+- Subplans and initplans cannot be queried in parallel, and operators that contain subqueries cannot be executed in parallel, either.
+- Query statements that contain the median operation cannot be executed in parallel.
+- Queries with global temporary tables cannot be executed in parallel.
+- Updating materialized views cannot be executed in parallel.
 
 ## Dependencies<a name="section20491151513592"></a>
 
 None.
-

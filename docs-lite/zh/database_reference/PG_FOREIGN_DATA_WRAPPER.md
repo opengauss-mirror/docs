@@ -80,4 +80,3 @@ PG\_FOREIGN\_DATA\_WRAPPER系统表存储外部数据封装器定义。一个外
 </tr>
 </tbody>
 </table>
-

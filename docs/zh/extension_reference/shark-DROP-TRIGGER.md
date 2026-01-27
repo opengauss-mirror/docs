@@ -22,25 +22,25 @@ DROP TRIGGER [ IF EXISTS ] trigger_name [ CASCADE | RESTRICT ];
 
 ## 参数说明<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_s6df87c0dd87c49e29a034e0ff3385ca7"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     如果指定的触发器不存在，则发出一个notice而不是抛出一个错误。
 
--   **trigger\_name**
+- **trigger\_name**
 
     要删除的触发器名称。
 
     取值范围：已存在的触发器。
 
--   **table\_name**
+- **table\_name**
 
     要删除的触发器所在的表名称。
 
     取值范围：已存在的含触发器的表。
 
--   **CASCADE | RESTRICT**
-    -   CASCADE：级联删除依赖此触发器的对象。
-    -   RESTRICT：如果有依赖对象存在，则拒绝删除此触发器。此选项为缺省值。
+- **CASCADE | RESTRICT**
+    - CASCADE：级联删除依赖此触发器的对象。
+    - RESTRICT：如果有依赖对象存在，则拒绝删除此触发器。此选项为缺省值。
 
 ## 示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
 

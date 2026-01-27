@@ -63,4 +63,3 @@ The following table describes columns in the Configuration settings report.
 </tr>
 </tbody>
 </table>
-

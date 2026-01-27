@@ -6,103 +6,103 @@ PG_STATISTIC_HISTORY用于存储统计信息历史数据版本记录，该表默
 
 <table>
     <thead align="left">
-    	<tr id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_r9fa959080f464cda84d3e370c739001">
-        	<th class="cellrowborder" valign="top" width="18.25%" id="mcps1.2.4.1.1">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a9eeabae9f57146a3b582196fd912e002">
+     <tr id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_r9fa959080f464cda84d3e370c739001">
+         <th class="cellrowborder" valign="top" width="18.25%" id="mcps1.2.4.1.1">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a9eeabae9f57146a3b582196fd912e002">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a9eeabae9f57146a3b582196fd912e003"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a9eeabae9f57146a3b582196fd912e004"></a>名称
                 </p>
-	        </th>
+         </th>
             <th class="cellrowborder" valign="top" width="18.25%" id="mcps1.2.4.1.1">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a9eeabae9f57146a3b582196fd912e005">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a9eeabae9f57146a3b582196fd912e005">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a9eeabae9f57146a3b582196fd912e006"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a9eeabae9f57146a3b582196fd912e007"></a>类型
                 </p>
-	        </th>
+         </th>
             <th class="cellrowborder" valign="top" width="18.25%" id="mcps1.2.4.1.1">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a9eeabae9f57146a3b582196fd912e008">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a9eeabae9f57146a3b582196fd912e008">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a9eeabae9f57146a3b582196fd912e009"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a9eeabae9f57146a3b582196fd912e010"></a>描述
                 </p>
-	        </th>
+         </th>
         </tr>
     </thead>
     <tbody>
-    	<tr id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_r9df1702564f0488285e85b6175f2f011">
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb012">
+     <tr id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_r9df1702564f0488285e85b6175f2f011">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb012">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb013"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb014"></a>namespaceid
                 </p>
             </td>
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb015">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb015">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb016"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb017"></a>oid
                 </p>
             </td>
             <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb018">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb018">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb019"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb020"></a>所描述的对象所属schema的Oid。
                 </p>
             </td>
         </tr>
         <tr id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_r9df1702564f0488285e85b6175f2f021">
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb022">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb022">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb023"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb024"></a>starelid
                 </p>
             </td>
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb025">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb025">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb026"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb027"></a>oid
                 </p>
             </td>
             <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb028">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb028">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb029"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb030"></a>所描述的表的Oid。
                 </p>
             </td>
         </tr>
         <tr id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_r9df1702564f0488285e85b6175f2f031">
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb032">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb032">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb033"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb034"></a>partid
                 </p>
             </td>
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb035">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb035">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb036"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb037"></a>oid
                 </p>
             </td>
             <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb038">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb038">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb039"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb040"></a>所描述的分区的Oid。
                 </p>
             </td>
         </tr>
         <tr id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_r9df1702564f0488285e85b6175f2f041">
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb042">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb042">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb043"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb044"></a>statype
                 </p>
             </td>
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb045">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb045">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb046"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb047"></a>char
                 </p>
             </td>
             <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb048">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb048">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb049"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb050"></a>指定当前存储统计信息的类型。
                 </p>
@@ -116,80 +116,80 @@ PG_STATISTIC_HISTORY用于存储统计信息历史数据版本记录，该表默
             </td>
         </tr>
         <tr id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_r9df1702564f0488285e85b6175f2f053">
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb054">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb054">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb055"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb056"></a>last_analyzetime
                 </p>
             </td>
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb057">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb057">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb058"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb059"></a>timestamp with time zone
                 </p>
             </td>
             <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb060">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb060">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb061"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb062"></a>指定对象上一次收集统计信息的时间，如果是第一次统计，则该值为NULL。
                 </p>
             </td>
         </tr>
         <tr id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_r9df1702564f0488285e85b6175f2f063">
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb064">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb064">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb065"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb066"></a>current_analyzetime
                 </p>
             </td>
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb067">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb067">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb068"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb069"></a>timestamp with time zone
                 </p>
             </td>
             <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb070">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb070">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb071"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb072"></a>指定对象当前收集统计信息的时间。
                 </p>
             </td>
         </tr>
         <tr id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_r9df1702564f0488285e85b6175f2f063">
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb064">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb064">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb065"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb066"></a>starelkind
                 </p>
             </td>
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb067">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb067">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb068"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb069"></a>char
                 </p>
             </td>
             <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb070">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb070">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb071"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb072"></a>所属对象的类型。
                 </p>
             </td>
         </tr>
         <tr id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_r9df1702564f0488285e85b6175f2f073">
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb074">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb074">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb075"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb076"></a>staattnum
                 </p>
             </td>
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb077">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb077">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb078"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb079"></a>smallint
                 </p>
             </td>
             <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb080">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb080">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb081"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb082"></a>所描述的字段在表中的编号，从1开始。
                 </p>
@@ -225,60 +225,60 @@ PG_STATISTIC_HISTORY用于存储统计信息历史数据版本记录，该表默
 </td>
 </tr>
         <tr id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_r9df1702564f0488285e85b6175f2f083">
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb084">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb084">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb085"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb086"></a>reltuples
                 </p>
             </td>
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb087">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb087">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb088"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb089"></a>double precision
                 </p>
             </td>
             <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb090">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb090">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb091"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb092"></a>表中行的数目，只是优化器使用的一个估计值。
                 </p>
             </td>
         </tr>
         <tr id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_r9df1702564f0488285e85b6175f2f093">
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb094">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb094">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb095"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb096"></a>relpages
                 </p>
             </td>
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb097">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb097">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb098"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb099"></a>double precision
                 </p>
             </td>
             <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb100">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb100">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb101"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb102"></a>以页（大小为BLCKSZ）为单位的此表在磁盘上的大小，它只是优化器用的一个近似值。
                 </p>
             </td>
         </tr>
         <tr id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_r9df1702564f0488285e85b6175f2f103">
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb104">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb104">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb105"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb106"></a>stalocktype
                 </p>
             </td>
-        	<td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb107">
+         <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb107">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb108"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb109"></a>char
                 </p>
             </td>
             <td class="cellrowborder" valign="top" width="18.25%" headers="mcps1.2.4.1.1 ">
-            	<p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb110">
+             <p id="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb110">
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb111"></a>
                     <a name="zh-cn_topic_0283137732_zh-cn_topic_0237122317_zh-cn_topic_0059778435_a955ddb3e3046481f85d60457555bb112"></a>标志当前统计历史信息对象的锁状态。若当前对象未被锁，则未NULL。
                 </p>

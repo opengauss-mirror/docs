@@ -10,28 +10,26 @@
 
 ## Syntax<a name="en-us_topic_0283136839_en-us_topic_0237122062_en-us_topic_0059777426_s0798d93d042a4c96ab266f7eb45fc5d5"></a>
 
--   Add users to a group.
+- Add users to a group.
 
     ```
     ALTER GROUP group_name 
         ADD USER user_name [, ... ];
     ```
 
-
--   Remove users from a group.
+- Remove users from a group.
 
     ```
     ALTER GROUP group_name 
         DROP USER user_name [, ... ];
     ```
 
--   Change the name of the group.
+- Change the name of the group.
 
     ```
     ALTER GROUP group_name 
         RENAME TO new_name;
     ```
-
 
 ## Parameter Description<a name="en-us_topic_0283136839_en-us_topic_0237122062_en-us_topic_0059777426_sf7fbcb97d29b45e38bb6d6a65cc96f46"></a>
 
@@ -53,4 +51,3 @@ openGauss=# ALTER GROUP super_users RENAME TO normal_users;
 ## Helpful Links<a name="en-us_topic_0283136839_en-us_topic_0237122062_en-us_topic_0059777426_s72bcc1ca592a4b47bfaf7849e51e7e30"></a>
 
 [ALTER GROUP](alter_group.md),  [DROP GROUP](drop_group.md), and  [ALTER ROLE](alter_role.md)
-

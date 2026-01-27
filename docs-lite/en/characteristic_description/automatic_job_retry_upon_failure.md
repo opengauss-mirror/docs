@@ -16,7 +16,7 @@ In common fault scenarios, such as network exception and deadlock, queries retry
 
 openGauss provides the job retry mechanism: gsql retry.
 
--   The gsql retry mechanism uses a unique error code \(SQL STATE\) to identify an error that requires a retry. The function of the client tool gsql is enhanced. The error code configuration file  **retry\_errcodes.conf**  is used to configure the list of errors that require a retry. The file is stored in the installation directory at the same level as gsql.  **gsql**  provides the  **\\set RETRY **\[_number_\] command to enable or disable the retry function. The number of retry times ranges from 5 to 10, and the default value is  **5**. When this function is enabled,  **gsql**  reads the preceding configuration file. The error retry controller records the error code list through the container. If an error occurs in the configuration file after the function is enabled, the controller sends the cached query statement to the server for retry until the query is successful or an error is reported when the number of retry times exceeds the maximum.
+- The gsql retry mechanism uses a unique error code \(SQL STATE\) to identify an error that requires a retry. The function of the client tool gsql is enhanced. The error code configuration file  **retry\_errcodes.conf**  is used to configure the list of errors that require a retry. The file is stored in the installation directory at the same level as gsql.  **gsql**  provides the  **\\set RETRY**\[_number_\] command to enable or disable the retry function. The number of retry times ranges from 5 to 10, and the default value is  **5**. When this function is enabled,  **gsql**  reads the preceding configuration file. The error retry controller records the error code list through the container. If an error occurs in the configuration file after the function is enabled, the controller sends the cached query statement to the server for retry until the query is successful or an error is reported when the number of retry times exceeds the maximum.
 
 ## Enhancements<a name="section29043486"></a>
 
@@ -24,11 +24,11 @@ None.
 
 ## Constraints<a name="section06531946143616"></a>
 
--   Functionality constraints:
+- Functionality constraints:
 
     Retrying increases execution success rate but does not guarantee success.
 
--   Error type constraints:
+- Error type constraints:
 
     Only the error types in  [Table 1](#table123551925257)  are supported.
 
@@ -193,23 +193,21 @@ None.
     </tbody>
     </table>
 
--   Statement type constraints:
+- Statement type constraints:
 
     Support single-statement stored procedures, functions, and anonymous blocks. Statements in transaction blocks are not supported.
 
--   Statement constraints of a stored procedure:
-    -   If an error occurs during the execution of a stored procedure containing EXCEPTION \(including statement block execution and statement execution in EXCEPTION\), the stored procedure can be retried. If the error is captured by EXCEPTION, the stored procedure cannot be retried.
-    -   Advanced packages that use global variables are not supported.
-    -   DBE\_TASK is not supported.
-    -   PKG\_UTIL file operation is not supported.
+- Statement constraints of a stored procedure:
+    - If an error occurs during the execution of a stored procedure containing EXCEPTION \(including statement block execution and statement execution in EXCEPTION\), the stored procedure can be retried. If the error is captured by EXCEPTION, the stored procedure cannot be retried.
+    - Advanced packages that use global variables are not supported.
+    - DBE\_TASK is not supported.
+    - PKG\_UTIL file operation is not supported.
 
--   Data import constraints:
-    -   The  **COPY FROM STDIN**  statement is not supported.
-    -   The  **gsql \\copy from**  metacommand is not supported.
-    -   Data cannot be imported using  **JDBC CopyManager copyIn**.
-
+- Data import constraints:
+    - The  **COPY FROM STDIN**  statement is not supported.
+    - The  **gsql \\copy from**  metacommand is not supported.
+    - Data cannot be imported using  **JDBC CopyManager copyIn**.
 
 ## Dependencies<a name="section60064789"></a>
 
 Valid only if the  **gsql**  tool works normally and the error list is correctly configured.
-

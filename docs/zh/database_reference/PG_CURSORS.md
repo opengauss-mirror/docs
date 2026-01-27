@@ -57,4 +57,3 @@ PG\_CURSORS视图列出了当前可用的游标。
 </tr>
 </tbody>
 </table>
-

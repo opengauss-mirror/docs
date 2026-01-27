@@ -146,4 +146,3 @@ GS\_OPT\_MODEL是启用AiEngine执行计划时间预测功能时的数据表，�
 
 >[!NOTE]说明
 >轻量版场景下，openGauss提供此系统表，但AI能力不可用。
-

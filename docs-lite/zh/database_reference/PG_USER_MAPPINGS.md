@@ -73,4 +73,3 @@ PG\_USER\_MAPPINGS视图提供访问关于用户映射的信息的接口。
 </tr>
 </tbody>
 </table>
-

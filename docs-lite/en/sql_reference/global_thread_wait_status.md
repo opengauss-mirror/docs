@@ -131,4 +131,3 @@ The definitions of  **GLOBAL\_THREAD\_WAIT\_STATUS**  and  **THREAD\_WAIT\_STATU
 </tr>
 </tbody>
 </table>
-

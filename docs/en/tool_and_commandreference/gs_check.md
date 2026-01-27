@@ -6,107 +6,105 @@
 
 ## Precautions<a name="en-us_topic_0287275940_en-us_topic_0237152330_section4290135616319"></a>
 
--   Parameter  **-i**  or  **-e**  must be set.  **-i**  specifies a single item to be checked, and  **-e**  specifies an inspection scenario where multiple items will be checked.
--   If  **-i**  is not set to a root item or no such items are contained in the check item list of the scenario specified by  **-e**, you do not need to enter the name or password of a user with the root permissions.
--   You can run  **--skip-root-items**  to skip root items.
--   If the MTU values are inconsistent, the check may be slow or the check process may fail to respond. When the inspection tool displays a message, change the MTU values of the nodes to be the same and then perform the inspection.
--   If the switch does not support the configured MTU value, process response failures may be caused due to communication problems even if the MTU values are the same. In this case, you need to adjust the MTU based on the switch.
+- Parameter  **-i**  or  **-e**  must be set.  **-i**  specifies a single item to be checked, and  **-e**  specifies an inspection scenario where multiple items will be checked.
+- If  **-i**  is not set to a root item or no such items are contained in the check item list of the scenario specified by  **-e**, you do not need to enter the name or password of a user with the root permissions.
+- You can run  **--skip-root-items**  to skip root items.
+- If the MTU values are inconsistent, the check may be slow or the check process may fail to respond. When the inspection tool displays a message, change the MTU values of the nodes to be the same and then perform the inspection.
+- If the switch does not support the configured MTU value, process response failures may be caused due to communication problems even if the MTU values are the same. In this case, you need to adjust the MTU based on the switch.
 
 ## Syntax<a name="en-us_topic_0287275940_en-us_topic_0237152330_en-us_topic_0059777799_sfac1bdc734c0446b9ec13d0ae74a4553"></a>
 
--   Check a single-item.
+- Check a single-item.
 
     ```
     gs_check -i ITEM [...] [-U USER] [-L] [-l LOGFILE] [-o OUTPUTDIR] [--skip-root-items][--set][--routing]
     ```
 
--   Check a scenario.
+- Check a scenario.
 
     ```
     gs_check -e SCENE_NAME [-U USER] [-L] [-l LOGFILE] [-o OUTPUTDIR] [--skip-root-items] [--time-out=SECS][--set][--routing][--skip-items]
     ```
 
--   Display help information.
+- Display help information.
 
     ```
     gs_check -? | --help
     ```
 
--   Display version information.
+- Display version information.
 
     ```
     gs_check -V | --version
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0287275940_en-us_topic_0237152330_en-us_topic_0059777799_s99b57308f5c84719abe48819d2880cf0"></a>
 
--   -U
+- -U
 
     Specifies the name of a user who runs openGauss.
 
     Value range: Name of a user who runs openGauss
 
--   -L
+- -L
 
     Locally performs the check.
 
--   -i
+- -i
 
     Specifies a check item. Its format is  **-i Check**_XX_. For details about check items, see  [Table 1](#en-us_topic_0287275940_en-us_topic_0237152330_en-us_topic_0059777799_t48caf3ebc47a4dce88ed8b7132976edd).
 
--   -e
+- -e
 
     Specifies scenario check items. Default scenarios include  **inspect**  \(routine inspection\),  **upgrade**  \(pre-upgrade inspection\),  **binary\_upgrade**  \(local pre-upgrade inspection\),  **health**  \(health check inspection\), and  **install**  \(installation\). You can also compile scenarios as required.
 
--   -l
+- -l
 
     Specifies the log file path. The path must be suffixed with .log.
 
--   -o
+- -o
 
     Specifies the path of the check result output folder.
 
--   --skip-root-items
+- --skip-root-items
 
     Skips the check items that require root permissions.
 
--   --skip-items
+- --skip-items
 
     Skips specified check items.
 
--   --format
+- --format
 
     Specifies the format of the result report.
 
--   --set
+- --set
 
     Specifies abnormal items that can be fixed.
 
--   --cid
+- --cid
 
     Checks the ID used only by the internal check process.
 
--   --time-out
+- --time-out
 
     Specifies the timeout period. The unit is second. The default value is  **1500s**. The user-defined value cannot be less than 1500s.
 
--   --routing
+- --routing
 
     Specifies the network segment for service IP addresses. The format is  _IP address_:_Subnet mask_.
 
--   --disk-threshold="PERCENT"
+- --disk-threshold="PERCENT"
 
     Specifies the alarm threshold when you check disk usage. You can specify the integer value that ranges from 1 to 99. The default value is  **90**. This parameter is not mandatory for other check items.
 
--   -?, --help
+- -?, --help
 
     Displays help information.
 
--   -V, --version
+- -V, --version
 
     Displays version information.
-
 
 **Table  1**  openGauss status checklist
 
@@ -833,14 +831,15 @@
 
 >[!NOTE]NOTE 
 >Constraints on the CheckNetSpeed check item are as follows:
->-   Do not use  **-L**  to check CheckNetSpeed, because doing so cannot produce enough network load and the check result will be inaccurate.
->-   If the number of nodes is less than six, the network load produced by  **speed\_test**  may not fully occupy the bandwidth, and the check result will be inaccurate.
+>
+>- Do not use  **-L**  to check CheckNetSpeed, because doing so cannot produce enough network load and the check result will be inaccurate.
+>- If the number of nodes is less than six, the network load produced by  **speed\_test**  may not fully occupy the bandwidth, and the check result will be inaccurate.
 
 ## Defining a Scenario<a name="en-us_topic_0287275940_en-us_topic_0237152330_section1111595434113"></a>
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Create the scenario configuration file  **scene\_**_XXX_**.xml**  in the  _$GPHOME_**/script/gspylib/inspection/config**  directory.
-3.  Write check items to the scenario configuration file in the following format:
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Create the scenario configuration file  **scene\_**_XXX_**.xml**  in the  _$GPHOME_**/script/gspylib/inspection/config**  directory.
+3. Write check items to the scenario configuration file in the following format:
 
     ```
     <?xml version="1.0" encoding="utf-8" ?>
@@ -857,7 +856,7 @@
 
     Note: You need to ensure that the user-defined XML file is correct.
 
-4.  Run the following command in the  **home/package/script/gspylib/inspection/config**  directory to deploy the file on each node where the check is to be performed:
+4. Run the following command in the  **home/package/script/gspylib/inspection/config**  directory to deploy the file on each node where the check is to be performed:
 
     ```
     scp scene_upgrade.xml SIA1000068994: home/package/script/gspylib/inspection/config/
@@ -866,16 +865,15 @@
     >[!NOTE]NOTE 
     >**home/package/script/gspylib/inspection/config**  is the absolute path of the new scenario configuration file.
 
-5.  Switch to user  **omm**  and run the following command to view the check result:
+5. Switch to user  **omm**  and run the following command to view the check result:
 
     ```
     gs_check  -e XXX
     ```
 
-
 ## Defining a Check Item<a name="en-us_topic_0287275940_en-us_topic_0237152330_section1497431723111"></a>
 
-1.  Add a check item. Modify the  **script/gspylib/inspection/config/items.xml**  file in the following format:
+1. Add a check item. Modify the  **script/gspylib/inspection/config/items.xml**  file in the following format:
 
     ```
     <checkitem id="10010" name="CheckCPU">
@@ -900,25 +898,25 @@
     </checkitems>
     ```
 
-    -   **id**: specifies the check item ID.
-    -   **name**: specifies the name of the check script.
-    -   **title**: specifies the name of the check item. It allows multiple languages.
+    - **id**: specifies the check item ID.
+    - **name**: specifies the name of the check script.
+    - **title**: specifies the name of the check item. It allows multiple languages.
 
         **<zh\>**: checks content of Chinese version.
 
         **<en\>**: checks content of English version.
 
-    -   **standard**: specifies the check standards. It allows multiple languages.
-    -   **suggestion**: provides advice on how to fix check item problems. It allows multiple languages.
-    -   **threshold**: specifies the check item threshold. Multiple values are separated using semicolons \(;\), for example,  **Key1=Value1;Key2=Value2**.
-    -   **category**: specifies the check item type. It is optional. Its value can be  **os**,  **device**,  **network**,  **cluster**,  **database**, or  **other**.
-    -   **permission**: specifies the permission required for checking an item. It is optional. Its value can be  **root**  or  **user**  \(default\).
-    -   **scope**: specifies the node scope where an item is checked. It is optional.  **cn-**  indicates that only the primary database node resides is checked.  **local-**  indicates that only the current node is checked.  **all-**  is the default value, indicating that all nodes in openGauss are checked.
-    -   **analysis**: specifies how the check result is analyzed.  **default-**  is the default value, indicating that the result on every node is checked, and that an item passes the check only if it passes the check on all the nodes.  **consistent-**  indicates that each node returns a result, and that an item passes the check if all the results are consistent.  **custom-**  indicates other ways.
+    - **standard**: specifies the check standards. It allows multiple languages.
+    - **suggestion**: provides advice on how to fix check item problems. It allows multiple languages.
+    - **threshold**: specifies the check item threshold. Multiple values are separated using semicolons \(;\), for example,  **Key1=Value1;Key2=Value2**.
+    - **category**: specifies the check item type. It is optional. Its value can be  **os**,  **device**,  **network**,  **cluster**,  **database**, or  **other**.
+    - **permission**: specifies the permission required for checking an item. It is optional. Its value can be  **root**  or  **user**  \(default\).
+    - **scope**: specifies the node scope where an item is checked. It is optional.  **cn-**  indicates that only the primary database node resides is checked.  **local-**  indicates that only the current node is checked.  **all-**  is the default value, indicating that all nodes in openGauss are checked.
+    - **analysis**: specifies how the check result is analyzed.  **default-**  is the default value, indicating that the result on every node is checked, and that an item passes the check only if it passes the check on all the nodes.  **consistent-**  indicates that each node returns a result, and that an item passes the check if all the results are consistent.  **custom-**  indicates other ways.
 
     Note: You need to ensure that the user-defined XML file is correct.
 
-2.  Create a check script named  **Check**_XXXX_**.py**  in the  **script/gspylib/inspection/items**  directory. The directory should contain multiple folders, each storing a type of scripts. The format is as follows:
+2. Create a check script named  **Check**_XXXX_**.py**  in the  **script/gspylib/inspection/items**  directory. The directory should contain multiple folders, each storing a type of scripts. The format is as follows:
 
     ```
     class CheckCPU(BaseItem):
@@ -962,23 +960,23 @@
 
     A script is developed based on the BaseItem class, which defines the common check process, result analysis method, and default output format. Extended parameters:
 
-    -   **doCheck**: contains specific ways to check an item. The check result is in the following format:
+    - **doCheck**: contains specific ways to check an item. The check result is in the following format:
 
         **result.rst**: \(optional\) specifies the check result. Its value can be:
 
-        -   **OK**: indicates that the item passes the check.
-        -   **NA**: indicates that the check does not cover the node.
-        -   **NG**: indicates that the item failed the check.
-        -   **WARNING**: indicates that the check is complete and that a warning is reported.
-        -   **ERROR**: indicates that the check is interrupted due to an internal error.
+        - **OK**: indicates that the item passes the check.
+        - **NA**: indicates that the check does not cover the node.
+        - **NG**: indicates that the item failed the check.
+        - **WARNING**: indicates that the check is complete and that a warning is reported.
+        - **ERROR**: indicates that the check is interrupted due to an internal error.
 
-    -   **preCheck**: checks prerequisites. Its value can be  **cnPreCheck**, which checks whether a primary database node instance is deployed on the current execution node; or  **localPreCheck**, which checks whether the current execution node is specified for the check. You can set it using  **scope**  in the check item configuration file. This method can be reloaded to perform customized pre-checks.
-    -   **postAnalysis**  specifies how the check result is analyzed. Its value can be  **default**  or  **consistent**. You can set it using  **analysis**  in the check item configuration file. This method can be reloaded to perform customized result analysis.
+    - **preCheck**: checks prerequisites. Its value can be  **cnPreCheck**, which checks whether a primary database node instance is deployed on the current execution node; or  **localPreCheck**, which checks whether the current execution node is specified for the check. You can set it using  **scope**  in the check item configuration file. This method can be reloaded to perform customized pre-checks.
+    - **postAnalysis**  specifies how the check result is analyzed. Its value can be  **default**  or  **consistent**. You can set it using  **analysis**  in the check item configuration file. This method can be reloaded to perform customized result analysis.
 
     Note: The name of a user-defined check item cannot be the same as the name of an existing check item. In addition, you need to ensure that the user-defined check item script is standard.
 
-3.  Deploy the script on all execution nodes.
-4.  Log in as the user  **omm**  and run the following command to view the result:
+3. Deploy the script on all execution nodes.
+4. Log in as the user  **omm**  and run the following command to view the result:
 
     To locally perform a check, run the following command:
 
@@ -991,7 +989,6 @@
     ```
     gs_check  -i  CheckXXX
     ```
-
 
 ## OS Parameters<a name="en-us_topic_0287275940_en-us_topic_0237152330_en-us_topic_0059777799_s8b7df4cd80bf4a84927d84af2d49b32d"></a>
 
@@ -1243,24 +1240,23 @@
 
 ## File System Parameters<a name="en-us_topic_0287275940_en-us_topic_0237152330_en-us_topic_0059777799_s6bc6e27aba3d44139c026373229dcd89"></a>
 
--   soft nofile
+- soft nofile
 
     Indicates the soft limit. The number of file handles used by a user can exceed this parameter value. However, an alarm will be reported.
 
     Recommended value:  **1000000**
 
--   hard nofile
+- hard nofile
 
     Indicates the hard limit. The number of file handles used by a user cannot exceed this parameter value.
 
     Recommended value:  **1000000**
 
--   stack size
+- stack size
 
     Specifies the thread stack size.
 
     Recommended value:  **3072**
-
 
 ## Examples<a name="en-us_topic_0287275940_en-us_topic_0237152330_en-us_topic_0059777799_s1c980bdf925b48829d69ccedb086c313"></a>
 
@@ -1330,4 +1326,3 @@ For more information please refer to /opt/huawei/wisequery/script/gspylib/inspec
 ## Helpful Links<a name="en-us_topic_0287275940_en-us_topic_0237152330_en-us_topic_0059777799_sca573acef30b4169bd3e6f0d5501021c"></a>
 
 [gs\_checkos](gs_checkos.md),  [gs\_checkperf](gs_checkperf.md)
-

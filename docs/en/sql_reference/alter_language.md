@@ -12,20 +12,18 @@ ALTER [ PROCEDURAL ] LANGUAGE name RENAME TO new_name ALTER [ PROCEDURAL ] LANGU
 
 ## Parameter Description<a name="section48568352146"></a>
 
--   **name**
+- **name**
 
     Name of a language.
 
--   **new\_name**
+- **new\_name**
 
     New name of a language.
 
--   **new\_owner**
+- **new\_owner**
 
     New owner of a language.
-
 
 ## Compatibility<a name="section446220148329"></a>
 
 The SQL standard does not contain the  **ALTER LANGUAGE**  statement.
-

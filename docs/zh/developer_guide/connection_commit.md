@@ -24,4 +24,3 @@ connection.commit()
 ## 示例<a name="section4160944682"></a>
 
 请参见[示例：常用操作](example_common_operations_psycopg.md)。
-

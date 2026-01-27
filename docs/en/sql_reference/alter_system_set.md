@@ -6,17 +6,17 @@
 
 ## Precautions<a name="en-us_topic_0283137187_en-us_topic_0237122075_en-us_topic_0059778605_s16279beb536e4281b8403ab11195cb3a"></a>
 
--   This command can be used only by initial users and users with the  **sysadmin**  permission.
--   The effective time of GUC parameters at different levels is as follows:
-    -   The GUC parameters at the POSTMASTER level take effect only after the system is restarted.
-    -   The GUC parameters at the BACKEND level take effect only after the session is reconnected.
-    -   The GUC parameters at the SIGHUP level take effect immediately. \(Actually, there is a slight delay to wait for the thread reloading the parameter.\)
+- This command can be used only by initial users and users with the  **sysadmin**  permission.
+- The effective time of GUC parameters at different levels is as follows:
+    - The GUC parameters at the POSTMASTER level take effect only after the system is restarted.
+    - The GUC parameters at the BACKEND level take effect only after the session is reconnected.
+    - The GUC parameters at the SIGHUP level take effect immediately. \(Actually, there is a slight delay to wait for the thread reloading the parameter.\)
 
--   You can set the  [**audit\_set\_parameter**](../database_reference/operation-auditing.md#en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_sc59738d0efe94f909306fde1f3d04f1e)  parameter to specify whether the operation is audited.
--   The operation can be synchronized to the standby server.
--   The operation is the same as  **gs\_guc**, which does not pay attention to whether the database is a primary or standby node or whether the database is read-only.
--   The operation cannot be executed in a transaction because it cannot be rolled back.
--   The following parameters can be modified only by the initial user:
+- You can set the  [**audit\_set\_parameter**](../database_reference/operation-auditing.md#en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_sc59738d0efe94f909306fde1f3d04f1e)  parameter to specify whether the operation is audited.
+- The operation can be synchronized to the standby server.
+- The operation is the same as  **gs\_guc**, which does not pay attention to whether the database is a primary or standby node or whether the database is read-only.
+- The operation cannot be executed in a transaction because it cannot be rolled back.
+- The following parameters can be modified only by the initial user:
 
     ```
     audit_copy_exec, audit_data_format, audit_database_process, audit_directory, audit_dml_state,
@@ -32,7 +32,6 @@
     modify_initial_password, password_encryption_type, password_policy
     ```
 
-
 ## Syntax<a name="en-us_topic_0283137187_en-us_topic_0237122075_en-us_topic_0059778605_s3b7743fa7cab42718575f7194d1112ba"></a>
 
 ```
@@ -41,14 +40,13 @@ ALTER SYSTEM SET parameter TO value;
 
 ## Parameter Description<a name="en-us_topic_0283137187_en-us_topic_0237122075_en-us_topic_0059778605_sa834b01395fd4366a5dce7a64ad867b6"></a>
 
--   **parameter**
+- **parameter**
 
     GUC parameter
 
--   **value**
+- **value**
 
     GUC parameter value
-
 
 ## Examples<a name="en-us_topic_0283137187_section49061716194314"></a>
 
@@ -67,4 +65,3 @@ openGauss=# alter system set enable_thread_pool to on;
 NOTICE:  please restart the database for the POSTMASTER level parameter to take effect.
 ALTER SYSTEM SET
 ```
-

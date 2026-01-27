@@ -12,26 +12,22 @@ The delimiter is of the session level, supported only by the gsql client, and av
 
 ## Syntax
 
--   Define a delimiter.
+- Define a delimiter.
 
     ```
     DELIMITER delimiter_str_name END_OF_INPUT
     DELIMITER delimiter_str_name END_OF_INPUT_COLON
     ```
     
-
-
 ## Parameter Description
 
--   **delim_str_name**
+- **delim_str_name**
 
     Indicates types of delimiters that can be defined.
 
-
--   **END_OF_INPUT/END_OF_INPUT_COLON**
+- **END_OF_INPUT/END_OF_INPUT_COLON**
 
     Indicates the end status.
-
 
 ## Examples
 

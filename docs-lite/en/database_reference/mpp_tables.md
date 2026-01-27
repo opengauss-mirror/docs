@@ -1,6 +1,6 @@
 # MPP\_TABLES<a name="EN-US_TOPIC_0289900816"></a>
 
-The following information is displayed in the  **MPP\_TABLES **view:
+The following information is displayed in the  **MPP\_TABLES**view:
 
 **Table  1**  MPP\_TABLES columns
 
@@ -57,4 +57,3 @@ The following information is displayed in the  **MPP\_TABLES **view:
 </tr>
 </tbody>
 </table>
-

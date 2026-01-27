@@ -28,13 +28,13 @@ Typically weights are used to mark words from special areas of the document, lik
 
 Since a longer document has a greater chance of containing a query term it is reasonable to take into account document size. For example, a hundred-word document with five instances of a search word is probably more relevant than a thousand-word document with five instances. Both ranking functions take an integer  **normalization**  option that specifies whether and how a document's length should impact its rank. The integer option controls several behaviors, so it is a bit mask: you can specify one or more behaviors using a vertical bar \(**|**\) \(for example,  **2|4**\).
 
--   **0**  \(default\) ignores the document length.
--   **1**  divides the rank by \(1 + logarithm of the document length\).
--   **2**  divides the rank by the document length.
--   **4**  divides the rank by the mean harmonic distance between extents. This is implemented only by  **ts\_rank\_cd**.
--   **8**  divides the rank by the number of unique words in document.
--   **16**  divides the rank by \(1 + Logarithm of the number of unique words in document\).
--   **32**  divides the rank by \(itself + 1\).
+- **0**  \(default\) ignores the document length.
+- **1**  divides the rank by \(1 + logarithm of the document length\).
+- **2**  divides the rank by the document length.
+- **4**  divides the rank by the mean harmonic distance between extents. This is implemented only by  **ts\_rank\_cd**.
+- **8**  divides the rank by the number of unique words in document.
+- **16**  divides the rank by \(1 + Logarithm of the number of unique words in document\).
+- **32**  divides the rank by \(itself + 1\).
 
 If more than one flag bit is specified, the transformations are applied in the order listed.
 
@@ -99,4 +99,3 @@ openGauss=# SELECT id, body, ts_rank_cd(to_tsvector('ngram',body), query) AS ran
 ```
 
 Ranking can be expensive since it requires consulting the  **tsvector**  of each matching document, which can be I/O bound and therefore slow. Unfortunately, it is almost impossible to avoid since practical queries often result in large numbers of matches.
-

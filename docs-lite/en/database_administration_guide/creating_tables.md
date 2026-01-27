@@ -25,4 +25,3 @@ If the following information is displayed, the table has been created:
 ```
 
 **c\_customer\_sk**,  **c\_customer\_id**,  **c\_first\_name**, and  **c\_last\_name**  are the column names of the table.  **integer**,  **char\(5\)**,  **char\(6\)**, and  **char\(8\)**  are column name types.
-

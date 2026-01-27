@@ -25,4 +25,3 @@ See the examples in  **CREATE WEAK PASSWORD DICTIONARY**.
 ## Helpful Links<a name="en-us_topic_0283136728_en-us_topic_0237122163_en-us_topic_0059777774_scfac1ca9cbb74e3d891c918580e6b393"></a>
 
 [CREATE WEAK PASSWORD DICTIONARY](create_weak_password_dictionary.md)
-

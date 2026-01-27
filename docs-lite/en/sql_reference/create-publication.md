@@ -6,11 +6,11 @@
 
 ## **Precautions**<a name="section412011394429"></a>
 
--   If neither **FOR TABLE** nor **FOR ALL TABLES** is specified, a publication starts with a set of empty tables. Tables can be added later.
--   Creating a publication does not start replication. It defines only one group and filtering logic for future subscribers. To create a publication, the caller must have the **CREATE** permission on the current database. (The system administrator does not need to perform a check on this.)
--   To add a table to a publication, the caller must have ownership of the table. The **FOR ALL TABLES** clause requires that the caller be a user with the **SYSADMIN** permission.
--   Tables added to a publication that publishes UPDATE or DELETE operations must already have **REPLICA IDENTITY** defined; otherwise, these operations will be prohibited in those tables.
--   The **COPY... FROM** command is used to publish INSERT operations. It cannot be used to publish TRUNCATE and DDL operations.
+- If neither **FOR TABLE** nor **FOR ALL TABLES** is specified, a publication starts with a set of empty tables. Tables can be added later.
+- Creating a publication does not start replication. It defines only one group and filtering logic for future subscribers. To create a publication, the caller must have the **CREATE** permission on the current database. (The system administrator does not need to perform a check on this.)
+- To add a table to a publication, the caller must have ownership of the table. The **FOR ALL TABLES** clause requires that the caller be a user with the **SYSADMIN** permission.
+- Tables added to a publication that publishes UPDATE or DELETE operations must already have **REPLICA IDENTITY** defined; otherwise, these operations will be prohibited in those tables.
+- The **COPY... FROM** command is used to publish INSERT operations. It cannot be used to publish TRUNCATE and DDL operations.
 
 ## **Syntax**<a name="section52689257424"></a>
 

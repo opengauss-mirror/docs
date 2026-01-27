@@ -12,29 +12,28 @@ set(param value)
 
 ## Parameters<a name="section41303128143838"></a>
 
--   **param**  indicates the parameter name.
--   **value**  indicates the value of a parameter.
--   Currently, the following parameters can be set and take effect by using Hint:
-    -   Boolean
+- **param**  indicates the parameter name.
+- **value**  indicates the value of a parameter.
+- Currently, the following parameters can be set and take effect by using Hint:
+    - Boolean
 
         **enable\_bitmapscan, enable\_hashagg, enable\_hashjoin, enable\_indexscan, enable\_indexonlyscan, enable\_material, enable\_mergejoin, enable\_nestloop, enable\_index\_nestloop, enable\_seqscan, enable\_sort, enable\_tidscan, partition\_iterator\_elimination, partition\_page\_estimation, enable\_functional\_dependency,** and **var\_eq\_const\_selectivity**
 
-    -   Integer
+    - Integer
 
         **query\_dop**
 
-    -   Floating point
+    - Floating point
 
         **cost\_weight\_index**,  **default\_limit\_rows**,  **seq\_page\_cost**,  **random\_page\_cost**,  **cpu\_tuple\_cost**,  **cpu\_index\_tuple\_cost**,  **cpu\_operator\_cost**, and  **effective\_cache\_size**
         
-    -   Enumeration type
+    - Enumeration type
     
     ​       **try_vector_engine_strategy**
 
-
-
 >[!NOTE]NOTE 
->-   If you set a parameter that is not in the whitelist and the parameter value is invalid or the hint syntax is incorrect, the query execution is not affected. Run  **explain\(verbose on\)**. An error message is displayed, indicating that hint parsing fails.
->-   The GUC parameter hint takes effect only in the outermost query. That is, the GUC parameter hint in the subquery does not take effect.
->-   The GUC parameter hint in the view definition does not take effect.
->-   In the  **CREATE TABLE ... AS ...**  statement, the outermost GUC parameter hint takes effect.
+>
+>- If you set a parameter that is not in the whitelist and the parameter value is invalid or the hint syntax is incorrect, the query execution is not affected. Run  **explain\(verbose on\)**. An error message is displayed, indicating that hint parsing fails.
+>- The GUC parameter hint takes effect only in the outermost query. That is, the GUC parameter hint in the subquery does not take effect.
+>- The GUC parameter hint in the view definition does not take effect.
+>- In the  **CREATE TABLE ... AS ...**  statement, the outermost GUC parameter hint takes effect.

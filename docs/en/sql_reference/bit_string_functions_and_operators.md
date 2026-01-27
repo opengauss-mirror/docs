@@ -4,7 +4,7 @@
 
 Aside from the usual comparison operators, the following operators can be used. Bit string operands of  **&**,  **|**, and  **\#**  must be of equal length. In case of bit shifting, the original length of the string is preserved by zero padding \(if necessary\).
 
--   ||
+- ||
 
     Description: Connects bit strings.
 
@@ -22,7 +22,7 @@ Aside from the usual comparison operators, the following operators can be used. 
     >It is recommended that a column have no more than 180 consecutive internal joins. A column with over 180 joins will be split into joined consecutive strings.
     >Example:  **str1||str2||str3||str4**  is split into  **\(str1||str2\)||\(str3||str4\)**.
 
--   &
+- &
 
     Description: Specifies the AND operation between bit strings.
 
@@ -36,7 +36,7 @@ Aside from the usual comparison operators, the following operators can be used. 
     (1 row)
     ```
 
--   |
+- |
 
     Description: Specifies the OR operation between bit strings.
 
@@ -50,7 +50,7 @@ Aside from the usual comparison operators, the following operators can be used. 
     (1 row)
     ```
 
--   \#
+- \#
 
     Description: Specifies the OR operation between bit strings if they are inconsistent. If the same positions in the two bit strings are both 1 or 0, the position returns  **0**.
 
@@ -64,7 +64,7 @@ Aside from the usual comparison operators, the following operators can be used. 
     (1 row)
     ```
 
--   \~
+- \~
 
     Description: Specifies the NOT operation between bit strings.
 
@@ -78,7 +78,7 @@ Aside from the usual comparison operators, the following operators can be used. 
     (1 row)
     ```
 
--   <<
+- <<
 
     Description: Shifts left in a bit string.
 
@@ -92,7 +92,7 @@ Aside from the usual comparison operators, the following operators can be used. 
     (1 row)
     ```
 
--   \>\>
+- \>\>
 
     Description: Shifts right in a bit string.
 
@@ -105,7 +105,6 @@ Aside from the usual comparison operators, the following operators can be used. 
      00100
     (1 row)
     ```
-
 
 The following SQL-standard functions work on bit strings as well as strings:  **length**,  **bit\_length**,  **octet\_length**,  **position**,  **substring**, and  **overlay**.
 
@@ -147,4 +146,3 @@ openGauss=# select substring('10101111'::bit(8), 2);
 
 >[!NOTE]NOTE 
 >Casting to just "bit" means casting to bit\(1\), and so will deliver only the least significant bit of the integer.
-

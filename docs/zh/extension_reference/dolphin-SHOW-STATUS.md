@@ -4,7 +4,6 @@
 
 SHOW STATUS 显示系统当前统计状态所有值的数据。 该语句不需要任何特权。它仅需要连接到服务器的能力。
 
-
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
 N/A
@@ -15,7 +14,6 @@ N/A
 SHOW [GLOBAL | SESSION] STATUS
     [LIKE 'pattern' | WHERE expr]
 ```
-
 
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 

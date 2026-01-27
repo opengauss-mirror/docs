@@ -40,8 +40,8 @@ MOT与openGauss支持的操作系统完全对齐。
 
 MOT支持裸机和虚拟化环境，可以在裸机或虚拟机上运行以下操作系统：
 
--   x86：CentOS 7.6和EulerOS 2.0
--   Arm：openEuler和EulerOS
+- x86：CentOS 7.6和EulerOS 2.0
+- Arm：openEuler和EulerOS
 
 openGauss 6.0.0及更低版本在x86环境下需要具备rdtscp指令集才可以使用MOT功能，开启cpu直通模式可使用该指令集；如果环境无法支持rdtscp指令集，用户需手动编译openGauss，且不指定--enable-mot。
 
@@ -50,4 +50,3 @@ openGauss 7.0.0-RC1版本在x86环境下去除rdtscp指令集限制，相关功�
 ## 操作系统优化<a name="zh-cn_topic_0283136672_zh-cn_topic_0280525104_section17957270"></a>
 
 MOT不需要任何特殊修改或安装新软件。但是，一些优化可以提高性能。有关实现最大性能的优化说明，请参阅[MOT服务器优化：x86](mot_server_optimization_x86.md)和[MOT服务器优化：基于Arm的华为TaiShan2P/4P服务器](mot_server_optimization_arm_huawei_taishan_2p_4p.md)。
-

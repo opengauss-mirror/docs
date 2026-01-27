@@ -4,7 +4,7 @@ The  **UNION**  clause computes the set union of the rows returned by the involv
 
 ## Syntax<a name="section1458317131312"></a>
 
--   **UNION**: retains only one value if duplicate values exist in the results.
+- **UNION**: retains only one value if duplicate values exist in the results.
 
     ```
     SELECT column_name(s) FROM table_name1
@@ -12,14 +12,13 @@ The  **UNION**  clause computes the set union of the rows returned by the involv
     SELECT column_name(s) FROM table_name2;
     ```
 
--   **UNION ALL**: displays all results, including duplicate values.
+- **UNION ALL**: displays all results, including duplicate values.
 
     ```
     SELECT column_name(s) FROM table_name1
     UNION ALL
     SELECT column_name(s) FROM table_name2;
     ```
-
 
 ## Examples<a name="section7792919716"></a>
 
@@ -45,7 +44,7 @@ openGauss=# SELECT * FROM table2;
 (4 rows)
 ```
 
--   UNION
+- UNION
 
     Lists the names of all employees in two tables and retains only one duplicate value.
 
@@ -62,7 +61,7 @@ openGauss=# SELECT * FROM table2;
     (6 rows)
     ```
 
--   UNION ALL
+- UNION ALL
 
     Lists the names of all employees in two tables, including duplicate values.
 
@@ -80,5 +79,3 @@ openGauss=# SELECT * FROM table2;
      Grace
     (8 rows)
     ```
-
-

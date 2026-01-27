@@ -8,24 +8,23 @@ ALTER EXTENSION modifies the plug-in extension.
 
 **ALTER EXTENSION**  modifies the definition of an installed extension. Methods are as follows:
 
--   UPDATE
+- UPDATE
 
     The extension is updated to a new version. The extension must be applicable to an update script \(or a series of scripts\) so that the current installation version can be modified to a required version.
 
--   SET SCHEMA
+- SET SCHEMA
 
     The extended object is moved to another schema. This extension must be relocatable to make the command successful.
 
--   ADD member\_object
+- ADD member\_object
 
     An existing object is added to the extension. This is mainly useful for extension update scripts. This object is then treated as a member of the extension. Obviously, the object can only be canceled by canceling the extension.
 
--   DROP member\_object
+- DROP member\_object
 
     A member object is removed from the extension. This method is useful in extension update scripts. The object is not canceled, but is simply separated from the extension.
 
     You must have an extension before using  **ALTER EXTENSION**. You must have the permission on adding or deleting an object before using the ADD or DROP statement.
-
 
 ## Syntax<a name="section1374719912321"></a>
 
@@ -64,19 +63,19 @@ where member_object is:
 
 ## Parameter Description<a name="section62781959163314"></a>
 
--   **name**
+- **name**
 
     Name of an installed extension.
 
--   **new\_version**
+- **new\_version**
 
     New version of the extension, which can be overridden by identifiers and string literals. If a new version of the extension is not specified, ALTER EXTENSION UPDATE updates to the default version shown in the extension's control file.
 
--   **new\_schema**
+- **new\_schema**
 
     New schema of the extension.
 
--   **object\_name**
+- **object\_name**
 
     **agg\_name**
 
@@ -86,36 +85,35 @@ where member_object is:
 
     Names of objects that are added or removed from the extension, including names of tables, aggregations, domains, external linked lists, functions, operators, operator classes, operator families, sequences, text search objects, types, and views that can be schema-qualified.
 
--   **agg\_type**
+- **agg\_type**
 
     Input data type of the aggregate function. To reference a zero-parameter aggregate function, use  **\***  to replace the input data type list.
 
--   **source\_type**
+- **source\_type**
 
     Name of the source data type to be forcibly converted.
 
--   **target\_type**
+- **target\_type**
 
     Name of the target data type to be forcibly converted.
 
--   **argmode**
+- **argmode**
 
     Model of the function parameter. The value can be  **IN**,  **OUT**,  **INOUT**, or  **VARIADIC**. The default value is  **IN**.  **ALTER EXTENSION**  does not relate to the  **OUT**  parameter, because you only need to enter parameters to confirm the consistency of functions. Therefore, the  **IN**,  **INOUT**, and  **VARIADIC**  parameters are enough.
 
--   **argname**
+- **argname**
 
     Name of a function parameter. ALTER EXTENSION does not relate to the parameter name. Only the parameter data type is required to confirm the consistency of the function.
 
--   **argtype**
+- **argtype**
 
     Data type \(optionally schema-qualified\) of a function parameter.
 
--   **left\_type**
+- **left\_type**
 
     **right\_type**
 
     Data type \(optionally schema-qualified\) of an operator parameter.  **NONE**  is written for a missing parameter of a prefix or suffix operator.
-
 
 ## Examples<a name="section14411351193419"></a>
 

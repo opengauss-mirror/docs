@@ -4,8 +4,6 @@ A materialized view is a special physical table, which is relative to a common v
 
 Currently, the Ustore engine does not support the creation and use of materialized views.
 
--   **[Complete-refresh Materialized View](complete-refresh-materialized-view.md)**  
+- **[Complete-refresh Materialized View](complete-refresh-materialized-view.md)**  
 
--   **[Fast-refresh Materialized View](fast-refresh-materialized-view.md)**  
-
-
+- **[Fast-refresh Materialized View](fast-refresh-materialized-view.md)**  

@@ -33,4 +33,3 @@ The following table lists metrics in the Memory Statistics report.
 </tr>
 </tbody>
 </table>
-

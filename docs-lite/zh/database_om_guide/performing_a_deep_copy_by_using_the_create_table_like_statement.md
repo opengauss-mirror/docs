@@ -4,28 +4,26 @@
 
 ## 操作步骤<a name="zh-cn_topic_0283136983_zh-cn_topic_0237121143_zh-cn_topic_0165787115_section1349410417334"></a>
 
-1.  使用CREATE TABLE LIKE语句创建表customer\_t的副本customer\_t\_copy。
+1. 使用CREATE TABLE LIKE语句创建表customer\_t的副本customer\_t\_copy。
 
     ```
     openGauss=# CREATE TABLE customer_t_copy (LIKE customer_t);
     ```
 
-2.  使用INSERT INTO…SELECT语句向副本填充原始表中的数据。
+2. 使用INSERT INTO…SELECT语句向副本填充原始表中的数据。
 
     ```
     openGauss=# INSERT INTO customer_t_copy (SELECT * FROM customer_t);
     ```
 
-3.  删除原始表。
+3. 删除原始表。
 
     ```
     openGauss=# DROP TABLE customer_t;
     ```
 
-4.  使用ALTER TABLE语句将副本重命名为原始表名称。
+4. 使用ALTER TABLE语句将副本重命名为原始表名称。
 
     ```
     openGauss=# ALTER TABLE customer_t_copy RENAME TO customer_t;
     ```
-
-

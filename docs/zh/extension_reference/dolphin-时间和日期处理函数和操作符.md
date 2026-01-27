@@ -330,6 +330,7 @@
     - 返回TIME类型值要求在[-838:59:59, 838:59:59]中。若超出范围，则根据hour的正负类型，来返回指定的边界值。
   
   示例:
+
 ```sql
  openGauss=# SELECT MAKETIME(15, 15, 15.5);
   maketime  
@@ -424,6 +425,7 @@
     - 若入参为小数格式的**字符串**时，本函数会按照四舍五入进位转为整数后进行处理，而在mysql中，会将参数的小数部分舍去。例如: `period_add('202101.4', '10.5')`在openGauss中结果与`period_add(202101, 11)`相同，而在mysql中，则视为`period_add(202101, 10)`
   
   示例:
+
 ```sql
  openGauss=# SELECT PERIOD_ADD(202201, 2);
   period_add 
@@ -463,6 +465,7 @@
     - 若入参为小数格式的**字符串**时，本函数会按照四舍五入进位转为整数后进行处理，而在mysql中，会将参数的小数部分舍去。例如: `period_diff('202101.4', '202102.5')`在openGauss中结果与`period_diff(202101, 202103)`相同，而在mysql中，则被视为`period_diff(202101, 202102)`。
 
   示例:
+
 ```sql
  openGauss=# SELECT PERIOD_DIFF(202201,202003);
   period_diff 
@@ -526,6 +529,7 @@
     - 返回TIME类型值要求在[-838:59:59, 838:59:59]中。若超出范围，则根据second的正负类型，来返回指定的边界值。
   
   示例:
+
 ```sql
  openGauss=# SELECT SEC_TO_TIME(4396);
  sec_to_time 
@@ -569,7 +573,6 @@
         - 参数`date`的日期超出范围[0000-1-1, 9999-12-31]
         - 当interval单位为仅与年或月相关时，返回结果的日期超出范围[0000-1-1, 9999-12-31]
         - 其他interval单位，返回结果的日期超出范围[0001-1-1, 9999-12-31]
-  
   
   示例:
 
@@ -621,7 +624,6 @@
     - 在如下情况下，函数报错（该特性兼容此函数在`mysql`的`insert`语句中的行为）：
       - 第二参数的INTERVAL单位包含年或月部分
       - 函数返回`TIME`值超出[-838:59:59, 838:59:59]
-  
   
   示例:
 
@@ -722,6 +724,7 @@ CONTEXT:  referenced column: subdate
     - date格式字符串将会报错，而date类型参数将会返回"00:00:00"。
 
   示例:
+
   ```sql
   openGauss=# select time('2022-1-1 1:1:1.1111116'), time('25:25:25');
         time       |   time   
@@ -736,7 +739,6 @@ CONTEXT:  referenced column: subdate
   (1 row)
   ```
 
-
 - TIMEDIFF()
 
   函数原型:
@@ -747,7 +749,7 @@ CONTEXT:  referenced column: subdate
 
   功能描述：
 
-  该函数执行`DATETIME`或`TIME `类型值间的减法运算，计算`DATETIME`或`TIME `间的时间差值，运算结果以`TIME`类型值返回。
+  该函数执行`DATETIME`或`TIME`类型值间的减法运算，计算`DATETIME`或`TIME`间的时间差值，运算结果以`TIME`类型值返回。
 
   备注:
 
@@ -757,7 +759,6 @@ CONTEXT:  referenced column: subdate
       - `DATETIME`类型入参超出[0000-01-01 00:00:00.000000, 9999-12-31 23:59:59.999999]范围或格式不合法
       - 对于`DATETIME`格式的字符串入参，本函数支持0值日期，如'2000-0-1 1:1:1'
       - 返回值超出[-838:59:59, 838:59:59]范围
-
 
   示例:
 
@@ -892,6 +893,7 @@ CONTEXT:  referenced column: subdate
   备注:
 
     - `format`支持的格式如下:
+
       | 格式 | 描述                                         |
       | ---- | -------------------------------------------- |
       | ％f  | 微秒（000000至999999）                       |
@@ -905,7 +907,9 @@ CONTEXT:  referenced column: subdate
       | ％s  | 秒（00到59）                                 |
       | ％T  | 24小时格式的时间(hh：mm：ss)，小时数能超出23  |
       | %k   | 小时数 (0,24小时格式，但能超出23)            |
+
     - 当第一参数`time`的hour部分超出[0, 23]的范围时, ％H, %k和%T能够产生超出该范围的值，其余包含小时的format将转为取模12后的小时数。例如:
+
     ```sql
     opengauss=# select time_format('100:59:59', '%H|%k|%T|%I');
         time_format      
@@ -913,6 +917,7 @@ CONTEXT:  referenced column: subdate
     100|100|100:59:59|04
     (1 row)
     ```
+
     - 对于非时分秒相关的格式，会返回0或NULL，包括：
   
   | 格式                                               | 返回结果 |
@@ -939,7 +944,7 @@ CONTEXT:  referenced column: subdate
   23:59:59|11:59:59 PM|23|11|11|59|59|000001|PM|23
   ```
 
--   weekday\(timestamp\)
+- weekday\(timestamp\)
 
     描述：获取日期/时间值中是一周中的星期几（0代表星期一，1代表星期二，以此类推，6代表星期日）。
 
@@ -955,7 +960,7 @@ CONTEXT:  referenced column: subdate
     (1 row)
     ```
 
--   weekofyear\(timestamp\)
+- weekofyear\(timestamp\)
 
     描述：获取日期/时间值中是一年的第几周。
 
@@ -971,7 +976,7 @@ CONTEXT:  referenced column: subdate
     (1 row)
     ```
 
--   year\(timestamp\)
+- year\(timestamp\)
 
     描述：获取日期/时间值中的年数。
 
@@ -987,7 +992,7 @@ CONTEXT:  referenced column: subdate
     (1 row)
     ```
 
--   current\_date\(\)
+- current\_date\(\)
 
     描述：当前日期。
 
@@ -1050,6 +1055,7 @@ CONTEXT:  referenced column: subdate
     - 若输入日期字符串超出日期类型的范围或入参为非法的 `date` 或 `datetime` 表达式，函数报错（兼容 MySQL 中该函数于 `INSERT` 语句中的表现）。
 
     示例：
+
     ```sql
     opengauss=# select to_seconds('2022-09-01');
      to_seconds
@@ -1142,9 +1148,9 @@ CONTEXT:  referenced column: subdate
 
   函数原型：
 
-	`TIME UTC_TIME()`
+ `TIME UTC_TIME()`
   
-	`TIME UTC_TIME(int fsp)`
+ `TIME UTC_TIME(int fsp)`
   
   功能描述：返回当前的UTC时间，类型为TIME。若给定一个整数参数作为精度，则能够指定结果保留的小数数量，支持精度范围为[0-6]
   
@@ -1190,6 +1196,7 @@ CONTEXT:  referenced column: subdate
   - 返回的`DATETIME`结果不显示小数部分尾部的0
 
   示例：
+
   ```sql
   opengauss=# select UTC_TIMESTAMP();
       utc_timestamp    
@@ -1527,6 +1534,7 @@ CONTEXT:  referenced column: subdate
   备注：此函数兼容MySQL插表时的严格模式和非严格模式表现。
 
   示例：
+
   ```
   openGauss=# select datediff('2001-01-01','321-02-02');
     datediff 
@@ -1810,6 +1818,7 @@ CONTEXT:  referenced column: subdate
   描述：expr1可接收date、datetime、timestamp、time四种类型名字，expr2可接收五种规格字符串：'EUR'|'USA'|'JIS'|'ISO'|'INTERNAL'。函数根据expr1和expr2返回对应类型的对应规格的字符串。
 
   该函数返回值情况如下表所示：
+
   |类型|规格|返回值|
   |---|---|---|
   |DATE|'USA'|'%m.%d.%Y'|
@@ -1896,6 +1905,7 @@ CONTEXT:  referenced column: subdate
 - date\_format\(expr, format\)
 
   描述：expr参数为输入的date或者datetime格式内容，该函数根据format参数格式化expr参数对应部分，format参数取值如下表：
+
   | 提取标志 | 意义 |取值范围|
   | ------- |----- |-------|
   |%a|简写工作日名称|Sun...Sat|
@@ -2008,7 +2018,6 @@ CONTEXT:  referenced column: subdate
 
   - 若有函数结果参与计算需求，可以使用cast语句将函数结果转换为合适数据数据类型而后再参与计算，如：SELECT CAST(STR_TO_DATE('2021-11-12 12:12:12', '%Y-%m-%d %T') AS DATETIME) + 1;
 
-
   备注：
 
   - 此函数兼容MySQL插表时的严格模式和非严格模式表现。
@@ -2050,6 +2059,7 @@ CONTEXT:  referenced column: subdate
   13:12:12
   (1 row)
   ```
+
 - sleep\(duration\)
 
   描述：睡眠 duration 秒， 然后返回0

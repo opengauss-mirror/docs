@@ -4,10 +4,12 @@
 
 本章节主要介绍openGauss数据库UWAL（Unified Write-Ahead Log）特性的安装使用，指导用户顺利完成操作。本特性将数据库和自研公共组件UWAL相结合，以提高数据库的主备事务提交和流复制传输性能，从而加速WAL（Write-Ahead Log）的处理效率。
 
-
 ## 安装准备
+
 ### 获取安装包
+
 请通过openGauss社区RM SIG获取UWAL安装包。
+
 ### 环境要求
 
 <a name="table9128736162712"></a>
@@ -71,32 +73,35 @@
 </table>
 
 ## 安装卸载
+
 ### 一键部署UWAL特性 
+
 UWAL提供简易部署脚本，支持一键部署。
+
 - 前提条件
-    -   openGauss已部署完成。
-    -   获取对应操作系统和CPU架构的UWAL安装包，例如：OCK\_UWAL\_23.0.0\_openeuler\_22.03-aarch64\_gcc10.tar.gz。
-    -   主备节点均已存在以下目录：
-        -   “$\{GAUSSHOME\}/lib“路径
-        -   UWAL文件存放路径（“uwal\_devices\_path“对应的值）
-        -   UWAL日志文件存放路径（“uwal\_log\_path“对应的值）
+    - openGauss已部署完成。
+    - 获取对应操作系统和CPU架构的UWAL安装包，例如：OCK\_UWAL\_23.0.0\_openeuler\_22.03-aarch64\_gcc10.tar.gz。
+    - 主备节点均已存在以下目录：
+        - “$\{GAUSSHOME\}/lib“路径
+        - UWAL文件存放路径（“uwal\_devices\_path“对应的值）
+        - UWAL日志文件存放路径（“uwal\_log\_path“对应的值）
 
 - 操作步骤
 
     >[!NOTE]说明
     >以下操作除特殊说明外，默认只在主节点进行操作。
 
-    1.  将安装包上传至节点，在安装包所在目录执行以下命令赋予openGauss数据库用户操作权限。
+    1. 将安装包上传至节点，在安装包所在目录执行以下命令赋予openGauss数据库用户操作权限。
 
         ```
         chown omm:dbgrp OCK_UWAL_23.0.0_openeuler_22.03-aarch64_gcc10.tar.gz
         ```
 
         >[!NOTE]说明
-        >-   omm：数据库管理用户名。
-        >-   dbgrp：数据库管理用户组。
+        >- omm：数据库管理用户名。
+        >- dbgrp：数据库管理用户组。
 
-    2.  切换为openGauss数据库管理用户，解压缩安装包。
+    2. 切换为openGauss数据库管理用户，解压缩安装包。
 
         ```
         su - omm
@@ -130,7 +135,7 @@ UWAL提供简易部署脚本，支持一键部署。
         </tbody>
         </table>
 
-    3.  解压源文件压缩包。
+    3. 解压源文件压缩包。
 
         ```
         tar -xzvf OCK_UWAL_23.0.0_openeuler_aarch64.tar.gz
@@ -171,7 +176,7 @@ UWAL提供简易部署脚本，支持一键部署。
         >[!NOTE]说明
         >如果重复解压源文件，需清理以上文件后再解压。
 
-    4.  使用“bin“目录下的verification二进制，进行软件包签名验证。
+    4. 使用“bin“目录下的verification二进制，进行软件包签名验证。
 
         ```
         ./bin/verification OCK_UWAL_23.0.0_openeuler_aarch64.tar.gz OCK_UWAL_23.0.0_openeuler_aarch64.tar.gz.cms 
@@ -181,7 +186,7 @@ UWAL提供简易部署脚本，支持一键部署。
         >[!NOTE]说明
         >verification可执行二进制需要三个参数，按先后顺序分别是：源文件、签名文件、描述文件。
 
-        -   验证成功控制台会输出：
+        - 验证成功控制台会输出：
 
             ```
             Starting to verify OCK_UWAL_23.0.0_openeuler_aarch64.tar.gz...
@@ -189,7 +194,7 @@ UWAL提供简易部署脚本，支持一键部署。
             Verify the sha file passed.
             ```
 
-        -   验证失败控制台会输出：
+        - 验证失败控制台会输出：
 
             ```
             Starting to verify OCK_UWAL_23.0.0_openeuler_aarch64.tar.gz...
@@ -208,31 +213,31 @@ UWAL提供简易部署脚本，支持一键部署。
             >[!NOTE]说明
             >校验失败说明此安装包已被篡改，建议重新获取安装包后再次校验。
 
-    5.  安装包验证成功后，进入“scripts“目录，准备执行部署脚本。
+    5. 安装包验证成功后，进入“scripts“目录，准备执行部署脚本。
 
         ```
         cd scripts
         ```
 
-    6.  启动脚本，即可完成UWAL部署。
+    6. 启动脚本，即可完成UWAL部署。
 
         ```
         sh ock_uwal_install.sh -H '192.168.4.164 192.168.4.165 192.168.4.166' -U omm -D /home/omm/lib
         ```
 
         >[!NOTE]说明
-        >-   -H：集群IP地址。例如：'_192.168.4.164 192.168.4.165 192.168.4.166_'
-        >-   -U：数据库管理用户名。例如：omm
-        >-   -D：“$\{GAUSSHOME\}/lib“库路径。例如：“/home/omm/lib“
-        >-   -h：查看帮助信息。
+        >- -H：集群IP地址。例如：'_192.168.4.164 192.168.4.165 192.168.4.166_'
+        >- -U：数据库管理用户名。例如：omm
+        >- -D：“$\{GAUSSHOME\}/lib“库路径。例如：“/home/omm/lib“
+        >- -h：查看帮助信息。
 
-    7.  （可选）kill om\_monitor进程。
+    7. （可选）kill om\_monitor进程。
 
         ```
         gs_om -t killmonitor
         ```
 
-    8.  执行以下命令，加载环境变量。
+    8. 执行以下命令，加载环境变量。
 
         ```
         source ~/.bashrc
@@ -241,7 +246,7 @@ UWAL提供简易部署脚本，支持一键部署。
         >[!TIP]须知
         >此步骤也需要在备节点执行。
 
-    9.  （可选）UWAL组件依赖HCOM组件进行RPC通信，用户可根据需要配置以下环境变量。
+    9. （可选）UWAL组件依赖HCOM组件进行RPC通信，用户可根据需要配置以下环境变量。
 
         ```
         export HCOM_FILE_PATH_PREFIX="/home/uds/socket/file"
@@ -350,24 +355,24 @@ UWAL提供简易部署脚本，支持一键部署。
         </table>
 
 ### 启用UWAL特性
+
 启用UWAL特性，需要通过修改配置文件，重启数据库使其生效。
 
-
 - 前提条件
-    -   主备节点已安装包含UWAL特性的openGauss版本。
-    -   已完成UWAL特性的一键部署。
+    - 主备节点已安装包含UWAL特性的openGauss版本。
+    - 已完成UWAL特性的一键部署。
 
 - 操作步骤
 
-    1.  以数据库管理用户登录管理节点。
-    2.  配置数据库的postgresql.conf文件。
-        1.  打开postgresql.conf文件。
+    1. 以数据库管理用户登录管理节点。
+    2. 配置数据库的postgresql.conf文件。
+        1. 打开postgresql.conf文件。
 
             ```
             vim postgresql.conf
             ```
 
-        2.  按“i”进入编辑模式，在文件最后增加如下参数。此处以一主一备做举例，具体参数请根据实际情况设置，参数说明请参见[表1](#table135651186916)。
+        2. 按“i”进入编辑模式，在文件最后增加如下参数。此处以一主一备做举例，具体参数请根据实际情况设置，参数说明请参见[表1](#table135651186916)。
 
             ```
             replconninfo1='localhost=10.10.10.201 localport=5432 remotehost=10.10.10.207 remoteport=5432 remotenodeid=2 remoteuwalhost=10.10.10.207 remoteuwalport=9991'
@@ -384,11 +389,13 @@ UWAL提供简易部署脚本，支持一键部署。
             ```
 
             >[!NOTE]说明
-            >-   一主两备，需要在“replconninfo1“参数的下一行添加“replconninfo2“参数，如：
+            >- 一主两备，需要在“replconninfo1“参数的下一行添加“replconninfo2“参数，如：
+>
+            > ```
+            > replconninfo2='localhost=10.10.10.201 localport=5432 remotehost=10.10.10.208 remoteport=5432 remotenodeid=2 remoteuwalhost=10.10.10.208 remoteuwalport=9991'
             >    ```
-            >    replconninfo2='localhost=10.10.10.201 localport=5432 remotehost=10.10.10.208 remoteport=5432 remotenodeid=2 remoteuwalhost=10.10.10.208 remoteuwalport=9991'
-            >    ```
-            >-   一主N备时，依次增加至“replconninfoN“参数即可。
+>
+            >- 一主N备时，依次增加至“replconninfoN“参数即可。
 
             **表 1**  UWAL的配置参数
 
@@ -638,16 +645,16 @@ UWAL提供简易部署脚本，支持一键部署。
             </tbody>
             </table>
 
-        3.  按“Esc”键，输入 **:wq!**，按“Enter”保存并退出编辑。
+        3. 按“Esc”键，输入 **:wq!**，按“Enter”保存并退出编辑。
 
-    3.  重启数据库使UWAL特性生效。
-        1.  停止openGauss。
+    3. 重启数据库使UWAL特性生效。
+        1. 停止openGauss。
 
             ```
             cm_ctl stop
             ```
 
-        2.  启动openGauss。
+        2. 启动openGauss。
 
             ```
             cm_ctl start
@@ -656,7 +663,7 @@ UWAL提供简易部署脚本，支持一键部署。
             >[!NOTE]说明
             >如果启动失败请根据openGauss日志目录下的“postgresql-YYYY-MM-DD\_HHMMSS.log”日志信息排查错误。
 
-    4.  验证UWAL特性是否启用成功。
+    4. 验证UWAL特性是否启用成功。
 
         ```
         gsql -d postgres -p 16600 -c "show enable_uwal"
@@ -672,30 +679,35 @@ UWAL提供简易部署脚本，支持一键部署。
         ```
 
         >[!NOTE]说明
-        >-   -p 16600：16600为数据库端口号，请根据实际情况修改。
-        >-   如需查看启用UWAL特性的日志文件，可进入“uwal\_log\_path“对的路径执行以下命令。
+        >- -p 16600：16600为数据库端口号，请根据实际情况修改。
+        >- 如需查看启用UWAL特性的日志文件，可进入“uwal\_log\_path“对的路径执行以下命令。
+>
+        > ```
+        > cat uwal*.log
         >    ```
-        >    cat uwal*.log
-        >    ```
-
 
 ### 关闭UWAL特性
+
 关闭UWAL特性，需要重启数据库使配置生效。
+
 - 操作步骤
     
     1. 执行 **pg_switch_xlog()** 命令，切换到一个新的事务日志文件，将当前日志文件归档。
+
         ```
         gsql -d postgres -p 5432 -c "select pg_switch_xlog()"
         ```
+
         >[!NOTE]说明
-        >-   -p 5432：5432为数据库端口号，请根据实际情况修改。
+        >- -p 5432：5432为数据库端口号，请根据实际情况修改。
 
     2. 执行**CHECKPOINT**命令，设置事务日志检查点。
+
         ```
         gsql -d postgres -p 5432 -c "CHECKPOINT"
         ```
 
-    3.  停止openGauss。
+    3. 停止openGauss。
 
         ```
         cm_ctl stop
@@ -707,32 +719,33 @@ UWAL提供简易部署脚本，支持一键部署。
             ```
             dd if=000000010000000000000005 of=5.align bs=16M conv=sync
             ```
-            >[!NOTE]说明
-            >-   000000010000000000000005：最新的事务日志文件名，由数据库操作自动生成，文件名不固定。
-            >-   5.align：补全为16MB的事务日志文件名，由用户自定义。
 
-        2.  用补全的事务日志文件替换原生的事务日志文件。
+            >[!NOTE]说明
+            >- 000000010000000000000005：最新的事务日志文件名，由数据库操作自动生成，文件名不固定。
+            >- 5.align：补全为16MB的事务日志文件名，由用户自定义。
+
+        2. 用补全的事务日志文件替换原生的事务日志文件。
 
             ```
             cp 5.align pg_xlog/000000010000000000000005
             ```
 
-    5.  配置数据库根目录下的postgresql.conf文件,关闭UWAL。
-        1.  打开postgresql.conf文件。
+    5. 配置数据库根目录下的postgresql.conf文件,关闭UWAL。
+        1. 打开postgresql.conf文件。
 
             ```
             vim postgresql.conf
             ```
 
-        2.  按“i”进入编辑模式。将参数“enable\_uwal“的值改为“off“，关闭UWAL特性。
+        2. 按“i”进入编辑模式。将参数“enable\_uwal“的值改为“off“，关闭UWAL特性。
 
             ```
             enable_uwal = off
             ```
 
-        3.  按“Esc”键，输入 **:wq!**，按“Enter”保存并退出编辑。
+        3. 按“Esc”键，输入 **:wq!**，按“Enter”保存并退出编辑。
 
-    6.  （可选）如需卸载UWAL特性可执行此步骤。删除UWAL动态库文件，并清除环境变量。
+    6. （可选）如需卸载UWAL特性可执行此步骤。删除UWAL动态库文件，并清除环境变量。
 
         ```
         rm -f /home/omm/lib/libuwal.so
@@ -741,7 +754,7 @@ UWAL提供简易部署脚本，支持一键部署。
 
         其中，“/home/omm/lib/”表示libuwal.so所在目录的绝对路径。
 
-    7.  重启openGauss。
+    7. 重启openGauss。
 
         ```
         cm_ctl start

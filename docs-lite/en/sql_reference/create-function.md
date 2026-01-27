@@ -6,32 +6,31 @@
 
 ## Precautions<a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_s4e29e167452e4cfda9adebadc939e3fd"></a>
 
--   If the parameters or return values of a function have precision, the precision is not checked.
--   When creating a function, you are advised to explicitly specify the schemas of tables in the function definition. Otherwise, the function may fail to be executed.
--   **current\_schema**  and  **search\_path**  specified by  **SET**  during function creation are invalid.  **search\_path**  and  **current\_schema**  before and after function execution should be the same.
--   If a function has output parameters, the  **SELECT**  statement uses the default values of the output parameters when calling the function. When the  **CALL**  statement calls the function, it requires that the output parameters must be specified. When the  **CALL**  statement calls an overloaded  **PACKAGE**  function, it can use the default values of the output parameters. For details, see examples in  [CALL](call.md).
--   Only the functions compatible with PostgreSQL or those with the  **PACKAGE**  attribute can be overloaded. After  **REPLACE**  is specified, a new function is created instead of replacing a function if the number of parameters, parameter type, or return value is different.
--   You can use the  **SELECT**  statement to specify different parameters using identical functions, but cannot use the  **CALL**  statement to call identical functions without the  **PACKAGE**  attribute.
--   When you create a function, you cannot insert other agg functions out of the avg function or other functions.
--   By default, the permissions to execute new functions are granted to  **PUBLIC**. For details, see  [GRANT](grant.md). You can revoke the default execution permissions from  **PUBLIC**  and grant them to other users as needed. To avoid the time window during which new functions can be accessed by all users, create functions in transactions and set function execution permissions.
--   When functions without parameters are called inside another function, you can omit brackets and call functions using their names directly.
--   When functions with output parameters are called inside another function which is an assignment expression, you can omit the output parameters of the called functions.
--   Oracle-compatible functions support viewing, exporting, and importing parameter comments.
--   Oracle-compatible functions support viewing, exporting, and importing comments between IS/AS and plsql\_body.
--   Users granted with the  **CREATE ANY FUNCTION**  permission can create or replace functions in the user schemas.
--   The default permission on a function is  **SECURITY INVOKER**. To change the default permission to  **SECURITY DEFINER**, set the GUC parameter  **behavior\_compat\_options**  to  **'plsql\_security\_definer'**.
--   For PL/pgSQL functions, after  **behavior\_compat\_options**  is set to  **'proc\_outparam\_override'**, the behavior of  **out/inout**  changes. In the functions,  **return**  and  **out/inout**  can be returned at the same time. Before the parameter is enabled, only  **return**  is returned. For details, see  [Examples](#en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821).
--   For PL/pgSQL functions, after  **behavior\_compat\_options**  is set to  **'proc\_outparam\_override'**, the restrictions are as follows:
-    1.  If a function with the  **out/inout**  parameter already exists in the same schema or package, you cannot create another function with the same name with the  **out/inout**  parameter.
-    2.  The  **out**  parameter must be added no matter whether the  **SELECT**  or  **CALL**  statement is used to call a stored procedure.
-    3.  In some scenarios, functions cannot be used in expressions \(compared with those before the parameter is enabled\), for example, left assignment in a stored procedure and  **call function**. For details, see  [Examples](#en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821).
-    4.  Functions without  **return**  cannot be called.  **perform function**  can be used to call functions.
-    5.  When a function is called in a stored procedure,  **out/inout**  cannot be set to a constant. For details, see  [Examples](#en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821).
-
+- If the parameters or return values of a function have precision, the precision is not checked.
+- When creating a function, you are advised to explicitly specify the schemas of tables in the function definition. Otherwise, the function may fail to be executed.
+- **current\_schema**  and  **search\_path**  specified by  **SET**  during function creation are invalid.  **search\_path**  and  **current\_schema**  before and after function execution should be the same.
+- If a function has output parameters, the  **SELECT**  statement uses the default values of the output parameters when calling the function. When the  **CALL**  statement calls the function, it requires that the output parameters must be specified. When the  **CALL**  statement calls an overloaded  **PACKAGE**  function, it can use the default values of the output parameters. For details, see examples in  [CALL](call.md).
+- Only the functions compatible with PostgreSQL or those with the  **PACKAGE**  attribute can be overloaded. After  **REPLACE**  is specified, a new function is created instead of replacing a function if the number of parameters, parameter type, or return value is different.
+- You can use the  **SELECT**  statement to specify different parameters using identical functions, but cannot use the  **CALL**  statement to call identical functions without the  **PACKAGE**  attribute.
+- When you create a function, you cannot insert other agg functions out of the avg function or other functions.
+- By default, the permissions to execute new functions are granted to  **PUBLIC**. For details, see  [GRANT](grant.md). You can revoke the default execution permissions from  **PUBLIC**  and grant them to other users as needed. To avoid the time window during which new functions can be accessed by all users, create functions in transactions and set function execution permissions.
+- When functions without parameters are called inside another function, you can omit brackets and call functions using their names directly.
+- When functions with output parameters are called inside another function which is an assignment expression, you can omit the output parameters of the called functions.
+- Oracle-compatible functions support viewing, exporting, and importing parameter comments.
+- Oracle-compatible functions support viewing, exporting, and importing comments between IS/AS and plsql\_body.
+- Users granted with the  **CREATE ANY FUNCTION**  permission can create or replace functions in the user schemas.
+- The default permission on a function is  **SECURITY INVOKER**. To change the default permission to  **SECURITY DEFINER**, set the GUC parameter  **behavior\_compat\_options**  to  **'plsql\_security\_definer'**.
+- For PL/pgSQL functions, after  **behavior\_compat\_options**  is set to  **'proc\_outparam\_override'**, the behavior of  **out/inout**  changes. In the functions,  **return**  and  **out/inout**  can be returned at the same time. Before the parameter is enabled, only  **return**  is returned. For details, see  [Examples](#en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821).
+- For PL/pgSQL functions, after  **behavior\_compat\_options**  is set to  **'proc\_outparam\_override'**, the restrictions are as follows:
+    1. If a function with the  **out/inout**  parameter already exists in the same schema or package, you cannot create another function with the same name with the  **out/inout**  parameter.
+    2. The  **out**  parameter must be added no matter whether the  **SELECT**  or  **CALL**  statement is used to call a stored procedure.
+    3. In some scenarios, functions cannot be used in expressions \(compared with those before the parameter is enabled\), for example, left assignment in a stored procedure and  **call function**. For details, see  [Examples](#en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821).
+    4. Functions without  **return**  cannot be called.  **perform function**  can be used to call functions.
+    5. When a function is called in a stored procedure,  **out/inout**  cannot be set to a constant. For details, see  [Examples](#en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821).
 
 ## Syntax<a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_s7109c8eddfba4ea0b3cc85d39d0ab774"></a>
 
--   Syntax \(compatible with PostgreSQL\) for creating a customized function:
+- Syntax \(compatible with PostgreSQL\) for creating a customized function:
 
     ```
     CREATE [ OR REPLACE  ] FUNCTION function_name
@@ -61,7 +60,7 @@
         }
     ```
 
--   O syntax of creating a customized function:
+- O syntax of creating a customized function:
 
     ```
     CREATE [ OR REPLACE  ] FUNCTION function_name
@@ -87,22 +86,21 @@
     /
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_sd944ea321dde4635bf07b637385f13f9"></a>
 
--   **function\_name**
+- **function\_name**
 
     Specifies the name of the function to create \(optionally schema-qualified\).
 
     Value range: a string. It must comply with the identifier naming convention, and can contain a maximum of 63 characters. If the value contains more than 63 characters, the database truncates it and retains the first 63 characters as the function name.
 
--   **argname**
+- **argname**
 
     Specifies the parameter name of the function.
 
     Value range: a string. It must comply with the identifier naming convention, and can contain a maximum of 63 characters. If the value contains more than 63 characters, the database truncates it and retains the first 63 characters as the function parameter name.
 
--   **argmode**
+- **argmode**
 
     Specifies the parameter mode of the function.
 
@@ -111,15 +109,15 @@
     >[!NOTE]NOTE 
     >**VARIADIC**  specifies parameters of the array type.
 
--   **argtype**
+- **argtype**
 
     Specifies the data type of a function parameter.  **%TYPE**  or  **%ROWTYPE**  can be used to indirectly reference a variable or table type. For details, see  [Variable Definition Statements](variable-definition-statements.md).
 
--   **expression**
+- **expression**
 
     Specifies the default expression of a parameter.
 
--   **rettype**
+- **rettype**
 
     Specifies the return data type.
 
@@ -129,70 +127,70 @@
 
     Same as  **argtype**,  **%TYPE**  or  **%ROWTYPE**  can also be used to indirectly reference types.
 
--   **column\_name**
+- **column\_name**
 
     Specifies the column name.
 
--   **column\_type**
+- **column\_type**
 
     Specifies the column type.
 
--   **definition**
+- **definition**
 
     Specifies a string constant defining a function. Its meaning depends on the language. It can be an internal function name, a path pointing to a target file, a SQL query, or text in a procedural language.
 
--   **DETERMINISTIC**
+- **DETERMINISTIC**
 
     Specifies an interface compatible with the SQL syntax. You are not advised to use it.
 
--   **LANGUAGE lang\_name**
+- **LANGUAGE lang\_name**
 
     Specifies the name of the language that is used to implement the function. It can be  **SQL**,  **internal**, or the name of a customized process language. To ensure downward compatibility, the name can use single quotation marks. Contents in single quotation marks must be capitalized.
 
--   **WINDOW**
+- **WINDOW**
 
     Indicates that this function is a window function. The  **WINDOW**  attribute cannot be changed when replacing an existing function definition.
 
     >[!TIP]NOTICE 
     >For a customized window function, the value of  **LANGUAGE**  can only be  **internal**, and the referenced internal function must be a window function.
 
--   **IMMUTABLE**
+- **IMMUTABLE**
 
     Specifies that the function always returns the same result if the parameter values are the same.
 
--   **STABLE**
+- **STABLE**
 
     Specifies that the function cannot modify the database, and that within a single table scan it will consistently return the same result for the same parameter value, but its result varies by SQL statements.
 
--   **VOLATILE**
+- **VOLATILE**
 
     Specifies that the function value can change in a single table scan and no optimization is performed.
 
--   **SHIPPABLE**|**NOT SHIPPABLE**
+- **SHIPPABLE**|**NOT SHIPPABLE**
 
     Specifies whether the function can be pushed down for execution. This port is reserved and is not recommended.
 
--   **FENCED**|**NOT FENCED**
+- **FENCED**|**NOT FENCED**
 
     Specifies whether the user-defined C function is executed in fenced or not-fenced mode. This port is reserved and is not recommended.
 
--   **PACKAGE**
+- **PACKAGE**
 
     Specifies whether the function can be overloaded. PostgreSQL-style functions can be overloaded, and this parameter is designed for functions of other styles.
 
-    -   All PACKAGE and non-PACKAGE functions cannot be overloaded or replaced.
-    -   PACKAGE functions do not support parameters of the VARIADIC type.
-    -   The  **PACKAGE**  attribute of functions cannot be modified.
+    - All PACKAGE and non-PACKAGE functions cannot be overloaded or replaced.
+    - PACKAGE functions do not support parameters of the VARIADIC type.
+    - The  **PACKAGE**  attribute of functions cannot be modified.
 
--   **LEAKPROOF**
+- **LEAKPROOF**
 
     Specifies that the function has no side effects.  **LEAKPROOF**  can be set only by the system administrator.
 
--   **CALLED ON NULL INPUT**
+- **CALLED ON NULL INPUT**
 
     Declares that some parameters of the function can be invoked in normal mode if the parameter values are null. This parameter can be omitted.
 
--   **RETURNS NULL ON NULL INPUT**
+- **RETURNS NULL ON NULL INPUT**
 
     **STRICT**
 
@@ -200,11 +198,11 @@
 
     **RETURNS NULL ON NULL INPUT**  and  **STRICT**  have the same functions.
 
--   **EXTERNAL**
+- **EXTERNAL**
 
     The keyword  **EXTERNAL**  is allowed for SQL conformance, but it is optional since, unlike in SQL, this feature applies to all functions not only external ones.
 
--   **SECURITY INVOKER**
+- **SECURITY INVOKER**
 
     **AUTHID CURRENT\_USER**
 
@@ -212,7 +210,7 @@
 
     **SECURITY INVOKER**  and  **AUTHID CURRENT\_USER**  have the same functions.
 
--   **SECURITY DEFINER**
+- **SECURITY DEFINER**
 
     **AUTHID DEFINER**
 
@@ -220,7 +218,7 @@
 
     **AUTHID DEFINER**  and  **SECURITY DEFINER**  have the same functions.
 
--   **COST execution\_cost**
+- **COST execution\_cost**
 
     Estimates the execution cost of a function.
 
@@ -228,41 +226,39 @@
 
     Value range: a positive integer
 
--   **ROWS result\_rows**
+- **ROWS result\_rows**
 
     Estimates the number of rows returned by the function. This is only allowed when the function is declared to return a set.
 
     Value range: a positive number. The default value is  **1000**.
 
--   **COMMENT 'text'**
+- **COMMENT 'text'**
 
     Comments a function.
     
--   **configuration\_parameter**
-    -   **value**
+- **configuration\_parameter**
+    - **value**
 
         Sets a specified database session parameter to a specified value. If the value is  **DEFAULT**  or  **RESET**, the default setting is used in the new session.  **OFF**  closes the setting.
 
         Value range: a string
 
-        -   DEFAULT
-        -   OFF
-        -   RESET
+        - DEFAULT
+        - OFF
+        - RESET
 
         Specifies the default value.
 
-    -   **from current**
+    - **from current**
 
         Uses the value of  **configuration\_parameter**  of the current session.
 
-
--   **plsql\_body**
+- **plsql\_body**
 
     Specifies the PL/SQL stored procedure body.
 
     >[!TIP]NOTICE 
     >When a user is created in the function body, the plaintext password is recorded in the log. You are not advised to do it.
-
 
 ## Examples<a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821"></a>
 

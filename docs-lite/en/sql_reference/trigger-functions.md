@@ -1,6 +1,6 @@
 # Trigger Functions<a name="EN-US_TOPIC_0289900144"></a>
 
--   pg\_get\_triggerdef\(oid\)
+- pg\_get\_triggerdef\(oid\)
 
     Description: Obtains the definition information of a trigger.
 
@@ -19,7 +19,7 @@
     (2 rows)
     ```
 
--   pg\_get\_triggerdef\(oid, boolean\)
+- pg\_get\_triggerdef\(oid, boolean\)
 
     Description: Obtains the definition information of a trigger.
 
@@ -47,5 +47,3 @@
      CREATE TRIGGER tg03 AFTER INSERT ON gtest26 FOR EACH ROW WHEN ((new.a IS NOT NULL)) EXECUTE PROCEDURE gtest_trigger_func()
     (2 rows)
     ```
-
-

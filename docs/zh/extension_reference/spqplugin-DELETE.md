@@ -1,11 +1,12 @@
 # DELETE
 
 ## 功能描述
+
 DELETE从指定的表里删除满足WHERE子句的行。如果WHERE子句不存在，将删除表中所有行，结果只保留表结构。
 
 ## 注意事项
 
--   本章节只包含spqplugin新增的多机并行功能，原openGauss的语法未做删除和修改。
+- 本章节只包含spqplugin新增的多机并行功能，原openGauss的语法未做删除和修改。
 
 ## 示例
 

@@ -6,8 +6,8 @@
 
 ### 操作步骤<a name="zh-cn_topic_0283140539_zh-cn_topic_0237088808_zh-cn_topic_0059777703_s7110d1c3f93a4bdea6f206e6709de04f"></a>
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  创建记录openGauss各节点的配置文件（mpphosts文件目录用户可随意指定，建议放在/tmp下）。
+1. 以操作系统用户omm登录数据库主节点。
+2. 创建记录openGauss各节点的配置文件（mpphosts文件目录用户可随意指定，建议放在/tmp下）。
 
     ```
     vim /tmp/mpphosts
@@ -21,19 +21,19 @@
     plat3
     ```
 
-3.  保存配置文件。
+3. 保存配置文件。
 
     ```
     :wq!
     ```
 
-4.  执行如下命令，输出各节点上的时间到“/tmp/sys\_ctl-os1.log”文件中。
+4. 执行如下命令，输出各节点上的时间到“/tmp/sys\_ctl-os1.log”文件中。
 
     ```
     for ihost in `cat /tmp/mpphosts`; do ssh -n -q $ihost "hostname;date"; done > /tmp/sys_ctl-os1.log
     ```
 
-5.  根据输出确认各个节点的时间一致性，节点之间时间差异不能超过30秒。
+5. 根据输出确认各个节点的时间一致性，节点之间时间差异不能超过30秒。
 
     ```
     cat /tmp/sys_ctl-os1.log
@@ -51,8 +51,8 @@
 
 ### 操作步骤<a name="zh-cn_topic_0283140579_zh-cn_topic_0237088809_zh-cn_topic_0059777858_s8aaa4c4f54fe4b97b5bf3a874789aad6"></a>
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  使用如下命令连接数据库。
+1. 以操作系统用户omm登录数据库主节点。
+2. 使用如下命令连接数据库。
 
     ```
     gsql -d postgres -p 8000
@@ -70,7 +70,7 @@
     openGauss=# 
     ```
 
-3.  执行如下SQL语句查看连接数。
+3. 执行如下SQL语句查看连接数。
 
     ```
     openGauss=# SELECT count(*) FROM (SELECT pg_stat_get_backend_idset() AS backendid) AS s;
@@ -85,7 +85,7 @@
     (1 row)
     ```
 
-4.  查看现有最大连接数。
+4. 查看现有最大连接数。
 
     ```
     openGauss=# SHOW max_connections;
@@ -100,12 +100,11 @@
     (1 row)
     ```
 
-
 ### 异常处理<a name="zh-cn_topic_0283140579_zh-cn_topic_0237088809_zh-cn_topic_0059777858_sd21b84e4719d479daa8c2a0a7bef2589"></a>
 
 如果显示的连接数接近数据库的最大连接数max\_connections，则需要考虑清理现有连接数或者增加新的连接数。
 
-1.  执行如下SQL语句，查看state字段等于idle，且state\_change字段长时间没有更新过的连接信息。
+1. 执行如下SQL语句，查看state字段等于idle，且state\_change字段长时间没有更新过的连接信息。
 
     ```
     openGauss=# SELECT * FROM pg_stat_activity where state='idle' order by state_change;
@@ -129,7 +128,7 @@
     (4 rows)
     ```
 
-2.  释放空闲的连接数。
+2. 释放空闲的连接数。
 
     **查看每个连接，并与此连接的使用者确认是否可以断开连接，或执行如下SQL语句释放连接。其中，pid为上一步查询中空闲连接所对应的pid字段值。**
 
@@ -149,7 +148,7 @@
 
     如果没有可释放的连接，请执行下一步。
 
-3.  设置最大连接数。
+3. 设置最大连接数。
 
     ```
     gs_guc set -D /gaussdb/data/dbnode -c "max_connections= 800"
@@ -157,7 +156,7 @@
 
     其中800为新修改的连接数。
 
-4.  重启数据库服务使新的设置生效。
+4. 重启数据库服务使新的设置生效。
 
     >[!NOTE]说明
     >重启openGauss操作会导致用户执行操作中断，请在操作之前规划好合适的执行窗口。
@@ -174,15 +173,15 @@
 
 使用VACUUM、VACUUM FULL和ANALYZE命令定期对每个表进行维护，主要有以下原因：
 
--   VACUUM FULL可回收已更新或已删除的数据所占据的磁盘空间，同时将小数据文件合并。
--   VACUUM对每个表维护了一个可视化映射来跟踪包含对别的活动事务可见的数组的页。一个普通的索引扫描首先通过可视化映射来获取对应的数组，来检查是否对当前事务可见。若无法获取，再通过堆数组抓取的方式来检查。因此更新表的可视化映射，可加速唯一索引扫描。
--   VACUUM可避免执行的事务数超过数据库阈值时，事务ID重叠造成的原有数据丢失。
--   ANALYZE可收集与数据库中表内容相关的统计信息。统计结果存储在系统表PG\_STATISTIC中。查询优化器会使用这些统计数据，生成最有效的执行计划。
+- VACUUM FULL可回收已更新或已删除的数据所占据的磁盘空间，同时将小数据文件合并。
+- VACUUM对每个表维护了一个可视化映射来跟踪包含对别的活动事务可见的数组的页。一个普通的索引扫描首先通过可视化映射来获取对应的数组，来检查是否对当前事务可见。若无法获取，再通过堆数组抓取的方式来检查。因此更新表的可视化映射，可加速唯一索引扫描。
+- VACUUM可避免执行的事务数超过数据库阈值时，事务ID重叠造成的原有数据丢失。
+- ANALYZE可收集与数据库中表内容相关的统计信息。统计结果存储在系统表PG\_STATISTIC中。查询优化器会使用这些统计数据，生成最有效的执行计划。
 
 ### 操作步骤<a name="zh-cn_topic_0283140571_zh-cn_topic_0237088810_zh-cn_topic_0111591987_zh-cn_topic_0085032190_zh-cn_topic_0059779302_section97581768562"></a>
 
-1.  使用VACUUM或VACUUM FULL命令，进行磁盘空间回收。
-    -   **VACUUM**：
+1. 使用VACUUM或VACUUM FULL命令，进行磁盘空间回收。
+    - **VACUUM**：
 
         对表执行VACUUM操作
 
@@ -206,7 +205,7 @@
         VACUUM
         ```
 
-    -   **VACUUM FULL**：
+    - **VACUUM FULL**：
 
         ```
         openGauss=# VACUUM FULL customer;
@@ -218,7 +217,7 @@
 
         需要向正在执行的表增加排他锁，且需要停止其他所有数据库操作。
 
-2.  使用ANALYZE语句更新统计信息。
+2. 使用ANALYZE语句更新统计信息。
 
     ```
     openGauss=# ANALYZE customer;
@@ -251,7 +250,7 @@
     >[!NOTE]说明
     >VACUUM和ANALYZE会导致I/O流量的大幅增加，这可能会影响其他活动会话的性能。因此，建议通过“vacuum\_cost\_delay”参数设置《数据库参考》中“GUC参数说明 \> 资源消耗 \> 基于开销的清理延迟”。
 
-3.  删除表
+3. 删除表
 
     ```
     openGauss=# DROP TABLE customer;
@@ -265,12 +264,11 @@
     DROP TABLE
     ```
 
-
 ### 维护建议<a name="zh-cn_topic_0283140571_zh-cn_topic_0237088810_zh-cn_topic_0111591987_zh-cn_topic_0085032190_zh-cn_topic_0059779302_section976110616566"></a>
 
--   定期对部分大表做VACUUM FULL，在性能下降后为全库做VACUUM FULL，目前暂定每月做一次VACUUM FULL。
--   定期对系统表做VACUUM FULL，主要是PG\_ATTRIBUTE。
--   启用系统自动清理线程（AUTOVACUUM）自动执行VACUUM和ANALYZE，回收被标识为删除状态的记录空间，并更新表的统计数据。
+- 定期对部分大表做VACUUM FULL，在性能下降后为全库做VACUUM FULL，目前暂定每月做一次VACUUM FULL。
+- 定期对系统表做VACUUM FULL，主要是PG\_ATTRIBUTE。
+- 启用系统自动清理线程（AUTOVACUUM）自动执行VACUUM和ANALYZE，回收被标识为删除状态的记录空间，并更新表的统计数据。
 
 ## 例行重建索引<a name="ZH-CN_TOPIC_0289897018"></a>
 
@@ -280,63 +278,57 @@
 
 数据库支持的索引类型为B-tree索引，例行重建索引可有效的提高查询效率。
 
--   如果数据发生大量删除后，索引页面上的索引键将被删除，导致索引页面数量的减少，造成索引膨胀。重建索引可回收浪费的空间。
--   新建的索引中逻辑结构相邻的页面，通常在物理结构中也是相邻的，所以一个新建的索引比更新了多次的索引访问速度要快。
+- 如果数据发生大量删除后，索引页面上的索引键将被删除，导致索引页面数量的减少，造成索引膨胀。重建索引可回收浪费的空间。
+- 新建的索引中逻辑结构相邻的页面，通常在物理结构中也是相邻的，所以一个新建的索引比更新了多次的索引访问速度要快。
 
 ### 重建索引<a name="zh-cn_topic_0283140542_zh-cn_topic_0237088811_section1483310439110"></a>
 
 重建索引有以下两种方式：
 
--   先运行DROP INDEX语句删除索引，再运行CREATE INDEX语句创建索引。
+- 先运行DROP INDEX语句删除索引，再运行CREATE INDEX语句创建索引。
 
     在删除索引过程中，会在父表上增加一个临时排他锁，阻止相关读写操作。在创建索引过程中，会锁住写操作但是不会锁住读操作，此时读操作只能使用顺序扫描。
 
--   使用REINDEX语句重建索引。
-    -   使用REINDEX TABLE语句重建索引，会在重建过程中增加排他锁，阻止相关读写操作。
-    -   使用REINDEX INTERNAL TABLE语句重建desc表（包括列存表的cudesc表）的索引，会在重建过程中增加排他锁，阻止相关读写操作。
-
+- 使用REINDEX语句重建索引。
+    - 使用REINDEX TABLE语句重建索引，会在重建过程中增加排他锁，阻止相关读写操作。
+    - 使用REINDEX INTERNAL TABLE语句重建desc表（包括列存表的cudesc表）的索引，会在重建过程中增加排他锁，阻止相关读写操作。
 
 ### 操作步骤<a name="zh-cn_topic_0283140542_zh-cn_topic_0237088811_zh-cn_topic_0059779198_s5066efbb8c0d462694edc169c57822b0"></a>
 
 假定在导入表“areaS”上的“area\_id”字段上存在普通索引“areaS\_idx”。重建索引有以下两种方式：
 
--   先运行DROP INDEX语句删除索引，再运行CREATE INDEX语句创建索引。
-    1.  删除索引。
+- 先运行DROP INDEX语句删除索引，再运行CREATE INDEX语句创建索引。
+    1. 删除索引。
 
         ```
         openGauss=# DROP INDEX areaS_idx;
         DROP INDEX
         ```
 
-    2.  创建索引。
+    2. 创建索引。
 
         ```
         openGauss=# CREATE INDEX areaS_idx ON areaS (area_id);
         CREATE INDEX
         ```
 
-
--   使用REINDEX重建索引。
-    -   使用REINDEX TABLE语句重建索引。
+- 使用REINDEX重建索引。
+    - 使用REINDEX TABLE语句重建索引。
 
         ```
         openGauss=# REINDEX TABLE areaS;
         REINDEX
         ```
 
-    -   使用REINDEX INTERNAL TABLE重建desc表（包括列存表的cudesc表）的索引。
+    - 使用REINDEX INTERNAL TABLE重建desc表（包括列存表的cudesc表）的索引。
 
         ```
         openGauss=# REINDEX INTERNAL TABLE areaS;
         REINDEX
         ```
 
-
-
 >[!NOTE]说明
 >在重建索引前，用户可以通过临时增大maintenance\_work\_mem和psort\_work\_mem的取值来加快索引的重建。
-
-
 
 ## 数据安全维护建议<a name="ZH-CN_TOPIC_0289897026"></a>
 
@@ -348,20 +340,19 @@
 
 ### 避免数据被非法访问<a name="zh-cn_topic_0283140538_zh-cn_topic_0237088812_zh-cn_topic_0085413817_zh-cn_topic_0059781987_s654ff86682394156a57cf0860791b723"></a>
 
--   建议对数据库用户进行权限分级管理。数据库管理员根据业务需要，建立用户并赋予权限，保证各用户对数据库的合理访问。
--   对于openGauss的服务端和客户端（或基于客户端库开发的应用程序），最好也部署在可信任的内网中。如果服务端和客户端一定要部署在非信任的网络中，需要在服务启动前，打开SSL加密，保证数据在非信任网络上的传输安全。需要注意的是，打开SSL加密会降低数据库的性能。
+- 建议对数据库用户进行权限分级管理。数据库管理员根据业务需要，建立用户并赋予权限，保证各用户对数据库的合理访问。
+- 对于openGauss的服务端和客户端（或基于客户端库开发的应用程序），最好也部署在可信任的内网中。如果服务端和客户端一定要部署在非信任的网络中，需要在服务启动前，打开SSL加密，保证数据在非信任网络上的传输安全。需要注意的是，打开SSL加密会降低数据库的性能。
 
 ### 避免系统日志泄露个人数据<a name="zh-cn_topic_0283140538_zh-cn_topic_0237088812_zh-cn_topic_0085413817_zh-cn_topic_0059781987_s2ff16280ae30412c9f531f105fd2d6c6"></a>
 
--   将调试日志发给他人进行分析前，请删除个人数据。
+- 将调试日志发给他人进行分析前，请删除个人数据。
 
     >[!NOTE]说明
     >因为日志级别（log\_min\_messages）设置为DEBUGx（x为DEBUG级别，取值范围为1\~5）时，调试日志中记录的信息可能包含用户的个人数据。
 
--   将系统日志发给其他人进行分析前，请删除个人数据。因为在默认配置下，当SQL语句执行错误时，日志中会记录出错的SQL语句，而这些SQL语句中可能包含用户个人数据。
--   将log\_min\_error\_statement参数的值设置为PANIC，可以避免将出错的SQL语句记录在系统日志中。若禁用该功能，当出现故障时，很难定位故障原因。
+- 将系统日志发给其他人进行分析前，请删除个人数据。因为在默认配置下，当SQL语句执行错误时，日志中会记录出错的SQL语句，而这些SQL语句中可能包含用户个人数据。
+- 将log\_min\_error\_statement参数的值设置为PANIC，可以避免将出错的SQL语句记录在系统日志中。若禁用该功能，当出现故障时，很难定位故障原因。
 
-  
 为保证openGauss数据库中的数据安全，避免丢失数据，非法访问数据等事故发生，请仔细阅读以下内容。
 
 ## 慢SQL诊断<a name="ZH-CN_TOPIC_0290917654"></a>
@@ -372,9 +363,9 @@
 
 ### 前提条件<a name="section18794625615"></a>
 
--   数据库实例运行正常。
--   查询SQL语句信息，需要正确设置GUC参数track\_stmt\_stat\_level。
--   只能用系统管理员和监控管理员权限进行操作。
+- 数据库实例运行正常。
+- 查询SQL语句信息，需要正确设置GUC参数track\_stmt\_stat\_level。
+- 只能用系统管理员和监控管理员权限进行操作。
 
 ```
 执行命令查看数据库实例中SQL语句执行信息

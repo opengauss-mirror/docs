@@ -8,7 +8,7 @@
 
 ## 创建、修改和删除用户<a name="zh-cn_topic_0283136811_zh-cn_topic_0237121102_zh-cn_topic_0155089862_section1157510331121"></a>
 
--   要创建用户，请使用SQL语句[CREATE USER](../sql_reference/create_user.md)。
+- 要创建用户，请使用SQL语句[CREATE USER](../sql_reference/create_user.md)。
 
     例如：创建用户joe，并设置用户拥有CREATEDB属性。
 
@@ -17,21 +17,20 @@
     CREATE ROLE
     ```
 
--   要创建系统管理员，请使用带有SYSADMIN选项的[CREATE USER](../sql_reference/create_user.md)语句 。
--   要删除现有用户，请使用[DROP USER](../sql_reference/drop_user.md)。
--   要更改用户帐户（例如，重命名用户或更改密码），请使用[ALTER USER](../sql_reference/alter_user.md)。
--   要查看用户列表，请查询视图[PG\_USER](../database_reference//PG_USER.md)：
+- 要创建系统管理员，请使用带有SYSADMIN选项的[CREATE USER](../sql_reference/create_user.md)语句 。
+- 要删除现有用户，请使用[DROP USER](../sql_reference/drop_user.md)。
+- 要更改用户帐户（例如，重命名用户或更改密码），请使用[ALTER USER](../sql_reference/alter_user.md)。
+- 要查看用户列表，请查询视图[PG\_USER](../database_reference//PG_USER.md)：
 
     ```
     openGauss=# SELECT * FROM pg_user; 
     ```
 
--   要查看用户属性，请查询系统表[PG\_AUTHID](../database_reference/PG_AUTHID.md)：
+- 要查看用户属性，请查询系统表[PG\_AUTHID](../database_reference/PG_AUTHID.md)：
 
     ```
     openGauss=# SELECT * FROM pg_authid; 
     ```
-
 
 ## 私有用户<a name="zh-cn_topic_0283136811_zh-cn_topic_0237121102_section12234116194510"></a>
 
@@ -46,9 +45,10 @@ openGauss=# CREATE USER user_independent WITH INDEPENDENT IDENTIFIED BY "XXXXXXX
 针对该用户的对象，系统管理员和拥有CREATEROLE属性的安全管理员在未经其授权前，只能进行控制操作（DROP、ALTER、TRUNCATE），无权进行INSERT、DELETE、SELECT、UPDATE、COPY、GRANT、REVOKE、ALTER OWNER操作。
 
 >>[!TIP]须知
+>
 > - PG\_STATISTIC系统表和PG\_STATISTIC\_EXT系统表存储了统计对象的一些敏感信息，如高频值MCV。系统管理员仍然可以通过访问这两张系统表，得到私有用户所属表的统计信息里的这些信息。
 >
->  - 在某些特殊场景下，系统无法保证私有用户数据对初始用户或系统管理员绝对不可见。例如，初始用户或系统管理员通过解析本地数据文件或通过构造特殊函数或操作符被私有用户调用等方式，可能会获取私有用户数据。私有用户如果希望进一步提升数据的安全性，建议对数据进行加密保护。
+> - 在某些特殊场景下，系统无法保证私有用户数据对初始用户或系统管理员绝对不可见。例如，初始用户或系统管理员通过解析本地数据文件或通过构造特殊函数或操作符被私有用户调用等方式，可能会获取私有用户数据。私有用户如果希望进一步提升数据的安全性，建议对数据进行加密保护。
 
 ## 永久用户<a name="section107115013215"></a>
 
@@ -61,11 +61,12 @@ openGauss=# CREATE USER user_persistence WITH PERSISTENCE IDENTIFIED BY "XXXXXXX
 只允许初始用户创建、修改和删除具有PERSISTENCE属性的永久用户。
 
 ## 用户认证优先规则<a name="zh-cn_topic_0237121102_section12234116194510"></a>
+
 对于GUC参数b_compatibility_user_host_auth打开的b数据库，如果用户连接，需要有优先匹配的规则，如下。
+
 - 含有具体的IP地址的用户优先级最高，比如user_name@127.0.0.1。
 - 含有'%'的user_name，按照%的出现顺序决定优先级，%越靠后优先级越高，比如user_name@127.%优先级高于user_name@127%。
 - 只含有user_name。比如user_name的优先级低于user_name@127%。
 - 只含有'%'优先级最低。可匹配所有用户
 
 具体创建的用户名称详情见[CREATE USER](../sql_reference/create_user.md)语句。
-

@@ -39,13 +39,13 @@ openGauss资源池化一写多读架构通过构建虚拟Node-Group将OLTP业务
 
 1) 节点逻辑适配： 通过适配现有openGauss分布式执行流程，在资源池化集群中引入QC(Query Coordinator) 与 QE(Query Executor) 的逻辑概念，匹配CN/DN角色。且集群任一节点发起查询请求均可成为QC， QE也可通过GUC参数动态配置。
 
-**图 3**  SPQ工作集群
-![](figures/SPQ_cluster.png)
+    **图 3**  SPQ工作集群
+    ![](figures/SPQ_cluster.png)
 
 2) 自适应扫描：SPQ设计实现自适应扫描机制，不再限定每个Worker扫描特定的ID。 采用 请求-响应(Request-Response)模式，通过QC进程与QE Worker进程间的特定RPC通信机制，由QC进程负责告知每个Worker进程可执行的扫描任务，从而消除计算数据倾斜的问题。
 
-**图 4**  自适应扫描
-![](figures/SPQ_adps.png)
+    **图 4**  自适应扫描
+    ![](figures/SPQ_adps.png)
 
 3) 基础算子支持： SPQ多机并行执行器对原有基础算子(Scan,Join,Aggregate,Sort等)及Stream类算子（Gather/Broadcast/Redistribute）的并行化提供支持。 在原有算子的实现基础上，为确保节点间数据的切分读取及执行过程完整适配ORCA生成的分布式执行计划，新增/修改以下算子：
 
@@ -125,4 +125,4 @@ openGauss中DML主要分为两部分：查找数据，写入符合要求的数�
 
 ## 使用指导<a name="section8406643144716"></a>
 
-插件安装与使能见：**[spqplugin-Extension](../extension_reference/spqplugin概述.md)**
+插件安装与使用见：**[spqplugin-Extension](../extension_reference/spqplugin安装与使用.md)**

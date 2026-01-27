@@ -7,4 +7,3 @@ This document helps you quickly understand the software and hardware requirement
 ## Overview<a name="en-us_topic_0283136298_section11267033105713"></a>
 
 This document describes the operating system \(OS\) requirements, build environment requirements, software dependencies, build methods, and build result storage paths of openGauss.
-

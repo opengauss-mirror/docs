@@ -37,6 +37,7 @@ openGauss在线DDL特性执行传统主备中Astore、段页式的普通表和�
 ## 基本原理
 
 本特性的整体思路如下：先将旧表拷贝至基于新的元数据创建的新表，然后追增并发DML在旧表新增的数据。引入ddlDeltaLog表记录在线DDL期间所有并发INSERT/UPDATE/DELETE操作，包括操作类型及该记录在旧表的ctid，同时引入ctidMap表记录新旧表之间的ctid映射关系。在追增数据时，遍历ddlDeltalLog，针对每一条日志，根据操作类型和ctidMap中映射的新表ctid同步更新新表。具体分为以下4个阶段：
+
 1. 准备阶段
     (1) 创建临时schema、追增日志表ddlDeltaLog表、向ddlDeltaLogs全局hash表注册本次在线DDL的信息。
     (2) 获取快照sp1，用于扫描基线数据。
@@ -56,10 +57,13 @@ openGauss在线DDL特性执行传统主备中Astore、段页式的普通表和�
 ## 使用指导
 
 openGauss在线DDL特性涉及传统主备中Astore、段页式支持修改列数据类型、修改压缩属性、添加约束(包括范围约束和非空约束)，并新增关键字CONCURRENTLY用于触发在线DDL功能：
+
 ```sql
 ALTER TABLE [CONCURRENTLY] table_name ......
 ```
+
 以表table为例，在线DDL的相关语法如下：
+
 ```sql
 CREATE TABLE employee (
     id      INT,
@@ -68,22 +72,31 @@ CREATE TABLE employee (
     age     INT
 );
 ```
+
 - 修改字段的数据类型:
+
 ```sql
 ALTER TABLE CONCURRENTLY employee ALTER COLUMN age TYPE VARCHAR;
 ```
+
 - 修改行存压缩属性: 
+
 ```sql
 ALTER TABLE CONCURRENTLY employee SET (compresstype = 2, compress_level = 30);
 ```
+
 - 给表增加非空约束: 
+
 ```sql
 ALTER TABLE CONCURRENTLY employee ALTER id SET NOT NULL;
 ```
+
 - 给表增加范围约束：
+
 ```sql
 ALTER TABLE CONCURRENTLY emplyee ADD CONSTRAINT chk_employee_age (age >=18 AND age <=65);
 ```
+
 此外，在线DDL新增SIGHUP级参数log_online_ddl_level，用于调整在线DDL日志打印级别，该参数仅用于功能验证，正常使用不建议开启。
 
 ## 使用场景

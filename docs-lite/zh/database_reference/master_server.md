@@ -8,22 +8,21 @@
 
 >>[!TIP]须知
 >
->-   当前连接的同步备机是列表中的第一个名称。如果当前同步备机失去连接，则它会立即更换下一个优先级更高的备机，并将此备机的名称放入列表中。
->-   备机名称可以通过设置环境变量PGAPPNAME指定。
+>- 当前连接的同步备机是列表中的第一个名称。如果当前同步备机失去连接，则它会立即更换下一个优先级更高的备机，并将此备机的名称放入列表中。
+>- 备机名称可以通过设置环境变量PGAPPNAME指定。
 
 **取值范围**： 字符串。当取值为\*，表示匹配任意提供同步复制的备机名称。支持按如下格式配置：
 
--   ANY  _num\_sync_  \(_standby\_name_  \[, ...\]\)
--   \[FIRST\]  _num\_sync_  \(_standby\_name_  \[, ...\]\)
--   _standby\_name_  \[, ...\]
+- ANY  _num\_sync_  \(_standby\_name_  \[, ...\]\)
+- \[FIRST\]  _num\_sync_  \(_standby\_name_  \[, ...\]\)
+- _standby\_name_  \[, ...\]
 
     >[!NOTE]说明
     >
-    >-   其中_num\_sync_是事务需要等待其回复的同步复制的备机的数量，_standby\_name_是备机的名称，FIRST以及ANY指定从所列服务器中选取同步复制的备机的策略。
-    >-   ANY N \(dn\_instanceId1, dn\_instanceId2,...\)表示在括号内任选N个主机名称作为同步复制的备机名称列表。例如，ANY 1\(dn\_instanceId1, dn\_instanceId2\)表示在dn\_instanceId1和dn\_instanceId2中任选一个作为同步复制的备机名称。
-    >-   FIRST N \(dn\_instanceId1, dn\_instanceId2,...\)表示在括号内按出现顺序的先后作为优先级选择前N个主机名称作为同步复制的备机名称列表。例如，FIRST 1 \(dn\_instanceId1, dn\_instanceId2\)表示选择dn\_instanceId1作为同步复制的备机名称。
-    >-   dn\_instanceId1, dn\_instanceId2,...和FIRST 1 \(dn\_instanceId1, dn\_instanceId2,...\)具有的含义相同。
-
+    >- 其中_num\_sync_是事务需要等待其回复的同步复制的备机的数量，_standby\_name_是备机的名称，FIRST以及ANY指定从所列服务器中选取同步复制的备机的策略。
+    >- ANY N \(dn\_instanceId1, dn\_instanceId2,...\)表示在括号内任选N个主机名称作为同步复制的备机名称列表。例如，ANY 1\(dn\_instanceId1, dn\_instanceId2\)表示在dn\_instanceId1和dn\_instanceId2中任选一个作为同步复制的备机名称。
+    >- FIRST N \(dn\_instanceId1, dn\_instanceId2,...\)表示在括号内按出现顺序的先后作为优先级选择前N个主机名称作为同步复制的备机名称列表。例如，FIRST 1 \(dn\_instanceId1, dn\_instanceId2\)表示选择dn\_instanceId1作为同步复制的备机名称。
+    >- dn\_instanceId1, dn\_instanceId2,...和FIRST 1 \(dn\_instanceId1, dn\_instanceId2,...\)具有的含义相同。
 
 若使用gs\_guc工具设置该参数，需要如下设置：
 
@@ -47,8 +46,8 @@ gs_guc reload -Z datanode -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(AZ1,
 
 **取值范围**： 布尔型
 
--   on表示在有同步备机故障且与主机断开连接时，主机不因同步备故障而阻塞。比如有两个同步备机，一个故障，另一个正常，这个时候主机事务只会等好的这个同步备，而不被故障的同步备所阻塞；再比如走quorum协议时，一主三备，配置ANY 2\(node2,node3,node4\)，当node2、node4故障，node3正常时，主机业务同样不被阻塞。
--   off表示在有同步备机故障时，阻塞主机。注意: 如果在同步备机故障，又关闭了主机的最大可用模式时，可能由于主机的后台业务线程(比如WDR等)产生的事务所造成的阻塞，进而导致checkpoint相关的操作也同时等待。如果需要避免该情况，请打开最大可用或者将同步备机删除。对于一主一同步备场景，当关闭主机的最大可用模式时，备机出现故障可能会造成主机事务阻塞，但保证主备可靠性；当开启主机的最大可用模式时，备机出现故障不阻塞主机事务，但可能影响主备可靠性。
+- on表示在有同步备机故障且与主机断开连接时，主机不因同步备故障而阻塞。比如有两个同步备机，一个故障，另一个正常，这个时候主机事务只会等好的这个同步备，而不被故障的同步备所阻塞；再比如走quorum协议时，一主三备，配置ANY 2\(node2,node3,node4\)，当node2、node4故障，node3正常时，主机业务同样不被阻塞。
+- off表示在有同步备机故障时，阻塞主机。注意: 如果在同步备机故障，又关闭了主机的最大可用模式时，可能由于主机的后台业务线程(比如WDR等)产生的事务所造成的阻塞，进而导致checkpoint相关的操作也同时等待。如果需要避免该情况，请打开最大可用或者将同步备机删除。对于一主一同步备场景，当关闭主机的最大可用模式时，备机出现故障可能会造成主机事务阻塞，但保证主备可靠性；当开启主机的最大可用模式时，备机出现故障不阻塞主机事务，但可能影响主备可靠性。
 
 **默认值**：off
 
@@ -60,8 +59,8 @@ gs_guc reload -Z datanode -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(AZ1,
 
 **取值范围**：整形，范围0\~INT\_MAX，单位为秒
 
--   0表示不设置keep\_sync\_window超时时间窗口。
--   其余表示keep\_sync\_window超时时间窗口的大小。
+- 0表示不设置keep\_sync\_window超时时间窗口。
+- 其余表示keep\_sync\_window超时时间窗口的大小。
 
 **默认值**：0
 
@@ -77,14 +76,14 @@ gs_guc reload -Z datanode -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(AZ1,
 
 >>[!TIP]须知
 >
->-   此参数属于性能测试参数，用于测试带有备机和不带备机的性能参数。关闭参数后，不能进行切换、故障等异常场景测试，否则会出现主备从不一致的情况。
->-   此参数属于受控参数，不建议正常业务场景下关闭此参数。
->-   目前默认不支持主备从部署模式。
+>- 此参数属于性能测试参数，用于测试带有备机和不带备机的性能参数。关闭参数后，不能进行切换、故障等异常场景测试，否则会出现主备从不一致的情况。
+>- 此参数属于受控参数，不建议正常业务场景下关闭此参数。
+>- 目前默认不支持主备从部署模式。
 
 **取值范围**： 布尔型
 
--   on表示打开主备、主从同步。
--   off表示关闭主备、主从同步。
+- on表示打开主备、主从同步。
+- off表示关闭主备、主从同步。
 
 **默认值**：on
 
@@ -100,8 +99,8 @@ gs_guc reload -Z datanode -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(AZ1,
 
 **取值范围**： 布尔型
 
--   on表示打开WAL日志、数据页混合复制模式。
--   off表示关闭WAL日志、数据页混合复制模式。
+- on表示打开WAL日志、数据页混合复制模式。
+- off表示关闭WAL日志、数据页混合复制模式。
 
 **默认值**：off
 
@@ -125,6 +124,7 @@ gs_guc reload -Z datanode -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(AZ1,
 该参数属于SIGHUP类型参数，请参考[表1](../database_administration_guide/reset_parameters.md)中对应设置方法进行设置。
 
 **取值范围**：
+
 - on: 开启。
 - off: 关闭。
 
@@ -158,8 +158,8 @@ gs_guc reload -Z datanode -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(AZ1,
 
 **取值范围**： 布尔型
 
--   on表示导入数据行存表时主备数据采用数据页的方式进行同步。当replication\_type参数为1时，不允许设置为on，如果此时用guc工具设置成on，会强制改为off。
--   off表示导入数据行存表时主备数据采用日志（Xlog）方式进行同步。
+- on表示导入数据行存表时主备数据采用数据页的方式进行同步。当replication\_type参数为1时，不允许设置为on，如果此时用guc工具设置成on，会强制改为off。
+- off表示导入数据行存表时主备数据采用日志（Xlog）方式进行同步。
 
 **默认值**： on
 
@@ -171,8 +171,8 @@ gs_guc reload -Z datanode -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(AZ1,
 
 **取值范围**： 布尔型
 
--   on表示日志中将打印数据复制时每个数据块的状态。
--   off表示日志中不打印数据复制时每个数据块的状态。
+- on表示日志中将打印数据复制时每个数据块的状态。
+- off表示日志中不打印数据复制时每个数据块的状态。
 
 **默认值**： off
 
@@ -184,8 +184,8 @@ gs_guc reload -Z datanode -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(AZ1,
 
 **取值范围**： 布尔型
 
--   on表示备机catchup时用增量catchup方式，即从从备本地数据文件扫描获得主备差异数据文件列表，进行主备之间的catchup。
--   off表示备机catchup时用全量catchup方式，即从主机本地所有数据文件扫描获得主备差异数据文件列表，进行主备之间的catchup。
+- on表示备机catchup时用增量catchup方式，即从从备本地数据文件扫描获得主备差异数据文件列表，进行主备之间的catchup。
+- off表示备机catchup时用全量catchup方式，即从主机本地所有数据文件扫描获得主备差异数据文件列表，进行主备之间的catchup。
 
 **默认值**：on
 
@@ -212,9 +212,9 @@ gs_guc reload -Z datanode -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(AZ1,
 
 **取值范围**： 整型，范围-1\~10000，单位为毫秒。
 
--   -1表示主机阻塞直到备机数据追赶完成。
--   0表示备机数据追赶时始终不阻塞主机。
--   其余值表示备机数据追赶时阻塞主机的最长时间。例如，取值5000，表示当备机数据追赶完成时间还剩5s时，阻塞主机等待其完成。
+- -1表示主机阻塞直到备机数据追赶完成。
+- 0表示备机数据追赶时始终不阻塞主机。
+- 其余值表示备机数据追赶时阻塞主机的最长时间。例如，取值5000，表示当备机数据追赶完成时间还剩5s时，阻塞主机等待其完成。
 
 **默认值**：-1
 
@@ -226,9 +226,9 @@ gs_guc reload -Z datanode -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(AZ1,
 
 **取值范围**： 枚举类型
 
--   all\_node: 主机配置为all\_node时，表示允许主机向所有备机主动同步配置文件；备机配置为all\_node时，表示允许当前备机向其主机发送同步请求，允许当前备机向其所有级联备主动同步配置文件；级联备配置为all\_node时，表示允许当前级联备向其备机发送同步请求。
--   only\_sync\_node: 主机配置为only\_sync\_node时，表示仅允许主机向所有同步备机主动同步配置文件；备机配置为only\_sync\_node时，表示允许当前备机向其主机发送同步请求，不允许当前备机向其所有级联备主动同步配置文件；级联备配置为only\_sync\_node时，表示允许当前级联备向其备机发送同步请求。
--   none\_node: 主机配置为none\_node时，表示不允许主机向任何备机主动同步配置文件；备机配置为none\_node时，表示不允许当前备机向其主机发送同步请求，不允许当前备机向其所有级联备主动同步配置文件；级联备配置为none\_node时，表示不允许当前级联备向其备机发送同步请求。
+- all\_node: 主机配置为all\_node时，表示允许主机向所有备机主动同步配置文件；备机配置为all\_node时，表示允许当前备机向其主机发送同步请求，允许当前备机向其所有级联备主动同步配置文件；级联备配置为all\_node时，表示允许当前级联备向其备机发送同步请求。
+- only\_sync\_node: 主机配置为only\_sync\_node时，表示仅允许主机向所有同步备机主动同步配置文件；备机配置为only\_sync\_node时，表示允许当前备机向其主机发送同步请求，不允许当前备机向其所有级联备主动同步配置文件；级联备配置为only\_sync\_node时，表示允许当前级联备向其备机发送同步请求。
+- none\_node: 主机配置为none\_node时，表示不允许主机向任何备机主动同步配置文件；备机配置为none\_node时，表示不允许当前备机向其主机发送同步请求，不允许当前备机向其所有级联备主动同步配置文件；级联备配置为none\_node时，表示不允许当前级联备向其备机发送同步请求。
 
 **默认值**： all\_node
 
@@ -270,10 +270,10 @@ gs_guc reload -Z datanode -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(AZ1,
 
 >[!TIP]须知 
 >
->-   在一个包含了主机、备机和级联备的数据库实例中，主机相对于备机是发送端，备机相对于主机是接收端，备机相对于级联备是发送端，级联备相对于备机是接收端。
->-   发送端主动向接收端同步配置文件、接收端请求发送端同步配置文件是两个独立的事件，均会使得配置文件同步。若不希望配置文件同步，则需要在接收端配置为none\_node，发送端若为备机只能配置为none\_node，发送端若为主机，配置为none\_node时主机与所有备机都不同步，为only\_sync\_node时仅与同步备同步，不与异步备同步。
->-   配置参数同步的具体表现为，发送端发送配置文件，对接收端配置文件中的对应参数直接覆盖。若设置了配置文件需要同步的策略，则修改接收端配置参数后，发送端会立刻覆盖接收端的配置参数，使得接收端修改不生效。
->-   即使设置了配置文件需要同步的策略，仍有部分配置参数不会被同步。包括："application\_name",  "archive\_command",  "audit\_directory",  "available\_zone",  "comm\_control\_port",  "comm\_sctp\_port",  "listen\_addresses",  "log\_directory",  "port",  "replconninfo1",  "replconninfo2",  "replconninfo3",  "replconninfo4",  "replconninfo5",  "replconninfo6",  "replconninfo7",  "replconninfo8", "replconninfo9", "replconninfo10", "replconninfo11", "replconninfo12", "replconninfo13", "replconninfo14", "replconninfo15", "replconninfo16", "replconninfo17", "replconninfo18",  "ssl",  "ssl\_ca\_file",  "ssl\_cert\_file",  "ssl\_ciphers",  "ssl\_crl\_file",  "ssl\_key\_file",  "ssl\_renegotiation\_limit",  "ssl\_cert\_notify\_time",  "synchronous\_standby\_names",  "local\_bind\_address",  "perf\_directory",  "query\_log\_directory",  "asp\_log\_directory",  "streaming\_router\_port",  "enable\_upsert\_to\_merge",  "archive\_dest", "recovery\_min\_apply\_delay",  "sync\_config\_strategy"。
+>- 在一个包含了主机、备机和级联备的数据库实例中，主机相对于备机是发送端，备机相对于主机是接收端，备机相对于级联备是发送端，级联备相对于备机是接收端。
+>- 发送端主动向接收端同步配置文件、接收端请求发送端同步配置文件是两个独立的事件，均会使得配置文件同步。若不希望配置文件同步，则需要在接收端配置为none\_node，发送端若为备机只能配置为none\_node，发送端若为主机，配置为none\_node时主机与所有备机都不同步，为only\_sync\_node时仅与同步备同步，不与异步备同步。
+>- 配置参数同步的具体表现为，发送端发送配置文件，对接收端配置文件中的对应参数直接覆盖。若设置了配置文件需要同步的策略，则修改接收端配置参数后，发送端会立刻覆盖接收端的配置参数，使得接收端修改不生效。
+>- 即使设置了配置文件需要同步的策略，仍有部分配置参数不会被同步。包括："application\_name",  "archive\_command",  "audit\_directory",  "available\_zone",  "comm\_control\_port",  "comm\_sctp\_port",  "listen\_addresses",  "log\_directory",  "port",  "replconninfo1",  "replconninfo2",  "replconninfo3",  "replconninfo4",  "replconninfo5",  "replconninfo6",  "replconninfo7",  "replconninfo8", "replconninfo9", "replconninfo10", "replconninfo11", "replconninfo12", "replconninfo13", "replconninfo14", "replconninfo15", "replconninfo16", "replconninfo17", "replconninfo18",  "ssl",  "ssl\_ca\_file",  "ssl\_cert\_file",  "ssl\_ciphers",  "ssl\_crl\_file",  "ssl\_key\_file",  "ssl\_renegotiation\_limit",  "ssl\_cert\_notify\_time",  "synchronous\_standby\_names",  "local\_bind\_address",  "perf\_directory",  "query\_log\_directory",  "asp\_log\_directory",  "streaming\_router\_port",  "enable\_upsert\_to\_merge",  "archive\_dest", "recovery\_min\_apply\_delay",  "sync\_config\_strategy"。
 
 ## ignore\_standby\_lsn\_window<a name="section1748591005619"></a>
 
@@ -283,16 +283,15 @@ gs_guc reload -Z datanode -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(AZ1,
 
 **取值范围**：整形，范围0\~INT_MAX，单位为毫秒。
 
--   0表示不设置ignore_standby_lsn_window超时时间窗口, 即无论同步备的lsn位点多久未推进，主机事务提交均等待该备机同步。
--   其余表示ignore_standby_lsn_window超时时间窗口的大小。
+- 0表示不设置ignore_standby_lsn_window超时时间窗口, 即无论同步备的lsn位点多久未推进，主机事务提交均等待该备机同步。
+- 其余表示ignore_standby_lsn_window超时时间窗口的大小。
 
 **默认值**：0
 
 >>[!TIP]须知
 >
->-   仅在most_available_sync配置为on时，该参数才生效。
->-   注意取值的合理性，比如当synchronous_commit=remote_apply，ignore_standby_lsn_window配置的值小于延迟回放时间recovery_min_apply_delay，则由于延迟回放导致备机返回的apply位点不推进，ignore_standby_lsn_window生效，导致主机事务提交不等待该备机回放完成，remote_apply失效。
-
+>- 仅在most_available_sync配置为on时，该参数才生效。
+>- 注意取值的合理性，比如当synchronous_commit=remote_apply，ignore_standby_lsn_window配置的值小于延迟回放时间recovery_min_apply_delay，则由于延迟回放导致备机返回的apply位点不推进，ignore_standby_lsn_window生效，导致主机事务提交不等待该备机回放完成，remote_apply失效。
 
 ## ignore\_feedback\_xmin\_window<a name="section1748591005819"></a>
 
@@ -302,8 +301,7 @@ gs_guc reload -Z datanode -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(AZ1,
 
 **取值范围**：整形，范围0\~INT_MAX，单位为毫秒。
 
--   0表示不设置ignore_feedback_xmin_window超时时间窗口, 即无论备机的oldestXmin多久未推进，主机的vacuum都需要考虑该xmin。
--   其余表示ignore_feedback_xmin_window超时时间窗口的大小。
+- 0表示不设置ignore_feedback_xmin_window超时时间窗口, 即无论备机的oldestXmin多久未推进，主机的vacuum都需要考虑该xmin。
+- 其余表示ignore_feedback_xmin_window超时时间窗口的大小。
 
 **默认值**：0
-

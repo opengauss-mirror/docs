@@ -15,7 +15,6 @@ openGauss在逻辑复制过程中支持如下DDL操作：
 - CREATE/DROP SEQUENCE
 - COMMENT
 
-
 ## 注意事项
 
 - 只支持行存表的DDL操作。
@@ -37,7 +36,6 @@ openGauss在逻辑复制过程中支持如下DDL操作：
 CREATE PUBLICATION pub_name FOR ALL TABLES with(publish='insert,update,delete,truncate',ddl='table');
 ```
 
-
 ## 参数说明
 
 - **pub_name**
@@ -47,7 +45,6 @@ CREATE PUBLICATION pub_name FOR ALL TABLES with(publish='insert,update,delete,tr
 - **ddl='table'**
 
     `ddl='table'`为语法扩充，表示支持TABLE相关的DDL语法。如果需要其他DDL语法，则设置`ddl='all'`。在设置`ddl='all'`时，只允许`FOR ALL TABLES`选项。
-
 
 ## 示例
 
@@ -64,7 +61,6 @@ wal_level=logical
 ```sql
 host replication all 0.0.0.0/0 md5
 ```
-
 
 3、在发布端创建数据库dzy_soudb。
 
@@ -177,4 +173,3 @@ select * from logical_tb1_中文名;
  {f,t,t}
 (5 rows)
 ```
-

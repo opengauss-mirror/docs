@@ -4,8 +4,8 @@ This section describes how to query SQL statements whose execution takes a long 
 
 ## Procedure<a name="en-us_topic_0237121490_en-us_topic_0073253542_en-us_topic_0040046535_section43790015111840"></a>
 
-1.  Log in as the OS user  **omm**  to a database node.
-2.  Run the following command to connect to the database:
+1. Log in as the OS user  **omm**  to a database node.
+2. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -23,7 +23,7 @@ This section describes how to query SQL statements whose execution takes a long 
     postgres=# 
     ```
 
-3.  Query the statements that are run for a long time in the database.
+3. Query the statements that are run for a long time in the database.
 
     ```
     SELECT current_timestamp - query_start AS runtime, datname, usename, query FROM pg_stat_activity where state != 'idle' ORDER BY 1 desc;
@@ -37,7 +37,7 @@ This section describes how to query SQL statements whose execution takes a long 
     SELECT query FROM pg_stat_activity WHERE current_timestamp - query_start > interval '1 days';
     ```
 
-4.  Set the parameter  **track\_activities**  to  **on**.
+4. Set the parameter  **track\_activities**  to  **on**.
 
     ```
     SET track_activities = on;
@@ -45,7 +45,7 @@ This section describes how to query SQL statements whose execution takes a long 
 
     The database collects the running information about active queries only if the parameter is set to  **on**.
 
-5.  View the running query statements.
+5. View the running query statements.
 
     The  **pg\_stat\_activity**  view is used as an example here.
 
@@ -66,9 +66,9 @@ This section describes how to query SQL statements whose execution takes a long 
     SELECT datname, usename, state FROM pg_stat_activity WHERE state != 'idle';
     ```
 
-6.  Analyze the status of the query statements that were run for a long time.
-    -   If the query statement is normal, wait until the execution of the query statement is complete.
-    -   If a query statement is blocked, run the following command to view this query statement:
+6. Analyze the status of the query statements that were run for a long time.
+    - If the query statement is normal, wait until the execution of the query statement is complete.
+    - If a query statement is blocked, run the following command to view this query statement:
 
         ```
         SELECT datname, usename, state, query FROM pg_stat_activity WHERE waiting = true;
@@ -78,6 +78,3 @@ This section describes how to query SQL statements whose execution takes a long 
 
         >[!NOTE]NOTE   
         >Only when the query is blocked by internal lock resources, the  **waiting**  column is  **true**. In most cases, blocks happen when query statements are waiting for lock resources to be released. However, query statements may be blocked due to write and timers operations. Such blocked queries are not displayed in the  **pg\_stat\_activity**  view.  
-
-
-

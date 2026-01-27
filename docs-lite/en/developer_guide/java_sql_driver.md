@@ -64,4 +64,3 @@ This section describes  **java.sql.Driver**, the database driver API.
 </tr>
 </tbody>
 </table>
-

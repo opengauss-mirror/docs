@@ -1,31 +1,31 @@
 # 单节点服务器安装
 
-1.  创建用户组dbgroup。
+1. 创建用户组dbgroup。
 
     ```
     groupadd dbgroup
     ```
 
-2.  创建用户组dbgroup下的普通用户omm，并设置普通用户omm的密码，密码建议设置为omm@123。
+2. 创建用户组dbgroup下的普通用户omm，并设置普通用户omm的密码，密码建议设置为omm@123。
 
     ```
     useradd -g dbgroup omm
     passwd omm
     ```
 
-3.  使用omm用户登录到openGauss包安装的主机，解压openGauss压缩包到安装目录（假定安装目录为/opt/software/openGauss，请用实际值替换）。
+3. 使用omm用户登录到openGauss包安装的主机，解压openGauss压缩包到安装目录（假定安装目录为/opt/software/openGauss，请用实际值替换）。
 
     ```
     tar -jxf openGauss-x.x.x-操作系统-64bit.tar.bz2 -C /opt/software/openGauss
     ```
 
-4.  假定解压包的路径为/opt/software/openGauss,进入解压后目录下的simpleInstall。
+4. 假定解压包的路径为/opt/software/openGauss,进入解压后目录下的simpleInstall。
 
     ```
     cd /opt/software/openGauss/simpleInstall
     ```
 
-5.  执行install.sh脚本安装openGauss。
+5. 执行install.sh脚本安装openGauss。
 
     ```
     sh install.sh  -w xxxx 
@@ -33,7 +33,7 @@
 
     上述命令中，-w是指初始化数据库密码（gs\_initdb指定），安全需要必须设置。
 
-6.  安装执行完成后，使用ps和gs\_ctl查看进程是否正常。
+6. 安装执行完成后，使用ps和gs\_ctl查看进程是否正常。
 
     ```
     ps ux | grep gaussdb
@@ -63,4 +63,3 @@
      Receiver info:
     No information 
     ```
-

@@ -30,19 +30,19 @@ NOTICE: 'subquery' in the UPDATE and INSERT clauses are only avaliable in CENTRA
 
 ## Parameter Description<a name="en-us_topic_0283137308_en-us_topic_0237122170_section1315653475"></a>
 
--   **plan\_hint**  clause
+- **plan\_hint**  clause
 
-    Follows the  **MERGE**  keyword in the  **/\*+ \*/**  format. It is used to optimize the plan of a  **MERGE**  statement block. For details, see  [Hint-based Tuning](../performance_tuning_guide/plan_hint_optimization_overview.md). In each statement, only the first  **/\*+** _plan\_hint _**\*/**  comment block takes effect as a hint. Multiple hints can be written.
+    Follows the  **MERGE**  keyword in the  **/\*+ \*/**  format. It is used to optimize the plan of a  **MERGE**  statement block. For details, see  [Hint-based Tuning](../performance_tuning_guide/plan_hint_optimization_overview.md). In each statement, only the first  **/\*+** _plan\_hint_**\*/**  comment block takes effect as a hint. Multiple hints can be written.
 
--   **INTO**  clause
+- **INTO**  clause
 
     Specifies the target table that is being updated or has data being inserted.
 
--   **talbe\_name**
+- **talbe\_name**
 
     Specifies the name of the target table.
 
--   **partition\_clause**
+- **partition\_clause**
 
     Performs MERGE operations on a specified partition.
 
@@ -57,27 +57,27 @@ NOTICE: 'subquery' in the UPDATE and INSERT clauses are only avaliable in CENTRA
 
     For details, see  [CREATE TABLE SUBPARTITION](create_table_subpartition.md).
 
--   **alias**
+- **alias**
 
     Specifies the alias of the target table.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **USING**  clause
+- **USING**  clause
 
     Specifies the source table, which can be a table, view, or subquery.
 
--   **ON**  clause
+- **ON**  clause
 
     Specifies the condition used to match data between the source and target tables. Columns in the condition cannot be updated.
 
--   **WHEN MATCHED**  clause
+- **WHEN MATCHED**  clause
 
     Performs  **UPDATE**  if data in the source table matches that in the target table based on the condition.
 
     System catalogs and system columns cannot be updated.
 
--   **WHEN NOT MATCHED**  clause
+- **WHEN NOT MATCHED**  clause
 
     Performs  **INSERT**  if data in the source table does not match that in the target table based on the condition.
 
@@ -85,16 +85,15 @@ NOTICE: 'subquery' in the UPDATE and INSERT clauses are only avaliable in CENTRA
 
     The order of  **WHEN MATCHED**  and  **WHEN NOT MATCHED**  clauses can be reversed. One of them can be used by default, but they cannot be both used at one time. Two  **WHEN MATCHED**  or  **WHEN NOT MATCHED**  clauses cannot be specified at the same time.
 
--   **DEFAULT**
+- **DEFAULT**
 
     Specifies the default value of a column.
 
     The value is  **NULL**  if no default value is assigned to it.
 
--   **WHERE condition**
+- **WHERE condition**
 
     Specifies the conditions for the  **UPDATE**  and  **INSERT**  clauses. The two clauses will be executed only when the conditions are met. The default value can be used. System columns cannot be referenced in  **WHERE condition**. You are not advised to use numeric types such as int for  **condition**, because such types can be implicitly converted to bool values \(non-zero values are implicitly converted to  **true**  and  **0**  is implicitly converted to  **false**\), which may cause unexpected results.
-
 
 ## Examples<a name="en-us_topic_0283137308_en-us_topic_0237122170_section3650125620712"></a>
 
@@ -151,4 +150,3 @@ openGauss=# SELECT * FROM products ORDER BY product_id;
 openGauss=# DROP TABLE products;
 openGauss=# DROP TABLE newproducts;
 ```
-

@@ -10,13 +10,12 @@
 
 ## 使用指导
 
-1.  设置采样方式为按照采样率采样，即设置GUC参数default\_statistics\_target为\[-100, -1\]之间的整数，表示采样百分比。
-2.  使用ANALYZE\(\(\[column\_name,\]\)\) 进行数据统计和模型创建。
-3.  输入查询，如果查询涉及到的等值查询列上有统计模型创建，那么会自动使用统计模型进行选择率估计。
-4.  不再需要智能统计模型的时候，使用ALTER TABLE \[table\_name\] DELETE STATISTICS \(\(\[column\_name,\]\)\)进行统计信息以及模型删除。
+1. 设置采样方式为按照采样率采样，即设置GUC参数default\_statistics\_target为\[-100, -1\]之间的整数，表示采样百分比。
+2. 使用ANALYZE\(\(\[column\_name,\]\)\) 进行数据统计和模型创建。
+3. 输入查询，如果查询涉及到的等值查询列上有统计模型创建，那么会自动使用统计模型进行选择率估计。
+4. 不再需要智能统计模型的时候，使用ALTER TABLE \[table\_name\] DELETE STATISTICS \(\(\[column\_name,\]\)\)进行统计信息以及模型删除。
 
 其他使用的方法详见SQL接口章节[ALTER TABLE](../../sql_reference/alter_table.md)和[ANALYZE | ANALYSE](../../sql_reference/analyze_analyse.md)。
-
 
 ## 最佳实践
 
@@ -85,4 +84,3 @@ Total runtime: 0.533 ms
 ## 常见问题处理
 
 如果遇到异常场景导致模型无法创建，ABO优化器会只创建传统统计信息，请根据对应的告警信息进行相应处理。
-

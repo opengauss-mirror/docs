@@ -188,99 +188,99 @@ cm支持包含级联备组网下的DN仲裁。
     安装好自定义资源后，若要使用自定义资源监控功能，需要配置两个文件：
     
     1. 资源脚本  
-       主要用于指定资源的启停、状态检查等指令，一个样例如下：
-    
-    ```
-    #!/bin/bash
-    #set -ex   #取消该行注释可帮助调试脚本
-    #资源名称
-    resName=sharding
-    #资源binpath
-    shardingPath=/home/test/home/apache-shardingsphere-5.1.1-shardingsphere-proxy-bin/bin
-    #用于过滤资源实例的命令关键词
-    cmdKey=org.apache.shardingsphere.proxy.Bootstrap
-    #用于保存首次检测到资源僵死时间的文件
-    phony_dead_time_file=.sharding_phony_dead_time
-    #最长僵死时间，单位为s
-    PHONY_MAX_TIME=20
-    
-    function exec_start
-    {
-      #资源启动命令
-      sh ${shardingPath}/start.sh; exit $?
-    }
-    
-    function exec_stop
-    {
-      #资源停止命令
-      sh ${shardingPath}/stop.sh; exit $?
-    }
-    
-    function exec_check
-    {
-      #查询资源实例pid
-      pid=`ps x | grep "$cmdKey" | grep -v grep | awk '{print $1}'`
-      if [ "${pid}" == "" ]; then
-        echo "$resName is not running."
-        exit 1
-      fi
-      #查询资源实例进程状态
-      state=`cat /proc/$pid/status | grep "State" | awk '{print $2}'`
-      if [ "$state" == "T" ]; then
-        #僵死检查和处理
-        if [ ! -f $phony_dead_time_file ]; then
-          touch ./${phony_dead_time_file}
-          echo "export firstphonytime=''" > ./${phony_dead_time_file}
+        主要用于指定资源的启停、状态检查等指令，一个样例如下：
+      
+      ```
+      #!/bin/bash
+      #set -ex   #取消该行注释可帮助调试脚本
+      #资源名称
+      resName=sharding
+      #资源binpath
+      shardingPath=/home/test/home/apache-shardingsphere-5.1.1-shardingsphere-proxy-bin/bin
+      #用于过滤资源实例的命令关键词
+      cmdKey=org.apache.shardingsphere.proxy.Bootstrap
+      #用于保存首次检测到资源僵死时间的文件
+      phony_dead_time_file=.sharding_phony_dead_time
+      #最长僵死时间，单位为s
+      PHONY_MAX_TIME=20
+      
+      function exec_start
+      {
+        #资源启动命令
+        sh ${shardingPath}/start.sh; exit $?
+      }
+      
+      function exec_stop
+      {
+        #资源停止命令
+        sh ${shardingPath}/stop.sh; exit $?
+      }
+      
+      function exec_check
+      {
+        #查询资源实例pid
+        pid=`ps x | grep "$cmdKey" | grep -v grep | awk '{print $1}'`
+        if [ "${pid}" == "" ]; then
+          echo "$resName is not running."
+          exit 1
         fi
-        source ./$phony_dead_time_file;
-        curtime=$(date +%s);
-        if [ "$firstphonytime" == "" ]; then
-          #首次检测到资源僵死，将首次检测到僵死的时间写入僵死时间存储文件
-          #firstphonytime为用于保存当前资源实例僵死时间的变量名称，
-          #若当前节点存在多个自定义资源实例，该名称需要指定为不同的名称
-          echo "export firstphonytime=$curtime" > ./$phony_dead_time_file;
-          exit 0;
-        fi
-        dead_time=$(( $curtime - $firstphonytime ));
-        #若僵死时间大于等于用户设定的最大僵死时间，则立即杀死资源实例，否则不做处理正常退出
-        if [ $dead_time -ge $PHONY_MAX_TIME ]; then
-          echo "$resName is detected in a state of phony dead(T) and will be forcibly killed!"
-          kill -9 $pid
+        #查询资源实例进程状态
+        state=`cat /proc/$pid/status | grep "State" | awk '{print $2}'`
+        if [ "$state" == "T" ]; then
+          #僵死检查和处理
+          if [ ! -f $phony_dead_time_file ]; then
+            touch ./${phony_dead_time_file}
+            echo "export firstphonytime=''" > ./${phony_dead_time_file}
+          fi
+          source ./$phony_dead_time_file;
+          curtime=$(date +%s);
+          if [ "$firstphonytime" == "" ]; then
+            #首次检测到资源僵死，将首次检测到僵死的时间写入僵死时间存储文件
+            #firstphonytime为用于保存当前资源实例僵死时间的变量名称，
+            #若当前节点存在多个自定义资源实例，该名称需要指定为不同的名称
+            echo "export firstphonytime=$curtime" > ./$phony_dead_time_file;
+            exit 0;
+          fi
+          dead_time=$(( $curtime - $firstphonytime ));
+          #若僵死时间大于等于用户设定的最大僵死时间，则立即杀死资源实例，否则不做处理正常退出
+          if [ $dead_time -ge $PHONY_MAX_TIME ]; then
+            echo "$resName is detected in a state of phony dead(T) and will be forcibly killed!"
+            kill -9 $pid
+            rm ./${phony_dead_time_file} -f
+            sh ${shardingPath}/start.sh; exit $?
+          else
+            exit 0
+          fi
+        elif [ "$state" == "S" ]; then
+          #未处于僵死状态清理环境后正常退出
           rm ./${phony_dead_time_file} -f
-          sh ${shardingPath}/start.sh; exit $?
-        else
           exit 0
         fi
-      elif [ "$state" == "S" ]; then
-        #未处于僵死状态清理环境后正常退出
-        rm ./${phony_dead_time_file} -f
+      }
+      
+      #以下为固定接口无需更改，必须实现
+      if [ $1 == '-start' ]; then
+        exec_start $2
+      elif [ $1 == '-stop' ]; then
+        exec_stop $2
+      elif [ $1 == '-check' ]; then
+        exec_check $2
+      elif [ $1 == '-clean' ]; then
+        exec_stop $2
+      elif [ $1 == '-reg' ]; then
         exit 0
+      elif [ $1 == '-unreg' ]; then
+        exit 0
+      elif [ $1 == '-isreg' ]; then
+        exit 11
+      else
+        echo "Please confirm the input parameters."
+        exit 1
       fi
-    }
-    
-    #以下为固定接口无需更改，必须实现
-    if [ $1 == '-start' ]; then
-      exec_start $2
-    elif [ $1 == '-stop' ]; then
-      exec_stop $2
-    elif [ $1 == '-check' ]; then
-      exec_check $2
-    elif [ $1 == '-clean' ]; then
-      exec_stop $2
-    elif [ $1 == '-reg' ]; then
-      exit 0
-    elif [ $1 == '-unreg' ]; then
-      exit 0
-    elif [ $1 == '-isreg' ]; then
-      exit 11
-    else
-      echo "Please confirm the input parameters."
-      exit 1
-    fi
-    ```
-    
-    以上样例可以作为模板使用，用户主要需要修改的地方包括：
-    资源名称、资源binPath、用于过滤资源实例的命令关键词、用于保存首次检测到资源僵死时间的文件（可选）、最长僵死时间、记录首次僵死时间的变量名（如果同一节点存在多个不同的自定义资源实例）
+      ```
+      
+      以上样例可以作为模板使用，用户主要需要修改的地方包括：
+      资源名称、资源binPath、用于过滤资源实例的命令关键词、用于保存首次检测到资源僵死时间的文件（可选）、最长僵死时间、记录首次僵死时间的变量名（如果同一节点存在多个不同的自定义资源实例）
     
     2. 自定义资源配置文件cm_resource.json
        该文件位置为cmdir/cm_agent/cm_resource.json，配置该文件后需要重启集群
@@ -748,29 +748,30 @@ cm_ctl res --edit --res_name="VIP_az3" --add_inst="node_id=7,res_instance_id=600
 
 | 接口名                          | 地址                                                     | 参数                | 功能          |
 |---------------------------------|---------------------------------------------------------|---------------------|--------------|
-| `GRClusterStatus`               | https://ip:port/CMRestAPI/GRClusterStatus               | 无                  | 查看集群状态   |
-| `NodeStatus`                    | https://ip:port/CMRestAPI/NodeStatus                    | 无                  | 查看对应节点的状态         |
-| `dataUsage`                     | https://ip:port/CMRestAPI/dataUsage                     | 无                  | 查看worm使用率   |
-| `performance`                   | https://ip:port/CMRestAPI/performance                   | 无                  | 查看grserver到worm的平均时延 |
-| `wormFiles`                     | https://ip:port/CMRestAPI/wormFiles?filter=xxx&maxResult=xxx&sortBy=xxx    | filter: 可选参数，文件名过滤字段；maxResults:可选参数，默认值100，取值范围(0,1000],当传参超过1000时，赋值为1000，最大返回的文件数量   | 查看worm路径下的文件信息        |
-| `wormStatus`                    | https://ip:port/CMRestAPI/wormStatus     | 无   | 查看worm路径下各个目录的统计信息        |
-| `logFiles`                      | https://ip:port/CMRestAPI/logFiles?filter=xxx&maxResult=xxx&sortBy=xxx    | filter: 可选参数，文件名过滤字段；maxResults:可选参数，默认值100，取值范围(0,1000],当传参超过1000时，赋值为1000，最大返回的文件数量   | 查看$GR_HOME/log路径下的文件信息        |
-| `start`                        | https://ip:port/CMRestAPI/start?node=xxx     | node: 可选参数，节点id   | 启动集群/节点        |
-| `stop`                         | https://ip:port/CMRestAPI/stop?node=xxx     | node: 可选参数，节点id   | 停止集群/节点        |
-| `setCmCfg`                     | https://ip:port/CMRestAPI/setCmCfg?mode=xxx&name=xxx&value=xxx     | mode: 取值agent或server，选择cm_agent还是cm_server参数；name:参数名；value：参数值   | 设置cm参数        |
-| `setGrCfg`                     | https://ip:port/CMRestAPI/setGrCfg?name=xxx&value=xxx     | name:参数名；value：参数值   | 设置oGRecorder参数        |
-| `getCmCfg`                     | https://ip:port/CMRestAPI/getCmCfg?mode=xxx&name=xxx     | mode: 取值agent或server，选择cm_agent还是cm_server参数；name:参数名；   | 获取cm参数        |
-| `getGrCfg`                     | https://ip:port/CMRestAPI/getGrCfg?name=xxx     | name:参数名；   | 获取oGRecorder参数        |
-| `reloadCmCfg`                  | https://ip:port/CMRestAPI/reloadCmCfg?mode=xxx     | mode: 取值agent或server，选择cm_agent还是cm_server参数；   | 加载cm参数        |
-| `switchover`                   | https://ip:port/CMRestAPI/switchover?node=xxx     | node:节点id   | 切换oGRecorder主节点        |
-| `stopRestApi`                  | https://ip:port/CMRestAPI/stopRestApi     | 无   | 停止对应节点的restapi服务，建议在集群停止的时候执行，否则进程还会被cm重新拉起        |
-| `log`                          | https://ip:port/CMRestAPI/log?file=xxx&offset=xxx&count=xxx     | file:相对于$GR_HOME/log的相对路径；offset: 可选参数，>0, 默认值1，传输日志的其起始位置；count:可选参数，默认值100，取值范围(0,1000],当传参超过1000时，赋值为1000传输日志的行数  | 传输oGRecorder日志        |
+| `GRClusterStatus`               | <https://ip:port/CMRestAPI/GRClusterStatus>               | 无                  | 查看集群状态   |
+| `NodeStatus`                    | <https://ip:port/CMRestAPI/NodeStatus>                    | 无                  | 查看对应节点的状态         |
+| `dataUsage`                     | <https://ip:port/CMRestAPI/dataUsage>                     | 无                  | 查看worm使用率   |
+| `performance`                   | <https://ip:port/CMRestAPI/performance>                   | 无                  | 查看grserver到worm的平均时延 |
+| `wormFiles`                     | <https://ip:port/CMRestAPI/wormFiles?filter=xxx&maxResult=xxx&sortBy=xxx>    | filter: 可选参数，文件名过滤字段；maxResults:可选参数，默认值100，取值范围(0,1000],当传参超过1000时，赋值为1000，最大返回的文件数量   | 查看worm路径下的文件信息        |
+| `wormStatus`                    | <https://ip:port/CMRestAPI/wormStatus>     | 无   | 查看worm路径下各个目录的统计信息        |
+| `logFiles`                      | <https://ip:port/CMRestAPI/logFiles?filter=xxx&maxResult=xxx&sortBy=xxx>    | filter: 可选参数，文件名过滤字段；maxResults:可选参数，默认值100，取值范围(0,1000],当传参超过1000时，赋值为1000，最大返回的文件数量   | 查看$GR_HOME/log路径下的文件信息        |
+| `start`                        | <https://ip:port/CMRestAPI/start?node=xxx>     | node: 可选参数，节点id   | 启动集群/节点        |
+| `stop`                         | <https://ip:port/CMRestAPI/stop?node=xxx>     | node: 可选参数，节点id   | 停止集群/节点        |
+| `setCmCfg`                     | <https://ip:port/CMRestAPI/setCmCfg?mode=xxx&name=xxx&value=xxx>     | mode: 取值agent或server，选择cm_agent还是cm_server参数；name:参数名；value：参数值   | 设置cm参数        |
+| `setGrCfg`                     | <https://ip:port/CMRestAPI/setGrCfg?name=xxx&value=xxx>     | name:参数名；value：参数值   | 设置oGRecorder参数        |
+| `getCmCfg`                     | <https://ip:port/CMRestAPI/getCmCfg?mode=xxx&name=xxx>     | mode: 取值agent或server，选择cm_agent还是cm_server参数；name:参数名；   | 获取cm参数        |
+| `getGrCfg`                     | <https://ip:port/CMRestAPI/getGrCfg?name=xxx>     | name:参数名；   | 获取oGRecorder参数        |
+| `reloadCmCfg`                  | <https://ip:port/CMRestAPI/reloadCmCfg?mode=xxx>     | mode: 取值agent或server，选择cm_agent还是cm_server参数；   | 加载cm参数        |
+| `switchover`                   | <https://ip:port/CMRestAPI/switchover?node=xxx>     | node:节点id   | 切换oGRecorder主节点        |
+| `stopRestApi`                  | <https://ip:port/CMRestAPI/stopRestApi>     | 无   | 停止对应节点的restapi服务，建议在集群停止的时候执行，否则进程还会被cm重新拉起        |
+| `log`                          | <https://ip:port/CMRestAPI/log?file=xxx&offset=xxx&count=xxx>     | file:相对于$GR_HOME/log的相对路径；offset: 可选参数，>0, 默认值1，传输日志的其起始位置；count:可选参数，默认值100，取值范围(0,1000],当传参超过1000时，赋值为1000传输日志的行数  | 传输oGRecorder日志        |
 
 **其他使用说明：**  
 
 1. 安全相关。  
    (1) CMRestAPI默认使用http服务，支持配置访问白名单，可通过启动参数-w配置访问来源ip的白名单文件，白名单文件配置格式为每行一个ip地址;
    (2) 若要使用https服务，则可以在启动时jar包时指定系统参数server.ssl相关参数来是CMRestAPI启动https服务，或将相关参数写入application.properties文件然后在启动命令中指定配置文件，或配置源码resource目录下的application.properties文件然后自行编译，自定义配置参数示例:
+
 ```
 -Dserver.port=服务监听端口 -Dserver.ssl.key-store=秘钥文件路径 -Dserver.ssl.key-store-password=秘钥文件密码 -Dserver.ssl.key-store-type=秘钥类型  
 如：  
@@ -799,9 +800,11 @@ java -jar -Dspring.config.location=/configpath/application.properties cmrestapi-
 
 4. oGRecorder部署场景下相关说明。
    (1) 在oGRecorder场景下，通过安装脚本安装默认使用https方式，且需要验证ssl证书。因此在使用curl命令访问接口时，需要通过--cert、--cacert、--cert-type指定客户端证书、根证书、证书格式。举例如下(ip、port根据实际情况修改)：
+
 ```
 curl -s --cacert $GAUSSHOME/share/sslcert/restapi/cacert.pem --cert $GAUSSHOME/share/sslcert/restapi/client.p12:"" --cert-type P12 --resolve "server:port:ip" "https://server:port/CMRestAPI/wormFiles"
 ```
+
    (2) stopRestApi为POST类型接口。
    (3) oGRecorder场景下，可以通过脚本和oGRecorder一起部署。参考链接[部署流程](https://docs.opengauss.org/zh/docs/latest/tool_and_commandreference/ogrecorder/black_box_deployment_introduction.html#数据保险柜部署介绍)
 
@@ -1044,103 +1047,103 @@ CM支持多个三方IP检测(third_party_gateway_ip)，可以预防CM脑裂。
 
 1. 下载社区发布的容器镜像
 
-  x86_64平台：
+    x86_64平台：
 
-  ```
-  docker pull swr.cn-south-1.myhuaweicloud.com/opengauss/x86_64/opengauss:X.X.X
-  docker tag swr.cn-south-1.myhuaweicloud.com/opengauss/x86_64/opengauss:X.X.X opengauss:X.X.X
-  ```
+    ```
+    docker pull swr.cn-south-1.myhuaweicloud.com/opengauss/x86_64/opengauss:X.X.X
+    docker tag swr.cn-south-1.myhuaweicloud.com/opengauss/x86_64/opengauss:X.X.X opengauss:X.X.X
+    ```
 
-  arm平台:
+    arm平台:
 
-  ```
-  docker pull swr.cn-south-1.myhuaweicloud.com/opengauss/arm/opengauss:X.X.X
-  docker tag swr.cn-south-1.myhuaweicloud.com/opengauss/arm/opengauss:X.X.X opengauss:X.X.X
-  ```
+    ```
+    docker pull swr.cn-south-1.myhuaweicloud.com/opengauss/arm/opengauss:X.X.X
+    docker tag swr.cn-south-1.myhuaweicloud.com/opengauss/arm/opengauss:X.X.X opengauss:X.X.X
+    ```
 
 2. 创建容器网络
 
-##### 如果多个容器部署在一台机器上，创建一个普通的容器网络即可
+  **如果多个容器部署在一台机器上，创建一个普通的容器网络即可**
 
-  `docker network create --subnet=172.11.0.0/24 og-network`
+    `docker network create --subnet=172.11.0.0/24 og-network`
 
-##### 如果容器跨多个节点部署，即要求节点间的容器能够进行通信。业界有多种实现方式，这里提供一种作为参考，用户可以自行选择
+  **如果容器跨多个节点部署，即要求节点间的容器能够进行通信。业界有多种实现方式，这里提供一种作为参考，用户可以自行选择**
 
-  选择一台部署progrium/consul容器：
+    选择一台部署progrium/consul容器：
 
-  ```
-  docker pull progrium/consul
-  docker run -d -p 8500:8500 -h consul --name consul progrium/consul -server -bootstrap
-  ```
+    ```
+    docker pull progrium/consul
+    docker run -d -p 8500:8500 -h consul --name consul progrium/consul -server -bootstrap
+    ```
 
-  每个节点的docker都进行修改：
-  vim /usr/lib/systemd/system/docker.service
-  在ExecStart一栏后面追加：
+    每个节点的docker都进行修改：
+    vim /usr/lib/systemd/system/docker.service
+    在ExecStart一栏后面追加：
 
-  ```
-  -H tcp://0.0.0.0:2376 -H unix:///var/run/docker.sock --cluster-store=consul://192.168.0.94:8500 --cluster-advertise=eth0:2376
-  ```
+    ```
+    -H tcp://0.0.0.0:2376 -H unix:///var/run/docker.sock --cluster-store=consul://192.168.0.94:8500 --cluster-advertise=eth0:2376
+    ```
 
-  **192.168.0.94** 是部署consul的机器ip。
+    **192.168.0.94** 是部署consul的机器ip。
 
-  修改完成后需要重启docker：
+    修改完成后需要重启docker：
 
-  ```
-  systemctl daemon-reload
-  systemctl restart docker
-  ```
+    ```
+    systemctl daemon-reload
+    systemctl restart docker
+    ```
 
-  创建overlay网络
+    创建overlay网络
 
-  ```
-  docker network create -d overlay --subnet 10.22.1.0/24  --gateway 10.22.1.1 og-network
-  ```
+    ```
+    docker network create -d overlay --subnet 10.22.1.0/24  --gateway 10.22.1.1 og-network
+    ```
 
 3. 启动多个容器实例
 
-  ```
-  # ip需要和容器网络在同一网段，几个实例的ip和节点名称不能重复。如下示例1主2备：
+    ```
+    # ip需要和容器网络在同一网段，几个实例的ip和节点名称不能重复。如下示例1主2备：
 
-  primary_nodeip="172.11.0.2"
-  standby1_nodeip="172.11.0.3"
-  standby2_nodeip="172.11.0.4"
-  primary_nodename=primary
-  standby1_nodename=standby1
-  standby2_nodename=standby2
+    primary_nodeip="172.11.0.2"
+    standby1_nodeip="172.11.0.3"
+    standby2_nodeip="172.11.0.4"
+    primary_nodename=primary
+    standby1_nodename=standby1
+    standby2_nodename=standby2
 
-  OG_NETWORK=og-network
-  GS_PASSWORD=xxxxxx
+    OG_NETWORK=og-network
+    GS_PASSWORD=xxxxxx
 
-  # 启动实例1
-  docker run -d -it -P --ulimit nofile=1000000:1000000 --sysctl kernel.sem="250 6400000 1000 25600" --security-opt seccomp=unconfined -v /data/opengauss_volume:/volume --name opengauss-01 --net ${OG_NETWORK} --ip "$primary_nodeip" -h=$primary_nodename -e primaryhost="$primary_nodeip" -e primaryname="$primary_nodename" -e standbyhosts="$standby1_nodeip, $standby2_nodeip" -e standbynames="$standby1_nodename, $standby2_nodename" -e GS_PASSWORD=$GS_PASSWORD opengauss:X.X.X 
+    # 启动实例1
+    docker run -d -it -P --ulimit nofile=1000000:1000000 --sysctl kernel.sem="250 6400000 1000 25600" --security-opt seccomp=unconfined -v /data/opengauss_volume:/volume --name opengauss-01 --net ${OG_NETWORK} --ip "$primary_nodeip" -h=$primary_nodename -e primaryhost="$primary_nodeip" -e primaryname="$primary_nodename" -e standbyhosts="$standby1_nodeip, $standby2_nodeip" -e standbynames="$standby1_nodename, $standby2_nodename" -e GS_PASSWORD=$GS_PASSWORD opengauss:X.X.X 
 
-  # 启动实例2
-  docker run -d -it -P --ulimit nofile=1000000:1000000 --sysctl kernel.sem="250 6400000 1000 25600" --security-opt seccomp=unconfined -v /data/opengauss_volume:/volume --name opengauss-02 --net ${OG_NETWORK} --ip "$standby1_nodeip" -h=$standby1_nodename -e primaryhost="$primary_nodeip" -e primaryname="$primary_nodename" -e standbyhosts="$standby1_nodeip, $standby2_nodeip" -e standbynames="$standby1_nodename, $standby2_nodename" -e GS_PASSWORD=$GS_PASSWORD opengauss:X.X.X
+    # 启动实例2
+    docker run -d -it -P --ulimit nofile=1000000:1000000 --sysctl kernel.sem="250 6400000 1000 25600" --security-opt seccomp=unconfined -v /data/opengauss_volume:/volume --name opengauss-02 --net ${OG_NETWORK} --ip "$standby1_nodeip" -h=$standby1_nodename -e primaryhost="$primary_nodeip" -e primaryname="$primary_nodename" -e standbyhosts="$standby1_nodeip, $standby2_nodeip" -e standbynames="$standby1_nodename, $standby2_nodename" -e GS_PASSWORD=$GS_PASSWORD opengauss:X.X.X
 
-  # 启动实例3
-  docker run -d -it -P --ulimit nofile=1000000:1000000 --sysctl kernel.sem="250 6400000 1000 25600" --security-opt seccomp=unconfined -v /data/opengauss_volume:/volume --name opengauss-03 --net ${OG_NETWORK} --ip "$standby2_nodeip" -h=$standby2_nodename -e primaryhost="$primary_nodeip" -e primaryname="$primary_nodename" -e standbyhosts="$standby1_nodeip, $standby2_nodeip" -e standbynames="$standby1_nodename, $standby2_nodename" -e GS_PASSWORD=$GS_PASSWORD opengauss:X.X.X
-  ```
+    # 启动实例3
+    docker run -d -it -P --ulimit nofile=1000000:1000000 --sysctl kernel.sem="250 6400000 1000 25600" --security-opt seccomp=unconfined -v /data/opengauss_volume:/volume --name opengauss-03 --net ${OG_NETWORK} --ip "$standby2_nodeip" -h=$standby2_nodename -e primaryhost="$primary_nodeip" -e primaryname="$primary_nodename" -e standbyhosts="$standby1_nodeip, $standby2_nodeip" -e standbynames="$standby1_nodename, $standby2_nodename" -e GS_PASSWORD=$GS_PASSWORD opengauss:X.X.X
+    ```
 
 4. 登录容器
    
-   进入容器
+    进入容器
 
-   ```
-   docker exec -ti <containerid> /bin/bash
-   su - omm
-   ```
+    ```
+    docker exec -ti <containerid> /bin/bash
+    su - omm
+    ```
 
-   查看集群状态
+    查看集群状态
 
-   ```
-   cm_ctl query -Cvid
-   ```
+    ```
+    cm_ctl query -Cvid
+    ```
 
-   连接接数据库
+    连接接数据库
 
-   ```
-   gsql -d postgres -r
-   ```
+    ```
+    gsql -d postgres -r
+    ```
 
 ## CM支持最大可用模式动态调整
 

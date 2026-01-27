@@ -25,4 +25,3 @@ Value range: a string. It must comply with the identifier naming convention.
 ## Helpful Links<a name="section3791104752012"></a>
 
 [CREATE MODEL](create_model.md)  and  [PREDICT BY](predict_by.md)
-

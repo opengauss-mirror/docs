@@ -1,18 +1,18 @@
 # Logical Replication Functions<a name="EN-US_TOPIC_0289900082"></a>
 
--   pg\_create\_logical\_replication\_slot\('slot\_name', 'plugin\_name'\)
+- pg\_create\_logical\_replication\_slot\('slot\_name', 'plugin\_name'\)
 
     Description: Creates a logical replication slot.
 
     Parameter description:
 
-    -   slot\_name
+    - slot\_name
 
         Indicates the name of the streaming replication slot.
 
         Value range: a string of characters, which can contain only lowercase letters, digits, underscores (_), question marks (?), hyphens (-), and periods (.). The '.' or '..' cannot be used as a replication slot name.
 
-    -   plugin\_name
+    - plugin\_name
 
         Plug-in name
 
@@ -22,19 +22,19 @@
 
     Note: The first return value is the slot name, and the second one is the start LSN for decoding in the logical replication slot. Users who invoke this function must have the SYSADMIN permission, the REPLICATION permission, or inherit the gs\_role\_replication permission of the built-in role. Currently, this function can be invoked only on the host.
 
--   pg\_create\_physical\_replication\_slot\('slot\_name', 'isDummyStandby'\)
+- pg\_create\_physical\_replication\_slot\('slot\_name', 'isDummyStandby'\)
 
     Description: Creates a physical replication slot.
 
     Parameter description:
 
-    -   slot\_name
+    - slot\_name
 
         Indicates the name of the streaming replication slot.
 
         Value range: a string of characters, which can contain only lowercase letters, digits, underscores (_), question marks (?), hyphens (-), and periods (.). The '.' or '..' cannot be used as a replication slot name.
 
-    -   isDummyStandby
+    - isDummyStandby
 
         Specifies whether the replication slot is created by connecting the standby node to the primary node.
 
@@ -44,13 +44,13 @@
 
     Note: Users who invoke this function must have the SYSADMIN permission, the REPLICATION permission, or inherit the gs\_role\_replication permission of the built-in role. Currently, primary/standby/secondary deployment is not supported by default.
 
--   pg\_drop\_replication\_slot\('slot\_name'\)
+- pg\_drop\_replication\_slot\('slot\_name'\)
 
     Description: Deletes a streaming replication slot.
 
     Parameter description:
 
-    -   slot\_name
+    - slot\_name
 
         Indicates the name of the streaming replication slot.
 
@@ -60,25 +60,25 @@
 
     Note: Users who invoke this function must have the SYSADMIN permission, the REPLICATION permission, or inherit the gs\_role\_replication permission of the built-in role. Currently, this function can be invoked only on the host.
 
--   <a name="zh-cn_topic_0283137128_zh-cn_topic_0237121996_li11712645125"></a>pg\_logical\_slot\_peek\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)
+- <a name="zh-cn_topic_0283137128_zh-cn_topic_0237121996_li11712645125"></a>pg\_logical\_slot\_peek\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)
 
     Description: Performs decoding but does not go to the next streaming replication slot. (The decoding result will be returned again during the next decoding.)
 
     Parameter description:
 
-    -   slot\_name
+    - slot\_name
 
         Indicates the name of the streaming replication slot.
 
         Value range: a string of characters, which can contain only lowercase letters, digits, underscores (_), question marks (?), hyphens (-), and periods (.). The '.' or '..' cannot be used as a replication slot name.
 
-    -   LSN
+    - LSN
 
         Indicates a target LSN. Decoding is performed only when an LSN is less than or equal to this value.
 
         Value range: a string, in the format of xlogid/xrecoff, for example, '1/2AAFC60' (If this parameter is set to a null value, the target LSN indicating the end position of decoding is not specified.)
 
-    -   upto\_nchanges
+    - upto\_nchanges
 
         Specifies the number of decoded records (including the **begin** and **commit** timestamps). Assume that there are three transactions, which involve 3, 5, and 7 records, respectively. If **upto\_nchanges** is set to **4**, 8 records of the first two transactions will be decoded. Specifically, decoding is stopped when the number of decoded records exceeds the value of **upto\_nchanges** after decoding in the first two transactions is complete.
 
@@ -88,52 +88,52 @@
         >
         >If any of the **LSN** and **upto\_nchanges** values are reached, decoding ends.
 
-    -   **options**: Specifies optional parameters, consisting of **options\_name** and **options\_value**.
-        -   include-xids
+    - **options**: Specifies optional parameters, consisting of **options\_name** and **options\_value**.
+        - include-xids
 
             Specifies whether the decoded **data** column contains XID information.
 
             Valid value: **0** and **1**. The default value is **1**.
 
-            -   **0**: The decoded **data** column does not contain XID information.
-            -   **1**: The decoded **data** column contains XID information.
+            - **0**: The decoded **data** column does not contain XID information.
+            - **1**: The decoded **data** column contains XID information.
 
-        -   skip-empty-xacts
+        - skip-empty-xacts
 
             Specifies whether to ignore empty transaction information during decoding.
 
             Valid value: **0** and **1**. The default value is **0**.
 
-            -   **0**: The empty transaction information is not ignored during decoding.
-            -   **1**: The empty transaction information is ignored during decoding.
+            - **0**: The empty transaction information is not ignored during decoding.
+            - **1**: The empty transaction information is ignored during decoding.
 
-        -   include-timestamp
+        - include-timestamp
 
             Specifies whether decoded information contains the **commit** timestamp.
 
             Valid value: **0** and **1**. The default value is **0**.
 
-            -   **0**: The decoded information does not contain the **commit** timestamp.
-            -   **1**: The decoded information contains the **commit** timestamp.
+            - **0**: The decoded information does not contain the **commit** timestamp.
+            - **1**: The decoded information contains the **commit** timestamp.
 
-        -   only-local
+        - only-local
 
             Specifies whether to decode only local logs.
 
             Valid value: **0** and **1**. The default value is **1**.
 
-            -   **0**: Non-local logs and local logs are decoded.
-            -   **1**: Only local logs are decoded.
+            - **0**: Non-local logs and local logs are decoded.
+            - **1**: Only local logs are decoded.
 
-        -   force-binary
+        - force-binary
 
             Specifies whether to output the decoded result in binary format.
 
             Value range: **0**
 
-            -   **0**: The decoding result is output in text format.
+            - **0**: The decoding result is output in text format.
 
-        -   white-table-list
+        - white-table-list
 
             Whitelist parameter, including the schema and table name to be decoded.
 
@@ -151,14 +151,13 @@
         
           Value range: an integer ranging from 0 to 100. The default value is **0**, indicating that memory control is disabled.
 
-
     Return type: text, xid, text
     
     Note: The function returns the decoding results. Each decoding result contains three columns, corresponding to the above return types and indicating the LSN, XID, and decoded content, respectively.
     
     Users who invoke this function must have the SYSADMIN permission, the REPLICATION permission, or inherit the gs\_role\_replication permission of the built-in role.
 
--   pg\_logical\_slot\_get\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)
+- pg\_logical\_slot\_get\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)
 
     Description: Performs decoding and goes to the next streaming replication slot.
 
@@ -166,25 +165,25 @@
 
     Note: Users who invoke this function must have the SYSADMIN permission, the REPLICATION permission, or inherit the gs\_role\_replication permission of the built-in role. Currently, this function can be invoked only on the host.
 
--   <a name="li15187162457"></a>pg\_logical\_slot\_peek\_binary\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)
+- <a name="li15187162457"></a>pg\_logical\_slot\_peek\_binary\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)
 
     Description: Performs decoding in binary mode and does not go to the next streaming replication slot. (The decoded data can be obtained again during the next decoding.)
 
     Parameter description:
 
-    -   slot\_name
+    - slot\_name
 
         Indicates the name of the streaming replication slot.
 
         Value range: a string of characters, which can contain only lowercase letters, digits, underscores (_), question marks (?), hyphens (-), and periods (.). The '.' or '..' cannot be used as a replication slot name.
 
-    -   LSN
+    - LSN
 
         Indicates a target LSN. Decoding is performed only when an LSN is less than or equal to this value.
 
         Value range: a string, in the format of xlogid/xrecoff, for example, '1/2AAFC60' (If this parameter is set to a null value, the target LSN indicating the end position of decoding is not specified.)
 
-    -   upto\_nchanges
+    - upto\_nchanges
 
         Specifies the number of decoded records (including the **begin** and **commit** timestamps). Assume that there are three transactions, which involve 3, 5, and 7 records, respectively. If **upto\_nchanges** is set to **4**, 8 records of the first two transactions will be decoded. Specifically, decoding is stopped when the number of decoded records exceeds the value of **upto\_nchanges** after decoding in the first two transactions is complete.
 
@@ -194,61 +193,60 @@
         >
         >If any of the **LSN** and **upto\_nchanges** values are reached, decoding ends.
 
-    -   **options**: Specifies optional parameters, consisting of **options\_name** and **options\_value**.
-        -   include-xids
+    - **options**: Specifies optional parameters, consisting of **options\_name** and **options\_value**.
+        - include-xids
 
             Specifies whether the decoded **data** column contains XID information.
 
             Valid value: **0** and **1**. The default value is **1**.
 
-            -   **0**: The decoded **data** column does not contain XID information.
-            -   **1**: The decoded **data** column contains XID information.
+            - **0**: The decoded **data** column does not contain XID information.
+            - **1**: The decoded **data** column contains XID information.
 
-        -   skip-empty-xacts
+        - skip-empty-xacts
 
             Specifies whether to ignore empty transaction information during decoding.
 
             Valid value: **0** and **1**. The default value is **0**.
 
-            -   **0**: The empty transaction information is not ignored during decoding.
-            -   **1**: The empty transaction information is ignored during decoding.
+            - **0**: The empty transaction information is not ignored during decoding.
+            - **1**: The empty transaction information is ignored during decoding.
 
-        -   include-timestamp
+        - include-timestamp
 
             Specifies whether decoded information contains the **commit** timestamp.
 
             Valid value: **0** and **1**. The default value is **0**.
 
-            -   **0**: The decoded information does not contain the **commit** timestamp.
-            -   **1**: The decoded information contains the **commit** timestamp.
+            - **0**: The decoded information does not contain the **commit** timestamp.
+            - **1**: The decoded information contains the **commit** timestamp.
 
-        -   only-local
+        - only-local
 
             Specifies whether to decode only local logs.
 
             Valid value: **0** and **1**. The default value is **1**.
 
-            -   **0**: Non-local logs and local logs are decoded.
-            -   **1**: Only local logs are decoded.
+            - **0**: Non-local logs and local logs are decoded.
+            - **1**: Only local logs are decoded.
 
-        -   force-binary
+        - force-binary
 
             Specifies whether to output the decoded result in binary format.
 
             Value range: **0** and **1**. The default value is **0**. The result is output in binary format.
 
-        -   white-table-list
+        - white-table-list
 
             Whitelist parameter, including the schema and table name to be decoded.
 
             Value range: a string that contains table names in the whitelist. Different tables are separated by commas (,). An asterisk (\*) is used to fuzzily match all tables. Schema names and table names are separated by periods (.). No space character is allowed. Example: select \* from pg\_logical\_slot\_peek\_binary\_changes\('slot1', NULL, 4096, 'white-table-list', 'public.t1,public.t2'\);
 
-
     Return type: text, xid, bytea
     
     Note: The function returns the decoding results. Each decoding result contains three columns, corresponding to the above return types and indicating the LSN, XID, and decoded content in binary format, respectively. Users who invoke this function must have the SYSADMIN permission, the REPLICATION permission, or inherit the gs\_role\_replication permission of the built-in role.
 
--   pg\_logical\_slot\_get\_binary\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)
+- pg\_logical\_slot\_get\_binary\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)
 
     Description: Performs decoding in binary mode and does not go to the next streaming replication slot.
 
@@ -256,19 +254,19 @@
 
     Note: Users who invoke this function must have the SYSADMIN permission, the REPLICATION permission, or inherit the gs\_role\_replication permission of the built-in role.
 
--   pg\_replication\_slot\_advance \('slot\_name', 'LSN'\)
+- pg\_replication\_slot\_advance \('slot\_name', 'LSN'\)
 
     Description: Directly goes to the streaming replication slot for a specified LSN, without outputting any decoding result.
 
     Parameter description:
 
-    -   slot\_name
+    - slot\_name
 
         Indicates the name of the streaming replication slot.
 
         Value range: a string of characters, which can contain only lowercase letters, digits, underscores (_), question marks (?), hyphens (-), and periods (.). The '.' or '..' cannot be used as a replication slot name.
 
-    -   LSN
+    - LSN
 
         Indicates a target LSN. Next decoding will be performed only in transactions whose commit position is greater than this value. If an input LSN is smaller than the position recorded in the current streaming replication slot, the function is directly returned. If the input LSN is greater than the LSN of the current physical log, the latter LSN will be directly used for decoding.
 
@@ -278,33 +276,33 @@
 
     Note: A return result contains the slot name and LSN that is actually used for decoding. Users who invoke this function must have the SYSADMIN permission, the REPLICATION permission, or inherit the gs\_role\_replication permission of the built-in role. Currently, this function can be invoked only on the host.
 
--   pg\_logical\_get\_area\_changes\('LSN\_start', 'LSN\_end', upto\_nchanges, 'decoding\_plugin', 'xlog\_path', 'options\_name', 'options\_value'\)
+- pg\_logical\_get\_area\_changes\('LSN\_start', 'LSN\_end', upto\_nchanges, 'decoding\_plugin', 'xlog\_path', 'options\_name', 'options\_value'\)
 
     Description: Specifies an LSN range or an Xlog file for decoding when no DDL operation is performed.
 
     The constraints are as follows:
 
-    1.  When the API is called, only when **wal\_level** is set to **logical**, the generated log files can be parsed. If the used Xlog file is not of the logical level, the decoded content does not have the corresponding value and type, and there is no other impact.
-    2.  The Xlog file can be parsed only by a copy of a fully homogeneous DN to ensure that the metadata corresponding to the data can be found and no DDL or VACUUM FULL operation is performed.
-    3.  You can find the Xlog to be parsed.
-    4.  Do not read too many Xlog files at a time. You are advised to read one Xlog file at a time. It is estimated that the memory occupied by one Xlog file is two to three times the size of the Xlog file.
-    5.  The Xlog file before scale-out cannot be decoded.
+    1. When the API is called, only when **wal\_level** is set to **logical**, the generated log files can be parsed. If the used Xlog file is not of the logical level, the decoded content does not have the corresponding value and type, and there is no other impact.
+    2. The Xlog file can be parsed only by a copy of a fully homogeneous DN to ensure that the metadata corresponding to the data can be found and no DDL or VACUUM FULL operation is performed.
+    3. You can find the Xlog to be parsed.
+    4. Do not read too many Xlog files at a time. You are advised to read one Xlog file at a time. It is estimated that the memory occupied by one Xlog file is two to three times the size of the Xlog file.
+    5. The Xlog file before scale-out cannot be decoded.
 
     Parameter description:
 
-    -   LSN\_start
+    - LSN\_start
 
         Specifies the LSN at the start of decoding.
 
         Value range: a string, in the format of xlogid/xrecoff, for example, '1/2AAFC60' (If this parameter is set to a null value, the target LSN indicating the end position of decoding is not specified.)
 
-    -   LSN\_end
+    - LSN\_end
 
         Specifies the LSN at the end of decoding.
 
         Value range: a string, in the format of *xlogid*/*xrecoff*, for example, 1/2AAFC60 (If this parameter is set to a null value, the target LSN indicating the end position of decoding is not specified.)
 
-    -   upto\_nchanges
+    - upto\_nchanges
 
         Specifies the number of decoded records (including the **begin** and **commit** timestamps). Assume that there are three transactions, which involve 3, 5, and 7 records, respectively. If **upto\_nchanges** is set to **4**, 8 records of the first two transactions will be decoded. Specifically, decoding is stopped when the number of decoded records exceeds the value of **upto\_nchanges** after decoding in the first two transactions is complete.
 
@@ -314,19 +312,19 @@
         >
         >If any of the **LSN** and **upto\_nchanges** values are reached, decoding ends.
 
-    -   decoding\_plugin
+    - decoding\_plugin
 
     Decoding plug-in, which is a .so plug-in that specifies the output format of the decoded content.
 
     Value range: **mppdb\_ decoding** and **sql\_ decoding**.
 
-    -   xlog\_path
+    - xlog\_path
 
     Decoding plug-in, which specifies the Xlog absolute path and file level of the decoding file.
 
     Value range: **NULL** or a character string of the absolute path of the Xlog file.
 
-    -   **options**: This parameter is optional and consists of a series of **options\_name** and **options\_value**. You can retain the default value. For details, see **pg\_logical\_slot\_peek\_changes**.
+    - **options**: This parameter is optional and consists of a series of **options\_name** and **options\_value**. You can retain the default value. For details, see **pg\_logical\_slot\_peek\_changes**.
 
     Example:
 
@@ -353,7 +351,7 @@
     ......
     ```
 
--   pg\_get\_replication\_slots\(\)
+- pg\_get\_replication\_slots\(\)
 
     Description: Obtains the replication slot list.
 
@@ -373,7 +371,7 @@
     (5 rows)
     ```
 
--   gs\_get\_parallel\_decode\_status\(\)
+- gs\_get\_parallel\_decode\_status\(\)
 
     Description: Monitors the length of the read log queue and decoding result queue of each decoding thread to locate the concurrent decoding performance bottleneck.
 
@@ -392,7 +390,7 @@
 
     Note: In the returned value, slot\_name indicates the replication slot name, parallel\_decode\_num indicates the number of parallel decoding threads in the replication slot, read\_change\_queue\_length indicates the current length of the log queue read by each decoding thread, and decode\_change\_queue\_length indicates the current length of the decoding result queue of each decoding thread.
 
--   pg\_replication\_origin\_create \(node\_name\)
+- pg\_replication\_origin\_create \(node\_name\)
 
     Description: Creates a replication source with a given external name and returns the internal ID assigned to it.
 
@@ -400,7 +398,7 @@
 
     Parameter description:
 
-    -   node\_name
+    - node\_name
 
         Specifies the name of the replication source to be created.
 
@@ -408,7 +406,7 @@
 
     Return type: oid
 
--   pg\_replication\_origin\_drop \(node\_name\)
+- pg\_replication\_origin\_drop \(node\_name\)
 
     Description: Deletes a previously created replication source, including any associated replay progress.
 
@@ -416,14 +414,13 @@
 
     Parameter description:
 
-    -   node\_name
+    - node\_name
 
         Specifies the name of the replication source to be deleted.
 
         Value range: a string, supporting only letters, digits, and the following special characters: \_?-.
 
-
--   pg\_replication\_origin\_oid \(node\_name\)
+- pg\_replication\_origin\_oid \(node\_name\)
 
     Description: Searches for a replication source by name and returns the internal ID. If no such replication source is found, an error is thrown.
 
@@ -431,7 +428,7 @@
 
     Parameter description:
 
-    -   node\_name
+    - node\_name
 
         Specifies the name of the replication source to be queried.
 
@@ -439,7 +436,7 @@
 
     Return type: oid
 
--   pg\_replication\_origin\_session\_setup \(node\_name\)
+- pg\_replication\_origin\_session\_setup \(node\_name\)
 
     Description: Marks the current session for replaying from a given origin, allowing you to trace replay progress. This function can be used only when no origin is selected. Run the **pg\_replication\_origin\_session\_reset** command to cancel the configuration.
 
@@ -447,20 +444,19 @@
 
     Parameter description:
 
-    -   node\_name
+    - node\_name
 
         Specifies the name of the replication source.
 
         Value range: a string, supporting only letters, digits, and the following special characters: \_?-.
 
-
--   pg\_replication\_origin\_session\_reset \(\)
+- pg\_replication\_origin\_session\_reset \(\)
 
     Description: Cancels the **pg\_replication\_origin\_session\_setup\(\)** effect.
 
     Note: Users who call this function must have the SYSADMIN permission.
 
--   pg\_replication\_origin\_session\_is\_setup \(\)
+- pg\_replication\_origin\_session\_is\_setup \(\)
 
     Description: Returns a true value if a replication source is selected in the current session.
 
@@ -468,7 +464,7 @@
 
     Return type: Boolean
 
--   pg\_replication\_origin\_session\_progress \(flush\)
+- pg\_replication\_origin\_session\_progress \(flush\)
 
     Description: Returns the replay position of the replication source selected in the current session.
 
@@ -476,7 +472,7 @@
 
     Parameter description:
 
-    -   flush
+    - flush
 
         Specifies whether the corresponding local transaction has been flushed to disks.
 
@@ -484,7 +480,7 @@
 
     Return type: LSN
 
--   pg\_replication\_origin\_xact\_setup \(origin\_lsn, origin\_timestamp\)
+- pg\_replication\_origin\_xact\_setup \(origin\_lsn, origin\_timestamp\)
 
     Description: Marks the current transaction as recommitted at a given LSN and timestamp. This function can be invoked only when **pg\_replication\_origin\_session\_setup** is used to select a replication source.
 
@@ -492,26 +488,25 @@
 
     Parameter description:
 
-    -   origin\_lsn
+    - origin\_lsn
 
         Position for replaying the replication source.
 
         Value range: LSN
 
-    -   origin\_timestamp
+    - origin\_timestamp
 
         Specifies the time when a transaction is committed.
 
         Value range: timestamp with time zone
 
-
--   pg\_replication\_origin\_xact\_reset \(\)
+- pg\_replication\_origin\_xact\_reset \(\)
 
     Description: Cancels the **pg\_replication\_origin\_xact\_setup\(\)** effect.
 
     Note: Users who call this function must have the SYSADMIN permission.
 
--   pg\_replication\_origin\_advance \(node\_name, lsn\)
+- pg\_replication\_origin\_advance \(node\_name, lsn\)
 
     Description:
 
@@ -523,20 +518,19 @@
 
     Parameter description:
 
-    -   node\_name
+    - node\_name
 
         Specifies the name of an existing replication source.
 
         Value range: a string, supporting only letters, digits, and the following special characters: \_?-.
 
-    -   lsn
+    - lsn
 
         Position for replaying the replication source.
 
         Value range: LSN
 
-
--   pg\_replication\_origin\_progress \(node\_name, flush\)
+- pg\_replication\_origin\_progress \(node\_name, flush\)
 
     Description: Returns the position for replaying the given replication source.
 
@@ -544,20 +538,19 @@
 
     Parameter description:
 
-    -   node\_name
+    - node\_name
 
         Specifies the name of the replication source.
 
         Value range: a string, supporting only letters, digits, and the following special characters: \_?-.
 
-    -   flush
+    - flush
 
         Specifies whether the corresponding local transaction has been flushed to disks.
 
         Value range: Boolean
 
-
--   pg\_show\_replication\_origin\_status\(\)
+- pg\_show\_replication\_origin\_status\(\)
 
     Description: Displays the replication status of the replication source.
 
@@ -565,18 +558,18 @@
 
     Return type:
 
-    -   **local\_id**: OID, which specifies the ID of the replication source.
-    -   **external\_id**: text, which specifies the name of the replication source.
-    -   **remote\_lsn**: LSN of the replication source.
-    -   **local\_lsn**: local LSN.
+    - **local\_id**: OID, which specifies the ID of the replication source.
+    - **external\_id**: text, which specifies the name of the replication source.
+    - **remote\_lsn**: LSN of the replication source.
+    - **local\_lsn**: local LSN.
 
--   pg\_get\_publication\_tables\(pub\_name\)
+- pg\_get\_publication\_tables\(pub\_name\)
 
     Description: Returns the relid list of tables to be published based on the publication name.
 
     Parameter description:
 
-    -   pub\_name
+    - pub\_name
 
         Specifies the name of an existing publication.
 
@@ -584,7 +577,7 @@
 
     Return type: relid list
 
--   pg\_stat\_get\_subscription\(sub\_oid oid\) → record
+- pg\_stat\_get\_subscription\(sub\_oid oid\) → record
 
     Description:
 
@@ -592,7 +585,7 @@
 
     Parameter description:
 
--   subid
+- subid
 
     Subscription OID
 
@@ -600,10 +593,10 @@
 
     Return type:
 
-    -   **relid**: OID of the table.
-    -   **pid**: thread\_id, which indicates the thread ID of the background apply/sync thread.
-    -   **received\_lsn**: pg_lsn, which indicates the latest LSN received from the publisher.
-    -   **last\_msg\_send\_time**: timestamp, which indicates the time when the last message is sent from the publisher.
-    -   **last\_msg\_receipt\_time**: timestamp, which indicates the time when the last message is received by the subscriber.
-    -   **latest\_end\_lsn**: pg_lsn, which indicates the LSN of the publisher when the last keepalive message is received.
-    -   **latest\_end\_time**: timstamp, which indicates the time when the last keepalive message is received.
+    - **relid**: OID of the table.
+    - **pid**: thread\_id, which indicates the thread ID of the background apply/sync thread.
+    - **received\_lsn**: pg_lsn, which indicates the latest LSN received from the publisher.
+    - **last\_msg\_send\_time**: timestamp, which indicates the time when the last message is sent from the publisher.
+    - **last\_msg\_receipt\_time**: timestamp, which indicates the time when the last message is received by the subscriber.
+    - **latest\_end\_lsn**: pg_lsn, which indicates the LSN of the publisher when the last keepalive message is received.
+    - **latest\_end\_time**: timstamp, which indicates the time when the last keepalive message is received.

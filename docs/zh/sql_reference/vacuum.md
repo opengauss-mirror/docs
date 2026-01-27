@@ -118,6 +118,3 @@ openGauss=# VACUUM (VERBOSE, ANALYZE) tpcds.reason;
 openGauss=# DROP INDEX ds_reason_index1 CASCADE;
 openGauss=# DROP TABLE tpcds.reason;
 ```
-
-
-

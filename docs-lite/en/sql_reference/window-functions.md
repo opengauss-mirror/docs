@@ -9,7 +9,7 @@ Window functions and the  **OVER**  clause are used together. The  **OVER**  cla
 >[!NOTE]NOTE 
 >**order by**  in a window function must be followed by a column name. If it is followed by a number, the number is processed as a constant value and the target column is not ranked.
 
--   RANK\(\)
+- RANK\(\)
 
     Description: Generates non-consecutive sequence numbers for the values in each group. The same values have the same sequence number.
 
@@ -66,7 +66,7 @@ Window functions and the  **OVER**  clause are used together. The  **OVER**  cla
     (42 rows)
     ```
 
--   ROW\_NUMBER\(\)
+- ROW\_NUMBER\(\)
 
     Description: Generates consecutive sequence numbers for the values in each group. The same values have different sequence numbers.
 
@@ -123,7 +123,7 @@ Window functions and the  **OVER**  clause are used together. The  **OVER**  cla
     (42 rows)
     ```
 
--   DENSE\_RANK\(\)
+- DENSE\_RANK\(\)
 
     Description: Generates consecutive sequence numbers for the values in each group. The same values have the same sequence number.
 
@@ -180,7 +180,7 @@ Window functions and the  **OVER**  clause are used together. The  **OVER**  cla
     (42 rows)
     ```
 
--   PERCENT\_RANK\(\)
+- PERCENT\_RANK\(\)
 
     Description: Generates corresponding sequence numbers for the values in each group. That is, the function calculates the value according to the formula Sequence number = \(**rank**  - 1\)/\(**total rows**  - 1\).  **rank**  is the corresponding sequence number generated based on the  **RANK**  function for the value and  **totalrows**  is the total number of elements in a group.
 
@@ -237,7 +237,7 @@ Window functions and the  **OVER**  clause are used together. The  **OVER**  cla
     (42 rows)
     ```
 
--   CUME\_DIST\(\)
+- CUME\_DIST\(\)
 
     Description: Generates accumulative distribution sequence numbers for the values in each group. That is, the function calculates the value according to the following formula: Sequence number = Number of rows preceding or peer with current row/Total rows.
 
@@ -294,7 +294,7 @@ Window functions and the  **OVER**  clause are used together. The  **OVER**  cla
     (42 rows)
     ```
 
--   NTILE\(num\_buckets integer\)
+- NTILE\(num\_buckets integer\)
 
     Description: Equally allocates sequential data sets to the buckets whose quantity is specified by  **num\_buckets**  according to  **num\_buckets integer**  and allocates the bucket number to each row. Divide the partition as evenly as possible.
 
@@ -351,7 +351,7 @@ Window functions and the  **OVER**  clause are used together. The  **OVER**  cla
     (42 rows)
     ```
 
--   LAG\(value any \[, offset integer \[, default any \]\]\)
+- LAG\(value any \[, offset integer \[, default any \]\]\)
 
     Description: Generates lag values for the corresponding values in each group. That is, the value of the row obtained by moving forward the row corresponding to the current value by  **offset**  \(integer\) is the sequence number. If the row does not exist after the moving, the result value is the default value. If omitted,  **offset**  defaults to  **1**  and  **default**  to  **NULL**.
 
@@ -408,7 +408,7 @@ Window functions and the  **OVER**  clause are used together. The  **OVER**  cla
     (42 rows)
     ```
 
--   LEAD\(value any \[, offset integer \[, default any \]\]\)
+- LEAD\(value any \[, offset integer \[, default any \]\]\)
 
     Description: Generates leading values for the corresponding values in each group. That is, the value of the row obtained by moving backward the row corresponding to the current value by  **offset**  \(integer\) is the sequence number. If the row after the moving exceeds the total number of rows for the current group, the result value is the default value. If omitted,  **offset**  defaults to  **1**  and  **default**  to  **NULL**.
 
@@ -465,7 +465,7 @@ Window functions and the  **OVER**  clause are used together. The  **OVER**  cla
     (42 rows)
     ```
 
--   FIRST\_VALUE\(value any\)
+- FIRST\_VALUE\(value any\)
 
     Description: Returns the first value of each group.
 
@@ -522,7 +522,7 @@ Window functions and the  **OVER**  clause are used together. The  **OVER**  cla
     (42 rows)
     ```
 
--   LAST\_VALUE\(value any\)
+- LAST\_VALUE\(value any\)
 
     Description: Returns the last value of each group.
 
@@ -573,7 +573,7 @@ Window functions and the  **OVER**  clause are used together. The  **OVER**  cla
     (35 rows)
     ```
 
--   NTH\_VALUE\(value any, nth integer\)
+- NTH\_VALUE\(value any, nth integer\)
 
     Description: Returns the  _n_th row for a group. If the row does not exist,  **NULL**  is returned by default.
 
@@ -622,5 +622,3 @@ Window functions and the  **OVER**  clause are used together. The  **OVER**  cla
          2 |             5 |          
     (35 rows)
     ```
-
-

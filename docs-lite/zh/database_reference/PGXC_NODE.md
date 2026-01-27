@@ -140,4 +140,3 @@ PGXC\_NODE系统表存储数据库实例节点信息。PGXC\_NODE系统表仅在
 </tr>
 </tbody>
 </table>
-

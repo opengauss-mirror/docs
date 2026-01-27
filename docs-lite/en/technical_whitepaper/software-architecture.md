@@ -36,4 +36,3 @@ openGauss is a standalone database and can be deployed in primary/standby mode.
 </tr>
 </tbody>
 </table>
-

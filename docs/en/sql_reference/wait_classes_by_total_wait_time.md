@@ -34,4 +34,3 @@ The following table lists columns in the Wait Classes by Total Wait Time report.
 </tr>
 </tbody>
 </table>
-

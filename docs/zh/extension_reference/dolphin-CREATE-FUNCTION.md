@@ -53,7 +53,7 @@ dolphin加载后，CREATE FUNCTION 语法的格式为
           | AS 'obj_file', 'link_symbol'
       }
 
--   O风格的创建自定义函数的语法。
+- O风格的创建自定义函数的语法。
 
     ```
     CREATE [ OR REPLACE  ] FUNCTION function_name
@@ -81,7 +81,7 @@ dolphin加载后，CREATE FUNCTION 语法的格式为
          } plsql_body
     /
 
--   MySQL风格语法格式。
+- MySQL风格语法格式。
 
     ```
     CREATE [ OR REPLACE  ] FUNCTION function_name
@@ -98,7 +98,7 @@ dolphin加载后，CREATE FUNCTION 语法的格式为
 
 ## 参数说明<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_sd944ea321dde4635bf07b637385f13f9"></a>
 
--   **LANGUAGE  lang_name**
+- **LANGUAGE  lang_name**
 
     用以实现函数的语言的名称。PostgreSQL风格函数默认值 sql, O风格默认值 plpgsql。 MySQL风格语法格式下，LANGUAGE选项仅做语法兼容，可填入其他值，但最终将使用plpgsql作为实现函数的语言。在MySQL风格语法格式下，此选项允许重复。
 
@@ -184,9 +184,6 @@ openGauss=# select func10(9);
 (1 row)
 ```
 
-
-
 ## 相关链接<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_sfbe47252e2d24b638c428f7160f181ec"></a>
 
 [CREATE FUNCTION](../sql_reference/create_function.md)
-

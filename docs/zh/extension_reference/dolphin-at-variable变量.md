@@ -8,7 +8,6 @@ openGauss在MySQL兼容模式下，支持用户变量`@variable`的以下两种�
 
 - 支持使用SELECT命令为`@variable`变量赋值，形如`select @variable := value`。
   
-    
 利用`@variable`特性能够实现SQL中的递归查询，详见[示例3](#示例3)。递归查询是一种特殊的查询技术，它通过循环调用一个单独的查询来遍历整个数据集。递归查询通常用于查询树形结构或图形结构数据。这些数据结构通常有父节点和子节点之间的关系。
 
 ## 注意事项
@@ -30,7 +29,6 @@ openGauss在MySQL兼容模式下，支持用户变量`@variable`的以下两种�
 **示例1：** 使用SET命令为变量赋值。
 
 1、设置参数enable_set_variable_b_format为on。
-
 
 ```sql
 SET enable_set_variable_b_format=on;
@@ -88,16 +86,13 @@ select * from table_1102053;
 
 **示例2：** SELECT直接为变量赋值并查看。
 
-
 1、设置参数enable_set_variable_b_format为on。
-
 
 ```sql
 SET enable_set_variable_b_format=on;
 ```
 
 2、执行如下SELECT语句。
-
 
 ```sql
 select @var:=1 as col1,@va:=3;
@@ -115,7 +110,6 @@ select @var:=1 as col1,@va:=3;
 **示例3：**<a name="示例3"></a> 使用@变量实现递归查询。
 
 1、设置参数enable_set_variable_b_format为on。
-
 
 ```sql
 SET enable_set_variable_b_format=on;
@@ -213,11 +207,9 @@ WHERE id =(select @parent_id:= 1)
 (3 rows)
 ```
 
-
 **示例4：** 使用set语法创建prepare语句。
 
 1、设置参数enable_set_variable_b_format为on。
-
 
 ```sql
 SET enable_set_variable_b_format=on;

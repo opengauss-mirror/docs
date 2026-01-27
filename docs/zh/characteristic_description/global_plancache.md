@@ -41,6 +41,7 @@
 使用前请参考[GLOBAL_PLANCACHE_STATUS](../sql_reference/global_plancache_status.md)以及[GLOBAL_PLANCACHE_CLEAN](../sql_reference/global_plancache_clean.md)部分
 
 前置条件
+
 - 开启enable_thread_pool与enable_global_plancache
 - 设置enable_pbe_optimization = on
 

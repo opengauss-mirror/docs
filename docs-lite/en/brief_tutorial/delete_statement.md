@@ -11,16 +11,15 @@ DELETE FROM table_name
 
 ## Parameter Description<a name="en-us_topic_0283136795_en-us_topic_0237122131_en-us_topic_0059778379_s6df87c0dd87c49e29a034e0ff3385ca6"></a>
 
--   **table\_name**
+- **table\_name**
 
     Specifies the name \(optionally schema-qualified\) of the target table.
 
     Value range: an existing table name
 
--   **condition**
+- **condition**
 
     Specifies an expression that returns a Boolean value. Only rows for which this expression returns  **true**  will be deleted.
-
 
 ## Examples<a name="en-us_topic_0283136795_en-us_topic_0237122131_en-us_topic_0059778379_s90a3978214f644269ab932c29df31137"></a>
 
@@ -84,4 +83,3 @@ openGauss=# SELECT * FROM customer_t1_bak;
 ---------------+---------------+--------------+-------------+--------
 (0 rows)
 ```
-

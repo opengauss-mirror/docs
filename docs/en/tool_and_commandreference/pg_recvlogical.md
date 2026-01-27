@@ -14,58 +14,56 @@ Logical replication slot behavior parameters are mandatory and must be specified
 
 ## Parameter Description<a name="section927885412229"></a>
 
-### Logical replication slot behavior parameters \(mandatory\):
+### Logical replication slot behavior parameters \(mandatory\)
 
--   --create
+- --create
 
     Creates a logical replication slot.
     The **pg\_create\_logical\_replication\_slot** function is called internally. The user who calls this function must have the **SYSADMIN** or **REPLICATION** permission or inherits the permission of the built-in role **gs\_role\_replication**. This function can be called only on the primary node. For details, see the description of the **pg\_create\_logical\_replication\_slot** function in *SQLReference*.
 
--   --start
+- --start
 
     Starts the flow replication of a logic replication slot.
 
--   --drop
+- --drop
 
     Deletes a logical replication slot.
 
+### Connection parameters
 
-
-### Connection parameters:
-
--   -d, --dbname=DBNAME
+- -d, --dbname=DBNAME
 
     Connects to the target database.
 
--   -h, --host=HOSTNAME
+- -h, --host=HOSTNAME
 
     Specifies the name or socket of the connected host.
 
--   -p, --port=PORT
+- -p, --port=PORT
 
     Specifies the HA port number for connecting to the target database node.
 
--   -U, --username=NAME
+- -U, --username=NAME
 
     Specifies the user name for connecting to the target database.
 
--   -w, --no-password
+- -w, --no-password
 
     Performs connection without a password.
 
--   -W, --password
+- -W, --password
 
     Performs connection with a specified password.
 
-### Replication parameters:
+### Replication parameters
 
--   -F  --fsync-interval=INTERVAL
+- -F  --fsync-interval=INTERVAL
 
     Specifies an interval for synchronizing data to the target output file.
 
     The unit is s. The default value is **10**.
 
--   -o, --option=NAME\[=VALUE\]
+- -o, --option=NAME\[=VALUE\]
 
     Adds parameters to the output plug-in of a logical replication slot.
 
@@ -73,65 +71,63 @@ Logical replication slot behavior parameters are mandatory and must be specified
 
     For details, see [pg\_logical\_slot\_peek\_changes](../sql_reference/logical_replication_functions.md) and [Example: Logic Replication Code](../developer_guide/example_logic_replication_code.md).
 
--   -P, --plugin=PLUGIN
+- -P, --plugin=PLUGIN
 
     Specifies the logical replication slot output plug-in.
 
     The default value is  **mppdb\_decoding**.
 
--   -s, --status-interval=INTERVAL
+- -s, --status-interval=INTERVAL
 
     Specifies an interval for sending heartbeat packets.
 
     The unit is s. The default value is **10**.
 
--   -S, --slot=SLOT
+- -S, --slot=SLOT
 
     Specifies the name of a logical replication slot.
 
--   -I, --startpos=PTR
+- -I, --startpos=PTR
 
     Specifies the LSN location of the initial replication when an existing logical replication slot is used.
 
-### Other parameters:
+### Other parameters
 
--   -f, --file=FILE
+- -f, --file=FILE
 
     Specifies the output file.
 
     If  **-**  is used, data is output to stdout.
 
--   -n, --no-loop
+- -n, --no-loop
 
     Specifies that the system does not retry after the connection fails.
 
--   -v, --verbose
+- -v, --verbose
 
     Displays detailed information.
 
--   -V, --version
+- -V, --version
 
     Displays the version and exits immediately.
 
--   -?, --help
+- -?, --help
 
     Displays help information and exits immediately.
     
--   -r, --raw
+- -r, --raw
 
     In parallel decoding scenarios, if this parameter is set, the binary format or batch sending result will not be converted to the text format. This parameter is used only by test personnel to measure the parallel decoding performance. After this parameter is set, the decoding result sent in binary mode or in batches are in unreadable format.
 
-
-
 ## Examples<a name="section655133344514"></a>
 
-1.  Create a logical replication slot named  **test\_slot**.
+1. Create a logical replication slot named  **test\_slot**.
 
     ```
     pg_recvlogical -d postgres -S test_slot -p 26000 --create
     ```
 
-2.  Enable stream decoding and output the result to stdout.
+2. Enable stream decoding and output the result to stdout.
 
     ```
     pg_recvlogical -d postgres -S test_slot -p 26000 --start -v -f -
@@ -148,7 +144,7 @@ Logical replication slot behavior parameters are mandatory and must be specified
     pg_recvlogical: confirming write up to 0/2A34450, flush to 0/2A34450 (slot test_slot)
     ```
 
-3.  Delete the logical replication slot.
+3. Delete the logical replication slot.
 
     ```
     pg_recvlogical -d postgres -S test_slot -p 26000 --drop

@@ -9,17 +9,18 @@ The  **autovacuum**  process automatically runs the  **VACUUM**  and  **ANALYZE*
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 >[!NOTE]NOTE 
->-   Set the  **autovacuum**  parameter to  **on**  if you want to start the automatic cleanup of abnormal two-phase transactions when the system recovers from faults.
->-   If  **autovacuum**  is set to  **on**  and  **[autovacuum\_max\_workers](#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)**  to  **0**, the autovacuum process is started only when the system recovers from faults to clean up abnormal two-phase transactions.
->-   If  **autovacuum**  is set to  **on**  and the value of  [autovacuum\_max\_workers](#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)  is greater than  **0**, the system will automatically clean up the two-phase transactions and processes after recovering from faults.
+>
+>- Set the  **autovacuum**  parameter to  **on**  if you want to start the automatic cleanup of abnormal two-phase transactions when the system recovers from faults.
+>- If  **autovacuum**  is set to  **on**  and  **[autovacuum\_max\_workers](#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)**  to  **0**, the autovacuum process is started only when the system recovers from faults to clean up abnormal two-phase transactions.
+>- If  **autovacuum**  is set to  **on**  and the value of  [autovacuum\_max\_workers](#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)  is greater than  **0**, the system will automatically clean up the two-phase transactions and processes after recovering from faults.
 
 >[!TIP]NOTICE 
 >Even if  **autovacuum**  is set to  **off**, the autovacuum process will be started automatically when a transaction ID wraparound is about to occur. When a  **CREATE DATABASE**  or  **DROP DATABASE**  operation fails, it is possible that the transaction has been committed or rolled back on some nodes whereas some nodes are still in the prepared state. In this case, perform the following operations to manually restore the nodes:
 
 **Value range**: Boolean
 
--   **on**  indicates that the  **autovacuum**  process is started.
--   **off**  indicates that the  **autovacuum**  process is not started.
+- **on**  indicates that the  **autovacuum**  process is started.
+- **off**  indicates that the  **autovacuum**  process is not started.
 
 **Default value**:  **on**
 
@@ -31,10 +32,10 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: enumerated values
 
--   **analyze**  indicates that only autoanalyze is performed.
--   **vacuum**  indicates that only autovacuum is performed.
--   **mix**  indicates that both autoanalyze and autovacuum are performed.
--   **none**  indicates that neither of them is performed.
+- **analyze**  indicates that only autoanalyze is performed.
+- **vacuum**  indicates that only autovacuum is performed.
+- **mix**  indicates that both autoanalyze and autovacuum are performed.
+- **none**  indicates that neither of them is performed.
 
 **Default value**:  **mix**
 
@@ -70,9 +71,9 @@ Set the  **log\_autovacuum\_min\_duration**  parameter to 250 ms to record the a
 
 **Value range**: an integer ranging from –1 to 2147483647. The unit is ms.
 
--   **0**  indicates that all autovacuum actions are recorded in the log.
--   **–1**  indicates that all autovacuum actions are not recorded in the log.
--   A value other than  **–1**  indicates that a message is recorded when an autovacuum action is skipped due to a lock conflict.
+- **0**  indicates that all autovacuum actions are recorded in the log.
+- **–1**  indicates that all autovacuum actions are not recorded in the log.
+- A value other than  **–1**  indicates that a message is recorded when an autovacuum action is skipped due to a lock conflict.
 
 **Default value**:  **–1**
 
@@ -140,8 +141,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Parameter description**: Specifies the maximum age \(in transactions\) that a table's  **pg\_class.relfrozenxid**  field can attain before a VACUUM operation is performed.
 
--   The old files under the subdirectory of  **pg\_clog/**  can also be deleted by the  **VACUUM**  operation.
--   Even if the  **autovacuum**  process is not started, the system will invoke the process to prevent transaction ID wraparound.
+- The old files under the subdirectory of  **pg\_clog/**  can also be deleted by the  **VACUUM**  operation.
+- Even if the  **autovacuum**  process is not started, the system will invoke the process to prevent transaction ID wraparound.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
@@ -178,4 +179,3 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 **Value range**: an integer ranging from 0 to  _INT\_MAX_. The unit is ms.
 
 **Default value**:  **5s**  \(5000 ms\)
-

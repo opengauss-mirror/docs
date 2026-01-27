@@ -2,7 +2,7 @@
 
 ## **Q1：gsql连接数据库，提示“unknow:26000”，错误如下，要如何处理？**
 
-```
+```shell
 gsql -d postgres -p 26000 -r
 failed to connect Unkown:26000.
 ```
@@ -11,7 +11,7 @@ failed to connect Unkown:26000.
 
 首先确认数据库端口号是否为26000，如果端口号无误，可能是没有启动数据库服务造成此报错。请执行如下命令启动数据库服务。
 
-```
+```shell
 gs_om -t start
 ```
 
@@ -21,13 +21,13 @@ gs_om -t start
 
 第一次使用数据库，必须修改omm用户密码，使用如下语句。
 
-```
+```shell
 alter role omm identified by '新密码' replace '旧密码';
 ```
 
 如果忘记omm密码，无法进行修改，可以使用如下命令关闭密码修改设置。
 
-```
+```shell
 --退出数据库。
 \q
 --关闭密码修改设置。
@@ -56,7 +56,7 @@ gs_guc reload -N all -I all -c "modify_initial_password  =  false"
 
 配置GAUSSHOME为所有二进制的目录，然后再配置LD_LIBRARY_PATH、PATH，示例代码如下。
 
-```
+```shell
 export GAUSSHOME=/xxxx
 export LD_LIBRARY_PATH=$GAUSSHOME/lib::$LD_LIBRARY_PATH
 export PATH=$GAUSSHOME/bin:$PATH

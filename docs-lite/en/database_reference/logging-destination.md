@@ -10,14 +10,13 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 The valid values are  **stderr**,  **csvlog**,  **syslog**, and  **eventlog**.
 
--   **stderr**  indicates that logs are printed to the screen.
--   **csvlog**  indicates that logs are output in comma separated value \(CSV\) format. The prerequisite for generating logs in CSV format is that  **[logging\_collector](#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_s61d6090c04ee464fb54f8b31936ba818)**  must be set to  **on**. For details, see  [Using CSV Log Output](using-csv-log-output.md).
--   **syslog**  indicates that logs are recorded using the syslog of the OS. openGauss can record logs using syslog from  **LOCAL0**  to  **LOCAL7**. For details, see  [syslog\_facility](#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_s853e14ac6a8a47678036cdc8e5119090). To record logs using syslog, add the following information to syslog daemon's configuration file:
+- **stderr**  indicates that logs are printed to the screen.
+- **csvlog**  indicates that logs are output in comma separated value \(CSV\) format. The prerequisite for generating logs in CSV format is that  **[logging\_collector](#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_s61d6090c04ee464fb54f8b31936ba818)**  must be set to  **on**. For details, see  [Using CSV Log Output](using-csv-log-output.md).
+- **syslog**  indicates that logs are recorded using the syslog of the OS. openGauss can record logs using syslog from  **LOCAL0**  to  **LOCAL7**. For details, see  [syslog\_facility](#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_s853e14ac6a8a47678036cdc8e5119090). To record logs using syslog, add the following information to syslog daemon's configuration file:
 
     ```
     local0.*  /var/log/omm
     ```
-
 
 **Default value:** **stderr**
 
@@ -34,8 +33,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: Boolean
 
--   **on**  indicates that the log collection is enabled.
--   **off**  indicates that the log collection is disabled.
+- **on**  indicates that the log collection is enabled.
+- **off**  indicates that the log collection is disabled.
 
 **Default value**:  **on**
 
@@ -46,13 +45,15 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >[!TIP]NOTICE 
->-   If this parameter is set to an invalid path, openGauss cannot be started.
->-   If you modify the  **log\_directory**  parameter using the  **gs\_guc reload**  command, and the specified path is valid, the log files are output to this new path. If the specified path is invalid, the log files are output to the valid path set last time and the database operation is not affected. The invalid value is still written into the configuration file.
->-   In the sandbox environment, the path cannot contain /var/chroot. For example, if the absolute path of log is  **/var/chroot/var/lib/log/Ruby/pg\_log/cn\_log**, you only need to set the path to  **/var/lib/log/Ruby/pg\_log/cn\_log**.
+>
+>- If this parameter is set to an invalid path, openGauss cannot be started.
+>- If you modify the  **log\_directory**  parameter using the  **gs\_guc reload**  command, and the specified path is valid, the log files are output to this new path. If the specified path is invalid, the log files are output to the valid path set last time and the database operation is not affected. The invalid value is still written into the configuration file.
+>- In the sandbox environment, the path cannot contain /var/chroot. For example, if the absolute path of log is  **/var/chroot/var/lib/log/Ruby/pg\_log/cn\_log**, you only need to set the path to  **/var/lib/log/Ruby/pg\_log/cn\_log**.
 
 >[!NOTE]NOTE 
->-   Valid path: Users have read and write permissions on the path.
->-   Invalid path: Users do not have read or write permissions on an invalid path.
+>
+>- Valid path: Users have read and write permissions on the path.
+>- Invalid path: Users do not have read or write permissions on an invalid path.
 
 **Value range**: a string
 
@@ -65,8 +66,9 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >[!TIP]NOTICE 
->-   You are advised to use %-escapes to specify the log file names for efficient management of log files.
->-   If  **log\_destination**  is set to  **csvlog**, log files are output in CSV format with timestamped names, for example,  **server\_log.1093827753.csv**.
+>
+>- You are advised to use %-escapes to specify the log file names for efficient management of log files.
+>- If  **log\_destination**  is set to  **csvlog**, log files are output in CSV format with timestamped names, for example,  **server\_log.1093827753.csv**.
 
 **Value range**: a string
 
@@ -79,14 +81,16 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >[!TIP]NOTICE 
->-   Before setting this parameter, set  **log\_directory**  to store the logs to a directory other than the data directory.
->-   Do not make the log files world-readable because they might contain sensitive data.
+>
+>- Before setting this parameter, set  **log\_directory**  to store the logs to a directory other than the data directory.
+>- Do not make the log files world-readable because they might contain sensitive data.
 
 **Value range**: an octal integer ranging from 0000 to 0777 \(that is, 0 to 511 in the decimal format\)
 
 >[!NOTE]NOTE 
->-   **0600**  indicates that log files are readable and writable only to the server administrator.
->-   **0640**  indicates that log files are readable and writable to members of the administrator's group.
+>
+>- **0600**  indicates that log files are readable and writable only to the server administrator.
+>- **0640**  indicates that log files are readable and writable to members of the administrator's group.
 
 **Default value:** **0600**
 
@@ -102,8 +106,8 @@ Assume that you want logs to be kept for 7 days, a log file generated each day t
 
 **Value range**: Boolean
 
--   **on**  indicates that openGauss overwrites the existing log files of the same name on the server.
--   **off**  indicates that openGauss appends the logging messages to the existing log files of the same name on the server.
+- **on**  indicates that openGauss overwrites the existing log files of the same name on the server.
+- **off**  indicates that openGauss appends the logging messages to the existing log files of the same name on the server.
 
 **Default value**:  **off**
 
@@ -160,4 +164,3 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 **Value range**: a string
 
 **Default value**:  **PostgreSQL**
-

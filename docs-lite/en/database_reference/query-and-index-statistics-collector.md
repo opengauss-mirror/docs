@@ -10,8 +10,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: Boolean
 
--   **on**  indicates that the statistics collection function is enabled.
--   **off**  indicates that the statistics collection function is disabled.
+- **on**  indicates that the statistics collection function is enabled.
+- **off**  indicates that the statistics collection function is disabled.
 
 **Default value**:  **on**
 
@@ -23,8 +23,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: Boolean
 
--   **on**  indicates that the statistics collection function is enabled.
--   **off**  indicates that the statistics collection function is disabled.
+- **on**  indicates that the statistics collection function is enabled.
+- **off**  indicates that the statistics collection function is disabled.
 
 >[!NOTE]NOTE 
 >Database statistics are required when the autovacuum process checks for databases that need to be vacuumed. Therefore, the default value is set to  **on**.
@@ -39,8 +39,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: Boolean
 
--   If this parameter is set to  **on**, the collection function is enabled. In this case, the collector repeatedly queries the operating system at the current time. As a result, large number of costs may occur on some platforms. Therefore, the default value is set to  **off**.
--   **off**  indicates that the statistics collection function is disabled.
+- If this parameter is set to  **on**, the collection function is enabled. In this case, the collector repeatedly queries the operating system at the current time. As a result, large number of costs may occur on some platforms. Therefore, the default value is set to  **off**.
+- **off**  indicates that the statistics collection function is disabled.
 
 **Default value**:  **off**
 
@@ -55,9 +55,9 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: enumerated values
 
--   **pl**  indicates that only procedural language functions are traced.
--   **all**  indicates that SQL language functions area traced.
--   **none**  indicates that the function tracing function is disabled.
+- **pl**  indicates that only procedural language functions are traced.
+- **all**  indicates that SQL language functions area traced.
+- **none**  indicates that the function tracing function is disabled.
 
 **Default value**:  **none**
 
@@ -102,8 +102,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the time when an operation is performed on table data will be recorded.
--   **off**  indicates that the time when an operation is performed on table data will not be recorded.
+- **on**  indicates that the time when an operation is performed on table data will be recorded.
+- **off**  indicates that the time when an operation is performed on table data will not be recorded.
 
 **Default value**:  **on**
 
@@ -117,15 +117,15 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: Boolean
 
--   **on**  indicates that the statistics collection function is enabled.
--   **off**  indicates that the auditing function is disabled.
+- **on**  indicates that the statistics collection function is enabled.
+- **off**  indicates that the auditing function is disabled.
 
 **Default value**:  **on**
 
 >[!NOTE]NOTE 
->-   The  **track\_sql\_count**  parameter is restricted by the  **track\_activities**  parameter when the  **gs\_sql\_count**  or  **pgxc\_sql\_count**  view is queried.
->    -   If  **track\_activities**  is set to  **on**  and  **track\_sql\_count**  is set to  **off**, a warning message indicating that  **track\_sql\_count**  is disabled will be displayed in logs when the  **gs\_sql\_count **view is queried.
->    -   If both  **track\_activities**  and  **track\_sql\_count**  are set to  **off**, two warning messages indicating that  **track\_activities**  is disabled and  **track\_sql\_count**  is disabled will be displayed in logs when the views are queried.
->    -   If  **track\_activities**  is set to  **off**  and  **track\_sql\_count**  is set to  **on**, a warning message indicating that  **track\_activities**  is disabled will be displayed in logs when the views are queried.
->-   If  **track\_sql\_count**  is set to  **off**, querying the  **gs\_sql\_count**  or  **pgxc\_sql\_count**  view returns  **0**.
-
+>
+>- The  **track\_sql\_count**  parameter is restricted by the  **track\_activities**  parameter when the  **gs\_sql\_count**  or  **pgxc\_sql\_count**  view is queried.
+>- If  **track\_activities**  is set to  **on**  and  **track\_sql\_count**  is set to  **off**, a warning message indicating that  **track\_sql\_count**  is disabled will be displayed in logs when the  **gs\_sql\_count**view is queried.
+>- If both  **track\_activities**  and  **track\_sql\_count**  are set to  **off**, two warning messages indicating that  **track\_activities**  is disabled and  **track\_sql\_count**  is disabled will be displayed in logs when the views are queried.
+>- If  **track\_activities**  is set to  **off**  and  **track\_sql\_count**  is set to  **on**, a warning message indicating that  **track\_activities**  is disabled will be displayed in logs when the views are queried.
+>- If  **track\_sql\_count**  is set to  **off**, querying the  **gs\_sql\_count**  or  **pgxc\_sql\_count**  view returns  **0**.

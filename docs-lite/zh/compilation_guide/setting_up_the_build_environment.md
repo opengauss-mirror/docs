@@ -4,12 +4,11 @@
 
 编译openGauss的硬件要求：
 
--   机器数量：1台
--   机器硬件规格：
-    -   CPU: 4U
-    -   Memory: 8G
-    -   Free Disk：100G  \(Linux 64位\)
-
+- 机器数量：1台
+- 机器硬件规格：
+    - CPU: 4U
+    - Memory: 8G
+    - Free Disk：100G  \(Linux 64位\)
 
 ## 软件要求<a name="zh-cn_topic_0283136407_section77524131504"></a>
 
@@ -17,16 +16,16 @@
 
 openGauss支持的操作系统：
 
--   CentOS 7.6 \(x86 架构\)
--   openEuler-20.03-LTS \(aarch64 架构\)
--   openEuler-20.03-LTS \(X86 架构\)
--   openEuler-22.03-LTS（aarch64 架构）
--   openEuler-22.03-LTS（x86_64架构）
--   openEuler-24.03-LTS（aarch64 架构）
--   openEuler-24.03-LTS（x86_64架构）
--   Kylin-V10 \(aarch64 架构\)
--   FusionOS 22 \(aarch64 架构\)
--   FusionOS 22 \(X86 架构\)
+- CentOS 7.6 \(x86 架构\)
+- openEuler-20.03-LTS \(aarch64 架构\)
+- openEuler-20.03-LTS \(X86 架构\)
+- openEuler-22.03-LTS（aarch64 架构）
+- openEuler-22.03-LTS（x86_64架构）
+- openEuler-24.03-LTS（aarch64 架构）
+- openEuler-24.03-LTS（x86_64架构）
+- Kylin-V10 \(aarch64 架构\)
+- FusionOS 22 \(aarch64 架构\)
+- FusionOS 22 \(X86 架构\)
 
 **软件依赖要求**
 
@@ -137,4 +136,3 @@ yum install dkms
 ## 环境变量配置<a name="zh-cn_topic_0283136407_section1616215293319"></a>
 
 编译openGauss轻量版的环境变量配置已经统一写入一键式编译和打包脚本，因此无需自行配置。
-

@@ -8,13 +8,13 @@ SELECT语句就像叠加在数据库表上的过滤器，利用SQL关键字从�
 
 ## 注意事项<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_s42c37979749545719ac9114594f45d93"></a>
 
--   本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。原openGauss的SELECT语法请参考章节[SELECT](../sql_reference/select.md)。
--   新增支持TOP子句。
--   新增支持table_hint子句。
+- 本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。原openGauss的SELECT语法请参考章节[SELECT](../sql_reference/select.md)。
+- 新增支持TOP子句。
+- 新增支持table_hint子句。
 
 ## 语法格式<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sb7329222602d46fe944bf6c300931dd2"></a>
 
--   查询数据
+- 查询数据
 
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
@@ -38,13 +38,13 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 [ into_option ];
 ```
 
--   其中TOP子句top\_clause为：
+- 其中TOP子句top\_clause为：
 
     ```
     TOP (expression) [ PERCENT ] [ WITH TIES ]
     ```
 
--   其中table\_hint子句table\_hint\_clause为：
+- 其中table\_hint子句table\_hint\_clause为：
 
     ```
     [ WITH ] ( <table_hint> [, ...] ) 
@@ -52,18 +52,18 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 ## 参数说明<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc"></a>
 
--   **TOP (expression) [ PERCENT ] [ WITH TIES ]**
+- **TOP (expression) [ PERCENT ] [ WITH TIES ]**
 
     TOP子句限制查询结果集中返回指定的行数或行数的百分比。将 TOP 子句与 ORDER BY 子句一起使用时，结果集被限制为有序的指定行数，否则TOP子句按未定义的顺序返回指定行数。使用PERCENT关键字可以指定返回的行数为查询结果集的百分比。WITH TIES关键字表示返回指定的行数以及结果集有序情况下所有与最后一行相同的值。
 
     >[!NOTE]说明
     >
-    >-   兼容D库中，使用PERCENT关键字时，PERCENT值的范围为[0,100]，超范围报错。
-    >-   兼容D库中，指定的百分比数和结果集总数相乘后不为整数时，向上取整到最接近的整数值。指定的行数不为整数时，四舍五入到最接近的整数值。
-    >-   兼容D库中，WITH TIES必须和ORDER BY 子句一起使用，否则报错。这一规则适用于TOP子句和FETCH子句。 
-    >-   兼容D库中，TOP子句和LIMIT子句以及FETCH子句不能同时使用。
+    >- 兼容D库中，使用PERCENT关键字时，PERCENT值的范围为[0,100]，超范围报错。
+    >- 兼容D库中，指定的百分比数和结果集总数相乘后不为整数时，向上取整到最接近的整数值。指定的行数不为整数时，四舍五入到最接近的整数值。
+    >- 兼容D库中，WITH TIES必须和ORDER BY 子句一起使用，否则报错。这一规则适用于TOP子句和FETCH子句。 
+    >- 兼容D库中，TOP子句和LIMIT子句以及FETCH子句不能同时使用。
 
--   **[ WITH ] ( <table_hint> [, ...] )**
+- **[ WITH ] ( <table_hint> [, ...] )**
 
     - 针对SELECT子句，在未给出WITH时，table_hint仅支持给出一个hint，在给出WITH时，table_hint支持给出一个列表选项，列表通过逗号或者空格分隔，即(hint1)、WITH (hint1)、WITH (hint1, hint2, ...)、WITH (hint1 hint2 ...)均支持。
 

@@ -8,25 +8,25 @@ A report can be generated after the WDR snapshot function is enabled (that is, e
 
 ## Procedure<a name="en-us_topic_0283137259_section49941629132915"></a>
 
-1.  Run the following command to create a report file:
+1. Run the following command to create a report file:
 
     ```
     touch  /home/om/wdrTestNode.html
     ```
 
-2.  Run the following command to connect to the **postgres** database.
+2. Run the following command to connect to the **postgres** database.
 
     ```
     gsql -d postgres -p [*Port number*] -r
     ```
 
-3.  Run the following command to query the generated snapshot and obtain **snapshot\_id**:
+3. Run the following command to query the generated snapshot and obtain **snapshot\_id**:
 
     ```
     select * from snapshot.snapshot;
     ```
 
-4.  (Optional) Run the following command on the CCN to manually create a snapshot. If only one snapshot exists in the database or you want to view the monitoring data of the database in the current period, manually create a snapshot. This command is only available to the **sysadmin** user.
+4. (Optional) Run the following command on the CCN to manually create a snapshot. If only one snapshot exists in the database or you want to view the monitoring data of the database in the current period, manually create a snapshot. This command is only available to the **sysadmin** user.
 
     ```
     select create_wdr_snapshot();
@@ -35,8 +35,8 @@ A report can be generated after the WDR snapshot function is enabled (that is, e
     >[!NOTE]NOTE
     >Run the **cm\_ctl query -Cdvi** command. In the command output, the information under **Central Coordinator State** is the CCN information.
 
-5.  Run the following commands to generate a WDR in HTML format on the local PC:
-    1.  Run the following commands to set the report format. **\\a** indicates that table row and column symbols are not displayed. **\\t** indicates that column names are not displayed. **\\o** specifies an output file.
+5. Run the following commands to generate a WDR in HTML format on the local PC:
+    1. Run the following commands to set the report format. **\\a** indicates that table row and column symbols are not displayed. **\\t** indicates that column names are not displayed. **\\o** specifies an output file.
 
         ```
         gsql> \a      
@@ -44,7 +44,7 @@ A report can be generated after the WDR snapshot function is enabled (that is, e
         gsql> \o /home/om/wdrTestNode.html
         ```
 
-    2.  Run the following command to generate a WDR in HTML format:
+    2. Run the following command to generate a WDR in HTML format:
 
         ```
         gsql> select generate_wdr_report(begin_snap_id Oid, end_snap_id Oid, int report_type, int report_scope, int node_name );
@@ -115,13 +115,13 @@ A report can be generated after the WDR snapshot function is enabled (that is, e
         </tbody>
         </table>
 
-    1.  Run the following command to disable the output options and format the output:
+    1. Run the following command to disable the output options and format the output:
 
         ```
         \o \a \t 
         ```
 
-6.  [View the WDR](wdr-snapshot-schema.md) in **/home/om/** as required.
+6. [View the WDR](wdr-snapshot-schema.md) in **/home/om/** as required.
 
 ## Example<a name="en-us_topic_0283137259_section65481355161913"></a>
 

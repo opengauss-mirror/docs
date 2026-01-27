@@ -2,7 +2,7 @@
 
 ## Geometric Operators<a name="en-us_topic_0283137097_en-us_topic_0237121974_en-us_topic_0059778617_sf6144d7c3ed34b8c801ec2d86e2dea63"></a>
 
--   +
+- +
 
     Description: Translation
 
@@ -16,7 +16,7 @@
     (1 row)
     ```
 
--   -
+- -
 
     Description: Translation
 
@@ -30,7 +30,7 @@
     (1 row)
     ```
 
--   \*
+- \*
 
     Description: Scaling out/Rotation
 
@@ -44,7 +44,7 @@
     (1 row)
     ```
 
--   /
+- /
 
     Description: Scaling in/Rotation
 
@@ -58,7 +58,7 @@
     (1 row)
     ```
 
--   \#
+- \#
 
     Description: Intersection of two figures
 
@@ -72,7 +72,7 @@
     (1 row)
     ```
 
--   \#
+- \#
 
     Description: Number of paths or polygon vertexes of a figure
 
@@ -86,7 +86,7 @@
     (1 row)
     ```
 
--   @-@
+- @-@
 
     Description: Length or circumference of a figure
 
@@ -100,7 +100,7 @@
     (1 row)
     ```
 
--   @@
+- @@
 
     Description: Center of a figure
 
@@ -114,7 +114,7 @@
     (1 row)
     ```
 
--   <-\>
+- <-\>
 
     Description: Distance between two figures
 
@@ -128,7 +128,7 @@
     (1 row)
     ```
 
--   &&
+- &&
 
     Description: Overlaps? \(One point in common makes this true.\)
 
@@ -142,7 +142,7 @@
     (1 row)
     ```
 
--   <<
+- <<
 
     Description: Is strictly left of \(no common horizontal coordinate\)?
 
@@ -156,7 +156,7 @@
     (1 row)
     ```
 
--   \>\>
+- \>\>
 
     Description: Is strictly right of \(no common horizontal coordinate\)?
 
@@ -170,7 +170,7 @@
     (1 row)
     ```
 
--   &<
+- &<
 
     Description: Does not extend to the right of?
 
@@ -184,7 +184,7 @@
     (1 row)
     ```
 
--   &\>
+- &\>
 
     Description: Does not extend to the left of?
 
@@ -198,7 +198,7 @@
     (1 row)
     ```
 
--   <<|
+- <<|
 
     Description: Is strictly below \(no common horizontal coordinate\)?
 
@@ -212,7 +212,7 @@
     (1 row)
     ```
 
--   |\>\>
+- |\>\>
 
     Description: Is strictly above \(no common horizontal coordinate\)?
 
@@ -226,7 +226,7 @@
     (1 row)
     ```
 
--   &<|
+- &<|
 
     Description: Does not extend above?
 
@@ -240,7 +240,7 @@
     (1 row)
     ```
 
--   |&\>
+- |&\>
 
     Description: Does not extend below?
 
@@ -254,7 +254,7 @@
     (1 row)
     ```
 
--   <^
+- <^
 
     Description: Is below \(allows touching\)?
 
@@ -268,7 +268,7 @@
     (1 row)
     ```
 
--   \>^
+- \>^
 
     Description: Is above \(allows touching\)?
 
@@ -282,7 +282,7 @@
     (1 row)
     ```
 
--   ?\#
+- ?\#
 
     Description: Intersect?
 
@@ -296,7 +296,7 @@
     (1 row)
     ```
 
--   ?-
+- ?-
 
     Description: Is horizontal?
 
@@ -310,7 +310,7 @@
     (1 row)
     ```
 
--   ?-
+- ?-
 
     Description: Are horizontally aligned?
 
@@ -324,7 +324,7 @@
     (1 row)
     ```
 
--   ?|
+- ?|
 
     Description: Is vertical?
 
@@ -338,7 +338,7 @@
     (1 row)
     ```
 
--   ?|
+- ?|
 
     Description: Are vertically aligned?
 
@@ -352,7 +352,7 @@
     (1 row)
     ```
 
--   ?-|
+- ?-|
 
     Description: Are perpendicular?
 
@@ -366,7 +366,7 @@
     (1 row)
     ```
 
--   ?||
+- ?||
 
     Description: Are parallel?
 
@@ -380,7 +380,7 @@
     (1 row)
     ```
 
--   @\>
+- @\>
 
     Description: Contains?
 
@@ -394,7 +394,7 @@
     (1 row)
     ```
 
--   <@
+- <@
 
     Description: Contained in or on?
 
@@ -408,7 +408,7 @@
     (1 row)
     ```
 
--   \~=
+- \~=
 
     Description: Same as?
 
@@ -422,10 +422,9 @@
     (1 row)
     ```
 
-
 ## Geometric Functions<a name="en-us_topic_0283137097_en-us_topic_0237121974_en-us_topic_0059778617_s7307c979b2ab48129cda400b52255f0b"></a>
 
--   area\(object\)
+- area\(object\)
 
     Description: Area calculation
 
@@ -441,7 +440,7 @@
     (1 row)
     ```
 
--   center\(object\)
+- center\(object\)
 
     Description: Figure center calculation
 
@@ -457,7 +456,7 @@
     (1 row)
     ```
 
--   diameter\(circle\)
+- diameter\(circle\)
 
     Description: Circle diameter calculation
 
@@ -473,7 +472,7 @@
     (1 row)
     ```
 
--   height\(box\)
+- height\(box\)
 
     Description: Vertical size of box
 
@@ -489,7 +488,7 @@
     (1 row)
     ```
 
--   isclosed\(path\)
+- isclosed\(path\)
 
     Description: A closed path?
 
@@ -505,7 +504,7 @@
     (1 row)
     ```
 
--   isopen\(path\)
+- isopen\(path\)
 
     Description: An open path?
 
@@ -521,7 +520,7 @@
     (1 row)
     ```
 
--   length\(object\)
+- length\(object\)
 
     Description: Length calculation
 
@@ -537,7 +536,7 @@
     (1 row)
     ```
 
--   npoints\(path\)
+- npoints\(path\)
 
     Description: Number of points in a path
 
@@ -553,7 +552,7 @@
     (1 row)
     ```
 
--   npoints\(polygon\)
+- npoints\(polygon\)
 
     Description: Number of points in a polygon
 
@@ -569,7 +568,7 @@
     (1 row)
     ```
 
--   pclose\(path\)
+- pclose\(path\)
 
     Description: Converts a path to closed.
 
@@ -585,7 +584,7 @@
     (1 row)
     ```
 
--   popen\(path\)
+- popen\(path\)
 
     Description: Converts a path to open.
 
@@ -601,7 +600,7 @@
     (1 row)
     ```
 
--   radius\(circle\)
+- radius\(circle\)
 
     Description: Circle radius calculation
 
@@ -617,7 +616,7 @@
     (1 row)
     ```
 
--   width\(box\)
+- width\(box\)
 
     Description: Horizontal size of a box
 
@@ -633,10 +632,9 @@
     (1 row)
     ```
 
-
 ## Geometric Type Conversion Functions<a name="en-us_topic_0283137097_en-us_topic_0237121974_en-us_topic_0059778617_s7e4c712738474adbb63addaa69fe43e4"></a>
 
--   box\(circle\)
+- box\(circle\)
 
     Description: Circle to box
 
@@ -652,7 +650,7 @@
     (1 row)
     ```
 
--   box\(point, point\)
+- box\(point, point\)
 
     Description: Points to box
 
@@ -668,7 +666,7 @@
     (1 row)
     ```
 
--   box\(polygon\)
+- box\(polygon\)
 
     Description: Polygon to box
 
@@ -684,7 +682,7 @@
     (1 row)
     ```
 
--   circle\(box\)
+- circle\(box\)
 
     Description: Box to circle
 
@@ -700,7 +698,7 @@
     (1 row)
     ```
 
--   circle\(point, double precision\)
+- circle\(point, double precision\)
 
     Description: Center and radius to circle
 
@@ -716,7 +714,7 @@
     (1 row)
     ```
 
--   circle\(polygon\)
+- circle\(polygon\)
 
     Description: Polygon to circle
 
@@ -732,7 +730,7 @@
     (1 row)
     ```
 
--   lseg\(box\)
+- lseg\(box\)
 
     Description: Box diagonal to line segment
 
@@ -748,7 +746,7 @@
     (1 row)
     ```
 
--   lseg\(point, point\)
+- lseg\(point, point\)
 
     Description: Points to line segment
 
@@ -764,7 +762,7 @@
     (1 row)
     ```
 
--   slope\(point, point\)
+- slope\(point, point\)
 
     Description: Calculates the slope of a straight line formed by two points.
 
@@ -780,7 +778,7 @@
     (1 row)
     ```
 
--   path\(polygon\)
+- path\(polygon\)
 
     Description: Polygon to path
 
@@ -796,7 +794,7 @@
     (1 row)
     ```
 
--   point\(double precision, double precision\)
+- point\(double precision, double precision\)
 
     Description: Points
 
@@ -812,7 +810,7 @@
     (1 row)
     ```
 
--   point\(box\)
+- point\(box\)
 
     Description: Center of a box
 
@@ -828,7 +826,7 @@
     (1 row)
     ```
 
--   point\(circle\)
+- point\(circle\)
 
     Description: Center of a circle
 
@@ -844,7 +842,7 @@
     (1 row)
     ```
 
--   point\(lseg\)
+- point\(lseg\)
 
     Description: Center of a line segment
 
@@ -860,7 +858,7 @@
     (1 row)
     ```
 
--   point\(polygon\)
+- point\(polygon\)
 
     Description: Center of a polygon
 
@@ -876,7 +874,7 @@
     (1 row)
     ```
 
--   polygon\(box\)
+- polygon\(box\)
 
     Description: Box to 4-point polygon
 
@@ -892,7 +890,7 @@
     (1 row)
     ```
 
--   polygon\(circle\)
+- polygon\(circle\)
 
     Description: Circle to 12-point polygon
 
@@ -909,7 +907,7 @@
     (1 row)
     ```
 
--   polygon\(npts, circle\)
+- polygon\(npts, circle\)
 
     Description: Circle to  **npts**-point polygon
 
@@ -926,7 +924,7 @@
     (1 row)
     ```
 
--   polygon\(path\)
+- polygon\(path\)
 
     Description: Path to polygon
 
@@ -941,5 +939,3 @@
      ((0,0),(1,1),(2,0))
     (1 row)
     ```
-
-

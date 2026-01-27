@@ -20,49 +20,46 @@ In  **OPTIONS**,  **ADD**,  **SET**, and  **DROP**  are operations to be perform
 
 ## Parameter Description<a name="en-us_topic_0283137333_section116361638401"></a>
 
--   **user\_name**
+- **user\_name**
 
     Specifies the username of the mapping.
 
     CURRENT\_USER and USER match the name of the current user. PUBLIC is used to match all current and future user names in the system.
 
--   **server\_name**
+- **server\_name**
 
     Specifies name of the server to which the user is mapped.
 
--   **OPTIONS**
+- **OPTIONS**
 
     Changes an option for the user mapping. The new option overwrites any previously specified option.  **ADD**,  **SET**, and  **DROP**  are operations to be performed. If the operation is not set explicitly,  **ADD**  is used. The option name must be unique and will be validated with the foreign data wrapper of the server.
 
-    -   Options supported by  **oracle\_fdw**  are as follows:
-        -   **user**
+    - Options supported by  **oracle\_fdw**  are as follows:
+        - **user**
 
             Oracle server username.
 
-        -   **password**
+        - **password**
 
             Password of the Oracle user.
 
-    -   Options supported by  **mysql\_fdw**  are as follows:
-        -   **username**
+    - Options supported by  **mysql\_fdw**  are as follows:
+        - **username**
 
             Username of the MySQL server or MariaDB.
 
-        -   **password**
+        - **password**
 
             User password of the MySQL server or MariaDB.
 
-    -   Options supported by  **postgres\_fdw**  are as follows:
-        -   **user**
+    - Options supported by  **postgres\_fdw**  are as follows:
+        - **user**
 
             Username of the remote openGauss database.
 
-        -   **password**
+        - **password**
 
             User password of the remote openGauss database.
-
-
-
 
 ## Helpful Links<a name="en-us_topic_0283137333_section9697148408"></a>
 

@@ -2,13 +2,13 @@
 
 ## 前提条件<a name="zh-cn_topic_0059778013_sfe45a1031ec347ba820649c0cec52027"></a>
 
--   系统中需要有审计管理员或者具有审计管理员权限的角色。
--   数据库正常运行，并且对防篡改数据库执行了一系列增、删、改等操作，保证在查询时段内有账本操作记录结果产生。
+- 系统中需要有审计管理员或者具有审计管理员权限的角色。
+- 数据库正常运行，并且对防篡改数据库执行了一系列增、删、改等操作，保证在查询时段内有账本操作记录结果产生。
 
 ## 背景信息<a name="zh-cn_topic_0059778013_s15667753cb2542158661ae3f96cab067"></a>
 
--   只有拥有AUDITADMIN属性的用户才可以查看账本历史操作记录。有关数据库用户及创建用户的办法请参见[用户](users.md)。
--   查询全局区块表命令是直接查询gs\_global\_chain表，操作为：
+- 只有拥有AUDITADMIN属性的用户才可以查看账本历史操作记录。有关数据库用户及创建用户的办法请参见[用户](users.md)。
+- 查询全局区块表命令是直接查询gs\_global\_chain表，操作为：
 
     ```
     SELECT * FROM gs_global_chain;
@@ -16,7 +16,7 @@
 
     该表有11个字段，每个字段的含义见章节[GS\_GLOBAL\_CHAIN](../database_reference/GS_GLOBAL_CHAIN.md)。
 
--   查询用户历史表的命令是直接查询BLOCKCHAIN模式下的用户历史表，操作为：
+- 查询用户历史表的命令是直接查询BLOCKCHAIN模式下的用户历史表，操作为：
 
     例如用户表所在的模式为ledgernsp，表名为usertable，则对应的用户历史表名为blockchain.ledgernsp\_usertable\_hist;
 
@@ -30,11 +30,10 @@
     >
     >用户历史表的表名一般为blockchain.<schemaname\>\_<tablename\>\_hist形式。当防篡改用户表模式名或者表名过长导致前述方式生成的表名超出表名长度限制，则会采用blockchain.<schema\_oid\>\_<table\_oid\>\_hist的方式命名。
 
-
 ## 操作步骤<a name="section199001315531"></a>
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  使用如下命令连接数据库。
+1. 以操作系统用户omm登录数据库主节点。
+2. 使用如下命令连接数据库。
 
     ```
     gsql -d postgres -p 8000
@@ -52,7 +51,7 @@
     openGauss=# 
     ```
 
-3.  查询全局区块表记录。
+3. 查询全局区块表记录。
 
     ```
     openGauss=# SELECT * FROM gs_global_chain;
@@ -75,7 +74,7 @@
 
     该结果表明，用户omm连续执行了三条DML命令，包括INSERT、UPDATE和DELETE操作。
 
-4.  查询历史表记录。
+4. 查询历史表记录。
 
     ```
     openGauss=# SELECT * FROM blockchain.ledgernsp_usertable_hist;
@@ -96,7 +95,7 @@
 
     查询结果显示，用户omm对ledgernsp.usertable表插入了3条数据，更新了1条数据，随后删除了1行数据，最后剩余2行数据，hash值分别为1f2e543c580cb8c5和437761affbb7c605。
 
-5.  查询用户表数据及hash校验列。
+5. 查询用户表数据及hash校验列。
 
     ```
     openGauss=# SELECT *, hash FROM ledgernsp.usertable;
@@ -113,5 +112,3 @@
     ```
 
     查询结果显示，用户表中剩余2条数据，与步骤4中的记录一致。
-
-

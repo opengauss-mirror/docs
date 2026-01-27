@@ -2,9 +2,9 @@
 
 通常情况下，数据库由以下组件绑定：
 
--   CPU：更快的CPU可以加速任何CPU绑定的数据库。
--   磁盘：高速SSD/NVME可加速任何I/O绑定数据库。
--   网络：更快的网络可以加速任何SQL\*Net绑定数据库。
+- CPU：更快的CPU可以加速任何CPU绑定的数据库。
+- 磁盘：高速SSD/NVME可加速任何I/O绑定数据库。
+- 网络：更快的网络可以加速任何SQL\*Net绑定数据库。
 
 除以上内容外，以下通用服务器设置默认使用，可能会明显影响数据库的性能。
 
@@ -14,16 +14,15 @@ MOT性能调优是确保快速的应用程序功能和数据检索的关键步�
 
 ## BIOS<a name="zh-cn_topic_0283136603_zh-cn_topic_0280525128_section23444570"></a>
 
--   Hyper Threading设置为ON。
+- Hyper Threading设置为ON。
 
     强烈建议打开超线程（HT=ON）。
 
     建议在MOT上运行OLTP工作负载时打开超线程。当使用超线程时，某些OLTP工作负载显示高达40%的性能增益。
 
-
 ## 操作系统环境设置<a name="zh-cn_topic_0283136603_zh-cn_topic_0280525128_section9674542"></a>
 
--   NUMA
+- NUMA
 
     禁用NUMA平衡，如下所示。MOT以极其高效的NUMA-aware方式进行内存管理，远远超过操作系统使用的默认方法。
 
@@ -31,7 +30,7 @@ MOT性能调优是确保快速的应用程序功能和数据检索的关键步�
     echo 0 > /proc/sys/kernel/numa_balancing
     ```
 
--   服务
+- 服务
 
     禁用如下服务：
 
@@ -41,7 +40,7 @@ MOT性能调优是确保快速的应用程序功能和数据检索的关键步�
     service rsyslog stop       # OPTIONAL, performance
     ```
 
--   调优服务
+- 调优服务
 
     以下为必填项。
 
@@ -55,11 +54,11 @@ MOT性能调优是确保快速的应用程序功能和数据检索的关键步�
 
     其他不太适合openGauss和MOT服务器的配置可能会影响MOT的整体性能，包括：平衡配置、桌面配置、延迟性能配置、网络延迟配置、网络吞吐量配置和节能配置。
 
--   系统命令
+- 系统命令
 
     推荐使用下列操作系统设置以获得最佳性能。
 
-    -   在/etc/sysctl.conf文件中添加如下配置，然后执行sysctl -p命令：
+    - 在/etc/sysctl.conf文件中添加如下配置，然后执行sysctl -p命令：
 
         ```
         net.ipv4.ip_local_port_range = 9000 65535 
@@ -104,7 +103,7 @@ MOT性能调优是确保快速的应用程序功能和数据检索的关键步�
         net.ipv4.tcp_syn_retries = 5
         ```
 
-    -   按如下方式修改/etc/security/limits.conf对应部分：
+    - 按如下方式修改/etc/security/limits.conf对应部分：
 
         ```
         <user> soft nofile 100000 
@@ -113,8 +112,7 @@ MOT性能调优是确保快速的应用程序功能和数据检索的关键步�
 
         软限制和硬限制设置可指定一个进程同时打开的文件数量。软限制可由各自运行这些限制的进程进行更改，直至达到硬限制值。
 
-
--   磁盘/SSD
+- 磁盘/SSD
 
     下面以数据库同步提交模式为例，介绍如何保证磁盘读写性能适合数据库同步提交模式。
 
@@ -128,7 +126,6 @@ MOT性能调优是确保快速的应用程序功能和数据检索的关键步�
     ```
 
     当磁盘带宽明显低于789MB/s时，可能会造成openGauss性能瓶颈，尤其是造成MOT性能瓶颈。
-
 
 ## 网络<a name="zh-cn_topic_0283136603_zh-cn_topic_0280525128_section19962019"></a>
 
@@ -145,8 +142,8 @@ rc.local：网卡调优
 
 以下可选设置对性能有显著影响：
 
-1.  将[https://gist.github.com/SaveTheRbtz/8875474](https://gist.github.com/SaveTheRbtz/8875474)下的set\_irq\_privacy.sh文件拷贝到/var/scripts/目录下。
-2.  进入/etc/rc.d/rc.local，执行chmod命令，确保在boot时执行以下脚本：
+1. 将[https://gist.github.com/SaveTheRbtz/8875474](https://gist.github.com/SaveTheRbtz/8875474)下的set\_irq\_privacy.sh文件拷贝到/var/scripts/目录下。
+2. 进入/etc/rc.d/rc.local，执行chmod命令，确保在boot时执行以下脚本：
 
     ```
     'chmod +x /etc/rc.d/rc.local'  
@@ -155,5 +152,3 @@ rc.local：网卡调优
     ethtool -C <DEVNAME> adaptive-rx on adaptive-tx on 
     Replace <DEVNAME> with the network card, i.e. ens5f1
     ```
-
-

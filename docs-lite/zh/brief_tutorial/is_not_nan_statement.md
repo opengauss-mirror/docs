@@ -7,8 +7,6 @@
 - `NULL`：对于输入为`NULL`，返回`NULL`
 - 字符串`NaN`（忽略大小写）：可以转换为数值`NaN`，但在表达式中判断为非`NaN`，报错。
 
-
-
 ## IS NAN<a name="section829464952513"></a>
 
 如果输入数值为`NaN`，则返回`true`，否则返回`false`。对于输入`NULL`，返回`NULL`。
@@ -69,4 +67,3 @@ ERROR:  invalid input syntax for type double precision: "FM95.28"
 openGauss=# select * from t_nantest where c_id = 3 and c_txt is not nan;
 ERROR:  invalid input for IS [NOT] NAN
 ```
-

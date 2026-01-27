@@ -179,4 +179,3 @@ GS\_MODEL\_WAREHOUSE系统表用于存储AI引擎训练模型，其中包含模�
 
 >[!NOTE]说明
 >轻量版场景下，openGauss提供此系统表，但AI能力不可用。
-

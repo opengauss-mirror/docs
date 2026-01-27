@@ -17,7 +17,7 @@ ALTER DEFAULT PRIVILEGES
     abbreviated_grant_or_revoke;
 ```
 
--   **abbreviated\_grant\_or\_revoke**  grants or revokes permissions on some objects.
+- **abbreviated\_grant\_or\_revoke**  grants or revokes permissions on some objects.
 
     ```
     grant_on_tables_clause
@@ -34,8 +34,7 @@ ALTER DEFAULT PRIVILEGES
       | revoke_on_column_encryption_keys_clause
     ```
 
-
--   **grant\_on\_tables\_clause**  grants permissions on tables.
+- **grant\_on\_tables\_clause**  grants permissions on tables.
 
     ```
     GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM } 
@@ -45,7 +44,7 @@ ALTER DEFAULT PRIVILEGES
         [ WITH GRANT OPTION ]
     ```
 
--   **grant\_on\_sequences\_clause**  grants permissions on sequences.
+- **grant\_on\_sequences\_clause**  grants permissions on sequences.
 
     ```
     GRANT { { SELECT | UPDATE | USAGE | ALTER | DROP | COMMENT } 
@@ -55,7 +54,7 @@ ALTER DEFAULT PRIVILEGES
         [ WITH GRANT OPTION ]
     ```
 
--   **grant\_on\_functions\_clause**  grants permissions on functions.
+- **grant\_on\_functions\_clause**  grants permissions on functions.
 
     ```
     GRANT { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
@@ -64,7 +63,7 @@ ALTER DEFAULT PRIVILEGES
         [ WITH GRANT OPTION ]
     ```
 
--   **grant\_on\_types\_clause**  grants permissions on types.
+- **grant\_on\_types\_clause**  grants permissions on types.
 
     ```
     GRANT { { USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
@@ -73,7 +72,7 @@ ALTER DEFAULT PRIVILEGES
         [ WITH GRANT OPTION ]
     ```
 
--   **grant\_on\_client\_master\_keys\_clause**  grants permissions on CMKs.
+- **grant\_on\_client\_master\_keys\_clause**  grants permissions on CMKs.
 
     ```
     GRANT { { USAGE  | DROP } [, ...] | ALL [ PRIVILEGES ] }
@@ -82,7 +81,7 @@ ALTER DEFAULT PRIVILEGES
         [ WITH GRANT OPTION ]
     ```
 
--   **grant\_on\_column\_encryption\_keys\_clause**  grants permissions on CEKs.
+- **grant\_on\_column\_encryption\_keys\_clause**  grants permissions on CEKs.
 
     ```
     GRANT { { USAGE | DROP } [, ...] | ALL [ PRIVILEGES ] }
@@ -91,7 +90,7 @@ ALTER DEFAULT PRIVILEGES
         [ WITH GRANT OPTION ]
     ```
 
--   **revoke\_on\_tables\_clause**  revokes permissions on tables.
+- **revoke\_on\_tables\_clause**  revokes permissions on tables.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -102,7 +101,7 @@ ALTER DEFAULT PRIVILEGES
         [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
     ```
 
--   **revoke\_on\_sequences\_clause**  revokes permissions on sequences.
+- **revoke\_on\_sequences\_clause**  revokes permissions on sequences.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -113,7 +112,7 @@ ALTER DEFAULT PRIVILEGES
         [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
     ```
 
--   **revoke\_on\_functions\_clause**  revokes permissions on functions.
+- **revoke\_on\_functions\_clause**  revokes permissions on functions.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -123,7 +122,7 @@ ALTER DEFAULT PRIVILEGES
         [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
     ```
 
--   **revoke\_on\_types\_clause**  revokes permissions on types.
+- **revoke\_on\_types\_clause**  revokes permissions on types.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -133,8 +132,7 @@ ALTER DEFAULT PRIVILEGES
         [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
     ```
 
-
--   **revoke\_on\_client\_master\_keys\_clause**  revokes permissions on CMKs.
+- **revoke\_on\_client\_master\_keys\_clause**  revokes permissions on CMKs.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -144,7 +142,7 @@ ALTER DEFAULT PRIVILEGES
         [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
     ```
 
--   **revoke\_on\_column\_encryption\_keys\_clause**  revokes permissions on CEKs.
+- **revoke\_on\_column\_encryption\_keys\_clause**  revokes permissions on CEKs.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -154,16 +152,15 @@ ALTER DEFAULT PRIVILEGES
         [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0283136687_en-us_topic_0237122057_en-us_topic_0059778935_sb713f37e7b9a40ad936d0bbba0449eb1"></a>
 
--   **target\_role**
+- **target\_role**
 
     Specifies the name of an existing role. If  **FOR ROLE/USER**  is omitted, the current role is assumed.
 
     Value range: an existing role name
 
--   **schema\_name**
+- **schema\_name**
 
     Specifies the name of an existing schema.
 
@@ -171,12 +168,11 @@ ALTER DEFAULT PRIVILEGES
 
     Value range: an existing schema name
 
--   **role\_name**
+- **role\_name**
 
     Specifies the name of an existing role to grant or revoke permissions for.
 
     Value range: an existing role name
-
 
 >[!TIP]NOTICE 
 >To drop a role for which the default permissions have been granted, reverse the changes in its default permissions or use  **DROP OWNED BY**  to get rid of the default permission entry for the role.
@@ -204,4 +200,3 @@ openGauss=# DROP USER jack;
 ## Helpful Links<a name="en-us_topic_0283136687_en-us_topic_0237122057_en-us_topic_0059778935_s802a1dc228084944b989677194792353"></a>
 
 [GRANT](grant.md)  and  [REVOKE](revoke.md)
-

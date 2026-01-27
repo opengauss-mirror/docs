@@ -12,5 +12,3 @@ OBJECT TYPE的创建请参见[CREATE TYPE](create_type.md)
 >- 暂不支持多态功能(父类型接纳子类型数据或者子类型接纳父类型数据)
 >- 暂不支持对象类型功能嵌套集合类型使用(即不支持对象类型的集合类型, table of object_type)
 >- 暂不支持new关键字构造对象实例，仅支持使用typename(param1, param2)的方式隐式构造对象实例。
-
-

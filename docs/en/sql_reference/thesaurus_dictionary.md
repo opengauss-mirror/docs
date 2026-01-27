@@ -4,12 +4,12 @@ A  **Thesaurus**  dictionary \(sometimes abbreviated as TZ\) is a collection of 
 
 ## Precautions<a name="en-us_topic_0283137504_en-us_topic_0237122038_section62562319454"></a>
 
--   A TZ has the capability to recognize phrases and therefore it must remember its state and interact with the parser to determine whether to handle the next token or stop accumulation. A TZ must be configured carefully. For example, if a TZ is configured to handle only  **asciiword**  tokens, a TZ definition like  **one 7**  will not work because the token type  **uint**  is not assigned to the TZ.
--   TZs are used during indexing, so any change in the TZ's parameters requires reindexing. For most other dictionary types, small changes such as adding or removing stop words does not force reindexing.
+- A TZ has the capability to recognize phrases and therefore it must remember its state and interact with the parser to determine whether to handle the next token or stop accumulation. A TZ must be configured carefully. For example, if a TZ is configured to handle only  **asciiword**  tokens, a TZ definition like  **one 7**  will not work because the token type  **uint**  is not assigned to the TZ.
+- TZs are used during indexing, so any change in the TZ's parameters requires reindexing. For most other dictionary types, small changes such as adding or removing stop words does not force reindexing.
 
 ## Procedure<a name="en-us_topic_0283137504_en-us_topic_0237122038_section1031795115131"></a>
 
-1.  Create a TZ named  **thesaurus\_astro**.
+1. Create a TZ named  **thesaurus\_astro**.
 
     **thesaurus\_astro**  is a simple astronomical TZ that defines two astronomical word combinations \(word+synonym\).
 
@@ -31,7 +31,7 @@ A  **Thesaurus**  dictionary \(sometimes abbreviated as TZ\) is a collection of 
 
     The full name of the TZ file is  **thesaurus\_astro.ths**, and the TZ is stored in the  **/home/dicts/**  directory of the current database primary node.  **pg\_catalog.english\_stem**  is the subdictionary \(a  **Snowball**  English stemmer\) used for input normalization. The subdictionary has its own configuration \(for example, stop words\), which is not shown here. For details about the syntax and parameters for creating an  **Ispell**  dictionary, see  [CREATE TEXT SEARCH DICTIONARY](create_text_search_dictionary.md).
 
-2.  Bind the TZ to the desired token types in the text search configuration.
+2. Bind the TZ to the desired token types in the text search configuration.
 
     ```
     openGauss=# ALTER TEXT SEARCH CONFIGURATION russian
@@ -39,8 +39,8 @@ A  **Thesaurus**  dictionary \(sometimes abbreviated as TZ\) is a collection of 
         WITH thesaurus_astro, english_stem;
     ```
 
-3.  Use the TZ.
-    -   Test the TZ.
+3. Use the TZ.
+    - Test the TZ.
 
         The  **ts\_lexize**  function is not very useful for testing the TZ because the function processes its input as a single token. Instead, you can use the  **plainto\_tsquery**,  **to\_tsvector**, or  **to\_tsquery**  function which will break their input strings into multiple tokens.
 
@@ -67,7 +67,7 @@ A  **Thesaurus**  dictionary \(sometimes abbreviated as TZ\) is a collection of 
 
         **supernova star**  matches  **supernovae stars**  in  **thesaurus\_astro**  because the Snowball  **english\_stem**  stemmer is specified in the  **thesaurus\_astro**  definition. The stemmer removed  **e**  and  **s**.
 
-    -   To index the original phrase, include it in the right-hand part of the definition.
+    - To index the original phrase, include it in the right-hand part of the definition.
 
         ```
         supernovae stars : sn supernovae stars
@@ -82,6 +82,3 @@ A  **Thesaurus**  dictionary \(sometimes abbreviated as TZ\) is a collection of 
          'sn' & 'supernova' & 'star'
         (1 row)
         ```
-
-
-

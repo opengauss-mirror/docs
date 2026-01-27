@@ -8,13 +8,13 @@ openGauss安装部署，要求用户指定配置文件，配置文件中会指�
 
 ## 前提条件<a name="zh-cn_topic_0237152416_zh-cn_topic_0059778040_sde0deda331f04a77b53c25695a919910"></a>
 
--   已成功执行前置脚本gs\_preinstall。
--   用户需确保各个节点上的locale保持一致。
--   需要使用前置时设置的openGauss用户进行安装操作。
+- 已成功执行前置脚本gs\_preinstall。
+- 用户需确保各个节点上的locale保持一致。
+- 需要使用前置时设置的openGauss用户进行安装操作。
 
 ## 语法<a name="zh-cn_topic_0237152416_zh-cn_topic_0059778040_sb4663fce66974c9dadbf543e4a7095ba"></a>
 
--   安装openGauss
+- 安装openGauss
 
     ```
     gs_install -X XMLFILE [--gsinit-parameter="PARAMETER" [...]] [--dn-guc="PARAMETER" [...]] [--alarm-component=ALARMCOMPONENT] [--time-out=SECS] [-l LOGFILE] [--enable-perf-config] [--dorado-cluster-mode="PARAMETER"] 
@@ -23,46 +23,45 @@ openGauss安装部署，要求用户指定配置文件，配置文件中会指�
     >[!NOTE]说明
     >安装时若不指定字符集，默认字符集为SQL\_ASCII，为简化和统一区域locale默认设置为C，若想指定其他字符集和区域，请在安装时使用参数--gsinit-parameter="--locale=LOCALE"来指定，LOCALE为新数据库设置缺省的区域。
 
--   显示帮助信息
+- 显示帮助信息
 
     ```
     gs_install -? | --help
     ```
 
--   显示版本号信息
+- 显示版本号信息
 
     ```
     gs_install -V | --version
     ```
 
-
 ## 参数说明<a name="zh-cn_topic_0237152416_zh-cn_topic_0059778040_s6aa938505b3b45808dbefdd1266efd76"></a>
 
--   -X
+- -X
 
     openGauss配置文件。
 
     取值范围：xml配置文件。
 
--   -l
+- -l
 
     指定安装日志文件及日志文件存放的路径。
 
     当不明确指定-l，但在XML文件中配置了gaussdbLogPath时，默认值为“gaussdbLogPath的值、用户名和om/gs\_install-YYYY-MM-DD\_hhmmss.log”的组合。
 
--   --gsinit-parameter=PARAM
+- --gsinit-parameter=PARAM
 
     数据实例参数指定。
 
     取值范围请参见[gs\_initdb](gs_initdb.md)的参数说明，其中对-A、-D、-U、-C、-X参数的设置不生效。
 
--   --dn-guc=PARAM
+- --dn-guc=PARAM
 
     配置参数。
 
     取值范围请参见[gs\_guc](gs_guc.md)的参数说明。
 
--   --time-out=SECS
+- --time-out=SECS
 
     启动超时等待时间。单位：s。
 
@@ -70,15 +69,15 @@ openGauss安装部署，要求用户指定配置文件，配置文件中会指�
 
     取值范围：正整数，若无特殊需求，不需要配置该参数，系统会自动调整超时时间。
 
--   --alarm-component=alarm\_component
+- --alarm-component=alarm\_component
 
     指定告警上报组件的绝对路径。
 
--   --enable-perf-config
+- --enable-perf-config
 
     在install结束后，调用gs_perfconfig调整数据库配置，以使openGauss获得比较好的性能。
 
--   --dorado-cluster-mode=PARAM
+- --dorado-cluster-mode=PARAM
 
     指定存储设备的集群模式，dorado-cluster-mode 主集群or备集群。
 
@@ -86,14 +85,13 @@ openGauss安装部署，要求用户指定配置文件，配置文件中会指�
     - primary:以资源池化dorado双集群主集群安装。
     - standby:以资源池化dorado双集群备集群安装。
     
--   -?, --help
+- -?, --help
 
     显示帮助信息。
 
--   -V, --version
+- -V, --version
 
     显示版本号信息。
-
 
 ## 示例<a name="zh-cn_topic_0237152416_zh-cn_topic_0059778040_s9f6b00fff4334fdfaa38df725719b248"></a>
 
@@ -137,4 +135,3 @@ Successfully installed application.
 ## 相关命令<a name="zh-cn_topic_0237152416_zh-cn_topic_0059778040_s07c0e1fb92454ab4aba383e142e6014d"></a>
 
 [gs\_postuninstall](gs_postuninstall.md)，[gs\_preinstall](gs_preinstall.md)，[gs\_uninstall](gs_uninstall.md)
-

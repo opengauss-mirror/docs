@@ -4,8 +4,8 @@ This section describes how to install the openGauss database on openEuler 22.03 
 
 ## Supported Architectures and OSs
 
--   x86-64 openEuler 22.03 LTS
--   ARM64 openEuler 22.03 LTS
+- x86-64 openEuler 22.03 LTS
+- ARM64 openEuler 22.03 LTS
 
 ***This installation method is supported only on openEuler 22.03 LTS.***
 
@@ -28,7 +28,6 @@ This section describes how to install the openGauss database on openEuler 22.03 
 ![](figures/soft_select.png)
 
 ![](figures/choose_opengauss.png)
-
 
 ## Usage Guidelines
 

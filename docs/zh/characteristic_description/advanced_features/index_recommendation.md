@@ -135,7 +135,7 @@ CREATE INDEX idx1 on t1(age, sex);
 
 使用方法如下：
 
-1.  使用函数hypopg\_create\_index创建虚拟索引。
+1. 使用函数hypopg\_create\_index创建虚拟索引。
 
     ```
     openGauss=> select * from hypopg_create_index('create index on bmsql_customer(c_w_id)');
@@ -145,7 +145,7 @@ CREATE INDEX idx1 on t1(age, sex);
     (1 row)
     ```
 
-2.  开启GUC参数enable\_hypo\_index，该参数控制数据库的优化器进行EXPLAIN时是否考虑创建的虚拟索引。通过对特定的查询语句执行explain，用户可根据优化器给出的执行计划评估该索引是否能够提升该查询语句的执行效率。例如：
+2. 开启GUC参数enable\_hypo\_index，该参数控制数据库的优化器进行EXPLAIN时是否考虑创建的虚拟索引。通过对特定的查询语句执行explain，用户可根据优化器给出的执行计划评估该索引是否能够提升该查询语句的执行效率。例如：
 
     开启GUC参数前，执行EXPLAIN + 查询语句：
 
@@ -179,7 +179,7 @@ CREATE INDEX idx1 on t1(age, sex);
 
     通过对比两个执行计划可以观察到，该索引预计会降低指定查询语句的执行代价，用户可考虑创建对应的真实索引。
 
-3.  （可选）使用函数hypopg\_display\_index展示所有创建过的虚拟索引。例如：
+3. （可选）使用函数hypopg\_display\_index展示所有创建过的虚拟索引。例如：
 
     ```
     openGauss=> select * from hypopg_display_index();
@@ -190,7 +190,7 @@ CREATE INDEX idx1 on t1(age, sex);
     (2 rows)
     ```
 
-4.  （可选）使用函数hypopg\_estimate\_size估计虚拟索引创建所需的空间大小（单位：字节）。例如：
+4. （可选）使用函数hypopg\_estimate\_size估计虚拟索引创建所需的空间大小（单位：字节）。例如：
 
     ```
     openGauss=> select * from hypopg_estimate_size(329730);
@@ -200,7 +200,7 @@ CREATE INDEX idx1 on t1(age, sex);
     (1 row)
     ```
 
-5.  删除虚拟索引。
+5. 删除虚拟索引。
 
     使用函数hypopg\_drop\_index删除指定oid的虚拟索引。例如：
 
@@ -222,13 +222,12 @@ CREATE INDEX idx1 on t1(age, sex);
     (1 row)
     ```
 
-
 ## workload级别索引推荐<a name="section174813519117"></a>
 
 对于workload级别的索引推荐，用户可通过运行数据库外的脚本使用此功能，本功能将包含有多条DML语句的workload作为输入，最终生成一批可对整体workload的执行表现进行优化的索引。
 
-1.  准备好包含有多条DML语句的文件作为输入的workload，文件中每条语句占据一行。用户可从数据库的离线日志中获得历史的业务语句。
-2.  运行python脚本index\_advisor\_workload.py，命令如下：
+1. 准备好包含有多条DML语句的文件作为输入的workload，文件中每条语句占据一行。用户可从数据库的离线日志中获得历史的业务语句。
+2. 运行python脚本index\_advisor\_workload.py，命令如下：
 
     ```
     python index_advisor_workload.py [p PORT] [d DATABASE] [f FILE] [--h HOST] [-U USERNAME] [-W PASSWORD][--schema SCHEMA]
@@ -237,20 +236,20 @@ CREATE INDEX idx1 on t1(age, sex);
 
     其中的输入参数依次为：
 
-    -   PORT：连接数据库的端口号。
-    -   DATABASE：连接数据库的名字。
-    -   FILE：包含workload语句的文件路径。
-    -   HOST：（可选）连接数据库的主机号。
-    -   USERNAME：（可选）连接数据库的用户名。
-    -   PASSWORD：（可选）连接数据库用户的密码。
-    -   SCHEMA：模式名称。
-    -   MAX\_INDEX\_NUM：（可选）最大的索引推荐数目。
-    -   MAX\_INDEX\_STORAGE：（可选）最大的索引集合空间大小。
-    -   multi\_node：（可选）指定当前是否为分布式数据库实例。
-    -   multi\_iter\_mode：（可选）算法模式，可通过是否设置该参数来切换算法。
-    -   json：（可选）指定workload语句的文件路径格式为SQL归一化后的json，默认格式每条SQL占一行。
-    -   driver：（可选）指定是否使用python驱动器连接数据库，默认gsql连接。
-    -   show\_detail：（可选）是否显示当前推荐索引集合的详细优化信息。
+    - PORT：连接数据库的端口号。
+    - DATABASE：连接数据库的名字。
+    - FILE：包含workload语句的文件路径。
+    - HOST：（可选）连接数据库的主机号。
+    - USERNAME：（可选）连接数据库的用户名。
+    - PASSWORD：（可选）连接数据库用户的密码。
+    - SCHEMA：模式名称。
+    - MAX\_INDEX\_NUM：（可选）最大的索引推荐数目。
+    - MAX\_INDEX\_STORAGE：（可选）最大的索引集合空间大小。
+    - multi\_node：（可选）指定当前是否为分布式数据库实例。
+    - multi\_iter\_mode：（可选）算法模式，可通过是否设置该参数来切换算法。
+    - json：（可选）指定workload语句的文件路径格式为SQL归一化后的json，默认格式每条SQL占一行。
+    - driver：（可选）指定是否使用python驱动器连接数据库，默认gsql连接。
+    - show\_detail：（可选）是否显示当前推荐索引集合的详细优化信息。
 
     例如：
 
@@ -272,5 +271,3 @@ CREATE INDEX idx1 on t1(age, sex);
     create index ind8 on public.bmsql_oorder(o_w_id,o_c_id,o_d_id);
     create index ind9 on public.bmsql_district(d_w_id);
     ```
-
-

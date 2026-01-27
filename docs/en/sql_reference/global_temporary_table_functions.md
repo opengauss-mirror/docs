@@ -1,6 +1,6 @@
 # Global Temporary Table Functions<a name="EN-US_TOPIC_0289900393"></a>
 
--   pg\_get\_gtt\_relstats\(relOid\)
+- pg\_get\_gtt\_relstats\(relOid\)
 
     Description: Displays basic information about a global temporary table specified by the current session.
 
@@ -18,8 +18,7 @@
     (1 row)
     ```
 
-
--   pg\_get\_gtt\_statistics\(relOid, attnum, ''::text\)
+- pg\_get\_gtt\_statistics\(relOid, attnum, ''::text\)
 
     Description: Displays statistics about a single column in a global temporary table specified by the current session.
 
@@ -46,8 +45,7 @@
     (1 row)
     ```
 
-
--   pg\_gtt\_attached\_pid\(relOid\)
+- pg\_gtt\_attached\_pid\(relOid\)
 
     Description: Displays PIDs of all threads that are using the specified global temporary table.
 
@@ -66,8 +64,7 @@
     (2 rows)
     ```
 
-
--   dbe\_perf.get\_global\_full\_sql\_by\_timestamp\(start\_timestamp timestamp, end\_timestamp timestamp\)
+- dbe\_perf.get\_global\_full\_sql\_by\_timestamp\(start\_timestamp timestamp, end\_timestamp timestamp\)
 
     Description: Obtains full SQL information at the instance level.
 
@@ -101,7 +98,7 @@
     </tbody>
     </table>
 
--   dbe\_perf.get\_global\_slow\_sql\_by\_timestamp\(start\_timestamp timestamp, end\_timestamp timestamp\)
+- dbe\_perf.get\_global\_slow\_sql\_by\_timestamp\(start\_timestamp timestamp, end\_timestamp timestamp\)
 
     Description: Obtains slow SQL information at the instance level.
 
@@ -135,7 +132,7 @@
     </tbody>
     </table>
 
--   statement\_detail\_decode\(detail text, format text, pretty bool\)
+- statement\_detail\_decode\(detail text, format text, pretty bool\)
 
     Parses the details column in a full or slow SQL statement.
 
@@ -175,7 +172,7 @@
     </tbody>
     </table>
 
--   pg\_list\_gtt\_relfrozenxids\(\)
+- pg\_list\_gtt\_relfrozenxids\(\)
 
     Description: Displays the frozen XID of each session.
 
@@ -196,5 +193,3 @@
                    0 |        11151
     (3 rows)
     ```
-
-

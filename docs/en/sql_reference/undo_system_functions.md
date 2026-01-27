@@ -1,12 +1,12 @@
 # Undo System Functions<a name="EN-US_TOPIC_0000001135762588"></a>
 
--   gs\_undo\_meta\(type, zoneId, location\)
+- gs\_undo\_meta\(type, zoneId, location\)
 
     Description: Specifies metadata of each module in the undo system.
 
     Parameter description:
 
-    -   **type**  \(metadata type\)
+    - **type**  \(metadata type\)
 
         The value  **0**  indicates the metadata corresponding to  **Undo Zone\(Record\)**.
 
@@ -16,13 +16,13 @@
 
         The value  **3**  indicates the metadata corresponding to  **Undo Space\(Transaction Slot\)**.
 
-    -   **zoneId**  \(undo zone ID\)
+    - **zoneId**  \(undo zone ID\)
 
         The value  **–1**  indicates the metadata of all undo zones.
 
         The value range 0–1024 x 1024 indicates the metadata of the corresponding zone ID.
 
-    -   **location**  \(read location\)
+    - **location**  \(read location\)
 
         The value  **0**  indicates that data is read from the current memory.
 
@@ -30,19 +30,19 @@
 
     Return type: record
 
--   gs\_undo\_translot\(location, zoneId\)
+- gs\_undo\_translot\(location, zoneId\)
 
     Description: Specifies transaction slot information of the undo system.
 
     Parameter description:
 
-    -   **location**  \(read location\)
+    - **location**  \(read location\)
 
         The value  **0**  indicates that data is read from the current memory.
 
         The value  **1**  indicates that data is read from a physical file.
 
-    -   **zoneId**  \(undo zone ID\)
+    - **zoneId**  \(undo zone ID\)
 
         The value  **–1**  indicates the metadata of all undo zones.
 
@@ -50,7 +50,7 @@
 
     Return type: record
 
--   gs\_stat\_undo\(\)
+- gs\_stat\_undo\(\)
 
     Description: Undo statistics.
 
@@ -163,14 +163,12 @@
     </tbody>
     </table>
 
--   gs\_undo\_record\(undoptr\)
+- gs\_undo\_record\(undoptr\)
 
     Description: Undo record resolution.
 
     Parameter description:
 
-    -   **undoptr**  \(undo record pointer\)
+    - **undoptr**  \(undo record pointer\)
 
     Return type: record
-
-

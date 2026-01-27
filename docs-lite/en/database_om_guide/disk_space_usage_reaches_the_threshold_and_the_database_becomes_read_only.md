@@ -20,14 +20,14 @@ After the disk space usage reaches the threshold, the database enters the read-o
 
 ## Procedure<a name="section17713758135913"></a>
 
-1.  Use either of the following methods to connect to the database in maintenance mode:
-    -   Method 1
+1. Use either of the following methods to connect to the database in maintenance mode:
+    - Method 1
 
         ```
         gsql -d postgres -p 8000 -r -m
         ```
 
-    -   Method 2
+    - Method 2
 
         ```
         gsql -d postgres -p 8000 -r
@@ -39,14 +39,12 @@ After the disk space usage reaches the threshold, the database enters the read-o
         set xc_maintenance_mode=on;
         ```
 
-2.  Run the  **DROP**  or  **TRUNCATE**  statement to delete user tables that are no longer used until the disk space usage falls below the threshold.
+2. Run the  **DROP**  or  **TRUNCATE**  statement to delete user tables that are no longer used until the disk space usage falls below the threshold.
 
     Deleting user tables can only temporarily relieve the insufficient disk space. To permanently solve the problem, expand the disk space.
 
-3.  Disable the read-only mode of the database as user  **omm**.
+3. Disable the read-only mode of the database as user  **omm**.
 
     ```
     gs_guc reload -D /gaussdb/data/dbnode -c "default_transaction_read_only=off"
     ```
-
-

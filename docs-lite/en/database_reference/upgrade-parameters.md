@@ -8,8 +8,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: Boolean
 
--   **on**  indicates an upgrade is ongoing.
--   **off**  indicates no upgrade is ongoing.
+- **on**  indicates an upgrade is ongoing.
+- **off**  indicates no upgrade is ongoing.
 
 **Default value**:  **off**
 
@@ -31,12 +31,11 @@ This parameter is a fixed INTERNAL parameter and cannot be modified.
 
 **Value range**: an integer ranging from 0 to  _INT\_MAX_
 
--   **0**  indicates that no upgrade is ongoing.
--   **1**  indicates that a local upgrade is ongoing.
--   **2**  indicates that a grayscale upgrade is ongoing.
+- **0**  indicates that no upgrade is ongoing.
+- **1**  indicates that a local upgrade is ongoing.
+- **2**  indicates that a grayscale upgrade is ongoing.
 
 **Default value**:  **0**
 
 >[!NOTE]NOTE 
 >Special case: When the gray upgrade is used, if the major version upgrade policy is selected, that is, the upgrade script needs to be executed and the binary package needs to be replaced, the value of  **upgrade\_mode**  is set to  **2**;iIf the minor version upgrade policy is selected, that is, only the binary package needs to be replaced, the value of  **upgrade\_mode**  is not set to  **2**.
-

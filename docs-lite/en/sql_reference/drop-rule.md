@@ -12,26 +12,25 @@ DROP RULE [ IF EXISTS ] name ON table_name [ CASCADE | RESTRICT ]
 
 ## Parameter Description<a name="section652211111716"></a>
 
--   IF EXISTS
+- IF EXISTS
 
     If the rule does not exist, a  **NOTICE**  is thrown.
 
--   name
+- name
 
     Name of an existing rule to be deleted.
 
--   table\_name
+- table\_name
 
     Name of the table to which the rule applies.
 
--   CASCADE
+- CASCADE
 
     Automatically cascade deletes objects that depend on this rule.
 
--   RESTRICT
+- RESTRICT
 
     By default, if any objects depend on the rule, the rule cannot be deleted.
-
 
 ## Examples<a name="section192526392717"></a>
 
@@ -39,4 +38,3 @@ DROP RULE [ IF EXISTS ] name ON table_name [ CASCADE | RESTRICT ]
 -- Delete a rewriting rule.
 newruleDROP RULE newrule ON mytable;
 ```
-

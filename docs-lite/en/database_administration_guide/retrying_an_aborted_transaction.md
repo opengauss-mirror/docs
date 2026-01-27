@@ -38,4 +38,3 @@ while (commitAborts < RETRY_LIMIT) {
     }
 }
 ```
-

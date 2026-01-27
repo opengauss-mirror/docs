@@ -6,58 +6,57 @@
 
 ## Prerequisites<a name="en-us_topic_0237152418_en-us_topic_0059778816_sdd9f70f91f8442b4bade64056b9c5b42"></a>
 
--   The uninstallation of openGauss is successful.
--   User  **root**  is trustworthy and available.
--   Only user  **root**  is authorized to run the  **gs\_postuninstall**  command.
+- The uninstallation of openGauss is successful.
+- User  **root**  is trustworthy and available.
+- Only user  **root**  is authorized to run the  **gs\_postuninstall**  command.
 
 ## Syntax<a name="en-us_topic_0237152418_en-us_topic_0059778816_sad653bfd058a483ab93629bd7b66fc5d"></a>
 
--   Delete the user, user group, and virtual IP address in openGauss.
+- Delete the user, user group, and virtual IP address in openGauss.
 
     ```
     gs_postuninstall -U USER -X XMLFILE [-L] [--delete-user] [--delete-group] [-l LOGFILE]
     ```
 
--   Display help information.
+- Display help information.
 
     ```
     gs_postuninstall -? | --help
     ```
 
--   Display version information.
+- Display version information.
 
     ```
     gs_postuninstall -V | --version
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0237152418_en-us_topic_0059778816_sb28b510af9974e7497677c1008506ace"></a>
 
--   -U
+- -U
 
     Specifies the OS username of openGauss.
 
     Value range: a string. It must comply with the naming convention.
 
--   -X
+- -X
 
     Specifies the path of the openGauss configuration file.
 
     Value range: storage paths of XML files
 
--   -L
+- -L
 
     Clears only the host environment.
 
     If a host environment in openGauss is cleared, openGauss cannot perform full environment clearance.
 
--   --delete-user
+- --delete-user
 
     Deletes the OS user specified by the  **-U**  parameter.
 
     In the Red Hat environment, the username and the user group name are the same. If this parameter is specified, the  **--delete-group**  parameter must be specified.
 
--   --delete-group
+- --delete-group
 
     Deletes the user group where the OS user belongs to \(the  **--delete-user**  parameter must be specified when selecting this option\).
 
@@ -70,14 +69,13 @@
   >[!NOTE]NOTE 
   >After executing gs\_postuninstall, the system will automatically delete the directories related to openGauss \(including $GAUSSLOG\). You are advised to set the log file path to a path outside the openGauss database.
 
--   -?, --help
+- -?, --help
 
     Displays help information.
 
--   -V, --version
+- -V, --version
 
     Displays version information.
-
 
 ## Example<a name="en-us_topic_0237152418_en-us_topic_0059778816_s0a095ace681e435cabeab950321a1ae3"></a>
 
@@ -115,4 +113,3 @@ Successfully cleaned environment.
 ## Helpful Links<a name="en-us_topic_0237152418_en-us_topic_0059778816_s2ce69a080cb14656845238b0d1ee73c1"></a>
 
 [gs\_preinstall](gs_preinstall.md)  and  [gs\_uninstall](gs_uninstall.md)
-

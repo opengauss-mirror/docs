@@ -198,6 +198,7 @@ SELECT ogai_embedding('openGauss是一款开源数据库', 'my_embed_model', 153
 ```
 
 #### ogai_generate
+
 **功能：** 调用大语言模型生成回答。
 
 **参数说明：**
@@ -214,6 +215,7 @@ SELECT ogai_generate('什么是向量数据库？', 'qwen_chat');
 ```
 
 #### ogai_rerank
+
 **功能：** 对检索结果进行相关性重排序。
 
 **参数说明：**
@@ -243,6 +245,7 @@ SELECT * FROM ogai_rerank(
 ```
 
 #### ogai_chunk
+
 **功能：** 将长文本分割为适合处理的片段。
 
 **参数说明：**
@@ -254,11 +257,13 @@ SELECT * FROM ogai_rerank(
 | max_chunk_overlap | INTEGER | \>= 0 且 < max_chunk_size | 相邻分块的重叠大小 |
 
 **语法：**
+
 ```sql
 SELECT * FROM ogai_chunk('长文本...', 500, 100);
 ```
 
 #### load_onnx_model
+
 **功能：** 将 ONNX 模型加载到内存缓存中。
 
 **参数说明：**
@@ -391,6 +396,7 @@ SELECT * FROM ogai.search('my_task', '数据库优化', 'id, title, content', 5,
 | p_where_clause | TEXT | '' | 额外 SQL 过滤条件 |
 
 **前置条件：**
+
 - 任务创建时 `p_enable_bm25` 必须为 `true`
 - 文本列必须为 TEXT 类型
 
@@ -456,6 +462,7 @@ SELECT * FROM ogai.ai_unvectorize('my_task');
 ```
 
 ## 使用指导
+
 OGAI相关GUC参数说明请参考[OGAI参数](../database_reference/ogai_parameters.md)，
 
 ### 1. 环境准备
@@ -484,6 +491,7 @@ VALUES ('onnx_bge', 'bge-small-zh', 'onnx', '/data/models/bge-small-zh.onnx', CU
 ```
 
 ### 3. 完整示例
+
 ```sql
 -- 1. 注册模型
 INSERT INTO ogai.model_sources (model_key, model_name, model_provider, url, api_key, owner_name)

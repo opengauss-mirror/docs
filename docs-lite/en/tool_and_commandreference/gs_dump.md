@@ -14,8 +14,8 @@ gs\_dump supports the export of text files that are compatible with the V1 datab
 
 gs\_dump can export database information to a plain-text SQL script file or archive file.
 
--   Plain-text SQL script: It contains the SQL statements required to restore the database. You can use  [gsql](gsql.md)  to execute the SQL script. With only a little modification, the SQL script can rebuild a database on other hosts or database products.
--   Archive file: It contains data required to restore the database. It can be a tar-, directory-, or custom-format archive. For details, see  [Table 1](#en-us_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5).
+- Plain-text SQL script: It contains the SQL statements required to restore the database. You can use  [gsql](gsql.md)  to execute the SQL script. With only a little modification, the SQL script can rebuild a database on other hosts or database products.
+- Archive file: It contains data required to restore the database. It can be a tar-, directory-, or custom-format archive. For details, see  [Table 1](#en-us_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5).
 
 ## Main Functions<a name="en-us_topic_0059777770_s59719e8badd54d11a09df49f558d8b20"></a>
 
@@ -84,10 +84,10 @@ gs\_dump can create export files in four formats, which are specified by \[**-F*
 
 ## Precautions<a name="en-us_topic_0059777770_s75e900efd4f04a2bb39914ec1d8f971f"></a>
 
--   Do not modify any exported file. Otherwise, restoration may fail.
--   To ensure the data consistency and integrity, gs\_dump acquires a share lock on a table to be dumped. If a share lock has been set for the table in other transactions, gs\_dump locks the table after it is released. If the table cannot be locked within the specified time, the dump fails. You can customize the timeout duration to wait for lock release by specifying the  **--lock-wait-timeout**  parameter.
--   If the database contains time series tables, gs\_dump cannot be used to export data.
--   Stored procedures and functions cannot be exported in encrypted mode.
+- Do not modify any exported file. Otherwise, restoration may fail.
+- To ensure the data consistency and integrity, gs\_dump acquires a share lock on a table to be dumped. If a share lock has been set for the table in other transactions, gs\_dump locks the table after it is released. If the table cannot be locked within the specified time, the dump fails. You can customize the timeout duration to wait for lock release by specifying the  **--lock-wait-timeout**  parameter.
+- If the database contains time series tables, gs\_dump cannot be used to export data.
+- Stored procedures and functions cannot be exported in encrypted mode.
 
 ## Syntax<a name="en-us_topic_0059777770_s884f9e03cedd408cbe7ce5303df97df6"></a>
 
@@ -99,102 +99,105 @@ gs_dump [OPTION]... [DBNAME]
 >DBNAME does not follow a short or long option. It specifies the database to connect to.
 >For example:
 >Specify DBNAME without a -d option preceding it.
+>
 >```
 >gs_dump -p port_number  postgres -f dump1.sql
 >```
+>
 >Or,
+>
 >```
 >export PGDATABASE=postgres 
 >```
+>
 >```
 > gs_dump -p port_number -f dump1.sql
 >```
+>
 >Environment variable:  _PGDATABASE_
 
 ## Parameter Description<a name="en-us_topic_0059777770_s6822518f650f4ad4ab67d1084cd8ffdd"></a>
 
 Common parameters:
 
--   -f, --file=FILENAME
+- -f, --file=FILENAME
 
     Sends the output to the specified file or directory. If this parameter is omitted, the standard output is generated. If the output format is \(-F c/-F d/-F t\), the -f parameter must be specified. If the value of the  **-f**  parameter contains a directory, the directory has the read and write permissions to the current user.
 
--   -F, --format=c|d|t|p
+- -F, --format=c|d|t|p
 
     Selects an exported file format. The formats are as follows:
 
-    -   p|plain: generates a text SQL script file. This is the default value.
-    -   c|custom: outputs a custom-format archive as a directory to be used as the input of gs\_restore. This is the most flexible output format in which users can manually select it and reorder the archived items during the restoration process. An archive in this format is compressed by default.
-    -   d|directory: creates a directory containing directory files and the data files of tables and BLOB objects.
-    -   t|tar: outputs a tar-format archive as the input of gs\_restore. The .tar format is compatible with the directory format. Extracting a .tar archive generates a valid directory-format archive. However, the .tar archive cannot be further compressed and has an 8-GB limitation on the size of a single table. The order of table data items cannot be changed during restoration.
+    - p|plain: generates a text SQL script file. This is the default value.
+    - c|custom: outputs a custom-format archive as a directory to be used as the input of gs\_restore. This is the most flexible output format in which users can manually select it and reorder the archived items during the restoration process. An archive in this format is compressed by default.
+    - d|directory: creates a directory containing directory files and the data files of tables and BLOB objects.
+    - t|tar: outputs a tar-format archive as the input of gs\_restore. The .tar format is compatible with the directory format. Extracting a .tar archive generates a valid directory-format archive. However, the .tar archive cannot be further compressed and has an 8-GB limitation on the size of a single table. The order of table data items cannot be changed during restoration.
 
         A .tar archive can be used as the input of gsql.
 
-
--   -v, --verbose
+- -v, --verbose
 
     Specifies the verbose mode. If it is specified, gs\_dump writes detailed object comments and number of startups/stops to the dump file, and progress messages to standard errors.
 
--   -V, --version
+- -V, --version
 
     Prints the gs\_dump version and exits.
 
--   -Z, --compress=0-9
+- -Z, --compress=0-9
 
     Specifies the used compression level.
 
     Value range: 0 to 9
 
-    -   0 indicates no compression.
-    -   1 indicates the lowest compression ratio and the fastest processing speed.
-    -   9 indicates the highest compression ratio and the slowest processing speed.
+    - 0 indicates no compression.
+    - 1 indicates the lowest compression ratio and the fastest processing speed.
+    - 9 indicates the highest compression ratio and the slowest processing speed.
 
     For the custom-format archive, this option specifies the compression level of a single table data segment. By default, data is compressed at a medium level. The .tar archive format and plain-text format do not support compression currently.
 
--   --lock-wait-timeout=TIMEOUT
+- --lock-wait-timeout=TIMEOUT
 
     Do not keep waiting to obtain shared table locks at the beginning of the dump. If you are unable to lock a table within a specified time, consider it as failed. The timeout duration can be specified in any of the formats accepted by SET statement\_timeout.
 
--   -?, --help
+- -?, --help
 
     Displays help information about gs\_dump parameters and exits.
 
-
 Dump parameters:
 
--   -a, --data-only
+- -a, --data-only
 
     Generates only the data, not the schema \(data definition\). Dumps the table data, big objects, and sequence values.
 
--   -b, --blobs
+- -b, --blobs
 
     Reserved for function extension. The option is not recommended.
 
--   -c, --clean
+- -c, --clean
 
     Before writing the command of creating database objects into the backup files, writes the command of cleaning \(deleting\) database objects to the backup files. \(If no objects exist in the target database, gs\_restore probably displays some error information.\)
 
     This parameter is used only for the plain-text format. For the archive format, you can specify the option when using gs\_restore.
 
--   -C, --create
+- -C, --create
 
     The backup file content starts with the commands of creating the database and connecting to the created database. \(If the script is in this format, any database to be connected is allowed before running the script.\)
 
     This parameter is used only for the plain-text format. For the archive format, you can specify the option when using gs\_restore.
 
--   -E, --encoding=ENCODING
+- -E, --encoding=ENCODING
 
     Creates the dump in the specified character set encoding. By default, the dump file is created in the database encoding. \(Alternatively, you can set the environment variable PGCLIENTENCODING to the required dump encoding.\)
 
--   -n, --schema=SCHEMA
+- -n, --schema=SCHEMA
 
     Dumps only schemas matching the schema names. This option contains the schema and all its contained objects. If this option is not specified, all non-system schemas in the target database will be dumped. Multiple schemas can be selected by specifying multiple -n options. The schema parameter is interpreted as a pattern according to the same rule used by the \\d command of gsql. Therefore, multiple schemas can also be selected by writing wildcard characters in the pattern. When you use wildcard characters, quote the pattern to prevent the shell from expanding the wildcard characters.
 
     >[!NOTE]NOTE 
-    >-   If -n is specified, gs\_dump does not dump any other database objects that the selected schemas might depend upon. Therefore, there is no guarantee that the results of a specific-schema dump can be automatically restored to an empty database.
-    >-   If -n is specified, the non-schema objects are not dumped.
+    >- If -n is specified, gs\_dump does not dump any other database objects that the selected schemas might depend upon. Therefore, there is no guarantee that the results of a specific-schema dump can be automatically restored to an empty database.
+    >- If -n is specified, the non-schema objects are not dumped.
 
-    Multiple schemas can be dumped. Entering  **-n **_schemaname_  multiple times dumps multiple schemas.
+    Multiple schemas can be dumped. Entering  **-n**_schemaname_  multiple times dumps multiple schemas.
 
     For example:
 
@@ -204,7 +207,7 @@ Dump parameters:
 
     In the preceding example, sch1 and sch2 are dumped.
 
--   -N, --exclude-schema=SCHEMA
+- -N, --exclude-schema=SCHEMA
 
     Does not dump any tables matching the table pattern. The pattern is interpreted according to the same rule as for -n. -N can be specified multiple times to exclude schemas matching any of the specified patterns.
 
@@ -222,25 +225,25 @@ Dump parameters:
 
     In the preceding example, sch1 and sch2 will be excluded during the dumping.
 
--   -o, --oids
+- -o, --oids
 
     Dumps OIDs as parts of the data in each table. Use this option if your application references the OID columns in some way \(for example, in a foreign key constraint\). If the preceding situation does not occur, do not use this parameter.
 
--   -O, --no-owner
+- -O, --no-owner
 
     Do not output commands to set ownership of objects to match the original database. By default, gs\_dump issues the ALTER OWNER or SET SESSION AUTHORIZATION command to set ownership of created database objects. These statements will fail when the script is running unless it is started by a system administrator \(or the same user that owns all of the objects in the script\). To make a script that can be stored by any user and give the user ownership of all objects, specify -O.
 
     This parameter is used only for the plain-text format. For the archive format, you can specify the option when using gs\_restore.
 
--   <a name="en-us_topic_0059777770_l35ed3d5a093e42ab8fc945dd3ca80ecd"></a>-s, --schema-only
+- <a name="en-us_topic_0059777770_l35ed3d5a093e42ab8fc945dd3ca80ecd"></a>-s, --schema-only
 
     Dumps only the object definition \(schema\) but not data.
 
--   -S, --sysadmin=NAME
+- -S, --sysadmin=NAME
 
     Reserved for function extension. The option is not recommended.
 
--   -t, --table=TABLE
+- -t, --table=TABLE
 
     Specifies a list of tables, views, sequences, or foreign tables not to be dumped. You can use multiple -t parameters or wildcard characters to specify tables.
 
@@ -249,11 +252,11 @@ Dump parameters:
     The -n and -N options have no effect when -t is used, because tables selected by using -t will be dumped regardless of those options, and non-table objects will not be dumped.
 
     >[!NOTE]NOTE 
-    >-   The number of -t parameters must be less than or equal to 100.
-    >-   If the number of -t parameters is greater than 100, you are advised to use the --include-table-file parameter to replace some -t parameters.
-    >-   If -t is specified, gs\_dump does not dump any other database objects that the selected tables might depend upon. Therefore, there is no guarantee that the results of a specific-table dump can be automatically restored to an empty database.
-    >-   -t tablename only dumps visible tables in the default search path. -t '\*.tablename' dumps tablename tables in all the schemas of the dumped database. -t schema.table dumps tables in a specific schema.
-    >-   -t tablename does not export trigger information from a table.
+    >- The number of -t parameters must be less than or equal to 100.
+    >- If the number of -t parameters is greater than 100, you are advised to use the --include-table-file parameter to replace some -t parameters.
+    >- If -t is specified, gs\_dump does not dump any other database objects that the selected tables might depend upon. Therefore, there is no guarantee that the results of a specific-table dump can be automatically restored to an empty database.
+    >- -t tablename only dumps visible tables in the default search path. -t '\*.tablename' dumps tablename tables in all the schemas of the dumped database. -t schema.table dumps tables in a specific schema.
+    >- -t tablename does not export trigger information from a table.
 
     For example:
 
@@ -263,11 +266,11 @@ Dump parameters:
 
     In the preceding example, schema1.table1 and schema2.table2 are dumped.
 
--   --include-table-file=FILENAME
+- --include-table-file=FILENAME
 
     Specifies the table file to be dumped.
 
--   -T, --exclude-table=TABLE
+- -T, --exclude-table=TABLE
 
     Specifies a list of tables, views, sequences, or foreign tables not to be dumped. You can use multiple -t parameters or wildcard characters to specify tables.
 
@@ -281,7 +284,7 @@ Dump parameters:
 
     In the preceding example, table1 and table2 are excluded from the dumping.
 
--   --exclude-table-file=FILENAME
+- --exclude-table-file=FILENAME
 
     Specifies the table file not to be dumped.
 
@@ -291,53 +294,53 @@ Dump parameters:
     >schema2.table2
     >......
 
--   -x, --no-privileges|--no-acl
+- -x, --no-privileges|--no-acl
 
     Prevents the dumping of access permissions \(grant/revoke commands\).
 
--   -q, --target
+- -q, --target
 
     Exports text files compatible with databases of other versions. Currently, parameters of V1 and V5 are supported. The V1 parameters are used to export data from the V5 database as a text file compatible with V1. The V5 parameters are used to export data from the V5 database as a V5 text file, reducing errors that may occur during V5 import.
 
     When using the V1 parameters, you are advised to use them along with parameters such as  **--exclude-guc="enable\_cluster\_resize"**,  **--exclude-function**, and  **--exclude-with**. Otherwise, an error may be reported during V1 import.
 
--   -g, --exclude-guc
+- -g, --exclude-guc
 
     Specifies the  **set**  command that does not contain related GUC parameters in the exported text file. Currently, only  **enable\_cluster\_resize**  is supported.
 
--   --exclude-function
+- --exclude-function
 
     Specifies that functions and stored procedures are not exported.
 
--   --exclude-with
+- --exclude-with
 
     Specifies that the description such as  **WITH\(orientation=row, compression=on\)**  is not added to the end of the exported table definition.
 
--   --binary-upgrade
+- --binary-upgrade
 
     Reserved for function extension. The option is not recommended.
 
--   --binary-upgrade-usermap="USER1=USER2"
+- --binary-upgrade-usermap="USER1=USER2"
 
     Reserved for function extension. The option is not recommended.
 
--   --column-inserts/--attribute-inserts
+- --column-inserts/--attribute-inserts
 
     Exports data by running the INSERT command with explicit column names \{INSERT INTO table \(column, ...\) VALUES ...\}. This will cause a slow restoration. However, since this option generates an independent command for each row, an error in reloading a row causes only the loss of the row rather than the entire table content.
 
--   --disable-dollar-quoting
+- --disable-dollar-quoting
 
     Disables the use of dollar sign \($\) for function bodies, and forces them to be quoted using the SQL standard string syntax.
 
--   --include-alter-table
+- --include-alter-table
 
     Deletes columns from the dumped table.
 
--   --disable-triggers
+- --disable-triggers
 
     Reserved for function extension. The option is not recommended.
 
--   --exclude-table-data=TABLE
+- --exclude-table-data=TABLE
 
     Does not dump data that matches any of table patterns. The pattern is interpreted according to the same rule as for -t.
 
@@ -345,39 +348,39 @@ Dump parameters:
 
     To exclude data of all tables in the database, see  [--schema-only](#en-us_topic_0059777770_l35ed3d5a093e42ab8fc945dd3ca80ecd).
 
--   --inserts
+- --inserts
 
     Dumps data when the INSERT statement \(rather than COPY\) is issued. This will cause a slow restoration.
 
     However, since this option generates an independent command for each row, an error in reloading a row causes only the loss of the row rather than the entire table content. The restoration may fail if you rearrange the column order. The --column-inserts option is unaffected against column order changes, though even slower.
 
--   --no-security-labels
+- --no-security-labels
 
     Reserved for function extension. The option is not recommended.
 
--   --no-tablespaces
+- --no-tablespaces
 
     Does not select any tablespaces. All the objects will be created during the restoration process, no matter which tablespace is selected when using this option.
 
     This parameter is used only for the plain-text format. For the archive format, you can specify the option when using gs\_restore.
 
--   --no-unlogged-table-data
+- --no-unlogged-table-data
 
     Reserved for function extension. The option is not recommended.
 
--   --non-lock-table
+- --non-lock-table
 
     Reserved for function extension. The option is not recommended.
 
--   --quote-all-identifiers
+- --quote-all-identifiers
 
     Forcibly quotes all identifiers. This parameter is useful when you dump a database for migration to a later version, in which additional keywords may be introduced.
 
--   --section=SECTION
+- --section=SECTION
 
     Specifies dumped name sections \(pre-data, data, or post-data\).
 
--   --serializable-deferrable
+- --serializable-deferrable
 
     Uses a serializable transaction for the dump to ensure that the used snapshot is consistent with later database status. Perform this operation at a time point in the transaction flow, at which everything is normal. This ensures successful transaction and avoids serialization failures of other transactions, which requires serialization again.
 
@@ -385,45 +388,45 @@ Dump parameters:
 
     This option will make no difference if there are no active read-write transactions when gs\_dump is started. If the read-write transactions are active, the dump start time will be delayed for an uncertain period.
 
--   --use-set-session-authorization
+- --use-set-session-authorization
 
     Specifies that the standard SQL SET SESSION AUTHORIZATION command rather than ALTER OWNER is returned to ensure the object ownership. This makes dumping more standard. However, if a dump file contains objects that have historical problems, restoration may fail. A dump using SET SESSION AUTHORIZATION requires the system administrator permissions, whereas ALTER OWNER requires lower permissions.
 
--   --with-encryption=AES128
+- --with-encryption=AES128
 
     Specifies that dumping data needs to be encrypted using AES128.
 
--   --with-key=KEY
+- --with-key=KEY
 
     The AES128 key rules are as follows:
 
-    -   Consists of 8 to 16 characters.
-    -   Contains at least three of the following character types: uppercase characters, lowercase characters, digits, and special characters \(limited to \~!@\#$ %^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?\).
+    - Consists of 8 to 16 characters.
+    - Contains at least three of the following character types: uppercase characters, lowercase characters, digits, and special characters \(limited to \~!@\#$ %^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?\).
 
     >[!NOTE]NOTE 
     >Stored procedures and functions cannot be exported in encrypted mode.
 
--   --with-salt=RANDVALUES
+- --with-salt=RANDVALUES
 
     gs\_dumpall uses this parameter to transfer a random value.
 
--   --include-extensions
+- --include-extensions
 
     Includes extensions in the dump.
 
--   --include-depend-objs
+- --include-depend-objs
 
     Includes information about the objects that depend on the specified object in the backup result. This parameter takes effect only if the -t or --include-table-file parameter is specified.
 
--   --exclude-self
+- --exclude-self
 
     Excludes information about the specified object from the backup result. This parameter takes effect only if the -t or --include-table-file parameter is specified.
 
--   --pipeline
+- --pipeline
 
     Uses a pipe to transmit the password. This parameter cannot be used on devices.
 
--   --dont-overwrite-file
+- --dont-overwrite-file
 
     The existing files in plain-text, .tar, or custom format will be overwritten. This option is not applicable to the directory format.
 
@@ -437,22 +440,22 @@ Dump parameters:
     gs_dump -p port_number postgres -f backup.sql -F plain --dont-overwrite-file
     ```
 
-
 >[!NOTE]NOTE 
->-   The -s/--schema-only and -a/--data-only parameters do not coexist.
->-   The -c/--clean and -a/--data-only parameters do not coexist.
->-   --inserts/--column-inserts and -o/--oids do not coexist, because OIDS cannot be set using the INSERT statement.
->-   --role must be used with --rolepassword.
->-   --binary-upgrade-usermap must be used with --binary-upgrade.
->-   --include-depend-objs/--exclude-self takes effect only when -t/--include-table-file is specified.
->-   --exclude-self must be used with --include-depend-objs.
->-   --with-encryption=AES128 supports only -F p/plain.
->-   --with-key=KEY supports only -F p/plain.
->-   --with-salt=RANDVALUES is invoked by gs\_dumpall and does not require manual input.
+>
+>- The -s/--schema-only and -a/--data-only parameters do not coexist.
+>- The -c/--clean and -a/--data-only parameters do not coexist.
+>- --inserts/--column-inserts and -o/--oids do not coexist, because OIDS cannot be set using the INSERT statement.
+>- --role must be used with --rolepassword.
+>- --binary-upgrade-usermap must be used with --binary-upgrade.
+>- --include-depend-objs/--exclude-self takes effect only when -t/--include-table-file is specified.
+>- --exclude-self must be used with --include-depend-objs.
+>- --with-encryption=AES128 supports only -F p/plain.
+>- --with-key=KEY supports only -F p/plain.
+>- --with-salt=RANDVALUES is invoked by gs\_dumpall and does not require manual input.
 
 Connection parameters:
 
--   -h, --host=HOSTNAME
+- -h, --host=HOSTNAME
 
     Specifies the host name. If the value begins with a slash \(/\), it is used as the directory for the Unix domain socket. The default is taken from the PGHOST environment variable \(if available\). Otherwise, a Unix domain socket connection is attempted.
 
@@ -462,34 +465,33 @@ Connection parameters:
 
     Environment variable: PGHOST
 
--   -p, --port=PORT
+- -p, --port=PORT
 
     Specifies the host port number. If the thread pool is enabled, you are advised to use the pooler port, that is, the host port number plus 1.
 
     Environment variable: PGPORT
 
--   -U, --username=NAME
+- -U, --username=NAME
 
     Specifies the username of the host to connect to.
 
     Environment variable: PGUSER
 
--   -w, --no-password
+- -w, --no-password
 
     Never issues a password prompt. The connection attempt fails if the host requires password for authentication and the password is not provided in other ways. This parameter is useful in batch jobs and scripts in which no user password is required.
 
--   -W, --password=PASSWORD
+- -W, --password=PASSWORD
 
     Specifies the user password for connection. If the host uses the trust authentication policy, the administrator does not need to enter the -W option. If the -W option is not provided and you are not a system administrator, the Dump Restore tool will ask you to enter a password.
 
--   --role=ROLENAME
+- --role=ROLENAME
 
     Specifies a role name to be used for creating the dump. If this option is selected, the SET ROLE command will be issued after the database is connected to gs\_dump. It is useful when the authenticated user \(specified by -U\) lacks the permissions required by gs\_dump. It allows the user to switch to a role with the required permissions. Some installations have a policy against logging in directly as a super system administrator. This option allows dumping data without violating the policy.
 
--   --rolepassword=ROLEPASSWORD
+- --rolepassword=ROLEPASSWORD
 
     Password of the role
-
 
 ## Description<a name="en-us_topic_0059777770_s7390a5e2be45435687f910284792c8c6"></a>
 
@@ -603,4 +605,3 @@ gsql -p 37300 postgres -r -f backup/MPPDB_backup.sql
 ## Related Commands<a name="en-us_topic_0059777770_s04aec05b522242268c264d0964818765"></a>
 
 [gs\_dumpall](gs_dumpall.md)
-

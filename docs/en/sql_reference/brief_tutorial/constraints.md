@@ -8,11 +8,11 @@ Constraints can be column-level or table-level. Column-level constraints apply o
 
 The common constraints of openGauss are as follows:
 
--   NOT NULL: specifies that a column cannot store  **NULL**  values.
--   UNIQUE: ensures that the value of a column is unique.
--   PRIMARY KEY: functions as the combination of NOT NULL and UNIQUE and ensures that a column (or the combination of two or more columns) has a unique identifier to help quickly locate a specific record in a table.
--   FOREIGN KEY: ensures the referential integrity for data in one table to match values in another table.
--   CHECK: ensures that values in a column meet specified conditions.
+- NOT NULL: specifies that a column cannot store  **NULL**  values.
+- UNIQUE: ensures that the value of a column is unique.
+- PRIMARY KEY: functions as the combination of NOT NULL and UNIQUE and ensures that a column (or the combination of two or more columns) has a unique identifier to help quickly locate a specific record in a table.
+- FOREIGN KEY: ensures the referential integrity for data in one table to match values in another table.
+- CHECK: ensures that values in a column meet specified conditions.
 
 ## NOT NULL<a name="section74155314398"></a>
 

@@ -8,27 +8,27 @@ openGauss is a standalone database. It has the basic features of relational data
 
 ### Features<a name="en-us_topic_0283136538_en-us_topic_0239777185_en-us_topic_0231764142_en-us_topic_0059779329_s49fd96bd393743cd881eb12b902f1207"></a>
 
--   Standard SQLs
+- Standard SQLs
 
     Supports SQL92, SQL99, SQL2003, and SQL2011 standards, GBK, GB18030, UTF-8, SQL ASCII, and Latin-1 character sets, SQL standard functions and analytic functions, and stored procedures.
 
--   Database storage management
+- Database storage management
 
     Supports tablespaces where different tables can be stored in different locations.
 
--   Primary/standby deployment
+- Primary/standby deployment
 
     Supports the ACID properties, single-node fault recoveries, primary/standby data synchronization, and primary/standby switchover.
 
--   APIs
+- APIs
 
     Supports standard JDBC 4.0 and ODBC 3.5.
 
--   Management tools
+- Management tools
 
     Provides installation and deployment tools, instance start and stop tools, and backup and restoration tools.
 
--   Security management
+- Security management
 
     Supports SSL network connections, user permission management, password management, security auditing, and other functions, to ensure data security at the management, application, system, and network layers.
 
@@ -279,4 +279,3 @@ The syntax and semantics of the SQL engine are decoupled to implement plug-ins f
 - The gs\_cgroup load management is supported.
 
     gs\_cgroup is a load management tool. It creates and manages Cgroups in the database kernel and sets system resource quotas and resource limits to manage the resource usage and priorities of users and services, fully utilizing machine resources.
-

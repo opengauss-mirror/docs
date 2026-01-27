@@ -4,22 +4,20 @@ An information schema named  **INFORMATION\_SCHEMA**  automatically exists in al
 
 Information schemas are inherited from the open-source PGXC and PG. For details, visit the following links to see the official PGXC and PG documents:
 
-http://postgres-xc.sourceforge.net/docs/1_1/information-schema.html
+<http://postgres-xc.sourceforge.net/docs/1_1/information-schema.html>
 
-https://www.postgresql.org/docs/9.2/information-schema.html
+<https://www.postgresql.org/docs/9.2/information-schema.html>
 
 The following sections display only the views that are not listed in the preceding links.
 
--   **[\_PG\_FOREIGN\_DATA\_WRAPPERS](_pg_foreign_data_wrappers.md)**  
+- **[\_PG\_FOREIGN\_DATA\_WRAPPERS](_pg_foreign_data_wrappers.md)**  
 
--   **[\_PG\_FOREIGN\_SERVERS](_pg_foreign_servers.md)**  
+- **[\_PG\_FOREIGN\_SERVERS](_pg_foreign_servers.md)**  
 
--   **[\_PG\_FOREIGN\_TABLE\_COLUMNS](_pg_foreign_table_columns.md)**  
+- **[\_PG\_FOREIGN\_TABLE\_COLUMNS](_pg_foreign_table_columns.md)**  
 
--   **[\_PG\_FOREIGN\_TABLES](_pg_foreign_tables.md)**  
+- **[\_PG\_FOREIGN\_TABLES](_pg_foreign_tables.md)**  
 
--   **[\_PG\_USER\_MAPPINGS](_pg_user_mappings.md)**  
+- **[\_PG\_USER\_MAPPINGS](_pg_user_mappings.md)**  
 
--   **[INFORMATION\_SCHEMA\_CATALOG\_NAME](information_schema_catalog_name.md)**  
-
-
+- **[INFORMATION\_SCHEMA\_CATALOG\_NAME](information_schema_catalog_name.md)**  

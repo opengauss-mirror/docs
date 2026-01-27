@@ -1,9 +1,11 @@
 # 时间间隔表达式
 
--   interval_expr是一个时间间隔表达式，其语法表示为：
+- interval_expr是一个时间间隔表达式，其语法表示为：
+
 ```
 INTERVAL expr unit
 ```
+
 说明：expr为一个表达式，unit为expr的单位。unit允许的取值和对应的expr常量取值格式可参考[表1](#intervalexpr_unit_expr_tbl)。expr支持运算表达式、列引用和绑定参数用法。
 
 注：若expr值的组成部分个数少于unit对应的标准形式时，将expr值的各个划分部分从右到左依次填充到unit对应标准形式中。例如：对于时间单位unit为DAY_SECOND，若expr为‘1 10’，则最终表示的时间间隔值为‘0 00:01:10’。
@@ -146,7 +148,8 @@ INTERVAL expr unit
 </tbody>
 </table>
 
-## 示例：
+## 示例
+
 ```
 openGauss=# create database test_db dbcompatibility 'B';
 CREATE DATABASE

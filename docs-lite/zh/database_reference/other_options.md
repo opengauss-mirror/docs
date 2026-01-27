@@ -96,8 +96,8 @@
 
 **取值范围**： 布尔型
 
--   on表示支持。
--   off表示不支持。
+- on表示支持。
+- off表示不支持。
 
 **默认值**： on
 
@@ -145,8 +145,8 @@
 
 **取值范围**：  布尔型
 
--   on，提升deltamerge内部实现的锁级别，并发执行deltamerge和update/delete操作时，一个操作先执行，另一个操作被阻塞，在前一个操作完成后，后一个操作再执行。
--   off，在对表的delta table的同一行并发执行deltamerge和update/delete操作时，后一个对同一行数据更新的操作会报错退出。
+- on，提升deltamerge内部实现的锁级别，并发执行deltamerge和update/delete操作时，一个操作先执行，另一个操作被阻塞，在前一个操作完成后，后一个操作再执行。
+- off，在对表的delta table的同一行并发执行deltamerge和update/delete操作时，后一个对同一行数据更新的操作会报错退出。
 
 **默认值**： off
 
@@ -220,25 +220,25 @@
 
 **取值范围**： 布尔型
 
--   on表示包含有OBS或的查询在计算资源池可用时，会根据代价评估决定是否通过计算资源池对查询加速。
--   off表示任何查询都不会通过计算资源池进行加速。
+- on表示包含有OBS或的查询在计算资源池可用时，会根据代价评估决定是否通过计算资源池对查询加速。
+- off表示任何查询都不会通过计算资源池进行加速。
 
 **默认值**： off
 
-
 ## enable_seqscan_fusion 
+
 **参数说明** ：控制是否打开SeqScan优化 
 
 该参数属于SUSET类型参数，请参考[表2](../database_administration_guide/reset_parameters.md)对应设置方法进行设置。 
 
 **取值范围**：布尔型 
--  on表示打开SeqScan优化 
--  off表示关闭SeqScan优化 
+
+- on表示打开SeqScan优化 
+- off表示关闭SeqScan优化 
 
 **默认值**：off 
 >[!NOTE]说明
 >该参数只能优化EXPLAIN ANALYZE语句的seqscan算子的执行时间
-
 
 ## sql\_ignore\_strategy<a name="section106841634172711"></a>
 
@@ -252,8 +252,8 @@
 
 **取值范围**： 枚举类型
 
--   ignore_null: 忽略违反非空约束的行的处理。
--   overwrite_null: 将违反约束的null值覆写为目标类型的默认值。
+- ignore_null: 忽略违反非空约束的行的处理。
+- overwrite_null: 将违反约束的null值覆写为目标类型的默认值。
 
 **默认值**： ignore_null
 
@@ -274,13 +274,16 @@
 **默认值**：off
 
 ## dfs_partition_directory_length
+
 **参数说明**：在HDFS文件系统上，构造HDFS VALUE分区表的分区目录时，目录名长度的上限值。
 
 该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**：92-7999
 **默认值**：512
+
 ## max_resource_package
+
 **参数说明**：加速数据库实例每个DN可同时运行任务的线程数的上限。
 
 该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
@@ -290,13 +293,15 @@
 **默认值**：0
 
 ## acceleration_with_compute_pool
+
 **参数说明**：在查询包含OBS时，通过该参数决定查询是否通过计算资源池进行加速。（由于规格变更，当前版本已经不再支持本特性，请不要使用）
 
 该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**：布尔型
--  on表示包含有OBS或的查询在计算资源池可用时，会根据代价评估决定是否通过计算资源池对查询加速。
--  off表示任何查询都不会通过计算资源池进行加速。
+
+- on表示包含有OBS或的查询在计算资源池可用时，会根据代价评估决定是否通过计算资源池对查询加速。
+- off表示任何查询都不会通过计算资源池进行加速。
 
 **默认值**：off
 
@@ -311,7 +316,9 @@
 **默认值**：off
 
 ## enable_gazelle_performance_mode
+
 **参数说明**：BETA特性参数。是否开启用户态协议栈下openGauss相关优化。对北向试用用户态协议栈场景下的性能场景提供一定的性能优化。目前仅在开启线程池模式、且线程池指定cpubind模式下生效。 开启参数后，数据库会额外作以下操作：
+
 1. 将除ThreadPool相关线程外的其他线程（如PageWriter、Postmaster）等绑定到threadpool_attr指定的CPU上。
 2. fd句柄分配优化：句柄不再按照ThreadGroup的负载均衡分配到线程池组上，而是根据句柄网络中断处理的CPU分配到对应NUMA的ThreadGroup上。
 
@@ -360,6 +367,7 @@
 > 如：true 改为 'true'，b'0101' 改为 '0101'。
 
 **示例：**
+
 ```sql
 -- 开启优化特性
 set enable_parse_fusion to on;
@@ -436,6 +444,7 @@ insert into t1 values
 ```
 
 ## enable_LC_xlog_flush_optimize
+
 **参数说明**: 低并发基础算子场景针对XLOG刷盘的优化参数。低并发基础算子场景预写日志量较少且平稳，及时将XLOG落盘对事物提交性能更有帮助。本参数开启能够取消XLOG刷盘时的等待合并，提升低并发基础算子场景事务提交性能
 
 该参数属于SIGHUP类型，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)对应设置方法进行设置。
@@ -445,6 +454,7 @@ insert into t1 values
 **默认值**：off
 
 ## xlog_write_flush_split
+
 **参数说明**: 开启该参数后，openGauss XLOG刷盘动作拆分为write和flush两个动作，保证在事务提交之前进行一次flush动作，起到合并IO的作用
 
 该参数属于SIGHUP类型，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)对应设置方法进行设置。

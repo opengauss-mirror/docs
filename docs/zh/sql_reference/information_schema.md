@@ -10,41 +10,40 @@
 
 下面章节只显示未在上述链接内的视图或列信息。
 
--   **[\_PG\_FOREIGN\_DATA\_WRAPPERS](_pg_foreign_data_wrappers.md)**  
+- **[\_PG\_FOREIGN\_DATA\_WRAPPERS](_pg_foreign_data_wrappers.md)**  
 
--   **[\_PG\_FOREIGN\_SERVERS](_pg_foreign_servers.md)**  
+- **[\_PG\_FOREIGN\_SERVERS](_pg_foreign_servers.md)**  
 
--   **[\_PG\_FOREIGN\_TABLE\_COLUMNS](_pg_foreign_table_columns.md)**  
+- **[\_PG\_FOREIGN\_TABLE\_COLUMNS](_pg_foreign_table_columns.md)**  
 
--   **[\_PG\_FOREIGN\_TABLES](_pg_foreign_tables.md)**  
+- **[\_PG\_FOREIGN\_TABLES](_pg_foreign_tables.md)**  
 
--   **[\_PG\_USER\_MAPPINGS](_pg_user_mappings.md)**  
+- **[\_PG\_USER\_MAPPINGS](_pg_user_mappings.md)**  
 
--   **[CHARACTER\_SETS](character_sets.md)**  
+- **[CHARACTER\_SETS](character_sets.md)**  
 
--   **[COLLATIONS](collations.md)**  
+- **[COLLATIONS](collations.md)**  
 
--   **[COLUMNS](columns.md)**  
+- **[COLUMNS](columns.md)**  
 
--   **[EVENTS](events.md)**  
+- **[EVENTS](events.md)**  
 
--   **[KEYWORDS](KEYWORDS.md)**  
+- **[KEYWORDS](KEYWORDS.md)**  
 
--   **[KEY\_COLUMN\_USAGE](KEY_COLUMN_USAGE.md)**  
+- **[KEY\_COLUMN\_USAGE](KEY_COLUMN_USAGE.md)**  
 
--   **[PARAMETERS](PARAMETERS.md)**  
+- **[PARAMETERS](PARAMETERS.md)**  
 
--   **[PARTITIONS](PARTITIONS.md)**  
+- **[PARTITIONS](PARTITIONS.md)**  
 
--   **[REFERENTIAL\_CONSTRAINTS](REFERENTIAL_CONSTRAINTS.md)**  
+- **[REFERENTIAL\_CONSTRAINTS](REFERENTIAL_CONSTRAINTS.md)**  
 
--   **[ROUTINES](ROUTINES.md)**  
+- **[ROUTINES](ROUTINES.md)**  
 
--   **[SCHEMATA](SCHEMATA.md)**  
+- **[SCHEMATA](SCHEMATA.md)**  
 
--   **[STATISTICS](STATISTICS.md)**  
+- **[STATISTICS](STATISTICS.md)**  
 
--   **[TABLES](TABLES.md)**  
+- **[TABLES](TABLES.md)**  
 
--   **[TABLE\_CONSTRAINTS](TABLE_CONSTRAINTS.md)**  
-
+- **[TABLE\_CONSTRAINTS](TABLE_CONSTRAINTS.md)**  

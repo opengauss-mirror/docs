@@ -76,4 +76,3 @@ Connection object \(for connecting to the openGauss DB instance\)
 ## Examples<a name="section4160944682"></a>
 
 For details, see  [Example: Common Operations](example_common_operations_psycopg.md).
-

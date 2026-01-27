@@ -17,9 +17,9 @@ gs\_initdb初始化数据库时，会创建数据库目录、生成系统表、�
 
 **生成的数据库**
 
--   template1：是一个模板数据库，当以后再创建一个新的数据库时，template1数据库里的所有内容都会拷贝到新数据库中。通过gs\_initdb的参数可以决定template1数据库的设置。
--   template0：是openGauss提供的最初始的备份数据库，当需要时可用template0作为模板生成“干净”的数据库。
--   postgres：是一个提供给用户、工具和第三方应用的缺省数据库。
+- template1：是一个模板数据库，当以后再创建一个新的数据库时，template1数据库里的所有内容都会拷贝到新数据库中。通过gs\_initdb的参数可以决定template1数据库的设置。
+- template0：是openGauss提供的最初始的备份数据库，当需要时可用template0作为模板生成“干净”的数据库。
+- postgres：是一个提供给用户、工具和第三方应用的缺省数据库。
 
 ## 使用指导<a name="section209951723181812"></a>
 
@@ -27,9 +27,9 @@ gs\_initdb初始化数据库时，会创建数据库目录、生成系统表、�
 
 在安装时，推荐使用-D参数调用gs\_initdb初始化数据库。如果由于故障恢复等原因，需要重新初始化一个数据库，可以通过执行gs\_initdb来完成。
 
--   尽管gs\_initdb会尝试创建相应的数据目录，但可能没有权限执行此操作，因为要创建目录的父目录通常被root所拥有。如果要创建数据目录，首先用root用户创建一个空数据目录，然后用chown把该目录的所有权交给数据库用户。
--   gs\_initdb决定template1数据库的设置，而该设置将会成为其他数据库的默认设置。
--   gs\_initdb初始化数据库的缺省区域和字符集编码。字符集编码、字符编码排序（LC\_COLLATE）和字符集类（LC\_CTYPE，如大写、小写数字等）可以在创建数据库时独立设置。
+- 尽管gs\_initdb会尝试创建相应的数据目录，但可能没有权限执行此操作，因为要创建目录的父目录通常被root所拥有。如果要创建数据目录，首先用root用户创建一个空数据目录，然后用chown把该目录的所有权交给数据库用户。
+- gs\_initdb决定template1数据库的设置，而该设置将会成为其他数据库的默认设置。
+- gs\_initdb初始化数据库的缺省区域和字符集编码。字符集编码、字符编码排序（LC\_COLLATE）和字符集类（LC\_CTYPE，如大写、小写数字等）可以在创建数据库时独立设置。
 
 **语法**
 
@@ -39,7 +39,7 @@ gs_initdb [OPTION]... [DATADIR]
 
 **操作步骤**
 
-1.  以操作系统用户omm登录数据库主节点。
+1. 以操作系统用户omm登录数据库主节点。
 2. 规划数据库目录。
    - 切换到root用户。
 
@@ -49,7 +49,7 @@ gs_initdb [OPTION]... [DATADIR]
 
    - 根据提示输入用户名和密码。
 
-3.  进入“/opt/gaussdb”目录，并创建“data1”目录。
+3. 进入“/opt/gaussdb”目录，并创建“data1”目录。
 
     ```
     cd /opt/gaussdb
@@ -68,14 +68,11 @@ gs_initdb [OPTION]... [DATADIR]
       exit
       ```
 
-4.  执行gs\_initdb命令初始化数据库。
+4. 执行gs\_initdb命令初始化数据库。
 
     ```
     gs_initdb -D /opt/gaussdb/data1 -w "******" --nodename='data1'
     ```
-
-
-
 
 ## 命令参考<a name="section01341136122018"></a>
 
@@ -269,10 +266,6 @@ zh_SG.gbk
 </tbody>
 </table>
 
-
-
-
-
 **表 2**  不常用参数说明
 
 <a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_t2f464cb1775044808eceb29e25d6d37f"></a>
@@ -388,4 +381,3 @@ zh_SG.gbk
 
 > [!NOTE]说明
 > 资源池化下系统表存放在段页式中，unlogging表保持页式存储。
-

@@ -6,16 +6,16 @@
 
 ## Precautions<a name="en-us_topic_0283136599_en-us_topic_0237122116_section93413620440"></a>
 
--   The user of a synonym should be its owner.
--   If the schema name is specified, create a synonym in the specified schema. Otherwise create a synonym in the current schema.
--   Database objects that can be accessed using synonyms include tables, views, functions, and stored procedures.
--   To use synonyms, you must have the required permissions on associated objects.
--   The following DML statements support synonyms:  **SELECT**,  **INSERT**,  **UPDATE**,  **DELETE**,  **EXPLAIN**, and  **CALL**.
--   You are not advised to create synonyms for temporary tables. To create a synonym, you need to specify the schema name of the target temporary table. Otherwise, the synonym cannot be used normally. In addition, you need to run the  **DROP SYNONYM**  command before the current session ends.
--   After an original object is deleted, the synonym associated with the object will not be deleted in cascading mode. If you continue to access the synonym, an error message is displayed, indicating that the synonym has expired.
--   Users granted the CREATE ANY SYNONYM permission can create synonyms in user schemas.
--   Users granted the CREATE ANY SYNONYM permission can create synonyms in user schemas.
--   When creating a synonym, if  **PUBLIC**  is specified, the schema name of synonym cannot be specified.
+- The user of a synonym should be its owner.
+- If the schema name is specified, create a synonym in the specified schema. Otherwise create a synonym in the current schema.
+- Database objects that can be accessed using synonyms include tables, views, functions, and stored procedures.
+- To use synonyms, you must have the required permissions on associated objects.
+- The following DML statements support synonyms:  **SELECT**,  **INSERT**,  **UPDATE**,  **DELETE**,  **EXPLAIN**, and  **CALL**.
+- You are not advised to create synonyms for temporary tables. To create a synonym, you need to specify the schema name of the target temporary table. Otherwise, the synonym cannot be used normally. In addition, you need to run the  **DROP SYNONYM**  command before the current session ends.
+- After an original object is deleted, the synonym associated with the object will not be deleted in cascading mode. If you continue to access the synonym, an error message is displayed, indicating that the synonym has expired.
+- Users granted the CREATE ANY SYNONYM permission can create synonyms in user schemas.
+- Users granted the CREATE ANY SYNONYM permission can create synonyms in user schemas.
+- When creating a synonym, if  **PUBLIC**  is specified, the schema name of synonym cannot be specified.
 
 ## Syntax<a name="en-us_topic_0283136599_en-us_topic_0237122116_en-us_topic_0059777835_sebcad83e099e46b0ba586829e634d144"></a>
 
@@ -26,20 +26,20 @@ CREATE [ OR REPLACE ] [ PUBLIC ] SYNONYM synonym_name
 
 ## Parameter Description<a name="en-us_topic_0283136599_en-us_topic_0237122116_section1549681213574"></a>
 
--  **OR REPLACE**
-    -   If the synonym already exists, the existing synonym is replaced.
-    -   If the synonym does not exist, a new synonym is created.
+- **OR REPLACE**
+    - If the synonym already exists, the existing synonym is replaced.
+    - If the synonym does not exist, a new synonym is created.
 
--  **PUBLIC**
-    -   Specifies that the synonym is a public synonym. If you do not specify PUBLIC, the synonym is a private synonym.
+- **PUBLIC**
+    - Specifies that the synonym is a public synonym. If you do not specify PUBLIC, the synonym is a private synonym.
 
--   **synonym**
+- **synonym**
 
     Specifies the name of the synonym to be created, which can contain the schema name.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **object\_name**
+- **object\_name**
 
     Specifies the name of an object that is associated \(optionally with schema names\).
 
@@ -48,7 +48,6 @@ CREATE [ OR REPLACE ] [ PUBLIC ] SYNONYM synonym_name
     >[!NOTE]NOTE 
     >
     >**object\_name**  can be the name of an object that does not exist.
-
 
 ## Examples<a name="en-us_topic_0283136599_en-us_topic_0237122116_section1853433744413"></a>
 

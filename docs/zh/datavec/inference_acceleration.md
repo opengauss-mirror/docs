@@ -9,6 +9,7 @@
 ## 特性描述
 
 长序列 KV Cache 以查代算特性分为 Prefill 阶段和 Decode 阶段。
+
 - Prefill阶段：forward函数进行prefill计算后，将当前注意力相关性较低的 KV Cache 分级换出到 CPU 内存中，即按块提取表征向量插入到openGauss加速库中，从而降低长序列对 HBM 显存占用。
 - Decode阶段：forward函数进行decode推理时，先按需稀疏召回并加载注意力相关性较高的 KV Cache 到 HBM，再完成本轮推理。
 

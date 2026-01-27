@@ -4,7 +4,7 @@ A stored procedure is a set of SQL statements that can implement a specific func
 
 ## Syntax<a name="en-us_topic_0283136646_en-us_topic_0237122110_en-us_topic_0059778640_sbee45c05d759429e9b8cb27ddd67bd30"></a>
 
--   Create a stored procedure.
+- Create a stored procedure.
 
     ```
     CREATE PROCEDURE procedure_name
@@ -16,73 +16,68 @@ A stored procedure is a set of SQL statements that can implement a specific func
     /
     ```
 
-
--   Call a stored procedure.
+- Call a stored procedure.
 
     ```
     CALL procedure_name ( param_expr );
     ```
 
-
--   Delete a stored procedure.
+- Delete a stored procedure.
 
     ```
     DROP PROCEDURE [ IF EXISTS ] procedure_name 
     [ ( [ {[ argname ] [ argmode ] argtype} [, ...] ] ) [ CASCADE | RESTRICT ] ];
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0283136646_en-us_topic_0237122110_en-us_topic_0059778640_scd93d84d9e624b5e831d78d47a830ca4"></a>
 
--   **procedure\_name**
+- **procedure\_name**
 
     Specifies the name of the stored procedure to be created.
 
--   **argname**
+- **argname**
 
     Specifies the parameter name.
 
--   **argmode**
+- **argmode**
 
     Specifies the mode of a parameter. Value range:  **IN**,  **OUT**,  **INOUT**, and  **VARIADIC**.  **VARIADIC**  specifies parameters of array type. The default value is  **IN**.
 
-    -   **IN**
+    - **IN**
 
         Specifies an input parameter. The value of the parameter must be specified when the stored procedure is called. If the value of the parameter is changed in the stored procedure, the value cannot be returned.
 
-    -   **OUT**
+    - **OUT**
 
         Specifies an output parameter. The value can be changed in the stored procedure and can be returned.
 
-    -   **INOUT**
+    - **INOUT**
 
         Specifies input and output parameters. The value can be specified when the stored procedure is called and can be changed and returned.
 
-
--   **argtype**
+- **argtype**
 
     Specifies the data type of the parameter.
 
--   **expression**
+- **expression**
 
     Sets the default value.
 
--   **IS, AS**
+- **IS, AS**
 
     Required for the syntax. One of them must be provided. They have the same function.
 
--   **BEGIN, END**
+- **BEGIN, END**
 
     Required for the syntax.
 
--   **procedure\_body**
+- **procedure\_body**
 
     Specifies the stored procedure content.
 
--   **param\_expr**
+- **param\_expr**
 
     Specifies the parameter list. Use commas \(,\) to separate parameters. Use := or =\> to separate parameter names and parameter values.
-
 
 ## Examples<a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821"></a>
 
@@ -111,4 +106,3 @@ openGauss=# CALL  insert_data(param1:=210101,param2:='Alan',param3:='21.01',para
 -- Delete the stored procedure.
 openGauss=# DROP PROCEDURE insert_data;
 ```
-

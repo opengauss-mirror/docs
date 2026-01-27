@@ -2,7 +2,7 @@
 
 ## Range Operators<a name="en-us_topic_0283136628_en-us_topic_0237121981_en-us_topic_0059778082_sdbd7817099fd47dd95010675e3f38b03"></a>
 
--   =
+- =
 
     Description: Equals
 
@@ -16,7 +16,7 @@
     (1 row)
     ```
 
--   <\>
+- <\>
 
     Description: Does not equal to
 
@@ -30,7 +30,7 @@
     (1 row)
     ```
 
--   <
+- <
 
     Description: Is less than
 
@@ -44,7 +44,7 @@
     (1 row)
     ```
 
--   \>
+- \>
 
     Description: Is greater than
 
@@ -58,7 +58,7 @@
     (1 row)
     ```
 
--   <=
+- <=
 
     Description: Is less than or equals
 
@@ -72,7 +72,7 @@
     (1 row)
     ```
 
--   \>=
+- \>=
 
     Description: Is greater than or equals
 
@@ -86,7 +86,7 @@
     (1 row)
     ```
 
--   @\>
+- @\>
 
     Description: Contains ranges
 
@@ -100,7 +100,7 @@
     (1 row)
     ```
 
--   @\>
+- @\>
 
     Description: Contains elements
 
@@ -114,7 +114,7 @@
     (1 row)
     ```
 
--   <@
+- <@
 
     Description: Range is contained by
 
@@ -128,7 +128,7 @@
     (1 row)
     ```
 
--   <@
+- <@
 
     Description: Element is contained by
 
@@ -142,7 +142,7 @@
     (1 row)
     ```
 
--   &&
+- &&
 
     Description: Overlap \(have points in common\)
 
@@ -156,7 +156,7 @@
     (1 row)
     ```
 
--   <<
+- <<
 
     Description: Strictly left of
 
@@ -170,7 +170,7 @@
     (1 row)
     ```
 
--   \>\>
+- \>\>
 
     Description: Strictly right of
 
@@ -184,7 +184,7 @@
     (1 row)
     ```
 
--   &<
+- &<
 
     Description: Does not extend to the right of
 
@@ -198,7 +198,7 @@
     (1 row)
     ```
 
--   &\>
+- &\>
 
     Description: Does not extend to the left of
 
@@ -212,7 +212,7 @@
     (1 row)
     ```
 
--   -|-
+- -|-
 
     Description: Is adjacent to
 
@@ -226,7 +226,7 @@
     (1 row)
     ```
 
--   +
+- +
 
     Description: Union
 
@@ -240,7 +240,7 @@
     (1 row)
     ```
 
--   \*
+- \*
 
     Description: Intersection
 
@@ -254,7 +254,7 @@
     (1 row)
     ```
 
--   -
+- -
 
     Description: Difference
 
@@ -268,7 +268,6 @@
     (1 row)
     ```
 
-
 The simple comparison operators  **<**,  **\>**,  **<=**, and  **\>=**  compare the lower bounds first, and only if those are equal, compare the upper bounds.
 
 The  **<<**,  **\>\>**, and  **-|-**  operators always return false when an empty range is involved; that is, an empty range is not considered to be either before or after any other range.
@@ -277,7 +276,7 @@ The union and difference operators will fail if the resulting range would need t
 
 ## Range Functions<a name="en-us_topic_0283136628_en-us_topic_0237121981_en-us_topic_0059778082_sd7f8a14312fe49158bb4b9d8c073e2e6"></a>
 
--   numrange\(numeric, numeric, \[text\]\)
+- numrange\(numeric, numeric, \[text\]\)
 
     Description: Specifies a range.
 
@@ -298,7 +297,7 @@ The union and difference operators will fail if the resulting range would need t
     (1 row)
     ```
 
--   lower\(anyrange\)
+- lower\(anyrange\)
 
     Description: Lower bound of a range
 
@@ -314,7 +313,7 @@ The union and difference operators will fail if the resulting range would need t
     (1 row)
     ```
 
--   upper\(anyrange\)
+- upper\(anyrange\)
 
     Description: Upper bound of a range
 
@@ -330,7 +329,7 @@ The union and difference operators will fail if the resulting range would need t
     (1 row)
     ```
 
--   isempty\(anyrange\)
+- isempty\(anyrange\)
 
     Description: Is the range empty?
 
@@ -346,7 +345,7 @@ The union and difference operators will fail if the resulting range would need t
     (1 row)
     ```
 
--   lower\_inc\(anyrange\)
+- lower\_inc\(anyrange\)
 
     Description: Is the lower bound inclusive?
 
@@ -362,7 +361,7 @@ The union and difference operators will fail if the resulting range would need t
     (1 row)
     ```
 
--   upper\_inc\(anyrange\)
+- upper\_inc\(anyrange\)
 
     Description: Is the upper bound inclusive?
 
@@ -378,7 +377,7 @@ The union and difference operators will fail if the resulting range would need t
     (1 row)
     ```
 
--   lower\_inf\(anyrange\)
+- lower\_inf\(anyrange\)
 
     Description: Is the lower bound infinite?
 
@@ -394,7 +393,7 @@ The union and difference operators will fail if the resulting range would need t
     (1 row)
     ```
 
--   upper\_inf\(anyrange\)
+- upper\_inf\(anyrange\)
 
     Description: Is the upper bound infinite?
 
@@ -412,8 +411,7 @@ The union and difference operators will fail if the resulting range would need t
 
     The  **lower**  and  **upper**  functions return null if the range is empty or the requested bound is infinite. The  **lower\_inc**,  **upper\_inc**,  **lower\_inf**, and  **upper\_inf**  functions all return false for an empty range.
 
-
--   elem\_contained\_by\_range\(anyelement, anyrange\)
+- elem\_contained\_by\_range\(anyelement, anyrange\)
 
     Description: Determines whether an element is within the range.
 
@@ -428,5 +426,3 @@ The union and difference operators will fail if the resulting range would need t
      t
     (1 row)
     ```
-
-

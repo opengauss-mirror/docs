@@ -19,4 +19,3 @@ DROP GLOBAL CONFIGURATION Parameter name,Parameter name...;
 ## Parameter Description<a name="en-us_topic_0283136791_en-us_topic_0237122191_en-us_topic_0059779163_s96f32bd65e9e46f4bf15eb3c1663af3a"></a>
 
 The parameter is a parameter that already exists in the  **gs\_global\_config**  system catalog. If you delete a parameter that does not exist, an error will be reported.
-

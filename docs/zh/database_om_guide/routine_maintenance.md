@@ -6,7 +6,7 @@
 
 通过openGauss提供的工具查询数据库和实例状态，确认数据库和实例都处于正常的运行状态，可以对外提供数据服务。
 
--   检查实例状态
+- 检查实例状态
 
     ```
     gs_check -U omm -i CheckClusterState
@@ -20,18 +20,17 @@
 
   上述命令中，parameter_name需替换成具体的参数名称。
 
--   修改参数
+- 修改参数
 
     ```
     gs_guc reload  -D /gaussdb/data/dbnode -c "paraname=value"
     ```
 
-
 ### 检查锁信息<a name="zh-cn_topic_0237088794_zh-cn_topic_0059778434_s8e22677f9faf4758ad39f7d6d1dde863"></a>
 
 锁机制是数据库保证数据一致性的重要手段，检查相关信息可以检查数据库的事务和运行状况。
 
--   查询数据库中的锁信息
+- 查询数据库中的锁信息
 
     ```
     openGauss=# SELECT * FROM pg_locks;
@@ -43,9 +42,7 @@
   openGauss=# SELECT * FROM pg_thread_wait_status WHERE wait_status = 'acquire lock';
   ```
 
-  
-
--   结束系统进程
+- 结束系统进程
 
     查找正在运行的系统进程，然后使用kill命令结束此进程。
 
@@ -54,12 +51,11 @@
     kill -9 pid
     ```
 
-
 ### 统计事件数据<a name="zh-cn_topic_0237088794_zh-cn_topic_0059778434_s6506801e729943aba510e2fe669ad8a1"></a>
 
 SQL语句长时间运行会占用大量系统资源，用户可以通过查看事件发生的时间，占用内存大小来了解现在数据库运行状态。
 
--   查询事件的时间
+- 查询事件的时间
 
     查询事件的线程启动时间、事务启动时间、SQL启动时间以及状态变更时间。
 
@@ -67,13 +63,13 @@ SQL语句长时间运行会占用大量系统资源，用户可以通过查看�
     openGauss=# SELECT backend_start,xact_start,query_start,state_change FROM pg_stat_activity;
     ```
 
--   查询当前服务器的会话计数信息
+- 查询当前服务器的会话计数信息
 
     ```
     openGauss=# SELECT count(*) FROM pg_stat_activity;
     ```
 
--   查询系统级统计信息
+- 查询系统级统计信息
 
     查询当前使用内存最多的会话信息。
 
@@ -81,47 +77,45 @@ SQL语句长时间运行会占用大量系统资源，用户可以通过查看�
     openGauss=# SELECT * FROM pv_session_memory_detail() ORDER BY usedsize desc limit 10;
     ```
 
-
 ### 对象检查<a name="zh-cn_topic_0237088794_zh-cn_topic_0059778434_s8dae86ca711b4f24a076b0cffaa04b97"></a>
 
 表、索引、分区、约束等是数据库的核心存储对象，其核心信息和对象维护是DBA重要的日常工作。
 
--   查看表的详细信息
+- 查看表的详细信息
 
     ```
     openGauss=# \d+ table_name 
     ```
 
--   查询表统计信息
+- 查询表统计信息
 
     ```
     openGauss=# SELECT * FROM pg_statistic;
     ```
 
--   查看索引的详细信息
+- 查看索引的详细信息
 
     ```
     openGauss=# \d+ index_name
     ```
 
--   查询分区表信息
+- 查询分区表信息
 
     ```
     openGauss=# SELECT * FROM pg_partition;
     ```
 
--   收集统计信息
+- 收集统计信息
 
     使用ANALYZE语句收集数据库相关的统计信息。
 
     使用VACUUM语句可以回收空间并更新统计信息。
 
--   查询约束信息
+- 查询约束信息
 
     ```
     openGauss=# SELECT * FROM pg_constraint;
     ```
-
 
 ### SQL报告检查<a name="zh-cn_topic_0237088794_zh-cn_topic_0059778434_sb5b215f4b4a6440c97da40f66359217d"></a>
 
@@ -131,42 +125,40 @@ SQL语句长时间运行会占用大量系统资源，用户可以通过查看�
 
 数据备份重于一切，日常应检查备份执行情况，并检查备份有效性，确保备份能够保障数据安全，备份安全加密也应兼顾。
 
--   指定用户导出数据库
+- 指定用户导出数据库
 
     ```
     gs_dump dbname -p port -f out.sql -U user_name -W password
     ```
 
--   导出schema
+- 导出schema
 
     ```
     gs_dump dbname -p port -n schema_name -f out.sql
     ```
 
--   导出table
+- 导出table
 
     ```
     gs_dump dbname -p port -t table_name -f out.sql
     ```
 
-
 ### 基本信息检查<a name="zh-cn_topic_0237088794_zh-cn_topic_0059778434_s35aa1e60db1042848a9f4f06413bcb4f"></a>
 
 基本信息包括版本、组件、补丁集等信息，定期检查数据库信息并登记在案是数据库生命周期管理的重要内容之一。
 
--   版本信息
+- 版本信息
 
     ```
     openGauss=# SELECT version();
     ```
 
--   容量检查
+- 容量检查
 
     ```
     openGauss=# SELECT pg_table_size('table_name');
     openGauss=# SELECT pg_database_size('database_name');
     ```
-
 
 ## 检查操作系统参数
 
@@ -176,21 +168,20 @@ SQL语句长时间运行会占用大量系统资源，用户可以通过查看�
 
 **前提条件**
 
--   当前的硬件和网络环境正常。
--   各主机间root互信状态正常。
--   只能使用root用户执行gs\_checkos命令。
+- 当前的硬件和网络环境正常。
+- 各主机间root互信状态正常。
+- 只能使用root用户执行gs\_checkos命令。
 
 **操作步骤**
 
-1.  以root用户身份登录任意一台服务器。
-2.  执行如下命令对openGauss节点服务器的OS参数进行检查。
+1. 以root用户身份登录任意一台服务器。
+2. 执行如下命令对openGauss节点服务器的OS参数进行检查。
 
     ```
     gs_checkos -i A
     ```
 
     检查节点服务器的OS参数的目的是保证openGauss正常通过预安装，并且在安装成功后可以安全高效的运行。详细的检查项目请参见《工具与命令参考》中“服务端工具 \> gs\_checkos”章节。
-
 
 **示例**
 
@@ -242,43 +233,41 @@ gs_checkos -i A --detail
 
 其中，Abnormal为必须处理项，影响openGauss安装。Warning可以不处理，不会影响openGauss安装。
 
--   如果操作系统版本（A1）检查项检查结果为Abnormal，需要将不属于混编范围的操作系统版本替换为混编范围内的操作系统版本。
--   如果内核版本（A2）检查项检查结果为Warning，则表示openGauss集群内操作系统平台的内核版本不一致。
--   如果Unicode状态（A3）检查项检查结果为Abnormal，需要将各主机的字符集设置为相同的字符集，可以在/etc/profile文件中添加“export LANG=XXX”（XXX为Unicode编码）。
+- 如果操作系统版本（A1）检查项检查结果为Abnormal，需要将不属于混编范围的操作系统版本替换为混编范围内的操作系统版本。
+- 如果内核版本（A2）检查项检查结果为Warning，则表示openGauss集群内操作系统平台的内核版本不一致。
+- 如果Unicode状态（A3）检查项检查结果为Abnormal，需要将各主机的字符集设置为相同的字符集，可以在/etc/profile文件中添加“export LANG=XXX”（XXX为Unicode编码）。
 
     ```
     vim /etc/profile
     ```
 
--   如果时区状态（A4）检查项检查结果为Abnormal，需要将各主机的时区设置为相同时区，可以将/usr/share/zoneinfo/目录下的时区文件拷贝为/etc/localtime文件。
+- 如果时区状态（A4）检查项检查结果为Abnormal，需要将各主机的时区设置为相同时区，可以将/usr/share/zoneinfo/目录下的时区文件拷贝为/etc/localtime文件。
 
     ```
     cp /usr/share/zoneinfo/$主时区/$次时区 /etc/localtime
     ```
 
--   如果交换内存状态（A5）检查项检查结果为Abnormal，可能是因为Swap空间大于Mem空间，可减小Swap解决或者增大Mem空间解决。
--   如果系统控制参数（A6）检查项检查结果为Abnormal，可以使用以下两种方法进行设置。
-    -   可以使用如下命令进行设置。
+- 如果交换内存状态（A5）检查项检查结果为Abnormal，可能是因为Swap空间大于Mem空间，可减小Swap解决或者增大Mem空间解决。
+- 如果系统控制参数（A6）检查项检查结果为Abnormal，可以使用以下两种方法进行设置。
+    - 可以使用如下命令进行设置。
 
         ```
         gs_checkos -i B1
         ```
 
-    -   根据错误提示信息，在/etc/sysctl.conf文件中进行设置。然后执行sysctl -p使其生效。
+    - 根据错误提示信息，在/etc/sysctl.conf文件中进行设置。然后执行sysctl -p使其生效。
 
         ```
         vim /etc/sysctl.conf
         ```
 
-
-
--   如果文件系统配置状态（A7）检查项检查结果为Abnormal，可以使用如下命令进行设置。
+- 如果文件系统配置状态（A7）检查项检查结果为Abnormal，可以使用如下命令进行设置。
 
     ```
     gs_checkos -i B2
     ```
 
--   如果磁盘配置状态（A8）检查项检查结果为Abnormal，需修改磁盘挂载格式为：“rw,noatime,inode64,allocsize=16m”。
+- 如果磁盘配置状态（A8）检查项检查结果为Abnormal，需修改磁盘挂载格式为：“rw,noatime,inode64,allocsize=16m”。
 
     使用linux的man mount命令挂载XFS选项：
 
@@ -292,53 +281,50 @@ gs_checkos -i A --detail
     /dev/data /data xfs rw,noatime,inode64,allocsize=16m 0 0
     ```
 
--   如果预读块大小（A9）检查项检查结果为Abnormal，可以使用如下命令进行设置。
+- 如果预读块大小（A9）检查项检查结果为Abnormal，可以使用如下命令进行设置。
 
     ```
     gs_checkos -i B3
     ```
 
--   如果IO调度状态（A10）检查项检查结果为Abnormal，可以使用如下命令进行设置。
+- 如果IO调度状态（A10）检查项检查结果为Abnormal，可以使用如下命令进行设置。
 
     ```
     gs_checkos -i B4
     ```
 
-
--   如果网卡配置状态（A11）检查项检查结果为Warning，可以使用如下命令进行设置。
+- 如果网卡配置状态（A11）检查项检查结果为Warning，可以使用如下命令进行设置。
 
     ```
     gs_checkos -i B5
     ```
 
--   如果时间一致性（A12）检查项检查结果为Abnormal，需检查是否安装ntp服务，以及ntp服务是否启动；并与ntp时钟源同步。
--   如果防火墙状态（A13）检查项检查结果为Abnormal，需关闭防火墙服务。使用如下命令进行设置。
-    -   SuSE：
+- 如果时间一致性（A12）检查项检查结果为Abnormal，需检查是否安装ntp服务，以及ntp服务是否启动；并与ntp时钟源同步。
+- 如果防火墙状态（A13）检查项检查结果为Abnormal，需关闭防火墙服务。使用如下命令进行设置。
+    - SuSE：
 
         ```
         SuSEfirewall2 stop
         ```
 
-    -   RedHat7：
+    - RedHat7：
 
         ```
         systemctl disable firewalld
         systemctl stop firewalld
         ```
 
-    -   RedHat6：
+    - RedHat6：
 
         ```
         service iptables stop
         ```
 
-
--   如果THP服务（A14）检查项检查结果为Abnormal，可以使用如下命令进行设置。
+- 如果THP服务（A14）检查项检查结果为Abnormal，可以使用如下命令进行设置。
 
     ```
     gs_checkos -i B6
     ```
-
 
 ## 检查openGauss健康状态
 
@@ -348,18 +334,18 @@ gs_checkos -i A --detail
 
 **注意事项**
 
--   扩容新节点检查只能在root用户下执行，其他场景都必须在omm用户下执行。
--   必须指定-i或-e参数，-i会检查指定的单项，-e会检查对应场景配置中的多项。
--   如果-i参数中不包含root类检查项或-e场景配置列表中没有root类检查项，则不需要交互输入root权限的用户及其密码。
--   可使用--skip-root-items跳过检查项中包含的root类检查，以免需要输入root权限用户及密码。
--   检查扩容新节点与现有节点之间的一致性，在现有节点执行gs\_check命令指定--hosts参数进行检查，其中hosts文件中需要写入新节点ip。
+- 扩容新节点检查只能在root用户下执行，其他场景都必须在omm用户下执行。
+- 必须指定-i或-e参数，-i会检查指定的单项，-e会检查对应场景配置中的多项。
+- 如果-i参数中不包含root类检查项或-e场景配置列表中没有root类检查项，则不需要交互输入root权限的用户及其密码。
+- 可使用--skip-root-items跳过检查项中包含的root类检查，以免需要输入root权限用户及密码。
+- 检查扩容新节点与现有节点之间的一致性，在现有节点执行gs\_check命令指定--hosts参数进行检查，其中hosts文件中需要写入新节点ip。
 
 **操作步骤**
 
 方式1：
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  执行如下命令对openGauss数据库状态进行检查。
+1. 以操作系统用户omm登录数据库主节点。
+2. 执行如下命令对openGauss数据库状态进行检查。
 
     ```
     gs_check -i CheckClusterState
@@ -369,12 +355,11 @@ gs_checkos -i A --detail
 
     取值范围为所有支持的检查项名称，详细列表请参见《工具与命令参考》中“服务端工具 \> gs\_checkos \> openGauss状态检查表”，用户可以根据需求自己编写新检查项。
 
-
 方式2：
 
 1. 以操作系统用户omm登录数据库主节点。
 
-2.  执行如下命令对openGauss数据库进行健康检查。
+2. 执行如下命令对openGauss数据库进行健康检查。
 
     ```
     gs_check -e inspect
@@ -383,7 +368,6 @@ gs_checkos -i A --detail
     其中，-e指定场景名，注意区分大小写。格式：-e inspect或-e upgrade。
 
     取值范围为所有支持的巡检场景名称，默认列表包括：inspect（例行巡检）、upgrade（升级前巡检）、install（安装）、binary\_upgrade（升级前巡检）、health（健康检查巡检）、slow_node（节点）、longtime（耗时长巡检），用户可以根据需求自己编写场景。
-
 
 openGauss巡检的主要作用是在openGauss运行过程中，检查整个openGauss状态是否正常，或者重大操作前（升级、扩容），确保openGauss满足操作所需的环境条件和状态条件。详细的巡检项目和场景请参见《工具与命令参考》中“服务端工具 \> gs\_checkos \> openGauss状态检查表”。
 
@@ -996,10 +980,6 @@ For more information please refer to /usr1/gaussdb/tool/script/gspylib/inspectio
 </tbody>
 </table>
 
-
-
-
-
 ## 检查数据库性能
 
 ### 检查办法<a name="section543113244436"></a>
@@ -1008,18 +988,17 @@ For more information please refer to /usr1/gaussdb/tool/script/gspylib/inspectio
 
 **前提条件**
 
--   openGauss运行状态正常。
--   运行在数据库之上的业务运行正常。
+- openGauss运行状态正常。
+- 运行在数据库之上的业务运行正常。
 
 **操作步骤**
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  执行如下命令对openGauss数据库进行性能检查。
+1. 以操作系统用户omm登录数据库主节点。
+2. 执行如下命令对openGauss数据库进行性能检查。
 
     ```
     gs_checkperf
     ```
-
 
 具体的性能统计项目请参见《工具与命令参考》中“服务端工具 \> gs\_checkperf \> 性能检查项”。
 
@@ -1186,13 +1165,13 @@ vim /var/log/messages
 
 **前提条件**
 
--   收集日志的主机网络通畅且未宕机，数据库安装用户互信正常。
--   日志收集工具依赖操作系统工具如gstack，如果未安装该工具，则提示错误后，跳过该收集项。
+- 收集日志的主机网络通畅且未宕机，数据库安装用户互信正常。
+- 日志收集工具依赖操作系统工具如gstack，如果未安装该工具，则提示错误后，跳过该收集项。
 
 **操作步骤**
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  <a name="zh-cn_topic_0237088806_zh-cn_topic_0059778412_l87490fc259434bc6ac7800ec9881a6ab"></a>执行如下命令收集数据库日志。
+1. 以操作系统用户omm登录数据库主节点。
+2. <a name="zh-cn_topic_0237088806_zh-cn_topic_0059778412_l87490fc259434bc6ac7800ec9881a6ab"></a>执行如下命令收集数据库日志。
 
     ```
     gs_collector --begin-time="20160616 01:01" --end-time="20160616 23:59"
@@ -1200,7 +1179,7 @@ vim /var/log/messages
 
     20160616 01:01为日志的开始时间，20160616 23:59为日志的结束时间。
 
-3.  根据[2](#zh-cn_topic_0237088806_zh-cn_topic_0059778412_l87490fc259434bc6ac7800ec9881a6ab)的界面输出提示，进入相应的日志收集目录，解压收集的日志，并检查数据库日志。
+3. 根据[2](#zh-cn_topic_0237088806_zh-cn_topic_0059778412_l87490fc259434bc6ac7800ec9881a6ab)的界面输出提示，进入相应的日志收集目录，解压收集的日志，并检查数据库日志。
 
     以下以日志收集路径“/opt/gaussdb/tmp/gaussdba\_mppdb/collector\_20160726\_105158.tar.gz”为例进行操作。
 
@@ -1209,10 +1188,9 @@ vim /var/log/messages
     cd /opt/gaussdb/tmp/gaussdba_mppdb/collector_20160726_105158
     ```
 
-
 **示例**
 
--   以--begin-time与--end-time为参数执行gs\_collector命令。
+- 以--begin-time与--end-time为参数执行gs\_collector命令。
 
     ```
     gs_collector --begin-time="20160616 01:01" --end-time="20160616 23:59"
@@ -1225,7 +1203,7 @@ vim /var/log/messages
     All results are stored in /tmp/gaussdba_mppdb/collector_20160616_175615.tar.gz.
     ```
 
--   以--begin-time、--end-time与-h为参数执行gs\_collector命令。
+- 以--begin-time、--end-time与-h为参数执行gs\_collector命令。
 
     ```
     gs_collector --begin-time="20160616 01:01" --end-time="20160616 23:59" -h plat2
@@ -1238,7 +1216,7 @@ vim /var/log/messages
     All results are stored in /tmp/gaussdba_mppdb/collector_20160616_190225.tar.gz.
     ```
 
--   以--begin-time、--end-time与-f为参数执行gs\_collector命令。
+- 以--begin-time、--end-time与-f为参数执行gs\_collector命令。
 
     ```
     gs_collector --begin-time="20160616 01:01" --end-time="20160616 23:59" -f /opt/software/gaussdb/output
@@ -1251,7 +1229,7 @@ vim /var/log/messages
     All results are stored in /opt/software/gaussdb/output/collector_20160616_190511.tar.gz.
     ```
 
--   以--begin-time、--end-time与--keyword为参数执行gs\_collector命令。
+- 以--begin-time、--end-time与--keyword为参数执行gs\_collector命令。
 
     ```
     gs_collector --begin-time="20160616 01:01" --end-time="20160616 23:59" --keyword="os"
@@ -1264,7 +1242,7 @@ vim /var/log/messages
     All results are stored in /tmp/gaussdba_mppdb/collector_20160616_190836.tar.gz.
     ```
 
--   以--begin-time、--end-time与-o为参数执行gs\_collector命令。
+- 以--begin-time、--end-time与-o为参数执行gs\_collector命令。
 
     ```
     gs_collector --begin-time="20160616 01:01" --end-time="20160616 23:59" -o /opt/software/gaussdb/output
@@ -1277,7 +1255,7 @@ vim /var/log/messages
     All results are stored in /opt/software/gaussdb/output/collector_20160726_113711.tar.gz.
     ```
 
--   以--begin-time、--end-time与-l为参数（文件名必须以.log为后缀）执行gs\_collector命令。
+- 以--begin-time、--end-time与-l为参数（文件名必须以.log为后缀）执行gs\_collector命令。
 
     ```
     gs_collector --begin-time="20160616 01:01" --end-time="20160616 23:59" -l /opt/software/gaussdb/logfile.log
@@ -1290,15 +1268,14 @@ vim /var/log/messages
     All results are stored in /opt/software/gaussdb/output/collector_20160726_113711.tar.gz.
     ```
 
-
 ### 清理运行日志<a name="section62197109131"></a>
 
 数据库运行过程中会产生大量运行日志，占用大量的磁盘空间，建议清理过期日志文件，只保留一个月的日志。
 
 **操作步骤**
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  清理日志。
+1. 以操作系统用户omm登录数据库主节点。
+2. 清理日志。
 
     a. 将超过1个月的日志备份到其他磁盘。
 
@@ -1316,16 +1293,14 @@ vim /var/log/messages
 
     日志文件的命名格式为“postgresql-年-月-日\_HHMMSS”。
 
-
-
 ## 检查时间一致性
 
 数据库事务一致性通过逻辑时钟保证，与操作系统时间无关，但是系统时间不一致会导致诸多潜在问题，主要是后台运维和监控功能异常，因此在月度检查时建议检查各个节点的时间一致性。
 
 ### 操作步骤<a name="zh-cn_topic_0237088808_zh-cn_topic_0059777703_s7110d1c3f93a4bdea6f206e6709de04f"></a>
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  创建记录openGauss各节点的配置文件（_mpphosts文件目录_用户可随意指定，建议放在/tmp下）。
+1. 以操作系统用户omm登录数据库主节点。
+2. 创建记录openGauss各节点的配置文件（_mpphosts文件目录_用户可随意指定，建议放在/tmp下）。
 
     ```
     vim /tmp/mpphosts
@@ -1339,19 +1314,19 @@ vim /var/log/messages
     plat3
     ```
 
-3.  保存配置文件。
+3. 保存配置文件。
 
     ```
     :wq!
     ```
 
-4.  执行如下命令，输出各节点上的时间到“/tmp/sys\_ctl-os1.log”文件中。
+4. 执行如下命令，输出各节点上的时间到“/tmp/sys\_ctl-os1.log”文件中。
 
     ```
     for ihost in `cat /tmp/mpphosts`; do ssh -n -q $ihost "hostname;date"; done > /tmp/sys_ctl-os1.log
     ```
 
-5.  根据输出确认各个节点的时间一致性，节点之间时间差异不能超过30秒。
+5. 根据输出确认各个节点的时间一致性，节点之间时间差异不能超过30秒。
 
     ```
     cat /tmp/sys_ctl-os1.log
@@ -1363,15 +1338,14 @@ vim /var/log/messages
     Thu Feb  9 16:46:14 CST 2017
     ```
 
-
 ## 检查应用连接数
 
 如果应用程序与数据库的连接数超过最大值，则新的连接无法建立。建议每天检查连接数，及时释放空闲的连接或者增加最大连接数。
 
 ### 操作步骤<a name="zh-cn_topic_0237088809_zh-cn_topic_0059777858_s8aaa4c4f54fe4b97b5bf3a874789aad6"></a>
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  使用如下命令连接数据库。
+1. 以操作系统用户omm登录数据库主节点。
+2. 使用如下命令连接数据库。
 
     ```
     gsql -d postgres -p 8000
@@ -1389,7 +1363,7 @@ vim /var/log/messages
     openGauss=# 
     ```
 
-3.  执行如下SQL语句查看连接数。
+3. 执行如下SQL语句查看连接数。
 
     ```
     openGauss=# SELECT count(*) FROM (SELECT pg_stat_get_backend_idset() AS backendid) AS s;
@@ -1404,7 +1378,7 @@ vim /var/log/messages
     (1 row)
     ```
 
-4.  查看现有最大连接数。
+4. 查看现有最大连接数。
 
     ```
     openGauss=# SHOW max_connections;
@@ -1419,12 +1393,11 @@ vim /var/log/messages
     (1 row)
     ```
 
-
 ### 异常处理<a name="zh-cn_topic_0237088809_zh-cn_topic_0059777858_sd21b84e4719d479daa8c2a0a7bef2589"></a>
 
 如果显示的连接数接近数据库的最大连接数max\_connections，则需要考虑清理现有连接数或者增加新的连接数。
 
-1.  执行如下SQL语句，查看state字段等于idle，且state\_change字段长时间没有更新过的连接信息。
+1. 执行如下SQL语句，查看state字段等于idle，且state\_change字段长时间没有更新过的连接信息。
 
     ```
     openGauss=# SELECT * FROM pg_stat_activity where state='idle' order by state_change;
@@ -1452,7 +1425,7 @@ vim /var/log/messages
     (2 rows)
     ```
 
-2.  释放空闲的连接数。
+2. 释放空闲的连接数。
 
     查看每个连接，并与此连接的使用者确认是否可以断开连接，或执行如下SQL语句释放连接。其中，pid为上一步查询中空闲连接所对应的pid字段值。
 
@@ -1472,7 +1445,7 @@ vim /var/log/messages
 
     如果没有可释放的连接，请执行下一步。
 
-3.  增加最大连接数。
+3. 增加最大连接数。
 
     ```
     gs_guc set -D /gaussdb/data/dbnode -c "max_connections= 800"
@@ -1480,7 +1453,7 @@ vim /var/log/messages
 
     其中800为新修改的连接数。
 
-4.  重启数据库服务使新的设置生效。
+4. 重启数据库服务使新的设置生效。
 
     >[!NOTE]说明
     >重启openGauss操作会导致用户执行操作中断，请在操作之前规划好合适的执行窗口。
@@ -1488,7 +1461,6 @@ vim /var/log/messages
     ```
     gs_om -t stop && gs_om -t start
     ```
-
 
 ## 例行维护表
 
@@ -1498,15 +1470,15 @@ vim /var/log/messages
 
 使用VACUUM、VACUUM FULL和ANALYZE命令定期对每个表进行维护，主要有以下原因：
 
--   VACUUM FULL可回收已更新或已删除的数据所占据的磁盘空间，同时将小数据文件合并。
--   VACUUM对每个表维护了一个可视化映射来跟踪包含对别的活动事务可见的数组的页。一个普通的索引扫描首先通过可视化映射来获取对应的数组，来检查是否对当前事务可见。若无法获取，再通过堆数组抓取的方式来检查。因此更新表的可视化映射，可加速唯一索引扫描。
--   VACUUM可避免执行的事务数超过数据库阈值时，事务ID重叠造成的原有数据丢失。
--   ANALYZE可收集与数据库中表内容相关的统计信息。统计结果存储在系统表PG\_STATISTIC中。查询优化器会使用这些统计数据，生成最有效的执行计划。
+- VACUUM FULL可回收已更新或已删除的数据所占据的磁盘空间，同时将小数据文件合并。
+- VACUUM对每个表维护了一个可视化映射来跟踪包含对别的活动事务可见的数组的页。一个普通的索引扫描首先通过可视化映射来获取对应的数组，来检查是否对当前事务可见。若无法获取，再通过堆数组抓取的方式来检查。因此更新表的可视化映射，可加速唯一索引扫描。
+- VACUUM可避免执行的事务数超过数据库阈值时，事务ID重叠造成的原有数据丢失。
+- ANALYZE可收集与数据库中表内容相关的统计信息。统计结果存储在系统表PG\_STATISTIC中。查询优化器会使用这些统计数据，生成最有效的执行计划。
 
 ### 操作步骤<a name="zh-cn_topic_0237088810_zh-cn_topic_0111591987_zh-cn_topic_0085032190_zh-cn_topic_0059779302_section97581768562"></a>
 
-1.  使用VACUUM或VACUUM FULL命令，进行磁盘空间回收。
-    -   **VACUUM**：
+1. 使用VACUUM或VACUUM FULL命令，进行磁盘空间回收。
+    - **VACUUM**：
 
         对表执行VACUUM操作
 
@@ -1530,7 +1502,7 @@ vim /var/log/messages
         VACUUM
         ```
 
-    -   **VACUUM FULL**：
+    - **VACUUM FULL**：
 
         ```
         openGauss=# VACUUM FULL customer;
@@ -1542,7 +1514,7 @@ vim /var/log/messages
 
         需要向正在执行的表增加排他锁，且需要停止其他所有数据库操作。
 
-2.  使用ANALYZE语句更新统计信息。
+2. 使用ANALYZE语句更新统计信息。
 
     ```
     openGauss=# ANALYZE customer;
@@ -1575,7 +1547,7 @@ vim /var/log/messages
     >[!NOTE]说明
     >VACUUM和ANALYZE会导致I/O流量的大幅增加，这可能会影响其他活动会话的性能。因此，建议通过“vacuum\_cost\_delay”参数设置《数据库参考》中“GUC参数说明 \> 资源消耗 \> 基于开销的清理延迟”。
 
-3.  删除表。
+3. 删除表。
 
     ```
     openGauss=# DROP TABLE customer;
@@ -1589,12 +1561,11 @@ vim /var/log/messages
     DROP TABLE
     ```
 
-
 ### 维护建议<a name="zh-cn_topic_0237088810_zh-cn_topic_0111591987_zh-cn_topic_0085032190_zh-cn_topic_0059779302_section976110616566"></a>
 
--   定期对部分大表做VACUUM FULL，在性能下降后为全库做VACUUM FULL，目前暂定每月做一次VACUUM FULL。
--   定期对系统表做VACUUM FULL，主要是PG\_ATTRIBUTE。
--   启用系统自动清理线程（AUTOVACUUM）自动执行VACUUM和ANALYZE，回收被标识为删除状态的记录空间，并更新表的统计数据。
+- 定期对部分大表做VACUUM FULL，在性能下降后为全库做VACUUM FULL，目前暂定每月做一次VACUUM FULL。
+- 定期对系统表做VACUUM FULL，主要是PG\_ATTRIBUTE。
+- 启用系统自动清理线程（AUTOVACUUM）自动执行VACUUM和ANALYZE，回收被标识为删除状态的记录空间，并更新表的统计数据。
 
 ## 例行重建索引
 
@@ -1604,68 +1575,74 @@ vim /var/log/messages
 
 数据库支持的索引类型为B-tree索引，例行重建索引可有效的提高查询效率。
 
--   如果数据发生大量删除后，索引页面上的索引键将被删除，但索引页面并不会直接删除，即索引页面数量并不会减少，因此会造成索引膨胀。重建索引可回收浪费的空间。
--   新建的索引中逻辑结构相邻的页面，通常在物理结构中也是相邻的，所以一个新建的索引比更新了多次的索引访问速度要快。
+- 如果数据发生大量删除后，索引页面上的索引键将被删除，但索引页面并不会直接删除，即索引页面数量并不会减少，因此会造成索引膨胀。重建索引可回收浪费的空间。
+- 新建的索引中逻辑结构相邻的页面，通常在物理结构中也是相邻的，所以一个新建的索引比更新了多次的索引访问速度要快。
 
 ### 重建索引<a name="zh-cn_topic_0237088811_section1483310439110"></a>
 
 重建索引有以下两种方式：
 
--   先运行DROP INDEX语句删除索引，再运行CREATE INDEX语句创建索引。
+- 先运行DROP INDEX语句删除索引，再运行CREATE INDEX语句创建索引。
 
     在删除索引过程中，会在父表上增加一个短暂的排他锁，阻止相关读写操作。在创建索引过程中，会锁住写操作但是不会锁住读操作，此时读操作只能使用顺序扫描。
 
--   使用REINDEX语句重建索引。
-    -   使用REINDEX TABLE语句重建索引，会在重建过程中增加排他锁，阻止相关读写操作。
-    -   使用REINDEX INTERNAL TABLE语句重建desc表（包括列存表的cudesc表）的索引，会在重建过程中增加排他锁，阻止相关读写操作。
-
+- 使用REINDEX语句重建索引。
+    - 使用REINDEX TABLE语句重建索引，会在重建过程中增加排他锁，阻止相关读写操作。
+    - 使用REINDEX INTERNAL TABLE语句重建desc表（包括列存表的cudesc表）的索引，会在重建过程中增加排他锁，阻止相关读写操作。
 
 ### 操作步骤<a name="zh-cn_topic_0237088811_zh-cn_topic_0059779198_s5066efbb8c0d462694edc169c57822b0"></a>
 
 假定在导入表“areaS”上的“area\_id”字段上存在普通索引“areaS\_idx”。重建索引有以下两种方式：
 
--   先删除索引（DROP INDEX），再创建索引（CREATE INDEX）。
-    1.  删除索引。
+- 先删除索引（DROP INDEX），再创建索引（CREATE INDEX）。
+    1. 删除索引。
 
         ```
         openGauss=# DROP INDEX areaS_idx;
         ```
+
         当结果显示如下信息，则表示删除成功。
+
         ```
         DROP INDEX
         ```
 
-    2.  创建索引。
+    2. 创建索引。
 
         ```
         openGauss=# CREATE INDEX areaS_idx ON areaS (area_id);
         ```
+
         当结果显示如下信息，则表示创建成功。
+
         ```
         CREATE INDEX
         ```
 
--   使用REINDEX重建索引。
-    -   使用REINDEX TABLE语句重建索引。
+- 使用REINDEX重建索引。
+    - 使用REINDEX TABLE语句重建索引。
 
         ```
         openGauss=# REINDEX TABLE areaS;
         ```
+
         当结果显示如下信息，则表示重建成功。
+
         ```
         REINDEX
         ```
 
-    -   使用REINDEX INTERNAL TABLE重建desc表（包括列存表的cudesc表）的索引。
+    - 使用REINDEX INTERNAL TABLE重建desc表（包括列存表的cudesc表）的索引。
 
         ```
         openGauss=# REINDEX INTERNAL TABLE areaS;
         ```
+
         当结果显示如下信息，则表示重建成功。
+
         ```
         REINDEX
         ```
-
 
 >[!NOTE]说明
 >在重建索引前，用户可以通过临时增大maintenance\_work\_mem和psort\_work\_mem的取值来加快索引的重建。
@@ -1878,8 +1855,6 @@ vim /var/log/messages
    </tbody>
    </table>
 
-
-
 ## 数据安全维护建议
 
 为保证openGauss数据库中的数据安全，避免丢失数据、非法访问数据等事故发生，请仔细阅读以下内容。
@@ -1890,19 +1865,19 @@ vim /var/log/messages
 
 ### 避免数据被非法访问<a name="zh-cn_topic_0237088812_zh-cn_topic_0085413817_zh-cn_topic_0059781987_s654ff86682394156a57cf0860791b723"></a>
 
--   建议对数据库用户进行权限分级管理。数据库管理员根据业务需要，建立用户并赋予权限，保证各用户对数据库的合理访问。
--   对于openGauss的服务端和客户端（或基于客户端库开发的应用程序），最好也部署在可信任的内网中。如果服务端和客户端一定要部署在非信任的网络中，需要在服务启动前，打开SSL加密，保证数据在非信任网络上的传输安全。需要注意的是，打开SSL加密会降低数据库的性能。
+- 建议对数据库用户进行权限分级管理。数据库管理员根据业务需要，建立用户并赋予权限，保证各用户对数据库的合理访问。
+- 对于openGauss的服务端和客户端（或基于客户端库开发的应用程序），最好也部署在可信任的内网中。如果服务端和客户端一定要部署在非信任的网络中，需要在服务启动前，打开SSL加密，保证数据在非信任网络上的传输安全。需要注意的是，打开SSL加密会降低数据库的性能。
 
 ### 避免系统日志泄露个人数据<a name="zh-cn_topic_0237088812_zh-cn_topic_0085413817_zh-cn_topic_0059781987_s2ff16280ae30412c9f531f105fd2d6c6"></a>
 
--   将调试日志发给他人进行分析前，请删除个人数据。
+- 将调试日志发给他人进行分析前，请删除个人数据。
 
     >[!NOTE]说明
     >因为日志级别（log\_min\_messages）设置为DEBUGx（x为DEBUG级别，取值范围为1\~5）时，调试日志中记录的信息可能包含用户的个人数据。
 
 - 将系统日志发给其他人进行分析前，请删除个人数据。因为在默认配置下，当SQL语句执行错误时，日志中会记录出错的SQL语句，而这些SQL语句中可能包含用户个人数据。
 
--   将log_min_error_statement参数的值设置为PANIC，可以避免将出错的SQL语句记录在系统日志中。若禁用该功能，当出现故障时，很难定位故障原因。
+- 将log_min_error_statement参数的值设置为PANIC，可以避免将出错的SQL语句记录在系统日志中。若禁用该功能，当出现故障时，很难定位故障原因。
 
 ## 慢sql诊断
 
@@ -1912,9 +1887,9 @@ vim /var/log/messages
 
 ### 前提条件<a name="section18794625615"></a>
 
--   数据库实例运行正常。
--   查询SQL语句信息，需要合理设置GUC参数track\_stmt\_stat\_level。track_stmt_stat_level参数控制语句执行跟踪的级别，第一部分控制全量SQL，第二部分控制慢SQL。对于慢SQL，当track_stmt_stat_level的值为非OFF时，且SQL执行时间超过log_min_duration_statement，会记录为慢SQL。默认值为"OFF,L0"，建议设置为"L0,L0"。
--   只能用系统管理员和监控管理员权限进行操作。
+- 数据库实例运行正常。
+- 查询SQL语句信息，需要合理设置GUC参数track\_stmt\_stat\_level。track_stmt_stat_level参数控制语句执行跟踪的级别，第一部分控制全量SQL，第二部分控制慢SQL。对于慢SQL，当track_stmt_stat_level的值为非OFF时，且SQL执行时间超过log_min_duration_statement，会记录为慢SQL。默认值为"OFF,L0"，建议设置为"L0,L0"。
+- 只能用系统管理员和监控管理员权限进行操作。
 
 ```
 执行命令查看数据库实例中SQL语句执行信息
@@ -2034,4 +2009,3 @@ query_plan           | Datanode Name: sgnode
                      |   Filter: (name = '***'::text)
 ...
 ```
-

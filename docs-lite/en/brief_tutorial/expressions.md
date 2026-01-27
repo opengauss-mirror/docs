@@ -4,40 +4,39 @@ An expression is similar to a formula. You can use it in a query statement to se
 
 ## Simple Expressions<a name="section14523125184717"></a>
 
--   Logical expressions
+- Logical expressions
 
     [Logical Operators](operators.md#section2075011374558)  lists the operators and computation rules of logical expressions.
 
--   Comparison expressions
+- Comparison expressions
 
     [Operators](operators.md)  lists the common comparison operators.
 
     In addition to comparison operators, you can also use the following sentence structures:
 
-    -   BETWEEN operator
+    - BETWEEN operator
 
         **a  BETWEEN  x  AND  y**  is equivalent to  **a \>= x AND a <= y**.
 
         **a  NOT BETWEEN  x  AND y**  is equivalent to  **a < x OR a \> y**.
 
-    -   To check whether a value is  **NULL**, use:
+    - To check whether a value is  **NULL**, use:
 
-        expression_ _IS NULL
+        expression__IS NULL
 
         expression IS NOT NULL
 
         or an equivalent \(non-standard\) sentence structure:
 
-        expression_ _   ISNULL
+        expression__   ISNULL
 
         expression  NOTNULL
 
         >[!TIP]NOTICE 
         >Do not write  **expression=NULL**  or  **expression<\>\(!=\)NULL**, because  **NULL**  represents an unknown value, and these expressions cannot determine whether two unknown values are equal.
 
-
-    -   is distinct from/is not distinct from
-        -   is distinct from
+    - is distinct from/is not distinct from
+        - is distinct from
 
             If the data types and values of A and B are not completely the same, the value is  **true**.
 
@@ -45,7 +44,7 @@ An expression is similar to a formula. You can use it in a query statement to se
 
             Null values are considered the same.
 
-        -   is not distinct from
+        - is not distinct from
 
             If the data types and values of A and B are not completely the same, the value is  **false**.
 
@@ -53,9 +52,7 @@ An expression is similar to a formula. You can use it in a query statement to se
 
             Null values are considered the same.
 
-
-
--   Pseudocolumn \(ROWNUM\)
+- Pseudocolumn \(ROWNUM\)
 
     **ROWNUM**  is a pseudocolumn that returns a number indicating the row number of the result obtained from the query. The value of  **ROWNUM**  in the first row is  **1**, the value of  **ROWNUM**  in the second row is  **2**, and so on. The return type of  **ROWNUM**  is numeric.  **ROWNUM**  can be used to limit the total number of rows returned by a query. For example, the following statement limits the maximum number of records returned from the  **customer\_t1**  table to 3.
 
@@ -69,14 +66,13 @@ An expression is similar to a formula. You can use it in a query statement to se
     (3 rows)
     ```
 
-
 ## Condition Expressions<a name="section245932820484"></a>
 
 Data that meets the requirements specified by conditional expressions are filtered during SQL statement execution.
 
 Conditional expressions include the following types:
 
--   CASE
+- CASE
 
     **CASE**  expressions are similar to the  **CASE**  statements in other programming languages.
 
@@ -87,9 +83,9 @@ Conditional expressions include the following types:
 
     A  **CASE**  clause can be used in a valid expression.  **condition**  is an expression that returns a value of Boolean type.
 
-    -   If the result is  **true**, the result of the  **CASE**  expression is the required result.
-    -   If the result is  **false**, the following  **WHEN**  or  **ELSE**  clauses are processed in the same way.
-    -   If every  **WHEN condition**  is  **false**, the result of the expression is the result of the  **ELSE**  clause. If the  **ELSE**  clause is omitted and has no match condition, the result is  **NULL**.
+    - If the result is  **true**, the result of the  **CASE**  expression is the required result.
+    - If the result is  **false**, the following  **WHEN**  or  **ELSE**  clauses are processed in the same way.
+    - If every  **WHEN condition**  is  **false**, the result of the expression is the result of the  **ELSE**  clause. If the  **ELSE**  clause is omitted and has no match condition, the result is  **NULL**.
 
     Example:
 
@@ -117,7 +113,7 @@ Conditional expressions include the following types:
     openGauss=# DROP TABLE tpcds.case_when_t1;
     ```
 
--   DECODE
+- DECODE
 
     [Figure 2](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f8e62b15fa92349339fcdb77fcc5fef4d)  shows the syntax of a  **DECODE**  expression.
 
@@ -136,7 +132,7 @@ Conditional expressions include the following types:
     (1 row)
     ```
 
--   COALESCE
+- COALESCE
 
     [Figure 3](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f1877c9f8d2ac4964828a6eaaddf5f35f)  shows the syntax of a  **COALESCE**  expression.
 
@@ -176,7 +172,7 @@ Conditional expressions include the following types:
     (1 row)
     ```
 
--   NULLIF
+- NULLIF
 
     [Figure 4](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f6c5bc64bf5de4b728ed1d73d97768e6e)  shows the syntax of a  **NULLIF**  expression.
 
@@ -216,7 +212,7 @@ Conditional expressions include the following types:
     (1 row)
     ```
 
--   GREATEST \(maximum value\) and LEAST \(minimum value\)
+- GREATEST \(maximum value\) and LEAST \(minimum value\)
 
     [Figure 5](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f23a83b0f987a49e0b6890280568afbd2)  shows the syntax of a  **GREATEST**  expression.
 
@@ -254,7 +250,7 @@ Conditional expressions include the following types:
     (1 row)
     ```
 
--   NVL
+- NVL
 
     [Figure 7](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f69cd4e01dd6e4280b756eb98d3c77c91)  shows the syntax of an  **NVL**  expression.
 
@@ -279,12 +275,11 @@ Conditional expressions include the following types:
     (1 row)
     ```
 
-
 ## Subquery Expressions<a name="section09964854818"></a>
 
 Subquery expressions include the following types:
 
--   EXISTS/NOT EXISTS
+- EXISTS/NOT EXISTS
 
     [Figure 8](#en-us_topic_0283136595_en-us_topic_0237122003_en-us_topic_0059777701_f0d971ea580d241e5a0dca682165b4d16)  shows the syntax of an  **EXISTS/NOT EXISTS**  expression.
 
@@ -319,7 +314,7 @@ Subquery expressions include the following types:
     (15 rows)
     ```
 
--   IN/NOT IN
+- IN/NOT IN
 
     [Figure 9](#en-us_topic_0283136595_en-us_topic_0237122003_en-us_topic_0059777701_fd3c74d5deb5f456bab447575214b74b0)  shows the syntax of an  **IN/NOT IN**  expression.
 
@@ -358,7 +353,7 @@ Subquery expressions include the following types:
     (19 rows)
     ```
 
--   ANY/SOME
+- ANY/SOME
 
     [Figure 10](#en-us_topic_0283136595_en-us_topic_0237122003_en-us_topic_0059777701_f34ef57cea9fe4936b6874f259ee5bc0f)  shows the syntax of an  **ANY/SOME**  expression.
 
@@ -395,7 +390,7 @@ Subquery expressions include the following types:
     (19 rows)
     ```
 
--   ALL
+- ALL
 
     [Figure 11](#en-us_topic_0283136595_en-us_topic_0237122003_en-us_topic_0059777701_fdf5a38b067314bf7b8847e80f5346f52)  shows the syntax of an  **ALL**  expression.
 
@@ -413,10 +408,9 @@ Subquery expressions include the following types:
     (0 rows)
     ```
 
-
 ## Array Expressions<a name="section587913984912"></a>
 
--   IN
+- IN
 
     _expression _**IN **_\(value \[, ...\]\)_
 
@@ -434,8 +428,7 @@ Subquery expressions include the following types:
 
     If the expression result is null or the expression list does not meet the expression conditions and at least one null value is returned for the expression list on the right, the result of  **IN**  is  **null**  rather than  **false**. This method is consistent with the Boolean rules used when SQL statements return null values.
 
-
--   NOT IN
+- NOT IN
 
     _expression _**NOT IN**_ \(value \[, ...\]\)_
 
@@ -456,8 +449,7 @@ Subquery expressions include the following types:
     >[!NOTE]NOTE 
     >In all situations,  **X NOT IN Y**  equals to  **NOT\(X IN Y\)**.
 
-
--   ANY/SOME\(array\)
+- ANY/SOME\(array\)
 
     _expression operator _**ANY **_\(array expression\)_
 
@@ -465,10 +457,10 @@ Subquery expressions include the following types:
 
     The right side is a parenthesized expression, which must yield an array value. The result of the expression on the left uses operators to calculate and compare the results in each row of the array expression. The comparison result must be a Boolean value.
 
-    -   If at least one comparison result is  **true**, the result of  **ANY**  is  **true**.
-    -   If no comparison result is  **true**, the result of  **ANY**  is  **false**.
-    -   If no comparison result is  **true**  and the array expression generates at least one null value, the value of  **ANY**  is  **NULL**  rather than  **false**. This method is consistent with the Boolean rules used when SQL statements return null values.
-    -   **SOME**  is a synonym of  **ANY**.
+    - If at least one comparison result is  **true**, the result of  **ANY**  is  **true**.
+    - If no comparison result is  **true**, the result of  **ANY**  is  **false**.
+    - If no comparison result is  **true**  and the array expression generates at least one null value, the value of  **ANY**  is  **NULL**  rather than  **false**. This method is consistent with the Boolean rules used when SQL statements return null values.
+    - **SOME**  is a synonym of  **ANY**.
 
     Example:
 
@@ -486,16 +478,15 @@ Subquery expressions include the following types:
     (1 row)
     ```
 
-
--   ALL\(array\)
+- ALL\(array\)
 
     _expression operator _**ALL **_\(array expression\)_
 
     The right side is a parenthesized expression, which must yield an array value. The result of the expression on the left uses operators to calculate and compare the results in each row of the array expression. The comparison result must be a Boolean value.
 
-    -   The result of  **ALL**  is  **true**  if all comparison results are  **true**  \(including the case where the array has zero elements\).
-    -   The result of  **ALL**  is  **false**  if one or multiple comparison results are  **false**.
-    -   If the array expression yields a null array, the result of  **ALL**  is  **NULL**. If the left-hand expression yields  **NULL**, the result of  **ALL**  is generally  **NULL**  \(though a non-strict comparison operator could possibly yield a different result\). Also, if the right-hand array contains any null elements and no false comparison result is obtained, the result of  **ALL**  is  **NULL**, not  **true**  \(again, assuming a strict comparison operator\). This method is consistent with the Boolean rules used when SQL statements return null values.
+    - The result of  **ALL**  is  **true**  if all comparison results are  **true**  \(including the case where the array has zero elements\).
+    - The result of  **ALL**  is  **false**  if one or multiple comparison results are  **false**.
+    - If the array expression yields a null array, the result of  **ALL**  is  **NULL**. If the left-hand expression yields  **NULL**, the result of  **ALL**  is generally  **NULL**  \(though a non-strict comparison operator could possibly yield a different result\). Also, if the right-hand array contains any null elements and no false comparison result is obtained, the result of  **ALL**  is  **NULL**, not  **true**  \(again, assuming a strict comparison operator\). This method is consistent with the Boolean rules used when SQL statements return null values.
 
     Example
 
@@ -506,7 +497,6 @@ Subquery expressions include the following types:
      t
     (1 row)
     ```
-
 
 ## Row Expressions<a name="section178254113494"></a>
 
@@ -531,4 +521,3 @@ openGauss=# SELECT ROW(1,2,NULL) < ROW(1,3,0) AS RESULT;
  t
 (1 row)
 ```
-

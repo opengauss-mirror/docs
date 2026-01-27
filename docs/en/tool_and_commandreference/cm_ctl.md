@@ -2,16 +2,16 @@
 
 **cm\_ctl** is a tool provided by openGauss to control database instance services. This tool is called by O&M personnel for automatic database instance service restoration. cm\_ctl provides the following functions:
 
--   Starts database instance services, all the instances in an AZ, all instances on a single host, or a single instance process.
--   Stops database instance services, all instances in an AZ, all instances on a single host, or instance processes on a single node. 
--   Restarts the logical database instance service.
--   Queries the database instance status or the status of a single host.
--   Switches over the primary and standby instances or resets the instance status.
--   Rebuilds the standby node.
--   Views the database instance configuration file.
--   Sets the log level, the arbitration mode of cm_server when one primary and multiple standby database instances are deployed, and the switchover mode between AZs.
--   Obtains the log level, the arbitration mode of cm_server when one primary and multiple standby database instances are deployed, and the switchover mode between AZs.
--   Checks the status of an instance process.
+- Starts database instance services, all the instances in an AZ, all instances on a single host, or a single instance process.
+- Stops database instance services, all instances in an AZ, all instances on a single host, or instance processes on a single node. 
+- Restarts the logical database instance service.
+- Queries the database instance status or the status of a single host.
+- Switches over the primary and standby instances or resets the instance status.
+- Rebuilds the standby node.
+- Views the database instance configuration file.
+- Sets the log level, the arbitration mode of cm_server when one primary and multiple standby database instances are deployed, and the switchover mode between AZs.
+- Obtains the log level, the arbitration mode of cm_server when one primary and multiple standby database instances are deployed, and the switchover mode between AZs.
+- Checks the status of an instance process.
 
 Files related to the cm\_ctl tool:
 
@@ -19,42 +19,41 @@ Files related to the cm\_ctl tool:
 
   This is a flag file for starting and stopping a database instance. The file is stored in *$GAUSSHOME/bin*, where *GAUSSHOME* is an environment variable. When the database instance is started, the **cm\_ctl** tool deletes the file. When the database instance is stopped, the **cm\_ctl** tool generates the file and writes the stop mode to the file.
 
-
 - instance\_manual\_start\_X (X indicates the instance ID.)
 
   This is a flag file of starting and stopping a single instance. The file is stored in *$GAUSSHOME/bin*, where *GAUSSHOME* is an environment variable. When starting the instance, **cm\_ctl** deletes the file. When stopping the instance, **cm\_ctl** generates the file and writes the stop mode to the file.
 
-
 cm\_ctl constraints:
 
--   In cluster mode, the **cm\_ctl** tool instead of the **gs\_ctl** tool is used to switch the database role.
+- In cluster mode, the **cm\_ctl** tool instead of the **gs\_ctl** tool is used to switch the database role.
 
-### Command Description<a name="en-us_topic_0116784021_s03ab48c805584dbda0f4d8f1a36833c2"></a>
+## Command Description<a name="en-us_topic_0116784021_s03ab48c805584dbda0f4d8f1a36833c2"></a>
 
 cm\_ctl uses the following options:
 
--   [Commands of options](#en-us_topic_0116784021_table1718281376)
--   [Common options](#en-us_topic_0116784021_t73f4b6dad11943ea811a211e6c127669)
--   [Options of start](#table45722029132319)
--   [Options of switchover](#table12226155814102)
--   [Options of build](#table649003761312)
--   [Options of check](#en-us_topic_0116784021_t5582631c9b25449da85855fab919ddfd)
--   [Options of stop](#en-us_topic_0116784021_t7507cabe697c4b4da00814fccee8e559)
--   [Options of query](#en-us_topic_0116784021_t19badc48929f4f9abd94b8ac774f06c1)
--   [Options of view](#en-us_topic_0116784021_table207722104617)
--   [Options of set](#en-us_topic_0116784021_tef5e0858a71c4d21abce8f80e3ba7723) and [Options of set cm](#table10437204416514)
--   [Options of get](#table1599151916313)
--   [Options of setrunmode](#table1656519521713)
--   [Options of changerole](#table326418392182)
--   [Options of changemember](#table27311655104911)
--   [Options of reload](#table11377594818)
--   [Options of list](#table0914920191018)
--   [Options of encrypt](#table4739105911382)
--   [Options of ddb](#table9665145942617)
--   [Options of switch](#table7591811163812)
--   [Options of res](#table11658339114119)
+- [Commands of options](#en-us_topic_0116784021_table1718281376)
+- [Common options](#en-us_topic_0116784021_t73f4b6dad11943ea811a211e6c127669)
+- [Options of start](#table45722029132319)
+- [Options of switchover](#table12226155814102)
+- [Options of build](#table649003761312)
+- [Options of check](#en-us_topic_0116784021_t5582631c9b25449da85855fab919ddfd)
+- [Options of stop](#en-us_topic_0116784021_t7507cabe697c4b4da00814fccee8e559)
+- [Options of query](#en-us_topic_0116784021_t19badc48929f4f9abd94b8ac774f06c1)
+- [Options of view](#en-us_topic_0116784021_table207722104617)
+- [Options of set](#en-us_topic_0116784021_tef5e0858a71c4d21abce8f80e3ba7723) and [Options of set cm](#table10437204416514)
+- [Options of get](#table1599151916313)
+- [Options of setrunmode](#table1656519521713)
+- [Options of changerole](#table326418392182)
+- [Options of changemember](#table27311655104911)
+- [Options of reload](#table11377594818)
+- [Options of list](#table0914920191018)
+- [Options of encrypt](#table4739105911382)
+- [Options of ddb](#table9665145942617)
+- [Options of switch](#table7591811163812)
+- [Options of res](#table11658339114119)
 
 Usage:
+
 ```
 cm_ctl start [-z AVAILABILITY_ZONE [--cm_arbitration_mode=ARBITRATION_MODE]] | [-n NODEID [-D DATADIR]] [-t SECS]
 cm_ctl switchover [-z AVAILABILITY_ZONE] | [-n NODEID -D DATADIR [-f]] | [-a] | [-A] [-t SECS]
@@ -255,7 +254,7 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 
 >[!NOTE]NOTE  
 >
->-   The common options listed here may not be applicable to all commands. For details about how to use the common options, see the preceding description. You can also run the **cm\_ctl --help** command to query the common options.
+>- The common options listed here may not be applicable to all commands. For details about how to use the common options, see the preceding description. You can also run the **cm\_ctl --help** command to query the common options.
 
 **Table 3** Options of switchover
 
@@ -1001,7 +1000,7 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
   cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
   ```
 
--   Run the **res** command.
+- Run the **res** command.
 
     ```
     Add a resource: cm_ctl res --add --res_name=[name] --res_attr=[res_info]

@@ -15,4 +15,3 @@ WAL records are recovered as part of the envelope's WAL recovery. openGauss enve
 In an active-standby deployment, the standby server is always in a Recovery state for an automatic WAL recovery process.
 
 The MOT recovery parameters are set in the  **mot.conf**  file explained in the  [MOT Recovery](mot_recovery.md)  section.
-

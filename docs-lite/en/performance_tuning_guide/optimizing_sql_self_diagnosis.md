@@ -48,10 +48,10 @@ Statistic Not Collect:
 
 ## Restrictions<a name="en-us_topic_0283136583_en-us_topic_0237121523_section728715105125"></a>
 
-1.  An alarm contains a maximum of 2048 characters. If the length of an alarm exceeds this value \(for example, a large number of long table names and column names are displayed in the alarm when their statistics are not collected\), a warning instead of an alarm will be reported.
+1. An alarm contains a maximum of 2048 characters. If the length of an alarm exceeds this value \(for example, a large number of long table names and column names are displayed in the alarm when their statistics are not collected\), a warning instead of an alarm will be reported.
 
     ```
     WARNING, "Planner issue report is truncated, the rest of planner issues will be skipped"
     ```
 
-2.  If a query statement contains the  **Limit**  operator, alarms of operators lower than  **Limit**  will not be reported.
+2. If a query statement contains the  **Limit**  operator, alarms of operators lower than  **Limit**  will not be reported.

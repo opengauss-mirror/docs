@@ -24,7 +24,7 @@ openGauss在安装过程中，需要在openGauss中的节点间进行执行命�
 
 - 执行命令前，需要检查是否所有集群节点都支持expect命令，如果不支持请自行下载expect工具，建议使用expect version 5.45。
 
--   如果各主机安装并启动了SELinux服务，需要确保/root和/home目录安全上下文为默认值（root目录：system\_u:object\_r:admin\_home\_t:s0，home目录：system\_u:object\_r:home\_root\_t:s0）或者关闭掉SELinux服务。
+- 如果各主机安装并启动了SELinux服务，需要确保/root和/home目录安全上下文为默认值（root目录：system\_u:object\_r:admin\_home\_t:s0，home目录：system\_u:object\_r:home\_root\_t:s0）或者关闭掉SELinux服务。
 
     检查系统SELinux状态的方法：执行命令getenforce，如果返回结果是Enforcing ，说明SELinux安装并启用。
 
@@ -48,59 +48,56 @@ openGauss在安装过程中，需要在openGauss中的节点间进行执行命�
     restorecon -r -v /root/
     ```
 
-
 ## 语法<a name="zh-cn_topic_0237152423_zh-cn_topic_0059778349_sa7fde5cce9124d06a6c7caa6abc0070e"></a>
 
--   建立互信
+- 建立互信
 
     ```
     gs_sshexkey -f HOSTFILE  [...] [--skip-hostname-set] [-l LOGFILE]
     ```
 
--   显示帮助信息
+- 显示帮助信息
 
     ```
     gs_sshexkey -? | --help
     ```
 
--   显示版本号信息
+- 显示版本号信息
 
     ```
     gs_sshexkey -V | --version
     ```
 
-
 ## 参数说明<a name="zh-cn_topic_0237152423_zh-cn_topic_0059778349_s36a1b85ea7c243e69a825f543215ce01"></a>
 
--   -f
+- -f
 
     主机列表，列出所有需要建立互信主机的IP或者IP,PORT。
 
     >[!NOTE]说明
     >确保hostfile文件中只配置主机IP（每行只写一个IP或者IP,PORT），不包含其它信息。
 
--   -l
+- -l
 
     指定日志文件的保存路径。
 
     取值范围：任意存在的可访问的绝对路径。
 
--   --skip-hostname-set
+- --skip-hostname-set
 
     是否将“-f”参数文件中IP与其hostname的映射关系写入“/etc/hosts”文件中。默认写入，如果指定该参数则不写入。普通用户无权限编辑/etc/hosts文件，故有无指定该参数，普通用户均不生成映射关系。
 
--   --no-deduplicate
+- --no-deduplicate
 
     是否在配置互信修改/etc/hosts文件的时候，去除/etc/hosts文件中已经配置过的主机信息，默认是去重复。
 
--   -?, --help
+- -?, --help
 
     显示帮助信息。
 
--   -V, --version
+- -V, --version
 
     显示版本号信息。
-
 
 ## 示例<a name="zh-cn_topic_0237152423_zh-cn_topic_0059778349_s0925c040c7eb4b0d9fb783ac5c0a8b2b"></a>
 
@@ -131,8 +128,3 @@ openGauss在安装过程中，需要在openGauss中的节点间进行执行命�
   Successfully verified SSH trust on all hosts.
   Successfully created SSH trust.
   ```
-
-  
-
-
-

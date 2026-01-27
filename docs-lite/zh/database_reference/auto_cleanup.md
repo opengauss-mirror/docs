@@ -10,15 +10,14 @@
 
 >[!NOTE]说明
 >
->-   如果希望系统在故障恢复后，具备自动清理两阶段事务的功能，请将autovacuum设置为on;
->-   当设置autovacuum为on，[autovacuum\_max\_workers](#zh-cn_topic_0283137694_zh-cn_topic_0237124730_zh-cn_topic_0059778244_s76932f79410248ba8923017d19982673)为0时，表示系统不会自动进行autovacuum，只会在故障恢复后，自动清理两阶段事务；
->-   当设置autovacuum为on，[autovacuum\_max\_workers](#zh-cn_topic_0283137694_zh-cn_topic_0237124730_zh-cn_topic_0059778244_s76932f79410248ba8923017d19982673)大于0时，表示系统不仅在故障恢复后，自动清理两阶段事务，并且还可以自动清理线程。
-
+>- 如果希望系统在故障恢复后，具备自动清理两阶段事务的功能，请将autovacuum设置为on;
+>- 当设置autovacuum为on，[autovacuum\_max\_workers](#zh-cn_topic_0283137694_zh-cn_topic_0237124730_zh-cn_topic_0059778244_s76932f79410248ba8923017d19982673)为0时，表示系统不会自动进行autovacuum，只会在故障恢复后，自动清理两阶段事务；
+>- 当设置autovacuum为on，[autovacuum\_max\_workers](#zh-cn_topic_0283137694_zh-cn_topic_0237124730_zh-cn_topic_0059778244_s76932f79410248ba8923017d19982673)大于0时，表示系统不仅在故障恢复后，自动清理两阶段事务，并且还可以自动清理线程。
 
 **取值范围**： 布尔型
 
--   on表示开启数据库自动清理线程。
--   off表示关闭数据库自动清理线程。
+- on表示开启数据库自动清理线程。
+- off表示关闭数据库自动清理线程。
 
 **默认值**： on
 
@@ -30,10 +29,10 @@
 
 **取值范围**： 枚举类型
 
--   analyze表示只做autoanalyze。
--   vacuum表示只做autovacuum。
--   mix表示autoanalyze和autovacuum都做。
--   none表示二者都不做。
+- analyze表示只做autoanalyze。
+- vacuum表示只做autovacuum。
+- mix表示autoanalyze和autovacuum都做。
+- none表示二者都不做。
 
 **默认值**： mix
 
@@ -67,6 +66,7 @@
 
 将log\_autovacuum\_min\_duration设置为250ms，记录所有运行大于或者等于250ms的自动清理命令的相关信息。
 其相关日志表现如下:
+
 ```shell
     automatic vacuum of table x: index scans: x
     pages: x removed, x remain
@@ -78,9 +78,9 @@
 
 **取值范围**： 整型，最小值为-1，最大值为2147483647，单位为毫秒。
 
--   当参数设置为0时，表示所有的自动清理的概要信息都记录到日志中。
--   当参数设置为-1时，表示所有的自动清理的概要信息都不记录到日志中。
--   当参数设置为非-1时，当由于锁冲突的存在导致一个自动清理操作被跳过，记录一条消息。
+- 当参数设置为0时，表示所有的自动清理的概要信息都记录到日志中。
+- 当参数设置为-1时，表示所有的自动清理的概要信息都不记录到日志中。
+- 当参数设置为非-1时，当由于锁冲突的存在导致一个自动清理操作被跳过，记录一条消息。
 
 **默认值**： -1
 
@@ -148,8 +148,8 @@
 
 **参数说明**： 设置事务内的最大时间，使得表的pg\_class.relfrozenxid字段在VACUUM操作执行之前被写入。
 
--   VACUUM也可以删除pg\_clog/子目录中的旧文件。
--   即使自动清理线程被禁止，系统也会调用自动清理线程来防止循环重复。
+- VACUUM也可以删除pg\_clog/子目录中的旧文件。
+- 即使自动清理线程被禁止，系统也会调用自动清理线程来防止循环重复。
 
 该参数属于POSTMASTER类型参数，请参考 [表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -197,8 +197,8 @@
 
 **取值范围**：布尔型
 
--   on表示开启自动VACUUM操作对toast表的处理。
--   off表示关闭自动VACUUM操作对toast表的处理。
+- on表示开启自动VACUUM操作对toast表的处理。
+- off表示关闭自动VACUUM操作对toast表的处理。
 
 **默认值**：off
 

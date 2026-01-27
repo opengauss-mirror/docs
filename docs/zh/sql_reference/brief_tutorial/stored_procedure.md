@@ -4,7 +4,7 @@
 
 ## 语法格式<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_sbee45c05d759429e9b8cb27ddd67bd30"></a>
 
--   创建存储过程
+- 创建存储过程
 
     ```
     CREATE PROCEDURE procedure_name
@@ -16,73 +16,68 @@
     /
     ```
 
-
--   调用存储过程
+- 调用存储过程
 
     ```
     CALL procedure_name ( param_expr );
     ```
 
-
--   删除存储过程
+- 删除存储过程
 
     ```
     DROP PROCEDURE [ IF EXISTS ] procedure_name 
     [ ( [ {[ argname ] [ argmode ] argtype} [, ...] ] ) [ CASCADE | RESTRICT ] ];
     ```
 
-
 ## 参数说明<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_scd93d84d9e624b5e831d78d47a830ca4"></a>
 
--   **procedure\_name**
+- **procedure\_name**
 
     创建的存储过程名称。
 
--   **argname**
+- **argname**
 
     参数的名称。
 
--   **argmode**
+- **argmode**
 
     参数的模式。取值范围： IN，OUT，INOUT或VARIADIC。VARIADIC用于声明数组类型的参数。缺省值是IN。
 
-    -   **IN**
+    - **IN**
 
         输入参数。表示该参数的值必须在调用存储过程时指定，在存储过程中修改该参数的值不能被返回。
 
-    -   **OUT**
+    - **OUT**
 
         输出参数。该值可在存储过程内部被改变，并可返回
 
-    -   **INOUT**
+    - **INOUT**
 
         输入输出参数。调用时指定，并且可被改变和返回
 
-
--   **argtype**
+- **argtype**
 
     参数的数据类型。
 
--   **expression**
+- **expression**
 
     设定缺省值。
 
--   **IS、AS**
+- **IS、AS**
 
     语法格式要求，必须写其中一个。两个相同。
 
--   **BEGIN、END**
+- **BEGIN、END**
 
     语法格式要求，必须写。
 
--   **procedure\_body**
+- **procedure\_body**
 
     存储过程内容。
 
--   **param\_expr**
+- **param\_expr**
 
     参数列表。参数间用符号“,”隔开；参数名和参数值用符号 “:=”或者“=\>”隔开。
-
 
 ## 示例<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821"></a>
 
@@ -111,4 +106,3 @@ openGauss=# CALL  insert_data(param1:=210101,param2:='Alan',param3:='21.01',para
 --删除存储过程
 openGauss=# DROP PROCEDURE insert_data;
 ```
-

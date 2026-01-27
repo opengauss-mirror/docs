@@ -4,8 +4,6 @@
 
 **表1** ALL_OBJECTS
 
-
-
 <table aria-label="表1" class="table table-sm margin-top-none">
     <thead>
         <tr>

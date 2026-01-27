@@ -50,10 +50,10 @@ SQLRETURN SQLSetEnvAttr(SQLHENV       EnvironmentHandle
 
 ## Return Value<a name="en-us_topic_0238272902_en-us_topic_0237120432_en-us_topic_0059778852_sd43c3bb519574fb68eae3b53fb1b652f"></a>
 
--   **SQL\_SUCCESS**  indicates that the call succeeded.
--   **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
--   **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
--   **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
+- **SQL\_SUCCESS**  indicates that the call succeeded.
+- **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
+- **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
+- **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
 
 ## Precautions<a name="en-us_topic_0238272902_en-us_topic_0237120432_en-us_topic_0059778852_s3f23b16e09954cc0b1f5bdb1063fee16"></a>
 
@@ -62,4 +62,3 @@ If SQLSetEnvAttr returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, the 
 ## Example<a name="en-us_topic_0238272902_en-us_topic_0237120432_en-us_topic_0059778852_s54d045c03fcc414bab03c37ea6e4da08"></a>
 
 See  [Examples](example_odbc.md).
-

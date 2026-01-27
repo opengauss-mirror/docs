@@ -56,4 +56,3 @@ LIMIT 10;
 ```
 
 One advantage of the separate-column approach over an expression index is that it is unnecessary to explicitly specify the text search configuration in queries in order to use the index. As shown in the preceding example, the query can depend on  **default\_text\_search\_config**. Another advantage is that searches will be faster, since it will not be necessary to redo the  **to\_tsvector**  calls to verify index matches. The expression-index approach is simpler to set up, however, and it requires less disk space since the  **tsvector**  representation is not stored explicitly.
-

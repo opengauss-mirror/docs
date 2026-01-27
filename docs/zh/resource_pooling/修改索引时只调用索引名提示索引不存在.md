@@ -38,4 +38,3 @@ ALTER INDEX HR_staffS_p1_index2 MOVE PARTITION staff_ID2_index TABLESPACE exampl
 ```
 schema.table
 ```
-

@@ -219,5 +219,3 @@ openGauss=# SELECT * FROM student1;
 --删除表。
 openGauss=# DROP TABLE student1;
 ```
-
-

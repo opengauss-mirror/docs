@@ -99,4 +99,3 @@ gs\_hadr\_local\_rto\_and\_rpo\_stat视图显示流式容灾的主数据库实�
 </tr>
 </tbody>
 </table>
-

@@ -16,14 +16,13 @@ DROP EVENT [IF EXISTS] event_name
 
 ## Parameter Description<a name="section652211111716"></a>
 
--   IF EXISTS
+- IF EXISTS
 
     If the scheduled task does not exist, a NOTICE message is displayed.
 
--   name
+- name
 
     Name of the scheduled task to be deleted.
-
 
 ## Examples<a name="section192526392717"></a>
 

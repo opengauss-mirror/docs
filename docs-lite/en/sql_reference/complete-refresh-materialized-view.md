@@ -8,33 +8,29 @@ Complete-refresh materialized views can be fully refreshed only. The syntax for 
 
 ### Syntax<a name="section1810714714319"></a>
 
--   Create a complete-refresh materialized view.
+- Create a complete-refresh materialized view.
 
     ```
     CREATE MATERIALIZED VIEW [ view_name ] AS { query_block }; 
     ```
 
-
--   Fully refresh a materialized view.
+- Fully refresh a materialized view.
 
     ```
     REFRESH MATERIALIZED VIEW [ view_name ];
     ```
 
-
--   Delete a materialized view.
+- Delete a materialized view.
 
     ```
     DROP MATERIALIZED VIEW [ view_name ];
     ```
 
-
--   Query a materialized view.
+- Query a materialized view.
 
     ```
     SELECT * FROM [ view_name ];
     ```
-
 
 ### Examples<a name="section653116105315"></a>
 
@@ -79,9 +75,9 @@ DROP MATERIALIZED VIEW
 
 ### Supported Scenarios<a name="section794144810159"></a>
 
--   Supports the same query scope as the CREATE TABLE AS statement does.
--   Supports index creation in complete-refresh materialized views.
--   Supports ANALYZE and EXPLAIN.
+- Supports the same query scope as the CREATE TABLE AS statement does.
+- Supports index creation in complete-refresh materialized views.
+- Supports ANALYZE and EXPLAIN.
 
 ### Unsupported Scenarios<a name="section14823202371412"></a>
 
@@ -90,4 +86,3 @@ Materialized views cannot be added, deleted, or modified. They support only quer
 ### Constraints<a name="section16598132020150"></a>
 
 When a complete-refresh materialized view is refreshed or deleted, a high-level lock is added to the base table. If the definition of a materialized view involves multiple tables, pay attention to the service logic to avoid deadlock.
-

@@ -74,19 +74,19 @@ SQLRETURN  SQLGetDiagRec(SQLSMALLINT    HandleType
 
 ## Return Value<a name="en-us_topic_0238272900_en-us_topic_0237120430_en-us_topic_0059778032_s79113635891145b5b38d04f8c2a8fa71"></a>
 
--   **SQL\_SUCCESS**  indicates that the call succeeded.
--   **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
--   **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
--   **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
+- **SQL\_SUCCESS**  indicates that the call succeeded.
+- **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
+- **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
+- **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
 
 ## Precautions<a name="en-us_topic_0238272900_en-us_topic_0237120430_en-us_topic_0059778032_s15c39d4749d544f1bbd489d994427ef7"></a>
 
 SQLGetDiagRec does not release diagnostic records for itself. It uses the following return values to report execution results:
 
--   **SQL\_SUCCESS**  indicates that the function successfully returns diagnostic information.
--   **SQL\_SUCCESS\_WITH\_INFO**  indicates that the  **\*MessageText**  buffer is too small to hold the requested diagnostic information. No diagnostic records are generated.
--   **SQL\_INVALID\_HANDLE**  indicates that the handle indicated by  **HandType**  and  **Handle**  is an invalid handle.
--   **SQL\_ERROR**  indicates that  **RecNumber**  is less than or equal to 0 or that  **BufferLength**  is smaller than 0.
+- **SQL\_SUCCESS**  indicates that the function successfully returns diagnostic information.
+- **SQL\_SUCCESS\_WITH\_INFO**  indicates that the  **\*MessageText**  buffer is too small to hold the requested diagnostic information. No diagnostic records are generated.
+- **SQL\_INVALID\_HANDLE**  indicates that the handle indicated by  **HandType**  and  **Handle**  is an invalid handle.
+- **SQL\_ERROR**  indicates that  **RecNumber**  is less than or equal to 0 or that  **BufferLength**  is smaller than 0.
 
 If an ODBC function returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, the application can call SQLGetDiagRec to obtain the  **SQLSTATE**  value. The possible  **SQLSTATE**  values are listed as follows:
 
@@ -156,4 +156,3 @@ If an ODBC function returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, t
 ## Example<a name="en-us_topic_0238272900_en-us_topic_0237120430_en-us_topic_0059778032_sf24dafb7ecbe4978ac9b0c0da42eaa19"></a>
 
 See  [Examples](example_odbc.md).
-

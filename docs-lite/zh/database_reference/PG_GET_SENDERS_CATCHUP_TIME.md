@@ -71,4 +71,3 @@ PG\_GET\_SENDERS\_CATCHUP\_TIME视图显示数据库节点上当前活跃的主�
 </tr>
 </tbody>
 </table>
-

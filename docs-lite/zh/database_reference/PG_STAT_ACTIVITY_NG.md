@@ -176,4 +176,3 @@ PG\_STAT\_ACTIVITY\_NG视图显示在当前用户所属的逻辑数据库实例�
 </tr>
 </tbody>
 </table>
-

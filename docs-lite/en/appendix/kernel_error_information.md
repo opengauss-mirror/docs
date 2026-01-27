@@ -1319,4 +1319,3 @@ SQLSTATE: 54000
 CAUSE: "Values larger than 1/3 of a buffer page cannot be indexed."
 
 ACTION: "Consider a function index of an MD5 hash of the value, or use full text indexing."
-

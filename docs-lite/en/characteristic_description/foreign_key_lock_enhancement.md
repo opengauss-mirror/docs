@@ -81,4 +81,3 @@ The new row-level locks do not support the Ustore table.
 ## Dependencies<a name="section101449415302"></a>
 
 None.
-

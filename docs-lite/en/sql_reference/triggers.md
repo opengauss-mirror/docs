@@ -4,7 +4,7 @@ A trigger automatically executes functions when an event occurs in a specified d
 
 ## Syntax<a name="en-us_topic_0283136646_en-us_topic_0237122110_en-us_topic_0059778640_sbee45c05d759429e9b8cb27ddd67bd30"></a>
 
--   Create a trigger.
+- Create a trigger.
 
     ```
     CREATE TRIGGER trigger_name { BEFORE | AFTER | INSTEAD OF } { event [ OR ... ] }
@@ -14,68 +14,64 @@ A trigger automatically executes functions when an event occurs in a specified d
         EXECUTE PROCEDURE function_name ( arguments );
     ```
 
-
--   Modify a trigger.
+- Modify a trigger.
 
     ```
     ALTER TRIGGER trigger_name ON table_name RENAME TO new_trigger_name;
     ```
 
-
--   Delete a trigger.
+- Delete a trigger.
 
     ```
     DROP TRIGGER trigger_name ON table_name [ CASCADE | RESTRICT ];
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0283137165_en-us_topic_0237122123_en-us_topic_0059778166_s65dbaae3763942599852d585997c77dd"></a>
 
--   **trigger\_name**
+- **trigger\_name**
 
     Specifies the trigger name.
 
--   **BEFORE**
+- **BEFORE**
 
     Specifies that a trigger function is executed before the trigger event.
 
--   **AFTER**
+- **AFTER**
 
     Specifies that a trigger function is executed after the trigger event.
 
--   **INSTEAD OF**
+- **INSTEAD OF**
 
     Specifies that a trigger function directly replaces the trigger event.
 
--   **event**
+- **event**
 
     Specifies the event that will fire the trigger. Values are  **INSERT**,  **UPDATE**,  **DELETE**, and  **TRUNCATE**. Multiple events can be specified using  **OR**.
 
--   **table\_name**
+- **table\_name**
 
     Specifies the name of the table corresponding to the trigger.
 
--   **FOR EACH ROW | FOR EACH STATEMENT**
+- **FOR EACH ROW | FOR EACH STATEMENT**
 
     Specifies the frequency of firing the trigger.
 
-    -   **FOR EACH ROW**  indicates that the trigger should be fired once for every row affected by the trigger event.
-    -   **FOR EACH STATEMENT**  indicates that the trigger should be fired just once per SQL statement.
+    - **FOR EACH ROW**  indicates that the trigger should be fired once for every row affected by the trigger event.
+    - **FOR EACH STATEMENT**  indicates that the trigger should be fired just once per SQL statement.
 
     If neither is specified, the default value is  **FOR EACH STATEMENT**. Constraint triggers can only be marked as  **FOR EACH ROW**.
 
--   **function\_name**
+- **function\_name**
 
     Specifies a user-defined function, which must be declared as taking no parameters and returning data of trigger type. This function is executed when a trigger fires.
 
--   **arguments**
+- **arguments**
 
     Specifies an optional comma-separated list of parameters to be provided for the function when the trigger is executed.
 
--   **new\_trigger\_name**
+- **new\_trigger\_name**
 
     Specifies the new trigger name.
-
 
 ## Examples<a name="en-us_topic_0283137165_en-us_topic_0237122123_en-us_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa"></a>
 
@@ -153,4 +149,3 @@ openGauss=# DROP TRIGGER insert_trigger ON test_trigger_src_tbl;
 openGauss=# DROP TRIGGER update_trigger ON test_trigger_src_tbl;
 openGauss=# DROP TRIGGER delete_trigger_renamed ON test_trigger_src_tbl;
 ```
-

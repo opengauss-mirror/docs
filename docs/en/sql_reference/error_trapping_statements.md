@@ -109,4 +109,3 @@ SELECT merge_db(1, 'dennis');
 DROP FUNCTION merge_db;
 DROP TABLE db;
 ```
-

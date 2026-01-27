@@ -33,10 +33,10 @@ Debug=1 (Enable the debug log function of the driver.)
 
 If a large amount of data needs to be inserted, you are advised to perform the following operations:
 
--   You need to set  **UseBatchProtocol**  to  **1**  in the  **odbc.ini**  file and  **support\_batch\_bind**  to  **on**  in the database.
--   The ODBC program binding type must be the same as that in the database.
--   The character set of the client is the same as that of the database.
--   The transaction is committed manually.
+- You need to set  **UseBatchProtocol**  to  **1**  in the  **odbc.ini**  file and  **support\_batch\_bind**  to  **on**  in the database.
+- The ODBC program binding type must be the same as that in the database.
+- The character set of the client is the same as that of the database.
+- The transaction is committed manually.
 
 **odbc.ini**  configuration file:
 
@@ -222,7 +222,7 @@ int begin_unit_test()
     }
 
     /* Establish a connection. */
-	ret = SQLConnect(h_conn, (SQLCHAR*) "gaussdb", SQL_NTS, 
+ ret = SQLConnect(h_conn, (SQLCHAR*) "gaussdb", SQL_NTS, 
                                (SQLCHAR*) NULL, 0, NULL, 0); 
     if (SQL_SUCCESS != ret)
     {
@@ -273,8 +273,8 @@ void end_unit_test()
 
 int main()
 {
-	// begin test
-	if (begin_unit_test() != SQL_SUCCESS)
+ // begin test
+ if (begin_unit_test() != SQL_SUCCESS)
     {
         printf("\n begin_test_unit failed.");
         return SQL_ERROR;
@@ -479,7 +479,7 @@ int main()
 
     RETURN_IF_NOT_SUCCESS(SQLRowCount(h_stmt, &RowCount));
     RETURN_IF_NOT(i, RowCount);
-	SQLCloseCursor(h_stmt); 
+ SQLCloseCursor(h_stmt); 
     /* Final step. Delete the table and restore the environment. */
     RETURN_IF_NOT_SUCCESS(execute_cmd(sql_drop));
 
@@ -489,4 +489,3 @@ int main()
 
 >[!NOTE]NOTE 
 >In the preceding example, the number column is defined. When the  **SQLBindParameter**  API is called, the performance of binding SQL\_NUMERIC is higher than that of SQL\_LONG. If char is used, the data type needs to be converted when data is inserted to the database server, causing a performance bottleneck.
-

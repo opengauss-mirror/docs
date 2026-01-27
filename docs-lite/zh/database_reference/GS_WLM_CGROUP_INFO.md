@@ -78,4 +78,3 @@ GS\_WLM\_CGROUP\_INFO视图显示当前执行作业的控制组的信息。
 </tr>
 </tbody>
 </table>
-

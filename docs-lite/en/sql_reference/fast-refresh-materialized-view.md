@@ -8,40 +8,35 @@ Fast-refresh materialized views can be incrementally refreshed. You need to manu
 
 ### Syntax<a name="section1980464963719"></a>
 
--   Create an fast-refresh materialized view.
+- Create an fast-refresh materialized view.
 
     ```
     CREATE INCREMENTAL MATERIALIZED VIEW [ view_name ] AS { query_block }; 
     ```
 
-
--   Fully refresh a materialized view.
+- Fully refresh a materialized view.
 
     ```
     REFRESH MATERIALIZED VIEW [ view_name ];
     ```
 
-
--   Incrementally refresh a materialized view.
+- Incrementally refresh a materialized view.
 
     ```
     REFRESH INCREMENTAL MATERIALIZED VIEW [ view_name ];
     ```
 
-
--   Delete a materialized view.
+- Delete a materialized view.
 
     ```
     DROP MATERIALIZED VIEW [ view_name ];
     ```
 
-
--   Query a materialized view.
+- Query a materialized view.
 
     ```
     SELECT * FROM [ view_name ];
     ```
-
 
 ### Examples<a name="section1433113611463"></a>
 
@@ -99,23 +94,22 @@ DROP MATERIALIZED VIEW
 
 ### Supported Scenarios<a name="section1490618598164"></a>
 
--   Supports statements for querying a single table.
--   Supports UNION ALL for querying multiple single tables.
--   Supports index creation in materialized views.
--   Supports the Analyze operation in materialized views.
+- Supports statements for querying a single table.
+- Supports UNION ALL for querying multiple single tables.
+- Supports index creation in materialized views.
+- Supports the Analyze operation in materialized views.
 
 ### Unsupported Scenarios<a name="section10338102122020"></a>
 
--   Multi-table join plans and subquery plans are not supported in materialized views.
--   Except for a few ALTER operations, most DDL operations cannot be performed on base tables in materialized views.
--   Materialized views cannot be added, deleted, or modified. They support only query statements.
--   The temporary table, hashbucket, unlog, or partitioned table cannot be used to create materialized views.
--   Materialized views cannot be created in nested mode \(that is, a materialized view cannot be created in another materialized view\).
--   The column-store tables are not supported. Only row-store tables are supported.
--   Materialized views of the UNLOGGED type are not supported, and the WITH syntax is not supported.
+- Multi-table join plans and subquery plans are not supported in materialized views.
+- Except for a few ALTER operations, most DDL operations cannot be performed on base tables in materialized views.
+- Materialized views cannot be added, deleted, or modified. They support only query statements.
+- The temporary table, hashbucket, unlog, or partitioned table cannot be used to create materialized views.
+- Materialized views cannot be created in nested mode \(that is, a materialized view cannot be created in another materialized view\).
+- The column-store tables are not supported. Only row-store tables are supported.
+- Materialized views of the UNLOGGED type are not supported, and the WITH syntax is not supported.
 
 ### Constraints<a name="section16598132020150"></a>
 
--   If the materialized view definition is UNION ALL, each subquery needs to use a different base table.
--   When a fast-refresh materialized view is created, fully refreshed, or deleted, a high-level lock is added to the base table. If the materialized view is defined as UNION ALL, pay attention to the service logic to avoid deadlock.
-
+- If the materialized view definition is UNION ALL, each subquery needs to use a different base table.
+- When a fast-refresh materialized view is created, fully refreshed, or deleted, a high-level lock is added to the base table. If the materialized view is defined as UNION ALL, pay attention to the service logic to avoid deadlock.

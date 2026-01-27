@@ -26,24 +26,23 @@ SET CONSTRAINTS  { ALL  |  { name  }  [, ...]  }  { DEFERRED  | IMMEDIATE  } ;
 
 ## Parameter Description<a name="en-us_topic_0283136774_en-us_topic_0237122187_en-us_topic_0059779017_sce8e8c2751c740879354a5adb7da996e"></a>
 
--   **name**
+- **name**
 
     Specifies the constraint name.
 
     Value range: an existing table name, which can be found in the system catalog  **pg\_constraint**.
 
--   **ALL**
+- **ALL**
 
     Specifies all constraints.
 
--   **DEFERRED**
+- **DEFERRED**
 
     Specifies that constraints are not checked until transaction commit.
 
--   **IMMEDIATE**
+- **IMMEDIATE**
 
     Specifies that constraints are checked at the end of each statement.
-
 
 ## Examples<a name="en-us_topic_0283136774_en-us_topic_0237122187_en-us_topic_0059779017_s1a9e95b23ffc4ba9b8873c7352f3d1f5"></a>
 
@@ -51,4 +50,3 @@ SET CONSTRAINTS  { ALL  |  { name  }  [, ...]  }  { DEFERRED  | IMMEDIATE  } ;
 -- Set that constraints are checked when a transaction is committed.
 openGauss=# SET CONSTRAINTS ALL DEFERRED;
 ```
-

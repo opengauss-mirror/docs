@@ -10,8 +10,8 @@ ROWNUM is a sequence number generated for each record in the query result. The s
 
 ## Benefits<a name="section46751668"></a>
 
--   This feature is compatible with Oracle features, facilitating database migration.
--   Similar to the LIMIT feature, this feature can filter out the first  _n_  records in the result set.
+- This feature is compatible with Oracle features, facilitating database migration.
+- Similar to the LIMIT feature, this feature can filter out the first  _n_  records in the result set.
 
 ## Description<a name="section18111828"></a>
 
@@ -23,17 +23,16 @@ During internal execution, the optimizer rewrites ROWNUM into LIMIT to accelerat
 
 ## Constraints<a name="section06531946143616"></a>
 
--   Do not use the pseudocolumn ROWNUM as an alias to avoid ambiguity in SQL statements.
--   Do not use ROWNUM as the column name when creating a table. Bad example:  **create table table\_name\(rownum int\);**
--   Do not use ROWNUM as the column name when creating a type. Bad example:  **create type type\_name\(a int, rownum int\);**
--   Do not use ROWNUM when creating an index. Bad example:  **create index index\_name on table\(rownum\);**
--   Do not use ROWNUM as the default value when creating a table. Bad example:  **create table table\_name\(id int default rownum\);**
--   Do not use ROWNUM as an alias in the WHERE clause. Bad example:  **select rownum rn from table where rn < 5;**
--   Do not use ROWNUM when inserting data. Bad example:  **insert into table values \(rownum,'blue'\)**
--   Do not use ROWNUM in a table-less query. Bad example:  **select \* from \(values\(rownum,1\)\), x\(a,b\);**
--   If the HAVING clause contains ROWNUM \(and is not in the aggregate function\), the GROUP BY clause must contain ROWNUM \(and is not in the aggregate function\).
+- Do not use the pseudocolumn ROWNUM as an alias to avoid ambiguity in SQL statements.
+- Do not use ROWNUM as the column name when creating a table. Bad example:  **create table table\_name\(rownum int\);**
+- Do not use ROWNUM as the column name when creating a type. Bad example:  **create type type\_name\(a int, rownum int\);**
+- Do not use ROWNUM when creating an index. Bad example:  **create index index\_name on table\(rownum\);**
+- Do not use ROWNUM as the default value when creating a table. Bad example:  **create table table\_name\(id int default rownum\);**
+- Do not use ROWNUM as an alias in the WHERE clause. Bad example:  **select rownum rn from table where rn < 5;**
+- Do not use ROWNUM when inserting data. Bad example:  **insert into table values \(rownum,'blue'\)**
+- Do not use ROWNUM in a table-less query. Bad example:  **select \* from \(values\(rownum,1\)\), x\(a,b\);**
+- If the HAVING clause contains ROWNUM \(and is not in the aggregate function\), the GROUP BY clause must contain ROWNUM \(and is not in the aggregate function\).
 
 ## Dependencies<a name="section57771982"></a>
 
 None.
-

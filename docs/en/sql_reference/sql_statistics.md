@@ -143,4 +143,3 @@ The following table describes columns in the SQL Statistics report.
 </tr>
 </tbody>
 </table>
-

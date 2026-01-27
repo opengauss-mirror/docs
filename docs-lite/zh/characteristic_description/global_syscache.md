@@ -22,11 +22,11 @@
 
 ## 特性约束<a name="section06531946143616"></a>
 
--   设置enable\_global\_syscache为on。建议设置enable\_thread\_pool参数为on。
--   当DB数较多，且阈值global\_syscache\_threshold较小时，内存控制无法正常工作，性能会劣化。
--   不支持分布式时序相关的任务，这些任务的内存控制与性能不受GSC特性的影响。
--   wal\_level设置为minimal或者archive时，备机的查询性能会下降，会退化为短连接。
--   极致RTO备机读场景下，备机不支持表缓存。
+- 设置enable\_global\_syscache为on。建议设置enable\_thread\_pool参数为on。
+- 当DB数较多，且阈值global\_syscache\_threshold较小时，内存控制无法正常工作，性能会劣化。
+- 不支持分布式时序相关的任务，这些任务的内存控制与性能不受GSC特性的影响。
+- wal\_level设置为minimal或者archive时，备机的查询性能会下降，会退化为短连接。
+- 极致RTO备机读场景下，备机不支持表缓存。
 
 ## 依赖关系<a name="section8406643144716"></a>
 

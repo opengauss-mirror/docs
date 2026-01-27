@@ -6,8 +6,8 @@
 
 ## Precautions<a name="section428216371487"></a>
 
--   The model name must be unique. Pay attention to the naming format.
--   The AI training duration fluctuates greatly, and in some cases, the training duration is long. If the duration specified by the GUC parameter  **statement\_timeout**  is too long, the training will be interrupted. You are advised to set  **statement\_timeout**  to  **0**  so that the statement execution duration is not limited.
+- The model name must be unique. Pay attention to the naming format.
+- The AI training duration fluctuates greatly, and in some cases, the training duration is long. If the duration specified by the GUC parameter  **statement\_timeout**  is too long, the training will be interrupted. You are advised to set  **statement\_timeout**  to  **0**  so that the statement execution duration is not limited.
 
 >[!NOTE]NOTE 
 >In the Lite scenario, openGauss provides this syntax, but the AI capabilities are unavailable.
@@ -24,48 +24,47 @@ WITH hyperparameter_name = { hyperparameter_value | DEFAULT } [, ...] }
 
 ## Parameter Description<a name="section19493195215818"></a>
 
--   **model\_name**
+- **model\_name**
 
     Name of the training model, which must be unique.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **architecture\_name**
+- **architecture\_name**
 
     Algorithm type of the training model.
 
     Value range: a string. Currently, the value can be  **logistic\_regression**,  **linear\_regression**,  **svm\_classification**, or  **kmeans**.
 
--   **attribute\_list**
+- **attribute\_list**
 
     Enumerated input column name of the training model.
 
     Value range: a string. It must comply with the naming convention of data attributes.
 
--   **attribute\_name**
+- **attribute\_name**
 
     Target column name of the retraining model in a supervised learning task \(simple expression processing can be performed\).
 
     Value range: a string. It must comply with the naming convention of data attributes.
 
--   **subquery**
+- **subquery**
 
     Data source.
 
     Value range: a string. It must comply with the SQL syntax of databases.
 
--   **hyper\_parameter\_name**
+- **hyper\_parameter\_name**
 
     Hyperparameter name of the machine learning model.
 
     Value range: a string. The value range varies according to the algorithm.
 
--   **hp\_value**
+- **hp\_value**
 
     Hyperparameter value.
 
     Value range: a string. The value range varies according to the algorithm.
-
 
 ## Examples<a name="section10367355883"></a>
 
@@ -80,4 +79,3 @@ CREATE MODEL price_model USING logistic_regression
 ## Helpful Links<a name="section084411512195"></a>
 
 [DROP MODEL](drop-model.md)  and  [PREDICT BY](predict-by.md)
-

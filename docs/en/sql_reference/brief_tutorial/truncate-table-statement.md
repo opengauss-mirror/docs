@@ -12,12 +12,11 @@ TRUNCATE TABLE  table_name ;
 
 ## Parameter Description<a name="en-us_topic_0283137291_en-us_topic_0237122193_en-us_topic_0059777694_sdbad1b573aae49f5aeba613b6fc3130d"></a>
 
--   **table\_name**
+- **table\_name**
 
     Specifies the name \(optionally schema-qualified\) of the target table.
 
     Value range: an existing table name
-
 
 ## Examples<a name="en-us_topic_0283137291_en-us_topic_0237122193_en-us_topic_0059777694_sfa74039cf5ab429abe7b4980088b2c5e"></a>
 
@@ -36,4 +35,3 @@ openGauss=# SELECT * FROM customer_t1;
 ---------------+---------------+--------------+-------------+--------
 (0 rows)
 ```
-

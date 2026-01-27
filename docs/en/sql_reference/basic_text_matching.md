@@ -50,4 +50,3 @@ text @@ text
 ```
 
 We already saw the first two of these. The form  **text @@ tsquery**  is equivalent to  **to\_tsvector\(text\) @@ tsquery**. The form  **text @@ text**  is equivalent to  **to\_tsvector\(text\) @@ plainto\_tsquery\(text\)**.
-

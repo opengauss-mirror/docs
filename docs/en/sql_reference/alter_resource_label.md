@@ -15,35 +15,33 @@ ALTER RESOURCE LABEL label_name (ADD|REMOVE)
   label_item_list[, ...]*;
 ```
 
--   label\_item\_list
+- label\_item\_list
 
     ```
     resource_type(resource_path[, ...]*)
     ```
 
--   resource\_type
+- resource\_type
 
     ```
     TABLE | COLUMN | SCHEMA | VIEW | FUNCTION
     ```
 
-
 ## Parameter Description<a name="section2852173114389"></a>
 
--   **label\_name**
+- **label\_name**
 
     Specifies the resource label name.
 
     Value range: a string. It must comply with the naming convention.
 
--   **resource\_type**
+- **resource\_type**
 
     Specifies the type of database resources to be labeled.
 
--   **resource\_path**
+- **resource\_path**
 
     Specifies the path of database resources.
-
 
 ## Examples<a name="section873151912198"></a>
 
@@ -64,4 +62,3 @@ openGauss=# ALTER RESOURCE LABEL table_label REMOVE COLUMN(table_for_label.col1)
 ## Helpful Links<a name="section156744489391"></a>
 
 [CREATE RESOURCE LABEL](create_resource_label.md)  and  [DROP RESOURCE LABEL](drop_resource_label.md)
-

@@ -115,19 +115,18 @@ query_plan           | Datanode Name: dn_6001_6002_6003
 
 ## 特性约束<a name="section1956417145819"></a>
 
--   目前的SQL跟踪信息，基于正常的执行逻辑。执行失败的SQL，其跟踪信息不具有准确的参考价值。
--   节点重启，可能导致该节点的数据丢失。
--   SQL语句执行完立即退出会话，可能会丢失该会话未刷新到系统表中的数据。
--   通过GUC参数设置收集SQL语句的数量，如果超过阈值，新的SQL语句执行信息不会被收集。
--   通过GUC参数设置单条SQL语句收集的锁事件详细信息的最大字节数，如果超过阈值，新的锁事件详细信息不会被收集。
--   通过异步刷新方式刷新用户执行中的SQL信息，所以用户Query执行结束后，存在查询相关视图函数结果短暂时延。
--   当track\_stmt\_parameter为off时，query字段最大长度受track\_activity\_query\_size控制。
--   部分指标信息\(行活动、Cache/IO、时间分布等\)依赖于dbe\_perf.statement视图收集，如果该视图对应记录数超过预定大小\(依赖GUC:instr\_unique\_sql\_count\)，则本特性可能不收集相关指标。
--   statement\_history表相关函数以及视图中details字段为二进制格式，如果需要解析详细内容，请使用对应函数：pg\_catalog.statement\_detail\_decode\(details, 'plaintext', true\)。
--   statement\_history表查询需要切换至postgres库，其它库中数据为空
--   statement\_history表内容受track\_stmt\_stat\_level控制，默认为'OFF,L0'，参数第一部分代表Full SQL，第二部分是慢SQL；对于慢SQL,只有SQL运行时间超过log\_min\_duration\_statement时才会被记录至statement\_history表
+- 目前的SQL跟踪信息，基于正常的执行逻辑。执行失败的SQL，其跟踪信息不具有准确的参考价值。
+- 节点重启，可能导致该节点的数据丢失。
+- SQL语句执行完立即退出会话，可能会丢失该会话未刷新到系统表中的数据。
+- 通过GUC参数设置收集SQL语句的数量，如果超过阈值，新的SQL语句执行信息不会被收集。
+- 通过GUC参数设置单条SQL语句收集的锁事件详细信息的最大字节数，如果超过阈值，新的锁事件详细信息不会被收集。
+- 通过异步刷新方式刷新用户执行中的SQL信息，所以用户Query执行结束后，存在查询相关视图函数结果短暂时延。
+- 当track\_stmt\_parameter为off时，query字段最大长度受track\_activity\_query\_size控制。
+- 部分指标信息\(行活动、Cache/IO、时间分布等\)依赖于dbe\_perf.statement视图收集，如果该视图对应记录数超过预定大小\(依赖GUC:instr\_unique\_sql\_count\)，则本特性可能不收集相关指标。
+- statement\_history表相关函数以及视图中details字段为二进制格式，如果需要解析详细内容，请使用对应函数：pg\_catalog.statement\_detail\_decode\(details, 'plaintext', true\)。
+- statement\_history表查询需要切换至postgres库，其它库中数据为空
+- statement\_history表内容受track\_stmt\_stat\_level控制，默认为'OFF,L0'，参数第一部分代表Full SQL，第二部分是慢SQL；对于慢SQL,只有SQL运行时间超过log\_min\_duration\_statement时才会被记录至statement\_history表
 
 ## 依赖关系<a name="section15876411599"></a>
 
 无。
-

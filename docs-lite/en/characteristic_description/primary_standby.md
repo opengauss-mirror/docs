@@ -34,4 +34,3 @@ None.
 
 >[!NOTE]NOTE 
 >In the current Lite scenario, openGauss does not support deployment with one primary and multiple standbys.
-

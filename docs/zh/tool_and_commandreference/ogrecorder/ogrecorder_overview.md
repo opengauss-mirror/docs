@@ -12,4 +12,3 @@ GR（oGRecorder）是一款数据库日志保护软件。其典型部署场景�
 - **[oGRecorder 部署与运维指南](ogrecorder_deployment_guide.md)**  
 - **[oGRecorder 主备参数同步介绍](ogrecorder_primary_standby_sync.md)**  
 - **[grcmd 工具使用说明](grcmd.md)**  
-

@@ -8,14 +8,14 @@
 
 Only the function owner or a user granted with the ALTER permission can run the  **ALTER FUNCTION**  command. The system administrator has this permission by default. The following is permission constraints depending on attributes to be modified:
 
--   If a function involves operations on temporary tables,  **ALTER FUNCTION**  cannot be used.
--   To modify the owner or schema of a function, you must be a function owner or system administrator and a member of the new owner role.
--   Only the system administrator and initial user can change the schema of a function to  **public**.
--   Only the initial user or the user who created the function can modify the function to be a definer's rights function.
+- If a function involves operations on temporary tables,  **ALTER FUNCTION**  cannot be used.
+- To modify the owner or schema of a function, you must be a function owner or system administrator and a member of the new owner role.
+- Only the system administrator and initial user can change the schema of a function to  **public**.
+- Only the initial user or the user who created the function can modify the function to be a definer's rights function.
 
 ## Syntax<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sa4d6f7fca3774a5e9f488937b289bea3"></a>
 
--   Modify the additional parameters of the customized function.
+- Modify the additional parameters of the customized function.
 
     ```
     ALTER FUNCTION function_name ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
@@ -39,57 +39,56 @@ Only the function owner or a user granted with the ALTER permission can run the 
      | COMMENT 'text'
     ```
 
--   Rename the customized function.
+- Rename the customized function.
 
     ```
     ALTER FUNCTION funname ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
         RENAME TO new_name;
     ```
 
--   Change the owner of the customized function.
+- Change the owner of the customized function.
 
     ```
     ALTER FUNCTION funname ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
         OWNER TO new_owner;
     ```
 
--   Modify the schema of the customized function.
+- Modify the schema of the customized function.
 
     ```
     ALTER FUNCTION funname ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
         SET SCHEMA new_schema;
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_s72f8af90c9784dc9a16e58974d73a31a"></a>
 
--   **function\_name**
+- **function\_name**
 
     Specifies the name of the function to be modified.
 
     Value range: an existing function name
 
--   **argmode**
+- **argmode**
 
     Specifies whether a parameter is an input or output parameter.
 
     Value range:  **IN**,  **OUT**,  **INOUT**, and  **VARIADIC**
 
--   **argname**
+- **argname**
 
     Parameter name.
 
     Value range: a string. It must comply with the naming convention.
 
--   **argtype**
+- **argtype**
 
     Specifies the data type of a function parameter.
 
--   **CALLED ON NULL INPUT**
+- **CALLED ON NULL INPUT**
 
     Declares that some parameters of the function can be invoked in normal mode if the parameter values are null. Omitting this parameter is the same as specifying it.
 
--   **RETURNS NULL ON NULL INPUT**
+- **RETURNS NULL ON NULL INPUT**
 
     **STRICT**
 
@@ -97,27 +96,27 @@ Only the function owner or a user granted with the ALTER permission can run the 
 
     **RETURNS NULL ON NULL INPUT**  and  **STRICT**  have the same functions.
 
--   **IMMUTABLE**
+- **IMMUTABLE**
 
     Specifies that the function always returns the same result if the parameter values are the same.
 
--   **STABLE**
+- **STABLE**
 
     Specifies that the function cannot modify the database, and that within a single table scan it will consistently return the same result for the same parameter value, but its result varies by SQL statements.
 
--   **VOLATILE**
+- **VOLATILE**
 
     Specifies that the function value can change in a single table scan and no optimization is performed.
 
--   **LEAKPROOF**
+- **LEAKPROOF**
 
     Specifies that the function has no side effect and the parameter contains only the return value.  **LEAKPROOF**  can be set only by the system administrator.
 
--   **EXTERNAL**
+- **EXTERNAL**
 
     \(Optional\) The purpose is to be compatible with SQL. This feature applies to all functions, not only external functions.
 
--   **SECURITY INVOKER**
+- **SECURITY INVOKER**
 
     **AUTHID CURRENT\_USER**
 
@@ -125,7 +124,7 @@ Only the function owner or a user granted with the ALTER permission can run the 
 
     **SECURITY INVOKER**  and  **AUTHID CURRENT\_USER**  have the same functions.
 
--   **SECURITY DEFINER**
+- **SECURITY DEFINER**
 
     **AUTHID DEFINER**
 
@@ -133,7 +132,7 @@ Only the function owner or a user granted with the ALTER permission can run the 
 
     **AUTHID DEFINER**  and  **SECURITY DEFINER**  have the same function.
 
--   **COST execution\_cost**
+- **COST execution\_cost**
 
     Estimates the execution cost of a function.
 
@@ -141,49 +140,48 @@ Only the function owner or a user granted with the ALTER permission can run the 
 
     Value range: a positive integer
 
--   **ROWS result\_rows**
+- **ROWS result\_rows**
 
     Estimates the number of rows returned by the function. This is only allowed when the function is declared to return a set.
 
     Value range: a positive number. The default value is  **1000**.
 
--   **configuration\_parameter**
-    -   **value**
+- **configuration\_parameter**
+    - **value**
 
         Sets a specified database session parameter to a specified value. If the value is  **DEFAULT**  or  **RESET**, the default setting is used in the new session.  **OFF**  closes the setting.
 
         Value range: a string
 
-        -   DEFAULT
-        -   OFF
-        -   RESET
+        - DEFAULT
+        - OFF
+        - RESET
 
         Specifies the default value.
 
-    -   **from current**
+    - **from current**
 
         Uses the value of  **configuration\_parameter**  of the current session.
 
-
--   **new\_name**
+- **new\_name**
 
     Specifies the new name of a function. To change the schema of a function, you must have the  **CREATE**  permission on the new schema.
 
     Value range: a string. It must comply with the naming convention.
 
--   **new\_owner**
+- **new\_owner**
 
     Specifies the new owner of a function. To change the owner of a function, the new owner must have the  **CREATE**  permission on the schema to which the function belongs.
 
     Value range: an existing user role
 
--   **new\_schema**
+- **new\_schema**
 
     Specifies the new schema of a function.
 
     Value range: an existing schema
 
--   **COMMENT 'text'**
+- **COMMENT 'text'**
 
     Comment a function object.
 

@@ -4,8 +4,8 @@
 
 用户可以使用以下方式通过COPY FROM STDIN语句直接向openGauss写入数据。
 
--   通过键盘输入向openGauss数据库写入数据。详细请参见[COPY](../sql_reference/copy.md)。
--   通过JDBC驱动的CopyManager接口从文件或者数据库向openGauss写入数据。此方法支持COPY语法中copy option的所有参数。
+- 通过键盘输入向openGauss数据库写入数据。详细请参见[COPY](../sql_reference/copy.md)。
+- 通过JDBC驱动的CopyManager接口从文件或者数据库向openGauss写入数据。此方法支持COPY语法中copy option的所有参数。
 
 ## CopyManager类简介
 
@@ -126,7 +126,7 @@ throws SQLException
 
 数据导入过程中发生的错误，一般分为数据格式错误和非数据格式错误。
 
--   数据格式错误
+- 数据格式错误
 
     在创建外表时，通过设置参数“LOG INTO error\_table\_name”，将数据导入过程中出现的数据格式错误信息写入指定的错误信息表error\_table\_name中。您可以通过以下SQL，查询详细错误信息。
 
@@ -192,8 +192,7 @@ throws SQLException
     </tbody>
     </table>
 
-
--   非数据格式错误
+- 非数据格式错误
 
     对于非数据格式错误，一旦发生将导致整个数据导入失败。您可以根据执行数据导入过程中，界面提示的错误信息，帮助定位问题，处理错误表。
 

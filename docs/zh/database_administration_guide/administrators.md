@@ -28,7 +28,6 @@ ALTER USER时，要求用户已存在。
 
 安全管理员是指具有CREATEROLE属性的账户，具有创建、修改、删除用户或角色的权限。 要创建新的安全管理员，三权分立关闭时，请以系统管理员或者安全管理员身份连接数据库，三权分立打开时，请以安全管理员身份连接数据库，并使用带CREATEROLE选项的[CREATE USER](../sql_reference/create_user.md)语句或  [ALTER USER](../sql_reference/alter_user.md)语句进行设置。 
 
-
 ```
 openGauss=# CREATE USER createrole WITH CREATEROLE password "xxxxxxxxxxx";
 ```
@@ -40,15 +39,16 @@ openGauss=# ALTER USER joe CREATEROLE;
 ```
 
 ALTER USER时，要求用户已存在。  
+
 ## 审计管理员
 
 审计管理员是指具有AUDITADMIN属性的账户，具有查看和删除审计日志的权限。
 要创建新的审计管理员，三权分立关闭时，请以系统管理员或者安全管理员身份连接数据库，三权分立打开时，请以安全管理员身份连接数据库，并使用带AUDITADMIN选项的[CREATE USER](../sql_reference/create_user.md)语句或  [ALTER USER](../sql_reference/alter_user.md)语句进行设置。
 
-
 ```
 openGauss=# CREATE USER auditadmin WITH AUDITADMIN password "xxxxxxxxxxx";
 ```
+
   或者 
 
 ```
@@ -110,4 +110,3 @@ openGauss=# ALTER USER joe POLADMIN;
 ```
 
 ALTER USER时，要求用户已存在。
-

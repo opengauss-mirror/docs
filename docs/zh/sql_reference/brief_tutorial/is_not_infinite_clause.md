@@ -7,8 +7,6 @@
 - `NULL`：对于输入为`NULL`，返回`NULL`
 - 字符串`Infinity`（忽略大小写）：可以转换为数值`Infinity`，但在表达式中判断为非`Infinity`，报错。
 
-
-
 ## IS INFINITE<a name="section829464952514"></a>
 
 如果输入数值为`Infinity`，则返回`true`，否则返回`false`。对于输入`NULL`，返回`NULL`。
@@ -69,4 +67,3 @@ ERROR:  invalid input syntax for type double precision: "FM95.28"
 openGauss=# select * from t_infinitetest where c_id = 3 and c_txt is not infinite;
 ERROR:  invalid input for IS [NOT] INFINITE
 ```
-

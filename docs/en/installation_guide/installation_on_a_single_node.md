@@ -2,21 +2,21 @@
 
 ## Prerequisites<a name="section9955194683210"></a>
 
--   A user group and a common user have been created.
--   All the server OSs and networks are functioning properly.
--   A common user must have the read, write, and execute permissions on the database package decompression path and installation path, and the installation path must be empty.
--   A common user has the execution permission on the downloaded openGauss package.
--   Before the installation, check whether the specified openGauss port is occupied. If the port number is occupied, change the port or stop the process that uses the port.
+- A user group and a common user have been created.
+- All the server OSs and networks are functioning properly.
+- A common user must have the read, write, and execute permissions on the database package decompression path and installation path, and the installation path must be empty.
+- A common user has the execution permission on the downloaded openGauss package.
+- Before the installation, check whether the specified openGauss port is occupied. If the port number is occupied, change the port or stop the process that uses the port.
 
 ## Procedure<a name="section98663181331"></a>
 
-1.  Log in to the host where the openGauss package is installed as a common user and decompress the openGauss package to the installation directory.
+1. Log in to the host where the openGauss package is installed as a common user and decompress the openGauss package to the installation directory.
 
     ```
     tar -jxf openGauss-Server-x.x.x-openEuler20.03-x86_64.tar.bz2 -C /opt/software/openGauss
     ```
 
-2.  Assume that the decompressed package is stored in the  **/opt/software/openGauss**  directory. Go to the  **simpleInstall**  directory.
+2. Assume that the decompressed package is stored in the  **/opt/software/openGauss**  directory. Go to the  **simpleInstall**  directory.
 
     ```
     cd /opt/software/openGauss/simpleInstall
@@ -42,11 +42,11 @@
    >
    >- During execution, if the error "the maximum number of SEMMNI is not correct, the current SEMMNI is xxx. Please check it." appears, please execute the following command as a user with root privileges.
    >
-   >  ```
-   >  sysctl -w kernel.sem="250 85000 250 330" 
+   > ```
+   > sysctl -w kernel.sem="250 85000 250 330" 
    >  ```
 
-4.  After the installation is complete, check whether the process is normal by using  **ps**  and  **gs\_ctl**.
+4. After the installation is complete, check whether the process is normal by using  **ps**  and  **gs\_ctl**.
 
     ```
     ps ux | grep gaussdb

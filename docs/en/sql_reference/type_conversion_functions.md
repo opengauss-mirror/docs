@@ -2,7 +2,7 @@
 
 ## Type Conversion Functions<a name="en-us_topic_0283137417_en-us_topic_0237121973_en-us_topic_0059778246_sd1817f56ca2d4be7a4ad606e0e597c55"></a>
 
--   cash\_words\(money\)
+- cash\_words\(money\)
 
     Description: Type conversion function, which converts money into text.
 
@@ -16,7 +16,7 @@
     (1 row)
     ```
 
--   cast\(x as y\)
+- cast\(x as y\)
 
     Description: Converts x into the type specified by y.
 
@@ -30,7 +30,7 @@
     (1 row)
     ```
 
--   hextoraw\(raw\)
+- hextoraw\(raw\)
 
     Description: Converts a string in hexadecimal format into raw type.
 
@@ -46,7 +46,7 @@
     (1 row)
     ```
 
--   numtoday\(numeric\)
+- numtoday\(numeric\)
 
     Description: Converts values of the number type into the timestamp of the specified type.
 
@@ -62,7 +62,7 @@
     (1 row)
     ```
 
--   pg\_systimestamp\(\)
+- pg\_systimestamp\(\)
 
     Description: Obtains the system timestamp.
 
@@ -78,7 +78,7 @@
     (1 row)
     ```
 
--   rawtohex\(string\)
+- rawtohex\(string\)
 
     Description: Converts a string in binary format into hexadecimal format.
 
@@ -96,7 +96,7 @@
     (1 row)
     ```
 
--   to\_bigint\(varchar\)
+- to\_bigint\(varchar\)
 
     Description: Converts the character type to the bigint type.
 
@@ -112,12 +112,12 @@
     (1 row)
     ```
 
--   to\_char\(datetime/interval \[, fmt\]\)
+- to\_char\(datetime/interval \[, fmt\]\)
 
     Description: Converts a DATETIME or INTERVAL value of the DATE/TIMESTAMP/TIMESTAMP WITH TIME ZONE/TIMESTAMP WITH LOCAL TIME ZONE type into the TEXT type according to the format specified by  **fmt**. 
 
-    -   The optional parameter  **fmt**  allows for the following types: date, time, week, quarter, and century. Each type has a unique template. The templates can be combined together. Common templates include HH, MI, SS, YYYY, MM, and DD.
-    -   A template may have a modification word. FM is a common modification word and is used to suppress the preceding zero or the following blank spaces.
+    - The optional parameter  **fmt**  allows for the following types: date, time, week, quarter, and century. Each type has a unique template. The templates can be combined together. Common templates include HH, MI, SS, YYYY, MM, and DD.
+    - A template may have a modification word. FM is a common modification word and is used to suppress the preceding zero or the following blank spaces.
 
     Return type: text
 
@@ -139,7 +139,7 @@
     (1 row)
     ```
 
--   to\_char\(double precision/real, text\)
+- to\_char\(double precision/real, text\)
 
     Description: Converts the values of the floating point type into the strings in the specified format.
 
@@ -155,13 +155,13 @@
     (1 row)
     ```
 
--   to\_char\(numeric/smallint/integer/bigint/double precision/real\[, fmt\]\)
+- to\_char\(numeric/smallint/integer/bigint/double precision/real\[, fmt\]\)
 
     Descriptions: Converts an integer or a value in floating point format into a string in specified format.
 
-    -   The optional parameter  **fmt**  allows for the following types: decimal characters, grouping characters, positive/negative sign and currency sign. Each type has a unique template. The templates can be combined together. Common templates include: 9, 0, millesimal sign \(,\), and decimal point \(.\).
-    -   A template can have a modification word, similar to FM. However, FM does not suppress 0 which is output according to the template.
-    -   Use the template X or x to convert an integer value into a string in hexadecimal format.
+    - The optional parameter  **fmt**  allows for the following types: decimal characters, grouping characters, positive/negative sign and currency sign. Each type has a unique template. The templates can be combined together. Common templates include: 9, 0, millesimal sign \(,\), and decimal point \(.\).
+    - A template can have a modification word, similar to FM. However, FM does not suppress 0 which is output according to the template.
+    - Use the template X or x to convert an integer value into a string in hexadecimal format.
 
     Return type: varchar
 
@@ -199,7 +199,7 @@
     (1 row)
     ```
 
--   to\_char\(interval, text\)
+- to\_char\(interval, text\)
 
     Description: Converts the values of the time interval type into the strings in the specified format.
 
@@ -215,7 +215,7 @@
     (1 row)
     ```
 
--   to\_char\(int, text\)
+- to\_char\(int, text\)
 
     Description: Converts the values of the integer type into the strings in the specified format.
 
@@ -230,7 +230,8 @@
       125
     (1 row)
     ```
--   to\_char\(set\)
+
+- to\_char\(set\)
 
     Description: Converts the values of the SET type into the strings in the specified format.
 
@@ -249,7 +250,7 @@
     (2 rows)
     ```
 
--   to\_char\(numeric, text\)
+- to\_char\(numeric, text\)
 
     Description: Converts the values of the numeric type into the strings in the specified format.
 
@@ -265,7 +266,7 @@
     (1 row)
     ```
 
--   to\_char\(string\)
+- to\_char\(string\)
 
     Description: Converts the CHAR/VARCHAR/VARCHAR2/CLOB type into the VARCHAR type.
 
@@ -283,7 +284,7 @@
     (1 row)
     ```
 
--   to\_char\(timestamp, text\)
+- to\_char\(timestamp, text\)
 
     Description: Converts the values of the timestamp type into the strings in the specified format. 
 
@@ -299,7 +300,7 @@
     (1 row)
     ```
 
--   to\_clob\(char/nchar/varchar/varchar2/nvarchar/nvarchar2/text/raw\)
+- to\_clob\(char/nchar/varchar/varchar2/nvarchar/nvarchar2/text/raw\)
 
     Description: Converts the raw type or text character set type CHAR, NCHAR, VARCHAR, VARCHAR2, NVARCHAR, NVARCHAR2, or TEXT to the CLOB type.
 
@@ -363,12 +364,12 @@
     (1 row)
     ```
 
--   to\_date\(text\)
+- to\_date\(text\)
 
     Description: Converts values of the text type into the timestamp in the specified format. Currently, only the following two formats are supported:
 
-    -   Format 1: Date without separators, for example, 20150814. The value must contain the complete year, month, and day.
-    -   Format 2: Date with separators, for example, 2014-08-14. The separator can be any non-digit character.
+    - Format 1: Date without separators, for example, 20150814. The value must contain the complete year, month, and day.
+    - Format 2: Date with separators, for example, 2014-08-14. The separator can be any non-digit character.
 
     Return type: timestamp without time zone
 
@@ -382,7 +383,7 @@
     (1 row)
     ```
 
--   to\_date\(text, text\)
+- to\_date\(text, text\)
 
     Description: Converts the values of the string type into the dates in the specified format.
 
@@ -398,7 +399,7 @@
     (1 row)
     ```
 
--   to\_number \( expr \[, fmt\]\)
+- to\_number \( expr \[, fmt\]\)
 
     Description: Converts  **expr**  into a value of the NUMBER type according to the specified format.
 
@@ -420,7 +421,7 @@
     (1 row)
     ```
 
--   to\_number\(text, text\)
+- to\_number\(text, text\)
 
     Description: Converts the values of the string type into the numbers in the specified format.
 
@@ -436,7 +437,7 @@
     (1 row)
     ```
 
--   to\_timestamp\(double precision\)
+- to\_timestamp\(double precision\)
 
     Description: Converts a UNIX century into a timestamp.
 
@@ -452,14 +453,14 @@
     (1 row)
     ```
 
--   to\_timestamp\(string \[,fmt\]\)
+- to\_timestamp\(string \[,fmt\]\)
 
     Description: Converts a string into a value of the timestamp type according to the format specified by  **fmt**. When  **fmt**  is not specified, perform the conversion according to the format specified by  **nls\_timestamp\_format**.
 
     In  **to\_timestamp**  in openGauss,
 
-    -   If the input year  *YYYY*  is 0, an error will be reported.
-    -   If the input year  *YYYY*  is less than 0, specify  *SYYYY*  in  **fmt**. The year with the value of n \(an absolute value\) BC will be output correctly.
+    - If the input year  *YYYY*  is 0, an error will be reported.
+    - If the input year  *YYYY*  is less than 0, specify  *SYYYY*  in  **fmt**. The year with the value of n \(an absolute value\) BC will be output correctly.
 
     Characters in the  **fmt**  must match the schema for formatting the data and time. Otherwise, an error is reported.
 
@@ -513,7 +514,7 @@
     (1 row)
     ```
 
--   to\_timestamp\(text, text\)
+- to\_timestamp\(text, text\)
 
     Description: Converts values of the string type into the timestamp of the specified type.
 
@@ -528,7 +529,6 @@
      2000-12-05 00:00:00
     (1 row)
     ```
-
 
 **Table  1**  Template patterns for numeric formatting
 
@@ -617,7 +617,7 @@
 </tbody>
 </table>
 
--   abstime\_text
+- abstime\_text
 
     Description: Converts abstime to text.
 
@@ -625,8 +625,7 @@
 
     Return type: text
 
-
--   abstime\_to\_smalldatetime
+- abstime\_to\_smalldatetime
 
     Description: Converts abstime to smalldatatime.
 
@@ -634,8 +633,7 @@
 
     Return type: smalldatetime
 
-
--   bigint\_tid
+- bigint\_tid
 
     Description: Converts bigint to tid.
 
@@ -643,8 +641,7 @@
 
     Return type: tid
 
-
--   bool\_int1
+- bool\_int1
 
     Description: Converts bool to int1.
 
@@ -652,8 +649,7 @@
 
     Return type: tinyint
 
-
--   bool\_int2
+- bool\_int2
 
     Description: Converts bool to int2.
 
@@ -661,8 +657,7 @@
 
     Return type: smallint
 
-
--   bool\_int8
+- bool\_int8
 
     Description: Converts bool to int8.
 
@@ -670,8 +665,7 @@
 
     Return type: bigint
 
-
--   bpchar\_date
+- bpchar\_date
 
     Description: Converts a string to a date.
 
@@ -679,8 +673,7 @@
 
     Return type: date
 
-
--   bpchar\_float4
+- bpchar\_float4
 
     Description: Converts a string to float4.
 
@@ -688,8 +681,7 @@
 
     Return type: real
 
-
--   bpchar\_float8
+- bpchar\_float8
 
     Description: Converts a string to float8.
 
@@ -697,8 +689,7 @@
 
     Return type: double precision
 
-
--   bpchar\_int4
+- bpchar\_int4
 
     Description: Converts a string to int4.
 
@@ -706,8 +697,7 @@
 
     Return type: integer
 
-
--   bpchar\_int8
+- bpchar\_int8
 
     Description: Converts a string to int8.
 
@@ -715,8 +705,7 @@
 
     Return type: bigint
 
-
--   bpchar\_numeric
+- bpchar\_numeric
 
     Description: Converts a string to numeric.
 
@@ -724,8 +713,7 @@
 
     Return type: numeric
 
-
--   bpchar\_timestamp
+- bpchar\_timestamp
 
     Description: Converts a string to a timestamp.
 
@@ -733,8 +721,7 @@
 
     Return type: timestamp without time zone
 
-
--   bpchar\_to\_smalldatetime
+- bpchar\_to\_smalldatetime
 
     Description: Converts a string to smalldatetime.
 
@@ -742,7 +729,7 @@
 
     Return type: smalldatetime
 
--   cupointer\_bigint
+- cupointer\_bigint
 
     Description: Converts the column-store CU pointer type to the bigint type.
 
@@ -750,7 +737,7 @@
 
     Return type: bigint
 
--   date\_bpchar
+- date\_bpchar
 
     Description: Converts the date type to bpchar.
 
@@ -758,7 +745,7 @@
 
     Return type: character
 
--   date\_text
+- date\_text
 
     Description: Converts date to text.
 
@@ -766,7 +753,7 @@
 
     Return type: text
 
--   date\_varchar
+- date\_varchar
 
     Description: Converts date to varchar.
 
@@ -774,7 +761,7 @@
 
     Return type: character varying
 
--   f4toi1
+- f4toi1
 
     Description: Forcibly converts float4 to uint8.
 
@@ -782,7 +769,7 @@
 
     Return type: tinyint
 
--   f8toi1
+- f8toi1
 
     Description: Forcibly converts float8 to uint8.
 
@@ -790,7 +777,7 @@
 
     Return type: tinyint
 
--   float4\_bpchar
+- float4\_bpchar
 
     Description: Converts float4 to bpchar.
 
@@ -798,7 +785,7 @@
 
     Return type: character
 
--   float4\_text
+- float4\_text
 
     Description: Converts float4 to text.
 
@@ -806,7 +793,7 @@
 
     Return type: text
 
--   float4\_varchar
+- float4\_varchar
 
     Description: Converts float4 to varchar.
 
@@ -814,8 +801,7 @@
 
     Return type: character varying
 
-
--   float8\_bpchar
+- float8\_bpchar
 
     Description: Converts float8 to bpchar.
 
@@ -823,8 +809,7 @@
 
     Return type: character
 
-
--   float8\_interval
+- float8\_interval
 
     Description: Converts float8 to interval.
 
@@ -832,8 +817,7 @@
 
     Return type: interval
 
-
--   float8\_text
+- float8\_text
 
     Description: Converts float8 to text.
 
@@ -841,7 +825,7 @@
 
     Return type: text
 
--   float8\_varchar
+- float8\_varchar
 
     Description: Converts float8 to varchar.
 
@@ -849,7 +833,7 @@
 
     Return type: character varying
 
--   i1tof4
+- i1tof4
 
     Description: Converts uint8 to float4.
 
@@ -857,7 +841,7 @@
 
     Return type: real
 
--   i1tof8
+- i1tof8
 
     Description: Converts uint8 to float8.
 
@@ -865,7 +849,7 @@
 
     Return type: double precision
 
--   i1toi2
+- i1toi2
 
     Description: Converts uint8 to int16.
 
@@ -873,8 +857,7 @@
 
     Return type: smallint
 
-
--   i1toi4
+- i1toi4
 
     Description: Converts uint8 to int32.
 
@@ -882,8 +865,7 @@
 
     Return type: integer
 
-
--   i1toi8
+- i1toi8
 
     Description: Converts uint8 to int64.
 
@@ -891,7 +873,7 @@
 
     Return type: bigint
 
--   i2toi1
+- i2toi1
 
     Description: Converts int16 to uint8.
 
@@ -899,7 +881,7 @@
 
     Return type: tinyint
 
--   i4toi1
+- i4toi1
 
     Description: Converts int32 to uint8.
 
@@ -907,7 +889,7 @@
 
     Return type: tinyint
 
--   i8toi1
+- i8toi1
 
     Description: Converts int64 to uint8.
 
@@ -915,7 +897,7 @@
 
     Return type: tinyint
 
--   int1\_avg\_accum
+- int1\_avg\_accum
 
     Description: Adds the second parameter of the uint8 type to the first parameter. The first parameter is an array of the bigint type.
 
@@ -923,7 +905,7 @@
 
     Return type: bigint\[\]
 
--   int1\_bool
+- int1\_bool
 
     Description: Converts uint8 to bool.
 
@@ -931,7 +913,7 @@
 
     Return type: Boolean
 
--   int1\_bpchar
+- int1\_bpchar
 
     Description: Converts uint8 to bpchar.
 
@@ -939,7 +921,7 @@
 
     Return type: character
 
--   int1\_mul\_cash
+- int1\_mul\_cash
 
     Description: Returns the product of a parameter of the int8 type and a parameter of the cash type. The return type is cash.
 
@@ -947,7 +929,7 @@
 
     Return type: money
 
--   int1\_numeric
+- int1\_numeric
 
     Description: Converts uint8 to numeric.
 
@@ -955,7 +937,7 @@
 
     Return type: numeric
 
--   int1\_nvarchar2
+- int1\_nvarchar2
 
     Description: Converts uint8 to nvarchar2.
 
@@ -963,8 +945,7 @@
 
     Return type: nvarchar2
 
-
--   int1\_text
+- int1\_text
 
     Description: Converts uint8 to text.
 
@@ -972,8 +953,7 @@
 
     Return type: text
 
-
--   int1\_varchar
+- int1\_varchar
 
     Description: Converts uint8 to varchar.
 
@@ -981,8 +961,7 @@
 
     Return type: character varying
 
-
--   int1in
+- int1in
 
     Description: Converts a string into an unsigned 1-byte integer.
 
@@ -990,7 +969,7 @@
 
     Return type: tinyint
 
--   int1out
+- int1out
 
     Description: Converts an unsigned 1-byte integer into a string.
 
@@ -998,7 +977,7 @@
 
     Return type: cstring
 
--   int1up
+- int1up
 
     Description: Converts an input integer to an unsigned 1-byte integer.
 
@@ -1006,7 +985,7 @@
 
     Return type: tinyint
 
--   int2\_bool
+- int2\_bool
 
     Description: Converts a signed two-byte integer to the bool type.
 
@@ -1014,7 +993,7 @@
 
     Return type: Boolean
 
--   int2\_bpchar
+- int2\_bpchar
 
     Description: Converts a signed two-byte integer to the bpchar type.
 
@@ -1022,7 +1001,7 @@
 
     Return type: character
 
--   int2\_text
+- int2\_text
 
     Description: Converts a signed two-byte integer to the text type.
 
@@ -1030,7 +1009,7 @@
 
     Return type: text
 
--   int2\_varchar
+- int2\_varchar
 
     Description: Converts a signed two-byte integer to the varchar type.
 
@@ -1038,8 +1017,7 @@
 
     Return type: character varying
 
-
--   int8\_text
+- int8\_text
 
     Description: Converts an eight-byte signed integer to the text type.
 
@@ -1047,7 +1025,7 @@
 
     Return type: text
 
--   int8\_varchar
+- int8\_varchar
 
     Description: Converts an eight-byte signed integer to varchar.
 
@@ -1055,7 +1033,7 @@
 
     Return type: character varying
 
--   intervaltonum
+- intervaltonum
 
     Description: Converts the internal dats type date to numeric.
 
@@ -1063,7 +1041,7 @@
 
     Return type: numeric
 
--   numeric\_bpchar
+- numeric\_bpchar
 
     Description: Converts numeric to bpchar.
 
@@ -1071,7 +1049,7 @@
 
     Return type: character
 
--   numeric\_int1
+- numeric\_int1
 
     Description: Converts numeric to a signed one-byte integer.
 
@@ -1079,7 +1057,7 @@
 
     Return type: tinyint
 
--   numeric\_text
+- numeric\_text
 
     Description: Converts numeric to text.
 
@@ -1087,7 +1065,7 @@
 
     Return type: text
 
--   numeric\_varchar
+- numeric\_varchar
 
     Description: Converts numeric to varchar.
 
@@ -1095,7 +1073,7 @@
 
     Return type: character varying
 
--   nvarchar2in
+- nvarchar2in
 
     Description: Converts c string to varchar.
 
@@ -1103,7 +1081,7 @@
 
     Return type: nvarchar2
 
--   nvarchar2out
+- nvarchar2out
 
     Description: Converts text into a c string.
 
@@ -1111,7 +1089,7 @@
 
     Return type: cstring
 
--   nvarchar2send
+- nvarchar2send
 
     Description: Converts varchar to binary.
 
@@ -1119,8 +1097,7 @@
 
     Return type: bytea
 
-
--   oidvectorin\_extend
+- oidvectorin\_extend
 
     Description: Converts a string to oidvector.
 
@@ -1128,7 +1105,7 @@
 
     Return type: oidvector\_extend
 
--   oidvectorout\_extend
+- oidvectorout\_extend
 
     Description: Converts oidvector to a string.
 
@@ -1136,7 +1113,7 @@
 
     Return type: cstring
 
--   oidvectorsend\_extend
+- oidvectorsend\_extend
 
     Description: Converts oidvector to a string.
 
@@ -1144,7 +1121,7 @@
 
     Return type: bytea
 
--   reltime\_text
+- reltime\_text
 
     Description: Converts reltime to text.
 
@@ -1152,7 +1129,7 @@
 
     Return type: text
 
--   text\_date
+- text\_date
 
     Description: Converts the text type to the date type.
 
@@ -1160,7 +1137,7 @@
 
     Return type: date
 
--   text\_float4
+- text\_float4
 
     Description: Converts text to float4.
 
@@ -1168,7 +1145,7 @@
 
     Return type: real
 
--   text\_float8
+- text\_float8
 
     Description: Converts the text type to float8.
 
@@ -1176,7 +1153,7 @@
 
     Return type: double precision
 
--   text\_int1
+- text\_int1
 
     Description: Converts the text type to int1.
 
@@ -1184,7 +1161,7 @@
 
     Return type: tinyint
 
--   text\_int2
+- text\_int2
 
     Description: Converts the text type to the int2 type.
 
@@ -1192,7 +1169,7 @@
 
     Return type: smallint
 
--   text\_int4
+- text\_int4
 
     Description: Converts the text type to int4.
 
@@ -1200,7 +1177,7 @@
 
     Return type: integer
 
--   text\_int8
+- text\_int8
 
     Description: Converts the text type to the int8 type.
 
@@ -1208,7 +1185,7 @@
 
     Return type: bigint
 
--   text\_numeric
+- text\_numeric
 
     Description: Converts the text type to the numeric type.
 
@@ -1216,7 +1193,7 @@
 
     Return type: numeric
 
--   text\_timestamp
+- text\_timestamp
 
     Description: Converts the text type to the timestamp type.
 
@@ -1224,7 +1201,7 @@
 
     Return type: timestamp without time zone
 
--   time\_text
+- time\_text
 
     Description: Converts the time type to the text type.
 
@@ -1232,7 +1209,7 @@
 
     Return type: text
 
--   timestamp\_text
+- timestamp\_text
 
     Description: Converts the timestamp type to the text type.
 
@@ -1240,7 +1217,7 @@
 
     Return type: text
 
--   timestamp\_to\_smalldatetime
+- timestamp\_to\_smalldatetime
 
     Description: Converts the timestamp type to the smalldatetime type.
 
@@ -1248,7 +1225,7 @@
 
     Return type: smalldatetime
 
--   timestamp\_varchar
+- timestamp\_varchar
 
     Description: Converts the timestamp type to varchar.
 
@@ -1256,7 +1233,7 @@
 
     Return type: character varying
 
--   timestamptz\_to\_smalldatetime
+- timestamptz\_to\_smalldatetime
 
     Description: Converts timestamptz to smalldatetime.
 
@@ -1264,7 +1241,7 @@
 
     Return type: smalldatetime
 
--   timestampzone\_text
+- timestampzone\_text
 
     Description: Converts the timestampzone type to the text type.
 
@@ -1272,7 +1249,7 @@
 
     Return type: text
 
--   timetz\_text
+- timetz\_text
 
     Description: Converts the timetz type to the text type.
 
@@ -1280,7 +1257,7 @@
 
     Return type: text
 
--   to\_integer
+- to\_integer
 
     Description: Converts data to the integer type.
 
@@ -1288,7 +1265,7 @@
 
     Return type: integer
 
--   to\_interval
+- to\_interval
 
     Description: Converts to the interval type.
 
@@ -1296,7 +1273,7 @@
 
     Return type: interval
 
--   to\_numeric
+- to\_numeric
 
     Description: Converts to the numeric type.
 
@@ -1304,7 +1281,7 @@
 
     Return type: numeric
 
--   to\_nvarchar2
+- to\_nvarchar2
 
     Description: Converts to the nvarchar2 type.
 
@@ -1312,7 +1289,7 @@
 
     Return type: nvarchar2
 
--   to\_text
+- to\_text
 
     Description: Converts to the text type.
 
@@ -1320,7 +1297,7 @@
 
     Return type: text
 
--   to\_ts
+- to\_ts
 
     Description: Converts to the ts type.
 
@@ -1328,7 +1305,7 @@
 
     Return type: timestamp without time zone
 
--   to\_varchar2
+- to\_varchar2
 
     Description: Converts to the varchar2 type.
 
@@ -1336,7 +1313,7 @@
 
     Return type: character varying
 
--   varchar\_date
+- varchar\_date
 
     Description: Converts varchar to date.
 
@@ -1344,7 +1321,7 @@
 
     Return type: date
 
--   varchar\_float4
+- varchar\_float4
 
     Description: Converts varchar to float4.
 
@@ -1352,7 +1329,7 @@
 
     Return type: real
 
--   varchar\_float8
+- varchar\_float8
 
     Description: Converts the varchar type to the float8 type.
 
@@ -1360,7 +1337,7 @@
 
     Return type: double precision
 
--   varchar\_int4
+- varchar\_int4
 
     Description: Converts the type from varchar to int4.
 
@@ -1368,7 +1345,7 @@
 
     Return type: integer
 
--   varchar\_int8
+- varchar\_int8
 
     Description: Converts the varchar type to the int8 type.
 
@@ -1376,7 +1353,7 @@
 
     Return type: bigint
 
--   varchar\_numeric
+- varchar\_numeric
 
     Description: Converts varchar to numeric.
 
@@ -1384,7 +1361,7 @@
 
     Return type: numeric
 
--   varchar\_timestamp
+- varchar\_timestamp
 
     Description: Converts varchar to timestamp.
 
@@ -1392,8 +1369,7 @@
 
     Return type: timestamp without time zone
 
-
--   varchar2\_to\_smlldatetime
+- varchar2\_to\_smlldatetime
 
     Description: Converts varchar2 to smlldatetime.
 
@@ -1401,8 +1377,7 @@
 
     Return type: smalldatetime
 
-
--   xidout4
+- xidout4
 
     Description: The xid output is a four-byte number.
 
@@ -1410,8 +1385,7 @@
 
     Return type: cstring
 
-
--   xidsend4
+- xidsend4
 
     Description: Converts xid to the binary format.
 
@@ -1419,10 +1393,9 @@
 
     Return type: bytea
 
-
 ## Encoding Type Conversion<a name="en-us_topic_0283137417_section1073313502270"></a>
 
--   convert\_to\_nocase\(text, text\)
+- convert\_to\_nocase\(text, text\)
 
     Description: Converts a string into a specified encoding type.
 

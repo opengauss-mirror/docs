@@ -12,7 +12,6 @@ MOT recovery consists of two stages –
 
 The WAL Redo Log recovery is managed and triggered by openGauss.
 
--   To configure recovery –
--   While WAL recovery is performed in a serial manner, the Checkpoint recovery can be configured to run in a multi-threaded manner \(meaning in parallel by multiple workers\).
--   Configure the  **Checkpoint\_recovery\_workers**  parameter in the  **mot.conf**  file, which is described in the  [Recovery \(MOT\)](mot_configuration.md#en-us_topic_0283136588_en-us_topic_0280525130_section7442447103115)  section.
-
+- To configure recovery –
+- While WAL recovery is performed in a serial manner, the Checkpoint recovery can be configured to run in a multi-threaded manner \(meaning in parallel by multiple workers\).
+- Configure the  **Checkpoint\_recovery\_workers**  parameter in the  **mot.conf**  file, which is described in the  [Recovery \(MOT\)](mot_configuration.md#en-us_topic_0283136588_en-us_topic_0280525130_section7442447103115)  section.

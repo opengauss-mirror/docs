@@ -1,6 +1,6 @@
 # GLOBAL\_PLANCACHE\_STATUS<a name="EN-US_TOPIC_0297927201"></a>
 
-**GLOBAL\_PLANCACHE\_STATUS **displays the GPC status information.
+**GLOBAL\_PLANCACHE\_STATUS**displays the GPC status information.
 
 **Table  1**  GLOBAL\_PLANCACHE\_STATUS columns
 
@@ -71,4 +71,3 @@
 </tr>
 </tbody>
 </table>
-

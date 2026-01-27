@@ -4,32 +4,32 @@ SQL  **UNION**  constructs must match up possibly dissimilar types to become a s
 
 ## Type Resolution for UNION, CASE, and Related Constructs<a name="en-us_topic_0283136625_en-us_topic_0237122011_en-us_topic_0059779260_s4d37d0d92a7e4067a51798614b044fb4"></a>
 
--   If all inputs are of the same type, and it is not  **unknown**, resolve as that type.
--   If all inputs are of type  **unknown**, resolve as type  **text**  \(the preferred type of the string category\). Otherwise,  **unknown**  inputs are ignored.
--   If the inputs are not all of the same type category, a failure will be resulted. \(Type  **unknown**  is not included in this case.\)
--   If the inputs are all of the same type category, choose the top preferred type in that category. \(Exception: The UNION operation regards the type of the first branch as the selected type.\)
+- If all inputs are of the same type, and it is not  **unknown**, resolve as that type.
+- If all inputs are of type  **unknown**, resolve as type  **text**  \(the preferred type of the string category\). Otherwise,  **unknown**  inputs are ignored.
+- If the inputs are not all of the same type category, a failure will be resulted. \(Type  **unknown**  is not included in this case.\)
+- If the inputs are all of the same type category, choose the top preferred type in that category. \(Exception: The UNION operation regards the type of the first branch as the selected type.\)
 
     >[!NOTE]NOTE 
     >**typcategory**  in the  **pg\_type**  system catalog indicates the data type category.  **typispreferred**  indicates whether a type is preferred in  **typcategory**.
 
--   Convert all inputs to the selected type. \(Retain the original lengths of strings\). Fail if there is not an implicit conversion from a given input to the selected type.
--   If the input contains the json, txid\_snapshot, sys\_refcursor, or geometry type,  **UNION**  cannot be performed.
+- Convert all inputs to the selected type. \(Retain the original lengths of strings\). Fail if there is not an implicit conversion from a given input to the selected type.
+- If the input contains the json, txid\_snapshot, sys\_refcursor, or geometry type,  **UNION**  cannot be performed.
 
 ## Type Resolution for CASE and COALESCE in TD Compatibility Type<a name="en-us_topic_0283136625_en-us_topic_0237122011_en-us_topic_0059779260_sa6bf47fa5cdb4d2caabf956bb11c7649"></a>
 
--   If all inputs are of the same type, and it is not  **unknown**, resolve as that type.
--   If all inputs are of type  **unknown**, resolve as type  **text**.
--   If inputs are of the string type \(including  **unknown**  which is resolved as type  **text**\) and digit type, resolve as the string type. If the inputs are not of the two types, an error will be reported.
--   If the inputs are all of the same type category, choose the top preferred type in that category.
--   Convert all inputs to the selected type. Fail if there is not an implicit conversion from a given input to the selected type.
+- If all inputs are of the same type, and it is not  **unknown**, resolve as that type.
+- If all inputs are of type  **unknown**, resolve as type  **text**.
+- If inputs are of the string type \(including  **unknown**  which is resolved as type  **text**\) and digit type, resolve as the string type. If the inputs are not of the two types, an error will be reported.
+- If the inputs are all of the same type category, choose the top preferred type in that category.
+- Convert all inputs to the selected type. Fail if there is not an implicit conversion from a given input to the selected type.
 
 ## Type Resolution for CASE in ORA Compatibility Type<a name="section20337194392613"></a>
 
 **decode\(expr, search1, result1, search2, result2, ..., defresult\)**, that is,  **case expr when search1 then result1 when search2 then result2 else defresult end;**. In ORA compatibility mode,it defines the final return value type of the entire expression as the data type of result1 or a higher-precision data type that has the same type as result1. \(For example, numeric and int are both numeric data types, but numeric has higher precision and priority than int.\)
 
--   Set the data type of result1 to the final return value type preferType, which belongs to preferCategory.
--   Consider the data types of result2, result3, and defresult in sequence. If the type category is also preferCategory, that is, the type category of result1 is the same as that of result1, check whether the precision \(priority\) of result1 is higher than that of preferType. If yes, update preferType to a data type with a higher precision. If the data type is not preferCategory, check whether the data type can be implicitly converted to preferType. If not, an error is reported.
--   Uses the data type recorded by preferType as the return value type of the expression. The expression result is implicitly converted to this data type.
+- Set the data type of result1 to the final return value type preferType, which belongs to preferCategory.
+- Consider the data types of result2, result3, and defresult in sequence. If the type category is also preferCategory, that is, the type category of result1 is the same as that of result1, check whether the precision \(priority\) of result1 is higher than that of preferType. If yes, update preferType to a data type with a higher precision. If the data type is not preferCategory, check whether the data type can be implicitly converted to preferType. If not, an error is reported.
+- Uses the data type recorded by preferType as the return value type of the expression. The expression result is implicitly converted to this data type.
 
 Note:
 
@@ -194,4 +194,3 @@ ora_1=# \c postgres
 openGauss=# DROP DATABASE ora_1;
 DROP DATABASE
 ```
-

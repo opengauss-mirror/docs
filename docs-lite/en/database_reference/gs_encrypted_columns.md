@@ -74,4 +74,3 @@
 
 >[!NOTE]NOTE 
 >In the Lite scenario, openGauss provides this system catalog, but the encrypted equality feature is unavailable.
-

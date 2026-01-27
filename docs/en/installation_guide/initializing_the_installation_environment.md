@@ -1,8 +1,8 @@
 # Initializing the Installation Environment<a name="EN-US_TOPIC_0283136473"></a>
 
--   [Creating the Required User Account and Configuring the Installation Environment](#creating-the-required-user-account-and-configuring-the-installation-environment) 
--   [Establishing Mutual Trust Manually](#establishing-mutual-trust-manually) 
--   [Configuring OS Parameters](#configuring-os-parameters)  
+- [Creating the Required User Account and Configuring the Installation Environment](#creating-the-required-user-account-and-configuring-the-installation-environment) 
+- [Establishing Mutual Trust Manually](#establishing-mutual-trust-manually) 
+- [Configuring OS Parameters](#configuring-os-parameters)  
 
 ## Creating the Required User Account and Configuring the Installation Environment
 
@@ -10,20 +10,20 @@ After the openGauss configuration file is created, you need to run the  **gs\_pr
 
 Executing the  **gs\_preinstall**  script enables the system to automatically complete the following installation preparations:
 
--   Sets kernel parameters for the SUSE Linux OS to improve server load performance. The kernel parameters directly affect database running status. Reconfigure them only when necessary. For details about the Linux OS kernel parameter settings in openGauss, see  [Configuring OS Parameters](#configuring-os-parameters).
--   Automatically copies the openGauss configuration files and installation packages to the same directory on each openGauss host.
--   If the installation user and user group of the openGauss do not exist, the system automatically creates them.
--   Reads the directory information in the openGauss configuration file, creates the directory, and grants the directory permission to the installation user.
+- Sets kernel parameters for the SUSE Linux OS to improve server load performance. The kernel parameters directly affect database running status. Reconfigure them only when necessary. For details about the Linux OS kernel parameter settings in openGauss, see  [Configuring OS Parameters](#configuring-os-parameters).
+- Automatically copies the openGauss configuration files and installation packages to the same directory on each openGauss host.
+- If the installation user and user group of the openGauss do not exist, the system automatically creates them.
+- Reads the directory information in the openGauss configuration file, creates the directory, and grants the directory permission to the installation user.
 
 ### Prerequisites<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s3773af79eeb74c4bae1bd46533cc0cd8"></a>
 
--   You have completed all the tasks described in  [Preparing for Installation](obtaining_the_installation_package.md).
+- You have completed all the tasks described in  [Preparing for Installation](obtaining_the_installation_package.md).
 
 ### Precautions<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_section20734484163420"></a>
 
--   You must check the upper-layer directory permissions to ensure that the user has the read, write, and execution permissions on the installation package and configuration file directory.
--   The mapping between each host name and IP address in the XML configuration file must be correct.
--   Only user  **root**  is authorized to run the  **gs\_preinstall**  command.
+- You must check the upper-layer directory permissions to ensure that the user has the read, write, and execution permissions on the installation package and configuration file directory.
+- The mapping between each host name and IP address in the XML configuration file must be correct.
+- Only user  **root**  is authorized to run the  **gs\_preinstall**  command.
 
 ### Procedure<a name="en-us_topic_0241805803_en-us_topic_0085434653_en-us_topic_0059781995_s407f29ab5691456590018c719cf81e9d"></a>
 
@@ -36,9 +36,9 @@ chmod 755 -R /opt/software
 
 >[!NOTE]NOTE   
 >
->-   Do not create the directory in the home directory or subdirectory of any openGauss user because you may lack permissions for such directories.  
+>- Do not create the directory in the home directory or subdirectory of any openGauss user because you may lack permissions for such directories.  
 >
->-   The openGauss user must have the read and write permissions on the  **/opt/software/openGauss**  directory.  
+>- The openGauss user must have the read and write permissions on the  **/opt/software/openGauss**  directory.  
 
 2.Upload the software package  **openGauss-**_x.x.x_**-openEuler-64bit-all.tar.gz**  and the configuration file  **cluster\_config.xml**  to the created directory.
 
@@ -52,18 +52,17 @@ tar -zxvf openGauss-1.1.0-openEuler-64bit-om.tar.gz
 
 >[!NOTE]NOTE  
 >
->-   When you execute the  **gs\_preinstall**  script, plan the directory for storing the openGauss configuration file, directory for storing software packages, installation directories of programs, and directories of instance data. Common users cannot change the directories after the directories are specified.  
+>- When you execute the  **gs\_preinstall**  script, plan the directory for storing the openGauss configuration file, directory for storing software packages, installation directories of programs, and directories of instance data. Common users cannot change the directories after the directories are specified.  
 >
->-   When you execute the  **gs\_preinstall**  script to prepare the installation environment, the script automatically copies the openGauss configuration file and decompressed installation package to the same directory on other servers.  
+>- When you execute the  **gs\_preinstall**  script to prepare the installation environment, the script automatically copies the openGauss configuration file and decompressed installation package to the same directory on other servers.  
 >
->-   Before executing  **gs\_preinstall**  and establishing mutual trust, check whether the  **/etc/profile**  file contains error information. If it does, manually rectify the error.  
+>- Before executing  **gs\_preinstall**  and establishing mutual trust, check whether the  **/etc/profile**  file contains error information. If it does, manually rectify the error.  
 
 4.Go to the directory for storing tool scripts.
 
 ```
 cd /opt/software/openGauss/script
 ```
-
 
 5.If the openEuler operating system is used (openEuler 20.03), run the following command to open the  **performance.sh**  file, comment out  **sysctl -w vm.min\_free\_kbytes=112640 &\> /dev/null**  using the number sign \(\#\), press  **Esc**  to enter the command mode, and run the  **:wq**  command to save the modification and exit.
 
@@ -75,7 +74,7 @@ vi /etc/profile.d/performance.sh
 
 7.Execute  **gs\_preinstall**  to configure the installation environment. If the shared environment is used, add the  **--sep-env-file=ENVFILE**  parameter to separate environment variables to avoid mutual impact with other users. The environment variable separation file path is specified by users.
 
--   Execute  **gs\_preinstall**  in interactive mode. During the execution, the mutual trust between users  **root**  and between openGauss users is automatically established.
+- Execute  **gs\_preinstall**  in interactive mode. During the execution, the mutual trust between users  **root**  and between openGauss users is automatically established.
 
     ```
     ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml
@@ -108,12 +107,9 @@ vi /etc/profile.d/performance.sh
 
   >[!NOTE]NOTE   
   >
-  >-   In this mode, ensure that mutual trust has been established between users  **root**  and between openGauss users on each node before executing  **gs\_preinstall**.  
+  >- In this mode, ensure that mutual trust has been established between users  **root**  and between openGauss users on each node before executing  **gs\_preinstall**.  
   >
-  >-   The mutual trust established between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  immediately after the installation is complete.  
-
-
-
+  >- The mutual trust established between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  immediately after the installation is complete.  
 
 ### Examples
 
@@ -313,12 +309,12 @@ The mutual trust between users  **root**  may incur security risks. You are advi
 
 ### Prerequisites
 
--   The SSH service has been enabled.
--   You have verified that SSH ports will not be disabled by firewalls.
--   Each host name and IP address have been correctly configured in the XML file.
--   Communication among all the hosts is normal.
--   If the mutual trust is to be established for common users, the same user needs to be created and password set on each host.
--   If the SELinux service is installed and has been started on each host, ensure that the security context of the  **/root**  directory is set to the default value  **system\_u:object\_r:admin\_home\_t:s0**  and that of the  **/home**  directory is set to the default value  **system\_u:object\_r:home\_root\_t:s0**, or disable the SELinux service.
+- The SSH service has been enabled.
+- You have verified that SSH ports will not be disabled by firewalls.
+- Each host name and IP address have been correctly configured in the XML file.
+- Communication among all the hosts is normal.
+- If the mutual trust is to be established for common users, the same user needs to be created and password set on each host.
+- If the SELinux service is installed and has been started on each host, ensure that the security context of the  **/root**  directory is set to the default value  **system\_u:object\_r:admin\_home\_t:s0**  and that of the  **/home**  directory is set to the default value  **system\_u:object\_r:home\_root\_t:s0**, or disable the SELinux service.
 
     To check the SELinux status, run the  **getenforce**  command. If the command output is  **Enforcing**, SELinux is installed and has been enabled.
 
@@ -342,15 +338,14 @@ The mutual trust between users  **root**  may incur security risks. You are advi
     restorecon -r -vv /root/
     ```
 
-
 ### Establishing Mutual Trust Using a Script
 
 Establishing a mutual trust relationship using a script has the following impacts:
 
--   The  **/etc/hosts**  file may be modified. Back up the  **/etc/hosts**  file before using the script to establish mutual trust.
--   The script deletes the existing .ssh file directory. If you want to retain the mutual trust relationship established between nodes, use the method described in [Establishing Mutual Trust Manually](#establishing-mutual-trust-manually) .
+- The  **/etc/hosts**  file may be modified. Back up the  **/etc/hosts**  file before using the script to establish mutual trust.
+- The script deletes the existing .ssh file directory. If you want to retain the mutual trust relationship established between nodes, use the method described in [Establishing Mutual Trust Manually](#establishing-mutual-trust-manually) .
 
-1.  Create the file for executing the mutual trust script, and add the IP addresses of all the hosts in the openGauss to the file.
+1. Create the file for executing the mutual trust script, and add the IP addresses of all the hosts in the openGauss to the file.
 
     ```
     plat1:/opt/software/openGauss> vim hostfile
@@ -359,14 +354,13 @@ Establishing a mutual trust relationship using a script has the following impact
     192.168.0.3
     ```
 
-2.  Execute the script as the user who needs to establish mutual trust with the hosts.
+2. Execute the script as the user who needs to establish mutual trust with the hosts.
 
     ```
     plat1:/opt/software/openGauss/script# ./gs_sshexkey -f /opt/software/hostfile
     ```
 
     The  **/opt/software/hostfile**  file contains a list of the hosts. The list provides the IP addresses of all the hosts among which mutual trust needs to be established.
-
 
 ## Establishing Mutual Trust Manually
 
@@ -378,7 +372,7 @@ If the passwords of user  **root**  on the hosts in the openGauss are different,
 >
 The procedure of manually establishing mutual trust is as follows \(**plat1**,  **plat2**, and  **plat3**  are host names\):
 
-1.  Generate a licensed file for user  **root**  on any host \(referred to as the local host\). Host  **plat1**  is used as an example.
+1. Generate a licensed file for user  **root**  on any host \(referred to as the local host\). Host  **plat1**  is used as an example.
     a.  Generate a key.
 
            ssh-keygen -t rsa
@@ -414,10 +408,9 @@ The procedure of manually establishing mutual trust is as follows \(**plat1**,  
 
     The following is an example:
         
-    
             plat1:~ # cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
     
-2.  Obtain the public keys of all the hosts among which mutual trust needs to be established, and write the public keys into the  **known\_hosts**  file on the local host. This step needs to be performed on the host where Step 1 is performed. You need to obtain the public keys of the  **plat1**,  **plat2**, and  **plat3**  hosts.
+2. Obtain the public keys of all the hosts among which mutual trust needs to be established, and write the public keys into the  **known\_hosts**  file on the local host. This step needs to be performed on the host where Step 1 is performed. You need to obtain the public keys of the  **plat1**,  **plat2**, and  **plat3**  hosts.
     a.  Obtain the public key of host  **plat1**, and write the public key into the  **known\_hosts**  file on the local host.
 
             ssh-keyscan -t rsa plat1 >> ~/.ssh/known_hosts
@@ -447,16 +440,14 @@ The procedure of manually establishing mutual trust is as follows \(**plat1**,  
     
     >[!NOTE]NOTE 
     >
-    >-   After being accepted, the public key of a remote host will be saved in the  **$HOME/.ssh/known\_hosts**  file on the local host. When connecting to the remote host next time, the system can recognize that the public key of the remote host has been saved on the local host and then skip alarms.
+    >- After being accepted, the public key of a remote host will be saved in the  **$HOME/.ssh/known\_hosts**  file on the local host. When connecting to the remote host next time, the system can recognize that the public key of the remote host has been saved on the local host and then skip alarms.
     >
-    >-   If the  **known\_hosts**  file is deleted from the local host, the mutual trust between the local and remote hosts remains valid, but alarms will be reported. To prevent such alarms, set the  **StrictHostKeyChecking**  parameter in the  **/etc/ssh/ssh\_config**  file to  **no**.
+    >- If the  **known\_hosts**  file is deleted from the local host, the mutual trust between the local and remote hosts remains valid, but alarms will be reported. To prevent such alarms, set the  **StrictHostKeyChecking**  parameter in the  **/etc/ssh/ssh\_config**  file to  **no**.
 
-
-3.  Send the  **known\_hosts**  file to all the other hosts except the local host. In this example, send the  **known\_hosts**  file on host  **plat1**  to hosts  **plat2**  and  **plat3**.
+3. Send the  **known\_hosts**  file to all the other hosts except the local host. In this example, send the  **known\_hosts**  file on host  **plat1**  to hosts  **plat2**  and  **plat3**.
 
     a. Send the  **known\_hosts**  file to host  **plat2**. When  **Password:**  is displayed, enter the password for logging in to host  **plat2**.    
             scp -r ~/.ssh plat2:~
-    
     
     The following is an example:
             plat1:~ # scp -r ~/.ssh plat2:~
@@ -478,7 +469,7 @@ The procedure of manually establishing mutual trust is as follows \(**plat1**,  
             id_rsa.pub                      100%  398     0.4KB/s   00:00    
             known_hosts                     100% 1089     1.1KB/s   00:00    
     
-4.  Run the  **ssh** _Host name_  command to check whether mutual trust has been successfully established. Then, enter  **exit**.
+4. Run the  **ssh** _Host name_  command to check whether mutual trust has been successfully established. Then, enter  **exit**.
 
     ```
     plat1:~ # ssh plat2
@@ -494,16 +485,15 @@ The procedure of manually establishing mutual trust is as follows \(**plat1**,  
     >If there are more than three hosts, the procedure of manually establishing mutual trust between the hosts is similar to the one in this section. Assume that the host names are  **plat1**,  **plat2**,  **plat3**, ... Firstly, generate a licensed file for user  **root**  on host  **plat1**  \(referred to as the local host\). Secondly, obtain the public keys of all the hosts \(**plat1**,  **plat2**,  **plat3**, ...\) between which mutual trust needs to be established, and write the public keys to the  **known\_hosts**  file on the local host. Thirdly, send the file from the local host to all the other hosts \(**plat2**,  **plat3**, ...\). Finally, verify that mutual trust has been successfully established.  
     >
 
-
 ### Deleting Mutual Trust Between Users  **root** 
 
 The mutual trust established between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  immediately after the installation is complete.
 
-1.  Delete the mutual trust file  **/root/.ssh**  from each openGauss database node.
+1. Delete the mutual trust file  **/root/.ssh**  from each openGauss database node.
 
     rm –rf \~/.ssh
 
-2.  Check whether the mutual trust is successfully deleted. If the host names cannot be reached from each other through SSH and a mutual trust failure message is displayed, the mutual trust is successfully deleted.
+2. Check whether the mutual trust is successfully deleted. If the host names cannot be reached from each other through SSH and a mutual trust failure message is displayed, the mutual trust is successfully deleted.
 
     plat1:\~ \# ssh plat2
 
@@ -514,7 +504,6 @@ The mutual trust established between users  **root**  may incur security risks. 
     ECDSA key fingerprint is MD5:e2:77:6c:aa:4c:43:5f:f2:c4:58:ec:d5:53:de:7c:fc.
 
     Are you sure you want to continue connecting \(yes/no\)?
-
 
 ### Examples
 
@@ -600,17 +589,16 @@ openGauss requires that the OS parameters on every host be set to specified valu
 
 Some of these parameters are set during the openGauss installation environment preparation phase, and these parameters directly affect the running status of the openGauss. You need to manually adjust these parameters only when necessary. You can use the following methods:
 
-1.  Log in to a server as user  **root**.
-2.  Modify the  **/etc/sysctl.conf**  file.
+1. Log in to a server as user  **root**.
+2. Modify the  **/etc/sysctl.conf**  file.
 
     For details about how to modify parameters, see  [OS Parameters](#os-parameters).
 
-3.  Run the following command to make the modifications take effect:
+3. Run the following command to make the modifications take effect:
 
     ```
     sysctl -p
     ```
-
 
 ## OS Parameters
 
@@ -926,27 +914,25 @@ Some of these parameters are set during the openGauss installation environment p
 </tbody>
 </table>
 
-
 ### File System Parameters
 
--   soft nofile
+- soft nofile
 
     Indicates the soft limit. The number of file handles used by a user can exceed this parameter value. However, an alarm will be reported.
 
     Recommended value:  **1000000**
 
--   hard nofile
+- hard nofile
 
     Indicates the hard limit. The number of file handles used by a user cannot exceed this parameter value.
 
     Recommended value:  **1000000**
 
--   stack size
+- stack size
 
     Indicates the thread stack size.
 
     Recommended value:  **3072**
-
 
 ### Setting the transparent\_hugepage Service
 
@@ -1071,6 +1057,6 @@ After the modification is complete, restart the OS to make the setting take effe
 </table>
 
 [!TIP]NOTICE   
--   NIC parameters can be configured only for 10GE and larger service NICs, that is, the NIC bound to  **backIp1**.  
--   The commands for setting NIC parameters are written into the OS startup file only after the parameters are successfully set. Information about command execution failures is recorded in logs on the server.  
 
+- NIC parameters can be configured only for 10GE and larger service NICs, that is, the NIC bound to  **backIp1**.  
+- The commands for setting NIC parameters are written into the OS startup file only after the parameters are successfully set. Information about command execution failures is recorded in logs on the server.  

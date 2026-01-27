@@ -2,7 +2,7 @@
 
 ## Numeric Operators<a name="en-us_topic_0283136987_en-us_topic_0237121971_en-us_topic_0059777932_s00454841bcf24ad18eed980c0e3a2f75"></a>
 
--   \+
+- \+
 
     Description: Addition
 
@@ -16,7 +16,7 @@
     (1 row)
     ```
 
--   \-
+- \-
 
     Description: Subtraction
 
@@ -30,7 +30,7 @@
     (1 row)
     ```
 
--   \*
+- \*
 
     Description: Multiplication
 
@@ -44,7 +44,7 @@
     (1 row)
     ```
 
--   /
+- /
 
     Description: Division \(The result is not rounded.\)
 
@@ -66,7 +66,7 @@
     (1 row)
     ```
 
--   +/-
+- +/-
 
     Description: Positive/Negative
 
@@ -80,7 +80,7 @@
     (1 row)
     ```
 
--   %
+- %
 
     Description: Model \(to obtain the remainder\)
 
@@ -94,7 +94,7 @@
     (1 row)
     ```
 
--   @
+- @
 
     Description: Absolute value
 
@@ -108,7 +108,7 @@
     (1 row)
     ```
 
--   ^
+- ^
 
     Description: Power \(exponent calculation\)
 
@@ -122,7 +122,7 @@
     (1 row)
     ```
 
--   |/
+- |/
 
     Description: Square root
 
@@ -136,7 +136,7 @@
     (1 row)
     ```
 
--   ||/
+- ||/
 
     Description: Cubic root
 
@@ -150,7 +150,7 @@
     (1 row)
     ```
 
--   !
+- !
 
     Description: Factorial
 
@@ -166,7 +166,7 @@
     (1 row)
     ```
 
--   !!
+- !!
 
     Description: Factorial \(prefix operator\)
 
@@ -182,7 +182,7 @@
     (1 row)
     ```
 
--   &
+- &
 
     Description: Binary AND
 
@@ -196,7 +196,7 @@
     (1 row)
     ```
 
--   |
+- |
 
     Description: Binary OR
 
@@ -210,7 +210,7 @@
     (1 row)
     ```
 
--   \#
+- \#
 
     Description: Binary XOR
 
@@ -224,7 +224,7 @@
     (1 row)
     ```
 
--   \~
+- \~
 
     Description: Binary NOT
 
@@ -238,7 +238,7 @@
     (1 row)
     ```
 
--   <<
+- <<
 
     Description: Binary shift left
 
@@ -252,7 +252,7 @@
     (1 row)
     ```
 
--   \>\>
+- \>\>
 
     Description: Binary shift right
 
@@ -266,10 +266,9 @@
     (1 row)
     ```
 
-
 ## Numeric Operation Functions<a name="en-us_topic_0283136987_en-us_topic_0237121971_en-us_topic_0059777932_s04c663eefe5a433d9a486b67706e44e1"></a>
 
--   abs\(x\)
+- abs\(x\)
 
     Description: Absolute value
 
@@ -285,7 +284,7 @@
     (1 row)
     ```
 
--   acos\(x\)
+- acos\(x\)
 
     Description: Arc cosine
 
@@ -301,7 +300,7 @@
     (1 row)
     ```
 
--   asin\(x\)
+- asin\(x\)
 
     Description: Arc sine
 
@@ -317,7 +316,7 @@
     (1 row)
     ```
 
--   atan\(x\)
+- atan\(x\)
 
     Description: Arc tangent
 
@@ -333,7 +332,7 @@
     (1 row)
     ```
 
--   atan2\(y, x\)
+- atan2\(y, x\)
 
     Description: Arc tangent of y/x
 
@@ -349,7 +348,7 @@
     (1 row)
     ```
 
--   bin_to_num\(VARIADIC number[]\)
+- bin_to_num\(VARIADIC number[]\)
 
     Description: Converts a bit vector to its equivalent number. Each argument to this function represents a bit in the bit vector. Each expr must evaluate to 0 or 1. 
 
@@ -365,7 +364,7 @@
     (1 row)
     ```
 
--   bitand\(integer, integer\)
+- bitand\(integer, integer\)
 
     Description: Performs an AND \(&\) operation on two integers.
 
@@ -381,7 +380,7 @@
     (1 row)
     ```
 
--   cbrt\(dp\)
+- cbrt\(dp\)
 
     Description: Cubic root
 
@@ -397,7 +396,7 @@
     (1 row)
     ```
 
--   ceil\(x\)
+- ceil\(x\)
 
     Description: Minimum integer greater than or equal to the parameter
 
@@ -413,7 +412,7 @@
     (1 row)
     ```
 
--   ceiling\(dp or numeric\)
+- ceiling\(dp or numeric\)
 
     Description: Minimum integer \(alias of ceil\) greater than or equal to the parameter
 
@@ -429,7 +428,7 @@
     (1 row)
     ```
 
--   cos\(x\)
+- cos\(x\)
 
     Description: Cosine
 
@@ -445,7 +444,7 @@
     (1 row)
     ```
 
--   cot\(x\)
+- cot\(x\)
 
     Description: Cotangent
 
@@ -461,7 +460,7 @@
     (1 row)
     ```
 
--   degrees\(dp\)
+- degrees\(dp\)
 
     Description: Converts radians to angles.
 
@@ -477,7 +476,7 @@
     (1 row)
     ```
 
--   div\(y numeric, x numeric\)
+- div\(y numeric, x numeric\)
 
     Description: Integer part of y/x
 
@@ -493,7 +492,7 @@
     (1 row)
     ```
 
--   exp\(x\)
+- exp\(x\)
 
     Description: Natural exponent
 
@@ -509,7 +508,7 @@
     (1 row)
     ```
 
--   floor\(x\)
+- floor\(x\)
 
     Description: Maximum integer not larger than the parameter
 
@@ -525,7 +524,7 @@
     (1 row)
     ```
 
--   int1\(in\)
+- int1\(in\)
 
     Description: Converts the input text parameter to a value of the int1 type and returns the value.
 
@@ -546,7 +545,7 @@
     (1 row)
     ```
 
--   int2\(in\)
+- int2\(in\)
 
     Description: Converts the input parameter to a value of the int2 type and returns the value.
 
@@ -569,7 +568,7 @@
     (1 row)
     ```
 
--   int4\(in\)
+- int4\(in\)
 
     Description: Converts the input parameter to a value of the int4 type and returns the value.
 
@@ -592,7 +591,7 @@
     (1 row)
     ```
 
--   float4\(in\)
+- float4\(in\)
 
     Description: Converts the input parameter to a value of the float4 type and returns the value. The supported input parameter types include bigint, duoble precision, int16, integer, numeric, smallint, and text.
 
@@ -614,7 +613,7 @@
     (1 row)
     ```
 
--   float8\(in\)
+- float8\(in\)
 
     Description: Converts the input parameter to a value of the float8 type and returns the value. The supported input parameter types include bigint, int16, integer, numeric, real, smallint, and text.
 
@@ -636,7 +635,7 @@
     (1 row)
     ```
 
--   int16\(in\)
+- int16\(in\)
 
     Description: Converts the input parameter to a value of the int16 type and returns the value. The supported input parameter types include bigint, boolean, double precision, integer, numeric, oid, real, smallint, and tinyint.
 
@@ -658,7 +657,7 @@
     (1 row)
     ```
 
--   numeric\(in\)
+- numeric\(in\)
 
     Description: Converts the input parameter to a value of the numeric type and returns the value. The supported input parameter types include bigint, boolean, double precision, int16, integer, money, real, and smallint.
 
@@ -680,13 +679,13 @@
     (1 row)
     ```
 
--   oid\(in\)
+- oid\(in\)
 
     Description: Converts the input parameter to a value of the oid type and returns the value. The supported input parameter types include bigint and int16.
 
     Return type: oid
 
--   natural\(in\)
+- natural\(in\)
 
     Description: Converts the input parameter to a value of the natural type and returns the value. The supported input parameter types include tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric.
 
@@ -708,7 +707,7 @@
     (1 row)
     ```
 
--   naturaln\(in\)
+- naturaln\(in\)
 
     Description: Converts the input parameter to a value of the naturaln type and returns the value. The supported input parameter types include tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric.
 
@@ -730,7 +729,7 @@
     (1 row)
     ```
 
--   positive\(in\)
+- positive\(in\)
 
     Description: Converts the input parameter to a value of the positive type and returns the value. The supported input parameter types include tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric.
 
@@ -752,7 +751,7 @@
     (1 row)
     ```
 
--   positiven\(in\)
+- positiven\(in\)
 
     Description: Converts the input parameter to a value of the positiven type and returns the value. The supported input parameter types include tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric.
 
@@ -774,7 +773,7 @@
     (1 row)
     ```
 
--   signtype\(in\)
+- signtype\(in\)
 
     Description: Converts the input parameter to a value of the signtype type and returns the value. The supported input parameter types include tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric.
 
@@ -796,7 +795,7 @@
     (1 row)
     ```
 
--   simple_integer\(in\)
+- simple_integer\(in\)
 
     Description: Converts the input parameter to a value of the simple_integer type and returns the value. The supported input parameter types include tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric.
 
@@ -818,7 +817,7 @@
     (1 row)
     ```
 
--   radians\(dp\)
+- radians\(dp\)
 
     Description: Converts angles to radians.
 
@@ -834,7 +833,7 @@
     (1 row)
     ```
 
--   random\(\)
+- random\(\)
 
     Description: Random number between 0.0 and 1.0
 
@@ -850,7 +849,7 @@
     (1 row)
     ```
 
--   multiply\(x double precision or text, y double precision or text\)
+- multiply\(x double precision or text, y double precision or text\)
 
     Description: Product of x and y. Only multiply\(x text, y double precision\) or multiply\(x double precision, y text\) is supported.
 
@@ -871,7 +870,7 @@
     (1 row)
     ```
 
--   ln\(x\)
+- ln\(x\)
 
     Description: Natural logarithm
 
@@ -887,7 +886,7 @@
     (1 row)
     ```
 
--   log\(x\)
+- log\(x\)
 
     Description: Logarithm with 10 as the base
 
@@ -903,7 +902,7 @@
     (1 row)
     ```
 
--   log\(b numeric, x numeric\)
+- log\(b numeric, x numeric\)
 
     Description: Logarithm with b as the base
 
@@ -919,7 +918,7 @@
     (1 row)
     ```
 
--   mod\(x,y\)
+- mod\(x,y\)
 
     Description: Remainder of x/y \(model\) If x equals to 0, 0 is returned.
 
@@ -943,7 +942,7 @@
     (1 row)
     ```
 
--   pi\(\)
+- pi\(\)
 
     Description: π constant value
 
@@ -959,7 +958,7 @@
     (1 row)
     ```
 
--   power\(a double precision, b double precision\)
+- power\(a double precision, b double precision\)
 
     Description: b power of a
 
@@ -975,7 +974,7 @@
     (1 row)
     ```
 
--   round\(x\)
+- round\(x\)
 
     Description: Integer closest to the input parameter
 
@@ -997,7 +996,7 @@
     (1 row)
     ```
 
--   round\(v numeric, s int\)
+- round\(v numeric, s int\)
 
     Description:  **s**  digits are kept after the decimal point.
 
@@ -1013,7 +1012,7 @@
     (1 row)
     ```
 
--   setseed\(dp\)
+- setseed\(dp\)
 
     Description: Sets seed for the following random\(\) invoking \(between –1.0 and 1.0, inclusive\).
 
@@ -1029,7 +1028,7 @@
     (1 row)
     ```
 
--   sign\(x\)
+- sign\(x\)
 
     Description: Returns symbols of this parameter.
 
@@ -1045,7 +1044,7 @@
     (1 row)
     ```
 
--   sin\(x\)
+- sin\(x\)
 
     Description: Sine
 
@@ -1061,7 +1060,7 @@
     (1 row)
     ```
 
--   sqrt\(x\)
+- sqrt\(x\)
 
     Description: Square root
 
@@ -1077,7 +1076,7 @@
     (1 row)
     ```
 
--   tan\(x\)
+- tan\(x\)
 
     Description: Tangent
 
@@ -1093,7 +1092,7 @@
     (1 row)
     ```
 
--   trunc\(x\)
+- trunc\(x\)
 
     Description: Truncates \(the integral part\).
 
@@ -1109,7 +1108,7 @@
     (1 row)
     ```
 
--   trunc\(v numeric, s int\)
+- trunc\(v numeric, s int\)
 
     Description: Truncates a number with  **s**  digits after the decimal point.
 
@@ -1125,19 +1124,19 @@
     (1 row)
     ```
 
--   smgrne\(a smgr, b smgr\)
+- smgrne\(a smgr, b smgr\)
 
     Description: Compares two integers of the smgr type to check whether they are different.
 
     Return type: Boolean
 
--   smgreq\(a smgr, b smgr\)
+- smgreq\(a smgr, b smgr\)
 
     Description: Compares two integers of the smgr type to check whether they are equivalent.
 
     Return type: Boolean
 
--   int1abs
+- int1abs
 
     Description: Returns the absolute value of data of the uint8 type.
 
@@ -1145,7 +1144,7 @@
 
     Return type: tinyint
 
--   int1and
+- int1and
 
     Description: Returns the bitwise AND result of two data records of the uint8 type.
 
@@ -1153,7 +1152,7 @@
 
     Return type: tinyint
 
--   int1cmp
+- int1cmp
 
     Description: Returns the comparison result of two data records of the uint8 type. If the value of the first parameter is greater,  **1**  is returned. If the value of the second parameter is greater,  **–1**  is returned. If they are the same,  **0**  is returned.
 
@@ -1161,7 +1160,7 @@
 
     Return type: integer
 
--   int1div
+- int1div
 
     Description: Returns the result of dividing two data records of the uint8 type. The result is of the float8 type.
 
@@ -1169,7 +1168,7 @@
 
     Return type: tinyint
 
--   int1eq
+- int1eq
 
     Description: Compares two pieces of data of the uint8 type to check whether they are the same.
 
@@ -1177,7 +1176,7 @@
 
     Return type: Boolean
 
--   int1ge
+- int1ge
 
     Description: Determines whether the value of the first parameter is greater than or equal to the value of the second parameter in two data records of the uint8 type.
 
@@ -1185,7 +1184,7 @@
 
     Return type: Boolean
 
--   int1gt
+- int1gt
 
     Description: Performs a greater-than operation on an unsigned 1-byte integer.
 
@@ -1193,7 +1192,7 @@
 
     Return type: Boolean
 
--   int1larger
+- int1larger
 
     Description: Returns the maximum value of an unsigned 1-byte integer.
 
@@ -1201,7 +1200,7 @@
 
     Return type: tinyint
 
--   int1le
+- int1le
 
     Description: Performs a less-than or an equal-to operation on an unsigned 1-byte integer.
 
@@ -1209,7 +1208,7 @@
 
     Return type: Boolean
 
--   int1lt
+- int1lt
 
     Description: Performs a less-than operation on an unsigned 1-byte integer.
 
@@ -1217,7 +1216,7 @@
 
     Return type: Boolean
 
--   int1smaller
+- int1smaller
 
     Description: Calculates the minimum value of an unsigned 1-byte integer.
 
@@ -1225,7 +1224,7 @@
 
     Return type: tinyint
 
--   int1inc
+- int1inc
 
     Description: Unsigned 1-byte integer plus 1.
 
@@ -1233,7 +1232,7 @@
 
     Return type: tinyint
 
--   int1mi
+- int1mi
 
     Description: Performs a minus operation on an unsigned 1-byte integer.
 
@@ -1241,7 +1240,7 @@
 
     Return type: tinyint
 
--   int1mod
+- int1mod
 
     Description: Performs a reminder operation on an unsigned 1-byte integer.
 
@@ -1249,7 +1248,7 @@
 
     Return type: tinyint
 
--   int1mul
+- int1mul
 
     Description: Performs a multiplication operation on unsigned 1-byte integer.
 
@@ -1257,7 +1256,7 @@
 
     Return type: tinyint
 
--   int1ne
+- int1ne
 
     Description: Performs a not-equal-to operation on an unsigned 1-byte integer.
 
@@ -1265,7 +1264,7 @@
 
     Return type: Boolean
 
--   int1pl
+- int1pl
 
     Description: Performs an addition operation on an unsigned 1-byte integer.
 
@@ -1273,7 +1272,7 @@
 
     Return type: tinyint
 
--   int1um
+- int1um
 
     Description: Returns an unsigned 2-byte integer after subtracting the opposite number from the unsigned 1-byte integer.
 
@@ -1281,7 +1280,7 @@
 
     Return type: smallint
 
--   int1xor
+- int1xor
 
     Description: Performs an exclusive OR operation on an unsigned 1-byte integer.
 
@@ -1289,7 +1288,7 @@
 
     Return type: tinyint
 
--   cash\_div\_int1
+- cash\_div\_int1
 
     Description: Performs a division operation on the money type.
 
@@ -1297,7 +1296,7 @@
 
     Return type: money
 
--   cash\_mul\_int1
+- cash\_mul\_int1
 
     Description: Performs a multiplication operation on the money type.
 
@@ -1305,7 +1304,7 @@
 
     Return type: money
 
--   int1not
+- int1not
 
     Description: Reverts binary bits of an unsigned 1-byte integer.
 
@@ -1313,7 +1312,7 @@
 
     Return type: tinyint
 
--   int1or
+- int1or
 
     Description: Performs an OR operation on an unsigned 1-byte integer.
 
@@ -1321,7 +1320,7 @@
 
     Return type: tinyint
 
--   int1shl
+- int1shl
 
     Description: Shifts an unsigned 1-byte integer leftwards by a specified number of bits.
 
@@ -1329,7 +1328,7 @@
 
     Return type: tinyint
 
--   width\_bucket\(op numeric, b1 numeric, b2 numeric, count int\)
+- width\_bucket\(op numeric, b1 numeric, b2 numeric, count int\)
 
     Description: Returns a bucket to which the operand will be assigned in an equi-depth histogram with  **count**  buckets, ranging from  **b1**  to  **b2**.
 
@@ -1345,7 +1344,7 @@
     (1 row)
     ```
 
--   width\_bucket\(op dp, b1 dp, b2 dp, count int\)
+- width\_bucket\(op dp, b1 dp, b2 dp, count int\)
 
     Description: Returns a bucket to which the operand will be assigned in an equi-depth histogram with  **count**  buckets, ranging from  **b1**  to  **b2**.
 
@@ -1360,5 +1359,3 @@
                 3
     (1 row)
     ```
-
-

@@ -4,31 +4,31 @@
 
 openGauss数据库支持这些划分类型：
 
--   [范围分区表](#section936985843718)：指定一个或多个列划分为多个范围，每个范围创建一个分区，用来存储相应的数据。例如可以采用日期划分范围，将销售数据按照月份进行分区。
--   [列表分区表](#section05611948194510)：直接按照一个列或者多个列上的值来划分出分区。例如可以采用销售门店划分销售数据。
--   [间隔分区表](#section792613366813)：是一种特殊的范围分区，新增了间隔值定义。当插入记录找不到匹配的分区时可以根据间隔值自动创建分区。
--   [哈希分区表](#section119401959122818)：根据表的一列，为每个分区指定模数和余数，将要插入表的记录划分到对应的分区中。
+- [范围分区表](#section936985843718)：指定一个或多个列划分为多个范围，每个范围创建一个分区，用来存储相应的数据。例如可以采用日期划分范围，将销售数据按照月份进行分区。
+- [列表分区表](#section05611948194510)：直接按照一个列或者多个列上的值来划分出分区。例如可以采用销售门店划分销售数据。
+- [间隔分区表](#section792613366813)：是一种特殊的范围分区，新增了间隔值定义。当插入记录找不到匹配的分区时可以根据间隔值自动创建分区。
+- [哈希分区表](#section119401959122818)：根据表的一列，为每个分区指定模数和余数，将要插入表的记录划分到对应的分区中。
 
 分区表的操作除了创建之外还有：
 
--   [查询分区表](#section210605213434)：按照分区名或者分区中的值查询数据。
--   [导入数据](#section4704175612310)：直接导入数据或从现有表格中导入。
--   [修改分区表](#section1966814239435)：包括增加分区、删除分区、切割分区、合并分区，以及修改分区名称等。
--   [删除分区表](#section148862013302)：与删除普通表格相同。
+- [查询分区表](#section210605213434)：按照分区名或者分区中的值查询数据。
+- [导入数据](#section4704175612310)：直接导入数据或从现有表格中导入。
+- [修改分区表](#section1966814239435)：包括增加分区、删除分区、切割分区、合并分区，以及修改分区名称等。
+- [删除分区表](#section148862013302)：与删除普通表格相同。
 
 ## 范围分区表
+
 ### 范围分区表的分类<a name="section936985843718"></a>
 
 范围分区表按照划分范围的方式，分为以下类别：
 
--   [VALUES LESS THAN](#section9821913280)：通过给出每个分区的上限来确定分区范围。上个分区的上限<=分区的范围<本分区的上限。
--   [START END](#section2417444172113)：通过以下方式划分：
-    -   [分区的起点和终点](#li9343973444)；
-    -   [仅给出分区起点](#li15714728114411)；
-    -   [仅给出分区终点；](#li105902358449)
-    -   [给出分区起点和终点后，再给出该范围内的间隔值。](#li108701418134416)
-    -   以上这些方式的综合应用。
-
+- [VALUES LESS THAN](#section9821913280)：通过给出每个分区的上限来确定分区范围。上个分区的上限<=分区的范围<本分区的上限。
+- [START END](#section2417444172113)：通过以下方式划分：
+    - [分区的起点和终点](#li9343973444)；
+    - [仅给出分区起点](#li15714728114411)；
+    - [仅给出分区终点；](#li105902358449)
+    - [给出分区起点和终点后，再给出该范围内的间隔值。](#li108701418134416)
+    - 以上这些方式的综合应用。
 
 ### 创建VALUES LESS THAN范围分区表语法格式<a name="section9821913280"></a>
 
@@ -46,41 +46,39 @@ CREATE TABLE partition_table_name
 
 ### 创建VALUES LESS THAN范围分区表参数说明<a name="section12934121034018"></a>
 
--   **partition\_table\_name**
+- **partition\_table\_name**
 
     分区表的名称。
 
--   **column\_name**
+- **column\_name**
 
     新表中要创建的字段名。
 
--   **data\_type**
+- **data\_type**
 
     字段的数据类型。
 
-
--   **partition\_key**
+- **partition\_key**
 
     partition\_key为分区键的名称。
 
     对于从句是VALUE LESS THAN的语法格式，范围分区策略的分区键最多支持4列。
 
--   **partition\_name**
+- **partition\_name**
 
     partition\_name为范围分区的名称。
 
--   **VALUES LESS THAN**
+- **VALUES LESS THAN**
 
     分区中的数值必须小于上边界值。
 
--   **partition\_value**
+- **partition\_value**
 
     partition\_value为范围分区的上边界，取值依赖于partition\_key的类型。
 
--   **MAXVALUE**
+- **MAXVALUE**
 
     MAXVALUE表示分区的上边界，它通常用于设置最后一个范围分区的上边界。
-
 
 ### 创建VALUES LESS THAN范围分区表示例<a name="section61471944124917"></a>
 
@@ -117,6 +115,7 @@ openGauss=# INSERT INTO sales_table VALUES(4, 'coat', '2021-10-21 00:00:00', 9,'
 ```
 
 ## 查询分区表
+
 ### 查询分区表语法格式<a name="section210605213434"></a>
 
 ```
@@ -125,19 +124,17 @@ SELECT * FROM partition_table_name PARTITION { ( partition_name ) | FOR (  parti
 
 ### 查询分区表参数说明<a name="section690512516237"></a>
 
--   **partition\_table\_name**
+- **partition\_table\_name**
 
     分区表的名称。
 
--   **partition\_name**
+- **partition\_name**
 
     partition\_name为分区的名称。
 
-
--   **partition\_value**
+- **partition\_value**
 
     用于指定分区的值。PARTITION FOR子句指定的值所在的分区，就是进行查询的分区。
-
 
 ### 查询分区表语法示例<a name="section198181348131419"></a>
 
@@ -179,7 +176,7 @@ openGauss=# SELECT * FROM sales_table PARTITION FOR ('2021-3-21 00:00:00');
 
 START END范围分区表有多种表达方式，而且这些方式可以在一个分区表内组合使用。
 
--   <a name="li9343973444"></a>方式一：START\(partition\_value\) END \(partition\_value | MAXVALUE\)方式
+- <a name="li9343973444"></a>方式一：START\(partition\_value\) END \(partition\_value | MAXVALUE\)方式
 
     ```
     CREATE TABLE partition_table_name
@@ -193,7 +190,7 @@ START END范围分区表有多种表达方式，而且这些方式可以在一�
              ); 
     ```
 
--   <a name="li15714728114411"></a>方式二：START\(partition\_value\)方式
+- <a name="li15714728114411"></a>方式二：START\(partition\_value\)方式
 
     ```
     CREATE TABLE partition_table_name
@@ -207,7 +204,7 @@ START END范围分区表有多种表达方式，而且这些方式可以在一�
              ); 
     ```
 
--   <a name="li105902358449"></a>方式三：END\(partition\_value | MAXVALUE\)方式
+- <a name="li105902358449"></a>方式三：END\(partition\_value | MAXVALUE\)方式
 
     ```
     CREATE TABLE partition_table_name
@@ -221,8 +218,7 @@ START END范围分区表有多种表达方式，而且这些方式可以在一�
              ); 
     ```
 
-
--   <a name="li108701418134416"></a>方式四：START\(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)方式
+- <a name="li108701418134416"></a>方式四：START\(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)方式
 
     ```
     CREATE TABLE partition_table_name
@@ -236,58 +232,55 @@ START END范围分区表有多种表达方式，而且这些方式可以在一�
              ); 
     ```
 
-
 ### 创建START END范围分区表参数说明<a name="section147413468154"></a>
 
--   **partition\_table\_name**
+- **partition\_table\_name**
 
     分区表的名称。
 
--   **column\_name**
+- **column\_name**
 
     新表中要创建的字段名。
 
--   **data\_type**
+- **data\_type**
 
     字段的数据类型。
 
-
--   **partition\_key**
+- **partition\_key**
 
     partition\_key为分区键的名称。
 
     对于从句是START END的语法格式，范围分区策略的分区键仅支持1列。
 
--   **partition\_name**
+- **partition\_name**
 
     partition\_name为范围分区的名称或者范围分区的名称前缀。
 
-    -   若该定义是“START\(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)”从句，假定其中的partition\_name是p1，则分区的名称依次为p1\_1, p1\_2, ...。
+    - 若该定义是“START\(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)”从句，假定其中的partition\_name是p1，则分区的名称依次为p1\_1, p1\_2, ...。
 
         例如对于定义“PARTITION p1 START\(1\) END\(4\) EVERY\(1\)”，则生成的分区是：\[1, 2\), \[2, 3\) 和 \[3, 4\)，名称依次为p1\_1, p1\_2和p1\_3，即此处的p1是名称前缀。
 
-    -   若该定义是第一个分区定义，且该定义有START值，则范围（MINVALUE, START）将自动作为第一个实际分区，其名称为p1\_0，然后该定义语义描述的分区名称依次为p1\_1, p1\_2, ...。
+    - 若该定义是第一个分区定义，且该定义有START值，则范围（MINVALUE, START）将自动作为第一个实际分区，其名称为p1\_0，然后该定义语义描述的分区名称依次为p1\_1, p1\_2, ...。
 
         例如对于完整定义“PARTITION p1 START\(1\), PARTITION p2 START\(2\)”，生成的分区是：\(MINVALUE, 1\), \[1, 2\) 和 \[2, MAXVALUE\)，其名称依次为p1\_0, p1\_1和p2，即此处p1是名称前缀，p2是分区名称。这里MINVALUE表示最小值。
 
-    -   其余的情况都是范围分区名称。
+    - 其余的情况都是范围分区名称。
 
--   **VALUES LESS THAN**
+- **VALUES LESS THAN**
 
     分区中的数值必须小于上边界值。
 
--   **partition\_value**
+- **partition\_value**
 
     partition\_value为范围分区的端点值（起始或终点），取值依赖于partition\_key的类型。
 
--   **interval\_value**：
+- **interval\_value**：
 
     对\[START，END\) 表示的范围进行切分，interval\_value是指定切分后每个分区的宽度。如果（END-START）值不能整除以EVERY值，则仅最后一个分区的宽度小于EVERY值。
 
--   **MAXVALUE**
+- **MAXVALUE**
 
     MAXVALUE表示分区的上边界，它通常用于设置最后一个范围分区的上边界。
-
 
 ### 创建START END范围分区表示例<a name="section689175113388"></a>
 
@@ -611,6 +604,7 @@ openGauss=# SELECT * FROM graderecord PARTITION (excellent);
 ```
 
 ## 列表分区表
+
 ### 创建列表分区表语法格式<a name="section05611948194510"></a>
 
 ```
@@ -627,34 +621,33 @@ CREATE TABLE partition_table_name
 
 ### 创建列表分区表参数说明<a name="section750754717556"></a>
 
--   **partition\_table\_name**
+- **partition\_table\_name**
 
     分区表的名称。
 
--   **column\_name**
+- **column\_name**
 
     新表中要创建的字段名。
 
--   **data\_type**
+- **data\_type**
 
     字段的数据类型。
 
-
--   **partition\_key**
+- **partition\_key**
 
     partition\_key为分区键的名称。
 
     列表分区策略的分区键最大支持16列。
 
--   **partition\_name**
+- **partition\_name**
 
     partition\_name为范围分区的名称。
 
--   **list\_values\_clause**
+- **list\_values\_clause**
 
     对应分区存在的一个或者多个键值。多个键值之间以逗号分隔。
 
--   **VALUES \(DEFAULT\)**
+- **VALUES \(DEFAULT\)**
 
     加入的数据如有“list\_values\_clause”中未列出的键值，存放在VALUES \(DEFAULT\)对应的分区。
 
@@ -729,6 +722,7 @@ openGauss=# SELECT * FROM graderecord PARTITION (class_04);
 ```
 
 ## 间隔分区表
+
 ### 创建间隔分区表语法格式<a name="section792613366813"></a>
 
 间隔分区是在范围分区的基础上，增加了间隔值“PARTITION BY RANGE \(partition\_key\)”的定义。
@@ -811,20 +805,19 @@ CREATE TABLE partition_table_name
 
 ### 间隔分区表参数说明<a name="section16926136187"></a>
 
--   **INTERVAL \('interval\_expr'\)**
+- **INTERVAL \('interval\_expr'\)**
 
     间隔分区定义信息。只支持TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE数据类型。
 
--   **interval\_expr**自动创建分区的间隔，例如：
+- **interval\_expr**自动创建分区的间隔，例如：
 
     自动创建分区的间隔，例如：1 day、1 month。
 
--   **partition\_name**
+- **partition\_name**
 
     partition\_name为范围分区的名称。
 
     系统自动建立的分区按照建立的先后顺序，依次命名为：sys\_p1、sys\_p2、sys\_p3...
-
 
 ### 间隔分区表语法示例<a name="section18923858973"></a>
 
@@ -898,6 +891,7 @@ openGauss=# SELECT * FROM sales_table PARTITION (sys_p2);
 ```
 
 ## 哈希分区表
+
 ### 哈希分区表语法格式<a name="section119401959122818"></a>
 
 ```
@@ -913,26 +907,25 @@ CREATE TABLE partition_table_name
 
 ### 哈希分区表参数说明<a name="section1941185912820"></a>
 
--   **partition\_table\_name**
+- **partition\_table\_name**
 
     分区表的名称。
 
--   **column\_name**
+- **column\_name**
 
     新表中要创建的字段名。
 
--   **data\_type**
+- **data\_type**
 
     字段的数据类型。
 
--   **partition\_key**
+- **partition\_key**
 
     partition\_key为分区键的名称。哈希分区策略的分区键仅支持1列。
 
--   **partition\_name**
+- **partition\_name**
 
     partition\_name为哈希分区的名称。希望创建几个哈希分区就给出几个分区名。
-
 
 ### 哈希分区表示例<a name="section1194275912810"></a>
 
@@ -976,6 +969,7 @@ openGauss=# select * from hash_partition_table partition (p2);
 ```
 
 ## 导入数据
+
 ### 导入数据语法格式<a name="section4704175612310"></a>
 
 导入单行数据：
@@ -992,21 +986,20 @@ INSERT INTO partition_table_name SELECT * FROM  source_table_name
 
 ### 导入数据参数说明<a name="section150105520528"></a>
 
--   **partition\_table\_name**
+- **partition\_table\_name**
 
     分区表的名称。
 
--   **column\_name**
+- **column\_name**
 
     分区表中的字段名。可省略。
 
--   **value**
+- **value**
 
     字段对应的值：
 
-    -   提供了**column\_name**值时：value子句提供的值从左到右关联到对应列。
-    -   没提供**column\_name**值时：value子句提供的值从左到右关联到**partition\_table\_name**对应列。
-
+    - 提供了**column\_name**值时：value子句提供的值从左到右关联到对应列。
+    - 没提供**column\_name**值时：value子句提供的值从左到右关联到**partition\_table\_name**对应列。
 
 ### 导入数据示例<a name="section35261427776"></a>
 
@@ -1078,65 +1071,64 @@ openGauss=# select * from employees_table partition (newcomer);
 ```
 
 ## 修改分区表
+
 ### 修改分区表语法格式<a name="section1966814239435"></a>
 
--   删除分区：
+- 删除分区：
 
     ```
     ALTER TABLE partition_table_name DROP PARTITION partition_name;  
     ```
 
-
--   增加分区：
+- 增加分区：
 
     ```
     ALTER TABLE partition_table_name ADD {partition_less_than_item | partition_start_end_item| partition_list_item }; 
     ```
 
--   重命名分区：
+- 重命名分区：
 
     ```
     ALTER TABLE partition_table_name RENAME PARTITION partition_name TO partition_new_name; 
     ```
 
--   分裂分区（指定切割点split\_partition\_value的语法）：
+- 分裂分区（指定切割点split\_partition\_value的语法）：
 
     ```
     ALTER TABLE partition_table_name SPLIT PARTITION partition_name AT ( split_partition_value ) INTO ( PARTITION partition_new_name1, PARTITION partition_new_name2); 
     ```
 
--   分裂分区（指定分区范围的语法）：
+- 分裂分区（指定分区范围的语法）：
 
     ```
     ALTER TABLE partition_table_name SPLIT PARTITION partition_name INTO { ( partition_less_than_item [, ...] ) | ( partition_start_end_item [, ...] ) }; 
     ```
 
--   合并分区：
+- 合并分区：
 
     ```
     ALTER TABLE partition_table_name MERGE PARTITIONS { partition_name } [, ...] INTO PARTITION partition_name; 
     ```
 
-
 ### 修改分区表参数说明<a name="section13156172765713"></a>
 
--   **partition\_table\_name**
+- **partition\_table\_name**
 
     分区表的名称。
 
--   **partition\_name**
+- **partition\_name**
 
     partition\_name为分区的名称。
 
--   **split\_partition\_value**
+- **split\_partition\_value**
 
     切割点。
 
--   **PARTITION partition\_new\_name1, PARTITION partition\_new\_name2**
+- **PARTITION partition\_new\_name1, PARTITION partition\_new\_name2**
 
     按照切割点分裂出的两个分区。
 
--   **partition\_less\_than\_item**
+- **partition\_less\_than\_item**
 
     分区项的描述语句，语法为：
 
@@ -1146,7 +1138,7 @@ openGauss=# select * from employees_table partition (newcomer);
 
     用法与[创建VALUES LESS THAN范围分区表语法格式](#section9821913280)中相同。
 
--   **partition\_start\_end\_item**
+- **partition\_start\_end\_item**
 
     分区项的描述语句，语法为：
 
@@ -1160,7 +1152,7 @@ openGauss=# select * from employees_table partition (newcomer);
 
     用法与[创建START END范围分区表语法格式](#section2417444172113)中相同。
 
--   **partition\_list\_item**
+- **partition\_list\_item**
 
     分区项的描述语句，语法为：
 
@@ -1170,14 +1162,13 @@ openGauss=# select * from employees_table partition (newcomer);
 
     用法与[创建列表分区表语法格式](#section05611948194510)中相同。
 
--   **split\_point\_clause**
+- **split\_point\_clause**
 
     分裂分区时，指定的切割点。
 
--   **partition\_value**
+- **partition\_value**
 
     分区键值。
-
 
 ### 修改分区表示例<a name="section04446211362"></a>
 
@@ -1241,6 +1232,7 @@ ALTER TABLE
 ```
 
 ## 删除分区表
+
 ### 删除分区表语法格式<a name="section148862013302"></a>
 
 ```
@@ -1249,10 +1241,9 @@ DROP TABLE partition_table_name;
 
 ### 删除分区表参数说明<a name="section6520166143111"></a>
 
--   **partition\_table\_name**
+- **partition\_table\_name**
 
     分区表的名称。
-
 
 ### 删除分区表示例<a name="section186351032133112"></a>
 
@@ -1263,4 +1254,3 @@ DROP TABLE partition_table_name;
 openGauss=# DROP TABLE employees_table;
 DROP TABLE      
 ```
-

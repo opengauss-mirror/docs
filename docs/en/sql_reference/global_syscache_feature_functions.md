@@ -1,6 +1,6 @@
 # Global SysCache Feature Functions<a name="EN-US_TOPIC_0000001242498033"></a>
 
--   gs\_gsc\_table\_detail\(database\_id dafault NULL, rel\_id default NULL\)
+- gs\_gsc\_table\_detail\(database\_id dafault NULL, rel\_id default NULL\)
 
     Description: Queries global system cache table metadata in a database. The user who calls this function must have the  **SYSADMIN**  permission.
 
@@ -18,8 +18,7 @@
     (1 row)
     ```
 
-
--   gs\_gsc\_catalog\_detail\(database\_id dafault NULL, rel\_id default NULL\)
+- gs\_gsc\_catalog\_detail\(database\_id dafault NULL, rel\_id default NULL\)
 
     Description: Queries the system table row information cached in the global system in a database. The user who calls this function must have the  **SYSADMIN**  permission.
 
@@ -46,8 +45,7 @@
     (10 rows)
     ```
 
-
--   gs\_gsc\_clean\(database\_id dafault NULL\)
+- gs\_gsc\_clean\(database\_id dafault NULL\)
 
     Description: Clears the global syscache cache. Note that data in use will not be cleared. The user who calls this function must have the  **SYSADMIN**  permission.
 
@@ -65,8 +63,7 @@
     (1 row)
     ```
 
-
--   gs\_gsc\_dbstat\_info\(database\_id default NULL\)
+- gs\_gsc\_dbstat\_info\(database\_id default NULL\)
 
     Description: Obtains GSC memory statistics on the local node, including cache query, hit, loading, expiration, and occupied space information of tuples, relationships, and partitions, database-level elimination information, thread reference information, and memory usage information. This parameter can be used to locate performance problems. For example, if the value of the hits/searches array is far less than 1, the value of  **global\_syscache\_threshold**  may be too small. As a result, the query hit ratio decreases. The user who calls this function must have the  **SYSADMIN**  permission.
 

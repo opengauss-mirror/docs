@@ -12,57 +12,54 @@ pscp [OPTIONS]
 
 ## 参数说明<a name="section7730228131115"></a>
 
--   --help
+- --help
 
     显示帮助信息。
 
--   -H HOSTNAME
+- -H HOSTNAME
 
     主机列表。
 
--   -h HOSTFILE
+- -h HOSTFILE
 
     写入主机列表的文件全路径。
 
--   -t TIMEOUT
+- -t TIMEOUT
 
     连接超时时间，单位秒，默认300s。
 
--   -p PARALLEL
+- -p PARALLEL
 
     最大并行个数，默认32。
 
--   -o OUTDIR
+- -o OUTDIR
 
     执行结果输出全文件路径。
 
--   -e ERRDIR
+- -e ERRDIR
 
     错误信息输出全文件路径。
 
--   -r
+- -r
 
     递归复制目录。
 
--   -v
+- -v
 
     打开诊断消息。
 
--   -s
+- -s
 
     显示执行结果。
 
--   -x EXTRA
+- -x EXTRA
 
     额外的命令行参数。
 
--   -i
+- -i
 
     显示所有节点的输出和错误。
 
-
--   -O OPT
+- -O OPT
 
     补充的线下模式scp的参数。
-
-

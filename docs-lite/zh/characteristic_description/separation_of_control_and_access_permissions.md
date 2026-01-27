@@ -37,4 +37,3 @@ openGauss=# CREATE USER user_independent WITH INDEPENDENT IDENTIFIED BY "XXXXXXX
 ## 依赖关系<a name="section22810484"></a>
 
 无。
-

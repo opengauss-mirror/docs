@@ -11,4 +11,3 @@ The primary and standby DB instances are disconnected due to network faults or i
 ## Procedure<a name="en-us_topic_0283137649_section12618818144413"></a>
 
 Run the  **gs\_ctl build -D**  command to rebuild the faulty node. For details, see the build parameter in  _openGauss Tool Reference_.
-

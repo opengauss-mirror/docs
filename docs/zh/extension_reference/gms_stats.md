@@ -1148,8 +1148,6 @@ openGauss=# call gms_stats.unlock_partition_stats('sc_stats', 't_part', 't_part_
 openGauss=# DROP Extension gms_stats [CASCADE];
 ```
 
-
-
 >[!NOTE]说明
 >
 >如果Extension被其它对象依赖，需要加入CASCADE（级联）关键字，删除所有依赖对象。

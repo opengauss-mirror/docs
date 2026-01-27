@@ -20,24 +20,23 @@ ALTER TRIGGER trigger_name ON table_name RENAME TO new_name;
 
 ## Parameter Description<a name="en-us_topic_0283137014_en-us_topic_0237122081_en-us_topic_0059777895_se717dd5fd464489bb0235495c62d3a9e"></a>
 
--   **trigger\_name**
+- **trigger\_name**
 
     Specifies the name of the trigger to be modified.
 
     Value range: an existing trigger
 
--   **table\_name**
+- **table\_name**
 
     Specifies the name of the table where the trigger to be modified is located.
 
     Value range: an existing table having a trigger
 
--   **new\_name**
+- **new\_name**
 
     Specifies the new name after modification.
 
     Value range: a string, which complies with the identifier naming convention. A value contains a maximum of 63 characters and cannot be the same as other triggers on the same table.
-
 
 ## Examples<a name="en-us_topic_0283137014_en-us_topic_0237122081_en-us_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
 

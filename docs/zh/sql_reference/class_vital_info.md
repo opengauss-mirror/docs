@@ -52,5 +52,3 @@ openGauss=# select * from DBE_PERF.CLASS_VITAL_INFO;
 </tr>
 </tbody>
 </table>
-
-

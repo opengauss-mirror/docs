@@ -64,4 +64,3 @@ PQsendPrepare is an asynchronous version of PQprepare. If it can dispatch a requ
 ## Example<a name="en-us_topic_0241735629_section1123513455619"></a>
 
 For details, see  [Example](example_libpq.md).
-

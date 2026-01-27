@@ -24,10 +24,10 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range:** **normal**,  **pretty**,  **summary**, and  **run**
 
--   **normal**  indicates that the default printing format is used.
--   **pretty**  indicates a new format improved by using openGauss. The new format contains a plan node ID, directly and effectively analyzing performance.
--   **summary**  indicates that the analysis result on this information is printed in addition to the printed information specified by  **pretty**.
--   **run**  indicates that the system exports the printed information specified by  **summary**  as a CSV file for further analysis.
+- **normal**  indicates that the default printing format is used.
+- **pretty**  indicates a new format improved by using openGauss. The new format contains a plan node ID, directly and effectively analyzing performance.
+- **summary**  indicates that the analysis result on this information is printed in addition to the printed information specified by  **pretty**.
+- **run**  indicates that the system exports the printed information specified by  **summary**  as a CSV file for further analysis.
 
 **Default value:** **pretty**  \(In the current version, only the value  **normal**  takes effect. If the value is not  **normal**,  **normal**  is still displayed.\)
 
@@ -39,9 +39,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: a string
 
--   **LLVM\_COMPILE**  indicates that the codegen compilation time of each thread is displayed on the explain performance page.
--   **HASH\_CONFLICT**  indicates that the log in the  **pg\_log**  directory of the database node process displays the statistics of the hash table, including the hash table size, hash link length, and hash conflict.
--   **STREAM\_DATA\_CHECK**  indicates that a CRC check is performed on data before and after network data transmission.
+- **LLVM\_COMPILE**  indicates that the codegen compilation time of each thread is displayed on the explain performance page.
+- **HASH\_CONFLICT**  indicates that the log in the  **pg\_log**  directory of the database node process displays the statistics of the hash table, including the hash table size, hash link length, and hash conflict.
+- **STREAM\_DATA\_CHECK**  indicates that a CRC check is performed on data before and after network data transmission.
 
 **Default value**:  **ALL,on\(\),off\(LLVM\_COMPILE,HASH\_CONFLICT,STREAM\_DATA\_CHECK\)**, which indicates that no location function is enabled.
 
@@ -67,8 +67,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that an intelligent algorithm is selected.
--   **off**  indicates that an intelligent algorithm is not selected.
+- **on**  indicates that an intelligent algorithm is selected.
+- **off**  indicates that an intelligent algorithm is not selected.
 
 **Default value**:  **off**
 
@@ -80,9 +80,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **ON** indicates that the new selection rate model is used to calculate the integer const selection rate. If the integer is neither MCV nor NULL value but falls into the histogram, the left and right boundaries of the histogram are used for estimation. If the integer does not fall into the histogram, the number of rows in the table is used for estimation. If the integer is NULL or MCV, the original logic is used to calculate the selection rate.
+- **ON** indicates that the new selection rate model is used to calculate the integer const selection rate. If the integer is neither MCV nor NULL value but falls into the histogram, the left and right boundaries of the histogram are used for estimation. If the integer does not fall into the histogram, the number of rows in the table is used for estimation. If the integer is NULL or MCV, the original logic is used to calculate the selection rate.
 
--   **OFF** indicates that the original selection rate calculation model is used.
+- **OFF** indicates that the original selection rate calculation model is used.
 
 **Default value**: **off**
 
@@ -94,8 +94,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on** indicates that the pruning result is used to optimize the page estimation.
--   **off** indicates that the pruning result is not used to optimize the page estimation.
+- **on** indicates that the pruning result is used to optimize the page estimation.
+- **off** indicates that the pruning result is not used to optimize the page estimation.
 
 **Default value:** **off**
 
@@ -107,8 +107,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on** indicates that the partition iteration operator is eliminated.
--   **off** indicates that the partition iteration operator is not eliminated.
+- **on** indicates that the partition iteration operator is eliminated.
+- **off** indicates that the partition iteration operator is not eliminated.
 
 **Default value:** **off**
 
@@ -120,8 +120,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on** provides the following functions: 1. The statistics about multiple columns generated by ANALYZE contain functional dependency statistics.2. Functional dependency statistics are used to calculate the selection rate.
--   **off** provides the following functions: 1. The statistics about multiple columns generated by ANALYZE do not contain functional dependency statistics.2. Functional dependency statistics are not used to calculate the selection rate.
+- **on** provides the following functions: 1. The statistics about multiple columns generated by ANALYZE contain functional dependency statistics.2. Functional dependency statistics are used to calculate the selection rate.
+- **off** provides the following functions: 1. The statistics about multiple columns generated by ANALYZE do not contain functional dependency statistics.2. Functional dependency statistics are not used to calculate the selection rate.
 
 **Default value**: **off**
 
@@ -141,14 +141,14 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: a string
 
--   **none**: Does not use any optional query rewriting rules.
--   **lazyagg**: Uses the Lazy Agg query rewriting rules for eliminating aggregation operations in subqueries.
--   **magicset**: Uses the Magic Set query rewriting rules delivered from the main query to the subquery.
--   **uniquecheck**: Uses the Unique Check query rewriting rules. Optimize the subquery statements in target columns without agg and check whether the number of returned rows is 1.
--   **intargetlist**: Uses the In Target List query rewriting rules \(subquery optimization in the target column\).
--   **predpushnormal**: Uses the Predicate Push query rewriting rule \(push the predicate condition to the subquery\).
--   **predpushforce**: Uses the Predicate Push query rewriting rules. Push down predicate conditions to subqueries and use indexes as much as possible for acceleration.
--   **predpush**: Selects the optimal plan based on the cost in  **predpushnormal**  and  **predpushforce**.
+- **none**: Does not use any optional query rewriting rules.
+- **lazyagg**: Uses the Lazy Agg query rewriting rules for eliminating aggregation operations in subqueries.
+- **magicset**: Uses the Magic Set query rewriting rules delivered from the main query to the subquery.
+- **uniquecheck**: Uses the Unique Check query rewriting rules. Optimize the subquery statements in target columns without agg and check whether the number of returned rows is 1.
+- **intargetlist**: Uses the In Target List query rewriting rules \(subquery optimization in the target column\).
+- **predpushnormal**: Uses the Predicate Push query rewriting rule \(push the predicate condition to the subquery\).
+- **predpushforce**: Uses the Predicate Push query rewriting rules. Push down predicate conditions to subqueries and use indexes as much as possible for acceleration.
+- **predpush**: Selects the optimal plan based on the cost in  **predpushnormal**  and  **predpushforce**.
 
 **Default value**:  **magicset**
 
@@ -160,8 +160,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: Boolean
 
--   **on**  indicates that the optimizer optimizes the query plan.
--   **off**  indicates that the optimizer does not optimize the execution.
+- **on**  indicates that the optimizer optimizes the query plan.
+- **off**  indicates that the optimizer does not optimize the execution.
 
 **Default value**:  **on**
 
@@ -175,8 +175,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: Boolean
 
--   **on**  indicates that the execution plan of the PBE query is shared in the cache.
--   **off**  indicates that the execution plan of the PBE query is not shared in the cache.
+- **on**  indicates that the execution plan of the PBE query is shared in the cache.
+- **off**  indicates that the execution plan of the PBE query is not shared in the cache.
 
 **Default value**:  **off**
 
@@ -188,7 +188,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: an integer ranging from 300 to 86400
 
--   The unit is second.
+- The unit is second.
 
 **Default value**:  **1800**, that is, 30 minutes
 
@@ -200,8 +200,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: Boolean
 
--   **on**  or  **true**  indicates the global statistics mode.
--   **off**  or  **false**  indicates the database node statistics.
+- **on**  or  **true**  indicates the global statistics mode.
+- **off**  or  **false**  indicates the database node statistics.
 
 **Default value**:  **on**
 
@@ -213,13 +213,13 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 The restrictions on simple query are as follows:
 
--   Only indexscan and indexonlyscan are supported, and the filter criteria of all WHERE statements are on indexes.
--   Only single tables can be added, deleted, modified, and queried. Join and using are not supported.
--   Only row-store tables are supported. Partitioned tables and tables with triggers are not supported.
--   Information statistics features such as active sql and QPS are not supported.
--   Tables that are being scaled out or in are not supported.
--   The system column cannot be queried or modified.
--   Only simple SELECT statements are supported. For example:
+- Only indexscan and indexonlyscan are supported, and the filter criteria of all WHERE statements are on indexes.
+- Only single tables can be added, deleted, modified, and queried. Join and using are not supported.
+- Only row-store tables are supported. Partitioned tables and tables with triggers are not supported.
+- Information statistics features such as active sql and QPS are not supported.
+- Tables that are being scaled out or in are not supported.
+- The system column cannot be queried or modified.
+- Only simple SELECT statements are supported. For example:
 
     ```
     SELECT c3 FROM t1 WHERE c1 = ? and c2 =10; 
@@ -227,8 +227,7 @@ The restrictions on simple query are as follows:
 
     Only columns in the target table can be queried. Columns c1 and c2 are index columns, which can be followed by constants or parameters. You can use for update.
 
-
--   Only simple INSERT statements are supported. For example:
+- Only simple INSERT statements are supported. For example:
 
     ```
     INSERT INTO t1 VALUES (?,10,?); 
@@ -236,8 +235,7 @@ The restrictions on simple query are as follows:
 
     Only one VALUES is supported. The type in the VALUES can be a constant or a parameter. Returning is not supported.
 
-
--   Only simple DELETE statements are supported. For example:
+- Only simple DELETE statements are supported. For example:
 
     ```
     DELETE FROM t1 WHERE c1 = ? and c2 = 10;  
@@ -245,8 +243,7 @@ The restrictions on simple query are as follows:
 
     Columns c1 and c2 are index columns, which can be followed by constants or parameters.
 
-
--   Only simple UPDATE statements are supported. For example:
+- Only simple UPDATE statements are supported. For example:
 
     ```
     UPDATE t1 SET c3 = c3+? WHERE c1 = ? and c2 = 10; 
@@ -254,11 +251,10 @@ The restrictions on simple query are as follows:
 
     The values modified in column c3 can be constants, parameters, or a simple expression. Columns c1 and c2 are index columns, followed by constants or parameters.
 
-
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **on**
 
@@ -270,8 +266,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **off**
 
@@ -296,20 +292,20 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: a string
 
--   **none**: None of the beta optimizer features is used.
--   **sel\_semi\_poisson**: Uses poisson distribution to calibrate the equivalent semi-join and anti-join selection rates.
--   **sel\_expr\_instr**: Uses the matching row count estimation method to provide more accurate estimation for  **instr\(col, 'const'\) \> 0, = 0, = 1**.
--   **param\_path\_gen**: Generates more possible parameterized paths.
--   **rand\_cost\_opt**: Optimizes the random read cost of tables that have a small amount of data.
--   **param\_path\_opt**: Uses the bloat ratio of the table to optimize the analyze information of indexes.
--   **page\_est\_opt**: Optimizes the relpages estimation for the analyze information of non-column-store table indexes.
--   **no\_unique\_index\_first**: Disables optimization of the primary key index scanning path first.
--   **join\_sel\_with\_cast\_func**: Type conversion functions are supported when the number of join rows is estimated.
--   **canonical\_pathkey**: after regularization pathkey is generated. \(**pathkey**: a set of ordered key values of data.\)
--   **index\_cost\_with\_leaf\_pages\_only**: Considers index leaf nodes when the index cost is estimated.
--   **partition\_opfusion**: Enables partitioned table optimization.
--   **a\_style\_coerce**: Enables the Decode type conversion rule to be compatible with O. For details, see  [Type Resolution for CASE in ORA Compatibility Type](../sql_reference/union-case-and-related-constructs.md#section20337194392613).
--   **partition\_fdw\_on**: SQL statements can be created for Postgres foreign tables based on partitioned tables.
+- **none**: None of the beta optimizer features is used.
+- **sel\_semi\_poisson**: Uses poisson distribution to calibrate the equivalent semi-join and anti-join selection rates.
+- **sel\_expr\_instr**: Uses the matching row count estimation method to provide more accurate estimation for  **instr\(col, 'const'\) \> 0, = 0, = 1**.
+- **param\_path\_gen**: Generates more possible parameterized paths.
+- **rand\_cost\_opt**: Optimizes the random read cost of tables that have a small amount of data.
+- **param\_path\_opt**: Uses the bloat ratio of the table to optimize the analyze information of indexes.
+- **page\_est\_opt**: Optimizes the relpages estimation for the analyze information of non-column-store table indexes.
+- **no\_unique\_index\_first**: Disables optimization of the primary key index scanning path first.
+- **join\_sel\_with\_cast\_func**: Type conversion functions are supported when the number of join rows is estimated.
+- **canonical\_pathkey**: after regularization pathkey is generated. \(**pathkey**: a set of ordered key values of data.\)
+- **index\_cost\_with\_leaf\_pages\_only**: Considers index leaf nodes when the index cost is estimated.
+- **partition\_opfusion**: Enables partitioned table optimization.
+- **a\_style\_coerce**: Enables the Decode type conversion rule to be compatible with O. For details, see  [Type Resolution for CASE in ORA Compatibility Type](../sql_reference/union-case-and-related-constructs.md#section20337194392613).
+- **partition\_fdw\_on**: SQL statements can be created for Postgres foreign tables based on partitioned tables.
 
 **Default value**:  **none**
 
@@ -331,8 +327,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**: The ngram parser ignores graphical characters.
--   **off**: The ngram parser does not ignore graphical characters.
+- **on**: The ngram parser ignores graphical characters.
+- **off**: The ngram parser does not ignore graphical characters.
 
 **Default value**:  **off**
 
@@ -344,8 +340,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**: The ngram parser ignores punctuations.
--   **off**: The ngram parser does not ignore punctuations.
+- **on**: The ngram parser ignores punctuations.
+- **off**: The ngram parser does not ignore punctuations.
 
 **Default value**:  **on**
 
@@ -358,12 +354,15 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Value range:**  an integer ranging from –100 to 10000
 
 >[!TIP]NOTICE 
->-   A larger positive number than the default value increases the time required to do  **ANALYZE**, but might improve the quality of the optimizer's estimates.
->-   Changing settings of this parameter may result in performance deterioration. If query performance deteriorates, you can:
->    1.  Restore to the default statistics.
->    2.  Use hints to force the optimizer to use the optimal query plan. For details, see  [Hint-based Tuning](../performance_tuning_guide/plan_hint_optimization_overview.md).
->-   If this parameter is set to a negative value, the number of samples is greater than or equal to 2% of the total data volume, and the number of records in user tables is less than 1.6 million, the time taken by running  **ANALYZE**  will be longer than when this parameter uses its default value.
->-   If this parameter is set to a negative value, the auto-analyze function is disabled.
+>
+>- A larger positive number than the default value increases the time required to do  **ANALYZE**, but might improve the quality of the optimizer's estimates.
+>- Changing settings of this parameter may result in performance deterioration. If query performance deteriorates, you can:
+>
+>       1. Restore to the default statistics.
+>       2. Use hints to force the optimizer to use the optimal query plan. For details, see  [Hint-based Tuning](../performance_tuning_guide/plan_hint_optimization_overview.md).
+>
+>- If this parameter is set to a negative value, the number of samples is greater than or equal to 2% of the total data volume, and the number of records in user tables is less than 1.6 million, the time taken by running  **ANALYZE**  will be longer than when this parameter uses its default value.
+>- If this parameter is set to a negative value, the auto-analyze function is disabled.
 
 **Default value**:  **100**
 
@@ -375,13 +374,12 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: enumerated values
 
--   **on**  indicates that constraints for all tables are examined.
--   **off**  indicates that constraints for any table are not examined.
--   **partition**  indicates that only constraints for inheritance child tables and  **UNION ALL**  subqueries are examined.
+- **on**  indicates that constraints for all tables are examined.
+- **off**  indicates that constraints for any table are not examined.
+- **partition**  indicates that only constraints for inheritance child tables and  **UNION ALL**  subqueries are examined.
 
     >[!TIP]NOTICE 
     >When  **constraint\_exclusion**  is set to  **on**, the optimizer compares query conditions with the table's  **CHECK**  constraints, and omits scanning tables for which the conditions contradict the constraints.
-
 
 **Default value**:  **partition**
 
@@ -423,8 +421,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Value range**: an integer ranging from 1 to  *INT\*MAX_
 
 >[!TIP]NOTICE 
->-   Setting this parameter to  **1**  prevents join reordering. As a result, the join order specified in the query will be the actual order in which the relations are joined. The query optimizer does not always choose the optimal join order. Therefore, advanced users can temporarily set this variable to  **1**, and then specify the join order they desire explicitly.
->-   Smaller values reduce planning time but lead to inferior execution plans.
+>
+>- Setting this parameter to  **1**  prevents join reordering. As a result, the join order specified in the query will be the actual order in which the relations are joined. The query optimizer does not always choose the optimal join order. Therefore, advanced users can temporarily set this variable to  **1**, and then specify the join order they desire explicitly.
+>- Smaller values reduce planning time but lead to inferior execution plans.
 
 **Default value**:  **8**
 
@@ -439,8 +438,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Default value**:  **0**
 
 >[!TIP]NOTICE 
->-   If  **plan\_mode\_seed**  is set to  **RANDOM\_PLAN**, the optimizer generates a random execution plan that may not be the optimal one. Therefore, to guarantee the query performance, the default value  **0**  is recommended during upgrade, scale-out, scale-in, and O&M.
->-   If this parameter is not set to  **0**, the specified plan hint will not be used.
+>
+>- If  **plan\_mode\_seed**  is set to  **RANDOM\_PLAN**, the optimizer generates a random execution plan that may not be the optimal one. Therefore, to guarantee the query performance, the default value  **0**  is recommended during upgrade, scale-out, scale-in, and O&M.
+>- If this parameter is not set to  **0**, the specified plan hint will not be used.
 
 ## hashagg\_table\_size<a name="en-us_topic_0283137690_en-us_topic_0237124719_en-us_topic_0059779049_sd3604978a99a48e784619997f8036b61"></a>
 
@@ -460,12 +460,11 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that code optimization is enabled.
--   **off**  indicates that code optimization is disabled.
+- **on**  indicates that code optimization is enabled.
+- **off**  indicates that code optimization is disabled.
 
     >[!TIP]NOTICE 
     >Currently, the LLVM optimization only supports the vectorized executor features. You are advised to set this parameter to  **off**  in other cases.
-
 
 **Default value**:  **on**
 
@@ -477,12 +476,11 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range:**  enumerated values
 
--   **partial**  indicates that even if functions that are not codegen-based exist in an expression, you can still call the LLVM dynamic optimization strategy by using the entire codegen framework of the expression.
--   **pure**  indicates that only when all functions in an expression can be codegen-based, the LLVM dynamic optimization strategy can be called.
+- **partial**  indicates that even if functions that are not codegen-based exist in an expression, you can still call the LLVM dynamic optimization strategy by using the entire codegen framework of the expression.
+- **pure**  indicates that only when all functions in an expression can be codegen-based, the LLVM dynamic optimization strategy can be called.
 
     >[!TIP]NOTICE 
     >In the scenario where query performance reduces after the codegen function is enabled, you can set this parameter to  **pure**. In other scenarios, do not change the default value  **partial**  of this parameter.
-
 
 **Default value**:  **partial**
 
@@ -494,8 +492,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the LLVM IR function can be printed in logs.
--   **off**  indicates that the LLVM IR function cannot be printed in logs.
+- **on**  indicates that the LLVM IR function can be printed in logs.
+- **off**  indicates that the LLVM IR function cannot be printed in logs.
 
 **Default value**:  **off**
 
@@ -515,8 +513,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the BloomFilter optimization can be used.
--   **off**  indicates that the BloomFilter optimization cannot be used.
+- **on**  indicates that the BloomFilter optimization can be used.
+- **off**  indicates that the BloomFilter optimization cannot be used.
 
 **Default value**:  **on**
 
@@ -526,8 +524,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the extrapolation logic is used for data of DATE type based on historical statistics.
--   **off**  indicates that the extrapolation logic is not used for data of DATE type based on historical statistics.
+- **on**  indicates that the extrapolation logic is used for data of DATE type based on historical statistics.
+- **off**  indicates that the extrapolation logic is not used for data of DATE type based on historical statistics.
 
 **Default value**:  **off**
 
@@ -537,8 +535,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the table statistics are automatically collected.
--   **off**  indicates that the table statistics are not automatically collected.
+- **on**  indicates that the table statistics are automatically collected.
+- **off**  indicates that the table statistics are not automatically collected.
 
 **Default value**:  **off**
 
@@ -550,8 +548,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: Boolean
 
--   **on**  indicates that the tables will be checked.
--   **off**  indicates that the tables will not be checked.
+- **on**  indicates that the tables will be checked.
+- **off**  indicates that the tables will not be checked.
 
 **Default value**:  **off**
 
@@ -563,12 +561,13 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the hash aggregation operator designed for column-oriented hash tables is used when certain constraints are met.
--   **off**  indicates that the hash aggregation operator designed for column-oriented hash tables is not used.
+- **on**  indicates that the hash aggregation operator designed for column-oriented hash tables is used when certain constraints are met.
+- **off**  indicates that the hash aggregation operator designed for column-oriented hash tables is not used.
 
 >[!NOTE]NOTE 
->-   When the hash aggregation operator designed for column-oriented hash tables is used, the memory usage of the query can be reduced. However, in scenarios when  **[enable\_codegen](#en-us_topic_0283137690_en-us_topic_0237124719_en-us_topic_0059779049_sbe5e1dbabf214873baf37dbb7580a7a3)**  is set to  **on**  and the performance is significantly improved, the performance of the operator may deteriorate.
->-   If  **enable\_sonic\_hashagg**  is set to  **on**, when certain constraints are met, the hash aggregation operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Aggregation**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Aggregation**. For details, see  [Description](../performance_tuning_guide/sql_execution_plan_introduction.md).
+>
+>- When the hash aggregation operator designed for column-oriented hash tables is used, the memory usage of the query can be reduced. However, in scenarios when  **[enable\_codegen](#en-us_topic_0283137690_en-us_topic_0237124719_en-us_topic_0059779049_sbe5e1dbabf214873baf37dbb7580a7a3)**  is set to  **on**  and the performance is significantly improved, the performance of the operator may deteriorate.
+>- If  **enable\_sonic\_hashagg**  is set to  **on**, when certain constraints are met, the hash aggregation operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Aggregation**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Aggregation**. For details, see  [Description](../performance_tuning_guide/sql_execution_plan_introduction.md).
 
 **Default value**:  **on**
 
@@ -580,13 +579,14 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the hash join operator designed for column-oriented hash tables is used when certain constraints are met.
--   **off**  indicates that the hash join operator designed for column-oriented hash tables is not used.
+- **on**  indicates that the hash join operator designed for column-oriented hash tables is used when certain constraints are met.
+- **off**  indicates that the hash join operator designed for column-oriented hash tables is not used.
 
 >[!NOTE]NOTE 
->-   Currently, the parameter can be used only for Inner Join.
->-   If  **enable\_sonic\_hashjoin**  is enabled, the memory usage of query using the Hash Inner operator can be reduced. However, in scenarios where the code generation technology can significantly improve performance, the performance of the operator may deteriorate.
->-   If  **enable\_sonic\_hashjoin**  is set to  **on**, when certain constraints are met, the hash join operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Join**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Join**. For details, see  [Description](../performance_tuning_guide/sql_execution_plan_introduction.md).
+>
+>- Currently, the parameter can be used only for Inner Join.
+>- If  **enable\_sonic\_hashjoin**  is enabled, the memory usage of query using the Hash Inner operator can be reduced. However, in scenarios where the code generation technology can significantly improve performance, the performance of the operator may deteriorate.
+>- If  **enable\_sonic\_hashjoin**  is set to  **on**, when certain constraints are met, the hash join operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Join**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Join**. For details, see  [Description](../performance_tuning_guide/sql_execution_plan_introduction.md).
 
 **Default value**:  **on**
 
@@ -598,8 +598,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the optimization is enabled.
--   **off**  indicates that the optimization is disabled.
+- **on**  indicates that the optimization is enabled.
+- **off**  indicates that the optimization is disabled.
 
 **Default value**:  **on**
 
@@ -611,8 +611,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **off**
 
@@ -624,8 +624,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **off**
 
@@ -637,8 +637,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **off**
 
@@ -650,8 +650,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **off**
 
@@ -663,14 +663,15 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: enumerated values
 
--   **auto**  indicates that the  **custom plan**  or  **generic plan**  is selected by default.
--   **force\_generic\_plan**  indicates that the  **generic plan**  is forcibly used.
--   **force\_custom\_plan**  indicates that the  **custom plan**  is forcibly used.
+- **auto**  indicates that the  **custom plan**  or  **generic plan**  is selected by default.
+- **force\_generic\_plan**  indicates that the  **generic plan**  is forcibly used.
+- **force\_custom\_plan**  indicates that the  **custom plan**  is forcibly used.
 
 >[!NOTE]NOTE 
->-   This parameter is valid only for the  **prepare**  statement. It is used when the parameterized field in the  **prepare**  statement has severe data skew.
->-   **custom plan**  is a plan generated after you run the  **prepare**  statement where parameters in the  **execute**  statement is embedded. The  **custom plan**  generates a plan based on specific parameters in the  **execute**  statement. This scheme generates a preferred plan based on specific parameters each time and has good execution performance. The disadvantage is that the plan needs to be regenerated before each execution, resulting in a large amount of repeated optimizer overhead.
->-   **generic plan**  is a plan generated after you run the  **prepare**  statement. The plan policy binds parameters to the plan when you run the  **execute**  statement and execute the plan. The advantage of this scheme is that repeated optimizer overheads can be avoided in each execution. The disadvantage is that the plan may not be optimal when data skew occurs for the bound parameters and may result in poor plan execution performance.
+>
+>- This parameter is valid only for the  **prepare**  statement. It is used when the parameterized field in the  **prepare**  statement has severe data skew.
+>- **custom plan**  is a plan generated after you run the  **prepare**  statement where parameters in the  **execute**  statement is embedded. The  **custom plan**  generates a plan based on specific parameters in the  **execute**  statement. This scheme generates a preferred plan based on specific parameters each time and has good execution performance. The disadvantage is that the plan needs to be regenerated before each execution, resulting in a large amount of repeated optimizer overhead.
+>- **generic plan**  is a plan generated after you run the  **prepare**  statement. The plan policy binds parameters to the plan when you run the  **execute**  statement and execute the plan. The advantage of this scheme is that repeated optimizer overheads can be avoided in each execution. The disadvantage is that the plan may not be optimal when data skew occurs for the bound parameters and may result in poor plan execution performance.
 
 **Default value**:  **auto**
 
@@ -682,8 +683,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **off**
 
@@ -695,8 +696,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that vectorized operators are forcibly generated.
--   **off**  indicates that the vectorized operator optimizer determines whether to perform vectorization.
+- **on**  indicates that vectorized operators are forcibly generated.
+- **off**  indicates that the vectorized operator optimizer determines whether to perform vectorization.
 
 **Default value**:  **off**
 

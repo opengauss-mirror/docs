@@ -73,14 +73,14 @@ numwait desc;
 
 当出现该问题时，可以通过如下方法确认查询中涉及到的表或列有没有做过analyze收集统计信息。
 
-1.  通过explain verbose执行query分析执行计划时会提示WARNING信息，如下所示：
+1. 通过explain verbose执行query分析执行计划时会提示WARNING信息，如下所示：
 
     ```
     WARNING:Statistics in some tables or columns(public.lineitem.l_receiptdate, public.lineitem.l_commitdate, public.lineitem.l_orderkey, public.lineitem.l_suppkey, public.orders.o_orderstatus, public.orders.o_orderkey) are not collected.
     HINT:Do analyze for them in order to generate optimized plan.
     ```
 
-2.  可以通过在pg\_log目录下的日志文件中查找以下信息来确认是当前执行的query是否由于没有收集统计信息导致查询性能变差。
+2. 可以通过在pg\_log目录下的日志文件中查找以下信息来确认是当前执行的query是否由于没有收集统计信息导致查询性能变差。
 
     ```
     2017-06-14 17:28:30.336 CST 140644024579856 20971684 [BACKEND] LOG:Statistics in some tables or columns(public.lineitem.l_receiptdate, public.lineitem.l_commitdate, public.lineitem.l_orderkey, public.linei
@@ -88,6 +88,4 @@ numwait desc;
     2017-06-14 17:28:30.336 CST 140644024579856 20971684 [BACKEND] HINT:Do analyze for them in order to generate optimized plan.
     ```
 
-
 当通过以上方法查看到哪些表或列没有做analyze，可以通过对WARNING或日志中上报的表或列做analyze可以解决由于为收集统计信息导致查询变慢的问题。
-

@@ -105,4 +105,3 @@
 > [!WARNING]注意 
 >
 > ODBC is the central layer of the application program and the database. It is responsible for transmitting the SQL instructions issued by the application program to the database, and does not parse the SQL syntax by itself. Therefore, when an SQL statement with confidential information (such as a plaintext password) is written in an application, the confidential information will be exposed in the driver log.
-

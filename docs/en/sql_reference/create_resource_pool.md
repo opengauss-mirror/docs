@@ -27,7 +27,7 @@ CREATE RESOURCE POOL pool_name
 
 ## Parameter Description<a name="en-us_topic_0059777569_s9b6dbda628294e24a95da9e33949c3e8"></a>
 
--   **pool\_name**
+- **pool\_name**
 
     Specifies the name of a resource pool.
 
@@ -35,38 +35,38 @@ CREATE RESOURCE POOL pool_name
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **group\_name**
+- **group\_name**
 
     Specifies the name of a Cgroup.
 
     >[!NOTE]NOTE 
-    >-   You can use either double quotation marks \(""\) or single quotation marks \(''\) in the syntax when setting the name of a Cgroup.
-    >-   The value of  **group\_name**  is case-sensitive.
-    >-   If  **group\_name**  is not specified, the string "Medium" will be used by default in the syntax, indicating the  **Medium**  Timeshare Cgroup under  **DefaultClass**.
-    >-   If a database administrator specifies a Workload Cgroup under  **Class**, for example,  **control\_group**  set to  **class1:workload1**, the resource pool will be associated with the  **workload1**  Cgroup under  **class1**. The level of the Workload Cgroup can also be specified. For example,  **control\_group**  is set to  **class1:workload1:1**.
-    >-   If a database user specifies the Timeshare Cgroup string \(**Rush**,  **High**,  **Medium**, or  **Low**\) in the syntax, for example,  **control\_group**  is set to  **High**, the resource pool will be associated with the  **High**  Timeshare Cgroup under  **DefaultClass**.
+    >- You can use either double quotation marks \(""\) or single quotation marks \(''\) in the syntax when setting the name of a Cgroup.
+    >- The value of  **group\_name**  is case-sensitive.
+    >- If  **group\_name**  is not specified, the string "Medium" will be used by default in the syntax, indicating the  **Medium**  Timeshare Cgroup under  **DefaultClass**.
+    >- If a database administrator specifies a Workload Cgroup under  **Class**, for example,  **control\_group**  set to  **class1:workload1**, the resource pool will be associated with the  **workload1**  Cgroup under  **class1**. The level of the Workload Cgroup can also be specified. For example,  **control\_group**  is set to  **class1:workload1:1**.
+    >- If a database user specifies the Timeshare Cgroup string \(**Rush**,  **High**,  **Medium**, or  **Low**\) in the syntax, for example,  **control\_group**  is set to  **High**, the resource pool will be associated with the  **High**  Timeshare Cgroup under  **DefaultClass**.
 
     Value range: a string. It must comply with the rule in the description, which specifies the created Cgroup.
 
--   **stmt**
+- **stmt**
 
     Specifies the maximum number of statements that can be concurrently executed in a resource pool.
 
     Value range: numeric data ranging from –1 to 2147483647
 
--   **dop**
+- **dop**
 
     Specifies the maximum statement concurrency degree for a resource pool, equivalent to the number of threads that can be created for executing a statement.
 
     Value range: numeric data ranging from 1 to 64
 
--   **memory\_size**
+- **memory\_size**
 
     Specifies the maximum memory size of a resource pool.
 
     Value range: a string from 1 KB to 2047 GB
 
--   **mem\_percent**
+- **mem\_percent**
 
     Specifies the proportion of available resource pool memory to the total memory or group user memory.
 
@@ -77,7 +77,7 @@ CREATE RESOURCE POOL pool_name
     >[!NOTE]NOTE 
     >When both  **mem\_percent**  and  **memory\_limit**  are specified, only  **mem\_percent**  takes effect.
 
--   **io\_limits**
+- **io\_limits**
 
     Specifies the upper limit of IOPS in a resource pool.
 
@@ -85,7 +85,7 @@ CREATE RESOURCE POOL pool_name
 
     Value range: numeric data ranging from 0 to 2147483647
 
--   **io\_priority**
+- **io\_priority**
 
     Specifies the I/O priority for jobs that consume many I/O resources. It takes effect when the I/O usage reaches 90%.
 
@@ -94,7 +94,7 @@ CREATE RESOURCE POOL pool_name
     >[!NOTE]NOTE 
     >The settings of  **io\_limits**  and  **io\_priority**  are valid only for complex jobs, such as batch import \(using  **INSERT INTO SELECT**,  **COPY FROM**, or  **CREATE TABLE AS**\), complex queries involving over 500 MB data on each DN, and  **VACUUM FULL**.
 
--   **nodegroup**
+- **nodegroup**
 
     Specifies the name of a logical cluster. The logical cluster must already exist.
 
@@ -102,16 +102,15 @@ CREATE RESOURCE POOL pool_name
 
     This parameter is invalid in a standalone system.
 
--   **is\_foreign**
+- **is\_foreign**
 
     In logical cluster mode, specifies the current resource pool to control the resources of common users that are not associated with the logical cluster specified by  **nodegroup**.
 
     This parameter is invalid in a standalone system.
 
     >[!NOTE]NOTE 
-    >-   **nodegroup**  must specify an existing logical cluster, and cannot be  **elastic\_group**  or the default node group \(**group\_version1**\), which is generated during cluster installation.
-    >-   If  **is\_foreign**  is set to  **true**, the resource pool cannot be associated with users. That is,  **CREATE USER ... RESOURCE POOL**  cannot be used to configure resource pools for users. The resource pool automatically checks whether the users are associated with its logical cluster. If they are not, they will be controlled by the resource pool when performing operations on DNs in the logical cluster.
-
+    >- **nodegroup**  must specify an existing logical cluster, and cannot be  **elastic\_group**  or the default node group \(**group\_version1**\), which is generated during cluster installation.
+    >- If  **is\_foreign**  is set to  **true**, the resource pool cannot be associated with users. That is,  **CREATE USER ... RESOURCE POOL**  cannot be used to configure resource pools for users. The resource pool automatically checks whether the users are associated with its logical cluster. If they are not, they will be controlled by the resource pool when performing operations on DNs in the logical cluster.
 
 ## Examples<a name="en-us_topic_0059777569_s44181f6d005b4da1952aaeff4ef66e0e"></a>
 
@@ -144,4 +143,3 @@ openGauss=# DROP RESOURCE POOL pool5;
 ## Helpful Links<a name="en-us_topic_0059777569_s00af0cee720942fa8efec001d31e8c84"></a>
 
 [ALTER RESOURCE POOL](alter_resource_pool.md)  and  [DROP RESOURCE POOL](drop_resource_pool.md)
-

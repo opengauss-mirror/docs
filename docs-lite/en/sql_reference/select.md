@@ -8,14 +8,14 @@ Serving as an overlaid filter for a database table,  **SELECT**  filters require
 
 ## Precautions<a name="en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_s42c37979749545719ac9114594f45d93"></a>
 
--   The owner of a table, users granted with the  **SELECT**  permission on the table, or users granted with the  **SELECT ANY TABLE**  permission can read data in the table or view. The system administrator has the permission to read data in the table or view by default.
--   You must have the  **SELECT**  permission on each field used in the SELECT statement.
+- The owner of a table, users granted with the  **SELECT**  permission on the table, or users granted with the  **SELECT ANY TABLE**  permission can read data in the table or view. The system administrator has the permission to read data in the table or view by default.
+- You must have the  **SELECT**  permission on each field used in the SELECT statement.
 
--   The use of  **FOR UPDATE**,  **FOR NO KEY UPDATE**,  **FOR SHARE**, or  **FOR KEY SHARE**  also requires the  **UPDATE**  permission.
+- The use of  **FOR UPDATE**,  **FOR NO KEY UPDATE**,  **FOR SHARE**, or  **FOR KEY SHARE**  also requires the  **UPDATE**  permission.
 
 ## Syntax<a name="en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_sb7329222602d46fe944bf6c300931dd2"></a>
 
--   Query data.
+- Query data.
 
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
@@ -37,22 +37,23 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 >[!NOTE]NOTE 
 >In condition and expression, you can use the aliases of expressions in  **targetlist**  in compliance with the following rules:
->-   Reference only within the same level.
->-   Only reference aliases in  **targetlist**.
->-   Reference a prior expression in a subsequent expression.
->-   The  **volatile**  function cannot be used.
->-   The  **Window**  function cannot be used.
->-   Aliases cannot be referenced in the  **join on**  condition.
->-   An error is reported if  **targetlist**  contains multiple referenced aliases.
+>
+>- Reference only within the same level.
+>- Only reference aliases in  **targetlist**.
+>- Reference a prior expression in a subsequent expression.
+>- The  **volatile**  function cannot be used.
+>- The  **Window**  function cannot be used.
+>- Aliases cannot be referenced in the  **join on**  condition.
+>- An error is reported if  **targetlist**  contains multiple referenced aliases.
 
--   The subquery  **with\_query**  is as follows:
+- The subquery  **with\_query**  is as follows:
 
     ```
     with_query_name [ ( column_name [, ...] ) ]
         AS [ [ NOT ] MATERIALIZED ] ( {select | values | insert | update | delete} )
     ```
 
--   The specified query source  **from\_item**  is as follows:
+- The specified query source  **from\_item**  is as follows:
 
     ```
     {[ ONLY ] table_name [ * ] [ partition_clause ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
@@ -65,7 +66,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     |from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]}
     ```
 
--   The  **group**  clause is as follows:
+- The  **group**  clause is as follows:
 
     ```
     ( )
@@ -76,7 +77,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     | GROUPING SETS ( grouping_element [, ...] )
     ```
 
--   The specified partition  **partition\_clause**  is as follows:
+- The specified partition  **partition\_clause**  is as follows:
 
     ```
     PARTITION { ( partition_name ) | FOR (  partition_value [, ...] ) } |
@@ -86,23 +87,22 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     >[!NOTE]NOTE 
     >The specified partition applies only to partitioned tables.
 
--   The sorting order  **nlssort\_expression\_clause**  is as follows:
+- The sorting order  **nlssort\_expression\_clause**  is as follows:
 
     ```
     NLSSORT ( column_name, ' NLS_SORT = { SCHINESE_PINYIN_M | generic_m_ci } ' )
     The second parameter can be generic_m_ci, which supports only the case-insensitive order for English characters.
     ```
 
--   Simplified query syntax, equivalent to  **select \* from table\_name**.
+- Simplified query syntax, equivalent to  **select \* from table\_name**.
 
     ```
     TABLE { ONLY {(table_name)| table_name} | table_name [ * ]};
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc"></a>
 
--   **WITH \[ RECURSIVE \] with\_query \[, ...\]**
+- **WITH \[ RECURSIVE \] with\_query \[, ...\]**
 
     Specifies one or more subqueries that can be referenced by name in the main query, which is equivalent to a temporary table.
 
@@ -110,23 +110,22 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     The detailed format of  **with\_query**  is as follows:  **with\_query\_name \[ \( column\_name \[, ...\] \) \] AS \[ \[ NOT \] MATERIALIZED \] \( \{select | values | insert | update | delete\} \)**
 
-    -   **with\_query\_name**  specifies the name of the result set generated by a subquery. Such names can be used to access the result sets of subqueries in a query.
-    -   **column\_name**  specifies the column name displayed in the subquery result set.
-    -   Each subquery can be a  **SELECT**,  **VALUES**,  **INSERT**,  **UPDATE**  or  **DELETE**  statement.
-    -   You can use  **MATERIALIZED**  or  **NOT MATERIALIZED**  to modify the CTE.
-        -   If  **MATERIALIZED**  is specified, the WITH query will be materialized, and a copy of the subquery result set is generated. The copy is directly queried at the reference point. Therefore, the WITH subquery cannot be jointly optimized with the SELECT statement trunk \(for example, predicate pushdown and equivalence class transfer\). In this scenario, you can use  **NOT MATERIALIZED**  for modification. If the WITH query can be executed as a subquery inline, the preceding optimization can be performed.
-        -   If the user does not explicitly declare the materialized attribute, comply with the following rules: If the CTE is referenced only once in the SELECT statement trunk to which it belongs and semantically supports inline execution, it will be rewritten as subquery inline execution. Otherwise, the materialized execution will be performed in CTE Scan mode.
+    - **with\_query\_name**  specifies the name of the result set generated by a subquery. Such names can be used to access the result sets of subqueries in a query.
+    - **column\_name**  specifies the column name displayed in the subquery result set.
+    - Each subquery can be a  **SELECT**,  **VALUES**,  **INSERT**,  **UPDATE**  or  **DELETE**  statement.
+    - You can use  **MATERIALIZED**  or  **NOT MATERIALIZED**  to modify the CTE.
+        - If  **MATERIALIZED**  is specified, the WITH query will be materialized, and a copy of the subquery result set is generated. The copy is directly queried at the reference point. Therefore, the WITH subquery cannot be jointly optimized with the SELECT statement trunk \(for example, predicate pushdown and equivalence class transfer\). In this scenario, you can use  **NOT MATERIALIZED**  for modification. If the WITH query can be executed as a subquery inline, the preceding optimization can be performed.
+        - If the user does not explicitly declare the materialized attribute, comply with the following rules: If the CTE is referenced only once in the SELECT statement trunk to which it belongs and semantically supports inline execution, it will be rewritten as subquery inline execution. Otherwise, the materialized execution will be performed in CTE Scan mode.
 
+- **plan\_hint**  clause
 
--   **plan\_hint**  clause
+    Follows the  **SELECT**  keyword in the  **/\*+**<*Plan hint*\>**\*/**  format. It is used to optimize the plan of a  **SELECT**  statement block. For details, see  [Hint-based Tuning](../performance_tuning_guide/plan_hint_optimization_overview.md). In each statement, only the first  **/\*+** *plan\*hint _**\*/**  comment block takes effect as a hint. Multiple hints can be written.
 
-    Follows the  **SELECT**  keyword in the  **/\*+**<*Plan hint*\>** \*/**  format. It is used to optimize the plan of a  **SELECT**  statement block. For details, see  [Hint-based Tuning](../performance_tuning_guide/plan_hint_optimization_overview.md). In each statement, only the first  **/\*+** *plan\*hint _**\*/**  comment block takes effect as a hint. Multiple hints can be written.
-
--   **ALL**
+- **ALL**
 
     Specifies that all rows that meet the conditions are returned. This is the default behavior and can be omitted.
 
--   **DISTINCT \[ ON \( expression \[, ...\] \) \]**
+- **DISTINCT \[ ON \( expression \[, ...\] \) \]**
 
     Removes all duplicate rows from the  **SELECT**  result set so one row is kept from each group of duplicates.
 
@@ -135,7 +134,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     >[!TIP]NOTICE 
     >**DISTINCT ON**  expression is explained with the same rule of  **ORDER BY**. Unless you use  **ORDER BY**  to guarantee that the required row appears first, you cannot know what the first row is.
 
--   **SELECT list**
+- **SELECT list**
 
     Specifies the name of a column in the table to be queried. The value can be a part of the column name or all of the column names. The wildcard \(\*\) is used to represent the column name.
 
@@ -143,195 +142,192 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     Column names can be expressed in the following formats:
 
-    -   Manually input column names which are spaced using commas \(,\).
-    -   Columns computed in the  **FROM**  clause.
+    - Manually input column names which are spaced using commas \(,\).
+    - Columns computed in the  **FROM**  clause.
 
--   **FROM clause**
+- **FROM clause**
 
     Specifies one or more source tables for  **SELECT**.
 
     The  **FROM**  clause can contain the following elements:
 
-    -   table\_name
+    - table\_name
 
         Specifies the name of a table or view. The schema name can be added before the table name or view name, for example, schema\_name.table\_name.
 
-    -   alias
+    - alias
 
         Gives a temporary alias to a table to facilitate the quotation by other queries.
 
         An alias is used for brevity or to eliminate ambiguity for self-joins. If an alias is provided, it completely hides the actual name of the table.
 
-    -   TABLESAMPLE  *sampling\*method_  \(  *argument*  \[, ...\] \) \[ REPEATABLE \(  *seed*  \) \]
+    - TABLESAMPLE  *sampling\*method_  \(  *argument*  \[, ...\] \) \[ REPEATABLE \(  *seed*  \) \]
 
-        The  **TABLESAMPLE**  clause following  *table\*name_  specifies that the specified  *sampling\*method_  should be used to retrieve the subset of rows in the table.
+        The  **TABLESAMPLE**  clause following  *table\*name_specifies that the specified*sampling\*method_  should be used to retrieve the subset of rows in the table.
 
         The optional  **REPEATABLE**  clause specifies the number of seeds used to generate random numbers in the sampling method. The seed value can be any non-null constant value. If the table was not changed during the query, the two queries having the same seed and  *argument*  values will select the same sampling in this table. However, different seed values usually generate different samples. If  **REPEATABLE**  is not specified, a new random sample will be selected for each query based on the seed generated by the system.
 
-    -   TIMECAPSULE \{ TIMESTAMP | CSN \} expression
+    - TIMECAPSULE \{ TIMESTAMP | CSN \} expression
 
         Queries the table data of a specified CSN or at a specified time point.
 
         Currently, the following tables do not support flashback query: system catalogs, column-store tables, memory tables, DFS tables, global temporary tables, local temporary tables, unlogged tables, views, sequence tables, hash bucket tables, shared tables, inherited tables, and tables with the  **PARTIAL CLUSTER KEY**  constraint.
 
-        -   TIMECAPSULE TIMESTAMP
+        - TIMECAPSULE TIMESTAMP
 
             Searches for the result set of a specified time point based on the date as the flashback query flag.  *date*  must be a valid past timestamp
 
-        -   TIMECAPSULE CSN
+        - TIMECAPSULE CSN
 
             Searches for the result set of a specified CSN point based on the CSN flashback of the table as the flashback query flag. The CSN can be obtained from  **snpcsn**  recorded in  **gs\_txn\_snapshot**.
 
             >[!NOTE]NOTE 
-            >-   A flashback query cannot span statements that affect the table structure or physical storage. Otherwise, an error is reported. Between the flashback point and the current point, if a statement \(**TRUNCATE**, **DDL**,  **DCL**, or  **VACUUM FULL**\) has been executed to modify the table structure or affect physical storage, the flashback fails.
-            >-   When the flashback point is too old, the old version cannot be obtained because the flashback version is recycled. As a result, the flashback fails and the error message "Restore point too old" is displayed.
-            >-   The flashback point is specified by time. The maximum difference between the flashback point and the actual time is 3 seconds.
-            >-   After truncating a table, perform a flashback query or flashback on the table. The error message "Snapshot too old" is displayed when a flashback is performed at a specified time point. Data cannot be found or the error message "Snapshot too old" is reported during the CSN-based flashback.
+            >- A flashback query cannot span statements that affect the table structure or physical storage. Otherwise, an error is reported. Between the flashback point and the current point, if a statement \(**TRUNCATE**, **DDL**,  **DCL**, or  **VACUUM FULL**\) has been executed to modify the table structure or affect physical storage, the flashback fails.
+            >- When the flashback point is too old, the old version cannot be obtained because the flashback version is recycled. As a result, the flashback fails and the error message "Restore point too old" is displayed.
+            >- The flashback point is specified by time. The maximum difference between the flashback point and the actual time is 3 seconds.
+            >- After truncating a table, perform a flashback query or flashback on the table. The error message "Snapshot too old" is displayed when a flashback is performed at a specified time point. Data cannot be found or the error message "Snapshot too old" is reported during the CSN-based flashback.
 
-
-    -   column\_alias
+    - column\_alias
 
         Specifies the column alias.
 
-    -   PARTITION
+    - PARTITION
 
         Queries data in the specified partition in a partitioned table.
 
-    -   partition\_name
+    - partition\_name
 
         Specifies the name of a partition.
 
-    -   partition\_value
+    - partition\_value
 
         Specifies the value of the specified partition key. If there are many partition keys, use the  **PARTITION FOR**  clause to specify the value of the only partition key you want to use.
 
-    -   SUBPARTITION
+    - SUBPARTITION
 
         Queries data in the specified level-2 partition in a partitioned table.
 
-    -   subpartition\_name
+    - subpartition\_name
 
         Specifies the name of a level-2 partition name.
 
-    -   subpartition\_value
+    - subpartition\_value
 
         Specifies the key values of specified level-1 and level-2 partitions. The values of the two partition keys specified by the  **SUBPARTITION FOR**  clause uniquely identify a level-2 partition.
 
-    -   subquery
+    - subquery
 
         Performs a subquery in the  **FROM**  clause. A temporary table is created to save subquery results.
 
-    -   with\_query\_name
+    - with\_query\_name
 
         Specifies that the  **WITH**  clause can also be used as the source of the  **FROM**  clause and can be referenced by the name of the  **WITH**  query.
 
-    -   function\_name
+    - function\_name
 
         Function name. Function calls can appear in the  **FROM**  clause.
 
-    -   join\_type
+    - join\_type
 
         The options are as follows:
 
-        -   \[ INNER \] JOIN
+        - \[ INNER \] JOIN
 
             A  **JOIN**  clause combines two  **FROM**  items. You can use parentheses to determine the order of nesting. In the absence of parentheses,  **JOIN**  nests left-to-right.
 
             In any case,  **JOIN**  binds more tightly than the commas separating  **FROM**  items.
 
-        -   LEFT \[ OUTER \] JOIN
+        - LEFT \[ OUTER \] JOIN
 
             Returns all rows that meet join conditions in the Cartesian product, plus those rows that do not match the right table rows in the left table by join conditions. This left-hand row is extended to the full width of the joined table by inserting  **NULL**  values for the right-hand columns. Note that only the  **JOIN**  clause's own condition is considered while the system decides which rows have matches. Outer conditions are applied afterward.
 
-        -   RIGHT \[ OUTER \] JOIN
+        - RIGHT \[ OUTER \] JOIN
 
             Returns all the joined rows, plus one row for each unmatched right-hand row \(extended with  **NULL**  on the left\).
 
             This is just a notational convenience, since you could convert it to a  **LEFT OUTER JOIN**  by switching the left and right inputs.
 
-        -   FULL \[ OUTER \] JOIN
+        - FULL \[ OUTER \] JOIN
 
             Returns all the joined rows, pluses one row for each unmatched left-hand row \(extended with  **NULL**  on the right\), and pluses one row for each unmatched right-hand row \(extended with  **NULL**  on the left\).
 
-        -   CROSS JOIN
+        - CROSS JOIN
 
             Is equivalent to  **INNER JOIN ON \(TRUE\)**, which means no rows are removed by qualification. These join types are just a notational convenience, since they do nothing you could not do with plain  **FROM**  and  **WHERE**.
 
             >[!NOTE]NOTE 
             >For the  **INNER**  and  **OUTER**  join types, a join condition must be specified, namely exactly one of  **NATURAL ON**,  **join\_condition**, or  **USING \(join\_column \[, ...\]\)**. For  **CROSS JOIN**, none of these clauses can appear.
 
-
         **CROSS JOIN**  and  **INNER JOIN**  produce a simple Cartesian product, the same result as you get from listing the two items at the top level of  **FROM**.
 
-    -   ON join\_condition
+    - ON join\_condition
 
         Defines which rows have matches in joins. Example: ON left\_table.a = right\_table.a You are not advised to use numeric types such as int for  **join\_condition**, because such types can be implicitly converted to bool values \(non-zero values are implicitly converted to  **true**  and  **0**  is implicitly converted to  **false**\), which may cause unexpected results.
 
-    -   USING\(join\_column\[, ...\]\)
+    - USING\(join\_column\[, ...\]\)
 
         Abbreviation of  **ON left\_table.a = right\_table.a AND left\_table.b = right\_table.b ....**. The names of the corresponding columns must be the same.
 
-    -   NATURAL
+    - NATURAL
 
         Is a shorthand for a  **USING**  list that mentions all columns in the two tables that have the same names.
 
-    -   from item
+    - from item
 
         Specifies the name of the query source object connected.
 
-
--   **WHERE clause**
+- **WHERE clause**
 
     Forms an expression for row selection to narrow down the query range of  **SELECT**.  **condition**  indicates any expression that returns a value of Boolean type. Rows that do not meet this condition will not be retrieved. You are not advised to use numeric types such as int for  **condition**, because such types can be implicitly converted to bool values \(non-zero values are implicitly converted to  **true**  and  **0**  is implicitly converted to  **false**\), which may cause unexpected results.
 
     In the  **WHERE**  clause, you can use the operator \(+\) to convert a table join to an outer join. However, this method is not recommended because it is not the standard SQL syntax and may raise syntax compatibility issues during platform migration. There are many restrictions on using the operator \(+\):
 
-    1.  It can appear only in the  **WHERE**  clause.
-    2.  If a table join has been specified in the  **FROM**  clause, the operator \(+\) cannot be used in the  **WHERE**  clause.
-    3.  The operator \(+\) can work only on columns of tables or views, instead of on expressions.
-    4.  If table A and table B have multiple join conditions, the operator \(+\) must be specified in all the conditions. Otherwise, the operator \(+\) will not take effect, and the table join will be converted into an inner join without any prompt information.
-    5.  Tables specified in a join condition where the operator \(+\) works cannot cross queries or subqueries. If tables where the operator \(+\) works are not in the  **FROM**  clause of the current query or subquery, an error will be reported. If a peer table for the operator \(+\) does not exist, no error will be reported and the table join will be converted into an inner join.
-    6.  Expressions where the operator \(+\) is used cannot be directly connected through  **OR**.
-    7.  If a column where the operator \(+\) works is compared with a constant, the expression becomes a part of the join condition.
-    8.  A table cannot have multiple foreign tables.
-    9.  The operator \(+\) can appear only in the following expressions: comparison, NOT, ANY, ALL, IN, NULLIF, IS DISTINCT FROM, and IS OF. It is not allowed in other types of expressions. In addition, these expressions cannot be connected through  **AND**  or  **OR**.
+    1. It can appear only in the  **WHERE**  clause.
+    2. If a table join has been specified in the  **FROM**  clause, the operator \(+\) cannot be used in the  **WHERE**  clause.
+    3. The operator \(+\) can work only on columns of tables or views, instead of on expressions.
+    4. If table A and table B have multiple join conditions, the operator \(+\) must be specified in all the conditions. Otherwise, the operator \(+\) will not take effect, and the table join will be converted into an inner join without any prompt information.
+    5. Tables specified in a join condition where the operator \(+\) works cannot cross queries or subqueries. If tables where the operator \(+\) works are not in the  **FROM**  clause of the current query or subquery, an error will be reported. If a peer table for the operator \(+\) does not exist, no error will be reported and the table join will be converted into an inner join.
+    6. Expressions where the operator \(+\) is used cannot be directly connected through  **OR**.
+    7. If a column where the operator \(+\) works is compared with a constant, the expression becomes a part of the join condition.
+    8. A table cannot have multiple foreign tables.
+    9. The operator \(+\) can appear only in the following expressions: comparison, NOT, ANY, ALL, IN, NULLIF, IS DISTINCT FROM, and IS OF. It is not allowed in other types of expressions. In addition, these expressions cannot be connected through  **AND**  or  **OR**.
     10. The operator \(+\) can be used to convert a table join only to a left or right outer join, instead of a full join. That is, the operator \(+\) cannot be specified on both tables of an expression.
 
     >[!TIP]NOTICE 
     >For the  **WHERE**  clause, if special character  **%**,  **\_**, or  **\\**  is queried in  **LIKE**, add the slash  **\\**  before each character.
 
--   **START WITH clause**
+- **START WITH clause**
 
     The  **START WITH**  clause is usually used together with the  **CONNECT BY**  clause and indicates the initial condition of recursion. Data is traversed recursively and hierarchically. If this clause is omitted and the  **CONNECT BY**  clause is used alone, all rows in the table are used as the initial set.
 
--   **CONNECT BY clause**
+- **CONNECT BY clause**
 
     **CONNECT BY**  indicates the recursive join condition. In the  **CONNECT BY**  condition, you can specify the  **PRIOR**  keyword for a column, indicating that the column is used as the recursive key for recursion. The  **PRIOR**  keyword can be specified only for columns in the table and cannot be specified for expressions or type conversion. If  **NOCYCLE**  is added before a recursive join condition, recursion stops when a circular record is encountered. \(Note: A SELECT statement containing the  **START WITH .. CONNECT BY**  clause does not support the FOR SHARE or UPDATE lock.\)
 
--   **ORDER SIBLINGS BY**  clause
+- **ORDER SIBLINGS BY**  clause
 
     The  **ORDER SIBLINGS BY**  clause is usually used together with the  **START WITH**  and  **CONNECT BY**  clauses. The usage of the  **ORDER SIBLINGS BY**  clause is the same as that of the  **ORDER BY**  clause and is used in hierarchical ordering during recursion.
 
--   **GROUP BY clause**
+- **GROUP BY clause**
 
     Condenses query results into a single row all selected rows that share the same values for the grouped expressions.
 
-    -   CUBE \( \{ expression | \( expression \[, ...\] \) \} \[, ...\] \)
+    - CUBE \( \{ expression | \( expression \[, ...\] \) \} \[, ...\] \)
 
         A CUBE grouping is an extension to the  **GROUP BY**  clause that creates subtotals for all of the possible combinations of the given list of grouping columns \(or expressions\). In terms of multidimensional analysis, CUBE generates all the subtotals that could be calculated for a data cube with the specified dimensions. For example, given three expressions \(n=3\) in the CUBE clause, the operation results in 2<sup>n</sup>  = 2<sup>3</sup>  = 8 groupings. Rows grouped on the values of  *n*  expressions are called regular rows, and the rest are called superaggregate rows.
 
-    -   GROUPING SETS \( grouping\_element \[, ...\] \)
+    - GROUPING SETS \( grouping\_element \[, ...\] \)
 
         Another extension to the  **GROUP BY**  clause. It allows users to specify multiple  **GROUP BY**  clauses. This improves efficiency by trimming away unnecessary data. After you specify the set of groups that you want to create using a  **GROUPING SETS**  expression within a  **GROUP BY**  clause, the database does not need to compute a whole  **ROLLUP**  or  **CUBE**.
 
     >[!TIP]NOTICE 
     >If the  **SELECT**  list expression quotes some ungrouped fields and no aggregate function is used, an error is displayed. This is because multiple values may be returned for ungrouped fields.
 
--   **HAVING clause**
+- **HAVING clause**
 
     Selects special groups by working with the  **GROUP BY**  clause. The  **HAVING**  clause compares some attributes of groups with a constant. Only groups that matching the logical expression in the  **HAVING**  clause are extracted.
 
--   **WINDOW clause**
+- **WINDOW clause**
 
     The general format is  **WINDOW window\_name AS \( window\_definition \) \[, ...\]**.  **window\_name**  is a name can be referenced by  **window\_definition**.  **window\_definition**  can be expressed in the following forms:
 
@@ -364,31 +360,31 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     >[!TIP]NOTICE 
     >For the query of column storage table, only  **row\_number**  window function is supported, and  **frame\_clause**  is not supported.
 
--   **UNION clause**
+- **UNION clause**
 
     Computes the set union of the rows returned by the involved  **SELECT**  statements.
 
     The  **UNION**  clause has the following constraints:
 
-    -   By default, the result of  **UNION**  does not contain any duplicate rows unless the  **ALL**  clause is declared.
-    -   Multiple  **UNION**  operators in the same SELECT statement are evaluated left to right, unless otherwise specified by parentheses.
-    -   **FOR UPDATE**,  **FOR NO KEY UPDATE**,  **FOR SHARE**, and  **FOR KEY SHARE**  cannot be specified in the result or input of  **UNION**.
+    - By default, the result of  **UNION**  does not contain any duplicate rows unless the  **ALL**  clause is declared.
+    - Multiple  **UNION**  operators in the same SELECT statement are evaluated left to right, unless otherwise specified by parentheses.
+    - **FOR UPDATE**,  **FOR NO KEY UPDATE**,  **FOR SHARE**, and  **FOR KEY SHARE**  cannot be specified in the result or input of  **UNION**.
 
     General expression:
 
     select\_statement UNION \[ALL\] select\_statement
 
-    -   **select\_statement**  can be any SELECT statement without the  **ORDER BY**,  **LIMIT**,  **FOR UPDATE**,  **FOR NO KEY UPDATE**,  **FOR SHARE**, or  **FOR KEY SHARE**  clause.
-    -   **ORDER BY**  and  **LIMIT**  can be attached to the subexpression if it is enclosed in parentheses.
+    - **select\_statement**  can be any SELECT statement without the  **ORDER BY**,  **LIMIT**,  **FOR UPDATE**,  **FOR NO KEY UPDATE**,  **FOR SHARE**, or  **FOR KEY SHARE**  clause.
+    - **ORDER BY**  and  **LIMIT**  can be attached to the subexpression if it is enclosed in parentheses.
 
--   **INTERSECT clause**
+- **INTERSECT clause**
 
     Computes the set intersection of rows returned by the involved  **SELECT**  statements. The result of  **INTERSECT**  does not contain any duplicate rows.
 
     The  **INTERSECT**  clause has the following constraints:
 
-    -   Multiple  **INTERSECT**  operators in the same  **SELECT**  statement are evaluated left to right, unless otherwise specified by parentheses.
-    -   Processing  **INTERSECT**  preferentially when  **UNION**  and  **INTERSECT**  operations are executed for results of multiple  **SELECT**  statements.
+    - Multiple  **INTERSECT**  operators in the same  **SELECT**  statement are evaluated left to right, unless otherwise specified by parentheses.
+    - Processing  **INTERSECT**  preferentially when  **UNION**  and  **INTERSECT**  operations are executed for results of multiple  **SELECT**  statements.
 
     General format:
 
@@ -396,7 +392,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     **select\_statement**  can be any SELECT statement without the  **FOR UPDATE**,  **FOR NO KEY UPDATE**,  **FOR SHARE**, or  **FOR KEY SHARE**  clause.
 
--   **EXCEPT clause**
+- **EXCEPT clause**
 
     Has the following common form:
 
@@ -412,26 +408,27 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     Currently, the  **FOR UPDATE**,  **FOR NO KEY UPDATE**,  **FOR SHARE**, and  **FOR KEY SHARE**  clauses cannot be specified for the result of  **EXCEPT**  or any input of  **EXCEPT**.
 
--   **MINUS clause**
+- **MINUS clause**
 
     Has the same function and syntax as  **EXCEPT**  clause.
 
--   **ORDER BY clause**
+- **ORDER BY clause**
 
     Sorts data retrieved by  **SELECT**  in descending or ascending order. If the  **ORDER BY**  expression contains multiple columns:
 
-    -   If two columns are equal according to the leftmost expression, they are compared according to the next expression and so on.
-    -   If they are equal according to all specified expressions, they are returned in an implementation-dependent order.
-    -   When used with the  **DISTINCT**  keyword, the columns to be sorted in  **ORDER BY**  must be included in the columns of the result set retrieved by the SELECT statement.
-    -   When used with the  **GROUP BY**  clause, the columns to be sorted in  **ORDER BY**  must be included in the columns of the result set retrieved by the SELECT statement.
+    - If two columns are equal according to the leftmost expression, they are compared according to the next expression and so on.
+    - If they are equal according to all specified expressions, they are returned in an implementation-dependent order.
+    - When used with the  **DISTINCT**  keyword, the columns to be sorted in  **ORDER BY**  must be included in the columns of the result set retrieved by the SELECT statement.
+    - When used with the  **GROUP BY**  clause, the columns to be sorted in  **ORDER BY**  must be included in the columns of the result set retrieved by the SELECT statement.
 
     >[!TIP]NOTICE 
     >To support Chinese pinyin order, specify the  **UTF-8**,  **GB18030**, or  **GBK**  encoding mode during database initiation. The statements are as follows:
+>
     >```
     >initdb –E UTF8 –D ../data –locale=zh_CN.UTF-8, initdb -E GB18030 -D ../data -locale=zh_CN.GB18030, or initdb –E GBK –D ../data –locale=zh_CN.GBK.
     >```
 
--   **LIMIT clause**
+- **LIMIT clause**
 
     Consists of two independent sub-clauses:
 
@@ -439,7 +436,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     **OFFSET start count**  specifies the maximum number of rows to return, while  **start**  specifies the number of rows to skip before starting to return rows. When both are specified,  **start**  rows are skipped before starting to count the  **count**  rows to be returned.
 
--   **OFFSET clause**
+- **OFFSET clause**
 
     The SQL: 2008 standard has introduced a different clause:
 
@@ -447,11 +444,11 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     **start**  specifies the number of rows to skip before starting to return rows.
 
--   **FETCH \{ FIRST | NEXT \} \[ count \] \[ PERCENT \] \{ ROW | ROWS \} \{ ONLY | WITH TIES \} **
+- **FETCH \{ FIRST | NEXT \} \[ count \] \[ PERCENT \] \{ ROW | ROWS \} \{ ONLY | WITH TIES \}**
 
     The  **FETCH**  clause restricts the total number of rows starting from the first row of the return query result, and the default value of  **count**  is  **1**. The  **PERCENT**  keyword can be used to specify the number of rows returned as a percentage of the query result. The  **ONLY**  keyword indicates that only the specified number of rows are returned, and the  **WITH TIES**  keyword indicates that the specified number of rows are returned and all rows with the same values as the last row in the result set are returned in order.
 
--   **Locking clause**
+- **Locking clause**
 
     The  **FOR UPDATE**  clause locks the rows retrieved by  **SELECT**. This prevents these rows from being modified or deleted by other transactions before the current transaction ends. That is, other transactions that attempt to run  **UPDATE**,  **DELETE**,  **SELECT FOR UPDATE**,  **SELECT FOR NO KEY UPDATE**,  **SELECT FOR SHARE**, or  **SELECT FOR KEY SHARE**  for these rows will be blocked until the current transaction ends. Any  **DELETE**  on a row will also acquire the  **FOR UPDATE**  locking mode, as will  **UPDATE**  that modifies values on the primary key column. Conversely,  **SELECT FOR UPDATE**  waits for concurrent transactions that have run the preceding commands on the same row, and then locks and returns the updated row \(there may be no row because the row may have been deleted\).
 
@@ -475,19 +472,18 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     >**FOR UPDATE**,  **NO KEY UPDATE**,  **SHARE**, and  **KEY SHARE**  cannot be used to query column-store tables.
     >Only  **FOR SHARE**  and  **FOR UPDATE**  can be used to query the Ustore table.
 
--   **NLS\_SORT**
+- **NLS\_SORT**
 
     Specifies that a field is sorted in a special order. Currently, only Chinese Pinyin and case-insensitive sorting are supported. To support this sorting mode, you need to set the encoding format to UTF8, GB18030, or GBK when creating a database. If you set the encoding format to another format, for example, SQL\_ASCII, an error may be reported or the sorting mode may be invalid.
 
     Value range:
 
-    -   **SCHINESE\_PINYIN\_M**, sorted by Pinyin order.
-    -   **generic\_m\_ci**: sorted in case-insensitive order \(optional; only English characters are supported in the case-insensitive order.\)
+    - **SCHINESE\_PINYIN\_M**, sorted by Pinyin order.
+    - **generic\_m\_ci**: sorted in case-insensitive order \(optional; only English characters are supported in the case-insensitive order.\)
 
--   **PARTITION clause**
+- **PARTITION clause**
 
     Queries data in the specified partition in a partitioned table.
-
 
 ## Examples<a name="en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_sc1b5e63c90c946b89430696c38fc86c0"></a>
 

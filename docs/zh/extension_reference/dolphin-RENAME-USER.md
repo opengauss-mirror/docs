@@ -6,9 +6,9 @@
 
 ## 注意事项<a name="zh-cn_topic_0283136462_zh-cn_topic_0237122152_zh-cn_topic_0059778107_sdcf8f26a27a64e52b7099ca3ce0256b6"></a>
 
--   RENAME USER会修改用户名，并且只能修改当前表的user的名称。
--   如果修改多个用户，并且其中一个用户名不存在或其他原因导致执行失败，整条语句都会失败，所有用户名都会保持不变。
--   与`ALTER USER ... RENAME TO ...`等价。
+- RENAME USER会修改用户名，并且只能修改当前表的user的名称。
+- 如果修改多个用户，并且其中一个用户名不存在或其他原因导致执行失败，整条语句都会失败，所有用户名都会保持不变。
+- 与`ALTER USER ... RENAME TO ...`等价。
 
 ## 语法格式<a name="zh-cn_topic_0283136462_zh-cn_topic_0237122152_zh-cn_topic_0059778107_s6fa866d73d5c4158836c9fdd0ad5b3ac"></a>
 
@@ -22,9 +22,9 @@ RENAME USER
 
 ## 参数说明<a name="zh-cn_topic_0283136462_zh-cn_topic_0237122152_zh-cn_topic_0059778107_sa6ea557919e84c0db8ed5cbb227fa983"></a>
 
--   **old_user** 
+- **old_user** 
     旧的用户名，必须已存在
--    **new_user** 
+- **new_user** 
     新的用户名
 
 ## 示例<a name="zh-cn_topic_0283136462_zh-cn_topic_0237122152_zh-cn_topic_0059778107_s1af12a7c6e4e456f9fc72da9c90358ff"></a>

@@ -154,29 +154,29 @@ CREATE TABLE table_name
 
 ### 参数说明<a name="section415419560710"></a>
 
--   **table\_name**
+- **table\_name**
 
     要创建的表名。
 
--   **column\_name**
+- **column\_name**
 
     新表中要创建的字段名。
 
--   **data\_type**
+- **data\_type**
 
     字段的数据类型。
 
--   **ORIENTATION**
+- **ORIENTATION**
 
     指定表数据的存储方式，即行存方式、列存方式，该参数设置成功后就不再支持修改。
 
     取值范围：
 
-    -   ROW，表示表的数据将以行式存储。
+    - ROW，表示表的数据将以行式存储。
 
         行存储适合于OLTP业务，适用于点查询或者增删操作较多的场景，目前使用Astore，Ustore作为行存储引擎。
 
-    -   COLUMN，表示表的数据将以列式存储。
+    - COLUMN，表示表的数据将以列式存储。
 
         列存储适合于数据仓库业务，此类型的表上会做大量的汇聚计算，且涉及的列操作较少，目前使用Cstore作为列存储引擎。
 

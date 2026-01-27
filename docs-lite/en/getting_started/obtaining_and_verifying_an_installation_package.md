@@ -2,11 +2,11 @@
 
 ## Procedure<a name="en-us_topic_0289899746_en-us_topic_0283136484_en-us_topic_0241802590_en-us_topic_0085434667_en-us_topic_0059782060_section62223956163549"></a>
 
-1.  Download the installation package of the corresponding platform from the openGauss community.
-    1.  [Log in to the openGauss community](https://opengauss.org/en/download/)  and download the latest installation package of the corresponding platform. For individual developers or non-enterprise-level environments, download the simplified installation package \(without installing components such as the OM\).
-    2.  Click  **Download**.
+1. Download the installation package of the corresponding platform from the openGauss community.
+    1. [Log in to the openGauss community](https://opengauss.org/en/download/)  and download the latest installation package of the corresponding platform. For individual developers or non-enterprise-level environments, download the simplified installation package \(without installing components such as the OM\).
+    2. Click  **Download**.
 
-2.  Check the installation package.
+2. Check the installation package.
 
     Decompress the installation package and check whether the installation directory and files are complete. Run the following commands in the directory where the installation package is stored:
 
@@ -29,5 +29,3 @@
     drwx------ 2 root root     4096 Mar 31 21:18 simpleInstall
     -rw------- 1 root root       32 Mar 31 21:18 version.cfg
     ```
-
-

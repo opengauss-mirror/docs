@@ -6,8 +6,8 @@
 
 **Value range**: Boolean
 
--   **on**  indicates that the global system cache function is enabled.
--   **off**  indicates that the global system cache function is disabled.
+- **on**  indicates that the global system cache function is enabled.
+- **off**  indicates that the global system cache function is disabled.
 
 **Default value**:  **on**
 

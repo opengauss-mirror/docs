@@ -159,19 +159,18 @@ ERROR:  Statement 2578396627 canceled by abort patch patch2
 
 ## 特性约束<a name="section865112655119"></a>
 
-1.  仅支持针对Unique SQL ID打PATCH，如果存在Unique SQL ID冲突，用于Hint调优的SQL PATCH可能影响性能，但不影响语义正确性。
-2.  仅支持不改变SQL语义的Hint作为PATCH，不支持SQL改写。
-3.  不支持逻辑备份、恢复。
-4.  不支持创建时校验PATCH合法性，如果PATCH的Hint存在语法或语义错误，不影响查询正确执行。
-5.  仅初始用户、运维管理员、监控管理员、系统管理员用户有权限执行。
-6.  库之间不共享，创建SQL PATCH时需要连接目标库。
-7.  配置集中式备机可读时，需要指定主机执行SQL PATCH创建/修改/删除函数调用，备机执行报错。
-8.  SQL PATCH同步给备机存在一定延迟，待备机回放相关日志后PATCH生效。
-9.  不支持对存储过程中的SQL语句生效，当前机制不会对存储过程内语句生成Unique SQL ID。
+1. 仅支持针对Unique SQL ID打PATCH，如果存在Unique SQL ID冲突，用于Hint调优的SQL PATCH可能影响性能，但不影响语义正确性。
+2. 仅支持不改变SQL语义的Hint作为PATCH，不支持SQL改写。
+3. 不支持逻辑备份、恢复。
+4. 不支持创建时校验PATCH合法性，如果PATCH的Hint存在语法或语义错误，不影响查询正确执行。
+5. 仅初始用户、运维管理员、监控管理员、系统管理员用户有权限执行。
+6. 库之间不共享，创建SQL PATCH时需要连接目标库。
+7. 配置集中式备机可读时，需要指定主机执行SQL PATCH创建/修改/删除函数调用，备机执行报错。
+8. SQL PATCH同步给备机存在一定延迟，待备机回放相关日志后PATCH生效。
+9. 不支持对存储过程中的SQL语句生效，当前机制不会对存储过程内语句生成Unique SQL ID。
 10. 用于规避的Abort Patch不建议在数据库中长期使用，只应该作为临时规避方法。遇到内核问题所导致的特定语句触发数据库服务不可用问题，需要尽快修改业务或升级内核版本解决问题。并且升级后由于Unique SQL ID生成方法可能变化，可能导致规避方法失效。
 11. 当前，除DML语句之外，其他SQL语句（如CREATE TABLE等）的Unique SQL ID是对语句文本直接哈希生成的，所以对于此类语句，SQL PATCH对大小写、空格、换行等敏感，即不同的文本的语句，即使语义相对，仍然需要对应不同的SQL PATCH。对于DML，则同一个SQL PATCH可以对不同入参的语句生效，并且忽略大小写和空格。
 
 ## 依赖关系<a name="section15876411599"></a>
 
 本特性依赖于资源实时监控功能，需要开启enable\_resource\_track参数并且设置instr\_unique\_sql\_count大于0。对于不同的语句，如果生成的Unique SQL ID冲突，会导致SQL PATCH错误的命中预期外的其他语句。其中用于调优的Hint PATCH副作用相对较小，Abort Patch需要谨慎使用。
-

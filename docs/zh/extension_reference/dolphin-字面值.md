@@ -7,6 +7,7 @@
 - 相邻放置的带引号的字符串连接为一个字符串。
 
 示例：
+
 ```sql
 openGauss=# select 'a string' as col;
    col

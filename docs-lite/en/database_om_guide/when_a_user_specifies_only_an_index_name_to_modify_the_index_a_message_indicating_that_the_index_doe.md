@@ -38,4 +38,3 @@ Add a schema reference to a table, index, or view. The format is as follows:
 ```
 schema.table
 ```
-

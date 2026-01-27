@@ -11,46 +11,44 @@ openGauss提供了gs\_ssh工具帮助用户在openGauss各节点上执行相同�
 
 ## 前提条件<a name="zh-cn_topic_0237152344_zh-cn_topic_0059777951_sa146d07733084d8292706efa87117d57"></a>
 
--   各个主机间互信正常。
--   openGauss已经正确安装部署。
--   调用命令可用which查询到且在当前用户下有执行权限。
--   需以操作系统用户omm执行gs\_ssh命令。
+- 各个主机间互信正常。
+- openGauss已经正确安装部署。
+- 调用命令可用which查询到且在当前用户下有执行权限。
+- 需以操作系统用户omm执行gs\_ssh命令。
 
 ## 语法<a name="zh-cn_topic_0237152344_zh-cn_topic_0059777951_s1b40498eb43141dcb07e36a6a51325f1"></a>
 
--   同步执行命令
+- 同步执行命令
 
     ```
     gs_ssh -c cmd
     ```
 
--   显示帮助信息
+- 显示帮助信息
 
     ```
     gs_ssh -? | --help
     ```
 
--   显示版本号信息
+- 显示版本号信息
 
     ```
     gs_ssh -V | --version
     ```
 
-
 ## 参数说明<a name="zh-cn_topic_0237152344_zh-cn_topic_0059777951_s1c5e9dfd204245b4a2f0191f9db1116f"></a>
 
--   -c
+- -c
 
     指定需要在openGauss各主机上执行的linux shell命令名。
 
--   -?, --help
+- -?, --help
 
     显示帮助信息。
 
--   -V, --version
+- -V, --version
 
     显示版本号信息。
-
 
 ## 示例<a name="zh-cn_topic_0237152344_zh-cn_topic_0059777951_s1cb93e63c1a247459e187aba833e8133"></a>
 
@@ -69,4 +67,3 @@ plat3
 [SUCCESS] plat4:
 plat4
 ```
-

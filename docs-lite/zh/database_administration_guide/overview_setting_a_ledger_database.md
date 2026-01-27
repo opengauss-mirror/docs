@@ -84,7 +84,7 @@
 
 ## 操作步骤<a name="section1993385411913"></a>
 
-1.  创建防篡改模式。
+1. 创建防篡改模式。
 
     例如，创建防篡改模式ledgernsp。
 
@@ -92,7 +92,7 @@
     openGauss=# CREATE SCHEMA ledgernsp WITH BLOCKCHAIN;
     ```
 
-2.  在防篡改模式下创建防篡改用户表。
+2. 在防篡改模式下创建防篡改用户表。
 
     例如，创建防篡改用户表ledgernsp.usertable。
 
@@ -137,17 +137,15 @@
     
     >[!NOTE]说明
     >
-    >-   防篡改表不支持非行存表、临时表、外表、unlog表，非行存表均无防篡改属性。
-    >-   防篡改表在创建时会自动增加一个名为hash的系统列，所以防篡改表单表最大列数为1599。
+    >- 防篡改表不支持非行存表、临时表、外表、unlog表，非行存表均无防篡改属性。
+    >- 防篡改表在创建时会自动增加一个名为hash的系统列，所以防篡改表单表最大列数为1599。
     
     >[!WARNING]注意 
     >
     >+ dbe_perf和snapshot两个模式不能ALTER为blockchain属性，如：ALTER SCHEMA dbe_perf WITH BLOCKCHAIN;。
     >+ 系统模式不能 ALTER 为blockchain属性，如：ALTER SCHEMA pg_catalog WITH BLOCKCHAIN;。
 
-
-    
-3.  修改防篡改用户表数据。
+3. 修改防篡改用户表数据。
 
     例如，对防篡改用户表执行INSERT/UPDATE/DELETE。
 
@@ -181,5 +179,3 @@
       2 | bob2 | 437761affbb7c605
     (2 rows)
     ```
-
-

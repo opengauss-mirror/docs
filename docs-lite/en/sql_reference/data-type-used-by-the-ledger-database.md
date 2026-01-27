@@ -49,4 +49,3 @@ The hash32 data type is used to store the global hash digest or history table ve
 Hexadecimal string: 685847ed1fe38e18f6b0e2b18c00edee
 Hash32 array: [104,88,71,237,31,227,142,24,246,176,226,177,140,0,237,238]
 ```
-

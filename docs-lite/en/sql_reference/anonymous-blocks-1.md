@@ -11,36 +11,35 @@ An anonymous block is one of the character blocks of a stored procedure and has 
 
 Details about the syntax diagram are as follows:
 
--   The execution section of an anonymous block starts with a BEGIN statement, has a break with an END statement, and ends with a semicolon \(;\). Type a slash \(/\) and press  **Enter**  to execute the statement.
+- The execution section of an anonymous block starts with a BEGIN statement, has a break with an END statement, and ends with a semicolon \(;\). Type a slash \(/\) and press  **Enter**  to execute the statement.
 
     >[!TIP]NOTICE 
     >The terminator "/" must be written in an independent row.
 
--   The declaration section includes the variable definition, type, and cursor definition.
--   A simplest anonymous block does not execute any commands. At least one statement, even a NULL statement, must be presented in any implementation blocks.
+- The declaration section includes the variable definition, type, and cursor definition.
+- A simplest anonymous block does not execute any commands. At least one statement, even a NULL statement, must be presented in any implementation blocks.
 
 ## Parameter Description<a name="section6973139183420"></a>
 
--   **DECLARE**
+- **DECLARE**
 
     Specifies an optional keyword used to begin a DECLARE statement. This keyword can be used to declare a data type, variable, or cursor. The use of this keyword depends on the context in which the block is located.
 
--   **declaration\_statements**
+- **declaration\_statements**
 
     Specifies the declaration of a data type, variable, cursor, exception, or procedure whose scope is limited to the block. Each declaration must be terminated with a semicolon \(;\).
 
--   **BEGIN**
+- **BEGIN**
 
     Specifies the mandatory keyword for introducing an executable section. The section can contain one or more SQL or PL/SQL statements. A BEGIN-END block can contain nested BEGIN-END blocks.
 
--   **execution\_statements**
+- **execution\_statements**
 
     Specifies PL/SQL or SQL statements. Each statement must be terminated with a semicolon \(;\).
 
--   **END**
+- **END**
 
     Specifies the required keyword for ending a block.
-
 
 ## Examples<a name="section26821512261"></a>
 
@@ -69,4 +68,3 @@ openGauss=# select * from table1;
    1 |   2 |   3
 (1 rows)
 ```
-

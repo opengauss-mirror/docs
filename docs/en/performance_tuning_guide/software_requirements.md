@@ -37,4 +37,3 @@ OS requirements: openEuler-20.03-LTS \(aarch64 architecture\)
 </tr>
 </tbody>
 </table>
-

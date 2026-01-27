@@ -84,7 +84,7 @@ The name and structure of the user history table are as follows:
 
 ## Procedure<a name="section1993385411913"></a>
 
-1.  Create a schema in tamper-proof schema.
+1. Create a schema in tamper-proof schema.
 
     For example, create  **ledgernsp**  in tamper-proof schema.
 
@@ -92,7 +92,7 @@ The name and structure of the user history table are as follows:
     openGauss=# CREATE SCHEMA ledgernsp WITH BLOCKCHAIN;
     ```
 
-2.  Create a tamper-proof user table in tamper-proof schema.
+2. Create a tamper-proof user table in tamper-proof schema.
 
     For example, create a tamper-proof user table  **ledgernsp.usertable**.
 
@@ -136,10 +136,10 @@ The name and structure of the user history table are as follows:
     ```
 
     >[!NOTE]NOTE 
-    >-   Tamper-proof tables cannot be non-row-store tables, temporary tables, foreign tables, or unlogged tables. Non-row-store tables do not have the temper-proof attribute.
-    >-   When a temper-proof table is created, a system column named  **hash**  is automatically added. Therefore, the maximum number of columns in the temper-proof table is 1599.
+    >- Tamper-proof tables cannot be non-row-store tables, temporary tables, foreign tables, or unlogged tables. Non-row-store tables do not have the temper-proof attribute.
+    >- When a temper-proof table is created, a system column named  **hash**  is automatically added. Therefore, the maximum number of columns in the temper-proof table is 1599.
 
-3.  Modify the data in the tamper-proof user table.
+3. Modify the data in the tamper-proof user table.
 
     For example, execute  **INSERT**,  **UPDATE**, or  **DELETE**  on the tamper-proof user table.
 

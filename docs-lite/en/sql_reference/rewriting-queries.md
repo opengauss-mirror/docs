@@ -2,7 +2,7 @@
 
 The  **ts\_rewrite**  family of functions searches a given  **tsquery**  for occurrences of a target subquery, and replace each occurrence with a substitute subquery. In essence this operation is a  **tsquery**  specific version of substring replacement. A target and substitute combination can be thought of as a query rewrite rule. A collection of such rewrite rules can be a powerful search aid. For example, you can expand the search using synonyms \(that is, new york, big apple, nyc, gotham\) or narrow the search to direct the user to some hot topic. 
 
--   ts\_rewrite \(query tsquery, target tsquery, substitute tsquery\) returns tsquery
+- ts\_rewrite \(query tsquery, target tsquery, substitute tsquery\) returns tsquery
 
     This form of  **ts\_rewrite**  simply applies a single rewrite rule:  **target**  is replaced by  **substitute**  wherever it appears in query. Example:
 
@@ -13,7 +13,7 @@ The  **ts\_rewrite**  family of functions searches a given  **tsquery**  for occ
      'b' & 'c'
     ```
 
--   ts\_rewrite \(query tsquery, select text\) returns tsquery
+- ts\_rewrite \(query tsquery, select text\) returns tsquery
 
     This form of  **ts\_rewrite**  accepts a starting query and a SQL select command, which is given as a text string. The  **select**  must yield two columns of  **tsquery**  type. For each row of the select result, occurrences of the first column value \(the target\) are replaced by the second column value \(the substitute\) within the current  **query**  value.
 
@@ -59,5 +59,3 @@ The  **ts\_rewrite**  family of functions searches a given  **tsquery**  for occ
     (1 row)
     openGauss=# DROP TABLE tsearch.aliases;
     ```
-
-

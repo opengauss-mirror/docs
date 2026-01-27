@@ -19,26 +19,25 @@ ALTER OPERATOR name ( { left_type | NONE } , { right_type | NONE } ) SET SCHEMA 
 
 ## Parameter Description<a name="section48568352146"></a>
 
--   **name**
+- **name**
 
     Name of an existing operator.
 
--   **left\_type**
+- **left\_type**
 
     Data type of the left operand for the operator; if there is no left operand, write NONE.
 
--   **right\_type**
+- **right\_type**
 
     Data type of the right operand for the operator; if there is no right operand, write NONE.
 
--   **new\_owner**
+- **new\_owner**
 
     New owner of the operator.
 
--   **new\_schema**
+- **new\_schema**
 
     New schema name of the operator.
-
 
 ## Example<a name="section95851353171318"></a>
 
@@ -51,4 +50,3 @@ ALTER OPERATOR @@ (text, text) OWNER TO joe;
 ## Compatibility<a name="section135891317111410"></a>
 
 The SQL standard does not contain the ALTER OPERATOR statement.
-

@@ -37,4 +37,3 @@ The memory usage of all normal nodes in openGauss is displayed.
 </tr>
 </tbody>
 </table>
-

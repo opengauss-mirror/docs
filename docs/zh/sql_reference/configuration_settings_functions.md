@@ -2,7 +2,7 @@
 
 配置设置函数是可以用于查询以及修改运行时配置参数的函数。
 
--   current\_setting\(setting\_name\)
+- current\_setting\(setting\_name\)
 
     描述：当前的设置值。
 
@@ -19,25 +19,25 @@
     (1 row)
     ```
 
--   set\_working\_grand\_version\_num\_manually\(tmp\_version\)
+- set\_working\_grand\_version\_num\_manually\(tmp\_version\)
 
     描述：通过切换授权版本号来更新和升级数据库的新特性。
 
     返回值类型：void
 
--   shell\_in\(type\)
+- shell\_in\(type\)
 
     描述： 为shell类型输入路由（那些尚未填充的类型）。
 
     返回值类型：void
 
--   shell\_out\(type\)
+- shell\_out\(type\)
 
     描述：为shell 类型输出路由（那些尚未填充的类型）。
 
     返回值类型：void
 
--   set\_config\(setting\_name, new\_value, is\_local\)
+- set\_config\(setting\_name, new\_value, is\_local\)
 
     描述：设置参数并返回新值。
 
@@ -53,7 +53,8 @@
      off
     (1 row)
     ```
--   gs\_get\_hba\_conf\(\)
+
+- gs\_get\_hba\_conf\(\)
 
     描述：返回当前hba配置选项。
 
@@ -120,7 +121,7 @@
     </tbody>
     </table>
 
- ## 示例<a name="section258851613675"></a>
+## 示例<a name="section258851613675"></a>
 
     ```
     select * from gs_get_hba_conf();
@@ -131,4 +132,3 @@
     host  | all      | all  | ::1/128      | trust
     (4 rows)
     ```
-

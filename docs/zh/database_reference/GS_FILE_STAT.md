@@ -106,4 +106,3 @@ GS\_FILE\_STAT视图通过对数据文件IO的统计，反映数据的IO性能�
 </tr>
 </tbody>
 </table>
-

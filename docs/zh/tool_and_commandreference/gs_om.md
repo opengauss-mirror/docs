@@ -10,25 +10,25 @@ openGauss提供了gs\_om工具帮助对openGauss进行维护，包括启动openG
 
 ## 语法<a name="section1241317667"></a>
 
--   启动openGauss
+- 启动openGauss
 
     ```
     gs_om -t start [-h HOSTNAME] [-D dataDir] [--time-out=SECS] [--security-mode=MODE] [--cluster-number=None] [-l LOGFILE]
     ```
 
--   停止openGauss
+- 停止openGauss
 
     ```
     gs_om -t stop [-h HOSTNAME] [-D dataDir]  [--time-out=SECS] [-m MODE] [-l LOGFILE] 
     ```
 
--   重启openGauss
+- 重启openGauss
 
     ```
     gs_om -t restart [-h HOSTNAME] [-D dataDir] [--time-out=SECS] [--security-mode=MODE] [-l LOGFILE] [-m MODE]
     ```
 
--   查询openGauss状态
+- 查询openGauss状态
 
     ```
     gs_om -t status [-h HOSTNAME] [-o OUTPUT] [--detail] [--all] [-l LOGFILE]
@@ -41,38 +41,38 @@ openGauss提供了gs\_om工具帮助对openGauss进行维护，包括启动openG
   gs_om -t generateconf --old-values=old --new-values=new [--distribute] [-l LOGFILE]
   ```
 
--   生成动态配置文件，在不带CM工具的集群中，备机failover或switchover成主机后，需要执行此操作
+- 生成动态配置文件，在不带CM工具的集群中，备机failover或switchover成主机后，需要执行此操作
 
     ```
     gs_om -t refreshconf
     ```
 
--   查看静态配置
+- 查看静态配置
 
     ```
     gs_om -t view [-o OUTPUT]
     ```
 
--   查询openGauss状态详细信息
+- 查询openGauss状态详细信息
 
     ```
     gs_om -t query [-o OUTPUT]
     ```
 
--   SSL证书替换
+- SSL证书替换
 
     ```
     gs_om -t cert --cert-file=CERTFILE [-l LOGFILE]
     gs_om -t cert --rollback
     ```
 
--   开启、关闭数据库内kerberos认证
+- 开启、关闭数据库内kerberos认证
 
     ```
     gs_om -t kerberos -m [install|uninstall] -U USER [-l LOGFILE] [--krb-client|--krb-server]
     ```
 
--   根据当前集群状态生成xml配置文件，生成的xml文件在当前用户家目录下，文件名是xml_output_时间戳.xml。
+- 根据当前集群状态生成xml配置文件，生成的xml文件在当前用户家目录下，文件名是xml_output_时间戳.xml。
    
     注：不支持级联备，不支持cmvip功能，最多支持一主八备。
 
@@ -80,53 +80,51 @@ openGauss提供了gs\_om工具帮助对openGauss进行维护，包括启动openG
     gs_om -t generate_xml [--add-hostname=hostname1,hostname2] [--add-hostip=hostip1,hostip2]
     ```
 
--   查询历史升级记录
+- 查询历史升级记录
 
     ```
     gs_om -t query_upgrade_records
     ```
 
--   显示帮助信息
+- 显示帮助信息
 
     ```
     gs_om -? | --help
     ```
 
--   显示版本号信息
+- 显示版本号信息
 
     ```
     gs_om -V | --version
     ```
 
-
 ## 参数说明<a name="section16817173615"></a>
 
 gs\_om参数可以分为如下几类：
 
--   通用参数：
-    -   -t
+- 通用参数：
+    - -t
 
         gs\_om命令的类型。
 
         取值范围：start、stop、status、generateconf、cert、view、query、refreshconf、kerberos。
 
-    -   -l
+    - -l
 
         指定日志文件及存放路径。
 
         默认值：$GAUSSLOG/om/gs\_om-YYYY-MM-DD\_hhmmss.log（virtualip的默认值：/tmp/gs\_virtualip/gs\_om-YYYY-MM-DD\_hhmmss.log）
 
-    -   -?, --help
+    - -?, --help
 
         显示帮助信息。
 
-    -   -V, --version
+    - -V, --version
 
         显示版本号信息。
 
-
--   启动openGauss参数：
-    -   -h
+- 启动openGauss参数：
+    - -h
 
         指定需要启动的服务器名称。一次只能启动一个服务器。
 
@@ -134,7 +132,7 @@ gs\_om参数可以分为如下几类：
 
         不指定服务器名称时，表示启动openGauss。
 
-    -   -D
+    - -D
 
         指定数据库节点路径。
 
@@ -147,7 +145,7 @@ gs\_om参数可以分为如下几类：
         
         假设当前实例的数据库和CM进程都停止，在启动该实例时候如果指定了-D参数，那么只会尝试拉起数据库进程，此时由于CM进程不存在会导致数据库进程也拉起失败。可以去掉-D参数，启动整个实例。
 
-    -   --time-out=SECS
+    - --time-out=SECS
 
         指定超时时间，如果超时，om脚本自动退出。单位：s。
 
@@ -155,24 +153,23 @@ gs\_om参数可以分为如下几类：
 
         默认值：300。
 
-    -   --security-mode
+    - --security-mode
 
         指定是否以安全模式启动数据库。
 
         取值范围：
 
-        -   on以安全模式启动。
-        -   off不以安全模式启动，默认不开启安全模式。
+        - on以安全模式启动。
+        - off不以安全模式启动，默认不开启安全模式。
 
-    -   --cluster-number
+    - --cluster-number
         
         指定启动时内核运行版本号。
 
         取值范围： 内核版本号。
 
-
--   停止openGauss参数：
-    -   -h
+- 停止openGauss参数：
+    - -h
 
         指定需要停止实例所在的服务器名称。一次只能停止一个服务器。
 
@@ -180,18 +177,18 @@ gs\_om参数可以分为如下几类：
 
         不指定服务器名称时，表示停止openGauss。
 
-    -   -m, --mode=MODE
+    - -m, --mode=MODE
 
         停止模式设置。
 
         取值范围：支持两种停止模式。
 
-        -   fast方式：保证有主备关系的实例数据是一致的。
-        -   immediate方式：不保证有主备关系的实例数据是一致的。
+        - fast方式：保证有主备关系的实例数据是一致的。
+        - immediate方式：不保证有主备关系的实例数据是一致的。
 
         默认值：fast方式。
 
-    -   --time-out=SECS
+    - --time-out=SECS
 
         指定超时时间，如果超时，om脚本自动退出。单位：s。
 
@@ -199,12 +196,11 @@ gs\_om参数可以分为如下几类：
 
         默认值：300。
 
-
--   查询状态参数：
+- 查询状态参数：
 
     openGauss状态显示结果的参数说明请参见[表1](#table1171617665)。
 
-    -   -h
+    - -h
 
         指定需要待查询的服务器名称。
 
@@ -212,30 +208,29 @@ gs\_om参数可以分为如下几类：
 
         不指定服务器时，表示查询openGauss。
 
-    -   --az
+    - --az
 
         指定需要查询的AZ名称，比如--az=AZ1。
 
         取值范围：AZ名称，不指定AZ名称时，表示查询所有AZ。
 
-    -   -o
+    - -o
 
         输出到指定的output文件中。
 
         如果不指定，直接显示在屏幕上。
     
-    -   --detail   
+    - --detail   
     
         显示详细信息。如果不指定，只提示该服务器是否正常。  
     本参数通过在每个数据库节点执行gs_ctl query命令进行查询并汇总结果，来获取openGauss的详细信息。
         
-    -    --all  
+    - --all  
         显示openGauss所有节点信息。  
         本参数通过在每个数据库节点执行gsql查询系统表并汇总结果，来获取openGauss所有节点的信息。为保证显示信息的正确性，在使用本参数前请确认gsql可以查询。
 
-
--   生成配置文件参数：
-    -   -X
+- 生成配置文件参数：
+    - -X
 
         选择openGauss配置文件路径。
 
@@ -253,19 +248,18 @@ gs\_om参数可以分为如下几类：
     
       取值范围：port、ip、hostname，可以输入多个值，用逗号隔开，与old-values一一对应。
     
-    -   --distribute
+    - --distribute
     
         将静态配置文件发布到openGauss实例的安装目录。
 
-
--   开启、关闭数据库内kerberos认证：
-    -   -U
+- 开启、关闭数据库内kerberos认证：
+    - -U
 
         指定数据库部署用户。
 
         取值范围：数据库部署用户。
 
-    -   -m
+    - -m
 
         指定所要进行的操作。
 
@@ -275,14 +269,13 @@ gs\_om参数可以分为如下几类：
 
         uninstall：关闭数据库内kerberos认证。
 
-    -   --krb-server安装kerberos服务端认证。
-    -   --krb-client安装kerberos客户端认证。
+    - --krb-server安装kerberos服务端认证。
+    - --krb-client安装kerberos客户端认证。
 
         注：需要先安装--krb-server，卸载时同步卸载不需要该参数。
 
-
--   SSL证书替换：
-    -   --cert-file
+- SSL证书替换：
+    - --cert-file
 
         指定本地SSL证书zip压缩包所在路径。
 
@@ -294,19 +287,16 @@ gs\_om参数可以分为如下几类：
     
       制定该参数时，仅对当前节点进行。
 
-
--   根据当前集群状态生成xml配置文件参数。
-    -   --add-hostname
+- 根据当前集群状态生成xml配置文件参数。
+    - --add-hostname
  
         指定主机名，多个主机名用逗号隔开。
   
-    -   --add-hostip
+    - --add-hostip
    
         指定主机ip，多个主机ip用逗号隔开，主机名和主机ip一一对应。
 
     注：指定该参数时，会获取当前集群的信息和要添加的该主机信息；不指定时，会获取当前集群的信息；指定了add-hostname必须指定add-hostip。
-
-
 
 **表 1**  状态说明
 
@@ -371,7 +361,6 @@ gs\_om参数可以分为如下几类：
 </tr>
 </tbody>
 </table>
-
 
 **表 2**  特性ID说明
 
@@ -509,7 +498,7 @@ gs\_om参数可以分为如下几类：
 
 ## 示例<a name="section2433171169"></a>
 
--   启动openGauss。
+- 启动openGauss。
 
     ```
     gs_om -t start
@@ -591,7 +580,7 @@ gs\_om参数可以分为如下几类：
   -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat3
   ```
 
--   SSL证书回退。
+- SSL证书回退。
 
     ```
     gs_om -t cert --rollback 
@@ -600,7 +589,7 @@ gs\_om参数可以分为如下几类：
     [plat3] SSL cert files rollback successfully.
     ```
 
--   新License注册。
+- 新License注册。
 
     ```
     gs_om -t license -m register -f MTgsMTkK  
@@ -614,7 +603,7 @@ gs\_om参数可以分为如下几类：
     License register successfully.
     ```
 
--   新License反注册。
+- 新License反注册。
 
     ```
     gs_om -t license -m unregister -f MTgsMTkK
@@ -628,7 +617,7 @@ gs\_om参数可以分为如下几类：
     License unregister successfully.
     ```
 
--   根据当前集群状态生成xml配置文件
+- 根据当前集群状态生成xml配置文件
   
     ```
     gs_om -t generate_xml --add-hostname=open1 --add-hostip=192.168.0.11
@@ -636,7 +625,7 @@ gs\_om参数可以分为如下几类：
     Successfully generated xml. the xml is /home/xxx/xml_output_20240221103102.xml
     ```
 
--   查询历史升级记录
+- 查询历史升级记录
   
     ```
     gs_om -t query_upgrade_records
@@ -661,4 +650,3 @@ gs\_om参数可以分为如下几类：
     newPkgSha256: 189fd3f0581f7231f78384d171a399f590fa533f77b66b76a82e911f7e2d0b3d
     details: Successfully upgrade all nodes.
     ```
-

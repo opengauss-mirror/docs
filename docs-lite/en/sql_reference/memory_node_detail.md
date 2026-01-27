@@ -40,4 +40,3 @@
 
 >[!NOTE]NOTE 
 >In the Lite scenario, openGauss does not support the Java UDF.
-

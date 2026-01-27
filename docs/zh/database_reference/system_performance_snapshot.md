@@ -8,8 +8,8 @@
 
 **取值范围**： 布尔型
 
--   on：打开数据库监控快照功能。
--   off：关闭数据库监控快照功能。
+- on：打开数据库监控快照功能。
+- off：关闭数据库监控快照功能。
 
 **默认值**：off
 
@@ -111,8 +111,7 @@
 
 **取值范围**： 布尔型
 
--   on：打开active session profile功能。
--   off：关闭active session profile功能。
+- on：打开active session profile功能。
+- off：关闭active session profile功能。
 
 **默认值**：on
-

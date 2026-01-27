@@ -1,4 +1,5 @@
 # INSERT_RIGHT_REF_DEFAULT_VALUE
+
 In B-compatible mode, the INSERT statement supports right-value reference. If a referenced column has a NOT NULL constraint and does not have a default value, its base value is used for calculation. If there is no basic value, the NULL value is used for calculation (array type or user-defined type).
 The basic values of the supported types are shown in [Table 1](#table1).
 

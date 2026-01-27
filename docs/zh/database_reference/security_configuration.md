@@ -149,6 +149,7 @@ off：禁用审计功能。
 **默认值**：1d（1 天）
 
 > [!WARNING]注意  
+>
 >- 仅在需要时调整此参数，否则可能导致 audit_resource_policy 失效。如需控制审计日志的存储空间和时间，需设置 audit_resource_policy、audit_space_limit 和 audit_file_remain_time 参数。
 
 ## audit_rotation_size
@@ -161,6 +162,7 @@ off：禁用审计功能。
 **默认值**：10 MB
 
 > [!WARNING]注意  
+>
 >- 仅在需要时调整此参数，否则可能导致 audit_resource_policy 失效。如需控制审计日志的存储空间和时间，需设置 audit_resource_policy、audit_space_limit 和 audit_file_remain_time 参数。
 
 ## audit_resource_policy
@@ -204,6 +206,7 @@ off：审计日志优先按时间存储，至少存储 audit_file_remain_time �
 **默认值**：1024
 
 > [!WARNING]注意  
+>
 >- 建议将此参数设置为 1048576，仅在需要时调整，否则可能导致 audit_resource_policy 失效。如需控制审计日志的存储空间和时间，需设置 audit_resource_policy、audit_space_limit 和 audit_file_remain_time 参数。
 
 ## audit_thread_num
@@ -216,6 +219,7 @@ off：审计日志优先按时间存储，至少存储 audit_file_remain_time �
 **默认值**：1
 
 > [!WARNING]注意  
+>
 >- 当启用 audit_dml_state 且需要高性能时，建议增大此参数值，以确保审计消息能及时处理和记录。
 
 ## enable_risky_query_detection
@@ -228,4 +232,5 @@ off：审计日志优先按时间存储，至少存储 audit_file_remain_time �
 **默认值**：off
 
 > [!WARNING]注意  
+>
 >- 当 enable_risky_query_detection 设置为 'on' 时，风险查询功能仅记录用户直接提交的 SQL 语句，以增强透明度和可审计性。数据库机制（如触发器、函数或存储过程）生成的查询会被有意排除，确保日志清晰聚焦于用户发起的操作。

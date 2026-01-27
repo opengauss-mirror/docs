@@ -37,7 +37,6 @@
 </tbody>
 </table>
 
-
 ## 硬件配置要求<a name="zh-cn_concept_0283139016_section108961253113216"></a>
 
 **表 2**  硬件配置要求

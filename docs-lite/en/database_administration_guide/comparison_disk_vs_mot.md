@@ -95,7 +95,6 @@ Comparison: Disk-based vs. MOT
 
 In the preceding information:
 
--   RR: Repeatable Reads
--   RC: Read Committed
--   SI: Snapshot Isolation
-
+- RR: Repeatable Reads
+- RC: Read Committed
+- SI: Snapshot Isolation

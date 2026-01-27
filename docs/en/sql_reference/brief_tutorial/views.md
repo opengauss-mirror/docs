@@ -4,42 +4,40 @@ A view is a virtual table, not a base table. A database only stores the definiti
 
 ## Syntax<a name="section1719020102251"></a>
 
--   Create a view
+- Create a view
 
     ```
     CREATE [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...] ) ]
          AS query;
     ```
 
--   Delete a view
+- Delete a view
 
     ```
     DROP VIEW  view_name ;
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0283137480_en-us_topic_0237122126_en-us_topic_0059779377_s09c14680fd2e44bcb52cb2f114096621"></a>
 
--   **TEMP | TEMPORARY**
+- **TEMP | TEMPORARY**
 
     Creates a temporary view.
 
--   **view\_name**
+- **view\_name**
 
     Specifies the name of the view to be created. It is optionally schema-qualified.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **column\_name**
+- **column\_name**
 
     Specifies an optional list of names to be used for columns of the view. If not given, the column names are deduced from the query.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **query**
+- **query**
 
     Specifies a SELECT or VALUES statement that will provide the columns and rows of a view.
-
 
 ## Examples<a name="section1958392193317"></a>
 
@@ -91,4 +89,3 @@ After using the view, you can delete it to release space.
 openGauss=# DROP VIEW CUSTOMER_VIEW;
 DROP VIEW
 ```
-

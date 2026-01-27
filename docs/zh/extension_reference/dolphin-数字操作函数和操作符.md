@@ -8,7 +8,7 @@
 4. 修改exp函数支持结果返回0。
 5. 修改sum函数的返回值类型与Mysql兼容。
 
--   DIV
+- DIV
 
     描述：除（取整）
 
@@ -22,7 +22,7 @@
     (1 row)
     ```
 
--   MOD
+- MOD
 
     描述：模（求余）
 
@@ -36,7 +36,7 @@
     (1 row)
     ```
 
--   XOR
+- XOR
 
     描述：二进制XOR
 
@@ -50,7 +50,7 @@
     (1 row)
     ```
 
--   truncate\(v numeric, s int\)
+- truncate\(v numeric, s int\)
 
     描述：截断为s位小数。等价于trunc
 
@@ -66,7 +66,7 @@
     (1 row)
     ```
 
--   rand\(\)
+- rand\(\)
 
     描述：0.0到1.0之间的随机数。等价于random
 
@@ -82,7 +82,7 @@
     (1 row)
     ```
 
--   rand\(seed int\)
+- rand\(seed int\)
 
     描述：根据入参设置随机数种子，随后生成0.0到1.0之间的随机数。等价于setseed+random。种子的有效值范围为 [-2^63, 2^64 - 1]。
 
@@ -98,7 +98,7 @@
     (1 row)
     ```
 
--   random_bytes\(len int\)
+- random_bytes\(len int\)
 
     描述：生成指定长度的随机二进制buffer。长度的有效值范围为[1, 1024]。
 
@@ -114,7 +114,7 @@
     (1 row)
     ```
 
--   crc32\(string\)
+- crc32\(string\)
 
     描述：计算string的crc32数值
 
@@ -130,7 +130,7 @@
     (1 row)
     ```
 
--   conv\(input in, current_base int, new_base int\)
+- conv\(input in, current_base int, new_base int\)
 
     描述：将数字或字符串从一个数字基本系统转换为另一个数字基本系统。in支持数字和字符串两种类型
 
@@ -223,7 +223,7 @@
   (1 row)
   ```
 
--   oct\(input N)
+- oct\(input N)
 
     描述：将数字或字符串从一个十进制数字转换为八进制数字。
 
@@ -350,5 +350,3 @@
   | sum(enum_t)     | 不涉及                            | double                     |
   | sum(set_t)      | 不涉及                            | double                     |
   | sum(json)       | 不涉及                            | double                     |
-
-  

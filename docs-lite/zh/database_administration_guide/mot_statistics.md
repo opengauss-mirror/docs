@@ -7,4 +7,3 @@
 统计信息保存在数据库服务器日志中。该日志位于data文件夹中，命名为postgresql-DATE-TIME.log。
 
 有关详细的配置选项，请参阅[统计（MOT）](mot_configuration.md#zh-cn_topic_0283136588_zh-cn_topic_0280525130_section659861612477)。
-

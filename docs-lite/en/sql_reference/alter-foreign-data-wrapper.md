@@ -15,41 +15,37 @@ ALTER FOREIGN DATA WRAPPER name
 
 ## Parameter Description
 
--   **name**
+- **name**
 
     Specifies the name of an FDW to be modified.
 
--   **HANDLER handler\_function**
+- **HANDLER handler\_function**
 
     Specifies a new handler function for an FDW.
 
-
--   **NO HANDLER**
+- **NO HANDLER**
 
     Specifies that an FDW no longer has a handler function.
 
-	>[!TIP]NOTICE
+ >[!TIP]NOTICE
     >
     > Foreign tables that use FDWs without handler functions cannot be accessed.
 
--   **VALIDATOR validator_function**
+- **VALIDATOR validator_function**
 
     Specifies a new validator function for an FDW.
 
-	>[!TIP]NOTICE
+ >[!TIP]NOTICE
     >
     > After a validator function is modified, options for an FDW, server, and user mapping may become invalid. Before using the FDW, the user should ensure that these options are correct.
 
-
--   **NO VALIDATOR**
+- **NO VALIDATOR**
 
     Specifies that the FDW no longer has a validator function.
 
-
--   **OPTIONS \( \[ ADD | SET | DROP \] option \['value'\] \[,...\] \)**
+- **OPTIONS \( \[ ADD | SET | DROP \] option \['value'\] \[,...\] \)**
 
     Specifies options to be modified (added, set, or dropped) for the FDW. If the operation is not explicitly specified, it is assumed that the operation is ADD. The option name must be unique. Use the FDW's validator function (if any) to validate the name and value.
-
 
 ## Examples
 

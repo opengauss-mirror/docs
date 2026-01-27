@@ -25,4 +25,3 @@ gs\_dump is used to export the database schema and data to a file. It also suppo
 ## gs\_restore<a name="en-us_topic_0283137398_en-us_topic_0270171479_section151119426368"></a>
 
 gs\_restore is used to import the database schema and data from a file. It also supports MOT tables.
-

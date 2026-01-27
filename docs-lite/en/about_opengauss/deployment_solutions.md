@@ -4,20 +4,19 @@ openGauss can be deployed in standalone mode or with one primary node and multip
 
 ## Common Concepts<a name="en-us_topic_0283139012_section27911144155312"></a>
 
--   Standalone
+- Standalone
 
     There is only one database instance.
 
--   Primary/Standby
+- Primary/Standby
 
     There are primary and standby database instances in the system. The primary instance supports read and write, and the standby instance supports read-only.
 
--   Hot/Cold backup
+- Hot/Cold backup
 
     Cold backup: There is only a simple backup set that cannot provide services.
 
     Hot backup: Backup databases can provide services for external systems.
-
 
 ## Deployment Modes<a name="en-us_topic_0283139012_section906197544"></a>
 
@@ -109,20 +108,17 @@ openGauss supports the following CPUs and OSs:
 
 The overall deployment solutions can be classified into two types: standalone and primary/standby.
 
--   Standalone deployment
+- Standalone deployment
 
     The standalone deployment does not ensure reliability or availability. There is only one data copy. Once data is damaged or lost, only physical backup can be used to restore data. Therefore, this deployment mode applies to scenarios such as experiencing databases and commissioning syntax functions in the test environment. You are not advised to use this mode on the commercial live network.
 
     **Figure  1**  Standalone deployment<a name="en-us_topic_0283139012_en-us_topic_0243295241_en-us_topic_0243253012_fig1128133574111"></a>  
     
-
     ![](figures/en-us_image_0283139013.png)
 
--   Primary/standby deployment
+- Primary/standby deployment
 
     The primary/standby mode is equivalent to two data copies, one for the primary node and the other for the standby node. The standby node receives logs and plays back the logs.
 
     **Figure  2**  Primary/standby deployment<a name="en-us_topic_0283139012_en-us_topic_0243295242_en-us_topic_0243253013_fig1843505845112"></a>  
     ![](figures/primary-standby-deployment.png "primary-standby-deployment")
-
-

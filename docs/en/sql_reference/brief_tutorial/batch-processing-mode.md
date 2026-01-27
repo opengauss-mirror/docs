@@ -4,11 +4,11 @@ openGauss supports the execution of SQL statements from text files and provides 
 
 Batch processing is recommended in the following scenarios:
 
--   If you run a query repeatedly \(for example, daily or weekly\), you can set it as a script to avoid repeated input.
--   You can generate a new query from an existing similar query by copying and editing the script file.
--   For multi-line statements or multi-statement sequences, if an error occurs, you do not need to input all the content again. You only need to edit the script to correct the error, and then execute it again.
--   You can distribute the script to others so that they can also execute the statements.
--   When interactive use is not allowed in some cases, you must use the batch processing mode.
+- If you run a query repeatedly \(for example, daily or weekly\), you can set it as a script to avoid repeated input.
+- You can generate a new query from an existing similar query by copying and editing the script file.
+- For multi-line statements or multi-statement sequences, if an error occurs, you do not need to input all the content again. You only need to edit the script to correct the error, and then execute it again.
+- You can distribute the script to others so that they can also execute the statements.
+- When interactive use is not allowed in some cases, you must use the batch processing mode.
 
 ## Syntax<a name="section3644161111459"></a>
 
@@ -18,22 +18,21 @@ gsql -d dbname -p port -f filename
 
 ## Parameter Description<a name="section3770135115014"></a>
 
--   **dbname**
+- **dbname**
 
     Specifies the name of the database to connect to.
 
--   **port**
+- **port**
 
     Specifies the port number of the database server.
 
--   **-f filename**
+- **-f filename**
 
     Specifies that files are used as the command source instead of interactively-entered commands. This parameter specifies the path and name of the text file to be read.
 
-
 ## Examples<a name="section231191615452"></a>
 
-1.  Create the  **sql.txt**  file locally. The file content is as follows:
+1. Create the  **sql.txt**  file locally. The file content is as follows:
 
     ```
     CREATE TABLE customer
@@ -54,7 +53,7 @@ gsql -d dbname -p port -f filename
         (9527, 'world', 'James',5000);
     ```
 
-2.  Execute the SQL statements in the  **sql.txt**  file.
+2. Execute the SQL statements in the  **sql.txt**  file.
 
     ```
     gsql -d postgres -p 21013 -f /home/user/sql.txt
@@ -69,5 +68,3 @@ gsql -d dbname -p port -f filename
     INSERT 0 1
     INSERT 0 3
     ```
-
-

@@ -15,8 +15,7 @@ The lock-free design and highly optimized implementation of MOT enable it to ach
 
 The MOT completely supports the ACID feature:
 
--   Atomicity: An atomic transaction is a series of inseparable database operations. After a transaction is completed \(committed or aborted\), either all or none of these operations occur.
--   Consistency: After a transaction is complete, the database is in the consistent state and data integrity is retained.
--   Isolation: Transactions cannot interfere with each other. MOT supports different isolation levels for repeated reads and read commits. In the next release, MOT will also support serializable isolation. For more information, see  [MOT Isolation Levels](mot_concurrency_control_mechanism.md).
--   Durability: The effect of a successfully completed \(submitted\) transaction is persisted even if a crash or failure occurs. The MOT is integrated with the WAL-based log recording function of the openGauss. Both synchronous and asynchronous log options are supported. MOT also supports synchronous + NUMA-optimized group commit. For more information, see  [MOT Durability Concepts](mot_durability_concepts.md).
-
+- Atomicity: An atomic transaction is a series of inseparable database operations. After a transaction is completed \(committed or aborted\), either all or none of these operations occur.
+- Consistency: After a transaction is complete, the database is in the consistent state and data integrity is retained.
+- Isolation: Transactions cannot interfere with each other. MOT supports different isolation levels for repeated reads and read commits. In the next release, MOT will also support serializable isolation. For more information, see  [MOT Isolation Levels](mot_concurrency_control_mechanism.md).
+- Durability: The effect of a successfully completed \(submitted\) transaction is persisted even if a crash or failure occurs. The MOT is integrated with the WAL-based log recording function of the openGauss. Both synchronous and asynchronous log options are supported. MOT also supports synchronous + NUMA-optimized group commit. For more information, see  [MOT Durability Concepts](mot_durability_concepts.md).

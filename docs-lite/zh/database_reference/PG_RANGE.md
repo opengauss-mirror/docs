@@ -73,4 +73,3 @@ PG\_RANGE系统表存储关于范围类型的信息。除了[PG\_TYPE](PG_TYPE.m
 </table>
 
 rngsubopc（如果元素类型是可排序的，则加上rngcollation）决定用于范围类型的排序顺序。当元素类型是离散的时使用rngcanonical。
-

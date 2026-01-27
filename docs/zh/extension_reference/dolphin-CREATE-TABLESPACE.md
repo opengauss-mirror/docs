@@ -6,9 +6,9 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_s54948265e9f34f1fac838f60ac0bd3a6"></a>
 
--   本章节只包含dolphin新增的语法，原openGauss的语法未做删除和修改。
+- 本章节只包含dolphin新增的语法，原openGauss的语法未做删除和修改。
 
--   由于路径的特殊字符校验，在使用ADD DATAFILE创建表空间时，若输入路径以.ibd结尾，dolphin插件会将路径名称更改为以_ibd结尾。
+- 由于路径的特殊字符校验，在使用ADD DATAFILE创建表空间时，若输入路径以.ibd结尾，dolphin插件会将路径名称更改为以_ibd结尾。
 
 ## 语法格式<a name="zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_s9f8a8395cc464cd2a34dec7a82fedc7b"></a>
 
@@ -26,7 +26,7 @@ CREATE TABLESPACE tablespace_name
 
 ## 参数说明<a name="zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_see2346106f4e402da499ad74c533dfa8"></a>
 
--   **ENGINE \[=\] engine_name**
+- **ENGINE \[=\] engine_name**
 
     指定存储引擎；该特性目前只有语法没有功能。
 
@@ -50,5 +50,3 @@ openGauss=# \d t_tbspace
  num    | integer |
 Tablespace: "test_tbspace_ibd"
 ```
-
-

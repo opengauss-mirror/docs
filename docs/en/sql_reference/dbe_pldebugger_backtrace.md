@@ -50,4 +50,3 @@ During debugging on the debug end, call  **backtrace**  to view the current call
 </tr>
 </tbody>
 </table>
-

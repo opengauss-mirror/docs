@@ -83,4 +83,3 @@ PG\_STAT\_BAD\_BLOCK视图显示自节点启动后，读取数据时出现Page/C
 </tr>
 </tbody>
 </table>
-

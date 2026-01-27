@@ -7,8 +7,8 @@
 
 ## 操作步骤<a name="section779219132168"></a>
 
-1.  以数据库用户（如omm）登录节点。
-2.  执行如下命令完成升级提交。
+1. 以数据库用户（如omm）登录节点。
+2. 执行如下命令完成升级提交。
 
     ```
     gs_upgradectl -t commit-upgrade  -X /opt/software/GaussDB_Kernel/clusterconfig.xml

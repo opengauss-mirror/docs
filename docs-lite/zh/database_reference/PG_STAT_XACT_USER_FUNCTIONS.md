@@ -57,4 +57,3 @@ PG\_STAT\_XACT\_USER\_FUNCTIONS视图包含每个函数的执行的统计信息�
 </tr>
 </tbody>
 </table>
-

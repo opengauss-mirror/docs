@@ -6,18 +6,18 @@
 
 ## Precautions<a name="section1427744717250"></a>
 
--   The GUC parameter  **db4ai\_snapshot\_mode**  classifies the snapshot storage model into MSS and CSS. The GUC parameter  **db4ai\_snapshot\_version\_delimiter**  specifies the version separator and its default value is  **@**. The GUC parameter  **db4ai\_snapshot\_version\_separator**  specifies the sub-version separator and its default value is  **.**.
--   When the incremental storage mode is used for snapshots, the snapshots are dependent on each other. Snapshots must be deleted in the dependency sequence.
--   The snapshot feature is used to maintain data between team members, involving data transcription between administrators and common users. Therefore, the snapshot feature is not supported in private user and separation of duty \(**enableSeparationOfDuty**  is set to  **ON**\) scenarios.
--   When you need a stable and available snapshot for tasks such as AI training, you need to publish the snapshot.
+- The GUC parameter  **db4ai\_snapshot\_mode**  classifies the snapshot storage model into MSS and CSS. The GUC parameter  **db4ai\_snapshot\_version\_delimiter**  specifies the version separator and its default value is  **@**. The GUC parameter  **db4ai\_snapshot\_version\_separator**  specifies the sub-version separator and its default value is  **.**.
+- When the incremental storage mode is used for snapshots, the snapshots are dependent on each other. Snapshots must be deleted in the dependency sequence.
+- The snapshot feature is used to maintain data between team members, involving data transcription between administrators and common users. Therefore, the snapshot feature is not supported in private user and separation of duty \(**enableSeparationOfDuty**  is set to  **ON**\) scenarios.
+- When you need a stable and available snapshot for tasks such as AI training, you need to publish the snapshot.
 
 ## Syntax<a name="section1452716494253"></a>
 
-1.  Create a snapshot.
+1. Create a snapshot.
 
     You can run the  **CREATE SNAPSHOT... AS**  and  **CREATE SNAPSHOT... FROM**  statements to create a data table snapshot.
 
-    -   CREATE SNAPSHOT AS
+    - CREATE SNAPSHOT AS
 
         ```
         CREATE SNAPSHOT <qualified_name> [@ <version | ident | sconst>]
@@ -25,7 +25,7 @@
             AS query;
         ```
 
-    -   CREATE SNAPSHOT FROM
+    - CREATE SNAPSHOT FROM
 
         ```
         CREATE SNAPSHOT <qualified_name> [@ <version | ident | sconst>]
@@ -40,7 +40,7 @@
             );
         ```
 
-2.  Delete a snapshot.
+2. Delete a snapshot.
 
     PURGE SNAPSHOT
 
@@ -48,7 +48,7 @@
     PURGE SNAPSHOT <qualified_name> @ <version | ident | sconst>;
     ```
 
-3.  Sample snapshots.
+3. Sample snapshots.
 
     SAMPLE SNAPSHOT
 
@@ -58,7 +58,7 @@
         { AS <label> AT RATIO <num> [COMMENT IS <comment>] } [, ...]
     ```
 
-4.  Publish snapshots.
+4. Publish snapshots.
 
     PUBLISH SNAPSHOT
 
@@ -66,7 +66,7 @@
     PUBLISH SNAPSHOT <qualified_name> @ <version | ident | sconst>;
     ```
 
-5.  Archive snapshots.
+5. Archive snapshots.
 
     ARCHIVE SNAPSHOT
 
@@ -74,21 +74,19 @@
     ARCHIVE SNAPSHOT <qualified_name> @ <version | ident | sconst>;
     ```
 
-
 ## Parameter Description<a name="section319555514251"></a>
 
--   qualified\_name
+- qualified\_name
 
     Name of the snapshot to be created
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   version
+- version
 
     \(Optional\) Version number of a snapshot. This parameter is optional. The system automatically extends the sequence number.
 
     Value range: string, consisting of numbers and separators.
-
 
 ## Examples<a name="section3170957142519"></a>
 
@@ -123,4 +121,3 @@ archive snapshot s1@2.0;
 ## Helpful Links<a name="section2051314595253"></a>
 
 None
-

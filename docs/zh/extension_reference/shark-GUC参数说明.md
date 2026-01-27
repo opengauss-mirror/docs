@@ -8,7 +8,8 @@
 
 **参数说明**：参数值为逗号间隔的字符串，仅允许合法字符串设定，不合法情况下，启动后报error。同样，设置时候，如果新值非法，则报error并且不修改老值。目前可选参数有：
 
--   enable_sbr_identifier：是否允许使用 [] 包裹标识符(含数据类型)。开启以后内核原有的数组相关语法会被禁用。
+- enable_sbr_identifier：是否允许使用 [] 包裹标识符(含数据类型)。开启以后内核原有的数组相关语法会被禁用。
+
 ```
 openGauss=# set d_format_behavior_compat_options = 'enable_sbr_identifier';
 SET
@@ -20,8 +21,9 @@ openGauss=# select ARRAY[1,2,3];
 ERROR:  syntax error at or near "[1,2,3]"
 ```
 
--    enable_table_hint_identifier：是否允许table_hint当做标识符，用于列名、变量名等。开启后允许下述hint用作标识符。
+- enable_table_hint_identifier：是否允许table_hint当做标识符，用于列名、变量名等。开启后允许下述hint用作标识符。
 涉及的hint有：NOLOCK、READUNCOMMITTED、UPDLOCK、REPEATABLEREAD、SERIALIZABLE、READCOMMITTED、TABLOCK、TABLOCKX、PAGLOCK、ROWLOCK、NOWAIT、READPAST、XLOCK、SNAPSHOT、NOEXPAND。
+
 ```
 openGauss=# set d_format_behavior_compat_options = 'enable_table_hint_identifier';
 SET
@@ -43,7 +45,8 @@ LINE 1: create table testhint(nowait int);
                              ^
 ```
 
--   enable_abs：是否允许@作为取绝对值操作符使用。openGauss支持在D库下以@object方式声明变量，开启后@为取绝对值操作符。
+- enable_abs：是否允许@作为取绝对值操作符使用。openGauss支持在D库下以@object方式声明变量，开启后@为取绝对值操作符。
+
 ```
 openGauss=# create table test(@a int, b int);
 CREATE TABLE
@@ -64,7 +67,8 @@ openGauss=# select @b as abs_b from test;
 (1 row)
 ```
 
--   default_collation：默认字符序开关。不设置此配置时，在未显式指定字符类型字段的字符集或字符序且表级字符序也为空时，字段为default字符序；设置此配置时，字符类型字段的字符序当表级字符序不为空时继承表级字符序，为空时设置为数据库编码对应的默认字符序。
+- default_collation：默认字符序开关。不设置此配置时，在未显式指定字符类型字段的字符集或字符序且表级字符序也为空时，字段为default字符序；设置此配置时，字符类型字段的字符序当表级字符序不为空时继承表级字符序，为空时设置为数据库编码对应的默认字符序。
+
 ```
 openGauss=# SET d_format_behavior_compat_options = '';
 SET
@@ -195,4 +199,3 @@ openGauss=# select * from t_identity_0013;
 (2 rows)
 
 ```
-

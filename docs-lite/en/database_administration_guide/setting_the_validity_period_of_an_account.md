@@ -8,8 +8,8 @@ To enable a user not within the validity period to use its account, set a new va
 
 ## Procedure<a name="en-us_topic_0283137215_en-us_topic_0237121109_en-us_topic_0151096201_en-us_topic_0085032332_en-us_topic_0059779299_sfc98603fadc44ac497654d979bc32291"></a>
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Run the following command to connect to the database:
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -27,7 +27,7 @@ To enable a user not within the validity period to use its account, set a new va
     openGauss=# 
     ```
 
-3.  Run the following command to create a user and specify the start time and end time:
+3. Run the following command to create a user and specify the start time and end time:
 
     ```
     openGauss=# CREATE USER joe WITH PASSWORD 'xxxxxxxxx' VALID BEGIN '2015-10-10 08:00:00' VALID UNTIL '2016-10-10 08:00:00';
@@ -39,7 +39,7 @@ To enable a user not within the validity period to use its account, set a new va
     CREATE ROLE
     ```
 
-4.  If the user is not within the specified validity period, run the following command to set the start time and end time of a new validity period.
+4. If the user is not within the specified validity period, run the following command to set the start time and end time of a new validity period.
 
     ```
     openGauss=# ALTER USER joe WITH VALID BEGIN '2016-11-10 08:00:00' VALID UNTIL '2017-11-10 08:00:00';
@@ -51,8 +51,7 @@ To enable a user not within the validity period to use its account, set a new va
     ALTER ROLE
     ```
 
-
 >[!NOTE]NOTE 
->-   If  **VALID BEGIN**  and  **VALID UNTIL**  are not specified in the  **CREATE ROLE**  syntax, the start time and end time of a user's operation are not limited.
->-   If  **VALID BEGIN**  and  **VALID UNTIL**  are not specified in the  **ALTER ROLE**  syntax, the start time and end time of a user's operation are not modified and the original settings are used.
-
+>
+>- If  **VALID BEGIN**  and  **VALID UNTIL**  are not specified in the  **CREATE ROLE**  syntax, the start time and end time of a user's operation are not limited.
+>- If  **VALID BEGIN**  and  **VALID UNTIL**  are not specified in the  **ALTER ROLE**  syntax, the start time and end time of a user's operation are not modified and the original settings are used.

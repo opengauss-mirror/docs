@@ -10,14 +10,13 @@
 
 有效值为stderr、csvlog、syslog。
 
--   取值为stderr，表示日志打印到屏幕。
--   取值为csvlog，表示日志的输出格式为“逗号分隔值”即CSV（Comma Separated Value）格式。使用csvlog记录日志的前提是将[logging\_collector](#zh-cn_topic_0283136719_zh-cn_topic_0237124721_zh-cn_topic_0059778787_s61d6090c04ee464fb54f8b31936ba818)设置为on，请参见[使用CSV格式写日志](write_logs_in_csv_format.md)。
--   取值为syslog，表示通过操作系统的syslog记录日志。openGauss使用syslog的LOCAL0～LOCAL7记录日志，请参见[syslog\_facility](#zh-cn_topic_0283136719_zh-cn_topic_0237124721_zh-cn_topic_0059778787_s853e14ac6a8a47678036cdc8e5119090)。使用syslog记录日志需在操作系统后台服务配置文件中添加代码：
+- 取值为stderr，表示日志打印到屏幕。
+- 取值为csvlog，表示日志的输出格式为“逗号分隔值”即CSV（Comma Separated Value）格式。使用csvlog记录日志的前提是将[logging\_collector](#zh-cn_topic_0283136719_zh-cn_topic_0237124721_zh-cn_topic_0059778787_s61d6090c04ee464fb54f8b31936ba818)设置为on，请参见[使用CSV格式写日志](write_logs_in_csv_format.md)。
+- 取值为syslog，表示通过操作系统的syslog记录日志。openGauss使用syslog的LOCAL0～LOCAL7记录日志，请参见[syslog\_facility](#zh-cn_topic_0283136719_zh-cn_topic_0237124721_zh-cn_topic_0059778787_s853e14ac6a8a47678036cdc8e5119090)。使用syslog记录日志需在操作系统后台服务配置文件中添加代码：
 
     ```
     local0.*  /var/log/omm
     ```
-
 
 **默认值**： stderr
 
@@ -34,8 +33,8 @@
 
 **取值范围**： 布尔型
 
--   on表示开启日志收集功能。
--   off表示关闭日志收集功能。
+- on表示开启日志收集功能。
+- off表示关闭日志收集功能。
 
 **默认值**： on
 
@@ -47,17 +46,17 @@
 
 >[!TIP]须知
 >
->-   当配置文件中log\_directory的值为非法路径时，会导致openGauss无法重新启动。
+>- 当配置文件中log\_directory的值为非法路径时，会导致openGauss无法重新启动。
 >
->-   通过gs\_guc reload动态修改log\_directory时，当指定路径为合法路径时，日志输出到新的路径下。当指定路径为非法路径时，日志输出到上一次合法的日志输出路径下而不影响数据库正常运行。此时即使指定的log\_directory的值非法，也会写入到配置文件中。
+>- 通过gs\_guc reload动态修改log\_directory时，当指定路径为合法路径时，日志输出到新的路径下。当指定路径为非法路径时，日志输出到上一次合法的日志输出路径下而不影响数据库正常运行。此时即使指定的log\_directory的值非法，也会写入到配置文件中。
 >
->-   在沙箱环境，路径中不可以包含/var/chroot，例如log的绝对路径是/var/chroot/var/lib/log/Ruby/pg\_log/cn\_log，则只需要设置为/var/lib/log/Ruby/pg\_log/cn\_log。
+>- 在沙箱环境，路径中不可以包含/var/chroot，例如log的绝对路径是/var/chroot/var/lib/log/Ruby/pg\_log/cn\_log，则只需要设置为/var/lib/log/Ruby/pg\_log/cn\_log。
 >
 >[!NOTE]说明
 >
->-   合法路径：用户对此路径有读写权限。
+>- 合法路径：用户对此路径有读写权限。
 >
->-   非法路径：用户对此路径无读写权限。
+>- 非法路径：用户对此路径无读写权限。
 
 **取值范围**： 字符串
 
@@ -71,9 +70,9 @@
 
 >[!TIP]须知
 >
->-   建议使用%转义字符定义日志文件名称，否则难以对日志文件进行有效的管理。
+>- 建议使用%转义字符定义日志文件名称，否则难以对日志文件进行有效的管理。
 >
->-   当log\_destination设为csvlog时，系统会生成附加了时间戳的日志文件名，文件格式为csv格式，例如“server\_log.1093827753.csv”。
+>- 当log\_destination设为csvlog时，系统会生成附加了时间戳的日志文件名，文件格式为csv格式，例如“server\_log.1093827753.csv”。
 
 **取值范围**： 字符串
 
@@ -87,17 +86,17 @@
 
 >[!TIP]须知
 >
->-   使用此选项前请设置log\_directory，将日志存储到数据目录之外的地方。
+>- 使用此选项前请设置log\_directory，将日志存储到数据目录之外的地方。
 >
->-   因日志文件可能含有敏感数据，故不能将其设为对外可读。
+>- 因日志文件可能含有敏感数据，故不能将其设为对外可读。
 
 **取值范围**： 整型，0000～0777（8进制计数，转化为十进制 0 \~ 511）。
 
 >[!NOTE]说明
 >
->-   0600表示只允许服务器管理员读写日志文件。
+>- 0600表示只允许服务器管理员读写日志文件。
 >
->-   0640表示允许管理员所在用户组成员只能读日志文件。
+>- 0640表示允许管理员所在用户组成员只能读日志文件。
 
 **默认值**： 0600
 
@@ -113,8 +112,8 @@
 
 **取值范围**： 布尔型
 
--   on表示openGauss以覆盖写入的方式写服务器日志消息。
--   off表示openGauss将日志消息附加到同名的现有日志文件上。
+- on表示openGauss以覆盖写入的方式写服务器日志消息。
+- off表示openGauss将日志消息附加到同名的现有日志文件上。
 
 **默认值**： off
 
@@ -185,4 +184,3 @@
 **取值范围**： 字符串
 
 **默认值**： PostgreSQL
-

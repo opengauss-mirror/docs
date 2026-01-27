@@ -10,29 +10,28 @@ KPIs are views of key performance indicators for kernel components or the entire
 
 ## Benefits<a name="section14646163010212"></a>
 
--   Summarized system load diagnosis
+- Summarized system load diagnosis
 
     Precise alarms for system load exceptions \(overload, stall, and SLA exceptions\) and precise system load profile
 
--   Summarized system time model diagnosis
+- Summarized system time model diagnosis
 
     Instance-level and query-level time model segmentation, diagnosing the root causes of instance and query performance problems
 
--   Query performance diagnosis
+- Query performance diagnosis
 
     Database-level query summary, including top SQL, SQL CPU usage, I/O consumption, execution plan, and excessive hard parsing
 
--   Diagnosis of disk I/O, index, and buffer performance problems
--   Diagnosis of connection and thread pool problems
--   Diagnosis of checkpoint and redo \(RTO\) performance problems
--   Diagnosis of system I/O, LWLock, and wait performance problems
+- Diagnosis of disk I/O, index, and buffer performance problems
+- Diagnosis of connection and thread pool problems
+- Diagnosis of checkpoint and redo \(RTO\) performance problems
+- Diagnosis of system I/O, LWLock, and wait performance problems
 
     Diagnosis of over 60 modules and over 240 key operation performance problems
 
--   Function-level performance monitoring and diagnosis \(by GSTRACE\)
+- Function-level performance monitoring and diagnosis \(by GSTRACE\)
 
     Tracing of over 50 functions at the storage and execution layers
-
 
 ## Description<a name="section1503163616210"></a>
 
@@ -49,10 +48,9 @@ None.
 
 ## Constraints<a name="section1956417145819"></a>
 
--   Utility statements do not support normalization. Non-DML statements, such as CREATE, DROP, COPY, and VACUUM, are not supported.
--   Currently, only the top-level normalized SQL statements are recorded. SQL statements in a stored procedure are not normalized, and only the SQL statements that call the stored procedure are recorded.
+- Utility statements do not support normalization. Non-DML statements, such as CREATE, DROP, COPY, and VACUUM, are not supported.
+- Currently, only the top-level normalized SQL statements are recorded. SQL statements in a stored procedure are not normalized, and only the SQL statements that call the stored procedure are recorded.
 
 ## Dependencies<a name="section15876411599"></a>
 
 None.
-

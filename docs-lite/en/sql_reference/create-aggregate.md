@@ -29,44 +29,37 @@ CREATE AGGREGATE name (
 
 ## Parameter Description<a name="section149920095912"></a>
 
--   **name**
+- **name**
 
     Name \(optionally schema-qualified\) of the aggregate function to be created.
 
--   **input\_data\_type**
+- **input\_data\_type**
 
     Data type of the input to be processed by the aggregate function. To create a zero-parameter aggregate function, you can use an asterisk \(\*\) instead of a list of input data types. \(count\(\*\) is an instance of this aggregate function.\)
 
-
--   **base\_type**
+- **base\_type**
 
     In the  **CREATE AGGREGATE**  syntax, the input data type is specified by the  **basetype**  parameter instead of following  **name**. Note that the previous syntax allows only one input parameter. To create a zero-parameter aggregate function, you can set  **basetype**  to  **ANY**  instead of  **\***.
 
-
--   **sfunc**
+- **sfunc**
 
     Name of the state conversion function that will be called on each input line. For an aggregate function with N parameters,  **sfunc**  must have more than one parameter. The first parameter is of the  **state\_data\_type**  type, and the other parameters match the declared input data types. The function must return a value of the  **state\_data\_type**  type. This function accepts the current state value and the current input data, and returns the next state value.
 
-
--   **state\_data\_type**
+- **state\_data\_type**
 
     Data type of the aggregation status value.
 
-
--   **ffunc**
+- **ffunc**
 
     Final processing function called after all the input lines have been converted, which calculates the result of aggregation. This function must accept a parameter of  **state\_data\_type**. The output data type of the aggregation is defined as the return type of this function. If  **ffunc**  is not specified, the state value of the aggregation result is used as the aggregation result, and the output type is  **state\_data\_type**.
 
-
--   **initial\_condition**
+- **initial\_condition**
 
     Initial setting \(value\) of a state value. It must be a text constant value acceptable to  **state\_data\_type**. If not specified, the initial state value is  **NULL**.
 
-
--   **sort\_operator**
+- **sort\_operator**
 
     Sort operator used for MIN or MAX aggregation. This is just an operator name \(optionally schema-qualified\). This operator assumes that the input data type is the same as that of aggregation.
-
 
 ## Examples<a name="section14103104145915"></a>
 

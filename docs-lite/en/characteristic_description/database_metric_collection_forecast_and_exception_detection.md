@@ -10,8 +10,8 @@ This feature serves as an AI tool integrated into openGauss and can be used to c
 
 ## Benefits<a name="section5621105733410"></a>
 
--   This feature greatly simplifies the work of O&M personnel, releases a large number of labor resources, and reduces costs for the company.
--   You can use the metric collection, monitoring, and forecast functions to detect problems in advance, preventing database exceptions from causing greater loss.
+- This feature greatly simplifies the work of O&M personnel, releases a large number of labor resources, and reduces costs for the company.
+- You can use the metric collection, monitoring, and forecast functions to detect problems in advance, preventing database exceptions from causing greater loss.
 
 ## Description<a name="section117712392341"></a>
 
@@ -25,9 +25,9 @@ This feature is greatly improved in openGauss 3.0.0 and is compatible with the P
 
 ## Constraints<a name="section1613131119346"></a>
 
--   The database is normal, and the data directory has been written into environment variables.
--   The Python version must be 3.6 or later.
--   The Prometheus monitoring platform is configured and the Prometheus service is started so that monitoring data can be collected.
+- The database is normal, and the data directory has been written into environment variables.
+- The Python version must be 3.6 or later.
+- The Prometheus monitoring platform is configured and the Prometheus service is started so that monitoring data can be collected.
 
 ## Dependencies<a name="section4228145683310"></a>
 

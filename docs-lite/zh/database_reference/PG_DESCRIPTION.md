@@ -55,4 +55,3 @@ PG\_DESCRIPTION系统表可以给每个数据库对象存储一个可选的描�
 </tr>
 </tbody>
 </table>
-

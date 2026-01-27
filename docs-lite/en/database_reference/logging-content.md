@@ -8,8 +8,8 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Value range**: Boolean
 
--   **on**  indicates that the printing is enabled.
--   **off**  indicates that the printing is disabled.
+- **on**  indicates that the printing is enabled.
+- **off**  indicates that the printing is disabled.
 
 **Default value**:  **off**
 
@@ -21,8 +21,8 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Value range**: Boolean
 
--   **on**  indicates that the printing is enabled.
--   **off**  indicates that the printing is disabled.
+- **on**  indicates that the printing is enabled.
+- **off**  indicates that the printing is disabled.
 
 **Default value**:  **off**
 
@@ -34,14 +34,15 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Value range**: Boolean
 
--   **on**  indicates that the printing is enabled.
--   **off**  indicates that the printing is disabled.
+- **on**  indicates that the printing is enabled.
+- **off**  indicates that the printing is disabled.
 
 **Default value**:  **off**
 
 >[!TIP]NOTICE 
->-   Debugging information about  **debug\_print\_parse**,  **debug\_print\_rewritten**, and  **debug\_print\_plan**  are printed only when the log level is set to  **log**  or higher. When these parameters are set to  **on**, their debugging information will be recorded in server logs and will not be sent to client logs. You can change the log level by setting  **[client\_min\_messages](logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)**  and  **[log\_min\_messages](logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)**.
->-   Do not invoke the  **gs\_encrypt\_aes128**  and  **gs\_decrypt\_aes128**  functions when  **debug\_print\_plan**  is set to  **on**, preventing the risk of sensitive information disclosure. You are advised to filter parameter information of the  **gs\_encrypt\_aes128**  and  **gs\_decrypt\_aes128**  functions in the log files generated when  **debug\_print\_plan**  is set to  **on**  before providing the log files to external maintenance engineers for fault locating. After you finish using the logs, delete them as soon as possible.
+>
+>- Debugging information about  **debug\_print\_parse**,  **debug\_print\_rewritten**, and  **debug\_print\_plan**  are printed only when the log level is set to  **log**  or higher. When these parameters are set to  **on**, their debugging information will be recorded in server logs and will not be sent to client logs. You can change the log level by setting  **[client\_min\_messages](logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)**  and  **[log\_min\_messages](logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)**.
+>- Do not invoke the  **gs\_encrypt\_aes128**  and  **gs\_decrypt\_aes128**  functions when  **debug\_print\_plan**  is set to  **on**, preventing the risk of sensitive information disclosure. You are advised to filter parameter information of the  **gs\_encrypt\_aes128**  and  **gs\_decrypt\_aes128**  functions in the log files generated when  **debug\_print\_plan**  is set to  **on**  before providing the log files to external maintenance engineers for fault locating. After you finish using the logs, delete them as soon as possible.
 
 ## debug\_pretty\_print<a name="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_s5bc0c94946f647878268bca243d4a828"></a>
 
@@ -51,8 +52,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the indentation is enabled.
--   **off**  indicates that the indentation is disabled.
+- **on**  indicates that the indentation is enabled.
+- **off**  indicates that the indentation is disabled.
 
 **Default value**:  **on**
 
@@ -64,8 +65,8 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Value range**: Boolean
 
--   **on**  indicates that the statistics on checkpoints and restart points are recorded in the server logs.
--   **off**  indicates that the statistics on checkpoints and restart points are not recorded in the server logs
+- **on**  indicates that the statistics on checkpoints and restart points are recorded in the server logs.
+- **off**  indicates that the statistics on checkpoints and restart points are not recorded in the server logs
 
 **Default value**:  **off**
 
@@ -80,8 +81,8 @@ This parameter is a BACKEND parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the request information is recorded.
--   **off**  indicates that the request information is not recorded.
+- **on**  indicates that the request information is recorded.
+- **off**  indicates that the request information is not recorded.
 
 **Default value**:  **off**
 
@@ -93,8 +94,8 @@ This parameter is a BACKEND parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the request information is recorded.
--   **off**  indicates that the request information is not recorded.
+- **on**  indicates that the request information is recorded.
+- **off**  indicates that the request information is not recorded.
 
 **Default value**:  **off**
 
@@ -106,8 +107,8 @@ This parameter is a  **SUSET**  parameter. Set it based on instructions provided
 
 **Value range**: Boolean
 
--   **off**: Compared with this option,  **[log\_min\_duration\_statement](logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_s62cf0fb833324a82a841f02134a932e5)**  forcibly records the query text.
--   If this parameter is set to  **on**  and  **log\_min\_duration\_statement**  is set to a positive value, the duration of each completed statement is logged but the query text is included only for statements exceeding the threshold. This behavior can be used for gathering statistics in high-load situation.
+- **off**: Compared with this option,  **[log\_min\_duration\_statement](logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_s62cf0fb833324a82a841f02134a932e5)**  forcibly records the query text.
+- If this parameter is set to  **on**  and  **log\_min\_duration\_statement**  is set to a positive value, the duration of each completed statement is logged but the query text is included only for statements exceeding the threshold. This behavior can be used for gathering statistics in high-load situation.
 
 **Default value**:  **off**
 
@@ -119,9 +120,9 @@ This parameter is a  **SUSET**  parameter. Set it based on instructions provided
 
 **Value range:**  enumerated values
 
--   **terse**  indicates that the output excludes the DETAIL, HINT, QUERY, and CONTEXT error information.
--   **verbose**  indicates that the output includes the SQLSTATE error code, the source code file name, function name, and number of the line in which the error occurs.
--   **default**  indicates that the output includes the DETAIL, HINT, QUERY, and CONTEXT error information, and excludes the SQLSTATE error code, the source code file name, function name, and number of the line in which the error occurs.
+- **terse**  indicates that the output excludes the DETAIL, HINT, QUERY, and CONTEXT error information.
+- **verbose**  indicates that the output includes the SQLSTATE error code, the source code file name, function name, and number of the line in which the error occurs.
+- **default**  indicates that the output includes the DETAIL, HINT, QUERY, and CONTEXT error information, and excludes the SQLSTATE error code, the source code file name, function name, and number of the line in which the error occurs.
 
 **Default value**:  **default**
 
@@ -133,8 +134,8 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Value range**: Boolean
 
--   **on**  indicates that the host name is simultaneously recorded.
--   **off**  indicates that the host name is not simultaneously recorded.
+- **on**  indicates that the host name is simultaneously recorded.
+- **off**  indicates that the host name is not simultaneously recorded.
 
 **Default value**:  **off**
 
@@ -258,13 +259,15 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 >[!NOTE]NOTE 
 >The %c escape character prints a session ID consisting of two 4-byte hexadecimal numbers separated by a period \(.\). The numbers are the process startup time and the process ID. Therefore, %c can also be used as a space saving way of printing those items. For example, run the following query to generate the session ID from  **pg\_stat\_activity**:
+>
 >```
 >SELECT to_hex(EXTRACT(EPOCH FROM backend_start)::integer) || '.' ||
 >       to_hex(pid)
 >FROM pg_stat_activity;
 >```
->-   If you set a nonempty value for  **log\_line\_prefix**, you should usually make its last character be a space, to provide visual separation from the rest of the log line. A punctuation character can be used, too.
->-   Syslog generates its own timestamp and process ID information. Therefore, you do not need to include those escapes characters when you are logging in to syslog.
+>
+>- If you set a nonempty value for  **log\_line\_prefix**, you should usually make its last character be a space, to provide visual separation from the rest of the log line. A punctuation character can be used, too.
+>- Syslog generates its own timestamp and process ID information. Therefore, you do not need to include those escapes characters when you are logging in to syslog.
 
 **Value range**: a string
 
@@ -278,8 +281,8 @@ This parameter is a  **SUSET**  parameter. Set it based on instructions provided
 
 **Value range**: Boolean
 
--   **on**  indicates that the information is recorded.
--   **off**  indicates that the information is not recorded.
+- **on**  indicates that the information is recorded.
+- **off**  indicates that the information is not recorded.
 
 **Default value**:  **off**
 
@@ -294,10 +297,10 @@ This parameter is a  **SUSET**  parameter. Set it based on instructions provided
 
 **Value range:**  enumerated values
 
--   **none**  indicates that no statement is recorded.
--   **ddl**  indicates that all data definition statements, such as CREATE, ALTER, and DROP, are recorded.
--   **mod**  indicates that all DDL statements and data modification statements, such as INSERT, UPDATE, DELETE, TRUNCATE, and COPY FROM, are recorded.
--   **all**  indicates that all statements, including the PREPARE, EXECUTE, and EXPLAIN ANALYZE statements, are recorded.
+- **none**  indicates that no statement is recorded.
+- **ddl**  indicates that all data definition statements, such as CREATE, ALTER, and DROP, are recorded.
+- **mod**  indicates that all DDL statements and data modification statements, such as INSERT, UPDATE, DELETE, TRUNCATE, and COPY FROM, are recorded.
+- **all**  indicates that all statements, including the PREPARE, EXECUTE, and EXPLAIN ANALYZE statements, are recorded.
 
 **Default value**:  **none**
 
@@ -309,9 +312,9 @@ This parameter is a  **SUSET**  parameter. Set it based on instructions provided
 
 **Value range**: an integer ranging from –1 to 2147483647. The unit is KB.
 
--   A positive value indicates that the deletion information of temporary files whose size is larger than the specified value of  **log\_temp\_files**  is recorded.
--   **0**  indicates that the delete information of all temporary files is recorded.
--   **–1**  indicates that the delete information of any temporary files is not recorded.
+- A positive value indicates that the deletion information of temporary files whose size is larger than the specified value of  **log\_temp\_files**  is recorded.
+- **0**  indicates that the delete information of all temporary files is recorded.
+- **–1**  indicates that the delete information of any temporary files is not recorded.
 
 **Default value**:  **–1**
 
@@ -348,7 +351,7 @@ ALL,on(),off(GUC,ORC,SLRU,MEM_CTL,AUTOVAC,CACHE,ADIO,SSL,TBLSPC,WLM,EXECUTOR,VEC
 (1 row)
 ```
 
-Controllable modules are identified by uppercase letters, and the special ID  **ALL**  is used for setting all module logs. You can control the output of module logs by setting** logging\_module**  to  **on**  or  **off**. Enable log output for SSL:
+Controllable modules are identified by uppercase letters, and the special ID  **ALL**  is used for setting all module logs. You can control the output of module logs by setting**logging\_module**  to  **on**  or  **off**. Enable log output for SSL:
 
 ```
 openGauss=# set logging_module='on(SSL)';
@@ -386,8 +389,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range:**  enumerated values
 
--   **off**  indicates that reasons why queries are not optimized are not included.
--   **log**  indicates that reasons why queries are not optimized are included in the database node execution plan.
+- **off**  indicates that reasons why queries are not optimized are not included.
+- **log**  indicates that reasons why queries are not optimized are included in the database node execution plan.
 
 >[!TIP]NOTICE 
 >To view the reasons why queries are not optimized in the log, set  **opfusion\_debug\_mode**  to  **log**,  **log\_min\_messages**  to  **debug4**, and  **logging\_module**  to  **on\(OPFUSION\)**. Note that a large number of log messages may be generated. Therefore, execute only a small number of jobs during debugging. 
@@ -402,8 +405,8 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Value range**: Boolean
 
--   **on**  or  **true**  indicates that generation of ADIO logs is allowed.
--   **off**  or  **false**  indicates that generation of ADIO logs is not allowed.
+- **on**  or  **true**  indicates that generation of ADIO logs is allowed.
+- **off**  or  **false**  indicates that generation of ADIO logs is not allowed.
 
 **Default value**:  **off**
 
@@ -415,7 +418,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  or  **true**  indicates that native language support of logs is enabled.
--   **off**  or  **false**  indicates that native language support of logs is not enabled.
+- **on**  or  **true**  indicates that native language support of logs is enabled.
+- **off**  or  **false**  indicates that native language support of logs is not enabled.
 
 **Default value**:  **off**

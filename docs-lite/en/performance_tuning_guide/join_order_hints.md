@@ -6,13 +6,13 @@ Theses hints specify the join order and outer/inner tables.
 
 ## Syntax<a name="en-us_topic_0283136909_en-us_topic_0237121533_section128191729143517"></a>
 
--   Specify only the join order.
+- Specify only the join order.
 
 ```
 leading(join_table_list) 
 ```
 
--   Specify the join order and outer/inner tables. The outer/inner tables are specified by the outermost parentheses.
+- Specify the join order and outer/inner tables. The outer/inner tables are specified by the outermost parentheses.
 
 ```
 leading((join_table_list)) 
@@ -29,10 +29,10 @@ _join\_table\_list_  specifies the tables to be joined. The values can be table 
 
 To prevent semantic errors, tables in the list must meet the following requirements:
 
--   The tables must exist in the query or its subquery to be pulled up.
--   The table names must be unique in the query or subquery to be pulled up. If they are not, their aliases must be unique.
--   A table appears only once in the list.
--   An alias \(if any\) is used to represent a table.
+- The tables must exist in the query or its subquery to be pulled up.
+- The table names must be unique in the query or subquery to be pulled up. If they are not, their aliases must be unique.
+- A table appears only once in the list.
+- An alias \(if any\) is used to represent a table.
 
 For example:
 
@@ -60,4 +60,3 @@ First,  **store\_sales**  and  **store**  are joined and  **store\_sales**  is t
 ![](figures/en-us_image_0289899975.png)
 
 For details about the warning at the top of the plan, see  [Hint Errors, Conflicts, and Other Warnings](hint_errors_conflicts_and_other_warnings.md).
-

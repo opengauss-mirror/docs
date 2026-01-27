@@ -6,10 +6,10 @@
 
 ## Precautions<a name="en-us_topic_0283137390_en-us_topic_0237122128_en-us_topic_0059778820_s8f58e1ff1b9849b2845f196df6352f13"></a>
 
--   Only the initial user, system administrator, and security administrator have the permission to execute this syntax.
--   Passwords in the weak password dictionary are stored in the  **gs\_global\_config**  system catalog.
--   The weak password dictionary is empty by default. You can use this syntax to add one or more weak passwords.
--   When a user attempts to execute this syntax to insert a weak password that already exists in the  **gs\_global\_config**  table, only one weak password is retained in the table.
+- Only the initial user, system administrator, and security administrator have the permission to execute this syntax.
+- Passwords in the weak password dictionary are stored in the  **gs\_global\_config**  system catalog.
+- The weak password dictionary is empty by default. You can use this syntax to add one or more weak passwords.
+- When a user attempts to execute this syntax to insert a weak password that already exists in the  **gs\_global\_config**  table, only one weak password is retained in the table.
 
 ## Syntax<a name="en-us_topic_0283137390_en-us_topic_0237122128_en-us_topic_0059778820_s77068dc6043742e086ef7bfea9075223"></a>
 
@@ -45,4 +45,3 @@ openGauss=# SELECT * FROM gs_global_config WHERE NAME LIKE 'weak_password';
 ## Helpful Links<a name="en-us_topic_0283137390_en-us_topic_0237122128_en-us_topic_0059778820_sb9bc0f8b2b464231a9dc551fa79f0485"></a>
 
 [DROP WEAK PASSWORD DICTIONARY](drop_weak_password_dictionary.md)
-

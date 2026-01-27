@@ -29,5 +29,3 @@
 - **[SQL Syntax](sql_syntax_formats.md)**  
 
 - **[Appendix](./brief_tutorial/appendix-sql-syntax.md)**  
-
-

@@ -2,7 +2,6 @@
 
 将包含openGauss内汇聚数据库中的每个索引行，显示访问特定索引的统计。
 
-
 **表 1**  SUMMARY\_STAT\_ALL\_INDEXES字段
 
 <a name="zh-cn_topic_0237122592_table12266855154914"></a>

@@ -148,4 +148,3 @@ PG\_STAT\_DATABASE视图将包含openGauss中每个数据库的数据库统计�
 </tr>
 </tbody>
 </table>
-

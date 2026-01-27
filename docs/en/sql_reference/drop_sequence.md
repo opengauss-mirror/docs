@@ -6,8 +6,8 @@
 
 ## Precautions<a name="en-us_topic_0283137072_en-us_topic_0237122149_en-us_topic_0059778402_section3924194973416"></a>
 
--   Only the owner of a sequence, the owner of the schema to which the sequence belongs, or a user granted the DROP permission on a sequence or a user granted the DROP ANY SEQUENCE permission can delete a sequence. The system administrator has this permission by default.
--   If the LARGE identifier is used when a sequence is created, the LARGE identifier must be used when the sequence is dropped.
+- Only the owner of a sequence, the owner of the schema to which the sequence belongs, or a user granted the DROP permission on a sequence or a user granted the DROP ANY SEQUENCE permission can delete a sequence. The system administrator has this permission by default.
+- If the LARGE identifier is used when a sequence is created, the LARGE identifier must be used when the sequence is dropped.
 
 ## Syntax<a name="en-us_topic_0283137072_en-us_topic_0237122149_en-us_topic_0059778402_section292414499345"></a>
 
@@ -17,22 +17,21 @@ DROP  [ LARGE ] SEQUENCE [ IF EXISTS ] {[schema.]sequence_name} [ , ... ] [ CASC
 
 ## Parameter Description<a name="en-us_topic_0283137072_en-us_topic_0237122149_en-us_topic_0059778402_section1692544913344"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Reports a notice instead of an error if the specified sequence does not exist.
 
--   **name**
+- **name**
 
     Specifies the name of the sequence to be deleted.
 
--   **CASCADE**
+- **CASCADE**
 
     Automatically deletes the objects that depend on the sequence.
 
--   **RESTRICT**
+- **RESTRICT**
 
     Refuses to delete the sequence if any objects depend on it. This is the default action.
-
 
 ## Examples<a name="en-us_topic_0283137072_en-us_topic_0237122149_en-us_topic_0059778402_section13928174913345"></a>
 

@@ -1,4 +1,5 @@
 # CPU<a name="EN-US_TOPIC_0245374521"></a>
+
 You can run the  **top**  command to check the CPU usage of each node in openGauss and analyze whether performance bottleneck caused by heavy CPU load exists. The **top** command is used to monitor the Linux OS status. It is a common performance analysis tool and can display the resource usage of each process in the system in real time.
  
 Description
@@ -36,7 +37,7 @@ In the command output, focus on the CPU usage occupied by each process.
 
 ## Analyzing Performance Parameters<a name="en-us_topic_0237121486_en-us_topic_0073253546_en-us_topic_0040046498_section1965795485640"></a>
 
-1.  Run the  **top-H**  command to check the CPU usage. The following is displayed:
+1. Run the  **top-H**  command to check the CPU usage. The following is displayed:
 
     ```
         14 root      20   0     0    0    0 S    0  0.0   0:16.41 events/3                  
@@ -59,10 +60,10 @@ In the command output, focus on the CPU usage occupied by each process.
          1 root      20   0 13592  944  792 S    0  0.0   0:08.54 init          
     ```
 
-2.  In the query result for  **Cpu\(s\)**, check whether the system CPU \(**sy**\) or user CPU \(**us**\) usage is high.
-    -   If the system CPU usage is too high, you need to identify the abnormal system processes and handle them.
-    -   If the CPU usage of the openGauss process whose  **USER**  is  **omm**  is too high, optimize the service-related SQL statements based on the running services queries. Based on the features of the currently running service, perform the following operations to check whether this process containing infinite loop logics.
-        1.  Run the  **top -H  -p pid**  command to identify the threads that use much CPU in the process.
+2. In the query result for  **Cpu\(s\)**, check whether the system CPU \(**sy**\) or user CPU \(**us**\) usage is high.
+    - If the system CPU usage is too high, you need to identify the abnormal system processes and handle them.
+    - If the CPU usage of the openGauss process whose  **USER**  is  **omm**  is too high, optimize the service-related SQL statements based on the running services queries. Based on the features of the currently running service, perform the following operations to check whether this process containing infinite loop logics.
+        1. Run the  **top -H  -p pid**  command to identify the threads that use much CPU in the process.
 
             ```
             top -H -p 54952
@@ -93,7 +94,7 @@ In the command output, focus on the CPU usage occupied by each process.
              54954 omm  20   0  684m 424m 131m S    0  5.4   0:06.54 gaussdb                   
             ```
 
-        2.  Run the following command to view the function invocation stack for each thread in the process. Check the thread number for the ID of the thread that occupies high CPU usage in the last step.
+        2. Run the following command to view the function invocation stack for each thread in the process. Check the thread number for the ID of the thread that occupies high CPU usage in the last step.
 
             ```
             gstack  54954

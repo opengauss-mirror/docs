@@ -11,7 +11,3 @@ openGauss允许应用程序使用MOT和基于标准磁盘的表。MOT适用于�
 以下是与使用MOT相关的任务的简单概述：
 
 ![](figures/zh-cn_image_0280525209.png)
-
-
-
-

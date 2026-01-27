@@ -4,4 +4,3 @@ openGauss can be deployed in standalone or in standalone HA mode. In standalone 
 
 >[!NOTE]NOTE 
 >When the openGauss provides scripts for installation, only one database system can be deployed on a single physical machine. If you need to deploy multiple database systems on a single physical machine, you are advised to install the database systems using the CLI instead of using the installation script provided by the openGauss.
-

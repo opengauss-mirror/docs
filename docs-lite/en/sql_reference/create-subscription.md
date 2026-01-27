@@ -19,69 +19,66 @@ CREATE SUBSCRIPTION subscription_name
 
 ## Parameter Description<a name="section9224164695517"></a>
 
--   **subscription\_name**
+- **subscription\_name**
 
     Specifies the name of a new subscription.
 
--   **CONNECTION 'conninfo'**
+- **CONNECTION 'conninfo'**
 
     Specifies the character string for connecting to the publication side.
 
     For example, **'host=1.1.1.1,2.2.2.2 port=10000,20000 dbname=postgres user=repusr1 password=password\_123'**.
 
-    -   **host**
+    - **host**
 
         IP address of the publisher. You can specify the IP addresses of the primary and standby nodes of the publisher at the same time. If multiple IP addresses are specified, separate them with commas (,).
 
-    -   **port**
+    - **port**
 
         The port number of the publication side cannot be the primary port number. The port number must be the primary port number plus 1. Otherwise, the port number conflicts with the thread pool. You can specify the ports of the primary and standby nodes of the publisher at the same time. If multiple ports are specified, separate them with commas (,).
 
         >[!TIP]NOTICE  
         >The number of hosts must be the same as that of ports.
 
-    -   **dbname**
+    - **dbname**
 
         Specifies the database where a publication is located.
 
-    -   **user** and **password**
+    - **user** and **password**
 
         Specify the username and password used to connect to the publication side. The user has the system administrator permission (**SYSADMIN**) or O&M administrator permission (**OPRADMIN**). The password must be encrypted. Before creating a subscription, run the **gs\_guc generate -S xxxxxx -D $GAUSSHOME/bin -o subscription** command on the subscription side.
 
-
--   **PUBLICATION publication\_name**
+- **PUBLICATION publication\_name**
 
     Specifies the name of the publication to be subscribed to on the publication side. A subscription can correspond to multiple publications.
 
--   **WITH \( subscription\_parameter \[= value\] \[, ... \] \)**
+- **WITH \( subscription\_parameter \[= value\] \[, ... \] \)**
 
     Specifies the optional parameters for a subscription. The following parameters are supported:
 
-    -   **copy_data \(boolean\)**
+    - **copy_data \(boolean\)**
 
         Determines whether to copy existing data in the publication that is being subscribed to after copy starts. The default value is **true**.
 
-    -   **enabled \(boolean\)**
+    - **enabled \(boolean\)**
 
         Specifies whether a subscription should be actively replicated, or whether it should be just set but not started. The default value is **true**.
 
-    -   **slot\_name \(string\)**
+    - **slot\_name \(string\)**
 
         Specifies the name of the replication slot to be used. By default, the subscription name is used as the replication slot name.
 
         If **enable** is set to **false** during subscription creation, **slot\_name** is forcibly set to **NONE** which indicates a null value. In this case, the replication slot does not exist even if the value of **slot\_name** is specified.
 
-    -   **synchronous\_commit \(enum\)**
+    - **synchronous\_commit \(enum\)**
 
         The value of this parameter overwrites the value of **synchronous\_commit**. The default value is **off**.
 
         It is safe to use the value **off** for logical replication. If the subscription side loses the transaction due to a lack of synchronization, the data is sent again from the publisher. A different setting may be appropriate for synchronous logical replication. The logical replication thread reports the locations of WRITE and REFRESH operations to the publication side. When synchronous replication is used, the publication side waits for the actual REFRESH operations. This means that setting the subscriber's **synchronous\_commit** to **off** when the subscription is used for synchronous replication may increase the latency of **COMMIT** on the publication server. In this case, it is advantageous to set **synchronous\_commit** to **local** or a higher value.
 
-    -   **binary (boolean)**
+    - **binary (boolean)**
 
         Specifies whether the subscription is sent by the publisher in binary format. The value **true** indicates that the data is sent in binary format, and the value **false** indicates that the data is sent in the default text format. Default value: **false**
-
-
 
 ## Example<a name="section1399192015610"></a>
 

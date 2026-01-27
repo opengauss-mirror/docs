@@ -3,7 +3,7 @@
 >[!NOTE]NOTE 
 >This function is an internal function. For details, see "Database Security \> Dynamic Data Anonymization" in  *Feature Description*.
 
--   creditcardmasking\(col text, letter char default 'x'\)
+- creditcardmasking\(col text, letter char default 'x'\)
 
     Description: Replaces the digits before the last four bits following the col string with letters.
 
@@ -11,7 +11,7 @@
 
     Return type: text
 
--   basicmailmasking\(col text, letter char default 'x'\)
+- basicmailmasking\(col text, letter char default 'x'\)
 
     Description: Replaces the characters before the first at sign \(@\) in the col string with letters.
 
@@ -19,7 +19,7 @@
 
     Return type: text
 
--   fullmailmasking\(col text, letter char default 'x'\)
+- fullmailmasking\(col text, letter char default 'x'\)
 
     Description: Replaces the characters \(except  **@**\) before the last period \(.\) in the col string with letters.
 
@@ -27,7 +27,7 @@
 
     Return type: text
 
--   alldigitsmasking\(col text, letter char default '0'\)
+- alldigitsmasking\(col text, letter char default '0'\)
 
     Description: Replaces the digits in the col string with letters.
 
@@ -35,7 +35,7 @@
 
     Return type: text
 
--   shufflemasking\(col text\)
+- shufflemasking\(col text\)
 
     Description: Sorts the characters in the col string out of order.
 
@@ -43,7 +43,7 @@
 
     Return type: text
 
--   randommasking\(col text\)
+- randommasking\(col text\)
 
     Description: Randomizes the characters in the col string.
 
@@ -51,7 +51,7 @@
 
     Return type: text
 
--   regexpmasking
+- regexpmasking
 
     Description: Specifies the internal function of the masking policy, which is used to replace characters using a regular expression.
 

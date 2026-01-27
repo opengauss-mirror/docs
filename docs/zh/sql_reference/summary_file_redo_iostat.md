@@ -3,6 +3,7 @@
 openGauss内汇聚所有的Redo（WAL）相关的统计信息。
 
 示例：
+
 ```sql
 openGauss=# select * from DBE_PERF.SUMMARY_FILE_REDO_IOSTAT;
  phywrts | phyblkwrt | writetim | avgiotim | lstiotim | miniotim | maxiowtm 

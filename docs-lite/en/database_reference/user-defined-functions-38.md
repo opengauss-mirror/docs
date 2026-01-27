@@ -41,12 +41,11 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: a string, supporting:
 
--   JDK8 JVM startup parameters. For details, see JDK  [official ](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html)descriptions.
--   JDK8 JVM system attributes \(starting with  **–D**, for example,  **–Djava.ext.dirs**\). For details, see JDK  [official ](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/properties.html)descriptions.
--   User-defined parameters \(starting with  **–D**, for example,  **–Duser.defined.option**\).
+- JDK8 JVM startup parameters. For details, see JDK  [official](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html)descriptions.
+- JDK8 JVM system attributes \(starting with  **–D**, for example,  **–Djava.ext.dirs**\). For details, see JDK  [official](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/properties.html)descriptions.
+- User-defined parameters \(starting with  **–D**, for example,  **–Duser.defined.option**\).
 
 >[!TIP]NOTICE 
 >If  **pljava\_vmoptions**  is set to a value beyond the value range, an error will be reported when PL/Java functions are used. For details, see  [PL/pgSQL Functions](../sql_reference/pl-pgsql-functions.md).
 
 **Default value:**  empty
-

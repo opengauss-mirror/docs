@@ -25,7 +25,7 @@ During the openGauss installation, you need to perform operations such as runnin
 
 - Before running commands, check whether all cluster nodes support the **expect** command. If not, download the expect tool. The expect version 5.45 is recommended.
 
--   If the SELinux service is installed and has been started on each host, ensure that the security context of the **/root **directory is set to the default value **system\_u:object\_r:home\_root\_t:s0** and that of the **/home** directory is set to the default value **system\_u:object\_r:admin\_home\_t:s0**, or disable the SELinux service.
+- If the SELinux service is installed and has been started on each host, ensure that the security context of the **/root**directory is set to the default value **system\_u:object\_r:home\_root\_t:s0** and that of the **/home** directory is set to the default value **system\_u:object\_r:admin\_home\_t:s0**, or disable the SELinux service.
 
     To check whether the SELinux OS has been installed and started, run the **getenforce** command. If the command output is **Enforcing**, the SELinux OS has been installed and started. 
 
@@ -49,59 +49,56 @@ During the openGauss installation, you need to perform operations such as runnin
     restorecon -r -vv /root/
     ```
 
-
 ## Syntax<a name="en-us_topic_0237152423_en-us_topic_0059778349_sa7fde5cce9124d06a6c7caa6abc0070e"></a>
 
--   Establish mutual trust.
+- Establish mutual trust.
 
     ```
     gs_sshexkey -f HOSTFILE  [...] [--skip-hostname-set] [-l LOGFILE]
     ```
 
--   Display help information.
+- Display help information.
 
     ```
     gs_sshexkey -? | --help
     ```
 
--   Display version information.
+- Display version information.
 
     ```
     gs_sshexkey -V | --version
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0237152423_en-us_topic_0059778349_s36a1b85ea7c243e69a825f543215ce01"></a>
 
--   -f
+- -f
 
     Lists the IP addresses of all the hosts among which mutual trust relationships need to be established.
 
     >[!NOTE]NOTE 
     >You need to ensure that only IP addresses (one in each row) are configured in the hostfile file.
 
--   -l
+- -l
 
     Specifies the path for saving log files.
 
     Value range: any existing absolute path that can be accessed
 
--   --skip-hostname-set
+- --skip-hostname-set
 
     Specifies whether to write the mapping relationship between the host name and IP address of the **-f** parameter file to the **/etc/hosts** file. By default, the relationship is written to the file. If this parameter is specified, the relationship is not written to the file. Common users do not have the permission to edit the **/etc/hosts** file. Therefore, no mapping is generated for common users regardless of whether this parameter is specified.
 
--   --no-deduplicate
+- --no-deduplicate
 
     Determines whether to delete the host information that has been configured in the **/etc/hosts** file when the **/etc/hosts** file is modified during mutual trust configuration. By default, duplicate host information is deleted.
 
--   -?, --help
+- -?, --help
 
     Displays help information.
 
--   -V, --version
+- -V, --version
 
     Displays version information.
-
 
 ## Examples<a name="en-us_topic_0237152423_en-us_topic_0059778349_s0925c040c7eb4b0d9fb783ac5c0a8b2b"></a>
 
@@ -132,5 +129,3 @@ The following examples describe how to establish mutual trust relationships for 
   Successfully verified SSH trust on all hosts.
   Successfully created SSH trust.
   ```
-
-  

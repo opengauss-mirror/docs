@@ -78,5 +78,3 @@ GS\_PACKAGE系统表记录PACKAGE内的信息。
 </tr>
 </tbody>
 </table>
-
-

@@ -18,10 +18,9 @@ SELECT
 
 ## Parameter Description<a name="section1376271572414"></a>
 
--   **HAVING clause**
+- **HAVING clause**
 
     Selects special groups by working with the  **GROUP BY**  clause. The  **HAVING**  clause compares some attributes of groups with a constant. Only groups that match the logical expression in the  **HAVING**  clause are extracted.
-
 
 ## Examples<a name="section9965828102619"></a>
 
@@ -58,4 +57,3 @@ The result is as follows:
  Lily
 (2 rows)
 ```
-

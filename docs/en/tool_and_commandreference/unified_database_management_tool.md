@@ -4,12 +4,12 @@ The cluster manager \(CM\) is a database management module. It supports customiz
 
 Note that in a scenario where there are one primary node and one standby node, the CM supports only basic capabilities, such as installation, startup, stop, and detection.
 
--   **[Features](features.md)** 
+- **[Features](features.md)** 
 
--   **[cm\_ctl](cm_ctl.md)** 
+- **[cm\_ctl](cm_ctl.md)** 
 
--   **[cm\_install and cm\_uninstall](cm_install_and_cm_uninstall.md)** 
+- **[cm\_install and cm\_uninstall](cm_install_and_cm_uninstall.md)** 
 
--   **[Security Design](security_design.md)** 
+- **[Security Design](security_design.md)** 
 
--   **[CM Parameters](cm_parameters.md)** 
+- **[CM Parameters](cm_parameters.md)** 

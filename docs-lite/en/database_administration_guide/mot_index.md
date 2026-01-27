@@ -10,10 +10,10 @@ Another challenge was making an optimistic insertion into a table with multiple 
 
 The Masstree index is at the core of MOT memory layout for data and index management. Our team enhanced and significantly improved Masstree and submitted some of the key contributions to the Masstree open source. These improvements include –
 
--   Dedicated memory pools per index – Efficient allocation and fast index drop
--   Global GC for Masstree – Fast, on-demand memory reclamation
--   Masstree iterator implementation with access to an insertion key
--   ARM architecture support
+- Dedicated memory pools per index – Efficient allocation and fast index drop
+- Global GC for Masstree – Fast, on-demand memory reclamation
+- Masstree iterator implementation with access to an insertion key
+- ARM architecture support
 
 We contributed our Masstree index improvements to the Masstree open-source implementation, which can be found here –  [https://github.com/kohler/masstree-beta](https://github.com/kohler/masstree-beta).
 
@@ -31,4 +31,3 @@ A non-unique index may contain multiple rows with the same key. Non-unique index
 The structure of an MOT table T that has three rows and two indexes is depicted in the figure above. The rectangles represent data rows, and the indexes point to sentinels \(the elliptic shapes\) which point to the rows. The sentinels are inserted into unique indexes with a key and into non-unique indexes with a key + a suffix. The sentinels facilitate maintenance operations so that the rows can be replaced without touching the index data structure. In addition, there are various flags and a reference count embedded in the sentinel in order to facilitate optimistic inserts.
 
 When searching a non-unique secondary index, the required key \(for example, the family name\) is used. The fully concatenated key is only used for insert and delete operations. Insert and delete operations always get a row as a parameter, thereby making it possible to create the entire key and to use it in the execution of the deletion or the insertion of the specific row for the index.
-

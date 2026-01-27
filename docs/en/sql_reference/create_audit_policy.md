@@ -16,64 +16,59 @@ The masking policy takes effect only after the security policy is enabled, that 
 CREATE AUDIT POLICY [ IF NOT EXISTS ] policy_name { { privilege_audit_clause | access_audit_clause } [ filter_group_clause ] [ ENABLE | DISABLE ] };
 ```
 
--   privilege\_audit\_clause
+- privilege\_audit\_clause
 
     ```
     PRIVILEGES { DDL | ALL } [ ON LABEL ( resource_label_name [, ... ] ) ]
     ```
 
--   access\_audit\_clause
+- access\_audit\_clause
 
     ```
     ACCESS { DML | ALL } [ ON LABEL ( resource_label_name [, ... ] ) ]
     ```
 
-
--   filter\_group\_clause
+- filter\_group\_clause
 
     ```
     FILTER ON { ( FILTER_TYPE ( filter_value [, ... ] ) ) [, ... ] }
     ```
 
-
 ## Parameter Description<a name="section2852173114389"></a>
 
--   **policy\_name**
+- **policy\_name**
 
     Specifies the audit policy name, which must be unique.
 
     Value range: a string. It must comply with the naming convention.
 
--   **DDL**
+- **DDL**
 
     Specifies the operations that are audited within the database:  **CREATE**,  **ALTER**,  **DROP**,  **ANALYZE**,  **COMMENT**,  **GRANT**,  **REVOKE**,  **SET**,  **SHOW**,  **LOGIN\_ANY**,  **LOGIN\_FAILURE**,  **LOGIN\_SUCCESS**, and  **LOGOUT**.
 
--   **ALL**
+- **ALL**
 
     Indicates all operations supported by the specified DDL statements in the database.
 
--   **resource\_label\_name**
+- **resource\_label\_name**
 
     Specifies the resource label name.
 
--   **DML**
+- **DML**
 
     Specifies the operations that are audited within the database:  **SELECT**,  **COPY**,  **DEALLOCATE**,  **DELETE**,  **EXECUTE**,  **INSERT**,  **PREPARE**,  **REINDEX**,  **TRUNCATE**, and  **UPDATE**.
 
-
--   **FILTER\_TYPE**
+- **FILTER\_TYPE**
 
     Specifies the types of information to be filtered by the audit, including  **IP**,  **APP**, and  **ROLES**.
 
--   **filter\_value**
+- **filter\_value**
 
     Indicates the detailed information to be filtered.
 
-
--   **ENABLE|DISABLE**
+- **ENABLE|DISABLE**
 
     Enables or disables the unified audit policy. If  **ENABLE|DISABLE**  is not specified,  **ENABLE**  is used by default.
-
 
 ## Examples<a name="section7854941155112"></a>
 
@@ -104,4 +99,3 @@ openGauss=# CREATE AUDIT POLICY adt4 ACCESS SELECT ON LABEL(adt_lb0), INSERT ON 
 ## Helpful Links<a name="en-us_topic_0059778277_s4693856e1f6240dc98de7d6faf52f136"></a>
 
 [ALTER AUDIT POLICY](alter_audit_policy.md)  and  [DROP AUDIT POLICY](drop_audit_policy.md)
-

@@ -1,7 +1,7 @@
 # Testing TPC-C Performance<a name="EN-US_TOPIC_0283137363"></a>
 
-1.  Download the TPC-C standard test tool BenchmarkSQL 5.0.
-2.  Replace \*.jar in the  **lib/postgresql**  directory with the \*.jar package adapted to the openGauss.
+1. Download the TPC-C standard test tool BenchmarkSQL 5.0.
+2. Replace \*.jar in the  **lib/postgresql**  directory with the \*.jar package adapted to the openGauss.
 
     ```
     $ pwd 
@@ -13,7 +13,7 @@
 
     The JDBC version package adapted to openGauss is obtained from  [openGauss-x.x.x-JDBC .tar.gz](https://opengauss.org/zh/download/).
 
-3.  Go to the root directory of benchmarksql-5.0 and run the  **ant**  command for compilation.
+3. Go to the root directory of benchmarksql-5.0 and run the  **ant**  command for compilation.
 
     ```
     $ cd /your path/benchmarksql-5.0/ 
@@ -22,7 +22,7 @@
 
     After the compilation is successful, the build and dist directories are generated.
 
-4.  Create the BenchmarkSQL configuration file. Before using the BenchmarkSQL, you need to configure the database information, including the database account, password, port number and database name.
+4. Create the BenchmarkSQL configuration file. Before using the BenchmarkSQL, you need to configure the database information, including the database account, password, port number and database name.
 
     ```
     $ cd /your path/benchmarksql-5.0/run 
@@ -76,7 +76,7 @@
     osCollectorDevices=net_enp3s0 blk_nvme0n1 blk_nvme1n1 blk_nvme2n1 blk_nvme3n1
     ```
 
-5.  Prepare for importing TPC-C data.
+5. Prepare for importing TPC-C data.
 
     Replace the files in BenchmarkSQL with the following file in  **benchmarksql-5.0/run/sql.common/**. This file mainly adds two tablespaces and some additional data attributes.
 
@@ -212,8 +212,8 @@
     ) WITH (FILLFACTOR=80) tablespace example3;
     ```
 
-6.  Import data.
-    1.  Create a database user.
+6. Import data.
+    1. Create a database user.
 
         ```
         create user bot identified by 'Gaussdba@Mpp' profile default; 
@@ -221,17 +221,17 @@
         create database tpcc1000 encoding 'UTF8' template=template0 owner tpcc5q;
         ```
 
-    2.  To import data, run the following command.
+    2. To import data, run the following command.
 
         ```
         ./runDatabaseBuild.sh props.opengauss.1000w
         ```
 
-7.  <a name="en-us_topic_0263913274_li11139125793619"></a>Back up data.
+7. <a name="en-us_topic_0263913274_li11139125793619"></a>Back up data.
 
     To facilitate multiple tests and reduce the data import time, you can stop the database and copy the entire data directory to back up the database.
 
-8.  <a name="en-us_topic_0263913274_li1840654753618"></a>Partition data disks.
+8. <a name="en-us_topic_0263913274_li1840654753618"></a>Partition data disks.
 
     During the performance test, data needs to be distributed to different storage media to increase the I/O throughput. There are four NVMe disks on the server. Therefore, data can be distributed to different disks. Place the  **pg\_xlog**,  **tablespace2**, and  **tablespace3**  directories on the other three NVMe disks and provide soft links pointing to the actual locations in the original locations.  **pg\_xlog**  is in the database directory, and  **tablespace2**  and  **tablespace3**  are in the  **pg\_location**  database directory. Run the following command to partition  **tablespace2**.
 
@@ -247,7 +247,7 @@
 
     ![](figures/en-us_image_0283136597.png)
 
-9.  Run the TPC-C program.
+9. Run the TPC-C program.
 
     ```
     numactl –C 0-19,32-51,64-83,96-115 ./runBenchmark.sh props.opengauss.1000w
@@ -266,4 +266,3 @@
     ![](figures/en-us_image_0283136616.png)
 
 11. If you need to perform the test again to avoid data interference, you can copy the data backed up in  [step 7](#en-us_topic_0263913274_li11139125793619)  to restore the data. Repeat  [step 8](#en-us_topic_0263913274_li1840654753618)  to  [step 10](#en-us_topic_0263913274_li202511145123814)  to perform the test again.
-

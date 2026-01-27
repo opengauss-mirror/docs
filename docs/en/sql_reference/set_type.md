@@ -4,15 +4,15 @@ The SET type is a collection type that contains string members and is defined wh
 
 ## Specifications<a name="section980105122611"></a>
 
-1.  The number of members of the SET type ranges from 1 to 64. It cannot be defined as an empty set.
-2.  A member name can contain a maximum of 255 characters. An empty string can be used as a member name. The member name must be a character constant but cannot be a character constant obtained after calculation, for example, SET\('a' || 'b', 'c'\).
-3.  The member name cannot contain commas (,) and must be unique.
-4.  Arrays and domain types of the SET type cannot be created.
-5.  The SET type is supported only when **sql\_compatibility** is set to **B**.
-6.  The SET type cannot be used as the data type of columns in column-store tables.
-7.  The SET type cannot be used as the partition key of a partitioned table.
-8.  You need to use CASCADE to drop the SET type, and the associated table columns are also dropped.
-9.  For a USTORE table, if the table contains columns of the SET type and the recycle bin function is enabled, the table is directly deleted instead of being moved to the recycle bin.
+1. The number of members of the SET type ranges from 1 to 64. It cannot be defined as an empty set.
+2. A member name can contain a maximum of 255 characters. An empty string can be used as a member name. The member name must be a character constant but cannot be a character constant obtained after calculation, for example, SET\('a' || 'b', 'c'\).
+3. The member name cannot contain commas (,) and must be unique.
+4. Arrays and domain types of the SET type cannot be created.
+5. The SET type is supported only when **sql\_compatibility** is set to **B**.
+6. The SET type cannot be used as the data type of columns in column-store tables.
+7. The SET type cannot be used as the partition key of a partitioned table.
+8. You need to use CASCADE to drop the SET type, and the associated table columns are also dropped.
+9. For a USTORE table, if the table contains columns of the SET type and the recycle bin function is enabled, the table is directly deleted instead of being moved to the recycle bin.
 10. ALTER TABLE cannot be used to change a column of the SET type to another SET type.
 11. When a table or a table column associated with the SET type is deleted, or a table column of the SET type is changed to another type, the SET data type is also deleted.
 12. CREATE TABLE \{ AS | LIKE \} cannot be used to create a table containing the SET type.
@@ -22,7 +22,7 @@ The SET type is a collection type that contains string members and is defined wh
 
 ## Precautions<a name="section2940149112912"></a>
 
--   The table column values of the SET type must be a subset of the set defined by the SET type. For example:
+- The table column values of the SET type must be a subset of the set defined by the SET type. For example:
 
     ```
     CREATE TABLE employee (
@@ -31,7 +31,7 @@ The SET type is a collection type that contains string members and is defined wh
     );
     ```
 
--   The value of the **site** column must be a subset of the preceding set definition and can be an empty set. If the provided value does not exist in the members of the SET definition, an error is reported. For example:
+- The value of the **site** column must be a subset of the preceding set definition and can be an empty set. If the provided value does not exist in the members of the SET definition, an error is reported. For example:
 
     ```
     openGauss=# INSERT INTO employee values('zhangsan', 'nanjing,beijing');
@@ -44,7 +44,7 @@ The SET type is a collection type that contains string members and is defined wh
     openGauss=#
     ```
 
--   Regardless of the sequence of the member values provided by the user, the queried values of the SET type are displayed in the defined sequence after the INSERT operation is successful.
+- Regardless of the sequence of the member values provided by the user, the queried values of the SET type are displayed in the defined sequence after the INSERT operation is successful.
 
     ```
     openGauss=# select * from employee;
@@ -54,7 +54,7 @@ The SET type is a collection type that contains string members and is defined wh
     (1 rows)
     ```
 
--   The SET type is stored in bitmap mode. Members of the SET type are assigned different values according to the sequence in which they are defined. For example, the values of SET\('beijing','shanghai','nanjing','wuhan'\) are as follows:
+- The SET type is stored in bitmap mode. Members of the SET type are assigned different values according to the sequence in which they are defined. For example, the values of SET\('beijing','shanghai','nanjing','wuhan'\) are as follows:
 
     **Table 1** SET members and their corresponding values
 

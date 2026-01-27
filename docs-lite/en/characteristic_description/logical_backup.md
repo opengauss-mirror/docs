@@ -12,9 +12,9 @@ Data in user tables in the database is backed up to a specified storage medium i
 
 Through logical backup, you can achieve the following purposes:
 
--   Back up user data to a reliable storage medium to secure data.
--   Support cross-version recovery and heterogeneous recovery using a general data format.
--   Archive cold data.
+- Back up user data to a reliable storage medium to secure data.
+- Support cross-version recovery and heterogeneous recovery using a general data format.
+- Archive cold data.
 
 ## Description<a name="section18111828"></a>
 
@@ -31,4 +31,3 @@ For details about the restrictions on logical backup, see "Server Tools \> gs\_d
 ## Dependencies<a name="section57771982"></a>
 
 None.
-

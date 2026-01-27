@@ -47,5 +47,3 @@ If  **RemoveIPC**  is set to  **yes**, the OS deletes the IPC resources \(shared
 ### Procedure<a name="en-us_topic_0283136554_section10754612151312"></a>
 
 Set  **RemoveIPC**  to  **no**. For details, see  **Preparing for Installation**  \>  **Preparing the Software and Hardware Installation Environment**  \>  **Modifying OS Configuration**  in the  _Installation Guide_.
-
-

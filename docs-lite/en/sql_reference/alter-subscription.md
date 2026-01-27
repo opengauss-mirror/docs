@@ -70,9 +70,9 @@ Only the owner of a subscription can execute **ALTER SUBSCRIPTION**, and the new
 
   Modifies the parameters set by **CREATE SUBSCRIPTION**. The allowed parameters are **slot\_name** and **synchronous\_commit**.
 
-  -   If **enabled** is set to **false** during subscription creation, **slot\_name** is forcibly set to **NONE**, that is, null. In this case, the replication slot does not exist even if the value of **slot\_name** is specified.
-  -   Change the value of **enabled** from **false** to **true**. When the subscription is enabled, the publication side is connected to create a replication slot. If you do not specify the value of **slot\_name**, the default value (subscription name) is used.
-  -   If **enabled** is set to **true**, the subscription is in the normal state. In this case, **slot\_name** cannot be left empty, but the name of the replication slot can be changed to a valid name.
+  - If **enabled** is set to **false** during subscription creation, **slot\_name** is forcibly set to **NONE**, that is, null. In this case, the replication slot does not exist even if the value of **slot\_name** is specified.
+  - Change the value of **enabled** from **false** to **true**. When the subscription is enabled, the publication side is connected to create a replication slot. If you do not specify the value of **slot\_name**, the default value (subscription name) is used.
+  - If **enabled** is set to **true**, the subscription is in the normal state. In this case, **slot\_name** cannot be left empty, but the name of the replication slot can be changed to a valid name.
 
 - **REFRESH PUBLICATION**
 

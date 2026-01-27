@@ -11,11 +11,10 @@ An anonymous block applies to a script infrequently executed or a one-off activi
 
 Details about the syntax diagram are as follows:
 
--   The execute part of an anonymous block starts with a  **BEGIN**  statement, has a break with an  **END**  statement, and ends with a semicolon \(;\). Type a slash \(/\) and press  **Enter**  to execute the statement.
+- The execute part of an anonymous block starts with a  **BEGIN**  statement, has a break with an  **END**  statement, and ends with a semicolon \(;\). Type a slash \(/\) and press  **Enter**  to execute the statement.
 
     >[!TIP]NOTICE 
     >The terminator "/" must be written in an independent row.
 
--   The declaration section includes the variable definition, type, and cursor definition.
--   A simplest anonymous block does not execute any commands. At least one statement, even a  **NULL**  statement, must be presented in any implementation blocks.
-
+- The declaration section includes the variable definition, type, and cursor definition.
+- A simplest anonymous block does not execute any commands. At least one statement, even a  **NULL**  statement, must be presented in any implementation blocks.

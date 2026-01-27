@@ -8,9 +8,9 @@ The attributes include the name and owner. The content includes the type, versio
 
 ## Precautions<a name="en-us_topic_0283136847_en-us_topic_0237122056_section12438141318319"></a>
 
--   Only the initial user, system administrator, and owner have the permission to modify data sources.
--   To change the owner, the new owner must be the initial user or a system administrator.
--   If the  **password**  option is displayed, ensure that the  **datasource.key.cipher**  and  **datasource.key.rand**  files exist in the  *$GAUSSHOME***/bin**  directory of each node in openGauss. If the two files do not exist, use the  **gs\_guc**  tool to generate them and use the  **gs\_ssh**  tool to release them to the  *$GAUSSHOME***/bin**  directory on each node.
+- Only the initial user, system administrator, and owner have the permission to modify data sources.
+- To change the owner, the new owner must be the initial user or a system administrator.
+- If the  **password**  option is displayed, ensure that the  **datasource.key.cipher**  and  **datasource.key.rand**  files exist in the  *$GAUSSHOME***/bin**  directory of each node in openGauss. If the two files do not exist, use the  **gs\_guc**  tool to generate them and use the  **gs\_ssh**  tool to release them to the  *$GAUSSHOME***/bin**  directory on each node.
 
 ## Syntax<a name="en-us_topic_0283136847_en-us_topic_0237122056_section20592145145512"></a>
 
@@ -25,25 +25,25 @@ ALTER DATA SOURCE src_name OWNER TO new_owner;
 
 ## Parameter Description<a name="en-us_topic_0283136847_en-us_topic_0237122056_section1562551151015"></a>
 
--   **src\_name**
+- **src\_name**
 
     Specifies the data source name to be modified.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **TYPE**
+- **TYPE**
 
     Changes the original  **TYPE**  value of the data source to the specified value.
 
     Value range: an empty string or a non-empty string
 
--   **VERSION**
+- **VERSION**
 
     Changes the original  **VERSION**  value of the data source to the specified value.
 
     Value range: an empty string, a non-empty string, or null
 
--   **OPTIONS**
+- **OPTIONS**
 
     Specifies the column to be added, modified, or deleted. The value of  **optname**  should be unique. Comply with the following rules to set this parameter:
 
@@ -53,18 +53,17 @@ ALTER DATA SOURCE src_name OWNER TO new_owner;
 
     To delete a column, specify  **DROP**  and an existing column name. Do not set  **optvalue**.
 
--   **src\_new\_name**
+- **src\_new\_name**
 
     Specifies the new data source name.
 
     Value range: a string. It must comply with the naming convention rule.
 
--   **new\_user**
+- **new\_user**
 
     Specifies the new owner of an object.
 
     Value range: a string. It must be a valid username.
-
 
 ## Examples<a name="en-us_topic_0283136847_en-us_topic_0237122056_section96641814616"></a>
 

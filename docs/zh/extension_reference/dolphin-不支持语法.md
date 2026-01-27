@@ -138,7 +138,9 @@ ONLY在使用过程中，表示是否对表的子表操作。例如：ALTER
 TABLE子句中，修改表属性时，根据是否声明ONLY决定是否修改子表等。实际使用中，如果需要使用ONLY，需要在对ONLY添加括号。目前openGauss不支持继承表，该语法暂不赘述。
 
 ## ON DUPLICATE KEY UPDATE
+
 - 在openGauss中，ON DUPLICATE KEY UPDATE语法默认以excluded作为新数据的别名。后续将不再支持excluded作为别名。
+
 ```sql
 create table test(a int ,b int,c int);
 create unique index on test(b);
@@ -149,7 +151,9 @@ insert into test values(1,2,3) on duplicate key update b = b + 1;
 ```
 
 ## MINUS
+
 openGauss可以基于查询数据集合作相关操作。MINUS表示集合间的排除操作。后续MINUS功能将不可用，使用EXCPECT关键字替换。
+
 ```sql
 -- 原先支持的语法如，后续将不再支持
 select generate_series(1,10) MINUS select generate_series(2,10);
@@ -157,8 +161,10 @@ select generate_series(1,10) MINUS select generate_series(2,10);
 select generate_series(1,10) EXCEPT select generate_series(2,10);
 ```
 
-## 阶乘运算符！
+## 阶乘运算符
+
 openGauss可以使用！做结尾得到阶乘。后续！作阶乘功能将不可用，使用factorial函数替换。
+
 ```sql
 -- 原先支持的语法如，后续将不再支持
 select 10！;
@@ -167,7 +173,9 @@ select factorial(10);
 ```
 
 ## abstime''语法
+
 openGauss可以使用abstime''做类型转换。后续abstime''做类型转换功能将不可用，使用::或者cast替换。
+
 ```sql
 -- 可用的相关语法
 select cast('2000-1-1 1:1:1' as abstime);

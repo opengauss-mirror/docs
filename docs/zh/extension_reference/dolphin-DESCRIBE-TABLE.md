@@ -31,7 +31,6 @@ DESCRIBE 和 [EXPLAIN](dolphin-EXPLAIN.md) 互为同义词，可以用于查看�
   
        表名，可指定表名。也可以指定schema_name.table_name。
 
-
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 
 ```
@@ -129,4 +128,3 @@ openGauss=# describe public.test;
 ## 相关链接<a name="section156744489391"></a>
 
 [EXPLAIN](dolphin-EXPLAIN.md)
-

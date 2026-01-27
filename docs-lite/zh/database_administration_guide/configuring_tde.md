@@ -6,23 +6,23 @@
 
 ## 前提条件<a name="section756657103117"></a>
 
--   需要由密钥管理服务KMS对数据加密密钥提供保护，数据库可以正常访问KMS服务。KMS服务可在[华为云数据加密服务DEW](https://www.huaweicloud.com/product/dew.html)申请开通。
--   需要将GUC参数[enable\_tde](../database_reference/security_configuration.md#section17961238192110)设置为on，开启数据库透明数据加密开关。同时需正确设置数据库实例主密钥ID参数[tde\_cmk\_id](../database_reference/security_configuration.md#section4132027193410)。
+- 需要由密钥管理服务KMS对数据加密密钥提供保护，数据库可以正常访问KMS服务。KMS服务可在[华为云数据加密服务DEW](https://www.huaweicloud.com/product/dew.html)申请开通。
+- 需要将GUC参数[enable\_tde](../database_reference/security_configuration.md#section17961238192110)设置为on，开启数据库透明数据加密开关。同时需正确设置数据库实例主密钥ID参数[tde\_cmk\_id](../database_reference/security_configuration.md#section4132027193410)。
 
 ## 背景信息<a name="section1049011225714"></a>
 
 当前版本主要实现对接华为云KMS服务，支持表级密钥存储，实现对行存表加密，规格约束如下：
 
--   支持heap存储行存表加密。
--   不支持列存表加密，不支持物化视图加密，不支持Ustore存储引擎加密。
--   不支持索引和Sequence加密，不支持XLOG日志加密，不支持MOT内存表加密，不支持系统表加密。
--   用户在创建表时可以指定加密算法，加密算法一旦指定不可更改。如果创建表时设置enable\_tde为on，但是不指定加密算法encrypt\_algo，则默认使用AES\_128\_CTR加密算法。
--   如果在创建表时未开启加密功能或指定加密算法，后续无法再切换为加密表。
--   对于已分配加密密钥的表，切换表的加密和非加密状态，不会更换密钥和加密算法。
--   数据密钥轮转只有开启表加密功能时才支持轮转。
--   不支持单数据库实例跨region的多副本主备同步，不支持单数据库实例跨region的扩容，不支持跨region的备份恢复、数据库实例容灾和数据迁移场景。
--   混合云场景如果使用华为云KMS和管控面功能，则可以支持透明数据加密，其他KMS服务如果接口不兼容则无法支持。
--   加密表的查询性能比不加密时会有所劣化，对于性能有较高要求的情况下需谨慎开启加密功能。
+- 支持heap存储行存表加密。
+- 不支持列存表加密，不支持物化视图加密，不支持Ustore存储引擎加密。
+- 不支持索引和Sequence加密，不支持XLOG日志加密，不支持MOT内存表加密，不支持系统表加密。
+- 用户在创建表时可以指定加密算法，加密算法一旦指定不可更改。如果创建表时设置enable\_tde为on，但是不指定加密算法encrypt\_algo，则默认使用AES\_128\_CTR加密算法。
+- 如果在创建表时未开启加密功能或指定加密算法，后续无法再切换为加密表。
+- 对于已分配加密密钥的表，切换表的加密和非加密状态，不会更换密钥和加密算法。
+- 数据密钥轮转只有开启表加密功能时才支持轮转。
+- 不支持单数据库实例跨region的多副本主备同步，不支持单数据库实例跨region的扩容，不支持跨region的备份恢复、数据库实例容灾和数据迁移场景。
+- 混合云场景如果使用华为云KMS和管控面功能，则可以支持透明数据加密，其他KMS服务如果接口不兼容则无法支持。
+- 加密表的查询性能比不加密时会有所劣化，对于性能有较高要求的情况下需谨慎开启加密功能。
 
 ## 密钥管理机制<a name="section920142711513"></a>
 
@@ -79,4 +79,3 @@ openGauss=# ALTER TABLE tde_test1 SET (enable_tde=on);
 ```
 openGauss=# ALTER TABLE tde_test1 ENCRYPTION KEY ROTATION;
 ```
-

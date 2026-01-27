@@ -4,30 +4,29 @@ If a table contains a large amount of data, data query and operation efficiency 
 
 openGauss supports the following types of partitioned tables:
 
--   [Range partitioned table](#section936985843718): One or more columns are divided into multiple ranges. A partition is created for each range to store data. For example, sales data can be partitioned by month.
--   [List partitioned table](#section05611948194510): Partitions are created based on values in a column. For example, sales data is divided by sales store.
--   [Interval partitioned table](#section792613366813): It is a special type of range partitions. The interval value definition is added. If no matched partition is found when a record is inserted, partitions can be automatically created based on the interval.
--   [Hash partitioned table](#section119401959122818): The modulus and remainder are specified for each partition based on a column of the table, and the records to be inserted into the table are allocated to the corresponding partitions.
+- [Range partitioned table](#section936985843718): One or more columns are divided into multiple ranges. A partition is created for each range to store data. For example, sales data can be partitioned by month.
+- [List partitioned table](#section05611948194510): Partitions are created based on values in a column. For example, sales data is divided by sales store.
+- [Interval partitioned table](#section792613366813): It is a special type of range partitions. The interval value definition is added. If no matched partition is found when a record is inserted, partitions can be automatically created based on the interval.
+- [Hash partitioned table](#section119401959122818): The modulus and remainder are specified for each partition based on a column of the table, and the records to be inserted into the table are allocated to the corresponding partitions.
 
 In addition to creating a partitioned table, you can perform the following operations:
 
--   [Querying a partitioned table](#section210605213434): Data is queried by partition name or value in a partition.
--   [Importing data](#section4704175612310): Data is imported directly or from an existing table.
--   [Modifying a partitioned table](#section1966814239435): Partitions are added, deleted,split, or combined, or partition names are changed.
--   [Deleting a partitioned table](#section148862013302): The operation is the same as that of deleting a common table.
+- [Querying a partitioned table](#section210605213434): Data is queried by partition name or value in a partition.
+- [Importing data](#section4704175612310): Data is imported directly or from an existing table.
+- [Modifying a partitioned table](#section1966814239435): Partitions are added, deleted,split, or combined, or partition names are changed.
+- [Deleting a partitioned table](#section148862013302): The operation is the same as that of deleting a common table.
 
 ## Classification of Range Partitioned Tables<a name="section936985843718"></a>
 
 Range partitioned tables are classified into the following types:
 
--   [VALUES LESS THAN](#section9821913280): specifies the partition range based on the upper limit of each partition. Upper limit of the previous partition ≤ Range of the partition ≤ Upper limit of the current partition.
--   [START END](#section2417444172113): Partitioning is performed in the following methods.
-    -   [Providing the start point and end point of the partition](#li9343973444)
-    -   [Providing only the start point of the partition](#li15714728114411)
-    -   [Providing only the end point of the partition](#li105902358449)
-    -   [Providing the interval value within the range after the start point and end point of the partition are provided](#li108701418134416)
-    -   Comprehensively using the preceding methods
-
+- [VALUES LESS THAN](#section9821913280): specifies the partition range based on the upper limit of each partition. Upper limit of the previous partition ≤ Range of the partition ≤ Upper limit of the current partition.
+- [START END](#section2417444172113): Partitioning is performed in the following methods.
+    - [Providing the start point and end point of the partition](#li9343973444)
+    - [Providing only the start point of the partition](#li15714728114411)
+    - [Providing only the end point of the partition](#li105902358449)
+    - [Providing the interval value within the range after the start point and end point of the partition are provided](#li108701418134416)
+    - Comprehensively using the preceding methods
 
 ## Syntax for Creating a VALUES LESS THAN Range Partitioned Table<a name="section9821913280"></a>
 
@@ -45,41 +44,39 @@ CREATE TABLE partition_table_name
 
 ## Parameters for Creating a VALUES LESS THAN Range Partitioned Table<a name="section12934121034018"></a>
 
--   **partition\_table\_name**
+- **partition\_table\_name**
 
     Specifies the name of the partitioned table.
 
--   **column\_name**
+- **column\_name**
 
     Specifies the name of the column to be created in the new table.
 
--   **data\_type**
+- **data\_type**
 
     Specifies the data type of the column.
 
-
--   **partition\_key**
+- **partition\_key**
 
     Specifies the name of the partition key.
 
     In this case, a maximum of four partition keys are supported.
 
--   **partition\_name**
+- **partition\_name**
 
     Specifies the name of a range partition.
 
--   **VALUES LESS THAN**
+- **VALUES LESS THAN**
 
     Specifies that the value in the partition must be less than the upper limit value.
 
--   **partition\_value**
+- **partition\_value**
 
     Specifies the upper limit of a range partition, and the value depends on the type specified by  **partition\_key**.
 
--   **MAXVALUE**
+- **MAXVALUE**
 
     Specifies the upper limit of the last range partition.
-
 
 ## Example of Creating a VALUES LESS THAN Range Partitioned Table<a name="section61471944124917"></a>
 
@@ -123,19 +120,17 @@ SELECT * FROM partition_table_name PARTITION { ( partition_name ) | FOR (  parti
 
 ## Parameters for Querying a Partitioned Table<a name="section690512516237"></a>
 
--   **partition\_table\_name**
+- **partition\_table\_name**
 
     Specifies the name of the partitioned table.
 
--   **partition\_name**
+- **partition\_name**
 
     Specifies the partition name.
 
-
--   **partition\_value**
+- **partition\_value**
 
     Specifies the value of the partition. The partition where the value specified by the  **PARTITION FOR**  clause is located is the partition to be queried.
-
 
 ## Syntax for Querying a Partitioned Table<a name="section198181348131419"></a>
 
@@ -177,7 +172,7 @@ openGauss=# SELECT * FROM sales_table PARTITION FOR ('2021-3-21 00:00:00');
 
 A START END range partitioned table can be created by different methods, and these methods can be combined within a partitioned table.
 
--   <a name="li9343973444"></a>Method 1: By executing  **START\(partition\_value\) END \(partition\_value | MAXVALUE\)**
+- <a name="li9343973444"></a>Method 1: By executing  **START\(partition\_value\) END \(partition\_value | MAXVALUE\)**
 
     ```
     CREATE TABLE partition_table_name
@@ -191,7 +186,7 @@ A START END range partitioned table can be created by different methods, and the
              ); 
     ```
 
--   <a name="li15714728114411"></a>Method 2: By executing  **START\(partition\_value\)**
+- <a name="li15714728114411"></a>Method 2: By executing  **START\(partition\_value\)**
 
     ```
     CREATE TABLE partition_table_name
@@ -205,7 +200,7 @@ A START END range partitioned table can be created by different methods, and the
              ); 
     ```
 
--   <a name="li105902358449"></a>Method 3: By executing  **END\(partition\_value | MAXVALUE\)**
+- <a name="li105902358449"></a>Method 3: By executing  **END\(partition\_value | MAXVALUE\)**
 
     ```
     CREATE TABLE partition_table_name
@@ -219,8 +214,7 @@ A START END range partitioned table can be created by different methods, and the
              ); 
     ```
 
-
--   <a name="li108701418134416"></a>Method 4: By executing  **START\(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)**
+- <a name="li108701418134416"></a>Method 4: By executing  **START\(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)**
 
     ```
     CREATE TABLE partition_table_name
@@ -234,58 +228,55 @@ A START END range partitioned table can be created by different methods, and the
              ); 
     ```
 
-
 ## Parameters for Creating a START END Range Partitioned Table<a name="section147413468154"></a>
 
--   **partition\_table\_name**
+- **partition\_table\_name**
 
     Specifies the name of the partitioned table.
 
--   **column\_name**
+- **column\_name**
 
     Specifies the name of the column to be created in the new table.
 
--   **data\_type**
+- **data\_type**
 
     Specifies the data type of the column.
 
-
--   **partition\_key**
+- **partition\_key**
 
     Specifies the name of the partition key.
 
     In this case, only one partition key is supported.
 
--   **partition\_name**
+- **partition\_name**
 
     Specifies the name or prefix of the range partition.
 
-    -   If the definition is in the  **START\(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)**  clause and the value of  **partition\_name**  is  **p1**, the partition names are  **p1\_1**,  **p1\_2**, and so on.
+    - If the definition is in the  **START\(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)**  clause and the value of  **partition\_name**  is  **p1**, the partition names are  **p1\_1**,  **p1\_2**, and so on.
 
         For example, if  **PARTITION p1 START\(1\) END\(4\) EVERY\(1\)**  is defined, the generated partitions are \[1, 2\), \[2, 3\), and \[3, 4\), and their names are  **p1\_1**,  **p1\_2**, and  **p1\_3**. In this case,  **p1**  is a name prefix.
 
-    -   If the defined statement is in the first place and has  **START**  specified, the range \(_MINVALUE_,  **START**\) will be automatically used as the first actual partition, and its name will be  **p1\_0**. The other partitions are then named  **p1\_1**,  **p1\_2**, and so on.
+    - If the defined statement is in the first place and has  **START**  specified, the range \(_MINVALUE_,  **START**\) will be automatically used as the first actual partition, and its name will be  **p1\_0**. The other partitions are then named  **p1\_1**,  **p1\_2**, and so on.
 
         For example, if  **PARTITION p1 START\(1\), PARTITION p2 START\(2\)**  is defined, generated partitions are \(_MINVALUE_, 1\), \[1, 2\), and \[2,  _MAXVALUE_\), and their names will be  **p1\_0**,  **p1\_1**, and  **p2**. In this case,  **p1**  is a name prefix and  **p2**  is a partition name.  **MINVALUE**  indicates the minimum value.
 
-    -   In other cases, this parameter specifies the range partition name.
+    - In other cases, this parameter specifies the range partition name.
 
--   **VALUES LESS THAN**
+- **VALUES LESS THAN**
 
     Specifies that the value in the partition must be less than the upper limit value.
 
--   **partition\_value**
+- **partition\_value**
 
     Specifies the endpoint value \(start or end point\) of the range partition. The value depends on the type specified by  **partition\_key**.
 
--   **interval\_value**
+- **interval\_value**
 
     Splits the range specified by  **\[START, END\)**  and specifies the width of each partition after splitting. If the value of  **\(END-START\)**  cannot be exactly divided by the value of  **EVERY**, only the width of the last partition is less than the value of  **EVERY**.
 
--   **MAXVALUE**
+- **MAXVALUE**
 
     Specifies the upper limit of the last range partition.
-
 
 ## Example of Creating a START END Range Partitioned Table<a name="section689175113388"></a>
 
@@ -624,41 +615,39 @@ CREATE TABLE partition_table_name
 
 ## Parameters for Creating a List Partitioned Table<a name="section750754717556"></a>
 
--   **partition\_table\_name**
+- **partition\_table\_name**
 
     Specifies the name of the partitioned table.
 
--   **column\_name**
+- **column\_name**
 
     Specifies the name of the column to be created in the new table.
 
--   **data\_type**
+- **data\_type**
 
     Specifies the data type of the column.
 
-
--   **partition\_key**
+- **partition\_key**
 
     Specifies the name of the partition key.
 
     The list partitioning policy supports only one column of partition keys.
 
--   **partition\_name**
+- **partition\_name**
 
     Specifies the name of a range partition.
 
--   **list\_values\_clause**
+- **list\_values\_clause**
 
     There are one or more key values of the corresponding partition. Use commas \(,\) to separate multiple key values.
 
--   **VALUES \(DEFAULT\)**
+- **VALUES \(DEFAULT\)**
 
     If the added data contains key values that are not listed in  **list\_values\_clause**, the data is stored in the partition corresponding to  **VALUES \(DEFAULT\)**.
 
--   **MAXVALUE**
+- **MAXVALUE**
 
     Specifies the upper limit of the last range partition.
-
 
 ## Example of Creating a List Partitioned Table<a name="section2750189105610"></a>
 
@@ -812,20 +801,19 @@ CREATE TABLE partition_table_name
 
 ## Parameters for Creating an Interval Partitioned Table<a name="section16926136187"></a>
 
--   **INTERVAL \('interval\_expr'\)**
+- **INTERVAL \('interval\_expr'\)**
 
     Defines interval partitioning. Only the TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\] and DATE data types are supported.
 
--   **interval\_expr**
+- **interval\_expr**
 
     Specifies the interval for automatically creating partitions, for example, 1 day or 1 month.
 
--   **partition\_name**
+- **partition\_name**
 
     Specifies the name of a range partition.
 
     The partitions automatically created by the system are named  **sys\_p1**,  **sys\_p2**,  **sys\_p3**, and the like.
-
 
 ## Syntax for Creating an Interval Partitioned Table<a name="section18923858973"></a>
 
@@ -913,26 +901,25 @@ CREATE TABLE partition_table_name
 
 ## Parameters for Creating a Hash Partitioned Table<a name="section1941185912820"></a>
 
--   **partition\_table\_name**
+- **partition\_table\_name**
 
     Specifies the name of the partitioned table.
 
--   **column\_name**
+- **column\_name**
 
     Specifies the name of the column to be created in the new table.
 
--   **data\_type**
+- **data\_type**
 
     Specifies the data type of the column.
 
--   **partition\_key**
+- **partition\_key**
 
     Specifies the name of the partition key. The hash partitioning policy supports only one column of partition keys.
 
--   **partition\_name**
+- **partition\_name**
 
     Specifies the name of a hash partition. The number of hash partitions to be created is the same as the number of partition names.
-
 
 ## Example of Creating a Hash Partitioned Table<a name="section1194275912810"></a>
 
@@ -991,21 +978,20 @@ INSERT INTO partition_table_name SELECT * FROM  source_table_name
 
 ## Parameters for Importing Data<a name="section150105520528"></a>
 
--   **partition\_table\_name**
+- **partition\_table\_name**
 
     Specifies the name of the partitioned table.
 
--   **column\_name**
+- **column\_name**
 
     Specifies a column name in the partitioned table. It can be omitted.
 
--   **value**
+- **value**
 
     Specifies column values.
 
-    -   If the value of  **column\_name**  is provided, the value provided by the  **value**  clause is associated with the corresponding column from left to right.
-    -   If the value of  **column\_name**  is not provided, the value provided by the  **value**  clause is associated with the column specified by  **partition\_table\_name**  from left to right.
-
+    - If the value of  **column\_name**  is provided, the value provided by the  **value**  clause is associated with the corresponding column from left to right.
+    - If the value of  **column\_name**  is not provided, the value provided by the  **value**  clause is associated with the column specified by  **partition\_table\_name**  from left to right.
 
 ## Example of Importing Data<a name="section35261427776"></a>
 
@@ -1078,63 +1064,61 @@ openGauss=# select * from employees_table partition (newcomer);
 
 ## Syntax for Modifying a Partitioned Table<a name="section1966814239435"></a>
 
--   Delete a partition.
+- Delete a partition.
 
     ```
     ALTER TABLE partition_table_name DROP PARTITION partition_name;  
     ```
 
-
--   Add a partition.
+- Add a partition.
 
     ```
     ALTER TABLE partition_table_name ADD {partition_less_than_item | partition_start_end_item| partition_list_item }; 
     ```
 
--   Rename a partition.
+- Rename a partition.
 
     ```
     ALTER TABLE partition_table_name RENAME PARTITION partition_name TO partition_new_name; 
     ```
 
--   Split a partition \(Specify the syntax of  **split\_partition\_value**\).
+- Split a partition \(Specify the syntax of  **split\_partition\_value**\).
 
     ```
     ALTER TABLE partition_table_name SPLIT PARTITION partition_name AT ( split_partition_value ) INTO ( PARTITION partition_new_name1, PARTITION partition_new_name2); 
     ```
 
--   Split a partition \(Specify the syntax of the partition range\).
+- Split a partition \(Specify the syntax of the partition range\).
 
     ```
     ALTER TABLE partition_table_name SPLIT PARTITION partition_name INTO { ( partition_less_than_item [, ...] ) | ( partition_start_end_item [, ...] ) }; 
     ```
 
--   Combine partitions.
+- Combine partitions.
 
     ```
     ALTER TABLE partition_table_name MERGE PARTITIONS { partition_name } [, ...] INTO PARTITION partition_name; 
     ```
 
-
 ## Parameters for Modifying a Partitioned Table<a name="section13156172765713"></a>
 
--   **partition\_table\_name**
+- **partition\_table\_name**
 
     Specifies the name of the partitioned table.
 
--   **partition\_name**
+- **partition\_name**
 
     Specifies the partition name.
 
--   **split\_partition\_value**
+- **split\_partition\_value**
 
     Specifies the split point.
 
--   **PARTITION partition\_new\_name1, PARTITION partition\_new\_name2**
+- **PARTITION partition\_new\_name1, PARTITION partition\_new\_name2**
 
     Specifies the two partitions that are split based on the split point.
 
--   **partition\_less\_than\_item**
+- **partition\_less\_than\_item**
 
     Specifies the description statement of a partition item. The syntax is as follows:
 
@@ -1144,7 +1128,7 @@ openGauss=# select * from employees_table partition (newcomer);
 
     The usage is the same as that in  [Syntax for Creating a VALUES LESS THAN Range Partitioned Table](#section9821913280).
 
--   **partition\_start\_end\_item**
+- **partition\_start\_end\_item**
 
     Specifies the description statement of a partition item. The syntax is as follows:
 
@@ -1158,7 +1142,7 @@ openGauss=# select * from employees_table partition (newcomer);
 
     The usage is the same as that in  [Syntax for Creating a START END Range Partitioned Table](#section2417444172113).
 
--   **partition\_list\_item**
+- **partition\_list\_item**
 
     Specifies the description statement of a partition item. The syntax is as follows:
 
@@ -1168,14 +1152,13 @@ openGauss=# select * from employees_table partition (newcomer);
 
     The usage is the same as that in  [Syntax for Creating a List Partitioned Table](#section05611948194510).
 
--   **split\_point\_clause**
+- **split\_point\_clause**
 
     Specifies the split point when a partition is split.
 
--   **partition\_value**
+- **partition\_value**
 
     Specifies the key value of a partition.
-
 
 ## Example of Modifying a Partitioned Table<a name="section04446211362"></a>
 
@@ -1245,10 +1228,9 @@ DROP TABLE partition_table_name;
 
 ## Parameters for Deleting a Partitioned Table<a name="section6520166143111"></a>
 
--   **partition\_table\_name**
+- **partition\_table\_name**
 
     Specifies the name of the partitioned table.
-
 
 ## Example of Deleting a Partitioned Table<a name="section186351032133112"></a>
 
@@ -1259,4 +1241,3 @@ Example 12:
 openGauss=# DROP TABLE employees_table;
 DROP TABLE      
 ```
-

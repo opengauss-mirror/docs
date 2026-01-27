@@ -23,32 +23,34 @@ The syntax of RAISE is as follows:
 
 **Parameter description**:
 
--   The level option is used to specify the error level, that is,  **DEBUG**,  **LOG**,  **INFO**,  **NOTICE**,  **WARNING**, or  **EXCEPTION**  \(default\).  **EXCEPTION**  throws an error that normally terminates the current transaction and the others only generate information at their levels. The  [log\_min\_messages](../database_reference/logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)  and  [client\_min\_messages](../database_reference/logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)  parameters control whether the error messages of specific levels are reported to the client and are written to the server log.
--   **format**: specifies the error message text to be reported, a format string. The format string can be appended with an expression for insertion to the message text. In a format string,  **%**  is replaced by the parameter value attached to format and  **%%**  is used to print  **%**. For example:
+- The level option is used to specify the error level, that is,  **DEBUG**,  **LOG**,  **INFO**,  **NOTICE**,  **WARNING**, or  **EXCEPTION**  \(default\).  **EXCEPTION**  throws an error that normally terminates the current transaction and the others only generate information at their levels. The  [log\_min\_messages](../database_reference/logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)  and  [client\_min\_messages](../database_reference/logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)  parameters control whether the error messages of specific levels are reported to the client and are written to the server log.
+- **format**: specifies the error message text to be reported, a format string. The format string can be appended with an expression for insertion to the message text. In a format string,  **%**  is replaced by the parameter value attached to format and  **%%**  is used to print  **%**. For example:
 
     ```
     --v_job_id replaces % in the string.
     RAISE NOTICE 'Calling cs_create_job(%)',v_job_id;
     ```
 
--   **option = expression**: inserts additional information to an error report. The keyword option can be  **MESSAGE**,  **DETAIL**,  **HINT**, or  **ERRCODE**, and each expression can be any string.
-    -   **MESSAGE**: specifies the error message text. This option cannot be used in a  **RAISE**  statement that contains a format character string in front of  **USING**.
-    -   **DETAIL**: specifies detailed information of an error.
-    -   **HINT**: prints hint information.
-    -   **ERRCODE**: designates an error code \(SQLSTATE\) to a report. A condition name or a five-character SQLSTATE error code can be used.
+- **option = expression**: inserts additional information to an error report. The keyword option can be  **MESSAGE**,  **DETAIL**,  **HINT**, or  **ERRCODE**, and each expression can be any string.
+    - **MESSAGE**: specifies the error message text. This option cannot be used in a  **RAISE**  statement that contains a format character string in front of  **USING**.
+    - **DETAIL**: specifies detailed information of an error.
+    - **HINT**: prints hint information.
+    - **ERRCODE**: designates an error code \(SQLSTATE\) to a report. A condition name or a five-character SQLSTATE error code can be used.
 
--   **condition\_name**: specifies the condition name corresponding to the error code.
--   **sqlstate**: specifies the error code.
+- **condition\_name**: specifies the condition name corresponding to the error code.
+- **sqlstate**: specifies the error code.
 
 If neither a condition name nor an  **SQLSTATE**  is designated in a  **RAISE EXCEPTION**  command, the  **RAISE EXCEPTION \(P0001\)**  is used by default. If no message text is designated, the condition name or SQLSTATE is used as the message text by default.
 
 >[!TIP]NOTICE 
->-   If the  **SQLSTATE**  designates an error code, the error code is not limited to a defined error code. It can be any error code containing five digits or ASCII uppercase rather than  **00000**. Do not use an error code ended with three zeros because such error codes are category codes and can be captured by the whole category.
->-   In O-compatible mode, SQLCODE is equivalent to SQLSTATE.
+>
+>- If the  **SQLSTATE**  designates an error code, the error code is not limited to a defined error code. It can be any error code containing five digits or ASCII uppercase rather than  **00000**. Do not use an error code ended with three zeros because such error codes are category codes and can be captured by the whole category.
+>- In O-compatible mode, SQLCODE is equivalent to SQLSTATE.
 
 >[!NOTE]NOTE 
->-   The syntax shown in [Figure 5](#en-us_topic_0283137518_en-us_topic_0237122256_en-us_topic_0059777683_f6b9d7253ecad413e9ee92ba78199a6b4) is not followed by any parameter. This form is used only for the EXCEPTION statement in a BEGIN block so that the error can be re-processed.
->-   For the condition name specified by ERRCODE and condition\_name, see [Description of SQL Error Codes](../database_reference/description-of-sql-error-codes.md). Only ERROR condition names are supported.
+>
+>- The syntax shown in [Figure 5](#en-us_topic_0283137518_en-us_topic_0237122256_en-us_topic_0059777683_f6b9d7253ecad413e9ee92ba78199a6b4) is not followed by any parameter. This form is used only for the EXCEPTION statement in a BEGIN block so that the error can be re-processed.
+>- For the condition name specified by ERRCODE and condition\_name, see [Description of SQL Error Codes](../database_reference/description-of-sql-error-codes.md). Only ERROR condition names are supported.
 
 **EXCEPTION\_INIT**
 
@@ -56,13 +58,12 @@ In O-compatible mode, EXCEPTION\_INIT can be used to define the SQLCODE error co
 
 **Figure  6**  exception\_init::=<a name="fig1171943461612"></a>  
 
-
 ![](figures/捕获.png)
 
 **Parameter description**:
 
--   **exception\_name**  indicates the name of the exception declared by the user. The  **EXCEPTION\_INIT**  syntax must follow the declared exception.
--   **sqlcode**  is a customized SQL code, which must be a negative integer ranging from –2147483647 to –1.
+- **exception\_name**  indicates the name of the exception declared by the user. The  **EXCEPTION\_INIT**  syntax must follow the declared exception.
+- **sqlcode**  is a customized SQL code, which must be a negative integer ranging from –2147483647 to –1.
 
 >[!TIP]NOTICE 
 >When  **EXCEPTION\_INIT**  is used to customize an SQL code, SQLSTATE is equivalent to SQLCODE, and SQLERRM is in the format of  *xxx***: non-GaussDB Exception**. For example, if the customized SQL code is  **–1**, SQLSTATE is  **–1**  and SQLERRM is  **1: non-GaussDB Exception**.

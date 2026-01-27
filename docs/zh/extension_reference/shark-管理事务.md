@@ -4,12 +4,12 @@
 
 ## 注意事项
 
--   本章节只包含shark新增的语法，原openGauss的事务控制语法由于无法避免的冲突仅删除begin transaction transaction_mode语法，冲突的语法可使用类似语法begin transaction_mode或者start transaction transaction_mode代替。
--   D库的PL/pgSQL不支持BEGIN TRAN和BEGIN TRANSACTION语法。
+- 本章节只包含shark新增的语法，原openGauss的事务控制语法由于无法避免的冲突仅删除begin transaction transaction_mode语法，冲突的语法可使用类似语法begin transaction_mode或者start transaction transaction_mode代替。
+- D库的PL/pgSQL不支持BEGIN TRAN和BEGIN TRANSACTION语法。
 
 ## 语法格式
 
--   启动事务
+- 启动事务
 
     使用BEGIN语法启动事务。transaction_name没有实际意义，仅语法兼容。
 
@@ -17,7 +17,7 @@
     BEGIN { TRAN | TRANSACTION } [ { transaction_name } ];
     ```
 
--   设置保存点
+- 设置保存点
 
     使用save语法为当前数据状态做一个标记，它允许将那些在它建立后执行的命令全部回滚，把事务的状态恢复到保存点所在的时刻。
 
@@ -33,7 +33,7 @@
     ROLLBACK { TRAN | TRANSACTION } { savepoint_name };
     ```
 
--   提交事务
+- 提交事务
 
     使用COMMIT完成提交事务的功能，即提交事务的所有操作。transaction_name没有实际意义，仅语法兼容。
 
@@ -41,7 +41,7 @@
     COMMIT [ { TRAN | TRANSACTION } [ transaction_name ] ];
     ```
 
--   回滚事务
+- 回滚事务
 
     使用ROLLBACK回滚到某个保存点或回滚事务中的所有操作。带有savepoint_name参数时回滚到对应保存点，否则回滚所有操作。
 
@@ -49,30 +49,29 @@
     ROLLBACK { TRAN | TRANSACTION } [ savepoint_name ];
     ```
 
-
 ## 参数说明
 
--   **TRAN | TRANSACTION**
+- **TRAN | TRANSACTION**
 
     BEGIN格式中的可选关键字，没有实际作用。
 
--   **transaction_name**
+- **transaction_name**
 
     无实际意义，仅语法兼容。
 
--   **SAVE**
+- **SAVE**
 
     设置保存点。
 
--   **savepoint_name**
+- **savepoint_name**
 
     保存点名称，后续使用ROLLBACK命令时可以用。
 
--   **COMMIT**
+- **COMMIT**
 
     提交当前事务，让所有当前事务的更改为其他事务可见。
 
--   **ROLLBACK**
+- **ROLLBACK**
 
     回滚当前事务，撤销操作。
 

@@ -29,4 +29,3 @@ GLOBAL\_RECORD\_RESET\_TIME用于重置（重启、主备倒换、数据库删�
 </tr>
 </tbody>
 </table>
-

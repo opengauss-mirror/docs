@@ -3,6 +3,7 @@
 PG\_STAT\_ALL\_TABLES视图将包含当前数据库中每个表的一行（包括TOAST表），显示访问特定表的统计信息。
 
 示例：
+
 ```sql
 openGauss=# select * from PG_STAT_ALL_TABLES;
  relid |     schemaname     |            relname            | seq_scan | seq_tup_read | idx_scan | idx_tup_fetch | n_tup_ins | n_tup_upd | n_tup_del | n_tup_hot_upd | n_live_tup | n_dead_tup | last_vacuum | last_autovacuum | last_analyze | last_autoanalyze | vacuum_count | autovacuum_count | analyze_count | autoanalyze_count | last_data_changed 
@@ -190,4 +191,3 @@ openGauss=# select * from PG_STAT_ALL_TABLES;
 </tr>
 </tbody>
 </table>
-

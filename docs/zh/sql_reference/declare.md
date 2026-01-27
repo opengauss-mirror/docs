@@ -86,5 +86,3 @@ DECLARE命令既可以定义一个游标，用于在一个大的查询里面检�
 ## 相关链接<a name="zh-cn_topic_0283137571_zh-cn_topic_0237122130_zh-cn_topic_0059777616_sb9bc0f8b2b464231a9dc551fa79f0485"></a>
 
 [BEGIN](begin.md)，[FETCH](fetch.md)
-
-

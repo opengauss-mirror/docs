@@ -35,80 +35,80 @@ For details on the  **\\copy**  command, see  [Table 1](#en-us_topic_0283136941_
 
 ## Parameter Description<a name="en-us_topic_0283136941_en-us_topic_0237121136_en-us_topic_0117407672_section5126610110100"></a>
 
--   table
+- table
 
     Specifies the name \(possibly schema-qualified\) of an existing table.
 
     Value range: an existing table name
 
--   column\_list
+- column\_list
 
     Specifies an optional list of columns to be copied.
 
     Value range: any field in the table. If no column list is specified, all columns of the table will be copied.
 
--   query
+- query
 
     Specifies that the results are to be copied.
 
     Value range: a  **SELECT**  or  **VALUES**  command in parentheses
 
--   filename
+- filename
 
     Specifies the absolute path of a file. To run the  **COPY**  command, the user must have the write permission for this path.
 
--   stdin
+- stdin
 
     Specifies that input comes from the standard input.
 
--   stdout
+- stdout
 
     Specifies that output goes to the standard output.
 
--   pstdin
+- pstdin
 
     Specifies that input comes from the gsql client.
 
--   pstout
--   Specifies that output goes to the gsql client.
--   binary
+- pstout
+- Specifies that output goes to the gsql client.
+- binary
 
     Specifies that data is stored and read in binary mode instead of text mode. In binary mode, you cannot declare  **DELIMITER**,  **NULL**, or  **CSV**. After  **binary**  is specified, CSV, FIXED, and TEXT cannot be specified through  **option**  or  **copy\_option**.
 
--   delimiter \[ as \] 'character'
+- delimiter \[ as \] 'character'
 
     Specifies the character that separates columns within each row \(line\) of the file.
 
     >[!NOTE]NOTE 
-    >-   The value of  **delimiter**  cannot be  **\\r**  or  **\\n**.
-    >-   A delimiter cannot be the same as the null value. The delimiter for the CSV format cannot be same as the  **quote**  value.
-    >-   The delimiter of TEXT data cannot contain any of the following characters: \\.abcdefghijklmnopqrstuvwxyz0123456789.
-    >-   The data length of a single row should be less than 1 GB. A row that has many columns using long delimiters cannot contain much valid data.
-    >-   You are advised to use multi-character delimiters or invisible delimiters. For example, you can use multi-characters \(such as $^&\) and invisible characters \(such as 0x07, 0x08, and 0x1b\).
+    >- The value of  **delimiter**  cannot be  **\\r**  or  **\\n**.
+    >- A delimiter cannot be the same as the null value. The delimiter for the CSV format cannot be same as the  **quote**  value.
+    >- The delimiter of TEXT data cannot contain any of the following characters: \\.abcdefghijklmnopqrstuvwxyz0123456789.
+    >- The data length of a single row should be less than 1 GB. A row that has many columns using long delimiters cannot contain much valid data.
+    >- You are advised to use multi-character delimiters or invisible delimiters. For example, you can use multi-characters \(such as $^&\) and invisible characters \(such as 0x07, 0x08, and 0x1b\).
 
     Value range: a multi-character delimiter within 10 bytes
 
     Default value:
 
-    -   A tab character in TEXT format
-    -   A comma \(,\) in CSV format
-    -   No delimiter in FIXED format
+    - A tab character in TEXT format
+    - A comma \(,\) in CSV format
+    - No delimiter in FIXED format
 
--   null \[ as \] 'string'
+- null \[ as \] 'string'
 
     Specifies the string that represents a null value.
 
     Value range:
 
-    -   A null value cannot be  **\\r**  or  **\\n**. The maximum length is 100 characters.
-    -   A null value cannot be the same as the  **delimiter**  or  **quote**  value.
+    - A null value cannot be  **\\r**  or  **\\n**. The maximum length is 100 characters.
+    - A null value cannot be the same as the  **delimiter**  or  **quote**  value.
 
     Default value:
 
-    -   The default value for the CSV format is an empty string without quotation marks.
-    -   The default value for the TEXT format is  **\\N**.
+    - The default value for the CSV format is an empty string without quotation marks.
+    - The default value for the TEXT format is  **\\N**.
 
--   header
+- header
 
     Specifies whether a file contains a header with the names of each column in the file.  **header**  is available only for CSV and FIXED files.
 
@@ -120,52 +120,51 @@ For details on the  **\\copy**  command, see  [Table 1](#en-us_topic_0283136941_
 
     Default value: false
 
--   quote \[ as \] 'character'
+- quote \[ as \] 'character'
 
     Specifies a quoted character string for a CSV file.
 
     Default value: a double quotation mark \("\)
 
     >[!NOTE]NOTE 
-    >-   The value of  **quote**  cannot be the same as that of the  **delimiter**  or null parameter.
-    >-   The value of  **quote**  must be a single-byte character.
-    >-   Invisible characters are recommended, such as 0x07, 0x08, and 0x1b.
+    >- The value of  **quote**  cannot be the same as that of the  **delimiter**  or null parameter.
+    >- The value of  **quote**  must be a single-byte character.
+    >- Invisible characters are recommended, such as 0x07, 0x08, and 0x1b.
 
--   escape \[ as \] 'character'
+- escape \[ as \] 'character'
 
     Specifies an escape character for a CSV file. The value must be a single-byte character.
 
     Default value: a double quotation mark \("\) If the value is the same as that of  **quote**, it will be replaced by  **\\0**.
 
--   force quote column\_list | \*
+- force quote column\_list | \*
 
     In  **CSV COPY TO**  mode, forces quotation marks to be used for all non-null values in each specified column. Null values are not quoted.
 
     Value range: an existing column name
 
--   force not null column\_list
+- force not null column\_list
 
     Assigns a value to a specified column in  **CSV COPY FROM**  mode.
 
     Value range: an existing column name
 
--   force null column\_list
+- force null column\_list
 
     Assigns null to a specified column in  **CSV COPY FROM**  mode.
 
     Value range: an existing column name
 
-
 ## Examples<a name="en-us_topic_0283136941_en-us_topic_0237121136_en-us_topic_0117407672_section49087436203946"></a>
 
-1.  Create a target table  **a**.
+1. Create a target table  **a**.
 
     ```
     openGauss=# CREATE TABLE a(a int);
     ```
 
-2.  Import data.
-    1.  Copy data from  **stdin**  to table  **a**.
+2. Import data.
+    1. Copy data from  **stdin**  to table  **a**.
 
         ```
         openGauss=# \copy a from stdin;
@@ -192,14 +191,11 @@ For details on the  **\\copy**  command, see  [Table 1](#en-us_topic_0283136941_
         (2 rows)
         ```
 
-    2.  Copy data from a local file to table  **a**. The following assumes that the local file is  **/home/omm/2.csv**.
+    2. Copy data from a local file to table  **a**. The following assumes that the local file is  **/home/omm/2.csv**.
 
-        -   Commas \(,\) are used as delimiters.
-        -   If the number of columns defined in a source data file is greater than that in a foreign table, extra columns will be ignored during import.
+        - Commas \(,\) are used as delimiters.
+        - If the number of columns defined in a source data file is greater than that in a foreign table, extra columns will be ignored during import.
 
         ```
         openGauss=# \copy a FROM '/home/omm/2.csv' WITH (delimiter',',IGNORE_EXTRA_DATA 'on');
         ```
-
-
-

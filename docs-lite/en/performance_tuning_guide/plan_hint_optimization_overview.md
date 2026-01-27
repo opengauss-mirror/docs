@@ -28,11 +28,11 @@ In the preceding command, <_plan\_hint1_\> and <_plan\_hint2_\> are the hints of
 
 Currently, the following hints are supported:
 
--   Join order hints \(**leading**\)
--   Join operation hints, excluding the  **semi join**,  **anti join**, and  **unique plan**  hints
--   Rows hints
--   Scan operation hints, supporting only  **tablescan**,  **indexscan**, and  **indexonlyscan**
--   Sublink name hints
+- Join order hints \(**leading**\)
+- Join operation hints, excluding the  **semi join**,  **anti join**, and  **unique plan**  hints
+- Rows hints
+- Scan operation hints, supporting only  **tablescan**,  **indexscan**, and  **indexonlyscan**
+- Sublink name hints
 
 ## Precautions<a name="en-us_topic_0283137554_en-us_topic_0237121532_section19195171972812"></a>
 
@@ -257,4 +257,3 @@ group by i_product_name
 ```
 
 ![](figures/3-15-4-9.png)
-

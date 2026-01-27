@@ -2,15 +2,15 @@
 
 ## Prerequisites<a name="en-us_topic_0283136696_en-us_topic_0237121113_en-us_topic_0059778013_sfe45a1031ec347ba820649c0cec52027"></a>
 
--   Audit has been enabled.
--   Audit of required items has been enabled.
--   The database is running properly and a series of addition, modification, deletion, and query operations have been executed in the database. Otherwise, no audit result is generated.
--   Audit logs are separately recorded on the database nodes.
+- Audit has been enabled.
+- Audit of required items has been enabled.
+- The database is running properly and a series of addition, modification, deletion, and query operations have been executed in the database. Otherwise, no audit result is generated.
+- Audit logs are separately recorded on the database nodes.
 
 ## Background<a name="en-us_topic_0283136696_en-us_topic_0237121113_en-us_topic_0059778013_s15667753cb2542158661ae3f96cab067"></a>
 
--   Only users with the  **AUDITADMIN**  permission can view audit records. For details about database users and how to create users, see  [Users](users.md).
--   The SQL function  **pg\_query\_audit**  is provided by the database for audit query. Its syntax is as follows:
+- Only users with the  **AUDITADMIN**  permission can view audit records. For details about database users and how to create users, see  [Users](users.md).
+- The SQL function  **pg\_query\_audit**  is provided by the database for audit query. Its syntax is as follows:
 
     ```
     pg_query_audit(timestamptz startime,timestamptz endtime,audit_log)
@@ -21,11 +21,10 @@
     >[!NOTE]NOTE 
     >The difference between the values of the  **startime**  and  **endtime**  parameters indicates the query period, which can be any value ranging from 00:00:00 of the  **startime**  parameter to 23:59:59 of the  **endtime**  parameter. Therefore, the  **startime**  and  **endtime**  parameters must be properly set to ensure that the required audit information is displayed.
 
-
 ## Procedure<a name="en-us_topic_0283136696_en-us_topic_0237121113_en-us_topic_0059778013_s342f3000e10f4c079735155bb32a56a2"></a>
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Run the following command to connect to the database:
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -43,7 +42,7 @@
     openGauss=# 
     ```
 
-3.  Run the following command to query the audit record:
+3. Run the following command to query the audit record:
 
     ```
     openGauss=# select * from pg_query_audit('2024-07-12 08:00:00','2024-07-12 17:00:00');
@@ -61,5 +60,3 @@
 
     >[!NOTE]NOTE 
     >SSL information is recorded at the end of the audit log  **detail\_info**.  **SSL=on**  indicates that the client is connected using SSL, and  **SSL=off**  indicates that the client is not connected using SSL.
-
-

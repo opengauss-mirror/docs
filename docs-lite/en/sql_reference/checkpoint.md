@@ -8,8 +8,8 @@ A checkpoint is a point in the transaction log sequence at which all data files 
 
 ## Precautions<a name="en-us_topic_0283137558_en-us_topic_0237122089_en-us_topic_0059778147_s86cf086bf81043cba0f2133b169b333d"></a>
 
--   Only the system administrator and O&M administrator can invoke  **CHECKPOINT**.
--   **CHECKPOINT**  forces an immediate checkpoint when the related command is issued, without waiting for a regular checkpoint scheduled by the system.
+- Only the system administrator and O&M administrator can invoke  **CHECKPOINT**.
+- **CHECKPOINT**  forces an immediate checkpoint when the related command is issued, without waiting for a regular checkpoint scheduled by the system.
 
 ## Syntax<a name="en-us_topic_0283137558_en-us_topic_0237122089_en-us_topic_0059778147_s9089f4a8029c4cdaaf4f52fc3153da03"></a>
 
@@ -27,4 +27,3 @@ None
 -- Set a checkpoint.
 openGauss=# CHECKPOINT;
 ```
-

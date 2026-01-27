@@ -6,7 +6,7 @@ You can run the  **sar**  or  **ifconfig**  command to check the network status 
 
 Check the server network status using either of the following two methods:
 
--   Log in to the server as user  **root**  and run the following commands to check the network connection:
+- Log in to the server as user  **root**  and run the following commands to check the network connection:
 
     ```
     SIA1000056771:~ # ifconfig
@@ -29,13 +29,13 @@ Check the server network status using either of the following two methods:
               RX bytes:164158862 (156.5 Mb)  TX bytes:164158862 (156.5 Mb)
     ```
 
-    -   **errors**  indicates the total number of error packets received.
-    -   **dropped**  indicates the number of packets that have reached the ring buffer but are discarded before being copied to the memory due to system faults, for example, insufficient memory.
-    -   **overruns**  indicates the number of packets that have been discarded from the ring buffer. They are discarded because the kernel is incapable of processing ring buffer \(a.k.a. Driver Queue\) transmission.
+    - **errors**  indicates the total number of error packets received.
+    - **dropped**  indicates the number of packets that have reached the ring buffer but are discarded before being copied to the memory due to system faults, for example, insufficient memory.
+    - **overruns**  indicates the number of packets that have been discarded from the ring buffer. They are discarded because the kernel is incapable of processing ring buffer \(a.k.a. Driver Queue\) transmission.
 
     In the command output, if the values of the three parameters keep increasing, the network is overloaded or hardware \(such as NICs and memory\) faults exist.
 
--   Run the  **sar**  command to check the network connection.
+- Run the  **sar**  command to check the network connection.
 
     ```
     sar -n DEV 1  // 1 indicates the interval.
@@ -56,5 +56,3 @@ Check the server network status using either of the following two methods:
     In the command output, check whether the amount of data received and sent by any NIC has reached the upper limit.
 
     After the check, press  **Ctrl+Z**  to exit.
-
-

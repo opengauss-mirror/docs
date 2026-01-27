@@ -11,46 +11,44 @@
 
 ## Prerequisites<a name="en-us_topic_0237152344_en-us_topic_0059777951_sa146d07733084d8292706efa87117d57"></a>
 
--   The trust relationship among the hosts is normal.
--   openGauss has been correctly installed and deployed.
--   The command to be run can be found by the  **which** command, and the current user has the required execution permission.
--   Log in to the OS as the OS user  **omm**  to run the  **gs\_ssh**  command.
+- The trust relationship among the hosts is normal.
+- openGauss has been correctly installed and deployed.
+- The command to be run can be found by the  **which** command, and the current user has the required execution permission.
+- Log in to the OS as the OS user  **omm**  to run the  **gs\_ssh**  command.
 
 ## Syntax<a name="en-us_topic_0237152344_en-us_topic_0059777951_s1b40498eb43141dcb07e36a6a51325f1"></a>
 
--   Run commands synchronously.
+- Run commands synchronously.
 
     ```
     gs_ssh -c cmd
     ```
 
--   Display help information.
+- Display help information.
 
     ```
     gs_ssh -? | --help
     ```
 
--   Display version information.
+- Display version information.
 
     ```
     gs_ssh -V | --version
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0237152344_en-us_topic_0059777951_s1c5e9dfd204245b4a2f0191f9db1116f"></a>
 
--   -c
+- -c
 
     Specifies the command name of Linux shell on the hosts of openGauss.
 
--   -?, --help
+- -?, --help
 
     Displays help information.
 
--   -V, --version
+- -V, --version
 
     Displays version information.
-
 
 ## Example<a name="en-us_topic_0237152344_en-us_topic_0059777951_s1cb93e63c1a247459e187aba833e8133"></a>
 
@@ -69,4 +67,3 @@ plat3
 [SUCCESS] plat4:
 plat4
 ```
-

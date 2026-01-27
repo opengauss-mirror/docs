@@ -6,8 +6,8 @@ Some query statements are executed for an excessively long time in the system. Y
 
 ## Procedure<a name="section1587514811424"></a>
 
-1.  Log in to the host as the OS user  **omm**.
-2.  Run the following command to connect to the database:
+1. Log in to the host as the OS user  **omm**.
+2. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -15,7 +15,7 @@ Some query statements are executed for an excessively long time in the system. Y
 
     **postgres**  is the name of the database, and  **8000**  is the port number.
 
-3.  Set the parameter  **track\_activities**  to  **on**.
+3. Set the parameter  **track\_activities**  to  **on**.
 
     ```
     SET track_activities = on;
@@ -23,7 +23,7 @@ Some query statements are executed for an excessively long time in the system. Y
 
     The database collects the running information about active queries only if the parameter is set to  **on**.
 
-4.  View the running query statements. The  **pg\_stat\_activity**  view is used as an example here.
+4. View the running query statements. The  **pg\_stat\_activity**  view is used as an example here.
 
     ```
     SELECT datname, usename, state, query FROM pg_stat_activity; 
@@ -40,12 +40,10 @@ Some query statements are executed for an excessively long time in the system. Y
     SELECT datname, usename, state, query FROM pg_stat_activity WHERE state != 'idle';
     ```
 
-5.  Analyze whether a query statement is in the active or blocked state. Run the following command to view a query statement in the block state:
+5. Analyze whether a query statement is in the active or blocked state. Run the following command to view a query statement in the block state:
 
     ```
     SELECT datname, usename, state, query FROM pg_stat_activity WHERE waiting = true;
     ```
 
     The query statement is displayed. It is requesting a lock resource that may be held by another session, and is waiting for the lock resource to be released by the session.
-
-

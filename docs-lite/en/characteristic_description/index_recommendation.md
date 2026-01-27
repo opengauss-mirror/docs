@@ -24,11 +24,10 @@ None.
 
 The database is normal, and the client can be connected properly.
 
-The gsql tool has been installed by the current user, and the tool path has been added to the  _PATH _environment variable.
+The gsql tool has been installed by the current user, and the tool path has been added to the  _PATH_environment variable.
 
 An environment running Python 3.6 or later is available.
 
 ## Dependencies<a name="section10471835443"></a>
 
 None.
-

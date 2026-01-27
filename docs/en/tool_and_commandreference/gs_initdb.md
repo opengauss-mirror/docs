@@ -17,9 +17,9 @@ A large number of system catalogs and views are generated when a database is ini
 
 **Generated database**
 
--   template1: a template database. When you create a database, all content in the template1 database is copied. The settings of **template1** are determined by the parameters of **gs\_initdb**.
--   template0: Is the initial backup database provided by openGauss. template0 can be used to generate an empty database if necessary.
--   postgres: a default database provided for users, tools, and third-party applications.
+- template1: a template database. When you create a database, all content in the template1 database is copied. The settings of **template1** are determined by the parameters of **gs\_initdb**.
+- template0: Is the initial backup database provided by openGauss. template0 can be used to generate an empty database if necessary.
+- postgres: a default database provided for users, tools, and third-party applications.
 
 ## Usage Guide <a name="section209951723181812"></a>
 
@@ -27,9 +27,9 @@ A large number of system catalogs and views are generated when a database is ini
 
 During installation, you are advised to use the **-D** parameter to call **gs\_initdb** to initialize a database. If a database needs to be initialized to rectify a fault, run **gs\_initdb**.
 
--   Although **gs\_initdb** attempts to create the corresponding data directory, it may not have the permission to do so, because in most cases, the parent directory is owned by user **root**. To create a data directory, create an empty data directory as user **root** first and deliver the ownership of this directory to the database user using **chown**.
--   **gs\_initdb** is used to set the template1 database and the setting becomes the default setting of other databases.
--   **gs\_initdb** initializes the default locale and character set encoding of a database. The character set encoding, character encoding sequence \(LC\_COLLATE\), and character set class \(LC\_CTYPE, such as uppercase letters, lowercase letters, and digits\) can be separately set for databases when you create them.
+- Although **gs\_initdb** attempts to create the corresponding data directory, it may not have the permission to do so, because in most cases, the parent directory is owned by user **root**. To create a data directory, create an empty data directory as user **root** first and deliver the ownership of this directory to the database user using **chown**.
+- **gs\_initdb** is used to set the template1 database and the setting becomes the default setting of other databases.
+- **gs\_initdb** initializes the default locale and character set encoding of a database. The character set encoding, character encoding sequence \(LC\_COLLATE\), and character set class \(LC\_CTYPE, such as uppercase letters, lowercase letters, and digits\) can be separately set for databases when you create them.
 
 **Syntax**
 
@@ -39,7 +39,7 @@ gs_initdb [OPTION]... [DATADIR]
 
 **Procedure**
 
-1.  Log in as the OS user **omm** to the primary database node.
+1. Log in as the OS user **omm** to the primary database node.
 2. Plan the database directory.
    - Switch to user **root**.
 
@@ -49,7 +49,7 @@ gs_initdb [OPTION]... [DATADIR]
 
    - Enter the username and password as prompted.
 
-3.  Go to the **/opt/gaussdb** directory and create the **data1** directory.
+3. Go to the **/opt/gaussdb** directory and create the **data1** directory.
 
     ```
     cd /opt/gaussdb
@@ -68,14 +68,11 @@ gs_initdb [OPTION]... [DATADIR]
       exit
       ```
 
-4.  Run the **gs\_initdb** command to initialize the database.
+4. Run the **gs\_initdb** command to initialize the database.
 
     ```
     gs_initdb -D /opt/gaussdb/data1 -w "******" --nodename='data1'
     ```
-
-
-
 
 ## Command Reference<a name="section01341136122018"></a>
 
@@ -268,10 +265,6 @@ During <td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1
 </tr>
 </tbody>
 </table>
-
-
-
-
 
 **Table 2** Uncommon parameters<a id="Table 2"></a>
 

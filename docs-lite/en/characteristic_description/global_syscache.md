@@ -25,12 +25,11 @@ Supports more concurrent queries.
 
 ## Constraints<a name="section06531946143616"></a>
 
--   Set  **enable\_global\_syscache**  to  **on**. You are advised to set  **enable\_thread\_pool**  to  **on**.
--   When the number of databases is large and the value of  **global\_syscache\_threshold**  is small, memory control cannot work properly and the performance deteriorates.
--   Distributed time series tasks are not supported. The memory control and performance of these tasks are not affected by the GSC feature.
--   If  **wal\_level**  is set to  **minimal**  or  **archive**, the query performance of the standby server deteriorates and short connections are used.
+- Set  **enable\_global\_syscache**  to  **on**. You are advised to set  **enable\_thread\_pool**  to  **on**.
+- When the number of databases is large and the value of  **global\_syscache\_threshold**  is small, memory control cannot work properly and the performance deteriorates.
+- Distributed time series tasks are not supported. The memory control and performance of these tasks are not affected by the GSC feature.
+- If  **wal\_level**  is set to  **minimal**  or  **archive**, the query performance of the standby server deteriorates and short connections are used.
 
 ## Dependencies<a name="section8406643144716"></a>
 
 The memory reduction capability of this feature depends on the thread pool feature.
-

@@ -254,8 +254,8 @@ Default value: **43200**
 
 **Value range:** an integer, **0** or **1**. You need to restart cm\_server for the modification to take effect. This parameter cannot be enabled for non-DR clusters. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
--   **0**: The DR cluster is disabled.
--   **1**: The DR cluster is enabled.
+- **0**: The DR cluster is disabled.
+- **1**: The DR cluster is enabled.
 
 **Default value**: **0**
 
@@ -265,8 +265,8 @@ Default value: **43200**
 
 **Value range**: Boolean You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
--   **on**, **yes**, **true**, or **1**: The DCF function is enabled.
--   **off**, **no**, **false**, or **0**: The DCF function is disabled.
+- **on**, **yes**, **true**, or **1**: The DCF function is enabled.
+- **off**, **no**, **false**, or **0**: The DCF function is disabled.
 
 **Default value**: **off**
 
@@ -298,7 +298,6 @@ Default value: **43200**
 
   >[!TIP]NOTICE
   >To ensure security, you are advised not to disable it. After this function is disabled, the CM **does not** use encrypted communication and all information is transmitted in plaintext, which may bring security risks such as eavesdropping, tampering, and spoofing.
-
 
 ## ssl\_cert\_expire\_alert\_threshold<a name="section8148443183416"></a>
 

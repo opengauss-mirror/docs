@@ -30,19 +30,19 @@ In the command output, focus on the memory usage \(**%MEM**\) occupied by the pr
 
 The parameters in the command output are described as follows:
 
--   **total**: total physical memory
--   **used**: used physical memory
--   **free**: free memory
--   **buffers**: memory used for buffers.
--   **%MEM**: usage of the memory used by a process
--   **VIRT**: virtual memory that a process has applied for.
--   **SWAP**: swap partitions used by a process.
--   **RES**: physical memory used by a process.
--   **SHR**: size of the shared memory
+- **total**: total physical memory
+- **used**: used physical memory
+- **free**: free memory
+- **buffers**: memory used for buffers.
+- **%MEM**: usage of the memory used by a process
+- **VIRT**: virtual memory that a process has applied for.
+- **SWAP**: swap partitions used by a process.
+- **RES**: physical memory used by a process.
+- **SHR**: size of the shared memory
 
 ## Analyzing Performance Parameters<a name="en-us_topic_0283137367_en-us_topic_0237121487_en-us_topic_0073253547_en-us_topic_0040046523_section4615314285845"></a>
 
-1.  Run the following command as user  **root**  to check the cache usage:
+1. Run the following command as user  **root**  to check the cache usage:
 
     ```
     free
@@ -57,13 +57,11 @@ The parameters in the command output are described as follows:
     Swap:      4192924          0    4192924
     ```
 
-2.  If the cache usage is too high, run the following command to clear cache:
+2. If the cache usage is too high, run the following command to clear cache:
 
     ```
     /sbin/sysctl -w vm.drop_caches=3
     ```
 
-3.  You need to check the execution plan if the memory usage occupied is too high. Focus on the following items:
-    -   Whether improper  **JOIN**  sequences exist. For example, if  **JOIN**  is performed for multiple tables, the intermediate result set of the two tables associated preferentially is large during the execution plan execution, resulting in that the final execution cost is high.
-
-
+3. You need to check the execution plan if the memory usage occupied is too high. Focus on the following items:
+    - Whether improper  **JOIN**  sequences exist. For example, if  **JOIN**  is performed for multiple tables, the intermediate result set of the two tables associated preferentially is large during the execution plan execution, resulting in that the final execution cost is high.

@@ -8,13 +8,13 @@ The following describes the various types of SQL coverages and limitations:
 
 The following features are not supported by MOT:
 
--   **Engine Interop:**  No cross-engine \(Disk+MOT\) queries, views or transactions. Planned for 2021.
--   **MVCC, Isolation:**  No snapshot/serializable isolation. Planned for 2021.
--   **Native Compilation \(JIT\)**: Limited SQL coverage. Also, JIT compilation of stored procedures is not supported.
--   LOCAL memory is limited to 1 GB. A transaction can only change data of less than 1 GB.
--   Capacity \(Data+Index\) is limited to available memory. Anti-caching + Data Tiering will be available in the future.
--   No full-text search index.
--   Logical replication is not supported.
+- **Engine Interop:**  No cross-engine \(Disk+MOT\) queries, views or transactions. Planned for 2021.
+- **MVCC, Isolation:**  No snapshot/serializable isolation. Planned for 2021.
+- **Native Compilation \(JIT\)**: Limited SQL coverage. Also, JIT compilation of stored procedures is not supported.
+- LOCAL memory is limited to 1 GB. A transaction can only change data of less than 1 GB.
+- Capacity \(Data+Index\) is limited to available memory. Anti-caching + Data Tiering will be available in the future.
+- No full-text search index.
+- Logical replication is not supported.
 
 In addition, the following are detailed lists of various general limitations of MOT tables, MOT indexes, Query and DML syntax and the features and limitations of Query Native Compilation.
 
@@ -22,67 +22,67 @@ In addition, the following are detailed lists of various general limitations of 
 
 The following lists the functionality limitations of MOT tables:
 
--   Partition by range
--   AES encryption
--   Stream operations
--   User-defined types
--   Sub-transactions
--   DML triggers
--   DDL triggers
+- Partition by range
+- AES encryption
+- Stream operations
+- User-defined types
+- Sub-transactions
+- DML triggers
+- DDL triggers
 
 ## Unsupported Table DDLs<a name="en-us_topic_0283137737_en-us_topic_0280525140_section56822082"></a>
 
--   Alter table
--   Create table, like including
--   Create table as select
--   Partition by range
--   Create table with no-logging clause
--   DEFERRABLE primary key
--   Reindex
--   Tablespace
--   Create schema with subcommands
+- Alter table
+- Create table, like including
+- Create table as select
+- Partition by range
+- Create table with no-logging clause
+- DEFERRABLE primary key
+- Reindex
+- Tablespace
+- Create schema with subcommands
 
 ## Unsupported Data Types<a name="en-us_topic_0283137737_en-us_topic_0280525140_section41636693"></a>
 
--   UUID
--   User-Defined Type \(UDF\)
--   Array data type
--   NVARCHAR2\(n\)
--   Clob
--   Name
--   Blob
--   Raw
--   Path
--   Circle
--   Reltime
--   Bit varying\(10\)
--   Tsvector
--   Tsquery
--   JSON
--   Box
--   Text
--   Line
--   Point
--   LSEG
--   POLYGON
--   INET
--   CIDR
--   MACADDR
--   Smalldatetime
--   BYTEA
--   Bit
--   Varbit
--   OID
--   Money
--   Any unlimited varchar/character varying
--   HSTORE
+- UUID
+- User-Defined Type \(UDF\)
+- Array data type
+- NVARCHAR2\(n\)
+- Clob
+- Name
+- Blob
+- Raw
+- Path
+- Circle
+- Reltime
+- Bit varying\(10\)
+- Tsvector
+- Tsquery
+- JSON
+- Box
+- Text
+- Line
+- Point
+- LSEG
+- POLYGON
+- INET
+- CIDR
+- MACADDR
+- Smalldatetime
+- BYTEA
+- Bit
+- Varbit
+- OID
+- Money
+- Any unlimited varchar/character varying
+- HSTORE
 
 ## Unsupported Index DDLs and Index<a name="en-us_topic_0283137737_en-us_topic_0280525140_section39185923"></a>
 
--   Create index on decimal/numeric
--   Create index on nullable columns
--   Create index, index per table \> 9
--   Create index on key size \> 256
+- Create index on decimal/numeric
+- Create index on nullable columns
+- Create index, index per table \> 9
+- Create index on key size \> 256
 
     The key size includes the column size in bytes + a column additional size, which is an overhead required to maintain the index. The below table lists the column additional size for different column types.
 
@@ -162,37 +162,35 @@ The following lists the functionality limitations of MOT tables:
     </tbody>
     </table>
 
-
 Types that are not specified in above table, the column additional size is zero \(for instance timestamp\).
 
 ## Unsupported DMLs<a name="en-us_topic_0283137737_en-us_topic_0280525140_section17128987"></a>
 
--   Merge into
--   Select into
--   Lock table
--   Copy from table
--   Upsert
+- Merge into
+- Select into
+- Lock table
+- Copy from table
+- Upsert
 
 ## Unsupported Queries for Native Compilation and Lite Execution<a name="en-us_topic_0283137737_en-us_topic_0280525140_section19943160"></a>
 
--   The query refers to more than two tables
--   The query has any one of the following attributes:
-    -   Aggregation on non-primitive types
-    -   Window functions
-    -   Sub-query sub-links
-    -   Distinct-ON modifier \(distinct clause is from DISTINCT ON\)
-    -   Recursive \(WITH RECURSIVE was specified\)
-    -   Modifying CTE \(has INSERT/UPDATE/DELETE in WITH\)
-
+- The query refers to more than two tables
+- The query has any one of the following attributes:
+    - Aggregation on non-primitive types
+    - Window functions
+    - Sub-query sub-links
+    - Distinct-ON modifier \(distinct clause is from DISTINCT ON\)
+    - Recursive \(WITH RECURSIVE was specified\)
+    - Modifying CTE \(has INSERT/UPDATE/DELETE in WITH\)
 
 In addition, the following clauses disqualify a query from lite execution:
 
--   Returning list
--   Group By clause
--   Grouping sets
--   Having clause
--   Windows clause
--   Distinct clause
--   Sort clause that does not conform to native index order
--   Set operations
--   Constraint dependencies
+- Returning list
+- Group By clause
+- Grouping sets
+- Having clause
+- Windows clause
+- Distinct clause
+- Sort clause that does not conform to native index order
+- Set operations
+- Constraint dependencies

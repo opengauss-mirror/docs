@@ -1,31 +1,31 @@
 # Installation on a Single Node<a name="EN-US_TOPIC_0000001178307594"></a>
 
-1.  Create a user group  **dbgroup**.
+1. Create a user group  **dbgroup**.
 
     ```
     groupadd dbgroup
     ```
 
-2.  Create a common user  **omm**  in the  **dbgroup**  user group and set the password to  ******.
+2. Create a common user  **omm**  in the  **dbgroup**  user group and set the password to  ******.
 
     ```
     useradd -g dbgroup omm
     passwd ******
     ```
 
-3.  Log in to the host where the openGauss package is installed as user **omm** and decompress the openGauss package to the installation directory (for example, **/opt/software/openGauss**).
+3. Log in to the host where the openGauss package is installed as user **omm** and decompress the openGauss package to the installation directory (for example, **/opt/software/openGauss**).
 
     ```
     tar -jxf openGauss-Server-x.x.x-openEuler20.03-x86_64.tar.bz2 -C /opt/software/openGauss
     ```
 
-4.  Assume that the decompressed package is stored in the  **/opt/software/openGauss**  directory. Go to the  **simpleInstall**  directory.
+4. Assume that the decompressed package is stored in the  **/opt/software/openGauss**  directory. Go to the  **simpleInstall**  directory.
 
     ```
     cd /opt/software/openGauss/simpleInstall
     ```
 
-5.  Run the  **install.sh**  script to install openGauss.
+5. Run the  **install.sh**  script to install openGauss.
 
     ```
     sh install.sh  -w xxxx 
@@ -33,7 +33,7 @@
 
     In the preceding command,  **-w**  indicates the initial database password \(specified by  **gs\_initdb**\). This parameter is mandatory for security purposes.
 
-6.  After the installation is complete, check whether the process is normal by using  **ps**  and  **gs\_ctl**.
+6. After the installation is complete, check whether the process is normal by using  **ps**  and  **gs\_ctl**.
 
     ```
     ps ux | grep gaussdb

@@ -73,4 +73,3 @@ The parser is shown in the  **PG\_TS\_CONFIG**  entry, but the token-to-dictiona
 </tr>
 </tbody>
 </table>
-

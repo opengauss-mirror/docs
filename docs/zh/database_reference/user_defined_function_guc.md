@@ -38,12 +38,11 @@
 
 **取值范围**： 字符串，支持：
 
--   JDK8 JVM启动参数（可参见JDK[官方](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html)说明）
--   JDK8 JVM系统属性参数（以–D开头如–Djava.ext.dirs，可参见JDK[官方](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/properties.html)说明）
--   用户自定义参数（以–D开头，如–Duser.defined.option）
+- JDK8 JVM启动参数（可参见JDK[官方](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html)说明）
+- JDK8 JVM系统属性参数（以–D开头如–Djava.ext.dirs，可参见JDK[官方](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/properties.html)说明）
+- 用户自定义参数（以–D开头，如–Duser.defined.option）
 
 >[!TIP]须知
 >如果用户在pljava\_vmoptions中设置参数不满足上述取值范围，会在使用PL/Java语言函数时报错。此参数的详细说明参见[PL/pgSQL语言函数](../sql_reference/pl_pgsql_functions.md)。
 
 **默认值**： 空
-

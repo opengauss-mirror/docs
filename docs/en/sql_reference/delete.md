@@ -6,9 +6,9 @@
 
 ## Precautions<a name="en-us_topic_0283136795_en-us_topic_0237122131_en-us_topic_0059778379_sfc96c070e8574f4ea9a2726e898fda16"></a>
 
--   The owner of a table, users granted with the  **DELETE**  permission on the table, or users granted with the  **DELETE ANY TABLE**  permission can delete data from the table. The system administrator has the permission to delete data from the table by default, as well as the  **SELECT**  permission on any table in the  **USING**  clause or whose values are read in  **condition**.
--   For column-store tables, the  **RETURNING**  clause is currently not supported.
--   The syntax for deleting multiple tables takes effect only when **sql\_compatibility** is set to **B**. Column-store tables, views, and tables containing RULE cannot be deleted.
+- The owner of a table, users granted with the  **DELETE**  permission on the table, or users granted with the  **DELETE ANY TABLE**  permission can delete data from the table. The system administrator has the permission to delete data from the table by default, as well as the  **SELECT**  permission on any table in the  **USING**  clause or whose values are read in  **condition**.
+- For column-store tables, the  **RETURNING**  clause is currently not supported.
+- The syntax for deleting multiple tables takes effect only when **sql\_compatibility** is set to **B**. Column-store tables, views, and tables containing RULE cannot be deleted.
 
 ## Syntax<a name="en-us_topic_0283136795_en-us_topic_0237122131_en-us_topic_0059778379_s84baecef89484d5f87f57b0545b46203"></a>
 
@@ -41,7 +41,7 @@ DELETE [/*+ plan_hint */]
 
 ## Parameter Description<a name="en-us_topic_0283136795_en-us_topic_0237122131_en-us_topic_0059778379_s6df87c0dd87c49e29a034e0ff3385ca6"></a>
 
--   **WITH \[ RECURSIVE \] with\_query \[, ...\]**
+- **WITH \[ RECURSIVE \] with\_query \[, ...\]**
 
     Specifies one or more subqueries that can be referenced by name in the main query, which is equivalent to a temporary table.
 
@@ -64,24 +64,24 @@ DELETE [/*+ plan_hint */]
 
     – You can use  **MATERIALIZED**  or  **NOT MATERIALIZED**  to modify the CTE.
 
-    -   If  **MATERIALIZED**  is specified, the WITH query will be materialized, and a copy of the subquery result set is generated. The copy is directly queried at the reference point. Therefore, the WITH subquery cannot be jointly optimized with the SELECT statement trunk \(for example, predicate pushdown and equivalence class transfer\). In this scenario, you can use  **NOT MATERIALIZED**  for modification. If the WITH query can be executed as a subquery inline, the preceding optimization can be performed.
-    -   If the user does not explicitly declare the materialized attribute, comply with the following rules: If the CTE is referenced only once in the trunk statement to which it belongs and semantically supports inline execution, it will be rewritten as subquery inline execution. Otherwise, the materialized execution will be performed in CTE Scan mode.
+    - If  **MATERIALIZED**  is specified, the WITH query will be materialized, and a copy of the subquery result set is generated. The copy is directly queried at the reference point. Therefore, the WITH subquery cannot be jointly optimized with the SELECT statement trunk \(for example, predicate pushdown and equivalence class transfer\). In this scenario, you can use  **NOT MATERIALIZED**  for modification. If the WITH query can be executed as a subquery inline, the preceding optimization can be performed.
+    - If the user does not explicitly declare the materialized attribute, comply with the following rules: If the CTE is referenced only once in the trunk statement to which it belongs and semantically supports inline execution, it will be rewritten as subquery inline execution. Otherwise, the materialized execution will be performed in CTE Scan mode.
 
--   **plan\_hint**  clause
+- **plan\_hint**  clause
 
     Follows the  **DELETE**  keyword in the  **/\*+ \*/**  format. It is used to optimize the plan of a  **DELETE**  statement block. For details, see  [Hint-based Tuning](../performance_tuning_guide/plan_hint_optimization_overview.md). In each statement, only the first  **/\*+** *plan\*hint _**\*/**  comment block takes effect as a hint. Multiple hints can be written.
 
--   **ONLY**
+- **ONLY**
 
     If  **ONLY**  is specified before the table name, matching rows are deleted from the named table only. If  **ONLY**  is not specified, matching rows are also deleted from any tables inheriting from the named table.
 
--   **table\_name**
+- **table\_name**
 
     Specifies the name \(optionally schema-qualified\) of the target table.
 
     Value range: an existing table name
 
--   **partition\_clause**
+- **partition\_clause**
 
     Deletes a specified partition.
 
@@ -93,7 +93,7 @@ DELETE [/*+ plan_hint */]
 
     For details, see  [CREATE TABLE SUBPARTITION](create_table_subpartition.md).
   
--   **partitions\_clause**
+- **partitions\_clause**
 
     Deletes multiple partitions.
 
@@ -105,21 +105,21 @@ DELETE [/*+ plan_hint */]
 
     For details, see [CREATE TABLE SUBPARTITION](create_table_subpartition.md).
 
--   **target\_query**
+- **target\_query**
     
     Specified subquery for deletion，which is equivalent to a view. This parameter takes effect only when **sql\_compatibility** is set to **A**. For restriction on deleting from a subquery, see Automatically Updatable View section in [CREATE VIEW](create_view.md) for more details.
 
--   **WITH [ CASCADED | LOCAL ] CHECK OPTION**
+- **WITH [ CASCADED | LOCAL ] CHECK OPTION**
     
     For details about the clause, see [CREATE VIEW](create_view.md).
 
--   **alias**
+- **alias**
 
     Specifies a substitute name for the target table or subquery.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **using\_list**
+- **using\_list**
 
     Specifies the  **USING**  clause.
 
@@ -127,32 +127,31 @@ DELETE [/*+ plan_hint */]
       > 
     >When **sql\_compatibility** is set to **B**, the target table can appear at the same time when **using\_list** specifies the set of associated tables. In addition, the alias of the table can be defined and used in the target table. In other situations, the target table cannot appear repeatedly in **using\_list**.
 
--   **condition**
+- **condition**
 
     Specifies an expression that returns a Boolean value. Only rows for which this expression returns  **true**  will be deleted. You are not advised to use numeric types such as int for  **condition**, because such types can be implicitly converted to bool values \(non-zero values are implicitly converted to  **true**  and  **0**  is implicitly converted to  **false**\), which may cause unexpected results.
 
--   **WHERE CURRENT OF cursor\_name**
+- **WHERE CURRENT OF cursor\_name**
 
     This parameter is reserved.
 
--   **ORDER BY**
+- **ORDER BY**
 
     For details about the keywords, see [SELECT](select.md).
 
--   **LIMIT**
+- **LIMIT**
 
     For details about the keywords, see [SELECT](select.md).
     
--   **output\_expr**
+- **output\_expr**
 
     Specifies an expression to be computed and returned by the  **DELETE**  statement after each row is deleted. The expression can use any column names of the table. Write  **\***  to return all columns.
 
--   **output\_name**
+- **output\_name**
 
     Specifies a name to use for a returned column.
 
     Value range: a string. It must comply with the identifier naming convention.
-
 
 ## Examples<a name="en-us_topic_0283136795_en-us_topic_0237122131_en-us_topic_0059778379_s90a3978214f644269ab932c29df31137"></a>
 
@@ -175,6 +174,6 @@ openGauss=# DROP TABLE tpcds.customer_address_bak;
 
 ## Suggestions<a name="en-us_topic_0283136795_en-us_topic_0237122131_en-us_topic_0059778379_section50155651112741"></a>
 
--   delete
+- delete
 
     To delete all records in a table, use the  **truncate**  syntax.

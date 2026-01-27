@@ -18,13 +18,13 @@ For details about the execution effect and supported data types of preset maskin
 CREATE MASKING POLICY policy_name masking_clause[, ...]* policy_filter [ENABLE | DISABLE];
 ```
 
--   masking\_clause
+- masking\_clause
 
     ```
     masking_function ON LABEL(label_name[, ...]*)
     ```
 
--   masking\_function
+- masking\_function
 
     **maskall**  is not a preset function. It is hard-coded and cannot be displayed by running  **\\df**.
 
@@ -34,55 +34,49 @@ CREATE MASKING POLICY policy_name masking_clause[, ...]* policy_filter [ENABLE |
     maskall | randommasking | creditcardmasking | basicemailmasking | fullemailmasking | shufflemasking | alldigitsmasking | regexpmasking
     ```
 
-
--   policy\_filter:
+- policy\_filter:
 
     ```
     FILTER ON FILTER_TYPE(filter_value [,...]*)[,...]*
     ```
 
-
--   FILTER\_TYPE:
+- FILTER\_TYPE:
 
     ```
     IP | APP | ROLES
     ```
 
-
 ## Parameter Description<a name="section2852173114389"></a>
 
--   **policy\_name**
+- **policy\_name**
 
     Specifies the audit policy name, which must be unique.
 
     Value range: a string. It must comply with the naming convention.
 
--   **label\_name**
+- **label\_name**
 
     Specifies the resource label name.
 
--   **masking\_clause**
+- **masking\_clause**
 
     Specifies the masking function to be used to anonymize database resources labeled by  **label\_name**.  **schema.function**  can be used to specify the masking function.
 
--   **policy\_filter**
+- **policy\_filter**
 
     Specifies the users for which the masking policy takes effect. If this parameter is left empty, the masking policy takes effect for all users.
 
-
--   **FILTER\_TYPE**
+- **FILTER\_TYPE**
 
     Specifies the types of information to be filtered by the policy, including  **IP**,  **APP**, and  **ROLES**.
 
--   **filter\_value**
+- **filter\_value**
 
     Indicates the detailed information to be filtered, such as the IP address, app name, and username.
 
-
--   **ENABLE|DISABLE**
+- **ENABLE|DISABLE**
 
     Enables or disables the masking policy. If  **ENABLE|DISABLE**  is not specified,  **ENABLE**  is used by default.
-
 
 ## Examples<a name="section7854941155112"></a>
 
@@ -110,4 +104,3 @@ openGauss=# CREATE MASKING POLICY maskpol2 randommasking ON LABEL(mask_lb2) FILT
 ## Helpful Links<a name="en-us_topic_0059778277_s4693856e1f6240dc98de7d6faf52f136"></a>
 
 [ALTER MASKING POLICY](alter-masking-policy.md)  and  [DROP MASKING POLICY](drop-masking-policy.md)
-

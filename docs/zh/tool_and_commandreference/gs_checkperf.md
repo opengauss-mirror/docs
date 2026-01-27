@@ -12,9 +12,9 @@ openGauss提供了gs\_checkperf工具来帮助对openGauss级别（主机CPU占�
 
 ## 注意事项<a name="zh-cn_topic_0237152332_section4694838915381"></a>
 
--   使用流式容灾功能时，灾备集群不支持此工具。
+- 使用流式容灾功能时，灾备集群不支持此工具。
 
--   gs\_checkperf工具的监控信息依赖于pmk模式下的表的数据。如果pmk模式下的表未执行analyze操作，则可能导致gs\_checkperf工具执行失败。其报错示例信息如下。
+- gs\_checkperf工具的监控信息依赖于pmk模式下的表的数据。如果pmk模式下的表未执行analyze操作，则可能导致gs\_checkperf工具执行失败。其报错示例信息如下。
 
     ```
     LOG:  Statistics in some tables or columns(pmk.pmk_snapshot.snapshot_id) are not collected.
@@ -31,37 +31,35 @@ openGauss提供了gs\_checkperf工具来帮助对openGauss级别（主机CPU占�
     analyze pmk.pmk_snapshot_datanode_stat;
     ```
 
-
 ## 语法<a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_s48cce05cce9e43c4a17fa654f91b821a"></a>
 
--   检查SSD性能（root用户）
+- 检查SSD性能（root用户）
 
     ```
     gs_checkperf -U USER [-o OUTPUT] -i SSD [-l LOGFILE]
     ```
 
--   检查openGauss性能（openGauss安装用户）
+- 检查openGauss性能（openGauss安装用户）
 
     ```
     gs_checkperf [-U USER] [-o OUTPUT] [-i PMK] [--detail] [-l LOGFILE]
     ```
 
--   显示帮助信息
+- 显示帮助信息
 
     ```
     gs_checkperf -? | --help
     ```
 
--   显示版本号信息
+- 显示版本号信息
 
     ```
     gs_checkperf -V | --version
     ```
 
-
 ## 参数说明<a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_sbbcefb85880e44fcad49c37604f46506"></a>
 
--   -U
+- -U
 
     运行openGauss的用户名称。
 
@@ -69,7 +67,7 @@ openGauss提供了gs\_checkperf工具来帮助对openGauss级别（主机CPU占�
 
     以root用户身份执行此命令必须指定该参数。
 
--   -o
+- -o
 
     指定性能检查报告输出到指定的文件。
 
@@ -77,7 +75,7 @@ openGauss提供了gs\_checkperf工具来帮助对openGauss级别（主机CPU占�
 
     不指定则将检查结果输出到屏幕上。
 
--   -i
+- -i
 
     指定检查项编号，-i参数值不区分大小写。格式：-i PMK、-i SSD。
 
@@ -91,24 +89,23 @@ openGauss提供了gs\_checkperf工具来帮助对openGauss级别（主机CPU占�
 
     如果不指定该参数，以openGauss用户身份默认检查PMK，以root用户身份默认检查SSD。
 
--   --detail
+- --detail
 
     显示PMK检查结果详情。
 
--   -l
+- -l
 
     指定日志文件的存储路径。
 
     默认路径为：/var/log/gaussdb/omm/om/gs\_checkperf-YYYY-MM-DD\_hhmmss.log
 
--   -?, --help
+- -?, --help
 
     显示帮助信息。
 
--   -V, --version
+- -V, --version
 
     显示版本号信息。
-
 
 **表 1**  性能检查项
 
@@ -370,4 +367,3 @@ Session IO statistics:
 ## 相关命令<a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_s192dbb9a0f6b4bae84d65bf5bdd8a796"></a>
 
 [gs\_check](gs_check.md)，[gs\_checkos](gs_checkos.md)
-

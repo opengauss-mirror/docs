@@ -101,43 +101,39 @@ Run the <td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5
 </tbody>
 </table>
 
-
-
-
 ## Prerequisites <a name="en-us_topic_0237152334_en-us_topic_0059778085_s7bffe8e9bdec4735885781573a71fb91"></a>
 
 An OS tool (such as **gstack**) that **gs\_collector** requires has been installed. If it is not installed, an error message is displayed, and this collection item is skipped.
 
 ## Syntax <a name="en-us_topic_0237152334_en-us_topic_0059778085_s95ba74a509904128ac0326c58acd840c"></a>
 
--   Collect logs \(as a non-**root** user\).
+- Collect logs \(as a non-**root** user\).
 
     ```
     gs_collector --begin-time="BEGINTIME" --end-time="ENDTIME" [-h HOSTNAME | -f HOSTFILE] [--keyword=KEYWORD] [--speed-limit=SPEED] [-o OUTPUT] [-l LOGFILE] [-C CONFIGFILE]
     ```
 
--   Display help information.
+- Display help information.
 
     ```
     gs_collector -? | --help
     ```
 
--   Display version information.
+- Display version information.
 
     ```
     gs_collector -V | --version
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0237152334_en-us_topic_0059778085_s7ac81eecbbdd4ae28db3ffe0efb5a947"></a>
 
--   -h
+- -h
 
     Specifies the name of the host whose information is to be collected.
 
     Value range: host names. If this parameter is not specified, information about all hosts is collected by default.
 
--   -f
+- -f
 
     Specifies the file of a host name list. The file is a plain text file.
 
@@ -146,7 +142,7 @@ An OS tool (such as **gstack**) that **gs\_collector** requires has been install
 
     Value range: a host name list
 
--   -o
+- -o
 
     Saves collected logs as a package into a specified folder.
 
@@ -154,7 +150,7 @@ An OS tool (such as **gstack**) that **gs\_collector** requires has been install
 
     If **tmpMppdbPath** is not configured in the configuration file, the check results are saved as a package into the **/tmp/***user name***\_mppdb/** directory by default.
 
--   -l
+- -l
 
     Specifies a log file and its save path.
 
@@ -206,30 +202,29 @@ An OS tool (such as **gstack**) that **gs\_collector** requires has been install
 
   >[!NOTE]NOTE
   >
-  >  Logs about the performance are binary logs. The keyword collection function does not support performance log collection.
+  > Logs about the performance are binary logs. The keyword collection function does not support performance log collection.
 
--   --begin-time
+- --begin-time
 
     Start time of the search time range. The input format: yyyymmdd hh:mm
 
--   --end-time
+- --end-time
 
     End time of the search time range. The input format: yyyymmdd hh:mm
 
--   --speed-limit
+- --speed-limit
 
     Specifies the log collection rate. The value is a non-negative integer in the unit of MB/s.
 
     This parameter is used to prevent high disk or network I/O from being generated during log collection. If database nodes are deployed on the same disk where the *$GAUSSLOG/$PGHOST* path is located, they may become faulty due to high I/O. The value of this parameter must not exceed 1/3 of the minimum value of the disk and network I/O in openGauss.
 
--   -?, --help
+- -?, --help
 
     Displays help information.
 
--   -V, --version
+- -V, --version
 
     Displays version information.
-
 
 ## Examples<a name="en-us_topic_0237152334_en-us_topic_0059778085_sc5fc8de2cfd140fcb92d4f3d1b100ace"></a>
 

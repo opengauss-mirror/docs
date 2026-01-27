@@ -316,9 +316,6 @@ PG\_CLASS系统表存储数据库对象信息及其之间的关系。
 </tbody>
 </table>
 
-
-
-
 **表 2**  权限的参数说明
 
 <a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_td89f8f6cc98f4a11a08b3c45d852a6cc"></a>

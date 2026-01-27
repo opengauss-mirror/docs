@@ -8,11 +8,11 @@
 
 openGauss中常用的约束如下：
 
--   NOT NULL：指示某列不能存储NULL值。
--   UNIQUE：确保某列的值都是唯一的。
--   PRIMARY KEY：NOT NULL 和 UNIQUE 的结合。确保某列（或两个列多个列的结合）有唯一标识，有助于更容易更快速地找到表中的一个特定的记录。
--   FOREIGN KEY： 保证一个表中的数据匹配另一个表中的值的参照完整性。
--   CHECK： 保证列中的值符合指定的条件。
+- NOT NULL：指示某列不能存储NULL值。
+- UNIQUE：确保某列的值都是唯一的。
+- PRIMARY KEY：NOT NULL 和 UNIQUE 的结合。确保某列（或两个列多个列的结合）有唯一标识，有助于更容易更快速地找到表中的一个特定的记录。
+- FOREIGN KEY： 保证一个表中的数据匹配另一个表中的值的参照完整性。
+- CHECK： 保证列中的值符合指定的条件。
 
 ## NOT NULL约束<a name="section74155314398"></a>
 
@@ -291,4 +291,3 @@ openGauss=# INSERT INTO staff4(ID,NAME,AGE,SALARY) VALUES (2, 'JUCE',16,0);
 ERROR:  new row for relation "staff4" violates check constraint "staff4_salary_check"
 DETAIL:  N/A
 ```
-

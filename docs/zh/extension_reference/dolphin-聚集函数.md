@@ -1,6 +1,6 @@
 # dolphin-聚集函数
 
--   any_value\(expression\)
+- any_value\(expression\)
 
     描述：所有输入行的任意一条expression(默认第一条)。
 
@@ -23,7 +23,7 @@
     (2 rows)
     ```
 
--   default\(column_name\)
+- default\(column_name\)
 
     描述：获取表字段的默认值输出。
 

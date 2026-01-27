@@ -1,9 +1,12 @@
 # 因后台线程退出失败导致集群Failover流程卡住的问题
 
-## 一、问题现象：  
+## 一、问题现象  
+
 主备环境同时跑TPCC业务，业务量不限。测试RTO过程中，执行主机注入故障并kill掉主节点进程 ，发现测试rto时间偶现超过30秒，耗时60s  
-1.  观察集群状态等待备机成功升主，进入数据库日志：`cd $GAUSSLOG/pg_log/dn_6001/`全局搜索failover trigger;   
-2.  通过数据库日志发现升主节点存在两次failover记录,整个rto时间长达2分钟。如下所示：    
+
+1. 观察集群状态等待备机成功升主，进入数据库日志：`cd $GAUSSLOG/pg_log/dn_6001/`全局搜索failover trigger;   
+2. 通过数据库日志发现升主节点存在两次failover记录,整个rto时间长达2分钟。如下所示：    
+
     ```shell
     2024-07-25 09:34:50.892 [unknown] [unknown] localhost 281453068005328 0[0:0#0] 0[DMS] LOG: [SS failover] failover trigger.
     2024-07-25 09:35:21.964 [unknown][unknown] localhost 281453068005328 0[0:0#0]0 [DMS] WARNING: [SS failover] failover failed, backends can not exit
@@ -12,8 +15,10 @@
     2024-07-25 09:37:17.4 [postmaster][reaper][281459746799632] LOG: database system is ready to accept connections
     ```
 
-## 二、定位方法：
-1.  进入数据库日志：可以发现发生failover trigger后首先组织了failover reform，在第一次打印failover trigger到failover failed中间打印了大量的could not fork new process for connection due to PMstate PM WAIT_BACKENDS。如下所示：    
+## 二、定位方法
+
+1. 进入数据库日志：可以发现发生failover trigger后首先组织了failover reform，在第一次打印failover trigger到failover failed中间打印了大量的could not fork new process for connection due to PMstate PM WAIT_BACKENDS。如下所示：    
+
     ```shell
     3013 2024-07-25 15:19:59.991 [unknown] [unknown] localhost 281446460463264 0[0:0#0] o [DMS] LOG: [ss failover] failover trigger.a
     3014 2024-07-25 15:19:59.991 [unknown] [unknown] localhost 281446460463264 0[0:0#0] o [DMS] LOG: [SS reform] dms reform start, role:1, reform type:failover reform
@@ -57,19 +62,22 @@
     3051 2024-07-25 15:20:32.993 65040532.1 [unknown] 281457026138128 [unknown] 0 dn 6001 6002 01000 0[BACKEND] WARNING: could not fork new process for connection due to PMstate PM WAIT BACKENDS
     3052 2024-07-25 15:20:33.410 [unknown] [unknown] localhost 281446460463264 0[0:0#0]o [DMS] WARNING: [SS failover] failover failed, backends can not exit
     ```
-2.  这代表着由于PM_WAIT_BACKENDS阻碍了failover进程和组织reform流程；  
-3.  从第一次failover trigger到数据库重新启动，历时2分半左右，出现了两次failover；并且第一次failover的原因为backends can not exit。  
 
-## 三、问题根因：
-1.  备机在跑业务，进行failover升主过程中；  
+2. 这代表着由于PM_WAIT_BACKENDS阻碍了failover进程和组织reform流程；  
+3. 从第一次failover trigger到数据库重新启动，历时2分半左右，出现了两次failover；并且第一次failover的原因为backends can not exit。  
+
+## 三、问题根因
+
+1. 备机在跑业务，进行failover升主过程中；  
 业务线程迟迟无法退出导致的第一次failover失败，此式cm会自动决策下一轮重启failover，保证升主成功。  
-2.  第一轮在线failover因为业务线程无法退出，造成30s的耗时；  
+2. 第一轮在线failover因为业务线程无法退出，造成30s的耗时；  
 第二轮重启failover，因为重启造成有额外耗时；  
 
+## 四、解决方案
 
-## 四、解决方案：
 对于该问题有两种方案解决：  
-1.  集群reform场景中增加后端请求的超时标志位，超过一定时间主动从后端退出所有业务线程，暴力退出机制；  
-2.  从底层业务线程向上退出，优雅退出机制；  
+
+1. 集群reform场景中增加后端请求的超时标志位，超过一定时间主动从后端退出所有业务线程，暴力退出机制；  
+2. 从底层业务线程向上退出，优雅退出机制；  
 
 预期目标：保证第一次failover成功升主，且整个过程时间不超过30S；  

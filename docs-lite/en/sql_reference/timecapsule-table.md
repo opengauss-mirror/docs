@@ -8,23 +8,22 @@ The table can flash back to a past point in time, depending on the old version o
 
 ## Precautions<a name="section3945357031"></a>
 
--   The  **TIMECAPSULE TABLE**  statement can be used to flash back the data of the old version or the data from the recycle bin.
-    -   **TO TIMECAPSULE**  and  **TO CSN**  can flash back a table to an earlier version.
-    -   The recycle bin records the objects dropped or truncated by running  **DROP**  and  **TRUNCATE**.  **TO BEFORE DROP**  and  **TO BEFORE TRUNCATE**  flash back from the recycle bin.
+- The  **TIMECAPSULE TABLE**  statement can be used to flash back the data of the old version or the data from the recycle bin.
+    - **TO TIMECAPSULE**  and  **TO CSN**  can flash back a table to an earlier version.
+    - The recycle bin records the objects dropped or truncated by running  **DROP**  and  **TRUNCATE**.  **TO BEFORE DROP**  and  **TO BEFORE TRUNCATE**  flash back from the recycle bin.
 
--   The following object types do not support flashback: system catalogs, column-store tables, MOTs, DFS tables, global temporary tables, local temporary tables, unlogged tables, sequence tables, and hash bucket tables.
--   Between the flashback point and the current point, a statement \(**DDL**,  **DCL**, or  **VACUUM FULL**\) that modifies the table structure or affects physical storage has been executed. Therefore, the flashback fails.
+- The following object types do not support flashback: system catalogs, column-store tables, MOTs, DFS tables, global temporary tables, local temporary tables, unlogged tables, sequence tables, and hash bucket tables.
+- Between the flashback point and the current point, a statement \(**DDL**,  **DCL**, or  **VACUUM FULL**\) that modifies the table structure or affects physical storage has been executed. Therefore, the flashback fails.
 
--   To run  **DROP**, you must have the  **create**  or  **usage**  permission of the schema to which the junk object belongs, and you must be the owner of the schema or the owner of the junk object.
+- To run  **DROP**, you must have the  **create**  or  **usage**  permission of the schema to which the junk object belongs, and you must be the owner of the schema or the owner of the junk object.
 
     To run  **TRUNCATE**, you must have the  **create**  or  **usage**  permission of the schema to which the junk object belongs, and you must be the owner of the schema or the junk object. In addition, you must have the  **TRUNCATE**  permission of the junk object.
 
--   Scenarios or tables that do not support DROP or TRUNCATE FLASHBACK
-    -   Scenario where the recycle bin is disabled \(**enable\_recyclebin**  is set to  **off**\)
-    -   Scenario where the system is being maintained \(**xc\_maintenance\_mode**  is set to  **on**\) or is being upgraded
-    -   Scenario where multiple objects are deleted \(The  **DROP**  or  **TRUNCATE TABLE**  command is executed to delete multiple objects at the same time.\)
-    -   System catalogs, column-store tables, MOTs, DFS tables, global temporary tables, local temporary tables, unlogged tables, sequence tables, and hash bucket tables
-
+- Scenarios or tables that do not support DROP or TRUNCATE FLASHBACK
+    - Scenario where the recycle bin is disabled \(**enable\_recyclebin**  is set to  **off**\)
+    - Scenario where the system is being maintained \(**xc\_maintenance\_mode**  is set to  **on**\) or is being upgraded
+    - Scenario where multiple objects are deleted \(The  **DROP**  or  **TRUNCATE TABLE**  command is executed to delete multiple objects at the same time.\)
+    - System catalogs, column-store tables, MOTs, DFS tables, global temporary tables, local temporary tables, unlogged tables, sequence tables, and hash bucket tables
 
 ## Syntax<a name="section34914247413"></a>
 
@@ -34,50 +33,48 @@ TIMECAPSULE TABLE [schema.]table_name TO { CSN expr | TIMESTAMP expr | BEFORE { 
 
 ## Parameter Description<a name="section1168716336410"></a>
 
--   **schema\_name**
+- **schema\_name**
 
     Specifies a schema containing the table to be flashed back. If this parameter is not specified, the current schema is used.
 
--   **table\_name**
+- **table\_name**
 
     Specifies a table name.
 
-
--   **TO CSN**
+- **TO CSN**
 
     Specifies the CSN corresponding to the time point when the table is to be flashed back.  _expr_  must be a number representing a valid CSN.
 
--   **TO TIMESTAMP**
+- **TO TIMESTAMP**
 
     Specifies a timestamp value corresponding to the point in time to which you want to flash back the table. The result of  _expr_  must be a valid past timestamp \(convert a string to a time type using the  **TO\_TIMESTAMP**  function\). The table will be flashed back to a time within approximately 3 seconds of the specified timestamp.
 
     Note: When the flashback point is too old, the old version cannot be obtained because it is recycled. As a result, the flashback fails and the error message "Restore point too old" is displayed.
 
--   **TO BEFORE DROP**
+- **TO BEFORE DROP**
 
     Retrieves dropped tables and their subobjects from the recycle bin.
 
     You can specify either the original user-specified name of the table or the system-generated name assigned to the object when it was deleted.
 
-    -   System-generated recycle bin object names are unique. Therefore, if you specify the system-generated name, the database retrieves that specified object. To see the content in your recycle bin, run  **select  \* from gs\_recyclebin;**.
-    -   If you specify the user-specified name and the recycle bin contains more than one object of that name, the database retrieves the object that was moved to the recycle bin most recently. If you want to retrieve an older version of the table, then do one of these things:
+    - System-generated recycle bin object names are unique. Therefore, if you specify the system-generated name, the database retrieves that specified object. To see the content in your recycle bin, run  **select  \* from gs\_recyclebin;**.
+    - If you specify the user-specified name and the recycle bin contains more than one object of that name, the database retrieves the object that was moved to the recycle bin most recently. If you want to retrieve an older version of the table, then do one of these things:
 
-        -   Specify the system-generated recycle bin name of the table you want to retrieve.
+        - Specify the system-generated recycle bin name of the table you want to retrieve.
 
-        -   Run the  **TIMECAPSULE TABLE ... TO BEFORE  DROP**  statement until you retrieve the table you want.
+        - Run the  **TIMECAPSULE TABLE ... TO BEFORE  DROP**  statement until you retrieve the table you want.
 
-    -   When a dropped table is restored, only the base table name is restored, and the names of other subobjects remain the same as those in the recycle bin. You can run the DDL command to manually change the names of subobjects as required.
-    -   The recycle bin does not support write operations such as DML, DCL, and DDL, and does not support DQL query operations \(supported in later versions\).
-    -   The  **recyclebin\_retention\_time**  parameter has been set for specifying the retention period of objects in the recycle bin. The objects will be automatically deleted after the retention period expires. The expired objects cannot be used to do flashback operations.
+    - When a dropped table is restored, only the base table name is restored, and the names of other subobjects remain the same as those in the recycle bin. You can run the DDL command to manually change the names of subobjects as required.
+    - The recycle bin does not support write operations such as DML, DCL, and DDL, and does not support DQL query operations \(supported in later versions\).
+    - The  **recyclebin\_retention\_time**  parameter has been set for specifying the retention period of objects in the recycle bin. The objects will be automatically deleted after the retention period expires. The expired objects cannot be used to do flashback operations.
 
--   **RENAME  TO**
+- **RENAME  TO**
 
     Specifies a new name for the table retrieved from the recycle bin.
 
--   **TRUNCATE**
+- **TRUNCATE**
 
     Flashes back to the point in time before the TRUNCATE operation.
-
 
 ## Examples<a name="section1596654110417"></a>
 
@@ -116,4 +113,3 @@ openGauss=#  DROP TABLE tpcds.reason_t2;
 openGauss=#  TIMECAPSULE TABLE tpcds.reason_t2 to BEFORE DROP;
 TimeCapsule Table
 ```
-

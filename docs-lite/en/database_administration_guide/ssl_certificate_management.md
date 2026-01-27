@@ -14,7 +14,7 @@ The OpenSSL component has been installed in the Linux environment.
 
 ### Generating an Automatic Authentication Certificate<a name="en-us_topic_0283137709_en-us_topic_0237121096_en-us_topic_0059777789_section2972238310327"></a>
 
-1.  Establish a CA environment.
+1. Establish a CA environment.
 
     ```
     -- Suppose that user omm exists, and the CA path is test.
@@ -37,7 +37,7 @@ The OpenSSL component has been installed in the Linux environment.
     -- The CA environment has been established.
     ```
 
-2.  Generate a root private key.
+2. Generate a root private key.
 
     ```
     -- Generate a CA private key.
@@ -53,7 +53,7 @@ The OpenSSL component has been installed in the Linux environment.
     Verifying - Enter pass phrase for demoCA/private/cakey.pem:
     ```
 
-3.  Generate a root certificate request file.
+3. Generate a root certificate request file.
 
     ```
     -- Generate the CA root certificate application file careq.pem.
@@ -85,7 +85,7 @@ The OpenSSL component has been installed in the Linux environment.
     An optional company name []:
     ```
 
-4.  Generate a self-signed root certificate.
+4. Generate a self-signed root certificate.
 
     ```
     -- When generating the root certificate, modify the openssl.cnf file and set basicConstraints to CA:TRUE.
@@ -128,7 +128,7 @@ The OpenSSL component has been installed in the Linux environment.
     -- A CA root certificate named demoCA/cacert.pem has been issued.
     ```
 
-5.  Generate the private key for the server certificates. You can select RSA or ECDSA for encryption as required.
+5. Generate the private key for the server certificates. You can select RSA or ECDSA for encryption as required.
 
     ```
     -- Generate the private key file server.key of the RSA server certificate.
@@ -154,7 +154,7 @@ The OpenSSL component has been installed in the Linux environment.
     gs_guc encrypt -M server -D ./
     ```
 
-6.  Generate a server certificate request file.
+6. Generate a server certificate request file.
 
     ```
     -- Generate the server certificate request file server.req.
@@ -184,7 +184,7 @@ The OpenSSL component has been installed in the Linux environment.
     An optional company name []:
     ```
 
-7.  Generate a server certificate.
+7. Generate a server certificate.
 
     ```
     -- When generating the server certificate or client certificate, modify the openssl.cnf file and set basicConstraints to CA:FALSE.
@@ -229,7 +229,7 @@ The OpenSSL component has been installed in the Linux environment.
     Data Base Updated
     ```
 
-8.  Generate the client certificate and private key.
+8. Generate the client certificate and private key.
 
     Methods and requirements for generating client certificates and their private keys are the same as that for server certificates and their private keys.
 
@@ -253,7 +253,7 @@ The OpenSSL component has been installed in the Linux environment.
     openssl pkcs8 -topk8 -outform DER -in client.key -out client.key.pk8 -nocrypt
     ```
 
-9.  Generate a CRL.
+9. Generate a CRL.
 
     If the CRL is required, you can generate it by following the following procedure:
 
@@ -282,30 +282,28 @@ Currently, openGauss supports only the X509v3 certificate in PEM format.
 
 ### Procedure<a name="en-us_topic_0283137045_en-us_topic_0237121097_en-us_topic_0059778589_section2135369514921"></a>
 
-1.  Prepare certificates and private keys.
+1. Prepare certificates and private keys.
 
     Conventions for configuration file names on the server:
 
-    -   Certificate name: server.crt
-    -   Key name: server.key
-    -   Key password and encrypted file: server.key.cipher and server.key.rand
+    - Certificate name: server.crt
+    - Key name: server.key
+    - Key password and encrypted file: server.key.cipher and server.key.rand
 
     Conventions for configuration file names on the client:
 
-    -   Certificate name: client.crt
-    -   Key name: client.key
-    -   Key password and encrypted file: client.key.cipher and client.key.rand
-    -   Certificate name: cacert.pem
-    -   CRL file name: sslcrl-file.crl
+    - Certificate name: client.crt
+    - Key name: client.key
+    - Key password and encrypted file: client.key.cipher and client.key.rand
+    - Certificate name: cacert.pem
+    - CRL file name: sslcrl-file.crl
 
-2.  Call the certificate replacement interface to replace a certificate.
-    1.  Copy the configuration files  **server.crt**,  **server.key**,  **server.key.cipher**, and  **server.key.rand**  on the server to the corresponding directories to replace the original files.
-    2.  Copy the configuration files  **client.crt**,  **client.key**,  **client.key.cipher**,  **client.key.rand**, and  **cacert.pem**  \(if a CRL needs to be configured, the CRL must contain  **sslcrl-file.crl**\) on the client to the corresponding directories to replace the original files.
+2. Call the certificate replacement interface to replace a certificate.
+    1. Copy the configuration files  **server.crt**,  **server.key**,  **server.key.cipher**, and  **server.key.rand**  on the server to the corresponding directories to replace the original files.
+    2. Copy the configuration files  **client.crt**,  **client.key**,  **client.key.cipher**,  **client.key.rand**, and  **cacert.pem**  \(if a CRL needs to be configured, the CRL must contain  **sslcrl-file.crl**\) on the client to the corresponding directories to replace the original files.
 
-3.  Restart openGauss.
+3. Restart openGauss.
 
     ```
     gs_ctl restart -D /gaussdb/data/datanode 
     ```
-
-

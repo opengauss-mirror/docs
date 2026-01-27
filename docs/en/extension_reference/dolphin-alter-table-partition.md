@@ -118,7 +118,7 @@ Compared with the kernel syntax, the rebuild, remove, check, repair, optimize, t
    >- Column-store tables and row-store tables cannot be partitioned.
    >- The size of the split point should be in the range of partition keys of the partition to be split. The split point can only split one partition into two new partitions.
     
- - The **no\_split\_point\_clause** syntax does not specify a split point.
+- The **no\_split\_point\_clause** syntax does not specify a split point.
         
      ```
      INTO { ( partition_less_than_item [, ...] ) | ( partition_start_end_item [, ...] ) }
@@ -131,14 +131,14 @@ Compared with the kernel syntax, the rebuild, remove, check, repair, optimize, t
        >- partition\_less\_than\_item supports a maximum of 4 partition keys, while partition\_start\_end\_item supports only one partition key. For details about the supported data types, see [PARTITION BY RANGE(parti....](../sql_reference/create_table_partition.md)
        >- partition\_less\_than\_item and partition\_start\_end\_item cannot be used in the same statement. There is no restriction on different split statements.
 
- - The syntax of **partition\_less\_than\_item** is as follows:
+- The syntax of **partition\_less\_than\_item** is as follows:
 
         ```
         PARTITION partition_name VALUES LESS THAN ( { partition_value | MAXVALUE }  [, ...] ) 
             [ TABLESPACE tablespacename ]
         ```
 
- - The syntax of **partition\_start\_end\_item** is as follows. For details about the constraints, see [START END](../sql_reference/create_table_partition.md).
+- The syntax of **partition\_start\_end\_item** is as follows. For details about the constraints, see [START END](../sql_reference/create_table_partition.md).
 
         ```
         PARTITION partition_name {
@@ -150,7 +150,7 @@ Compared with the kernel syntax, the rebuild, remove, check, repair, optimize, t
         
         ```
 
- - The **add\_clause** syntax is used to add one or more partitions to a specified partitioned table.
+- The **add\_clause** syntax is used to add one or more partitions to a specified partitioned table.
 
    ```
        ADD PARTITION ( partition_col1_name = partition_col1_value [, partition_col2_name = partition_col2_value ] [, ...] )

@@ -10,37 +10,34 @@ Ensure that the data directory is correct and the  **pg\_control**  file exists 
 
 ## Syntax<a name="en-us_topic_0237152440_section554725769"></a>
 
--   Check the control file information.
+- Check the control file information.
 
     ```
     pg_controldata [DATADIR]
     ```
 
--   Display the version number.
+- Display the version number.
 
     ```
     pg_controldata -V | --version
     ```
 
--   Display help information.
+- Display help information.
 
     ```
     pg_controldata -? | --help
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0237152440_section187851955142614"></a>
 
--   DATADIR
+- DATADIR
 
     Parameter used for viewing the control file information.  **DATADIR**  indicates the database directory corresponding to the instance.
 
--   -V, --version
+- -V, --version
 
     Displays version information.
 
--   -?,--help
+- -?,--help
 
     Displays help information.
-
-

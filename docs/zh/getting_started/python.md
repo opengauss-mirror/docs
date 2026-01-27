@@ -28,25 +28,25 @@ openGauss数据库提供了对Psycopg2特性的支持，并且支持psycopg2通�
 
 ## 加载驱动<a name="section163169384819"></a>
 
--   在使用驱动之前，需要做如下操作：
-    1.  从[openGauss官网](https://opengauss.org/zh/download/)上下载编译好的psycopg2压缩包。
+- 在使用驱动之前，需要做如下操作：
+    1. 从[openGauss官网](https://opengauss.org/zh/download/)上下载编译好的psycopg2压缩包。
 
         >[!NOTE]说明
         >openGauss官网上下载的psycopg2适配的版本为Python3.6，如果使用其他版本的Python, 需要自行编译psycopg2。需要修改一下编译时的setup.py版本号校验部分的代码，可通过如下命令实现：
+>
         >```
         >sed -i "s/(pgmajor, pgminor, pgpatch)/(9, 2, 4)/g" setup.py
         >```
 
-    2.  解压版本对应的驱动包，将psycopg2拷贝到python安装目录的第三方包文件夹（即site-packages目录）下。
-    3.  确保psycopg2目录权限至少为755，以免调用时提示文件由于权限问题无法访问。
-    4.  对于非数据库用户，需要将解压后的lib目录，配置在LD\_LIBRARY\_PATH环境变量中。
+    2. 解压版本对应的驱动包，将psycopg2拷贝到python安装目录的第三方包文件夹（即site-packages目录）下。
+    3. 确保psycopg2目录权限至少为755，以免调用时提示文件由于权限问题无法访问。
+    4. 对于非数据库用户，需要将解压后的lib目录，配置在LD\_LIBRARY\_PATH环境变量中。
 
--   在创建数据库连接之前，需要先加载如下数据库驱动程序：
+- 在创建数据库连接之前，需要先加载如下数据库驱动程序：
 
     ```
     import  psycopg2
     ```
-
 
 ## 连接数据库<a name="section1132514408610"></a>
 
@@ -261,4 +261,3 @@ NAME =,  Mark
 ADDRESS =,  Rich-Mond
 SALARY =,  65000.0
 ```
-

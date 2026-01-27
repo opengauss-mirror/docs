@@ -5,4 +5,3 @@ openGauss provides cursors as a data buffer for users to store execution results
 Cursor operations include cursor definition, open, fetch, and close operations.
 
 For the complete example of cursor operations, see  [Explicit Cursor](explicit_cursor.md).
-

@@ -8,13 +8,13 @@ Installation and deployment of openGauss require you to specify a configuration 
 
 ## Prerequisites<a name="en-us_topic_0237152416_en-us_topic_0059778040_sde0deda331f04a77b53c25695a919910"></a>
 
--   You have successfully executed the  **gs\_preinstall**  script.
--   The  **locale**  parameter for each server is set to the same value.
--   openGauss users must be set during the preinstallation process.
+- You have successfully executed the  **gs\_preinstall**  script.
+- The  **locale**  parameter for each server is set to the same value.
+- openGauss users must be set during the preinstallation process.
 
 ## Syntax<a name="en-us_topic_0237152416_en-us_topic_0059778040_sb4663fce66974c9dadbf543e4a7095ba"></a>
 
--   Install openGauss.
+- Install openGauss.
 
     ```
     gs_install -X XMLFILE [--gsinit-parameter="PARAMETER" [...]] [--dn-guc="PARAMETER" [...]] [--alarm-component=ALARMCOMPONENT] [--time-out=SECS] [-l LOGFILE] [--enable-perf-config] [--dorado-cluster-mode="PARAMETER"]   
@@ -22,18 +22,17 @@ Installation and deployment of openGauss require you to specify a configuration 
 
     >[!NOTE]NOTE 
 
--   Display help information.
+- Display help information.
 
     ```
     gs_install -? | --help
     ```
 
--   Display version information.
+- Display version information.
 
     ```
     gs_install -V | --version
     ```
-
 
 ## Parameter Description<a name="en-us_topic_0237152416_en-us_topic_0059778040_s6aa938505b3b45808dbefdd1266efd76"></a>
 
@@ -43,25 +42,25 @@ Installation and deployment of openGauss require you to specify a configuration 
 
   Value range:  xml configuration file.
 
--   -l
+- -l
 
     Specifies a log file and its path.
 
     When  **-l**  is not specified but  **gaussdbLogPath**  is set in the XML file, the default value of the  **-l**  parameter is the combination value of  **gaussdbLogPath/**_User name_**/om/gs\_install-YYYY-MM-DD\_hhmmss.log**.
 
--   --gsinit-parameter=PARAM
+- --gsinit-parameter=PARAM
 
     Specifies the data instance parameters.
 
     For details about the value range, see parameter description in  [gs\_initdb](gs_initdb.md). Among which, the settings of the  **-A**,  **-D**,  **-U**,  **-C**, and  **-X**  parameters do not take effect.
 
--   --dn-guc=PARAM
+- --dn-guc=PARAM
 
     Set a parameter.
 
     For details about the value range, see parameter description in  [gs\_guc](gs_guc.md).
 
--   --time-out=SECS
+- --time-out=SECS
 
     Specifies the timeout threshold for startup. Unit: s
 
@@ -69,15 +68,15 @@ Installation and deployment of openGauss require you to specify a configuration 
 
     Value range: a positive integer. If there is no special requirement, you do not need to set this parameter. The system automatically adjusts the timeout threshold.
 
--   --alarm-component=alarm\_component
+- --alarm-component=alarm\_component
 
     Specifies the absolute path of the component to report alarms.
 
--   --enable-perf-config
+- --enable-perf-config
 
     After the installation is complete, use gs_perfconfig to adjust the database configuration to achieve better performance for openGauss.
 
--   --dorado-cluster-mode=PARAM
+- --dorado-cluster-mode=PARAM
 
     Specify the cluster mode for the storage device, dorado-cluster-mode can be set to either the primary cluster or the standby cluster.
 
@@ -85,14 +84,13 @@ Installation and deployment of openGauss require you to specify a configuration 
     - primary:Installing the primary cluster of Dorado dual-cluster with resource pooling.
     - standby:Installing the standby cluster of Dorado dual-cluster with resource pooling.
 
--   -?, --help
+- -?, --help
 
     Displays help information.
 
--   -V, --version
+- -V, --version
 
     Displays version information.
-
 
 ## Example<a name="en-us_topic_0237152416_en-us_topic_0059778040_s9f6b00fff4334fdfaa38df725719b248"></a>
 
@@ -136,4 +134,3 @@ Successfully installed application.
 ## Helpful Links<a name="en-us_topic_0237152416_en-us_topic_0059778040_s07c0e1fb92454ab4aba383e142e6014d"></a>
 
 [gs\_postuninstall](gs_postuninstall.md),  [gs\_preinstall](gs_preinstall.md), and  [gs\_uninstall](gs_uninstall.md)
-

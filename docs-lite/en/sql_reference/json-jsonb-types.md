@@ -2,9 +2,9 @@
 
 JavaScript Object Notation \(JSON\) data can be a single scalar, an array, or a key-value pair object. The array and object can be called a container:
 
--   Scalar: a number, Boolean, string, or null
--   Array: defined in a pair of square brackets \(\[\]\), in which elements can be any type of JSON data, and are not necessarily of the same type.
--   Object: defined in a pair of braces \(\{\}\), in which objects are stored in the format of  **key:value**. Each key must be a string enclosed by a pair of double quotation marks \(""\), and its value can be any type of JSON data. In case of duplicate keys, the last key-value pair will be used.
+- Scalar: a number, Boolean, string, or null
+- Array: defined in a pair of square brackets \(\[\]\), in which elements can be any type of JSON data, and are not necessarily of the same type.
+- Object: defined in a pair of braces \(\{\}\), in which objects are stored in the format of  **key:value**. Each key must be a string enclosed by a pair of double quotation marks \(""\), and its value can be any type of JSON data. In case of duplicate keys, the last key-value pair will be used.
 
 openGauss supports two types JSON and JSONB to store JSON data. JSON data is a complete copy of the input, retaining the entered spaces, duplicate keys, and sequence, while JSONB stores data in a decomposed binary form, removing semantic-irrelevant details and duplicate keys, and sorting key-values. Therefore, JSONB data does not need to be parsed.
 
@@ -51,22 +51,22 @@ select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"f
 ```
 
 >[!WARNING]CAUTION 
->-   Note that 'null'::json and null::json are different, which are similar to the strings str="" and str=null.
->-   For numbers, when scientific notation is used, JSONB expands them, while JSON stores an exact copy of the input text.
+>
+>- Note that 'null'::json and null::json are different, which are similar to the strings str="" and str=null.
+>- For numbers, when scientific notation is used, JSONB expands them, while JSON stores an exact copy of the input text.
 
 ## JSONB Advanced Features<a name="section8871947018"></a>
 
--   Precautions
-    -   Row-store tables are not supported.
-    -   It cannot be used as a partition key.
-    -   Foreign tables and MOTs are not supported.
-
+- Precautions
+    - Row-store tables are not supported.
+    - It cannot be used as a partition key.
+    - Foreign tables and MOTs are not supported.
 
 The main difference between JSON and JSONB lies in the storage mode. JSONB stores parsed binary data, which reflects the JSON hierarchy and facilitates direct access. Therefore, JSONB has many advanced features that JSON does not have.
 
--   Format normalization
+- Format normalization
 
-    -   After the input object-json string is parsed into JSONB binary, semantically irrelevant details are naturally discarded, for example, spaces:
+    - After the input object-json string is parsed into JSONB binary, semantically irrelevant details are naturally discarded, for example, spaces:
 
         ```
         openGauss=# select '   [1, " a ", {"a"   :1    }]  '::jsonb;        jsonb
@@ -74,13 +74,13 @@ The main difference between JSON and JSONB lies in the storage mode. JSONB store
          [1, " a ", {"a": 1}](1 row)
         ```
 
-    -   For object-json, duplicate key-values are deleted and only the last key-value is retained. For example:
+    - For object-json, duplicate key-values are deleted and only the last key-value is retained. For example:
 
         ```
         openGauss=# select '{"a" : 1, "a" : 2}'::jsonb;  jsonb---------- {"a": 2}(1 row)
         ```
 
-    -   For object-json, key-values will be re-sorted. The sorting rule is as follows: 1. Longer key-values are sorted last. 2. If the key-values are of the same length, the key-values with a larger ASCII code are sorted after the key-values with a smaller ASCII code:
+    - For object-json, key-values will be re-sorted. The sorting rule is as follows: 1. Longer key-values are sorted last. 2. If the key-values are of the same length, the key-values with a larger ASCII code are sorted after the key-values with a smaller ASCII code:
 
     ```
     openGauss=# select '{"aa" : 1, "b" : 2, "a" : 3}'::jsonb;           jsonb
@@ -88,37 +88,34 @@ The main difference between JSON and JSONB lies in the storage mode. JSONB store
     {"a": 3, "b": 2, "aa": 1}(1 row)
     ```
 
-
--   Size comparison
+- Size comparison
 
     Format normalization ensures that only one form of JSONB data exists in the same semantics. Therefore, sizes may be compared according to a specific rule.
 
-    -   First, type comparison:  **object-jsonb**  \>  **array-jsonb**  \>  **bool-jsonb**  \>  **num-jsonb**  \>  **str-jsonb**  \>  **null-jsonb**
-    -   Content comparison if the data type is the same:
+    - First, type comparison:  **object-jsonb**  \>  **array-jsonb**  \>  **bool-jsonb**  \>  **num-jsonb**  \>  **str-jsonb**  \>  **null-jsonb**
+    - Content comparison if the data type is the same:
 
-        -   **str-json**: The default text sorting rule of the database is used for comparison. A positive value indicates greater than, a negative value indicates less than, and  **0**  indicates equal.
-        -   **num-json**: numeric comparison
-        -   **bool-json**:  **true**  \>  **false**
-        -   **array-jsonb**: long elements \> short elements. If the lengths are the same, compare each element in sequence.
-        -   **object-jsonb**: If the length of a key-value pair is longer than that of a short key-value pair, the key is compared first, and then the value is compared.
+        - **str-json**: The default text sorting rule of the database is used for comparison. A positive value indicates greater than, a negative value indicates less than, and  **0**  indicates equal.
+        - **num-json**: numeric comparison
+        - **bool-json**:  **true**  \>  **false**
+        - **array-jsonb**: long elements \> short elements. If the lengths are the same, compare each element in sequence.
+        - **object-jsonb**: If the length of a key-value pair is longer than that of a short key-value pair, the key is compared first, and then the value is compared.
 
         >[!WARNING]CAUTION 
         >For comparison within the  **object-jsonb**  type, the final result after format sorting is used for comparison. Therefore, the comparison result may not be intuitive compared with the direct input.
 
-
--   Creating indexes, primary keys, and foreign keys
-    -   B-tree index
+- Creating indexes, primary keys, and foreign keys
+    - B-tree index
 
         B-tree indexes, primary keys, and foreign keys can be created for the  **JSONB**  type.
 
-    -   GIN index
+    - GIN index
 
         GIN indexes can be used to effectively search for keys or key-value pairs that appear in a large number of JSONB documents \(datums\). Two GIN operator classes \(**jsonb\_ops**  and  **jsonb\_hash\_ops**\) are provided for different performance and flexibility choices. The default GIN operator class supports  **@\>**,  **<@**,  **?**,  **?&**  and  **?|**  operator query. The non-default GIN operator class  **jsonb\_path\_ops**  supports only the  **@\>**  and  **<@**  operators.
 
         For details about the operators, see  [JSON/JSONB Functions and Operators](json-jsonb-functions-and-operators.md).
 
-
--   Inclusion and existence
+- Inclusion and existence
 
     Querying whether a JSON contains some elements or whether some elements exist in a JSON is an important capability of JSONB.
 
@@ -128,8 +125,6 @@ The main difference between JSON and JSONB lies in the storage mode. JSONB store
 
     For details about the operators, see  [JSON/JSONB Functions and Operators](json-jsonb-functions-and-operators.md).
 
--   Functions and operators
+- Functions and operators
 
     For details about the functions and operators supported by the JSON/JSONB type, see  [JSON/JSONB Functions and Operators](json-jsonb-functions-and-operators.md).
-
-

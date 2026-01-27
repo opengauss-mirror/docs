@@ -35,4 +35,3 @@ openGauss=# DROP MASKING POLICY IF EXISTS maskpol1, maskpol2, maskpol3;
 ## Helpful Links<a name="section12181292265"></a>
 
 [ALTER MASKING POLICY](alter-masking-policy.md)  and  [CREATE MASKING POLICY](create-masking-policy.md)
-

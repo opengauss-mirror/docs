@@ -12,7 +12,7 @@ openGauss已经启动。
 
 1. 以操作系统用户omm登录数据库主节点。
 
-2.  使用如下命令查询openGauss状态：
+2. 使用如下命令查询openGauss状态：
 
     ```
     gs_om -t status --detail
@@ -27,7 +27,6 @@ openGauss已经启动。
     ```
 
     其中，plat2为待查询主机的名称。
-
 
 ## 参数说明<a name="zh-cn_topic_0237088790_zh-cn_topic_0059778948_s5690879aa2e24fb79ca064e487f93803"></a>
 
@@ -79,9 +78,6 @@ openGauss已经启动。
 </tr>
 </tbody>
 </table>
-
-
-
 
 每个角色也存在不同的状态，例如启动、连接等，其各个状态说明如下：
 
@@ -147,8 +143,6 @@ openGauss已经启动。
 </tbody>
 </table>
 
-
-
 当节点出现Need repair状态时，可能需要对该节点进行重建使其恢复正常。通常情况下，节点重建原因说明如下：
 
 **表 3** 节点重建原因说明
@@ -203,8 +197,6 @@ openGauss已经启动。
 </tbody>
 </table>
 
-
-
 ## 示例<a name="zh-cn_topic_0237088790_zh-cn_topic_0059778948_s2ca7a9ce813e4d209f3801b2171de8b1"></a>
 
 查看openGauss详细状态信息，含实例状态信息。
@@ -224,4 +216,3 @@ node                           node_ip           port                           
 2  pekpopgsci00238  10.244.61.81      5432      6002 /opt/gaussdb/cluster/data/dn1   S Standby Normal
 
 ```
-

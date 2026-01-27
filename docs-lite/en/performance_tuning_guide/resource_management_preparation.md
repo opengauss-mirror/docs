@@ -92,7 +92,7 @@ This section describes how to configure parameters for resource load management.
 
 ### Prerequisites<a name="section102673333318"></a>
 
--   In openGauss, you can manage system resources only as a database administrator. Run the following statement to query user permissions:
+- In openGauss, you can manage system resources only as a database administrator. Run the following statement to query user permissions:
 
     ```
     openGauss=# SELECT rolname FROM pg_roles WHERE rolsystemadmin = 't';
@@ -103,8 +103,7 @@ This section describes how to configure parameters for resource load management.
     (2 rows)
     ```
 
-
--   Resource load management can be applied only to users with the login permission. Run the following statement to query user permissions:
+- Resource load management can be applied only to users with the login permission. Run the following statement to query user permissions:
 
     ```
     openGauss=# SELECT rolname FROM pg_roles WHERE rolcanlogin = 't';
@@ -114,7 +113,6 @@ This section describes how to configure parameters for resource load management.
     (1 row)
     ```
 
-
 >[!TIP]NOTICE 
 >If a user's login permission is revoked, the user's resource pool will be changed to  **default\_pool**. For details about  **default\_pool**, see  [Table 2](#creating-a-resource-pool).
 
@@ -122,15 +120,15 @@ This section describes how to configure parameters for resource load management.
 
 You can perform the following steps only as a database administrator to enable load management based on the resource pool. The following uses user  **omm**  as an example.
 
-1.  Log in as the OS user  **omm**  to the primary node of openGauss.
+1. Log in as the OS user  **omm**  to the primary node of openGauss.
 
-2.  Enable resource pool–based load management.
+2. Enable resource pool–based load management.
 
     ```
     gs_guc set -Z datanode -D /gaussdb/data/datanode -c "use_workload_manager=on"
     ```
 
-3.  Restart the database for the parameter settings to take effect.
+3. Restart the database for the parameter settings to take effect.
 
     ```
     gs_ctl restart -D /gaussdb/data/datanode
@@ -151,15 +149,16 @@ You are familiar with "Server Tools \> gs\_cgroup" and "Server Tools \> gs\_ssh"
 ### Procedure<a name="en-us_topic_0066854607_section5658359019124"></a>
 
 >[!NOTE]NOTE 
->-   To control all the resources in openGauss, you need to create, update, and delete Cgroups on each node. Use  **gs\_ssh**  \(see "Server Tools \> gs\_ssh" in  _Tool Reference_\) to run commands in the steps below.
->-   A Cgroup must be named as follows:
->    -   The names of sub-Class Cgroups and Workload Cgroups cannot contain columns \(:\).
->    -   Cgroups having the same name cannot be created.
+>
+>- To control all the resources in openGauss, you need to create, update, and delete Cgroups on each node. Use  **gs\_ssh**  \(see "Server Tools \> gs\_ssh" in  _Tool Reference_\) to run commands in the steps below.
+>- A Cgroup must be named as follows:
+> - The names of sub-Class Cgroups and Workload Cgroups cannot contain columns \(:\).
+> - Cgroups having the same name cannot be created.
 
 **Creating sub-Class and Workload Cgroups**
 
-1.  Log in as the OS user  **omm**  to the primary node of openGauss.
-2.  Create sub-Class Cgroups  **class\_a**  and  **class\_b**, and allocate 40% and 20% of Class CPU resources to them, respectively.
+1. Log in as the OS user  **omm**  to the primary node of openGauss.
+2. Create sub-Class Cgroups  **class\_a**  and  **class\_b**, and allocate 40% and 20% of Class CPU resources to them, respectively.
 
     ```
     gs_ssh -c "gs_cgroup -c -S class_a -s 40"
@@ -169,7 +168,7 @@ You are familiar with "Server Tools \> gs\_cgroup" and "Server Tools \> gs\_ssh"
     gs_ssh -c "gs_cgroup -c -S class_b -s 20"
     ```
 
-3.  Create Workload Cgroups  **workload\_a1**  and  **workload\_a2**  under  **class\_a**, and allocate 20% and 60% of  **class\_a**  CPU resources to them, respectively.
+3. Create Workload Cgroups  **workload\_a1**  and  **workload\_a2**  under  **class\_a**, and allocate 20% and 60% of  **class\_a**  CPU resources to them, respectively.
 
     ```
     gs_ssh -c "gs_cgroup -c -S class_a -G workload_a1 -g 20 "
@@ -179,7 +178,7 @@ You are familiar with "Server Tools \> gs\_cgroup" and "Server Tools \> gs\_ssh"
     gs_ssh -c "gs_cgroup -c -S class_a -G workload_a2 -g 60 "
     ```
 
-4.  Create Workload Cgroups  **workload\_b1**  and  **workload\_b2**  under  **class\_b**, and allocate 50% and 40% of  **class\_b**  CPU resources to them, respectively.
+4. Create Workload Cgroups  **workload\_b1**  and  **workload\_b2**  under  **class\_b**, and allocate 50% and 40% of  **class\_b**  CPU resources to them, respectively.
 
     ```
     gs_ssh -c "gs_cgroup -c -S class_b -G workload_b1 -g 50 "
@@ -189,16 +188,15 @@ You are familiar with "Server Tools \> gs\_cgroup" and "Server Tools \> gs\_ssh"
     gs_ssh -c "gs_cgroup -c -S class_b -G workload_b2 -g 40 "
     ```
 
-
 **Adjusting resource quotas for Cgroups**
 
-1.  Change the CPU resource quota for  **class\_a**  to 30%.
+1. Change the CPU resource quota for  **class\_a**  to 30%.
 
     ```
     gs_ssh -c "gs_cgroup -u -S class_a -s 30"
     ```
 
-2.  Change the CPU resource quota for  **workload\_a1**  under  **class\_a**  to 30% of  **class\_a**  CPU resources.
+2. Change the CPU resource quota for  **workload\_a1**  under  **class\_a**  to 30% of  **class\_a**  CPU resources.
 
     ```
     gs_ssh -c "gs_cgroup -u -S class_a -G workload_a1 -g 30"
@@ -207,10 +205,9 @@ You are familiar with "Server Tools \> gs\_cgroup" and "Server Tools \> gs\_ssh"
     >[!TIP]NOTICE 
     >After adjustment, CPU resources allocated to  **workload\_a1**  should not be greater than those allocated to  **class\_a**. The name of a Workload Cgroup cannot be a default name of the Timeshare Cgroup, that is,  **Low**,  **Medium**,  **High**, or  **Rush**.
 
-
 **Deleting a Cgroup**
 
-1.  Delete the Cgroup  **class\_a**.
+1. Delete the Cgroup  **class\_a**.
 
     ```
     gs_ssh -c "gs_cgroup -d  -S class_a"
@@ -221,10 +218,9 @@ You are familiar with "Server Tools \> gs\_cgroup" and "Server Tools \> gs\_ssh"
     >[!TIP]NOTICE 
     >User  **root**  or a user with the  **root**  permission can delete the default Cgroups that can be accessed by a common user  _username_  by specifying  **-d**  and  **-U** _username_. A common user can delete existing Class Cgroups by specifying  **-d**  and  **-S** _classname_.
 
-
 ### Viewing Cgroup Information<a name="en-us_topic_0066854607_s66a16734a4e54c00abaaa1cc44c82c89"></a>
 
-1.  View Cgroup information in configuration files.
+1. View Cgroup information in configuration files.
 
     ```
     gs_cgroup -p 
@@ -403,7 +399,7 @@ You are familiar with "Server Tools \> gs\_cgroup" and "Server Tools \> gs\_ssh"
     </tbody>
     </table>
 
-2.  View the Cgroup tree in the OS.
+2. View the Cgroup tree in the OS.
 
     Run the following command to query the structure of the Cgroup tree:
 
@@ -446,10 +442,10 @@ You are familiar with "Server Tools \> gs\_cgroup" and "Server Tools \> gs\_ssh"
                             - TopWD:1 (shares: 9000, cpus: 0-20, weight: 900)
     ```
 
-3.  Obtain the Cgroup configuration in a system view.
+3. Obtain the Cgroup configuration in a system view.
 
-    1.  Perform the steps in  [Using gsql to Connect to a Database](../getting_started/gsql_connection_and_usage.md).
-    2.  Obtain the configuration about all Cgroups in the system.
+    1. Perform the steps in  [Using gsql to Connect to a Database](../getting_started/gsql_connection_and_usage.md).
+    2. Obtain the configuration about all Cgroups in the system.
 
     ```
     openGauss=# SELECT * FROM gs_all_control_group_info;
@@ -590,9 +586,9 @@ You are familiar with the  [CREATE RESOURCE POOL](../sql_reference/create-resour
 
 **Creating a resource pool**
 
-1.  Perform the steps in  [Using gsql to Connect to a Database](../getting_started/gsql_connection_and_usage.md).
+1. Perform the steps in  [Using gsql to Connect to a Database](../getting_started/gsql_connection_and_usage.md).
 
-1.  Create a group resource pool and associate it with the specified sub-Class Cgroup. In the following example, the group resource pool named  **resource\_pool\_a**  is associated with the  **class\_a**  Cgroup.
+2. Create a group resource pool and associate it with the specified sub-Class Cgroup. In the following example, the group resource pool named  **resource\_pool\_a**  is associated with the  **class\_a**  Cgroup.
 
     ```
     openGauss=# CREATE RESOURCE POOL resource_pool_a WITH (control_group='class_a');
@@ -600,8 +596,7 @@ You are familiar with the  [CREATE RESOURCE POOL](../sql_reference/create-resour
     CREATE RESOURCE POOL
     ```
 
-
-1.  Create a service resource pool and associate it with the specified Workload Cgroup. In the following example, the service resource pool named  **resource\_pool\_a1**  is associated with the  **workload\_a1**  Cgroup.
+3. Create a service resource pool and associate it with the specified Workload Cgroup. In the following example, the service resource pool named  **resource\_pool\_a1**  is associated with the  **workload\_a1**  Cgroup.
 
     ```
     openGauss=# CREATE RESOURCE POOL resource_pool_a1 WITH (control_group='class_a:workload_a1');
@@ -612,11 +607,10 @@ You are familiar with the  [CREATE RESOURCE POOL](../sql_reference/create-resour
     ```
 
     >[!NOTE]NOTE 
-    >-   If you do not specify an associated Cgroup when creating a resource pool, the resource pool will be associated with the default Cgroup, which is the Timeshare Cgroup  **Medium**  under the  **DefaultClass**  Cgroup.
-    >-   The value of  **control\_group**  is case-sensitive and must be contained in single quotation marks \(''\).
-    >-   If a database user specifies the Timeshare string \(**Rush**,  **High**,  **Medium**, or  **Low**\) in the syntax, for example,  **control\_group**  is set to  **High**, the resource pool will be associated with the  **High**  Timeshare Cgroup under  **DefaultClass**.
-    >-   **control\_group**  allows you to create a Workload Cgroup, for example,  **class1:wd**  whose Cgroup level can also be appended, such as  **class1:wd:2**. The Cgroup level must be within 1 to 10, but it is not used for Cgroup differentiation. In earlier versions, you can create Workload Cgroups with the same name and differentiate them by their levels. In the latest version, Cgroup names must be unique. If you have created duplicate Workload Cgroups in an earlier version, delete them to avoid confusion.
-
+    >- If you do not specify an associated Cgroup when creating a resource pool, the resource pool will be associated with the default Cgroup, which is the Timeshare Cgroup  **Medium**  under the  **DefaultClass**  Cgroup.
+    >- The value of  **control\_group**  is case-sensitive and must be contained in single quotation marks \(''\).
+    >- If a database user specifies the Timeshare string \(**Rush**,  **High**,  **Medium**, or  **Low**\) in the syntax, for example,  **control\_group**  is set to  **High**, the resource pool will be associated with the  **High**  Timeshare Cgroup under  **DefaultClass**.
+    >- **control\_group**  allows you to create a Workload Cgroup, for example,  **class1:wd**  whose Cgroup level can also be appended, such as  **class1:wd:2**. The Cgroup level must be within 1 to 10, but it is not used for Cgroup differentiation. In earlier versions, you can create Workload Cgroups with the same name and differentiate them by their levels. In the latest version, Cgroup names must be unique. If you have created duplicate Workload Cgroups in an earlier version, delete them to avoid confusion.
 
 **Managing resource pools**
 
@@ -637,16 +631,18 @@ DROP RESOURCE POOL
 ```
 
 >[!NOTE]NOTE 
->-   The resource pool cannot be deleted if it is associated with a role.
->-   In a multi-tenant scenario, deleting a group resource pool also deletes the related service resource pools. A resource pool can be deleted only when it is not associated with any users.
+>
+>- The resource pool cannot be deleted if it is associated with a role.
+>- In a multi-tenant scenario, deleting a group resource pool also deletes the related service resource pools. A resource pool can be deleted only when it is not associated with any users.
 
 ### Viewing Resource Pool Information<a name="en-us_topic_0066854608_section63579270173658"></a>
 
 >[!TIP]NOTICE 
->-   Do not use the INSERT, UPDATE, DELETE, and TRUNCATE statements in the  **pg\_resource\_pool**  system catalog that manages resource load.
->-   Do not modify the  **memory\_limit**  and  **cpu\_affinity**  attributes of a resource pool.
+>
+>- Do not use the INSERT, UPDATE, DELETE, and TRUNCATE statements in the  **pg\_resource\_pool**  system catalog that manages resource load.
+>- Do not modify the  **memory\_limit**  and  **cpu\_affinity**  attributes of a resource pool.
 
--   Run the following command to view the information of all the resource pools of the current cluster:
+- Run the following command to view the information of all the resource pools of the current cluster:
 
     ```
     openGauss=# SELECT * FROM PG_RESOURCE_POOL;
@@ -665,7 +661,7 @@ DROP RESOURCE POOL
     (7 rows)
     ```
 
--   View information about Cgroups associated with a resource pool. For details, see  **[gs\_control\_group\_info\(p...](../sql_reference/statistics-information-functions.md)**.
+- View information about Cgroups associated with a resource pool. For details, see  **[gs\_control\_group\_info\(p...](../sql_reference/statistics-information-functions.md)**.
 
     In the following example,  **resource\_pool\_a1**  is the name of the resource pool.
 
@@ -756,5 +752,3 @@ DROP RESOURCE POOL
     </tr>
     </tbody>
     </table>
-
-

@@ -227,4 +227,3 @@ For openGauss, only one  **PG\_AUTHID**  exists, which is not available for ever
 </tr>
 </tbody>
 </table>
-

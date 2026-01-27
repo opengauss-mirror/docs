@@ -109,5 +109,3 @@ openGauss=# DROP INDEX tpcds.ds_inventory_p1_index1;
 --删除分区表。
 openGauss=# DROP TABLE tpcds.inventory_p1;
 ```
-
-

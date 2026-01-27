@@ -2,7 +2,6 @@
 
 显示每个节点的数据库冲突状态的统计信息。
 
-
 **表 1**  GLOBAL\_STAT\_DATABASE\_CONFLICTS字段
 
 <a name="zh-cn_topic_0237122599_table111414565567"></a>

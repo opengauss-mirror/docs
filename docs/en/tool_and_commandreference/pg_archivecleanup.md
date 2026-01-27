@@ -12,26 +12,25 @@ pg_archivecleanup [OPTION]... ARCHIVELOCATION OLDESTKEPTWALFILE
 
 ## Parameter Description<a name="section9655840194219"></a>
 
--   -d
+- -d
 
     Displays debug logs on the stderr.
 
--   -n
+- -n
 
     Displays the name of the file to be deleted.
 
--   -V,--version
+- -V,--version
 
     Displays the version of  **pg\_archivecleanup**  and exits.
 
--   -x extension
+- -x extension
 
     Provides an extension option to select only files with the corresponding extension format when the program is used as a separate tool.
 
--   -?,--help
+- -?,--help
 
     Displays the help information related to the  **pg\_archivecleanup**  command line parameters.
-
 
 ## Examples<a name="section111861451184417"></a>
 
@@ -50,4 +49,3 @@ archive_cleanup_command = 'pg_archivecleanup /mnt/server/archiverdir %r'
 ```
 
 After the recovery is complete, delete unnecessary files from the archive directory.
-

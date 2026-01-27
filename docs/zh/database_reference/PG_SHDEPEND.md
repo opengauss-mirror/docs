@@ -96,20 +96,18 @@ PG\_SHDEPEND系统表记录数据库对象和共享对象（比如角色）之�
 
 在任何情况下，一条PG\_SHDEPEND记录就表明这个被引用的对象不能在未删除依赖对象的前提下删除。不过，deptype同时还标出了几种不同的子风格：
 
--   SHARED\_DEPENDENCY\_OWNER \(o\)
+- SHARED\_DEPENDENCY\_OWNER \(o\)
 
     被引用的对象（必须是一个角色）是依赖对象的所有者。
 
--   SHARED\_DEPENDENCY\_ACL \(a\)
+- SHARED\_DEPENDENCY\_ACL \(a\)
 
     被引用的对象（必须是一个角色）在依赖对象的ACL（访问控制列表，也就是权限列表）里提到。SHARED\_DEPENDENCY\_ACL不会在对象的所有者头上添加的，因为所有者会有一个SHARED\_DEPENDENCY\_OWNER记录。
 
--   SHARED\_DEPENDENCY\_PIN \(p\)
+- SHARED\_DEPENDENCY\_PIN \(p\)
 
     没有依赖对象；这类记录标识系统自身依赖于该被依赖对象，因此这样的对象绝对不能被删除。这种类型的记录只是由initdb创建。这样的依赖对象的字段都是零。
     
--   SHARED\_DEPENDENCY\_ DBPRIV\(d\)
+- SHARED\_DEPENDENCY\_ DBPRIV\(d\)
 
     被引用的对象（必须是一个角色）具有依赖对象所对应的ANY权限（指定的依赖对象的OID对应的是系统表gs\_db\_privilege中一行）。
-
-

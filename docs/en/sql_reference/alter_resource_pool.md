@@ -24,7 +24,7 @@ ALTER RESOURCE POOL pool_name
 
 ## Parameter Description<a name="en-us_topic_0059778630_s744bfeb9db194d149727d961f0f4b382"></a>
 
--   **pool\_name**
+- **pool\_name**
 
     Specifies the name of a resource pool.
 
@@ -32,38 +32,38 @@ ALTER RESOURCE POOL pool_name
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **group\_name**
+- **group\_name**
 
     Specifies the name of a Cgroup.
 
     >[!NOTE]NOTE 
-    >-   You can use either double quotation marks \(""\) or single quotation marks \(''\) in the syntax when setting the name of a Cgroup.
-    >-   The value of  **group\_name**  is case-sensitive.
-    >-   If  **group\_name**  is not specified, the string "Medium" will be used by default in the syntax, indicating the  **Medium**  Timeshare Cgroup under  **DefaultClass**.
-    >-   If a database administrator specifies a Workload Cgroup under  **Class**, for example,  **control\_group**  set to  **class1:workload1**, the resource pool will be associated with the  **workload1**  Cgroup under  **class1**. The level of the Workload Cgroup can also be specified. For example,  **control\_group**  is set to  **class1:workload1:1**.
-    >-   If a database user specifies the Timeshare Cgroup string \(**Rush**,  **High**,  **Medium**, or  **Low**\) in the syntax, for example,  **control\_group**  is set to  **High**, the resource pool will be associated with the  **High**  Timeshare Cgroup under  **DefaultClass**.
+    >- You can use either double quotation marks \(""\) or single quotation marks \(''\) in the syntax when setting the name of a Cgroup.
+    >- The value of  **group\_name**  is case-sensitive.
+    >- If  **group\_name**  is not specified, the string "Medium" will be used by default in the syntax, indicating the  **Medium**  Timeshare Cgroup under  **DefaultClass**.
+    >- If a database administrator specifies a Workload Cgroup under  **Class**, for example,  **control\_group**  set to  **class1:workload1**, the resource pool will be associated with the  **workload1**  Cgroup under  **class1**. The level of the Workload Cgroup can also be specified. For example,  **control\_group**  is set to  **class1:workload1:1**.
+    >- If a database user specifies the Timeshare Cgroup string \(**Rush**,  **High**,  **Medium**, or  **Low**\) in the syntax, for example,  **control\_group**  is set to  **High**, the resource pool will be associated with the  **High**  Timeshare Cgroup under  **DefaultClass**.
 
     Value range: an existing Cgroup.
 
--   **stmt**
+- **stmt**
 
     Specifies the maximum number of statements that can be concurrently executed in a resource pool.
 
     Value range: numeric data ranging from –1 to 2147483647
 
--   **dop**
+- **dop**
 
     Specifies the maximum statement concurrency degree for a resource pool, equivalent to the number of threads that can be created for executing a statement.
 
     Value range: numeric data ranging from 1 to 64
 
--   **memory\_size**
+- **memory\_size**
 
     Specifies the maximum memory size of a resource pool.
 
     Value range: a string from 1 KB to 2047 GB
 
--   **mem\_percent**
+- **mem\_percent**
 
     Specifies the proportion of available resource pool memory to the total memory or group user memory.
 
@@ -74,18 +74,17 @@ ALTER RESOURCE POOL pool_name
     >[!NOTE]NOTE 
     >When both  **mem\_percent**  and  **memory\_limit**  are specified, only  **mem\_percent**  takes effect.
 
--   **io\_limits**
+- **io\_limits**
 
     Specifies the upper limit of IOPS in a resource pool.
 
     The IOPS is counted by ones for column storage and by 10 thousands for row storage.
 
--   **io\_priority**
+- **io\_priority**
 
     Specifies the I/O priority for jobs that consume many I/O resources. It takes effect when the I/O usage reaches 90%.
 
     There are three priorities:  **Low**,  **Medium**, and  **High**. If you do not want to control I/O resources, use the default value  **None**.
-
 
 >[!NOTE]NOTE 
 >The settings of  **io\_limits**  and  **io\_priority**  are valid only for complex jobs, such as batch import \(using  **INSERT INTO SELECT**,  **COPY FROM**, or  **CREATE TABLE AS**\), complex queries involving over 500 MB data on each DN, and  **VACUUM FULL**.
@@ -116,4 +115,3 @@ openGauss=# DROP RESOURCE POOL pool1;
 ## Helpful Links<a name="en-us_topic_0059778630_seca31b0ddce240958b33b5be42b33c0c"></a>
 
 [CREATE RESOURCE POOL](create_resource_pool.md)  and  [DROP RESOURCE POOL](drop_resource_pool.md)
-

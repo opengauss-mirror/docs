@@ -24,9 +24,8 @@ The following figure demonstrates cold-start process and how long it takes to lo
 **Figure  1**  Cold-Start Time – Performance Benchmarks<a name="en-us_topic_0283136642_en-us_topic_0270171499_fig89536207425"></a>  
 ![](figures/cold-start-time-performance-benchmarks.png)
 
--   **Database Size –**  The total amount of time to load the entire database \(per database GB\) is represented by the blue line and the  **TIME \(sec\)**  Y axis on the left.
--   **Throughput –**  The quantity of database GB throughput per second is represented by the orange line and the  **Throughput GB/sec**  Y axis on the right.
+- **Database Size –**  The total amount of time to load the entire database \(per database GB\) is represented by the blue line and the  **TIME \(sec\)**  Y axis on the left.
+- **Throughput –**  The quantity of database GB throughput per second is represented by the orange line and the  **Throughput GB/sec**  Y axis on the right.
 
 >[!NOTE]NOTE 
 >The performance demonstrated during the test is very close to the bandwidth of the SSD hardware. Therefore, it is feasible that higher \(or lower\) performance may be achieved on a different platform.
-

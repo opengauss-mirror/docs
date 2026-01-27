@@ -19,17 +19,15 @@ DROP RESOURCE POOL [ IF EXISTS ] pool_name;
 
 ## Parameter Description<a name="en-us_topic_0059778399_sb1f56ab4e3824ce58d2657a5745749f4"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Reports a notice instead of an error if a specified resource pool does not exist.
 
-
--   **pool\_name**
+- **pool\_name**
 
     Specifies the name of a created resource pool.
 
     Value range: a string. It must comply with the identifier naming convention.
-
 
 ## Examples<a name="en-us_topic_0059778399_s9b7c315e99ba4a41bfdb1f841109dda9"></a>
 
@@ -38,4 +36,3 @@ See  [Examples](create_resource_pool.md#en-us_topic_0059777569_s44181f6d005b4da1
 ## Helpful Links<a name="en-us_topic_0059778399_s41faee269a414537919479fb56fc5a4d"></a>
 
 [ALTER RESOURCE POOL](alter_resource_pool.md)  and  [CREATE RESOURCE POOL](create_resource_pool.md)
-

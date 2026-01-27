@@ -8,21 +8,21 @@ Git and Git Large File Storage \(LFS\) have been installed and configured on the
 
 **Procedure**
 
-1.  Run the following command to download the openGauss-server code. In the command,  *\[git ssh address\]*  indicates the code download address, which can be obtained from the openGauss community.
+1. Run the following command to download the openGauss-server code. In the command,  *\[git ssh address\]*  indicates the code download address, which can be obtained from the openGauss community.
 
     ```
     [user@linux sda]$ git clone [git ssh address] openGauss-server
     ```
 
     >[!NOTE]NOTE 
-    >-   **openGauss-server**: openGauss code repository.
-    >-   Database compilation depends on open-source third-party software. You can obtain the open-source third-party software from  [Building Open-source Software](#en-us_topic_0283136302_section13890105116714). Since open-source software build takes a long time, we have built  **binarylibs**  using  **openGauss-third\_party**  and compressed and uploaded it to the Internet.
+    >- **openGauss-server**: openGauss code repository.
+    >- Database compilation depends on open-source third-party software. You can obtain the open-source third-party software from  [Building Open-source Software](#en-us_topic_0283136302_section13890105116714). Since open-source software build takes a long time, we have built  **binarylibs**  using  **openGauss-third\_party**  and compressed and uploaded it to the Internet.
     > The community provides binary files compiled on three platforms. The download links are as follows:\
-    **openEuler_arm:** https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_openEuler_arm.tar.gz
-    **openEuler_x86:** https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_openEuler_x86_64.tar.gz
-    **Centos_x86:** https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_Centos7.6_x86_64.tar.gz
+    **openEuler_arm:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_openEuler_arm.tar.gz>
+    **openEuler_x86:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_openEuler_x86_64.tar.gz>
+    **Centos_x86:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_Centos7.6_x86_64.tar.gz>
 
-2.  When the progress of each download reaches 100%, the download is successful.
+2. When the progress of each download reaches 100%, the download is successful.
 
 ## Building Open-source Software<a name="en-us_topic_0283136302_section13890105116714"></a>
 
@@ -146,14 +146,14 @@ Prepare GCC 7.3 before building the third-party libraries. You are advised to us
 
 After installing the software listed in  [Table 1](#en-us_topic_0283136302_table1212531681911), point the default Python version to  **python3.x**  and perform the following operations:
 
-1.  Perform the following operations to go to the directory of the open-source third-party software on which the kernel depends, build the open-source third-party software, and generate binary programs or library files.  **/sda/openGauss-third\_party**  is the directory for downloading open-source third-party software.
+1. Perform the following operations to go to the directory of the open-source third-party software on which the kernel depends, build the open-source third-party software, and generate binary programs or library files.  **/sda/openGauss-third\_party**  is the directory for downloading open-source third-party software.
 
     ```
     [user@linux sda]$ cd /sda/openGauss-third_party/build
     [user@linux build]$ sh build_all.sh
     ```
 
-2.  After the preceding commands are executed, the open-source third-party software required for openGauss build is automatically generated. To generate any open-source third-party software independently, go to the corresponding directory and run the  **build.sh**  script. For example:
+2. After the preceding commands are executed, the open-source third-party software required for openGauss build is automatically generated. To generate any open-source third-party software independently, go to the corresponding directory and run the  **build.sh**  script. For example:
 
     ```
     [user@linux sda]$ cd /sda/openGauss-third_party/dependency/openssl
@@ -164,10 +164,9 @@ After installing the software listed in  [Table 1](#en-us_topic_0283136302_table
 
     >[!NOTE]NOTE 
     >For error logs, you can view the corresponding log in the build directory and the log in the corresponding module. For example, you can view the OpenSSL build and installation logs in the  **dependency**  module.
-    >-   /sda/openGauss-third\_party/build/dependency\_build.log
-    >-   /sda/openGauss-third\_party/dependency/build/openssl\_build.log
-    >-   /sda/openGauss-third\_party/dependency/openssl/build\_openssl.log
-
+    >- /sda/openGauss-third\_party/build/dependency\_build.log
+    >- /sda/openGauss-third\_party/dependency/build/openssl\_build.log
+    >- /sda/openGauss-third\_party/dependency/openssl/build\_openssl.log
 
 **Build Result**
 
@@ -232,17 +231,13 @@ The following table describes the parameters.
 </table>
 
 >[!NOTE]NOTE 
-
->1.  **-m \[debug | release | memcheck\]**  indicates that three target versions can be selected:
-
->    -   **release**: indicates that the binary program of the release version is generated. During this version build, the GCC high-level optimization option is configured to remove the kernel debugging code. This option is usually used in the production environment or performance test environment.
-
->    -   **debug**: indicates that a binary program of the debug version is generated. During this version build, the kernel code debugging function is added, which is usually used in the development self-test environment.
-
->    -   **memcheck**: indicates that a binary program of the memcheck version is generated. During this version build, the ASAN function is added based on the debug version to locate memory problems.
-
->2.  **-3rd \[binarylibs path\]**  is the path of  **binarylibs**. You need to specify the absolute path of the third-party library.
-
->3.  **-nopkg**  performs only lite compilation, and no packaging is performed. The compilation result is stored in the  **openGauss-server/mppdb\_temp\_install**  directory. If this parameter is not specified, the file is packaged by default and the packaging result is stored in the  **openGauss-server/output**  directory.
-
->4.  Each option in this script has a default value. The number of options is small and the dependency is simple. Therefore, this script is easy to use. If the required value is different from the default value, set this parameter based on the actual requirements.
+>
+>1. **-m \[debug | release | memcheck\]**  indicates that three target versions can be selected:
+>
+>       - **release**: indicates that the binary program of the release version is generated. During this version build, the GCC high-level optimization option is configured to remove the kernel debugging code. This option is usually used in the production environment or performance test environment.
+>       - **debug**: indicates that a binary program of the debug version is generated. During this version build, the kernel code debugging function is added, which is usually used in the development self-test environment.
+>       - **memcheck**: indicates that a binary program of the memcheck version is generated. During this version build, the ASAN function is added based on the debug version to locate memory problems.
+>
+>2. **-3rd \[binarylibs path\]**  is the path of  **binarylibs**. You need to specify the absolute path of the third-party library.
+>3. **-nopkg**  performs only lite compilation, and no packaging is performed. The compilation result is stored in the  **openGauss-server/mppdb\_temp\_install**  directory. If this parameter is not specified, the file is packaged by default and the packaging result is stored in the  **openGauss-server/output**  directory.
+>4. Each option in this script has a default value. The number of options is small and the dependency is simple. Therefore, this script is easy to use. If the required value is different from the default value, set this parameter based on the actual requirements.

@@ -8,14 +8,14 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: an integer ranging from 0 to 7
 
--   **0**  indicates that the function of auditing users' logins and logouts is disabled.
--   **1**  indicates that only successful user logins are audited.
--   **2**  indicates that only failed user logins are audited.
--   **3**  indicates that successful and failed user logins are audited.
--   **4**  indicates that only user logouts are audited.
--   **5**  indicates that successful user logouts and logins are audited.
--   **6**  indicates that failed user logouts and logins are audited.
--   **7**  indicates that successful user logins, failed user logins, and logouts are audited.
+- **0**  indicates that the function of auditing users' logins and logouts is disabled.
+- **1**  indicates that only successful user logins are audited.
+- **2**  indicates that only failed user logins are audited.
+- **3**  indicates that successful and failed user logins are audited.
+- **4**  indicates that only user logouts are audited.
+- **5**  indicates that successful user logouts and logins are audited.
+- **6**  indicates that failed user logouts and logins are audited.
+- **7**  indicates that successful user logins, failed user logins, and logouts are audited.
 
 **Default value**:  **7**
 
@@ -27,8 +27,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range:** **0**  or  **1**
 
--   **0**  indicates that the function of auditing openGauss start, stop, recovery, and switchover operations is disabled.
--   **1**  indicates that the function of auditing openGauss start, stop, recovery, and switchover operations is enabled.
+- **0**  indicates that the function of auditing openGauss start, stop, recovery, and switchover operations is disabled.
+- **1**  indicates that the function of auditing openGauss start, stop, recovery, and switchover operations is enabled.
 
 **Default value**:  **1**
 
@@ -43,8 +43,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range:** **0**  or  **1**
 
--   **0**  indicates that the function of auditing user's locking and unlocking is disabled.
--   **1**  indicates that the function of auditing user's locking and unlocking is enabled.
+- **0**  indicates that the function of auditing user's locking and unlocking is disabled.
+- **1**  indicates that the function of auditing user's locking and unlocking is enabled.
 
 **Default value**:  **1**
 
@@ -56,8 +56,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range:** **0**  or  **1**
 
--   **0**  indicates that the function of auditing the access violation operations of a user is disabled.
--   **1**  indicates that the function of auditing the access violation operations of a user is enabled.
+- **0**  indicates that the function of auditing the access violation operations of a user is disabled.
+- **1**  indicates that the function of auditing the access violation operations of a user is enabled.
 
 **Default value**:  **0**
 
@@ -69,8 +69,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range:** **0**  or  **1**
 
--   **0**  indicates that the function of auditing the granting and reclaiming of a user's permission is disabled.
--   **1**  indicates that the function of auditing the granting and reclaiming of a user's permission is enabled.
+- **0**  indicates that the function of auditing the granting and reclaiming of a user's permission is disabled.
+- **1**  indicates that the function of auditing the granting and reclaiming of a user's permission is enabled.
 
 **Default value**:  **1**
-

@@ -10,9 +10,9 @@ ts_stat(sqlquery text, [ weights text, ]
 
 **sqlquery**  is a text value containing an SQL query which must return a single  **tsvector**  column.  **ts\_stat**  executes the query and returns statistics about each distinct lexeme \(word\) contained in the  **tsvector**  data. The columns returned are:
 
--   **word text**: the value of a lexeme
--   **ndoc integer**: number of documents \(**tsvector**\) the word occurred in
--   **nentry integer**: total number of occurrences of the word 
+- **word text**: the value of a lexeme
+- **ndoc integer**: number of documents \(**tsvector**\) the word occurred in
+- **nentry integer**: total number of occurrences of the word 
 
 If  **weights**  is supplied, only occurrences having one of those weights are counted. For example, to find the ten most frequent words in a document collection:
 
@@ -41,4 +41,3 @@ openGauss=# SELECT * FROM ts_stat('SELECT to_tsvector(''english'', sr_reason_sk)
 ------+------+--------
 (0 rows)
 ```
-

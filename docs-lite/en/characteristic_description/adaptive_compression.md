@@ -96,4 +96,3 @@ None.
 ## Dependencies<a name="section45787398"></a>
 
 It depends on LZ4 or ZLIB.
-

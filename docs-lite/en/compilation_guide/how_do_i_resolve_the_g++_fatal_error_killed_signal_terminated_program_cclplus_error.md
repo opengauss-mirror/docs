@@ -9,4 +9,3 @@ How do I resolve the "g++: fatal error: Killed signal terminated program cclplus
 Error cause: The  **-sj**  parameter is added to the build process in the script. The number of concurrent tasks is too large.
 
 Solution: Reduce the number of concurrent  **make**  tasks during build or run the  **make**  command directly. If the one-click script is used, you need to modify the script.
-

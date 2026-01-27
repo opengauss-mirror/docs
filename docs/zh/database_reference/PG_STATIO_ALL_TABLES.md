@@ -3,6 +3,7 @@
 PG\_STATIO\_ALL\_TABLES视图将包含当前数据库中每个表（包括TOAST表）的I/O统计信息。
 
 示例：
+
 ```sql
 openGauss=# select * from PG_STATIO_ALL_TABLES;
  relid |     schemaname     |            relname            | heap_blks_read | heap_blks_hit | idx_blks_read | idx_blks_hit | toast_blks_read | toast_blks_hit | tidx_blks_read | tidx_blks_hit 
@@ -99,4 +100,3 @@ openGauss=# select * from PG_STATIO_ALL_TABLES;
 </tr>
 </tbody>
 </table>
-

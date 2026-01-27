@@ -20,21 +20,21 @@ CREATE CLIENT MASTER KEY client_master_key_name WITH (KEY_STORE = key_store_name
 
 ## Parameter Description<a name="section2852173114389"></a>
 
--   **client\_master\_key\_name**
+- **client\_master\_key\_name**
 
     This parameter is used as the name of a key object. In the same namespace, the value of this parameter must be unique.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **KEY\_STORE**
+- **KEY\_STORE**
 
     Specifies the key tool or component that manages CMKs. Currently, only  **localkms**  is supported.
 
--   **KEY\_PATH**
+- **KEY\_PATH**
 
     **KEY\_STORE**  manages multiple CMKs. The  **KEY\_PATH**  option is used to uniquely identify a CMK in  **KEY\_STORE**. The value is similar to that of  **key\_path\_value**.
 
--   **ALGORITHM**
+- **ALGORITHM**
 
     Type of the encryption algorithm used to encrypt CEKs. Value range:  **RSA\_2048**,  **RSA_3072**, and  **SM2**.
 
@@ -42,7 +42,6 @@ CREATE CLIENT MASTER KEY client_master_key_name WITH (KEY_STORE = key_store_name
     >**Key storage path**: By default,  **localkms**  generates, reads, or deletes a key file in the  _$LOCALKMS_**\_FILE\_PATH**  path. You can manually configure this environment variable. However, you do not need to configure this environment variable separately. When failing to obtain $LOCALKMS\_FILE\_PATH,  **localkms**  attempts to obtain the  _$GAUSSHOME_**/etc/localkms/**  path. If the path exists, it is used as the key storage path.
     >**Key-related file name**: When the  **CREATE CMK**  syntax is used,  **localkms**  creates four files related to key paths. For example, when  **KEY\_PATH**  is set to  **key\_path\_value**, the names of the four files are  **key\_path\_value.pub**,  **key\_path\_value.pub.rand**,  **key\_path\_value.priv**, and  **key\_path\_value.priv.rand**.
     >Therefore, to successfully create key-related files, ensure that no file with the same name as the key-related files exists in the key path.
-
 
 ## Examples<a name="section7854941155112"></a>
 
@@ -54,4 +53,3 @@ CREATE CLIENT MASTER KEY client_master_key_name WITH (KEY_STORE = key_store_name
 openGauss=> CREATE CLIENT MASTER KEY a_cmk WITH (KEY_STORE = localkms, KEY_PATH = "key_path_value", ALGORITHM = RSA_2048);
 openGauss=> CREATE CLIENT MASTER KEY another_cmk WITH (KEY_STORE = localkms, KEY_PATH = "another_path_value", ALGORITHM = SM2);
 ```
-

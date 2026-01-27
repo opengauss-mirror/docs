@@ -8,7 +8,7 @@
 
 ## 管理视图<a name="zh-cn_topic_0283136608_zh-cn_topic_0237120309_zh-cn_topic_0059777564_s148b7bb2f37e4c4e91b2f8fd7783f258"></a>
 
--   创建视图
+- 创建视图
 
     执行如下命令创建新视图MyView。
 
@@ -21,7 +21,7 @@
     >
     >当CREATE VIEW中存在OR REPLACE时，表示若以前存在该视图就进行替换，但新查询不能改变原查询的列定义，包括顺序、列名、数据类型、类型精度等，只可在列表末尾添加其他的列。
 
--   查询视图
+- 查询视图
 
     执行如下命令查询MyView视图。
 
@@ -29,7 +29,7 @@
     openGauss=# SELECT * FROM MyView;
     ```
 
--   查看某视图的具体信息
+- 查看某视图的具体信息
 
     执行如下命令查询MyView视图的详细信息。
 
@@ -44,7 +44,7 @@
        FROM PG_AUTHID;
     ```
 
--   删除视图
+- 删除视图
 
     执行如下命令删除MyView视图。
 
@@ -52,5 +52,3 @@
     openGauss=# DROP VIEW MyView;
     DROP VIEW
     ```
-
-

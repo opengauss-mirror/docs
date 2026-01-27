@@ -13,17 +13,16 @@ SELECT
 
 ## Parameter Description<a name="en-us_topic_0000001224939983_section1740863211186"></a>
 
--   **ORDER BY clause**
+- **ORDER BY clause**
 
     Sorts data retrieved by the SELECT statement in descending or ascending order. If the  **ORDER BY**  expression contains multiple columns:
 
-    -   If two columns are equal according to the leftmost expression, they are compared according to the next expression and so on.
-    -   If they are equal according to all specified expressions, they are returned in an implementation-dependent order.
-
+    - If two columns are equal according to the leftmost expression, they are compared according to the next expression and so on.
+    - If they are equal according to all specified expressions, they are returned in an implementation-dependent order.
 
 ## Examples<a name="en-us_topic_0000001224939983_section1629154131916"></a>
 
--   Sort the result in ascending order based on the value of  **c\_customer\_sk**.
+- Sort the result in ascending order based on the value of  **c\_customer\_sk**.
 
     ```
     openGauss=# SELECT * FROM customer_t1 ORDER BY c_customer_sk ASC;
@@ -41,7 +40,7 @@ SELECT
     (9 rows)
     ```
 
--   Sort the result in descending order based on the value of  **c\_customer\_sk**.
+- Sort the result in descending order based on the value of  **c\_customer\_sk**.
 
     ```
     openGauss=# SELECT * FROM customer_t1 ORDER BY c_customer_sk DESC;
@@ -58,5 +57,3 @@ SELECT
               3869 | hello         |              |             |
     (9 rows)
     ```
-
-

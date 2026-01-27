@@ -8,8 +8,8 @@ The openGauss provides an uninstallation script to help users uninstall the open
 
 **Procedure**
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Execute the  **gs\_uninstall**  script to uninstall the openGauss.
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Execute the  **gs\_uninstall**  script to uninstall the openGauss.
 
     ```
     gs_uninstall --delete-data
@@ -20,7 +20,6 @@ The openGauss provides an uninstallation script to help users uninstall the open
     ```
     gs_uninstall --delete-data -L
     ```
-
 
 **Examples**
 
@@ -62,15 +61,15 @@ After the openGauss is uninstalled, execute the  **gs\_postuninstall**  script t
 
 **Prerequisites**
 
--   The openGauss uninstallation task has been successfully executed.
--   User  **root**  is trustworthy and available.
--   Only user  **root**  is authorized to run the  **gs\_postuninstall**  command.
+- The openGauss uninstallation task has been successfully executed.
+- User  **root**  is trustworthy and available.
+- Only user  **root**  is authorized to run the  **gs\_postuninstall**  command.
 
 **Procedure**
 
 1. Log in to the openGauss server as user  **root**.
 
-2.  Check whether the mutual trust has been established between the users  **root**. If not, manually establish the mutual trust. For details, see  [Establishing Mutual Trust Manually](preparing_the_software_and_hardware_installation_environment.md).
+2. Check whether the mutual trust has been established between the users  **root**. If not, manually establish the mutual trust. For details, see  [Establishing Mutual Trust Manually](preparing_the_software_and_hardware_installation_environment.md).
 
     Run the  **ssh** _Host name_  command to check whether mutual trust has been successfully established. Then, enter  **exit**.
 
@@ -84,13 +83,13 @@ After the openGauss is uninstalled, execute the  **gs\_postuninstall**  script t
     plat1:~ # 
     ```
 
-3.  Go to the following path:
+3. Go to the following path:
 
     ```
     cd /opt/software/openGauss/script
     ```
 
-4.  Run the  **gs\_postuninstall**  command to clear the environment. If the cluster is installed in environment variable separation mode, run the  **source**  command to obtain the environment variable separation file  **ENVFILE**.
+4. Run the  **gs\_postuninstall**  command to clear the environment. If the cluster is installed in environment variable separation mode, run the  **source**  command to obtain the environment variable separation file  **ENVFILE**.
 
     ```
     ./gs_postuninstall -U omm -X /opt/software/openGauss/cluster_config.xml --delete-user --delete-group
@@ -150,4 +149,3 @@ Successfully cleaned environment.
 **Troubleshooting**
 
 If the configuration deletion fails, locate faults by following the log information provided in the  _$GAUSSLOG_**/om/gs\_postuninstall-**_YYYY_**-**_MM_**-**_DD_**\_**_HHMMSS_**.log**  file.
-

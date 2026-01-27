@@ -2,41 +2,41 @@
 
 ## Prerequisites<a name="section9955194683210"></a>
 
--   A user group and a common user have been created.
--   All the server OSs and networks are functioning properly.
--   A common user must have the read, write, and execute permissions on the database package decompression path and installation path, and the installation path must be empty.
--   A common user has the execution permission on the downloaded openGauss package.
--   Before the installation, check whether all ports in the specified openGauss port matrix are occupied. If they are occupied, change the ports or stop the processes that uses the ports. For details about the port numbers, see the parameter description in step 3.
+- A user group and a common user have been created.
+- All the server OSs and networks are functioning properly.
+- A common user must have the read, write, and execute permissions on the database package decompression path and installation path, and the installation path must be empty.
+- A common user has the execution permission on the downloaded openGauss package.
+- Before the installation, check whether all ports in the specified openGauss port matrix are occupied. If they are occupied, change the ports or stop the processes that uses the ports. For details about the port numbers, see the parameter description in step 3.
 
 ## Procedure<a name="section4241123615573"></a>
 
-1.  Log in to the host where the package is installed as a common user and decompress the openGauss package to the installation directory.
+1. Log in to the host where the package is installed as a common user and decompress the openGauss package to the installation directory.
 
     ```
     tar -jxf openGauss-Server-x.x.x-openEuler20.03-x86_64.tar.bz2 -C /opt/software/openGauss
     ```
 
-2.  Assume that the decompressed package is stored in the  **/opt/software/openGauss**  directory. Go to the  **simpleInstall**  directory.
+2. Assume that the decompressed package is stored in the  **/opt/software/openGauss**  directory. Go to the  **simpleInstall**  directory.
 
     ```
     cd /opt/software/openGauss/simpleInstall
     ```
 
-3.  Run the  **install.sh**  script to install openGauss.
+3. Run the  **install.sh**  script to install openGauss.
 
     ```
     sh install.sh  -w xxxx  --multinode
     ```
 
     >[!NOTE]NOTE 
-    >-   **-w**: initializes the database password \(specified by  **gs\_initdb**\). This parameter is mandatory for security purposes.
-    >-   **-p**: specifies the port number of the primary openGauss node. The default value is  **5432**. The port number of the standby node is that of the primary node plus 200. The default port number is  **5632**.
-    >-   **--multinode**: determines whether the installation is performed on a single node or on primary/standby nodes.
-    >-   **-h|--help**: displays usage instructions.
-    >-   After the installation, the primary database node name is  **nodename1**  and the standby database node name is  **nodename2**.
-    >-   The installation path of the primary database node directory is  **/opt/software/openGauss/data/master**, and that of the standby node directory is  **/opt/software/openGauss/data/slave**, in which  **/opt/software/openGauss**  is the decompression path, and  **data/master\(slave\)**  is the newly created database node directory.
+    >- **-w**: initializes the database password \(specified by  **gs\_initdb**\). This parameter is mandatory for security purposes.
+    >- **-p**: specifies the port number of the primary openGauss node. The default value is  **5432**. The port number of the standby node is that of the primary node plus 200. The default port number is  **5632**.
+    >- **--multinode**: determines whether the installation is performed on a single node or on primary/standby nodes.
+    >- **-h|--help**: displays usage instructions.
+    >- After the installation, the primary database node name is  **nodename1**  and the standby database node name is  **nodename2**.
+    >- The installation path of the primary database node directory is  **/opt/software/openGauss/data/master**, and that of the standby node directory is  **/opt/software/openGauss/data/slave**, in which  **/opt/software/openGauss**  is the decompression path, and  **data/master\(slave\)**  is the newly created database node directory.
 
-4.  After the installation is complete, check whether the process is normal by using  **ps**  and  **gs\_ctl**.
+4. After the installation is complete, check whether the process is normal by using  **ps**  and  **gs\_ctl**.
 
     ```
     ps ux | grep gaussdb
@@ -86,5 +86,3 @@
      Receiver info:
     No information 
     ```
-
-

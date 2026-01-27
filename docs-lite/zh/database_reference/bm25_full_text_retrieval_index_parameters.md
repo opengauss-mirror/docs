@@ -7,14 +7,16 @@
 该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 布尔型
--   on表示开启 TAAT 扫描功能。
--   off表示开启 DAAT MaxScore 扫描功能。
+
+- on表示开启 TAAT 扫描功能。
+- off表示开启 DAAT MaxScore 扫描功能。
 
 **设置建议**：当希望检索搜索词相关的所有文档的排序结果时，建议开启该参数。否则，建议该参数保持关闭状态。
 
 **默认值**： off
 
 **设置语法**：
+
 ```
 set enable_bm25_taat = on;
 ```
@@ -32,6 +34,7 @@ set enable_bm25_taat = on;
 **默认值**： 5
 
 **设置语法**：
+
 ```
 set bm25_topk = 10;
 ```
@@ -52,6 +55,7 @@ set bm25_topk = 10;
 **默认值**： 1.2
 
 **设置语法**：
+
 ```
 set bm25_k1 = 1.5;
 ```
@@ -67,6 +71,7 @@ set bm25_k1 = 1.5;
 **默认值**： 0.75
 
 **设置语法**：
+
 ```
 set bm25_b = 0.5;
 ```
@@ -82,6 +87,7 @@ set bm25_b = 0.5;
 **默认值**： 1.05
 
 **设置语法**：
+
 ```
 set max_score_ratio = 0.9;
 ```

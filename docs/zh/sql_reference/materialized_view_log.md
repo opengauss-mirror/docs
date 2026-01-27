@@ -8,14 +8,13 @@
 
 ### 语法格式
 
--   创建物化视图日志
+- 创建物化视图日志
 
     ```
     CREATE MATERIALIZED VIEW LOG ON table_name; 
     ```
 
-
--   删除物化视图日志
+- 删除物化视图日志
 
     ```
     DROP MATERIALIZED VIEW LOG ON table_name;

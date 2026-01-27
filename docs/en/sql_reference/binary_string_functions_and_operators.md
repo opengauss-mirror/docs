@@ -4,7 +4,7 @@
 
 SQL defines some string functions that use keywords, rather than commas, to separate arguments.
 
--   octet\_length\(string\)
+- octet\_length\(string\)
 
     Description: Specifies the number of bytes in a binary string.
 
@@ -20,7 +20,7 @@ SQL defines some string functions that use keywords, rather than commas, to sepa
     (1 row)
     ```
 
--   overlay\(string placing string from int \[for int\]\)
+- overlay\(string placing string from int \[for int\]\)
 
     Description: Replaces substrings.
 
@@ -36,7 +36,7 @@ SQL defines some string functions that use keywords, rather than commas, to sepa
     (1 row)
     ```
 
--   position\(substring in string\)
+- position\(substring in string\)
 
     Description: Specifies the location of a specified substring.
 
@@ -52,7 +52,7 @@ SQL defines some string functions that use keywords, rather than commas, to sepa
     (1 row)
     ```
 
--   substring\(string \[from int\] \[for int\]\)
+- substring\(string \[from int\] \[for int\]\)
 
     Description: Truncates a substring.
 
@@ -68,7 +68,7 @@ SQL defines some string functions that use keywords, rather than commas, to sepa
     (1 row)
     ```
 
--   substr\(string, from int \[, for int\]\)
+- substr\(string, from int \[, for int\]\)
 
     Description: Truncates a substring.
 
@@ -84,7 +84,7 @@ SQL defines some string functions that use keywords, rather than commas, to sepa
     (1 row)
     ```
 
--   trim\(\[both\] bytes from string\)
+- trim\(\[both\] bytes from string\)
 
     Description: Removes the longest string containing only bytes from  **bytes**  from the start and end of  **string**.
 
@@ -100,12 +100,11 @@ SQL defines some string functions that use keywords, rather than commas, to sepa
     (1 row)
     ```
 
-
 ## Other Binary String Functions<a name="en-us_topic_0283137016_en-us_topic_0237121968_en-us_topic_0059778049_s460ba3376a004239a3cc867b5466c5f5"></a>
 
 openGauss provides common syntax used for calling functions.
 
--   btrim\(string bytea,bytes bytea\)
+- btrim\(string bytea,bytes bytea\)
 
     Description: Removes the longest string containing only bytes from  **bytes**  from the start and end of  **string**.
 
@@ -121,7 +120,7 @@ openGauss provides common syntax used for calling functions.
     (1 row)
     ```
 
--   get\_bit\(string, offset\)
+- get\_bit\(string, offset\)
 
     Description: Extracts bits from a string.
 
@@ -137,7 +136,7 @@ openGauss provides common syntax used for calling functions.
     (1 row)
     ```
 
--   get\_byte\(string, offset\)
+- get\_byte\(string, offset\)
 
     Description: Extracts bytes from a string.
 
@@ -153,7 +152,7 @@ openGauss provides common syntax used for calling functions.
     (1 row)
     ```
 
--   set\_bit\(string,offset, newvalue\)
+- set\_bit\(string,offset, newvalue\)
 
     Description: Sets bits in a string.
 
@@ -169,7 +168,7 @@ openGauss provides common syntax used for calling functions.
     (1 row)
     ```
 
--   set\_byte\(string,offset, newvalue\)
+- set\_byte\(string,offset, newvalue\)
 
     Description: Sets bytes in a string.
 
@@ -184,5 +183,3 @@ openGauss provides common syntax used for calling functions.
      \x5468006f406173
     (1 row)
     ```
-
-

@@ -210,5 +210,3 @@ openGauss=# CLOSE cursor1;
 ## 相关链接<a name="zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_scff73b2bdc594902afb6925b8a3b97ac"></a>
 
 [CLOSE](close.md)，[MOVE](move.md)
-
-

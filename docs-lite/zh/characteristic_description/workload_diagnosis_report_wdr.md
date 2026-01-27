@@ -10,8 +10,8 @@ WDR报告提供数据库性能诊断报告，该报告基于基线性能数据�
 
 ## 客户价值<a name="section1938191193419"></a>
 
--   WDR报表是长期性能问题最主要的诊断手段。基于SNAPSHOT的性能基线，从多维度做性能分析，能帮助DBA掌握系统负载繁忙程度、各个组件的性能表现及性能瓶颈。
--   SNAPSHOT也是后续性能问题自诊断和自优化建议的重要数据来源。
+- WDR报表是长期性能问题最主要的诊断手段。基于SNAPSHOT的性能基线，从多维度做性能分析，能帮助DBA掌握系统负载繁忙程度、各个组件的性能表现及性能瓶颈。
+- SNAPSHOT也是后续性能问题自诊断和自优化建议的重要数据来源。
 
 ## 特性描述<a name="section49337943415"></a>
 
@@ -21,8 +21,8 @@ WDR\(Workload Diagnosis Report\)基于两次不同时间点系统的性能快照
 
 WDR主要依赖两个组件：
 
--   SNAPSHOT性能快照：性能快照可以配置成按一定时间间隔从内核采集一定量的性能数据，持久化在用户表空间。任何一个SNAPSHOT可以作为一个性能基线，其他SNAPSHOT与之比较的结果，可以分析出与基线的性能表现。
--   WDR Reporter：报表生成工具基于两个SNAPSHOT，分析系统总体性能表现，并能计算出更多项具体的性能指标在这两个时间段之间的变化量，生成SUMMARY 和DETAIL两个不同级别的性能数据。如[表1](#table14895120191613)、[表2](#table23331848193120)所示。
+- SNAPSHOT性能快照：性能快照可以配置成按一定时间间隔从内核采集一定量的性能数据，持久化在用户表空间。任何一个SNAPSHOT可以作为一个性能基线，其他SNAPSHOT与之比较的结果，可以分析出与基线的性能表现。
+- WDR Reporter：报表生成工具基于两个SNAPSHOT，分析系统总体性能表现，并能计算出更多项具体的性能指标在这两个时间段之间的变化量，生成SUMMARY 和DETAIL两个不同级别的性能数据。如[表1](#table14895120191613)、[表2](#table23331848193120)所示。
 
 **表 1**  SUMMARY级别诊断报告
 
@@ -146,11 +146,10 @@ WDR主要依赖两个组件：
 
 ## 特性约束<a name="section1956417145819"></a>
 
--   WDR snapshot性能快照会采集不同database的性能数据，如果数据库实例中有大量的database或者大量表，做一次WDR snapshot会花费很长时间。
--   如果在大量DDL期间做WDR snapshot可能造成WDR snapshot失败。
--   在drop database时，做WDR snapshot可能造成WDR snapshot失败。
+- WDR snapshot性能快照会采集不同database的性能数据，如果数据库实例中有大量的database或者大量表，做一次WDR snapshot会花费很长时间。
+- 如果在大量DDL期间做WDR snapshot可能造成WDR snapshot失败。
+- 在drop database时，做WDR snapshot可能造成WDR snapshot失败。
 
 ## 依赖关系<a name="section15876411599"></a>
 
 无。
-

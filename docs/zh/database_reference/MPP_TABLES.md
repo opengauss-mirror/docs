@@ -57,4 +57,3 @@ MPP\_TABLES视图显示信息如下。
 </tr>
 </tbody>
 </table>
-

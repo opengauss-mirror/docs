@@ -48,16 +48,16 @@ MOT编译支持的特性和不支持的特性见下文。
 
 以下查询类型适合轻量执行：
 
--   简单点查询
-    -   SELECT \(including SELECT for UPDATE\)
-    -   UPDATE
-    -   DELETE
+- 简单点查询
+    - SELECT \(including SELECT for UPDATE\)
+    - UPDATE
+    - DELETE
 
--   INSERT查询
--   引用主键的完整前缀的范围UPDATE查询
--   引用主键的完整前缀的范围SELECT查询
--   JOIN查询，其中一部分或两部分重叠为点查询
--   引用每个连接表中主键的完整前缀的JOIN查询
+- INSERT查询
+- 引用主键的完整前缀的范围UPDATE查询
+- 引用主键的完整前缀的范围SELECT查询
+- JOIN查询，其中一部分或两部分重叠为点查询
+- 引用每个连接表中主键的完整前缀的JOIN查询
 
 ## 轻量执行不支持的查询<a name="zh-cn_topic_0283137241_zh-cn_topic_0280525137_section20024589"></a>
 
@@ -66,4 +66,3 @@ MOT编译支持的特性和不支持的特性见下文。
 需要强调一点，如果查询语句不适用原生编译和轻量执行，不向客户端报告错误，查询仍以正常和规范的方式执行。
 
 有关MOT原生编译功能的详细信息，请参阅 “查询原生编译”或“查询原生编译（JIT）”的有关内容。
-

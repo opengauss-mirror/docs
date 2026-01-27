@@ -95,4 +95,3 @@ PG\_REPLICATION\_SLOTS视图查看复制槽的信息。
 </tr>
 </tbody>
 </table>
-

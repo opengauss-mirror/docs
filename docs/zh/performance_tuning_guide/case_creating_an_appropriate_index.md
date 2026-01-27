@@ -62,4 +62,3 @@ ORDER BY staff_id;
                            Index Cond: (state_id = places.state_id)
 (15 rows)
 ```
-

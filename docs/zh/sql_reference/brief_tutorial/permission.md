@@ -8,39 +8,39 @@
 
 openGauss支持以下的权限，不同的权限与不同的对象类型关联：
 
--   SELECT：允许对指定的表、视图、序列执行SELECT命令，UPDATE或DELETE时也需要对应字段上的SELECT权限。
--   INSERT：允许对指定的表执行INSERT命令。
--   UPDATE：允许对声明的表中任意字段执行UPDATE命令。通常，UPDATE命令也需要SELECT权限来查询出哪些行需要更新。SELECT… FOR UPDATE、SELECT… FOR NO KEY UPDATE、SELECT… FOR SHARE和SELECT… FOR KEY SHARE除了需要SELECT权限外，还需要UPDATE权限。
--   DELETE：允许执行DELETE命令删除指定表中的数据。通常，DELETE命令也需要SELECT权限来查询出哪些行需要删除。
--   TRUNCATE：允许执行TRUNCATE命令删除指定表中的所有记录。
--   REFERENCES：创建一个外键约束，必须拥有参考表和被参考表的REFERENCES权限。
--   CREATE：
-    -   对于数据库，允许在数据库里创建新的模式。
-    -   对于模式，允许在模式中创建新的对象。如果要重命名一个对象，用户除了必须是该对象的所有者外，还必须拥有该对象所在模式的CREATE权限。
-    -   对于表空间，允许在表空间中创建表，允许在创建数据库和模式的时候把该表空间指定为缺省表空间。
+- SELECT：允许对指定的表、视图、序列执行SELECT命令，UPDATE或DELETE时也需要对应字段上的SELECT权限。
+- INSERT：允许对指定的表执行INSERT命令。
+- UPDATE：允许对声明的表中任意字段执行UPDATE命令。通常，UPDATE命令也需要SELECT权限来查询出哪些行需要更新。SELECT… FOR UPDATE、SELECT… FOR NO KEY UPDATE、SELECT… FOR SHARE和SELECT… FOR KEY SHARE除了需要SELECT权限外，还需要UPDATE权限。
+- DELETE：允许执行DELETE命令删除指定表中的数据。通常，DELETE命令也需要SELECT权限来查询出哪些行需要删除。
+- TRUNCATE：允许执行TRUNCATE命令删除指定表中的所有记录。
+- REFERENCES：创建一个外键约束，必须拥有参考表和被参考表的REFERENCES权限。
+- CREATE：
+    - 对于数据库，允许在数据库里创建新的模式。
+    - 对于模式，允许在模式中创建新的对象。如果要重命名一个对象，用户除了必须是该对象的所有者外，还必须拥有该对象所在模式的CREATE权限。
+    - 对于表空间，允许在表空间中创建表，允许在创建数据库和模式的时候把该表空间指定为缺省表空间。
 
--   CONNECT：允许用户连接到指定的数据库。
--   EXECUTE：允许使用指定的函数，以及利用这些函数实现的操作符。
--   USAGE：
-    -   对于过程语言，允许用户在创建函数的时候指定过程语言。
-    -   对于模式，USAGE允许访问包含在指定模式中的对象，若没有该权限，则只能看到这些对象的名称。
-    -   对于序列，USAGE允许使用nextval函数。
-    -   对于Data Source对象，USAGE是指访问权限，也是可赋予的所有权限，即USAGE与ALL PRIVILEGES等价。
+- CONNECT：允许用户连接到指定的数据库。
+- EXECUTE：允许使用指定的函数，以及利用这些函数实现的操作符。
+- USAGE：
+    - 对于过程语言，允许用户在创建函数的时候指定过程语言。
+    - 对于模式，USAGE允许访问包含在指定模式中的对象，若没有该权限，则只能看到这些对象的名称。
+    - 对于序列，USAGE允许使用nextval函数。
+    - 对于Data Source对象，USAGE是指访问权限，也是可赋予的所有权限，即USAGE与ALL PRIVILEGES等价。
 
--   ALTER：允许用户修改指定对象的属性，但不包括修改对象的所有者和修改对象所在的模式。
--   DROP：允许用户删除指定的对象。
--   COMMENT：允许用户定义或修改指定对象的注释。
--   INDEX：允许用户在指定表上创建索引，并管理指定表上的索引，还允许用户对指定表执行REINDEX和CLUSTER操作。
--   VACUUM：允许用户对指定的表执行ANALYZE和VACUUM操作。
--   ALL PRIVILEGES：一次性给指定用户/角色赋予所有可赋予的权限。只有系统管理员有权执行GRANT ALL PRIVILEGES。
+- ALTER：允许用户修改指定对象的属性，但不包括修改对象的所有者和修改对象所在的模式。
+- DROP：允许用户删除指定的对象。
+- COMMENT：允许用户定义或修改指定对象的注释。
+- INDEX：允许用户在指定表上创建索引，并管理指定表上的索引，还允许用户对指定表执行REINDEX和CLUSTER操作。
+- VACUUM：允许用户对指定的表执行ANALYZE和VACUUM操作。
+- ALL PRIVILEGES：一次性给指定用户/角色赋予所有可赋予的权限。只有系统管理员有权执行GRANT ALL PRIVILEGES。
 
 ## 语法格式<a name="section1223361612165"></a>
 
--   <a name="li9428175732017"></a>GRANT
+- <a name="li9428175732017"></a>GRANT
 
     对角色和用户进行授权操作。使用GRANT命令进行用户授权包括三种场景：
 
-    -   将系统权限（例如sysadmin、CREATEDB、CREATEROLE等）授权给角色或用户
+    - 将系统权限（例如sysadmin、CREATEDB、CREATEROLE等）授权给角色或用户
 
         将sysadmin权限赋予指定的角色的语法如下。
 
@@ -49,7 +49,7 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
            TO role_name;
         ```
 
-    -   将角色或用户的权限授权给其他角色或用户
+    - 将角色或用户的权限授权给其他角色或用户
 
         将角色的权限赋予其他用户或角色的语法如下。
 
@@ -59,8 +59,8 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
            [ WITH ADMIN OPTION ];
         ```
 
-    -   将数据库对象授权给角色或用户
-        -   将表或视图的访问权限赋予指定的用户或角色。
+    - 将数据库对象授权给角色或用户
+        - 将表或视图的访问权限赋予指定的用户或角色。
 
             ```
             GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM } [, ...] 
@@ -71,7 +71,7 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
                 [ WITH GRANT OPTION ];
             ```
 
-        -   将表中字段的访问权限赋予指定的用户或角色。
+        - 将表中字段的访问权限赋予指定的用户或角色。
 
             ```
             GRANT { {{ SELECT | INSERT | UPDATE | REFERENCES | COMMENT } ( column_name [, ...] )} [, ...] 
@@ -81,7 +81,7 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
                 [ WITH GRANT OPTION ];
             ```
 
-        -   将数据库的访问权限赋予指定的用户或角色。
+        - 将数据库的访问权限赋予指定的用户或角色。
 
             ```
             GRANT { { CREATE | CONNECT | TEMPORARY | TEMP | ALTER | DROP | COMMENT } [, ...]
@@ -91,7 +91,7 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
                 [ WITH GRANT OPTION ];
             ```
 
-        -   将模式的访问权限赋予指定的用户或角色。
+        - 将模式的访问权限赋予指定的用户或角色。
 
             ```
             GRANT { { CREATE | USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
@@ -103,7 +103,7 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
             >[!NOTE]说明
             >将模式中的表或者视图对象授权给其他用户时，需要将表或视图所属的模式的USAGE权限同时授予该用户，若没有该权限，则只能看到这些对象的名称，并不能实际进行对象访问。 同名模式下创建表的权限无法通过此语法赋予，可以通过将角色的权限赋予其他用户或角色的语法，赋予同名模式下创建表的权限。
 
-        -   将表空间的访问权限赋予指定的用户或角色。
+        - 将表空间的访问权限赋予指定的用户或角色。
 
             ```
             GRANT { { CREATE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
@@ -112,10 +112,8 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
                 [ WITH GRANT OPTION ];
             ```
 
-
-
--   <a name="li51033327269"></a>REVOKE
-    -   撤销角色或用户的系统权限（例如sysadmin、CREATEDB、CREATEROLE等）
+- <a name="li51033327269"></a>REVOKE
+    - 撤销角色或用户的系统权限（例如sysadmin、CREATEDB、CREATEROLE等）
 
         回收角色上的sysadmin权限。
 
@@ -123,7 +121,7 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
         REVOKE ALL { PRIVILEGES | PRIVILEGE } FROM role_name;
         ```
 
-    -   回收角色上的权限。
+    - 回收角色上的权限。
 
         ```
         REVOKE [ ADMIN OPTION FOR ]
@@ -131,8 +129,8 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
             [ CASCADE | RESTRICT ];
         ```
 
-    -   回收数据库对象上的权限
-        -   回收指定表或视图上权限。
+    - 回收数据库对象上的权限
+        - 回收指定表或视图上权限。
 
             ```
             REVOKE [ GRANT OPTION FOR ]
@@ -144,7 +142,7 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
                 [ CASCADE | RESTRICT ];
             ```
 
-        -   回收表上指定字段权限。
+        - 回收表上指定字段权限。
 
             ```
             REVOKE [ GRANT OPTION FOR ]
@@ -155,7 +153,7 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
                 [ CASCADE | RESTRICT ];
             ```
 
-        -   回收指定数据库上权限。
+        - 回收指定数据库上权限。
 
             ```
             REVOKE [ GRANT OPTION FOR ]
@@ -166,7 +164,7 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
                 [ CASCADE | RESTRICT ];
             ```
 
-        -   回收指定模式上权限。
+        - 回收指定模式上权限。
 
             ```
             REVOKE [ GRANT OPTION FOR ]
@@ -176,7 +174,7 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
                 [ CASCADE | RESTRICT ];
             ```
 
-        -   回收指定表空间上权限。
+        - 回收指定表空间上权限。
 
             ```
             REVOKE [ GRANT OPTION FOR ]
@@ -186,43 +184,39 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
                 [ CASCADE | RESTRICT ];
             ```
 
-
-
-
 ## 参数说明<a name="section108735598015"></a>
 
--   **role\_name**
+- **role\_name**
 
     已存在用户名称。
 
--   **table\_name**
+- **table\_name**
 
     已存在表名称。
 
--   **column\_name**
+- **column\_name**
 
     已存在字段名称。
 
--   **schema\_name**
+- **schema\_name**
 
     已存在模式名称。
 
--   **database\_name**
+- **database\_name**
 
     已存在数据库名称。
 
--   **tablespace\_name**
+- **tablespace\_name**
 
     表空间名称。
 
--   **WITH GRANT OPTION**
+- **WITH GRANT OPTION**
 
     如果声明了WITH GRANT OPTION，则被授权的用户也可以将此权限赋予他人，否则就不能授权给他人。这个选项不能赋予PUBLIC。
 
-
 ## 示例<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447"></a>
 
--   将系统权限授权给用户或者角色。
+- 将系统权限授权给用户或者角色。
 
     创建名为joe的用户，并将sysadmin权限授权给他。
 
@@ -235,8 +229,8 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
 
     授权成功后，用户joe会拥有sysadmin的所有权限。
 
--   将对象权限授权给用户或者角色。
-    1.  创建模式test以及表customer。
+- 将对象权限授权给用户或者角色。
+    1. 创建模式test以及表customer。
 
         ```
         openGauss=# CREATE SCHEMA test;
@@ -253,7 +247,7 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
         CREATE TABLE
         ```
 
-    2.  撤销joe用户的sysadmin权限，然后将模式test的使用权限和表customer的所有权限授权给用户joe。
+    2. 撤销joe用户的sysadmin权限，然后将模式test的使用权限和表customer的所有权限授权给用户joe。
 
         ```
         openGauss=# REVOKE ALL PRIVILEGES FROM joe;
@@ -266,7 +260,7 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
 
         授权成功后，joe用户就拥有了customer表的所有权限，包括增删改查等权限。
 
-    3.  将表customer中c\_customer\_sk、c\_customer\_id、c\_first\_name列的查询权限，c\_last\_name的更新权限授权给joe。
+    3. 将表customer中c\_customer\_sk、c\_customer\_id、c\_first\_name列的查询权限，c\_last\_name的更新权限授权给joe。
 
         ```
         openGauss=# GRANT select (c_customer_sk,c_customer_id,c_first_name),update (c_last_name) ON customer TO joe;
@@ -305,9 +299,8 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
         GRANT
         ```
 
-
--   将用户或者角色的权限授权给其他用户或角色。
-    1.  创建角色manager，将joe的权限授权给manager，并允许该角色将权限授权给其他人。
+- 将用户或者角色的权限授权给其他用户或角色。
+    1. 创建角色manager，将joe的权限授权给manager，并允许该角色将权限授权给其他人。
 
         ```
         openGauss=# CREATE ROLE manager PASSWORD 'xxxxxxxx';
@@ -316,7 +309,7 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
         GRANT ROLE
         ```
 
-    2.  创建用户senior\_manager，将用户manager的权限授权给该用户。
+    2. 创建用户senior\_manager，将用户manager的权限授权给该用户。
 
         ```
         openGauss=# CREATE ROLE senior_manager PASSWORD 'xxxxxxxx';
@@ -324,6 +317,3 @@ openGauss支持以下的权限，不同的权限与不同的对象类型关联�
         openGauss=# GRANT manager TO senior_manager;
         GRANT ROLE
         ```
-
-
-

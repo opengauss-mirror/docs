@@ -7,6 +7,7 @@
 3. 新增支持nvarchar(max)，max代表无约束。
 
 示例：
+
 ```
 openGauss=# select n'abc';
  nvarchar2

@@ -10,4 +10,3 @@ You can delete and re-create system catalogs, add columns to them, and insert an
 
 >[!TIP]NOTICE 
 >Do not add, delete, or modify system catalogs because doing so will result in exceptions or even openGauss unavailability.
-

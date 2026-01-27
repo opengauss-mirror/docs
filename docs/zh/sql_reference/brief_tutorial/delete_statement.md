@@ -11,16 +11,15 @@ DELETE FROM table_name
 
 ## 参数说明<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_s6df87c0dd87c49e29a034e0ff3385ca6"></a>
 
--   **table\_name**
+- **table\_name**
 
     目标表的名称（可以有模式修饰）。
 
     取值范围：已存在的表名。
 
--   **condition**
+- **condition**
 
     一个返回Boolean值的表达式，用于判断哪些行需要被删除。
-
 
 ## 示例<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_s90a3978214f644269ab932c29df31137"></a>
 
@@ -84,4 +83,3 @@ openGauss=# SELECT * FROM customer_t1_bak;
 ---------------+---------------+--------------+-------------+--------
 (0 rows)
 ```
-

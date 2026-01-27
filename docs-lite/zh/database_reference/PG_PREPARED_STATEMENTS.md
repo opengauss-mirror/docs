@@ -50,4 +50,3 @@ PG\_PREPARED\_STATEMENTS视图整个数据库实例的预备语句。
 </tr>
 </tbody>
 </table>
-

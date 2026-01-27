@@ -71,7 +71,6 @@ The certificate file is incomplete when the rebuilding is interrupted. The rebui
    gs_ctl build -D data_dir
    ```
 
-
    >[!NOTE]NOTE   
    >If the database on the standby node is stopped, you need to regenerate a certificate file or copy the certificate file \(in  _$GAUSSHOME_**/share**\) to the data directory, start the standby node, and rebuild the standby instance. For details about how to generate a certificate file, see the  _Developer Guide_.  
 
@@ -126,4 +125,3 @@ Open the system log file  **/var/log/secure**  and check whether the \*\*pam\_fa
 ### Procedure<a name="section952412551818"></a>
 
 In the  **/etc/pam.d**  directory, modify the  **system-auth**,  **password-auth**, and  **password-auth-crond**  configuration files, increase the value of deny=3 in the files, and restore the value after the mutual trust relationships are established.
-

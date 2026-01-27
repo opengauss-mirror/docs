@@ -58,4 +58,3 @@ The following table describes columns in the Host CPU report.
 </tr>
 </tbody>
 </table>
-

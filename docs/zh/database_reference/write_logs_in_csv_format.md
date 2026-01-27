@@ -2,8 +2,8 @@
 
 ## 前提条件<a name="zh-cn_topic_0237124724_zh-cn_topic_0059779007_s429dec1a2f1348e290437382aa165032"></a>
 
--   [log\_destination](record_logs_location.md#zh-cn_topic_0283136719_zh-cn_topic_0237124721_zh-cn_topic_0059778787_sb6c9884f69bd4765a60f80810c94f194)的值设置为csvlog。
--   [logging\_collector](record_logs_location.md#zh-cn_topic_0283136719_zh-cn_topic_0237124721_zh-cn_topic_0059778787_s61d6090c04ee464fb54f8b31936ba818)的值设置为on。
+- [log\_destination](record_logs_location.md#zh-cn_topic_0283136719_zh-cn_topic_0237124721_zh-cn_topic_0059778787_sb6c9884f69bd4765a60f80810c94f194)的值设置为csvlog。
+- [logging\_collector](record_logs_location.md#zh-cn_topic_0283136719_zh-cn_topic_0237124721_zh-cn_topic_0059778787_s61d6090c04ee464fb54f8b31936ba818)的值设置为on。
 
 ## csvlog定义<a name="zh-cn_topic_0237124724_zh-cn_topic_0059779007_sa05c5f4e9e53421584d0bfd757ed1247"></a>
 
@@ -191,7 +191,6 @@ COPY gaussdb_log FROM '/opt/data/pg_log/logfile.csv' WITH csv;
 
 简化输入到CSV日志文件，可以通过如下操作：
 
--   设置[log\_filename](record_logs_location.md#zh-cn_topic_0283136719_zh-cn_topic_0237124721_zh-cn_topic_0059778787_s3226ae3209154e249928c24ec67c5809)和[log\_rotation\_age](record_logs_location.md#zh-cn_topic_0283136719_zh-cn_topic_0237124721_zh-cn_topic_0059778787_s3ce09b8a7ae543b18fae13a821a725a5)，为日志文件提供一个一致的、可预测的命名方案。通过日志文件名，预测一个独立的日志文件完成并进入准备导入状态的时间。
--   将[log\_rotation\_size](record_logs_location.md#zh-cn_topic_0283136719_zh-cn_topic_0237124721_zh-cn_topic_0059778787_s282e72143bb14915bedb4b432586b07e)设为0来终止基于尺寸的日志回滚，因为基于尺寸的日志回滚让预测日志文件名变得非常的困难。
--   将[log\_truncate\_on\_rotation](record_logs_location.md#zh-cn_topic_0283136719_zh-cn_topic_0237124721_zh-cn_topic_0059778787_s143b6d35ddbe48b8810106a4d3929e8a)设为on以便区分在同一日志文件中旧的日志数据和新的日志数据。
-
+- 设置[log\_filename](record_logs_location.md#zh-cn_topic_0283136719_zh-cn_topic_0237124721_zh-cn_topic_0059778787_s3226ae3209154e249928c24ec67c5809)和[log\_rotation\_age](record_logs_location.md#zh-cn_topic_0283136719_zh-cn_topic_0237124721_zh-cn_topic_0059778787_s3ce09b8a7ae543b18fae13a821a725a5)，为日志文件提供一个一致的、可预测的命名方案。通过日志文件名，预测一个独立的日志文件完成并进入准备导入状态的时间。
+- 将[log\_rotation\_size](record_logs_location.md#zh-cn_topic_0283136719_zh-cn_topic_0237124721_zh-cn_topic_0059778787_s282e72143bb14915bedb4b432586b07e)设为0来终止基于尺寸的日志回滚，因为基于尺寸的日志回滚让预测日志文件名变得非常的困难。
+- 将[log\_truncate\_on\_rotation](record_logs_location.md#zh-cn_topic_0283136719_zh-cn_topic_0237124721_zh-cn_topic_0059778787_s143b6d35ddbe48b8810106a4d3929e8a)设为on以便区分在同一日志文件中旧的日志数据和新的日志数据。

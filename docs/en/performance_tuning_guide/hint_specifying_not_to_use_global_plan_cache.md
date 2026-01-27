@@ -18,4 +18,3 @@ no_gpc
 ![](figures/zh-cn_image_0000001144139135.png)
 
 No result exists in the  **dbe\_perf.global\_plancache\_status**  view, that is, no plan is cached globally.
-

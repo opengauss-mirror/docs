@@ -15,12 +15,11 @@ SELECT
 
 ## Parameter Description<a name="section36303203424"></a>
 
--   **GROUP BY clause**
+- **GROUP BY clause**
 
     Groups the query results based on the values of one or more columns. The query results with the same value are in the same group.
 
     The  **GROUP BY**  clause is placed after the  **WHRER**  clause and before the  **ORDER BY**  clause in the SELECT statement.
-
 
 ## Examples<a name="section1172527518"></a>
 
@@ -38,4 +37,3 @@ openGauss=# SELECT c_first_name, sum(Amount)  FROM customer_t1 GROUP BY c_first_
  Lily         | 3000
 (6 rows)
 ```
-

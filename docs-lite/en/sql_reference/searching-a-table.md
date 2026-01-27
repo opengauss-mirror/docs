@@ -2,7 +2,7 @@
 
 It is possible to do a full text search without an index.
 
--   A simple query to print each row that contains the word  **america**  in its  **body**  column is as follows:
+- A simple query to print each row that contains the word  **america**  in its  **body**  column is as follows:
 
     ```
     openGauss=# DROP SCHEMA IF EXISTS tsearch CASCADE;
@@ -67,7 +67,7 @@ It is possible to do a full text search without an index.
     (4 rows)
     ```
 
--   A more complex example to select the ten most recent documents that contain  **north**  and  **america**  in the  **title**  or  **body**  column is as follows:
+- A more complex example to select the ten most recent documents that contain  **north**  and  **america**  in the  **title**  or  **body**  column is as follows:
 
     ```
     openGauss=# SELECT title FROM tsearch.pgweb WHERE to_tsvector(title || ' ' || body) @@ to_tsquery('north & america') ORDER BY last_mod_date DESC LIMIT 10;
@@ -81,5 +81,3 @@ It is possible to do a full text search without an index.
     For clarity we omitted the  **coalesce**  function calls which would be needed to find rows that contain  **NULL**  in one of the two columns.
 
     The preceding examples show queries without using indexes. Most applications will find this approach too slow. Therefore, practical use of text searching usually requires creating an index, except perhaps for occasional ad-hoc searches. 
-
-

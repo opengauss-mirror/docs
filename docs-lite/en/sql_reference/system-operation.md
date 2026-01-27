@@ -29,4 +29,3 @@ For details about how to set the constraint check mode for the current transacti
 ## Shutting Down The Current Database Node<a name="en-us_topic_0283137188_section1661915568326"></a>
 
 For details about shutting down the current database node, see  [SHUTDOWN](shutdown.md).
-

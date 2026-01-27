@@ -154,4 +154,3 @@ PG\_STATS视图提供对存储在pg\_statistic表里面的单列统计信息的�
 </tr>
 </tbody>
 </table>
-

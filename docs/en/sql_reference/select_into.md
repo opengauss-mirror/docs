@@ -32,24 +32,22 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 ## Parameter Description<a name="en-us_topic_0283137419_en-us_topic_0237122185_en-us_topic_0059779381_s5393efdc6e4a42e096e2fd326054418c"></a>
 
--   **new\_table**
+- **new\_table**
 
     **new\_table**  specifies the name of the new table.
 
-
--   **UNLOGGED**
+- **UNLOGGED**
 
     Specifies that the table is created as an unlogged table. Data written to unlogged tables is not written to the WALs, which makes them considerably faster than ordinary tables. However, they are not crash-safe: an unlogged table is automatically truncated after a crash or unclean shutdown. Contents of an unlogged table are also not replicated to standby servers. Any indexes created on an unlogged table are automatically unlogged as well.
 
-    -   Usage scenario: Unlogged tables do not ensure data security. Users can back up data before using unlogged tables; for example, users should back up the data before a system upgrade.
-    -   Troubleshooting: If data is missing in the indexes of unlogged tables due to some unexpected operations such as an unclean shutdown, users should re-create the indexes with errors.
+    - Usage scenario: Unlogged tables do not ensure data security. Users can back up data before using unlogged tables; for example, users should back up the data before a system upgrade.
+    - Troubleshooting: If data is missing in the indexes of unlogged tables due to some unexpected operations such as an unclean shutdown, users should re-create the indexes with errors.
 
-
--   **GLOBAL | LOCAL**
+- **GLOBAL | LOCAL**
 
     When creating a temporary table, you can specify the  **GLOBAL**  or  **LOCAL**  keyword before  **TEMP**  or  **TEMPORARY**. If the keyword  **GLOBAL**  is specified, openGauss creates a global temporary table. Otherwise, openGauss creates a local temporary table.
 
--   **TEMPORARY | TEMP**
+- **TEMPORARY | TEMP**
 
     If  **TEMP**  or  **TEMPORARY**  is specified, the created table is a temporary table. Temporary tables are classified into global temporary tables and local temporary tables. If the keyword  **GLOBAL**  is specified when a temporary table is created, the table is a global temporary table. Otherwise, the table is a local temporary table.
 
@@ -59,15 +57,14 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     >[!TIP]NOTICE 
     >
-    >-   Local temporary tables are visible to the current session through the schema starting with  **pg\_temp**  start. Users should not delete schema started with  **pg\_temp**  or  **pg\_toast\_temp**.
-    >-   If  **TEMPORARY**  or  **TEMP**  is not specified when you create a table but its schema is set to that starting with  **pg\_temp\_**  in the current session, the table will be created as a temporary table.
-    >-   If global temporary tables and indexes are being used by other sessions, do not perform  **ALTER**  or  **DROP**.
-    >-   The DDL of a global temporary table affects only the user data and indexes of the current session. For example,  **TRUNCATE**,  **REINDEX**, and  **ANALYZE**  are valid only for the current session.
-
+    >- Local temporary tables are visible to the current session through the schema starting with  **pg\_temp**  start. Users should not delete schema started with  **pg\_temp**  or  **pg\_toast\_temp**.
+    >- If  **TEMPORARY**  or  **TEMP**  is not specified when you create a table but its schema is set to that starting with  **pg\_temp\_**  in the current session, the table will be created as a temporary table.
+    >- If global temporary tables and indexes are being used by other sessions, do not perform  **ALTER**  or  **DROP**.
+    >- The DDL of a global temporary table affects only the user data and indexes of the current session. For example,  **TRUNCATE**,  **REINDEX**, and  **ANALYZE**  are valid only for the current session.
 
 >[!NOTE]NOTE 
 >
->For details about other** SELECT INTO**  parameters, see  [Parameter Description](select.md#en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc)  in SELECT.
+>For details about other**SELECT INTO**  parameters, see  [Parameter Description](select.md#en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc)  in SELECT.
 
 ## Examples<a name="en-us_topic_0283137419_en-us_topic_0237122185_en-us_topic_0059779381_s895bebf9e3214a0783610d5fc1ad2f31"></a>
 
@@ -86,12 +83,10 @@ openGauss=# DROP TABLE tpcds.reason_t1;
 
 ## Suggestions<a name="en-us_topic_0283137419_en-us_topic_0237122185_en-us_topic_0059779381_section21815038152246"></a>
 
--   **DATABASE**
+- **DATABASE**
 
     You are not advised to re-index a database in a transaction.
 
--   **SYSTEM**
+- **SYSTEM**
 
     You are not advised to re-index system catalogs in transactions.
-
-

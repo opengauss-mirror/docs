@@ -1,6 +1,6 @@
 # 聚集函数
 
--   sum\(expression\)
+- sum\(expression\)
 
     描述：所有输入行的expression总和。
 
@@ -8,9 +8,9 @@
 
     通常情况下输入数据类型和输出数据类型是相同的，但以下情况会发生类型转换：
 
-    -   对于SMALLINT或INT输入，输出类型为BIGINT。
-    -   对于BIGINT输入，输出类型为NUMBER 。
-    -   对于浮点数输入，输出类型为DOUBLE PRECISION。
+    - 对于SMALLINT或INT输入，输出类型为BIGINT。
+    - 对于BIGINT输入，输出类型为NUMBER 。
+    - 对于浮点数输入，输出类型为DOUBLE PRECISION。
 
     示例：
 
@@ -29,7 +29,7 @@
     openGauss=# DROP TABLE tab;
     ```
 
--   max\(expression\)
+- max\(expression\)
 
     描述：所有输入行中expression的最大值。
 
@@ -53,7 +53,7 @@
     openGauss=# DROP TABLE max_t1;
     ```
 
--   min\(expression\)
+- min\(expression\)
 
     描述：所有输入行中expression的最小值。
 
@@ -144,7 +144,7 @@
 
     ```
 
--   avg\(expression\)
+- avg\(expression\)
 
     描述：所有输入值的均值（算术平均）。
 
@@ -172,7 +172,7 @@
     openGauss=# DROP TABLE avg_t1;
     ```
 
--   count\(expression\)
+- count\(expression\)
 
     描述：返回表中满足expression不为NULL的行数。
 
@@ -194,7 +194,7 @@
     openGauss=# DROP TABLE count_t1;
     ```
 
--   count\(\*\)
+- count\(\*\)
 
     描述：返回表中的记录行数。
 
@@ -215,7 +215,7 @@
     openGauss=# DROP TABLE count_t1;
     ```
 
--   delta
+- delta
 
     描述：返回当前行和前一行的差值。
 
@@ -223,7 +223,7 @@
 
     返回值类型：numeric
 
--   mode\(\) within group \(order by value anyelement\)
+- mode\(\) within group \(order by value anyelement\)
 
     描述：返回某列中出现频率最高的值，如果多个值频率相同，则返回最小的那个值。排序方式和该列类型的默认排序方式相同。其中value为输入参数，可以为任意类型。
 
@@ -243,5 +243,3 @@
      a 
     (1 row)
     ```
-
-

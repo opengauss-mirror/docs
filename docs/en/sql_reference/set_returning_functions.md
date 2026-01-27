@@ -2,7 +2,7 @@
 
 ## Series Generating Functions<a name="en-us_topic_0283137117_en-us_topic_0237121985_en-us_topic_0059779332_sfde916b05a3b4024b5cddf1ccf83a8f2"></a>
 
--   generate\_series\(start, stop\)
+- generate\_series\(start, stop\)
 
     Description: Generates a series of values, from  **start**  to  **stop**  with a step size of one.
 
@@ -10,7 +10,7 @@
 
     Return type: setof int, setof bigint, setof numeric \(same as the parameter type\)
 
--   generate\_series\(start, stop, step\)
+- generate\_series\(start, stop, step\)
 
     Description: Generates a series of values, from  **start**  to  **stop**  with a step size of  **step**.
 
@@ -18,14 +18,13 @@
 
     Return type: setof int, setof bigint, setof numeric \(same as the parameter type\)
 
--   generate\_series\(start, stop, step interval\)
+- generate\_series\(start, stop, step interval\)
 
     Description: Generates a series of values, from  **start**  to  **stop**  with a step size of  **step**.
 
     Parameter type: timestamp or timestamp with time zone
 
     Return type: setof timestamp or setof timestamp with time zone \(same as parameter type\)
-
 
 When  **step**  is positive, zero rows are returned if  **start**  is greater than  **stop**. Conversely, when  **step**  is negative, zero rows are returned if  **start**  is less than  **stop**. Zero rows are also returned for  **NULL**  inputs. It is an error for  **step**  to be zero.
 
@@ -79,18 +78,17 @@ openGauss=# SELECT * FROM generate_series('2008-03-01 00:00'::timestamp, '2008-0
 
 ## Subscript Generating Functions<a name="en-us_topic_0283137117_en-us_topic_0237121985_en-us_topic_0059779332_s25da07a4e3f84281af7e30b081b29a88"></a>
 
--   generate\_subscripts\(array anyarray, dim int\)
+- generate\_subscripts\(array anyarray, dim int\)
 
     Description: Generates a series comprising the given array's subscripts.
 
     Return type: setof int
 
--   generate\_subscripts\(array anyarray, dim int, reverse boolean\)
+- generate\_subscripts\(array anyarray, dim int, reverse boolean\)
 
     Description: Generates a series comprising the given array's subscripts. When  **reverse**  is true, the series is returned in reverse order.
 
     Return type: setof int
-
 
 **generate\_subscripts**  is a function that generates the set of valid subscripts for the specified dimension of the given array. Zero rows are returned for arrays that do not have the requested dimension, or for NULL arrays \(but valid subscripts are returned for NULL array elements\). Example:
 
@@ -127,4 +125,3 @@ openGauss=# SELECT * FROM unnest2(ARRAY[[1,2],[3,4]]);
 -- Delete the function.
 openGauss=# DROP FUNCTION unnest2;
 ```
-

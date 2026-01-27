@@ -1,6 +1,6 @@
 # Encrypted Equality Functions<a name="EN-US_TOPIC_0299864759"></a>
 
--   byteawithoutorderwithequalcolin\(cstring\)
+- byteawithoutorderwithequalcolin\(cstring\)
 
     Description: Converts input data to the internal byteawithoutorderwithequalcol format.
 
@@ -8,8 +8,7 @@
 
     Return type: byteawithoutorderwithequalcol
 
-
--   byteawithoutorderwithequalcolout\(byteawithoutorderwithequalcol\)
+- byteawithoutorderwithequalcolout\(byteawithoutorderwithequalcol\)
 
     Description: Converts internal data of the byteawithoutorderwithequalcol type to data of the cstring type.
 
@@ -17,8 +16,7 @@
 
     Return type: cstring
 
-
--   byteawithoutorderwithequalcolsend\(byteawithoutorderwithequalcol\)
+- byteawithoutorderwithequalcolsend\(byteawithoutorderwithequalcol\)
 
     Description: Converts data of the byteawithoutorderwithequalcol type to data of the bytea type.
 
@@ -26,7 +24,7 @@
 
     Return type: bytea
 
--   byteawithoutorderwithequalcolrecv\(internal\)
+- byteawithoutorderwithequalcolrecv\(internal\)
 
     Description: Converts data of the byteawithoutorderwithequalcol type to data of the byteawithoutorderwithequalcol type.
 
@@ -34,7 +32,7 @@
 
     Return type: byteawithoutorderwithequalcol
 
--   byteawithoutorderwithequalcoltypmodin\(\_cstring\)
+- byteawithoutorderwithequalcoltypmodin\(\_cstring\)
 
     Description: Converts data of the byteawithoutorderwithequalcol type to data of the byteawithoutorderwithequalcol type.
 
@@ -42,7 +40,7 @@
 
     Return type: int4
 
--   byteawithoutorderwithequalcoltypmodout\(int4\)
+- byteawithoutorderwithequalcoltypmodout\(int4\)
 
     Description: Converts data of the int4 type into data of the cstring type.
 
@@ -50,7 +48,7 @@
 
     Return type: cstring
 
--   byteawithoutordercolin\(cstring\)
+- byteawithoutordercolin\(cstring\)
 
     Description: Converts input data to the internal byteawithoutordercolin format.
 
@@ -58,7 +56,7 @@
 
     Return type: byteawithoutordercol
 
--   byteawithoutordercolout\(byteawithoutordercol\)
+- byteawithoutordercolout\(byteawithoutordercol\)
 
     Description: Converts internal data of the byteawithoutordercol type to data of the cstring type.
 
@@ -66,7 +64,7 @@
 
     Return type: cstring
 
--   byteawithoutordercolsend\(byteawithoutordercol\)
+- byteawithoutordercolsend\(byteawithoutordercol\)
 
     Description: Converts data of the byteawithoutordercol type to data of the bytea type.
 
@@ -74,7 +72,7 @@
 
     Return type: bytea
 
--   byteawithoutordercolrecv\(internal\)
+- byteawithoutordercolrecv\(internal\)
 
     Description: Converts data of the byteawithoutordercol type to data of the byteawithoutordercol type.
 
@@ -82,7 +80,7 @@
 
     Return type: byteawithoutordercol
 
--   byteawithoutorderwithequalcolcmp\(byteawithoutorderwithequalcol, byteawithoutorderwithequalcol\)
+- byteawithoutorderwithequalcolcmp\(byteawithoutorderwithequalcol, byteawithoutorderwithequalcol\)
 
     Description: Compares two byteawithoutorderwithequalcol data sizes. If the first data size is smaller than the second one,  **–1**  is returned. If the first data size is equal to the second one,  **0**  is returned. If the first data size is larger than the second one,  **1**  is returned.
 
@@ -90,7 +88,7 @@
 
     Return type: int4
 
--   byteawithoutorderwithequalcolcmpbytear\(byteawithoutorderwithequalcol, bytea\)
+- byteawithoutorderwithequalcolcmpbytear\(byteawithoutorderwithequalcol, bytea\)
 
     Description: Compares the byteawithoutorderwithequalcol and bytea data sizes. If the first data size is smaller than the second one,  **–1**  is returned. If the first data size is equal to the second one,  **0**  is returned. If the first data size is larger than the second one,  **1**  is returned.
 
@@ -98,7 +96,7 @@
 
     Return type: int4
 
--   byteawithoutorderwithequalcolcmpbyteal\(bytea, byteawithoutorderwithequalcol\)
+- byteawithoutorderwithequalcolcmpbyteal\(bytea, byteawithoutorderwithequalcol\)
 
     Description: Compares the bytea and byteawithoutorderwithequalcol data sizes. If the first data size is smaller than the second one,  **–1**  is returned. If the first data size is equal to the second one,  **0**  is returned. If the first data size is larger than the second one,  **1**  is returned.
 
@@ -106,55 +104,55 @@
 
     Return type: int4
 
--   byteawithoutorderwithequalcoleq\(byteawithoutorderwithequalcol, byteawithoutorderwithequalcol\)
+- byteawithoutorderwithequalcoleq\(byteawithoutorderwithequalcol, byteawithoutorderwithequalcol\)
 
-    Description: Compares two byteawithoutorderwithequalcol data records. If they are the same,  **true **is returned. Otherwise,  **false **is returned.
+    Description: Compares two byteawithoutorderwithequalcol data records. If they are the same,  **true**is returned. Otherwise,  **false**is returned.
 
     Parameter type: byteawithoutorderwithequalcol, bytea
 
     Return type: Boolean
 
--   byteawithoutorderwithequalcoleqbyteal\(bytea, byteawithoutorderwithequalcol\)
+- byteawithoutorderwithequalcoleqbyteal\(bytea, byteawithoutorderwithequalcol\)
 
-    Description: Compares the bytea and byteawithoutorderwithequalcol data records. If they are the same,  **true **is returned. Otherwise,  **false **is returned.
+    Description: Compares the bytea and byteawithoutorderwithequalcol data records. If they are the same,  **true**is returned. Otherwise,  **false**is returned.
 
     Parameter type: bytea, byteawithoutorderwithequalcol
 
     Return type: Boolean
 
--   byteawithoutorderwithequalcoleqbytear\(byteawithoutorderwithequalcol, bytea\)
+- byteawithoutorderwithequalcoleqbytear\(byteawithoutorderwithequalcol, bytea\)
 
-    Description: Compares the byteawithoutorderwithequalcol and bytea data records. If they are the same,  **true **is returned. Otherwise,  **false **is returned.
+    Description: Compares the byteawithoutorderwithequalcol and bytea data records. If they are the same,  **true**is returned. Otherwise,  **false**is returned.
 
     Parameter type: byteawithoutorderwithequalcol, bytea
 
     Return type: Boolean
 
--   byteawithoutorderwithequalcolne\(byteawithoutorderwithequalcol, byteawithoutorderwithequalcol\)
+- byteawithoutorderwithequalcolne\(byteawithoutorderwithequalcol, byteawithoutorderwithequalcol\)
 
-    Description: Compares two byteawithoutorderwithequalcol data records. If they are different,  **true **is returned. Otherwise,  **false **is returned.
+    Description: Compares two byteawithoutorderwithequalcol data records. If they are different,  **true**is returned. Otherwise,  **false**is returned.
 
     Parameter type: byteawithoutorderwithequalcol, byteawithoutorderwithequalcol
 
     Return type: Boolean
 
--   byteawithoutorderwithequalcolnebyteal\(bytea, byteawithoutorderwithequalcol\)
+- byteawithoutorderwithequalcolnebyteal\(bytea, byteawithoutorderwithequalcol\)
 
-    Description: Compares the bytea and byteawithoutorderwithequalcol data records. If they are the same,  **true **is returned. Otherwise,  **false **is returned.
+    Description: Compares the bytea and byteawithoutorderwithequalcol data records. If they are the same,  **true**is returned. Otherwise,  **false**is returned.
 
     Parameter type: bytea, byteawithoutorderwithequalcol
 
     Return type: Boolean
 
--   byteawithoutorderwithequalcolnebytear\(byteawithoutorderwithequalcol, bytea\)
+- byteawithoutorderwithequalcolnebytear\(byteawithoutorderwithequalcol, bytea\)
 
-    Description: Compares the byteawithoutorderwithequalcol and bytea data records. If they are the same,  **true **is returned. Otherwise,  **false **is returned.
+    Description: Compares the byteawithoutorderwithequalcol and bytea data records. If they are the same,  **true**is returned. Otherwise,  **false**is returned.
 
     Parameter type: byteawithoutorderwithequalcol, bytea
 
     Return type: Boolean
 
--   hll\_hash\_byteawithoutorderwithequalcol\(byteawithoutorderwithequalcol\)
+- hll\_hash\_byteawithoutorderwithequalcol\(byteawithoutorderwithequalcol\)
 
     Description: Returns the hll hash value of byteawithoutorderwithequalcol.
 
@@ -181,5 +179,3 @@
     LINE 1: SELECT * FROM byteawithoutorderwithequalcolsend('\x907219019...
                                                             ^
     ```
-
-

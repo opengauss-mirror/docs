@@ -18,16 +18,14 @@ DEALLOCATE [ PREPARE ] { name | ALL };
 
 ## Parameter Description<a name="en-us_topic_0283136579_en-us_topic_0237122129_en-us_topic_0059778612_sb42a2e3c4ef945d3b53af4a15f876698"></a>
 
--   **name**
+- **name**
 
     Specifies the name of the prepared statement to be deallocated.
 
--   **ALL**
+- **ALL**
 
     Deallocates all prepared statements.
-
 
 ## Examples<a name="en-us_topic_0283136579_en-us_topic_0237122129_en-us_topic_0059778612_s0cd8d4c203d642af85b3ae2ca4600bb3"></a>
 
 None
-

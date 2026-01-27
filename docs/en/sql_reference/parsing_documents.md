@@ -19,9 +19,9 @@ In the preceding example we see that the resulting  **tsvector**  does not conta
 
 The  **to\_tsvector**  function internally calls a parser which breaks the document text into tokens and assigns a type to each token. For each token, a list of dictionaries is consulted. The list varies with the token type. The first dictionary that recognizes the token emits one or more normalized lexemes to represent the token. Example:
 
--   **rats**  became  **rat**  because one of the dictionaries recognized that the word  **rats**  is a plural form of  **rat**.
--   Some words are recognized as stop words \(see  [Stop Words](stop_words.md)\), which causes them to be ignored since they occur too frequently to be useful in searching. In our example these are  **a**,  **on**, and  **it**.
--   If no dictionary in the list recognizes the token then it is also ignored. In this example that happened to the punctuation sign \(-\) because there are no dictionaries assigned for its token type \(**Space symbols**\), meaning space tokens will never be indexed.
+- **rats**  became  **rat**  because one of the dictionaries recognized that the word  **rats**  is a plural form of  **rat**.
+- Some words are recognized as stop words \(see  [Stop Words](stop_words.md)\), which causes them to be ignored since they occur too frequently to be useful in searching. In our example these are  **a**,  **on**, and  **it**.
+- If no dictionary in the list recognizes the token then it is also ignored. In this example that happened to the punctuation sign \(-\) because there are no dictionaries assigned for its token type \(**Space symbols**\), meaning space tokens will never be indexed.
 
 The choices of parser, dictionaries and which types of tokens to index are determined by the selected text search configuration. It is possible to have many different configurations in the same database, and predefined configurations are available for various languages. In our example we used the default configuration  **english**  for the English language.
 
@@ -43,4 +43,3 @@ openGauss=# DROP TABLE tsearch.tt;
 ```
 
 In this example,  **setweight**  is used to label the source of each lexeme in the finished  **tsvector**, and then the labeled  **tsvector**  values are merged using the tsvector concatenation operator  **||**. For details about these operations, see  [Manipulating tsvector](manipulating_tsvector.md).
-

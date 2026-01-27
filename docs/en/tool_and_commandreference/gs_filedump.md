@@ -9,6 +9,7 @@
 Ensure that the database directory exists and the path is correct.
 
 ## Syntax
+
 ```
 gs_filedump [-abcdfhikuxy] [-r relfilenode] [-T reltoastrelid] [-R startblock [endblock]] [-D attrlist] [-S blocksize] [-s segsize] [-n segnumber] FILENAME
 ```
@@ -68,16 +69,19 @@ gs_filedump -u -ot -D int,timestamp,time,timetz,~  $PGDATA/base/15938/16384
 ```
 
 + Parse a segment table.
+
 ```
  gs_filedump -o -r 4161 -T 4162 -D int,smallint,bigint,~  $PGDATA/base/15938/1
 ```
 
 + Parse control file.
+
 ```
 gs_filedump -c $PGDATA/global/pg_control
 ```
 
 + Parse map file.
+
 ```
 gs_filedump -m $PGDATA/global/pg_filenode.map
 ```

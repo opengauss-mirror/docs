@@ -6,15 +6,14 @@ After a query statement has been executed, no response is returned for a long ti
 
 ## Cause Analysis<a name="section101846244812"></a>
 
--   The query statement is complex and requires a long time for execution.
+- The query statement is complex and requires a long time for execution.
 
--   The query statement is blocked.
-
+- The query statement is blocked.
 
 ## Procedure<a name="section954884820"></a>
 
-1.  Log in to the host as the OS user **omm**.
-2.  Run the following command to connect to the database.
+1. Log in to the host as the OS user **omm**.
+2. Run the following command to connect to the database.
 
     ```
     gsql -d postgres -p 8000
@@ -38,6 +37,6 @@ After a query statement has been executed, no response is returned for a long ti
    SELECT query FROM pg_stat_activity WHERE timestampdiff(minutes, query_start, current_timestamp) > 2;
    ```
 
-4.  Analyze the status of the query statements that are run for a long time.
-    -   If the query statement is normal, wait until the execution of the query statement is complete.
-    -   If the query statement is blocked, rectify the fault by referring to [Analyzing Whether a Query Statement Is Blocked](analyzing_whether_a_query_statement_is_blocked.md).
+4. Analyze the status of the query statements that are run for a long time.
+    - If the query statement is normal, wait until the execution of the query statement is complete.
+    - If the query statement is blocked, rectify the fault by referring to [Analyzing Whether a Query Statement Is Blocked](analyzing_whether_a_query_statement_is_blocked.md).

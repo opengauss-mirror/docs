@@ -33,4 +33,3 @@ The following table describes columns in the SQL Detail report.
 </tr>
 </tbody>
 </table>
-

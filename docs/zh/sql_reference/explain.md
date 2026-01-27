@@ -235,5 +235,3 @@ openGauss=# explain (costs false) select * from test_t where c1=100;
 ## 相关链接<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_scfac1ca9cbb74e3d891c918580e6b393"></a>
 
 [ANALYZE | ANALYSE](analyze_analyse.md)
-
-

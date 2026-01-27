@@ -10,10 +10,10 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: a string of case-sensitive characters. The values include:
 
--   **serializable**: This value is equivalent to REPEATABLE READ in openGauss.
--   **read committed**  indicates that only the data in committed transactions will be read.
--   **repeatable read**  indicates that only the data committed before transaction start is read. Uncommitted data or data committed in other concurrent transactions cannot be read.
--   **default**: The value is the same as that of  **default\_transaction\_isolation**.
+- **serializable**: This value is equivalent to REPEATABLE READ in openGauss.
+- **read committed**  indicates that only the data in committed transactions will be read.
+- **repeatable read**  indicates that only the data committed before transaction start is read. Uncommitted data or data committed in other concurrent transactions cannot be read.
+- **default**: The value is the same as that of  **default\_transaction\_isolation**.
 
 **Default value:** **read committed**
 
@@ -27,8 +27,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the current transaction is a read-only transaction.
--   **off**  indicates that the current transaction can be a read/write transaction.
+- **on**  indicates that the current transaction is a read-only transaction.
+- **off**  indicates that the current transaction can be a read/write transaction.
 
 **Default value**:  **off**
 
@@ -40,8 +40,8 @@ This parameter is a SUSET parameter. Set it based on method 3 in  [Table 1](../d
 
 **Value range**: Boolean
 
--   **on**  indicates that the system is in maintenance mode.
--   **off**  indicates that the system is not in maintenance mode.
+- **on**  indicates that the system is in maintenance mode.
+- **off**  indicates that the system is not in maintenance mode.
 
 >[!TIP]NOTICE 
 >
@@ -57,8 +57,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the concurrent update is allowed.
--   **off**  indicates that the system is not in maintenance mode.
+- **on**  indicates that the concurrent update is allowed.
+- **off**  indicates that the system is not in maintenance mode.
 
 **Default value**:  **on**
 
@@ -70,8 +70,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the execution of a read-only serial transaction can be delayed.
--   **off**  indicates that the execution of a read-only serial transaction cannot be delayed.
+- **on**  indicates that the execution of a read-only serial transaction can be delayed.
+- **off**  indicates that the execution of a read-only serial transaction cannot be delayed.
 
 **Default value**:  **off**
 
@@ -83,8 +83,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  or  **true**  indicates that all versions of tuples in the table are displayed.
--   **off**  or  **false**  indicates that no versions of tuples in the table are displayed.
+- **on**  or  **true**  indicates that all versions of tuples in the table are displayed.
+- **off**  or  **false**  indicates that no versions of tuples in the table are displayed.
 
 **Default value**:  **off**
 
@@ -98,9 +98,9 @@ This parameter is an internal parameter. Do not set it.
 
 **Value range**: 0 to 2
 
--   **2**  Indicates the single primary mode. In this mode, the standby node cannot be expanded.
--   **1**  Indicates that the one-primary-multiple-standby mode is used, covering all scenarios. This mode is recommended.
--   **0**  Indicates the primary/standby mode. Currently, this mode is not supported.
+- **2**  Indicates the single primary mode. In this mode, the standby node cannot be expanded.
+- **1**  Indicates that the one-primary-multiple-standby mode is used, covering all scenarios. This mode is recommended.
+- **0**  Indicates the primary/standby mode. Currently, this mode is not supported.
 
 **Default value**:  **1**
 
@@ -132,8 +132,7 @@ This parameter is a SIGHUP parameter. Set it based on  [Table 2](../database_adm
 
 **Value range**: Boolean
 
--   **on**  indicates that snapshots  **xmin**  and  **oldestxmin**  are calculated with a delay.
--   **off**  indicates that snapshot  **xmin**  and  **oldestxmin**  are calculated in real time.
+- **on**  indicates that snapshots  **xmin**  and  **oldestxmin**  are calculated with a delay.
+- **off**  indicates that snapshot  **xmin**  and  **oldestxmin**  are calculated in real time.
 
 **Default value**:  **on**
-

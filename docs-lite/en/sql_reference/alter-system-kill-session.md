@@ -16,14 +16,13 @@ ALTER SYSTEM KILL SESSION 'session_sid, serial' [ IMMEDIATE ];
 
 ## Parameter Description<a name="en-us_topic_0283137036_en-us_topic_0237122075_en-us_topic_0059778605_sa834b01395fd4366a5dce7a64ad867b6"></a>
 
--   **session\_sid, serial**
+- **session\_sid, serial**
 
     Specifies the SID and SERIAL of a session \(To obtain the values, see the example.\)
 
--   **IMMEDIATE**
+- **IMMEDIATE**
 
     Specifies that a session will be ended instantly after the statement is executed.
-
 
 ## Examples<a name="en-us_topic_0283137036_en-us_topic_0237122075_en-us_topic_0059778605_s731ce019d40848b1aa9b394fd2484a33"></a>
 
@@ -47,4 +46,3 @@ LEFT JOIN pg_authid ad ON(sa.usesysid = ad.oid)WHERE sa.application_name <> 'Job
 -- End the session whose SID is 140131075880720.
 openGauss=#  ALTER SYSTEM KILL SESSION '140131075880720,0' IMMEDIATE;
 ```
-

@@ -159,4 +159,3 @@ The following functions in openGauss have been discarded in the latest version:
 </tr>
 </tbody>
 </table>
-

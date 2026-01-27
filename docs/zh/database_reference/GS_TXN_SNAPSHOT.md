@@ -3,6 +3,7 @@
 `GS_TXN_SNAPSHOT` 是“时间戳-CSN”映射表，周期性采样，并维护适当的时间范围，用于估算范围内的时间戳对应的CSN值。
 
 示例：
+
 ```sql
 openGauss=# select * from gs_txn_snapshot;
  snptime | snpxmin | snpcsn | snpsnapshot 
@@ -50,4 +51,3 @@ openGauss=# select * from gs_txn_snapshot;
 </tr>
 </tbody>
 </table>
-

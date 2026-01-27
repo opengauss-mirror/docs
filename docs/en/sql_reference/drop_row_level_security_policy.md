@@ -16,23 +16,21 @@ DROP [ ROW LEVEL SECURITY ] POLICY [ IF EXISTS ] policy_name ON table_name [ CAS
 
 ## Parameter Description<a name="en-us_topic_0283136715_en-us_topic_0237122144_section11851526346"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Reports a notice instead of an error if the specified row-level access control policy does not exist.
 
--   **policy\_name**
+- **policy\_name**
 
     Specifies the name of the row-level access control policy to be deleted.
 
-    -   table\_name
+    - table\_name
 
         Specifies the name of the table containing the row-level access control policy.
 
-    -   CASCADE/RESTRICT
+    - CASCADE/RESTRICT
 
         Currently, no objects depend on row-level access control policies. Therefore,  **CASCADE**  is equivalent to  **RESTRICT**, and they are reserved to ensure backward compatibility.
-
-
 
 ## Examples<a name="en-us_topic_0283136715_en-us_topic_0237122144_section17979101023515"></a>
 
@@ -50,4 +48,3 @@ openGauss=# DROP ROW LEVEL SECURITY POLICY all_data_rls ON all_data;
 ## Helpful Links<a name="en-us_topic_0283136715_en-us_topic_0237122144_section1426016489355"></a>
 
 [ALTER ROW LEVEL SECURITY POLICY](alter_row_level_security_policy.md)  and  [CREATE ROW LEVEL SECURITY POLICY](create_row_level_security_policy.md)
-

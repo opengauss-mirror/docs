@@ -38,4 +38,3 @@ ALTER TABLE tablename DELETE STATISTICS ((column_1, column_2)); --Delete statist
 
 >[!NOTE]NOTE 
 >Use  **EXPLAIN**  to show the execution plan of each SQL statement. If  **rows=10**  \(the default value, probably indicating that the table has not been analyzed\) is displayed in the  **SEQ SCAN**  output of a table, run the  **ANALYZE**  statement for this table.
-

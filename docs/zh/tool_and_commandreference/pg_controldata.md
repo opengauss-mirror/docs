@@ -14,28 +14,27 @@ pg\_controldata工具用来显示数据库目录下control文件的信息。
 pg_controldata [OPTION]... DATADIR
 ```
 
-
 ## 参数说明<a name="zh-cn_topic_0237152440_section187851955142614"></a>
 
--   DATADIR
+- DATADIR
 
     查看control文件信息时所用的参数，DATADIR为实例对应的数据库目录。
 
 OPTION取值如下所示
 
--   --enable-dss
+- --enable-dss
 
     资源池化参数，开启资源池化功能。
 
--   --socketpath=SOCKETPATH
+- --socketpath=SOCKETPATH
 
     资源池化参数，dss实例进程使用的socket文件路径，仅支持绝对路径，可不指定，默认值为$DSS_HOME/.dss_unix_d_socket。
 
--   -V, --version
+- -V, --version
 
     显示版本信息。
 
--   -?,--help
+- -?,--help
 
     打印帮助信息。
 
@@ -44,6 +43,7 @@ OPTION取值如下所示
 ```
 pg_controldata DATADIR
 ```
+
 **说明：**
 
  - 在非资源池化模式，OPTION的取值不能是资源池化参数。
@@ -78,4 +78,3 @@ pg_controldata --enable-dss --socketpath=SOCKETPATH VGDATA
 | normal                | 未进行按需回放                                               |
 | in on-demand build    | 按需回放中，集群在构建回放必须信息，暂不对外提供服务         |
 | in on-demand redo     | 按需回放中，集群对外提供服务，后台进行日志回放，该阶段仅支持部分SQL |
-

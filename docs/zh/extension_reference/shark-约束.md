@@ -8,8 +8,8 @@
 
 openGauss中shark插件中的约束如下：
 
--   本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。原openGauss请参考章节[约束](../sql_reference/constraints.md)。
--   IDENTITY: 用于在表中创建一个标识列，仅在D模式下shark插件中生效。
+- 本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。原openGauss请参考章节[约束](../sql_reference/constraints.md)。
+- IDENTITY: 用于在表中创建一个标识列，仅在D模式下shark插件中生效。
 
 ## IDENTITY约束<a name="section11621339171820"></a>
 

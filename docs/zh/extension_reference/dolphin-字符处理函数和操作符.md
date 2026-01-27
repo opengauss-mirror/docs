@@ -6,7 +6,7 @@
 2. 新增```locate/lcase/ucase/insert/bin/char/chara/elt/field/find_in_set/hex/space/soundex/export_set/ord/substring_index/from_base64/uuid```函数。
 3. 修改```length/bit_length/octet_length/convert/format/left/right```函数的表现。
 4. 新增```^```操作符的异或功能，新增```like binary/not like binary```操作符。
-5. 修改```like/not like ```操作符的表现。
+5. 修改```like/not like```操作符的表现。
 6. 新增```!```操作符，可在表达式前使用，其效果与NOT一致。
 7. 新增```text_bool/varchar_bool/char_bool```函数。
 8. 新增```name_const```函数。
@@ -16,7 +16,7 @@
 12. 新增```weight_string```函数。
 13. 修改```substring```函数表现，将其映射为```substr```。但如果前缀添加pg_catalog，则仍为原始openGauss表现。
 
--   bit\_length\(string\)
+- bit\_length\(string\)
 
     描述：字符串的位数。对于二进制输入，将向上补齐至8的倍数。
 
@@ -38,7 +38,7 @@
     (1 row)
     ```
 
--   insert\(des text, start int, length int, src text\)
+- insert\(des text, start int, length int, src text\)
 
     描述：在原字符串的指定位置插入一个新字符串，并从指定位置开始替换掉原字符串一定数量的字符。
 
@@ -54,7 +54,7 @@
     (1 row)
     ```
 
--   lcase\(string\)
+- lcase\(string\)
 
     描述：把字符串转化为小写，等价于lower。
 
@@ -70,7 +70,7 @@
     (1 row)
     ```
 
--   length\(string\)
+- length\(string\)
 
     描述：获取参数string中字符的数目。对于多字符编码（如中文），返回字节数。
 
@@ -210,7 +210,7 @@
     (3 rows)
     ```
 
--   uuid\(\)
+- uuid\(\)
 
     描述：以UUID1的生成方式返回一个aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee格式的UUID。
 
@@ -226,12 +226,12 @@
     (1 row)
     ```
 
--   locate\(substring, string \[,position\]\)
+- locate\(substring, string \[,position\]\)
 
     描述：从字符串string的position（缺省时为1）所指的位置开始查找并返回第1次出现子串substring的位置的值。字符串区分大小写。
 
-    -   当position为0时，返回0。
-    -   当position为负数时，从字符串倒数第n个字符往前逆向搜索。n为position的绝对值。
+    - 当position为0时，返回0。
+    - 当position为负数时，从字符串倒数第n个字符往前逆向搜索。n为position的绝对值。
 
     返回值类型：integer，字符串不存在时返回0。
 
@@ -257,7 +257,7 @@
     (1 row)
     ```
 
--   octet\_length\(string\)
+- octet\_length\(string\)
 
     描述：等价于length。
 
@@ -273,7 +273,7 @@
     (1 row)
     ```
 
--   source\_string regexp pattern
+- source\_string regexp pattern
 
     描述：正则表达式的模式匹配操作符。
 
@@ -291,7 +291,7 @@
     (1 row)
     ```
 
--   source\_string not regexp pattern
+- source\_string not regexp pattern
 
     描述：regexp的结果取反。
 
@@ -309,7 +309,7 @@
     (1 row)
     ```
 
--   source\_string rlike pattern
+- source\_string rlike pattern
 
     描述：等价于regexp。
 
@@ -327,7 +327,7 @@
     (1 row)
     ```
 
--   ucase\(string\)
+- ucase\(string\)
 
     描述：把字符串转化为大写。等价于upper。
 
@@ -343,7 +343,7 @@
     (1 row)
     ```
 
--   bin(number or string)
+- bin(number or string)
 
     描述：返回N整型或者数字字符的二进制字符串，汉字返回0。
 
@@ -365,7 +365,7 @@
     (1 row)
     ```
 
--   char(any)
+- char(any)
 
     描述：根据ASCII码对多个数字转换为多个字符，结果受到[GUC参数](../database_reference/speech_act.md)bytea_output影响。
 
@@ -388,7 +388,7 @@
     (1 row)
     ```
 
--   chara(any)
+- chara(any)
 
     描述：根据ASCII码对多个数字转换为多个字符，结果同char(any)函数。
 
@@ -411,7 +411,7 @@
     (1 row)
     ```
 
--   char_length(string)或character_leng(string)
+- char_length(string)或character_leng(string)
 
     描述：字符串中的字符个数,一个汉字长度为1，并且支持二进制类型。
 
@@ -473,7 +473,7 @@
     (1 row)
     ```
 
--   elt(number, str1,str2,str3,...)
+- elt(number, str1,str2,str3,...)
 
     描述：返回后面字符串的第N个字符串。
 
@@ -489,7 +489,7 @@
     (1 row)
     ```
 
--   left\(str text, n int\)
+- left\(str text, n int\)
 
     描述：返回字符串的前n个字符。当n是负数时，当做0处理。
 
@@ -745,8 +745,7 @@
     
   ```
 
-
--   export_set(bits, on, off, separator, number of bits)
+- export_set(bits, on, off, separator, number of bits)
 
     描述：返回一个字符串，该字符串将显示位数。该函数需要5个自变量才能起作用。该函数将第一个参数(即整数)转换为二进制数字，如果二进制数字为1，则返回“on”，如果二进制数字为0，则返回“off”。
 
@@ -755,6 +754,7 @@
     注意：必须输入前三个参数。第一个参数（bits）需要输入数字，第二个参数（on）和第三个参数（off）需要输入字符串。对于缺省的后两个参数，默认采用`，`和`64`进行执行；最后一位如果为负数或者大于64，都默认按64处理。
 
     示例：
+
     ```sql
     openGauss=# SELECT EXPORT_SET(5,'Y','N',',',5);
      export_set 
@@ -779,15 +779,11 @@
 
     - 若输入的字符串字节数不为三的倍数，那么剩余的字节根据编码规则转换，若有一个字节不满8位，则在低位补0补满8位，同时用'='将转换结果补满四个字节。若最后一组只有两个字节，每6位一组，第三组只有4位，低位要补两个0，然后这三组再分别高位补两个0，转成三个字符，末尾补一个'='；若最后一组只有一个字节，每6位一组，第二组只有2位，低位要补四个0，然后这两组再分别高位补两个0，转成两个字符，末尾补两个'='。
 
-    
-
     解码规则：
 
     - 将输入的字符串用二进制表示，去掉每个字节高位的两个0。
     - 根据编码规则，正确的编码字节数必为4的倍数。若末尾有'='，则根据'='数量去掉最后一个除'='以外的字节低位的0。若末尾有一个'='，即最后四个字节为'\*\*\*='，则将前三个字节转二进制后再去掉最后两个0，若末尾有两个'='，即最后四个字节为'\*\*=='，则将前两个字节转二进制后再去掉最后四个0。
     - 将去掉高位0后的各个字节按顺序拼接，每8位转成一个字符。
-
-    
 
     例子1：YWJj
 
@@ -796,7 +792,7 @@
     3. 将去掉高位0后的各个字节按顺序拼接成：01100001(a)01100010(b)01100011(c)。
     4. 故解码结果为abc。
 
-    例子2：YWI=
+        例子2：YWI=
 
     5. 字符串用二进制表示为：00011000(Y)00010110(W)00001000(I)。
     6. 去掉每个字节高位的两个0后变成：011000 010110 001000。
@@ -813,16 +809,17 @@
         (1 row)
         
     ```
+
 - ORD(str)。
 
   描述: 
     返回str的最左边的字符的数值，并使用下面公式计算该字符组成字节的对应数值：
+
     ```
       (1st byte code)
     + (2nd byte code  256)
     + (3rd byte code  256^2) ...
     ```
-
 
   返回值类型：INT
 

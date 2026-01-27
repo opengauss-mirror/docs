@@ -22,7 +22,7 @@ sysctl -p
 
 ## Network Parameters<a name="en-us_topic_0283136559_en-us_topic_0237121493_en-us_topic_0073253550_en-us_topic_0040046482_section710274519189"></a>
 
--   In the  **sysctl.conf**  file, modify network parameters. If the file does not contain such parameters, add them manually. For details, see  [Table 1](#en-us_topic_0283136559_en-us_topic_0237121493_en-us_topic_0073253550_en-us_topic_0040046482_table5597039720233).
+- In the  **sysctl.conf**  file, modify network parameters. If the file does not contain such parameters, add them manually. For details, see  [Table 1](#en-us_topic_0283136559_en-us_topic_0237121493_en-us_topic_0073253550_en-us_topic_0040046482_table5597039720233).
 
     ```
     vim /etc/sysctl.conf
@@ -85,7 +85,7 @@ sysctl -p
     </tbody>
     </table>
 
--   Use the  **ifconfig**  command to set the maximum transmission unit \(MTU\) of 10 GE NICs. The value  **8192**  is recommended because this setting improves the network bandwidth usage.
+- Use the  **ifconfig**  command to set the maximum transmission unit \(MTU\) of 10 GE NICs. The value  **8192**  is recommended because this setting improves the network bandwidth usage.
 
     Example:
 
@@ -103,11 +103,11 @@ sysctl -p
     ```
 
     >[!NOTE]NOTE 
-    >-   **ethx**  indicates the 10 GE service NIC used in the database.
-    >-   The first command is used to set the MTU. The second command is used to verify that the MTU has been successfully set. The texts in bold indicate the value of the MTU.
-    >-   Set the MTU as user  **root**.
+    >- **ethx**  indicates the 10 GE service NIC used in the database.
+    >- The first command is used to set the MTU. The second command is used to verify that the MTU has been successfully set. The texts in bold indicate the value of the MTU.
+    >- Set the MTU as user  **root**.
 
--   Use  **ethtool**  to set the length of the receiving \(**RX**\) queue and that of the sending \(**TX**\) queue for 10 GE NICs. The value  **4096**  is recommended because this setting improves the network bandwidth usage.
+- Use  **ethtool**  to set the length of the receiving \(**RX**\) queue and that of the sending \(**TX**\) queue for 10 GE NICs. The value  **4096**  is recommended because this setting improves the network bandwidth usage.
 
     Example:
 
@@ -128,10 +128,9 @@ sysctl -p
     ```
 
     >[!NOTE]NOTE 
-    >-   **ethx**  indicates the 10 GE service NIC used in the database.
-    >-   The first command is used to set the lengths of the receiving and sending queues. The second command is to verify whether the lengths have been successfully set. If information similar to the example is displayed, the setting is successful.
-    >-   Set the lengths of the receiving and sending queues as user  **root**.
-
+    >- **ethx**  indicates the 10 GE service NIC used in the database.
+    >- The first command is used to set the lengths of the receiving and sending queues. The second command is to verify whether the lengths have been successfully set. If information similar to the example is displayed, the setting is successful.
+    >- Set the lengths of the receiving and sending queues as user  **root**.
 
 ## I/O Parameters<a name="en-us_topic_0283136559_en-us_topic_0237121493_en-us_topic_0073253550_en-us_topic_0040046482_section43084899192126"></a>
 

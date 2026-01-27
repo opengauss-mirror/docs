@@ -16,7 +16,6 @@ This section describes how to dynamically call store procedures. You must use an
 
 The above syntax diagram is explained as follows:
 
--   **CALL procedure\_name**: calls the stored procedure.
--   **\[:placeholder1,:placeholder2,...\]**: specifies the placeholder list of the stored procedure parameters. The numbers of the placeholders and parameters are the same.
--   **USING \[IN|OUT|IN OUT\]bind\_argument**: specifies where the variable passed to the stored procedure parameter value is stored. The modifiers in front of  **bind\_argument**  and of the corresponding parameter are the same.
-
+- **CALL procedure\_name**: calls the stored procedure.
+- **\[:placeholder1,:placeholder2,...\]**: specifies the placeholder list of the stored procedure parameters. The numbers of the placeholders and parameters are the same.
+- **USING \[IN|OUT|IN OUT\]bind\_argument**: specifies where the variable passed to the stored procedure parameter value is stored. The modifiers in front of  **bind\_argument**  and of the corresponding parameter are the same.

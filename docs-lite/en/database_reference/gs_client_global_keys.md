@@ -1,6 +1,6 @@
 # GS\_CLIENT\_GLOBAL\_KEYS<a name="EN-US_TOPIC_0294528092"></a>
 
-**GS\_CLIENT\_GLOBAL\_KEYS **records information about the CMK in the encrypted equality feature. Each record corresponds to a CMK.
+**GS\_CLIENT\_GLOBAL\_KEYS**records information about the CMK in the encrypted equality feature. Each record corresponds to a CMK.
 
 **Table  1**  GS\_CLIENT\_GLOBAL\_KEYS columns
 
@@ -60,4 +60,3 @@
 
 >[!NOTE]NOTE 
 >In the Lite scenario, openGauss provides this system catalog, but the encrypted equality feature is unavailable.
-

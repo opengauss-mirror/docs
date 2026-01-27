@@ -19,4 +19,3 @@ openGauss uses users and roles to control the access to databases. A role can be
 ## Transaction<a name="en-us_topic_0283137146_en-us_topic_0237120248_en-us_topic_0059779238_sac2ce3a4af3c4bd9bf75f61d658f9402"></a>
 
 In openGauss, transactions are managed by multi-version concurrency control \(MVCC\) and two-phase locking \(2PL\). It enables smooth data reads and writes. openGauss MVCC saves historical version data together with the current tuple version. openGauss uses a VACUUM thread instead of rollback segments to periodically delete historical version data. Unless in performance optimization, you do not need to pay attention to the  **VACUUM**  process. In addition, openGauss automatically commits transactions.
-

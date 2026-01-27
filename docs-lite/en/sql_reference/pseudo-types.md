@@ -119,4 +119,3 @@ openGauss=# DROP FUNCTION showall();
 -- Delete the table.
 openGauss=# drop table t1;
 ```
-

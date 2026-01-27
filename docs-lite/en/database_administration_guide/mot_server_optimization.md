@@ -4,9 +4,9 @@
 
 Generally, databases are bounded by the following components –
 
--   **CPU –**  A faster CPU speeds up any CPU-bound database.
--   **Disk –**  High-speed SSD/NVME speeds up any I/O-bound database.
--   **Network –**  A faster network speeds up any  **SQL\*Net**-bound database.
+- **CPU –**  A faster CPU speeds up any CPU-bound database.
+- **Disk –**  High-speed SSD/NVME speeds up any I/O-bound database.
+- **Network –**  A faster network speeds up any  **SQL\*Net**-bound database.
 
 In addition to the above, the following general-purpose server settings are used by default and may significantly affect a database's performance.
 
@@ -16,16 +16,15 @@ The following are optional settings for optimizing MOT database performance runn
 
 ### BIOS<a name="en-us_topic_0283136603_en-us_topic_0270171556_section318382161118"></a>
 
--   Hyper Threading – ON
+- Hyper Threading – ON
 
     Activation \(HT=ON\) is highly recommended.
 
     We recommend turning hyper threading ON while running OLTP workloads on MOT. When hyper‑threading is used, some OLTP workloads demonstrate performance gains of up to40%.
 
-
 ### OS Environment Settings<a name="en-us_topic_0283136603_en-us_topic_0270171556_section13692132341213"></a>
 
--   NUMA
+- NUMA
 
     Disable NUMA balancing, as described below. MOT performs its own memory management with extremely efficient NUMA-awareness, much more than the default methods used by the operating system.
 
@@ -33,7 +32,7 @@ The following are optional settings for optimizing MOT database performance runn
     echo 0 > /proc/sys/kernel/numa_balancing
     ```
 
--   Services
+- Services
 
     Disable Services, as described below –
 
@@ -43,7 +42,7 @@ The following are optional settings for optimizing MOT database performance runn
     service rsyslog stop       # OPTIONAL, performance
     ```
 
--   Tuned Service
+- Tuned Service
 
     The following section is mandatory.
 
@@ -57,11 +56,11 @@ The following are optional settings for optimizing MOT database performance runn
 
     Other less suitable profiles for openGauss and MOT server that may affect MOT's overall performance are – balanced, desktop, latency-performance, network-latency, network-throughput and powersave.
 
--   Sysctl
+- Sysctl
 
     The following lists the recommended operating system settings for best performance.
 
-    -   Add the following settings to /etc/sysctl.conf and run sysctl -p
+    - Add the following settings to /etc/sysctl.conf and run sysctl -p
 
         ```
         net.ipv4.ip_local_port_range = 9000 65535
@@ -106,7 +105,7 @@ The following are optional settings for optimizing MOT database performance runn
         net.ipv4.tcp_syn_retries = 5
         ```
 
-    -   Update the section of /etc/security/limits.conf to the following –
+    - Update the section of /etc/security/limits.conf to the following –
 
         ```
         <user> soft nofile 100000
@@ -115,7 +114,7 @@ The following are optional settings for optimizing MOT database performance runn
 
     The  **soft**  and a  **hard**  limit settings specify the quantity of files that a process may have opened at once. The soft limit may be changed by each process running these limits up to the hard limit value.
 
--   Disk/SSD
+- Disk/SSD
 
     The following describes how to ensure that disk R/W performance is suitable for database synchronous commit mode.
 
@@ -130,7 +129,6 @@ The following are optional settings for optimizing MOT database performance runn
 
     In case the disk bandwidth is significantly below the above number \(789 MB/s\), it may create a performance bottleneck for openGauss, and especially for MOT.
 
-
 ### Network<a name="en-us_topic_0283136603_en-us_topic_0270171556_section77145406184"></a>
 
 Use a 10Gbps network or higher.
@@ -142,12 +140,12 @@ Server side: iperf -s
 Client side: iperf -c <IP>
 ```
 
--   rc.local – Network Card Tuning
+- rc.local – Network Card Tuning
 
     The following optional settings have a significant effect on performance –
 
-    1.  Copy set\_irq\_affinity.sh from  [https://gist.github.com/SaveTheRbtz/8875474](https://gist.github.com/SaveTheRbtz/8875474)  to /var/scripts/.
-    2.  Put in /etc/rc.d/rc.local and run chmod in order to ensure that the following script is executed during boot –
+    1. Copy set\_irq\_affinity.sh from  [https://gist.github.com/SaveTheRbtz/8875474](https://gist.github.com/SaveTheRbtz/8875474)  to /var/scripts/.
+    2. Put in /etc/rc.d/rc.local and run chmod in order to ensure that the following script is executed during boot –
 
         ```
         'chmod +x /etc/rc.d/rc.local' 
@@ -167,23 +165,22 @@ Unless indicated otherwise, the following settings are for both client and serve
 
 Modify related BIOS settings, as follows –
 
-1.  Select  **BIOS**  è  **Advanced**  è  **MISC Config**. Set  **Support Smmu**  to  **Disabled**.
-2.  Select  **BIOS**  è  **Advanced**  è  **MISC Config**. Set  **CPU Prefetching Configuration**  to  **Disabled**.
+1. Select  **BIOS**  è  **Advanced**  è  **MISC Config**. Set  **Support Smmu**  to  **Disabled**.
+2. Select  **BIOS**  è  **Advanced**  è  **MISC Config**. Set  **CPU Prefetching Configuration**  to  **Disabled**.
 
     ![](figures/en-us_image_0289900038.png)
 
-3.  Select  **BIOS**  è  **Advanced**  è  **Memory Config**. Set  **Die Interleaving**  to  **Disabled**.
+3. Select  **BIOS**  è  **Advanced**  è  **Memory Config**. Set  **Die Interleaving**  to  **Disabled**.
 
     ![](figures/en-us_image_0289900642.png)
 
-4.  Select  **BIOS**  è  **Advanced**  è  **Performance Config**. Set  **Power Policy**  to  **Performance**.
+4. Select  **BIOS**  è  **Advanced**  è  **Performance Config**. Set  **Power Policy**  to  **Performance**.
 
     ![](figures/en-us_image_0289901020.png)
 
-
 ### OS – Kernel and Boot<a name="en-us_topic_0283136697_en-us_topic_0270171568_section5765175572217"></a>
 
--   The following operating system kernel and boot parameters are usually configured by a sysadmin.
+- The following operating system kernel and boot parameters are usually configured by a sysadmin.
 
     Configure the kernel parameters, as follows –
 
@@ -243,8 +240,7 @@ Modify related BIOS settings, as follows –
     kernel.core_uses_pid=1
     ```
 
-
--   Tuned Service
+- Tuned Service
 
     The following section is mandatory.
 
@@ -258,7 +254,7 @@ Modify related BIOS settings, as follows –
 
     Other less suitable profiles for openGauss and MOT server that may affect MOT's overall performance are – balanced, desktop, latency-performance, network-latency, network-throughput and powersave.
 
--   Boot Tuning
+- Boot Tuning
 
     Add  **iommu.passthrough=1**  to the  **kernel boot arguments**.
 

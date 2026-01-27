@@ -20,7 +20,6 @@ oG_datasync_full_migration 是一款基于Java开发的工具，支持在指定�
 
 oG_datasync_full_migration工具采用生产者-消费者结构，全量迁移时，生产者查询SQLServer数据库中指定schema的表结构并导出表数据至csv文件中，消费者根据表结构创建在openGauss中创建表并将csv文件导入至openGauss数据库。
 
-
 ## 特性约束<a name="section06531946143616"></a>
 
 支持SQLServer2016以上版本。
@@ -32,5 +31,3 @@ oG_datasync_full_migration工具需要jdk11及以上。
 ## 参考文档<a name="section57771982"></a>
 
 oG_datasync_full_migration详细说明和使用文档参考[SqlServer全量迁移指南](https://gitcode.com/opengauss/debezium/blob/master/migration-tool/README.md)。
-
-

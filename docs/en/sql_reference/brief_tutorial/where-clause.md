@@ -13,21 +13,19 @@ SELECT
 
 ## Parameter Description<a name="en-us_topic_0000001225258419_section11566195673011"></a>
 
--   **WHERE clause**
+- **WHERE clause**
 
     The  **WHERE**  clause forms an expression for row selection to narrow down the query range of the SELECT statement. Comparison operators or logical operators, such as \>, <, =, LIKE, or NOT, can be used in the  **WHERE**  clause.
 
-
--   **condition**
+- **condition**
 
     **condition**  indicates any expression that returns a value of Boolean type. Rows that do not meet this condition will not be retrieved.
-
 
 ## Examples<a name="en-us_topic_0000001225258419_section36861642133019"></a>
 
 Use logical operators to read data from the  **customer\_t1**  table.
 
--   **AND**
+- **AND**
 
     Locate the row where the value of  **c\_customer\_id**  is  **hello**  and that of  **c\_customer\_sk**  is  **3869**.
 
@@ -42,7 +40,7 @@ Use logical operators to read data from the  **customer\_t1**  table.
     (4 rows)
     ```
 
--   **OR**
+- **OR**
 
     Locate the row where the value of  **c\_customer\_sk**  is greater than  **6985**  or that of  **c\_customer\_id**  is  **hello**.
 
@@ -58,7 +56,7 @@ Use logical operators to read data from the  **customer\_t1**  table.
     (5 rows)
     ```
 
--   **NOT NULL**
+- **NOT NULL**
 
     Locate the row where the value of  **c\_last\_name**  is not empty in the  **customer\_t1**  table.
 
@@ -69,9 +67,9 @@ Use logical operators to read data from the  **customer\_t1**  table.
     (0 rows)
     ```
 
--   **BETWEEN**
+- **BETWEEN**
 
-    Locate the row where the value of  **c\_customer\_sk**  is between  **4000**  and** 9000**.
+    Locate the row where the value of  **c\_customer\_sk**  is between  **4000**  and**9000**.
 
     ```
     openGauss=# SELECT * FROM customer_t1 WHERE  c_customer_sk  BETWEEN 4000 AND 9000;
@@ -81,5 +79,3 @@ Use logical operators to read data from the  **customer\_t1**  table.
               4421 | Admin         | Local        |             |   3000
     (2 rows)
     ```
-
-

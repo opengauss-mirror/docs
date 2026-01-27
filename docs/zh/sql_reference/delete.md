@@ -185,4 +185,3 @@ openGauss=# DELETE FROM a,b USING tpcds.customer_address a,tpcds.customer_addres
 或者
 openGauss=# DELETE a,b FROM tpcds.customer_address a,tpcds.customer_address_bak b where a.ca_address_sk = b.ca_address_sk and a.ca_address_sk < 50;
 ```
-

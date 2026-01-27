@@ -1,6 +1,6 @@
 # GS\_WLM\_SESSION\_HISTORY<a name="EN-US_TOPIC_0000001105522102"></a>
 
-**GS\_WLM\_SESSION\_HISTORY**  displays load management information about all completed jobs executed by the current user on database instances. Only users with the** sysadmin**  or** monitor admin**  permission can query this view.
+**GS\_WLM\_SESSION\_HISTORY**  displays load management information about all completed jobs executed by the current user on database instances. Only users with the**sysadmin**  or**monitor admin**  permission can query this view.
 
 **Table  1**  GS\_WLM\_SESSION\_HISTORY columns
 
@@ -493,4 +493,3 @@
 </tr>
 </tbody>
 </table>
-

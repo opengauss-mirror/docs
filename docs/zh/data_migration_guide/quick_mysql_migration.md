@@ -402,11 +402,11 @@ sh gs_rep_portal.sh run_reverse_migration 3 &
 
 - 在currentPlan中每行填入一条启动单个迁移任务的指令，如start_mysql_full_migration，start_mysql_incremental_migration等。指令的顺序遵循：
 
- - start_mysql_full_migration
- - start_mysql_full_migration_datacheck
- - start_mysql_incremental_migration
- - start_mysql_incremental_migration_datacheck
- - start_mysql_reverse_migration
+   - start_mysql_full_migration
+   - start_mysql_full_migration_datacheck
+   - start_mysql_incremental_migration
+   - start_mysql_incremental_migration_datacheck
+   - start_mysql_reverse_migration
 
     如果顺序错误则portal报错。
 

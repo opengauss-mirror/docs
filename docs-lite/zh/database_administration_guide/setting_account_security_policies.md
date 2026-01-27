@@ -6,22 +6,21 @@ openGauss为帐户提供了自动锁定和解锁帐户、手动锁定和解锁�
 
 ## 自动锁定和解锁帐户<a name="zh-cn_topic_0283136674_zh-cn_topic_0237121108_zh-cn_topic_0151096060_zh-cn_topic_0085032584_zh-cn_topic_0059778228_section1173585316159"></a>
 
--   为了保证帐户安全，如果用户输入密码次数超过一定次数（failed_login_attempts），系统将自动锁定该帐户，默认值为10。次数设置越小越安全，但是在使用过程中会带来不便。
--   在openGauss轻量版本中，调用一次连接数据库，实际上会连接两次数据库，先尝试连接V5数据库，如果失败，会尝试连接V1数据库。
--   当帐户被锁定时间超过设定值（password_lock_time），则当前帐户自动解锁，默认值为1天。时间设置越长越安全，但是在使用过程中会带来不便。
+- 为了保证帐户安全，如果用户输入密码次数超过一定次数（failed_login_attempts），系统将自动锁定该帐户，默认值为10。次数设置越小越安全，但是在使用过程中会带来不便。
+- 在openGauss轻量版本中，调用一次连接数据库，实际上会连接两次数据库，先尝试连接V5数据库，如果失败，会尝试连接V1数据库。
+- 当帐户被锁定时间超过设定值（password_lock_time），则当前帐户自动解锁，默认值为1天。时间设置越长越安全，但是在使用过程中会带来不便。
 
     >[!NOTE]说明
     >
-    >-   参数password\_lock\_time的整数部分表示天数，小数部分可以换算成时、分、秒。
-    >-   当failed\_login\_attempts设置为0时，表示不限制密码错误次数。当password\_lock\_time设置为0时，表示即使超过密码错误次数限制导致帐户锁定，也会在短时间内自动解锁。因此，只有两个配置参数都为正数时，才可以进行常规的密码失败检查、帐户锁定和解锁操作。
-    >-   这两个参数的默认值都符合安全标准，用户可以根据需要重新设置参数，提高安全等级。建议用户使用默认值。
+    >- 参数password\_lock\_time的整数部分表示天数，小数部分可以换算成时、分、秒。
+    >- 当failed\_login\_attempts设置为0时，表示不限制密码错误次数。当password\_lock\_time设置为0时，表示即使超过密码错误次数限制导致帐户锁定，也会在短时间内自动解锁。因此，只有两个配置参数都为正数时，才可以进行常规的密码失败检查、帐户锁定和解锁操作。
+    >- 这两个参数的默认值都符合安全标准，用户可以根据需要重新设置参数，提高安全等级。建议用户使用默认值。
     >- 在主备场景下，主节点和备节点对用户状态的管理是独立的，即如果主节点上用户是锁定状态，也不会影响该用户连接备节点。
-
 
 配置failed\_login\_attempts参数。
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  使用如下命令连接数据库。
+1. 以操作系统用户omm登录数据库主节点。
+2. 使用如下命令连接数据库。
 
     ```
     gsql -d postgres -p 8000
@@ -39,7 +38,7 @@ openGauss为帐户提供了自动锁定和解锁帐户、手动锁定和解锁�
     openGauss=# 
     ```
 
-3.  查看已配置的参数。
+3. 查看已配置的参数。
 
     ```
     openGauss=# SHOW failed_login_attempts;
@@ -51,17 +50,16 @@ openGauss为帐户提供了自动锁定和解锁帐户、手动锁定和解锁�
 
     如果显示结果不为10，执行“\\q”命令退出数据库。
 
-4.  执行如下命令设置成默认值10。
+4. 执行如下命令设置成默认值10。
 
     ```
     gs_guc reload -D /gaussdb/data/datanode -c "failed_login_attempts=10"
     ```
 
-
 配置password\_lock\_time参数。
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  使用如下命令连接数据库。
+1. 以操作系统用户omm登录数据库主节点。
+2. 使用如下命令连接数据库。
 
     ```
     gsql -d postgres -p 8000
@@ -79,7 +77,7 @@ openGauss为帐户提供了自动锁定和解锁帐户、手动锁定和解锁�
     openGauss=#
     ```
 
-3.  查看已配置的参数。
+3. 查看已配置的参数。
 
     ```
     openGauss=# SHOW password_lock_time;
@@ -91,12 +89,11 @@ openGauss为帐户提供了自动锁定和解锁帐户、手动锁定和解锁�
 
     如果显示结果不为1，执行“\\q”命令退出数据库。
 
-4.  执行如下命令设置成默认值1。
+4. 执行如下命令设置成默认值1。
 
     ```
     gs_guc reload -D /gaussdb/data/datanode -c "password_lock_time=1"
     ```
-
 
 ## 手动锁定和解锁帐户<a name="zh-cn_topic_0283136674_zh-cn_topic_0237121108_zh-cn_topic_0151096060_zh-cn_topic_0085032584_zh-cn_topic_0059778228_section964105310248"></a>
 
@@ -106,20 +103,19 @@ openGauss为帐户提供了自动锁定和解锁帐户、手动锁定和解锁�
 
 以手动锁定和解锁用户joe为例，用户的创建请参见[用户](users.md)，命令格式如下：
 
--   手动锁定
+- 手动锁定
 
     ```
     openGauss=# ALTER USER joe ACCOUNT LOCK;
     ALTER ROLE
     ```
 
--   手动解锁
+- 手动解锁
 
     ```
     openGauss=# ALTER USER joe ACCOUNT UNLOCK;
     ALTER ROLE
     ```
-
 
 ## 删除不再使用的帐户<a name="zh-cn_topic_0283136674_zh-cn_topic_0237121108_zh-cn_topic_0151096060_zh-cn_topic_0085032584_zh-cn_topic_0059778228_sc15cf3af332848c28d65ffcfe307a80b"></a>
 
@@ -133,4 +129,3 @@ openGauss为帐户提供了自动锁定和解锁帐户、手动锁定和解锁�
 openGauss=# DROP USER joe  CASCADE;
 DROP ROLE
 ```
-

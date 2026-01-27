@@ -44,4 +44,3 @@ Service data is stored on a single physical node, and data access tasks are push
 </tr>
 </tbody>
 </table>
-

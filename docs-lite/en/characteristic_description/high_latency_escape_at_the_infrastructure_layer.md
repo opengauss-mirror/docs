@@ -14,8 +14,8 @@ When the SQL execution latency increases, sessions are stacked, and the memory o
 
 ## Description<a name="section5250404"></a>
 
--   When the database memory is overloaded, sessions are killed instantly and new connections are forbidden till the memory is recovered to provide services. The memory threshold is specified by the **resilience\_memory\_reject\_percent** GUC parameter. By default, this function is disabled.
--   When the number of stacked sessions in the database reaches the upper limit of the thread pool, sessions are killed instantly and new connections are forbidden till the number of sessions decreases to the acceptable range of the thread pool. Then, services are recovered. The session threshold is specified by the **resilience\_thread\_reject\_cond** GUC parameter. By default, this function is disabled.
+- When the database memory is overloaded, sessions are killed instantly and new connections are forbidden till the memory is recovered to provide services. The memory threshold is specified by the **resilience\_memory\_reject\_percent** GUC parameter. By default, this function is disabled.
+- When the number of stacked sessions in the database reaches the upper limit of the thread pool, sessions are killed instantly and new connections are forbidden till the number of sessions decreases to the acceptable range of the thread pool. Then, services are recovered. The session threshold is specified by the **resilience\_thread\_reject\_cond** GUC parameter. By default, this function is disabled.
 
 ## Enhancements<a name="section47253639"></a>
 
@@ -23,8 +23,8 @@ None
 
 ## Constraints<a name="section06531946143616"></a>
 
--   When the escape capability is triggered due to memory or thread pool overload, the sessions of users with the **sysadmin** or **monitoradmin** permission are not cleared.
--   In upgrade mode, this feature is not triggered.
+- When the escape capability is triggered due to memory or thread pool overload, the sessions of users with the **sysadmin** or **monitoradmin** permission are not cleared.
+- In upgrade mode, this feature is not triggered.
 
 ## Dependencies<a name="section22629574"></a>
 

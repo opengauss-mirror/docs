@@ -21,28 +21,27 @@ gs_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等�
 
 ## 语法<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_s991d75846f4c48a298084c67b46b40ee"></a>
 
--   检查操作系统信息
+- 检查操作系统信息
 
     ```
     gs_checkos -i ITEM [-f HOSTFILE] [-h HOSTNAME] [-X XMLFILE] [--detail] [-o OUTPUT] [-l LOGFILE] [--skip-item-num=ITEMNUM]
     ```
 
--   显示帮助信息
+- 显示帮助信息
 
     ```
     gs_checkos -? | --help 
     ```
 
--   显示版本号信息
+- 显示版本号信息
 
     ```
     gs_checkos -V | --version
     ```
 
-
 ## 参数说明<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_s79c5f0d8e9e742deacd81d9e296c2960"></a>
 
--   -i
+- -i
 
     列表编号。格式：-i A、-i B1、-i A1 -i A2或-i A1,A2。
 
@@ -60,7 +59,7 @@ gs_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等�
 
     详细的检查项请参见[表1](#zh-cn_topic_0237152331_zh-cn_topic_0059778883_t5348bfc47f50450687012eacb1a1ba4e)。
 
--   -f
+- -f
 
     主机名称列表文件。
 
@@ -74,49 +73,47 @@ gs_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等�
     >
     >host3
     
-
     取值范围：主机名称的列表。
 
--   -h
+- -h
 
     指定需要检查的主机名称，可以同时指定多个主机，主机之间使用“,”分割。
 
     取值范围：openGauss的主机名称。如果不指定主机，则检查当前主机。
 
--   -X
+- -X
 
     openGaussXML配置文件。
 
--   --detail
+- --detail
 
     显示检查结果详情。
 
--   --skip-item-num
+- --skip-item-num
 
     跳过指定的检查项。
 
     取值范围：A1...A14。
 
--   -o
+- -o
 
     指定OS检查报告输出到指定的文件。
 
     不指定则将检查结果输出到屏幕上。
 
--   -l
+- -l
 
     指定日志文件及存放路径。
 
     默认值：/tmp/gs\_checkos/gs\_checkos-YYYY-MM-DD\_hhmmss.log。
 
--   -?, --help
+- -?, --help
 
     显示帮助信息。
 
--   -V, --version
+- -V, --version
 
     显示版本号信息。
-
 
 **表 1**  操作系统检查项
 
@@ -294,19 +291,17 @@ gs_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等�
 </tbody>
 </table>
 
-
-
 >[!NOTE]说明
 >
-> -   A6选项检查标准来自配置文件check\_list.conf下\[/etc/sysctl.conf\]、\[SUGGEST:/etc/sysctl.conf\]域：
->    若\[/etc/sysctl.conf\]下参数值与系统实际参数值不同，A6检查提示Abnormal，可以使用B1参数进行设置。
->    若\[SUGGEST:/etc/sysctl.conf\]下参数值与系统实际参数值不同，A6检查提示Warning，B1参数不会进行设置，需根据实际情况进行手动设置。
+> - A6选项检查标准来自配置文件check\_list.conf下\[/etc/sysctl.conf\]、\[SUGGEST:/etc/sysctl.conf\]域：
+> 若\[/etc/sysctl.conf\]下参数值与系统实际参数值不同，A6检查提示Abnormal，可以使用B1参数进行设置。
+> 若\[SUGGEST:/etc/sysctl.conf\]下参数值与系统实际参数值不同，A6检查提示Warning，B1参数不会进行设置，需根据实际情况进行手动设置。
 >
-> -   A7选项检查系统文件句柄标准来自配置文件check\_list.conf下\[/etc/security/limits.conf\]域open file参数，可以使用B2参数进行设置。
+> - A7选项检查系统文件句柄标准来自配置文件check\_list.conf下\[/etc/security/limits.conf\]域open file参数，可以使用B2参数进行设置。
 >
-> -   A11选项检查万兆网卡参数“MTU”、“RX”、“TX”标准来自配置文件check\_list.conf下\[/sbin/ifconfig\]域，可以使用B5参数对RX、TX进行设置，MTU需用户手动设置。
+> - A11选项检查万兆网卡参数“MTU”、“RX”、“TX”标准来自配置文件check\_list.conf下\[/sbin/ifconfig\]域，可以使用B5参数对RX、TX进行设置，MTU需用户手动设置。
 >
-> -   使用gs\_checkos设置的内核参数值和文件句柄参数值，需重启新会话生效。
+> - 使用gs\_checkos设置的内核参数值和文件句柄参数值，需重启新会话生效。
 
 ## 操作系统参数<a name="zh-cn_topic_0237152331_section15489145820128"></a>
 
@@ -556,27 +551,25 @@ gs_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等�
 </tbody>
 </table>
 
-
 ## 文件系统参数<a name="zh-cn_topic_0237152331_section975717139147"></a>
 
--   soft nofile
+- soft nofile
 
     说明：soft nofile表示软限制，用户使用的文件句柄数量可以超过该限制，但是如果超过会有告警信息。
 
     推荐取值：1000000
 
--   hard nofile
+- hard nofile
 
     说明：hard nofile表示硬限制，是一个严格的限制，用户使用的文件句柄数量一定不能超过该设置。
 
     推荐取值：1000000
 
--   stack size
+- stack size
 
     说明：线程堆栈大小。
 
     推荐值：3072
-
 
 ## 示例<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_s0a0dfe17cef247ad9b50e77ed84aff9f"></a>
 
@@ -614,4 +607,3 @@ Checking items:
 ## 相关命令<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_s3229172816a643dda00f100421b8a903"></a>
 
 [gs\_check](gs_check.md)，[gs\_checkperf](gs_checkperf.md)
-

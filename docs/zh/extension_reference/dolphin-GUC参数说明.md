@@ -10,8 +10,6 @@
 | -------------------- | ------------------------------------------------------------ |
 | NO_BACKSLASH_ESCAPES | set standard_conforming_strings = on功能与mysql中的sql_mode= 'NO_BACKSLASH_ESCAPES'相同；set standard_conforming_strings = off与mysql中的sql_mode不配置NO_BACKSLASH_ESCAPES功能相同 |
 
-
-
 ## dolphin.sql\_mode<a name="section203671436821"></a>
 
 **取值范围**：字符串
@@ -20,27 +18,27 @@
 
 **参数说明**：参数值为逗号间隔的字符串，仅允许合法字符串设定，不合法情况下，启动后报warning。同样，设置时候，如果新值非法，则报warning并且不修改老值。当前有几种场景会用到sql\_mode：
 
--   sql_mode_strict：严格模式控制openGauss在执行会产生数据变化的SQL时（如INSERT、UPDATE、DELETE等），如何处理无效值或者空值。插入不符合当前列类型的值时，会进行数据转换；分两种场景，insert into table values(…) 和insert into table select … 主要涉及到各种数据类型之间的互相转换，目前涉及的类型有tinyint[unsigned]，smallint[unsigned]，int[unsigned]，bigint[unsigned]，float，double，numeric，clob，char和varchar；
+- sql_mode_strict：严格模式控制openGauss在执行会产生数据变化的SQL时（如INSERT、UPDATE、DELETE等），如何处理无效值或者空值。插入不符合当前列类型的值时，会进行数据转换；分两种场景，insert into table values(…) 和insert into table select … 主要涉及到各种数据类型之间的互相转换，目前涉及的类型有tinyint[unsigned]，smallint[unsigned]，int[unsigned]，bigint[unsigned]，float，double，numeric，clob，char和varchar；
 
--   sql_mode_strict：插入的列值长度超过此列所限定的长度时，赋予该列最大或最小值，涉及的类型有tinyint[unsigned]，smallint[unsigned]，int[unsigned]，bigint[unsigned]，float，double，numeric，clob，char和varchar；
+- sql_mode_strict：插入的列值长度超过此列所限定的长度时，赋予该列最大或最小值，涉及的类型有tinyint[unsigned]，smallint[unsigned]，int[unsigned]，bigint[unsigned]，float，double，numeric，clob，char和varchar；
 
--   sql_mode_strict：insert时，属性是非空且没有默认值的列，且没有在insert的列表中，则为其添加默认值；（涉及的类型同上面sql_mode_strict的描述）
+- sql_mode_strict：insert时，属性是非空且没有默认值的列，且没有在insert的列表中，则为其添加默认值；（涉及的类型同上面sql_mode_strict的描述）
 
--   sql_mode_strict：支持对属性是非空且没有默认值的列显式插入default；（涉及的类型同上面sql_mode_strict的描述）
+- sql_mode_strict：支持对属性是非空且没有默认值的列显式插入default；（涉及的类型同上面sql_mode_strict的描述）
 
--   sql_mode_strict：关闭时，支持对属性是非空的列插入NULL值。具体行为受sql_ignore_strategy控制，overwrite_null时插入默认值，ignore_null时忽略该行；且仅在非显式插入单行NULL值生效。（涉及的类型同上面sql_mode_strict的描述）
+- sql_mode_strict：关闭时，支持对属性是非空的列插入NULL值。具体行为受sql_ignore_strategy控制，overwrite_null时插入默认值，ignore_null时忽略该行；且仅在非显式插入单行NULL值生效。（涉及的类型同上面sql_mode_strict的描述）
 
--   sql_mode_strict：对于不会改变数据的SQL语句，如`SELECT`，在严格模式下处理无效值或者空值时仅产生告警，不会报错。效果等同于没有开启严格模式。
+- sql_mode_strict：对于不会改变数据的SQL语句，如`SELECT`，在严格模式下处理无效值或者空值时仅产生告警，不会报错。效果等同于没有开启严格模式。
 
--   sql_mode_full_group：
+- sql_mode_full_group：
     - 出现在select列表中的列（不使用聚合函数），是否一定要出现在group by子句中。当处在sql_mode_full_group模式（默认模式）下，如果select列表中的列没有使用聚合函数，也没有出现在group by子句，那么会报错，如果不在此模式下，则会执行成功，并在所有符合条件的元组中选取第一个元组。
     - 出现在order by中的列，是否一定要出现在distinct中（注意是distinct，不是distinct on）。当处在sql_mode_full_group模式（默认模式）下，不允许没有出现在distinct中的列出现在order by子句中，否则允许。
     
--   pipes_as_concat：控制 || 当成连接符还是或操作符
+- pipes_as_concat：控制 || 当成连接符还是或操作符
 
--   ansi_quotes：主要是针对出现在各种需要使用双引号表示字符串值的地方。当ansi_quotes打开，就表示此时的双引号中的内容要作为对象引用看待；当ansi_quotes关闭时，表示双引号中的内容要作为字符串的值看待。
+- ansi_quotes：主要是针对出现在各种需要使用双引号表示字符串值的地方。当ansi_quotes打开，就表示此时的双引号中的内容要作为对象引用看待；当ansi_quotes关闭时，表示双引号中的内容要作为字符串的值看待。
 
--   no_zero_date：控制 '0000-00-00' 是否为合法日期，支持DATE、DATETIME类型
+- no_zero_date：控制 '0000-00-00' 是否为合法日期，支持DATE、DATETIME类型
 
     |参数|表现|
     |---|---|
@@ -49,11 +47,11 @@
     |sql_mode_strict|合法日期，无告警|
     |--|合法日期，无告警|
 
--   pad_char_to_full_length：控制char类型查询时是否删除尾部空格。
+- pad_char_to_full_length：控制char类型查询时是否删除尾部空格。
 
--   auto_recompile_function：控制严格模式下，在执行会产生数据变化的SQL时（如INSERT、UPDATE、DELETE等），如果SQL中包含用户自定义的存储过程或函数，是否自动对存储过程或函数进行重编译，自动重编译能够让opengauss正确处理存储过程或函数中的无效值，但是对存储过程或函数的执行性能会带来一定的影响。
+- auto_recompile_function：控制严格模式下，在执行会产生数据变化的SQL时（如INSERT、UPDATE、DELETE等），如果SQL中包含用户自定义的存储过程或函数，是否自动对存储过程或函数进行重编译，自动重编译能够让opengauss正确处理存储过程或函数中的无效值，但是对存储过程或函数的执行性能会带来一定的影响。
 
--   error_for_division_by_zero：控制除数为0时是否报错（包含 `/`， `mod`， `div`等除法含义的操作符），最终除0的表现还受严格模式的控制。
+- error_for_division_by_zero：控制除数为0时是否报错（包含 `/`， `mod`， `div`等除法含义的操作符），最终除0的表现还受严格模式的控制。
 
     |参数|表现|
     |---|---|
@@ -64,7 +62,7 @@
 
 - block_return_multi_results: 控制在使用CALL语法调用存储过程时，存储过程中可以使用select语句进行查询并返回查询语句的结果。当不设置此参数时，存储过程中的查询语在执行时会报错，开启参数后，可以正常执行并立刻返回此查询语句的结果集，不等待存储过程执行完毕。开启后，使用CALL语法调用存储过程时，限制出参必须为用户自定义变量的格式。
 
--   treat_bxconst_as_binary: 控制b''、x''字符串在词法分析时的默认类型。当设置此参数时，将b''、x''数据作为binary类型进行存储和使用。当不设置此参数时，将b''、x''数据作为bit类型进行存储和使用。
+- treat_bxconst_as_binary: 控制b''、x''字符串在词法分析时的默认类型。当设置此参数时，将b''、x''数据作为binary类型进行存储和使用。当不设置此参数时，将b''、x''数据作为bit类型进行存储和使用。
 
     | 语句                                                         | 不设置treat_bxconst_as_binary表现 | 设置treat_bxconst_as_binary表现 | Mysql表现 |
     | ------------------------------------------------------------ | --------------------------------- | ------------------------------- | --------- |
@@ -140,6 +138,7 @@
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **示例**：
+
 ```
 --创建表test1。
 openGauss=# CREATE TABLE test1
@@ -254,6 +253,7 @@ CALL
 **默认值**：0
 
 **示例**：
+
 ```
 openGauss=# show dolphin.b_db_timestamp;
  b_db_timestamp
@@ -287,6 +287,7 @@ openGauss=# select now();
 **默认值**：0
 
 **示例**：
+
 ```
 openGauss=# show dolphin.default_week_format;
 dolphin.default_week_format
@@ -318,123 +319,125 @@ week
 
 **取值范围**：
 lc_time_names语言集有如下可供选择的值：
+
   | 参数值                                                         | 语言集   |
   | ------------------------------------------------------------ | ------ |
-  |ar_AE	|Arabic - United Arab Emirates|
-  |ar_BH	|Arabic - Bahrain|
-  |ar_DZ	|Arabic - Algeria|
-  |ar_EG	|Arabic - Egypt|
-  |ar_IN	|Arabic - India|
-  |ar_IQ	|Arabic - Iraq|
-  |ar_JO	|Arabic - Jordan|
-  |ar_KW	|Arabic - Kuwait|
-  |ar_LB	|Arabic - Lebanon|
-  |ar_LY	|Arabic - Libya|
-  |ar_MA	|Arabic - Morocco|
-  |ar_OM	|Arabic - Oman|
-  |ar_QA	|Arabic - Qatar|
-  |ar_SA	|Arabic - Saudi Arabia|
-  |ar_SD	|Arabic - Sudan|
-  |ar_SY	|Arabic - Syria|
-  |ar_TN	|Arabic - Tunisia|
-  |ar_YE	|Arabic - Yemen|
-  |be_BY	|Belarusian - Belarus|
-  |bg_BG	|Bulgarian - Bulgaria|
-  |ca_ES	|Catalan - Spain|
-  |cs_CZ	|Czech - Czech Republic|
-  |da_DK	|Danish - Denmark|
-  |de_AT	|German - Austria|
-  |de_BE	|German - Belgium|
-  |de_CH	|German - Switzerland|
-  |de_DE	|German - Germany|
-  |de_LU	|German - Luxembourg|
-  |el_GR	|Greek - Greece|
-  |en_AU	|English - Australia|
-  |en_CA	|English - Canada|
-  |en_GB	|English - United Kingdom|
-  |en_IN	|English - India|
-  |en_NZ	|English - New Zealand|
-  |en_PH	|English - Philippines|
-  |en_US	|English - United States|
-  |en_ZA	|English - South Africa|
-  |en_ZW	|English - Zimbabwe|
-  |es_AR	|Spanish - Argentina|
-  |es_BO	|Spanish - Bolivia|
-  |es_CL	|Spanish - Chile|
-  |es_CO	|Spanish - Colombia|
-  |es_CR	|Spanish - Costa Rica|
-  |es_DO	|Spanish - Dominican Republic|
-  |es_EC	|Spanish - Ecuador|
-  |es_ES	|Spanish - Spain|
-  |es_GT	|Spanish - Guatemala|
-  |es_HN	|Spanish - Honduras|
-  |es_MX	|Spanish - Mexico|
-  |es_NI	|Spanish - Nicaragua|
-  |es_PA	|Spanish - Panama|
-  |es_PE	|Spanish - Peru|
-  |es_PR	|Spanish - Puerto Rico|
-  |es_PY	|Spanish - Paraguay|
-  |es_SV	|Spanish - El Salvador|
-  |es_US	|Spanish - United States|
-  |es_UY	|Spanish - Uruguay|
-  |es_VE	|Spanish - Venezuela|
-  |et_EE	|Estonian - Estonia|
-  |eu_ES	|Basque - Spain|
-  |fi_FI	|Finnish - Finland|
-  |fo_FO	|Faroese - Faroe Islands|
-  |fr_BE	|French - Belgium|
-  |fr_CA	|French - Canada|
-  |fr_CH	|French - Switzerland|
-  |fr_FR	|French - France|
-  |fr_LU	|French - Luxembourg|
-  |gl_ES	|Galician - Spain|
-  |gu_IN	|Gujarati - India|
-  |he_IL	|Hebrew - Israel|
-  |hi_IN	|Hindi - India|
-  |hr_HR	|Croatian - Croatia|
-  |hu_HU	|Hungarian - Hungary|
-  |id_ID	|Indonesian - Indonesia|
-  |is_IS	|Icelandic - Iceland|
-  |it_CH	|Italian - Switzerland|
-  |it_IT	|Italian - Italy|
-  |ja_JP	|Japanese - Japan|
-  |ko_KR	|Korean - Republic of Korea|
-  |lt_LT	|Lithuanian - Lithuania|
-  |lv_LV	|Latvian - Latvia|
-  |mk_MK	|Macedonian - North Macedonia|
-  |mn_MN	|Mongolia - Mongolian|
-  |ms_MY	|Malay - Malaysia|
-  |nb_NO	|Norwegian(Bokmål) - Norway|
-  |nl_BE	|Dutch - Belgium|
-  |nl_NL	|Dutch - The Netherlands|
-  |no_NO	|Norwegian - Norway|
-  |pl_PL	|Polish - Poland|
-  |pt_BR	|Portugese - Brazil|
-  |pt_PT	|Portugese - Portugal|
-  |rm_CH	|Romansh - Switzerland|
-  |ro_RO	|Romanian - Romania|
-  |ru_RU	|Russian - Russia|
-  |ru_UA	|Russian - Ukraine|
-  |sk_SK	|Slovak - Slovakia|
-  |sl_SI	|Slovenian - Slovenia|
-  |sq_AL	|Albanian - Albania|
-  |sr_RS	|Serbian - Serbia|
-  |sv_FI	|Swedish - Finland|
-  |sv_SE	|Swedish - Sweden|
-  |ta_IN	|Tamil - India|
-  |te_IN	|Telugu - India|
-  |th_TH	|Thai - Thailand|
-  |tr_TR	|Turkish - Turkey|
-  |uk_UA	|Ukrainian - Ukraine|
-  |ur_PK	|Urdu - Pakistan|
-  |vi_VN	|Vietnamese - Vietnam|
-  |zh_CN	|Chinese - China|
-  |zh_HK	|Chinese - Hong Kong|
-  |zh_TW	|Chinese - Taiwan|
+  |ar_AE |Arabic - United Arab Emirates|
+  |ar_BH |Arabic - Bahrain|
+  |ar_DZ |Arabic - Algeria|
+  |ar_EG |Arabic - Egypt|
+  |ar_IN |Arabic - India|
+  |ar_IQ |Arabic - Iraq|
+  |ar_JO |Arabic - Jordan|
+  |ar_KW |Arabic - Kuwait|
+  |ar_LB |Arabic - Lebanon|
+  |ar_LY |Arabic - Libya|
+  |ar_MA |Arabic - Morocco|
+  |ar_OM |Arabic - Oman|
+  |ar_QA |Arabic - Qatar|
+  |ar_SA |Arabic - Saudi Arabia|
+  |ar_SD |Arabic - Sudan|
+  |ar_SY |Arabic - Syria|
+  |ar_TN |Arabic - Tunisia|
+  |ar_YE |Arabic - Yemen|
+  |be_BY |Belarusian - Belarus|
+  |bg_BG |Bulgarian - Bulgaria|
+  |ca_ES |Catalan - Spain|
+  |cs_CZ |Czech - Czech Republic|
+  |da_DK |Danish - Denmark|
+  |de_AT |German - Austria|
+  |de_BE |German - Belgium|
+  |de_CH |German - Switzerland|
+  |de_DE |German - Germany|
+  |de_LU |German - Luxembourg|
+  |el_GR |Greek - Greece|
+  |en_AU |English - Australia|
+  |en_CA |English - Canada|
+  |en_GB |English - United Kingdom|
+  |en_IN |English - India|
+  |en_NZ |English - New Zealand|
+  |en_PH |English - Philippines|
+  |en_US |English - United States|
+  |en_ZA |English - South Africa|
+  |en_ZW |English - Zimbabwe|
+  |es_AR |Spanish - Argentina|
+  |es_BO |Spanish - Bolivia|
+  |es_CL |Spanish - Chile|
+  |es_CO |Spanish - Colombia|
+  |es_CR |Spanish - Costa Rica|
+  |es_DO |Spanish - Dominican Republic|
+  |es_EC |Spanish - Ecuador|
+  |es_ES |Spanish - Spain|
+  |es_GT |Spanish - Guatemala|
+  |es_HN |Spanish - Honduras|
+  |es_MX |Spanish - Mexico|
+  |es_NI |Spanish - Nicaragua|
+  |es_PA |Spanish - Panama|
+  |es_PE |Spanish - Peru|
+  |es_PR |Spanish - Puerto Rico|
+  |es_PY |Spanish - Paraguay|
+  |es_SV |Spanish - El Salvador|
+  |es_US |Spanish - United States|
+  |es_UY |Spanish - Uruguay|
+  |es_VE |Spanish - Venezuela|
+  |et_EE |Estonian - Estonia|
+  |eu_ES |Basque - Spain|
+  |fi_FI |Finnish - Finland|
+  |fo_FO |Faroese - Faroe Islands|
+  |fr_BE |French - Belgium|
+  |fr_CA |French - Canada|
+  |fr_CH |French - Switzerland|
+  |fr_FR |French - France|
+  |fr_LU |French - Luxembourg|
+  |gl_ES |Galician - Spain|
+  |gu_IN |Gujarati - India|
+  |he_IL |Hebrew - Israel|
+  |hi_IN |Hindi - India|
+  |hr_HR |Croatian - Croatia|
+  |hu_HU |Hungarian - Hungary|
+  |id_ID |Indonesian - Indonesia|
+  |is_IS |Icelandic - Iceland|
+  |it_CH |Italian - Switzerland|
+  |it_IT |Italian - Italy|
+  |ja_JP |Japanese - Japan|
+  |ko_KR |Korean - Republic of Korea|
+  |lt_LT |Lithuanian - Lithuania|
+  |lv_LV |Latvian - Latvia|
+  |mk_MK |Macedonian - North Macedonia|
+  |mn_MN |Mongolia - Mongolian|
+  |ms_MY |Malay - Malaysia|
+  |nb_NO |Norwegian(Bokmål) - Norway|
+  |nl_BE |Dutch - Belgium|
+  |nl_NL |Dutch - The Netherlands|
+  |no_NO |Norwegian - Norway|
+  |pl_PL |Polish - Poland|
+  |pt_BR |Portugese - Brazil|
+  |pt_PT |Portugese - Portugal|
+  |rm_CH |Romansh - Switzerland|
+  |ro_RO |Romanian - Romania|
+  |ru_RU |Russian - Russia|
+  |ru_UA |Russian - Ukraine|
+  |sk_SK |Slovak - Slovakia|
+  |sl_SI |Slovenian - Slovenia|
+  |sq_AL |Albanian - Albania|
+  |sr_RS |Serbian - Serbia|
+  |sv_FI |Swedish - Finland|
+  |sv_SE |Swedish - Sweden|
+  |ta_IN |Tamil - India|
+  |te_IN |Telugu - India|
+  |th_TH |Thai - Thailand|
+  |tr_TR |Turkish - Turkey|
+  |uk_UA |Ukrainian - Ukraine|
+  |ur_PK |Urdu - Pakistan|
+  |vi_VN |Vietnamese - Vietnam|
+  |zh_CN |Chinese - China|
+  |zh_HK |Chinese - Hong Kong|
+  |zh_TW |Chinese - Taiwan|
 
 **默认值**：'en_US'
 
 **示例**：
+
 ```
 openGauss=# select dayname('2000-1-1');
 dayname
@@ -467,16 +470,18 @@ dayname
 7. [JSON操作符](dolphin-JSON操作符兼容.md)
 
 影响的函数有：
+
 1. [LAST_DAY](dolphin-时间和日期处理函数和操作符.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
 2. [TIMESTAMPDIFF](dolphin-时间和日期处理函数和操作符.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
 3. [FORMAT](dolphin-字符处理函数和操作符.md)
 4. [EXTRACT](dolphin-时间和日期处理函数和操作符.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
 5. [CAST](dolphin-类型转换函数.md)
-5. [exp](dolphin-数字操作函数和操作符.md)
-6. [convert](dolphin-字符处理函数和操作符.md)
-7. [json_object](dolphin-JSON-JSONB函数和操作符.md)
+6. [exp](dolphin-数字操作函数和操作符.md)
+7. [convert](dolphin-字符处理函数和操作符.md)
+8. [json_object](dolphin-JSON-JSONB函数和操作符.md)
 
 其他影响的功能：
+
 1. [?](dolphin-PREPARE.md#zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd)
 2. [CREATE INDEX](dolphin-CREATE-INDEX.md#zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s31780559299b4f62bec935a2c4679b84)
 3. [TINYBLOB, BLOB, MEDIUMBLOB, LONGBLOB的输入功能](dolphin-二进制类型.md#zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_t910f42f45b374d94afe2798c42fc5ef6)
@@ -494,8 +499,8 @@ dayname
 
 **取值范围**：布尔型
 
--   on表示使用新增兼容性功能。
--   off表示关闭兼容性功能，使用内核原有功能。
+- on表示使用新增兼容性功能。
+- off表示关闭兼容性功能，使用内核原有功能。
 
 **默认值**：on
 
@@ -510,8 +515,8 @@ dayname
 
 **取值范围**：布尔型
 
--   on表示使用新增兼容性功能。需要在dolphin.b_compatibility_mode同为ON时才生效。
--   off表示关闭兼容性功能，使用内核原有功能。
+- on表示使用新增兼容性功能。需要在dolphin.b_compatibility_mode同为ON时才生效。
+- off表示关闭兼容性功能，使用内核原有功能。
 
 **默认值**：on。
 
@@ -519,7 +524,6 @@ dayname
 
 1. 修改前后(ON修改为OFF或者OFF修改为ON），会导致NULL值插入的分区可能不一致，最终导致一些查询结果缺少一些NULL值记录。
 2. 修改前后(ON修改为OFF或者OFF修改为ON），由于索引的默认行为变更，可能导致一些执行计划产生变化（如不能只用索引等）。
-
 
 ## version_comment<a name="section203671436826"></a>
 
@@ -542,6 +546,7 @@ dayname
 **默认值**：1
 
 **示例**：
+
 ```
 --设置auto_increment_increment为1
 openGauss=# set auto_increment_increment = 1;
@@ -563,6 +568,7 @@ SET
 **默认值**：utf8
 
 **示例**：
+
 ```
 --设置character_set_client为uft8
 openGauss=# set character_set_client = uft8;
@@ -584,6 +590,7 @@ SET
 **默认值**：utf8
 
 **示例**：
+
 ```
 --设置character_set_results为utf8
 openGauss=# set character_set_results = utf8;
@@ -606,6 +613,7 @@ SET
 **默认值**：latin1
 
 **示例**：
+
 ```
 --设置character_set_server为latin1
 openGauss=# set character_set_server = latin1;
@@ -627,6 +635,7 @@ SET
 **默认值**：latin1_swedish_ci
 
 **示例**：
+
 ```
 --设置collation_server为latin1_swedish_ci
 openGauss=# set collation_server = latin1_swedish_ci;
@@ -648,6 +657,7 @@ SET
 **默认值**：无
 
 **示例**：
+
 ```
 --设置init_connect为'init_connect'
 openGauss=# set init_connect = 'init_connect';
@@ -669,6 +679,7 @@ SET
 **默认值**：28800
 
 **示例**：
+
 ```
 --设置interactive_timeout为28800
 openGauss=# set interactive_timeout = 28800;
@@ -690,6 +701,7 @@ SET
 **默认值**：MulanPSL-2.0
 
 **示例**：
+
 ```
 --设置license为'MulanPSL-2.0'
 openGauss=# set license = 'MulanPSL-2.0';
@@ -710,6 +722,7 @@ SET
 **默认值**：4194304
 
 **示例**：
+
 ```
 --设置max_allowed_packet为4194304
 openGauss=# set max_allowed_packet = 4194304;
@@ -731,6 +744,7 @@ SET
 **默认值**：16384
 
 **示例**：
+
 ```
 --设置net_buffer_length为16384
 openGauss=# set net_buffer_length = 16384;
@@ -752,6 +766,7 @@ SET
 **默认值**：60
 
 **示例**：
+
 ```
 --设置net_write_timeout为60
 openGauss=# set net_write_timeout = 60;
@@ -773,6 +788,7 @@ SET
 **默认值**：1048576
 
 **示例**：
+
 ```
 --设置query_cache_size为1048576
 openGauss=# set query_cache_size = 1048576;
@@ -794,6 +810,7 @@ SET
 **默认值**：0
 
 **示例**：
+
 ```
 --设置query_cache_type为0
 openGauss=# set query_cache_type = 0;
@@ -815,6 +832,7 @@ SET
 **默认值**：无
 
 **示例**：
+
 ```
 --设置system_time_zone为'system_time_zone'
 openGauss=# set system_time_zone = 'system_time_zone';
@@ -836,6 +854,7 @@ SET
 **默认值**：SYSTEM
 
 **示例**：
+
 ```
 --设置time_zone为SYSTEM
 openGauss=# set time_zone = SYSTEM;
@@ -857,6 +876,7 @@ SET
 **默认值**：28800
 
 **示例**：
+
 ```
 --设置wait_timeout为28800
 openGauss=# set wait_timeout = 28800;
@@ -924,8 +944,8 @@ INSERT 0 1
 
 >[!TIP]须知
 >
->-   当加载了dolphin插件，并且开启了dolphin数据库协议后，可以使用此功能。
->-   由于openGauss的database同MySQL的database体系不一致，因此dolphin需要选择一个openGauss的数据库实例。
+>- 当加载了dolphin插件，并且开启了dolphin数据库协议后，可以使用此功能。
+>- 由于openGauss的database同MySQL的database体系不一致，因此dolphin需要选择一个openGauss的数据库实例。
 
 **取值范围**：字符串
 
@@ -937,7 +957,7 @@ INSERT 0 1
 
   | 选项名               | 默认   | 功能                |
   | ------------------- | ------ | ------------------- | 
-  |use_invisible_indexes	| off    | 控制是否使用不可见索引 |
+  |use_invisible_indexes | off    | 控制是否使用不可见索引 |
 
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
@@ -949,14 +969,15 @@ optimizer_switch='command[,command]...'
 
   | command               | 描述                |
   | ------------------- | ------------------ | 
-  | default	|  将所有控制选项设为其默认值 |
-  | opt_name = default	|  将指定控制选项设为其默认值 |
-  | opt_name = off	|  将指定控制选项设为关闭 |
-  | opt_name = on	|  将指定控制选项设为打开 |
+  | default |  将所有控制选项设为其默认值 |
+  | opt_name = default |  将指定控制选项设为其默认值 |
+  | opt_name = off |  将指定控制选项设为关闭 |
+  | opt_name = on |  将指定控制选项设为打开 |
 
 **默认值**：default
 
 **示例**：
+
 ```
 -- 设置use_invisible_indexes为on
 openGauss=# set dolphin.optimizer_switch = 'use_invisible_indexes=on';
@@ -991,6 +1012,7 @@ openGauss=# set dolphin.optimizer_switch = 'use_invisible_indexes=default';
 **默认值**：ON
 
 **示例**：
+
 ```sql
 openGauss=# show sql_note;
  sql_note
@@ -1006,6 +1028,7 @@ openGauss=# show sql_note;
 该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **示例**：
+
 ```
 --设置sql_mode为'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date,pad_char_to_full_length'
 openGauss=# set sql_mode = 'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date,pad_char_to_full_length';
@@ -1027,6 +1050,7 @@ SET
 **默认值**：1
 
 **示例**：
+
 ```
 --设置lower_case_table_names为1
 openGauss=# set lower_case_table_names = 1;
@@ -1046,6 +1070,7 @@ SET
 **默认值**：64
 
 **示例**：
+
 ```sql
 openGauss=# show max_error_count;
  max_error_count
@@ -1097,6 +1122,7 @@ openGauss=# select 1,1.23;
  1 | 1.23
 (1 row)
 ```
+
 ## dolphin.mysql_ca
 
 **参数说明**：dolphin协议插件默认使用的ca证书文件名
@@ -1105,8 +1131,8 @@ openGauss=# select 1,1.23;
 
 >[!TIP]须知
 >
->-   当加载了dolphin插件，并且开启了dolphin数据库协议后，可以使用此功能。
->-   由于openGauss的SSL通信同MySQL的SSL通信体系不一致，因此dolphin需要提供SSL文件信息。
+>- 当加载了dolphin插件，并且开启了dolphin数据库协议后，可以使用此功能。
+>- 由于openGauss的SSL通信同MySQL的SSL通信体系不一致，因此dolphin需要提供SSL文件信息。
 
 **取值范围**：字符串
 
@@ -1120,8 +1146,8 @@ openGauss=# select 1,1.23;
 
 >[!TIP]须知
 >
->-   当加载了dolphin插件，并且开启了dolphin数据库协议后，可以使用此功能。
->-   由于openGauss的SSL通信同mysql的SSL通信体系不一致，因此dolphin需要提供SSL文件信息。
+>- 当加载了dolphin插件，并且开启了dolphin数据库协议后，可以使用此功能。
+>- 由于openGauss的SSL通信同mysql的SSL通信体系不一致，因此dolphin需要提供SSL文件信息。
 
 **取值范围**：字符串
 
@@ -1135,8 +1161,8 @@ openGauss=# select 1,1.23;
 
 >[!TIP]须知
 >
->-   当加载了dolphin插件，并且开启了dolphin数据库协议后，可以使用此功能。
->-   由于openGauss的SSL通信同mysql的SSL通信体系不一致，因此dolphin需要提供SSL文件信息。
+>- 当加载了dolphin插件，并且开启了dolphin数据库协议后，可以使用此功能。
+>- 由于openGauss的SSL通信同mysql的SSL通信体系不一致，因此dolphin需要提供SSL文件信息。
 
 **取值范围**：字符串
 
@@ -1271,7 +1297,6 @@ Has OIDs: no
 Options: orientation=row, compression=no
 ```
 
-
 ## dolphin.enable_procedure_executestmt
 
 **参数说明**：该参数打开后，存储过程会将execute stmtname当作execute 'execute stmtname' 来执行，从而可以和M*数据库一样在存储过程中执行execute prepare语句。关闭时，execute语句和原来一样用于执行动态语句。
@@ -1382,4 +1407,3 @@ openGauss=# explain (costs off) execute s1 using 1;
    Index Cond: (c1 = 1)
 (2 rows)
 ```
-

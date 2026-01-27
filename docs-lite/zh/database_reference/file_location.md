@@ -12,8 +12,8 @@
 
 **参数说明**： 设置openGauss的数据目录（data目录），仅sysadmin用户可以访问。此参数可以通过如下方式指定。
 
--   在安装openGauss时指定。
--   该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+- 在安装openGauss时指定。
+- 该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 字符串，长度大于0
 
@@ -80,4 +80,3 @@ off：代表创建C函数时，so文件可以放在任意可访问的目录下�
 >>[!TIP]须知
 >
 >参数设置成off时，.so文件可以放在任意可访问的目录下或使用系统自带的.so，存在安全风险，不建议使用。
-

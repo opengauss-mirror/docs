@@ -10,6 +10,7 @@
 保证数据库目录中 **pg_filenode.map** 文件完整，系统表 **pg_database** , **pg_namespace**, **pg_class**, **pg_attribute**, **pg_type** 对应的物理文件存在。
 
 ## 语法
+
 ```
 gs_desc [-h] [-s SEARCHPATH] [-n NAMESPACE [NAMESPACE ...]] -t TABLENAME [TABLENAME ...]
 ```
@@ -23,25 +24,28 @@ gs_desc [-h] [-s SEARCHPATH] [-n NAMESPACE [NAMESPACE ...]] -t TABLENAME [TABLEN
 | `-n NAMESPACE [NAMESPACE ...], --namespace NAMESPACE [NAMESPACE ...]` | 指定命名空间（可指定多个） |
 | `-t TABLENAME [TABLENAME ...], --tablename TABLENAME [TABLENAME ...]` | 指定表名（可指定多个） |
 
-
 ## 使用举例
 
 + 指定命名空间和表名。
+
 ```
 gs_desc -n public -t tbl01
 ```
 
 + 仅指定表名。
+
 ```
 gs_desc -t tbl01
 ```
 
 + 指定多个表名。
+
 ```
 gs_desc -t tbl01 tbl02
 ```
 
 + 指定搜索路径。
+
 ```
 gs_desc -t tbl01 tbl02 -s /data/
 ```

@@ -51,4 +51,3 @@ In this example, the full table scan filters much data and returns 3360 records.
 ![](figures/12-4-5-4-算子级调优示例错乱调整示例3.png)
 
 ![](figures/12-4-5-4-算子级调优示例错乱调整示例3-1.png)
-

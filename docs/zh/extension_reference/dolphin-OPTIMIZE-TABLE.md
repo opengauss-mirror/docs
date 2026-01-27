@@ -6,13 +6,13 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--   需要表vacuum/owner或superuser权限。
--   b数据库的optimize操作支持多表，openGauss的optimize操作只支持单表。
--   b数据库的optimize属于Online DDL操作，处理过程的主要阶段不影响表的读写；但openGauss的optimize会阻塞表的读写，表数据量较大时可能会存在长时间锁表情况，请谨慎操作。
--   optimize也会被其他事务或两阶段事务阻塞。
--   尽量不要并发执行optimize多张表，如果需要并发执行，请降低并发数量，一般在3以下。
--   执行optimize时需要确保数据目录当前剩余空间大于该表当前占用空间，不然可能会失败。
--   表在短时间内删除大量数据后不要立即执行optimize，尝试等待几秒或执行若干其他事务后再执行，不然可能出现元组处于HEAPTUPLE_RECENTLY_DEAD状态无法正常回收的情况。
+- 需要表vacuum/owner或superuser权限。
+- b数据库的optimize操作支持多表，openGauss的optimize操作只支持单表。
+- b数据库的optimize属于Online DDL操作，处理过程的主要阶段不影响表的读写；但openGauss的optimize会阻塞表的读写，表数据量较大时可能会存在长时间锁表情况，请谨慎操作。
+- optimize也会被其他事务或两阶段事务阻塞。
+- 尽量不要并发执行optimize多张表，如果需要并发执行，请降低并发数量，一般在3以下。
+- 执行optimize时需要确保数据目录当前剩余空间大于该表当前占用空间，不然可能会失败。
+- 表在短时间内删除大量数据后不要立即执行optimize，尝试等待几秒或执行若干其他事务后再执行，不然可能出现元组处于HEAPTUPLE_RECENTLY_DEAD状态无法正常回收的情况。
 
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 

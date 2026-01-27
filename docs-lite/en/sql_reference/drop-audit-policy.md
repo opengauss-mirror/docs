@@ -29,4 +29,3 @@ See  [Examples](create-audit-policy.md#section7854941155112)  in  **CREATE AUDIT
 ## Helpful Links<a name="section12181292265"></a>
 
 [ALTER AUDIT POLICY](alter-audit-policy.md)  and  [CREATE AUDIT POLICY](create-audit-policy.md)
-

@@ -8,9 +8,9 @@ To process SQL statements, the stored procedure process assigns a memory segment
 
 ## Precautions<a name="en-us_topic_0283137390_en-us_topic_0237122128_en-us_topic_0059778820_s8f58e1ff1b9849b2845f196df6352f13"></a>
 
--   **CURSOR**  is used only in transaction blocks.
--   Generally,  **CURSOR**  and  **SELECT**  both have text returns. Since data is stored in binary format in the system, the system needs to convert the data from the binary format to the text format. If data is returned in text format, client applications need to convert the data back to the binary format for processing.  **FETCH**  implements conversion between binary data and text data.
--   Binary cursors should be used carefully. Text usually occupies larger space than binary data. A binary cursor returns internal binary data, which is easier to operate. A text cursor returns text, which is easier to retrieve and therefore reduces workload on the client. As an example, if a query returns a value of one from an integer column, you would get a string of 1 with a default cursor, whereas with a binary cursor you would get a 4-byte field containing the internal representation of the value \(in big-endian byte order\).
+- **CURSOR**  is used only in transaction blocks.
+- Generally,  **CURSOR**  and  **SELECT**  both have text returns. Since data is stored in binary format in the system, the system needs to convert the data from the binary format to the text format. If data is returned in text format, client applications need to convert the data back to the binary format for processing.  **FETCH**  implements conversion between binary data and text data.
+- Binary cursors should be used carefully. Text usually occupies larger space than binary data. A binary cursor returns internal binary data, which is easier to operate. A text cursor returns text, which is easier to retrieve and therefore reduces workload on the client. As an example, if a query returns a value of one from an integer column, you would get a string of 1 with a default cursor, whereas with a binary cursor you would get a 4-byte field containing the internal representation of the value \(in big-endian byte order\).
 
 ## Syntax<a name="en-us_topic_0283137390_en-us_topic_0237122128_en-us_topic_0059778820_s77068dc6043742e086ef7bfea9075223"></a>
 
@@ -22,38 +22,37 @@ CURSOR cursor_name
 
 ## Parameter Description<a name="en-us_topic_0283137390_en-us_topic_0237122128_en-us_topic_0059778820_safdd83ccfa754a3188de60962295adad"></a>
 
--   **cursor\_name**
+- **cursor\_name**
 
     Specifies the name of the cursor to be created.
 
     Value range: a string. It must comply with the naming convention.
 
--   **BINARY**
+- **BINARY**
 
     Causes the cursor to return data in binary rather than in text format.
 
--   **NO SCROLL**
+- **NO SCROLL**
 
     Specifies how the cursor retrieves rows.
 
-    -   **NO SCROLL**: specifies that the cursor cannot be used to retrieve rows in a nonsequential fashion.
-    -   Unspecified: Based on the query's execution plan, the system automatically determines whether the cursor can be used to retrieve rows in a nonsequential fashion.
+    - **NO SCROLL**: specifies that the cursor cannot be used to retrieve rows in a nonsequential fashion.
+    - Unspecified: Based on the query's execution plan, the system automatically determines whether the cursor can be used to retrieve rows in a nonsequential fashion.
 
--   **WITH HOLD | WITHOUT HOLD**
+- **WITH HOLD | WITHOUT HOLD**
 
     Specifies whether the cursor can continue to be used after the transaction that created it successfully commits.
 
-    -   **WITH HOLD**: The cursor can continue to be used after the transaction that created it successfully commits.
-    -   **WITHOUT HOLD**: The cursor cannot be used outside of the transaction that created it.
-    -   If neither  **WITH HOLD**  nor  **WITHOUT HOLD**  is specified, the default is  **WITHOUT HOLD**.
-    -   Cross-node transactions \(for example, DDL-contained transactions created in openGauss with multiple DBnode\) do not support  **WITH HOLD**.
+    - **WITH HOLD**: The cursor can continue to be used after the transaction that created it successfully commits.
+    - **WITHOUT HOLD**: The cursor cannot be used outside of the transaction that created it.
+    - If neither  **WITH HOLD**  nor  **WITHOUT HOLD**  is specified, the default is  **WITHOUT HOLD**.
+    - Cross-node transactions \(for example, DDL-contained transactions created in openGauss with multiple DBnode\) do not support  **WITH HOLD**.
 
--   **query**
+- **query**
 
     Uses a  **SELECT**  or  **VALUES**  clause to specify the rows to be returned by the cursor.
 
     Value range:  **SELECT**  or  **VALUES**  clause
-
 
 ## Examples<a name="en-us_topic_0283137390_en-us_topic_0237122128_en-us_topic_0059778820_s5587dfafbfee44509237e4eb718ccc55"></a>
 
@@ -62,4 +61,3 @@ See  [Examples](fetch.md#en-us_topic_0283137321_en-us_topic_0237122165_en-us_top
 ## Helpful Links<a name="en-us_topic_0283137390_en-us_topic_0237122128_en-us_topic_0059778820_sb9bc0f8b2b464231a9dc551fa79f0485"></a>
 
 [FETCH](fetch.md)
-

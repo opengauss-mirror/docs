@@ -1,4 +1,3 @@
 # STATEMENT\_COMPLEX\_HISTORY
 
 STATEMENT\_COMPLEX\_HISTORY视图显示在数据库主节点上执行作业结束后的负载管理记录。具体的字段请参考[表1](./global_statement_complex_runtime.md#zh-cn_topic_0237122661_table9446192117461)。
-

@@ -8,7 +8,7 @@
 
 **取值范围**： 字符串。
 
-**默认值** ：'https://127.0.0.1'
+**默认值** ：'<https://127.0.0.1>'
 
 ## enable\_security\_policy<a name="section18307271684"></a>
 

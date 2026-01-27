@@ -116,6 +116,7 @@ NODE_ID  RESOURCE_NAME  STAT   PRE_STAT  TARGET_STAT  WORK_STAT
 LAST_CHECK            STAT_CHANGE
 2025-10-22 20:58:08.909    2025-10-22 19:57:58.712 
 2025-10-22 19:26:49.315    2025-10-22 19:26:50.395 
+
 ```
 
 结果说明：
@@ -136,18 +137,22 @@ LAST_CHECK            STAT_CHANGE
 查看所有CMS状态：
 
 ```
+
 $ cms stat -server
 NODE_ID  SRV_READY  SEND_QUE  RECV_QUE  TIME_GAP(ms)
 0        TRUE       0         0         0
 1        TRUE       0         0         1
+
 ```
 
 查看指定节点CMS状态：
 
 ```
+
 $ cms stat -server 0
 NODE_ID  SRV_READY   SEND_QUE  RECV_QUE  TIME_GAP(ms)
 0        TRUE        0         0         0
+
 ```
 
 结果说明：

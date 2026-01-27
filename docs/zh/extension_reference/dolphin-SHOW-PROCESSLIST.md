@@ -6,9 +6,8 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--   Id字段对应pg_stat_activity视图中的sessionid
--   Info字段记录的是该连接最后一次执行的SQL，这和B数据库有一些差异（B数据库显示当前执行中的SQL），但可以结合State字段查看SQL是否是在执行中，State字段为active时，对应Info字段的SQL则在执行中。
-
+- Id字段对应pg_stat_activity视图中的sessionid
+- Info字段记录的是该连接最后一次执行的SQL，这和B数据库有一些差异（B数据库显示当前执行中的SQL），但可以结合State字段查看SQL是否是在执行中，State字段为active时，对应Info字段的SQL则在执行中。
 
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
@@ -23,7 +22,6 @@ SHOW [FULL] PROCESSLIST
        不使用FULL选项，Info字段只展示SQL长度不超过100的部分。
 
        使用FULL选项，Info字段可完全展示长度不超过1024的SQL语句，如果SQL长度超过1024，会截断1024长度之外的部分。
-
 
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 
@@ -84,6 +82,7 @@ openGauss=# show full processlist;
 22-06-27 14:01:03.969962+08 | 2022-06-27 14:01:19.967521+08 |      7 | active | select pg_sleep(100);
 (10 rows)
 ```
+
 ## 相关链接<a name="section156744489391"></a>
 
 N/A

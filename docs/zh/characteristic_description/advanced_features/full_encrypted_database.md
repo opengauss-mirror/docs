@@ -4,15 +4,15 @@
 
 由于整个业务数据流在数据处理过程中都是以密文形态存在，通过全密态数据库，可以实现：
 
--   保护数据在云上全生命周期的隐私安全。无论数据处于何种状态，攻击者都无法从数据库服务端获取有效信息。
--   帮助云服务提供商获取第三方信任。无论是企业服务场景下的业务管理员、运维管理员，还是消费者云业务下的应用开发者，用户通过将密钥掌握在自己手上，使得高权限用户无法获取数据有效信息。
--   让云数据库服务借助全密态能力更好的遵守个人隐私保护方面的法律法规。
+- 保护数据在云上全生命周期的隐私安全。无论数据处于何种状态，攻击者都无法从数据库服务端获取有效信息。
+- 帮助云服务提供商获取第三方信任。无论是企业服务场景下的业务管理员、运维管理员，还是消费者云业务下的应用开发者，用户通过将密钥掌握在自己手上，使得高权限用户无法获取数据有效信息。
+- 让云数据库服务借助全密态能力更好的遵守个人隐私保护方面的法律法规。
 
 全密态数据库目前支持两种连接方式：gsql连接和jdbc连接。下面将详细介绍两种连接方式下数据库的使用流程。
 
 ## 连接全密态数据库<a name="section20380155916151"></a>
 
--   GSQL连接数据库执行以下命令打开密态开关：
+- GSQL连接数据库执行以下命令打开密态开关：
 
     ```
     gsql -p PORT -d postgres -r -C
@@ -20,11 +20,11 @@
 
     参数说明：
 
-    -   -p：端口号
-    -   -d：数据库名称
-    -   -C：是打开密态开关。
+    - -p：端口号
+    - -d：数据库名称
+    - -C：是打开密态开关。
 
--   JDBC支持密态数据库相关操作，需要设置enable\_ce=1
+- JDBC支持密态数据库相关操作，需要设置enable\_ce=1
 
 ## 创建用户密钥<a name="section47711315142619"></a>
 
@@ -32,7 +32,7 @@
 
 密钥创建的顺序和依赖依次为： 创建CMK \> 创建CEK。
 
--   **GSQL环境下创建CMK和CEK：**
+- **GSQL环境下创建CMK和CEK：**
 
     **【创建CMK】**
 
@@ -42,21 +42,21 @@
 
     参数说明：
 
-    -   **client\_master\_key\_name**
+    - **client\_master\_key\_name**
 
         该参数作为密钥对象名，在同一命名空间下，需满足命名唯一性约束。
 
         取值范围：字符串，需符合标识符的命名规范。
 
-    -   **KEY\_STORE**
+    - **KEY\_STORE**
 
         指定管理CMK的密钥工具或组件；取值：目前仅支持localkms。
 
-    -   **KEY\_PATH**
+    - **KEY\_PATH**
 
         KEY\_STORE负责管理多个CMK密钥，KEY\_PATH选项用于在KEY\_STORE中唯一标识CMK。取值类似：“key\_path\_value”。
 
-    -   **ALGORITHM**
+    - **ALGORITHM**
 
         由本语法创建的用于加密COLUMN ENCRYPTION KEY，该参数用于指定加密算法的类型。取值范围：RSA\_2048、RSA3072和SM2。
 
@@ -73,25 +73,25 @@
 
     参数说明：
 
-    -   **column\_encryption\_key\_name**
+    - **column\_encryption\_key\_name**
 
         该参数作为密钥对象名，在同一命名空间下，需满足命名唯一性约束。
 
         取值范围：字符串，要符合标识符的命名规范。
 
-    -   **CLIENT\_MASTER\_KEY**
+    - **CLIENT\_MASTER\_KEY**
 
         指定用于加密本CEK的CMK。
 
         取值为：CMK对象名，该CMK对象由CREATE CLIENT MASTER KEY语法创建。
 
-    -   **ALGORITHM**
+    - **ALGORITHM**
 
         指定该CEK将用于何种加密算法。
 
         取值范围为：AEAD\_AES\_256\_CBC\_HMAC\_SHA256、AEAD\_AES\_128\_CBC\_HMAC\_SHA256和SM4\_SM3；
 
-    -   **ENCRYPTED\_VALUE**（可选项）
+    - **ENCRYPTED\_VALUE**（可选项）
 
         该值为用户指定的密钥口令，密钥口令长度范围为28 \~ 256个字符。28个字符派生出来的密钥安全强度满足AES128。若用户需要用AES256，密钥口令的长度需要39个字符。如果不指定，则会自动生成256比特的密钥。
 
@@ -113,8 +113,7 @@
      openGauss=> CREATE COLUMN ENCRYPTION KEY ImgCEK WITH VALUES (CLIENT_MASTER_KEY = alice_cmk, ALGORITHM  = AEAD_AES_256_CBC_HMAC_SHA256); 
     ```
 
-
--   **JDBC环境下创建CMK和CEK：**
+- **JDBC环境下创建CMK和CEK：**
 
     ```
     // 创建客户端主密钥
@@ -124,12 +123,11 @@
      int rc2 = stmt.executeUpdate("CREATE COLUMN ENCRYPTION KEY ImgCEK1 WITH VALUES (CLIENT_MASTER_KEY = ImgCMK1, ALGORITHM  = AEAD_AES_256_CBC_HMAC_SHA256);");
     ```
 
-
 ## 创建加密表<a name="section120142113510"></a>
 
 在创建了客户端主密钥CMK和数据加密密钥CEK之后，就可以使用CEK创建加密表了。加密表的创建支持对加密列进行随机加密和确定性加密两种方式。
 
--   **GSQL连接环境下创建加密表：**
+- **GSQL连接环境下创建加密表：**
 
     【示例】
 
@@ -141,19 +139,17 @@
 
     ENCRYPTION\_TYPE为ENCRYPTED WITH约束中的加密类型，encryption\_type\_value的值为\[ DETERMINISTIC | RANDOMIZED \]。
 
-
--   **JDBC环境下创建加密表：**
+- **JDBC环境下创建加密表：**
 
     ```
     int rc3 = stmt.executeUpdate("CREATE TABLE creditcard_info (id_number    int, name  varchar(50) encrypted with (column_encryption_key = ImgCEK, encryption_type = DETERMINISTIC),credit_card  varchar(19) encrypted with (column_encryption_key = ImgCEK1, encryption_type = DETERMINISTIC));");
     ```
 
-
 ## 向加密表插入数据并进行查询<a name="section1298375053510"></a>
 
 创建了加密表以后，可以在密态数据库模式下（连接参数-C）向加密表中插入数据、查看数据。当使用普通环境（关掉连接参数-C）时，是无法对加密表进行操作的，查看加密表时也只能看到密文数据。
 
--   **GSQL环境下向加密表插入数据并查看：**
+- **GSQL环境下向加密表插入数据并查看：**
 
     ```
     openGauss=# INSERT INTO creditcard_info VALUES (1,'joe','6217986500001288393'); 
@@ -179,8 +175,7 @@
      (2 rows)
     ```
 
-
--   **JDBC环境下向加密表插入数据并查看：**
+- **JDBC环境下向加密表插入数据并查看：**
 
     ```
     // 插入数据
@@ -192,6 +187,4 @@
      stmt.close();
     ```
 
-
 上述我们列出的是全密态数据库特性的基本使用方法，更全面的使用介绍，可以参考官方文档中的对应章节。
-

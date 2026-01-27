@@ -493,4 +493,3 @@ GS\_WLM\_SESSION\_HISTORY视图显示当前用户在数据库实例上执行作�
 </tr>
 </tbody>
 </table>
-

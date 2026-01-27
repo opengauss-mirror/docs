@@ -520,6 +520,7 @@ pip3 install requests
     ```
 
 2. 将迁移脚本、配置文件放置在同一目录下，层级如下：
+
     ```
     ├── elasticsearch2opengauss.py
     └── config.ini

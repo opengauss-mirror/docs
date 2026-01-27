@@ -32,10 +32,9 @@ MOT is fully aligned with the operating systems supported by openGauss.
 
 MOT supports both bare-metal and virtualized environments that run the following operating systems on a bare-metal server or virtual machine –
 
--   **x86 –**  CentOS 7.6 and EulerOS 2.0
--   **ARM –**  OpenEuler and EulerOS
+- **x86 –**  CentOS 7.6 and EulerOS 2.0
+- **ARM –**  OpenEuler and EulerOS
 
 ## OS Optimization<a name="en-us_topic_0283136672_en-us_topic_0270171545_section1020616174314"></a>
 
 MOT does not require any special modifications or the installation of new software. However, several optional optimizations can enhance performance. You may refer to the  [MOT Server Optimization – x86](mot_server_optimization.md)  and  [MOT Server Optimization – ARM Huawei Taishan 2P/4P](mot_server_optimization.md)  sections for a description of the optimizations that enable maximal performance.
-

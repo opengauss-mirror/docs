@@ -44,4 +44,3 @@ openGauss=#  SELECT '52093.89'::money::numeric::float8;
 ```
 
 When a money value is divided by another money value, the result is of the double precision type \(that is, a pure number, not money\); the currency units cancel each other out in the division.
-

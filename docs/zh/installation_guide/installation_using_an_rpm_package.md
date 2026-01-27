@@ -129,7 +129,6 @@ sudo yum remove opengauss
 1. 支持从低版本的数据库升级到高版本的数据库。
    注意：不支持从2.1.0 Lite升级到6.0.0 LTS，支持从2.1.0 Lite升级到5.0.1 Lite，以及5.0.1 Lite升级到6.0.0 LTS。
 
-
 ## 容器内进行yum安装opengauss
 
 openGauss已经集成到了openEuler系统里面，可以yum install opengauss一键安装。但是由于容器镜像缩减了很多工具，要在容器里执行yum安装需要进行以下配置。
@@ -137,16 +136,19 @@ openGauss已经集成到了openEuler系统里面，可以yum install opengauss�
 以 openEuler-24.03-SP3系统容器镜像为例：
 
 1. 启动操作系统容器
+
    ```
    docker run --privileged --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -itd --name openeuler2403sp3-test --restart=always openeuler-24.03-lts-sp3:latest /bin/bash
    ```
 
 2. 登录到容器里安装依赖
+
    ```
    yum install util-linux systemd
    ```
 
 3. 退出容器，由于容器没有以systemd方式启动，需要加上配置
+
    ```
    docker stop <container id>
    systemctl stop docker
@@ -156,11 +158,13 @@ openGauss已经集成到了openEuler系统里面，可以yum install opengauss�
    ```
 
 4. 登录到容器里安装opengauss
+
    ```
    yum install opengauss
    ```
 
 **说明**
+  >
   > 1. 由于数据库做yum安装需要启用systemd服务，而容器镜像做了缩减去掉了systemd，以上的步骤目的都是为了在容器内安装和启用systemd
 
   > 2. 容器内做yum安装步骤繁琐，不推荐这么使用。 如果需要用容器部署数据库，推荐使用官网的数据库容器镜像。 

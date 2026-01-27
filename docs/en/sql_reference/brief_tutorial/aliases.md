@@ -4,7 +4,7 @@ SQL can rename a table or a column. The name is the alias of the table or the co
 
 ## Syntax<a name="section119531510131916"></a>
 
--   Column alias syntax
+- Column alias syntax
 
     ```
     SELECT 
@@ -13,7 +13,7 @@ SQL can rename a table or a column. The name is the alias of the table or the co
     [ WHERE condition ];
     ```
 
--   Table alias syntax
+- Table alias syntax
 
     ```
     SELECT column1, column2.... 
@@ -21,13 +21,11 @@ SQL can rename a table or a column. The name is the alias of the table or the co
     WHERE [condition];
     ```
 
-
 ## Parameter Description<a name="section012816161027"></a>
 
--   **output\_name**
+- **output\_name**
 
     You may use the  **AS output\_name**  clause to give an alias for an output column. The alias is used for displaying the output column. The  **name**,  **value**, and  **type**  keywords can be used as column aliases.
-
 
 ## Examples<a name="section73551858131418"></a>
 
@@ -47,4 +45,3 @@ openGauss=# SELECT c.c_first_name,c.amount FROM customer_t1 AS c;
  Lily         |   2000
 (8 rows)
 ```
-

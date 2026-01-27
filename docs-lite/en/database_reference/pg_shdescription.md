@@ -48,4 +48,3 @@ Unlike most system catalogs,  **PG\_SHDESCRIPTION**  is shared across all databa
 </tr>
 </tbody>
 </table>
-

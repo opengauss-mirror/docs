@@ -2,7 +2,6 @@
 
 得到openGauss内各节点的Redo（WAL）相关统计信息。
 
-
 示例：
 
 ```sql

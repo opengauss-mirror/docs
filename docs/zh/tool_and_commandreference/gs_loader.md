@@ -14,17 +14,17 @@ gs\_loader工具用于进行数据导入。gs\_loader将控制文件支持的语
 
 在存放数据源文件的服务器上，安装并配置gs\_loader客户端工具，方便使用gs\_loader工具进行数据的导入。
 
-1.  创建用于存放gs\_loader工具包的目录。
+1. 创建用于存放gs\_loader工具包的目录。
 
     ```
     mkdir -p /opt/bin
     ```
 
-2.  将gsql工具包上传至新创建的目录中。
+2. 将gsql工具包上传至新创建的目录中。
 
     以上传EULER Linux版本的工具包为例，将软件安装包中的gsql工具包“GaussDB-Kernel\_数据库版本号\_操作系统版本号\_64bit\_gsql.tar.gz”上传至新创建的目录中。
 
-3.  在工具包所在的目录下，解压工具包。
+3. 在工具包所在的目录下，解压工具包。
 
     ```
     cd /opt/bin
@@ -32,13 +32,13 @@ gs\_loader工具用于进行数据导入。gs\_loader将控制文件支持的语
     source gsql_env.sh
     ```
 
-4.  验证工具位置及版本信息。
+4. 验证工具位置及版本信息。
 
     ```
     which gs_loader
     ```
 
-5.  验证客户端版本信息。
+5. 验证客户端版本信息。
 
     gs\_loader工具版本与gsql工具版本相对应，直接查询gsql客户端版本即可验证客户端版本信息。
 
@@ -46,7 +46,7 @@ gs\_loader工具用于进行数据导入。gs\_loader将控制文件支持的语
     gsql -V
     ```
 
-6.  验证数据库版本信息，确保与客户端工具版本保持一致。
+6. 验证数据库版本信息，确保与客户端工具版本保持一致。
 
     使用gsql工具成功连接数据库后输入：
 
@@ -73,19 +73,19 @@ GUC参数enable\_copy\_error\_log是控制是否使用错误表pgxc\_copy\_error
 
 默认场景，不开启三权分立（即enableSeparationOfDuty=off）时，使用者可以是数据库普通用户或管理员用户。当使用者为普通用户的时候，需要管理员用户对普通用户赋权。管理员账户可以直接使用。错误表pgxc\_copy\_error\_log通过GUC参数enable\_copy\_error\_log控制开启和关闭，默认关闭。
 
-1.  使用管理员用户创建新的用户：
+1. 使用管理员用户创建新的用户：
 
     ```
     CREATE USER load_user WITH PASSWORD '************';
     ```
 
-2.  将public schema权限赋给新的用户：
+2. 将public schema权限赋给新的用户：
 
     ```
     GRANT ALL ON SCHEMA public TO load_user;
     ```
 
-3.  创建并给新用户授权gs\_copy\_summary表：
+3. 创建并给新用户授权gs\_copy\_summary表：
 
     >[!NOTE]说明
     >gs\_copy\_summary表中不能含有RULE、TRIGGER、索引函数、行级访问控制、CHECK约束、GENERATED列、DEFAULT列、ON UPDATE列等可能导致提权的对象，否则将认为是恶意用户创建而报错退出。
@@ -95,11 +95,11 @@ GUC参数enable\_copy\_error\_log是控制是否使用错误表pgxc\_copy\_error
     GRANT INSERT,SELECT ON  public.gs_copy_summary To load_user;
     ```
 
-4.  （可选）创建并给新用户授权错误表pgxc\_copy\_error\_log：
+4. （可选）创建并给新用户授权错误表pgxc\_copy\_error\_log：
 
     >[!NOTE]说明
-    >-   如果guc参数enable\_copy\_error\_log未设置（默认为off），或者设置为off，则无需使用错误表，无需创建。否则需要创建该错误表。
-    >-   pgxc\_copy\_error\_log表中不能含有RULE、TRIGGER、索引函数、行级访问控制、CHECK约束、GENERATED列、DEFAULT列、ON UPDATE列等可能导致提权的对象，否则将认为是恶意用户创建而报错退出。
+    >- 如果guc参数enable\_copy\_error\_log未设置（默认为off），或者设置为off，则无需使用错误表，无需创建。否则需要创建该错误表。
+    >- pgxc\_copy\_error\_log表中不能含有RULE、TRIGGER、索引函数、行级访问控制、CHECK约束、GENERATED列、DEFAULT列、ON UPDATE列等可能导致提权的对象，否则将认为是恶意用户创建而报错退出。
 
     ```
     SELECT copy_error_log_create() WHERE NOT EXISTS(SELECT * FROM pg_tables WHERE schemaname='public' AND tablename='pgxc_copy_error_log');
@@ -108,29 +108,29 @@ GUC参数enable\_copy\_error\_log是控制是否使用错误表pgxc\_copy\_error
 
 开启三权分立（即enableSeparationOfDuty=on）时，使用者可以是数据库普通用户或管理员用户。使用前需要到各自的schema下创建pgxc\_copy\_error\_log表以及gs\_copy\_summary这两张表并添加索引，不需要再进行授权。
 
-1.  使用初始用户创建新用户：
+1. 使用初始用户创建新用户：
 
     ```
     CREATE USER load_user WITH PASSWORD '********';
     ```
 
-2.  从初始用户切换为新用户：
+2. 从初始用户切换为新用户：
 
     ```
     \c - load_user
     ```
 
-3.  创建gs\_copy\_summary表并添加索引：
+3. 创建gs\_copy\_summary表并添加索引：
 
     ```
     CREATE TABLE load_user.gs_copy_summary(relname varchar, begintime timestamptz, endtime timestamptz, id bigint, pid bigint, readrows bigint, skiprows bigint, loadrows bigint, errorrows bigint, whenrows bigint, allnullrows bigint, detail text);
     CREATE INDEX gs_copy_summary_idx ON load_user.gs_copy_summary(id);
     ```
 
-4.  （可选）创建pgxc\_copy\_error\_log表并添加索引：
+4. （可选）创建pgxc\_copy\_error\_log表并添加索引：
 
     >[!NOTE]说明
-    >1.  如果guc参数enable\_copy\_error\_log未设置（默认为off），或者设置为off，则无需使用错误表，无需创建。否则需要创建该错误表。
+    >1. 如果guc参数enable\_copy\_error\_log未设置（默认为off），或者设置为off，则无需使用错误表，无需创建。否则需要创建该错误表。
 
     ```
     CREATE TABLE load_user.pgxc_copy_error_log (relname varchar, begintime timestamptz, filename varchar, lineno int8, rawrecord text, detail text);
@@ -244,27 +244,27 @@ detail      | 111 Rows successfully loaded.
 
 ## 使用指导<a name="section2511450105813"></a>
 
-1.  （非三权分立）仅对于普通用户。
-    1.  （在管理员用户下）创建用户：
+1. （非三权分立）仅对于普通用户。
+    1. （在管理员用户下）创建用户：
 
         ```
         CREATE USER load_user WITH PASSWORD '************';
         ```
 
-    2.  （在管理员用户下）将public schema权限赋给用户：
+    2. （在管理员用户下）将public schema权限赋给用户：
 
         ```
         GRANT ALL ON SCHEMA public TO load_user;
         ```
 
-    3.  （在管理员用户下）创建并给用户授权gs\_copy\_summary表：
+    3. （在管理员用户下）创建并给用户授权gs\_copy\_summary表：
 
         ```
         SELECT copy_summary_create() WHERE NOT EXISTS(SELECT * FROM pg_tables WHERE schemaname='public' AND tablename='gs_copy_summary');
         GRANT ALL PRIVILEGES ON  public.gs_copy_summary To load_user;
         ```
 
-    4.  （可选，在管理员用户下）创建并给用户授权错误表pgxc\_copy\_error\_log：
+    4. （可选，在管理员用户下）创建并给用户授权错误表pgxc\_copy\_error\_log：
 
         >[!NOTE]说明
         >如果guc参数enable\_copy\_error\_log未设置（默认为off），或者设置为off，则无需使用错误表，无需创建。否则需要创建该错误表。
@@ -274,33 +274,33 @@ detail      | 111 Rows successfully loaded.
         GRANT ALL PRIVILEGES ON  public.pgxc_copy_error_log To load_user;
         ```
 
-    5.  切换用户。
+    5. 切换用户。
 
         ```
         \c - load_user
         ```
 
-2.  （三权分立）对于普通用户和管理员用户。
-    1.  （在初始用户下）创建用户：
+2. （三权分立）对于普通用户和管理员用户。
+    1. （在初始用户下）创建用户：
 
         ```
         CREATE USER load_user WITH PASSWORD '********';
         ```
 
-    2.  （在初始用户下）切换为load\_user用户：
+    2. （在初始用户下）切换为load\_user用户：
 
         ```
         \c - load_user
         ```
 
-    3.  创建gs\_copy\_summary表并添加索引。
+    3. 创建gs\_copy\_summary表并添加索引。
 
         ```
         CREATE TABLE load_user.gs_copy_summary(relname varchar, begintime timestamptz, endtime timestamptz, id bigint, pid bigint, readrows bigint, skiprows bigint, loadrows bigint, errorrows bigint, whenrows bigint, allnullrows bigint, detail text);
         CREATE INDEX gs_copy_summary_idx ON load_user.gs_copy_summary(id);
         ```
 
-    4.  （可选）创建pgxc\_copy\_error\_log表并添加索引。
+    4. （可选）创建pgxc\_copy\_error\_log表并添加索引。
 
         >[!NOTE]说明
         >如果guc参数enable\_copy\_error\_log未设置（默认为off），或者设置为off，则无需使用错误表，无需创建。否则需要创建该错误表。
@@ -310,7 +310,7 @@ detail      | 111 Rows successfully loaded.
         CREATE INDEX copy_error_log_relname_idx ON load_user.pgxc_copy_error_log(relname);
         ```
 
-3.  创建表和控制文件，准备数据文件。
+3. 创建表和控制文件，准备数据文件。
 
     创建表loader\_tbl。
 
@@ -365,7 +365,7 @@ detail      | 111 Rows successfully loaded.
     5,OK,,2021-07-30
     ```
 
-4.  进行导入。
+4. 进行导入。
 
     （在gs\_loader客户端机器上）执行导入前，先确认gs\_loader工具有可执行权限。确保当前路径有文件写入权限（gs\_loader在处理过程中会生成一些临时文件，导入完成后自动删除）。
 
@@ -595,40 +595,41 @@ detail      | 111 Rows successfully loaded.
 </table>
 
 >[!WARNING]注意
->-   参数均为小写，不支持大写，同时兼容gsql登录方式：-p端口号，-h主机，-d数据库，-U用户名，-W密码方式。
->-   使用rows参数时，提交次数不要超过1000次，否则会对性能产生影响。提交次数约等于数据文件中数据行数除以rows参数取值。不指定rows参数时，rows无默认取值，表现为只进行一次提交，即所有数据都导入表中后进行一次事务提交。
->-   小数据量频繁的提交会影响导入数据的性能，推荐合理配置rows参数的取值，保证每次提交的数据量大于5MB。对于常用的16U128G规格机器，一主两备部署场景下，向5个字段的表内导入13GB数据，排除网络影响，多次提交和单次提交（每次提交5MB数据）的速率基本持平，为10MB/s左右。
->-   compatible\_nul参数实际控制guc参数loader\_support\_nul\_character值的设置：
->    -   compatible\_nul=true对应session级set loader\_support\_nul\_charchter='s2'。
->    -   compatible\_nul=false对应session级set loader\_support\_nul\_character='s1'。
+>
+>- 参数均为小写，不支持大写，同时兼容gsql登录方式：-p端口号，-h主机，-d数据库，-U用户名，-W密码方式。
+>- 使用rows参数时，提交次数不要超过1000次，否则会对性能产生影响。提交次数约等于数据文件中数据行数除以rows参数取值。不指定rows参数时，rows无默认取值，表现为只进行一次提交，即所有数据都导入表中后进行一次事务提交。
+>- 小数据量频繁的提交会影响导入数据的性能，推荐合理配置rows参数的取值，保证每次提交的数据量大于5MB。对于常用的16U128G规格机器，一主两备部署场景下，向5个字段的表内导入13GB数据，排除网络影响，多次提交和单次提交（每次提交5MB数据）的速率基本持平，为10MB/s左右。
+>- compatible\_nul参数实际控制guc参数loader\_support\_nul\_character值的设置：
+> - compatible\_nul=true对应session级set loader\_support\_nul\_charchter='s2'。
+> - compatible\_nul=false对应session级set loader\_support\_nul\_character='s1'。
 >        建议通过命令行设置此参数且通过compatible\_nul设置优先级高于guc\_param中设置。
->-   当前gs\_loader仅支持数据文件中存在nul字符时的兼容，不支持ctl控制文件中存在nul字符。ctl文件中存在nul字符会存在不可预期的问题。
->-   指定binary参数为true后，有以下行要求：
->    -   数据文件必须为通过\\COPY中BINARY模式导出的二进制格式数据文件，但是该模式导出的数据文件通常兼容性及可移植性较差，建议直接使用\\COPY语句进行导入。
->    -   gs\_loader会将控制文件中语法转换为\\COPY中BINARY模式下最简单的语法，即\\COPY table\_name FROM 'binary\_file\_path' BINARY; 语句。只解析控制文件中导入模式，表名信息和命令行中的control、data、binary、guc\_param及数据库连接参数信息，不对其他参数语法进行解析和生效。
->    -   对于gs\_loader的命令行及控制文件中有以下要求：
->        -   不支持字符集配置。
->        -   不支持WHEN条件过滤及DISCARD生成。
->        -   不支持enable\_copy\_error\_log = off下将错误数据直接写入bad文件。errors默认取值unlimited，会默认记录编码异常数据。
->        -   不支持配置CSV模式，不支持指定分隔符及包裹符，不支持TRAILING NULLCOLS语法。
->        -   不支持数据类型配置、POSITION配置及列表达式使用。
->        -   不支持FILLER、CONSTANT、SEQUENCE、NULLIF参数。
->        -   不支持skip、rows、compatible\_nul、compatible\_illegal\_chars参数。
->-   指定parallel大于1时：
->    -   当同时设置binary参数为true时，parallel参数失效，按串行导入。
->    -   不支持在控制文件中设置OPTIONALLY ENCLOSED BY或者FIELDS CSV。
->    -   不支持在控制文件中设置SEQUENCE列。
->    -   无法保证数据按数据文件中的顺序导入。如果表中存在自增列，导入后自增列值的顺序无法保证与数据文件中顺序一致。
->    -   同时使用errors参数时，errors参数的意义为每个子任务允许出现的最大错误行数。
->    -   同时使用skip参数时，skip参数的意义是在整个数据文件开头跳过的行数。
->    -   同时使用rows参数时，分批提交的批次各子任务独立计算。
->    -   在客户端CPU、内存和服务端CPU、内存、空闲线程以及网络带宽不存在瓶颈时，相比于串行导入，并发度为2/4/8时的性能提升不低于1.5/3/5倍。
->    -   并发度每增加1，大约增加客户端10MB内存，服务端大约35MB内存。
->-   当设置GUC参数support\_zero\_character为on时，表示数据库支持0x00字符的写入和读取，gs\_loader导入数据时，会将0x00按照原始样式导入，而不是受其他兼容性参数影响转换成0x20。
+>- 当前gs\_loader仅支持数据文件中存在nul字符时的兼容，不支持ctl控制文件中存在nul字符。ctl文件中存在nul字符会存在不可预期的问题。
+>- 指定binary参数为true后，有以下行要求：
+> - 数据文件必须为通过\\COPY中BINARY模式导出的二进制格式数据文件，但是该模式导出的数据文件通常兼容性及可移植性较差，建议直接使用\\COPY语句进行导入。
+> - gs\_loader会将控制文件中语法转换为\\COPY中BINARY模式下最简单的语法，即\\COPY table\_name FROM 'binary\_file\_path' BINARY; 语句。只解析控制文件中导入模式，表名信息和命令行中的control、data、binary、guc\_param及数据库连接参数信息，不对其他参数语法进行解析和生效。
+> - 对于gs\_loader的命令行及控制文件中有以下要求：
+>        - 不支持字符集配置。
+>        - 不支持WHEN条件过滤及DISCARD生成。
+>        - 不支持enable\_copy\_error\_log = off下将错误数据直接写入bad文件。errors默认取值unlimited，会默认记录编码异常数据。
+>        - 不支持配置CSV模式，不支持指定分隔符及包裹符，不支持TRAILING NULLCOLS语法。
+>        - 不支持数据类型配置、POSITION配置及列表达式使用。
+>        - 不支持FILLER、CONSTANT、SEQUENCE、NULLIF参数。
+>        - 不支持skip、rows、compatible\_nul、compatible\_illegal\_chars参数。
+>- 指定parallel大于1时：
+> - 当同时设置binary参数为true时，parallel参数失效，按串行导入。
+> - 不支持在控制文件中设置OPTIONALLY ENCLOSED BY或者FIELDS CSV。
+> - 不支持在控制文件中设置SEQUENCE列。
+> - 无法保证数据按数据文件中的顺序导入。如果表中存在自增列，导入后自增列值的顺序无法保证与数据文件中顺序一致。
+> - 同时使用errors参数时，errors参数的意义为每个子任务允许出现的最大错误行数。
+> - 同时使用skip参数时，skip参数的意义是在整个数据文件开头跳过的行数。
+> - 同时使用rows参数时，分批提交的批次各子任务独立计算。
+> - 在客户端CPU、内存和服务端CPU、内存、空闲线程以及网络带宽不存在瓶颈时，相比于串行导入，并发度为2/4/8时的性能提升不低于1.5/3/5倍。
+> - 并发度每增加1，大约增加客户端10MB内存，服务端大约35MB内存。
+>- 当设置GUC参数support\_zero\_character为on时，表示数据库支持0x00字符的写入和读取，gs\_loader导入数据时，会将0x00按照原始样式导入，而不是受其他兼容性参数影响转换成0x20。
 
 ## 控制文件<a name="section85571127195813"></a>
 
--   语法说明：
+- 语法说明：
 
     ```
     LOAD [ DATA ]
@@ -650,9 +651,9 @@ detail      | 111 Rows successfully loaded.
     )]
     ```
 
--   参数说明：
+- 参数说明：
 
-    -   **CHARACTERSET**
+    - **CHARACTERSET**
 
         字符集。
 
@@ -660,19 +661,19 @@ detail      | 111 Rows successfully loaded.
 
         注意：控制文件中**CHARACTERSET**指定的字符集，应该和文件的编码格式保持一致，否则会报错或者导入数据乱码。
 
-    -   **INFILE**
+    - **INFILE**
 
         当前关键字无效，并在控制文件中需要单独占一行，运行时候会忽略该关键字。需要用户在gs\_loader命令行参数中指定对应的数据文件。
 
-    -   **BADFILE**
+    - **BADFILE**
 
         当前关键字无效，运行时候会忽略该关键字，如果gs\_loader 命令行参数没有指定badfile，则会根据对应控制文件名称生成对应的badfile文件。
 
-    -   **OPTIONS**
+    - **OPTIONS**
 
         其中只有skip和rows功能生效，skip=n为导入时跳过前n条数据，rows=n为导入多少行数据后进行一次提交。命令行和控制文件同时指定时，命令行优先级更高。
 
-    -   **INSERT | APPEND | REPLACE | TRUNCATE**
+    - **INSERT | APPEND | REPLACE | TRUNCATE**
 
         导入模式。
 
@@ -685,25 +686,25 @@ detail      | 111 Rows successfully loaded.
         **TRUNCATE：**如果表中有数据，则全部删除，然后再插入。
 
         >[!NOTE]说明
-        >-   在写控制文件\(.ctl\)文件时，在INTO TABLE table\_name语句前后都可以指定（导入模式，INSERT | APPEND | REPLACE | TRUNCATE），使用优先级为：在INTO TABLE table\_name语句后面指定导入模式优先级高于在INTO TABLE table\_name语句前面指定导入模式，在INTO TABLE table\_name语句后面指定导入模式会覆盖在前面指定的导入模式。
-        >-   当开启多个gs\_loader会话，并发地向同一张表中导入数据时，推荐以APPEND的方式进行导入，以INSERT|REPLACE|TRUNCATE的方式会出现导入报错或数据导入不全的问题。
+        >- 在写控制文件\(.ctl\)文件时，在INTO TABLE table\_name语句前后都可以指定（导入模式，INSERT | APPEND | REPLACE | TRUNCATE），使用优先级为：在INTO TABLE table\_name语句后面指定导入模式优先级高于在INTO TABLE table\_name语句前面指定导入模式，在INTO TABLE table\_name语句后面指定导入模式会覆盖在前面指定的导入模式。
+        >- 当开启多个gs\_loader会话，并发地向同一张表中导入数据时，推荐以APPEND的方式进行导入，以INSERT|REPLACE|TRUNCATE的方式会出现导入报错或数据导入不全的问题。
 
-    -   **FIELDS CSV**
+    - **FIELDS CSV**
 
         标识使用copy的CSV模式。在CSV模式下分隔符缺省值为逗号，引号字符的缺省值为双引号。
 
         >[!NOTE]说明
-        >-   当前CSV模式下，被双引号包含的换行符被视为字段数据的一部分。
-        >-   CSV模式下，设置了GUC参数a\_format\_copy\_version为's1'时，会跳过字段开头空格。并且当某个字段第一个非空格字符不是enclosed字符时，忽略enclosed设置。当未匹配到关闭enclosed字符，先匹配到行末时，会进行报错。
-        >-   CSV模式下，在不打开0字符GUC开关support\_zero\_characters时，如果使用了compatible\_nul或者compatible\_illegal\_chars参数对0x00字符进行兼容，由于0x00转换0x20的行为发生在跳过开头空格的行为之前，因此字段开头的0x00字符会被当作0x20处理被删除掉。
+        >- 当前CSV模式下，被双引号包含的换行符被视为字段数据的一部分。
+        >- CSV模式下，设置了GUC参数a\_format\_copy\_version为's1'时，会跳过字段开头空格。并且当某个字段第一个非空格字符不是enclosed字符时，忽略enclosed设置。当未匹配到关闭enclosed字符，先匹配到行末时，会进行报错。
+        >- CSV模式下，在不打开0字符GUC开关support\_zero\_characters时，如果使用了compatible\_nul或者compatible\_illegal\_chars参数对0x00字符进行兼容，由于0x00转换0x20的行为发生在跳过开头空格的行为之前，因此字段开头的0x00字符会被当作0x20处理被删除掉。
 
-    -   **table\_name**
+    - **table\_name**
 
         表的名称（可以有模式修饰）。
 
         取值范围：已存在的表名。
 
-    -   **TERMINATED \[BY\] \{ 'string' \}**
+    - **TERMINATED \[BY\] \{ 'string' \}**
 
         在文件中分隔各个字段的字符串，分隔符最大长度不超过10个字节。
 
@@ -714,7 +715,7 @@ detail      | 111 Rows successfully loaded.
         >[!WARNING]注意
         >开启nul字符兼容，即compatible\_nul=true，如果指定分隔符为' '空格字符\(0x20\)时需要注意，所判断的分隔符为数据文件中已存在的空格字符，并非nul字符转换而来的空格字符。
 
-    -   **OPTIONALLY ENCLOSED BY \{ 'string' \}**
+    - **OPTIONALLY ENCLOSED BY \{ 'string' \}**
 
         CSV格式文件下的引号字符。
 
@@ -723,62 +724,62 @@ detail      | 111 Rows successfully loaded.
         其余模式下无缺省值。
 
         >[!NOTE]说明
-        >-   设置**OPTIONALLY ENCLOSED BY \{ 'string' \}**时，数据左边可以不带引号字符，如果有引号字符，数据左右都必须为奇数个，但个数不必相等。
-        >-   当前仅CSV模式支持**OPTIONALLY ENCLOSED BY \{ 'string' \}**。当指定**OPTIONALLY ENCLOSED BY \{ 'string' \}**时，默认进入CSV模式。
+        >- 设置**OPTIONALLY ENCLOSED BY \{ 'string' \}**时，数据左边可以不带引号字符，如果有引号字符，数据左右都必须为奇数个，但个数不必相等。
+        >- 当前仅CSV模式支持**OPTIONALLY ENCLOSED BY \{ 'string' \}**。当指定**OPTIONALLY ENCLOSED BY \{ 'string' \}**时，默认进入CSV模式。
 
-    -   **TRAILING NULLCOLS**
+    - **TRAILING NULLCOLS**
 
         当数据加载时，若数据源文件中一行的多个字段缺失的处理方式。
 
         当一行数据的最后存在一个或多个字段为空时，按照空值处理将其导入到表中。不设置则会报错字段为空，将这行数据当作错误数据处理。
 
-    -   **WHEN \{ \(start:end\) | column\_name \} \{= | !=\}**
+    - **WHEN \{ \(start:end\) | column\_name \} \{= | !=\}**
 
         对行中的start到end之间的字符串，或者根据列名进行行过滤。
 
         取值范围：字符串。
 
         >[!NOTE]说明
-        >-   当GUC参数enable\_copy\_when\_filler=on（默认）时，支持根据FILLER类型列进行过滤。当GUC参数enable\_copy\_when\_filler=off时，则不支持。
-        >-   WHEN条件后的常量字符串中不支持'\\0'、'\\r'等特殊字符。
+        >- 当GUC参数enable\_copy\_when\_filler=on（默认）时，支持根据FILLER类型列进行过滤。当GUC参数enable\_copy\_when\_filler=off时，则不支持。
+        >- WHEN条件后的常量字符串中不支持'\\0'、'\\r'等特殊字符。
 
-    -   **POSITION \(\{ start:end \}\)**
+    - **POSITION \(\{ start:end \}\)**
 
         对列进行处理，根据start到end范围获取对应字符串。
 
-    -   **"sql\_string"**
+    - **"sql\_string"**
 
         对列进行处理，列表达式，根据表达式计算列的取值。详见[•列表达式](#li056719112099)。
 
         取值范围：字符串。
 
-    -   **FILLER**
+    - **FILLER**
 
         对列进行处理，如果出现FILLER，则这个字段跳过。
 
         >[!NOTE]说明
         >当前不支持FILLER与POSITION  **\(\{ start:end \}\)**同时使用。
 
-    -   **column\_type \[external\]**
+    - **column\_type \[external\]**
 
         在导入数据时，根据不同的数据类型对数据进行处理。详见[•数据类型](#li011619316102)。
 
-    -   **CONSTANT**
+    - **CONSTANT**
 
         对列进行处理，将插入的对应字段设置为常量。
 
         取值范围：字符串。
 
-    -   **SEQUENCE \( \{ COUNT | MAX | integer \} \[, incr\] \)**
+    - **SEQUENCE \( \{ COUNT | MAX | integer \} \[, incr\] \)**
 
         对列进行处理，生成对应的序列值。
 
-        -   COUNT：表示根据表中数据的行数开始计算。
-        -   MAX：表示根据表中这一列的最大值开始计算。
-        -   integer：表示从用户指定的值开始计算。
-        -   incr：表示每次递增多少。
+        - COUNT：表示根据表中数据的行数开始计算。
+        - MAX：表示根据表中这一列的最大值开始计算。
+        - integer：表示从用户指定的值开始计算。
+        - incr：表示每次递增多少。
 
-    -   **NULLIF**
+    - **NULLIF**
 
         在设置a\_format\_copy\_version等于's1'时，当指定列的数据只包含空白字符时返回NULL，否则返回trim\(COL\)，等价于列表达式 "nullif\(trim\(COL\), ''\)"。
 
@@ -787,12 +788,12 @@ detail      | 111 Rows successfully loaded.
         当前只支持COL POSITION\(\) CHAR NULLIF \(COL=BLANKS\)语法。具体使用详见[•NULLIF使用用例](#li1413683033117)。
 
     >[!WARNING]注意
-    >-   不支持OPTIONS、INFILE、BADFILE，仅在特定场景下不报语法错误。
-    >-   gs\_loader使用bad文件来记录出错数据，如果设置guc参数enable\_copy\_error\_log开启错误表，该数据来自错误表的rawrecord字段，由于错误表对于以某种编码无法读起的错误不记录rawrecord，因此bad文件中遇到此情况时记录空行。
-    >-   gs\_loader在设置guc参数a\_format\_load\_with\_constraints\_violation开启支持约束冲突不回滚场景时，如果表带有BEFORE/AFTER ROW INSERT触发器，则每次提交行数不能超过1000万行。
-    >-   gs\_loader在设置guc参数a\_format\_load\_with\_constraints\_violation开启支持约束冲突不回滚场景时，不支持语句级触发器。
+    >- 不支持OPTIONS、INFILE、BADFILE，仅在特定场景下不报语法错误。
+    >- gs\_loader使用bad文件来记录出错数据，如果设置guc参数enable\_copy\_error\_log开启错误表，该数据来自错误表的rawrecord字段，由于错误表对于以某种编码无法读起的错误不记录rawrecord，因此bad文件中遇到此情况时记录空行。
+    >- gs\_loader在设置guc参数a\_format\_load\_with\_constraints\_violation开启支持约束冲突不回滚场景时，如果表带有BEFORE/AFTER ROW INSERT触发器，则每次提交行数不能超过1000万行。
+    >- gs\_loader在设置guc参数a\_format\_load\_with\_constraints\_violation开启支持约束冲突不回滚场景时，不支持语句级触发器。
 
--   bad文件对应数据为空的需要对应错误表的内容参考源文件和行号（不识别某种编码序列，不写bad文件内容，只记录空行）。
+- bad文件对应数据为空的需要对应错误表的内容参考源文件和行号（不识别某种编码序列，不写bad文件内容，只记录空行）。
 
     ```
     loader=# select * from pgxc_copy_error_log;
@@ -803,7 +804,7 @@ detail      | 111 Rows successfully loaded.
     //如上例子对于loader对应的文件，查找数据文本第一行找出源数据
     ```
 
--   <a name="li1413683033117"></a>NULLIF使用用例
+- <a name="li1413683033117"></a>NULLIF使用用例
 
     ```
     // 建表
@@ -855,7 +856,7 @@ detail      | 111 Rows successfully loaded.
 
     从导入表中的数据可以看出在使用NULLIF关键字后，除指定NULLIF运算和sysdate运算的列执行导入操作后导入字段正常，其余未指定运算的列表现为导入字段为空。
 
--   <a name="li056719112099"></a>列表达式
+- <a name="li056719112099"></a>列表达式
 
     gs\_loader支持对指定列进行表达式转换和场景扩展：
 
@@ -867,7 +868,7 @@ detail      | 111 Rows successfully loaded.
 
     示例：
 
-    -   ctl文件中不指定列类型，源数据不满足表中列限制（数据类型限制、数据长度限制）。
+    - ctl文件中不指定列类型，源数据不满足表中列限制（数据类型限制、数据长度限制）。
 
         ```
         // 建表
@@ -894,7 +895,7 @@ detail      | 111 Rows successfully loaded.
         (1 row)
         ```
 
-    -   ctl文件中不指定列类型，隐式类型转换（涉及隐式类型转换，建议加上兼容性参数）。
+    - ctl文件中不指定列类型，隐式类型转换（涉及隐式类型转换，建议加上兼容性参数）。
 
         ```
         // 建表
@@ -930,57 +931,57 @@ detail      | 111 Rows successfully loaded.
            2 | yyds180.883 | 181.883 | 2012-01-01 00:00:00+08 | 32768
         ```
 
--   <a name="li011619316102"></a>数据类型
+- <a name="li011619316102"></a>数据类型
 
     对应控制文件中的column\_type \[external\]，在加载数据时，根据不同的数据类型对数据进行处理。gs\_loader中可以将数据类型分为普通数据类型和特殊数据类型。
 
-    -   普通数据类型
-        -   CHAR \[\(length\)\]：
+    - 普通数据类型
+        - CHAR \[\(length\)\]：
 
             按照字段分隔符读取数据，并转换使用CHAR类型来保存值。length表示单条数据的最大长度，以字节为单位，通常一个字符占用一个字节，并且可以缺省，分为以下几种场景：
 
-            -   缺省对length长度的声明时，length的值会根据POSITION的声明来继承最大长度值。
-            -   声明了length的长度，则它会覆盖POSITION中对于最大长度的声明。
-            -   缺省了length的声明，同时也缺省了POSITION的声明，length的长度会根据分隔符间长度进行设置。
-            -   对于长度声明的优先级：length \> POSITION \> 分隔符。
-            -   缺省length，POSITION，分隔符的声明时，会从当前位置读到行结束符为止。
-            -   如果实际数据长度超过了length声明的最大长度，会报错。
+            - 缺省对length长度的声明时，length的值会根据POSITION的声明来继承最大长度值。
+            - 声明了length的长度，则它会覆盖POSITION中对于最大长度的声明。
+            - 缺省了length的声明，同时也缺省了POSITION的声明，length的长度会根据分隔符间长度进行设置。
+            - 对于长度声明的优先级：length \> POSITION \> 分隔符。
+            - 缺省length，POSITION，分隔符的声明时，会从当前位置读到行结束符为止。
+            - 如果实际数据长度超过了length声明的最大长度，会报错。
 
-        -   INTEGER external \[\(length\)\]：
+        - INTEGER external \[\(length\)\]：
 
             按照字段分隔符读取数据，并转换使用INTEGER类型来保存值。length的使用规则与CHAR类型中相同。
 
-        -   FLOAT external \[\(length\)\]：
+        - FLOAT external \[\(length\)\]：
 
             按照字段分隔符读取数据，并转换使用FLOAT类型来保存值。length的使用规则与CHAR类型中相同。
 
-        -   DECIMAL external \(length\)：
+        - DECIMAL external \(length\)：
 
             按照字段分隔符读取数据，并转换使用DECIMAL类型来保存值。length的使用规则与CHAR类型中相同
 
-        -   TIMESTAMP：
+        - TIMESTAMP：
 
             按照字段分隔符读取数据，并转换使用TIMESTAMP类型来保存值。
 
-        -   DATE：
+        - DATE：
 
             按照字段分隔符读取数据，并转换使用DATE类型来保存值。
 
-        -   DATE   external：
+        - DATE   external：
 
             按照字段分隔符读取数据，并转换使用DATE类型来保存值。
 
-        -   SYSDATE：
+        - SYSDATE：
 
             在数据库执行对应的插入时，取系统时间。该字段对应对应的值无法被引用使用，被引用使用的内容为SYSDATE字符串。
 
-    -   特殊数据类型
+    - 特殊数据类型
 
-        -   INTEGER：
+        - INTEGER：
 
             无视字段分隔符读取四个字节长度的字符，按小端存储逻辑保存，然后将每个字符解析成十六进制ASCII码值，最后将整体转换为十进制数来保存值。
 
-        -   SMALLINT：
+        - SMALLINT：
 
             无视字段分隔符读取两个字节长度的字符，按小端存储逻辑保存，然后将每个字符解析成十六进制ASCII码值，最后将整体转换为十进制数来保存值。
 
@@ -1016,7 +1017,7 @@ detail      | 111 Rows successfully loaded.
             (1 row)
             ```
 
-        -   RAW：
+        - RAW：
 
             会把每个字符解析成ASCII码值保存，转义字符“\\”不执行转义操作。
 
@@ -1053,44 +1054,52 @@ detail      | 111 Rows successfully loaded.
             ```
 
         >[!WARNING]注意
-        >-   在多列导入场景中，不指定guc参数时，部分position与分隔符不能同时使用。
-        >-   在多列导入场景中，SYSDATE和CONSTANT运算不能和POSITION运算同时使用。
-        >-   指定数据类型导入时，包含普通数据类型需要通过guc\_param设置a\_format\_copy\_version参数，包含特殊数据类型则需要通过guc\_param设置a\_format\_copy\_version和a\_format\_dev\_version及a\_format\_version参数。
-        >-   列表达式涉及到系统函数时，需要根据对应功能通过guc\_param设置合适的a\_format\_dev\_version及a\_format\_version参数。
-        >-   带length数据类型的使用，length需指定为大于0的整数；RAW数据类型作为特殊类型，RAW\(length\)的使用区别于普通类型的使用，如INTEGER EXTERNAL\(length\)的使用，当不指定position时，INTEGER EXTERNAL\(length\)表现为，当length小于文本文件 \(.csv/.txt等\)中对应列数据长度时报错；当length大于文本文件 \(.txt\)中对应列数据长度时，输出INTEGER EXTERNAL类型的结果。RAW\(length\)当不指定position时表现为读取length个字符。
-        >-   POSITION使用时，POSITION\(start:end\)，start需设置为大于0的整数，且end值应大于等于start的值。
-        >-   指定POSITION时，在处理字段内容时不会省略尾部的空格；不指定POSITION时，处理字段内容时会省略尾部的空格，如果需要保留空格，需要在guc\_param所指定的文件中，已设置好a\_format\_version的前提下，添加 set behavior\_compat\_options='char\_coerce\_compat'; 详细内容请参考管理员指南中behavior\_compat\_options的设置。
-        >-   并发导入时，若多个gs\_loader的discard文件名或bad文件名指向同一目录同名文件，则后一个执行的gs\_loader会中止报错。若前一个已经导入完成，则文件被覆盖。
-        >    报错如下：
+        >- 在多列导入场景中，不指定guc参数时，部分position与分隔符不能同时使用。
+        >- 在多列导入场景中，SYSDATE和CONSTANT运算不能和POSITION运算同时使用。
+        >- 指定数据类型导入时，包含普通数据类型需要通过guc\_param设置a\_format\_copy\_version参数，包含特殊数据类型则需要通过guc\_param设置a\_format\_copy\_version和a\_format\_dev\_version及a\_format\_version参数。
+        >- 列表达式涉及到系统函数时，需要根据对应功能通过guc\_param设置合适的a\_format\_dev\_version及a\_format\_version参数。
+        >- 带length数据类型的使用，length需指定为大于0的整数；RAW数据类型作为特殊类型，RAW\(length\)的使用区别于普通类型的使用，如INTEGER EXTERNAL\(length\)的使用，当不指定position时，INTEGER EXTERNAL\(length\)表现为，当length小于文本文件 \(.csv/.txt等\)中对应列数据长度时报错；当length大于文本文件 \(.txt\)中对应列数据长度时，输出INTEGER EXTERNAL类型的结果。RAW\(length\)当不指定position时表现为读取length个字符。
+        >- POSITION使用时，POSITION\(start:end\)，start需设置为大于0的整数，且end值应大于等于start的值。
+        >- 指定POSITION时，在处理字段内容时不会省略尾部的空格；不指定POSITION时，处理字段内容时会省略尾部的空格，如果需要保留空格，需要在guc\_param所指定的文件中，已设置好a\_format\_version的前提下，添加 set behavior\_compat\_options='char\_coerce\_compat'; 详细内容请参考管理员指南中behavior\_compat\_options的设置。
+        >- 并发导入时，若多个gs\_loader的discard文件名或bad文件名指向同一目录同名文件，则后一个执行的gs\_loader会中止报错。若前一个已经导入完成，则文件被覆盖。
+        > 报错如下：
+>
+        > ```
+        > ERROR: An error occurred. Please check logfile.
         >    ```
-        >    ERROR: An error occurred. Please check logfile.
+>
+        > log文件中：
+>
+        > ```
+        > …lock failed: Resource temporarily unavailable…
         >    ```
-        >    log文件中：
+>
+        >- 控制文件中对于字段值的部分若不为空且不使用本字段内容，则不占用数据文件的位置。
+        > 比如控制文件如下：
+>
+        > ```
+        > Load Data
+        > TRUNCATE INTO TABLE gsloader
+        > fields terminated by ','
+        > TRAILING NULLCOLS(
+        > id "trim(:id)",
+        > text "to_char(SYSDATE,'yyyymmdd')",
+        > gmt_create  "trim(:gmt_create)",
+        > create_str "trim(:create_str)"
+        > )
         >    ```
-        >    …lock failed: Resource temporarily unavailable…
+>
+        > 数据文件如下：
+>
+        > ```
+        > 11,22你好,33,
         >    ```
-        >-   控制文件中对于字段值的部分若不为空且不使用本字段内容，则不占用数据文件的位置。
-        >    比如控制文件如下：
+>
+        > 导入结果为：
+>
+        > ```
+        > loader=# select * from gsloader;
+        > id |  text  |     gmt_create      | create_str
+        > ----+--------+---------------------+------------
+        > 11 | 2023-02-08 16:00:54 | 22你好 |  33
         >    ```
-        >    Load Data
-        >    TRUNCATE INTO TABLE gsloader
-        >    fields terminated by ','
-        >    TRAILING NULLCOLS(
-        >    id "trim(:id)",
-        >    text "to_char(SYSDATE,'yyyymmdd')",
-        >    gmt_create  "trim(:gmt_create)",
-        >    create_str "trim(:create_str)"
-        >    )
-        >    ```
-        >    数据文件如下：
-        >    ```
-        >    11,22你好,33,
-        >    ```
-        >    导入结果为：
-        >    ```
-        >    loader=# select * from gsloader;
-        >    id |  text  |     gmt_create      | create_str
-        >    ----+--------+---------------------+------------
-        >    11 | 2023-02-08 16:00:54 | 22你好 |  33
-        >    ```
-

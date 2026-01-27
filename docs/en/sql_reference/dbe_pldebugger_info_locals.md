@@ -57,4 +57,3 @@ During debugging on the debug end,  **info\_locals**  is invoked to print the va
 </tr>
 </tbody>
 </table>
-

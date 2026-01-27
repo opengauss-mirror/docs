@@ -1,6 +1,6 @@
 # Row-store Compression System Functions<a name="EN-US_TOPIC_0000001331071942"></a>
 
--   compress\_buffer\_stat\_info\(\)
+- compress\_buffer\_stat\_info\(\)
 
     Description: Queries the PCA buffer statistics.
 
@@ -58,7 +58,7 @@
     </tbody>
     </table>
 
--   compress\_ratio\_info\(file\_path text\)
+- compress\_ratio\_info\(file\_path text\)
 
     Description: Views the file compression rate.
 
@@ -143,7 +143,7 @@
     </tbody>
     </table>
 
--   compress\_statistic\_info\(file\_path text, step smallint\)
+- compress\_statistic\_info\(file\_path text, step smallint\)
 
     Description: Collects statistics on the dispersion of compressed files.
 
@@ -219,7 +219,7 @@
     </tbody>
     </table>
 
--   compress\_address\_header\(oid regclass, seg\_id bigint\)
+- compress\_address\_header\(oid regclass, seg\_id bigint\)
 
     Description: Views the management information on the file compression page.
 
@@ -289,7 +289,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p11225232122712"><a name="p11225232122712"></a><a name="p11225232122712"></a>integer</p>
     </td>
-    	 <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p182256324276"><a name="p182256324276"></a><a name="p182256324276"></a>Chunk size, in bytes.</p>
+      <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p182256324276"><a name="p182256324276"></a><a name="p182256324276"></a>Chunk size, in bytes.</p>
     </td>
     </tr>
     <tr id="row1822583214271"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p1922563282717"><a name="p1922563282717"></a><a name="p1922563282717"></a>Output parameter </p>
@@ -304,7 +304,7 @@
     </tbody>
     </table>
 
--   compress\_address\_details\(oid regclass, seg\_id bigint\)
+- compress\_address\_details\(oid regclass, seg\_id bigint\)
 
     Description: Detailed information about the usage of page chunks.
 

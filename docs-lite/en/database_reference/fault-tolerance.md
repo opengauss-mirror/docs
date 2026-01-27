@@ -10,8 +10,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that errors of the ERROR level will be upgraded to PANIC errors.
--   **off**  indicates that errors of the ERROR level will not be upgraded.
+- **on**  indicates that errors of the ERROR level will be upgraded to PANIC errors.
+- **off**  indicates that errors of the ERROR level will not be upgraded.
 
 **Default value**:  **off**
 
@@ -23,11 +23,11 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Value range**: Boolean
 
--   **on**  maximizes the availability of the database.
+- **on**  maximizes the availability of the database.
 
     In some circumstances \(for example, when a management tool, such as xCAT, is used to manage openGauss\), setting this parameter to  **on**  maximizes the availability of the database.
 
--   **off**  indicates that a management tool is enabled to obtain control permission and take proper measures when a backend process crashes.
+- **off**  indicates that a management tool is enabled to obtain control permission and take proper measures when a backend process crashes.
 
 **Default value**:  **on**
 
@@ -39,8 +39,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that characters that have conversion errors will be ignored and replaced with question marks \(?\), and error information will be recorded in logs.
--   **off**  indicates that characters that have conversion errors cannot be converted and error information will be directly displayed.
+- **on**  indicates that characters that have conversion errors will be ignored and replaced with question marks \(?\), and error information will be recorded in logs.
+- **off**  indicates that characters that have conversion errors cannot be converted and error information will be directly displayed.
 
 **Default value**:  **off**
 
@@ -92,8 +92,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: Boolean
 
--   **on**  indicates that the database keeps running and  **fsync**  is executed again after  **fsync**  fails.
--   **off**  indicates that a PANIC-level error is reported and the database is stopped after  **fsync**  fails.
+- **on**  indicates that the database keeps running and  **fsync**  is executed again after  **fsync**  fails.
+- **off**  indicates that a PANIC-level error is reported and the database is stopped after  **fsync**  fails.
 
 **Default value**:  **off**
 
@@ -105,9 +105,8 @@ This parameter is a  **POSTMASTER**  parameter. Set it based on instructions pro
 
 **Value range**: enumerated values
 
--   **off**  indicates that the remote read function is disabled.
--   **non\_authentication**  indicates that the remote read function is enabled but certificate authentication is not required.
--   **authentication**  indicates that the remote read function is enabled and certificate authentication is required.
+- **off**  indicates that the remote read function is disabled.
+- **non\_authentication**  indicates that the remote read function is enabled but certificate authentication is not required.
+- **authentication**  indicates that the remote read function is enabled and certificate authentication is required.
 
 **Default value**:  **non\_authentication**
-

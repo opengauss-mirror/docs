@@ -6,8 +6,8 @@
 
 ## 处理办法<a name="section1678174320128"></a>
 
-1.  以操作系统用户omm登录主机。
-2.  使用如下命令连接数据库。
+1. 以操作系统用户omm登录主机。
+2. 使用如下命令连接数据库。
 
     ```
     gsql -d postgres -p 8000
@@ -15,7 +15,7 @@
 
     postgres为需要连接的数据库名称，8000为端口号。
 
-3.  从当前活动会话视图查找问题会话的线程ID。
+3. 从当前活动会话视图查找问题会话的线程ID。
 
     ```
     SELECT datid, pid, state, query FROM pg_stat_activity; 
@@ -31,7 +31,7 @@
     (2 rows) 
     ```
 
-4.  根据线程ID结束会话。
+4. 根据线程ID结束会话。
 
     ```
     SELECT pg_terminate_backend(139834762094352);
@@ -52,5 +52,3 @@
     FATAL:  terminating connection due to administrator command 
     FATAL:  terminating connection due to administrator command The connection to the server was lost. Attempting reset: Succeeded.
     ```
-
-

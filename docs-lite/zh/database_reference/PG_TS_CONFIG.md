@@ -73,4 +73,3 @@ PG\_TS\_CONFIG系统表包含表示文本搜索配置的记录。一个配置指
 </tr>
 </tbody>
 </table>
-

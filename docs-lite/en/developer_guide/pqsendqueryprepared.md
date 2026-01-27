@@ -76,4 +76,3 @@ PQsendQueryPrepared is similar to PQsendQueryParams, but the command to be execu
 ## Example<a name="en-us_topic_0241735630_section19689722205811"></a>
 
 For details, see  [Example](example_libpq.md).
-

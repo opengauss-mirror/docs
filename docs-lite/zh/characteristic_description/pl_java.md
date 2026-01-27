@@ -22,11 +22,11 @@
 
 ## 特性约束<a name="section06531946143616"></a>
 
--   Java UDF可以实现一些较为简单的java计算，强烈建议不要在Java UDF中封装业务。
--   强烈建议不要在Java函数中使用任何方式连接数据库，包括但不限于JDBC。
--   建议用户使用Huawei JDK V100R001C00SPC190B003-b09编译Java方法和jar文件。
--   暂不支持的数据类型：除[表1](#table10200627143416)提及之外的数据类型，包括自定义类型，复杂数据类型（Java Array类及派生类）。
--   暂不支持UDAF、UDTF。
+- Java UDF可以实现一些较为简单的java计算，强烈建议不要在Java UDF中封装业务。
+- 强烈建议不要在Java函数中使用任何方式连接数据库，包括但不限于JDBC。
+- 建议用户使用Huawei JDK V100R001C00SPC190B003-b09编译Java方法和jar文件。
+- 暂不支持的数据类型：除[表1](#table10200627143416)提及之外的数据类型，包括自定义类型，复杂数据类型（Java Array类及派生类）。
+- 暂不支持UDAF、UDTF。
 
     **表 1**  PL/Java默认数据类型映射关系
 
@@ -125,8 +125,6 @@
     </tbody>
     </table>
 
-
 ## 依赖关系<a name="section57771982"></a>
 
 PL/Java依赖JDK环境，目前openGauss中已包含JDK环境，无需用户安装。如果用户已安装（相同或不同版本的）JDK，也不会引起冲突，openGauss会使用Huawei JDK V100R001C00SPC190B003-b09来运行PL/Java。
-

@@ -41,7 +41,7 @@ call GOTO_test();
 
 Using  **GOTO**  statements has the following constraints:
 
--   A  **GOTO**  statement does not allow multiple labeled statements even if the statements are in different blocks.
+- A  **GOTO**  statement does not allow multiple labeled statements even if the statements are in different blocks.
 
     ```
     BEGIN
@@ -53,8 +53,7 @@ Using  **GOTO**  statements has the following constraints:
     END;
     ```
 
-
--   A  **GOTO**  statement cannot transfer control to the  **IF**,  **CASE**, or  **LOOP**  statement.
+- A  **GOTO**  statement cannot transfer control to the  **IF**,  **CASE**, or  **LOOP**  statement.
 
     ```
     BEGIN
@@ -66,8 +65,7 @@ Using  **GOTO**  statements has the following constraints:
      END;
     ```
 
-
--   A  **GOTO**  statement cannot transfer control from one  **IF**  clause to another, or from one  **WHEN**  clause in the  **CASE**  statement to another.
+- A  **GOTO**  statement cannot transfer control from one  **IF**  clause to another, or from one  **WHEN**  clause in the  **CASE**  statement to another.
 
     ```
     BEGIN 
@@ -81,8 +79,7 @@ Using  **GOTO**  statements has the following constraints:
      END;
     ```
 
-
--   A  **GOTO**  statement cannot transfer control from an outer block to an inner  **BEGIN-END**  block.
+- A  **GOTO**  statement cannot transfer control from an outer block to an inner  **BEGIN-END**  block.
 
     ```
     BEGIN
@@ -94,8 +91,7 @@ Using  **GOTO**  statements has the following constraints:
      END;
     ```
 
-
--   A  **GOTO**  statement cannot transfer control from an exception handler to the current  **BEGIN-END**  block. However, a  **GOTO**  statement can transfer control to the upper-layer  **BEGIN-END**  block.
+- A  **GOTO**  statement cannot transfer control from an exception handler to the current  **BEGIN-END**  block. However, a  **GOTO**  statement can transfer control to the upper-layer  **BEGIN-END**  block.
 
     ```
     BEGIN
@@ -107,8 +103,7 @@ Using  **GOTO**  statements has the following constraints:
      END;
     ```
 
-
--   To branch to a position that does not have an executable statement, add the  **NULL**  statement.
+- To branch to a position that does not have an executable statement, add the  **NULL**  statement.
 
     ```
     DECLARE
@@ -124,5 +119,3 @@ Using  **GOTO**  statements has the following constraints:
     END;
     /
     ```
-
-

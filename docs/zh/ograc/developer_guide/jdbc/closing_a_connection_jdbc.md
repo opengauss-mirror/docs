@@ -8,4 +8,3 @@
 Connection conn = DriverManager.getConnection("url","user","password") ; 
 conn.close()；
 ```
-

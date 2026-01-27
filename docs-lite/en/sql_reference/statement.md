@@ -1,6 +1,6 @@
 # STATEMENT<a name="EN-US_TOPIC_0289900054"></a>
 
-**STATEMENT**  obtains information about executed statements \(normalized SQL statements\) on the current node. To query a view, you must have the  **sysadmin **or  **monitor admin**  permission. You can view all statistics about normalized SQL statements received by the primary database node and other database nodes, whereas you can view only the statistics about normalized SQL statements executed on other database nodes.
+**STATEMENT**  obtains information about executed statements \(normalized SQL statements\) on the current node. To query a view, you must have the  **sysadmin**or  **monitor admin**  permission. You can view all statistics about normalized SQL statements received by the primary database node and other database nodes, whereas you can view only the statistics about normalized SQL statements executed on other database nodes.
 
 **Table  1**  STATEMENT columns
 

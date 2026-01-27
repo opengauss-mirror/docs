@@ -14,8 +14,6 @@ Lock waiting times out in the database.
 
 ## Procedure<a name="section72471253195718"></a>
 
--   After detecting such errors, the database automatically retries the SQL statements. The number of retries is controlled by  **max\_query\_retry\_times**.
+- After detecting such errors, the database automatically retries the SQL statements. The number of retries is controlled by  **max\_query\_retry\_times**.
 
--   To analyze the cause of the lock wait timeout, find the SQL statements that time out in the  **pg\_locks **and  **pg\_stat\_activity **system catalogs.
-
-
+- To analyze the cause of the lock wait timeout, find the SQL statements that time out in the  **pg\_locks**and  **pg\_stat\_activity**system catalogs.

@@ -7,10 +7,10 @@ You can set the parameter  [wdr\_snapshot\_retention\_days](../database_referenc
 >[!TIP]NOTICE 
 >Do not add, delete, or modify tables in the snapshot schema. Manual modification or damage to these tables may cause WDR exceptions or even WDR unavailability.
 
--   **[Original Information of WDR Snapshots](snapshot-snapshot.md)**  
+- **[Original Information of WDR Snapshots](snapshot-snapshot.md)**  
 
--   **[WDR Snapshot Data Table](wdr-snapshot-data-table.md)**  
+- **[WDR Snapshot Data Table](wdr-snapshot-data-table.md)**  
 
--   **[Performance Report Generated Based on WDR Snapshots](performance-report-generated-based-on-wdr-snapshots.md)**  
+- **[Performance Report Generated Based on WDR Snapshots](performance-report-generated-based-on-wdr-snapshots.md)**  
 
--   **[WDRs](wdrs.md)**  
+- **[WDRs](wdrs.md)**  

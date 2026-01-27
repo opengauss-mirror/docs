@@ -330,8 +330,9 @@
 </table>
 
 >[!NOTE]NOTE   
->1.  In addition to the restriction on the size of each column, the total size of each tuple cannot exceed 1 GB minus 1 byte and is affected by the control header information of the column, the control header information of the tuple, and whether null columns exist in the tuple.  
->2.  NCHAR is the alias of the bpchar type, and NCHAR\(n\) is the alias of the b\(n\) type bpchar\(n\).  
+>
+>1. In addition to the restriction on the size of each column, the total size of each tuple cannot exceed 1 GB minus 1 byte and is affected by the control header information of the column, the control header information of the tuple, and whether null columns exist in the tuple.  
+>2. NCHAR is the alias of the bpchar type, and NCHAR\(n\) is the alias of the b\(n\) type bpchar\(n\).  
 
 In openGauss, there are two other fixed-length character types, as shown in  [Table 7](#en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_tf74658686f5e4d979adf0ac04769ea16). The  **name**  type exists only for the storage of identifiers in the internal system catalogs and is not intended for general users. Its length is currently defined as 64 bytes \(63 usable characters plus a terminator\). The type  **"char"**  only uses one byte of storage. It is internally used in the system catalogs as a simplistic enumeration type.
 
@@ -627,7 +628,7 @@ In openGauss, there are two other fixed-length character types, as shown in  [Ta
 
 A rich set of functions and operators is available in openGauss to perform various geometric operations, such as scaling, translation, rotation, and determining intersections.
 
--   Points
+- Points
 
     Points are the fundamental two-dimensional building block for geometric types. Values of the  **point**  type are specified using either of the following syntaxes:
 
@@ -640,7 +641,7 @@ A rich set of functions and operators is available in openGauss to perform vario
 
     Points are output using the first syntax.
 
--   Line Segments
+- Line Segments
 
     Line segments \(**lseg**\) are represented by pairs of points. Values of the  **lseg**  type are specified using any of the following syntaxes:
 
@@ -655,7 +656,7 @@ A rich set of functions and operators is available in openGauss to perform vario
 
     Line segments are output using the first syntax.
 
--   Boxes
+- Boxes
 
     Boxes are represented by pairs of points that are opposite corners of the box. Values of the  **box**  type are specified using any of the following syntaxes:
 
@@ -671,7 +672,7 @@ A rich set of functions and operators is available in openGauss to perform vario
 
     Any two opposite corners can be supplied on input, but in this order, the values will be reordered as needed to store the upper right and lower left corners.
 
--   Paths
+- Paths
 
     Paths are represented by lists of connected points. Paths can be open, where the first and last points in the list are considered not connected, or closed, where the first and last points are considered connected.
 
@@ -689,7 +690,7 @@ A rich set of functions and operators is available in openGauss to perform vario
 
     Paths are output using the first or second syntax.
 
--   Polygons
+- Polygons
 
     Polygons are represented by lists of points \(the vertexes of the polygon\). Polygons are very similar to closed paths, but are stored differently and have their own set of support functions.
 
@@ -706,7 +707,7 @@ A rich set of functions and operators is available in openGauss to perform vario
 
     Polygons are output using the first syntax.
 
--   Circles
+- Circles
 
     Circles are represented by a center point and radius. Values of the  **circle**  type are specified using any of the following syntaxes:
 
@@ -720,7 +721,6 @@ A rich set of functions and operators is available in openGauss to perform vario
     **\(x,y\)**  is the center point and  **r**  is the radius of the circle.
 
     Circles are output using the first syntax.
-
 
 ## Network Address Types<a name="section35871211125714"></a>
 
@@ -765,7 +765,7 @@ It is better to use these types instead of plain text types to store network add
 
 When sorting  **inet**  or  **cidr**  data types, IPv4 addresses will always sort before IPv6 addresses, including IPv4 addresses encapsulated in or mapped to IPv6 addresses, such as ::10.2.3.4 or ::ffff:10.4.3.2.
 
--   cidr
+- cidr
 
     The  **cidr**  type \(Classless Inter-Domain Routing\) holds an IPv4 or IPv6 network address. The format for specifying networks is  **address/y**  where  **address**  is the network represented as an IPv4 or IPv6 address, and  **y**  is the number of bits in the netmask. If  **y**  is omitted, it is calculated using assumptions from the older classful network numbering system, except it will be at least large enough to include all of the bytes written in the input.
 
@@ -874,7 +874,7 @@ When sorting  **inet**  or  **cidr**  data types, IPv4 addresses will always sor
     </tbody>
     </table>
 
--   inet
+- inet
 
     The  **inet**  type holds an IPv4 or IPv6 host address, and optionally its subnet, all in one field. The subnet is represented by the number of network address bits present in the host address \(the "netmask"\). If the netmask is 32 and the address is an IPv4 address, then the value does not indicate a subnet but a single host. In IPv6, because the address length is 128 bits, 128 bits specify a unique host address.
 
@@ -882,8 +882,7 @@ When sorting  **inet**  or  **cidr**  data types, IPv4 addresses will always sor
 
     The essential difference between the  **inet**  and  **cidr**  data types is that  **inet**  accepts values with nonzero bits to the right of the netmask, whereas  **cidr**  does not.
 
-
--   macaddr
+- macaddr
 
     The  **macaddr**  type stores MAC addresses, known for example from Ethernet card hardware addresses \(although MAC addresses are used for other purposes as well\). Input is accepted in the following formats:
 
@@ -897,7 +896,6 @@ When sorting  **inet**  or  **cidr**  data types, IPv4 addresses will always sor
     ```
 
     These examples specify the same address. Upper and lower cases are accepted for the digits a through f. Output is always in the first of the forms shown.
-
 
 ## Bit String Types<a name="section129131310763"></a>
 
@@ -947,7 +945,7 @@ openGauss=# DROP TABLE bit_type_t1;
 
 openGauss offers two data types that are designed to support full text search. The  **tsvector**  type represents a document in a form optimized for text search. The  **tsquery**  type similarly represents a text query.
 
--   tsvector
+- tsvector
 
     The  **tsvector**  type represents a retrieval unit, usually a textual column within a row of a database table, or a combination of such columns. A  **tsvector**  value is a sorted list of distinct lexemes, which are words that have been normalized to merge different variants of the same word. Sorting and deduplication are done automatically during input. The  **to\_tsvector**  function is used to parse and normalize a document string.
 
@@ -1025,7 +1023,7 @@ openGauss offers two data types that are designed to support full text search. T
     (1 row)
     ```
 
--   tsquery
+- tsquery
 
     The  **tsquery**  type represents a retrieval condition. A  **tsquery**  value stores lexemes that are to be searched for, and combines them honoring the  **Boolean**  operators  **& \(AND\)**,  **| \(OR\)**, and  **! \(NOT\)**. Parentheses can be used to enforce grouping of the operators. The  **to\_tsquery**  and  **plainto\_tsquery**  functions will normalize lexemes before the lexemes are converted to the  **tsquery**  type.
 
@@ -1105,7 +1103,6 @@ openGauss offers two data types that are designed to support full text search. T
     (1 row)
     ```
 
-
 ## Universally Unique Identifier \(UUID\) Types<a name="section5602163411114"></a>
 
 This data type stores universally unique identifiers defined by RFC 4122, ISO/IEF 9834-8:2005 and related standards. This identifier is a 128-bit quantity that is generated by an algorithm chosen to make it very unlikely that the same identifier will be generated by anyone else in the known universe using the same algorithm.
@@ -1131,9 +1128,9 @@ Output is always in the standard form.
 
 JavaScript Object Notation \(JSON\) data can be a single scalar, an array, or a key-value pair object. The array and object can be called a container:
 
--   Scalar: a number, Boolean, string, or null
--   Array: defined in a pair of square brackets \(\[\]\), in which elements can be any type of JSON data, and are not necessarily of the same type.
--   Object: defined in a pair of braces \(\{\}\), in which objects are stored in the format of  **key:value**. Each key must be a string enclosed by a pair of double quotation marks \(""\), and its value can be any type of JSON data. In case of duplicate keys, the last key-value pair will be used.
+- Scalar: a number, Boolean, string, or null
+- Array: defined in a pair of square brackets \(\[\]\), in which elements can be any type of JSON data, and are not necessarily of the same type.
+- Object: defined in a pair of braces \(\{\}\), in which objects are stored in the format of  **key:value**. Each key must be a string enclosed by a pair of double quotation marks \(""\), and its value can be any type of JSON data. In case of duplicate keys, the last key-value pair will be used.
 
 openGauss supports two types JSON and JSONB to store JSON data. JSON is a complete copy of the entered character string and is parsed when used. The entered spaces, duplicate keys, and sequence are retained. JSONB parses the input binary data. During parsing, JSONB deletes semantic-irrelevant details and duplicate keys, and sorts key-values. Therefore, JSONB does not need to parse the binary data again when it is used.
 
@@ -1195,17 +1192,17 @@ So you can see that both JSON and JSONB are of JSON data type, and the same stri
   >- Note that 'null'::json and null::json are different, which are similar to the strings str="" and str=null.   
   >- For numbers, when scientific notation is used, JSONB expands them, while JSON stores an exact copy of the input text.    
 
--   JSONB advanced features
+- JSONB advanced features
 
-    -   Precautions
-        -   It does not support row-store tables.
-        -   It cannot be used as a partition key.
-        -   It does not support foreign tables and MOTs.
+    - Precautions
+        - It does not support row-store tables.
+        - It cannot be used as a partition key.
+        - It does not support foreign tables and MOTs.
 
     The main difference between JSON and JSONB lies in the storage mode. JSONB stores parsed binary data, which reflects the JSON hierarchy and facilitates direct access. Therefore, JSONB has many advanced features that JSON does not have.
 
-    -   Format normalization
-        -   After the input object-json string is parsed into JSONB binary data, semantically irrelevant details are naturally discarded, for example, spaces.
+    - Format normalization
+        - After the input object-json string is parsed into JSONB binary data, semantically irrelevant details are naturally discarded, for example, spaces.
 
             ```
             openGauss=# select '   [1, " a ", {"a"   :1    }]  '::jsonb;
@@ -1215,7 +1212,7 @@ So you can see that both JSON and JSONB are of JSON data type, and the same stri
             (1 row)
             ```
 
-        -   For object-json, duplicate key-values are deleted and only the last key-value is retained. For example:
+        - For object-json, duplicate key-values are deleted and only the last key-value is retained. For example:
 
             ```
             openGauss=# select '{"a" : 1, "a" : 2}'::jsonb;
@@ -1225,7 +1222,7 @@ So you can see that both JSON and JSONB are of JSON data type, and the same stri
             (1 row)
             ```
 
-        -   For object-json, key-values will be re-sorted. The sorting rule is as follows: 1. Longer key-values are sorted last. 2. If the key-values are of the same length, the key-values with a larger ASCII code are sorted after the key-values with a smaller ASCII code:
+        - For object-json, key-values will be re-sorted. The sorting rule is as follows: 1. Longer key-values are sorted last. 2. If the key-values are of the same length, the key-values with a larger ASCII code are sorted after the key-values with a smaller ASCII code:
 
             ```
             openGauss=# select '{"aa" : 1, "b" : 2, "a" : 3}'::jsonb;
@@ -1235,34 +1232,32 @@ So you can see that both JSON and JSONB are of JSON data type, and the same stri
             (1 row)
             ```
 
-
-    -   Size comparison
+    - Size comparison
     
         Format normalization ensures that only one form of JSONB data exists in the same semantics. Therefore, sizes may be compared according to a specific rule.
     
-        -   First, compare the types:  **object-jsonb**  \>  **array-jsonb**  \>  **bool-jsonb**  \>  **num-jsonb**  \>  **str-jsonb**  \>  **null-jsonb**.
-        -   Compare the content if data types are the same:
+        - First, compare the types:  **object-jsonb**  \>  **array-jsonb**  \>  **bool-jsonb**  \>  **num-jsonb**  \>  **str-jsonb**  \>  **null-jsonb**.
+        - Compare the content if data types are the same:
     
-            -   **str-json**: The default text sorting rule of the database is used for comparison. A positive value indicates greater than, a negative value indicates less than, and  **0**  indicates equal.
-            -   **num-json**: numeric comparison
-            -   **bool-json**:  **true**  \>  **false**
-            -   **array-jsonb**: long elements \> short elements. If the lengths are the same, compare each element in sequence.
-            -   **object-jsonb**: If the length of a key-value pair is longer than that of a short key-value pair, the key is compared first, and then the value is compared.
+            - **str-json**: The default text sorting rule of the database is used for comparison. A positive value indicates greater than, a negative value indicates less than, and  **0**  indicates equal.
+            - **num-json**: numeric comparison
+            - **bool-json**:  **true**  \>  **false**
+            - **array-jsonb**: long elements \> short elements. If the lengths are the same, compare each element in sequence.
+            - **object-jsonb**: If the length of a key-value pair is longer than that of a short key-value pair, the key is compared first, and then the value is compared.
     
             >[!WARNING]CAUTION 
             >For comparison within the  **object-jsonb**  type, the final result after format sorting is used for comparison. Therefore, the comparison result may not be intuitive compared with the direct input.
 
-
-    -   Creating indexes, primary keys, and foreign keys
-        -   B-tree index
+    - Creating indexes, primary keys, and foreign keys
+        - B-tree index
     
             B-tree indexes, primary keys, and foreign keys can be created for the  **JSONB**  type.
     
-        -   GIN index
+        - GIN index
     
             GIN indexes can be used to effectively search for keys or key-value pairs that appear in a large number of JSONB documents \(datums\). Two GIN operator classes \(**jsonb\_ops**  and  **jsonb\_hash\_ops**\) are provided for different performance and flexibility choices. The default GIN operator class supports  **@\>**,  **<@**,  **?**,  **?&**  and  **?|**  operator query. The non-default GIN operator class  **jsonb\_path\_ops**  supports only the  **@\>**  and  **<@**  operators.
     
-    -   Containment and existence
+    - Containment and existence
     
         Querying whether a JSON contains some elements or whether some elements exist in a JSON is an important capability of JSONB.
     
@@ -1280,8 +1275,6 @@ So you can see that both JSON and JSONB are of JSON data type, and the same stri
         -- Similarly, no containment relationship exists and false is returned.
         SELECT '{"foo": {"bar": "baz"}}'::jsonb @> '{"bar": "baz"}'::jsonb; -- false
         ```
-
-
 
 ## HyperLoglog \(HLL\) Types<a name="section187190911816"></a>
 
@@ -1373,9 +1366,10 @@ When you create an HLL data type, 0 to 4 input parameters are supported. The par
 
 >[!NOTE]NOTE   
 >When the HLL data type is created, the result varies depending on the input parameter behavior:  
->-   When creating an HLL type, do not set the input parameter or set it to  **–1**. Use the default value of the corresponding HLL parameter.  
->-   If a valid value is set for the input parameter, the corresponding HLL parameter uses the input value.  
->-   If the input value is invalid, an error is reported when the HLL type is created.  
+>
+>- When creating an HLL type, do not set the input parameter or set it to  **–1**. Use the default value of the corresponding HLL parameter.  
+>- If a valid value is set for the input parameter, the corresponding HLL parameter uses the input value.  
+>- If the input value is invalid, an error is reported when the HLL type is created.  
 
 ```
 -- Create an HLL table without specifying input parameters.
@@ -1427,7 +1421,7 @@ ERROR:  log2explicit does not match: source is 5 and dest is 10
 
 The following describes HLL application scenarios.
 
--   Scenario 1: "Hello World"
+- Scenario 1: "Hello World"
 
     The following example shows how to use the HLL data type:
 
@@ -1455,7 +1449,7 @@ The following describes HLL application scenarios.
     openGauss=#  drop table helloworld;
     ```
 
--   Scenario 2: Collect statistics about website visitors.
+- Scenario 2: Collect statistics about website visitors.
 
     The following example shows how an HLL collects statistics on the number of users visiting a website within a period of time:
 
@@ -1528,7 +1522,7 @@ The following describes HLL application scenarios.
     openGauss=# drop table daily_uniques;
     ```
 
--   Scenario 3: The data to be inserted does not meet the requirements of the HLL data structure.
+- Scenario 3: The data to be inserted does not meet the requirements of the HLL data structure.
 
     When inserting data into a column of the HLL type, ensure that the data meets the requirements of the HLL data structure. If the data does not meet the requirements after being parsed, an error will be reported. In the following example,  **E\\\\1234**  to be inserted does not meet the requirements of the HLL data structure after being parsed. As a result, an error is reported.
 
@@ -1539,25 +1533,24 @@ The following describes HLL application scenarios.
     openGauss=# drop table test;
     ```
 
-
 ## Range Types<a name="section35834372195"></a>
 
 A range type is a data type that represents the range of a value of an element type \(called the subtype of a range\). For example, the range of timestamp may be used to express a time range in which a conference room is reserved. In this case, the data type is tsrange and timestamp is the subtype. The subtype must have an overall order so that the element value can be clearly specified within, before, or after a range.
 
 Range types are useful because they can express multiple element values in a single range value and can clearly express concepts such as range overlapping. The time and date range used for scheduling is a good example, and the price range and the range of an instrument are also examples of range type.
 
--   Built-in ranges
+- Built-in ranges
 
     The following built-in ranges are available:
 
-    -   int4range: integer range
-    -   int8range: bigint range
-    -   numrange: numeric range
-    -   tsrange: range of timestamp without the time zone
-    -   tstzrange: range of timestamp with the time zone
-    -   daterange: date range
+    - int4range: integer range
+    - int8range: bigint range
+    - numrange: numeric range
+    - tsrange: range of timestamp without the time zone
+    - tstzrange: range of timestamp with the time zone
+    - daterange: date range
 
--   Including and excluding bounds
+- Including and excluding bounds
 
     Each non-empty range has two bounds, a lower bound and an upper bound. All values between the upper and lower bounds are included in the range. An inclusion bound means that the bound value itself is included in the range, while an exclusion bound means that the bound value is not included in the range.
 
@@ -1565,7 +1558,7 @@ Range types are useful because they can express multiple element values in a sin
 
     The  **lower\_inc**  and  **upper\_inc**  functions test the upper and lower bounds of a range value, respectively.
 
--   Infinite \(Unbounded\) range
+- Infinite \(Unbounded\) range
 
     When the lower bound of a range is unbounded, it means that all values less than the upper bound are included in the range, for example, \(,3\], indicating all values less than the upper bound 3 are included in the range. Similarly, when the upper bound of a range is unbounded, all values greater than the upper bound are included in the range. When both the upper and lower bounds are unbounded, all values of the element type are considered within the range. The missing bounds are automatically converted to exclusions, for example, \[,\] is converted to \(,\). You can consider these missing values as positive infinity or negative infinity, but they are special range type values and are considered to be positive and negative infinity values that go beyond any range element type.
 
@@ -1573,7 +1566,7 @@ Range types are useful because they can express multiple element values in a sin
 
     The **lower\_inf**  and  **upper\_inf**  functions test the infinite upper and lower bounds of a range, respectively.
 
--   Range input/output
+- Range input/output
 
     The input of a range value must follow one of the following formats:
 
@@ -1606,7 +1599,7 @@ Range types are useful because they can express multiple element values in a sin
     SELECT '[4,4)'::int4range; 
     ```
 
--   Constructing range
+- Constructing range
 
     Each range type has a constructor function with the same name. Using constructor functions is often more convenient than writing a range literal constant because it avoids extra references to bound values. Constructor functions accept two or three parameters. Two parameters form a range in the standard form, where the lower bound is included and the upper bound is excluded, and three parameters form a range according to the bound specified by the third parameter. The third parameter must be one of the following character strings: \(\), \(\], \[\], or \[\]. For example:
 
@@ -1621,8 +1614,7 @@ Range types are useful because they can express multiple element values in a sin
     SELECT numrange(NULL, 2.2); 
     ```
 
-
--   Discrete range
+- Discrete range
 
     A range element type has a well-defined "step" such as integer or date. In these types, if there is no valid value between two elements, they can be said to be adjacent. This is in contrast to a continuous range in which other element values can always be identified between two given values. For example, a range above the numeric type is continuous, and the range of timestamp is also continuous. \(Although timestamp has limited precision and can be considered as discrete in theory, it is better to consider it as continuous because the step is not normally considered.\)
 
@@ -1632,8 +1624,7 @@ Range types are useful because they can express multiple element values in a sin
 
     The built-in range types int4range, int8range, and daterange use a regularized form that includes the lower bound and excludes the upper bound, that is, \[\). However, user-defined range types can use other conventions.
 
-
--   Defining a new nange
+- Defining a new nange
 
     Users can define their own range types. A common reason is to use the range on the subtype that is not provided in the built-in range type. For example, to create the range type subtype float8, run the following command:
 
@@ -1663,7 +1654,6 @@ Range types are useful because they can express multiple element values in a sin
      );  
     SELECT '[11:10, 23:00]'::timerange; 
     ```
-
 
 ## Indexes<a name="section915193113217"></a>
 
@@ -2290,4 +2280,3 @@ The hash32 data type is used to store the global hash digest or history table ve
 Hexadecimal string: 685847ed1fe38e18f6b0e2b18c00edee
 Hash32 array: [104,88,71,237,31,227,142,24,246,176,226,177,140,0,237,238]
 ```
-

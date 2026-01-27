@@ -5,10 +5,8 @@ Flashback restoration is a part of the database recovery technology. It can be u
 >[!NOTE]NOTE 
 >The Astore engine does not support the flashback function.
 
--   **[Flashback Query](flashback_query.md)**  
+- **[Flashback Query](flashback_query.md)**  
 
--   **[Flashback Table](flashback_table.md)**  
+- **[Flashback Table](flashback_table.md)**  
 
--   **[DROP/TRUNCATE Flashback](drop_truncate_flashback.md)**  
-
-
+- **[DROP/TRUNCATE Flashback](drop_truncate_flashback.md)**  

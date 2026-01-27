@@ -16,22 +16,21 @@ DROP TYPE [ IF EXISTS ] name [, ...] [ CASCADE | RESTRICT ]
 
 ## Parameter Description<a name="en-us_topic_0283137107_en-us_topic_0237122157_en-us_topic_0059778403_sc2135a1c06504d25b767b85bdea5c694"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Reports a notice instead of an error if the specified type does not exist.
 
--   **name**
+- **name**
 
     Specifies the name \(optionally schema-qualified\) of the type to be deleted.
 
--   **CASCADE**
+- **CASCADE**
 
     Automatically deletes the objects \(such as fields, functions, and operators\) that depend on the type.
 
     **RESTRICT**
 
     Refuses to delete the type if any objects depend on it. This is the default action.
-
 
 ## Examples<a name="en-us_topic_0283137107_en-us_topic_0237122157_en-us_topic_0059778403_sd583a49fc83b42fd8e73efee55f98ace"></a>
 

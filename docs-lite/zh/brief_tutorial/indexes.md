@@ -4,14 +4,14 @@
 
 索引可以用来提高数据库查询性能，但是不恰当的使用将导致数据库性能下降。建议仅在匹配如下某条原则时创建索引：
 
--   经常执行查询的字段。
--   在连接条件上创建索引，对于存在多字段连接的查询，建议在这些字段上建立组合索引。例如，select \* from t1 join t2 on t1.a=t2.a and t1.b=t2.b，可以在t1表上的a，b字段上建立组合索引。
--   WHERE子句的过滤条件字段上（尤其是范围条件）。
--   在经常出现在ORDER BY、GROUP BY和DISTINCT后的字段。
+- 经常执行查询的字段。
+- 在连接条件上创建索引，对于存在多字段连接的查询，建议在这些字段上建立组合索引。例如，select \* from t1 join t2 on t1.a=t2.a and t1.b=t2.b，可以在t1表上的a，b字段上建立组合索引。
+- WHERE子句的过滤条件字段上（尤其是范围条件）。
+- 在经常出现在ORDER BY、GROUP BY和DISTINCT后的字段。
 
 ## 语法格式<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 
--   单列索引
+- 单列索引
 
     单列索引是一个只基于表的一个列上创建的索引。
 
@@ -19,7 +19,7 @@
     CREATE INDEX [ [schema_name.]index_name ] ON table_name  (column_name);
     ```
 
--   组合索引
+- 组合索引
 
     组合索引是基于表的多列上创建的索引。
 
@@ -27,7 +27,7 @@
     CREATE INDEX [ [schema_name.]index_name ] ON table_name  (column1_name,column2_name,...);
     ```
 
--   唯一索引
+- 唯一索引
 
     指定唯一索引的字段不允许重复值插入。
 
@@ -35,7 +35,7 @@
     CREATE  UNIQUE INDEX [ [schema_name.]index_name ] ON table_name  (column_name);
     ```
 
--   局部索引
+- 局部索引
 
     在表的子集上构建索引，子集由一个条件表达式定义。
 
@@ -43,7 +43,7 @@
     CREATE INDEX [ [schema_name.]index_name ] ON table_name  (expression);
     ```
 
--   部分索引
+- 部分索引
 
     部分索引是一个只包含表的一部分记录的索引，通常是该表中比其他部分数据更有用的部分。
 
@@ -52,46 +52,45 @@
        [ WHERE predicate ]
     ```
 
--   删除索引
+- 删除索引
 
     ```
     DROP INDEX index_name;
     ```
 
-
 ## 参数说明<a name="section9316102894620"></a>
 
--   **UNIQUE**
+- **UNIQUE**
 
     创建唯一性索引，每次添加数据时检测表中是否有重复值。如果插入或更新的值会引起重复的记录时，将导致一个错误。
 
     目前只有B-tree及UBTree索引支持唯一索引。
 
--   **schema\_name**
+- **schema\_name**
 
     模式的名称。
 
     取值范围：已存在模式名。
 
--   **index\_name**
+- **index\_name**
 
     要创建的索引名，索引的模式与表相同。
 
     取值范围：字符串，要符合标识符的命名规范。
 
--   **table\_name**
+- **table\_name**
 
     需要为其创建索引的表的名称，可以用模式修饰。
 
     取值范围：已存在的表名。
 
--   **column\_name**
+- **column\_name**
 
     表中需要创建索引的列的名称（字段名）。
 
     如果索引方式支持多字段索引，可以声明多个字段。全局索引最多可以声明31个字段，其他索引最多可以声明32个字段。
 
--   **expression**
+- **expression**
 
     创建一个基于该表的一个或多个字段的表达式索引，通常必须写在圆括弧中。如果表达式有函数调用的形式，圆括弧可以省略。
 
@@ -99,12 +98,11 @@
 
     在创建表达式索引时，如果表达式中包含IS NULL子句，则这种索引是无效的。此时，建议用户尝试创建一个部分索引。
 
--   **WHERE predicate**
+- **WHERE predicate**
 
     创建一个部分索引。部分索引是一个只包含表的一部分记录的索引，通常是该表中比其他部分数据更有用的部分。例如，有一个表，表里包含已记账和未记账的定单，未记账的定单只占表的一小部分而且这部分是最常用的部分，此时就可以通过只在未记账部分创建一个索引来改善性能。另外一个可能的用途是使用带有UNIQUE的WHERE强制一个表的某个子集的唯一性。
 
     取值范围：predicate表达式只能引用表的字段，它可以使用所有字段，而不仅是被索引的字段。目前，子查询和聚集表达式不能出现在WHERE子句里。
-
 
 ## 示例<a name="section1037364913493"></a>
 
@@ -152,4 +150,3 @@ openGauss=# CREATE UNIQUE INDEX ds_ship_mode_t1_index3 ON tpcds.ship_mode_t1(SM_
 ```
 openGauss=# DROP INDEX tpcds.ds_ship_mode_t1_index2;
 ```
-

@@ -747,5 +747,3 @@ GS\_WLM\_SESSION\_QUERY\_INFO\_ALL系统表显示当前数据库实例执行作�
 </tr>
 </tbody>
 </table>
-
-

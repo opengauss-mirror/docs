@@ -21,8 +21,8 @@ The execution plan is as follows:
 
 ## Optimization Analysis<a name="en-us_topic_0073253827_en-us_topic_0040046525_section27179124161918"></a>
 
-1.  As shown in the execution plan, the sequential scan phase is time consuming.
-2.  Therefore, you are advised to manually add **NOT NULL** for **JOIN** columns in the statement, as shown below:
+1. As shown in the execution plan, the sequential scan phase is time consuming.
+2. Therefore, you are advised to manually add **NOT NULL** for **JOIN** columns in the statement, as shown below:
 
     ```
     SELECT

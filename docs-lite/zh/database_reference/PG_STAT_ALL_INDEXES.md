@@ -80,4 +80,3 @@ PG\_STAT\_ALL\_INDEXES视图将包含当前数据库中的每个索引行，显�
 </tr>
 </tbody>
 </table>
-

@@ -4,12 +4,11 @@
 
 Hardware requirements for building openGauss are as follows:
 
--   Number of servers: 1
--   Hardware specifications:
-    -   CPU: 4U
-    -   Memory: 8 GB
-    -   Free disk space: 100 GB \(Linux 64-bit\)
-
+- Number of servers: 1
+- Hardware specifications:
+    - CPU: 4U
+    - Memory: 8 GB
+    - Free disk space: 100 GB \(Linux 64-bit\)
 
 ## Software Requirements<a name="en-us_topic_0283136407_section77524131504"></a>
 
@@ -17,12 +16,12 @@ Hardware requirements for building openGauss are as follows:
 
 The following OSs are supported:
 
--   CentOS 7.6 \(x86 architecture\)
--   openEuler-20.03-LTS \(AArch64 architecture\)
--   openEuler-20.03-LTS \(x86 architecture\)
--   Kylin-V10 \(AArch64 architecture\)
--   FusionOS 22 \(AArch64 architecture\)
--   FusionOS 22 \(x86 architecture\)
+- CentOS 7.6 \(x86 architecture\)
+- openEuler-20.03-LTS \(AArch64 architecture\)
+- openEuler-20.03-LTS \(x86 architecture\)
+- Kylin-V10 \(AArch64 architecture\)
+- FusionOS 22 \(AArch64 architecture\)
+- FusionOS 22 \(x86 architecture\)
 
 **Software Dependency Requirements**
 
@@ -90,4 +89,3 @@ You are advised to use the default installation packages of the following depend
 ## Environment Variables<a name="en-us_topic_0283136407_section1616215293319"></a>
 
 The environment variable configuration for building openGauss Lite has been written into the one-click build and packaging script. Therefore, you do not need to configure the environment variables.
-

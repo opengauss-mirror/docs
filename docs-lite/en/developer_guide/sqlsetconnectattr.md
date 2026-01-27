@@ -49,10 +49,10 @@ SQLRETURN SQLSetConnectAttr(SQLHDBC       ConnectionHandle
 
 ## Return Value<a name="en-us_topic_0238272901_en-us_topic_0237120431_en-us_topic_0059777827_s12ee56593ac441249a9f5f184e227202"></a>
 
--   **SQL\_SUCCESS**  indicates that the call succeeded.
--   **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
--   **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
--   **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
+- **SQL\_SUCCESS**  indicates that the call succeeded.
+- **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
+- **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
+- **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
 
 ## Precautions<a name="en-us_topic_0238272901_en-us_topic_0237120431_en-us_topic_0059777827_s78fe87e5aec14489b395f28b33ec0876"></a>
 

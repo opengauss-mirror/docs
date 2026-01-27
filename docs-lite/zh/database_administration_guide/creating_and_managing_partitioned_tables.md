@@ -4,17 +4,17 @@
 
 openGauss数据库支持的分区表为范围分区表、间隔分区表、列表分区表、哈希分区表。
 
--   范围分区表：将数据基于范围映射到每一个分区，这个范围是由创建分区表时指定的分区键决定的。这种分区方式是最为常用的，并且分区键经常采用日期，例如将销售数据按照月份进行分区。
--   间隔分区表：是一种特殊的范围分区表，相比范围分区表，新增间隔值定义，当插入记录找不到匹配的分区时，可以根据间隔值自动创建分区。
--   列表分区表：将数据中包含的键值分别存储再不同的分区中，依次将数据映射到每一个分区，分区中包含的键值由创建分区表时指定。
--   哈希分区表：将数据根据内部哈希算法依次映射到每一个分区中，包含的分区个数由创建分区表时指定。
+- 范围分区表：将数据基于范围映射到每一个分区，这个范围是由创建分区表时指定的分区键决定的。这种分区方式是最为常用的，并且分区键经常采用日期，例如将销售数据按照月份进行分区。
+- 间隔分区表：是一种特殊的范围分区表，相比范围分区表，新增间隔值定义，当插入记录找不到匹配的分区时，可以根据间隔值自动创建分区。
+- 列表分区表：将数据中包含的键值分别存储再不同的分区中，依次将数据映射到每一个分区，分区中包含的键值由创建分区表时指定。
+- 哈希分区表：将数据根据内部哈希算法依次映射到每一个分区中，包含的分区个数由创建分区表时指定。
 
 分区表和普通表相比具有以下优点：
 
--   改善查询性能：对分区对象的查询可以仅搜索自己关心的分区，提高检索效率。
--   增强可用性：如果分区表的某个分区出现故障，表在其他分区的数据仍然可用。
--   方便维护：如果分区表的某个分区出现故障，需要修复数据，只修复该分区即可。
--   均衡I/O：可以把不同的分区映射到不同的磁盘以平衡I/O，改善整个系统性能。
+- 改善查询性能：对分区对象的查询可以仅搜索自己关心的分区，提高检索效率。
+- 增强可用性：如果分区表的某个分区出现故障，表在其他分区的数据仍然可用。
+- 方便维护：如果分区表的某个分区出现故障，需要修复数据，只修复该分区即可。
+- 均衡I/O：可以把不同的分区映射到不同的磁盘以平衡I/O，改善整个系统性能。
 
 普通表若要转成分区表，需要新建分区表，然后把普通表中的数据导入到新建的分区表中。因此在初始设计表时，请根据业务提前规划是否使用分区表。
 
@@ -22,7 +22,7 @@ openGauss数据库支持的分区表为范围分区表、间隔分区表、列�
 
 示例一：使用默认表空间
 
--   创建分区表（假设用户已创建tpcds schema）
+- 创建分区表（假设用户已创建tpcds schema）
 
     ```
     openGauss=# CREATE TABLE tpcds.customer_address
@@ -66,7 +66,7 @@ openGauss数据库支持的分区表为范围分区表、间隔分区表、列�
     >
     >创建列存分区表的数量建议不超过1000个。
 
--   插入数据
+- 插入数据
 
     将表tpcds.customer\_address的数据插入到表tpcds.web\_returns\_p2中。
 
@@ -107,14 +107,14 @@ openGauss数据库支持的分区表为范围分区表、间隔分区表、列�
     INSERT 0 0
     ```
 
--   修改分区表行迁移属性
+- 修改分区表行迁移属性
 
     ```
     openGauss=# ALTER TABLE tpcds.web_returns_p2 DISABLE ROW MOVEMENT;
     ALTER TABLE
     ```
 
--   删除分区
+- 删除分区
 
     删除分区P8。
 
@@ -123,7 +123,7 @@ openGauss数据库支持的分区表为范围分区表、间隔分区表、列�
     ALTER TABLE
     ```
 
--   增加分区
+- 增加分区
 
     增加分区P8，范围为 40000<= P8<=MAXVALUE。
 
@@ -132,23 +132,22 @@ openGauss数据库支持的分区表为范围分区表、间隔分区表、列�
     ALTER TABLE
     ```
 
--   重命名分区
-    -   重命名分区P8为P\_9。
+- 重命名分区
+    - 重命名分区P8为P\_9。
 
         ```
         openGauss=# ALTER TABLE tpcds.web_returns_p2 RENAME PARTITION P8 TO P_9;
         ALTER TABLE
         ```
 
-    -   重命名分区P\_9为P8。
+    - 重命名分区P\_9为P8。
 
         ```
         openGauss=# ALTER TABLE tpcds.web_returns_p2 RENAME PARTITION FOR (40000) TO P8;
         ALTER TABLE
         ```
 
-
--   查询分区
+- 查询分区
 
     查询分区P6。
 
@@ -157,7 +156,7 @@ openGauss数据库支持的分区表为范围分区表、间隔分区表、列�
     openGauss=# SELECT * FROM tpcds.web_returns_p2 PARTITION FOR (35888);
     ```
 
--   删除分区表和表空间
+- 删除分区表和表空间
 
     ```
     openGauss=# DROP TABLE tpcds.customer_address;
@@ -166,12 +165,11 @@ openGauss数据库支持的分区表为范围分区表、间隔分区表、列�
     DROP TABLE
     ```
 
-
 示例二：使用用户自定义表空间
 
 按照以下方式对范围分区表的进行操作。
 
--   创建表空间
+- 创建表空间
 
     ```
     openGauss=# CREATE TABLESPACE example1 RELATIVE LOCATION 'tablespace1/tablespace_1';
@@ -186,7 +184,7 @@ openGauss数据库支持的分区表为范围分区表、间隔分区表、列�
     CREATE TABLESPACE
     ```
 
--   创建分区表
+- 创建分区表
 
     ```
     openGauss=# CREATE TABLE tpcds.customer_address
@@ -231,7 +229,7 @@ openGauss数据库支持的分区表为范围分区表、间隔分区表、列�
     >
     >创建列存分区表的数量建议不超过1000个。
 
--   插入数据
+- 插入数据
 
     将表tpcds.customer\_address的数据插入到表tpcds.web\_returns\_p2中。
 
@@ -272,14 +270,14 @@ openGauss数据库支持的分区表为范围分区表、间隔分区表、列�
     INSERT 0 0
     ```
 
--   修改分区表行迁移属性
+- 修改分区表行迁移属性
 
     ```
     openGauss=# ALTER TABLE tpcds.web_returns_p2 DISABLE ROW MOVEMENT;
     ALTER TABLE
     ```
 
--   删除分区
+- 删除分区
 
     删除分区P8。
 
@@ -288,7 +286,7 @@ openGauss数据库支持的分区表为范围分区表、间隔分区表、列�
     ALTER TABLE
     ```
 
--   增加分区
+- 增加分区
 
     增加分区P8，范围为 40000<= P8<=MAXVALUE。
 
@@ -297,39 +295,37 @@ openGauss数据库支持的分区表为范围分区表、间隔分区表、列�
     ALTER TABLE
     ```
 
--   重命名分区
-    -   重命名分区P8为P\_9。
+- 重命名分区
+    - 重命名分区P8为P\_9。
 
         ```
         openGauss=# ALTER TABLE tpcds.web_returns_p2 RENAME PARTITION P8 TO P_9;
         ALTER TABLE
         ```
 
-    -   重命名分区P\_9为P8。
+    - 重命名分区P\_9为P8。
 
         ```
         openGauss=# ALTER TABLE tpcds.web_returns_p2 RENAME PARTITION FOR (40000) TO P8;
         ALTER TABLE
         ```
 
-
--   修改分区的表空间
-    -   修改分区P6的表空间为example3。
+- 修改分区的表空间
+    - 修改分区P6的表空间为example3。
 
         ```
         openGauss=#  ALTER TABLE tpcds.web_returns_p2 MOVE PARTITION P6 TABLESPACE example3;
         ALTER TABLE
         ```
 
-    -   修改分区P4的表空间为example4。
+    - 修改分区P4的表空间为example4。
 
         ```
         openGauss=#  ALTER TABLE tpcds.web_returns_p2 MOVE PARTITION P4 TABLESPACE example4;
         ALTER TABLE
         ```
 
-
--   查询分区
+- 查询分区
 
     查询分区P6。
 
@@ -338,7 +334,7 @@ openGauss数据库支持的分区表为范围分区表、间隔分区表、列�
     openGauss=# SELECT * FROM tpcds.web_returns_p2 PARTITION FOR (35888);
     ```
 
--   删除分区表和表空间
+- 删除分区表和表空间
 
     ```
     openGauss=# DROP TABLE tpcds.web_returns_p2;
@@ -351,5 +347,3 @@ openGauss数据库支持的分区表为范围分区表、间隔分区表、列�
     openGauss=# DROP TABLESPACE example4;
     DROP TABLESPACE
     ```
-
-

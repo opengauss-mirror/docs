@@ -30,4 +30,3 @@ None.
 
 >[!NOTE]NOTE 
 >In the Lite scenario, openGauss does not provide ODBC APIs.
-

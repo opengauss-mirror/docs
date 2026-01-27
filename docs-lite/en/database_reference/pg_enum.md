@@ -57,4 +57,3 @@
 The OIDs for  **PG\_ENUM**  rows follow a special rule: even-numbered OIDs are guaranteed to be ordered in the same way as the sort ordering of their enumerated type. If two even OIDs belong to the same enumerated type, the smaller OID must have the smaller  **enumsortorder**  value. Odd-numbered OID values need bear no relationship to the sort order. This rule allows the enumerated comparison routines to avoid catalog lookups in many common cases. The routines that create and alter enumerated types attempt to assign even OIDs to enumerated values whenever possible.
 
 When an enumerated type is created, its members are assigned sort-order positions from 1 to  _n_. However, members added later might be given negative or fractional values of  **enumsortorder**. The only requirement on these values is that they be correctly ordered and unique within each enumerated type.
-

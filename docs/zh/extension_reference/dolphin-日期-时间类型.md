@@ -1,3 +1,5 @@
+# Dolphin 日期和时间类型
+
 ## 兼容MySQL时间类型
 
 相比于原始的openGauss，dolphin对于日期/时间类型的修改主要为: 
@@ -75,8 +77,6 @@ openGauss=# SELECT * FROM test_date;
  2015-10-22
 (3 rows)
 ```
-
-
 
 ### time 类型输入
 
@@ -246,8 +246,6 @@ openGauss=# SELECT * FROM test_timestamp;
   update t1 set `year` = `date`;
   ```
 
-  
-
 示例(注意下方 openGauss 数据库兼容性为 b)
 
 ```sql
@@ -277,4 +275,3 @@ openGauss=# SELECT * FROM test_year;
  1970 | 70
 (4 rows)
 ```
-

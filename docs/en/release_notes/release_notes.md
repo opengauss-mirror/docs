@@ -6,7 +6,7 @@
 
 Your replication, use, modification, and distribution of this document are governed by the Creative Commons License Attribution-ShareAlike 4.0 International Public License \(CC BY-SA 4.0\). You can visit [https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/) to view a human-readable summary of \(and not a substitute for\) CC BY-SA 4.0. For the complete CC BY-SA 4.0, visit [https://creativecommons.org/licenses/by-sa/4.0/legalcode](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
-Certain document contents (such as standard APIs and parameter descriptions) on this website are from the official PostgreSQL website (https://www.postgresql.org/docs/) and comply with the following protocols:
+Certain document contents (such as standard APIs and parameter descriptions) on this website are from the official PostgreSQL website (<https://www.postgresql.org/docs/>) and comply with the following protocols:
 PostgreSQL is Copyright © 1996–2020 by the PostgreSQL Global Development Group.
 Postgres95 is Copyright © 1994–5 by the Regents of the University of California.
 
@@ -42,89 +42,89 @@ openGauss 5.0.0 is the third LTS version of openGauss, and its lifecycle is thre
 
 - Inherited functions:
 
-  -   Basic functions: standard SQL syntax, data types, tables \(including temporary tables, global temporary tables, and foreign tables\), views, materialized views, foreign keys, indexes \(including B-tree indexes, GIN indexes, and hash indexes\), sequences, functions, triggers, MEDIAN aggregate function, ROWNUM, UPSERT, JSONB data type, and GB18030 character set.
-  -   Enhanced SQL engine: range partitioning, global partitioned index, list partitioning, hash partitioning, automatic extended partitioning based on range partitioning, row-store execution to vectorized execution, autonomous transaction, parallel query, Global SysCache, IPv6 protocol, and PostGIS extensions.
-  -   Enhanced storage engine: delayed standby node replay, logical replication on standby nodes, parallel logical decoding, gray upgrade, rolling upgrade, hash index, unique primary key constraint for column-store tables, Ustore storage engine, segment-page storage, publication-subscription, row-store table compression, memory-optimized table (MOT), and NUMA-aware high-performance capability.
-  -   Stored procedure, commit/rollback in a stored procedure, omission of parameter parentheses \(\) from the stored procedure or function calling, and stored procedure debugging.
-  -   Security functions: authentication, permission management, network communication security, database audit, fully encrypted database, dynamic masking, Chinese national cryptographic algorithm, tamper-proof ledger database, built-in role and permission management, transparent encryption, and ANY permission management.
-  -   High availability: primary/standby two-node cluster, cascaded standby node, logical replication, ultimate RTO, standby node scale-out, Paxos-based distributed consensus framework \(DCF\), and two-city three-DC DR.
-  -   Backup and restoration: Full physical backup, logical backup, standby node backup, incremental backup and restoration, and point-in-time recovery \(PITR\).
-  -   AI capabilities: parameter self-tuning, slow SQL discovery, AI query time forecasting, database metric collection, forecast, and exception detection, DBMind autonomous O&M platform, intelligent optimizer, intelligent index recommendation, and DeepSQL in-database AI algorithms (supporting XGBoost, multiclass, and PCA).
-  -   O&M capabilities: database running metrics in WDRs, diagnosis view for slow SQL statements on the standby node, and automatic eviction of unique SQL statements.
-  -   JDBC client load is balanced and read and write are isolated.
-  -   Cluster management (CM) supports customized resource management and control, and external status query and push.
-  -   Toolchain: development tool DataStudio, MySQL full migration tool, incremental migration tool, reverse migration tool, and data check tool.
-  -   Middleware: ShardingSphere and openLookeng.
-  -   Peripheral ecosystem: dblink, supporting openEuler, CentOS, and FusionOS.
-  -   Others: CMake script compilation, container-based deployment, and Kubernetes.
+  - Basic functions: standard SQL syntax, data types, tables \(including temporary tables, global temporary tables, and foreign tables\), views, materialized views, foreign keys, indexes \(including B-tree indexes, GIN indexes, and hash indexes\), sequences, functions, triggers, MEDIAN aggregate function, ROWNUM, UPSERT, JSONB data type, and GB18030 character set.
+  - Enhanced SQL engine: range partitioning, global partitioned index, list partitioning, hash partitioning, automatic extended partitioning based on range partitioning, row-store execution to vectorized execution, autonomous transaction, parallel query, Global SysCache, IPv6 protocol, and PostGIS extensions.
+  - Enhanced storage engine: delayed standby node replay, logical replication on standby nodes, parallel logical decoding, gray upgrade, rolling upgrade, hash index, unique primary key constraint for column-store tables, Ustore storage engine, segment-page storage, publication-subscription, row-store table compression, memory-optimized table (MOT), and NUMA-aware high-performance capability.
+  - Stored procedure, commit/rollback in a stored procedure, omission of parameter parentheses \(\) from the stored procedure or function calling, and stored procedure debugging.
+  - Security functions: authentication, permission management, network communication security, database audit, fully encrypted database, dynamic masking, Chinese national cryptographic algorithm, tamper-proof ledger database, built-in role and permission management, transparent encryption, and ANY permission management.
+  - High availability: primary/standby two-node cluster, cascaded standby node, logical replication, ultimate RTO, standby node scale-out, Paxos-based distributed consensus framework \(DCF\), and two-city three-DC DR.
+  - Backup and restoration: Full physical backup, logical backup, standby node backup, incremental backup and restoration, and point-in-time recovery \(PITR\).
+  - AI capabilities: parameter self-tuning, slow SQL discovery, AI query time forecasting, database metric collection, forecast, and exception detection, DBMind autonomous O&M platform, intelligent optimizer, intelligent index recommendation, and DeepSQL in-database AI algorithms (supporting XGBoost, multiclass, and PCA).
+  - O&M capabilities: database running metrics in WDRs, diagnosis view for slow SQL statements on the standby node, and automatic eviction of unique SQL statements.
+  - JDBC client load is balanced and read and write are isolated.
+  - Cluster management (CM) supports customized resource management and control, and external status query and push.
+  - Toolchain: development tool DataStudio, MySQL full migration tool, incremental migration tool, reverse migration tool, and data check tool.
+  - Middleware: ShardingSphere and openLookeng.
+  - Peripheral ecosystem: dblink, supporting openEuler, CentOS, and FusionOS.
+  - Others: CMake script compilation, container-based deployment, and Kubernetes.
 
 - New functions:
-  -   High performance: The performance of basic operators is improved. (For details, see the feature description.)
-  -   High performance: The SCRLock feature improves distributed lock performance. 
-  -   High security: user-level audit.
-  -   High availability: CM supports VIP management.
-  -   High availability: CM can be deployed on two nodes.
-  -   High availability: The read-only detection capability of CM disks is enhanced.
-  -   High availability: CM usability is improved.
-  -   High intelligence: Exception detection supports self-configuration.
-  -   Enterprise-level feature: event trigger.
-  -   Enterprise-level feature: openGauss resource pooling architecture is implemented based on storage pooling, memory pooling, and computing pooling (beta feature).
-  -   Enterprise-level feature: The Unified Write-Ahead Log \(UWAL\) feature accelerates the Write-Ahead Log \(WAL\) performance of the database.
-  -   Application development interface: enhanced JDBC capabilities.
-  -   Middleware: ShardingSphere supports read/write isolation in multiple modes and cross-database query.
-  -   Middleware: 32-node networking performance of openGauss+ShardingSphere > 21 million tpmC
-  -   Toolchain: full-lifecycle data production tool DataKit
-  -   Toolchain: MySQL migration tool gs\_rep\_portal
-  -   Toolchain: MySQL incremental and reverse migration tool gs\_replicate
-  -   Toolchain: gs\_datacheck based on the Merkle tree
-  -   Compatibilities: Compatible with most common MySQL syntax, including data types, operators, system functions, DDL, DML, DCL, and PL/SQL, implementing application migration without modification.
+  - High performance: The performance of basic operators is improved. (For details, see the feature description.)
+  - High performance: The SCRLock feature improves distributed lock performance. 
+  - High security: user-level audit.
+  - High availability: CM supports VIP management.
+  - High availability: CM can be deployed on two nodes.
+  - High availability: The read-only detection capability of CM disks is enhanced.
+  - High availability: CM usability is improved.
+  - High intelligence: Exception detection supports self-configuration.
+  - Enterprise-level feature: event trigger.
+  - Enterprise-level feature: openGauss resource pooling architecture is implemented based on storage pooling, memory pooling, and computing pooling (beta feature).
+  - Enterprise-level feature: The Unified Write-Ahead Log \(UWAL\) feature accelerates the Write-Ahead Log \(WAL\) performance of the database.
+  - Application development interface: enhanced JDBC capabilities.
+  - Middleware: ShardingSphere supports read/write isolation in multiple modes and cross-database query.
+  - Middleware: 32-node networking performance of openGauss+ShardingSphere > 21 million tpmC
+  - Toolchain: full-lifecycle data production tool DataKit
+  - Toolchain: MySQL migration tool gs\_rep\_portal
+  - Toolchain: MySQL incremental and reverse migration tool gs\_replicate
+  - Toolchain: gs\_datacheck based on the Merkle tree
+  - Compatibilities: Compatible with most common MySQL syntax, including data types, operators, system functions, DDL, DML, DCL, and PL/SQL, implementing application migration without modification.
 
--   Fixed defects:
-    -   I6NVAB: An error is reported during rollback and forcible rollback after gray upgrade from 3.0.3 to 5.0.0.
-    -   I6NK8U: When a publication/subscription name is changed to an existing name, the error message "ERROR: unsupported object class xxx" is displayed.
-    -   I6N2QD: When ESCAPE is used in SIMILAR TO, if the escape character is Chinese, an error is reported. If the LIKE escape character is Chinese, the operation is successful.
-    -   I6MOCS: In the B-compatible database, if the partition key of a level-2 partitioned table is the year function, an unknown error is reported when pg\_get\_tabledef is used after the ADD PARTITION operation is performed.
-    -   I6LMTU: In B-compatible mode, objects in backquotes are not supported.
-    -   I6KO5S: [Resource pooling] When the upgrade command is executed to upgrade shared storage, the upgrade fails.
-    -   I6KRZ6: [Resource pooling] The **dsscmd du -p +data -f a** command calculates only directories but not files.
-    -   I6IZH9: [Resource Pooling] The reform fails and does not enter the next round. The cluster is suspended.
-    -   I6O0K6: The versions 2.0.1, 2.0.0, and 2.0.5 without the CM tool fail to be committed after being gray upgraded to version 5.0.0 with the CM tool.
-    -   I61OX7: No error is reported when the value of the CM agent parameter **log\_dir** is changed to null. After the CM agent is restarted for the change to take effect, no new CM agent log is generated.
-    -   I6K2BZ: Chameleon migration fails due to double quotation marks.
-    -   I6KIWQ: During Debezium+kafka incremental migration, the timestamp after the migration is incorrect.
-    -   I6I640: When the data check tool is used to check data in 150,000 tables, the check process is suspended.
+- Fixed defects:
+    - I6NVAB: An error is reported during rollback and forcible rollback after gray upgrade from 3.0.3 to 5.0.0.
+    - I6NK8U: When a publication/subscription name is changed to an existing name, the error message "ERROR: unsupported object class xxx" is displayed.
+    - I6N2QD: When ESCAPE is used in SIMILAR TO, if the escape character is Chinese, an error is reported. If the LIKE escape character is Chinese, the operation is successful.
+    - I6MOCS: In the B-compatible database, if the partition key of a level-2 partitioned table is the year function, an unknown error is reported when pg\_get\_tabledef is used after the ADD PARTITION operation is performed.
+    - I6LMTU: In B-compatible mode, objects in backquotes are not supported.
+    - I6KO5S: [Resource pooling] When the upgrade command is executed to upgrade shared storage, the upgrade fails.
+    - I6KRZ6: [Resource pooling] The **dsscmd du -p +data -f a** command calculates only directories but not files.
+    - I6IZH9: [Resource Pooling] The reform fails and does not enter the next round. The cluster is suspended.
+    - I6O0K6: The versions 2.0.1, 2.0.0, and 2.0.5 without the CM tool fail to be committed after being gray upgraded to version 5.0.0 with the CM tool.
+    - I61OX7: No error is reported when the value of the CM agent parameter **log\_dir** is changed to null. After the CM agent is restarted for the change to take effect, no new CM agent log is generated.
+    - I6K2BZ: Chameleon migration fails due to double quotation marks.
+    - I6KIWQ: During Debezium+kafka incremental migration, the timestamp after the migration is incorrect.
+    - I6I640: When the data check tool is used to check data in 150,000 tables, the check process is suspended.
 
 ## Features<a name="EN-US_TOPIC_0289899195"></a>
 
--   Standard SQL support
+- Standard SQL support
 
     Supports SQL-92, SQL-99, SQL:2003, and SQL:2011 standards, GBK and UTF-8 character sets, SQL standard functions and analytic functions, and stored procedures.
 
--   Database storage management
+- Database storage management
 
     Tablespaces are supported. Different tables can be stored in different locations. The enterprise edition supports storage engines such as Ustore, Astore, and MOT.
 
--   Primary/standby deployment
+- Primary/standby deployment
 
     Supports the ACID feature of transactions, single-node recovery, HA data synchronization, and HA switchover. The enterprise edition provides the CM tool to support database instance status query, primary/standby switchover, log management, and cluster status query and push.
 
--   Resource pooling
+- Resource pooling
 
     Supports the resource pooling architecture based on shared storage and shared memory to ensure real-time read consistency on standby nodes.
 
--   Application programming interface (API)
+- Application programming interface (API)
 
     Supports standard JDBC 4.0 and ODBC 3.5 features, and Python and Go connection drivers.
 
--   Management tools
+- Management tools
 
     Provides the installation and deployment tools, instance start and stop tools, backup and restoration tools, scaling tool, and upgrade tool, supports the full-lifecycle data production tool DataKit, MySQL full/incremental/reverse migration tools, and data check tool.
 
--   Security management
+- Security management
 
     Supports SSL network connections, user permission management, password management, security auditing, fine-grained ANY permission control, and other functions, to ensure data security at the management, application, system, and network layers.
 
--   AI
+- AI
 
     Supports parameter self-tuning, slow SQL discovery, single query index recommendation, virtual index, workload index recommendation, database metric collection, forecast, and exception detection. The native AI engine in the database supports more than 10 high-performance machine learning algorithms.
 
@@ -132,115 +132,115 @@ openGauss 5.0.0 is the third LTS version of openGauss, and its lifecycle is thre
 
 This section describes openGauss 5.0.0. Compared with openGauss 3.1.0, it has the following new features:
 
--   High performance: The performance of basic operators is improved.
+- High performance: The performance of basic operators is improved.
     
-	The performance of the scan operators and aggregate operators is optimized, improving the end-to-end performance by 37% in the TPC-H 100 GB data scenario.
-    -   Parser optimization: The method of searching for keywords in the parser is optimized.
-    -   Expression and operator optimization: The expression framework is flattened and the operator performance is optimized.
-    -   Inner Unique optimization.
-    -   Predicate optimization: New pushdown predicates are obtained through predicate equivalence inference.
-    -   Scan operator optimization: The index scanning and full table scanning operators are optimized.
-    -   Aggregate operator optimization: The performance of the aggregate operators is optimized.
+ The performance of the scan operators and aggregate operators is optimized, improving the end-to-end performance by 37% in the TPC-H 100 GB data scenario.
+    - Parser optimization: The method of searching for keywords in the parser is optimized.
+    - Expression and operator optimization: The expression framework is flattened and the operator performance is optimized.
+    - Inner Unique optimization.
+    - Predicate optimization: New pushdown predicates are obtained through predicate equivalence inference.
+    - Scan operator optimization: The index scanning and full table scanning operators are optimized.
+    - Aggregate operator optimization: The performance of the aggregate operators is optimized.
 
--   High performance: SCRLock provides the distributed lock capability to improve distributed lock performance.
+- High performance: SCRLock provides the distributed lock capability to improve distributed lock performance.
 
-    -   SCRLock provides distributed locks in optimistic mode based on the RDMA protocol. The RDMA network improves the efficiency of obtaining locks, and the optimistic mode features a simplified process.
-    -   SCRLock ensures lock fairness and prevents permanent waiting events in a cluster.
-    -   SCRLock also provides the local lock cache capability to reduce the frequency of obtaining remote locks, reducing the latency. 
+    - SCRLock provides distributed locks in optimistic mode based on the RDMA protocol. The RDMA network improves the efficiency of obtaining locks, and the optimistic mode features a simplified process.
+    - SCRLock ensures lock fairness and prevents permanent waiting events in a cluster.
+    - SCRLock also provides the local lock cache capability to reduce the frequency of obtaining remote locks, reducing the latency. 
 
--   High security: user-level audit.
+- High security: user-level audit.
     
-    -   User-level audit is supported. The GUC parameter **full\_audit\_users** is added to set the list of audited users. Audit logs are recorded for all SQL statements executed by users in the list. Administrators' operations can be fully audited to audit administrators' access to user data.
-    -   The audit operation can be configured based on client information. The GUC parameter **no\_audit\_client** is added to configure the list of clients that do not need to be audited. Audit logs are not recorded for specified client apps and IP addresses.
-    -   Audit logs are recorded for high-risk system function calls. The list of system functions that support audit recording must be specified in documents.
+    - User-level audit is supported. The GUC parameter **full\_audit\_users** is added to set the list of audited users. Audit logs are recorded for all SQL statements executed by users in the list. Administrators' operations can be fully audited to audit administrators' access to user data.
+    - The audit operation can be configured based on client information. The GUC parameter **no\_audit\_client** is added to configure the list of clients that do not need to be audited. Audit logs are not recorded for specified client apps and IP addresses.
+    - Audit logs are recorded for high-risk system function calls. The list of system functions that support audit recording must be specified in documents.
     
--   High availability: CM supports VIP management.
+- High availability: CM supports VIP management.
     
-    -   The host can be directly found based on the virtual IP (VIP), and the reconnection is more accurate and faster (millisecond-level).
-    -   When a host is faulty and a new primary CM is selected, the VIP is migrated to the new primary CM.
-    -   When two primary nodes exist, only one host can be accessed through the VIP, reducing the risk of data loss.
+    - The host can be directly found based on the virtual IP (VIP), and the reconnection is more accurate and faster (millisecond-level).
+    - When a host is faulty and a new primary CM is selected, the VIP is migrated to the new primary CM.
+    - When two primary nodes exist, only one host can be accessed through the VIP, reducing the risk of data loss.
     
--   High availability: CM can be deployed on two nodes.
+- High availability: CM can be deployed on two nodes.
     
-    -   The third-party gateway IP address is introduced to effectively solve the self-quorum problem in the two-node CM cluster deployment mode. The CMS and DN can be deployed on two nodes.
-    -   In addition, the CM cluster failover policy and database cluster split-brain recovery policy can be dynamically configured to ensure cluster data integrity and consistency.
+    - The third-party gateway IP address is introduced to effectively solve the self-quorum problem in the two-node CM cluster deployment mode. The CMS and DN can be deployed on two nodes.
+    - In addition, the CM cluster failover policy and database cluster split-brain recovery policy can be dynamically configured to ensure cluster data integrity and consistency.
     
--   High availability: The read-only detection capability of CM disks is enhanced.
+- High availability: The read-only detection capability of CM disks is enhanced.
     
-    -   The read-only status is obtained from the database to ensure accuracy.
-    -   Read-only quorum arbitrates only the instances that exceed the threshold. Other nodes are not affected.
-    -   After the primary server is read-only, a primary/standby switchover is automatically performed. An available standby server is promoted to primary to ensure that the cluster can work properly.
+    - The read-only status is obtained from the database to ensure accuracy.
+    - Read-only quorum arbitrates only the instances that exceed the threshold. Other nodes are not affected.
+    - After the primary server is read-only, a primary/standby switchover is automatically performed. An available standby server is promoted to primary to ensure that the cluster can work properly.
     
--   High availability: CM usability is improved.
+- High availability: CM usability is improved.
     
-    -   The CM cluster service can be stopped in one-click mode.
-    -   Decoupling from kernel installation and deployment is supported.
-    -   User-defined scripts can be invoked by event.
-    -   The CM component can be upgraded independently to enhance the reliability of the database cluster.
-    -   The CM supports monitoring and management of user-defined components based on the configuration information.
+    - The CM cluster service can be stopped in one-click mode.
+    - Decoupling from kernel installation and deployment is supported.
+    - User-defined scripts can be invoked by event.
+    - The CM component can be upgraded independently to enhance the reliability of the database cluster.
+    - The CM supports monitoring and management of user-defined components based on the configuration information.
     
--   High intelligence: Exception detection supports self-configuration.
+- High intelligence: Exception detection supports self-configuration.
     
-    -   To adapt to actual scenarios and avoid resource occupation, DBMind supports self-configuration of exception detection at the system, database, and log layers. Users can add, pause, or delete exception detection items in real time before or during running. Exception detection items support different exception detection algorithms. The exception detection function obtains the intersection of the results of different exception detectors to adapt to specific application scenarios.
+    - To adapt to actual scenarios and avoid resource occupation, DBMind supports self-configuration of exception detection at the system, database, and log layers. Users can add, pause, or delete exception detection items in real time before or during running. Exception detection items support different exception detection algorithms. The exception detection function obtains the intersection of the results of different exception detectors to adapt to specific application scenarios.
     
--   Enterprise-level feature: event trigger.
+- Enterprise-level feature: event trigger.
     
-    -   DDL operations in the current database and their target objects are captured and processed.
-    -   The following DDL events can be captured: ddl\_command\_start, ddl\_command\_end, sql\_drop, and table\_rewrite.
+    - DDL operations in the current database and their target objects are captured and processed.
+    - The following DDL events can be captured: ddl\_command\_start, ddl\_command\_end, sql\_drop, and table\_rewrite.
     
--   Enterprise-level feature: openGauss resource pooling architecture is implemented based on storage pooling, memory pooling, and computing pooling (beta feature).
+- Enterprise-level feature: openGauss resource pooling architecture is implemented based on storage pooling, memory pooling, and computing pooling (beta feature).
     
-    -   Storage pooling supports multiple storage forms, such as enterprise high-end storage and distributed storage. One data service can be used for multiple types of computing, improving storage utilization by more than 50%.
-    -   Memory pooling implements memory interconnection between compute nodes. Transaction information and database cache are synchronized to implement consistent read of multi-version snapshots on multiple nodes. RDMA-accelerated RoCE hardware is used to achieve ultra-low latency and high throughput communication across nodes.
-    -   Computing pooling supports diversified computing power. ShardingSphere is used to build the openGauss distributed computing capability, achieving 32-node networking performance > 21 million tpmC.
-    -   In terms of cluster management, technologies such as dual heartbeat detection, shared disk quorum , and I/O fencing are used to automatically detect, rectify, and isolate cluster node faults, providing a highly reliable running environment for resource pooling.   
+    - Storage pooling supports multiple storage forms, such as enterprise high-end storage and distributed storage. One data service can be used for multiple types of computing, improving storage utilization by more than 50%.
+    - Memory pooling implements memory interconnection between compute nodes. Transaction information and database cache are synchronized to implement consistent read of multi-version snapshots on multiple nodes. RDMA-accelerated RoCE hardware is used to achieve ultra-low latency and high throughput communication across nodes.
+    - Computing pooling supports diversified computing power. ShardingSphere is used to build the openGauss distributed computing capability, achieving 32-node networking performance > 21 million tpmC.
+    - In terms of cluster management, technologies such as dual heartbeat detection, shared disk quorum , and I/O fencing are used to automatically detect, rectify, and isolate cluster node faults, providing a highly reliable running environment for resource pooling.   
 
--   Enterprise-level feature: UWAL accelerates the WAL performance of the database.
-    -   The database and UWAL component are combined to accelerate the WAL performance of the database.
-    -   This feature solves the problem of performance loss during active/standby streaming replication and improves the performance of active/standby transaction submission as well as streaming replication and transmission.  
+- Enterprise-level feature: UWAL accelerates the WAL performance of the database.
+    - The database and UWAL component are combined to accelerate the WAL performance of the database.
+    - This feature solves the problem of performance loss during active/standby streaming replication and improves the performance of active/standby transaction submission as well as streaming replication and transmission.  
 
--   Application development interface: enhanced JDBC capabilities.
+- Application development interface: enhanced JDBC capabilities.
 
-    -   Quick load balancing can be triggered when the cluster status changes.
-    -   The heartbeat thread can be enabled to periodically maintain the heartbeat of the primary node. When the primary node is faulty, the old connection is quickly killed and the new connection is connected to the new primary node.
+    - Quick load balancing can be triggered when the cluster status changes.
+    - The heartbeat thread can be enabled to periodically maintain the heartbeat of the primary node. When the primary node is faulty, the old connection is quickly killed and the new connection is connected to the new primary node.
 
--   Middleware: ShardingSphere supports read/write isolation in multiple modes and cross-database query.
+- Middleware: ShardingSphere supports read/write isolation in multiple modes and cross-database query.
 
-    -   The read/write isolation of statements in a transaction is supported.
-    -   The computing capability of the aggregate operator is supported to implement associated query across sharded tables in the database.
+    - The read/write isolation of statements in a transaction is supported.
+    - The computing capability of the aggregate operator is supported to implement associated query across sharded tables in the database.
 
--   Middleware: 32-node networking performance of openGauss+ShardingSphere > 21 million tpmC
+- Middleware: 32-node networking performance of openGauss+ShardingSphere > 21 million tpmC
 
-    -   ShardingSphere uses asynchronous JDBC at the backend to reduce connection consumption. openGauss uses the resource pooling architecture to improve the single-sharding capability. When 32 Kunpeng 920 \(128 cores\) nodes are used for networking \(1 x shardingsphere-proxy ,11 x shardingsphere-jdbc, 20 x openGauss\), the perfect sharding performance is greater than 21 million tpmc.
+    - ShardingSphere uses asynchronous JDBC at the backend to reduce connection consumption. openGauss uses the resource pooling architecture to improve the single-sharding capability. When 32 Kunpeng 920 \(128 cores\) nodes are used for networking \(1 x shardingsphere-proxy ,11 x shardingsphere-jdbc, 20 x openGauss\), the perfect sharding performance is greater than 21 million tpmc.
 
--   Toolchain: full-lifecycle data production tool DataKit
+- Toolchain: full-lifecycle data production tool DataKit
    
-    -   DataKit is positioned as a full-lifecycle data productivity tool of openGauss. It supports full-lifecycle data management, covering openGauss deployment, migration, development, and O&M.
-    -   DataKit is a tool kit of openGauss. It uses the browser/server (B/S) software architecture and provides basic software and hardware resource management capabilities such as servers and database instances.
-    -   In addition, on-demand deployment of function extensions is supported. Currently, the community provides function extensions such as installation and deployment, data migration, data development, and intelligent O&M.
-    -   The DataKit is also a tool development platform that allows users to implement their own functions based on extension interfaces and specifications. Function extensions can be dynamically loaded to and run on the DataKit or dynamically uninstalled from the DataKit. Extensions can invoke open interfaces of the platform and other extensions to obtain corresponding data and functions, implementing quick construction of featured functions.
+    - DataKit is positioned as a full-lifecycle data productivity tool of openGauss. It supports full-lifecycle data management, covering openGauss deployment, migration, development, and O&M.
+    - DataKit is a tool kit of openGauss. It uses the browser/server (B/S) software architecture and provides basic software and hardware resource management capabilities such as servers and database instances.
+    - In addition, on-demand deployment of function extensions is supported. Currently, the community provides function extensions such as installation and deployment, data migration, data development, and intelligent O&M.
+    - The DataKit is also a tool development platform that allows users to implement their own functions based on extension interfaces and specifications. Function extensions can be dynamically loaded to and run on the DataKit or dynamically uninstalled from the DataKit. Extensions can invoke open interfaces of the platform and other extensions to obtain corresponding data and functions, implementing quick construction of featured functions.
    
--   Toolchain: MySQL migration tool gs\_rep\_portal
+- Toolchain: MySQL migration tool gs\_rep\_portal
    
-    -   gs\_rep\_portal can connect to Debezium+kafka and gs\_mysync to integrate full migration, incremental migration, and data check capabilities, implementing full migration, incremental migration, reverse migration, and data check.
-    -   Users are allowed to create parallel migration task flows and customize migration plans. Each migration step is automatically executed based on the preset execution sequence.
-    -   The migration progress (including the total amount, remaining amount and time, and replication delay) and statements that fail to be migrated can be displayed.
+    - gs\_rep\_portal can connect to Debezium+kafka and gs\_mysync to integrate full migration, incremental migration, and data check capabilities, implementing full migration, incremental migration, reverse migration, and data check.
+    - Users are allowed to create parallel migration task flows and customize migration plans. Each migration step is automatically executed based on the preset execution sequence.
+    - The migration progress (including the total amount, remaining amount and time, and replication delay) and statements that fail to be migrated can be displayed.
    
--   Toolchain: MySQL full migration tool gs\_mysync
+- Toolchain: MySQL full migration tool gs\_mysync
    
-    -   The gs\_mysync (original Chameleon) full migration tool supports progress display and enhanced debugging. The full migration performance is greater than 300 MB/s, that is, 1 TB/h.
+    - The gs\_mysync (original Chameleon) full migration tool supports progress display and enhanced debugging. The full migration performance is greater than 300 MB/s, that is, 1 TB/h.
    
--   Toolchain: MySQL incremental and reverse migration tool gs\_replicate
+- Toolchain: MySQL incremental and reverse migration tool gs\_replicate
    
-    -   Incremental migration and reverse migration are incorporated into Debezium+kafka and integrated into gs\_replicate. The incremental migration performance is greater than 30,000 TPS.
+    - Incremental migration and reverse migration are incorporated into Debezium+kafka and integrated into gs\_replicate. The incremental migration performance is greater than 30,000 TPS.
    
--   Toolchain: gs\_datacheck based on the Merkle tree
+- Toolchain: gs\_datacheck based on the Merkle tree
    
-    -   The data check performance reaches 70 MB/s.
-    -   The row-level, column-level, and table-level data checks are supported.
-    -   Data exported from a full migration can be directly read and checked.
+    - The data check performance reaches 70 MB/s.
+    - The row-level, column-level, and table-level data checks are supported.
+    - Data exported from a full migration can be directly read and checked.
    
--   Compatibilities: Compatible with most common MySQL syntax, including data types, operators, system functions, DDL, DML, DCL, and PL/SQL, implementing application migration without modification.
+- Compatibilities: Compatible with most common MySQL syntax, including data types, operators, system functions, DDL, DML, DCL, and PL/SQL, implementing application migration without modification.
    
     Version 5.0.0 supports the following syntax points: (Only some typical syntax points are listed. For details, see section "MySQL Compatibility" in the *Data Migration Guide*.)
    
@@ -317,19 +317,19 @@ This section describes openGauss 5.0.0. Compared with openGauss 3.1.0, it has th
 
 ## Important Notes<a name="EN-US_TOPIC_0289899192"></a>
 
--   For details about technical specifications, see the *Technical White Paper*.
--   You can select a deployment architecture based on the database deployment solutions in the *Database Management Guide* to ensure the reliability and availability of the database cluster.
--   The resource pooling primary/standby shared storage feature is a beta feature and is in the trial phase.
+- For details about technical specifications, see the *Technical White Paper*.
+- You can select a deployment architecture based on the database deployment solutions in the *Database Management Guide* to ensure the reliability and availability of the database cluster.
+- The resource pooling primary/standby shared storage feature is a beta feature and is in the trial phase.
 
 ## Known Issues<a name="EN-US_TOPIC_0289899194"></a>
 
--   openGauss cannot monitor file permissions and slow disks. When the file permission is abnormal, the database exits and the corresponding information is recorded in logs. On a slow disk, the response to database operations is slower than usual.
+- openGauss cannot monitor file permissions and slow disks. When the file permission is abnormal, the database exits and the corresponding information is recorded in logs. On a slow disk, the response to database operations is slower than usual.
 
--   The read-only mode of the standby node and cascaded standby node is incompatible with the ultimate RTO feature. If the ultimate RTO feature is enabled, disable the read-only mode of the standby node and cascaded standby node.
+- The read-only mode of the standby node and cascaded standby node is incompatible with the ultimate RTO feature. If the ultimate RTO feature is enabled, disable the read-only mode of the standby node and cascaded standby node.
 
--   Memory Optimized Tables (MOTs) are incompatible with the incremental checkpoint feature. If MOTs are used, disable the incremental checkpoint function.
+- Memory Optimized Tables (MOTs) are incompatible with the incremental checkpoint feature. If MOTs are used, disable the incremental checkpoint function.
 
--   LLVM does not support the Arm architecture. When the MOT TPC-C is imported, an LLVM error is reported. To avoid this problem, disable the JIT function using the **enable\_mot\_codegen** parameter. You can configure **force\_mot\_pseudo\_codegen= true** to reduce the impact on TPC-C test performance when the JIT function is disabled.
+- LLVM does not support the Arm architecture. When the MOT TPC-C is imported, an LLVM error is reported. To avoid this problem, disable the JIT function using the **enable\_mot\_codegen** parameter. You can configure **force\_mot\_pseudo\_codegen= true** to reduce the impact on TPC-C test performance when the JIT function is disabled.
 
 ## Common Vulnerabilities and Exposures \(CVEs\)<a name="EN-US_TOPIC_0289899199"></a>
 
@@ -343,26 +343,26 @@ This is the tenth release of openGauss. The disclosed CVEs have been fixed.
 
 openGauss contains the following 18 code repositories.
 
--   Open-source software code repository: [https://gitcode.com/opengauss/openGauss-third\_party](https://gitcode.com/opengauss/openGauss-third_party)
+- Open-source software code repository: [https://gitcode.com/opengauss/openGauss-third\_party](https://gitcode.com/opengauss/openGauss-third_party)
 
--   JDBC driver code repository: [https://gitcode.com/opengauss/openGauss-connector-jdbc](https://gitcode.com/opengauss/openGauss-connector-jdbc)
+- JDBC driver code repository: [https://gitcode.com/opengauss/openGauss-connector-jdbc](https://gitcode.com/opengauss/openGauss-connector-jdbc)
 
--   ODBC driver code repository: [https://gitcode.com/opengauss/openGauss-connector-odbc](https://gitcode.com/opengauss/openGauss-connector-odbc)
--   Database server code repository: [https://gitcode.com/opengauss/openGauss-server](https://gitcode.com/opengauss/openGauss-server)
--   Autonomous O&M platform DBMind code repository: [https://gitcode.com/opengauss/openGauss-DBMind](https://gitcode.com/opengauss/openGauss-DBMind)
--   OM tool code repository: [https://gitcode.com/opengauss/openGauss-OM](https://gitcode.com/opengauss/openGauss-OM)
--   CM tool code repository: [https://gitcode.com/opengauss/CM](https://gitcode.com/opengauss/CM)
--   Database distributed memory service \(DMS\) component code repository: [https://gitcode.com/opengauss/DMS](https://gitcode.com/opengauss/DMS)
--   Database distributed storage service \(DSS\) component code repository: [https://gitcode.com/opengauss/DSS](https://gitcode.com/opengauss/DSS)
--   DCF code repository: [https://gitcode.com/opengauss/DCF](https://gitcode.com/opengauss/DCF)
--   DCC code repository: [https://gitcode.com/opengauss/DCC](https://gitcode.com/opengauss/DCC)
--   Plug-in code repository: [https://gitcode.com/opengauss/Plugin](https://gitcode.com/opengauss/Plugin)
--   MySQL-to-openGauss full migration tool code repository: [https://gitcode.com/opengauss/openGauss-tools-chameleon](https://gitcode.com/opengauss/openGauss-tools-chameleon)
--   MySQL incremental/reverse migration tool code repository: [https://gitcode.com/opengauss/debezium](https://gitcode.com/opengauss/debezium)
--   Data verification tool code repository: [https://gitcode.com/opengauss/openGauss-tools-datachecker-performance](https://gitcode.com/opengauss/openGauss-tools-datachecker-performance)
--   Prometheus-exporter code repository: [https://gitcode.com/opengauss/openGauss-prometheus-exporter](https://gitcode.com/opengauss/openGauss-prometheus-exporter)
--   Database monitoring plug-in generation tool code repository: [https://gitcode.com/opengauss/openGauss-tools-monitor](https://gitcode.com/opengauss/openGauss-tools-monitor)
--   Document repository: [https://gitcode.com/opengauss/docs](https://gitcode.com/opengauss/docs)
+- ODBC driver code repository: [https://gitcode.com/opengauss/openGauss-connector-odbc](https://gitcode.com/opengauss/openGauss-connector-odbc)
+- Database server code repository: [https://gitcode.com/opengauss/openGauss-server](https://gitcode.com/opengauss/openGauss-server)
+- Autonomous O&M platform DBMind code repository: [https://gitcode.com/opengauss/openGauss-DBMind](https://gitcode.com/opengauss/openGauss-DBMind)
+- OM tool code repository: [https://gitcode.com/opengauss/openGauss-OM](https://gitcode.com/opengauss/openGauss-OM)
+- CM tool code repository: [https://gitcode.com/opengauss/CM](https://gitcode.com/opengauss/CM)
+- Database distributed memory service \(DMS\) component code repository: [https://gitcode.com/opengauss/DMS](https://gitcode.com/opengauss/DMS)
+- Database distributed storage service \(DSS\) component code repository: [https://gitcode.com/opengauss/DSS](https://gitcode.com/opengauss/DSS)
+- DCF code repository: [https://gitcode.com/opengauss/DCF](https://gitcode.com/opengauss/DCF)
+- DCC code repository: [https://gitcode.com/opengauss/DCC](https://gitcode.com/opengauss/DCC)
+- Plug-in code repository: [https://gitcode.com/opengauss/Plugin](https://gitcode.com/opengauss/Plugin)
+- MySQL-to-openGauss full migration tool code repository: [https://gitcode.com/opengauss/openGauss-tools-chameleon](https://gitcode.com/opengauss/openGauss-tools-chameleon)
+- MySQL incremental/reverse migration tool code repository: [https://gitcode.com/opengauss/debezium](https://gitcode.com/opengauss/debezium)
+- Data verification tool code repository: [https://gitcode.com/opengauss/openGauss-tools-datachecker-performance](https://gitcode.com/opengauss/openGauss-tools-datachecker-performance)
+- Prometheus-exporter code repository: [https://gitcode.com/opengauss/openGauss-prometheus-exporter](https://gitcode.com/opengauss/openGauss-prometheus-exporter)
+- Database monitoring plug-in generation tool code repository: [https://gitcode.com/opengauss/openGauss-tools-monitor](https://gitcode.com/opengauss/openGauss-tools-monitor)
+- Document repository: [https://gitcode.com/opengauss/docs](https://gitcode.com/opengauss/docs)
 
 ## Contribution<a name="EN-US_TOPIC_0289899196"></a>
 

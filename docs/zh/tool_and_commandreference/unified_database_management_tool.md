@@ -4,11 +4,10 @@ CM（Cluster Manager）是一款数据库管理模块。支持自定义资源监
 
 需要注意的是，一主一备模式下，CM只支持基本的安装，启停，检测能力，其他功能不支持。
 
--   **[特性介绍](features.md)**  
--   **[cm\_ctl工具介绍](cm_ctl.md)**  
--   **[cm\_persist工具介绍](cm_persist.md)**  
--   **[安装和卸载工具介绍](cm_install_and_cm_uninstall.md)**  
--   **[安全设计](security_design.md)**  
--   **[CM配置参数介绍](cm_parameters.md)**  
--   **[CM错误日志信息参考](cm_error_log_information_reference.md)**  
-
+- **[特性介绍](features.md)**  
+- **[cm\_ctl工具介绍](cm_ctl.md)**  
+- **[cm\_persist工具介绍](cm_persist.md)**  
+- **[安装和卸载工具介绍](cm_install_and_cm_uninstall.md)**  
+- **[安全设计](security_design.md)**  
+- **[CM配置参数介绍](cm_parameters.md)**  
+- **[CM错误日志信息参考](cm_error_log_information_reference.md)**  

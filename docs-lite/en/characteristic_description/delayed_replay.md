@@ -26,15 +26,14 @@ None.
 
 ## Constraints<a name="section27741012910"></a>
 
--   The  **recovery\_min\_apply\_delay**  parameter is invalid on the primary node. It must be set on the standby node to be delayed.
--   The delay time is calculated based on the timestamp of transaction commit on the primary server and the current time on the standby server. Therefore, ensure that the clocks of the primary and standby servers are the same.
--   Operations without transactions are not delayed.
--   After the primary/standby switchover, if the original primary server needs to be delayed, you need to manually set this parameter.
--   When  **synchronous\_commit**  is set to  **remote\_apply**, synchronous replication is affected by the delay. Each commit message is returned only after the replay on the standby server is complete.
--   Using this feature also delays  **hot\_standby\_feedback**, which may cause the primary server to bloat, so be careful when using both.
--   If a DDL operation \(such as DROP or TRUNCATE\) that holds an AccessExclusive lock is performed on the primary server, the query operation on the operation object on the standby server will be returned only after the lock is released during the delayed replay of the record on the standby server.
+- The  **recovery\_min\_apply\_delay**  parameter is invalid on the primary node. It must be set on the standby node to be delayed.
+- The delay time is calculated based on the timestamp of transaction commit on the primary server and the current time on the standby server. Therefore, ensure that the clocks of the primary and standby servers are the same.
+- Operations without transactions are not delayed.
+- After the primary/standby switchover, if the original primary server needs to be delayed, you need to manually set this parameter.
+- When  **synchronous\_commit**  is set to  **remote\_apply**, synchronous replication is affected by the delay. Each commit message is returned only after the replay on the standby server is complete.
+- Using this feature also delays  **hot\_standby\_feedback**, which may cause the primary server to bloat, so be careful when using both.
+- If a DDL operation \(such as DROP or TRUNCATE\) that holds an AccessExclusive lock is performed on the primary server, the query operation on the operation object on the standby server will be returned only after the lock is released during the delayed replay of the record on the standby server.
 
 ## Dependencies<a name="section57771982"></a>
 
 None.
-

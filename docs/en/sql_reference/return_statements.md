@@ -23,7 +23,7 @@ See  [Example](call_statement.md#en-us_topic_0237122223_en-us_topic_0059778001_s
 
 ### Syntax<a name="en-us_topic_0237122232_section66906369117"></a>
 
-When creating a function, specify  **SETOF **_datatype_  for the return values.
+When creating a function, specify  **SETOF**_datatype_  for the return values.
 
 return\_next\_clause::=
 

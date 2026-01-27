@@ -117,4 +117,3 @@
 | `ERR_GR_READONLY`              | 2426 | `GR is in readonly mode`                | -                       | GR 处于只读模式      |
 | `ERR_GR_MASTER_CHANGE`         | 2498 | `Master id has changed.`                | -                       | 主节点变更           |
 | `ERR_GR_RECOVER_CAUSE_BREAK`   | 2499 | `Req break by recovery.`                | -                       | 恢复操作中断请求     |
-

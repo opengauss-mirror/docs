@@ -57,4 +57,3 @@ A session is a connection established between the user and the database.  [Table
 </tr>
 </tbody>
 </table>
-

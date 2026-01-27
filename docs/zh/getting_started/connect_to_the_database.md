@@ -6,16 +6,15 @@
 
 JDBC提供了三个方法，用于创建数据库连接。
 
--   DriverManager.getConnection\(String url\);
--   DriverManager.getConnection\(String url, Properties info\);
--   DriverManager.getConnection\(String url, String user, String password\);
+- DriverManager.getConnection\(String url\);
+- DriverManager.getConnection\(String url, Properties info\);
+- DriverManager.getConnection\(String url, String user, String password\);
 
 ## 参数<a name="zh-cn_topic_0283137601_zh-cn_topic_0237120381_zh-cn_topic_0213179126_zh-cn_topic_0189251768_zh-cn_topic_0059779354_sd1d6ca3f8a4345d78889ae70e3f20498"></a>
 
 **表 1**  数据库连接参数
 
 <a name="zh-cn_topic_0283137601_zh-cn_topic_0237120381_zh-cn_topic_0213179126_zh-cn_topic_0189251768_zh-cn_topic_0059779354_tfcd5d7b17d27423d9d3b648da394ac52"></a>
-
 
 <table><thead align="left"><tr id="zh-cn_topic_0283137601_zh-cn_topic_0237120381_zh-cn_topic_0213179126_zh-cn_topic_0189251768_zh-cn_topic_0059779354_r13c3173c830e468eb39e6aa804dfed59"><th class="cellrowborder" valign="top" width="13%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0283137601_zh-cn_topic_0237120381_zh-cn_topic_0213179126_zh-cn_topic_0189251768_zh-cn_topic_0059779354_a5501243843d34369bb879eed773000ae"><a name="zh-cn_topic_0283137601_zh-cn_topic_0237120381_zh-cn_topic_0213179126_zh-cn_topic_0189251768_zh-cn_topic_0059779354_a5501243843d34369bb879eed773000ae"></a><a name="zh-cn_topic_0283137601_zh-cn_topic_0237120381_zh-cn_topic_0213179126_zh-cn_topic_0189251768_zh-cn_topic_0059779354_a5501243843d34369bb879eed773000ae"></a>参数</p>
 </th>
@@ -66,7 +65,6 @@ JDBC提供了三个方法，用于创建数据库连接。
 </tr>
 </tbody>
 </table>
-
 
 ## 示例<a name="zh-cn_topic_0283137601_zh-cn_topic_0237120381_zh-cn_topic_0213179126_zh-cn_topic_0189251768_zh-cn_topic_0059779354_sa87cf707a76c493997989289921f9202"></a>
 
@@ -143,4 +141,3 @@ public static Connection getConnectUseProp(String username, String passwd)
         return conn;
     };
 ```
-

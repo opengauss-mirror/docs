@@ -12,34 +12,33 @@ Database objects are generally created in the first schema in a database search 
 
 ## Creating, Modifying, and Deleting Schemas<a name="en-us_topic_0283137084_en-us_topic_0237121104_en-us_topic_0156599225_section0594124724510"></a>
 
--   To create a schema, use  **[CREATE SCHEMA](../sql_reference/create-schema.md)**. By default, the initial user and system administrator can create schemas. Other users can create schemas in the database only when they have the CREATE permission on the database. For details about how to grant the permission, see the syntax in  [GRANT](../sql_reference/grant.md).
--   To change the name or owner of a schema, use  **[ALTER SCHEMA](../sql_reference/alter-schema.md)**. The schema owner can change the schema.
--   To delete a schema and its objects, use  [DROP SCHEMA](../sql_reference/drop-schema.md). Schema owners can delete schemas.
--   To create a table in a schema, use the  _schema\_name_**.**_table\_name_  format to specify the table. If  _schema\_name_  is not specified, the table will be created in the first schema in  [search path](#en-us_topic_0283137084_en-us_topic_0237121104_en-us_topic_0156599225_section03655314403).
--   To view the owner of a schema, perform the following join query on the system catalogs  **PG\_NAMESPACE**  and  **PG\_USER**. Replace  _schema\_name_  in the statement with the name of the schema to be queried.
+- To create a schema, use  **[CREATE SCHEMA](../sql_reference/create-schema.md)**. By default, the initial user and system administrator can create schemas. Other users can create schemas in the database only when they have the CREATE permission on the database. For details about how to grant the permission, see the syntax in  [GRANT](../sql_reference/grant.md).
+- To change the name or owner of a schema, use  **[ALTER SCHEMA](../sql_reference/alter-schema.md)**. The schema owner can change the schema.
+- To delete a schema and its objects, use  [DROP SCHEMA](../sql_reference/drop-schema.md). Schema owners can delete schemas.
+- To create a table in a schema, use the  _schema\_name_**.**_table\_name_  format to specify the table. If  _schema\_name_  is not specified, the table will be created in the first schema in  [search path](#en-us_topic_0283137084_en-us_topic_0237121104_en-us_topic_0156599225_section03655314403).
+- To view the owner of a schema, perform the following join query on the system catalogs  **PG\_NAMESPACE**  and  **PG\_USER**. Replace  _schema\_name_  in the statement with the name of the schema to be queried.
 
     ```
     openGauss=# SELECT s.nspname,u.usename AS nspowner FROM pg_namespace s, pg_user u WHERE nspname='schema_name' AND s.nspowner = u.usesysid;
     ```
 
--   To view a list of all schemas, query the system catalog  **PG\_NAMESPACE**.
+- To view a list of all schemas, query the system catalog  **PG\_NAMESPACE**.
 
     ```
     openGauss=# SELECT * FROM pg_namespace;
     ```
 
--   To view a list of tables in a schema, query the system catalog  **PG\_TABLES**. For example, the following query will return a table list from  **PG\_CATALOG**  in the schema.
+- To view a list of tables in a schema, query the system catalog  **PG\_TABLES**. For example, the following query will return a table list from  **PG\_CATALOG**  in the schema.
 
     ```
     openGauss=# SELECT distinct(tablename),schemaname from pg_tables where schemaname = 'pg_catalog';
     ```
 
-
 ## Search Path<a name="en-us_topic_0283137084_en-us_topic_0237121104_en-us_topic_0156599225_section03655314403"></a>
 
 A search path is defined in the  **[search\_path](../database_reference/statement-behavior.md)**  parameter. The parameter value is a list of schema names separated by commas \(,\). If no target schema is specified during object creation, the object is added to the first schema listed in the search path. If there are objects with the same name across different schemas and no schema is specified for an object query, the object will be returned from the first schema containing the object in the search path.
 
--   To view the current search path, use  [SHOW](../sql_reference/show.md).
+- To view the current search path, use  [SHOW](../sql_reference/show.md).
 
     ```
     openGauss=# SHOW SEARCH_PATH;
@@ -51,7 +50,7 @@ A search path is defined in the  **[search\_path](../database_reference/statemen
 
     The default value of  **search\_path**  is  **"_$user_",public**.  _$user_  indicates the name of the schema with the same name as the current session user. If the schema does not exist,  _$user_  will be ignored. By default, after a user connects to a database that has schemas with the same name, objects will be added to all the schemas. If there are no such schemas, objects will be added only to the  **public**  schema.
 
--   To change the default schema of the current session, run the  **SET**  statement.
+- To change the default schema of the current session, run the  **SET**  statement.
 
     Run the following command to set  **search\_path**  to  **myschema**  and  **public**  \(**myschema**  will be searched first\):
 
@@ -59,5 +58,3 @@ A search path is defined in the  **[search\_path](../database_reference/statemen
     openGauss=# SET SEARCH_PATH TO myschema, public;
     SET
     ```
-
-

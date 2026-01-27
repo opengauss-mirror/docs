@@ -72,8 +72,9 @@ DROP TABLE integertable;
 ![](figures/for_loop.png "for_loop")
 
 >[!NOTE]NOTE 
->-   The variable  *name*  is automatically defined as the integer type and exists only in this loop. The value of  *name*  ranges from  **lower\_bound**  to  **upper\_bound**.
->-   When the keyword  **REVERSE**  is used, the value of  **lower\_bound**  must be greater than or equal to that of  **upper\_bound**; otherwise, the loop body is not executed.
+>
+>- The variable  *name*  is automatically defined as the integer type and exists only in this loop. The value of  *name*  ranges from  **lower\_bound**  to  **upper\_bound**.
+>- When the keyword  **REVERSE**  is used, the value of  **lower\_bound**  must be greater than or equal to that of  **upper\_bound**; otherwise, the loop body is not executed.
 
 ## FOR\_LOOP Query Statements<a name="en-us_topic_0283137274_en-us_topic_0237122234_en-us_topic_0059778638_s93d5c1ba93874e4496553a9e1e840476"></a>
 
@@ -93,8 +94,9 @@ DROP TABLE integertable;
 ![](figures/forall.png "forall")
 
 >[!NOTE]NOTE 
->-   The variable  *index*  is automatically defined as the integer type and exists only in this loop. The value of  *index*  falls between the value of  **low\_bound**  and the value of  **upper\_bound**.
->-   If  **SAVE EXCEPTIONS**  is specified, exceptions occurred during DML execution in the loop body are saved in  **SQL&BULK\_EXCEPTIONS**  and an exception is thrown after the execution is complete. If there is no abnormal execution result in the loop, the loop will not be rolled back in the current subtransaction.
+>
+>- The variable  *index*  is automatically defined as the integer type and exists only in this loop. The value of  *index*  falls between the value of  **low\_bound**  and the value of  **upper\_bound**.
+>- If  **SAVE EXCEPTIONS**  is specified, exceptions occurred during DML execution in the loop body are saved in  **SQL&BULK\_EXCEPTIONS**  and an exception is thrown after the execution is complete. If there is no abnormal execution result in the loop, the loop will not be rolled back in the current subtransaction.
 
 **Example**
 
@@ -144,8 +146,8 @@ END LOOP [label_end]
 >
 > The usage of the label is added based on the simple loop statement. The label rules are as follows:
 >
-> -   label\_begin can appear independently (without label\_end). However, if label\_end is used, label\_begin must appear.
-> -   The label can be referenced by the CONTINUE or EXIT statement. In the B-compatible database, the ITERATE or LEAVE statement can also be used.
+> - label\_begin can appear independently (without label\_end). However, if label\_end is used, label\_begin must appear.
+> - The label can be referenced by the CONTINUE or EXIT statement. In the B-compatible database, the ITERATE or LEAVE statement can also be used.
 
 > [!TIP]NOTICE
 > This loop is used only in the B-compatible database. An error is reported in other databases. This loop must be used together with EXIT. (In B-compatible mode, LEAVE has the same effect as EXIT, and ITERATE has the same effect as CONTINUE.) Otherwise, an infinite loop occurs.

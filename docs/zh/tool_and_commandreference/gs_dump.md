@@ -18,17 +18,18 @@ gs\_dump支持将数据库信息导出至纯文本格式的SQL脚本文件或其
 
 工具运行产生的日志位于$GAUSSLOG/bin/gs\_dump目录下，每个日志最大16MB，最多保留50个。如果环境变量GAUSSLOG没有配置，则不会产生日志文件。
 
--   纯文本格式的SQL脚本文件：包含将数据库恢复为其保存时的状态所需的SQL语句。通过gsql运行该SQL脚本文件，可以恢复数据库。即使在其他主机和其他数据库产品上，只要对SQL脚本文件稍作修改，也可以用来重建数据库。
--   归档格式文件：包含将数据库恢复为其保存时的状态所需的数据，可以是tar格式、目录归档格式或自定义归档格式，详见[表1](#zh-cn_topic_0237152335_zh-cn_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5)。该导出结果必须与[gs\_restore](gs_restore.md)配合使用来恢复数据库，gs\_restore工具在导入时，系统允许用户选择需要导入的内容，甚至可以在导入之前对等待导入的内容进行排序。
+- 纯文本格式的SQL脚本文件：包含将数据库恢复为其保存时的状态所需的SQL语句。通过gsql运行该SQL脚本文件，可以恢复数据库。即使在其他主机和其他数据库产品上，只要对SQL脚本文件稍作修改，也可以用来重建数据库。
+- 归档格式文件：包含将数据库恢复为其保存时的状态所需的数据，可以是tar格式、目录归档格式或自定义归档格式，详见[表1](#zh-cn_topic_0237152335_zh-cn_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5)。该导出结果必须与[gs\_restore](gs_restore.md)配合使用来恢复数据库，gs\_restore工具在导入时，系统允许用户选择需要导入的内容，甚至可以在导入之前对等待导入的内容进行排序。
 
 gs\_dump工具支持MySQL兼容性。（仅限于3.0.0，3.1.0，3.1.1的MySQL兼容性需求）
 
 gs\_dump工具支持使用过程中打印进度。首先在对数据库的全局扫描阶段会打印扫描流程进行到具体哪一步。在转存数据阶段会根据已经完成的对象数比上总对象数打印进度。
 
 >[!TIP]须知
->-   show create procedure/function等show create语句的database collation和collation connection与数据库的lc_collate相同，由于InitSession会重新初始化lc_collate参数，lc_collate有时会被初始化为C，所以show create procedure/function等show create语句的database collation和collation connection这两个列的值不稳定。
->-   导出物化视图时，不支持导出物化视图中的数据。
->-   临时表不支持导入导出。
+>
+>- show create procedure/function等show create语句的database collation和collation connection与数据库的lc_collate相同，由于InitSession会重新初始化lc_collate参数，lc_collate有时会被初始化为C，所以show create procedure/function等show create语句的database collation和collation connection这两个列的值不稳定。
+>- 导出物化视图时，不支持导出物化视图中的数据。
+>- 临时表不支持导入导出。
 
 ## 主要功能<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_s59719e8badd54d11a09df49f558d8b20"></a>
 
@@ -118,103 +119,103 @@ gs_dump [OPTION]... [DBNAME]
 ```
 gs_dump -p port_number  postgres -f dump1.sql
 ```
+
 或者
+
 ```
 export PGDATABASE=postgres 
 ```
+
 ```
  gs_dump -p port_number -f dump1.sql
 ```
+
 环境变量： PGDATABASE
-
-
 
 ## 参数说明<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_s6822518f650f4ad4ab67d1084cd8ffdd"></a>
 
 通用参数：
 
--   -f, --file=FILENAME
+- -f, --file=FILENAME
 
     将输出发送至指定文件或目录。如果省略该参数，则使用标准输出。如果输出格式为（-F c/-F d/-F t）时，必须指定-f参数。如果-f的参数值含有目录，要求当前用户对该目录具有读写权限，并且不能指定已有目录。
 
--   -F, --format=c|d|t|p
+- -F, --format=c|d|t|p
 
     选择输出格式。格式如下：
 
-    -   p|plain：输出一个文本SQL脚本文件（默认）。
-    -   c|custom：输出一个自定义格式的归档，并且以目录形式输出，作为gs\_restore输入信息。该格式是最灵活的输出格式，因为能手动选择，而且能在恢复过程中将归档项重新排序。该格式默认状态下会被压缩。
-    -   d|directory：该格式会创建一个目录，该目录包含两类文件，一类是目录文件，另一类是每个表和blob对象对应的数据文件。
-    -   t|tar：输出一个tar格式的归档形式，作为gs\_restore输入信息。tar格式与目录格式兼容；tar格式归档形式在提取过程中会生成一个有效的目录格式归档形式。但是，tar格式不支持压缩且对于单独表有8GB的大小限制。此外，表数据项的相应排序在恢复过程中不能更改。
+    - p|plain：输出一个文本SQL脚本文件（默认）。
+    - c|custom：输出一个自定义格式的归档，并且以目录形式输出，作为gs\_restore输入信息。该格式是最灵活的输出格式，因为能手动选择，而且能在恢复过程中将归档项重新排序。该格式默认状态下会被压缩。
+    - d|directory：该格式会创建一个目录，该目录包含两类文件，一类是目录文件，另一类是每个表和blob对象对应的数据文件。
+    - t|tar：输出一个tar格式的归档形式，作为gs\_restore输入信息。tar格式与目录格式兼容；tar格式归档形式在提取过程中会生成一个有效的目录格式归档形式。但是，tar格式不支持压缩且对于单独表有8GB的大小限制。此外，表数据项的相应排序在恢复过程中不能更改。
 
-
--   -v, --verbose
+- -v, --verbose
 
     指定verbose模式。该选项将导致gs\_dump向转储文件输出详细的对象注解和启动/停止次数，向标准错误流输出处理信息。
 
--   -V, --version
+- -V, --version
 
     打印gs\_dump版本，然后退出。
 
--   -Z, --compress=0-9
+- -Z, --compress=0-9
 
     指定使用的压缩比级别。
 
     取值范围：0\~9
 
-    -   0表示无压缩。
-    -   1表示压缩比最小，处理速度最快。
-    -   9表示压缩比最大，处理速度最慢。
+    - 0表示无压缩。
+    - 1表示压缩比最小，处理速度最快。
+    - 9表示压缩比最大，处理速度最慢。
 
     针对自定义归档格式，该选项指定单个表数据片段的压缩，默认方式是以中等级别进行压缩。纯文本格式或tar归档格式目前不支持压缩。
 
--   --lock-wait-timeout=TIMEOUT
+- --lock-wait-timeout=TIMEOUT
 
     请勿在转储刚开始时一直等待以获取共享表锁。如果无法在指定时间内锁定某个表，就选择失败。可以以任何符合SET statement\_timeout的格式指定超时时间。
 
--   -?, --help
+- -?, --help
 
     显示gs\_dump命令行参数帮助，然后退出。
 
-
 转储参数：
 
--   -a, --data-only
+- -a, --data-only
 
     只输出数据，不输出模式（数据定义）。转储表数据、大对象和序列值。
 
--   -b, --blobs
+- -b, --blobs
 
     该参数为扩展预留接口，不建议使用。
 
--   -c, --clean
+- -c, --clean
 
     在将创建数据库对象的指令输出到备份文件之前，先将清理（删除）数据库对象的指令输出到备份文件中。（如果目标数据库中没有任何对象，gs\_restore工具可能会输出一些提示性的错误信息）
 
     该选项只对文本格式有意义。针对归档格式，可以调用gs\_restore时指定选项。
 
--   --force-clean
+- --force-clean
 
     清理（删除）数据库对象的指令输出到备份文件中时使用CASCADE级联删除，恢复时避免输出错误信息。
 
--   -C, --create
+- -C, --create
 
     备份文件以创建数据库和连接到创建的数据库的命令开始。（如果命令脚本是这种方式执行，可以先指定任意数据库用于执行创建数据库的命令，数据不会恢复到指定的数据库中，而是恢复到创建的数据库中。）
 
     该选项只对文本格式有意义。针对归档格式，可以在调用gs\_restore时指定选项。
 
--   -E, --encoding=ENCODING
+- -E, --encoding=ENCODING
 
     以指定的字符集编码创建转储。默认情况下，以数据库编码创建转储。（得到相同结果的另一个办法是将环境变量“PGCLIENTENCODING”设置为所需的转储编码。）
 
--   -n, --schema=SCHEMA
+- -n, --schema=SCHEMA
 
     只转储与模式名称匹配的模式，此选项包括模式本身和所有它包含的对象。如果该选项没有指定，所有在目标数据库中的非系统模式将会被转储。写入多个-n选项来选择多个模式。此外，根据gsql的\\d命令所使用的相同规则，模式参数可被理解成一个pattern，所以多个模式也可以通过在该pattern中写入通配符来选择。使用通配符时，注意给pattern打引号，防止shell扩展通配符。
 
     [!NOTE]说明
 
-    -   当-n已指定时，gs\_dump不会转储已选模式所附着的任何其他数据库对象。因此，无法保证某个指定模式的转储结果能够自行成功地储存到一个空数据库中。
+    - 当-n已指定时，gs\_dump不会转储已选模式所附着的任何其他数据库对象。因此，无法保证某个指定模式的转储结果能够自行成功地储存到一个空数据库中。
 
-    -   当-n指定时，非模式对象不会被转储。
+    - 当-n指定时，非模式对象不会被转储。
 
     转储支持多个模式的转储。多次输入-n schemaname转储多个模式。
 
@@ -226,7 +227,7 @@ export PGDATABASE=postgres
 
     在上面这个例子中，sch1和sch2会被转储。
 
--   -N, --exclude-schema=SCHEMA
+- -N, --exclude-schema=SCHEMA
 
     不转储任何与模式pattern匹配的模式。pattern将参照针对-n的相同规则来理解。可以通过输入多次-N，不转储与任何pattern匹配的模式。
 
@@ -244,28 +245,28 @@ export PGDATABASE=postgres
 
     在上面这个例子中，sch1和sch2在转储过程中会被排除。
 
--   -o, --oids
+- -o, --oids
 
     转储每个表的对象标识符（OIDs），作为表的一部分数据。该选项用于应用以某种方式参照了OID列的情况。如果不是以上这种情况，请勿使用该选项。
 
--   -O, --no-owner
+- -O, --no-owner
 
     不输出设置对象的归属这样的命令，以匹配原始数据库。默认情况下，gs\_dump会发出ALTER OWNER或SET SESSION AUTHORIZATION语句设置所创建的数据库对象的归属。如果脚本正在运行，该语句不会执行成功，除非是由系统管理员触发（或是拥有脚本中所有对象的同一个用户）。通过指定-O，编写一个任何用户都能存储的脚本，且该脚本会授予该用户拥有所有对象的权限。
 
     该选项只对文本格式有意义。针对归档格式，可以在调用gs\_restore时指定选项。
 
--   <a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_l35ed3d5a093e42ab8fc945dd3ca80ecd"></a>-s, --schema-only
+- <a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_l35ed3d5a093e42ab8fc945dd3ca80ecd"></a>-s, --schema-only
 
     只转储对象定义（模式），而非数据。
 
     [!NOTE]说明 
-    -   当-s指定时，导出interval分区表不会导出自动扩展出的分区；反之会导出，并且原先'i'类型的分区，作为初始分区导入后，分区类型为'r'。
+    - 当-s指定时，导出interval分区表不会导出自动扩展出的分区；反之会导出，并且原先'i'类型的分区，作为初始分区导入后，分区类型为'r'。
 
--   -S, --sysadmin=NAME
+- -S, --sysadmin=NAME
 
     该参数为扩展预留接口，不建议使用。
 
--   -t, --table=TABLE
+- -t, --table=TABLE
 
     指定转储的表（或视图、或序列、或外表）对象列表，可以使用多个-t选项来选择多个表，也可以使用通配符指定多个表对象。
 
@@ -274,19 +275,15 @@ export PGDATABASE=postgres
     当使用-t时，-n和-N没有任何效应，这是因为由-t选择的表的转储不受那些选项的影响。
 
     [!NOTE]说明 
-    -   -t参数选项个数必须小于等于100。
+    - -t参数选项个数必须小于等于100。
 
-    -   如果-t参数选项个数大于100，建议使用参数--include-table-file来替换。
+    - 如果-t参数选项个数大于100，建议使用参数--include-table-file来替换。
 
-    -   当-t已指定时，gs\_dump不会转储已选表所附着的任何其他数据库对象。因此，无法保证某个指定表的转储结果能够自行成功地储存到一个空数据库中。 当指定表存在相关依赖对象时，建议追加 --include-depend-objs 选项，使备份结果包含依赖于指定表的对象信息。
+    - 当-t已指定时，gs\_dump不会转储已选表所附着的任何其他数据库对象。因此，无法保证某个指定表的转储结果能够自行成功地储存到一个空数据库中。 当指定表存在相关依赖对象时，建议追加 --include-depend-objs 选项，使备份结果包含依赖于指定表的对象信息。
 
-    -   -t tablename只转储在默认搜索路径中可见的表。-t \*.tablename转储数据库下所有模式下的tablename表。-t schema.table转储特定模式中的表。 
+    - -t tablename只转储在默认搜索路径中可见的表。-t \*.tablename转储数据库下所有模式下的tablename表。-t schema.table转储特定模式中的表。 
 
-    
-    -  对于表名中包含大写字母的表，在使用-t参数指定导出时需对表名添加\"来导出。如对于表"abC"，导出需指定-t \"abC\"；如对于表schema."abC"，导出需指定-t schema.\"abC\"。  
-
-     
-
+    - 对于表名中包含大写字母的表，在使用-t参数指定导出时需对表名添加\"来导出。如对于表"abC"，导出需指定-t \"abC\"；如对于表schema."abC"，导出需指定-t schema.\"abC\"。  
 
     例如：
 
@@ -296,11 +293,11 @@ export PGDATABASE=postgres
 
     在上面这个例子中，schema1.table1和schema2.table2会被转储。
 
--   --include-table-file=FILENAME
+- --include-table-file=FILENAME
 
     指定需要dump的表文件。
 
--   -T, --exclude-table=TABLE
+- -T, --exclude-table=TABLE
 
     不转储的表（或视图、或序列、或外表）对象列表，可以使用多个-T选项来选择多个表，也可以使用通配符指定多个表对象。
 
@@ -314,7 +311,7 @@ export PGDATABASE=postgres
 
     在上面这个例子中，table1和table2在转储过程中会被排除。
 
--   --exclude-table-file=FILENAME
+- --exclude-table-file=FILENAME
 
     指定不需要dump的表文件。
 
@@ -346,27 +343,27 @@ export PGDATABASE=postgres
 
   导出的表定义，末尾不添加WITH\(orientation=row，compression=on）这样的描述。
 
--   --binary-upgrade
+- --binary-upgrade
 
     该参数为扩展预留接口，不建议使用。
 
--   --binary-upgrade-usermap="USER1=USER2"
+- --binary-upgrade-usermap="USER1=USER2"
 
     该参数为扩展预留接口，不建议使用。
 
--   --column-inserts|--attribute-inserts
+- --column-inserts|--attribute-inserts
 
     以INSERT命令带列名（INSERT INTO表（列、…）值…）方式导出数据。这会导致恢复缓慢。但是由于该选项会针对每行生成一个独立分开的命令，所以在重新加载某行时出现的错误只会导致那行丢失，而非整个表内容。
 
--   --disable-dollar-quoting
+- --disable-dollar-quoting
 
     该选项将禁止在函数体前使用美元符号$，并强制使用SQL标准字符串语法对其进行引用。
 
--   --disable-triggers
+- --disable-triggers
 
     该参数为扩展预留接口，不建议使用。
 
--   --exclude-table-data=TABLE
+- --exclude-table-data=TABLE
 
     指定不转储任何匹配表pattern的表这方面的数据。依照针对-t的相同规则理解该pattern。
 
@@ -374,55 +371,55 @@ export PGDATABASE=postgres
 
     排除数据库中所有表的数据，参见[--schema-only](#zh-cn_topic_0237152335_zh-cn_topic_0059777770_l35ed3d5a093e42ab8fc945dd3ca80ecd)。
 
--   --inserts
+- --inserts
 
     发出INSERT命令（而非COPY命令）转储数据。这会导致恢复缓慢。
 
     但是由于该选项会针对每行生成一个独立分开的命令，所以在重新加载某行时出现的错误只会导致那行丢失，而非整个表内容。注意：如果重排列顺序，可能会导致整个恢复失败。列顺序改变时，--column-inserts选项不受影响，虽然会更慢。
 
--   --no-publications
+- --no-publications
 
     不转储发布。
 
--   --no-security-labels
+- --no-security-labels
 
     该参数为扩展预留接口，不建议使用。
 
--   --no-subscriptions
+- --no-subscriptions
 
     不转储订阅。
 
     [!NOTE]说明
 
-    -   当不指定该选项时会转储订阅，但是转储订阅需要有管理员用户权限，所以如果是以普通用户执行gs_dump时，如果不指定该选项，会提示“WARNING: subscriptions not dumped because current user is not a superuser”。
+    - 当不指定该选项时会转储订阅，但是转储订阅需要有管理员用户权限，所以如果是以普通用户执行gs_dump时，如果不指定该选项，会提示“WARNING: subscriptions not dumped because current user is not a superuser”。
 
--   --no-tablespaces
+- --no-tablespaces
 
     不输出选择表空间的命令。使用该选项，无论默认表空间是哪个，在恢复过程中所有对象都会被创建。
 
     该选项只对文本格式有意义。针对归档格式，可以在调用gs\_restore时指定选项。
 
--   --no-unlogged-table-data
+- --no-unlogged-table-data
 
     该参数为扩展预留接口，不建议使用。
 
--   --non-lock-table
+- --non-lock-table
 
     该参数仅供软件间接口调用。
 
--   --include-alter-table
+- --include-alter-table
 
     转储表删除列。该选项会记录列的删除。
 
--   --quote-all-identifiers
+- --quote-all-identifiers
 
     强制对所有标识符加引号。为了向后续版本迁移，且其中可能涉及引入额外关键词，在转储相应数据库时该选项会有帮助。此选项在兼容B库中强制开启。
 
--   --section=SECTION
+- --section=SECTION
 
     指定已转储的名称区段（pre-data、data和post-data）。
 
--   --serializable-deferrable
+- --serializable-deferrable
 
     转储过程中使用可串行化事务，以确保所使用的快照与之后的数据库状态一致；要实现该操作需要在无异常状况的事务流中等待某个点，因为这样才能保证转储成功，避免引起其他事务出现serialization\_failure要重新再做。
 
@@ -430,20 +427,19 @@ export PGDATABASE=postgres
 
     如果当gs\_dump启动时，读写事务仍处于非活动状态，即便使用该选项也不会对其产生影响。如果读写事务处于活动状态，转储的开始时间可能会延迟一段不确定的时间。
 
--   --use-set-session-authorization
+- --use-set-session-authorization
 
     输出符合SQL标准的SET SESSION AUTHORIZATION命令而不是ALTER OWNER命令来确定对象所有权。这样令转储更加符合标准，但是如果转储文件中的对象的历史有些问题，那么可能不能正确恢复。并且，使用SET SESSION AUTHORIZATION的转储需要数据库系统管理员的权限才能转储成功，而ALTER OWNER需要的权限则低得多。
 
--   --with-encryption=AES128
+- --with-encryption=AES128
 
     指定加密算法，软件只支持AES128，使用第三方接口库支持AES128_CBC、AES128_CTR、AES128_GCM、AES256_CBC、AES256_CTR、AES256_GCM、SM4_CBC、SM4_CTR、AES128_CBC_HMAC_SHA256、AES128_CTR_HMAC_SHA256、AES128_GCM_HMAC_SHA256、AES256_CBC_HMAC_SHA256、AES256_CTR_HMAC_SHA256、AES256_GCM_HMAC_SHA256、SM4_CBC_HMAC_SM3、SM4_CTR_HMAC_SM3。如果不带HMAC，表示只做加密。带HMAC表示需要带HMAC运算做完整性校验。
 
--   --with-module-params
+- --with-module-params
     指定第三方接口库参数MODULE_TYPE=TYPE,MODULE_LIB_PATH=path,MODULE_CONFIG_FILE_PATH=path
     type:GDACCARD,JNTAKMS,SWXAKMS;
     MODULE_LIB_PATH:包含库文件名称的绝对路径;
     MODULE_CONFIG_FILE_PATH:GDACCARD不需要,JNTAKMS 不包含文件名称的绝对路径,SWXA 包含文件名称的绝对路径。
-
 
 - --with-key=KEY
 
@@ -460,32 +456,31 @@ export PGDATABASE=postgres
 
   - 不支持加密导出存储过程和函数。
 
--   --with-salt=RANDVALUES
+- --with-salt=RANDVALUES
 
     gs_dumpall使用此参数传递随机值。
 
--   --gen-key
+- --gen-key
     
     在使用第三方接口库时可以生成密钥做加密，并将生成密钥打印到终端，以便解密和复用。不能和--with-key同时指定。
 
-
--   --include-Extension
+- --include-Extension
 
     在转储中包含扩展。
 
--   --include-depend-objs
+- --include-depend-objs
 
     备份结果包含依赖于指定对象的对象信息。该参数需要同-t/--include-table-file参数关联使用才会生效。
 
--   --exclude-self
+- --exclude-self
 
     备份结果不包含指定对象自身的信息。该参数需要同-t/--include-table-file参数关联使用才会生效。
 
--   --pipeline
+- --pipeline
 
     使用管道传输密码，禁止在终端使用。
 
--   --dont-overwrite-file
+- --dont-overwrite-file
 
     文本、tar以及自定义格式情况下会重写现有文件。这对目录格式不适用。
 
@@ -499,28 +494,27 @@ export PGDATABASE=postgres
     gs_dump -p port_number postgres -f backup.sql -F plain --dont-overwrite-file
     ```
 
-
 [!NOTE]说明 
 
--   -s/--schema-only和-a/--data-only不能同时使用。  
+- -s/--schema-only和-a/--data-only不能同时使用。  
 
--   -c/--clean和-a/--data-only不能同时使用。  
+- -c/--clean和-a/--data-only不能同时使用。  
 
--   --inserts/--column-inserts和-o/--oids不能同时使用，因为INSERT命令不能设置OIDS。  
+- --inserts/--column-inserts和-o/--oids不能同时使用，因为INSERT命令不能设置OIDS。  
 
--   --role和--rolepassword必须一起使用。  
+- --role和--rolepassword必须一起使用。  
 
--   --binary-upgrade-usermap和--binary-upgrade必须一起使用。  
+- --binary-upgrade-usermap和--binary-upgrade必须一起使用。  
 
--   --include-depend-objs/--exclude-self需要同-t/--include-table-file参数关联使用才会生效。  
+- --include-depend-objs/--exclude-self需要同-t/--include-table-file参数关联使用才会生效。  
 
--   --exclude-self必须同--include-depend-objs一起使用。  
+- --exclude-self必须同--include-depend-objs一起使用。  
 
--   --force-clean必须同-c一起使用。  
+- --force-clean必须同-c一起使用。  
 
 连接参数：
 
--   -h, --host=HOSTNAME
+- -h, --host=HOSTNAME
 
     指定主机名称。如果数值以斜杠开头，则被用作到Unix域套接字的路径。缺省从PGHOST环境变量中获取（如果已设置），否则，尝试一个Unix域套接字连接。
 
@@ -530,13 +524,13 @@ export PGDATABASE=postgres
 
     环境变量：PGHOST
 
--   -p, --port=PORT
+- -p, --port=PORT
 
     指定主机端口。在开启线程池情况下，建议使用 pooler port，即主机端口+1。
 
     环境变量：PGPORT
 
--   -U, --username=NAME
+- -U, --username=NAME
 
     指定所连接主机的用户名。
 
@@ -544,22 +538,21 @@ export PGDATABASE=postgres
 
     环境变量：PGUSER
 
--   -w, --no-password
+- -w, --no-password
 
     不出现输入密码提示。如果主机要求密码认证并且密码没有通过其它形式给出，则连接尝试将会失败。 该选项在批量工作和不存在用户输入密码的脚本中很有帮助。
 
--   -W, --password=PASSWORD
+- -W, --password=PASSWORD
 
     指定用户连接的密码。如果主机的认证策略是trust，则不会对系统管理员进行密码验证，即无需输入-W选项；如果没有-W选项，并且不是系统管理员，“Dump Restore工具”会提示用户输入密码。
 
--   --role=ROLENAME
+- --role=ROLENAME
 
     指定创建转储使用的角色名。选择该选项，会使gs\_dump连接数据库后，发起一个SET ROLE角色名命令。当所授权用户（由-U指定）没有gs\_dump要求的权限时，该选项会起到作用，即切换到具备相应权限的角色。某些安装操作规定不允许直接以超系统管理员身份登录，而使用该选项能够在不违反该规定的情况下完成转储。
 
--   --rolepassword=ROLEPASSWORD
+- --rolepassword=ROLEPASSWORD
 
     指定角色名的密码。
-
 
 ## 说明<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_s7390a5e2be45435687f910284792c8c6"></a>
 
@@ -636,7 +629,7 @@ gs_dump[port='37300'][postgres][2018-06-27 10:37:22]: total time: 37017  ms
 
 示例6：执行gs\_dump，仅导出依赖于指定表testtable的视图信息。然后创建新的testtable表，再恢复依赖其上的视图。
 
--   备份仅依赖于testtable的视图。
+- 备份仅依赖于testtable的视图。
 
     ```
     gs_dump -s -p 37300 postgres -t PUBLIC.testtable --include-depend-objs --exclude-self -f backup/MPPDB_backup.sql -F p
@@ -646,24 +639,23 @@ gs_dump[port='37300'][postgres][2018-06-27 10:37:22]: total time: 37017  ms
     gs_dump[port='37300'][postgres][2018-06-15 14:12:54]: total time: 327  ms
     ```
 
--   修改testtable名称。
+- 修改testtable名称。
 
     ```
     gsql -p 37300 postgres -r -c "ALTER TABLE PUBLIC.testtable RENAME TO testtable_bak;"
     ```
 
--   创建新的testtable表。
+- 创建新的testtable表。
 
     ```
     CREATE TABLE PUBLIC.testtable(a int, b int, c int);
     ```
 
--   还原依赖于testtable的视图。
+- 还原依赖于testtable的视图。
 
     ```
     gsql -p 37300 postgres -r -f backup/MPPDB_backup.sql
     ```
-
 
 ## 相关命令<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_s04aec05b522242268c264d0964818765"></a>
 

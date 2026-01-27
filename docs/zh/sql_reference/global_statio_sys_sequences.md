@@ -2,7 +2,6 @@
 
 GLOBAL\_STATIO\_SYS\_SEQUENCES视图显示各节点的命名空间中所有系统表为序列的IO状态信息。
 
-
 **表 1**  GLOBAL\_STATIO\_SYS\_SEQUENCES字段
 
 <a name="zh-cn_topic_0237122686_table9660164862118"></a>
@@ -58,4 +57,3 @@ GLOBAL\_STATIO\_SYS\_SEQUENCES视图显示各节点的命名空间中所有系�
 </tr>
 </tbody>
 </table>
-

@@ -15,9 +15,9 @@ A large number of system catalogs and views are generated when a database is ini
 
 ### Generated Databases<a name="en-us_topic_0059779348_sbaf982cf2e9549fa8e083844774de07b"></a>
 
--   **template1**: A template database. When you create a database, all content in the  **template1**  database is copied. The settings of  **template1**  are determined by the parameters of  **gs\_initdb**.
--   **template0**: The most initial backup database provided by openGauss.  **template0**  can be used to generate an empty database if necessary.
--   **postgres**: A default database provided for users, tools, and third-party applications.
+- **template1**: A template database. When you create a database, all content in the  **template1**  database is copied. The settings of  **template1**  are determined by the parameters of  **gs\_initdb**.
+- **template0**: The most initial backup database provided by openGauss.  **template0**  can be used to generate an empty database if necessary.
+- **postgres**: A default database provided for users, tools, and third-party applications.
 
 ## Usage Guidelines<a name="EN-US_TOPIC_0294749037"></a>
 
@@ -25,42 +25,42 @@ A large number of system catalogs and views are generated when a database is ini
 
 During installation, you are advised to use the  **-D**  parameter to invoke  **gs\_initdb**  to initialize a database. If a database needs to be initialized to rectify a fault, run  **gs\_initdb**.
 
--   Although  **gs\_initdb**  attempts to create the corresponding data directory, it may not have the permission to do so. Because in most cases, the parent directory is owned by user  **root**. To create a data directory, create an empty data directory as user  **root**  first and transfer the ownership of this directory to the database user using  **chown**.
--   **gs\_initdb**  is used to set the  **template1**  database and the settings become the default settings of other databases.
--   **gs\_initdb**  initializes the default locale and character set encoding of a database. The character set encoding, character encoding order \(**LC\_COLLATE**\), and character set classes \(**LC\_CTYPE**, for example, uppercase letter, lowercase letter, or digit\) can be set separately for a database when it is created.
+- Although  **gs\_initdb**  attempts to create the corresponding data directory, it may not have the permission to do so. Because in most cases, the parent directory is owned by user  **root**. To create a data directory, create an empty data directory as user  **root**  first and transfer the ownership of this directory to the database user using  **chown**.
+- **gs\_initdb**  is used to set the  **template1**  database and the settings become the default settings of other databases.
+- **gs\_initdb**  initializes the default locale and character set encoding of a database. The character set encoding, character encoding order \(**LC\_COLLATE**\), and character set classes \(**LC\_CTYPE**, for example, uppercase letter, lowercase letter, or digit\) can be set separately for a database when it is created.
 
 ### Procedure<a name="en-us_topic_0059777429_s393327da49844162934e6d4e4a38e432"></a>
 
-1.  Log in to any host of the openGauss database as the OS user  **omm**.
-2.  Plan the database directory.
-    1.  Switch to the  **root**  user.
+1. Log in to any host of the openGauss database as the OS user  **omm**.
+2. Plan the database directory.
+    1. Switch to the  **root**  user.
 
         ```
         su - root
         ```
 
-    2.  Enter your username and password as prompted.
+    2. Enter your username and password as prompted.
 
-3.  Go to the  **/opt/gaussdb**  directory and create the  **data1**  directory where the DN resides.
+3. Go to the  **/opt/gaussdb**  directory and create the  **data1**  directory where the DN resides.
 
     ```
     cd /opt/gaussdb
     mkdir data1
     ```
 
-    1.  Allocate the ownership of the  **data1**  directory to user  **omm**, and  **dbgrp**  is the user group to whom user  **omm**  belongs to.
+    1. Allocate the ownership of the  **data1**  directory to user  **omm**, and  **dbgrp**  is the user group to whom user  **omm**  belongs to.
 
         ```
         chown omm:dbgrp data1
         ```
 
-    2.  Log out as user  **root**.
+    2. Log out as user  **root**.
 
         ```
         exit
         ```
 
-4.  Run the  **gs\_initdb**  command to initialize the database and set password as prompted.
+4. Run the  **gs\_initdb**  command to initialize the database and set password as prompted.
 
     ```
     gs_initdb /opt/gaussdb/data1 --nodename dn1
@@ -336,4 +336,3 @@ zh_SG.gbk
 </tr>
 </tbody>
 </table>
-

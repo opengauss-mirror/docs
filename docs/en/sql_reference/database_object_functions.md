@@ -4,7 +4,7 @@
 
 Database object size functions calculate the actual disk space used by database objects.
 
--   pg\_column\_size\(any\)
+- pg\_column\_size\(any\)
 
     Description: Specifies the number of bytes used to store a particular value \(possibly compressed\)
 
@@ -20,13 +20,13 @@ Database object size functions calculate the actual disk space used by database 
     (1 row)
     ```
 
--   pg\_database\_size\(oid\)
+- pg\_database\_size\(oid\)
 
     Description: Specifies the disk space used by the database with the specified OID.
 
     Return type: bigint
 
--   pg\_database\_size\(name\)
+- pg\_database\_size\(name\)
 
     Description: Specifies the disk space used by the database with the specified name.
 
@@ -44,13 +44,13 @@ Database object size functions calculate the actual disk space used by database 
     (1 row)
     ```
 
--   pg\_relation\_size\(oid\)
+- pg\_relation\_size\(oid\)
 
     Description: Specifies the disk space used by the table with a specified OID or index.
 
     Return type: bigint
 
--   get\_db\_source\_datasize\(\)
+- get\_db\_source\_datasize\(\)
 
     Description: Estimates the total size of non-compressed data in the current database.
 
@@ -70,19 +70,19 @@ Database object size functions calculate the actual disk space used by database 
     (1 row)
     ```
 
--   pg\_relation\_size\(text\)
+- pg\_relation\_size\(text\)
 
     Description: Specifies the disk space used by the table with a specified name or index. The table name can be schema-qualified.
 
     Return type: bigint
 
--   pg\_relation\_size\(relation regclass, fork text\)
+- pg\_relation\_size\(relation regclass, fork text\)
 
     Description: Specifies the disk space used by the specified bifurcating tree \('main', 'fsm', or 'vm'\) of a certain table or index.
 
     Return type: bigint
 
--   pg\_relation\_size\(relation regclass\)
+- pg\_relation\_size\(relation regclass\)
 
     Description: Is an abbreviation of  **pg\_relation\_size\(..., 'main'\)**.
 
@@ -90,43 +90,43 @@ Database object size functions calculate the actual disk space used by database 
 
     Note:  **pg\_relation\_size**  receives the OID or name of a table, an index, or a compressed table, and returns the size.
 
--   pg\_partition\_size\(oid,oid\)
+- pg\_partition\_size\(oid,oid\)
 
     Description: Specifies the disk space used by the partition with a specified OID. The first  **oid**  is the OID of the table and the second  **oid**  is the OID of the partition.
 
     Return type: bigint
 
--   pg\_partition\_size\(text, text\)
+- pg\_partition\_size\(text, text\)
 
     Description: Specifies the disk space used by the partition with a specified name. The first  **text**  is the table name and the second  **text**  is the partition name.
 
     Return type: bigint
 
--   pg\_partition\_indexes\_size\(oid,oid\)
+- pg\_partition\_indexes\_size\(oid,oid\)
 
     Description: Specifies the disk space used by the index of the partition with a specified OID. The first  **oid**  is the OID of the table and the second  **oid**  is the OID of the partition.
 
     Return type: bigint
 
--   pg\_partition\_indexes\_size\(text,text\)
+- pg\_partition\_indexes\_size\(text,text\)
 
     Description: Specifies the disk space used by the index of the partition with a specified name. The first  **text**  is the table name and the second  **text**  is the partition name.
 
     Return type: bigint
 
--   pg\_indexes\_size\(regclass\)
+- pg\_indexes\_size\(regclass\)
 
     Description: Specifies the total disk space used by the index appended to the specified table.
 
     Return type: bigint
 
--   pg\_size\_pretty\(bigint\)
+- pg\_size\_pretty\(bigint\)
 
     Description: Converts a size in bytes expressed as a 64-bit integer into a human-readable format with size units.
 
     Return type: text
 
--   pg\_size\_pretty\(numeric\)
+- pg\_size\_pretty\(numeric\)
 
     Description: Converts a size in bytes expressed as a numeric value into a human-readable format with size units.
 
@@ -134,19 +134,19 @@ Database object size functions calculate the actual disk space used by database 
 
     Note:  **pg\_size\_pretty**  formats the results of other functions into a human-readable format. KB/MB/GB/TB can be used.
 
--   pg\_table\_size\(regclass\)
+- pg\_table\_size\(regclass\)
 
     Description: Specifies the disk space used by the specified table, excluding indexes \(but including TOAST, free space mapping, and visibility mapping\).
 
     Return type: bigint
 
--   pg\_tablespace\_size\(oid\)
+- pg\_tablespace\_size\(oid\)
 
     Description: Specifies the disk space used by the tablespace with a specified OID.
 
     Return type: bigint
 
--   pg\_tablespace\_size\(name\)
+- pg\_tablespace\_size\(name\)
 
     Description: Specifies the disk space used by the tablespace with a specified name.
 
@@ -156,19 +156,19 @@ Database object size functions calculate the actual disk space used by database 
 
     **pg\_tablespace\_size**  receives the OID or name of a database and returns the disk space used by the corresponding object.
 
--   pg\_total\_relation\_size\(oid\)
+- pg\_total\_relation\_size\(oid\)
 
     Description: Specifies the disk space used by the table with a specified OID, including the index and the compressed data.
 
     Return type: bigint
 
--   pg\_total\_relation\_size\(regclass\)
+- pg\_total\_relation\_size\(regclass\)
 
     Description: Specifies the total disk space used by the specified table, including all indexes and TOAST data.
 
     Return type: bigint
 
--   pg\_total\_relation\_size\(text\)
+- pg\_total\_relation\_size\(text\)
 
     Description: Specifies the disk space used by the table with a specified name, including the index and the compressed data. The table name can be schema-qualified.
 
@@ -176,7 +176,7 @@ Database object size functions calculate the actual disk space used by database 
 
     Note:  **pg\_total\_relation\_size**  receives the OID or name of a table or a compressed table, and returns the sizes of the data, related indexes, and the compressed table in bytes.
 
--   datalength\(any\)
+- datalength\(any\)
 
     Description: Specifies the number of bytes used by an expression of a specified data type \(data management space, data compression, or data type conversion is not considered\).
 
@@ -442,10 +442,9 @@ Database object size functions calculate the actual disk space used by database 
     </tbody>
     </table>
 
-
 ## Database Object Position Functions<a name="en-us_topic_0283137585_en-us_topic_0237121994_en-us_topic_0059778344_sf54a0e1472764b91bf4bea25ffb4e050"></a>
 
--   pg\_relation\_filenode\(relation regclass\)
+- pg\_relation\_filenode\(relation regclass\)
 
     Description: Specifies the ID of a filenode with the specified relationship.
 
@@ -453,7 +452,7 @@ Database object size functions calculate the actual disk space used by database 
 
     Description:  **pg\_relation\_filenode**  receives the OID or name of a table, an index, a sequence, or a compressed table, and returns the number of  **filenode**  allocated to it.  **filenode**  is the basic component of the file name used by the relationship. For most tables, the result is the same as that of  **pg\_class.relfilenode**. For a specified system directory,  **relfilenode**  is set to  **0**  and this function must be used to obtain the correct value. If a relationship that is not stored is transmitted, such as a view, this function returns  **NULL**.
 
--   pg\_relation\_filepath\(relation regclass\)
+- pg\_relation\_filepath\(relation regclass\)
 
     Description: Specifies the name of a file path with the specified relationship.
 
@@ -461,31 +460,28 @@ Database object size functions calculate the actual disk space used by database 
 
     Description:  **pg\_relation\_filepath**  is similar to  **pg\_relation\_filenode**, except that  **pg\_relation\_filepath**  returns the whole file path name for the relationship \(relative to the data directory  **PGDATA**  of openGauss\).
 
--   pg\_filenode\_relation\(tablespace oid, filenode oid\)
+- pg\_filenode\_relation\(tablespace oid, filenode oid\)
 
     Description: Obtains the table names corresponding to the tablespace and relfilenode.
 
     Return type: regclass
 
--   pg\_partition\_filenode\(partition\_oid\)
+- pg\_partition\_filenode\(partition\_oid\)
 
     Description: Obtains  **filenode**  corresponding to the OID lock of a specified partitioned table.
 
     Return type: oid
 
--   pg\_partition\_filepath\(partition\_oid\)
+- pg\_partition\_filepath\(partition\_oid\)
 
     Description: Specifies the file path name of a partition.
 
     Return type: text
 
-
 ## Recycle Bin Object Functions<a name="section94402101427"></a>
 
--   gs\_is\_recycle\_object\(classid, objid, objname\)
+- gs\_is\_recycle\_object\(classid, objid, objname\)
 
     Description: Determines whether an object is in the recycle bin.
 
     Return type: Boolean
-
-

@@ -2,42 +2,40 @@
 
 介绍灰度升级和指定节点升级的详细操作。
 
-
 ## 灰度升级操作步骤<a name="section17506731105516"></a>
 
-1.  以root身份登录节点。
-2.  创建新包目录。
+1. 以root身份登录节点。
+2. 创建新包目录。
 
     ```
     mkdir -p /opt/software/gaussdb_upgrade
     ```
 
-3.  将需要更新的新包上传至目录“/opt/software/gaussdb\_upgrade”并解压。
-4.  进入安装包解压出的script目录下:
+3. 将需要更新的新包上传至目录“/opt/software/gaussdb\_upgrade”并解压。
+4. 进入安装包解压出的script目录下:
 
     ```
     cd /opt/software/gaussdb_upgrade/script
     ```
 
-5.  在灰度升级前执行前置脚本gs\_preinstall，在带有分离环境变量的场景下，需添加--sep-env-file=XX参数，
+5. 在灰度升级前执行前置脚本gs\_preinstall，在带有分离环境变量的场景下，需添加--sep-env-file=XX参数，
     即：该步骤和原有数据库安装所执行的gs_preinstall命令参数保持完全一致。
 
     ```
     ./gs_preinstall -U omm -G dbgrp  -X /opt/software/openGauss/clusterconfig.xml
     ```
 
-6.  切换至omm用户。
+6. 切换至omm用户。
 
     ```
     su - omm
     ```
 
-7.  数据库状态正常时，使用如下命令进行者灰度升级。
+7. 数据库状态正常时，使用如下命令进行者灰度升级。
 
     >[!NOTE]说明
     >
     >+ 在资源池化场景下，当数据库完成升级且未提交升级时，cm不会对数据库进行仲裁，应尽量避免在该场景下执行业务。
-
 
     示例：使用gs\_upgradectl脚本执行灰度升级。
 
@@ -45,7 +43,7 @@
     gs_upgradectl -t auto-upgrade -X /opt/software/GaussDB_Kernel/clusterconfig.xml --grey
     ```
 
-8.  数据库状态正常时，使用如下命令进行指定节点升级。
+8. 数据库状态正常时，使用如下命令进行指定节点升级。
 
     示例一：使用gs\_upgradectl脚本执行指定单节点升级。
 
@@ -59,7 +57,7 @@
     gs_upgradectl -t auto-upgrade -X /opt/software/GaussDB_Kernel/clusterconfig.xml --grey -h hostname0,hostname1
     ```
 
-9.  数据库状态正常时，使用如下命令进行升级剩余节点。
+9. 数据库状态正常时，使用如下命令进行升级剩余节点。
 
     ```
     gs_upgradectl -t auto-upgrade -X /opt/software/GaussDB_Kernel/clusterconfig.xml --grey --continue

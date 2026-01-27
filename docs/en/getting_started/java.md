@@ -22,27 +22,26 @@ JDBC provides the following three database connection methods:
 
 Statements can be executed in two modes: Statement and PreparedStatement.
 
--   Statement:
-    -   **execute**: The return value is of the Boolean type. No return value is displayed after the query statement is executed.
-    -   **executeQuery**: The return value is of the ResultSet type and is usually used for query. To use this function, write an SQL statement in it.
+- Statement:
+    - **execute**: The return value is of the Boolean type. No return value is displayed after the query statement is executed.
+    - **executeQuery**: The return value is of the ResultSet type and is usually used for query. To use this function, write an SQL statement in it.
 
--   PreparedStatement:
+- PreparedStatement:
 
     There are two Statement methods, which are used in different ways. You need to write statements in conn.prepareStatement\(\) and then run  **execute**  or  **executeQuery**  as required. The input parameters in the two methods are empty. If an SQL statement contains variables, you are advised to use PreparedStatement to prevent SQL injection. Use ? to replace the variable and use the setObject method to assign a value to the variable.
-
 
 Example:
 
 >[!NOTE]NOTE 
 >In the following example, the underlined fields in bold need to be replaced with your own information, where:  
 >
->-   ***127.0.0.1***: IP address of the host where the database is located.  
->-   ***8080***: port for connecting to the database.  
->-   ***test***: name of the connected database. If the database does not exist, an error is reported. Before using the database, check whether the database exists.  
->-   ***myuser***: username for connecting to the database.  
->-   ***myPassword***: password for connecting to the database.  
+>- ***127.0.0.1***: IP address of the host where the database is located.  
+>- ***8080***: port for connecting to the database.  
+>- ***test***: name of the connected database. If the database does not exist, an error is reported. Before using the database, check whether the database exists.  
+>- ***myuser***: username for connecting to the database.  
+>- ***myPassword***: password for connecting to the database.  
 
--   DriverManager.getConnection\(String url\);
+- DriverManager.getConnection\(String url\);
 
     In this connection method, the username and password must be added to the URL.
 
@@ -82,8 +81,7 @@ Example:
     }
     ```
 
-
--   DriverManager.getConnection\(String url, Properties info\);
+- DriverManager.getConnection\(String url, Properties info\);
 
     The parameters such as the username and password of this method are added to the instance of the  **Properties**  object by using  **setProperty**.
 
@@ -125,7 +123,7 @@ Example:
     }
     ```
 
--   DriverManager.getConnection\(String url, String user, String password\);
+- DriverManager.getConnection\(String url, String user, String password\);
 
     This method requires the username and password to be entered as variables.
 
@@ -166,10 +164,9 @@ Example:
     }
     ```
 
-
 ## Creating a Table<a name="section1969315347146"></a>
 
--   Create a table using Statement.
+- Create a table using Statement.
 
     ```
     import java.sql.Connection;
@@ -209,7 +206,7 @@ Example:
     }
     ```
 
--   Create a table using PreparedStatement.
+- Create a table using PreparedStatement.
 
     ```
     import java.sql.Connection;
@@ -249,16 +246,16 @@ Example:
     }
     ```
 
-
 ## Insert Operation<a name="section1603173921418"></a>
 
 >[!NOTE]NOTE 
 >Before inserting data, ensure that the  **test**  table has been created \(as performed in  [Creating a Table](#section1969315347146)\). The table structure is as follows:
+>
 >```
 >create table test (id int,name varchar (10));
 >```
 
--   Use Statement to insert data. You can run a query statement to check whether the insertion takes effect.
+- Use Statement to insert data. You can run a query statement to check whether the insertion takes effect.
 
     ```
     public static void main(String[] args) throws SQLException {
@@ -295,8 +292,7 @@ Example:
         }
     ```
 
-
--   Use PreparedStatement to insert data. You can run a query statement to check whether the insertion takes effect.
+- Use PreparedStatement to insert data. You can run a query statement to check whether the insertion takes effect.
 
     ```
     import java.sql.Connection;
@@ -345,18 +341,17 @@ Example:
     
     ```
 
-
 ## SELECT Operation<a name="section138138476141"></a>
 
 >[!NOTE]NOTE 
 >Ensure that you have performed the creation and insertion operations in  [Creating a Table](#section1969315347146)  and  [Insert Operation](#section1603173921418).
 
--   You can use prepareStatement to perform pre-compiled query operations by dynamically adding parameters, or execute common SQL statements.
+- You can use prepareStatement to perform pre-compiled query operations by dynamically adding parameters, or execute common SQL statements.
 
     ```
     public static void main(String[] args) throws SQLException {
             Connection conn = getConnect();
-    	PreparedStatement preparedStatement=conn.prepareStatement("select * from test where id=?;");
+     PreparedStatement preparedStatement=conn.prepareStatement("select * from test where id=?;");
             preparedStatement.setObject(1,1);
             ResultSet resultSet=preparedStatement.executeQuery();
             while (resultSet.next()){
@@ -387,8 +382,7 @@ Example:
         }
     ```
 
-
--   Use Statement to execute a query statement.
+- Use Statement to execute a query statement.
 
     ```
      public static void main(String[] args) throws SQLException {
@@ -423,13 +417,12 @@ Example:
         }
     ```
 
-
 ## Update Operation<a name="section112861325191512"></a>
 
 >[!NOTE]NOTE 
 >Ensure that you have performed the creation and insertion operations in  [Creating a Table](#section1969315347146)  and  [Insert Operation](#section1603173921418).
 
--   Use Statement to perform the update operation, and then run the query statement to check whether the update is successful.
+- Use Statement to perform the update operation, and then run the query statement to check whether the update is successful.
 
     ```
     public static void main(String[] args) throws SQLException {
@@ -466,8 +459,7 @@ Example:
         }
     ```
 
-
--   Use PreparedStatement to perform the update operation, and then run the query statement to check whether the update is successful:
+- Use PreparedStatement to perform the update operation, and then run the query statement to check whether the update is successful:
 
     ```
     import java.sql.Connection;
@@ -515,10 +507,9 @@ Example:
     }
     ```
 
-
 ## Delete Operation<a name="section3947173681519"></a>
 
--   Use Statement to perform the delete opeation and run the query statement to check whether the deletion is successful.
+- Use Statement to perform the delete opeation and run the query statement to check whether the deletion is successful.
 
     ```
     import java.sql.Connection;
@@ -566,8 +557,7 @@ Example:
     
     ```
 
-
--   Use preparedStatement to perform the delete opeation and run the query statement to check whether the deletion is successful.
+- Use preparedStatement to perform the delete opeation and run the query statement to check whether the deletion is successful.
 
     ```
     import java.sql.Connection;

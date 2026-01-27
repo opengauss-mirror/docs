@@ -11,4 +11,3 @@ openGauss备机出现Standby Need repair\(WAL\)故障。
 ## 处理分析<a name="section12618818144413"></a>
 
 通过gs\_ctl build -D 命令对故障节点进行重建，具体的操作方法请参见《工具与命令参考》中“系统内部命令 \> gs_ctl”的build参数。
-

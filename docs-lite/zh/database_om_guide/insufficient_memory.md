@@ -24,9 +24,7 @@
 
  ```
 
-
 ![](figures/123.jpg)
-
 
 max_process_memory：guc参数设置
 
@@ -46,25 +44,21 @@ max_cstore_memory：cstore_buffers
 
 other_used_memory：process_used_memory – dynamic_used_memory –shared_used_memory – cstore_used_memory
 
-
 3、根据第2步中查出的内存使用情况进行如下分析：
 
--    若dynamic_used_shrctx数据异常大，查询如下视图：gs_shared_memory_detail
-
+- 若dynamic_used_shrctx数据异常大，查询如下视图：gs_shared_memory_detail
 
  ```
 
 select contextname, sum(totalsize)/1024/1024 sum, sum(freesize)/1024/1024, count(*) count from gs_shared_memory_detail group by contextname order by sum desc limit 10;
 
  ```
-根据查出的内存context信息，使用内存最大的context可能存在内存泄漏。
 
+根据查出的内存context信息，使用内存最大的context可能存在内存泄漏。
 
 ![](figures/234.png)
 
-
--  若dynamic_used_memory数值较大，dynamic_used_shrctx数值很小，则查询如下视图：gs_session_memory_detail
-
+- 若dynamic_used_memory数值较大，dynamic_used_shrctx数值很小，则查询如下视图：gs_session_memory_detail
 
  ```
 select contextname, sum(totalsize)/1024/1024 sum, sum(freesize)/1024/1024, count(*) count from gs_session_memory_detail group by contextname order by sum desc limit 10;
@@ -78,8 +72,6 @@ select contextname, sum(totalsize)/1024/1024 sum, sum(freesize)/1024/1024, count
 一般正常较大的context为：
 
 SessionCacheMemoryContext，StorageTopMemoryContext
-
- 
 
 4、根据第3步中确认的可能存在内存泄漏的context，通过如下视图可直接查询该context上内存申请的详细信息；
 

@@ -16,7 +16,7 @@
 
 ## 语法格式<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_sa4d6f7fca3774a5e9f488937b289bea3"></a>
 
--   修改自定义存储过程的附加参数。
+- 修改自定义存储过程的附加参数。
 
     ```
     ALTER PROCEDURE procedure_name ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
@@ -50,9 +50,9 @@
 
 - **SQL SECURITY INVOKER**
 
-​		表明该存储过程将带着调用它的用户的权限执行。该参数可以省略。
+​  表明该存储过程将带着调用它的用户的权限执行。该参数可以省略。
 
-​		SQL SECURITY INVOKER和SECURITY INVOKER和AUTHID CURRENT\_USER的功能相同。
+​  SQL SECURITY INVOKER和SECURITY INVOKER和AUTHID CURRENT\_USER的功能相同。
 
 - **SQL SECURITY DEFINER**
 

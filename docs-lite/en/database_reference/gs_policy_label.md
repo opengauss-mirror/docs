@@ -66,4 +66,3 @@ Fully Qualified Domain Name \(FQDN\) identifies an absolute path of a database r
 </tr>
 </tbody>
 </table>
-

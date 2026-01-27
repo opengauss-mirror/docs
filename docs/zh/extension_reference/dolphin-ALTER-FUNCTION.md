@@ -16,7 +16,7 @@
 
 ## 语法格式<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_sa4d6f7fca3774a5e9f488937b289bea3"></a>
 
--   修改自定义函数的附加参数。
+- 修改自定义函数的附加参数。
 
     ```
     ALTER FUNCTION function_name ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
@@ -92,4 +92,3 @@
 ## 相关链接<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_sacb869eb702a48fdbb64acb219ced069"></a>
 
 [ALTER FUNCTION](../sql_reference/alter_function.md)
-

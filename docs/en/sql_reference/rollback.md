@@ -35,4 +35,3 @@ openGauss=# ROLLBACK;
 ## Helpful Links<a name="en-us_topic_0283137047_en-us_topic_0237122180_en-us_topic_0059778963_s1745a25c568b45c7ad9475ba14714358"></a>
 
 [COMMIT | END](commit_end.md)
-

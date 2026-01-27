@@ -94,36 +94,34 @@ The following table describes the WDR content of the openGauss database.
 </tbody>
 </table>
 
--   **[Database Stat](database-stat.md)**  
+- **[Database Stat](database-stat.md)**  
 
--   **[Load Profile](load-profile.md)**  
+- **[Load Profile](load-profile.md)**  
 
--   **[Instance Efficiency Percentages](instance-efficiency-percentages.md)**  
+- **[Instance Efficiency Percentages](instance-efficiency-percentages.md)**  
 
--   **[Top 10 Events by Total Wait Time](top-10-events-by-total-wait-time.md)**  
+- **[Top 10 Events by Total Wait Time](top-10-events-by-total-wait-time.md)**  
 
--   **[Wait Classes by Total Wait Time](wait-classes-by-total-wait-time.md)**  
+- **[Wait Classes by Total Wait Time](wait-classes-by-total-wait-time.md)**  
 
--   **[Host CPU](host-cpu.md)**  
+- **[Host CPU](host-cpu.md)**  
 
--   **[IO Profile](io-profile.md)**  
+- **[IO Profile](io-profile.md)**  
 
--   **[Memory Statistics](memory-statistics.md)**  
+- **[Memory Statistics](memory-statistics.md)**  
 
--   **[Time Model](time-model.md)**  
+- **[Time Model](time-model.md)**  
 
--   **[SQL Statistics](sql-statistics.md)**  
+- **[SQL Statistics](sql-statistics.md)**  
 
--   **[Wait Events](wait-events-29.md)**  
+- **[Wait Events](wait-events-29.md)**  
 
--   **[Cache IO Stats](cache-io-stats.md)**  
+- **[Cache IO Stats](cache-io-stats.md)**  
 
--   **[Utility status](utility-status.md)**  
+- **[Utility status](utility-status.md)**  
 
--   **[Object stats](object-stats.md)**  
+- **[Object stats](object-stats.md)**  
 
--   **[Configuration settings](configuration-settings.md)**  
+- **[Configuration settings](configuration-settings.md)**  
 
--   **[SQL Detail](sql-detail.md)**  
-
-
+- **[SQL Detail](sql-detail.md)**  

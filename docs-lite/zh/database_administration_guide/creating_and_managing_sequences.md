@@ -6,8 +6,8 @@
 
 通过序列使某字段成为唯一标识符的方法有两种：
 
--   一种是声明字段的类型为[序列整型](../sql_reference/numeral_type.md#table12345)，由数据库在后台自动创建一个对应的Sequence。
--   另一种是使用[CREATE SEQUENCE](../sql_reference/create_sequence.md)自定义一个新的Sequence，然后将nextval\('sequence\_name'\)函数读取的序列值，指定为某一字段的默认值，这样该字段就可以作为唯一标识符。
+- 一种是声明字段的类型为[序列整型](../sql_reference/numeral_type.md#table12345)，由数据库在后台自动创建一个对应的Sequence。
+- 另一种是使用[CREATE SEQUENCE](../sql_reference/create_sequence.md)自定义一个新的Sequence，然后将nextval\('sequence\_name'\)函数读取的序列值，指定为某一字段的默认值，这样该字段就可以作为唯一标识符。
 
 ## 操作步骤<a name="zh-cn_topic_0283136796_zh-cn_topic_0237120310_zh-cn_topic_0093152908_zh-cn_topic_0064273680_section1199961991514"></a>
 
@@ -29,7 +29,7 @@ CREATE TABLE
 
 方法二： 创建序列，并通过nextval\('sequence\_name'\)函数指定为某一字段的默认值。
 
-1.  创建序列
+1. 创建序列
 
     ```
     openGauss=# CREATE SEQUENCE seq1 cache 100;
@@ -41,7 +41,7 @@ CREATE TABLE
     CREATE SEQUENCE
     ```
 
-2.  指定为某一字段的默认值，使该字段具有唯一标识属性。
+2. 指定为某一字段的默认值，使该字段具有唯一标识属性。
 
     ```
     openGauss=# CREATE TABLE T2 
@@ -57,7 +57,7 @@ CREATE TABLE
     CREATE TABLE
     ```
 
-3.  指定序列与列的归属关系。
+3. 指定序列与列的归属关系。
 
     将序列和一个表的指定字段进行关联。这样，在删除那个字段或其所在表的时候会自动删除已关联的序列。
 
@@ -71,9 +71,7 @@ CREATE TABLE
     ALTER SEQUENCE
     ```
 
-
 >[!NOTE]说明
 >
 >除了为序列指定了cache，方法二所实现的功能基本与方法一类似。但是一旦定义cache，序列将会产生空洞\(序列值为不连贯的数值，如：1.4.5\)，并且不能保序。另外为某序列指定从属列后，该列删除，对应的sequence也会被删除。 虽然数据库并不限制序列只能为一列产生默认值，但最好不要多列共用同一个序列。
 >当前版本只支持在定义表的时候指定自增列，或者指定某列的默认值为nextval\('seqname'\)， 不支持在已有表中增加自增列或者增加默认值为nextval\('seqname'\)的列。
-

@@ -6,13 +6,13 @@
 
 ## Precautions<a name="en-us_topic_0283137651_en-us_topic_0237122194_en-us_topic_0059778969_s7e9e912f472543cbb190edb83e5f22d2"></a>
 
--   The owner of a table, users granted with the  **UPDATE**  permission on the table, or users granted with the  **UPDATE ANY TABLE**  permission can update data in the table. The system administrator has the permission to update data in the table by default.
--   You must have the  **SELECT**  permission on all tables involved in the expressions or conditions.
--   For column-store tables, the  **RETURNING**  clause is currently not supported.
--   Column-store tables do not support non-deterministic update. If you update data in one row with multiple rows of data in a column-store table, an error will be reported.
--   Memory space that records update operations in column-store tables is not recycled. You need to clean it by executing  **VACUUM FULL table\_name**.
--   Currently,  **UPDATE**  cannot be used in column-store replication tables.
--   The syntax for updating multiple tables takes effect only when **sql\_compatibility** is set to **B**. Column-store tables, views, and tables containing RULE cannot be updated.
+- The owner of a table, users granted with the  **UPDATE**  permission on the table, or users granted with the  **UPDATE ANY TABLE**  permission can update data in the table. The system administrator has the permission to update data in the table by default.
+- You must have the  **SELECT**  permission on all tables involved in the expressions or conditions.
+- For column-store tables, the  **RETURNING**  clause is currently not supported.
+- Column-store tables do not support non-deterministic update. If you update data in one row with multiple rows of data in a column-store table, an error will be reported.
+- Memory space that records update operations in column-store tables is not recycled. You need to clean it by executing  **VACUUM FULL table\_name**.
+- Currently,  **UPDATE**  cannot be used in column-store replication tables.
+- The syntax for updating multiple tables takes effect only when **sql\_compatibility** is set to **B**. Column-store tables, views, and tables containing RULE cannot be updated.
 
 ## Syntax<a name="en-us_topic_0283137651_en-us_topic_0237122194_en-us_topic_0059778969_sd8d9ff15ff6c45c9aebd16c861936c06"></a>
 
@@ -50,17 +50,17 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 ## Parameter Description<a name="en-us_topic_0283137651_en-us_topic_0237122194_en-us_topic_0059778969_sf3e3262b89854b3d829a94054116838c"></a>
 
--   **plan\_hint**  clause
+- **plan\_hint**  clause
 
     Follows the  **UPDATE**  keyword in the  **/\*+ \*/**  format. It is used to optimize the plan of an  **UPDATE**  statement block. For details, see  [Hint-based Tuning](../performance_tuning_guide/plan_hint_optimization_overview.md). In each statement, only the first  **/\*+** *plan\*hint _**\*/**  comment block takes effect as a hint. Multiple hints can be written.
 
--   **table\_name**
+- **table\_name**
 
     Specifies the name \(optionally schema-qualified\) of the table to be updated.
 
     Value range: an existing table name
 
--   **partition\_clause**
+- **partition\_clause**
 
     Updates a specified partition.
 
@@ -70,25 +70,25 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     For details about the keywords, see  [SELECT](select.md).
 
--   **target\_query**
+- **target\_query**
     
     Specified subquery for updates，which is equivalent to a view.This parameter takes effect only when **sql\_compatibility** is set to **A**. For restrictions on updating a subquery, see Automatically Updatable View section in [CREATE VIEW](create-view.md).
 
--   **WITH [ CASCADED | LOCAL ] CHECK OPTION**
+- **WITH [ CASCADED | LOCAL ] CHECK OPTION**
     
     For details about the clause, see [CREATE VIEW](create-view.md).
 
--   **alias**
+- **alias**
 
     Specifies a substitute name for the target table or subquery.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **table\_list**
+- **table\_list**
 
     Expression list of a table, which is similar to from\_list. However, the target table and associated table can be declared at the same time. This parameter takes effect only when **sql\_compatibility** is set to **B**.
 
--   **column\_name**
+- **column\_name**
 
     Specifies the name of the column to be modified.
 
@@ -98,17 +98,17 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     Value range: an existing column
 
--   **expression**
+- **expression**
 
     Specifies a value assigned to a column or an expression that assigns the value.
 
--   **DEFAULT**
+- **DEFAULT**
 
     Specifies the default value of a column.
 
     The value is  **NULL**  if no specified default value has been assigned to it.
 
--   **sub\_query**
+- **sub\_query**
 
     Specifies a subquery.
 
@@ -116,35 +116,34 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     When a single column is updated, the ORDER BY and LIMIT clauses can be used. When multiple columns are updated, the ORDER BY and LIMIT clauses cannot be used.
 
--   **from\_list**
+- **from\_list**
 
     Specifies a list of table expressions, allowing columns from other tables to appear in the  **WHERE**  condition and the update expressions. This is similar to the list of tables that can be specified in the  **FROM**  clause of a  **SELECT**  statement.
 
     >[!TIP]NOTICE 
     >Note that the target table must not appear in the  **from\_list**, unless you intend a self-join \(in which case it must appear with an alias in the  **from\_list**\).
 
--   **condition**
+- **condition**
 
     Specifies an expression that returns a value of type Boolean. Only rows for which this expression returns  **true**  are updated. You are not advised to use numeric types such as int for  **condition**, because such types can be implicitly converted to bool values \(non-zero values are implicitly converted to  **true**  and  **0**  is implicitly converted to  **false**\), which may cause unexpected results.
 
--   **ORDER BY**
+- **ORDER BY**
 
     For details about the keywords, see [SELECT](select.md).
 
--   **LIMIT**
+- **LIMIT**
 
     For details about the keywords, see [SELECT](select.md).
 
--   **output\_expression**
+- **output\_expression**
 
     Specifies an expression to be computed and returned by the  **UPDATE**  statement after each row is updated.
 
     Value range: The expression can use any column names of the table named by  **table\_name**  or tables listed in  **FROM**. Write \* to return all columns.
 
--   **output\_name**
+- **output\_name**
 
     Specifies a name to use for a returned column.
-
 
 ## Examples<a name="en-us_topic_0283137651_en-us_topic_0237122194_en-us_topic_0059778969_s23d933f56bc745e1bd819083b4e50155"></a>
 

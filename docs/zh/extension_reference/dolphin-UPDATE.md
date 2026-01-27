@@ -10,8 +10,8 @@
 
 ## 语法格式<a name="zh-cn_topic_0283137651_zh-cn_topic_0237122194_zh-cn_topic_0059778969_sd8d9ff15ff6c45c9aebd16c861936c06"></a>
 
-
 单表更新：
+
 ```
 
 [ WITH [ RECURSIVE ] with_query [, ...] ]
@@ -25,7 +25,9 @@ SET {column_name = { expression | DEFAULT }
                 | {output_expression [ [ AS ] output_name ]} [, ...] }];
 
 ```
+
 多表更新：
+
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 UPDATE [/*+ plan_hint */] [IGNORE] table_list
@@ -55,10 +57,8 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
   若执行的SQL语句违反了表的非空约束，使用此hint可将Error降级为Warning，并根据GUC参数sql_ignore_strategy的值采用以下策略的一种继续执行：
 
-     
- -   sql_ignore_strategy为ignore_null时，忽略违反非空约束的行的UPDATE操作，并继续执行剩余数据操作。
-
- -   sql_ignore_strategy为overwrite_null时，将违反约束的null值覆写为目标类型的默认值，并继续执行剩余数据操作。
+   - sql_ignore_strategy为ignore_null时，忽略违反非空约束的行的UPDATE操作，并继续执行剩余数据操作。
+   - sql_ignore_strategy为overwrite_null时，将违反约束的null值覆写为目标类型的默认值，并继续执行剩余数据操作。
 
    >[!NOTE]说明
    >
@@ -89,7 +89,6 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
         更新为列类型的默认值。
 
   IGNORE关键字不支持列存，无法在列存表中生效。
-
 
 ## 示例<a name="zh-cn_topic_0283137651_zh-cn_topic_0237122194_zh-cn_topic_0059778969_s23d933f56bc745e1bd819083b4e50155"></a>
 

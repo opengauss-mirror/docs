@@ -114,5 +114,3 @@ select repeat('qqqqqqqq',1001)::varchar(8001)::sql_variant;
 ERROR:  value of basic type must be a binary length <= 8000 byte
 CONTEXT:  referenced column: repeat
 ```
-
-

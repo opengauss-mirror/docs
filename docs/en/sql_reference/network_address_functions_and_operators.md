@@ -4,7 +4,7 @@
 
 The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet inclusion. They consider only the network parts of the two addresses \(ignoring any host part\) and determine whether one network is identical to or a subnet of the other.
 
--   <
+- <
 
     Description: Is less than
 
@@ -18,7 +18,7 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
     (1 row)
     ```
 
--   <=
+- <=
 
     Description: Is less than or equals
 
@@ -32,7 +32,7 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
     (1 row)
     ```
 
--   =
+- =
 
     Description: Equals
 
@@ -46,7 +46,7 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
     (1 row)
     ```
 
--   \>=
+- \>=
 
     Description: Is greater than or equals
 
@@ -60,7 +60,7 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
     (1 row)
     ```
 
--   \>
+- \>
 
     Description: Is greater than
 
@@ -74,7 +74,7 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
     (1 row)
     ```
 
--   <\>
+- <\>
 
     Description: Does not equal to
 
@@ -88,7 +88,7 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
     (1 row)
     ```
 
--   <<
+- <<
 
     Description: Is contained in
 
@@ -102,7 +102,7 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
     (1 row)
     ```
 
--   <<=
+- <<=
 
     Description: Is contained in or equals
 
@@ -116,7 +116,7 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
     (1 row)
     ```
 
--   \>\>
+- \>\>
 
     Description: Contains
 
@@ -130,7 +130,7 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
     (1 row)
     ```
 
--   \>\>=
+- \>\>=
 
     Description: Contains or equals
 
@@ -144,7 +144,7 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
     (1 row)
     ```
 
--   \~
+- \~
 
     Description: Bitwise NOT
 
@@ -158,7 +158,7 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
     (1 row)
     ```
 
--   &
+- &
 
     Description: Performs an AND operation on each bit of the two network addresses.
 
@@ -172,7 +172,7 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
     (1 row)
     ```
 
--   |
+- |
 
     Description: Performs an OR operation on each bit of the two network addresses.
 
@@ -186,7 +186,7 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
     (1 row)
     ```
 
--   +
+- +
 
     Description: Addition
 
@@ -200,7 +200,7 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
     (1 row)
     ```
 
--   -
+- -
 
     Description: Subtraction
 
@@ -214,7 +214,7 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
     (1 row)
     ```
 
--   -
+- -
 
     Description: Subtraction
 
@@ -228,12 +228,11 @@ The operators  **<<**,  **<<=**,  **\>\>**, and  **\>\>=**  test for subnet incl
     (1 row)
     ```
 
-
 ## cidr and inet Functions<a name="en-us_topic_0283136843_en-us_topic_0237121975_en-us_topic_0059778594_s32e5e4347b124a09b39c9ddb92c7618d"></a>
 
 The  **abbrev**,  **host**, and  **text**  functions are primarily intended to offer alternative display formats.
 
--   abbrev\(inet\)
+- abbrev\(inet\)
 
     Description: Abbreviated display format as text
 
@@ -249,7 +248,7 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
     (1 row)
     ```
 
--   abbrev\(cidr\)
+- abbrev\(cidr\)
 
     Description: Abbreviated display format as text
 
@@ -265,7 +264,7 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
     (1 row)
     ```
 
--   broadcast\(inet\)
+- broadcast\(inet\)
 
     Description: Broadcast address for networks
 
@@ -281,7 +280,7 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
     (1 row)
     ```
 
--   family\(inet\)
+- family\(inet\)
 
     Description: Extracts family of addresses,  **4**  for IPv4, and  **6**  for IPv6.
 
@@ -297,7 +296,7 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
     (1 row)
     ```
 
--   host\(inet\)
+- host\(inet\)
 
     Description: Extracts IP addresses as text.
 
@@ -313,7 +312,7 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
     (1 row)
     ```
 
--   hostmask\(inet\)
+- hostmask\(inet\)
 
     Description: Constructs the host mask for a network.
 
@@ -329,7 +328,7 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
     (1 row)
     ```
 
--   masklen\(inet\)
+- masklen\(inet\)
 
     Description: Extracts subnet mask length.
 
@@ -345,7 +344,7 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
     (1 row)
     ```
 
--   netmask\(inet\)
+- netmask\(inet\)
 
     Description: Constructs the subnet mask for a network.
 
@@ -361,7 +360,7 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
     (1 row)
     ```
 
--   network\(inet\)
+- network\(inet\)
 
     Description: Extracts the network part of an address.
 
@@ -377,7 +376,7 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
     (1 row)
     ```
 
--   set\_masklen\(inet, int\)
+- set\_masklen\(inet, int\)
 
     Description: Sets subnet mask length for the  **inet**  value.
 
@@ -393,7 +392,7 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
     (1 row)
     ```
 
--   set\_masklen\(cidr, int\)
+- set\_masklen\(cidr, int\)
 
     Description: Sets subnet mask length for the  **cidr**  value.
 
@@ -409,7 +408,7 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
     (1 row)
     ```
 
--   text\(inet\)
+- text\(inet\)
 
     Description: Extracts IP addresses and subnet mask length as text.
 
@@ -425,14 +424,13 @@ The  **abbrev**,  **host**, and  **text**  functions are primarily intended to o
     (1 row)
     ```
 
-
 Any  **cidr**  value can be cast to  **inet**  implicitly or explicitly; therefore, the functions shown above as operating on  **inet**  also work on  **cidr**  values. An  **inet**  value can be cast to  **cidr**. After the conversion, any bits to the right of the subnet mask are silently zeroed to create a valid  **cidr**  value. In addition, you can cast a text string to  **inet**  or  **cidr**  using normal casting syntax. For example,  **inet\(expression\)**  or  **colname::cidr**.
 
 ## macaddr Functions<a name="en-us_topic_0283136843_en-us_topic_0237121975_en-us_topic_0059778594_s0395a90cd97040cbbcd45e59a111a122"></a>
 
 The function  **trunc\(macaddr\)**  returns a MAC address with the last 3 bytes set to zero.
 
--   trunc\(macaddr\)
+- trunc\(macaddr\)
 
     Description: Sets last 3 bytes to zero.
 
@@ -448,6 +446,4 @@ The function  **trunc\(macaddr\)**  returns a MAC address with the last 3 bytes 
     (1 row)
     ```
 
-
 The  **macaddr**  type also supports the standard relational operators \(such as  **\>**  and  **<=**\) for lexicographical ordering, and the bitwise arithmetic operators \(**\~**,  **&**  and  **|**\) for NOT, AND and OR.
-

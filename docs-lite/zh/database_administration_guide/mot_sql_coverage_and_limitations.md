@@ -8,15 +8,15 @@ MOT设计几乎能够覆盖SQL和未来特性集。例如，大多数支持标�
 
 MOT不支持以下特性：
 
--   跨引擎操作：不支持跨引擎（磁盘+MOT）的查询、视图或事务。计划于2021年实现该特性。
--   MVCC、隔离：不支持没有快照/可序列化隔离。计划于2021年实现该特性。
--   原生编译（JIT）：SQL覆盖有限。此外，不支持存储过程的JIT编译。
--   本地内存限制为1GB。一个事务只能更改小于1GB的数据。
--   容量（数据+索引）受限于可用内存。未来将提供Anti-caching和数据分层功能。
--   不支持全文检索索引。
--   不支持逻辑复制。
--   不支持Ustore存储引擎。
--   不支持列存表。
+- 跨引擎操作：不支持跨引擎（磁盘+MOT）的查询、视图或事务。计划于2021年实现该特性。
+- MVCC、隔离：不支持没有快照/可序列化隔离。计划于2021年实现该特性。
+- 原生编译（JIT）：SQL覆盖有限。此外，不支持存储过程的JIT编译。
+- 本地内存限制为1GB。一个事务只能更改小于1GB的数据。
+- 容量（数据+索引）受限于可用内存。未来将提供Anti-caching和数据分层功能。
+- 不支持全文检索索引。
+- 不支持逻辑复制。
+- 不支持Ustore存储引擎。
+- 不支持列存表。
 
 此外，下面详细列出了MOT、MOT索引、查询和DML语法的各种通用限制，以及查询原生编译的特点和限制。
 
@@ -24,27 +24,27 @@ MOT不支持以下特性：
 
 MOT功能限制：
 
--   分区
--   AES加密、数据动态脱敏、行级访问控制
--   流操作
--   自定义类型
--   子事务
--   DML触发器
--   DDL触发器
+- 分区
+- AES加密、数据动态脱敏、行级访问控制
+- 流操作
+- 自定义类型
+- 子事务
+- DML触发器
+- DDL触发器
 
 ## 不支持的DDL操作<a name="zh-cn_topic_0283137737_zh-cn_topic_0280525140_section56822082"></a>
 
--   修改表结构
--   创建including表
--   创建as select表
--   按范围分区
--   创建无日志记录子句（no-logging clause）的表
--   创建可延迟约束主键（DEFERRABLE）
--   重新索引
--   表空间
--   使用子命令创建架构
+- 修改表结构
+- 创建including表
+- 创建as select表
+- 按范围分区
+- 创建无日志记录子句（no-logging clause）的表
+- 创建可延迟约束主键（DEFERRABLE）
+- 重新索引
+- 表空间
+- 使用子命令创建架构
 
-##  不支持的数据类型
+## 不支持的数据类型
 
 - UUID
 - User-Defined Type (UDF)
@@ -91,10 +91,10 @@ MOT功能限制：
 
 ## 不支持的索引DDL和索引<a name="zh-cn_topic_0283137737_zh-cn_topic_0280525140_section39185923"></a>
 
--   在小数和数值类型上创建索引
--   在可空列上创建索引
--   单表创建索引总数\>9
--   在键大小\>256的表上创建索引
+- 在小数和数值类型上创建索引
+- 在可空列上创建索引
+- 单表创建索引总数\>9
+- 在键大小\>256的表上创建索引
 
     键大小包括以字节为单位的列大小+列附加大小，这是维护索引所需的开销。下表列出了不同列类型的列附加大小。
 
@@ -174,38 +174,35 @@ MOT功能限制：
     </tbody>
     </table>
 
-
 上表中未指定的类型，列附加大小为零（例如时间戳）。
 
 ## 不支持的DML<a name="zh-cn_topic_0283137737_zh-cn_topic_0280525140_section17128987"></a>
 
--   Merge into
--   Select into
--   Lock table
--   Copy from table
--   Upsert
+- Merge into
+- Select into
+- Lock table
+- Copy from table
+- Upsert
 
 ## 原生编译和轻量执行不支持的查询<a name="zh-cn_topic_0283137737_zh-cn_topic_0280525140_section19943160"></a>
 
--   查询涉及两个以上的表
--   查询有以下任何一个情况：
-    -   非原生类型的聚合
-    -   窗口功能
-    -   子查询子链接
-    -   Distinct-ON修饰语（distinct子句来自DISTINCT ON）
-    -   递归（已指定WITH RECURSIVE）
-    -   修改CTE（WITH中有INSERT/UPDATE/DELETE）
-
+- 查询涉及两个以上的表
+- 查询有以下任何一个情况：
+    - 非原生类型的聚合
+    - 窗口功能
+    - 子查询子链接
+    - Distinct-ON修饰语（distinct子句来自DISTINCT ON）
+    - 递归（已指定WITH RECURSIVE）
+    - 修改CTE（WITH中有INSERT/UPDATE/DELETE）
 
 以下子句不支持轻量执行：
 
--   Returning list
--   Group By clause
--   Grouping sets
--   Having clause
--   Windows clause
--   Distinct clause
--   Sort clause that does not conform to native index order
--   Set operations
--   Constraint dependencies
-
+- Returning list
+- Group By clause
+- Grouping sets
+- Having clause
+- Windows clause
+- Distinct clause
+- Sort clause that does not conform to native index order
+- Set operations
+- Constraint dependencies

@@ -81,7 +81,5 @@ PG\_EXTENSION\_DATA\_SOURCE系统表存储外部数据源对象的信息。一�
 </tbody>
 </table>
 
-
 >[!NOTE]说明
 >轻量版场景下，openGauss提供此系统表，但SQL on Anywhere不可用。
-

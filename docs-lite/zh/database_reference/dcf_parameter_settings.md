@@ -104,11 +104,10 @@
 
 **取值范围**： 字符串
 
--   **关闭日志**：“NONE”，NONE表示关闭日志打印，不能与以下日志级别混合使用。
--   **开启日志：“**RUN\_ERR|RUN\_WAR|RUN\_INF|DEBUG\_ERR|DEBUG\_WAR|DEBUG\_INF|TRACE|PROFILE|OPER”
+- **关闭日志**：“NONE”，NONE表示关闭日志打印，不能与以下日志级别混合使用。
+- **开启日志：“**RUN\_ERR|RUN\_WAR|RUN\_INF|DEBUG\_ERR|DEBUG\_WAR|DEBUG\_INF|TRACE|PROFILE|OPER”
 
     日志级别可以从上述字符串中选取字符串并使用竖线组合使用，不能配置空串。
-
 
 **默认值**： “RUN\_ERR|RUN\_WAR|DEBUG\_ERR|OPER|RUN\_INF|PROFILE”
 
@@ -260,9 +259,9 @@
 
 **取值范围**： 整型
 
--   0表示不压缩
--   1表示ZSTD压缩算法
--   2表示LZ4压缩算法
+- 0表示不压缩
+- 1表示ZSTD压缩算法
+- 2表示LZ4压缩算法
 
 **默认值**： 0
 
@@ -337,8 +336,3 @@
 **取值范围**： 枚举型，700、750
 
 **默认值**： 700
-
-
-
-
-

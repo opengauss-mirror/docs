@@ -14,40 +14,38 @@ SELECT
 
 ## Parameter Description<a name="en-us_topic_0000001224664065_section10349175314912"></a>
 
--   **SELECT list**
+- **SELECT list**
 
     Specifies the name of a column in the table to be queried. The value can be a part of the column name or all of the column names. The wildcard \(\*\) is used to represent all column names.
 
     Column names can be expressed in the following formats:
 
-    -   Manually input column names which are separated by commas \(,\)
-    -   Columns computed in the  **FROM**  clause
+    - Manually input column names which are separated by commas \(,\)
+    - Columns computed in the  **FROM**  clause
 
--   **FROM clause**
+- **FROM clause**
 
     Specifies one or more source tables for the SELECT statement. The  **FROM**  clause involves multiple elements. The common elements are as follows:
 
-    -   table\_name
+    - table\_name
 
         Specifies the name of a table or view. The schema name can be added before the table name or view name, for example,  _schema\_name.table\_name_. The table name is the most common element.
 
-    -   subquery
+    - subquery
 
         Performs a subquery in the  **FROM**  clause. A temporary table is created to save subquery results. For details, see  [Subqueries](subqueries.md).
 
-    -   alias
+    - alias
 
         Gives a temporary alias to a table to facilitate the reference by other queries. For details, see  [Aliases](aliases.md).
 
-    -   join\_type
+    - join\_type
 
         There are five types. For details, see  [JOIN](join.md).
 
-
-
 ## Examples<a name="section1477911223411"></a>
 
--   Read all data from the  **customer\_t1**  table.
+- Read all data from the  **customer\_t1**  table.
 
     ```
     openGauss=# SELECT * FROM customer_t1;
@@ -65,7 +63,7 @@ SELECT
     (9 rows)
     ```
 
--   Read the  **c\_customer\_sk**  and  **c\_customer\_id**  columns from the  **customer\_t1**  table.
+- Read the  **c\_customer\_sk**  and  **c\_customer\_id**  columns from the  **customer\_t1**  table.
 
     ```
     openGauss=# SELECT c_customer_sk,c_customer_id FROM customer_t1;
@@ -82,5 +80,3 @@ SELECT
               4421 | Admin
     (9 rows)
     ```
-
-

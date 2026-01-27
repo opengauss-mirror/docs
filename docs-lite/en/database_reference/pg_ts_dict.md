@@ -73,4 +73,3 @@ This division of labor allows dictionaries to be created by unprivileged users. 
 </tr>
 </tbody>
 </table>
-

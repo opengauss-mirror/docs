@@ -6,7 +6,7 @@ MOT作为openGauss的一部分自动部署。有关如何计算和规划所需�
 
 [MOT管理](mot_durability.md)介绍了如何进行数据库维护，以及监控和分析日志和错误报告。最后，[MOT样例TPC-C基准](mot_sample_tpc_c_benchmark.md)介绍了如何执行标准TPC-C基准测试。
 
--   阅读以下内容了解如何使用MOT：
+- 阅读以下内容了解如何使用MOT：
 
     <a name="zh-cn_topic_0283137698_zh-cn_topic_0280525102_table28609126"></a>
     <table><tbody><tr id="zh-cn_topic_0283137698_zh-cn_topic_0280525102_row984423"><td class="cellrowborder" valign="top" width="100%"><p id="zh-cn_topic_0283137698_zh-cn_topic_0280525102_p12629440"><a name="zh-cn_topic_0283137698_zh-cn_topic_0280525102_p12629440"></a><a name="zh-cn_topic_0283137698_zh-cn_topic_0280525102_p12629440"></a><a name="zh-cn_topic_0283137698_zh-cn_topic_0280525102_image46556104"></a><a name="zh-cn_topic_0283137698_zh-cn_topic_0280525102_image46556104"></a><span><img id="zh-cn_topic_0283137698_zh-cn_topic_0280525102_image46556104" src="figures/zh-cn_image_0289900154.png" width="249.375" height="262.34250000000003"></span></p>
@@ -14,5 +14,3 @@ MOT作为openGauss的一部分自动部署。有关如何计算和规划所需�
     </tr>
     </tbody>
     </table>
-
-

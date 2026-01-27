@@ -2,22 +2,19 @@
 
 openGauss提供了函数和操作符用来操作tsquery类型的查询。
 
--   tsquery && tsquery
+- tsquery && tsquery
 
     返回两个给定查询tsquery的与结果。
 
-
--   tsquery || tsquery
+- tsquery || tsquery
 
     返回两个给定查询tsquery的或结果。
 
-
--   !! tsquery
+- !! tsquery
 
     返回给定查询tsquery的非结果。
 
-
--   numnode\(query tsquery\) returns integer
+- numnode\(query tsquery\) returns integer
 
     返回tsquery中的节点数目（词素加操作符），这个函数在检查查询是否有效（返回值大于0），或者只包含停用词（返回值等于0）时，是有用的。例如：
 
@@ -35,8 +32,7 @@ openGauss提供了函数和操作符用来操作tsquery类型的查询。
            3
     ```
 
-
--   querytree\(query tsquery\) returns text
+- querytree\(query tsquery\) returns text
 
     返回可用于索引搜索的tsquery部分，该函数对于检测非索引查询是有用的（例如只包含停用词或否定项）。例如:
 
@@ -47,5 +43,3 @@ openGauss提供了函数和操作符用来操作tsquery类型的查询。
      T
     (1 row)
     ```
-
-

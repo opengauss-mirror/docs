@@ -93,4 +93,3 @@ The following table lists metrics in the Load Profile report.
 </tr>
 </tbody>
 </table>
-

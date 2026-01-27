@@ -89,4 +89,3 @@ PG\_TS\_PARSER系统表包含定义文本解析器的记录。解析器负责分
 </tr>
 </tbody>
 </table>
-

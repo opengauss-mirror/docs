@@ -4,17 +4,17 @@
 
 openGauss supports range partitioned tables, interval partitioned tables, list partitioned tables, and hash partitioned tables.
 
--   Range partitioned table: Data within a certain range is mapped to each partition. The range is determined by the partition key specified when the partitioned table is created. This partitioning mode is most commonly used. The partition key is usually a date. For example, sales data is partitioned by month.
--   Interval partitioned table: A special type of range partitioned tables. Compared with range partitioned tables, interval value definition is added. When no matching partition can be found for an inserted record, a partition can be automatically created based on the interval value.
--   List partitioned table: Key values contained in the data are stored in different partitions, and the data is mapped to each partition in sequence. The key values contained in the partitions are specified when the partitioned table is created.
--   Hash partitioned table: Data is mapped to each partition based on the internal hash algorithm. The number of partitions is specified when the partitioned table is created.
+- Range partitioned table: Data within a certain range is mapped to each partition. The range is determined by the partition key specified when the partitioned table is created. This partitioning mode is most commonly used. The partition key is usually a date. For example, sales data is partitioned by month.
+- Interval partitioned table: A special type of range partitioned tables. Compared with range partitioned tables, interval value definition is added. When no matching partition can be found for an inserted record, a partition can be automatically created based on the interval value.
+- List partitioned table: Key values contained in the data are stored in different partitions, and the data is mapped to each partition in sequence. The key values contained in the partitions are specified when the partitioned table is created.
+- Hash partitioned table: Data is mapped to each partition based on the internal hash algorithm. The number of partitions is specified when the partitioned table is created.
 
 A partitioned table has the following advantages over an ordinary table:
 
--   High query performance: You can specify partitions when querying partitioned tables, improving query efficiency.
--   High availability: If a certain partition in a partitioned table is faulty, data in the other partitions is still available.
--   Easy maintenance: To fix a partitioned table having a faulty partition, you only need to fix the partition.
--   Balanced I/O: Partitions can be mapped to different disks to balance I/O and improve the overall system performance.
+- High query performance: You can specify partitions when querying partitioned tables, improving query efficiency.
+- High availability: If a certain partition in a partitioned table is faulty, data in the other partitions is still available.
+- Easy maintenance: To fix a partitioned table having a faulty partition, you only need to fix the partition.
+- Balanced I/O: Partitions can be mapped to different disks to balance I/O and improve the overall system performance.
 
 To convert an ordinary table to a partitioned table, you need to create a partitioned table and import data to it from the ordinary table. When you design tables, plan whether to use partitioned tables based on service requirements.
 
@@ -22,7 +22,7 @@ To convert an ordinary table to a partitioned table, you need to create a partit
 
 Example 1: using the default tablespace
 
--   Create a partitioned table \(assuming that the  **tpcds**  schema has been created\).
+- Create a partitioned table \(assuming that the  **tpcds**  schema has been created\).
 
     ```
     openGauss=# CREATE TABLE tpcds.customer_address
@@ -65,7 +65,7 @@ Example 1: using the default tablespace
     >[!NOTE]NOTE 
     >You are advised to create a maximum of 1000 column-store partitioned tables.
 
--   Insert data.
+- Insert data.
 
     Insert data from the  **tpcds.customer\_address**  table to the  **tpcds.web\_returns\_p2**  table.
 
@@ -106,14 +106,14 @@ Example 1: using the default tablespace
     INSERT 0 0
     ```
 
--   Modify the row movement attributes of the partitioned table.
+- Modify the row movement attributes of the partitioned table.
 
     ```
     openGauss=# ALTER TABLE tpcds.web_returns_p2 DISABLE ROW MOVEMENT;
     ALTER TABLE
     ```
 
--   Delete a partition.
+- Delete a partition.
 
     Delete partition  **P8**.
 
@@ -122,7 +122,7 @@ Example 1: using the default tablespace
     ALTER TABLE
     ```
 
--   Add a partition.
+- Add a partition.
 
     Add partition  **P8**  and set its range to \[40000,MAXVALUE\].
 
@@ -131,23 +131,22 @@ Example 1: using the default tablespace
     ALTER TABLE
     ```
 
--   Rename a partition.
-    -   Rename partition  **P8**  to  **P\_9**.
+- Rename a partition.
+    - Rename partition  **P8**  to  **P\_9**.
 
         ```
         openGauss=# ALTER TABLE tpcds.web_returns_p2 RENAME PARTITION P8 TO P_9;
         ALTER TABLE
         ```
 
-    -   Rename partition  **P\_9**  to  **P8**.
+    - Rename partition  **P\_9**  to  **P8**.
 
         ```
         openGauss=# ALTER TABLE tpcds.web_returns_p2 RENAME PARTITION FOR (40000) TO P8;
         ALTER TABLE
         ```
 
-
--   Query a partition.
+- Query a partition.
 
     Query partition  **P6**.
 
@@ -156,7 +155,7 @@ Example 1: using the default tablespace
     openGauss=# SELECT * FROM tpcds.web_returns_p2 PARTITION FOR (35888);
     ```
 
--   Delete a partitioned table and its tablespaces.
+- Delete a partitioned table and its tablespaces.
 
     ```
     openGauss=# DROP TABLE tpcds.customer_address;
@@ -165,12 +164,11 @@ Example 1: using the default tablespace
     DROP TABLE
     ```
 
-
 Example 2: using a user-defined tablespace
 
 Perform the following operations on range partitioned tables.
 
--   Create a tablespace.
+- Create a tablespace.
 
     ```
     openGauss=# CREATE TABLESPACE example1 RELATIVE LOCATION 'tablespace1/tablespace_1';
@@ -185,7 +183,7 @@ Perform the following operations on range partitioned tables.
     CREATE TABLESPACE
     ```
 
--   Create a partitioned table.
+- Create a partitioned table.
 
     ```
     openGauss=# CREATE TABLE tpcds.customer_address
@@ -229,7 +227,7 @@ Perform the following operations on range partitioned tables.
     >[!NOTE]NOTE 
     >You are advised to create a maximum of 1000 column-store partitioned tables.
 
--   Insert data.
+- Insert data.
 
     Insert data from the  **tpcds.customer\_address**  table to the  **tpcds.web\_returns\_p2**  table.
 
@@ -270,14 +268,14 @@ Perform the following operations on range partitioned tables.
     INSERT 0 0
     ```
 
--   Modify the row movement attributes of the partitioned table.
+- Modify the row movement attributes of the partitioned table.
 
     ```
     openGauss=# ALTER TABLE tpcds.web_returns_p2 DISABLE ROW MOVEMENT;
     ALTER TABLE
     ```
 
--   Delete a partition.
+- Delete a partition.
 
     Delete partition  **P8**.
 
@@ -286,7 +284,7 @@ Perform the following operations on range partitioned tables.
     ALTER TABLE
     ```
 
--   Add a partition.
+- Add a partition.
 
     Add partition  **P8**  and set its range to \[40000,MAXVALUE\].
 
@@ -295,39 +293,37 @@ Perform the following operations on range partitioned tables.
     ALTER TABLE
     ```
 
--   Rename a partition.
-    -   Rename partition  **P8**  to  **P\_9**.
+- Rename a partition.
+    - Rename partition  **P8**  to  **P\_9**.
 
         ```
         openGauss=# ALTER TABLE tpcds.web_returns_p2 RENAME PARTITION P8 TO P_9;
         ALTER TABLE
         ```
 
-    -   Rename partition  **P\_9**  to  **P8**.
+    - Rename partition  **P\_9**  to  **P8**.
 
         ```
         openGauss=# ALTER TABLE tpcds.web_returns_p2 RENAME PARTITION FOR (40000) TO P8;
         ALTER TABLE
         ```
 
-
--   Modify the tablespace of a partition.
-    -   Change the tablespace of partition  **P6**  to  **example3**.
+- Modify the tablespace of a partition.
+    - Change the tablespace of partition  **P6**  to  **example3**.
 
         ```
         openGauss=#  ALTER TABLE tpcds.web_returns_p2 MOVE PARTITION P6 TABLESPACE example3;
         ALTER TABLE
         ```
 
-    -   Change the tablespace of partition  **P4**  to  **example4**:
+    - Change the tablespace of partition  **P4**  to  **example4**:
 
         ```
         openGauss=#  ALTER TABLE tpcds.web_returns_p2 MOVE PARTITION P4 TABLESPACE example4;
         ALTER TABLE
         ```
 
-
--   Query a partition.
+- Query a partition.
 
     Query partition  **P6**.
 
@@ -336,7 +332,7 @@ Perform the following operations on range partitioned tables.
     openGauss=# SELECT * FROM tpcds.web_returns_p2 PARTITION FOR (35888);
     ```
 
--   Delete a partitioned table and its tablespaces.
+- Delete a partitioned table and its tablespaces.
 
     ```
     openGauss=# DROP TABLE tpcds.web_returns_p2;
@@ -347,5 +343,3 @@ Perform the following operations on range partitioned tables.
     openGauss=# DROP TABLESPACE example4;
     DROP TABLESPACE
     ```
-
-

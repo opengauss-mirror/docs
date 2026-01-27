@@ -170,13 +170,13 @@ Currently, the installation can be performed only when the firewall is disabled.
    SELINUX=disabled
    ```
 
-2.  Restart the OS.
+2. Restart the OS.
 
     ```
     reboot
     ```
 
-3.  Check whether the firewall is disabled.
+3. Check whether the firewall is disabled.
 
     ```
     systemctl status firewalld
@@ -186,14 +186,14 @@ Currently, the installation can be performed only when the firewall is disabled.
 
     If the firewall status is  **inactive \(dead\)**, you do not need to disable the firewall.
 
-4.  <a name="en-us_topic_0283136490_li17330102819394"></a>Disable the firewall service.
+4. <a name="en-us_topic_0283136490_li17330102819394"></a>Disable the firewall service.
 
     ```
     systemctl disable firewalld.service
     systemctl stop firewalld.service
     ```
 
-5.  Repeat  [1](#en-us_topic_0283136490_en-us_topic_0241802566_li17785744465)  to  [4](#en-us_topic_0283136490_li17330102819394)  on other hosts.
+5. Repeat  [1](#en-us_topic_0283136490_en-us_topic_0241802566_li17785744465)  to  [4](#en-us_topic_0283136490_li17330102819394)  on other hosts.
 
 **Setting Character Set Parameters**
 
@@ -207,13 +207,13 @@ vim /etc/profile
 
 Ensure that the time zone and time on each database node are consistent.
 
-1.  Run the following command to check whether the time and time zone of each database node are consistent: If not, perform steps  [2](#en-us_topic_0283136490_li1238816343545)  to  [3](#en-us_topic_0283136490_li153615819546).
+1. Run the following command to check whether the time and time zone of each database node are consistent: If not, perform steps  [2](#en-us_topic_0283136490_li1238816343545)  to  [3](#en-us_topic_0283136490_li153615819546).
 
     ```
     date
     ```
 
-2.  <a name="en-us_topic_0283136490_li1238816343545"></a>Run the following command to copy the  **/etc/localtime**  file to the  **/usr/share/zoneinfo/**  directory of each database node:
+2. <a name="en-us_topic_0283136490_li1238816343545"></a>Run the following command to copy the  **/etc/localtime**  file to the  **/usr/share/zoneinfo/**  directory of each database node:
 
     ```
     cp /usr/share/zoneinfo/$Locale/$Time zone /etc/localtime
@@ -222,12 +222,11 @@ Ensure that the time zone and time on each database node are consistent.
     >[!NOTE]NOTE 
     >*$Locale/$Time zone*  indicates the locale and time zone to be set, for example,  **Asia/Shanghai**.
 
-3.  <a name="en-us_topic_0283136490_li153615819546"></a>Run the  **date -s**  command to set the time of each database node to the same time. For example:
+3. <a name="en-us_topic_0283136490_li153615819546"></a>Run the  **date -s**  command to set the time of each database node to the same time. For example:
 
     ```
     date -s "Sat Sep 27 16:00:07 CST 2020"
     ```
-
 
 **\(Optional\) Disabling the Swap Memory**
 
@@ -272,21 +271,21 @@ On each database node, disable  **RemoveIPC**.
    RemoveIPC=no
    ```
 
-3.  Reload configuration parameters.
+3. Reload configuration parameters.
 
     ```
     systemctl daemon-reload
     systemctl restart systemd-logind
     ```
 
-4.  <a name="en-us_topic_0283136490_en-us_topic_0241802566_li17785744467"></a>Check whether the modification takes effect.
+4. <a name="en-us_topic_0283136490_en-us_topic_0241802566_li17785744467"></a>Check whether the modification takes effect.
 
     ```
     loginctl show-session | grep RemoveIPC
     systemctl show systemd-logind | grep RemoveIPC
     ```
 
-5.  Repeat Step 1 (#en-us_topic_0283136490_en-us_topic_0241802566_li17785744466) to Step 4 (#en-us_topic_0283136490_en-us_topic_0241802566_li17785744467) on other hosts.
+5. Repeat Step 1 (#en-us_topic_0283136490_en-us_topic_0241802566_li17785744466) to Step 4 (#en-us_topic_0283136490_en-us_topic_0241802566_li17785744467) on other hosts.
 
 ### Disabling the History Command
 

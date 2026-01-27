@@ -81,4 +81,3 @@ PGXC\_GROUP系统表存储节点组信息。PGXC\_GROUP系统表仅在分布式�
 </tr>
 </tbody>
 </table>
-

@@ -59,4 +59,3 @@ PG\_SHSECLABEL系统表存储在共享数据库对象上的安全标签。安全
 </tr>
 </tbody>
 </table>
-

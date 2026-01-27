@@ -2036,4 +2036,3 @@ The  **Error Code**  column displays the condition names used in the PL/pgSQL. T
 </tr>
 </tbody>
 </table>
-

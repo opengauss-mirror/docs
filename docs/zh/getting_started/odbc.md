@@ -56,11 +56,11 @@ Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中
 
 将openGauss提供的ODBC DRIVER（psqlodbcw.so）配置到数据源中便可使用。配置数据源需要配置“odbc.ini”和“odbcinst.ini”两个文件（在编译安装unixODBC过程中生成且默认放在“/usr/local/etc”目录下），并在服务器端进行配置。
 
-1.  获取unixODBC-x.x.x码包。
+1. 获取unixODBC-x.x.x码包。
 
-    获取参考地址：http://www.unixodbc.org/download.html
+    获取参考地址：<http://www.unixodbc.org/download.html>
 
-2.  安装unixODBC。如果机器上已经安装了其他版本的unixODBC，可以直接覆盖安装。
+2. 安装unixODBC。如果机器上已经安装了其他版本的unixODBC，可以直接覆盖安装。
 
     目前不支持unixODBC-2.2.1版本。以unixODBC-2.3.9版本为例，在客户端执行如下命令安装unixODBC。默认安装到“/usr/local”目录下，生成数据源文件到 “/usr/local/etc”目录下，库文件生成在“/usr/local/lib”目录。
 
@@ -77,12 +77,12 @@ Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中
     make install
     ```
 
-3.  替换客户端openGauss驱动程序。
-    1.  将openGauss-x.x.x-ODBC.tar.gz解压到“/usr/local/lib”目录下。解压会得到“psqlodbcw.la”和“psqlodbcw.so”两个文件。
-    2.  将openGauss-x.x.x-ODBC.tar.gz解压后lib目录中的库拷贝到“/usr/local/lib”目录下。
+3. 替换客户端openGauss驱动程序。
+    1. 将openGauss-x.x.x-ODBC.tar.gz解压到“/usr/local/lib”目录下。解压会得到“psqlodbcw.la”和“psqlodbcw.so”两个文件。
+    2. 将openGauss-x.x.x-ODBC.tar.gz解压后lib目录中的库拷贝到“/usr/local/lib”目录下。
 
-4.  配置数据源。
-    1.  配置ODBC驱动文件。
+4. 配置数据源。
+    1. 配置ODBC驱动文件。
 
         在“/xxx/odbc/etc/odbcinst.ini”文件中追加以下内容。
 
@@ -129,7 +129,7 @@ Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中
         </tbody>
         </table>
 
-    2.  配置数据源文件。
+    2. 配置数据源文件。
 
         在“/usr/local/etc/odbc.ini”文件中追加以下内容。
 
@@ -351,24 +351,27 @@ Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中
         >保证client.key\*系列文件为600权限：
         >退回根目录，创建.postgresql目录，并将root.crt，client.crt，client.key，client.key.cipher，client.key.rand，client.req，server.crt，server.key，server.key.cipher，server.key.rand，server.req放在此路径下。
         >Unix系统下，server.crt、server.key的权限设置必须禁止任何外部或组的访问，请执行如下命令实现这一点。
+>
         >```
         >chmod 0600 server.key
         >```
+>
         >将root.crt以及server开头的证书相关文件全部拷贝进数据库install/data目录下（与postgresql.conf文件在同一路径）。
         >修改postgresql.conf文件：
+>
         >```
         >ssl = on
         >ssl_cert_file = 'server.crt'
         >ssl_key_file = 'server.key'
         >ssl_ca_file = 'root.crt'
         >```
+>
         >修改完参数后需重启数据库。
         >修改配置文件odbc.ini中的sslmode参数（require或verify-ca）。
 
-
-5.  配置数据库服务器。
-    1.  以操作系统用户omm登录数据库主节点。
-    2.  执行如下命令增加对外提供服务的网卡IP或者主机名（英文逗号分隔），其中NodeName为当前节点名称：
+5. 配置数据库服务器。
+    1. 以操作系统用户omm登录数据库主节点。
+    2. 执行如下命令增加对外提供服务的网卡IP或者主机名（英文逗号分隔），其中NodeName为当前节点名称：
 
         ```
         gs_guc reload -N NodeName -I all -c "listen_addresses='localhost,192.168.0.100,10.11.12.13'"
@@ -378,20 +381,20 @@ Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中
 
         listen\_addresses也可以配置为“\*”或“0.0.0.0”，此配置下将侦听所有网卡，但存在安全风险，不推荐用户使用，推荐用户按照需要配置IP或者主机名，打开侦听。
 
-    3.  执行如下命令在数据库主节点配置文件中增加一条认证规则。（这里假设客户端IP地址为10.11.12.13，即远程连接的机器的IP地址）
+    3. 执行如下命令在数据库主节点配置文件中增加一条认证规则。（这里假设客户端IP地址为10.11.12.13，即远程连接的机器的IP地址）
 
         ```
         gs_guc reload -N all -I all -h "host all jack 10.11.12.13/32 sha256"
         ```
 
         >[!NOTE]说明  
-        >-   -N all表示openGauss中的所有主机。  
-        >-   -I all表示主机中的所有实例。  
-        >-   -h表示指定需要在“pg\_hba.conf”增加的语句。  
-        >-   all表示允许客户端连接到任意的数据库。  
-        >-   jack表示连接数据库的用户。  
-        >-   10.11.12.13/_32_表示只允许IP地址为10.11.12.13的主机连接。在使用过程中，请根据用户的网络进行配置修改。32表示子网掩码为1的位数，即255.255.255.255。  
-        >-   sha256表示连接时jack用户的密码使用sha256算法加密。  
+        >- -N all表示openGauss中的所有主机。  
+        >- -I all表示主机中的所有实例。  
+        >- -h表示指定需要在“pg\_hba.conf”增加的语句。  
+        >- all表示允许客户端连接到任意的数据库。  
+        >- jack表示连接数据库的用户。  
+        >- 10.11.12.13/_32_表示只允许IP地址为10.11.12.13的主机连接。在使用过程中，请根据用户的网络进行配置修改。32表示子网掩码为1的位数，即255.255.255.255。  
+        >- sha256表示连接时jack用户的密码使用sha256算法加密。  
 
         如果将ODBC客户端配置在和要连接的数据库主节点在同一台机器上，则可使用local trust认证方式，如下：
 
@@ -405,14 +408,14 @@ Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中
         host all all xxx.xxx.xxx.xxx/32 sha256
         ```
 
-    4.  重启openGauss。
+    4. 重启openGauss。
 
         ```
         gs_om -t stop
         gs_om -t start
         ```
 
-6.  在客户端配置环境变量。
+6. 在客户端配置环境变量。
 
     ```
     vim ~/.bashrc
@@ -426,18 +429,17 @@ Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中
     export ODBCINI=/usr/local/etc/odbc.ini
     ```
 
-7.  执行如下命令使设置生效。
+7. 执行如下命令使设置生效。
 
     ```
     source ~/.bashrc
     ```
 
-
 ## 测试数据源配置<a name="section1224317573217"></a>
 
 执行./isql -v MPPODBC（数据源名称）命令。
 
--   如果显示如下信息，表明配置正确，连接成功。
+- 如果显示如下信息，表明配置正确，连接成功。
 
     ```
     +---------------------------------------+
@@ -451,7 +453,7 @@ Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中
     SQL> 
     ```
 
--   若显示ERROR信息，则表明配置错误。请检查上述配置是否正确。
+- 若显示ERROR信息，则表明配置错误。请检查上述配置是否正确。
 
 ## 开发流程<a name="section3537202314458"></a>
 
@@ -926,4 +928,3 @@ int main(int argc,char *argv[])
       return(0);
  }
 ```
-

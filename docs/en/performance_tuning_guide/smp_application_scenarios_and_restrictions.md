@@ -6,20 +6,20 @@ The SMP feature improves the performance through operator parallelism and occupi
 
 ## Application Scenarios<a name="section2030915336616"></a>
 
--   Operators that support parallelism. The plan contains the following operators that support parallelism.
-    -   Scan: Row-store ordinary tables and row-store partitioned tables, and column-store ordinary tables and column-store partitioned tables can be sequentially scanned.
-    -   Join: HashJoin and NestLoop
-    -   Agg: HashAgg, SortAgg, PlainAgg, and WindowAgg \(which supports only  **partition by**, and does not support  **order by**\)
-    -   Stream: Local Redistribute and Local Broadcast
-    -   Others: Result, Subqueryscan, Unique, Material, Setop, Append, VectoRow, and RowToVec
+- Operators that support parallelism. The plan contains the following operators that support parallelism.
+    - Scan: Row-store ordinary tables and row-store partitioned tables, and column-store ordinary tables and column-store partitioned tables can be sequentially scanned.
+    - Join: HashJoin and NestLoop
+    - Agg: HashAgg, SortAgg, PlainAgg, and WindowAgg \(which supports only  **partition by**, and does not support  **order by**\)
+    - Stream: Local Redistribute and Local Broadcast
+    - Others: Result, Subqueryscan, Unique, Material, Setop, Append, VectoRow, and RowToVec
 
--   SMP-specific operators: To execute queries in parallel, Stream operators are added for data exchange of the SMP feature. These new operators can be considered as the subtypes of Stream operators.
-    -   Local Gather aggregates data of parallel threads within an instance.
-    -   Local Redistribute redistributes data based on the distributed key across threads within an instance.
-    -   Local Broadcast broadcasts data to each thread within an instance.
-    -   Local RoundRobin distributes data in polling mode across threads within an instance.
+- SMP-specific operators: To execute queries in parallel, Stream operators are added for data exchange of the SMP feature. These new operators can be considered as the subtypes of Stream operators.
+    - Local Gather aggregates data of parallel threads within an instance.
+    - Local Redistribute redistributes data based on the distributed key across threads within an instance.
+    - Local Broadcast broadcasts data to each thread within an instance.
+    - Local RoundRobin distributes data in polling mode across threads within an instance.
 
--   The following uses the  **TPCH Q1**  parallel plan as an example.
+- The following uses the  **TPCH Q1**  parallel plan as an example.
 
     ![](figures/en-us_image_0000001156347657.png)
 
@@ -27,16 +27,14 @@ The SMP feature improves the performance through operator parallelism and occupi
 
     You can view the parallelism situation of each operator in the dop information.
 
-
 ## Non-applicable Scenarios<a name="section35477181017"></a>
 
-1.  Index scanning cannot be executed in parallel.
-2.  MergeJoin cannot be executed in parallel.
-3.  WindowAgg order by cannot be executed in parallel.
-4.  The cursor cannot be executed in parallel.
-5.  Queries in stored procedures and functions cannot be executed in parallel.
-6.  Subplans and initplans cannot be queried in parallel, and operators that contain subqueries cannot be executed in parallel, either.
-7.  Query statements that contain the median operation cannot be executed in parallel.
-8.  Queries with global temporary tables cannot be executed in parallel.
-9.  Updating materialized views cannot be executed in parallel.
-
+1. Index scanning cannot be executed in parallel.
+2. MergeJoin cannot be executed in parallel.
+3. WindowAgg order by cannot be executed in parallel.
+4. The cursor cannot be executed in parallel.
+5. Queries in stored procedures and functions cannot be executed in parallel.
+6. Subplans and initplans cannot be queried in parallel, and operators that contain subqueries cannot be executed in parallel, either.
+7. Query statements that contain the median operation cannot be executed in parallel.
+8. Queries with global temporary tables cannot be executed in parallel.
+9. Updating materialized views cannot be executed in parallel.

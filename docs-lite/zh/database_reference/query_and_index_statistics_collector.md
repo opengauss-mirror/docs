@@ -10,8 +10,8 @@
 
 **取值范围**： 布尔型
 
--   on表示开启收集功能。
--   off表示关闭收集功能。
+- on表示开启收集功能。
+- off表示关闭收集功能。
 
 **默认值**： on
 
@@ -23,8 +23,8 @@
 
 **取值范围**： 布尔型
 
--   on表示开启收集功能。
--   off表示关闭收集功能。
+- on表示开启收集功能。
+- off表示关闭收集功能。
 
 >[!NOTE]说明
 >
@@ -40,8 +40,8 @@
 
 **取值范围**： 布尔型
 
--   on表示开启收集功能，开启时，收集器会在重复地去查询当前时间的操作系统，这可能会引起某些平台的重大开销，故默认值设置为off。
--   off表示关闭收集功能。
+- on表示开启收集功能，开启时，收集器会在重复地去查询当前时间的操作系统，这可能会引起某些平台的重大开销，故默认值设置为off。
+- off表示关闭收集功能。
 
 **默认值**： off
 
@@ -57,9 +57,9 @@
 
 **取值范围**： 枚举类型
 
--   pl表示只追踪过程语言函数。
--   all表示追踪SQL语言函数。
--   none表示关闭函数追踪功能。
+- pl表示只追踪过程语言函数。
+- all表示追踪SQL语言函数。
+- none表示关闭函数追踪功能。
 
 **默认值**： none
 
@@ -105,11 +105,10 @@
 
 **取值范围**： 布尔型
 
--   on表示允许收集相关操作对表数据改动的时间。
--   off表示禁止收集相关操作对表数据改动的时间。
+- on表示允许收集相关操作对表数据改动的时间。
+- off表示禁止收集相关操作对表数据改动的时间。
 
 **默认值**： on
-
 
 ## track\_sql\_count<a name="zh-cn_topic_0283136895_zh-cn_topic_0237124727_section6524929122813"></a>
 
@@ -121,18 +120,18 @@
 
 **取值范围**： 布尔型
 
--   on表示开启计数功能。
--   off表示关闭计数功能。
+- on表示开启计数功能。
+- off表示关闭计数功能。
 
 **默认值**： on
 
 >[!NOTE]说明
 >
->-   track\_sql\_count参数受track\_activities约束：
->    -   track\_activities开启而track\_sql\_count关闭时，如果查询了gs\_sql\_count视图，日志中将会有WARNING提示track\_sql\_count是关闭的；
->    -   track\_activities和track\_sql\_count同时关闭，那么此时日志中将会有两条WARNING，分别提示track\_activities是关闭的和track\_sql\_count是关闭的；
->    -   track\_activities关闭而track\_sql\_count开启，此时日志中将仅有WARNING提示track\_activities是关闭。
->-   当参数关闭时，查询视图的结果为0行。
+>- track\_sql\_count参数受track\_activities约束：
+> - track\_activities开启而track\_sql\_count关闭时，如果查询了gs\_sql\_count视图，日志中将会有WARNING提示track\_sql\_count是关闭的；
+> - track\_activities和track\_sql\_count同时关闭，那么此时日志中将会有两条WARNING，分别提示track\_activities是关闭的和track\_sql\_count是关闭的；
+> - track\_activities关闭而track\_sql\_count开启，此时日志中将仅有WARNING提示track\_activities是关闭。
+>- 当参数关闭时，查询视图的结果为0行。
 
 ## time_record_level<a name="zh-cn_topic_0283136896_zh-cn_topic_0237124727_section6524929122814"></a>
 
@@ -142,8 +141,8 @@
 
 **取值范围**：整型值[0,10]
 
--   0 表示开启最高级别。
--   1~10 当前不支持级别控制，只要不配置为0就不采集DB_TIME相关的时间。
+- 0 表示开启最高级别。
+- 1~10 当前不支持级别控制，只要不配置为0就不采集DB_TIME相关的时间。
 
 **默认值**：0
 
@@ -155,11 +154,11 @@
 
 **取值范围**： 布尔型
 
--   on表示开启收集功能。
--   off表示关闭收集功能。
+- on表示开启收集功能。
+- off表示关闭收集功能。
 
 **默认值**：off
 
 >[!NOTE]说明
 >
->-   time_record_level参数影响DB_TIME耗时统计，当不为0时，那么采集到的所有时间都是0，如慢sql将不再生效。
+>- time_record_level参数影响DB_TIME耗时统计，当不为0时，那么采集到的所有时间都是0，如慢sql将不再生效。

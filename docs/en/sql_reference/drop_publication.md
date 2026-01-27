@@ -16,18 +16,17 @@ DROP PUBLICATION [ IF EXISTS ] name [ CASCADE | RESTRICT ]
 
 ## Parameter Description<a name="section134251850191516"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Does not throw an error if a publication does not exist, but instead reports a notice.
 
--   **name**
+- **name**
 
     Specifies the name of an existing publication.
 
--   **CASCADE|RESTRICT**
+- **CASCADE|RESTRICT**
 
     Currently, these keywords do not work because there is no dependency on publications.
-
 
 ## Examples<a name="section102825519166"></a>
 
@@ -36,4 +35,3 @@ For details, see  [Examples](create_publication.md#section109371845154215).
 ## Helpful Links<a name="section915018161711"></a>
 
 [ALTER PUBLICATION](alter_publication.md)  and  [CREATE PUBLICATION](create_publication.md)
-

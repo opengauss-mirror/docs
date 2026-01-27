@@ -123,4 +123,3 @@ openGauss=# TRUNCATE TABLE tpcds.reason_p;
 --删除表。
 openGauss=# DROP TABLE tpcds.reason_p;
 ```
-

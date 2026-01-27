@@ -14,8 +14,8 @@ If the  **PREPARE TRANSACTION**  statement fails for any reason, it becomes a  *
 
 ## Precautions<a name="en-us_topic_0283137205_en-us_topic_0237122172_en-us_topic_0059779173_sa5991e597322481d9b5cf468c92b7af7"></a>
 
--   The transaction function is maintained automatically by the database, and should be not visible to users.
--   When running the  **PREPARE TRANSACTION**  statement, increase the value of  **max\_prepared\_transactions**  in configuration file  **postgresql.conf**. You are advised to set  **max\_prepared\_transactions**  to a value not less than that of  **max\_connections**  so that one pending prepared transaction is available for each session.
+- The transaction function is maintained automatically by the database, and should be not visible to users.
+- When running the  **PREPARE TRANSACTION**  statement, increase the value of  **max\_prepared\_transactions**  in configuration file  **postgresql.conf**. You are advised to set  **max\_prepared\_transactions**  to a value not less than that of  **max\_connections**  so that one pending prepared transaction is available for each session.
 
 ## Syntax<a name="en-us_topic_0283137205_en-us_topic_0237122172_en-us_topic_0059779173_s53fd0bedc6174ab7a4c21729b10b8889"></a>
 
@@ -34,4 +34,3 @@ Value range: The identifier must be written as a string literal, and must be les
 ## Helpful Links<a name="en-us_topic_0283137205_en-us_topic_0237122172_en-us_topic_0059779173_s2562d8e8d89a4cd981f08e57f14bb219"></a>
 
 [COMMIT PREPARED](commit_prepared.md)  and  [ROLLBACK PREPARED](rollback_prepared.md)
-

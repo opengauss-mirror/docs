@@ -6,7 +6,7 @@ An explicit cursor is used to process query statements, particularly when query 
 
 An explicit cursor performs the following six PL/SQL steps to process query statements:
 
-1.  **Define a static cursor:**  Define a cursor name and its corresponding  **SELECT**  statement.
+1. **Define a static cursor:**  Define a cursor name and its corresponding  **SELECT**  statement.
 
     [Figure 1](#en-us_topic_0237122244_en-us_topic_0059778930_f3cd97ed9f2474aa785f5626e468a75de)  shows the syntax diagram for defining a static cursor.
 
@@ -15,14 +15,14 @@ An explicit cursor performs the following six PL/SQL steps to process query stat
 
     Parameter description:
 
-    -   **cursor\_name**: defines a cursor name.
-    -   **parameter**: specifies cursor parameters. Only input parameters are allowed in the following format:
+    - **cursor\_name**: defines a cursor name.
+    - **parameter**: specifies cursor parameters. Only input parameters are allowed in the following format:
 
         ```
         parameter_name datatype default_expr
         ```
 
-    -   **select\_statement**: specifies a query statement.
+    - **select\_statement**: specifies a query statement.
 
     >[!NOTE]NOTE   
     >The system automatically determines whether the cursor can be used for backward fetches based on the execution plan.  
@@ -38,7 +38,7 @@ An explicit cursor performs the following six PL/SQL steps to process query stat
     **Figure  3**  dynamic\_cursor\_define::=<a name="en-us_topic_0237122244_en-us_topic_0059778930_fceaf870eaa73494496e8a65e7afc8cec"></a>  
     ![](figures/dynamic_cursor_define.png "dynamic_cursor_define")
 
-2.  **Open the static cursor:**  Execute the  **SELECT**  statement corresponding to the cursor. The query result is placed in the workspace and the pointer directs to the head of the workspace to identify the cursor result set. If the cursor query statement carries the  **FOR UPDATE**  option, the  **OPEN**  statement locks the data row corresponding to the cursor result set in the database table.
+2. **Open the static cursor:**  Execute the  **SELECT**  statement corresponding to the cursor. The query result is placed in the workspace and the pointer directs to the head of the workspace to identify the cursor result set. If the cursor query statement carries the  **FOR UPDATE**  option, the  **OPEN**  statement locks the data row corresponding to the cursor result set in the database table.
 
     [Figure 4](#en-us_topic_0237122244_en-us_topic_0059778930_fac5b397fa6184f35a416626255a9280d)  shows the syntax diagram for opening a static cursor.
 
@@ -54,29 +54,27 @@ An explicit cursor performs the following six PL/SQL steps to process query stat
 
     A PL/SQL program cannot use the OPEN statement to repeatedly open a cursor.
 
-3.  **Fetch cursor data**: Retrieve data rows in the result set and place them in specified output variables.
+3. **Fetch cursor data**: Retrieve data rows in the result set and place them in specified output variables.
 
     [Figure 6](#en-us_topic_0237122244_en-us_topic_0059778930_f0759ffa7118d4c4481c0f0fd9a600351)  shows the syntax diagrams for fetching cursor data.
 
     **Figure  6**  fetch\_cursor::=<a name="en-us_topic_0237122244_en-us_topic_0059778930_f0759ffa7118d4c4481c0f0fd9a600351"></a>  
     ![](figures/fetch_cursor.png "fetch_cursor")
 
-4.  Process the record.
-5.  Continue to process until the active set has no record.
-6.  **Close the cursor**: When fetching and finishing the data in the cursor result set, close the cursor immediately to release system resources used by the cursor and invalidate the workspace of the cursor so that the  **FETCH**  statement cannot be used to fetch data any more. A closed cursor can be reopened by an OPEN statement.
+4. Process the record.
+5. Continue to process until the active set has no record.
+6. **Close the cursor**: When fetching and finishing the data in the cursor result set, close the cursor immediately to release system resources used by the cursor and invalidate the workspace of the cursor so that the  **FETCH**  statement cannot be used to fetch data any more. A closed cursor can be reopened by an OPEN statement.
 
     [Figure 7](#en-us_topic_0237122244_en-us_topic_0059778930_fdd13133c237949828f65e55cb3ec2f5b)  shows the syntax diagram for closing a cursor.
 
     **Figure  7**  close\_cursor::=<a name="en-us_topic_0237122244_en-us_topic_0059778930_fdd13133c237949828f65e55cb3ec2f5b"></a>  
     ![](figures/close_cursor.jpg "close_cursor")
 
-
 ## Attribute<a name="en-us_topic_0237122244_en-us_topic_0059778930_s1bdd24dd1cbd463db67fcb2eb8a5dfbd"></a>
 
 Cursor attributes are used to control program procedures or know program status. When a DML statement is executed, the PL/SQL opens a built-in cursor and processes its result. A cursor is a memory segment for maintaining query results. It is opened when a DML statement is executed and closed when the execution is finished. An explicit cursor has the following attributes:
 
--   **%FOUND**  attribute: returns  **TRUE**  if the last fetch returns a row.
--   **%NOTFOUND**  attribute: works opposite to the  **%FOUND**  attribute.
--   **%ISOPEN**  attribute: returns  **TRUE**  if the cursor has been opened.
--   **%ROWCOUNT**  attribute: returns the number of records fetched from the cursor.
-
+- **%FOUND**  attribute: returns  **TRUE**  if the last fetch returns a row.
+- **%NOTFOUND**  attribute: works opposite to the  **%FOUND**  attribute.
+- **%ISOPEN**  attribute: returns  **TRUE**  if the cursor has been opened.
+- **%ROWCOUNT**  attribute: returns the number of records fetched from the cursor.

@@ -124,6 +124,7 @@ grcmd gencert -t <ca|client|server> [-d <days>]
 ```sh
 grcmd reload
 ```
+
 ### 11. datausage
 
 查询数据空间使用情况。

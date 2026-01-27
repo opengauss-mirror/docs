@@ -15,9 +15,9 @@ openGauss provides the  **gs\_checkperf**  tool for you to routinely check the o
 
 ## Precautions<a name="en-us_topic_0237152332_section4694838915381"></a>
 
--   When the streaming DR function is used, the DR cluster does not support this tool.
+- When the streaming DR function is used, the DR cluster does not support this tool.
 
--   The monitoring information of  **gs\_checkperf**  comes from tables in PMK mode. If the ANALYZE operation is not performed on such tables,  **gs\_checkperf**  may fail to be executed. An example of the error information is as follows:
+- The monitoring information of  **gs\_checkperf**  comes from tables in PMK mode. If the ANALYZE operation is not performed on such tables,  **gs\_checkperf**  may fail to be executed. An example of the error information is as follows:
 
     ```
     LOG:  Statistics in some tables or columns(pmk.pmk_snapshot.snapshot_id) are not collected.
@@ -34,37 +34,35 @@ openGauss provides the  **gs\_checkperf**  tool for you to routinely check the o
     analyze pmk.pmk_snapshot_datanode_stat;
     ```
 
-
 ## Syntax<a name="en-us_topic_0237152332_en-us_topic_0059778118_s48cce05cce9e43c4a17fa654f91b821a"></a>
 
--   Check the SSD performance \(as user  **root**\).
+- Check the SSD performance \(as user  **root**\).
 
     ```
     gs_checkperf -U USER [-o OUTPUT] -i SSD [-l LOGFILE]
     ```
 
--   Check the openGauss performance \(as the user for installing openGauss\).
+- Check the openGauss performance \(as the user for installing openGauss\).
 
     ```
     gs_checkperf [-U USER] [-o OUTPUT] [-i PMK] [--detail] [-l LOGFILE]
     ```
 
--   Display help information.
+- Display help information.
 
     ```
     gs_checkperf -? | --help
     ```
 
--   Display version information.
+- Display version information.
 
     ```
     gs_checkperf -V | --version
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0237152332_en-us_topic_0059778118_sbbcefb85880e44fcad49c37604f46506"></a>
 
--   -U
+- -U
 
     Specifies the name of the user for running openGauss.
 
@@ -72,7 +70,7 @@ openGauss provides the  **gs\_checkperf**  tool for you to routinely check the o
 
     Specify this parameter when you run the command as user  **root**.
 
--   -o
+- -o
 
     Specifies the file for saving performance check reports.
 
@@ -80,7 +78,7 @@ openGauss provides the  **gs\_checkperf**  tool for you to routinely check the o
 
     If this parameter is not specified, OS check results are displayed on the screen.
 
--   -i
+- -i
 
     Specifies the number of a check item. This parameter is case-insensitive. Format: -i PMK and -i SSD
 
@@ -92,24 +90,23 @@ openGauss provides the  **gs\_checkperf**  tool for you to routinely check the o
 
     If this parameter is not specified, the PMK item is checked by default as the openGauss user, and SSD item is checked by default as user  **root**.
 
--   --detail
+- --detail
 
     Displays detailed PMK check results.
 
--   -l
+- -l
 
     Specifies the path for saving log files.
 
     The default path is  **/var/log/gaussdb/omm/om/gs\_checkperf-YYYY-MM-DD\_hhmmss.log**.
 
--   -?, --help
+- -?, --help
 
     Displays help information.
 
--   -V, --version
+- -V, --version
 
     Displays version information.
-
 
 **Table  1**  Performance check items
 

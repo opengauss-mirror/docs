@@ -14,9 +14,9 @@ SELECT * FROM PG_ROLES;
 
 非[三权分立](separation_of_duties.md)时，只有系统管理员和具有CREATEROLE属性的用户才能创建、修改或删除角色。三权分立下，只有初始用户和具有CREATEROLE属性的用户才能创建、修改或删除角色。
 
--   要创建角色，请使用[CREATE ROLE](../sql_reference/create_role.md)。
--   要在现有角色中添加或删除用户，请使用[ALTER ROLE](../sql_reference/alter_role.md)。
--   要删除角色，请使用[DROP ROLE](../sql_reference/drop_role.md)。DROP ROLE只会删除角色，并不会删除角色中的成员用户帐户。
+- 要创建角色，请使用[CREATE ROLE](../sql_reference/create_role.md)。
+- 要在现有角色中添加或删除用户，请使用[ALTER ROLE](../sql_reference/alter_role.md)。
+- 要删除角色，请使用[DROP ROLE](../sql_reference/drop_role.md)。DROP ROLE只会删除角色，并不会删除角色中的成员用户帐户。
 
 ## 内置角色<a name="section210351882916"></a>
 
@@ -76,15 +76,13 @@ openGauss提供了一组默认角色，以gs\_role\_开头命名。它们提供�
 
 关于内置角色的管理有如下约束：
 
--   以gs\_role\_开头的角色名作为数据库的内置角色保留名，禁止新建以“gs\_role\_”开头的用户/角色，也禁止将已有的用户/角色重命名为以“gs\_role\_”开头；
--   禁止对内置角色的ALTER和DROP操作；
--   内置角色默认没有LOGIN权限，不设预置密码；
--   gsql元命令\\du和\\dg不显示内置角色的相关信息，但若显示指定了pattern为特定内置角色则会显示。
--   三权分立关闭时，初始用户、具有SYSADMIN权限的用户和具有内置角色ADMIN OPTION权限的用户有权对内置角色执行GRANT/REVOKE管理。三权分立打开时，初始用户和具有内置角色ADMIN OPTION权限的用户有权对内置角色执行GRANT/REVOKE管理。例如：
+- 以gs\_role\_开头的角色名作为数据库的内置角色保留名，禁止新建以“gs\_role\_”开头的用户/角色，也禁止将已有的用户/角色重命名为以“gs\_role\_”开头；
+- 禁止对内置角色的ALTER和DROP操作；
+- 内置角色默认没有LOGIN权限，不设预置密码；
+- gsql元命令\\du和\\dg不显示内置角色的相关信息，但若显示指定了pattern为特定内置角色则会显示。
+- 三权分立关闭时，初始用户、具有SYSADMIN权限的用户和具有内置角色ADMIN OPTION权限的用户有权对内置角色执行GRANT/REVOKE管理。三权分立打开时，初始用户和具有内置角色ADMIN OPTION权限的用户有权对内置角色执行GRANT/REVOKE管理。例如：
 
     ```
     GRANT gs_role_signal_backend TO user1;
     REVOKE gs_role_signal_backend FROM user1;
     ```
-
-

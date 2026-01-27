@@ -1,6 +1,6 @@
 # Prompt Message Function<a name="EN-US_TOPIC_0311139290"></a>
 
--   report\_application\_error
+- report\_application\_error
 
     Description: This function can be used to throw errors during PL execution.
 
@@ -39,5 +39,3 @@
     </tr>
     </tbody>
     </table>
-
-

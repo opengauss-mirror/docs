@@ -16,7 +16,7 @@ dssserver -D $DSS_HOME
 
 As an independent process, the dssserver tool needs to provide the **dss\_inst.ini** configuration file before starting the DSS server. The related configuration parameters are as follows:
 
--   LSNR\_PATH
+- LSNR\_PATH
 
     **Parameter description**: Specifies the path of the socket file required by the dssserver process.
 
@@ -24,7 +24,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **$DSS\_HOME**
 
--   LOG\_HOME
+- LOG\_HOME
 
     **Parameter description**: Specifies the log path.
 
@@ -32,7 +32,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **""**
 
--   \_LOG\_BACKUP\_FILE\_COUNT
+- \_LOG\_BACKUP\_FILE\_COUNT
 
     **Parameter description**: Specifies the maximum number of log files that can be retained.
 
@@ -40,7 +40,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **10**
 
--   \_LOG\_MAX\_FILE\_SIZE
+- \_LOG\_MAX\_FILE\_SIZE
 
     **Parameter description**: Specifies the maximum size of a log file.
 
@@ -48,7 +48,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **10M**
 
--   INST\_ID
+- INST\_ID
 
     **Parameter description**: Specifies the instance ID. The dssserver process ID varies depending on the primary and standby nodes.
 
@@ -56,7 +56,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **0**
 
--   STORAGE\_MODE
+- STORAGE\_MODE
 
     **Parameter description:** Specifies the storage device type of the DSS. Set this parameter to **RAID** or **CLUSTER\_RAID** for disk arrays.
 
@@ -64,7 +64,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **DISK**
 
--   \_LOG\_LEVEL
+- \_LOG\_LEVEL
 
     **Parameter description**: Specifies the log level.
 
@@ -72,7 +72,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **7**
 
--   MAX\_SESSION\_NUMS
+- MAX\_SESSION\_NUMS
 
     **Parameter description**: Specifies the maximum number of session connections.
 
@@ -80,7 +80,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **8192**
 
--   DISK\_LOCK\_INTERVAL
+- DISK\_LOCK\_INTERVAL
 
     **Parameter description**: Specifies the timeout interval for locking a disk lock.
 
@@ -88,7 +88,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **100**
 
--   DLOCK\_RETRY\_COUNT
+- DLOCK\_RETRY\_COUNT
 
     **Parameter description**: Specifies the number of disk locking retries.
 
@@ -96,7 +96,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **50**
 
--   \_AUDIT\_BACKUP\_FILE\_COUNT
+- \_AUDIT\_BACKUP\_FILE\_COUNT
 
     **Parameter description**: Specifies the number of audit backup files.
 
@@ -104,7 +104,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **10**
 
--   \_AUDIT\_MAX\_FILE\_SIZE
+- \_AUDIT\_MAX\_FILE\_SIZE
 
     **Parameter description**: Specifies the maximum size of an audit backup file.
 
@@ -112,7 +112,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **10M**
 
--   \_LOG\_FILE\_PERMISSIONS
+- \_LOG\_FILE\_PERMISSIONS
 
     **Parameter description**: Specifies the log file permission.
 
@@ -120,7 +120,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **600**
 
--   \_LOG\_PATH\_PERMISSIONS
+- \_LOG\_PATH\_PERMISSIONS
 
     **Parameter description**: Specifies the log path permission.
 
@@ -128,7 +128,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **700**
 
--   \_SHM\_KEY
+- \_SHM\_KEY
 
     **Parameter description**: Specifies the shared memory key.
 
@@ -136,7 +136,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **1**
 
--   DSS\_NODES\_LIST
+- DSS\_NODES\_LIST
 
     **Parameter description**: Specifies the URL for MES communication between DSS server nodes.
 
@@ -144,7 +144,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **0:127.0.0.1:1611**
 
--   INTERCONNECT\_TYPE
+- INTERCONNECT\_TYPE
 
     **Parameter description**: Specifies the communication protocol type.
 
@@ -152,7 +152,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **TCP**
 
--   INTERCONNECT\_CHANNEL\_NUM
+- INTERCONNECT\_CHANNEL\_NUM
 
     **Parameter description**: Specifies the number of MES connection channels for internal communication.
 
@@ -160,7 +160,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **2**
 
--   WORK\_THREAD\_COUNT
+- WORK\_THREAD\_COUNT
 
     **Parameter description**: Specifies the number of MES worker threads for internal communication.
 
@@ -168,7 +168,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **2**
 
--   RECV\_MSG\_POOL\_SIZE
+- RECV\_MSG\_POOL\_SIZE
 
     **Parameter description**: Specifies the size of the message receiving memory pool.
 
@@ -176,7 +176,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **16M**
 
--   MES\_ELAPSED\_SWIT
+- MES\_ELAPSED\_SWIT
 
     **Parameter description**: Specifies whether to enable the MES statistics delay counting function for internal communication.
 
@@ -184,7 +184,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **FALSE**
 
--   DISK\_LOCK\_FILE\_PATH
+- DISK\_LOCK\_FILE\_PATH
 
     **Parameter description**: Specifies the path for storing lock files when **STORAGE\_MODE** is set to **DISK**.
 
@@ -192,7 +192,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **$DSS\_HOME**
 
--   SSL\_CA
+- SSL\_CA
 
     **Parameter description**: Specifies the root certificate of the CA server.
 
@@ -200,7 +200,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **""**
 
--   SSL\_KEY
+- SSL\_KEY
 
     **Parameter description**: Specifies the private key file of the server, used to decrypt data encrypted using the public key.
 
@@ -208,7 +208,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **""**
 
--   SSL\_CRL
+- SSL\_CRL
 
     **Parameter description**: Specifies the CRL.
 
@@ -216,7 +216,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **""**
 
--   SSL\_CERT
+- SSL\_CERT
 
     **Parameter description**: Specifies the server certificate file, including the public key of the server.
 
@@ -224,7 +224,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **""**
 
--   SSL\_CIPHER
+- SSL\_CIPHER
 
     **Parameter description**: Specifies the encryption algorithm used for SSL communication.
 
@@ -232,7 +232,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **""**
 
--   SSL\_PWD\_CIPHERTEX
+- SSL\_PWD\_CIPHERTEX
 
     **Parameter description**: Specifies the private key password.
 
@@ -240,7 +240,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **""**
 
--   SSL\_CERT\_NOTIFY\_TIME
+- SSL\_CERT\_NOTIFY\_TIME
 
     **Parameter description**: Specifies the number of days prior to SSL server certificate expiration that a user will receive a reminder.
 
@@ -248,7 +248,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **30**
 
--   POOL\_NAMES
+- POOL\_NAMES
 
     **Parameter description:** Specifies the storage pool configuration.
 
@@ -256,7 +256,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **""**
 
--   IMAGE\_NAMES
+- IMAGE\_NAMES
 
     **Parameter description:** Specifies the image configuration.
 
@@ -264,7 +264,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: empty
 
--   CEPH\_CONFIG
+- CEPH\_CONFIG
 
     **Parameter description:** Specifies the Ceph cluster configuration file.
 
@@ -272,7 +272,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value:** **"/etc/ceph/ceph.conf"**
 
--   VOLUME\_TYPES
+- VOLUME\_TYPES
 
     **Parameter description:** Specifies the volume type.
 
@@ -280,7 +280,7 @@ As an independent process, the dssserver tool needs to provide the **dss\_inst.i
 
     **Default value**: **""**
 
--   DSS\_CM\_SO\_NAME
+- DSS\_CM\_SO\_NAME
 
     **Parameter description**: Specifies the binary file name of CM.
 

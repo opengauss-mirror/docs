@@ -8,77 +8,77 @@ The  **ADD MAPPING FOR**  form installs a list of dictionaries to be consulted f
 
 The  **ALTER MAPPING FOR**  form removes existing mapping for those token types and then adds specified mappings. 
 
-**ALTER MAPPING REPLACE ... ** **WITH ... **  and  **ALTER MAPPING FOR...** **REPLACE ... ** **WITH ...**  options replace  **old\_dictionary**  with  **new\_dictionary**. Note that only when  **pg\_ts\_config\_map**  has tuples corresponding to  **maptokentype**  and  **old\_dictionary**, the update will succeed. If the update fails, no messages are returned.
+**ALTER MAPPING REPLACE ...** **WITH ...**  and  **ALTER MAPPING FOR...** **REPLACE ...** **WITH ...**  options replace  **old\_dictionary**  with  **new\_dictionary**. Note that only when  **pg\_ts\_config\_map**  has tuples corresponding to  **maptokentype**  and  **old\_dictionary**, the update will succeed. If the update fails, no messages are returned.
 
 The  **DROP MAPPING FOR**  form deletes all dictionaries for the specified token types in the text search configuration. If  **IF EXISTS**  is not specified and the string type mapping specified by  **DROP MAPPING FOR**  does not exist in text search configuration, an error will occur in the database.
 
 ## Precautions<a name="en-us_topic_0283137411_en-us_topic_0237122079_en-us_topic_0059778328_s269e65b549b14fc7b0350b5ff9c25722"></a>
 
--   If a search configuration is referenced \(to create indexes\), users are not allowed to modify the text search configuration.
--   To use  **ALTER TEXT SEARCH CONFIGURATION**, you must be the owner of the configuration.
+- If a search configuration is referenced \(to create indexes\), users are not allowed to modify the text search configuration.
+- To use  **ALTER TEXT SEARCH CONFIGURATION**, you must be the owner of the configuration.
 
 ## Syntax<a name="en-us_topic_0283137411_en-us_topic_0237122079_en-us_topic_0059778328_s4d87827fb0cf409aabcd17379f82b1c3"></a>
 
--   Add text search configuration string mapping.
+- Add text search configuration string mapping.
 
 ```
 ALTER TEXT SEARCH CONFIGURATION name 
     ADD MAPPING FOR token_type [, ... ] WITH dictionary_name [, ... ];
 ```
 
--   Modify the text search configuration dictionary syntax.
+- Modify the text search configuration dictionary syntax.
 
 ```
 ALTER TEXT SEARCH CONFIGURATION name 
     ALTER MAPPING FOR token_type [, ... ] REPLACE old_dictionary WITH new_dictionary;
 ```
 
--   Modify the text search configuration string.
+- Modify the text search configuration string.
 
 ```
 ALTER TEXT SEARCH CONFIGURATION name
     ALTER MAPPING FOR token_type [, ... ] WITH dictionary_name [, ... ];
 ```
 
--   Change the text search configuration dictionary.
+- Change the text search configuration dictionary.
 
 ```
 ALTER TEXT SEARCH CONFIGURATION name
     ALTER MAPPING REPLACE old_dictionary WITH new_dictionary;
 ```
 
--   Remove text search configuration string mapping.
+- Remove text search configuration string mapping.
 
 ```
 ALTER TEXT SEARCH CONFIGURATION name
     DROP MAPPING [ IF EXISTS ] FOR token_type [, ... ];
 ```
 
--   Rename the owner of text search configuration.
+- Rename the owner of text search configuration.
 
 ```
 ALTER TEXT SEARCH CONFIGURATION name OWNER TO new_owner;
 ```
 
--   Rename the text search configuration.
+- Rename the text search configuration.
 
 ```
 ALTER TEXT SEARCH CONFIGURATION name RENAME TO new_name;
 ```
 
--   Rename the namespace of text search configuration.
+- Rename the namespace of text search configuration.
 
 ```
 ALTER TEXT SEARCH CONFIGURATION name SET SCHEMA new_schema;
 ```
 
--   Modify the attributes of the text search configuration.
+- Modify the attributes of the text search configuration.
 
 ```
 ALTER TEXT SEARCH CONFIGURATION name SET ( { configuration_option = value } [, ...] );
 ```
 
--   Reset the attributes of text search configuration.
+- Reset the attributes of text search configuration.
 
 ```
 ALTER TEXT SEARCH CONFIGURATION name RESET ( {configuration_option} [, ...] );
@@ -86,46 +86,45 @@ ALTER TEXT SEARCH CONFIGURATION name RESET ( {configuration_option} [, ...] );
 
 ## Parameter Description<a name="en-us_topic_0283137411_en-us_topic_0237122079_en-us_topic_0059778328_sf1c3321032274c75b33ec6927629ba5a"></a>
 
--   **name**
+- **name**
 
     Specifies the name \(optionally schema-qualified\) of an existing text search configuration.
 
--   **token\_type**
+- **token\_type**
 
     Specifies the name of a token type that is emitted by the configuration's parser. For details, see  [Parser](parser.md).
 
--   **dictionary\_name**
+- **dictionary\_name**
 
     Specifies the name of a text search dictionary. If multiple dictionaries are listed, they are searched in the specified order.
 
--   **old\_dictionary**
+- **old\_dictionary**
 
     Specifies the name of a text search dictionary to be replaced in the mapping. 
 
--   **new\_dictionary**
+- **new\_dictionary**
 
     Specifies the name of a text search dictionary to be substituted for  **old\_dictionary**.
 
--   **new\_owner**
+- **new\_owner**
 
     Specifies the new owner of the text search configuration.
 
--   **new\_name**
+- **new\_name**
 
     Specifies the new name of the text search configuration. 
 
--   **new\_schema**
+- **new\_schema**
 
     Specifies the new schema for the text search configuration.
 
--   **configuration\_option**
+- **configuration\_option**
 
     Specifies the text search configuration option. For details, see  [CREATE TEXT SEARCH CONFIGURATION](create-text-search-configuration.md).
 
--   **value**
+- **value**
 
     Specifies the value of text search configuration option.
-
 
 ## Examples<a name="en-us_topic_0283137411_en-us_topic_0237122079_en-us_topic_0059778328_s5e2c22ccd01e485788ada368262a3447"></a>
 
@@ -172,4 +171,3 @@ See  [Examples](create-text-search-configuration.md#en-us_topic_0283137399_en-us
 ## Helpful Links<a name="en-us_topic_0283137411_en-us_topic_0237122079_en-us_topic_0059778328_sb5eacaaa1ba74a8abb0193ac98c34512"></a>
 
 [CREATE TEXT SEARCH CONFIGURATION](create-text-search-configuration.md)  and  [DROP TEXT SEARCH CONFIGURATION](drop-text-search-configuration.md)
-

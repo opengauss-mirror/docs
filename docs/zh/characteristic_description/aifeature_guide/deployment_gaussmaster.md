@@ -10,11 +10,11 @@ python3 startup.py service setup -c confpath
 
 执行完该命令后 ，会在confpath目录下生成2个配置文件，分别为：
 
--   gaussmaster.conf：
+- gaussmaster.conf：
 
     此文件中定义了GaussMaster服务需要用到的向量数据库、DBMind、log、WEB-SERVICE等信息。
 
--   model\_config.yaml：
+- model\_config.yaml：
 
     此文件定义了GaussMaster服务需要使用的大语言模型的信息。
 

@@ -10,12 +10,12 @@ After the DCF mode is enabled, database nodes support Paxos-based replication an
 
 ## Description<a name="section73081759173318"></a>
 
--   During log replication, DCF supports log compression before transmission to reduce network bandwidth usage.
--   DCF supports passive nodes, which do not participate in node election and only synchronize and replay logs. When this type of nodes is heavily loaded during log synchronization, flow control is performed.
--   DCF supports logger nodes, which participate in node election and voting. However, the logger nodes only replicate DCF logs. Xlogs are not replicated and redo is not performed.
--   DCF supports online switchover between follower and passive nodes. That is, without interrupting services, a node can switch over between the follower and passive roles.
--   DCF supports forcible startup of the minority of nodes. In case that the majority of database instances are faulty, a minority of standby nodes are selected and forcibly promoted to primary, and other normal standby nodes replicate logs from the primary nodes.
--   DCF supports primary node selection. When the original primary node is faulty, a new primary node is automatically selected from the remaining standby nodes on the premise that data consistency is ensured.
+- During log replication, DCF supports log compression before transmission to reduce network bandwidth usage.
+- DCF supports passive nodes, which do not participate in node election and only synchronize and replay logs. When this type of nodes is heavily loaded during log synchronization, flow control is performed.
+- DCF supports logger nodes, which participate in node election and voting. However, the logger nodes only replicate DCF logs. Xlogs are not replicated and redo is not performed.
+- DCF supports online switchover between follower and passive nodes. That is, without interrupting services, a node can switch over between the follower and passive roles.
+- DCF supports forcible startup of the minority of nodes. In case that the majority of database instances are faulty, a minority of standby nodes are selected and forcibly promoted to primary, and other normal standby nodes replicate logs from the primary nodes.
+- DCF supports primary node selection. When the original primary node is faulty, a new primary node is automatically selected from the remaining standby nodes on the premise that data consistency is ensured.
 
 ## Enhancements<a name="section29043486"></a>
 
@@ -28,4 +28,3 @@ To use this function, you need to enable DCF during installation and deployment.
 ## Dependencies<a name="section57771982"></a>
 
 None.
-

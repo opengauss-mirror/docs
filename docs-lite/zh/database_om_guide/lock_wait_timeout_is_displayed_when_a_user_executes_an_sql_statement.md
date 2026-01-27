@@ -14,6 +14,4 @@ ERROR:  Lock wait timeout: thread 140533638080272 waiting for ShareLock on relat
 
 ## 处理办法<a name="section72471253195718"></a>
 
--   需要分析锁超时的原因，查看系统表pg\_locks，pg\_stat\_activity可以找出超时的SQL语句。
-
-
+- 需要分析锁超时的原因，查看系统表pg\_locks，pg\_stat\_activity可以找出超时的SQL语句。

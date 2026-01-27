@@ -6,16 +6,16 @@ openGauss的DPA（Data Processing Accelerator）哈希聚合加速功能是基�
 
 环境需求：需要ARM64（aarch64）架构的硬件平台，并且系统中已安装配置UADK加速库（libwd_dae.so）。
 
--   适用场景
-    -   向量化执行的大规模数据哈希聚合：在列存表或行存转向量化场景下执行的VecHashAgg操作
-    -   简单聚合函数：使用SUM、COUNT基础聚合函数的查询
+- 适用场景
+    - 向量化执行的大规模数据哈希聚合：在列存表或行存转向量化场景下执行的VecHashAgg操作
+    - 简单聚合函数：使用SUM、COUNT基础聚合函数的查询
 
--   支持的聚合算子：
-    -   Vector Hash Aggregate（向量化哈希聚合）
+- 支持的聚合算子：
+    - Vector Hash Aggregate（向量化哈希聚合）
 
--   硬件限制：
-    -   仅支持ARM64（aarch64）架构平台
-    -   需要支持UADK的硬件加速器
+- 硬件限制：
+    - 仅支持ARM64（aarch64）架构平台
+    - 需要支持UADK的硬件加速器
 
 ## 支持的数据类型与聚合函数
 
@@ -38,8 +38,9 @@ DPA功能对数据类型和聚合函数有严格的限制，不满足条件时�
 | COUNT | INT4、INT8、CHAR、VARCHAR | 支持多种类型的计数 |
 
 >[!TIP]须知
->-   当前不支持`count(*)`全行计数、`sum(numeric)`等聚合操作。
->-   不支持`MAX`、`MIN`聚合函数。
+>
+>- 当前不支持`count(*)`全行计数、`sum(numeric)`等聚合操作。
+>- 不支持`MAX`、`MIN`聚合函数。
 
 ### 列数量限制
 
@@ -52,15 +53,18 @@ DPA功能对数据类型和聚合函数有严格的限制，不满足条件时�
 ## 配置与使用
 
 启用DPA哈希聚合加速功能，需要进行以下配置：
+
 1. 安装UADK加速库，参考[UADK文档](https://docs.openeuler.org/zh/docs/22.03_LTS/docs/UADK/UADK-quick-start.html)进行安装。
 
 2. 修改数据库配置文件，设置UADK动态库路径（postgresql.conf）。该参数需要重启openGauss生效。
+
 ```
 # 设置libwd_dae.so动态库路径，默认值为libwd_dae.so
 uadk_path = 'libwd_dae.so'
 ```
 
 3. 开启DPA哈希聚合加速
+
 ```sql
 -- 会话级别开启
 SET enable_dpa_hashagg = on;
@@ -117,15 +121,17 @@ GROUP BY region_id, product_code;
 当DPA功能无法正常工作时，可以通过以下方式进行诊断：
 
 1. **检查平台架构**：确认运行环境为ARM64架构。
-```bash
-uname -m
-# 输出应为 aarch64
-```
+
+    ```bash
+    uname -m
+    # 输出应为 aarch64
+    ```
 
 2. **检查UADK库加载**：查看数据库日志，确认UADK库是否加载成功。
-```
-LOG:  UADK AGG library loaded successfully
-```
+
+    ```
+    LOG:  UADK AGG library loaded successfully
+    ```
 
 3. **查看WARNING日志**：当DPA回退CPU执行时，会输出相关WARNING信息。常见的WARNING包括：
    - `DPA: Key columns number X exceeds hardware limit 9, fallback to CPU`
@@ -166,4 +172,3 @@ LOG:  UADK AGG library loaded successfully
 
 **设置建议：**
 如果libwd_dae.so不在系统默认库搜索路径中，需要指定完整路径，例如`/usr/local/lib/libwd_dae.so`。
-

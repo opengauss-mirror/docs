@@ -50,4 +50,3 @@ PG\_GET\_INVALID\_BACKENDS视图提供显示数据库主节点上连接到当前
 </tr>
 </tbody>
 </table>
-

@@ -18,13 +18,13 @@
 
 要将基于磁盘的表转换为MOT，请执行以下步骤：
 
-1.  暂停应用程序活动。
-2.  使用gs\_dump工具将表数据转储到磁盘的物理文件中。请确保使用data only。
-3.  重命名原始基于磁盘的表。
-4.  创建同名同模式的MOT。请确保使用创建FOREIGN关键字指定该表为MOT。
-5.  使用gs\_restore将磁盘文件的数据加载/恢复到数据库表中。
-6.  浏览或手动验证所有原始数据是否正确导入到新的MOT中。下面将举例说明。
-7.  恢复应用程序活动。
+1. 暂停应用程序活动。
+2. 使用gs\_dump工具将表数据转储到磁盘的物理文件中。请确保使用data only。
+3. 重命名原始基于磁盘的表。
+4. 创建同名同模式的MOT。请确保使用创建FOREIGN关键字指定该表为MOT。
+5. 使用gs\_restore将磁盘文件的数据加载/恢复到数据库表中。
+6. 浏览或手动验证所有原始数据是否正确导入到新的MOT中。下面将举例说明。
+7. 恢复应用程序活动。
 
 >>[!TIP]须知
 >
@@ -36,7 +36,7 @@
 
 将customer表迁移到MOT，操作步骤如下：
 
-1.  检查源表列类型。验证MOT支持所有类型，详情请参阅“不支持的数据类型”章节。
+1. 检查源表列类型。验证MOT支持所有类型，详情请参阅“不支持的数据类型”章节。
 
     ```
     benchmarksql-# \d+ customer 
@@ -49,7 +49,7 @@
     Options: orientation=row, compression=no
     ```
 
-2.  请检查源表数据。
+2. 请检查源表数据。
 
     ```
     benchmarksql=# select * from customer; 
@@ -60,7 +60,7 @@
     (2 rows)
     ```
 
-3.  只能使用gs\_dump转储表数据。
+3. 只能使用gs\_dump转储表数据。
 
     ```
     $ gs_dump -Fc benchmarksql -a --table customer -f customer.dump -p 16000
@@ -68,14 +68,14 @@
     gs_dump[port='15500'][benchmarksql][2020-06-04 16:45:38]: total time: 332  ms
     ```
 
-4.  重命名源表。
+4. 重命名源表。
 
     ```
     benchmarksql=# alter table customer rename to customer_bk; 
     ALTER TABLE
     ```
 
-5.  创建与源表完全相同的MOT。
+5. 创建与源表完全相同的MOT。
 
     ```
     benchmarksql=# create foreign table customer (x int, y int); 
@@ -86,7 +86,7 @@
     (0 rows)
     ```
 
-6.  将源转储数据导入到新MOT中。
+6. 将源转储数据导入到新MOT中。
 
     ```
     $ gs_restore -C -d benchmarksql customer.dump -p 16000
@@ -108,5 +108,3 @@
      public | customer_bk | table         | aharon | {orientation=row,compression=no} 
     (2 rows)
     ```
-
-

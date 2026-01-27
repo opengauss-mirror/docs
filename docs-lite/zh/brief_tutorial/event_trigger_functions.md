@@ -1,6 +1,6 @@
 # 事件触发器函数<a name="ZH-CN_TOPIC_0289014904"></a>
 
--   pg\_event\_trigger\_ddl\_commands
+- pg\_event\_trigger\_ddl\_commands
 
     描述：在ddl_command_end事件触发器中，该函数用于报告运行中的DDL命令。
 
@@ -29,7 +29,7 @@
     END; $$ LANGUAGE plpgsql;
     ```
 
--   pg\_event\_trigger\_dropped\_objects
+- pg\_event\_trigger\_dropped\_objects
 
     描述：在sql_drop事件触发器中，让被删除的对象列表对用户可见。
 
@@ -63,7 +63,7 @@
     $$;
     ```
 
--   pg\_event\_trigger\_table\_rewrite\_oid
+- pg\_event\_trigger\_table\_rewrite\_oid
 
     描述：在table_rewrite事件触发器中，让被重写的对象oid对用户可见。
 
@@ -87,7 +87,7 @@
     $$;
     ```
 
--   pg\_event\_trigger\_table\_rewrite\_reason
+- pg\_event\_trigger\_table\_rewrite\_reason
 
     描述：在table_rewrite事件触发器中，让被重写的对象的重写原因对用户可见。
 

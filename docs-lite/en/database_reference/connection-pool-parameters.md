@@ -36,8 +36,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Value range**: Boolean
 
--   **on**  indicates that the connections of a connection pool will be reclaimed.
--   **off**  indicates that the connections of a connection pool will not be reclaimed.
+- **on**  indicates that the connections of a connection pool will be reclaimed.
+- **off**  indicates that the connections of a connection pool will not be reclaimed.
 
 **Default value**:  **on**
-

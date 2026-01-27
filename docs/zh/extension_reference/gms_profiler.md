@@ -27,7 +27,6 @@ openGauss=# CREATE Extension gms_profiler;
 
 ### 使用Extension<a name="section107391050141118"></a>
 
-
 创建用于测试的存储过程。
 
 ```sql
@@ -75,6 +74,7 @@ openGauss=# select * from gms_profiler.plsql_profiler_runs;
 openGauss=# select * from gms_profiler.plsql_profiler_units;
 openGauss=# select * from gms_profiler.plsql_profiler_data;
 ```
+
 ### 删除Extension<a name="section1587441381220"></a>
 
 在openGauss中删除gms_profiler Extension的方法如下所示：
@@ -86,5 +86,3 @@ openGauss=# DROP Extension gms_profiler [CASCADE];
 >[!NOTE]说明
 >
 >如果Extension被其它对象依赖，需要加入CASCADE（级联）关键字，删除所有依赖对象。
-
-

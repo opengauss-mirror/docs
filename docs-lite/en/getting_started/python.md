@@ -28,25 +28,25 @@ openGauss supports the psycopg2 feature and allows psycopg2 to be connected in S
 
 ## Loading a Driver<a name="section163169384819"></a>
 
--   Before using the driver, perform the following operations:
-    1.  Download the compiled psycopg2 package from the  [openGauss website](https://opengauss.org/zh/download/).
+- Before using the driver, perform the following operations:
+    1. Download the compiled psycopg2 package from the  [openGauss website](https://opengauss.org/zh/download/).
 
         >[!NOTE]NOTE 
         >The psycopg2 downloaded from the openGauss website matches Python 3.6. If you use Python of another version, you need to compile psycopg2. The compilation method is similar to that in the PostgreSQL database. You only need to modify the code for verifying the version number of  **setup.py**  during compilation by running the following command:
+>
         >```
         >sed -i "s/(pgmajor, pgminor, pgpatch)/(9, 2, 4)/g" setup.py
         >```
 
-    2.  Decompress the driver package of the corresponding version and copy  **psycopg2**  to the third-party package folder \(that is, the  **site-packages**  directory\) in the Python installation directory.
-    3.  Ensure that the permission on the  **psycopg2**  directory is at least  **755**. Otherwise, the file cannot be accessed due to permission issues.
-    4.  For a non-database user, set  **LD\_LIBRARY\_PATH**  to the  **lib**  directory generated after decompression.
+    2. Decompress the driver package of the corresponding version and copy  **psycopg2**  to the third-party package folder \(that is, the  **site-packages**  directory\) in the Python installation directory.
+    3. Ensure that the permission on the  **psycopg2**  directory is at least  **755**. Otherwise, the file cannot be accessed due to permission issues.
+    4. For a non-database user, set  **LD\_LIBRARY\_PATH**  to the  **lib**  directory generated after decompression.
 
--   Load a database driver before creating a database connection:
+- Load a database driver before creating a database connection:
 
     ```
     import  psycopg2
     ```
-
 
 ## Connecting to a Database<a name="section1132514408610"></a>
 
@@ -261,4 +261,3 @@ NAME =,  Mark
 ADDRESS =,  Rich-Mond
 SALARY =,  65000.0
 ```
-

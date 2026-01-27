@@ -16,16 +16,15 @@ DROP ROLE [ IF EXISTS ] role_name [, ...];
 
 ## Parameter Description<a name="en-us_topic_0283136937_en-us_topic_0237122147_en-us_topic_0059778848_sabe550f7ed48409b8ffd1d88ca9f0725"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Reports a notice instead of an error if the specified role does not exist.
 
--   **role\_name**
+- **role\_name**
 
     Specifies the name of the role to be deleted.
 
     Value range: an existing role name
-
 
 ## Examples<a name="en-us_topic_0283136937_en-us_topic_0237122147_en-us_topic_0059778848_s40114b50f3f046c18213beaa37b84f59"></a>
 
@@ -34,4 +33,3 @@ See  [Examples](create_role.md#en-us_topic_0283136858_en-us_topic_0237122112_en-
 ## Helpful Links<a name="en-us_topic_0283136937_en-us_topic_0237122147_en-us_topic_0059778848_sbaf144c395d044f88acd5e545bf09f97"></a>
 
 [CREATE ROLE](create_role.md),  [ALTER ROLE](alter_role.md), and  [SET ROLE](set_role.md)
-

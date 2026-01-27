@@ -6,14 +6,14 @@ Modify the inheritance table, including changing the regular table to an inherit
 
 ## Precautions<a name="en-us_topic_0283137443_en-us_topic_0237122090_en-us_topic_0059778762_s6a18169201b2335fab67e21579272c81"></a>
 
--   Only tables that fully contain the parent table structure can be changed to child tables.
--   After terminating the inheritance relationship, although it is no longer a child table, there are still columns with the same name and type inherited from the parent table, and the existing data will not be deleted.
--   Modify the table structure of the parent table, and inherit the table accordingly.
--   Modify the data of the parent table, and the data of the inherited table will be updated together.
--   The not null, default, and check constraints inherited from the parent table cannot be deleted or modified.
--   The parent table deletes a column, the child table's column will not be deleted when using like parent_name clause to create a table.
--   The parent table deletes a column, the child table columns will be deleted when not using like parent_name clause to create a table.
--   Indexes, uniqueness, primary keys, and foreign key constraints which are using include all to inherit from the parent table can be deleted or modified.
+- Only tables that fully contain the parent table structure can be changed to child tables.
+- After terminating the inheritance relationship, although it is no longer a child table, there are still columns with the same name and type inherited from the parent table, and the existing data will not be deleted.
+- Modify the table structure of the parent table, and inherit the table accordingly.
+- Modify the data of the parent table, and the data of the inherited table will be updated together.
+- The not null, default, and check constraints inherited from the parent table cannot be deleted or modified.
+- The parent table deletes a column, the child table's column will not be deleted when using like parent_name clause to create a table.
+- The parent table deletes a column, the child table columns will be deleted when not using like parent_name clause to create a table.
+- Indexes, uniqueness, primary keys, and foreign key constraints which are using include all to inherit from the parent table can be deleted or modified.
 
 ## Syntax<a name="en-us_topic_0283137443_en-us_topic_0237122090_en-us_topic_0059778762_s54ad19af647d4983a3bc61bb7a645180"></a>
 
@@ -21,17 +21,17 @@ Modify the inheritance table, including changing the regular table to an inherit
 ALTER TABLE table_name { inherit | no inherit } parent_name;
 ```
 >
-> -   please refer to [alter table](alter_table.md) chapter to get more detailed parameter explanations.
+> - please refer to [alter table](alter_table.md) chapter to get more detailed parameter explanations.
 
 ## Parameter Description<a name="en-us_topic_0283137443_en-us_topic_0237122090_en-us_topic_0059778762_sfb7a4cb223ab41709a1677119a8d42100"></a>
 
--   **table\_name**
+- **table\_name**
 
     Specifies the name of the child table.
 
     Value range: an existing partitioned table name.
 
--   **parent\_name**
+- **parent\_name**
 
     Specifies the name of parent table to inherit.
 

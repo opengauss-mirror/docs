@@ -1,11 +1,11 @@
 # SQL
 
--   **[CREATE INDEX](spqplugin-CREATE-INDEX.md)**
+- **[CREATE INDEX](spqplugin-CREATE-INDEX.md)**
 
--   **[SELECT](spqplugin-SELECT.md)**
+- **[SELECT](spqplugin-SELECT.md)**
 
--   **[INSERT](spqplugin-INSERT.md)**
+- **[INSERT](spqplugin-INSERT.md)**
 
--   **[DELETE](spqplugin-DELETE.md)**
+- **[DELETE](spqplugin-DELETE.md)**
 
--   **[UPDATE](spqplugin-UPDATE.md)**
+- **[UPDATE](spqplugin-UPDATE.md)**
