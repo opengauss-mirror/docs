@@ -23,7 +23,7 @@
 - 同时，兼容后的时间类型，使用 :: 进行类型转换，如果目标类型没有指定精度，那么默认精度也为 0。
 - 使用MySQL JDBC 8.0.19及以上的驱动连接数据库，获取TIME/TIMESTAMP类型时，如果是表字段，则精度为字段实际精度；否则，精度固定为6。例如执行`select timt('1:1:1.11')`，通过ResultSet.getString打印出来的结果为`1:1:1.110000`。
 
-### date 类型输入
+## date 类型输入
 
 支持如下格式：
 
@@ -232,7 +232,7 @@ openGauss=# SELECT * FROM test_timestamp;
 - 如果输入'0'，openGauss 会解析成为 2000 年；但是当输入的是整数0，openGauss 会解析成为 0，输出表现为0000，表示 year类型的 0 值
 - MySQL中不支持使用DATE, DATETIME, TIMESTAMP直接赋值到YEAR类型，但是openGauss支持。如下示例Update语句Mysql执行失败，openGauss执行成功。
 
-  ```
+  ```sql
   create table t1(`year` year, `date` date);
   insert into t1 values ('2024', '2024-01-01');
   

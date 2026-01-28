@@ -2,7 +2,7 @@
 
 本章节主要介绍如何获取openGauss镜像，并通过Docker安装，以便用户能快速开启数据库之旅。
 
-## 1. 获取镜像
+## 获取镜像
 
 openGauss数据库镜像主要有两种获取方式，分别可以通过`docker pull`和`docker load`拉取对应镜像，下面将详细介绍这两种获取路径。
 
@@ -48,7 +48,7 @@ opengauss          latest              9aa832ba6684        2 hours ago         1
 > 
 > 以上镜像包会周期性更新，可以根据自身需求修改路径获取最新镜像包。<br>
 
-## 2. 运行容器
+## 运行容器
 
 以`opengauss/opengauss:latest` 版本为例，以下命令将启动数据库并映射宿主机的端口到容器：
 
@@ -85,7 +85,7 @@ openGauss 镜像配置了本地信任机制，因此在容器内连接数据库�
 - `-e GS_PORT=YourPort`：指定容器内数据库端口，默认为`5432`
 - `-e GS_DB=YourDbName`：在容器内创建数据库，默认为`postgres`
 
-## 3. 容器运行测试
+## 容器运行测试
 
 ### 验证容器运行状态
 
@@ -123,7 +123,7 @@ $ gsql -d postgres -p 5432
 $ gsql -d postgres -U gaussdb -W YourPassoword -h your-host-ip -p 8888 
 ```
 
-## 4. 其他配置
+## 其他配置
 
 ### 数据持久化
 

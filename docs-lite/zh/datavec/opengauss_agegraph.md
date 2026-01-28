@@ -7,7 +7,7 @@
 
 ## 环境准备
 
-### penGauss 容器化部署
+### openGauss 容器化部署
 
 可参考[openGauss容器镜像安装](../installation_guide/installing_the_container_image.md)部署openGauss。
 

@@ -149,10 +149,10 @@ openGauss$#  v_handle int;
 openGauss$#  src raw;
 openGauss$# BEGIN
 openGauss$# content := '123';
-openGauss$# v_handle := GMS_COMPRESS.LZ_COMPRESS_OPEN(content);
-openGauss$# src := '123';
-openGauss$# GMS_COMPRESS.LZ_COMPRESS_ADD(v_handle,content,src);
-openGauss$# GMS_COMPRESS.LZ_COMPRESS_CLOSE(v_handle,content);
+openGauss$#    v_handle := GMS_COMPRESS.LZ_COMPRESS_OPEN(content);
+openGauss$#    src := '123';
+openGauss$#    GMS_COMPRESS.LZ_COMPRESS_ADD(v_handle,content,src);
+openGauss$#    GMS_COMPRESS.LZ_COMPRESS_CLOSE(v_handle,content);
 openGauss$#  RAISE NOTICE 'content=%', content;
 openGauss$# END;
 openGauss$# /
@@ -166,11 +166,11 @@ openGauss$#  content BLOB;
 openGauss$#  v_handle int;
 openGauss$#  v_raw raw;
 openGauss$# BEGIN
-openGauss$# content := '123';
+openGauss$#   content := '123';
 openGauss$#  content := GMS_COMPRESS.LZ_COMPRESS(content);
-openGauss$# v_handle := GMS_COMPRESS.LZ_UNCOMPRESS_OPEN(content);
+openGauss$#    v_handle := GMS_COMPRESS.LZ_UNCOMPRESS_OPEN(content);
 openGauss$#  GMS_COMPRESS.LZ_UNCOMPRESS_EXTRACT(v_handle, v_raw);
-openGauss$# GMS_COMPRESS.LZ_UNCOMPRESS_CLOSE(v_handle);
+openGauss$#    GMS_COMPRESS.LZ_UNCOMPRESS_CLOSE(v_handle);
 openGauss$#  RAISE NOTICE 'content=%', content;
 openGauss$#  RAISE NOTICE 'v_raw=%', v_raw;
 openGauss$# END;
@@ -186,12 +186,12 @@ openGauss$#   content BLOB;
 openGauss$#   v_handle int;
 openGauss$#   v_bool boolean;
 openGauss$# BEGIN
-openGauss$#  content := '123';
+openGauss$#   content := '123';
 openGauss$#   v_bool := false;
-openGauss$#  v_handle := GMS_COMPRESS.LZ_COMPRESS_OPEN(content);
+openGauss$#    v_handle := GMS_COMPRESS.LZ_COMPRESS_OPEN(content);
 openGauss$#   v_bool := GMS_COMPRESS.ISOPEN(v_handle);
 openGauss$#   RAISE NOTICE 'v_bool=%', v_bool;
-openGauss$#  GMS_COMPRESS.LZ_COMPRESS_CLOSE(v_handle,content);
+openGauss$#    GMS_COMPRESS.LZ_COMPRESS_CLOSE(v_handle,content);
 openGauss$#   v_bool := GMS_COMPRESS.ISOPEN(v_handle);
 openGauss$#   RAISE NOTICE 'v_bool=%', v_bool;
 openGauss$# END;
