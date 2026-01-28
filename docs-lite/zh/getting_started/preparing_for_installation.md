@@ -6,11 +6,11 @@
 
 ### 操作步骤<a name="zh-cn_topic_0289899746_zh-cn_topic_0283136484_zh-cn_topic_0241802590_zh-cn_topic_0085434667_zh-cn_topic_0059782060_section62223956163549"></a>
 
-1.  从openGauss开源社区下载对应平台的安装包。
-    1.  登录[openGauss开源社区](https://opengauss.org/zh/download/)，选择对应平台的最新安装包下载。对于个人开发者或非企业级环境，下载极简安装包（不安装OM等组件）即可。
-    2.  单击“下载”。
+1. 从openGauss开源社区下载对应平台的安装包。
+    1. 登录[openGauss开源社区](https://opengauss.org/zh/download/)，选择对应平台的最新安装包下载。对于个人开发者或非企业级环境，下载极简安装包（不安装OM等组件）即可。
+    2. 单击“下载”。
 
-2.  检查安装包。
+2. 检查安装包。
 
     解压安装包，检查安装目录及文件是否齐全。在安装包所在目录执行以下命令：
 
@@ -49,6 +49,7 @@
     sha256sum openGauss-OM-6.0.0-openEuler20.03-aarch64.tar.gz
     sha256sum openGauss-Server-6.0.0-openEuler20.03-aarch64.tar.bz2
     ```
+
     命令执行完成后，输出校验值。
 
 2. 判断步骤1计算的两个校验值分别与校验文件1和校验文件2中的值是否一致。

@@ -5,9 +5,9 @@
 目前 [openGauss AGEGraph](../datavec/gallery_engine_age.md) 已经提供了图数据库引擎的能力。本文将详细介绍如何借助大模型以及 openGauss 图数据库快速提取文档知识图谱并持久化。 随后，将问题输入大模型，大模型自动提取关键词并转换为图查询语句连接 openGauss 图数据库进行图数据检索。最后，将图数据输入大模型生成问题答案反馈给用户。
 ![AGEGraph](./figures/openGauss-AGEGraph.png)
 
-### 1.环境准备
+## 环境准备
 
-#### 1.1 openGauss 容器化部署
+### penGauss 容器化部署
 
 可参考[openGauss容器镜像安装](../installation_guide/installing_the_container_image.md)部署openGauss。
 
@@ -20,17 +20,17 @@ CONTAINER ID        IMAGE                                                  COMMA
 
 ```
 
-#### 1.2 python依赖安装
+### python依赖安装
 
 ```
 pip install -U langchain_community langchain langgraph  langchain-ollama langchain-experimental  langchain-openai langchain-opengauss
 ```
 
-### 2. 利用 模型和 openGauss AGEGraph 快速构建知识图谱和检索
+### 利用 模型和 openGauss AGEGraph 快速构建知识图谱和检索
 
 本文使用百炼大模型，取得api-key，并且配置DASHSCOPE_API_KEY环境变量
 
-#### 2.1 初始化大模型
+#### 初始化大模型
 
 ```
 from langchain_community.llms import Tongyi
@@ -41,7 +41,7 @@ graph_llm =Tongyi(model="qwen-plus", temperature=0, base_url="https://dashscope.
 
 ```
 
-#### 2.2 通过大模型提取文本数据中的实体和关系
+#### 通过大模型提取文本数据中的实体和关系
 
 ```
 from langchain_core.documents import Document
@@ -78,7 +78,7 @@ Nodes from graph doc:[Node(id='Nobel Prize', type='Award', properties={}), Node(
 Relationships from graph doc:[Relationship(source=Node(id='Marie Curie', type='Person', properties={}), target=Node(id='radioactivity', type='ResearchField', properties={}), type='FIELD_OF_RESEARCH', properties={}), Relationship(source=Node(id='Marie Curie', type='Person', properties={}), target=Node(id='Nobel Prize', type='Award', properties={}), type='AWARD', properties={}), Relationship(source=Node(id='Marie Curie', type='Person', properties={}), target=Node(id='Nobel Prize', type='Award', properties={}), type='AWARD', properties={}), Relationship(source=Node(id='Marie Curie', type='Person', properties={}), target=Node(id='Pierre Curie', type='Person', properties={}), type='SPOUSE', properties={}), Relationship(source=Node(id='Pierre Curie', type='Person', properties={}), target=Node(id='Nobel Prize', type='Award', properties={}), type='AWARD', properties={}), Relationship(source=Node(id='Marie Curie', type='Person', properties={}), target=Node(id='University of Paris', type='Organization', properties={}), type='WORKS_AT', properties={})]
 ```
 
-#### 2.3 openGauss AGE插件安装
+#### openGauss AGE插件安装
 
 如果对应的数据库已经创建age插件，此步骤可以忽略
 
@@ -104,7 +104,7 @@ finally:
     connection.close()
 ```
 
-#### 2.4 实例化 openGauss AGEGraph 客户端，持久化图数据
+#### 实例化 openGauss AGEGraph 客户端，持久化图数据
 
 ```
 from langchain_opengauss import openGaussAGEGraph, openGaussSettings
@@ -122,7 +122,7 @@ graph.refresh_schema()
 
 ```
 
-#### 2.5 大模型 Text2Cypher：提取问题关键词并生成图检索语句
+#### 大模型 Text2Cypher：提取问题关键词并生成图检索语句
 
 通过增加提示词`cypher_prompt`，可以让大模型生成的图查询语句更加精准
 
@@ -162,9 +162,9 @@ RETURN p.id
 Full Context:
 [{'p_id': 'Pierre Curie'}, {'p_id': 'Marie Curie'}]
 
-### 3. 大模型依据检索的图数据生成回答
+### 大模型依据检索的图数据生成回答
 
-#### 3.1 设置提示词
+#### 设置提示词
 
 ```
 prompt = PromptTemplate(
@@ -180,7 +180,7 @@ prompt = PromptTemplate(
 
 ```
 
-#### 3.2 生成回答
+#### 生成回答
 
 ```
 from langchain_core.output_parsers import StrOutputParser
@@ -199,6 +199,6 @@ print(answer)
 Marie Curie and Pierre Curie received the Nobel Prize. They were recognized for their groundbreaking work in radioactivaity.
 ```
 
-### 4. 总结
+### 总结
 
 结合大模型和 openGauss AGEGraph 图数据库，我们可以快速进行知识图谱的生成、持久化以及检索，完成 GraphRAG 的搭建。此外，当前 openGauss 还支持标量、向量类型存储与检索，只需部署 openGauss 数据库，即可实现支持标量、向量、知识图谱多路召回的更强 RAG 系统。

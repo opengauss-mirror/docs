@@ -90,7 +90,7 @@ If this parameter is set to a large value, openGauss requires more System V shar
 
 ## sysadmin\_reserved\_connections<a name="en-us_topic_0283136886_en-us_topic_0237124695_en-us_topic_0059777636_scd9eb4b789bd41c39bc47e632f518c53"></a>
 
-**Parameter description**: Specifies the minimum number of connections reserved for administrators. You are advised not to set this parameter to a large value. This parameter is used together with the  *max\*connections_parameter. The maximum number of connections of the administrator is equal to the value of*max\*connections_  +  *sysadmin\*reserved\_connections_.
+**Parameter description**: Specifies the minimum number of connections reserved for administrators. You are advised not to set this parameter to a large value. This parameter is used together with the  \*max\*connections_parameter. The maximum number of connections of the administrator is equal to the value of\*max\*connections_  +  *sysadmin\*reserved\_connections_.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 

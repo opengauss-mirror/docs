@@ -39,11 +39,11 @@ age源码地址：<https://gitee.com/opengauss/Plugin/tree/master/contrib/age>
 
 1. 安装必要依赖
 
-```
-yum install gcc glibc glib-common readline readline-devel zlib zlib-devel flex bison perl
-```
+    ```
+    yum install gcc glibc glib-common readline readline-devel zlib zlib-devel flex bison perl
+    ```
 
-> gcc 版本需要>=7.3.0
+    > gcc 版本需要>=7.3.0
 
 2. 需要将openGauss安装目录的bin目录配置到环境变量中 执行命令
 

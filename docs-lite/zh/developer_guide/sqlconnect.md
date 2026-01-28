@@ -67,11 +67,11 @@ SQLRETURN  SQLConnect(SQLHDBC        ConnectionHandle,
 
 ## 返回值<a name="zh-cn_topic_0238272889_zh-cn_topic_0237120419_zh-cn_topic_0059778729_s2854e438cc754b68aec0788b1cd26b3d"></a>
 
--   SQL\_SUCCESS：表示调用正确。
--   SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
--   SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
--   SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
--   SQL\_STILL\_EXECUTING：表示语句正在执行。
+- SQL\_SUCCESS：表示调用正确。
+- SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
+- SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
+- SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
+- SQL\_STILL\_EXECUTING：表示语句正在执行。
 
 ## 注意事项<a name="zh-cn_topic_0238272889_zh-cn_topic_0237120419_zh-cn_topic_0059778729_s570c6037911d4c57a42ca982c83b9c6d"></a>
 
@@ -80,4 +80,3 @@ SQLRETURN  SQLConnect(SQLHDBC        ConnectionHandle,
 ## 示例<a name="zh-cn_topic_0238272889_zh-cn_topic_0237120419_zh-cn_topic_0059778729_s941ebfb1b130484d9e8e7225aa91a590"></a>
 
 参见：[示例](example_odbc.md)
-

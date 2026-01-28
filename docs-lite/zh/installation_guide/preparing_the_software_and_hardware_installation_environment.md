@@ -206,13 +206,13 @@ yum install readline-devel libaio-devel libedit-devel libxml2-devel lz4-devel nu
    SELINUX=disabled
    ```
 
-2.  重新启动操作系统。
+2. 重新启动操作系统。
 
     ```
     reboot
     ```
 
-3.  检查防火墙是否关闭。
+3. 检查防火墙是否关闭。
 
     ```
     systemctl status firewalld
@@ -222,14 +222,14 @@ yum install readline-devel libaio-devel libedit-devel libxml2-devel lz4-devel nu
 
     若防火墙状态显示为inactive \(dead\)，则无需再关闭防火墙。
 
-4.  <a name="zh-cn_topic_0283136490_li17330102819394"></a>关闭防火墙。
+4. <a name="zh-cn_topic_0283136490_li17330102819394"></a>关闭防火墙。
 
     ```
     systemctl disable firewalld.service
     systemctl stop firewalld.service
     ```
 
-5.  在其他主机上重复[1](#zh-cn_topic_0283136490_zh-cn_topic_0241802566_li17785744465)到[4](#zh-cn_topic_0283136490_li17330102819394)。
+5. 在其他主机上重复[1](#zh-cn_topic_0283136490_zh-cn_topic_0241802566_li17785744465)到[4](#zh-cn_topic_0283136490_li17330102819394)。
 
 **设置字符集参数**
 
@@ -243,13 +243,13 @@ vim /etc/profile
 
 在各数据库节点上，确保时区和时间一致。
 
-1.  执行如下命令检查各数据库节点时间和时区是否一致。如果各数据库节点时间和时区不一致区，请执行[步骤2](#zh-cn_topic_0283136490_li1238816343545)\~[步骤3](#zh-cn_topic_0283136490_li153615819546)。
+1. 执行如下命令检查各数据库节点时间和时区是否一致。如果各数据库节点时间和时区不一致区，请执行[步骤2](#zh-cn_topic_0283136490_li1238816343545)\~[步骤3](#zh-cn_topic_0283136490_li153615819546)。
 
     ```
     date
     ```
 
-2.  <a name="zh-cn_topic_0283136490_li1238816343545"></a>使用如下命令将各数据库节点/usr/share/zoneinfo/目录下的时区文件拷贝为/etc/localtime文件。
+2. <a name="zh-cn_topic_0283136490_li1238816343545"></a>使用如下命令将各数据库节点/usr/share/zoneinfo/目录下的时区文件拷贝为/etc/localtime文件。
 
     ```
     cp /usr/share/zoneinfo/$地区/$时区 /etc/localtime
@@ -258,12 +258,11 @@ vim /etc/profile
     >[!NOTE]说明
     >_$地区/$时区为需要设置时区的信息，例如：Asia_/Shanghai。
 
-3.  <a name="zh-cn_topic_0283136490_li153615819546"></a>使用**date -s**命令将各数据库节点的时间设置为统一时间，举例如下。
+3. <a name="zh-cn_topic_0283136490_li153615819546"></a>使用**date -s**命令将各数据库节点的时间设置为统一时间，举例如下。
 
     ```
     date -s "Sat Sep 27 16:00:07 CST 2020"
     ```
-
 
 **\(可选）关闭swap交换内存**
 
@@ -308,18 +307,18 @@ swapoff -a
    RemoveIPC=no
    ```
 
-3.  重新加载配置参数。
+3. 重新加载配置参数。
 
     ```
     systemctl daemon-reload
     systemctl restart systemd-logind
     ```
 
-4.  <a name="zh-cn_topic_0283136490_zh-cn_topic_0241802566_li17785744467"></a>检查修改是否生效。
+4. <a name="zh-cn_topic_0283136490_zh-cn_topic_0241802566_li17785744467"></a>检查修改是否生效。
 
     ```
     loginctl show-session | grep RemoveIPC
     systemctl show systemd-logind | grep RemoveIPC
     ```
 
-5.  在其他主机上重复[步骤1](#zh-cn_topic_0283136490_zh-cn_topic_0241802566_li17785744466)到[步骤4](#zh-cn_topic_0283136490_zh-cn_topic_0241802566_li17785744467)。
+5. 在其他主机上重复[步骤1](#zh-cn_topic_0283136490_zh-cn_topic_0241802566_li17785744466)到[步骤4](#zh-cn_topic_0283136490_zh-cn_topic_0241802566_li17785744467)。

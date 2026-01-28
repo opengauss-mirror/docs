@@ -121,7 +121,7 @@
    >
    >- 切割点的大小要位于正在被切割的分区的分区键范围内，指定切割点的方式只能把一个分区切割成两个新分区。
     
- - 不指定切割点no\_split\_point\_clause的语法为。
+- 不指定切割点no\_split\_point\_clause的语法为。
         
      ```
      INTO { ( partition_less_than_item [, ...] ) | ( partition_start_end_item [, ...] ) }
@@ -137,14 +137,14 @@
        >
        >- 在同一语句中partition\_less\_than\_item和partition\_start\_end\_item两者不可同时使用；不同split语句之间没有限制。
 
- - 分区项partition\_less\_than\_item的语法为。
+- 分区项partition\_less\_than\_item的语法为。
 
         ```
         PARTITION partition_name VALUES LESS THAN ( { partition_value | MAXVALUE }  [, ...] ) | MAXVALUE
             [ TABLESPACE tablespacename ]
         ```
 
- - 分区项partition\_start\_end\_item的语法为，其约束参见[START END语法描述](../sql_reference/create_table_partition.md#zh-cn_topic_0283136653_zh-cn_topic_0237122119_section1163224811518)。
+- 分区项partition\_start\_end\_item的语法为，其约束参见[START END语法描述](../sql_reference/create_table_partition.md#zh-cn_topic_0283136653_zh-cn_topic_0237122119_section1163224811518)。
 
         ```
         PARTITION partition_name {
@@ -155,7 +155,7 @@
         } [TABLESPACE tablespace_name]
         ```
 
- - add\_clause子语法用于为指定的分区表添加一个或多个分区。
+- add\_clause子语法用于为指定的分区表添加一个或多个分区。
 
    ```
        ADD PARTITION ( partition_col1_name = partition_col1_value [, partition_col2_name = partition_col2_value ] [, ...] )

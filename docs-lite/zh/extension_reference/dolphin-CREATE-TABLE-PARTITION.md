@@ -28,26 +28,25 @@
 
 分区可以提供若干好处：
 
--   某些类型的查询性能可以得到极大提升。特别是表中访问率较高的行位于一个单独分区或少数几个分区上的情况下。分区可以减少数据的搜索空间，提高数据访问效率。
--   当查询或更新一个分区的大部分记录时，连续扫描那个分区而不是访问整个表可以获得巨大的性能提升。
--   如果需要大量加载或者删除的记录位于单独的分区上，则可以通过直接读取或删除那个分区以获得巨大的性能提升，同时还可以避免由于大量DELETE导致的VACUUM超载（仅范围分区）。
+- 某些类型的查询性能可以得到极大提升。特别是表中访问率较高的行位于一个单独分区或少数几个分区上的情况下。分区可以减少数据的搜索空间，提高数据访问效率。
+- 当查询或更新一个分区的大部分记录时，连续扫描那个分区而不是访问整个表可以获得巨大的性能提升。
+- 如果需要大量加载或者删除的记录位于单独的分区上，则可以通过直接读取或删除那个分区以获得巨大的性能提升，同时还可以避免由于大量DELETE导致的VACUUM超载（仅范围分区）。
 
 相比于内核语法，dolphin的rebuild,remove,check,repair,optimize,truncate,analyze,exchange,reorganize都做了B兼容模式下的特色修改。
 
 ## 注意事项<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_s0bb17f15d73a4d978ef028b2686e0f7a"></a>
 
--   唯一约束和主键约束的约束键包含所有分区键将为约束创建LOCAL索引，否则创建GLOBAL索引。
--   目前哈希分区和列表分区仅支持单列构建分区键，暂不支持多列构建分区键。
--   只需要有间隔分区表的INSERT权限，往该表INSERT数据时就可以自动创建分区。
--   对于分区表PARTITION FOR \(values\)语法，values只能是常量。
--   对于分区表PARTITION FOR \(values\)语法，values在需要数据类型转换时，建议使用强制类型转换，以防隐式类型转换结果与预期不符。
--   分区数最大值为1048575个，一般情况下业务不可能创建这么多分区，这样会导致内存不足。应参照参数local\_syscache\_threshold的值合理创建分区，分区表使用内存大致为（分区数 \* 3 / 1024）MB。理论上分区占用内存不允许大于local\_syscache\_threshold的值，同时还需要预留部分空间以供其他功能使用。
--   使用table_indexclause创建分区表上的索引为LOCAL索引，不支持选择GLOBAL索引。
--   支持使用表达式当作分区键，允许分区键使用算术运算符 "+"、"-"、"*"。
--   只支持部分函数允许在分区键中使用，支持的函数为:
+- 唯一约束和主键约束的约束键包含所有分区键将为约束创建LOCAL索引，否则创建GLOBAL索引。
+- 目前哈希分区和列表分区仅支持单列构建分区键，暂不支持多列构建分区键。
+- 只需要有间隔分区表的INSERT权限，往该表INSERT数据时就可以自动创建分区。
+- 对于分区表PARTITION FOR \(values\)语法，values只能是常量。
+- 对于分区表PARTITION FOR \(values\)语法，values在需要数据类型转换时，建议使用强制类型转换，以防隐式类型转换结果与预期不符。
+- 分区数最大值为1048575个，一般情况下业务不可能创建这么多分区，这样会导致内存不足。应参照参数local\_syscache\_threshold的值合理创建分区，分区表使用内存大致为（分区数 \* 3 / 1024）MB。理论上分区占用内存不允许大于local\_syscache\_threshold的值，同时还需要预留部分空间以供其他功能使用。
+- 使用table_indexclause创建分区表上的索引为LOCAL索引，不支持选择GLOBAL索引。
+- 支持使用表达式当作分区键，允许分区键使用算术运算符 "+"、"-"、"*"。
+- 只支持部分函数允许在分区键中使用，支持的函数为:
     ABS()、CEILING()、DATEDIFF()、DAY()、DAYOFMONTH()、DAYOFWEEK()、DAYOFYEAR()、EXTRACT() 、FLOOR()、HOUR()、MICROSECOND()、MINUTE()、MOD()、MONTH()、QUARTER()、SECOND()、TIME_TO_SEC()、TO_DAYS()、TO_SECONDS()、UNIX_TIMESTAMP()、WEEKDAY()、YEAR()、YEARWEEK()。
--   表达式用作分区键时，只支持设置一个partition key，且分区为range、hash和list分区，另外暂不支持列存表。
-
+- 表达式用作分区键时，只支持设置一个partition key，且分区为range、hash和list分区，另外暂不支持列存表。
 
 ## 语法格式<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 
@@ -76,7 +75,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     [ TABLESPACE tablespace_name ]
     [ COMPRESSION [=] compression_arg ]
     [ ENGINE [=] engine_name ]
-	除了WITH选项外允许输入多次同一种create_option，以最后一次的输入为准。
+ 除了WITH选项外允许输入多次同一种create_option，以最后一次的输入为准。
 ```
 
 其中参数part_option为：
@@ -88,8 +87,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
   }
   ```
 
-
--   列约束column\_constraint：
+- 列约束column\_constraint：
 
     ```
     [ CONSTRAINT constraint_name ]
@@ -106,7 +104,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
     ```
 
--   表约束table\_constraint：
+- 表约束table\_constraint：
 
     ```
     [ CONSTRAINT constraint_name ]
@@ -140,16 +138,16 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 - 其中`col_name ( length )`为前缀键，column_name为前缀键的字段名，length为前缀长度。前缀键将取指定字段数据的前缀作为索引键值，可以减少索引占用的存储空间。含有前缀键字段的过滤条件和连接条件可以使用索引。
   
     >[!NOTE]说明
-    >-  前缀键支持的索引方法：Btree、UBtree。
-    >-  前缀键的字段的数据类型必须是二进制类型或字符类型（不包括特殊字符类型）。
-    >-  前缀长度必须是不超过2676的正整数，并且不能超过字段的最大长度。对于二进制类型，前缀长度以字节数为单位。对于非二进制字符类型，前缀长度以字符数为单位。键值的实际长度受内部页面限制，若字段中含有多字节字符、或者一个索引上有多个键，索引行长度可能会超限，导致报错，设定较长的前缀长度时请考虑此情况。
+    >- 前缀键支持的索引方法：Btree、UBtree。
+    >- 前缀键的字段的数据类型必须是二进制类型或字符类型（不包括特殊字符类型）。
+    >- 前缀长度必须是不超过2676的正整数，并且不能超过字段的最大长度。对于二进制类型，前缀长度以字节数为单位。对于非二进制字符类型，前缀长度以字符数为单位。键值的实际长度受内部页面限制，若字段中含有多字节字符、或者一个索引上有多个键，索引行长度可能会超限，导致报错，设定较长的前缀长度时请考虑此情况。
 
 - 其中参数index_option为：
 
   ```
   index_option:{
-  	  COMMENT 'string'
-  	| index_type
+     COMMENT 'string'
+   | index_type
   }
   ```
   
@@ -161,22 +159,20 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
   { INCLUDING | EXCLUDING } { DEFAULTS | GENERATED | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | RELOPTIONS| ALL }
   ```
 
-
--   索引存储参数index\_parameters：
+- 索引存储参数index\_parameters：
 
     ```
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
     [ USING INDEX TABLESPACE tablespace_name ]
     ```
 
-
--   partition\_less\_than\_item：
+- partition\_less\_than\_item：
 
     ```
     PARTITION partition_name VALUES LESS THAN ( { partition_value | MAXVALUE } ) | MAXVALUE [TABLESPACE tablespace_name] [part_option [ ...]]
     ```
 
--   partition\_start\_end\_item：
+- partition\_start\_end\_item：
 
     ```
     PARTITION partition_name {
@@ -187,81 +183,80 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     } [TABLESPACE tablespace_name] [part_option [ ...]]
     ```
 
-
 ## 参数说明<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_sd2701df1d7364084a7791592def4e9eb"></a>
 
--   **IF NOT EXISTS**
+- **IF NOT EXISTS**
 
     如果已经存在相同名称的表，不会抛出一个错误，而会发出一个通知，告知表关系已存在。
 
--   **partition\_table\_name**
+- **partition\_table\_name**
 
     分区表的名称。
 
     取值范围：字符串，要符合标识符的命名规范。
 
--   **column\_name**
+- **column\_name**
 
     新表中要创建的字段名。
 
     取值范围：字符串，要符合标识符的命名规范。
 
--   **data\_type**
+- **data\_type**
 
     字段的数据类型。
 
--   **COLLATE  collation**
+- **COLLATE  collation**
 
     COLLATE子句指定列的排序规则（该列必须是可排列的数据类型）。如果没有指定，则使用默认的排序规则。排序规则可以使用“select \* from pg\_collation;”命令从pg\_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。
 
--   **CONSTRAINT constraint\_name**
+- **CONSTRAINT constraint\_name**
 
     列约束或表约束的名称。可选的约束子句用于声明约束，新行或者更新的行必须满足这些约束才能成功插入或更新。
 
     定义约束有两种方法：
 
-    -   列约束：作为一个列定义的一部分，仅影响该列。
-    -   表约束：不和某个列绑在一起，可以作用于多个列。
+    - 列约束：作为一个列定义的一部分，仅影响该列。
+    - 表约束：不和某个列绑在一起，可以作用于多个列。
 
--   **LIKE source\_table \[ like\_option ... \]**
+- **LIKE source\_table \[ like\_option ... \]**
 
     LIKE子句声明一个表，新表自动从这个表里面继承所有字段名及其数据类型和非空约束。
 
     和INHERITS不同，新表与原来的表之间在创建动作完毕之后是完全无关的。在源表做的任何修改都不会传播到新表中，并且也不可能在扫描源表的时候包含新表的数据。
 
-    -   字段缺省表达式只有在声明了INCLUDING DEFAULTS之后才会包含进来。缺省是不包含缺省表达式的，即新表中所有字段的缺省值都是NULL。
-    -   如果指定了INCLUDING GENERATED，则源表列的生成表达式会复制到新表中。默认不复制生成表达式。
-    -   非空约束将总是复制到新表中，CHECK约束则仅在指定了INCLUDING CONSTRAINTS的时候才复制，而其他类型的约束则永远也不会被复制。此规则同时适用于表约束和列约束。
-    -   和INHERITS不同，被复制的列和约束并不使用相同的名称进行融合。如果明确的指定了相同的名称或者在另外一个LIKE子句中，将会报错。
-    -   如果指定了INCLUDING INDEXES，则源表上的索引也将在新表上创建，默认不建立索引。
-    -   如果指定了INCLUDING STORAGE，则拷贝列的STORAGE设置也将被拷贝，默认情况下不包含STORAGE设置。
-    -   如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释也会被拷贝过来。默认情况下，不拷贝源表的注释。
-    -   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）也将拷贝至新表。默认情况下，不拷贝源表的存储参数。
-    -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION和INCLUDING RELOPTIONS的内容。
+    - 字段缺省表达式只有在声明了INCLUDING DEFAULTS之后才会包含进来。缺省是不包含缺省表达式的，即新表中所有字段的缺省值都是NULL。
+    - 如果指定了INCLUDING GENERATED，则源表列的生成表达式会复制到新表中。默认不复制生成表达式。
+    - 非空约束将总是复制到新表中，CHECK约束则仅在指定了INCLUDING CONSTRAINTS的时候才复制，而其他类型的约束则永远也不会被复制。此规则同时适用于表约束和列约束。
+    - 和INHERITS不同，被复制的列和约束并不使用相同的名称进行融合。如果明确的指定了相同的名称或者在另外一个LIKE子句中，将会报错。
+    - 如果指定了INCLUDING INDEXES，则源表上的索引也将在新表上创建，默认不建立索引。
+    - 如果指定了INCLUDING STORAGE，则拷贝列的STORAGE设置也将被拷贝，默认情况下不包含STORAGE设置。
+    - 如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释也会被拷贝过来。默认情况下，不拷贝源表的注释。
+    - 如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）也将拷贝至新表。默认情况下，不拷贝源表的存储参数。
+    - INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION和INCLUDING RELOPTIONS的内容。
 
--   **WITH \( storage\_parameter \[= value\] \[, ... \] \)**
+- **WITH \( storage\_parameter \[= value\] \[, ... \] \)**
 
     这个子句为表或索引指定一个可选的存储参数。参数的详细描述如下所示：
 
-    -   FILLFACTOR
+    - FILLFACTOR
 
         一个表的填充因子（fillfactor）是一个介于10和100之间的百分数。100（完全填充）是默认值。如果指定了较小的填充因子，INSERT操作仅按照填充因子指定的百分率填充表页。每个页上的剩余空间将用于在该页上更新行，这就使得UPDATE有机会在同一页上放置同一条记录的新版本，这比把新版本放置在其他页上更有效。对于一个从不更新的表将填充因子设为100是最佳选择，但是对于频繁更新的表，选择较小的填充因子则更加合适。该参数对于列存表没有意义。
 
         取值范围：10\~100
 
-    -   ORIENTATION
+    - ORIENTATION
 
         决定了表的数据的存储方式。
 
         取值范围：
 
-        -   COLUMN：表的数据将以列式存储。
-        -   ROW（缺省值）：表的数据将以行式存储。
+        - COLUMN：表的数据将以列式存储。
+        - ROW（缺省值）：表的数据将以行式存储。
 
             >[!TIP]须知
             >orientation不支持修改。
         
-    -    STORAGE\_TYPE
+    - STORAGE\_TYPE
     
          指定存储引擎类型，该参数设置成功后就不再支持修改。
     
@@ -271,8 +266,8 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
         - 默认值，不指定表时，默认是Append-Only存储。
     
     - COMPRESSION
-      -   列存表的有效值为LOW/MIDDLE/HIGH/YES/NO，压缩级别依次升高，默认值为LOW。
-      -   行存表不支持压缩。
+      - 列存表的有效值为LOW/MIDDLE/HIGH/YES/NO，压缩级别依次升高，默认值为LOW。
+      - 行存表不支持压缩。
     
     - MAX\_BATCHROW
     
@@ -341,42 +336,42 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
   >[!TIP]须知
   >
-  >-   每个分区都需要指定一个上边界。
-  >-   在加载dolphin插件的B兼容库下，分区键为有符号整型时，分区上边界的类型为int8；分区键为无符号整型时，分区上边界的类型为uint8，因此允许设置上边界的值超过分区键的最大值。
-  >-   分区列表是按照分区上边界升序排列的，值较小的分区位于值较大的分区之前。
+  >- 每个分区都需要指定一个上边界。
+  >- 在加载dolphin插件的B兼容库下，分区键为有符号整型时，分区上边界的类型为int8；分区键为无符号整型时，分区上边界的类型为uint8，因此允许设置上边界的值超过分区键的最大值。
+  >- 分区列表是按照分区上边界升序排列的，值较小的分区位于值较大的分区之前。
 
 - **PARTITION partition\_name \{START \(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)\}** |  **\{START \(partition\_value\) END \(partition\_value|MAXVALUE\) | MAXVALUE**\} | \{START\(partition\_value\)**\} | **\{END \(partition\_value | MAXVALUE\) | MAXVALUE**\}
 
   指定各分区的信息，各参数意义如下：
 
-  -   partition\_name：范围分区的名称或名称前缀，除以下情形外（假定其中的partition\_name是p1），均为分区的名称。
-      -   若该定义是START+END+EVERY从句，则语义上定义的分区的名称依次为p1\_1, p1\_2, ...。例如对于定义“PARTITION p1 START\(1\) END\(4\) EVERY\(1\)”，则生成的分区是：\[1, 2\), \[2, 3\) 和 \[3, 4\)，名称依次为p1\_1, p1\_2和p1\_3，即此处的p1是名称前缀。
-      -   若该定义是第一个分区定义，且该定义有START值，则范围（MINVALUE, START）将自动作为第一个实际分区，其名称为p1\_0，然后该定义语义描述的分区名称依次为p1\_1, p1\_2, ...。例如对于完整定义“PARTITION p1 START\(1\), PARTITION p2 START\(2\)”，则生成的分区是：\(MINVALUE, 1\), \[1, 2\) 和 \[2, MAXVALUE\)，其名称依次为p1\_0, p1\_1和p2，即此处p1是名称前缀，p2是分区名称。这里MINVALUE表示最小值。
+  - partition\_name：范围分区的名称或名称前缀，除以下情形外（假定其中的partition\_name是p1），均为分区的名称。
+      - 若该定义是START+END+EVERY从句，则语义上定义的分区的名称依次为p1\_1, p1\_2, ...。例如对于定义“PARTITION p1 START\(1\) END\(4\) EVERY\(1\)”，则生成的分区是：\[1, 2\), \[2, 3\) 和 \[3, 4\)，名称依次为p1\_1, p1\_2和p1\_3，即此处的p1是名称前缀。
+      - 若该定义是第一个分区定义，且该定义有START值，则范围（MINVALUE, START）将自动作为第一个实际分区，其名称为p1\_0，然后该定义语义描述的分区名称依次为p1\_1, p1\_2, ...。例如对于完整定义“PARTITION p1 START\(1\), PARTITION p2 START\(2\)”，则生成的分区是：\(MINVALUE, 1\), \[1, 2\) 和 \[2, MAXVALUE\)，其名称依次为p1\_0, p1\_1和p2，即此处p1是名称前缀，p2是分区名称。这里MINVALUE表示最小值。
 
-  -   partition\_value：范围分区的端点值（起始或终点），取值依赖于partition\_key的类型，不可是MAXVALUE。
-  -   interval\_value：对\[START，END\) 表示的范围进行切分，interval\_value是指定切分后每个分区的宽度，不可是MAXVALUE；如果（END-START）值不能整除以EVERY值，则仅最后一个分区的宽度小于EVERY值。
-  -   MAXVALUE：表示最大值，它通常用于设置最后一个范围分区的上边界。
+  - partition\_value：范围分区的端点值（起始或终点），取值依赖于partition\_key的类型，不可是MAXVALUE。
+  - interval\_value：对\[START，END\) 表示的范围进行切分，interval\_value是指定切分后每个分区的宽度，不可是MAXVALUE；如果（END-START）值不能整除以EVERY值，则仅最后一个分区的宽度小于EVERY值。
+  - MAXVALUE：表示最大值，它通常用于设置最后一个范围分区的上边界。
 
   >[!TIP]须知
-  >1.  在创建分区表若第一个分区定义含START值，则范围（MINVALUE，START）将自动作为实际的第一个分区。
-  >2.  START END语法需要遵循以下限制：
-  >    -   每个partition\_start\_end\_item中的START值（如果有的话，下同）必须小于其END值。
-  >    -   相邻的两个partition\_start\_end\_item，第一个的END值必须等于第二个的START值；
-  >    -   每个partition\_start\_end\_item中的EVERY值必须是正向递增的，且必须小于（END-START）值；
-  >    -   每个分区包含起始值，不包含终点值，即形如：\[起始值，终点值\)，起始值是MINVALUE时则不包含；
-  >    -   一个partition\_start\_end\_item创建的每个分区所属的TABLESPACE一样；
-  >    -   partition\_name作为分区名称前缀时，其长度不要超过57字节，超过时自动截断；
-  >    -   在创建、修改分区表时请注意分区表的分区总数不可超过最大限制（1048575）；
-  >3.  在创建分区表时START END与LESS THAN语法不可混合使用。
-  >4.  即使创建分区表时使用START END语法，备份（gs\_dump）出的SQL语句也是VALUES LESS THAN语法格式。
+  >1. 在创建分区表若第一个分区定义含START值，则范围（MINVALUE，START）将自动作为实际的第一个分区。
+  >2. START END语法需要遵循以下限制：
+  >     - 每个partition\_start\_end\_item中的START值（如果有的话，下同）必须小于其END值。
+  >     - 相邻的两个partition\_start\_end\_item，第一个的END值必须等于第二个的START值；
+  >     - 每个partition\_start\_end\_item中的EVERY值必须是正向递增的，且必须小于（END-START）值；
+  >     - 每个分区包含起始值，不包含终点值，即形如：\[起始值，终点值\)，起始值是MINVALUE时则不包含；
+  >     - 一个partition\_start\_end\_item创建的每个分区所属的TABLESPACE一样；
+  >     - partition\_name作为分区名称前缀时，其长度不要超过57字节，超过时自动截断；
+  >     - 在创建、修改分区表时请注意分区表的分区总数不可超过最大限制（1048575）；
+  >3. 在创建分区表时START END与LESS THAN语法不可混合使用。
+  >4. 即使创建分区表时使用START END语法，备份（gs\_dump）出的SQL语句也是VALUES LESS THAN语法格式。
 
 - **INTERVAL \('interval\_expr'\) \[ STORE IN \(tablespace\_name \[, ... \] \) \]**
 
   间隔分区定义信息。
 
-  -   interval\_expr：自动创建分区的间隔，例如：1 day、1 month。
+  - interval\_expr：自动创建分区的间隔，例如：1 day、1 month。
 
-  -   STORE IN \(tablespace\_name \[, ... \] \)：指定存放自动创建分区的表空间列表，如果有指定，则自动创建的分区从表空间列表中循环选择使用，否则使用分区表默认的表空间。
+  - STORE IN \(tablespace\_name \[, ... \] \)：指定存放自动创建分区的表空间列表，如果有指定，则自动创建的分区从表空间列表中循环选择使用，否则使用分区表默认的表空间。
 
   >[!TIP]须知
   >列存表不支持间隔分区。
@@ -385,8 +380,8 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
   创建列表分区。partition\_key为分区键的名称。
 
-  -   对于partition\_key，列表分区策略的分区键最大支持16列。
-  -   对于从句是VALUES \(list\_values\_clause\)的语法格式，list\_values\_clause中包含了对应分区存在的键值，推荐每个分区的键值数量不超过64个。
+  - 对于partition\_key，列表分区策略的分区键最大支持16列。
+  - 对于从句是VALUES \(list\_values\_clause\)的语法格式，list\_values\_clause中包含了对应分区存在的键值，推荐每个分区的键值数量不超过64个。
 
   分区键支持的数据类型为：INT1[UNSIGNED]、INT2[UNSIGNED]、INT4[UNSIGNED]、INT8[UNSIGNED]、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、NVARCHAR、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过 1048575 个。
 
@@ -415,24 +410,23 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
   取值范围：
 
-  -   ENABLE（缺省值）：行迁移开关打开。
-  -   DISABLE：行迁移开关关闭。
+  - ENABLE（缺省值）：行迁移开关打开。
+  - DISABLE：行迁移开关关闭。
 
   >[!TIP]须知
   >列表/哈希分区表暂不支持ROW MOVEMENT。
 
-
--   **NOT NULL**
+- **NOT NULL**
 
     字段值不允许为NULL。ENABLE用于语法兼容，可省略。
 
--   **NULL**
+- **NULL**
 
     字段值允许NULL ，这是缺省。
 
     这个子句只是为和非标准SQL数据库兼容。不建议使用。
 
--   **CHECK \(condition\) \[ NO INHERIT \]**
+- **CHECK \(condition\) \[ NO INHERIT \]**
 
     CHECK约束声明一个布尔表达式，每次要插入的新行或者要更新的行的新值必须使表达式结果为真或未知才能成功，否则会抛出一个异常并且不会修改数据库。
 
@@ -442,34 +436,34 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     ENABLE用于语法兼容，可省略。
 
--   **DEFAULT default\_expr**
+- **DEFAULT default\_expr**
 
     DEFAULT子句给字段指定缺省值。该数值可以是任何不含变量的表达式\(不允许使用子查询和对本表中的其他字段的交叉引用\)。缺省表达式的数据类型必须和字段类型匹配。
 
     缺省表达式将被用于任何未声明该字段数值的插入操作。如果没有指定缺省值则缺省值为NULL 。
 
--   GENERATED ALWAYS AS \( generation\_expr \) STORED
+- GENERATED ALWAYS AS \( generation\_expr \) STORED
 
     该子句将字段创建为生成列，生成列的值在写入（插入或更新）数据时由generation\_expr计算得到，STORED表示像普通列一样存储生成列的值。
 
     >[!NOTE]说明
-    >-   生成表达式不能以任何方式引用当前行以外的其他数据。生成表达式不能引用其他生成列，不能引用系统列。生成表达式不能返回结果集，不能使用子查询，不能使用聚集函数，不能使用窗口函数。生成表达式调用的函数只能是不可变（IMMUTABLE）函数。
+    >- 生成表达式不能以任何方式引用当前行以外的其他数据。生成表达式不能引用其他生成列，不能引用系统列。生成表达式不能返回结果集，不能使用子查询，不能使用聚集函数，不能使用窗口函数。生成表达式调用的函数只能是不可变（IMMUTABLE）函数。
     >
-    >-   不能为生成列指定默认值。
+    >- 不能为生成列指定默认值。
     >
-    >-   生成列不能作为分区键的一部分。
+    >- 生成列不能作为分区键的一部分。
     >
-    >-   生成列不能和ON UPDATE约束字句的CASCADE,SET NULL,SET DEFAULT动作同时指定。生成列不能和ON DELETE约束字句的SET NULL、SET DEFAULT动作同时指定。
+    >- 生成列不能和ON UPDATE约束字句的CASCADE,SET NULL,SET DEFAULT动作同时指定。生成列不能和ON DELETE约束字句的SET NULL、SET DEFAULT动作同时指定。
     >
-    >-   修改和删除生成列的方法和普通列相同。删除生成列依赖的普通列，生成列被自动删除。不能改变生成列所依赖的列的类型。
+    >- 修改和删除生成列的方法和普通列相同。删除生成列依赖的普通列，生成列被自动删除。不能改变生成列所依赖的列的类型。
     >
-    >-   生成列不能被直接写入。在INSERT或UPDATE命令中, 不能为生成列指定值, 但是可以指定关键字DEFAULT。
+    >- 生成列不能被直接写入。在INSERT或UPDATE命令中, 不能为生成列指定值, 但是可以指定关键字DEFAULT。
     >
-    >-   生成列的权限控制和普通列一样。
+    >- 生成列的权限控制和普通列一样。
     >
-    >-   列存表、内存表MOT不支持生成列。外表中仅postgres\_fdw支持生成列。
+    >- 列存表、内存表MOT不支持生成列。外表中仅postgres\_fdw支持生成列。
 
--   **UNIQUE index\_parameters**
+- **UNIQUE index\_parameters**
 
     **UNIQUE \( column\_name \[, ... \] \) index\_parameters**
 
@@ -477,7 +471,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     对于唯一约束，NULL被认为是互不相等的。
 
--   **PRIMARY KEY index\_parameters**
+- **PRIMARY KEY index\_parameters**
 
     **PRIMARY KEY \( column\_name \[, ... \] \) index\_parameters**
 
@@ -485,33 +479,33 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     一个表只能声明一个主键。
 
--   **ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE]**
+- **ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE]**
 
-    -   ENABLE( VALIDATE)（默认）：启用约束，创建索引，对已有数据和新加入的数据执行约束。
-    -   ENABLE  NOVALIDATE：启用约束，创建索引。对于CHECK约束仅对新加入的数据执行约束，不管表中现有数据。对于UNIQUE和PRIMARY KEY需要建立索引，所以会对已有数据执行约束。
-    -   DISABLE( NOVALIDATE)（默认）：关闭约束，删除索引，可以对约束列的数据进行修改等操作。
-    -   DISABLE  VALIDATE：关闭约束，删除索引，不能对表进行插入、更新和删除操作。
+    - ENABLE( VALIDATE)（默认）：启用约束，创建索引，对已有数据和新加入的数据执行约束。
+    - ENABLE  NOVALIDATE：启用约束，创建索引。对于CHECK约束仅对新加入的数据执行约束，不管表中现有数据。对于UNIQUE和PRIMARY KEY需要建立索引，所以会对已有数据执行约束。
+    - DISABLE( NOVALIDATE)（默认）：关闭约束，删除索引，可以对约束列的数据进行修改等操作。
+    - DISABLE  VALIDATE：关闭约束，删除索引，不能对表进行插入、更新和删除操作。
 
--   **DEFERRABLE | NOT DEFERRABLE**
+- **DEFERRABLE | NOT DEFERRABLE**
 
     这两个关键字设置该约束是否可推迟。一个不可推迟的约束将在每条命令之后马上检查。可推迟约束可以推迟到事务结尾使用SET CONSTRAINTS命令检查。缺省是NOT DEFERRABLE。目前，UNIQUE约束、主键约束、外键约束可以接受这个子句。所有其他约束类型都是不可推迟的。
 
--   **INITIALLY IMMEDIATE | INITIALLY DEFERRED**
+- **INITIALLY IMMEDIATE | INITIALLY DEFERRED**
 
     如果约束是可推迟的，则这个子句声明检查约束的缺省时间。
 
-    -   如果约束是INITIALLY IMMEDIATE（缺省），则在每条语句执行之后就立即检查它；
-    -   如果约束是INITIALLY DEFERRED ，则只有在事务结尾才检查它。
+    - 如果约束是INITIALLY IMMEDIATE（缺省），则在每条语句执行之后就立即检查它；
+    - 如果约束是INITIALLY DEFERRED ，则只有在事务结尾才检查它。
 
     约束检查的时间可以用SET CONSTRAINTS命令修改。
 
--   **USING INDEX TABLESPACE tablespace\_name**
+- **USING INDEX TABLESPACE tablespace\_name**
 
     为UNIQUE或PRIMARY KEY约束相关的索引声明一个表空间。如果没有提供这个子句，这个索引将在default\_tablespace中创建，如果default\_tablespace为空，将使用数据库的缺省表空间。
 
 ## 示例<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_s43dd49de892344bf89e6f56f17404842"></a>
 
--   示例1：创建范围分区表tpcds.web\_returns\_p1，含有8个分区，分区键为integer类型。  分区的范围分别为：wr\_returned\_date\_sk< 2450815、2450815<= wr\_returned\_date\_sk< 2451179、2451179<=wr\_returned\_date\_sk< 2451544、2451544 <= wr\_returned\_date\_sk< 2451910、2451910 <= wr\_returned\_date\_sk< 2452275、2452275 <= wr\_returned\_date\_sk< 2452640、2452640 <= wr\_returned\_date\_sk< 2453005、wr\_returned\_date\_sk\>=2453005。
+- 示例1：创建范围分区表tpcds.web\_returns\_p1，含有8个分区，分区键为integer类型。  分区的范围分别为：wr\_returned\_date\_sk< 2450815、2450815<= wr\_returned\_date\_sk< 2451179、2451179<=wr\_returned\_date\_sk< 2451544、2451544 <= wr\_returned\_date\_sk< 2451910、2451910 <= wr\_returned\_date\_sk< 2452275、2452275 <= wr\_returned\_date\_sk< 2452640、2452640 <= wr\_returned\_date\_sk< 2453005、wr\_returned\_date\_sk\>=2453005。
 
     ```
     --创建表tpcds.web_returns。
@@ -609,7 +603,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     (1 row)
     ```
 
--   示例2：创建范围分区表tpcds.web\_returns\_p2，含有8个分区，分区键类型为integer类型，其中第8个分区上边界为MAXVALUE。
+- 示例2：创建范围分区表tpcds.web\_returns\_p2，含有8个分区，分区键类型为integer类型，其中第8个分区上边界为MAXVALUE。
 
     八个分区的范围分别为：  wr\_returned\_date\_sk< 2450815、2450815<= wr\_returned\_date\_sk< 2451179、2451179<=wr\_returned\_date\_sk< 2451544、2451544 <= wr\_returned\_date\_sk< 2451910、2451910 <= wr\_returned\_date\_sk< 2452275、2452275 <= wr\_returned\_date\_sk< 2452640、2452640 <= wr\_returned\_date\_sk< 2453005、wr\_returned\_date\_sk\>=2453005。
 
@@ -695,8 +689,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     openGauss=# DROP TABLESPACE example4;
     ```
 
-
--   示例3：START END语法创建、修改Range分区表。
+- 示例3：START END语法创建、修改Range分区表。
 
     假定/home/omm/startend\_tbs1、/home/omm/startend\_tbs2、/home/omm/startend\_tbs3、/home/omm/startend\_tbs4是omm用户拥有读写权限的空目录。
 
@@ -809,8 +802,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     openGauss=# DROP TABLESPACE startend_tbs4;
     ```
 
-
--   示例4：创建间隔分区表sales，初始包含2个分区，分区键为DATE类型。  分区的范围分别为：time\_id  <  '2019-02-01 00:00:00'、
+- 示例4：创建间隔分区表sales，初始包含2个分区，分区键为DATE类型。  分区的范围分别为：time\_id  <  '2019-02-01 00:00:00'、
 
     '2019-02-01 00:00:00' <= time\_id < '2019-02-02 00:00:00' 。
 
@@ -865,8 +857,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     
     ```
 
-
--   示例5：创建LIST分区表test\_list，初始包含4个分区，分区键为INT类型。4个分区的范围分别为：2000、3000、4000、5000。
+- 示例5：创建LIST分区表test\_list，初始包含4个分区，分区键为INT类型。4个分区的范围分别为：2000、3000、4000、5000。
 
     ```
     --创建表test_list
@@ -966,8 +957,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     openGauss=# drop table test_list;
     ```
 
-
--   示例6：创建HASH分区表test\_hash，初始包含2个分区，分区键为INT类型。
+- 示例6：创建HASH分区表test\_hash，初始包含2个分区，分区键为INT类型。
 
     ```
     --创建表test_hash
@@ -1258,7 +1248,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
         f1  INTEGER,
         f2  INTEGER,
         f3  INTEGER,
-        key part_btree_idx using btree(f1)	
+        key part_btree_idx using btree(f1) 
     )
     PARTITION BY RANGE(f1)
     (
@@ -1317,7 +1307,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     );
     ```
 
--   示例7：创建分区键为表达式分区的分区表。
+- 示例7：创建分区键为表达式分区的分区表。
 
     ```
     openGauss=# create table testrangepart(a int, b int) partition by range(abs(a*2))
@@ -1355,8 +1345,6 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     (1 row)
     ```
 
-
 ## 相关链接<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_s4e5ff679edd643b5a6cd6679fd1055a1"></a>
 
 [ALTER TABLE PARTITION](../sql_reference/alter_table_partition.md)，[DROP TABLE](../sql_reference/drop_table.md)
-

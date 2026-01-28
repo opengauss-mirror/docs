@@ -145,4 +145,3 @@ drop extension gms_match [cascade];
 >[!NOTE]说明
 >
 >如果extension被其它对象依赖，需要加入cascade（级联）关键字，删除所有依赖对象。
-

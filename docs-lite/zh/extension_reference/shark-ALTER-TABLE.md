@@ -6,9 +6,10 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s8ea536d5b8ff459e9e3614e35f53bc2a"></a>
 
--   本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。
--   新增支持`opt_clustered`语法。
--   修改表语句中，针对UNIQUE和PRIMARY KEY约束，支持通过WITH给出选项，对应index_parameters子句，新增支持的选项包括：
+- 本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。
+- 新增支持`opt_clustered`语法。
+- 修改表语句中，针对UNIQUE和PRIMARY KEY约束，支持通过WITH给出选项，对应index_parameters子句，新增支持的选项包括：
+
 ```
 FILLFACTOR = fillfactor
 | PAD_INDEX = { ON | OFF }
@@ -22,15 +23,17 @@ FILLFACTOR = fillfactor
 | COMPRESSION_DELAY = { 0 | delay [ MINUTES | MINUTE ] }
 | DATA_COMPRESSION = { NONE | ROW | PAGE | COLUMNSTORE | COLUMNSTORE_ARCHIVE }
 ```
+
 其中FILLFACTOR选项的取值fillfactor为[1, 100]的整数，实际含义同A库（A库的取值范围为[10, 100]的整数），因此当D库中fillfactor的取值范围为[1, 10)，不报错，将打印notice信息，并将fillfactor的取值设置为A库的最小值10;
 COMPRESSION_DELAY选项的取值delay为[0, 10080]的整数;
 除FILLFACTOR选项含有实际功能，同A库，其余参数均无实际功能，仅语法支持。
--   修改表语句中，针对UNIQUE和PRIMARY KEY约束，支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
--   filegroup为任意字符串，支持通过[]包裹。
+
+- 修改表语句中，针对UNIQUE和PRIMARY KEY约束，支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
+- filegroup为任意字符串，支持通过[]包裹。
 
 ## 语法格式<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s58bdce220c9f4292ba9af919b04ad25c"></a>
 
--   修改表的定义。
+- 修改表的定义。
 
     ```
     ALTER TABLE [ IF EXISTS ] { table_name [*] | (ONLY) table_name | (ONLY) ( table_name ) }
@@ -82,7 +85,7 @@ COMPRESSION_DELAY选项的取值delay为[0, 10080]的整数;
         | MODIFY PARTITION partition_name UNIMCSTORED
     ```
 
--   其中列约束column\_constraint为：
+- 其中列约束column\_constraint为：
 
     ```
     [ CONSTRAINT constraint_name ]
@@ -104,21 +107,21 @@ COMPRESSION_DELAY选项的取值delay为[0, 10080]的整数;
     [ COMMENT 'text' ]
     ```
 
--   其中表约束table\_constraint为：
+- 其中表约束table\_constraint为：
 
     ```
     [ CONSTRAINT [ constraint_name ] ]
-    	{ CHECK ( expression ) |
-    	  UNIQUE [ opt_clustered ] ( { { column_name [ ( length ) ] | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters [ VISIBLE | INVISIBLE ]
+     { CHECK ( expression ) |
+       UNIQUE [ opt_clustered ] ( { { column_name [ ( length ) ] | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters [ VISIBLE | INVISIBLE ]
             [ ON filegroup ] |
-    	  PRIMARY KEY [ opt_clustered ] ( { column_name [ ASC | DESC ] }[, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] [ ON filegroup ] |
-    	  PARTIAL CLUSTER KEY ( column_name [, ... ] ) |
-    	  FOREIGN KEY [ idx_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
-    	    [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
+       PRIMARY KEY [ opt_clustered ] ( { column_name [ ASC | DESC ] }[, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] [ ON filegroup ] |
+       PARTIAL CLUSTER KEY ( column_name [, ... ] ) |
+       FOREIGN KEY [ idx_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
+         [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
         [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
     ```
 
--   其中索引参数index\_parameters为：
+- 其中索引参数index\_parameters为：
 
     ```
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
@@ -127,91 +130,91 @@ COMPRESSION_DELAY选项的取值delay为[0, 10080]的整数;
 
 ## 参数说明<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_sf4962205ddf84312a5fd888bc662e5cf"></a>
 
--   **opt\_clustered**
+- **opt\_clustered**
 
     参数内容为CLUSTERED/NONCLUSTERED，兼容D库的语法，指定创建聚合/非聚合索引。仅语法作用，没有实际功能。
 
--  **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
+- **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
 
     这个子句为表或索引指定一个可选的存储参数。用于表的WITH子句还可以包含OIDS=FALSE表示不分配OID。
 
     针对UNIQUE和PRIMARY KEY约束，新增支持的storage\_parameter选项包括：
 
-    -   FILLFACTOR
+    - FILLFACTOR
 
         int类型，填充因子，实际的含义和功能同A库。
 
         取值范围：[1, 100]的整数，A库的取值范围为[10, 100]的整数，因此当D库中fillfactor的取值范围为[1, 10)，不报错，将打印notice信息，并将fillfactor的取值设置为A库的最小值10。
 
-    -   PAD_INDEX
+    - PAD_INDEX
 
         bool类型，无实际功能，仅语法兼容。
 
         取值范围：ON或者OFF。
 
-    -   IGNORE_DUP_KEY
+    - IGNORE_DUP_KEY
 
         bool类型，无实际功能，仅语法兼容。
 
         取值范围：ON或者OFF。
 
-    -   STATISTICS_NORECOMPUTE
+    - STATISTICS_NORECOMPUTE
 
         bool类型，无实际功能，仅语法兼容。
 
         取值范围：ON或者OFF。
 
-    -   STATISTICS_INCREMENTAL
+    - STATISTICS_INCREMENTAL
 
         bool类型，无实际功能，仅语法兼容。
 
         取值范围：ON或者OFF。
 
-    -   ALLOW_ROW_LOCKS
+    - ALLOW_ROW_LOCKS
 
         bool类型，无实际功能，仅语法兼容。
 
         取值范围：ON或者OFF。
 
-    -   ALLOW_PAGE_LOCKS
+    - ALLOW_PAGE_LOCKS
 
         bool类型，无实际功能，仅语法兼容。
 
         取值范围：ON或者OFF。
 
-    -   OPTIMIZE_FOR_SEQUENTIAL_KEY
+    - OPTIMIZE_FOR_SEQUENTIAL_KEY
 
         bool类型，无实际功能，仅语法兼容。
 
         取值范围：ON或者OFF。
 
-    -   XML_COMPRESSION
+    - XML_COMPRESSION
 
         bool类型，无实际功能，仅语法兼容。
 
         取值范围：ON或者OFF。
 
-    -   COMPRESSION_DELAY
+    - COMPRESSION_DELAY
 
         int类型，单位MINUTES或者MINUTE，可选，无实际功能，仅语法兼容。
 
         取值范围：0 | delay [ MINUTES | MINUTE ]，其中delay为[0, 10080]的整数。
 
-    -   DATA_COMPRESSION
+    - DATA_COMPRESSION
 
         string类型，无实际功能，仅语法兼容。
 
         取值范围：NONE | ROW | PAGE | COLUMNSTORE | COLUMNSTORE_ARCHIVE。
 
--  **filegroup**
+- **filegroup**
 
-    -   修改表语句中，针对UNIQUE和PRIMARY KEY约束，支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
-    -   filegroup为任意字符串，支持通过[]包裹。
+    - 修改表语句中，针对UNIQUE和PRIMARY KEY约束，支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
+    - filegroup为任意字符串，支持通过[]包裹。
 
--   **DEFAULT (expression) FOR (column_name)**
+- **DEFAULT (expression) FOR (column_name)**
 
-    -   该语法可以为指定列添加DEFAULT约束，该约束为一个表达式。
-    -   对于显式声明约束名的场景，仅做语法支持，使用该语法创建的DEFAULT约束无法通过约束名进行删除。
+    - 该语法可以为指定列添加DEFAULT约束，该约束为一个表达式。
+    - 对于显式声明约束名的场景，仅做语法支持，使用该语法创建的DEFAULT约束无法通过约束名进行删除。
 
 ## opt\_clustered示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
 

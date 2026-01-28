@@ -7,6 +7,7 @@
 预备语句是服务端的对象，可以用于优化性能。在执行PREPARE语句的时候，指定的查询被解析、分析、重写。当随后发出EXECUTE语句的时候，预备语句被规划和执行。这种设计避免了重复解析、分析工作。PREPARE语句创建后在整个数据库会话期间一直存在，一旦创建成功，即便是在事务块中创建，事务回滚，PREPARE也不会删除。只能通过显式调用DEALLOCATE进行删除，会话结束时，PREPARE也会自动删除。
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
+
 相比于原始的openGauss，dolphin对于PREPARE语法的修改为：
 
 1. 支持 PREPARE FROM 语法。

@@ -34,7 +34,6 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 </tbody>
 </table>
 
-
 ## 定义表空间<a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_s21cf482a805644cbac9ae0704362a934"></a>
 
 表空间用于管理数据对象，与磁盘上的一个目录对应。所涉及的SQL语句，请参考[表2](#zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_t9b028195c0d143f6b8fc7065af1ce2f9)。
@@ -66,7 +65,6 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 </tr>
 </tbody>
 </table>
-
 
 ## 定义表<a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_s54aadbaf84da45868daf6cd4a1bf5578"></a>
 

@@ -301,9 +301,7 @@
    | bit64-bit64   | uint8            | numeric          |
    | bit64*bit64   | uint8            | numeric          |
 
-
-
-## 示例：
+## 示例
 
 测试用例：
 

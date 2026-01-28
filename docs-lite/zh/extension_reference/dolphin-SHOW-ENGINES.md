@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--  结果为系统对执行语句的用户所支持的存储引擎。
+- 结果为系统对执行语句的用户所支持的存储引擎。
 
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 

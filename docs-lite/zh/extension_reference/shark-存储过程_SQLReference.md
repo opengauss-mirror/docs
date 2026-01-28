@@ -6,8 +6,8 @@
 
 ## 注意事项<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s31780559299b4f62bec935a2c4679b84"></a>
 
--   本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。
--   shark插件新增一种过程语言pltsql，create procedure默认创建的是pltsql。
+- 本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。
+- shark插件新增一种过程语言pltsql，create procedure默认创建的是pltsql。
 
 ## 示例<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821"></a>
 

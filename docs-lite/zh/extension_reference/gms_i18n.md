@@ -25,6 +25,7 @@ openGauss=# CREATE Extension gms_i18n;
 ### 使用Extension<a name="section107391050141118"></a>
 
 #### 函数声明
+
 - RAW_TO_CHAR(data IN RAW, src_charset IN VARCHAR2 DEFAULT NULL)
   描述：将RAW数据从有效的字符集转换为数据库字符集中的VARCHAR字符串。
   参数详解：data：raw类型数据，src_charset：源字符集。
@@ -33,7 +34,9 @@ openGauss=# CREATE Extension gms_i18n;
   参数详解：strdata：需要转换的字符串；dst_chrset：目标字符集。
 
 #### 函数使用
+
 raw_to_char函数
+
 ```sql
 openGauss=# select gms_i18n.raw_to_char(hextoraw('616263646566C2AA'), 'utf8');
  raw_to_char 
@@ -44,6 +47,7 @@ openGauss=# select gms_i18n.raw_to_char(hextoraw('616263646566C2AA'), 'utf8');
 ```
 
 strin_to_raw函数
+
 ```sql
 openGauss=# select gms_i18n.string_to_raw('abcdefª', 'utf8');
   string_to_raw   

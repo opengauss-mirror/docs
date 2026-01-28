@@ -45,7 +45,7 @@
 
 该参数属于SIGHUP类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- 当配置文件中log\_directory的值为非法路径时，会导致openGauss无法重新启动。
 >- 通过gs\_guc reload动态修改log\_directory时，当指定路径为合法路径时，日志输出到新的路径下。当指定路径为非法路径时，日志输出到上一次合法的日志输出路径下而不影响数据库正常运行。此时即使指定的log\_directory的值非法，也会写入到配置文件中。

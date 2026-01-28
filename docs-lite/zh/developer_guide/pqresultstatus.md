@@ -68,11 +68,10 @@ PGresult包含一个来自当前命令的结果元组。 这个状态只在查�
 
 ## 注意事项<a name="zh-cn_topic_0241735621_zh-cn_topic_0237120433_zh-cn_topic_0059777949_sb1b6942996a64e589fdfdfb1c00fa519"></a>
 
--   请注意，恰好检索到零行的SELECT命令仍然显示PGRES\_TUPLES\_OK。PGRES\_COMMAND\_OK用于永远不能返回行的命令（插入或更新，不带返回子句等）。PGRES\_EMPTY\_QUERY响应可能表明客户端软件存在bug。
+- 请注意，恰好检索到零行的SELECT命令仍然显示PGRES\_TUPLES\_OK。PGRES\_COMMAND\_OK用于永远不能返回行的命令（插入或更新，不带返回子句等）。PGRES\_EMPTY\_QUERY响应可能表明客户端软件存在bug。
 
--   状态为PGRES\_NONFATAL\_ERROR的结果永远不会由PQexec或其他查询执行函数直接返回，此类结果将传递给通知处理程序。
+- 状态为PGRES\_NONFATAL\_ERROR的结果永远不会由PQexec或其他查询执行函数直接返回，此类结果将传递给通知处理程序。
 
 ## 示例<a name="zh-cn_topic_0241735621_section4472558185413"></a>
 
 请参见[示例](example_libpq.md)章节。
-

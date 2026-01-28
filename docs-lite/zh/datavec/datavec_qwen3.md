@@ -16,7 +16,6 @@
 在Qwen3发布后，openGauss团队联合鲲鹏社区第一时间完成**基于Qwen3的RAG解决方案全链路验证**，这意味着开发者现在就可以一键拉起基于openGauss的编排组件容器镜像，并利用Qwen3实现畅快的RAG知识问答及推理。
 
 ![](./figures/RAG-ARCH.png)
----
 
 ## 快速体验Qwen3
 
@@ -40,7 +39,7 @@ ollama run qwen3:latest
 
 请提前安装好Docker Compose软件，如未安装请按照下面描述进行离线安装。
 
-#### Docker Compose软件安装
+### Docker Compose软件安装
 
 下载Docker Compose软件包。
 
@@ -55,7 +54,7 @@ mv docker-compose-linux-aarch64 /usr/bin/docker-compose
 chmod +x /usr/bin/docker-compose
 ```
 
-#### 编排组件部署
+### 编排组件部署
 
 1.下载Dify 1.1.3软件包。
 访问链接<https://github.com/langgenius/dify/tree/1.1.3>，然后如下图所示，直接“Download ZIP”下载压缩包并上传到服务器。

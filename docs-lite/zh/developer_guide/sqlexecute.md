@@ -31,13 +31,13 @@ SQLRETURN SQLExecute(SQLHSTMT    StatementHandle);
 
 ## 返回值<a name="zh-cn_topic_0238272892_zh-cn_topic_0237120422_zh-cn_topic_0059778182_s46aaf47ea8e24486b39259cd50dacdf8"></a>
 
--   SQL\_SUCCESS：表示调用正确。
--   SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
--   SQL\_NEED\_DATA：表示在执行SQL语句前没有提供足够的参数。
--   SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
--   SQL\_NO\_DATA：表示SQL语句不返回结果集。
--   SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
--   SQL\_STILL\_EXECUTING：表示语句正在执行。
+- SQL\_SUCCESS：表示调用正确。
+- SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
+- SQL\_NEED\_DATA：表示在执行SQL语句前没有提供足够的参数。
+- SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
+- SQL\_NO\_DATA：表示SQL语句不返回结果集。
+- SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
+- SQL\_STILL\_EXECUTING：表示语句正在执行。
 
 ## 注意事项<a name="zh-cn_topic_0238272892_zh-cn_topic_0237120422_zh-cn_topic_0059778182_sbf798ae1ab814ff5aba587d2df01ad12"></a>
 
@@ -46,4 +46,3 @@ SQLRETURN SQLExecute(SQLHSTMT    StatementHandle);
 ## 示例<a name="zh-cn_topic_0238272892_zh-cn_topic_0237120422_zh-cn_topic_0059778182_s224798c3974741f3976659ed7d6de926"></a>
 
 参见：[示例](example_odbc.md)
-

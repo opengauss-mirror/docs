@@ -10,8 +10,8 @@
 
 ## 语法格式<a name="zh-cn_topic_0283137651_zh-cn_topic_0237122194_zh-cn_topic_0059778969_sd8d9ff15ff6c45c9aebd16c861936c06"></a>
 
-
 单表更新：
+
 ```
 
 [ WITH [ RECURSIVE ] with_query [, ...] ]
@@ -25,7 +25,9 @@ SET {column_name = { expression | DEFAULT }
                 | {output_expression [ [ AS ] output_name ]} [, ...] }];
 
 ```
+
 多表更新：
+
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 UPDATE [/*+ plan_hint */] [IGNORE] table_list
@@ -51,45 +53,43 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
   
   若带有IGNORE关键字的UPDATE语句执行时在指定场景引发了Error，则会将Error降级为Warning，且继续语句的执行，不会影响其他数据的操作。能使Error降级的场景有：
 
-  1.违反非空约束时：
+  1. 违反非空约束时：
 
-  若执行的SQL语句违反了表的非空约束，使用此hint可将Error降级为Warning，并根据GUC参数sql_ignore_strategy的值采用以下策略的一种继续执行：
+   若执行的SQL语句违反了表的非空约束，使用此hint可将Error降级为Warning，并根据GUC参数sql_ignore_strategy的值采用以下策略的一种继续执行：
 
-     
- -   sql_ignore_strategy为ignore_null时，忽略违反非空约束的行的UPDATE操作，并继续执行剩余数据操作。
+      - sql_ignore_strategy为ignore_null时，忽略违反非空约束的行的UPDATE操作，并继续执行剩余数据操作。
 
- -   sql_ignore_strategy为overwrite_null时，将违反约束的null值覆写为目标类型的默认值，并继续执行剩余数据操作。
+      - sql_ignore_strategy为overwrite_null时，将违反约束的null值覆写为目标类型的默认值，并继续执行剩余数据操作。
 
-   >[!NOTE]说明
-   >
-   >GUC参数sql_ignore_strategy为枚举类型，可选值有：ignore_null, overwrite_null
+      >[!NOTE]说明
+      >
+      >GUC参数sql_ignore_strategy为枚举类型，可选值有：ignore_null, overwrite_null
 
-  2.违反唯一约束时：
+  2. 违反唯一约束时：
 
-  若执行的SQL语句违反了表的唯一约束，使用此hint可将Error降级为Warning，忽略违反约束的行的UPDATE操作，并继续执行剩余数据操作。
+      若执行的SQL语句违反了表的唯一约束，使用此hint可将Error降级为Warning，忽略违反约束的行的UPDATE操作，并继续执行剩余数据操作。
 
-  3.分区表无法匹配到合法分区时
+  3. 分区表无法匹配到合法分区时
 
-  在对分区表进行UPDATE操作时，若某行数据无法匹配到表格的合法分区，使用此hint可将Error降级为Warning，忽略该行操作，并继续执行剩余数据操作。
+      在对分区表进行UPDATE操作时，若某行数据无法匹配到表格的合法分区，使用此hint可将Error降级为Warning，忽略该行操作，并继续执行剩余数据操作。
 
-  4.更新值向目标列类型转换失败时：
+  4. 更新值向目标列类型转换失败时：
 
   执行UPDATE语句时，若发现新值与目标列类型不匹配，使用此hint可将Error降级为Warning，并根据新值与目标列的具体类型采取以下策略的一种继续执行：
 
-    -   当新值类型与列类型同为数值类型时：
+    - 当新值类型与列类型同为数值类型时：
 
         若新值在列类型的范围内，则直接进行更新；若新值在列类型范围外，则以列类型的最大/最小值替代。
 
-    -   当新值类型与列类型同为字符串类型时：
+    - 当新值类型与列类型同为字符串类型时：
 
         若新值长度在列类型限定范围内，则以直接进行更新；若新值长度在列类型的限定范围外，则保留列类型长度限制的前n个字符。
 
-    -   若遇到新值类型与列类型不可转换时：
+    - 若遇到新值类型与列类型不可转换时：
 
         更新为列类型的默认值。
 
   IGNORE关键字不支持列存，无法在列存表中生效。
-
 
 ## 示例<a name="zh-cn_topic_0283137651_zh-cn_topic_0237122194_zh-cn_topic_0059778969_s23d933f56bc745e1bd819083b4e50155"></a>
 

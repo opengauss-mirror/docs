@@ -2,4 +2,3 @@
 
 **图 1**  采用Psycopg2开发应用程序的流程<a name="fig14436233161414"></a>  
 ![](figures/采用Psycopg2开发应用程序的流程.png)
-

@@ -122,13 +122,13 @@
 DBA权限用户可以通过如下步骤启动基于资源池的资源负载管理。此处以omm用户为例进行描述。
 
 1. 以操作系统用户omm登录openGauss主节点。
-3. 开启基于资源池的资源负载管理功能。
+2. 开启基于资源池的资源负载管理功能。
 
     ```
      gs_guc set -Z datanode -D /gaussdb/data/datanode -c "use_workload_manager=on"
     ```
 
-6. 重启数据库使参数设置生效。
+3. 重启数据库使参数设置生效。
 
     ```
     gs_ctl restart -D /gaussdb/data/datanode

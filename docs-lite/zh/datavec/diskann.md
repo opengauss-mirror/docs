@@ -1,6 +1,6 @@
 # DISKANN
 
-## 1.介绍
+## 介绍
 
 随着推荐系统、图像识别、自然语言处理等AI应用的普及，传统数据库难以应对海量高维向量的实时相似性搜索挑战。DiskANN作为一种基于磁盘的近似最近邻搜索技术，能够有效降低内存消耗，同时保持较高的查询性能，满足企业对大规模向量数据的高效管理需求。
 
@@ -10,7 +10,7 @@
 >DISKANN支持普通行存表，临时表，Toast表，Unlogged，段页式表等的向量数据存储。<br>
 >DISKANN支持PQ量化压缩及并行构建。<br>
 
-## 2.索引构建
+## 索引构建
 
 DiskANN索引是一种高效地大规模向量近似最近邻搜索方案，采用Vamana算法，其核心目标是在单机上处理大规模数据，同时保持高召回率、低查询延迟和低内存占用，实现原理如下：
 
@@ -24,7 +24,7 @@ DiskANN索引是一种高效地大规模向量近似最近邻搜索方案，采�
 
     SSD：存储完整的原始向量和详细的图结构，确保高精度距离计算。
 
-## 3.索引检索
+## 索引检索
 
 DiskANN的检索过程主要基于构建好的索引图结构，通过贪心搜索策略从入口点开始，逐步向目标向量靠近，核心流程如下：
 
@@ -50,9 +50,9 @@ DiskANN的检索过程主要基于构建好的索引图结构，通过贪心搜�
 
     重复上述步骤，知道搜索列表中所有的节点距离都不小于已访问节点中的最小巨距离，或达到最大迭代次数
 
-## 4.使用DISKANN
+## 使用DISKANN
 
-#### 创建索引（关闭PQ场景）
+### 创建索引（关闭PQ场景）
 
 在关闭PQ场景下，DiskANN索引会默认使用精确距离计算。
 
@@ -67,7 +67,7 @@ with (index_size = 100);
 - `TABLE_NAME` - 表名
 - `COLUMN_NAME` - 向量数据列名
 
-#### 创建索引（启用PQ场景）
+### 创建索引（启用PQ场景）
 
 在开启PQ场景下，DiskANN索引会使用PQ距离计算，最终再通过精确距离计算进行精排，在使用PQ之前需要先加载动态库。
 
@@ -82,7 +82,7 @@ with (enable_pq = on, pq_m = 8);
 - `TABLE_NAME` - 表名
 - `COLUMN_NAME` - 向量数据列名
 
-#### DiskAnn支持的索引操作符
+### DiskAnn支持的索引操作符
 
 索引操作符 | operator | 描述
 --- |--- |---
@@ -90,7 +90,7 @@ vector_l2_ops | <-> |L2距离
 vector_ip_ops | <#> |内积
 vector_cosine_ops | <=> |余弦距离
 
-#### 索引选项
+### 索引选项
 
 - `index_size` - 索引构建参数，影响召回精度与构建时间，取值范围为16~1000（默认值为100），百万规模数据集建议设置为50
 - `enable_pq` - 量化压缩参数，控制是否开启PQ，默认关闭
@@ -102,7 +102,7 @@ vector_cosine_ops | <=> |余弦距离
 openGauss=# CREATE INDEX ON items USING diskann (embedding vector_l2_ops) WITH (index_size = 100, enable_pq = on, pq_m = 8);
 ```
 
-#### 并行构建向量索引
+### 并行构建向量索引
 
 通过开启并行构建功能来加速向量索引的创建：
 
@@ -117,7 +117,7 @@ SET (parallel_workers = <CONCURRENCY_NUM>);
 openGauss=# ALTER TABLE items SET (parallel_workers = 8);
 ```
 
-#### 查询选项
+### 查询选项
 
 - `diskann_probes` - 查询时候选集的大小（默认为128）。
 
@@ -131,7 +131,7 @@ openGauss=# SET diskann_probes = 64;
 openGauss=# SET enable_seqscan = off;
 ```
 
-#### 使用索引查询
+### 使用索引查询
 
 ```
 openGauss=# SELECT * FROM [TABLE_NAME] ORDER BY [COLUMN_NAME] [operator] [VALUE];
@@ -147,7 +147,7 @@ openGauss=# SELECT * FROM [TABLE_NAME] ORDER BY [COLUMN_NAME] [operator] [VALUE]
 openGauss=# SELECT * FROM items ORDER BY embedding <-> '[1,2,3,4]';
 ```
 
-#### 增删改
+### 增删改
 
 DELETE/UPDATE之前需要打开主表的immediate_delete选项。
 不开启该选项不会同步删除图的边关系。可能会导致图规模的增大。
@@ -164,7 +164,7 @@ CREATE TABLE [table_name] (cols) WITH (immediate_delete = on);
 ALTER TABLE [TABLE_NAME] SET (immediate_delete = on);
 ```
 
-## 5.约束
+## 约束
 
 - 向量索引仅支持普通行存表，临时表，Toast表，Unlogged表，段页式表等，其他表仅支持对向量数据创建btree和ubtree索引。
 - 若ALTER INDEX后不执行REINDEX，后插入的数据会根据新的索引选项构建索引，而索引中已存在的数据不会因此改变。

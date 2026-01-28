@@ -21,6 +21,7 @@
 PQ特性只支持ARM架构环境。
 
 ### PQ加速包安装
+
 IVFPQ和HNSWPQ的PQ加速包是一样的，DISKANNPQ需要的PQ包需要另外安装。
 
 1）IVF和HNSW的PQ包<br>
@@ -31,11 +32,14 @@ ARM架构环境镜像中默认已经安装PQ检索加速安装包，加速包默
 准备：环境中有openblas包，可以通过`yum install openblas`安装。
 
 在[昇腾mindxSDK社区官网](https://www.hiascend.com/developer/download/community/result?module=sdk%2Bcann)中选择下载`Ascend-mindxsdk-mxindex_7.3.0_linux-aarch64.run`。
+
 ```bash
 chmod +x Ascend-mindxsdk-mxindex*.run
 ./Ascend-mindxsdk-mxindex*.run --install
 ```
+
 安装后设置环境变量：
+
 ```bash
 export DATAVEC_PQ_LIB_PATH=/your_mxindex_install_path/mxIndex/lib
 ```
@@ -217,7 +221,7 @@ vector_cosine_ops|<=>|余弦距离
  openGauss=# SET ivfpq_kreorder = 10;
  ```
 
- ### DISKANN-PQ
+### DISKANN-PQ
 
 ```sql
 openGauss=# CREATE INDEX [INDEX_NAME]

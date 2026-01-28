@@ -6,9 +6,9 @@
 
 JDBC提供了三个方法，用于创建数据库连接。
 
--   DriverManager.getConnection\(String url\);
--   DriverManager.getConnection\(String url, Properties info\);
--   DriverManager.getConnection\(String url, String user, String password\);
+- DriverManager.getConnection\(String url\);
+- DriverManager.getConnection\(String url, Properties info\);
+- DriverManager.getConnection\(String url, String user, String password\);
 
 ## 参数<a name="zh-cn_topic_0283137601_zh-cn_topic_0237120381_zh-cn_topic_0213179126_zh-cn_topic_0189251768_zh-cn_topic_0059779354_sd1d6ca3f8a4345d78889ae70e3f20498"></a>
 
@@ -736,4 +736,3 @@ public static Connection getConnectUseProp(String username, String passwd)
         return conn;
     };
 ```
-

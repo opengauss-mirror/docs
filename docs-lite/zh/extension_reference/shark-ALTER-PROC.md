@@ -6,13 +6,13 @@
 
 ## 注意事项<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s31780559299b4f62bec935a2c4679b84"></a>
 
--   本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。原openGauss的ALTER PROCEDURE语法请参考章节[ALTER PROCEDURE](../sql_reference/alter_procedure.md)。
--   新增支持通过ALTER PROC方式修改自定义存储过程的属性，功能和ALTER PROCEDURE方式保持一致。
--   ALTER PROCEDURE/PROC COMPILE仅在A库生效，在D库报错不支持。
+- 本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。原openGauss的ALTER PROCEDURE语法请参考章节[ALTER PROCEDURE](../sql_reference/alter_procedure.md)。
+- 新增支持通过ALTER PROC方式修改自定义存储过程的属性，功能和ALTER PROCEDURE方式保持一致。
+- ALTER PROCEDURE/PROC COMPILE仅在A库生效，在D库报错不支持。
 
 ## 语法格式<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 
--   修改自定义存储过程的附加参数。
+- 修改自定义存储过程的附加参数。
 
     ```
     ALTER { PROCEDURE | PROC } procedure_name ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
@@ -36,37 +36,38 @@
      | COMMENT 'text'
     ```
 
--   修改自定义存储过程的名称。
+- 修改自定义存储过程的名称。
 
     ```
     ALTER { PROCEDURE | PROC } proname ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
         RENAME TO new_name;
     ```
 
--   修改自定义存储过程的所属者。
+- 修改自定义存储过程的所属者。
 
     ```
     ALTER { PROCEDURE | PROC } proname ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
         OWNER TO new_owner;
     ```
 
--   修改自定义存储过程的模式。
+- 修改自定义存储过程的模式。
 
     ```
     ALTER { PROCEDURE | PROC } proname ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
         SET SCHEMA new_schema;
     ```
 
--   重编译存储过程。
+- 重编译存储过程。
 
     ```
     ALTER { PROCEDURE | PROC } procedure_name COMPILE;
     ```
+
     仅在A库生效，在D库报错不支持。
 
 ## 参数说明<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s82e47e35c54c477094dcafdc90e5d85a"></a>
 
--   **PROC**
+- **PROC**
 
     新增通过ALTER PROC方式修改自定义存储过程的属性，功能和ALTER PROCEDURE方式保持一致。
 

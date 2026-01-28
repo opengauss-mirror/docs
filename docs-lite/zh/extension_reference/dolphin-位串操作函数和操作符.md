@@ -14,6 +14,7 @@
   返回值类型：boolean
 
   示例：
+
   ~~~
   openGauss=# select bit_bool('11111');
    bit_bool 
@@ -81,6 +82,7 @@
   注意: 当输入的数字或字符串数值超过无符号64位整数范围，返回结果统一为64；当输入的bit超过64个1时，返回结果为1.
 
   示例：
+
   ~~~
   openGauss=# SELECT bit_count(29);
    bit_count 
@@ -112,6 +114,7 @@
   4. 函数表现与mysql侧 `select bit_xor(col) from table` 相同，与直接`select bit_xor()`不同。
   
   示例：
+
   ```sql
   openGauss=# INSERT INTO bit_xor_int4(a) values(-1.11);
   INSERT 0 1

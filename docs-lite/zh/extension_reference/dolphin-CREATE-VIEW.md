@@ -21,12 +21,13 @@ CREATE [ OR REPLACE ] [ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}] [DEFINER = u
 ```
 
 >[!NOTE]说明
->-   创建视图时使用WITH\(security\_barrier\)可以创建一个相对安全的视图，避免攻击者利用低成本函数的RAISE语句打印出隐藏的基表数据。
->-   当视图创建后，不允许使用REPLACE修改本视图当中的列名，也不允许删除列。
+>
+>- 创建视图时使用WITH\(security\_barrier\)可以创建一个相对安全的视图，避免攻击者利用低成本函数的RAISE语句打印出隐藏的基表数据。
+>- 当视图创建后，不允许使用REPLACE修改本视图当中的列名，也不允许删除列。
 
 ## 参数说明<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_s09c14680fd2e44bcb52cb2f114096621"></a>
 
--   **OR REPLACE**
+- **OR REPLACE**
 
     当CREATE VIEW中存在OR REPLACE时，表示若以前存在该视图就进行替换，但新查询不能改变原查询的列定义，包括顺序、列名、数据类型、类型精度等，只可在列表末尾添加其他的列。
 
@@ -38,51 +39,51 @@ CREATE [ OR REPLACE ] [ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}] [DEFINER = u
 
   指定user作为视图的属主。该选项仅在B兼容模式下使用。
 
--   **TEMP | TEMPORARY**
+- **TEMP | TEMPORARY**
 
     创建临时视图。
 
--   **view\_name**
+- **view\_name**
 
     要创建的视图名称。可以用模式修饰。
 
     取值范围：字符串，符合标识符命名规范。
 
--   **column\_name**
+- **column\_name**
 
     可选的名称列表，用作视图的字段名。如果没有给出，字段名取自查询中的字段名。
 
     取值范围：字符串，符合标识符命名规范。
 
--   **view\_option\_name \[= view\_option\_value\]**
+- **view\_option\_name \[= view\_option\_value\]**
 
     该子句为视图指定一个可选的参数。
 
-    -   **security\_barrier**
+    - **security\_barrier**
 
         当VIEW试图提供行级安全时，应使用该参数。
         
         取值范围：Boolean类型，TRUE、FALSE。
     
-    -   **check\_option**
+    - **check\_option**
 
         指定该视图的检查选项。
 
         取值范围：LOCAL、CASCADED。
 
--   **query**
+- **query**
 
     为视图提供行和列的SELECT或VALUES语句。
 
--   **WITH [ CASCADED | LOCAL ] CHECK OPTION**
+- **WITH [ CASCADED | LOCAL ] CHECK OPTION**
 
     该选项控制自动更新视图的行为，对视图的insert和update，要检查确保新行满足视图定义的条件，即新行可以通过视图看到。如果没有通过检查，则拒绝修改。如果没有添加该选项，则允许通过对视图的insert和update来创建该视图不可见的行。支持下列检查选项：
 
-    -   **LOCAL**
+    - **LOCAL**
 
         只检查视图本身直接定义的条件，除非底层视图也定义了CHECK OPTION，否则它们定义的条件都不检查。
 
-    -   **CASCADED**
+    - **CASCADED**
 
         检查该视图和所有底层视图定义的条件。如果仅声明了CHECK OPTION，没有声明LOCAL和CASCADED，默认是CASCADED。
     
@@ -126,4 +127,3 @@ openGauss=# DROP VIEW myView;
 ## 相关链接<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_sfc32bec2a548470ebab19d6ca7d6abe2"></a>
 
 [ALTER VIEW](../sql_reference/alter_view.md)，[DROP VIEW](../sql_reference/drop_view.md)
-

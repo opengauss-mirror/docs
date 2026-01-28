@@ -2,20 +2,20 @@
 
 数据库连接控制函数控制与openGauss服务器链接的事情。一个应用程序一次可以与多个服务器建立链接，如一个客户端链接多个数据库的场景。每个链接都是用一个从函数PQconnectdb、PQconnectdbParams或PQsetdbLogin获得的PGconn对象表示。注意，这些函数总是返回一个非空的对象指针，除非内存分配失败，会返回一个空的指针。链接建立的接口保存在PGconn对象中，可以调用PQstatus函数来检查一下返回值看看连接是否成功。
 
--   **[PQconnectdbParams](pqconnectdbparams.md)**  
+- **[PQconnectdbParams](pqconnectdbparams.md)**  
 
--   **[PQconnectdb](pqconnectdb.md)**  
+- **[PQconnectdb](pqconnectdb.md)**  
 
--   **[PQconninfoParse](pqconninfoparse.md)**  
+- **[PQconninfoParse](pqconninfoparse.md)**  
 
--   **[PQconnectStart](pqconnectstart.md)**  
+- **[PQconnectStart](pqconnectstart.md)**  
 
--   **[PQerrorMessage](pqerrormessage.md)**  
+- **[PQerrorMessage](pqerrormessage.md)**  
 
--   **[PQsetdbLogin](PQsetdbLogin.md)**  
+- **[PQsetdbLogin](PQsetdbLogin.md)**  
 
--   **[PQfinish](pqfinish.md)**  
+- **[PQfinish](pqfinish.md)**  
 
--   **[PQreset](pqreset.md)**  
+- **[PQreset](pqreset.md)**  
 
--   **[PQstatus](PQstatus.md)**  
+- **[PQstatus](PQstatus.md)**  

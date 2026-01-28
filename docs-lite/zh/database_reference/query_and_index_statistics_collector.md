@@ -128,9 +128,9 @@
 >[!NOTE]说明
 >
 >- track\_sql\_count参数受track\_activities约束：
-> - track\_activities开启而track\_sql\_count关闭时，如果查询了gs\_sql\_count视图，日志中将会有WARNING提示track\_sql\_count是关闭的；
-> - track\_activities和track\_sql\_count同时关闭，那么此时日志中将会有两条WARNING，分别提示track\_activities是关闭的和track\_sql\_count是关闭的；
-> - track\_activities关闭而track\_sql\_count开启，此时日志中将仅有WARNING提示track\_activities是关闭。
+>   - track\_activities开启而track\_sql\_count关闭时，如果查询了gs\_sql\_count视图，日志中将会有WARNING提示track\_sql\_count是关闭的；
+>   - track\_activities和track\_sql\_count同时关闭，那么此时日志中将会有两条WARNING，分别提示track\_activities是关闭的和track\_sql\_count是关闭的；
+>   - track\_activities关闭而track\_sql\_count开启，此时日志中将仅有WARNING提示track\_activities是关闭。
 >- 当参数关闭时，查询视图的结果为0行。
 
 ## time_record_level<a name="zh-cn_topic_0283136896_zh-cn_topic_0237124727_section6524929122814"></a>

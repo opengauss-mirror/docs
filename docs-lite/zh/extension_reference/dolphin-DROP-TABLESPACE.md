@@ -18,22 +18,21 @@ DROP TABLESPACE [ IF EXISTS ] tablespace_name [ENGINE [=] engine_name];
 
 ## 参数说明<a name="zh-cn_topic_0283137549_zh-cn_topic_0237122153_zh-cn_topic_0059779073_sd3609e09c22149eba3e6e64c989573b6"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     如果指定的表空间不存在，则发出一个notice而不是抛出一个错误。
 
--   **tablespace\_name**
+- **tablespace\_name**
 
     表空间的名称。
 
     取值范围：已存在的表空间的名称。
 
--   **engine\_name**
+- **engine\_name**
 
     无实际意义。
 
     取值范围：任意字符串。
-
 
 ## 示例<a name="zh-cn_topic_0283137549_zh-cn_topic_0237122153_zh-cn_topic_0059779073_sbcb08a6a5edc433b951080b230808c35"></a>
 

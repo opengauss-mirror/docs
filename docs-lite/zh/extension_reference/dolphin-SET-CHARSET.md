@@ -6,9 +6,9 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--   openGauss中该语句等价于set client_encoding。
--   请根据前端业务的情况确定，客户端编码和服务器端编码尽量保持一致，提高效率。
--   兼容PostgreSQL所有的字符编码类型。
+- openGauss中该语句等价于set client_encoding。
+- 请根据前端业务的情况确定，客户端编码和服务器端编码尽量保持一致，提高效率。
+- 兼容PostgreSQL所有的字符编码类型。
 
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 

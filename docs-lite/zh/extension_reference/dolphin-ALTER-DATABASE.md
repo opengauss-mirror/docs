@@ -14,7 +14,6 @@
 
 ## 语法格式<a name="zh-cn_topic_0283136981_zh-cn_topic_0237122055_zh-cn_topic_0059779247_s2eca2e2a5fc04ac798bbdf1dce3e7303"></a>
 
-
 - 修改SCHEMA的默认字符集和字符序
 
   ```
@@ -23,8 +22,8 @@
 
   [!NOTE]说明
 
-  -   B兼容性下，仅在 dolphin.b_compatibility_mode 为on时支持该语法。
-  -   使用该语法时，语法等效于ALTER SCHEMA。
+  - B兼容性下，仅在 dolphin.b_compatibility_mode 为on时支持该语法。
+  - 使用该语法时，语法等效于ALTER SCHEMA。
 
 ## 参数说明<a name="zh-cn_topic_0283136981_zh-cn_topic_0237122055_zh-cn_topic_0059779247_s4d6b72484e3b43969af25757fda7ad81"></a>
 

@@ -4,8 +4,6 @@
 
 **表1** ALL_OBJECTS
 
-
-
 <table aria-label="表1" class="table table-sm margin-top-none">
     <thead>
         <tr>
@@ -113,8 +111,6 @@
 所有架构范围内的用户定义对象和系统对象的集合。
 
 **表1** ALL_OBJECTS
-
-
 
 <table aria-label="表1" class="table table-sm margin-top-none">
     <thead>

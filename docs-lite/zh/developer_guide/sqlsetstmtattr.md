@@ -49,10 +49,10 @@ SQLRETURN SQLSetStmtAttr(SQLHSTMT      StatementHandle
 
 ## 返回值<a name="zh-cn_topic_0238272903_zh-cn_topic_0237120433_zh-cn_topic_0059777949_s25d37c96151c49ef8117dc53bda2bf2c"></a>
 
--   SQL\_SUCCESS：表示调用正确。
--   SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
--   SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
--   SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
+- SQL\_SUCCESS：表示调用正确。
+- SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
+- SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
+- SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
 
 ## 注意事项<a name="zh-cn_topic_0238272903_zh-cn_topic_0237120433_zh-cn_topic_0059777949_sb1b6942996a64e589fdfdfb1c00fa519"></a>
 
@@ -61,4 +61,3 @@ SQLRETURN SQLSetStmtAttr(SQLHSTMT      StatementHandle
 ## 示例<a name="zh-cn_topic_0238272903_zh-cn_topic_0237120433_zh-cn_topic_0059777949_s14d206561091447bbb06bac48d8fee66"></a>
 
 参见：[示例](example_odbc.md)
-

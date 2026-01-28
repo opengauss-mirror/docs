@@ -15,13 +15,13 @@
 
 ## 操作步骤<a name="zh-cn_topic_0000001120430818_section98663181331"></a>
 
-1.  使用普通用户登录到openGauss轻量版包安装的主机，解压轻量版安装包到安装目录。
+1. 使用普通用户登录到openGauss轻量版包安装的主机，解压轻量版安装包到安装目录。
 
     ```
     tar -zxf openGauss-Lite-7.0.0-RC3-openEuler22.03-aarch64.tar.gz -C ~/openGauss
     ```
 
-2.  假定解压包的路径为/opt/software/openGauss，进入解压后目录。
+2. 假定解压包的路径为/opt/software/openGauss，进入解压后目录。
 
     ```
     cd ~/openGauss
@@ -63,9 +63,9 @@
     >- 示例：sh install.sh -R \~/app -m primary -D \~/data -l \~/log --start -C "replconninfo1='localhost=xxx.xx.xx.x localport=xxxx remotehost=xxx.xx.xx.x remoteport=xxxx sslmode=verify-ca'"
     >
     >- 实际安装时，请使用实际密码代替上述命令中的password。
-    > - 操作步骤
-    > - 准备证书、私钥。有关生成证书操作，请参考《数据库管理指南》中的“管理数据库安全 \> SSL证书管理 \> 证书生成”章节。   
-    > - 服务端各个配置文件名称约定：
+    >   - 操作步骤
+    >   - 准备证书、私钥。有关生成证书操作，请参考《数据库管理指南》中的“管理数据库安全 \> SSL证书管理 \> 证书生成”章节。   
+    >   - 服务端各个配置文件名称约定：
 >
     >        ```
     >        证书名称约定：server.crt。

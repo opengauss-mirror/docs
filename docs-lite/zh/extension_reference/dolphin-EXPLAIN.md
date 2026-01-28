@@ -14,7 +14,7 @@ EXPLAIN 和 [DESCRIBE](dolphin-DESCRIBE-TABLE.md) 互为同义词，可以用于
 
 ## 注意事项<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_s9667906bf0d748b38b576a8e40549816"></a>
 
--   在指定ANALYZE选项时，语句会被执行。如果用户想使用EXPLAIN分析INSERT、UPDATE、DELETE、CREATE TABLE AS或EXECUTE语句，而不想改动数据（执行这些语句会影响数据），请使用如下方法。
+- 在指定ANALYZE选项时，语句会被执行。如果用户想使用EXPLAIN分析INSERT、UPDATE、DELETE、CREATE TABLE AS或EXECUTE语句，而不想改动数据（执行这些语句会影响数据），请使用如下方法。
 
     ```
     START TRANSACTION;
@@ -22,7 +22,7 @@ EXPLAIN 和 [DESCRIBE](dolphin-DESCRIBE-TABLE.md) 互为同义词，可以用于
     ROLLBACK;
     ```
 
--   由于参数DETAIL、NODES、NUM\_NODES是分布式模式下的功能，在单机模式中是被禁止使用的。假如使用，会产生如下错误。
+- 由于参数DETAIL、NODES、NUM\_NODES是分布式模式下的功能，在单机模式中是被禁止使用的。假如使用，会产生如下错误。
 
     ```
     openGauss=# create table student(id int, name char(20));
@@ -33,22 +33,26 @@ EXPLAIN 和 [DESCRIBE](dolphin-DESCRIBE-TABLE.md) 互为同义词，可以用于
     ERROR:  unrecognized EXPLAIN option "num_nodes"
     ```
 
-
 ## 语法格式<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_sfa16ba6ad51c455aa79e9602a5998838"></a>
 
--   显示SQL语句的执行计划，支持多种选项，对选项顺序无要求。
+- 显示SQL语句的执行计划，支持多种选项，对选项顺序无要求。
 
     ```
     {EXPLAIN | DESCRIBE | DESC} [ (  option  [, ...] )  ] statement;
     ```
+
     或
+
     ```
     {EXPLAIN | DESCRIBE | DESC} [FORMAT = format_name] statement;
     ```
+
     或
+
     ```
     {EXPLAIN | DESCRIBE | DESC} [EXTENDED] statement;
     ```
+
     其中 {EXPLAIN | DESCRIBE | DESC} 表示使用 DESCRIBE、DESC 和 EXPLAIN 效果是等价的。
     
     选项option子句的语法为：
@@ -67,110 +71,109 @@ EXPLAIN 和 [DESCRIBE](dolphin-DESCRIBE-TABLE.md) 互为同义词，可以用于
         FORMAT { TEXT | XML | JSON | YAML }
     ```
 
--   显示SQL语句的执行计划，且要按顺序给出选项。
+- 显示SQL语句的执行计划，且要按顺序给出选项。
 
     ```
     {EXPLAIN | DESCRIBE | DESC} { [  { ANALYZE  }  ] [ (VERBOSE)  ]  | PERFORMANCE  } statement;
     ```
 
-
 ## 参数说明<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_se66550d2d643408ebe3189e751499cd5"></a>
 
--   **statement**
+- **statement**
 
     指定要分析的SQL语句。
 
--   **ANALYZE boolean**
+- **ANALYZE boolean**
 
     显示实际运行时间和其他统计数据。
 
     取值范围：
 
-    -   TRUE（缺省值）：显示实际运行时间和其他统计数据。
-    -   FALSE：不显示。
+    - TRUE（缺省值）：显示实际运行时间和其他统计数据。
+    - FALSE：不显示。
 
--   **VERBOSE boolean**
+- **VERBOSE boolean**
 
     显示有关计划的额外信息。
 
     取值范围：
 
-    -   TRUE（缺省值）：显示额外信息。
-    -   FALSE：不显示。
+    - TRUE（缺省值）：显示额外信息。
+    - FALSE：不显示。
 
--   **COSTS boolean**
+- **COSTS boolean**
 
     包括每个规划节点的估计总成本，以及估计的行数和每行的宽度。
 
     取值范围：
 
-    -   TRUE（缺省值）：显示估计总成本和宽度。
-    -   FALSE：不显示。
+    - TRUE（缺省值）：显示估计总成本和宽度。
+    - FALSE：不显示。
 
--   **CPU boolean**
+- **CPU boolean**
 
     打印CPU的使用情况的信息。
 
     取值范围：
 
-    -   TRUE（缺省值）：显示CPU的使用情况。
-    -   FALSE：不显示。
+    - TRUE（缺省值）：显示CPU的使用情况。
+    - FALSE：不显示。
 
--   **DETAIL boolean**（不可用）
+- **DETAIL boolean**（不可用）
 
     打印数据库节点上的信息。
 
     取值范围：
 
-    -   TRUE（缺省值）：打印数据库节点的信息。
-    -   FALSE：不打印。
+    - TRUE（缺省值）：打印数据库节点的信息。
+    - FALSE：不打印。
 
--   **NODES boolean**（不可用）
+- **NODES boolean**（不可用）
 
     打印query执行的节点信息。
 
     取值范围：
 
-    -   TRUE（缺省值）：打印执行的节点的信息。
-    -   FALSE：不打印。
+    - TRUE（缺省值）：打印执行的节点的信息。
+    - FALSE：不打印。
 
--   **NUM\_NODES boolean**（不可用）
+- **NUM\_NODES boolean**（不可用）
 
     打印执行中的节点的个数信息。
 
     取值范围：
 
-    -   TRUE（缺省值）：打印数据库节点个数的信息。
-    -   FALSE：不打印。
+    - TRUE（缺省值）：打印数据库节点个数的信息。
+    - FALSE：不打印。
 
--   **BUFFERS boolean**
+- **BUFFERS boolean**
 
     包括缓冲区的使用情况的信息。
 
     取值范围：
 
-    -   TRUE：显示缓冲区的使用情况。
-    -   FALSE（缺省值）：不显示。
+    - TRUE：显示缓冲区的使用情况。
+    - FALSE（缺省值）：不显示。
 
--   **TIMING boolean**
+- **TIMING boolean**
 
     包括实际的启动时间和花费在输出节点上的时间信息。
 
     取值范围：
 
-    -   TRUE（缺省值）：显示启动时间和花费在输出节点上的时间信息。
-    -   FALSE：不显示。
+    - TRUE（缺省值）：显示启动时间和花费在输出节点上的时间信息。
+    - FALSE：不显示。
 
--   **PLAN**
+- **PLAN**
 
     是否将执行计划存储在plan\_table中。当该选项开启时，会将执行计划存储在PLAN\_TABLE中，不打印到当前屏幕，因此该选项为on时，不能与其他选项同时使用。
 
     取值范围：
 
-    -   ON（缺省值）：将执行计划存储在plan\_table中，不打印到当前屏幕。执行成功返回EXPLAIN SUCCESS。
-    -   OFF：不存储执行计划，将执行计划打印到当前屏幕。
+    - ON（缺省值）：将执行计划存储在plan\_table中，不打印到当前屏幕。执行成功返回EXPLAIN SUCCESS。
+    - OFF：不存储执行计划，将执行计划打印到当前屏幕。
 
--   **FORMAT**
+- **FORMAT**
 
     指定输出格式。
 
@@ -178,11 +181,11 @@ EXPLAIN 和 [DESCRIBE](dolphin-DESCRIBE-TABLE.md) 互为同义词，可以用于
 
     默认值：TEXT。
 
--   **PERFORMANCE**
+- **PERFORMANCE**
 
     使用此选项时，即打印执行中的所有相关信息。
 
--   **format_name** 
+- **format_name** 
     
     指定输出格式。
   
@@ -190,10 +193,9 @@ EXPLAIN 和 [DESCRIBE](dolphin-DESCRIBE-TABLE.md) 互为同义词，可以用于
 
     默认值：TRADITIONAL
 
--   **EXTENDED**
+- **EXTENDED**
 
     可选，无区别。
-
 
 ## 示例<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_s7175356f914d4ca1954f9c87c4b1e349"></a>
 
@@ -293,4 +295,3 @@ opengauss=# explain test_t;
 ## 相关链接<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_scfac1ca9cbb74e3d891c918580e6b393"></a>
 
 [ANALYZE | ANALYSE](../sql_reference/analyze_analyse.md)，[DESCRIBE](dolphin-DESCRIBE-TABLE.md)
-

@@ -4,10 +4,9 @@
 
 ## 构建容器的架构和操作系统版本<a name="zh-cn_topic_0283136491_section1017214481014"></a>
 
--   x86-64 CentOS 7.6
-
--   ARM64 openEuler 20.03 LTS
-
+- 6-64 CentOS 7.6
+- ARM64 openEuler 20.03 LTS
+ 
 ## 配置准备<a name="zh-cn_topic_0283136491_section260555142417"></a>
 
 使用 buildDockerImage.sh脚本构建docker镜像，buildDockerImage.sh是一个方便使用的shell脚本，提供SHA256的检查。buildDockerImage.sh脚本可以从[openGauss-server仓库](https://gitcode.com/opengauss/openGauss-server/tree/master/docker/dockerfiles)下载。
@@ -18,15 +17,17 @@
 
 >[!NOTE]说明
 >
->-   安装前需要提供openGauss二进制安装包（openGauss-Lite-X.X.X-openEuler20.03-x86_64.tar.gz，X.X.X为openGauss当前版本号）放到 dockerfiles/<version\>文件夹。二进制包可以从  [https://www.opengauss.org/zh/download/](https://www.opengauss.org/zh/download/)下载，确保有正确的yum源。
+>-      安装前需要提供openGauss二进制安装包（openGauss-Lite-X.X.X-openEuler20.03-x86_64.tar.gz，X.X.X为openGauss当前版本号）放到 dockerfiles/<version\>文件夹。二进制包可以从  [https://www.opengauss.org/zh/download/](https://www.opengauss.org/zh/download/)下载，确保有正确的yum源。
+> 
+>-      安装前需要从华为开源镜像站获取repo文件，并放到openGauss-server/docker/dockerfiles/X.X.X文件夹下面。
+> 
 >
->-   安装前需要从华为开源镜像站获取repo文件，并放到openGauss-server/docker/dockerfiles/X.X.X文件夹下面。
->    ```
->    ## openEuler_aarch64.repo获取方法：
->    wget -O openEuler_aarch64.repo https://mirrors.huaweicloud.com/repository/conf/openeuler_aarch64.repo
->    ## CentOS-Base.repo获取方法：
->    wget -O CentOS-Base.repo https://mirrors.huaweicloud.com/repository/conf/CentOS-7-anon.repo
->   
+> ```
+> ## openEuler_aarch64.repo获取方法：
+> wget -O openEuler_aarch64.repo https://mirrors.huaweicloud.com/repository/conf/openeuler_aarch64.repo
+> ## CentOS-Base.repo获取方法：
+> wget -O CentOS-Base.repo https://mirrors.huaweicloud.com/repository/conf/CentOS-7-anon.repo
+> 
 >    ```
 
 在dockerfiles文件夹运行buildDockerImage.sh脚本。

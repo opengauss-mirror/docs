@@ -115,7 +115,7 @@ A report can be generated after the WDR snapshot function is enabled (that is, e
         </tbody>
         </table>
 
-    1. Run the following command to disable the output options and format the output:
+    3. Run the following command to disable the output options and format the output:
 
         ```
         \o \a \t 

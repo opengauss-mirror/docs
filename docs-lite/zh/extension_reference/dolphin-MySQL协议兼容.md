@@ -1,23 +1,24 @@
 # MySQL协议兼容
 
--   openGauss通过抽象协议层接口，在dolphin插件中实现了MySQL协议兼容，用户在设置相关参数后，可通过MySQL的JDBC driver或者MySQL命令行客户端，直接连接openGauss。
+- openGauss通过抽象协议层接口，在dolphin插件中实现了MySQL协议兼容，用户在设置相关参数后，可通过MySQL的JDBC driver或者MySQL命令行客户端，直接连接openGauss。
 
 ## 架构图
+
 ![dolphin-proto](figures/dolphin-proto-arc.png)
 
 - openGauss根据协议兼容配置项，拉起相关监听端口号；当用户通过MySQL客户端直连dolphin协议监听端口号时，openGauss可以通过dolphin协议兼容插件来响应本次网络请求。
 
 ## 当前支持的MySQL客户端版本
 
--   MySQL JDBC driver： 8.0.28及其以下
--   MySQL 命令行客户端： 8.0.28及其以下
+- MySQL JDBC driver： 8.0.28及其以下
+- MySQL 命令行客户端： 8.0.28及其以下
 
 ## 约束
 
--   不支持游标（指在JDBC中通过useCursorFetch、setFetchSize的方式获取数据）。
--   不支持执行存储过程。
--   通过MySQL协议的连接，参数dolphin.b_compatibility_mode和enable_set_variable_b_format会自动设置为true。
--   openGauss支持TLS 1.2协议标准，而部分MySQL命令行客户端版本仅支持TLS 1和TLS 1.1，例如5.7.27，因此不支持以SSL模式连接openGauss。客户端支持TLS版本情况可通过mysql --help查看。
+- 不支持游标（指在JDBC中通过useCursorFetch、setFetchSize的方式获取数据）。
+- 不支持执行存储过程。
+- 通过MySQL协议的连接，参数dolphin.b_compatibility_mode和enable_set_variable_b_format会自动设置为true。
+- openGauss支持TLS 1.2协议标准，而部分MySQL命令行客户端版本仅支持TLS 1和TLS 1.1，例如5.7.27，因此不支持以SSL模式连接openGauss。客户端支持TLS版本情况可通过mysql --help查看。
 
 ## 使用方式
 
@@ -42,21 +43,24 @@
 
 >[!TIP]须知
 >
->-   enable_dolphin_proto和dolphin_server_port为POSTMASTER类型参数，修改需要重启才生效。
->-   使用MySQL客户端连接openGauss前，请确认listen_addresses配置正确，pg_hba允许MySQL客户端所在机器IP连接。可参考 [配置客户端接入认证](../database_administration_guide/configuring_client_access_authentication.md)。
->-   使用MySQL客户端连接时，可通过形如 mysql -u [user_name] -p --port [dolphin_server_port] -h [opengauss_listen_address] 的方式连接。
->-   备机的可连接性受参数[hot_standby](../database_reference/secondary_server.md)和[dolphin_hot_standby](../database_reference/connection_settings.md)参数控制。
+>- enable_dolphin_proto和dolphin_server_port为POSTMASTER类型参数，修改需要重启才生效。
+>- 使用MySQL客户端连接openGauss前，请确认listen_addresses配置正确，pg_hba允许MySQL客户端所在机器IP连接。可参考 [配置客户端接入认证](../database_administration_guide/configuring_client_access_authentication.md)。
+>- 使用MySQL客户端连接时，可通过形如 mysql -u [user_name] -p --port [dolphin_server_port] -h [opengauss_listen_address] 的方式连接。
+>- 备机的可连接性受参数[hot_standby](../database_reference/secondary_server.md)和[dolphin_hot_standby](../database_reference/connection_settings.md)参数控制。
 
 ### caching_sha2_password 认证方式
 
 1. 创建B类型数据库，创建用户并设置MySQL caching_sha2密码（可根据需要通过GRANT命令给新用户赋权）：
-```SQL
-CREATE DATABASE proto_test_db DBCOMPATIBILITY 'B';
-\c proto_test_db
-CREATE USER proto_test WITH PASSWORD 'Proto_test123';
-SELECT set_caching_sha2_password('proto_test', 'Proto_test123', '');
-```
->[!TIP]须知（第一个参数为用户名，第二个参数为MySQL连接密码，第三个参数为原密码；第一次设置时可以为空或者任意值，后续更改密码以及更改认证方式需要原密码做验证）
+
+    ```SQL
+    CREATE DATABASE proto_test_db DBCOMPATIBILITY 'B';
+    \c proto_test_db
+    CREATE USER proto_test WITH PASSWORD 'Proto_test123';
+    SELECT set_caching_sha2_password('proto_test', 'Proto_test123', '');
+    ```
+
+    >[!TIP]须知（第一个参数为用户名，第二个参数为MySQL连接密码，第三个参数为原密码；第一次设置时可以为空或者任意值，后续更改密码以及更改认证方式需要原密码做验证）
+
 2. 设置GUC参数 [enable_dolphin_proto](../database_reference/connection_settings.md#enable_dolphin_proto) 为 on。
 3. 设置MySQL协议监听端口号， [dolphin_server_port](../database_reference/connection_settings.md#dolphin_server_port)，注意端口号需要与openGauss本身监听的端口号 port 不同。
 4. 设置默认连接的数据库实例名，[dolphin.default_database_name](./dolphin-GUC参数说明.md#dolphindefault_database_name)。
@@ -65,10 +69,10 @@ SELECT set_caching_sha2_password('proto_test', 'Proto_test123', '');
 
 >[!TIP]须知
 >
->-   enable_dolphin_proto和dolphin_server_port为POSTMASTER类型参数，修改需要重启才生效。
->-   使用MySQL客户端连接openGauss前，请确认listen_addresses配置正确，pg_hba允许MySQL客户端所在机器IP连接。可参考 [配置客户端接入认证](../database_administration_guide/configuring_client_access_authentication.md)。
->-   使用MySQL客户端连接时，可通过形如 mysql -u [user_name] -p --port [dolphin_server_port] -h [opengauss_listen_address] 的方式连接。
->-   备机的可连接性受参数[hot_standby](../database_reference/secondary_server.md)和[dolphin_hot_standby](../database_reference/connection_settings.md)参数控制。
+>- enable_dolphin_proto和dolphin_server_port为POSTMASTER类型参数，修改需要重启才生效。
+>- 使用MySQL客户端连接openGauss前，请确认listen_addresses配置正确，pg_hba允许MySQL客户端所在机器IP连接。可参考 [配置客户端接入认证](../database_administration_guide/configuring_client_access_authentication.md)。
+>- 使用MySQL客户端连接时，可通过形如 mysql -u [user_name] -p --port [dolphin_server_port] -h [opengauss_listen_address] 的方式连接。
+>- 备机的可连接性受参数[hot_standby](../database_reference/secondary_server.md)和[dolphin_hot_standby](../database_reference/connection_settings.md)参数控制。
 
 ## JDBC常用连接参数的兼容表现
 

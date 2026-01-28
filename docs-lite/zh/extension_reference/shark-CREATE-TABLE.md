@@ -6,10 +6,11 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_sb04dbf08cbd848649163edbff21254a1"></a>
 
--   本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。
--   新增支持 `AS expr [PERSISTED]` 生成列语法。
--   新增支持`opt_clustered`语法。
--   建表语句中，针对UNIQUE和PRIMARY KEY约束，支持通过WITH给出选项，对应index_parameters子句，新增支持的选项包括：
+- 本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。
+- 新增支持 `AS expr [PERSISTED]` 生成列语法。
+- 新增支持`opt_clustered`语法。
+- 建表语句中，针对UNIQUE和PRIMARY KEY约束，支持通过WITH给出选项，对应index_parameters子句，新增支持的选项包括：
+
 ```
 FILLFACTOR = fillfactor
 | PAD_INDEX = { ON | OFF }
@@ -23,15 +24,17 @@ FILLFACTOR = fillfactor
 | COMPRESSION_DELAY = { 0 | delay [ MINUTES | MINUTE ] }
 | DATA_COMPRESSION = { NONE | ROW | PAGE | COLUMNSTORE | COLUMNSTORE_ARCHIVE }
 ```
+
 其中FILLFACTOR选项的取值fillfactor为[1, 100]的整数，实际含义同A库（A库的取值范围为[10, 100]的整数），因此当D库中fillfactor的取值范围为[1, 10)，不报错，将打印notice信息，并将fillfactor的取值设置为A库的最小值10;
 COMPRESSION_DELAY选项的取值delay为[0, 10080]的整数;
 除FILLFACTOR选项含有实际功能，同A库，其余参数均无实际功能，仅语法支持。
--   建表语句中，针对UNIQUE和PRIMARY KEY约束，支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
--   建表语句新增支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
--   建表语句新增支持TEXTIMAGE_ON { filegroup | "default" } 选项，无实际作用，仅语法支持。
--   filegroup为任意字符串，支持通过[]包裹。
--   如果同时指定ON filegroup子句和TEXTIMAGE_ON filegroup子句，ON filegroup子句应位于前面，否则会出现语法报错。
--   ON/TEXTIMAGE_ON filegroup子句无法和ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP }子句同时存在。
+
+- 建表语句中，针对UNIQUE和PRIMARY KEY约束，支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
+- 建表语句新增支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
+- 建表语句新增支持TEXTIMAGE_ON { filegroup | "default" } 选项，无实际作用，仅语法支持。
+- filegroup为任意字符串，支持通过[]包裹。
+- 如果同时指定ON filegroup子句和TEXTIMAGE_ON filegroup子句，ON filegroup子句应位于前面，否则会出现语法报错。
+- ON/TEXTIMAGE_ON filegroup子句无法和ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP }子句同时存在。
 
 ## 语法格式<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
 
@@ -52,7 +55,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     [ COMMENT {=| } 'text' ];
 ```
 
--   其中列约束column\_constraint为：
+- 其中列约束column\_constraint为：
 
     ```
     [ CONSTRAINT constraint_name ]
@@ -74,7 +77,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     [ COMMENT {=| } 'text' ]
     ```
 
--   其中表约束table\_constraint为：
+- 其中表约束table\_constraint为：
 
     ```
     [ CONSTRAINT [ constraint_name ] ]
@@ -88,7 +91,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     [ COMMENT {=| } 'text' ]
     ```
 
--   其中索引参数index\_parameters为：
+- 其中索引参数index\_parameters为：
 
     ```
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
@@ -97,105 +100,104 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
 ## 参数说明<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428"></a>
 
-
--   **AS \( generation\_expr \) \[PERSISTED\]**
+- **AS \( generation\_expr \) \[PERSISTED\]**
 
     该子句为兼容D库的语法，将字段创建为生成列，生成列的值在写入（插入或更新）数据时由generation\_expr计算得到，PERSISTED表示像普通列一样存储生成列的值。
 
     >[!NOTE]说明
     >
-    >-   PERSISTED关键字可省略，与不省略PERSISTED语义相同。
-    >-   兼容D库的生成列无需指定列类型，由表达式计算类型得到列的类型。
-    >-   兼容D库的生成列在删除生成列依赖的普通列时报错，必须先删除生成列，才能删除生成列依赖的普通列。
+    >- PERSISTED关键字可省略，与不省略PERSISTED语义相同。
+    >- 兼容D库的生成列无需指定列类型，由表达式计算类型得到列的类型。
+    >- 兼容D库的生成列在删除生成列依赖的普通列时报错，必须先删除生成列，才能删除生成列依赖的普通列。
 
--   **opt\_clustered**
+- **opt\_clustered**
 
     参数内容为CLUSTERED/NONCLUSTERED，兼容D库的语法，指定创建聚合/非聚合索引。仅语法作用，没有实际功能。
 
--  **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
+- **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
 
     这个子句为表或索引指定一个可选的存储参数。用于表的WITH子句还可以包含OIDS=FALSE表示不分配OID。
 
     针对UNIQUE和PRIMARY KEY约束，新增支持的storage\_parameter选项包括：
 
-    -   FILLFACTOR
+    - FILLFACTOR
 
         int类型，填充因子，实际的含义和功能同A库。
 
         取值范围：[1, 100]的整数，A库的取值范围为[10, 100]的整数，因此当D库中fillfactor的取值范围为[1, 10)，不报错，将打印notice信息，并将fillfactor的取值设置为A库的最小值10。
 
-    -   PAD_INDEX
+    - PAD_INDEX
 
         bool类型，无实际功能，仅语法兼容。
 
         取值范围：ON或者OFF。
 
-    -   IGNORE_DUP_KEY
+    - IGNORE_DUP_KEY
 
         bool类型，无实际功能，仅语法兼容。
 
         取值范围：ON或者OFF。
 
-    -   STATISTICS_NORECOMPUTE
+    - STATISTICS_NORECOMPUTE
 
         bool类型，无实际功能，仅语法兼容。
 
         取值范围：ON或者OFF。
 
-    -   STATISTICS_INCREMENTAL
+    - STATISTICS_INCREMENTAL
 
         bool类型，无实际功能，仅语法兼容。
 
         取值范围：ON或者OFF。
 
-    -   ALLOW_ROW_LOCKS
+    - ALLOW_ROW_LOCKS
 
         bool类型，无实际功能，仅语法兼容。
 
         取值范围：ON或者OFF。
 
-    -   ALLOW_PAGE_LOCKS
+    - ALLOW_PAGE_LOCKS
 
         bool类型，无实际功能，仅语法兼容。
 
         取值范围：ON或者OFF。
 
-    -   OPTIMIZE_FOR_SEQUENTIAL_KEY
+    - OPTIMIZE_FOR_SEQUENTIAL_KEY
 
         bool类型，无实际功能，仅语法兼容。
 
         取值范围：ON或者OFF。
 
-    -   XML_COMPRESSION
+    - XML_COMPRESSION
 
         bool类型，无实际功能，仅语法兼容。
 
         取值范围：ON或者OFF。
 
-    -   COMPRESSION_DELAY
+    - COMPRESSION_DELAY
 
         int类型，单位MINUTES或者MINUTE，可选，无实际功能，仅语法兼容。
 
         取值范围：0 | delay [ MINUTES | MINUTE ]，其中delay为[0, 10080]的整数。
 
-    -   DATA_COMPRESSION
+    - DATA_COMPRESSION
 
         string类型，无实际功能，仅语法兼容。
 
         取值范围：NONE | ROW | PAGE | COLUMNSTORE | COLUMNSTORE_ARCHIVE。
 
--   **filegroup**
+- **filegroup**
 
-    -   建表语句中，针对UNIQUE和PRIMARY KEY约束，支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
-    -   建表语句新增支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
-    -   建表语句新增支持TEXTIMAGE_ON { filegroup | "default" } 选项，无实际作用，仅语法支持。
-    -   filegroup为任意字符串，支持通过[]包裹。
-    -   如果同时指定ON filegroup子句和TEXTIMAGE_ON filegroup子句，ON filegroup子句应位于前面，否则会出现语法报错。
-    -   ON/TEXTIMAGE_ON filegroup子句无法和ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP }子句同时存在。
+    - 建表语句中，针对UNIQUE和PRIMARY KEY约束，支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
+    - 建表语句新增支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
+    - 建表语句新增支持TEXTIMAGE_ON { filegroup | "default" } 选项，无实际作用，仅语法支持。
+    - filegroup为任意字符串，支持通过[]包裹。
+    - 如果同时指定ON filegroup子句和TEXTIMAGE_ON filegroup子句，ON filegroup子句应位于前面，否则会出现语法报错。
+    - ON/TEXTIMAGE_ON filegroup子句无法和ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP }子句同时存在。
 
--  **ASC | DESC**
+- **ASC | DESC**
 
-    -   table_constraint中，针对PRIMARY KEY和UNIQUE约束支持使用{ column_name [ ASC | DESC ] }语法, 为主键和唯一键提供升序或降序约束。
+    - table_constraint中，针对PRIMARY KEY和UNIQUE约束支持使用{ column_name [ ASC | DESC ] }语法, 为主键和唯一键提供升序或降序约束。
 
 ## 生成列示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
 

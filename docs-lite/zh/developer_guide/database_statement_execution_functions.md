@@ -2,28 +2,26 @@
 
 与数据库服务器的连接成功建立，便可以使用这里描述的函数执行SQL查询和命令。
 
--   **[PQclear](pqclear.md)**  
+- **[PQclear](pqclear.md)**  
 
--   **[PQexec](pqexec.md)**  
+- **[PQexec](pqexec.md)**  
 
--   **[PQexecParams](pqexecparams.md)**  
+- **[PQexecParams](pqexecparams.md)**  
 
--   **[PQexecParamsBatch](pqexecparamsbatch.md)**  
+- **[PQexecParamsBatch](pqexecparamsbatch.md)**  
 
--   **[PQexecPrepared](pqexecprepared.md)**  
+- **[PQexecPrepared](pqexecprepared.md)**  
 
--   **[PQexecPreparedBatch](pqexecpreparedbatch.md)**  
+- **[PQexecPreparedBatch](pqexecpreparedbatch.md)**  
 
--   **[PQfname](pqfname.md)**  
+- **[PQfname](pqfname.md)**  
 
--   **[PQgetvalue](pqgetvalue.md)**  
+- **[PQgetvalue](pqgetvalue.md)**  
 
--   **[PQnfields](pqnfields.md)**  
+- **[PQnfields](pqnfields.md)**  
 
--   **[PQntuples](pqntuples.md)**  
+- **[PQntuples](pqntuples.md)**  
 
--   **[PQprepare](pqprepare.md)**  
+- **[PQprepare](pqprepare.md)**  
 
--   **[PQresultStatus](pqresultstatus.md)**  
-
-
+- **[PQresultStatus](pqresultstatus.md)**  

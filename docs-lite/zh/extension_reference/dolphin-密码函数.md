@@ -1,6 +1,6 @@
 # dolphin-密码函数
 
--   set_native_password\(role text, password text)
+- set_native_password\(role text, password text)
 
     描述：设置role的密码，加密方式为sha1(sha1(password)), 存储在pg_authid的rolpasswordext字段中。
 

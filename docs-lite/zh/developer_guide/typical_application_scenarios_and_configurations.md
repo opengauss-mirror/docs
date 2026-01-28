@@ -32,10 +32,10 @@ Debug=1（打开驱动端debug日志）
 
 进行大量数据插入时，建议如下：
 
--   需要设置批量绑定：odbc.ini配置文件中设置UseBatchProtocol=1、数据库设置support\_batch\_bind=on。
--   ODBC程序绑定类型要和数据库中类型一致。
--   客户端字符集和数据库字符集一致。
--   事务改成手动提交。
+- 需要设置批量绑定：odbc.ini配置文件中设置UseBatchProtocol=1、数据库设置support\_batch\_bind=on。
+- ODBC程序绑定类型要和数据库中类型一致。
+- 客户端字符集和数据库字符集一致。
+- 事务改成手动提交。
 
 odbc.ini配置文件：
 
@@ -221,7 +221,7 @@ int begin_unit_test()
     }
 
     /* 建立连接 */
-	ret = SQLConnect(h_conn, (SQLCHAR*) "gaussdb", SQL_NTS, 
+ ret = SQLConnect(h_conn, (SQLCHAR*) "gaussdb", SQL_NTS, 
                                (SQLCHAR*) NULL, 0, NULL, 0); 
     if (SQL_SUCCESS != ret)
     {
@@ -272,8 +272,8 @@ void end_unit_test()
 
 int main()
 {
-	// begin test
-	if (begin_unit_test() != SQL_SUCCESS)
+ // begin test
+ if (begin_unit_test() != SQL_SUCCESS)
     {
         printf("\n begin_test_unit failed.");
         return SQL_ERROR;
@@ -478,7 +478,7 @@ int main()
 
     RETURN_IF_NOT_SUCCESS(SQLRowCount(h_stmt, &RowCount));
     RETURN_IF_NOT(i, RowCount);
-	SQLCloseCursor(h_stmt); 
+ SQLCloseCursor(h_stmt); 
     /* step final. 删除表还原环境 */
     RETURN_IF_NOT_SUCCESS(execute_cmd(sql_drop));
 
@@ -488,4 +488,3 @@ int main()
 
 >[!NOTE]说明
 >上述用例中定义了number列，调用SQLBindParameter接口时，绑定SQL\_NUMERIC会比SQL\_LONG性能高一些。因为如果是char，在数据库服务端插入数据时需要进行数据类型转换，从而引发性能瓶颈。
-

@@ -43,11 +43,11 @@ SQLRETURN SQLPrepare(SQLHSTMT      StatementHandle,
 
 ## 返回值<a name="zh-cn_topic_0238272898_zh-cn_topic_0237120428_zh-cn_topic_0059779125_s5a0422bedc334a4f88a22c60cb4ba293"></a>
 
--   SQL\_SUCCESS：表示调用正确。
--   SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
--   SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
--   SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
--   SQL\_STILL\_EXECUTING：表示语句正在执行。
+- SQL\_SUCCESS：表示调用正确。
+- SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
+- SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
+- SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
+- SQL\_STILL\_EXECUTING：表示语句正在执行。
 
 ## 注意事项<a name="zh-cn_topic_0238272898_zh-cn_topic_0237120428_zh-cn_topic_0059779125_sb5b5132a364641b59ecf3f4a0b691616"></a>
 
@@ -56,4 +56,3 @@ SQLRETURN SQLPrepare(SQLHSTMT      StatementHandle,
 ## 示例<a name="zh-cn_topic_0238272898_zh-cn_topic_0237120428_zh-cn_topic_0059779125_sbf766eb45a5e442094a561b3036a4205"></a>
 
 参见：[示例](example_odbc.md)
-

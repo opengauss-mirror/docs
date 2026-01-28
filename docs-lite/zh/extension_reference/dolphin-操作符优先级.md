@@ -25,4 +25,5 @@ AND
 XOR
 OR
 ```
--   当```dolphin.b_compatibility_mode```为```TRUE```时，```PIPES_AS_CONCAT```默认将开启,```||```则为```OR_OR_SYM```，作为字符串连接；当```PIPES_AS_CONCAT```关闭时，```||```则为逻辑```OR```操作符。
+
+- 当```dolphin.b_compatibility_mode```为```TRUE```时，```PIPES_AS_CONCAT```默认将开启,```||```则为```OR_OR_SYM```，作为字符串连接；当```PIPES_AS_CONCAT```关闭时，```||```则为逻辑```OR```操作符。

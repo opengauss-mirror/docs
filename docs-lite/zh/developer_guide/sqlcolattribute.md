@@ -67,10 +67,10 @@ SQLRETURN SQLColAttibute(SQLHSTMT        StatementHandle,
 
 ## 返回值<a name="zh-cn_topic_0238272888_zh-cn_topic_0237120418_zh-cn_topic_0059778558_s04cf966285614f118de0fabce2eaeb20"></a>
 
--   SQL\_SUCCESS：表示调用正确。
--   SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
--   SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
--   SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
+- SQL\_SUCCESS：表示调用正确。
+- SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
+- SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
+- SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
 
 ## 注意事项<a name="zh-cn_topic_0238272888_zh-cn_topic_0237120418_zh-cn_topic_0059778558_s06211cd9d00f43f098b0db65a182c4f4"></a>
 
@@ -79,4 +79,3 @@ SQLRETURN SQLColAttibute(SQLHSTMT        StatementHandle,
 ## 示例<a name="zh-cn_topic_0238272888_zh-cn_topic_0237120418_zh-cn_topic_0059778558_sa0124e0144e742c989a8b2f0e52adfd6"></a>
 
 参见：[示例](example_odbc.md)
-

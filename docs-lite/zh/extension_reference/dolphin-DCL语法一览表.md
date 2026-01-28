@@ -178,7 +178,6 @@ openGauss支持使用REVOKE命令撤销各种权限。所涉及的SQL语句，�
 </tbody>
 </table>
 
-
 ## KILL<a name="zh-cn_topic_0283136632_section153781731062"></a>
 
 openGauss支持使用KILL命令终止指定连接或该连接下执行的SQL语句。所涉及的SQL语句，请参考表4

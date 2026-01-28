@@ -21,8 +21,8 @@ set variable_name := value;
 
 对以上语法格式的解释如下：
 
--   variable\_name：变量名。
--   value：可以是值或表达式。值value的类型需要和变量variable\_name的类型兼容才能正确赋值。
+- variable\_name：变量名。
+- value：可以是值或表达式。值value的类型需要和变量variable\_name的类型兼容才能正确赋值。
 
 示例：
 
@@ -48,4 +48,3 @@ END;
 > [!TIP]须知
 >
 > * 在begin...end之间可以通过set variable\_name :=(=) value来对变量进行赋值。
-
