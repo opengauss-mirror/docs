@@ -72,6 +72,15 @@
 
 9. pad_char_to_full_length：控制char类型查询时是否删除尾部空格。
 
+10. treat_bxconst_as_binary：控制b''、x''字符串在词法分析时的默认类型。当设置此参数时，将b''、x''数据作为binary类型进行存储和使用。当不设置此参数时，将b''、x''数据作为bit类型进行存储和使用。
+	
+    | 语句                                                         | 不设置treat_bxconst_as_binary表现 | 设置treat_bxconst_as_binary表现 | Mysql57表现 | Mysql80表现
+    | ------------------------------------------------------------ | --------------------------------- | ------------------------------- | --------- | --------- |
+    | select b'110010'                                             | 110010                            | \x32                            | 2         | 0x32      |
+    | select conv(b'110010', 16, 10)                               | 50                                | 2                               | 2         | 50        |
+    | select b'110010' + 1;                                        | 51                                | 3                               | 51        | 51        |
+    | create table t_bit(a bit(16));<br>insert into t_bit values(b'11001000110010');<br>select conv(a, 16, 10) from t_bit; | 12850                             | 12850                           | 12850     | 12850     | 
+
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **示例**：
