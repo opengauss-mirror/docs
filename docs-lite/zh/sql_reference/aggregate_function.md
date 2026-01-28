@@ -2,7 +2,7 @@
 
 ## 聚集函数<a name="zh-cn_topic_0283136894_zh-cn_topic_0237121982_zh-cn_topic_0059778466_s6494488eb2824afa801304697cb740e4"></a>
 
--   sum\(expression\)
+- sum\(expression\)
 
     描述：所有输入行的expression总和。
 
@@ -10,9 +10,9 @@
 
     通常情况下输入数据类型和输出数据类型是相同的，但以下情况会发生类型转换：
 
-    -   对于SMALLINT或INT输入，输出类型为BIGINT。
-    -   对于BIGINT输入，输出类型为NUMBER 。
-    -   对于浮点数输入，输出类型为DOUBLE PRECISION。
+    - 对于SMALLINT或INT输入，输出类型为BIGINT。
+    - 对于BIGINT输入，输出类型为NUMBER 。
+    - 对于浮点数输入，输出类型为DOUBLE PRECISION。
 
     示例：
 
@@ -31,7 +31,7 @@
     openGauss=# DROP TABLE tab;
     ```
 
--   max\(expression\)
+- max\(expression\)
 
     描述：所有输入行中expression的最大值。
 
@@ -55,7 +55,7 @@
     openGauss=# DROP TABLE max_t1;
     ```
 
--   min\(expression\)
+- min\(expression\)
 
     描述：所有输入行中expression的最小值。
 
@@ -146,7 +146,7 @@
 
     ```
 
--   avg\(expression\)
+- avg\(expression\)
 
     描述：所有输入值的均值（算术平均）。
 
@@ -174,7 +174,7 @@
     openGauss=# DROP TABLE avg_t1;
     ```
 
--   count\(expression\)
+- count\(expression\)
 
     描述：返回表中满足expression不为NULL的行数。
 
@@ -196,7 +196,7 @@
     openGauss=# DROP TABLE count_t1;
     ```
 
--   count\(\*\)
+- count\(\*\)
 
     描述：返回表中的记录行数。
 
@@ -217,7 +217,7 @@
     openGauss=# DROP TABLE count_t1;
     ```
 
--   median\(expression\) \[over \(query partition clause\)\]
+- median\(expression\) \[over \(query partition clause\)\]
 
     描述：返回表达式的中位数，计算时NULL将会被median函数忽略。可以使用distinct关键字排除表达式中的重复记录。输入expression的数据类型可以是数值类型（包括integer、 double、bigint等），也可以是interval类型。其他数据类型不支持求取中位数。
 
@@ -233,7 +233,7 @@
     (1 row)
     ```
 
--   array\_agg\(expression\)
+- array\_agg\(expression\)
 
     描述：将所有输入值（包括空）连接成一个数组。
 
@@ -254,7 +254,7 @@
     openGauss=# DROP TABLE array_agg_t1;
     ```
 
--   string\_agg\(expression, delimiter\)
+- string\_agg\(expression, delimiter\)
 
     描述：将输入值连接成为一个字符串，用分隔符分开。
 
@@ -276,13 +276,13 @@
     openGauss=# DROP TABLE string_agg_t1;
     ```
 
--   listagg\(expression \[, delimiter\]\) WITHIN GROUP\(ORDER BY order-list\)
+- listagg\(expression \[, delimiter\]\) WITHIN GROUP\(ORDER BY order-list\)
 
     描述：将聚集列数据按WITHIN GROUP指定的排序方式排列，并用delimiter指定的分隔符拼接成一个字符串。
 
-    -   expression：必选。指定聚集列名或基于列的有效表达式，不支持DISTINCT关键字和VARIADIC参数。
-    -   delimiter：可选。指定分隔符，可以是字符串常数或基于分组列的确定性表达式，缺省时表示分隔符为空。
-    -   order-list：必选。指定分组内的排序方式。
+    - expression：必选。指定聚集列名或基于列的有效表达式，不支持DISTINCT关键字和VARIADIC参数。
+    - delimiter：可选。指定分隔符，可以是字符串常数或基于分组列的确定性表达式，缺省时表示分隔符为空。
+    - order-list：必选。指定分组内的排序方式。
 
     返回类型：text
 
@@ -427,17 +427,18 @@
 
     描述：（仅在B模式下可用）参数数量不定，可对多列进行拼接，将聚集列数据按照ORDER BY指定的排序方式排列，并用separator指定的分隔符拼接成一个字符串, 不支持作为窗口函数使用。
 
-    -   DISTINCT：可选，表示对每行拼接后结果进行去重。
-    -   expression： 必选，指定聚集列名或基于列的有效表达式。
-    -   ORDER BY: 可选，后跟可变数量表达式及排序规则。group_concat函数中不支持（order by + 数字）这种形式。
-    -   SEPARATOR子句: 可选，后跟CONST字符（串），分组中相邻两行表达式结果使用此分隔符拼接。若不指定，默认使用英文逗号‘,’。
-    -   当同时指定DISTINCT和ORDER BY时，openGauss的所有order by表达式必须在distinct表达式中，否则报错。
+    - DISTINCT：可选，表示对每行拼接后结果进行去重。
+    - expression： 必选，指定聚集列名或基于列的有效表达式。
+    - ORDER BY: 可选，后跟可变数量表达式及排序规则。group_concat函数中不支持（order by + 数字）这种形式。
+    - SEPARATOR子句: 可选，后跟CONST字符（串），分组中相邻两行表达式结果使用此分隔符拼接。若不指定，默认使用英文逗号‘,’。
+    - 当同时指定DISTINCT和ORDER BY时，openGauss的所有order by表达式必须在distinct表达式中，否则报错。
 
     返回类型：text
 
     示例：
 
     使用separator指定分隔符为';'。
+
     ```
     openGauss=# CREATE TABLE group_concat_t1(a int, b int); 
      
@@ -456,6 +457,7 @@
     ```
 
     分隔符缺省时，默认为','。
+
     ```
     openGauss=# CREATE TABLE group_concat_t1(a int, b int); 
      
@@ -474,6 +476,7 @@
     ```
 
     聚集列是文本字符集类型。
+
     ```
     openGauss=# CREATE TABLE group_concat_t1(a int, b text); 
      
@@ -492,6 +495,7 @@
     ```
 
     聚集列是整型。
+
     ```
     openGauss=# CREATE TABLE group_concat_t1(a int, b int); 
      
@@ -510,6 +514,7 @@
     ```
 
     聚集列是浮点类型。
+
     ```
     openGauss=# CREATE TABLE group_concat_t1(a int, b float); 
      
@@ -528,6 +533,7 @@
     ```
 
     聚集列是时间类型。
+
     ```
     openGauss=# CREATE TABLE group_concat_t1(a int, b timestamp); 
      
@@ -546,6 +552,7 @@
     ```
 
     聚集列是二进制类型。
+
     ```
      openGauss=# CREATE TABLE group_concat_t1(a int, b bytea); 
      
@@ -564,6 +571,7 @@
     ```
 
     聚集列是时间间隔类型。
+
     ```
     openGauss=# CREATE TABLE group_concat_t1(a int, b interval); 
      
@@ -582,6 +590,7 @@
     ```
 
     使用distinct去重。
+
     ```
     openGauss=# CREATE TABLE group_concat_t1(a int, b interval); 
      
@@ -600,6 +609,7 @@
     ```
 
     使用order by排序。
+
     ```
     openGauss=# CREATE TABLE group_concat_t1(a int, b interval); 
      
@@ -617,7 +627,7 @@
     openGauss=# DROP TABLE group_concat_t1;
     ```
 
--   covar\_pop\(Y, X\)
+- covar\_pop\(Y, X\)
 
     描述：总体协方差。
 
@@ -639,7 +649,7 @@
     openGauss=# DROP TABLE covar_pop_t1;
     ```
 
--   covar\_samp\(Y, X\)
+- covar\_samp\(Y, X\)
 
     描述：样本协方差。
 
@@ -661,7 +671,7 @@
     openGauss=# DROP TABLE covar_samp_t1;
     ```
 
--   stddev\_pop\(expression\)
+- stddev\_pop\(expression\)
 
     描述：总体标准差。
 
@@ -683,7 +693,7 @@
     openGauss=# DROP TABLE stddev_pop_t1;
     ```
 
--   stddev\_samp\(expression\)
+- stddev\_samp\(expression\)
 
     描述：样本标准差。
 
@@ -705,7 +715,7 @@
     openGauss=# DROP TABLE stddev_samp_t1;
     ```
 
--   var\_pop\(expression\)
+- var\_pop\(expression\)
 
     描述：总体方差（总体标准差的平方）
 
@@ -727,7 +737,7 @@
     openGauss=# DROP TABLE var_pop_t1;
     ```
 
--   var\_samp\(expression\)
+- var\_samp\(expression\)
 
     描述：样本方差（样本标准差的平方）
 
@@ -749,7 +759,7 @@
     openGauss=# DROP TABLE var_samp_t1;
     ```
 
--   bit\_and\(expression\)
+- bit\_and\(expression\)
 
     描述：所有非NULL输入值的按位与\(AND\)，如果全部输入值皆为NULL，那么结果也为NULL 。
 
@@ -771,7 +781,7 @@
     openGauss=# DROP TABLE bit_and_t1;
     ```
 
--   bit\_or\(expression\)
+- bit\_or\(expression\)
 
     描述：所有非NULL输入值的按位或\(OR\)，如果全部输入值皆为NULL，那么结果也为NULL。
 
@@ -793,7 +803,7 @@
     openGauss=# DROP TABLE bit_or_t1;
     ```
 
--   bool\_and\(expression\)
+- bool\_and\(expression\)
 
     描述：如果所有输入值都是真，则为真，否则为假。
 
@@ -809,7 +819,7 @@
     (1 row)
     ```
 
--   bool\_or\(expression\)
+- bool\_or\(expression\)
 
     描述：如果所有输入值只要有一个为真，则为真，否则为假。
 
@@ -825,7 +835,7 @@
     (1 row)
     ```
 
--   corr\(Y, X\)
+- corr\(Y, X\)
 
     描述：相关系数
 
@@ -846,7 +856,8 @@
      
     openGauss=# DROP TABLE corr_t1;
     ```
--   corr_s\(expr1, expr2, return_mode\)
+
+- corr_s\(expr1, expr2, return_mode\)
 
     描述：Spearman 等级相关系数
 
@@ -907,7 +918,7 @@
     (1 row)
     ```
 
--   corr_k\(expr1, expr2, return_mode\)
+- corr_k\(expr1, expr2, return_mode\)
 
     描述： Kendall's tau-b 相关系数
 
@@ -937,8 +948,7 @@
     (1 row)
     ```
 
-
--   every\(expression\)
+- every\(expression\)
 
     描述：等效于bool\_and。
 
@@ -954,7 +964,7 @@
     (1 row)
     ```
 
--   regr\_avgx\(Y, X\)
+- regr\_avgx\(Y, X\)
 
     描述：自变量的平均值 \(sum\(X\)/N\)
 
@@ -976,7 +986,7 @@
     openGauss=# DROP TABLE regr_t1;
     ```
 
--   regr\_avgy\(Y, X\)
+- regr\_avgy\(Y, X\)
 
     描述：因变量的平均值 \(sum\(Y\)/N\)
 
@@ -998,7 +1008,7 @@
     openGauss=# DROP TABLE regr_avgy_t1;
     ```
 
--   regr\_count\(Y, X\)
+- regr\_count\(Y, X\)
 
     描述：两个表达式都不为NULL的输入行数。
 
@@ -1020,7 +1030,7 @@
     openGauss=# DROP TABLE regr_count_t1;
     ```
 
--   regr\_intercept\(Y, X\)
+- regr\_intercept\(Y, X\)
 
     描述：根据所有输入的点\(X, Y\)按照最小二乘法拟合成一个线性方程，然后返回该直线的Y轴截距。
 
@@ -1042,7 +1052,7 @@
     openGauss=# DROP TABLE regr_intercept_t1;
     ```
 
--   regr\_r2\(Y, X\)
+- regr\_r2\(Y, X\)
 
     描述：相关系数的平方。
 
@@ -1064,7 +1074,7 @@
     openGauss=# DROP TABLE regr_r2_t1;
     ```
 
--   regr\_slope\(Y, X\)
+- regr\_slope\(Y, X\)
 
     描述：根据所有输入的点\(X, Y\)按照最小二乘法拟合成一个线性方程， 然后返回该直线的斜率。
 
@@ -1086,7 +1096,7 @@
     openGauss=# DROP TABLE regr_slope_t1;
     ```
 
--   regr\_sxx\(Y, X\)
+- regr\_sxx\(Y, X\)
 
     描述：sum\(X^2\) - sum\(X\)^2/N （自变量的“平方和”）
 
@@ -1108,7 +1118,7 @@
     openGauss=# DROP TABLE regr_sxx_t1;
     ```
 
--   regr\_sxy\(Y, X\)
+- regr\_sxy\(Y, X\)
 
     描述：sum\(X\*Y\) - sum\(X\) \* sum\(Y\)/N （自变量和因变量的“乘方积”）
 
@@ -1130,7 +1140,7 @@
     openGauss=# DROP TABLE regr_sxy_t1;
     ```
 
--   regr\_syy\(Y, X\)
+- regr\_syy\(Y, X\)
 
     描述：sum\(Y^2\) - sum\(Y\)^2/N（因变量的"平方和"）
 
@@ -1152,7 +1162,7 @@
     openGauss=# DROP TABLE regr_syy_t1;
     ```
 
--   stddev\(expression\)
+- stddev\(expression\)
 
     描述：stddev\_samp的别名。
 
@@ -1174,7 +1184,7 @@
     openGauss=# DROP TABLE stddev_t1;
     ```
 
--   variance\(expexpression,ression\)
+- variance\(expexpression,ression\)
 
     描述：var\_samp的别名。
 
@@ -1196,7 +1206,7 @@
     openGauss=# DROP TABLE variance_t1;
     ```
 
--   delta
+- delta
 
     描述：返回当前行和前一行的差值。
 
@@ -1210,15 +1220,15 @@
 
   >[!NOTE]说明
   >
-  >-   对于大表，CHECKSUM函数可能会需要很长时间。
+  >- 对于大表，CHECKSUM函数可能会需要很长时间。
   >
-  >-   如果某两表的CHECKSUM值不同，则表明两表的内容是不同的。由于CHECKSUM函数中使用散列函数不能保证无冲突，因此两个不同内容的表可能会得到相同的CHECKSUM值，存在这种情况的可能性较小。对于列进行的CHECKSUM也存在相同的情况。
+  >- 如果某两表的CHECKSUM值不同，则表明两表的内容是不同的。由于CHECKSUM函数中使用散列函数不能保证无冲突，因此两个不同内容的表可能会得到相同的CHECKSUM值，存在这种情况的可能性较小。对于列进行的CHECKSUM也存在相同的情况。
   >
-  >-   对于时间类型timestamp, timestamptz和smalldatetime，计算CHECKSUM值时请确保时区设置一致。
+  >- 对于时间类型timestamp, timestamptz和smalldatetime，计算CHECKSUM值时请确保时区设置一致。
 
-  -   若计算某列的CHECKSUM值，且该列类型可以默认转为TEXT类型，则expression为列名。
-  -   若计算某列的CHECKSUM值，且该列类型不能默认转为TEXT类型，则expression为列名::TEXT。
-  -   若计算所有列的CHECKSUM值，则expression为表名::TEXT。
+  - 若计算某列的CHECKSUM值，且该列类型可以默认转为TEXT类型，则expression为列名。
+  - 若计算某列的CHECKSUM值，且该列类型不能默认转为TEXT类型，则expression为列名::TEXT。
+  - 若计算所有列的CHECKSUM值，则expression为表名::TEXT。
 
   可以默认转换为TEXT类型的类型包括：char、name、 int8、 int2、 int1、 int4、 raw、 pg\_node\_tree、 float4、 float8、 bpchar、 varchar、 nvarchar、 nvarchar2、 date、 timestamp、 timestamptz、 numeric、 smalldatetime，其他类型需要强制转换为TEXT。
 
@@ -1274,7 +1284,7 @@
     openGauss=# DROP TABLE checksum_t1;
   ```
 
--   first\(anyelement\)
+- first\(anyelement\)
 
     描述：返回第一个非NULL输入。
 
@@ -1296,7 +1306,7 @@
     (1 rows)
     ```
 
--   last\(anyelement\)
+- last\(anyelement\)
 
     描述：返回最后一个非NULL输入。
 
@@ -1318,7 +1328,7 @@
     (1 rows)
     ```
 
--   mode\(\) within group \(order by value anyelement\)
+- mode\(\) within group \(order by value anyelement\)
 
     描述：返回某列中出现频率最高的值，如果多个值频率相同，则返回最小的那个值。排序方式和该列类型的默认排序方式相同。其中value为输入参数，可以为任意类型。
 
@@ -1339,7 +1349,7 @@
     (1 row)
     ```
 
--   json\_agg\(any\)
+- json\_agg\(any\)
 
     描述：将值聚集为json数组。
 
@@ -1361,8 +1371,7 @@
     openGauss=# DROP TABLE json_agg_t1;
     ```
 
-
--   json\_object\_agg\(any, any\)
+- json\_object\_agg\(any, any\)
 
     描述：将值聚集为json对象。
 
@@ -1384,11 +1393,11 @@
     openGauss=# DROP TABLE json_object_agg_t1;
     ```
 
--   cume\_dist\(expression \[,expression ...\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
+- cume\_dist\(expression \[,expression ...\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
 
     描述：计算由函数的参数标识的假设行和相应的排序规范在聚合组中行中的累积分布，也就是expression的值与排序以后行值相同的最后一行的行数在排序分区总行数中的占比
-    -   expression：必选。用于指定假设插入到一组行中的行。该表达式必须返回一个内置数据类型的值。表达式必须是常量或变量的常量、变量。可以输入多个参数。参数的个数必须与order-list和个数保持一致。
-    -   order-list：必选。排序键可以是列名或排序键表达式。
+    - expression：必选。用于指定假设插入到一组行中的行。该表达式必须返回一个内置数据类型的值。表达式必须是常量或变量的常量、变量。可以输入多个参数。参数的个数必须与order-list和个数保持一致。
+    - order-list：必选。排序键可以是列名或排序键表达式。
 
     返回类型：float
 
@@ -1425,6 +1434,7 @@
     示例：
 
     以c1，c2为排序列，将输入的(3,0.2)插入到这个排序列中，排在第5位，所以，函数返回值为5/14的值
+
     ```
     openGauss=# select cume_dist(3,0.2) within group (order by c1,c2) from aggregates_hypothetical;
     cume_dist     
@@ -1445,17 +1455,18 @@
     (1 row)
     ```
 
--   rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
+- rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
 
     描述：计算由函数的参数标识的假设行相对于给定排序规范的排名。rank函数的排行的值不是连续的
-    -   expression：必选。用于指定假设插入到一组行中的行。该表达式必须返回一个内置数据类型的值。表达式必须是常量或变量的常量、变量。可以输入多个参数。参数的个数必须与order-list和个数保持一致。
-    -   order-list：必选。排序键可以是列名或排序键表达式。
+    - expression：必选。用于指定假设插入到一组行中的行。该表达式必须返回一个内置数据类型的值。表达式必须是常量或变量的常量、变量。可以输入多个参数。参数的个数必须与order-list和个数保持一致。
+    - order-list：必选。排序键可以是列名或排序键表达式。
 
     返回类型：int
 
     示例
 
     以c1为排序列，计算输入参数在排序列中的排行值，重复的列也算在排行里，所以排行是不连续的
+
     ```
     openGauss=# select rank(3) within group (order by c1) from aggregates_hypothetical;
     rank 
@@ -1473,6 +1484,7 @@
     示例
 
     以c1，c2为排序列
+
     ```
     openGauss=# select rank(4,0.2) within group (order by c1,c2) from aggregates_hypothetical;
     rank 
@@ -1481,17 +1493,18 @@
     (1 row)
     ```
 
--   dense\_rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
+- dense\_rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
 
     描述：计算由函数的参数标识的假设行相对于给定排序规范的排名。dense_rank函数的排行的值为连续的
-    -   expression：必选。用于指定假设插入到一组行中的行。该表达式必须返回一个内置数据类型的值。表达式必须是常量或变量的常量、变量。可以输入多个参数。参数的个数必须与order-list和个数保持一致。
-    -   order-list：必选。排序键可以是列名或排序键表达式。
+    - expression：必选。用于指定假设插入到一组行中的行。该表达式必须返回一个内置数据类型的值。表达式必须是常量或变量的常量、变量。可以输入多个参数。参数的个数必须与order-list和个数保持一致。
+    - order-list：必选。排序键可以是列名或排序键表达式。
 
     返回类型：int
 
     示例
 
     以c1为排序列，计算输入参数在排序列中的排行值，重复的列不算在排行里，所以排行是连续的
+
     ```
     openGauss=# select dense_rank(3) within group (order by c1) from aggregates_hypothetical;
     dense_rank 
@@ -1509,6 +1522,7 @@
     示例
 
     以c1，c2为排序列
+
     ```
     openGauss=# select dense_rank(4,0.2) within group (order by c1,c2) from aggregates_hypothetical;;
     dense_rank 
@@ -1517,17 +1531,18 @@
     (1 row)
     ```
 
--   percent\_rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
+- percent\_rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
 
     描述：计算由函数的参数标识的假设行相对于给定排序规范的相对位置的百分比。计算公式为(rank - 1) / (total_rows - 1)
-    -   expression：必选。用于指定假设插入到一组行中的行。该表达式必须返回一个内置数据类型的值。表达式必须是常量或变量的常量、变量。可以输入多个参数。参数的个数必须与order-list和个数保持一致。
-    -   order-list：必选。排序键可以是列名或排序键表达式。
+    - expression：必选。用于指定假设插入到一组行中的行。该表达式必须返回一个内置数据类型的值。表达式必须是常量或变量的常量、变量。可以输入多个参数。参数的个数必须与order-list和个数保持一致。
+    - order-list：必选。排序键可以是列名或排序键表达式。
 
     返回类型：float
 
     示例
 
     以c1为排序列，输入的值在当前排行列所在的位置的百分比
+
     ```
     openGauss=# select percent_rank(4) within group (order by c1) from aggregates_hypothetical;;
     percent_rank    
@@ -1539,6 +1554,7 @@
     示例
 
     以c1，c2为排序列
+
     ```
     openGauss=# select percent_rank(3,0.2) within group (order by c1,c2) from aggregates_hypothetical; 
     percent_rank    

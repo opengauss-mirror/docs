@@ -2,7 +2,7 @@
 
 ## 哈希函数<a name="section161615718554"></a>
 
--   hll\_hash\_boolean\(bool\)
+- hll\_hash\_boolean\(bool\)
 
     描述：对bool类型数据计算哈希值。
 
@@ -18,8 +18,7 @@
     (1 row)
     ```
 
-
--   hll\_hash\_boolean\(bool, int32\)
+- hll\_hash\_boolean\(bool, int32\)
 
     描述：设置hash seed（即改变哈希策略）并对bool类型数据计算哈希值。
 
@@ -35,7 +34,7 @@
     (1 row)
     ```
 
--   hll\_hash\_smallint\(smallint\)
+- hll\_hash\_smallint\(smallint\)
 
     描述：对smallint类型数据计算哈希值。
 
@@ -51,12 +50,11 @@
     (1 row)
     ```
 
-
 >[!NOTE]说明
 >
 >数值大小相同的参数使用不同数据类型的哈希函数计算，最后结果会不一样，因为不同类型哈希函数会选取不同的哈希计算策略。
 
--   hll\_hash\_smallint\(smallint, int32\)
+- hll\_hash\_smallint\(smallint, int32\)
 
     描述：设置hash seed（即改变哈希策略）同时对smallint类型数据计算哈希值。
 
@@ -72,7 +70,7 @@
     (1 row)
     ```
 
--   hll\_hash\_integer\(integer\)
+- hll\_hash\_integer\(integer\)
 
     描述：对integer类型数据计算哈希值。
 
@@ -88,7 +86,7 @@
     (1 row)
     ```
 
--   hll\_hash\_integer\(integer, int32\)
+- hll\_hash\_integer\(integer, int32\)
 
     描述：对integer类型数据计算哈希值，并设置hashseed（即改变哈希策略）。
 
@@ -104,7 +102,7 @@
     (1 row)
     ```
 
--   hll\_hash\_bigint\(bigint\)
+- hll\_hash\_bigint\(bigint\)
 
     描述：对bigint类型数据计算哈希值。
 
@@ -120,7 +118,7 @@
     (1 row)
     ```
 
--   hll\_hash\_bigint\(bigint, int32\)
+- hll\_hash\_bigint\(bigint, int32\)
 
     描述：对bigint类型数据计算哈希值，并设置hashseed（即改变哈希策略）。
 
@@ -136,7 +134,7 @@
     (1 row)
     ```
 
--   hll\_hash\_bytea\(bytea\)
+- hll\_hash\_bytea\(bytea\)
 
     描述：对bytea类型数据计算哈希值。
 
@@ -152,7 +150,7 @@
     (1 row)
     ```
 
--   hll\_hash\_bytea\(bytea, int32\)
+- hll\_hash\_bytea\(bytea, int32\)
 
     描述：对bytea类型数据计算哈希值，并设置hashseed（即改变哈希策略）。
 
@@ -168,7 +166,7 @@
     (1 row)
     ```
 
--   hll\_hash\_text\(text\)
+- hll\_hash\_text\(text\)
 
     描述：对text类型数据计算哈希值。
 
@@ -184,7 +182,7 @@
     (1 row)
     ```
 
--   hll\_hash\_text\(text, int32\)
+- hll\_hash\_text\(text, int32\)
 
     描述：对text类型数据计算哈希值, 并设置hashseed（即改变哈希策略）。
 
@@ -200,7 +198,7 @@
     (1 row)
     ```
 
--   hll\_hash\_any\(anytype\)
+- hll\_hash\_any\(anytype\)
 
     描述：对任意类型数据计算哈希值。
 
@@ -222,7 +220,7 @@
     (1 row)
     ```
 
--   hll\_hash\_any\(anytype, int32\)
+- hll\_hash\_any\(anytype, int32\)
 
     描述：对任意类型数据计算哈希值，并设置hashseed（即改变哈希策略）。
 
@@ -238,7 +236,7 @@
     (1 row)
     ```
 
--   hll\_hashval\_eq\(hll\_hashval, hll\_hashval\)
+- hll\_hashval\_eq\(hll\_hashval, hll\_hashval\)
 
     描述：比较两个hll\_hashval类型数据是否相等。
 
@@ -254,7 +252,7 @@
     (1 row)
     ```
 
--   hll\_hashval\_ne\(hll\_hashval, hll\_hashval\)
+- hll\_hashval\_ne\(hll\_hashval, hll\_hashval\)
 
     描述：比较两个hll\_hashval类型数据是否不相等。
 
@@ -270,12 +268,11 @@
     (1 row)
     ```
 
-
 ## 日志函数<a name="section362275717559"></a>
 
 hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小的时候会使用Explicit模式，这种模式下distinct值的计算是没有误差的；随着distinct值越来越多，hll会先后转换为Sparse模式和Full模式，这两种模式在计算结果上没有任何区别，只影响hll函数的计算效率和hll对象的存储空间。下面的函数可以用于查看hll的一些参数。
 
--   hll\_print\(hll\)
+- hll\_print\(hll\)
 
     描述：打印hll的一些debug参数信息。
 
@@ -289,8 +286,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
-
--   hll\_type\(hll\)
+- hll\_type\(hll\)
 
     描述：查看当前hll的类型。返回值具体含义如下：返回值0，表示HLL\_UNINIT，未初始化的hll对象；返回值1，表示HLL\_EMPTY，hll空对象；返回值2，表示HLL\_EXPLICIT，Explicit模式的hll对象；返回值3，表示HLL\_SPARSE，Sparse模式的hll对象；返回值4，表示HLL\_FULL，Full模式的hll对象；返回值5，表示HLL\_UNDEFINED，不合法的hll对象。
 
@@ -304,7 +300,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
--   hll\_log2m\(hll\)
+- hll\_log2m\(hll\)
 
     描述：查看当前hll数据结构中的log2m数值，log2m是分桶数的对数值，此值会影响最后hll计算distinct误差率，误差率计算公式为±1.04/√\(2 ^ log2m\)。当显式指定log2m的取值为10-16之间时，hll会设置分桶数为2<sup>log2m</sup>。当显示指定log2explicit为-1时，会采用内置默认值。
 
@@ -330,7 +326,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
--   hll\_log2explicit\(hll\)
+- hll\_log2explicit\(hll\)
 
     描述：查看当前hll数据结构中的log2explicit数值。hll通常会由Explicit模式到Sparse模式再到Full模式，这个过程称为promotion hierarchy策略。可以通过调整log2explicit值的大小改变策略，比如log2explicit为0的时候就会跳过Explicit模式而直接进入Sparse模式。当显式指定log2explicit的取值为1-12之间时，hll会在数据段长度超过2<sup>log2explicit</sup>时转为Sparse模式。当显示指定log2explicit为-1时，会采用内置默认值。
 
@@ -356,7 +352,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
--   hll\_log2sparse\(hll\)
+- hll\_log2sparse\(hll\)
 
     描述：查看当前hll数据结构中的log2sparse数值。hll通常会由Explicit模式到Sparse模式再到Full模式，这个过程称为promotion hierarchy策略。可以通过调整log2sparse值的大小改变策略，比如log2sparse为0的时候就会跳过Sparse模式而直接进入Full模式。当显式指定Sparse的取值为1-14之间时，hll会在数据段长度超过2<sup>log2sparse</sup>时转为Full模式。当显示指定log2sparse为-1时，会采用内置默认值。
 
@@ -382,8 +378,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
-
--   hll\_duplicatecheck\(hll\)
+- hll\_duplicatecheck\(hll\)
 
     描述：是否启用duplicatecheck，0是关闭，1是开启。默认关闭，对于有较多重复值出现的情况，可以开启以提高效率。当显示指定duplicatecheck为-1时，会采用内置默认值。
 
@@ -409,10 +404,9 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
-
 ## 功能函数<a name="section1014220328512"></a>
 
--   hll\_empty\(\)
+- hll\_empty\(\)
 
     描述：创建一个空的hll。
 
@@ -428,7 +422,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
--   hll\_empty\(int32 log2m\)
+- hll\_empty\(int32 log2m\)
 
     描述：创建空的hll并指定参数log2m，取值范围是10到16。若输入-1，则采用内置默认值。
 
@@ -450,7 +444,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
--   hll\_empty\(int32 log2m, int32 log2explicit\)
+- hll\_empty\(int32 log2m, int32 log2explicit\)
 
     描述：创建空的hll并依次指定参数log2m、log2explicit。log2explicit取值范围是0到12，0表示直接跳过Explicit模式。该参数可以用来设置Explicit模式的阈值大小，在数据段长度达到2<sup>log2explicit</sup>后切换为Sparse模式或者Full模式。若输入-1，则log2explicit采用内置默认值。
 
@@ -472,7 +466,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
--   hll\_empty\(int32 log2m, int32 log2explicit, int64 log2sparse\)
+- hll\_empty\(int32 log2m, int32 log2explicit, int64 log2sparse\)
 
     描述：创建空的hll并依次指定参数log2m、log2explicit、log2sparse。log2sparse取值范围是0到14，0表示直接跳过Sparse模式。该参数可以用来设置Sparse模式的阈值大小，在数据段长度达到2<sup>log2sparse</sup>后切换为Full模式。若输入-1，则log2sparse采用内置默认值。
 
@@ -494,7 +488,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
--   hll\_empty\(int32 log2m, int32 log2explicit, int64 log2sparse, int32 duplicatecheck\)
+- hll\_empty\(int32 log2m, int32 log2explicit, int64 log2sparse, int32 duplicatecheck\)
 
     描述：创建空的hll并依次指定参数log2m、log2explicit、log2sparse、duplicatecheck。duplicatecheck取0或者1，表示是否开启该模式，默认情况下该模式会关闭。若输入-1，则duplicatecheck采用内置默认值。
 
@@ -516,7 +510,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
--   hll\_add\(hll, hll\_hashval\)
+- hll\_add\(hll, hll\_hashval\)
 
     描述：把hll\_hashval加入到hll中。
 
@@ -532,7 +526,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
--   hll\_add\_rev\(hll\_hashval, hll\)
+- hll\_add\_rev\(hll\_hashval, hll\)
 
     描述：把hll\_hashval加入到hll中，和hll\_add功能一样，只是参数位置进行了交换。
 
@@ -548,7 +542,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
--   hll\_eq\(hll, hll\)
+- hll\_eq\(hll, hll\)
 
     描述：比较两个hll是否相等。
 
@@ -564,7 +558,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
--   hll\_ne\(hll, hll\)
+- hll\_ne\(hll, hll\)
 
     描述：比较两个hll是否不相等。
 
@@ -580,7 +574,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
--   hll\_cardinality\(hll\)
+- hll\_cardinality\(hll\)
 
     描述：计算hll的distinct值。
 
@@ -596,7 +590,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
--   hll\_union\(hll, hll\)
+- hll\_union\(hll, hll\)
 
     描述：把两个hll数据结构union成一个。
 
@@ -612,10 +606,9 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
-
 ## 聚合函数<a name="section136282577556"></a>
 
--   hll\_add\_agg\(hll\_hashval\)
+- hll\_add\_agg\(hll\_hashval\)
 
     描述：把哈希后的数据按照分组放到hll中。
 
@@ -645,8 +638,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (2 rows)
     ```
 
-
--   hll\_add\_agg\(hll\_hashval, int32 log2m\)
+- hll\_add\_agg\(hll\_hashval, int32 log2m\)
 
     描述：把哈希后的数据按照分组放到hll中， 并指定参数log2m，取值范围是10到16。若输入-1或者NULL，则采用内置默认值。
 
@@ -662,7 +654,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
--   hll\_add\_agg\(hll\_hashval, int32 log2m, int32 log2explicit\)
+- hll\_add\_agg\(hll\_hashval, int32 log2m, int32 log2explicit\)
 
     描述：把哈希后的数据按照分组放到hll中，依次指定参数log2m、log2explicit。 log2explicit取值范围是0到12，0表示直接跳过Explicit模式。该参数可以用来设置Explicit模式的阈值大小，在数据段长度达到2<sup>log2explicit</sup>后切换为Sparse模式或者Full模式。若输入-1或者NULL，则log2explicit采用内置默认值。
 
@@ -678,7 +670,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
--   hll\_add\_agg\(hll\_hashval, int32 log2m, int32 log2explicit, int64 log2sparse\)
+- hll\_add\_agg\(hll\_hashval, int32 log2m, int32 log2explicit, int64 log2sparse\)
 
     描述：把哈希后的数据按照分组放到hll中， 依次指定参数log2m、log2explicit、log2sparse。，log2sparse取值范围是0到14，0表示直接跳过Sparse模式。该参数可以用来设置Sparse模式的阈值大小，在数据段长度达到2<sup>log2sparse</sup>后切换为Full模式。若输入-1或者NULL，则log2sparse采用内置默认值。
 
@@ -694,7 +686,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
--   hll\_add\_agg\(hll\_hashval, int32 log2m, int32 log2explicit, int64 log2sparse, int32 duplicatecheck\)
+- hll\_add\_agg\(hll\_hashval, int32 log2m, int32 log2explicit, int64 log2sparse, int32 duplicatecheck\)
 
     描述：把哈希后的数据按照分组放到hll中, 依次制定参数log2m、log2explicit、log2sparse、duplicatecheck，duplicatecheck取值范围是0或者1，表示是否开启该模式，默认情况下该模式会关闭。若输入-1或者NULL，则duplicatecheck采用内置默认值。
 
@@ -710,7 +702,7 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     (1 row)
     ```
 
--   hll\_union\_agg\(hll\)
+- hll\_union\_agg\(hll\)
 
     描述：将多个hll类型数据union成一个hll。
 
@@ -731,27 +723,25 @@ hll主要存在三种模式Explicit，Sparse，Full。当数据规模比较小�
     >
     >注意：当两个或者多个hll数据结构做union的时候，必须要保证其中每一个hll里面的精度参数一样，否则将不可以进行union。同样的约束也适用于函数hll\_union\(hll,hll\)。
 
-
 ## 废弃函数<a name="section34169941512"></a>
 
 由于版本升级，HLL（HyperLogLog）有一些旧的函数废弃，用户可以用类似的函数进行替代。
 
--   hll\_schema\_version\(hll\)
+- hll\_schema\_version\(hll\)
 
     描述：查看当前hll中的schema version。旧版本schema version是常值1，用来进行hll字段的头部校验，重构后的hll在头部增加字段“HLL”进行校验，schema version不再使用。
 
--   hll\_regwidth\(hll\)
+- hll\_regwidth\(hll\)
 
     描述：查看hll数据结构中桶的位数大小。旧版本桶的位数regwidth取值1\~5，会存在较大的误差，也限制了基数估计上限。 重构后regwidth为固定值6，不再使用regwidth变量。
 
--   hll\_expthresh\(hll\)
+- hll\_expthresh\(hll\)
 
     描述：得到当前hll中expthresh大小。采用hll\_log2explicit\(hll\)替代类似功能。
 
--   hll\_sparseon\(hll\)
+- hll\_sparseon\(hll\)
 
     描述：是否启用Sparse模式。采用hll\_log2sparse\(hll\)替代类似功能，0表示关闭Sparse模式。
-
 
 ## 内置函数<a name="section17632057105518"></a>
 
@@ -886,7 +876,7 @@ HLL（HyperLogLog）有一系列内置函数用于内部对数据进行处理，
 
 ## 操作符<a name="section18638145795518"></a>
 
--   =
+- =
 
     描述：比较hll或hll\_hashval的值是否相等。
 
@@ -910,8 +900,7 @@ HLL（HyperLogLog）有一系列内置函数用于内部对数据进行处理，
     (1 row)
     ```
 
-
--   <\> or !=
+- <\> or !=
 
     描述：比较hll或hll\_hashval是否不相等。
 
@@ -935,7 +924,7 @@ HLL（HyperLogLog）有一系列内置函数用于内部对数据进行处理，
     (1 row)
     ```
 
--   ||
+- ||
 
     描述：可代表hll\_add, hll\_union, hll\_add\_rev三个函数的功能。
 
@@ -966,7 +955,7 @@ HLL（HyperLogLog）有一系列内置函数用于内部对数据进行处理，
     (1 row)
     ```
 
--   \#
+- \#
 
     描述：计算出hll的Dintinct值, 同hll\_cardinality函数。
 
@@ -981,5 +970,3 @@ HLL（HyperLogLog）有一系列内置函数用于内部对数据进行处理，
             1
     (1 row)
     ```
-
-

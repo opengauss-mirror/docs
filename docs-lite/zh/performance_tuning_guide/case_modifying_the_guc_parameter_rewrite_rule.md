@@ -185,5 +185,6 @@ openGauss=# explain select t1.c1 from t1 where t1.c2 = 5 and t1.c1 in (select t2
 原先扫描t2表时，由于存在group by子句，导致t2.c1 = t1.c1过滤条件无法下推到扫描中，需要做全表扫描。如果打开remove_redundant_distinct_group_by参数，去掉了group by子句，选择了参数化路径，提升了查询性能。
 
 需要注意的是，即使打开了该参数，部分场景也不会做该优化，原因是可能会影响结果：
+
 * 对于distinct场景，使用了distinct on子句或limit子句。
 * 对于group by场景，使用了聚集函数、窗口函数、having子句、groupingSets或limit子句。

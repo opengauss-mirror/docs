@@ -2,7 +2,7 @@
 
 ## 集合操作符<a name="section423710350429"></a>
 
--   =（默认）
+- =（默认）
 
     参数：nesttable类型
 
@@ -27,7 +27,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   =（compatible_a_db_array模式）
+- =（compatible_a_db_array模式）
 
     参数：nesttable类型
 
@@ -56,7 +56,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   <\>
+- <\>
 
     参数：nesttable类型
 
@@ -81,10 +81,9 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
-
 ## 集合MULTISET函数<a name="section1678113016436"></a>
 
--   MULTISET UNION \[ALL | DISTINCT\]
+- MULTISET UNION \[ALL | DISTINCT\]
 
     参数：nesttable类型
 
@@ -120,7 +119,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   MULTISET EXCEPT \[ALL | DISTINCT\]
+- MULTISET EXCEPT \[ALL | DISTINCT\]
 
     参数：nesttable类型
 
@@ -156,7 +155,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   MULTISET INTERSECT \[ALL | DISTINCT\]
+- MULTISET INTERSECT \[ALL | DISTINCT\]
 
     参数：nesttable类型
 
@@ -192,10 +191,9 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
-
 ## 集合类型函数<a name="section1525493416436"></a>
 
--   exists\(idx\)
+- exists\(idx\)
 
     参数：idx为int4类型或varchar类型，
 
@@ -240,7 +238,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   extend\[\(e)\]
+- extend\[\(e)\]
 
     参数：e为int4类型
 
@@ -280,7 +278,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
     
--   delete\[\(idx1\)\]（默认）
+- delete\[\(idx1\)\]（默认）
 
     参数：idx1为int4类型或varchar2类型
 
@@ -320,7 +318,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   delete\[\(idx1\)\]（compatible_a_db_array模式）
+- delete\[\(idx1\)\]（compatible_a_db_array模式）
 
     参数：idx1为int4类型或varchar2类型
 
@@ -357,7 +355,7 @@
     openGauss$#     nt('311') := 'yellow';
     openGauss$#     nt(';') := 'red';
     openGauss$#     nt('o2') := 'orange';
-    openGauss$# 	raise notice '%',nt('311');
+    openGauss$#  raise notice '%',nt('311');
     openGauss$#     raise notice '%',nt(';');
     openGauss$#     raise notice '%',nt('o2');
     openGauss$#     nt.DELETE(';');
@@ -375,7 +373,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   delete\[\(idx1, idx2\)\]（compatible_a_db_array模式）
+- delete\[\(idx1, idx2\)\]（compatible_a_db_array模式）
 
     参数：idx1和idx2为int4类型或varchar2类型
 
@@ -408,7 +406,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
     
--   trim\[\(n\)\]
+- trim\[\(n\)\]
 
     参数：n为int4类型
 
@@ -438,7 +436,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   count
+- count
 
     参数：无
 
@@ -473,7 +471,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   first
+- first
 
     参数：无
 
@@ -508,7 +506,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   last
+- last
 
     参数：无
 
@@ -543,7 +541,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   prior\(idx\)
+- prior\(idx\)
 
     参数：idx为int类型或varchar类型
 
@@ -578,7 +576,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   next\(idx\)
+- next\(idx\)
 
     参数：idx为int类型或varchar类型
 
@@ -613,7 +611,7 @@
     ANONYMOUS BLOCK EXECUTE
     ```
 
--   limit
+- limit
 
     参数：无
 
@@ -634,6 +632,3 @@
     INFO:  limit:<NULL>
     ANONYMOUS BLOCK EXECUTE
     ```
-
-
-

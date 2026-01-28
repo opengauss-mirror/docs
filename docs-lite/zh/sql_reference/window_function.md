@@ -9,8 +9,8 @@
 >[!NOTE]说明
 >窗口函数中的order by后面必须跟字段名，若order by后面跟数字，该数字会被按照常量处理，因此对目标列没有起到排序的作用。
 
-
 示例：
+
  ```
 --创建表。
 openGauss=# CREATE TABLE t2 (c1 INT, c2 INT);
@@ -36,8 +36,7 @@ openGauss=# DROP TABLE t2;
 
  ```
 
-
--   RANK\(\)
+- RANK\(\)
 
     描述：RANK函数为各组内值生成跳跃排序序号，其中，相同的值具有相同序号。
 
@@ -94,7 +93,7 @@ openGauss=# DROP TABLE t2;
     (42 rows)
     ```
 
--   ROW\_NUMBER\(\)
+- ROW\_NUMBER\(\)
 
     描述：ROW\_NUMBER函数为各组内值生成连续排序序号，其中，相同的值其序号也不相同。
 
@@ -151,7 +150,7 @@ openGauss=# DROP TABLE t2;
     (42 rows)
     ```
 
--   DENSE\_RANK\(\)
+- DENSE\_RANK\(\)
 
     描述：DENSE\_RANK函数为各组内值生成连续排序序号，其中，相同的值具有相同序号。
 
@@ -208,7 +207,7 @@ openGauss=# DROP TABLE t2;
     (42 rows)
     ```
 
--   PERCENT\_RANK\(\)
+- PERCENT\_RANK\(\)
 
     描述：PERCENT\_RANK函数为各组内对应值生成相对序号，即根据公式 \(rank - 1\) / \(total rows - 1\)计算所得的值。其中rank为该值依据RANK函数所生成的对应序号，totalrows为该分组内的总元素个数。
 
@@ -265,7 +264,7 @@ openGauss=# DROP TABLE t2;
     (42 rows)
     ```
 
--   CUME\_DIST\(\)
+- CUME\_DIST\(\)
 
     描述：CUME\_DIST函数为各组内对应值生成累积分布序号。即根据公式\(小于等于当前值的数据行数\)/\(该分组总行数totalrows\)计算所得的相对序号。
 
@@ -322,7 +321,7 @@ openGauss=# DROP TABLE t2;
     (42 rows)
     ```
 
--   NTILE\(num\_buckets integer\)
+- NTILE\(num\_buckets integer\)
 
     描述：NTILE函数根据num\_buckets integer将有序的数据集合平均分配到num\_buckets所指定数量的桶中，并将桶号分配给每一行。分配时应尽量做到平均分配。
 
@@ -379,7 +378,7 @@ openGauss=# DROP TABLE t2;
     (42 rows)
     ```
 
--   LAG\(value any \[, offset integer \[, default any \]\]\)
+- LAG\(value any \[, offset integer \[, default any \]\]\)
 
     描述：LAG函数为各组内对应值生成滞后值。即当前值对应的行数往前偏移offset位后所得行的value值作为序号。若经过偏移后行数不存在，则对应结果取为default值。若无指定，在默认情况下，offset取为1，default值取为NULL。
 
@@ -436,7 +435,7 @@ openGauss=# DROP TABLE t2;
     (42 rows)
     ```
 
--   LEAD\(value any \[, offset integer \[, default any \]\]\)
+- LEAD\(value any \[, offset integer \[, default any \]\]\)
 
     描述：LEAD函数为各组内对应值生成提前值。即当前值对应的行数向后偏移offset位后所得行的value值作为序号。若经过向后偏移后行数超过当前组内的总行数，则对应结果取为default值。若无指定，在默认情况下，offset取为1，default值取为NULL。
 
@@ -493,7 +492,7 @@ openGauss=# DROP TABLE t2;
     (42 rows)
     ```
 
--   FIRST\_VALUE\(value any\)
+- FIRST\_VALUE\(value any\)
 
     描述：FIRST\_VALUE函数取各组内的第一个值作为返回结果。
 
@@ -550,7 +549,7 @@ openGauss=# DROP TABLE t2;
     (42 rows)
     ```
 
--   LAST\_VALUE\(value any\)
+- LAST\_VALUE\(value any\)
 
     描述：LAST\_VALUE函数取各组内的最后一个值作为返回结果。
 
@@ -601,7 +600,7 @@ openGauss=# DROP TABLE t2;
     (35 rows)
     ```
 
--   NTH\_VALUE\(value any, nth integer\)
+- NTH\_VALUE\(value any, nth integer\)
 
     描述：NTH\_VALUE函数返回该组内的第nth行作为结果。若该行不存在，则默认返回NULL。输入参数nth应为整数值，如果输入小数，会四舍五入为整型来计算偏移量。
 
@@ -658,5 +657,3 @@ openGauss=# DROP TABLE t2;
          2 |             5 |          
     (35 rows)
     ```
-
-

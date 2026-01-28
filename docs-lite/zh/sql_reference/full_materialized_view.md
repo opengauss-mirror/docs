@@ -8,33 +8,29 @@
 
 ### 语法格式<a name="section1810714714319"></a>
 
--   创建全量物化视图
+- 创建全量物化视图
 
     ```
     CREATE MATERIALIZED VIEW [ view_name ] AS { query_block }; 
     ```
 
-
--   全量刷新物化视图
+- 全量刷新物化视图
 
     ```
     REFRESH MATERIALIZED VIEW [ view_name ];
     ```
 
-
--   删除物化视图
+- 删除物化视图
 
     ```
     DROP MATERIALIZED VIEW [ view_name ];
     ```
 
-
--   查询物化视图
+- 查询物化视图
 
     ```
     SELECT * FROM [ view_name ];
     ```
-
 
 ### 示例<a name="section653116105315"></a>
 
@@ -79,9 +75,9 @@ DROP MATERIALIZED VIEW
 
 ### 支持场景<a name="section794144810159"></a>
 
--   通常全量物化视图所支持的查询范围与CREATE TABLE AS语句一致。
--   全量物化视图上支持创建索引。
--   支持analyze、explain。
+- 通常全量物化视图所支持的查询范围与CREATE TABLE AS语句一致。
+- 全量物化视图上支持创建索引。
+- 支持analyze、explain。
 
 ### 不支持场景<a name="section14823202371412"></a>
 

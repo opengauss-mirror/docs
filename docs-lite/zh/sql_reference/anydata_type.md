@@ -21,6 +21,7 @@ STATIC PROCEDURE BEGINCREATE(
    typecode       IN          INTEGER,
    atype          OUT         ANYTYPE);
 ```
+
 创建一个新的 ANYTYPE 实例，用于创建类型描述。
 
 |参数|类型|说明|
@@ -59,6 +60,7 @@ MEMBER PROCEDURE SETINFO(
    elem_tc       IN INTEGER DEFAULT NULL,
    elem_count    IN INTEGER DEFAULT 0);
 ```
+
 设置ANTYPE的各属性。
 
 |参数|类型|说明|
@@ -79,6 +81,7 @@ MEMBER PROCEDURE SETINFO(
 MEMBER PROCEDURE ENDCREATE(
    self           IN OUT NOCOPY ANYTYPE);
 ```
+
 结束创建一个ANYTYPE。在此调用后，其他SET函数不能被调用。
 
 |参数|类型|说明|
@@ -101,6 +104,7 @@ MEMBER FUNCTION GETINFO (
    numelems    OUT INTEGER)
    RETURN      INTEGER;
 ```
+
 获取ANYTYPE类型中的属性值，需要在ENDCREATE后调用。
 
 |参数|类型|说明|
@@ -119,6 +123,7 @@ MEMBER FUNCTION GETINFO (
 返回值：type_name对应的typecode
 
 ### 示例
+
 ```sql
 declare
    v_anytype    anytype;
@@ -135,10 +140,10 @@ declare
 begin
     anytype.BeginCreate(101, v_anytype);
     v_anytype.setinfo(255, 127, 2147483647, 65535, 33);
-	anytype.endcreate(v_anytype);
+ anytype.endcreate(v_anytype);
     result := v_anytype.getinfo(prec,scale,len,csid,csfrm,schema_name,type_name,version,numelems);
     RAISE NOTICE 'Output values are: %, %, %, %, %, %', prec, scale, len, csid, csfrm, schema_name;
-	RAISE NOTICE 'More output values are: %, %, %, %', type_name, version, numelems, result;
+ RAISE NOTICE 'More output values are: %, %, %, %', type_name, version, numelems, result;
 end;
 /
 NOTICE:  Output values are: <NULL>, <NULL>, <NULL>, <NULL>, <NULL>, <NULL>
@@ -153,6 +158,7 @@ ANYDATA用于处理不确定类型数据，包含类型的实际数据，以及�
 ### 存储过程
 
 #### CONVERT
+
 ```sql
 STATIC FUNCTION ConvertBDouble(dbl IN BINARY_DOUBLE) return ANYDATA;
 STATIC FUNCTION ConvertBlob(b IN BLOB) RETURN ANYDATA;
@@ -167,6 +173,7 @@ STATIC FUNCTION ConvertTimestampTZ(ts IN TIMESTAMP WITH TIMEZONE) return ANYDATA
 STATIC FUNCTION ConvertVarchar(c IN VARCHAR) RETURN ANYDATA;
 STATIC FUNCTION ConvertVarchar2(c IN VARCHAR2) RETURN ANYDATA;
 ```
+
 创建一个新的ANYDATA实例。对于以上12种CONVERT方法构建的ANYDATA，类型描述部分即ANYTYPE属性为NULL。
 
 |参数|类型|说明|
@@ -176,6 +183,7 @@ STATIC FUNCTION ConvertVarchar2(c IN VARCHAR2) RETURN ANYDATA;
 返回值：ANYDATA
 
 #### ACCESS
+
 ```sql
 MEMBER FUNCTION AccessBDouble(self IN ANYDATA) return BINARY_DOUBLE;
 MEMBER FUNCTION AccessBlob(self IN ANYDATA) return BLOB;
@@ -190,6 +198,7 @@ MEMBER FUNCTION AccessTimestampTZ(self IN ANYDATA) return TIMESTAMP WITH TIMEZON
 MEMBER FUNCTION AccessVarchar(self IN ANYDATA) return VARCHAR;
 MEMBER FUNCTION AccessVarchar2(self IN ANYDATA) return VARCHAR2;
 ```
+
 返回ANYDATA中的数据。首先需要与ANYDATA中存储的数据类型匹配，若不匹配，返回NULL。
 
 |参数|类型|说明|
@@ -199,12 +208,14 @@ MEMBER FUNCTION AccessVarchar2(self IN ANYDATA) return VARCHAR2;
 返回值：12种对应类型
 
 #### GETTYPE
+
 ```sql
 MEMBER FUNCTION GETTYPE(
    self          IN ANYDATA,
    typ           OUT NOCOPY AnyType)
    RETURN        INTEGER;
 ```
+
 将ANYDATA的类型描述，即ANYTYPE部分赋给出参typ，并返回对应的类型的typecode。在限定的12种类型下，获取的typ均为NULL，typcode为实际类型。
 
 |参数|类型|说明|
@@ -215,11 +226,13 @@ MEMBER FUNCTION GETTYPE(
 返回值：类型对应的typecode
 
 #### GETTYPENAME
+
 ```sql
 MEMBER FUNCTION GETTYPENAME(
    self         IN ANYDATA)
    RETURN       VARCHAR2;
 ```
+
 返回ANYDATA中存储的数据类型名称。
 
 |参数|类型|说明|
@@ -229,6 +242,7 @@ MEMBER FUNCTION GETTYPENAME(
 返回值：类型名
 
 ### 示例
+
 ```sql
 declare
     v_anydata anydata;
@@ -254,12 +268,14 @@ ANYDATASET用于处理一组不确定类型数据，可看作ANYDATA的集合，
 ### 存储过程
 
 #### BEGINCREATE
+
 ```sql
 STATIC PROCEDURE BeginCreate(
    typecode     IN INTEGER,
    rtype        IN OUT NOCOPY AnyType,
    aset         OUT NOCOPY ANYDATASET);
 ```
+
 函数接收typecode确定集合中元素的类型，创建一个新的ANYDATASET实例。此处的typecode对应关系与ANYTYPE相同。
 
 |参数|类型|说明|
@@ -284,10 +300,12 @@ STATIC PROCEDURE BeginCreate(
 |9|varchar2|
 
 #### ADDINSTANCE
+
 ```sql
 MEMBER PROCEDURE AddInstance(
    self          IN OUT NOCOPY ANYDATASET);
 ```
+
 在ANYDATASET中创建一个新的数据元素，每次新增元素时均需要调用该存储过程。
 
 |参数|类型|说明|
@@ -295,6 +313,7 @@ MEMBER PROCEDURE AddInstance(
 |self|ANYDATASET|self|
 
 #### SET
+
 ```sql
 MEMBER PROCEDURE SETBDOUBLE(
    self              IN OUT NOCOPY ANYDATASET, 
@@ -356,7 +375,9 @@ MEMBER PROCEDURE SETVARCHAR2(
    c                 IN VARCHAR2,
    last_elem BOOLEAN DEFAULT FALSE);
 ```
+
 为ANYDATASET中的单个数据元素实例设定值，在ADDINSTANSE后调用，需要和ANYDATASET创建时指定的类型一致。其他调用顺序将有以下表现：
+
 - 进行过ADDINSTANSE但未设定值，正常调用SET赋值
 - BEGINCREATE后未进行ADDINSTANSE，调用SET报错。
 - 前向数据实例均已设定值，此时调用SET，覆盖最后一个数据实例。
@@ -368,10 +389,12 @@ MEMBER PROCEDURE SETVARCHAR2(
 |last_elem|BOOLEAN|是否是集合类型的最后一个元素，未使用|
 
 #### ENDCREATE
+
 ```sql
 MEMBER PROCEDURE ENDCREATE(
    self              IN OUT NOCOPY ANYDATASET);
 ```
+
 结束ANYDATASET构建。ANYDATASET允许BEGINCREATE之后直接ENDCREATE，也就是空集。若有未设定值的元素，即ADDINSTANSE后未调用对应的SET，将报错。
 
 |参数|类型|说明|
@@ -379,6 +402,7 @@ MEMBER PROCEDURE ENDCREATE(
 |self|ANYDATASET|self|
 
 #### GET
+
 ```sql
 MEMBER FUNCTION GETBDOUBLE(
    self        IN ANYDATASET, 
@@ -452,6 +476,7 @@ MEMBER FUNCTION GETVARCHAR2(
    c           OUT NOCOPY VARCHAR2)
  RETURN INTEGER;
 ```
+
 根据index返回ANYDATASET中的元素
 
 |参数|类型|说明|
@@ -463,6 +488,7 @@ MEMBER FUNCTION GETVARCHAR2(
 返回值：SUCCESS(0)
 
 #### GETCOUNT 
+
 ```sql
 MEMBER FUNCTION GetCount(
    self        IN ANYDATASET) 
@@ -476,6 +502,7 @@ MEMBER FUNCTION GetCount(
 返回值：ANYDATASET中元素的个数
 
 #### GETTYPE
+
 ```sql
 MEMBER FUNCTION GETTYPE(
    self           IN ANYDATASET,
@@ -493,6 +520,7 @@ RETURN INTEGER;
 返回值：类型对应的typecode
 
 #### GETTYPENAME
+
 ```sql
 MEMBER FUNCTION GETTYPENAME(
    self         IN ANYDATASET)
@@ -508,6 +536,7 @@ MEMBER FUNCTION GETTYPENAME(
 返回值：类型名
 
 ### 示例
+
 ```sql
 declare
     v_anytype    anytype;

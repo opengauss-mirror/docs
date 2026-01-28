@@ -120,34 +120,34 @@ B模式下新增declare声明的错误捕获语法。
 
 ```
 BEGIN
-	DECLARE handler_action HANDLER
+ DECLARE handler_action HANDLER
     FOR condition_value [, condition_value] ...
     statement
-	statements
+ statements
 END;
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283137310_zh-cn_topic_0237122087_zh-cn_topic_0059778122_scabeb8532e944460bef66392557a9480"></a>
 
--   **handler\_action**
+- **handler\_action**
 
     触发异常处理条件后的行为。
 
-    -   continue：触发声明的异常条件时执行statement，跳过执行异常SQL并继续执行。
-    -   exit：触发声明的异常条件时执行statement，提交已执行SQL并退出。
-    -   undo：暂不支持。
+    - continue：触发声明的异常条件时执行statement，跳过执行异常SQL并继续执行。
+    - exit：触发声明的异常条件时执行statement，提交已执行SQL并退出。
+    - undo：暂不支持。
 
 > [!NOTE]说明
 >
 > 由于OG异常处理机制与M*数据库不同，只在SQL执行发生异常时才进行异常处理，产生warning等不进行异常处理。
 
--   **condition\_value**
-    -   mysql_error_code：除0和1之外的整型数字。
-    -   SQLSTATE [VALUE] sqlstate_value：sqlstate错误码。
-    -   condition_name：条件名。
-    -   SQLWARNING：'01'开头的sqlstate错误码。
-    -   NOT FOUND：'02'开头的sqlstate错误码。
-    -   SQLEXCEPTION：除'01','02'开头的其他错误码。
+- **condition\_value**
+    - mysql_error_code：除0和1之外的整型数字。
+    - SQLSTATE [VALUE] sqlstate_value：sqlstate错误码。
+    - condition_name：条件名。
+    - SQLWARNING：'01'开头的sqlstate错误码。
+    - NOT FOUND：'02'开头的sqlstate错误码。
+    - SQLEXCEPTION：除'01','02'开头的其他错误码。
 
 ## 示例<a name="zh-cn_topic_0283137571_zh-cn_topic_0237122130_zh-cn_topic_0059777616_s5587dfafbfee44509237e4eb718ccc55"></a>
 
@@ -208,6 +208,3 @@ SELECT * FROM declare_handler_t_continue ORDER BY i;
  3 | 1
 (3 rows)
 ```
-
-
-

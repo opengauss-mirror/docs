@@ -19,8 +19,8 @@ openGauss=# select c_varchar,to_tsvector(c_varchar) from table1 where to_tsvecto
 
 该例子的关键点是表table1的同一个列c\_text上建立了两个gin索引：idx1和idx2，但这两个索引是在不同[default\_text\_search\_config](../database_reference/regions_and_formatting.md#zh-cn_topic_0283136798_zh-cn_topic_0237124733_zh-cn_topic_0059778109_sd9a07d429cd4498383931c621742b816)的设置下建立的。该例子和同一张表的同一个列上建立普通索引的不同之处在于：
 
--   gin索引使用了不同的parser（即分隔符不同），那么idx1和idx2的索引数据是不同的；
--   在同一张表的同一个列上建立的多个普通索引的索引数据是相同的。
+- gin索引使用了不同的parser（即分隔符不同），那么idx1和idx2的索引数据是不同的；
+- 在同一张表的同一个列上建立的多个普通索引的索引数据是相同的。
 
 因此当执行同一个查询时，使用idx1和idx2查询出的结果是不同的。
 
@@ -28,10 +28,8 @@ openGauss=# select c_varchar,to_tsvector(c_varchar) from table1 where to_tsvecto
 
 通过上面的例子，索引使用满足如下条件时：
 
--   在同一个表的同一个列上建立了多个gin索引；
--   这些gin索引使用了不同的parser（即分隔符不同）；
--   在查询中使用了该列，且执行计划中使用索引进行扫描；
+- 在同一个表的同一个列上建立了多个gin索引；
+- 这些gin索引使用了不同的parser（即分隔符不同）；
+- 在查询中使用了该列，且执行计划中使用索引进行扫描；
 
     为了避免使用不同gin索引导致查询结果不同的问题，需要保证在物理表的一列上只有一个gin索引可用。
-
-

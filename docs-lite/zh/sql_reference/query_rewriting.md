@@ -2,7 +2,7 @@
 
 ts\_rewrite函数族可以从tsquery中搜索一个特定的目标子查询，并在该子查询每次出现的地方都替换为另一个子查询。 实际上这只是通过字串替换而得到的一个特定tsquery版本。目标子查询和替换查询组合起来可以被认为是一个重写规则。一组类似的重写规则可以为搜索提供强大的帮助。例如，可以使用同义词扩大搜索范围（例如，new york, big apple, nyc, gotham）或限制搜索范围在用户直接感兴趣的热点话题上。
 
--   ts\_rewrite \(query tsquery, target tsquery, substitute tsquery\) returns tsquery
+- ts\_rewrite \(query tsquery, target tsquery, substitute tsquery\) returns tsquery
 
     ts\_rewrite的这种形式只适用于一个单一的重写规则：任何出现目标子查询的地方都被无条件替换。例如：
 
@@ -13,7 +13,7 @@ ts\_rewrite函数族可以从tsquery中搜索一个特定的目标子查询，�
      'b' & 'c'
     ```
 
--   ts\_rewrite \(query tsquery, select text\) returns tsquery
+- ts\_rewrite \(query tsquery, select text\) returns tsquery
 
     ts\_rewrite的这种形式接受一个起始查询和SQL查询命令。 这里的查询命令是文本字串形式，必须产生两个tsquery列。查询结果的每一行，第一个字段的值（目标子查询） 都会被第二个字段（替代子查询）替换。
 
@@ -60,5 +60,3 @@ ts\_rewrite函数族可以从tsquery中搜索一个特定的目标子查询，�
     (1 row)
     openGauss=# DROP TABLE tsearch.aliases;
     ```
-
-

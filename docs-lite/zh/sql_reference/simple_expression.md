@@ -10,30 +10,29 @@
 
 除比较操作符外，还可以使用以下句式结构：
 
--   BETWEEN操作符
+- BETWEEN操作符
 
-    a  BETWEEN  x_ _  AND  y等效于a \>= x AND a <= y
+    a  BETWEEN  x__  AND  y等效于a \>= x AND a <= y
 
-    a  NOT BETWEEN_ _  x  AND y等效于a < x OR a \> y
+    a  NOT BETWEEN__  x  AND y等效于a < x OR a \> y
 
--   检查一个值是不是null，可使用：
+- 检查一个值是不是null，可使用：
 
-    expression_ _IS NULL
+    expression__IS NULL
 
     expression IS NOT NULL
 
     或者与之等价的句式结构，但不是标准的：
 
-    expression_ _   ISNULL
+    expression__   ISNULL
 
     expression  NOTNULL
 
     >>[!TIP]须知
     >不要写expression=NULL或expression<\>\(!=\)NULL，因为NULL代表一个未知的值，不能通过该表达式判断两个未知值是否相等。
 
-
--   is distinct from/is not distinct from
-    -   is distinct from
+- is distinct from/is not distinct from
+    - is distinct from
 
         A和B的数据类型、值不完全相同时为true。
 
@@ -41,7 +40,7 @@
 
         将空值视为相同。
 
-    -   is not distinct from
+    - is not distinct from
 
         A和B的数据类型、值不完全相同时为false。
 
@@ -49,7 +48,7 @@
 
         将空值视为相同。
 
--   <=\> 安全等于操作符
+- <=\> 安全等于操作符
 
     在 '=' 比较的基础上增加NULL值的比较，在操作符左右值都不为NULL时与 '=' 结果相同。
 
@@ -60,8 +59,8 @@
     将空值视为相同。
 
     >[!NOTE]说明
-    >-   <=\>操作符与 is not distinct from 用法完全相同。
-    >-   该操作符仅在openGauss兼容MY类型时（即sql\_compatibility = 'B'）有效，其他类型不支持该操作符。
+    >- <=\>操作符与 is not distinct from 用法完全相同。
+    >- 该操作符仅在openGauss兼容MY类型时（即sql\_compatibility = 'B'）有效，其他类型不支持该操作符。
 
 ## 伪列<a name="zh-cn_topic_0283137643_section104921036122717"></a>
 
@@ -138,4 +137,3 @@ openGauss=# SELECT 2+2 IS NOT DISTINCT FROM NULL AS RESULT;
  f
 (1 row)
 ```
-

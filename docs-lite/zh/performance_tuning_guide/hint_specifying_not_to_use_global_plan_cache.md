@@ -19,4 +19,3 @@ no_gpc
 ![](figures/zh-cn_image_0000001144139135.png)
 
 dbe\_perf.global\_plancache\_status视图中无结果即没有计划被全局缓存。
-

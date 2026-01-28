@@ -40,4 +40,3 @@ ALTER TABLE tablename DELETE STATISTICS ((column_1, column_2)); --删除tablenam
 >[!NOTE]说明
 >
 >使用EXPLAIN查看各SQL的执行计划时，如果发现某个表SEQ SCAN的输出中rows=10，rows=10是系统给的默认值，有可能该表没有进行ANALYZE，需要对该表执行ANALYZE。
-

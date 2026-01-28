@@ -2,9 +2,9 @@
 
 JSON\(JavaScript Object Notation\)数据，可以是单独的一个标量，也可以是一个数组，也可以是一个键值对象，其中数组和对象可以统称容器\(container\)：
 
--   标量\(scalar\)：单一的数字、bool、string、null都可以叫做标量。
--   数组\(array\)：\[\]结构，里面存放的元素可以是任意类型的JSON，并且不要求数组内所有元素都是同一类型。
--   对象\(object\)：\{\}结构，存储key:value的键值对，其键只能是用“”包裹起来的字符串，值可以是任意类型的JSON，对于重复的键，按最后一个键值对为准。
+- 标量\(scalar\)：单一的数字、bool、string、null都可以叫做标量。
+- 数组\(array\)：\[\]结构，里面存放的元素可以是任意类型的JSON，并且不要求数组内所有元素都是同一类型。
+- 对象\(object\)：\{\}结构，存储key:value的键值对，其键只能是用“”包裹起来的字符串，值可以是任意类型的JSON，对于重复的键，按最后一个键值对为准。
 
 openGauss内存在两种数据类型JSON和JSONB，可以用来存储JSON数据。其中JSON是对输入的字符串的完整拷贝，使用时再去解析，所以它会保留输入的空格、重复键以及顺序等；JSONB解析输入后保存的二进制，它在解析时会删除语义无关的细节和重复的键，对键值也会进行排序，使用时不用再次解析。
 
@@ -52,25 +52,24 @@ select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"f
 
 >[!WARNING]注意
 >
->-   区分 'null'::json 和 null::json 是两个不同的概念，类似于字符串 str="" 和 str=null。
+>- 区分 'null'::json 和 null::json 是两个不同的概念，类似于字符串 str="" 和 str=null。
 >
->-   对于数字，当使用科学计数法的时候，jsonb类型会将其展开，而json会精准拷贝输入。
+>- 对于数字，当使用科学计数法的时候，jsonb类型会将其展开，而json会精准拷贝输入。
 >
->-   json类型不支持排序，因此也不支持建索引操作，jsonb支持。
+>- json类型不支持排序，因此也不支持建索引操作，jsonb支持。
 
 ## JSONB高级特性<a name="section8871947018"></a>
 
--   注意事项
-    -   不支持列存。
-    -   不支持作为分区键。
-    -   不支持外表、mot。
-
+- 注意事项
+    - 不支持列存。
+    - 不支持作为分区键。
+    - 不支持外表、mot。
 
 ​JSON和JSONB的主要差异在于存储方式上的不同，JSONB存储的是解析后的二进制，能够体现JSON的层次结构，更方便直接访问等，因此JSONB会有很多JSON所不具有的高级特性。
 
--   格式归一化
+- 格式归一化
 
-    -   对于输入的object-json字符串，解析成jsonb二进制后，会天然的丢弃语义上无关紧要的细节，比如空格：
+    - 对于输入的object-json字符串，解析成jsonb二进制后，会天然的丢弃语义上无关紧要的细节，比如空格：
 
         ```
         openGauss=# select '   [1, " a ", {"a"   :1    }]  '::jsonb;        jsonb
@@ -78,13 +77,13 @@ select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"f
          [1, " a ", {"a": 1}](1 row)
         ```
 
-    -   对于object-json，会删除重复的键值，只保留最后一个出现的，如：
+    - 对于object-json，会删除重复的键值，只保留最后一个出现的，如：
 
         ```
         openGauss=# select '{"a" : 1, "a" : 2}'::jsonb;  jsonb---------- {"a": 2}(1 row)
         ```
 
-    -   对于object-json，键值会重新进行排序，排序规则：长度长的在后、长度相等则ascii码大的在后，如：
+    - 对于object-json，键值会重新进行排序，排序规则：长度长的在后、长度相等则ascii码大的在后，如：
 
     ```
     openGauss=# select '{"aa" : 1, "b" : 2, "a" : 3}'::jsonb;           jsonb
@@ -92,38 +91,35 @@ select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"f
     {"a": 3, "b": 2, "aa": 1}(1 row)
     ```
 
-
--   大小比较
+- 大小比较
 
     由于经过了格式归一化，保证了同一种语义下的jsonb只会有一种存在形式，因此按照制定的规则，可以比较大小。
 
-    -   首先比较类型：object-jsonb \> array-jsonb \> bool-jsonb \> num-jsonb \> str-jsonb \> null-jsonb
-    -   同类型则比较内容：
+    - 首先比较类型：object-jsonb \> array-jsonb \> bool-jsonb \> num-jsonb \> str-jsonb \> null-jsonb
+    - 同类型则比较内容：
 
-        -   str-json类型：依据text比较的方法，使用数据库默认排序规则进行比较，返回值正数代表大于，负数代表小于，0表示相等。
-        -   num-json类型：数值比较
-        -   bool-json类型：true \> false
-        -   array-jsonb类型：长度长的 \> 长度短的，长度相等则依次比较每个元素。
-        -   object-jsonb类型：长度长的 \> 长度短的，长度相等则依次比较每个键值对，先比较键，在比较值。
+        - str-json类型：依据text比较的方法，使用数据库默认排序规则进行比较，返回值正数代表大于，负数代表小于，0表示相等。
+        - num-json类型：数值比较
+        - bool-json类型：true \> false
+        - array-jsonb类型：长度长的 \> 长度短的，长度相等则依次比较每个元素。
+        - object-jsonb类型：长度长的 \> 长度短的，长度相等则依次比较每个键值对，先比较键，在比较值。
 
         >[!WARNING]注意
         >
         >object-jsonb类型内比较时，比较时使用的是格式整理后的最终结果进行比较，因此相对于我们直接的输入未必会很直观。
 
-
--   创建索引、主外键
-    -   BTREE索引
+- 创建索引、主外键
+    - BTREE索引
 
         ​ jsonb类型支持创建btree索引，支持创建主键、外键。
 
-    -   GIN索引
+    - GIN索引
 
         ​ GIN索引可以用来有效的搜索出现在大量jsonb文档（datums） 中的键或者键/值对。提供了两个GIN操作符类\(jsonb\_ops、jsonb\_hash\_ops\)，提供了不同的性能和灵活性取舍。缺省的GIN操作符类支持使用@\>、<@、?、 ?&和?|操作符查询，非缺省的GIN操作符类jsonb\_path\_ops只支持索引@\>、<@操作符。
 
         ​ 相关的操作符请参见[JSON/JSONB函数和操作符](json_jsonb_function_and_operator.md)。
 
-
--   包含存在
+- 包含存在
 
     查询一个JSON之中是否包含某些元素，或者某些元素是否存在于某个JSON中是jsonb的一个重要能力。
 
@@ -133,8 +129,6 @@ select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"f
 
     相关的操作符请参见[JSON/JSONB函数和操作符](json_jsonb_function_and_operator.md)。
 
--   函数和操作符
+- 函数和操作符
 
     json/jsonb类型相关支持的函数和操作符请参见[JSON/JSONB函数和操作符](json_jsonb_function_and_operator.md)。
-
-

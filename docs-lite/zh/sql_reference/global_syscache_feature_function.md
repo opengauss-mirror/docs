@@ -1,6 +1,6 @@
 # Global SysCache特性函数<a name="ZH-CN_TOPIC_0000001242498033"></a>
 
--   gs\_gsc\_table\_detail\(database\_id default NULL, rel\_id default NULL\)
+- gs\_gsc\_table\_detail\(database\_id default NULL, rel\_id default NULL\)
 
     描述：查看数据库里全局系统缓存的表元数据。调用该函数的用户需要具有SYSADMIN权限。
 
@@ -20,8 +20,7 @@
     (1 row)
     ```
 
-
--   gs\_gsc\_catalog\_detail\(database\_id default NULL, rel\_id default NULL\)
+- gs\_gsc\_catalog\_detail\(database\_id default NULL, rel\_id default NULL\)
 
     描述：查看数据库里全局系统缓存的系统表行信息。调用该函数的用户需要具有SYSADMIN权限。
 
@@ -49,8 +48,7 @@
     (10 rows)
     ```
 
-
--   gs\_gsc\_clean\(database\_id default NULL\)
+- gs\_gsc\_clean\(database\_id default NULL\)
 
     描述：清理global syscache的缓存，需要注意，正在使用中的数据不会被清理。调用该函数的用户需要具有SYSADMIN权限。
 
@@ -68,8 +66,7 @@
     (1 row)
     ```
 
-
--   gs\_gsc\_dbstat\_info\(database\_id default NULL\)
+- gs\_gsc\_dbstat\_info\(database\_id default NULL\)
 
     描述：获取本地节点的GSC的内存统计信息，包括tuple、relation、partition的缓存查询，命中，加载、失效、占用空间信息，DB级别的淘汰信息，线程引用信息，内存占用信息。可以用于定位性能问题，例如当发现hits/searches数组远小于1时，可能是global\_syscache\_threshold设置太小，导致查询命中率下降。调用该函数的用户需要具有SYSADMIN权限。
 
@@ -95,5 +92,3 @@
              0 |       10
     (2 rows)
     ```
-
-

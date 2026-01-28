@@ -10,13 +10,13 @@ sections:
       - label: 向量索引汇总与对比
         href: ./index.md
       - label: 向量数据类型
-        href: ../sql_reference/vector_data_type.md
+        href: ./vector_data_type.md
       - label: 向量函数和操作符
-        href: ../sql_reference/vector_functions_and_operators.md      
+        href: ./vector_functions_and_operators.md      
       - label: 向量索引
-        href: ../sql_reference/vector_index.md
+        href: ./vector_index.md
       - label: 融合查询使用指南
-        href: ../sql_reference/fusion_queries_using_guide.md  
+        href: ./fusion_queries_using_guide.md  
   - label: 向量存储引擎
     sections:
       - label: 概述
@@ -48,13 +48,13 @@ sections:
       - label: GIN索引
         sections:
           - label: 介绍
-            href:  ../sql_reference/introduction_gin.md     
+            href:  ./introduction_gin.md     
           - label: 扩展性
-            href:  ../sql_reference/expansibility.md 
+            href:  ./expansibility.md 
           - label: 实现
-            href:  ../sql_reference/implement.md 
+            href:  ./implement.md 
           - label: GIN提示与技巧
-            href:  ../sql_reference/gin_tips_and_tricks.md  
+            href:  ./gin_tips_and_tricks.md  
   - label: OGAI
     sections:
       - label: OGAI

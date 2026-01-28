@@ -51,8 +51,6 @@ sections:
             href: ./data_types_used_in_ledger_databases.md
           - label: SET类型
             href: ./set_type.md
-          - label: 向量数据类型
-            href: ./vector_data_type.md
           - label: ANYDATA类型
             href: ./anydata_type.md
           - label: 对象类型
@@ -1177,6 +1175,8 @@ sections:
             href: ./sql_firewall_system_functions.md
       - label: 统计信息函数
         href: ./statistics_function.md
+      - label: 大对象操作函数
+        href: ./large_object_operation_function.md        
       - label: 触发器函数
         href: ./trigger_function.md
       - label: HashFunc函数
@@ -1200,7 +1200,9 @@ sections:
       - label: 数据损坏检测修复函数
         href: ./data_corruption_detection_and_repair_function.md
       - label: 向量函数和操作符
-        href: ./vector_functions_and_operators.md
+        href: ../datavec/vector_functions_and_operators.md
+      - label: BFILE类型函数
+        href: ./bfile_type_function.md        
       - label: 废弃函数
         href: ./obsolete_functions.md
   - label: 管理事务

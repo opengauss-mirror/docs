@@ -19,46 +19,46 @@
 
 支持调用的上下文环境：
 
--   支持在PLSQL的存储过程内使用COMMIT/ROLLBACK/SAVEPOINT。
--   支持函数中调用COMMIT/ROLLBACK/SAVEPOINT，包括函数调用含有COMMIT/ROLLBACK/SAVEPOINT的存储过程。
--   支持含有EXCEPTION的存储过程使用COMMIT/ROLLBACK/SAVEPOINT。
--   支持在存储过程的EXCEPTION语句内使用COMMIT/ROLLBACK/SAVEPOINT。
--   支持在事务块里调用含有COMMIT/ROLLBACK/SAVEPOINT的存储过程，即通过/BEGIN/START/END等开启控制的外部事务。
--   支持在子事务中调用含有SAVEPOINT的存储过程，即存储过程中使用外部定义的SAVEPOINT，回退事务状态到存储过程外定义的SAVEPOINT位置。
--   支持存储过程外部对存储过程内定义的SAVEPOINT可见，即存储过程外可以将事务修改回滚到存储过程中定义SAVEPOINT的位置。
--   支持多数PLSQL的上下文和语句内调用COMMIT/ROLLBACK/SAVEPOINT，包括常用的IF/FOR/CURSOR LOOP/WHILE。
--   支持存储过程返回值与简单表达式计算中调用含有COMMIT/ROLLBACK/SAVEPOINT的存储过程或者函数。
+- 支持在PLSQL的存储过程内使用COMMIT/ROLLBACK/SAVEPOINT。
+- 支持函数中调用COMMIT/ROLLBACK/SAVEPOINT，包括函数调用含有COMMIT/ROLLBACK/SAVEPOINT的存储过程。
+- 支持含有EXCEPTION的存储过程使用COMMIT/ROLLBACK/SAVEPOINT。
+- 支持在存储过程的EXCEPTION语句内使用COMMIT/ROLLBACK/SAVEPOINT。
+- 支持在事务块里调用含有COMMIT/ROLLBACK/SAVEPOINT的存储过程，即通过/BEGIN/START/END等开启控制的外部事务。
+- 支持在子事务中调用含有SAVEPOINT的存储过程，即存储过程中使用外部定义的SAVEPOINT，回退事务状态到存储过程外定义的SAVEPOINT位置。
+- 支持存储过程外部对存储过程内定义的SAVEPOINT可见，即存储过程外可以将事务修改回滚到存储过程中定义SAVEPOINT的位置。
+- 支持多数PLSQL的上下文和语句内调用COMMIT/ROLLBACK/SAVEPOINT，包括常用的IF/FOR/CURSOR LOOP/WHILE。
+- 支持存储过程返回值与简单表达式计算中调用含有COMMIT/ROLLBACK/SAVEPOINT的存储过程或者函数。
 
 支持提交/回滚的内容：
 
--   支持DDL在COMMIT/ROLLBACK后的提交/回滚。
--   支持DML的COMMIT/ROLLBACK后的提交。
--   支持存储过程内GUC参数的回滚提交。
+- 支持DDL在COMMIT/ROLLBACK后的提交/回滚。
+- 支持DML的COMMIT/ROLLBACK后的提交。
+- 支持存储过程内GUC参数的回滚提交。
 
 ## 使用限制<a name="section816411381184"></a>
 
 不支持调用的上下文环境：
 
--   不支持除PLSQL的其他存储过程中调用COMMIT/ROLLBACK/SAVEPOINT，例如PLJAVA、PLPYTHON等。
--   不支持事务块中调用了SAVEPOINT后，调用含有COMMIT/ROLLBACK的存储过程。
--   不支持TRIGGER中调用含有COMMIT/ROLLBACK/SAVEPOINT语句的存储过程。
--   不支持EXECUTE语句中调用COMMIT/ROLLBACK/SAVEPOINT语句。
--   不支持在CURSOR语句中打开一个含有COMMIT/ROLLBACK/SAVEPOINT的存储过程。
--   不支持带有IMMUTABLE以及SHIPPABLE的存储过程调用COMMIT/ROLLBACK/SAVEPOINT，或调用带有COMMIT/ROLLBACK/SAVEPOINT语句的存储过程。
--   不支持SQL中调用含有COMMIT/ROLLBACK/SAVEPOINT语句的存储过程，除了SELECT PROC以及CALL PROC。
--   存储过程头带有GUC参数设置的不允许调用COMMIT/ROLLBACK/SAVEPOINT语句。
--   不支持CURSOR/EXECUTE语句，以及各类表达式内调用COMMIT/ROLLBACK/SAVEPOINT。
--   自治事务和存储过程事务是两个独立的事务，不能互相使用对方事务中定义的保存点。
--   不支持存储过程中释放存储过程外部定义的保存点。
+- 不支持除PLSQL的其他存储过程中调用COMMIT/ROLLBACK/SAVEPOINT，例如PLJAVA、PLPYTHON等。
+- 不支持事务块中调用了SAVEPOINT后，调用含有COMMIT/ROLLBACK的存储过程。
+- 不支持TRIGGER中调用含有COMMIT/ROLLBACK/SAVEPOINT语句的存储过程。
+- 不支持EXECUTE语句中调用COMMIT/ROLLBACK/SAVEPOINT语句。
+- 不支持在CURSOR语句中打开一个含有COMMIT/ROLLBACK/SAVEPOINT的存储过程。
+- 不支持带有IMMUTABLE以及SHIPPABLE的存储过程调用COMMIT/ROLLBACK/SAVEPOINT，或调用带有COMMIT/ROLLBACK/SAVEPOINT语句的存储过程。
+- 不支持SQL中调用含有COMMIT/ROLLBACK/SAVEPOINT语句的存储过程，除了SELECT PROC以及CALL PROC。
+- 存储过程头带有GUC参数设置的不允许调用COMMIT/ROLLBACK/SAVEPOINT语句。
+- 不支持CURSOR/EXECUTE语句，以及各类表达式内调用COMMIT/ROLLBACK/SAVEPOINT。
+- 自治事务和存储过程事务是两个独立的事务，不能互相使用对方事务中定义的保存点。
+- 不支持存储过程中释放存储过程外部定义的保存点。
 
 不支持提交回滚的内容：
 
--   不支持存储过程内声明变量以及传入变量的提交/回滚。
--   不支持存储过程内必须重启生效的GUC参数的提交/回滚。
+- 不支持存储过程内声明变量以及传入变量的提交/回滚。
+- 不支持存储过程内必须重启生效的GUC参数的提交/回滚。
 
 ## 示例<a name="section819214534171"></a>
 
--   示例1：支持在PLSQL的存储过程内使用COMMIT/ROLLBACK。
+- 示例1：支持在PLSQL的存储过程内使用COMMIT/ROLLBACK。
 
     ```
     CREATE TABLE EXAMPLE1(COL1 INT);
@@ -78,8 +78,7 @@
     /
     ```
 
-
--   示例2：
+- 示例2：
 
     支持含有EXCEPTION的存储过程使用COMMIT/ROLLBACK。
 
@@ -106,8 +105,7 @@
     
     ```
 
-
--   示例3：支持在事务块里调用含有COMMIT/ROLLBACK的存储过程，即通过/BEGIN/START/END等开启控制的外部事务。
+- 示例3：支持在事务块里调用含有COMMIT/ROLLBACK的存储过程，即通过/BEGIN/START/END等开启控制的外部事务。
 
     ```
     BEGIN;
@@ -115,8 +113,7 @@
     END;
     ```
 
-
--   示例4：支持多数PLSQL的上下文和语句内调用COMMIT/ROLLBACK，包括常用的IF/FOR/CURSOR LOOP/WHILE。
+- 示例4：支持多数PLSQL的上下文和语句内调用COMMIT/ROLLBACK，包括常用的IF/FOR/CURSOR LOOP/WHILE。
 
     ```
     CREATE OR REPLACE PROCEDURE TEST_COMMIT2()
@@ -140,8 +137,7 @@
     /
     ```
 
-
--   示例5：支持存储过程返回值与简单表达式计算。
+- 示例5：支持存储过程返回值与简单表达式计算。
 
     ```
     CREATE OR REPLACE PROCEDURE exec_func3(RET_NUM OUT INT)
@@ -161,7 +157,7 @@
     /
     ```
 
--   示例6：支持存储过程内GUC参数的回滚提交。
+- 示例6：支持存储过程内GUC参数的回滚提交。
 
     ```
     SHOW explain_perf_mode;
@@ -183,7 +179,7 @@
     SET enable_force_vector_engine = off;
     ```
 
--   示例7：函数（Function）中允许调用commit/rollback语句。
+- 示例7：函数（Function）中允许调用commit/rollback语句。
 
     ```
     CREATE OR REPLACE FUNCTION FUNCTION_EXAMPLE1() RETURN INT
@@ -204,7 +200,7 @@
     /
     ```
 
--   示例8：函数（Fucntion）中允许调用带有commit/rollback语句的存储过程。
+- 示例8：函数（Fucntion）中允许调用带有commit/rollback语句的存储过程。
 
     ```
     CREATE OR REPLACE FUNCTION FUNCTION_EXAMPLE2() RETURN INT
@@ -219,7 +215,7 @@
     /
     ```
 
--   示例9：不允许Trigger的存储过程包含commit/rollback语句，或调用带有commit/rollback语句的存储过程。
+- 示例9：不允许Trigger的存储过程包含commit/rollback语句，或调用带有commit/rollback语句的存储过程。
 
     ```
     CREATE OR REPLACE FUNCTION FUNCTION_TRI_EXAMPLE2() RETURN TRIGGER
@@ -244,7 +240,7 @@
     DELETE FROM EXAMPLE1;
     ```
 
--   示例10：不支持带有IMMUABLE以及SHIPPABLE的存储过程调用commit/rollback，或调用带有commit/rollback语句的存储过程。
+- 示例10：不支持带有IMMUABLE以及SHIPPABLE的存储过程调用commit/rollback，或调用带有commit/rollback语句的存储过程。
 
     ```
     CREATE OR REPLACE PROCEDURE TRANSACTION_EXAMPLE1()
@@ -263,7 +259,7 @@
     /
     ```
 
--   示例12：不支持出现在SQL中的调用（除了Select Procedure）。
+- 示例12：不支持出现在SQL中的调用（除了Select Procedure）。
 
     ```
     CREATE OR REPLACE PROCEDURE TRANSACTION_EXAMPLE3()
@@ -281,7 +277,7 @@
     /
     ```
 
--   示例13：存储过程头带有GUC参数设置的不允许调用commit/rollback语句。
+- 示例13：存储过程头带有GUC参数设置的不允许调用commit/rollback语句。
 
     ```
     CREATE OR REPLACE PROCEDURE TRANSACTION_EXAMPLE4()
@@ -300,7 +296,7 @@
     /
     ```
 
--   示例14：游标open的对象不允许为带有commit/rollback语句的存储过程。
+- 示例14：游标open的对象不允许为带有commit/rollback语句的存储过程。
 
     ```
     CREATE OR REPLACE PROCEDURE TRANSACTION_EXAMPLE5(INTIN IN INT, INTOUT OUT INT)
@@ -332,7 +328,7 @@
     /
     ```
 
--   示例15：不支持CURSOR/EXECUTE语句，以及各类表达式内调用COMMIT/ROLLBACK。
+- 示例15：不支持CURSOR/EXECUTE语句，以及各类表达式内调用COMMIT/ROLLBACK。
 
     ```
     CREATE OR REPLACE PROCEDURE exec_func1()
@@ -351,8 +347,7 @@
     /
     ```
 
-
--   示例16：存储过程使用保存点回退事务部分修改。
+- 示例16：存储过程使用保存点回退事务部分修改。
 
     ```
     CREATE OR REPLACE PROCEDURE STP_SAVEPOINT_EXAMPLE1()
@@ -367,8 +362,7 @@
     /
     ```
 
-
--   示例17：存储过程中使用保存点回退到存储过程外部定义的保存点。
+- 示例17：存储过程中使用保存点回退到存储过程外部定义的保存点。
 
     ```
     CREATE OR REPLACE PROCEDURE STP_SAVEPOINT_EXAMPLE2()
@@ -388,8 +382,7 @@
     COMMIT;
     ```
 
-
--   示例18：不支持存储过程中释放存储过程外部定义的保存点。 
+- 示例18：不支持存储过程中释放存储过程外部定义的保存点。 
 
     ```
     CREATE OR REPLACE PROCEDURE STP_SAVEPOINT_EXAMPLE3() 
@@ -409,7 +402,7 @@
 
 
 
--  示例19：存储过程外部SQL/其它存储过程回退到存储过程中定义的保存点。
+- 示例19：存储过程外部SQL/其它存储过程回退到存储过程中定义的保存点。
 
     ```
     CREATE OR REPLACE PROCEDURE STP_SAVEPOINT_EXAMPLE3()
@@ -428,5 +421,3 @@
     SELECT * FROM EXAMPLE1;
     COMMIT;
     ```
-
-

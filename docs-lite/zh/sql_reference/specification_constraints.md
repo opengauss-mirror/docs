@@ -2,11 +2,11 @@
 
 >[!WARNING]注意
 >
->-   自治事务执行时，将会在后台启动自治事务session，我们可以通过max\_concurrent\_autonomous\_transactions设置自治事务执行的最大并行数量，该参数取值范围为0\~1024，默认值为10。
->-   当max\_concurrent\_autonomous\_transactions参数设置为0时，自治事务将无法执行。
->-   自治事务新启session后，将使用默认session参数，不共享主session下对象（包括session级别变量，本地临时变量，全局临时表的数据等）。
+>- 自治事务执行时，将会在后台启动自治事务session，我们可以通过max\_concurrent\_autonomous\_transactions设置自治事务执行的最大并行数量，该参数取值范围为0\~1024，默认值为10。
+>- 当max\_concurrent\_autonomous\_transactions参数设置为0时，自治事务将无法执行。
+>- 自治事务新启session后，将使用默认session参数，不共享主session下对象（包括session级别变量，本地临时变量，全局临时表的数据等）。
 
--   触发器函数不支持自治事务。
+- 触发器函数不支持自治事务。
 
     ```
     CREATE TABLE test_trigger_des_tbl(id1 INT, id2 INT, id3 INT);
@@ -22,8 +22,8 @@
     $$ LANGUAGE PLPGSQL;
     ```
 
--   自治事务不支持非顶层匿名块调用（仅支持顶层自治事务,包括存储过程、函数、匿名块）。
--   自治事务仅支持PROCEDURE OUT参数传递ref cursor参数，不支持IN、INOUT以及FUNCTION传递ref cursor参数。
+- 自治事务不支持非顶层匿名块调用（仅支持顶层自治事务,包括存储过程、函数、匿名块）。
+- 自治事务仅支持PROCEDURE OUT参数传递ref cursor参数，不支持IN、INOUT以及FUNCTION传递ref cursor参数。
 
     ```
     create table sections(section_ID int);
@@ -115,9 +115,9 @@
     /
     ```
 
--   自治事务函数不支持返回非out形式的record类型。
--   不支持修改自治事务的隔离级别。
--   不支持自治事务返回集合类型（setof）。
+- 自治事务函数不支持返回非out形式的record类型。
+- 不支持修改自治事务的隔离级别。
+- 不支持自治事务返回集合类型（setof）。
 
     ```
     create table test_in (id int,a date);
@@ -154,5 +154,3 @@
     $$
     ;
     ```
-
-

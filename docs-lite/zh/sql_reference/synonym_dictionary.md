@@ -4,7 +4,7 @@ Synonym词典用于定义、识别token的同义词并转化，不支持词组�
 
 ## 示例<a name="zh-cn_topic_0283137688_zh-cn_topic_0237122037_section10442451826"></a>
 
--   Synonym词典可用于解决语言学相关问题，例如，为避免使单词"Paris"变成"pari"，可在Synonym词典文件中定义一行"Paris paris"，并将该词典放置在预定义的english\_stem词典之前。
+- Synonym词典可用于解决语言学相关问题，例如，为避免使单词"Paris"变成"pari"，可在Synonym词典文件中定义一行"Paris paris"，并将该词典放置在预定义的english\_stem词典之前。
 
     ```
     openGauss=# SELECT * FROM ts_debug('english', 'Paris');
@@ -53,7 +53,7 @@ Synonym词典用于定义、识别token的同义词并转化，不支持词组�
 
     其中，同义词词典文件全名为my\_synonyms.syn，所在目录为当前连接数据库主节点的/home/dicts/下。关于创建词典的语法和更多参数，请参见[ALTER TEXT SEARCH DICTIONARY](alter_text_search_dictionary.md)。
 
--   星号（\*）可用于词典文件中的同义词结尾，表示该同义词是一个前缀。在to\_tsvector\(\)中该星号将被忽略，但在to\_tsquery\(\)中会匹配该前缀并对应输出结果（参照[处理查询](process_query.md)一节）。
+- 星号（\*）可用于词典文件中的同义词结尾，表示该同义词是一个前缀。在to\_tsvector\(\)中该星号将被忽略，但在to\_tsquery\(\)中会匹配该前缀并对应输出结果（参照[处理查询](process_query.md)一节）。
 
     假设词典文件synonym\_sample.syn内容如下：
 
@@ -107,5 +107,3 @@ Synonym词典用于定义、识别token的同义词并转化，不支持词组�
      t
     (1 row)
     ```
-
-

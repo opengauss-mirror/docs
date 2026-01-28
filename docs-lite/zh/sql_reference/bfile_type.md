@@ -57,5 +57,5 @@ NOTICE:  bfile bfilename('bfile_test_dir', 'regress_bfile.txt')
 NOTICE:  amount 51
 NOTICE:  buff 31096266696C656E616D6528276266696C655F746573745F646972272C2027726567726573735F6266696C652E74787427290A
 NOTICE:  bfile bfilename('bfile_test_dir', 'regress_bfile.txt')
-1	bfilename('bfile_test_dir', 'regress_bfile.txt')
+1 bfilename('bfile_test_dir', 'regress_bfile.txt')
 ```

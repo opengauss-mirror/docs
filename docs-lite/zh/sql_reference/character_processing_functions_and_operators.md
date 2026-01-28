@@ -2,7 +2,7 @@
 
 openGauss提供的字符处理函数和操作符主要用于字符串与字符串、字符串与非字符串之间的连接，以及字符串的模式匹配操作。注意：字符串处理函数除了length相关函数，其他函数和操作符不支持大于1GBclob作为参数。
 
--   bit\_length\(string\)
+- bit\_length\(string\)
 
     描述：字符串的位数。
 
@@ -18,7 +18,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   btrim\(string text \[, characters text\]\)
+- btrim\(string text \[, characters text\]\)
 
     描述：从string开头和结尾删除只包含characters中字符（缺省是空白）的最长字符串。
 
@@ -34,7 +34,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   char\_length\(string\)或character\_length\(string\)
+- char\_length\(string\)或character\_length\(string\)
 
     描述：字符串中的字符个数。
 
@@ -50,7 +50,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   instr\(text,text,int,int\)
+- instr\(text,text,int,int\)
 
     描述：instr\(string1,string2,int1,int2\)返回在string1中从int1位置开始匹配到第int2次string2的位置，第一个int表示开始匹配起始位置，第二个int表示匹配的次数。
 
@@ -66,7 +66,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   lengthb\(text/bpchar\)
+- lengthb\(text/bpchar\)
 
     描述：获取指定字符串的字节数。
 
@@ -82,7 +82,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   left\(str text, n int\)
+- left\(str text, n int\)
 
     描述：返回字符串的前n个字符。当n是负数时，返回除最后|n|个字符以外的所有字符。
 
@@ -98,7 +98,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   length\(string bytea, encoding name \)
+- length\(string bytea, encoding name \)
 
     描述：指定encoding编码格式的string的字符数。在这个编码格式中，string必须是有效的。
 
@@ -118,7 +118,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     >
     >如果是查询bytea类型的长度，指定utf8编码时，最大长度只能为536870888。
 
--   lpad\(string text, length int \[, fill text\]\)
+- lpad\(string text, length int \[, fill text\]\)
 
     描述：通过填充字符fill（缺省时为空白），把string填充为length长度。如果string已经比length长则将其尾部截断。
 
@@ -138,7 +138,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
   >
   >由于数据库内存分配机制限制单次内存分配不可超过1GB，因此最大长度不应超过\(1G-x\)/lengthb\(string\) - 1。x为头信息长度，通常大于4字节，其具体值在不同的场景下存在差异。
 
--   notlike\(x bytea name text, y bytea text\)
+- notlike\(x bytea name text, y bytea text\)
 
     描述：比较x和y是否不一致。
 
@@ -159,7 +159,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   octet\_length\(string\)
+- octet\_length\(string\)
 
     描述：字符串中的字节数。
 
@@ -175,7 +175,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   overlay\(string placing string FROM int \[for int\]\)
+- overlay\(string placing string FROM int \[for int\]\)
 
     描述：替换子字符串。FROM int表示从第一个string的第几个字符开始替换，for int表示替换第一个string的字符数目。
 
@@ -191,7 +191,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   position\(substring in string\)
+- position\(substring in string\)
 
     描述：指定子字符串的位置。字符串区分大小写。
 
@@ -207,7 +207,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   pg\_client\_encoding\(\)
+- pg\_client\_encoding\(\)
 
     描述：当前客户端编码名称。
 
@@ -223,7 +223,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   quote\_ident\(string text\)
+- quote\_ident\(string text\)
 
     描述：返回适用于SQL语句的标识符形式（使用适当的引号进行界定）。只有在必要的时候才会添加引号（字符串包含非标识符字符或者会转换大小写的字符）。返回值中嵌入的引号都写了两次。
 
@@ -239,7 +239,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   quote\_literal\(string text\)
+- quote\_literal\(string text\)
 
     描述：返回适用于在SQL语句里当作文本使用的形式（使用适当的引号进行界定）。
 
@@ -285,7 +285,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   quote\_literal\(value anyelement\)
+- quote\_literal\(value anyelement\)
 
     描述：将给定的值强制转换为text，加上引号作为文本。
 
@@ -321,7 +321,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   quote\_nullable\(string text\)
+- quote\_nullable\(string text\)
 
     描述：返回适用于在SQL语句里当作字符串使用的形式（使用适当的引号进行界定）。
 
@@ -367,7 +367,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   quote\_nullable\(value anyelement\)
+- quote\_nullable\(value anyelement\)
 
     描述：将给定的参数值转化为text，加上引号作为文本。
 
@@ -413,7 +413,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   substring\_inner\(string \[from int\] \[for int\]\)
+- substring\_inner\(string \[from int\] \[for int\]\)
 
     描述：截取子字符串，from int表示从第几个字符开始截取，for int表示截取几个字节。
 
@@ -429,7 +429,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   substring\(string \[from int\] \[for int\]\)
+- substring\(string \[from int\] \[for int\]\)
 
     描述：截取子字符串，from int表示从第几个字符开始截取，for int表示截取几个字节。
 
@@ -445,7 +445,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   substring\(string from  _pattern_\)
+- substring\(string from  _pattern_\)
 
     描述：截取匹配POSIX正则表达式的子字符串。如果没有匹配它返回空值，否则返回文本中匹配模式的那部分。
 
@@ -475,7 +475,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     >
     >如果POSIX正则表达式模式包含任何圆括号，那么将返回匹配第一对子表达式（对应第一个左圆括号的） 的文本。如果你想在表达式里使用圆括号而又不想导致这个例外，那么你可以在整个表达式外边放上一对圆括号。
 
--   substring\(string from  _pattern_  for  _escape_\)
+- substring\(string from  _pattern_  for  _escape_\)
 
     描述：截取匹配SQL正则表达式的子字符串。声明的模式必须匹配整个数据串，否则函数失败并返回空值。为了标识在成功的时候应该返回的模式部分，模式必须包含逃逸字符的两次出现，并且后面要跟上双引号（"）。匹配这两个标记之间的模式的文本将被返回。
 
@@ -491,7 +491,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   rawcat\(raw,raw\)
+- rawcat\(raw,raw\)
 
     描述：字符串拼接函数。
 
@@ -507,7 +507,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   regexp\_like\(text,text,text\)
+- regexp\_like\(text,text,text\)
 
     描述：正则表达式的模式匹配函数。
 
@@ -635,16 +635,16 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
   (1 row)
   ```
 
--   regexp\_count\(string text, pattern text \[, position int \[, flags text\]\]\)
+- regexp\_count\(string text, pattern text \[, position int \[, flags text\]\]\)
 
     描述：获取满足匹配的子串个数。
 
     参数说明：
 
-    -   string：用于匹配的源字符串。
-    -   pattern：用于匹配的正则表达式模式串。
-    -   position：表示从源字符串的第几个字符开始匹配，为可选参数，默认值为1。
-    -   flags：可选参数，包含零个或多个改变函数匹配行为的单字母标记。其中：m表示按照多行模式匹配。SQL语法兼容A和B的情况下，n选项在GUC参数behavior\_compat\_options值包含aformat\_regexp\_match时，表示 . 能够匹配 '\\n' 字符，flags中没有指定n时，默认.不能匹配 '\\n' 字符；值不包含aformat\_regexp\_match时，. 默认能匹配'\\n'字符。n选项的含义与m选项一致。可选的参数包括b，c，e，i，m，n，p，q，s，t，w，x。
+    - string：用于匹配的源字符串。
+    - pattern：用于匹配的正则表达式模式串。
+    - position：表示从源字符串的第几个字符开始匹配，为可选参数，默认值为1。
+    - flags：可选参数，包含零个或多个改变函数匹配行为的单字母标记。其中：m表示按照多行模式匹配。SQL语法兼容A和B的情况下，n选项在GUC参数behavior\_compat\_options值包含aformat\_regexp\_match时，表示 . 能够匹配 '\\n' 字符，flags中没有指定n时，默认.不能匹配 '\\n' 字符；值不包含aformat\_regexp\_match时，. 默认能匹配'\\n'字符。n选项的含义与m选项一致。可选的参数包括b，c，e，i，m，n，p，q，s，t，w，x。
 
     返回值类型：int
 
@@ -658,18 +658,18 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   regexp\_instr\(string text, pattern text \[, position int \[, occurrence int \[, return\_opt int \[, flags text\]\]\]\]\)
+- regexp\_instr\(string text, pattern text \[, position int \[, occurrence int \[, return\_opt int \[, flags text\]\]\]\]\)
 
     描述：获取满足匹配条件的子串位置（从1开始）。如果没有匹配的子串，则返回0。
 
     参数说明：
 
-    -   string：用于匹配的源字符串。
-    -   pattern：用于匹配的正则表达式模式串。
-    -   position：可选参数，表示从源字符串的第几个字符开始匹配，默认值为1。
-    -   occurrence：可选参数，表示获取第occurrence个匹配子串的位置，默认值为1。
-    -   return\_opt：可选参数，用于控制返回匹配子串的首字符位置还是尾字符位置。取值为0时，返回匹配子串的第一个字符的位置（从1开始计算），取值为大于0的值时，返回匹配子串的尾字符的下一个字符的位置。默认值为0。
-    -   flags：可选参数，包含零个或多个改变函数匹配行为的单字母标记。其中：m表示按照多行模式匹配。SQL语法兼容A和B的情况下，n选项在GUC参数behavior\_compat\_options值包含aformat\_regexp\_match时，表示 . 能够匹配 '\\n' 字符，flags中没有指定n时，默认.不能匹配 '\\n' 字符；值不包含aformat\_regexp\_match时，. 默认能匹配'\\n'字符。n选项的含义与m选项一致。
+    - string：用于匹配的源字符串。
+    - pattern：用于匹配的正则表达式模式串。
+    - position：可选参数，表示从源字符串的第几个字符开始匹配，默认值为1。
+    - occurrence：可选参数，表示获取第occurrence个匹配子串的位置，默认值为1。
+    - return\_opt：可选参数，用于控制返回匹配子串的首字符位置还是尾字符位置。取值为0时，返回匹配子串的第一个字符的位置（从1开始计算），取值为大于0的值时，返回匹配子串的尾字符的下一个字符的位置。默认值为0。
+    - flags：可选参数，包含零个或多个改变函数匹配行为的单字母标记。其中：m表示按照多行模式匹配。SQL语法兼容A和B的情况下，n选项在GUC参数behavior\_compat\_options值包含aformat\_regexp\_match时，表示 . 能够匹配 '\\n' 字符，flags中没有指定n时，默认.不能匹配 '\\n' 字符；值不包含aformat\_regexp\_match时，. 默认能匹配'\\n'字符。n选项的含义与m选项一致。
 
     返回值类型：int
 
@@ -689,7 +689,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   regexp\_matches\(string text, pattern text \[, flags text\]\)
+- regexp\_matches\(string text, pattern text \[, flags text\]\)
 
     描述：返回string中所有匹配POSIX正则表达式的子字符串。如果pattern不匹配，该函数不返回行。如果模式不包含圆括号子表达式，则每一个被返回的行都是一个单一元素的文本数组，其中包括匹配整个模式的子串。如果模式包含圆括号子表达式，该函数返回一个文本数组，它的第n个元素是匹配模式的第n个圆括号子表达式的子串。
 
@@ -698,8 +698,8 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     >>[!TIP]须知
     >
     >如果提供了最后一个参数，但参数值是空字符串（''），且数据库SQL兼容模式设置为A的情况下，会导致返回结果为空集。这是因为A兼容模式将''作为NULL处理，避免此类行为的方式有如下几种：
-    >-   将数据库SQL兼容模式改为C；
-    >-   不提供最后一个参数，或最后一个参数不为空字符串。
+    >- 将数据库SQL兼容模式改为C；
+    >- 不提供最后一个参数，或最后一个参数不为空字符串。
 
     返回值类型：setof text\[\]
 
@@ -724,7 +724,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (2 rows)
     ```
 
--   regexp\_split\_to\_array\(string text, pattern text \[, flags text \]\)
+- regexp\_split\_to\_array\(string text, pattern text \[, flags text \]\)
 
     描述：用POSIX正则表达式作为分隔符，分隔string。和regexp\_split\_to\_table相同，不过regexp\_split\_to\_array会把它的结果以一个text数组的形式返回。
 
@@ -740,7 +740,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   regexp\_split\_to\_table\(string text, pattern text \[, flags text\]\)
+- regexp\_split\_to\_table\(string text, pattern text \[, flags text\]\)
 
     描述：用POSIX正则表达式作为分隔符，分隔string。如果没有与pattern的匹配，该函数返回string。如果有至少有一个匹配，对每一个匹配它都返回从上一个匹配的末尾（或者串的开头）到这次匹配开头之间的文本。当没有更多匹配时，它返回从上一次匹配的末尾到串末尾之间的文本。
 
@@ -759,7 +759,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (2 rows)
     ```
 
--   repeat\(string text, number int \)
+- repeat\(string text, number int \)
 
     描述：将string重复number次。
 
@@ -779,7 +779,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     >
     >由于数据库内存分配机制限制单次内存分配不可超过1GB，因此number最大值不应超过\(1G-x\)/lengthb\(string\) - 1。x为头信息长度，通常大于4字节，其具体值在不同的场景下存在差异。
 
--   replace\(string text, from text, to text\)
+- replace\(string text, from text, to text\)
 
     描述：把字符串string里出现地所有子字符串from的内容替换成子字符串to的内容。
 
@@ -795,8 +795,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
-
--   replace\(string, substring\)
+- replace\(string, substring\)
 
     描述：删除字符串string里出现的所有子字符串substring的内容。
 
@@ -816,7 +815,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   reverse\(str\)
+- reverse\(str\)
 
     描述：返回颠倒的字符串。
 
@@ -832,7 +831,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   right\(str text, n int\)
+- right\(str text, n int\)
 
     描述：返回字符串中的后n个字符。当n是负值时，返回除前|n|个字符以外的所有字符。
 
@@ -854,7 +853,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   rpad\(string text, length int \[, fill text\]\)
+- rpad\(string text, length int \[, fill text\]\)
 
     描述：使用填充字符fill（缺省时为空白），把string填充到length长度。如果string已经比length长则将其从尾部截断。
 
@@ -874,7 +873,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
   >
   >由于数据库内存分配机制限制单次内存分配不可超过1GB，因此最大长度不应超过\(1G-x\)/lengthb\(string\) - 1。x为头信息长度，通常大于4字节，其具体值在不同的场景下存在差异。
 
--   rtrim\(string text \[, characters text\]\)
+- rtrim\(string text \[, characters text\]\)
 
     描述：从字符串string的结尾删除只包含characters中字符（缺省是个空白）的最长的字符串。
 
@@ -890,7 +889,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   substrb\(text,int,int\)
+- substrb\(text,int,int\)
 
     描述：提取子字符串，第一个int表示提取的起始位置，第二个表示提取几位字符。
 
@@ -906,7 +905,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   substrb\(text,int\)
+- substrb\(text,int\)
 
     描述：提取子字符串，int表示提取的起始位置。
 
@@ -922,7 +921,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   substr\(bytea,from,count\)
+- substr\(bytea,from,count\)
 
     描述：从参数bytea中抽取子字符串。from表示抽取的起始位置，count表示抽取的子字符串长度。
 
@@ -938,7 +937,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   string || string
+- string || string
 
     描述：连接字符串。
 
@@ -954,7 +953,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   string || non-string或non-string || string
+- string || non-string或non-string || string
 
     描述：连接字符串和非字符串。
 
@@ -970,7 +969,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   split\_part\(string text, delimiter text, field int\)
+- split\_part\(string text, delimiter text, field int\)
 
     描述：根据delimiter分隔string返回生成的第field个子字符串（从出现第一个delimiter的text为基础）。
 
@@ -986,7 +985,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   strpos\(string, substring\)
+- strpos\(string, substring\)
 
     描述：指定的子字符串的位置。和position\(substring in string\)一样，不过参数顺序相反。
 
@@ -1002,7 +1001,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   to\_hex\(number int or bigint\)
+- to\_hex\(number int or bigint\)
 
     描述：把number转换成十六进制表现形式。
 
@@ -1018,7 +1017,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   translate\(string text, from text, to text\)
+- translate\(string text, from text, to text\)
 
     描述：把在string中包含的任何匹配from中字符的字符转化为对应的在to中的字符。如果from比to长，删掉在from中出现的额外的字符。
 
@@ -1038,8 +1037,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
   >
   >由于数据库内存分配机制限制单次内存分配不可超过1GB，因此text最大长度不应超过\(1G-x\)/lengthb\(string\) - 1。x为头信息长度，通常大于4字节，其具体值在不同的场景下存在差异。
 
-
--   length\(string\)
+- length\(string\)
 
     描述：获取参数string中字符的数目。
 
@@ -1055,7 +1053,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   lengthb\(string\)
+- lengthb\(string\)
 
     描述：获取参数string中字节的数目。与字符集有关，同样的中文字符，在GBK与UTF8中，返回的字节数不同。
 
@@ -1071,7 +1069,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   substr\(string,from\)
+- substr\(string,from\)
 
     描述：
 
@@ -1079,9 +1077,9 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
 
     from表示抽取的起始位置。
 
-    -   from为0时，按1处理。
-    -   from为正数时，抽取从from到末尾的所有字符。
-    -   from为负数时，抽取字符串的后n个字符，n为from的绝对值。
+    - from为0时，按1处理。
+    - from为正数时，抽取从from到末尾的所有字符。
+    - from为负数时，抽取字符串的后n个字符，n为from的绝对值。
 
     返回值类型：varchar
 
@@ -1107,7 +1105,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   substr\(string,from,count\)
+- substr\(string,from,count\)
 
     描述：
 
@@ -1117,10 +1115,10 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
 
     count表示抽取的子字符串长度。
 
-    -   from为0时，按1处理。
-    -   from为正数时，抽取从from开始的count个字符。
-    -   from为负数时，抽取从倒数第n个开始的count个字符，n为from的绝对值。
-    -   count小于1时，返回null。
+    - from为0时，按1处理。
+    - from为正数时，抽取从from开始的count个字符。
+    - from为负数时，抽取从倒数第n个开始的count个字符，n为from的绝对值。
+    - count小于1时，返回null。
 
     返回值类型：varchar
 
@@ -1146,7 +1144,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   substrb\(string,from\)
+- substrb\(string,from\)
 
     描述：该函数和SUBSTR\(string,from\)函数功能一致，但是计算单位为字节。
 
@@ -1162,7 +1160,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   substrb\(string,from,count\)
+- substrb\(string,from,count\)
 
     描述：该函数和SUBSTR\(string,from,count\)函数功能一致，但是计算单位为字节。
 
@@ -1178,7 +1176,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   trim\(\[leading |trailing |both\] \[characters\] from string\)
+- trim\(\[leading |trailing |both\] \[characters\] from string\)
 
     描述：从字符串string的开头、结尾或两边删除只包含characters中字符（缺省是一个空白）的最长的字符串。
 
@@ -1210,7 +1208,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   rtrim\(string \[, characters\]\)
+- rtrim\(string \[, characters\]\)
 
     描述：从字符串string的结尾删除只包含characters中字符（缺省是个空白）的最长的字符串。
 
@@ -1226,7 +1224,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   ltrim\(string \[, characters\]\)
+- ltrim\(string \[, characters\]\)
 
     描述：从字符串string的开头删除只包含characters中字符（缺省是一个空白）的最长的字符串。
 
@@ -1242,7 +1240,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   upper\(string\)
+- upper\(string\)
 
     描述：把字符串转化为大写。
 
@@ -1258,7 +1256,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   lower\(string\)
+- lower\(string\)
 
     描述：把字符串转化为小写。
 
@@ -1274,7 +1272,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   nls_lower\(string, string\)
+- nls_lower\(string, string\)
 
     描述：将字符串中的全部字母转化为小写，第二个参数用于指定排序方式。
 
@@ -1290,7 +1288,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   rpad\(string varchar, length int \[, fill varchar\]\)
+- rpad\(string varchar, length int \[, fill varchar\]\)
 
     描述：使用填充字符fill（缺省时为空白），把string填充到length长度。如果string已经比length长则将其从尾部截断。
 
@@ -1315,16 +1313,17 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
      hiabc
     (1 row)
     ```
+
   >[!NOTE]说明
   >
   >由于数据库内存分配机制限制单次内存分配不可超过1GB，因此最大长度不应超过\(1G-x\)/lengthb\(string\) - 1。x为头信息长度，通常大于4字节，其具体值在不同的场景下存在差异。
 
--   instr\(string,substring\[,position,occurrence\]\)
+- instr\(string,substring\[,position,occurrence\]\)
 
     描述：从字符串string的position（缺省时为1）所指的位置开始查找并返回第occurrence（缺省时为1）次出现子串substring的位置的值。
 
-    -   当position为0时，返回0。
-    -   当position为负数时，从字符串倒数第n个字符往前逆向搜索。n为position的绝对值。
+    - 当position为0时，返回0。
+    - 当position为负数时，从字符串倒数第n个字符往前逆向搜索。n为position的绝对值。
 
     本函数以字符为计算单位，如一个汉字为一个字符。
 
@@ -1348,7 +1347,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   initcap\(string\)
+- initcap\(string\)
 
     描述：将字符串中的每个单词的首字母转化为大写，其他字母转化为小写。
 
@@ -1364,7 +1363,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   ascii\(string\)
+- ascii\(string\)
 
     描述：参数string的第一个字符的ASCII码。
 
@@ -1380,7 +1379,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   replace\(string varchar, search\_string varchar, replacement\_string varchar\)
+- replace\(string varchar, search\_string varchar, replacement\_string varchar\)
 
     描述：把字符串string中所有子字符串search\_string替换成子字符串replacement\_string。
 
@@ -1396,7 +1395,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   lpad\(string varchar, length int\[, repeat\_string varchar\]\)
+- lpad\(string varchar, length int\[, repeat\_string varchar\]\)
 
     描述：在string的左侧添上一系列的repeat\_string（缺省为空白）来组成一个总长度为n的新字符串。
 
@@ -1426,7 +1425,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
   >
   >由于数据库内存分配机制限制单次内存分配不可超过1GB，因此最大长度不应超过\(1G-x\)/lengthb\(string\) - 1。x为头信息长度，通常大于4字节，其具体值在不同的场景下存在差异。
 
--   concat\(str1,str2\)
+- concat\(str1,str2\)
 
     描述：将字符串str1和str2连接并返回。
 
@@ -1451,7 +1450,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   chr\(integer\)
+- chr\(integer\)
 
     描述：给出ASCII码的字符。
 
@@ -1467,7 +1466,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   regexp\_substr\(source\_char, pattern\)
+- regexp\_substr\(source\_char, pattern\)
 
     描述：正则表达式的抽取子串函数。SQL语法兼容A和B的情况下，GUC参数behavior\_compat\_options的值包含aformat\_regexp\_match时，. 不能匹配 '\\n' 字符；不包含aformat\_regexp\_match时，. 能够匹配'\\n'字符。
 
@@ -1483,7 +1482,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   regexp\_replace\(string, pattern, replacement \[,flags \]\)
+- regexp\_replace\(string, pattern, replacement \[,flags \]\)
 
     描述：替换匹配POSIX正则表达式的子字符串。如果没有匹配pattern，那么返回不加修改的string串。如果有匹配，则返回的string串里面的匹配子串将被replacement串替换掉。
 
@@ -1508,18 +1507,18 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   repexp\_replace\(string text, pattern text \[, replacement text \[, position int \[, occurrence int \[, flags text\]\]\]\]\)
+- repexp\_replace\(string text, pattern text \[, replacement text \[, position int \[, occurrence int \[, flags text\]\]\]\]\)
 
     描述：替换匹配POSIX正则表达式的子字符串。 如果没有匹配pattern，那么返回不加修改的string串。 如果有匹配，则返回的string串里面的匹配子串将被replacement串替换掉。
 
     参数说明：
 
-    -   string：用于匹配的源字符串
-    -   pattern：用于匹配的正则表达式模式串
-    -   replacement：可选参数，用于替换匹配子串的字符串。如果不给定参数值或者为null, 表示用空串替换。
-    -   position：可选参数，表示从源字符串的第几个字符开始匹配，默认值为1。
-    -   occurrence：可选参数，表示替换第occurrence个匹配的子串。默认值为0，表示替换所有匹配到的子串。
-    -   flags：可选参数，包含零个或多个改变函数匹配行为的单字母标记。其中：m表示按照多行模式匹配。SQL语法兼容A和B的情况下，n选项在GUC参数behavior\_compat\_options值包含aformat\_regexp\_match时，表示 . 能够匹配 '\\n' 字符，flags中没有指定n时，默认.不能匹配 '\\n' 字符；值不包含aformat\_regexp\_match时，. 默认能匹配'\\n'字符。n选项的含义与m选项一致。
+    - string：用于匹配的源字符串
+    - pattern：用于匹配的正则表达式模式串
+    - replacement：可选参数，用于替换匹配子串的字符串。如果不给定参数值或者为null, 表示用空串替换。
+    - position：可选参数，表示从源字符串的第几个字符开始匹配，默认值为1。
+    - occurrence：可选参数，表示替换第occurrence个匹配的子串。默认值为0，表示替换所有匹配到的子串。
+    - flags：可选参数，包含零个或多个改变函数匹配行为的单字母标记。其中：m表示按照多行模式匹配。SQL语法兼容A和B的情况下，n选项在GUC参数behavior\_compat\_options值包含aformat\_regexp\_match时，表示 . 能够匹配 '\\n' 字符，flags中没有指定n时，默认.不能匹配 '\\n' 字符；值不包含aformat\_regexp\_match时，. 默认能匹配'\\n'字符。n选项的含义与m选项一致。
 
     返回值类型：text
 
@@ -1533,14 +1532,14 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   concat\_ws\(sep text, str"any" \[, str"any" \[, ...\] \]\)
+- concat\_ws\(sep text, str"any" \[, str"any" \[, ...\] \]\)
 
     描述：以第一个参数为分隔符，链接第二个以后的所有参数。NULL参数被忽略。
 
     >>[!TIP]须知
     >
-    >-   如果第一个参数值是NULL，会导致返回结果为NULL。
-    >-   如果第一个参数值是空字符串（''），且数据库SQL兼容模式设置为A的情况下，会导致返回结果为NULL。这是因为A兼容模式\>将''作为NULL处理，避免此类行为，可以将数据库SQL兼容模式改为B、C或者PG。
+    >- 如果第一个参数值是NULL，会导致返回结果为NULL。
+    >- 如果第一个参数值是空字符串（''），且数据库SQL兼容模式设置为A的情况下，会导致返回结果为NULL。这是因为A兼容模式\>将''作为NULL处理，避免此类行为，可以将数据库SQL兼容模式改为B、C或者PG。
 
     返回值类型：text
 
@@ -1554,7 +1553,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   nlssort\(string text, sort\_method text\)
+- nlssort\(string text, sort\_method text\)
 
     描述：以sort\_method指定的排序方式返回字符串在该排序模式下的编码值，该编码值可用于排序，其决定了string在这种排序模式下的先后位置。目前支持的sort\_method为'nls\_sort=schinese\_pinyin\_m'和'nls\_sort=generic\_m\_ci'。其中，'nls\_sort=generic\_m\_ci'仅支持纯英文不区分大小写排序。
 
@@ -1579,7 +1578,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   convert\(string bytea, src\_encoding name, dest\_encoding name\)
+- convert\(string bytea, src\_encoding name, dest\_encoding name\)
 
     描述：以dest\_encoding指定的目标编码方式转化字符串bytea。src\_encoding指定源编码方式，在该编码下，string必须是合法的。
 
@@ -1599,6 +1598,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     >
     >如果源编码格式到目标编码格式的转化规则不存在，则字符串不进行任何转换直接返回，如GBK和LATIN1之间的转换规则是不存在的，具体转换规则可以通过查看系统表pg\_conversion获得。
     >示例：
+>
     >```
     >openGauss=# show server_encoding;
     > server_encoding 
@@ -1622,7 +1622,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     >(1 row)
     >```
 
--   convert\_from\(string bytea, src\_encoding name\)
+- convert\_from\(string bytea, src\_encoding name\)
 
     描述：以数据库的编码方式转化字符串bytea。
 
@@ -1640,7 +1640,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   convert\_to\(string text, dest\_encoding name\)
+- convert\_to\(string text, dest\_encoding name\)
 
     描述：将字符串转化为dest\_encoding的编码格式。
 
@@ -1656,7 +1656,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   string \[NOT\] LIKE pattern \[ESCAPE escape-character\]
+- string \[NOT\] LIKE pattern \[ESCAPE escape-character\]
 
     描述：模式匹配函数。
 
@@ -1692,16 +1692,16 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   REGEXP\_LIKE\(source\_string, pattern \[, match\_parameter\]\)
+- REGEXP\_LIKE\(source\_string, pattern \[, match\_parameter\]\)
 
     描述：正则表达式的模式匹配函数。
 
     source\_string为源字符串，pattern为正则表达式匹配模式。 match\_parameter为匹配选项，可取值为：
 
-    -   'i'：大小写不敏感。
-    -   'c'：大小写敏感。
-    -   'n'：允许正则表达式元字符“.”匹配换行符。
-    -   'm'：将source\_string视为多行。
+    - 'i'：大小写不敏感。
+    - 'c'：大小写敏感。
+    - 'n'：允许正则表达式元字符“.”匹配换行符。
+    - 'm'：将source\_string视为多行。
 
     若忽略match\_parameter选项，默认为大小写敏感，“.”不匹配换行符，source\_string视为单行。
 
@@ -1733,7 +1733,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   format\(formatstr text \[, str"any" \[, ...\] \]\)
+- format\(formatstr text \[, str"any" \[, ...\] \]\)
 
     描述：格式化字符串。
 
@@ -1749,7 +1749,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   md5\(string\)
+- md5\(string\)
 
     描述：将string使用MD5加密，并以16进制数作为返回值。
 
@@ -1769,12 +1769,12 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   sha\(string\) / sha1\(string\)
+- sha\(string\) / sha1\(string\)
 
     描述：将string使用SHA1加密，并以16进制数作为返回值，sha和sha1函数功能相同。
 
     >[!NOTE]说明
-    >  
+    > 
     >SHA1加密算法安全性低，存在安全风险，不建议使用。
     >该函数仅在openGauss兼容MY类型时（即sql\_compatibility = 'B'）有效，其他类型不支持该函数。
 
@@ -1795,7 +1795,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   sha2\(string，hash\_length\)
+- sha2\(string，hash\_length\)
 
     描述：将string使用SHA2加密，并以16进制数作为返回值。
 
@@ -1829,7 +1829,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   decode\(string text, format text\)
+- decode\(string text, format text\)
 
     描述：将二进制数据从文本数据中解码。
 
@@ -1845,7 +1845,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   similar\_escape\(pat text, esc text\)
+- similar\_escape\(pat text, esc text\)
 
     描述：将一个 SQL:2008风格的正则表达式转换为POSIX风格。
 
@@ -1861,7 +1861,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   svals\(hstore\)
+- svals\(hstore\)
 
     描述：获取hstore中的值。
 
@@ -1877,7 +1877,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
--   tconvert\(key text, value text\)
+- tconvert\(key text, value text\)
 
     描述：将字符串转换为hstore格式。
 
@@ -1892,7 +1892,8 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
      "aa"=>"bb"
     (1 row)
     ```
--   find\_in\_set\(text, set\)
+
+- find\_in\_set\(text, set\)
 
     描述：查找给定成员在集合中的位置，从1开始计数。如果没有找到，返回0。此函数仅支持兼容B库，其他兼容模式下不保证功能。
 
@@ -1909,9 +1910,7 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (2 rows)
     ```
 
-
-
--   encode\(data bytea, format text\)
+- encode\(data bytea, format text\)
 
     描述：将二进制数据编码为文本数据。
 
@@ -1927,19 +1926,20 @@ openGauss提供的字符处理函数和操作符主要用于字符串与字符�
     (1 row)
     ```
 
-
 >[!NOTE]说明
 >
->-   若字符串中存在换行符，如字符串由一个换行符和一个空格组成，在openGauss中LENGTH和LENGTHB的值为2。
->-   对于CHAR\(n\) 类型，openGauss中n是指字符个数。因此，对于多字节编码的字符集， LENGTHB函数返回的长度可能大于n。
->-   openGauss支持多种类型的数据库，目前有4种，分别是A类型，B类型，C类型以PG类型。在不指定数据库类型时，我们的数据库默认是A类型，A的词法分析器与另外三种不一样，在A中空字符串会被当作是NULL。所以，当使用A类型的数据库时，假如上述字符操作函数中有空字符串作为参数，会出现没有输出的情况。例如：
+>- 若字符串中存在换行符，如字符串由一个换行符和一个空格组成，在openGauss中LENGTH和LENGTHB的值为2。
+>- 对于CHAR\(n\) 类型，openGauss中n是指字符个数。因此，对于多字节编码的字符集， LENGTHB函数返回的长度可能大于n。
+>- openGauss支持多种类型的数据库，目前有4种，分别是A类型，B类型，C类型以PG类型。在不指定数据库类型时，我们的数据库默认是A类型，A的词法分析器与另外三种不一样，在A中空字符串会被当作是NULL。所以，当使用A类型的数据库时，假如上述字符操作函数中有空字符串作为参数，会出现没有输出的情况。例如：
+>
+> ```
+> openGauss=# SELECT translate('12345','123','');
+> translate  
+> -----------
+> (1 row)
 >    ```
->    openGauss=# SELECT translate('12345','123','');
->    translate  
->    -----------
->    (1 row)
->    ```
->    这是因为内核在调用相应的函数进行处理前，会判断所输入的参数中是否含有NULL，假如有，则不会调用相应的函数，因此会没有输出。而在PG模式下，字符串的处理方式与postgresql保持一致，因此不会有上述问题产生。
+>
+> 这是因为内核在调用相应的函数进行处理前，会判断所输入的参数中是否含有NULL，假如有，则不会调用相应的函数，因此会没有输出。而在PG模式下，字符串的处理方式与postgresql保持一致，因此不会有上述问题产生。
 
 - 正则表达式细节：
 

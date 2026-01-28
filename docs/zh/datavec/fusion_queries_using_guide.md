@@ -1,10 +1,13 @@
 # 融合查询使用指南
+
 本章节主要介绍openGauss中DataVec向量引擎的融合查询使用指导。
 
 ## 1. 安装部署
+
 使用Docker实现openGauss搭载DataVec的容器化部署，简化DevOps用户的安装、配置和环境设置，参考 [容器镜像安装](../installation_guide/installing_the_container_image.md)。
 
 ## 2. 融合查询
+
 数据源类型通常是多样化的，包含结构化数据（如文本、数字等）和非结构化数据（如视频、图片、音频等）。为了有效存储和检索不同类型的数据，融合查询结合了结构化过滤和非结构化检索的技术，使用户在同一查询中使用不同的数据类型和查询方法，以获取更为精确的非结构化数据。openGauss集成了结构化数据和非结构化数据融合查询的能力。
 
 openGauss将向量引擎DataVec深度集成到数据库内核中，使用户在检索向量时使用ANN相关索引进行融合查询。
@@ -20,6 +23,7 @@ openGauss融合查询具有以下特点：
 假设有一个旅游平台需要实现查找离用户本地距离在10到20千米，相似性最高的旅游地区的功能。输入为景点图片、本地名称、距离范围。
 
 ### 2.1 创建表格
+
 ```sql
 openGauss=# CREATE TABLE gist_info (
     id int,
@@ -35,6 +39,7 @@ openGauss=# CREATE INDEX ON gist_info USING HNSW(feature vector_l2_ops);
 ```
 
 ### 2.2 融合查询
+
 ```sql
 openGauss=# SELECT dist_location 
 FROM gist_info 
@@ -42,6 +47,7 @@ WHERE src_location = 'zhejiang'
 AND distance > 10 AND distance < 20
 ORDER BY feature <-> '[0,1,2,3,4,5]';
 ```
+
 融合查询主要有两类执行方法，对应的执行计划如下：
 
 **第一类：精确检索**
@@ -75,15 +81,18 @@ ORDER BY feature <-> '[0,1,2,3,4,5]';
 (3 rows)
 ```
 
-
 ## 3. 全文检索
-[全文检索](full_text_search_overview.md)（Full-Text Search, FTS）是一项能够解析自然语言中的单词和词语，并基于关键词在数据库中查找和检索文本数据，最终按文档相关性对结果进行排序的技术。openGauss提供了完整的全文检索功能，包含特定的数据类型及排序函数。
+
+[全文检索](../sql_reference/full_text_search_overview.md)（Full-Text Search, FTS）是一项能够解析自然语言中的单词和词语，并基于关键词在数据库中查找和检索文本数据，最终按文档相关性对结果进行排序的技术。openGauss提供了完整的全文检索功能，包含特定的数据类型及排序函数。
 
 以下通过一个案例展示全文检索的基本流程。假设有一个存储原始文档数据的表格`chunks_table_test`，主键字段为`chunk_id`，文本字段为`chunk_content`，需要根据输入的文本查询表格中关联的所有文档。实现全文检索功能需遵循以下主要步骤。
+
 ### 3.1 文本搜索配置
+
 文本搜索配置（Text Search Configuration）定义了将文档转换成`tsvector`所需的组件。
 
 首先，创建一个名称为`testchcfg`的文本搜索配置，`chparser`适用于中英文搜索场景；若为全英文搜索场景，推荐使用`pg_catalog.english`。
+
 ```sql
 -- 加载中文分词插件
 openGauss=# CREATE EXTENSION chparser;
@@ -98,6 +107,7 @@ openGauss=# \dF
 ```
 
 ### 3.2 创建用于全文检索的表格
+
 ```sql
 --创建文档表格
 openGauss=# CREATE TABLE chunks_table_test (chunk_id SERIAL PRIMARY KEY, chunk_content TEXT);
@@ -108,7 +118,9 @@ openGauss=# INSERT INTO chunks_table_test VALUES(1, '北京市（Beijing），�
 ```
 
 ### 3.3 执行全文检索
+
 **分析文本**
+
 ```sql
 openGauss=> SELECT to_tsvector('testchcfg', '中国的首都是北京');
             to_tsvector            
@@ -116,9 +128,11 @@ openGauss=> SELECT to_tsvector('testchcfg', '中国的首都是北京');
  '中国':1 '北京':4 '是':3 '首都':2
 (1 row)
 ```
+
 `to_tsvector`将文本文档解析为token，并将token简化词素，返回一个`tsvector`。其中`tsvector`中列出了词素及它们在文档中的位置。此外，停用词如上述示例中“的”会被过滤。
 
 **查询文本**
+
 ```sql
 openGauss=> SELECT to_tsquery('testchcfg', '中国的首都是哪里？');
        to_tsquery       
@@ -138,6 +152,7 @@ openGauss=> SELECT replace(to_tsquery('testchcfg', '中国的首都是哪里？'
 `to_tsquery`可以将查询语句分割成单个token，每个token之间必须由布尔运算符`&`（AND）、`|`(OR)和`!`(NOT)连接，默认指定`&`作为连接符，由于`&`可能会导致某些查询过于严格和复杂，推荐将连接符替换成`|`，以提高查询的灵活性和容错性。
 
 **综合排序结果**
+
 ```sql
 openGauss=# SELECT chunk_content
 FROM chunks_table_test, to_tsquery('testchcfg', '中国的首都是哪里？') query
@@ -145,14 +160,16 @@ WHERE to_tsvector('testchcfg', chunk_content) @@ query
 ORDER BY ts_rank(to_tsvector('testchcfg', chunk_content), query, 1) DESC
 LIMIT 2;
 ```
+
 在上述SQL查询中：
 
 - `to_tsvector@@to_tsquery`: `@@`是openGauss的全文检索匹配算子，当`tsvector`（docunment）匹配到`tsquery`（query）时返回true。
-- `ts_rank(to_tsvector, to_tsquery, integer)`：openGauss提供了两个预置的[排序方法](https://docs.opengauss.org/zh/docs/6.0.0/docs/SQLReference/%E6%8E%92%E5%BA%8F%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C.html)（`ts_rank`， `ts_rank_cd`），可将相关性最高的文档排在前面。同时，通过设置`integer`类型的标准化选项来定义文档长度的影响程度。
+- `ts_rank(to_tsvector, to_tsquery, integer)`：openGauss提供了两个预置的[排序方法](../sql_reference/sort_the_query_results.md)（`ts_rank`， `ts_rank_cd`），可将相关性最高的文档排在前面。同时，通过设置`integer`类型的标准化选项来定义文档长度的影响程度。
 
 综合以上步骤，即可实现高效的全文检索。
 
 ## 4. 双路召回
+
 双路召回（Dual Retrival）是一种结合了向量检索与全文检索的多维数据召回策略。
 
 在传统的单一检索方式中，面对查询内容过于复杂或嵌入模型表现不佳的情况，检索结果往往难以另使用者满意。因此，双路召回策略通过结合两种不同类型的检索技术，弥补了单一检索策略的不足，从而实现更全面和灵活的数据召回。
@@ -220,6 +237,7 @@ LIMIT 10;
 ```
 
 **计划：**
+
 ```
                                                                   QUERY PLAN                                                                   
 -----------------------------------------------------------------------------------------------------------------------------------------------

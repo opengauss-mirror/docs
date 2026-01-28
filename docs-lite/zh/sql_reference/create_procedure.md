@@ -6,27 +6,27 @@
 
 ## 注意事项<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_s8e31b13bfac744069adb47a99f52d6fe"></a>
 
--   如果创建存储过程时参数或返回值带有精度，不进行精度检测。
--   创建存储过程时，存储过程定义中对表对象的操作建议都显示指定模式，否则可能会导致存储过程执行异常。
--   在创建存储过程时，存储过程内部通过SET语句设置current\_schema和search\_path无效。执行完函数search\_path和current\_schema与执行函数前的search\_path和current\_schema保持一致。
--   SELECT、CALL调用函数时，必须要在出参位置提供实参进行调用，实参不会发生作用。
--   存储过程指定package属性时支持重载。
--   不能创建仅形参名字不同（存储过程名和参数列表类型都一样）的重载存储过程。
--   重载的存储过程在调用时变量需要明确具体的类型。
--    不能创建与函数拥有相同名称和参数列表的存储过程。
--   在存储过程内部使用未声明的变量，存储过程被调用时会报错。
--   在创建procedure时，不能在avg函数外面嵌套其他agg函数，或者其他系统函数。
--   在存储过程内部调用其它无参数的存储过程时，可以省略括号，直接使用存储过程名进行调用。
--   在存储过程内部调用其他有出参的函数，如果在赋值表达式中调用时，被调函数的出参可以省略，给出了也会被忽略。
--   存储过程支持参数注释的查看与导出、导入。
--   存储过程支持介于IS/AS与plsql\_body之间的注释的查看与导出、导入。
--   存储过程默认为SECURITY INVOKER权限，如果想将默认行为改为SECURITY DEFINER权限，需要设置guc参数behavior\_compat\_options='plsql\_security\_definer'。
--   被授予CREATE ANY FUNCTION权限的用户，可以在用户模式下创建/替换存储过程。
--   out/inout参数必须传入变量，不能够传入常量。
--   集中式环境下，想要调用in参数相同，out参数不同的存储过程，需要设置guc参数behavior\_compat\_options='proc\_outparam\_override'，并且打开参数后，无论使用select还是call调用存储过程，都必须加上out参数。打开参数后，不支持使用perform调用存储过程或函数。
--   不可与同一模式下已存在的synonym产生命名冲突。
--   通过`CREATE OR REPLACE`语法替换已有的存储过程时，会一并重建依赖此存储过程的视图，存储过程中的参数数据类型变更等情况可能会导致重建视图失败，进而导致替换存储过程失败。此种情况下，建议先删除依赖的视图，再重建存储过程，再重新创建视图。
--   允许创建procedure时忽略依赖关系进行创建，并对未定义的类型/存储过程/函数/包变量提供告警功能，需要设置guc参数behavior\_compat\_options='plpgsql\_dependency'。
+- 如果创建存储过程时参数或返回值带有精度，不进行精度检测。
+- 创建存储过程时，存储过程定义中对表对象的操作建议都显示指定模式，否则可能会导致存储过程执行异常。
+- 在创建存储过程时，存储过程内部通过SET语句设置current\_schema和search\_path无效。执行完函数search\_path和current\_schema与执行函数前的search\_path和current\_schema保持一致。
+- SELECT、CALL调用函数时，必须要在出参位置提供实参进行调用，实参不会发生作用。
+- 存储过程指定package属性时支持重载。
+- 不能创建仅形参名字不同（存储过程名和参数列表类型都一样）的重载存储过程。
+- 重载的存储过程在调用时变量需要明确具体的类型。
+- 不能创建与函数拥有相同名称和参数列表的存储过程。
+- 在存储过程内部使用未声明的变量，存储过程被调用时会报错。
+- 在创建procedure时，不能在avg函数外面嵌套其他agg函数，或者其他系统函数。
+- 在存储过程内部调用其它无参数的存储过程时，可以省略括号，直接使用存储过程名进行调用。
+- 在存储过程内部调用其他有出参的函数，如果在赋值表达式中调用时，被调函数的出参可以省略，给出了也会被忽略。
+- 存储过程支持参数注释的查看与导出、导入。
+- 存储过程支持介于IS/AS与plsql\_body之间的注释的查看与导出、导入。
+- 存储过程默认为SECURITY INVOKER权限，如果想将默认行为改为SECURITY DEFINER权限，需要设置guc参数behavior\_compat\_options='plsql\_security\_definer'。
+- 被授予CREATE ANY FUNCTION权限的用户，可以在用户模式下创建/替换存储过程。
+- out/inout参数必须传入变量，不能够传入常量。
+- 集中式环境下，想要调用in参数相同，out参数不同的存储过程，需要设置guc参数behavior\_compat\_options='proc\_outparam\_override'，并且打开参数后，无论使用select还是call调用存储过程，都必须加上out参数。打开参数后，不支持使用perform调用存储过程或函数。
+- 不可与同一模式下已存在的synonym产生命名冲突。
+- 通过`CREATE OR REPLACE`语法替换已有的存储过程时，会一并重建依赖此存储过程的视图，存储过程中的参数数据类型变更等情况可能会导致重建视图失败，进而导致替换存储过程失败。此种情况下，建议先删除依赖的视图，再重建存储过程，再重新创建视图。
+- 允许创建procedure时忽略依赖关系进行创建，并对未定义的类型/存储过程/函数/包变量提供告警功能，需要设置guc参数behavior\_compat\_options='plpgsql\_dependency'。
 
 ## 语法格式<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_sbee45c05d759429e9b8cb27ddd67bd30"></a>
 
@@ -39,17 +39,17 @@ CREATE [ OR REPLACE ] PROCEDURE procedure_name
 
 ## 参数说明<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_scd93d84d9e624b5e831d78d47a830ca4"></a>
 
--   **OR REPLACE**
+- **OR REPLACE**
 
     当存在同名的存储过程时，替换原来的定义。
 
--   **procedure\_name**
+- **procedure\_name**
 
     创建的存储过程名称，可以带有模式名。
 
     取值范围：字符串，要符合标识符的命名规范。
 
--   **argmode**
+- **argmode**
 
     参数的模式。
 
@@ -59,28 +59,25 @@ CREATE [ OR REPLACE ] PROCEDURE procedure_name
 
     取值范围： IN，OUT，INOUT或VARIADIC。缺省值是IN。只有OUT模式的参数能跟在VARIADIC参数之后。
 
--   **argname**
+- **argname**
 
     参数的名称。
 
     取值范围：字符串，要符合标识符的命名规范。
 
--   **argtype**
+- **argtype**
 
     参数的数据类型。可以使用%TYPE或%ROWTYPE间接引用变量或表的类型，详细可参考存储过程章节[定义变量](define_variables.md)。
 
     取值范围：可用的数据类型。
 
-
-
--   **plsql\_body**
+- **plsql\_body**
 
     PL/SQL存储过程体。
 
     >>[!TIP]须知
     >
     >当在存储过程体中进行创建用户等涉及用户密码相关操作时，系统表及csv日志中会记录密码的明文。因此不建议用户在存储过程体中进行涉及用户密码的相关操作。
-
 
 >[!NOTE]说明
 >

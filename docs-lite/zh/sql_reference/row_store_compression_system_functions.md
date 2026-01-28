@@ -1,6 +1,6 @@
 # 行存压缩系统函数<a name="ZH-CN_TOPIC_0000001382371333"></a>
 
--   compress\_buffer\_stat\_info\(\)
+- compress\_buffer\_stat\_info\(\)
 
     描述：查看pca buffer统计信息。
 
@@ -58,7 +58,7 @@
     </tbody>
     </table>
 
--   compress\_ratio\_info\(file\_path text\)
+- compress\_ratio\_info\(file\_path text\)
 
     描述：查看文件压缩率信息。
 
@@ -143,7 +143,7 @@
     </tbody>
     </table>
 
--   compress\_statistic\_info\(file\_path text，step smallint\)
+- compress\_statistic\_info\(file\_path text，step smallint\)
 
     描述：统计文件压缩后的离散度信息。
 
@@ -219,7 +219,7 @@
     </tbody>
     </table>
 
--   compress\_address\_header\(oid regclass, seg\_id bigint\)
+- compress\_address\_header\(oid regclass, seg\_id bigint\)
 
     描述：查看文件压缩页面的管理信息。
 
@@ -304,7 +304,7 @@
     </tbody>
     </table>
 
--   compress\_address\_details\(oid regclass, seg\_id bigint\)
+- compress\_address\_details\(oid regclass, seg\_id bigint\)
 
     描述：页面chunk使用的详细信息。
 
@@ -397,5 +397,3 @@
     </tr>
     </tbody>
     </table>
-
-

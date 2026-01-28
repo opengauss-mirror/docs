@@ -6,10 +6,10 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--   该语法仅在B兼容模式下使用。
--   使用REPLACE INTO语句必须同时具有表的DELETE权限和INSERT权限。
--   REPLACE INTO语句和INSERT语句一样都是向表中插入数据，区别在于当要插入的数据与表中原有数据唯一性约束冲突时，REPLACE INTO语句会删除原有的冲突数据，然后再插入新的数据。
--   REPLACE INTO不支持在SEQUENCE列上使用。
+- 该语法仅在B兼容模式下使用。
+- 使用REPLACE INTO语句必须同时具有表的DELETE权限和INSERT权限。
+- REPLACE INTO语句和INSERT语句一样都是向表中插入数据，区别在于当要插入的数据与表中原有数据唯一性约束冲突时，REPLACE INTO语句会删除原有的冲突数据，然后再插入新的数据。
+- REPLACE INTO不支持在SEQUENCE列上使用。
 
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 

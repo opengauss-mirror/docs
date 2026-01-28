@@ -17,12 +17,12 @@ ts\_debug显示document的每个token信息，token是由解析器生成，由�
 
 ts\_debug为文本解析器标识的每个token返回一行记录。记录中的列分别是：
 
--   alias：text类型，token的别名。
--   description：text类型，token的描述。
--   token：text类型，token的文本内容。
--   dictionaries：regdictionary数组类型，是分词器为token选定的词典。
--   dictionary：regdictionary类型，用来识别token的词典。如果为空，则不做识别。
--   lexemes：text数组类型，词典识别token时生成的词素。如果为空，则不生成词素。空数组（\{\}）意味着token将被识别成停用词。
+- alias：text类型，token的别名。
+- description：text类型，token的描述。
+- token：text类型，token的文本内容。
+- dictionaries：regdictionary数组类型，是分词器为token选定的词典。
+- dictionary：regdictionary类型，用来识别token的词典。如果为空，则不做识别。
+- lexemes：text数组类型，词典识别token时生成的词素。如果为空，则不生成词素。空数组（\{\}）意味着token将被识别成停用词。
 
 示例：
 
@@ -56,4 +56,3 @@ openGauss=# SELECT * FROM ts_debug('english','a fat  cat sat on a mat - it ate a
  asciiword | Word, all ASCII | rats  | {english_stem} | english_stem | {rat}
 (24 rows)
 ```
-

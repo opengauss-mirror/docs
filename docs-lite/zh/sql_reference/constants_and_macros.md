@@ -110,4 +110,3 @@ current_user
 </tr>
 </tbody>
 </table>
-

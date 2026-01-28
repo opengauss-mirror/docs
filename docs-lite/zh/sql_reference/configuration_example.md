@@ -2,8 +2,8 @@
 
 文本搜索配置（Text Search Configuration），指定了将文档转换成tsvector过程中所必需的组件：
 
--   解析器，用于把文本分解成标记token；
--   词典列表，用于将每个token转换成词位lexeme。
+- 解析器，用于把文本分解成标记token；
+- 词典列表，用于将每个token转换成词位lexeme。
 
 每次to\_tsvector或to\_tsquery函数调用时，都需要指定一个文本搜索配置来指定具体的处理过程。GUC参数[default\_text\_search\_config](../database_reference/regions_and_formatting.md#zh-cn_topic_0283136798_zh-cn_topic_0237124733_zh-cn_topic_0059778109_sd9a07d429cd4498383931c621742b816)指定了默认的文本搜索配置，当文本搜索函数中没有显式指定文本搜索配置参数时，将会使用该默认值进行处理。
 
@@ -11,14 +11,14 @@ openGauss中预定义有一些可用的文本搜索配置，用户也可创建�
 
 ## 操作步骤<a name="zh-cn_topic_0283137082_zh-cn_topic_0237122041_section2016620211300"></a>
 
-1.  创建一个文本搜索配置ts\_conf，复制预定义的文本搜索配置english。
+1. 创建一个文本搜索配置ts\_conf，复制预定义的文本搜索配置english。
 
     ```
     openGauss=# CREATE TEXT SEARCH CONFIGURATION ts_conf ( COPY = pg_catalog.english );
     CREATE TEXT SEARCH CONFIGURATION
     ```
 
-2.  创建Synonym词典。
+2. 创建Synonym词典。
 
     假设同义词词典定义文件pg\_dict.syn内容如下：
 
@@ -38,7 +38,7 @@ openGauss中预定义有一些可用的文本搜索配置，用户也可创建�
      );
     ```
 
-3.  创建一个Ispell词典english\_ispell（词典定义文件来自开源词典）。
+3. 创建一个Ispell词典english\_ispell（词典定义文件来自开源词典）。
 
     ```
     openGauss=# CREATE TEXT SEARCH DICTIONARY english_ispell (
@@ -50,7 +50,7 @@ openGauss中预定义有一些可用的文本搜索配置，用户也可创建�
     );
     ```
 
-4.  设置文本搜索配置ts\_conf，修改某些类型的token对应的词典列表。关于token类型的详细信息，请参见[解析器](resolver.md)。
+4. 设置文本搜索配置ts\_conf，修改某些类型的token对应的词典列表。关于token类型的详细信息，请参见[解析器](resolver.md)。
 
     ```
     openGauss=# ALTER TEXT SEARCH CONFIGURATION ts_conf
@@ -59,14 +59,14 @@ openGauss中预定义有一些可用的文本搜索配置，用户也可创建�
         WITH pg_dict, english_ispell, english_stem;
     ```
 
-5.  在文本搜索配置中，选择设置不索引或搜索某些token类型。
+5. 在文本搜索配置中，选择设置不索引或搜索某些token类型。
 
     ```
     openGauss=# ALTER TEXT SEARCH CONFIGURATION ts_conf
         DROP MAPPING FOR email, url, url_path, sfloat, float;
     ```
 
-6.  使用文本检索调测函数ts\_debug\(\)对所创建的词典配置ts\_conf进行测试。
+6. 使用文本检索调测函数ts\_debug\(\)对所创建的词典配置ts\_conf进行测试。
 
     ```
     openGauss=# SELECT * FROM ts_debug('ts_conf', '
@@ -76,7 +76,7 @@ openGauss中预定义有一些可用的文本搜索配置，用户也可创建�
     ');
     ```
 
-7.  可以设置当前session使用ts\_conf作为默认的文本搜索配置。此设置仅在当前session有效。
+7. 可以设置当前session使用ts\_conf作为默认的文本搜索配置。此设置仅在当前session有效。
 
     ```
     openGauss=# \dF+ ts_conf
@@ -107,5 +107,3 @@ openGauss中预定义有一些可用的文本搜索配置，用户也可创建�
      public.ts_conf
     (1 row)
     ```
-
-

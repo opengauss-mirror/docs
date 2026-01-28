@@ -168,4 +168,3 @@ openGauss数据库常见的隐式类型转换，请参见[表1](#zh-cn_topic_028
 </tr>
 </tbody>
 </table>
-

@@ -6,14 +6,14 @@ gsql是openGauss提供在命令行下运行的数据库连接工具，可以通�
 
 ### 基本功能<a name="zh-cn_topic_0059778819_s8ce37a15763045549311205e19f06a45"></a>
 
--   **连接数据库：** 默认只支持从服务器本机连接，如果需要连接到远端的数据库，必须在服务端进行配置。详细操作请参见《快速入门》中“访问openGauss \> 使用gsql访问openGauss”章节。
+- **连接数据库：** 默认只支持从服务器本机连接，如果需要连接到远端的数据库，必须在服务端进行配置。详细操作请参见《快速入门》中“访问openGauss \> 使用gsql访问openGauss”章节。
 
     >[!NOTE]说明
     >gsql创建连接时，会有5分钟超时时间。如果在这个时间内，数据库未正确地接受连接并对身份进行认证，gsql将超时退出。
     >针对此问题，可以参考[常见问题处理](#常见问题处理)。
 
--   **执行SQL语句：** 支持交互式地键入并执行SQL语句，也可以执行一个文件中指定的SQL语句。
--   **执行元命令：** 元命令可以帮助管理员查看数据库对象的信息、查询缓存区信息、格式化SQL输出结果，以及连接到新的数据库等。元命令的详细说明请参见[元命令参考](#元命令参考)。
+- **执行SQL语句：** 支持交互式地键入并执行SQL语句，也可以执行一个文件中指定的SQL语句。
+- **执行元命令：** 元命令可以帮助管理员查看数据库对象的信息、查询缓存区信息、格式化SQL输出结果，以及连接到新的数据库等。元命令的详细说明请参见[元命令参考](#元命令参考)。
 
 ### 高级特性<a name="zh-cn_topic_0059778819_s999ec23443d04c7ab199c53189744b58"></a>
 
@@ -69,7 +69,7 @@ gsql的高级特性如[表1](#zh-cn_topic_0059778819_t88d6eef25b234de4b4b0f7854a
 </tbody>
 </table>
 
--   <a name="zh-cn_topic_0059778819_zh-cn_topic_0058968129_li39134862"></a>变量
+- <a name="zh-cn_topic_0059778819_zh-cn_topic_0058968129_li39134862"></a>变量
 
     可以使用gsql元命令\\set设置一个变量。例如把变量foo的值设置为bar：
 
@@ -89,8 +89,8 @@ gsql的高级特性如[表1](#zh-cn_topic_0059778819_t88d6eef25b234de4b4b0f7854a
     gsql预定义了一些特殊变量，同时也规划了变量的取值。为了保证和后续版本最大限度地兼容，请避免以其他目的使用这些变量。所有特殊变量见[表2](#zh-cn_topic_0059778819_zh-cn_topic_0058968129_table45814285)。
 
     >[!NOTE]说明
-    >-   所有特殊变量都由大写字母、数字和下划线组成。
-    >-   要查看特殊变量的默认值，请使用元命令\\echo :_varname_（例如\\echo :DBNAME）。
+    >- 所有特殊变量都由大写字母、数字和下划线组成。
+    >- 要查看特殊变量的默认值，请使用元命令\\echo :_varname_（例如\\echo :DBNAME）。
 
     **表 2**  特殊变量设置
 
@@ -224,8 +224,7 @@ gsql的高级特性如[表1](#zh-cn_topic_0059778819_t88d6eef25b234de4b4b0f7854a
     </tbody>
     </table>
 
-
--   <a name="zh-cn_topic_0059778819_zh-cn_topic_0058968129_li56915888"></a>SQL代换
+- <a name="zh-cn_topic_0059778819_zh-cn_topic_0058968129_li56915888"></a>SQL代换
 
     像元命令的参数一样，gsql变量的一个关键特性是可以把gsql变量替换成正规的SQL语句。此外，gsql还提供为变量更换新的别名或其他标识符等功能。使用SQL代换方式替换一个变量的值可在变量前加冒号。例如：
 
@@ -246,8 +245,7 @@ gsql的高级特性如[表1](#zh-cn_topic_0059778819_t88d6eef25b234de4b4b0f7854a
     >[!TIP]须知
     >变量的值是逐字复制的，甚至可以包含不对称的引号或反斜杠命令。所以必须保证输入的内容有意义。
 
-
--   <a name="zh-cn_topic_0059778819_zh-cn_topic_0058968129_li65414495"></a>提示符
+- <a name="zh-cn_topic_0059778819_zh-cn_topic_0058968129_li65414495"></a>提示符
 
     通过[表3](#zh-cn_topic_0059778819_tfd36c27a76294b92ad194d20beeaac7f)的三个变量可以设置gsql的提示符，这些变量是由字符和特殊的转义字符所组成。
 
@@ -393,7 +391,6 @@ gsql的高级特性如[表1](#zh-cn_topic_0059778819_t88d6eef25b234de4b4b0f7854a
     </tbody>
     </table>
 
-
 ### 环境变量<a name="zh-cn_topic_0059778819_s0a191fd6f5d448aab0473160a8ee54f6"></a>
 
 **表 5**  与gsql相关的环境变量
@@ -466,7 +463,7 @@ PSQL_EDITOR_LINENUMBER_ARG='--line '</pre>
 
 ### 操作步骤<a name="zh-cn_topic_0059779027_s88b93467806944068b85cf2ec928ae02"></a>
 
-1.  使用gsql连接到openGauss服务器。
+1. 使用gsql连接到openGauss服务器。
 
     gsql工具使用-d参数指定目标数据库名、-U参数指定数据库用户名、-h参数指定主机名、-p参数指定端口号信息。
 
@@ -505,7 +502,7 @@ PSQL_EDITOR_LINENUMBER_ARG='--line '</pre>
 
     详细的gsql参数请参见[命令参考](#命令参考)。
 
-2.  执行SQL语句。
+2. 执行SQL语句。
 
     以创建数据库human\_staff为例。
 
@@ -516,7 +513,7 @@ PSQL_EDITOR_LINENUMBER_ARG='--line '</pre>
 
     通常，输入的命令行在遇到分号的时候结束。如果输入的命令行没有错误，结果就会输出到屏幕上。
 
-3.  执行gsql元命令。
+3. 执行gsql元命令。
 
     以列出openGauss中所有的数据库和描述信息为例。
 
@@ -536,7 +533,6 @@ PSQL_EDITOR_LINENUMBER_ARG='--line '</pre>
     ```
 
     更多gsql元命令请参见[元命令参考](#元命令参考)。
-
 
 ### 示例<a name="zh-cn_topic_0059779027_sa12a135ee93d4bfa8fcbf57ae87b805d"></a>
 
@@ -650,7 +646,7 @@ omm@[local] openGauss=#
 
 ### 操作步骤<a name="zh-cn_topic_0059778941_s24c36ac1563e42cb99f9773e8cd9c78c"></a>
 
--   连接数据库时，可以使用如下命令获取帮助信息。
+- 连接数据库时，可以使用如下命令获取帮助信息。
 
     ```
     gsql --help
@@ -670,7 +666,7 @@ omm@[local] openGauss=#
     ......
     ```
 
--   连接到数据库后，可以使用如下命令获取帮助信息。
+- 连接到数据库后，可以使用如下命令获取帮助信息。
 
     ```
     help
@@ -687,10 +683,9 @@ omm@[local] openGauss=#
            \q to quit
     ```
 
-
 ### 任务示例<a name="zh-cn_topic_0059778941_s4dc2aaee2ce54ae1a508fe58125b9995"></a>
 
-1.  使用如下命令连接数据库。
+1. 使用如下命令连接数据库。
 
     ```
     gsql -d postgres -p 8000
@@ -706,7 +701,7 @@ omm@[local] openGauss=#
     Type "help" for help.
     ```
 
-2.  查看gsql的帮助信息。具体执行命令请参见[表1](#zh-cn_topic_0059778941_zh-cn_topic_0058968146_table52020644)。
+2. 查看gsql的帮助信息。具体执行命令请参见[表1](#zh-cn_topic_0059778941_zh-cn_topic_0058968146_table52020644)。
 
     **表 1**  使用gsql联机帮助
 
@@ -1144,12 +1139,12 @@ omm@[local] openGauss=#
 
 ### 注意事项<a name="zh-cn_topic_0059778645_sf4d8bb008138470c9007621cebd2dfde"></a>
 
--   一个gsql元命令的格式是反斜杠后面紧跟一个动词，然后是任意参数。参数命令动词和其他参数以任意个空白字符间隔。
--   要在参数里面包含空白，必须用单引号把它引起来。要在这样的参数里包含单引号，可以在前面加一个反斜杠。任何包含在单引号里的内容都会被进一步进行类似C语言的替换：\\n（新行）、\\t（制表符）、\\b（退格）、\\r（回车）、\\f（换页）、\\digits（八进制表示的字符）、\\xdigits（十六进制表示的字符）。
--   用""包围的内容被当做一个命令行传入shell。该命令的输出（删除了结尾的新行）被当做参数值。
--   如果不带引号的参数以冒号（:）开头，它会被当做一个gsql变量，并且该变量的值最终会成为真正的参数值。
--   有些命令以一个SQL标识的名称（比如一个表）为参数。这些参数遵循SQL语法关于双引号的规则：不带双引号的标识强制转换成小写，而双引号保护字母不进行大小写转换，并且允许在标识符中使用空白。在双引号中，成对的双引号在结果名称中分析成一个双引号。比如，FOO"BAR"BAZ解析成fooBARbaz；而"Aweird""name"解析成A weird"name。
--   对参数的分析在遇到另一个不带引号的反斜杠时停止。这里会认为是一个新的元命令的开始。特殊的双反斜杠序列（\\\\）标识参数的结尾并将继续分析后面的SQL语句（如果存在）。这样SQL和gsql命令可以自由的在一行里面混合。但是在任何情况下，一条元命令的参数不能延续超过行尾。
+- 一个gsql元命令的格式是反斜杠后面紧跟一个动词，然后是任意参数。参数命令动词和其他参数以任意个空白字符间隔。
+- 要在参数里面包含空白，必须用单引号把它引起来。要在这样的参数里包含单引号，可以在前面加一个反斜杠。任何包含在单引号里的内容都会被进一步进行类似C语言的替换：\\n（新行）、\\t（制表符）、\\b（退格）、\\r（回车）、\\f（换页）、\\digits（八进制表示的字符）、\\xdigits（十六进制表示的字符）。
+- 用""包围的内容被当做一个命令行传入shell。该命令的输出（删除了结尾的新行）被当做参数值。
+- 如果不带引号的参数以冒号（:）开头，它会被当做一个gsql变量，并且该变量的值最终会成为真正的参数值。
+- 有些命令以一个SQL标识的名称（比如一个表）为参数。这些参数遵循SQL语法关于双引号的规则：不带双引号的标识强制转换成小写，而双引号保护字母不进行大小写转换，并且允许在标识符中使用空白。在双引号中，成对的双引号在结果名称中分析成一个双引号。比如，FOO"BAR"BAZ解析成fooBARbaz；而"Aweird""name"解析成A weird"name。
+- 对参数的分析在遇到另一个不带引号的反斜杠时停止。这里会认为是一个新的元命令的开始。特殊的双反斜杠序列（\\\\）标识参数的结尾并将继续分析后面的SQL语句（如果存在）。这样SQL和gsql命令可以自由的在一行里面混合。但是在任何情况下，一条元命令的参数不能延续超过行尾。
 
 ### 元命令<a name="zh-cn_topic_0059778645_s180deee1bdf347639010abe523b324fe"></a>
 
@@ -2167,10 +2162,10 @@ openGauss=# \sf
 
 高级用户可以使用字符类等正则表达式记法，如\[0-9\]可以匹配任意数字。所有的正则表达式特殊字符都按照POSIX正则表达式所说的工作。以下字符除外：
 
--   .会按照上面所说的作为一种分隔符。
--   \*会被翻译成正则表达式记号.\*。
--   ?会被翻译成.。
--   $则按字面意思匹配。
+- .会按照上面所说的作为一种分隔符。
+- \*会被翻译成正则表达式记号.\*。
+- ?会被翻译成.。
+- $则按字面意思匹配。
 
 根据需要，可以通过书写?、\(_R_+|\)、\(_R_|\)和_R_?来分别模拟PATTERN字符.、_R_\*和_R_?。$不需要作为一个正则表达式字符，因为PATTERN必须匹配整个名称，而不是像正则表达式的常规用法那样解释（换句话说，$会被自动地追加到PATTERN上）。如果不希望该PATTERN的匹配位置被固定，可以在开头或者结尾写上\*。注意在双引号内，所有的正则表达式特殊字符会失去其特殊含义并且按照其字面意思进行匹配。另外，在操作符名称PATTERN中（即\\do的PATTERN参数），正则表达式特殊字符也按照字面意思进行匹配。
 
@@ -2182,24 +2177,24 @@ DELIMITER命令为为客户端设置一个分隔符。当用户设置分隔符�
 
 注意事项：
 
--   delimiter符号目前不是自由设定的，结束符范围有限制，目前接受大小写字母组合或特殊字符组合（\~/!/@/\#/^/&/\`/?/+/-/\*//（除号）/%/</\>/=），其中常见的用法是"//"。
--   符号组合中尽量使用无歧义符号组合，特殊符号组合（注释符："\\\*"、"--"等）目前不支持用于delimiter命名。
--   delimiter长度范围：0\~15。
--   设置的结束符的级别是会话级别的，当切换数据库时delimiter\_name会设置为默认值‘;’。
--   用户如果想使用其他字符组合例如"adbc  $$"，可以使用引号包含，例如delimiter "adbc  $$"，但使用时也需要使用引号包含，例如：select 1"adbc  $$"。
--   delimiter分隔符只有sql\_compatibility = 'B'时支持。
+- delimiter符号目前不是自由设定的，结束符范围有限制，目前接受大小写字母组合或特殊字符组合（\~/!/@/\#/^/&/\`/?/+/-/\*//（除号）/%/</\>/=），其中常见的用法是"//"。
+- 符号组合中尽量使用无歧义符号组合，特殊符号组合（注释符："\\\*"、"--"等）目前不支持用于delimiter命名。
+- delimiter长度范围：0\~15。
+- 设置的结束符的级别是会话级别的，当切换数据库时delimiter\_name会设置为默认值‘;’。
+- 用户如果想使用其他字符组合例如"adbc  $$"，可以使用引号包含，例如delimiter "adbc  $$"，但使用时也需要使用引号包含，例如：select 1"adbc  $$"。
+- delimiter分隔符只有sql\_compatibility = 'B'时支持。
 
 ## 常见问题处理<a name="ZH-CN_TOPIC_0294749066"></a>
 
 ### 连接性能问题<a name="zh-cn_topic_0078149561_section625869329424"></a>
 
--   开启了log\_hostname，但是配置了错误的DNS导致的连接性能问题。
+- 开启了log\_hostname，但是配置了错误的DNS导致的连接性能问题。
 
     在连接上数据库，通过“show log\_hostname”语句，检查数据库中是否开启了log\_hostname参数。
 
     如果开启了相关参数，那么数据库内核会通过DNS反查客户端所在机器的主机名。这时如果数据库配置了不正确的/不可达的DNS服务器，那么会导致数据库建立连接过程较慢。此参数的更多信息，详见《数据库参考》中“GUC参数说明 \> 错误报告和日志 \> 记录日志的内容”章节中关于“log\_hostname”的描述。
 
--   数据库内核执行初始化语句较慢导致的性能问题。
+- 数据库内核执行初始化语句较慢导致的性能问题。
 
     此种情况定位较难，可以尝试使用Linux的跟踪命令：strace。
 
@@ -2221,7 +2216,7 @@ DELIMITER命令为为客户端设置一个分隔符。当用户设置分隔符�
 
     另外还有一种场景不太常见：由于DN所在机器的磁盘满或故障，此时所查询等受影响，无法进行用户认证，导致连接过程挂起，表现为假死。解决此问题清理DN的数据盘空间便可。
 
--   TCP连接创建较慢问题。
+- TCP连接创建较慢问题。
 
     此问题可以参考上面的初始化语句较慢排查的做法，通过strace跟踪，如果长时间停留在：
 
@@ -2237,25 +2232,24 @@ DELIMITER命令为为客户端设置一个分隔符。当用户设置分隔符�
 
     那么说明客户端与数据库端建立物理连接过慢，此时应当检查网络是否存在不稳定、网络吞吐量太大的问题。
 
-
 ### 创建连接故障<a name="zh-cn_topic_0078149561_section3272835810521"></a>
 
--   gsql: could not connect to server: No route to host
+- gsql: could not connect to server: No route to host
 
     此问题一般是指定了不可达的地址或者端口导致的。请检查-h参数与-p参数是否添加正确。
 
--   gsql: FATAL:  Invalid username/password,login denied.
+- gsql: FATAL:  Invalid username/password,login denied.
 
     此问题一般是输入了错误的用户名和密码导致的，请联系数据库管理员，确认用户名和密码的正确性。
 
--   gsql: FATAL:  Forbid remote connection with trust method!
+- gsql: FATAL:  Forbid remote connection with trust method!
 
     数据库由于安全问题，禁止远程登录时使用trust模式。这时需要修改pg\_hba.conf里的连接认证信息。具体的设置信息请参见：《数据库管理指南》中“管理数据库安全 \> 客户端接入认证 \> 配置文件参考”章节。
 
     >[!NOTE]说明
     >请不要修改pg\_hba.conf中数据库主机的相关设置，否则可能导致数据库功能故障。建议业务应用部署在数据库之外，而非数据库内部。
 
--   在DN连接数据库，添加“-h 127.0.0.1”可以连接，去掉后无法连接问题。
+- 在DN连接数据库，添加“-h 127.0.0.1”可以连接，去掉后无法连接问题。
 
     通过执行SQL语句“show unix\_socket\_directory”检查DN使用的Unix套接字目录，是否与shell中的环境变量$PGHOST一致。
 
@@ -2263,15 +2257,15 @@ DELIMITER命令为为客户端设置一个分隔符。当用户设置分隔符�
 
     关于unix\_socket\_directory的更多信息，详见《数据库参考》中“GUC参数说明 \> 连接和认证 \> 连接设置”章节中的说明。
 
--   The "libpq.so" loaded mismatch the version of gsql, please check it.
+- The "libpq.so" loaded mismatch the version of gsql, please check it.
 
     此问题是由于环境中使用的libpq.so的版本与gsql的版本不匹配导致的，请通过“ldd gsql”命令确认当前加载的libpq.so的版本，并通过修改LD\_LIBRARY\_PATH环境变量来加载正确的libpq.so。
 
--   gsql: symbol lookup error: xxx/gsql: undefined symbol: libpqVersionString
+- gsql: symbol lookup error: xxx/gsql: undefined symbol: libpqVersionString
 
     此问题是由于环境中使用的libpq.so的版本与gsql的版本不匹配导致的（也有可能是环境中存在PostgreSQL的libpq.so），请通过“ldd gsql”命令确认当前加载的libpq.so的版本，并通过修改LD\_LIBRARY\_PATH环境变量来加载正确的libpq.so。
 
--   gsql: connect to server failed: Connection timed out
+- gsql: connect to server failed: Connection timed out
 
     Is the server running on host "xx.xxx.xxx.xxx" and accepting TCP/IP connections on port xxxx?
 
@@ -2288,24 +2282,25 @@ DELIMITER命令为为客户端设置一个分隔符。当用户设置分隔符�
     4 packets transmitted, 0 received, +4 errors, 100% packet loss, time 2999ms
     ```
 
--   gsql: FATAL:  permission denied for database "postgres"
+- gsql: FATAL:  permission denied for database "postgres"
 
     DETAIL:  User does not have CONNECT privilege.
 
     此问题是由于用户不具备访问该数据库的权限，可以使用如下方法解决。
 
-    1.  使用管理员用户dbadmin连接数据库。
+    1. 使用管理员用户dbadmin连接数据库。
 
         ```
         gsql -d postgres -U dbadmin -p 8000
         ```
 
-    2.  赋予该用户访问数据库的权限。
+    2. 赋予该用户访问数据库的权限。
 
         GRANT CONNECT ON DATABASE postgres TO user1;
 
         >[!NOTE]说明
         >实际上，常见的许多错误操作也可能产生用户无法连接上数据库的现象。如用户连接的数据库不存在，用户名或密码输入错误等。这些错误操作在客户端工具也有相应的提示信息。
+>
         >```
         >gsql -d postgres -p 8000
         >gsql: FATAL:  database "postgres" does not exist
@@ -2314,8 +2309,7 @@ DELIMITER命令为为客户端设置一个分隔符。当用户设置分隔符�
         >gsql: FATAL:  Invalid username/password,login denied.
         >```
 
-
--   gsql: FATAL:  sorry, too many clients already，active/non-active: 197/3.
+- gsql: FATAL:  sorry, too many clients already，active/non-active: 197/3.
 
     此问题是由于系统连接数量超过了最大连接数量。请联系数据库DBA进行会话连接数管理，释放无用会话。
 
@@ -2415,28 +2409,27 @@ DELIMITER命令为为客户端设置一个分隔符。当用户设置分隔符�
     </tbody>
     </table>
 
--   gsql: wait xxx.xxx.xxx.xxx:xxxx timeout expired
+- gsql: wait xxx.xxx.xxx.xxx:xxxx timeout expired
 
     gsql在向数据库发起连接的时候，会有5分钟超时机制，如果在这个超时时间内，数据库未能正常的对客户端请求进行校验和身份认证，那么gsql会退出当前会话的连接过程，并报出如上错误。
 
     一般来说，此问题是由于连接时使用的-h参数及-p参数指定的连接主机及端口有误（即错误信息中的xxx部分），导致通信故障；极少数情况是网络故障导致。要排除此问题，请检查数据库的主机名及端口是否正确。
 
--   gsql: could not receive data from server: Connection reset by peer.
+- gsql: could not receive data from server: Connection reset by peer.
 
     同时，检查DN日志中出现类似如下日志“ FATAL: cipher file "/data/coordinator/server.key.cipher" has group or world access”，一般是由于数据目录或部分关键文件的权限被误操作篡改导致。请参照其他正常实例下的相关文件权限，修改回来便可。
 
--   gsql: FATAL:  GSS authentication method is not allowed because XXXX user password is not disabled.
+- gsql: FATAL:  GSS authentication method is not allowed because XXXX user password is not disabled.
 
     目标DN的pg\_hba.conf里配置了当前客户端IP使用"gss"方式来做认证，该认证算法不支持用作客户端的身份认证，请修改到"sha256"后再试。配置方法见《数据库管理指南》中“管理数据库安全 \> 客户端接入认证 \> 配置文件参考”章节 。
 
     >[!NOTE]说明
-    >-   请不要修改pg\_hba.conf中数据库主机的相关设置，否则可能导致数据库功能故障。
-    >-   建议业务应用部署在数据库之外，而非数据库内部。
-
+    >- 请不要修改pg\_hba.conf中数据库主机的相关设置，否则可能导致数据库功能故障。
+    >- 建议业务应用部署在数据库之外，而非数据库内部。
 
 ### 其他故障<a name="section1457563481712"></a>
 
--   出现因“总线错误”（Bus error）导致的core dump或异常退出。
+- 出现因“总线错误”（Bus error）导致的core dump或异常退出。
 
     一般情况下出现此种问题，是进程运行过程中加载的共享动态库（在Linux为.so文件）出现变化；或者进程二进制文件本身出现变化，导致操作系统加载机器的执行码或者加载依赖库的入口发生变化，操作系统出于保护目的将进程杀死，产生core dump文件。
 

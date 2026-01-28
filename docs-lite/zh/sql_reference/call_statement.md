@@ -9,8 +9,8 @@
 
 对以上语法格式的解释如下：
 
--   procedure\_name：存储过程名。
--   parameter：存储过程的参数，可以没有或者有多个参数。
+- procedure\_name：存储过程名。
+- parameter：存储过程的参数，可以没有或者有多个参数。
 
 ## 示例<a name="zh-cn_topic_0283136925_zh-cn_topic_0237122223_zh-cn_topic_0059778001_scfc5c5fdac3e4a11a915ebac95b49f79"></a>
 
@@ -35,4 +35,3 @@ openGauss=# CALL proc_staffs(2,8,6);
 openGauss=# DROP PROCEDURE proc_staffs;
 
 ```
-

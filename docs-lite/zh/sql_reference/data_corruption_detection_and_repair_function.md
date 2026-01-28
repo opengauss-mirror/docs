@@ -1,4 +1,5 @@
 # 数据损坏检测修复函数<a name="ZH-CN_TOPIC_0000001198584734"></a>
+
 修复主机备机文件页面的约束概述：
 
 <a name="table1390921004418"></a>
@@ -53,18 +54,18 @@
 >[!WARNING]注意
 >备机修复支持备集群的首备和级联备。
 
--   gs\_verify\_data\_file\(verify\_segment bool\)
+- gs\_verify\_data\_file\(verify\_segment bool\)
 
     描述：校验当前实例当前库是否存在文件丢失的情况。校验只包括数据表主文件是否有中间段丢失的情况。默认参数是false，表示不校验段页式表数据文件。参数设置为true时仅校验段页式表文件。默认只有初始化用户、具有sysadmin属性的用户以及在运维模式下具有运维管理员属性的用户可以查看，其余用户需要赋权后才可以使用。
 
     返回的结果：
 
-    -   非段页式表：rel\_oid和rel\_name是对应文件的表oid和表名，miss\_file\_path表示丢失文件的相对路径。
-    -   段页式表：因所有表存放在相同文件中，所以rel\_oid和rel\_name无法显示具体表的信息。对于段页式表，如果第一个文件损坏，不会检查出后面的.1 .2等文件。例如3、3.1、3.2损坏，只能检查出3损坏。当段页式文件不足5个时，使用函数检测时，未生成的文件也会校验出来，例如只有1和2文件，校验段页式时，也会检测出3，4，5文件。以下示例，第一个是校验非段页式表的示例，第二是校验段页式表的示例。
+    - 非段页式表：rel\_oid和rel\_name是对应文件的表oid和表名，miss\_file\_path表示丢失文件的相对路径。
+    - 段页式表：因所有表存放在相同文件中，所以rel\_oid和rel\_name无法显示具体表的信息。对于段页式表，如果第一个文件损坏，不会检查出后面的.1 .2等文件。例如3、3.1、3.2损坏，只能检查出3损坏。当段页式文件不足5个时，使用函数检测时，未生成的文件也会校验出来，例如只有1和2文件，校验段页式时，也会检测出3，4，5文件。以下示例，第一个是校验非段页式表的示例，第二是校验段页式表的示例。
 
     参数说明：
 
-    -   verify\_segment
+    - verify\_segment
 
         指定文件校验的范围。false校验非段页式表；true校验段页式表。
 
@@ -92,31 +93,31 @@
      dn_6001_6002_6003 |       0 | none     | base/16573/2
     ```
 
--   gs\_repair\_file\(tableoid Oid，path text, timeout int\)
+- gs\_repair\_file\(tableoid Oid，path text, timeout int\)
 
     描述：根据传入的参数修复文件，仅支持有正常主备连接的主DN使用。参数依据gs\_verify\_data\_file函数返回的oid和路径填写。段页式表tableoid赋值为0到4,294,967,295的任意值（内部校验根据文件路径判断是否是段页式表文件，段页式表文件则不使用tableoid）。修复成功返回值为true，修复失败会显示具体失败原因。默认只有在主DN节点上，使用初始化用户、具有sysadmin属性的用户以及在运维模式下具有运维管理员属性的用户可以查看，其余用户需要赋权后才可以使用。
 
     >[!WARNING]注意
     >
-    >1.  当DN实例上存在文件损坏时，进行升主会校验出错，报PANIC退出无法升主，为正常现象。可在其他DN升主后，通过备DN自动修复进行修复。
-    >2.  当文件存在但是大小为0时，此时不会去修复该文件，若想要修复该文件，需要将为0的文件删除后再修复。
-    >3.  删除文件需要等文件fd自动关闭后再修复，人工操作可以执行重启进程、主备切换命令。
+    >1. 当DN实例上存在文件损坏时，进行升主会校验出错，报PANIC退出无法升主，为正常现象。可在其他DN升主后，通过备DN自动修复进行修复。
+    >2. 当文件存在但是大小为0时，此时不会去修复该文件，若想要修复该文件，需要将为0的文件删除后再修复。
+    >3. 删除文件需要等文件fd自动关闭后再修复，人工操作可以执行重启进程、主备切换命令。
 
     参数说明：
 
-    -   tableoid
+    - tableoid
 
         要修复的文件对应的表oid，依据gs\_verify\_data\_file函数返回的列表中rel\_oid一列填写。
 
         取值范围： Oid，0 - 4294967295。注意：输入负值等都会被强制转成非负整数类型。
 
-    -   path
+    - path
 
         需要修复的文件路径，依据gs\_verify\_data\_file函数返回的列表中miss\_file\_path一列填写。
 
         取值范围：字符串。
 
-    -   timeout
+    - timeout
 
         等待备DN回放的时长，修复文件需要等待备DN回放到当前主DN对应的位置，根据备DN回放所需时长设定。
 
@@ -133,8 +134,7 @@
     t
     ```
 
-
--   local\_bad\_block\_info\(\)
+- local\_bad\_block\_info\(\)
 
     描述：显示本实例页面损坏的情况。从磁盘读取页面，发现页面CRC校验失败时进行记录。默认只有初始化用户、具有sysadmin属性的用户、具有监控管理员属性的用户以及在运维模式下具有运维管理员属性的用户、以及监控用户可以查看，其余用户需要赋权后才可以使用。
 
@@ -152,7 +152,7 @@
     
     ```
 
--   local\_clear\_bad\_block\_info\(\)
+- local\_clear\_bad\_block\_info\(\)
 
     描述：清理local\_bad\_block\_info中已修复页面的数据，也就是repair\_time不为空的信息。默认只有初始化用户、具有sysadmin属性的用户以及在运维模式下具有运维管理员属性的用户、以及监控用户可以查看，其余用户需要赋权后才可以使用。
 
@@ -167,7 +167,7 @@
     t
     ```
 
--   gs\_verify\_and\_tryrepair\_page \(path text, blocknum oid, verify\_mem bool, is\_segment bool\)
+- gs\_verify\_and\_tryrepair\_page \(path text, blocknum oid, verify\_mem bool, is\_segment bool\)
 
     描述：校验本实例指定页面的情况。默认只有在主DN节点上，使用初始化用户、具有sysadmin属性的用户以及在运维模式下具有运维管理员属性的用户可以查看，其余用户需要赋权后才可以使用。
 
@@ -177,25 +177,25 @@
 
     参数说明：
 
-    -   path
+    - path
 
         损坏文件的路径。依据local\_bad\_block\_info中file\_path一列填写。
 
         取值范围：字符串。
 
-    -   blocknum
+    - blocknum
 
         损坏文件的页号。依据local\_bad\_block\_info中block\_num一列填写。
 
         取值范围：Oid，0 - 2147483647。注意：输入负值等都会被强制转成非负整数类型。
 
-    -   verify\_mem
+    - verify\_mem
 
         指定是否校验内存中的指定页面。设定为false时，只校验磁盘上的页面。设置为true时，校验内存中的页面和磁盘上的页面。如果发现磁盘上页面损坏，会将内存中的页面做一个基本信息校验刷盘，修复磁盘上页面。如果校验内存页面时发现页面不在内存中，会经内存接口读取磁盘上的页面。此过程中如果磁盘页面有问题，则会触发远程读自动修复功能。
 
         取值范围：bool，true和false。
 
-    -   is\_segment
+    - is\_segment
 
         是否是段页式表。根据local\_bad\_block\_info中的bucket\_node列值决定。如果bucket\_node为-1时，表示不是段页式表，将is\_segment设置为false；非-1的情况将is\_segment设置为true。
 
@@ -212,7 +212,7 @@
     dn_6001_6002_6003 | base/16552/24745 |     0      | page verification succeeded.|              | f
     ```
 
--   gs\_repair\_page\(path text, blocknum oid, is\_segment bool, timeout int\)
+- gs\_repair\_page\(path text, blocknum oid, is\_segment bool, timeout int\)
 
     描述：修复本实例指定页面，仅支持有正常主备连接的主DN使用。页面修复成功返回true，修复过程中出错会有报错信息提示。默认只有在主DN节点上，使用初始化用户、具有sysadmin属性的用户以及在运维模式下具有运维管理员属性的用户可以查看，其余用户需要赋权后才可以使用。
 
@@ -220,25 +220,25 @@
 
     参数说明：
 
-    -   path
+    - path
 
         损坏页面的路径。根据local\_bad\_block\_info中file\_path一列设置，或者是gs\_verify\_and\_tryrepair\_page函数中path一列设置。
 
         取值范围：字符串。
 
-    -   blocknum
+    - blocknum
 
         损坏页面的页面号。根据local\_bad\_block\_info中block\_num一列设置，或者是gs\_verify\_and\_tryrepair\_page函数中blocknum一列设置。
 
         取值范围：int，0 - 2147483647。注意：输入负值等都会被强制转成非负整数类型。
 
-    -   is\_segment
+    - is\_segment
 
         是否是段页式表。根据local\_bad\_block\_info中的bucket\_node列值决定，如果bucket\_node为-1时，表示不是段页式表，将is\_segment设置为false；非-1的情况将is\_segment设置为true。
 
         取值范围：bool，true或者false。
 
-    -   timeout
+    - timeout
 
         等待备DN回放的时长。修复页面需要等待备DN回放到当前主DN对应的位置，根据备DN回放所需时长设定。
 
@@ -254,5 +254,3 @@
     --------
     t
     ```
-
-

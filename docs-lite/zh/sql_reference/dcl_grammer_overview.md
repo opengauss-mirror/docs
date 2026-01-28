@@ -79,4 +79,3 @@ openGauss允许设置应用于将来创建的对象的权限，请参考[ALTER D
 ## 关闭当前节点<a name="zh-cn_topic_0283136632_section153781731062"></a>
 
 openGauss支持使用shutdown命令关闭当前数据库节点，请参考[SHUTDOWN](SHUTDOWN.md)。
-

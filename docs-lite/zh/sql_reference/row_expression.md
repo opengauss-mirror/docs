@@ -21,4 +21,3 @@ openGauss=# SELECT ROW(1,2,NULL) < ROW(1,3,0) AS RESULT;
  t
 (1 row)
 ```
-

@@ -11,22 +11,22 @@ select * from t2;
 --创建包含自治事务的存储过程
 CREATE OR REPLACE PROCEDURE autonomous_4(a int, b int)  AS 
 DECLARE 
-	num3 int := a;
-	num4 int := b;
-	PRAGMA AUTONOMOUS_TRANSACTION;
+ num3 int := a;
+ num4 int := b;
+ PRAGMA AUTONOMOUS_TRANSACTION;
 BEGIN
-	insert into t2 values(num3, num4); 
-	
+ insert into t2 values(num3, num4); 
+ 
 END;
 /
 --创建调用自治事务存储过程的普通存储过程
 CREATE OR REPLACE PROCEDURE autonomous_5(a int, b int)  AS 
 DECLARE 
 BEGIN
-	
-	insert into t2 values(666, 666);
-	autonomous_4(a,b);
-	rollback;
+ 
+ insert into t2 values(666, 666);
+ autonomous_4(a,b);
+ rollback;
 END;
 /
 --调用普通存储过程
@@ -36,4 +36,3 @@ select * from t2 order by a;
 ```
 
 上述例子，最后在回滚的事务块中执行包含自治事务的存储过程，直接说明了自治事务的特性，即主事务的回滚，不会影响自治事务已经提交的内容。
-

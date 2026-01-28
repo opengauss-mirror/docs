@@ -2,7 +2,7 @@
 
 openGauss中下列函数使用了内部数据类型，用户无法直接调用，在此章节列出。
 
--   选择率计算函数
+- 选择率计算函数
 
     <a name="table1762224611243"></a>
     <table><tbody><tr id="row567374612247"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p967334632415"><a name="p967334632415"></a><a name="p967334632415"></a>areajoinsel</p>
@@ -83,7 +83,7 @@ openGauss中下列函数使用了内部数据类型，用户无法直接调用�
     </tbody>
     </table>
 
--   统计信息收集函数
+- 统计信息收集函数
 
     <a name="table51244368229"></a>
     <table><tbody><tr id="row514533682214"><td class="cellrowborder" valign="top" width="33.33333333333333%"><p id="p4145143672219"><a name="p4145143672219"></a><a name="p4145143672219"></a>array_typanalyze</p>
@@ -103,7 +103,7 @@ openGauss中下列函数使用了内部数据类型，用户无法直接调用�
     </tbody>
     </table>
 
--   排序内部功能函数
+- 排序内部功能函数
 
     <a name="table1566818177228"></a>
     <table><tbody><tr id="row16696817142212"><td class="cellrowborder" valign="top" width="20%"><p id="p06962179226"><a name="p06962179226"></a><a name="p06962179226"></a>bpchar_sortsupport</p>
@@ -120,7 +120,7 @@ openGauss中下列函数使用了内部数据类型，用户无法直接调用�
     </tbody>
     </table>
 
--   全文检索内部功能函数
+- 全文检索内部功能函数
 
     <a name="table172830446219"></a>
     <table><tbody><tr id="row1337184418212"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p633754482116"><a name="p633754482116"></a><a name="p633754482116"></a>dispell_init</p>
@@ -201,7 +201,7 @@ openGauss中下列函数使用了内部数据类型，用户无法直接调用�
     </tbody>
     </table>
 
--   内部类型处理函数
+- 内部类型处理函数
 
     <a name="table1479618142013"></a>
     <table><tbody><tr id="row12625151814202"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p76251318162013"><a name="p76251318162013"></a><a name="p76251318162013"></a>abstimerecv</p>
@@ -894,8 +894,7 @@ openGauss中下列函数使用了内部数据类型，用户无法直接调用�
     <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p6745185114719"><a name="p6745185114719"></a><a name="p6745185114719"></a>-</p>
     </td>
     </tr>
-	    <tr id="row16394655134614">
-	<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1674413510473"><a name="p1674413510473"></a><a name="p1674413510473"></a>gb18030_2022_to_utf8</p>
+     <tr id="row16394655134614"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1674413510473"><a name="p1674413510473"></a><a name="p1674413510473"></a>gb18030_2022_to_utf8</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1574418518477"><a name="p1574418518477"></a><a name="p1574418518477"></a>utf8_to_gb18030_2022</p>
     </td>
@@ -903,7 +902,7 @@ openGauss中下列函数使用了内部数据类型，用户无法直接调用�
     </tbody>
     </table>
 
--   聚合操作内部函数
+- 聚合操作内部函数
 
     <a name="table4674153612160"></a>
     <table><tbody><tr id="row10712173619162"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p57122367165"><a name="p57122367165"></a><a name="p57122367165"></a>array_agg_finalfn</p>
@@ -1014,7 +1013,7 @@ openGauss中下列函数使用了内部数据类型，用户无法直接调用�
     </tbody>
     </table>
 
--   哈希内部功能函数
+- 哈希内部功能函数
 
     <a name="table5272838141511"></a>
     <table><tbody><tr id="row73024388152"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p18302183820158"><a name="p18302183820158"></a><a name="p18302183820158"></a>hashbeginscan</p>
@@ -1065,7 +1064,7 @@ openGauss中下列函数使用了内部数据类型，用户无法直接调用�
     </tbody>
     </table>
 
--   Btree索引内部功能函数
+- Btree索引内部功能函数
 
     <a name="table187033011814"></a>
     <table><tbody><tr id="row37359011188"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p07356041813"><a name="p07356041813"></a><a name="p07356041813"></a>cbtreebuild</p>
@@ -1131,7 +1130,7 @@ openGauss中下列函数使用了内部数据类型，用户无法直接调用�
     </tbody>
     </table>
 
--   GiST索引内部功能函数
+- GiST索引内部功能函数
 
     <a name="table1512332911135"></a>
     <table><tbody><tr id="row1919512295132"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p9195122941314"><a name="p9195122941314"></a><a name="p9195122941314"></a>gist_box_compress</p>
@@ -1272,7 +1271,7 @@ openGauss中下列函数使用了内部数据类型，用户无法直接调用�
     </tbody>
     </table>
 
--   Gin索引内部功能函数
+- Gin索引内部功能函数
 
     <a name="table830903917233"></a>
     <table><tbody><tr id="row12357183918239"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1135718392237"><a name="p1135718392237"></a><a name="p1135718392237"></a>gin_cmp_prefix</p>
@@ -1354,7 +1353,7 @@ openGauss中下列函数使用了内部数据类型，用户无法直接调用�
     </tbody>
     </table>
 
--   Psort索引内部函数
+- Psort索引内部函数
 
     <a name="table462835441413"></a>
     <table><tbody><tr id="row8645125412142"><td class="cellrowborder" valign="top" width="20%"><p id="p46451254171418"><a name="p46451254171418"></a><a name="p46451254171418"></a>psortbuild</p>
@@ -1371,7 +1370,7 @@ openGauss中下列函数使用了内部数据类型，用户无法直接调用�
     </tbody>
     </table>
 
--   UBtree索引内部函数
+- UBtree索引内部函数
 
     <a name="table14674199151417"></a>
     <table><tbody><tr id="row156749916148"><td class="cellrowborder" valign="top" width="20%"><p id="p66741894149"><a name="p66741894149"></a><a name="p66741894149"></a>ubtbeginscan</p>
@@ -1421,11 +1420,11 @@ openGauss中下列函数使用了内部数据类型，用户无法直接调用�
     </tbody>
     </table>
 
--   plpgsql内部函数
+- plpgsql内部函数
 
     plpgsql\_inline\_handler
 
--   集合相关内部函数
+- 集合相关内部函数
 
     <a name="table862970155517"></a>
     <table><tbody><tr id="row186304015511"><td class="cellrowborder" valign="top" width="17.41%"><p id="p789412378560"><a name="p789412378560"></a><a name="p789412378560"></a>array_indexby_delete</p>
@@ -1470,7 +1469,7 @@ openGauss中下列函数使用了内部数据类型，用户无法直接调用�
     </tbody>
     </table>
 
--   外表相关内部函数
+- 外表相关内部函数
 
     <a name="table132232029113011"></a>
     <table><tbody><tr id="row11252729183014"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p17252029193012"><a name="p17252029193012"></a><a name="p17252029193012"></a>dist_fdw_handler</p>
@@ -1499,17 +1498,17 @@ openGauss中下列函数使用了内部数据类型，用户无法直接调用�
 
   gs\_read\_segment\_block\_from\_remote用于读取段页式表文件的页面。默认只有初始化用户可以查看，其余用户需要赋权后才可以使用。
 
--   主数据库节点远程读取备数据库节点数据文件辅助函数
+- 主数据库节点远程读取备数据库节点数据文件辅助函数
 
     gs\_read\_file\_from\_remote用于读取指定的文件。gs\_repair\_file利用gs\_read\_file\_size\_from\_remote函数获取文件大小后，依赖这个函数将远端文件逐段读取。默认只有初始化用户可以查看，其余用户需要赋权后才可以使用。
 
     gs\_read\_file\_size\_from\_remote用于读取指定文件的大小。用于读取指定文件的大小，gs\_repair\_file函数修复文件时，要先获取远端关于这个文件的大小，用于校验本地文件缺失的文件信息，然后将缺失的文件逐个修复。默认只有初始化用户可以查看，其余用户需要赋权后才可以使用。
 
--   账本数据库函数
+- 账本数据库函数
 
     get\_dn\_hist\_relhash
 
--   AI特性函数
+- AI特性函数
 
     <a name="table35161338161513"></a>
     <table><tbody><tr id="row1251643810158"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1426312914165"><a name="p1426312914165"></a><a name="p1426312914165"></a>create_snapshot</p>
@@ -1545,7 +1544,7 @@ openGauss中下列函数使用了内部数据类型，用户无法直接调用�
     </tbody>
     </table>
 
-    -   PKG\_SERVICE函数
+    - PKG\_SERVICE函数
 
     <a name="table10132104324312"></a>
     <table><tbody><tr id="row81335439432"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p81331343144311"><a name="p81331343144311"></a><a name="p81331343144311"></a>isubmit_on_nodes</p>
@@ -1566,7 +1565,7 @@ openGauss中下列函数使用了内部数据类型，用户无法直接调用�
     </tbody>
     </table>
 
--   其他函数
+- 其他函数
 
     <a name="table16950103316454"></a>
     <table><tbody><tr id="row12951233104513"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p11878115864515"><a name="p11878115864515"></a><a name="p11878115864515"></a>to_tsvector_for_batch</p>
@@ -1647,5 +1646,3 @@ openGauss中下列函数使用了内部数据类型，用户无法直接调用�
     </tr>
     </tbody>
     </table>
-
-

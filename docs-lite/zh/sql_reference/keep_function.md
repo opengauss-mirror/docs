@@ -10,7 +10,6 @@
 aggregate_function KEEP ( DENSE_RANK { FIRST | LAST } ORDER BY expr [ DESC | ASC ] [ NULLS { FIRST | LAST } ] [, expr [ DESC | ASC ] [ NULLS { FIRST | LAST } ]]...
 )[ OVER ( [query_partition_clause] ) ]
 
-
 ![keep-first.png](figures/keep-first.png)
 ![keep-last.png](figures/keep-last.png)
 
@@ -28,6 +27,7 @@ aggregate_function KEEP ( DENSE_RANK { FIRST | LAST } ORDER BY expr [ DESC | ASC
 | query_partition_clause    | 用于定义窗口函数的分区依据，指定对哪些列进行分组。数据会按这些列的值进行划分，每个分区内的数据会单独进行窗口计算。|
 
 keep函数支持的聚集函数列表：
+
 | 函数名称      | 描述                                                        |
 |---------------|-------------------------------------------------------------|
 | min(expression) | 所有输入行中 expression 的最小值。                       |
@@ -42,8 +42,8 @@ keep函数支持的聚集函数列表：
 >
 >KEEP函数用于对一组行中的值进行操作，将这组行按照指定的排序规则排序后返回排在第一或最后的值。可以将其用作聚合或分析函数。
 
-
 - 示例
+
  ```
 --创建表 employees，并向里面插入数据。
 
@@ -90,5 +90,3 @@ SELECT last_name,department_id,salary, SUM(salary) KEEP (DENSE_RANK FIRST ORDER 
  Partners  |            90 |  14000 | 13000 | 13000
 (8 rows)
  ```
-
-    

@@ -1,9 +1,11 @@
 # 案例：修改启动参数解决TPCC大幅度波动
 
 ## 现象描述
+
 openGauss数据库在4路鲲鹏服务器单机场景下，TPCC 多数时候在200万左右，一周偶尔一次达到230万以上，波动幅度非常大。
 
 其中openGauss数据库的启动命令如下：
+
 ```shell
 # $datadir为数据库节点路径
 numactl -C 1-28,32-60,64-92,96-124,128-156,160-188,192-220,224-252 gs_ctl start -D $datadir  -Z single_node
@@ -12,6 +14,7 @@ numactl -C 1-28,32-60,64-92,96-124,128-156,160-188,192-220,224-252 gs_ctl start 
 ## 优化分析
 
 在4路鲲鹏服务器单机场景下，CPU 能力增强，xlog 落盘速率成为瓶颈。服务器跨 numa 节点访问内存的代价如下所示：
+
 ```shell
 node distances:
 node   0   1   2   3   4   5   6   7
@@ -31,13 +34,16 @@ node   0   1   2   3   4   5   6   7
 在此场景中，性能瓶颈为 xlog，而 xlog 所在的磁盘挂载在 numa node 0 节点，因此将 xlog 相关的内存优先分配到 node 0 节点下，可以显著提高 xlog 的写速率。
 
 其中，查看nvme盘所在numa节点的命令如下：
+
 ```shell
 # nvme0 为实际盘符的编号
 cat /sys/class/nvme/nvme0/device/numa_node
 ```
 
 优化后的数据库启动命令如下：
+
 ```shell
 numactl -C 1-28,32-60,64-92,96-124,128-156,160-188,192-220,224-252 --preferred=0 gs_ctl restart -D $datadir  -Z single_node
 ```
+
 通过 numactl 命令的 preferred 参数指定程序初始化分配 xlog 内存时的优先分配节点，解决 TPCC 大幅度波动的问题。

@@ -31,6 +31,7 @@ ALTER SYSTEM SET命令用于设置POSTMASTER、SIGHUP、BACKEND级别的GUC参�
   krb_caseins_users, krb_server_keyfile, krb_srvname, allow_system_table_mods, enableSeparationOfDuty,
   modify_initial_password, password_encryption_type, password_policy
   ```
+
   >[!NOTE]说明
   > 在兼容B模式下，ALTER SYSTEM SET命令设置可以设置SUSET, USERSET级别参数，条件如下：
   >

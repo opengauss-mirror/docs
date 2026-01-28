@@ -2,8 +2,6 @@
 
 语法格式：
 
-
-
 ![cursor_expression](figures/cursor_expression.png)
 
 游标表达式一般用于嵌套游标或者构造游标参数场景，如下为一些使用样例：
@@ -119,4 +117,3 @@ openGauss=# select * from test1 where f(cursor(select name from test1)) > 0;
 openGauss=#
 
 ```
-

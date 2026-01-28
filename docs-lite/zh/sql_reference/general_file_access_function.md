@@ -2,7 +2,7 @@
 
 通用文件访问函数提供了对数据库服务器上的文件的本地访问接口。只有openGauss目录和log\_directory目录里面的文件可以访问。使用相对路径访问openGauss目录里面的文件，以及匹配log\_directory配置而设置的路径访问日志文件。只有数据库初始化用户才能使用这些函数。
 
--   pg\_ls\_dir\(dirname text\)
+- pg\_ls\_dir\(dirname text\)
 
     描述：列出目录中的文件。
 
@@ -51,7 +51,7 @@
     (32 rows)
     ```
 
--   pg\_read\_file\(filename text, offset bigint, length bigint\)
+- pg\_read\_file\(filename text, offset bigint, length bigint\)
 
     描述：返回一个文本文件的内容。
 
@@ -75,7 +75,7 @@
     (1 row)
     ```
 
--   pg\_read\_binary\_file\(filename text \[, offset bigint, length bigint,missing\_ok boolean\]\)
+- pg\_read\_binary\_file\(filename text \[, offset bigint, length bigint,missing\_ok boolean\]\)
 
     描述：返回一个二进制文件的内容。
 
@@ -87,7 +87,7 @@
     openGauss=# SELECT convert_from(pg_read_binary_file('filename'), 'UTF8');
     ```
 
--   pg\_stat\_file\(filename text\)
+- pg\_stat\_file\(filename text\)
 
     描述：返回一个文本文件的状态信息。
 
@@ -139,5 +139,3 @@
      2017-06-01 17:18:08+08
     (1 row)
     ```
-
-

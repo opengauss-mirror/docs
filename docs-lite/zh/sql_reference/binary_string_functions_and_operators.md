@@ -4,7 +4,7 @@
 
 SQL定义了一些字符串函数，在这些函数里使用关键字而不是逗号来分隔参数。
 
--   octet\_length\(string\)
+- octet\_length\(string\)
 
     描述：二进制字符串中的字节数。
 
@@ -20,7 +20,7 @@ SQL定义了一些字符串函数，在这些函数里使用关键字而不是�
     (1 row)
     ```
 
--   overlay\(string placing string from int \[for int\]\)
+- overlay\(string placing string from int \[for int\]\)
 
     描述：替换子串。
 
@@ -36,7 +36,7 @@ SQL定义了一些字符串函数，在这些函数里使用关键字而不是�
     (1 row)
     ```
 
--   position\(substring in string\)
+- position\(substring in string\)
 
     描述：特定子字符串的位置。
 
@@ -52,7 +52,7 @@ SQL定义了一些字符串函数，在这些函数里使用关键字而不是�
     (1 row)
     ```
 
--   substring\(string \[from int\] \[for int\]\)
+- substring\(string \[from int\] \[for int\]\)
 
     描述：截取子串。
 
@@ -68,7 +68,7 @@ SQL定义了一些字符串函数，在这些函数里使用关键字而不是�
     (1 row)
     ```
 
--   substr\(string, from int \[, for int\]\)
+- substr\(string, from int \[, for int\]\)
 
     描述：截取子串。
 
@@ -84,7 +84,7 @@ SQL定义了一些字符串函数，在这些函数里使用关键字而不是�
     (1 row)
     ```
 
--   trim\(\[both\] bytes from string\)
+- trim\(\[both\] bytes from string\)
 
     描述：从string的开头和结尾删除只包含bytes中字节的最长字符串。
 
@@ -100,12 +100,11 @@ SQL定义了一些字符串函数，在这些函数里使用关键字而不是�
     (1 row)
     ```
 
-
 ## 二进制字符串函数<a name="zh-cn_topic_0283137016_zh-cn_topic_0237121968_zh-cn_topic_0059778049_s460ba3376a004239a3cc867b5466c5f5"></a>
 
 openGauss也提供了函数调用所使用的常用语法。
 
--   btrim\(string bytea,bytes bytea\)
+- btrim\(string bytea,bytes bytea\)
 
     描述：从string的开头和结尾删除只包含bytes中字节的最长的字符串。
 
@@ -121,7 +120,7 @@ openGauss也提供了函数调用所使用的常用语法。
     (1 row)
     ```
 
--   get\_bit\(string, offset\)
+- get\_bit\(string, offset\)
 
     描述：从字符串中抽取位。
 
@@ -137,7 +136,7 @@ openGauss也提供了函数调用所使用的常用语法。
     (1 row)
     ```
 
--   get\_byte\(string, offset\)
+- get\_byte\(string, offset\)
 
     描述：从字符串中抽取字节。
 
@@ -153,7 +152,7 @@ openGauss也提供了函数调用所使用的常用语法。
     (1 row)
     ```
 
--   rawcmp
+- rawcmp
 
     描述：raw数据类型比较函数。
 
@@ -161,7 +160,7 @@ openGauss也提供了函数调用所使用的常用语法。
 
     返回值类型：integer
 
--   raweq
+- raweq
 
     描述：raw数据类型比较函数。
 
@@ -169,7 +168,7 @@ openGauss也提供了函数调用所使用的常用语法。
 
     返回值类型：boolean
 
--   rawge
+- rawge
 
     描述：raw数据类型比较函数。
 
@@ -177,7 +176,7 @@ openGauss也提供了函数调用所使用的常用语法。
 
     返回值类型：boolean
 
--   rawgt
+- rawgt
 
     描述：raw数据类型比较函数。
 
@@ -185,7 +184,7 @@ openGauss也提供了函数调用所使用的常用语法。
 
     返回值类型：boolean
 
--   rawin
+- rawin
 
     描述：raw数据类型解析函数。
 
@@ -193,7 +192,7 @@ openGauss也提供了函数调用所使用的常用语法。
 
     返回值类型：bytea
 
--   rawle
+- rawle
 
     描述：raw数据类型解析函数。
 
@@ -201,7 +200,7 @@ openGauss也提供了函数调用所使用的常用语法。
 
     返回值类型：boolean
 
--   rawlike
+- rawlike
 
     描述：raw数据类型解析函数。
 
@@ -209,7 +208,7 @@ openGauss也提供了函数调用所使用的常用语法。
 
     返回值类型：boolean
 
--   rawlt
+- rawlt
 
     描述：raw数据类型解析函数。
 
@@ -217,7 +216,7 @@ openGauss也提供了函数调用所使用的常用语法。
 
     返回值类型：boolean
 
--   rawne
+- rawne
 
     描述：比较raw类型是否一样。
 
@@ -225,7 +224,7 @@ openGauss也提供了函数调用所使用的常用语法。
 
     返回值类型：boolean
 
--   rawnlike
+- rawnlike
 
     描述：比较raw类型与模式是否不匹配。
 
@@ -233,7 +232,7 @@ openGauss也提供了函数调用所使用的常用语法。
 
     返回值类型：boolean
 
--   rawout
+- rawout
 
     描述：RAW类型的输出接口。
 
@@ -241,7 +240,7 @@ openGauss也提供了函数调用所使用的常用语法。
 
     返回值类型：cstring
 
--   rawsend
+- rawsend
 
     描述：转换bytea为二进制类型。
 
@@ -249,7 +248,7 @@ openGauss也提供了函数调用所使用的常用语法。
 
     返回值类型：bytea
 
--   rawtohex
+- rawtohex
 
     描述：raw格式转换为十六进制。
 
@@ -257,7 +256,7 @@ openGauss也提供了函数调用所使用的常用语法。
 
     返回值类型：text
 
--   set\_bit\(string,offset, newvalue\)
+- set\_bit\(string,offset, newvalue\)
 
     描述：设置字符串中的位。
 
@@ -273,7 +272,7 @@ openGauss也提供了函数调用所使用的常用语法。
     (1 row)
     ```
 
--   set\_byte\(string,offset, newvalue\)
+- set\_byte\(string,offset, newvalue\)
 
     描述：设置字符串中的字节。
 
@@ -288,5 +287,3 @@ openGauss也提供了函数调用所使用的常用语法。
      \x5468006f406173
     (1 row)
     ```
-
-

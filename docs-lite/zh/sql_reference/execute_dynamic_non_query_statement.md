@@ -53,4 +53,3 @@ openGauss=# SELECT * FROM sections_t1;
 --删除表
 openGauss=# DROP TABLE sections_t1;
 ```
-

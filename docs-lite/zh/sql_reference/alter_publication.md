@@ -46,7 +46,6 @@
   ALTER PUBLICATION name RENAME TO new_name
   ```
 
-
 ## **参数说明**<a name="section1338317414277"></a>
 
 - **name**
@@ -68,7 +67,6 @@
 - **new\_name**
 
   发布的新名称。
-
 
 ## 示例<a name="section5652932173112"></a>
 

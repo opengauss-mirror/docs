@@ -26,37 +26,35 @@ gs_retrieve [OPTION]...
 
 [!NOTE]说明
 
-
-
 ## 参数说明<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_s6822518f650f4ad4ab67d1084cd8ffdd"></a>
 
 通用参数：
 
--   -d, --dbname=DBNAME
+- -d, --dbname=DBNAME
 
     待数据找回的目标数据库名
 
--   --newhost=HOSTNAME
+- --newhost=HOSTNAME
 
     新主的主机名
 
--   --newport=PORT
+- --newport=PORT
 
     新主的HA端口号
 
--   --oldhost=HOSTNAME
+- --oldhost=HOSTNAME
 
     旧主的主机名
 
--   --oldport=PORT
+- --oldport=PORT
 
     旧主的数据库端口号
 
--   -U, --username=NAME
+- -U, --username=NAME
 
     连接目标库所使用的用户名
 
--   -W, --password
+- -W, --password
 
     使用指定密码进行连接
 

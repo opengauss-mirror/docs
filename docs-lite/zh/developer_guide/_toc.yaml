@@ -178,9 +178,59 @@ sections:
         href: ./development_process_libpq.md    
       - label: 示例
         href: ./example_libpq.md
-      - label: libpq接口参考
+      - label: libpq接口参考：数据库连接控制函数
         sections:
-          - label: 大对象操作函数
+          - label: 概览
+            href: ./database_connection_control_functions.md
+          - label: PQconnectdbParams
+            href: ./pqconnectdbparams.md
+          - label: PQconnectdb
+            href: ./pqconnectdb.md  
+          - label: PQconninfoParse
+            href: ./pqconninfoparse.md                      
+          - label: PQconnectStart
+            href: ./pqconnectstart.md
+          - label: PQerrorMessage
+            href: ./pqerrormessage.md
+          - label: PQsetdbLogin
+            href: ./PQsetdbLogin.md
+          - label: PQfinish
+            href: ./pqfinish.md
+          - label: PQreset
+            href: ./pqreset.md
+          - label: PQstatus
+            href: ./PQstatus.md  
+      - label: libpq接口参考：数据库执行语句函数
+        sections:
+          - label: 概览
+            href: ./database_statement_execution_functions.md
+          - label: PQclear
+            href: ./pqclear.md
+          - label: PQexec
+            href: ./pqexec.md
+          - label: PQexecParams
+            href: ./pqexecparams.md
+          - label: PQexecParamsBatch
+            href: ./pqexecparamsbatch.md
+          - label: PQexecPrepared
+            href: ./pqexecprepared.md
+          - label: PQexecPreparedBatch
+            href: ./pqexecpreparedbatch.md
+          - label: PQfname
+            href: ./pqfname.md
+          - label: PQgetvalue
+            href: ./pqgetvalue.md
+          - label: PQnfields
+            href: ./pqnfields.md
+          - label: PQntuples
+            href: ./pqntuples.md
+          - label: PQprepare
+            href: ./pqprepare.md
+          - label: PQresultStatus
+            href: ./pqresultstatus.md   
+      - label: libpq接口参考：大对象操作函数
+        sections:
+          - label: 概览
             href: ./large_object_operation_functions.md
             sections:
               - label: lo_creat
@@ -205,6 +255,30 @@ sections:
                 href: ./lo_close.md
               - label: lo_unlink
                 href: ./lo_unlink.md
+      - label: libpq接口参考：异步命令处理
+        sections:
+          - label: 概览
+            href: ./functions_for_asynchronous_command_processing.md
+          - label: PQsendQuery
+            href: ./pqsendquery.md
+          - label: PQsendQueryParams
+            href: ./pqsendqueryparams.md
+          - label: PQsendPrepare
+            href: ./pqsendprepare.md             
+          - label: PQsendQueryPrepared
+            href: ./pqsendqueryprepared.md           
+          - label: PQflush
+            href: ./pqflush.md
+      - label: libpq接口参考：取消正在处理的查询
+        sections:
+          - label: 概览
+            href: ./functions_for_cancelling_queries_in_process.md
+          - label: PQgetCancel
+            href: ./pqgetcancel.md
+          - label: PQfreeCancel
+            href: ./pqfreecancel.md
+          - label: PQcancel
+            href: ./pqcancel.md
       - label: 链接参数
         href: ./link_parameters_libpq.md
   - label: 基于Psycopg开发

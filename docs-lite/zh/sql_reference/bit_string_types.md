@@ -42,4 +42,3 @@ openGauss=# SELECT * FROM bit_type_t1;
 --删除表。
 openGauss=# DROP TABLE bit_type_t1;
 ```
-

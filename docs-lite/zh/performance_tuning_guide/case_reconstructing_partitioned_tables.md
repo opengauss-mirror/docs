@@ -30,4 +30,3 @@
  Total runtime: 0.360 ms
 (7 rows)
 ```
-

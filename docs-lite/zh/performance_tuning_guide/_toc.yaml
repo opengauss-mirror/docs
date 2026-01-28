@@ -48,7 +48,6 @@ sections:
           - label: 资源管理准备
             href: ./resource_management_preparation.md
   - label: SQL调优指南
-    href: ./sql_optimization.md
     sections: 
       - label: 概述
         href: ./sql_optimization.md

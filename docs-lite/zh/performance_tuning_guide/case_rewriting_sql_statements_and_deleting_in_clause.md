@@ -85,4 +85,3 @@ FROM (
  Total runtime: 7.759 ms
 (16 rows)
 ```
-

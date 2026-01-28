@@ -12,9 +12,9 @@
 
 ## 参数说明<a name="zh-cn_topic_0283137375_zh-cn_topic_0237121534_section35948678143011"></a>
 
--   **no**表示hint的join方式不使用。
+- **no**表示hint的join方式不使用。
 
--   **table\_list**为表示hint表集合的字符串，该字符串中的表与[join\_table\_list](join_order_hints.md#zh-cn_topic_0283136909_zh-cn_topic_0237121533_section1280444714345)相同，只是中间不允许出现括号指定join的优先级。
+- **table\_list**为表示hint表集合的字符串，该字符串中的表与[join\_table\_list](join_order_hints.md#zh-cn_topic_0283136909_zh-cn_topic_0237121533_section1280444714345)相同，只是中间不允许出现括号指定join的优先级。
 
 例如：
 

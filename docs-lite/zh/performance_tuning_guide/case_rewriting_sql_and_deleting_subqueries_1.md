@@ -52,4 +52,3 @@ group by  a.id;
 >[!NOTE]说明
 >
 >为了保证改写的等效性，在_normal\_date.id_加了_not null_约束。
-

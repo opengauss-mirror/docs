@@ -2,7 +2,7 @@
 
 ## 会话信息函数<a name="zh-cn_topic_0283136950_zh-cn_topic_0237121987_zh-cn_topic_0059777618_seb0ac642d9594cfe9a06d3d304c6dc75"></a>
 
--   current\_catalog
+- current\_catalog
 
     描述：当前数据库的名称（在标准SQL中称"catalog"）。
 
@@ -18,7 +18,7 @@
     (1 row)
     ```
 
--   current\_database\(\)
+- current\_database\(\)
 
     描述：当前数据库的名称。
 
@@ -34,7 +34,7 @@
     (1 row)
     ```
 
--   current\_query\(\)
+- current\_query\(\)
 
     描述：由客户端提交的当前执行语句（可能包含多个声明）。
 
@@ -50,7 +50,7 @@
     (1 row)
     ```
 
--   current\_schema\[\(\)\]
+- current\_schema\[\(\)\]
 
     描述：当前模式的名称。
 
@@ -68,7 +68,7 @@
 
     备注：current\_schema返回在搜索路径中第一个顺位有效的模式名。（如果搜索路径为空则返回NULL，没有有效的模式名也返回NULL）。如果创建表或者其他命名对象时没有声明目标模式，则将使用这些对象的模式。
 
--   current\_schemas\(Boolean\)
+- current\_schemas\(Boolean\)
 
     描述：搜索路径中的模式名称。
 
@@ -91,11 +91,12 @@
     >[!NOTE]说明
     >
     >搜索路径可以通过运行时设置更改。命令是：
+>
     >```
     >SET search_path TO schema [, schema, ...]
     >```
 
--   current\_user\[\(\)\]
+- current\_user\[\(\)\]
 
     描述：当前执行环境下的用户名。
 
@@ -113,7 +114,7 @@
 
     备注：current\_user是用于权限检查的用户标识。通常，他表示会话用户，但是可以通过[SET ROLE](set_role.md)改变他。在函数执行的过程中随着属性SECURITY DEFINER的改变，其值也会改变。
 
--   definer\_current\_user
+- definer\_current\_user
 
     描述：当前执行环境下的用户名。
 
@@ -129,7 +130,7 @@
     (1 row)
     ```
 
--   pg\_current\_sessionid\(\)
+- pg\_current\_sessionid\(\)
 
     描述：当前执行环境下的会话ID。
 
@@ -147,7 +148,7 @@
 
     备注：pg\_current\_sessionid\(\)是用于获取当前执行环境下的会话ID。其组成结构为：时间戳.会话ID，当线程池模式开启（enable\_thread\_pool=on）时，会话ID为SessionID；而线程池模式关闭时，会话ID为ThreadID。
 
--   pg\_current\_sessid
+- pg\_current\_sessid
 
     描述：当前执行环境下的会话ID。
 
@@ -165,7 +166,7 @@
 
     备注：在线程池模式下获得当前会话的会话ID，非线程池模式下获得当前会话对应的后台线程ID。
 
--   pg\_current\_userid
+- pg\_current\_userid
 
     描述：当前用户ID。
 
@@ -179,7 +180,7 @@
     (1 row)
     ```
 
--   working\_version\_num\(\)
+- working\_version\_num\(\)
 
     描述：版本序号信息。返回一个系统兼容性有关的版本序号。
 
@@ -196,7 +197,7 @@
     
     ```
 
--   tablespace\_oid\_name\(\)
+- tablespace\_oid\_name\(\)
 
     描述: 根据表空间oid，查找表空间名称。
 
@@ -212,7 +213,7 @@
     (1 row)
     ```
 
--   inet\_client\_addr\(\)
+- inet\_client\_addr\(\)
 
     描述：连接的远端地址。inet\_client\_addr返回当前客户端的IP地址。
 
@@ -232,7 +233,7 @@
     (1 row)
     ```
 
--   inet\_client\_port\(\)
+- inet\_client\_port\(\)
 
     描述：连接的远端端口。inet\_client\_port返回当前客户端的端口号。
 
@@ -252,7 +253,7 @@
     (1 row)
     ```
 
--   inet\_server\_addr\(\)
+- inet\_server\_addr\(\)
 
     描述：连接的本地地址。inet\_server\_addr返回服务器接收当前连接用的IP地址。
 
@@ -272,7 +273,7 @@
     (1 row)
     ```
 
--   inet\_server\_port\(\)
+- inet\_server\_port\(\)
 
     描述：连接的本地端口。inet\_server\_port返回接收当前连接的端口号。如果是通过Unix-domain socket连接的，则所有这些函数都返回NULL。
 
@@ -292,7 +293,7 @@
     (1 row)
     ```
 
--   pg\_backend\_pid\(\)
+- pg\_backend\_pid\(\)
 
     描述：当前会话连接的服务线程的线程ID。
 
@@ -308,7 +309,7 @@
     (1 row)
     ```
 
--   pg\_conf\_load\_time\(\)
+- pg\_conf\_load\_time\(\)
 
     描述：配置加载时间。pg\_conf\_load\_time返回最后加载服务器配置文件的时间戳。
 
@@ -324,7 +325,7 @@
     (1 row)
     ```
 
--   pg\_my\_temp\_schema\(\)
+- pg\_my\_temp\_schema\(\)
 
     描述：会话的临时模式的OID，不存在则为0。
 
@@ -342,7 +343,7 @@
 
     备注：pg\_my\_temp\_schema返回当前会话中临时模式的OID，如果不存在（没有创建临时表）的话则返回0。如果给定的OID是其它会话中临时模式的OID，pg\_is\_other\_temp\_schema则返回true。
 
--   pg\_is\_other\_temp\_schema\(oid\)
+- pg\_is\_other\_temp\_schema\(oid\)
 
     描述：是否为另一个会话的临时模式。
 
@@ -358,7 +359,7 @@
     (1 row)
     ```
 
--   pg\_listening\_channels\(\)
+- pg\_listening\_channels\(\)
 
     描述：会话正在侦听的信道名称。
 
@@ -375,7 +376,7 @@
 
     备注：pg\_listening\_channels返回当前会话正在侦听的一组信道名称。
 
--   pg\_postmaster\_start\_time\(\)
+- pg\_postmaster\_start\_time\(\)
 
     描述：服务器启动时间。pg\_postmaster\_start\_time返回服务器启动时的timestamp with time zone。
 
@@ -391,7 +392,7 @@
     (1 row)
     ```
 
--   pg\_get\_ruledef\(rule\_oid\)
+- pg\_get\_ruledef\(rule\_oid\)
 
     描述：获取规则的CREATE RULE命令。
 
@@ -407,7 +408,7 @@
     (1 row)
     ```
 
--   sessionid2pid\(\)
+- sessionid2pid\(\)
 
     描述: 从sessionid中得到pid信息（例如，gs\_session\_stat中sessid列）。
 
@@ -424,7 +425,7 @@
     (2 rows)
     ```
     
--   pg\_trigger\_depth\(\)
+- pg\_trigger\_depth\(\)
 
     描述：触发器的嵌套层次。
 
@@ -440,7 +441,7 @@
     (1 row)
     ```
 
--   session\_user
+- session\_user
 
     描述：会话用户名。
 
@@ -458,7 +459,7 @@
 
     备注：session\_user通常是连接当前数据库的初始用户，不过系统管理员可以用[SET SESSION AUTHORIZATION](set_session_authorization.md)修改这个设置。
 
--   user
+- user
 
     描述：等价于current\_user。
 
@@ -474,7 +475,7 @@
     (1 row)
     ```
 
--   getpgusername\(\)
+- getpgusername\(\)
 
     描述：获取数据库用户名。
 
@@ -490,7 +491,7 @@
     (1 row)
     ```
 
--   getdatabaseencoding\(\)
+- getdatabaseencoding\(\)
 
     描述：获取数据库编码方式。
 
@@ -506,7 +507,7 @@
     (1 row)
     ```
 
--   version\(\)
+- version\(\)
 
     描述：版本信息。version返回一个描述服务器版本信息的字符串。
 
@@ -522,8 +523,7 @@
     (1 row)
     ```
 
-
--   opengauss\_version\(\)
+- opengauss\_version\(\)
 
     描述：openGauss版本信息。
 
@@ -539,7 +539,7 @@
     (1 row)
     ```
 
--   gs\_deployment\(\)
+- gs\_deployment\(\)
 
     描述：当前系统的部署形态信息。
 
@@ -555,7 +555,7 @@
     (1 row)
     ```
 
--   get\_hostname\(\)
+- get\_hostname\(\)
 
     描述：返回当前节点的hostname。
 
@@ -571,8 +571,7 @@
     (1 row)
     ```
 
-
--   get\_nodename\(\)
+- get\_nodename\(\)
 
     描述：返回当前节点的名字。
 
@@ -588,8 +587,7 @@
     (1 row)
     ```
 
-
--   get\_schema\_oid\(cstring\)
+- get\_schema\_oid\(cstring\)
 
     描述：返回查询schema的oid。
 
@@ -605,12 +603,11 @@
     (1 row)
     ```
 
-
 ## 访问权限查询函数<a name="zh-cn_topic_0283136950_zh-cn_topic_0237121987_zh-cn_topic_0059777618_s8be48efddaf84c7fb405513993705867"></a>
 
 DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权限，隐式拥有。
 
--   has\_any\_column\_privilege\(user, table, privilege\)
+- has\_any\_column\_privilege\(user, table, privilege\)
 
     描述：指定用户是否有访问表任何列的权限。
 
@@ -643,7 +640,7 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
 
     返回类型：Boolean
 
--   has\_any\_column\_privilege\(table, privilege\)
+- has\_any\_column\_privilege\(table, privilege\)
 
     描述：当前用户是否有访问表任何列的权限，合法参数类型见[表1](#zh-cn_topic_0283136950_table933075917538)。
 
@@ -655,7 +652,7 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
     >
     >拥有表的表级别权限则隐含的拥有该表每列的列级权限，因此如果与has\_table\_privilege参数相同，has\_any\_column\_privilege总是返回true。但是如果授予至少一列的列级权限也返回成功。
 
--   has\_column\_privilege\(user, table, column, privilege\)
+- has\_column\_privilege\(user, table, column, privilege\)
 
     描述：指定用户是否有访问列的权限。
 
@@ -693,7 +690,7 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
 
     返回类型：Boolean
 
--   has\_column\_privilege\(table, column, privilege\)
+- has\_column\_privilege\(table, column, privilege\)
 
     描述：当前用户是否有访问列的权限，合法参数类型见[表2](#zh-cn_topic_0283136950_table9581157145120)。
 
@@ -705,7 +702,7 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
     >
     >拥有表的表级别权限则隐含的拥有该表每列的列级权限。
 
--   has\_cek\_privilege\(user, cek, privilege\)
+- has\_cek\_privilege\(user, cek, privilege\)
 
     描述：指定用户是否有访问列加密密钥CEK的权限。参数说明如下。
 
@@ -758,7 +755,7 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
     >
     >轻量版场景下，openGauss提供此接口，但密态数据库功能不可用。
 
--   has\_cmk\_privilege\(user, cmk, privilege\)
+- has\_cmk\_privilege\(user, cmk, privilege\)
 
     描述：指定用户是否有访问客户端加密主密钥CMK的权限。参数说明如下。
 
@@ -811,7 +808,7 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
     >
     >轻量版场景下，openGauss提供此接口，但密态数据库功能不可用。
 
--   has\_database\_privilege\(user, database, privilege\)
+- has\_database\_privilege\(user, database, privilege\)
 
     描述：指定用户是否有访问数据库的权限。参数说明如下。
 
@@ -844,7 +841,7 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
 
     返回类型：Boolean
 
--   has\_database\_privilege\(database, privilege\)
+- has\_database\_privilege\(database, privilege\)
 
     描述：当前用户是否有访问数据库的权限，合法参数类型请参见[表5](#zh-cn_topic_0283136950_table111152337017)。
 
@@ -852,7 +849,7 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
 
     备注：has\_database\_privilege检查用户是否能以在特定方式访问数据库。其参数类似has\_table\_privilege。访问权限类型必须是CREATE、CONNECT、TEMPORARY、ALTER、DROP、COMMENT或TEMP（等价于TEMPORARY）的一些组合。
 
--   has\_directory\_privilege\(user, directory, privilege\)
+- has\_directory\_privilege\(user, directory, privilege\)
 
     描述：指定用户是否有访问directory的权限。
 
@@ -885,13 +882,13 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
 
     返回类型：Boolean
 
--   has\_directory\_privilege\(directory, privilege\)
+- has\_directory\_privilege\(directory, privilege\)
 
     描述：当前用户是否有访问directory的权限，合法参数类型请参见[表6](#zh-cn_topic_0283136950_table111483362025)。
 
     返回类型：Boolean
 
--   has\_foreign\_data\_wrapper\_privilege\(user, fdw, privilege\)
+- has\_foreign\_data\_wrapper\_privilege\(user, fdw, privilege\)
 
     描述：指定用户是否有访问外部数据封装器的权限。
 
@@ -924,7 +921,7 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
 
     返回类型：Boolean
 
--   has\_foreign\_data\_wrapper\_privilege\(fdw, privilege\)
+- has\_foreign\_data\_wrapper\_privilege\(fdw, privilege\)
 
     描述：当前用户是否有访问外部数据封装器的权限。合法参数类型请参见[表7](#zh-cn_topic_0283136950_table3176631131)。
 
@@ -932,7 +929,7 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
 
     备注：has\_foreign\_data\_wrapper\_privilege检查用户是否能以特定方式访问外部数据封装器。其参数类似has\_table\_privilege。访问权限类型必须是USAGE。
 
--   has\_function\_privilege\(user, function, privilege\)
+- has\_function\_privilege\(user, function, privilege\)
 
     描述：指定用户是否有访问函数的权限。
 
@@ -965,7 +962,7 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
 
     返回类型：Boolean
 
--   has\_function\_privilege\(function, privilege\)
+- has\_function\_privilege\(function, privilege\)
 
     描述：当前用户是否有访问函数的权限。合法参数类型请参见[表8](#zh-cn_topic_0283136950_table169651367619)。
 
@@ -973,7 +970,7 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
 
     备注：has\_function\_privilege检查一个用户是否能以指定方式访问一个函数。其参数类似has\_table\_privilege。使用文本字符而不是OID声明一个函数时，允许输入的类型和regprocedure数据类型一样（请参考[对象标识符类型](object_identifier_type.md)）。访问权限类型必须是EXECUTE、ALTER、DROP或COMMENT。
 
--   has\_language\_privilege\(user, language, privilege\)
+- has\_language\_privilege\(user, language, privilege\)
 
     描述：指定用户是否有访问语言的权限。
 
@@ -1006,7 +1003,7 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
 
     返回类型：Boolean
 
--   has\_language\_privilege\(language, privilege\)
+- has\_language\_privilege\(language, privilege\)
 
     描述：当前用户是否有访问语言的权限。合法参数类型请参见[表9](#zh-cn_topic_0283136950_table7622265910)。
 
@@ -1014,7 +1011,7 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
 
     备注：has\_language\_privilege检查用户是否能以特定方式访问一个过程语言。其参数类似has\_table\_privilege。访问权限类型必须是USAGE。
 
--   has\_nodegroup\_privilege\(user, nodegroup, privilege\)
+- has\_nodegroup\_privilege\(user, nodegroup, privilege\)
 
     描述：检查用户是否有数据库节点访问权限。
 
@@ -1047,19 +1044,19 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
     </tbody>
     </table>
 
--   has\_nodegroup\_privilege\(nodegroup, privilege\)
+- has\_nodegroup\_privilege\(nodegroup, privilege\)
 
     描述：检查用户是否有数据库节点访问权限。参数与has\_table\_privilege类似。访问权限类型必须是USAGE、CREATE、COMPUTE、ALTER或CROP。
 
     返回类型：Boolean
 
--   has\_schema\_privilege\(user, schema, privilege\)
+- has\_schema\_privilege\(user, schema, privilege\)
 
     描述：指定用户是否有访问模式的权限。
 
     返回类型：Boolean
 
--   has\_schema\_privilege\(schema, privilege\)
+- has\_schema\_privilege\(schema, privilege\)
 
     描述：当前用户是否有访问模式的权限。
 
@@ -1067,13 +1064,13 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
 
     备注：has\_schema\_privilege检查用户是否能以特定方式访问一个模式。其参数类似has\_table\_privilege。访问权限类型必须是CREATE、USAGE、ALTER、DROP或COMMENT的一些组合。
 
--   has\_server\_privilege\(user, server, privilege\)
+- has\_server\_privilege\(user, server, privilege\)
 
     描述：指定用户是否有访问外部服务的权限。
 
     返回类型：Boolean
 
--   has\_server\_privilege\(server, privilege\)
+- has\_server\_privilege\(server, privilege\)
 
     描述：当前用户是否有访问外部服务的权限。
 
@@ -1081,13 +1078,13 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
 
     备注：has\_server\_privilege检查用户是否能以指定方式访问一个外部服务器。其参数类似has\_table\_privilege。访问权限类型必须是USAGE、ALTER、DROP或COMMENT之一的值。
 
--   has\_table\_privilege\(user, table, privilege\)
+- has\_table\_privilege\(user, table, privilege\)
 
     描述：指定用户是否有访问表的权限。
 
     返回类型：Boolean
 
--   has\_table\_privilege\(table, privilege\)
+- has\_table\_privilege\(table, privilege\)
 
     描述：当前用户是否有访问表的权限。
 
@@ -1111,13 +1108,13 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
     (1 row) 
     ```
 
--   has\_tablespace\_privilege\(user, tablespace, privilege\)
+- has\_tablespace\_privilege\(user, tablespace, privilege\)
 
     描述：指定用户是否有访问表空间的权限。
 
     返回类型：Boolean
 
--   has\_tablespace\_privilege\(tablespace, privilege\)
+- has\_tablespace\_privilege\(tablespace, privilege\)
 
     描述：当前用户是否有访问表空间的权限。
 
@@ -1125,13 +1122,13 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
 
     备注：has\_tablespace\_privilege检查用户是否能以特定方式访问一个表空间。其参数类似has\_table\_privilege。访问权限类型必须是CREATE、ALTER、DROP或COMMENT之一的值。
 
--   pg\_has\_role\(user, role, privilege\)
+- pg\_has\_role\(user, role, privilege\)
 
     描述：指定用户是否有角色的权限。
 
     返回类型：Boolean
 
--   pg\_has\_role\(role, privilege\)
+- pg\_has\_role\(role, privilege\)
 
     描述：当前用户是否有角色的权限。
 
@@ -1139,8 +1136,7 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
 
     备注：pg\_has\_role检查用户是否能以特定方式访问一个角色。其参数类似has\_table\_privilege，除了public不能用做用户名。访问权限类型必须是MEMBER或USAGE的一些组合。 MEMBER表示的是角色中的直接或间接成员关系（也就是SET ROLE的权限），而USAGE表示无需通过SET ROLE也直接拥有角色的使用权限。
 
-
--   has\_any\_privilege\(user, privilege\)
+- has\_any\_privilege\(user, privilege\)
 
     描述：指定用户是否有某项ANY权限，若同时查询多个权限，只要具有其中一个则返回true。
 
@@ -1194,7 +1190,6 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
     </tbody>
     </table>
 
-
 ## 模式可见性查询函数<a name="zh-cn_topic_0283136950_zh-cn_topic_0237121987_zh-cn_topic_0059777618_s8c676f27906a4d0babc4ed2bca955536"></a>
 
 每个函数执行检查数据库对象类型的可见性。对于函数和操作符，如果在前面的搜索路径中没有相同的对象名称和参数的数据类型，则此对象是可见的。对于操作符类，则要同时考虑名称和相关索引的访问方法。
@@ -1207,82 +1202,81 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
 openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 ```
 
--   pg\_collation\_is\_visible\(collation\_oid\)
+- pg\_collation\_is\_visible\(collation\_oid\)
 
     描述：该排序是否在搜索路径中可见。
 
     返回类型：Boolean
 
--   pg\_conversion\_is\_visible\(conversion\_oid\)
+- pg\_conversion\_is\_visible\(conversion\_oid\)
 
     描述：该转换是否在搜索路径中可见。
 
     返回类型：Boolean
 
--   pg\_function\_is\_visible\(function\_oid\)
+- pg\_function\_is\_visible\(function\_oid\)
 
     描述：该函数是否在搜索路径中可见。
 
     返回类型：Boolean
 
--   pg\_opclass\_is\_visible\(opclass\_oid\)
+- pg\_opclass\_is\_visible\(opclass\_oid\)
 
     描述：该操作符类是否在搜索路径中可见。
 
     返回类型：Boolean
 
--   pg\_operator\_is\_visible\(operator\_oid\)
+- pg\_operator\_is\_visible\(operator\_oid\)
 
     描述：该操作符是否在搜索路径中可见。
 
     返回类型：Boolean
 
--   pg\_opfamily\_is\_visible\(opclass\_oid\)
+- pg\_opfamily\_is\_visible\(opclass\_oid\)
 
     描述：该操作符族是否在搜索路径中可见。
 
     返回类型：Boolean
 
--   pg\_table\_is\_visible\(table\_oid\)
+- pg\_table\_is\_visible\(table\_oid\)
 
     描述：该表是否在搜索路径中可见。
 
     返回类型：Boolean
 
--   pg\_ts\_config\_is\_visible\(config\_oid\)
+- pg\_ts\_config\_is\_visible\(config\_oid\)
 
     描述：该文本检索配置是否在搜索路径中可见。
 
     返回类型：Boolean
 
--   pg\_ts\_dict\_is\_visible\(dict\_oid\)
+- pg\_ts\_dict\_is\_visible\(dict\_oid\)
 
     描述：该文本检索词典是否在搜索路径中可见。
 
     返回类型：Boolean
 
--   pg\_ts\_parser\_is\_visible\(parser\_oid\)
+- pg\_ts\_parser\_is\_visible\(parser\_oid\)
 
     描述：该文本搜索解析是否在搜索路径中可见。
 
     返回类型：Boolean
 
--   pg\_ts\_template\_is\_visible\(template\_oid\)
+- pg\_ts\_template\_is\_visible\(template\_oid\)
 
     描述：该文本检索模板是否在搜索路径中可见。
 
     返回类型：Boolean
 
--   pg\_type\_is\_visible\(type\_oid\)
+- pg\_type\_is\_visible\(type\_oid\)
 
     描述：该类型（或域）是否在搜索路径中可见。
 
     返回类型：Boolean
 
-
 ## 系统表信息函数<a name="zh-cn_topic_0283136950_zh-cn_topic_0237121987_zh-cn_topic_0059777618_s36b999f626b14c599c6350642521a34e"></a>
 
--   format\_type\(type\_oid, typemod\)
+- format\_type\(type\_oid, typemod\)
 
     描述：获取数据类型的SQL名称
 
@@ -1298,11 +1292,11 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     (1 row)
     ```
 
--   getdistributekey\(table\_name\)
+- getdistributekey\(table\_name\)
 
     描述：获取一个hash表的分布列。单机环境下不支持分布，该函数返回为空。
 
--   pg\_check\_authid\(role\_oid\)
+- pg\_check\_authid\(role\_oid\)
 
     描述：检查是否存在给定oid的角色名
 
@@ -1318,7 +1312,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     (1 row)
     ```
 
--   pg\_describe\_object\(catalog\_id, object\_id, object\_sub\_id\)
+- pg\_describe\_object\(catalog\_id, object\_id, object\_sub\_id\)
 
     描述：获取数据库对象的描述
 
@@ -1326,13 +1320,13 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     备注：pg\_describe\_object返回由目录OID，对象OID和一个（或许0个）子对象ID指定的数据库对象的描述。这有助于确认存储在pg\_depend系统表中对象的身份。
 
--   pg\_get\_constraintdef\(constraint\_oid\)
+- pg\_get\_constraintdef\(constraint\_oid\)
 
     描述：获取约束的定义
 
     返回类型：text
 
--   pg\_get\_constraintdef\(constraint\_oid, pretty\_bool\)
+- pg\_get\_constraintdef\(constraint\_oid, pretty\_bool\)
 
     描述：获取约束的定义
 
@@ -1340,13 +1334,13 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     备注：pg\_get\_constraintdef和pg\_get\_indexdef分别从约束或索引上使用创建命令进行重构。
 
--   pg\_get\_expr\(pg\_node\_tree, relation\_oid\)
+- pg\_get\_expr\(pg\_node\_tree, relation\_oid\)
 
     描述：反编译表达式的内部形式，假设其中的任何Vars都引用第二个参数指定的关系。
 
     返回类型：text
 
--   pg\_get\_expr\(pg\_node\_tree, relation\_oid, pretty\_bool\)
+- pg\_get\_expr\(pg\_node\_tree, relation\_oid, pretty\_bool\)
 
     描述：反编译表达式的内部形式，假设其中的任何Vars都引用第二个参数指定的关系。
 
@@ -1354,7 +1348,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     备注：pg\_get\_expr反编译一个独立表达式的内部形式，比如一个字段的缺省值。在检查系统表的内容的时候很有用。如果表达式可能包含关键字，则指定他们引用相关的OID作为第二个参数；如果没有关键字，零就足够了。
 
--   pg\_get\_functiondef\(func\_oid\)
+- pg\_get\_functiondef\(func\_oid\)
 
     描述：获取函数的定义
 
@@ -1374,9 +1368,10 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
                  | 
     (1 row)
     ```
+
     备注：pg\_get\_functiondef为函数返回一个完整的CREATE OR REPLACE FUNCTION语句。
 
--   pg\_get\_function\_arguments\(func\_oid\)
+- pg\_get\_function\_arguments\(func\_oid\)
 
     描述：获取函数定义的参数列表（带默认值）
 
@@ -1384,7 +1379,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     备注：pg\_get\_function\_arguments返回一个函数的参数列表，需要在CREATE FUNCTION中使用这种格式。
 
--   pg\_get\_function\_identity\_arguments\(func\_oid\)
+- pg\_get\_function\_identity\_arguments\(func\_oid\)
 
     描述：获取参数列表来确定一个函数 \(不带默认值\)
 
@@ -1392,7 +1387,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     备注：pg\_get\_function\_identity\_arguments返回需要的参数列表用来标识函数，这种形式需要在ALTER FUNCTION中使用，并且这种形式省略了默认值。
 
--   pg\_get\_function\_result\(func\_oid\)
+- pg\_get\_function\_result\(func\_oid\)
 
     描述：获取函数的RETURNS子句
 
@@ -1400,7 +1395,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     备注：pg\_get\_function\_result为函数返回适当的RETURNS子句。
 
--   pg\_get\_indexdef\(index\_oid\)
+- pg\_get\_indexdef\(index\_oid\)
 
     描述：获取索引的CREATE INDEX命令
 
@@ -1416,7 +1411,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     (1 row)
     ```
 
--   pg\_get\_indexdef\(index\_oid, dump\_schema\_only\)
+- pg\_get\_indexdef\(index\_oid, dump\_schema\_only\)
 
     描述：获取索引的CREATE INDEX命令，仅用于dump场景。对于包含local索引的间隔分区表，当dump\_schema\_only为true时，返回的创建索引语句中不包含自动创建的分区的local索引信息；当dump\_schema\_only为false时，返回的创建索引语句中包含自动创建的分区的local索引信息。对于非间隔分区表或者不包含local索引的间隔分区分区表，dump\_schema\_only参数取值不影响函数返回结果。
 
@@ -1465,7 +1460,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     (1 row
     ```
 
--   pg\_get\_indexdef\(index\_oid, column\_no, pretty\_bool\)
+- pg\_get\_indexdef\(index\_oid, column\_no, pretty\_bool\)
 
     描述：获取索引的CREATE INDEX命令，或者如果column\_no不为零，则只获取一个索引字段的定义。
 
@@ -1486,9 +1481,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     返回类型：text
 
-    
-
--   pg\_get\_keywords\(\)
+- pg\_get\_keywords\(\)
 
     描述：获取SQL关键字和类别列表
 
@@ -1496,7 +1489,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     备注：pg\_get\_keywords返回一组关于描述服务器识别SQL关键字的记录。word列包含关键字。catcode列包含一个分类代码：U表示通用的，C表示列名，T表示类型或函数名，或R表示保留。catdesc列包含了一个可能本地化描述分类的字符串。
 
--   pg\_get\_userbyid\(role\_oid\)
+- pg\_get\_userbyid\(role\_oid\)
 
     描述：获取给定OID的角色名
 
@@ -1504,7 +1497,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     备注：pg\_get\_userbyid通过角色的OID抽取对应的用户名。
 
--   pg\_check\_authid\(role\_id\)
+- pg\_check\_authid\(role\_id\)
 
     描述：通过role\_id检查用户是否存在
 
@@ -1520,13 +1513,13 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     (1 row)
     ```
 
--   pg\_get\_viewdef\(view\_name\)
+- pg\_get\_viewdef\(view\_name\)
 
     描述：为视图获取底层的SELECT命令
 
     返回类型：text
 
--   pg\_get\_viewdef\(view\_name, pretty\_bool\)
+- pg\_get\_viewdef\(view\_name, pretty\_bool\)
 
     描述：为视图获取底层的SELECT命令，如果pretty\_bool为true，行字段可以包含80列。
 
@@ -1534,25 +1527,25 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     备注：pg\_get\_viewdef重构出定义视图的SELECT查询。这些函数大多数都有两种形式，其中带有pretty\_bool参数，且参数为true时，是"适合打印"的结果，这种格式更容易读。另一种是缺省的格式，更有可能被将来的不同版本用同样的方法解释。如果是用于转储，那么尽可能避免使用适合打印的格式。给pretty-print参数传递false生成的结果和没有这个参数的变种生成的结果是完全一样。
 
--   pg\_get\_viewdef\(view\_oid\)
+- pg\_get\_viewdef\(view\_oid\)
 
     描述：为视图获取底层的SELECT命令
 
     返回类型：text
 
--   pg\_get\_viewdef\(view\_oid, pretty\_bool\)
+- pg\_get\_viewdef\(view\_oid, pretty\_bool\)
 
     描述：为视图获取底层的SELECT命令，如果pretty\_bool为true，行字段可以包含80列。
 
     返回类型：text
 
--   pg\_get\_viewdef\(view\_oid, wrap\_column\_int\)
+- pg\_get\_viewdef\(view\_oid, wrap\_column\_int\)
 
     描述：为视图获取底层的SELECT命令；行字段被换到指定的列数，打印是隐含的。
 
     返回类型：text
 
--   pg\_get\_tabledef\(table\_oid\)
+- pg\_get\_tabledef\(table\_oid\)
 
     描述：根据table\_oid获取表定义
 
@@ -1573,7 +1566,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     返回类型：text
 
--   pg\_get\_tabledef\(table\_name\)
+- pg\_get\_tabledef\(table\_name\)
 
     描述：根据table\_name获取表定义
 
@@ -1596,7 +1589,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     备注：pg\_get\_tabledef重构出表定义的CREATE语句，包含了表定义本身、索引信息、comments信息。对于表对象依赖的group、schema、tablespace、server等信息，需要用户自己去创建，表定义里不会有这些对象的创建语句。
 
--   pg\_options\_to\_table\(reloptions\)
+- pg\_options\_to\_table\(reloptions\)
 
     描述：获取存储选项名称/值对的集合
 
@@ -1604,7 +1597,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     备注：pg\_options\_to\_table当通过pg\_class.reloptions或pg\_attribute.attoptions时返回存储选项名称/值对（option\_name/option\_value）的集合。
 
--   pg\_tablespace\_databases\(tablespace\_oid\)
+- pg\_tablespace\_databases\(tablespace\_oid\)
 
     描述：获取在指定的表空间中有对象的数据库OID集合
 
@@ -1612,13 +1605,13 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     备注：pg\_tablespace\_databases允许检查表空间的状况，返回在该表空间中保存了对象的数据库OID集合。如果这个函数返回数据行，则该表空间就是非空的，因此不能删除。要显示该表空间中的特定对象，用户需要连接pg\_tablespace\_databases标识的数据库与查询pg\_class系统表。
 
--   pg\_tablespace\_location\(tablespace\_oid\)
+- pg\_tablespace\_location\(tablespace\_oid\)
 
     描述：获取表空间所在的文件系统的路径
 
     返回类型：text
 
--   pg\_typeof\(any\)
+- pg\_typeof\(any\)
 
     描述：获取任何值的数据类型
 
@@ -1642,7 +1635,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     (1 row)
     ```
 
--   collation for \(any\)
+- collation for \(any\)
 
     描述：获取参数的排序
 
@@ -1662,13 +1655,13 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     值可能是引号括起来的并且模式限制的。如果没有为参数表达式排序，则返回一个null值。如果参数不是排序的类型，则抛出一个错误。
 
--   pg\_extension\_update\_paths\(name\)
+- pg\_extension\_update\_paths\(name\)
 
     描述：返回指定扩展的版本更新路径。
 
     返回类型：text\(source text\), text\(path text\), text\(target text\)
 
--   pg\_get\_serial\_sequence\(tablename, colname\)
+- pg\_get\_serial\_sequence\(tablename, colname\)
 
     描述：获取对应表名和列名上的序列。
 
@@ -1684,7 +1677,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     (1 row)
     ```
 
--   pg\_sequence\_parameters\(sequence\_oid\)
+- pg\_sequence\_parameters\(sequence\_oid\)
 
     描述：获取指定sequence的参数，包含起始值，最小值和最大值，递增值等。
 
@@ -1737,22 +1730,21 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     ```
 
--   pg\_relation\_is\_updatable(reloid, include\_triggers)
+- pg\_relation\_is\_updatable(reloid, include\_triggers)
 
     描述：获取对象支持修改时间的类型，update为4，insert为8，delete为16。include\_triggers如果为true，表示需要考虑对象上的触发器。
 
     返回类型： int
 
--   pg\_column\_is\_updatable(reloid, attnum, include\_triggers)
+- pg\_column\_is\_updatable(reloid, attnum, include\_triggers)
 
     描述：获取对象某一列是否可更新删除。
 
     返回类型： bool
 
-
 ## 注释信息函数<a name="zh-cn_topic_0283136950_zh-cn_topic_0237121987_zh-cn_topic_0059777618_s088c996ec385478daa38d9aa9f991d58"></a>
 
--   col\_description\(table\_oid, column\_number\)
+- col\_description\(table\_oid, column\_number\)
 
     描述：获取一个表字段的注释
 
@@ -1760,7 +1752,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     备注：col\_description返回一个表中字段的注释，通过表OID和字段号来声明。
 
--   obj\_description\(object\_oid, catalog\_name\)
+- obj\_description\(object\_oid, catalog\_name\)
 
     描述：获取一个数据库对象的注释
 
@@ -1770,20 +1762,19 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     obj\_description不能用于表字段，因为字段没有自己的OID。
 
--   obj\_description\(object\_oid\)
+- obj\_description\(object\_oid\)
 
     描述：获取一个数据库对象的注释
 
     返回类型：text
 
--   shobj\_description\(object\_oid, catalog\_name\)
+- shobj\_description\(object\_oid, catalog\_name\)
 
     描述：获取一个共享数据库对象的注释
 
     返回类型：text
 
     备注：shobj\_description和obj\_description差不多，不同之处仅在于前者用于共享对象。一些系统表是通用于openGauss中所有数据库的全局表，因此这些表的注释也是全局存储的。
-
 
 ## 事务ID和快照<a name="zh-cn_topic_0283136950_zh-cn_topic_0237121987_zh-cn_topic_0059777618_s13629462b1e147b2a9e93634a69e54e7"></a>
 
@@ -1822,67 +1813,67 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
 
 以下的函数在一个输出形式中提供服务器事务信息。这些函数的主要用途是为了确定在两个快照之间有哪个事务提交。
 
--   txid\_current\(\)
+- txid\_current\(\)
 
     描述：获取当前事务ID。
 
     返回类型：bigint
 
--   gs\_txid\_oldestxmin\(\)
+- gs\_txid\_oldestxmin\(\)
 
     描述：获取当前最小事务id的值oldesxmin。
 
     返回类型：bigint
 
--   txid\_current\_snapshot\(\)
+- txid\_current\_snapshot\(\)
 
     描述：获取当前快照。
 
     返回类型：txid\_snapshot
 
--   txid\_snapshot\_xip\(txid\_snapshot\)
+- txid\_snapshot\_xip\(txid\_snapshot\)
 
     描述：在快照中获取正在进行的事务ID。
 
     返回类型：setof bigint
 
--   txid\_snapshot\_xmax\(txid\_snapshot\)
+- txid\_snapshot\_xmax\(txid\_snapshot\)
 
     描述：获取快照的xmax。
 
     返回类型：bigint
 
--   txid\_snapshot\_xmin\(txid\_snapshot\)
+- txid\_snapshot\_xmin\(txid\_snapshot\)
 
     描述：获取快照的xmin。
 
     返回类型：bigint
 
--   txid\_visible\_in\_snapshot\(bigint, txid\_snapshot\)
+- txid\_visible\_in\_snapshot\(bigint, txid\_snapshot\)
 
     描述：在快照中事务ID是否可见（不使用子事务ID）。
 
     返回类型：Boolean
 
--   get\_local\_prepared\_xact\(\)
+- get\_local\_prepared\_xact\(\)
 
     描述：获取当前节点两阶段残留事务信息，包括事务id，两阶段gid名称，prepared的时间，owner的oid，database的oid及当前节点的node\_name。
 
     返回类型：xid, text, timestamptz, oid, oid，text
 
--   get\_remote\_prepared\_xacts\(\)
+- get\_remote\_prepared\_xacts\(\)
 
     描述：获取所有远程节点两阶段残留事务信息，包括事务id，两阶段gid名称，prepared的时间，owner的名称，database的名称及node\_name。
 
     返回类型：xid, text, timestamptz, name, name，text
 
--   global\_clean\_prepared\_xacts\(text, text\)
+- global\_clean\_prepared\_xacts\(text, text\)
 
     描述：并发清理两阶段残留事务，仅分布式场景下gs\_clean工具可以调用清理，其他用户调用均返回false。
 
     返回类型：Boolean
 
--   gs\_get\_next\_xid\_csn\(\)
+- gs\_get\_next\_xid\_csn\(\)
 
     描述：返回全局所有节点上的next\_xid和next\_csn值。
 
@@ -1915,8 +1906,7 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
     </tbody>
     </table>
 
-
--   slice\(hstore, text\[\]\)
+- slice\(hstore, text\[\]\)
 
     描述： 提取hstore的子集
 
@@ -1932,7 +1922,7 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
     (1 row)
     ```
 
--   slice\_array\(hstore, text\[\]\)
+- slice\_array\(hstore, text\[\]\)
 
     描述：提取hstore的值的集合
 
@@ -1948,7 +1938,7 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
     (1 row)
     ```
 
--   skeys\(hstore\)
+- skeys\(hstore\)
 
     描述：返回hstore的所有键构成的集合。
 
@@ -1965,20 +1955,19 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
     (2 rows)
     ```
 
-
--   pg\_control\_system\(\)
+- pg\_control\_system\(\)
 
     描述：返回系统控制文件状态。
 
     返回类型：SETOF record
 
--   pg\_control\_checkpoint\(\)
+- pg\_control\_checkpoint\(\)
 
     描述：返回系统检查点状态。
 
     返回类型：SETOF record
 
--   pv\_builtin\_functions
+- pv\_builtin\_functions
 
     描述：查看所有内置系统函数信息。
 
@@ -1986,7 +1975,7 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
 
     返回值类型：proname name, pronamespace oid, proowner oid, prolang oid, procost real, prorows real, provariadic oid, protransform regproc, proisagg boolean, proiswindow boolean, prosecdef boolean, proleakproof boolean, proisstrict boolean, proretset boolean, provolatile "char", pronargs smallint, pronargdefaults smallint, prorettype oid, proargtypes oidvector, proallargtypes integer\[\], proargmodes "char"\[\], proargnames text\[\], proargdefaults pg\_node\_tree, prosrc text, probin text, proconfig text\[\], proacl aclitem\[\], prodefaultargpos int2vector, fencedmode boolean, proshippable boolean, propackage boolean, oid oid
 
--   pv\_thread\_memory\_detail
+- pv\_thread\_memory\_detail
 
     描述：返回各线程的内存信息。
 
@@ -1994,7 +1983,7 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
 
     返回值类型：threadid text, tid bigint, thrdtype text, contextname text, level smallint, parent text, totalsize bigint, freesize bigint, usedsize bigint
 
--   pg\_relation\_compression\_ratio
+- pg\_relation\_compression\_ratio
 
     描述：查询表压缩率，默认返回1.0。
 
@@ -2002,7 +1991,7 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
 
     返回值类型：real
 
--   pg\_relation\_with\_compression
+- pg\_relation\_with\_compression
 
     描述：查询表是否压缩。
 
@@ -2010,13 +1999,13 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
 
     返回值类型：boolean
 
--   pg\_stat\_file\_recursive
+- pg\_stat\_file\_recursive
 
     描述：列出路径下所有文件。
 
     参数：location text
 
--   pg\_shared\_memory\_detail
+- pg\_shared\_memory\_detail
 
     描述：返回所有已产生的共享内存上下文的使用信息，各列描述请参考[GS\_SHARED\_MEMORY\_DETAIL](../database_reference/GS_SHARED_MEMORY_DETAIL.md)。
 
@@ -2024,11 +2013,11 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
 
     返回值类型：contextname text, level smallint, parent text, totalsize bigint, freesize bigint, usedsize bigint
 
--   get\_gtm\_lite\_status
+- get\_gtm\_lite\_status
 
     描述：返回GTM上的backupXid和csn号，用来支持问题定位，GTM-FREE模式下不支持使用本系统函数，集中式不支持该函数。
 
--   gs\_stat\_get\_wlm\_plan\_operator\_info（废弃）
+- gs\_stat\_get\_wlm\_plan\_operator\_info（废弃）
 
     描述：从内部哈希表中获取算子计划信息。
 
@@ -2036,7 +2025,7 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
 
     返回值类型：datname text, queryid int8, plan\_node\_id int4, startup\_time int8, total\_time int8, actual\_rows int8, max\_peak\_memory int4, query\_dop int4, parent\_node\_id int4, left\_child\_id int4, right\_child\_id int4, operation text, orientation text, strategy text, options text, condition text, projection text
 
--   pg\_stat\_get\_partition\_tuples\_hot\_updated
+- pg\_stat\_get\_partition\_tuples\_hot\_updated
 
     描述：返回给定分区id的分区热更新元组数的统计。
 
@@ -2044,7 +2033,7 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
 
     返回值类型：bigint
 
--   gs\_session\_memory\_detail\_tp
+- gs\_session\_memory\_detail\_tp
 
     描述：返回会话的内存使用情况，参考gs\_session\_memory\_detail。
 
@@ -2052,7 +2041,7 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
 
     返回值类型：sessid text, sesstype text, contextname text, level smallint, parent text, totalsize bigint, freesize bigint, usedsize bigint
 
--   gs\_thread\_memory\_detail
+- gs\_thread\_memory\_detail
 
     描述：返回各线程的内存信息。
 
@@ -2060,7 +2049,7 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
 
     返回值类型：threadid text, tid bigint, thrdtype text, contextname text, level smallint, parent text, totalsize bigint, freesize bigint, usedsize bigint
 
--   pg\_stat\_get\_wlm\_realtime\_operator\_info（废弃）
+- pg\_stat\_get\_wlm\_realtime\_operator\_info（废弃）
 
     描述：从内部哈希表中获取实时执行计划算子信息。
 
@@ -2068,7 +2057,7 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
 
     返回值类型：queryid bigint, pid bigint, plan\_node\_id integer, plan\_node\_name text, start\_time timestamp with time zone, duration bigint, status text, query\_dop integer, estimated\_rows bigint, tuple\_processed bigint, min\_peak\_memory integer, max\_peak\_memory integer, average\_peak\_memory integer, memory\_skew\_percent integer, min\_spill\_size integer, max\_spill\_size integer, average\_spill\_size integer, spill\_skew\_percent integer, min\_cpu\_time bigint, max\_cpu\_time bigint, total\_cpu\_time bigint, cpu\_skew\_percent integer, warning text
 
--   pg\_stat\_get\_wlm\_realtime\_ec\_operator\_info（废弃）
+- pg\_stat\_get\_wlm\_realtime\_ec\_operator\_info（废弃）
 
     描述：从内部哈希表中获取EC执行计划算子信息。
 
@@ -2076,7 +2065,7 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
 
     返回值类型：queryid bigint, plan\_node\_id integer, plan\_node\_name text, start\_time timestamp with time zone, ec\_operator integer, ec\_status text, ec\_execute\_datanode text, ec\_dsn text, ec\_username text, ec\_query text, ec\_libodbc\_type text, ec\_fetch\_count bigint
 
--   pg\_stat\_get\_wlm\_operator\_info（废弃）
+- pg\_stat\_get\_wlm\_operator\_info（废弃）
 
     描述：从内部哈希表中获取执行计划算子信息。
 
@@ -2084,15 +2073,15 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
 
     返回值类型：queryid bigint, pid bigint, plan\_node\_id integer, plan\_node\_name text, start\_time timestamp with time zone, duration bigint, query\_dop integer, estimated\_rows bigint, tuple\_processed bigint, min\_peak\_memory integer, max\_peak\_memory integer, average\_peak\_memory integer, memory\_skew\_percent integer, min\_spill\_size integer, max\_spill\_size integer, average\_spill\_size integer, spill\_skew\_percent integer, min\_cpu\_time bigint, max\_cpu\_time bigint, total\_cpu\_time bigint, cpu\_skew\_percent integer, warning text
 
--   pg\_stat\_get\_wlm\_node\_resource\_info
+- pg\_stat\_get\_wlm\_node\_resource\_info
 
     描述：目前该接口已废弃，暂不可用。
 
--   pg\_stat\_get\_session\_wlmstat
+- pg\_stat\_get\_session\_wlmstat
 
     描述：目前该接口已废弃，暂不可用。
 
--   pg\_stat\_get\_wlm\_ec\_operator\_info（废弃）
+- pg\_stat\_get\_wlm\_ec\_operator\_info（废弃）
 
     描述：从内部哈希表中获取EC执行计划算子信息。
 
@@ -2100,19 +2089,19 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
 
     返回值类型：queryid bigint, plan\_node\_id integer, plan\_node\_name text, start\_time timestamp with time zone, duration bigint, tuple\_processed bigint, min\_peak\_memory integer, max\_peak\_memory integer, average\_peak\_memory integer, ec\_operator integer, ec\_status text, ec\_execute\_datanode text, ec\_dsn text, ec\_username text, ec\_query text, ec\_libodbc\_type text, ec\_fetch\_count bigint
 
--   pg\_stat\_get\_wlm\_instance\_info
+- pg\_stat\_get\_wlm\_instance\_info
 
     描述：目前该接口已废弃，暂不可用。
 
--   pg\_stat\_get\_wlm\_instance\_info\_with\_cleanup
+- pg\_stat\_get\_wlm\_instance\_info\_with\_cleanup
 
     描述：目前该接口已废弃，暂不可用。
 
--   pg\_stat\_get\_wlm\_realtime\_session\_info
+- pg\_stat\_get\_wlm\_realtime\_session\_info
 
     描述：目前该接口已废弃，暂不可用。
 
--   pg\_stat\_get\_wlm\_session\_iostat\_info
+- pg\_stat\_get\_wlm\_session\_iostat\_info
 
     描述：返回会话负载IO信息。
 
@@ -2120,7 +2109,6 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
 
     返回值类型：threadid bigint, maxcurr\_iops integer, mincurr\_iops integer, maxpeak\_iops integer, minpeak\_iops integer, iops\_limits integer, io\_priority integer, curr\_io\_limits integer
 
--   pg\_stat\_get\_wlm\_statistics
+- pg\_stat\_get\_wlm\_statistics
 
     Description: This API has been discarded and is unavailable currently.
-

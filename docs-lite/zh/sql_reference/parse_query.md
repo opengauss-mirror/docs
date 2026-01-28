@@ -65,4 +65,3 @@ openGauss=# SELECT plainto_tsquery('english', 'The Fat & Rats:C');
 ```
 
 在这里，所有输入的标点符号作为空格符号丢弃。
-

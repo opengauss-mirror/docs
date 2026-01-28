@@ -1,26 +1,26 @@
 # 段页式存储函数<a name="ZH-CN_TOPIC_0000001101431812"></a>
 
--   local\_segment\_space\_info\(tablespacename TEXT, databasename TEXT\)
+- local\_segment\_space\_info\(tablespacename TEXT, databasename TEXT\)
 
     描述：目前该接口已废弃，暂不可用。
 
--   pg\_stat\_segment\_extent\_usage\(int4 tablespace oid, int4 database oid, int4 extent\_type, int4 forknum\)
+- pg\_stat\_segment\_extent\_usage\(int4 tablespace oid, int4 database oid, int4 extent\_type, int4 forknum\)
 
     描述：目前该接口已废弃，暂不可用。
 
--   local\_space\_shrink\(tablespacename TEXT, databasename TEXT\)
+- local\_space\_shrink\(tablespacename TEXT, databasename TEXT\)
 
     描述：当前节点上对指定段页式空间做物理空间收缩。注意，目前只支持对当前连接的database做shrink。
 
     返回值：空
 
--   gs\_space\_shrink\(int4 tablespace, int4 database, int4 extent\_type, int4 forknum\)
+- gs\_space\_shrink\(int4 tablespace, int4 database, int4 extent\_type, int4 forknum\)
 
     描述：效果跟local\_space\_shrink类似，对指定段页式空间做物理空间收缩,但参数不同，传入的是tablespace和database的oid，extent\_type为\[1,5\]的int值。注意：extent\_type = 1表示段页式元数据，当前版本不支持对元数据所在的物理文件做收缩。该函数仅限工具使用，不建议用户直接使用。
 
     返回值：空
 
--   pg\_stat\_remain\_segment\_info\(\)
+- pg\_stat\_remain\_segment\_info\(\)
 
     描述：展示在当前节点上，因为故障等原因而残留的extent。残留extent主要分为两类：分配而未被利用的segment和分配出去而未被利用的extent。两者主要区别在于segment会包含多个extent，回收时，要将segment上的extent一并全部回收。
 
@@ -57,9 +57,9 @@
 
     其中type的三种类型分别表示：
 
-    -   ALLOC\_SEGMENT:用户创建一张段页式表，当segment刚被分配，但是建表语句所在事务仍未提交时，节点故障，导致该segment被分配后，没有被使用。
-    -   DROP\_SEGMENT:用户删除段页式表，当该事务成功提交，但是此表的segment页面对应的bit位未被重置，就发生掉电等故障，造成该segment未被使用，也未被释放。
-    -   SHRINK\_EXTENT:用户对段页式表执行shrink操作，在未对空置出的extent进行释放时，发生掉电等故障，造成该extent残留，无法被重新利用。
+    - ALLOC\_SEGMENT:用户创建一张段页式表，当segment刚被分配，但是建表语句所在事务仍未提交时，节点故障，导致该segment被分配后，没有被使用。
+    - DROP\_SEGMENT:用户删除段页式表，当该事务成功提交，但是此表的segment页面对应的bit位未被重置，就发生掉电等故障，造成该segment未被使用，也未被释放。
+    - SHRINK\_EXTENT:用户对段页式表执行shrink操作，在未对空置出的extent进行释放时，发生掉电等故障，造成该extent残留，无法被重新利用。
 
         例如：
 
@@ -70,11 +70,8 @@
         1663       |   16385|        4156| ALLOC_SEGMENT
         ```
 
-
--   pg\_free\_remain\_segment\(int4 spaceId, int4 dbId, int4 segmentId\)
+- pg\_free\_remain\_segment\(int4 spaceId, int4 dbId, int4 segmentId\)
 
     描述：释放指定的残留extent。参数取值必须为从函数pg\_stat\_remain\_segment\_info中查询获取。函数会对传入值校验，如果指定extent不在记录的残留extent中，将返回错误信息。指定的extent如果为单个extent，则只将其独自释放；如果为一个segment，则会将此segment以及此segment上记录的所有extent释放。
 
     返回值：空
-
-

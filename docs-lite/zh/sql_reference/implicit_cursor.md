@@ -10,17 +10,17 @@
 
 >[!NOTE]说明
 >
->-   INSERT，UPDATE，DELETE，SELECT语句中不必明确定义游标。
->-   兼容O模式下，GUC参数behavior\_compat\_options为compat\_cursor时，隐式游标跨存储过程有效。
+>- INSERT，UPDATE，DELETE，SELECT语句中不必明确定义游标。
+>- 兼容O模式下，GUC参数behavior\_compat\_options为compat\_cursor时，隐式游标跨存储过程有效。
 
 ## 属性<a name="zh-cn_topic_0283136644_zh-cn_topic_0237122245_zh-cn_topic_0059778352_sbc470b788a0c40af9e3f1dcf2d963894"></a>
 
 隐式游标属性为：
 
--   SQL%FOUND布尔型属性：当最近一次读记录时成功返回，则值为TRUE。
--   SQL%NOTFOUND布尔型属性：与%FOUND相反。
--   SQL%ROWCOUNT数值型属性：返回已从游标中读取得记录数。
--   SQL%ISOPEN布尔型属性：取值总是FALSE。SQL语句执行完毕立即关闭隐式游标。
+- SQL%FOUND布尔型属性：当最近一次读记录时成功返回，则值为TRUE。
+- SQL%NOTFOUND布尔型属性：与%FOUND相反。
+- SQL%ROWCOUNT数值型属性：返回已从游标中读取得记录数。
+- SQL%ISOPEN布尔型属性：取值总是FALSE。SQL语句执行完毕立即关闭隐式游标。
 
 ## 示例<a name="zh-cn_topic_0283136644_zh-cn_topic_0237122245_zh-cn_topic_0059778352_s56d5099e16904d0bb9800bc6a8acf21c"></a>
 
@@ -44,4 +44,3 @@ CALL proc_cursor3();
 --删除存储过程和临时表
 DROP PROCEDURE proc_cursor3;
 ```
-

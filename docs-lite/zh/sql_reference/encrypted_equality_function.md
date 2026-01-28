@@ -4,7 +4,7 @@
 >
 >轻量版场景下，openGauss提供此接口，但密态等值功能不可用。
 
--   byteawithoutorderwithequalcolin\(cstring\)
+- byteawithoutorderwithequalcolin\(cstring\)
 
     描述：将输入转码转化成内部byteawithoutorderwithequalcol形式。
 
@@ -12,8 +12,7 @@
 
     返回值类型：byteawithoutorderwithequalcol
 
-
--   byteawithoutorderwithequalcolout\(byteawithoutorderwithequalcol\)
+- byteawithoutorderwithequalcolout\(byteawithoutorderwithequalcol\)
 
     描述：将内部byteawithoutorderwithequalcol类型的数据转码转化为cstring类型。
 
@@ -21,8 +20,7 @@
 
     返回值类型：cstring
 
-
--   byteawithoutorderwithequalcolsend\(byteawithoutorderwithequalcol\)
+- byteawithoutorderwithequalcolsend\(byteawithoutorderwithequalcol\)
 
     描述：将byteawithoutorderwithequalcol类型的数据转码转化为bytea类型。
 
@@ -30,7 +28,7 @@
 
     返回值类型：bytea
 
--   byteawithoutorderwithequalcolrecv\(internal\)
+- byteawithoutorderwithequalcolrecv\(internal\)
 
     描述：将byteawithoutorderwithequalcol类型的数据转码转化为byteawithoutorderwithequalcol类型。
 
@@ -38,7 +36,7 @@
 
     返回值类型：byteawithoutorderwithequalcol
 
--   byteawithoutorderwithequalcoltypmodin\(\_cstring\)
+- byteawithoutorderwithequalcoltypmodin\(\_cstring\)
 
     描述：将byteawithoutorderwithequalcol类型的数据转码转化为byteawithoutorderwithequalcol类型。
 
@@ -46,7 +44,7 @@
 
     返回值类型：int4
 
--   byteawithoutorderwithequalcoltypmodout\(int4\)
+- byteawithoutorderwithequalcoltypmodout\(int4\)
 
     描述：将int4类型的数据转码转化为cstring类型。
 
@@ -54,7 +52,7 @@
 
     返回值类型：cstring
 
--   byteawithoutordercolin\(cstring\)
+- byteawithoutordercolin\(cstring\)
 
     描述：将输入转码转化成内部byteawithoutordercolin形式。
 
@@ -62,7 +60,7 @@
 
     返回值类型：byteawithoutordercol
 
--   byteawithoutordercolout\(byteawithoutordercol\)
+- byteawithoutordercolout\(byteawithoutordercol\)
 
     描述：将内部byteawithoutordercol类型的数据转码转化为cstring类型。
 
@@ -70,7 +68,7 @@
 
     返回值类型：cstring
 
--   byteawithoutordercolsend\(byteawithoutordercol\)
+- byteawithoutordercolsend\(byteawithoutordercol\)
 
     描述：将byteawithoutordercol类型的数据转码转化为bytea类型。
 
@@ -78,7 +76,7 @@
 
     返回值类型：bytea
 
--   byteawithoutordercolrecv\(internal\)
+- byteawithoutordercolrecv\(internal\)
 
     描述：将byteawithoutordercol类型的数据转码转化为byteawithoutordercol类型。
 
@@ -86,7 +84,7 @@
 
     返回值类型：byteawithoutordercol
 
--   byteawithoutorderwithequalcolcmp\(byteawithoutorderwithequalcol, byteawithoutorderwithequalcol\)
+- byteawithoutorderwithequalcolcmp\(byteawithoutorderwithequalcol, byteawithoutorderwithequalcol\)
 
     描述：比较两个byteawithoutorderwithequalcol类型的数据大小，若第一个参数小于第二个参数，返回-1，若等于，返回0，若大于，则返回1。
 
@@ -94,7 +92,7 @@
 
     返回值类型：int4
 
--   byteawithoutorderwithequalcolcmpbytear\(byteawithoutorderwithequalcol, bytea\)
+- byteawithoutorderwithequalcolcmpbytear\(byteawithoutorderwithequalcol, bytea\)
 
     描述：比较byteawithoutorderwithequalcol和bytea数据大小，若第一个参数小于第二个参数，返回-1，若等于，返回0，若大于，则返回1。
 
@@ -102,7 +100,7 @@
 
     返回值类型：int4
 
--   byteawithoutorderwithequalcolcmpbyteal\(bytea, byteawithoutorderwithequalcol\)
+- byteawithoutorderwithequalcolcmpbyteal\(bytea, byteawithoutorderwithequalcol\)
 
     描述：比较bytea和byteawithoutorderwithequalcol数据大小，若第一个参数小于第二个参数，返回-1，若等于，返回0，若大于，则返回1。
 
@@ -110,7 +108,7 @@
 
     返回值类型：int4
 
--   byteawithoutorderwithequalcoleq\(byteawithoutorderwithequalcol, byteawithoutorderwithequalcol\)
+- byteawithoutorderwithequalcoleq\(byteawithoutorderwithequalcol, byteawithoutorderwithequalcol\)
 
     描述：比较两个byteawithoutorderwithequalcol类型的数据是否相同，相同则返回true，否则返回false。
 
@@ -118,7 +116,7 @@
 
     返回值类型：bool
 
--   byteawithoutorderwithequalcoleqbyteal\(bytea, byteawithoutorderwithequalcol\)
+- byteawithoutorderwithequalcoleqbyteal\(bytea, byteawithoutorderwithequalcol\)
 
     描述：比较bytea和byteawithoutorderwithequalcol数据是否相同，相同则返回true，否则返回false。
 
@@ -126,7 +124,7 @@
 
     返回值类型：bool
 
--   byteawithoutorderwithequalcoleqbytear\(byteawithoutorderwithequalcol, bytea\)
+- byteawithoutorderwithequalcoleqbytear\(byteawithoutorderwithequalcol, bytea\)
 
     描述：比较byteawithoutorderwithequalcol和bytea数据是否相同，相同则返回true，否则返回false。
 
@@ -134,7 +132,7 @@
 
     返回值类型：bool
 
--   byteawithoutorderwithequalcolne\(byteawithoutorderwithequalcol, byteawithoutorderwithequalcol\)
+- byteawithoutorderwithequalcolne\(byteawithoutorderwithequalcol, byteawithoutorderwithequalcol\)
 
     描述：比较两个byteawithoutorderwithequalcol类型的数据是否不相同，不相同则返回true，否则返回false。
 
@@ -142,7 +140,7 @@
 
     返回值类型：bool
 
--   byteawithoutorderwithequalcolnebyteal\(bytea, byteawithoutorderwithequalcol\)
+- byteawithoutorderwithequalcolnebyteal\(bytea, byteawithoutorderwithequalcol\)
 
     描述：比较bytea和byteawithoutorderwithequalcol数据是否相同，相同则返回true，否则返回false。
 
@@ -150,7 +148,7 @@
 
     返回值类型：bool
 
--   byteawithoutorderwithequalcolnebytear\(byteawithoutorderwithequalcol, bytea\)
+- byteawithoutorderwithequalcolnebytear\(byteawithoutorderwithequalcol, bytea\)
 
     描述：比较byteawithoutorderwithequalcol和bytea数据是否不相同，相同则返回true，否则返回false。
 
@@ -158,7 +156,7 @@
 
     返回值类型：bool
 
--   hll\_hash\_byteawithoutorderwithequalcol\(byteawithoutorderwithequalcol\)
+- hll\_hash\_byteawithoutorderwithequalcol\(byteawithoutorderwithequalcol\)
 
     描述：返回byteawithoutorderwithequalcol的hll哈希值。
 
@@ -185,5 +183,3 @@
     LINE 1: SELECT * FROM byteawithoutorderwithequalcolsend('\x907219019...
                                                             ^
     ```
-
-

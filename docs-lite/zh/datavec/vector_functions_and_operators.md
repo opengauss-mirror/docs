@@ -2,7 +2,8 @@
 
 ## Vector
 
-#### Vector 操作符
+### Vector 操作符
+
 操作符 | 描述 
 --- | --- 
 \+ | 元素级加法
@@ -16,7 +17,7 @@
 <=> | 余弦距离
 <+> | 曼哈顿距离 (L1)
 
--   \+
+- \+
 
     描述：元素级加法。
 
@@ -30,7 +31,7 @@
     (1 row)
     ```
 
--   \-
+- \-
 
     描述：元素级减法。
 
@@ -44,7 +45,7 @@
     (1 row)
     ```    
 
--   \*
+- \*
 
     描述：元素级乘法。
 
@@ -58,7 +59,7 @@
     (1 row)
     ```    
 
--   \=
+- \=
 
     描述：等于。
 
@@ -72,7 +73,7 @@
     (1 row)
     ``` 
 
--   \<>
+- \<>
 
     描述：不等于。
 
@@ -86,7 +87,7 @@
     (1 row)
     ``` 
 
--   \|\|
+- \|\|
 
     描述：向量拼接。
 
@@ -100,7 +101,7 @@
     (1 row)
     ```         
 
--   <->
+- <->
 
     描述：欧几里得距离 (L2)。
 
@@ -114,7 +115,7 @@
     (1 row)
     ```      
 
--   <#> 
+- <#> 
 
     描述：负内积。
 
@@ -128,7 +129,7 @@
     (1 row)
     ```        
 
--   <=>
+- <=>
 
     描述：余弦距离。
 
@@ -142,7 +143,7 @@
     (1 row)
     ```      
 
--   <+>
+- <+>
 
     描述：曼哈顿距离。
 
@@ -157,6 +158,7 @@
     ```      
 
 #### Vector 函数
+
 函数 | 描述
 --- | --- 
 binary_quantize(vector) → bit | 二进制量化
@@ -169,7 +171,7 @@ subvector(vector, integer, integer) → vector | 截取子向量
 vector_dims(vector) → integer | 向量的维度数
 vector_norm(vector) → double precision | 欧几里得范数
 
--   binary_quantize
+- binary_quantize
 
     描述：二进制量化，若元素大于0，则量化为1；若元素小于或等于0，则量化为0。
 
@@ -185,7 +187,7 @@ vector_norm(vector) → double precision | 欧几里得范数
     (1 row)
     ```    
 
--   cosine_distance
+- cosine_distance
 
     描述：余弦距离。
 
@@ -201,7 +203,7 @@ vector_norm(vector) → double precision | 欧几里得范数
     (1 row)
     ```        
 
--   inner_product
+- inner_product
 
     描述：内积。
 
@@ -217,7 +219,7 @@ vector_norm(vector) → double precision | 欧几里得范数
     (1 row)
     ```           
 
--   l1_distance
+- l1_distance
 
     描述：曼哈顿距离 (L1)。
 
@@ -233,7 +235,7 @@ vector_norm(vector) → double precision | 欧几里得范数
     (1 row)
     ```      
 
--   l2_distance
+- l2_distance
 
     描述：欧几里得距离 (L2)。
 
@@ -249,7 +251,7 @@ vector_norm(vector) → double precision | 欧几里得范数
     (1 row)
     ```       
 
--   l2_normalize
+- l2_normalize
 
     描述：归一化（使用L2距离）。
 
@@ -265,7 +267,7 @@ vector_norm(vector) → double precision | 欧几里得范数
     (1 row)
     ```        
 
--   subvector
+- subvector
 
     描述：截取子向量。
 
@@ -281,7 +283,7 @@ vector_norm(vector) → double precision | 欧几里得范数
     (1 row)
     ```         
 
--   vector_dims
+- vector_dims
 
     描述：向量的维度数。
 
@@ -297,7 +299,7 @@ vector_norm(vector) → double precision | 欧几里得范数
     (1 row)
     ```         
 
--   vector_norm
+- vector_norm
 
     描述：欧几里得范数。
 
@@ -314,12 +316,13 @@ vector_norm(vector) → double precision | 欧几里得范数
     ```          
 
 #### Vector 聚合函数
+
 函数 | 描述
 --- | --- 
 avg(vector) → vector | 平均值 
 sum(vector) → vector | 求和
 
--   avg
+- avg
 
     描述：平均值。
 
@@ -335,7 +338,7 @@ sum(vector) → vector | 求和
     (1 row)
     ```     
 
--   sum
+- sum
 
     描述：求和。
 
@@ -354,6 +357,7 @@ sum(vector) → vector | 求和
 #### Vector 类型转换
 
 - 格式：
+
 ```
 SELECT ITEM::vetcor
 
@@ -366,7 +370,9 @@ SELECT cast(ITEM AS vector);
 >vector()仅支持text或者同为vector类型转换
 
 ##### TEXT/VARCHAR 转 vector
+
 - 示例：
+
 ```
 openGauss=# SELECT '[1,2,3]'::vector;
  vector  
@@ -388,7 +394,9 @@ openGauss=# SELECT cast(ARRAY[1,2,3] AS vector);
 ```
 
 ##### Int Array 转 vector
+
 - 示例：
+
 ```
 openGauss=# SELECT ARRAY[1,2,3]::vector;
   array  
@@ -398,7 +406,9 @@ openGauss=# SELECT ARRAY[1,2,3]::vector;
 ```
 
 ##### Real Array 转 vector
+
 - 示例：
+
 ```
 openGauss=# SELECT ARRAY[1,2,3]::float4[]::vector(3);
   array  
@@ -408,7 +418,9 @@ openGauss=# SELECT ARRAY[1,2,3]::float4[]::vector(3);
 ```
 
 ##### Double Array 转 vector
+
 - 示例：
+
 ```
 openGauss=# SELECT ARRAY[1,2,3]::float8[]::vector;
   array  
@@ -418,7 +430,9 @@ openGauss=# SELECT ARRAY[1,2,3]::float8[]::vector;
 ```
 
 ##### Numeric Array 转 vector
+
 - 示例：
+
 ```
 openGauss=# SELECT ARRAY[1,2,3]::numeric[]::vector;
   array  
@@ -431,7 +445,9 @@ openGauss=# SELECT ARRAY[1,2,3]::numeric[]::vector;
 只有当注明转换向量类型维度时，如`ARRAY[1,2,3]::vector(3)`，会在转换时对前置类型进行维度效验。
 
 ##### Vector 转 Int Array
+
 - 示例：
+
 ```
 openGauss=# SELECT '[1,2,3]'::vector::int[];
   int4   
@@ -441,7 +457,9 @@ openGauss=# SELECT '[1,2,3]'::vector::int[];
 ```
 
 ##### Vector 转 Real Array
+
 - 示例：
+
 ```
 openGauss=# SELECT '[1,2,3]'::vector::real[];
  float4  
@@ -451,7 +469,9 @@ openGauss=# SELECT '[1,2,3]'::vector::real[];
 ```
 
 ##### Vector 转 Double Array
+
 - 示例：
+
 ```
 openGauss=# SELECT '[1,2,3]'::vector::float8[];
  float8  
@@ -461,7 +481,9 @@ openGauss=# SELECT '[1,2,3]'::vector::float8[];
 ```
 
 ##### Vector 转 Numeric Array
+
 - 示例：
+
 ```
 openGauss=# SELECT '[1,2,3]'::vector::numeric(10,3)[];
        numeric       
@@ -471,7 +493,9 @@ openGauss=# SELECT '[1,2,3]'::vector::numeric(10,3)[];
 ```
 
 ##### Vector 转 Text Array
+
 - 示例：
+
 ```
 openGauss=# SELECT '[1,2,3]'::vector::text[];
     text       
@@ -481,7 +505,9 @@ openGauss=# SELECT '[1,2,3]'::vector::text[];
 ```
 
 ##### Vector 转 Varchar Array
+
 - 示例：
+
 ```
 openGauss=# SELECT '[1.21,2.32,3]'::vector::varchar(3)[];
     varchar       
@@ -489,18 +515,20 @@ openGauss=# SELECT '[1.21,2.32,3]'::vector::varchar(3)[];
  {1.2,2.3,3}
 (1 row)
 ```
+
 >[!NOTE]说明
 vector转换字符数组仅支持text和varchar，其余字符类型暂未支持。
 
 ## Bit
 
-#### Bit 操作符
+### Bit 操作符
+
 操作符 | 描述
 --- | --- 
 <~> | 汉明距离
 <%> | 杰卡德距离
 
--   <~>
+- <~>
 
     描述：汉明距离。
 
@@ -516,7 +544,7 @@ vector转换字符数组仅支持text和varchar，其余字符类型暂未支持
     (1 row)
     ```
 
--   <%>
+- <%>
 
     描述：杰卡德距离。
 
@@ -533,12 +561,13 @@ vector转换字符数组仅支持text和varchar，其余字符类型暂未支持
     ```    
 
 #### Bit 函数
+
 函数 | 描述
 --- | --- 
 hamming_distance(bit, bit) → double precision | 汉明距离
 jaccard_distance(bit, bit) → double precision | 杰卡德距离
 
--   hamming_distance
+- hamming_distance
 
     描述：汉明距离。
 
@@ -554,7 +583,7 @@ jaccard_distance(bit, bit) → double precision | 杰卡德距离
     (1 row)
     ```   
 
--   jaccard_distance
+- jaccard_distance
 
     描述：杰卡德距离。
 
@@ -570,10 +599,10 @@ jaccard_distance(bit, bit) → double precision | 杰卡德距离
     (1 row)
     ```       
 
-
 ## Sparsevec
 
-#### Sparsevec 操作符
+### Sparsevec 操作符
+
 操作符 | 描述
 --- | --- 
 <-> | 欧几里得距离 (L2)
@@ -583,7 +612,7 @@ jaccard_distance(bit, bit) → double precision | 杰卡德距离
 \= | 等于
 \<> | 不等于
 
--   <->
+- <->
 
     描述：欧几里得距离 (L2)。
 
@@ -599,7 +628,7 @@ jaccard_distance(bit, bit) → double precision | 杰卡德距离
     (1 row)
     ```  
 
--   <#>
+- <#>
 
     描述：负内积。
 
@@ -615,7 +644,7 @@ jaccard_distance(bit, bit) → double precision | 杰卡德距离
     (1 row)
     ``` 
 
--   <=>
+- <=>
 
     描述：余弦距离。
 
@@ -631,7 +660,7 @@ jaccard_distance(bit, bit) → double precision | 杰卡德距离
     (1 row)
     ``` 
 
--   <+>
+- <+>
 
     描述：曼哈顿距离 (L1)。
 
@@ -647,7 +676,7 @@ jaccard_distance(bit, bit) → double precision | 杰卡德距离
     (1 row)
     ```     
 
--   \=
+- \=
 
     描述：等于。
 
@@ -661,7 +690,7 @@ jaccard_distance(bit, bit) → double precision | 杰卡德距离
     (1 row)
     ``` 
 
--   \<>
+- \<>
 
     描述：不等于。
 
@@ -675,7 +704,8 @@ jaccard_distance(bit, bit) → double precision | 杰卡德距离
     (1 row)
     ```  
 
-#### Sparsevec 函数
+### Sparsevec 函数
+
 函数 | 描述
 --- | --- 
 cosine_distance(sparsevec, sparsevec) → double precision | 余弦距离
@@ -685,7 +715,7 @@ l2_distance(sparsevec, sparsevec) → double precision | 欧几里得距离 (L2)
 l2_norm(sparsevec) → double precision | 欧几里得范数
 l2_normalize(sparsevec) → sparsevec | 归一化（使用L2距离）
 
--   cosine_distance
+- cosine_distance
 
     描述：余弦距离。
 
@@ -701,7 +731,7 @@ l2_normalize(sparsevec) → sparsevec | 归一化（使用L2距离）
     (1 row)
     ```  
 
--   inner_product
+- inner_product
 
     描述：内积。
 
@@ -717,7 +747,7 @@ l2_normalize(sparsevec) → sparsevec | 归一化（使用L2距离）
     (1 row)
     ``` 
 
--   l1_distance
+- l1_distance
 
     描述：曼哈顿距离 (L1)。
 
@@ -733,7 +763,7 @@ l2_normalize(sparsevec) → sparsevec | 归一化（使用L2距离）
     (1 row)
     ``` 
 
--   l2_distance
+- l2_distance
 
     描述：欧几里得距离 (L2)。
 
@@ -749,7 +779,7 @@ l2_normalize(sparsevec) → sparsevec | 归一化（使用L2距离）
     (1 row)
     ```     
 
--   l2_norm
+- l2_norm
 
     描述：欧几里得范数。
 
@@ -765,7 +795,7 @@ l2_normalize(sparsevec) → sparsevec | 归一化（使用L2距离）
     (1 row)
     ``` 
 
--   l2_normalize
+- l2_normalize
 
     描述：归一化（使用L2距离）。
 
@@ -781,9 +811,10 @@ l2_normalize(sparsevec) → sparsevec | 归一化（使用L2距离）
     (1 row)
     ``` 
 
-#### Sparsevec 类型转换
+### Sparsevec 类型转换
 
 - 格式
+
 ```
 SELECT ITEM::sparsevec
 
@@ -795,8 +826,10 @@ SELECT cast(ITEM AS sparsevec);
 >[!NOTE]说明
 >sparsevec()仅支持text或者同为sparsevec类型转换
 
-##### TEXT/VARCHAR 转 sparsevec
+#### TEXT/VARCHAR 转 sparsevec
+
 - 示例：
+
 ```
 openGauss=# SELECT '{1:1.5,3:3.5}/5'::sparsevec;
     sparsevec    
@@ -805,8 +838,10 @@ openGauss=# SELECT '{1:1.5,3:3.5}/5'::sparsevec;
 (1 row)
 ```
 
-##### Vector 转 sparsevec
+#### Vector 转 sparsevec
+
 - 示例：
+
 ```
 openGauss=# SELECT '[0,1.5,0,3.5,0]'::vector::sparsevec;
     sparsevec    
@@ -815,8 +850,10 @@ openGauss=# SELECT '[0,1.5,0,3.5,0]'::vector::sparsevec;
 (1 row)
 ```
 
-##### Sparsevec 转 Vector
+#### Sparsevec 转 Vector
+
 - 示例：
+
 ```
 openGauss=# SELECT '{2:1.5,4:3.5}/5'::sparsevec::vector(5);
      vector      
@@ -824,7 +861,6 @@ openGauss=# SELECT '{2:1.5,4:3.5}/5'::sparsevec::vector(5);
  [0,1.5,0,3.5,0]
 (1 row)
 ```
-
 
 ## Halfvec
 

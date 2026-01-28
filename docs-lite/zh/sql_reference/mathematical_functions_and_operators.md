@@ -2,7 +2,7 @@
 
 ## 数字操作符<a name="zh-cn_topic_0283136987_zh-cn_topic_0237121971_zh-cn_topic_0059777932_s00454841bcf24ad18eed980c0e3a2f75"></a>
 
--   \+
+- \+
 
     描述：加
 
@@ -16,7 +16,7 @@
     (1 row)
     ```
 
--   \-
+- \-
 
     描述：减
 
@@ -30,7 +30,7 @@
     (1 row)
     ```
 
--   \*
+- \*
 
     描述：乘
 
@@ -44,7 +44,7 @@
     (1 row)
     ```
 
--   /
+- /
 
     描述：除（除法操作符不会取整）
 
@@ -66,7 +66,7 @@
     (1 row)
     ```
 
--   +/-
+- +/-
 
     描述：正/负
 
@@ -80,7 +80,7 @@
     (1 row)
     ```
 
--   %
+- %
 
     描述：模（求余）
 
@@ -94,7 +94,7 @@
     (1 row)
     ```
 
--   @
+- @
 
     描述：绝对值
 
@@ -108,7 +108,7 @@
     (1 row)
     ```
 
--   ^
+- ^
 
     描述：幂（指数运算）
 
@@ -122,7 +122,7 @@
     (1 row)
     ```
 
--   |/
+- |/
 
     描述：平方根
 
@@ -136,7 +136,7 @@
     (1 row)
     ```
 
--   ||/
+- ||/
 
     描述：立方根
 
@@ -150,7 +150,7 @@
     (1 row)
     ```
 
--   !
+- !
 
     描述：阶乘
 
@@ -166,7 +166,7 @@
     (1 row)
     ```
 
--   !!
+- !!
 
     描述：阶乘（前缀操作符）
 
@@ -182,7 +182,7 @@
     (1 row)
     ```
 
--   &
+- &
 
     描述：二进制AND
 
@@ -196,7 +196,7 @@
     (1 row)
     ```
 
--   |
+- |
 
     描述：二进制OR
 
@@ -210,7 +210,7 @@
     (1 row)
     ```
 
--   \#
+- \#
 
     描述：二进制XOR
 
@@ -224,7 +224,7 @@
     (1 row)
     ```
 
--   \~
+- \~
 
     描述：二进制NOT
 
@@ -238,7 +238,7 @@
     (1 row)
     ```
 
--   <<
+- <<
 
     描述：二进制左移
 
@@ -252,7 +252,7 @@
     (1 row)
     ```
 
--   \>\>
+- \>\>
 
     描述：二进制右移
 
@@ -266,10 +266,9 @@
     (1 row)
     ```
 
-
 ## 数字操作函数<a name="zh-cn_topic_0283136987_zh-cn_topic_0237121971_zh-cn_topic_0059777932_s04c663eefe5a433d9a486b67706e44e1"></a>
 
--   abs\(x\)
+- abs\(x\)
 
     描述：绝对值。
 
@@ -285,7 +284,7 @@
     (1 row)
     ```
 
--   acos\(x\)
+- acos\(x\)
 
     描述：反余弦。
 
@@ -301,7 +300,7 @@
     (1 row)
     ```
 
--   asin\(x\)
+- asin\(x\)
 
     描述：反正弦。
 
@@ -317,7 +316,7 @@
     (1 row)
     ```
 
--   atan\(x\)
+- atan\(x\)
 
     描述：反正切。
 
@@ -333,7 +332,7 @@
     (1 row)
     ```
 
--   atan2\(y, x\)
+- atan2\(y, x\)
 
     描述：y/x的反正切。
 
@@ -349,7 +348,7 @@
     (1 row)
     ```
 
--   bin_to_num\(VARIADIC number[]\)
+- bin_to_num\(VARIADIC number[]\)
 
     描述：将位向量转换为其等效的数字。这个函数的每个参数代表位向量中的一个位。每个表达式必须计算结果为0或1。
 
@@ -365,7 +364,7 @@
     (1 row)
     ```
 
--   bitand\(integer, integer\)
+- bitand\(integer, integer\)
 
     描述：计算两个数字与运算\(&\)的结果。
 
@@ -381,7 +380,7 @@
     (1 row)
     ```
 
--   cbrt\(dp\)
+- cbrt\(dp\)
 
     描述：立方根。
 
@@ -397,7 +396,7 @@
     (1 row)
     ```
 
--   ceil\(x\)
+- ceil\(x\)
 
     描述：不小于参数的最小的整数。
 
@@ -413,7 +412,7 @@
     (1 row)
     ```
 
--   ceiling\(dp or numeric\)
+- ceiling\(dp or numeric\)
 
     描述：不小于参数的最小整数（ceil的别名）。
 
@@ -429,7 +428,7 @@
     (1 row)
     ```
 
--   cos\(x\)
+- cos\(x\)
 
     描述：余弦。
 
@@ -445,7 +444,7 @@
     (1 row)
     ```
 
--   cot\(x\)
+- cot\(x\)
 
     描述：余切。
 
@@ -461,7 +460,7 @@
     (1 row)
     ```
 
--   degrees\(dp\)
+- degrees\(dp\)
 
     描述：把弧度转为角度。
 
@@ -477,7 +476,7 @@
     (1 row)
     ```
 
--   div\(y numeric, x numeric\)
+- div\(y numeric, x numeric\)
 
     描述：y除以x的商的整数部分。
 
@@ -493,7 +492,7 @@
     (1 row)
     ```
 
--   exp\(x\)
+- exp\(x\)
 
     描述：自然指数。
 
@@ -509,7 +508,7 @@
     (1 row)
     ```
 
--   floor\(x\)
+- floor\(x\)
 
     描述：不大于参数的最大整数。
 
@@ -525,7 +524,7 @@
     (1 row)
     ```
 
--   int1\(in\)
+- int1\(in\)
 
     描述：将传入的text参数转换为int1类型值并返回。
 
@@ -546,7 +545,7 @@
     (1 row)
     ```
 
--   int2\(in\)
+- int2\(in\)
 
     描述：将传入参数转换为int2类型值并返回。
 
@@ -569,7 +568,7 @@
     (1 row)
     ```
 
--   int4\(in\)
+- int4\(in\)
 
     描述：将传入参数转换为int4类型值并返回。
 
@@ -592,7 +591,7 @@
     (1 row)
     ```
 
--   float4\(in\)
+- float4\(in\)
 
     描述：将传入参数转换为float4类型值并返回。支持的入参类型包括：bigint，duoble precision，int16, integer, numeric，smallint，text。
 
@@ -614,7 +613,7 @@
     (1 row)
     ```
 
--   float8\(in\)
+- float8\(in\)
 
     描述：将传入参数转换为float8类型值并返回。支持的入参类型包括：bigint，int16, integer, numeric，real，smallint，text。
 
@@ -636,7 +635,7 @@
     (1 row)
     ```
 
--   int16\(in\)
+- int16\(in\)
 
     描述：将传入参数转换为int16类型值并返回。支持的入参类型包括：bigint，boolean，double precision，integer，numeric，oid，real，smallint，tinyint。
 
@@ -658,7 +657,7 @@
     (1 row)
     ```
 
--   numeric\(in\)
+- numeric\(in\)
 
     描述：将传入参数转换为numeric类型值并返回。支持的入参类型包括：bigint，boolean，double precision，int16，integer，money，real，smallint。
 
@@ -680,13 +679,13 @@
     (1 row)
     ```
 
--   oid\(in\)
+- oid\(in\)
 
     描述：将传入参数转换为oid类型值并返回。支持的入参类型包括：bigint，int16。
 
     返回值类型：oid
 
--   natural\(in\)
+- natural\(in\)
 
     描述：将传入参数转换为natural类型值并返回。支持的入参类型包括：tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric。
 
@@ -708,7 +707,7 @@
     (1 row)
     ```
 
-    -   naturaln\(in\)
+    - naturaln\(in\)
 
     描述：将传入参数转换为naturaln类型值并返回。支持的入参类型包括：tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric。
 
@@ -730,7 +729,7 @@
     (1 row)
     ```
 
-    -   positive\(in\)
+    - positive\(in\)
 
     描述：将传入参数转换为positive类型值并返回。支持的入参类型包括：tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric。
 
@@ -752,7 +751,7 @@
     (1 row)
     ```
 
-    -   positiven\(in\)
+    - positiven\(in\)
 
     描述：将传入参数转换为positiven类型值并返回。支持的入参类型包括：tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric。
 
@@ -774,7 +773,7 @@
     (1 row)
     ```
 
-    -   signtype\(in\)
+    - signtype\(in\)
 
     描述：将传入参数转换为signtype类型值并返回。支持的入参类型包括：tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric。
 
@@ -796,7 +795,7 @@
     (1 row)
     ```
 
-    -   simple_integer\(in\)
+    - simple_integer\(in\)
 
     描述：将传入参数转换为simple_integer类型值并返回。支持的入参类型包括：tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric。
 
@@ -818,7 +817,7 @@
     (1 row)
     ```
 
--   radians\(dp\)
+- radians\(dp\)
 
     描述：把角度转为弧度。
 
@@ -834,7 +833,7 @@
     (1 row)
     ```
 
--   random\(\)
+- random\(\)
 
     描述：0.0到1.0之间的随机数。
 
@@ -850,7 +849,7 @@
     (1 row)
     ```
 
--   multiply\(x double precision or text, y double precision or text\)
+- multiply\(x double precision or text, y double precision or text\)
 
     描述：x和y的乘积。仅支持multiply\(x double precision, y text\)和multiply\(x text, y double precision\)的两种场景。
 
@@ -871,7 +870,7 @@
     (1 row)
     ```
 
--   ln\(x\)
+- ln\(x\)
 
     描述：自然对数。
 
@@ -887,7 +886,7 @@
     (1 row)
     ```
 
--   log\(x\)
+- log\(x\)
 
     描述：以10为底的对数。
 
@@ -902,6 +901,7 @@
      2.0000000000000000
     (1 row)
     ```
+
     特性补充：在B库中log函数返回自然对数
 
     示例：
@@ -914,7 +914,7 @@
     (1 row)
     ```
 
--   log\(b numeric, x numeric\)
+- log\(b numeric, x numeric\)
 
     描述：以b为底的对数。
 
@@ -930,7 +930,7 @@
     (1 row)
     ```
 
--   mod\(x,y\)
+- mod\(x,y\)
 
     描述：x/y的余数（模）。如果x是0，则返回0。
 
@@ -954,7 +954,7 @@
     (1 row)
     ```
 
--   pi\(\)
+- pi\(\)
 
     描述：“π”常量。
 
@@ -970,7 +970,7 @@
     (1 row)
     ```
 
--   power\(a double precision, b double precision\)
+- power\(a double precision, b double precision\)
 
     描述：a的b次幂。
 
@@ -986,7 +986,7 @@
     (1 row)
     ```
 
--   round\(x\)
+- round\(x\)
 
     描述：离输入参数最近的整数。
 
@@ -1008,7 +1008,7 @@
     (1 row)
     ```
 
--   round\(v numeric, s int\)
+- round\(v numeric, s int\)
 
     描述：保留小数点后s位，s后一位进行四舍五入。
 
@@ -1024,7 +1024,7 @@
     (1 row)
     ```
 
--   setseed\(dp\)
+- setseed\(dp\)
 
     描述：为随后的random\(\)调用设置种子\(-1.0到1.0之间，包含\)。
 
@@ -1040,7 +1040,7 @@
     (1 row)
     ```
 
--   sign\(x\)
+- sign\(x\)
 
     描述：输出此参数的符号。
 
@@ -1056,7 +1056,7 @@
     (1 row)
     ```
 
--   sin\(x\)
+- sin\(x\)
 
     描述：正弦。
 
@@ -1072,7 +1072,7 @@
     (1 row)
     ```
 
--   sqrt\(x\)
+- sqrt\(x\)
 
     描述：平方根。
 
@@ -1088,7 +1088,7 @@
     (1 row)
     ```
 
--   tan\(x\)
+- tan\(x\)
 
     描述：正切。
 
@@ -1104,7 +1104,7 @@
     (1 row)
     ```
 
--   trunc\(x\)
+- trunc\(x\)
 
     描述：截断（取整数部分）。
 
@@ -1120,7 +1120,7 @@
     (1 row)
     ```
 
--   trunc\(v numeric, s int4\)
+- trunc\(v numeric, s int4\)
 
     描述：截断为s位小数（trunc只支持截断不超过int4类型最大值的位数）。
 
@@ -1136,19 +1136,19 @@
     (1 row)
     ```
 
--   smgrne\(a smgr, b smgr\)
+- smgrne\(a smgr, b smgr\)
 
     描述：比较两个smgr类型整数是否不相等。
 
     返回值类型：bool
 
--   smgreq\(a smgr, b smgr\)
+- smgreq\(a smgr, b smgr\)
 
     描述：比较两个smgr类型整数是否相等。
 
     返回值类型：bool
 
--   int1abs
+- int1abs
 
     描述：返回uint8类型数据的绝对值。
 
@@ -1156,7 +1156,7 @@
 
     返回值类型：tinyint
 
--   int1and
+- int1and
 
     描述：返回两个uint8类型数据按位与的结果。
 
@@ -1164,7 +1164,7 @@
 
     返回值类型：tinyint
 
--   int1cmp
+- int1cmp
 
     描述：返回两个uint8类型数据比较的结果，若第一个参数大，则返回1；若第二个参数大，则返回-1；若相等，则返回0。
 
@@ -1172,7 +1172,7 @@
 
     返回值类型：integer
 
--   int1div
+- int1div
 
     描述：返回两个uint8类型数据相除的结果，结果为float8类型。
 
@@ -1180,7 +1180,7 @@
 
     返回值类型：tinyint
 
--   int1eq
+- int1eq
 
     描述：比较两个uint8类型数据是否相等。
 
@@ -1188,7 +1188,7 @@
 
     返回值类型：boolean
 
--   int1ge
+- int1ge
 
     描述：判断两个uint8类型数据是否第一个参数大于等于第二个参数。
 
@@ -1196,7 +1196,7 @@
 
     返回值类型：boolean
 
--   int1gt
+- int1gt
 
     描述：无符号1字节整数做大于运算。
 
@@ -1204,7 +1204,7 @@
 
     返回值类型：boolean
 
--   int1larger
+- int1larger
 
     描述：无符号1字节整数求最大值。
 
@@ -1212,7 +1212,7 @@
 
     返回值类型：tinyint
 
--   int1le
+- int1le
 
     描述：无符号1字节整数做小于等于运算。
 
@@ -1220,7 +1220,7 @@
 
     返回值类型：boolean
 
--   int1lt
+- int1lt
 
     描述：无符号1字节整数做小于运算。
 
@@ -1228,7 +1228,7 @@
 
     返回值类型：boolean
 
--   int1smaller
+- int1smaller
 
     描述：无符号1字节整数求最小算。
 
@@ -1236,7 +1236,7 @@
 
     返回值类型：tinyint
 
--   int1inc
+- int1inc
 
     描述：无符号1字节整数加一。
 
@@ -1244,7 +1244,7 @@
 
     返回值类型：tinyint
 
--   int1mi
+- int1mi
 
     描述：无符号一字节整数做差运算。
 
@@ -1252,7 +1252,7 @@
 
     返回值类型：tinyint
 
--   int1mod
+- int1mod
 
     描述：无符号一字节整数做取余运算。
 
@@ -1260,7 +1260,7 @@
 
     返回值类型：tinyint
 
--   int1mul
+- int1mul
 
     描述：无符号一字节整数做乘法运算。
 
@@ -1268,7 +1268,7 @@
 
     返回值类型：tinyint
 
--   int1ne
+- int1ne
 
     描述：无符号一字节整数不等于运算。
 
@@ -1276,7 +1276,7 @@
 
     返回值类型：boolean
 
--   int1pl
+- int1pl
 
     描述：无符号一字节整数加法。
 
@@ -1284,7 +1284,7 @@
 
     返回值类型：tinyint
 
--   int1um
+- int1um
 
     描述：无符号一字节数去相反数并返回有符号二字节整数。
 
@@ -1292,7 +1292,7 @@
 
     返回值类型：smallint
 
--   int1xor
+- int1xor
 
     描述：无符号一字节整数异或操作。
 
@@ -1300,7 +1300,7 @@
 
     返回值类型：tinyint
 
--   cash\_div\_int1
+- cash\_div\_int1
 
     描述：对money类型进行除法运算。
 
@@ -1308,7 +1308,7 @@
 
     返回值类型：money
 
--   cash\_mul\_int1
+- cash\_mul\_int1
 
     描述：对money类型进行乘法运算。
 
@@ -1316,7 +1316,7 @@
 
     返回值类型：money
 
--   int1not
+- int1not
 
     描述：无符号一字节整数二进制位翻转。
 
@@ -1324,7 +1324,7 @@
 
     返回值类型：tinyint
 
--   int1or
+- int1or
 
     描述：无符号一字节整数或运算。
 
@@ -1332,7 +1332,7 @@
 
     返回值类型：tinyint
 
--   int1shl
+- int1shl
 
     描述：无符号一字节整数左移指定位数。
 
@@ -1340,7 +1340,7 @@
 
     返回值类型：tinyint
 
--   width\_bucket\(op numeric, b1 numeric, b2 numeric, count int\)
+- width\_bucket\(op numeric, b1 numeric, b2 numeric, count int\)
 
     描述：返回一个桶，这个桶是在一个有count个桶，上界为b1下界为b2的等深柱图中operand将被赋予的那个桶。
 
@@ -1356,7 +1356,7 @@
     (1 row)
     ```
 
--   width\_bucket\(op dp, b1 dp, b2 dp, count int\)
+- width\_bucket\(op dp, b1 dp, b2 dp, count int\)
 
     描述：返回一个桶，这个桶是在一个有count个桶，上界为b1下界为b2的等深柱图中operand将被赋予的那个桶。
 
@@ -1371,5 +1371,3 @@
                 3
     (1 row)
     ```
-
-

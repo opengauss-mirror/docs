@@ -25,4 +25,3 @@ CREATE OPERATOR FAMILY name USING index_method
 ```sql
 CREATE OPERATOR FAMILY family_name USING btree;
 ```
-

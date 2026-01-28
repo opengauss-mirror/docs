@@ -4,7 +4,7 @@
 
 ## 语法格式<a name="section1579716574370"></a>
 
--   定义游标
+- 定义游标
 
     ```
     CURSOR cursor_name
@@ -12,7 +12,7 @@
         FOR query ;
     ```
 
--   通过已经创建的游标检索数据
+- 通过已经创建的游标检索数据
 
     ```
     FETCH [ direction { FROM | IN } ] cursor_name;
@@ -37,7 +37,7 @@
        | BACKWARD ALL
     ```
 
--   在不检索数据的情况下重新定位一个游标
+- 在不检索数据的情况下重新定位一个游标
 
     MOVE的作用类似于FETCH命令，但只是重定位游标而不返回行。
 
@@ -64,68 +64,67 @@
        | BACKWARD ALL
     ```
 
--   关闭游标，释放和一个游标关联的所有资源
+- 关闭游标，释放和一个游标关联的所有资源
 
     ```
     CLOSE { cursor_name | ALL } ;
     ```
 
-
 ## 参数说明<a name="section1353875110388"></a>
 
--   **cursor\_name**
+- **cursor\_name**
 
     将要创建、关闭的游标名。
 
--   **BINARY**
+- **BINARY**
 
     指明游标以二进制而不是文本格式返回数据。
 
--   **NO SCROLL**
+- **NO SCROLL**
 
     声明游标检索数据行的方式。
 
-    -   NO SCROLL：声明该游标不能用于以倒序的方式检索数据行。
-    -   未声明：根据执行计划的不同，自动判断该游标是否可以用于以倒序的方式检索数据行。
+    - NO SCROLL：声明该游标不能用于以倒序的方式检索数据行。
+    - 未声明：根据执行计划的不同，自动判断该游标是否可以用于以倒序的方式检索数据行。
 
--   **WITH HOLD | WITHOUT HOLD**
+- **WITH HOLD | WITHOUT HOLD**
 
     声明当创建游标的事务结束后，游标是否能继续使用。
 
-    -   WITH HOLD：声明该游标在创建它的事务结束后仍可继续使用。
-    -   WITHOUT HOLD：声明该游标在创建它的事务之外不能再继续使用，此游标将在事务结束时被自动关闭。
-    -   如果不指定WITH HOLD或WITHOUT HOLD，默认行为是WITHOUT HOLD。
-    -   跨节点事务不支持WITH HOLD（例如在多DBnode部署openGauss中所创建的含有DDL的事务属于跨节点事务）。
+    - WITH HOLD：声明该游标在创建它的事务结束后仍可继续使用。
+    - WITHOUT HOLD：声明该游标在创建它的事务之外不能再继续使用，此游标将在事务结束时被自动关闭。
+    - 如果不指定WITH HOLD或WITHOUT HOLD，默认行为是WITHOUT HOLD。
+    - 跨节点事务不支持WITH HOLD（例如在多DBnode部署openGauss中所创建的含有DDL的事务属于跨节点事务）。
 
--   **query**
+- **query**
 
     使用SELECT或VALUES子句指定游标返回的行。
 
     取值范围：SELECT或VALUES子句。
 
--   **direction**
+- **direction**
 
     定义抓取数据的方向。
 
     取值范围：
 
-    -   NEXT（缺省值）
+    - NEXT（缺省值）
 
         从当前关联位置开始，抓取下一行。
 
-    -   PRIOR
+    - PRIOR
 
         从当前关联位置开始，抓取上一行。
 
-    -   FIRST
+    - FIRST
 
         抓取查询的第一行（和ABSOLUTE 1相同）。
 
-    -   LAST
+    - LAST
 
         抓取查询的最后一行（和ABSOLUTE -1相同）。
 
-    -   ABSOLUTE count
+    - ABSOLUTE count
 
         抓取查询中第count行。
 
@@ -133,69 +132,67 @@
 
         count取值范围：有符号的整数
 
-        -   count为正数，就从查询结果的第一行开始，抓取第count行。
-        -   count为负数，就从查询结果末尾抓取第abs\(_count_\)行。
-        -   count为0时，定位在第一行之前。
+        - count为正数，就从查询结果的第一行开始，抓取第count行。
+        - count为负数，就从查询结果末尾抓取第abs\(_count_\)行。
+        - count为0时，定位在第一行之前。
 
-    -   RELATIVE count
+    - RELATIVE count
 
         从当前关联位置开始，抓取随后或前面的第count行。
 
         取值范围：有符号的整数
 
-        -   count为正数就抓取当前关联位置之后的第count行。
-        -   count为负数就抓取当前关联位置之前的第abs\(count\)行。
-        -   如果当前行没有数据的话，RELATIVE 0返回空。
+        - count为正数就抓取当前关联位置之后的第count行。
+        - count为负数就抓取当前关联位置之前的第abs\(count\)行。
+        - 如果当前行没有数据的话，RELATIVE 0返回空。
 
-    -   count
+    - count
 
         抓取随后的count行（和FORWARD count一样）。
 
-    -   ALL
+    - ALL
 
         从当前关联位置开始，抓取所有剩余的行（和FORWARD ALL一样）。
 
-    -   FORWARD
+    - FORWARD
 
         抓取下一行（和NEXT一样）。
 
-    -   FORWARD count
+    - FORWARD count
 
         从当前关联位置开始，抓取随后或前面的count行。
 
-    -   FORWARD ALL
+    - FORWARD ALL
 
         从当前关联位置开始，抓取所有剩余行。
 
-    -   BACKWARD
+    - BACKWARD
 
         从当前关联位置开始，抓取前面一行\(和PRIOR一样\) 。
 
-    -   BACKWARD count
+    - BACKWARD count
 
         从当前关联位置开始，抓取前面的count行（向后扫描）。
 
         取值范围：有符号的整数
 
-        -   count为正数就抓取当前关联位置之前的count行。
-        -   count为负数就抓取当前关联位置之后的abs（count）行。
-        -   如果有数据的话，BACKWARD 0重新抓取当前行。
+        - count为正数就抓取当前关联位置之前的count行。
+        - count为负数就抓取当前关联位置之后的abs（count）行。
+        - 如果有数据的话，BACKWARD 0重新抓取当前行。
 
-    -   BACKWARD ALL
+    - BACKWARD ALL
 
         从当前关联位置开始，抓取所有前面的行（向后扫描） 。
 
-
--   **\{ FROM | IN \} cursor\_name**
+- **\{ FROM | IN \} cursor\_name**
 
     使用关键字FROM或IN指定游标名称。
 
     取值范围：已创建的游标的名称。
 
--   **ALL**
+- **ALL**
 
     关闭所有已打开的游标。
-
 
 ## 示例<a name="section19525201318500"></a>
 
@@ -213,7 +210,7 @@ openGauss=# SELECT * FROM customer_t1;
 (5 rows)
 ```
 
--   用一个游标读取一个表。
+- 用一个游标读取一个表。
 
     ```
     --开始一个事务。
@@ -242,8 +239,7 @@ openGauss=# SELECT * FROM customer_t1;
     COMMIT
     ```
 
-
--   用一个游标读取VALUES子句中的内容。
+- 用一个游标读取VALUES子句中的内容。
 
     ```
     --开始一个事务。
@@ -271,7 +267,7 @@ openGauss=# SELECT * FROM customer_t1;
     COMMIT
     ```
 
--   WITH HOLD游标的使用。
+- WITH HOLD游标的使用。
 
     ```
     --开启事务。
@@ -304,7 +300,7 @@ openGauss=# SELECT * FROM customer_t1;
     CLOSE CURSOR
     ```
 
--   MOVE语句的使用。
+- MOVE语句的使用。
 
     ```
     --开始一个事务。
@@ -348,7 +344,6 @@ openGauss=# SELECT * FROM customer_t1;
 - 创建的type为弱游标类型。
 - 该type类型如果作为out参数返回是游标类型。
 
-
 ### 语法格式
 
 ```sql
@@ -363,8 +358,6 @@ TYPE type_name IS REF CURSOR RETURN record_name ;
 - **record_name**
 
     使用数据类型说明符 RECORD 定义的用户定义类型的名称。
-
-
 
 ### 兼容性
 
@@ -408,8 +401,6 @@ end;
 ```sql
 ANONYMOUS BLOCK EXECUTE
 ```
-
-
 
 **示例2：** 弱游标类型。
 

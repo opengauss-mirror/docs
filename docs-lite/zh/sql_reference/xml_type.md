@@ -25,5 +25,4 @@ xmlconcat
 
 >[!NOTE]说明
 >
->-   该功能默认未开启，如需使用，需要修改openGauss-server源码中的cmake/src/build_options.cmake文件，将143行set(USE_LIBXML OFF)去掉，重新使用build/script中cmake_package_mini.sh脚本编译数据库；详细使用指导见企业版。
-
+>- 该功能默认未开启，如需使用，需要修改openGauss-server源码中的cmake/src/build_options.cmake文件，将143行set(USE_LIBXML OFF)去掉，重新使用build/script中cmake_package_mini.sh脚本编译数据库；详细使用指导见企业版。

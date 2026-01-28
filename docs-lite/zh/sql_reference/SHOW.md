@@ -42,4 +42,3 @@ openGauss=# SHOW VARIABLES LIKE var;
 ## 相关链接<a name="zh-cn_topic_0283136640_zh-cn_topic_0237122191_zh-cn_topic_0059779163_s5f7ae1b9fc8c4edfa04138996c61eaa4"></a>
 
 [SET](SET.md)，[RESET](RESET.md)
-

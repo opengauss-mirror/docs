@@ -4,7 +4,7 @@
 
 条件表达式主要有以下几种：
 
--   CASE
+- CASE
 
     CASE表达式是条件表达式，类似于其他编程语言中的CASE语句。
 
@@ -15,9 +15,9 @@
 
     CASE子句可以用于合法的表达式中。condition是一个返回BOOLEAN数据类型的表达式：
 
-    -   如果结果为真，CASE表达式的结果就是符合该条件所对应的result。
-    -   如果结果为假，则以相同方式处理随后的WHEN或ELSE子句。
-    -   如果各WHEN  condition都不为真，表达式的结果就是在ELSE子句执行的result。如果省略了ELSE子句且没有匹配的条件，结果为NULL。
+    - 如果结果为真，CASE表达式的结果就是符合该条件所对应的result。
+    - 如果结果为假，则以相同方式处理随后的WHEN或ELSE子句。
+    - 如果各WHEN  condition都不为真，表达式的结果就是在ELSE子句执行的result。如果省略了ELSE子句且没有匹配的条件，结果为NULL。
 
     示例：
 
@@ -45,7 +45,7 @@
     openGauss=# DROP TABLE tpcds.case_when_t1;
     ```
 
--   DECODE
+- DECODE
 
     DECODE的语法图请参见[图2](#zh-cn_topic_0283136958_zh-cn_topic_0237122002_zh-cn_topic_0059777797_f8e62b15fa92349339fcdb77fcc5fef4d)。
 
@@ -64,7 +64,7 @@
     (1 row)
     ```
 
--   COALESCE
+- COALESCE
 
     COALESCE的语法图请参见[图3](#zh-cn_topic_0283136958_zh-cn_topic_0237122002_zh-cn_topic_0059777797_f1877c9f8d2ac4964828a6eaaddf5f35f)。
 
@@ -104,7 +104,7 @@
     (1 row)
     ```
 
--   NULLIF
+- NULLIF
 
     NULLIF的语法图请参见[图4](#zh-cn_topic_0283136958_zh-cn_topic_0237122002_zh-cn_topic_0059777797_f6c5bc64bf5de4b728ed1d73d97768e6e)。
 
@@ -144,7 +144,7 @@
     (1 row)
     ```
 
--   GREATEST（最大值），LEAST（最小值）
+- GREATEST（最大值），LEAST（最小值）
 
     GREATEST的语法图请参见[图5](#zh-cn_topic_0283136958_zh-cn_topic_0237122002_zh-cn_topic_0059777797_f23a83b0f987a49e0b6890280568afbd2)。
 
@@ -182,7 +182,7 @@
 
     示例请参见[条件表达式函数](conditional_expression_function.md)。
 
--   NVL
+- NVL
 
     NVL的语法图请参见[图7](#zh-cn_topic_0283136958_zh-cn_topic_0237122002_zh-cn_topic_0059777797_f69cd4e01dd6e4280b756eb98d3c77c91)。
 
@@ -209,5 +209,3 @@
      Hello World
     (1 row)
     ```
-
-

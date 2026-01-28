@@ -21,48 +21,46 @@ pg_resetxlog [OPTION]... DATADIR
 
 OPTION取值如下所示：
 
--   DATADIR
+- DATADIR
 
     需要修改的数据库目录，确保路径正确。
 
--   -e XIDEPOCH
+- -e XIDEPOCH
 
     设置下一个事务id。
 
--   -f
+- -f
 
     强制更新。
 
--   -l xlogfile
+- -l xlogfile
 
     为新的事务日志指定最小的WAL起始位置。
 
--   -m XID
+- -m XID
 
     设置下一个multitransaction ID。
 
--   -n
+- -n
 
     不更新，仅显示配置文件的值。
 
--   -o OID
+- -o OID
 
     设置下一个OID。
 
--   -O OFFSET
+- -O OFFSET
 
     设置下一个multitransaction的偏移量。
 
--   -V, --version
+- -V, --version
 
     显示版本信息。
 
--   -x XID
+- -x XID
 
     设置下一个事务ID。
 
--   -?, --help
+- -?, --help
 
     打印帮助信息。
-
-

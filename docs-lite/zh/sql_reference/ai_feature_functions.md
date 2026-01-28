@@ -3,7 +3,7 @@
 >[!NOTE]说明
 >轻量版场景下，openGauss提供下述接口，但AI能力不可用。
 
--   gs\_index\_advise\(text\)
+- gs\_index\_advise\(text\)
 
     描述：针对单条查询语句推荐索引。
 
@@ -11,7 +11,7 @@
 
     返回值类型：record
 
--   hypopg\_create\_index\(text\)
+- hypopg\_create\_index\(text\)
 
     描述：创建虚拟索引。
 
@@ -19,7 +19,7 @@
 
     返回值类型：record
 
--   hypopg\_display\_index\(\)
+- hypopg\_display\_index\(\)
 
     描述：显示所有创建的虚拟索引信息。
 
@@ -27,7 +27,7 @@
 
     返回值类型：record
 
--   hypopg\_drop\_index\(oid\)
+- hypopg\_drop\_index\(oid\)
 
     描述：删除指定的虚拟索引。
 
@@ -35,7 +35,7 @@
 
     返回值类型：bool
 
--   hypopg\_reset\_index\(\)
+- hypopg\_reset\_index\(\)
 
     描述：清除所有虚拟索引。
 
@@ -43,7 +43,7 @@
 
     返回值类型：无
 
--   hypopg\_estimate\_size\(oid\)
+- hypopg\_estimate\_size\(oid\)
 
     描述：估计指定索引创建所需的空间大小。
 
@@ -51,7 +51,7 @@
 
     返回值类型：int8
 
--   check\_engine\_status\(ip text, port text\)
+- check\_engine\_status\(ip text, port text\)
 
     描述：测试给定的ip和port上是否有predictor engine提供服务。
 
@@ -59,7 +59,7 @@
 
     返回值类型：text
 
--   encode\_plan\_node\(optname text, orientation text, strategy text, options text, dop int8, quals text, projection text\)
+- encode\_plan\_node\(optname text, orientation text, strategy text, options text, dop int8, quals text, projection text\)
 
     描述：对入参的计划算子信息进行编码。
 
@@ -70,7 +70,7 @@
     >[!NOTE]说明
     >该函数为内部功能调用函数。
 
--   model\_train\_opt\(template text, model text\)
+- model\_train\_opt\(template text, model text\)
 
     描述：训练给定的查询性能预测模型。
 
@@ -78,7 +78,7 @@
 
     返回值类型：tartup\_time\_accuracy FLOAT8,  total\_time\_accuracy FLOAT8,  rows\_accuracy FLOAT8, peak\_memory\_accuracy FLOAT8
 
--   track\_model\_train\_opt\(ip text, port text\)
+- track\_model\_train\_opt\(ip text, port text\)
 
     描述：返回给定ip和port predictor engine的训练日志地址。
 
@@ -86,7 +86,7 @@
 
     返回值类型：text
 
--   encode\_feature\_perf\_hist\(datname text\)
+- encode\_feature\_perf\_hist\(datname text\)
 
     描述：将目标数据库已收集的历史计划算子进行编码。
 
@@ -94,7 +94,7 @@
 
     返回值类型：queryid bigint, plan\_node\_id int, parent\_node\_id int, left\_child\_id int, right\_child\_id int, encode text, startup\_time bigint, total\_time bigint, rows bigint, peak\_memory int
 
--   gather\_encoding\_info\(datname text\)
+- gather\_encoding\_info\(datname text\)
 
     描述：调用encode\_feature\_perf\_hist，将编码好的数据进行持久化保存。
 
@@ -102,7 +102,7 @@
 
     返回值类型：int
 
--   db4ai\_predict\_by\_bool \(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_bool \(text, VARIADIC "any"\)
 
     描述：获取返回值为布尔型的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
 
@@ -110,7 +110,7 @@
 
     返回值类型：bool
 
--   db4ai\_predict\_by\_float4\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_float4\(text, VARIADIC "any"\)
 
     描述：获取返回值为float4的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
 
@@ -118,7 +118,7 @@
 
     返回值类型：float
 
--   db4ai\_predict\_by\_float8\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_float8\(text, VARIADIC "any"\)
 
     描述：获取返回值为float8的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
 
@@ -126,7 +126,7 @@
 
     返回值类型：float
 
--   db4ai\_predict\_by\_int32\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_int32\(text, VARIADIC "any"\)
 
     描述：获取返回值为int32的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
 
@@ -134,7 +134,7 @@
 
     返回值类型：int
 
--   db4ai\_predict\_by\_int64\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_int64\(text, VARIADIC "any"\)
 
     描述：获取返回值为int64的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
 
@@ -142,7 +142,7 @@
 
     返回值类型：int
 
--   db4ai\_predict\_by\_numeric\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_numeric\(text, VARIADIC "any"\)
 
     描述：获取返回值为numeric的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
 
@@ -150,7 +150,7 @@
 
     返回值类型：numeric
 
--   db4ai\_predict\_by\_text\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_text\(text, VARIADIC "any"\)
 
     描述：获取返回值为字符型的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
 
@@ -158,7 +158,7 @@
 
     返回值类型：text
 
--   db4ai\_predict\_by\_float8\_array\(text, VARIADIC "any"\)
+- db4ai\_predict\_by\_float8\_array\(text, VARIADIC "any"\)
 
     描述：获取返回值为字符型的模型进行模型推断任务。此函数为内部调用函数，建议直接使用语法PREDICT BY进行推断任务。
 
@@ -166,12 +166,10 @@
 
     返回值类型：text
 
--   gs\_explain\_model\(text\)
+- gs\_explain\_model\(text\)
 
     描述：获取返回值为字符型的模型进行模型解析文本化任务。
 
     参数：模型名称。
 
     返回值类型：text
-
-

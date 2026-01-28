@@ -2,7 +2,7 @@
 
 ## 条件表达式函数<a name="zh-cn_topic_0283136903_zh-cn_topic_0237121986_zh-cn_topic_0059778809_s67706c61c09047c4bca384689f7f5c08"></a>
 
--   coalesce\(expr1, expr2, ..., exprn\)
+- coalesce\(expr1, expr2, ..., exprn\)
 
     描述：
 
@@ -22,11 +22,11 @@
 
     备注：
 
-    -   如果表达式列表中的所有表达式都等于NULL，则本函数返回NULL。
-    -   它常用于在显示数据时用缺省值替换NULL。
-    -   和CASE表达式一样，COALESCE不会计算不需要用来判断结果的参数；即在第一个非空参数右边的参数不会被计算。
+    - 如果表达式列表中的所有表达式都等于NULL，则本函数返回NULL。
+    - 它常用于在显示数据时用缺省值替换NULL。
+    - 和CASE表达式一样，COALESCE不会计算不需要用来判断结果的参数；即在第一个非空参数右边的参数不会被计算。
 
--   decode\(base\_expr, compare1, value1, Compare2,value2, … default\)
+- decode\(base\_expr, compare1, value1, Compare2,value2, … default\)
 
     描述：把base\_expr与后面的每个compare\(n\) 进行比较，如果匹配返回相应的value\(n\)。如果没有发生匹配，则返回default。
 
@@ -39,9 +39,10 @@
      1
     (1 row)
     ```
+
     备注：不支持对xml数据类型的操作。   
 
--   nullif\(expr1, expr2\)
+- nullif\(expr1, expr2\)
 
     描述：当且仅当expr1和expr2相等时，NULLIF才返回NULL，否则它返回expr1。
 
@@ -59,11 +60,11 @@
 
     备注：
 
-    -  不支持对xml数据类型的操作。
+    - 不支持对xml数据类型的操作。
     
-    -  如果两个参数的数据类型不同，则：
+    - 如果两个参数的数据类型不同，则：
 
-       -   若两种数据类型之间存在隐式转换，则以其中优先级较高的数据类型为基准将另一个参数隐式转换成该类型，转换成功则进行计算，转换失败则返回错误。如：
+       - 若两种数据类型之间存在隐式转换，则以其中优先级较高的数据类型为基准将另一个参数隐式转换成该类型，转换成功则进行计算，转换失败则返回错误。如：
 
           ```
           openGauss=# SELECT nullif('1234'::VARCHAR,123::INT4);
@@ -72,13 +73,13 @@
            1234
         (1 row)
         ```
-      
+
         ```
         openGauss=# SELECT nullif('1234'::VARCHAR,'2012-12-24'::DATE);
         ERROR:  invalid input syntax for type timestamp: "1234"
         ```
       
-      -   若两种数据类型之间不存在隐式转换，则返回错误 。如：
+      - 若两种数据类型之间不存在隐式转换，则返回错误 。如：
       
        ```
         openGauss=# SELECT nullif(TRUE::BOOLEAN,'2012-12-24'::DATE);
@@ -88,13 +89,12 @@
         HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
         ```
 
-
--   nvl\( expr1 , expr2 \)
+- nvl\( expr1 , expr2 \)
 
     描述：
 
-    -   如果expr1为NULL则返回expr2。
-    -   如果expr1非NULL，则返回expr1。
+    - 如果expr1为NULL则返回expr2。
+    - 如果expr1非NULL，则返回expr1。
 
     示例：
 
@@ -108,7 +108,7 @@
 
     备注：参数expr1和expr2可以为任意类型，当NVL的两个参数不属于同类型时，看第二个参数是否可以向第一个参数进行隐式转换。如果可以则返回第一个参数类型，否则返回错误。
 
--   greatest\(expr1 \[, ...\]\)
+- greatest\(expr1 \[, ...\]\)
 
     描述：获取并返回参数列表中值最大的表达式的值。
 
@@ -131,9 +131,10 @@
      HARRY
     (1 row)
     ```
+
     备注：不支持对xml数据类型的操作。
 
--   least\(expr1 \[, ...\]\)
+- least\(expr1 \[, ...\]\)
 
     描述：获取并返回参数列表中值最小的表达式的值。
 
@@ -154,9 +155,10 @@
      HAROLD
     (1 row)
     ```
+
     备注：不支持对xml数据类型的操作。  
     
--   EMPTY\_BLOB\(\)
+- EMPTY\_BLOB\(\)
 
     描述：使用EMPTY\_BLOB在INSERT或UPDATE语句中初始化一个BLOB变量，取值为NULL。
 
@@ -172,5 +174,3 @@
     --删除表
     openGauss=# DROP TABLE blob_tb;
     ```
-
-

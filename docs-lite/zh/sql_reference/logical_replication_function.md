@@ -1,18 +1,18 @@
 # 逻辑复制函数<a name="ZH-CN_TOPIC_0289900082"></a>
 
--   pg\_create\_logical\_replication\_slot\('slot\_name', 'plugin\_name'\)
+- pg\_create\_logical\_replication\_slot\('slot\_name', 'plugin\_name'\)
 
     描述：创建逻辑复制槽。
 
     参数说明：
 
-    -   slot\_name
+    - slot\_name
 
         流复制槽名称。
 
         取值范围：字符串，仅支持小写字母，数字，以及_?-.字符，且不支持'.'或'..'单独作为复制槽名称。
 
-    -   plugin\_name
+    - plugin\_name
 
         插件名称。
 
@@ -22,29 +22,29 @@
 
     备注：第一个返回值表示slot\_name，第二个返回值表示该逻辑复制槽解码的起始LSN位置。调用该函数的用户需要具有SYSADMIN权限或具有REPLICATION权限或继承了内置角色gs\_role\_replication的权限。此函数目前只支持在主机调用。
 
--   pg\_create\_logical\_replication\_slot\('slot\_name', 'plugin\_name', 'restart\_lsn', 'confirmed\_flush'\)
+- pg\_create\_logical\_replication\_slot\('slot\_name', 'plugin\_name', 'restart\_lsn', 'confirmed\_flush'\)
 
     描述：创建逻辑复制槽，指定逻辑复制槽所需的restart_lsn和confirmed_flush。
 
     参数说明：
 
-    -   slot\_name
+    - slot\_name
 
         流复制槽名称。
 
         取值范围：字符串，仅支持小写字母，数字，以及_?-.字符，且不支持'.'或'..'单独作为复制槽名称。
 
-    -   plugin\_name
+    - plugin\_name
 
         插件名称。
 
         取值范围：字符串，当前支持mppdb\_decoding。
 
-    -   restart\_lsn
+    - restart\_lsn
 
         解码时从该点开始读取xlog日志。
 
-    -   confirmed\_flush
+    - confirmed\_flush
 
         该逻辑复制槽解码的起始LSN位置。
 
@@ -52,19 +52,19 @@
 
     备注：第一个返回值表示slot\_name，第二个返回值表示该逻辑复制槽解码的起始LSN位置。调用该函数的用户需要具有SYSADMIN权限或具有REPLICATION权限或继承了内置角色gs\_role\_replication的权限。此函数目前只支持在主机调用。
 
--   pg\_create\_physical\_replication\_slot\('slot\_name', 'isDummyStandby'\)
+- pg\_create\_physical\_replication\_slot\('slot\_name', 'isDummyStandby'\)
 
     描述：创建新的物理复制槽。
 
     参数说明：
 
-    -   slot\_name
+    - slot\_name
 
         流复制槽名称。
 
         取值范围：字符串，仅支持小写字母，数字，以及_?-.字符，且不支持'.'或'..'单独作为复制槽名称。
 
-    -   isDummyStandby
+    - isDummyStandby
 
         是否是从从备连接主机创建的复制槽。
 
@@ -74,13 +74,13 @@
 
     备注：调用该函数的用户需要具有SYSADMIN权限或具有REPLICATION权限或继承了内置角色gs\_role\_replication的权限。目前默认不支持主备从部署模式。
 
--   pg\_drop\_replication\_slot\('slot\_name'\)
+- pg\_drop\_replication\_slot\('slot\_name'\)
 
     描述：删除流复制槽。
 
     参数说明：
 
-    -   slot\_name
+    - slot\_name
 
         流复制槽名称。
 
@@ -90,25 +90,25 @@
 
     备注：调用该函数的用户需要具有SYSADMIN权限或具有REPLICATION权限或继承了内置角色gs\_role\_replication的权限。此函数目前只支持在主机调用。
 
--   <a name="zh-cn_topic_0283137128_zh-cn_topic_0237121996_li11712645125"></a>pg\_logical\_slot\_peek\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)
+- <a name="zh-cn_topic_0283137128_zh-cn_topic_0237121996_li11712645125"></a>pg\_logical\_slot\_peek\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)
 
     描述：解码并不推进流复制槽（下次解码可以再次获取本次解出的数据）。
 
     参数说明：
 
-    -   slot\_name
+    - slot\_name
 
         流复制槽名称。
 
         取值范围：字符串，仅支持小写字母，数字，以及_?-.字符，且不支持'.'或'..'单独作为复制槽名称。
 
-    -   LSN
+    - LSN
 
         日志的LSN，表示只解码小于等于此LSN的日志。
 
         取值范围：字符串（LSN，格式为xlogid/xrecoff），如'1/2AAFC60'。为NULL时表示不对解码截止的日志位置做限制。
 
-    -   upto\_nchanges
+    - upto\_nchanges
 
         解码条数（包含begin和commit）。假设一共有三条事务，分别包含3、5、7条记录，如果upto\_nchanges为4，那么会解码出前两个事务共8条记录。解码完第二条事务时发现解码条数记录大于等于upto\_nchanges，会停止解码。
 
@@ -118,52 +118,52 @@
         >
         >LSN和upto\_nchanges中任一参数达到限制，解码都会结束。
 
-    -   options：此项为可选参数，由一系列options\_name和options\_value一一对应组成。
-        -   include-xids
+    - options：此项为可选参数，由一系列options\_name和options\_value一一对应组成。
+        - include-xids
 
             解码出的data列是否包含xid信息。
 
             取值范围：0或1，默认值为1。
 
-            -   0：设为0时，解码出的data列不包含xid信息。
-            -   1：设为1时，解码出的data列包含xid信息。
+            - 0：设为0时，解码出的data列不包含xid信息。
+            - 1：设为1时，解码出的data列包含xid信息。
 
-        -   skip-empty-xacts
+        - skip-empty-xacts
 
             解码时是否忽略空事务信息。
 
             取值范围：0或1，默认值为0。
 
-            -   0：设为0时，解码时不忽略空事务信息。
-            -   1：设为1时，解码时会忽略空事务信息。
+            - 0：设为0时，解码时不忽略空事务信息。
+            - 1：设为1时，解码时会忽略空事务信息。
 
-        -   include-timestamp
+        - include-timestamp
 
             解码信息是否包含commit时间戳。
 
             取值范围：0或1，默认值为0。
 
-            -   0：设为0时，解码信息不包含commit时间戳。
-            -   1：设为1时，解码信息包含commit时间戳。
+            - 0：设为0时，解码信息不包含commit时间戳。
+            - 1：设为1时，解码信息包含commit时间戳。
 
-        -   only-local
+        - only-local
 
             是否仅解码本地日志。
 
             取值范围：0或1，默认值为1。
 
-            -   0：设为0时，解码非本地日志和本地日志。
-            -   1：设为1时，仅解码本地日志。
+            - 0：设为0时，解码非本地日志和本地日志。
+            - 1：设为1时，仅解码本地日志。
 
-        -   force-binary
+        - force-binary
 
             是否以二进制格式输出解码结果。
 
             取值范围：0，默认值为0。
 
-            -   0：设为0时，以文本格式输出解码结果。
+            - 0：设为0时，以文本格式输出解码结果。
 
-        -   white-table-list
+        - white-table-list
 
             白名单参数，包含需要进行解码的schema和表名。
 
@@ -187,7 +187,7 @@
 
     调用该函数的用户需要具有SYSADMIN权限或具有REPLICATION权限或继承了内置角色gs\_role\_replication的权限。
 
--   pg\_logical\_slot\_get\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)
+- pg\_logical\_slot\_get\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)
 
     描述：解码并推进流复制槽。
 
@@ -195,25 +195,25 @@
 
     备注：调用该函数的用户需要具有SYSADMIN权限或具有REPLICATION权限或继承了内置角色gs\_role\_replication的权限。此函数目前只支持在主机调用。
 
--   <a name="li15187162457"></a>pg\_logical\_slot\_peek\_binary\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)
+- <a name="li15187162457"></a>pg\_logical\_slot\_peek\_binary\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)
 
     描述：以二进制格式解码且不推进流复制槽（下次解码可以再次获取本次解出的数据）。
 
     参数说明：
 
-    -   slot\_name
+    - slot\_name
 
         流复制槽名称。
 
         取值范围：字符串，仅支持小写字母，数字，以及_?-.字符，且不支持'.'或'..'单独作为复制槽名称。
 
-    -   LSN
+    - LSN
 
         日志的LSN，表示只解码小于等于此LSN的日志。
 
         取值范围：字符串（LSN，格式为xlogid/xrecoff），如'1/2AAFC60'。为NULL时表示不对解码截止的日志位置做限制。
 
-    -   upto\_nchanges
+    - upto\_nchanges
 
         解码条数（包含begin和commit）。假设一共有三条事务，分别包含3、5、7条记录，如果upto\_nchanges为4，那么会解码出前两个事务共8条记录。解码完第二条事务时发现解码条数记录大于等于upto\_nchanges，会停止解码。
 
@@ -223,61 +223,60 @@
         >
         >LSN和upto\_nchanges中任一参数达到限制，解码都会结束。
 
-    -   options：此项为可选参数，由一系列options\_name和options\_value一一对应组成。
-        -   include-xids
+    - options：此项为可选参数，由一系列options\_name和options\_value一一对应组成。
+        - include-xids
 
             解码出的data列是否包含xid信息。
 
             取值范围：0或1，默认值为1。
 
-            -   0：设为0时，解码出的data列不包含xid信息。
-            -   1：设为1时，解码出的data列包含xid信息。
+            - 0：设为0时，解码出的data列不包含xid信息。
+            - 1：设为1时，解码出的data列包含xid信息。
 
-        -   skip-empty-xacts
+        - skip-empty-xacts
 
             解码时是否忽略空事务信息。
 
             取值范围：0或1，默认值为0。
 
-            -   0：设为0时，解码时不忽略空事务信息。
-            -   1：设为1时，解码时会忽略空事务信息。
+            - 0：设为0时，解码时不忽略空事务信息。
+            - 1：设为1时，解码时会忽略空事务信息。
 
-        -   include-timestamp
+        - include-timestamp
 
             解码信息是否包含commit时间戳。
 
             取值范围：0或1，默认值为0。
 
-            -   0：设为0时，解码信息不包含commit时间戳。
-            -   1：设为1时，解码信息包含commit时间戳。
+            - 0：设为0时，解码信息不包含commit时间戳。
+            - 1：设为1时，解码信息包含commit时间戳。
 
-        -   only-local
+        - only-local
 
             是否仅解码本地日志。
 
             取值范围：0或1，默认值为1。
 
-            -   0：设为0时，解码非本地日志和本地日志。
-            -   1：设为1时，仅解码本地日志。
+            - 0：设为0时，解码非本地日志和本地日志。
+            - 1：设为1时，仅解码本地日志。
 
-        -   force-binary
+        - force-binary
 
             是否以二进制格式输出解码结果。
 
             取值范围：0或1，默认值为0，均以二进制格式输出结果。
 
-        -   white-table-list
+        - white-table-list
 
             白名单参数，包含需要进行解码的schema和表名。
 
             取值范围：包含白名单中表名的字符串，不同的表以','为分隔符进行隔离；使用'\*'来模糊匹配所有情况；schema名和表名间以'.'分割，不允许存在任意空白符。例：select \* from pg\_logical\_slot\_peek\_binary\_changes\('slot1', NULL, 4096, 'white-table-list', 'public.t1,public.t2'\);
 
-
     返回值类型：text, xid, bytea
     
     备注：函数返回解码结果，每一条解码结果包含三列，对应上述返回值类型，分别表示LSN位置、xid和二进制格式的解码内容。调用该函数的用户需要具有SYSADMIN权限或具有REPLICATION权限或继承了内置角色gs\_role\_replication的权限。
 
--   pg\_logical\_slot\_get\_binary\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)
+- pg\_logical\_slot\_get\_binary\_changes\('slot\_name', 'LSN', upto\_nchanges, 'options\_name', 'options\_value'\)
 
     描述：以二进制格式解码并推进流复制槽。
 
@@ -285,19 +284,19 @@
 
     备注：调用该函数的用户需要具有SYSADMIN权限或具有REPLICATION权限或继承了内置角色gs\_role\_replication的权限。
 
--   pg\_replication\_slot\_advance \('slot\_name', 'LSN'\)
+- pg\_replication\_slot\_advance \('slot\_name', 'LSN'\)
 
     描述：直接推进流复制槽到指定LSN，不输出解码结果。
 
     参数说明：
 
-    -   slot\_name
+    - slot\_name
 
         流复制槽名称。
 
         取值范围：字符串，仅支持小写字母，数字，以及_?-.字符，且不支持'.'或'..'单独作为复制槽名称。
 
-    -   LSN
+    - LSN
 
         推进到的日志LSN位置，下次解码时只会输出提交位置比该LSN大的事务结果。如果输入的LSN比当前流复制槽记录的推进位置还要小，则直接返回；如果输入的LSN比当前最新物理日志LSN还要大，则推进到当前最新物理日志LSN。
 
@@ -307,33 +306,33 @@
 
     备注：返回值分别对应slot\_name和实际推进至的LSN。调用该函数的用户需要具有SYSADMIN权限或具有REPLICATION权限或继承了内置角色gs\_role\_replication的权限。此函数目前只支持在主机调用。
 
--   pg\_logical\_get\_area\_changes\('LSN\_start', 'LSN\_end', upto\_nchanges, 'decoding\_plugin', 'xlog\_path', 'options\_name', 'options\_value'\)
+- pg\_logical\_get\_area\_changes\('LSN\_start', 'LSN\_end', upto\_nchanges, 'decoding\_plugin', 'xlog\_path', 'options\_name', 'options\_value'\)
 
     描述：没有ddl的前提下，指定lsn区间进行解码，或者指定xlog文件进行解码。
 
     约束条件如下：
 
-    1.  调用接口时，日志级别wal\_level=logical，且只有在wal\_level=logical期间产生的日志文件才能被解析，如果使用的xlog文件为非logical级别，则解码内容没有对应的值和类型，无其他影响。
-    2.  xlog文件只能被完全同构的dn的某个副本解析，确保可以找到数据对应的元信息，且没有DDL操作和VACUUM FULL。
-    3.  用户可以找到需要解析的xlog。
-    4.  用户需要注意一次不要读入过多xlog文件，推荐一次一个，一个xlog文件估测占用内存为xlog文件大小的2\~3倍。
-    5.  无法解码扩容前的xlog文件。
+    1. 调用接口时，日志级别wal\_level=logical，且只有在wal\_level=logical期间产生的日志文件才能被解析，如果使用的xlog文件为非logical级别，则解码内容没有对应的值和类型，无其他影响。
+    2. xlog文件只能被完全同构的dn的某个副本解析，确保可以找到数据对应的元信息，且没有DDL操作和VACUUM FULL。
+    3. 用户可以找到需要解析的xlog。
+    4. 用户需要注意一次不要读入过多xlog文件，推荐一次一个，一个xlog文件估测占用内存为xlog文件大小的2\~3倍。
+    5. 无法解码扩容前的xlog文件。
 
     参数说明：
 
-    -   LSN\_start
+    - LSN\_start
 
         指定开始解码的lsn。
 
         取值范围：字符串（LSN，格式为xlogid/xrecoff），如'1/2AAFC60'。为NULL时表示不对解码截止的日志位置做限制。
 
-    -   LSN\_end
+    - LSN\_end
 
         指定解码结束的lsn。
 
         取值范围：字符串（LSN，格式为xlogid/xrecoff），如'1/2AAFC60'。为NULL时表示不对解码截止的日志位置做限制。
 
-    -   upto\_nchanges
+    - upto\_nchanges
 
         解码条数（包含begin和commit）。假设一共有三条事务，分别包含3、5、7条记录，如果upto\_nchanges为4，那么会解码出前两个事务共8条记录。解码完第二条事务时发现解码条数记录大于等于upto\_nchanges，会停止解码。
 
@@ -343,19 +342,19 @@
         >
         >LSN和upto\_nchanges中任一参数达到限制，解码都会结束。
 
-    -   decoding\_plugin
+    - decoding\_plugin
 
         解码插件，指定解码内容输出格式的so插件。
 
         取值范围：提供mppdb\_decoding和sql\_decoding两个解码插件。
 
-    -   xlog\_path
+    - xlog\_path
 
         解码插件，指定解码文件的xlog绝对路径，文件级别
 
         取值范围：NULL 或者 xlog文件绝对路径的字符串。
 
-    -   options：此项为可选参数，由一系列options\_name和options\_value一一对应组成，可以缺省，详见pg\_logical\_slot\_peek\_changes。
+    - options：此项为可选参数，由一系列options\_name和options\_value一一对应组成，可以缺省，详见pg\_logical\_slot\_peek\_changes。
 
     示例：
 
@@ -382,7 +381,7 @@
     ……
     ```
 
--   pg\_get\_replication\_slots\(\)
+- pg\_get\_replication\_slots\(\)
 
     描述：获取复制槽列表。
 
@@ -399,7 +398,7 @@
     (2 rows)
     ```
     
--   gs\_get\_parallel\_decode\_status\(\)
+- gs\_get\_parallel\_decode\_status\(\)
 
     描述：监控各个解码线程的读取日志队列和解码结果队列的长度，以便定位并行解码性能瓶颈。
 
@@ -417,7 +416,7 @@
     
     备注：返回值的slot\_name代表复制槽名，parallel\_decode\_num代表该复制槽的并行解码线程数，read\_change\_queue\_length列出了每个解码线程读取日志队列的当前长度，decode\_change\_queue\_length列出了每个解码线程解码结果队列的当前长度。
 
--   pg\_replication\_origin\_create \(node\_name\)
+- pg\_replication\_origin\_create \(node\_name\)
 
     描述：用给定的外部名称创建一个复制源，并且返回分配给它的内部ID。
 
@@ -425,7 +424,7 @@
 
     参数说明：
 
-    -   node\_name
+    - node\_name
 
         待创建的复制源的名称。
 
@@ -433,7 +432,7 @@
 
     返回值类型：oid
 
--   pg\_replication\_origin\_drop \(node\_name\)
+- pg\_replication\_origin\_drop \(node\_name\)
 
     描述：删除一个以前创建的复制源，包括任何相关的重放进度。
 
@@ -441,14 +440,13 @@
 
     参数说明：
 
-    -   node\_name
+    - node\_name
 
         待删除的复制源的名称。
 
         取值范围：字符串，不支持除字母，数字，以及（\_?-.）以外的字符。
 
-
--   pg\_replication\_origin\_oid \(node\_name\)
+- pg\_replication\_origin\_oid \(node\_name\)
 
     描述：根据名称查找复制源并返回内部ID。如果没有发现这样的复制源，则抛出错误。
 
@@ -456,7 +454,7 @@
 
     参数说明：
 
-    -   node\_name
+    - node\_name
 
         要查找的复制源的名称
 
@@ -464,7 +462,7 @@
 
     返回值类型：oid
 
--   pg\_replication\_origin\_session\_setup \(node\_name\)
+- pg\_replication\_origin\_session\_setup \(node\_name\)
 
     描述：将当前会话标记为从给定的原点回放，从而允许跟踪回放进度。只能在当前没有选择原点时使用。使用pg\_replication\_origin\_session\_reset 命令来撤销。
 
@@ -472,20 +470,19 @@
 
     参数说明：
 
-    -   node\_name
+    - node\_name
 
         复制源名称。
 
         取值范围：字符串，不支持除字母，数字，以及（\_?-.）以外的字符。
 
-
--   pg\_replication\_origin\_session\_reset \(\)
+- pg\_replication\_origin\_session\_reset \(\)
 
     描述：取消pg\_replication\_origin\_session\_setup\(\)的效果。
 
     备注：调用该函数的用户需要具有SYSADMIN权限。
 
--   pg\_replication\_origin\_session\_is\_setup \(\)
+- pg\_replication\_origin\_session\_is\_setup \(\)
 
     描述：如果在当前会话中选择了复制源则返回真。
 
@@ -493,7 +490,7 @@
 
     返回值类型：boolean
 
--   pg\_replication\_origin\_session\_progress \(flush\)
+- pg\_replication\_origin\_session\_progress \(flush\)
 
     描述：返回当前会话中选择的复制源的重放位置。
 
@@ -501,7 +498,7 @@
 
     参数说明：
 
-    -   flush
+    - flush
 
         决定对应的本地事务是否被确保已经刷入磁盘。
 
@@ -509,7 +506,7 @@
 
     返回值类型：LSN
 
--   pg\_replication\_origin\_xact\_setup \(origin\_lsn, origin\_timestamp\)
+- pg\_replication\_origin\_xact\_setup \(origin\_lsn, origin\_timestamp\)
 
     描述：将当前事务标记为重放在给定LSN和时间戳上提交的事务。只能在使用pg\_replication\_origin\_session\_setup选择复制源时调用。
 
@@ -517,26 +514,25 @@
 
     参数说明：
 
-    -   origin\_lsn
+    - origin\_lsn
 
         复制源回放位置。
 
         取值范围：LSN
 
-    -   origin\_timestamp
+    - origin\_timestamp
 
         事务提交时间。
 
         取值范围：timestamp with time zone
 
-
--   pg\_replication\_origin\_xact\_reset \(\)
+- pg\_replication\_origin\_xact\_reset \(\)
 
     描述：取消pg\_replication\_origin\_xact\_setup\(\)的效果。
 
     备注：调用该函数的用户需要具有SYSADMIN权限。
 
--   pg\_replication\_origin\_advance \(node\_name, lsn\)
+- pg\_replication\_origin\_advance \(node\_name, lsn\)
 
     描述：
 
@@ -548,20 +544,19 @@
 
     参数说明：
 
-    -   node\_name
+    - node\_name
 
         已有复制源名称。
 
         取值范围：字符串，不支持除字母，数字，以及（\_?-.）以外的字符。
 
-    -   lsn
+    - lsn
 
         复制源回放位置。
 
         取值范围：LSN
 
-
--   pg\_replication\_origin\_progress \(node\_name, flush\)
+- pg\_replication\_origin\_progress \(node\_name, flush\)
 
     描述：返回给定复制源的重放位置。
 
@@ -569,20 +564,19 @@
 
     参数说明：
 
-    -   node\_name
+    - node\_name
 
         复制源名称。
 
         取值范围：字符串，不支持除字母，数字，以及（\_?-.）以外的字符。
 
-    -   flush
+    - flush
 
         决定对应的本地事务是否被确保已经刷入磁盘。
 
         取值范围：boolean
 
-
--   pg\_show\_replication\_origin\_status\(\)
+- pg\_show\_replication\_origin\_status\(\)
 
     描述：获取复制源的复制状态。
 
@@ -590,18 +584,18 @@
 
     返回值类型：
 
-    -   local\_id：oid，复制源id。
-    -   external\_id：text，复制源名称。
-    -   remote\_lsn：LSN，复制源的lsn位置。
-    -   local\_lsn：LSN，本地的lsn位置。
+    - local\_id：oid，复制源id。
+    - external\_id：text，复制源名称。
+    - remote\_lsn：LSN，复制源的lsn位置。
+    - local\_lsn：LSN，本地的lsn位置。
 
--   pg\_get\_publication\_tables\(pub\_name\)
+- pg\_get\_publication\_tables\(pub\_name\)
 
     描述：根据发布的名称，返回对应发布要发布的表的relid列表
 
     参数说明：
 
-    -   pub\_name
+    - pub\_name
 
         已存在的发布名称
 
@@ -609,14 +603,14 @@
 
     返回值类型：relid列表
 
--   pg\_stat\_get\_subscription\(suboid\) 
+- pg\_stat\_get\_subscription\(suboid\) 
 
     描述：
     输入订阅的oid，返回订阅的状态信息。
 
     参数说明：
 
--   subid
+- subid
 
     订阅的oid。
 
@@ -624,12 +618,11 @@
 
     返回值类型：
 
-    -   subid：oid，返回的oid。
-    -    relid：oid，表的oid。
-    -   pid：thread\_id，后台apply/sync线程的thread id。
-    -   received\_lsn：pg\_lsn，从发布端接收到的最近的lsn。
-    -   last\_msg\_send\_time：timestamp，最近发布端发送消息的时间。
-    -   last\_msg\_receipt\_time：timestamp，最新订阅端收到消息的时间。
-    -   latest\_end\_lsn：pg\_lsn，最近一次收到保活消息时发布端的lsn。
-    -   latest\_end\_time：timstamp，最近一次收到保活消息的时间。
-
+    - subid：oid，返回的oid。
+    - relid：oid，表的oid。
+    - pid：thread\_id，后台apply/sync线程的thread id。
+    - received\_lsn：pg\_lsn，从发布端接收到的最近的lsn。
+    - last\_msg\_send\_time：timestamp，最近发布端发送消息的时间。
+    - last\_msg\_receipt\_time：timestamp，最新订阅端收到消息的时间。
+    - latest\_end\_lsn：pg\_lsn，最近一次收到保活消息时发布端的lsn。
+    - latest\_end\_time：timstamp，最近一次收到保活消息的时间。

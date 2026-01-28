@@ -27,4 +27,3 @@ DROP OPERATOR FAMILY [ IF EXISTS ] name USING index_method
 ```sql
 DROP OPERATOR FAMILY family_name USING btree;
 ```
-

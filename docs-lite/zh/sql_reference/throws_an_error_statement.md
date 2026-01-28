@@ -34,9 +34,8 @@ condition_information_item_name: {
     | CURSOR_NAME
 }
 ```
+
 SIGNAL可以抛出一个SQLSTATE值（SQLSTATE [VALUE] sqlstate_value）或命名（condition_name）的错误条件，SET子句可以设置不同的信息，SET子句中设置的信息可以通过GET DIAGNOSTICS语句获取。
-
-
 
 >>[!NOTE]说明
 >
@@ -72,9 +71,6 @@ SIGNAL可以抛出一个SQLSTATE值（SQLSTATE [VALUE] sqlstate_value）或命�
 |    COLUMN_NAME     |            字符串，与条件相关的column，默认为空。            |
 |    CURSOR_NAME     |               字符串，cursor的名称，默认为空。               |
 
-
-
-
 ## RESIGNAL语句<a name="zh-cn_topic_0289900165_zh-cn_topic_0289900165_zh-cn_topic_0289900165_scd87586ffb304dfca616ff3dff504b82"></a>
 
 resignal语句和signal语句一样，也可以抛出错误，但resignal可以在抛出错误条件信息之前更改某些或全部信息。语法如下：
@@ -86,24 +82,16 @@ RESIGNAL [condition_value]
 
 ```
 
-
 虽然，signal和resignal都可以抛出错误，但两者仍存在一些不同：
 
 - resignal必须在错误或警告处理程序中使用，否则会收到一条错误消息：RESIGNAL when handler is not active。但是signal语句可以在存储过程的任何位置中使用。
 - 在resignal语法中可以省略resiganl语句的所有属性，甚至可以省略SQLSTATE的值。但是signal语句必须要有SQLSTATE值。
-
-
-
 
 >[!NOTE]说明 
 >
 >1. 只有RESIGNAL，即RESIGNAL。这种形式的RESIGNAL语句直接恢复上一个诊断区域的堆栈，并将其设置为当前诊断区域，相当于未修改错误信息，直接抛出。
 >2. 带有signal_information_item的RESIGNAL，即RESIGNAL SET signal_information_item [, signal_information_item] ...。与仅有RESIGNAL的场景一致，但该场景会根据signal_information_item修改弹出的错误信息。
 >3. 带有condition_value和signal_information_item的RESIGNAL，即RESIGNAL condition_value [SET signal_information_item [, signal_information_item] ...]。该场景会根据condition_value和signal_information_item更改错误信息，并将修改后的错误信息添加到诊断区域中。
-
-
-
-
 
 >[!NOTE]说明
 >
@@ -112,15 +100,13 @@ RESIGNAL [condition_value]
 >3. signal/resignal语句中，给condition_information_item_name赋值为NULL时，执行会报错。
 >4. opengauss中的warning不会触发declare handler异常处理机制，但signal和resignal触发的warning告警会触发declare handler异常处理机制。
 
-
-
 示例 ：
 
 ```sql
 -- 在非declare ... handler语句中调用signal的场景
 CREATE OR REPLACE PROCEDURE p() IS
 BEGIN
-	SIGNAL SQLSTATE '22012' SET MESSAGE_TEXT = 'this is error';
+ SIGNAL SQLSTATE '22012' SET MESSAGE_TEXT = 'this is error';
 END;
 /
 
@@ -139,11 +125,11 @@ show warnings;
 DROP TABLE IF EXISTS t1;
 CREATE OR REPLACE PROCEDURE p() IS
 BEGIN
-	DECLARE EXIT HANDLER FOR SQLSTATE '42P01'
-	BEGIN
-		SIGNAL SQLSTATE '22012' SET MESSAGE_TEXT = 'this is error', MYSQL_ERRNO = 100;
-	END;
-	DROP TABLE t1;
+ DECLARE EXIT HANDLER FOR SQLSTATE '42P01'
+ BEGIN
+  SIGNAL SQLSTATE '22012' SET MESSAGE_TEXT = 'this is error', MYSQL_ERRNO = 100;
+ END;
+ DROP TABLE t1;
 END;
 /
 
@@ -162,11 +148,11 @@ show warnings;
 DROP TABLE IF EXISTS t1;
 CREATE OR REPLACE PROCEDURE p() IS
 BEGIN
-	DECLARE EXIT HANDLER FOR SQLSTATE '42P01'
-	BEGIN
-		RESIGNAL;
-	END;
-	DROP TABLE t1;
+ DECLARE EXIT HANDLER FOR SQLSTATE '42P01'
+ BEGIN
+  RESIGNAL;
+ END;
+ DROP TABLE t1;
 END;
 /
 
@@ -185,11 +171,11 @@ show warnings;
 DROP TABLE IF EXISTS t1;
 CREATE OR REPLACE PROCEDURE p() IS
 BEGIN
-	DECLARE EXIT HANDLER FOR SQLSTATE '42P01'
-	BEGIN
-		RESIGNAL SET MESSAGE_TEXT = 'this is error', MYSQL_ERRNO = 100;
-	END;
-	DROP TABLE t1;
+ DECLARE EXIT HANDLER FOR SQLSTATE '42P01'
+ BEGIN
+  RESIGNAL SET MESSAGE_TEXT = 'this is error', MYSQL_ERRNO = 100;
+ END;
+ DROP TABLE t1;
 END;
 /
 
@@ -208,11 +194,11 @@ show warnings;
 DROP TABLE IF EXISTS t1;
 CREATE OR REPLACE PROCEDURE p() IS
 BEGIN
-	DECLARE EXIT HANDLER FOR SQLSTATE '42P01'
-	BEGIN
-		RESIGNAL SQLSTATE '22012' SET MESSAGE_TEXT = 'this is error', MYSQL_ERRNO = 100;
-	END;
-	DROP TABLE t1;
+ DECLARE EXIT HANDLER FOR SQLSTATE '42P01'
+ BEGIN
+  RESIGNAL SQLSTATE '22012' SET MESSAGE_TEXT = 'this is error', MYSQL_ERRNO = 100;
+ END;
+ DROP TABLE t1;
 END;
 /
 

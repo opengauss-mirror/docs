@@ -2,7 +2,6 @@
 
 ## **GET DIAGNOSTICS**语句<a name="zh-cn_topic_0245374637_zh-cn_topic_0245374637_zh-cn_topic_0245374637_scd87586ffb304dfca616ff3dff504b81"></a>
 
-
 ```sql
 GET [CURRENT | STACKED] DIAGNOSTICS {
     statement_information_item

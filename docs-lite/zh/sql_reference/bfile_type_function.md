@@ -1,6 +1,6 @@
 # BFILE类型函数
 
--   bfilename\(location text, filename text\)
+- bfilename\(location text, filename text\)
 
     描述：根据目录对象名和文件名生成一个bfile类型对象。location的值必须是DIRECTORY对象名，filename的值为文件名。
 
@@ -9,6 +9,7 @@
     返回值类型：bfile
 
     示例：
+
     ```
     CREATE or REPLACE DIRECTORY "sdf sfa" AS '/tmp';
     select bfilename('sdf sfa', 'as df .txt');
@@ -19,8 +20,7 @@
 
     ```
 
-
--   bfilein\(cstring\)
+- bfilein\(cstring\)
 
     描述：解析传入的字符串，生成一个bfile类型对象。传入的字符串有固定格式要求，必须是'bfilename(str1, str2)'。
 
@@ -29,6 +29,7 @@
     返回值类型：bfile
 
     示例：
+
     ```
     --参数格式不对
     select bfilein('bfilenamell(sdf,asdf)');
@@ -45,8 +46,7 @@
 
     ```
 
-
--   bfileout\(bfile\)
+- bfileout\(bfile\)
 
     描述：将传入的bfile类型对象转换成一个cstring类型的字符串。
 
@@ -55,6 +55,7 @@
     返回值类型：cstring
 
     示例：
+
     ```
     CREATE or REPLACE DIRECTORY "bfile_test_dir" AS '/tmp';
     select bfileout(bfilename('bfile_test_dir','regress_bfile.txt'));
@@ -65,8 +66,7 @@
 
     ```
 
-
--   bfilerecv\(internal\)
+- bfilerecv\(internal\)
 
     描述：将内部类型internal转换成一个bfile类型对象。因为internal类型是一个内部类型，无法通过外部传值，所以bfilerecv函数无法通过外部调用。
 
@@ -75,6 +75,7 @@
     返回值类型：bfile
 
     示例：
+
     ```
     select bfilerecv(' ');
     ERROR:  cannot accept a value of type internal
@@ -83,8 +84,7 @@
 
     ```
 
-
--   bfilesend\(bfile\)
+- bfilesend\(bfile\)
 
     描述：将传入的bfile类型对象一个internal类型对象。
 
@@ -93,6 +93,7 @@
     返回值类型：internal
 
     示例：
+
     ```
     CREATE or REPLACE DIRECTORY "bfile_test_dir" AS '/tmp';
     select bfilesend(bfilename('bfile_test_dir','regress_bfile.txt'));

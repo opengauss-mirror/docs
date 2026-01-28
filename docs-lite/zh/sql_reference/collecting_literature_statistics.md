@@ -10,9 +10,9 @@ ts_stat(sqlquery text, [ weights text, ]
 
 sqlquery是一个包含SQL查询语句的文本，该SQL查询将返回一个tsvector。ts\_stat执行SQL查询语句并返回一个包含tsvector中每一个不同的语素（词）的统计信息。返回信息包括：
 
--   word text：词素。
--   ndoc integer：词素在文档（tsvector）中的编号。
--   nentry integer：词素出现的频率。
+- word text：词素。
+- ndoc integer：词素在文档（tsvector）中的编号。
+- nentry integer：词素出现的频率。
 
 如果设置了权重条件，只有标记了对应权重的词素才会统计频率。例如，在一个文档集中检索使用频率最高的十个单词：
 
@@ -41,4 +41,3 @@ openGauss=# SELECT * FROM ts_stat('SELECT to_tsvector(''english'', sr_reason_sk)
 ------+------+--------
 (0 rows)
 ```
-
