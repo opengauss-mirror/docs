@@ -103,7 +103,7 @@ halfvec_cosine_ops | halfvec类型-余弦距离
 
 **设置建议：**
 
-- 其余参数设置与[向量索引](../sql_reference/vector_index.md)中HNSW索引中相同。
+- 其余参数设置与[向量索引](./vector_index.md)中HNSW索引中相同。
 
 #### GUC参数
 
@@ -182,7 +182,7 @@ vector_cosine_ops|<=>|余弦距离
 
 **设置建议：**
 
-- 其余参数设置与[向量索引](../sql_reference/vector_index.md)中IVFFLAT索引相同。
+- 其余参数设置与[向量索引](./vector_index.md)中IVFFLAT索引相同。
 
 #### 查询选项
 

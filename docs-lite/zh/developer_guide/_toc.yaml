@@ -289,6 +289,8 @@ sections:
         href: ./psycopg_package.md
       - label: 开发流程
         href: ./development_process_psycopg.md
+      - label: 加载驱动
+        href: ./loading_a_driver_psycopg.md        
       - label: 连接数据库
         href: ./connecting_to_a_database_psycopg.md
       - label: 执行SQL语句

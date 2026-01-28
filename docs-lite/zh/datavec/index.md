@@ -8,9 +8,9 @@ openGauss的向量数据库组件DataVec，为高效管理与查询高维向量�
 
 索引类型 | 描述 | 支持的数据类型
 --- | --- | --- 
-[IVFFLAT](../sql_reference/vector_index.md)| 倒排文件索引 |  vector、halfvec、bit |
-[HNSW](../sql_reference/vector_index.md)| 基于分层导航小世界（HNSW）算法的图索引 | vector、halfvec、bit、sparsevec  |
-[DiskANN](../sql_reference/vector_index.md)| 基于磁盘的图索引 | vector  |
+[IVFFLAT](./vector_index.md)| 倒排文件索引 |  vector、halfvec、bit |
+[HNSW](./vector_index.md)| 基于分层导航小世界（HNSW）算法的图索引 | vector、halfvec、bit、sparsevec  |
+[DiskANN](./vector_index.md)| 基于磁盘的图索引 | vector  |
 [PQ](./pq.md)| 基于乘积量化的索引算法，支持结合IVFFLAT、HNSW、DiskANN使用 | vector  |
 [RabitQ](./Rabitq.md)| 基于1bit量化的索引算法，支持结合IVFFLAT、HNSW使用 | vector、halfvec  |
 
