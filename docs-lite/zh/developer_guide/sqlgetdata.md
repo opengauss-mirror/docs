@@ -61,12 +61,12 @@ SQLRETURN SQLGetData(SQLHSTMT        StatementHandle,
 
 ## 返回值<a name="zh-cn_topic_0238272899_zh-cn_topic_0237120429_zh-cn_topic_0059778461_saaafb13e1b624682bc1d09efa9d415d4"></a>
 
--   SQL\_SUCCESS：表示调用正确。
--   SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
--   SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
--   SQL\_NO\_DATA：表示SQL语句不返回结果集。
--   SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
--   SQL\_STILL\_EXECUTING：表示语句正在执行。
+- SQL\_SUCCESS：表示调用正确。
+- SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
+- SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
+- SQL\_NO\_DATA：表示SQL语句不返回结果集。
+- SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
+- SQL\_STILL\_EXECUTING：表示语句正在执行。
 
 ## 注意事项<a name="zh-cn_topic_0238272899_zh-cn_topic_0237120429_zh-cn_topic_0059778461_s46dd381571fd497484a5e93a075e5643"></a>
 
@@ -75,4 +75,3 @@ SQLRETURN SQLGetData(SQLHSTMT        StatementHandle,
 ## 示例<a name="zh-cn_topic_0238272899_zh-cn_topic_0237120429_zh-cn_topic_0059778461_s69654c27e011474aa33ede59ff0961b8"></a>
 
 参见：[示例](example_odbc.md)
-

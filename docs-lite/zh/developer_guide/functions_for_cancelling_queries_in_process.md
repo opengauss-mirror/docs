@@ -2,10 +2,8 @@
 
 客户端应用可以使用本节描述的函数，要求取消一个仍在被服务器处理的命令。
 
--   **[PQgetCancel](pqgetcancel.md)**  
+- **[PQgetCancel](pqgetcancel.md)**  
 
--   **[PQfreeCancel](pqfreecancel.md)**  
+- **[PQfreeCancel](pqfreecancel.md)**  
 
--   **[PQcancel](pqcancel.md)**  
-
-
+- **[PQcancel](pqcancel.md)**  

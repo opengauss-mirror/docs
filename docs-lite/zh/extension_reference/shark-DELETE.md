@@ -6,8 +6,8 @@ DELETE从指定的表里删除满足WHERE子句的行。如果WHERE子句不存�
 
 ## 注意事项<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_sfc96c070e8574f4ea9a2726e898fda17"></a>
 
--   本章节仅包含shark新增语法，原openGauss的DELETE语法未作删除和修改。原openGauss的DELETE语法请参考章节[DELETE](../sql_reference/DELETE.md)。
--   新增支持table_hint子句。
+- 本章节仅包含shark新增语法，原openGauss的DELETE语法未作删除和修改。原openGauss的DELETE语法请参考章节[DELETE](../sql_reference/DELETE.md)。
+- 新增支持table_hint子句。
 
 ## 语法格式<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_s84baecef89484d5f87f57b0545b46202"></a>
 
@@ -40,7 +40,7 @@ DELETE [/*+ plan_hint */]
     [ WHERE condition ];
 ```
 
--   其中table\_hint子句table\_hint\_clause为：
+- 其中table\_hint子句table\_hint\_clause为：
 
     ```
     WITH ( <table_hint> [, ...] ) 
@@ -48,11 +48,11 @@ DELETE [/*+ plan_hint */]
 
 ## 参数说明<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_s6df87c0dd87c49e29a034e0ff3385ca7"></a>
 
--   **JOIN**
+- **JOIN**
 
     JOIN包含 INNER JOIN，LEFT JOIN，RIGHT JOIN，FULL JOIN，CROSS JOIN。
 
--   **WITH ( <table_hint> [, ...] )**
+- **WITH ( <table_hint> [, ...] )**
 
     - 不同于SELECT子句，针对单个hint，WITH可选，针对DELETE子句，WITH必选，table_hint支持给出一个列表选项，列表通过逗号或者空格分隔，即WITH (hint1)、WITH (hint1, hint2, ...)、WITH (hint1 hint2 ...)均支持，(hint1)不支持。
 

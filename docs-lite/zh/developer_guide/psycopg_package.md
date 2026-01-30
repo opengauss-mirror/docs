@@ -4,6 +4,5 @@
 
 解压后有两个文件夹：
 
--   psycopg2：psycopg2库文件。
--   lib：lib库文件。
-
+- psycopg2：psycopg2库文件。
+- lib：lib库文件。

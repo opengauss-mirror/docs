@@ -1,3 +1,5 @@
+# Dolphin 日期和时间类型
+
 ## 兼容MySQL时间类型
 
 相比于原始的openGauss，dolphin对于日期/时间类型的修改主要为: 
@@ -75,8 +77,6 @@ openGauss=# SELECT * FROM test_date;
  2015-10-22
 (3 rows)
 ```
-
-
 
 ### time 类型输入
 
@@ -234,15 +234,13 @@ openGauss=# SELECT * FROM test_timestamp;
 - 如果输入'0'，openGauss 会解析成为 2000 年；但是当输入的是整数0，openGauss 会解析成为 0，输出表现为0000，表示 year类型的 0 值
 - MySQL中不支持使用DATE, DATETIME, TIMESTAMP直接赋值到YEAR类型，但是openGauss支持。如下示例Update语句Mysql执行失败，openGauss执行成功。
 
-  ```
+  ```sql
   create table t1(`year` year, `date` date);
   insert into t1 values ('2024', '2024-01-01');
   
   -- 将DATE类型赋值为YEAR类型，MySQL执行失败，但是openGauss执行成功
   update t1 set `year` = `date`;
   ```
-
-  
 
 示例(注意下方 openGauss 数据库兼容性为 b)
 
@@ -273,4 +271,3 @@ openGauss=# SELECT * FROM test_year;
  1970 | 70
 (4 rows)
 ```
-

@@ -137,7 +137,7 @@ openGauss=# show warnings limit 2, 4;
 --用sql_note控制存储note信息的开关。
 CREATE OR REPLACE FUNCTION TEST_FUNC(tempdata char) RETURNS VOID AS $$
 BEGIN
-	raise info'TEST CHAR VALUE IS %',tempdata;  
+ raise info'TEST CHAR VALUE IS %',tempdata;  
 END;
 $$ LANGUAGE plpgsql;
 select TEST_FUNC('abc'::clob);

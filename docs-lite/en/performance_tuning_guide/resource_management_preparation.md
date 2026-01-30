@@ -152,8 +152,8 @@ You are familiar with "Server Tools \> gs\_cgroup" and "Server Tools \> gs\_ssh"
 >
 >- To control all the resources in openGauss, you need to create, update, and delete Cgroups on each node. Use  **gs\_ssh**  \(see "Server Tools \> gs\_ssh" in  _Tool Reference_\) to run commands in the steps below.
 >- A Cgroup must be named as follows:
-> - The names of sub-Class Cgroups and Workload Cgroups cannot contain columns \(:\).
-> - Cgroups having the same name cannot be created.
+>   - The names of sub-Class Cgroups and Workload Cgroups cannot contain columns \(:\).
+>   - Cgroups having the same name cannot be created.
 
 **Creating sub-Class and Workload Cgroups**
 

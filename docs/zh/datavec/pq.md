@@ -21,6 +21,7 @@
 PQ特性只支持ARM架构环境。
 
 ### PQ加速包安装
+
 IVFPQ和HNSWPQ的PQ加速包是一样的，DISKANNPQ需要的PQ包需要另外安装。
 
 1）IVF和HNSW的PQ包<br>
@@ -31,11 +32,14 @@ ARM架构环境镜像中默认已经安装PQ检索加速安装包，加速包默
 准备：环境中有openblas包，可以通过`yum install openblas`安装。
 
 在[昇腾mindxSDK社区官网](https://www.hiascend.com/developer/download/community/result?module=sdk%2Bcann)中选择下载`Ascend-mindxsdk-mxindex_7.3.0_linux-aarch64.run`。
+
 ```bash
 chmod +x Ascend-mindxsdk-mxindex*.run
 ./Ascend-mindxsdk-mxindex*.run --install
 ```
+
 安装后设置环境变量：
+
 ```bash
 export DATAVEC_PQ_LIB_PATH=/your_mxindex_install_path/mxIndex/lib
 ```
@@ -103,7 +107,7 @@ vector_cosine_ops | 余弦距离
 
 - pq_m：切分子空间越多，精度越高（由于HNSWPQ内置精排，某些情况下切分子空间越多精度不会有明显变化），同时性能越低。该值必须要能整除数据集维度，否则索引无法创建成功，推荐值为`维度/4`。
 - pq_ksub：聚类中心越多，精度越高，但同时性能越低。推荐值为`256`。
-- 其余参数设置与[向量索引](../sql_reference/vector_index.md)中HNSW索引中相同。
+- 其余参数设置与[向量索引](./vector_index.md)中HNSW索引中相同。
 
 #### GUC参数
 
@@ -197,7 +201,7 @@ vector_cosine_ops|<=>|余弦距离
 - pq_m：切分子空间越多，精度越高，同时性能越低。该值需要能整除数据集维度，推荐值为`维度/4`。
 - pq_ksub：聚类中心越多，精度越高，但同时性能越低。推荐值为`256`。
 - by_residual：启动残差计算可以提升精度，但是会增加构建索引的时间。推荐值`off`。
-- 其余参数设置与[向量索引](../sql_reference/vector_index.md)中IVFFLAT索引相同。
+- 其余参数设置与[向量索引](./vector_index.md)中IVFFLAT索引相同。
 
 #### 查询选项
 
@@ -217,7 +221,7 @@ vector_cosine_ops|<=>|余弦距离
  openGauss=# SET ivfpq_kreorder = 10;
  ```
 
- ### DISKANN-PQ
+### DISKANN-PQ
 
 ```sql
 openGauss=# CREATE INDEX [INDEX_NAME]
@@ -272,7 +276,7 @@ vector_cosine_ops|<=>|余弦距离
 **设置建议：**
 
 - pq_m：切分子空间越多，精度越高，同时性能越低。该值需要能整除数据集维度，推荐值为`维度/8`。
-- 其余参数设置与[向量索引](../sql_reference/vector_index.md)中DISKANN索引相同。
+- 其余参数设置与[向量索引](./vector_index.md)中DISKANN索引相同。
 
 #### 查询选项
 

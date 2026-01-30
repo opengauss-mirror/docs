@@ -6,10 +6,10 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--  该语句在非主库也可以执行。
--  在主库执行时，Xlog_Lsn和pg_current_xlog_location的结果一致；在非主库执行时，Xlog_Lsn和pg_last_xlog_replay_location的结果一致。
--  主库用该语句查询当前xlog写入的实时进度。
--  备库用该语句查询当前xlog回放的实时进度。
+- 该语句在非主库也可以执行。
+- 在主库执行时，Xlog_Lsn和pg_current_xlog_location的结果一致；在非主库执行时，Xlog_Lsn和pg_last_xlog_replay_location的结果一致。
+- 主库用该语句查询当前xlog写入的实时进度。
+- 备库用该语句查询当前xlog回放的实时进度。
 
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
@@ -31,7 +31,6 @@ SHOW MASTER STATUS
 - **Xlog_Lsn**
 
        当前xlog的LSN。
-
 
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 

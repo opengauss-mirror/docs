@@ -6,12 +6,11 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--   不指定用户则修改当前连接用户密码。
--   初始用户可以修改任何用户的密码（包括自身密码），不需要指定REPLACE校验当前密码。
--   非初始用户不能修改初始用户的密码。
--   sysadmin和拥有createrole权限的用户可以修改其他（非初始化、非sysadmin，非createrole权限）用户密码，不需要指定REPLACE校验当前密码。
--   sysadmin和拥有createrole权限的用户修改自身密码时，需要指定REPLACE校验当前密码。
-
+- 不指定用户则修改当前连接用户密码。
+- 初始用户可以修改任何用户的密码（包括自身密码），不需要指定REPLACE校验当前密码。
+- 非初始用户不能修改初始用户的密码。
+- sysadmin和拥有createrole权限的用户可以修改其他（非初始化、非sysadmin，非createrole权限）用户密码，不需要指定REPLACE校验当前密码。
+- sysadmin和拥有createrole权限的用户修改自身密码时，需要指定REPLACE校验当前密码。
 
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
@@ -43,7 +42,6 @@ password_option: {
 - **current_auth_string**
 
    当前密码。
-
 
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 

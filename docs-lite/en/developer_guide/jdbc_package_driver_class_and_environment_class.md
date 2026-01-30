@@ -14,9 +14,9 @@ Before establishing a database connection, load the  **org.postgresql.Driver**  
 >
 >1. openGauss is compatible with PostgreSQL in the use of JDBC. Therefore, when two JDBC drivers are used in the same process, class names may conflict.
 >2. Compared with the PostgreSQL driver, the openGauss JDBC driver has the following enhanced features:
-> 1. The SHA256 encryption mode is supported for login.
-> 2. The third-party log framework that implements the sf4j API can be connected.
-> 3. DR failover is supported.
+>       1. The SHA256 encryption mode is supported for login.
+>       2. The third-party log framework that implements the sf4j API can be connected.
+>       3. DR failover is supported.
 
 ## Environment Class<a name="en-us_topic_0283136979_en-us_topic_0237120378_en-us_topic_0213179123_section20655192913405"></a>
 

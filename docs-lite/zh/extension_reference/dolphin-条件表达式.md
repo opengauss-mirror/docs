@@ -1,9 +1,10 @@
 # 条件表达式
 
 相比于原始的openGauss，dolphin对于条件表达式的修改主要为:
+
 1. 新增```IFNULL/IF```表达式。
 
--   IFNULL
+- IFNULL
 
     等价于NVL，NVL的语法图请参见[图7](#zh-cn_topic_0283136958_zh-cn_topic_0237122002_zh-cn_topic_0059777797_f69cd4e01dd6e4280b756eb98d3c77c91)。
 
@@ -31,7 +32,7 @@
     (1 row)
     ```
 
--   IF
+- IF
 
     仅支持IF(expr1,expr2,expr3)，等价于CASE WHEN expr1 THEN expr2 ELSE expr3 END。
 
@@ -42,9 +43,9 @@
 
     CASE子句可以用于合法的表达式中。condition是一个返回BOOLEAN数据类型的表达式：
 
-    -   如果结果为真，CASE表达式的结果就是符合该条件所对应的result。
-    -   如果结果为假，则以相同方式处理随后的WHEN或ELSE子句。
-    -   如果各WHEN  condition都不为真，表达式的结果就是在ELSE子句执行的result。如果省略了ELSE子句且没有匹配的条件，结果为NULL。
+    - 如果结果为真，CASE表达式的结果就是符合该条件所对应的result。
+    - 如果结果为假，则以相同方式处理随后的WHEN或ELSE子句。
+    - 如果各WHEN  condition都不为真，表达式的结果就是在ELSE子句执行的result。如果省略了ELSE子句且没有匹配的条件，结果为NULL。
 
     示例：
 
@@ -71,5 +72,3 @@
     
     openGauss=# DROP TABLE case_when_t1;
     ```
-
-

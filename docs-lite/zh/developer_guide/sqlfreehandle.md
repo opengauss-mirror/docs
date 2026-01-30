@@ -39,10 +39,10 @@ SQLRETURN SQLFreeHandle(SQLSMALLINT   HandleType,
 
 ## 返回值<a name="zh-cn_topic_0238272896_zh-cn_topic_0237120426_zh-cn_topic_0059779231_s97bab15517c347d8854c982f7e8bfae1"></a>
 
--   SQL\_SUCCESS：表示调用正确。
--   SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
--   SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
--   SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
+- SQL\_SUCCESS：表示调用正确。
+- SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
+- SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
+- SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
 
 ## 注意事项<a name="zh-cn_topic_0238272896_zh-cn_topic_0237120426_zh-cn_topic_0059779231_seb4dad2a49aa45de9411b5f3391d16ea"></a>
 
@@ -51,4 +51,3 @@ SQLRETURN SQLFreeHandle(SQLSMALLINT   HandleType,
 ## 示例<a name="zh-cn_topic_0238272896_zh-cn_topic_0237120426_zh-cn_topic_0059779231_s877f1d1111e8452fbea6495355622686"></a>
 
 参见：[示例](example_odbc.md)
-

@@ -54,4 +54,3 @@ db_settings = {
 conn = psycopg2.connect(connection_factory=LoggingConnection, **db_settings)
 conn.initialize(logger)
 ```
-

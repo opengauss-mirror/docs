@@ -26,6 +26,7 @@ openGauss=# CREATE Extension gms_output;
 ### 使用Extension<a name="section107391050141118"></a>
 
 #### 函数声明
+
 - ENABLE(buffer_size IN INTEGER DEFAULT 20000)
   描述：预先申请空间，使用GMS_OUTPUT之前，必须执行GMS_OUTPUT.ENABLE。
   参数详解：设置预申请空间的buff_size，最大值1000000，最小值2000，默认值为20000，单位为字节。
@@ -46,7 +47,9 @@ openGauss=# CREATE Extension gms_output;
   参数详解：item：表示向缓冲区写入的内容。
 - NEW_LINE()
   描述：向行缓冲区中放置一个行结束标记。
+
 #### 函数使用
+
 测试enable、disable函数
 
 ```sql

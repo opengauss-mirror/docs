@@ -32,7 +32,6 @@ SHOW [GLOBAL | SESSION] VARIABLES [LIKE 'pattern' | WHERE expr];
 
   匹配表达式。
 
-
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 
 ```

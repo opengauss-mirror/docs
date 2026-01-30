@@ -22,10 +22,10 @@
 
 1. 拉取KunpengRAG项目仓库并进入RAGFlow的docker-compose部署目录
 
-```bash
-git clone https://gitee.com/kunpeng_compute/KunpengRAG.git
-cd KunpengRAG/deployment/docker-compose/ragflow
-```
+    ```bash
+    git clone https://gitee.com/kunpeng_compute/KunpengRAG.git
+    cd KunpengRAG/deployment/docker-compose/ragflow
+    ```
 
 2. 启动 RAGFlow 服务器的最简单方法是运行我们的 [docker-compose.yml](https://gitee.com/kunpeng_compute/KunpengRAG/blob/master/deployment/docker-compose/ragflow/docker-compose.yml) 文件。
 
@@ -39,10 +39,10 @@ docker compose up -d
 
 1. 拉取KunpengRAG项目仓库并进入RAGFlow的docker-compose部署目录
 
-```bash
-git clone https://gitee.com/kunpeng_compute/KunpengRAG.git
-cd KunpengRAG/deployment/docker-compose/ragflow
-```
+    ```bash
+    git clone https://gitee.com/kunpeng_compute/KunpengRAG.git
+    cd KunpengRAG/deployment/docker-compose/ragflow
+    ```
 
 2. 在.env文件中配置opengauss的环境变量，包括opengauss用户名、端口、密码（不配置则按默认值）
 3. 通过docker-compose指定单独启动opengauss服务：

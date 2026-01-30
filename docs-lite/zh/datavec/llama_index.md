@@ -1,21 +1,28 @@
 # 使用openGauss部署LlamaIndex
+
 LlamaIndex（原GPT Index）是一个专为大型语言模型（LLM）应用设计的数据框架。使用LlamaIndex进行开发时，通常需要结合其核心功能与选定的集成插件（plugins）。
 
 ## openGauss容器化部署
+
 详见[容器镜像安装](../installation_guide/installing_the_container_image.md)。
 
 ## LlamaIndex部署
+
 ### 安装依赖
+
 从源码安装依赖：
+
 ```bash
 pip install llama-index-vector-stores-opengauss
 ```
 
 ### 撰写代码
+
 LlamaIndex可以自定义流程，以下为openGauss配合ollama构成RAG应用的demo：
 注意，需要在同目录下新建data文件夹，并在文件夹内存放文档
 
 安装所需依赖：
+
 ```bash
 pip install llama-index-llms-ollama
 pip install llama-index-embeddings-ollama

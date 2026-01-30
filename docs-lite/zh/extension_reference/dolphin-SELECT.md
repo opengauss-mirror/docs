@@ -8,25 +8,25 @@ SELECT语句就像叠加在数据库表上的过滤器，利用SQL关键字从�
 
 ## 注意事项<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_s42c37979749545719ac9114594f45d93"></a>
 
--   对比原openGauss的SELECT语法，新增了WHERE子句下的sounds like语法。
+- 对比原openGauss的SELECT语法，新增了WHERE子句下的sounds like语法。
 
--   新增join不带on/using,效果与cross join一致。
+- 新增join不带on/using,效果与cross join一致。
 
--   新增PARTITION子句可指定多个分区。
+- 新增PARTITION子句可指定多个分区。
 
--   新增UNION子句列如果没有相似的数据类型，会采取转换为text类型的方式进行处理。
+- 新增UNION子句列如果没有相似的数据类型，会采取转换为text类型的方式进行处理。
 
--   新增FROM DUAL 语法，含义等同于不写FROM子句，是为了满足那些要求所有SELECT语句都应该包含FROM的情况。
+- 新增FROM DUAL 语法，含义等同于不写FROM子句，是为了满足那些要求所有SELECT语句都应该包含FROM的情况。
 
--   SELECT语法的output_name部分名称，可以在不带引号不使用AS的情况下，使用关键字作为别名。此处关键字可用范围由于实现差异与MySQL比较尚存差异，详细的不一致列表参考文末说明。
+- SELECT语法的output_name部分名称，可以在不带引号不使用AS的情况下，使用关键字作为别名。此处关键字可用范围由于实现差异与MySQL比较尚存差异，详细的不一致列表参考文末说明。
 
--   在openGauss中，支持a!作为阶乘计算，这种计算在MySQL并未支持，与关键字不带引号作为别名存在实现冲突，后续dolphin中放弃支持。
+- 在openGauss中，支持a!作为阶乘计算，这种计算在MySQL并未支持，与关键字不带引号作为别名存在实现冲突，后续dolphin中放弃支持。
 
--   SELECT语法中的from_item部分，表的别名也可以在不带引号不使用AS的情况下，使用关键字作为别名。此处关键字可用范围由于实现差异与MySQL比较尚存差异，详细的不一致列表参考文末说明。
+- SELECT语法中的from_item部分，表的别名也可以在不带引号不使用AS的情况下，使用关键字作为别名。此处关键字可用范围由于实现差异与MySQL比较尚存差异，详细的不一致列表参考文末说明。
 
 ## 语法格式<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sb7329222602d46fe944bf6c300931dd2"></a>
 
--   查询数据
+- 查询数据
 
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
@@ -45,7 +45,8 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 [ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ]
 [ {FOR { UPDATE | NO KEY UPDATE | SHARE | KEY SHARE } [ OF table_name [, ...] ] [ NOWAIT ]} [...] ];
 ```
--   其中指定查询源from\_item为：
+
+- 其中指定查询源from\_item为：
 
     ```
     {[ (ONLY) ] table_name [ * ] [ partition_clause ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
@@ -69,7 +70,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
    FROM DUAL
    ```
 
--   其中group子句为：
+- 其中group子句为：
 
     ```
     ( )
@@ -80,7 +81,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     | GROUPING SETS ( grouping_element [, ...] )
     ```
 
--   其中指定分区partition\_clause为：
+- 其中指定分区partition\_clause为：
 
     ```
     PARTITION { ( partition_name [, ...] ) | 
@@ -97,7 +98,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     | { expression | ( expression [, ...] ) } WITH ROLLUP
     ```
 
--   JOIN语法
+- JOIN语法
 
 ```
 [JOIN | INNER JOIN] {ON join_condition | USING ( join_column [, ...] ) }
@@ -105,39 +106,42 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 ## 参数说明<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc"></a>
 
--   **WHERE子句**
+- **WHERE子句**
 
     sounds like是condition的一种语法，用法如：column_name sounds like '字符'; 相当于soundex(column_name) = soundex('字符')的对比结果，是一个boolean的值。用于通过soundex处理来查询满足条件的数据。
 
     where 子句可以包含兼容MySQL全文索引的查询语法。match(column_name [, ...]) against ('匹配字符')也是condition的一种语法。
+
     ```sql
     where match(column_name [, ...]) against ('匹配字符');
     ```
+
     column_name可以是多列，列名之间用逗号分隔。
     against()的匹配字符只能是字符内容(即全文索引支持字段类型只能是这三种char, varchar, text)，不包含int, bool, 特殊字符(!,#,空格等)与正规功能。
     注意：
         mysql的全文索引查询语法match(column_name)允许无序，但该功能底层用的是opengauss的to_tsvector(),他的要求是字段顺序必须有序(与表的字段顺序一致)。
 
     用于安装了dolphin插件，处于MySQL兼容性场景下的全文索引查询。其语法结构相当于
+
     ```sql
     to_tsvector('ngram', col_name [|| col_name]) @@ to_tsquery('字符串')
     ```
 
--   **UNION子句**
+- **UNION子句**
     UNION计算多个SELECT语句返回行集合的并集。UNION内部的SELECT语句必须拥有相同数量的列，列如果没有相似的数据类型或者为UNKNOWN类型，会采取转换为text类型的方式进行处理。
 
     UNION子句有如下约束条件：
 
-    -   除非声明了ALL子句，否则缺省的UNION结果不包含重复的行。
-    -   同一个SELECT语句中的多个UNION操作符是从左向右计算的，除非用圆括弧进行了标识。
-    -   FOR UPDATE，FOR NO KEY UPDATE，FOR SHARE和FOR KEY SHARE不能在UNION的结果或输入中声明。
+    - 除非声明了ALL子句，否则缺省的UNION结果不包含重复的行。
+    - 同一个SELECT语句中的多个UNION操作符是从左向右计算的，除非用圆括弧进行了标识。
+    - FOR UPDATE，FOR NO KEY UPDATE，FOR SHARE和FOR KEY SHARE不能在UNION的结果或输入中声明。
 
     一般表达式：
 
     select\_statement UNION \[ALL\] select\_statement
 
-    -   select\_statement可以是任何没有ORDER BY、LIMIT、FOR UPDATE，FOR NO KEY UPDATE，FOR SHARE或FOR KEY SHARE子句的SELECT语句。
-    -   如果用圆括弧包围，ORDER BY和LIMIT可以附着在子表达式里。
+    - select\_statement可以是任何没有ORDER BY、LIMIT、FOR UPDATE，FOR NO KEY UPDATE，FOR SHARE或FOR KEY SHARE子句的SELECT语句。
+    - 如果用圆括弧包围，ORDER BY和LIMIT可以附着在子表达式里。
 
 > [!NOTE]说明
 > 
@@ -158,6 +162,7 @@ openGauss=# SELECT * FROM TEST WHERE name SOUNDS LIKE 'two';
 ```
 
 - SELECT GROUP BY子句中使用ROLLUP
+
 ```
 openGauss=# CREATE TABLESPACE t_tbspace ADD DATAFILE 'my_tablespace' ENGINE = test_engine;
 CREATE TABLESPACE
@@ -224,6 +229,7 @@ openGauss=# select join_1 inner join join_2;
     3 |    3 |    4 |    4
 
 ```
+
 - SELECT 语句中使用FROM DUAL 示例
 
 ```
@@ -240,6 +246,7 @@ openGauss=# select 1 as col FROM DUAL;
 ```
 
 - SELECT FROM PARTITION子句指定多个分区
+
 ```
 openGauss=# create table multi_partition_select_test(C_INT INTEGER) partition by range(C_INT)
 openGauss-# (
@@ -265,6 +272,7 @@ openGauss=# select a.* from multi_partition_select_test partition (test_part1, t
 ```
 
 - UNION子句非相似数据类型按 TEXT 类型进行转换示例：
+
 ```sql
 -- 首先创建兼容模式为B的数据库
 CREATE DATABASE mydb WITH DBCOMPATIBILITY 'B';
@@ -281,6 +289,7 @@ SELECT * FROM tbl_date UNION SELECT * FROM tbl_json;
 ```
 
 - 兼容MySQL兼容性全文索引语法查询，前提是兼容模式为B的数据库。
+
 ```sql
 openGauss=# CREATE SCHEMA fulltext_test;
 CREATE SCHEMA
@@ -596,6 +605,7 @@ DROP SCHEMA
 openGauss=# reset current_schema;
 RESET
 ```
+
 ## 不带引号不带AS情况下，关键字作为别名的限制
 
 除了本身不在MySQL中作为别名可以支持的范围之外，额外还有以下关键字不支持在不带引号不带AS的状况下作为别名：
@@ -651,6 +661,7 @@ RESET
 - offset
 - returning
 - symmetric
+
 ## 相关链接<a name="section156744489391"></a>
 
 [SELECT](../sql_reference/SELECT.md)

@@ -2,7 +2,6 @@
 
 PERFORMANCE_SCHEMA.THREADS视图，对数据库线程情况统计。兼容Mysql的同名视图，仅在B库创建。
 
-
 **表 1**  THREADS字段
 
 <a name="zh-cn_topic_0059777917_t0df1b611492d4f07b1d6e42373142023"></a>
@@ -185,4 +184,3 @@ PERFORMANCE_SCHEMA.THREADS视图，对数据库线程情况统计。兼容Mysql�
 </tr>
 </tbody>
 </table>
-

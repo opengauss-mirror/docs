@@ -90,8 +90,7 @@ Dim: 384 (384,)
 
 ## 语料嵌入
 
-通过openGauss官网文档安装数据库：https://docs.opengauss.org/zh/docs/latest-lite/docs/installation_guide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html
-
+通过openGauss官网文档安装数据库：<https://docs.opengauss.org/zh/docs/latest-lite/docs/installation_guide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html>
 
 openGauss已经成功安装部署，我们可以通过psycopg2连接openGauss查看版本信息：
 
@@ -131,8 +130,6 @@ CREATE TABLE IF NOT EXISTS sentence_embeddings (
 cursor.execute(create_table_sql)
 conn.commit()
 ```
-
-
 
 ```
 #  插入数据
@@ -192,7 +189,9 @@ for query, query_embedding in zip(queries, query_embeddings):
     query_results = cursor.fetchall()
     results.append((query, query_results))
 ```
+
 输出
+
 ```
 查询: 'Who is the father of AI?'
   1. [相似度: 0.7821] Alan Turing was the first person to conduct substantial research in AI.

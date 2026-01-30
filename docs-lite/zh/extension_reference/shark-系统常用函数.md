@@ -419,6 +419,7 @@
     返回值类型：double precision
 
     示例：
+
     ```
     openGauss=# select atan2(1.2, 2.5);
          atan2      
@@ -436,6 +437,7 @@
     返回值类型：int
 
     示例：
+
     ```
     openGauss=# select charindex('aaa', 'aaa bbb ccc aaa');
      charindex 
@@ -495,6 +497,7 @@
     返回值类型：bigint
 
     示例
+
     ```
     openGauss=# select datediff_big(second, timestamp'1997-12-31 23:59:59', timestamp'1998-12-31 23:59:59');
      datediff_big 
@@ -515,6 +518,7 @@
     - D库中，length默认值为30，该默认值主要适用于字符串相关类型，目前D兼容模式下`char`和`varchar`及其别名类型都适用该length默认值
 
     示例：
+
     ```
     openGauss=# select cast(123456789 AS char) as result;
              result             
@@ -736,7 +740,6 @@
         </tbody>
     </table>
 
-    
     **表3** money样式
 
     <table aria-label="表 3" class="table table-sm margin-top-none">
@@ -767,6 +770,7 @@
     </table>
 
     示例：
+
     ```
     openGauss=# select convert(varchar, timestamp'2012-03-23 00:12:23', 1) as result;
       result  
@@ -1184,7 +1188,7 @@
     (1 row)
     ```
 
- - string_split(string_expression varchar, delimiter char)
+- string_split(string_expression varchar, delimiter char)
 
     描述：根据指定的分隔符将字符串拆分为子字符串行。
 
@@ -1205,7 +1209,7 @@
     (4 rows)
     ```
 
- - quotename(string_expression varchar [, quote_character char] )
+- quotename(string_expression varchar [, quote_character char] )
 
     描述：使用quote_character包裹string_expression，quote_character默认为"[]"。
 
@@ -1223,7 +1227,7 @@
     (1 row)
     ```
 
- - trim([characters varchar FROM ] string_expression)
+- trim([characters varchar FROM ] string_expression)
 
     描述：去掉字符串首尾的空格或者其他的指定字符。
 
@@ -1247,7 +1251,7 @@
     (1 row)
     ```
 
- - sql_variant_property(sql_variant_expression sql_variant, property varchar)
+- sql_variant_property(sql_variant_expression sql_variant, property varchar)
 
     描述：返回sql_variant的属性信息。
 
@@ -1272,4 +1276,3 @@
      5
     (1 row)
     ```
-

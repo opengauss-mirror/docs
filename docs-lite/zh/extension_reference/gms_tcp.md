@@ -7,12 +7,14 @@ gms_tcp是一个基于openGauss的网络通信插件，提供TCP/IP级别的网�
 目前支持的主要接口有：
 
 连接管理：
+
 - OPEN_CONNECTION    --建立TCP连接，支持指定远程主机、端口、本地主机、端口等参数
 - CLOSE_CONNECTION   --关闭指定的TCP连接
 - CLOSE_ALL_CONNECTIONS --关闭所有TCP连接
 - FLUSH             --立即将输出缓冲区中的数据发送到服务器
 
 数据读取：
+
 - READ_LINE         --读取一行数据，可选是否移除换行符
 - READ_RAW         --读取指定长度的原始二进制数据
 - READ_TEXT        --读取指定长度的文本数据
@@ -21,11 +23,13 @@ gms_tcp是一个基于openGauss的网络通信插件，提供TCP/IP级别的网�
 - GET_TEXT         --获取文本数据的底层实现
 
 数据写入：
+
 - WRITE_LINE       --写入一行数据，自动添加换行符
 - WRITE_RAW        --写入原始二进制数据
 - WRITE_TEXT       --写入文本数据
 
 连接状态：
+
 - AVAILABLE        --检查TCP连接中可读取的数据字节数
 
 ## gms_tcp限制
@@ -56,6 +60,7 @@ open_connection函数
 接口：open_connection(remote_host in varchar2, remote_port in integer[, local_host in varchar2, local_port in integer, in_buffer_size in integer, out_buffer_size in integer, cset in varchar2, newline in varchar2, tx_timeout in integer]) RETURNS gms_tcp.connection
 功能：建立TCP连接
 参数：
+
 - remote_host：远程主机地址
 - remote_port：远程端口号
 - local_host：本地主机地址（可选）
@@ -76,6 +81,7 @@ write_line函数
 接口：write_line(c in gms_tcp.connection, data in varchar2) RETURNS integer
 功能：写入一行数据（自动添加换行符）
 参数：
+
 - c：连接句柄
 - data：要发送的数据
 返回值：写入的字节数
@@ -84,6 +90,7 @@ write_text函数
 接口：write_text(c in gms_tcp.connection, data in varchar2[, len in integer]) RETURNS integer
 功能：写入文本数据
 参数：
+
 - c：连接句柄
 - data：要发送的数据
 - len：要发送的长度（可选）
@@ -93,6 +100,7 @@ read_line存储过程
 接口：read_line(c in gms_tcp.connection, data out varchar2, len out integer[, remove_crlf in boolean, peek in boolean])
 功能：读取一行数据
 参数：
+
 - c：连接句柄
 - data：接收数据的变量
 - len：读取的数据长度
@@ -103,6 +111,7 @@ read_text存储过程
 接口：read_text(c in gms_tcp.connection, data out varchar2, data_len out integer[, len in integer, peek in boolean])
 功能：读取文本数据
 参数：
+
 - c：连接句柄
 - data：接收数据的变量
 - data_len：实际读取的长度
@@ -113,12 +122,15 @@ available函数
 接口：available(c in gms_tcp.connection[, timeout in int]) RETURNS integer
 功能：检查可读取的数据字节数
 参数：
+
 - c：连接句柄
 - timeout：超时时间（毫秒，可选）
 返回值：可读取的字节数
 
-#### GMS_TCP 简单执行流程如下：
+#### GMS_TCP 简单执行流程如下
+
 先决条件是有一个TCP服务连接，然后将数据库当做客户端执行以下语句：
+
 ```sql
 create extension gms_tcp;
 create or replace function gms_tcp_test_in_buffer()

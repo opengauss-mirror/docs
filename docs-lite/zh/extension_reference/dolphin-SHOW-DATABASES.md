@@ -6,8 +6,8 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--   b数据库的show databases是查查询据库操作，openGauss的show databases是查询schema操作。
--   schema会按名称顺序展示。
+- b数据库的show databases是查查询据库操作，openGauss的show databases是查询schema操作。
+- schema会按名称顺序展示。
 
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 

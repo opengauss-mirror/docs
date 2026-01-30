@@ -13,14 +13,14 @@ openGauss轻量版提供了卸载脚本帮助用户完整的卸载轻量版环�
 
 **操作步骤**
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  假定解压包的路径为\~/openGauss,进入解压后目录。
+1. 以操作系统用户omm登录数据库主节点。
+2. 假定解压包的路径为\~/openGauss,进入解压后目录。
 
     ```
     cd ~/openGauss
     ```
 
-3.  使用uninstall.sh卸载openGauss轻量版环境。
+3. 使用uninstall.sh卸载openGauss轻量版环境。
 
     ```
     sh uninstall.sh
@@ -32,7 +32,6 @@ openGauss轻量版提供了卸载脚本帮助用户完整的卸载轻量版环�
     sh uninstall.sh --delete-data 
     ```
 
-
 **示例**
 
 使用uninstall.sh脚本进行卸载轻量版环境。
@@ -43,4 +42,3 @@ delete-data is true
 cleaning up related processes
 clean up related processes success
 ```
-

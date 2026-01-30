@@ -2,8 +2,8 @@
 
 openGauss JDBC驱动程序支持使用日志记录来帮助解决在应用程序中使用openGauss JDBC驱动程序时的问题。openGauss JDBC支持如下三种日志管理方式：
 
-1.  对接应用程序使用的SLF4J日志框架。
-2.  对接应用程序使用的JdkLogger日志框架。
+1. 对接应用程序使用的SLF4J日志框架。
+2. 对接应用程序使用的JdkLogger日志框架。
 
 SLF4J和JdkLogger是业界Java应用程序日志管理的主流框架，描述应用程序如何使用这些框架超出了本文范围，用户请参考对应的官方文档（SLF4J：[http://www.slf4j.org/manual.html](http://www.slf4j.org/manual.html)，JdkLogger：[https://docs.oracle.com/javase/8/docs/technotes/guides/logging/overview.html](https://docs.oracle.com/javase/8/docs/technotes/guides/logging/overview.html)）。
 
@@ -222,4 +222,3 @@ pstm.setString(2, "test");
 pstm.execute();
 openGaussTrace.reset();
 ```
-

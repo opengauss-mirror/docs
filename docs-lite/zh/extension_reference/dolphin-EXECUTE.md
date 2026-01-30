@@ -19,14 +19,13 @@ EXECUTE name USING parameter [, ...];
 
 ## 参数说明<a name="zh-cn_topic_0283137468_zh-cn_topic_0237122161_zh-cn_topic_0059777447_sf2fd7956e26c49a8ae566c80a0e8e1c0"></a>
 
--   **name**
+- **name**
 
     要执行的预备语句的名称。
 
--   **parameter**
+- **parameter**
 
     给预备语句的一个参数的具体数值。它必须是一个和生成与创建这个预备语句时指定参数的数据类型相兼容的值的表达式。
-
 
 ## 示例<a name="zh-cn_topic_0283137468_zh-cn_topic_0237122161_zh-cn_topic_0059777447_s8a46083a59d940c3aaa2535b2f783645"></a>
 
@@ -56,4 +55,3 @@ openGauss=# EXECUTE insert_reason USING 52, 'AAAAAAAADDAAAAAA', 'reason 52';
 openGauss=# DROP TABLE tpcds.reason;
 openGauss=# DROP TABLE tpcds.reason_t1;
 ```
-

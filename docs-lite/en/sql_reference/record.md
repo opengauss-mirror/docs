@@ -24,10 +24,10 @@ The above syntax diagram is explained as follows:
 >In openGauss:
 >
 >- When assigning values to record variables, you can:
-> - Declare a record type and define member variables of this type when you declare a function or stored procedure.
-> - Assign the value of a record variable to another record variable.
-> - Use  **SELECT INTO**  or  **FETCH**  to assign values to a record type.
-> - Assign the  **NULL**  value to a record variable.
+>   - Declare a record type and define member variables of this type when you declare a function or stored procedure.
+>   - Assign the value of a record variable to another record variable.
+>   - Use  **SELECT INTO**  or  **FETCH**  to assign values to a record type.
+>   - Assign the  **NULL**  value to a record variable.
 >- The  **INSERT**  and  **UPDATE**  statements cannot use a record variable to insert or update data.
 >- Just like a variable, a record column of the compound type does not have a default value in the declaration.
 >- The data type can be the record type, array type, or set type defined in a stored procedure \(anonymous blocks are not supported\).

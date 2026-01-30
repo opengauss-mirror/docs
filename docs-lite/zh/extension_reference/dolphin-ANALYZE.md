@@ -15,7 +15,7 @@ ANALYZE VERIFY用于检测数据库中普通表（行存表、列存表）的数
 
 ## 语法格式<a name="zh-cn_topic_0283136969_zh-cn_topic_0237122086_zh-cn_topic_0059779340_sd95698dc205444ad9f4bbe049cc5d488"></a>
 
--   收集表的统计信息
+- 收集表的统计信息
 
     ```
     { ANALYZE } [ (VERBOSE) ] [ NO_WRITE_TO_BINLOG | LOCAL ] TABLE { [schema.]table_name } [, ... ]
@@ -23,7 +23,7 @@ ANALYZE VERIFY用于检测数据库中普通表（行存表、列存表）的数
 
 ## 参数说明<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_sf4962205ddf84312a5fd888bc662e5cf"></a>
 
--   **NO_WRITE_TO_BINLOG | LOCAL**
+- **NO_WRITE_TO_BINLOG | LOCAL**
 
     仅作语法，无实际用途
 

@@ -2,25 +2,22 @@
 
 PQexec函数对普通的同步应用里提交命令已经足够使用。但是它却有几个缺陷，而这些缺陷可能对某些用户很重要：
 
--   PQexec等待命令结束，而应用可能还有其它的工作要做（比如维护用户界面等），此时PQexec不会在原处等待响应。
+- PQexec等待命令结束，而应用可能还有其它的工作要做（比如维护用户界面等），此时PQexec不会在原处等待响应。
 
--   因为客户端应用在等待结果的时候是处于挂起状态的，所以应用很难判断它是否该尝试结束正在进行的命令。
+- 因为客户端应用在等待结果的时候是处于挂起状态的，所以应用很难判断它是否该尝试结束正在进行的命令。
 
--   PQexec只能返回一个PGresult结构。如果提交的命令字符串包含多个SQL命令，除了最后一个PGresult以外都会被PQexec丢弃。
+- PQexec只能返回一个PGresult结构。如果提交的命令字符串包含多个SQL命令，除了最后一个PGresult以外都会被PQexec丢弃。
 
--   PQexec总是收集命令的整个结果，将其缓存在一个PGresult中。虽然这为应用简化了错误处理逻辑，但是对于包含多行的结果是不切实际的。
-
+- PQexec总是收集命令的整个结果，将其缓存在一个PGresult中。虽然这为应用简化了错误处理逻辑，但是对于包含多行的结果是不切实际的。
 
 不想受到这些限制的应用可以改用下面的函数，这些函数也是构造PQexec的函数：PQsendQuery和PQgetResult。PQsendQueryParams，PQsendPrepare，PQsendQueryPrepared也可以和PQgetResult一起使用。
 
--   **[PQsendQuery](pqsendquery.md)**  
+- **[PQsendQuery](pqsendquery.md)**  
 
--   **[PQsendQueryParams](pqsendqueryparams.md)**  
+- **[PQsendQueryParams](pqsendqueryparams.md)**  
 
--   **[PQsendPrepare](pqsendprepare.md)**  
+- **[PQsendPrepare](pqsendprepare.md)**  
 
--   **[PQsendQueryPrepared](pqsendqueryprepared.md)**  
+- **[PQsendQueryPrepared](pqsendqueryprepared.md)**  
 
--   **[PQflush](pqflush.md)**  
-
-
+- **[PQflush](pqflush.md)**  

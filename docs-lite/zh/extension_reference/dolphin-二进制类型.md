@@ -140,14 +140,13 @@ openGauss支持的二进制类型请参见[表1](#zh-cn_topic_0283136911_zh-cn_t
 </tbody>
 </table>
 
-
 >[!NOTE]说明
 >
->-   除了每列的大小限制以外，每个元组的总大小也不可超过1GB-8203字节（即1073733621字节）。
+>- 除了每列的大小限制以外，每个元组的总大小也不可超过1GB-8203字节（即1073733621字节）。
 >
->-   不支持直接使用BYTEAWITHOUTORDERWITHEQUALCOL、BYTEAWITHOUTORDERCOL、\_BYTEAWITHOUTORDERWITHEQUALCOL和\_BYTEAWITHOUTORDERCOL类型创建表。
+>- 不支持直接使用BYTEAWITHOUTORDERWITHEQUALCOL、BYTEAWITHOUTORDERCOL、\_BYTEAWITHOUTORDERWITHEQUALCOL和\_BYTEAWITHOUTORDERCOL类型创建表。
 >   
->-   关于blob类型，a库写入blob类型数据需要调rawtohex()方法将其显式转为十六进制。比如查询blob数据值，sql应写为select rawtohex('1234')::blob；b库无需显式转，sql为select '1234'::blob。
+>- 关于blob类型，a库写入blob类型数据需要调rawtohex()方法将其显式转为十六进制。比如查询blob数据值，sql应写为select rawtohex('1234')::blob；b库无需显式转，sql为select '1234'::blob。
 
 示例:
 
@@ -188,4 +187,3 @@ openGauss=# select binary 'a\b';
  \x6108
 (1 row)
 ```
-

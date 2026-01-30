@@ -4,18 +4,17 @@
 
 openGauss提供了多种修改GUC参数的方法，用户可以方便的针对数据库、用户、会话进行设置。
 
--   参数名称不区分大小写。
--   参数取值有整型、浮点型、字符串、布尔型和枚举型五类。
-    -   布尔值可以是（on，off）、（true，false）、（yes，no）或者（1，0），且不区分大小写。
-    -   枚举类型的取值是在系统表pg\_settings的enumvals字段取值定义的。
+- 参数名称不区分大小写。
+- 参数取值有整型、浮点型、字符串、布尔型和枚举型五类。
+    - 布尔值可以是（on，off）、（true，false）、（yes，no）或者（1，0），且不区分大小写。
+    - 枚举类型的取值是在系统表pg\_settings的enumvals字段取值定义的。
 
--   对于有单位的参数，在设置时请指定单位，否则将使用默认的单位。
-    -   参数的默认单位在系统表pg\_settings的unit字段定义的。
-    -   内存单位有：kB（千字节）、MB（兆字节）和GB（吉字节）。
-    -   时间单位：ms（毫秒）、s（秒）、min（分钟）、h（小时）和d（天）。
+- 对于有单位的参数，在设置时请指定单位，否则将使用默认的单位。
+    - 参数的默认单位在系统表pg\_settings的unit字段定义的。
+    - 内存单位有：kB（千字节）、MB（兆字节）和GB（吉字节）。
+    - 时间单位：ms（毫秒）、s（秒）、min（分钟）、h（小时）和d（天）。
 
--   使用 `SET paraname = value` 方式设置GUC参数时，支持设置value为NULL，效果为设置对应的参数值为空字符串（并非NULL）。
-
+- 使用 `SET paraname = value` 方式设置GUC参数时，支持设置value为NULL，效果为设置对应的参数值为空字符串（并非NULL）。
 
 具体参数说明请参见[dolphin-GUC参数说明](dolphin-GUC参数说明.md)。
 
@@ -122,15 +121,12 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
 </tbody>
 </table>
 
-
-
 ## 操作步骤<a name="zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_s049438204a0941efb4b85981fb594e7c"></a>
-
 
 使用方式一设置参数，以设置explain\_perf\_mode参数为例。
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  使用如下命令连接数据库。
+1. 以操作系统用户omm登录数据库主节点。
+2. 使用如下命令连接数据库。
 
     ```
     gsql -d postgres -p 8000
@@ -148,7 +144,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
     openGauss=# 
     ```
 
-3.  查看explain\_perf\_mode参数。
+3. 查看explain\_perf\_mode参数。
 
     ```
     openGauss=# SHOW explain_perf_mode;
@@ -158,11 +154,11 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
     (1 row)
     ```
 
-4.  设置explain\_perf\_mode参数。
+4. 设置explain\_perf\_mode参数。
 
     使用以下任意方式进行设置：
 
-    -   设置数据库级别的参数
+    - 设置数据库级别的参数
 
         ```
         openGauss=# ALTER DATABASE postgres SET explain_perf_mode TO pretty;
@@ -176,7 +172,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
 
         在下次会话中生效。
 
-    -   设置用户级别的参数
+    - 设置用户级别的参数
 
         ```
         openGauss=# ALTER USER omm SET explain_perf_mode TO pretty;
@@ -190,7 +186,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
 
         在下次会话中生效。
 
-    -   设置会话级别的参数
+    - 设置会话级别的参数
 
         ```
         openGauss=# SET explain_perf_mode TO pretty;
@@ -202,7 +198,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
         SET
         ```
 
-5.  检查参数设置的正确性。
+5. 检查参数设置的正确性。
 
     ```
     openGauss=# SHOW explain_perf_mode;
@@ -211,7 +207,6 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
      pretty
     (1 row)
     ```
-
 
 ## 示例<a name="zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_s5b8255d8025640aba238bfb86b20807a"></a>
 

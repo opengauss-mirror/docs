@@ -49,6 +49,7 @@ openGauss开源社区上提供了安装包的获取方式。
     sha256sum openGauss-OM-6.0.0-openEuler20.03-aarch64.tar.gz
     sha256sum openGauss-Server-6.0.0-openEuler20.03-aarch64.tar.bz2
     ```
+
     命令执行完成后，输出校验值。
 
 2. 判断步骤1计算的两个校验值分别与校验文件1和校验文件2中的值是否一致。

@@ -6,13 +6,13 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s8ea536d5b8ff459e9e3614e35f53bc2a"></a>
 
--   本章节只包含dolphin新增的语法，原openGauss的语法未做删除和修改。
--   当一条语句下有多条子命令时，drop index和rename index会优先其他子命令执行，这两种命令的优先级一致。
--   生成列语法支持忽略GENERATED ALWAYS。
+- 本章节只包含dolphin新增的语法，原openGauss的语法未做删除和修改。
+- 当一条语句下有多条子命令时，drop index和rename index会优先其他子命令执行，这两种命令的优先级一致。
+- 生成列语法支持忽略GENERATED ALWAYS。
 
 ## 语法格式<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s58bdce220c9f4292ba9af919b04ad25c"></a>
 
--   修改表的定义。
+- 修改表的定义。
 
     ```
     ALTER TABLE [ IF EXISTS ] { table_name [*] | (ONLY) table_name | (ONLY) ( table_name ) }
@@ -93,34 +93,34 @@
     ALTER TABLE ADD [ COLUMN ] ( { column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [BINARY | ASCII] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ … ] ] } [, …] )
     ```
 
--   对一个表进行重建。
+- 对一个表进行重建。
 
     ```
     ALTER TABLE table_name FORCE;
     ```
 
--   重命名表。对名称的修改不会影响所存储的数据。
+- 重命名表。对名称的修改不会影响所存储的数据。
 
     ```
     ALTER TABLE [ IF EXISTS ] table_name 
         RENAME [ TO | AS ] new_table_name;
     ```
 
--   对表timestamp列添加ON UPDATE属性。
+- 对表timestamp列添加ON UPDATE属性。
 
     ```sql
     ALTER TABLE table_name
         MODIFY column_name column_type ON UPDATE CURRENT_TIMESTAMP;
     ```
 
--   对表timestamp列删除ON UPDATE属性。
+- 对表timestamp列删除ON UPDATE属性。
 
     ```sql
     ALTER TABLE table_name
         MODIFY column_name column_type;
     ```
 
--   **ADD table_indexclause**
+- **ADD table_indexclause**
 
     在表上新增一个索引
 
@@ -144,9 +144,9 @@
     
     ```
     index_option:{
-    	  COMMENT 'string'
-    	| index_type
-    	| [ VISIBLE | INVISIBLE ]
+       COMMENT 'string'
+     | index_type
+     | [ VISIBLE | INVISIBLE ]
       | [WITH PARSER NGRAM]
     }
     ```
@@ -263,7 +263,6 @@
 
   用于指定表存储在内存；目前该特性仅有语法支持，不实现功能。
 
-
 其中列相关的操作column_clause可以是以下子句之一：
 
 ```
@@ -284,15 +283,15 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 
  修改表已存在字段的名称和定义，字段新名称不能是已有字段的名称，将用新名称和定义替换字段原名称和定义原字段上的索引、独立对象约束（例如：主键、唯一键、CHECK约束）等不会被删除。\[FIRST | AFTER column\_name\]语法表示修改字段名称和定义的同时修改字段在表中的位置。BINARY关键字将设置列的字符序为该列字符集对应的`_bin`字符序，如果对应字符集的`_bin`字符序不存在，则告警并忽略BINARY属性。比如列的字符集为`utf8`，则指定BINARY时，等价于设置列的字符序为`utf8_bin`。ASCII关键字将设置列的字符集为`latin1`，是`CHARACTER SET latin1`的缩写。
 
--   **ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE]**
+- **ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE]**
   
-    -   ENABLE( VALIDATE)（默认）：启用约束，创建索引，对已有数据和新加入的数据执行约束。
-    -   ENABLE  NOVALIDATE：启用约束，创建索引。对于CHECK约束仅对新加入的数据执行约束，不管表中现有数据。对于UNIQUE和PRIMARY KEY需要建立索引，所以会对已有数据执行约束。
-    -   DISABLE( NOVALIDATE)（默认）：关闭约束，删除索引，可以对约束列的数据进行修改等操作。
-    -   DISABLE  VALIDATE：关闭约束，删除索引，不能对表进行插入、更新和删除操作。
+    - ENABLE( VALIDATE)（默认）：启用约束，创建索引，对已有数据和新加入的数据执行约束。
+    - ENABLE  NOVALIDATE：启用约束，创建索引。对于CHECK约束仅对新加入的数据执行约束，不管表中现有数据。对于UNIQUE和PRIMARY KEY需要建立索引，所以会对已有数据执行约束。
+    - DISABLE( NOVALIDATE)（默认）：关闭约束，删除索引，可以对约束列的数据进行修改等操作。
+    - DISABLE  VALIDATE：关闭约束，删除索引，不能对表进行插入、更新和删除操作。
   
 >[!NOTE]说明
-
+>
 >涉及的参数说明可见[ALTER TABLE](../sql_reference/alter_table.md)。
 
 ## 示例<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_se4f9dc97861c410bb51554bb58bcd76d"></a>
@@ -357,6 +356,7 @@ openGauss=# DROP TABLE alter_table_tbl1, alter_table_tbl2;
 ```
 
 --- 兼容MySQL全文索引，添加全文索引语法，前提是兼容模式为B的数据库。
+
 ```sql
 test=# ALTER TABLE test ADD FULLTEXT INDEX test_index_1 (title, boby) WITH PARSER ngram;
 ALTER TABLE

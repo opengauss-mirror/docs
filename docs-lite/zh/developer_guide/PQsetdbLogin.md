@@ -71,10 +71,9 @@ PGconn \*：指向包含链接的对象指针，内存在函数内部申请。
 
 ## 注意事项<a name="zh-cn_topic_0241735615_zh-cn_topic_0237120433_zh-cn_topic_0059777949_sb1b6942996a64e589fdfdfb1c00fa519"></a>
 
--   该函数为PQconnectdb前身，参数个数固定，未定义参数被调用时使用缺省值，若需要给固定参数设置缺省值，则可赋值NULL或者空字符串。
--   若dbName中包含“=”或链接URL的有效前缀，则该dbName被看做一个conninfo字符串并传递至PQconnectdb中，其余参数与PQconnectdbParams保持一致。
+- 该函数为PQconnectdb前身，参数个数固定，未定义参数被调用时使用缺省值，若需要给固定参数设置缺省值，则可赋值NULL或者空字符串。
+- 若dbName中包含“=”或链接URL的有效前缀，则该dbName被看做一个conninfo字符串并传递至PQconnectdb中，其余参数与PQconnectdbParams保持一致。
 
 ## 示例<a name="zh-cn_topic_0241735615_zh-cn_topic_0237120433_zh-cn_topic_0059777949_s14d206561091447bbb06bac48d8fee66"></a>
 
 请参见[示例](example_libpq.md)章节。
-

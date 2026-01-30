@@ -30,6 +30,7 @@ openGauss=# create extension gms_compress;
 ### 使用Extension<a name="section107391010141118"></a>
 
 #### 函数声明
+
 - LZ_COMPRESS_OPEN (
    dst       IN OUT BLOB, 
    quality   IN INTEGER DEFAULT 6) 
@@ -115,6 +116,7 @@ openGauss=# create extension gms_compress;
   参数详解：对于函数，解压后的数据作为返回值返回，对于存储过程，dst为出入参，传入用于存储解压后的数据地址。
 
 #### 函数使用
+
 [!NOTE]说明
     由于压缩结果受zlib接口影响，可能由于zlib版本差异等原因，导致压缩结果不完全一致
 
@@ -147,10 +149,10 @@ openGauss$#  v_handle int;
 openGauss$#  src raw;
 openGauss$# BEGIN
 openGauss$# content := '123';
-openGauss$#	v_handle := GMS_COMPRESS.LZ_COMPRESS_OPEN(content);
-openGauss$#	src := '123';
-openGauss$#	GMS_COMPRESS.LZ_COMPRESS_ADD(v_handle,content,src);
-openGauss$#	GMS_COMPRESS.LZ_COMPRESS_CLOSE(v_handle,content);
+openGauss$#    v_handle := GMS_COMPRESS.LZ_COMPRESS_OPEN(content);
+openGauss$#    src := '123';
+openGauss$#    GMS_COMPRESS.LZ_COMPRESS_ADD(v_handle,content,src);
+openGauss$#    GMS_COMPRESS.LZ_COMPRESS_CLOSE(v_handle,content);
 openGauss$#  RAISE NOTICE 'content=%', content;
 openGauss$# END;
 openGauss$# /
@@ -158,19 +160,17 @@ ANONYMOUS BLOCK EXECUTE
 NOTICE:  content=1F8B080000000000000363540600CC52A5FA02000000
 ```
 
-
-
 ```sql
 openGauss=# DECLARE
 openGauss$#  content BLOB;
 openGauss$#  v_handle int;
 openGauss$#  v_raw raw;
 openGauss$# BEGIN
-openGauss$#	content := '123';
+openGauss$#   content := '123';
 openGauss$#  content := GMS_COMPRESS.LZ_COMPRESS(content);
-openGauss$#	v_handle := GMS_COMPRESS.LZ_UNCOMPRESS_OPEN(content);
+openGauss$#    v_handle := GMS_COMPRESS.LZ_UNCOMPRESS_OPEN(content);
 openGauss$#  GMS_COMPRESS.LZ_UNCOMPRESS_EXTRACT(v_handle, v_raw);
-openGauss$#	GMS_COMPRESS.LZ_UNCOMPRESS_CLOSE(v_handle);
+openGauss$#    GMS_COMPRESS.LZ_UNCOMPRESS_CLOSE(v_handle);
 openGauss$#  RAISE NOTICE 'content=%', content;
 openGauss$#  RAISE NOTICE 'v_raw=%', v_raw;
 openGauss$# END;
@@ -186,12 +186,12 @@ openGauss$#   content BLOB;
 openGauss$#   v_handle int;
 openGauss$#   v_bool boolean;
 openGauss$# BEGIN
-openGauss$# 	content := '123';
+openGauss$#   content := '123';
 openGauss$#   v_bool := false;
-openGauss$# 	v_handle := GMS_COMPRESS.LZ_COMPRESS_OPEN(content);
+openGauss$#    v_handle := GMS_COMPRESS.LZ_COMPRESS_OPEN(content);
 openGauss$#   v_bool := GMS_COMPRESS.ISOPEN(v_handle);
 openGauss$#   RAISE NOTICE 'v_bool=%', v_bool;
-openGauss$# 	GMS_COMPRESS.LZ_COMPRESS_CLOSE(v_handle,content);
+openGauss$#    GMS_COMPRESS.LZ_COMPRESS_CLOSE(v_handle,content);
 openGauss$#   v_bool := GMS_COMPRESS.ISOPEN(v_handle);
 openGauss$#   RAISE NOTICE 'v_bool=%', v_bool;
 openGauss$# END;
@@ -200,7 +200,6 @@ ANONYMOUS BLOCK EXECUTE
 NOTICE:  v_bool=t
 NOTICE:  v_bool=f
 ```
-
 
 ### 删除Extension<a name="section1587444381220"></a>
 

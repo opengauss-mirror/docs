@@ -4,7 +4,7 @@
 
 ## 连接参数<a name="section51233666102514"></a>
 
--   【关注】第三方工具通过JDBC连接openGauss时，JDBC向openGauss发起连接请求，会默认添加以下配置参数，详见JDBC代码ConnectionFactoryImpl类的实现。
+- 【关注】第三方工具通过JDBC连接openGauss时，JDBC向openGauss发起连接请求，会默认添加以下配置参数，详见JDBC代码ConnectionFactoryImpl类的实现。
 
     ```
     params = {
@@ -21,20 +21,18 @@
 
     如果实际期望和这些配置不符，建议在java连接设置代码中显式设定这些参数。
 
--   【建议】通过JDBC连接数据库时，会默认设置extra_float_digits=3，gsql中设置为extra_float_digits=0，可能会使同一条数据在JDBC显示和gsql显示的精度不同。
+- 【建议】通过JDBC连接数据库时，会默认设置extra_float_digits=3，gsql中设置为extra_float_digits=0，可能会使同一条数据在JDBC显示和gsql显示的精度不同。
 
--   【建议】对于精度敏感的场景，建议使用numeric类型。
+- 【建议】对于精度敏感的场景，建议使用numeric类型。
 
--   【建议】通过JDBC连接数据库时，应该保证下面三个时区设置一致：
-    -   JDBC客户端所在主机的时区。
-    -   openGauss数据库实例所在主机的时区。
-    -   openGauss数据库实例配置过程中时区。
+- 【建议】通过JDBC连接数据库时，应该保证下面三个时区设置一致：
+    - JDBC客户端所在主机的时区。
+    - openGauss数据库实例所在主机的时区。
+    - openGauss数据库实例配置过程中时区。
 
         >[!NOTE]说明
         >
         >时区设置相关的操作，请参考《安装指南》中“初始配置 \> 同步系统时间”章节内容。
-
-
 
 ## fetchsize<a name="section2864318010275"></a>
 
@@ -52,10 +50,9 @@
 
 【建议】使用JDBC连接池，在将连接释放给连接池前，需要执行以下操作，重置会话环境。否则，可能会因为历史会话信息导致的对象冲突。
 
--   如果在连接中设置了GUC参数，那么在将连接归还连接池之前，必须使用“SET SESSION AUTHORIZATION DEFAULT;RESET ALL;”将连接的状态清空。
--   如果使用了临时表，那么在将连接归还连接池之前，必须将临时表删除。
+- 如果在连接中设置了GUC参数，那么在将连接归还连接池之前，必须使用“SET SESSION AUTHORIZATION DEFAULT;RESET ALL;”将连接的状态清空。
+- 如果使用了临时表，那么在将连接归还连接池之前，必须将临时表删除。
 
 ## CopyManager<a name="section1624965810277"></a>
 
 【建议】在不使用ETL工具，数据入库实时性要求又比较高的情况下，建议在开发应用程序时，使用openGauss JDBC驱动的copyManger接口进行微批导入。
-

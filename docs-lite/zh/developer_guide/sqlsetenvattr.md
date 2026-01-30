@@ -50,10 +50,10 @@ SQLRETURN SQLSetEnvAttr(SQLHENV       EnvironmentHandle
 
 ## 返回值<a name="zh-cn_topic_0238272902_zh-cn_topic_0237120432_zh-cn_topic_0059778852_sd43c3bb519574fb68eae3b53fb1b652f"></a>
 
--   SQL\_SUCCESS：表示调用正确。
--   SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
--   SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
--   SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
+- SQL\_SUCCESS：表示调用正确。
+- SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
+- SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
+- SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
 
 ## 注意事项<a name="zh-cn_topic_0238272902_zh-cn_topic_0237120432_zh-cn_topic_0059778852_s3f23b16e09954cc0b1f5bdb1063fee16"></a>
 
@@ -62,4 +62,3 @@ SQLRETURN SQLSetEnvAttr(SQLHENV       EnvironmentHandle
 ## 示例<a name="zh-cn_topic_0238272902_zh-cn_topic_0237120432_zh-cn_topic_0059778852_s54d045c03fcc414bab03c37ea6e4da08"></a>
 
 参见：[示例](example_odbc.md)
-

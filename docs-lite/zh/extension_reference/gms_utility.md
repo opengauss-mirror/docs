@@ -67,8 +67,6 @@ opengGauss打包编译时默认已经包含了gms_utility，可以在安装完�
   - 参数`estimate_rows`与参数`estimate_percent`的值仅在参数`method=ESTIMATE`时做校验；
   - 参数`method=DELETE`时，不能设置参数`method_opt`的值。
 
-
-
 - ANALYZE_SCHEMA(schema IN VARCHAR2, method IN VARCHAR2, estimate_rows IN NUMBER DEFAULT NULL, estimate_percent IN NUMBER DEFAULT NULL, method_opt IN VARCHAR2 DEFAULT NULL);
 
   **描述**：此过程分析指定schema中所有表、索引的统计信息。
@@ -89,8 +87,6 @@ opengGauss打包编译时默认已经包含了gms_utility，可以在安装完�
   
   - 参数`estimate_rows`与参数`estimate_percent`的值仅在参数`method=ESTIMATE`时做校验；
   - 参数`method=DELETE`时，不能设置参数`method_opt`的值。
-
-
 
 - CANONICALIZE(name IN VARCHAR2, canon_name OUT VARCHAR2, canon_len IN BINARY_INTEGER);
 
@@ -113,8 +109,6 @@ opengGauss打包编译时默认已经包含了gms_utility，可以在安装完�
   - 如果name是一个点分隔的名称（dotted name，例如a."b''.c）,对于点分名称中的每个组件，如果组件以双引号开头和结尾，则不会对该组件进行转换。否则使用NLS_UPPER转换为大写，并将开始和结束双引号应用于此组件的大写形式。在这种情况下，每个规范化的组件将在输入位置连接在一起，用“.”分隔。
   - a[.b]*之后的任何其他字符都将被忽略。
   - 该接口不处理形如'A B.'的情形。
-
-
 
 - COMMA_TO_TABLE(list IN VARCHAR2, tablen OUT INTEGER, tab OUT VARCHAR2[]);
 
@@ -140,8 +134,6 @@ opengGauss打包编译时默认已经包含了gms_utility，可以在安装完�
 
   - 如果分隔符之间的字符串长度超过 63 个字节，该过程将失败。
 
-
-
 - COMPILE_SCHEMA(schema IN VARCHAR2, compile_all IN BOOLEAN DEFAULT TRUE, reuse_settings IN BOOLEAN DEFAULT FALSE);
 
   **描述**：该存储过程编译指定schema的所有存储过程、函数、包、视图。暂不支持触发器。
@@ -152,8 +144,6 @@ opengGauss打包编译时默认已经包含了gms_utility，可以在安装完�
   - `compile_all`：如果为TRUE，将编译schema下的所有对象；如果为FALSE，仅编译INVALID对象。
   - `reuse_settings`：表示是否应重用对象中的会话设置，或者是否应采用当前会话的设置（当前只做语法支持）。
 
-
-
 - DB_VERSION(version OUT VARCHAR2, compatibility OUT VARCHAR2);
 
   **描述**：该存储过程返回数据库的版本信息。
@@ -162,8 +152,6 @@ opengGauss打包编译时默认已经包含了gms_utility，可以在安装完�
 
   - `version`：返回数据库内部版本。
   - `compatibility`：返回值与`version`的值一致。
-
-  
 
 - EXEC_DDL_STATEMENT(parse_string IN VARCHAR2);
 
@@ -177,8 +165,6 @@ opengGauss打包编译时默认已经包含了gms_utility，可以在安装完�
 
   - 使用时需要在表前面加上schema名称，例如`public.t1`。或者设置GUC参数`set behavior_compat_options="bind_procedure_searchpath";`。
   - 仅支持执行DDL语句，一次只支持执行单个SQL。
-
-  
 
 - EXPAND_SQL_TEXT(input_sql_text IN CLOB, output_sql_text OUT CLOB);
 
@@ -194,15 +180,11 @@ opengGauss打包编译时默认已经包含了gms_utility，可以在安装完�
   - 使用时需要在要解析的表前面加上schema名称，例如`public.t1`。或者设置GUC参数`set behavior_compat_options="bind_procedure_searchpath";`。
   - 解析时会对视图及表进行权限校验。
 
-  
-
 - FORMAT_CALL_STACK RETURN VARCHAR2;
 
   **描述**：此函数用于格式化当前调用堆栈。该函数可以在任何存储过程或触发器上使用，以访问调用堆栈。
 
   **返回值**：返回调用堆栈。
-
-
 
 - FORMAT_ERROR_BACKTRACE RETURN VARCHAR2;
 
@@ -210,15 +192,11 @@ opengGauss打包编译时默认已经包含了gms_utility，可以在安装完�
 
   **返回值**：回溯字符串。如果当前没有处理错误，则返回 `NULL`。 
 
-
-
 - FORMAT_ERROR_STACK RETURN VARCHAR2
 
   **描述**：此函数用于格式化当前错误堆栈。异常处理程序可以使用该函数查看完整的错误堆栈。
 
   **返回值**：返回错误堆栈。
-
-
 
 - GET_CPU_TIME RETURN NUMBER;
 
@@ -226,15 +204,11 @@ opengGauss打包编译时默认已经包含了gms_utility，可以在安装完�
 
   **返回值**：代表从某个时刻算起的时间，单位为为百分之一秒。
 
-
-
 - GET_ENDIANNESS RETURN NUMBER;
 
   **描述**：此函数用于获取数据库平台的字节序。
 
   **返回值**：指示数据库平台的字节序：1表示大端序，2表示小端序。
-
-
 
 - GET_HASH_VALUE(name VARCHAR2, base NUMBER, hash_size NUMBER);
 
@@ -248,8 +222,6 @@ opengGauss打包编译时默认已经包含了gms_utility，可以在安装完�
 
   **返回值**：基于输入字符串的哈希值。
 
-
-
 - GET_SQL_HASH(name IN VARCHAR2, hash OUT RAW, last4byte OUT NUMBER);
 
   **描述**：此存储过程使用MD5算法计算给定字符串的哈希值。
@@ -262,15 +234,11 @@ opengGauss打包编译时默认已经包含了gms_utility，可以在安装完�
 
   **返回值**：基于输入字符串的哈希值（最后4个字节）。MD5哈希算法计算一个16字节的哈希值存储在`hash`中，`last4byte`最后4字节。
 
-
-
 - GET_TIME RETURN NUMBER;
 
   **描述**：此函数用于以百分之一秒为单位返回当前时间。该函数主要用于确定经过的时间。
 
   **返回值**：时间是从调用子程序的时间点算起的百分之一秒数。
-
-
 
 - NAME_RESOLVE(name IN VARCHAR2, context IN NUMBER, schema OUT VARCHAR2, part1 OUT VARCHAR2, part2 OUT VARCHAR2, dblink OUT VARCHAR2, part1_type OUT NUMBER, object_number OUT NUMBER);
 
@@ -313,8 +281,6 @@ opengGauss打包编译时默认已经包含了gms_utility，可以在安装完�
   - 查找schema为当前登录用户同名schema或者public下。
   - 解析表与视图时实际可以在`context=0、2、7`时查询到信息；解析sequence实际可以在`context=2、7`时查询到信息。
 
-
-
 - NAME_TOKENIZE(name IN VARCHAR2, a OUT VARCHAR2, b OUT VARCHAR2, c OUT VARCHAR2, dblink OUT VARCHAR2, nextpos OUT BINARY_INTEGER);
 
   **描述**：此过程调用解析器将给定名称解析为`a[.b[.c]][@dblink]`。去掉双引号，如果没有引号，则转换为大写。它没有进行语义分析。缺失的值保留为NULL。
@@ -328,19 +294,13 @@ opengGauss打包编译时默认已经包含了gms_utility，可以在安装完�
   - `dblink`：输出name的dblink。
   - `nextpos`：解析输入name后的下一个位置。
 
-
-
 - OLD_CURRENT_SCHEMA RETURN VARCHAR2;
 
   **描述**：即返回当前会话的schema值。
 
-
-
 - OLD_CURRENT_USER RETURN VARCHAR2;
 
   **描述**：即返回当前会话的user值。
-
-
 
 - IS_BIT_SET(r IN RAW, n IN NUMBER) RETURN NUMBER;
 
@@ -358,15 +318,11 @@ opengGauss打包编译时默认已经包含了gms_utility，可以在安装完�
   - 位从高到低编号，最低位为位号1。
   - 参数二可以使用小数作为入参时，使用四舍五入规则转换。
 
-
-
 - IS_CLUSTER_DATABASE RETURN BOOLEAN;
 
   **描述**：此函数用于确定此数据库是否以RAC数据库模式运行。
 
   **返回值**：当前版本中此函数返回FALSE。
-
-
 
 - TABLE_TO_COMMA(tab IN VARCHAR2[], tablen OUT BINARY_INTEGER, list OUT VARCHAR2);
 
@@ -890,6 +846,3 @@ openGauss$# /
 INFO:  tablen: 3, result: build,test,date
 ANONYMOUS BLOCK EXECUTE
 ```
-
-
-

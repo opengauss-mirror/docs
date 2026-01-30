@@ -61,10 +61,10 @@ SQLRETURN SQLBindCol(SQLHSTMT       StatementHandle,
 
 ## 返回值<a name="zh-cn_topic_0238272886_zh-cn_topic_0237120416_zh-cn_topic_0059779335_s665d7a82265e43e9912a556d627ce508"></a>
 
--   SQL\_SUCCESS：表示调用正确。
--   SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
--   SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
--   SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
+- SQL\_SUCCESS：表示调用正确。
+- SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
+- SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
+- SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
 
 ## 注意事项<a name="zh-cn_topic_0238272886_zh-cn_topic_0237120416_zh-cn_topic_0059779335_sf12dfc561de44c8a9e952a9b13eda981"></a>
 
@@ -73,4 +73,3 @@ SQLRETURN SQLBindCol(SQLHSTMT       StatementHandle,
 ## 示例<a name="zh-cn_topic_0238272886_zh-cn_topic_0237120416_zh-cn_topic_0059779335_sd5d16919fd6141598535fc735a91d4df"></a>
 
 参见：[示例](example_odbc.md)
-

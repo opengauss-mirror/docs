@@ -6,10 +6,10 @@
 
 索引可以用来提高数据库查询性能，但是不恰当的使用将导致数据库性能下降。建议仅在匹配如下某条原则时创建索引：
 
--   经常执行查询的字段。
--   在连接条件上创建索引，对于存在多字段连接的查询，建议在这些字段上建立组合索引。例如，select \* from t1 join t2 on t1.a=t2.a and t1.b=t2.b，可以在t1表上的a、b字段上建立组合索引。
--   where子句的过滤条件字段上（尤其是范围条件）。
--   在经常出现在order by、group by和distinct后的字段。
+- 经常执行查询的字段。
+- 在连接条件上创建索引，对于存在多字段连接的查询，建议在这些字段上建立组合索引。例如，select \* from t1 join t2 on t1.a=t2.a and t1.b=t2.b，可以在t1表上的a、b字段上建立组合索引。
+- where子句的过滤条件字段上（尤其是范围条件）。
+- 在经常出现在order by、group by和distinct后的字段。
 
 在分区表上创建索引与在普通表上创建索引的语法不太一样，使用时请注意，如分区表上不支持并行创建索引，不支持创建部分索引。
 
@@ -17,15 +17,14 @@
 
 ## 注意事项<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s31780559299b4f62bec935a2c4679b84"></a>
 
--   本章节只包含dolphin新增的语法，原openGauss的语法未做删除和修改。
--   新增支持option的无序排列。
--   原始openGauss中，索引名是schema级别唯一的，创建索引时如果索引名重复了会报错。在dolphin插件中，如果GUC参数`dolphin.b_compatibility_mode`为on，当索引名重复时，会自动生成一个不重复的索引名做替代，并告警提示。
--   如果GUC参数`dolphin.b_compatibility_mode`为on且`dolphin_nulls_minimal_policy`为on，创建索引默认为NULLS FIRST索引。如果是倒序索引，索引默认为NULLS LAST，以便兼容null值为最小值的表现行为。
-
+- 本章节只包含dolphin新增的语法，原openGauss的语法未做删除和修改。
+- 新增支持option的无序排列。
+- 原始openGauss中，索引名是schema级别唯一的，创建索引时如果索引名重复了会报错。在dolphin插件中，如果GUC参数`dolphin.b_compatibility_mode`为on，当索引名重复时，会自动生成一个不重复的索引名做替代，并告警提示。
+- 如果GUC参数`dolphin.b_compatibility_mode`为on且`dolphin_nulls_minimal_policy`为on，创建索引默认为NULLS FIRST索引。如果是倒序索引，索引默认为NULLS LAST，以便兼容null值为最小值的表现行为。
 
 ## 语法格式<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 
--   在表上创建索引。
+- 在表上创建索引。
 
     ```
     CREATE [ UNIQUE | FULLTEXT ] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ]
@@ -41,7 +40,7 @@
         [USING {BTREE | HASH}]
     ```
 
--   在分区表上创建索引。
+- 在分区表上创建索引。
 
     ```
     CREATE [ UNIQUE ] INDEX [ [schema_name.]index_name ]
@@ -53,21 +52,21 @@
 
 ## 参数说明<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s82e47e35c54c477094dcafdc90e5d85a"></a>
 
--   **FULLTEXT**
+- **FULLTEXT**
 
     该关键字为创建兼容MySQL的全文索引的语法。该全文索引主要用于字符串的搜索匹配。包含局部匹配搜索，支持中文，韩文，日文。与MATCH () AGAINST ()配合使用。
 
--   **column\_name ( length )**
+- **column\_name ( length )**
 
     创建一个基于该表一个字段的前缀键索引，column_name为前缀键的字段名，length为前缀长度。
 
     前缀键将取指定字段数据的前缀作为索引键值，可以减少索引占用的存储空间。含有前缀键字段的过滤条件和连接条件可以使用索引。
 
     >[!NOTE]说明
-    > -  前缀键支持的索引方法：Btree、UBtree。
-    > -  前缀键的字段的数据类型必须是二进制类型或字符类型（不包括特殊字符类型）。
-    > -  前缀长度必须是不超过2676的正整数，并且不能超过字段的最大长度。对于二进制类型，前缀长度以字节数为单位。对于非二进制字符类型，前缀长度以字符数为单位。键值的实际长度受内部页面限制，若字段中含有多字节字符、或者一个索引上有多个键，索引行长度可能会超限，导致报错，设定较长的前缀长度时请考虑此情况。
-    > -  CREATE INDEX语法中，不支持以下关键字作为前缀键的字段名称：COALESCE、CONVERT、DAYOFMONTH、DAYOFWEEK、DAYOFYEAR、DB_B_FORMAT、EXTRACT、GREATEST、HOUR_P、IFNULL、LEAST、LOCATE、MICROSECOND_P、MID、MINUTE_P、NULLIF、NVARCHAR、NVL、OVERLAY、POSITION、QUARTER、SECOND_P、SUBSTR、SUBSTRING、TEXT_P、TIME、TIMESTAMP、TIMESTAMPDIFF、TREAT、TRIM、WEEKDAY、WEEKOFYEAR、XMLCONCAT、XMLELEMENT、XMLEXISTS、XMLFOREST、XMLPARSE、XMLPI、XMLROOT、XMLSERIALIZE。若含有上述关键字的前缀键所在的索引是通过ALTER TABLE或CREATE TABLE语法创建的，导出的CREATE INDEX语句可能无法成功执行，请尽量不要使用上述关键字作为前缀键的列名称。
+    > - 前缀键支持的索引方法：Btree、UBtree。
+    > - 前缀键的字段的数据类型必须是二进制类型或字符类型（不包括特殊字符类型）。
+    > - 前缀长度必须是不超过2676的正整数，并且不能超过字段的最大长度。对于二进制类型，前缀长度以字节数为单位。对于非二进制字符类型，前缀长度以字符数为单位。键值的实际长度受内部页面限制，若字段中含有多字节字符、或者一个索引上有多个键，索引行长度可能会超限，导致报错，设定较长的前缀长度时请考虑此情况。
+    > - CREATE INDEX语法中，不支持以下关键字作为前缀键的字段名称：COALESCE、CONVERT、DAYOFMONTH、DAYOFWEEK、DAYOFYEAR、DB_B_FORMAT、EXTRACT、GREATEST、HOUR_P、IFNULL、LEAST、LOCATE、MICROSECOND_P、MID、MINUTE_P、NULLIF、NVARCHAR、NVL、OVERLAY、POSITION、QUARTER、SECOND_P、SUBSTR、SUBSTRING、TEXT_P、TIME、TIMESTAMP、TIMESTAMPDIFF、TREAT、TRIM、WEEKDAY、WEEKOFYEAR、XMLCONCAT、XMLELEMENT、XMLEXISTS、XMLFOREST、XMLPARSE、XMLPI、XMLROOT、XMLSERIALIZE。若含有上述关键字的前缀键所在的索引是通过ALTER TABLE或CREATE TABLE语法创建的，导出的CREATE INDEX语句可能无法成功执行，请尽量不要使用上述关键字作为前缀键的列名称。
 
 - **index\_option**
 

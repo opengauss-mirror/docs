@@ -8,48 +8,47 @@ LOCK TABLES使用后，会让接下来的sql处于事务状态中，所以需要
 
 另外如果需要对当前session只允许读的话，那么还可以用FLUSH TABLES WITH READ LOCK实现，之后也需要用UNLOCK TABLES手动结束这个功能。
 
-
-
 ## 语法格式<a name="section1632155118333"></a>
 
--   上锁
+- 上锁
+
     ```
     LOCK {TABLE | TABLES} namelist READ/WRITE
     ```
 
--   让当前session处于只读表的状态
+- 让当前session处于只读表的状态
+
     ```
     FLUSH {TABLE | TABLES} WITH READ LOCK
     ```
 
--   解锁
+- 解锁
+
     ```
     UNLOCK {TABLE | TABLES}
     ```
 
 ## 参数说明<a name="section6973139183420"></a>
 
--   **namelist**
+- **namelist**
 
     要锁定的表的名称，可以有多个表。
 
--   **READ/WRITE**
+- **READ/WRITE**
 
     锁的模式。有：
 
-    -   **READ**
+    - **READ**
 
         读锁，只读取表而不修改的锁模式。
 
-    -   **WRITE**
+    - **WRITE**
 
         写锁，这个模式保证其所有者（事务）是可以访问该表的唯一事务。
 
--   **TABLE | TABLES**
+- **TABLE | TABLES**
 
     在LOCK TABLES、FLUSH TABLES、UNLOCK TABLES语句中，TABLE和TABLES是同义词。
-
-
 
 ## 示例<a name="zh-cn_topic_0283136808_zh-cn_topic_0237122168_zh-cn_topic_0059778442_s9884bdbe455b460a9a2dde267283b75b"></a>
 

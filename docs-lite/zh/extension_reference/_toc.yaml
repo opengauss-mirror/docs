@@ -72,7 +72,9 @@ sections:
           - label: 注释操作符
             href: ./dolphin-注释操作符.md
           - label: 操作符优先级
-            href: ./dolphin-操作符优先级.md                    
+            href: ./dolphin-操作符优先级.md  
+          - label: JSON操作符兼容
+            href: ./dolphin-JSON操作符兼容.md                               
       - label: 表达式
         sections:
           - label: 条件表达式

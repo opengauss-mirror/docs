@@ -6,8 +6,8 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--  在主库执行有效。
--  展示结果和select * from pg_stat_replication一致。
+- 在主库执行有效。
+- 展示结果和select * from pg_stat_replication一致。
 
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 

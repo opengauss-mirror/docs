@@ -246,7 +246,7 @@ slow sql retention time为慢SQL的保留时间，取值范围为0 \~ 604800
 
 该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >当配置文件中asp_log_directory的值为非法路径时，会导致数据库实例无法重新启动。
 
@@ -265,7 +265,7 @@ slow sql retention time为慢SQL的保留时间，取值范围为0 \~ 604800
 **参数说明**：enable_slow_query_log设置为on时，query_log_directory决定存放服务器慢查询日志文件的目录，仅sysadmin用户可以访问。它可以是绝对路径，或者是相对路径（相对于数据目录的路径），在该版本中已废弃。
 
 该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
->>[!TIP]须知
+>[!TIP]须知
 >
 >当配置文件中query_log_directory的值为非法路径时，会导致数据库实例无法重新启动。
 

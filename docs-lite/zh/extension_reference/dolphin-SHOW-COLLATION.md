@@ -34,6 +34,7 @@ SHOW COLLATION [LIKE 'pattern' | WHERE expr]
 | default   | 是否是字符集对应的排序集     | openGauss无默认排序，此字段内容为空       |
 | compiled  | 排序集是否已编译             | 该字段内容为Yes   |
 | sortlen   | 排序字符集时需要的内存大小   | 该字段内容为空 |
+
 ## 示例
 
 ```sql

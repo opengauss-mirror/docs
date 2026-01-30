@@ -34,4 +34,3 @@ openGauss=# show create database test_get_database;
  test_get_database | CREATE SCHEMA test_get_database AUTHORIZATION omm 
 (1 row)
 ```
-

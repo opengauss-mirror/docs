@@ -50,6 +50,7 @@
 </table>
 
 示例：
+
 ```
 --创建表。
 openGauss=# CREATE TABLE char_type_t1 

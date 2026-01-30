@@ -32,4 +32,3 @@ PGconn* PQconnectStart(const char* conninfo);
 ## 返回值<a name="zh-cn_topic_0059778058_s8136c512ac4e4481a73d8640d73d26d2"></a>
 
 PGconn类型指针。
-

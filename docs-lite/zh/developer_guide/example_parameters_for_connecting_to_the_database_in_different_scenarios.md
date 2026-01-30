@@ -59,4 +59,3 @@ jdbc:postgresql://node1/database?defaultRowFetchSize=50000
 ```
 jdbc:postgresql://node1/database?batchMode=true
 ```
-

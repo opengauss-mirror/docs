@@ -4,4 +4,3 @@
 
 **图 1**  openGauss服务响应流程<a name="zh-cn_topic_0283137738_zh-cn_topic_0237120246_zh-cn_topic_0059778641_f8739a7e890f246bb9fb77f8a9b1c4105"></a>  
 ![](figures/openGauss服务响应流程.jpg)
-

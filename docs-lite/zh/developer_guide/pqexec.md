@@ -48,4 +48,3 @@ PGresult：包含查询结果的对象指针。
 ## 示例<a name="zh-cn_topic_0241735619_zh-cn_topic_0237120433_zh-cn_topic_0059777949_s14d206561091447bbb06bac48d8fee66"></a>
 
 请参见[示例](example_libpq.md)章节。
-

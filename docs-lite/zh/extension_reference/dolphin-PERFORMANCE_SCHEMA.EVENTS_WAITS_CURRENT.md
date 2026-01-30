@@ -3,8 +3,8 @@
 PERFORMANCE_SCHEMA.EVENTS_WAITS_CURRENT视图，可以检测当前线程的阻塞等待情况。兼容Mysql对应视图，仅在B库创建。
 
 >[!NOTE]说明
->-   很多列openGauss并没有与Mysql相对应的信息，或者暂时不支持的输出，为了最大限度保持兼容性，用NULL填充。
-
+>
+>- 很多列openGauss并没有与Mysql相对应的信息，或者暂时不支持的输出，为了最大限度保持兼容性，用NULL填充。
 
 **表 1**  EVENTS_WAITS_CURRENT字段
 

@@ -74,19 +74,19 @@ SQLRETURN  SQLGetDiagRec(SQLSMALLINT    HandleType
 
 ## 返回值<a name="zh-cn_topic_0238272900_zh-cn_topic_0237120430_zh-cn_topic_0059778032_s79113635891145b5b38d04f8c2a8fa71"></a>
 
--   SQL\_SUCCESS：表示调用正确。
--   SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
--   SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
--   SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
+- SQL\_SUCCESS：表示调用正确。
+- SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
+- SQL\_ERROR：表示比较严重的错误，如：内存分配失败、建立连接失败等。
+- SQL\_INVALID\_HANDLE：表示调用无效句柄。其他API的返回值同理。
 
 ## 注意事项<a name="zh-cn_topic_0238272900_zh-cn_topic_0237120430_zh-cn_topic_0059778032_s15c39d4749d544f1bbd489d994427ef7"></a>
 
 SQLGetDiagRec不发布自己的诊断记录。它用下列返回值来报告它自己的执行结果：
 
--   SQL\_SUCCESS：函数成功返回诊断信息。
--   SQL\_SUCCESS\_WITH\_INFO：MessageText太小以致不能容纳所请求的诊断信息。没有诊断记录生成。
--   SQL\_INVALID\_HANDLE：由HandType和Handle所指出的句柄是不合法句柄。
--   SQL\_ERROR：RecNumber小于等于0或BufferLength小于0。
+- SQL\_SUCCESS：函数成功返回诊断信息。
+- SQL\_SUCCESS\_WITH\_INFO：MessageText太小以致不能容纳所请求的诊断信息。没有诊断记录生成。
+- SQL\_INVALID\_HANDLE：由HandType和Handle所指出的句柄是不合法句柄。
+- SQL\_ERROR：RecNumber小于等于0或BufferLength小于0。
 
 如果调用ODBC函数返回SQL\_ERROR或SQL\_SUCCESS\_WITH\_INFO，可调用SQLGetDiagRec返回诊断信息值SQLSTATE，SQLSTATE值的如下表。
 
@@ -156,4 +156,3 @@ SQLGetDiagRec不发布自己的诊断记录。它用下列返回值来报告它�
 ## 示例<a name="zh-cn_topic_0238272900_zh-cn_topic_0237120430_zh-cn_topic_0059778032_sf24dafb7ecbe4978ac9b0c0da42eaa19"></a>
 
 参见：[示例](example_odbc.md)
-
