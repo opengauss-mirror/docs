@@ -1,7 +1,5 @@
 label: 编译指南
 isManual: true
 sections:
-  - label: 版本编译
+  - label: oGRAC版本出包编译文档
     href: ./compiling_the_version.md
-  - label: 搭建编译环境
-    href: ./setting_up_the_compilation_environment.md

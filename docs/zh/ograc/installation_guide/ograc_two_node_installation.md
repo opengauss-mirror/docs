@@ -1,36 +1,47 @@
-# oGRAC两节点安装
+# oGRAC 两节点安装指南
 
-本文旨在介绍如何在物理机上进行`oGRAC`的两节点安装部署。
+## 1. 文档简介
 
-## 安装前须知
-
-### 硬件要求
-
-- 主机数量：2台ARM架构物理机/DCS虚拟机
-- 推荐主机硬件最低规格：
-    - 内存：8GB
-    - CPU：4核（16位）
-    - 磁盘空闲空间：100GB
+本文档用于指导开发者在 **两台物理机或虚拟机** 上完成 oGRAC 的 **两节点集群安装与部署**。
 
 ---
 
-## 安装准备
+## 2. 安装前须知
 
-### 操作系统要求
+### 2.1 硬件要求
 
-- 支持的操作系统：
-    - openEuler 20.03/22.03 LTS arrch64
-- 建议使用上述版本的操作系统进行编译和部署，其余环境未作正确性验证
+oGRAC 两节点部署至少需要两台服务器，推荐硬件规格如下：
+
+* 主机数量：2 台 ARM 架构物理机或 DCS 虚拟机
+* 单台主机最低推荐配置：
+
+  * 内存：8 GB
+  * CPU：4 核
+  * 磁盘可用空间：不少于 100 GB
+  * 两台物理机或虚机可以同时直接访问共享盘，且必须要4块；
+
+> **说明**：资源不足可能导致安装阶段失败，尤其是在共享存储和 CM 组件初始化时。
 
 ---
 
-## 安装 oGRAC
+### 2.2 操作系统要求
 
-### 1. 环境准备
+* 支持的操作系统版本：
 
-#### 1.1 系统初始化
+  * openEuler 20.03 LTS (aarch64)
+  * openEuler 22.03 LTS (aarch64)
 
-在`root`用户下，关闭 SELinux 和防火墙：
+> **建议**：请优先使用上述版本，其它系统环境未进行完整兼容性验证。
+
+---
+
+## 3. 安装准备
+
+以下步骤需要 **在两台节点上分别执行，其需要root用户**，除非特别说明。
+
+### 3.1 系统初始化
+
+为避免 SELinux 和防火墙影响节点通信及数据库进程启动，需要提前关闭相关功能。
 
 ```shell
 setenforce 0
@@ -39,16 +50,27 @@ systemctl stop firewalld
 systemctl disable firewalld
 ```
 
-#### 1.2 创建用户
+> **提示**：以上操作建议仅在测试或内网环境中执行。
 
-- 两节点均需创建用户，并设置密码，两节点操作一致。
+---
+
+### 3.2 创建安装管理用户
+
+两节点均需创建 **安装管理用户**，该用户仅用于安装和调度流程，不作为数据库实际使用用户。
+
+* 数据库运行用户 `ograc` 会在安装过程中自动创建
+* 两节点的用户名和密码必须保持一致
 
 ```shell
 useradd ogdba
-passwd ogdba  # 然后回显需要输入设置密码
+passwd ogdba
 ```
 
-#### 1.3 安装必要依赖
+---
+
+### 3.3 安装系统依赖
+
+oGRAC 安装依赖 Python、时间同步和网络工具，请在两节点执行：
 
 ```shell
 yum install -y wget ntpdate chrony python3 python3-devel iputils iproute --skip-broken
@@ -56,108 +78,106 @@ yum install -y wget ntpdate chrony python3 python3-devel iputils iproute --skip-
 
 ---
 
-### 2. 获取安装包并传输到各个安装节点
+## 4. 获取并准备安装包
 
-创建安装目录（这里以`/data`目录举例，不建议将安装目录存放在`/home`下，以免存在不可预期的权限问题）
+### 4.1 创建安装目录
+
+建议将安装目录放置在 `/data` 等非用户家目录下，以避免权限问题。
 
 ```shell
-mkdir /data/ograc
+mkdir -p /data/ograc
+cd /data/ograc
 ```
 
-- 可以在[openGauss官网](https://docs.opengauss.org/zh/)的`下载`页面进行安装包的下载获取。
+---
+
+### 4.2 下载并分发安装包
+
+1. 从 openGauss OBS 下载 oGRAC 安装包：
+   [https://download-opengauss.osinfra.cn/archive_test/oGRAC/1.0.0/](https://download-opengauss.osinfra.cn/archive_test/oGRAC/1.0.0/)
+
+2. 若安装包已下载至节点 1，请同步至节点 2：
 
 ```shell
-假如安装包放在节点一的`/data/ograc`目录下，则需要执行下面这个命令给节点二也传输一份
-
 scp /data/ograc/[package_name] root@[ip2]:/data/ograc/[package_name]
 ```
 
 ---
 
-### 3. 两节点安装准备
+## 5. 两节点共享存储准备
 
-> 请提前准备好 4 个 LUN，并在磁阵上划分好后挂载到主机。
->
->说明：
->
-> - DeviceManager是在有了存储设备后自行配置的一个用于管理存储设备的网页。
-> - 在第一次扫描、查询盘符时，如果查找不到，则可以使用iscsiadm -m node --logoutall=all 和iscsiadm -m node -p ip -l来断开连接并重新登录连接，注意该操作会影响所有连接的存储设备，可能会影响其他用户，请谨慎操作。这里的ip是存储设备的ip地址，可以使用iscsiadm -m node来查询。
+### 5.1 LUN 规划说明
 
-通过如下步骤来进行LUN的划分：
+oGRAC 两节点集群需要使用共享存储，请提前在存储侧准备 **4 个 LUN** 并完成映射。
 
-1. 登录集群DeviceManager，选择`服务`->`LUN组`->`LUN`->`创建`来创建四个LUN，分为一个5G、一个4T、两个2T大小；(具体的大小请根据业务需求进行设置)
-2. 将创建好的四个LUN添加映射到对应的主机组中即可；
+推荐规划如下（示例）：
 
-#### 3.1 前期准备：解压文件
+* 1 × 5G：CM 仲裁盘
+* 1 × 4T：Redo 盘
+* 2 × 2T：数据盘、归档盘
 
-节点1操作如下：
+> **注意**：iscsi 重新登录操作可能影响当前主机的所有存储连接，请谨慎操作。
+
+---
+
+### 5.2 解压安装文件
+
+在两节点分别执行：
 
 ```shell
 cd /data/ograc
 tar -zxvf [package_name]
-chmod 777 ograc_connector -R
-chown root:root ograc_connector -R
+chmod -R 777 ograc_connector
+chown -R root:root ograc_connector
+```
+
+节点1、节点2均进入 action 目录：
+
+```shell
 cd ograc_connector/action
 ```
 
-节点2操作如下：
+---
+
+### 5.3 时间同步配置
+
+集群环境对时间一致性要求较高，请务必完成时间同步。
+
+#### 情况一：节点可访问外网
+
+两节点分别执行：
 
 ```shell
-cd /data/ograc
-tar -zxvf [package_name]
-chmod 777 ograc_connector -R
-chown root:root ograc_connector -R
-```
-
-#### 3.2 时间同步配置
-
-> **注意：** 如果使用虚拟机，请先确保与主机的时间同步策略已关闭，否则可能会出现时间跳变。
-
-情况一：已接入外网
-
-在两节点分别执行以下命令进行时间同步：
-
-```shell
-# 节点1执行
-ntpdate -u ntp.aliyun.com
-
-# 节点2执行
 ntpdate -u ntp.aliyun.com
 ```
 
-情况二：未接入外网
+#### 情况二：无外网环境
 
-使用 chrony 在节点1搭建时间服务器，并将节点2与节点1同步。
+* 节点 1 作为时间服务器
+* 节点 2 向节点 1 同步时间
 
-节点1配置：搭建 NTP 服务器
+**节点 1：**
 
 ```shell
-# 添加访问授权并重启服务
 sed -i "1i allow all" /etc/chrony.conf
 systemctl restart chronyd
-
-# 验证服务监听状态（应包含 0.0.0.0:123）
 ss -unlp | grep chronyd
 ```
 
-节点2配置：同步节点1时间
+**节点 2：**
 
 ```shell
-# 配置主节点 IP（请将 [IP1] 替换为节点1的实际IP）
 sed -i "1i server [IP1] iburst" /etc/chrony.conf
-
-# 启用并启动服务
 systemctl enable --now chronyd
 systemctl restart chronyd
-# 查看chrony 状态
 chronyc tracking
-# 若后续因各类因素导致该节点与节点1时间偏差过大，通过如下命令快速触发强制同步时间
-systemctl restart chronyd
 ```
 
-#### 3.3 LUN 软链接建立（两节点均需执行，盘符以 by-id 为准）
+---
 
-节点1、2操作如下：
+### 5.4 创建 LUN 软链接（root用户下，两节点一致）
+
+请根据实际盘符（建议使用 `/dev/disk/by-id`）建立统一软链接：
 
 ```shell
 ln -s /dev/sdxx /dev/dss-disk1
@@ -165,133 +185,112 @@ ln -s /dev/sdxx /dev/dss-disk2
 ln -s /dev/sdxx /dev/dss-disk3
 ln -s /dev/sdxx /dev/gcc-disk
 ```
-
-示意图如下：
-
 ![LUN 软连接示意图](image-LUN软链接.png)
+| 软链接       | 用途     | DSS 卷   | 建议大小 |
+| --------- | ------ | ------- | ---- |
+| gcc-disk  | CM 仲裁盘 | 不纳入lun管理组件管理 | 5G   |
+| dss-disk1 | 数据盘    | vg1     | 2T   |
+| dss-disk2 | Redo 盘 | vg2     | 4T   |
+| dss-disk3 | 归档盘    | vg3     | 2T   |
 
-建立软链接的对应关系如下表：
+> **说明**：`gcc` 为 CM 组件内部名称，与编译器无关。
 
-| 软链接 | 使用类型 | dss卷名 |  大小  |
-|--------|--------|---------|---------|
-| gcc-disk | cm投票盘 |不对该卷进行显式管理| 5G|
-| dss-disk1| page   |vg1    |    2T   |
-| dss-disk2| redo   |vg2    |    4T   |
-| dss-disk3| 归档   |vg3    |    2T   |
+---
 
-请注意，上述`gcc`为`CM`组件特有名称，与编译器类型无关。
+## 6. 配置安装参数
 
-#### 3.4 配置文件修改
+### 6.1 修改配置文件
 
-- 进入 action 目录：
+进入 action 目录并编辑 `config_params_lun.json`：
 
 ```shell
 cd /data/ograc/ograc_connector/action
 ```
 
-- 编辑 `config_params_lun.json`，注意节点参数差异，其中如果为小规格机器（如内存小于255GB），请将`auto_tune`置为1，进行自适应参数调节，否则将会因内存资源不足导致安装失败。
+配置注意事项：
 
-节点1上的`config_params_lun.json`进行如下修改配置：
+1. 两节点 `node_id` 必须分别为 `0` 和 `1`
+2. 内存较小的机器请开启 `auto_tune`
+3. redo 盘大小需大于 `redo_num × redo_size × 2`
 
-```json
-{
-    "deploy_mode": "dss",
-    "deploy_user": "ogdba:ogdba",
-    "node_id": "0",
-    "cms_ip": "xx.xx.xx.1;xx.xx.xx.2",
-    "db_type": "1",
-    "mes_ssl_switch": false,
-    "MAX_ARCH_FILES_SIZE": "300G",
-    "redo_num": "6",
-    "redo_size": "5G",
-    "auto_tune": "0",
-    "dss_vg_list": {
-        "vg1": "/dev/dss-disk1",
-        "vg2": "/dev/dss-disk2",
-        "vg3": "/dev/dss-disk3"
-    },
-    "gcc_home": "/dev/gcc-disk"              
-}
-```
-
-节点2上的`config_params_lun.json`进行如下修改配置：
+节点 1 示例：
 
 ```json
 {
-    "deploy_mode": "dss",
-    "deploy_user": "ogdba:ogdba",
-    "node_id": "1",
-    "cms_ip": "xx.xx.xx.1;xx.xx.xx.2",
-    "db_type": "1",
-    "mes_ssl_switch": false,
-    "MAX_ARCH_FILES_SIZE": "300G",
-    "redo_num": "6",
-    "redo_size": "5G",
-    "auto_tune": "0",
-    "dss_vg_list": {
-        "vg1": "/dev/dss-disk1",
-        "vg2": "/dev/dss-disk2",
-        "vg3": "/dev/dss-disk3"
-    },
-    "gcc_home": "/dev/gcc-disk"
+  "deploy_mode": "dss",
+  "deploy_user": "ogdba:ogdba",
+  "node_id": "0",
+  "cms_ip": "xx.xx.xx.1;xx.xx.xx.2",
+  "db_type": "1",
+  "mes_ssl_switch": false,
+  "MAX_ARCH_FILES_SIZE": "300G",
+  "redo_num": "6",
+  "redo_size": "5G",
+  "auto_tune": "0",
+  "dss_vg_list": {
+    "vg1": "/dev/dss-disk1",
+    "vg2": "/dev/dss-disk2",
+    "vg3": "/dev/dss-disk3"
+  },
+  "gcc_home": "/dev/gcc-disk"
 }
 ```
 
-其中，各字段含义如下：
-
-- deploy_mode：安装模式，当前默认推荐使用dss安装；
-- deploy_user：安装管理用户；
-- node_id：节点序号，从0开始；
-- mes_ssl_switch：mes通信是否通过ssl加密；
-- db_type：数据库标识，不建议修改；
-- MAX_ARCH_FILES_SIZE：归档最大文件大小；
-- redo_num：redo文件的数量；
-- redo_size：redo文件的大小，由于首次起库会`dd`抹除盘中所有内容，不建议设置过大；
-- auto_tune：是否开启自适应参数配置（小规格机器建议开启）；
-- dss_vg_list：分别为数据盘、redo盘、归档盘目录；
-- gcc_home：CM仲裁盘使用目录；
+节点 2 仅需将 `node_id` 修改为 `1`。
 
 ---
 
-### 4. 节点安装与启动
-接下来进行两节点安装，首先，在节点一执行如下命令，执行`install`步骤安装一节点：
-```shell
-sh appctl.sh install config_params_lun.json
-```
-其次，在节点二执行如下命令，安装而节点：
+## 7. 安装与启动集群
+常见问题可以见`oGRAC安装部署常见问题定位与解决`章节。
+### 7.1 安装节点
+
+在两节点先后执行，建议等待节点1安装完毕后，再进行节点2安装：
+
 ```shell
 sh appctl.sh install config_params_lun.json
 ```
 
-接下来进行两节点启动，首先，在节点一执行如下命令：
-```shell
-sh appctl.sh start
-```
-其次，在节点二执行如下命令，启动二节点：
-```shell
-sh appctl.sh start
-```
 ---
 
-### 5. 查询集群状态
-登录任一节点，执行以下命令，查看节点状态信息：
+### 7.2 启动节点
+
+建议先启动节点 1，再启动节点 2：
+
+```shell
+sh appctl.sh start
+```
+
+---
+
+## 8. 集群状态检查
+
+在任意节点执行：
+
 ```shell
 su -s /bin/bash ograc
 cms stat -res db
 ```
-
-示意图如下：
-
 ![查询集群状态示意图](image-集群状态.png)
+若两节点状态均正常，则集群部署成功。
 
-## 卸载 oGRAC
+---
 
-首先，在两节点均利用stop命令停止数据库：
+## 9. 卸载 oGRAC
+
+### 9.1 停止服务
+
 ```shell
 sh appctl.sh stop
 ```
 
-随后，利用`uninstall`命令删除数据、安装目录及相关环境变量。
+### 9.2 卸载清理
+
 ```shell
 sh appctl.sh uninstall override
 ```
+
+---
+
+## 10. 总结
+
+至此，oGRAC 两节点集群的完整安装流程已完成。
