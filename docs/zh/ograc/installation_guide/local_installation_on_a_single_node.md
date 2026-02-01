@@ -1,10 +1,27 @@
-# 单节点本地安装
+# oGRAC 单节点本地安装
 
-## 1. 环境准备
+## 一、概述
 
-### 1.1 系统初始化
+本文档用于指导开发者在**本地环境**中完成 oGRAC 的**单节点编译、安装与调试**。该部署方式主要面向功能验证、源码调试和开发联调场景，不适用于生产环境。
 
-关闭 SELinux 和防火墙：
+> **重要说明**
+>
+> * 单节点模式仅支持单实例运行
+> * 不包含 `DMS`、`DSS` 等分布式组件能力
+> * 不支持多写场景，也无法在当前环境基础上平滑扩展为多节点集群
+> * 仅建议用于开发、调试和问题定位
+
+---
+
+## 二、环境准备
+
+在开始安装前，请确保操作系统和运行环境满足以下前置条件。
+
+### 2.1 系统初始化
+
+为了避免系统安全策略或防火墙规则对数据库进程、端口通信以及调试工具造成影响，需要提前关闭 SELinux 和防火墙服务。
+
+执行以下命令完成相关配置：
 
 ```bash
 setenforce 0
@@ -13,89 +30,141 @@ systemctl stop firewalld
 systemctl disable firewalld
 ```
 
-### 1.2 创建目录和用户
+> **说明**
+>
+> * `setenforce 0`：临时关闭 SELinux 强制策略
+> * 修改 `/etc/selinux/config` 可保证系统重启后仍保持关闭状态
+> * 防火墙关闭后，请确保当前环境为可信内网或本地环境
+
+---
+
+### 2.2 创建目录与用户
+
+为了保证系统安全性和权限隔离，建议使用**独立的系统用户**进行 oGRAC 安装和运行。
+
+1. 创建源码编译及安装目录
+2. 创建专用系统用户
+3. 将目录权限授予对应用户
+
+示例如下：
 
 ```bash
 mkdir -p [compile_path]
 chmod 755 -R [compile_path]
 useradd [user_name]
 passwd [user_password]
-chown -R [user_name]:[user_name] [compile_path]
+#建议进行权限设置，否则会出现install阶段权限不足的报错
+chmod -R 777 [compile_path]
 ```
 
-### 1.3 安装必要依赖
+> **参数说明**
+>
+> * `[compile_path]`：源码下载、编译及安装的统一工作目录
+> * `[user_name]`：建议专用于 oGRAC 的系统运行用户
+
+---
+
+### 2.3 安装系统依赖
+
+oGRAC 的编译和运行依赖 Python、网络工具及部分基础库，请提前安装以下软件包：
 
 ```bash
 yum install -y wget python3 python3-devel iputils iproute --skip-broken
 ```
 
+> **说明**
+>
+> * `python3 / python3-devel`：用于执行安装脚本和管理工具
+> * `iputils / iproute`：用于网络检测与 IP 配置
+> * `--skip-broken`：在依赖存在冲突时跳过异常包，避免中断安装
+
 ---
 
-## 2. 源码获取与编译
+## 三、源码获取与编译
 
-### 2.1 获取源码
+### 3.1 获取源码
+
+切换至前文创建的编译目录，拉取 oGRAC 官方源码仓库：
 
 ```bash
 cd [compile_path]
 git clone https://gitcode.com/openGauss/oGRAC.git
 ```
 
-### 2.2 修改编译配置
+下载完成后，目录结构中将包含 `build`、`src` 等核心子目录。
 
-如需关闭保护虚拟内存选项(如果编译安装的是debug版本建议关闭保护虚拟内存选项)：
+---
+
+### 3.2 编译参数调整（Debug 场景）
+
+在部分调试或开发场景下（尤其是 Debug 版本编译），需要关闭**虚拟内存保护机制**，否则可能影响调试工具的正常使用。
+
+进入编译配置目录并修改参数：
 
 ```bash
 cd oGRAC/build
 sed -i 's/DUSE_PROTECT_VM=ON/DUSE_PROTECT_VM=OFF/g' Makefile.sh
 ```
 
+> **说明**
+>
+> * Debug 编译时必须关闭该选项
+> * Release 版本通常可保持默认开启状态
+
 ---
 
-## 3. 安装流程
+## 四、安装流程
+### 4.1 执行安装脚本
 
-### 3.1 获取安装包
-
-可以在[openGauss官网](https://docs.opengauss.org/zh/)的`下载`页面进行安装包的下载获取。
-
-### 3.2 安装
-
-下载安装包后，使用tar解压安装包，然后进入`oGRAC/build`目录下，之后执行以下命令进行安装：
+1. 进入 `oGRAC/build` 目录
+2. 使用安装脚本进行部署
 
 ```bash
 sh local_install.sh install -u [user_name]
 ```
 
-- `-u, --user=<user>`：指定安装和运行的系统用户，默认 `ogracdba`
+该脚本将自动完成以下工作：
 
-安装过程包括：
+* 校验运行环境和用户权限
+* 创建安装用户及 home 目录（如不存在）
+* 停止并清理历史残留进程与数据
+* 创建数据目录和日志目录
 
-- 创建用户及home目录（如不存在）
-- 停止旧进程、清理旧数据
-- 创建数据目录
-- 执行 `install.py` 进行初始化
+---
 
-常用 `install.py` 参数说明：
+### 4.2 卸载与清理
 
-| 参数                 | 默认值                                | 说明                       |
-| ---------------------| ------------------------------------ | -------------------------- |
-| -U \<user:group>      | ogracdba:ogracdba                    | 安装运行的系统用户和组       |
-| -R \<install_path>    | '/home/ogracdba/install'             | 软件安装路径               |
-| -D \<data_path>       | '/home/ogracdba/data'                | 数据文件存放路径           |
-| -l \<log_path>        | '/home/ogracdba/logs/install.log'    | 安装日志文件路径           |
-| -M \<mode>            | ogracd_in_cluster                    | 运行模式，ogracd：单机模式；ogracd_in_cluster：集群模式  |
-| -N 0                 | 0                                    | 节点 ID，只能是0或1        |
-| -W \<IP>              | 192.168.0.1                          | 配置数据库IP白名单         |
-| -g withoutroot       | withoutroot                          | 表示无root权限允许安装脚本，但必须对安装文件夹有权限，参数值只能为withoutroot，若要使用必须精确使用“-g withoutroot”         |
-| -d                   | 无参数值                              | 表示在后台运行                   |
-| -c                   | 无参数值                              | 标识不使用基于SSL的安全连接，自动进行配置                   |
-| -Z _SYS_PASSWORD=... | _SYS_PASSWORD=huawei@1234            | 管理员账号默认密码，建议自行修改配置   |
-| -Z SESSIONS=...     | SESSIONS=1000                        | 最大会话数                 |
-
-经过上述步骤已编译安装好 oGRAC，后续可以根据需要进行配置和使用。
-
-### 3.3 卸载与清理
-
-停止服务并删除数据、安装目录及相关环境变量。
+如需重新部署或清理环境，可执行卸载脚本：
 
 ```bash
 sh local_install.sh clean -u [user_name]
+```
+
+该操作将停止服务，并删除数据目录、安装目录以及相关环境变量。
+
+---
+
+## 五、Debug 与调试建议
+
+在单节点部署中，系统仍默认包含 `CM`（Cluster Manager）组件。在使用 `gdb` 进行断点调试时，`CM` 可能因心跳超时误判数据库异常并强制终止进程。
+
+为避免该问题，建议在调试前调整 CM 的超时时间参数：
+
+```bash
+su - [user_name]
+cms res -edit db -attr HB_TIMEOUT=100000000
+cms res -edit db -attr CHECK_TIMEOUT=10000000
+```
+
+> **说明**
+>
+> * 上述配置仅建议在调试环境中使用
+> * 调试完成后可恢复默认配置，避免影响系统行为
+
+---
+
+## 六、结语
+
+至此，oGRAC 单节点本地环境已完成从源码获取、编译、安装到调试配置的完整流程。后续可根据具体需求进行参数调优、功能验证或源码级调试。
+
+如需部署多节点或生产环境，请参考两节点集群部署文档。

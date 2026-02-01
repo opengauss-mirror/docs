@@ -5,7 +5,9 @@ sections:
     href: ./compilation_and_installation.md
   - label: 容器化单节点安装 oGRAC
     href: ./containerized_single_node_installation.md
-  - label: 单节点本地安装
+  - label: 单节点本地安装oGRAC指引
     href: ./local_installation_on_a_single_node.md
-  - label: oGRAC两节点安装
+  - label: 两节点oGRAC安装指引
     href: ./ograc_two_node_installation.md
+  - label: oGRAC安装部署常见问题定位与解决
+    href: ./error_introduce.md
