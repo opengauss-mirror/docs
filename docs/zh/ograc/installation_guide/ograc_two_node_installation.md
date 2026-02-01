@@ -51,7 +51,7 @@ passwd ogdba  # 然后回显需要输入设置密码
 #### 1.3 安装必要依赖
 
 ```shell
-yum install -y wget python3 python3-devel iputils iproute --skip-broken
+yum install -y wget ntpdate chrony python3 python3-devel iputils iproute --skip-broken
 ```
 
 ---
@@ -88,18 +88,16 @@ scp /data/ograc/[package_name] root@[ip2]:/data/ograc/[package_name]
 1. 登录集群DeviceManager，选择`服务`->`LUN组`->`LUN`->`创建`来创建四个LUN，分为一个5G、一个4T、两个2T大小；(具体的大小请根据业务需求进行设置)
 2. 将创建好的四个LUN添加映射到对应的主机组中即可；
 
-#### 3.1 前期准备：解压文件并时间同步
+#### 3.1 前期准备：解压文件
 
 节点1操作如下：
 
 ```shell
 cd /data/ograc
 tar -zxvf [package_name]
-chmod 777 ograc_connector -R; 
+chmod 777 ograc_connector -R
 chown root:root ograc_connector -R
 cd ograc_connector/action
-ntpdate -u ntp.xxx.com # 同步机器时间，这里可以采用多种服务时间
-date   # 检查两台机器时间是否同步，否则 CMS 无法启动
 ```
 
 节点2操作如下：
@@ -107,13 +105,57 @@ date   # 检查两台机器时间是否同步，否则 CMS 无法启动
 ```shell
 cd /data/ograc
 tar -zxvf [package_name]
-chmod 777 ograc_connector -R; 
+chmod 777 ograc_connector -R
 chown root:root ograc_connector -R
-ntpdate -u ntp.xxx.com # 同步机器时间，这里可以采用多种服务时间
-date   # 检查两台机器时间是否同步，否则 CMS 无法启动
 ```
 
-#### 3.2 LUN 软链接建立（两节点均需执行，盘符以 by-id 为准）
+#### 3.2 时间同步配置
+
+> **注意：** 如果使用虚拟机，请先确保与主机的时间同步策略已关闭，否则可能会出现时间跳变。
+
+情况一：已接入外网
+
+在两节点分别执行以下命令进行时间同步：
+
+```shell
+# 节点1执行
+ntpdate -u ntp.aliyun.com
+
+# 节点2执行
+ntpdate -u ntp.aliyun.com
+```
+
+情况二：未接入外网
+
+使用 chrony 在节点1搭建时间服务器，并将节点2与节点1同步。
+
+节点1配置：搭建 NTP 服务器
+
+```shell
+# 添加访问授权并重启服务
+sed -i "1i allow all" /etc/chrony.conf
+systemctl restart chronyd
+
+# 验证服务监听状态（应包含 0.0.0.0:123）
+ss -unlp | grep chronyd
+```
+
+节点2配置：同步节点1时间
+
+```shell
+# 配置主节点 IP（请将 [IP1] 替换为节点1的实际IP）
+sed -i "1i server [IP1] iburst" /etc/chrony.conf
+
+# 启用并启动服务
+systemctl enable --now chronyd
+systemctl restart chronyd
+# 查看chrony 状态
+chronyc tracking
+# 若后续因各类因素导致该节点与节点1时间偏差过大，通过如下命令快速触发强制同步时间
+systemctl restart chronyd
+```
+
+#### 3.3 LUN 软链接建立（两节点均需执行，盘符以 by-id 为准）
 
 节点1、2操作如下：
 
@@ -139,7 +181,7 @@ ln -s /dev/sdxx /dev/gcc-disk
 
 请注意，上述`gcc`为`CM`组件特有名称，与编译器类型无关。
 
-#### 3.3 配置文件修改
+#### 3.4 配置文件修改
 
 - 进入 action 目录：
 
