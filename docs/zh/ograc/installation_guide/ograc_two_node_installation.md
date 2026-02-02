@@ -141,14 +141,14 @@ cd ograc_connector/action
 
 ### 5.3 时间同步配置
 
-集群环境对时间一致性要求较高，请务必完成时间同步。
+集群环境对时间一致性要求较高，请先执行 date 命令检查各节点时间是否一致，一致则可跳过该步骤，否则请务必完成时间同步。（若使用虚拟机，需先关闭与主机的时间同步策略，防止出现时间跳变问题。）
 
 #### 情况一：节点可访问外网
 
 两节点分别执行：
 
 ```shell
-ntpdate -u ntp.aliyun.com
+ntpdate -u [外网ntp服务器网址]
 ```
 
 #### 情况二：无外网环境
@@ -161,6 +161,7 @@ ntpdate -u ntp.aliyun.com
 ```shell
 sed -i "1i allow all" /etc/chrony.conf
 systemctl restart chronyd
+sed -i 's/^#local stratum 10/local stratum 10/' /etc/chrony.conf
 ss -unlp | grep chronyd
 ```
 
@@ -169,7 +170,7 @@ ss -unlp | grep chronyd
 ```shell
 sed -i "1i server [IP1] iburst" /etc/chrony.conf
 systemctl enable --now chronyd
-systemctl restart chronyd
+systemctl restart chronyd  #若后续由于其他因素导致时间偏差过大，可通过该命令快速触发强制同步
 chronyc tracking
 ```
 
