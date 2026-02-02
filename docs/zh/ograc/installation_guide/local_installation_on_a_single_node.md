@@ -69,7 +69,7 @@ chmod -R 777 [compile_path]
 oGRAC 的编译和运行依赖 Python、网络工具及部分基础库，请提前安装以下软件包：
 
 ```bash
-yum install -y wget python3 python3-devel iputils iproute --skip-broken
+yum install -y wget python3 python3-devel iputils iproute unixODBC-devel unixODBC --skip-broken
 ```
 
 > **说明**

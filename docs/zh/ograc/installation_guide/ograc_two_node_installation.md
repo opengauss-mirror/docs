@@ -211,7 +211,7 @@ cd /data/ograc/ograc_connector/action
 配置注意事项：
 
 1. 两节点 `node_id` 必须分别为 `0` 和 `1`
-2. 内存较小的机器请开启 `auto_tune`
+2. 内存较小的机器(如DCS、内存小于300GB的物理机等)请设置 `auto_tune = 1`
 3. redo 盘大小需大于 `redo_num × redo_size × 2`
 
 节点 1 示例：
