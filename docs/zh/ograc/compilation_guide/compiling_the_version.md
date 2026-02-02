@@ -57,8 +57,8 @@ chown -R [user_name]:[user_name] [compile_path]
 oGRAC 编译依赖较多的系统库及构建工具，请在编译主机上执行以下命令一次性安装：
 
 ```shell
-yum install -y libaio-devel openssl openssl-devel ndctl-devel \
-ncurses ncurses-devel libtirpc-devel expect ant bison iputils \
+yum install -y libaio-devel openssl openssl-devel ndctl-devel unixODBC-devel unixODBC \
+ncurses ncurses-devel libtirpc-devel expect ant bison iputils  \
 iproute wget make gcc gcc-c++ gdb gdb-gdbserver python3 python3-devel \
 git net-tools cmake automake byacc libtool --skip-broken
 ```
