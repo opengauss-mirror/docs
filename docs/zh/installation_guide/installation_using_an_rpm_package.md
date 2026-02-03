@@ -1,6 +1,6 @@
 # RPM安装
 
-本章节主要介绍在openEuler、Fedora、RedHat操作系统上，通过yum命令一键安装openGauss数据库。
+本章节主要介绍在openEuler、Fedora、RedHat、SUSE操作系统上，通过yum/zypper命令一键安装openGauss数据库。
 
 ## 支持的架构、操作系统版本以及对应的openGauss版本
 
@@ -14,6 +14,7 @@
 | openEuler 22.03 LTS SP1 | ARM64/x86_64  | openGauss 2.1.0 Lite   |     无     |
 | Fedora Linux 41         | ARM64/x86_64  | openGauss 6.0.0 极简版  |     无     |
 | RedHat 9                | ARM64/x86_64  | openGauss 6.0.0 极简版  |     无     |
+| SUSE 15.6               | ARM64/x86_64  | openGauss 6.0.0 极简版  |     无     |
 
 注意：
 
@@ -30,7 +31,7 @@
 
 ## 使用限制
 
-- 当前仅在openEuler、Fedora、RedHat操作系统上支持yum方式安装，支持arm64和x86_64两种架构。
+- 当前仅在openEuler、Fedora、RedHat、SUSE操作系统上支持yum/zypper方式安装，支持arm64和x86_64两种架构。
 - 集成到openEuler系统上的数据库基于openGauss轻量版的能力构建。
 - RPM方式安装的仅为单机版数据库实例，升级时候只能替换二进制，不支持灰度升级。
 - 默认安装实例监听127.0.0.1:7654地址和端口。如果需要进行远程连接，需要手动修改postgresql.conf文件中的listen_address。
@@ -104,12 +105,45 @@ sudo yum install opengauss
 rpm -qi opengauss
 ```
 
+### SUSE操作系统
+
+- 以sudo用户安装为例。
+
+```shell
+# 1. 配置仓库
+sudo tee /etc/zypp/repos.d/opengauss.repo >/dev/null <<'EOF'
+[opengauss]
+name=openGauss Database Server
+baseurl=https://repo.opengauss.org/zypper/suse/15/opengauss-org/6.0.0/x86_64
+enabled=1
+gpgcheck=0
+EOF
+
+# 2. 更新缓存
+sudo zypper refresh
+
+# 3. 查看可用包
+sudo zypper packages --available | grep opengauss
+
+# 4. 安装
+sudo zypper install opengauss
+
+# 5. 验证安装
+zypper info opengauss
+```
+
 ## 卸载方式
 
 - Fedora、RedHat系统
 
 ```shell
 sudo yum remove opengauss
+```
+
+- SUSE系统
+
+```shell
+sudo zypper remove opengauss
 ```
 
 ## 使用说明
