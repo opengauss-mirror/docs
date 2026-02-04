@@ -7,7 +7,7 @@ sections:
     href: ./containerized_single_node_installation.md
   - label: 单节点本地安装oGRAC指引
     href: ./local_installation_on_a_single_node.md
-  - label: 两节点oGRAC安装指引
+  - label: oGRAC两节点部署指引
     href: ./ograc_two_node_installation.md
   - label: oGRAC安装部署常见问题定位与解决
     href: ./error_introduce.md
