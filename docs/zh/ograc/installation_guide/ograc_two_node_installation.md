@@ -303,6 +303,23 @@ cms stat -res db
 
 `PRE_STAT`为先前节点状态，`TARGET_STAT`为理想状态，可作为故障场景下的参考状态。
 
+此时，可以在该集群上简单的验证数据库功能，在两个节点上分别执行：
+```shell
+su -s /bin/bash ograc
+ogsql / as sysdba -q
+```
+进入数据库命令终端，在其中一个节点上执行：
+```shell
+create table test(a int);
+insert into test values(123);
+commit;
+```
+随后在另一个节点上执行：
+```shell
+select * from test;
+```
+即可获得之前数据，由此可见数据库功能正常。
+
 ---
 
 ## 9. 重新安装oGRAC
