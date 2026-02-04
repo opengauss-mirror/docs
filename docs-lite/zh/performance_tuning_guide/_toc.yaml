@@ -47,6 +47,8 @@ sections:
             href: ./resource_load_management_overview.md
           - label: 资源管理准备
             href: ./resource_management_preparation.md
+      - label: 配置DPA哈希聚合加速
+        href: ./配置DPA哈希聚合加速.md
   - label: SQL调优指南
     sections: 
       - label: 概述
