@@ -322,6 +322,10 @@ select * from test;
 
 ---
 
+### （可选）运行oGRAC两节点多写功能测试DEMO
+
+集群安装成功后，可以参考[oGRAC两节点多写功能测试DEMO使用指南](./ograc_two_nodes_multiwrite_testdemo.md)，运行oGRAC两节点多写功能测试DEMO
+
 ## 9. 重新安装oGRAC
 如果需要在该环境上重新部署oGRAC，需要先停止集群后，进行卸载清理，方可重新安装；
 ### 9.1 停止服务
