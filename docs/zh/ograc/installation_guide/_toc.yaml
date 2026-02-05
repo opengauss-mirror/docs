@@ -11,3 +11,5 @@ sections:
     href: ./ograc_two_node_installation.md
   - label: oGRAC安装部署常见问题定位与解决
     href: ./error_introduce.md
+  - label: oGRAC两节点多写功能测试DEMO使用指南
+    href: ./ograc_two_nodes_multiwrite_testdemo.md
