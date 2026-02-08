@@ -1,15 +1,5 @@
 label: 安装指南
 isManual: true
 sections:
-  - label: 编译安装
-    href: ./compilation_and_installation.md
-  - label: 容器化单节点安装 oGRAC
-    href: ./containerized_single_node_installation.md
-  - label: 单节点本地安装oGRAC指引
-    href: ./local_installation_on_a_single_node.md
-  - label: oGRAC两节点部署指引
-    href: ./ograc_two_node_installation.md
-  - label: oGRAC安装部署常见问题定位与解决
-    href: ./error_introduce.md
-  - label: oGRAC两节点多写功能测试DEMO使用指南
-    href: ./ograc_two_nodes_multiwrite_testdemo.md
+    - href: ./single_node_guide/_toc.yaml
+    - href: ./tow_nodes_guide/_toc.yaml

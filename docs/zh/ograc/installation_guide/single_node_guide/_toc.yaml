@@ -1,0 +1,7 @@
+label: oGRAC单节点开发编译与部署指南
+isManual: true
+sections:
+  - label: oGRAC服务器单节点部署指引
+    href: ./local_installation_on_a_single_node.md
+  - label: oGRAC容器单节点部署指引
+    href: ./containerized_single_node_installation.md
