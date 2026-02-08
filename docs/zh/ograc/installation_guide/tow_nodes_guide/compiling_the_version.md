@@ -78,6 +78,8 @@ git net-tools cmake automake byacc libtool --skip-broken
 
 oGRAC 依赖 openGauss 提供的第三方二进制库，请先下载并解压至 oGRAC 源码目录。
 
+请注意，当前主干分支包含`master`和`1.0.0`两个分支，当前官网文档以`1.0.0`为基线进行安装部署指引。
+
 ```bash
 su - [user_name]
 cd [compile_path]
@@ -85,6 +87,8 @@ cd [compile_path]
 git clone https://gitcode.com/opengauss/oGRAC.git
 
 cd oGRAC
+# 根据所需自行切换分支
+# git reset --hard origin/1.0.0
 wget --no-check-certificate \
 https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/binarylibs/gcc10.3/openGauss-third_party_binarylibs_openEuler_2203_arm.tar.gz
 

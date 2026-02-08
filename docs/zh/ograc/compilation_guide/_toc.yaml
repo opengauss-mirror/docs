@@ -1,5 +1,0 @@
-label: 编译指南
-isManual: true
-sections:
-  - label: oGRAC版本出包编译文档
-    href: ./compiling_the_version.md
