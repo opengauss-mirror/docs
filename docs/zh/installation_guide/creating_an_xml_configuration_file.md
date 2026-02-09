@@ -68,6 +68,9 @@
     <!-- uwal挂载路径 -->
     <PARAM name="uwal_devices_path" value="'/home/omm/data/dn'"/>
 
+    <!-- 启用二进制代码段大页 -->
+    <PARAM name="enableHugeBin" value="on"/>
+
     <!-- VIP信息  -->
     <PARAM name="floatIp1" value="10.10.10.100"/>
     <PARAM name="floatIp2" value="20.20.20.100"/>
@@ -99,7 +102,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0283136466_row2076785215584"><td class="cellrowborder" rowspan="20" valign="top" width="10.87108710871087%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a>整体信息</p>
+<tbody><tr id="zh-cn_topic_0283136466_row2076785215584"><td class="cellrowborder" rowspan="21" valign="top" width="10.87108710871087%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a>整体信息</p>
 <p id="p8418171218599"><a name="p8418171218599"></a><a name="p8418171218599"></a></p>
 <p id="p090514610594"><a name="p090514610594"></a><a name="p090514610594"></a></p>
 <p id="p1982221273714"><a name="p1982221273714"></a><a name="p1982221273714"></a></p>
@@ -112,6 +115,7 @@
 <p id="p19885415195219"><a name="p19885415195219"></a><a name="p19885415195219"></a></p>
 <p id="p13547194445219"><a name="p13547194445219"></a><a name="p13547194445219"></a></p>
 <p id="p10362253145215"><a name="p10362253145215"></a><a name="p10362253145215"></a></p>
+<p id="p10362253145216"><a name="p10362253145216"></a><a name="p10362253145216"></a></p>
 </td>
 <td class="cellrowborder" valign="top" width="17.87178717871787%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63365422101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63365422101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63365422101039"></a>clusterName</p>
 </td>
@@ -212,6 +216,11 @@
 <tr id="row1636215345219"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p73629537522"><a name="p73629537522"></a><a name="p73629537522"></a><span id="ph62489207537"><a name="ph62489207537"></a><a name="ph62489207537"></a>ss_rdma_work_config</span></p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p1936335316521"><a name="p1936335316521"></a><a name="p1936335316521"></a><span id="ph1859724119315"><a name="ph1859724119315"></a><a name="ph1859724119315"></a>rdma用户态poll占用起止cpu</span><span id="ph17210345531"><a name="ph17210345531"></a><a name="ph17210345531"></a>，</span><span id="ph209312048739"><a name="ph209312048739"></a><a name="ph209312048739"></a>ss_interconnect_type</span><span id="ph88565498320"><a name="ph88565498320"></a><a name="ph88565498320"></a>为RDMA时有效，形如</span><span id="ph28400511657"><a name="ph28400511657"></a><a name="ph28400511657"></a>"10 15"</span><span id="ph128321249878"><a name="ph128321249878"></a><a name="ph128321249878"></a>，中间以空格分隔。</span></p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0249784567_row1999732255920"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784567_p14456479368"><a name="zh-cn_topic_0249784567_p14456479368"></a><a name="zh-cn_topic_0249784567_p14456479368"></a>enableHugeBin</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p3419464101039"><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p3419464101039"></a><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p3419464101039"></a>配置为on时启用二进制代码段大页，代码段按照2MB对齐。需要root用户进行部署，且针对操作系统内核在5.10以上、PAGE_SIZE=4k场景下才会生效，不满足这些场景会部署为默认4K代码段方式。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0249784567_row1999732255920"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784567_p14456479368"><a name="zh-cn_topic_0249784567_p14456479368"></a><a name="zh-cn_topic_0249784567_p14456479368"></a>floatIp1、floatIp2、floatIp3</p>
