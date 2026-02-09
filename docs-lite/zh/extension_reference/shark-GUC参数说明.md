@@ -45,7 +45,7 @@ LINE 1: create table testhint(nowait int);
                              ^
 ```
 
-- enable_abs：是否允许@作为取绝对值操作符使用。opengauss支持在D库下以@object方式声明变量，开启后@为取绝对值操作符。
+- enable_abs：是否允许@作为取绝对值操作符使用。openGauss支持在D库下以@object方式声明变量，开启后@为取绝对值操作符。
 
 ```
 openGauss=# create table test(@a int, b int);
@@ -198,4 +198,35 @@ openGauss=# select * from t_identity_0013;
  100 | wangwu
 (2 rows)
 
+```
+
+## enable_special_operator
+
+**取值范围**：on/off
+
+**默认值**：off
+
+**参数说明**：用于控制是否将#号优先解释成异或操作符，设置成off时优先解释成临时表符号或普通标识符。
+```sql
+openGauss=# CREATE TABLE #111 (ID INT);
+CREATE TABLE
+openGauss=# INSERT INTO #111 VALUES(1);
+INSERT 0 1
+openGauss=# set enable_special_operator = true;
+SET
+openGauss=# select * from #111;
+ERROR:  syntax error at or near "#"
+LINE 1: select * from #111;
+                      ^
+openGauss=#
+openGauss=# set enable_special_operator = off;
+SET
+openGauss=#
+openGauss=# select * from #111;
+ id
+----
+  1
+(1 row)
+
+openGauss=#
 ```
