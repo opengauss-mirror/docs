@@ -23,7 +23,7 @@
 
 **取值范围**： 整型，1\~32768
 
-**设置建议**： `sqrt(lists)`，`list`为IVFFLAT索引构建时的入参，详情请参考[向量索引](../sql_reference/vector_index.md)。
+**设置建议**： `sqrt(lists)`，`list`为IVFFLAT索引构建时的入参，详情请参考[向量索引](../datavec/vector_index.md)。
 
 **默认值**： 1
 
@@ -141,7 +141,7 @@
 
 该参数支持[表2](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd893d)中方法一、二、三进行设置。
 
-**取值范围**： 浮点型，默认5，范围[1-20,0000,0000]
+**取值范围**： 浮点型，默认5，范围[1-1000]
 
 **默认值**： 5.0
 
