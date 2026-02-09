@@ -104,7 +104,7 @@ halfvec_cosine_ops | halfvec类型-余弦距离
 
 **设置建议：**
 
-- 其余参数设置与[向量索引](../sql_reference/vector_index.md)中HNSW索引中相同。
+- 其余参数设置与[向量索引](./vector_index.md)中HNSW索引中相同。
 
 #### GUC参数
 
@@ -119,7 +119,7 @@ halfvec_cosine_ops | halfvec类型-余弦距离
  ```
 
 - `rbq_query_bits` - 设置是否对查询向量进行额外的标量量化，适当设置可以提升召回率。默认为8，范围[1-8]。
-- `rbq_refinek` - 选择精排的候选池范围，一般值越高，qps越低，但召回率越高。默认5，范围[1-20,0000,0000]
+- `rbq_refinek` - 选择精排的候选池范围，一般值越高，qps越低，但召回率越高。默认5，范围[1-1000]
 
     **示例：** 设置`rbq_query_bits`为8，`rbq_refinek`为10，进行向量查询。
 
@@ -183,7 +183,7 @@ vector_cosine_ops|<=>|余弦距离
 
 **设置建议：**
 
-- 其余参数设置与[向量索引](../sql_reference/vector_index.md)中IVFFLAT索引相同。
+- 其余参数设置与[向量索引](./vector_index.md)中IVFFLAT索引相同。
 
 #### 查询选项
 
@@ -205,7 +205,7 @@ vector_cosine_ops|<=>|余弦距离
     ```
 
 - `rbq_query_bits` - 设置是否对查询向量进行额外的标量量化，适当设置可以提升召回率。默认为8，范围[1-8]。
-- `rbq_refinek` - 选择精排的候选池范围，一般值越高，qps越低，但召回率越高。默认5，范围[1-20,0000,0000]
+- `rbq_refinek` - 选择精排的候选池范围，一般值越高，qps越低，但召回率越高。默认5，范围[1-1000]
 
     **示例：** 设置`rbq_query_bits`为8，`rbq_refinek`为10，进行向量查询。
 
