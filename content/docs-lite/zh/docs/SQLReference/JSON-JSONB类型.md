@@ -90,7 +90,7 @@ select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"f
     -   对于object-json，键值会重新进行排序，排序规则：长度长的在后、长度相等则ascii码大的在后，如：
 
         ```sql
-        openGauss==# select '{"aa" : 1, "b" : 2, "a" : 3}'::jsonb;           
+        openGauss=# select '{"aa" : 1, "b" : 2, "a" : 3}'::jsonb;           
                 jsonb
         --------------------------- 
         {"a": 3, "b": 2, "aa": 1}
