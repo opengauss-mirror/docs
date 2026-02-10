@@ -72,7 +72,7 @@ JSON和JSONB的主要差异在于存储方式上的不同，JSONB存储的是解
 
     - 对于输入的object-json字符串，解析成jsonb二进制后，会天然的丢弃语义上无关紧要的细节，比如空格：
 
-        ```
+        ```sql
         postgres=# select '   [1, " a ", {"a"   :1    }]  '::jsonb;        
                jsonb
         ----------------------
@@ -82,7 +82,7 @@ JSON和JSONB的主要差异在于存储方式上的不同，JSONB存储的是解
 
     - 对于object-json，会删除重复的键值，只保留最后一个出现的，如：
 
-        ```
+        ```sql
         postgres=# select '{"a" : 1, "a" : 2}'::jsonb;  
           jsonb
         ---------- 
@@ -92,7 +92,7 @@ JSON和JSONB的主要差异在于存储方式上的不同，JSONB存储的是解
 
     - 对于object-json，键值会重新进行排序，排序规则：长度长的在后、长度相等则ascii码大的在后，如：
 
-    ```
+    ```sql
     postgres=# select '{"aa" : 1, "b" : 2, "a" : 3}'::jsonb;           
               jsonb
     --------------------------- 
