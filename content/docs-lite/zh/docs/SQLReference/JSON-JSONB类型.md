@@ -73,7 +73,7 @@ select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"f
     -   对于输入的object-json字符串，解析成jsonb二进制后，会天然的丢弃语义上无关紧要的细节，比如空格：
 
         ```sql
-        postgres=# select '   [1, " a ", {"a"   :1    }]  '::jsonb;        
+        openGauss=# select '   [1, " a ", {"a"   :1    }]  '::jsonb;        
                jsonb
         ----------------------
          [1, " a ", {"a": 1}]
@@ -83,7 +83,7 @@ select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"f
     -   对于object-json，会删除重复的键值，只保留最后一个出现的，如：
 
         ```sql
-        postgres=# select '{"a" : 1, "a" : 2}'::jsonb;  
+        openGauss=# select '{"a" : 1, "a" : 2}'::jsonb;  
           jsonb
         ---------- 
           {"a": 2}
@@ -92,13 +92,13 @@ select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"f
 
     -   对于object-json，键值会重新进行排序，排序规则：长度长的在后、长度相等则ascii码大的在后，如：
 
-    ```sql
-    postgres=# select '{"aa" : 1, "b" : 2, "a" : 3}'::jsonb;           
-              jsonb
-    --------------------------- 
-     {"a": 3, "b": 2, "aa": 1}
-    (1 row)
-    ```
+        ```sql
+        openGauss=# select '{"aa" : 1, "b" : 2, "a" : 3}'::jsonb;           
+                jsonb
+        --------------------------- 
+        {"a": 3, "b": 2, "aa": 1}
+        (1 row)
+        ```
 
 
 -   大小比较

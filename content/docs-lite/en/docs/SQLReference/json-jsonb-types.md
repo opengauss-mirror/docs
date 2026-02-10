@@ -69,7 +69,7 @@ The main difference between JSON and JSONB lies in the storage mode. JSONB store
     -   After the input object-json string is parsed into JSONB binary, semantically irrelevant details are naturally discarded, for example, spaces:
 
         ```sql
-        postgres=# select '   [1, " a ", {"a"   :1    }]  '::jsonb;        
+        openGauss=# select '   [1, " a ", {"a"   :1    }]  '::jsonb;        
                jsonb
         ----------------------
          [1, " a ", {"a": 1}]
@@ -79,7 +79,7 @@ The main difference between JSON and JSONB lies in the storage mode. JSONB store
     -   For object-json, duplicate key-values are deleted and only the last key-value is retained. For example:
 
         ```sql
-        postgres=# select '{"a" : 1, "a" : 2}'::jsonb;  
+        openGauss=# select '{"a" : 1, "a" : 2}'::jsonb;  
           jsonb
         ---------- 
           {"a": 2}
@@ -88,13 +88,13 @@ The main difference between JSON and JSONB lies in the storage mode. JSONB store
 
     -   For object-json, key-values will be re-sorted. The sorting rule is as follows: 1. Longer key-values are sorted last. 2. If the key-values are of the same length, the key-values with a larger ASCII code are sorted after the key-values with a smaller ASCII code:
 
-    ```sql
-    postgres=# select '{"aa" : 1, "b" : 2, "a" : 3}'::jsonb;           
-              jsonb
-    --------------------------- 
-     {"a": 3, "b": 2, "aa": 1}
-    (1 row)
-    ```
+        ```sql
+        openGauss=# select '{"aa" : 1, "b" : 2, "a" : 3}'::jsonb;           
+                jsonb
+        --------------------------- 
+        {"a": 3, "b": 2, "aa": 1}
+        (1 row)
+        ```
 
 
 -   Size comparison
