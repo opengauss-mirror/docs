@@ -17,7 +17,7 @@
 ```
 CREATE [ LARGE ] SEQUENCE [ IF NOT EXISTS ] name [ INCREMENT [ BY ] increment ]
     [ MINVALUE minvalue | NO MINVALUE | NOMINVALUE ] [ MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE] 
-    [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE ] 
+    [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE ] [ GLOBAL | SESSION ]
     [ OWNED BY { table_name.column_name | NONE } ];
 ```
 
@@ -71,6 +71,14 @@ CREATE [ LARGE ] SEQUENCE [ IF NOT EXISTS ] name [ INCREMENT [ BY ] increment ]
     The default value is  **NO CYCLE**.
 
     If  **CYCLE**  is specified, the sequence uniqueness cannot be ensured.
+
+- **GLOBAL**
+
+    GLOBAL is used to specify that the sequence cache is a global cache.
+ 
+- **SESSION**
+
+    SESSION is used to specify that the sequence cache is a session cache.
 
 - **OWNED BY**
 

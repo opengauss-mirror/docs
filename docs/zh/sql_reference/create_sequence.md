@@ -17,7 +17,7 @@ CREATE SEQUENCE用于向当前数据库里增加一个新的序列。序列的Ow
 ```
 CREATE [ LARGE ] SEQUENCE [ IF NOT EXISTS ] name [ INCREMENT [ BY ] increment ]
     [ MINVALUE minvalue | NO MINVALUE | NOMINVALUE ] [ MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE] 
-    [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE ] 
+    [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE ] [ GLOBAL | SESSION ]
     [ OWNED BY { table_name.column_name | NONE } ];
 ```
 
@@ -72,6 +72,14 @@ CREATE [ LARGE ] SEQUENCE [ IF NOT EXISTS ] name [ INCREMENT [ BY ] increment ]
     缺省值为NO CYCLE。
 
     若定义序列为CYCLE，则不能保证序列的唯一性。
+
+- **GLOBAL**
+
+    GLOBAL指定序列缓存是全局缓存。
+
+- **SESSION**
+
+    SESSION指定序列缓存是session级别缓存。
 
 - **OWNED BY**
 
