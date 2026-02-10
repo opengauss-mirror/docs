@@ -30,13 +30,13 @@ CLUSTER指定openGauss通过索引名指定的索引聚簇由表名指定的表�
 - 对一个表进行聚簇排序。
 
     ```
-    CLUSTER [ VERBOSE ] table_name [ USING index_name ];
+    CLUSTER [ VERBOSE ] [CONCURRENTLY] table_name [ USING index_name ];
     ```
 
 - 对一个分区进行聚簇排序。
 
     ```
-    CLUSTER [ VERBOSE ] table_name PARTITION ( partition_name ) [ USING index_name ];
+    CLUSTER [ VERBOSE ] [CONCURRENTLY] table_name PARTITION ( partition_name ) [ USING index_name ];
     ```
 
 - 对已做过聚簇的表重新进行聚簇。
@@ -50,6 +50,10 @@ CLUSTER指定openGauss通过索引名指定的索引聚簇由表名指定的表�
 - **VERBOSE**
 
     启用显示进度信息。
+
+- **CONCURRENTLY**
+
+    使用在线DDL模式执行VACUUM FULL操作，只支持传统主备场景Astore、段页式的普通表、分区表进行修改列数据类型、修改行存压缩属性、添加列的约束（非空约束、范围约束）。
 
 - **table\_name**
 
