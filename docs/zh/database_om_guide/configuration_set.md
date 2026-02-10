@@ -2,6 +2,8 @@
 
 发布订阅要求设置一些配置选项。
 
+发布者端和订阅者端均需设置enable_subscription为on。
+
 在发布者端，wal_level必须被设置为logical，而max_replication_slots中设置的值必须至少是预期要连接的订阅数加上保留给表同步的连接数。发布端参数max_wal_senders应满足：max_wal_senders >= max_replication_slots + 同时连接的物理复制槽的数量 + 1。
 
 >[!NOTE]说明 

@@ -81,6 +81,19 @@
     - 一个逻辑复制槽只能解码一个数据库的修改，如果需要解码多个数据库，则需要创建多个逻辑复制槽。
     - 如果需要多路逻辑复制同步给多个目标数据库，在源端数据库需要创建多个逻辑复制槽，每个逻辑复制槽对应一条逻辑复制链路。
 
+## enable_subscription
+
+**参数说明**：设置是否启动发布订阅线程。
+ 	 
+该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+ 	 
+**取值范围**：布尔型
+ 	 
+- on表示启动发布订阅线程。
+- off表示不启动发布订阅线程。
+ 	 
+**默认值**：off
+
 ## enable_availablezone
 
 **参数说明**：设置本端级联备节点能否连接跨available_zone的备机。

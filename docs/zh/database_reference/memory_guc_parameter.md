@@ -109,6 +109,26 @@ shared\_buffers需要设置为BLCKSZ的整数倍，BLCKSZ目前设置为8kB，�
 >       - 执行free -g观察操作系统可用内存和swap空间是否足够，如果内存明显不足，请手动停止其他比较占用内存的用户程序。  
 >       - 避免设置明显不合理（过大或过小）的shared_buffers值。
 
+## clog_buffers
+
+**参数说明**： 设置openGauss clog共享内存大小。
+
+该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值说明：** 整型，16 \~ 67108864，单位为8kB。
+
+**默认值**： 8MB
+
+## csnlog_buffers
+
+**参数说明**： 设置openGauss csnlog共享内存大小。
+
+该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值说明：** 整型，16 \~ 67108864，单位为8kB。
+
+**默认值**： 8MB
+
 ## segment\_buffers<a name="section1581274312490"></a>
 
 **参数说明**： 设置openGauss段页式元数据页的内存大小。

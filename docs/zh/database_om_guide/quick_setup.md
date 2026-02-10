@@ -3,6 +3,7 @@
 首先在postgresql.conf中设置配置选项：
 
 ```
+enable_subscription = on
 wal_level = logical
 ```
 
