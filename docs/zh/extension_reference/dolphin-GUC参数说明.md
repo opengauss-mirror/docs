@@ -14,7 +14,7 @@
 
 **取值范围**：字符串
 
-**默认值**：'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date,pad_char_to_full_length,auto_recompile_function,error_for_division_by_zero'
+**默认值**：'sql_mode_full_group,sql_mode_strict,no_zero_date,error_for_division_by_zero,block_return_multi_results,escape_quotes,disable_escape_bytea'
 
 **参数说明**：参数值为逗号间隔的字符串，仅允许合法字符串设定，不合法情况下，启动后报warning。同样，设置时候，如果新值非法，则报warning并且不修改老值。当前有几种场景会用到sql\_mode：
 
@@ -934,7 +934,7 @@ INSERT 0 1
 
 **取值范围**：[0, 2]
 
-**默认值**：1
+**默认值**：0
 
 ## dolphin.default_database_name<a name="section203671436846"></a>
 
@@ -1047,7 +1047,7 @@ SET
 
 **取值范围**：[0, 2]
 
-**默认值**：1
+**默认值**：0
 
 **示例**：
 
@@ -1101,7 +1101,7 @@ openGauss=# show max_error_count;
 
 **取值范围**：布尔型
 
-**默认值**：FALSE
+**默认值**：true
 
 **示例**：
 
@@ -1363,7 +1363,7 @@ openGauss=# select * from t_prepare_010;
 
 **取值范围**：布尔型
 
-**默认值**：false
+**默认值**：true
 
 **示例**：
 
