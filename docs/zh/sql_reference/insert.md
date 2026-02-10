@@ -34,6 +34,7 @@ INSERT [/*+ plan_hint */] INTO
     | VALUES {( { expression | DEFAULT } [, ...] ) }[, ...] 
     | query }
     [ ON DUPLICATE KEY UPDATE { NOTHING | { column_name = { expression | DEFAULT } } [, ...] [ WHERE condition ] }]
+    [ ON CONFLICT [conflict_target] DO { NOTHING | { UPDATE SET column_name = { expression | DEFAULT } } [, ...] [ WHERE condition ] } ]
     [ RETURNING {* | {output_expression [ [ AS ] output_name ] }[, ...]} ];
 ```
 
@@ -178,6 +179,52 @@ INSERT [/*+ plan_hint */] INTO
     - 主键、唯一索引列不允许UPDATE。
     - 不支持列存，不支持外表、内存表。
     - expression支持使用子查询表达式，其语法与功能同UPDATE。子查询表达式中支持使用“EXCLUDED.”来选择源数据相应的列。
+
+-   **ON CONFLICT**
+ 	 
+    可选的ON CONFLICT子句提供了一种处理插入冲突的方法，主要用于解决唯一约束或者主键约束导致的插入失败问题。当尝试插入一行数据时，如果唯一约束或主键约束已经存在相同值的数据，ON CONFLICT子句可以指定在发生冲突时的行为，例如执行更新操作而不是插入新数据，或者忽略冲突而不进行任何操作。
+
+- 其中conflict_target可以是以下之一：
+
+    ```
+    ( { index_column_name | ( index_expression ) } [ COLLATE collation ] [ opclass ] [, ...] ) [ WHERE index_predicate ] ON CONSTRAINT constraint_name
+    ```
+
+    通过选择索引，指定ON CONFLICT对哪些冲突采取替代操作。要么执行唯一索引推断，要么显式命名一个约束。对于ON CONFLICT DO NOTHING来说，conflict_target是可选的。在被省略时，与所有有效约束（以及唯一索引）的冲突都会被处理。对于ON CONFLICT DO UPDATE，必须提供conflict_target。
+
+  -   **index\_column\_name**
+  
+      索引列名。
+
+  -   **index\_expression**
+
+      与index_column_name类似，但用于索引中出现的列（而不是简单列）的表达式。
+
+  -   **collation**
+
+      当指定时，要求相应的index_column_name或index_expression使用特定的排序规则(collation)才能匹配。通常情况下会被省略，因为排序规则通常不会影响是否违反约束。
+
+  -   **opclass**
+  
+      当指定时，要求相应的index_column_name或index_expression使用特定的运算符类(operator class)才能匹配。通常情况下会被省略。
+
+  -   **index\_predicate**
+
+      用于允许推断部分唯一索引。任何满足该谓词（不一定需要是部分索引）的索引都能被推断。
+
+  -   **constraint\_name**
+
+      用名称显式指定一个仲裁者约束， 而不是推断约束或者索引。
+
+  -   **condition**
+
+      返回布尔类型值的表达式，只有该表达式返回true的记录才会被更新。
+
+    >![](public_sys-resources/icon-note.png) **说明：**
+    > - 目标表不支持外部表
+    > - 目标表不支持视图，与PostgreSQL行为不一致
+    > - 不支持列存表和内存表
+    > - INSERT中存在查询语句时不支持SQL Bypass
 
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 

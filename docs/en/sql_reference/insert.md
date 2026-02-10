@@ -26,6 +26,7 @@ INSERT [/*+ plan_hint */] INTO
     | VALUES {( { expression | DEFAULT } [, ...] ) }[, ...] 
     | query }
     [ ON DUPLICATE KEY UPDATE { NOTHING | { column_name = { expression | DEFAULT } } [, ...] [ WHERE condition ] }]
+    [ ON CONFLICT [conflict_target] DO { NOTHING | { UPDATE SET column_name = { expression | DEFAULT } } [, ...] [ WHERE condition ] } ]
     [ RETURNING {* | {output_expression [ [ AS ] output_name ] }[, ...]} ];
 ```
 
@@ -154,6 +155,53 @@ INSERT [/*+ plan_hint */] INTO
     - Column-store tables, foreign tables, and memory tables are not supported.
     - Subquery expressions are supported. The syntax and function of the expressions are the same as those of  **UPDATE**. In a subquery expression,  **EXCLUDED**  can be used to select the columns corresponding to the source data.
 
+-   **ON CONFLICT**
+
+    The optional ON CONFLICT clause provides a method for handling insert conflicts, mainly used to resolve insert failures caused by unique constraints or primary key constraints. When attempting to insert a row of data, if the unique constraint or primary key constraint already has the same value of data, the ON CONFLICT clause can specify the behavior when a conflict occurs, such as performing an update operation instead of inserting new data, or ignoring the conflict and taking no action.
+
+    - Where conflict_target can be one of the following:
+
+      ```
+      ( { index_column_name | ( index_expression ) } [ COLLATE collation ] [ opclass ] [, ...] ) [ WHERE index_predicate ] ON CONSTRAINT constraint_name
+      ```
+    - **conflict\_target**
+ 	 
+      By selecting an index, it specifies which conflicts the ON CONFLICT should take alternative actions for. It either performs unique index inference or explicitly names a constraint. For ON CONFLICT DO NOTHING, conflict_target is optional. When omitted, conflicts with all valid constraints (and unique indexes) are handled. For ON CONFLICT DO UPDATE, conflict_target must be provided.
+ 	 
+    - **index\_column\_name**
+ 	 
+      The name of the index column.
+ 	 
+    - **index\_expression**
+
+        Similar to index_column_name, but used for expressions of columns that appear in the index (not simple columns).
+
+    - **collation**
+
+        When specified, it requires the corresponding index_column_name or index_expression to match using a specific collation. It is usually omitted because collation usually does not affect whether a constraint is violated.
+    
+    - **opclass**
+        
+        When specified, it requires the corresponding index_column_name or index_expression to match using a specific operator class. It is usually omitted.
+    
+    - **index_predicate**
+        
+        sed to allow inference of partial unique indexes. Any index that satisfies this predicate (not necessarily a partial index) can be inferred.
+    
+    - **constraint\_name**
+        
+        Explicitly specifies an arbitrator constraint by name, instead of inferring a constraint or index.
+
+    - **condition**
+        
+        An expression that returns a Boolean value; only records for which this expression returns true will be updated.
+
+        >![](public_sys-resources/icon-note.gif) **NOTE:**
+        > - The target table does not support external tables.
+        > - The target table does not support views, which is inconsistent with PostgreSQL behavior.
+        > - Column-store and MOT tables are not supported.
+        > - SQL Bypass is not supported when there is a query statement in the INSERT.
+
 ## Examples<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 
 ```
@@ -185,6 +233,12 @@ openGauss=# CREATE UNIQUE INDEX reason_t2_u_index ON tpcds.reason_t2(r_reason_sk
 
 -- Insert multiple records into the table. If the records conflict, update the r_reason_id field in the conflict data row to BBBBBBBBCAAAAAAA.
 openGauss=# INSERT INTO tpcds.reason_t2 VALUES (5, 'BBBBBBBBCAAAAAAA','reason5'),(6, 'AAAAAAAADAAAAAAA', 'reason6') ON DUPLICATE KEY UPDATE r_reason_id = 'BBBBBBBBCAAAAAAA';
+
+-- Insert multiple records into the table. If the records conflict, do nothing.
+openGauss=# INSERT INTO tpcds.reason_t2 VALUES (5, 'BBBBBBBBCAAAAAAA','reason5'),(6, 'AAAAAAAADAAAAAAA', 'reason6'),(8, 'CCCCCCDAAAAAAA', 'reason7') ON CONFLICT (r_reason_sk) DO NOTHING;
+
+-- Insert multiple records into the table. If the records conflict, do update.
+openGauss=# INSERT INTO tpcds.reason_t2 VALUES (5, 'BBBBBBBBCAAAAAAA','reason5'),(6, 'AAAAAAAADAAAAAAA', 'reason6'),(9, 'CCCCCCDAAAAAAA', 'reason8') ON CONFLICT (r_reason_sk) DO UPDATE SET r_reason_id='upset';
 
 -- Delete the tpcds.reason_t2.
 openGauss=# DROP TABLE tpcds.reason_t2;
