@@ -35,14 +35,14 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
 - 仅回收空间，不更新统计信息。
 
   ```
-  VACUUM [ FULL [COMPACT] ] [ FREEZE ] [ VERBOSE ] [ table_name 
+  VACUUM [ FULL [COMPACT] ] [CONCURRENTLY] [ FREEZE ] [ VERBOSE ] [ table_name
   [ PARTITION ( partition_name )  | SUBPARTITION ( subpartition_name ) ] ] ;
   ```
 
 - 回收空间并更新统计信息，且对关键字顺序有要求。
 
     ```
-    VACUUM [ FULL ] [ FREEZE ] [ VERBOSE ] { ANALYZE | ANALYSE } [ VERBOSE ] 
+    VACUUM [ FULL ] [ FREEZE ] [CONCURRENTLY] [ VERBOSE ] { ANALYZE | ANALYSE } [ VERBOSE ] 
         [ table_name [ (column_name [, ...] ) ] ] [ PARTITION ( partition_name ) ];
     ```
 
@@ -60,6 +60,10 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
 
     >[!NOTE]说明
     >使用FULL参数会导致统计信息丢失，如果需要收集统计信息，请在VACUUM FULL语句中加上analyze关键字。
+
+- **CONCURRENTLY**
+
+    使用在线DDL模式执行VACUUM FULL操作，只支持传统主备场景Astore、段页式的普通表、分区表进行修改列数据类型、修改行存压缩属性、添加列的约束（非空约束、范围约束）。
 
 - **FREEZE**
 

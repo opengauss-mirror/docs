@@ -15,12 +15,25 @@ openGauss在线DDL特性主要针对客户对大表进行DDL操作变更，并�
 
 ## 特性描述
 
-openGauss在线DDL特性执行传统主备中Astore、段页式的普通表和分区表在线执行修改列数据类型、修改压缩属性、增加表约束(范围约束、非空约束)。具体而言，在线DDL对 ALTER TABLE 语法新增了CONCURRENTLY关键字，用于触发在线DDL操作。在线DDL操作会将DDL操作分为 (1)DDL准备、(2)基线数据拷贝、(3)增量数据合并、 (4) DDL提交，共四个阶段。其中第一、第四阶段还需要短暂获取八级锁，第二、第三阶段作为DDL主要耗时阶段，以四级锁为主，允许并发DML操作。通过该特性可以提高DDL期间被操作表的并发能力，允许短事务对该表进行并发DML、DQL，避免阻塞业务。
+openGauss在线DDL特性执行传统主备中Astore、段页式的普通表和分区表在线执行修改列数据类型、修改压缩属性、增加表约束(范围约束、非空约束)、分区表分裂合并分区、VACUUM FULL/CLUSTER。具体而言，在线DDL对 ALTER TABLE、VACUUM FULL、CLUSTER 语法新增了CONCURRENTLY关键字，用于触发在线DDL操作。在线DDL操作会将DDL操作分为 (1)DDL准备、(2)基线数据拷贝、(3)增量数据合并、 (4) DDL提交，共四个阶段。其中第一、第四阶段还需要短暂获取八级锁，第二、第三阶段作为DDL主要耗时阶段，以四级锁为主，允许并发DML操作。通过该特性可以提高DDL期间被操作表的并发能力，允许短事务对该表进行并发DML、DQL，避免阻塞业务。
 为保证事务原子性、一致性。DDL事务和并发DML之间互相独立，在线DDL事务回滚不会导致已提交的并发DML事务数据丢失，并发DML事务回滚则不会追增至新表中。
+
+为便于可视化online ddl运行状态，新增online_ddl_status视图，用于查询当前数据库的在线DDL事务运行状态。online_ddl_type列取值包括"CHECK"、"REWRITE"、"VACUUM"、"CLUSTER"、"INVALID"。status列取值包括"NONE"、"START"、"PREPARE"、"RERITE_CATALOG"、"BASELINE_COPY"、"CATCHUP"、"COMMITTING"、"END"、"UNKNOWN"。
+| 列名            | 数据类型    | 描述                            |
+| --------------- | ----------- | ------------------------------- |
+| relid           | Oid         | 被操作表的oid                   |
+| hash_entry_key  | text        | 被操作表的spcnode/dbnode/reloid |
+| transaction_id  | int8        | 被操作表的基线事务id            |
+| start_time      | timestamptz | online ddl启动时间              |
+| online_ddl_type | text        | online ddl 类型                 |
+| temp_schem_name | text        | 本次操作创建的临时schema的名字  |
+| status          | text        | online ddl状态                  |
+| extra_info      | text        | 额外信息                        |
+
 
 ## 特性增强
 
-无
+7.0.0-RC3 版本引入在线DDL功能增强特性，支持在线执行VACUUM FULL、CLUSTER、分区表分裂合并分区操作。同时新增online_ddl_status视图，用于查询当前数据库的在线DDL事务运行状态。
 
 ## 特性约束
 
@@ -29,7 +42,9 @@ openGauss在线DDL特性执行传统主备中Astore、段页式的普通表和�
 - 新增数据和已有数据需要满足ALTER TABLE后的相关约束，否则在线DDL操作会报错。
 - 沿用在线创建索引的约束：不支持显式事务内执行在线DDL，不支持带global索引的分区表执行在线DDL。
 - 在线DDL操作分为2个事务，如果第二个事务报错回滚，会导致第一个事务创建的临时schema和临时表暂时残留，后续由two phase cleaner线程定期清理。
-
+- 离线VACUUM FULL/CLUSTER操作在主要流程持有七级锁，为保证数据一致性，在线VACUUM FULL/CLUSTER会在准备阶段和DDL提交阶段加八级锁。
+- 在线VACUUM FULL/CLUSTER操作会按照对应的规则重新整理基线数据，新增数据则会基于appned only原则追增到数据末尾。
+- 在线VACUUM FULL重建分区表时，会对每个分区分别进行在线VACUUM FULL操作。如果执行过程中报错，对于已经完成重建的分区，在线VACUUM FULL操作不会回滚。
 ## 依赖关系
 
 无。
@@ -56,21 +71,23 @@ openGauss在线DDL特性执行传统主备中Astore、段页式的普通表和�
 
 ## 使用指导
 
-openGauss在线DDL特性涉及传统主备中Astore、段页式支持修改列数据类型、修改压缩属性、添加约束(包括范围约束和非空约束)，并新增关键字CONCURRENTLY用于触发在线DDL功能：
+openGauss在线DDL特性涉及传统主备中Astore、段页式支持修改列数据类型、修改压缩属性、添加约束(包括范围约束和非空约束)、VACUUM FULL、CLUSTER、分区表分裂合并分区，并新增关键字CONCURRENTLY用于触发在线DDL功能：
 
 ```sql
 ALTER TABLE [CONCURRENTLY] table_name ......
 ```
 
-以表table为例，在线DDL的相关语法如下：
+以普通表table为例，在线DDL的相关语法如下：
 
 ```sql
+drop table if exists employee;
 CREATE TABLE employee (
     id      INT,
     name    VARCHAR,
     email   VARCHAR,
     age     INT
 );
+CREATE INDEX idx_employee ON employee (id);
 ```
 
 - 修改字段的数据类型:
@@ -91,14 +108,79 @@ ALTER TABLE CONCURRENTLY employee SET (compresstype = 2, compress_level = 30);
 ALTER TABLE CONCURRENTLY employee ALTER id SET NOT NULL;
 ```
 
-- 给表增加范围约束：
+- 给表增加范围约束:
 
 ```sql
 ALTER TABLE CONCURRENTLY emplyee ADD CONSTRAINT chk_employee_age (age >=18 AND age <=65);
 ```
 
+对表做在线VACUUM FULL:
+```sql
+VACUUM FULL CONCURRENTLY employee;
+```
+
+对表做在线CLUSTER:
+```sql
+CLUSTER CONCURRENTLY employee USING idx_employee;
+```
+
+以分区表orders为例:
+```sql
+drop table if exists orders;
+CREATE TABLE orders (
+    order_id    INT          NOT NULL,
+    customer_id INT,
+    product_name VARCHAR(100),
+    region      VARCHAR(50)
+)
+PARTITION BY RANGE (order_id)
+(
+    PARTITION p1 VALUES LESS THAN (1000),
+    PARTITION p2 VALUES LESS THAN (2000),
+    PARTITION p3 VALUES LESS THAN (3000),
+    PARTITION p4 VALUES LESS THAN (MAXVALUE)
+);
+CREATE INDEX idx_orders ON orders (customer_id) local;
+```
+
+对整个表执行vacuum full concurrently
+```sql
+VACUUM FULL CONCURRENTLY orders;
+```
+
+对分区p1执行vacuum full concurrently
+```sql
+VACUUM FULL CONCURRENTLY orders partition(p1);
+```
+
+对整个表执行cluster concurrently
+```sql
+CLUSTER CONCURRENTLY orders USING idx_orders;
+```
+
+对分区p1执行cluster concurrently
+```sql
+cluster CONCURRENTLY orders partition(p1) USING idx_orders;
+```
+
+将分区p1分裂成p11和p12
+```sql
+ALTER TABLE CONCURRENTLY orders SPLIT PARTITION p1 AT (500) INTO (PARTITION p11, PARTITION p12);
+```
+
+将分区p3和p3合并成p5
+```sql
+ALTER TABLE CONCURRENTLY orders MERGE PARTITIONS p3, p4 INTO PARTITION p5;
+```
+
 此外，在线DDL新增SIGHUP级参数log_online_ddl_level，用于调整在线DDL日志打印级别，该参数仅用于功能验证，正常使用不建议开启。
+
+新增系统函数online_ddl_status()，用于查询当前数据库的在线DDL事务运行状态。
+```sql
+SELECT * FROM online_ddl_status();
+```
+
 
 ## 使用场景
 
-openGauss传统主备场景对大表进行DDL操作并且需要重建数据的场景，如修改列数据类型、修改行存压缩属性、添加约束（不用重建但需要扫表，包括非空约束、范围约束）、分区表分裂合并分区等。
+openGauss传统主备场景对大表进行DDL操作并且需要重建数据的场景，如修改列数据类型、修改行存压缩属性、添加约束（不用重建但需要扫表，包括非空约束、范围约束）、VACUUM FULL、CLUSTER、分区表分裂合并分区等。
