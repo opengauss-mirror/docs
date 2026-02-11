@@ -99,6 +99,8 @@ sections:
         sections:
           - label: Python SDK
             href: ./integration_python.md
+          - label: Python SDK 多模检索
+            href: ./multimodal_retrieval_python_sdk.md
           - label: Java SDK
             href: ./integration_java.md
           - label: Node.js SDK

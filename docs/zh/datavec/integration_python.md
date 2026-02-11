@@ -214,3 +214,9 @@ select(conn, cursor, "test_table1", [[1, 2, 2], [3, 5, 1]], 2)
 drop_table(conn, cursor, "test_table1")
 close_connection(conn, cursor)
 ```
+
+## 多模检索能力
+
+openGauss Python SDK 还提供了高级多模检索能力，包括向量检索、BM25 全文检索、混合检索（Hybrid Search）以及 AI 模型集成（Embedding、Rerank、Chat）。详细使用指南请参考 [Python SDK 多模检索使用指南](./multimodal_retrieval_python_sdk.md)。
+
+[更多操作示例参考](https://gitcode.com/opengauss/openGauss-connector-python-psycopg2)
