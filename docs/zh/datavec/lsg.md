@@ -82,4 +82,4 @@ vector_cosine_ops | vector类型-余弦距离
 
 **设置建议：**
 
-- 其余参数设置与[向量索引](../sql_reference/vector_index.md)中HNSW索引中相同。
+- 其余参数设置与[向量索引](./vector_index.md)中HNSW索引中相同。
