@@ -191,7 +191,6 @@ headless: true
 		-   [Anonymous Blocks]({{< relref "./docs/BriefTutorial/anonymous-blocks.md" >}})
 		-   [Triggers]({{< relref "./docs/BriefTutorial/triggers.md" >}})
 		-   [Stored Procedures]({{< relref "./docs/BriefTutorial/stored-procedures.md" >}})
-		-   [Materialized Views]({{< relref "./docs/BriefTutorial/materialized-views.md" >}})
 		-   [Subqueries]({{< relref "./docs/BriefTutorial/subqueries.md" >}})
 		-   [Permissions]({{< relref "./docs/BriefTutorial/permissions.md" >}})
 		-   [Functions]({{< relref "./docs/BriefTutorial/functions.md" >}})
