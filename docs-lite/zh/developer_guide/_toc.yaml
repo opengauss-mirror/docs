@@ -27,8 +27,6 @@ sections:
         sections:
           - label: 开发规范
             href: ./development_specifications.md
-          - label: 工具对接
-            href: ./tool_interconnection.md
           - label: 工具对接：JDBC配置
             href: ./jdbc_configuration.md
   - label: 基于JDBC开发
@@ -232,29 +230,28 @@ sections:
         sections:
           - label: 概览
             href: ./large_object_operation_functions.md
-            sections:
-              - label: lo_creat
-                href: ./lo_create.md
-              - label: lo_import
-                href: ./lo_import.md
-              - label: lo_export
-                href: ./lo_export.md
-              - label: lo_open
-                href: ./lo_open.md
-              - label: lo_write
-                href: ./lo_write.md
-              - label: lo_read
-                href: ./lo_read.md                
-              - label: lo_lseek
-                href: ./lo_lseek.md
-              - label: lo_tell
-                href: ./lo_tell.md
-              - label: lo_truncate
-                href: ./lo_truncate.md
-              - label: lo_close
-                href: ./lo_close.md
-              - label: lo_unlink
-                href: ./lo_unlink.md
+          - label: lo_creat
+            href: ./lo_create.md
+          - label: lo_import
+            href: ./lo_import.md
+          - label: lo_export
+            href: ./lo_export.md
+          - label: lo_open
+            href: ./lo_open.md
+          - label: lo_write
+            href: ./lo_write.md
+          - label: lo_read
+            href: ./lo_read.md                
+          - label: lo_lseek
+            href: ./lo_lseek.md
+          - label: lo_tell
+            href: ./lo_tell.md
+          - label: lo_truncate
+            href: ./lo_truncate.md
+          - label: lo_close
+            href: ./lo_close.md
+          - label: lo_unlink
+            href: ./lo_unlink.md
       - label: libpq接口参考：异步命令处理
         sections:
           - label: 概览

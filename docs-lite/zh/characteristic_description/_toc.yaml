@@ -206,9 +206,9 @@ sections:
       - label: "DB4AI: 数据库驱动AI"
         href: ./db4ai_database_driven_ai.md
       - label: "AI in DB: 数据库内AI功能"
-        href: ./ai_in_db.md
-      - label: "Predictor: AI查询时间预测"
-        href: ./predictor_ai_query_time_prediction.md
+        sections:
+          - label: "Predictor: AI查询时间预测"
+            href: ./predictor_ai_query_time_prediction.md
   - label: 工具链
     sections:
       - label: DataKit

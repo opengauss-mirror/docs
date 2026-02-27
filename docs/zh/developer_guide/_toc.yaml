@@ -43,6 +43,8 @@ sections:
         href: ./connecting_to_a_database_jdbc.md
       - label: 连接数据库（以SSL方式）
         href: ./connecting_to_a_database_using_ssl_jdbc.md
+      - label: 连接数据库（以TLCP方式）
+        href: ./connecting_to_a_database_using_tlcp.md        
       - label: 连接数据库（UDS方式）
         href: ./connecting_to_a_database_using_uds.md
       - label: 执行SQL语句
