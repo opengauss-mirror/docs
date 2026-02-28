@@ -1,3 +1,0 @@
-# 工具对接<a name="ZH-CN_TOPIC_0000001149427913"></a>
-
-- **[JDBC配置](jdbc_configuration.md)**  

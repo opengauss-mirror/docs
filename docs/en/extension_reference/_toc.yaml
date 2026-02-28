@@ -151,9 +151,7 @@ sections:
             href: ./dolphin-set-charset.md
           - label: SET PASSWORD
             href: ./dolphin-set-password.md
-          - label: SHOW CHARSET
-            href: ./dolphin-show-character-set.md
-          - label: SHOW CHARACTER SET
+          - label: SHOW CHARACTER SET/SHOW CHARSET
             href: ./dolphin-show-character-set.md
           - label: SHOW COLLATION
             href: ./dolphin-show-collation.md

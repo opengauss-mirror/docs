@@ -6,7 +6,7 @@
 
 ## 创建向量表
 
-DataVec新增多种[向量数据类型](../sql_reference/vector_data_type.md)（vector、bitvector、sparsevector等），向量表的创建与openGauss原生语法保持一致，创建时指定存储向量类型即可。
+DataVec新增多种[向量数据类型](./vector_data_type.md)（vector、bitvector、sparsevector等），向量表的创建与openGauss原生语法保持一致，创建时指定存储向量类型即可。
 
 ```
 CREATE TABLE [TABLE_NAME]
@@ -44,7 +44,7 @@ openGauss=# INSERT INTO items (val) VALUES ('[1,2,3]'), ('[4,5,6]');
 
 ## 向量索引创建
 
-DataVec目前支持了IVFFLAT、HNSW、IVFPQ及HNSWPQ等算法的[向量索引](../sql_reference/vector_index.md)，基于openGauss中的ASTORE存储实现，通过索引结构能够高效地检索出查询结果。
+DataVec目前支持了IVFFLAT、HNSW、IVFPQ及HNSWPQ等算法的[向量索引](./vector_index.md)，基于openGauss中的ASTORE存储实现，通过索引结构能够高效地检索出查询结果。
 
 ```
 CREATE INDEX [INDEX_NAME]
@@ -93,8 +93,8 @@ openGauss=# SELECT * FROM items ORDER BY val <=> '[3,1,2]' LIMIT 5;
 
 更多使用细节请参考：
 
-- [向量数据类型](../sql_reference/vector_data_type.md)
+- [向量数据类型](./vector_data_type.md)
 
-- [向量函数和操作符](../sql_reference/vector_functions_and_operators.md)
+- [向量函数和操作符](./vector_functions_and_operators.md)
 
-- [向量索引](../sql_reference/vector_index.md)
+- [向量索引](./vector_index.md)
