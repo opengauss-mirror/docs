@@ -4,8 +4,6 @@ A materialized view is a special physical table, which is relative to a common v
 
 Currently the Ustore engine does not support the creation and use of materialized views.
 
--   **[Complete-refresh Materialized View](full-materialized-view.md)**  
+- **[Complete-refresh Materialized View](full-materialized-view.md)**: Only created materialized views can be fully refreshed. Incremental refresh is not supported. The syntax for creating a full-refresh materialized view is similar to the  **CREATE TABLE AS**  syntax.  
 
--   **[Fast-refresh Materialized View](incremental-materialized-view.md)**  
-
-
+- **[Fast-refresh Materialized View](incremental-materialized-view.md)**: Materialized views can be incrementally refreshed. You need to manually execute statements to incrementally refresh materialized views in a period of time. The difference between the incremental-refresh and the full-refresh materialized views is that the incremental-refresh materialized view supports only a small number of scenarios. Currently, only base table scanning statements or UNION ALL can be used to create materialized views.  
