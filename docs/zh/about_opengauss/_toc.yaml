@@ -12,7 +12,7 @@ sections:
   - label: 产品特点
     href: ./product_features.md
   - label: 部署方案
-    href: ./deployment_plan.md
+    href: ./deployment_solutions.md
   - label: 典型组网
     href: ./typical_networking.md
   - label: 软硬件配置要求
@@ -20,8 +20,8 @@ sections:
   - label: 运行环境
     href: ./operating_environment.md
   - label: 技术指标
-    href: ./technical_indicators.md
+    href: ./technical_specifications.md
   - label: 数据库核心技术
-    href: ./database_core_technology.md
+    href: ./core_database_technologies.md
   - label: 基本功能和特性
     href: ./basic_features.md 

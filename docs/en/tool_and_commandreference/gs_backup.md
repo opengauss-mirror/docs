@@ -98,7 +98,7 @@ The  **gs\_backup**  tool can use the following types of parameters:
 
         Default value:  **$GAUSSLOG/om/gs\_backup-YYYY-MM-DD\_hhmmss.log**.
         
-    - ###### --force
+    --force
     
         Forcibly restores static files on a node after the files are lost. This parameter is valid only when --all or --binary is used together.
 

@@ -16,7 +16,7 @@ sections:
   - label: Typical Networking
     href: ./typical_networking.md
   - label: Hardware and Software Configuration Requirements
-    href: ./software_and_hardware_requirements.md
+    href: ./software_and_hardware_configuration_requirements.md
   - label: Operating Environment
     href: ./operating_environment.md
   - label: Technical Specifications

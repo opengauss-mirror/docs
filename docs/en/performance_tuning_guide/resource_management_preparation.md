@@ -151,8 +151,8 @@ You are familiar with "Server Tools \> gs\_cgroup" and "Server Tools \> gs\_ssh"
 >
 >- To control all the resources in openGauss, you need to create, update, and delete Cgroups on each node. Use  **gs\_ssh**  \(see "Server Tools \> gs\_ssh" in  _Tool Reference_\) to run commands in the steps below.
 >- A Cgroup must be named as follows:
-> - The names of sub-Class Cgroups and Workload Cgroups cannot contain columns \(:\).
-> - Cgroups having the same name cannot be created.
+>   - The names of sub-Class Cgroups and Workload Cgroups cannot contain columns \(:\).
+>   - Cgroups having the same name cannot be created.
 
 **Creating sub-Class and Workload Cgroups**
 
@@ -586,7 +586,7 @@ You are familiar with the  [CREATE RESOURCE POOL](../sql_reference/create_resour
 
 1. Perform the steps in  [gsql connection and usage](../getting_started/gsql_connection_and_usage.md).
 
-1. Create a group resource pool and associate it with the specified sub-Class Cgroup. In the following example, the group resource pool named  **resource\_pool\_a**  is associated with the  **class\_a**  Cgroup.
+2. Create a group resource pool and associate it with the specified sub-Class Cgroup. In the following example, the group resource pool named  **resource\_pool\_a**  is associated with the  **class\_a**  Cgroup.
 
     ```
     openGauss=# CREATE RESOURCE POOL resource_pool_a WITH (control_group='class_a');
@@ -594,7 +594,7 @@ You are familiar with the  [CREATE RESOURCE POOL](../sql_reference/create_resour
     CREATE RESOURCE POOL
     ```
 
-1. Create a service resource pool and associate it with the specified Workload Cgroup. In the following example, the service resource pool named  **resource\_pool\_a1**  is associated with the  **workload\_a1**  Cgroup.
+3. Create a service resource pool and associate it with the specified Workload Cgroup. In the following example, the service resource pool named  **resource\_pool\_a1**  is associated with the  **workload\_a1**  Cgroup.
 
     ```
     openGauss=# CREATE RESOURCE POOL resource_pool_a1 WITH (control_group='class_a:workload_a1');

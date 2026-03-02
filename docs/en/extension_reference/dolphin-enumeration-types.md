@@ -2,7 +2,7 @@
 
 The ENUM type is a string object whose value is selected from a list of values specified when a column is defined during table creation. To use the MySQL-compatible enum type, ensure that **CREATE DATABASE test_db with dbcompatibility** is set to **'B'**.
 
-### Creating and Using ENUM Columns
+## Creating and Using ENUM Columns
 
 * The enumerated value must be a character string. For example, to create a table that contains a column of ENUM type, run the following command:
   
@@ -26,7 +26,7 @@ The ENUM type is a string object whose value is selected from a list of values s
 
   ```
 
-### Index of an enumerated value
+## Index of an enumerated value
 
 * Each enumerated value is assigned an index value starting from 1 based on the sequence of enumerated values in the column definition.
 
@@ -64,12 +64,12 @@ SELECT name, gender FROM staff WHERE gender = 1;
 
   ```
 
-### Null Values and Empty Strings
+## Null Values and Empty Strings
 
 * The enumerated value can be NULL, and the empty string **''** is also considered as NULL.
 * If you insert an invalid value (that is, a string that does not exist in the enumerated value list) into an ENUM column, an error occurs.
 
-### Enumeration Restrictions
+## Enumeration Restrictions
 
 * Numbers cannot be used as enumerated values. If you want to use a number as an enumerated value, enclose it in quotation marks to convert it into a string. If there is no quotation mark, the number is used as an index.
 * The value of in the ENUM definition cannot contain duplicate enumerated values.

@@ -34,7 +34,7 @@ ALTER TABLE tablename DELETE STATISTICS ((column_1, column_2)); --Delete statist
 
 >[!TIP]NOTICE   
 >After the statistics are declared for multiple columns by running the  **ALTER TABLE** _tablename_ **ADD STATISTICS**  statement, the system collects the statistics about these columns next time  **ANALYZE**  is performed on the table or the entire database.  
->To collect the statistics, run the  **ANALYZE**  statement.  
+>To collect the statistics, run the  **ANALYZE**  statement. 
 
 >[!NOTE]NOTE   
 >Use  **EXPLAIN**  to show the execution plan of each SQL statement. If  **rows=10**  \(the default value, probably indicating that the table has not been analyzed\) is displayed in the  **SEQ SCAN**  output of a table, run the  **ANALYZE**  statement for this table.  

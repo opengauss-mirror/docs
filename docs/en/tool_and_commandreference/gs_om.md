@@ -216,7 +216,7 @@ The **gs\_om** tool can use the following types of parameters:
         
         Displays information about all openGauss nodes.
         
-        You can run the **gsql **command on each database node to query the system catalog and summarize the results to obtain information about all openGauss nodes. Ensure that **gsql **can be used to query the correct information before using this parameter.
+        You can run the **gsql** command on each database node to query the system catalog and summarize the results to obtain information about all openGauss nodes. Ensure that **gsql** can be used to query the correct information before using this parameter.
 
 - Parameters for generating the configuration file:
     - -X

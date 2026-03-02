@@ -1,6 +1,7 @@
 # MySQL Syntax Compatibility Assessment Tool<a name="EN-US_TOPIC_0000001245957397"></a>
 
 This tool can use the existing openGauss node to assess the compatibility of data SQL text in openGauss. The restrictions include but are not limited to the following:
+
 - Only SQL text files are supported, and SQL statements are separated by semicolons (;).
 
 - If compatible plug-ins such as Dolphin are not used, the error information about incompatible statements may be inaccurate. If the corresponding plug-in is used, comply with the plug-in usage restrictions.
@@ -28,7 +29,7 @@ EXECUTE DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM,'STORA
 EXECUTE DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM,'TABLESPACE',false);
 ```
 
-### Obtaining Code
+## Obtaining Code
 
 - Path of the openGauss source code:
 
@@ -38,7 +39,7 @@ EXECUTE DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM,'TABLE
 
 > https://gitcode.com/opengauss/Plugin
 
-### Compiling Plug-ins
+## Compiling Plug-ins
 
 - Mandatory Plug-ins
 
@@ -85,7 +86,7 @@ Binary path
             └── ***dolphin.control***
 ```
 
-### Running
+## Running
 
 1. Ensure that a database is running and can be connected using the gsql command.
 
@@ -101,9 +102,9 @@ Binary path
 | File parameters| f | (Mandatory) Assesses the SQL file.| `-f intput.sql` |
 |  | o | (Mandatory) Output file. Generally, an HTML file is entered.| `-o result.html` |
 
-### Examples
+## Examples
 
-#### Case 1:
+### Case 1
 
 Use gs\_initdb to initialize the database and start it. Assume that the startup port is 5432. In this case, you can run the `gsql -dpostgres -p5432` command to connect to the database. Assume that the input file is `test.sql`, the output report path is `result.html`, and the source database to be assessed is B. The command used for evaluation is as follows:
 
@@ -121,7 +122,7 @@ gs_assessment: parse[100.00%]:35/35
 gs_assessment: Create database assessment_197561 automatically, clear it manually!
 ```
 
-#### Case 2:
+### Case 2
 
 Assume that a database node already exists remotely. You can connect to the database through **gsql -dpostgres -p5432 -h127.0.0.2 -Utest -W*** on the compatibility assessment node. Assume that the input file is **test.sql**, the output report path is **result.html**, and the source database to be assessed is B. The command used for assessment is as follows:
 
@@ -129,7 +130,7 @@ Assume that a database node already exists remotely. You can connect to the data
 gs_assessment -p5432 -cB -h127.0.0.2 -Utest -W***** -ftest.sql -oresult.html
 ```
 
-#### case 3:
+### case 3
 
 Assume that a remote database node exists and the **evaluation** database has been created for compatibility assessment. On the compatibility assessment node, you can connect to the database through **gsql -devalution -p5432 -h127.0.0.2 -Utest -W***. Assume that the input file is **test.sql** and the output report path is **result.html**. The assessment command is as follows:
 
@@ -139,7 +140,7 @@ gs_assessment -p5432 -devaluation -h127.0.0.2 -Utest -W***** -ftest.sql -oresult
 
 That is, replace **-cB** in case 2 with **-devaluation** to specify the database.
 
-### Results
+## Results
 
 The assessment tool generates an assessment report in HTML format. The information includes the statement, compatibility type, and failure cause. The compatibility types include syntax compatible, fully compatible, syntax incompatible, and assessment not supported. The details are as follows:
 
@@ -151,7 +152,7 @@ The assessment tool generates an assessment report in HTML format. The informati
  
 - Assessment not supported: Statements are not considered. Statement assessment (for example, cross-database impact statements such as CREATE DATABASE) will be supported in the future.
 
-### Principle
+## Principle
 
 1. A database node is running properly and can be initialized using gs\_initdb.
 2. The connection parameters are configured. The connection parameters are the same as those of the gsql connection mode of openGauss.

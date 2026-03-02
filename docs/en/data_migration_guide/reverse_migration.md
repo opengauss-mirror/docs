@@ -18,7 +18,7 @@ ARM+openEuler 20.03 or x86+CentOS 5.7
 
 ## Procedure <a name="section024513334448"></a>
 
-1.  Modify the configuration file. The path of the configuration file is **config.yaml**.
+1. Modify the configuration file. The path of the configuration file is **config.yaml**.
 
     ```
     og_conn:
@@ -52,26 +52,25 @@ ARM+openEuler 20.03 or x86+CentOS 5.7
       database: "database
     ```
 
-2.  Build the command.
+2. Build the command.
 
     ```
     mvn clean package
     ```
 
-3.  Run the command:
+3. Run the command:
 
     ```
     java -jar ./reverse-migration-mysql-1.0-SNAPSHOT.jar start/create/drop
     ```
 
-4.  Run the command with high performance.
+4. Run the command with high performance.
 
     Run the following command on the Kunpeng-920 2P openEuler machine:
 
     ```
     numactl -c 0 -31 -m 0 java -Xms15G -Xmx25Gs -jar ./reverse-migration-mysql-1.0-SNAPSHOT.jar start/create/drop
     ```
-
 
 ## Uninstallation<a name="section1163973815516"></a>
 

@@ -16,7 +16,7 @@ gs\_rep\_portal is a Java-based tool that runs on Linux and integrates full migr
 
 - When starting multiple plans on the portal, ensure that the MySQL database instances are different and openGauss databases are different. In addition, incremental migration and reverse migration of the same MySQL database instance and openGauss database cannot be enabled at the same time.
 
- ## Default File Structure
+## Default File Structure
 
 The file structure of the portal installed by using the default configuration is as follows:
 
@@ -78,27 +78,27 @@ portal/
 
 The default portal installation directory is **/ops/portal**. You can change it as required.
 
-### Installation using source code:
+### Installation using source code
 
 1. Run the git command to download the source code and copy the **portal** folder in the source code to the **/ops** directory.
 
-```
-git clone https://gitcode.com/opengauss/openGauss-migration-portal.git
-```
+	```
+	git clone https://gitcode.com/opengauss/openGauss-migration-portal.git
+	```
 
 2. Run the maven command to compile the source code to obtain the **portalControl-1.0-SNAPSHOT-exec.jar** package and save the JAR package to the **/ops/portal** directory.
 
-```
-mvn clean package -Dmaven.test.skip=true
-```
+	```
+	mvn clean package -Dmaven.test.skip=true
+	```
 
-Java version: open JDK 11 or later
+	Java version: open JDK 11 or later
 
-Maven version: 3.8.1 or later
+	Maven version: 3.8.1 or later
 
 3. When using the one-click script to start the portal, extract the .sh file from the **/ops/portal/shell** directory and place it in the **/ops/portal/** directory, that is, the directory where the JAR package is stored.
 
-### Installation using a package:
+### Installation using a package
 
 Download link:
 
@@ -106,15 +106,15 @@ https://opengauss.obs.cn-south-1.myhuaweicloud.com/tools/portal/PortalControl-5.
 
 1. Download the gs\_rep\_portal installation package.
 
-   ```
-wget -c https://opengauss.obs.cn-south-1.myhuaweicloud.com/tools/portal/PortalControl-5.0.0.tar.gz
-   ```
+	```
+	wget -c https://opengauss.obs.cn-south-1.myhuaweicloud.com/tools/portal/PortalControl-5.0.0.tar.gz
+	```
 
 2. Decompress the gs\_rep\_portal package.
 
-   ```
-tar -zxvf PortalControl-5.0.0.tar.gz
-   ```
+	```
+	tar -zxvf PortalControl-5.0.0.tar.gz
+	```
 
 ## Startup Mode
 
