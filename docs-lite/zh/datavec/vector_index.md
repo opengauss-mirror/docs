@@ -6,7 +6,7 @@ DataVec向量引擎目前支持了[IVFFLAT](#ivfflat)、[HNSW](#hnsw)、[DISKANN
 
 ## HNSW
 
-```
+```sql
 CREATE INDEX [INDEX_NAME] 
 ON [TABLE_NAME] 
 USING hnsw (COLUMN_NAME [TYPE]_[DISTANCE_FUN]_ops) 
@@ -80,9 +80,9 @@ sparsevec_l1_ops | L1距离
 - `m` - 每个图层最大连接数（默认为16），设置范围2~100，该参数值取决于数据集和应用场景。
 - `ef_construction` - 用于图形构造的动态候选集大小（默认为64），设置范围4~1000，并且必须大于等于2*m。同时，为了保证搜索质量，ef_construction最好大于ef_search。
 
-**示例3：** 使用L2距离计算创建HNSW索引并设置`m = 16, ef_construction = 64`。
+**示例1：** 使用L2距离计算创建HNSW索引并设置`m = 16, ef_construction = 64`。
 
-```
+```sql
 openGauss=# CREATE INDEX ON items USING hnsw (embedding vector_l2_ops) WITH (m = 16, ef_construction = 64);
 ```
 
@@ -92,19 +92,20 @@ openGauss=# CREATE INDEX ON items USING hnsw (embedding vector_l2_ops) WITH (m =
 
 - `ef_search` - 查询时的动态候选集大小（默认为40），详情请参考[DataVec向量引擎参数](../database_reference/datavec_vector_engine_parameters.md)。
 
-**示例4：** 设置当前会话中`ef_search=100`。
+**示例2：** 设置当前会话中`ef_search=100`,并且通过l2距离查询TOP 10相似向量。
 
-```
+```sql 
 openGauss=# SET hnsw_ef_search = 100;
+openGauss=# SELECT id, embedding <-> '[1,2,3,4,5]'::vector AS distance FROM items ORDER BY distance limit 10;
 ```
 
 ### 并发选项
 
 - `parallel_workers` - 构建索引并行度（默认为0），设置范围1~32
 
-**示例5：** 构建索引并行数设置为32。
+**示例3：** 构建索引并行数设置为32。
 
-```
+```sql
 openGauss=# ALTER TABLE items SET(parallel_workers=32);
 ```
 
@@ -113,7 +114,7 @@ openGauss=# ALTER TABLE items SET(parallel_workers=32);
 
 ## IVFFlat
 
-```
+```sql
 CREATE INDEX [INDEX_NAME] 
 ON [TABLE_NAME] 
 USING ivfflat (COLUMN_NAME [TYPE]_[DISTANCE_FUN]_ops) 
@@ -173,9 +174,9 @@ sparsevec不支持IVFFLAT索引
 
 - `lists` - 倒排表（单元格）聚类中心数量（默认为100），设置范围1~32768
 
-**示例6：** 使用L2距离计算创建IVFFlat索引并设置lists = 200。
+**示例4：** 使用L2距离计算创建IVFFlat索引并设置lists = 200。
 
-```
+```sql
 openGauss=# CREATE INDEX ON items USING ivfflat (embedding vector_l2_ops) WITH (lists = 200);
 ```
 
@@ -191,23 +192,25 @@ openGauss=# CREATE INDEX ON items USING ivfflat (embedding vector_l2_ops) WITH (
 
 - `probe` - 查询时候选集的大小（默认为1），详情请参考[DataVec向量引擎参数](../database_reference/datavec_vector_engine_parameters.md)。
 
-```
+**示例5：** 设置`probes`为10，并且通过l2距离查询TOP 10相似向量。
+```sql
 openGauss=# SET ivfflat_probes = 10;
+openGauss=# SELECT id, embedding <-> '[1,2,3,4,5]'::vector AS distance FROM items ORDER BY distance limit 10;
 ```
 
 ### 并发选项
 
 - `parallel_workers` - 构建索引并行度（默认为0），设置范围1~32
 
-**示例7：** 构建索引并行数设置为32。
+**示例6：** 构建索引并行数设置为32。
 
-```
+```sql
 openGauss=# ALTER TABLE items SET(parallel_workers=32);
 ```
 
 ## DISKANN
 
-```
+```sql
 CREATE INDEX [INDEX_NAME]
 ON [TABLE_NAME]
 USING diskann (COLUMN_NAME [TYPE]_[DISTANCE_FUN]_ops)
@@ -258,9 +261,9 @@ vector_cosine_ops | 余弦距离
 - `enable_pq` - 量化压缩参数，控制是否开启PQ，默认关闭
 - `pq_m` - 量化压缩参数，取值范围为1~2000（默认值为8），建议设置为```dim / 8```
 
-**示例6：** 使用L2距离计算创建DISKANN索引并设置index_size = 50。
+**示例7：** 使用L2距离计算创建DISKANN索引并设置index_size = 50。
 
-```
+```sql
 openGauss=# CREATE INDEX ON items USING diskann (embedding vector_l2_ops) WITH (index_size = 50);
 ```
 
@@ -272,17 +275,19 @@ openGauss=# CREATE INDEX ON items USING diskann (embedding vector_l2_ops) WITH (
 
 - `diskann_probes` - 查询时候选集的大小（默认为128），详情请参考[DataVec向量引擎参数](../database_reference/datavec_vector_engine_parameters.md)。
 
-```
+**示例8：** 设置`diskann_probes`为256,并且通过l2距离查询TOP 10相似向量。
+```sql
 openGauss=# SET diskann_probes = 256;
+openGauss=# SELECT id, embedding <-> '[1,2,3,4,5]'::vector AS distance FROM items ORDER BY distance limit 10;
 ```
 
 ### 并发选项
 
 - `parallel_workers` - 构建索引并行度（默认为0），设置范围1~32
 
-**示例7：** 构建索引并行数设置为32。
+**示例9：** 构建索引并行数设置为32。
 
-```
+```sql
 openGauss=# ALTER TABLE items SET(parallel_workers=32);
 ```
 
@@ -290,7 +295,7 @@ openGauss=# ALTER TABLE items SET(parallel_workers=32);
 
 向量数据类型同时也支持btree和ubtree索引构建，会跟随数据表存储类型自动选择。
 
-```
+```sql
 CREATE INDEX [INDEX_NAME] 
 ON [TABLE_NAME] 
 (COLUMN_NAME [TYPE]_ops) ;
@@ -302,9 +307,9 @@ ON [TABLE_NAME]
 - bit_ops
 - sparsevec_ops
 
-**示例8：** 构建btree索引。
+**示例10：** 构建btree索引。
 
-```
+```sql
 openGauss=# CREATE INDEX ON t (val vector_ops);
 ```
 
@@ -315,14 +320,14 @@ openGauss=# CREATE INDEX ON t (val vector_ops);
 
 通过开启并行构建功能来加速向量索引的创建：
 
-```
+```sql
 ALTER TABLE [TABLE_NAME] 
 SET (parallel_workers = <CONCURRENCY_NUM>);
 ```
 
-**示例9：** 构建索引并行数设置为8。
+**示例11：** 构建索引并行数设置为8。
 
-```
+```sql
 openGauss=# ALTER TABLE items SET (parallel_workers = 8);
 ```
 
@@ -330,14 +335,14 @@ openGauss=# ALTER TABLE items SET (parallel_workers = 8);
 
 仅支持修改向量索引选项
 
-```
+```sql
 ALTER INDEX [INDEX_NAME]
 SET (parameter=<OPTIONS>);
 ```
 
-**示例10：** 修改向量索引选项
+**示例12：** 修改向量索引选项
 
-```
+```sql
 openGauss=# ALTER INDEX t_val_idx SET (m=24, ef_construction=200);
 openGauss=# REINDEX INDEX t_val_idx;
 ```
