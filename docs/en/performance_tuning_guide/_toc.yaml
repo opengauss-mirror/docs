@@ -29,8 +29,8 @@ sections:
         href: ./optimizing_os_parameters.md
       - label: Optimizing Database Parameters
         href: ./optimizing_database_parameters.md
-      - label: Using the Vectorized Executor for Tuning
-        href: ./using_the_vectorized_executor_for_tuning.md
+      - label: Configuring Vectorization
+        href: ./configuring_vectorization.md
       - label: Configuring SMP
         sections:
           - label: Overview

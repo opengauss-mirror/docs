@@ -60,7 +60,7 @@
     - Commit：事务提交
     - Rollback：事务回滚
 
-    另有Set transaction可设置隔离级别、读写模式或可推迟模式。详细语法参见[《SQL参考》](../sql_reference/sql_reference.md)。
+    另有Set transaction可设置隔离级别、读写模式或可推迟模式。详细语法参见[《SQL参考》](../sql_reference/sql_syntax_formats.md)。
 
 - 函数及存储过程支持
 
@@ -74,7 +74,7 @@
     4. 为了处理SQL语句，存储过程进程分配一段内存区域来保存上下文联系。游标是指向上下文区域的句柄或指针。借助游标，存储过程可以控制上下文区域的变化。
     5. 支持6种异常信息级别方便客户对存储过程进行调试。支持存储过程调试，存储过程调试是一种调试手段，可以在存储过程开发中，一步一步跟踪存储过程执行的流程，根据变量的值，找到错误的原因或者程序的bug，提高问题定位效率。支持设置断点和单步调试。
 
-    openGauss支持SQL标准中的函数及存储过程，增强了存储过程的易用性。存储过程具体的使用方式可以参考[《SQL参考》](../sql_reference/sql_reference.md)。
+    openGauss支持SQL标准中的函数及存储过程，增强了存储过程的易用性。存储过程具体的使用方式可以参考[《SQL参考》](../sql_reference/sql_syntax_formats.md)。
 
 - PG接口兼容
 
