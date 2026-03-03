@@ -1,0 +1,35 @@
+{
+  "name": "openGauss 文档检查配置",
+  "config": {
+    "base": {
+      "docPath": "docs/(zh|en)",
+      "markdownlintConfig": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/markdownlint.config.json",
+      "urlWhitelist": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/url.whitelist.txt",
+      "codespellWhitelist": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/codespell.whitelist.txt",
+      "ci": []
+    }
+  },
+  "repo": {
+    "openeuler/docs": {
+      "extendConfig": "base",
+      "branches": {
+        "master": {
+          "ci": [
+            "tag-closed-check",
+            "link-validity-check",
+            "resource-existence-check",
+            "toc-check"
+          ]
+        },
+        "refactor": {
+          "ci": [
+            "tag-closed-check",
+            "link-validity-check",
+            "resource-existence-check",
+            "toc-check"
+          ]
+        }
+      }
+    }
+  }
+}
