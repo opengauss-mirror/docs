@@ -104,7 +104,7 @@ sections:
       - label: 动态数据脱敏机制
         href: ./dynamic_data_masking.md
       - label: 行级访问控制
-        href: ./row_level_security.md
+        href: ./row_level_access_control.md
       - label: 用户口令强度校验机制
         href: ./password_strength_verification.md
       - label: 全密态数据库等值查询

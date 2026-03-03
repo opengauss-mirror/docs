@@ -278,7 +278,7 @@ sections:
               - label: "Index-advisor: Index Recommendation"
                 href: ./aifeature_guide/index_advisor_index_recommendation.md
               - label: "Slow Query Diagnosis: Root Cause Analysis for Slow SQL Statements"
-                href: ./aifeature_guide/slow_query_diagnosis.md
+                href: ./aifeature_guide/slow_query_diagnosis_root_cause_analysis_for_slow_sql_statements.md
               - label: Forecast
                 href: ./aifeature_guide/forecast.md
               - label: "SQLdiag: Slow SQL Discovery"
