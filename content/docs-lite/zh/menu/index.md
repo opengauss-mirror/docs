@@ -213,7 +213,6 @@ headless: true
 		-   [触发器]({{< relref "./docs/BriefTutorial/触发器.md" >}})
 		-   [事件触发器]({{< relref "./docs/BriefTutorial/事件触发器.md" >}})
 		-   [存储过程]({{< relref "./docs/BriefTutorial/存储过程.md" >}})
-		-   [物化视图]({{< relref "./docs/BriefTutorial/物化视图.md" >}})
 		-   [子查询]({{< relref "./docs/BriefTutorial/子查询.md" >}})
 		-   [权限]({{< relref "./docs/BriefTutorial/权限.md" >}})
 		-   [函数]({{< relref "./docs/BriefTutorial/函数.md" >}})
