@@ -42,57 +42,57 @@ sections:
           - label: core问题定位
             href: ./core_fault_locating.md
           - label: TPCC运行时，注入磁盘满故障，TPCC卡住的问题
-            href: ./TPCC运行时-注入磁盘满故障-TPCC卡住的问题.md
+            href: ./when_the_tpc_c_is_running_and_a_disk_to_be_injected_is_full_the_tpc_c_stops_responding.md
           - label: 备机处于need repair(WAL)状态问题
-            href: ./备机处于need-repair_WAL_状态问题.md
+            href: ./standby_node_in_the_need_repair_wal_state.md
           - label: 内存不足问题
             href: ./low_memory_problem.md
           - label: 服务启动失败
             href: ./service_startup_failure.md
           - label: 出现“Error:No space left on device”提示
-            href: ./出现-Error-No-space-left-on-device-提示.md
+            href: ./error_no_space_left_on_device_is_displayed.md
           - label: 在XFS文件系统中，使用du命令查询数据文件大小大于文件实际大小
-            href: ./在XFS文件系统中-使用du命令查询数据文件大小大于文件实际大小.md
+            href: ./after_you_run_the_du_command_to_query_data_file_size_in_the_xfs_file_system_the_query_result_is_grea.md
           - label: 在XFS文件系统中，出现文件损坏
-            href: ./在XFS文件系统中-出现文件损坏.md
+            href: ./file_is_damaged_in_the_xfs_file_system.md
           - label: switchover操作时，主机降备卡住
-            href: ./switchover操作时-主机降备卡住.md
+            href: ./primary_node_is_hung_in_demoting_during_a_switchover.md
           - label: 磁盘空间达到阈值，数据库只读
-            href: ./disk_space_reached_threshold_database_read_only.md
+            href: ./disk_space_usage_reaches_the_threshold_and_the_database_becomes_read_only.md
           - label: 分析查询语句运行状态
-            href: ./分析查询语句运行状态.md
+            href: ./analyzing_the_status_of_a_query_statement.md
           - label: 分析查询语句长时间运行的问题
-            href: ./分析查询语句长时间运行的问题.md
+            href: ./slow_response_to_a_query_statement.md
           - label: 强制结束指定的问题会话
-            href: ./强制结束指定的问题会话.md
+            href: ./forcibly_terminating_a_session.md
           - label: 分析查询语句是否被阻塞
-            href: ./分析查询语句是否被阻塞.md            
+            href: ./analyzing_whether_a_query_statement_is_blocked.md            
           - label: 分析查询效率异常降低的问题
-            href: ./分析查询效率异常降低的问题.md
+            href: ./low_query_efficiency.md
           - label: 执行 SQL 语句时，提示 Lock wait timeout
-            href: ./execute_sql_statement_note_lock_wait_timeout.md
+            href: ./lock_wait_timeout_is_displayed_when_a_user_executes_an_sql_statement.md
           - label: VACUUM FULL一张表后，表文件大小无变化
-            href: ./VACUUM-FULL一张表后-表文件大小无变化.md
+            href: ./table_size_does_not_change_after_vacuum_full_is_executed_on_the_table.md
           - label: 执行修改表分区操作时报错
-            href: ./执行修改表分区操作时报错.md
+            href: ./an_error_is_reported_when_the_table_partition_is_modified.md
           - label: 不同用户查询同表显示数据不同
-            href: ./不同用户查询同表显示数据不同.md
+            href: ./different_data_is_displayed_for_the_same_table_queried_by_multiple_users.md
           - label: 修改索引时只调用索引名提示索引不存在
-            href: ./修改索引时只调用索引名提示索引不存在.md
+            href: ./when_a_user_specifies_only_an_index_name_to_modify_the_index_a_message_indicating_that_the_index_doe.md
           - label: 重建索引失败
-            href: ./failed_to_recreate_the_index.md
+            href: ./reindexing_fails.md
           - label: 业务运行时整数转换错
-            href: ./业务运行时整数转换错.md
+            href: ./an_error_occurs_during_integer_conversion.md
           - label: 高并发报错“too many clients already”或无法创建线程
-            href: ./high_concurrency_too_many_clients_already_or_unable_to_create_thread.md
+            href: ./too_many_clients_already_is_reported_or_threads_failed_to_be_created_in_high_concurrency_scenarios.md
           - label: btree 索引故障情况下应对策略
-            href: ./btree_index_failure_response_strategy.md
+            href: ./b_tree_index_faults.md
           - label: TPCC高并发长稳运行因脏页刷盘效率导致性能下降
-            href: ./TPCC高并发长稳运行因脏页刷盘效率导致性能下降.md
+            href: ./performance_deterioration_caused_by_dirty_page_flushing_efficiency_during_tpc_c_high_concurrency_long_term_stable_running.md
           - label: 共享内存泄露问题
-            href: ./shared_memory_leak_issue.md
+            href: ./shared_memory_leakage.md
           - label: 谓词下推引起的查询报错
-            href: ./谓词下推引起的查询报错.md
+            href: ./a_query_error_is_reported_due_to_predicate_pushdown.md
   - label: 常见故障案例（资源池化）
     sections:
       - label: 资源池化企业版安装阶段问题

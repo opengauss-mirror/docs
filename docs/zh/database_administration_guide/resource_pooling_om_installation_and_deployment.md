@@ -29,7 +29,7 @@ openGauss资源池化是openGauss推出的一种新型的集群架构。该架�
     3. dss_data， 数据库数据盘，1套集群1个
     4. dss_log， 数据库XLog盘，1套集群1个
 
-1. 准备软件包以及准备操作系统环境，详情参考：[获取安装包](../getting_started/obtaining_and_verifying_an_installation_package.md) 和 [准备软硬件安装环境](../getting_started/preparing_for_installation.md)
+1. 准备软件包以及准备操作系统环境，详情参考：[获取安装包](../getting_started/preparing_for_installation.md) 和 [准备软硬件安装环境](../getting_started/preparing_for_installation.md)
 
 2. 准备安装需要的xml，详情参考：[创建XML配置文件](../installation_guide/creating_an_xml_configuration_file.md)
 

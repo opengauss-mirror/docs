@@ -9,5 +9,3 @@ openGauss supports simplified installation using scripts. Simplified installatio
 - **[Installation on a Single Node](installation-on-a-single-node.md)**  
 
 - **[Installation of One Primary and One Standby Nodes](installation-of-one-primary-and-one-standby-nodes.md)**  
-
-- **[gsql Connection and Usage](gsql-connection-and-usage.md)**  
