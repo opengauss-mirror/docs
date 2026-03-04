@@ -10,7 +10,7 @@
     }
   },
   "repo": {
-    "openeuler/docs": {
+    "opengauss/docs": {
       "extendConfig": "base",
       "branches": {
         "master": {
