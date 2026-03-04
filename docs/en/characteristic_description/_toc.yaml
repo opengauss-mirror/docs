@@ -234,7 +234,7 @@ sections:
       - label: DCF
         href: ./advanced_features/dcf.md  
       - label: UWAL
-        href: ./advanced_features/UWAL.md 
+        href: ./advanced_features/uwal.md 
       - label: Column Store
         href: ./advanced_features/column_store.md      
   - label: AI Features Guide
