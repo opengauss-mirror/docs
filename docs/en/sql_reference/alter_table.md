@@ -204,7 +204,7 @@
 - There are several clauses of  **column\_clause**:
 
 ```
-ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]   
+ADD [ COLUMN ] [ IF NOT EXISTS ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]   
 | MODIFY column_name data_type [ ON UPDATE update_expr ]   
 | MODIFY [ COLUMN ] column_name [ COMMENT 'text']    
 | MODIFY column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ]
@@ -223,10 +223,10 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 
 ## Parameter Description <a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_s72f8af90c9784dc9a16e58974d73a31a"></a> 
 
-- **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]  \[ COMMENT {=| } 'text'\]**
+- **ADD \[ COLUMN \] \[ IF NOT EXISTS \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]  \[ COMMENT {=| } 'text'\]**
 
-  Adds a column to a table. If a column is added with  **ADD COLUMN**, all existing rows in the table are initialized with the column's default value \(**NULL**  if no  **DEFAULT**  clause is specified\).
-- **ADD \( \{ column\_name data\_type \[ compress\_mode \]  \[ COMMENT {=| } 'text'\] \} \[, ...\] \)**
+  Adds a column to a table. If a column is added with  **ADD COLUMN**, all existing rows in the table are initialized with the column's default value \(**NULL**  if no  **DEFAULT**  clause is specified\).If **IF NOT EXISTS** is specified and a column already exists with this name, no error is thrown.
+- **ADD \( \{ \[ IF NOT EXISTS \] column\_name data\_type \[ compress\_mode \]  \[ COMMENT {=| } 'text'\] \} \[, ...\] \)**
 
   Adds columns in the table.
 - **MODIFY \[ COLUMN \] column\_name \[ COMMENT {=| } 'text'\]**
@@ -365,7 +365,7 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 
     ```
     ALTER TABLE [ IF EXISTS ] table_name
-        ADD ( { column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]} [, ...] );
+        ADD ( { [IF NOT EXISTS] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]} [, ...] );
     ```
 
 - Update columns.
@@ -457,6 +457,10 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 - **new\_tablespace**
 
     Specifies the new name of the tablespace to which the table belongs.
+
+-   **IF NOT EXISTS**
+
+    If **IF NOT EXISTS** is specified and a column already exists with this name, no error is thrown.
 
 - column\_name, column\_1\_name, column\_2\_name
 
