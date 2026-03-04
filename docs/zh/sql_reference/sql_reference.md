@@ -3,9 +3,7 @@
 
 - **[openGauss SQL](opengauss_sql.md)**  
 
-- **[SQL语法格式说明](sql_syntax_formats.md)**
-
-- **[SQL语言结构和语法](sql_structure_and_syntax.md)**   
+- **[SQL语法格式说明](sql_syntax_formats.md)**  
 
 - **[数据类型](numeric_types.md)**
 

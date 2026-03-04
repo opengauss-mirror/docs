@@ -37,7 +37,7 @@ openGauss资源池化算子卸载特性支持Agg、SeqScan、Filter、Projection
 
 计算侧算子卸载并不会改变原有的执行计划以及算子的相关信息，通过存储引擎接口hook实现NDP数据的处理逻辑屏蔽执行引擎感知卸载的存在。
 
-插件安装与使能见：**[ndpplugin-Extension](../extension_reference/ndpplugin概述.md)**
+插件安装与使能见：**[ndpplugin-Extension](../extension_reference/ndpplugin.md)**
 
 ## 特性增强<a name="section1340684315478"></a>
 
