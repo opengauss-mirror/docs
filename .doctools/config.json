@@ -2,7 +2,7 @@
   "name": "openGauss 文档检查配置",
   "config": {
     "base": {
-      "docPath": "docs/(zh|en)",
+      "docPath": "docs(-lite)?/(zh|en)",
       "markdownlintConfig": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/markdownlint.config.json",
       "urlWhitelist": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/url.whitelist.txt",
       "codespellWhitelist": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/codespell.whitelist.txt",
