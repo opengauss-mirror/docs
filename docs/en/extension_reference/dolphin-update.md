@@ -52,38 +52,38 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
   1. The non-null constraint is violated.
 
-  If the executed SQL statement violates the non-null constraint of the table, you can use this hint to degrade errors to warnings and use one of the following strategies based on the value of the GUC parameter **sql_ignore_strategy**:
+      If the executed SQL statement violates the non-null constraint of the table, you can use this hint to degrade errors to warnings and use one of the following strategies based on the value of the GUC parameter **sql_ignore_strategy**:
 
- - If **sql_ignore_strategy** is set to **ignore_null**, the UPDATE operations on rows that violate non-null constraints are ignored and remaining data operations are performed.
+      - If **sql_ignore_strategy** is set to **ignore_null**, the UPDATE operations on rows that violate non-null constraints are ignored and remaining data operations are performed.
 
- - If **sql_ignore_strategy** is set to **overwrite_null**, the null value that violates the constraint is overwritten by the default value of the target type, and the remaining data operations are performed.
+      - If **sql_ignore_strategy** is set to **overwrite_null**, the null value that violates the constraint is overwritten by the default value of the target type, and the remaining data operations are performed.
 
-        >[!NOTE]NOTE
+      >[!NOTE]NOTE
       >The GUC parameter sql\_ignore\_strategy is of the enumeration type. The options are ignore\_null and overwrite\_null.
 
   2. The unique constraint is violated.
 
-  If the executed SQL statement violates the unique constraint of a table, you can use this hint to degrade errors to warnings, ignore the UPDATE operation on the row that violates the constraint, and continue to perform the remaining data operations.
+      If the executed SQL statement violates the unique constraint of a table, you can use this hint to degrade errors to warnings, ignore the UPDATE operation on the row that violates the constraint, and continue to perform the remaining data operations.
 
   3. The partitioned table cannot match a valid partition.
 
-  When UPDATE is performed on a partitioned table, if a row of data does not match a valid partition of the table, you can use this hint to degrade errors to warnings, ignore the row, and continue to perform operations on the remaining data.
+      When UPDATE is performed on a partitioned table, if a row of data does not match a valid partition of the table, you can use this hint to degrade errors to warnings, ignore the row, and continue to perform operations on the remaining data.
 
   4. Failed to convert the updated value to the target column type.
 
-  During the execution of the UPDATE statement, if the new value does not match the type of the target column, you can use this hint to degrade errors to warnings and continue the execution based on the new value type and the target column type:
+      During the execution of the UPDATE statement, if the new value does not match the type of the target column, you can use this hint to degrade errors to warnings and continue the execution based on the new value type and the target column type:
 
-    -   When the new value type and column type are both numeric:
+         -   When the new value type and column type are both numeric:
 
-        If the new value is within the range of the column type, update the value directly. If the new value is beyond the range of the column type, replace the value with the maximum or minimum value of the column type.
+            If the new value is within the range of the column type, update the value directly. If the new value is beyond the range of the column type, replace the value with the maximum or minimum value of the column type.
 
-    -   When the new value type and column type are both character strings:
+         -   When the new value type and column type are both character strings:
 
-        If the length of the new value is within the range specified by the column type, update the value directly. If the length of the new value is beyond the range specified by the column type, the first n characters of the column type are retained.
+            If the length of the new value is within the range specified by the column type, update the value directly. If the length of the new value is beyond the range specified by the column type, the first n characters of the column type are retained.
 
-    -   When the new value type cannot be converted to the column type:
+         -   When the new value type cannot be converted to the column type:
 
-        Update to the default value of the column type.
+            Update to the default value of the column type.
 
   The IGNORE keyword does not support column store and cannot take effect in column-store tables.
 

@@ -342,13 +342,13 @@ Where create\_option is:
   >[!TIP]NOTICE
   >1. If the defined statement is in the first place and has **START** specified, the range (**MINVALUE**, **START**) will be automatically used as the first actual partition.
   >2. The **START END** syntax must comply with the following rules:
-  >    - The value of START (if any, same for the following situations) in each partition\_start\_end\_item must be smaller than that of END.
-  > - For two adjacent partition\_start\_end\_item, the END value of the first partition\_start\_end\_item must be equal to the START value of the second partition\_start\_end\_item.
-  > - The value of EVERY in each partition\_start\_end\_item must be in ascending order and must be smaller than the value of END – START.
-  > - Each partition includes the start value (unless it is **MINVALUE**) and excludes the end value. The format is as follows: \[Start value, end value\).
-  > - Partitions created by a partition\_start\_end\_item belong to the same tablespace.
-  > - If **partition\_name** is a name prefix of a partition, the length must not exceed 57 bytes. If there are more than 57 bytes, the prefix will be automatically truncated.
-  > - When creating or modifying a partitioned table, ensure that the total number of partitions in the table does not exceed the maximum value **1048575**.
+  >     - The value of START (if any, same for the following situations) in each partition\_start\_end\_item must be smaller than that of END.
+  >     - For two adjacent partition\_start\_end\_item, the END value of the first partition\_start\_end\_item must be equal to the START value of the second partition\_start\_end\_item.
+  >     - The value of EVERY in each partition\_start\_end\_item must be in ascending order and must be smaller than the value of END – START.
+  >     - Each partition includes the start value (unless it is **MINVALUE**) and excludes the end value. The format is as follows: \[Start value, end value\).
+  >     - Partitions created by a partition\_start\_end\_item belong to the same tablespace.
+  >     - If **partition\_name** is a name prefix of a partition, the length must not exceed 57 bytes. If there are more than 57 bytes, the prefix will be automatically truncated.
+  >     - When creating or modifying a partitioned table, ensure that the total number of partitions in the table does not exceed the maximum value **1048575**.
   >3. In statements for creating partitioned tables, **START END** and **LESS THAN** cannot be used together.
   >4. The **START END** syntax in a partitioned table creation SQL statement will be replaced with the **VALUES LESS THAN** syntax when **gs\_dump** is executed.
 
@@ -467,7 +467,7 @@ Where create\_option is:
 
 - **ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE]**
 
- - ENABLE( VALIDATE)(default): Enable constraints, create indexes, and enforce constraints on both existing data and newly added data.
+    - ENABLE( VALIDATE)(default): Enable constraints, create indexes, and enforce constraints on both existing data and newly added data.
     - ENABLE NOVALIDATE: Enable constraints and create indexes. For CHECK constraints, the constraints are only enforced for newly added data, regardless of the existing data in the table. For UNIQUE and PRIMARY KEY, indexes need to be established, so the constraints will be enforced for the existing data.
     - DISABLE( NOVALIDATE)(default): Disable constraints, delete indexes, and operations such as modifying the data of the constraint columns can be performed.
     - DISABLE VALIDATE: Disable constraints and delete indexes. Insertion, update and deletion operations on the table cannot be performed.

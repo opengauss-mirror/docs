@@ -176,7 +176,7 @@ sections:
   - label: AI Capabilities
     sections:
       - label: Overview
-        href: ./ai_capabilities_0.md
+        href: ./ai_capabilities.md
       - label: AI4DB - Autonomous Database O&M
         sections:
           - label: Database Metric Collection, Forecast, and Exception Detection
@@ -222,7 +222,7 @@ sections:
   - label: Advanced Features
     sections:
       - label: Index Recommendation
-        href: ./advanced_features/index-recommendation.md  
+        href: ./advanced_features/index_recommendation.md  
       - label: DB4AI
         href: ./advanced_features/db4ai.md  
       - label: LLVM
@@ -230,13 +230,13 @@ sections:
       - label: MOT
         href: ./advanced_features/mot.md  
       - label: Fully Encrypted Database
-        href: ./advanced_features/fully-encrypted-database.md  
+        href: ./advanced_features/fully_encrypted_database.md  
       - label: DCF
         href: ./advanced_features/dcf.md  
       - label: UWAL
-        href: ./advanced_features/UWAL.md 
+        href: ./advanced_features/uwal.md 
       - label: Column Store
-        href: ./advanced_features/column-store.md      
+        href: ./advanced_features/column_store.md      
   - label: AI Features Guide
     sections:
       - label: Overview

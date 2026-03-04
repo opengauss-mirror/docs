@@ -20,7 +20,7 @@ sections:
   - label: Deployment Solutions
     href: ./deployment_solutions.md
   - label: Hardware and Software Configuration Requirements
-    href: ./hardware_and_software_configuration_requirements.md
+    href: ./software_and_hardware_configuration_requirements.md
   - label: Typical Networking
     href: ./typical_networking.md
   - label: Technical Specifications

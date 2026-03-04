@@ -136,7 +136,6 @@ sections:
       - label: PL/Java
         href: ./pl_java.md
   - label: AI Capabilities
-    href: ./ai_capabilities.md
     sections:
       - label: Overview
         href: ./ai_capabilities.md

@@ -32,7 +32,7 @@ sections:
       - label: HTAP 行列融合
         href: ./row_and_column_integration.md
       - label: 资源池化行列融合
-        href: ./资源池化行列融合.md        
+        href: ./resource_pooling_row_and_column_integration.md        
       - label: 自动参数化
         href: ./automatic_parameterization.md
       - label: UDF结果缓存
@@ -66,7 +66,7 @@ sections:
       - label: 灰度升级
         href: ./gray_upgrade.md
       - label: 指定节点升级
-        href: ./specified_node_upgrade.md
+        href: ./rolling_upgrade.md
       - label: 支持WDR诊断报告
         href: ./workload_diagnosis_report_wdr.md
       - label: 慢SQL诊断
@@ -104,7 +104,7 @@ sections:
       - label: 动态数据脱敏机制
         href: ./dynamic_data_masking.md
       - label: 行级访问控制
-        href: ./row_level_security.md
+        href: ./row_level_access_control.md
       - label: 用户口令强度校验机制
         href: ./password_strength_verification.md
       - label: 全密态数据库等值查询
@@ -338,11 +338,11 @@ sections:
               - label: 概述
                 href: ./aifeature_guide/ai_sub_functions_of_the_dbmind.md
               - label: X-Tuner
-                href: ./aifeature_guide/preparation_for_use_x_tuner.md
+                href: ./aifeature_guide/x_tuner_parameter_tuning_and_diagnosis.md
               - label: Index-advisor
                 href: ./aifeature_guide/index_advisor_index_recommendation.md
               - label: Slow Query Diagnosis
-                href: ./aifeature_guide/slow_query_diagnosis.md
+                href: ./aifeature_guide/slow_query_diagnosis_root_cause_analysis_for_slow_sql_statements.md
               - label: SQLdiag
                 href: ./aifeature_guide/sqldiag_slow_sql_discovery.md
               - label: SQL Rewriter

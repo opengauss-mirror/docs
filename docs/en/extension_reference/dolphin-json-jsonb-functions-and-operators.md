@@ -1,3 +1,5 @@
+# JSON-JSONB Functions and Operators
+
 **New JSON Functions**
 
 - json_array([val[, val] ...])

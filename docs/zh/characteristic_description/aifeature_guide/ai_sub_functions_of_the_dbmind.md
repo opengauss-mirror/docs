@@ -167,11 +167,11 @@ gs_dbmind service reload -c confpath
 </tbody>
 </table>
 
-- **[X-Tuner](preparation_for_use_x_tuner.md)**  
+- **[X-Tuner](x_tuner_parameter_tuning_and_diagnosis.md)**  
 
 - **[Index-advisor](index_advisor_index_recommendation.md)**  
 
-- **[Slow Query Diagnosis](slow_query_diagnosis.md)**  
+- **[Slow Query Diagnosis](slow_query_diagnosis_root_cause_analysis_for_slow_sql_statements.md)**  
 
 - **[SQLdiag](sqldiag_slow_sql_discovery.md)**  
 

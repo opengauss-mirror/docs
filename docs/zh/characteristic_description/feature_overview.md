@@ -164,7 +164,7 @@
         <td><a href="./gray_upgrade.md">灰度升级</a></td>
     </tr>
     <tr>
-        <td><a href="./specified_node_upgrade.md">指定节点升级</a></td>
+        <td><a href="./rolling_upgrade.md">指定节点升级</a></td>
     </tr>
     <tr>
         <td><a href="./workload_diagnosis_report_wdr.md">支持WDR诊断报告</a></td>
@@ -223,7 +223,7 @@
         <td><a href="./dynamic_data_masking.md">动态数据脱敏机制</a></td>
     </tr>
     <tr>
-        <td><a href="./row_level_security.md">行级访问控制</a></td>
+        <td><a href="./row_level_access_control.md">行级访问控制</a></td>
     </tr>
     <tr>
         <td><a href="./password_strength_verification.md">用户口令强度校验机制</a></td>

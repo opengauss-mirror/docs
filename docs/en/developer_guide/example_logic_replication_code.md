@@ -12,36 +12,36 @@ For logical replication, in addition to the configuration items described in sec
 
     Configure **decode-style** to specify the decoding format. The value can be **'j'**, **'t'** or **'b'** of the char type, indicating the JSON, text, or binary format, respectively. The default value is **'b'**, indicating binary decoding. This item is set only when parallel decoding is allowed and the binary decoding is supported only in the parallel decoding scenario. For the JSON and text formats corresponding to the binary format, in the decoding result sent in batches, the uint32 consisting of the first four bytes of each decoding statement indicates the total number of bytes of the statement (the four bytes occupied by the uint32 are excluded, and **0** indicates that the decoding of this batch ends). The 8-byte uint64 indicates the corresponding LSN (**begin** corresponds to **first\_lsn**, **commit** corresponds to **end\_lsn**, and other values correspond to the LSN of the statement).
 
->[!NOTE]NOTE
->
->The binary encoding rules are as follows:
->
->1. The first four bytes represent the total number of bytes of the decoding result of statements following the statement-level delimiter letter P (excluded) or the batch end character F (excluded). If the value is **0**, the decoding of this batch ends.
->2. The next eight bytes (uint64) indicate the corresponding LSN (**begin** corresponds to **first\_lsn**, **commit** corresponds to **end\_lsn**, and other values correspond to the LSN of the statement).
->3. <a name="li12661162913519"></a>The next one-byte letter can be **B**, **C**, **I**, **U**, or **D**, representing BEGIN, COMMIT, INSERT, UPDATE, or DELETE.
->4. If the letter described in [3](#li12661162913519) is **B**:
->      1. The next eight bytes (uint64) indicate the CSN.
->      2. The next eight bytes (uint64) indicate first\_lsn.
->      3. (Optional) If the next 1-byte letter is **T**, the following four bytes (uint32) indicate the timestamp length for committing the transaction. The following characters with the same length are the timestamp character string.
->      4. Because there may still be a decoding statement subsequently, a 1-byte letter **P** or **F** is used as a separator between statements. **P** indicates that there are still decoded statements in this batch, and **F** indicates that this batch is completed.
->5. If the letter described in [3](#li12661162913519) is **C**:
->      1. (Optional) If the next 1-byte letter is **X**, the following eight bytes (uint64) indicate XID. 
->      2. (Optional) If the next 1-byte letter is **T**, the following four bytes (uint32) indicate the timestamp length. The following characters with the same length are the timestamp character string.
->      3. When logs are sent in batches, decoding results of other transactions may still exist after a COMMIT log is decoded. If the next one-byte letter is **P**, the batch still needs to be decoded. If the letter is **F**, the batch decoding ends.
->6. If the letter described in [3](#li12661162913519) is **I**, **U**, or **D**:
->      1. The next two bytes (uint16) indicate the length of the schema name.
->      2. The schema name is read based on the preceding length.
->      3. The next two bytes (uint16) indicate the length of the table name.
->      4. The table name is read based on the preceding length.
->      5. (Optional) If the next 1-byte letter is **N**, it indicates a new tuple. If the letter is **O**, it indicates an old tuple. In this case, the new tuple is sent first.
->          1. The next two bytes (uint16) indicate the number of columns to be decoded for the tuple, which is recorded as **attrnum**.
->          2. The following procedure is repeated for *attrnum* times.
->              1. The next two bytes (uint16) indicate the length of the column name.
->              2. The column name is read based on the preceding length.
->              3. The next four bytes (uint32) indicate the OID of the current column type.
->              4. The next four bytes (uint32) indicate the length of the value (stored in the character string format) in the current column. If the value is **0xFFFFFFFF**, it indicates null. If the value is **0**, it indicates a character string whose length is 0.
->              5. The column value is read based on the preceding length.
->      6. Because there may still be a decoding statement after, if the next one-byte letter is **P**, it indicates that the batch still needs to be decoded, and if the next one-byte letter is **F**, it indicates that decoding of the batch ends.
+    >[!NOTE]NOTE
+    >
+    >The binary encoding rules are as follows:
+    >
+    >1. The first four bytes represent the total number of bytes of the decoding result of statements following the statement-level delimiter letter P (excluded) or the batch end character F (excluded). If the value is **0**, the decoding of this batch ends.
+    >2. The next eight bytes (uint64) indicate the corresponding LSN (**begin** corresponds to **first\_lsn**, **commit** corresponds to **end\_lsn**, and other values correspond to the LSN of the statement).
+    >3. <a name="li12661162913519"></a>The next one-byte letter can be **B**, **C**, **I**, **U**, or **D**, representing BEGIN, COMMIT, INSERT, UPDATE, or DELETE.
+    >4. If the letter described in [3](#li12661162913519) is **B**:
+    >      1. The next eight bytes (uint64) indicate the CSN.
+    >      2. The next eight bytes (uint64) indicate first\_lsn.
+    >      3. (Optional) If the next 1-byte letter is **T**, the following four bytes (uint32) indicate the timestamp length for committing the transaction. The following characters with the same length are the timestamp character string.
+    >      4. Because there may still be a decoding statement subsequently, a 1-byte letter **P** or **F** is used as a separator between statements. **P** indicates that there are still decoded statements in this batch, and **F** indicates that this batch is completed.
+    >5. If the letter described in [3](#li12661162913519) is **C**:
+    >      1. (Optional) If the next 1-byte letter is **X**, the following eight bytes (uint64) indicate XID. 
+    >      2. (Optional) If the next 1-byte letter is **T**, the following four bytes (uint32) indicate the timestamp length. The following characters with the same length are the timestamp character string.
+    >      3. When logs are sent in batches, decoding results of other transactions may still exist after a COMMIT log is decoded. If the next one-byte letter is **P**, the batch still needs to be decoded. If the letter is **F**, the batch decoding ends.
+    >6. If the letter described in [3](#li12661162913519) is **I**, **U**, or **D**:
+    >      1. The next two bytes (uint16) indicate the length of the schema name.
+    >      2. The schema name is read based on the preceding length.
+    >      3. The next two bytes (uint16) indicate the length of the table name.
+    >      4. The table name is read based on the preceding length.
+    >      5. (Optional) If the next 1-byte letter is **N**, it indicates a new tuple. If the letter is **O**, it indicates an old tuple. In this case, the new tuple is sent first.
+    >          1. The next two bytes (uint16) indicate the number of columns to be decoded for the tuple, which is recorded as **attrnum**.
+    >          2. The following procedure is repeated for *attrnum* times.
+    >              1. The next two bytes (uint16) indicate the length of the column name.
+    >              2. The column name is read based on the preceding length.
+    >              3. The next four bytes (uint32) indicate the OID of the current column type.
+    >              4. The next four bytes (uint32) indicate the length of the value (stored in the character string format) in the current column. If the value is **0xFFFFFFFF**, it indicates null. If the value is **0**, it indicates a character string whose length is 0.
+    >              5. The column value is read based on the preceding length.
+    >      6. Because there may still be a decoding statement after, if the next one-byte letter is **P**, it indicates that the batch still needs to be decoded, and if the next one-byte letter is **F**, it indicates that decoding of the batch ends.
 
 3. Decoding only on the standby node
 

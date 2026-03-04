@@ -205,7 +205,7 @@ openGauss 7.0.0-RC2是openGauss 2025年9月发布的创新版本，该版本生�
 
 ## 版本使用注意事项
 
-- 版本技术规格可以参照《关于openGauss》中的[技术指标](../about_opengauss/technical_indicators.md)。
+- 版本技术规格可以参照《关于openGauss》中的[技术指标](../about_opengauss/technical_specifications.md)。
 - 可参照《数据库管理指南》中的[数据库部署方案](../database_administration_guide/opengauss_common_primary_standby_deployment_solutions.md)，选择业务需要的部署架构，保证数据库集群的可靠性和可用性。
 
 ## 已知问题

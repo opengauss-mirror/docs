@@ -2,9 +2,7 @@ label: Compilation Guide
 isManual: true
 sections:
   - label: Introduction
-    href: ./introduction.md
-  - label: Preparations
-    href: ./preparations.md    
+    href: ./introduction.md 
   - label: Setting up the Build Environment
     href: ./setting_up_the_build_environment.md
   - label: Version Build
