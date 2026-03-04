@@ -4,6 +4,6 @@ sections:
   - label: 搭建编译环境
     href: ./setting_up_the_build_environment.md
   - label: 版本编译
-    href: ./version_build.md
+    href: ./compiling_the_version.md
   - label: FAQ
     href: ./faqs.md

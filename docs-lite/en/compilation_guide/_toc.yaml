@@ -5,7 +5,7 @@ sections:
     href: ./introduction.md 
   - label: Setting up the Build Environment
     href: ./setting_up_the_build_environment.md
-  - label: Version Build
-    href: ./version_build.md
+  - label: Compiling the Version
+    href: ./compiling_the_version.md
   - label: FAQs
     href: ./faqs.md
