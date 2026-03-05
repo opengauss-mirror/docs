@@ -19,6 +19,6 @@ sections:
         href: ./basic_management_of_database_system/configuring_the_database_system.md    
   - label: 故障诊断
     sections:   
-      - label: WRS报告
+      - label: WSR报告
         href: ./fault_diagnosis/wsr_report.md
 

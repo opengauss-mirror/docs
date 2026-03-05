@@ -8,4 +8,4 @@ sections:
       - label: 内核错误信息
         href: ./kernel_error_information.md
   - label: 术语表
-    href: ./list_of_terms.md
+    href: ./glossary.md
