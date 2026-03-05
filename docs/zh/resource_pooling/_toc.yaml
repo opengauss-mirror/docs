@@ -46,7 +46,7 @@ sections:
           - label: 备机处于need repair(WAL)状态问题
             href: ./standby_node_in_the_need_repair_wal_state.md
           - label: 内存不足问题
-            href: ./low_memory_problem.md
+            href: ./insufficient_memory.md
           - label: 服务启动失败
             href: ./service_startup_failure.md
           - label: 出现“Error:No space left on device”提示
