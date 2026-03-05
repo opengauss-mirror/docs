@@ -27,6 +27,7 @@ headless: true
 	-   [运行环境]({{< relref "./docs/AboutopenGauss/运行环境.md" >}})
     -   [技术指标]({{< relref "./docs/TechnicalWhitePaper/技术指标.md" >}})
     -   [数据库核心技术]({{< relref "./docs/TechnicalWhitePaper/数据库核心技术.md" >}})
+	-   [版本能力矩阵图]({{< relref "./docs/AboutopenGauss/version_capability.md" >}})
     -   [基本功能和特性]({{< relref "./docs/AboutopenGauss/基本功能和特性.md" >}})
 	-   [企业级增强特性]({{< relref "./docs/AboutopenGauss/企业级增强特性.md" >}})
 	-   [特性描述]({{< relref "./docs/AboutopenGauss/CharacteristicDescription.md" >}})
