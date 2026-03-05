@@ -1,3 +1,7 @@
 label: 发行说明
 isManual: true
-href: ./release_notes.md
+sections:
+  - label: 法律声明
+    href: ./term_of_use.md
+  - label: 发行说明
+    href: ./release_notes.md
