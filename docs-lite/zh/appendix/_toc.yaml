@@ -7,5 +7,7 @@ sections:
     sections:
       - label: 内核错误信息
         href: ./kernel_error_information.md
+  - label: 参考文献
+    href: ./references.md 
   - label: 术语表
     href: ./glossary.md
