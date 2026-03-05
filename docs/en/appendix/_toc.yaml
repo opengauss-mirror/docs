@@ -7,11 +7,13 @@ sections:
     sections:
       - label: Product-related FAQs
         href: ./product_related_faqs.md
-      - label: 使用FAQ
+      - label: Usage-related FAQs
         href: ./usage_related_faqs.md
   - label: Error Log Reference
     sections:
       - label: Kernel Error Information
         href: ./kernel_error_information.md
+  - label: References
+    href: ./references.md 
   - label: Glossary
     href: ./glossary.md
