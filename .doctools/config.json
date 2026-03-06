@@ -3,14 +3,15 @@
   "config": {
     "base": {
       "docPath": "docs(-lite)?/(zh|en)",
-      "markdownlintConfig": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/markdownlint.config.json",
-      "urlWhitelist": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/url.whitelist.txt",
-      "codespellWhitelist": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/codespell.whitelist.txt",
+      "markdownlintRemoteConfigUrl": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/markdownlint.config.json",
+      "linkValidityCheckRemoteWhitelistUrl": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/url.whitelist.json",
+      "resourceExistenceCheckRemoteWhitelistUrl": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/url.whitelist.json",
+      "codespellCheckRemoteWhitelistUrl": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/codespell.whitelist.json",
       "ci": []
     }
   },
   "repo": {
-    "opengauss/docs": {
+    "openeuler/docs": {
       "extendConfig": "base",
       "branches": {
         "master": {
