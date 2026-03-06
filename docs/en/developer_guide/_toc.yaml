@@ -4,7 +4,6 @@ sections:
   - label: Query Request Handling Process
     href: ./query_request_handling_process.md
   - label: Development and Design Proposal
-    href: ./development_and_design_proposal_overview.md
     sections:
       - label: Overview
         href: ./development_and_design_proposal_overview.md
@@ -105,7 +104,6 @@ sections:
       - label: Common JDBC Parameters
         href: ./common_jdbc_parameters.md                
   - label: Development Based on ODBC
-    href: ./development_based_on_odbc.md
     sections:
       - label: Overview
         href: ./development_based_on_odbc.md
@@ -120,7 +118,6 @@ sections:
       - label: Typical Application Scenarios and Configurations
         href: ./typical_application_scenarios_and_configurations.md
       - label: ODBC Interface Reference
-        href: ./odbc_interface_reference.md
         sections:
           - label: Overview
             href: ./odbc_interface_reference.md
@@ -277,7 +274,6 @@ sections:
           - label: PQresultStatus
             href: ./pqresultstatus.md
       - label: Large object Operation Functions
-        href: ./large_object_operation_functions.md
         sections:
           - label: Overview
             href: ./large_object_operation_functions.md
@@ -304,7 +300,6 @@ sections:
           - label: lo_unlink
             href: ./lo_unlink.md
       - label: Functions for Asynchronous Command Processing
-        href: ./functions_for_asynchronous_command_processing.md
         sections:
           - label: Overview
             href: ./functions_for_asynchronous_command_processing.md
