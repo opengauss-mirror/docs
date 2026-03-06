@@ -8,8 +8,9 @@ sections:
   - label: Creating and Managing Tablespaces
     href: ./creating_and_managing_tablespaces.md
   - label: Other Operations
-    href: ./other_operations.md
     sections:
+      - label: Overview
+        href: ./other_operations.md    
       - label: Creating and Managing Schemas
         href: ./creating_and_managing_schemas.md
       - label: Creating and Managing Tables

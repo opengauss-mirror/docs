@@ -26,7 +26,6 @@ sections:
           - label: 创建和管理schema
             href: ./creating_and_managing_schemas.md
           - label: 创建和管理表
-            href: ./creating_and_managing_tables.md
             sections:
               - label: 创建表
                 href: ./creating_tables.md

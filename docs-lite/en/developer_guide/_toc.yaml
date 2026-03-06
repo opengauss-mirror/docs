@@ -178,8 +178,9 @@ sections:
       - label: Example
         href: ./example_libpq.md
       - label: "libpq API Reference: Large Object Operation Functions"
-        href: ./large_object_operation_functions.md
         sections:
+          - label: Overview
+            href: ./large_object_operation_functions.md        
           - label: lo_creat
             href: ./lo_create.md
           - label: lo_import
