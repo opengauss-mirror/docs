@@ -50,7 +50,6 @@ systemctl disable firewalld
 
 ```bash
 mkdir -p [compile_path]
-chmod 755 -R [compile_path]
 useradd [user_name]
 passwd [user_password]
 #建议进行权限设置，否则会出现install阶段权限不足的报错
@@ -116,8 +115,8 @@ sed -i 's/DUSE_PROTECT_VM=ON/DUSE_PROTECT_VM=OFF/g' Makefile.sh
 ## 四、安装流程
 ### 4.1 执行安装脚本
 
-1. 进入 `oGRAC/build` 目录
-2. 使用安装脚本进行部署
+1. 在root用户下, 进入 `oGRAC/build` 目录
+2. 使用安装脚本进行部署,并指定安装用户
 
 ```bash
 sh local_install.sh install -u [user_name]
