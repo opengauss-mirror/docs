@@ -132,3 +132,510 @@ select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"f
 - 函数和操作符
 
     json/jsonb类型相关支持的函数和操作符请参见[JSON/JSONB函数和操作符](json_jsonb_function_and_operator.md)。
+
+## JSONPATH类型
+
+JSONPATH是一种用于在JSON数据中提取特定数据的表达式语言。
+
+### JSONPATH语法
+
+- **$**
+
+  描述：JSON数据的根节点数据。
+
+  注意事项：A兼容性数据库中JSONPATH必须以$作为开头。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('{"a": 12, "b": {"a": 13}}', '$');
+    jsonb_path_query_first
+  ---------------------------
+   {"a": 12, "b": {"a": 13}}
+  (1 row)
+  ```
+
+- **.keyname**
+
+  描述：表示JSON对象中特定键名keyname对应的值。
+
+  返回类型：jsonb
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('{"a": 12, "b": {"a": 13}}', '$.b');
+   jsonb_path_query_first
+  ------------------------
+   {"a": 13}
+  (1 row)
+  ```
+
+- **.\***
+
+  描述：表示JSON对象中所有键值对的值。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('{"a": 12, "b": {"a": 13}}', '$.*');
+   jsonb_path_query_first
+  ------------------------
+   12
+  (1 row)
+  ```
+
+- **[ { index | start_index TO end_index }, ... ]**
+
+  描述：表示JSON数组特定下标或下标范围的元素。
+
+  注意事项：
+
+  - 在A兼容性数据库中，start_index和end_index的顺序无意义，start_index可以大于end_index而依然能找到对应结果。但在非A兼容性数据库中，start_index必须小于或等于end_index才可能有结果。
+
+  - 在A兼容性数据库中，数组下标必须是非负整数，且不能是表达式（LAST作为被加数或被减数的加减法除外）。在非A兼容性数据库中，下标可以是小数或负数。下标是小数时，会取舍去小数位后的结果作为实际下标。下标为负数时，相当于超出数组下标范围的情况。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('[0, 1, 2, {"a": 3}, 4, 5]', '$[1]');
+   jsonb_path_query_first
+  ------------------------
+   1
+  (1 row)
+
+  db_pg=# select jsonb_path_query_first('[0, 1, 2, {"a": 3}, 4, 5]', '$[2.5]');
+   jsonb_path_query_first
+  ------------------------
+   2
+  (1 row)
+
+  db_pg=# select jsonb_path_query_first('[0, 1, 2, {"a": 3}, 4, 5]', '$[1 to 3].a');
+   jsonb_path_query_first
+  ------------------------
+   3
+  (1 row)
+
+  db_pg=# select jsonb_path_query_first('[0, 1, 2, {"a": 3}, 4, 5]', '$[3 to 1]');
+   jsonb_path_query_first
+  ------------------------
+
+  (1 row)
+
+  db_a=# select jsonb_path_query_first('[0, 1, 2, {"a": 3}, 4, 5]', '$[3 to 1].a');
+   jsonb_path_query_first
+  ------------------------
+   3
+  (1 row)
+  ```
+
+- **[ \* ]**
+
+  描述：表示JSON数组中的所有元素。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('[0, 1, 2, {"a": 3}, 4, 5]', '$[*].a');
+   jsonb_path_query_first
+  ------------------------
+   3
+  (1 row)
+  ```
+
+- **$varname**
+
+  描述：表示特定传入变量的值。详见[jsonb_path_query_first](json_jsonb_function_and_operator.md)或[jsonb_path_exists](json_jsonb_function_and_operator.md)的介绍。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('[0, 1, 2, {"a": 3}, 4, 5]', '$[$index]', vars => '{"index": 5}');
+   jsonb_path_query_first
+  ------------------------
+   5
+  (1 row)
+  ```
+
+- **.\*\***
+
+  描述：表示JSON数据自顶向下所有嵌套层级的数据。
+
+  注意事项：A兼容性数据库不支持该语法。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('{"a": {"b": {"c" : 1}}}', 'lax $.**.b');
+   jsonb_path_query_first
+  ------------------------
+   {"c": 1}
+  (1 row)
+  ```
+
+- **.\*\*{ level | start_level TO end_level }**
+
+  描述：表示JSON数据自顶向下特定嵌套层级，或特定范围的嵌套层级的数据。
+
+  注意事项：A兼容性数据库不支持该语法。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('{"a": {"b": {"c" : 1}}}', 'lax $.**{1 to 99}.c');
+   jsonb_path_query_first
+  ------------------------
+   1
+  (1 row)
+
+  db_pg=# select jsonb_path_query_first('{"a": {"b": {"c" : 1}}}', 'lax $.**{1}.b');
+   jsonb_path_query_first
+  ------------------------
+   {"c": 1}
+  (1 row)
+  ```
+
+- **LAST**
+
+  描述：LAST关键字可用于两种场景中：用作数组下标时，表示数组最末尾一个元素的下标；用作嵌套层级时，表示JSON数据最深的嵌套层级。
+
+  示例：
+
+  ```sql
+  db_a=# select jsonb_path_query_first('[0, 1, 2, {"a": 3}, 4, 5]', '$[last - 1]');
+   jsonb_path_query_first
+  ------------------------
+   4
+  (1 row)
+
+  db_pg=# select jsonb_path_query_first('{"a": {"b": {"c" : 1}}}', 'lax $.**{last}');
+   jsonb_path_query_first
+  ------------------------
+   1
+  (1 row)
+  ```
+
+- **STRICT**，**LAX**
+
+  描述：指定严格（STRICT）或宽松（LAX）模式。未指定时默认为宽松模式，在该模式下，不要求路径表达式与实际JSON数据结构严格匹配，路径表达式解析时会通过隐式地展开数组、或将数据视作单元素数组的方式，自主适应JSON数据结构。无法经过上述方式适应JSON数据结构的情况下，返回空结果。严格模式下，路径表达式与JSON数据结构不匹配时，将抛出结构错误。
+
+  注意事项：A兼容性数据库不支持该语法。A兼容性数据库下JSONPATH的表现近似宽松模式，但只支持一次性的宽松。自主适应过一次结构错误后，如果再次出现结构不匹配的情况，就会抛出错误。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('{"a":[1,2,3,4,5]}', 'lax $[0][0].a');
+   jsonb_path_query_first
+  ------------------------
+   [1, 2, 3, 4, 5]
+  (1 row)
+
+  db_pg=# select jsonb_path_query_first('{"a":[1,2,3,4,5]}', 'strict $[0][0].a');
+  ERROR:  jsonpath array accessor can only be applied to an array
+  CONTEXT:  referenced column: jsonb_path_query_first
+  db_a=# select jsonb_path_query_first('{"a":[1,2,3,4,5]}', '$[0][0].a');
+   jsonb_path_query_first
+  ------------------------
+
+  (1 row)
+
+  db_a=# select jsonb_path_query_first('{"a":[1,2,3,4,5]}', '$[0].a');
+   jsonb_path_query_first
+  ------------------------
+   [1, 2, 3, 4, 5]
+  (1 row)
+  ```
+
+- **?(condition)**
+
+  描述：表示符合过滤条件condition的数据。其中过滤条件是一个返回布尔类型结果的表达式，支持由逻辑操作符（`&&`，`||`，`!`）或比较操作符（详见[比较操作符](comparsion_operator.md)一节）等构成的表达式。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('{"a": 10}', '$ ? ($.a < 13)');
+   jsonb_path_query_first
+  ------------------------
+   {"a": 10}
+  (1 row)
+  ```
+
+- **@**
+
+  描述：表示当前节点的数据。
+
+  注意事项：该语法只能用在过滤条件表达式中。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('[10,11,12,13,14,15]', '$[*] ? (@ > 13)');
+   jsonb_path_query_first
+  ------------------------
+   14
+  (1 row)
+  ```
+
+- **(expr) IS UNKNOWN**
+
+  描述：比较expr表达式结果是否是UNKNOWN。当一个返回布尔类型结果的表达式的参数类型不匹配时，会返回UNKNOWN作为结果。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('[10,11,12,13,14,"15"]', '$[*] ? ((@ > 13) is unknown)');
+   jsonb_path_query_first
+  ------------------------
+   "15"
+  (1 row)
+  ```
+
+- **expr1 STARTS WITH expr2**
+
+  描述：比较字符串expr1是否具有字符串前缀expr2。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('["", "a", "abcabc"]', '$[*] ? (@ starts with "abc")');
+   jsonb_path_query_first
+  ------------------------
+   "abcabc"
+  (1 row)
+  ```
+
+- **EXISTS ( expr )**
+
+  描述：检查expr路径下是否有对应的JSON数据存在。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('{"g": [{"x": 2}, {"y": 3}]}', '$.g[*] ? (exists (@.x))');
+   jsonb_path_query_first
+  ------------------------
+   {"x": 2}
+  (1 row)
+  ```
+
+- **expr1 LIKE_REGEX expr2 [ FLAG f ]**
+
+  描述：比较字符串expr1是否能与字符串expr2指定的正则模式匹配。flag可指定为以下某个字母或某几个字母的组合：
+
+  - i：表示匹配时忽略大小写。
+  - m：允许`^`和`$`跨行匹配。
+  - s：允许`.`匹配换行符。
+  - q：将expr2视作被引号包裹的普通字符串，整个匹配简化为一个子串匹配。
+
+  注意事项：A兼容性数据库中不支持指定flag的语法。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('[1, "aBdC", "ab\nadc", "111\nabc", "^ab.*c$"]', '$[*] ? (@ like_regex "^ab.*c" flag "i")');
+   jsonb_path_query_first
+  ------------------------
+   "aBdC"
+  (1 row)
+
+  db_pg=# select jsonb_path_query_first('[1, "aBdC", "ab\nadc", "111\nabc", "^ab.*c$"]', '$[*] ? (@ like_regex "^ab.*c" flag "m")');
+   jsonb_path_query_first
+  ------------------------
+   "111\nabc"
+  (1 row)
+
+  db_pg=# select jsonb_path_query_first('[1, "aBdC", "ab\nadc", "111\nabc", "^ab.*c$"]', '$[*] ? (@ like_regex "^ab.*c" flag "s")');
+   jsonb_path_query_first
+  ------------------------
+   "ab\nadc"
+  (1 row)
+
+  db_pg=# select jsonb_path_query_first('[1, "aBdC", "ab\nadc", "111\nabc", "^ab.*c$"]', '$[*] ? (@ like_regex "^ab.*c$" flag "q")');
+   jsonb_path_query_first
+  ------------------------
+   "^ab.*c$"
+  (1 row)
+  ```
+
+- **.abs()**
+
+  描述：取绝对值。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('[-3.4]', '$[*].abs()');
+   jsonb_path_query_first
+  ------------------------
+   3.4
+  (1 row)
+  ```
+
+- **.size()**
+
+  描述：获取数组中元素的数量。宽松模式下，标量或对象的结果为1，严格模式下抛出错误。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('[10,11,12,13,14,"15"]', '$.size()');
+   jsonb_path_query_first
+  ------------------------
+   6
+  (1 row)
+  ```
+
+- **.type()**
+
+  描述：获取JSON数据的类型。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('[10,11,12,13,14,"15"]', '$.type()');
+   jsonb_path_query_first
+  ------------------------
+   "array"
+  (1 row)
+  ```
+
+- **.floor()**
+
+  描述：获取JSON数据向下取整后的结果。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('[-3.4]', '$[*].floor()');
+   jsonb_path_query_first
+  ------------------------
+   -4
+  (1 row)
+  ```
+
+- **.ceiling()**
+
+  描述：获取JSON数据向上取整后的结果。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('[-3.4]', '$[*].ceiling()');
+   jsonb_path_query_first
+  ------------------------
+   -3
+  (1 row)
+  ```
+
+- **.keyvalue()**
+
+  描述：获取对象的键值对，结果包含对象的键、值和内部生成的唯一标识符。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('{"a": 1, "b": [1, 2]}', '$.keyvalue()');
+        jsonb_path_query_first
+  -----------------------------------
+   {"id": 0, "key": "a", "value": 1}
+  (1 row)
+  ```
+
+- **.string()**
+
+  描述：转换为字符串类型。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('[1.23]', '$[*].string()');
+   jsonb_path_query_first
+  ------------------------
+   "1.23"
+  (1 row)
+  ```
+
+- **.boolean()**
+
+  描述：转换为布尔类型。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('"1"', '$.boolean()');
+   jsonb_path_query_first
+  ------------------------
+   true
+  (1 row)
+  ```
+
+- **.integer()**
+
+  描述：转换为int4类型。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('1.83', '$.integer()');
+   jsonb_path_query_first
+  ------------------------
+   2
+  (1 row)
+  ```
+
+- **.bigint()**
+
+  描述：转换为int8类型。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('1234567890123', '$.bigint()');
+   jsonb_path_query_first
+  ------------------------
+   1234567890123
+  (1 row)
+  ```
+
+- **.double()**
+
+  描述：转换为双精度浮点数类型。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('"1.23"', '$.double()');
+   jsonb_path_query_first
+  ------------------------
+   1.23
+  (1 row)
+  ```
+
+- **.number()**
+
+  描述：转换为数值类型。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('"1.23"', '$.number()');
+   jsonb_path_query_first
+  ------------------------
+   1.23
+  (1 row)
+  ```
+
+- **.decimal([ p [ ,s ] ])**
+
+  描述：转换为任意精度类型数。
+
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('1234.5678', '$.decimal(6, 2)');
+   jsonb_path_query_first
+  ------------------------
+   1234.57
+  (1 row)
+  ```
+

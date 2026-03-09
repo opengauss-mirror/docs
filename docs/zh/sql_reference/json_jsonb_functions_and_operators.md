@@ -1007,7 +1007,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](json_jsonb_types.md)。
   (1 row)
   ```
 
-- jsonb_insert\(target jsonb, path jsonpath, new_value jsonb, skip_existing boolean DEFAULT false)
+- jsonb_insert\(target jsonb, path text[], new_value jsonb, skip_existing boolean DEFAULT false)
 
   描述：JSONB_INSERT函数用于将一个新值插入到JSONB值中的指定路径位置。函数返回在给定路径上插入了指定新值后的JSONB值。
 
@@ -1084,8 +1084,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](json_jsonb_types.md)。
 
   注意事项：
 
-  - $2必须为符合json路径表达式语法的文本，且不能为空，否则将抛出错误。
-  - 当前json路径表达式语法仅支持通过下标取值和通过键名取值。
+  - $2必须为符合jsonpath类型语法的文本，且不能为空，否则将抛出错误。
 
   示例：
 
@@ -1131,8 +1130,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](json_jsonb_types.md)。
 
   注意事项：
 
-  - path必须为符合json路径表达式语法的文本，且不能为空，否则将抛出错误。
-  - 当前json路径表达式语法仅支持通过下标取值或通过键名取值。
+  - path必须为符合jsonpth类型语法的文本，且不能为空。
   - 匹配包含的过程大小写不敏感。
 
   示例：
@@ -1154,6 +1152,73 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](json_jsonb_types.md)。
   json_textcontains
   -------------------
   f
+  (1 row)
+  ```
+
+- jsonb_path_exists\(target jsonb, path jsonpath, vars jsonb DEFAULT '{}', silent bool DEFAULT false\)
+
+  描述：检查指定jsonb值的指定json路径下是否有任何项。
+
+  - target：用于判断的jsonb值
+  - path：指定的json路径
+  - vars：在json路径表达式中使用的变量的键值对
+  - silent：如果指定为true，将会抑制处理json路径过程中结构不匹配、类型不匹配等类型的错误。
+
+  返回类型：bool
+  
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_exists('[{"a": 1}, {"a": 2}, 3]', '$[*].a');
+   jsonb_path_exists
+  -------------------
+   t
+  (1 row)
+
+  db_pg=# select jsonb_path_exists('[{"a": 1}, {"a": 2}, 3]', 'strict $.a', silent => false);
+  ERROR:  jsonpath member accessor can only be applied to an object
+  CONTEXT:  referenced column: jsonb_path_exists
+  db_pg=# select jsonb_path_exists('[{"a": 1}, {"a": 2}, 3]', 'strict $.a', silent => true);
+   jsonb_path_exists
+  -------------------
+
+  (1 row)
+
+  db_pg=# select jsonb_path_exists('[{"a": 1}, {"a": 2}, 3]', '$[$index].a', vars => '{"index": 1}');
+   jsonb_path_exists
+  -------------------
+   t
+  (1 row)
+  ```
+
+- jsonb_path_query_first\(target jsonb, path jsonpath, vars jsonb DEFAULT '{}', silent bool DEFAULT false\)
+
+  描述：返回指定jsonb值在指定json路径下匹配到的第一个JSON项。参数作用同jsonb_path_exists。
+
+  返回类型：jsonb
+  
+  示例：
+
+  ```sql
+  db_pg=# select jsonb_path_query_first('{"a": 12, "b": {"a": 13}}', '$.b');
+   jsonb_path_query_first
+  ------------------------
+   {"a": 13}
+  (1 row)
+
+  db_pg=# select jsonb_path_query_first('[0,1,2,3,4,5]', '$[$index]', vars => '{"index": 3}');
+   jsonb_path_query_first
+  ------------------------
+   3
+  (1 row)
+
+  db_pg=# select jsonb_path_exists('[{"a": 1}, {"a": 2}, 3]', 'strict $[*].a', silent => false);
+  ERROR:  jsonpath member accessor can only be applied to an object
+  CONTEXT:  referenced column: jsonb_path_exists
+  db_pg=# select jsonb_path_exists('[{"a": 1}, {"a": 2}, 3]', 'strict $[*].a', silent => true);
+   jsonb_path_exists
+  -------------------
+
   (1 row)
   ```
 
