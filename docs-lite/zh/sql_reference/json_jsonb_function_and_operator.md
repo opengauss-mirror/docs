@@ -238,6 +238,15 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](json_jsonb_type.md)。
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="p1182661311019"><a name="p1182661311019"></a><a name="p1182661311019"></a>/</p>
 </td>
 </tr>
+<tr id="row1482631313106"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="p13826141318107"><a name="p13826141318107"></a><a name="p13826141318107"></a>||</p>
+</td>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="p2826813141014"><a name="p2826813141014"></a><a name="p2826813141014"></a>jsonb</p>
+</td>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="p1082661341014"><a name="p1082661341014"></a><a name="p1082661341014"></a>连接两个jsonb值,同函数jsonb_concat。</p>
+</td>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="p1182661311019"><a name="p1182661311019"></a><a name="p1182661311019"></a>'{"a":1, "c":3}'::jsonb || '{"b":2, "d":4}'::jsonb</p>
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -973,6 +982,22 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](json_jsonb_type.md)。
     ----------
      t
     (1 row)
+  ```
+
+- jsonb\_concat\(jsonb, jsonb\)
+
+  描述：同操作符 \`||\`, 连接两个jsonb值。
+
+  返回类型：jsonb
+
+  示例：
+
+  ```sql
+  openGauss=# select jsonb_concat('{"a":1, "c":3}'::jsonb, '{"b":2, "d":4}'::jsonb);
+             jsonb_concat
+  ----------------------------------
+   {"a": 1, "b": 2, "c": 3, "d": 4}
+  (1 row)
   ```
 
 - to\_json\(anyelement\)
