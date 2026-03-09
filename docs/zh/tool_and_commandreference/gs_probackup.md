@@ -26,6 +26,7 @@ gs\_probackup目前支持进度打印，会分别在文件备份、文件验证�
 - 如果要通过ssh在远程模式下备份数据库，需要在本地和远程主机安装相同主版本的数据库，并通过ssh-copy-id remote\_user@remote\_host命令设置本地主机备份用户和远程主机数据库用户的无密码ssh连接。
 - 远程模式下只能执行add-instance、backup、restore子命令。
 - 使用restore子命令前，应先停止gaussdb进程。
+- 在传统主备模式下，全量备份后，主机做数据变更操作，使用备份包恢复主机数据，备机需要全量build。
 - 在非资源池化模式下，当存在用户自定义表空间时，如果该表空间的路径不在PGDATA目录下，备份的时候要加上 --external-dirs 参数，否则，该表空间不会被备份；在资源池化模式下，当前只支持相对路径表空间，因此存在自定义表空间时不需要指定 --external-dirs 参数。
 - 当备份的规模比较大或在备份同时执行业务时，为了防止备份过程中timeout发生，请适当调整postgresql.conf文件的参数 session\_timeout、wal\_sender\_timeout。并且在备份的命令行参数中适当调整参数--rw-timeout的值。
 - 资源池化模式下，恢复到不同集群需先执行全量恢复。
