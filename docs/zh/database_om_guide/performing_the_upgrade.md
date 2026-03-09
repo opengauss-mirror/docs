@@ -25,7 +25,7 @@
     ./gs_preinstall -U omm -G dbgrp  -X /opt/software/openGauss/clusterconfig.xml
     ```
 
-6. 切换至omm用户。
+6. 切换至omm用户，若是分离环境变量，则切换用户后还需加载环境变量。
 
     ```
     su - omm
