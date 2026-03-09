@@ -1060,6 +1060,45 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
   (1 row)
   ```
 
+- Type conversion functions
+
+  Description: Functions for converting the JSONB type to other data types which is equivalent to CAST(... AS ...). For empty string ("") case, they will throw an error.
+
+  ```sql
+  jsonb_bool
+  jsonb_int1
+  jsonb_int2
+  jsonb_int4
+  jsonb_int8
+  jsonb_numeric
+  jsonb_float4
+  jsonb_float8
+  jsonb_date
+  jsonb_time
+  jsonb_timestamp
+  ```
+
+  For example:
+
+  ```sql
+  openGauss=# select jsonb_bool('{"A":"true"}'::jsonb->'A');
+  jsonb_bool 
+  ------------
+   t
+  (1 row)
+
+  openGauss=# select jsonb_int4('{"A":1234}'::jsonb->'A');
+  jsonb_int4 
+  ------------
+        1234
+  (1 row)
+
+  openGauss=# select jsonb_int4( '{"A":""}'::jsonb->'A' );
+  ERROR:  invalid input syntax for integer: ""
+  CONTEXT:  referenced column: jsonb_int4
+  
+  ```
+
 - Other functions
 
     Description: Internal functions used by GIN indexes and JSON\\JSONB aggregate functions.

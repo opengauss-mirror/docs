@@ -1247,6 +1247,45 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](json_jsonb_type.md)。
   (1 row)
   ```
 
+- 类型转换函数
+
+  描述：用于将jsonb类型转换为其他数据类型的函数。等同于CAST(... AS ...)。对于空串（""）转换时，会抛出错误。
+
+  ```sql
+  jsonb_bool
+  jsonb_int1
+  jsonb_int2
+  jsonb_int4
+  jsonb_int8
+  jsonb_numeric
+  jsonb_float4
+  jsonb_float8
+  jsonb_date
+  jsonb_time
+  jsonb_timestamp
+  ```
+
+  示例:
+
+  ```sql
+  openGauss=# select jsonb_bool('{"A":"true"}'::jsonb->'A');
+  jsonb_bool 
+  ------------
+   t
+  (1 row)
+
+  openGauss=# select jsonb_int4('{"A":1234}'::jsonb->'A');
+  jsonb_int4 
+  ------------
+        1234
+  (1 row)
+  
+  openGauss=# select jsonb_int4( '{"A":""}'::jsonb->'A' );
+  ERROR:  invalid input syntax for integer: ""
+  CONTEXT:  referenced column: jsonb_int4
+  
+  ```
+
 - 其他函数
 
   描述：gin索引以及json\\jsonb聚集函数所用到的内部函数，功能不过多赘述。
