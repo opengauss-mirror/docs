@@ -19,6 +19,7 @@ openGauss在线DDL特性执行传统主备中Astore、段页式的普通表和�
 为保证事务原子性、一致性。DDL事务和并发DML之间互相独立，在线DDL事务回滚不会导致已提交的并发DML事务数据丢失，并发DML事务回滚则不会追增至新表中。
 
 为便于可视化online ddl运行状态，新增online_ddl_status视图，用于查询当前数据库的在线DDL事务运行状态。online_ddl_type列取值包括"CHECK"、"REWRITE"、"VACUUM"、"CLUSTER"、"INVALID"。status列取值包括"NONE"、"START"、"PREPARE"、"RERITE_CATALOG"、"BASELINE_COPY"、"CATCHUP"、"COMMITTING"、"END"、"UNKNOWN"。
+
 | 列名            | 数据类型    | 描述                            |
 | --------------- | ----------- | ------------------------------- |
 | relid           | Oid         | 被操作表的oid                   |
@@ -29,7 +30,6 @@ openGauss在线DDL特性执行传统主备中Astore、段页式的普通表和�
 | temp_schem_name | text        | 本次操作创建的临时schema的名字  |
 | status          | text        | online ddl状态                  |
 | extra_info      | text        | 额外信息                        |
-
 
 ## 特性增强
 
@@ -45,6 +45,7 @@ openGauss在线DDL特性执行传统主备中Astore、段页式的普通表和�
 - 离线VACUUM FULL/CLUSTER操作在主要流程持有七级锁，为保证数据一致性，在线VACUUM FULL/CLUSTER会在准备阶段和DDL提交阶段加八级锁。
 - 在线VACUUM FULL/CLUSTER操作会按照对应的规则重新整理基线数据，新增数据则会基于appned only原则追增到数据末尾。
 - 在线VACUUM FULL重建分区表时，会对每个分区分别进行在线VACUUM FULL操作。如果执行过程中报错，对于已经完成重建的分区，在线VACUUM FULL操作不会回滚。
+
 ## 依赖关系
 
 无。
@@ -115,16 +116,19 @@ ALTER TABLE CONCURRENTLY emplyee ADD CONSTRAINT chk_employee_age (age >=18 AND a
 ```
 
 对表做在线VACUUM FULL:
+
 ```sql
 VACUUM FULL CONCURRENTLY employee;
 ```
 
 对表做在线CLUSTER:
+
 ```sql
 CLUSTER CONCURRENTLY employee USING idx_employee;
 ```
 
 以分区表orders为例:
+
 ```sql
 drop table if exists orders;
 CREATE TABLE orders (
@@ -144,31 +148,37 @@ CREATE INDEX idx_orders ON orders (customer_id) local;
 ```
 
 对整个表执行vacuum full concurrently
+
 ```sql
 VACUUM FULL CONCURRENTLY orders;
 ```
 
 对分区p1执行vacuum full concurrently
+
 ```sql
 VACUUM FULL CONCURRENTLY orders partition(p1);
 ```
 
 对整个表执行cluster concurrently
+
 ```sql
 CLUSTER CONCURRENTLY orders USING idx_orders;
 ```
 
 对分区p1执行cluster concurrently
+
 ```sql
 cluster CONCURRENTLY orders partition(p1) USING idx_orders;
 ```
 
 将分区p1分裂成p11和p12
+
 ```sql
 ALTER TABLE CONCURRENTLY orders SPLIT PARTITION p1 AT (500) INTO (PARTITION p11, PARTITION p12);
 ```
 
 将分区p3和p3合并成p5
+
 ```sql
 ALTER TABLE CONCURRENTLY orders MERGE PARTITIONS p3, p4 INTO PARTITION p5;
 ```
@@ -176,10 +186,10 @@ ALTER TABLE CONCURRENTLY orders MERGE PARTITIONS p3, p4 INTO PARTITION p5;
 此外，在线DDL新增SIGHUP级参数log_online_ddl_level，用于调整在线DDL日志打印级别，该参数仅用于功能验证，正常使用不建议开启。
 
 新增系统函数online_ddl_status()，用于查询当前数据库的在线DDL事务运行状态。
+
 ```sql
 SELECT * FROM online_ddl_status();
 ```
-
 
 ## 使用场景
 

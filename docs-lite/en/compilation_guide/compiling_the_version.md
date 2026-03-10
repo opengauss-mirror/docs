@@ -286,4 +286,3 @@ Use the  **build/script/cmake\_package\_mini.sh**  script to build the openGauss
 
     - The generated installation package is stored in the  **./output**  directory.
     - The build and packaging log file is stored in  **./build/script/makemppdb\_pkg.log**.
-

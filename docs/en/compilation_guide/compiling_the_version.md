@@ -32,7 +32,6 @@ The git and git-lfs have been installed and configured on the local host.
       **openEuler_arm:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_openEuler_arm.tar.gz>
       **openEuler_x86:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_openEuler_x86_64.tar.gz>
       **Centos_x86:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_Centos7.6_x86_64.tar.gz>
-
     > After the download is complete, decompress and rename the package: **mv openGauss-third\_party\_binarylibs binarylibs**.
 
 2. When the progress of each download reaches 100%, the download is successful.
