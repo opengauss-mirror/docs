@@ -16,7 +16,7 @@ SELECT语句就像叠加在数据库表上的过滤器，利用SQL关键字从�
 
 - 查询数据
 
-```
+```EBNF
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 { * | {expression [ [ AS ] output_name ]} [, ...] }
@@ -57,14 +57,14 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 - 其中子查询with\_query为：
 
-    ```
+    ```EBNF
     with_query_name [ ( column_name [, ...] ) ]
         AS [ [ NOT ] MATERIALIZED ] ( {select | values | insert | update | delete} )
     ```
 
 - 其中into子句为：
 
-  ```
+  ```EBNF
   into_option: {
           INTO var_name [, var_name] ...
    | INTO OUTFILE 'file_name'
@@ -87,14 +87,14 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 - 其中指定查询源from\_item为：
 
-    ```
+    ```EBNF
     {[ ONLY ] table_name [ * ] [ partition_clause ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
     [ TABLESAMPLE sampling_method ( argument [, ...] ) [ REPEATABLE ( seed ) ] ]
     [TIMECAPSULE {TIMESTAMP|CSN} expression]
     |( select ) [ AS ] alias [ ( column_alias [, ...] ) ]
     |with_query_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
-    |function_name ( [ argument [, ...] ] ) [ AS ] alias [ ( column_alias [, ...] | column_definition [, ...] ) ]
-    |function_name ( [ argument [, ...] ] ) AS ( column_definition [, ...] )
+    |function_name ( [ argument [, ...] ] ) [ WITH ORDINALITY ] [ AS ] alias [ ( column_alias [, ...] | column_definition [, ...] ) ]
+    |function_name ( [ argument [, ...] ] ) [ WITH ORDINALITY ] AS ( column_definition [, ...] )
     |from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]
     |rotate_clause
     |notrotate_clause
@@ -102,20 +102,23 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     |from_item cross apply lateral_subquery [ AS ] alias
     |from_item outer apply lateral_subquery [ AS ] alias}
     ```
-
+    
+    WITH ORDINALITY 不支持返回record类型的函数
+    
 - 其中lateral_subquery的子句为：
 
-  ```
-  table
-  | subquery
-  | function_name ( [ argument [, ...] ])
-  ```
+    ```EBNF
+    table
+    | subquery
+    | function_name ( [ argument [, ...] ]) [ WITH ORDINALITY ]
+    ```
 
-  lateral_subquery和普通的subquery的区别在于lateral_subquery可以引用跨路径的变量（如上层路径的列数据），普通的subquery不支持。
-
+    lateral_subquery和普通的subquery的区别在于lateral_subquery可以引用跨路径的变量（如上层路径的列数据），普通的subquery不支持。
+    with ordinality不支持返回record类型的函数
+    
 - 其中group子句为：
 
-    ```
+    ```EBNF
     ( )
     | expression
     | ( expression [, ...] )
@@ -126,9 +129,9 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 - 其中指定分区partition\_clause为：
 
-    ```
-    PARTITION { ( partition_name ) | 
-            FOR (  partition_value [, ...] ) }
+    ```EBNF
+    PARTITION { ( partition_name ) | FOR (  partition_value [, ...] ) } |
+    SUBPARTITION { ( subpartition_name ) | FOR (  subpartition_value [, ...] ) }
     ```
 
     >[!NOTE]说明
@@ -136,16 +139,16 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 - 其中设置排序方式nlssort\_expression\_clause为：
 
-  ```
+  ```EBNF
   NLSSORT ( column_name, ' NLS_SORT = { SCHINESE_PINYIN_M | generic_m_ci } ' )
-  其中，第二个参数可选generic_m_ci，仅支持纯英文不区分大小写排序。
   ```
+  其中，第二个参数可选generic_m_ci，仅支持纯英文不区分大小写排序。
 
 - 简化版查询语法，功能相当于select \* from table\_name。
 
-    ```
-    TABLE { ONLY {(table_name)| table_name} | table_name [ * ]};
-    ```
+  ```EBNF
+  TABLE { ONLY {(table_name)| table_name} | table_name [ * ] };
+  ```
 
 ## 参数说明<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc"></a>
 
@@ -155,7 +158,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
   
   其中with\_query的详细格式为：
 
-  ```
+  ```EBNF
   with_query_name [ ( column_name [, ...] ) ] AS ( {select | values | insert | update | delete} )
   ```
 
@@ -165,7 +168,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
   
   如果声明了RECURSIVE，那么允许AS后的SELECT子查询通过名称引用自己，详细格式为：
 
-  ```
+  ```EBNF
   non_recursive_term UNION [ ALL | DISTINCT ] recursive_term
   ```
 
@@ -235,32 +238,27 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     指定文件的绝对路径。
 
-    ```
-    into_option三处位置：
+    ```sql
+    -- into_option三处位置：
     --在from子句之前。
     openGauss=#  select * into @my_var from t;
     --在锁定子句之前。
     openGauss=#  select * from t into @my_var for update;
     --在select语句结尾。
     openGauss=#  select * from t for update into @my_var;
-    
-  
-  导出到文件：
-    openGauss=#  select *from t；
-   a | b
-    ---+---
-   1 | a
+    -- 导出到文件：
+    openGauss=#  select * from t;
+    a | b
+      ---+---
+    1 | a
     (1 row)
-  --导出数据到outfile文件。
-    openGauss=#  select* from t into outfile '/home/openGauss/t.txt'FIELDS TERMINATED BY '~' ENCLOSED BY 't' ESCAPED BY '^' LINES STARTING BY '$' TERMINATED BY '&\n';
-  文件内容：$t1t~tat&，其中LINES STARTING BY($),FIELDS TERMINATED BY(~),ENCLOSED BY(t),LINES TERMINATED BY(&\n)。
+    --导出数据到outfile文件。
+    openGauss=#  select * from t into outfile '/home/openGauss/t.txt'FIELDS TERMINATED BY '~' ENCLOSED BY 't' ESCAPED BY '^' LINES STARTING BY '$' TERMINATED BY '&\n';
+    文件内容：$t1t~tat&，其中LINES STARTING BY($),FIELDS TERMINATED BY(~),ENCLOSED BY(t),LINES TERMINATED BY(&\n)。
     --导出数据到dumpfile文件。
-  openGauss=#  select * from t into dumpfile '/home/openGauss/t.txt';
-    文件内容：1a
-
-  ```
-  
-  
+    openGauss=#  select * from t into dumpfile '/home/openGauss/t.txt';
+      文件内容：1a
+    ```
   
 - **FROM子句**
 
@@ -305,273 +303,289 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
       关键字，闪回查询的标识，根据表的CSN闪回查询指定CSN点的结果集。其中CSN可从gs_txn_snapshot记录的snpcsn号查得。
 
-      > [!NOTE]说明**
+      > [!NOTE]说明
       >
       > - 闪回查询不能跨越影响表结构或物理存储的语句，否则会报错。即闪回点和当前点之间，如果执行过修改表结构或影响物理存储的语句（TRUNCATE、DDL、DCL、VACUUM FULL），则闪回失败，报错:ERROR: The table definition of T1 has been changed。
       > - 闪回点过旧时，因闪回版本被回收等导致无法获取旧版本会导致闪回失败，报错：Restore point too old。可通过将[version_retention_age](../database_reference/flashback_parameters.md#version_retention_age)和[vacuum_defer_cleanup_age](../database_reference/flashback_parameters.md#vacuum_defer_cleanup_age)设置成同值，配置闪回功能旧版本保留期限，取值范围是0~1000000，值为0表示VACUUM不会延迟清除无效的行存记录。
       > - 通过时间方式指定闪回点，闪回数据和实际时间点最多偏差为3秒。
 
-    - column_alias
+  - column\_alias
 
-      列别名。
+    列别名。
 
-    - PARTITION
+  - PARTITION
 
-      查询分区表的某个分区的数据。
+    查询分区表的某个分区的数据。
 
-    - partition_name
+    - partition\_name
 
       分区名。
 
-    - partition_value
+    - partition\_value
 
       指定的分区键值。在创建分区表时，如果指定了多个分区键，可以通过PARTITION FOR子句指定的这一组分区键的值，唯一确定一个分区。
 
-    - subquery
+  - SUBPARTITION
+
+    查询分区表的某个二级分区的数据。
+
+    - subpartition\_name
+
+      二级分区名。
+
+    - subpartition\_value
+
+      指定的一级分区和二级分区键值。可以通过SUBPARTITION FOR子句指定的两个分区键的值，唯一确定一个二级分区。
+
+  - subquery
 
       FROM子句中可以出现子查询，创建一个临时表保存子查询的输出。
 
-    - with_query_name
+  - with\_query\_name
 
-      WITH子句同样可以作为FROM子句的源，可以通过WITH查询的名称对其进行引用。
+    WITH子句同样可以作为FROM子句的源，可以通过WITH查询的名称对其进行引用。
 
-    - function_name
+  - function\_name
 
-      函数名称。函数调用也可以出现在FROM子句中。
+    函数名称。函数调用也可以出现在FROM子句中。
 
-    - join_type
+  - join\_type
 
-      有6种类型，如下所示。
+    有6种类型，如下所示。
 
-      - [ INNER ] JOIN
+    - [ INNER ] JOIN
 
-        一个JOIN子句组合两个FROM项。可使用圆括弧以决定嵌套的顺序。如果没有圆括弧，JOIN从左向右嵌套。
+      一个JOIN子句组合两个FROM项。可使用圆括弧以决定嵌套的顺序。如果没有圆括弧，JOIN从左向右嵌套。
 
-        在任何情况下，JOIN都比逗号分隔的FROM项绑定得更紧。
+      在任何情况下，JOIN都比逗号分隔的FROM项绑定得更紧。
 
-      - LEFT [ OUTER ] JOIN
+    - LEFT [ OUTER ] JOIN
 
-        返回笛卡尔积中所有符合连接条件的行，再加上左表中通过连接条件没有匹配到右表行的那些行。这样，左边的行将扩展为生成表的全长，方法是在那些右表对应的字段位置填上NULL。请注意，只在计算匹配的时候，才使用JOIN子句的条件，外层的条件是在计算完毕之后施加的。
+      返回笛卡尔积中所有符合连接条件的行，再加上左表中通过连接条件没有匹配到右表行的那些行。这样，左边的行将扩展为生成表的全长，方法是在那些右表对应的字段位置填上NULL。请注意，只在计算匹配的时候，才使用JOIN子句的条件，外层的条件是在计算完毕之后施加的。
 
-      - RIGHT [ OUTER ] JOIN
+    - RIGHT [ OUTER ] JOIN
 
-        返回所有内连接的结果行，加上每个不匹配的右边行（左边用NULL扩展）。
+      返回所有内连接的结果行，加上每个不匹配的右边行（左边用NULL扩展）。
 
-        这只是一个符号上的方便，因为总是可以把它转换成一个LEFT OUTER JOIN，只要把左边和右边的输入互换位置即可。
+      这只是一个符号上的方便，因为总是可以把它转换成一个LEFT OUTER JOIN，只要把左边和右边的输入互换位置即可。
 
-      - FULL [ OUTER ] JOIN
+    - FULL [ OUTER ] JOIN
 
-        返回所有内连接的结果行，加上每个不匹配的左边行（右边用NULL扩展），再加上每个不匹配的右边行（左边用NULL扩展）。
+      返回所有内连接的结果行，加上每个不匹配的左边行（右边用NULL扩展），再加上每个不匹配的右边行（左边用NULL扩展）。
 
-      - ASOF JOIN
+    - ASOF JOIN
 
-        这是列存储中针对时间序列数据而新增的一种连接方式,特点是对于给定左表中的时间戳，以最接近的时间戳返回右表中的相应记录。
+      这是列存储中针对时间序列数据而新增的一种连接方式,特点是对于给定左表中的时间戳，以最接近的时间戳返回右表中的相应记录。
 
-      - CROSS JOIN
+    - CROSS JOIN
 
-        CROSS JOIN等效于INNER JOIN ON（TRUE） ，即没有被条件删除的行。这种连接类型只是符号上的方便，因为它们与简单的FROM和WHERE的效果相同。
+      CROSS JOIN等效于INNER JOIN ON（TRUE） ，即没有被条件删除的行。这种连接类型只是符号上的方便，因为它们与简单的FROM和WHERE的效果相同。
 
-        > [!NOTE]说明** 必须为INNER和OUTER连接类型声明一个连接条件，即NATURAL ON、join_condition、USING (join_column [， …]) 之一。但是它们不能出现在CROSS JOIN中。
+      > [!NOTE]说明 必须为INNER和OUTER连接类型声明一个连接条件，即NATURAL ON、join_condition、USING (join_column [， …]) 之一。但是它们不能出现在CROSS JOIN中。
 
       其中CROSS JOIN和INNER JOIN生成一个简单的笛卡尔积，和在FROM的顶层列出两个项的结果相同。
 
-    - cross apply
+  - cross apply
 
-      cross apply的功能与cross join的功能相似，主要用于将一个表与一个表函数或者子查询进行关联。与cross join相比cross apply中右表中可以直接引用左表的表和列信息，如下所示：
+    cross apply的功能与cross join的功能相似，主要用于将一个表与一个表函数或者子查询进行关联。与cross join相比cross apply中右表中可以直接引用左表的表和列信息，如下所示：
 
-      ```
-      -- 右表子查询直接引用左表的数据，在cross join场景下会报错 
-      
-      openGauss=# SELECT d.department_name, v.employee_id, v.last_name
-        FROM departments d CROSS join (SELECT * FROM employees e WHERE e.department_id = d.department_id) v
-        WHERE d.department_name IN ('Marketing', 'Operations', 'Public Relations')
-        ORDER BY d.department_name, v.employee_id;
-      ERROR:  invalid reference to FROM-clause entry for table "d"
-      LINE 2: ...SELECT * FROM employees e WHERE e.department_id = d.departme...
-                                                                   ^
-      HINT:  There is an entry for table "d", but it cannot be referenced from this part of the query.
-      openGauss=#
-      
-      -- 右表子查询直接引用左表的数据，在cross apply场景下可以正常执行
-      openGauss=# SELECT d.department_name, v.employee_id, v.last_name
-      openGauss-#   FROM departments d CROSS APPLY (SELECT * FROM employees e WHERE e.department_id = d.department_id) v
-      openGauss-#   WHERE d.department_name IN ('Marketing', 'Operations', 'Public Relations')
-      openGauss-#   ORDER BY d.department_name, v.employee_id;
-       department_name  | employee_id | last_name
-      ------------------+-------------+-----------
-       Marketing        |           1 | zhangsan1
-       Marketing        |           2 | zhangsan2
-       Marketing        |           3 | zhangsan3
-       Marketing        |           4 | zhangsan4
-       Operations       |           9 | wangwu1
-       Operations       |          10 | wangwu2
-       Operations       |          11 | wangwu3
-       Operations       |          12 | wangwu4
-       Public Relations |           5 | lisi1
-       Public Relations |           6 | lisi2
-       Public Relations |           7 | lisi3
-       Public Relations |           8 | lisi4
-      (12 rows)
-      ```
+    ```sql
+    -- 右表子查询直接引用左表的数据，在cross join场景下会报错 
+    
+    openGauss=# SELECT d.department_name, v.employee_id, v.last_name
+      FROM departments d CROSS join (SELECT * FROM employees e WHERE e.department_id = d.department_id) v
+      WHERE d.department_name IN ('Marketing', 'Operations', 'Public Relations')
+      ORDER BY d.department_name, v.employee_id;
+    ERROR:  invalid reference to FROM-clause entry for table "d"
+    LINE 2: ...SELECT * FROM employees e WHERE e.department_id = d.departme...
+                                                                 ^
+    HINT:  There is an entry for table "d", but it cannot be referenced from this part of the query.
+    openGauss=#
+    
+    -- 右表子查询直接引用左表的数据，在cross apply场景下可以正常执行
+    openGauss=# SELECT d.department_name, v.employee_id, v.last_name
+    openGauss-#   FROM departments d CROSS APPLY (SELECT * FROM employees e WHERE e.department_id = d.department_id) v
+    openGauss-#   WHERE d.department_name IN ('Marketing', 'Operations', 'Public Relations')
+    openGauss-#   ORDER BY d.department_name, v.employee_id;
+     department_name  | employee_id | last_name
+    ------------------+-------------+-----------
+     Marketing        |           1 | zhangsan1
+     Marketing        |           2 | zhangsan2
+     Marketing        |           3 | zhangsan3
+     Marketing        |           4 | zhangsan4
+     Operations       |           9 | wangwu1
+     Operations       |          10 | wangwu2
+     Operations       |          11 | wangwu3
+     Operations       |          12 | wangwu4
+     Public Relations |           5 | lisi1
+     Public Relations |           6 | lisi2
+     Public Relations |           7 | lisi3
+     Public Relations |           8 | lisi4
+    (12 rows)
+    ```
   
-    - outer apply
+  - outer apply
   
-      outer apply的功能与right join的功能相似，主要区别在于outer apply会将join左表的每一行数据计算出来后再应用于右表做联合操作计算，因此右表可以直接引用左表的表列信息。与cross apply相比，如果右表没数据与左表相匹配，outer apply会保留左表的数据且将右表的值设置为NULL，如下所示：
+    outer apply的功能与right join的功能相似，主要区别在于outer apply会将join左表的每一行数据计算出来后再应用于右表做联合操作计算，因此右表可以直接引用左表的表列信息。与cross apply相比，如果右表没数据与左表相匹配，outer apply会保留左表的数据且将右表的值设置为NULL，如下所示：
   
-      ```
-      -- 右表子查询引用左表的列信息使用right join时会报错
-      openGauss=# SELECT d.department_name, v.employee_id, v.last_name
-        FROM departments d right join (SELECT * FROM employees e WHERE e.department_id = d.department_id) v
-        on 1 = 1 WHERE d.department_name IN ('Marketing', 'Operations', 'Public Relations')
-        ORDER BY d.department_name, v.employee_id;
-      ERROR:  invalid reference to FROM-clause entry for table "d"
-      LINE 2: ...SELECT * FROM employees e WHERE e.department_id = d.departme...
-                                                                   ^
-      HINT:  There is an entry for table "d", but it cannot be referenced from this part of the query.
-      
-      -- 右表子查询引用左表的列信息使用outer apply时可以正常执行
-      openGauss=# SELECT d.department_name, v.employee_id, v.last_name
-      openGauss-#   FROM departments d outer apply (SELECT * FROM employees e WHERE e.department_id = d.department_id) v
-      openGauss-#   WHERE d.department_name IN ('Marketing', 'Operations', 'Public Relations')
-      openGauss-#   ORDER BY d.department_name, v.employee_id;
-       department_name  | employee_id | last_name
-      ------------------+-------------+-----------
-       Marketing        |           1 | zhangsan1
-       Marketing        |           2 | zhangsan2
-       Marketing        |           3 | zhangsan3
-       Marketing        |           4 | zhangsan4
-       Operations       |           9 | wangwu1
-       Operations       |          10 | wangwu2
-       Operations       |          11 | wangwu3
-       Operations       |          12 | wangwu4
-       Public Relations |           5 | lisi1
-       Public Relations |           6 | lisi2
-       Public Relations |           7 | lisi3
-       Public Relations |           8 | lisi4
-      (12 rows)
-      ```
+    ```sql
+    -- 右表子查询引用左表的列信息使用right join时会报错
+    openGauss=# SELECT d.department_name, v.employee_id, v.last_name
+      FROM departments d right join (SELECT * FROM employees e WHERE e.department_id = d.department_id) v
+      on 1 = 1 WHERE d.department_name IN ('Marketing', 'Operations', 'Public Relations')
+      ORDER BY d.department_name, v.employee_id;
+    ERROR:  invalid reference to FROM-clause entry for table "d"
+    LINE 2: ...SELECT * FROM employees e WHERE e.department_id = d.departme...
+                                                                 ^
+    HINT:  There is an entry for table "d", but it cannot be referenced from this part of the query.
+    
+    -- 右表子查询引用左表的列信息使用outer apply时可以正常执行
+    openGauss=# SELECT d.department_name, v.employee_id, v.last_name
+    openGauss-#   FROM departments d outer apply (SELECT * FROM employees e WHERE e.department_id = d.department_id) v
+    openGauss-#   WHERE d.department_name IN ('Marketing', 'Operations', 'Public Relations')
+    openGauss-#   ORDER BY d.department_name, v.employee_id;
+     department_name  | employee_id | last_name
+    ------------------+-------------+-----------
+     Marketing        |           1 | zhangsan1
+     Marketing        |           2 | zhangsan2
+     Marketing        |           3 | zhangsan3
+     Marketing        |           4 | zhangsan4
+     Operations       |           9 | wangwu1
+     Operations       |          10 | wangwu2
+     Operations       |          11 | wangwu3
+     Operations       |          12 | wangwu4
+     Public Relations |           5 | lisi1
+     Public Relations |           6 | lisi2
+     Public Relations |           7 | lisi3
+     Public Relations |           8 | lisi4
+    (12 rows)
+    ```
   
-    - lateral
+  - lateral
   
-      latera用于访问跨路径的表列信息，其作用原理为将外部的每一行数据计算完成后再应用于lateral的内子查询再执行lateral子查询内部计算，从而实现lateral子查询内部可以引用子查询外部的表列数据。如下所示：
+    latera用于访问跨路径的表列信息，其作用原理为将外部的每一行数据计算完成后再应用于lateral的内子查询再执行lateral子查询内部计算，从而实现lateral子查询内部可以引用子查询外部的表列数据。如下所示：
   
-      ```
-      ----如下所示，如果不加lateral，子查询表中无法识别到子查询外的表d
-      openGauss=# select* from departments d,(select d.department_id from employees x) e where e.department_id = d.department_id;
-      ERROR:  invalid reference to FROM-clause entry for table "d"
-      LINE 1: select* from departments d,(select d.department_id from empl...
-                                                 ^
-      HINT:  There is an entry for table "d", but it cannot be referenced from this part of the query.
-      CONTEXT:  referenced column: department_id
-      
-      ----如果自查询前边加上lateral，子查询中可以引用子查询外的表列d.department_id信息
-      openGauss=# select* from departments d, lateral(select d.department_id from employees x) e where e.department_id = d.department_id;
-       department_name  | department_id | department_id
-      ------------------+---------------+---------------
-       Marketing        |             1 |             1
-       Marketing        |             1 |             1
-       Marketing        |             1 |             1
-       Marketing        |             1 |             1
-      
-      ```
+    ```sql
+    ----如下所示，如果不加lateral，子查询表中无法识别到子查询外的表d
+    openGauss=# select* from departments d,(select d.department_id from employees x) e where e.department_id = d.department_id;
+    ERROR:  invalid reference to FROM-clause entry for table "d"
+    LINE 1: select* from departments d,(select d.department_id from empl...
+                                               ^
+    HINT:  There is an entry for table "d", but it cannot be referenced from this part of the query.
+    CONTEXT:  referenced column: department_id
+    
+    ----如果自查询前边加上lateral，子查询中可以引用子查询外的表列d.department_id信息
+    openGauss=# select* from departments d, lateral(select d.department_id from employees x) e where e.department_id = d.department_id;
+     department_name  | department_id | department_id
+    ------------------+---------------+---------------
+     Marketing        |             1 |             1
+     Marketing        |             1 |             1
+     Marketing        |             1 |             1
+     Marketing        |             1 |             1
+    
+    ```
   
-    - ON join_condition
+  - ON join\_condition
   
-      连接条件，用于限定连接中的哪些行是匹配的。如：ON left_table.a = right_table.a。
+    连接条件，用于限定连接中的哪些行是匹配的。如：ON left_table.a = right_table.a。
   
-    - USING(join_column[，…])
+  - USING(join_column[，…])
   
-      ON left_table.a = right_table.a AND left_table.b = right_table.b … 的简写。要求对应的列必须同名。USING 意味着，每个等号表达式里面的列，只有一列会输出，而不是全部。
+    ON left_table.a = right_table.a AND left_table.b = right_table.b … 的简写。要求对应的列必须同名。USING 意味着，每个等号表达式里面的列，只有一列会输出，而不是全部。
   
-    - NATURAL
+  - NATURAL
   
-      NATURAL是具有相同名称的两个表的所有列的USING列表的简写，如果没有一样名称的列，则等效于 join on true。
+    NATURAL是具有相同名称的两个表的所有列的USING列表的简写，如果没有一样名称的列，则等效于 join on true。
   
-    - from item
+  - from\_item
   
-      用于连接的查询源对象的名称。
+    用于连接的查询源对象的名称。
   
-  - rotate_clause
+  - rotate\_clause
   
-     用于实现将查询结果行转列输出。
+    用于实现将查询结果行转列输出。
 
-  其语法格式如下：
+    其语法格式如下：
+    ```EBNF
     rotate_clause : {
     ROTATE
     ( aggregate_function ( expr ) [[AS] alias ]
-     [, aggregate_function ( expr ) [[AS] alias ] ] ...
+    [, aggregate_function ( expr ) [[AS] alias ] ] ...
     rotate_for_clause
     rotate_in_clause )
-     }
+    }
+    ```
  
- 该子句涉及的元素如下所示。
- 
- - ROTATE       
- 
-   用于实现将查询结果行转列的关键字。
- 
- - aggregate_function       
- 
-   使用的聚合函数名称。
- 
- - expr       
- 
-   聚合函数参数列表。
- 
- - alias       
- 
-   聚合操作别名。
-   
- - rotate_for_clause       
- 
-   用于做行转列的列名，其语法格式如下：
- 
-         rotate_for_clause: {
-             FOR { column | ( column [, column]... ) }
-         }
- 
- - rotate_in_clause       
- 
-   用于做行转列的列中的参数，其语法格式如下：
- 
-         rotate_in_clause: {
-             IN ( { { expr | ( expr [, expr]... ) } [ [ AS] alias] }
-                 [, { { expr | ( expr [, expr]... ) } [ [ AS] alias] }]...
-             )
-         }
-
-  - notrotate_clause
-
-     用于实现将查询结果行转列输出。
-  其语法格式如下：
-        notrotate_clause : {
-                NOT ROTATE 
-                [ {INCLUDE | EXCLUDE } NULLS ]
-                ( { column | ( column [, column]... ) }
-                    rotate_for_clause
-                    unrotate_in_clause
-                )
-        }
+    该子句涉及的元素如下所示。
     
+    - ROTATE
+    
+      用于实现将查询结果行转列的关键字。
+    
+    - aggregate\_function
+    
+      使用的聚合函数名称。
+    
+    - expr
+    
+      聚合函数参数列表。
+    
+    - alias
+    
+      聚合操作别名。
+      
+    - rotate\_for\_clause
+
+      用于做行转列的列名，其语法格式如下：
+      ```ENBF
+      rotate_for_clause: {
+          FOR { column | ( column [, column]... ) }
+      }
+      ```
+    - rotate_in_clause
+    
+      用于做行转列的列中的参数，其语法格式如下：
+      ```EBNF
+      rotate_in_clause: {
+          IN ( { { expr | ( expr [, expr]... ) } [ [ AS] alias] }
+              [, { { expr | ( expr [, expr]... ) } [ [ AS] alias] }]...
+          )
+      }
+      ```
+
+  - notrotate\_clause
+
+    用于实现将查询结果行转列输出。
+    其语法格式如下：
+    ```EBNF
+    notrotate_clause : {
+            NOT ROTATE 
+            [ {INCLUDE | EXCLUDE } NULLS ]
+            ( { column | ( column [, column]... ) }
+                rotate_for_clause
+                unrotate_in_clause
+            )
+    }
+    ```
     该子句涉及的元素如下所示。
 
-    - NOT ROTATE       
+    - NOT ROTATE
 
       用于实现将查询结果列转行的关键字。
 
-    - unrotate_in_clause      
+    - unrotate\_in\_clause
 
       用于做列转行的列名，其语法格式如下：
-      
-            unrotate_in_clause : {
-                IN
-                ( { column | ( column [, column]... ) }
-                    [ AS { constant | ( constant [, constant]... ) } ]
-                    [, { column | ( column [, column]... ) }
-                    [ AS { constant | ( constant [, constant]... ) } ]]...
-                )
-            }
-
+      ```EBNF
+      unrotate_in_clause : {
+          IN
+          ( { column | ( column [, column]... ) }
+              [ AS { constant | ( constant [, constant]... ) } ]
+              [, { column | ( column [, column]... ) }
+              [ AS { constant | ( constant [, constant]... ) } ]]...
+          )
+      }
+      ```
 - **WHERE子句**
 
     WHERE子句构成一个行选择表达式，用来缩小SELECT查询的范围。condition是返回值为布尔型的任意表达式，任何不满足该条件的行都不会被检索。
@@ -602,7 +616,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     CONNECT BY代表递归连接条件，和START WITH一起子句一起使用，实现数据遍历递归的功能。
     除此之外，PRIOR关键字还可以用在目标列中，允许用户通过目标列获取上一层的值。
 
-    ```
+    ```sql
     openGauss=# create table test(name varchar, id int, fatherid int);
     openGauss=# insert into test values('A', 1, 0), ('B', 2, 1), ('C', 3, 1), ('D', 4, 1), ('E', 5, 2);
     select * from test start with id = 1 connect by prior id = fatherid order siblings by id desc;
@@ -643,7 +657,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     当前Start with默认行为是宽度优先搜索，但可以通过和伪列配合，实现深度优先搜索。比如：
 
-    ```
+    ```sql
     openGauss=# select sys_connect_by_path(name,'-') as path,*,LEVEL from test start with id = 1 connect by fatherid=prior id order by path;
       path  | name | id | fatherid | level
     --------+------+----+----------+-------
@@ -674,7 +688,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
         CUBE (c1,c2,c3)
         等效于
 
-        ```
+        ```EBNF
         GROUPING SETS (
           (c1, c2, c3),
           (c1, c2),
@@ -693,7 +707,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
         ROLLUP(c1,c2,c3)仅生成4种分组集合，等效于：
 
-        ```
+        ```EBNF
         GROUPING SETS (
           (c1, c2, c3),
           (c1, c2),
@@ -719,7 +733,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
   一般形式为WINDOW window\_name AS \( window\_definition \) \[， ...\]，window\_name是可以被随后的窗口定义所引用的名称，window\_definition可以是以下的形式：
 
-  ```
+  ```EBNF
   [ existing_window_name ]
   
   [ PARTITION BY expression [, ...] ]
@@ -731,7 +745,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
   frame\_clause为窗函数定义一个窗口帧window frame，窗函数（并非所有）依赖于帧，window frame是当前查询行的一组相关行。frame\_clause可以是以下的形式：
 
-  ```
+  ```EBNF
   [ RANGE | ROWS ] frame_start
   
   [ RANGE | ROWS ] BETWEEN frame_start AND frame_end
@@ -739,7 +753,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
   
   frame_start和frame_end可以是：
 
-  ```
+  ```EBNF
   UNBOUNDED PRECEDING     //分区第一行开始的帧
   
   value PRECEDING         //当前行前value行开始或结束的帧
@@ -761,7 +775,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
   WINDOW子句可指定窗口函数的行为，在处理窗口定义相同的窗口函数时，使用WINDOW子句，在OVER中引用，能使SQL语句更简单，例如：
 
-  ```
+  ```sql
   openGauss=# SELECT sum(count) OVER w, avg(count) OVER w
     FROM table_count
     WINDOW w AS (PARTITION BY name ORDER BY count DESC);
@@ -847,23 +861,25 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     >[!TIP]须知
     >如果要支持中文拼音排序，需要在初始化数据库时指定编码格式为UTF-8、GB18030、GB18030-2022或GBK。命令如下:
     >
-    >```
+    >```shell
     >initdb –E UTF8 –D ../data –locale=zh_CN.UTF-8、initdb -E GB18030 -D ../data -locale=zh_CN.GB18030、initdb -E GB18030-2022 -D ../data -locale=zh_CN.GB18030或initdb –E GBK –D ../data –locale=zh_CN.GBK。
     >```
 
 - **LIMIT子句**
 
   LIMIT子句由两个独立的子句组成：
-
+  ```EBNF
   LIMIT \{ count | ALL \}
+  ```
 
   OFFSET start count声明返回的最大行数，而start声明开始返回行之前忽略的行数。如果两个都指定了，会在开始计算count个返回行之前先跳过start行。
 
 - **OFFSET子句**
 
     SQL：2008开始提出一种不同的语法：
-
+    ```EBNF
     OFFSET start \{ ROW | ROWS \}
+    ```
 
     start声明开始返回行之前忽略的行数。
 
@@ -909,7 +925,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 ## 示例<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sc1b5e63c90c946b89430696c38fc86c0"></a>
 
-```
+```sql
 --先通过子查询得到一张临时表temp_t，然后查询表temp_t中的所有数据。
 openGauss=# WITH temp_t(name,isdba) AS (SELECT usename,usesuper FROM pg_user) SELECT * FROM temp_t;
 
@@ -1152,9 +1168,9 @@ set dolphin.sql_mode = '';
 SELECT DISTINCT name FROM my_tbl ORDER BY score;
 ```
 
---查询结果行列转换示例
+- 查询结果行列转换示例
 
-```
+```sql
 --创建表original_orders
 openGauss=#  create table original_orders (id int, year int, order_mode text, order_total int);
 --向表original_orders中插入记录
@@ -1191,11 +1207,12 @@ openGauss=# select * from rotate_orders not rotate ( yearly_total for order_mode
  2020 | online     |         1000
  2021 | online     |         1000
 (5 rows)
+
 ```
 
 - lateral使用样例
 
-```
+```sql
 -- 创建表
 openGauss=# create table employees(employee_id int, department_id int, last_name varchar(50));
 CREATE TABLE
@@ -1299,11 +1316,12 @@ openGauss=#  select * from departments d, lateral generate_series(1,2) g;
  CEO              |             6 | 2
  CFO              |             7 | 2
 (14 rows)
+
 ```
 
 - cross apply和outer apply使用样例
 
-```
+```sql
 -- 创建表
 openGauss=# create table employees(employee_id int, department_id int, last_name varchar(50));
 CREATE TABLE
@@ -1418,7 +1436,11 @@ openGauss-#   ORDER BY d.department_name, v.employee_id;
  Public Relations |           8 | lisi4
 (14 rows)
 
--- FETCH 语法使用样例
+```
+
+- FETCH 语法使用样例
+
+```sql
 openGauss=# CREATE TABLE employees(employee_id int, department_id int, last_name varchar(50));
 
 -- 插入20条记录
@@ -1453,5 +1475,55 @@ openGauss=# SELECT * FROM employees ORDER BY department_id FETCH NEXT 25 PERCENT
            4 |             1 | zhangsan4
            5 |             2 | lisi1
 (5 rows)
+
+```
+
+- WITH ORDINALITY 语法示例
+
+```sql
+-- 1. function with scalar return type
+openGauss=# CREATE FUNCTION getrngfunc1(int) RETURNS int AS 'SELECT $1;' LANGUAGE SQL;
+CREATE FUNCTION
+openGauss=# SELECT * FROM getrngfunc1(1) WITH ORDINALITY AS t1(v,o);
+ v | o 
+---+---
+ 1 | 1
+(1 row)
+
+-- 2. function with composite return type
+openGauss=# CREATE TABLE rngfunc (rngfuncid int, rngfuncsubid int, rngfuncname text, primary key(rngfuncid,rngfuncsubid));
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "rngfunc_pkey" for table "rngfunc"
+CREATE TABLE
+openGauss=#  INSERT INTO rngfunc VALUES(1,1,'Joe');
+INSERT 0 1
+openGauss=#   INSERT INTO rngfunc VALUES(1,2,'Ed');
+INSERT 0 1
+openGauss=#   INSERT INTO rngfunc VALUES(2,1,'Mary');
+INSERT 0 1
+openGauss=# CREATE FUNCTION getrngfunc9(int) RETURNS rngfunc AS 'DECLARE rngfunctup rngfunc%ROWTYPE; BEGIN SELECT * into rngfunctup FROM rngfunc WHERE rngfuncid = $1 LIMIT 1; RETURN rngfunctup; END;' LANGUAGE plpgsql;
+CREATE FUNCTION
+openGauss=# SELECT * FROM getrngfunc9(1) WITH ORDINALITY AS t1(a,b,c,o);
+ a | b |  c  | o 
+---+---+-----+---
+ 1 | 1 | Joe | 1
+(1 row)
+
+-- 3. function with set return type
+openGauss=#  CREATE FUNCTION getrngfunc3(int) RETURNS setof text AS 'SELECT rngfuncname FROM rngfunc WHERE rngfuncid = $1;' LANGUAGE SQL;
+CREATE FUNCTION
+openGauss=# SELECT * FROM getrngfunc3(1) WITH ORDINALITY AS t1(v,o);
+  v  | o 
+-----+---
+ Joe | 1
+ Ed  | 2
+(2 rows)
+
+-- 4. function with record return type
+openGauss=#  CREATE FUNCTION getrngfunc10(int) RETURNS RECORD AS 'SELECT * FROM rngfunc WHERE rngfuncid = $1;' LANGUAGE SQL;
+CREATE FUNCTION
+openGauss=#   SELECT * FROM getrngfunc10(1) WITH ORDINALITY t1(rngfuncid int, rngfuncsubid int, rngfuncname text);
+ERROR:  WITH ORDINALITY is not supported for functions returning "record"
+LINE 1: SELECT * FROM getrngfunc10(1) WITH ORDINALITY t1(rngfuncid i...
+                      ^
 
 ```
