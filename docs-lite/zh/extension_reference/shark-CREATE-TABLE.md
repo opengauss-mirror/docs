@@ -28,19 +28,20 @@ FILLFACTOR = fillfactor
 其中FILLFACTOR选项的取值fillfactor为[1, 100]的整数，实际含义同A库（A库的取值范围为[10, 100]的整数），因此当D库中fillfactor的取值范围为[1, 10)，不报错，将打印notice信息，并将fillfactor的取值设置为A库的最小值10;
 COMPRESSION_DELAY选项的取值delay为[0, 10080]的整数;
 除FILLFACTOR选项含有实际功能，同A库，其余参数均无实际功能，仅语法支持。
-
 - 建表语句中，针对UNIQUE和PRIMARY KEY约束，支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
 - 建表语句新增支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
 - 建表语句新增支持TEXTIMAGE_ON { filegroup | "default" } 选项，无实际作用，仅语法支持。
 - filegroup为任意字符串，支持通过[]包裹。
 - 如果同时指定ON filegroup子句和TEXTIMAGE_ON filegroup子句，ON filegroup子句应位于前面，否则会出现语法报错。
 - ON/TEXTIMAGE_ON filegroup子句无法和ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP }子句同时存在。
+- 支持通过特殊前缀(`#`和`##`)的表名分别创建本地临时表和全局临时表。
+默认将`#`, `##`识别为标识符的一部分(通过会话级布尔参数`enable_special_operator`切换)而非操作符，因此若只作为操作符使用则需要打开该参数，若同时作为表名以及操作符使用，则关闭该参数并将操作符与操作数用空格分开。
 
 ## 语法格式<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
 
 创建表。
 
-```
+```EBNF
 CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name 
     ({ column_name data_type [ CHARACTER SET | CHARSET charset ] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]
         | table_constraint
@@ -57,7 +58,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
 - 其中列约束column\_constraint为：
 
-    ```
+    ```EBNF
     [ CONSTRAINT constraint_name ]
     { NOT NULL |
       NULL |
@@ -79,7 +80,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
 - 其中表约束table\_constraint为：
 
-    ```
+    ```EBNF
     [ CONSTRAINT [ constraint_name ] ]
     { CHECK ( expression ) |
       UNIQUE [ opt_clustered ] ( { { column_name [ ( length ) ] | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] [ ON filegroup ] |
@@ -93,12 +94,12 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
 - 其中索引参数index\_parameters为：
 
-    ```
+    ```EBNF
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
     [ USING INDEX TABLESPACE tablespace_name ]
     ```
 
-## 参数说明<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428"></a>
+## 参数说明
 
 - **AS \( generation\_expr \) \[PERSISTED\]**
 
@@ -199,7 +200,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     - table_constraint中，针对PRIMARY KEY和UNIQUE约束支持使用{ column_name [ ASC | DESC ] }语法, 为主键和唯一键提供升序或降序约束。
 
-## 生成列示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
+## 生成列示例
 
 ```sql
 opengauss=# CREATE TABLE Products(
@@ -233,9 +234,9 @@ opengauss=# ALTER TABLE Products DROP unitprice;
 ALTER TABLE
 ```
 
-## WITH \( \{ storage\_parameter = value \} \[, ... \] \)示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
+## WITH \( \{ storage\_parameter = value \} \[, ... \] \)示例
 
-```
+```sql
 create table test_with_1(a int, CONSTRAINT PK_test_with_1 PRIMARY KEY(a)
 WITH (PAD_INDEX = OFF, FILLFACTOR = 50, IGNORE_DUP_KEY = off, STATISTICS_NORECOMPUTE = off, STATISTICS_INCREMENTAL = off,
 ALLOW_ROW_LOCKS = off, ALLOW_PAGE_LOCKS = off, OPTIMIZE_FOR_SEQUENTIAL_KEY = off, XML_COMPRESSION = off));
@@ -276,9 +277,9 @@ NOTICE:  parameter fillfactor will be set to 10 when it is less than 10.
 NOTICE:  CREATE TABLE / UNIQUE will create implicit index "test_with_7_a_key" for table "test_with_7"
 ```
 
-## filegroup示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
+## filegroup示例
 
-```
+```sql
 create table t1(a int) on [primary];
 create table t2(a int) on "default";
 create table t3(id int) on [filegroup];
@@ -295,9 +296,9 @@ create table t13(a int, CONSTRAINT PK_t11 PRIMARY KEY(a) WITH (PAD_INDEX = OFF) 
 create table t14(a int, CONSTRAINT PK_t12 UNIQUE(a) WITH (XML_COMPRESSION = OFF) ON [primary]) ON [primary];
 ```
 
-## ASC | DESC示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
+## ASC | DESC示例
 
-```
+```sql
 
 openGauss=# create table CONSTRAINT_DESC(id int not null, v1 varchar(30), constraint PK_CONSTRAINT_DESC primary key(id DESC));
 NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "pk_constraint_desc" for table "constraint_desc"
@@ -312,6 +313,27 @@ Indexes:
     "pk_constraint_desc" PRIMARY KEY, btree (id DESC) TABLESPACE pg_default
 Has OIDs: no
 Options: orientation=row, compression=no
+
+```
+
+## 使用特殊前缀创建本地和全局临时表
+
+```sql
+openGauss=# CREATE TEMPORARY TABLE #ltt1
+(
+    ID                        INTEGER               NOT NULL,
+    NAME                      CHAR(16)              NOT NULL,
+    ADDRESS                   VARCHAR(50)                   ,
+    POSTCODE                  CHAR(6)
+) ON COMMIT PRESERVE ROWS;
+
+openGauss=# CREATE GLOBAL TEMPORARY TABLE ##gtt1
+(
+    ID                        INTEGER               NOT NULL,
+    NAME                      CHAR(16)              NOT NULL,
+    ADDRESS                   VARCHAR(50)                   ,
+    POSTCODE                  CHAR(6)
+) ON COMMIT PRESERVE ROWS;
 
 ```
 
