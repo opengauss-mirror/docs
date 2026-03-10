@@ -2,16 +2,18 @@ label: 附录
 isManual: true
 sections:
   - label: openGauss资源获取
-    href: ./opengauss_resource_acquisition.md
+    href: ./obtaining_opengauss_resources.md
   - label: 常见问题解答FAQ
     sections:
       - label: 产品FAQ
-        href: ./product_faq.md
+        href: ./product_related_faqs.md
       - label: 使用FAQ
-        href: ./use_faq.md
+        href: ./usage_related_faqs.md
   - label: 错误日志信息参考
     sections:
       - label: 内核错误信息
         href: ./kernel_error_information.md
+  - label: 参考文献
+    href: ./references.md        
   - label: 术语表
-    href: ./list_of_terms.md
+    href: ./glossary.md

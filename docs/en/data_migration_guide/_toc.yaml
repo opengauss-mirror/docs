@@ -6,7 +6,6 @@ sections:
   - label: Assessment Tool
     href: ./mysql_assessment_tool.md
   - label: Migrating Data from MySQL database to openGauss
-    href: ./migrating_data_from_mysql_database_to_opengauss.md
     sections:
       - label: Overview
         href: ./migrating_data_from_mysql_database_to_opengauss.md
