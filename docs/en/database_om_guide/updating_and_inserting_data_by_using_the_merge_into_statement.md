@@ -121,7 +121,7 @@ You have the  **INSERT**  and  **UPDATE**  permissions for the target table and 
     </tbody>
     </table>
 
-4.  Query the target table  **newproducts**  after the merge.
+4. Query the target table  **newproducts**  after the merge.
 
     ```
     SELECT * FROM newproducts;

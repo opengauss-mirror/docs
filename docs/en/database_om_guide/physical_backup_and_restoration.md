@@ -1,8 +1,8 @@
 # Physical Backup and Restoration
 
-### gs\_basebackup
+## gs\_basebackup
 
-#### Background
+### Background
 
 After openGauss is deployed, problems and exceptions may occur during database running.  **gs\_basebackup**, provided by openGauss, is used to perform basic physical backup.  **gs\_basebackup**  copies the binary files of the database on the server using a replication protocol. To remotely execute  **gs\_basebackup**, you need to use the system administrator account.  **gs\_basebackup**  supports hot backup and compressed backup.
 
@@ -16,7 +16,7 @@ After openGauss is deployed, problems and exceptions may occur during database r
 >- If the backup permission is revoked during the backup, the backup may fail or the backup data may be unavailable.
 >- openGauss does not support version upgrade.
 
-#### Prerequisites<a name="en-us_topic_0237152406_en-us_topic_0059777806_s9649938409774ccdbc6993a90ccb777a"></a>
+### Prerequisites<a name="en-us_topic_0237152406_en-us_topic_0059777806_s9649938409774ccdbc6993a90ccb777a"></a>
 
 - The openGauss database can be connected.
 
@@ -30,7 +30,7 @@ After openGauss is deployed, problems and exceptions may occur during database r
 
 - During the restoration, backup files exist in the backup directory on all the nodes. If backup files are lost on any node, copy them to it from another node.
 
-#### Syntax<a name="en-us_topic_0237152406_en-us_topic_0059777806_sa0c0a7aa3d4042fd81017d22ca1e8cac"></a>
+### Syntax<a name="en-us_topic_0237152406_en-us_topic_0059777806_sa0c0a7aa3d4042fd81017d22ca1e8cac"></a>
 
 - Display help information.
 
@@ -44,7 +44,7 @@ After openGauss is deployed, problems and exceptions may occur during database r
   gs_basebackup -V | --version
   ```
 
-#### Parameter Description<a name="en-us_topic_0237152406_en-us_topic_0059777806_s2fa71feeaad041f293de868e52bb5907"></a>
+### Parameter Description<a name="en-us_topic_0237152406_en-us_topic_0059777806_s2fa71feeaad041f293de868e52bb5907"></a>
 
 The  **gs\_basebackup**  tool can use the following types of parameters:
 
@@ -134,14 +134,14 @@ The  **gs\_basebackup**  tool can use the following types of parameters:
 
     Issues a password prompt when the  **-U**  parameter is used to connect to a local or remote database.
 
-#### Example<a name="en-us_topic_0249632270_en-us_topic_0237152406_en-us_topic_0059777806_sdebe53579dba4bb8a7dad8e21dbcb342"></a>
+### Example<a name="en-us_topic_0249632270_en-us_topic_0237152406_en-us_topic_0059777806_sdebe53579dba4bb8a7dad8e21dbcb342"></a>
 
 ```
 gs_basebackup -D /home/test/trunk/install/data/backup -h 127.0.0.1 -p 21233
 INFO:  The starting position of the xlog copy of the full build is: 0/1B800000. The slot minimum LSN is: 0/1B800000.
 ```
 
-#### Restoring Data from Backup Files<a name="en-us_topic_0249632270_section161121221193110"></a>
+### Restoring Data from Backup Files<a name="en-us_topic_0249632270_section161121221193110"></a>
 
 If a database is faulty, restore it from backup files.  **gs\_basebackup**  backs up the database in binary mode. Therefore, you can directly copy and replace the original files or start the database on the backup database.
 
@@ -165,9 +165,9 @@ To restore the original database, perform the following steps:
 - Incremental restoration from backup files is not supported.   
 - After the restoration, check that the link file in the database is linked to the correct file.  
 
-### PITR Recovery
+## PITR Recovery
 
-#### Background<a name="section1093619499159"></a>
+### Background<a name="section1093619499159"></a>
 
 When a database breaks down or needs to be rolled back to a previous state, the point-in-time recovery \(PITR\) function of openGauss can be used to restore the database to any point in time after the backup and archive data is generated.
 
@@ -176,12 +176,12 @@ When a database breaks down or needs to be rolled back to a previous state, the 
 - PITR can only be restored to a point in time after the physical backup data is generated.  
 - Only the primary node can be restored using PITR. The standby node needs to be fully built to synchronize data with the primary node.  
 
-#### Prerequisites<a name="section5133181313201"></a>
+### Prerequisites<a name="section5133181313201"></a>
 
 - Full data files have been physically backed up.
 - WAL log files have been archived.
 
-#### PITR Recovery Process<a name="section162231757172114"></a>
+### PITR Recovery Process<a name="section162231757172114"></a>
 
 1. Replace the target database directory with the physical backup files.
 2. Delete all files in the database directory  **pg\_xlog/**.
@@ -191,7 +191,7 @@ When a database breaks down or needs to be rolled back to a previous state, the 
 6. Connect to the database and check whether the database is recovered to the expected status.
 7. If the expected status is reached, run the  **pg\_xlog\_replay\_resume\(\)**  command so that the primary node can provide services externally.
 
-#### Configuring the recovery.conf File<a name="section1847655332317"></a>
+### Configuring the recovery.conf File<a name="section1847655332317"></a>
 
 **Archive Recovery Configuration**
 
@@ -278,9 +278,9 @@ recovery_target_inclusive = true
 - Only one of the four configuration items  **recovery\_target\_name**,  **recovery\_target\_time**,  **recovery\_target\_xid**, and  **recovery\_target\_lsn**  can be used at a time.  
 - If no recovery targets are configured or the configured target does not exist, data is recovered to the latest WAL log point by default.  
 
-### gs\_probackup
+## gs\_probackup
 
-#### Background<a name="en-us_topic_0289899221_en-us_topic_0287276008_section779474172017"></a>
+### Background<a name="en-us_topic_0289899221_en-us_topic_0287276008_section779474172017"></a>
 
 **gs\_probackup**  is a tool used to manage openGauss database backup and restoration. It periodically backs up the openGauss instances so that the server can be restored when the database is faulty.
 
@@ -289,13 +289,13 @@ recovery_target_inclusive = true
 - It supports incremental backup, periodic backup, and remote backup.
 - It supports settings on the backup retention policy.
 
-#### Prerequisites<a name="en-us_topic_0289899221_en-us_topic_0287276008_section95951827112520"></a>
+### Prerequisites<a name="en-us_topic_0289899221_en-us_topic_0287276008_section95951827112520"></a>
 
 - The openGauss database can be connected.
 - To use PTRACK incremental backup, manually add  **enable\_cbm\_tracking = on**  to  **postgresql.conf**.
 - To prevent Xlogs from being cleared before the transmission is complete, increase the value of  **wal\_keep\_segments**  in the  **postgresql.conf**  file.
 
-#### Important Notes<a name="en-us_topic_0289899221_en-us_topic_0287276008_section6439171332614"></a>
+### Important Notes<a name="en-us_topic_0289899221_en-us_topic_0287276008_section6439171332614"></a>
 
 - The backup must be performed by the user who runs the database server.
 - The major version number of the database server to be backed up must be the same as that of the database server to be restored.
@@ -310,7 +310,7 @@ recovery_target_inclusive = true
 - When remote backup is valid \(**remote-proto=ssh**\), ensure that  **-h**  and  **--remote-host**specify the same server. When remote backup is invalid, if the  **-h**  option is specified, ensure that  **-h**  specifies the local address or local host name.
 - Currently, logical replication slots cannot be backed up.
 
-#### Command Description<a name="en-us_topic_0289899221_en-us_topic_0287276008_section86861610172816"></a>
+### Command Description<a name="en-us_topic_0289899221_en-us_topic_0287276008_section86861610172816"></a>
 
 - Print the  **gs\_probackup**  version.
 
@@ -438,7 +438,7 @@ recovery_target_inclusive = true
   [--help] 
   ```
 
-#### Parameter Description<a name="en-us_topic_0289899221_en-us_topic_0287276008_section520716591338"></a>
+### Parameter Description<a name="en-us_topic_0289899221_en-us_topic_0287276008_section520716591338"></a>
 
 **Common parameters**
 
@@ -881,7 +881,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
   >LOG: remote request lsn/crc: [xxxxx] local max lsn/crc: [xxxxx]
   >```
 
-#### Backup Process<a name="en-us_topic_0289899221_en-us_topic_0287276008_section1735727125216"></a>
+### Backup Process<a name="en-us_topic_0289899221_en-us_topic_0287276008_section1735727125216"></a>
 
 1. Initialize the backup directory. Create the  **backups/**  and  **wal/**  subdirectories in the specified directory to store backup files and WAL files respectively.
 
@@ -907,7 +907,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
    gs_probackup restore -B backup_dir --instance instance_name -D pgdata-path -i backup_id
    ```
 
-#### Troubleshooting<a name="en-us_topic_0289899221_section1494010372368"></a>
+### Troubleshooting<a name="en-us_topic_0289899221_section1494010372368"></a>
 
 <a name="en-us_topic_0289899221_table580714103714"></a>
 

@@ -12,7 +12,7 @@ You can choose either of the methods to modify common parameters. The DBMind con
 gs_dbmind service setup --initialize -c confpath
 ```
 
-2. Run the **set** subcommand to set the parameters. For example:
+Run the **set** subcommand to set the parameters. For example:
 
 ```
 gs_dbmind set METADATABASE password xxxxx -c confpath

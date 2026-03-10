@@ -18,7 +18,7 @@ sections:
       - label: Physical Backup and Restoration
         href: ./physical_backup_and_restoration.md
       - label: Flashback Restoration
-        href: ./flashback_recovery.md
+        href: ./flashback_restoration.md
       - label: Exporting Data
         sections:
           - label: Overview
@@ -105,8 +105,6 @@ sections:
             href: ./quick_setup.md
   - label: Upgrade
     sections:
-      - label: Overview
-        href: ./upgrade.md
       - label: Before You Start
         href: ./before_you_start.md
       - label: Upgrade Process
