@@ -22,6 +22,7 @@
 - To back up a database in remote mode using SSH, install the database of the same major version on the local and remote hosts, and run the **ssh-copy-id remote\_user@remote\_host** command to set an SSH connection without a password between the local host backup user and the remote host database user.
 - In remote mode, only the subcommands **add-instance**, **backup**, and **restore** can be executed.
 - Before running the **restore** subcommand, stop the gaussdb process.
+- In the traditional primary-standby mode, after a full backup is performed, if data modification operations are executed on the primary server and the backup package is used to restore data on the primary server, the standby server requires a full build.
 - If a user-defined tablespace exists, add the **--external-dirs** parameter when backing up the tablespace. Otherwise, the tablespace will not be backed up.
 - If a large amount of data needs to be backed up, adjust the values of **session\_timeout** and **wal\_sender\_timeout** in the **postgresql.conf** file to prevent backup timeout. In addition, adjust the value of **--rw-timeout** in the backup command line parameters.
 - When using the **-T** option to redirect the external directory in the backup to a new directory during restoration, specify the **--external-mapping** parameter.
