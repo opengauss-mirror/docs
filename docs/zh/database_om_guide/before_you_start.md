@@ -256,7 +256,7 @@ openGauss升级版本要求如[表1](#table7961729)所示。
 
   3. <a name="li243351914413"></a>JDK的下载及Java环境变量的配置。
 
-     可从官网下载或者使用此链接下载：<https://www.hikunpeng.com/zh/developer/devkit/compiler/jdk，并通过以下方式配置环境变量：>
+     可从官网下载或者使用此链接下载：<https://www.hikunpeng.com/zh/developer/devkit/compiler/jdk>，并通过以下方式配置环境变量：
 
      ```
      export JAVA_HOME=/xxx/jdk1.xxx
