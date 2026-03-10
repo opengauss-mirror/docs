@@ -78,7 +78,7 @@ sections:
           - label: 使用MOT
             sections:
               - label: MOT使用概述
-                href: ./mot_usage_scenarios.md
+                href: ./using_mot_overview.md
               - label: MOT准备：前提条件
                 href: ./mot_prerequisites.md
               - label: MOT准备：MOT内存和存储规划
@@ -166,7 +166,7 @@ sections:
               - label: 默认权限机制
                 href: ./default_permission_mechanism.md
               - label: 管理员
-                href: ./administrator.md
+                href: ./administrators.md
               - label: 三权分立
                 href: ./separation_of_duties.md
               - label: 用户

@@ -28,7 +28,7 @@ sections:
   - label: Database Object Management
     sections:
       - label: Creating and Managing Schemas
-        href: ./creating_and_managing_schema.md
+        href: ./creating_and_managing_schemas.md
       - label: Creating and Managing Tables
         sections:
           - label: Creating Tables
@@ -152,7 +152,6 @@ sections:
           - label: Comparison – Disk vs. MOT
             href: ./comparison_disk_vs_mot.md
   - label: Foreign Data Wrapper
-    href: ./foreign_data_wrapper.md
     sections: 
       - label: Overview
         href: ./foreign_data_wrapper.md    
