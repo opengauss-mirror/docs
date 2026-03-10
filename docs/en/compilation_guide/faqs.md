@@ -57,4 +57,3 @@ How do I resolve the "out of memory allocating xxx bytes after a total of xxx by
 Error cause: The  **-sj**  parameter is added to the compilation process in the script. In addition, the machine configuration is low, the memory is insufficient, and the number of concurrent tasks is too large. As a result, an error is reported.
 
 Solution: Reduce the number of concurrent  **make**  tasks during compilation or run the  **make**  command directly. If the one-click script is used, you need to modify the script.
-

@@ -71,33 +71,31 @@ CREATE TABLE table_name
 
 ## Parameter Description<a name="section415419560710"></a>
 
--   **table\_name**
+- **table\_name**
 
     Specifies the name of the table to be created.
 
--   **column\_name**
+- **column\_name**
 
     Specifies the name of a column to be created in the new table.
 
--   **data\_type**
+- **data\_type**
 
     Specifies the data type of the column.
 
--   **ORIENTATION**
+- **ORIENTATION**
 
     Specifies the storage mode \(row-store, column-store, or ORC\) of table data. This parameter cannot be modified once it is set.
 
     Value range:
 
-    -   **ROW**  indicates that table data is stored in rows.
+    - **ROW**  indicates that table data is stored in rows.
 
         **ROW**  applies to OLTP services and scenarios with a large number of point queries or addition/deletion operations.
 
-    -   **COLUMN**  indicates that the data is stored in columns.
+    - **COLUMN**  indicates that the data is stored in columns.
 
         **COLUMN**  applies to the data warehouse service, which has a large amount of aggregation computing, and involves a few column operations.
-
-
 
 ## Example<a name="en-us_topic_0283136734_en-us_topic_0237120296_en-us_topic_0066331191_en-us_topic_0059778293_s05b88010070445598ab2a86454e5d88b"></a>
 
@@ -129,4 +127,3 @@ WITH (ORIENTATION = COLUMN);
 -- Delete the table.
 openGauss=# DROP TABLE customer_test2;
 ```
-

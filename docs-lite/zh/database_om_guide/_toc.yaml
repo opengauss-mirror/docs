@@ -2,13 +2,13 @@ label: 数据库运维指南
 isManual: true
 sections:
   - label: 启停openGauss
-    href: ./starting_or_stopping_opengauss.md
+    href: ./start_stop_opengauss.md
   - label: 例行维护
     href: ./routine_maintenance.md
   - label: 备份与恢复
     sections:
       - label: 概述
-        href: ./overview.md
+        href: ./overview_for_backup_and_restoration.md
       - label: 主库备库坏块修复功能
         href: ./fast_repair_of_damaged_acitve_standby_libraries.md
       - label: 逻辑备份恢复
@@ -18,7 +18,7 @@ sections:
       - label: 导出数据
         sections:
           - label: 概述
-            href: ./overview_10.md
+            href: ./overview_5.md
           - label: 导出单个数据库
             href: ./export_single_database.md
           - label: 导出所有数据库
@@ -146,7 +146,7 @@ sections:
           - label: 修改索引时只调用索引名提示索引不存在
             href: ./when_a_user_specifies_only_an_index_name_to_modify_the_index_a_message_indicating_that_the_index_doe.md
           - label: 重建索引失败
-            href: ./failed_to_recreate_the_index.md
+            href: ./reindexing_fails.md
           - label: 业务运行时整数转换错
             href: ./an_error_occurs_during_integer_conversion.md
           - label: 高并发报错"too many clients already"或无法创建线程
