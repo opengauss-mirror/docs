@@ -48,10 +48,17 @@
             -   [Compatibility with Earlier Versions](./docs/database_reference/compatibility_with_earlier_versions.md)
             -   [Platform and Client Compatibility](./docs/database_reference/platform_and_client_compatibility.md)
         -   [Fault Tolerance](./docs/database_reference/fault_tolerance.md)
+<<<<<<< HEAD
         -   [Connection Pool Parameters](./docs/database_reference/connection_pool_parameters.md)
         -   [Transaction](./docs/database_reference/opengauss_transaction.md)
         -   [Replication Parameters of Two Database Instances](./docs/database_reference/replication_parameters_of_two_database_instances.md)
         -   [Developer Options](./docs/database_reference/developer_options.md)
+=======
+        -   [Connection Pool Parameters](./docs/database_reference/connection-pool-parameters.md)
+        -   [Transaction](./docs/database_reference/opengauss-transaction.md)
+        -   [Replication Parameters of Two Database Instances](./docs/database_reference/replication-parameters-of-two-database-instances.md)
+        -   [Developer Options](./docs/database_reference/developer-options.md)
+>>>>>>> ed3d122dc (修改数据库参考中英文命名一致问题)
         -   [Auditing](./docs/database_reference/auditing.md)
             -   [Audit Switch](./docs/database_reference/audit_switch.md)
             -   [User and Permission Audit](./docs/database_reference/user_and_permission_audit.md)
