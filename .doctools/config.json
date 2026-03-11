@@ -7,28 +7,65 @@
       "linkValidityCheckRemoteWhitelistUrl": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/url.whitelist.json",
       "resourceExistenceCheckRemoteWhitelistUrl": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/url.whitelist.json",
       "codespellCheckRemoteWhitelistUrl": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/codespell.whitelist.json",
-      "ci": []
+      "ci": [
+        "tag-closed-check",
+        "link-validity-check",
+        "resource-existence-check",
+        "toc-check"
+      ]
     }
   },
   "repo": {
     "opengauss/docs": {
       "extendConfig": "base",
       "branches": {
-        "master": {
-          "ci": [
-            "tag-closed-check",
-            "link-validity-check",
-            "resource-existence-check",
-            "toc-check"
-          ]
+        "7.0.0-RC2": {
+          "ci": []
         },
-        "refactor": {
-          "ci": [
-            "tag-closed-check",
-            "link-validity-check",
-            "resource-existence-check",
-            "toc-check"
-          ]
+        "7.0.0-RC1": {
+          "ci": []
+        },
+        "6.0.0-RC1": {
+          "ci": []
+        },
+        "6.0.0": {
+          "ci": []
+        },
+        "5.1.0": {
+          "ci": []
+        },
+        "5.0.0": {
+          "ci": []
+        },
+        "3.1.1": {
+          "ci": []
+        },
+        "3.1.0": {
+          "ci": []
+        },
+        "3.0.0": {
+          "ci": []
+        },
+        "2.1.0": {
+          "ci": []
+        },
+        "2.0.1": {
+          "ci": []
+        },
+        "2.0.0": {
+          "ci": []
+        },
+        "1.1.0": {
+          "ci": []
+        },
+        "1.0.1": {
+          "ci": []
+        },
+        "1.0.0": {
+          "ci": []
+        },
+        "website-v2": {
+          "ci": []
         }
       }
     }
