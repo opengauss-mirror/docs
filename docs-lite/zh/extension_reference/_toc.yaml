@@ -351,6 +351,8 @@ sections:
             href: ./shark-SELECT.md
           - label: SET
             href: ./shark-SET.md
+          - label: EXEC
+            href: ./shark-EXEC.md
           - label: DBCC CHECKIDENT
             href: ./shark-DBCC-CHECKIDENT.md
           - label: IDENTITY
