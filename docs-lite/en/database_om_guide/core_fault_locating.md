@@ -29,10 +29,14 @@ The directory specified by GUC parameter  **log\_directory**  cannot be read or 
 ### Procedure<a name="en-us_topic_0283137178_section485620163250"></a>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Set  **log\_directory**  to a valid directory. For details, see  [log\_destination](../database_reference/logging_destination.md#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_sb6c9884f69bd4765a60f80810c94f194).
 =======
 Set  **log\_directory**  to a valid directory. For details, see  [log\_destination](../database_reference/logging-destination.md#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_sb6c9884f69bd4765a60f80810c94f194).
 >>>>>>> 0a5d7119b (修改数据库维护指南中英文名称一致问题)
+=======
+Set  **log\_directory**  to a valid directory. For details, see  [log\_destination](../database_reference/logging_destination.md#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_sb6c9884f69bd4765a60f80810c94f194).
+>>>>>>> ed3d122dc (修改数据库参考中英文命名一致问题)
 
 ## Core Dump Occurs when RemoveIPC Is Enabled<a name="EN-US_TOPIC_0289900135"></a>
 
