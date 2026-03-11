@@ -7,7 +7,7 @@
 **参数说明**： 设置死锁超时检测时间，以毫秒为单位。当申请的锁超过设定值时，系统会检查是否产生了死锁。
 
 - 死锁的检查代价是比较高的，服务器不会在每次等待锁的时候都运行这个过程。在系统运行过程中死锁是不经常出现的，因此在检查死锁前只需等待一个相对较短的时间。增加这个值就减少了无用的死锁检查浪费的时间，但是会减慢真正的死锁错误报告的速度。在一个负载过重的服务器上，用户可能需要增大它。这个值的设置应该超过事务持续时间，这样就可以减少在锁释放之前就开始死锁检查的问题。
-- 当设置[log\_lock\_waits](record_logs_content.md#zh-cn_topic_0237124723_zh-cn_topic_0059778400_s0e43c2815b8a4f369d5b150535d1703f)为on时，deadlock\_timeout决定一个等待时间来将查询执行过程中的锁等待耗时信息写入日志。如果要研究锁延时情况，可以设置deadlock\_timeout的值比正常情况小。
+- 当设置[log\_lock\_waits](logging_content.md#zh-cn_topic_0237124723_zh-cn_topic_0059778400_s0e43c2815b8a4f369d5b150535d1703f)为on时，deadlock\_timeout决定一个等待时间来将查询执行过程中的锁等待耗时信息写入日志。如果要研究锁延时情况，可以设置deadlock\_timeout的值比正常情况小。
 
 该参数属于SUSET类型参数，请参考[表2](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd893d)中对应设置方法进行设置。
 

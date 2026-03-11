@@ -248,7 +248,7 @@ You need to routinely run  **VACUUM**,  **VACUUM FULL**, and  **ANALYZE**  to ma
     ```
 
     >[!NOTE]NOTE 
-    >**VACUUM**  and  **ANALYZE**  cause a substantial increase in I/O traffic, which may affect other active sessions. Therefore, you are advised to set the cost-based vacuum delay feature by specifying the  **vacuum\_cost\_delay**  parameter. For details, see [Cost-based Vacuum Delay](../database_reference/cost-based-vacuum-delay.md).
+    >**VACUUM**  and  **ANALYZE**  cause a substantial increase in I/O traffic, which may affect other active sessions. Therefore, you are advised to set the cost-based vacuum delay feature by specifying the  **vacuum\_cost\_delay**  parameter. For details, see [Cost-based Vacuum Delay](../database_reference/cost_based_vacuum_delay.md).
 
 3. Delete a table.
 

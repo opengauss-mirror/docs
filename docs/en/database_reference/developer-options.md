@@ -89,7 +89,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 ## trace\_notify<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_sa6199e2adece4b37973aa834ae741888"></a>
 
-**Parameter description**: Specifies whether to enable the function of generating debugging output for the  **LISTEN**  and  **NOTIFY**  commands. The level of  [**client\_min\_messages**](logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)  or  [**log\_min\_messages**](logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)  must be  **debug1**  or lower so that debugging output can be recorded in the client or server logs, respectively.
+**Parameter description**: Specifies whether to enable the function of generating debugging output for the  **LISTEN**  and  **NOTIFY**  commands. The level of  [**client\_min\_messages**](logging_time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)  or  [**log\_min\_messages**](logging_time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)  must be  **debug1**  or lower so that debugging output can be recorded in the client or server logs, respectively.
 
 This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -102,11 +102,11 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 ## trace\_recovery\_messages<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_s329f8fa0c1b64bdba4e745567ff6c011"></a>
 
-**Parameter description**: Specifies whether to enable logging of recovery-related debugging output. This parameter allows users to overwrite the normal setting of  [**log\_min\_messages**](logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a), but only for specific messages. This is intended for the use in debugging the standby server.
+**Parameter description**: Specifies whether to enable logging of recovery-related debugging output. This parameter allows users to overwrite the normal setting of  [**log\_min\_messages**](logging_time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a), but only for specific messages. This is intended for the use in debugging the standby server.
 
 This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: enumerated values. Valid values include  **debug5**,  **debug4**,  **debug3**,  **debug2**,  **debug1**, and  **log**. For details about the parameter values, see  [**log\_min\_messages**](logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a).
+**Value range**: enumerated values. Valid values include  **debug5**,  **debug4**,  **debug3**,  **debug2**,  **debug1**, and  **log**. For details about the parameter values, see  [**log\_min\_messages**](logging_time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a).
 
 **Default value**:  **log**
 

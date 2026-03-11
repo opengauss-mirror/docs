@@ -149,4 +149,4 @@ docker restart <CONTAINER ID>
 
 若在容器外配置参数，需要挂载宿主机路径到容器内部的`/var/lib/opengauss`目录。
 
-有关具体参数的修改，请参考 **[GUC参数说明](../database_reference/guc_application_note.md)**  
+有关具体参数的修改，请参考 **[GUC参数说明](../database_reference/guc_parameter_usage.md)**  

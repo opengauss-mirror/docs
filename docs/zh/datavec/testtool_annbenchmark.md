@@ -52,7 +52,7 @@ password_encryption_type=1
 max_connections=1000 #最大连接数
 ```
 
-有关具体参数的修改，请参考 **[GUC参数说明](../database_reference/guc_application_note.md)** 
+有关具体参数的修改，请参考 **[GUC参数说明](../database_reference/guc_parameter_usage.md)** 
 
 ### ann-benchmark配置
 

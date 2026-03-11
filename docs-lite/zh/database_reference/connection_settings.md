@@ -65,7 +65,7 @@
 
 该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围**： 整型。最小值为10（要大于max\_wal\_senders），理论最大值为262143，实际最大值为动态值，计算公式为“262143 - job\_queue\_processes - autovacuum\_max\_workers - AUXILIARY\_BACKENDS - AV\_LAUNCHER\_PROCS - max\_inner\_tool\_connections”，[job\_queue\_processes](scheduled_task.md#zh-cn_topic_0283137574_zh-cn_topic_0237124754_zh-cn_topic_0059778487_section10342177134137)、[autovacuum\_max\_workers](auto_cleanup.md#zh-cn_topic_0283137694_zh-cn_topic_0237124730_zh-cn_topic_0059778244_s76932f79410248ba8923017d19982673)和[max\_inner\_tool\_connections](#zh-cn_topic_0283136886_section132711513143211)的值取决于对应GUC参数的设置，AUXILIARY\_BACKENDS为预留辅助线程数固定为20，AV\_LAUNCHER\_PROCS为预留autovacuum的launcher线程数固定为2。
+**取值范围**： 整型。最小值为10（要大于max\_wal\_senders），理论最大值为262143，实际最大值为动态值，计算公式为“262143 - job\_queue\_processes - autovacuum\_max\_workers - AUXILIARY\_BACKENDS - AV\_LAUNCHER\_PROCS - max\_inner\_tool\_connections”，[job\_queue\_processes](scheduled_task.md#zh-cn_topic_0283137574_zh-cn_topic_0237124754_zh-cn_topic_0059778487_section10342177134137)、[autovacuum\_max\_workers](automatic_vacuuming.md#zh-cn_topic_0283137694_zh-cn_topic_0237124730_zh-cn_topic_0059778244_s76932f79410248ba8923017d19982673)和[max\_inner\_tool\_connections](#zh-cn_topic_0283136886_section132711513143211)的值取决于对应GUC参数的设置，AUXILIARY\_BACKENDS为预留辅助线程数固定为20，AV\_LAUNCHER\_PROCS为预留autovacuum的launcher线程数固定为2。
 
 **默认值**：
 
@@ -260,8 +260,8 @@ openGauss=# show b_compatibility_user_host_auth;
 
 取值范围：布尔型
 
-- 在内核[hot_standby](./secondary_server.md)开启状态下，dolphin_hot_standby为on时，允许通过MySQL协议兼容端口连接备机，dolphin_hot_standby为off时，不允许通过MySQL协议兼容端口连接备机。
-- 在内核[hot_standby](./secondary_server.md)关闭状态下，均不允许连接备机。
+- 在内核[hot_standby](./standby_server.md)开启状态下，dolphin_hot_standby为on时，允许通过MySQL协议兼容端口连接备机，dolphin_hot_standby为off时，不允许通过MySQL协议兼容端口连接备机。
+- 在内核[hot_standby](./standby_server.md)关闭状态下，均不允许连接备机。
 
 |dolphin_hot_standby|hot_standby|MySQL端口|openGauss端口|
 |--|--|--|--|
