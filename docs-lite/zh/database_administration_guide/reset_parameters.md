@@ -11,7 +11,7 @@ openGauss提供了多种修改GUC参数的方法，用户可以方便的针对�
     - 内存单位有：kB（千字节）、MB（兆字节）和GB（吉字节）。
     - 时间单位：ms（毫秒）、s（秒）、min（分钟）、h（小时）和d（天）。
 
-具体参数说明请参见[GUC参数说明](../database_reference/guc_application_note.md)。
+具体参数说明请参见[GUC参数说明](../database_reference/guc_parameter_usage.md)。
 
 ## GUC参数设置<a name="zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_sb2763fa0003e4ff1815379339bffe994"></a>
 

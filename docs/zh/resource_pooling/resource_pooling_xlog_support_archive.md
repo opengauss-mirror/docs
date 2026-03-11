@@ -43,6 +43,6 @@
 
 ## 使用指导
 
-XLOG归档部分仅archive\_command参数配置与传统主备有差异，其余参数配置限制与传统主备一致。参考[归档](../database_reference/archive.md)使用指导。
+XLOG归档部分仅archive\_command参数配置与传统主备有差异，其余参数配置限制与传统主备一致。参考[归档](../database_reference/archiving.md)使用指导。
 
 PITR恢复部分参考[gs_probackup](../tool_and_commandreference/gs_probackup.md)使用指导

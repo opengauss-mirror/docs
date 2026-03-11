@@ -75,7 +75,7 @@ openGauss所有支持的字符序详见[PG\_COLLATION](../database_reference/PG_
 
 - `client_encoding`
 
-    客户端的字符集，可以通过`SET NAMES`语句修改，详见 [SET](SET.md) 章节。参数说明详见[client_encoding](../database_reference/regions_and_formatting.md#zh-cn_topic_0283136798_zh-cn_topic_0237124733_zh-cn_topic_0059778109_sfd35b29b745f4d5b9544f07b9ef676a6)。
+    客户端的字符集，可以通过`SET NAMES`语句修改，详见 [SET](SET.md) 章节。参数说明详见[client_encoding](../database_reference/locale_and_formatting.md#zh-cn_topic_0283136798_zh-cn_topic_0237124733_zh-cn_topic_0059778109_sfd35b29b745f4d5b9544f07b9ef676a6)。
 
 - `character_set_connection`
 

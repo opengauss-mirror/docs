@@ -2820,7 +2820,7 @@ Statistics information functions are divided into the following two categories: 
     Description: Collects statistics about memory usage at the session level in the unit of MB, including all the memory allocated to Postgres and Stream threads on DNs for tasks currently executed by users.
 
     >[!NOTE]NOTE 
-    >If  **[enable\_memory\_limit](../database_reference/memory-35.md#en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_s2cf6c862bad443aea7e115ff83941f94)**  is set to  **off**, this function cannot be used.
+    >If  **[enable\_memory\_limit](../database_reference/memory.md#en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_s2cf6c862bad443aea7e115ff83941f94)**  is set to  **off**, this function cannot be used.
 
     Return type: record
 

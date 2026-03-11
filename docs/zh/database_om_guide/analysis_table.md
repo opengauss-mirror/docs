@@ -20,7 +20,7 @@ ANALYZE
 
 ## 表自动分析<a name="zh-cn_topic_0237121146_zh-cn_topic_0165786590_section1274813345166"></a>
 
-openGauss提供了GUC参数[autovacuum](../database_reference/auto_cleanup.md#zh-cn_topic_0237124730_zh-cn_topic_0059778244_s995913ca9df54ae5bb488d1e810bd824)用于控制数据库自动清理功能的启动。
+openGauss提供了GUC参数[autovacuum](../database_reference/automatic_vacuuming.md#zh-cn_topic_0237124730_zh-cn_topic_0059778244_s995913ca9df54ae5bb488d1e810bd824)用于控制数据库自动清理功能的启动。
 
 autovacuum设置为on时，系统定时启动autovacuum线程来进行表自动分析，如果表中数据量发生较大变化达到阈值时，会触发表自动分析，即autoanalyze。
 
@@ -30,8 +30,8 @@ autovacuum设置为on时，系统定时启动autovacuum线程来进行表自动�
 autovacuum可以进行表自动分析功能的生效还依赖于下面几个GUC参数：
 
 - [track\_counts](../database_reference/query_and_index_statistics_collector.md#zh-cn_topic_0283136895_zh-cn_topic_0237124727_zh-cn_topic_0059779313_s3f4fb0b1004041f69e1454c701952411)参数需要设置为on，表示开启收集收据库统计数据功能。
-- [autovacuum\_max\_workers](../database_reference/auto_cleanup.md#zh-cn_topic_0237124730_zh-cn_topic_0059778244_s76932f79410248ba8923017d19982673)参数需要大于0，该参数表示能同时运行的自动清理线程的最大数量。
-- [autovacuum\_mode](../database_reference/auto_cleanup.md#zh-cn_topic_0237124730_section658130152017)参需要配置允许进行analyze。
+- [autovacuum\_max\_workers](../database_reference/automatic_vacuuming.md#zh-cn_topic_0237124730_zh-cn_topic_0059778244_s76932f79410248ba8923017d19982673)参数需要大于0，该参数表示能同时运行的自动清理线程的最大数量。
+- [autovacuum\_mode](../database_reference/automatic_vacuuming.md#zh-cn_topic_0237124730_section658130152017)参需要配置允许进行analyze。
 
 >[!TIP]须知  
 >

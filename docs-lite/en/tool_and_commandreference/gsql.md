@@ -2156,7 +2156,7 @@ You can write ?, \(_R_+|\), \(_R_|\), and  _R_  to the following pattern charact
 
     Connect to the database, and run  **show log\_hostname**  to check whether  **log\_hostname**  is enabled in the database.
 
-    If it is enabled, the database kernel will use DNS to check the name of the host where the client is deployed. If the host where the database is configured with an incorrect or unreachable DNS server, the database connection will take a long time to set up. For details about this parameter, see the description of  **log\_hostname**  in section [Log Content](../database_reference/logging-content.md).
+    If it is enabled, the database kernel will use DNS to check the name of the host where the client is deployed. If the host where the database is configured with an incorrect or unreachable DNS server, the database connection will take a long time to set up. For details about this parameter, see the description of  **log\_hostname**  in section [Log Content](../database_reference/logging_content.md).
 
 - The database kernel slowly runs the initialization statement.
 
@@ -2219,7 +2219,7 @@ You can write ?, \(_R_+|\), \(_R_|\), and  _R_  to the following pattern charact
 
     If they are different, set  **$PGHOST**  to the directory specified by  **unix\_socket\_directory**.
 
-    For more information about  **unix\_socket\_directory**, see [Connection Settings](../database_reference/connection-settings.md). 
+    For more information about  **unix\_socket\_directory**, see [Connection Settings](../database_reference/connection_settings.md). 
 
 - The "libpq.so" loaded mismatch the version of gsql, please check it.
 

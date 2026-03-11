@@ -367,7 +367,7 @@
 
 - char(any)
 
-    描述：根据ASCII码对多个数字转换为多个字符，结果受到[GUC参数](../database_reference/speech_act.md)bytea_output影响。
+    描述：根据ASCII码对多个数字转换为多个字符，结果受到[GUC参数](../database_reference/statement_behavior.md)bytea_output影响。
 
     返回值类型：text
 

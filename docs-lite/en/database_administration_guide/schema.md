@@ -36,7 +36,7 @@ Database objects are generally created in the first schema in a database search 
 
 ## Search Path<a name="en-us_topic_0283137084_en-us_topic_0237121104_en-us_topic_0156599225_section03655314403"></a>
 
-A search path is defined in the  **[search\_path](../database_reference/statement-behavior.md)**  parameter. The parameter value is a list of schema names separated by commas \(,\). If no target schema is specified during object creation, the object is added to the first schema listed in the search path. If there are objects with the same name across different schemas and no schema is specified for an object query, the object will be returned from the first schema containing the object in the search path.
+A search path is defined in the  **[search\_path](../database_reference/statement_behavior.md)**  parameter. The parameter value is a list of schema names separated by commas \(,\). If no target schema is specified during object creation, the object is added to the first schema listed in the search path. If there are objects with the same name across different schemas and no schema is specified for an object query, the object will be returned from the first schema containing the object in the search path.
 
 - To view the current search path, use  [SHOW](../sql_reference/show.md).
 

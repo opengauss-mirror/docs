@@ -102,7 +102,7 @@
 
 ## trace\_notify<a name="zh-cn_topic_0283137548_zh-cn_topic_0237124743_zh-cn_topic_0059778871_sa6199e2adece4b37973aa834ae741888"></a>
 
-**参数说明**： 为LISTEN和NOTIFY命令生成大量调试输出。[client\_min\_messages](record_logs_time.md#zh-cn_topic_0237124722_zh-cn_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)或[log\_min\_messages](record_logs_time.md#zh-cn_topic_0237124722_zh-cn_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)级别必须是DEBUG1或者更低时，才能把这些输出分别发送到客户端或者服务器日志。
+**参数说明**： 为LISTEN和NOTIFY命令生成大量调试输出。[client\_min\_messages](logging_time.md#zh-cn_topic_0237124722_zh-cn_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)或[log\_min\_messages](logging_time.md#zh-cn_topic_0237124722_zh-cn_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)级别必须是DEBUG1或者更低时，才能把这些输出分别发送到客户端或者服务器日志。
 
 该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -115,11 +115,11 @@
 
 ## trace\_recovery\_messages<a name="zh-cn_topic_0283137548_zh-cn_topic_0237124743_zh-cn_topic_0059778871_s329f8fa0c1b64bdba4e745567ff6c011"></a>
 
-**参数说明**： 启用恢复相关调试输出的日志录，否则将不会被记录。该参数允许覆盖正常设置的[log\_min\_messages](record_logs_time.md#zh-cn_topic_0237124722_zh-cn_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)，但是仅限于特定的消息，这是为了在调试备机中使用。
+**参数说明**： 启用恢复相关调试输出的日志录，否则将不会被记录。该参数允许覆盖正常设置的[log\_min\_messages](logging_time.md#zh-cn_topic_0237124722_zh-cn_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)，但是仅限于特定的消息，这是为了在调试备机中使用。
 
 该参数属于SIGHUP类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围**： 枚举类型，有效值有debug5、debug4、debug3、debug2、debug1、log，取值的详细信息请参见[log\_min\_messages](record_logs_time.md#zh-cn_topic_0237124722_zh-cn_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)。
+**取值范围**： 枚举类型，有效值有debug5、debug4、debug3、debug2、debug1、log，取值的详细信息请参见[log\_min\_messages](logging_time.md#zh-cn_topic_0237124722_zh-cn_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)。
 
 **默认值**： log
 
