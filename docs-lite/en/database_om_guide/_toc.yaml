@@ -106,7 +106,7 @@ sections:
         href: ./common_fault_locating_methods.md
       - label: Common Fault Locating Cases
         sections:
-          - label: Core Dump Occurs due to Full Disk Space
+          - label: Core Fault Locating
             href: ./core_fault_locating.md
           - label: When the TPC-C is running and a disk to be injected is full, the TPC-C stops responding.
             href: ./when_the_tpc_c_is_running_and_a_disk_to_be_injected_is_full_the_tpc_c_stops_responding.md
