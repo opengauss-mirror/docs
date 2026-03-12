@@ -102,23 +102,23 @@ sections:
       - label: Fault Tolerance
         href: ./fault_tolerance.md
       - label: Connection Pool Parameters
-        href: ./connection-pool-parameters.md
+        href: ./connection_pool_parameters.md
       - label: openGauss Transactions
         href: ./opengauss-transactions.md
       - label: Replication Parameters of Two Database Instances
-        href: ./replication-parameters-of-two-database-instances.md
+        href: ./replication_parameters_of_two_database_instances.md
       - label: Developer Options
-        href: ./developer-options.md
+        href: ./developer_options.md
       - label: Auditing
         sections:
           - label: Audit Switch
-            href: ./audit-switch.md
+            href: ./audit_switch.md
           - label: User and Permission Audit
-            href: ./user-and-permission-audit.md
+            href: ./user_and_permission_audit.md
           - label: Operation Auditing
-            href: ./operation-auditing.md
+            href: ./operation_auditing.md
       - label: Upgrade Parameters
-        href: ./upgrade-parameters.md
+        href: ./upgrade_parameters.md
       - label: Miscellaneous Parameters
         href: ./miscellaneous-parameters.md
       - label: Wait Events
