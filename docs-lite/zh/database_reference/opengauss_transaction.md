@@ -68,9 +68,9 @@
 
 该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围**： 布尔型
+**取值范围**： 仅限off，不可修改
 
-- on表示允许执行。
+- on表示允许执行。当前不支持。
 - off表示不允许执行。
 
 **默认值**： off
