@@ -1047,6 +1047,52 @@
 </td>
 </tr>
 
+<tr id="row176802453613"><td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.1 "><p id="p969192463618"><a name="p969192463618"></a><a name="p969192463618"></a>MCP Client</p>
+</td>
+
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.2 "><p id="p156942410366"><a name="p156942410366"></a><a name="p156942410366"></a>MCP Client程序所在IP地址</p>
+</td>
+
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.3 "><p id="p197002423613"><a name="p197002423613"></a><a name="p197002423613"></a>随机端口</p>
+</td>
+
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.4 "><p id="p187012415366"><a name="p187012415366"></a><a name="p187012415366"></a>MCP Server</p>
+</td>
+
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.5 "><p id="p19701724193615"><a name="p19701724193615"></a><a name="p19701724193615"></a>MCP Server所在节点IP地址</p>
+</td>
+
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.6 "><p id="p9701824173615"><a name="p9701824173615"></a><a name="p9701824173615"></a>1024~65535</p>
+</td>
+
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.7 "><p id="p117062412364"><a name="p117062412364"></a><a name="p117062412364"></a>HTTP/HTTPS</p>
+</td>
+
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.8 "><p id="p16932716144710"><a name="p16932716144710"></a><a name="p16932716144710"></a>【作用】MCP客户端连接MCP服务端<br> 【说明】端口范围1024~65535</p>
+</td>
+
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.9 "><p id="p546871485"><a name="p546871485"></a><a name="p546871485"></a>是</p>
+</td>
+
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.10 "><p id="p197118242364"><a name="p197118242364"></a><a name="p197118242364"></a>IP地址认证或IP地址加证书认证</p>
+</td>
+
+<td class="cellrowborder" valign="top" width="6.9520856256877055%" headers="mcps1.2.13.1.11 "><p id="p071224203613"><a name="p071224203613"></a><a name="p071224203613"></a>NA</p>
+</td>
+
+<td class="cellrowborder" valign="top" width="7.5222566770031%" headers="mcps1.2.13.1.12 "><p id="p472192413611"><a name="p472192413611"></a><a name="p472192413611"></a>用户面</p>
+</td>
+
+<td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>openGauss 7.0.0</p>
+</td>
+
+<td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>无</p>
+</td>
+
+<td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>AI</p>
+</td>
+</tr>
+
 </tbody>
 
 </table>
