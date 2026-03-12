@@ -106,7 +106,7 @@ sections:
       - label: openGauss事务
         href: ./opengauss_transaction.md
       - label: 双数据库实例复制参数
-        href: ./dual_database_instance_replication_parameters.md
+        href: ./replication_parameters_of_two_database_instances.md
       - label: 开发人员选项
         href: ./developer_options.md
       - label: 审计
@@ -114,9 +114,9 @@ sections:
           - label: 审计开关
             href: ./audit_switch.md
           - label: 用户和权限审计
-            href: ./user_and_permission_auditing.md
+            href: ./user_and_permission_audit.md
           - label: 操作审计
-            href: ./action_trail.md
+            href: ./operation_auditing.md
       - label: CM相关参数
         href: ./cm_relevant_parameters.md
       - label: 升级参数
