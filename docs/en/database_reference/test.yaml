@@ -37,7 +37,7 @@
         -   [Statistics During the Database Running](./docs/database_reference/statistics-during-the-database-running.md)
             -   [Query and Index Statistics Collector](./docs/database_reference/query_and_index_statistics_collector.md)
             -   [Performance Statistics](./docs/database_reference/performance_statistics.md)
-        -   [Workload Management](./docs/database_reference/workworkload_management.md)
+        -   [Workload Management](./docs/database_reference/workload_management.md)
         -   [Automatic Vacuuming](./docs/database_reference/automatic_vacuuming.md)
         -   [Default Settings of Client Connection](./docs/database_reference/default-settings-of-client-connection.md)
             -   [Statement Behavior](./docs/database_reference/statement_behavior.md)
