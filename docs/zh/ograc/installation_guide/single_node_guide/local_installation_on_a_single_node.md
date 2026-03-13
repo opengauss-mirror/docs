@@ -1,10 +1,10 @@
 # oGRAC 单节点本地安装
 
-## 一、概述
+## 概述
 
 本文档用于指导开发者在**本地环境**中完成 oGRAC 的**单节点编译、安装与调试**。该部署方式主要面向功能验证、源码调试和开发联调场景，不适用于生产环境。
 
-> **重要说明**
+> [!NOTE]说明
 >
 > * 单节点模式仅支持单实例运行
 > * 不包含 `DMS`、`DSS` 等分布式组件能力
@@ -13,11 +13,11 @@
 
 ---
 
-## 二、环境准备
+## 环境准备
 
 在开始安装前，请确保操作系统和运行环境满足以下前置条件。
 
-### 2.1 系统初始化
+### 系统初始化
 
 为了避免系统安全策略或防火墙规则对数据库进程、端口通信以及调试工具造成影响，需要提前关闭 SELinux 和防火墙服务。
 
@@ -30,7 +30,7 @@ systemctl stop firewalld
 systemctl disable firewalld
 ```
 
-> **说明**
+> [!NOTE]说明
 >
 > * `setenforce 0`：临时关闭 SELinux 强制策略
 > * 修改 `/etc/selinux/config` 可保证系统重启后仍保持关闭状态
@@ -38,7 +38,7 @@ systemctl disable firewalld
 
 ---
 
-### 2.2 创建目录与用户
+### 创建目录与用户
 
 为了保证系统安全性和权限隔离，建议使用**独立的系统用户**进行 oGRAC 安装和运行。
 
@@ -56,14 +56,14 @@ passwd [user_password]
 chmod -R 777 [compile_path]
 ```
 
-> **参数说明**
+> [!NOTE]说明
 >
 > * `[compile_path]`：源码下载、编译及安装的统一工作目录
 > * `[user_name]`：建议专用于 oGRAC 的系统运行用户
 
 ---
 
-### 2.3 安装系统依赖
+### 安装系统依赖
 
 oGRAC 的编译和运行依赖 Python、网络工具及部分基础库，请提前安装以下软件包：
 
@@ -71,7 +71,7 @@ oGRAC 的编译和运行依赖 Python、网络工具及部分基础库，请提�
 yum install -y wget python3 python3-devel iputils iproute unixODBC-devel unixODBC --skip-broken
 ```
 
-> **说明**
+> [!NOTE]说明
 >
 > * `python3 / python3-devel`：用于执行安装脚本和管理工具
 > * `iputils / iproute`：用于网络检测与 IP 配置
@@ -79,9 +79,9 @@ yum install -y wget python3 python3-devel iputils iproute unixODBC-devel unixODB
 
 ---
 
-## 三、源码获取与编译
+## 源码获取与编译
 
-### 3.1 获取源码
+### 获取源码
 
 切换至前文创建的编译目录，拉取 oGRAC 官方源码仓库：
 
@@ -94,7 +94,7 @@ git clone https://gitcode.com/openGauss/oGRAC.git
 
 ---
 
-### 3.2 编译参数调整（Debug 场景）
+### 编译参数调整（Debug 场景）
 
 在部分调试或开发场景下（尤其是 Debug 版本编译），需要关闭**虚拟内存保护机制**，否则可能影响调试工具的正常使用。
 
@@ -105,15 +105,16 @@ cd oGRAC/build
 sed -i 's/DUSE_PROTECT_VM=ON/DUSE_PROTECT_VM=OFF/g' Makefile.sh
 ```
 
-> **说明**
+> [!NOTE]说明
 >
 > * Debug 编译时必须关闭该选项
 > * Release 版本通常可保持默认开启状态
 
 ---
 
-## 四、安装流程
-### 4.1 执行安装脚本
+## 安装流程
+
+### 执行安装脚本
 
 1. 在root用户下, 进入 `oGRAC/build` 目录
 2. 使用安装脚本进行部署,并指定安装用户
@@ -131,7 +132,7 @@ sh local_install.sh install -u [user_name]
 
 ---
 
-### 4.2 卸载与清理
+### 卸载与清理
 
 如需重新部署或清理环境，可执行卸载脚本：
 
@@ -143,7 +144,7 @@ sh local_install.sh clean -u [user_name]
 
 ---
 
-## 五、Debug 与调试建议
+## Debug 与调试建议
 
 在单节点部署中，系统仍默认包含 `CM`（Cluster Manager）组件。在使用 `gdb` 进行断点调试时，`CM` 可能因心跳超时误判数据库异常并强制终止进程。
 
@@ -155,7 +156,7 @@ cms res -edit db -attr HB_TIMEOUT=100000000
 cms res -edit db -attr CHECK_TIMEOUT=10000000
 ```
 
-> **说明**
+> [!NOTE]说明
 >
 > * 上述配置仅建议在调试环境中使用
 > * 调试完成后可恢复默认配置，避免影响系统行为

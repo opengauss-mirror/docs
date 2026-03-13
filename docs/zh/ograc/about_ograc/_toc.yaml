@@ -4,7 +4,9 @@ sections:
   - label: 产品描述
     href: ./product_description/ograc_overview.md  
   - label: SQL能力
-    href: ./product_description/sql_ability.md  
+    href: ./product_description/sql_ability.md 
+  - label: MVCC
+    href: ./product_description/mvcc.md   
   - label: 产品架构
     sections: 
       - label: 架构描述
