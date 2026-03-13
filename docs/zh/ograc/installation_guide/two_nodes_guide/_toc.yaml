@@ -2,7 +2,7 @@ label: oGRAC双节点生产编译与部署指南
 isManual: true
 sections:
   - label: oGRAC双节点编译打包指南
-    href: ./compiling_the_version.md
+    href: ./compiling_the_version_two_node.md
   - label: oGRAC两节点部署指南
     href: ./ograc_two_node_installation.md
   - label: oGRAC两节点多写功能测试DEMO使用指南

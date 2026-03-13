@@ -1043,6 +1043,8 @@ sections:
         href: ./drop_table.md
       - label: DROP TABLESPACE
         href: ./drop_tablespace.md
+      - label: DROP TABLE PARTITION
+        href: ./drop_table_partition.md       
       - label: DROP TEXT SEARCH CONFIGURATION
         href: ./drop_text_search_configuration.md
       - label: DROP TEXT SEARCH DICTIONARY
