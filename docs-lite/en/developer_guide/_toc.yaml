@@ -250,6 +250,6 @@ sections:
           - label: cursor.close()
             href: ./cursor_close.md
           - label: connection.close()
-            href: ./connection_close.md     
+            href: ./connection_close.md   
   - label: Commissioning
     href: ./commissioning.md

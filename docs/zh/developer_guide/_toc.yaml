@@ -325,5 +325,11 @@ sections:
             href: ./pqcancel.md
       - label: 链接参数
         href: ./link_parameters_libpq.md
+  - label: 基于GO开发
+    sections:
+      - label: 简介
+        href: ./development_based_on_go.md
+      - label: GO驱动常用操作
+        href: ./example_common_operations_go.md
   - label: 编译与调试
     href: ./commissioning.md
