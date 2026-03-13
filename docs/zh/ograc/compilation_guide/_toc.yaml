@@ -1,0 +1,8 @@
+label: 编译指南
+isManual: true
+sections:
+  - label: 搭建编译环境
+    href: ./setting_up_the_compilation_environment.md
+  - label: 版本编译
+    href: ./compiling_the_version.md
+    
