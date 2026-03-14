@@ -320,7 +320,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围**： 整型，16384～1073741823，单位为kB。
+**取值范围**： 整型，256～1073741823，单位为kB。
 
 **默认值**： 16MB
 
