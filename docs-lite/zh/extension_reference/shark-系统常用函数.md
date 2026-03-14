@@ -558,6 +558,9 @@
     - 针对不容的类型转换，style可以具有下表所表示的某个值，其他值作为0进行处理
     - 目前仅支持涉及日期，时间和浮点数，货币(money)的样式
 
+    >[!NOTE]说明
+    >使用`cast`以及`convert`时，涉及输出包含字符月份/星期的情况，请确保当前数据库的`lc_time`同系统一致，可以使用`show lc_time`查看当前数据库`lc_time`，`set lc_time`来修改当前数据库`lc_time`。可以使用命令`locale`查看当前操作系统的`lang`以及`locale`信息，使用`locale -a`列出当前操作系统所支持的`locale`。
+
     **表1** 日期和时间样式
 
     <table aria-label="表 1" class="table table-sm margin-top-none">
