@@ -304,13 +304,14 @@ int gr_file_create(gr_vfs_handle vfs_handle, const char *name, const FileParamet
 **函数原型**  
 
 ```c
-int gr_file_delete(gr_vfs_handle vfs_handle, const char *name);
+int gr_file_delete(gr_vfs_handle vfs_handle, const char *name, unsigned long long attrFlag);
 ```
 
 **参数**  
 
 - `vfs_handle`：VFS 句柄。
 - `name`：文件名（字符串类型）。
+- `attrFlag`：属性标志，传入0为常规删除，传入1为强制删除（不满足WORM删除条件的情况下，会尝试修改权限后删除）。
 
 **返回值**  
 成功返回 `0`，失败返回错误码。
