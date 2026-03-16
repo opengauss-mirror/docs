@@ -217,6 +217,10 @@ sections:
         href: ./mysql_to_opengauss_migration_tool_chameleon.md
       - label: openGauss客户端工具DataStudio
         href: ./opengauss_client_tool_datastudio.md
+      - label: Elasticsearch和Milvus迁移工具对接DataKit
+        href: ./datakit_support_elasticsearch_milvus_migration.md
+      - label: openGauss到openGauss迁移
+        href: ./opengauss_to_opengauss_migration.md
   - label: 中间件
     sections:
       - label: 分布式数据库能力
