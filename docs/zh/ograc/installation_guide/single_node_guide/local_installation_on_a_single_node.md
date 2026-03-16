@@ -137,6 +137,13 @@ sh local_install.sh install -u [user_name]
 * 停止并清理历史残留进程与数据
 * 创建数据目录和日志目录
 
+
+当执行完成后,可以登录到`-u`指定的用户下,使用`ogsql / as sysdba`命令连接数据库,进行使用.
+
+当需要重启时,可以使用如下命令启动数据库:
+```shell
+/home/[user_name]/install/bin/ogracd -D /home/[user_name]/data &
+```
 ---
 
 ### 4.2 卸载与清理
