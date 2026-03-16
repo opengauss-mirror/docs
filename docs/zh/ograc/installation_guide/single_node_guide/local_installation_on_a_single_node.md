@@ -101,7 +101,7 @@ sh local_install.sh prepare
 
 ---
 
-### 编译参数调整（Debug 场景）
+### 编译参数调整
 
 在部分调试或开发场景下（尤其是 Debug 版本编译），需要关闭**虚拟内存保护机制**，否则可能影响调试工具的正常使用。
 
@@ -112,10 +112,17 @@ cd oGRAC/build
 sed -i 's/DUSE_PROTECT_VM=ON/DUSE_PROTECT_VM=OFF/g' Makefile.sh
 ```
 
+### 进行编译
+
+在`oGRAC/build`目录下进行编译,用于后续二进制安装:
+
+```bash
+sh local_install.sh compile -b [release | debug]
+```
+
 > [!NOTE]说明
->
-> * Debug 编译时必须关闭该选项
-> * Release 版本通常可保持默认开启状态
+> 
+> * `[release | debug]`：指定编译模式，`release` 为默认值，`debug` 为调试模式
 
 ---
 
