@@ -92,7 +92,7 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 </tr>
 <tr id="zh-cn_topic_0116784021_row10772813716"><td class="cellrowborder" valign="top" width="18.73%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0116784021_p1471228371"><a name="zh-cn_topic_0116784021_p1471228371"></a><a name="zh-cn_topic_0116784021_p1471228371"></a>switchover</p>
 </td>
-<td class="cellrowborder" valign="top" width="81.27%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0116784021_p4718281716"><a name="zh-cn_topic_0116784021_p4718281716"></a><a name="zh-cn_topic_0116784021_p4718281716"></a>一主多备数据库部署模式下切换数据库主备实例。</p>
+<td class="cellrowborder" valign="top" width="81.27%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0116784021_p4718281716"><a name="zh-cn_topic_0116784021_p4718281716"></a><a name="zh-cn_topic_0116784021_p4718281716"></a>一主多备数据库部署模式下切换数据库主备实例。也支持传统流式容灾架构灾备集群下切换数据库首备级联备实例</p>
 </td>
 </tr>
 <tr id="row47801623861"><td class="cellrowborder" valign="top" width="18.73%" headers="mcps1.2.3.1.1 "><p id="p778072319614"><a name="p778072319614"></a><a name="p778072319614"></a>finishredo</p>

@@ -92,7 +92,7 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 </tr>
 <tr id="en-us_topic_0116784021_row10772813716"><td class="cellrowborder" valign="top" width="18.73%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0116784021_p1471228371"><a name="en-us_topic_0116784021_p1471228371"></a><a name="en-us_topic_0116784021_p1471228371"></a>switchover</p>
 </td>
-<td class="cellrowborder" valign="top" width="81.27%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0116784021_p4718281716"><a name="en-us_topic_0116784021_p4718281716"></a><a name="en-us_topic_0116784021_p4718281716"></a>Switches over the primary and standby database instances when one primary database and multiple standby databases are deployed. In DCF mode, the <strong>-n NODEID</strong> and <strong>-D DATADIR</strong> parameters are not supported.</p>
+<td class="cellrowborder" valign="top" width="81.27%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0116784021_p4718281716"><a name="en-us_topic_0116784021_p4718281716"></a><a name="en-us_topic_0116784021_p4718281716"></a>Switches over between the primary and standby, and between the primary standby and cascade standby database instances when one primary database and multiple standby databases are deployed. In DCF mode, the <strong>-n NODEID</strong> and <strong>-D DATADIR</strong> parameters are not supported.</p>
 </td>
 </tr>
 <tr id="row47801623861"><td class="cellrowborder" valign="top" width="18.73%" headers="mcps1.2.3.1.1 "><p id="p778072319614"><a name="p778072319614"></a><a name="p778072319614"></a>finishredo</p>
