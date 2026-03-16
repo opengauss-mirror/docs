@@ -300,4 +300,3 @@ openGauss-server/build/script/cmake\_package\_mini.sh是openGauss轻量版的构
 
     - 生成的安装包会存放在./output目录下。
     - 编译和打包日志为：./build/script/makemppdb\_pkg.log。
-

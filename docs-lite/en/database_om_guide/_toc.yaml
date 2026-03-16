@@ -2,13 +2,13 @@ label: Database O&M Guide
 isManual: true
 sections:
   - label: Starting and Stopping openGauss
-    href: ./starting_and_stopping_opengauss.md
+    href: ./start_stop_opengauss.md
   - label: Routine Maintenance
     href: ./routine_maintenance.md
   - label: Backup and Restoration
     sections:
       - label: Overview
-        href: ./overview.md
+        href: ./overview_for_backup_and_restoration.md
       - label: Logical Backup and Restoration
         href: ./logical_backup_and_restoration.md
       - label: Physical Backup and Restoration
@@ -18,7 +18,7 @@ sections:
       - label: Exporting Data
         sections:
           - label: Overview
-            href: ./overview_8.md
+            href: ./overview_5.md
           - label: Exporting a Single Database
             href: ./export_single_database.md
           - label: Exporting All Databases
@@ -73,7 +73,7 @@ sections:
       - label: Logical Decoding
         sections:
           - label: Overview
-            href: ./overview_30.md
+            href: ./logical_decoding_overview.md
           - label: Logical Decoding by SQL Function Interfaces
             href: ./logical_decoding_by_sql_function_interfaces.md
       - label: Replicating Data Using the Logical Replication Tool
@@ -106,12 +106,8 @@ sections:
         href: ./common_fault_locating_methods.md
       - label: Common Fault Locating Cases
         sections:
-          - label: Core Dump Occurs due to Full Disk Space
-            href: ./core_dump_occurs_due_to_full_disk_space.md
-          - label: Core Dump Occurs Due to Incorrect Settings of GUC Parameter log_directory
-            href: ./core_dump_occurs_due_to_incorrect_settings_of_guc_parameter_log_directory.md
-          - label: Core Dump Occurs when RemoveIPC Is Enabled
-            href: ./core_dump_occurs_when_removeipc_is_enabled.md
+          - label: Core Fault Locating
+            href: ./core_fault_locating.md
           - label: When the TPC-C is running and a disk to be injected is full, the TPC-C stops responding.
             href: ./when_the_tpc_c_is_running_and_a_disk_to_be_injected_is_full_the_tpc_c_stops_responding.md
           - label: Standby Node in the Need Repair (WAL) State

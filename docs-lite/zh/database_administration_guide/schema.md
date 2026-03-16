@@ -36,7 +36,7 @@ Schema又称作模式。通过管理Schema，允许多个用户使用同一数�
 
 ## 搜索路径<a name="zh-cn_topic_0283137084_zh-cn_topic_0237121104_zh-cn_topic_0156599225_section03655314403"></a>
 
-搜索路径定义在[search\_path](../database_reference/speech_act.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_s304b0a206e2e4ca782210ffb66cbc4b0)参数中，参数取值形式为采用逗号分隔的Schema名称列表。如果创建对象时未指定目标Schema，则该对象会被添加到搜索路径中列出的第一个Schema中。当不同Schema中存在同名的对象时，查询对象未指定Schema的情况下，将从搜索路径中包含该对象的第一个Schema中返回对象。
+搜索路径定义在[search\_path](../database_reference/statement_behavior.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_s304b0a206e2e4ca782210ffb66cbc4b0)参数中，参数取值形式为采用逗号分隔的Schema名称列表。如果创建对象时未指定目标Schema，则该对象会被添加到搜索路径中列出的第一个Schema中。当不同Schema中存在同名的对象时，查询对象未指定Schema的情况下，将从搜索路径中包含该对象的第一个Schema中返回对象。
 
 - 要查看当前搜索路径，请使用[SHOW](../sql_reference/SHOW.md)。
 

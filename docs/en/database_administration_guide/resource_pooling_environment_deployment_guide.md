@@ -50,11 +50,11 @@ Developers are advised to:
 
       c. Compile, install, and use the downloaded DSS component to replace the DSS component in the third-party library. (**DSS\_CODE\_PATH** indicates the directory of the decompressed DSS source code, and **ThirdParty\_Binarylibs\_Path** indicates the directory of the decompressed third-party library.)
 
-```shell
-  #-**-3rd** is followed by the absolute path of the third-party library.
-  cd [DSS_CODE_PATH]/build/linux/opengauss
-  sh build.sh -3rd [ThirdParty_Binarylibs_Path] -t cmake -m DebugDsstest
-```
+    ```shell
+      #-**-3rd** is followed by the absolute path of the third-party library.
+      cd [DSS_CODE_PATH]/build/linux/opengauss
+      sh build.sh -3rd [ThirdParty_Binarylibs_Path] -t cmake -m DebugDsstest
+    ```
 
 2. Compile the DMS component of the test version.
 
@@ -64,189 +64,189 @@ Developers are advised to:
 
       c. Compile, install, and use the downloaded DMS component to replace the DMS component in the third-party library. (**DMS\_CODE\_PATH** indicates the directory of the decompressed DSS source code, and **ThirdParty\_Binarylibs\_Path** indicates the directory of the decompressed third-party library.)
 
-```shell
-  cd [DMS_CODE_PATH]/build/linux/opengauss
-  sh build.sh -3rd [ThirdParty_Binarylibs_Path] -t cmake -m Release
-  cd [DMS_CODE_PATH]
-  mkdir -p tmp
-  export BUILD_MODE=Debug
-  cmake . -DCMAKE_BUILD_TYPE=Debug -D DMS_TEST=ON -DOPENGAUSS=yes -B ./tmp
-  cd tmp/
-  make -sj
-```
+    ```shell
+      cd [DMS_CODE_PATH]/build/linux/opengauss
+      sh build.sh -3rd [ThirdParty_Binarylibs_Path] -t cmake -m Release
+      cd [DMS_CODE_PATH]
+      mkdir -p tmp
+      export BUILD_MODE=Debug
+      cmake . -DCMAKE_BUILD_TYPE=Debug -D DMS_TEST=ON -DOPENGAUSS=yes -B ./tmp
+      cd tmp/
+      make -sj
+    ```
 
-> [!WARNING]CAUTION 
->
-> After the DSS, DMS, and CBB are compiled, they are automatically updated to the third-party library. You do not need to manually copy them. You only need to compile the database according to the standard procedure.
+    > [!WARNING]CAUTION 
+    >
+    > After the DSS, DMS, and CBB are compiled, they are automatically updated to the third-party library. You do not need to manually copy them. You only need to compile the database according to the standard procedure.
 
 3. Configure environment variables.
 
    The following uses two nodes as an example. **DSS\_HOME** indicates the directory required for running dssserver of DN 1 and needs to be manually created. Write the following content to **/home/test/envfile** as environment variables.
 
-  ```shell
-export GAUSSHOME=/home/test/openGauss-server/dest/
-export LD_LIBRARY_PATH=$GAUSSHOME/lib:$LD_LIBRARY_PATH
-export PATH=$GAUSSHOME/bin:$PATH
-export DSS_HOME=/home/test/dss/dss0/dssdba
-  ```
+      ```shell
+    export GAUSSHOME=/home/test/openGauss-server/dest/
+    export LD_LIBRARY_PATH=$GAUSSHOME/lib:$LD_LIBRARY_PATH
+    export PATH=$GAUSSHOME/bin:$PATH
+    export DSS_HOME=/home/test/dss/dss0/dssdba
+      ```
 
 4. Create directories for **dssserver**.
 
-  ```shell
-  cd /home/test
-  mkdir -p dss/dss0/dssdba/cfg
-  mkdir -p dss/dss0/dssdba/log
-  mkdir -p dss/dss1/dssdba/cfg
-  mkdir -p dss/dss1/dssdba/log
-  mkdir -p dss/dev
-  ```
+    ```shell
+    cd /home/test
+    mkdir -p dss/dss0/dssdba/cfg
+    mkdir -p dss/dss0/dssdba/log
+    mkdir -p dss/dss1/dssdba/cfg
+    mkdir -p dss/dss1/dssdba/log
+    mkdir -p dss/dev
+    ```
 
 5. Run the **dd** command to create a simulated block device file.
 
-  The following command is used to create a 2 TB disk. Adjust the values of **bs** and **count** as required. The execution time depends on the disk performance.
+    The following command is used to create a 2 TB disk. Adjust the values of **bs** and **count** as required. The execution time depends on the disk performance.
 
-  ```shell
-  dd if=/dev/zero of=/home/test/dss/dev/dss-dba bs=2M count=1024000 >/dev/null 2>&1
-  ```
+    ```shell
+    dd if=/dev/zero of=/home/test/dss/dev/dss-dba bs=2M count=1024000 >/dev/null 2>&1
+    ```
 
 6. Create the configuration files of DSS 0 and DSS 1 required by the two DNs.
 
     Create the configuration file of DSS 0.
 
-  ```shell
-  vim /home/test/dss/dss0/dssdba/cfg/dss_inst.ini
-  ```
+    ```shell
+    vim /home/test/dss/dss0/dssdba/cfg/dss_inst.ini
+    ```
 
-  The file content is as follows:
+    The file content is as follows:
 
-  ```shell
-  INST_ID=0
-  _LOG_LEVEL=255
-  DSS_NODES_LIST=0:127.0.0.1:17102,1:127.0.0.1:18102
-  DISK_LOCK_FILE_PATH=/home/test/dss/dss0
-  LSNR_PATH=/home/test/dss/dss0
-  _LOG_MAX_FILE_SIZE=20M
-  _LOG_BACKUP_FILE_COUNT=128
-  ```
+    ```shell
+    INST_ID=0
+    _LOG_LEVEL=255
+    DSS_NODES_LIST=0:127.0.0.1:17102,1:127.0.0.1:18102
+    DISK_LOCK_FILE_PATH=/home/test/dss/dss0
+    LSNR_PATH=/home/test/dss/dss0
+    _LOG_MAX_FILE_SIZE=20M
+    _LOG_BACKUP_FILE_COUNT=128
+    ```
 
-  Create the volume configuration file of DSS 0.
+    Create the volume configuration file of DSS 0.
 
-  ```shell
-  vim /home/test/dss/dss0/dssdba/cfg/dss_vg_conf.ini
-  ```
+    ```shell
+    vim /home/test/dss/dss0/dssdba/cfg/dss_vg_conf.ini
+    ```
 
-  The content in the file is as follows, which is the volume name plus the device name simulated by **dd**:
+    The content in the file is as follows, which is the volume name plus the device name simulated by **dd**:
 
-  ```shell
-  data:/home/test/dss/dev/dss-dba
-  ```
+    ```shell
+    data:/home/test/dss/dev/dss-dba
+    ```
 
-  Create the configuration file of DSS 1.
+    Create the configuration file of DSS 1.
 
-  ```shell
-  vim /home/test/dss/dss1/dssdba/cfg/dss_inst.ini
-  ```
+    ```shell
+    vim /home/test/dss/dss1/dssdba/cfg/dss_inst.ini
+    ```
 
-  The content in the file is as follows. Note that the value of **DISK\_LOCK\_FILE\_PATH** is the same as that in DSS 0.
+    The content in the file is as follows. Note that the value of **DISK\_LOCK\_FILE\_PATH** is the same as that in DSS 0.
 
-  ```shell
-  INST_ID=1
-  _LOG_LEVEL=255
-  DSS_NODES_LIST=0:127.0.0.1:17102,1:127.0.0.1:18102
-  DISK_LOCK_FILE_PATH=/home/test/dss/dss0
-  LSNR_PATH=/home/test/dss/dss1
-  _LOG_MAX_FILE_SIZE=20M
-  _LOG_BACKUP_FILE_COUNT=128
-  ```
+    ```shell
+    INST_ID=1
+    _LOG_LEVEL=255
+    DSS_NODES_LIST=0:127.0.0.1:17102,1:127.0.0.1:18102
+    DISK_LOCK_FILE_PATH=/home/test/dss/dss0
+    LSNR_PATH=/home/test/dss/dss1
+    _LOG_MAX_FILE_SIZE=20M
+    _LOG_BACKUP_FILE_COUNT=128
+    ```
 
-  Create the volume configuration file of DSS 1.
+    Create the volume configuration file of DSS 1.
 
-  ```shell
-  vim /home/test/dss/dss1/dssdba/cfg/dss_vg_conf.ini
-  ```
+    ```shell
+    vim /home/test/dss/dss1/dssdba/cfg/dss_vg_conf.ini
+    ```
 
-  The content in the file is as follows, which is the volume name plus the device name simulated by **dd**:
+    The content in the file is as follows, which is the volume name plus the device name simulated by **dd**:
 
-  ```shell
-  data:/home/test/dss/dev/dss-dba
-  ```
+    ```shell
+    data:/home/test/dss/dev/dss-dba
+    ```
 
-> [!WARNING]CAUTION 
->
-> Multiple DNs (databases) are created on a server. The IP addresses are the same, but the port numbers used by services are different.
+    > [!WARNING]CAUTION 
+    >
+    > Multiple DNs (databases) are created on a server. The IP addresses are the same, but the port numbers used by services are different.
 
 7. Create a data volume for storing database data and start the dssserver service.
 
-  ```shell
-  ##This is the environment variable configured in step 3.
-  source /home/test/envfile
-  dsscmd cv -g data -v /home/test/dss/dev/dss-dba
-  dssserver -D /home/test/dss/dss0/dssdba &
-  #If **DSS SERVER STARTED** is displayed in the previous command output, the operation is successful.
-  dssserver -D /home/test/dss/dss1/dssdba &
-  #If **DSS SERVER STARTED** is displayed in the previous command output, the operation is successful.
+    ```shell
+    ##This is the environment variable configured in step 3.
+    source /home/test/envfile
+    dsscmd cv -g data -v /home/test/dss/dev/dss-dba
+    dssserver -D /home/test/dss/dss0/dssdba &
+    #If **DSS SERVER STARTED** is displayed in the previous command output, the operation is successful.
+    dssserver -D /home/test/dss/dss1/dssdba &
+    #If **DSS SERVER STARTED** is displayed in the previous command output, the operation is successful.
 
-  #Run the following command to check whether the volume is successfully created.
-  dsscmd lsvg -U UDS:/home/test/dss/dss0/.dss_unix_d_socket
-  dsscmd ls -m M -p +data -U UDS:/home/test/dss/dss0/.dss_unix_d_socket
-  ```
+    #Run the following command to check whether the volume is successfully created.
+    dsscmd lsvg -U UDS:/home/test/dss/dss0/.dss_unix_d_socket
+    dsscmd ls -m M -p +data -U UDS:/home/test/dss/dss0/.dss_unix_d_socket
+    ```
 
-> [!WARNING]CAUTION 
->
-> The DSS does not support volume group configuration modification after startup. If the volume group configuration needs to be modified, perform the preceding steps again.
+    > [!WARNING]CAUTION 
+    >
+    > The DSS does not support volume group configuration modification after startup. If the volume group configuration needs to be modified, perform the preceding steps again.
 
 8. Perform the gs_initdb operation on each node in sequence.
 
-  ```shell
-mkdir -p /home/test/data
-rm -rf node1 node2
+      ```shell
+    mkdir -p /home/test/data
+    rm -rf node1 node2
 
-gs_intdb -D /home/test/data/node1 --nodename=node1 -U tester -w Pasword --vgname=+data --enable-dss --dms_url="0:127.0.0.1:1613,1:127.0.0.1:1614" -I 0 --socketpath='UDS:/home/test/dss/dss0/.dss_unix_d_socket'
+    gs_intdb -D /home/test/data/node1 --nodename=node1 -U tester -w Pasword --vgname=+data --enable-dss --dms_url="0:127.0.0.1:1613,1:127.0.0.1:1614" -I 0 --socketpath='UDS:/home/test/dss/dss0/.dss_unix_d_socket'
 
-echo "ss_enable_ssl = off
-listen_addresses = '*'
-port=12210
-ss_enable_reform = off
-ss_work_thread_count = 32
-enable_segment = on
-ss_log_level = 255
-ss_log_backup_file_count = 100
-ss_log_max_file_size = 1GB
-" >> /home/test/data/node1/postgresql.conf
+    echo "ss_enable_ssl = off
+    listen_addresses = '*'
+    port=12210
+    ss_enable_reform = off
+    ss_work_thread_count = 32
+    enable_segment = on
+    ss_log_level = 255
+    ss_log_backup_file_count = 100
+    ss_log_max_file_size = 1GB
+    " >> /home/test/data/node1/postgresql.conf
 
-sed '91 ahost       all        all         0.0.0.0/0        sha256' -i /home/test/data/node1/pg_hba.conf
+    sed '91 ahost       all        all         0.0.0.0/0        sha256' -i /home/test/data/node1/pg_hba.conf
 
-gs_intdb -D /home/test/data/node2 --nodename=node2 -U tester -w Pasword --vgname=+data --enable-dss --dms_url="0:127.0.0.1:1613,1:127.0.0.1:1614" -I 1 --socketpath='UDS:/home/test/dss/dss1/.dss_unix_d_socket'
+    gs_intdb -D /home/test/data/node2 --nodename=node2 -U tester -w Pasword --vgname=+data --enable-dss --dms_url="0:127.0.0.1:1613,1:127.0.0.1:1614" -I 1 --socketpath='UDS:/home/test/dss/dss1/.dss_unix_d_socket'
 
-echo "ss_enable_ssl = off
-listen_addresses = '*'
-port=13210
-ss_enable_reform = off
-ss_work_thread_count = 32
-enable_segment = on
-ss_log_level = 255
-ss_log_backup_file_count = 100
-ss_log_max_file_size = 1GB
-" >> /home/test/data/node2/postgresql.conf
+    echo "ss_enable_ssl = off
+    listen_addresses = '*'
+    port=13210
+    ss_enable_reform = off
+    ss_work_thread_count = 32
+    enable_segment = on
+    ss_log_level = 255
+    ss_log_backup_file_count = 100
+    ss_log_max_file_size = 1GB
+    " >> /home/test/data/node2/postgresql.conf
 
-sed '91 ahost       all        all         0.0.0.0/0        sha256' -i /home/test/data/node2/pg_hba.conf
-  ```
+    sed '91 ahost       all        all         0.0.0.0/0        sha256' -i /home/test/data/node2/pg_hba.conf
+      ```
 
 9. Create a file that simulates the CM function and add it to the environment variable created in step 3.
 
-```shell
-  echo "REFORMER_ID = 0" > /home/test/cm_config.ini
-  echo "BITMAP_ONLINE = 3" >> /home/test/cm_config.ini
-  echo "export CM_CONFIG_PATH=/home/test/cm_config.ini" >> /home/test/envfile
-```
+    ```shell
+      echo "REFORMER_ID = 0" > /home/test/cm_config.ini
+      echo "BITMAP_ONLINE = 3" >> /home/test/cm_config.ini
+      echo "export CM_CONFIG_PATH=/home/test/cm_config.ini" >> /home/test/envfile
+    ```
 
 10. Start node 1 and node 2 in sequence.
 
-```shell
-  source /home/test/envfile
-  gs_ctrl start -D /home/test/data/node1
-  gs_ctrl start -D /home/test/data/node2
-```
+    ```shell
+      source /home/test/envfile
+      gs_ctrl start -D /home/test/data/node1
+      gs_ctrl start -D /home/test/data/node2
+    ```
 
 ## Supplementary Information
 

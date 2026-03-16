@@ -4,119 +4,119 @@ sections:
 - label: GUC Parameters
   sections:
     - label: GUC Parameter Usage
-      href: ./guc-parameter-usage.md
+      href: ./guc_parameter_usage.md
     - label: File Location
-      href: ./file-location.md
+      href: ./file_location.md
     - label: Connection and Authentication
       sections:
         - label: Connection Settings
-          href: ./connection-settings.md
+          href: ./connection_settings.md
         - label: Security and Authentication (postgresql.conf)
           href: ./security_and_authentication_postgresql_conf.md
         - label: Communication Library Parameters
-          href: ./communication-library-parameters.md
+          href: ./communication_library_parameters.md
     - label: Resource Consumption
       sections:
         - label: Memory
           href: ./memory.md
         - label: Disk Space
-          href: ./disk-space.md
+          href: ./disk_space.md
         - label: Kernel Resource Usage
-          href: ./kernel-resource-usage.md
+          href: ./kernel_resource_usage.md
         - label: Cost-based Vacuum Delay
-          href: ./cost-based-vacuum-delay.md
+          href: ./cost_based_vacuum_delay.md
         - label: Background Writer
-          href: ./background-writer.md
+          href: ./background_writer.md
         - label: Asynchronous I/O Operations
-          href: ./asynchronous-i-o-operations.md
+          href: ./asynchronous_i_o_operations.md
     - label: Write Ahead Log
       sections:
         - label: Settings
-          href: ./settings-60.md
+          href: ./settings.md
         - label: Checkpoints
-          href: ./checkpoints-60.md
+          href: ./checkpoints.md
         - label: Log Replay
-          href: ./log-replay.md
+          href: ./log_replay.md
         - label: Archiving
           href: ./archiving.md
     - label: HA Replication
       sections:
         - label: Sending Server
-          href: ./sending-server.md
+          href: ./sending_server.md
         - label: Primary Server
-          href: ./primary-server.md
+          href: ./primary_server.md
         - label: Standby Server
-          href: ./standby-server.md
+          href: ./standby_server.md
     - label: Memory Table
-      href: ./memory-table.md
+      href: ./memory_table.md
     - label: Query Planning
       sections:
         - label: Overview 
-          href: ./query-planning.md
+          href: ./query_planning.md
         - label: Optimizer Method Configuration
-          href: ./optimizer-method-configuration.md
+          href: ./optimizer_method_configuration.md
         - label: Optimizer Cost Constants
-          href: ./optimizer-cost-constants.md
+          href: ./optimizer_cost_constants.md
         - label: Genetic Query Optimizer
-          href: ./genetic-query-optimizer.md
+          href: ./genetic_query_optimizer.md
         - label: Other Optimizer Options
-          href: ./other-optimizer-options.md
+          href: ./other_optimizer_options.md
     - label: Error Reporting and Logging
       sections:
         - label: Logging Destination
-          href: ./logging-destination.md
+          href: ./logging_destination.md
         - label: Logging Time
-          href: ./logging-time.md
+          href: ./logging_time.md
         - label: Logging Content
-          href: ./logging-content.md
+          href: ./logging_content.md
         - label: Using CSV Log Output
-          href: ./using-csv-log-output.md
+          href: ./using_csv_log_output.md
     - label: Alarm Detection
-      href: ./alarm-detection.md
+      href: ./alarm_detection.md
     - label: Statistics During the Database Running
       sections:
         - label: Query and Index Statistics Collector
-          href: ./query-and-index-statistics-collector.md
+          href: ./query_and_index_statistics_collector.md
         - label: Performance Statistics
-          href: ./performance-statistics.md
+          href: ./performance_statistics.md
     - label: Workload Management
-      href: ./workload-management.md
+      href: ./workload_management.md
     - label: Automatic Vacuuming
-      href: ./automatic-vacuuming.md
+      href: ./automatic_vacuuming.md
     - label: Default Settings of Client Connection
       sections:
         - label: Statement Behavior
-          href: ./statement-behavior.md
+          href: ./statement_behavior.md
         - label: Locale and Formatting
-          href: ./locale-and-formatting.md
+          href: ./locale_and_formatting.md
         - label: Other Default Parameters
-          href: ./other-default-parameters.md
+          href: ./other_default_parameters.md
     - label: Lock Management
-      href: ./lock-management.md
+      href: ./lock_management.md
     - label: Version and Platform Compatibility
       sections:
         - label: Compatibility with Earlier Versions
-          href: ./compatibility-with-earlier-versions.md
+          href: ./compatibility_with_earlier_versions.md
         - label: Platform and Client Compatibility
-          href: ./platform-and-client-compatibility.md
+          href: ./platform_and_client_compatibility.md
     - label: Fault Tolerance
-      href: ./fault-tolerance.md
+      href: ./fault_tolerance.md
     - label: Connection Pool Parameters
-      href: ./connection-pool-parameters.md
+      href: ./connection_pool_parameters.md
     - label: Transaction
-      href: ./opengauss-transaction.md
+      href: ./opengauss_transaction.md
     - label: Replication Parameters of Two Database Instances
-      href: ./replication-parameters-of-two-database-instances.md
+      href: ./replication_parameters_of_two_database_instances.md
     - label: Developer Options
-      href: ./developer-options.md
+      href: ./developer_options.md
     - label: Auditing
       sections:
         - label: Audit Switch
-          href: ./audit-switch.md
+          href: ./audit_switch.md
         - label: User and Permission Audit
-          href: ./user-and-permission-audit.md
+          href: ./user_and_permission_audit.md
         - label: Operation Auditing
-          href: ./operation-auditing.md
+          href: ./operation_auditing.md
     - label: CM Parameters
       sections:
         - label: Overview 
@@ -126,7 +126,7 @@ sections:
         - label: Parameters Related to cm_server
           href: ./parameters-related-to-cm_server.md
     - label: Upgrade Parameters
-      href: ./upgrade-parameters.md
+      href: ./upgrade_parameters.md
     - label: Miscellaneous Parameters
       href: ./miscellaneous-parameters.md
     - label: Wait Events

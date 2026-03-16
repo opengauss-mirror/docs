@@ -4,7 +4,7 @@ sections:
   - label: GUC参数说明
     sections:
       - label: GUC使用说明
-        href: ./guc_application_note.md    
+        href: ./guc_parameter_usage.md    
       - label: 文件位置
         href: ./file_location.md
       - label: 连接和认证
@@ -18,35 +18,35 @@ sections:
       - label: 资源消耗
         sections:
           - label: 内存
-            href: ./memory_31.md    
+            href: ./memory.md    
           - label: 磁盘空间
             href: ./disk_space.md    
           - label: 内核资源使用
             href: ./kernel_resource_usage.md
           - label: 基于开销的清理延迟
-            href: ./cost_based_cleanup_delay.md
+            href: ./cost_based_vacuum_delay.md
           - label: 后端写进程
-            href: ./backend_writing_process.md    
+            href: ./background_writer.md    
           - label: 异步IO
-            href: ./asynchronous_i_o.md
+            href: ./asynchronous_i_o_operations.md
       - label: 预写式日志
         sections:    
           - label: 设置
-            href: ./setting.md    
+            href: ./settings.md    
           - label: 检查点
-            href: ./checkpoint.md
+            href: ./checkpoints.md
           - label: 日志回放
-            href: ./log_playback.md
+            href: ./log_replay.md
           - label: 归档
-            href: ./archive.md
+            href: ./archiving.md
       - label: 双机复制
         sections: 
           - label: 发送端服务器
-            href: ./send_server.md
+            href: ./sending_server.md
           - label: 主服务器
-            href: ./master_server.md    
+            href: ./primary_server.md    
           - label: 备服务器
-            href: ./secondary_server.md
+            href: ./standby_server.md
       - label: 内存表
         href: ./memory_table.md
       - label: 查询规划
@@ -54,25 +54,25 @@ sections:
           - label: 概述
             href: ./query_planning.md   
           - label: 优化器开销常量
-            href: ./optimizer_cost_constant.md
+            href: ./optimizer_cost_constants.md
           - label: 优化器方法配置
             href: ./optimizer_method_configuration.md      
           - label: 基因查询优化器
-            href: ./gene_query_optimizer.md
+            href: ./genetic_query_optimizer.md
           - label: 其他优化器选项
-            href: ./other_optimizer_option.md
+            href: ./other_optimizer_options.md
       - label: 错误报告和日志
         sections:  
-          - label: 记录日志的内容
-            href: ./record_logs_content.md
           - label: 记录日志的位置
-            href: ./record_logs_location.md
+            href: ./logging_destination.md
           - label: 记录日志的时间
-            href: ./record_logs_time.md
+            href: ./logging_time.md
+          - label: 记录日志的内容
+            href: ./logging_content.md
           - label: 使用CSV格式写日志
-            href: ./write_logs_in_csv_format.md
+            href: ./using_csv_log_output.md
       - label: 告警检测
-        href: ./alert_detection.md
+        href: ./alarm_detection.md
       - label: 运行时统计
         sections:  
           - label: 查询和索引统计收集器
@@ -80,23 +80,23 @@ sections:
           - label: 性能统计
             href: ./performance_statistics.md
       - label: 负载管理
-        href: ./load_management.md
+        href: ./workload_management.md
       - label: 自动清理
-        href: ./auto_cleanup.md
+        href: ./automatic_vacuuming.md
       - label: 客户端连接缺省设置
         sections:  
           - label: 语句行为
-            href: ./speech_act.md
+            href: ./statement_behavior.md
           - label: 区域和格式化
-            href: ./regions_and_formatting.md
+            href: ./locale_and_formatting.md
           - label: 其他缺省
-            href: ./other_defaults.md
+            href: ./other_default_parameters.md
       - label: 锁管理
         href: ./lock_management.md    
       - label: 版本和平台兼容性
         sections: 
           - label: 历史版本兼容性
-            href: ./compatibility_with_historical_versions.md
+            href: ./compatibility_with_earlier_versions.md
           - label: 平台和客户端兼容性
             href: ./platform_and_client_compatibility.md 
       - label: 容错性
@@ -106,7 +106,7 @@ sections:
       - label: openGauss事务
         href: ./opengauss_transaction.md
       - label: 双数据库实例复制参数
-        href: ./dual_database_instance_replication_parameters.md
+        href: ./replication_parameters_of_two_database_instances.md
       - label: 开发人员选项
         href: ./developer_options.md
       - label: 审计
@@ -114,9 +114,9 @@ sections:
           - label: 审计开关
             href: ./audit_switch.md
           - label: 用户和权限审计
-            href: ./user_and_permission_auditing.md            
+            href: ./user_and_permission_audit.md            
           - label: 操作审计
-            href: ./action_trail.md
+            href: ./operation_auditing.md
       - label: 升级参数
         href: ./upgrade_parameters.md
       - label: 其它选项

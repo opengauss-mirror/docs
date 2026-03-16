@@ -58,7 +58,7 @@ openGauss的自动参数化功能是在需要反复执行相似/相同的SQL简�
 
 ## 使用指导<a name="section20491151514123"></a>
 
-自动参数化功能由会话级别GUC参数控制，开启相关参数后满足条件的SQL语句将会通过自动参数化功能处理。下列参数的设置可参考[此处](../database_reference/other_optimizer_option.md#section6842184123547)进行设置。
+自动参数化功能由会话级别GUC参数控制，开启相关参数后满足条件的SQL语句将会通过自动参数化功能处理。下列参数的设置可参考[此处](../database_reference/other_optimizer_options.md#section6842184123547)进行设置。
 
 - **开启自动参数化功能**
 

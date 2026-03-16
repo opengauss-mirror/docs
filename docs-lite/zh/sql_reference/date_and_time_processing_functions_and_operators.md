@@ -565,7 +565,7 @@
 
     描述：将数字转换为interval类型。num为numeric类型数字，interval\_unit为固定格式字符串（'DAY' | 'HOUR' | 'MINUTE' | 'SECOND'）。
 
-    可以通过设置参数[IntervalStyle](../database_reference/regions_and_formatting.md#zh-cn_topic_0283136798_zh-cn_topic_0237124733_zh-cn_topic_0059778109_s89302a8dcd7f46ecb7167574d6397dc0)为a，兼容该函数interval输出格式。
+    可以通过设置参数[IntervalStyle](../database_reference/locale_and_formatting.md#zh-cn_topic_0283136798_zh-cn_topic_0237124733_zh-cn_topic_0059778109_s89302a8dcd7f46ecb7167574d6397dc0)为a，兼容该函数interval输出格式。
 
     示例：
 

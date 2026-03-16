@@ -301,11 +301,8 @@ gs_dump [OPTION]... [DBNAME]
   指定不需要dump的表文件。
 
   >[!NOTE]说明
-
   >- 同--include-table-file，其内容格式如下：
-
   >- schema1.table1
-
   >- schema2.table2
   >-......
 
@@ -1157,12 +1154,11 @@ gs_restore [OPTION]... FILE
 
 >[!NOTE]说明
 >
->- 1. -d/--dbname 和 -f/--file 不能同时使用。
->
->- 2. -s/--schema-only 和 -a/--data-only不能同时使用。
->- 3. -c/--clean 和 -a/--data-only不能同时使用。
->- 4. 使用--single-transaction时，-j/--jobs必须为单任务。
->- 5. --role 和 --rolepassword必须一起使用。
+>1. -d/--dbname 和 -f/--file 不能同时使用。
+>2. -s/--schema-only 和 -a/--data-only不能同时使用。
+>3. -c/--clean 和 -a/--data-only不能同时使用。
+>4. 使用--single-transaction时，-j/--jobs必须为单任务。
+>5. --role 和 --rolepassword必须一起使用。
 
 连接参数：
 

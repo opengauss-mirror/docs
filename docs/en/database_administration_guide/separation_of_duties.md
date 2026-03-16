@@ -10,7 +10,7 @@ After separation of duties is enabled, system administrators have the permission
 
 Separation of duties does not take effect for an initial user. Therefore, you are advised to use an initial user as a database administrator only for database management other than service running.
 
-To enable separation of duties, set  **[enableSeparationOfDuty](../database_reference/operation-auditing.md#en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_s0a79ea55efa1431d8e3e06e4b8219cd6)**  to  **on**.
+To enable separation of duties, set  **[enableSeparationOfDuty](../database_reference/operation_auditing.md#en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_s0a79ea55efa1431d8e3e06e4b8219cd6)**  to  **on**.
 
 For details about permission changes before and after enabling separation of duties, see  [Table 1](#en-us_topic_0283137357_en-us_topic_0237121101_en-us_topic_0155089861_t58384b51e1fd4e67ab393f4bb6103a16)  and  [Table 2](#en-us_topic_0283137357_en-us_topic_0237121101_en-us_topic_0155089861_t12fe700a5db44d748cb0dc123012289b).
 

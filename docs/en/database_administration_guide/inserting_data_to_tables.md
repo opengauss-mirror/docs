@@ -44,7 +44,7 @@ The length of a character on the server and client may vary by the character set
 More than one of the preceding operations can be performed to a string. For example, if the character sets of the client and server are different, a string may be processed and then truncated. In this case, the result will also be unexpected. For details, see  [Table 2](#en-us_topic_0237120300_en-us_topic_0059779039_t8b4da148118a4913925a053cd07ca3c0).
 
 >[!NOTE]NOTE   
->Long strings are truncated only if  **[DBCOMPATIBILITY](../sql_reference/create_database.md)**  is set to  **TD**  \(compatible with Teradata\) and  **[td\_compatible\_truncation](../database_reference/platform-and-client-compatibility.md#en-us_topic_0283137001_en-us_topic_0237124738_en-us_topic_0059779195_sb8212ce57eb9432a972e390f77203b7c)**  is set to  **on**.  
+>Long strings are truncated only if  **[DBCOMPATIBILITY](../sql_reference/create_database.md)**  is set to  **TD**  \(compatible with Teradata\) and  **[td\_compatible\_truncation](../database_reference/platform_and_client_compatibility.md#en-us_topic_0283137001_en-us_topic_0237124738_en-us_topic_0059779195_sb8212ce57eb9432a972e390f77203b7c)**  is set to  **on**.  
 
 Run the following commands to create  **table1**  and  **table2**  to be used in the example:
 

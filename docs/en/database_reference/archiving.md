@@ -8,7 +8,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 >[!TIP]NOTICE 
 >
->- When  **[wal\_level](settings-60.md#en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  is set to  **minimal**, the  **archive\_mode**  parameter is unavailable.
+>- When  **[wal\_level](settings.md#en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  is set to  **minimal**, the  **archive\_mode**  parameter is unavailable.
 
 **Value range**: Boolean
 

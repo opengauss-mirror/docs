@@ -59,8 +59,7 @@ You can run the  **gs\_dbmind**  command to start an exporter. The following des
 >- When metrics are repeatedly collected, an exception occurs on openGauss-exporter, and the exception information is recorded in logs.
 >- When setting the  **--config**,  **--disable-settings-metrics**  and  **--disable-statement-history-metrics**  parameters of openGauss-exporter, please note that:
 >
->    1. If you do not specify any of them, the tool collects metrics in the three configuration files in the  **yamls**  directory at the same time.
->
+> 1. If you do not specify any of them, the tool collects metrics in the three configuration files in the  **yamls**  directory at the same time.
 > 2. If you explicitly specify  **--config**, the tool does not collect metrics in the  **default.yml**  file in the  **yamls**  directory, but collects metrics in the specified configuration file. In addition, metrics in the  **pg\_settings.yml**  and  **statements.yml**  files can be properly collected. In this case, ensure that the metrics in the specified configuration file and those in  **pg\_settings.yml**  and  **statements.yml**  are not repeatedly collected.
 > 3. If you explicitly specify  **--disable-settings-metrics**, the tool does not collect metrics in  **pg\_settings.yml**  in the  **yamls**  directory. If you explicitly specify  **--disable-statement-history-metrics**, the tool does not collect metrics in  **statements.yml**  \(related to slow SQL\) in the  **yamls**  directory.
 >

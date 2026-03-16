@@ -1,6 +1,6 @@
 # 三权分立<a name="ZH-CN_TOPIC_0289900233"></a>
 
-[默认权限机制](default_permission_mechanism.md)和[管理员](administrator.md)两节的描述基于的是数据库创建之初的默认情况。从前面的介绍可以看出，默认情况下拥有SYSADMIN属性的系统管理员，具备系统最高权限。
+[默认权限机制](default_permission_mechanism.md)和[管理员](administrators.md)两节的描述基于的是数据库创建之初的默认情况。从前面的介绍可以看出，默认情况下拥有SYSADMIN属性的系统管理员，具备系统最高权限。
 
 在实际业务管理中，为了避免系统管理员拥有过度集中的权利带来高风险，可以设置三权分立。将系统管理员的部分权限分立给安全管理员和审计管理员，形成系统管理员、安全管理员和审计管理员三权分立。
 
@@ -10,7 +10,7 @@
 
 初始用户的权限不受三权分立设置影响。因此建议仅将此初始用户作为DBA管理用途，而非业务应用。
 
-三权分立的设置办法为：将参数[enableSeparationOfDuty](../database_reference/action_trail.md#zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_s0a79ea55efa1431d8e3e06e4b8219cd6)设置为on。
+三权分立的设置办法为：将参数[enableSeparationOfDuty](../database_reference/operation_auditing.md#zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_s0a79ea55efa1431d8e3e06e4b8219cd6)设置为on。
 
 三权分立前的权限详情及三权分立后的权限变化，请分别参见[表1](#zh-cn_topic_0283137357_zh-cn_topic_0237121101_zh-cn_topic_0155089861_t58384b51e1fd4e67ab393f4bb6103a16)和[表2](#zh-cn_topic_0283137357_zh-cn_topic_0237121101_zh-cn_topic_0155089861_t12fe700a5db44d748cb0dc123012289b)。
 

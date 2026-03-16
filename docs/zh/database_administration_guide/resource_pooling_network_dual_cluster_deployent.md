@@ -455,4 +455,4 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
                 channel                        : 20.0.0.10:43350<--10.0.0.10:25400
 
     参数解释：
-    + sync_state: 同步状态，sync表示同步，Async表示异步，该状态由集群参数synchronous_standby_names控制。具体请参见[设置](../database_reference/setting.md)中的synchronous_standby_names参数说明。
+    + sync_state: 同步状态，sync表示同步，Async表示异步，该状态由集群参数synchronous_standby_names控制。具体请参见[设置](../database_reference/settings.md)中的synchronous_standby_names参数说明。

@@ -8,7 +8,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: an integer. The minimum value is  **1**.
 
-Increasing the value of this parameter speeds up the export of a large amount of data. Set this parameter based on  **[checkpoint\_timeout](#en-us_topic_0283137153_en-us_topic_0237124708_en-us_topic_0059778936_s880baa9f9b594980afbbe95fb8a77182)**  and  **[shared\_buffers](memory-35.md#en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_s55a43fb6d0464430a59031671b37cd07)**. This parameter affects the number of WAL segment files that can be reused. Generally, the maximum number of reused files in the  **pg\_xlog**  folder is twice the number of  **checkpoint\_segments**. The reused files are not deleted and are renamed to the WAL segment files which will be later used.
+Increasing the value of this parameter speeds up the export of a large amount of data. Set this parameter based on  **[checkpoint\_timeout](#en-us_topic_0283137153_en-us_topic_0237124708_en-us_topic_0059778936_s880baa9f9b594980afbbe95fb8a77182)**  and  **[shared\_buffers](memory.md#en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_s55a43fb6d0464430a59031671b37cd07)**. This parameter affects the number of WAL segment files that can be reused. Generally, the maximum number of reused files in the  **pg\_xlog**  folder is twice the number of  **checkpoint\_segments**. The reused files are not deleted and are renamed to the WAL segment files which will be later used.
 
 **Default value**:  **64**
 
@@ -20,7 +20,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range:**  an integer ranging from 30 to 3600. The unit is second.
 
-If the value of  **[checkpoint\_segments](#en-us_topic_0283137153_en-us_topic_0237124708_en-us_topic_0059778936_sbadc77895e6643b882a5e7557e405373)**  is increased, you need to increase the value of this parameter. The increase of these two parameters further requires the increase of  **[shared\_buffers](memory-35.md#en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_s55a43fb6d0464430a59031671b37cd07)**. Consider all these parameters during setting.
+If the value of  **[checkpoint\_segments](#en-us_topic_0283137153_en-us_topic_0237124708_en-us_topic_0059778936_sbadc77895e6643b882a5e7557e405373)**  is increased, you need to increase the value of this parameter. The increase of these two parameters further requires the increase of  **[shared\_buffers](memory.md#en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_s55a43fb6d0464430a59031671b37cd07)**. Consider all these parameters during setting.
 
 **Default value**:  **15min**
 

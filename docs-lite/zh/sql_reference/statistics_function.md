@@ -2948,7 +2948,7 @@
 
     >[!NOTE]说明
     >
-    >若GUC参数[enable\_memory\_limit](../database_reference/memory_31.md#zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_s2cf6c862bad443aea7e115ff83941f94)=off，该函数不能使用。
+    >若GUC参数[enable\_memory\_limit](../database_reference/memory.md#zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_s2cf6c862bad443aea7e115ff83941f94)=off，该函数不能使用。
 
     返回值类型：record
 

@@ -24,7 +24,7 @@ sections:
           - label: 物理备份与恢复
             href: ./physical_backup_and_restoration.md
           - label: 闪回恢复
-            href: ./flashback_recovery.md
+            href: ./flashback_restoration.md
           - label: 导出数据
             sections:
               - label: 概述

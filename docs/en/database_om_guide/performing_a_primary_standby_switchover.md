@@ -40,74 +40,74 @@ Run the following command to switch the standby database instance to the primary
 
 1. Queries database status.
 
-```
-gs_om -t status --detail
+    ```
+    gs_om -t status --detail
 
-[   Cluster State   ]
+    [   Cluster State   ]
 
-cluster_state   : Normal
-redistributing  : No
-current_az      : AZ_ALL
+    cluster_state   : Normal
+    redistributing  : No
+    current_az      : AZ_ALL
 
-[  Datanode State   ]
+    [  Datanode State   ]
 
-    node             node_ip         port      instance                            state
---------------------------------------------------------------------------------------------------
-1  pekpopgsci00235  10.244.62.204    5432      6001 /home/wuqw/cluster/dn1/   P Primary Normal
-2  pekpopgsci00238  10.244.61.81     5432      6002 /home/wuqw/cluster/dn1/   S Standby Normal
-```
+        node             node_ip         port      instance                            state
+    --------------------------------------------------------------------------------------------------
+    1  pekpopgsci00235  10.244.62.204    5432      6001 /home/wuqw/cluster/dn1/   P Primary Normal
+    2  pekpopgsci00238  10.244.61.81     5432      6002 /home/wuqw/cluster/dn1/   S Standby Normal
+    ```
 
-```
-gs_om -t status --detail
-[  CMServer State   ]
+    ```
+    gs_om -t status --detail
+    [  CMServer State   ]
 
-node      node_ip         instance                                 state
---------------------------------------------------------------------------
-1  host40 10.243.40.20    1    /usr1/cm_gauss/cluster/cm/cm_server Primary
-2  host39 10.243.39.8     2    /usr1/cm_gauss/cluster/cm/cm_server Standby
-3  host15 10.243.15.65    3    /usr1/cm_gauss/cluster/cm/cm_server Standby
+    node      node_ip         instance                                 state
+    --------------------------------------------------------------------------
+    1  host40 10.243.40.20    1    /usr1/cm_gauss/cluster/cm/cm_server Primary
+    2  host39 10.243.39.8     2    /usr1/cm_gauss/cluster/cm/cm_server Standby
+    3  host15 10.243.15.65    3    /usr1/cm_gauss/cluster/cm/cm_server Standby
 
-[    ETCD State     ]
+    [    ETCD State     ]
 
-node      node_ip         instance                         state
-------------------------------------------------------------------------
-1  host40 10.243.40.20    7001 /usr1/cm_gauss/cluster/etcd StateFollower
-2  host39 10.243.39.8     7002 /usr1/cm_gauss/cluster/etcd StateFollower
-3  host15 10.243.15.65    7003 /usr1/cm_gauss/cluster/etcd StateLeader
+    node      node_ip         instance                         state
+    ------------------------------------------------------------------------
+    1  host40 10.243.40.20    7001 /usr1/cm_gauss/cluster/etcd StateFollower
+    2  host39 10.243.39.8     7002 /usr1/cm_gauss/cluster/etcd StateFollower
+    3  host15 10.243.15.65    7003 /usr1/cm_gauss/cluster/etcd StateLeader
 
-[   Cluster State   ]
+    [   Cluster State   ]
 
-cluster_state   : Normal
-redistributing  : No
-balanced        : Yes
-current_az      : AZ_ALL
+    cluster_state   : Normal
+    redistributing  : No
+    balanced        : Yes
+    current_az      : AZ_ALL
 
-[  Datanode State   ]
+    [  Datanode State   ]
 
-node      node_ip         instance                        state            | node      node_ip         instance                        state            | node      node_ip         instance                        state
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1  host40 10.243.40.20    6001 /usr1/cm_gauss/cluster/dn1 P Primary Normal | 2  host39 10.243.39.8     6002 /usr1/cm_gauss/cluster/dn1 S Standby Normal | 3  host15 10.243.15.65    6003 /usr1/cm_gauss/cluster/dn1 S Standby Normal
+    node      node_ip         instance                        state            | node      node_ip         instance                        state            | node      node_ip         instance                        state
+    ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    1  host40 10.243.40.20    6001 /usr1/cm_gauss/cluster/dn1 P Primary Normal | 2  host39 10.243.39.8     6002 /usr1/cm_gauss/cluster/dn1 S Standby Normal | 3  host15 10.243.15.65    6003 /usr1/cm_gauss/cluster/dn1 S Standby Normal
 
-```
+    ```
 
 2. Log in to the standby node and perform a primary/standby switchover. In addition, after a cascaded standby node is switched over, the cascaded standby server becomes a standby server, and the original standby server becomes a cascaded standby server.
 
-```
-gs_ctl switchover -D /home/wuqw/cluster/dn1/
-[2020-06-17 14:28:01.730][24438][][gs_ctl]: gs_ctl switchover ,datadir is -D "/home/wuqw/cluster/dn1"
-[2020-06-17 14:28:01.730][24438][][gs_ctl]: switchover term (1)
-[2020-06-17 14:28:01.768][24438][][gs_ctl]: waiting for server to switchover............
-[2020-06-17 14:28:11.175][24438][][gs_ctl]: done
-[2020-06-17 14:28:11.175][24438][][gs_ctl]: switchover completed (/home/wuqw/cluster/dn1)
-```
+    ```
+    gs_ctl switchover -D /home/wuqw/cluster/dn1/
+    [2020-06-17 14:28:01.730][24438][][gs_ctl]: gs_ctl switchover ,datadir is -D "/home/wuqw/cluster/dn1"
+    [2020-06-17 14:28:01.730][24438][][gs_ctl]: switchover term (1)
+    [2020-06-17 14:28:01.768][24438][][gs_ctl]: waiting for server to switchover............
+    [2020-06-17 14:28:11.175][24438][][gs_ctl]: done
+    [2020-06-17 14:28:11.175][24438][][gs_ctl]: switchover completed (/home/wuqw/cluster/dn1)
+    ```
 
 3. Save the information about the primary and standby nodes in the database.
 
-```
-gs_om -t refreshconf
-Generating dynamic configuration file for all nodes.
-Successfully generated dynamic configuration file.
-```
+    ```
+    gs_om -t refreshconf
+    Generating dynamic configuration file for all nodes.
+    Successfully generated dynamic configuration file.
+    ```
 
 ## Troubleshooting<a name="en-us_topic_0283140544_en-us_topic_0237088791_en-us_topic_0059779253_s24c0d0766ecf46f1b90899bb6298d45b"></a>
 
