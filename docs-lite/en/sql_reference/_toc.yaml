@@ -82,7 +82,6 @@ sections:
       - label: Overview
         href: ./schemas-25.md
       - label: Information Schema
-        href: ./information-schema.md
         sections:
           - label: Introduction
             href: ./information-schema.md
