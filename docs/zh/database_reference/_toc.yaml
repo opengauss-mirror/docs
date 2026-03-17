@@ -122,11 +122,11 @@ sections:
       - label: 升级参数
         href: ./upgrade_parameters.md     
       - label: 其他选项
-        href: ./other_options.md
+        href: ./miscellaneous_parameters.md
       - label: 等待事件
         href: ./wait_event.md
       - label: Query
-        href: ./Query-22.md
+        href: ./query_62.md
       - label: 系统性能快照
         href: ./system_performance_snapshot.md
       - label: 安全配置
@@ -136,25 +136,25 @@ sections:
       - label: HyperLogLog
         href: ./hyperloglog.md
       - label: 用户自定义函数
-        href: ./user_defined_function_2.md
+        href: ./user_defined_functions.md
       - label: 定时任务
         href: ./scheduled_task.md
       - label: 线程池
         href: ./thread_pool.md
       - label: 备份恢复
-        href: ./backout_recovery.md
+        href: ./backup_and_restoration.md
       - label: DCF参数设置
         href: ./dcf_parameter_settings.md
       - label: 闪回相关参数
-        href: ./flashback_parameters.md
+        href: ./flashback.md
       - label: 回滚相关参数
-        href: ./parameters_related_to_rollback.md
+        href: ./rollback_parameters.md
       - label: 预留参数
         href: ./reserved_parameters.md
       - label: AI特性
-        href: ./ai_feature_guc.md
+        href: ./ai_features.md
       - label: Global SysCache参数
-        href: ./global_syscache_parameter.md
+        href: ./global_syscache_parameters.md
       - label: 多级缓存管理参数
         href: ./multi_level_cache_management_parameters.md
       - label: 资源池化参数
@@ -164,7 +164,7 @@ sections:
       - label: 高效数据压缩算法相关参数
         href: ./parameters_related_to_efficient_data_compression_algorithms.md
       - label: 备机支持写语句参数
-        href: ./the_backup_machine_supports_writing_statement_parameters.md
+        href: ./enabling_write_statements_on_standby_nodes.md
       - label: 大页内存
         href: ./huge_page_memory.md
       - label: 数据导入导出

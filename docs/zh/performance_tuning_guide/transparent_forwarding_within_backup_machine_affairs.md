@@ -14,7 +14,7 @@
 
 ## 特性描述<a name="section16406154310471"></a>
 
-本特性依赖[备机支持写特性](../database_reference/the_backup_machine_supports_writing_statement_parameters.md)。在资源池化架构下，当开启备机支持写特性后，备机上执行的显式事务(即begin,end包围的sql)，数据库会自动将事务中的涉及修改的写SQL语句转发给主机, 而事务中的读语句仍然在备机本地执行。
+本特性依赖[备机支持写特性](../database_reference/enabling_write_statements_on_standby_nodes.md)。在资源池化架构下，当开启备机支持写特性后，备机上执行的显式事务(即begin,end包围的sql)，数据库会自动将事务中的涉及修改的写SQL语句转发给主机, 而事务中的读语句仍然在备机本地执行。
 
 ## 特性增强<a name="section1340684315478"></a>
 
@@ -55,7 +55,7 @@
 
 ## 使用指导
 
-使用该特性需要在集群中所有节点配置GUC配置项`enable_remote_execute = on`，详细配置方法可参考[备机支持写语句参数](../database_reference/the_backup_machine_supports_writing_statement_parameters.md)。配置完成并重启数据库使其生效后，通过gsql或其他驱动连接到备机上，并在备机上执行包含写类型语句的事务操作，观察在备机上执行是否正常即可。
+使用该特性需要在集群中所有节点配置GUC配置项`enable_remote_execute = on`，详细配置方法可参考[备机支持写语句参数](../database_reference/enabling_write_statements_on_standby_nodes.md)。配置完成并重启数据库使其生效后，通过gsql或其他驱动连接到备机上，并在备机上执行包含写类型语句的事务操作，观察在备机上执行是否正常即可。
 
 ## 使用场景
 

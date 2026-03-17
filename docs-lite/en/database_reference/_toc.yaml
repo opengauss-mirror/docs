@@ -120,43 +120,43 @@ sections:
       - label: Upgrade Parameters
         href: ./upgrade_parameters.md
       - label: Miscellaneous Parameters
-        href: ./miscellaneous-parameters.md
+        href: ./miscellaneous_parameters.md
       - label: Wait Events
-        href: ./wait-events.md
+        href: ./wait_events.md
       - label: Query
-        href: ./query-37.md
+        href: ./query_62.md
       - label: System Performance Snapshot
-        href: ./system-performance-snapshot.md
+        href: ./system_performance_snapshot.md
       - label: Security Configuration
         href: ./security-configuration.md
       - label: Global Temporary Table
-        href: ./global-temporary-table.md
+        href: ./global_temporary_table.md
       - label: HyperLogLog
         href: ./hyperloglog.md
       - label: User-defined Functions
-        href: ./user-defined-functions-38.md
+        href: ./user_defined_functions.md
       - label: Scheduled Task
-        href: ./scheduled-task.md
+        href: ./scheduled_task.md
       - label: Thread Pool
-        href: ./thread-pool.md
+        href: ./thread_pool.md
       - label: Backup and Restoration
-        href: ./backup-and-restoration.md
+        href: ./backup_and_restoration.md
       - label: Undo
         href: ./undo.md
       - label: DCF Parameters Settings
-        href: ./dcf-parameters-settings.md
+        href: ./dcf_parameters_settings.md
       - label: Flashback
         href: ./flashback.md
       - label: Rollback Parameters
-        href: ./rollback-parameters.md
+        href: ./rollback_parameters.md
       - label: Reserved Parameters
-        href: ./reserved-parameters.md
+        href: ./reserved_parameters.md
       - label: AI Features
-        href: ./ai-features.md
+        href: ./ai_features.md
       - label: Global SysCache Parameters
-        href: ./global-syscache-parameters.md
+        href: ./global_syscache_parameters.md
       - label: Parameters Related to Efficient Data Compression Algorithms
-        href: ./parameters-related-to-efficient-data-compression-algorithms.md
+        href: ./parameters_related_to_efficient_data_compression_algorithms.md
   - label: System Catalogs and System Views
     sections:
       - label: Overview of System Catalogs and System Views
