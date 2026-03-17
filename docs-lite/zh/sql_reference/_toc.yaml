@@ -453,6 +453,8 @@ sections:
                 href: ./GLOBAL_SINGLE_FLUSH_DW_STATUS.md    
               - label: GLOBAL_CANDIDATE_STATUS
                 href: ./GLOBAL_CANDIDATE_STATUS.md
+              - label: PG_INDEXES_VERBOSE
+                href: ./pg_indexes_verbose.md
           - label: Lock
             sections:
               - label: LOCKS

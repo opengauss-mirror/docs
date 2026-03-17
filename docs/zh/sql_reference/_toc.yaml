@@ -515,6 +515,8 @@ sections:
                 href: ./global_single_flush_dw_status.md
               - label: GLOBAL_CANDIDATE_STATUS
                 href: ./global_candidate_status.md
+              - label: PG_INDEXES_VERBOSE
+                href: ./pg_indexes_verbose.md
           - label: Lock
             sections:
               - label: LOCKS
