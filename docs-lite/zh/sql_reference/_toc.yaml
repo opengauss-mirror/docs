@@ -554,7 +554,6 @@ sections:
                   - label: SQL Detail
                     href: ./sql_detail.md
       - label: PROC Coverage Schema
-        href: ./proc_coverage_schema.md
         sections:
           - label: 简介
             href: ./proc_coverage_schema.md
@@ -605,7 +604,6 @@ sections:
           - label: DBE_PLDEBUGGER.set_var
             href: ./dbe_pldebugger_set_var.md
       - label: DB4AI Schema
-        href: ./db4ai_schema.md
         sections:
           - label: 简介
             href: ./db4ai_schema.md
