@@ -4,7 +4,7 @@ Performance reports are generated based on the summary and statistics of WDR sna
 
 ## Prerequisites<a name="en-us_topic_0283137259_section128252205291"></a>
 
-A report can be generated after the WDR snapshot function is enabled (that is, [enable\_wdr\_snapshot](../database_reference/system-performance-snapshot.md#en-us_topic_0283137284_en-us_topic_0237124757_section983311682019) is set to **on**) and the number of snapshots is greater than or equal to 2.
+A report can be generated after the WDR snapshot function is enabled (that is, [enable\_wdr\_snapshot](../database_reference/system_performance_snapshot.md#en-us_topic_0283137284_en-us_topic_0237124757_section983311682019) is set to **on**) and the number of snapshots is greater than or equal to 2.
 
 ## Procedure<a name="en-us_topic_0283137259_section49941629132915"></a>
 

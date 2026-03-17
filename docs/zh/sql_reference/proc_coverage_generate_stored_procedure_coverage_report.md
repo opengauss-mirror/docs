@@ -4,15 +4,15 @@
 
 ## 前提条件
 
-参数[enable_proc_coverage](../database_reference/other_options.md#section14683125861213)为on时。
+参数[enable_proc_coverage](../database_reference/miscellaneous_parameters.md#section14683125861213)为on时。
 
 ## 操作步骤
 
-1. 设置[enable_proc_coverage](../database_reference/other_options.md#section14683125861213)参数为on，参数为SUSET类型，参照[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)方式设置。
+1. 设置[enable_proc_coverage](../database_reference/miscellaneous_parameters.md#section14683125861213)参数为on，参数为SUSET类型，参照[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)方式设置。
 2. 执行需要测试覆盖率的存储过程，会在postgres库下的[coverage.proc_coverage](./coverage_proc_coverage.md)表中记录覆盖率相关信息。schema pg_catalog下的存储过程不会被记录覆盖率。
 3. 执行如下命令，可在本地生成HTML格式的存储过程覆盖率报告。
    1. 连接postgres库。
-   2. 设置[enable_proc_coverage](../database_reference/other_options.md#section14683125861213)参数为on，参数为SUSET类型，参照[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)方式设置。
+   2. 设置[enable_proc_coverage](../database_reference/miscellaneous_parameters.md#section14683125861213)参数为on，参数为SUSET类型，参照[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)方式设置。
    3. 执行如下命令，设置报告格式。\a: 不显示表行列符号， \t: 不显示列名 ，\o: 指定输出文件。
 
       ```sql
