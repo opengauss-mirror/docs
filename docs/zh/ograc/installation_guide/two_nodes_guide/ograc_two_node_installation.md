@@ -20,6 +20,7 @@ oGRAC 两节点部署至少需要两台服务器，推荐硬件规格如下：
   * 磁盘可用空间：不少于 100 GB
 * 共享盘要求：
   * 需要至少4块裸LUN盘（且不能为分区LUN），所在存储节点与两台主机同一个组网，可直接访问；
+
 > **说明**：资源不足可能导致安装阶段失败，尤其是在共享存储和 CM 组件初始化时。
 
 ---
@@ -40,9 +41,11 @@ oGRAC 两节点部署至少需要两台服务器，推荐硬件规格如下：
 以下步骤需要 **在两台节点上分别执行，其需要root用户**，除非特别说明。
 
 ### 3.1 系统初始化
+>
 > **提示**：如下操作建议仅在测试或非生产环境中执行，如生产环境请咨询运维管理人员询问安全策略，请勿直接关闭防火墙。
 
 为避免 SELinux 和防火墙影响节点通信及数据库进程启动，需要对其进行处理。
+
 ```shell
 setenforce 0
 sed -i 's/^SELINUX=.*/SELINUX=disabled/' /etc/selinux/config
@@ -88,16 +91,21 @@ cd /data/ograc
 ---
 
 ### 4.2 下载安装包
+
 通过如下命令，可查看节点对应操作系统，获取对应架构安装包：
+
 ```shell
 cat /etc/os-release
 ```
 
 在节点 0，节点 1当前目录下，从如下网址获取所需架构安装包：
+
 ```shell
 https://download-opengauss.osinfra.cn/archive_test/oGRAC/1.0.0/
 ```
+
 如节点可以连接外网，可直接通过`wget`命令获得openEuler ARM版本的安装包：
+
 ```shell
 # 获得openEuler 20.03 ARM系统 oGRAC安装包
 wget https://download-opengauss.osinfra.cn/archive_test/oGRAC/1.0.0/openEuler20.03/arm/openGauss-oGRAC-openEuler20.03-aarch64-RELEASE.tgz
@@ -123,11 +131,13 @@ oGRAC 两节点集群需要使用共享存储，请提前在存储侧准备 **4 
 LUN容量可根据实际业务需要进行适当调整，性能敏感环境应保证数据盘、Redo盘足够大，避免不满足日志、业务数据需要，常规大小次序应满足`数据盘 > Redo盘 > 归档盘 > CM 仲裁盘`。
 
 通过下列命令查询分配的四块盘，得到所分配的四块盘的`scsi`或`wwn`开头的编号:
+
 ```shell
 ll /dev/disk/by-id
 ```
 
 随后将四块盘链接到如下目录：
+
 ```shell
 ln -s /dev/disk/by-id/scsi-disk1 /dev/dss-disk1 #数据盘
 ln -s /dev/disk/by-id/scsi-disk2 /dev/dss-disk2 #Redo盘
@@ -136,6 +146,7 @@ ln -s /dev/disk/by-id/scsi-disk4 /dev/gcc-disk #CM仲裁盘
 ```
 
 四块盘说明用途如下表所示：
+
 | 软链接       | 用途     | DSS 卷   | 建议大小 |
 | --------- | ------ | ------- | ---- |
 | gcc-disk  | CM 仲裁盘 | 不纳入lun管理组件管理 | 5G   |
@@ -200,6 +211,7 @@ systemctl enable --now chronyd
 systemctl restart chronyd  #若后续由于其他因素导致时间偏差过大，可通过该命令快速触发强制同步
 chronyc tracking
 ```
+
 ---
 
 ## 6. 配置安装参数
@@ -217,7 +229,7 @@ vim config_params_lun.json
 
 1. 两节点 `node_id` 必须分别为 `0` 和 `1`
 2. 内存较小的机器(如DCS虚拟机、内存小于300GB的物理机等)请设置 `auto_tune = 1`
-3.  `redo_num × redo_size × 2`应小于Redo盘大小；
+3. `redo_num × redo_size × 2`应小于Redo盘大小
 
 节点 0 示例（节点 1 仅需将 `node_id` 修改为 `1`）：
 
@@ -241,7 +253,9 @@ vim config_params_lun.json
   "gcc_home": "/dev/gcc-disk"
 }
 ```
+
  其中，各字段含义如下： 
+
  - deploy_mode：安装模式，当前应使用dss安装； 
  - deploy_user：安装管理用户； 
  - node_id：节点序号，从0开始； 
@@ -258,7 +272,9 @@ vim config_params_lun.json
 ---
 
 ## 7. 安装与启动集群
+
 安装部署中遇到的常见问题可以见`oGRAC安装部署常见问题定位与解决`章节。
+
 ### 7.1 安装节点
 
 在两节点先后执行，建议等待节点0安装完毕后，再进行节点1安装：
@@ -268,9 +284,11 @@ sh appctl.sh install config_params_lun.json
 ```
 
 在每次安装过程中，需要在如下阶段设置数据库`sys`用户密码：
+
 ```shell
 please enter ograc_sys_pwd:
 ```
+
 密码为字母、数字、特殊符号混合，不要求字母大写，两节点设置密码需相同。
 
 ---
@@ -282,6 +300,7 @@ please enter ograc_sys_pwd:
 ```shell
 sh appctl.sh start
 ```
+
 其中，节点 0首次start会创建redo、数据文件，时间较久，请耐心等待。节点 1首次start不涉及该过程，时间相对较小。
 
 ---
@@ -304,20 +323,26 @@ cms stat -res db
 `PRE_STAT`为先前节点状态，`TARGET_STAT`为理想状态，可作为故障场景下的参考状态。
 
 此时，可以在该集群上简单的验证数据库功能，在两个节点上分别执行：
+
 ```shell
 su -s /bin/bash ograc
 ogsql / as sysdba -q
 ```
+
 进入数据库命令终端，在其中一个节点上执行：
+
 ```shell
 create table test(a int);
 insert into test values(123);
 commit;
 ```
+
 随后在另一个节点上执行：
+
 ```shell
 select * from test;
 ```
+
 即可获得之前数据，由此可见数据库功能正常。
 
 ---
@@ -327,19 +352,26 @@ select * from test;
 集群安装成功后，可以参考[oGRAC两节点多写功能测试DEMO使用指南](./ograc_two_nodes_multiwrite_testdemo.md)，运行oGRAC两节点多写功能测试DEMO
 
 ## 9. 重新安装oGRAC
+
 如果需要在该环境上重新部署oGRAC，需要先停止集群后，进行卸载清理，方可重新安装；
+
 ### 9.1 停止服务
+
 分别在节点 0、节点 1在`/data/ograc/ograc_connector/action`目录下，以root用户执行以下命令停止节点。
+
 ```shell
 cd /data/ograc/ograc_connector/action
 sh appctl.sh stop
 ```
 
 ### 9.2 卸载清理
+
 随后，分别在节点 0、节点 1执行以下命令进行卸载：
+
 ```shell
 sh appctl.sh uninstall override
 ```
+
 随后即可更换包版本或修改配置文件，重新按照文档步骤进行安装。
 
 ---

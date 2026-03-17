@@ -49,8 +49,42 @@ sections:
     href: ./create_database.md
   - label: CREATE SEQUENCE
     href: ./create_sequence.md
+  - label: CREATE INDEX
+    href: ./create_index.md
   - label: DROP SEQUENCE
     href: ./drop_sequence.md
+  - label: CREATE TABLE
+    href: ./create_table.md
+  - label: CREATE TABLESPACE
+    href: ./create_tablespace.md
+  - label: CREATE TABLE
+    href: ./create_table_partition.md
+  - label: CREATE VIEW
+    href: ./create_view.md
+  - label: CREATE DIRECTORY
+    href: ./create_directory.md
+  - label: CREATE PROFILE
+    href: ./create_profile.md    
+  - label: CREATE SYNONYM 
+    href: ./create_synonym.md
+  - label:  DROP SYNONYM
+    href: ./drop_synonym.md     
+  - label:  DROP DIRECTORY
+    href: ./drop_directory.md    
+  - label: DROP INDEX
+    href: ./drop_index.md
+  - label: DROP TABLE
+    href: ./drop_table.md
+  - label: DROP TABLESPACE
+    href: ./drop_tablespace.md
+  - label: DROP TABLE PARTITION
+    href: ./drop_table_partition.md
+  - label: DROP VIEW
+    href: ./drop_view.md
+  - label: TRUNCATE TABLE
+    href: ./truncate_table.md
+  - label: SELECT
+    href: ./select.md
   - label: DDL
     sections:
       - label: CREATE USER
@@ -62,9 +96,9 @@ sections:
       - label: DROP USER
         href: ./ddl/drop_user.md
       - label: DROP PROFILE
-        href: ./ddl/drop_profile.md     
+        href: ./ddl/drop_profile.md
       - label: FLASHBACK TABLE
-        href: ./ddl/flashback_table.md      
+        href: ./ddl/flashback_table.md
   - label: DCL
     sections:
       - label: ROLLBACK
@@ -75,6 +109,12 @@ sections:
         href: ./dcl/revoke.md
       - label: SAVEPOINT
         href: ./dcl/savepoint.md
+      - label: SET TRANSACTION
+        href: ./dcl/set_transaction.md
+      - label: LOCK TABLE
+        href: ./dcl/lock_table.md
+      - label: SHUTDOWN
+        href: ./dcl/shutdown.md    
   - label: DML
     sections:
       - label: INSERT

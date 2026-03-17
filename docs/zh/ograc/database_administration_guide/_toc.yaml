@@ -3,12 +3,22 @@ isManual: true
 sections:
   - label: 数据对象管理
     sections:
+      - label: 表管理
+        href: ./data_object_management/table_management.md    
       - label: 表空间管理
         href: ./data_object_management/tablespace_management.md
       - label: 分区表管理
         href: ./data_object_management/artitioned_tables_management.md        
       - label: 视图管理
         href: ./data_object_management/view_management.md
+      - label: 日志管理
+        href: ./data_object_management/log_management.md
+      - label: Heap Management
+        href: ./data_object_management/heap_management.md
+      - label: 索引管理
+        href: ./data_object_management/index_management.md
+      - label: 参数说明
+        href: ./data_object_management/parameter_description.md
   - label: 数据库系统基本管理
     sections:   
       - label: 实例启停
