@@ -307,6 +307,8 @@ headless: true
 	    -   [连接数据库（SSL方式）]({{< relref "./docs/DeveloperGuide/连接数据库_SSL方式_Psycopg.md" >}})
 	    -   [示例：常用操作]({{< relref "./docs/DeveloperGuide/示例-常用操作_Psycopg.md" >}})
 	    -   [Psycopg接口参考]({{< relref "./docs/DeveloperGuide/Psycopg接口参考.md" >}})
+	-	[基于GO开发]({{< relref "./docs/DeveloperGuide/基于GO开发.md" >}})
+	    -   [示例：常用操作]({{< relref "./docs/DeveloperGuide/示例-常用操作_GO.md" >}})
 	-   [编译与调试]({{< relref "./docs/DeveloperGuide/编译与调试.md" >}})
 	
 -   [编译指南]({{< relref "./docs/CompilationGuide/Compilation.md" >}})
