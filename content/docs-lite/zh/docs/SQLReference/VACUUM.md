@@ -21,6 +21,7 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
 -   同时执行多个VACUUM FULL可能出现死锁。
 -   如果没有打开xc\_maintenance\_mode参数，那么VACUUM FULL操作将跳过所有系统表。
 -   执行DELETE后立即执行VACUUM FULL命令，可能不会回收空间，这取决于是否有DELETE事务之前开启的事务仍处于活跃状态。此时需要等待所有事务结束，或者重启数据库，再重新执行VACUUM FULL命令进行清理。
+-   VACUUM默认会尝试截断表末尾的空页面，并允许将截断页的磁盘空间返回到操作系统。这通常是需要的，并且是默认行为。但过程中会对表加ACCESS EXCLUSIVE锁，从而导致阻塞其他并发操作。若不希望VACUUM做截断操作，可通过设置GUC参数[vacuum\_truncate](../DatabaseReference/基于开销的清理延迟.md#vacuum_truncate)或者为表添加[vacuum\_truncate](CREATE-TABLE.md#zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428)选项来实现。
 
 ## 语法格式<a name="zh-cn_topic_0283137096_zh-cn_topic_0237122195_zh-cn_topic_0059777503_s6ae572813e4047dbafe371b136af69ae"></a>
 
