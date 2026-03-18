@@ -7,6 +7,8 @@ sections:
         href: ./mysql_compatible_description.md
       - label: MySQL语法兼容性评估工具
         href: ./mysql_assessment_tool.md
+      - label: MySQL与openGauss的数据类型对比
+        href: ./mysql_datatype_conversion.md
       - label: 迁移MySQL数据库至openGauss
         sections:
           - label: 概述

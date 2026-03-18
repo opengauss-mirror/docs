@@ -72,3 +72,71 @@ PostgreSQL数据迁移由Datakit的数据迁移插件提供，DataKit安装成�
 进入迁移任务中心，选择对应正在迁移的迁移任务，点击结束迁移。
 
 ![结束迁移任务](figures/结束迁移任务.png)
+
+## PostgreSQL与openGauss数据类型对比
+
+PostgreSQL迁移至openGauss数据类型映射关系如下：
+
+| pg类型                                  | og类型                                  | 备注                            |
+| --------------------------------------- | --------------------------------------- | ------------------------------- |
+| smallint                                | smallint                                |                                 |
+| integer                                 | integer                                 |                                 |
+| bigint                                  | bigint                                  |                                 |
+| decimal                                 | decimal                                 |                                 |
+| numeric                                 | numeric                                 |                                 |
+| real                                    | real                                    |                                 |
+| double precision                        | double precision                        |                                 |
+| smallserial                             | smallserial                             |                                 |
+| serial                                  | serial                                  |                                 |
+| bigserial                               | bigserial                               |                                 |
+| money                                   | money                                   |                                 |
+| varchar(n) character varying(n)         | varchar(n) character varying(n)         |                                 |
+| char(n), character(n)                   | char(n), character(n)                   |                                 |
+| varchar                                 | varchar                                 |                                 |
+| char                                    | char                                    |                                 |
+| text                                    | text                                    |                                 |
+| name                                    | name                                    |                                 |
+| bytea                                   | bytea                                   |                                 |
+| timestamp [ (p) ] [ without time zone ] | timestamp [ (p) ] [ without time zone ] |                                 |
+| timestamp [ (p) ] with time zone        | timestamp [ (p) ] with time zone        |                                 |
+| timestamp without time zone             | timestamp(6) without time zone          | pg侧创建时不带精度，默认精度为6 |
+| timestamp with time zone                | timestamp(6) with time zone             | pg侧创建时不带精度，默认精度为6 |
+| date                                    | date                                    |                                 |
+| time [ (p) ] [ without time zone ]      | time [ (p) ] [ without time zone ]      |                                 |
+| time [ (p) ] with time zone             | time [ (p) ] with time zone             |                                 |
+| time without time zone                  | time(6) without time zone               | pg侧创建时不带精度，默认精度为6 |
+| time with time zone                     | time(6) with time zone                  | pg侧创建时不带精度，默认精度为6 |
+| interval [ fields ] [ (p) ]             | interval [ fields ] [ (p) ]             |                                 |
+| interval                                | interval(6)                             | pg侧创建时不带精度，默认精度为6 |
+| boolean                                 | boolean                                 |                                 |
+| oid                                     | oid                                     |                                 |
+| enum                                    | enum                                    |                                 |
+| point                                   | point                                   |                                 |
+| line                                    | varchar                                 | og不支持，转换成varchar类型     |
+| lseg                                    | lseg                                    |                                 |
+| box                                     | box                                     |                                 |
+| path                                    | path                                    |                                 |
+| polygon                                 | polygon                                 |                                 |
+| circle                                  | circle                                  |                                 |
+| cidr                                    | cidr                                    |                                 |
+| inet                                    | inet                                    |                                 |
+| macaddr                                 | macaddr                                 |                                 |
+| bit                                     | bit(1)                                  | pg侧bit默认精度为1              |
+| bit(n)                                  | bit(n)                                  |                                 |
+| bit varying(n)                          | bit varying(n)                          |                                 |
+| tsvector                                | tsvector                                |                                 |
+| tsquery                                 | tsquery                                 |                                 |
+| uuid                                    | uuid                                    |                                 |
+| xml                                     | xml                                     |                                 |
+| json                                    | json                                    |                                 |
+| jsonb                                   | jsonb                                   |                                 |
+| array                                   | array                                   |                                 |
+| Composite Types（组合类型）             | Composite Types                         |                                 |
+| int4range                               | int4range                               |                                 |
+| int8range                               | int8range                               |                                 |
+| numrange                                | numrange                                |                                 |
+| tsrange                                 | tsrange                                 |                                 |
+| tstzrange                               | tstzrange                               |                                 |
+| daterange                               | daterange                               |                                 |
+| 域类型                                  | 域类型                                  |                                 |
+| pg_lsn                                  | varchar                                 | og不支持，使用varchar替代       |
