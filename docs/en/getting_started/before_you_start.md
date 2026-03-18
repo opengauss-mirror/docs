@@ -144,7 +144,7 @@ openGauss is running properly.
 
     **Note:**
 
-    - By default, new database objects, such as the  **mytable**  table, are created in the  _$user_  schema. For more details about schemas, see  [Creating and Managing Schemas](../database_administration_guide/creating_and_managing_schema.md).
+    - By default, new database objects, such as the  **mytable**  table, are created in the  _$user_  schema. For more details about schemas, see  [Creating and Managing Schemas](../database_administration_guide/creating_tables.md).
     - For more details about how to create a table, see  [Creating and Managing Tables](../database_administration_guide/creating_tables.md).
     - In addition to the created tables, a database contains many system catalogs. These system catalogs contain openGauss installation information and information about various queries and processes in openGauss. You can collect information about the database by querying system catalogs. For details, see  [Querying System Catalogs](../database_reference/querying_a_system_catalog.md).
 
