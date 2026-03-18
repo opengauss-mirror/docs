@@ -1,6 +1,6 @@
 # Numeric Types<a name="EN-US_TOPIC_0289900280"></a>
 
-For details about arithmetic operators and related built-in functions, see [Arithmetic Functions and Operators](dolphin-arithmetic-functions-and-operators.md).
+For details about arithmetic operators and related built-in functions, see [Arithmetic Functions and Operators](dolphin_arithmetic_functions_and_operators.md).
 
 Compared with the original openGauss, Dolphin modifies the arithmetic types as follows:
 

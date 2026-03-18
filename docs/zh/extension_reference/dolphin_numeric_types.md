@@ -1,6 +1,6 @@
 # 数值类型
 
-数字操作符和相关的内置函数请参见[数字操作函数和操作符](dolphin-数字操作函数和操作符.md)。
+数字操作符和相关的内置函数请参见[数字操作函数和操作符](dolphin_arithmetic_functions_and_operators.md)。
 
 相比于原始的openGauss，dolphin对于数值类型的修改主要为:
 
