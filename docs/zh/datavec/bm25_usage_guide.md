@@ -18,7 +18,7 @@ BM25全文检索索引对普通表的文档列构建全文索引，实现对文�
     -- 设置并行构建线程数，设置范围1~32。不设置该参数时，默认单线程构建
     ALTER TABLE {表名称} SET(parallel_workers=32);
     
-    -- 给指定标的指定文档列构建BM25索引
+    -- 给指定表的指定文档列构建BM25索引
     CREATE INDEX {索引名称} on {表名称} using bm25({文档列名称});
     ```
 
@@ -105,7 +105,7 @@ ALTER TABLE
 openGauss=# EXPLAIN SELECT /*+ indexscan (bm25_table bm25_index)*/ *, document <&> '香蕉' AS score FROM bm25_table ORDER BY document <&> '香蕉' DESC;
                        QUERY PLAN                        
 ---------------------------------------------------------
- Index Scan uing bm25_index on bm25_table  (cost=0.00..7.11 rows=1238 width=36)
+ Index Scan using bm25_index on bm25_table  (cost=0.00..7.11 rows=1238 width=36)
     Order by: (document <&> '香蕉'::text)
 (2 rows)
 
