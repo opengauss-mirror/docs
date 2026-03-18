@@ -62,7 +62,7 @@ openGauss向量数据库DataVec现在已支持的向量索引数据结构主要�
  HNSW-RabitQ|m=16, ef_construction=200，重排类型（FP32） | 385.091
  HNSW-PQ|m=16, ef_construction=200，pq_m=96 | 855.75
  DiskANN |index_size=50 | 2070.25
- DiskANN-PQ| index_size=50,0q_m=192,max_degree=96| 4695.41
+ DiskANN-PQ| index_size=50,pq_m=192| 4695.41
 
 一般结论如下：
 
@@ -85,7 +85,7 @@ openGauss向量数据库DataVec现在已支持的向量索引数据结构主要�
  HNSW-PQ|m=16, ef_construction=200，pq_m=96,,ef_search=400,hnsw_earlystop_threshold=160 | 0.989 | 628.361
  HNSW + MMAP|m=16, ef_construction=200,ef_search=400 | 0.9956 | 620.1976
  DiskANN |index_size=50 | 0.9923 | 218.7175
- DiskANN-PQ| index_size=50,0q_m=192,max_degree=96| 0.9917| 281.388
+ DiskANN-PQ| index_size=50,pq_m=192| 0.9917| 281.388
 
 一般结论如下：
 
@@ -107,7 +107,7 @@ openGauss向量数据库DataVec现在已支持的向量索引数据结构主要�
  HNSW-RabitQ|m=16, ef_construction=200，重排类型（FP32） | 395MB
  HNSW-PQ|m=16, ef_construction=200，pq_m=96 | 3908MB
  DiskANN |index_size=50 | 7813MB
- DiskANN-PQ| index_size=50,0q_m=192,max_degree=96| 7815MB
+ DiskANN-PQ| index_size=50,pq_m=192| 7815MB
 
 一般结论如下：
 
@@ -118,3 +118,64 @@ openGauss向量数据库DataVec现在已支持的向量索引数据结构主要�
 >[!NOTE]说明
 >
 >以上数据并不覆盖所有场景，建议根据实际情况尝试不同索引，以确定当前业务适合的索引类型。<br>
+
+## 向量索引构建&查询示例
+
+这里仅提供sql示例，具体的参数设置请点击`概述`表格中各类索引算法介绍的文档链接进行查看。
+
+- hnsw相关示例
+
+```sql
+--构建hnsw索引
+openGauss=# CREATE INDEX ON items USING hnsw (embedding vector_l2_ops) WITH (m = 16, ef_construction = 64);
+--构建带pq的hnsw索引
+openGauss=# CREATE INDEX ON items USING hnsw (embedding  vector_l2_ops) WITH (m = 16, ef_construction = 64，enable_pq=on, pq_m=16);
+--构建带rabitq的hnsw索引
+openGauss=# SET rbq_sample_rows = 2000;
+openGauss=# CREATE INDEX ON items USING hnsw (embedding vector_l2_ops) WITH (m = 16, ef_construction = 64，enable_rabitq=on, rabitq_refine_type='FP32', rabitq_fht=on);
+
+--l2距离向量查询（hnsw和hnsw-pq适用）
+openGauss=# SET hnsw_ef_search = 100;  --查询候选集相关参数
+openGauss=# SET hnsw_earlystop_threshold = 320; --早停参数
+openGauss=# SELECT id, embedding <-> '[1,2,3,4,5]'::vector AS distance FROM items ORDER BY distance limit 10;
+
+--l2距离向量查询（hnsw-rabitq适用）
+openGauss=# SET rbq_query_bits = 8;
+openGauss=# SET rbq_refinek = 10;
+openGauss=# SET hnsw_ef_search = 100;  --查询候选集相关参数
+openGauss=# SELECT id, embedding <-> '[1,2,3,4,5]'::vector AS distance FROM items ORDER BY distance limit 10;
+```
+
+- ivfflat相关示例
+
+```sql
+--构建ivfflat索引
+CREATE INDEX ON items USING ivfflat (embedding vector_l2_ops) WITH (lists = 200);
+--构建带pq的ivfflat索引
+openGauss=# CREATE INDEX ON items USING ivfflat (embedding  vector_l2_ops) WITH (lists = 200，enable_pq=on, pq_m=16);
+--构建带rabitq的ivfflat索引
+openGauss=# SET rbq_sample_rows = 2000;
+openGauss=# CREATE INDEX ON items USING ivfflat (embedding vector_l2_ops) WITH (lists = 200，enable_rabitq=on, rabitq_refine_type='FP32', rabitq_fht=on);
+
+--l2距离向量查询（ivfflat和ivfflat-pq适用）
+openGauss=# SET ivfflat_probes = 10;
+openGauss=# SELECT id, embedding <-> '[1,2,3,4,5]'::vector AS distance FROM items ORDER BY distance limit 10;
+--l2距离向量查询（ivfflat-rabitq适用）
+openGauss=# SET rbq_query_bits = 8;
+openGauss=# SET rbq_refinek = 10;
+openGauss=# SET ivfflat_probes = 10;  --查询候选集相关参数
+openGauss=# SELECT id, embedding <-> '[1,2,3,4,5]'::vector AS distance FROM items ORDER BY distance limit 10;
+```
+
+- diskann相关示例
+
+```sql
+--构建diskann索引
+openGauss=# CREATE INDEX ON items USING diskann (embedding vector_l2_ops) WITH (index_size = 50);
+--构建带pq的diskann索引
+openGauss=# CREATE INDEX ON items USING diskann (embedding  vector_l2_ops) WITH (index_size = 16,enable_pq = on, pq_m = 2);
+
+--l2距离向量查询
+openGauss=# SET diskann_probes = 10;
+openGauss=# SELECT id, embedding <-> '[1,2,3,4,5]'::vector AS distance FROM items ORDER BY distance limit 10;
+```
