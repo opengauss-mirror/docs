@@ -23,7 +23,7 @@
 
 ## 支持特性
 
-- 从openGauss 5.0.1开始，支持兼容性B库，详细参考[dolphin插件](../extension_reference/dolphin概述.md)。
+- 从openGauss 5.0.1开始，支持兼容性B库，详细参考[dolphin插件](../extension_reference/dolphin.md)。
   
 ## 约束
 

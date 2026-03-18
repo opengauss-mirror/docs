@@ -278,7 +278,7 @@ openGauss=# select now();
 
 ## dolphin.default\_week\_format<a name="section203671436823"></a>
 
-**参数说明**：参数值为整数，该参数影响dolphin插件中的```week```函数，该参数的取值范围为[0,7]，分别对应8种不同的计算策略，这些策略的详细内容参见[时间/日期函数](dolphin-时间和日期处理函数和操作符.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)中的```week```函数说明。当此GUC参数设置的值超过对应边界值时，会报warning，并且将此GUC参数的值设置为对应边界值。
+**参数说明**：参数值为整数，该参数影响dolphin插件中的```week```函数，该参数的取值范围为[0,7]，分别对应8种不同的计算策略，这些策略的详细内容参见[时间/日期函数](dolphin_date_and_time_processing_functions_and_operators.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)中的```week```函数说明。当此GUC参数设置的值超过对应边界值时，会报warning，并且将此GUC参数的值设置为对应边界值。
 
 该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
@@ -461,39 +461,39 @@ dayname
 
 当前影响的操作符有：
 
-1. [四则运算操作符兼容](dolphin-四则运算操作符兼容.md)
-2. (字符类型异或) [^](dolphin-字符处理函数和操作符.md)
-3. (数字类型异或) [^](dolphin-数字操作函数和操作符.md)
-4. [&&](dolphin-逻辑操作符.md)
+1. [四则运算操作符兼容](dolphin_compatible_operators_and_operations.md)
+2. (字符类型异或) [^](dolphin_character_processing_functions_and_operators.md)
+3. (数字类型异或) [^](dolphin_arithmetic_functions_and_operators.md)
+4. [&&](dolphin_logical_operators.md)
 5. [#](dolphin-注释操作符.md)
-6. [!](dolphin-字符处理函数和操作符.md)
+6. [!](dolphin_character_processing_functions_and_operators.md)
 7. [JSON操作符](dolphin-JSON操作符兼容.md)
 
 影响的函数有：
 
-1. [LAST_DAY](dolphin-时间和日期处理函数和操作符.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
-2. [TIMESTAMPDIFF](dolphin-时间和日期处理函数和操作符.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
-3. [FORMAT](dolphin-字符处理函数和操作符.md)
-4. [EXTRACT](dolphin-时间和日期处理函数和操作符.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
-5. [CAST](dolphin-类型转换函数.md)
-6. [exp](dolphin-数字操作函数和操作符.md)
-7. [convert](dolphin-字符处理函数和操作符.md)
-8. [json_object](dolphin-JSON-JSONB函数和操作符.md)
+1. [LAST_DAY](dolphin_date_and_time_processing_functions_and_operators.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
+2. [TIMESTAMPDIFF](dolphin_date_and_time_processing_functions_and_operators.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
+3. [FORMAT](dolphin_character_processing_functions_and_operators.md)
+4. [EXTRACT](dolphin_date_and_time_processing_functions_and_operators.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
+5. [CAST](dolphin_type_conversion_functions.md)
+6. [exp](dolphin_arithmetic_functions_and_operators.md)
+7. [convert](dolphin_character_processing_functions_and_operators.md)
+8. [json_object](dolphin_json_jsonb_functions_and_operators.md)
 
 其他影响的功能：
 
 1. [?](dolphin-PREPARE.md#zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd)
 2. [CREATE INDEX](dolphin-CREATE-INDEX.md#zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s31780559299b4f62bec935a2c4679b84)
-3. [TINYBLOB, BLOB, MEDIUMBLOB, LONGBLOB的输入功能](dolphin-二进制类型.md#zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_t910f42f45b374d94afe2798c42fc5ef6)
-4. [影响日期类型时间类型（Date、Time、Timestamp、DateTime等）显式转换或者Function转换时输入值为非法值时的输出值](dolphin-日期-时间类型.md)
+3. [TINYBLOB, BLOB, MEDIUMBLOB, LONGBLOB的输入功能](dolphin_binary_types.md#zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_t910f42f45b374d94afe2798c42fc5ef6)
+4. [影响日期类型时间类型（Date、Time、Timestamp、DateTime等）显式转换或者Function转换时输入值为非法值时的输出值](dolphin_date_time_types.md)
 5. 默认排序功能：控制ORDER BY排序中NULL是否为最小值。当参数为ON且dolphin.nulls_minimal_policy为ON时，表示NULL为最小值，反之表示保持内核原有能力：NULL为最大值。
-6. [数据类型转换](dolphin-类型转换.md)
+6. [数据类型转换](dolphin_type_conversion.md)
 7. [CREAET DATABASE](dolphin-CREATE-DATABASE.md)
 8. [ALTER DATABASE](dolphin-ALTER-DATABASE.md)
 9. [DROP DATABASE](dolphin-DROP-DATABASE.md)
 10. [SELECT](dolphin-SELECT.md)
 11. IS [NOT] UNKNOWN子句：该子句含义为判断是否为空，参数控制是否转换为bool类型之后再判断。ON表示不转换，OFF表示转换。
-12. [布尔类型](dolphin-布尔类型.md)
+12. [布尔类型](dolphin_boolean_types.md)
 
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
@@ -1084,8 +1084,8 @@ openGauss=# show max_error_count;
 **参数说明**：控制兼容MySQL的版本。
 
 当前影响的函数响的函数有：
-1.[DATE_ADD](dolphin-时间和日期处理函数和操作符.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
-2.[DATE_SUB](dolphin-时间和日期处理函数和操作符.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
+1.[DATE_ADD](dolphin_date_and_time_processing_functions_and_operators.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
+2.[DATE_SUB](dolphin_date_and_time_processing_functions_and_operators.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
 
  该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
