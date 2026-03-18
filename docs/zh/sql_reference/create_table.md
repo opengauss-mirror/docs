@@ -487,6 +487,14 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         取值范围：on/off。
     
         默认值：off。
+
+    - vacuum\_truncate
+    
+        参数开启：VACUUM/AUTOVACUUM过程中尝试截断表末尾的空页面，并允许将截断页的磁盘空间返回到操作系统。仅非段页式的Astore表支持该选项。
+    
+        取值范围：on/off。
+    
+        默认值：on。
   
   + collate
   

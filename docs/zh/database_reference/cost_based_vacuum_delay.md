@@ -68,3 +68,16 @@
 **取值范围**： 整型，1\~10000。
 
 **默认值**： 200
+
+## vacuum\_truncate<a id="vacuum_truncate"></a>
+
+**参数说明**： 指定VACUUM/AUTOVACUUM过程中是否尝试截断表末尾的空页面，并允许将截断页的磁盘空间返回到操作系统。这通常是需要的，并且是默认行为。但过程中会对表加ACCESS EXCLUSIVE锁，从而导致阻塞其他并发操作。单个表上的[vacuum\_truncate](../sql_reference/create_table.md#zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428)选项优先于本参数生效。该参数仅对非段页式的Astore表生效，对Ustore、列存表、段页式表、MOT等其他存储引擎不生效。
+
+该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**：布尔型
+
+- on表示在VACUUM/AUTOVACUUM过程中将尝试截断表末尾的空页面
+- off表示在VACUUM/AUTOVACUUM过程中不会尝试截断表末尾的空页面
+
+**默认值**：on
