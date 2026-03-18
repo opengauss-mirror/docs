@@ -160,9 +160,9 @@ sections:
   - label: System Catalogs and System Views
     sections:
       - label: Overview of System Catalogs and System Views
-        href: ./overview-of-system-catalogs-and-system-views.md
+        href: ./overview_of_system_catalogs_and_system_views.md
       - label: Querying a System Catalog
-        href: ./querying-a-system-catalog.md
+        href: ./querying_a_system_catalog.md
       - label: System Catalogs
         sections:
           - label: GS_ASP
@@ -624,9 +624,9 @@ sections:
   - label: Error Code Reference
     sections:
       - label: Description of SQL Error Codes
-        href: ./description-of-sql-error-codes.md
+        href: ./description_of_sql_error_codes.md
       - label: Third-Party Library Error Codes
-        href: ./third-party-library-error-codes.md
+        href: ./third_party_library_error_codes.md
       - label: GAUSS-00001 -- GAUSS-00100
         sections:
           - label: GAUSS-00001 -- GAUSS-00010
