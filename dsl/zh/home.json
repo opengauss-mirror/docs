@@ -161,7 +161,7 @@
         {
           "title": "数据库参考",
           "desc": "介绍openGauss的GUC参数，错误码等",
-          "href": "/zh/docs/latest/database_reference/guc_application_note.html"
+          "href": "/zh/docs/latest/database_reference/guc_parameter_usage.html"
         },
         {
           "title": "工具和命令参考",
