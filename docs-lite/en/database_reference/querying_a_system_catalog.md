@@ -2,7 +2,7 @@
 
 In addition to the created tables, a database contains many system catalogs. These system catalogs contain openGauss installation information and information about various queries and processes in openGauss. You can collect information about the database by querying system catalogs.
 
-In [System Catalogs and System Views](overview-of-system-catalogs-and-system-views.md), the description about each table indicates whether the table is visible to all users or only the initial user. To query tables that are visible only to the initial user, log in as the user.
+In [System Catalogs and System Views](overview_of_system_catalogs_and_system_views.md), the description about each table indicates whether the table is visible to all users or only the initial user. To query tables that are visible only to the initial user, log in as the user.
 
 openGauss provides the following types of system catalogs and views:
 

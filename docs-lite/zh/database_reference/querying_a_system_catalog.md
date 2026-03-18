@@ -1,8 +1,8 @@
-# 查看系统表
+# 查看系统表<a name="ZH-CN_TOPIC_0289900778"></a>
 
 除了创建的表以外，数据库还包含很多系统表。这些系统表包含openGauss安装信息以及openGauss上运行的各种查询和进程的信息。可以通过查询系统表来收集有关数据库的信息。
 
-[查看系统表和系统视图](system_table_and_system_view_overview.md)中每个表的说明指出了表是对所有用户可见还是只对初始化用户可见。必须以初始化用户身份登录才能查询只对初始化用户可见的表。
+“[查看系统表和系统视图](overview_of_system_catalogs_and_system_views.md)”中每个表的说明指出了表是对所有用户可见还是只对初始化用户可见。必须以初始化用户身份登录才能查询只对初始化用户可见的表。
 
 openGauss提供了以下类型的系统表和视图：
 
@@ -14,7 +14,7 @@ openGauss提供了以下类型的系统表和视图：
 
     这类系统表和视图具有GS前缀。
 
-## 查看数据库中包含的表<a name="zh-cn_topic_0237120304_zh-cn_topic_0100315815_section371043012532"></a>
+## 查看数据库中包含的表<a name="zh-cn_topic_0283136670_zh-cn_topic_0237120304_zh-cn_topic_0100315815_section371043012532"></a>
 
 例如，在PG\_TABLES系统表中查看public schema中包含的所有表。
 
@@ -36,7 +36,7 @@ SELECT distinct(tablename) FROM pg_tables WHERE SCHEMANAME = 'public';
 (6 rows)
 ```
 
-## 查看数据库用户<a name="zh-cn_topic_0237120304_zh-cn_topic_0100315815_section522012906"></a>
+## 查看数据库用户<a name="zh-cn_topic_0283136670_zh-cn_topic_0237120304_zh-cn_topic_0100315815_section522012906"></a>
 
 通过PG\_USER可以查看数据库中所有用户的列表，还可以查看用户ID（USESYSID）和用户权限。
 
@@ -45,28 +45,20 @@ SELECT * FROM pg_user;
 ```
 
 ```
-              usename              | usesysid | usecreatedb | usesuper | usecatupd | userepl |  passwd  | valbegin | valuntil |   respool
-    | parent | spacelimit | useconfig
------------------------------------+----------+-------------+----------+-----------+---------+----------+----------+----------+----------
-----+--------+------------+-----------
-dfc22b86afbd9a745668c3ecd0f15ec18 |    17107 | f           | f        | f         | f       | ******** |          |          | default_p
-ool |      0 |            |
-guest                             |    17103 | f           | f        | f         | f       | ******** |          |          | default_p
-ool |      0 |            |
-omm                              |       10 | t           | t        | t         | t       | ******** |          |          | default_p
-ool |      0 |            |
-omm                           |    16404 | f           | f        | f         | f       | ******** |          |          | default_p
-ool |      0 |            |
-lily                              |    16482 | f           | f        | f         | f       | ******** |          |          | default_p
-ool |      0 |            |
-jack                              |    16478 | f           | f        | f         | f       | ******** |          |          | default_p
-ool |      0 |            |
-
-
-(6 rows)
+ usename | usesysid | usecreatedb | usesuper | usecatupd | userepl |  passwd  | valbegin |
+ valuntil |   respool    | parent | spacelimit | useconfig | nodegroup | tempspacelimit |
+spillspacelimit
+---------+----------+-------------+----------+-----------+---------+----------+----------+
+----------+--------------+--------+------------+-----------+-----------+----------------+-
+----------------
+ omm     |       10 | t           | t        | t         | t       | ******** |          |
+          | default_pool |      0 |            |           |           |                |
+ joe     |    16806 | f           | f        | f         | f       | ******** |          |
+          | default_pool |      0 |            |           |           |                |
+(2 rows)
 ```
 
-## 查看和停止正在运行的查询语句<a name="zh-cn_topic_0237120304_zh-cn_topic_0100315815_section1642584412912"></a>
+## 查看和停止正在运行的查询语句<a name="zh-cn_topic_0283136670_zh-cn_topic_0237120304_zh-cn_topic_0100315815_section1642584412912"></a>
 
 通过视图[PG\_STAT\_ACTIVITY](PG_STAT_ACTIVITY.md)可以查看正在运行的查询语句。方法如下：
 
@@ -125,11 +117,12 @@ ool |      0 |            |
     FATAL:  terminating connection due to administrator command
     ```
 
-    >[!NOTE]说明  
-    >gsql客户端使用PG\_TERMINATE\_BACKEND函数结束当前会话后台线程时，客户端不会退出而是自动重连。即还会返回“The connection to the server was lost. Attempting reset: Succeeded.”  
+    >[!NOTE]说明
+    >
+    >gsql客户端使用PG\_TERMINATE\_BACKEND函数结束当前会话后台线程时，客户端不会退出而是自动重连。即还会返回“The connection to the server was lost. Attempting reset: Succeeded.”
 >
-    >```  
-    >FATAL:  terminating connection due to administrator command  
-    >FATAL:  terminating connection due to administrator command  
-    >The connection to the server was lost. Attempting reset: Succeeded.  
-    >```  
+    >```
+    >FATAL:  terminating connection due to administrator command
+    >FATAL:  terminating connection due to administrator command
+    >The connection to the server was lost. Attempting reset: Succeeded.
+    >```
