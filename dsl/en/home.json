@@ -142,7 +142,7 @@
         {
           "title": "Database Reference",
           "desc": "Get a clear-cut guide to all openGauss GUC parameters and error codes.",
-          "href": "/en/docs/latest/database_reference/guc-parameter-usage.html"
+          "href": "/en/docs/latest/database_reference/guc_parameter_usage.html"
         },
         {
           "title": "Tool and Command Reference",
