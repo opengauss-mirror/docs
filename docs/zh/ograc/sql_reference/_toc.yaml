@@ -39,6 +39,8 @@ sections:
     href: ./alter_table.md
   - label: ALTER USER 使用说明
     href: ./alter_user.md
+  - label: WHERE子句
+    href: ./where.md
   - label: ANALYZE
     href: ./analyse.md
   - label: COMMENT ON
