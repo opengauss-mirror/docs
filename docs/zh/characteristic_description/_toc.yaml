@@ -291,6 +291,8 @@ sections:
         href: ./advanced_features/parallel_query.md  
       - label: UWAL
         href: ./advanced_features/uwal.md  
+      - label: oGRecorder
+        href: ./advanced_features/oGRecorder.md  
   - label: AI特性
     sections:
       - label: "AI4DB: 数据库自治运维"
