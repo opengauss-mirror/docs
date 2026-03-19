@@ -2247,7 +2247,7 @@ DELIMITER命令为为客户端设置一个分隔符。当用户设置分隔符�
     此种情况定位较难，可以尝试使用Linux的跟踪命令：strace。
 
     ```
-    strace gsql -U MyUserName -W MyPassWord -d postgres -h 127.0.0.1 -p 23508 -r -c '\q'
+    strace gsql -U MyUserName -W xxxxxx -d postgres -h 127.0.0.1 -p 23508 -r -c '\q'
     ```
 
     此时便会在屏幕上打印出数据库的连接过程。比如较长时间停留在下面的操作上：

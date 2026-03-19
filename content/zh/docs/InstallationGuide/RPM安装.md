@@ -42,7 +42,7 @@
 
 ## 使用说明
 
-1. 切换到opengauss用户 `su - opengauss`
+1. 切换到opengauss用户 `su - opengauss`，执行 `gs_ctl start`
    
 2. 查看进程 `ps ux`, 可以看到，二进制安装目录在 `/usr/local/opengauss`下，默认启动的数据目录在`/var/lib/opengauss/data`目录下。
 
@@ -57,4 +57,4 @@
 3. 升级时，只能升级默认安装下的数据库，并且保证数据库进程正常。
 
 4. 升级的数据库的命令是
-    `yum install opengauss -y` 或者 `yum update openguass -y`
+    `yum install opengauss -y` 或者 `yum update opengauss -y`

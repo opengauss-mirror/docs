@@ -48,16 +48,16 @@ password_option: {
 
 ```
 --Changes the password of the specified user.
-openGauss=# create user user1 with password 'abcd@123';
+openGauss=# create user user1 with password 'xxxxxx';
 CREATE ROLE
-openGauss=# set password for user1 = 'abcd@124';
+openGauss=# set password for user1 = 'xxxxxx';
 ALTER ROLE
 
 --Changes the password of the current user.
-openGauss=# set password = 'abcd@123';
+openGauss=# set password = 'xxxxxx';
 ALTER ROLE
-openGauss=# set password for current_user = 'abcd@123';
+openGauss=# set password for current_user = 'xxxxxx';
 ALTER ROLE
-openGauss=# set password for current_user() = 'abcd@123';
+openGauss=# set password for current_user() = 'xxxxxx';
 ALTER ROLE
 ```

@@ -17,9 +17,9 @@ DataVec能够无缝对接自研大模型。通过嵌入技术将非结构化数�
 DataVec架构与特性实现详情可参考[向量存储引擎](DataVec-architecture.md)介绍。
 
 ### 向量数据类型
-- [vector](../SQLReference/向量数据类型.md##Vector) - float向量，最高支持2000维 
-- [bitvec](../SQLReference/向量数据类型.md##Bit) - bit向量，最高支持64000维
-- [sparsevec](../SQLReference/向量数据类型.md##Sparsevec) - sparse向量，最高支持1000非零元素
+- [vector](../SQLReference/向量数据类型.md#Vector) - float向量，最高支持16000维
+- [bitvec](../SQLReference/向量数据类型.md#Bit) - bit向量，最高支持83,886,080维
+- [sparsevec](../SQLReference/向量数据类型.md#Sparsevec) - sparse向量，最高支持1,000,000,000维，最高支持16000非零元素数
 >![](figures/icon-note.png) **说明：**
 这里的最高维度是在使用索引场景下的最大维度上限值。
 

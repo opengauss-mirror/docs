@@ -18,7 +18,7 @@ public class Migration{
     public static void main(String[] args) {
         String url = new String("jdbc:opengauss://10.180.155.74:8000/postgres"); // Database URL
         String user = new String("jack");            // openGauss username
-        String pass = new String("Gauss@123");             // openGauss password
+        String pass = new String("******");             // openGauss password
         String tablename = new String("migration_table"); // Table information
         String delimiter = new String("|");              // Delimiter
         String encoding = new String("UTF8");            // Character set
@@ -76,7 +76,7 @@ public class Migration{
         ResultSet rs = null;
         try {
             Class.forName("com.MY.jdbc.Driver").newInstance();
-            Connection conn = DriverManager.getConnection("jdbc:MY://10.119.179.227:3306/jack?useSSL=false&allowPublicKeyRetrieval=true", "jack", "Gauss@123");
+            Connection conn = DriverManager.getConnection("jdbc:MY://10.119.179.227:3306/jack?useSSL=false&allowPublicKeyRetrieval=true", "jack", "******");
             Statement stmt = conn.createStatement();
             rs = stmt.executeQuery("select * from migration_table");
         } catch (SQLException e) {

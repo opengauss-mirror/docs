@@ -26,7 +26,7 @@ If a host needs to connect to a database remotely, you need to add information a
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >-   Before using user  **jack**, connect to the database locally and run the following command in the database to create user  **jack**:
     >    ```
-    >    openGauss=# CREATE USER jack PASSWORD 'Test@123';
+    >    openGauss=# CREATE USER jack PASSWORD 'xxxxxx';
     >    ```
     >-   **-D** _datadir_  indicates the data directory of the host.
     >-   **-h**  specifies statements that need to be added in the  **pg\_hba.conf**  file.

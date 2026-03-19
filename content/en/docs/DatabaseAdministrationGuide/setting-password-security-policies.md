@@ -335,7 +335,7 @@ User passwords are stored in the system catalog **pg\_authid**. To prevent passw
      If user **joe** needs to be set, run the following command:
 
      ```
-     openGauss=# SET ROLE joe PASSWORD "abc@1234";
+     openGauss=# SET ROLE joe PASSWORD "xxxxxx";
      ERROR: Invalid username/password,set role denied.
      ```
 
@@ -538,7 +538,7 @@ User passwords are stored in the system catalog **pg\_authid**. To prevent passw
    When creating a user, a user with the **CREATEROLE** permission can force the user password to expire. After logging in to the database for the first time, a new user can perform query operations only after changing the password. The command format is as follows:
 
    ```
-   openGauss=# CREATE USER joe PASSWORD "abc@1234" EXPIRED;
+   openGauss=# CREATE USER joe PASSWORD "xxxxxx" EXPIRED;
    CREATE ROLE
    ```
 
@@ -550,7 +550,7 @@ User passwords are stored in the system catalog **pg\_authid**. To prevent passw
    ```
 
    ```
-   openGauss=# ALTER USER joe PASSWORD "abc@2345" EXPIRED;
+   openGauss=# ALTER USER joe PASSWORD "xxxxxx" EXPIRED;
    ALTER ROLE
    ```
 

@@ -57,7 +57,7 @@ opengauss=# GRANT ALL ON SCHEMA tst_schema1 TO test_proxy_u2;
 opengauss=# GRANT ALL ON tst_t1 to test_proxy_u1;
 
 --权限检测（无权限）
-opengauss=# SET ROLE test_proxy_u2 PASSWORD 'test_proxy_u2@123';
+opengauss=# SET ROLE test_proxy_u2 PASSWORD 'xxxxxx';
 opengauss=> SELECT * FROM tst_schema1.tst_t1;
 ERROR:  permission denied for relation tst_t1
 DETAIL:  N/A
@@ -65,7 +65,7 @@ DETAIL:  N/A
 --权限检测（拥有代理者权限）
 opengauss=> RESET ROLE;
 opengauss=# GRANT PROXY ON test_proxy_u1 TO test_proxy_u2;
-opengauss=# SET ROLE test_proxy_u2 PASSWORD 'test_proxy_u2@123';
+opengauss=# SET ROLE test_proxy_u2 PASSWORD 'xxxxxx';
 opengauss=>  SELECT * FROM tst_schema1.tst_t1;
     id    |     name      
 ----------+---------------
@@ -74,7 +74,7 @@ opengauss=>  SELECT * FROM tst_schema1.tst_t1;
  --权限检测（级联式检测usr_1->usr_2->usr_3)
  opengauss=> RESET ROLE;
 opengauss=# GRANT PROXY ON test_proxy_u2 TO test_proxy_u3;
-opengauss=# SET ROLE test_proxy_u3 PASSWORD 'test_proxy_u3@123';
+opengauss=# SET ROLE test_proxy_u3 PASSWORD 'xxxxxx';
 opengauss=>  SELECT * FROM tst_schema1.tst_t1;
     id    |     name      
 ----------+---------------
@@ -82,24 +82,24 @@ opengauss=>  SELECT * FROM tst_schema1.tst_t1;
  
 --对被代理者授予的权限检测（with grant option)
 opengauss=> RESET ROLE;
-opengauss=# SET ROLE test_proxy_u2 PASSWORD 'test_proxy_u2@123';
+opengauss=# SET ROLE test_proxy_u2 PASSWORD 'xxxxxx';
 opengauss=> grant proxy on test_proxy_u1 to test_proxy_u3;
 ERROR:  must have admin option on role "test_proxy_u1"
 opengauss=> RESET ROLE;
 RESET
-opengauss=# SET ROLE test_proxy_u2 PASSWORD 'test_proxy_u2@123';
+opengauss=# SET ROLE test_proxy_u2 PASSWORD 'xxxxxx';
 SET
 opengauss=> grant proxy on test_proxy_u1 to test_proxy_u3;
 ERROR:  must have admin option on role "test_proxy_u1"
 opengauss=> RESET ROLE;
 opengauss=# grant proxy on test_proxy_u1 to test_proxy_u2 with grant option;
-opengauss=# SET ROLE test_proxy_u2 PASSWORD 'test_proxy_u2@123';
+opengauss=# SET ROLE test_proxy_u2 PASSWORD 'xxxxxx';
 opengauss=> grant proxy on test_proxy_u1 to test_proxy_u3;
 
 --召回代理权限测试
 opengauss=> revoke proxy on test_proxy_u1 from test_proxy_u3;
 opengauss=> revoke proxy on test_proxy_u1 from test_proxy_u2;
-opengauss=>  SET ROLE test_proxy_u3 password 'test_proxy_u3@123';
+opengauss=>  SET ROLE test_proxy_u3 password 'xxxxxx';
 opengauss=> SELECT * FROM tst_schema1.tst_t1;
 ERROR:  permission denied for relation tst_t1
 DETAIL:  N/A

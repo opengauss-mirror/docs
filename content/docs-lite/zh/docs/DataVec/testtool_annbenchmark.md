@@ -47,7 +47,7 @@ max_connections=1000 #最大连接数
 修改`go_opgs.sh`中的数据库连接配置
 ```bash
 export ANN_BENCHMARKS_OG_USER='YourUserName'
-export ANN_BENCHMARKS_OG_PASSWORD='YourPassword'
+export ANN_BENCHMARKS_OG_PASSWORD='xxxxxx'
 export ANN_BENCHMARKS_OG_DBNAME='YourDBName'
 export ANN_BENCHMARKS_OG_HOST='YourHost'
 export ANN_BENCHMARKS_OG_PORT=YourPort

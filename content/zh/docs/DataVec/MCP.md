@@ -11,7 +11,7 @@
 ## 快速搭建openGauss + MCP + LLM的AI Agent应用
 ### 环境准备
 - 安装python3环境，安装uv。
-- 通过[容器部署](../InstallationGuide/容器镜像安装.md)并启动openGauss数据库。
+- 通过[容器部署](https://docs.opengauss.org/zh/docs/6.0.0-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html)并启动openGauss数据库。
 - 下载Claude Desktop配合MCP协议进行问答操作。
 
 ### 获取openGauss_mcp_server源码
@@ -42,7 +42,7 @@
                 "OPENGAUSS_HOST": "localhost",
                 "OPENGAUSS_PORT": "8888",
                 "OPENGAUSS_USER": "your_username",
-                "OPENGAUSS_PASSWORD": "your_password",
+                "OPENGAUSS_PASSWORD": "xxxxxx",
                 "OPENGAUSS_DBNAME": "your_database"
             }
         }

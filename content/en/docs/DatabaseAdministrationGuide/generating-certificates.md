@@ -45,7 +45,7 @@ The OpenSSL component has been installed in the Linux environment.
     e is 65537 (0x10001)
     --Set the protection password of the root private key to at least four characters, for example, Test@123.
     Enter pass phrase for demoCA/private/cakey.pem:
-    --Enter the private key password Test@123 again.
+    --Enter the private key password xxxxxx again.
     Verifying - Enter pass phrase for demoCA/private/cakey.pem:
     ```
 
@@ -55,7 +55,7 @@ The OpenSSL component has been installed in the Linux environment.
     --Generate a CA root certificate application file named careq.pem.
     openssl req -config openssl.cnf -new -key demoCA/private/cakey.pem -out demoCA/careq.pem
     Enter pass phrase for demoCA/private/cakey.pem:
-    --Enter the root private key password Test@123.
+    --Enter the root private key password xxxxx.
     You are about to be asked to enter information that will be incorporated
     into your certificate request.
     What you are about to enter is what is called a Distinguished Name or a DN.
@@ -90,7 +90,7 @@ The OpenSSL component has been installed in the Linux environment.
     openssl ca -config openssl.cnf -out demoCA/cacert.pem -keyfile demoCA/private/cakey.pem -selfsign -infiles demoCA/careq.pem
     Using configuration from openssl.cnf
     Enter pass phrase for demoCA/private/cakey.pem:
-    --Enter the root private key password Test@123.
+    --Enter the root private key password xxxxxx.
     Check that the request matches the signature
     Signature ok
     Certificate Details:
@@ -136,7 +136,7 @@ The OpenSSL component has been installed in the Linux environment.
     Enter pass phrase for server.key:
     --The password of the server private key must contain a minimum of four characters, for example, Test@123.
     Verifying - Enter pass phrase for server.key:
-    --Confirm the protection password for the server private key Test@123 again.
+    --Confirm the protection password for the server private key xxxxxx again.
     ```
 
 6.  Generate a server certificate request file.

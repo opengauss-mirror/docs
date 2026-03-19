@@ -49,7 +49,7 @@ CLEAN CONNECTION
 
 ```
 -- Create user jack.
-CREATE USER jack PASSWORD 'Bigdata123@';
+CREATE USER jack PASSWORD 'xxxxxx';
 
 -- Clean the user jack's connections to the template1 database.
 CLEAN CONNECTION TO ALL FOR DATABASE template1 TO USER jack;

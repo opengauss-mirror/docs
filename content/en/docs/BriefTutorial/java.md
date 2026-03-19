@@ -61,7 +61,7 @@ Example:
       }
       public static Connection getConnect() {
             String driver = "org.opengauss.Driver";
-            String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
+            String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=xxxxxx";
             Properties info = new Properties();
             Connection conn = null;
             try {
@@ -105,7 +105,7 @@ Example:
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test";
             Properties info = new Properties();
             info.setProperty("user","myuser");
-            info.setProperty("password","myPassWord");
+            info.setProperty("password","xxxxxx");
             Connection conn = null;
             try {
                 Class.forName(driver);
@@ -146,7 +146,7 @@ Example:
             String driver = "org.opengauss.Driver";
             String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test";
             String username="myuser";
-            String passwd="myPassWord";
+            String passwd="xxxxxx";
             Connection conn = null;
             try {
                 Class.forName(driver);
@@ -188,7 +188,7 @@ Example:
         }
         public static Connection getConnect() {
             String driver = "org.opengauss.Driver";
-            String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
+            String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=xxxxxx";
             Properties info = new Properties();
             Connection conn = null;
             try {
@@ -228,7 +228,7 @@ Example:
         }
         public static Connection getConnect() {
             String driver = "org.opengauss.Driver";
-            String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
+            String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=xxxxxx";
             Properties info = new Properties();
             Connection conn = null;
             try {
@@ -275,7 +275,7 @@ Example:
         }
         public static Connection getConnect() {
             String driver = "org.opengauss.Driver";
-            String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
+            String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=xxxxxx";
             Properties info = new Properties();
             Connection conn = null;
             try {
@@ -323,7 +323,7 @@ Example:
         }
         public static Connection getConnect() {
             String driver = "org.opengauss.Driver";
-            String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
+            String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=xxxxxx";
             Properties info = new Properties();
             Connection conn = null;
             try {
@@ -367,7 +367,7 @@ Example:
         }
         public static Connection getConnect() {
             String driver = "org.opengauss.Driver";
-            String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
+            String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=xxxxxx";
             Properties info = new Properties();
             Connection conn = null;
             try {
@@ -403,7 +403,7 @@ Example:
         }
         public static Connection getConnect() {
             String driver = "org.opengauss.Driver";
-            String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
+            String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=xxxxxx";
             Properties info = new Properties();
             Connection conn = null;
             try {
@@ -446,7 +446,7 @@ Example:
         }
         public static Connection getConnect() {
             String driver = "org.opengauss.Driver";
-            String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
+            String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=xxxxxx";
             Properties info = new Properties();
             Connection conn = null;
             try {
@@ -494,7 +494,7 @@ Example:
         }
         public static Connection getConnect() {
             String driver = "org.opengauss.Driver";
-            String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=myPassWord";
+            String sourceURL = "jdbc:opengauss://127.0.0.1:8080/test?user=myuser&password=xxxxxx";
             Properties info = new Properties();
             Connection conn = null;
             try {
@@ -544,7 +544,7 @@ Example:
         }
         public static Connection getConnect() {
             String driver = "org.opengauss.Driver";
-            String sourceURL = "jdbc:opengauss://10.244.50.251:33700/test_l?user=ltest&password=tiange1999?";
+            String sourceURL = "jdbc:opengauss://10.244.50.251:33700/test_l?user=ltest&password=xxxxxx?";
             Properties info = new Properties();
             Connection conn = null;
             try {
@@ -594,7 +594,7 @@ Example:
         }
         public static Connection getConnect() {
             String driver = "org.opengauss.Driver";
-            String sourceURL = "jdbc:opengauss://10.244.50.251:33700/test_l?user=ltest&password=tiange1999?";
+            String sourceURL = "jdbc:opengauss://10.244.50.251:33700/test_l?user=ltest&password=xxxxxx?";
             Properties info = new Properties();
             Connection conn = null;
             try {

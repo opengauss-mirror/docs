@@ -71,6 +71,7 @@
       | [ [ DEFAULT ] CHARACTER SET | CHARSET [ = ] default_charset ] [ [ DEFAULT ] COLLATE [ = ] default_collation ]
       | CONVERT TO CHARACTER SET | CHARSET charset | DEFAULT [ COLLATE collation ]
       | MODIFY column_name column_type ON UPDATE CURRENT_TIMESTAMP
+      | REDISANYVALUE
   ```
 
 >- **ADD table\_constraint \[ NOT VALID \]**
@@ -209,7 +210,10 @@
 >- **CONVERT TO CHARACTER SET | CHARSET charset \[ COLLATE collation \]**
 >
 >  修改表的默认字符集和默认字符序为指定的值，同时将表中的所有字符类型的字段的字符集和字符序设置为指定的值，并将字段里的数据转换为新字符集编码。
-
+> 
+>- **REDISANYVALUE**
+>
+>  仅有语法支持，不实现功能。
 
 
 其中列相关的操作column\_clause可以是以下子句之一：

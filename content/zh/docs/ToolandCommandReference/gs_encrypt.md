@@ -55,7 +55,7 @@ gs_encrypt [OPTION]... PLAINTEXT
 示例1：通过输入key和vector明文值来对明文字符串进行加密操作。由于每次加密时使用的IV值是随机生成的，因此使用同样的key和vector以及明文字符串加密后对应的密文串不相同。单次支持加密的明文字符串最大长度为335字节。
 
 ```
-gs_encrypt -k password@123 -v 1234567890123456 test_encrypt
+gs_encrypt -k xxxxxx -v 1234567890123456 test_encrypt
 ```
 
 命令回显：
@@ -69,7 +69,7 @@ G0R7Y2oROfuiEjWtUBx9+eHP3I21A1wMOJ2onVQIiAsxMjM0NTY3ODkwMTIzNDU2
 1.  生成cipher和rand文件。
 
     ```
-    gs_guc generate -S Mppdb@123 -D $GAUSSHOME/bin -o test
+    gs_guc generate -S xxxxxx -D $GAUSSHOME/bin -o test
     ```
 
     命令回显：

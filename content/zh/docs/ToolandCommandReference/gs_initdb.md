@@ -71,7 +71,7 @@ gs_initdb [OPTION]... [DATADIR]
 4.  执行gs\_initdb命令初始化数据库。
 
     ```
-    gs_initdb -D /opt/gaussdb/data1 -w "Gauss@123" --nodename='data1'
+    gs_initdb -D /opt/gaussdb/data1 -w "******" --nodename='data1'
     ```
 
 
@@ -245,7 +245,7 @@ zh_SG.gbk
 <tr id="zh-cn_topic_0287276015_row16291853162117"><td class="cellrowborder" valign="top" width="23.76%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_afaf2c98348cc4a5591a2884a984183ce"><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_afaf2c98348cc4a5591a2884a984183ce"></a><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_afaf2c98348cc4a5591a2884a984183ce"></a>-C, --enpwdfiledir=DIR</p>
 </td>
 <td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_ae6b0a4366ce6473d93856ed2bb2c330d"><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_ae6b0a4366ce6473d93856ed2bb2c330d"></a><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_ae6b0a4366ce6473d93856ed2bb2c330d"></a>gs_initdb时指定的经AES128加密算法加密过的密码文件所在目录。gs_initdb会将该目录下密码文件进行解密，同时把解密后的密码做密码复杂度校验，校验通过的话会将此密码作为用户的密码。</p>
-<div class="note" id="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_n96825782fffe451a8e266c4642f5c5ab"><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_n96825782fffe451a8e266c4642f5c5ab"></a><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_n96825782fffe451a8e266c4642f5c5ab"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_ue1d74eb6d6544f5a87095ffe467c3893"></a><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_ue1d74eb6d6544f5a87095ffe467c3893"></a><ul id="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_ue1d74eb6d6544f5a87095ffe467c3893"><li>加密密码文件需使用gs_guc工具生成：gs_guc encrypt -K Gauss@123 -D Dir。</li><li>如果用户指定多个-w和-C参数，gs_initdb会将用户输入的最后一个-w或-C参数作为用户的需求，即输入密码的明文或经过AES128加密后的密码。</li></ul>
+<div class="note" id="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_n96825782fffe451a8e266c4642f5c5ab"><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_n96825782fffe451a8e266c4642f5c5ab"></a><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_n96825782fffe451a8e266c4642f5c5ab"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_ue1d74eb6d6544f5a87095ffe467c3893"></a><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_ue1d74eb6d6544f5a87095ffe467c3893"></a><ul id="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_ue1d74eb6d6544f5a87095ffe467c3893"><li>加密密码文件需使用gs_guc工具生成：gs_guc encrypt -K ****** -D Dir。</li><li>如果用户指定多个-w和-C参数，gs_initdb会将用户输入的最后一个-w或-C参数作为用户的需求，即输入密码的明文或经过AES128加密后的密码。</li></ul>
 </div></div>
 </td>
 <td class="cellrowborder" valign="top" width="43.64%" headers="mcps1.2.4.1.3 "><p id="p186368604614"><a name="p186368604614"></a><a name="p186368604614"></a>不能包括“|”, “;”，“&amp;”，“$”，“&lt;”，“&gt;”，“`”，“\\”，“!”这几个字符。</p>

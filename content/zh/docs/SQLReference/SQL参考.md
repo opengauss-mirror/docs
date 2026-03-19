@@ -54,6 +54,8 @@
 
 -   **[GIN索引](GIN索引.md)**
 
+-   **[DataVec向量引擎](DataVec向量引擎.md)**
+
 -   **[系统操作](系统操作.md)**
 
 -   **[Schema](Schema01.md)** 

@@ -13,6 +13,9 @@ SET search_path TO ag_catalog;
 ```
 load 'age';
 ```
+
+>![](../../../docs-lite/zh/docs/BriefTutorial/public_sys-resources/icon-note.gif) **限制：<br>**
+>创建使用age插件前需要关闭线程池，设置enable_thread_pool = off<br>
 ## 1. 图的操作
 图由一组顶点和边组成，其中每个单独的节点和边都具有属性映射。顶点是图的基本对象，它可以独立于图中的其他任何东西而存在。边在两个顶点之间创建有向连接。
 ### 1.1 创建图

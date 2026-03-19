@@ -79,8 +79,8 @@ CREATE AUDIT POLICY [ IF NOT EXISTS ] policy_name { { privilege_audit_clause | a
 
 ```
 -- Create users dev_audit and bob_audit.
-openGauss=# CREATE USER dev_audit PASSWORD 'dev@1234';
-CREATE USER bob_audit password 'bob@1234';
+openGauss=# CREATE USER dev_audit PASSWORD 'xxxxxx';
+CREATE USER bob_audit password 'xxxxxx';
 
 -- Create table tb_for_audit.
 openGauss=# CREATE TABLE tb_for_audit(col1 text, col2 text, col3 text);

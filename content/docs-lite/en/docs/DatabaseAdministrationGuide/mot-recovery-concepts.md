@@ -2,7 +2,7 @@
 
 The MOT Recovery Module provides all the required functionality for recovering the MOT tables data. The main objective of the Recovery module is to restore the data and the MOT engine to a consistent state after a planned \(maintenance for example\) shut down or an unplanned \(power failure for example\) crash.
 
-OpenGauss database recovery, which is also sometimes called a  _Cold Start_, includes MOT tables and is performed automatically with the recovery of the rest of the database. The MOT Recovery Module is seamlessly and fully integrated into the openGauss recovery process.
+openGauss database recovery, which is also sometimes called a  _Cold Start_, includes MOT tables and is performed automatically with the recovery of the rest of the database. The MOT Recovery Module is seamlessly and fully integrated into the openGauss recovery process.
 
 MOT recovery has two main stages – Checkpoint Recovery and WAL Recovery \(Redo Log\).
 

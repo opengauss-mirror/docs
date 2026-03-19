@@ -113,7 +113,7 @@ ARM+openEuler 20.03 or x86+CentOS 5.7
         host: "1.1.1.1"
         port: "5432"
         user: "opengauss_test"
-        password: "password_123"
+        password: "xxxxxx"
         database: "opengauss_database"
         charset: "utf8"
         sources:
@@ -124,7 +124,7 @@ ARM+openEuler 20.03 or x86+CentOS 5.7
         host: "1.1.1.1"
         port: "3306"
         user: "mysql_test"
-        password: "password123"
+        password: "xxxxxx"
         charset: 'utf8'
         connect_timeout: 10
         schema_mappings:

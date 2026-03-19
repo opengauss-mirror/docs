@@ -16,6 +16,7 @@
 
 -   不支持游标（指在JDBC中通过useCursorFetch、setFetchSize的方式获取数据）。
 -   不支持执行存储过程。
+-   openGauss支持TLS 1.2协议标准，而部分MySQL命令行客户端版本仅支持TLS 1和TLS 1.1，例如5.7.27，因此不支持以SSL模式连接openGauss。客户端支持TLS版本情况可通过mysql --help查看。
 
 ## 使用方式
 
@@ -25,8 +26,8 @@
 ```SQL
 CREATE DATABASE proto_test_db DBCOMPATIBILITY 'B';
 \c proto_test_db
-CREATE USER proto_test WITH PASSWORD 'Proto_test123';
-SELECT set_native_password('proto_test', 'Proto_test123', '');
+CREATE USER proto_test WITH PASSWORD 'xxxxxx';
+SELECT set_native_password('proto_test', 'xxxxxx', '');
 ```
 >![](public_sys-resources/icon-notice.png) **须知：** （第一个参数为用户名，第二个参数为MySQL连接密码，第三个参数为原密码；第一次设置时可以为空或者任意值，后续更改密码以及更改认证方式需要原密码做验证）
 
@@ -48,8 +49,8 @@ SELECT set_native_password('proto_test', 'Proto_test123', '');
 ```SQL
 CREATE DATABASE proto_test_db DBCOMPATIBILITY 'B';
 \c proto_test_db
-CREATE USER proto_test WITH PASSWORD 'Proto_test123';
-SELECT set_caching_sha2_password('proto_test', 'Proto_test123', '');
+CREATE USER proto_test WITH PASSWORD 'xxxxxx';
+SELECT set_caching_sha2_password('proto_test', 'xxxxxx', '');
 ```
 >![](public_sys-resources/icon-notice.png) **须知：** （第一个参数为用户名，第二个参数为MySQL连接密码，第三个参数为原密码；第一次设置时可以为空或者任意值，后续更改密码以及更改认证方式需要原密码做验证）
 2. 设置GUC参数 [enable_dolphin_proto](../DatabaseReference/连接设置.md#enable_dolphin_proto) 为 on。

@@ -395,7 +395,7 @@ gs\_sdr参数可以分为如下几类：
 -   主集群搭建容灾关系。
 
     ```
-    gs_sdr -t start -m primary -X /opt/install_streaming_primary_cluster.xml --time-out=1200 -U 'hadr_user' -W 'opengauss@123'
+    gs_sdr -t start -m primary -X /opt/install_streaming_primary_cluster.xml --time-out=1200 -U 'hadr_user' -W '******'
     --------------------------------------------------------------------------------
     Streaming disaster recovery start 2b9bc268d8a111ecb679fa163e2f2d28
     --------------------------------------------------------------------------------
@@ -443,7 +443,7 @@ gs\_sdr参数可以分为如下几类：
 -   备集群搭建容灾关系。
 
     ```
-    gs_sdr -t start -m disaster_standby -X /opt/install_streaming_standby_cluster.xml --time-out=1200 -U 'hadr_user' -W 'opengauss@123'
+    gs_sdr -t start -m disaster_standby -X /opt/install_streaming_standby_cluster.xml --time-out=1200 -U 'hadr_user' -W '******'
     --------------------------------------------------------------------------------
     Streaming disaster recovery start e34ec1e4d8a111ecb617fa163e77e94a
     --------------------------------------------------------------------------------

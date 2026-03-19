@@ -67,9 +67,9 @@
 
 该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围**： 布尔型
+**取值范围**： 仅限off，不可修改
 
--   on表示允许执行。
+-   on表示允许执行。当前不支持。
 -   off表示不允许执行。
 
 **默认值**： off
@@ -120,14 +120,14 @@
 
 ## enable\_defer\_calculate\_snapshot<a name="section141811431171212"></a>
 
-**参数说明**：延迟计算快照的xmin和oldestxmin，执行1000个事务或者间隔1s才触发计算，设置为on时可以在高负载场景下减少计算快照的开销，但是会导致oldestxmin推进较慢，影响垃圾元组回收，设置为off时xmin和oldestxmin可以实时推进，但是会增加计算快照时的开销。
+**参数说明**：设置为on时延迟计算快照的xmin和oldestxmin，每执行1000个事务或相邻事务间隔1s才触发计算，可以在高负载场景下减少计算快照的开销，但是会导致oldestxmin推进较慢，影响垃圾元组回收，设置为off时实时计算快照的xmin和oldestxmin，每执行1个事务就会触发计算，oldestxmin实时推进，但是会增加计算快照的开销。
 
 该参数属于SIGHUP类型参数，改请参考[表2](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd893d)进行设置
 
 **取值范围**： 布尔型。
 
 -   on表示延迟计算快照xmin和oldestxmin。
--   off表示实时计算快照xmin和oldestxmin**。**
+-   off表示实时计算快照xmin和oldestxmin。
 
 **默认值**： on
 

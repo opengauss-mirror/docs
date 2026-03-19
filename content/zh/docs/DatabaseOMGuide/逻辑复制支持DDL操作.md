@@ -78,7 +78,7 @@ CREATE DATABASE dzy_soudb;
 4、在订阅端执行加密操作。
 
 ```sql
-gs_guc generate -S Aa123456 -D $GAUSSHOME/bin -o subscription
+gs_guc generate Aa123456 -D $GAUSSHOME/bin -o subscription
 ```
 
 5、在订阅端创建数据库dzy_desdb。
@@ -138,7 +138,7 @@ SELECT * FROM pg_subscription;
                                                      | subslotname | subsynccommit | subpublications | subbinary | submatchddlowner
 ---------+---------+----------+------------+---------------------------------------------------------------------------------------------
 -----------------------------------------------------+-------------+---------------+-----------------+-----------+------------------
-   18797 | sub1    |       10 | t          | host=xxx.xx.xxx.xxx port=xxxx user=vbadmin dbname=dzy_soudb password=encryptOpt+BKUB13sXBzye
+   18797 | sub1    |       10 | t          | host=xxx.xx.xxx.xxx port=xxxx user=vbadmin dbname=dzy_soudb password=xxxxxx
 v0xiJw2EC+kcKn+Ei+hgvT2psOYfbzje8ptkXS/GkzStq9v3uFz  | sub1        | off           | {pub1}          | f         | t
 (1 row)
 ```

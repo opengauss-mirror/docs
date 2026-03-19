@@ -4,15 +4,15 @@
 import psycopg2
 
 # psycopg2常用链接方式
-1. conn = psycopg2.connect(dbname="postgres", user="user", password="password", host="localhost", port=port)
-2. conn = psycopg2.connect("dbname=postgres user=user password=password  host=localhost port=port")
+1. conn = psycopg2.connect(dbname="postgres", user="user", password="xxxxxx", host="localhost", port=port)
+2. conn = psycopg2.connect("dbname=postgres user=user password=xxxxxx  host=localhost port=port")
 
 # 创建连接对象
-conn=psycopg2.connect(database="postgres",user="user",password="password",host="localhost",port=port)
+conn=psycopg2.connect(database="postgres",user="user",password="xxxxxx",host="localhost",port=port)
 cur=conn.cursor() #创建指针对象
 
 # 创建连接对象（SSl连接）
-conn = psycopg2.connect(dbname="postgres", user="user", password="password", host="localhost", port=port,
+conn = psycopg2.connect(dbname="postgres", user="user", password="xxxxxx", host="localhost", port=port,
          sslmode="verify-ca", sslcert="client.crt",sslkey="client.key",sslrootcert="cacert.pem")
 注意： 如果sslcert, sslkey,sslrootcert没有填写，默认取当前用户.postgresql目录下对应的client.crt，
          client.key， root.crt
@@ -46,7 +46,7 @@ logger = logging.getLogger(__name__)
 
 db_settings = {
     "user": "user",
-    "password": "password",
+    "password": "xxxxxx",
     "host": "localhost",
     "database": "postgres",
     "port": port

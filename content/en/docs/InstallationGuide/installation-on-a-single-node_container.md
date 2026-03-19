@@ -74,20 +74,20 @@ Specifies the database port. The default value is  **5432**.
 ## Starting an Instance<a name="en-us_topic_0283136491_section148176206211"></a>
 
 ```
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=Enmo@123 opengauss:6.0.0
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx opengauss:6.0.0
 ```
 
 ## Connecting to the Database from the OS Layer<a name="en-us_topic_0283136491_section53753141964"></a>
 
 ```
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=Enmo@123 -p8888:5432 opengauss:6.0.0
-$ gsql -d postgres -U gaussdb -W'Enmo@123' -h your-host-ip -p8888
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -p8888:5432 opengauss:6.0.0
+$ gsql -d postgres -U gaussdb -W'xxxxxx' -h your-host-ip -p8888
 ```
 
 ## Data Persistence<a name="en-us_topic_0283136491_section973016196416"></a>
 
 ```
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=Enmo@123 -v /opengauss:/var/lib/opengauss opengauss:6.0.0
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -v /opengauss:/var/lib/opengauss opengauss:6.0.0
 ```
 
 >**Note**

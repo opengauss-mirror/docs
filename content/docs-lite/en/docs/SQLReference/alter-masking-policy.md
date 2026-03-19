@@ -96,8 +96,8 @@
 
 ```
 -- Create users dev_mask and bob_mask.
-openGauss=# CREATE USER dev_mask PASSWORD 'dev@1234';
-openGauss=# CREATE USER bob_mask PASSWORD 'bob@1234';
+openGauss=# CREATE USER dev_mask PASSWORD 'xxxxxx';
+openGauss=# CREATE USER bob_mask PASSWORD 'xxxxxx';
 
 -- Create table tb_for_masking.
 openGauss=# CREATE TABLE tb_for_masking(col1 text, col2 text, col3 text);

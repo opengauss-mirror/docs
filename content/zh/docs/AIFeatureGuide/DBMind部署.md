@@ -42,7 +42,7 @@ useradd -m test_user -d /home/test_user
 本文以如下的用户和数据库信息作为示例。
 
 >- username：dbmind_monitor
->- password：test_123
+>- password：xxxxxx
 >- port：6789
 >- metadatabase：metadatabase
 
@@ -50,7 +50,7 @@ omm登录主节点，并为数据库节点和DBMind服务器数据库创建dbmin
 
 ```shell
 gs_guc reload -D datanode -c 'password_encryption_type=1'
-gsql -p {port} -d postgres -c 'create user {username:dbmind_monitor} with password {password:test_123} ;'
+gsql -p {port} -d postgres -c 'create user {username:dbmind_monitor} with password {password:xxxxxx} ;'
 gsql -p {port} -d postgres -c 'alter user {username:dbmind_monitor} monadmin; '
 gs_guc reload -D datanode -c 'password_encryption_type=2'  # 可选，将该参数改回去
 ```
@@ -60,12 +60,15 @@ gs_guc reload -D datanode -c 'password_encryption_type=2'  # 可选，将该参�
 >
 >```shell
 >gs_guc reload -D datanode -c 'password_encryption_type=1'
->gsql -p {port} -d postgres -c 'create user dbmind_monitor with password test_123;'
+>gsql -p {port} -d postgres -c 'create user dbmind_monitor with password xxxxxx;'
 >gsql -p {port} -d postgres -c 'alter user dbmind_monitor monadmin;'
 >gs_guc reload -D datanode -c 'password_encryption_type=2'  # 可选，将该参数改回去
 >```
 
 DBMind服务器，创建元数据库：
+>![](public_sys-resources/icon-note.png) **说明：** 
+>
+>实际使用时建议赋予用户最小权限。
 
 ```shell
 grant all privileges to {username:dbmind_monitor};
@@ -364,7 +367,7 @@ gs_dbmind component reprocessing_exporter host_ip 9090 --web.listen-address 0.0.
      host = {数据库主节点ip:192.168.100.1} # Address of meta-data database.
      port = {数据库占用的端口号:6789} # Port to connect to meta-data database.
      username = dbmind_monitor # User name to connect to meta-data database.
-     password = test_123 # Password to connect to meta-data database.
+     password = xxxxxx # Password to connect to meta-data database.
      database = metadatabase # Database name to connect to meta-data database.
      ```
 
@@ -393,7 +396,7 @@ gs_dbmind component reprocessing_exporter host_ip 9090 --web.listen-address 0.0.
      [AGENT]
      master_url = 
      username = dbmind_monitor # Username to login the monitoring database. Credential for agent.
-     password = test_123  # Password to login the monitoring database. Credential for agent.
+     password = xxxxxx  # Password to login the monitoring database. Credential for agent.
      ```
 
    - **TIMED_TASK**

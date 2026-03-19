@@ -2,4 +2,4 @@
 
 
 
--   **[OpenGauss Client Tool DataStudio](opengauss-client-tool-datastudio.md)**  
+-   **[openGauss Client Tool DataStudio](opengauss-client-tool-datastudio.md)**  

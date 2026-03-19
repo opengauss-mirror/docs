@@ -116,7 +116,7 @@ Please input OG_SUBNET (容器所在网段) [172.11.0.0/24]:
 OG_SUBNET set 172.11.0.0/24
 Please input OG_NETWORK (容器网络名称) [og-network]: 
 OG_NETWORK set og-network
-Please input GS_PASSWORD (定义数据库密码)[test@123]: 
+Please input GS_PASSWORD (定义数据库密码)[xxxxxx]: 
 GS_PASSWORD set
 Please input openGauss VERSION [X.X.X]: 
 openGauss VERSION set X.X.X

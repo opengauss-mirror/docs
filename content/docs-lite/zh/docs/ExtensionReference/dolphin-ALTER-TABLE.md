@@ -54,7 +54,7 @@
         | MAX_ROWS [=] value
         | MIN_ROWS [=] value
         | PACK_KEYS [=] value
-        | PASSWORD [=] 'password'
+        | PASSWORD [=] 'xxxxxx'
         | ROW_FORMAT [=] row_format_name
         | START TRANSACTION
         | SECONDARY_ENGINE_ATTRIBUTE [=] 'string'
@@ -227,7 +227,7 @@
 
   用于指定控制压缩索引的方式；目前该特性仅有语法支持，不实现功能。参数的取值范围为非负整数，小数，十六进制数，DEFAULT。
 
-- **PASSWORD \[=\] 'password'**
+- **PASSWORD \[=\] 'xxxxxx'**
 
   此选项未使用；目前该特性仅有语法支持，不实现功能。参数的取值范围为任意字符串。
 

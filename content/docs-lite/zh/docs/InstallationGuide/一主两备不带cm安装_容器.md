@@ -3,12 +3,12 @@
 ### 1. 获取镜像
 参考[容器镜像安装](./容器镜像安装.md)，获取openGauss docker镜像并且修改镜像名称
 ```
-# 9aa832ba6684需修改为安装镜像对应的IMAGE ID
-docker tag 9aa832ba6684 opengauss:7.0.0-RC1
+# e884381a6ec7需修改为安装镜像对应的IMAGE ID
+docker tag e884381a6ec7 opengauss:6.0.2
 ```
 ### 2. 获取主备容器化部署脚本
 
-主备容器部署脚本为`create_master_slave.sh`，可以从[openGauss-server仓库](https://gitee.com/opengauss/openGauss-server/tree/master/docker/dockerfiles)获取
+主备容器部署脚本为`create_master_slave.sh`，可以从[openGauss-server仓库](https://gitcode.com/opengauss/openGauss-server/tree/master/docker/dockerfiles)获取
 
 ### 3. 创建容器路径映射目录
 ```
@@ -29,7 +29,7 @@ sed -i '/-e GS_PORT=$local_port/i \    -v ${SLAVE_OUT_DIR[$i]}:/var/lib/opengaus
 
 ```
 # 创建容器集群, 这里VERSION要跟镜像的TAG相同
-sh create_master_slave.sh --SLAVE_COUNT 2 --NETWORK_NAME net_700 --VERSION 7.0.0-RC1 --MASTER_HOST_PORT 4432
+sh create_master_slave.sh --SLAVE_COUNT 2 --NETWORK_NAME net_600 --VERSION 6.0.2 --MASTER_HOST_PORT 4432
 
 # 创建完成后，查询集群状态
 docker exec dn_6001 su - omm -c "gs_ctl query -D /var/lib/opengauss/data"

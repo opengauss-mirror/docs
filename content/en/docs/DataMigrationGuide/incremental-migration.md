@@ -32,7 +32,7 @@ The sysbench is used to perform a pressure test on MySQL. In the IUD hybrid scen
       host: "127.0.0.1"  
       port: "5432"  
       user: "opengauss"  
-      password: "password123"  
+      password: "xxxxxx"  
       database: "postgres" 
     
     #mysql config
@@ -40,7 +40,7 @@ The sysbench is used to perform a pressure test on MySQL. In the IUD hybrid scen
       host: "127.0.0.1"  
       port: "3306"  
       user: "mysql"  
-      password: "password123"  
+      password: "xxxxxx"  
       database: "mysql"
     ```
 
@@ -83,7 +83,7 @@ The sysbench is used to perform a pressure test on MySQL. In the IUD hybrid scen
       host: "127.0.0.1"  
       port: "5432"  
       user: "opengauss"  
-      password: "password123"  
+      password: "xxxxxx"  
       database: "postgres" 
     
     #mysql config
@@ -91,7 +91,7 @@ The sysbench is used to perform a pressure test on MySQL. In the IUD hybrid scen
       host: "127.0.0.1"  
       port: "3306"  
       user: "mysql"  
-      password: "password123"  
+      password: "xxxxxx"  
       database: "mysql"
     ```
 

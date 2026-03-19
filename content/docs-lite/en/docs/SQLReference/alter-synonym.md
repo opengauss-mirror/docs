@@ -40,7 +40,7 @@ ALTER SYNONYM synonym_name
 openGauss=#  CREATE OR REPLACE SYNONYM t1 FOR ot.t1;
 
 -- Create user u1.
-openGauss=# CREATE USER u1 PASSWORD 'user@111';
+openGauss=# CREATE USER u1 PASSWORD 'xxxxxx';
 
 -- Change the owner of synonym t1 to u1.
 openGauss=# ALTER SYNONYM t1 OWNER TO u1;

@@ -26,7 +26,7 @@ openGauss has a large object facility, which provides stream-style access to use
     
     Limitation：This function is reading from the server's file system, malicious users can easily exploit them to become superusers, thus limiting the ability of only superusers to use this function.
     
-    Precautions: When importing, large objects will be split into many data blocks and stored in the data column of pg\_largeobject. When querying and writing, it is necessary to frequently query pg\_largeobject through indexes to ensure that the correct data block can be quickly searched based on the data block number during random access read and write. Due to the slower data query speed of OpenGauss compared to PG, it takes more time.
+    Precautions: When importing, large objects will be split into many data blocks and stored in the data column of pg\_largeobject. When querying and writing, it is necessary to frequently query pg\_largeobject through indexes to ensure that the correct data block can be quickly searched based on the data block number during random access read and write. Due to the slower data query speed of openGauss compared to PG, it takes more time.
 
     Return type：oid
 

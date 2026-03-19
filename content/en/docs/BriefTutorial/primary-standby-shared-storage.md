@@ -127,7 +127,7 @@ Compared with traditional gs\_initdb database creation, directories are classifi
     5.  <a name="li23296624419"></a>Use gs\_initdb to create a shared storage database.
 
         ```
-        gs_initdb -D /data/ss_test/dn_primary --nodename=single_node -w Gauss_234 --vgname="+data,+log" --enable-dss --dms_url="0:127.0.0.1:1611,1:127.0.0.1:1711" -I 0 --socketpath="UDS:/data/ss_test/dss_home/.dss_unix_d_socket"
+        gs_initdb -D /data/ss_test/dn_primary --nodename=single_node -w ****** --vgname="+data,+log" --enable-dss --dms_url="0:127.0.0.1:1611,1:127.0.0.1:1711" -I 0 --socketpath="UDS:/data/ss_test/dss_home/.dss_unix_d_socket"
         ```
 
         The following parameters are added:
@@ -189,7 +189,7 @@ The shared storage feature provides the real-time read consistency function on s
             # If the path does not exist, the path is automatically created.
             PATH_TO_SCP="/home/ock/test"
             
-            # Opengauss environment variable
+            # openGauss environment variable
             GAUSSHOME="/home/ock/mppdb_temp_install"
             
             # OCK_RPC environment variable. Do not change

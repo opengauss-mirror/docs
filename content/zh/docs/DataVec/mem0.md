@@ -23,7 +23,7 @@ Mem0 利用混合数据库方法来管理和检索 AI 代理和助手的长期�
 ```
 Pip install mem0ai
 ```
-安装openGauss数据库，windows系统可以通过[容器部署](../InstallationGuide/容器镜像安装.md)并启动openGauss数据库。
+安装openGauss数据库，windows系统可以通过[容器部署](https://docs.opengauss.org/zh/docs/6.0.0-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html)并启动openGauss数据库。
 
 ### 配置Mem0并使用openGauss作为向量存储数据库
 在本样例中，我们将使用OpenAI作为LLM，并配置OpenAI api秘钥。
@@ -41,7 +41,7 @@ config = {
         "config": {
             "dbname": "your_db_name",
             "user": "your_db_user",
-            "password": "your_db_password",
+            "password": "xxxxxx",
             "host": "your_db_host",
             "port": "your_db_port",
         }

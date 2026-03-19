@@ -113,7 +113,7 @@ test_event_trigger=# alter table event_trigger_table alter column a type numeric
 test_event_trigger=# drop table event_trigger_table;
 
 --Modify an event trigger.
-test_event_trigger=# create role regress_evt_user WITH ENCRYPTED PASSWORD 'EvtUser123';
+test_event_trigger=# create role regress_evt_user WITH ENCRYPTED PASSWORD 'xxxxxx';
 test_event_trigger=# ALTER EVENT TRIGGER regress_event_trigger RENAME TO regress_event_trigger_start;
 --This operation should fail. The owner of the event trigger can only be the super user.
 test_event_trigger=# ALTER EVENT TRIGGER regress_event_trigger_start owner to regress_evt_user;

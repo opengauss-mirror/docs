@@ -76,7 +76,7 @@ public class Migration{
         ResultSet rs = null;
         try {
             Class.forName("com.MY.jdbc.Driver").newInstance();
-            Connection conn = DriverManager.getConnection("jdbc:MY://10.119.179.227:3306/jack?useSSL=false&allowPublicKeyRetrieval=true", "jack", "Gauss@123");
+            Connection conn = DriverManager.getConnection("jdbc:MY://10.119.179.227:3306/jack?useSSL=false&allowPublicKeyRetrieval=true", "jack", "******");
             Statement stmt = conn.createStatement();
             rs = stmt.executeQuery("select * from migration_table");
         } catch (SQLException e) {

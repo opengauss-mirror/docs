@@ -77,7 +77,7 @@ openGauss=# CREATE DATA SOURCE ds_test2 TYPE 'MPPDB' VERSION NULL;
 openGauss=#  CREATE DATA SOURCE ds_test3 OPTIONS (dsn 'openGauss', encoding 'utf8');
 
 -- Create a data source that contains TYPE, VERSION, and OPTIONS.
-openGauss=# CREATE DATA SOURCE ds_test4 TYPE 'unknown' VERSION '11.2.3' OPTIONS (dsn 'openGauss', username 'userid', password 'pwd@123456', encoding '');
+openGauss=# CREATE DATA SOURCE ds_test4 TYPE 'unknown' VERSION '11.2.3' OPTIONS (dsn 'openGauss', username 'userid', password 'xxxxxx', encoding '');
 
 -- Delete the data source.
 openGauss=# DROP DATA SOURCE ds_test1;

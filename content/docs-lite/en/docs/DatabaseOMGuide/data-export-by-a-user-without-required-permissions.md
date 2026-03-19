@@ -10,7 +10,7 @@
     User  **jack**  does not have the permissions to export data of the  **human\_resource**  database and the role  **role1**  has this permission. To export data of the  **human\_resource**  database, you need to assign the permission of  **role1**  to  **jack**  and set  **--role**  to  **role1**  in the export command. The exported files are in .tar format.
 
     ```
-    gs_dump -U jack -f /home/omm/backup/MPPDB_backup.tar -p 8000 human_resource --role role1 --rolepassword  abc@1234 -F t
+    gs_dump -U jack -f /home/omm/backup/MPPDB_backup.tar -p 8000 human_resource --role role1 --rolepassword  xxxxxx -F t
     Password:
     ```
 
@@ -72,7 +72,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="44.16%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136762_en-us_topic_0237121175_p1962511481717"><a name="en-us_topic_0283136762_en-us_topic_0237121175_p1962511481717"></a><a name="en-us_topic_0283136762_en-us_topic_0237121175_p1962511481717"></a>Role password.</p>
     </td>
-    <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136762_en-us_topic_0237121175_p1662514481776"><a name="en-us_topic_0283136762_en-us_topic_0237121175_p1662514481776"></a><a name="en-us_topic_0283136762_en-us_topic_0237121175_p1662514481776"></a>--rolepassword  abc@1234</p>
+    <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136762_en-us_topic_0237121175_p1662514481776"><a name="en-us_topic_0283136762_en-us_topic_0237121175_p1662514481776"></a><a name="en-us_topic_0283136762_en-us_topic_0237121175_p1662514481776"></a>--rolepassword  xxxxxx</p>
     </td>
     </tr>
     <tr id="en-us_topic_0283136762_en-us_topic_0237121175_row1885993510341"><td class="cellrowborder" valign="top" width="24.169999999999998%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136762_en-us_topic_0237121175_p141711116303"><a name="en-us_topic_0283136762_en-us_topic_0237121175_p141711116303"></a><a name="en-us_topic_0283136762_en-us_topic_0237121175_p141711116303"></a>-F</p>
@@ -99,7 +99,7 @@ CREATE ROLE
 human_resource=# GRANT role1 TO jack;
 GRANT ROLE
 
-gs_dump -U jack -f /home/omm/backup/MPPDB_backup11.tar -p 8000 human_resource --role role1 --rolepassword abc@1234 -F t
+gs_dump -U jack -f /home/omm/backup/MPPDB_backup11.tar -p 8000 human_resource --role role1 --rolepassword xxxxxx -F t
 Password:
 gs_dump[port='8000'][human_resource][2017-07-21 16:21:10]: dump database human_resource successfully
 gs_dump[port='8000'][human_resource][2017-07-21 16:21:10]: total time: 4239  ms
@@ -113,7 +113,7 @@ CREATE ROLE
 human_resource=# GRANT role1 TO jack;
 GRANT ROLE
 
-gs_dump -U jack -f /home/omm/backup/MPPDB_backup12.tar -p 8000 human_resource -n public --role role1 --rolepassword abc@1234 -F t
+gs_dump -U jack -f /home/omm/backup/MPPDB_backup12.tar -p 8000 human_resource -n public --role role1 --rolepassword xxxxxx -F t
 Password:
 gs_dump[port='8000'][human_resource][2017-07-21 16:21:10]: dump database human_resource successfully
 gs_dump[port='8000'][human_resource][2017-07-21 16:21:10]: total time: 3278  ms
@@ -127,7 +127,7 @@ CREATE ROLE
 human_resource=# GRANT role1 TO jack;
 GRANT ROLE
 
-gs_dumpall -U jack -f /home/omm/backup/MPPDB_backup.sql -p 8000 --role role1 --rolepassword abc@1234
+gs_dumpall -U jack -f /home/omm/backup/MPPDB_backup.sql -p 8000 --role role1 --rolepassword xxxxxx
 Password:
 gs_dumpall[port='8000'][human_resource][2018-11-14 17:26:18]: dumpall operation successful
 gs_dumpall[port='8000'][human_resource][2018-11-14 17:26:18]: total time: 6437  ms

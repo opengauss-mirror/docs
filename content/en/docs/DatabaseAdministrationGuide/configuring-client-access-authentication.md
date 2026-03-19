@@ -26,7 +26,7 @@ If a host needs to connect to a database remotely, you need to add information a
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
     >-   Before using user  **jack**, connect to the database locally and run the following command in the database to create user  **jack**:  
     >    ```  sql
-    >    CREATE USER jack PASSWORD 'Test@123';  
+    >    CREATE USER jack PASSWORD 'xxxxxx';  
     >    ```
     >-   **-N all**  indicates all hosts in openGauss.  
     >-   **-I all**  indicates all instances on the host.  

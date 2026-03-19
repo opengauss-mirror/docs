@@ -12,6 +12,7 @@
 >创建PQ索引时表中的数据量小于pq_ksub可以正常创建索引，但会提示参与训练码本的数据量较少，召回率可能会偏低。<br>
 >创建IVFPQ索引时，如果表数据量小于索引选项lists，会提示召回率低。<br>
 >PQ不支持ustore表建立索引。
+>PQ特性支持的数据量上限为一亿。
 ## 安装准备
 
 ### 环境要求
@@ -147,11 +148,11 @@ vector_cosine_ops|<=>|余弦距离
 - pq_m：切分子空间越多，精度越高，同时性能越低。该值需要能整除数据集维度，推荐值为`维度/4`。
 - pq_ksub：聚类中心越多，精度越高，但同时性能越低。推荐值为`256`。
 - by_residual：启动残差计算可以提升精度，但是会增加构建索引的时间。推荐值`off`。
-- 其余参数设置与[向量索引](../../../../zh/docs/SQLReference/向量索引.md)中IVFFLAT索引相同。
+- 其余参数设置与[向量索引](../SQLReference/向量索引.md)中IVFFLAT索引相同。
 
 #### 查询选项
 
-- `ivfflat_probe` - 查询时候选集的大小，参见[DataVec向量引擎参数](../../../../zh/docs/DatabaseReference/DataVec向量引擎参数.md)。
+- `ivfflat_probe` - 查询时候选集的大小，参见[DataVec向量引擎参数](../DatabaseReference/DataVec向量引擎参数.md)。
 
 	**示例：**
 
@@ -159,7 +160,7 @@ vector_cosine_ops|<=>|余弦距离
 	openGauss=# SET ivfflat_probes = 10;
 	```
 
-- `ivfpq_kreorder` - 设置参与精排候选集的大小，参见[DataVec向量引擎参数](../../../../zh/docs/DatabaseReference/DataVec向量引擎参数.md)。
+- `ivfpq_kreorder` - 设置参与精排候选集的大小，参见[DataVec向量引擎参数](../DatabaseReference/DataVec向量引擎参数.md)。
 
 	**示例：**
 

@@ -53,12 +53,12 @@
 
 -   treat_bxconst_as_binary: 控制b''、x''字符串在词法分析时的默认类型。当设置此参数时，将b''、x''数据作为binary类型进行存储和使用。当不设置此参数时，将b''、x''数据作为bit类型进行存储和使用。
 
-    | 语句                                                         | 不设置treat_bxconst_as_binary表现 | 设置treat_bxconst_as_binary表现 | Mysql表现 |
-    | ------------------------------------------------------------ | --------------------------------- | ------------------------------- | --------- |
-    | select b'110010'                                             | 50                                | '2'                             | 2         |
-    | select conv(b'110010', 16, 10)                               | 50                                | 2                               | 2         |
-    | select b'110010' + 1;                                        | 51                                | 3                               | 51        |
-    | create table t_bit(a bit(16));<br>insert into t_bit values(b'11001000110010');<br>select conv(a, 16, 10) from t_bit; | 12850                             | 34                              | 12850     |
+    | 语句                                                         | 不设置treat_bxconst_as_binary表现 | 设置treat_bxconst_as_binary表现 | Mysql57表现 | Mysql80表现
+    | ------------------------------------------------------------ | --------------------------------- | ------------------------------- | --------- | --------- |
+    | select b'110010'                                             | 110010                            | \x32                            | 2         | 0x32      |
+    | select conv(b'110010', 16, 10)                               | 50                                | 2                               | 2         | 50        |
+    | select b'110010' + 1;                                        | 51                                | 3                               | 51        | 51        |
+    | create table t_bit(a bit(16));<br>insert into t_bit values(b'11001000110010');<br>select conv(a, 16, 10) from t_bit; | 12850                             | 12850                           | 12850     | 12850     |
     
 - not_escape_zero_in_binary：对于binary类型是否取消将\0字符转义成\000字符输出，该参数只影响JDBC的输出结果，具体表现如下所示：
 
@@ -860,8 +860,8 @@ INSERT 0 1
 
 >![](public_sys-resources/icon-notice.png) **须知：** 
 >
->-   当加载了dophin插件，并且开启了dolphin数据库协议后，可以使用此功能。
->-   由于opengauss的database同mysql的database体系不一致，因此dophin需要选择一个opengauss的数据库实例。
+>-   当加载了dolphin插件，并且开启了dolphin数据库协议后，可以使用此功能。
+>-   由于opengauss的database同mysql的database体系不一致，因此dolphin需要选择一个opengauss的数据库实例。
 
 **取值范围**：字符串
 
@@ -973,7 +973,7 @@ openGauss=# set lower_case_table_names = default;
 SET
 ```
 
-## b\_compatibility\_show\_warning\_count
+## max_error_count
 
 **参数说明**：控制show warnings/erros语句，输出的error, warning, note信息的最大数量，默认值是64，该参数范围是0~65535。
 
@@ -1042,8 +1042,8 @@ openGauss=# select 1,1.23;
 
 >![](public_sys-resources/icon-notice.png) **须知：** 
 >
->-   当加载了dophin插件，并且开启了dolphin数据库协议后，可以使用此功能。
->-   由于opengauss的SSL通信同mysql的SSL通信体系不一致，因此dophin需要提供SSL文件信息。
+>-   当加载了dolphin插件，并且开启了dolphin数据库协议后，可以使用此功能。
+>-   由于opengauss的SSL通信同mysql的SSL通信体系不一致，因此dolphin需要提供SSL文件信息。
 
 **取值范围**：字符串
 
@@ -1057,8 +1057,8 @@ openGauss=# select 1,1.23;
 
 >![](public_sys-resources/icon-notice.png) **须知：** 
 >
->-   当加载了dophin插件，并且开启了dolphin数据库协议后，可以使用此功能。
->-   由于opengauss的SSL通信同mysql的SSL通信体系不一致，因此dophin需要提供SSL文件信息。
+>-   当加载了dolphin插件，并且开启了dolphin数据库协议后，可以使用此功能。
+>-   由于opengauss的SSL通信同mysql的SSL通信体系不一致，因此dolphin需要提供SSL文件信息。
 
 **取值范围**：字符串
 
@@ -1072,8 +1072,8 @@ openGauss=# select 1,1.23;
 
 >![](public_sys-resources/icon-notice.png) **须知：** 
 >
->-   当加载了dophin插件，并且开启了dolphin数据库协议后，可以使用此功能。
->-   由于opengauss的SSL通信同mysql的SSL通信体系不一致，因此dophin需要提供SSL文件信息。
+>-   当加载了dolphin插件，并且开启了dolphin数据库协议后，可以使用此功能。
+>-   由于opengauss的SSL通信同mysql的SSL通信体系不一致，因此dolphin需要提供SSL文件信息。
 
 **取值范围**：字符串
 

@@ -403,7 +403,7 @@ Success to perform gs_guc!
 Example 5: Encrypt a plaintext user password stored on a server to avoid password leakage.
 
 ```
-gs_guc encrypt -K Gauss@123 -D /data/xzg/wisequery/gaussdb
+gs_guc encrypt -K ****** -D /data/xzg/wisequery/gaussdb
 gs_guc encrypt -K ***
 ```
 

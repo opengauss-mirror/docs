@@ -2722,7 +2722,7 @@ SET CONSTRAINTS { ALL | name [, ...] } { DEFERRED | IMMEDIATE };
 Sets the current user identifier of the current session.
 
 ```
-SET [ SESSION | LOCAL ] ROLE role_name PASSWORD 'password';
+SET [ SESSION | LOCAL ] ROLE role_name PASSWORD 'xxxxxx';
 RESET ROLE;
 ```
 
@@ -2731,7 +2731,7 @@ RESET ROLE;
 Sets the session user identifier and the current user identifier of the current SQL session to a specified user.
 
 ```
-SET [ SESSION | LOCAL ] SESSION AUTHORIZATION role_name PASSWORD 'password';
+SET [ SESSION | LOCAL ] SESSION AUTHORIZATION role_name PASSWORD 'xxxxxx';
 {SET [ SESSION | LOCAL ] SESSION AUTHORIZATION DEFAULT
    | RESET SESSION AUTHORIZATION};
 ```

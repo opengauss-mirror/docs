@@ -20,7 +20,7 @@ public class Test {
             Class.forName(driver).newInstance();
             Properties properties = new Properties();
             properties.setProperty("user", "username");
-            properties.setProperty("password", "password");
+            properties.setProperty("password", "xxxxxx");
             conn = DriverManager.getConnection("jdbc:postgresql://localhost:8000/postgres?socketFactory=org.newsclub" +
                             ".net.unix" +
                             ".AFUNIXSocketFactory$FactoryArg&socketFactoryArg=/data/tmp/.s.PGSQL.8000",
