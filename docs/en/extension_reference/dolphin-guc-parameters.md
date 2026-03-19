@@ -124,7 +124,7 @@ openGauss=# select now();
 
 ## default\_week\_format<a name="section203671436823"></a>
 
-**Parameter description:** The parameter value is an integer. This parameter affects the week function in the Dolphin plug-in. The value range of this parameter is [0,7], which corresponds to eight calculation policies. For details about these policies, see [Time and Date Functions](dolphin-date-and-time-processing-functions-and-operators.md). If the value of this GUC parameter exceeds the corresponding boundary value, a warning is reported and the GUC parameter is set to the corresponding boundary value.
+**Parameter description:** The parameter value is an integer. This parameter affects the week function in the Dolphin plug-in. The value range of this parameter is [0,7], which corresponds to eight calculation policies. For details about these policies, see [Time and Date Functions](dolphin_date_and_time_processing_functions_and_operators.md). If the value of this GUC parameter exceeds the corresponding boundary value, a warning is reported and the GUC parameter is set to the corresponding boundary value.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](../database_administration_guide/reset_parameters.md).
 
@@ -317,19 +317,19 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 Currently, the following operators are affected:
 
-1. [LIKE/NOT LIKE](dolphin-character-processing-functions-and-operators.md#EN-US_TOPIC_0289900656)
-2. Character type XOR [^](dolphin-character-processing-functions-and-operators.md#EN-US_TOPIC_0289900656)
-3. Numeric type XOR [^](dolphin-arithmetic-functions-and-operators.md#EN-US_TOPIC_0289900469)
-4. [&&](dolphin-logical-operators.md#EN-US_TOPIC_0289900469)
+1. [LIKE/NOT LIKE](dolphin_character_processing_functions_and_operators.md#EN-US_TOPIC_0289900656)
+2. Character type XOR [^](dolphin_character_processing_functions_and_operators.md#EN-US_TOPIC_0289900656)
+3. Numeric type XOR [^](dolphin_arithmetic_functions_and_operators.md#EN-US_TOPIC_0289900469)
+4. [&&](dolphin_logical_operators.md#EN-US_TOPIC_0289900469)
 
 5. #
 
 The following functions are affected:
 
-1. [LAST_DAY](dolphin-date-and-time-processing-functions-and-operators.md#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
-2. [TIMESTAMPDIFF](dolphin-date-and-time-processing-functions-and-operators.md#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
-3. [FORMAT](dolphin-character-processing-functions-and-operators.md#EN-US_TOPIC_0289900656)
-4. [EXTRACT](dolphin-date-and-time-processing-functions-and-operators.md#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
+1. [LAST_DAY](dolphin_date_and_time_processing_functions_and_operators.md#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
+2. [TIMESTAMPDIFF](dolphin_date_and_time_processing_functions_and_operators.md#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
+3. [FORMAT](dolphin_character_processing_functions_and_operators.md#EN-US_TOPIC_0289900656)
+4. [EXTRACT](dolphin_date_and_time_processing_functions_and_operators.md#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
 
 Other affected parameters:
 

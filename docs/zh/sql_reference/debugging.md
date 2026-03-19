@@ -50,7 +50,7 @@
 >[!NOTE]说明
 >
 >- [图5](#zh-cn_topic_0283137518_zh-cn_topic_0237122256_zh-cn_topic_0059777683_f6b9d7253ecad413e9ee92ba78199a6b4)所示的语法不接任何参数。这种形式仅用于一个BEGIN块中的EXCEPTION语句，它使得错误重新被处理。
->- 用于ERRCODE指定的条件名称和condition\_name可见[SQL标准错误码说明](../database_reference/sql_standard_error_code_description.md)，仅支持其中的ERROR类条件名。
+>- 用于ERRCODE指定的条件名称和condition\_name可见[SQL标准错误码说明](../database_reference/description_of_sql_error_codes.md)，仅支持其中的ERROR类条件名。
 
 **EXCEPTION\_INIT语法**
 

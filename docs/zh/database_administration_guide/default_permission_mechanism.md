@@ -38,7 +38,7 @@ openGauss支持以下的权限：SELECT、INSERT、UPDATE、DELETE、TRUNCATE、
 
 要撤消已经授予的权限，可以使用[REVOKE](../sql_reference/revoke.md)。对象所有者的权限（例如ALTER、DROP、COMMENT、INDEX、VACUUM、GRANT和REVOKE）是隐式的，无法授予或撤消。即只要拥有对象就可以执行对象所有者的这些隐式权限。对象所有者可以撤消自己的普通权限，例如，使表对自己以及其他人只读，系统管理员用户除外。
 
-系统表和系统视图要么只对系统管理员可见，要么对所有用户可见。标识了需要系统管理员权限的系统表和视图只有系统管理员可以查询。 有关信息，请参考[系统表和系统视图](../database_reference/system_table_and_system_view_overview.md)。
+系统表和系统视图要么只对系统管理员可见，要么对所有用户可见。标识了需要系统管理员权限的系统表和视图只有系统管理员可以查询。 有关信息，请参考[系统表和系统视图](../database_reference/overview_of_system_catalogs_and_system_views.md)。
 
 数据库提供对象隔离的特性，对象隔离特性开启时，用户只能查看有权限访问的对象（表、视图、字段、函数），系统管理员不受影响。有关信息，请参考[ALTER DATABASE](../sql_reference/alter_database.md)。
 

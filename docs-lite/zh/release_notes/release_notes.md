@@ -180,11 +180,11 @@ ORC文件访问、Kerberos安全校验、JAVA UDF、Codegen、MOT内存表特性
 
 - 高性能：Xlog刷盘优化
 
-  - 新增添加enable_LC_xlog_flush_optimize和xlog_write_flush_split参数，通过在低并发场景直接刷xlog、部分字段合并、减少持锁放锁代价等方式提升低并发场景下的xlog刷盘效率。[其他选项](../database_reference/other_options.md)
+  - 新增添加enable_LC_xlog_flush_optimize和xlog_write_flush_split参数，通过在低并发场景直接刷xlog、部分字段合并、减少持锁放锁代价等方式提升低并发场景下的xlog刷盘效率。[其他选项](../database_reference/miscellaneous_parameters.md)
   
 - 高性能：提升单条INSERT/REPLACE SQL带多个VALUES场景的插入性能50%+
 
-  - 新增enable_parse_fusion参数，提升单条INSERT/REPLACE SQL带多个VALUES场景的插入性能50%+。[其他选项](../database_reference/other_options.md)
+  - 新增enable_parse_fusion参数，提升单条INSERT/REPLACE SQL带多个VALUES场景的插入性能50%+。[其他选项](../database_reference/miscellaneous_parameters.md)
 
 - 高性能：支持bloom索引
 

@@ -6,57 +6,57 @@ sections:
   - label: Dolphin Syntax
     sections:
       - label: Keywords
-        href: ./dolphin-keywords.md
+        href: ./dolphin_keywords.md
       - label: Data Types
         sections:
           - label: Numeric Types
-            href: ./dolphin-numeric-types.md
+            href: ./dolphin_numeric_types.md
           - label: Character Types
-            href: ./dolphin-character-types.md
+            href: ./dolphin_character_types.md
           - label: Date/Time Types
-            href: ./dolphin-date-time-types.md
+            href: ./dolphin_date_time_types.md
           - label: Bit String Types
-            href: ./dolphin-bit-string-types.md
+            href: ./dolphin_bit_string_types.md
           - label: Enumeration Types
-            href: ./dolphin-enumeration-types.md
+            href: ./dolphin_enumeration_types.md
           - label: Boolean Types
-            href: ./dolphin-boolean-types.md
+            href: ./dolphin_boolean_types.md
           - label: Binary Types
-            href: ./dolphin-binary-types.md
+            href: ./dolphin_binary_types.md
       - label: Functions and Operators
         sections:
           - label: Assignment Operators
-            href: ./dolphin-assignment-operators.md
+            href: ./dolphin_assignment_operators.md
           - label: Character Processing Functions and Operators
-            href: ./dolphin-character-processing-functions-and-operators.md
+            href: ./dolphin_character_processing_functions_and_operators.md
           - label: Arithmetic Functions and Operators
-            href: ./dolphin-arithmetic-functions-and-operators.md
+            href: ./dolphin_arithmetic_functions_and_operators.md
           - label: Dolphin Lock
-            href: ./dolphin-lock.md
+            href: ./dolphin_lock.md
           - label: Date and Time Processing Functions and Operators
-            href: ./dolphin-date-and-time-processing-functions-and-operators.md
+            href: ./dolphin_date_and_time_processing_functions_and_operators.md
           - label: Advisory Lock Functions
-            href: ./dolphin-advisory-lock-functions.md
+            href: ./dolphin_advisory_lock_functions.md
           - label: Network Address Functions and Operators
-            href: ./dolphin-network-address-functions-and-operators.md
+            href: ./dolphin_network_address_functions_and_operators.md
           - label: Conditional Expression Functions
-            href: ./dolphin-conditional-expression-functions.md
+            href: ./dolphin_conditional_expression_functions.md
           - label: Aggregate Functions
-            href: ./dolphin-aggregate-functions.md
+            href: ./dolphin_aggregate_functions.md
           - label: System Information Functions
-            href: ./dolphin-system-information-functions.md
+            href: ./dolphin_system_information_functions.md
           - label: Password Functions
-            href: ./dolphin-password-functions.md
+            href: ./dolphin_password_functions.md
           - label: Logical Operators
-            href: ./dolphin-logical-operators.md
+            href: ./dolphin_logical_operators.md
           - label: Bit String Functions and Operators
-            href: ./dolphin-bit-string-functions-and-operators.md
+            href: ./dolphin_bit_string_functions_and_operators.md
           - label: JSON-JSONB Functions and Operators
-            href: ./dolphin-json-jsonb-functions-and-operators.md
+            href: ./dolphin_json_jsonb_functions_and_operators.md
           - label: Type Conversion Functions
-            href: ./dolphin-type-conversion-functions.md
+            href: ./dolphin_type_conversion_functions.md
           - label: Compatible Operators and Operations
-            href: ./dolphin-compatible-operators-and-operations.md
+            href: ./dolphin_compatible_operators_and_operations.md
       - label: Expressions
         sections:
           - label: Conditional Expressions

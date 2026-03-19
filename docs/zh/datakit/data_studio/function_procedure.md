@@ -202,7 +202,7 @@
 
 仅 openGauss 5.1.0 b011及以上版本数据库支持查看 coverage.proc_coverage 表。
 
-仅调试前将参数 [enable_proc_coverage](../../database_reference/other_options.md#section14683125861213)为on时才会将函数或存储过程调试记录存储至 coverage.proc_coverage 表，且仅特定用户（初始用户和 monadmin 用户）有访问权限。
+仅调试前将参数 [enable_proc_coverage](../../database_reference/miscellaneous_parameters.md#section14683125861213)为on时才会将函数或存储过程调试记录存储至 coverage.proc_coverage 表，且仅特定用户（初始用户和 monadmin 用户）有访问权限。
 
 <img src="figures/5-8-4.0.png" style="zoom:60%;" />
 

@@ -1689,7 +1689,7 @@ pg_prepared_statement()
 
 - generate_procoverage_report<a name="section14683125861213"></a>
   
-  描述：生成postgres库[coverage.proc_coverage](./coverage_proc_coverage.md)表中两个覆盖率序号间存储过程的覆盖率报告，需要在postgres库下执行，且打开[enable_proc_coverage](../database_reference/other_options.md#section14683125861213)参数。
+  描述：生成postgres库[coverage.proc_coverage](./coverage_proc_coverage.md)表中两个覆盖率序号间存储过程的覆盖率报告，需要在postgres库下执行，且打开[enable_proc_coverage](../database_reference/miscellaneous_parameters.md#section14683125861213)参数。
 
   输入参数：
 

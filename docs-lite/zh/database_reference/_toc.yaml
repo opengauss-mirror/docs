@@ -120,11 +120,11 @@ sections:
       - label: 升级参数
         href: ./upgrade_parameters.md
       - label: 其它选项
-        href: ./other_options.md
+        href: ./miscellaneous_parameters.md
       - label: 等待事件
         href: ./wait_event.md
       - label: Query
-        href: ./query_32.md
+        href: ./query_62.md
       - label: 系统性能快照
         href: ./system_performance_snapshot.md
       - label: 安全配置
@@ -134,19 +134,19 @@ sections:
       - label: HyperLogLog
         href: ./HyperLogLog.md
       - label: 用户自定义函数
-        href: ./user_defined_function_33.md
+        href: ./user_defined_functions.md
       - label: 定时任务
         href: ./scheduled_task.md
       - label: 线程池
         href: ./thread_pool.md
       - label: 备份恢复
-        href: ./backout_recovery.md
+        href: ./backup_and_restoration.md
       - label: DCF参数设置
         href: ./dcf_parameter_settings.md
-      - label: 回滚相关参数
-        href: ./parameters_related_to_rollback.md
       - label: 闪回相关参数
-        href: ./flashback_parameters.md 
+        href: ./flashback.md 
+      - label: 回滚相关参数
+        href: ./rollback_parameters.md
       - label: 预留参数
         href: ./reserved_parameters.md
       - label: AI特性
@@ -166,9 +166,9 @@ sections:
   - label: 系统表和系统视图
     sections:
       - label: 系统表和系统视图概述
-        href: ./system_table_and_system_view_overview.md
+        href: ./overview_of_system_catalogs_and_system_views.md
       - label: 查看系统表
-        href: ./view_system_tables.md
+        href: ./querying_a_system_catalog.md
       - label: 系统表
         sections:
           - label: GS_ASP
@@ -644,9 +644,9 @@ sections:
   - label: 错误码参考
     sections: 
       - label: SQL标准错误码说明
-        href: ./sql_standard_error_code_description.md
+        href: ./description_of_sql_error_codes.md
       - label: 第三方库错误码说明
-        href: ./third_party_library_error_code_description.md
+        href: ./third_party_library_error_codes.md
       - label: GAUSS-00001 -- GAUSS-00100
         sections: 
           - label: GAUSS-00001 -- GAUSS-00010

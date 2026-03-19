@@ -482,4 +482,4 @@ openGauss=# select * from dbe_perf.statement;
 
 - enable_auto_clean_unique_sql：是否打开归一化SQL的自动清理机制，当记录达到上限后，可以自动按照更新时间清理其中10%最近更新的记录。如果不打开，则会记录错误日志，SQL相关内容也不会记录到内存中。
 
-另请参阅：[GUC参数 - Query](../database_reference/query_32.md#ZH-CN_TOPIC_0289900490)
+另请参阅：[GUC参数 - Query](../database_reference/query_62.md#ZH-CN_TOPIC_0289900490)

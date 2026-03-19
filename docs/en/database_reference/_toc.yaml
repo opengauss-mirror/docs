@@ -128,55 +128,55 @@ sections:
     - label: Upgrade Parameters
       href: ./upgrade_parameters.md
     - label: Miscellaneous Parameters
-      href: ./miscellaneous-parameters.md
+      href: ./miscellaneous_parameters.md
     - label: Wait Events
-      href: ./wait-events.md
+      href: ./wait_events.md
     - label: Query
-      href: ./query-62.md
+      href: ./query_62.md
     - label: System Performance Snapshot
-      href: ./system-performance-snapshot.md
+      href: ./system_performance_snapshot.md
     - label: Security Configuration
       href: ./security_configuration.md
     - label: Global Temporary Table
-      href: ./global-temporary-table.md
+      href: ./global_temporary_table.md
     - label: HyperLogLog
       href: ./hyperloglog.md
     - label: User-defined Functions
-      href: ./user-defined-functions-60.md
+      href: ./user_defined_functions.md
     - label: Scheduled Task
-      href: ./scheduled-task.md
+      href: ./scheduled_task.md
     - label: Thread Pool
-      href: ./thread-pool.md
+      href: ./thread_pool.md
     - label: Backup and Restoration
-      href: ./backup-and-restoration.md
+      href: ./backup_and_restoration.md
     - label: Undo
       href: ./undo.md
     - label: DCF Parameters Settings
-      href: ./dcf-parameters-settings.md
+      href: ./dcf_parameters_settings.md
     - label: Flashback
       href: ./flashback.md
     - label: Rollback Parameters
-      href: ./rollback-parameters.md
+      href: ./rollback_parameters.md
     - label: Reserved Parameters
-      href: ./reserved-parameters.md
+      href: ./reserved_parameters.md
     - label: AI Features
-      href: ./ai-features-31.md
+      href: ./ai_features.md
     - label: Global SysCache Parameters
-      href: ./global-syscache-parameters.md
+      href: ./global_syscache_parameters.md
     - label: Resource Pooling Parameters
       href: ./resource-pooling-parameters.md
     - label: UWAL Parameters
       href: ./uwal-parameters.md
     - label: Parameters Related to Efficient Data Compression Algorithms
-      href: ./parameters-related-to-efficient-data-compression-algorithms.md
+      href: ./parameters_related_to_efficient_data_compression_algorithms.md
     - label: Enabling Write Statements on Standby Nodes
-      href: ./enabling-write-statements-on-standby-nodes.md
+      href: ./enabling_write_statements_on_standby_nodes.md
 - label: System Catalogs and System Views
   sections:
     - label: Overview
-      href: ./overview-of-system-catalogs-and-system-views.md
+      href: ./overview_of_system_catalogs_and_system_views.md
     - label: Querying a System Catalog
-      href: ./querying-a-system-catalog.md
+      href: ./querying_a_system_catalog.md
     - label: System Catalogs
       sections:
         - label: GS_ASP
@@ -638,9 +638,9 @@ sections:
 - label: Error Code Reference
   sections:
     - label: Description of SQL Error Codes
-      href: ./description-of-sql-error-codes.md
+      href: ./description_of_sql_error_codes.md
     - label: Third-Party Library Error Codes
-      href: ./third-party-library-error-codes.md
+      href: ./third_party_library_error_codes.md
     - label: GAUSS-00001 -- GAUSS-00100
       sections:
         - label: GAUSS-00001 -- GAUSS-00010
@@ -2426,4 +2426,4 @@ sections:
 - label: Functions of openGauss Executable Scripts
   href: ./functions-of-opengauss-executable-scripts.md
 - label: Communication Matrix
-  href: ./communication-matrix.md
+  href: ./communication_matrix.md

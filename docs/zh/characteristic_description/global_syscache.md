@@ -41,7 +41,7 @@
 
 ## 使用指导<a name="section8406643144718"></a>
 
-参考相关GUC参数说明：[Global-SysCache参数](../database_reference/global_syscache_parameter.md)
+参考相关GUC参数说明：[Global-SysCache参数](../database_reference/global_syscache_parameters.md)
 
 ## 使用场景<a name="section8406643144719"></a>
 

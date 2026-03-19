@@ -50,7 +50,7 @@ If neither a condition name nor an  **SQLSTATE**  is designated in a  **RAISE EX
 >[!NOTE]NOTE 
 >
 >- The syntax shown in [Figure 5](#en-us_topic_0283137518_en-us_topic_0237122256_en-us_topic_0059777683_f6b9d7253ecad413e9ee92ba78199a6b4) is not followed by any parameter. This form is used only for the EXCEPTION statement in a BEGIN block so that the error can be re-processed.
->- For the condition name specified by ERRCODE and condition\_name, see [Description of SQL Error Codes](../database_reference/description-of-sql-error-codes.md). Only ERROR condition names are supported.
+>- For the condition name specified by ERRCODE and condition\_name, see [Description of SQL Error Codes](../database_reference/description_of_sql_error_codes.md). Only ERROR condition names are supported.
 
 **EXCEPTION\_INIT**
 
