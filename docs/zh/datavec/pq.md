@@ -23,10 +23,10 @@ PQ特性只支持ARM架构环境。
 ### PQ加速包安装
 
 IVFPQ和HNSWPQ的PQ加速包是一样的，DISKANNPQ需要的PQ包需要另外安装。
+PQ加速包暂不支持x86环境。
 
 1）IVF和HNSW的PQ包<br>
-详见[容器镜像安装](../installation_guide/installing_the_container_image.md)。<br>
-ARM架构环境镜像中默认已经安装PQ检索加速安装包，加速包默认安装路径为/usr/local/sra_recall。
+ARM架构环境三方包和二进制安装包中默认已经安装PQ检索加速安装包，无需进行额外配置。
 
 2）DISKANN的PQ包<br>
 准备：环境中有openblas包，可以通过`yum install openblas`安装。
