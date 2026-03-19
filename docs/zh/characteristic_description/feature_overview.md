@@ -529,4 +529,7 @@
     <tr>
         <td><a href="./advanced_features/uwal.md">UWAL</a></td>
     </tr>
+    <tr>
+        <td><a href="./advanced_features/oGRecorder.md">数据保险柜</a></td>
+    </tr>
 </table>
