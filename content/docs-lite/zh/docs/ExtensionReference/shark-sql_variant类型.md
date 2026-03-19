@@ -17,7 +17,7 @@ openGauss在shark中支持sql_variant类型，sql_variant类型可以保存非�
 
 ## 示例
 
-**示例1：**在系统表中查找sql_variant类型。
+**示例1：** 在系统表中查找sql_variant类型。
 
 ```auto
 \x    --列式展示查询结果
@@ -60,7 +60,7 @@ typdefault     |
 typacl         |
 ```
 
-**示例2：**字符类型强制转换为sql_variant类型。
+**示例2：** 字符类型强制转换为sql_variant类型。
 
 ```auto
 select 'aa'::char::sql_variant;
@@ -79,7 +79,7 @@ sql_variant
 (1 row)
 ```
 
-**示例3：**sql_variant对基础类型二进制长度要求<=8000。
+**示例3：** sql_variant对基础类型二进制长度要求<=8000。
 
 1、基础类型二进制长度小于等于8000。
 
