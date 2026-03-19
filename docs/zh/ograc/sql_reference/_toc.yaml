@@ -59,7 +59,7 @@ sections:
     href: ./create_table.md
   - label: CREATE TABLESPACE
     href: ./create_tablespace.md
-  - label: CREATE TABLE
+  - label: CREATE TABLE PARTITION
     href: ./create_table_partition.md
   - label: CREATE VIEW
     href: ./create_view.md
