@@ -64,60 +64,18 @@
     2.  下划线（\_）代表（匹配）任何单个字符；百分号（%）代表任意串的通配符。
     3.  SIMILAR TO也支持下面这些从POSIX正则表达式借用的模式匹配元字符。
 
-        <a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_table199321611038"></a>
-        <table><thead align="left"><tr id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_row3083601711038"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p6509621711038"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p6509621711038"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p6509621711038"></a>元字符</p>
-        </th>
-        <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p3830219211038"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p3830219211038"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p3830219211038"></a>含义</p>
-        </th>
-        </tr>
-        </thead>
-        <tbody><tr id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_row917541411038"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p501109211038"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p501109211038"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p501109211038"></a>|</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p324528211038"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p324528211038"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p324528211038"></a>表示选择（两个候选之一）</p>
-        </td>
-        </tr>
-        <tr id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_row2920753811038"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p1700039611038"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p1700039611038"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p1700039611038"></a>*</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p3485482611038"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p3485482611038"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p3485482611038"></a>表示重复前面的项零次或更多次</p>
-        </td>
-        </tr>
-        <tr id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_row4525798211038"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4201795011038"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4201795011038"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4201795011038"></a>+</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4801080711038"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4801080711038"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4801080711038"></a>表示重复前面的项一次或更多次</p>
-        </td>
-        </tr>
-        <tr id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_row2944408011038"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p3616024011038"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p3616024011038"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p3616024011038"></a>?</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4329830011038"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4329830011038"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4329830011038"></a>表示重复前面的项零次或一次</p>
-        </td>
-        </tr>
-        <tr id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_row5414038711038"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p2329521311038"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p2329521311038"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p2329521311038"></a>{m}</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p786412011038"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p786412011038"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p786412011038"></a>表示重复前面的项刚好m次</p>
-        </td>
-        </tr>
-        <tr id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_row366822111038"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p2869050811038"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p2869050811038"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p2869050811038"></a>{m,}</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4222980711038"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4222980711038"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4222980711038"></a>表示重复前面的项m次或更多次</p>
-        </td>
-        </tr>
-        <tr id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_row4452394811038"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4967002511038"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4967002511038"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4967002511038"></a>{m,n}</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p6384907011038"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p6384907011038"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p6384907011038"></a>表示重复前面的项至少m次并且不超过n次</p>
-        </td>
-        </tr>
-        <tr id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_row3777072411038"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p3952976911038"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p3952976911038"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p3952976911038"></a>()</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4779469811038"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4779469811038"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4779469811038"></a>把多个项组合成一个逻辑项</p>
-        </td>
-        </tr>
-        <tr id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_row4859307511333"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4372496511333"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4372496511333"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4372496511333"></a>[...]</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p5206129211333"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p5206129211333"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p5206129211333"></a>声明一个字符类，就像POSIX正则表达式一样</p>
-        </td>
-        </tr>
-        </tbody>
-        </table>
+    | 元字符  | 含义                             |
+    |----------|----------------------------------|
+    | \|       | 表示选择（两个候选之一）          |
+    | *        | 表示重复前面的项零次或更多次       |
+    | +        | 表示重复前面的项一次或更多次       |
+    | ?        | 表示重复前面的项零次或一次         |
+    | {m}      | 表示重复前面的项刚好m次            |
+    | {m,}     | 表示重复前面的项m次或更多次        |
+    | {m,n}    | 表示重复前面的项至少m次并且不超过n次 |
+    | ()       | 把多个项组合成一个逻辑项            |
+    | [...]    | 声明一个字符类，就像POSIX正则表达式一样 |
+
 
     4.  前导逃逸字符可以禁止所有这些元字符的特殊含义。逃逸字符的使用规则和LIKE一样。
 
@@ -165,75 +123,23 @@
 
     **表 1**  正则表达式匹配操作符
 
-    <a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_table6512684711360"></a>
-    <table><thead align="left"><tr id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_row1082180211360"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p3735685611360"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p3735685611360"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p3735685611360"></a>操作符</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p600647111360"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p600647111360"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p600647111360"></a>描述</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p1676213111360"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p1676213111360"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p1676213111360"></a>例子</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_row1664145111360"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p578025211360"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p578025211360"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p578025211360"></a>~</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p6554726211360"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p6554726211360"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p6554726211360"></a>匹配正则表达式，大小写敏感</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p772799211360"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p772799211360"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p772799211360"></a>'thomas' ~ '.*thomas.*'</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_row244307011360"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p6367099211360"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p6367099211360"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p6367099211360"></a>~*</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p5707675111360"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p5707675111360"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p5707675111360"></a>匹配正则表达式，大小写不敏感</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p5981411411360"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p5981411411360"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p5981411411360"></a>'thomas' ~* '.*Thomas.*'</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_row145611911360"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p5083680411360"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p5083680411360"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p5083680411360"></a>!~</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p2414044111360"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p2414044111360"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p2414044111360"></a>不匹配正则表达式，大小写敏感</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p921871911360"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p921871911360"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p921871911360"></a>'thomas' !~ '.*Thomas.*'</p>
-    </td>
-    </tr>
-    <tr id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_row1585961211360"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p956017311360"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p956017311360"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p956017311360"></a>!~*</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p3617658011360"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p3617658011360"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p3617658011360"></a>不匹配正则表达式，大小写不敏感</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4462183011360"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4462183011360"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p4462183011360"></a>'thomas' !~* '.*vadim.*'</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
+    | 操作符  | 描述                     | 例子                          |
+    |---------|--------------------------|-------------------------------|
+    | ~       | 匹配正则表达式，大小写敏感      | 'thomas' ~ '.*thomas.*'       |
+    | ~*      | 匹配正则表达式，大小写不敏感     | 'thomas' ~* '.*Thomas.*'      |
+    | !~      | 不匹配正则表达式，大小写敏感      | 'thomas' !~ '.*Thomas.*'      |
+    | !~*     | 不匹配正则表达式，大小写不敏感     | 'thomas' !~* '.*vadim.*'      |
 
     匹配规则：
 
     1.  与LIKE不同，正则表达式允许匹配串里的任何位置，除非该正则表达式显式地挂接在串的开头或者结尾。
     2.  除了上文提到的元字符外， POSIX正则表达式还支持下列模式匹配元字符。
 
-        <a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_table23243447154559"></a>
-        <table><thead align="left"><tr id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_row10310639154559"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p263474154559"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p263474154559"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p263474154559"></a>元字符</p>
-        </th>
-        <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p21341433154559"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p21341433154559"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p21341433154559"></a>含义</p>
-        </th>
-        </tr>
-        </thead>
-        <tbody><tr id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_row55757359154559"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p20052206154559"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p20052206154559"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p20052206154559"></a>^</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p13615978154559"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p13615978154559"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p13615978154559"></a>表示串开头的匹配</p>
-        </td>
-        </tr>
-        <tr id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_row915516111321"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p171561119328"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p171561119328"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p171561119328"></a>$</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p1841276153213"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p1841276153213"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p1841276153213"></a>表示串末尾的匹配</p>
-        </td>
-        </tr>
-        <tr id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_row24758039154559"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p59244166154559"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p59244166154559"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p59244166154559"></a>.</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p34048137154559"><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p34048137154559"></a><a name="zh-cn_topic_0283137455_zh-cn_topic_0237121970_p34048137154559"></a>匹配任意单个字符</p>
-        </td>
-        </tr>
-        </tbody>
-        </table>
+    | 元字符 | 含义          |
+    |--------|---------------|
+    | ^      | 表示串开头的匹配 |
+    | $      | 表示串末尾的匹配 |
+    | .      | 匹配任意单个字符 |
 
     正则表达式函数：
 
