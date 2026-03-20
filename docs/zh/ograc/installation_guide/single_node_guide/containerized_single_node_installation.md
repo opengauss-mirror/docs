@@ -118,7 +118,7 @@ sed -i 's+USE_PROTECT_VM=ON+USE_PROTECT_VM=OFF+' Makefile.sh
 
 6.3 编译安装 oGRAC
 
-在 build 目录下执行下面的命令进行编译安装，示例为编译的 debug 版本，不指定 -b 默认是编译 release 版本；-u 指定安装用户名
+在 build 目录下执行下面的命令进行编译安装，示例为编译的 debug 版本，不指定 -b 默认是编译 release 版本；-u 指定安装用户名；-c 指定兼容性，支持指定A/B/C兼容性，不指定时默认为A兼容性
 
 ```shell
 sh local_install.sh prepare
@@ -126,6 +126,8 @@ sh local_install.sh prepare
 sh local_install.sh compile -b debug
 
 sh local_install.sh install -u user_name
+
+# sh local_install.sh install -u [user_name] -c A  # 新建兼容性为A的数据库
 ```
 
 至此容器内已编译安装好 oGRAC，后续可以根据需要进行配置和使用。
