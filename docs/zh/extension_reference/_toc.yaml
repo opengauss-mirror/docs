@@ -80,7 +80,9 @@ sections:
           - label: 操作符优先级
             href: ./dolphin-操作符优先级.md
           - label: JSON操作符兼容
-            href: ./dolphin-JSON操作符兼容.md     
+            href: ./dolphin-JSON操作符兼容.md
+          - label: XML函数
+            href: ./dolphin-XML函数.md            
       - label: 表达式
         sections:
           - label: 条件表达式
