@@ -465,6 +465,8 @@ sections:
     href: ./gms_lob.md
   - label: gms_debug Extension
     href: ./gms_debug.md
+  - label: wal2json Extension
+    href: ./wal2json.md
   - label: spqplugin_v2-Extension
     sections:
       - label: spqplugin_v2概述与安装
