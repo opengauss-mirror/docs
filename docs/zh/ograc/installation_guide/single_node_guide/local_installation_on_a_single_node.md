@@ -131,10 +131,12 @@ sh local_install.sh compile -b [release | debug]
 ### 执行安装脚本
 
 1. 在root用户下, 进入 `oGRAC/build` 目录
-2. 使用安装脚本进行部署,并指定安装用户
+2. 使用安装脚本进行部署，并指定安装用户或者兼容性
 
 ```bash
 sh local_install.sh install -u [user_name]
+
+# sh local_install.sh install -u [user_name] -c A  # 新建兼容性为A的数据库
 ```
 
 该脚本将自动完成以下工作：
