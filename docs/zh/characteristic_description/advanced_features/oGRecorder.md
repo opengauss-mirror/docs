@@ -19,6 +19,7 @@ GR（oGRecorder）是一款数据库日志保护软件。其典型部署场景�
 ## 特性增强<a name="section21149265913"></a>
 
 openGauss 7.0.0-RC3：支持在线滚动升级与离线升级。
+openGauss 7.0.0-RC3：支持[主备参数同步](../../tool_and_commandreference/ogrecorder/ogrecorder_primary_standby_sync.md)。
 
 ## 特性约束<a name="section51513617597"></a>
 
