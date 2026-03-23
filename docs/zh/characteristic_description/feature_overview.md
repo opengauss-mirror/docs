@@ -419,6 +419,9 @@
     <tr>
         <td><a href="./aifeature_guide/intelligent_cardinality_estimation.md">ABO优化器</a></td>
     </tr>
+    <tr>
+        <td><a href="./ogai.md">OGAI</a></td>
+    </tr>
 </table>
 
 ## 工具链

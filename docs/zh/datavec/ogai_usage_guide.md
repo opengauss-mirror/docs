@@ -1,50 +1,41 @@
-# OGAI 特性文档
+# OGAI 使用指南
 
-## 可获得性
+本文档介绍 OGAI（openGauss AI）的环境准备、系统表、系统函数及使用方法。关于 OGAI 的特性介绍、客户价值和约束说明，请参考 [OGAI 特性文档](../characteristic_description/ogai.md)。
 
-本特性自 openGauss 7.0-RC3 版本开始引入。
+## 环境准备
 
-## 特性简介
+### 1. 创建加密密钥文件
 
-OGAI（openGauss AI）是 openGauss 数据库内置的智能向量化框架，提供了一站式的 AI 能力集成方案。通过 OGAI，用户可以在数据库内部直接调用AI模型进行文本向量化、文本生成、文档重排序等操作，无需依赖外部应用层实现，大幅简化了 RAG（检索增强生成）应用的开发流程。
+OGAI 使用加密密钥文件对注册模型时的 API Key 进行加密存储。使用前需要在各数据库节点上生成密钥文件：
 
-## 客户价值
+```bash
+gs_guc generate -S XXX -D $GAUSSHOME/bin -o ogai
+```
 
-- **开发效率提升**：无需在应用层实现复杂的向量化和检索逻辑，所有 AI 能力通过 SQL 函数直接调用
-- **数据一致性保障**：文本自动向量化，向量数据与业务数据存储在同一数据库中，通过触发器自动同步更新
-- **多模型支持**：支持 OpenAI、Qwen（通义千问）、Ollama、ONNX 等多种模型提供者
-- **灵活的部署方式**：支持云端 API 调用和本地模型部署
+执行后会在 `$GAUSSHOME/bin` 目录下生成 `ogai.key.cipher` 和 `ogai.key.rand` 两个文件。其中 `-S` 指定加密口令。
 
-## 特性描述
+> [!NOTE]说明
+> 如果未创建密钥文件，注册模型时写入的 API Key 将无法被加密，解密时会报错提示 "Make sure the ogai.key.cipher file exists and is valid."。
 
-OGAI 提供以下核心能力：
+### 2. 安装插件
 
-- **文本向量化（Embedding）**：将文本转换为向量表示，支持多种嵌入模型
-- **文本生成（Generate）**：调用大语言模型生成回答
-- **文档重排序（Rerank）**：对检索结果进行相关性重排序
-- **文本分块（Chunk）**：将长文本智能分割为适合处理的片段
-- **自动向量化（Vectorize）**：自动化管理表数据的向量化任务，支持同步和异步两种模式
-- **向量搜索（Search）**：基于向量相似度的语义检索
-- **混合搜索（Hybrid Search）**：结合向量检索与 BM25 全文检索
-- **RAG 问答**：端到端的检索增强生成问答
+连接数据库后执行：
 
-## 特性约束
+```sql
+CREATE EXTENSION ogai;
+```
 
-OGAI 特性规格约束如下：
+安装后会自动创建 `ogai` schema 及其下的系统表、函数和触发器。
 
-| 约束类型 | 详细说明 |
-|----------|----------|
-| 模型依赖 | 使用前需要正确配置模型提供者的 API 地址和密钥 |
-| 网络要求 | 云端模型调用需要数据库服务器能够访问外网 |
-| UPDATE 限制 | 向量化任务不支持 UPDATE 操作触发同步，需使用 DELETE + INSERT 替代 |
-| BM25 类型限制 | 启用 BM25 索引时，文本列必须为 TEXT 类型 |
-| 异步任务 | 使用异步向量化需要开启 `enable_async_ogai` 参数并重启数据库 |
-| 行级安全 | OGAI 系统表启用了行级安全策略，用户只能访问自己创建的模型和任务 |
-| 分块参数 | `max_chunk_overlap` 必须小于 `max_chunk_size` |
+### 3. 配置异步向量化（可选）
 
-## 依赖关系
+如需使用异步向量化模式，需要在 `postgresql.conf` 中开启参数并重启数据库：
 
-[向量数据库特性](datavec_overview.md)
+```ini
+enable_async_ogai = on
+```
+
+OGAI 相关 GUC 参数的完整说明请参考 [OGAI 参数](../database_reference/ogai_parameters.md)。
 
 ## 系统表
 
@@ -463,16 +454,9 @@ SELECT * FROM ogai.ai_unvectorize('my_task');
 
 ## 使用指导
 
-OGAI相关GUC参数说明请参考[OGAI参数](../database_reference/ogai_parameters.md)，
+完成[环境准备](#环境准备)后，即可开始使用 OGAI。
 
-### 1. 环境准备
-
-```ini
-# postgresql.conf - 启用异步向量化（可选，仅异步模式需要）
-enable_async_ogai = on
-```
-
-### 2. 注册模型
+### 1. 注册模型
 
 ```sql
 INSERT INTO ogai.model_sources (model_key, model_name, model_provider, url, api_key, owner_name)
@@ -490,7 +474,7 @@ INSERT INTO ogai.model_sources (model_key, model_name, model_provider, url, owne
 VALUES ('onnx_bge', 'bge-small-zh', 'onnx', '/data/models/bge-small-zh.onnx', CURRENT_USER);
 ```
 
-### 3. 完整示例
+### 2. 完整示例
 
 ```sql
 -- 1. 注册模型

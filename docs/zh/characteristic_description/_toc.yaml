@@ -227,6 +227,8 @@ sections:
             href: ./intelligent_cardinality_estimation.md
           - label: 自适应计划选择
             href: ./adaptive_plan_selection.md
+      - label: OGAI
+        href: ./ogai.md
   - label: 工具链
     sections:
       - label: DataKit
