@@ -474,10 +474,5 @@ sections:
       - label: spqplugin_v2概述与安装
         href: ./spqplugin_v2.md
       - label: spqplugin_v2使用说明
-<<<<<<< HEAD
-        href: ./spqplugin_v2使用说明.md
-      
-=======
         href: ./spqplugin_v2_usage.md
       
->>>>>>> 67af12e25 (修改插件参考的中英文名称一致等问题)
