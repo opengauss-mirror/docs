@@ -17,7 +17,7 @@ cd Python-3.11.0
 make -j; make install
 ```
 
->>[!NOTE]说明
+>[!NOTE]说明
 >
 >编译安装python3过程中可能会遇到缺少某些依赖包的报错，安装对应的依赖包后重新执行上述命令进行编译安装。
 
@@ -122,7 +122,7 @@ vectordbbench opengausshnsw --case-type Performance768D1M --k 10 --concurrency-d
 vectordbbench opengausshnswpq --pq_m 96 --hnsw_earlystop_threshold 160 --case-type Performance768D1M --k 10 --concurrency-duration 60 --num-concurrency 1 --user-name gaussdb --password YourPassword --host 127.0.0.1 --port 5432 --db-name postgres --m 16 --ef-construction 200 --ef-search 200
 ```
 
->>[!NOTE]说明
+>[!NOTE]说明
 >
 >1. 执行hnswpq索引测试命令需要提前配置PQ检索加速包，PQ特性暂时只支持ARM架构环境，详见[PQ](../datavec/pq.md)。
 >2. 支持的数据集名称可以通过执行“vectordbbench opengausshnsw --help”命令回显的“--case-type”字段说明进行查看。
