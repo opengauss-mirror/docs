@@ -1,0 +1,9 @@
+label: 基于MySQL兼容性的开发指南
+isManual: true
+sections:
+  - label: 配置MySQL协议兼容
+    href: ./mysql_protocol_compatibility_config.md
+  - label: 基于MySQL JDBC开发
+    href: ./mysql_jdbc_development.md
+  - label: 基于Mybatis开发
+    href: ./mybatis_development.md
