@@ -135,7 +135,7 @@
   (1 row)
   ```
 
-该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **示例**：
 
@@ -246,7 +246,7 @@ CALL
 
 **参数说明**：参数值为浮点数，该参数影响dolphin中的```curdate/current_time/curtime/current_timestamp/localtime/localtimestamp/now```函数。当此参数值为0时，以上函数返回当前日期或时间；若参数值位于区间[1,2147483647]，则上述函数以该GUC参数的值作为秒数偏移，返回1970年01月01日 00:00:00 UTC + 秒数偏移 + 当前时区偏移的对应日期或时间。设置此参数时，若值不在上述合法区间内，会报错。
 
-该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：0∪[1.0, 2147483647.0]
 
@@ -280,7 +280,7 @@ openGauss=# select now();
 
 **参数说明**：参数值为整数，该参数影响dolphin插件中的```week```函数，该参数的取值范围为[0,7]，分别对应8种不同的计算策略，这些策略的详细内容参见[时间/日期函数](dolphin_date_and_time_processing_functions_and_operators.md##时间日期函数a-namezh-cntopic0283136846zh-cntopic0237121972zh-cntopic0059779084sd0d47140cdd048c1964ed53f9858f436a)中的```week```函数说明。当此GUC参数设置的值超过对应边界值时，会报warning，并且将此GUC参数的值设置为对应边界值。
 
-该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[0, 7]
 
@@ -315,7 +315,7 @@ week
 
 **参数说明**：参数值为字符串，该参数控制dolphin插件中```dayname/monthname```函数以何种语言输出结果。该参数的取值有111种。设置参数时，若值不在合法取值范围内，则会报错。
 
-该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：
 lc_time_names语言集有如下可供选择的值：
@@ -465,9 +465,9 @@ dayname
 2. (字符类型异或) [^](dolphin_character_processing_functions_and_operators.md##ZH-CN_TOPIC_0289900656)
 3. (数字类型异或) [^](dolphin_arithmetic_functions_and_operators.md##ZH-CN_TOPIC_0289900469)
 4. [&&](dolphin_logical_operators.md##ZH-CN_TOPIC_0289900469)
-5. [#](dolphin-注释操作符.md##ZH-CN_TOPIC_0289900280)
+5. [#](dolphin_commenting_operators.md##ZH-CN_TOPIC_0289900280)
 6. [!](dolphin_character_processing_functions_and_operators.md)
-7. [JSON操作符](dolphin-JSON操作符兼容.md)
+7. [JSON操作符](dolphin_json_operator_compatibility.md)
 
 影响的函数有：
 
@@ -495,7 +495,7 @@ dayname
 11. IS [NOT] UNKNOWN子句：该子句含义为判断是否为空，参数控制是否转换为bool类型之后再判断。ON表示不转换，OFF表示转换。
 12. [布尔类型](dolphin_boolean_types.md)
 
-该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：布尔型
 
@@ -539,7 +539,7 @@ dayname
 
 **参数说明**：该参数目前未实现其具体意义。参数值为整数类型，表示自增列的自增步长。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[1, 65535]
 
@@ -561,7 +561,7 @@ SET
 
 **参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示客户端使用该字符集。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：字符串
 
@@ -583,7 +583,7 @@ SET
 
 **参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示服务端使用该字符集向客户端返回查询结果。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：字符串
 
@@ -606,7 +606,7 @@ SET
 
 **参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示服务端使用该字符集。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：字符串
 
@@ -628,7 +628,7 @@ SET
 
 **参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示服务端使用该排序规则。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：字符串
 
@@ -650,7 +650,7 @@ SET
 
 **参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示连接初始化时执行的SQL语句。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：字符串
 
@@ -672,7 +672,7 @@ SET
 
 **参数说明**：该参数目前未实现其具体意义。参数值为整数类型，表示交互式连接在持续无活动该秒数后，服务端会将其关闭。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[1, 31536000]
 
@@ -715,7 +715,7 @@ SET
 
 **参数说明**：该参数目前未实现其具体意义。参数值为整数类型，表示数据包的大小上限（字节）。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[1024, 1073741824]
 
@@ -737,7 +737,7 @@ SET
 
 **参数说明**：该参数目前未实现其具体意义。参数值为整数类型，表示缓冲区的默认大小，缓冲区的大小可以动态的扩张到max_allowed_packet，并在SQL语句结束后还原。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[1024, 1048576]
 
@@ -759,7 +759,7 @@ SET
 
 **参数说明**：该参数目前未实现其具体意义。参数值为整数类型，表示在等待写入该秒数后，服务端会将其中止。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[1, 31536000]
 
@@ -781,7 +781,7 @@ SET
 
 **参数说明**：该参数目前未实现其具体意义。参数值为整数类型，表示在缓存查询结果时，分配的内存大小（字节）。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[0, 9223372036854775807]
 
@@ -803,7 +803,7 @@ SET
 
 **参数说明**：该参数目前未实现其具体意义。参数值为整数类型，表示查询缓存的类型。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[0, 2]
 
@@ -825,7 +825,7 @@ SET
 
 **参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示服务器系统时区。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：字符串
 
@@ -847,7 +847,7 @@ SET
 
 **参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示当前时区。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[-12:59, +13:00]
 
@@ -869,7 +869,7 @@ SET
 
 **参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示非交互式连接在持续无活动该秒数后，服务端会将其关闭。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[1, 31536000]
 
@@ -891,7 +891,7 @@ SET
 
 **参数说明**：在MY数据库模式下是否开启insert，update，delete时检查数据是否满足外键约束的功能。
 
-该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md##zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md##zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 布尔型
 
@@ -930,7 +930,7 @@ INSERT 0 1
 
 **参数说明**：该参数用于控制用户名、表名、视图名、模式名的大小写敏感；为0时大小写敏感，>0时为大小写不敏感
 
-该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md##zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md##zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**：[0, 2]
 
@@ -940,7 +940,7 @@ INSERT 0 1
 
 **参数说明**：dolphin协议插件默认使用的opengauss数据库实例名称
 
-该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md##zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](dolphin_resetting_parameters.md##zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 >[!TIP]须知
 >
@@ -959,7 +959,7 @@ INSERT 0 1
   | ------------------- | ------ | ------------------- | 
   |use_invisible_indexes | off    | 控制是否使用不可见索引 |
 
-该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md##zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md##zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**：字符串
 
@@ -993,7 +993,7 @@ openGauss=# set dolphin.optimizer_switch = 'use_invisible_indexes=default';
 
 **参数说明**：此变量指定使用/运算符执行除法运算的结果的小数位数。
 
-该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md##zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md##zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 >[!TIP]须知
 >
@@ -1025,7 +1025,7 @@ openGauss=# show sql_note;
 
 **参数说明**：该参数目前未实现其具体意义。请使用dolphin.sql_mode。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **示例**：
 
@@ -1043,7 +1043,7 @@ SET
 
 **参数说明**：该参数目前未实现其具体意义。请使用dolphin.lower_case_table_names。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[0, 2]
 
@@ -1087,7 +1087,7 @@ openGauss=# show max_error_count;
 1.[DATE_ADD](dolphin_date_and_time_processing_functions_and_operators.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
 2.[DATE_SUB](dolphin_date_and_time_processing_functions_and_operators.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
 
- 该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+ 该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：枚举类型
 
@@ -1097,7 +1097,7 @@ openGauss=# show max_error_count;
 
 **参数说明**：该参数用于控制在常量输出的场景下，是否直接使用常量的值作为列名。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：布尔型
 
@@ -1127,7 +1127,7 @@ openGauss=# select 1,1.23;
 
 **参数说明**：dolphin协议插件默认使用的ca证书文件名
 
-该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md##zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](dolphin_resetting_parameters.md##zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 >[!TIP]须知
 >
@@ -1142,7 +1142,7 @@ openGauss=# select 1,1.23;
 
 **参数说明**：dolphin协议插件默认使用的服务端私钥文件名
 
-该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md##zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](dolphin_resetting_parameters.md##zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 >[!TIP]须知
 >
@@ -1157,7 +1157,7 @@ openGauss=# select 1,1.23;
 
 **参数说明**：dolphin协议插件默认使用的服务端证书文件名
 
-该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md##zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](dolphin_resetting_parameters.md##zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 >[!TIP]须知
 >
@@ -1172,7 +1172,7 @@ openGauss=# select 1,1.23;
 
 **参数说明**：该参数用于控制是否支持interval xxx to xxx类型, 如interval year to month，表现与interval year_month相同。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：布尔型
 
@@ -1198,7 +1198,7 @@ openGauss=# SELECT date_sub('1992-12-31 00:00:00.0',INTERVAL '1' YEAR TO MONTH);
 
 **参数说明**：该参数用于控制bit类型的输出格式，其中bin类型使用二进制处理bit类型，dec使用十进制处理bit类型，hex使用16进制格式处理bit类型，默认为二进制方式处理。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：枚举类型，支持bin、dec、hex
 
@@ -1238,7 +1238,7 @@ openGauss=# select * from test_bit;
 
 **参数说明**：该参数打开后，double(p,s)和float(p,s)类型将忽略精度信息，当成double和float处理。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：布尔型
 
@@ -1301,7 +1301,7 @@ Options: orientation=row, compression=no
 
 **参数说明**：该参数打开后，存储过程会将execute stmtname当作execute 'execute stmtname' 来执行，从而可以和M*数据库一样在存储过程中执行execute prepare语句。关闭时，execute语句和原来一样用于执行动态语句。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：布尔型
 
@@ -1359,7 +1359,7 @@ openGauss=# select * from t_prepare_010;
 
 **参数说明**：该参数打开后，对于preapre语句中unknown类型的参数优先按照其比较的列类型来解释，从而避免因为隐式类型转换导致的索引失效的问题。
 
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin_resetting_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：布尔型
 

@@ -33,7 +33,7 @@ SHOW COUNT(*) ERRORS
 
 - **添加系统参数**
 
-  [sql_note](dolphin-GUC参数说明.md) 该参数是设置show warnings是否显示Note级别的信息开关
+  [sql_note](dolphin_guc_parameters.md) 该参数是设置show warnings是否显示Note级别的信息开关
 
 ## 返回结果集
 

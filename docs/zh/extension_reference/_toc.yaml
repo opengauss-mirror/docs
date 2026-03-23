@@ -76,25 +76,25 @@ sections:
           - label: 四则运算操作符兼容
             href: ./dolphin_compatible_operators_and_operations.md
           - label: 注释操作符
-            href: ./dolphin-注释操作符.md
+            href: ./dolphin_commenting_operators.md
           - label: 操作符优先级
-            href: ./dolphin-操作符优先级.md
+            href: ./dolphin_operator_priority.md
           - label: JSON操作符兼容
-            href: ./dolphin-JSON操作符兼容.md
+            href: ./dolphin_json_operator_compatibility.md
           - label: XML函数
-            href: ./dolphin-XML函数.md            
+            href: ./dolphin_xml_functions.md    
       - label: 表达式
         sections:
           - label: 条件表达式
-            href: ./dolphin-条件表达式.md
+            href: ./dolphin_conditional_expressions.md
           - label: 时间间隔表达式
-            href: ./dolphin-时间间隔表达式.md
-      - label: DCL语法一览表
-        href: ./dolphin-DCL语法一览表.md
+            href: ./dolphin_time_interval_expressions.md
       - label: DDL语法一览表
-        href: ./dolphin-DDL语法一览表.md
+        href: ./dolphin_ddl_syntax_overview.md
       - label: DML语法一览表
-        href: ./dolphin-DML语法一览表.md
+        href: ./dolphin_dml_syntax_overview.md
+      - label: DCL语法一览表
+        href: ./dolphin_dcl_syntax_overview.md
       - label: SQL语法
         sections:
           - label: ALTER DATABASE
@@ -252,9 +252,9 @@ sections:
           - label: JOIN
             href: ./dolphin-JOIN.md
       - label: 别名
-        href: ./dolphin-单引号别名.md
+        href: ./dolphin_single_quotation_aliasing.md
       - label: "@variable变量"
-        href: ./dolphin-at-variable变量.md
+        href: ./dolphin_at_variable.md
       - label: 系统视图
         sections:
           - label: PG TYPE NONSTRICT BASIC VALUE
@@ -280,19 +280,19 @@ sections:
           - label: PERFORMANCE_SCHEMA.THREADS
             href: ./dolphin-PERFORMANCE_SCHEMA.THREADS.md             
       - label: GUC参数说明
-        href: ./dolphin-GUC参数说明.md
+        href: ./dolphin_guc_parameters.md
       - label: 重设参数
-        href: ./dolphin-重设参数.md
+        href: ./dolphin_resetting_parameters.md
       - label: 存储过程
         sections:
           - label: 基本语句
-            href: ./dolphin-基本语句.md
+            href: ./dolphin_basic_statements.md
           - label: 赋值语句
-            href: ./dolphin-赋值语句.md
+            href: ./dolphin_assignment_statements.md
       - label: 标识符说明
         sections:
           - label: 列名标识符
-            href: ./dolphin-列名标识符.md
+            href: ./dolphin_column_name_identifiers.md
   - label: PostGIS Extension
     href: ./PostGIS.md  
   - label: gms_stats Extension
@@ -324,35 +324,35 @@ sections:
   - label: spqplugin Extension
     sections:
       - label: spqplugin安装与使用
-        href: ./spqplugin安装与使用.md
+        href: ./spqplugin.md
       - label: GUC参数说明
-        href: ./spqplugin-GUC参数说明.md
+        href: ./spqplugin_guc_parameters.md
   - label: shark Extension
     href: ./shark.md
   - label: shark语法介绍
     sections:
       - label: 关键字
-        href: ./shark-关键字.md
+        href: ./shark_keywords.md
       - label: 数据类型
         sections:
           - label: 字符类型
-            href: ./shark-字符类型.md
+            href: ./shark_character_types.md
           - label: sql_variant类型
-            href: ./shark-sql_variant类型.md
+            href: ./shark_sql_variant_types.md
           - label: varbinary类型
-            href: ./shark-varbinary类型.md
+            href: ./shark_varbinary_types.md
       - label: 函数和操作符
         sections:
           - label: 系统信息函数
-            href: ./shark-系统信息函数.md
+            href: ./shark_system_information_functions.md
           - label: 系统常用函数
-            href: ./shark-系统常用函数.md
+            href: ./shark_system_common_functions.md
           - label: 操作符
-            href: ./shark-操作符.md
+            href: ./shark_operators.md
       - label: SQL语法
         sections:
           - label: GUC参数说明
-            href: ./shark-GUC参数说明.md
+            href: ./shark_guc_parameters.md
           - label: CREATE INDEX
             href: ./shark-CREATE-INDEX.md
           - label: CREATE TABLE
@@ -374,7 +374,7 @@ sections:
           - label: DBCC CHECKIDENT
             href: ./shark-DBCC-CHECKIDENT.md
           - label: IDENTITY
-            href: ./shark-约束.md                            
+            href: ./shark_constraints.md                            
           - label: MERGE INTO
             href: ./shark-MERGE-INTO.md
           - label: TRY CATCH
@@ -392,13 +392,13 @@ sections:
       - label: 事务
         sections: 
           - label: 管理事务
-            href: ./shark-管理事务.md
+            href: ./shark_managing_transactions.md
       - label: 不支持语法
-        href: ./shark-不支持语法.md
+        href: ./shark_unsupported_syntax.md
       - label: 存储过程
         sections: 
           - label: 基本语句
-            href: ./shark-存储过程_SQLReference.md
+            href: ./shark_stored_procedure_sqlreference.md
       - label: 系统视图
         sections: 
           - label: ALL_COLUMNS
@@ -488,7 +488,7 @@ sections:
   - label: spqplugin_v2 Extension
     sections:
       - label: spqplugin_v2概述与安装
-        href: ./spqplugin_v2概述与安装.md
+        href: ./spqplugin_v2.md
       - label: spqplugin_v2使用说明
-        href: ./spqplugin_v2使用说明.md            
+        href: ./spqplugin_v2_usage.md            
                                   

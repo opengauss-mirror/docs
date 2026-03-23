@@ -14,7 +14,7 @@ openGauss provides multiple methods to set GUC parameters for databases, users, 
     - The unit of memory can be kB, MB, or GB.
     - The unit of time can be ms, s, min, h, or d.
 
-For details, see [GUC Parameters](dolphin-guc-parameters.md).
+For details, see [GUC Parameters](dolphin_guc_parameters.md).
 
 ## Setting GUC Parameters<a name="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_sb2763fa0003e4ff1815379339bffe994"></a>
 
