@@ -28,8 +28,10 @@ DataVec架构与特性实现详情可参考[向量存储引擎](DataVec-architec
 ### 索引支持
 - [IVFFLAT](../SQLReference/向量索引.md##IVFFlat)  倒排索引
 - [IVF-PQ](PQ.md##IVF-PQ)  量化压缩倒排索引
+- [IVF-RabitQ](Rabitq.md)  RabitQ量化压缩倒排索引
 - [HNSW](../SQLReference/向量索引.md##HNSW)  图索引
 - [HNSW-PQ](PQ.md##HNSW-PQ)  量化压缩图索引
+- [HNSW-RabitQ](Rabitq.md)  RabitQ量化压缩图索引
 
 ## 生态对接
 openGauss DataVec 提供Python、Java、Node.js、Go等多语言生态对接，让你能够通过API调用，快速使能向量数据库能力。同时， DataVec拥抱开源第三方组件，在RAG场景下做到快速兼容，多样选择。
@@ -44,4 +46,3 @@ openGauss DataVec 提供Python、Java、Node.js、Go等多语言生态对接，�
 - 基因筛选：在药物研发过程中，通过检索特定基因序列，找到潜在的药物靶点，加速新药研发。
 
 这些应用场景展示了DataVec在各个领域的能力，用户可以自由的将向量数据库库使能到各个应用中去。通过[向量数据库教程案例](DataVec-tutorials.md)， 我们为你展示了向量数据库的多种应用模式。
-
