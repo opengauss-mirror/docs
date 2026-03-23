@@ -117,7 +117,7 @@
 
 **默认值**： A
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- 该参数只能在执行[CREATE DATABASE](../sql_reference/create_database.md)命令创建数据库时通过dbcompatibility设置。
 >- 在数据库中，该参数只能是确定的一个值，要么始终设置为A，要么始终设置为B，请勿任意改动，否则会导致数据库行为不一致。

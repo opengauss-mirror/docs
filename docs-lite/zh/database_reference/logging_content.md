@@ -39,7 +39,7 @@
 
 **默认值**： off
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- 只有当日志的级别为log及以上时，debug\_print\_parse、debug\_print\_rewritten和debug\_print\_plan的调试信息才会输出。当这些选项打开时，调试信息只会记录在服务器的日志中，而不会输出到客户端的日志中。通过设置[client\_min\_messages](logging_time.md#zh-cn_topic_0283137528_zh-cn_topic_0237124722_zh-cn_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)和[log\_min\_messages](logging_time.md#zh-cn_topic_0283137528_zh-cn_topic_0237124722_zh-cn_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)参数可以改变日志级别。
 >- 在打开debug\_print\_plan开关的情况下需尽量避免调用gs\_encrypt\_aes128及gs\_decrypt\_aes128函数，避免敏感参数信息在日志中泄露的风险。同时建议用户在打开debug\_print\_plan开关生成的日志中对gs\_encrypt\_aes128及gs\_decrypt\_aes128函数的参数信息进行过滤后再提供给外部维护人员定位，日志使用完成后请及时删除。
@@ -76,7 +76,7 @@
 
 该参数属于BACKEND类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >有些客户端程序（例如gsql），在判断是否需要口令的时候会尝试连接两次，因此日志消息中重复的“connection receive”（收到连接请求）并不意味着一定是问题。
 
@@ -294,7 +294,7 @@
 
 该参数属于SUSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >即使log\_statement设置为all，包含简单语法错误的语句也不会被记录，因为仅在完成基本的语法分析并确定了语句类型之后才记录日志。在使用扩展查询协议的情况下，在执行阶段之前（语法分析或规划阶段）同样不会记录。将log\_min\_error\_statement设为ERROR或更低才能记录这些语句。
 
@@ -433,7 +433,7 @@ EAT,COMM_IPC,COMM_PARAM,TIMESERIES,SCHEMA,SEGMENT_PAGE,LIGHTPROXY,HOTKEY,THREAD_
 - off表示不打开该功能。
 - log表示打开该功能，可以在数据库节点的执行计划中看到没有查询优化的具体原因。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >提供在log中显示语句没有查询优化的具体原因，需要将参数设置成log级别，log\_min\_messages设置成debug4级别，logging\_module设置'on\(OPFUSION\)'，注意log内容可能会比较多，尽可能在调优期间执行少量作业使用。
 

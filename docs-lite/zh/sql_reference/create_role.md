@@ -176,7 +176,7 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
 
     声明该角色可以使用的并发连接数量。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >- 系统管理员不受此参数的限制。
     >- connlimit数据库主节点单独统计，openGauss整体的连接数 = connlimit \* 当前正常数据库主节点个数。

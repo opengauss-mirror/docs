@@ -192,7 +192,7 @@ gs_restore [OPTION]... FILE
     gs_restore -h host_name -p port_number -d postgres -n PUBLIC -t table1 -n test1 -t table1 backup/MPPDB_backup.tar
     ```
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >- --t不支持schema_name.table_name的输入格式，指定此格式不会报错，但不会生效。
     >- 当-t已指定时，gs\_restore不会导入已选表所附着的任何其他数据库对象。因此，无法保证某个指定表的转储结果能够自行成功地导入到一个空数据库中。
     >- -t tablename不会导入表上的触发器信息。
@@ -259,7 +259,7 @@ gs_restore [OPTION]... FILE
     - MODULE_LIB_PATH:包含库文件名称的绝对路径;
     - MODULE_CONFIG_FILE_PATH:GDACCARD不需要,JNTAKMS 不包含文件名称的绝对路径,SWXA 包含文件名称的绝对路径。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- 如果安装过程中有任何本地数据要添加到template1数据库，请谨慎将gs\_restore的输出载入到一个真正的空数据库中；否则可能会因为被添加对象的定义被复制，而出现错误。要创建一个无本地添加的空数据库，需从template0而非template1复制，例如：
 >

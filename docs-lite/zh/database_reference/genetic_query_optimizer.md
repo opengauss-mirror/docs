@@ -8,7 +8,7 @@
 
 该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >通常情况下在执行过程中不要关闭，geqo\_threshold变量提供了更精细的控制GEQO的方法。
 
@@ -25,7 +25,7 @@
 
 该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- 对于简单的查询，通常用详尽搜索方法，当涉及多个表的查询的时候，用GEQO可以更好地管理查询。
 >- 一个FULL OUTER JOIN构造仅作为一个FROM项。
@@ -40,13 +40,13 @@
 
 该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >geqo\_effort实际上并没有直接做任何事情，只是用于计算其他影响GEQO的变量的默认值。如果愿意，可以手工设置其他参数。
 
 **取值范围**：整型，1～10。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >比默认值大的数值增加了查询规划的时间，但是也增加了选中有效查询的几率。
 
@@ -60,7 +60,7 @@
 
 **取值范围**：整型，0～INT\_MAX。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >至少是2，且有用的值一般在100到1000之间。设置为0，表示使用系统自适应方式，openGauss会基于geqo\_effort和表的个数选取合适的值。
 
@@ -74,7 +74,7 @@
 
 **取值范围**：整型，0～INT\_MAX。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >必须至少是1，且有用的值介于100和1000之间。如果设置为0，则基于geqo\_pool\_size选取合适的值。
 
@@ -98,7 +98,7 @@
 
 **取值范围**：浮点型，0.0～1.0。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >不同的值会改变搜索的连接路径，从而影响了所找路径的优劣。
 

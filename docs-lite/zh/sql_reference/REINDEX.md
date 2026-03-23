@@ -94,7 +94,7 @@ REINDEX DATABASE和SYSTEM这种形式的重建索引不能在事务块中执行�
     - 如果前面是REINDEX TABLE，则这里应该指定分区的名称；
     - 如果前面是REINDEX INTERNAL TABLE，则这里应该指定列存分区表的分区的名称。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >REINDEX DATABASE和SYSTEM这种形式的重建索引不能在事务块中执行。
 

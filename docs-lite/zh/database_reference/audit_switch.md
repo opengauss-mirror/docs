@@ -53,7 +53,7 @@
 
 **默认值**：1d
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >请不要随意调整此参数，否侧可能会导致audit\_resource\_policy无法生效，如果需要控制审计日志的存储空间和时间，请使用[audit\_resource\_policy](#zh-cn_topic_0283137524_zh-cn_topic_0237124745_section939915522551)、[audit\_space\_limit](#zh-cn_topic_0283137524_zh-cn_topic_0237124745_zh-cn_topic_0059777744_s167d5900250946bca199444c0617c714)和[audit\_file\_remain\_time](#zh-cn_topic_0283137524_zh-cn_topic_0237124745_section149961828185211)参数进行控制。
 
@@ -67,7 +67,7 @@
 
 **默认值**：10MB
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >请不要随意调整此参数，否侧可能会导致audit\_resource\_policy无法生效，如果需要控制审计日志的存储空间和时间，请使用audit\_resource\_policy、audit\_space\_limit和audit\_file\_remain\_time参数进行控制。
 
@@ -114,7 +114,7 @@
 
 **默认值**： 1024
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >请尽量保证此参数为1048576，并不要随意调整此参数，否则可能会导致audit\_resource\_policy无法生效，如果需要控制审计日志的存储空间和时间，请使用audit\_resource\_policy、audit\_space\_limit和audit\_file\_remain\_time参数进行控制。
 
@@ -128,6 +128,6 @@
 
 **默认值**： 1
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >当audit\_dml\_state开关打开且在高性能场景下，建议增大此参数保证审计消息可以被及时处理和记录。

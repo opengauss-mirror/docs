@@ -175,7 +175,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     - 列约束：作为一个列定义的一部分，仅影响该列。
     - 表约束：不和某个列绑在一起，可以作用于多个列。
     
-        >>[!TIP]须知
+        >[!TIP]须知
         >
         >在B模式数据库下（即sql\_compatibility = 'B'）constraint\_name为可选项，在其他模式数据库下，必须加上constraint\_name。
 
@@ -183,7 +183,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     索引名。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >- index\_name仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >- 对于外键约束，constraint\_name和index\_name同时指定时，索引名为constraint\_name。
@@ -195,7 +195,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     取值范围参考[参数说明](create_index_1.md#zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s82e47e35c54c477094dcafdc90e5d85a)中的USING method。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >- USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >- 在B模式下，未指定USING method时，对于Astore的存储方式，默认索引方法为btree；对于Ustore的存储方式，默认索引方法为ubtree。
@@ -204,7 +204,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     ASC表示指定按升序排序（默认）。DESC指定按降序排序。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >ASC|DESC只在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
 
@@ -228,7 +228,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     这个子句为自动增长列指定一个初始值，value必须为正整数，不得超过2<sup>127</sup>-1。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >该子句仅在参数sql\_compatibility=B时有效。
 
@@ -259,7 +259,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
         - COLUMN：表的数据将以列式存储。
         - ROW（缺省值）：表的数据将以行式存储。
 
-            >>[!TIP]须知
+            >[!TIP]须知
             >
             >orientation不支持修改。
             
@@ -371,7 +371,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     （1）对于从句是VALUES LESS THAN的语法格式：
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >对于从句是VALUE LESS THAN的语法格式，范围分区策略的分区键最多支持4列。
 
@@ -379,7 +379,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     （2）对于从句是START END的语法格式：
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >对于从句是START END的语法格式，范围分区策略的分区键仅支持1列。
 
@@ -387,7 +387,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     （3）对于指定了INTERVAL子句的语法格式：
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >对于指定了INTERVAL子句的语法格式，范围分区策略的分区键仅支持1列。
 
@@ -397,7 +397,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     指定各分区的信息。partition\_name为范围分区的名称。partition\_value为范围分区的上边界，取值依赖于partition\_key的类型。MAXVALUE表示分区的上边界，它通常用于设置最后一个范围分区的上边界。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >- 每个分区都需要指定一个上边界。
     >- 分区上边界的类型应当和分区键的类型一致。
@@ -415,7 +415,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     - interval\_value：对\[START，END\) 表示的范围进行切分，interval\_value是指定切分后每个分区的宽度，不可是MAXVALUE；如果（END-START）值不能整除以EVERY值，则仅最后一个分区的宽度小于EVERY值。
     - MAXVALUE：表示最大值，它通常用于设置最后一个范围分区的上边界。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >1. 在创建分区表若第一个分区定义含START值，则范围（MINVALUE，START）将自动作为实际的第一个分区。
     >2. START END语法需要遵循以下限制：
@@ -437,7 +437,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     - STORE IN \(tablespace\_name \[, ... \] \)：指定存放自动创建分区的表空间列表，如果有指定，则自动创建的分区从表空间列表中循环选择使用，否则使用分区表默认的表空间。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >列存表不支持间隔分区。
 
@@ -469,7 +469,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     - ENABLE（缺省值）：行迁移开关打开。
     - DISABLE：行迁移开关关闭。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >列表/哈希分区表暂不支持ROW MOVEMENT。
 

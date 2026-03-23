@@ -32,7 +32,7 @@
 
         expression  NOTNULL
 
-        >>[!TIP]须知
+        >[!TIP]须知
         >不要写expression=NULL或expression<\>\(!=\)NULL，因为NULL代表一个未知的值，不能通过该表达式判断两个未知值是否相等。
 
     - is distinct from/is not distinct from

@@ -6,7 +6,7 @@
 
 该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- 如果此参数设置为on，[wal\_level](settings.md#zh-cn_topic_0283137354_zh-cn_topic_0237124707_zh-cn_topic_0059778393_s2c76f5957066407a959191148f2c780f)必须设置为hot\_standby，否则将导致数据库无法启动。
 >- 在双机环境中，因为会对双机其他一些功能产生影响，hot\_standby参数不能设置成off。
@@ -28,7 +28,7 @@
 
 该参数属于SIGHUP类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >-1表示允许备机一直等待冲突的查询完成。
 
 **取值范围**： 整型，范围：-1\~INT\_MAX，单位为毫秒。
@@ -41,7 +41,7 @@
 
 该参数属于SIGHUP类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >-1表示允许备机一直等待冲突的查询完成。
 
 **取值范围**： 整型（毫秒），范围：-1\~INT\_MAX
@@ -58,7 +58,7 @@
 
 **默认值**： 5s（即5000ms）
 
->>[!TIP]须知
+>[!TIP]须知
 >当该参数设置为0时，表示关闭备机向主机反馈日志接收位置等信息，可能会导致主机事务提交阻塞、switchover操作失败等异常现象。正常业务场景，不建议将该参数设置为0。
 
 ## hot\_standby\_feedback<a name="zh-cn_topic_0283136835_zh-cn_topic_0237124714_zh-cn_topic_0059778071_s766f240c55244d1888253a480e732637"></a>
@@ -74,7 +74,7 @@
 
 **默认值**： off
 
->>[!TIP]须知
+>[!TIP]须知
 >当该参数为on时，主机的旧版本数据的清理会受限于备机正在读的事务，即主机只允许清理小于备机反馈回来的事务所作的更改。
 >所以，若该参数开启时，会影响主机的性能。
 

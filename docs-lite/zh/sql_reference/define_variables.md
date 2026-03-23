@@ -132,7 +132,7 @@ INFO:  3
 (1 row)
 ```
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- %TYPE不支持引用复合类型或RECORD类型变量的类型、RECORD类型的某列类型、跨PACKAGE复合类型变量的某列类型、跨PACKAGE cursor变量的某列类型等。
 >- %ROWTYPE不支持引用复合类型或RECORD类型变量的类型、跨PACKAGE cursor的类型。

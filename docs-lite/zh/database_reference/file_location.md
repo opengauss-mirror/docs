@@ -55,7 +55,7 @@
 
 该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >这个参数只能在数据库服务重新启动后生效。
 
@@ -77,6 +77,6 @@ off：代表创建C函数时，so文件可以放在任意可访问的目录下�
 
 **默认值**： on
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >参数设置成off时，.so文件可以放在任意可访问的目录下或使用系统自带的.so，存在安全风险，不建议使用。

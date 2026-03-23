@@ -46,7 +46,7 @@
     gs_guc reload -D /gaussdb/data/datanode -c "password_encryption_type=2"
     ```
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >为防止用户密码泄露，在执行CREATE USER/ROLE命令创建数据库用户时，不能指定UNENCRYPTED属性，即新创建的用户的密码只能是加密存储的。
 

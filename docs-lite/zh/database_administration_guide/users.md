@@ -44,7 +44,7 @@ openGauss=# CREATE USER user_independent WITH INDEPENDENT IDENTIFIED BY "XXXXXXX
 
 针对该用户的对象，系统管理员和拥有CREATEROLE属性的安全管理员在未经其授权前，只能进行控制操作（DROP、ALTER、TRUNCATE），无权进行INSERT、DELETE、SELECT、UPDATE、COPY、GRANT、REVOKE、ALTER OWNER操作。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 > - PG\_STATISTIC系统表和PG\_STATISTIC\_EXT系统表存储了统计对象的一些敏感信息，如高频值MCV。系统管理员仍然可以通过访问这两张系统表，得到私有用户所属表的统计信息里的这些信息。
 >

@@ -6,7 +6,7 @@
 
 该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >当client\_min\_messages和[log\_min\_messages](#zh-cn_topic_0283137528_zh-cn_topic_0237124722_zh-cn_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)取相同值时，其值所代表的级别不同。
 
@@ -20,7 +20,7 @@
 
 该参数属于SUSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >当[client\_min\_messages](#zh-cn_topic_0283137528_zh-cn_topic_0237124722_zh-cn_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)和log\_min\_messages取相同值log时所代表的消息级别不同。部分日志信息的打印需要同时配置该参数与logging\_module，即设置该参数打开后可能还需要设置logging\_module打开对应模块的日志打印开关。
 
@@ -51,7 +51,7 @@
 
 该参数属于SUSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >当此选项与[log\_statement](logging_content.md#zh-cn_topic_0283136613_zh-cn_topic_0237124723_zh-cn_topic_0059778400_s77b3e2e16a3e4705a139bef98688be8a)同时使用时，已经被log\_statement记录的语句文本不会被重复记录。在没有使用syslog情况下，推荐使用[log\_line\_prefix](logging_content.md#zh-cn_topic_0283136613_zh-cn_topic_0237124723_zh-cn_topic_0059778400_sd57ce2167a8149239e10ab0cef12b949)记录PID或会话ID，方便将当前语句消息连接到最后的持续时间消息。
 
@@ -69,7 +69,7 @@
 
 该参数属于SUSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >该参数作为客户现场问题定位手段使用，且由于频繁的打印函数栈会对系统的开销及稳定性有一定的影响，因此如果需要进行问题定位时，建议避免将backtrace\_min\_messages的值设置为fatal及panic以外的级别。
 

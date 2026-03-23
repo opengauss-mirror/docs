@@ -53,7 +53,7 @@ CREATE [ OR REPLACE ] PROCEDURE procedure_name
 
     参数的模式。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >VARIADIC用于声明数组类型的参数。
 
@@ -75,7 +75,7 @@ CREATE [ OR REPLACE ] PROCEDURE procedure_name
 
     PL/SQL存储过程体。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >当在存储过程体中进行创建用户等涉及用户密码相关操作时，系统表及csv日志中会记录密码的明文。因此不建议用户在存储过程体中进行涉及用户密码的相关操作。
 

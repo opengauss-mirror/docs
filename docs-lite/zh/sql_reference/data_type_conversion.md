@@ -4,7 +4,7 @@
 
 openGauss数据库常见的隐式类型转换，请参见[表1](#zh-cn_topic_0283137393_zh-cn_topic_0237122212_zh-cn_topic_0059778807_tbc67231ae8bc4ca484efaebd2629a0e4)。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >openGauss支持的DATE的有限范围是：公元前4713年到公元294276年。
 

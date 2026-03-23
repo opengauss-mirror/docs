@@ -28,7 +28,7 @@
 
 该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >将服务器日志发送到stderr时可以不使用logging\_collector参数，此时日志消息会被发送到服务器的stderr指向的空间。这种方法的缺点是日志回滚困难，只适用于较小的日志容量。
 
@@ -66,7 +66,7 @@
 
 该参数属于SIGHUP类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- 建议使用%转义字符定义日志文件名称，否则难以对日志文件进行有效的管理。
 >- 当log\_destination设为csvlog时，系统会生成附加了时间戳的日志文件名，文件格式为csv格式，例如“server\_log.1093827753.csv”。
@@ -81,7 +81,7 @@
 
 该参数属于SIGHUP类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- 使用此选项前请设置log\_directory，将日志存储到数据目录之外的地方。
 >- 因日志文件可能含有敏感数据，故不能将其设为对外可读。
