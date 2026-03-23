@@ -1,5 +1,10 @@
 # DataVec向量数据库
 
+## 可获得性
+本特性自openGauss 6.0.3版本开始引入。
+
+## 特性简介
+
 openGauss DataVec 向量数据库是一个基于openGauss的向量引擎， 提供向量数据类型的存储、检索。在处理大规模高维向量数据时，能够提供快速、准确的检索结果。适用于智能知识检索、 检索增强生成 RAG(Retrieval-Augmented Generation) 等各种复杂应用场景的智能应用。
 
 DataVec目前支持的向量功能有：精确和近似的最近邻搜索、L2距离&余弦距离&内积、向量索引、向量操作函数和操作符。作为openGauss的内核特性，DataVec使用熟悉的SQL语法操作向量，简化了用户使用向量数据库的过程。
@@ -9,6 +14,10 @@ DataVec目前支持的向量功能有：精确和近似的最近邻搜索、L2�
 DataVec向量数据库可通过[容器镜像安装](../installation_guide/installing_the_container_image.md)快速部署，并快速对接大模型，打造本地RAG智能问答服务。
 
 DataVec向量数据库可通过安装[spqplugin_v2插件](../extension_reference/spqplugin_v2概述与安装.md)，在大数据量场景下获得数据库分布式存储检索能力。
+
+## 客户价值
+
+向量数据库通过高效的相似性搜索能力，让大模型能精准召回相关私有知识，从而在检索增强生成（RAG）、推荐、语义搜索等场景中实现更低延迟、更高准确率的企业级AI应用。
 
 ## 特性描述
 
@@ -25,6 +34,7 @@ DataVec架构与特性实现详情可参考[向量存储引擎](datavec_architec
 - [vector](./vector_data_type.md#vector ) - float向量，最高支持16000维
 - [bitvec](./vector_data_type.md#bit) - bit向量，最高支持83,886,080维
 - [sparsevec](./vector_data_type.md#sparsevec) - sparse向量，最高支持1,000,000,000维，最高支持16000非零元素数
+- [halfvec](./vector_data_type.md#halfvec) - halfvec向量，最高支持16000维
 
 >[!NOTE]说明
 这里的最高维度是在使用索引场景下的最大维度上限值。
@@ -34,9 +44,11 @@ DataVec架构与特性实现详情可参考[向量存储引擎](datavec_architec
 ### 索引支持
 
 - [IVFFLAT](./vector_index.md#ivfflat)  倒排索引
-- [IVF-PQ](pq.md#ivf-pq)  量化压缩倒排索引
+- [IVF-PQ](./pq.md)  PQ量化压缩倒排索引
+- [IVF-RabitQ](./RabitQ.md)  RabitQ量化压缩倒排索引
 - [HNSW](./vector_index.md#hnsw)  图索引
-- [HNSW-PQ](pq.md#hnsw-pq)  量化压缩图索引
+- [HNSW-PQ](./pq.md)  PQ量化压缩图索引
+- [HNSW-RabitQ](./RabitQ.md)  RabitQ量化压缩图索引
 
 ## 生态对接
 

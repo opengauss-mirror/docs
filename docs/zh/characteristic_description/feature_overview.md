@@ -301,6 +301,20 @@
     </tr>
 </table>
 
+## 向量数据库
+
+<table>
+    <tr>
+        <th>特性</th>
+    </tr>
+    <tr>
+        <td><a href="../datavec/datavec_overview.md">向量数据库特性说明 </a></td>
+    </tr>
+    <tr>
+        <td><a href="../datavec/mcp.md">openGauss MCP </a></td>
+    </tr>
+</table>
+
 ## 企业级特性
 
 <table>

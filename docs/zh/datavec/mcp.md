@@ -1,6 +1,16 @@
 # MCP + openGauss
 
+## 可获得性
+
+本特性自openGauss 7.0.0-RC3 版本开始引入。
+
+## 特性简介
+
 随着AI从静态推理向动态交互演进，智能体（Agent）逐渐成为焦点。Agent不仅能够调用LLM进行推理，还能访问数据库、调用API、执行任务。然而，当前LLM和Agent之间缺乏标准化交互协议, 每个新数据源都需要自定义实现，使得真正互联的系统难以扩展。MCP(Model Context Protocol, 模型上下文协议)解决了这一挑战，MCP是为LLM和Agent系统设计的标准化交互框架，使LLM可以与外部数据库、API和工具进行高效交互。
+
+## 客户价值
+
+MCP适配openGauss数据库让AI智能体能够通过标准化协议安全、高效地直接操作企业级国产数据库，将结构化数据无缝融入AI工作流，大幅降低AI应用与复杂数据系统集成的开发门槛。
 
 ## openGauss + MCP + LLM 架构
 
@@ -174,7 +184,7 @@ MCP客户端配置：
 | `SSL_KEYFILE_PASSWORD` | SSL私钥密码（如果有），不设置环境变量会在启动时进行交互式输入 | `""` | 否 |
 | `SSL_CA_CERTS` | SSL CA证书路径 | `""` | 否 |
 
-## openGauss MCP工具
+## openGauss MCP工具特性描述
 
 - 执行SQL语句
 - 查询数据库中所有表格
@@ -257,8 +267,37 @@ AI：让我先使用og_memory_query工具来查询用户的饮料偏好信息。
 ...
 ```
 
->[!NOTE]说明
->
-> 1、MCP（模型上下文协议）作为一个工具层，其核心职责是精确执行用户通过自然语言下达的数据库操作指令。它本身并不具备独立的意识或内容生成能力，因此不会主动输出任何违反安全规范的言论，MCP仅对数据库进行必要的功能性存取操作。<br>
-> 2、MCP结合大模型具备对数据库的操作能力，请注意模型理解偏差可能导致的数据误删风险，用户需要对执行命令进行审核，并且建议为数据库连接配置最小必要权限，确保即使指令有误，也无法造成超出预期的破坏。<br>
-> 3、大模型在提供服务时，通常会收集用户的对话数据用于模型训练或服务优化，这可能涉及企业机密、个人隐私等敏感信息的意外暴露。为保障数据隐私，建议对包含敏感数据的场景使用本地部署的大模型，以降低持续分析带来的泄露风险。<br>
+## MCP客户端配置案例
+
+### cursor
+
+**图 5**  cursor mcp客户端配置
+<div style="display:flex;justfy-content:center;">
+    <img src="figures/cursor.png" height="600px" style="width: 1000;height: 300;">
+</div>
+
+
+### vscode cline插件
+
+**图 6**  vscode cline插件mcp客户端配置
+<div style="display:flex;justfy-content:center;">
+    <img src="figures/cline.png" height="600px" style="width: 1000;height: 300;">
+</div>
+
+### coze
+
+由于coze网页版和coze studio的官方均没有提供可以外接其他mcp server的接口，如需让 Coze 连接自定义 MCP 服务，可以参考[Coze Studio 二次开发（一）支持 MCP Server 静态配置](https://juejin.cn/post/7582808491607261238)的改造方案，对 Coze Studio 进行扩展，实现第三方 MCP Server 的静态配置与远程调用。
+
+代码仓： [coze-studio-plus](https://github.com/yangkun19921001/coze-studio-plus)
+
+mcp插件配置：
+
+<div style="display:flex;justfy-content:center;">
+    <img src="figures/coze.png" height="200px" style="width: 500;height: 150;">
+</div>
+
+## 特性约束
+
+- MCP（模型上下文协议）作为一个工具层，其核心职责是精确执行用户通过自然语言下达的数据库操作指令。它本身并不具备独立的意识或内容生成能力，因此不会主动输出任何违反安全规范的言论，MCP仅对数据库进行必要的功能性存取操作。<br>
+- MCP结合大模型具备对数据库的操作能力，请注意模型理解偏差可能导致的数据误删风险，用户需要对执行命令进行审核，并且建议为数据库连接配置最小必要权限，确保即使指令有误，也无法造成超出预期的破坏。<br>
+- 大模型在提供服务时，通常会收集用户的对话数据用于模型训练或服务优化，这可能涉及企业机密、个人隐私等敏感信息的意外暴露。为保障数据隐私，建议对包含敏感数据的场景使用本地部署的大模型，以降低持续分析带来的泄露风险。<br>
