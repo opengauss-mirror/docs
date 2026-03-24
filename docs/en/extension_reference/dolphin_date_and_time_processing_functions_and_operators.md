@@ -1242,7 +1242,7 @@ CONTEXT:  referenced column: subdate
 
 - dayname\(date\)
 
-    Description: Returns the workday corresponding to the date. The language set of the returned content is controlled by the GUC parameter [lc_time_names](dolphin-guc-parameters.md).
+    Description: Returns the workday corresponding to the date. The language set of the returned content is controlled by the GUC parameter [lc_time_names](dolphin_guc_parameters.md).
 
     Return type: text
 
@@ -1269,7 +1269,7 @@ CONTEXT:  referenced column: subdate
 
 - monthname\(date\)
 
-    Description: Returns the full name of the month corresponding to the date. The language set of the returned content is controlled by the GUC parameter [lc_time_names](dolphin-guc-parameters.md).
+    Description: Returns the full name of the month corresponding to the date. The language set of the returned content is controlled by the GUC parameter [lc_time_names](dolphin_guc_parameters.md).
 
     Return type: text
 

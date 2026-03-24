@@ -70,7 +70,7 @@ UPDATE
         SELECT * FROM t2;
 ```
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- `ON SELECT`后指定的规则名必须为`"_RETURN"`
 >- 目前，`ON SELECT`规则必须是`INSTEAD SELECT`，而且`TO`所指定的表会被转为视图，这个前提是该表**为空**且不带有触发器、索引、子表等限制，也即必须为一张**初始的空表**。

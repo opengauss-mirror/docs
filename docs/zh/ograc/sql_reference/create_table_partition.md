@@ -1,4 +1,4 @@
-# CREATE TABLE
+# CREATE TABLE PARTITION
 
 ## 功能描述
 

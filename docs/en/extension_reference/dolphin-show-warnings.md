@@ -33,7 +33,7 @@ SHOW COUNT(*) ERRORS
 
 - **Added system parameter**
 
-  [sql_note](dolphin-guc-parameters.md) determines whether to display note-level information in SHOW WARNINGS.
+  [sql_note](dolphin_guc_parameters.md) determines whether to display note-level information in SHOW WARNINGS.
 
 ## Return Result Set
 

@@ -1150,7 +1150,7 @@ omm@[local] openGauss=#
 
 元命令的详细说明请参见[表1](#zh-cn_topic_0059778645_zh-cn_topic_0058968158_table23103470)、[表2](#zh-cn_topic_0059778645_zh-cn_topic_0058968158_table8624338)、[表3](#zh-cn_topic_0059778645_zh-cn_topic_0058968158_table62130565)、[表4](#zh-cn_topic_0059778645_zh-cn_topic_0058968158_table44907299)、[表6](#zh-cn_topic_0059778645_zh-cn_topic_0058968158_table53911699)、[表8](#zh-cn_topic_0059778645_zh-cn_topic_0058968158_table37189353)、[表9](#zh-cn_topic_0059778645_zh-cn_topic_0058968158_table32146234)、[表10](#zh-cn_topic_0059778645_zh-cn_topic_0058968158_table50076468)和[表12](#zh-cn_topic_0059778645_zh-cn_topic_0058968158_table55465693)。
 
->>[!TIP]须知
+>[!TIP]须知
 >以下命令中所提到的FILE代表文件路径。此路径可以是绝对路径（如/home/gauss/file.txt），也可以是相对路径（file.txt，file.txt会默认在用户执行gsql命令所在的路径下创建）。
 
 **表 1**  一般的元命令

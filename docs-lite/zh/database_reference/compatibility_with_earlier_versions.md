@@ -21,7 +21,7 @@ openGauss介绍数据库的向下兼容性和对外兼容性特性的参数控�
 
 该参数属于USERSET类型参数，请参考[表2](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd893d)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >在字符串文本符合SQL标准的情况下，\\没有任何其他含义。这个参数影响的是如何处理不符合标准的字符串文本，包括明确的字符串转义语法是（E'...'）。
 

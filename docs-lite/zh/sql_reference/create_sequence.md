@@ -79,7 +79,7 @@ CREATE [ LARGE ] SEQUENCE [ IF NOT EXISTS ] name [ INCREMENT [ BY ] increment ]
 
     缺省值为OWNED BY NONE，表示不存在这样的关联。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >通过OWNED BY创建的Sequence不建议用于其他表，如果希望多个表共享Sequence，该Sequence不应该从属于特定表。
 

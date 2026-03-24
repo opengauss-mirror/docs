@@ -37,7 +37,7 @@ condition_information_item_name: {
 
 SIGNAL可以抛出一个SQLSTATE值（SQLSTATE [VALUE] sqlstate_value）或命名（condition_name）的错误条件，SET子句可以设置不同的信息，SET子句中设置的信息可以通过GET DIAGNOSTICS语句获取。
 
->>[!NOTE]说明
+>[!NOTE]说明
 >
 >1. condition_value表示要返回的错误值，该值可以是SQLSTATE值，也可以是condition_name(declare ... condition语法声明的[错误捕获语句](error_trapping_statements.md))。
 >2. SIGNAL语句中的SQLSTATE值不应以'00'开头，包括SQLSTATE直接定义的也包括condition_name隐式表示的。

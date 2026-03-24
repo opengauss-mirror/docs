@@ -81,6 +81,6 @@ openGauss=> EXPLAIN(COSTS OFF) SELECT * FROM public.all_data;
 (5 rows)
 ```
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >PG\_STATISTIC系统表和PG\_STATISTIC\_EXT系统表存储了统计对象的一些敏感信息，如高频值MCV。若创建行级访问控制后，将这两张系统表的查询权限授予普通用户，则普通用户仍然可以通过访问这两张系统表，得到统计对象里的这些信息。

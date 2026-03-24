@@ -136,7 +136,7 @@ openGauss不支持可串行化的隔离级别，因此，该参数无实际意�
 
 该参数属于SUSET类型参数，请参考[表2](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd893d)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >设置此参数会丢弃之前任何缓存的执行计划。
 

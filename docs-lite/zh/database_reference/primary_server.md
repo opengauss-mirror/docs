@@ -6,7 +6,7 @@
 
 该参数属于SIGHUP类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- 当前连接的同步备机是列表中的第一个名称。如果当前同步备机失去连接，则它会立即更换下一个优先级更高的备机，并将此备机的名称放入列表中。
 >- 备机名称可以通过设置环境变量PGAPPNAME指定。
@@ -74,7 +74,7 @@ gs_guc reload -Z datanode -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(AZ1,
 
 该参数属于SIGHUP类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- 此参数属于性能测试参数，用于测试带有备机和不带备机的性能参数。关闭参数后，不能进行切换、故障等异常场景测试，否则会出现主备从不一致的情况。
 >- 此参数属于受控参数，不建议正常业务场景下关闭此参数。
@@ -93,7 +93,7 @@ gs_guc reload -Z datanode -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(AZ1,
 
 该参数属于INTERNAL类型参数，默认值为off，不允许外部修改。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >此参数目前不允许正常业务场景下改变其值，即关闭WAL日志、数据页混合复制模式。
 
@@ -288,7 +288,7 @@ gs_guc reload -Z datanode -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(AZ1,
 
 **默认值**：0
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- 仅在most_available_sync配置为on时，该参数才生效。
 >- 注意取值的合理性，比如当synchronous_commit=remote_apply，ignore_standby_lsn_window配置的值小于延迟回放时间recovery_min_apply_delay，则由于延迟回放导致备机返回的apply位点不推进，ignore_standby_lsn_window生效，导致主机事务提交不等待该备机回放完成，remote_apply失效。

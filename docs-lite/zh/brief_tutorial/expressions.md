@@ -32,7 +32,7 @@
 
         expression  NOTNULL
 
-        >>[!TIP]须知
+        >[!TIP]须知
         >不要写expression=NULL或expression<\>\(!=\)NULL，因为NULL代表一个未知的值，不能通过该表达式判断两个未知值是否相等。
 
     - is distinct from/is not distinct from
@@ -528,7 +528,7 @@ openGauss=# SELECT ROW(1,2,NULL) < ROW(1,3,0) AS RESULT;
 
 **图12** 游标表达式::=<a name="zh-cn_topic_0283136595_zh-cn_topic_0237122003_zh-cn_topic_0059777701_fdf5a38b067314bf7b8847e80f5346f63"></a>
 
-![image-20240615112858395](.\figures\cursor_expression.png)
+![image-20240615112858395](./figures/cursor_expression.png)
 
  使用示例：
 

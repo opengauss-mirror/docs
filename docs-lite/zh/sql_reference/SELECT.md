@@ -189,7 +189,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     ON \( expression \[, ...\] \) 只保留那些在给出的表达式上运算出相同结果的行集合中的第一行。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >DISTINCT ON表达式是使用与ORDER BY相同的规则进行解释的。除非使用了ORDER BY来保证需要的行首先出现，否则，"第一行" 是不可预测的。
 
@@ -607,7 +607,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     9. "\(+\)"只能出现"比较表达式"，"NOT表达式"，“ANY表达式”，“ALL表达式”，“IN表达式”，“NULLIF表达式”，“IS DISTINCT FROM表达式”，“IS OF”表达式。"\(+\)"不能出现在其他类型表达式中，并且这些表达式中不允许出现通过“AND”和“OR”连接的表达式。
     10. "\(+\)"只能转化为左外连接或者右外连接，不能转化为全连接，即不能在一个表达式的两个表上同时指定"\(+\)"
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >对于WHERE子句的LIKE操作符，当LIKE中要查询特殊字符“%”、“\_”、“\\”的时候需要使用反斜杠“\\”来进行转义。
 
@@ -719,7 +719,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
         )
         ```
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     > - 如果SELECT列表的表达式中引用了那些没有分组的字段，则会报错，除非使用了聚集函数或者它函数依赖于分组的字段，因为对于未分组的字段，可能返回多个数值。如果分组的字段是包含非分组字段的表的主键（或者主键的子集），则存在函数依赖。
     > - 如果任何GROUPING SETS、ROLLUP、CUBE作为分组字段存在，则GROUP BY子句整体上定义了数个独立的分组集。其效果等效于在子查询间构建一个UNION ALL，子查询带有分组集作为它们的GROUP BY子句。
@@ -728,7 +728,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 - **HAVING子句**
 
     与GROUP BY子句配合用来选择特殊的组。HAVING子句将组的一些属性与一个常数值比较，只有满足HAVING子句中的逻辑表达式的组才会被提取出来。
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >当前，FOR UPDATE、FOR SHARE、FOR NO KEY UPDATE、FOR KEY SHARE不能和HAVING子句一起指定。
 
@@ -768,7 +768,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     - frame_end的取值在上面列出的顺序中必须晚于frame_start的取值
     - value不可为负数或空，可以为0
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >对列存表的查询目前只支持row\_number窗口函数，不支持frame\_clause。
 
@@ -853,7 +853,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     - 在与GROUP BY子句一起使用的情况下，ORDER BY中排序的列必须包括在SELECT语句所检索的结果集的列中。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >如果要支持中文拼音排序，需要在初始化数据库时指定编码格式为UTF-8、GB18030、GB18030-2022或GBK。命令如下:
 >
@@ -903,7 +903,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     如果一个表中同时出现（或隐含同时出现）在多个子句中，则按照最强的锁处理。类似的，如果影响一个表的任意子句中出现了NOWAIT，该表将按照NOWAIT处理。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >对列存表的查询不支持for update/no key update/share/key share。
     >对ustore表的查询只支持for share/for update，不支持for key share/for no key update。

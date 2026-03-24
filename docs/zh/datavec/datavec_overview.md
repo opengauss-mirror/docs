@@ -8,7 +8,7 @@ DataVec目前支持的向量功能有：精确和近似的最近邻搜索、L2�
 
 DataVec向量数据库可通过[容器镜像安装](../installation_guide/installing_the_container_image.md)快速部署，并快速对接大模型，打造本地RAG智能问答服务。
 
-DataVec向量数据库可通过安装[spqplugin_v2插件](../extension_reference/spqplugin_v2概述与安装.md)，在大数据量场景下获得数据库分布式存储检索能力。
+DataVec向量数据库可通过安装[spqplugin_v2插件](../extension_reference/spqplugin_v2.md)，在大数据量场景下获得数据库分布式存储检索能力。
 
 ## 特性描述
 

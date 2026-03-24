@@ -32,7 +32,7 @@ ANALYZE tablename;                                              --收集单列�
 ALTER TABLE tablename DELETE STATISTICS ((column_1, column_2)); --删除tablename表的column_1、column_2列的多列统计信息或其声明
 ```
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >在使用ALTER TABLE tablename ADD STATISTICS语句添加了多列统计信息声明后，系统并不会立刻收集多列统计信息，而是在下次对该表或全库进行ANALYZE时，进行多列统计信息的收集。
 >如果想直接收集多列统计信息，请使用ANALYZE命令进行收集。

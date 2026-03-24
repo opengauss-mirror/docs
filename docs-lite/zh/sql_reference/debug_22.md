@@ -64,7 +64,7 @@
 - exception\_name为用户申明的异常名，EXCEPTION\_INIT语法必须出现在与申明异常相同部分，位于申明异常之后。
 - sqlcode为自定义的SQLCODE，必须为负整数，取值范围-2147483647\~-1。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >使用EXCEPTION\_INIT语法自定义错误码SQLCODE时，SQLSTATE与SQLCODE相同，SQLERRM格式为" xxx: non-GaussDB Exception"。比如自定义SQLCODE=-1，则SQLSTATE="-1"，SQLERRM=" 1: non-GaussDB Exception"。
 

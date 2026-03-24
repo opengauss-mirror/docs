@@ -66,7 +66,7 @@
 
 该参数属于BACKEND类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >这个参数在从系统索引被破坏的表中恢复数据的时候非常有用。
 

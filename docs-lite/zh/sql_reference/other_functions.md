@@ -191,7 +191,7 @@
     </tbody>
     </table>
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >- scope的取值GLOBAL和LOCAL针对分布式，对于openGauss而言两者意义相同，均表示清理本节点。
     >- clean\_type的值BY\_CNID仅针对分布式，对于openGauss无效。

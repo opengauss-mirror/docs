@@ -8,7 +8,7 @@
 
 该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- 如果操作系统不支持TCP\_KEEPIDLE选项 ，这个参数的值必须为0。
 >- 在通过Unix域套接字进行的连接的操作系统上，这个参数将被忽略。
@@ -30,7 +30,7 @@
 
 **默认值**： 300
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- 如果操作系统不支持TCP\_KEEPINTVL选项，这个参数的值必须为0。
 >- 在通过Unix域套接字进行的连接的操作系统上，这个参数将被忽略。
@@ -44,7 +44,7 @@
 
 该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- 如果操作系统不支持TCP\_KEEPCNT选项，这个参数的值必须为0。
 >- 在通过Unix域套接字进行连接的操作系统上，这个参数将被忽略。

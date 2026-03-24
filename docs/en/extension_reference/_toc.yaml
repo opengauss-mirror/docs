@@ -60,13 +60,13 @@ sections:
       - label: Expressions
         sections:
           - label: Conditional Expressions
-            href: ./dolphin-conditional-expressions.md
+            href: ./dolphin_conditional_expressions.md
       - label: DDL Syntax
-        href: ./dolphin-ddl-syntax-overview.md
+        href: ./dolphin_ddl_syntax_overview.md
       - label: DML Syntax
-        href: ./dolphin-dml-syntax-overview.md
+        href: ./dolphin_dml_syntax_overview.md
       - label: DCL Syntax
-        href: ./dolphin-dcl-syntax-overview.md
+        href: ./dolphin_dcl_syntax_overview.md
       - label: SQL Syntax
         sections:
           - label: ALTER FUNCTION
@@ -210,18 +210,18 @@ sections:
       - label: System Views
         href: ./dolphin-system-views.md
       - label: GUC Parameters
-        href: ./dolphin-guc-parameters.md
+        href: ./dolphin_guc_parameters.md
       - label: Resetting Parameters
-        href: ./dolphin-resetting-parameters.md
+        href: ./dolphin_resetting_parameters.md
       - label: Stored Procedures
         sections:
           - label: Basic Statements
-            href: ./dolphin-basic-statements.md
+            href: ./dolphin_basic_statements.md
           - label: Assignment Statements
-            href: ./dolphin-assignment-statements.md
+            href: ./dolphin_assignment_statements.md
       - label: Identifiers
         sections:
           - label: Column Name Identifiers
-            href: ./dolphin-column-name-identifiers.md
+            href: ./dolphin_column_name_identifiers.md
   - label: PostGIS Extensions
     href: ./PostGIS.md

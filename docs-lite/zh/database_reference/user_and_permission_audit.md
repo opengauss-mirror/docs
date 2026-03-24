@@ -32,7 +32,7 @@
 
 **默认值**： 1
 
->>[!TIP]须知
+>[!TIP]须知
 >openGauss启动时DN走备升主流程，因此DN启动时审计日志中类型为system\_switch。
 
 ## audit\_user\_locked<a name="zh-cn_topic_0283136655_zh-cn_topic_0237124746_zh-cn_topic_0059778731_sf87eea8d8fd949708f022da99dad9ba0"></a>

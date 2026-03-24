@@ -16,7 +16,7 @@ openGauss提供了多种修改GUC参数的方法，用户可以方便的针对�
 
 - 使用 `SET paraname = value` 方式设置GUC参数时，支持设置value为NULL，效果为设置对应的参数值为空字符串（并非NULL）。
 
-具体参数说明请参见[dolphin-GUC参数说明](dolphin-GUC参数说明.md)。
+具体参数说明请参见[dolphin-GUC参数说明](dolphin_guc_parameters.md)。
 
 ## GUC参数设置<a name="zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_sb2763fa0003e4ff1815379339bffe994"></a>
 

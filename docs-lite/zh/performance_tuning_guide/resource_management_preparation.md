@@ -113,7 +113,7 @@
     (1 row)
     ```
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >如果一个用户的login权限被取消，那么他的resource pool将会自动修改为default\_pool。default\_pool的详细介绍请参见[表2](#创建资源池)。
 
@@ -257,7 +257,7 @@ openGauss支持通过创建资源池对主机资源进行划分。开启资源�
 </tbody>
 </table>
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >openGauss不允许对default\_pool参数进行修改。
 
@@ -321,7 +321,7 @@ DROP RESOURCE POOL
 
 ### 查看资源池的信息<a name="zh-cn_topic_0066854608_section63579270173658"></a>
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- 不允许使用INSERT、UPDATE、DELETE、TRUNCATE操作资源负载管理的系统表pg\_resource\_pool。
 >- 不允许修改资源池的memory\_limit和cpu\_affinity属性。

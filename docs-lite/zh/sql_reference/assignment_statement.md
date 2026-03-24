@@ -52,7 +52,7 @@ END;
 /
 ```
 
->>[!TIP]须知
+>[!TIP]须知
 >INTO方式赋值仅支持对第一层列赋值，且不支持二维及以上数组。
 
 ## 带类型名称的变量赋值<a name="section72764131238199"></a>
@@ -131,7 +131,7 @@ openGauss=# SELECT check_test();
  ERROR:  query returned no rows when process INTO
 ```
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- BULK COLLECT INTO 只支持批量赋值给数组或集合。集合类型合理使用LIMIT字段避免操作过量数据导致性能下降。
 >- INTO/BULK COLLECT INTO 只支持4层以下Record类型直接嵌套。

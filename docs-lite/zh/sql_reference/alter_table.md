@@ -453,7 +453,7 @@
        - 在DROP CONSTRAINT操作中表示要删除的现有约束的名称。
     - 在ADD CONSTRAINT操作中表示新增的约束名称。
 
-        >>[!TIP]须知
+        >[!TIP]须知
         >
         >对于新增约束，在B模式数据库下（即sql\_compatibility = 'B'）constraint\_name为可选项，在其他模式数据库下，必须加上constraint\_name。
 
@@ -465,7 +465,7 @@
 
     索引名。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >在ADD CONSTRAINT操作中：
     >- index\_name仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
@@ -478,7 +478,7 @@
 
     取值范围参考[参数说明](create_index.md)中的USING method。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >在ADD CONSTRAINT操作中：
     >- USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
@@ -488,7 +488,7 @@
 
     ASC表示指定按升序排序（默认）。DESC指定按降序排序。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >在ADD CONSTRAINT中，ASC|DESC只在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
 
@@ -496,7 +496,7 @@
 
     创建一个基于该表的一个或多个字段的表达式索引约束，必须写在圆括弧中。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >表达式索引只在B模式数据库下支持（即sql\_compatibility = 'B'），其他模式数据库不支持。
 

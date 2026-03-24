@@ -1268,7 +1268,7 @@ CONTEXT:  referenced column: subdate
 
 - dayname\(date\)
 
-  描述：返回日期对应的工作日，返回内容所在语言集受GUC参数[dolphin.lc_time_names](dolphin-GUC参数说明.md#dolphinlc_time_names)控制。
+  描述：返回日期对应的工作日，返回内容所在语言集受GUC参数[dolphin.lc_time_names](dolphin_guc_parameters.md#dolphinlc_time_names)控制。
 
   返回值类型：text
 
@@ -1295,7 +1295,7 @@ CONTEXT:  referenced column: subdate
 
 - monthname\(date\)
 
-  描述：返回日期对应月份的全称，返回内容所在语言集受GUC参数[dolphin.lc_time_names](dolphin-GUC参数说明.md##lctimenamesa-namesection203671436824a)控制。
+  描述：返回日期对应月份的全称，返回内容所在语言集受GUC参数[dolphin.lc_time_names](dolphin_guc_parameters.md##lctimenamesa-namesection203671436824a)控制。
 
   返回值类型：text
 

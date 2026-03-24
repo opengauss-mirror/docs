@@ -20,7 +20,7 @@ using\_clause子句的语法图参见[图2](#zh-cn_topic_0283136869_zh-cn_topic_
 - USING IN bind\_argument：用于指定存放传递给动态SQL值的变量，即在dynamic\_select\_string中存在占位符时使用。
 - USING OUT bind\_argument：用于指定存放动态SQL返回值的变量。
 
-    >>[!TIP]须知
+    >[!TIP]须知
     >
     >- 查询语句中，into和out不能同时存在；
     >- 占位符命名以“:”开始，后面可跟数字、字符或字符串，与USING子句的bind\_argument一一对应；

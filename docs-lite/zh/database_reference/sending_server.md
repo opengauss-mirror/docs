@@ -6,7 +6,7 @@
 
 该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >[wal\_level](settings.md#zh-cn_topic_0283137354_zh-cn_topic_0237124707_zh-cn_topic_0059778393_s2c76f5957066407a959191148f2c780f)必须设置为archive、hot\_standby或者logical以允许备机的连接。
 
@@ -41,7 +41,7 @@
 
 该参数属于SIGHUP类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- 如果主机数据较大，重建备机数据库时需要增大此参数的值，主机数据在500G时，此参数的参考值为600s。
 >- 此值不能大于wal\_receiver\_timeout或数据库重建时的超时参数。
@@ -176,7 +176,7 @@
 
 该参数属于SIGHUP类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- 如果主机上开启了UUID验证功能、且配置了非空字符串的repl\_uuid验证码，那么备机也需要开启UUID验证功能、且配置相同的repl\_uuid验证码，否则主备日志复制和备机重建请求将被主机拒绝。
 >- 该参数支持SIGHUP动态加载新值。修改之后，不影响已建连的主备连接，对后续主备复制请求和主备重建请求生效。
@@ -198,7 +198,7 @@
 
 该参数属于SIGHUP类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >- 如果主机上开启了UUID验证功能、且配置了非空字符串的repl\_uuid验证码，那么备机也需要开启UUID验证功能、且配置相同的repl\_uuid验证码，否则主备日志复制和备机重建请求将被主机拒绝。
 >- 该参数支持SIGHUP动态加载新值。修改之后，不影响已建连的主备连接，对后续主备复制请求和主备重建请求生效。

@@ -84,7 +84,7 @@ openGauss=# SELECT * FROM items ORDER BY val <#> '[3,1,2]' LIMIT 5;
 openGauss=# SELECT * FROM items ORDER BY val <=> '[3,1,2]' LIMIT 5;
 ```
 
->>[!NOTE]说明<br>
+>[!NOTE]说明<br>
 >如果使用当前索引中不存在的距离计算操作符来进行扫描，即使关闭顺序扫描后仍会执行顺序扫描。<br>
 >
 >如果表中向量存在空值或者距离计算结果为NAN，查询结果会将其自动过滤。<br>

@@ -14,7 +14,7 @@ openGauss provides multiple methods to set GUC parameters for databases, users, 
     - The unit of memory can be kB, MB, or GB.
     - The unit of time can be ms, s, min, h, or d.
 
-For details, see [GUC Parameters](dolphin-guc-parameters.md).
+For details, see [GUC Parameters](dolphin_guc_parameters.md).
 
 ## Setting GUC Parameters<a name="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_sb2763fa0003e4ff1815379339bffe994"></a>
 
@@ -22,7 +22,7 @@ openGauss provides six types of GUC parameters. For details about parameter type
 
 **Table 1** GUC parameters
 
-<a name="zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837"></a>
+<a name="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d837"></a>
 <table><thead align="left"><tr id="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_rae575d3ff60b407598220d90f6c4ae5a"><th class="cellrowborder" valign="top" width="15%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_a565dea9ce2ca48e382eabebd159db37c"><a name="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_a565dea9ce2ca48e382eabebd159db37c"></a><a name="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_a565dea9ce2ca48e382eabebd159db37c"></a>Parameter Type</p>
 </th>
 <th class="cellrowborder" valign="top" width="45%" id="mcps1.2.4.1.2"><p id="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_a365ac414051d47a2840b55cd29318e65"><a name="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_a365ac414051d47a2840b55cd29318e65"></a><a name="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_a365ac414051d47a2840b55cd29318e65"></a>Description</p>
@@ -82,7 +82,7 @@ openGauss provides four methods to modify GUC parameters. For details, see [Tabl
 
 **Table 2** Methods for setting GUC parameters
 
-<a name="zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd897c"></a>
+<a name="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd897c"></a>
 <table><thead align="left"><tr id="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_rc5ee36741afd4727ac928c5055842f62"><th class="cellrowborder" valign="top" width="16.06%" id="mcps1.2.3.1.1"><p id="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_en-us_topic_0058967671_p519167381778"><a name="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_en-us_topic_0058967671_p519167381778"></a><a name="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_en-us_topic_0058967671_p519167381778"></a>No.</p>
 </th>
 <th class="cellrowborder" valign="top" width="83.94%" id="mcps1.2.3.1.2"><p id="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_aef170b7c444f4dd8859f597acc53a873"><a name="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_aef170b7c444f4dd8859f597acc53a873"></a><a name="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_aef170b7c444f4dd8859f597acc53a873"></a>Setting Method</p>

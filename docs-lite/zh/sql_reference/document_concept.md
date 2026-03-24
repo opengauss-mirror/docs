@@ -18,7 +18,7 @@ identify_serials
 (7 rows) 
 ```
 
->>[!TIP]须知
+>[!TIP]须知
 >
 >实际上，在这些示例查询中，应该使用coalesce防止一个独立的NULL属性导致整个文档的NULL结果。
 
