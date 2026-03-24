@@ -78,6 +78,9 @@
     <tr>
         <td><a href="./bloom_index.md">BLOOM索引</a></td>
     </tr>
+    <tr>
+        <td><a href="./dpa_hash_agg_acceleration.md">DPA哈希聚合加速</a></td>
+    </tr>
 </table>
 
 ## 高可用
@@ -415,6 +418,9 @@
     </tr>
     <tr>
         <td><a href="./aifeature_guide/intelligent_cardinality_estimation.md">ABO优化器</a></td>
+    </tr>
+    <tr>
+        <td><a href="./ogai.md">OGAI</a></td>
     </tr>
 </table>
 

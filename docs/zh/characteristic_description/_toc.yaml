@@ -38,7 +38,9 @@ sections:
       - label: UDF结果缓存
         href: ./udf_result_cache.md            
       - label: BLOOM索引
-        href: ./bloom_index.md  
+        href: ./bloom_index.md
+      - label: DPA哈希聚合加速
+        href: ./dpa_hash_agg_acceleration.md
   - label: 高可用
     sections:
       - label: 逻辑复制
@@ -225,6 +227,8 @@ sections:
             href: ./intelligent_cardinality_estimation.md
           - label: 自适应计划选择
             href: ./adaptive_plan_selection.md
+      - label: OGAI
+        href: ./ogai.md
   - label: 工具链
     sections:
       - label: DataKit
