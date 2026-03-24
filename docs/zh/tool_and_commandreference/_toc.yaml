@@ -170,7 +170,11 @@ sections:
       - label: oGRecorder 主备参数同步介绍
         href: ./ogrecorder/ogrecorder_primary_standby_sync.md
       - label: grcmd 工具使用说明
-        href: ./ogrecorder/grcmd.md    
+        href: ./ogrecorder/grcmd.md
+      - label: oGRecorder 主备支持密钥同步介绍
+        href: ./ogrecorder/ogrecorder_sry_key_sync.md
+      - label: oGRecorder API优化介绍
+        href: ./ogrecorder/ogrecorder_restapi.md
   - label: openGauss可运行脚本功能说明
     href: ./functions_of_opengauss_executable_scripts.md
   - label: gs_collector工具支持收集的系统表和视图列表
