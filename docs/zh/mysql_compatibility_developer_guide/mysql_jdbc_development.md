@@ -245,7 +245,7 @@ public class MysqlJdbcConnectDemo {
 
 ### 示例运行日志
 
-```
+```tex
 查询user表中所有数据:
 id: 1, name: 张三, age: 18
 id: 2, name: 李四, age: 19

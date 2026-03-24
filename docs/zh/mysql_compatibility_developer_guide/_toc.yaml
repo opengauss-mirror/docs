@@ -7,3 +7,5 @@ sections:
     href: ./mysql_jdbc_development.md
   - label: 基于Mybatis开发
     href: ./mybatis_development.md
+  - label: 基于Mybatis-plus开发
+    href: ./mybatis_plus_development.md
