@@ -21,6 +21,7 @@ sections:
   - label: 开发指南
     sections:
       - href: ./developer_guide/_toc.yaml
+      - href: ./mysql_compatibility_developer_guide/_toc.yaml
       - href: ./compilation_guide/_toc.yaml
   - label: 参考指南
     sections:
