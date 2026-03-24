@@ -263,6 +263,9 @@
         <td><a href="./standard_development_interfaces.md">支持标准开发接口</a></td>
     </tr>
     <tr>
+        <td><a href="./standard_development_interfaces_ograc.md">支持ograc标准开发接口</a></td>
+    </tr>
+    <tr>
         <td><a href="./postgresql_api_compatibility.md">PG接口兼容</a></td>
     </tr>
     <tr>
