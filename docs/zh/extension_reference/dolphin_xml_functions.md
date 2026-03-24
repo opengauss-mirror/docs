@@ -418,15 +418,15 @@
 
   <!-- 错误--注释 -->
 
-- （5）处理指令必须有正确的 <?target data?> 格式
+- （5）处理指令必须有正确的 `<?target data?>` 格式
 
   正确格式示例：
 
-  <?xml-stylesheet type="text/css" href="style.css"?>
+  `<?xml-stylesheet type="text/css" href="style.css"?>`
 
   错误格式示例： 缺少结束的 ?>
 
-  <?xml-stylesheet type="text/css" href="style.css"
+  `<?xml-stylesheet type="text/css" href="style.css"`
 
 - 3、命名空间要求
 
