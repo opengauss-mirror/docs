@@ -400,13 +400,13 @@
 
   正确格式示例：
 
-  AT&amp;T， x &lt; 5
+  `AT&amp;T， x &lt; 5`
 
   错误格式示例： 
 
   直接使用未转义的 & 或 < 字符
 
-  AT&T， x < 5
+  `AT&T， x < 5`
 
 - （4）注释内容不能包含双连字符 --
 
@@ -422,11 +422,11 @@
 
   正确格式示例：
 
-  <?xml-stylesheet type="text/css" href="style.css"?>
+  `<?xml-stylesheet type="text/css" href="style.css"?>`
 
   错误格式示例： 缺少结束的 ?>
 
-  <?xml-stylesheet type="text/css" href="style.css"
+  `<?xml-stylesheet type="text/css" href="style.css"`
 
 - 3、命名空间要求
 
