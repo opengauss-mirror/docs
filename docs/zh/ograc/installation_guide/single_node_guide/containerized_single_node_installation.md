@@ -30,8 +30,12 @@ docker run --name mirror_name -itd -v /home/uer_name/docker/data:/home --privile
 yum install -y libaio-devel openssl openssl-devel ndctl-devel \
 ncurses ncurses-devel libtirpc-devel expect ant bison iputils \
 iproute wget make gcc gcc-c++ gdb gdb-gdbserver python3 python3-devel \
-git net-tools cmake automake byacc libtool git unzip vim --skip-broken
+git net-tools cmake automake byacc libtool git unzip vim lz4-devel patch --skip-broken
 ```
+
+要求：
+cmake版本在3.12及以上；
+lz4版本在1.8.3以上。
 
 3.2 若为安装包安装则还需安装依赖：
 

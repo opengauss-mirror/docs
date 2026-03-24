@@ -59,12 +59,14 @@ oGRAC 编译依赖较多的系统库及构建工具，请在编译主机上执�
 yum install -y libaio-devel openssl openssl-devel ndctl-devel unixODBC-devel unixODBC \
 ncurses ncurses-devel libtirpc-devel expect ant bison iputils  \
 iproute wget make gcc gcc-c++ gdb gdb-gdbserver python3 python3-devel \
-git net-tools cmake automake byacc libtool --skip-broken
+git net-tools cmake automake byacc libtool lz4-devel patch --skip-broken
 ```
 
 > [!NOTE]说明
 >
 > * 上述依赖涵盖数据库编译、调试及安装脚本执行所需组件
+> * `cmake`：要求版本 >= 3.12
+> * `lz4-devel`：要求版本 >= 1.8.3
 > * 若存在依赖冲突，`--skip-broken` 可避免安装中断
 
 ---
