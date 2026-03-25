@@ -85,6 +85,8 @@ sections:
         href: ./built_in_stack_tool.md
       - label: SQL PATCH
         href: ./sql_patch.md
+      - label: Redundant Index Analysis Aid
+        href: ./pg_indexes_verbose.md
   - label: Database Security
     sections:
       - label: Access Control Model
