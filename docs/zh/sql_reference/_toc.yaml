@@ -1279,6 +1279,8 @@ sections:
         href: ./data_damage_detection_and_repair_functions.md
       - label: XML类型函数
         href: ./xml_type_function.md
+      - label: XMLTABLE
+        href: ./xmltable.md
       - label: 资源池化的函数
         href: ./resource_pooling_function.md
       - label: 向量函数和操作符

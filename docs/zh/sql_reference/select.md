@@ -95,6 +95,8 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     |with_query_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
     |function_name ( [ argument [, ...] ] ) [ WITH ORDINALITY ] [ AS ] alias [ ( column_alias [, ...] | column_definition [, ...] ) ]
     |function_name ( [ argument [, ...] ] ) [ WITH ORDINALITY ] AS ( column_definition [, ...] )
+    |XMLTABLE ( row_expression PASSING document_expression COLUMNS column_definition [, ...] ) [ AS ] alias
+    |XMLTABLE ( XMLNAMESPACES ( namespace_uri AS prefix | DEFAULT namespace_uri [, ...] ) , row_expression PASSING document_expression COLUMNS column_definition [, ...] ) [ AS ] alias
     |from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]
     |rotate_clause
     |notrotate_clause

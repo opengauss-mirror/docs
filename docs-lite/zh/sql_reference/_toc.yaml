@@ -1141,6 +1141,8 @@ sections:
         href: ./encrypted_equality_function.md    
       - label: 返回集合的函数
         href: ./set_returning_functions.md
+      - label: XMLTABLE
+        href: ./xmltable.md
       - label: 条件表达式函数
         href: ./conditional_expression_function.md    
       - label: 系统信息函数
