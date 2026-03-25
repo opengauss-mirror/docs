@@ -405,6 +405,9 @@
         <td><a href="./standard_development_interfaces.md">支持标准开发接口</a></td>
     </tr>
     <tr>
+        <td><a href="./standard_development_interfaces_ograc.md">支持ograc标准开发接口</a></td>
+    </tr>
+    <tr>
         <td><a href="./embedded_sql_preprocessor_ecpg.md">支持嵌入式SQL预处理器（ECPG）</a></td>
     </tr>
     <tr>

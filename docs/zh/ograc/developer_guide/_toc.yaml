@@ -39,7 +39,63 @@ sections:
             href: ./jdbc/java_sql_result_set_meta_data.md
           - label: java.sql.Statement
             href: ./jdbc/java_sql_statement.md
-          - label: java.sql.Statement
-            href: ./jdbc/java_sql_statement.md
       - label: JDBC常用参数参考
         href: ./jdbc/common_jdbc_parameters.md
+  - label: 基于ODBC开发
+    sections:
+      - label: Linux下配置数据源
+        href: ./odbc/linux_configure_data_source.md
+      - label: 开发流程
+        href: ./odbc/development_process_odbc.md
+      - label: ODBC接口参考
+        sections:
+          - label: 概览
+            href: ./odbc/odbc_api_overview.md
+          - label: SQLAllocConnect
+            href: ./odbc/sql_alloc_connect.md
+          - label: SQLAllocEnv
+            href: ./odbc/sql_alloc_env.md
+          - label: SQLAllocHandle
+            href: ./odbc/sql_alloc_handle.md
+          - label: SQLAllocStmt
+            href: ./odbc/sql_alloc_stmt.md
+          - label: SQLBindCol
+            href: ./odbc/sql_bind_col.md
+          - label: SQLBindParameter
+            href: ./odbc/sql_bind_parameter.md
+          - label: SQLConnect
+            href: ./odbc/sql_connect.md
+          - label: SQLDisconnect
+            href: ./odbc/sql_disconnect.md
+          - label: SQLError
+            href: ./odbc/sql_error.md
+          - label: SQLExecDirect
+            href: ./odbc/sql_exec_direct.md
+          - label: SQLExecute
+            href: ./odbc/sql_execute.md
+          - label: SQLFetch
+            href: ./odbc/sql_fetch.md
+          - label: SQLFreeConnect
+            href: ./odbc/sql_free_connect.md
+          - label: SQLFreeEnv
+            href: ./odbc/sql_free_env.md
+          - label: SQLFreeHandle
+            href: ./odbc/sql_free_handle.md
+          - label: SQLFreeStmt
+            href: ./odbc/sql_free_stmt.md
+          - label: SQLGetData
+            href: ./odbc/sql_get_data.md
+          - label: SQLPrepare
+            href: ./odbc/sql_prepare.md
+          - label: SQLPutData
+            href: ./odbc/sql_put_data.md
+          - label: SQLRowCount
+            href: ./odbc/sql_row_count.md
+          - label: SQLSetConnectAttr
+            href: ./odbc/sql_set_connect_attr.md
+          - label: SQLSetEnvAttr
+            href: ./odbc/sql_set_env_attr.md
+          - label: SQLSetStmtAttr
+            href: ./odbc/sql_set_stmt_attr.md
+          - label: 示例
+            href: ./odbc/example.md

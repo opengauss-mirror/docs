@@ -183,6 +183,8 @@ sections:
             href: ./standard_sql.md
           - label: 支持标准开发接口
             href: ./standard_development_interfaces.md
+          - label: 支持ograc标准开发接口
+            href: ./standard_development_interfaces_ograc.md
           - label: PG接口兼容
             href: ./postgresql_api_compatibility.md
           - label: 支持PL/Java

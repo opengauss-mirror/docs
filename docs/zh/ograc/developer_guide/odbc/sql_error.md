@@ -1,0 +1,86 @@
+# SQLError<a name="ZH-CN_TOPIC_0242371444"></a>
+
+## 功能描述<a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_sf1f063f9cda741e3bddd12ffff9982ea"></a>
+
+用于获取错误和警告信息。
+
+## 原型<a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_sa94159f087b8453d91742bd037a4dd23"></a>
+
+```c
+SQLRETURN  SQLError(SQLHENV       EnvironmentHandle, 
+                    SQLHDBC       ConnectionHandle,
+                    SQLHSTMT      StatementHandle, 
+                    SQLCHAR       *Sqlstate,
+                    SQLINTEGER    *NativeError, 
+                    SQLCHAR       *MessageText,
+                    SQLSMALLINT   BufferLength, 
+                    SQLSMALLINT   *TextLength);
+```
+
+## 参数<a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_sed5e3f43dc554fcf87bcc0319da72ef0"></a>
+
+**表 1**  SQLError参数
+
+<a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_tf92662a862a94bb8a2ea829cbf5f90af"></a>
+<table><thead align="left"><tr id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_r28fb5700eaa54698a4340424276b87f4"><th class="cellrowborder" valign="top" width="24.5%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_ac9627e06109f453bac21c00c96534d27"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_ac9627e06109f453bac21c00c96534d27"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_ac9627e06109f453bac21c00c96534d27"></a><strong id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a9e3d1cc49cc849e6a9dbfa5f277cc791"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a9e3d1cc49cc849e6a9dbfa5f277cc791"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a9e3d1cc49cc849e6a9dbfa5f277cc791"></a>关键字</strong></p>
+</th>
+<th class="cellrowborder" valign="top" width="75.5%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a514195d887524d04b3ecee1f113764cb"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a514195d887524d04b3ecee1f113764cb"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a514195d887524d04b3ecee1f113764cb"></a><strong id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_zh-cn_topic_0058965244_b447479391436"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_zh-cn_topic_0058965244_b447479391436"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_zh-cn_topic_0058965244_b447479391436"></a>参数说明</strong></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_r0a0928672b2646d0a261d3ef7e26b596"><td class="cellrowborder" valign="top" width="24.5%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"></a>EnvironmentHandle</p>
+</td>
+<td class="cellrowborder" valign="top" width="75.5%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"></a>环境句柄，通过SQLAllocHandle获得。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_r0a0928672b2646d0a261d3ef7e26b596"><td class="cellrowborder" valign="top" width="24.5%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"></a>ConnectionHandle</p>
+</td>
+<td class="cellrowborder" valign="top" width="75.5%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"></a>连接句柄，通过SQLAllocHandle获得。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_r0a0928672b2646d0a261d3ef7e26b596"><td class="cellrowborder" valign="top" width="24.5%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"></a>StatementHandle</p>
+</td>
+<td class="cellrowborder" valign="top" width="75.5%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"></a>语句句柄，通过SQLAllocHandle获得。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_r0a0928672b2646d0a261d3ef7e26b596"><td class="cellrowborder" valign="top" width="24.5%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"></a>Sqlstate</p>
+</td>
+<td class="cellrowborder" valign="top" width="75.5%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"></a>指向接收SQLSTATE字符串缓冲区的指针。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_r0a0928672b2646d0a261d3ef7e26b596"><td class="cellrowborder" valign="top" width="24.5%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"></a>NativeError</p>
+</td>
+<td class="cellrowborder" valign="top" width="75.5%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"></a>指向接收数据源原生错误码的缓冲区指针。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_r0a0928672b2646d0a261d3ef7e26b596"><td class="cellrowborder" valign="top" width="24.5%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"></a>MessageText</p>
+</td>
+<td class="cellrowborder" valign="top" width="75.5%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"></a>指向接收错误消息文本的缓冲区。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_r0a0928672b2646d0a261d3ef7e26b596"><td class="cellrowborder" valign="top" width="24.5%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"></a>BufferLength</p>
+</td>
+<td class="cellrowborder" valign="top" width="75.5%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"></a>错误消息缓冲区的最大长度，以字节为单位。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_r0a0928672b2646d0a261d3ef7e26b596"><td class="cellrowborder" valign="top" width="24.5%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a80896ed0e4cc4f3fb5351a168f738731"></a>TextLength</p>
+</td>
+<td class="cellrowborder" valign="top" width="75.5%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"></a><a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_a701be46576314b7491c2cde0e48ada5b"></a>指向缓冲区的指针，用于返回MessageText中可用的总字节数。</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+## 返回值<a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_sec718cedec224638b6f21c68a66c165d"></a>
+
+-   SQL\_SUCCESS：表示调用正确。
+-   SQL\_SUCCESS\_WITH\_INFO：表示会有一些警告信息。
+-   SQL\_ERROR：表示错误信息获取失败。
+-   SQL\_INVALID\_HANDLE：表示传入的句柄无效。
+-   SQL\_NO\_DATA：表示没有错误信息可获取。
+
+## 示例<a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_sb7797f4e64534d1f85c319d5433804d4"></a>
+
+参见：[示例](example.md)
+
