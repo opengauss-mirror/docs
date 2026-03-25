@@ -72,7 +72,7 @@ passwd ogdba
 oGRAC 安装依赖 Python、时间同步和网络工具，请在两节点执行：
 
 ```shell
-yum install -y wget ntpdate chrony python3 python3-devel iputils iproute --skip-broken
+yum install -y wget ntpdate chrony python3 python3-devel iputils iproute lz4-devel patch --skip-broken
 ```
 
 ---

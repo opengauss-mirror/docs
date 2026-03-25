@@ -27,7 +27,10 @@ chown -R user_name:user_name compile_path
 yum install -y libaio-devel openssl openssl-devel ndctl-devel perl \
 ncurses ncurses-devel libtirpc-devel expect ant bison iputils rpm-build \
 iproute wget make gcc gcc-c++ gdb gdb-gdbserver python3 python3-devel \
-git net-tools cmake automake byacc libtool --skip-broken unixODBC unixODBC-devel
+git net-tools cmake automake byacc libtool lz4-devel patch \
+--skip-broken unixODBC unixODBC-devel
 ```
 
-要求cmake版本在3.12及以上。
+要求：
+cmake版本在3.12及以上；
+lz4版本在1.8.3以上。
