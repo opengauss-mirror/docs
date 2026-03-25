@@ -1,0 +1,17 @@
+label: 关于openGauss
+isManual: true
+sections:
+  - label: 简介
+    href: ./about_opengauss.md
+  - label: 版本能力矩阵
+    href: ./version_capability.md
+  - label: 部署方案
+    href: ./deployment_plan.md
+  - label: 典型组网
+    href: ./typical_networking.md  
+  - label: 运行环境
+    href: ./operating_environment.md
+  - label: 技术指标
+    href: ./technical_indicators.md
+  - label: 参与贡献
+    href: ./contribution.md
