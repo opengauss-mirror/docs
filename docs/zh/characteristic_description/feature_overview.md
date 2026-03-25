@@ -190,6 +190,9 @@
     <tr>
         <td><a href="./sql_patch.md">支持SQL PATCH</a></td>
     </tr>
+    <tr>
+        <td><a href="./pg_indexes_verbose.md">冗余索引辅助诊断</a></td>
+    </tr>
 </table>
 
 ## 数据库安全

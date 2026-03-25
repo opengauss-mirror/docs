@@ -85,6 +85,8 @@ sections:
         href: ./built_in_stack_tool.md
       - label: 支持SQL PATCH
         href: ./sql_patch.md
+      - label: 冗余索引辅助诊断
+        href: ./pg_indexes_verbose.md
   - label: 数据库安全
     sections:
       - label: 访问控制模型
