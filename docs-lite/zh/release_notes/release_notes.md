@@ -36,7 +36,7 @@ openGauss的版本号遵循 X.Y.0-RCx 的格式，旨在区分不同类型的版
 
 ## 版本介绍<a name="ZH-CN_TOPIC_0289899200"></a>
 
-openGauss 7.0.0-RC2是openGauss 2025年9月发布的创新版本，该版本生命周期为0.5年。当前文档说明范围仅限轻量版。
+openGauss 7.0.0-RC3是openGauss 2026年3月发布的创新版本，该版本生命周期为0.5年。当前文档说明范围仅限轻量版。
 
 轻量版的特点如下：
 
@@ -55,8 +55,6 @@ openGauss 7.0.0-RC2是openGauss 2025年9月发布的创新版本，该版本生�
 主要的参数配置如下。
 
 ```
-enable_thread_pool=on
-thread_pool_attr='16,1,(nobind)'
 enable_asp=off
 enable_ustore=off
 enable_incremental_checkpoint=off
@@ -107,7 +105,7 @@ ORC文件访问、Kerberos安全校验、JAVA UDF、Codegen、MOT内存表特性
 保留了用户常用的gsql、gs_ctl、gs_guc、gs_dump、gs_restore、gs_probackup、gs_initdb等工具，它还提供了安装部署、升级的工具liteom。
 不支持gs_cgroup、pg_recvlogical、pg_xlogdump、pagehack、pg_archivecleanup、gs_assessment、ndpplugin、spqplugin、timescaledb、age、postgres_fdw、dblink、gms_xmlgen、libog_query等插件和工具。不包含JRE组件。
 
-7.0.0-RC2与之前的版本特性功能保持兼容，主要功能如下：
+7.0.0-RC3与之前的版本特性功能保持兼容，主要功能如下：
 
 - 继承功能：
 
@@ -176,71 +174,46 @@ ORC文件访问、Kerberos安全校验、JAVA UDF、Codegen、MOT内存表特性
 
 ### 新增特性<a name="zh-cn_topic_0283136327_section383172195410"></a>
 
-此处说明的是openGauss 7.0.0-RC2版本，在7.0.0-RC1版本功能的基础上，新增如下特性：
+此处说明的是openGauss 7.0.0-RC3版本，在7.0.0-RC2版本功能的基础上，新增如下特性：
 
-- 高性能：Xlog刷盘优化
+- 高性能：[参数化路径](../characteristic_description/automatic_parameterization.md)功能支持简单SELECT语句，并将相关内存统一到plan cache，支持global plan cache。[#8777](https://gitcode.com/opengauss/openGauss-server/pull/8777) [@shijuzheng1997](https://gitcode.com/shijuzheng1997)
 
-  - 新增添加enable_LC_xlog_flush_optimize和xlog_write_flush_split参数，通过在低并发场景直接刷xlog、部分字段合并、减少持锁放锁代价等方式提升低并发场景下的xlog刷盘效率。[其他选项](../database_reference/miscellaneous_parameters.md)
-  
-- 高性能：提升单条INSERT/REPLACE SQL带多个VALUES场景的插入性能50%+
+  - 支持GPC(Global Plan Cache全局计划缓存)，开启GPC后使用参数化功能的情况下，被参数化的语句也会被缓存到GPC(执行计划使用Generic Plan的情形下)。可以通过视图`DBE_PERF.GLOBAL_PLANCACHE_STATUS`查询
 
-  - 新增enable_parse_fusion参数，提升单条INSERT/REPLACE SQL带多个VALUES场景的插入性能50%+。[其他选项](../database_reference/miscellaneous_parameters.md)
+- 高性能：支持[ADIO](../database_reference/asynchronous_i_o_operations.md)。[#8719](https://gitcode.com/opengauss/openGauss-server/pull/8719) [@zcj112](https://gitcode.com/zcj112)
 
-- 高性能：支持bloom索引
+  -  行存表的文件访问支持通过直接IO，不经过操作系统页面缓存的方式进行读取。对于页面刷盘以及VACUUM FULL操作，将采用异步IO的方式进行。
 
-  - Bloom过滤器是一种节省空间的数据结构，用于测试元素是否是集合的成员。对于索引访问方法，它允许通过签名快速排除不匹配的元组，其大小在索引创建时确定。当表具有许多属性并且查询测试它们的任意组合时，这种类型的索引最有用。传统的btree索引比bloom索引更快，但它可能需要许多 btree索引来支持所有可能的查询，但bloom索引只需要一个。[子事务TPCC性能调优](../sql_reference/bloom_index.md)
+- 高性能： 支持[DPA哈希聚合加速](../characteristic_description/dpa_hash_agg_acceleration.md)，提升哈希算子性能。[#8746](https://gitcode.com/opengauss/openGauss-server/pull/8746) [#8750](https://gitcode.com/opengauss/openGauss-server/pull/8750) [#8754](https://gitcode.com/opengauss/openGauss-server/pull/8754) [@Eurekaxun](https://gitcode.com/Eurekaxun)
 
-- 高性能：新增Memoize算子优化NestLoop场景性能
+  -  DPA（Data Processing Accelerator）哈希聚合加速是openGauss基于UADK框架实现的硬件加速特性，将向量化哈希聚合操作卸载到硬件加速器上执行，显著提升聚合查询的执行效率。
 
-  - 新增enable_memoize参数，对于可以参数化的NestLoop路径，连接键内表的distinct值较少时，通过memoize算子将内表值缓存在内存中可以提高性能。[优化器方法配置](../database_reference/optimizer_method_configuration.md)
+- 高可用：支持[在线DDL](../database_administration_guide/online_ddl.md)，使得DDL过程中持有高级别锁的时间大为减少，减少对并发DML的阻塞时间。[#8748](https://gitcode.com/opengauss/openGauss-server/pull/8748) [#8771](https://gitcode.com/opengauss/openGauss-server/pull/8771) [#8782](https://gitcode.com/opengauss/openGauss-server/pull/8782) [#8822](https://gitcode.com/opengauss/openGauss-server/pull/8822) [#8958](https://gitcode.com/opengauss/openGauss-server/pull/8958) [#8971](https://gitcode.com/opengauss/openGauss-server/pull/8971) [@congzhou2603](https://gitcode.com/congzhou2603) [@luodongxu](https://gitcode.com/luodongxu)
 
-- 高可用：增量build场景支持校验commit lsn
+  -  在线DDL特性涉及传统主备中Astore、段页式支持修改列数据类型、修改压缩属性、添加约束(包括范围约束和非空约束)、VACUUM FULL、CLUSTER、分区表分裂合并分区，并新增关键字CONCURRENTLY用于触发在线DDL功能：
 
-  - gs_ctl在执行增量build时，支持通过 --verify-commit 选项对备机已提交事务进行校验，如果备机与主机存在共同的checkpoint日志，但之后存在不同的提交数据，则为保证这部分数据不丢失，增量build失败，且不会转为全量build。[gs_ctl](../tool_and_commandreference/gs_ctl.md)
+- 高智能： 支持[RabitQ](../datavec/Rabitq.md)量化索引算法。[#8642](https://gitcode.com/opengauss/openGauss-server/pull/8642) [#8645](https://gitcode.com/opengauss/openGauss-server/pull/8645) [#8650](https://gitcode.com/opengauss/openGauss-server/pull/8650) [#8655](https://gitcode.com/opengauss/openGauss-server/pull/8655) [#8658](https://gitcode.com/opengauss/openGauss-server/pull/8658) [@wangjingyuan8](https://gitcode.com/wangjingyuan8) [@weixin_44204324](https://gitcode.com/weixin_44204324)
 
-- 高可用：数据读取出现坏块，支持从其他节点进行修复
+  -  RabitQ是一种具有理论保证的最先进的二进制量化方法，与HNSW、IVFFLAT结合使用时，可以确保向量数据在高度压缩的表示下仍能保持搜索的可靠性。
 
-  - 在数据库运行过程中，会因为某些磁盘问题（例如数据意外覆盖）等问题，导致磁盘数据损坏，从而影响数据库的正常运行。为了解决这类问题，openGauss数据库提供了主库备库坏块恢复功能，用于解决主库备库坏块问题。通过该方式，可以解决主库备库坏块问题，从而保证数据库的可用性。[主库备库坏块修复功能](../database_om_guide/fast_repair_of_damaged_acitve_standby_libraries.md)
+- 高智能： [MCP](../datavec/mcp.md)适配openGauss。[#4](https://gitcode.com/opengauss/mcp-opengauss/pull/4) [@weixin_44204324](https://gitcode.com/weixin_44204324)
 
-- 高智能：向量数据库增强。[DataVec向量数据库](../datavec/datavec_overview.md)
-
-  - 支持BM25全文检索。[BM25全文建索索引](../datavec/bm25_full_text_search_index.md)
-  - HNSW-PQ支持通过mmap方式读取，提升检索性能，通过enable_mmap等参数控制。[PQ](../datavec/pq.md)
-  - 支持DiskANN磁盘索引算法。[DiskANN](../datavec/diskann.md)
-  - 支持支持多向量召回。支持在单次搜索请求中同时提交多个查询向量，openGauss将并行对查询向量进行搜索，并返回多组结果。[Python SDK对接向量数据库](../datavec/integrationpython.md)
-
-- 企业级特性：支持通过视图查询当前会话拥有的自动参数化计划信息
-
-  - 新增query_parameterization_views视图函数查询自动化参数信息。[query_parameterization_views](../sql_reference/other_functions.md)
-
-- 企业级特性：Ubtree索引支持undo管理，支持PCR
-
-  - 通过undo管理，支持PCR的方式解决索引历史版本、数据混合存储，索引每行保存事务信息导致的索引存储空间膨胀的问题。
-
-- 企业级特性：压缩功能增强
-
-  - 压缩功能支持KAE硬件加速，2P TPCC场景下，性能影响小于5%，CPU压缩开销相较于没有KAE场景时降低50%。[支持OLTP场景数据压缩](../database_administration_guide/data_compression_in_oltp_scenarios.md)
-
-- 企业级特性：SQL防火墙
-
-  - 通过系统表和系统函数实现SQL防火墙规则的配置，在业务SQL执行时，通过检查是否匹配SQL防火墙规则，如果匹配则拦截报错，否则继续执行。限制指定SQL的执行并发数，保证业务的稳定性和健壮性。[SQL防火墙](../characteristic_description/sql_firewall_capability.md)
-
-- 企业级特性：内核全链路跟踪
-
-  - 追踪用户 SQL 请求在数据库全链路过程中，在不同阶段执行的相关信息，并以树状结构展现给用户，帮助开发者回溯执行时间超过阈值的SQL，诊断SQL性能瓶颈。[内核全链路跟踪](../characteristic_description/full_link_tracking.md)
-
-- 企业级特性：内核监控告警
-
-  - 通过采集数据库内核后台线程和服务器系统的运行状态，经过分析和计算评估数据库是否出现异常，并将异常信息写入到告警日志中。帮助及时发现潜在问题，快速定位根源，并高效解决问题。[内核监控告警](../characteristic_description/monitoring_alerts.md)
+  -  MCP是为LLM和Agent系统设计的标准化交互框架，使LLM可以与外部数据库、API和工具进行高效交互。MCP适配openGauss数据库让AI智能体能够通过标准化协议安全、高效地直接操作企业级国产数据库，将结构化数据无缝融入AI工作流，大幅降低AI应用与复杂数据系统集成的开发门槛。
 
 - DataKit：迁移工具增强
 
-  - PostgreSQL到openGauss的迁移能力集成至DataKit。
-  - 支持SQL Server到openGauss的全量数据迁移、常用对象迁移。（暂未集成至datakit，提供单独的二进制工具）
+  - [Elasticsearch和Milvus到openGauss的迁移](../characteristic_description/datakit_support_elasticsearch_milvus_migration.md)能力集成至DataKit。[#232](https://gitcode.com/opengauss/openGauss-migration-portal/pull/232) [#1376](https://gitcode.com/opengauss/openGauss-workbench/pull/1376) [#1378](https://gitcode.com/opengauss/openGauss-workbench/pull/1378) [#1378](https://gitcode.com/opengauss/openGauss-workbench/pull/1378) [#1379](https://gitcode.com/opengauss/openGauss-workbench/pull/1379) [@duanguoqiang4](https://gitcode.com/duanguoqiang4) [@l3007kkk](https://gitcode.com/l3007kkk)
 
-- DataKit：安装部署优化。[DataKit](../characteristic_description/tool_chain_datakit.md)
+### 版本兼容性说明
 
-  - 支持DataKit最小化打包，插件按需下载。
+- 新增GUC参数[enable_subscription](../database_reference/sending_server.md#enable_subscription)，控制是否支持创建发布订阅。默认值为off，即不支持创建发布订阅。对于升级场景，若升级前集群中有发布订阅，则OM升级时会自动将该参数设置为on，以确保升级后的集群仍支持发布订阅。[#8898](https://gitcode.com/opengauss/openGauss-server/pull/8898) [#1227](https://gitcode.com/opengauss/openGauss-OM/pull/1227) [@wangzhengyuan1](https://gitcode.com/wangzhengyuan1)
+- GUC参数[b_compatibility_user_host_auth](../database_reference/connection_settings.md#b_compatibility_user_host_auth)默认值由off调整为on。修改后的默认值兼容MySQL的行为，允许创建`user@host`、`'user'@'host'`之类的用户名并兼容mysql的`user@host`认证鉴权。对于升级场景，OM升级时将保持该参数默认值和升级前一致，确保升级前后表现兼容。[#8150](https://gitcode.com/opengauss/openGauss-server/pull/8150) [#1239](https://gitcode.com/opengauss/openGauss-OM/pull/1239) [@ywzq1161327784](https://gitcode.com/ywzq1161327784)
+- GUC参数[b_format_behavior_compat_options](../database_reference/platform_and_client_compatibility.md#b_format_behavior_compat_options)默认值由空调整为`enable_set_variables,set_session_transaction,enable_modify_column,default_collation,fetch,enable_multi_charset,diagnostics`。修改后的默认值兼容MySQL的行为，允许设置自定义变量，多字符集等。对于升级场景，OM升级时将保持该参数默认值和升级前一致，确保升级前后表现兼容。[#8150](https://gitcode.com/opengauss/openGauss-server/pull/8150) [#1239](https://gitcode.com/opengauss/openGauss-OM/pull/1239) [@ywzq1161327784](https://gitcode.com/ywzq1161327784)
+- GUC参数[enable_set_variable_b_format](../database_reference/platform_and_client_compatibility.md#enable_set_variable_b_format)默认值由off调整为on。修改后的默认值兼容MySQL的行为，允许自定义用户变量。对于升级场景，OM升级时将保持该参数默认值和升级前一致，确保升级前后表现兼容。[#8150](https://gitcode.com/opengauss/openGauss-server/pull/8150) [#1239](https://gitcode.com/opengauss/openGauss-OM/pull/1239) [@ywzq1161327784](https://gitcode.com/ywzq1161327784)
+- GUC参数[dolphin.sql_mode](../extension_reference/dolphin_guc_parameters.md#dolphinsql_mode)默认值由`sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date,pad_char_to_full_length,auto_recompile_function,error_for_division_by_zero`调整为`sql_mode_full_group,sql_mode_strict,no_zero_date,error_for_division_by_zero,block_return_multi_results,escape_quotes,disable_escape_bytea`。修改后的默认值兼容MySQL的行为。对于升级场景，OM升级时将保持该参数默认值和升级前一致，确保升级前后表现兼容。[#2217](https://gitcode.com/opengauss/Plugin/pull/2217) [#1239](https://gitcode.com/opengauss/openGauss-OM/pull/1239) [@ywzq1161327784](https://gitcode.com/ywzq1161327784)
+- GUC参数[dolphin.lower_case_table_names](../extension_reference/dolphin_guc_parameters.md#dolphinlower_case_table_names)默认值由1修改为0。修改后的默认值兼容MySQL的行为，默认区分大小写。对于升级场景，OM升级时将保持该参数默认值和升级前一致，确保升级前后表现兼容。[#2217](https://gitcode.com/opengauss/Plugin/pull/2217) [#1239](https://gitcode.com/opengauss/openGauss-OM/pull/1239) [@ywzq1161327784](https://gitcode.com/ywzq1161327784)
+- GUC参数[dolphin.use_const_value_as_colname](../extension_reference/dolphin_guc_parameters.md#dolphinuse_const_value_as_colname)默认值由false修改为true。修改后的默认值兼容MySQL的行为，默认在SELECT查询时，对于常量，直接使用常量的值作为列名。对于升级场景，OM升级时将保持该参数默认值和升级前一致，确保升级前后表现兼容。[#2217](https://gitcode.com/opengauss/Plugin/pull/2217) [#1239](https://gitcode.com/opengauss/openGauss-OM/pull/1239) [@ywzq1161327784](https://gitcode.com/ywzq1161327784)
+- GUC参数[dolphin.transform_unknown_param_type_as_column_type_first](../extension_reference/dolphin_guc_parameters.md#dolphintransform_unknown_param_type_as_column_type_first)默认值由false修改为true。修改后的默认值兼容MySQL的行为，对于preapre语句中unknown类型的参数优先按照其比较的列类型来解释，从而避免因为隐式类型转换导致的索引失效的问题。对于升级场景，OM升级时将保持该参数默认值和升级前一致，确保升级前后表现兼容。[#2217](https://gitcode.com/opengauss/Plugin/pull/2217) [#1239](https://gitcode.com/opengauss/openGauss-OM/pull/1239) [@ywzq1161327784](https://gitcode.com/ywzq1161327784)
 
 ## 版本使用注意事项<a name="ZH-CN_TOPIC_0289899192"></a>
 
@@ -262,49 +235,59 @@ ORC文件访问、Kerberos安全校验、JAVA UDF、Codegen、MOT内存表特性
 
 ## 已修复问题
 
-opengauss 7.0.0-RC2已修复问题.md
 完整问题清单请参见[完整问题清单](https://gitcode.com/opengauss/openGauss-server/issues)。
 
-完整的内核提交记录请参见[提交记录](https://gitcode.com/opengauss/openGauss-server/commits/v7.0.0-RC2)。
+完整的内核提交记录请参见[提交记录](https://gitcode.com/opengauss/openGauss-server/commits/7.0.0-RC3)。
 
 已修复问题请参见下表。
 
 | ISSUE                                                        | 关联仓库                                | 问题描述                                                     |
 | ------------------------------------------------------------ | --------------------------------------- | ------------------------------------------------------------ |
-| [7541](https://gitcode.com/opengauss/openGauss-server/issues/7541) | openGauss-server | [Bug]: 【升级】从6.0.0版本不带CM升级到带CM的7.0.0RC2B024版本，回滚后报错 |
-| [7539](https://gitcode.com/opengauss/openGauss-server/issues/7539) | openGauss-server | [Bug]: 【资源池化】主备均跑业务的情况下，手动kill掉主节点的db进程6次，集群未成功failover，主节点core |
-| [7537](https://gitcode.com/opengauss/openGauss-server/issues/7537) | openGauss-server | 从5.0.0版本升级到7.0.0RC2B024版本，升级报错 |
-| [7535](https://gitcode.com/opengauss/openGauss-server/issues/7535) | openGauss-server | [Bug]: astore表+hash索引，执行计划走bitmapscan时，pg_stat_all_tables视图更新字段为last_seq_scan，预期是更新last_idx_scan |
-| [7507](https://gitcode.com/opengauss/openGauss-server/issues/7507) | openGauss-server | [Bug]: most_available_sync设置成on未生效 |
-| [7500](https://gitcode.com/opengauss/openGauss-server/issues/7500) | openGauss-server | [Bug]: 没有表的select权限时可以通过内联视图更新和删除数据 |
-| [7463](https://gitcode.com/opengauss/openGauss-server/issues/7463) | openGauss-server | [Bug]: gsql连接时，connection_timeout参数不起作用 |
-| [7429](https://gitcode.com/opengauss/openGauss-server/issues/7429) | openGauss-server | [Bug]: 使用nodejs、c++进行多向量召回，传入完整的sql语句进行查询，数据库会core。 |
-| [7427](https://gitcode.com/opengauss/openGauss-server/issues/7427) | openGauss-server | [Bug]: 【测试类型：功能测试】【测试版本：7.0.0-RC2】【资源池化】自动化，B020版本执行用例时产生较多mes相关的core，疑似CBB代码变动引起 |
-| [7407](https://gitcode.com/opengauss/openGauss-server/issues/7407) | openGauss-server | 【测试类型：SQL功能】【测试版本：7.0.0-RC2】主备场景下，主机更新数据可以走diskann索引查询，备机索引查询时发生core |
-| [7402](https://gitcode.com/opengauss/openGauss-server/issues/7402) | openGauss-server | [移动在线] gs_probackup oss对象存储恢复速率过慢，影响客户容灾场景快速恢复 |
-| [7397](https://gitcode.com/opengauss/openGauss-server/issues/7397) | openGauss-server | [Bug]: union all语句使用smp导致coredump |
-| [7394](https://gitcode.com/opengauss/openGauss-server/issues/7394) | openGauss-server | 【测试类型：SQL功能】【测试版本：7.0.0-RC2】只加载diskann的PQ库时，创建hnswpq索引数据库core掉 |
-| [7393](https://gitcode.com/opengauss/openGauss-server/issues/7393) | openGauss-server | [Bug]: 安装报错 |
-| [7387](https://gitcode.com/opengauss/openGauss-server/issues/7387) | openGauss-server | 【测试类型：SQL功能】【测试版本：7.0.0-RC2】使用diskann索引进行向量搜索时，返回的数据条数与预期不一致 |
-| [7386](https://gitcode.com/opengauss/openGauss-server/issues/7386) | openGauss-server | 【测试类型：SQL功能】【测试版本：7.0.0-RC2】使用diskann创建分区表LOCAL分区索引和非日志表索引时数据库宕机 |
-| [7345](https://gitcode.com/opengauss/openGauss-server/issues/7345) | openGauss-server | [Bug]: 【高概率偶现】受修复GiST索引扫描问题单影响，导致BM25索引查询出现coredum |
-| [7343](https://gitcode.com/opengauss/openGauss-server/issues/7343) | openGauss-server | [Bug]: 传统6.0.2B003升级到7.0.0RC2B016报错，升级失败 |
-| [7341](https://gitcode.com/opengauss/openGauss-server/issues/7341) | openGauss-server | [Bug]: 修改参数enable_stmt_track=on和track_stmt_stat_level='L1,L0'之后性能大幅下降，默认值基线134.05w，非分区表性能88.9w，性能相比下降33.7%。分区表性能10.76w，性能相比下降92%。 |
-| [7309](https://gitcode.com/opengauss/openGauss-server/issues/7309) | openGauss-server | [Bug]: libpgtypes.so 为空 |
-| [7298](https://gitcode.com/opengauss/openGauss-server/issues/7298) | openGauss-server | [Bug]: 【测试类型：SQL功能】【测试版本：7.0.0】【需求：内存池共享内存，RTO<6s】无rackmanager的环境，设置max_smb_memory参数，数据库启动失败产生core |
-| [7286](https://gitcode.com/opengauss/openGauss-server/issues/7286) | openGauss-server | [Bug]: 【测试类型：SQL功能】【测试版本：7.0.0】ident_current函数的返回结果插入表的某列，违反约束时，插入后数据库挂掉无core |
-| [7278](https://gitcode.com/opengauss/openGauss-server/issues/7278) | openGauss-server | [Bug]: 【测试类型：SQL功能】【测试版本：7.0.0-RC2】向量索引查询计划无法走bypass |
-| [7275](https://gitcode.com/opengauss/openGauss-server/issues/7275) | openGauss-server | [Bug]: 3.0,5.0版本二级分区表，分区子表统计信息不能自动收集 |
-| [7273](https://gitcode.com/opengauss/openGauss-server/issues/7273) | openGauss-server | [Bug]: 【测试类型：稳定性测试】【测试版本：7.0.0-RC2】【资源池化】稳定性测试，业务连跑7H左右节点异常，产生dms_invalidate_ownership相关core |
-| [7270](https://gitcode.com/opengauss/openGauss-server/issues/7270) | openGauss-server | [Bug]:【ci】 数据库扩容失败 |
-| [1555](https://gitcode.com/opengauss/Plugin/issues/1555) | Plugin | [Bug]: 24.03编译dolphin失败，dolphin--4.2--4.1.sql not found |
-| [1544](https://gitcode.com/opengauss/Plugin/issues/1544) | Plugin | spq_plugin插件存在致命类告警问题 |
-| [1116](https://gitcode.com/opengauss/openGauss-workbench/issues/1116) | openGauss-workbench | [Bug]: datakit安装数据库时，前端传递加密后的密码，后端未解密导致安装失败 |
-| [1079](https://gitcode.com/opengauss/openGauss-workbench/issues/1079) | openGauss-workbench | [Bug]: datakit使用intarkdb作为基座数据库时，部分系统表的建表语句不支持导致缺少相关表 |
-| [1066](https://gitcode.com/opengauss/openGauss-workbench/issues/1066) | openGauss-workbench | [Bug]: datakit使用intarkdb作为基座数据库,服务器管理异常报错，获取cpu_freq字段数据失败 |
-| [1049](https://gitcode.com/opengauss/openGauss-workbench/issues/1049) | openGauss-workbench | [Bug]: datakit安装数据库时，环境检查无法获取CPU信息，导致校验不通过，无法安装数据库 |
-| [1024](https://gitcode.com/opengauss/openGauss-workbench/issues/1024) | openGauss-workbench | [Bug]: datakit创建迁移任务时，配置自定义参数的高级参数设置页面异常 |
-| [1017](https://gitcode.com/opengauss/openGauss-workbench/issues/1017) | openGauss-workbench | [Bug]: datakit安装portal时，物理机搜索功能异常 |
+| [8059](https://gitcode.com/opengauss/openGauss-server/issues/8059) | openGauss-server | [Bug]: 【升级】使用7.0.0RC3B023的openeuler2403的包，设置打开升级模式，在数据库内alter extension dolphin update to "4.3"及以下版本报错 |
+| [8046](https://gitcode.com/opengauss/openGauss-server/issues/8046) | openGauss-server | [Bug]: 【升级】从5.0.0->5.0.2->5.0.5->7.0.0RC3的连升场景，在5.0.5升级到7.0.0RC3报错 |
+| [8036](https://gitcode.com/opengauss/openGauss-server/issues/8036) | openGauss-server | [Bug]: 设置archive_command参数后，在主上执行gs_om -t restart，两个备起来不，进入备节点gs_ctl可以拉起来 |
+| [8031](https://gitcode.com/opengauss/openGauss-server/issues/8031) | openGauss-server | [Bug]: 【测试类型：功能测试】【测试版本：7.0.0-RC3】【资源池化】自动化，执行CI过程中发现pwrite相关core |
+| [8019](https://gitcode.com/opengauss/openGauss-server/issues/8019) | openGauss-server | [Bug]: 【A兼容性】【CI】在7.0.0RC3B020版本A兼容库里执行json_textcontains相关用例，导致数据库挂掉 |
+| [8018](https://gitcode.com/opengauss/openGauss-server/issues/8018) | openGauss-server | [Bug]: 【长稳】7.0.0RC3B020版本B库执行分区表插入语句，发生内存泄漏 |
+| [8014](https://gitcode.com/opengauss/openGauss-server/issues/8014) | openGauss-server | [Bug]: 删除gms_xmlparser插件失败 |
+| [8013](https://gitcode.com/opengauss/openGauss-server/issues/8013) | openGauss-server | [Bug]: gs_om -t start操作环境未成功拉起，产生coredump |
+| [8007](https://gitcode.com/opengauss/openGauss-server/issues/8007) | openGauss-server | [Bug]: 列存模式下向量化查询导致OOM |
+| [7994](https://gitcode.com/opengauss/openGauss-server/issues/7994) | openGauss-server | [Bug]: 【升级】【传统】从6.0.3带D库升级到7.0.0RC3，升级过程报错 |
+| [7992](https://gitcode.com/opengauss/openGauss-server/issues/7992) | openGauss-server | [Bug]: b_format_behavior_compat_options设置为"",表插入出现core |
+| [7983](https://gitcode.com/opengauss/openGauss-server/issues/7983) | openGauss-server | [Bug]: 6.0.0升级至7.0.0-RC3 B018版本元数据校验失败 |
+| [7979](https://gitcode.com/opengauss/openGauss-server/issues/7979) | openGauss-server | [Bug]: 运行tpcc期间多次执行数据库重启，第8次stop失败，start也不能拉起 |
+| [7973](https://gitcode.com/opengauss/openGauss-server/issues/7973) | openGauss-server | [Bug]: 【长稳】【传统】安装集群后设置极致RTO参数，重启集群状态异常 |
+| [7971](https://gitcode.com/opengauss/openGauss-server/issues/7971) | openGauss-server | [Bug]: 【升级】【传统】从5.0.0升级到7.0.0RC3最新版本，升级报错 |
+| [7958](https://gitcode.com/opengauss/openGauss-server/issues/7958) | openGauss-server | [Bug]: opengauss7.0RC2版本行列融合HTAP表tpch压测多并行下库宕机【M】 |
+| [7941](https://gitcode.com/opengauss/openGauss-server/issues/7941) | openGauss-server | [Bug]: 开线程池enable_thread_pool=on，创建B库指定tablespace数据库coredump【NJYJ】 |
+| [7920](https://gitcode.com/opengauss/openGauss-server/issues/7920) | openGauss-server | [Bug]: 【测试类型：功能测试】【测试版本：7.0.0-RC3】diskann PQ 包和opengauss转测包配合，重启集群gaussdb发生core |
+| [7915](https://gitcode.com/opengauss/openGauss-server/issues/7915) | openGauss-server | [Bug]: root用户在本地模式下执行gs_check命令，提示name 'CmdUtil' is not defined |
+| [7912](https://gitcode.com/opengauss/openGauss-server/issues/7912) | openGauss-server | [Bug]: [neon branching]Yat用例连跑SUBXACT_ROLLBACK用例，计算节点crash，并且计算节点重启失败 |
+| [7908](https://gitcode.com/opengauss/openGauss-server/issues/7908) | openGauss-server | [Bug]: online ddl修改压缩属性数据库无法连接 |
+| [7902](https://gitcode.com/opengauss/openGauss-server/issues/7902) | openGauss-server | [Bug]: 【升级】从5.0.0升级到7.0.0RC3B015报错，升级失败 |
+| [7900](https://gitcode.com/opengauss/openGauss-server/issues/7900) | openGauss-server | [Bug]: ADIO开启时删除数据后Vacuum Full之后\d+ table_name数据库core |
+| [7883](https://gitcode.com/opengauss/openGauss-server/issues/7883) | openGauss-server | [Bug]: 【资源池化】长稳3*24小时数据库宕机 |
+| [7872](https://gitcode.com/opengauss/openGauss-server/issues/7872) | openGauss-server | [Bug]: 【测试类型：性能测试】【测试版本：7.0.0-RC3】【资源池化】RTO性能不满足出口指标 |
+| [7871](https://gitcode.com/opengauss/openGauss-server/issues/7871) | openGauss-server | [Bug]: [neon branching特性]gms_utility.analyze_schema功能，ESTIMATE_ROWS值过大，计算节点crash |
+| [7870](https://gitcode.com/opengauss/openGauss-server/issues/7870) | openGauss-server | [Bug]: [neon branching特性]回收站功能启用之后，执行sql ，计算节点crash. |
+| [7866](https://gitcode.com/opengauss/openGauss-server/issues/7866) | openGauss-server | [Bug]: [neon branching特性] 创建增量物化视图、普通物化视图，计算节点crash |
+| [7845](https://gitcode.com/opengauss/openGauss-server/issues/7845) | openGauss-server | [Bug]: neon branching创建段页式表时，计算节点crash |
+| [7837](https://gitcode.com/opengauss/openGauss-server/issues/7837) | openGauss-server | [Bug]: 【升级】从7.0.0RC2升级到7.0.0RC3最新转测版本，升级失败 |
+| [7823](https://gitcode.com/opengauss/openGauss-server/issues/7823) | openGauss-server | [Bug]: 【升级】从低版本3.0.5升级到当前7.0.0RC3B013版本，升级报错 |
+| [7818](https://gitcode.com/opengauss/openGauss-server/issues/7818) | openGauss-server | [Bug]: openGauss 数据库运行一段时间后，占用服务器内存会随运行时间持续增长 |
+| [7795](https://gitcode.com/opengauss/openGauss-server/issues/7795) | openGauss-server | [Bug]: 连接失败报数据库不存在，但是实际数据库存在 |
+| [7794](https://gitcode.com/opengauss/openGauss-server/issues/7794) | openGauss-server | [Bug]: ADIO开启时删除数据后Vacuum Full导致数据库CORE |
+| [7786](https://gitcode.com/opengauss/openGauss-server/issues/7786) | openGauss-server | [Bug]: 版本安装包不符合安全编译选项发布标准 |
+| [7731](https://gitcode.com/opengauss/openGauss-server/issues/7731) | openGauss-server | [Bug]: [资源池化]稳定性测试，执行6*24小时+，主节点dssserver断连，无core生成 |
+| [7638](https://gitcode.com/opengauss/openGauss-server/issues/7638) | openGauss-server | [Bug]: 数据库core文件报错：Cannot access memory at address 【M】 |
+| [7577](https://gitcode.com/opengauss/openGauss-server/issues/7577) | openGauss-server | [Bug]: 【测试类型：功能测试】【资源池化】自动化，执行CI过程中踢掉备机，重新加入备机后，集群卡住 |
+| [1232](https://gitcode.com/opengauss/openGauss-workbench/issues/1232) | openGauss-workbench | [Bug]: datakit迁移时不选择表，任务无法启动 |
+| [1226](https://gitcode.com/opengauss/openGauss-workbench/issues/1226) | openGauss-workbench | [Bug]: DataKit MySQL全流程迁移中，指定表迁移功能无效 |
+| [1165](https://gitcode.com/opengauss/openGauss-workbench/issues/1165) | openGauss-workbench | [Bug]: pg迁移分区表时报错 |
+
+## 性能测试报告
+
+见[openGauss 7.0.0-RC3 版本集成测试报告](https://gitcode.com/opengauss/QA/blob/master/Test_Result/openGauss_7.0.0_RC2/%E7%89%88%E6%9C%AC%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/openGauss%207.0.0RC2%E7%89%88%E6%9C%AC%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A.md#423-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95)
 
 ## 源代码<a name="ZH-CN_TOPIC_0289899190"></a>
 
@@ -352,4 +335,4 @@ openGauss将拥有共同兴趣的人们聚在一起，组成了不同的特别�
 
 ## 致谢<a name="ZH-CN_TOPIC_0289899198"></a>
 
-我们衷心地感谢参与和协助 openGauss 7.0.0-RC2版本发布的项目的所有开发者和伙伴，包括华为、北京海量数据技术股份有限公司、中移信息技术有限公司、粤港澳大湾区（广东）国创中心、软通动力信息技术（集团）股份有限公司、天津南大通用数据技术股份有限公司、云和恩墨（北京）信息技术有限公司、天津神舟通用数据技术有限公司、万宝盛华大中华有限公司、中科院软件所、邮储银行、天津凡泰、易宝软件有限公司、民生银行、国能信息、海康威视、浙江大华、兴业银行、中软国际等组织单位。是你们的辛勤付出使得版本顺利发布，也为openGauss更好地发展提供可能。
+我们衷心地感谢参与和协助 openGauss 7.0.0-RC3版本发布的项目的所有开发者和伙伴，包括华为、北京海量数据技术股份有限公司、中移信息技术有限公司、粤港澳大湾区（广东）国创中心、软通动力信息技术（集团）股份有限公司、天津南大通用数据技术股份有限公司、云和恩墨（北京）信息技术有限公司、天津神舟通用数据技术有限公司、万宝盛华大中华有限公司、中科院软件所、邮储银行、天津凡泰、易宝软件有限公司、民生银行、国能信息、海康威视、浙江大华、兴业银行、中软国际等组织单位。是你们的辛勤付出使得版本顺利发布，也为openGauss更好地发展提供可能。
