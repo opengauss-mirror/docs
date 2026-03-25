@@ -301,6 +301,8 @@ sections:
     href: ./gms_output.md
   - label: gms_xmlgen Extension
     href: ./gms_xmlgen.md
+  - label: gms_xmlparser Extension
+    href: ./gms_xmlparser.md
   - label: gms_profiler Extension
     href: ./gms_profiler.md
   - label: gms_i18n Extension
