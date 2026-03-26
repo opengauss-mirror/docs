@@ -4,19 +4,6 @@ openGauss 完成 MySQL 协议兼容配置后，即可支持通过 MySQL JDBC 连
 
 ## 准备工作
 
-### 配置客户端接入认证
-
-openGauss 需配置客户端接入认证后，才允许通过远程连接数据库，否则连接会报错。配置方式如下：
-
-```bash
-gs_guc set -N all -I all -h "host all proto_test 0.0.0.0/0 sha256"
-# 其中 proto_test 为数据库用户名，此处远程连接禁止使用“omm”用户（即数据库初始化用户）
-
-gs_om -t restart
-```
-
-更多详细内容请参考，[配置客户端接入认证](https://docs.opengauss.org/zh/docs/latest/database_administration_guide/configuring_client_access_authentication.html)。
-
 ### 准备业务表结构
 
 1. 通过 openGauss 命令行工具 gsql 连接 openGauss 数据库
@@ -54,21 +41,77 @@ gs_om -t restart
        ('王五',  20);
    ```
 
-5. 赋予 MySQL 连接用户一些基础操作权限
-
-   ```sql
-   GRANT ALL ON SCHEMA mysql_test_db to proto_test;
-   GRANT ALL ON ALL TABLES IN SCHEMA mysql_test_db to proto_test;
-   GRANT ALL ON ALL SEQUENCES IN SCHEMA mysql_test_db to proto_test;
-   ```
-
-   **注意**：如果有新创建的表，需要对新创建的表重新赋权。
-
-6. 退出 gsql 连接
+5. 退出 gsql 连接
 
    ```sql
    \q
    ```
+
+### 准备连接用户
+
+1. 通过 gsql 命令，重新连接 openGauss 数据库
+
+   ```bash
+   gsql -d postgres -p 5432 -r
+   ```
+
+2. 创建与业务表所在 schema 同名的用户
+
+   ```sql
+   CREATE USER mysql_test_db WITH PASSWORD '******';
+   ```
+
+   > [!TIP]须知
+   > 不要在 schema 所在 B 库下创建同名用户，会创建失败。
+
+3. 切换至 MySQL 协议兼容配置的 B 库下
+
+   ```sql
+   \c proto_test_db
+   ```
+
+4. 新用户设置 MySQL native 密码
+
+   ```sql
+   SELECT set_native_password('mysql_test_db', '******', '');
+   ```
+
+5. 修改业务表所在 schema 的所属用户
+
+   ```sql
+   alter schema mysql_test_db owner to mysql_test_db;
+   ```
+
+6. 赋予用户所有历史表的操作权限
+
+   ```sql
+   GRANT ALL ON ALL TABLES IN SCHEMA mysql_test_db to mysql_test_db;
+   GRANT ALL ON ALL SEQUENCES IN SCHEMA mysql_test_db to mysql_test_db;
+   ```
+
+   > [!TIP]须知
+   > 如果有新创建的表，不需要对新表重新赋权，因为 schema 所属用户已修改，新创建的表所属用户与 schema 所属用户一致。
+
+7. 退出 gsql 连接
+
+   ```sql
+   \q
+   ```
+
+### 配置客户端接入认证
+
+openGauss 需配置客户端接入认证后，才允许通过指定用户远程连接数据库，否则连接会报错。配置方式如下：
+
+```bash
+gs_guc set -N all -I all -h "host all mysql_test_db 0.0.0.0/0 sha256"
+# 其中 mysql_test_db 为数据库用户名，此处远程连接禁止使用“omm”用户（即数据库初始化用户）
+
+gs_om -t restart
+```
+
+更多详细内容请参考，[配置客户端接入认证](https://docs.opengauss.org/zh/docs/latest/database_administration_guide/configuring_client_access_authentication.html)。
+
+## JDBC 操作示例
 
 ### 创建 Maven 项目
 
@@ -87,8 +130,6 @@ gs_om -t restart
 </dependency>
 ```
 
-## JDBC 操作示例
-
 ### 操作示例代码
 
 ```java
@@ -104,7 +145,7 @@ public class MysqlJdbcConnectDemo {
         String ip = "127.0.0.1";
         int port = 3308;
         String database = "mysql_test_db";
-        String user = "proto_test";
+        String user = "mysql_test_db";
         String password = "******";
 
         try (Connection connection = getConnection(ip, port, database, user, password)) {
@@ -271,6 +312,5 @@ id: 3, name: 王五, age: 20
 
 ## 注意事项
 
-1. 使用 MySQL JDBC 连接自定义的 schema 时，暂不支持 DDL 语句；如果连接的是与连接用户同名的 schema 时，则 DDL、DML 可完全支持。
-2. 对于连接用户的权限管理，可参考 [GRANT](https://docs.opengauss.org/zh/docs/latest/sql_reference/grant.html) 使用教程。初次调试时建议赋予连接用户 SYSADMIN 权限，避免因权限问题频繁报错。
-3. 对于JDBC连接串中连接参数的支持情况，请参考 [JDBC常用连接参数的兼容表现](https://docs.opengauss.org/zh/docs/latest-lite/extension_reference/dolphin_mysql_protocol_compatibility.html#jdbc%E5%B8%B8%E7%94%A8%E8%BF%9E%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E5%85%BC%E5%AE%B9%E8%A1%A8%E7%8E%B0)。
+1. 对于连接用户的权限管理，可参考 [GRANT](https://docs.opengauss.org/zh/docs/latest/sql_reference/grant.html) 使用教程。初次调试时建议赋予连接用户 SYSADMIN 权限，避免因权限问题频繁报错。
+2. 对于JDBC连接串中连接参数的支持情况，请参考 [JDBC常用连接参数的兼容表现](https://docs.opengauss.org/zh/docs/latest-lite/extension_reference/dolphin_mysql_protocol_compatibility.html#jdbc%E5%B8%B8%E7%94%A8%E8%BF%9E%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E5%85%BC%E5%AE%B9%E8%A1%A8%E7%8E%B0)。

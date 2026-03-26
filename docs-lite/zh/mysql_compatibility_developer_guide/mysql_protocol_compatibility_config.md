@@ -4,7 +4,7 @@
 
 openGauss 通过抽象协议层，在 dolphin 插件中实现了 MySQL 协议兼容，用户在设置相关参数后，可以通过 MySQL 的 JDBC 驱动直接连接 openGauss B 兼容模式的数据库。
 
-更多详情信息，请参考：[MySQL 协议兼容](https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-MySQL%E5%8D%8F%E8%AE%AE%E5%85%BC%E5%AE%B9.html)
+更多详情信息，请参考：[MySQL 协议兼容](https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin_mysql_protocol_compatibility.html)
 
 ## MySQL 协议兼容配置
 
@@ -74,7 +74,7 @@ openGauss 兼容 MySQL 协议，支持配置 mysql_native_password 和 caching_s
    \c proto_test_db
    ```
 
-10. 设置默认连接的数据库实例名为新创建的 B 库名，[dolphin.default_database_name](https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-GUC参数说明.html#dolphindefault_database_name)。
+10. 设置默认连接的数据库实例名为新创建的 B 库名，[dolphin.default_database_name](https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin_guc_parameters.html#dolphindefault_database_name)。
 
     ```sql
     ALTER SYSTEM SET dolphin.default_database_name TO proto_test_db;
@@ -86,8 +86,8 @@ openGauss 兼容 MySQL 协议，支持配置 mysql_native_password 和 caching_s
 
 ### dolphin.sql_mode
 
-openGauss GUC 参数 [dolphin.sql_mode](https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-GUC%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E.html#dolphinsql_mode)，对于 MySQL sql_mode 中的参数选项，openGauss dolphin.sql_mode 有等价功能的参数进行平替。
+openGauss GUC 参数 [dolphin.sql_mode](https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin_guc_parameters.html#dolphinsql_mode)，对于 MySQL sql_mode 中的参数选项，openGauss dolphin.sql_mode 有等价功能的参数进行平替。
 
 ### dolphin.lower_case_table_names
 
-openGauss GUC 参数 [dolphin.lower_case_table_names](https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-GUC%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E.html#dolphinlower_case_table_names)，用于控制用户名、表名、视图名、模式名的大小写敏感。
+openGauss GUC 参数 [dolphin.lower_case_table_names](https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin_guc_parameters.html#dolphinlower_case_table_names)，用于控制用户名、表名、视图名、模式名的大小写敏感。
