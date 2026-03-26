@@ -9,3 +9,5 @@ sections:
     href: ./mybatis_development.md
   - label: 基于Mybatis-plus开发
     href: ./mybatis_plus_development.md
+  - label: 基于Hibernate开发
+    href: ./hibernate_development.md
