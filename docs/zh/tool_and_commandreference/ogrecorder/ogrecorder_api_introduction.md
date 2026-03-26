@@ -28,7 +28,7 @@ int gr_init(const gr_param_t param);
 
 **参数**  
 
-- `param`：`wr_param_t` 类型，初始化参数配置（结构体定义）。
+- `param`：`gr_param_t` 类型，初始化参数配置（结构体定义）。
 
 **返回值**  
 成功返回 `0`，失败返回错误码。错误码可通过 `gr_get_error` 获取详细信息。
@@ -56,7 +56,7 @@ int gr_exit(void);
 ### gr_create_inst
 
 **接口描述**  
-获取 WalRecorder 实例句柄。
+获取 oGRecorder 实例句柄。
 
 **函数原型**  
 
@@ -155,7 +155,7 @@ int gr_get_error(int *errcode, const char **errmsg);
 
 **参数**  
 
-- `errorCode`：输入的错误码。
+- `errorcode`：输入的错误码。
 - `errmsg`：输出参数，返回错误描述信息的缓冲区（需预先分配内存）。
 
 **返回值**  
