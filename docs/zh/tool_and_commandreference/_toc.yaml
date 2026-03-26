@@ -21,6 +21,8 @@ sections:
         href: ./gs_checkse.md
       - label: gs_checkperf
         href: ./gs_checkperf.md
+      - label: gs_checkps
+        href: ./gs_checkps.md
       - label: gs_collector
         href: ./gs_collector.md
       - label: gs_dump
