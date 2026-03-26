@@ -372,7 +372,9 @@ sections:
           - label: USE DB_NAME
             href: ./shark-USE-DB_NAME.md  
           - label: DROP TRIGGER
-            href: ./shark-DROP-TRIGGER.md                          
+            href: ./shark-DROP-TRIGGER.md 
+          - label: XACT_ABORT
+            href: ./shark_xact_abort.md                    
       - label: 事务
         sections:
           - label: 管理事务
@@ -477,4 +479,3 @@ sections:
         href: ./spqplugin_v2.md
       - label: spqplugin_v2使用说明
         href: ./spqplugin_v2_usage.md
-      

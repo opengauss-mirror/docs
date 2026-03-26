@@ -390,7 +390,9 @@ sections:
           - label: USE DB_NAME
             href: ./shark-USE-DB_NAME.md  
           - label: DROP TRIGGER
-            href: ./shark-DROP-TRIGGER.md                                                                                                                                                                          
+            href: ./shark-DROP-TRIGGER.md         
+          - label: XACT_ABORT
+            href: ./shark_xact_abort.md                                                                                                                                                           
       - label: 事务
         sections: 
           - label: 管理事务
