@@ -4,19 +4,6 @@ openGauss 完成 MySQL 协议兼容配置后，即可使用 Mybatis 框架配合
 
 ## 准备工作
 
-### 配置客户端接入认证
-
-openGauss 需配置客户端接入认证后，才允许通过远程连接数据库，否则连接会报错。配置方式如下：
-
-```bash
-gs_guc set -N all -I all -h "host all proto_test 0.0.0.0/0 sha256"
-# 其中 proto_test 为数据库用户名，此处远程连接禁止使用“omm”用户（即数据库初始化用户）
-
-gs_om -t restart
-```
-
-更多详细内容请参考，[配置客户端接入认证](https://docs.opengauss.org/zh/docs/latest/database_administration_guide/configuring_client_access_authentication.html)。
-
 ### 准备业务表结构
 
 1. 通过 openGauss 命令行工具 gsql 连接 openGauss 数据库
@@ -54,21 +41,77 @@ gs_om -t restart
        ('王五',  20);
    ```
 
-5. 赋予 MySQL 连接用户所有业务表的权限
-
-   ```sql
-   GRANT ALL ON SCHEMA mysql_test_db to proto_test;
-   GRANT ALL ON ALL TABLES IN SCHEMA mysql_test_db to proto_test;
-   GRANT ALL ON ALL SEQUENCES IN SCHEMA mysql_test_db to proto_test;
-   ```
-
-   **注意**：如果有新创建的表，需要对新创建的表重新赋权。
-
-6. 退出 gsql 连接
+5. 退出 gsql 连接
 
    ```sql
    \q
    ```
+
+### 准备连接用户
+
+1. 通过 gsql 命令，重新连接 openGauss 数据库
+
+   ```bash
+   gsql -d postgres -p 5432 -r
+   ```
+
+2. 创建与业务表所在 schema 同名的用户
+
+   ```sql
+   CREATE USER mysql_test_db WITH PASSWORD '******';
+   ```
+
+   > [!TIP]须知
+   > 不要在 schema 所在 B 库下创建同名用户，会创建失败。
+
+3. 切换至 MySQL 协议兼容配置的 B 库下
+
+   ```sql
+   \c proto_test_db
+   ```
+
+4. 新用户设置 MySQL native 密码
+
+   ```sql
+   SELECT set_native_password('mysql_test_db', '******', '');
+   ```
+
+5. 修改业务表所在 schema 的所属用户
+
+   ```sql
+   alter schema mysql_test_db owner to mysql_test_db;
+   ```
+
+6. 赋予用户所有历史表的操作权限
+
+   ```sql
+   GRANT ALL ON ALL TABLES IN SCHEMA mysql_test_db to mysql_test_db;
+   GRANT ALL ON ALL SEQUENCES IN SCHEMA mysql_test_db to mysql_test_db;
+   ```
+
+   > [!TIP]须知
+   > 如果有新创建的表，不需要对新表重新赋权，因为 schema 所属用户已修改，新创建的表所属用户与 schema 所属用户一致。
+
+7. 退出 gsql 连接
+
+   ```sql
+   \q
+   ```
+
+### 配置客户端接入认证
+
+openGauss 需配置客户端接入认证后，才允许通过指定用户远程连接数据库，否则连接会报错。配置方式如下：
+
+```bash
+gs_guc set -N all -I all -h "host all mysql_test_db 0.0.0.0/0 sha256"
+# 其中 mysql_test_db 为数据库用户名，此处远程连接禁止使用“omm”用户（即数据库初始化用户）
+
+gs_om -t restart
+```
+
+更多详细内容请参考，[配置客户端接入认证](https://docs.opengauss.org/zh/docs/latest/database_administration_guide/configuring_client_access_authentication.html)。
+
+## Mybatis 项目搭建
 
 ### 创建 Maven 项目
 
@@ -98,8 +141,6 @@ gs_om -t restart
     <version>1.7.36</version>
 </dependency>
 ```
-
-## Mybatis 项目搭建
 
 ### 项目目录参考
 
@@ -147,7 +188,7 @@ mybatis-connect-opengauss-b
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
                 <property name="url" value="jdbc:mysql://127.0.0.1:3308/mysql_test_db?useSSL=false&amp;serverTimezone=UTC&amp;characterEncoding=utf-8"/>
-                <property name="username" value="proto_test"/>
+                <property name="username" value="mysql_test_db"/>
                 <property name="password" value="******"/>
             </dataSource>
         </environment>
