@@ -219,5 +219,11 @@
 <a name="ul44624653710"></a><a name="ul44624653710"></a><ul id="ul44624653710"><li><strong id="b1820188171216"><a name="b1820188171216"></a><a name="b1820188171216"></a>any</strong> (default value): All types of hosts can be connected.</li><li><strong id="b224481241212"><a name="b224481241212"></a><a name="b224481241212"></a>read-write</strong>: The connection is set up only when the connected host is readable and writable.</li><li><strong id="b16591525191210"><a name="b16591525191210"></a><a name="b16591525191210"></a>read-only</strong>: Only readable hosts can be connected.</li><li><strong id="b37211298129"><a name="b37211298129"></a><a name="b37211298129"></a>primary</strong>: Only the primary server in the primary/standby systems can be connected.</li><li><strong id="b4619553101212"><a name="b4619553101212"></a><a name="b4619553101212"></a>standby</strong>: Only the standby server in the primary/standby systems can be connected.</li><li><strong id="b9241650121311"><a name="b9241650121311"></a><a name="b9241650121311"></a>prefer-standby</strong>: The system first attempts to find a standby node for connection. If all hosts in the <strong id="b20266972143"><a name="b20266972143"></a><a name="b20266972143"></a>hosts</strong> list fail to be connected, try the <strong id="b1154081171417"><a name="b1154081171417"></a><a name="b1154081171417"></a>any</strong> mode.</li></ul>
 </td>
 </tr>
+<tr id="row23743329173315"><td class="cellrowborder" valign="top" width="17.53%" headers="mcps1.2.3.1.1 "><p>load_balance_hosts</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.47%" headers="mcps1.2.3.1.2 "><p>When a client configures multiple host addresses, load_balance_hosts is used to determine the order in which these hosts are attempted for connection, achieving client-side load balancing or failover. Once successfully connected to one host, subsequent queries will be sent through that connection and will not switch to other hosts. The rules for setting <strong>load_balance_hosts</strong> are as follows:</p>
+<ul><li><strong>disable</strong> (default value): Hosts are attempted in the configured order.</li><li><strong>random</strong>: Enables random load balancing, selecting a host randomly from the list of available hosts for connection.</li></ul>
+</td>
+</tr>
 </tbody>
 </table>
