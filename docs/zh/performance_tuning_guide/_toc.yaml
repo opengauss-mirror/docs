@@ -60,7 +60,7 @@ sections:
           - label: 配置算子内存借用
             href: ./配置算子内存借用.md
           - label: 配置DPA哈希聚合加速
-            href: ./配置DPA哈希聚合加速.md                       
+            href: ./dpa_hash_aggregation_acceleration.md                       
           - label: 资源池化调优
             sections:    
               - label: 资源池化性能优化
