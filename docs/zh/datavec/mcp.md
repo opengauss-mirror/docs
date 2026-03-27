@@ -29,7 +29,7 @@ MCP适配openGauss数据库让AI智能体能够通过标准化协议安全、高
 
 ### 获取openGauss_mcp_server源码
 
-访问链接 <https://github.com/vincentsunx/mcp-openGauss.git> 获取openGauss_mcp_server源码，当前版本为（0.1.0）。
+访问链接 <https://gitcode.com/opengauss/mcp-opengauss> 获取openGauss_mcp_server源码，当前版本为（0.1.0）。
 
 ### 配置参数
 - 打开Claude Desktop设置，编辑配置文件, 设置mcp server启动路径（/src/openGauss_mcp_server)。
@@ -56,7 +56,7 @@ MCP适配openGauss数据库让AI智能体能够通过标准化协议安全、高
             ],
             "env": {
                 "OPENGAUSS_HOST": "localhost",
-                "OPENGAUSS_PORT": "8888",
+                "OPENGAUSS_PORT": "your_port",
                 "OPENGAUSS_USER": "your_username",
                 "OPENGAUSS_PASSWORD": "your_password",
                 "OPENGAUSS_DBNAME": "your_database",
