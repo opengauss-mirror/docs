@@ -147,6 +147,8 @@ sections:
         href: ./foreign_key_lock_enhancement.md
       - label: openEuler系统一键安装openGauss
         href: ./opengauss_installation_in_openeuler_in_one_click_mode.md
+      - label: 段页式空间回收
+        href: ./segment_space_shrink.md
       - label: 高级包
         sections:
           - label: gms_output高级包

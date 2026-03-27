@@ -163,6 +163,8 @@ sections:
         href: ./event_trigger.md
       - label: 支持UWAL特性
         href: ./uwal.md
+      - label: 段页式空间回收
+        href: ./segment_space_shrink.md
       - label: 高级包
         sections:
           - label: gms_output高级包

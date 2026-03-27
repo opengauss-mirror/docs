@@ -391,6 +391,9 @@
         <td><a href="./uwal.md">支持UWAL特性</a></td>
     </tr>
     <tr>
+        <td><a href="./segment_space_shrink.md">段页式空间回收</a></td>
+    </tr>
+    <tr>
         <td><a href="./huge_page_memory.md">高级包</a></td>
     </tr>
 </table>

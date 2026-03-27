@@ -260,6 +260,9 @@
         <td><a href="./support_specila_floating_point_number.md">支持特殊浮点数</a></td>
     </tr>
     <tr>
+        <td><a href="./segment_space_shrink.md">段页式空间回收</a></td>
+    </tr>
+    <tr>
         <td><a href="./gms_output_tool_package.md">高级包</a></td>
     </tr>
 </table>
