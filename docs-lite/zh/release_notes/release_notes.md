@@ -125,12 +125,19 @@ ORC文件访问、Kerberos安全校验、JAVA UDF、Codegen、MOT内存表特性
 
   - MCP是为LLM和Agent系统设计的标准化交互框架，使LLM可以与外部数据库、API和工具进行高效交互。MCP适配openGauss数据库让AI智能体能够通过标准化协议安全、高效地直接操作企业级国产数据库，将结构化数据无缝融入AI工作流，大幅降低AI应用与复杂数据系统集成的开发门槛。
 
+- 企业级能力
+
+  - 支持[XMLTABLE](../sql_reference/xmltable.md)。用于将 XML 文档按指定行路径展开为关系表结果，并通过 `COLUMNS` 子句将节点、属性或表达式映射为输出列。该语法在 `FROM` 子句中作为表函数使用。[#8857](https://gitcode.com/opengauss/openGauss-server/pull/8857) [@lianshanzhou](https://gitcode.com/lianshanzhou)
+  - [段页式表支持空间回收](../characteristic_description/segment_space_shrink.md)。在DELETE和UPDATE段页式表后，通过系统函数回收空间，使表文件占用的存储资源更有效地释放，不影响用户业务的正常运行。[#8535](https://gitcode.com/opengauss/openGauss-server/pull/8535) [@Lamaric](https://gitcode.com/Lamaric)
+  - 支持[wal2json插件](../extension_reference/wal2json.md)。用于将WAL（Write-Ahead Log）中的数据变更转换为JSON格式输出。[#8559](https://gitcode.com/opengauss/openGauss-server/pull/8559) [@Rade_he](https://gitcode.com/Rade_he)
+
 - DataKit：迁移工具增强
 
   - [Elasticsearch和Milvus到openGauss的迁移](../characteristic_description/datakit_support_elasticsearch_milvus_migration.md)能力集成至DataKit。[#232](https://gitcode.com/opengauss/openGauss-migration-portal/pull/232) [#1376](https://gitcode.com/opengauss/openGauss-workbench/pull/1376) [#1378](https://gitcode.com/opengauss/openGauss-workbench/pull/1378) [#1378](https://gitcode.com/opengauss/openGauss-workbench/pull/1378) [#1379](https://gitcode.com/opengauss/openGauss-workbench/pull/1379) [@duanguoqiang4](https://gitcode.com/duanguoqiang4) [@l3007kkk](https://gitcode.com/l3007kkk)
 
 ## 版本兼容性说明
 
+- [l2_norm函数](../datavec/vector_functions_and_operators.md#sparsevec-函数)表现变更。该函数用来计算欧几里得范数，原始表现l2_norm函数针对vector数据类型的入参，由于代码逻辑问题执行将报错，现通过将入参转化为sparsevec类型，调用l2_norm(sparsevec)函数，并返回正确的结果。[#9093](https://gitcode.com/opengauss/openGauss-server/pull/9093) [@wofanzheng](https://gitcode.com/wofanzheng)
 - 新增GUC参数[enable_subscription](../database_reference/sending_server.md#enable_subscription)，控制是否支持创建发布订阅。默认值为off，即不支持创建发布订阅。对于升级场景，若升级前集群中有发布订阅，则OM升级时会自动将该参数设置为on，以确保升级后的集群仍支持发布订阅。[#8898](https://gitcode.com/opengauss/openGauss-server/pull/8898) [#1227](https://gitcode.com/opengauss/openGauss-OM/pull/1227) [@wangzhengyuan1](https://gitcode.com/wangzhengyuan1)
 - GUC参数[b_compatibility_user_host_auth](../database_reference/connection_settings.md#b_compatibility_user_host_auth)默认值由off调整为on。修改后的默认值兼容MySQL的行为，允许创建`user@host`、`'user'@'host'`之类的用户名并兼容mysql的`user@host`认证鉴权。对于升级场景，OM升级时将保持该参数默认值和升级前一致，确保升级前后表现兼容。[#8150](https://gitcode.com/opengauss/openGauss-server/pull/8150) [#1239](https://gitcode.com/opengauss/openGauss-OM/pull/1239) [@ywzq1161327784](https://gitcode.com/ywzq1161327784)
 - GUC参数[b_format_behavior_compat_options](../database_reference/platform_and_client_compatibility.md#b_format_behavior_compat_options)默认值由空调整为`enable_set_variables,set_session_transaction,enable_modify_column,default_collation,fetch,enable_multi_charset,diagnostics`。修改后的默认值兼容MySQL的行为，允许设置自定义变量，多字符集等。对于升级场景，OM升级时将保持该参数默认值和升级前一致，确保升级前后表现兼容。[#8150](https://gitcode.com/opengauss/openGauss-server/pull/8150) [#1239](https://gitcode.com/opengauss/openGauss-OM/pull/1239) [@ywzq1161327784](https://gitcode.com/ywzq1161327784)
