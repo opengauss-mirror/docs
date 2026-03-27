@@ -593,6 +593,8 @@ sections:
             href: ./PG_STAT_DATABASE.md
           - label: PG_STAT_DATABASE_CONFLICTS
             href: ./PG_STAT_DATABASE_CONFLICTS.md
+          - label: PG_STAT_PROGRESS_COPY
+            href: ./PG_STAT_PROGRESS_COPY.md
           - label: PG_STAT_REPLICATION
             href: ./PG_STAT_REPLICATION.md
           - label: PG_STAT_SUBSCRIPTION
