@@ -2,6 +2,7 @@ label: 文档中心
 sections:
   - label: 从这里开始
     sections:
+      - href: ./terms_of_use/_toc.yaml
       - href: ./release_notes/_toc.yaml
       - href: ./about_opengauss/_toc.yaml
       - href: ./getting_started/_toc.yaml

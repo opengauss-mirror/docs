@@ -1,40 +1,6 @@
 # 发行说明
 
-## 法律声明
-
-**版权所有 © 2025 华为技术有限公司。**
-
-您对“本文档”的复制、使用、修改及分发受知识共享（Creative Commons）署名—相同方式共享4.0国际公共许可协议（以下简称“CC BY-SA 4.0”）的约束。为了方便用户理解，您可以通过访问[https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/)了解CC BY-SA 4.0的概要（但不是替代）。CC BY-SA 4.0的完整协议内容您可以访问如下网址获取：[https://creativecommons.org/licenses/by-sa/4.0/legalcode](https://creativecommons.org/licenses/by-sa/4.0/legalcode)。
-
-遵循如下协议：
-PostgreSQL is Copyright © 1996–2020 by the PostgreSQL Global Development Group.
-Postgres95 is Copyright © 1994–5 by the Regents of the University of California.
-
-Permission to use, copy, modify, and distribute this software and its documentation for any purpose, without fee, and without a written agreement is hereby granted, provided that the above copyright notice and this paragraph and the following two paragraphs appear in all copies.
-
-IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS, ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-THE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE PROVIDED HEREUNDER IS ON AN  "AS-IS"  BASIS, AND THE UNIVERSITY OF CALIFORNIA HAS NO OBLIGATIONS TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
-
-**商标声明**
-
-openGauss为华为技术有限公司的商标。本文档提及的其他所有商标或注册商标，由各自的所有人拥有。
-
-**免责声明**
-
-本文档仅作为使用指导，除非适用法律强制规定或者双方有明确书面约定, 华为技术有限公司对本文档中的所有陈述、信息和建议不做任何明示或默示的声明或保证，包括但不限于不侵权，时效性或满足特定目的的担保。
-
-## 用户须知
-
-openGauss是一款极致性能、安全、可靠的多模开源数据库。采用协议“木兰宽松许可证”（Mulan PSL V2），用户可以自由复制、使用、修改、分发，不论修改与否。
-
-openGauss的版本号遵循 X.Y.0-RCx 的格式，旨在区分不同类型的版本更新。具体而言：
-
- + LTS版本（X.0.0）：每两年发布一次，标志着长期稳定支持的版本，适合大规模部署与生产环境使用。社区承诺为每个LTS版本提供为期三年的维护支持，确保其持续稳定与安全。
- + 创新版本（X.Y.0-RCx）：每半年推出，旨在快速迭代，提供最新的功能与技术预览。这些版本主要用于用户测试与创新合作，社区将提供为期半年的维护支持，鼓励探索与反馈。
- + 补丁版本（X.Y.0）：当遇到重大问题时，会适时发布，旨在迅速修复关键性错误，保障系统稳定运行。
-
-## 版本介绍<a name="ZH-CN_TOPIC_0289899200"></a>
+## 版本介绍
 
 openGauss 7.0.0-RC3是openGauss 2026年3月发布的创新版本，该版本生命周期为0.5年。当前文档说明范围仅限轻量版。
 
@@ -54,7 +20,7 @@ openGauss 7.0.0-RC3是openGauss 2026年3月发布的创新版本，该版本生�
 部分特性的参数配置通过调整默认值使其占用更少的内存和CPU，包括global syscache、shared buffer等。
 主要的参数配置如下。
 
-```
+```ini
 enable_asp=off
 enable_ustore=off
 enable_incremental_checkpoint=off
@@ -87,7 +53,7 @@ wal_flush_delay=100
 
 不支持的GUC参数：
 
-```
+```ini
 standby_recycle_interval
 standby_max_query_time
 base_page_saved_interval
@@ -106,47 +72,6 @@ ORC文件访问、Kerberos安全校验、JAVA UDF、Codegen、MOT内存表特性
 不支持gs_cgroup、pg_recvlogical、pg_xlogdump、pagehack、pg_archivecleanup、gs_assessment、ndpplugin、spqplugin、timescaledb、age、postgres_fdw、dblink、gms_xmlgen、libog_query等插件和工具。不包含JRE组件。
 
 7.0.0-RC3与之前的版本特性功能保持兼容，主要功能如下：
-
-- 继承功能：
-
-  - 基础功能：SQL标准语法、数据类型(包括json和jsonb)、表\(包括临时表、全局临时表、外部表\)、视图、物化视图、外键、索引\(包括btree索引、Gin索引、hash索引\)、序列、函数、触发器、聚合函数median、ROWNUM、UPSERT、GB18030字符集。
-  - SQL引擎增强：范围分区、全局分区索引、LIST分区、HASH分区、基于范围分区的自动扩展分区、行存转向量化、自治事务、并行查询、Global Syscache、IPv6协议、事件触发器。支持继承表。支持PIPELINED管道函数，函数可以返回行集合。SELECT语句支持通过TABLESAMPLE子句实现对指定子分区、视图、物化视图进行数据采样。支持通过ALTER TRIGGER的方式禁用/启动单个触发器。SELECT语句支持通过ROTATE和NOT ROTATE子句进行行列转换。支持通过SQL启用禁用table约束。数字支持以f/d结尾作为浮点数使用。支持 ‘NaN’ 和 ‘infinity’ 表示浮点数特殊值。支持IS [NOT] INFINITE和IS [NOT] NAN条件表达式。numeric数据类型精度设置允许precision大于scale，允许scale为负数。支持CROSS/OUTER APPLY JOIN语法。支持修改/删除视图引用的对象（如表、列、函数、视图等）后，将视图置为无效状态。
-  - 存储引擎增强：延迟备库、备机支持逻辑复制、并行逻辑解码、灰度升级、指定节点升级、Hash索引、列存表主键唯一约束、发布订阅、NUMA-aware高性能优化等、oGEngine原位更新存储引擎增强。
-  - 存储过程：存储过程、存储过程内commit/rollback、参数的存储过程/函数调用省略\(\)、存储过程调试。支持存储过程覆盖率测试。游标支持嵌套定义。支持游标作为插入值。通过TYPE语法定义动态游标 REF CURSOR 时，支持通过RETURN指定游标返回的数据类型。游标参数支持设置默认值。支持array和record嵌套。支持使用ROWTYPE给游标赋值。
-  - 安全功能：认证、权限管理、网络通信安全、数据库审计、国密算法、内置角色和权限管理、ANY权限管理、用户级别审计等。支持第三方密钥管理服务。在鲲鹏服务器上，借助KAE组件，提升国密SM4加解密算法性能5%。支持对服务启停操作进行审计、对数据库备份恢复操作进行审计。支持对审计日志进行sha256完整性校验。发布安全配置基线以及安全配置巡检工具。
-  - 高可用：主备双机、级联备机、逻辑复制、极致RTO、备机扩容。并行回放性能优化，TPCC场景备机redo性能提升50%~100%。极致RTO支持备机可读，维持一主一备70W tpmC时，RTO<10s。主备高可用能力增强。支持异步备升主数据找回能力。逻辑复制增强。walwriteraux线程支持预分配XLog文件。逻辑复制增强，新增支持Alter/Truncate/Rename 表和分区表DDL语法。
-  - 高性能：支持shared buffer按大页内存分配，实现4k pagesize环境中性能提升5%。内核GCC版本升级到GCC 10.3，基于反馈优化，TPCC性能提升6%。SCRLock提高分布式锁性能。优化主备锁机制控制粒度和有序队列加锁逻辑，提升一主一同步备场景下TPCC性能10%。函数/PACKAGE支持指定并行相关参数，NO SCROLL游标和作为并行函数入参的游标表达式支持并行执行。使用用户态网络优化北向网络，单机TPCC性能提升15%。子事务场景性能提升，Multixact相关的SLRU buffer大小支持可配置，同时通过SLRU分bank优化，提升大量子事务场景下的性能100%+。支持自动参数化，在需要反复执行相似/相同的SQL简单语句的情境下（仅支持IUD），通过复用执行计划缓存以减少SQL语句的执行时间。
-  - 备份恢复：全量物理备份、逻辑备份、备机备份、增量备份和恢复、恢复到指定时间点\(PITR\)。
-  - 运维能力：WDR诊断报告新增数据库运行指标、备机慢SQL诊断视图、unique sql自动淘汰。慢SQL统计时间空洞补齐，支持细粒度阶段统计。支持switchover超时打印节点堆栈。增加对WalSender、WalRecv和WalRecvWriter线程的统计信息记录。新增GUC参数支持强制回收主机XLog日志。支持在主机宕机的情况下，在备机上获取当前事务日志的同步位置。支持全链路跟踪能力，实现追踪并记录jdbc查询接口执行sql的端到端网络耗时，并记录在数据库dbe_perf.statement视图、statement_history表中。慢SQL统计默认开启计划统计，降低性能损耗。支持通过内置函数 gs_get_hba_conf() 获取pg_hba.conf文件中的内容。gs_ctl日志文件支持按固定周期轮转，限制最大日志磁盘空间占用。gs_probackup工具支持将备份的数据和日志直接传输到远端兼容S3协议的对象存储中。
-  - JDBC：支持JDBC客户端负载均衡及读写分离、主节点心跳检测。
-  - 工具链：开发工具DataStudio、MySQL全量迁移工具gs_mysync、增量和反向迁移工具gs_replicate、数据校验工具gs_datacheck、数据全生命周期生产工具DataKit。支持升级场景数据字典校验工具。OM工具解耦对OS版本依赖。支持实例监控插件和智能诊断插件，实现SQL、会话、实例和集群指标监控，支持历史数据分析与SQL诊断、告警监控和告警通知，提升智能运维能力。数据库开发插件增强，支持表/视图/用户角色/函数/存储过程等对象管理。MySQL全量迁移：支持直接读取csv文件用于数据迁移，索引并行创建，解除跨平台的依赖，可靠性增强。MySQL增量&反向迁移：支持断点续传，支持迁移进度展示，反向迁移支持全量迁移。数据校验：支持按表分片校验，增强和全量迁移流程的配合，提升校验性能到150MB/s。支持 Oracle 全量、增量、反向迁移，支持数据校验。DataKit集成兼容性评估工具、支持集群拓扑显示、实例监控插件增加新指标、优化采集架构、智能诊断增加诊断经验，优化SQL诊断任务、日志检索插件增加CM日志采集，支持lucene语法搜索、告警监控插件增加内置规则、支持告警收敛、优化页面、支持组件安装路径可选、支持智能参数调优插件。支持流量录制回放工具，支持连接源端数据库（MySQL），采集SQL，并且向 openGauss 数据库进行 SQL 回放&压测。支持解析MySQL数据库的 General Log表或文件、支持Attach到JAVA应用程序、支持截取和解析MySQL网络通讯包等方式采集SQL。支持多次回放并比较结果和性能。Portal支持依赖包离线安装。迁移插件支持连接到数据库集群。支持按文件导入方式批量添加服务器和批量添加用户。支持多数据库集群并行安装。支持SSO与DevKit统一登录，实现同一用户可以登录到DevKit和DataKit。
-  - 中间件：shardingSphere、openLookeng。
-  - 周边生态：支持openEuler、CentOS、FusionOS系统；绝大部分MySQL语法和协议兼容。
-  - 企业级特性：支持修改表压缩属性。子事务并发回滚流程优化，减少锁争抢，提升并发执行效率。支持GB18030-2022标准。存储过程支持嵌套调试，支持匿名块调试。发布订阅支持用户自定义冲突解决方案。支持多语言日志。支持限制内核日志最大磁盘占用空间。支持龙芯平台编译。
-  - 其他：cmake脚本编译、容器化部署、kubernetes。
-
-- 新增功能：
-  - 高智能：向量数据库支持BM25全文检索，支持多语言 SDK 接入。
-  - 高智能：向量索引扫描支持SQL Bypass、HNSW索引支持通过mmap方式读取，提升向量扫描性能20%+。
-  - 高智能：向量数据库支持DiskANN磁盘索引算法。
-  - 高智能：向量数据库支持多向量召回。
-  - 高性能：Xlog刷盘优化。通过在低并发场景直接刷xlog、部分字段合并、减少持锁放锁代价等方式提升低并发场景下的xlog刷盘效率。
-  - 高性能：提升单条INSERT/REPLACE SQL带多个VALUES场景的插入性能50%+。
-  - 高性能：支持bloom索引。
-  - 高性能：新增Memoize算子优化NestLoop场景性能。
-  - 高可用：增量build场景支持校验commit lsn。
-  - 高可用：备机数据读取出现坏块，支持从主机修复。
-  - 企业级特性：支持通过视图查询当前会话拥有的自动参数化计划信息。
-  - 企业级特性：Ubtree索引支持undo管理，支持PCR。
-  - 企业级特性：行存压缩功能协同KAE硬件加速，2P TPCC场景下，性能影响小于5%，CPU压缩开销相较于没有KAE场景时降低50%。
-  - 企业级特性：支持内核全链路跟踪。记录SQL执行链路的上下游关系以及各个步骤、算子的耗时。
-  - 企业级特性：内核监控告警。通过采集数据库内核后台线程和服务器系统的运行状态，经过分析和计算评估数据库是否出现异常，并将异常信息写入到告警日志。
-  - DataKit：支持SQL Server到openGauss的全量数据迁移、常用对象迁移。
-  - DataKit：支持DataKit最小化打包，插件按需下载。
-  - DataKit：支持存储历史慢SQL。
-  - DataKit：支持PostgreSQL到openGauss的全量/增量数据迁移、全量/增量数据校验、反向迁移。
-
-## 特性介绍<a name="ZH-CN_TOPIC_0289899195"></a>
 
 - 标准SQL支持
 
@@ -172,39 +97,39 @@ ORC文件访问、Kerberos安全校验、JAVA UDF、Codegen、MOT内存表特性
 
     支持SSL安全网络连接、用户权限管理、密码管理、安全审计、细粒度ANY权限控制等功能，保证数据库在管理层、应用层、系统层和网络层的安全性。
 
-### 新增特性<a name="zh-cn_topic_0283136327_section383172195410"></a>
+## 新增特性
 
 此处说明的是openGauss 7.0.0-RC3版本，在7.0.0-RC2版本功能的基础上，新增如下特性：
 
 - 高性能：[参数化路径](../characteristic_description/automatic_parameterization.md)功能支持简单SELECT语句，并将相关内存统一到plan cache，支持global plan cache。[#8777](https://gitcode.com/opengauss/openGauss-server/pull/8777) [@shijuzheng1997](https://gitcode.com/shijuzheng1997)
 
-  - 支持GPC(Global Plan Cache全局计划缓存)，开启GPC后使用参数化功能的情况下，被参数化的语句也会被缓存到GPC(执行计划使用Generic Plan的情形下)。可以通过视图`DBE_PERF.GLOBAL_PLANCACHE_STATUS`查询
+  - 支持GPC（Global Plan Cache全局计划缓存），开启GPC后使用参数化功能的情况下，被参数化的语句也会被缓存到GPC（执行计划使用Generic Plan的情形下）。可以通过视图`DBE_PERF.GLOBAL_PLANCACHE_STATUS`查询
 
 - 高性能：支持[ADIO](../database_reference/asynchronous_i_o_operations.md)。[#8719](https://gitcode.com/opengauss/openGauss-server/pull/8719) [@zcj112](https://gitcode.com/zcj112)
 
-  -  行存表的文件访问支持通过直接IO，不经过操作系统页面缓存的方式进行读取。对于页面刷盘以及VACUUM FULL操作，将采用异步IO的方式进行。
+  - 行存表的文件访问支持通过直接IO，不经过操作系统页面缓存的方式进行读取。对于页面刷盘以及VACUUM FULL操作，将采用异步IO的方式进行。
 
-- 高性能： 支持[DPA哈希聚合加速](../characteristic_description/dpa_hash_agg_acceleration.md)，提升哈希算子性能。[#8746](https://gitcode.com/opengauss/openGauss-server/pull/8746) [#8750](https://gitcode.com/opengauss/openGauss-server/pull/8750) [#8754](https://gitcode.com/opengauss/openGauss-server/pull/8754) [@Eurekaxun](https://gitcode.com/Eurekaxun)
+- 高性能：支持[DPA哈希聚合加速](../characteristic_description/dpa_hash_agg_acceleration.md)，提升哈希算子性能。[#8746](https://gitcode.com/opengauss/openGauss-server/pull/8746) [#8750](https://gitcode.com/opengauss/openGauss-server/pull/8750) [#8754](https://gitcode.com/opengauss/openGauss-server/pull/8754) [@Eurekaxun](https://gitcode.com/Eurekaxun)
 
-  -  DPA（Data Processing Accelerator）哈希聚合加速是openGauss基于UADK框架实现的硬件加速特性，将向量化哈希聚合操作卸载到硬件加速器上执行，显著提升聚合查询的执行效率。
+  - DPA（Data Processing Accelerator）哈希聚合加速是openGauss基于UADK框架实现的硬件加速特性，将向量化哈希聚合操作卸载到硬件加速器上执行，显著提升聚合查询的执行效率。
 
 - 高可用：支持[在线DDL](../database_administration_guide/online_ddl.md)，使得DDL过程中持有高级别锁的时间大为减少，减少对并发DML的阻塞时间。[#8748](https://gitcode.com/opengauss/openGauss-server/pull/8748) [#8771](https://gitcode.com/opengauss/openGauss-server/pull/8771) [#8782](https://gitcode.com/opengauss/openGauss-server/pull/8782) [#8822](https://gitcode.com/opengauss/openGauss-server/pull/8822) [#8958](https://gitcode.com/opengauss/openGauss-server/pull/8958) [#8971](https://gitcode.com/opengauss/openGauss-server/pull/8971) [@congzhou2603](https://gitcode.com/congzhou2603) [@luodongxu](https://gitcode.com/luodongxu)
 
-  -  在线DDL特性涉及传统主备中Astore、段页式支持修改列数据类型、修改压缩属性、添加约束(包括范围约束和非空约束)、VACUUM FULL、CLUSTER、分区表分裂合并分区，并新增关键字CONCURRENTLY用于触发在线DDL功能：
+  - 在线DDL特性涉及传统主备中Astore、段页式支持修改列数据类型、修改压缩属性、添加约束(包括范围约束和非空约束)、VACUUM FULL、CLUSTER、分区表分裂合并分区，并新增关键字CONCURRENTLY用于触发在线DDL功能：
 
-- 高智能： 支持[RabitQ](../datavec/Rabitq.md)量化索引算法。[#8642](https://gitcode.com/opengauss/openGauss-server/pull/8642) [#8645](https://gitcode.com/opengauss/openGauss-server/pull/8645) [#8650](https://gitcode.com/opengauss/openGauss-server/pull/8650) [#8655](https://gitcode.com/opengauss/openGauss-server/pull/8655) [#8658](https://gitcode.com/opengauss/openGauss-server/pull/8658) [@wangjingyuan8](https://gitcode.com/wangjingyuan8) [@weixin_44204324](https://gitcode.com/weixin_44204324)
+- 高智能：支持[RabitQ](../datavec/Rabitq.md)量化索引算法。[#8642](https://gitcode.com/opengauss/openGauss-server/pull/8642) [#8645](https://gitcode.com/opengauss/openGauss-server/pull/8645) [#8650](https://gitcode.com/opengauss/openGauss-server/pull/8650) [#8655](https://gitcode.com/opengauss/openGauss-server/pull/8655) [#8658](https://gitcode.com/opengauss/openGauss-server/pull/8658) [@wangjingyuan8](https://gitcode.com/wangjingyuan8) [@weixin_44204324](https://gitcode.com/weixin_44204324)
 
-  -  RabitQ是一种具有理论保证的最先进的二进制量化方法，与HNSW、IVFFLAT结合使用时，可以确保向量数据在高度压缩的表示下仍能保持搜索的可靠性。
+  - RabitQ是一种具有理论保证的最先进的二进制量化方法，与HNSW、IVFFLAT结合使用时，可以确保向量数据在高度压缩的表示下仍能保持搜索的可靠性。
 
-- 高智能： [MCP](../datavec/mcp.md)适配openGauss。[#4](https://gitcode.com/opengauss/mcp-opengauss/pull/4) [@weixin_44204324](https://gitcode.com/weixin_44204324)
+- 高智能：[MCP](../datavec/mcp.md)适配openGauss。[#4](https://gitcode.com/opengauss/mcp-opengauss/pull/4) [@weixin_44204324](https://gitcode.com/weixin_44204324)
 
-  -  MCP是为LLM和Agent系统设计的标准化交互框架，使LLM可以与外部数据库、API和工具进行高效交互。MCP适配openGauss数据库让AI智能体能够通过标准化协议安全、高效地直接操作企业级国产数据库，将结构化数据无缝融入AI工作流，大幅降低AI应用与复杂数据系统集成的开发门槛。
+  - MCP是为LLM和Agent系统设计的标准化交互框架，使LLM可以与外部数据库、API和工具进行高效交互。MCP适配openGauss数据库让AI智能体能够通过标准化协议安全、高效地直接操作企业级国产数据库，将结构化数据无缝融入AI工作流，大幅降低AI应用与复杂数据系统集成的开发门槛。
 
 - DataKit：迁移工具增强
 
   - [Elasticsearch和Milvus到openGauss的迁移](../characteristic_description/datakit_support_elasticsearch_milvus_migration.md)能力集成至DataKit。[#232](https://gitcode.com/opengauss/openGauss-migration-portal/pull/232) [#1376](https://gitcode.com/opengauss/openGauss-workbench/pull/1376) [#1378](https://gitcode.com/opengauss/openGauss-workbench/pull/1378) [#1378](https://gitcode.com/opengauss/openGauss-workbench/pull/1378) [#1379](https://gitcode.com/opengauss/openGauss-workbench/pull/1379) [@duanguoqiang4](https://gitcode.com/duanguoqiang4) [@l3007kkk](https://gitcode.com/l3007kkk)
 
-### 版本兼容性说明
+## 版本兼容性说明
 
 - 新增GUC参数[enable_subscription](../database_reference/sending_server.md#enable_subscription)，控制是否支持创建发布订阅。默认值为off，即不支持创建发布订阅。对于升级场景，若升级前集群中有发布订阅，则OM升级时会自动将该参数设置为on，以确保升级后的集群仍支持发布订阅。[#8898](https://gitcode.com/opengauss/openGauss-server/pull/8898) [#1227](https://gitcode.com/opengauss/openGauss-OM/pull/1227) [@wangzhengyuan1](https://gitcode.com/wangzhengyuan1)
 - GUC参数[b_compatibility_user_host_auth](../database_reference/connection_settings.md#b_compatibility_user_host_auth)默认值由off调整为on。修改后的默认值兼容MySQL的行为，允许创建`user@host`、`'user'@'host'`之类的用户名并兼容mysql的`user@host`认证鉴权。对于升级场景，OM升级时将保持该参数默认值和升级前一致，确保升级前后表现兼容。[#8150](https://gitcode.com/opengauss/openGauss-server/pull/8150) [#1239](https://gitcode.com/opengauss/openGauss-OM/pull/1239) [@ywzq1161327784](https://gitcode.com/ywzq1161327784)
@@ -215,23 +140,11 @@ ORC文件访问、Kerberos安全校验、JAVA UDF、Codegen、MOT内存表特性
 - GUC参数[dolphin.use_const_value_as_colname](../extension_reference/dolphin_guc_parameters.md#dolphinuse_const_value_as_colname)默认值由false修改为true。修改后的默认值兼容MySQL的行为，默认在SELECT查询时，对于常量，直接使用常量的值作为列名。对于升级场景，OM升级时将保持该参数默认值和升级前一致，确保升级前后表现兼容。[#2217](https://gitcode.com/opengauss/Plugin/pull/2217) [#1239](https://gitcode.com/opengauss/openGauss-OM/pull/1239) [@ywzq1161327784](https://gitcode.com/ywzq1161327784)
 - GUC参数[dolphin.transform_unknown_param_type_as_column_type_first](../extension_reference/dolphin_guc_parameters.md#dolphintransform_unknown_param_type_as_column_type_first)默认值由false修改为true。修改后的默认值兼容MySQL的行为，对于preapre语句中unknown类型的参数优先按照其比较的列类型来解释，从而避免因为隐式类型转换导致的索引失效的问题。对于升级场景，OM升级时将保持该参数默认值和升级前一致，确保升级前后表现兼容。[#2217](https://gitcode.com/opengauss/Plugin/pull/2217) [#1239](https://gitcode.com/opengauss/openGauss-OM/pull/1239) [@ywzq1161327784](https://gitcode.com/ywzq1161327784)
 
-## 版本使用注意事项<a name="ZH-CN_TOPIC_0289899192"></a>
-
-- 版本技术规格可以参照《关于openGauss》中的[技术指标](../about_opengauss/technical_specifications.md)。
-- openGauss目前最多支持8备。轻量版没有CM管理，在使用一主多备时，如果主机故障，需要选择一个日志多的备机升主，避免其他备机发生重建。
-- 轻量版推荐使用一主两备部署模式，保证数据库的可靠性和可用性。
-- 轻量版不支持两地三中心部署。
-- 轻量版不支持资源池化架构。
-
-## 已知问题<a name="ZH-CN_TOPIC_0289899194"></a>
+## 已知问题
 
 - openGauss轻量版没有存储空间、文件权限、慢盘监控功能。在存储空间满，文件权限异常时，数据库会退出，日志中会有相应打印信息。在慢盘时，数据库操作会变慢。
 - openGauss轻量版只有数据库内核能力，没有主备监控和切换功能。在主备断连，主备日志不匹配时需要进行双机重建。
 - OM默认根据初始配置的主备双机关系启动主备数据库，如果应用对数据库进行了主备切换，需要把新的主备关系通知给OM，避免主备关系发生错乱，导致双机重建。
-
-## CVE漏洞<a name="ZH-CN_TOPIC_0289899199"></a>
-
-本版本是2025年9月发布的创新版本，版本涉及的CVE漏洞可通过[CVE列表](https://opengauss.org/zh/cve)查询。
 
 ## 已修复问题
 
@@ -285,18 +198,60 @@ ORC文件访问、Kerberos安全校验、JAVA UDF、Codegen、MOT内存表特性
 | [1226](https://gitcode.com/opengauss/openGauss-workbench/issues/1226) | openGauss-workbench | [Bug]: DataKit MySQL全流程迁移中，指定表迁移功能无效 |
 | [1165](https://gitcode.com/opengauss/openGauss-workbench/issues/1165) | openGauss-workbench | [Bug]: pg迁移分区表时报错 |
 
+## 继承特性
+
+- **基础功能**：[SQL标准语法](../sql_reference/dcl_grammer_overview.md)、[数据类型](../sql_reference/numeral_type.md)（包括[JSON和JSONB](../sql_reference/json_jsonb_type.md)）、表（包括临时表、全局临时表、外部表）、[视图](../brief_tutorial/views.md)、[物化视图](../brief_tutorial/materialized_views.md)、外键、[索引](../brief_tutorial/indexes.md)（包括btree索引、Gin索引、hash索引）、[序列](../database_administration_guide/creating_and_managing_sequences.md)、函数、[触发器](../brief_tutorial/trigger.md)、[聚合函数](../sql_reference/alter_aggregate.md)median、ROWNUM、UPSERT、GB18030字符集。
+
+- **SQL引擎增强**：[范围分区、LIST分区、HASH分区](../sql_reference/partitioned_table.md#范围分区表的分类)、基于范围分区的自动扩展分区、全局分区索引、行存转向量化、[自治事务](../characteristic_description/autonomous_transaction.md)、[并行查询](../characteristic_description/smp_for_parallel_execution.md)、[Global Syscache](../characteristic_description/global_syscache.md)、[IPv6协议](../sql_reference/network_address_type.md)、[事件触发器](../brief_tutorial/event_trigger.md)。支持[继承表](../sql_reference/create_table_inherits.md)。支持PIPELINED管道函数，函数可以返回行集合。SELECT语句支持通过[TABLESAMPLE子句](../characteristic_description/standard_sql.md)实现对指定子分区、视图、物化视图进行数据采样。支持通过ALTER TRIGGER的方式禁用/启动单个触发器。SELECT语句支持通过ROTATE和NOT ROTATE子句进行行列转换。支持通过SQL启用禁用table约束。数字支持以f/d结尾作为浮点数使用。支持 ‘NaN’ 和 ‘infinity’ 表示浮点数特殊值。支持IS [NOT] INFINITE和IS [NOT] NAN条件表达式。numeric数据类型精度设置允许precision大于scale，允许scale为负数。支持CROSS/OUTER APPLY JOIN语法。支持修改/删除视图引用的对象（如表、列、函数、视图等）后，将视图置为无效状态。
+
+- **存储引擎增强**：延迟备库、[备机支持逻辑复制](../characteristic_description/logical_replication.md)、[并行逻辑解码](../characteristic_description/parallel_logical_decoding.md)、[灰度升级](../characteristic_description/gray_upgrade.md)、指定节点升级、Hash索引、列存表主键唯一约束、[发布订阅](../characteristic_description/publication_subscription.md)、[NUMA-aware高性能优化](../database_administration_guide/numa_awareness_allocation_and_affinity.md)等、oGEngine原位更新存储引擎增强。
+
+- **存储过程**：[存储过程](../sql_reference/stored_procedure_20.md)、[存储过程内commit/rollback](../sql_reference/transaction_management.md)、参数的存储过程/函数调用省略()、[存储过程调试](../characteristic_description/stored_procedure_debugging.md)。支持[存储过程覆盖率测试](../characteristic_description/gms_profiler_advanced_package.md)。[游标](../sql_reference/cursor_1.md)支持嵌套定义。支持游标作为插入值。通过TYPE语法定义动态游标 REF CURSOR 时，支持通过RETURN指定游标返回的数据类型。[游标参数支持设置默认值](../sql_reference/explicit_cursor.md)。支持array和record嵌套。支持使用[ROWTYPE给游标赋值](../sql_reference/define_variables.md)。
+
+- **安全功能**：[认证](../database_administration_guide/configuring_client_access_authentication.md)、[权限管理](../database_om_guide/secharden/permission_management.md)、网络通信安全、[数据库审计](../characteristic_description/database_audit.md)、国密算法、[内置角色](../database_administration_guide/roles.md)和权限管理、ANY权限管理、[用户级别审计](../characteristic_description/database_audit.md)等。支持第三方密钥管理服务。在鲲鹏服务器上，借助KAE组件，提升国密SM4加解密算法性能5%。支持[对服务启停操作进行审计](../characteristic_description/database_audit.md)、[对数据库备份恢复操作进行审计](../characteristic_description/database_audit.md)。支持[对审计日志进行sha256完整性校验](../characteristic_description/database_audit.md)。发布安全配置基线以及安全配置巡检工具。
+
+- **高可用**：主备双机、级联备机、[逻辑复制](../characteristic_description/logical_replication.md)、[极致RTO](../characteristic_description/ultimate_rto.md)、备机扩容。并行回放性能优化，TPCC场景备机redo性能提升50%~100%。极致RTO支持备机可读，维持一主一备70W tpmC时，RTO<10s。[主备高可用能力增强](../characteristic_description/enhanced_active_and_standby_ha.md)。支持[异步备升主数据找回能力](../characteristic_description/asynchronous_backup_and_recovery_capability_for_master_data.md)。[逻辑复制增强](../characteristic_description/logical_replication.md)。walwriteraux线程支持预分配XLog文件。逻辑复制增强，新增支持Alter/Truncate/Rename 表和分区表DDL语法。
+
+- **高性能**：支持[shared buffer按大页内存分配](../database_reference/huge_page_memory.md)，实现4k pagesize环境中性能提升5%。内核GCC版本升级到GCC 10.3，基于反馈优化，TPCC性能提升6%。SCRLock提高分布式锁性能。优化主备锁机制控制粒度和有序队列加锁逻辑，提升一主一同步备场景下TPCC性能10%。函数/PACKAGE支持指定并行相关参数，[NO SCROLL游标](../sql_reference/CURSOR.md)和作为并行函数入参的游标表达式支持并行执行。使用用户态网络优化北向网络，单机TPCC性能提升15%。子事务场景性能提升，Multixact相关的SLRU buffer大小支持可配置，同时通过SLRU分bank优化，提升大量子事务场景下的性能100%+。支持[自动参数化](../characteristic_description/automatic_parameterization.md)，在需要反复执行相似/相同的SQL简单语句的情境下（仅支持IUD），通过复用执行计划缓存以减少SQL语句的执行时间。
+
+- **备份恢复**：[全量物理备份](../characteristic_description/physical_backup_and_restoration.md)、[逻辑备份](../database_om_guide/logical_backup_and_restoration.md)、备机备份、[增量备份和恢复](../characteristic_description/physical_backup_and_restoration.md)、恢复到指定时间点(PITR)。
+
+- **运维能力**：[WDR诊断报告](../characteristic_description/workload_diagnosis_report_wdr.md)新增数据库运行指标、备机[慢SQL诊断视图](../characteristic_description/root_cause_analysis_for_slow_sql_statements.md)、[unique sql自动淘汰](../database_reference/query_62.md)。慢SQL统计时间空洞补齐，支持细粒度阶段统计。支持switchover超时打印节点堆栈。增加对WalSender、WalRecv和WalRecvWriter线程的统计信息记录。新增GUC参数支持强制回收主机XLog日志。支持在主机宕机的情况下，在备机上获取当前事务日志的同步位置。支持[全链路跟踪能力](../characteristic_description/full_link_tracking.md)，实现追踪并记录jdbc查询接口执行sql的端到端网络耗时，并记录在数据库[dbe_perf.statement](../sql_reference/dbe_perf_schema.md)视图、[statement_history](../database_reference/STATEMENT_HISTORY.md)表中。慢SQL统计默认开启计划统计，降低性能损耗。支持通过内置函数gs_get_hba_conf()获取pg_hba.conf文件中的内容。gs_ctl日志文件支持按固定周期轮转，限制最大日志磁盘空间占用。gs_probackup工具支持将备份的数据和日志直接传输到远端兼容S3协议的对象存储中。
+
+- **JDBC**：支持[JDBC客户端负载均衡及读写分离](../characteristic_description/jdbc_client_load_balancing_and_read_write_isolation.md)、主节点心跳检测。
+
+- **工具链**：[开发工具DataStudio](../characteristic_description/opengauss_client_tool_datastudio.md)、MySQL全量迁移工具gs_mysync、增量和反向迁移工具gs_replicate、数据校验工具gs_datacheck、[数据全生命周期生产工具DataKit](../characteristic_description/tool_chain_datakit.md)。支持升级场景数据字典校验工具。OM工具解耦对OS版本依赖。支持实例监控插件和智能诊断插件，实现SQL、会话、实例和集群指标监控，支持历史数据分析与SQL诊断、告警监控和告警通知，提升智能运维能力。数据库开发插件增强，支持表/视图/用户角色/函数/存储过程等对象管理。MySQL全量迁移：支持直接读取csv文件用于数据迁移，索引并行创建，解除跨平台的依赖，可靠性增强。MySQL增量&反向迁移：支持断点续传，支持迁移进度展示，反向迁移支持全量迁移。数据校验：支持按表分片校验，增强和全量迁移流程的配合，提升校验性能到150MB/s。支持 Oracle 全量、增量、反向迁移，支持数据校验。DataKit集成兼容性评估工具、支持集群拓扑显示、实例监控插件增加新指标、优化采集架构、智能诊断增加诊断经验，优化SQL诊断任务、日志检索插件增加CM日志采集，支持lucene语法搜索、告警监控插件增加内置规则、支持告警收敛、优化页面、支持组件安装路径可选、支持智能参数调优插件。支持流量录制回放工具，支持连接源端数据库（MySQL），采集SQL，并且向 openGauss 数据库进行 SQL 回放&压测。支持解析MySQL数据库的 General Log表或文件、支持Attach到JAVA应用程序、支持截取和解析MySQL网络通讯包等方式采集SQL。支持多次回放并比较结果和性能。Portal支持依赖包离线安装。迁移插件支持连接到数据库集群。支持按文件导入方式批量添加服务器和批量添加用户。支持多数据库集群并行安装。支持SSO与DevKit统一登录，实现同一用户可以登录到DevKit和DataKit。
+
+- **中间件**：[shardingSphere](../characteristic_description/distributed_database_capability.md)、openLookeng。
+
+- **周边生态**：支持openEuler、CentOS、FusionOS系统；[绝大部分MySQL语法和协议兼容](../characteristic_description/enhanced_mysql_compatibility.md)。
+
+- **企业级特性**：支持修改表压缩属性。[子事务并发回滚流程优化](../characteristic_description/optimization_of_subtransaction_concurrent_rollback_process.md)，减少锁争抢，提升并发执行效率。支持GB18030-2022标准。[存储过程支持嵌套调试](../characteristic_description/stored_procedure_debugging.md)，支持匿名块调试。[发布订阅](../database_om_guide/subscriptions.md)支持用户自定义冲突解决方案。支持多语言日志。支持限制内核日志最大磁盘占用空间。支持龙芯平台编译。
+
+- **其他**：cmake脚本编译、容器化部署、kubernetes。
+
+## CVE漏洞
+
+本版本是2025年9月发布的创新版本，版本涉及的CVE漏洞可通过[CVE列表](https://opengauss.org/zh/cve)查询。
+
 ## 性能测试报告
 
 见[openGauss 7.0.0-RC3 版本集成测试报告](https://gitcode.com/opengauss/QA/blob/master/Test_Result/openGauss_7.0.0_RC2/%E7%89%88%E6%9C%AC%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/openGauss%207.0.0RC2%E7%89%88%E6%9C%AC%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A.md#423-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95)
 
-## 源代码<a name="ZH-CN_TOPIC_0289899190"></a>
+## 版本使用注意事项
+
+- 版本技术规格可以参照《关于openGauss》中的[技术指标](../about_opengauss/technical_specifications.md)。
+- openGauss目前最多支持8备。轻量版没有CM管理，在使用一主多备时，如果主机故障，需要选择一个日志多的备机升主，避免其他备机发生重建。
+- 轻量版推荐使用一主两备部署模式，保证数据库的可靠性和可用性。
+- 轻量版不支持两地三中心部署。
+- 轻量版不支持资源池化架构。
+
+## 源代码
 
 openGauss轻量版主要包含16个代码仓，引用开源软件的补丁代码仓、JDBC驱动代码仓、ODBC驱动代码仓、数据库服务器代码仓、自治运维平台DBMind代码仓、数据库OM管理工具、数据库CM管理工具代码仓、数据库DCF代码仓、数据库DCC代码仓、数据库插件代码仓、DataKit代码仓、MySQL到openGauss全量迁移工具代码仓、MySQL增量迁移代码仓、数据校验代码仓、数据库prometheus-exporter代码仓、监控插件生成工具代码仓和文档仓库：
 
 - 开源软件代码仓：[https://gitcode.com/opengauss/openGauss-third\_party](https://gitcode.com/opengauss/openGauss-third_party)
-
 - JDBC驱动代码仓：[https://gitcode.com/opengauss/openGauss-connector-jdbc](https://gitcode.com/opengauss/openGauss-connector-jdbc)
-
 - ODBC驱动代码仓：[https://gitcode.com/opengauss/openGauss-connector-odbc](https://gitcode.com/opengauss/openGauss-connector-odbc)
 - 数据库服务器代码仓：[https://gitcode.com/opengauss/openGauss-server](https://gitcode.com/opengauss/openGauss-server)
 - 自治运维平台DBMind代码仓：[https://gitcode.com/opengauss/openGauss-DBMind](https://gitcode.com/opengauss/openGauss-DBMind)
@@ -313,26 +268,16 @@ openGauss轻量版主要包含16个代码仓，引用开源软件的补丁代码
 - 数据库监控插件生成工具代码仓：[https://gitcode.com/opengauss/openGauss-tools-monitor](https://gitcode.com/opengauss/openGauss-tools-monitor)
 - 数据库文档仓库：[https://gitcode.com/opengauss/docs](https://gitcode.com/opengauss/docs)
 
-## 参与贡献<a name="ZH-CN_TOPIC_0289899196"></a>
+## 用户须知
 
-**参与贡献**
+openGauss是一款极致性能、安全、可靠的多模开源数据库。采用协议“木兰宽松许可证”（Mulan PSL V2），用户可以自由复制、使用、修改、分发，不论修改与否。
 
-作为openGauss用户，你可以通过多种方式协助openGauss社区。参与社区贡献的方法请参见[社区贡献](https://opengauss.org/zh/contribution/)，这里简单列出部分方式供参考。
+openGauss的版本号遵循 X.Y.0-RCx 的格式，旨在区分不同类型的版本更新。具体而言：
 
-**特别兴趣小组**
+ + LTS版本（X.0.0）：每两年发布一次，标志着长期稳定支持的版本，适合大规模部署与生产环境使用。社区承诺为每个LTS版本提供为期三年的维护支持，确保其持续稳定与安全。
+ + 创新版本（X.Y.0-RCx）：每半年推出，旨在快速迭代，提供最新的功能与技术预览。这些版本主要用于用户测试与创新合作，社区将提供为期半年的维护支持，鼓励探索与反馈。
+ + 补丁版本（X.Y.0）：当遇到重大问题时，会适时发布，旨在迅速修复关键性错误，保障系统稳定运行。
 
-openGauss将拥有共同兴趣的人们聚在一起，组成了不同的特别兴趣小组（SIG）。当前已有的SIG请参见[SIG列表](https://opengauss.org/zh/contribution/)。
-
-我们欢迎并鼓励你加入已有的SIG或创建新的SIG，创建方法请参见[SIG管理指南](https://gitcode.com/opengauss/tc/blob/master/sigs/README.md/)。
-
-**邮件列表和任务**
-
-欢迎你积极地帮助用户解决在[邮件列表](https://opengauss.org/zh/community/onlineCommunication/)和issue任务（包括[代码仓任务](https://gitee.com/organizations/opengauss/issues)）中提出的问题。另外，我们也欢迎你提出问题。这些都将帮助openGauss社区更好地发展。
-
-**文档**
-
-你不仅可以通过提交代码参与社区贡献，我们也欢迎你反馈遇到的问题、困难，或者对文档易用性、完整性的改进建议等。例如获取软件或文档过程中的问题，使用系统过程中的难点。欢迎关注并改进openGauss社区的文档模块。
-
-## 致谢<a name="ZH-CN_TOPIC_0289899198"></a>
+## 致谢
 
 我们衷心地感谢参与和协助 openGauss 7.0.0-RC3版本发布的项目的所有开发者和伙伴，包括华为、北京海量数据技术股份有限公司、中移信息技术有限公司、粤港澳大湾区（广东）国创中心、软通动力信息技术（集团）股份有限公司、天津南大通用数据技术股份有限公司、云和恩墨（北京）信息技术有限公司、天津神舟通用数据技术有限公司、万宝盛华大中华有限公司、中科院软件所、邮储银行、天津凡泰、易宝软件有限公司、民生银行、国能信息、海康威视、浙江大华、兴业银行、中软国际等组织单位。是你们的辛勤付出使得版本顺利发布，也为openGauss更好地发展提供可能。
