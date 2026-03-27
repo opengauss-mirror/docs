@@ -87,6 +87,8 @@
   ```
   openGauss=# create table test1(c1 text);
   CREATE TABLE
+  openGauss=# set dolphin.sql_mode = '';
+  SET
   openGauss=# insert into test1 values ("ab\"c");
   ERROR:  syntax error at or near "c"
   LINE 1: insert into test1 values ("ab\"c");
@@ -189,16 +191,21 @@ CREATE DATABASE
 openGauss=# \c test_db 
 Non-SSL connection (SSL connection is recommended when requiring high-security)
 You are now connected to database "test_db" as user "luozihao".
-test_db=# show dolphin.sql_mode ;
-                                           dolphin.sql_mode                                           
-------------------------------------------------------------------------------------------------------
- sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date,pad_char_to_full_length
+test_db=# show dolphin.sql_mode;
+                                                             dolphin.sql_mode                          
+                                    
+-------------------------------------------------------------------------------------------------------
+------------------------------------
+ sql_mode_strict,sql_mode_full_group,no_zero_date,block_return_multi_results,error_for_division_by_zero
+,escape_quotes,disable_escape_bytea
 (1 row)
 
 test_db=# create table test(a varchar(20));
 CREATE TABLE
 test_db=# insert into test values('test');
 INSERT 0 1
+test_db=# set dolphin.sql_mode = 'ansi_quotes';
+SET
 test_db=# select "a" from test;
   a   
 ------
@@ -206,6 +213,16 @@ test_db=# select "a" from test;
 (1 row)
 
 test_db=# set dolphin.sql_mode to 'sql_mode_strict,sql_mode_full_group,pipes_as_concat,no_zero_date,pad_char_to_full_length';
+SET
+test_db=# set dolphin.use_const_value_as_colname = on;
+SET
+test_db=# select "a" from test;
+ a 
+---
+ a
+(1 row)
+
+test_db=# set dolphin.use_const_value_as_colname = off;
 SET
 test_db=# select "a" from test;
  ?column? 
