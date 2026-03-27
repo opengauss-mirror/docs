@@ -192,3 +192,5 @@ IDX_REGION_UPPER                                                 NORMAL     SYST
 - Index Unique Scan（唯一索引扫描）：查询条件使用唯一索引的全部列的等值查询。
 - Index Range Scan（索引范围扫描）：非唯一索引 或 唯一索引但未提供全部列。查询条件含 =, >, >=, <, <=, BETWEEN, IN 等范围或等值操作。
 - Index Full Scan（索引全扫描）：通常按照索引的物理存储顺序进行扫描，不依赖查询条件。
+- Index Fast Full Scan（索引快速全扫描）：使用块扫描方式，并且要求查询的所有字段都包含在索引中，扫描结果是无序的，order by使用索引排序时冲突、hint_no_ffs冲突。
+- Index Skip Scan（索引跳跃扫描）：用于范围查询在前，等值查询在后，查询条件不包含前导第一列的查询场景。
