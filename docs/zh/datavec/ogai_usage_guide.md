@@ -262,6 +262,7 @@ SELECT * FROM ogai_chunk('长文本...', 500, 100);
 | 参数 | 类型 | 说明           |
 |------|------|--------------|
 | model_key | TEXT | 已注册的ONNX模型标识 |
+
 **语法：**
 
 ```sql
@@ -277,6 +278,7 @@ SELECT load_onnx_model('local_bge');
 | 参数 | 类型 | 说明           |
 |------|------|--------------|
 | model_key | TEXT | 已注册的ONNX模型标识 |
+
 
 **语法：**
 
