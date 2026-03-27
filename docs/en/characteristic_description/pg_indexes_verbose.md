@@ -6,7 +6,7 @@ This feature is available since openGauss 7.0.0-RC3.
 
 ## Introduction
 
-Provides a verbose index view to help diagnose potential redundant indexes in the current database.
+Provides a [verbose index view](../sql_reference/pg_indexes_verbose.md) to help diagnose potential redundant indexes in the current database.
 
 ## Benefits
 
