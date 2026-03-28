@@ -1,27 +1,17 @@
 label: 关于openGauss
 isManual: true
 sections:
-  - label: 产品描述
+  - label: 简介
     href: ./about_opengauss.md
-  - label: 产品定位
-    href: ./product_positioning.md
-  - label: 系统架构
-    href: ./system_architecture.md
-  - label: 应用场景
-    href: ./application_scenarios.md
-  - label: 产品特点
-    href: ./product_features.md
+  - label: 版本能力矩阵
+    href: ./version_capability.md
   - label: 部署方案
-    href: ./deployment_solutions.md
+    href: ./deployment_plan.md
   - label: 典型组网
-    href: ./typical_networking.md
-  - label: 软硬件配置要求
-    href: ./software_and_hardware_configuration_requirements.md    
+    href: ./typical_networking.md  
   - label: 运行环境
     href: ./operating_environment.md
   - label: 技术指标
-    href: ./technical_specifications.md
-  - label: 数据库核心技术
-    href: ./core_database_technologies.md
-  - label: 基本功能和特性
-    href: ./basic_features.md 
+    href: ./technical_indicators.md
+  - label: 参与贡献
+    href: ./contribution.md
