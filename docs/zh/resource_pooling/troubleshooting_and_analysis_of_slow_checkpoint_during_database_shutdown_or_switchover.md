@@ -33,7 +33,7 @@
     |max_io_capacity|设置后端写进程批量刷页每秒的IO上限，可以适当调大|
     |max_redo_log_size|恢复点到当前最新日志之间日志量的期望值，可以适当调小|
 
-    更多可参考[数据库I/O参数调优](../../../docs-lite/zh/performance_tuning_guide/optimizing_database_parameters.md)。
+    更多可参考[数据库I/O参数调优](../performance_tuning_guide/optimizing_database_parameters.md)。
 
 5. 资源池化集群架构下由于底层存储对接的是磁阵，单从操作系统这一侧可能无法看到磁阵上的状态。这时可以登录到磁阵的管理界面中，看当前磁阵是否有异常告警，或者在磁阵中监控使用的LUN的IO性能。
 6. 磁盘IO的调度方式也会影响刷脏的性能，当前在服务器上经常使用的是固态硬盘，对于固态硬盘，建议使用NOOP（也叫NONE）的调度策略。可参考如下方式查看和修改：

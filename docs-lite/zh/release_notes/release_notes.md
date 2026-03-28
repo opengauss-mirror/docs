@@ -247,7 +247,7 @@ ORC文件访问、Kerberos安全校验、JAVA UDF、Codegen、MOT内存表特性
 
 ## 版本使用注意事项
 
-- 版本技术规格可以参照《关于openGauss》中的[技术指标](../about_opengauss/technical_specifications.md)。
+- 版本技术规格可以参照《关于openGauss》中的[技术指标](../about_opengauss/technical_indicators.md)。
 - openGauss目前最多支持8备。轻量版没有CM管理，在使用一主多备时，如果主机故障，需要选择一个日志多的备机升主，避免其他备机发生重建。
 - 轻量版推荐使用一主两备部署模式，保证数据库的可靠性和可用性。
 - 轻量版不支持两地三中心部署。
