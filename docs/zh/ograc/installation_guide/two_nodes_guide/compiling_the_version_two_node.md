@@ -10,6 +10,10 @@
 > * 默认以 ARM 架构（openEuler）环境为例
 > * 适用于开发、测试及版本验证场景
 
+> [!WARNING]注意
+>
+> * 如果本地环境为 openEuler 24.03 LTS (aarch64)，编译出包步骤会有些许差异，具体操作步骤仍可参考本文档，但需要关注下红色字体内容。
+
 ---
 
 ## 编译环境准备
@@ -69,6 +73,64 @@ git net-tools cmake automake byacc libtool lz4-devel patch --skip-broken
 > * `lz4-devel`：要求版本 >= 1.8.3
 > * 若存在依赖冲突，`--skip-broken` 可避免安装中断
 
+> [!WARNING]注意
+>
+> <span style="color: red;">若为openEuler 24.03 LTS系统版本，则cmake不能使用yum install来安装使用，会因为版本较高而有冲突，这里建议使用10.3.0/10.3.1的gcc来编译cmake，编译cmake步骤如下所示：</span>
+> 1. 进入子用户，进入编译cmake的目录，这里以`/home/user_name`为例。
+>
+>    ```shell
+>    su user_name
+>    cd /home/user_name
+>    ```
+>
+> 2. 下载gcc这里举例使用了openGauss-third_party仓库的（建议使用的gcc版本为10.3.0/10.3.1）：
+> 
+>    wget https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/binarylibs/gcc10.3/openGauss-third_party_binarylibs_openEuler_2403_arm.tar.gz
+> 
+> 3. 解压该三方库包，得到gcc二进制路径，这里举例路径为：/home/user_name/openGauss-third_party_binarylibs_openEuler_2403_arm/buildtools/gcc10.3/gcc/lib
+>
+>    ```shell
+>    tar -zxvf openGauss-third_party_binarylibs_openEuler_2403_arm.tar.gz
+>    ```
+>
+> 4. 下载cmake源码包，这里举例使用了cmake官方的3.22.1版本：
+>
+>    wget https://github.com/Kitware/CMake/releases/download/v3.22.1/cmake-3.22.1.tar.gz
+>
+> 5. 解压cmake源码包，进入cmake源码目录，使用gcc10.3编译cmake：
+>
+>    ```shell
+>    # 解压
+>    tar - zxvf cmake-3.22.1.tar.gz
+>    cd  cmake-3.22.1
+>
+>    # 配置编译器
+>    export CC=/home/user_name/openGauss-third_party_binarylibs_openEuler_2403_arm/buildtools/gcc10.3/gcc/bin/gcc
+>
+>    export CXX=/home/user_name/openGauss-third_party_binarylibs_openEuler_2403_arm/buildtools/gcc10.3/gcc/bin/g++
+>
+>    export LD_LIBRARY_PATH=/home/user_name/openGauss-third_party_binarylibs_openEuler_2403_arm/buildtools/gcc10.3/isl/lib:$LD_LIBRARY_PATH
+>
+>    export LD_LIBRARY_PATH=/home/user_name/openGauss-third_party_binarylibs_openEuler_2403_arm/buildtools/gcc10.3/mpfr/lib:$LD_LIBRARY_PATH
+>
+>    # 配置
+>    ./bootstrap --prefix=/home/user_name/cmake-3.22.1 --parallel=$(nproc) --no-system-libs
+>
+>    # 编译安装
+>    make -j $(nproc)
+>    make install
+>
+>    # 验证
+>    /home/user_name/cmake-3.22.1/bin/cmake --version
+>    ```
+>
+> 7. 验证后有版本号回显说明编译安装成功完成。在`/home/user_name/cmake-3.22.1`目录下会生成cmake的二进制文件，还需要进行如下配置即可继续后续操作流程。
+>
+>    ```shell
+>    export PATH=/home/user_name/cmake-3.22.1/bin:$PATH
+>    export LD_LIBRARY_PATH=/home/user_name/cmake-3.22.1/lib:$LD_LIBRARY_PATH
+>    export CMAKEROOT=/home/user_name/cmake-3.22.1
+>    ```
 ---
 
 ## 编译流程
