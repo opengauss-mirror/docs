@@ -41,6 +41,8 @@ CREATE DATABASE [IF NOT EXISTS] database_name
   - 使用该语法时，语法等效于CREATE SCHEMA，实际为创建SCHEMA语法, database\_name 为SCHEMA名称 。
   - B兼容性下， dolphin.b_compatibility_mode 为on时，不指定 default_charset 、default_collation ，而指定其他CREATE DATABASE 语法选项，语法仍为CREATE DATABASE语法。
   - B兼容性下， dolphin.b_compatibility_mode 为on时，当不指定任何选项，语法等同为CREATE SCHEMA语法；dolphin.b_compatibility_mode 为off时，语法等同为CREATE DATABASE 语法。
+  - B兼容性下，b_format_behavior_compat_options参数默认配置'default_c
+ollation'，针对OM方式安装的数据库，Encoding=SQL_ASCII，Collate=C，Ctype=C，在配置'default_collation'时，建表指定varchar类型，将实际存储为varbinary类型，因此为兼容MY，建议在创建B库时指定编码为UTF8，即`create database testb with dbcompatibility = 'b' encoding 'UTF8';`。
 
 ## 示例<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s6be7b8abbb4b4aceb9dae686434d672c"></a>
 

@@ -240,7 +240,7 @@ Unix域套接字使用普通的Unix文件系统权限集。这个参数的值应
 
 **取值范围**：布尔型
 
-**默认值**：off
+**默认值**：on
 
 **示例**：
 
@@ -248,7 +248,7 @@ Unix域套接字使用普通的Unix文件系统权限集。这个参数的值应
 openGauss=# show b_compatibility_user_host_auth;
  b_compatibility_user_host_auth
 --------------------------------
- off
+ on
 (1 row)
 ```
 

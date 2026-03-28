@@ -130,7 +130,7 @@
 
 **取值范围**： 字符串
 
-**默认值**： ""
+**默认值**： 'enable_set_variables,set_session_transaction,enable_modify_column,default_collation,fetch,enable_multi_charset,diagnostics'
 
 >[!NOTE]说明
 >
@@ -199,6 +199,8 @@
 该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md)中对应设置方法进行设置。
 
 **取值范围**：布尔型
+
+**默认值**： on
 
 - on表示在MY数据库模式下支持自定义用户变量。
 - off表示在MY数据库模式下不支持自定义用户变量。
