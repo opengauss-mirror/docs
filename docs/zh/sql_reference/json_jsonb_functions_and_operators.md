@@ -1155,7 +1155,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](json_jsonb_types.md)。
 
   注意事项：
 
-  - path必须为符合jsonpth类型语法的文本，且不能为空。
+  - path必须为符合jsonpath类型语法的文本，且不能为空。
   - 匹配包含的过程大小写不敏感。
 
   示例：
