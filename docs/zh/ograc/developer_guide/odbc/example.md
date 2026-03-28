@@ -211,3 +211,138 @@ int main()
     return SQL_SUCCESS;
 }
 ```
+
+## 长文本数据处理示例<a name="zh-cn_topic_0283137582_zh-cn_topic_0237120410_section6611714101314"></a>
+
+```c
+// 此示例演示在执行insert语句中，如何处理长文本数据，分段发送数据到数据库，避免一次性占用大量内存。
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include "sql.h"
+#include "sqlext.h"
+
+int main()
+{
+    SQLHANDLE h_env = NULL;
+    SQLHANDLE h_conn= NULL;
+    SQLHANDLE h_stmt = NULL;
+    SQLRETURN ret;
+
+    //数据源名称、用户名和密码
+    SQLCHAR *dsn = (SQLCHAR *)"ogracDB";
+    SQLCHAR *username = (SQLCHAR *)"test";
+    SQLCHAR *password = (SQLCHAR *)"test123";
+
+    //获取字符串长度
+    SQLSMALLINT dsn_len = (SQLSMALLINT)strlen((const char *)dsn);
+    SQLSMALLINT username_len = (SQLSMALLINT)strlen((const char *)username);
+    SQLSMALLINT password_len = (SQLSMALLINT)strlen((const char *)password);
+
+    //分配环境句柄
+    SQLAllocEnv(&h_env);
+    //设置环境句柄属性
+    SQLSetEnvAttr(h_env, SQL_ATTR_ODBC_VERSION, (void*)SQL_OV_ODBC3, 0);
+    //分配连接句柄
+    SQLAllocConnect(h_env, &h_conn);
+    //设置连接属性
+    SQLSetConnectAttr(h_conn, SQL_ATTR_AUTOCOMMIT, (void*)1, 0);
+    //连接数据源
+    if (SQLConnect(h_conn, dsn, dsn_len, username, username_len, password, password_len) != SQL_SUCCESS)
+    {
+        printf("Failed to connect database.\n");
+        return SQL_ERROR;
+    }
+    //申请语句句柄
+    SQLAllocHandle(SQL_HANDLE_STMT, h_conn, &h_stmt);
+    //设置语句属性
+    SQLSetStmtAttr(h_stmt,SQL_ATTR_QUERY_TIMEOUT,(SQLPOINTER *)3,0);
+    //删除表
+    SQLCHAR *drop_table_sql = (SQLCHAR *)"drop table if exists test";
+    SQLExecDirect(h_stmt, drop_table_sql, strlen(drop_table_sql));
+
+    //创建表
+    SQLCHAR *create_table_sql = (SQLCHAR *)"create table test(c1 varchar(32), c2 clob, c3 clob)";
+    SQLExecDirect(h_stmt, create_table_sql, strlen(create_table_sql));
+    
+    //插入数据
+    SQLCHAR *insert_sql = (SQLCHAR *)"insert into test values(?,?,?)";
+    SQLPrepare(h_stmt, insert_sql, strlen(insert_sql));
+    int col = 12;
+    SQLBindParameter(h_stmt, 1, SQL_PARAM_INPUT, SQL_C_SSHORT, SQL_INTEGER, sizeof(int), 0, &col, 0, NULL);
+
+    //绑定参数为执行时数据
+    SQLLEN cbTextSize = SQL_DATA_AT_EXEC;
+    SQLBindParameter(h_stmt, 2, SQL_PARAM_INPUT, SQL_C_WCHAR, SQL_WLONGVARCHAR, 50, 0, (SQLPOINTER)2, 0, &cbTextSize);
+    SQLBindParameter(h_stmt, 3, SQL_PARAM_INPUT, SQL_C_WCHAR, SQL_WLONGVARCHAR, 50, 0, (SQLPOINTER)3, 0, &cbTextSize);
+    ret = SQLExecute(h_stmt);
+    if (ret == SQL_NEED_DATA) {
+        SQLPOINTER pParamID;
+        while (SQLParamData(h_stmt, &pParamID) == SQL_NEED_DATA)
+        {
+            printf("pParamID = %d.\n", pParamID);
+            if (pParamID == (SQLPOINTER)2)
+            {
+                const char *data = "This is a text";
+                int ret2 = SQLPutData(h_stmt, (SQLPOINTER)data, strlen(data));
+                if (ret2 != SQL_SUCCESS)
+                {
+                    printf("Put param2 Failed.\n");
+                } else {
+                    printf("Put param2 success.\n");
+                }
+            } else if (pParamID == (SQLPOINTER)3)
+            {
+                const char *data = "This is a long text";
+                int ret3= SQLPutData(h_stmt, (SQLPOINTER)data, strlen(data));
+                if (ret3 != SQL_SUCCESS)
+                {
+                    printf("Put param3 Failed.\n");
+                    break;
+                } else {
+                    printf("Put param3 success.\n");
+                }
+            }
+        }
+    }
+
+    //查询数据
+    SQLCHAR *select_sql = (SQLCHAR *)"select c1,c2,c3 from test";
+    SQLPrepare(h_stmt, select_sql, strlen(select_sql));
+    SQLExecute(h_stmt);
+
+    SQLINTEGER c1;
+    SQLWCHAR c2[50];
+    SQLWCHAR c3[50];
+    SQLLEN cbName;
+    do
+    {
+        ret  = SQLFetch(h_stmt);
+        if (ret != SQL_SUCCESS && ret != SQL_NO_DATA)
+        {
+            break;
+        }
+        
+        if (ret == SQL_SUCCESS)
+        {
+            SQLGetData(h_stmt, 1, SQL_C_SLONG, (SQLPOINTER)&c1, 0, NULL);
+            printf("SQLGetData result c1 is %d .\n", c1);
+            
+            SQLGetData(h_stmt, 2, SQL_C_CHAR, c2, sizeof(c2), &cbName);
+            printf("SQLGetData result c2 is %s.\n", c2);
+
+            SQLGetData(h_stmt, 3, SQL_C_CHAR, c3, sizeof(c3), &cbName);
+            printf("SQLGetData result c3 is %s.\n", c3);
+        }
+        
+    } while (ret != SQL_NO_DATA);
+
+    //释放语句句柄
+    SQLFreeHandle(SQL_HANDLE_STMT, h_stmt);
+    //断开数据库连接
+    SQLDisconnect(h_conn);
+    SQLFreeHandle(SQL_HANDLE_DBC, h_conn);
+    SQLFreeHandle(SQL_HANDLE_ENV, h_env);
+    return SQL_SUCCESS;
+}
+```

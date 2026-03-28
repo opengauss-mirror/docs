@@ -87,6 +87,8 @@ sections:
             href: ./odbc/sql_get_data.md
           - label: SQLPrepare
             href: ./odbc/sql_prepare.md
+          - label: SQLParamData
+            href: ./odbc/sql_param_data.md
           - label: SQLPutData
             href: ./odbc/sql_put_data.md
           - label: SQLRowCount
