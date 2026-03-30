@@ -32,7 +32,7 @@ sections:
           - label: 文本搜索类型
             href: ./text_search_type.md    
           - label: UUID类型
-            href: ./uuid_type.md    
+            href: ./uuid.md    
           - label: JSON/JSONB类型
             href: ./json_jsonb_type.md    
           - label: HLL数据类型
@@ -40,7 +40,7 @@ sections:
           - label: 范围类型
             href: ./range_type.md    
           - label: 对象标识符类型
-            href: ./object_identifier_type.md    
+            href: ./oid_types.md    
           - label: 伪类型
             href: ./pseudo_type.md
           - label: 列存表支持的数据类型
@@ -354,7 +354,7 @@ sections:
               - label: STATEMENT_WLMSTAT_COMPLEX_RUNTIME
                 href: ./statement_wlmstat_complex_runtime.md
               - label: STATEMENT_HISTORY
-                href: ./statement_history_25.md
+                href: ./statement_history.md
           - label: Cache/IO
             sections:
               - label: STATIO_USER_TABLES
@@ -522,7 +522,7 @@ sections:
               - label: 查看WDR报告
                 sections:
                   - label: 概览
-                    href: ./view_wdr_report.md
+                    href: ./wdrs.md
                   - label: Database Stat
                     href: ./database_stat.md
                   - label: Load Profile
@@ -1176,7 +1176,7 @@ sections:
           - label: SQL防火墙系统函数
             href: ./sql_firewall_system_functions.md
       - label: 统计信息函数
-        href: ./statistics_function.md
+        href: ./statistics_information_functions.md
       - label: 大对象操作函数
         href: ./large_object_operation_function.md        
       - label: 触发器函数

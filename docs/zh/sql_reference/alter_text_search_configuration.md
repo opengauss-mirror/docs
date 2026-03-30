@@ -92,7 +92,7 @@ ALTER TEXT SEARCH CONFIGURATION name RESET ( {configuration_option} [, ...] );
 
 - **token\_type**
 
-    与配置的语法解析器关联的字串类型的名称。详细信息参见[解析器](resolver.md)。
+    与配置的语法解析器关联的字串类型的名称。详细信息参见[解析器](parser.md)。
 
 - **dictionary\_name**
 

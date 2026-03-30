@@ -345,7 +345,7 @@ DROP RESOURCE POOL
     (7 rows)
     ```
 
-- 查看某个资源池关联的控制组信息，具体内容可以参考[•gs\_control\_group\_info\(p...](../sql_reference/statistics_function.md#zh-cn_topic_0283136951_zh-cn_topic_0237121998_table1560939125613)。
+- 查看某个资源池关联的控制组信息，具体内容可以参考[•gs\_control\_group\_info\(p...](../sql_reference/statistics_information_functions.md#zh-cn_topic_0283136951_zh-cn_topic_0237121998_table1560939125613)。
 
     如下命令中“resource\_pool\_a1”为资源池名称。
 

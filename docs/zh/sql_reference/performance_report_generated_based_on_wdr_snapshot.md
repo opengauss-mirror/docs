@@ -125,7 +125,7 @@ WDR Snapshot启动（即参数[enable\_wdr\_snapshot](../database_reference/syst
       \o \a \t 
       ```
 
-6. 在/home/om/下根据需要[查看WDR报告](view_wdr_report.md)。
+6. 在/home/om/下根据需要[查看WDR报告](wdrs.md)。
 
 ## 示例<a name="zh-cn_topic_0283137259_section65481355161913"></a>
 

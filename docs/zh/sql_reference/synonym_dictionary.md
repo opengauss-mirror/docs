@@ -53,7 +53,7 @@ Synonym词典用于定义、识别token的同义词并转化，不支持词组�
 
     其中，同义词词典文件全名为my\_synonyms.syn，所在目录为当前连接数据库主节点的/home/dicts/下。关于创建词典的语法和更多参数，请参见[ALTER TEXT SEARCH DICTIONARY](alter_text_search_dictionary.md)。
 
-- 星号（\*）可用于词典文件中的同义词结尾，表示该同义词是一个前缀。在to\_tsvector\(\)中该星号将被忽略，但在to\_tsquery\(\)中会匹配该前缀并对应输出结果（参照[处理查询](process_query.md)一节）。
+- 星号（\*）可用于词典文件中的同义词结尾，表示该同义词是一个前缀。在to\_tsvector\(\)中该星号将被忽略，但在to\_tsquery\(\)中会匹配该前缀并对应输出结果（参照[处理查询](manipulating_queries.md)一节）。
 
     假设词典文件synonym\_sample.syn内容如下：
 

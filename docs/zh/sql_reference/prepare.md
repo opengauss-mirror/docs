@@ -20,7 +20,7 @@ PREPARE name [ ( data_type [, ...] ) ] AS statement;
 
 - **name**
 
-    指定预备语句的名称。它必须在该会话中是唯一的。命名需符合[标识符命名规范](keywords_1.md)。
+    指定预备语句的名称。它必须在该会话中是唯一的。命名需符合[标识符命名规范](keywords.md)。
 
 - **data\_type**
 

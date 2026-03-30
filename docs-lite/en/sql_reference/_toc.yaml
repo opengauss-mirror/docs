@@ -334,7 +334,7 @@ sections:
               - label: STATEMENT_WLMSTAT_COMPLEX_RUNTIME
                 href: ./statement_wlmstat_complex_runtime.md
               - label: STATEMENT_HISTORY
-                href: ./statement_history-27.md
+                href: ./statement_history.md
               - label: GS_SLOW_QUERY_INFO (Discarded)
                 href: ./gs_slow_query_info-discarded.md
               - label: GS_SLOW_QUERY_HISTORY (Discarded)

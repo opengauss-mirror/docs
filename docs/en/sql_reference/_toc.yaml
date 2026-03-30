@@ -6,7 +6,7 @@ sections:
   - label: SQL Fundamentals
     sections:
       - label: Basic Concepts
-        href: ./brief_tutorial/basic-concepts.md
+        href: ./brief_tutorial/basic_concepts.md
       - label: Syntax
         href: ./brief_tutorial/syntax.md  
       - label: SQL Syntax Formats
@@ -84,29 +84,29 @@ sections:
           - label: Views
             href: ./brief_tutorial/views.md
           - label: INSERT INTO Clause
-            href: ./brief_tutorial/insert-into-statement.md
+            href: ./brief_tutorial/insert_into_statement.md
           - label: UPDATE Statement
-            href: ./brief_tutorial/update-statement.md
+            href: ./brief_tutorial/update_statement.md
           - label: DELETE Statement
-            href: ./brief_tutorial/delete-statement.md
+            href: ./brief_tutorial/delete_statement.md
           - label: SELECT Statement
-            href: ./brief_tutorial/select-statement.md
+            href: ./brief_tutorial/select_statement.md
           - label: JOIN
             href: ./brief_tutorial/join.md
           - label: UNION Clause
-            href: ./brief_tutorial/union-clause.md
+            href: ./brief_tutorial/union_clause.md
           - label: Subqueries
             href: ./brief_tutorial/subqueries.md
           - label: WHERE Clause
-            href: ./brief_tutorial/where-clause.md
+            href: ./brief_tutorial/where_clause.md
           - label: ORDER BY Clause
-            href: ./brief_tutorial/order-by-clause.md
+            href: ./brief_tutorial/order_by_clause.md
           - label: DISTINCT
             href: ./brief_tutorial/distinct.md
           - label: GROUP BY Clause
-            href: ./brief_tutorial/group-by-clause.md
+            href: ./brief_tutorial/group_by_clause.md
           - label: HAVING Clause
-            href: ./brief_tutorial/having-clause.md
+            href: ./brief_tutorial/having_clause.md
           - label: 'NULL'
             href: ./brief_tutorial/null.md
           - label: Permissions
@@ -380,9 +380,9 @@ sections:
               - label: STATEMENT_COMPLEX_HISTORY
                 href: ./statement_complex_history.md
               - label: STATEMENT_HISTORY
-                href: ./statement_wlmstat_complex_runtime.md
+                href: ./statement_history.md
               - label: STATEMENT_WLMSTAT_COMPLEX_RUNTIME
-                href: ./statement_history_25.md
+                href: ./statement_wlmstat_complex_runtime.md
               - label: GS_SLOW_QUERY_INFO (Discarded)
                 href: ./gs_slow_query_info_discarded.md
               - label: GS_SLOW_QUERY_HISTORY (Discarded)
@@ -1218,7 +1218,7 @@ sections:
       - label: Data Damage Detection And Repair Functions
         href: ./data_damage_detection_and_repair_functions.md
       - label: XML Types
-        href: ./xml_types.md
+        href: ./xml_type_function.md
       - label: Obsolete Functions
         href: ./obsolete_functions.md
   - label: Transactions and Locks
@@ -1240,7 +1240,7 @@ sections:
   - label: Programmability
     sections:
       - label: Anonymous Blocks
-        href: ./brief_tutorial/anonymous_blocks_1.md
+        href: ./brief_tutorial/anonymous_blocks.md
       - label: PL/pgSQL Functions
         href: ./pl_pgsql_functions.md
       - label: Triggers
@@ -1268,7 +1268,7 @@ sections:
           - label: Basic Structure
             href: ./basic_structure.md
           - label: Anonymous Blocks
-            href: ./anonymous_blocks.md
+            href: ./anonymous_block_stored_procedure.md
           - label: Subprogram
             href: ./subprogram.md
       - label: Basic Statements
@@ -1365,7 +1365,7 @@ sections:
             href: ./full_text_retrieval.md
           - label: What Is a Document?
             href: ./what_is_a_document.md
-          - label: Basic Text Matching]
+          - label: Basic Text Matching
             href: ./basic_text_matching.md
           - label: Configuration
             href: ./configurations.md  
@@ -1402,7 +1402,7 @@ sections:
       - label: Dictionaries
         sections:
           - label: Overview
-            href: ./overview_0.md
+            href: ./dictionary_overview.md
           - label: Stop Words
             href: ./stop_words.md
           - label: Simple Dictionary
