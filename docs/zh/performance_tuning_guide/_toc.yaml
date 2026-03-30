@@ -58,7 +58,7 @@ sections:
               - label: 资源管理准备
                 href: ./resource_management_preparation.md
           - label: 配置算子内存借用
-            href: ./配置算子内存借用.md
+            href: ./configuring_operator_memory_borrowing.md
           - label: 配置DPA哈希聚合加速
             href: ./dpa_hash_aggregation_acceleration.md                       
           - label: 资源池化调优
@@ -182,4 +182,4 @@ sections:
           - label: 案例：子事务TPCC性能调优
             href: ./case_sub_transaction_tpcc_performance_tuning.md
       - label: 基于内存池共享内存降低RTO时间
-        href: ./基于内存池共享内存降低RTO时间.md
+        href: ./shared_memory_based_on_memory_pools_reduces_the_rto_time.md

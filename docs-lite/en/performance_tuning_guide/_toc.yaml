@@ -64,7 +64,6 @@ sections:
       - label: Reviewing and Modifying a Table Definition
         href: ./reviewing_and_modifying_a_table_definition.md
       - label: Typical SQL Optimization Methods
-        href: ./typical_sql_optimization_methods.md
         sections: 
           - label: Overview
             href: ./typical_sql_optimization_methods.md
