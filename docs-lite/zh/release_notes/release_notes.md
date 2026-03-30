@@ -247,7 +247,7 @@ ORC文件访问、Kerberos安全校验、JAVA UDF、Codegen、MOT内存表特性
 
 ## 版本使用注意事项
 
-- 版本技术规格可以参照《关于openGauss》中的[技术指标](../about_opengauss/technical_specifications.md)。
+- 版本技术规格可以参照《关于openGauss》中的[技术指标](../about_opengauss/technical_indicators.md)。
 - openGauss目前最多支持8备。轻量版没有CM管理，在使用一主多备时，如果主机故障，需要选择一个日志多的备机升主，避免其他备机发生重建。
 - 轻量版推荐使用一主两备部署模式，保证数据库的可靠性和可用性。
 - 轻量版不支持两地三中心部署。
@@ -289,4 +289,4 @@ openGauss的版本号遵循 X.Y.0-RCx 的格式，旨在区分不同类型的版
 
 我们衷心地感谢参与和协助 openGauss 7.0.0-RC3版本发布的项目的所有开发者和伙伴，包括华为、北京海量数据技术股份有限公司、天津神舟通用数据技术有限公司、天津南大通用数据技术股份有限公司、粤港澳大湾区（广东）国创中心、中移信息技术有限公司、邮储银行、广东跃昉科技有限公司、云和恩墨（北京）信息技术有限公司、中科院软件所、西北工业大学、民生银行、国能信息、海康威视、浙江大华等组织单位。是你们的辛勤付出使得版本顺利发布，也为openGauss更好地发展提供可能。
 
-![openGauss开发者云图](../../../docs/zh/release_notes/opengauss_logo.png)
+![openGauss开发者云图](./opengauss_logo.png)
