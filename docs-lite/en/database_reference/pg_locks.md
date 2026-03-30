@@ -187,5 +187,20 @@
 <td class="cellrowborder" valign="top" width="46.839999999999996%" headers="mcps1.2.5.1.4 "><p id="p539645612339"><a name="p539645612339"></a><a name="p539645612339"></a>Global session ID</p>
 </td>
 </tr>
+<tr id="en-us_topic_0283137059_en-us_topic_0237122421_en-us_topic_0059779012_rdb4300e7e4674ffa8f280b7b6efc1feb"><td class="cellrowborder" valign="top" width="16.84%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283137059_en-us_topic_0237122421_en-us_topic_0059779012_a4ef2f35139d94532a3e80a50fc947b53"><a name="en-us_topic_0283137059_en-us_topic_0237122421_en-us_topic_0059779012_a4ef2f35139d94532a3e80a50fc947b53"></a><a name="en-us_topic_0283137059_en-us_topic_0237122421_en-us_topic_0059779012_a4ef2f35139d94532a3e80a50fc947b53"></a>waitstart</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.26%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0283137059_en-us_topic_0237122421_en-us_topic_0059779012_a91659bfffe004afe8058a428ff4a45a6"><a name="en-us_topic_0283137059_en-us_topic_0237122421_en-us_topic_0059779012_a91659bfffe004afe8058a428ff4a45a6"></a><a name="en-us_topic_0283137059_en-us_topic_0237122421_en-us_topic_0059779012_a91659bfffe004afe8058a428ff4a45a6"></a><span id="en-us_topic_0283137059_en-us_topic_0237122421_text1412310486295"><a name="en-us_topic_0283137059_en-us_topic_0237122421_text1412310486295"></a><a name="en-us_topic_0283137059_en-us_topic_0237122421_text1412310486295"></a>TimestampTz</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283137059_en-us_topic_0237122421_en-us_topic_0059779012_af16168334c134eb49e3c7e8432c5fc8d"><a name="en-us_topic_0283137059_en-us_topic_0237122421_en-us_topic_0059779012_af16168334c134eb49e3c7e8432c5fc8d"></a><a name="en-us_topic_0283137059_en-us_topic_0237122421_en-us_topic_0059779012_af16168334c134eb49e3c7e8432c5fc8d"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="46.839999999999996%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137059_en-us_topic_0237122421_en-us_topic_0059779012_a15cc395f520d49348ba668381f91345d">The value 
+is the time when the server process started 
+waiting for this lock or NULL if the lock is held 
+<br>NOTE: the waitstart is NULL for a very short period of time after
+the wait started even though granted is 
+<strong id="b122411359171416"><a name="b122411359171416"></a><a name="b122411359171416"></a>FALSE</strong>
+</p>
+</td>
+</tr>
 </tbody>
 </table>
