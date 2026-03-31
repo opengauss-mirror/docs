@@ -6,7 +6,7 @@
 
 - 打开dolphin.b_compatibility_mode时，'t'、'true'、'y'、'yes'、'TRUE'均不是“真”值的有效文本值。
 
-关于原始的openGauss的布尔类型，更多信息请见[openGauss布尔类型](../sql_reference/boolean_type.md)。
+关于原始的openGauss的布尔类型，更多信息请见[openGauss布尔类型](../sql_reference/boolean_types.md)。
 
 ## 示例<a name="zh-cn_topic_0283137359_zh-cn_topic_0237121929_zh-cn_topic_0059777457_s2cf0ef56c49a4e58b4a2e5507196b56f"></a>
 

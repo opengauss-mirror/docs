@@ -36,7 +36,7 @@ sections:
           - label: 位串类型
             href: ./bit_string_types.md
           - label: 文本搜索类型
-            href: ./text_search_type.md
+            href: ./text_search_types.md
           - label: UUID类型
             href: ./uuid.md
           - label: JSON/JSONB类型

@@ -1,6 +1,6 @@
 # JSON/JSONB Functions and Operators<a name="EN-US_TOPIC_0289900983"></a>
 
-For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-types.md).
+For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_types.md).
 
 **Table  1**  JSON/JSONB common operators
 

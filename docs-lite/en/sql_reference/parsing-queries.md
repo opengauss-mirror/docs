@@ -6,7 +6,7 @@ openGauss provides functions  **to\_tsquery**  and  **plainto\_tsquery**  for co
 to_tsquery([ config regconfig, ] querytext text) returns tsquery
 ```
 
-**to\_tsquery**  creates a  **tsquery**  value from  **querytext**, which must consist of single tokens separated by the Boolean operators  **&**  \(AND\),  **|**  \(OR\), and  **!**  \(NOT\). These operators can be grouped using parentheses. In other words, the input to  **to\_tsquery**  must follow the general rules for  **tsquery**  input, as described in  [Text Search Types](text-search-types.md). The difference is that while basic  **tsquery**  input takes the tokens at face value,  **to\_tsquery**  normalizes each token to a lexeme using the specified or default configuration, and discards any tokens that are stop words according to the configuration. Example:
+**to\_tsquery**  creates a  **tsquery**  value from  **querytext**, which must consist of single tokens separated by the Boolean operators  **&**  \(AND\),  **|**  \(OR\), and  **!**  \(NOT\). These operators can be grouped using parentheses. In other words, the input to  **to\_tsquery**  must follow the general rules for  **tsquery**  input, as described in  [Text Search Types](text_search_types.md). The difference is that while basic  **tsquery**  input takes the tokens at face value,  **to\_tsquery**  normalizes each token to a lexeme using the specified or default configuration, and discards any tokens that are stop words according to the configuration. Example:
 
 ```
 openGauss=# SELECT to_tsquery('english', 'The & Fat & Rats');

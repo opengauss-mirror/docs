@@ -28,4 +28,4 @@
 
 词典能够对token如何标准化做到细粒度控制。使用合适的词典，可以定义不被索引的停用词。
 
-数据类型tsvector用于存储预处理文档，tsquery用于存储查询条件，详细请参见[文本搜索类型](text_search_type.md)。为这些数据类型提供的函数和操作符请参见[文本检索函数和操作符](text_retrieval_function_and_operator.md)。其中最重要的是匹配运算符@@，将在[基本文本匹配](basic_text_matching.md)中介绍。
+数据类型tsvector用于存储预处理文档，tsquery用于存储查询条件，详细请参见[文本搜索类型](text_search_types.md)。为这些数据类型提供的函数和操作符请参见[文本检索函数和操作符](text_retrieval_function_and_operator.md)。其中最重要的是匹配运算符@@，将在[基本文本匹配](basic_text_matching.md)中介绍。

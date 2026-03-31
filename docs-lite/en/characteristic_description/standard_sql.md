@@ -16,7 +16,7 @@ All database vendors can use a unified SQL interface, reducing the costs of lear
 
 ## Description<a name="section16673190"></a>
 
-For details, see [SQL Syntax](../sql_reference/sql-syntax-formats.md).
+For details, see [SQL Syntax](../sql_reference/sql_syntax_formats.md).
 
 ## Enhancements<a name="section15840983"></a>
 

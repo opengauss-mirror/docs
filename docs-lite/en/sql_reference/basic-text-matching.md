@@ -18,7 +18,7 @@ openGauss=# SELECT 'fat & cow'::tsquery @@ 'a fat cat sat on a mat and ate a fat
 (1 row) 
 ```
 
-As the above example suggests, a  **tsquery**  is not raw text, any more than a  **tsvector**  is. A tsquery contains search terms, which must be already-normalized lexemes, and may combine multiple terms using  **AND**,  **OR**, and  **NOT**  operators. For details, see  [Text Search Types](text-search-types.md). There are functions  **to\_tsquery**  and  **plainto\_tsquery**  that are helpful in converting user-written text into a proper tsquery, for example by normalizing words appearing in the text. Similarly,  **to\_tsvector**  is used to parse and normalize a document string. So in practice a text search match would look more like this:
+As the above example suggests, a  **tsquery**  is not raw text, any more than a  **tsvector**  is. A tsquery contains search terms, which must be already-normalized lexemes, and may combine multiple terms using  **AND**,  **OR**, and  **NOT**  operators. For details, see  [Text Search Types](text_search_types.md). There are functions  **to\_tsquery**  and  **plainto\_tsquery**  that are helpful in converting user-written text into a proper tsquery, for example by normalizing words appearing in the text. Similarly,  **to\_tsvector**  is used to parse and normalize a document string. So in practice a text search match would look more like this:
 
 ```
 openGauss=# SELECT to_tsvector('fat cats ate fat rats') @@ to_tsquery('fat & rat') AS RESULT;
