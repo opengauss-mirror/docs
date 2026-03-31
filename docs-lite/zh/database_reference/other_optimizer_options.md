@@ -328,7 +328,7 @@ set sql_beta_feature=none;
 - canonical\_pathkey：正则化pathkey生成置后。（pathkey：标记数据有序性键值的集合） 该参数打开之后，可能会导致带 order by 等语句，在有外连接的情况下，输出数据语义和标准不一样。
 - index\_cost\_with\_leaf\_pages\_only：估算索引代价时考虑索引叶子结点。
 - partition\_opfusion：开启分区表优化。
-- a\_style\_coerce：开启Decode类型转换规则兼容O，详见[对于case，在ORA兼容模式下的处理](../sql_reference/union_case_and_relevant_structure.md#section20337194392613)。
+- a\_style\_coerce：开启Decode类型转换规则兼容O，详见[对于case，在ORA兼容模式下的处理](../sql_reference/union_case_and_related_constructs.md#section20337194392613)。
 - plpgsql_stream_fetchall：在存储过程中for loop或cursor上执行的sql走stream场景下，开启获取所有tuple结果。
 - partition\_fdw\_on：支持基于分区表创建postgres foreign table下的相关SQL。
 - predpush_same_level：开启predpush hint控制同层参数化路径的功能。

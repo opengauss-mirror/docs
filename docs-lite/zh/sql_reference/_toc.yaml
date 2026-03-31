@@ -62,7 +62,7 @@ sections:
       - label: 类型转换
         sections: 
           - label: 概述
-            href: ./overview_type_conversion_17.md
+            href: ./overview_type_conversion.md
           - label: 操作符
             href: ./operator.md
           - label: 函数
@@ -70,7 +70,7 @@ sections:
           - label: 值存储
             href: ./value_storage.md
           - label: UNION，CASE和相关构造
-            href: ./union_case_and_relevant_structure.md
+            href: ./union_case_and_related_constructs.md
       - label: 字符集与字符序
         href: ./character_set_and_collation.md
   - label: Schema

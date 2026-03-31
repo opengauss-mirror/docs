@@ -81,7 +81,7 @@ The following table describes the schemas of .
 </tbody>
 </table>
 
-- **[Information Schema](information-schema.md)**  
+- **[Information Schema](information_schema.md)**  
 
 - **[DBE\_PERF Schema](dbe_perf-schema.md)**  
 

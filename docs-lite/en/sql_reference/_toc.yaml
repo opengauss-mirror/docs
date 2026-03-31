@@ -56,15 +56,15 @@ sections:
       - label: Type Conversion
         sections:
           - label: Overview
-            href: ./overview-18.md
+            href: ./overview_type_conversion.md
           - label: Operators
             href: ./operators.md
           - label: Functions
             href: ./functions.md
           - label: Value Storage
-            href: ./value-storage.md
+            href: ./value_storage.md
           - label: UNION, CASE, and Related Constructs
-            href: ./union-case-and-related-constructs.md
+            href: ./union_case_and_related_constructs.md
       - label: Brief Tutorial
         sections:        
           - label: Subqueries
@@ -84,7 +84,7 @@ sections:
       - label: Information Schema
         sections:
           - label: Introduction
-            href: ./information-schema.md
+            href: ./information_schema.md
           - label: _PG_FOREIGN_DATA_WRAPPERS
             href: ./_pg_foreign_data_wrappers.md
           - label: _PG_FOREIGN_SERVERS
