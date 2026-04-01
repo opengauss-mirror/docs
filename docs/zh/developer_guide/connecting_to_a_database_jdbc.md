@@ -675,7 +675,7 @@ JDBC提供了三个方法，用于创建数据库连接。
   <ul>
     <li>String类型。</li>
     <li>指定所连接ATF组件的地址。
-      <p>参数格式：atfAddres=ATFhost1:ATFport1,ATFhost2:ATFport2……(多个地址依次列出）。</p>
+      <p>参数格式：atfAddress=ATFhost1:ATFport1,ATFhost2:ATFport2……(多个地址依次列出）。</p>
       <p>默认值：null。</p>
     </li>
   </ul>
@@ -686,7 +686,7 @@ JDBC提供了三个方法，用于创建数据库连接。
   <ul>
     <li>String类型。</li>
     <li>指定连接ATF时所用ssl证书的地址。sslcert本地地址的排列与对应的ATF组件的地址顺序应一致。
-      <p>参数格式：……&Localpath1,localpath2……(多个地址依次列出）&……。</p>
+      <p>参数格式：atfSslcert=Localpath1,localpath2……(多个地址依次列出）。</p>
       <p>默认值：null。</p>
     </li>
   </ul>
