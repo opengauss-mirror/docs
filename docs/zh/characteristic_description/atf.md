@@ -2,7 +2,7 @@
 
 ## 可获得性
 
-本特性自openGauss 7.0.0-RC3 版本开始引入。
+本特性自openGauss 8.0.0 版本开始引入。
 
 ## 特性简介
 
@@ -79,8 +79,8 @@ sudo sh install.sh -u username -g groupname
 ### 2. 数据库实例开启ATF
 
 在`postgresql.conf`设置GUC参数：
-`atf_task_counter_timeout_sec = [大于集群RTO的秒数]`
-参数为0表示未开启。
+`atf_task_counter_timeout_sec = 5`
+参数为0表示未开启。具体可参考[openGauss事务](../database_reference/opengauss_transaction.md)
 
 ### 3. JDBC连接开启ATF
 
