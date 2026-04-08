@@ -62,7 +62,9 @@ sections:
       - label: SQL防火墙能力
         href: ./sql_firewall_capability.md
       - label: 主库备库坏块修复功能
-        href: ./primary_and_standby_database_bad_block_repair_function.md                        
+        href: ./primary_and_standby_database_bad_block_repair_function.md
+      - label: 应用无损透明转移
+        href: './atf.md'
   - label: 维护性
     sections:
       - label: 灰度升级

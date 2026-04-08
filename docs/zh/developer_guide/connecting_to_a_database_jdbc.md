@@ -647,6 +647,105 @@ JDBC提供了三个方法，用于创建数据库连接。
     </li>
   </ul>
 </li>
+
+<li>
+  <strong>enableATF</strong>：
+  <ul>
+    <li>Boolean类型。</li>
+    <li>设置是否开启ATF功能中的事务恢复功能。设置为true后，若发生主备切换，则JDBC驱动会轮询数据库集群节点并连接，在连接后完成事务重建功能；设置为false后，ATF功能关闭。
+      <p>取值范围：true、false。</p>
+      <p>默认值：false。</p>
+    </li>
+  </ul>
+</li>
+
+<li>
+  <strong>atfLevel</strong>：
+  <ul>
+    <li>Char类型。</li>
+    <li>指定连接ATF组件并开始事务恢复功能。设置为C时，不连接ATF；设置为U时，表示开启计划外ATF功能，在建立与数据库的连接时会同步建立与ATF组件的连接，在发生故障后会与ATF通信、获取可用节点并完成故障转移。目前仅支持计划外ATF功能，需要同时设置enableATF=true和atfLevel=U；若设置为U，则最少需要指定atfAddress和atfSslcert两个参数。
+      <p>取值范围：C、U。</p>
+      <p>默认值：C。</p>
+    </li>
+  </ul>
+</li>
+
+<li>
+  <strong>atfAddress</strong>：
+  <ul>
+    <li>String类型。</li>
+    <li>指定所连接ATF组件的地址。
+      <p>参数格式：atfAddress=ATFhost1:ATFport1,ATFhost2:ATFport2……(多个地址依次列出）。</p>
+      <p>默认值：null。</p>
+    </li>
+  </ul>
+</li>
+
+<li>
+  <strong>atfSslcert</strong>：
+  <ul>
+    <li>String类型。</li>
+    <li>指定连接ATF时所用ssl证书的地址。sslcert本地地址的排列与对应的ATF组件的地址顺序应一致。
+      <p>参数格式：atfSslcert=Localpath1,localpath2……(多个地址依次列出）。</p>
+      <p>默认值：null。</p>
+    </li>
+  </ul>
+</li>
+
+<li>
+  <strong>atfReconnects</strong>：
+  <ul>
+    <li>Integer类型。</li>
+    <li>指定使用ATF功能时，JDBC驱动最多重新连接数据库节点的次数。
+      <p>取值范围：0 ~ 2147483647。</p>
+      <p>默认值：3。</p>
+    </li>
+  </ul>
+</li>
+
+<li>
+  <strong>atfTimeout</strong>：
+  <ul>
+    <li>Integer类型。</li>
+    <li>指定使用ATF功能时，重连数据库节点的超时时长，单位为ms。
+      <p>取值范围：0 ~ 2147483647。</p>
+      <p>默认值：1000。</p>
+    </li>
+  </ul>
+</li>
+
+<li>
+  <strong>atfStatementCacheQueries</strong>：
+  <ul>
+    <li>Integer类型。</li>
+    <li>表示ATF每个会话中最大缓存的SQL请求数量。如果设置为负数，取值无效，按默认值处理。
+      <p>取值范围：0 ~ 2147483647。</p>
+      <p>默认值：256。</p>
+    </li>
+  </ul>
+</li>
+
+<li>
+  <strong>atfStatementCacheSizeMiB</strong>：
+  <ul>
+    <li>Integer类型。</li>
+    <li>表示ATF每个会话中最大缓存的SQL语句占用缓存大小，单位为MB，根据SQL请求预估，非精确值。如果Java程序实际使用内存接近或者超过进程可用内存上限，可能导致运行速度严重降低甚至运行异常，因此应用在设置参数值时不应超过实际承载能力；如果设置为负数，取值无效，按默认值处理。
+      <p>取值范围：0 ~ 2147483647。</p>
+      <p>默认值：5。</p>
+    </li>
+  </ul>
+</li>
+
+<li>
+  <strong>atfEnableResultCheck</strong>：
+  <ul>
+    <li>Boolean类型。</li>
+    <li>表示是否在ATF故障转移重放缓存SQL的过程中启用结果校验，该参数不影响性能。设置为true后，将严格校验故障发生前后SQL执行结果的一致性，如果不一致则抛出异常；设置为false后，检测故障发生前后SQL结果不一致时仅给出日志提醒，不抛出异常。
+      <p>取值范围：true、false。</p>
+      <p>默认值：false。</p>
+    </li>
+  </ul>
+</li>
 </ul>
 
 </td>
