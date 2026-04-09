@@ -125,7 +125,7 @@ CREATE FOREIGN TABLE [ IF NOT EXISTS ] table_name ( [
                 这是一个布尔选项。如果为真，则声明字段的值不应该匹配空字符串（也就是文件级别null选项）。与COPY的 FORCE\_NOT\_NULL选项里的字段相同。
 
         >[!NOTE]说明
-        >file\_fdw更多使用请参见[file\_fdw](../database_administration_guide/file_fdw.md)。
+        >file\_fdw更多使用请参见[file\_fdw](../../../docs/zh/database_administration_guide/file_fdw.md)。
 
 ## 相关链接<a name="zh-cn_topic_0283137606_section10964241319"></a>
 

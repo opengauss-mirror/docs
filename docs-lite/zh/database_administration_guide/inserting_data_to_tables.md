@@ -148,7 +148,7 @@ openGauss=# <strong id="zh-cn_topic_0283137618_zh-cn_topic_0237120300_zh-cn_topi
 
 ## 操作步骤<a name="zh-cn_topic_0283137618_zh-cn_topic_0237120300_zh-cn_topic_0059779039_s0ea62284d1624d93b11cd795f6cd0c91"></a>
 
-向表中插入数据前，意味着表已创建成功。创建表的步骤请参考[创建和管理表](creating_and_managing_tables.md)。
+向表中插入数据前，意味着表已创建成功。创建表的步骤请参考[创建和管理表](creating_tables.md)。
 
 - 向表customer\_t1中插入一行：
 

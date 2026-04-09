@@ -2,8 +2,8 @@
 
 本文档进行简单的产品介绍和安装指导，支撑用户快速使用数据库，若了解详细特性以及参考类信息需查看具体单本文档。
 
-例如， [安装指南](../installation_guide/installation.md)提供有关安装要求和过程的信息，而 [数据库管理指南](../database_administration_guide/database_administration_guide.md)提供有关管理的信息。
+例如， [安装指南](../installation_guide/installation_overview.md)提供有关安装要求和过程的信息，而 [数据库管理指南](../database_administration_guide/database_administration_guide.md)提供有关管理的信息。
 
- [应用开发指南](../developer_guide/application_development.md)部分介绍了openGauss的许多重要功能。
+ [应用开发指南](../developer_guide/query_request_handling_process.md)部分介绍了openGauss的许多重要功能。
 
 例如， [MOT内存表](../database_administration_guide/mot_introduction.md)部分详细介绍了内存优化表，这是一种与标准存储引擎并排嵌入的高性能存储引擎。其中包括MOT简介（包括性能基准），使用MOT部分为完整的手册指南，MOT概念部分作为总结，以便大家对MOT设计和技术有更深入的了解。
