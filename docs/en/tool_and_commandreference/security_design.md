@@ -6,7 +6,7 @@
 
   For details about how to create a self-signed certificate, see "Database Security Management \> Client Access Authentication \> Managing SSL Certificates \> Generating Certificates in *Developer Guide*.
 
-  To protect the private key password, use the **cm encrypt** tool. For details, see [cm_ctl](#EN-US_TOPIC_0000001201327140).
+  To protect the private key password, use the **cm encrypt** tool. For details, see [cm_ctl](cm_ctl.md).
 
   ```
   cm_ctl encrypt [-M MODE] -D DATADIR
