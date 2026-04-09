@@ -5,7 +5,7 @@
 >[!NOTE]说明  
 >尽量不要在存储过程中调用包含密码的SQL语句，因为存储在数据库中的存储过程文本可能被其他有权限的用户看到导致密码信息被泄漏。如果存储过程中包含其他敏感信息也需要配置存储过程的访问权限，保证敏感信息不会泄漏。  
 
-- **[定义变量](define_variables.md)**  
+- **[定义变量](variable_definition_statements.md)**  
 
 - **[赋值语句](assignment_statements.md)**  
 

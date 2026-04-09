@@ -14,4 +14,4 @@ WDR Snapshot在启动后（打开参数[enable\_wdr\_snapshot](../database_refer
 
 - **[WDR Snapshot生成性能报告](performance_report_generated_based_on_wdr_snapshot.md)**  
 
-- **[查看WDR报告](view_wdr_report.md)**  
+- **[查看WDR报告](wdrs.md)**  

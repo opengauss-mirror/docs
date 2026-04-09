@@ -66,7 +66,7 @@ CREATE [ OR REPLACE ] PROCEDURE procedure_name
 
 - **argtype**
 
-    参数的数据类型。可以使用%TYPE或%ROWTYPE间接引用变量或表的类型，详细可参考存储过程章节[定义变量](define_variables.md)。
+    参数的数据类型。可以使用%TYPE或%ROWTYPE间接引用变量或表的类型，详细可参考存储过程章节[定义变量](variable_definition_statements.md)。
 
     取值范围：可用的数据类型。
 

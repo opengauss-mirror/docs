@@ -42,4 +42,4 @@ openGauss=# UPDATE tsearch.tt SET ti =
 openGauss=# DROP TABLE tsearch.tt;
 ```
 
-上例使用setweight标记已完成的tsvector中的每个词的来源，并且使用tsvector连接操作符||合并标记过的tsvector值，[处理tsvector](processing_tsvector.md)一节详细介绍了这些操作。
+上例使用setweight标记已完成的tsvector中的每个词的来源，并且使用tsvector连接操作符||合并标记过的tsvector值，[处理tsvector](manipulating_tsvector.md)一节详细介绍了这些操作。

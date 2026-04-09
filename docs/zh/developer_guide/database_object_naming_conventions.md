@@ -11,7 +11,7 @@
 - 【建议】避免使用保留或者非保留关键字命名数据库对象。
 
     >[!NOTE]说明
-    >可以使用select \* from pg\_get\_keywords\(\)查询openGauss的关键字，或者在[关键字](../sql_reference/keywords_1.md)章节中查看。
+    >可以使用select \* from pg\_get\_keywords\(\)查询openGauss的关键字，或者在[关键字](../sql_reference/keywords.md)章节中查看。
 
 - 【建议】避免使用双引号括起来的字符串来定义数据库对象名称，除非需要限制数据库对象名称的大小写。数据库对象名称大小写敏感会使定位问题难度增加。
 - 【建议】数据库对象命名风格务必保持统一。

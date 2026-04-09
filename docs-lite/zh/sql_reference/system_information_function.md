@@ -968,7 +968,7 @@ DDL类权限ALTER、DROP、COMMENT、INDEX、VACUUM属于所有者固有的权�
 
     返回类型：Boolean
 
-    备注：has\_function\_privilege检查一个用户是否能以指定方式访问一个函数。其参数类似has\_table\_privilege。使用文本字符而不是OID声明一个函数时，允许输入的类型和regprocedure数据类型一样（请参考[对象标识符类型](object_identifier_type.md)）。访问权限类型必须是EXECUTE、ALTER、DROP或COMMENT。
+    备注：has\_function\_privilege检查一个用户是否能以指定方式访问一个函数。其参数类似has\_table\_privilege。使用文本字符而不是OID声明一个函数时，允许输入的类型和regprocedure数据类型一样（请参考[对象标识符类型](oid_types.md)）。访问权限类型必须是EXECUTE、ALTER、DROP或COMMENT。
 
 - has\_language\_privilege\(user, language, privilege\)
 
@@ -1617,7 +1617,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     返回类型：regtype
 
-    备注：pg\_typeof返回传递给他的值的数据类型OID。这可能有助于故障排除或动态构造SQL查询。声明此函数返回regtype，这是一个OID别名类型（请参考[对象标识符类型](object_identifier_type.md)）；这意味着它是一个为了比较而显示类型名称的OID。
+    备注：pg\_typeof返回传递给他的值的数据类型OID。这可能有助于故障排除或动态构造SQL查询。声明此函数返回regtype，这是一个OID别名类型（请参考[对象标识符类型](oid_types.md)）；这意味着它是一个为了比较而显示类型名称的OID。
 
     示例：
 

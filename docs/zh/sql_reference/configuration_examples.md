@@ -50,7 +50,7 @@ openGauss中预定义有一些可用的文本搜索配置，用户也可创建�
     );
     ```
 
-4. 设置文本搜索配置ts\_conf，修改某些类型的token对应的词典列表。关于token类型的详细信息，请参见[解析器](resolver.md)。
+4. 设置文本搜索配置ts\_conf，修改某些类型的token对应的词典列表。关于token类型的详细信息，请参见[解析器](parser.md)。
 
     ```
     openGauss=# ALTER TEXT SEARCH CONFIGURATION ts_conf

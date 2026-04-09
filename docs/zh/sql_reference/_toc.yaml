@@ -12,7 +12,7 @@ sections:
       - label: SQL语法格式说明
         href: ./sql_syntax_formats.md
       - label: 关键字
-        href: ./keywords_1.md
+        href: ./keywords.md
       - label: 常量与宏
         href: ./constant_and_macro.md
       - label: 数据类型
@@ -38,7 +38,7 @@ sections:
           - label: 文本搜索类型
             href: ./text_search_type.md
           - label: UUID类型
-            href: ./uuid_type.md
+            href: ./uuid.md
           - label: JSON/JSONB类型
             href: ./json_jsonb_types.md
           - label: HLL数据类型
@@ -46,7 +46,7 @@ sections:
           - label: 范围类型
             href: ./range_type.md
           - label: 对象标识符类型
-            href: ./object_identifier_type.md
+            href: ./oid_types.md
           - label: 伪类型
             href: ./pseudo_types.md
           - label: 列存表支持的数据类型
@@ -174,7 +174,7 @@ sections:
           - label: TABLES
             href: ./TABLES.md 
           - label: KEYWORDS
-            href: ./keywords.md
+            href: ./keywords_0.md
           - label: STATISTICS
             href: ./STATISTICS.md
           - label: PARTITIONS
@@ -416,7 +416,7 @@ sections:
               - label: STATEMENT_WLMSTAT_COMPLEX_RUNTIME
                 href: ./statement_wlmstat_complex_runtime.md
               - label: STATEMENT_HISTORY
-                href: ./statement_history_5.md
+                href: ./statement_history.md
           - label: Cache/IO
             sections:
               - label: STATIO_USER_TABLES
@@ -543,10 +543,10 @@ sections:
                 href: ./operator_history.md
               - label: OPERATOR_RUNTIME
                 href: ./operator_runtime.md
+              - label: GLOBAL_OPERATOR_HISTORY
+                href: ./global_operator_history.md                
               - label: GLOBAL_OPERATOR_HISTORY_TABLE
                 href: ./global_operator_history_table.md            
-              - label: GLOBAL_OPERATOR_HISTORY
-                href: ./global_operator_history.md
               - label: GLOBAL_OPERATOR_RUNTIME
                 href: ./global_operator_runtime.md                
           - label: Workload Manager
@@ -588,7 +588,7 @@ sections:
           - label: 查看WDR报告
             sections:
               - label: 概览
-                href: ./view_wdr_report.md
+                href: ./wdrs.md
               - label: Database Stat
                 href: ./database_stat.md
               - label: Load Profile
@@ -1250,7 +1250,7 @@ sections:
           - label: SQL防火墙系统函数
             href: ./sql_firewall_system_functions.md
       - label: 统计信息函数
-        href: ./statistics_function.md
+        href: ./statistics_information_functions.md
       - label: 大对象操作函数
         href: ./large_object_operation_functions.md 
       - label: 触发器函数
@@ -1291,6 +1291,8 @@ sections:
         href: ./obsolete_functions.md
   - label: 事务和锁
     sections:
+      - label: 锁
+        href: ./locks.md
       - label: 管理事务
         sections:
           - label: 概述
@@ -1298,9 +1300,7 @@ sections:
           - label: 子事务并发回滚流程优化
             href: ./optimization_of_subtransaction_concurrent_rollback_process.md
       - label: 事务控制
-        href: ./transaction_control.md
-      - label: 锁
-        href: ./lock_1.md
+        href: ./controlling_transactions.md
   - label: 表与存储
     sections:
       - label: 普通表
@@ -1318,7 +1318,7 @@ sections:
   - label: 存储过程
     sections:
       - label: 概述
-        href: ./stored_procedure_sql_reference.md
+        href: ./stored_procedures.md
       - label: 数据类型及转换
         href: ./data_type_conversion.md
       - label: 数组
@@ -1326,7 +1326,7 @@ sections:
       - label: 集合
         sections:
           - label: 集合类型的使用
-            href: ./usage_of_collection_types.md
+            href: ./use_of_set_types.md
           - label: 集合支持的函数
             href: ./functions_supported_by_sets.md
       - label: record
@@ -1338,13 +1338,13 @@ sections:
           - label: 匿名块
             href: ./anonymous_block_stored_procedure.md
           - label: 子程序
-            href: ./subroutine.md
+            href: ./subprogram.md
       - label: 基本语句
         sections:
           - label: 概述
             href: ./basic_statements.md
           - label: 定义变量
-            href: ./define_variables.md
+            href: ./variable_definition_statements.md
           - label: 赋值语句
             href: ./assignment_statements.md           
           - label: 调用语句
@@ -1390,7 +1390,7 @@ sections:
       - label: 游标
         sections:
           - label: 游标概述
-            href: ./cursor_overview.md
+            href: ./overview_cursors_stored_procedure.md
           - label: 显式游标
             href: ./explicit_cursor.md
           - label: 隐式游标
@@ -1418,7 +1418,7 @@ sections:
       - label: 函数支持自治事务
         href: ./function_supporting_autonomous_transaction.md
       - label: 规格约束
-        href: ./specification_constraints.md
+        href: ./restrictions.md
   - label: 物化视图
     sections:
       - label: 概述
@@ -1436,13 +1436,13 @@ sections:
       - label: 介绍
         sections:
           - label: 全文检索概述
-            href: ./full_text_search_overview.md
+            href: ./full_text_retrieval.md
           - label: 文档概念
-            href: ./document_concept.md
+            href: ./what_is_a_document.md
           - label: 基本文本匹配
             href: ./basic_text_matching.md
           - label: 分词器
-            href: ./segmenter.md
+            href: ./configurations.md
       - label: 表和索引
         sections:
           - label: 搜索表
@@ -1450,7 +1450,7 @@ sections:
           - label: 创建索引
             href: ./creating_index.md
           - label: 索引使用约束
-            href: ./index_usage_constraints.md
+            href: ./constraints_on_index_use.md
       - label: 控制文本搜索
         sections:
           - label: 解析文档
@@ -1458,21 +1458,21 @@ sections:
           - label: 解析查询
             href: ./parsing_queries.md
           - label: 排序查询结果
-            href: ./sort_the_query_results.md
+            href: ./ranking_search_results.md
           - label: 高亮搜索结果
-            href: ./highlight_search_results.md
+            href: ./highlighting_results.md
       - label: 附加功能
         sections:
           - label: 处理tsvector
-            href: ./processing_tsvector.md
+            href: ./manipulating_tsvector.md
           - label: 处理查询
-            href: ./process_query.md
+            href: ./manipulating_queries.md
           - label: 查询重写
-            href: ./query_rewriting.md
+            href: ./rewriting_queries.md
           - label: 收集文献统计
-            href: ./collecting_literature_statistics.md
+            href: ./gathering_document_statistics.md
       - label: 解析器
-        href: ./resolver.md
+        href: ./parser.md
       - label: 词典
         sections:
           - label: 词典概述
@@ -1494,13 +1494,13 @@ sections:
       - label: 测试和调试文本搜索
         sections:
           - label: 分词器测试
-            href: ./segmenter_test.md
+            href: ./testing_a_configuration.md
           - label: 解析器测试
-            href: ./resolver_test.md
+            href: ./testing_a_parser.md
           - label: 词典测试
-            href: ./dictionary_test.md
+            href: ./testing_a_dictionary.md
       - label: 限制约束
-        href: ./restriction_and_constraint.md
+        href: ./limitations.md
   - label: 扩展函数
     href: ./extended_functions.md
   - label: 扩展语法
