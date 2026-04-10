@@ -23,8 +23,7 @@ create database clustered database_name
                [ sysaux tablespace DATAFILE ] |
                [ undo tablespace datafile ] |
                [ temporary tablespace TEMPFILE ] |
-               [ logfile ]}[...] ]
-               [ with dbcompatibility 'compatibility_type'];
+               [ logfile ]}[...] ];
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s1d6127a393bf4f6d8fdac63105932d16"></a>
@@ -68,11 +67,6 @@ create database clustered database_name
     >- logfile：日志文件。
     >- size：日志文件大小，单位包括：K、M、G、T、P、E，默认单位为字节，最少3个log文件，需满足size >= 56M + 16k + log_buffer_size。
     >- blocksize：设置块的大小，单位为字节，仅支持设置为512或4096两种值。
-
-- **compatibility_type**
-
-    创建数据库的兼容性，支持A/B/C兼容性，不使用with dbcompatibility指定兼容性时默认为A兼容性库。
-
    
 ## 示例<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s6be7b8abbb4b4aceb9dae686434d672c"></a>
 
