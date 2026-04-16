@@ -33,4 +33,4 @@ openGauss提供向量化引擎，通常用在OLAP数据仓库类系统，因为�
 
 ## 依赖关系<a name="section20491151513592"></a>
 
-依赖于[列存储](../brief_tutorial/列存储.md)。
+依赖于[列存储](../database_administration_guide/planning_storage_models.md)。
