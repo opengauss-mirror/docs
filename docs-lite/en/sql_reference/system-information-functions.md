@@ -975,7 +975,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Return type: Boolean
 
-    Note:  **has\_function\_privilege**  checks whether a user can access a function in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. When a function is specified by a text string rather than by OID, the allowed input is the same as that for the  **regprocedure**  data type \(see  [OID Types](oid-types.md)\). The access permission type must be  **EXECUTE**,  **ALTER**,  **DROP**, or  **COMMENT**.
+    Note:  **has\_function\_privilege**  checks whether a user can access a function in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**. When a function is specified by a text string rather than by OID, the allowed input is the same as that for the  **regprocedure**  data type \(see  [OID Types](oid_types.md)\). The access permission type must be  **EXECUTE**,  **ALTER**,  **DROP**, or  **COMMENT**.
 
 - has\_language\_privilege\(user, language, privilege\)
 
@@ -1624,7 +1624,7 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
 
     Return type: regtype
 
-    Note:  **pg\_typeof**  returns the OID of the data type of the value that is passed to it. This can be helpful for troubleshooting or dynamically constructing SQL queries. The function is declared as returning  **regtype**, which is an OID alias type \(see  [OID Types](oid-types.md)\). This means that it is the same as an OID for comparison purposes but displays as a type name.
+    Note:  **pg\_typeof**  returns the OID of the data type of the value that is passed to it. This can be helpful for troubleshooting or dynamically constructing SQL queries. The function is declared as returning  **regtype**, which is an OID alias type \(see  [OID Types](oid_types.md)\). This means that it is the same as an OID for comparison purposes but displays as a type name.
 
     Example:
 

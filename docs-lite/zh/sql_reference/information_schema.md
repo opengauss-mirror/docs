@@ -28,7 +28,7 @@
 
 - **[EVENTS](events.md)**  
 
-- **[KEYWORDS](KEYWORDS.md)**  
+- **[KEYWORDS](keywords_0.md)**  
 
 - **[KEY\_COLUMN\_USAGE](KEY_COLUMN_USAGE.md)**  
 

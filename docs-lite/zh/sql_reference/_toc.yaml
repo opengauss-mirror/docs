@@ -6,19 +6,19 @@ sections:
       - label: SQL语法格式说明
         href: ./sql_syntax_formats.md
       - label: 关键字
-        href: ./key_words.md
+        href: ./keywords.md
       - label: 常量与宏
-        href: ./constants_and_macros.md    
+        href: ./constant_and_macro.md    
       - label: 数据类型
         sections:    
           - label: 数值类型
-            href: ./numeral_type.md    
+            href: ./numeric_types.md    
           - label: 货币类型
             href: ./monetary_types.md    
           - label: 布尔类型
-            href: ./boolean_type.md    
+            href: ./boolean_types.md    
           - label: 字符类型
-            href: ./character_type.md    
+            href: ./character_types.md    
           - label: 二进制类型
             href: ./binary_types.md
           - label: 日期/时间类型
@@ -26,11 +26,11 @@ sections:
           - label: 几何类型
             href: ./geometric_type.md    
           - label: 网络地址类型
-            href: ./network_address_type.md    
+            href: ./network_address_types.md    
           - label: 位串类型
             href: ./bit_string_types.md    
           - label: 文本搜索类型
-            href: ./text_search_type.md    
+            href: ./text_search_types.md    
           - label: UUID类型
             href: ./uuid.md    
           - label: JSON/JSONB类型
@@ -42,13 +42,13 @@ sections:
           - label: 对象标识符类型
             href: ./oid_types.md    
           - label: 伪类型
-            href: ./pseudo_type.md
+            href: ./pseudo_types.md
           - label: 列存表支持的数据类型
             href: ./data_types_supported_by_column_store_tables.md    
           - label: XML类型
             href: ./xml_type.md
           - label: 账本数据库使用的数据类型
-            href: ./data_types_used_in_ledger_databases.md
+            href: ./data_type_used_by_the_ledger_database.md
           - label: SET类型
             href: ./set_type.md
           - label: ANYDATA类型
@@ -58,11 +58,11 @@ sections:
           - label: BFILE类型
             href: ./bfile_type.md
           - label: 类型基础值
-            href: ./INSERT_RIGHT_REF_DEFAULT_VALUE.md
+            href: ./insert_right_ref_default_value.md
       - label: 类型转换
         sections: 
           - label: 概述
-            href: ./overview_type_conversion_17.md
+            href: ./overview_type_conversion.md
           - label: 操作符
             href: ./operator.md
           - label: 函数
@@ -70,7 +70,7 @@ sections:
           - label: 值存储
             href: ./value_storage.md
           - label: UNION，CASE和相关构造
-            href: ./union_case_and_relevant_structure.md
+            href: ./union_case_and_related_constructs.md
       - label: 字符集与字符序
         href: ./character_set_and_collation.md
   - label: Schema
@@ -110,7 +110,7 @@ sections:
           - label: TABLES
             href: ./TABLES.md 
           - label: KEYWORDS
-            href: ./KEYWORDS.md 
+            href: ./keywords_0.md 
           - label: STATISTICS
             href: ./STATISTICS.md
           - label: PARTITIONS

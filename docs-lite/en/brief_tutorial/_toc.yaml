@@ -46,8 +46,9 @@ sections:
       - label: Event Trigger Functions
         href: ./event_trigger_functions.md
   - label: Advanced Data Management
-    href: ./advanced_data_management.md
     sections:
+      - label: Overview
+        href: ./advanced_data_management.md    
       - label: Constraints
         href: ./constraints.md
       - label: JOIN

@@ -6,7 +6,7 @@
 
 ## Precautions<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_sb04dbf08cbd848649163edbff21254a1"></a>
 
-- For details about the data types supported by column-store tables, see  [Data Types Supported by Column-store Tables](data-types-supported-by-column-store-tables.md).
+- For details about the data types supported by column-store tables, see  [Data Types Supported by Column-store Tables](data_types_supported_by_column_store_tables.md).
 - Column-store tables do not support the array.
 - Column-store tables do not support column generation.
 - Column-store tables cannot be created as global temporary tables.
