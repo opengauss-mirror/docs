@@ -452,4 +452,4 @@ The operators AND and OR are commutative. That is, you can switch the left and r
 </tbody>
 </table>
 
-For details, see  [Examples](where-clause.md#en-us_topic_0000001225258419_section36861642133019).
+For details, see  [Examples](where_clause.md#en-us_topic_0000001225258419_section36861642133019).
