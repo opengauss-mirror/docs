@@ -40,7 +40,7 @@ openGauss向量数据库DataVec现在已支持的向量索引数据结构主要�
 
 例如在使用RabitQ时，可以选择精排类型FP32或者SQ8。
 
-## 性能对比
+## 全内存性能对比
 
 不同的向量索引类型在性能表现上各有侧重，主要可以从召回率、QPS（每秒查询数）和构建索引时间三个维度进行对比。我们将基于向量性能测试工具VectorDB-Benchmark在Cohere 1M数据集（`1M dataset, 768 dim`）上进行openGauss向量数据库DataVec整机性能测试。
 
@@ -114,6 +114,53 @@ openGauss向量数据库DataVec现在已支持的向量索引数据结构主要�
 - 如果存储的数据量大，但是可用磁盘空间有限，可以考虑使用IVFFLAT-RabitQ/HNSW-RabitQ减少索引所占空间。
 - 如果磁盘空间足够，内存比较小，可以考虑磁盘索引DiskANN。
 - 如果内存足够，可以考虑直接使用IVFFLAT或者HNSW。
+
+>[!NOTE]说明
+>
+>以上数据并不覆盖所有场景，建议根据实际情况尝试不同索引，以确定当前业务适合的索引类型。<br>
+
+## 小内存性能对比
+
+当可用内存不足以容纳完整索引时，索引查询将频繁触发磁盘与内存的数据交换，性能表现与全内存场景有显著差异。我们将基于向量性能测试工具VectorDB-Benchmark在Cohere 1M数据集（`1M dataset, 768 dim`）上进行openGauss向量数据库DataVec小内存场景性能测试。
+
+- 硬件环境：Kunpeng 920 arm服务器
+- 软件环境：openGauss 7.0.0-RC3，openGauss进程可用内存3GB，shared_buffers=1GB
+
+### 每秒查询次数（QPS）
+
+每秒查询次数（Queries Per Second，QPS） 是衡量向量数据库查询性能核心指标，用于表示系统在单位时间（1 秒）内能够成功处理的查询请求总数，直接反映系统的并发处理能力和吞吐量上限。
+
+以下为针对 Cohere1M 数据集的测试数据，每次测试前清空系统缓存，重启数据库，8并发查询。
+
+索引类型 | 参数配置 | 召回率 | QPS | 读磁盘IO量
+--- | --- | --- | --- | ---
+ HNSW|m=16, ef_construction=250 | 0.9909 | 12.51 | 149GB
+ HNSW-RabitQ|m=16, ef_construction=250，重排类型（FP32），rbq_refinek=30 | 0.9905 | 148.23 | 44GB
+
+>[!NOTE]说明
+>
+>HNSW-PQ 需要数据全内存构建索引，不适用当前小内存测试场景。
+
+一般结论如下：
+
+- 小内存场景下，HNSW索引因内存不足导致频繁磁盘IO，QPS极低；而HNSW-RabitQ通过量化大幅减少索引占用内存，磁盘IO量显著降低。
+- 小内存场景，建议使用HNSW-RabitQ，可以提高查询性能。
+
+### 容量
+
+在向量数据库中，如果内存充足，数据库内存相关参数（shared_buffers）一般设置成索引大小，内存容量不足时，会触发磁盘与内存的频繁数据交换（Page Cache 换入换出），可能直接导致索引查询性能下降。
+
+以下是针对 Cohere1M 数据集、基于余弦距离构建的索引所占用的空间大小，该数值与索引参数的配置直接相关。
+
+索引类型 | 索引参数配置 | 索引大小
+--- | --- | ---
+ HNSW|m=16, ef_construction=200| 3906MB
+ HNSW-RabitQ|m=16, ef_construction=200，重排类型（FP32） | 395MB
+ HNSW-PQ|m=16, ef_construction=200，pq_m=96 | 3908MB
+
+一般结论如下：
+
+- 在小内存场景下，HNSW索引大小远超可用内存，会导致频繁的磁盘IO；HNSW-PQ索引无法在小内存中构建成功；HNSW-RabitQ索引仅占395MB，可在有限内存中高效运行。
 
 >[!NOTE]说明
 >
