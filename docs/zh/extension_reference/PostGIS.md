@@ -55,7 +55,7 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
 
     1).  以操作系统用户omm登录数据库任一主机。
 
-    2).  创建GCC安装主目录\\$GAUSSHOME/gcc和代码下载目录\\$GAUSSHOME/gcc/packages，并下载软件包gcc-7.3.0.tar.gz、gmp-6.1.0.tar.xz、mpc-1.0.3.tar.gz、mpfr-3.1.4.tar.gz至\\$GAUSSHOME/gcc/packages目录。
+    2).  创建GCC安装主目录`$GAUSSHOME/gcc`和代码下载目录`$GAUSSHOME/gcc/packages`，并下载软件包gcc-7.3.0.tar.gz、gmp-6.1.0.tar.xz、mpc-1.0.3.tar.gz、mpfr-3.1.4.tar.gz至`$GAUSSHOME/gcc/packages`目录。
 
     ```
     mkdir $GAUSSHOME/gcc
@@ -268,18 +268,24 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
         make install -sj
         ```
 
-        如果make -sj报错缺少openGauss头文件，需要从其源码中拷贝到数据库对应的include目录下
-        详情参考third_party仓库下的postgis安装文档 <https://gitcode.com/opengauss/openGauss-third_party/tree/master/gpl_dependency/postgis>
-        例如缺少：
-        （storage/file/fio_device.h
+        如果make -sj报错缺少openGauss头文件，需要从其源码中拷贝到数据库对应的include目录下，详情请参考third_party仓库下的postgis安装文档 <https://gitcode.com/opengauss/openGauss-third_party/tree/master/gpl_dependency/postgis>
+
+        例如缺少如下头文件：
+        ```
+        storage/file/fio_device.h
         storage/file/fio_device_com.h
         ddes/dms/ss_aio.h
         ddes/dms/ss_dms_recovery.h
         ddes/dms/ss_common_attr.h
         ddes/dms/ss_init.h
-        storage/dss/dss_api_def.h）等头文件的名称
-        这些头文件在openGauss-server仓库的src/include目录下，将其复制到\\$GAUSSHOME/include/postgresql/server下即可，但要注意目录层级必须与src/include目录保持一致，比如缺少的头文件是storage/file/fio_device.h，那需要创建的文件就是\\$GAUSSHOME/include/postgresql/server/storage/file/fio_device.h。
-        当然，有一个更加直接简单的方法，即执行下面的命令(\$CODE_BASE为openGauss-server的源代码目录)
+        storage/dss/dss_api_def.h
+        ```
+
+        这些头文件在openGauss-server仓库的src/include目录下，将其复制到$GAUSSHOME/include/postgresql/server下即可，但要注意目录层级必须与src/include目录保持一致。
+
+        比如缺少的头文件是storage/file/fio_device.h，那需要创建的文件就是$GAUSSHOME/include/postgresql/server/storage/file/fio_device.h。
+
+        当然，有一个更加直接简单的方法，即执行下面的命令($CODE_BASE为openGauss-server的源代码目录)
 
         ```
         mkdir -p $GAUSSHOME/include/postgresql/server/storage/file/
