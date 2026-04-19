@@ -57,8 +57,10 @@ systemctl disable firewalld
 oGRAC 安装依赖 Python、时间同步和网络工具，请在两节点上执行：
 
 ```shell
-yum install -y wget ntpdate chrony python3 python3-devel iputils iproute patchelf --skip-broken
+yum install -y wget ntpdate chrony python3 python3-devel iputils iproute patchelf lz4 --skip-broken
 ```
+
+要求lz4版本在1.8.3以上。
 
 注意：当前 `openEuler 20.03` 官方源中没有 `patchelf` 安装包，如使用`openEuler 20.03`系统需手动安装 `patchelf`：
 ```shell
