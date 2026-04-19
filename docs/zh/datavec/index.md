@@ -92,6 +92,57 @@ openGauss向量数据库DataVec现在已支持的向量索引数据结构主要�
 - HNSW 系列的 QPS 最高，但构建时间通常长于 IVFFLAT。
 - PQ 和 RabitQ 量化会小幅增加构建时间，但能显著提升查询 QPS。
 
+### 性能调优推荐
+
+在进行向量检索性能测试时，合理的参数配置对测试结果有决定性影响。如上述性能数据所示，在相同召回率条件下，HNSW-PQ 和 HNSW-RabitQ 的 QPS 均显著优于原生 HNSW，因此推荐优先使用量化索引以获取更优的性价比。以下提供两种量化索引的推荐参数基线，具体数值需根据数据集特征和数据量进行调整。
+
+#### HNSW + PQ 推荐参数
+
+参数 | 推荐值 | 说明
+--- | --- | ---
+m | 16 | 每个节点的最大连接数，影响图的连通性和搜索精度
+ef_construction | 200 | 建图时的搜索宽度，值越大索引质量越高
+ef_search | 200 | 查询时的搜索宽度，值越大召回率越高
+pq_m | dim / 8 或 16 | PQ 子空间数量，dim=128 时推荐 16，dim=768 时可设为 96
+
+```sql
+-- 创建 HNSW-PQ 索引
+CREATE INDEX ON items USING hnsw (embedding vector_l2_ops)
+WITH (m = 16, ef_construction = 200, enable_pq = true, pq_m = 16);
+
+-- 查询参数设置
+SET hnsw_ef_search = 200;
+```
+
+>[!NOTE]说明
+>
+>pq_m 的选择需要权衡精度与压缩率：pq_m = dim / 8 压缩率较高，适合大规模数据集；pq_m = 16 是通用基线，在精度和内存之间取得平衡。
+
+#### HNSW + RabitQ 推荐参数
+
+参数 | 推荐值 | 说明
+--- | --- | ---
+m | 16 | 每个节点的最大连接数
+ef_construction | 200 | 建图时的搜索宽度
+ef_search | 200 | 查询时的搜索宽度
+refine_k | 20 ~ 25 | 精排候选数量，从 RabitQ 粗筛结果中取 Top-K 进行精确距离重排
+refine_type | FP32 | 精排时使用的数据精度，FP32 保证最高精度
+
+```sql
+-- 创建 HNSW-RabitQ 索引
+SET rbq_sample_rows = 2000;
+CREATE INDEX ON items USING hnsw (embedding vector_l2_ops)
+WITH (m = 16, ef_construction = 200, enable_rabitq = on, rabitq_refine_type = 'FP32', rabitq_fht = on);
+
+-- 查询参数设置
+SET hnsw_ef_search = 200;
+SET rbq_refinek = 20;
+```
+
+>[!NOTE]说明
+>
+>refine_k = 20 适合对延迟敏感的场景；refine_k = 25 适合对召回率要求更高的场景。refine_k 过大会增加精排阶段的计算开销，建议根据实际 Recall@K 指标调整。
+
 ### 容量
 
 在向量数据库中，索引性能、内存、磁盘三者在容量维度上是强耦合的关系，核心逻辑是：索引的容量上限由磁盘存储决定，而索引的性能和内存承载能力强相关。如果内存充足，数据库内存相关参数（shared_buffers）一般设置成索引大小，内存容量不足时，会触发磁盘与内存的频繁数据交换（Page Cache 换入换出），可能直接导致索引查询性能下降。
