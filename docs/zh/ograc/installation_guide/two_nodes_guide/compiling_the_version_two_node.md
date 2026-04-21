@@ -169,6 +169,11 @@ tar -zxf openGauss-third_party_binarylibs_openEuler_2203_arm.tar.gz
 
 进入 `build` 目录，通过统一编译脚本生成安装包。
 
+> [!NOTE]说明
+> * 如果是Debug版本，请关闭保护虚拟内存选项，避免在某些环境上因VM page配置问题起库失败，请执行:
+> * cd [compile_path]/oGRAC/build
+> * sed -i 's/DUSE_PROTECT_VM=ON/DUSE_PROTECT_VM=OFF/g' Makefile.sh
+
 ```bash
 cd [compile_path]/oGRAC/build
 sh build_ograc.sh [release|debug] --with-dss
