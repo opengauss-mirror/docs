@@ -41,5 +41,5 @@ A PL/SQL block can contain a sub-block which can be placed in any section. The f
 
 PL/SQL blocks are classified into the following types:
 
-- Anonymous block: a dynamic block that can be executed only for once. For details about the syntax, see  [Figure 1](anonymous_blocks.md#en-us_topic_0237122218_en-us_topic_0059779171_f19ed9f384e0646f29744951d7eec8c3b).
+- Anonymous block: a dynamic block that can be executed only for once. For details about the syntax, see  [Figure 1](./brief_tutorial/anonymous_blocks.md#en-us_topic_0283137481_en-us_topic_0237122218_en-us_topic_0059779171_f19ed9f384e0646f29744951d7eec8c3b).
 - Subprogram: a stored procedure, function, operator, or packages stored in a database. A subprogram created in a database can be called by other programs.
