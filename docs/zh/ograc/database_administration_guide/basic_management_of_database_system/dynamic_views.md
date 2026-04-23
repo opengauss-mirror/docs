@@ -148,7 +148,7 @@ show parameter SQL_STAGE_THRESHOLD;
 | 11  | CONVERTING_RSN      | BINARY_UINT32 | converting节点的序列号                                     |
 | 12  | PART_ID             | BINARY_UINT32 | 所属的DRC分区链表ID                                         |
 | 13  | READONLY_COPIES     | BINARY_BIGINT | 只读副本bitmap                                           |
-| 14  | LATEST_EDP          | BINARY_UINT32 | 最近的脏器脏页持有节点ID                                        |
+| 14  | LATEST_EDP          | BINARY_UINT32 | 最近的早期脏页持有节点ID                                        |
 | 15  | IN_RECOVERY         | BINARY_UINT32 | 页面是否处于RECOVERY中                                      |
 | 16  | REFORM_PROMOTE      | BINARY_UINT32 | DRC是否在重构期间从副本提升为所有者                                  |
 | 17  | LSN                 | BINARY_BIGINT | 集群中本页面所有EDP中最大的LSN                                   |
