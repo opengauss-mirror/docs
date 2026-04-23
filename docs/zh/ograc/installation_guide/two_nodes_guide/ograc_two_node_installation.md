@@ -70,7 +70,7 @@ git clone https://github.com/NixOS/patchelf.git
 cd patchelf 
 ./bootstrap.sh
 # 根据个人使用情况,可以利用--prefix指定安装路径
-/configure --prefix=/usr/local 
+./configure --prefix=/usr/local 
 make -j$(nproc) 
 make install
 # 输出应该类似：patchelf 0.18.0
