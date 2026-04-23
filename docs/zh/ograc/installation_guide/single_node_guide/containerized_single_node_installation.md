@@ -20,31 +20,7 @@ docker run --name mirror_name -itd -v /home/uer_name/docker/data:/home --privile
 - --shm-size 是 docker 的共享内存大小，这里设置为 128g，建议不要小于128g
 - IMAGE_ID 是 docker 镜像的 ID，可以通过 `docker images` 查看
 
-## 3. Docker 镜像内配置
-
-需要配置http代理、git代理(非编译安装不需要)，这里不做详细说明，详情参考git官网等。
-
-3.1 若为编译安装则还需安装依赖：
-
-```shell
-yum install -y libaio-devel openssl openssl-devel ndctl-devel \
-ncurses ncurses-devel libtirpc-devel expect ant bison iputils \
-iproute wget make gcc gcc-c++ gdb gdb-gdbserver python3 python3-devel \
-git net-tools cmake automake byacc libtool git unzip vim lz4 lz4-devel patch \
-xz flex unixODBC-devel unixODBC --skip-broken
-```
-
-要求：
-cmake版本在3.12及以上；
-lz4版本在1.8.3及以上。
-
-3.2 若为安装包安装则还需安装依赖：
-
-```bash
-yum install -y wget python3 python3-devel iputils iproute --skip-broken
-```
-
-## 4. 查看镜像文件
+## 3. 查看镜像文件
 
 在 root 用户下输入：
 
@@ -59,9 +35,9 @@ REPOSITORY    TAG        TMAGE ID        CREATED                 SIZE
 mirror_name   lastest    xxxx            About a minute ago      3.71GB
 ```
 
-## 5. 与容器的交互操作
+## 4. 与容器的交互操作
 
-5.1 创建并进入新的容器
+4.1 创建并进入新的容器
 
 ```shell
 docker run -it --name=mirror_namenode mirror_name /bin/bash
@@ -71,13 +47,13 @@ docker run -it --name=mirror_namenode mirror_name /bin/bash
 
 mirror_name表示以哪个镜像实例化
 
-5.2 退出并关闭容器
+4.2 退出并关闭容器
 
 ```shell
 exit
 ```
 
-5.3 开启关闭的容器
+4.3 开启关闭的容器
 
 ```shell
 docker start mirror_namenode
@@ -85,7 +61,7 @@ docker start mirror_namenode
 
 这里输入 TMAGE ID 也可以的。
 
-5.4 删除关闭的容器
+4.4 删除关闭的容器
 
 ```shell
 docker rm mirror_namenode
@@ -93,10 +69,34 @@ docker rm mirror_namenode
 
 这里输入 TMAGE ID 也可以的。
 
-5.5 进入开启中的容器
+4.5 进入开启中的容器
 
 ```shell
 docker exec -it mirror_namenode /bin/bash
+```
+
+## 5. Docker 镜像内配置
+
+需要配置http代理、git代理(非编译安装不需要)，这里不做详细说明，详情参考git官网等。
+
+5.1 若为编译安装则还需安装依赖：
+
+```shell
+yum install -y libaio-devel openssl openssl-devel ndctl-devel \
+ncurses ncurses-devel libtirpc-devel expect ant bison iputils \
+iproute wget make gcc gcc-c++ gdb gdb-gdbserver python3 python3-devel \
+git net-tools cmake automake byacc libtool git unzip vim lz4 lz4-devel patch \
+xz flex unixODBC-devel unixODBC --skip-broken
+```
+
+要求：
+cmake版本在3.12及以上；
+lz4版本在1.8.3及以上。
+
+5.2 若为安装包安装则还需安装依赖：
+
+```bash
+yum install -y wget python3 python3-devel iputils iproute --skip-broken
 ```
 
 ## 6. 编译 oGRAC
@@ -113,9 +113,7 @@ git clone https://gitcode.com/opengauss/oGRAC.git
 
 6.2 修改 Makefile.sh
 
-目录路径为
-
-使用下面命令替换文件里的USE_PROTECT_VM=ON为USE_PROTECT_VM=OFF
+进入 `oGRAC/build` 目录下，执行下面命令替换文件里的USE_PROTECT_VM=ON为USE_PROTECT_VM=OFF
 
 ```shell
 sed -i 's+USE_PROTECT_VM=ON+USE_PROTECT_VM=OFF+' Makefile.sh
@@ -123,7 +121,7 @@ sed -i 's+USE_PROTECT_VM=ON+USE_PROTECT_VM=OFF+' Makefile.sh
 
 6.3 编译安装 oGRAC
 
-在 build 目录下执行下面的命令进行编译安装，示例为编译的 debug 版本，不指定 -b 默认是编译 release 版本；-u 指定安装用户名
+进入 `oGRAC/build` 目录下，执行下面的命令进行编译安装，示例为编译的 debug 版本，不指定 -b 默认是编译 release 版本；-u 指定安装用户名
 
 ```shell
 sh local_install.sh prepare
