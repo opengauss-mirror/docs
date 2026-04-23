@@ -31,7 +31,7 @@ docker images
 正常情况下会回显如下信息：
 
 ```shell
-REPOSITORY    TAG        TMAGE ID        CREATED                 SIZE
+REPOSITORY    TAG        IMAGE ID        CREATED                 SIZE
 mirror_name   lastest    xxxx            About a minute ago      3.71GB
 ```
 
@@ -59,7 +59,7 @@ exit
 docker start mirror_namenode
 ```
 
-这里输入 TMAGE ID 也可以的。
+这里输入 IMAGE ID 也可以的。
 
 4.4 删除关闭的容器
 
@@ -67,7 +67,7 @@ docker start mirror_namenode
 docker rm mirror_namenode
 ```
 
-这里输入 TMAGE ID 也可以的。
+这里输入 IMAGE ID 也可以的。
 
 4.5 进入开启中的容器
 
