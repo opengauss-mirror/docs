@@ -1,7 +1,0 @@
-label: 快速入门
-isManual: true
-sections:
-  - label: 访问和使用 oGRAC
-    href: ./access_and_use_ograc.md
-  - label: 编译安装
-    href: ./compiling_and_installation.md
