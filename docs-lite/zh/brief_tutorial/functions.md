@@ -1173,7 +1173,7 @@ openGauss常用的函数如下：
 
   描述：将expr按指定格式转换为一个NUMERIC类型的值，若expr部分转换失败，则会尝试转换关键字DEFAULT后的return_value（return_value的输入格式受fmt约束）。
 
-  * 类型转换格式（fmt）请参考[表1](#zh-cn_topic_0283137417_zh-cn_topic_0237121973_zh-cn_topic_0059778246_t3987a5bb00154b0f9e55863b4ababd3d)。
+  * 类型转换格式（fmt）请参考[表1]。
 
   * fmt整数部分的长度必须大于expr整数部分的长度，若小于则会报错。fmt小数部分可以按需填写长度，输出结果会依照fmt的小数部分长度将expr进行截断。
 

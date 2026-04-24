@@ -91,6 +91,8 @@ sections:
             href: ./brief_tutorial/delete_statement.md
           - label: SELECT Statement
             href: ./brief_tutorial/select_statement.md
+          - label: Operators
+            href: ./brief_tutorial/operators_1.md
           - label: JOIN
             href: ./brief_tutorial/join.md
           - label: UNION Clause
