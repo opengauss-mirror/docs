@@ -111,7 +111,7 @@ $ docker exec -it <CONTAINER ID> bash
 登录`omm`超级用户：
 
 ```bash
-$ su omm
+$ su - omm
 $ gsql -d postgres -p 5432
 ```
 
