@@ -91,6 +91,8 @@ sections:
             href: ./milvus2datavec.md
           - label: 从Elasticsearch迁移至openGauss DataVec
             href: ./elasticsearch_to_opengauss.md
+          - label: 从OpenSearch迁移至openGauss DataVec
+            href: ./opensearch_to_opengauss.md
       - label: API Reference
         sections:
           - label: Python SDK
