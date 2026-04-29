@@ -30,8 +30,9 @@
 INSERT [/*+ plan_hint */] INTO
     { table_name [partition_clause] [ AS alias ] [ ( column_name [, ...] ) ]
     | ( target_query [ WITH [ CASCADED | LOCAL ] CHECK OPTION ] ) [ AS ] alias [ ( column_name [, ...] ) ] }
+    [ OVERRIDING { SYSTEM | USER } VALUE ]
     { DEFAULT VALUES
-    | VALUES {( { expression | DEFAULT } [, ...] ) }[, ...] 
+    | VALUES { ( { expression | DEFAULT } [, ...] ) } [, ...]
     | query }
     [ ON DUPLICATE KEY UPDATE { NOTHING | { column_name = { expression | DEFAULT } } [, ...] [ WHERE condition ] }]
     [ ON CONFLICT [ conflict_target ] conflict_action ]
@@ -98,7 +99,7 @@ INSERT [/*+ plan_hint */] INTO
     作为插入目标的子查询，相当于视图，仅在参数sql\_compatibility=A时生效。插入限制详见[CREATE VIEW](create_view.md)中可自动更新视图一节。
     
 - **WITH [ CASCADED | LOCAL ] CHECK OPTION**
-    
+
     详见[CREATE VIEW](create_view.md)一节介绍。
 
 - **column\_name**
@@ -112,6 +113,12 @@ INSERT [/*+ plan_hint */] INTO
     - value子句和query提供的值在表中从左到右关联到对应列。
 
     取值范围：已存在的字段名。
+
+- **OVERRIDING \{ SYSTEM | USER \} VALUE**
+
+    该子句用于插入identity列时的行为控制。
+
+    - `OVERRIDING SYSTEM VALUE`用于覆盖identity列生成的系统值，`OVERRIDING USER VALUE`用于覆盖用户自定义值。
 
 - **expression**
 
@@ -251,6 +258,8 @@ INSERT [/*+ plan_hint */] INTO
     > - 只支持A模式和PG模式。
 
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
+
+- insert语句基础示例
 
 ```sql
 --创建表tpcds.reason_t2。
@@ -410,4 +419,27 @@ UPDATE SET email = EXCLUDED.email;
 -- 使用 opclass 匹配索引
 INSERT INTO users (id, email, name)
 VALUES (7, 'frank@example.com', 'Frank') ON CONFLICT (email text_pattern_ops) DO NOTHING;
+```
+
+- OVERRIDING 子句示例
+```sql
+openGauss=# create table t1 (a int generated always as identity, b int);
+NOTICE:  CREATE TABLE will create implicit sequence "t1_a_seq" for serial column "t1.a"
+CREATE TABLE
+openGauss=# insert into t1(a, b) values(1, 1);
+ERROR:  cannot insert a non-DEFAULT value into column "a"
+DETAIL:  Column "a" is an identity column defined as "GENERATED ALWAYS".
+HINT:  Use OVERRIDING SYSTEM VALUE to override.
+openGauss=# insert into t1(a, b) OVERRIDING SYSTEM VALUE values(10, 1);
+INSERT 0 1
+openGauss=# insert into t1(a, b) OVERRIDING USER VALUE values(10, 1);
+INSERT 0 1
+openGauss=# select * from t1 order by a, b;
+ a  | b 
+----+---
+  1 | 1
+  2 | 1
+ 10 | 1
+(3 rows)
+
 ```

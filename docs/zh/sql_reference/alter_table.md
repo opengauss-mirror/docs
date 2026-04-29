@@ -238,23 +238,26 @@
 其中列相关的操作column\_clause可以是以下子句之一：
 
 ```
-ADD [ COLUMN ] [ IF NOT EXISTS ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ] [ FIRST | AFTER column_name ]     
+ADD [ COLUMN ] [ IF NOT EXISTS ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [ compress_mode ] [ COLLATE collation ] [column_constraint [ ... ] ] [ FIRST | AFTER column_name ]
 | ADD [ IF NOT EXISTS ] column_name data_type [ compress_mode ] [, ...]
 | MODIFY column_name data_type
 | MODIFY column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ]
 | MODIFY column_name [ CONSTRAINT constraint_name ] NULL
-| MODIFY [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [{[ COLLATE collation ] | [ column_constraint ]} [ ... ] ] [FIRST | AFTER column_name]
-| CHANGE [ COLUMN ] old_column_name new_column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [{[ COLLATE collation ] | [ column_constraint ]} [ ... ] ] [FIRST | AFTER column_name]
-| DROP [ COLUMN ] [ IF EXISTS ] column_name [ RESTRICT | CASCADE ]    
-| ALTER [ COLUMN ] column_name [ SET DATA ] TYPE data_type [ COLLATE collation ] [ USING expression ]    
-| ALTER [ COLUMN ] column_name { SET DEFAULT expression | DROP DEFAULT }    
-| ALTER [ COLUMN ] column_name { SET | DROP } NOT NULL    
-| ALTER [ COLUMN ] column_name SET STATISTICS [PERCENT] integer    
-| ADD STATISTICS (( column_1_name, column_2_name [, ...] ))    
-| DELETE STATISTICS (( column_1_name, column_2_name [, ...] ))    
-| ALTER [ COLUMN ] column_name SET ( {attribute_option = value} [, ... ] )    
-| ALTER [ COLUMN ] column_name RESET ( attribute_option [, ... ] )    
+| MODIFY [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [{[ COLLATE collation ] | [ column_constraint ]} [ ... ] ][FIRST | AFTER column_name]
+| CHANGE [ COLUMN ] old_column_name new_column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [{[ COLLATE collation ] | [column_constraint ]} [ ... ] ] [FIRST | AFTER column_name]
+| DROP [ COLUMN ] [ IF EXISTS ] column_name [ RESTRICT | CASCADE ]
+| ALTER [ COLUMN ] column_name [ SET DATA ] TYPE data_type [ COLLATE collation ] [ USING expression ]
+| ALTER [ COLUMN ] column_name { SET DEFAULT expression | DROP DEFAULT }
+| ALTER [ COLUMN ] column_name { SET | DROP } NOT NULL
+| ALTER [ COLUMN ] column_name SET STATISTICS [PERCENT] integer
+| ADD STATISTICS (( column_1_name, column_2_name [, ...] ))
+| DELETE STATISTICS (( column_1_name, column_2_name [, ...] ))
+| ALTER [ COLUMN ] column_name SET ( {attribute_option = value} [, ... ] )
+| ALTER [ COLUMN ] column_name RESET ( attribute_option [, ... ] )
 | ALTER [ COLUMN ] column_name SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN }
+| ALTER [ COLUMN ] column_name ADD GENERATED generated_when AS IDENTITY [ ( seq_options) ]
+| ALTER [ COLUMN ] column_name alter_identity_column_options [ ... ]
+| ALTER [ COLUMN ] column_name DROP IDENTITY [ IF EXISTS ]
 ```
 
 > + **ADD \[ COLUMN \] \[ IF NOT EXISTS \] column\_name data\_type [ CHARACTER SET | CHARSET [ = ] charset ] \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]   \[ FIRST | AFTER column\_name\]**
@@ -297,6 +300,8 @@ ADD [ COLUMN ] [ IF NOT EXISTS ] column_name data_type [ CHARACTER SET | CHARSET
 >
 >   此子句与上一子句中“MODIFY column\_name data\_type”部分语法相同，语义功能不同，当GUC参数b\_format\_behavior\_compat\_options含有'enable\_modify\_column'选项时，将按照此子句功能处理。
 >
+>   不支持列的identity属性添加/修改和删除。
+>
 > + **CHANGE \[ COLUMN \] old\_column\_name new\_column\_name data\_type \[ CHARACTER SET | CHARSET charset \] \[\{\[ COLLATE collation \] | \[ column\_constraint \]\} \[ ... \] \] \[FIRST | AFTER column\_name\]**
 >
 >   修改表已存在字段的名称和定义，字段新名称不能是已有字段的名称，将用新名称和定义替换字段原名称和定义原字段上的索引、独立对象约束（例如：主键、唯一键、CHECK约束）等不会被删除。\[FIRST | AFTER column\_name\]语法表示修改字段名称和定义的同时修改字段在表中的位置。
@@ -310,6 +315,8 @@ ADD [ COLUMN ] [ IF NOT EXISTS ] column_name data_type [ CHARACTER SET | CHARSET
 >   被修改字段若被一些对象调用（比如：自定义函数、存储过程等），修改字段不会处理这些对象。修改字段名称后，这些对象有可能出现不可用的情况，请修改字段前评估这类影响。
 >
 >   修改字段的字符集或字符序会将字段中的数据转换为新的字符集进行编码。
+>
+>   不支持列的identity属性添加/修改和删除。
 >
 > + **DROP \[ COLUMN \] \[ IF EXISTS \] column\_name \[ RESTRICT | CASCADE \]**
 >
@@ -354,26 +361,40 @@ ADD [ COLUMN ] [ IF NOT EXISTS ] column_name data_type [ CHARACTER SET | CHARSET
 >
 > - **ALTER \[ COLUMN \] column\_name SET STORAGE \{ PLAIN | EXTERNAL | EXTENDED | MAIN \}**
 >
->   为一个字段设置存储模式。这个设置控制这个字段是内联保存还是保存在一个附属的表里，以及数据是否要压缩。仅支持对行存表的设置；对列存表没有意义，执行时报错。SET STORAGE本身并不改变表上的任何东西，只是设置将来的表操作时，建议使用的策略。
+>    为一个字段设置存储模式。这个设置控制这个字段是内联保存还是保存在一个附属的表里，以及数据是否要压缩。仅支持对行存表的设置；对列存表没有意义，执行时报错。SET STORAGE本身并不改变表上的任何东西，只是设置将来的表操作时，建议使用的策略。
+>
+> - **ALTER \[ COLUMN \] column\_name ADD GENERATED generated\_when AS IDENTITY \[ \( seq_options\) \]**
+>
+>    添加identity属性，同时可以指定identity列的起始值，步长，最大值，最小值等属性。
+>
+> - **ALTER \[ COLUMN \] column_name alter\_identity\_column\_options \[ ... \]**
+>
+>    修改identity列的属性，序列的起始值，最大值，最小值，步长等。
+>
+> - **ALTER \[ COLUMN \] column\_name DROP IDENTITY \[ IF EXISTS \]**
+>
+>    删除某列的identity属性，如果列没有identity属性则报错，如果声明了`IF EXISTS`语法则会跳过；成功删除后，identity列所拥有的序列也会被删除，但是列的not null约束不变。
 
 - 其中列约束column\_constraint为：
 
   ```
   [ CONSTRAINT constraint_name ]
-              { NOT NULL |
-                NULL |
-                CHECK ( expression ) |
-                DEFAULT default_expr  |
-                GENERATED ALWAYS AS ( generation_expr ) [STORED] |
-                AUTO_INCREMENT |
-                ON UPDATE update_expr |
-                UNIQUE [KEY] index_parameters |
-                PRIMARY KEY index_parameters |
-                ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |                                                                                  
-                REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
-                    [ ON DELETE action ] [ ON UPDATE action ] }
-                    [ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]    
-                    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    { NOT NULL |
+      NULL |
+      CHECK ( expression ) |
+      DEFAULT default_expr  |
+      GENERATED [ ALWAYS | BY DEFAULT ] AS IDENTITY [ ( seq_options ) ] |
+      GENERATED ALWAYS AS ( generation_expr ) [STORED] |
+      ON UPDATE update_expr |
+      { UNIQUE [KEY] index_parameters [ ON filegroup ] |
+        PRIMARY KEY index_parameters [ ON filegroup ]
+      } [ { ENABLE | DISABLE } [ VALIDATE | NOVALIDATE ] |
+      REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
+          [ ON DELETE action ] [ ON UPDATE action ] [ ENABLE ] } |
+      { ENABLE | DISABLE } [ VALIDATE | NOVALIDATE ] Constraint constraint_name } |
+  AUTO_INCREMENT |
+  ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |
+  [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ] |
   [ COMMENT 'text' ]
   ```
 
@@ -409,6 +430,33 @@ ADD [ COLUMN ] [ IF NOT EXISTS ] column_name data_type [ CHARACTER SET | CHARSET
     ```
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
         [ USING INDEX TABLESPACE tablespace_name ]
+    ```
+
+- 其中identity属性参数generated\_when为：
+
+    ```EBNF
+    ALWAYS | BY DEFAULT
+    ```
+
+- 其中identity属性序列参数seq\_options为：
+
+    ```EBNF
+    seq_option
+    | OWNED BY name
+    | RESTART [ WITH ] NumericOnly
+    ;
+
+    seq_option:
+        { MAXVALUE | MINVALUE | START WITH | START | INCREMENT [ BY ] | CACHE } NumericOnly
+        | { NOMAXVALUE | MINVALUE | NO MAXVALUE | NO MINVALUE | NOCYCLE | [ NO ] CYCLE }
+    ```
+
+- 其中修改identity属性参数alter\_identity\_column\_options为：
+
+    ```EBNF
+    RESTART [ WITH ] NumericOnly
+    | SET GENERATED generated_when
+    | SET seq_option
     ```
 
 - 重命名表。对名称的修改不会影响所存储的数据。
@@ -647,6 +695,26 @@ ADD [ COLUMN ] [ IF NOT EXISTS ] column_name data_type [ CHARACTER SET | CHARSET
 
     缺省表达式将被用于任何未声明该字段数值的插入操作。如果没有指定缺省值则缺省值为NULL 。
 
+- **GENERATED \[ ALWAYS | BY DEFAULT \] AS IDENTITY \[ \( seq\_options \) \]**
+
+    该语句创建identity列，用于生成自增/自减的序列。
+
+    若在插入时不指定此列的值（或者指定为DEFAULT），则会默认生成。
+
+    当列定义为`GANERATED ALWAYS`时，若想插入用户值需要使用`OVERRIDING SYSTEM VALUE`子句，否则会报错，对于UPDATE只能更新为`DEFAULT`；
+    当列定义为`GANERATED BY DEFAULT`时，用户提供的值会优先于默认值。
+
+    `seq_options`可以用于指定序列的选项。
+
+    >[!NOTE]说明
+    >
+    >- 该列的数据类型仅为整型，NUMERIC类型，该列隐式包含`NOT NULL`约束。
+    >- 无法同时定义default，serial，auto_increment，生成列，NULL约束。
+    >- 序列生成非事务操作，当列/表约束检查失败，触发器失败时该列已生成的值不会回滚。
+    >- 用户自定义的值不会影响该列的下一个值的生成，
+    >- 可以定义多列，但同一列不能重复定义。
+    >- 不支持分区表。
+
 - **GENERATED ALWAYS AS \( generation\_expr \) \[STORED\]**
 
   该子句将字段创建为生成列，生成列的值在写入（插入或更新）数据时由generation\_expr计算得到，STORED表示像普通列一样存储生成列的值。
@@ -808,7 +876,8 @@ ADD [ COLUMN ] [ IF NOT EXISTS ] column_name data_type [ CHARACTER SET | CHARSET
 
 请参考CREATE TABLE的[示例](create_table.md#zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8)。
 
-```
+- add column first/after示例
+```sql
 -- 创建B模式数据库。
 openGauss=# create database test_first_after dbcompatibility 'b';
 openGauss=# \c test_first_after
@@ -843,6 +912,67 @@ openGauss=# alter table t1 modify t10 varchar(20) charset utf8mb4 collate utf8mb
 openGauss=# alter table t1 add constraint uniq_a unique (f1) invisible;
 -- 修改索引为VISIBLE
 openGauss=# alter table t1 alter index uniq_a visible;
+```
+
+- 添加/修改/删除identity列
+```sql
+openGauss=# create table t1 (a int generated always as identity, b int);
+NOTICE:  CREATE TABLE will create implicit sequence "t1_a_seq" for serial column "t1.a"
+CREATE TABLE
+openGauss=# \d+ t1
+                                        Table "public.t1"
+ Column |  Type   |               Modifiers               | Storage | Stats target | Description 
+--------+---------+---------------------------------------+---------+--------------+-------------
+ a      | integer | not null generated always as identity | plain   |              | 
+ b      | integer |                                       | plain   |              | 
+Has OIDs: no
+Options: orientation=row, compression=no
+
+openGauss=# alter table t1 add column c numeric(20, 0) generated by default as identity;
+NOTICE:  ALTER TABLE will create implicit sequence "t1_c_seq" for serial column "t1.c"
+ALTER TABLE
+openGauss=# \d+ t1
+                                             Table "public.t1"
+ Column |     Type      |                 Modifiers                 | Storage | Stats target | Description 
+--------+---------------+-------------------------------------------+---------+--------------+-------------
+ a      | integer       | not null generated always as identity     | plain   |              | 
+ b      | integer       |                                           | plain   |              | 
+ c      | numeric(20,0) | not null generated by default as identity | main    |              | 
+Has OIDs: no
+Options: orientation=row, compression=no
+
+openGauss=# alter table t1 alter column c set generated always set start with 10;
+ALTER TABLE
+openGauss=# \d+ t1
+                                           Table "public.t1"
+ Column |     Type      |               Modifiers               | Storage | Stats target | Description 
+--------+---------------+---------------------------------------+---------+--------------+-------------
+ a      | integer       | not null generated always as identity | plain   |              | 
+ b      | integer       |                                       | plain   |              | 
+ c      | numeric(20,0) | not null generated always as identity | main    |              | 
+Has OIDs: no
+Options: orientation=row, compression=no
+
+openGauss=# alter table t1 alter column b drop identity;
+ERROR:  column "b" of relation "t1" is not an identity column
+openGauss=# alter table t1 alter column b drop identity if exists;
+NOTICE:  column "b" of relation "t1" is not an identity column, skipping
+ALTER TABLE
+openGauss=# alter table t1 alter column c drop identity;
+ALTER TABLE
+openGauss=# alter table t1 alter column c add generated by default as identity(start with 10 increment 20);
+NOTICE:  ALTER TABLE will create implicit sequence "t1_c_seq1" for serial column "t1.c"
+ALTER TABLE
+openGauss=# \d+ t1
+                                             Table "public.t1"
+ Column |     Type      |                 Modifiers                 | Storage | Stats target | Description 
+--------+---------------+-------------------------------------------+---------+--------------+-------------
+ a      | integer       | not null generated always as identity     | plain   |              | 
+ b      | integer       |                                           | plain   |              | 
+ c      | numeric(20,0) | not null generated by default as identity | main    |              | 
+Has OIDs: no
+Options: orientation=row, compression=no
+
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s489a6430be6447c193a4011257dc4994"></a>
