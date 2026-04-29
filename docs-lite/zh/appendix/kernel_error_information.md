@@ -12,7 +12,7 @@ ERRMSG: "invalid grant operation"
 
 SQLSTATE: 0LP01
 
-CAUSE: "Grant options cannnot be granted to public."
+CAUSE: "Grant options cannot be granted to public."
 
 ACTION: "Grant grant options to roles."
 
