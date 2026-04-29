@@ -12,7 +12,7 @@ ERRMSG: "invalid grant operation"
 
 SQLSTATE: 0LP01
 
-CAUSE: "Grant options cannnot be granted to public."
+CAUSE: "Grant options cannot be granted to public."
 
 ACTION: "Grant grant options to roles."
 
@@ -280,11 +280,11 @@ CAUSE: "System error."
 
 ACTION: "Contact engineer to support."
 
-ERRMSG: "Grant/revoke on untrusted languages if forbidden."
+ERRMSG: "Grant/revoke on untrusted languages is forbidden."
 
 SQLSTATE: 0LP01
 
-CAUSE: "Grant/revoke on untrusted languages if forbidden."
+CAUSE: "Grant/revoke on untrusted languages is forbidden."
 
 ACTION: "Support grant/revoke on trusted C languages"
 
@@ -1142,7 +1142,7 @@ SQLSTATE: 23514
 
 CAUSE: "some rows copy failed"
 
-ACTION: "check table defination"
+ACTION: "check table definition"
 
 ERRMSG: "new row for relation '%s' violates check constraint '%s'"
 
@@ -1214,7 +1214,7 @@ SQLSTATE: XX005
 
 CAUSE: "get KMS JSON tree failed"
 
-ACTION: "check input prarmeter or config.ini file"
+ACTION: "check input parameter or config.ini file"
 
 ERRMSG: "failed to get json tree"
 
@@ -1222,7 +1222,7 @@ SQLSTATE: XX005
 
 CAUSE: "config.ini json tree error"
 
-ACTION: "check input prarmeter or config.ini file"
+ACTION: "check input parameter or config.ini file"
 
 ERRMSG: "failed to set the value of json tree"
 
@@ -1230,7 +1230,7 @@ SQLSTATE: XX005
 
 CAUSE: "config.ini json tree error"
 
-ACTION: "check input prarmeter or config.ini file"
+ACTION: "check input parameter or config.ini file"
 
 ERRMSG: "http request failed"
 
@@ -1254,7 +1254,7 @@ SQLSTATE: XX005
 
 CAUSE: "KMS return value error"
 
-ACTION: "check KMS config paramenter"
+ACTION: "check KMS config parameterter"
 
 ERRMSG: "get kms dek is NULL"
 
