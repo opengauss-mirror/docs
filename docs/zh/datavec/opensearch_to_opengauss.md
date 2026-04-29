@@ -289,6 +289,11 @@ class OpenSearchToOpenGaussMigrator:
         else:
             return f"{self.data_file_prefix}.csv", 1
     
+    def _extract_part_num(self, filepath: str):
+        """从文件路径中提取分片编号"""
+        match = re.search(r'_(\d+)\.csv$', filepath)
+        return int(match.group(1)) if match else None
+
     def _find_all_data_files(self) -> List[str]:
         """查找所有数据文件（支持分片）"""
         files = []
@@ -300,24 +305,45 @@ class OpenSearchToOpenGaussMigrator:
         part_files = glob.glob(pattern)
         
         if part_files:
-            def extract_part_num(filepath):
-                match = re.search(r'_(\d+)\.csv$', filepath)
-                return int(match.group(1)) if match else None
-            
-            part_files = [f for f in part_files if extract_part_num(f) is not None]
-            part_files.sort(key=extract_part_num)
+            part_files = [f for f in part_files if self._extract_part_num(f) is not None]
+            part_files.sort(key=self._extract_part_num)
 
-            last_part_file = part_files[-1]
-            last_part_num = extract_part_num(last_part_file)
-            if last_part_num != len(part_files):
-                logger.warning(f"分片文件编号与预期不匹配，预期 {last_part_num}，实际存在 {len(part_files)} 个分片文件")
+            if part_files:
+                last_part_file = part_files[-1]
+                last_part_num = self._extract_part_num(last_part_file)
+                if last_part_num != len(part_files):
+                    logger.warning(f"分片文件编号与预期不匹配，预期 {last_part_num}，实际存在 {len(part_files)} 个分片文件")
             
-            if not files:
-                files = part_files
-            else:
-                logger.warning(f"同时存在主文件和分片文件，将使用主文件: {main_file}")
+                if not files:
+                    files = part_files
+                else:
+                    logger.warning(f"同时存在主文件和分片文件，将使用主文件: {main_file}")
         
         return files
+
+    def _clear_index_csv_files(self):
+        """清除所有CSV文件"""
+        files = []
+        pattern = f"{self.data_file_prefix}_*.csv"
+        part_files = glob.glob(pattern)
+
+        if part_files:
+            part_files = [f for f in part_files if self._extract_part_num(f) is not None]
+
+            if part_files:
+                files = part_files
+        
+        main_file = f"{self.data_file_prefix}.csv"
+        if os.path.exists(main_file):
+            files.append(main_file)
+
+        field_file = f"{self.data_file_prefix}_fields.csv"
+        if os.path.exists(field_file):
+            files.append(field_file)
+        
+        for file in files:
+            os.remove(file)
+            logger.info(f"已删除历史文件: {file}")
     
     def _init_opensearch_client(self):
         """初始化OpenSearch客户端"""
@@ -677,6 +703,7 @@ class OpenSearchToOpenGaussMigrator:
         self._check_opensearch_connection()
         self._check_index_exists()
         self._ensure_output_dir()
+        self._clear_index_csv_files()
         
         data_files = []
         current_file_rows = 0
