@@ -280,11 +280,11 @@ CAUSE: "System error."
 
 ACTION: "Contact engineer to support."
 
-ERRMSG: "Grant/revoke on untrusted languages if forbidden."
+ERRMSG: "Grant/revoke on untrusted languages is forbidden."
 
 SQLSTATE: 0LP01
 
-CAUSE: "Grant/revoke on untrusted languages if forbidden."
+CAUSE: "Grant/revoke on untrusted languages is forbidden."
 
 ACTION: "Support grant/revoke on trusted C languages"
 
