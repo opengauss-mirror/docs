@@ -1,5 +1,0 @@
-label: 安装指南
-isManual: true
-sections:
-    - href: ./single_node_guide/_toc.yaml
-    - href: ./two_nodes_guide/_toc.yaml

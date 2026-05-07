@@ -32,3 +32,7 @@ sections:
       - href: ./tool_and_commandreference/_toc.yaml
       - href: ./characteristic_description/_toc.yaml
       - href: ./appendix/_toc.yaml
+single_manuals:
+  - href:
+      upstream: https://gitcode.com/opengauss/oGRAC-docs/blob/7.0.0-RC3/docs/zh/_toc.yaml
+      path: ./ograc
