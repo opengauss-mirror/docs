@@ -3,3 +3,5 @@ isManual: true
 sections:
   - label: 常见问题
     href: ./faq.md
+  - label: Core 常见问题与解决方法
+    href: ./core.md    
