@@ -1,7 +1,7 @@
 label: 常见问题
 isManual: true
 sections:
-  - label: 常见问题
+  - label: 通用
     href: ./faq.md
   - label: Core 常见问题与解决方法
     href: ./core.md    
