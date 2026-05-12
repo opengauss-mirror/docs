@@ -7,6 +7,10 @@ sections:
     sections:
       - label: gsql
         href: ./gsql.md
+      - label: DBeaver连接openGauss
+        href: ./dbeaver_connect_opengauss.md
+      - label: Navicat连接openGauss
+        href: ./navicat_connect_opengauss.md
   - label: 服务端工具
     sections:
       - label: gs_dump
