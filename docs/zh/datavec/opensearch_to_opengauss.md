@@ -157,6 +157,8 @@ class OpenSearchToOpenGaussMigrator:
         "join:name": "text",
         "join:parent": "text",
     }
+
+    MAX_TABLE_NAME_LENGTH = 58
     
     def __init__(self, config_file: str = 'config.ini', 
                  cli_index: Optional[str] = None,
@@ -263,6 +265,10 @@ class OpenSearchToOpenGaussMigrator:
         
         if self.table_name in self.OPENGAUSS_KEYWORDS:
             self.table_name = f"{self.table_name}_"
+        
+        if len(self.table_name) > self.MAX_TABLE_NAME_LENGTH:
+            logger.error(f"目标表名'{self.table_name}'超过{self.MAX_TABLE_NAME_LENGTH}个字符，迁移无法成功，请修改表名")
+            sys.exit(1)
     
     def _load_export_config(self):
         """加载导出配置"""
@@ -1355,3 +1361,23 @@ OpenSearch 中的嵌套对象（如 `user.address.city`）在迁移时会被**�
 ### 关键字冲突处理
 
 由于 OpenSearch 与 openGauss 关键字不同，为避免使用索引信息构造的建表语句中的表名和字段名与 openGauss 关键字冲突，出现 SQL 语法错误，导致创建表结构失败。工具内置了 OPENGAUSS_KEYWORDS 集合，在表名与字段名处理时，如果遇到表名和字段名命中该集合中关键字的情况，迁移工具自动在原始名称后添加下划线（`_`）作为后缀。例如，`user` 将转换为 `user_`。
+
+## 迁移规则限制
+
+### 导出 CSV 文件不支持修改
+
+本迁移工具导出的 CSV 文件不支持任何修改操作，包括重命名文件、修改文件内容或在导入前删除文件。
+
+迁移工具在导入过程中会解析 CSV 文件，以获取目标表结构和表数据。若文件被修改或删除，可能导致以下问题：
+
+- 导入失败
+- 导入后的表结构异常
+- 导入后的表数据丢失
+
+因此，请保持导出的 CSV 文件原样使用，勿做任何更改。
+
+### 表名长度限制
+
+由于 openGauss 规定对象名长度不得超过 63 个字符，本迁移工具对迁移目标端的表名作出如下限制：**表名长度不得超过 58 个字符。**
+
+原因在于：迁移过程中，工具会根据表名自动生成对应的主键名称，生成规则为 `表名_pkey`。若表名长度超过 58 个字符，则拼接后的主键名将超过 openGauss 允许的 63 个字符上限，从而导致迁移异常。
