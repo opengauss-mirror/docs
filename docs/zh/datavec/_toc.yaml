@@ -59,6 +59,12 @@ sections:
     sections:
       - label: OGAI
         href: ./ogai_usage_guide.md
+  - label: oG-Memory
+    sections:
+      - label: 架构
+        href: ./ogmem_architecture.md
+      - label: API
+        href: ./ogmem_api.md
   - label: 工具编排使用
     sections:
       - label:  编排组件
