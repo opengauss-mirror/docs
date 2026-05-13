@@ -151,7 +151,7 @@ class OpenSearchToOpenGaussMigrator:
         "date_range": "tsrange",
         "object": "jsonb",
         "nested": "jsonb",
-        "geo_point": "point",
+        "geo_point": "text",
         "knn_vector": "vector",
         "_id": "text",
         "join:name": "text",
@@ -899,7 +899,7 @@ class OpenSearchToOpenGaussMigrator:
     def handle_array_field_value(self, original_value: str) -> str:
         """数组字段值处理函数"""
         if original_value == 'NULL' or original_value is None:
-            return '{}'
+            return 'NULL'
         elif not original_value.startswith('{'):
             return '{' + original_value + '}'
         else:
@@ -1306,21 +1306,21 @@ Options: orientation=row, compression=no
 工具内置 `TYPE_MAPPING` 映射表，将 OpenSearch 字段类型转换为对应的 openGauss 数据类型，实际以代码中`TYPE_MAPPING`为准，对于 `TYPE_MAPPING` 映射表中未映射的源端字段类型，统一映射为 openGauss TEXT类型。部分映射规则如下：
 
 | OpenSearch 类型       | openGauss 类型 |
-| :-------------------- | :------------- |
-| `keyword`, `text`     | `TEXT`         |
-| `byte`, `short`       | `SMALLINT`     |
-| `integer`             | `INTEGER`      |
-| `long`                | `BIGINT`       |
-| `float`, `half_float` | `REAL`         |
-| `double`              | `FLOAT8`       |
-| `boolean`             | `BOOLEAN`      |
-| `date`                | `TIMESTAMP`    |
-| `binary`              | `BYTEA`        |
-| `ip`                  | `INET`         |
-| `geo_point`           | `POINT`        |
-| `knn_vector`          | `VECTOR(n)`    |
-| `_id`                 | `TEXT`         |
-| ...                   | ...            |
+| :-------------------- |:-------------|
+| `keyword`, `text`     | `TEXT`       |
+| `byte`, `short`       | `SMALLINT`   |
+| `integer`             | `INTEGER`    |
+| `long`                | `BIGINT`     |
+| `float`, `half_float` | `REAL`       |
+| `double`              | `FLOAT8`     |
+| `boolean`             | `BOOLEAN`    |
+| `date`                | `TIMESTAMP`  |
+| `binary`              | `BYTEA`      |
+| `ip`                  | `INET`       |
+| `geo_point`           | `TEXT`       |
+| `knn_vector`          | `VECTOR(n)`  |
+| `_id`                 | `TEXT`       |
+| ...                   | ...          |
 
 ### 数组数据迁移规则
 
