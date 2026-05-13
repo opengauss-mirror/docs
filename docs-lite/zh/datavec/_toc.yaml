@@ -54,7 +54,13 @@ sections:
           - label: 实现
             href: ./implement.md
           - label: GIN提示与技巧
-            href: ./gin_tips_and_tricks.md                                  
+            href: ./gin_tips_and_tricks.md
+  - label: oG-Memory
+    sections:
+      - label: 架构
+        href: ./ogmem_architecture.md
+      - label: API
+        href: ./ogmem_api.md                                  
   - label: 工具编排使用
     sections:
       - label: 编排组件
