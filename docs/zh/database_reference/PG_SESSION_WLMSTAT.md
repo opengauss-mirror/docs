@@ -183,5 +183,33 @@ PG\_SESSION\_WLMSTAT视图显示当前用户执行作业正在运行时的负载
 <td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="p181684268212"><a name="p181684268212"></a><a name="p181684268212"></a>该字段不支持。</p>
 </td>
 </tr>
+<tr id="row_rowdesc_a_store_count"><td class="cellrowborder" valign="top" width="23.369999999999997%" headers="mcps1.2.4.1.1 "><p id="p_rowdesc_a_store_count"><a name="p_rowdesc_a_store_count"></a><a name="p_rowdesc_a_store_count"></a>rowdesc_a_store_count</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.79%" headers="mcps1.2.4.1.2 "><p id="p_rowdesc_a_store_count_type"><a name="p_rowdesc_a_store_count_type"></a><a name="p_rowdesc_a_store_count_type"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="p_rowdesc_a_store_count_desc"><a name="p_rowdesc_a_store_count_desc"></a><a name="p_rowdesc_a_store_count_desc"></a>A库缓存的累计建槽次数。A库缓存计数同样适用于其他通过PG协议访问的库，包括PG库和D库。</p>
+</td>
+</tr>
+<tr id="row_rowdesc_a_hit_count"><td class="cellrowborder" valign="top" width="23.369999999999997%" headers="mcps1.2.4.1.1 "><p id="p_rowdesc_a_hit_count"><a name="p_rowdesc_a_hit_count"></a><a name="p_rowdesc_a_hit_count"></a>rowdesc_a_hit_count</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.79%" headers="mcps1.2.4.1.2 "><p id="p_rowdesc_a_hit_count_type"><a name="p_rowdesc_a_hit_count_type"></a><a name="p_rowdesc_a_hit_count_type"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="p_rowdesc_a_hit_count_desc"><a name="p_rowdesc_a_hit_count_desc"></a><a name="p_rowdesc_a_hit_count_desc"></a>A库缓存的累计命中次数。A库缓存计数同样适用于其他通过PG协议访问的库，包括PG库和D库。</p>
+</td>
+</tr>
+<tr id="row_rowdesc_b_store_count"><td class="cellrowborder" valign="top" width="23.369999999999997%" headers="mcps1.2.4.1.1 "><p id="p_rowdesc_b_store_count"><a name="p_rowdesc_b_store_count"></a><a name="p_rowdesc_b_store_count"></a>rowdesc_b_store_count</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.79%" headers="mcps1.2.4.1.2 "><p id="p_rowdesc_b_store_count_type"><a name="p_rowdesc_b_store_count_type"></a><a name="p_rowdesc_b_store_count_type"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="p_rowdesc_b_store_count_desc"><a name="p_rowdesc_b_store_count_desc"></a><a name="p_rowdesc_b_store_count_desc"></a>B库D报文缓存的累计建槽次数。仅适用于Dolphin/MySQL协议路径，不适用于通过PG协议访问的库。</p>
+</td>
+</tr>
+<tr id="row_rowdesc_b_hit_count"><td class="cellrowborder" valign="top" width="23.369999999999997%" headers="mcps1.2.4.1.1 "><p id="p_rowdesc_b_hit_count"><a name="p_rowdesc_b_hit_count"></a><a name="p_rowdesc_b_hit_count"></a>rowdesc_b_hit_count</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.79%" headers="mcps1.2.4.1.2 "><p id="p_rowdesc_b_hit_count_type"><a name="p_rowdesc_b_hit_count_type"></a><a name="p_rowdesc_b_hit_count_type"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="p_rowdesc_b_hit_count_desc"><a name="p_rowdesc_b_hit_count_desc"></a><a name="p_rowdesc_b_hit_count_desc"></a>B库D报文缓存的累计命中次数。仅适用于Dolphin/MySQL协议路径，不适用于通过PG协议访问的库。</p>
+</td>
+</tr>
 </tbody>
 </table>
