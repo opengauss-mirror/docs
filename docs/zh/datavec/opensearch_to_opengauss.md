@@ -523,6 +523,8 @@ class OpenSearchToOpenGaussMigrator:
             return None
         
         if index >= len(parts):
+            if isinstance(current, list) and full_path not in self.vector_fields:
+                self.array_fields.add(full_path)
             return current
         
         current_part = parts[index]
