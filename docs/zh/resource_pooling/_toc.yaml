@@ -11,6 +11,8 @@ sections:
     href: ./feature_enhancement.md
   - label: DSS线程池
     href: ./dss_thread_pool.md
+  - label: MES灵衢内存语义通信优化
+    href: ./mes_ub_shared_memory_communication_optimization.md
   - label: 资源池化高可用系统配置
     href: ./resource_pooling_ha_system_configuration.md    
   - label: 资源池化主备双集群容灾
