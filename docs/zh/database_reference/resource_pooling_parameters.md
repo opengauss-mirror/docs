@@ -149,12 +149,39 @@ ss_work_thread_pool_attr = '64'
 
 该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围**： 字符串类型，TCP、RDMA
+**取值范围**： 字符串类型，TCP、RDMA、SHM
 
 **默认值**： TCP
 
 >[!NOTE]说明
->RDMA通信依赖CX5网卡，并且依赖OCK  RDMA动态库。开启前请确保已配置正确。
+>
+>- RDMA通信依赖CX5网卡，并且依赖OCK RDMA动态库。开启前请确保已配置正确。
+>- SHM表示使用灵衢超节点UB共享内存作为MES节点间互连方式，依赖UBS Memory服务（libubsmem.so）与ub_dist_comm_queue动态库；集群各节点需具备灵衢超节点能力。SHM与TCP、RDMA互斥，启用后可通过参数[ss\_shm\_ub\_comm\_cpu\_bind](#section_ss_shm_ub_comm_cpu_bind)配置各队列CPU亲和性。
+
+## ss\_shm\_ub\_comm\_cpu\_bind<a name="section_ss_shm_ub_comm_cpu_bind"></a>
+
+**参数说明**： SHM模式下MES共享内存通信队列（ub\_comm\_queue）的CPU绑核配置。共9个槽位，分别对应9个优先级队列（含prio6-mirror队列，索引0–8）；每个槽位指定该队列dispatch线程绑定的CPU核ID，未配置或解析失败时对应队列不绑核（cpu\_id = -1）。
+
+该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**： 字符串。格式为`[id,id,...]`（逗号分隔的CPU ID列表，9个槽位）或`[lo~hi]`（连续CPU ID范围展开为槽位）；必须以`[`开头、以`]`结尾，内部仅允许数字、逗号、波浪号、减号及空格。仅在[ss\_interconnect\_type](#section2052815175514)为SHM时生效。
+
+**默认值**： ""，空字符串
+
+>[!NOTE]说明
+>
+>- 参数格式校验失败时输出WARNING日志，并禁用CPU绑核（各队列回退为不绑核）。
+>- 更多说明参见[MES灵衢内存语义通信优化](../resource_pooling/mes_ub_shared_memory_communication_optimization.md)。
+
+## ss\_mes\_elapsed\_switch<a name="section_ss_mes_elapsed_switch"></a>
+
+**参数说明**： MES耗时统计开关。开启后记录MES命令级发送耗时；当[ss\_interconnect\_type](#section2052815175514)为SHM时，同时按ub\_queue维度统计SHM发送时延（avg/max/min）、发送次数与接收次数，并约每10秒输出至运行日志。
+
+该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**： 布尔型，on、off。on表示开启，off表示关闭。
+
+**默认值**： off
 
 ## ss\_interconnect\_url<a name="section111131910175619"></a>
 
