@@ -153,7 +153,7 @@
 <tbody><tr id="row77941232134613"><td class="cellrowborder" valign="top" width="32.34%" headers="mcps1.2.3.1.1 "><p id="p879473220468"><a name="p879473220468"></a><a name="p879473220468"></a>enable_set_variables</p>
 </td>
 <td class="cellrowborder" valign="top" width="67.66%" headers="mcps1.2.3.1.2 "><p id="p7794183213469"><a name="p7794183213469"></a><a name="p7794183213469"></a>set语法增强控制开关。</p>
-<a name="ul38361318484"></a><a name="ul38361318484"></a><ul id="ul38361318484"><li>不设置此配置时，不支持set自定义变量、set [global | session]语法。</li><li>设置此配置时，支持B兼容模式下使用上述语法，比如<em id="i183671214675"><a name="i183671214675"></a><a name="i183671214675"></a> set @v1 = 1；</em>。</li></ul>
+<a name="ul38361318484"></a><a name="ul38361318484"></a><ul id="ul38361318484"><li>不设置此配置时，不支持set自定义变量、set [global | session]语法。</li><li>设置此配置时，支持B兼容模式下使用上述语法，比如<em id="i183671214675"><a name="i183671214675"></a><a name="i183671214675"></a> set @v1 = 1；</em>。设置此配置时，会影响@相关的操作符。</li></ul>
 </td>
 </tr>
 <tr id="row12943246105218"><td class="cellrowborder" valign="top" width="32.34%" headers="mcps1.2.3.1.1 "><p id="p1776695014013"><a name="p1776695014013"></a><a name="p1776695014013"></a>set_session_transaction</p>
@@ -165,13 +165,13 @@
 <tr id="row63441281383"><td class="cellrowborder" valign="top" width="32.34%" headers="mcps1.2.3.1.1 "><p id="p174301440881"><a name="p174301440881"></a><a name="p174301440881"></a>enable_modify_column</p>
 </td>
 <td class="cellrowborder" valign="top" width="67.66%" headers="mcps1.2.3.1.2 "><p id="p7344102813820"><a name="p7344102813820"></a><a name="p7344102813820"></a>ALTER TABLE MODIFY语义控制开关。</p>
-<a name="ul1259015399910"></a><a name="ul1259015399910"></a><ul id="ul1259015399910"><li>不设置此配置时，“ALTER TABLE table_name MODIFY column_name data_type;”只修改列的数据类型。</li><li>设置此配置时，“ALTER TABLE table_name MODIFY column_name data_type;”修改整个列定义。</li></ul>
+<a name="ul1259015399910"></a><a name="ul1259015399910"></a><ul id="ul1259015399910"><li>不设置此配置时，“ALTER TABLE table_name MODIFY column_name data_type;”只修改列的数据类型。</li><li>设置此配置时，“ALTER TABLE table_name MODIFY column_name data_type;”修改整个列定义。设置此配置，修改列定义如果只指定数据类型，会导致原有列的其他属性（比如默认值，not null约束等）丢失。</li></ul>
 </td>
 </tr>
 <tr id="row1090841018233"><td class="cellrowborder" valign="top" width="32.34%" headers="mcps1.2.3.1.1 "><p id="p10908141017237"><a name="p10908141017237"></a><a name="p10908141017237"></a>default_collation</p>
 </td>
 <td class="cellrowborder" valign="top" width="67.66%" headers="mcps1.2.3.1.2 "><p id="p7908710152316"><a name="p7908710152316"></a><a name="p7908710152316"></a>默认字符序前向兼容开关。</p>
-<a name="ul101812393239"></a><a name="ul101812393239"></a><ul id="ul101812393239"><li>不设置此配置时，在未显式指定字符类型字段的字符集或字符序且表级字符序也为空时，字段为default字符序。</li><li>设置此配置时，字符类型字段的字符序当表级字符序不为空时继承表级字符序，为空时设置为数据库编码对应的默认字符序。</li></ul>
+<a name="ul101812393239"></a><a name="ul101812393239"></a><ul id="ul101812393239"><li>不设置此配置时，在未显式指定字符类型字段的字符集或字符序且表级字符序也为空时，字段为default字符序。</li><li>设置此配置时，字符类型字段的字符序当表级字符序不为空时继承表级字符序，为空时设置为数据库编码对应的默认字符序。针对OM方式安装的数据库，Encoding=SQL_ASCII，Collate=C，Ctype=C，在配置'default_collation'时，建表指定varchar类型，将实际存储为varbinary类型，因此为兼容MY，建议在创建B库时指定编码为UTF8，即`create database testb with dbcompatibility = 'b' encoding 'UTF8'`;同时字符序的差异会存在大小写敏感的差异，导致部分查询结果有差异。</li></ul>
 </td>
 </tr>
 <tr id="row1090841018233"><td class="cellrowborder" valign="top" width="32.34%" headers="mcps1.2.3.1.1 "><p id="p10908141017237"><a name="p10908141017237"></a><a name="p10908141017237"></a>fetch</p>
@@ -189,7 +189,7 @@
 <tr id="row1090841018233"><td class="cellrowborder" valign="top" width="32.34%" headers="mcps1.2.3.1.1 "><p id="p10908141017237"><a name="p10908141017237"></a><a name="p10908141017237"></a>diagnostics</p>
 </td>
 <td class="cellrowborder" valign="top" width="67.66%" headers="mcps1.2.3.1.2 "><p id="p7908710152316"><a name="p7908710152316"></a><a name="p7908710152316"></a>GET DIAGNOSTICS兼容开关。</p>
-<a name="ul101812393239"></a><a name="ul101812393239"></a><ul id="ul101812393239"><li>不设置此配置时，GET DIAGNOSTIC语法按原有实现。</li><li>设置此配置时，GET DIAGNOSTIC语法按MySQL兼容语法实现。</li></ul>
+<a name="ul101812393239"></a><a name="ul101812393239"></a><ul id="ul101812393239"><li>不设置此配置时，GET DIAGNOSTIC语法按原有实现，不支持在异常块获取行数，会抛出错误。</li><li>设置此配置时，GET DIAGNOSTIC语法获取诊断信息，按MySQL兼容语法实现。</li></ul>
 </td>
 </tr>
 </tbody>
@@ -205,8 +205,78 @@
 
 **默认值**： on
 
-- on表示在MY数据库模式下支持自定义用户变量。
+- on表示在MY数据库模式下支持自定义用户变量。设置此配置时，会影响@相关的操作符。
 - off表示在MY数据库模式下不支持自定义用户变量。
+
+```
+openGauss=# set b_format_behavior_compat_options = '';
+SET
+openGauss=# set enable_set_variable_b_format = on;
+SET
+openGauss=# set @v1 = 1;
+SET
+openGauss=# select @@ box '(0,0),(4,4)' AS center_point;
+ center_point 
+--------------
+ (2,2)
+(1 row)
+
+openGauss=# select @@box '(0,0),(4,4)' AS center_point;
+ERROR:  syntax error at or near "AS"
+LINE 1: select @@box '(0,0),(4,4)' AS center_point;
+                                   ^
+openGauss=# set enable_set_variable_b_format = off;
+SET
+openGauss=# set @v1 = 1;
+ERROR:  SET UserVar/GLOBAL/SESSION is supported only in B-format database, and enable_set_variable_b_format = on.
+LINE 1: set @v1 = 1;
+        ^
+openGauss=# select @@ box '(0,0),(4,4)' AS center_point;
+ center_point 
+--------------
+ (2,2)
+(1 row)
+
+openGauss=# select @@box '(0,0),(4,4)' AS center_point;
+ center_point 
+--------------
+ (2,2)
+(1 row)
+
+openGauss=# set enable_set_variable_b_format = off;
+SET
+openGauss=# set b_format_behavior_compat_options = 'enable_set_variables';
+SET
+openGauss=# set @v1 = 1;
+SET
+openGauss=# select @@ box '(0,0),(4,4)' AS center_point;
+ center_point 
+--------------
+ (2,2)
+(1 row)
+
+openGauss=# select @@box '(0,0),(4,4)' AS center_point;
+ERROR:  syntax error at or near "AS"
+LINE 1: select @@box '(0,0),(4,4)' AS center_point;
+                                   ^
+openGauss=# set b_format_behavior_compat_options = '';
+SET
+openGauss=# set @v1 = 1;
+ERROR:  SET UserVar/GLOBAL/SESSION is supported only in B-format database, and enable_set_variable_b_format = on.
+LINE 1: set @v1 = 1;
+        ^
+openGauss=# select @@ box '(0,0),(4,4)' AS center_point;
+ center_point 
+--------------
+ (2,2)
+(1 row)
+
+openGauss=# select @@box '(0,0),(4,4)' AS center_point; 
+ center_point 
+--------------
+ (2,2)
+(1 row)
+```
 
 ## behavior\_compat\_options<a name="zh-cn_topic_0283137574_zh-cn_topic_0237124754_section1980124735516"></a>
 
