@@ -463,3 +463,42 @@ ss_work_thread_pool_attr = '64'
 >[!NOTE]说明
 >
 >- 该参数如果使用到分布式存储的个性化功能或者性能情况下开启，如果与dorado所有要求一样的情况下，即使使用分布式存储，也可以不用开启该参数。
+
+## enable_btree_rootbuf_cache
+
+**参数说明**： 是否开启资源池化btree索引 root页面备机缓存特性。
+
+该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**： 布尔型，on、off。on开启，off表示不开启。
+
+**默认值**： off
+>[!NOTE]说明
+>
+>- 该特性主要用于资源池主机读写，备机只读场景，备机_bt_getroot性能瓶颈优化的，不建议在btree索引结构频繁变化的场景使用。
+
+## enable_ub
+
+**参数说明**： 是否开启资源池化基于UB的事务缓存加速特性。
+
+该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**： 布尔型，on、off。on开启，off表示不开启。
+
+**默认值**： off
+>[!NOTE]说明
+>
+>- 该开关开启后，资源池化集群在主备事务访问路径上启用"共享内存优先、DMS回退"的加速逻辑。
+
+## ss_init_clog_size
+
+**参数说明**： startup_reform场景下CLOG/CSNLOG启动预热窗口上限控制参数。
+
+该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**：  整型，1024~1048576KB。代表从本地磁盘读取CLOG, CSNLOG文件预热的窗口上限。
+
+**默认值**： 10240KB
+>[!NOTE]说明
+>
+>- 参数越大，切换后热点事务命中率越高，但恢复尾段耗时也越长；参数越小，恢复更快，但冷启动爬坡更明显
