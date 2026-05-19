@@ -279,6 +279,9 @@
         <td><a href="../resource_pooling/mes_ub_shared_memory_communication_optimization.md">MES灵衢内存语义通信优化</a></td>
     </tr>
     <tr>
+        <td><a href="../resource_pooling/ub_transaction_snapshot_acceleration_introduction.md">事务快照UB访问加速特性简介</a></td>
+    </tr>
+    <tr>
         <td><a href="./resource_pooling_multi_machine_paralleism.md">资源池化多机并行</a></td>
     </tr>
     <tr>
