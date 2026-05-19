@@ -151,3 +151,18 @@
      Receiver info:
     No information 
     ```
+
+    执行gsql命令登录数据库。
+
+    ```
+    gsql -d postgres -p 5432 -r
+    ```  
+   
+    登录数据库之后显示类似如下信息，说明数据库安装成功并能正常连接：
+
+    ```
+    Non-SSL connection (SSL connection is recommended when requiring high-security)
+    Type "help" for help.
+   
+    openGauss=#
+    ``` 
