@@ -1,6 +1,6 @@
-# oG-Memory API
+# oGMemory API
 
-本文档展示 oG-Memory HTTP API 的顶层接口。接口由 `server/app.py` 暴露，核心业务由 `MemoryService` 编排。详细请求字段、响应结构和调用示例应以具体集成文档或代码为准。
+本文档展示 oGMemory HTTP API 的顶层接口。接口由 `server/app.py` 暴露，核心业务由 `MemoryService` 编排。详细请求字段、响应结构和调用示例应以具体集成文档或代码为准。
 
 默认服务地址：
 
@@ -14,7 +14,7 @@ http://localhost:8090
 
 | 方法 | 路径 | 用途 | 备注 |
 | --- | --- | --- | --- |
-| POST | `/api/v1/compose` | 组装当前轮次上下文 | 推理前调用，返回注入 oG-Memory 上下文后的 messages |
+| POST | `/api/v1/compose` | 组装当前轮次上下文 | 推理前调用，返回注入 oGMemory 上下文后的 messages |
 | POST | `/api/v1/after_turn` | 轮次结束后增量写入 | 累积消息，达到阈值后后台抽取、写入、索引和归档 |
 | POST | `/api/v1/ingest` | 写入消息到 session buffer | 只进入短期会话缓冲，不直接等同长期记忆写入 |
 | POST | `/api/v1/ingest_batch` | 批量写入消息到 session buffer | 当前实现等价于 `ingest` |
@@ -25,7 +25,7 @@ http://localhost:8090
 
 ## 记忆检索接口
 
-记忆检索接口用于搜索和读取已经进入 oG-Memory 的上下文。
+记忆检索接口用于搜索和读取已经进入 oGMemory 的上下文。
 
 | 方法 | 路径 | 用途 | 备注 |
 | --- | --- | --- | --- |
@@ -49,7 +49,7 @@ http://localhost:8090
 
 | 方法 | 路径 | 用途 | 备注 |
 | --- | --- | --- | --- |
-| GET | `/api/v1/health` | 健康检查 | 检查 oG-Memory、AGFS、LLM 等基础可用性 |
+| GET | `/api/v1/health` | 健康检查 | 检查 oGMemory、AGFS、LLM 等基础可用性 |
 | GET | `/api/v1/token_stats` | 查看 token 统计 | 返回累计 LLM / embedding / tool usage 统计 |
 | POST | `/api/v1/token_stats` | 查看并可重置 token 统计 | 请求中可携带 reset 语义 |
 | GET | `/api/v1/stats/tool-usage` | 查看工具调用统计 | 推荐路径 |

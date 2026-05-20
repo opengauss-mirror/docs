@@ -59,7 +59,7 @@ sections:
     sections:
       - label: OGAI
         href: ./ogai_usage_guide.md
-  - label: oG-Memory
+  - label: oGMemory
     sections:
       - label: 入门指南
         sections:
@@ -75,7 +75,7 @@ sections:
         href: ./ogmem_api.md
       - label: 典型案例
         sections:
-          - label: 让学习助手真正记住你：OpenClaw与oG-Memory的长期陪伴式学习案例
+          - label: 让学习助手真正记住你：OpenClaw与oGMemory的长期陪伴式学习案例
             href: ./ogmem_case01.md
   - label: 工具编排使用
     sections:
