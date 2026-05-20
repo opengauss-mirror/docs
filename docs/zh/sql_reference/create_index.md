@@ -204,7 +204,7 @@
 
     取值范围：
 
-    只有 GIN 索引支持 FASTUPDATE、GIN\_PENDING\_LIST\_LIMIT 参数。GIN 和 Psort 之外的索引都支持 FILLFACTOR 参数。只有 UBTREE 索引支持 INDEXSPLIT，INDEX\_TYPE 参数。
+    只有 GIN 索引支持 FASTUPDATE、GIN\_PENDING\_LIST\_LIMIT 参数。GIN 和 Psort 之外的索引都支持 FILLFACTOR 参数。只有 UBTREE 索引支持INDEX\_TYPE 参数。
 
     - **FILLFACTOR**
 
@@ -230,7 +230,7 @@
 
     - **INDEXSPLIT**
 
-        UBTREE 索引选择采取哪种分裂策略。其中 DEFAULT 策略指的是与 BTREE 相同的分裂策略。INSERTPT 策略能在某些场景下显著降低索引空间占用。
+        UBTREE/BTREE索引选择采取哪种分裂策略。其中 DEFAULT 策略是默认分裂策略。INSERTPT 策略能在某些场景下显著降低索引空间占用。
 
         取值范围：INSERTPT，DEAFAULT
 
