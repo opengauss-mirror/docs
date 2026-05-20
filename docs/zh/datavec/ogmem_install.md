@@ -1,12 +1,12 @@
-# oG-Memory 快速安装
+# oGMemory 快速安装
 
 ## 一、安装方式
 
 | 你想做什么 | 推荐方式 | 会生成什么 | 启动方式 |
 | --- | --- | --- | --- |
-| 只启动 oG-Memory HTTP 服务，供 SDK、脚本或已有 Agent 调用 | Headless | `config/ogmem.yaml` | `ogmem start headless` |
-| 把 oG-Memory 接入本机已有的 OpenClaw 或 Claude Code | Agent Plugin | `config/ogmem.yaml`，以及 OpenClaw/Claude 侧配置 | `ogmem start plugin` |
-| 一次性部署 OpenClaw Gateway + oG-Memory + 可选 openGauss | Docker | `deploy/deploy.env`、`deploy/ogmemory.yaml` | `bash deploy/deploy.sh` |
+| 只启动 oGMemory HTTP 服务，供 SDK、脚本或已有 Agent 调用 | Headless | `config/ogmem.yaml` | `ogmem start headless` |
+| 把 oGMemory 接入本机已有的 OpenClaw 或 Claude Code | Agent Plugin | `config/ogmem.yaml`，以及 OpenClaw/Claude 侧配置 | `ogmem start plugin` |
+| 一次性部署 OpenClaw Gateway + oGMemory + 可选 openGauss | Docker | `deploy/deploy.env`、`deploy/ogmemory.yaml` | `bash deploy/deploy.sh` |
 
 如果你只是验证命令链路，可以选择 `mock` provider，不需要真实模型 API Key。需要真实记忆抽取时，再选择 `openai`、`volcengine`、`dashscope` 或 `zhipu`。
 
@@ -24,8 +24,8 @@
 ### 2. 获取项目源码
 
 ```bash
-git clone --branch dev https://gitcode.com/opengauss/oG-Memory.git
-cd oG-Memory
+git clone --branch dev https://gitcode.com/opengauss/oGMemory.git
+cd oGMemory
 ```
 
 ### 3. 创建 Python 环境并安装
@@ -50,7 +50,7 @@ ogmem --help
 
 ### 4. 选择存储后端
 
-oG-Memory 的安装方式和存储后端是两层选择：Headless、Agent Plugin、Docker 决定服务怎么启动；SQL 或 AGFS 决定记忆数据怎么落盘。
+oGMemory 的安装方式和存储后端是两层选择：Headless、Agent Plugin、Docker 决定服务怎么启动；SQL 或 AGFS 决定记忆数据怎么落盘。
 
 | 存储后端 | 适合场景 | 配置方式 |
 | --- | --- | --- |
@@ -61,7 +61,7 @@ oG-Memory 的安装方式和存储后端是两层选择：Headless、Agent Plugi
 
 ## 三、方式 A：Headless 本地服务
 
-适合只启动 oG-Memory HTTP 服务，然后由 SDK、脚本或已有 Agent 访问。
+适合只启动 oGMemory HTTP 服务，然后由 SDK、脚本或已有 Agent 访问。
 
 交互式配置：
 
@@ -112,9 +112,9 @@ ogmem stop local
 
 ## 四、方式 B：接入本机 Agent
 
-适合你已经在本机安装 OpenClaw 或 Claude Code，希望把 oG-Memory 作为长期记忆能力接进去。
+适合你已经在本机安装 OpenClaw 或 Claude Code，希望把 oGMemory 作为长期记忆能力接进去。
 
-> 注意：`ogmem onboard --mode plugin` 不负责安装 OpenClaw 或 Claude Code 本体。它只生成 oG-Memory 配置，并根据你选择的 Agent 生成对应插件配置或 hooks。
+> 注意：`ogmem onboard --mode plugin` 不负责安装 OpenClaw 或 Claude Code 本体。它只生成 oGMemory 配置，并根据你选择的 Agent 生成对应插件配置或 hooks。
 
 交互式配置：
 
@@ -147,9 +147,9 @@ openclaw.plugin.json
 ogmem start plugin
 ```
 
-`ogmem start plugin` 会先确保 oG-Memory ContextEngine 可用；如果检测到 OpenClaw 配置且本机有 `openclaw` 命令，会尝试按生成的配置启动 OpenClaw。OpenClaw 本体仍需要你提前安装。
+`ogmem start plugin` 会先确保 oGMemory ContextEngine 可用；如果检测到 OpenClaw 配置且本机有 `openclaw` 命令，会尝试按生成的配置启动 OpenClaw。OpenClaw 本体仍需要你提前安装。
 
-停止 oG-Memory 本地服务可使用：
+停止 oGMemory 本地服务可使用：
 
 ```bash
 ogmem stop local
@@ -159,12 +159,12 @@ OpenClaw 或 Claude Code 进程请按各自工具的方式停止。
 
 OpenClaw 本地插件的更多变量见：
 
-- [openclaw_context_engine_plugin/ENV.md](https://gitcode.com/opengauss/oG-Memory/blob/dev/openclaw_context_engine_plugin/ENV.md)
-- [openclaw_context_engine_plugin/README.md](https://gitcode.com/opengauss/oG-Memory/blob/dev/openclaw_context_engine_plugin/README.md)
+- [openclaw_context_engine_plugin/ENV.md](https://gitcode.com/opengauss/oGMemory/blob/dev/openclaw_context_engine_plugin/ENV.md)
+- [openclaw_context_engine_plugin/README.md](https://gitcode.com/opengauss/oGMemory/blob/dev/openclaw_context_engine_plugin/README.md)
 
 ## 五、方式 C：Docker 一体化部署
 
-适合一次性拉起 OpenClaw Gateway、oG-Memory 和可选 openGauss。
+适合一次性拉起 OpenClaw Gateway、oGMemory 和可选 openGauss。
 
 交互式配置：
 
@@ -200,7 +200,7 @@ docker logs openclaw_ogmem -f
 docker logs opengauss -f
 ```
 
-完整部署变量、ARM64 镜像限制、多租户部署和故障排查见 [deploy/README.md](https://gitcode.com/opengauss/oG-Memory/blob/dev/deploy/README.md)。
+完整部署变量、ARM64 镜像限制、多租户部署和故障排查见 [deploy/README.md](https://gitcode.com/opengauss/oGMemory/blob/dev/deploy/README.md)。
 
 ## 六、验证服务
 
