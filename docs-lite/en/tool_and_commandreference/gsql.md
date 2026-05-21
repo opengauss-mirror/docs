@@ -2057,6 +2057,16 @@ openGauss=# \sf
 <td class="cellrowborder" valign="top" width="67.14%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0059778645_en-us_topic_0058968158_p11128665"><a name="en-us_topic_0059778645_en-us_topic_0058968158_p11128665"></a><a name="en-us_topic_0059778645_en-us_topic_0058968158_p11128665"></a>Deletes the variable name of <strong id="b1185745691183446"><a name="b1185745691183446"></a><a name="b1185745691183446"></a>gsql</strong>.</p>
 </td>
 </tr>
+<tr id="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_row18885790"><td class="cellrowborder" valign="top" width="32.86%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p53353993"><a name="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p53353993"></a><a name="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p53353993"></a>\gset</p>
+</td>
+<td class="cellrowborder" valign="top" width="67.14%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p20243739"><a name="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p20243739"></a><a name="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p20243739"></a>Automatically map the single-row result returned by the query to current session variables based on the column names, with variable names is same with the column name. It is not possible to assign values to special control variables with hook functions such as 'AUTOCOMMIT', 'FETCH_COUNT', and 'QUIET'. It is also not possible to assign values to variables that do not conform to naming rules, such as ';b' and '?col'.</p>
+</td>
+</tr>
+<tr id="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_row18885790"><td class="cellrowborder" valign="top" width="32.86%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p53353993"><a name="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p53353993"></a><a name="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p53353993"></a>\gset [COLUMN PREFIX]</p>
+</td>
+<td class="cellrowborder" valign="top" width="67.14%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p20243739"><a name="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p20243739"></a><a name="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p20243739"></a>Automatically map the single-row result returned by the query to current session variables based on the column names, with variable names consisting of the prefix followed by the column name. It is not possible to assign values to special control variables with hook functions such as 'AUTOCOMMIT', 'FETCH_COUNT', and 'QUIET'. It is also not possible to assign values to variables that do not conform to naming rules, such as ';b' and '?col'.</p>
+</td>
+</tr>
 </tbody>
 </table>
 

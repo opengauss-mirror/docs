@@ -2078,6 +2078,16 @@ openGauss=# \sf
 <td class="cellrowborder" valign="top" width="67.14%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0059778645_zh-cn_topic_0058968158_p11128665"><a name="zh-cn_topic_0059778645_zh-cn_topic_0058968158_p11128665"></a><a name="zh-cn_topic_0059778645_zh-cn_topic_0058968158_p11128665"></a>不设置（或删除）gsql变量名。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0027078248_zh-cn_topic_0051928179_row39029041"><td class="cellrowborder" valign="top" width="32.86%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p6245822"><a name="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p6245822"></a><a name="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p6245822"></a>\gset </p>
+</td>
+<td class="cellrowborder" valign="top" width="67.14%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p17332671"><a name="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p17332671"></a><a name="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p17332671"></a>将查询返回的单行结果按列名自动映射为当前会话变量，变量名为列名。无法给诸如:"AUTOCOMMIT"、"FETCH_COUNT"、"QUIET"之类的有hook函数的特殊控制变量赋值。也无法给";b"、"？col"之类不符合变量命名规则的变量赋值。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0027078248_zh-cn_topic_0051928179_row39029041"><td class="cellrowborder" valign="top" width="32.86%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p6245822"><a name="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p6245822"></a><a name="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p6245822"></a>\gset [COLUMN PREFIX]</p>
+</td>
+<td class="cellrowborder" valign="top" width="67.14%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p17332671"><a name="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p17332671"></a><a name="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p17332671"></a>将查询返回的单行结果按列名自动映射为当前会话变量，变量名为前缀+列名。无法给诸如:"AUTOCOMMIT"、"FETCH_COUNT"、"QUIET"之类的有hook函数的特殊控制变量赋值。也无法给";b"、"？col"之类不符合变量命名规则的变量赋值。</p>
+</td>
+</tr>
 </tbody>
 </table>
 
