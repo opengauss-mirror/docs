@@ -187,4 +187,85 @@
      stmt.close();
     ```
 
+## 加密表的 DDL/DML 变更<a name="section_encrypted_table_ddl_dml"></a>
+
+在创建了客户端主密钥CMK、数据加密密钥CEK和加密表之后，还可以对加密表进行新增加密列、删除列、更新加密列数据、重命名列或表等操作。上述操作须在密态数据库模式下执行（gsql 连接参数 **-C**，JDBC 设置 **enable_ce=1**）。新增加密列须使用 **ADD COLUMN ... ENCRYPTED WITH**；**ALTER COLUMN** 仅用于修改已有加密列的有限属性（如默认值），不能用于给已有明文列增加加密，也不能修改已有加密列的数据类型。
+
+- **GSQL环境下对加密表进行 DDL/DML 变更：**
+
+    ```
+    openGauss=# ALTER TABLE creditcard_info ADD COLUMN age int ENCRYPTED WITH (COLUMN_ENCRYPTION_KEY = ImgCEK, ENCRYPTION_TYPE = DETERMINISTIC);
+    ALTER TABLE
+    openGauss=# \d creditcard_info
+            Table "public.creditcard_info"
+       Column    |       Type        | Modifiers
+    -------------+-------------------+------------
+     id_number   | integer           |
+     name        | text              |  encrypted
+     credit_card | character varying |  encrypted
+     age         | integer           |  encrypted
+    openGauss=# ALTER TABLE creditcard_info DROP COLUMN age;
+    ALTER TABLE
+    openGauss=# UPDATE creditcard_info SET credit_card = '80000000011111111' WHERE name = 'joy';
+    UPDATE 1
+    openGauss=# SELECT * FROM creditcard_info WHERE name = 'joy';
+     id_number | name |    credit_card
+    -----------+------+-------------------
+             2 | joy  | 80000000011111111
+    (1 row)
+    openGauss=# ALTER TABLE creditcard_info RENAME COLUMN name TO customer_name;
+    ALTER TABLE
+    openGauss=# ALTER TABLE creditcard_info RENAME TO card_info;
+    ALTER TABLE
+    openGauss=# SELECT * FROM card_info WHERE customer_name = 'joe';
+     id_number | customer_name |     credit_card
+    -----------+---------------+---------------------
+             1 | joe           | 6217986500001288393
+    (1 row)
+    ```
+
+    参数说明
+
+    - **ADD COLUMN ... ENCRYPTED WITH**：用于新增加密列；新列元数据写入 **gs_encrypted_columns**。不支持 **ADD COLUMN ... FIRST | AFTER** 与 **ENCRYPTED WITH** 同时使用。
+    - **DROP COLUMN**：删除加密列会同时清理该列加密元数据；若 CEK 仍被其他加密列引用，CEK 不会被删除。
+    - **UPDATE**：须在密态连接下执行；客户端对写入值加密、对读出值解密。**WHERE** 中对加密列的等值条件要求该列为 **DETERMINISTIC** 加密（与上文 **ENCRYPTION_TYPE** 说明一致）。
+    - **RENAME COLUMN / RENAME TO**：加密属性保留，**gs_encrypted_columns** 中列名会同步更新。
+
+    >[!NOTE]说明
+    >**ALTER COLUMN** 仅支持对已有加密列设置或删除默认值，例如：
+    >
+    >```
+    >openGauss=# CREATE TABLE creditcard_info2 (id int, price numeric ENCRYPTED WITH (COLUMN_ENCRYPTION_KEY = ImgCEK, ENCRYPTION_TYPE = DETERMINISTIC) DEFAULT 9.99);
+    >openGauss=# ALTER TABLE creditcard_info2 ALTER COLUMN price SET DEFAULT 7.77;
+    >openGauss=# INSERT INTO creditcard_info2 (id) VALUES (1);
+    >openGauss=# ALTER TABLE creditcard_info2 ALTER COLUMN price DROP DEFAULT;
+    >openGauss=# DROP TABLE creditcard_info2;
+    >```
+    >
+    >只改默认值元数据，不改变列是否加密、不改变 CEK。
+
+    >[!NOTE]说明
+    >以下操作不支持，请勿使用：
+    >- 用 **ALTER COLUMN** 给已有列增加加密、将明文列改为加密列或修改已有加密列类型。
+
+
+- **JDBC环境下对加密表进行 DDL/DML 变更：**
+
+    ```
+    // 新增加密列
+    int rc5 = stmt.executeUpdate("ALTER TABLE creditcard_info ADD COLUMN age int ENCRYPTED WITH (COLUMN_ENCRYPTION_KEY = ImgCEK, ENCRYPTION_TYPE = DETERMINISTIC);");
+    // 删除列
+    int rc6 = stmt.executeUpdate("ALTER TABLE creditcard_info DROP COLUMN age;");
+    // 更新加密列
+    int rc7 = stmt.executeUpdate("UPDATE creditcard_info SET credit_card = '80000000011111111' WHERE name = 'joy';");
+    // 查询
+    ResultSet rs2 = stmt.executeQuery("SELECT * FROM creditcard_info WHERE name = 'joy';");
+    // 重命名列、表
+    int rc8 = stmt.executeUpdate("ALTER TABLE creditcard_info RENAME COLUMN name TO customer_name;");
+    int rc9 = stmt.executeUpdate("ALTER TABLE creditcard_info RENAME TO card_info;");
+    rs2 = stmt.executeQuery("SELECT * FROM card_info WHERE customer_name = 'joe';");
+    // 关闭语句对象
+    stmt.close();
+    ```
+
 上述我们列出的是全密态数据库特性的基本使用方法，更全面的使用介绍，可以参考官方文档中的对应章节。
