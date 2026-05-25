@@ -32,7 +32,7 @@ $ wget https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler22.
 - 加载镜像
 
 ``` bash
-$ docker load -i openGauss-Docker-7.0.0-RC1-aarch64.tar
+$ docker load -i openGauss-Docker-7.0.0-RC3-aarch64.tar
 ```
 
 - 验证镜像状态
