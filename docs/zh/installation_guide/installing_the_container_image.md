@@ -23,7 +23,7 @@ opengauss/opengauss-server   latest              9763e8b26794        2 days ago 
 
 ### 下载镜像包并加载
 
-- 下载镜像包（以arm架构下对应的包为例）。x86_64镜像下载方式相同，镜像包获取路径为：https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler22.03/x86/openGauss-Docker-7.0.0-RC3-x86_64.tar。 镜像包的架构应与主机架构匹配。
+- 下载镜像包（以arm架构下对应的包为例），镜像包的架构应与主机架构匹配。x86_64镜像下载方式相同，镜像包获取路径为：https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler22.03/x86/openGauss-Docker-7.0.0-RC3-x86_64.tar 
 
 ``` bash
 $ wget https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler22.03/arm/openGauss-Docker-7.0.0-RC3-aarch64.tar
