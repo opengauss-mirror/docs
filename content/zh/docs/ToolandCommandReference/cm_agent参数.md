@@ -163,7 +163,12 @@
 
 **参数说明**：cm日志压缩和清除的时间间隔，每1800秒压缩和清理一次。
 
-**生效范围**：$GAUSSLOG/cm/cm\_ctl；$GAUSSLOG/cm/cm\_server；$GAUSSLOG/cm/om\_monitor目录下的文件以及$GAUSSLOG/cm/cm\_agent目录下以cm\_agent-、system\_call-、system\_alarm-为前缀的日志文件。
+**生效范围**：由 **本节点 cm\_agent** 在 `enable_log_compress = on` 且环境变量 `GAUSSLOG` 有效时执行；递归扫描 **整个 `$GAUSSLOG` 目录树**（不仅限于 `$GAUSSLOG/cm/`）。对文件名匹配下列前缀的历史日志生效（当前正在写入的 `-current` 日志及同组最新未压缩文件不参与压缩）。匹配前缀包括：
+
+- cm\_agent-、cm\_server-、cm\_ctl-、cm\_client-、om\_monitor-、system\_call-、system\_alarm-
+- gs\_clean-、gs\_ctl-、gs\_guc-、gs\_dump-、gs\_dumpall-、gs\_restore-、gs\_upgrade-、gs\_initcm-、gs\_initdb-、gs\_local-、gs\_preinstall-、gs\_install-、gs\_replace-、gs\_uninstall-、gs\_om-、pssh-、gs\_upgradectl-、gs\_expand-、gs\_shrink-、gs\_postuninstall-、gs\_backup-、gs\_checkos-、gs\_collector-、GaussReplace-、GaussOM-、gs\_checkperf-、gs\_check-、gs\_cgroup-、pscp-、gs\_hotpatch-
+- roach\_agent-、roach\_controller-、sync-、postgresql-、sessionstat-、pg\_perf-、slow\_query\_log-、asp-、etcd-、cmd\_sender-、uploader-、checkRunStatus-、ffic\_gaussdb-、key\_event-、mem\_log-
+- gs\_initgtm-、gtm\_ctl-、gtm-
 
 **取值范围**：整型，\[0, 2147483647\]，单位：秒。修改后可以reload生效，参数修改请参考[表 set cm参数](cm_ctl工具介绍.md#table10437204416514)进行设置。
 
@@ -173,7 +178,12 @@
 
 **参数说明**：控制cm日志最大存储值，当CM日志总大小超过（log\_max\_size\*95/100）MB时，根据压缩日志生成时间，依次删除历史压缩日志，直到日志总大小小于（log\_max\_size\*95/100）MB。
 
-**生效范围**：$GAUSSLOG/cm/cm\_ctl；$GAUSSLOG/cm/cm\_server；$GAUSSLOG/cm/om\_monitor目录下的文件以及$GAUSSLOG/cm/cm\_agent目录下以cm\_agent-、system\_call-、system\_alarm-为前缀的日志文件。
+**生效范围**：由 **本节点 cm\_agent** 在 `enable_log_compress = on` 且环境变量 `GAUSSLOG` 有效时执行；递归扫描 **整个 `$GAUSSLOG` 目录树**（不仅限于 `$GAUSSLOG/cm/`）。对文件名匹配下列前缀的历史日志生效（当前正在写入的 `-current` 日志及同组最新未压缩文件不参与压缩）。匹配前缀包括：
+
+- cm\_agent-、cm\_server-、cm\_ctl-、cm\_client-、om\_monitor-、system\_call-、system\_alarm-
+- gs\_clean-、gs\_ctl-、gs\_guc-、gs\_dump-、gs\_dumpall-、gs\_restore-、gs\_upgrade-、gs\_initcm-、gs\_initdb-、gs\_local-、gs\_preinstall-、gs\_install-、gs\_replace-、gs\_uninstall-、gs\_om-、pssh-、gs\_upgradectl-、gs\_expand-、gs\_shrink-、gs\_postuninstall-、gs\_backup-、gs\_checkos-、gs\_collector-、GaussReplace-、GaussOM-、gs\_checkperf-、gs\_check-、gs\_cgroup-、pscp-、gs\_hotpatch-
+- roach\_agent-、roach\_controller-、sync-、postgresql-、sessionstat-、pg\_perf-、slow\_query\_log-、asp-、etcd-、cmd\_sender-、uploader-、checkRunStatus-、ffic\_gaussdb-、key\_event-、mem\_log-
+- gs\_initgtm-、gtm\_ctl-、gtm-
 
 **取值范围**：整型，\[0, 2147483647\]，单位：MB。修改后可以reload生效，参数修改请参考[表 set cm参数](cm_ctl工具介绍.md#table10437204416514)进行设置。
 
@@ -183,17 +193,27 @@
 
 **参数说明**：cm可存储的最多日志数量，当cm日志总个数超过该值，根据压缩日志文件名时间，删除超过保留天数log\_saved\_days的压缩日志。
 
-**生效范围**：$GAUSSLOG/cm/cm\_ctl；$GAUSSLOG/cm/cm\_server；$GAUSSLOG/cm/om\_monitor目录下的文件以及$GAUSSLOG/cm/cm\_agent目录下以cm\_agent-、system\_call-、system\_alarm-为前缀的日志文件。
+**生效范围**：由 **本节点 cm\_agent** 在 `enable_log_compress = on` 且环境变量 `GAUSSLOG` 有效时执行；递归扫描 **整个 `$GAUSSLOG` 目录树**（不仅限于 `$GAUSSLOG/cm/`）。对文件名匹配下列前缀的历史日志生效（当前正在写入的 `-current` 日志及同组最新未压缩文件不参与压缩）。匹配前缀包括：
 
-**取值范围**：整型，\[0, 10000\]，单位：个。修改后可以reload生效，参数修改请参考[表 set cm参数](cm_ctl工具介绍.md#table10437204416514)进行设置。
+- cm\_agent-、cm\_server-、cm\_ctl-、cm\_client-、om\_monitor-、system\_call-、system\_alarm-
+- gs\_clean-、gs\_ctl-、gs\_guc-、gs\_dump-、gs\_dumpall-、gs\_restore-、gs\_upgrade-、gs\_initcm-、gs\_initdb-、gs\_local-、gs\_preinstall-、gs\_install-、gs\_replace-、gs\_uninstall-、gs\_om-、pssh-、gs\_upgradectl-、gs\_expand-、gs\_shrink-、gs\_postuninstall-、gs\_backup-、gs\_checkos-、gs\_collector-、GaussReplace-、GaussOM-、gs\_checkperf-、gs\_check-、gs\_cgroup-、pscp-、gs\_hotpatch-
+- roach\_agent-、roach\_controller-、sync-、postgresql-、sessionstat-、pg\_perf-、slow\_query\_log-、asp-、etcd-、cmd\_sender-、uploader-、checkRunStatus-、ffic\_gaussdb-、key\_event-、mem\_log-
+- gs\_initgtm-、gtm\_ctl-、gtm-
 
-**默认值**：10000
+**取值范围**：整型，\[0, 30000\]，单位：个。修改后可以reload生效，参数修改请参考[表 set cm参数](cm_ctl工具介绍.md#table10437204416514)进行设置。
+
+**默认值**：30000
 
 ## log\_saved\_days<a name="section25051814181410"></a>
 
 **参数说明**：cm压缩日志保存的天数，cm压缩日志超过该值并且cm日志总个数超过log\_max\_count，删除压缩日志。
 
-**生效范围**：$GAUSSLOG/cm/cm\_ctl；$GAUSSLOG/cm/cm\_server；$GAUSSLOG/cm/om\_monitor目录下的文件以及$GAUSSLOG/cm/cm\_agent目录下以cm\_agent-、system\_call-、system\_alarm-为前缀的日志文件。
+**生效范围**：由 **本节点 cm\_agent** 在 `enable_log_compress = on` 且环境变量 `GAUSSLOG` 有效时执行；递归扫描 **整个 `$GAUSSLOG` 目录树**（不仅限于 `$GAUSSLOG/cm/`）。对文件名匹配下列前缀的历史日志生效（当前正在写入的 `-current` 日志及同组最新未压缩文件不参与压缩）。匹配前缀包括：
+
+- cm\_agent-、cm\_server-、cm\_ctl-、cm\_client-、om\_monitor-、system\_call-、system\_alarm-
+- gs\_clean-、gs\_ctl-、gs\_guc-、gs\_dump-、gs\_dumpall-、gs\_restore-、gs\_upgrade-、gs\_initcm-、gs\_initdb-、gs\_local-、gs\_preinstall-、gs\_install-、gs\_replace-、gs\_uninstall-、gs\_om-、pssh-、gs\_upgradectl-、gs\_expand-、gs\_shrink-、gs\_postuninstall-、gs\_backup-、gs\_checkos-、gs\_collector-、GaussReplace-、GaussOM-、gs\_checkperf-、gs\_check-、gs\_cgroup-、pscp-、gs\_hotpatch-
+- roach\_agent-、roach\_controller-、sync-、postgresql-、sessionstat-、pg\_perf-、slow\_query\_log-、asp-、etcd-、cmd\_sender-、uploader-、checkRunStatus-、ffic\_gaussdb-、key\_event-、mem\_log-
+- gs\_initgtm-、gtm\_ctl-、gtm-
 
 **取值范围**：整型，\[0, 1000\]，单位天。修改后可以reload生效，参数修改请参考[表 set cm参数](cm_ctl工具介绍.md#table10437204416514)进行设置。
 
