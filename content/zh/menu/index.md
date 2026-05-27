@@ -2046,7 +2046,7 @@ headless: true
             -   [磁盘空间]({{< relref "./docs/DatabaseReference/磁盘空间.md" >}})
             -   [内核资源使用]({{< relref "./docs/DatabaseReference/内核资源使用.md" >}})
             -   [基于开销的清理延迟]({{< relref "./docs/DatabaseReference/基于开销的清理延迟.md" >}})
-            -   [后端写进程]({{< relref "./docs/DatabaseReference/后端写进程.md" >}})
+            -   [后端写线程]({{< relref "./docs/DatabaseReference/后端写线程.md" >}})
             -   [异步IO]({{< relref "./docs/DatabaseReference/异步IO.md" >}})
         -   [预写式日志]({{< relref "./docs/DatabaseReference/预写式日志.md" >}})
             -   [设置]({{< relref "./docs/DatabaseReference/设置.md" >}})
