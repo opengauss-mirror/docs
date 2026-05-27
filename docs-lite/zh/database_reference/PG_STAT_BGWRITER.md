@@ -1,6 +1,6 @@
 # PG\_STAT\_BGWRITER<a name="ZH-CN_TOPIC_0289899919"></a>
 
-PG\_STAT\_BGWRITER视图显示关于后端写进程活动的统计信息。
+PG\_STAT\_BGWRITER视图显示关于后端写线程活动的统计信息。
 
 **表 1**  PG\_STAT\_BGWRITER字段
 
@@ -52,14 +52,14 @@ PG\_STAT\_BGWRITER视图显示关于后端写进程活动的统计信息。
 </td>
 <td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a4f3cb4299b7641b1a51cce69022eef90"><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a4f3cb4299b7641b1a51cce69022eef90"></a><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a4f3cb4299b7641b1a51cce69022eef90"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a04945cce3ca1458f89e17618ce3ac5de"><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a04945cce3ca1458f89e17618ce3ac5de"></a><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a04945cce3ca1458f89e17618ce3ac5de"></a>后端写进程写缓冲区数量。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a04945cce3ca1458f89e17618ce3ac5de"><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a04945cce3ca1458f89e17618ce3ac5de"></a><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a04945cce3ca1458f89e17618ce3ac5de"></a>后端写线程写缓冲区数量。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_r2eb5cfe637844b2d8bf62b6901058e56"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a5ccff5d13b944708900ce53b04a7d523"><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a5ccff5d13b944708900ce53b04a7d523"></a><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a5ccff5d13b944708900ce53b04a7d523"></a>maxwritten_clean</p>
 </td>
 <td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_aa3534794416b45dfa532681e7753ec80"><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_aa3534794416b45dfa532681e7753ec80"></a><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_aa3534794416b45dfa532681e7753ec80"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a1b13eabfd6764d199feae40329c0c341"><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a1b13eabfd6764d199feae40329c0c341"></a><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a1b13eabfd6764d199feae40329c0c341"></a>后端写进程停止清理扫描时间数，因为它写了太多缓冲区。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a1b13eabfd6764d199feae40329c0c341"><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a1b13eabfd6764d199feae40329c0c341"></a><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a1b13eabfd6764d199feae40329c0c341"></a>后端写线程停止清理扫描时间数，因为它写了太多缓冲区。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_re20e1543f3a74c6e92ce749ad5a4e2d8"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a8d1217f0a04149da823fcb0bd181769c"><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a8d1217f0a04149da823fcb0bd181769c"></a><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a8d1217f0a04149da823fcb0bd181769c"></a>buffers_backend</p>
@@ -73,7 +73,7 @@ PG\_STAT\_BGWRITER视图显示关于后端写进程活动的统计信息。
 </td>
 <td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a07c186bd1f1943489cee9b0c0cc9863c"><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a07c186bd1f1943489cee9b0c0cc9863c"></a><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a07c186bd1f1943489cee9b0c0cc9863c"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a76f3f146e5f94535a562ce9ff2628c73"><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a76f3f146e5f94535a562ce9ff2628c73"></a><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a76f3f146e5f94535a562ce9ff2628c73"></a>后端不得不执行自己的fsync调用的时间数 （通常后端写进程处理这些即使后端确实自己写）。</p>
+<td class="cellrowborder" valign="top" width="43.04%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a76f3f146e5f94535a562ce9ff2628c73"><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a76f3f146e5f94535a562ce9ff2628c73"></a><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_a76f3f146e5f94535a562ce9ff2628c73"></a>后端不得不执行自己的fsync调用的时间数 （通常后端写线程处理这些即使后端确实自己写）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_rb37065bf6aed41119f3100c140f61754"><td class="cellrowborder" valign="top" width="25.85%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_adcc054c5c2f24ce8ba26ffd8095ddd9d"><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_adcc054c5c2f24ce8ba26ffd8095ddd9d"></a><a name="zh-cn_topic_0283136756_zh-cn_topic_0237122444_zh-cn_topic_0059778449_adcc054c5c2f24ce8ba26ffd8095ddd9d"></a>buffers_alloc</p>

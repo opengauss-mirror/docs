@@ -30,7 +30,7 @@
     |参数名|调整建议|
     |---|---|
     |pagewriter_sleep|可以适当调小，加快页面刷盘|
-    |max_io_capacity|设置后端写进程批量刷页每秒的IO上限，可以适当调大|
+    |max_io_capacity|设置后端写线程批量刷页每秒的IO上限，可以适当调大|
     |max_redo_log_size|恢复点到当前最新日志之间日志量的期望值，可以适当调小|
 
     更多可参考[数据库I/O参数调优](../performance_tuning_guide/optimizing_database_parameters.md)。

@@ -1,6 +1,6 @@
 # BGWRITER\_STAT
 
-BGWRITER\_STAT视图显示关于后端写进程活动的统计信息。
+BGWRITER\_STAT视图显示关于后端写线程活动的统计信息。
 
 **表 1**  BGWRITER\_STAT字段
 
@@ -52,14 +52,14 @@ BGWRITER\_STAT视图显示关于后端写进程活动的统计信息。
 </td>
 <td class="cellrowborder" valign="top" width="23.29%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122712_p19952433462"><a name="zh-cn_topic_0237122712_p19952433462"></a><a name="zh-cn_topic_0237122712_p19952433462"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.65%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122712_p599613433465"><a name="zh-cn_topic_0237122712_p599613433465"></a><a name="zh-cn_topic_0237122712_p599613433465"></a>后端写进程写缓冲区数量。</p>
+<td class="cellrowborder" valign="top" width="57.65%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122712_p599613433465"><a name="zh-cn_topic_0237122712_p599613433465"></a><a name="zh-cn_topic_0237122712_p599613433465"></a>后端写线程写缓冲区数量。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122712_row6996043114611"><td class="cellrowborder" valign="top" width="19.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122712_p12996134344615"><a name="zh-cn_topic_0237122712_p12996134344615"></a><a name="zh-cn_topic_0237122712_p12996134344615"></a>maxwritten_clean</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.29%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122712_p0996164320467"><a name="zh-cn_topic_0237122712_p0996164320467"></a><a name="zh-cn_topic_0237122712_p0996164320467"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.65%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122712_p599624317465"><a name="zh-cn_topic_0237122712_p599624317465"></a><a name="zh-cn_topic_0237122712_p599624317465"></a>后端写进程停止清理扫描时间数，因为它写了太多缓冲区。</p>
+<td class="cellrowborder" valign="top" width="57.65%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122712_p599624317465"><a name="zh-cn_topic_0237122712_p599624317465"></a><a name="zh-cn_topic_0237122712_p599624317465"></a>后端写线程停止清理扫描时间数，因为它写了太多缓冲区。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122712_row1899619433466"><td class="cellrowborder" valign="top" width="19.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122712_p19996143124610"><a name="zh-cn_topic_0237122712_p19996143124610"></a><a name="zh-cn_topic_0237122712_p19996143124610"></a>buffers_backend</p>
@@ -73,7 +73,7 @@ BGWRITER\_STAT视图显示关于后端写进程活动的统计信息。
 </td>
 <td class="cellrowborder" valign="top" width="23.29%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122712_p179971431468"><a name="zh-cn_topic_0237122712_p179971431468"></a><a name="zh-cn_topic_0237122712_p179971431468"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.65%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122712_p999754374615"><a name="zh-cn_topic_0237122712_p999754374615"></a><a name="zh-cn_topic_0237122712_p999754374615"></a>后端不得不执行自己的fsync调用的时间数（通常后端写进程处理这些即使后端确实自己写）。</p>
+<td class="cellrowborder" valign="top" width="57.65%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122712_p999754374615"><a name="zh-cn_topic_0237122712_p999754374615"></a><a name="zh-cn_topic_0237122712_p999754374615"></a>后端不得不执行自己的fsync调用的时间数（通常后端写线程处理这些即使后端确实自己写）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237122712_row1599719434462"><td class="cellrowborder" valign="top" width="19.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122712_p09971743124613"><a name="zh-cn_topic_0237122712_p09971743124613"></a><a name="zh-cn_topic_0237122712_p09971743124613"></a>buffers_alloc</p>
