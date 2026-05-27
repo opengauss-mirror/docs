@@ -1,6 +1,6 @@
 # GLOBAL\_BGWRITER\_STAT<a name="ZH-CN_TOPIC_0289900941"></a>
 
-GLOBAL\_BGWRITER\_STAT视图显示各节点关于后端写进程活动的统计信息。
+GLOBAL\_BGWRITER\_STAT视图显示各节点关于后端写线程活动的统计信息。
 
 **表 1**  GLOBAL\_BGWRITER\_STAT字段
 
@@ -59,14 +59,14 @@ GLOBAL\_BGWRITER\_STAT视图显示各节点关于后端写进程活动的统计�
 </td>
 <td class="cellrowborder" valign="top" width="25.900000000000002%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p5190181712481"><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p5190181712481"></a><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p5190181712481"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.81%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p319119171482"><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p319119171482"></a><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p319119171482"></a>后端写进程写缓冲区数量。</p>
+<td class="cellrowborder" valign="top" width="43.81%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p319119171482"><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p319119171482"></a><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p319119171482"></a>后端写线程写缓冲区数量。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137621_zh-cn_topic_0237122713_row819101714481"><td class="cellrowborder" valign="top" width="30.29%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p3191417204811"><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p3191417204811"></a><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p3191417204811"></a>maxwritten_clean</p>
 </td>
 <td class="cellrowborder" valign="top" width="25.900000000000002%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p12191161714814"><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p12191161714814"></a><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p12191161714814"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.81%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p191919178489"><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p191919178489"></a><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p191919178489"></a>后端写进程停止清理扫描时间数，因为它写了太多缓冲区。</p>
+<td class="cellrowborder" valign="top" width="43.81%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p191919178489"><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p191919178489"></a><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p191919178489"></a>后端写线程停止清理扫描时间数，因为它写了太多缓冲区。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137621_zh-cn_topic_0237122713_row18191617114817"><td class="cellrowborder" valign="top" width="30.29%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p419191714811"><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p419191714811"></a><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p419191714811"></a>buffers_backend</p>
@@ -80,7 +80,7 @@ GLOBAL\_BGWRITER\_STAT视图显示各节点关于后端写进程活动的统计�
 </td>
 <td class="cellrowborder" valign="top" width="25.900000000000002%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p41928172483"><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p41928172483"></a><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p41928172483"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.81%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p141929174482"><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p141929174482"></a><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p141929174482"></a>后端不得不执行自己的fsync调用的时间数（通常后端写进程处理这些即使后端确实自己写）。</p>
+<td class="cellrowborder" valign="top" width="43.81%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p141929174482"><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p141929174482"></a><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p141929174482"></a>后端不得不执行自己的fsync调用的时间数（通常后端写线程处理这些即使后端确实自己写）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137621_zh-cn_topic_0237122713_row11192817114812"><td class="cellrowborder" valign="top" width="30.29%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p1719216172489"><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p1719216172489"></a><a name="zh-cn_topic_0283137621_zh-cn_topic_0237122713_p1719216172489"></a>buffers_alloc</p>
