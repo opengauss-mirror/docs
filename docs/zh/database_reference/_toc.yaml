@@ -25,7 +25,7 @@ sections:
             href: ./kernel_resource_usage.md
           - label: 基于开销的清理延迟
             href: ./cost_based_vacuum_delay.md
-          - label: 后端写进程
+          - label: 后端写线程
             href: ./background_writer.md
           - label: 异步IO
             href: ./asynchronous_i_o_operations.md
