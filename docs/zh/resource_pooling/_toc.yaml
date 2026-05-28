@@ -37,6 +37,8 @@ sections:
             href: ./resource_pooling_support_for_primary_and_backup_parameter_synchronization.md
           - label: 资源池化XLOG支持归档
             href: ./resource_pooling_xlog_support_archive.md
+          - label: CM SysSentry故障检测
+            href: ./cm_syssentry_fault_detection.md
       - label: 在线reform
         href: ./online_reform.md
   - label: 常见故障定位指南

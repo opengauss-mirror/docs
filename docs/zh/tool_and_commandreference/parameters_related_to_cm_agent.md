@@ -406,3 +406,25 @@
 **取值范围**： 整型，\[0, 2147483647\]，单位：秒。修改后可以reload生效。参数修改请参考[表 set cm参数](cm_ctl.md#table10437204416514)进行设置。
 
 **默认值**： 1
+
+## enable\_xalarm\_event\_check
+
+**参数说明**： 是否订阅SysSentry告警事件。
+
+**取值范围**： 布尔型。修改后重启生效。参数修改请参考[表 set cm参数](cm_ctl.md#table10437204416514)进行设置。
+
+- on、yes、true、1：表示订阅SysSentry告警事件。
+
+- off、no、false、0：表示不订阅SysSentry告警事件。
+
+**默认值**： off
+
+## xalarm\_node\_map
+
+**参数说明**： 标识节点与服务器cna的对应关系。告警检测相关参数，依赖开启参数enable\_xalarm\_event\_check。
+
+**取值范围**： 字符串，格式同nodeid1:cna1;nodeid2:cna2。修改后重启生效。参数修改请参考[表 set cm参数](cm_ctl.md#table10437204416514)进行设置。
+
+**默认值**： ''
+
+> 配置样例：3节点环境，cna值分别为201、202、203，参数设置为1:201;2:202;3:203。
