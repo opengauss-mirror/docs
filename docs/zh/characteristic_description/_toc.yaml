@@ -275,6 +275,8 @@ sections:
         href: ./datakit_support_elasticsearch_milvus_migration.md
       - label: openGauss到openGauss迁移
         href: ./opengauss_to_opengauss_migration.md
+      - label: Mysql全量迁移断点续传
+        href: ./mysql_full_migration_resume.md
   - label: 中间件
     sections:
       - label: 分布式数据库能力

@@ -492,6 +492,9 @@
     <tr>
         <td><a href="./sql_syntax_audit_tool_libog_query.md">SQL语法审计工具libog_query</a></td>
     </tr>
+    <tr>
+        <td><a href="./mysql_full_migration_resume.md">Mysql全量迁移断点续传</a></td>
+    </tr>
 </table>
 
 ## 中间件
