@@ -213,6 +213,8 @@ sections:
         href: ./data_check_tool_gs_datacheck.md
       - label: openGauss Client Tool DataStudio
         href: ./opengauss_client_tool_datastudio.md
+      - label: mysql full migration resume
+        href: ./mysql_full_migration_resume.md
   - label: Middleware
     sections:
       - label: Distributed Database Capability
