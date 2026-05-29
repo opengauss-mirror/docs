@@ -276,6 +276,9 @@
         <td><a href="../resource_pooling/dss_thread_pool.md">DSS线程池</a></td>
     </tr>
     <tr>
+        <td><a href="../resource_pooling/cm_syssentry_fault_detection.md">CM SysSentry故障检测</a></td>
+    </tr>
+    <tr>
         <td><a href="../resource_pooling/mes_ub_shared_memory_communication_optimization.md">MES灵衢内存语义通信优化</a></td>
     </tr>
     <tr>

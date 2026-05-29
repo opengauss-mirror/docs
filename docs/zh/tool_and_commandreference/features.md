@@ -14,6 +14,7 @@
 - **[CM支持事件触发器](#cm支持事件触发器)**
 - **[CM支持两节点部署](#cm支持两节点部署)**
 - **[CM支持容器化部署](#cm支持容器化部署)**
+- **[CM SysSentry故障检测](#cm-syssentry故障检测)**
 
 ## cm\_agent<a name="section1669543664312"></a>
 
@@ -1152,3 +1153,29 @@ CM支持多个三方IP检测(third_party_gateway_ip)，可以预防CM脑裂。
 当允许CM管理数据库最大可用模式时，需要将cm_server.conf配置文件中enable_set_most_available_sync参数设置为on，否则应该设置为off。
 
 当允许CM管理数据库最大可用模式时，如果数据库主节点因为同步备机故障或者期待的同步备机数量不足导致主机事务提交被hang住，由CM自动打开数据库最大可用模式；当同步备机数量满足要求时，由CM自动关闭数据库最大可用模式。
+
+
+## CM SysSentry故障检测
+
+**特性介绍**：
+CM 支持订阅SysSentry插件告警事件，快速感知节点级故障。
+
+**使用说明**：
+
+1. 配置SysSentry服务，检测reboot/panic告警事件，参考文档[SysSentry使用指南](https://docs.openeuler.openatom.cn/zh/docs/24.03_LTS_SP3/server/syssentry/syssentry_introduction.html)。
+2. cm_agent需设置参数xalarm\_node\_map和enable\_xalarm\_event\_check，设置之后重启cm生效。
+
+**约束条件**：
+
+1. 开启该检测，需要在编译时开启设置参数--xalarmd为ON。
+2. SysSentry服务依赖满足灵衢总线协议的服务器。
+
+**配置样例**：
+
+1. 新增编译参数：
+  --xalarmd：控制时候开启该特性，默认值OFF。开启该特性需要通过build.sh脚本编译时指定参数为ON。
+  --xalarm_report_len：控制Syssentry接口版本，默认值OFF；使用最新版本的SysSentry需要设置参数为ON。
+  `sh build.sh -3rd /home/omm/binarylibs/ -m release --xalarmd ON --xalarm_report_len OFF`
+
+2. cm_agent新增参数：
+  xalarm\_node\_map和enable\_xalarm\_event\_check，参数设置参考[cm_agent参数](../tool_and_commandreference/parameters_related_to_cm_agent.md)
