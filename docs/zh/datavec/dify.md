@@ -41,7 +41,7 @@ docker-compose up -d
 
 ## AI服务集成
 
-### 创建用户并登陆
+### 创建用户并登录
 
 访问本地部署的Dify web服务页面：
 

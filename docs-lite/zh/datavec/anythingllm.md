@@ -62,7 +62,7 @@ docker-compose up -d
 
 容器启动后执行docker ps确保服务都正常运行
 
-### 创建用户并登陆
+### 创建用户并登录
 
 访问本地部署的AnythingLLM web服务页面：
 
