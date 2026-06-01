@@ -41,7 +41,7 @@
 </tr>
 <tr id="zh-cn_topic_0283137279_row9294819456"><td class="cellrowborder" valign="top" width="17.18171817181718%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137279_p1829118104514"><a name="zh-cn_topic_0283137279_p1829118104514"></a><a name="zh-cn_topic_0283137279_p1829118104514"></a>--db-user</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.33583358335833%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137279_p1429208164510"><a name="zh-cn_topic_0283137279_p1429208164510"></a><a name="zh-cn_topic_0283137279_p1429208164510"></a>指定以何用户身份登陆到调优的数据库上</p>
+<td class="cellrowborder" valign="top" width="58.33583358335833%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137279_p1429208164510"><a name="zh-cn_topic_0283137279_p1429208164510"></a><a name="zh-cn_topic_0283137279_p1429208164510"></a>指定以何用户身份登录到调优的数据库上</p>
 </td>
 <td class="cellrowborder" valign="top" width="24.48244824482448%" headers="mcps1.2.4.1.3 "><p id="p420154491810"><a name="p420154491810"></a><a name="p420154491810"></a>-</p>
 </td>
@@ -62,7 +62,7 @@
 </tr>
 <tr id="zh-cn_topic_0283137279_row1773402524719"><td class="cellrowborder" valign="top" width="17.18171817181718%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137279_p13734825204719"><a name="zh-cn_topic_0283137279_p13734825204719"></a><a name="zh-cn_topic_0283137279_p13734825204719"></a>--host-user</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.33583358335833%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137279_p3734112544712"><a name="zh-cn_topic_0283137279_p3734112544712"></a><a name="zh-cn_topic_0283137279_p3734112544712"></a>指定以何用户身份登陆到数据库实例的宿主机上，要求改用户名的环境变量中可以找到gsql、gs_ctl等数据库运维工具。</p>
+<td class="cellrowborder" valign="top" width="58.33583358335833%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137279_p3734112544712"><a name="zh-cn_topic_0283137279_p3734112544712"></a><a name="zh-cn_topic_0283137279_p3734112544712"></a>指定以何用户身份登录到数据库实例的宿主机上，要求改用户名的环境变量中可以找到gsql、gs_ctl等数据库运维工具。</p>
 </td>
 <td class="cellrowborder" valign="top" width="24.48244824482448%" headers="mcps1.2.4.1.3 "><p id="p618154471812"><a name="p618154471812"></a><a name="p618154471812"></a>-</p>
 </td>
