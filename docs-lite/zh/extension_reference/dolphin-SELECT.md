@@ -69,6 +69,9 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
    ```
    FROM DUAL
    ```
+   >[!NOTE]说明
+   >对于`SELECT * FROM DUAL`，会返回列名为`not_used`类型为`int64`值为`1`的值。
+   >该特殊列只是`*`展开时构造的列，在同级别`SELECT`的其他子句中无法被引用。
 
 - 其中group子句为：
 
@@ -151,7 +154,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 - SOUNDS LIKE子句示例：同音字段查询
 
-```
+```sql
 openGauss=# CREATE TABLE TEST(id int, name varchar);
 openGauss=# INSERT INTO TEST VALUES(1, 'too');
 openGauss=# SELECT * FROM TEST WHERE name SOUNDS LIKE 'two';
@@ -163,7 +166,7 @@ openGauss=# SELECT * FROM TEST WHERE name SOUNDS LIKE 'two';
 
 - SELECT GROUP BY子句中使用ROLLUP
 
-```
+```sql
 openGauss=# CREATE TABLESPACE t_tbspace ADD DATAFILE 'my_tablespace' ENGINE = test_engine;
 CREATE TABLESPACE
 openGauss=# CREATE TABLE t_with_rollup(id int, name varchar(20), area varchar(50), count int);
@@ -197,7 +200,7 @@ openGauss=# SELECT name, sum(count) FROM t_with_rollup GROUP BY (name) WITH ROLL
 (4 rows)
 ```
 
-```
+```sql
 openGauss=# create table join_1(col1 int4, col2 int8);
 
 openGauss=# create table join_2(col1 int4, col2 int8);
@@ -232,7 +235,7 @@ openGauss=# select join_1 inner join join_2;
 
 - SELECT 语句中使用FROM DUAL 示例
 
-```
+```sql
 openGauss=# select 1 as col;
  col
 -----
@@ -243,11 +246,31 @@ openGauss=# select 1 as col FROM DUAL;
 -----
    1
 (1 row)
+openGauss=# select * from dual;
+ not_used 
+----------
+        1
+(1 row)
+openGauss=# select not_used from dual; -- error
+ERROR:  column "not_used" does not exist
+LINE 1: select not_used from dual;
+               ^
+openGauss= select * from (select * from dual);
+ not_used 
+----------
+        1
+(1 row)
+openGauss= select not_used from (select  * from dual); -- can see not_used column
+ not_used 
+----------
+        1
+(1 row)
+
 ```
 
 - SELECT FROM PARTITION子句指定多个分区
 
-```
+```sql
 openGauss=# create table multi_partition_select_test(C_INT INTEGER) partition by range(C_INT)
 openGauss-# (
 openGauss(#     partition test_part1 values less than (400),
