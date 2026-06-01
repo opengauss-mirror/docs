@@ -157,7 +157,7 @@ docker tag swr.cn-south-1.myhuaweicloud.com/opengauss/arm/opengauss:X.X.X openga
      cm_ctl query -Cvid
      ```
 
-3. 连接接数据库
+3. 接数据库
 
      ```
      gsql -d postgres -r

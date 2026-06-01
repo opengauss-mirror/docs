@@ -10,7 +10,7 @@
 
 ![](figures/zh-cn_image_0000001284746090.png)
 
-4. 注册完成后，以此账号登陆码云。
+4. 注册完成后，以此账号登录码云。
 
 更多Gitee使用问题请参见<u>[Gitee官方文档](https://gitee.com/link?target=https%3A%2F%2Fgit.mydoc.io%2F%3Ft%3D179267)</u>。
 
