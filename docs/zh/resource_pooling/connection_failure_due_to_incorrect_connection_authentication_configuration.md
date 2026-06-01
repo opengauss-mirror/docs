@@ -24,7 +24,7 @@ Exception in thread "main" org.postgresql.util.PSQLException: [A.B.C.D:40822/A.B
 
 报错信息内容为向监控地址`A.B.C.D`发起连接由于认证为trust模式被禁止。
 
-数据库连接认证配置文件为 `pg_hba.conf`，查看远程登陆认证配置：
+数据库连接认证配置文件为 `pg_hba.conf`，查看远程登录认证配置：
 
 ```shell
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
@@ -38,15 +38,15 @@ host    all             all             A.B.C.D/32              trust
 host    all             all             ::1/128                 trust
 ```
 
-确认确实使用了`trust`的远程登陆认证模式。
+确认确实使用了`trust`的远程登录认证模式。
 
 ## 问题根因
 
-数据库不支持以`trust`模式远程登陆。
+数据库不支持以`trust`模式远程登录。
 
 ## 解决方案
 
-数据库不支持以`trust`模式远程登陆，需要修改为`sha256`、`md5`等。
+数据库不支持以`trust`模式远程登录，需要修改为`sha256`、`md5`等。
 
 ```shell
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
