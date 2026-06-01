@@ -1139,7 +1139,7 @@ CM支持多个三方IP检测(third_party_gateway_ip)，可以预防CM脑裂。
     cm_ctl query -Cvid
     ```
 
-    连接接数据库
+    连接数据库
 
     ```
     gsql -d postgres -r
