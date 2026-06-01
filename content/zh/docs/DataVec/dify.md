@@ -29,7 +29,7 @@ docker-compose up -d
 ![](./figures/Docker.png)
 
 ## AI服务集成
-### 创建用户并登陆
+### 创建用户并登录
 访问本地部署的Dify web服务页面：
 ```bash
 http://your_server_ip

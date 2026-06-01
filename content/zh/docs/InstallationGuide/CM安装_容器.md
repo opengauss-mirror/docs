@@ -139,7 +139,7 @@ su - omm
 cm_ctl query -Cvid
 ```
 
-3. 连接接数据库
+3. 连接数据库
 ```
 gsql -d postgres -r
 ```
