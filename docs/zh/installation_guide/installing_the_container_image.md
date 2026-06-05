@@ -41,7 +41,7 @@ $ docker load -i openGauss-Docker-7.0.0-RC3-aarch64.tar
 $ docker images
 
 REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
-opengauss/opengauss-server   latest              9763e8b26794        2 days ago          1.68GB
+opengauss                    7.0.0-RC3           9763e8b26794        2 days ago          1.68GB
 ```
 
 >[!NOTE]说明
@@ -50,7 +50,7 @@ opengauss/opengauss-server   latest              9763e8b26794        2 days ago 
 
 ## 2. 运行容器
 
-以`opengauss/opengauss-server:latest` 版本为例，以下命令将启动数据库并映射宿主机的端口到容器：
+以`opengauss/opengauss-server:latest` 版本为例（从官网下载的7.0.0-RC3容器版本为`opengauss:7.0.0-RC3`），以下命令将启动数据库并映射宿主机的端口到容器：
 
 ```bash
 $ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -p 8888:5432 opengauss/opengauss-server:latest
