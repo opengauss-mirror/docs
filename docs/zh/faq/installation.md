@@ -831,7 +831,7 @@ CM要求azname和优先级必须匹配，且不同的azname需要具有不同的
 
 ![image](figures/fig_installation_17_1.png)
 
-## **问题17：主备建联失败**
+## **问题18：主备建联失败**
 
 ### 问题描述
 
@@ -845,7 +845,7 @@ CM要求azname和优先级必须匹配，且不同的azname需要具有不同的
 2. 关闭iptables  `iptables -F`
 3. 关闭selinux    `sed -i '/^SELINUX=/c'SELINUX=disabled /etc/selinux/config`
 
-## **问题18：麒麟系统OM安装报错openssl不兼容**
+## **问题19：麒麟系统OM安装报错openssl不兼容**
 
 ### 问题描述
 
