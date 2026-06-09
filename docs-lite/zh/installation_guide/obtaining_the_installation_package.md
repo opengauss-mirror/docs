@@ -2,6 +2,10 @@
 
 openGauss开源社区上提供了安装包的获取方式。
 
+> [NOTE]说明
+>
+> 下载安装包前，需要先注册并登录。
+
 ## 操作步骤<a name="zh-cn_topic_0289899746_zh-cn_topic_0283136484_zh-cn_topic_0241802590_zh-cn_topic_0085434667_zh-cn_topic_0059782060_section62223956163549"></a>
 
 1. 从openGauss开源社区下载对应平台的安装包。
@@ -9,14 +13,14 @@ openGauss开源社区上提供了安装包的获取方式。
 
     解压安装包，检查安装目录及文件是否齐全。
 
-    ```
+    ```sh
     tar -zxf openGauss-Lite-x.x.x-openEuler-aarch64.tar.gz
     ls -lb
     ```
 
     执行ls命令，显示类似如下信息：
 
-    ```
+    ```txt
     total 147716
     drwx------ 2 root root     4096 Jan  4 21:23 dependency
     -rwx------ 1 root root 73683192 Jan  4 21:23 openGauss-Lite-x.x.x-openEuler-aarch64.bin
@@ -45,7 +49,7 @@ openGauss开源社区上提供了安装包的获取方式。
 
 1. 计算文件的sha256校验值。linux执行命令如下：
 
-    ```
+    ```sh
     sha256sum openGauss-OM-6.0.0-openEuler20.03-aarch64.tar.gz
     sha256sum openGauss-Server-6.0.0-openEuler20.03-aarch64.tar.bz2
     ```
