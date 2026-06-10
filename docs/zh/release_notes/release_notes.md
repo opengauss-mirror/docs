@@ -200,7 +200,7 @@ openGauss 7.0.0-RC3是openGauss 2026年3月发布的创新版本，该版本生�
 
 - **周边生态**：[dblink](../database_administration_guide/dblink.md)；支持openEuler、CentOS、FusionOS系统；[绝大部分MySQL语法和协议兼容](../extension_reference/dolphin.md)。
 
-- **插件**：[GMS_STATS插件](../extension_reference/gms_stats.md)，支持收集特定schame下对象的统计信息。[GMS_PROFILER插件](../characteristic_description/gms_profiler_advanced_package.md)，用于收集PL/pgSQL程序执行情况。[GMS_OUTPUT插件](../characteristic_description/gms_output_tool_package.md)，提供将文本行写入内存、供以后提取和显示的功能。
+- **插件**：[GMS_STATS插件](../extension_reference/gms_stats.md)，支持收集特定schema下对象的统计信息。[GMS_PROFILER插件](../characteristic_description/gms_profiler_advanced_package.md)，用于收集PL/pgSQL程序执行情况。[GMS_OUTPUT插件](../characteristic_description/gms_output_tool_package.md)，提供将文本行写入内存、供以后提取和显示的功能。
 
 - **企业级特性**：支持修改表压缩属性。[子事务并发回滚流程优化](../sql_reference/optimization_of_subtransaction_concurrent_rollback_process.md)，减少锁争抢，提升并发执行效率。支持GB18030-2022标准。[存储过程支持嵌套调试](../characteristic_description/stored_procedure_debugging.md)，支持匿名块调试。[发布订阅](../database_om_guide/subscriptions.md)支持用户自定义冲突解决方案。支持多语言日志。支持限制内核日志最大磁盘占用空间。支持龙芯平台编译。索引创建支持预扩展，堆表支持预读。压缩表支持页式存储和段页式存储两种模式。
 
