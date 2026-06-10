@@ -13,14 +13,14 @@ You can obtain the installation package from the openGauss open-source community
 
     Decompress the installation package and check whether the installation directory and files are complete. Run the following commands in the directory where the installation package is stored:
 
-    ```
+    ```sh
     tar -jxf openGauss-Server-x.x.x-openEuler20.03-x86_64.tar.bz2
     ls -lb
     ```
 
     Run the  **ls**  command to display information similar to the following:
 
-    ```
+    ```txt
     total 90296
     drwx------ 3 root root     4096 Mar 31 21:18 bin
     drwx------ 3 root root     4096 Mar 31 21:18 etc
