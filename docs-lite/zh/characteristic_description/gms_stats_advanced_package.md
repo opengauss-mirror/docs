@@ -16,7 +16,7 @@
 
 ## 特性描述<a name="section45529136"></a>
 
-gms_stats高级包是一个基于openGauss的插件，用于良好地估计统计数据（尤其是针对较大的分区表），并能获得更好的统计结果，最终制定出速度更快的SQL执行计划。目前支持的接口有：GATHER_SCHEMA_STATS（用于收集某个schame下对象的统计信息）。
+gms_stats高级包是一个基于openGauss的插件，用于良好地估计统计数据（尤其是针对较大的分区表），并能获得更好的统计结果，最终制定出速度更快的SQL执行计划。目前支持的接口有：GATHER_SCHEMA_STATS（用于收集某个schema下对象的统计信息）。
 
 在openGauss 7.0.0-RC1 版本中，新增31个接口，详情参考[gms_stats概述](../extension_reference/gms_stats.md).
 

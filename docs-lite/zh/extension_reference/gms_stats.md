@@ -4,7 +4,7 @@
 
 gms_stats是一个基于openGauss的插件，用于良好地估计统计数据（尤其是针对较大的分区表），并能获得更好的统计结果，最终制定出速度更快的SQL执行计划。目前支持的接口有：
 
-- `GATHER_SCHEMA_STATS`（用于收集某个schame下对象的统计信息）。
+- `GATHER_SCHEMA_STATS`（用于收集某个schema下对象的统计信息）。
 - `CREATE_STAT_TABLE`
 - `DROP_STAT_TABLE`
 - `GATHER_DATABASE_STATS`
