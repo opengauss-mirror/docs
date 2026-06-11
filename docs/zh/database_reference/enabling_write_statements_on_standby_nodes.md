@@ -41,4 +41,7 @@
     COMMIT
 ```
 >
->- 开关打开后，用于在备机上执行写业务操作的用户必须具有SYSADMIN权限。
+>- 开关打开后，用于在备机上执行写业务操作的用户必须具有SYSADMIN权限，且仍需具备执行目标SQL所需的对象权限。
+>- 开关打开后，备机写语句会使用当前业务用户向主机建立内部写转发连接，连接参数包含`replication=standbywrite`。因此，主机侧（以及主备切换后可能成为主机的节点）`pg_hba.conf`需要配置匹配的`host replication`认证规则，允许对应备机IP以该业务用户建立连接。建议按业务用户和备机IP配置最小范围，例如`host replication <business_user> <standby_ip>/32 sha256`。`pg_hba.conf`配置方法请参考[配置客户端接入认证](../database_administration_guide/configuring_client_access_authentication.md)。
+>- 如果`host replication`规则使用`sha256`等密码认证方式，需要确保备机数据库进程能够获取该业务用户连接主机的认证凭据，例如在数据库运行用户可读取的`.pgpass`中配置对应的主机、端口、数据库、用户和密码。写转发不会自动复用客户端连接备机时输入的密码。
+>- `pg_hba.conf`仅控制连接准入，不授予SYSADMIN权限或数据库对象权限，不能替代`GRANT`或用户授权配置。请避免使用`host replication all 0.0.0.0/0 trust`等宽泛或不验密规则。若主机侧不存在匹配规则，写转发可能会报错`standbywrite could not connect to the remote server`或`no pg_hba.conf entry for replication connection`。

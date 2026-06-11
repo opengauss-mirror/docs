@@ -55,7 +55,7 @@
 
 ## 使用指导
 
-使用该特性需要在集群中所有节点配置GUC配置项`enable_remote_execute = on`，详细配置方法可参考[备机支持写语句参数](../database_reference/enabling_write_statements_on_standby_nodes.md)。配置完成并重启数据库使其生效后，通过gsql或其他驱动连接到备机上，并在备机上执行包含写类型语句的事务操作，观察在备机上执行是否正常即可。
+使用该特性需要在集群中所有节点配置GUC配置项`enable_remote_execute = on`，详细配置方法可参考[备机支持写语句参数](../database_reference/enabling_write_statements_on_standby_nodes.md)。同时，主机侧（以及主备切换后可能成为主机的节点）`pg_hba.conf`需要允许备机以当前业务用户建立写转发内部连接，可按业务用户和备机IP配置最小范围的`host replication`规则，例如`host replication <business_user> <standby_ip>/32 sha256`。如果认证方式使用`sha256`等密码认证方式，需要确保备机数据库进程能够获取该业务用户连接主机的认证凭据，例如在数据库运行用户可读取的`.pgpass`中配置对应的主机、端口、数据库、用户和密码；写转发不会自动复用客户端连接备机时输入的密码。该规则仅控制连接准入，不能替代SYSADMIN权限或目标SQL所需的对象权限；请避免使用`host replication all 0.0.0.0/0 trust`等宽泛或不验密规则。配置完成并重启数据库使其生效后，通过gsql或其他驱动连接到备机上，并在备机上执行包含写类型语句的事务操作，观察在备机上执行是否正常即可。
 
 ## 使用场景
 
