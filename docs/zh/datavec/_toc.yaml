@@ -161,3 +161,13 @@ sections:
         href: ./apache_age_adaptation.md
   - label: 推理加速
     href: ./inference_acceleration.md
+  - label: 数据分支
+    sections:
+      - label: 快速开始
+        href: ./data_branch_install.md
+      - label: 架构
+        href: ./data_branch_architecture.md
+      - label: 分支合并
+        href: ./data_branch_merge.md
+      - label: LFC+预取
+        href: ./data_branch_lfc_prefetch.md
