@@ -171,3 +171,5 @@ sections:
         href: ./data_branch_merge.md
       - label: LFC+预取
         href: ./data_branch_lfc_prefetch.md
+      - label: 并行回放
+        href: ./data_branch_parallel_replay.md
