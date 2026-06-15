@@ -766,6 +766,9 @@ cm_ctl res --edit --res_name="VIP_az3" --add_inst="node_id=7,res_instance_id=600
 | `switchover`                   | <https://ip:port/CMRestAPI/switchover?node=xxx>     | node:节点id   | 切换oGRecorder主节点        |
 | `stopRestApi`                  | <https://ip:port/CMRestAPI/stopRestApi>     | 无   | 停止对应节点的restapi服务，建议在集群停止的时候执行，否则进程还会被cm重新拉起        |
 | `log`                          | <https://ip:port/CMRestAPI/log?file=xxx&offset=xxx&count=xxx>     | file:相对于$GR_HOME/log的相对路径；offset: 可选参数，>0, 默认值1，传输日志的其起始位置；count:可选参数，默认值100，取值范围(0,1000],当传参超过1000时，赋值为1000传输日志的行数  | 传输oGRecorder日志        |
+| `NodeCpu`                      | <https://ip:port/CMRestAPI/NodeCpu>                | 无                  | 查看节点cpu信息         |
+| `NodeMemory`                   | <https://ip:port/CMRestAPI/NodeMemory>             | 无                  | 查看节点内存信息        |
+| `NodeNfsIo`                    | <https://ip:port/CMRestAPI/NodeNfsIo>              | 无                  | 查看节点nfs设备io信息   |
 
 **其他使用说明：**  
 
