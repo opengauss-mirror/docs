@@ -221,7 +221,7 @@
 
     - **INDEXSPLIT**
 
-        UBTREE 索引选择采取哪种分裂策略。其中 DEFAULT 策略指的是与 BTREE 相同的分裂策略。INSERTPT 策略能在某些场景下显著降低索引空间占用。
+        UBTREE/BTREE索引选择采取哪种分裂策略。其中 DEFAULT 策略是默认分裂策略。INSERTPT 策略能在某些场景下显著降低索引空间占用。
 
         取值范围：INSERTPT, DEFAULT
 
