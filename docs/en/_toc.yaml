@@ -17,6 +17,7 @@ sections:
       - href: ./data_migration_guide/_toc.yaml
   - label: Key Features
     sections:
+      - href: ./og_memory/_toc.yaml
       - href: ./resource_pooling/_toc.yaml
   - label: Developer Guide
     sections:
