@@ -30,3 +30,7 @@ sections:
       - href: ./tool_and_commandreference/_toc.yaml
       - href: ./characteristic_description/_toc.yaml
       - href: ./appendix/_toc.yaml
+single_manuals:
+  - href:
+      upstream: https://gitcode.com/opengauss/openGauss-workbench/blob/master/docs/en/_toc.yaml
+      path: ./datakit

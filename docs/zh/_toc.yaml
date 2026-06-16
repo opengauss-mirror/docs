@@ -36,3 +36,6 @@ single_manuals:
   - href:
       upstream: https://gitcode.com/opengauss/oGRAC-docs/blob/master/docs/zh/_toc.yaml
       path: ./ograc
+  - href:
+      upstream: https://gitcode.com/opengauss/openGauss-workbench/blob/master/docs/zh/_toc.yaml
+      path: ./datakit
