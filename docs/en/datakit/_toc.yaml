@@ -1,5 +1,0 @@
-label: DataKit
-isManual: true
-sections:
-  - label: Overview
-    href: ./datakit.md
