@@ -41,6 +41,7 @@ openGauss 目前所支持的字符集可以参考 [CREATE DATABASE](create_datab
 openGauss所有支持的字符序详见[PG\_COLLATION](../database_reference/PG_COLLATION.md)系统表。
 
 还有部分排序规则仅支持在B和D模式下使用，如下：
+**表字符序**
 
 | 字符序             | 所属字符集 | 说明                                                  | 空白填充 |
 | ------------------ | ---------- | ----------------------------------------------------- | -------- |
@@ -178,7 +179,7 @@ openGauss通过以下方式选择模式的字符集和字符序：
 
 - openGauss 的 SCHEMA 等价于 MySQL的 SCHEMA / DATABASE；在加载dolphin插件后，openGauss的 SCHEMA / DATABASE 与 MySQL 含义相同，语法参考 [CREATE DATABASE](../extension_reference/dolphin-CREATE-DATABASE.md)。
 - `default_charact` 仅支持指定为带有默认字符序的字符集，如果指定的字符集没有默认字符序则报错。
-- `default_collation` 仅支持指定为B模式下的字符序，指定其他字符序报错。
+- `default_collation` 仅支持指定为B模式下的字符序，指定其他字符序报错。所有B模式字符序详见**表字符序**。
 - 创建新 SCHEMA 的字符集、字符序与数据库的 server_encoding 不同时需要先设置 `b_format_behavior_compat_options` 参数包含`enable_multi_charset`。
 
 #### 示例
@@ -246,7 +247,7 @@ openGauss 通过以下方式选择表的字符集和字符序：
 [!NOTE]说明
 
 - `default_charact` 仅支持指定为带有默认字符序的字符集，如果指定的字符集没有默认字符序则报错。
-- `default_collation` 仅支持指定为B模式下的字符序，指定其他字符序报错。
+- `default_collation` 仅支持指定为B模式下的字符序，指定其他字符序报错。所有B模式字符序详见**表字符序**。
 - 设置表的默认字符集和默认字符序与数据库的server_encoding 不同时需要先设置`b_format_behavior_compat_options`参数包含`enable_multi_charset`。
 - 如果表的默认字符序为`binary` ，则表中未指定字符序的文本类型会转换为对应的二进制类型，且字符序设置为`binary`。
 
@@ -309,7 +310,7 @@ openGauss 通过以下方式选择表字段的字符集和字符序：
 [!NOTE]说明
 
 - `default_charact` 仅支持指定为带有默认字符序的字符集，如果指定的字符集没有默认字符序则报错。
-- `default_collation` 仅支持指定为B模式下的字符序，指定其他字符序报错。
+- `default_collation` 仅支持指定为B模式下的字符序，指定其他字符序报错。所有B模式字符序详见**表字符序**。
 - 如果表字段为文本类型且指定的字符序为`binary` ，则文本类型会转换为对应的二进制类型，字符序为指定的`binary` 字符序。
 - 设置表字段的默认字符集和默认字符序与数据库字符集`server_encoding`不同时需要先设置`b_format_behavior_compat_options`参数包含`enable_multi_charset`。
 - 分区表的分区键的字符集必须与数据库字符集相同。
