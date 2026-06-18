@@ -13,6 +13,21 @@
 
 **默认值**：off
 
+## enable\_thread\_pool\_numa\_locality<a name="zh-cn_topic_0283137548_section_enable_thread_pool_numa_locality"></a>
+
+**参数说明**：控制线程池新建会话是否按接收连接的CPU所在NUMA节点进行本地化分组。该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+该参数仅在开启线程池、使用普通内核socket、且未开启enable\_gazelle\_performance\_mode时生效。开启后，数据库通过SO\_INCOMING\_CPU获取连接的接收CPU，根据该CPU所属NUMA节点，将会话分配到相同NUMA节点的ThreadPoolGroup中；如果无法获取接收CPU，或未找到匹配NUMA节点的ThreadPoolGroup，则回退到会话数最少的ThreadPoolGroup。
+
+在Gazelle/KNET模式下，会话分组使用Gazelle/KNET提供的NUMA标识，该参数不生效。如果数据库编译或运行环境不支持NUMA，该参数开启后仍按原有策略分配会话。
+
+**取值范围**：布尔型
+
+- on表示开启线程池会话NUMA本地化分组。
+- off表示不开启线程池会话NUMA本地化分组。
+
+**默认值**：off
+
 ## thread\_pool\_attr<a name="zh-cn_topic_0283137548_zh-cn_topic_0237124743_section787511112134"></a>
 
 **参数说明**：用于控制线程池功能的详细属性，该参数仅在enable\_thread\_pool打开后生效，仅sysadmin用户可以访问。该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
