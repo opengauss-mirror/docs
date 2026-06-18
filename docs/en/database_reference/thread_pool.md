@@ -11,6 +11,21 @@
 
 **Default value**:  **off**
 
+## enable\_thread\_pool\_numa\_locality<a name="en-us_topic_0283137548_section_enable_thread_pool_numa_locality"></a>
+
+**Parameter description**: Specifies whether to localize new thread pool sessions based on the NUMA node of the CPU that receives the connection. This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+This parameter takes effect only when the thread pool function is enabled, kernel sockets are used, and **enable\_gazelle\_performance\_mode** is set to **off**. After this parameter is enabled, openGauss obtains the receiving CPU of a connection by using **SO\_INCOMING\_CPU**, derives the NUMA node of the CPU, and dispatches the session to the ThreadPoolGroup on the same NUMA node. If the receiving CPU cannot be obtained or no ThreadPoolGroup matches the NUMA node, openGauss falls back to dispatching the session to the ThreadPoolGroup with the fewest sessions.
+
+In Gazelle/KNET mode, session dispatching uses the NUMA identifier provided by Gazelle/KNET, and this parameter does not take effect. If the database build or runtime environment does not support NUMA, sessions are still dispatched using the original policy even when this parameter is enabled.
+
+**Value range**: Boolean
+
+- **on**  indicates that NUMA-local session dispatching in the thread pool is enabled.
+- **off**  indicates that NUMA-local session dispatching in the thread pool is disabled.
+
+**Default value**:  **off**
+
 ## thread\_pool\_attr<a name="en-us_topic_0283137548_en-us_topic_0237124743_section787511112134"></a>
 
 **Parameter description**: Specifies the detailed attributes of the thread pool function. This parameter is valid only when  **enable\_thread\_pool**  is set to  **on**. Only the sysadmin user can access this parameter. This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
