@@ -775,7 +775,7 @@ For details about  **gsql**  parameters, see  [Table 1](#en-us_topic_0059779319_
 </thead>
 <tbody><tr id="en-us_topic_0059779319_rf751e9eceef243079acfc04a1b4dc221"><td class="cellrowborder" valign="top" width="22.34%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0059779319_a5b565fceb8d642e5ad636f3105992b19"><a name="en-us_topic_0059779319_a5b565fceb8d642e5ad636f3105992b19"></a><a name="en-us_topic_0059779319_a5b565fceb8d642e5ad636f3105992b19"></a>-c, --command=COMMAND</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.6%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059779319_ad0bed757764a4573a4c4480bf2587a2d"><a name="en-us_topic_0059779319_ad0bed757764a4573a4c4480bf2587a2d"></a><a name="en-us_topic_0059779319_ad0bed757764a4573a4c4480bf2587a2d"></a>Specifies that <strong id="b19901517061611"><a name="b19901517061611"></a><a name="b19901517061611"></a>gsql</strong> is to run a string command and then exit.</p>
+<td class="cellrowborder" valign="top" width="53.6%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059779319_ad0bed757764a4573a4c4480bf2587a2d"><a name="en-us_topic_0059779319_ad0bed757764a4573a4c4480bf2587a2d"></a><a name="en-us_topic_0059779319_ad0bed757764a4573a4c4480bf2587a2d"></a>Specifies that <strong id="b19901517061611"><a name="b19901517061611"></a><a name="b19901517061611"></a>gsql</strong> is to run a string command and then exit. This option can be specified more than once and can be combined with the option -c in any order, the options will be proccessed according to the order.</p>
 </td>
 <td class="cellrowborder" valign="top" width="24.060000000000002%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059779319_en-us_topic_0058968145_p156438509712"><a name="en-us_topic_0059779319_en-us_topic_0058968145_p156438509712"></a><a name="en-us_topic_0059779319_en-us_topic_0058968145_p156438509712"></a>-</p>
 </td>
@@ -790,7 +790,7 @@ For details about  **gsql**  parameters, see  [Table 1](#en-us_topic_0059779319_
 </tr>
 <tr id="en-us_topic_0059779319_r9f41226b80114eda9b6529ce60d822cd"><td class="cellrowborder" valign="top" width="22.34%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0059779319_af0a2cf69d07743b2b1d21ebd820f9659"><a name="en-us_topic_0059779319_af0a2cf69d07743b2b1d21ebd820f9659"></a><a name="en-us_topic_0059779319_af0a2cf69d07743b2b1d21ebd820f9659"></a>-f, --file=FILENAME</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.6%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059779319_en-us_topic_0058968145_p431573395731"><a name="en-us_topic_0059779319_en-us_topic_0058968145_p431573395731"></a><a name="en-us_topic_0059779319_en-us_topic_0058968145_p431573395731"></a>Specifies that files are used as the command source instead of interactively-entered commands. After the files are processed, <strong id="b842352706162329"><a name="b842352706162329"></a><a name="b842352706162329"></a>gsql</strong> exits. If <em id="i842352697115459"><a name="i842352697115459"></a><a name="i842352697115459"></a>FILENAME</em> is - (hyphen), then standard input is read.</p>
+<td class="cellrowborder" valign="top" width="53.6%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059779319_en-us_topic_0058968145_p431573395731"><a name="en-us_topic_0059779319_en-us_topic_0058968145_p431573395731"></a><a name="en-us_topic_0059779319_en-us_topic_0058968145_p431573395731"></a>Specifies that files are used as the command source instead of interactively-entered commands. This option can be specified more than once and can be combined with the option -c in any order, the options will be proccessed according to the order. After the files and commands are processed, <strong id="b842352706162329"><a name="b842352706162329"></a><a name="b842352706162329"></a>gsql</strong> exits. If <em id="i842352697115459"><a name="i842352697115459"></a><a name="i842352697115459"></a>FILENAME</em> is - (hyphen), then standard input is read.</p>
 </td>
 <td class="cellrowborder" valign="top" width="24.060000000000002%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059779319_en-us_topic_0058968145_p111442891021"><a name="en-us_topic_0059779319_en-us_topic_0058968145_p111442891021"></a><a name="en-us_topic_0059779319_en-us_topic_0058968145_p111442891021"></a>An absolute path or relative path that meets the OS path naming convention</p>
 </td>
@@ -798,6 +798,8 @@ For details about  **gsql**  parameters, see  [Table 1](#en-us_topic_0059779319_
 <tr id="en-us_topic_0059779319_rb1dacbb49960481a8eaec18fcaa258c1"><td class="cellrowborder" valign="top" width="22.34%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0059779319_en-us_topic_0058968145_p135042995731"><a name="en-us_topic_0059779319_en-us_topic_0058968145_p135042995731"></a><a name="en-us_topic_0059779319_en-us_topic_0058968145_p135042995731"></a>-l, --list</p>
 </td>
 <td class="cellrowborder" valign="top" width="53.6%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059779319_a7acc5297f2c24951829934906835788f"><a name="en-us_topic_0059779319_a7acc5297f2c24951829934906835788f"></a><a name="en-us_topic_0059779319_a7acc5297f2c24951829934906835788f"></a>Lists all available databases and then exits.</p>
+<div class="note" id="en-us_topic_0287275991_note111571487117"><a name="en-us_topic_0287275991_note111571487117"></a><a name="en-us_topic_0287275991_note111571487117"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0287275991_p615715841110"><a name="en-us_topic_0287275991_p615715841110"></a><a name="en-us_topic_0287275991_p615715841110"></a>When this option is used together with -c/-f, only the latter option will be executed. That is to say, if -l appears as the last option, the result shows all available databases rather than the execution result of -c/-f. The opposite also applies to the condition when -c/-f appears as the last option.</p>
+</div></div>
 </td>
 <td class="cellrowborder" valign="top" width="24.060000000000002%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059779319_en-us_topic_0058968145_p214125089712"><a name="en-us_topic_0059779319_en-us_topic_0058968145_p214125089712"></a><a name="en-us_topic_0059779319_en-us_topic_0058968145_p214125089712"></a>-</p>
 </td>
@@ -1057,7 +1059,7 @@ For details about  **gsql**  parameters, see  [Table 1](#en-us_topic_0059779319_
 </tr>
 <tr id="row168751313155516"><td class="cellrowborder" valign="top" width="17.52%" headers="mcps1.2.4.1.1 "><p id="p13875513185511"><a name="p13875513185511"></a><a name="p13875513185511"></a>-g,</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.25%" headers="mcps1.2.4.1.2 "><p id="p787516133552"><a name="p787516133552"></a><a name="p787516133552"></a>Prints all SQL statements from a file.</p>
+<td class="cellrowborder" valign="top" width="64.25%" headers="mcps1.2.4.1.2 "><p id="p787516133552"><a name="p787516133552"></a><a name="p787516133552"></a>Prints all SQL statements from a file. Option -g and -f must be specified together. When multiple -c and -f are specified with -g, only SQL statements from files specified by -f will be printed, commands specified by -c will be executed.</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.3 "><p id="p587551375510"><a name="p587551375510"></a><a name="p587551375510"></a>-</p>
 </td>
@@ -1124,6 +1126,7 @@ This section describes meta-commands provided by  **gsql**  after the openGauss 
 - If an unquoted argument begins with a colon \(:\), the argument is taken as a  **gsql**  variable and the value of the variable is used as the argument value instead.
 - Some commands take an SQL identifier \(such as a table name\) as a parameter. These parameters follow the SQL syntax rules: Unquoted letters are forced to lowercase, while double quotation marks \(""\) protect letters from case conversion and allow incorporation of whitespace into the identifier. Within double quotation marks, paired double quotation marks reduce to a single double quotation mark in the result name. For example,  **FOO"BAR"BAZ**  is interpreted as  **fooBARbaz**, and  **"Aweird""name"**  becomes  **A weird"name**.
 - Parsing for arguments stops when another unquoted backslash is found. This is taken as the beginning of a new meta-command. The special sequence \\\\ \(two backslashes\) marks the end of parameters and continues parsing SQL statements if any. In this way, SQL and  **gsql**  commands can be freely mixed in a line. But in any case, the arguments of a meta-command cannot continue beyond the end of the line.
+- In most cases the gsqlrc file won't be applied to the execution of commands the -c options specifies, except when -c options are used together with the -f options.
 
 ### Meta-command<a name="en-us_topic_0059778645_s180deee1bdf347639010abe523b324fe"></a>
 
