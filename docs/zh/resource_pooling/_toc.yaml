@@ -41,6 +41,8 @@ sections:
             href: ./cm_syssentry_fault_detection.md
       - label: 在线reform
         href: ./online_reform.md
+      - label: 在线failover
+        href: ./online_ddl_adapt_failover.md
   - label: 常见故障定位指南
     sections:
       - label: 常见故障定位手段
