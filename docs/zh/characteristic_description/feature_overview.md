@@ -312,6 +312,9 @@
         <td><a href="../resource_pooling/online_reform.md">在线reform</a></td>
     </tr>
     <tr>
+        <td><a href="../resource_pooling/online_ddl_adapt_failover.md">在线failover</a></td>
+    </tr>
+    <tr>
         <td><a href="../performance_tuning_guide/mes_worker_thread_pooling.md">MES worker线程池化</a></td>
     </tr>
 </table>
