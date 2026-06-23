@@ -775,7 +775,7 @@ omm@[local] openGauss=#
 </thead>
 <tbody><tr id="zh-cn_topic_0059779319_rf751e9eceef243079acfc04a1b4dc221"><td class="cellrowborder" valign="top" width="22.34%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059779319_a5b565fceb8d642e5ad636f3105992b19"><a name="zh-cn_topic_0059779319_a5b565fceb8d642e5ad636f3105992b19"></a><a name="zh-cn_topic_0059779319_a5b565fceb8d642e5ad636f3105992b19"></a>-c, --command=COMMAND</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.6%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059779319_ad0bed757764a4573a4c4480bf2587a2d"><a name="zh-cn_topic_0059779319_ad0bed757764a4573a4c4480bf2587a2d"></a><a name="zh-cn_topic_0059779319_ad0bed757764a4573a4c4480bf2587a2d"></a>声明gsql要执行一条字符串命令然后退出。</p>
+<td class="cellrowborder" valign="top" width="53.6%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059779319_ad0bed757764a4573a4c4480bf2587a2d"><a name="zh-cn_topic_0059779319_ad0bed757764a4573a4c4480bf2587a2d"></a><a name="zh-cn_topic_0059779319_ad0bed757764a4573a4c4480bf2587a2d"></a>声明gsql要执行一条字符串命令然后退出。该选项可以重复，并可以按任意顺序与-f选项组合，选项指定的命令和文件按输入顺序执行并输出结果。</p>
 </td>
 <td class="cellrowborder" valign="top" width="24.060000000000002%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p156438509712"><a name="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p156438509712"></a><a name="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p156438509712"></a>-</p>
 </td>
@@ -790,7 +790,7 @@ omm@[local] openGauss=#
 </tr>
 <tr id="zh-cn_topic_0059779319_r9f41226b80114eda9b6529ce60d822cd"><td class="cellrowborder" valign="top" width="22.34%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059779319_af0a2cf69d07743b2b1d21ebd820f9659"><a name="zh-cn_topic_0059779319_af0a2cf69d07743b2b1d21ebd820f9659"></a><a name="zh-cn_topic_0059779319_af0a2cf69d07743b2b1d21ebd820f9659"></a>-f, --file=FILENAME</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.6%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p431573395731"><a name="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p431573395731"></a><a name="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p431573395731"></a>使用文件作为命令源而不是交互式输入。gsql将在处理完文件后结束。如果FILENAME是-（连字符），则从标准输入读取。</p>
+<td class="cellrowborder" valign="top" width="53.6%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p431573395731"><a name="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p431573395731"></a><a name="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p431573395731"></a>使用文件作为命令源而不是交互式输入。该选项可以重复，且可以按任意顺序与-c选项组合。gsql将在处理完文件和命令后结束。如果FILENAME是-（连字符），则从标准输入读取。</p>
 </td>
 <td class="cellrowborder" valign="top" width="24.060000000000002%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p111442891021"><a name="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p111442891021"></a><a name="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p111442891021"></a>绝对路径或相对路径，且满足操作系统路径命名规则。</p>
 </td>
@@ -798,6 +798,8 @@ omm@[local] openGauss=#
 <tr id="zh-cn_topic_0059779319_rb1dacbb49960481a8eaec18fcaa258c1"><td class="cellrowborder" valign="top" width="22.34%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p135042995731"><a name="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p135042995731"></a><a name="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p135042995731"></a>-l, --list</p>
 </td>
 <td class="cellrowborder" valign="top" width="53.6%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059779319_a7acc5297f2c24951829934906835788f"><a name="zh-cn_topic_0059779319_a7acc5297f2c24951829934906835788f"></a><a name="zh-cn_topic_0059779319_a7acc5297f2c24951829934906835788f"></a>列出所有可用的数据库，然后退出。</p>
+<div class="note" id="note111571487117"><a name="note111571487117"></a><a name="note111571487117"></a><span class="notetitle"> 注意： </span><div class="notebody"><p id="p615715841110"><a name="p615715841110"></a><a name="p615715841110"></a>当该选项与-c，-f选项混用时，后出现的选项的结果会覆盖前面的选项的结果。例如当最后一个选项是-l时，显示列出的所有可用数据库的结果而非-c，-f选项的执行结果；-c或-f为最后一个选项时则表现相反。</p>
+</div></div>
 </td>
 <td class="cellrowborder" valign="top" width="24.060000000000002%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p214125089712"><a name="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p214125089712"></a><a name="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p214125089712"></a>-</p>
 </td>
@@ -1078,7 +1080,7 @@ omm@[local] openGauss=#
 </tr>
 <tr id="row168751313155516"><td class="cellrowborder" valign="top" width="17.52%" headers="mcps1.2.4.1.1 "><p id="p13875513185511"><a name="p13875513185511"></a><a name="p13875513185511"></a>-g,</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.25%" headers="mcps1.2.4.1.2 "><p id="p787516133552"><a name="p787516133552"></a><a name="p787516133552"></a>打印来自文件的所有SQL。</p>
+<td class="cellrowborder" valign="top" width="64.25%" headers="mcps1.2.4.1.2 "><p id="p787516133552"><a name="p787516133552"></a><a name="p787516133552"></a>打印来自文件的所有SQL。指定该选项必须同时指定-f选项。如果指定该选项的同时还指定了多个-f和-c选项，则只有-f选项指定的文件中的SQL会被打印，-c选项指定的命令会正常执行。</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.3 "><p id="p587551375510"><a name="p587551375510"></a><a name="p587551375510"></a>-</p>
 </td>
@@ -1145,6 +1147,7 @@ omm@[local] openGauss=#
 - 如果不带引号的参数以冒号（:）开头，它会被当做一个gsql变量，并且该变量的值最终会成为真正的参数值。
 - 有些命令以一个SQL标识的名称（比如一个表）为参数。这些参数遵循SQL语法关于双引号的规则：不带双引号的标识强制转换成小写，而双引号保护字母不进行大小写转换，并且允许在标识符中使用空白。在双引号中，成对的双引号在结果名称中分析成一个双引号。比如，FOO"BAR"BAZ解析成fooBARbaz；而"Aweird""name"解析成A weird"name。
 - 对参数的分析在遇到另一个不带引号的反斜杠时停止。这里会认为是一个新的元命令的开始。特殊的双反斜杠序列（\\\\）标识参数的结尾并将继续分析后面的SQL语句（如果存在）。这样SQL和gsql命令可以自由的在一行里面混合。但是在任何情况下，一条元命令的参数不能延续超过行尾。
+- 启动文件（即环境变量PSQLRC指定的文件，默认为~/.gsqlrc）中的设置对-c选项指定的字符串命令的执行通常不生效，仅当-c与-f选项混用时，该文件中的设置才对-c指定的字符串命令生效。
 
 ### 元命令<a name="zh-cn_topic_0059778645_s180deee1bdf347639010abe523b324fe"></a>
 
