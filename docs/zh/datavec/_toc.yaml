@@ -93,6 +93,8 @@ sections:
             href: ./ragflow.md
           - label: LangGraph
             href: ./langgraph.md
+          - label: Spring AI
+            href: ./spring_ai_opengauss.md
       - label:  嵌入模型
         sections: 
           - label: BGE-M3
