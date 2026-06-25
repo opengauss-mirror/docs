@@ -155,79 +155,7 @@ dmesg -T 查看当时有硬件异常，正好对应于core堆栈的地址：目�
 
 ![image](figures/fig_3_7.png)
 
-## **问题4：批量插入性能问题初步分析**
-
-### 问题描述
-
-某客户现场测试遇到使用 OCI 批量插入数据性能比 Oracle 慢：
-
-![image](figures/fig_4_1.png)
-
-### 问题复现
-
-现场是多线程场景测试，实际上单线程使用批量插入可以复现比 Oracle 慢的问题。
-
-**Oracle 单线程批量插入 1 万行数据**
-
-![image](figures/fig_4_2.png)
-![image](figures/fig_4_3.png)
-
-**PanWeiDB 单线程批量插入 1 万行数据**
-
-![image](figures/fig_4_4.png)
-![image](figures/fig_4_5.png)
-
-调整如下参数：
-
-```
-shared_buffers =64GB // 未调,默认 1G
-session_timeout = 0 // 已调，默认 10min
-track_activities = off // 已调，默认 on
-track_counts = off // 已调，默认 on
-enable_stmt_track = off // 已调，默认 on
-enable_resource_track = off // 已调，默认 on
-use_workload_manager = off // 已调，默认 on
-log_min_duration_statement = -1 // 已调，默认 30min
-shared_preload_libraries = '' // 已调，默认 security_plugin
-enable_memory_limit = off // 已调，默认 on
-enable_codegen = off // 默认
-enable_bloom_filter = off // 已调，默认 on
-enable_global_syscache = off // 已调，默认 on
-enable_indexscan_optimization=on // 已调，默认 off
-operation_mode = on // 已调，默认 off
-enable_opfusion = on // 默认
-enable_instr_rt_percentile=off // 已调，默认 on
-enable_bitmapscan = off // 已调，默认 on
-enable_alarm = off // 已调，默认 on
-enable_instr_cpu_timer = off // 已调，默认 on
-enable_instr_track_wait = off // 已调，默认 on
-enable_page_lsn_check = off // 已调，默认 on
-enable_xlog_prune = off // 已调，默认 on
-track_sql_count = off // 已调，默认 on
-enable_opfusion_reuse = on --> 没有这个参数
-wal_buffers =1GB // 未调，默认 16MB
-enable_save_datachanged_timestamp=off // 已调，默认 on
-```
-
-**性能差距**
-
-Oracle: 54967 微秒
-PanWeiDB: 183770 微秒
-即，183770/54967 ≈ 3.34 倍
-
-**火焰图抓取**
-
-测试机火焰图
-![image](figures/fig_4_6.png)
-
-### 附录
-
-复现测试程序
-![image](figures/fig_4_7.png)
-![image](figures/fig_4_8.png)
-![image](figures/fig_4_9.png)
-
-## **问题5：某客户alter table .. after core问题故障报告**
+## **问题4：某客户alter table .. after core问题故障报告**
 
 ### 问题描述
 
@@ -284,7 +212,7 @@ PanWeiDB: 183770 微秒
     >[!WARNING]注意
     >该方法存在一定风险，因为analyze操作是不锁表的，在没有执行完成时，可能会执行查询，同样存在宕机风险。
 
-## **问题6：某客户在线数据库core问题分析**
+## **问题5：某客户在线数据库core问题分析**
 
 ### 问题描述
 
