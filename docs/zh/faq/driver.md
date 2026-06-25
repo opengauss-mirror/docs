@@ -6,7 +6,7 @@
 
 - 【数据库版本】openGauss 6.0.0 LTS
 - 【模块】驱动，opengauss-psycopg2（6.0.0）
-- 【问题描述】2025年6月，客户通过SQLAlchemy（x.x.xx版本）调用opengauss-psycopg2（6.0.0版本）执行全表查询时，高概率出现报错`Value Error: invalid literal for int() with base 10: '{}'`，导致业务报错中断。
+- 【问题描述】2025年6月，用户通过SQLAlchemy（x.x.xx版本）调用opengauss-psycopg2（6.0.0版本）执行全表查询时，高概率出现报错`Value Error: invalid literal for int() with base 10: '{}'`，导致业务报错中断。
 
 ### 问题定位
 
@@ -99,7 +99,7 @@ import os
 #os.environ['PSYCOPG_DEBUG'] = '1'
 
 # 按照要求组织成一定的字符串,注意url特殊字符的转义
-DB_URI = 'postgresql+psycopg2://zt10:Huawei123@192.168.0.118:5437/jdbc_utf8_b'
+DB_URI = 'postgresql+psycopg2://<username>:<passwd>@<ip>:<port>/<database>'
 
 # 替换下面的参数以连接到你的openGauss数据库
 # 格式为：'OpenGauss://<用户>:<密码>@<地址>:<端口>/<数据库名>'
@@ -197,7 +197,7 @@ execute_values(cursor, insert_query, values)
 
 ### 问题描述
 
-客户反馈500版本jdbc驱动连接500版本b兼容数据库会报错，在相同情况下使用300版本连接数据库正常。
+用户反馈500版本jdbc驱动连接500版本b兼容数据库会报错，在相同情况下使用300版本连接数据库正常。
 
 ### 问题定位
 
@@ -256,8 +256,8 @@ execute_values(cursor, insert_query, values)
     importjava.sql.SQLException;
     publicclassOpenGaussJDBCExample{
         //数据库连接信息
-        privatestaticfinalStringDB_URL="jdbc:postgresql://20.20.20.115:16534/test";privatestaticfinalStringUSER="t2";
-        privatestaticfinalStringPASS="Huawei@123";
+        privatestaticfinalStringDB_URL="jdbc:postgresql://xx.xx.xx.115:16534/test";privatestaticfinalStringUSER="user";
+        privatestaticfinalStringPASS="passwd@123";
         publicstaticvoidmain(String[]args){
             Connectionconn=null;
             Statementstmt=null;
@@ -383,168 +383,8 @@ execute_values(cursor, insert_query, values)
 
     ![image](figures/fig_driver_1_1.png)
 
-## **问题4：jdbc适配cerdb如何操作**
 
-### 问题描述
-
-openGauss JDBC 适配cerdb操作指导。
-
-### 解决方案
-
-需要实现的功能如下：
-
-![image](figures/fig_driver_4_1.png)
-
-jdbc需要的环境：
-
-| 软件及环境要求 | 推荐版本 |
-| :------------- | :------- |
-| maven          | 3.6.1    |
-| java           | 1.8      |
-
-若环境不满足，编译驱动包会报错：
-
-![image](figures/fig_driver_4_2.png)
-
-1. 步骤一：下载相关分支的代码（此处主要实现jdbc:cerdb功能）
-
-    - 执行`git clone -b 5.0.0 https://gitee.com/opengauss/openGauss-connector-jdbc.git`，
-    - 修改`/openGauss-connector-jdbc/pgjdbc/src/main/java/org/postgresql/Driver.java`
-    - 在connect方法相关行追加”jdbc:cerdb:”，共三处（分支不同，相关代码行数会不同，注意区别）
-
-        ![image](figures/fig_driver_4_3.png)
-
-        ![image](figures/fig_driver_4_4.png)
-
-        此处更换为cerdb，不追加。
-
-        ![image](figures/fig_driver_4_5.png)
-
-2. 步骤二：更改包名，及版本号。
-
-    - 更改`/openGauss-connector-jdbc/pgjdbc`下的pom.xml,
-    - 将`<artifactId>opengauss-jdbc</artifactId>`和`<version>6.0.0</version>`更改为客户需要命名的包及版本。
-
-        ![image](figures/fig_driver_4_6.png)
-
-    - 修改bulid.sh文件：openGauss-connector-jdbc/build.sh，共四处替换为cerdb:
-
-        ![image](figures/fig_driver_4_6.png)
-        ![image](figures/fig_driver_4_7.png)
-        ![image](figures/fig_driver_4_8.png)
-        ![image](figures/fig_driver_4_9.png)
-
-    - 适配ceos系统,增加相关代码：主要查看ceos的`cat /etc/system-release`。
-
-        ![image](figures/fig_driver_4_10.png)
-
-3. 步骤三：打包，执行`sh build.sh`。
-
-    ![image](figures/fig_driver_4_11.png)
-
-    - 测试cerdb-jdbc-1.1.jar，此处的dirver必须选择opengauss。
-
-        ![image](figures/fig_driver_4_12.png)
-
-        测试正常：
-
-        ![image](figures/fig_driver_4_13.png)
-
-    - 测试postgresql.jar，Driver必须选择postgresql。
-
-        ![image](figures/fig_driver_4_14.png)
-
-        测试正常：
-
-        ![image](figures/fig_driver_4_15.png)
-
-    - openGauss-connector-jdbc/build.sh修改，如图，将org.opengauss改为`org.cerdb,String driver = "org.cerdb.Driver";`即可使用。
-
-        ![image](figures/fig_driver_4_16.png)
-        ![image](figures/fig_driver_4_17.png)
-
-    - Bishengjdk8也可以打包：
-
-        ![image](figures/fig_driver_4_18.png)
-
-        经测试Bishengjdk8打的jar包传到jdk8环境上，jar也可以正常使用。
-
-## **问题5：libpq连接指导**
-
-### 解决方案
-
-#### 通过gsql方式连接
-
-```
-gsql "dbname=postgres port=12486 host='localhost' connect_timeout=10 application_name=cm_agent
-options='-c xc_maintenance_mode=on -c remotetype=internaltool'"
-```
-
-#### 通过代码连接
-
-1. 安装库
-
-    ```
-    Ubuntu/Debian：
-    apt-get install libpq-dev
-    CentOS/RHEL：
-    yum install postgresql-devel
-    ```
-
-2. 测试demo
-
-    ```
-    #include <stdio.h>
-    #include <stdlib.h>
-    #include <libpq-fe.h>
-    //#include "libpq/libpq-int.h"
-    void checkConnStatus(PGconn *conn) {
-    if (PQstatus(conn) != CONNECTION_OK) {
-    fprintf(stderr, "Connection to database failed: %s", PQerrorMessage(conn));
-    PQfinish(conn);
-    exit(1);
-    }
-    }
-    int main() {
-    char local_conninfo[256];
-    int portnum = 12486;
-    const char *host_str = "localhost";
-    int connectTimeOut = 10;
-    int rwTimeout = 20;
-    const char *g_progname = "cm_agent";
-    int enable_xc_maintenance_mode = 1;
-    int rc = snprintf(local_conninfo, sizeof(local_conninfo),
-    "dbname=postgres port=%d host='%s' connect_timeout=%d
-    application_name=%s "
-    "options='%s %s'",
-    portnum + 1,
-    host_str,
-    connectTimeOut,
-    g_progname,
-    enable_xc_maintenance_mode ? "-c xc_maintenance_mode=on" : "",
-    "-c remotetype=internaltool");
-    if (rc < 0 || rc >= sizeof(local_conninfo)) {
-    fprintf(stderr, "snprintf error\n");
-    3.编译
-    return 1;
-    }
-    printf("Connecting with connection info: %s\n", local_conninfo);
-    PGconn *conn = PQconnectdb(local_conninfo);
-    printf("Connecting with connection info: %s\n", local_conninfo);
-    checkConnStatus(conn);
-    printf("Connected to database successfully\n");
-    PQfinish(conn);
-    return 0;
-    }
-    ```
-
-3. 编译
-
-```
-gcc -o demo demo.c -lpq
-```
-
-## **问题6：修改用户名导致md5认证失败**
+## **问题4：修改用户名导致md5认证失败**
 
 ### 问题描述
 
@@ -569,7 +409,6 @@ gcc -o demo demo.c -lpq
 
 修改表结构导致DDL报错，问题如图：
 
-![image](figures/fig_driver_7.png)
 
 报错：`Error: cached plan must not change result type.`
 
@@ -581,3 +420,8 @@ DDL是被会话级别缓存的，改了之后需要重连会话。
 
 1. 对于这个问题，可以应用侧重启，重新`prepare execute`。
 2. 重启数据库肯定可以解决，但不推荐。
+
+问题修复
+方案：在获取缓存中的 plan cache 时，如果结果集检查不通过，则主动失效并重建 plan cache
+PR： https://gitee.com/opengauss/openGauss-server/pulls/5157
+修复版本： >=3.0.6   >=5.0.3   >=6.0.0

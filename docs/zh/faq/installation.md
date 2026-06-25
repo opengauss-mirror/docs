@@ -4,7 +4,7 @@
 
 ### 问题描述
 
-某客户使用6.0.0版本数据库，进行扩容，扩容执行失败。
+6.0.0版本数据库，进行扩容，扩容执行失败。
 
 ### 问题定位
 
@@ -648,9 +648,10 @@ preinstall预安装报错某个so文件不存在，但是实际该文件是存�
 
 | 操作系统        | Python版本 |
 |----------------|------------|
-| Centos         | 3.6        |
+| Centos7.6      | 3.6        |
 | openEuler20.03 | 3.7        |
 | openEuler22.03 | 3.9        |
+| openEuler24.03 | 3.11       |
 
 ### 问题解决
 
@@ -658,7 +659,7 @@ preinstall预安装报错某个so文件不存在，但是实际该文件是存�
 
 ![image](figures/fig_installation_10_4.png)
 
-preinstall也提供了一种方式，可以选择用系统自带的依赖，可以做到任意版本都能兼容。
+此外preinstall也提供了一种方式，可以选择用系统自带的依赖，可以做到任意版本都能兼容。
 
 `./gs_preinstall -U omm -G omm -X single.xml  --unused-third-party`
 
@@ -942,35 +943,3 @@ export LD_LIBRARY_PATH=/usr/lib64 && /usr/bin/ssh $@
 
 [关联需求或issue](https://gitee.com/opengauss/openGauss-server/issues/I8MCW0?from=project-issue)
 
-**开发自验报告:**
-
-1. 自验结果
-
-    升级openssh后的麒麟v10sp2， 安装、扩缩容、ssh等都执行正常。
-
-    ![image](figures/fig_installation_18_7.png)
-
-2. 是否涉及资料修改，如是，在docs仓库补充资料。
-3. 是否考虑升级场景(升级工具以及om工具公共函数修改)。
-4. 是否考虑在线扩容工具等扩展场景。
-5. 是否考虑异常场景/并发场景/前向兼容/性能场景。
-6. 是否对其他模块产生影响。
-
-**其他说明**
-麒麟v10sp2升级和回退openssh
-
-1. 升级
-
-    ```sh
-    https://opengauss.obs.cn-south-1.myhuaweicloud.com/tools/ky-openssh/upgrade-openssh.tar.gz
-    ## 解压执行
-    yum install *.rpm -y
-    ```
-
-2. 回滚
-
-    ```sh
-    https://opengauss.obs.cn-south-1.myhuaweicloud.com/tools/ky-openssh/openssh-rollback.tar.gz
-    ## 解压执行
-    rpm -Uvh *.rpm --oldpackage
-    ```

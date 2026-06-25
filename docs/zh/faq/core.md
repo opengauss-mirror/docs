@@ -4,8 +4,8 @@
 
 ### 问题描述
 
-2024-05-27，单节点集群分级发布库的pg_xog磁盘空间占用接近100%，数据中心使用一体化脚本打算删除80%的xlog，误导致整个pg_xlog目录全部被删除，数据库宕机。
-(pg_xlog磁盘用满未进行定位，一般由归档不成功或者有复制槽未清理，导致xlog不回收)
+一套单机数据库的pg_xog磁盘空间占用接近100%，打算清除80%的xlog时候，误操作导致整个pg_xlog目录全部被删除，数据库宕机。
+(xlog空间用满，一般由归档不成功或者有复制槽未清理，导致xlog不回收)
 
 ### 解决方案
 
@@ -15,7 +15,7 @@
 
 `pg_resetxlog /ogdata/data/dn1 -f`  
 [pg_resetxlog](https://docs.opengauss.org/zh/docs/latest/tool_and_commandreference/pg_resetxlog.html)
-由于xlog全部删除，使用pg_resetxlog强制重新设置xlog文件，然后拉起数据库，数据库可以正常启动起来。
+由于xlog全部删除，使用pg_resetxlog强制重新设置xlog文件，然后拉起数据库，数据库可以正常启动起来。(如果报postmaster.pid错误，手动删除数据目录下该文件再启动。)
 
 >[!WARNING]注意
 >
@@ -35,7 +35,7 @@
 该错误是数据页上的LSN，比正常运行的要大，在有业务访问表的时候直接校验不过core掉。数据页上的没法回滚回去。
 
 STATEMENT打印了访问的表名称，该表是受到影响的，没法正常恢复。
-避免频繁数据库core掉，针对出问题的表，重命名下，避免访问就挂掉。
+避免频繁数据库core掉，针对出问题的表，重命名下，避免访问表就引发数据库故障。
 `alter table t1 rename to t1_bak;`
 
 因为有些表保留历史数据，可基于旧表的定义建立新表。
@@ -79,7 +79,7 @@ upgrade_mode设置为1，应该也有相同的效果跳过校验。
 ### 问题描述
 
 定位命令 `addr2line -e bin/gaussdb fbcf8d -C -f`
-上午7:47左右，主节点进程突然宕机，未生成core文件。
+主节点进程突然宕机，未生成core文件。
 
 ### 解决方案
 
@@ -155,6 +155,7 @@ dmesg -T 查看当时有硬件异常，正好对应于core堆栈的地址：目�
 
 ![image](figures/fig_3_7.png)
 
+
 ## **问题4：某客户alter table .. after core问题故障报告**
 
 ### 问题描述
@@ -191,7 +192,7 @@ dmesg -T 查看当时有硬件异常，正好对应于core堆栈的地址：目�
 
 4. 最终得到如下结论：
 
-本问题为已知问题：[issue=I8SZS3](https://e.gitee.com/opengaussorg/dashboard?issue=I8SZS3)，由于是社区内部提单，外部人员无权限访问，对应issue截图如下：
+本问题为已知问题：[issue=I8SZS3](https://e.gitee.com/opengaussorg/dashboard?issue=I8SZS3)，对应issue截图如下：
 
 ![image](figures/fig_5_6.png)
 
@@ -219,7 +220,7 @@ dmesg -T 查看当时有硬件异常，正好对应于core堆栈的地址：目�
 - 2026.04.14：有2套集群从mysql迁移到openGauss 5.0.1版本，2026.04.14发生主机切换的告警。
 - 2026.04.14：2套集群先从mysql全量迁移到openGauss，迁移过程无问题，而后开启增量迁移。
 - 2026.04.15 08:54：集群1发生主备切换操作。
-- 2026.04.15 16:54：集群2(emp一套)，发生主备切换的操作。
+- 2026.04.15 16:54：集群2发生主备切换的操作。
 
 经查询系统相关信息，均是源主机产生coredump导致宕机，由CM选择备机升主。两者均产生core文件且堆栈一致。
 
