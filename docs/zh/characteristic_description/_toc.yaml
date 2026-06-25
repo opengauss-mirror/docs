@@ -277,6 +277,8 @@ sections:
         href: ./opengauss_to_opengauss_migration.md
       - label: Mysql全量迁移断点续传
         href: ./mysql_full_migration_resume.md
+      - label: Datakit迁移优化
+        href: ./datakit_migration_optimization.md
   - label: 中间件
     sections:
       - label: 分布式数据库能力
