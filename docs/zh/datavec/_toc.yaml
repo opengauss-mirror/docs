@@ -83,6 +83,8 @@ sections:
         sections:
           - label: Dify
             href: ./dify.md
+          - label: FastGPT
+            href: ./fastgpt.md
           - label: AnythingLLM
             href: ./anythingllm.md
           - label: LlamaIndex
