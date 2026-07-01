@@ -103,6 +103,10 @@ sections:
             href: ./embedding_nomic.md
           - label: openGauss-SentenceTransformer实践
             href: ./sentence_transformer.md
+      - label: LLMs
+        sections:
+          - label: DeepSeek
+            href: ./deepseek.md
       - label:  Agents
         sections:
           - label: MCP
