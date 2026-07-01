@@ -16,7 +16,7 @@ openGauss提供dolphin Extension（版本为dolphin-1.0.0）。dolphin Extension
 
 3. 进入dolphin目录执行make install。
 
-4. 创建B库并使用初始用户连接B库。
+4. 创建B库，连接数据库后dolphin插件将自动加载。
 
 ```
 openGauss=# create database db_name dbcompatibility 'B';
@@ -30,13 +30,13 @@ openGauss=# create database db_name dbcompatibility 'B';
         dolphin.so 路径： app/lib/postgresql/。
         dolphin.control和dolphin--1.0.sql 路径 app/share/postgresql/Extension。
 
-3. 创建B库并使用初始用户连接B库。
+3. 创建B库，连接数据库后dolphin插件将自动加载。
 
 ## dolphin限制
 
 - 不支持删除dolphin插件。
 - dolphin插件只能在B兼容性数据库下创建。
-- dolphin插件需要在pg_catalog等schema下创建数据类型、函数等，所以加载dolphin插件需要初始用户权限。B兼容性数据库必须加载dolphin插件才可被连接。openGauss将在第一次通过初始用户或拥有初始用户权限的用户连接B数据库时自动加载dolphin插件。
+- dolphin插件首次加载时，需要在pg_catalog等schema下创建数据类型、函数等对象，此操作无需当前连接用户具备初始用户权限。B兼容性数据库必须加载dolphin插件后方可连接，openGauss将在首次连接B兼容性数据库时自动完成插件加载。
 - dolphin中所有新增/修改的语法不支持在gsql客户端通过```\h```查看帮助说明，不支持在gsql客户端自动补齐。
 - dolphin插件的创建会删除数据库存在的插件所需的同名函数和类型以及之前存在的与之依赖的对象。
 - dolphin插件依赖于public schema，因此不支持使用drop schema的方式删除public schema。
