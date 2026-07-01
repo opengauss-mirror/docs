@@ -66,7 +66,7 @@ $ docker run -d \
     dbgpt start webserver --config /app/configs/dbgpt-proxy-tongyi.toml
 ```
 
-容器成功运行后，可以在浏览器中访问 http://<your_server_ip>:5670 进入 DB-GPT 主页。
+容器成功运行后，可以在浏览器中访问 http://YOUR_SERVER_IP:5670 进入 DB-GPT 主页。
 
 
 
