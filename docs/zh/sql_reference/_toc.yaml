@@ -1193,6 +1193,8 @@ sections:
         href: ./network_address_functions_and_operators.md
       - label: 文本检索函数和操作符
         href: ./text_retrieval_function_and_operator.md
+      - label: UUID函数
+        href: ./uuid_function.md
       - label: JSON/JSONB函数和操作符
         href: ./json_jsonb_functions_and_operators.md
       - label: HLL函数和操作符
