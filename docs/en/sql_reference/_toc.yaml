@@ -1141,6 +1141,8 @@ sections:
         href: ./network_address_functions_and_operators.md
       - label: Text Search Functions and Operators
         href: ./text_search_functions_and_operators.md
+      - label: UUID Functions
+        href: ./uuid_function.md
       - label: JSON/JSONB Functions and Operators
         href: ./json_jsonb_functions_and_operators.md
       - label: HLL Functions and Operators
