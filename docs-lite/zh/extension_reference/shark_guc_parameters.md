@@ -225,6 +225,7 @@ openGauss=# select * from t_identity_0013;
 **默认值**：off
 
 **参数说明**：用于控制是否将#号优先解释成异或操作符，设置成off时优先解释成临时表符号或普通标识符。
+
 ```sql
 openGauss=# CREATE TABLE #111 (ID INT);
 CREATE TABLE
@@ -304,5 +305,5 @@ openGauss=# select * from t1;
 ----+----------
   1 | zhangsan
 (1 row)
-
 ```
+
