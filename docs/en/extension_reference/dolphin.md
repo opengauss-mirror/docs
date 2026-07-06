@@ -9,7 +9,7 @@ openGauss provides Dolphin extensions (version: Dolphin-1.0.0). Dolphin extensio
 - The lite edition is not supported.
 - The Dolphin plug-in cannot be deleted.
 - The Dolphin plug-in can be created only in the B-compatible database.
-- The Dolphin plug-in needs to create data types and functions in schemas such as pg_catalog. Therefore, loading the Dolphin plug-in requires initial user permissions. openGauss automatically loads the Dolphin plug-in when the initial user or a user with the initial user permissions connects to B-compatible database for the first time. If a B-compatible database has never been connected by an initial user or a user with initial user permissions, it will not load the Dolphin plug-in.
+- The Dolphin plug-in needs to create data types, functions and other objects in schemas such as pg_catalog when it is first loaded. This operation does not require the currently connected user to have initial user permissions. A B-compatible database must have the Dolphin plug-in loaded before it can be connected to. openGauss automatically loads the Dolphin plug-in upon the first connection to a B-compatible database.
 - All added or modified syntaxes in Dolphin cannot be viewed by running `\h` on the gsql client, and cannot be automatically supplemented on the gsql client.
 - The creation of the Dolphin plug-in deletes the functions and types with the same name required by the plug-in that exists in the database and the objects that previously depend on the plug-in.
 
@@ -25,7 +25,7 @@ The plug-in is automatically installed and loaded. You do not need to manually i
 
 3. Go to the Dolphin directory and run **make install**.
 
-4. Create a B-compatible database and connect to B-compatible database as the initial user.
+4. Create a B-compatible database. The dolphin plugin will be automatically loaded upon connecting to the database.
 
 ### OM Installation
 
@@ -34,4 +34,4 @@ The plug-in is automatically installed and loaded. You do not need to manually i
 2. Copy the files required by the plug-in.  
     Path of **dolphin.so**: app/lib/postgresql/  
     Path of **dolphin.control** and **dolphin--1.0.sql**: app/share/postgresql/extension
-3. Create a B-compatible database and connect to B-compatible database as the initial user.
+3. Create a B-compatible database. The dolphin plugin will be automatically loaded upon connecting to the database.
