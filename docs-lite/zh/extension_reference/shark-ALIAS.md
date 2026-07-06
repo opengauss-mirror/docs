@@ -14,24 +14,42 @@
 
 **语法格式**
 
-```
-set d_format_behavior_compat_options=‘disable_target_alias’;
+```sql
+set d_format_behavior_compat_options = '';  --等号按照别名语法解析
+set d_format_behavior_compat_options= 'disable_target_alias'; --等号按照原始等号语法解析
 ```
 
 **示例**
 
 ```sql
+openGauss=# CREATE TABLE test(a int, b int);
+CREATE TABLE
+openGauss=# INSERT INTO test VALUES (1,1), (2,3);
+INSERT 0 2
 openGauss=# SET d_format_behavior_compat_options = '';
 SET
-openGauss=# select a = 1;
+openGauss=# SELECT a = 1;
  a
 ---
  1
 (1 row)
+openGauss=# SELECT a = b FROM test;
+ a
+---
+ 1
+ 3
+(2 rows)
 openGauss=# SET d_format_behavior_compat_options = 'disable_target_alias';
 SET
-openGauss=# select a = 1;
+openGauss=# SELECT a = 1;
 ERROR:  column "a" does not exist
-LINE 1: select a = 1;
+LINE 1: SELECT a = 1;
 			   ^
+openGauss=# SELECT a = b FROM test;
+ ?column?
+----------
+ t
+ f
+(2 rows)
 ```
+
