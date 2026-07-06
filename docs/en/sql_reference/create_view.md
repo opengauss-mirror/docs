@@ -11,7 +11,7 @@ A user granted with the  **CREATE ANY TABLE**  permission can create views in th
 ## Syntax<a name="en-us_topic_0283137480_en-us_topic_0237122126_en-us_topic_0059779377_s3e7f4ca520974d6984e85b855c05a489"></a>
 
 ```
-CREATE [ OR REPLACE ] [DEFINER = user] [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...] ) ]
+CREATE [ OR REPLACE ] [DEFINER = user] [ TEMP | TEMPORARY ] [ FORCE ] VIEW view_name [ ( column_name [, ...] ) ]
     [ WITH ( {view_option_name [= view_option_value]} [, ... ] ) ]
     AS query;
 ```
@@ -32,6 +32,18 @@ CREATE [ OR REPLACE ] [DEFINER = user] [ TEMP | TEMPORARY ] VIEW view_name [ ( c
 - **TEMP | TEMPORARY**
 
     Creates a temporary view.
+    
+- **FORCE**
+
+    Forces the creation of a view, regardless of whether the base tables, views, or functions that the view depends on exist. This option is only used in A-compatible mode.
+    
+    - If all dependent objects of the view exist, the behavior of the forced view is identical to that of a normal view created without the FORCE keyword.
+
+    - If any dependent underlying relation objects do not exist at the time of creation, the view will still be successfully created (but remains in an invalid state, and a default placeholder column named dummy_force_col is generated). In this case, the value of the ev_enabled state field for this view in the pg_rewrite system table is 'F'. Upon the first subsequent query (such as SELECT) of this view, the system will automatically attempt to recompile it. If it can be converted into a valid view, the conversion is performed automatically, and its placeholder column is replaced with the actual columns of the view definition.
+
+    >[!WARNING] WARNING 
+    >1. Forced views created in an invalid state do not support rename operations before they are successfully recompiled.
+    >2. Replacing a non-forced view or a valid view using CREATE OR REPLACE FORCE VIEW is not supported.
 
 - **view\_name**
 

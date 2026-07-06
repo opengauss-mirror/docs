@@ -12,7 +12,7 @@
 ## 语法格式<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_s3e7f4ca520974d6984e85b855c05a489"></a>
 
 ```
-CREATE [ OR REPLACE ] [ DEFINER = user ] [ SQL SECURITY { DEFINER | INVOKER } ] [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...] ) ]
+CREATE [ OR REPLACE ] [ DEFINER = user ] [ SQL SECURITY { DEFINER | INVOKER } ] [ TEMP | TEMPORARY ] [ FORCE ] VIEW view_name [ ( column_name [, ...] ) ]
     [ WITH ( {view_option_name [= view_option_value]} [, ... ] ) ]
     AS query
     [ WITH [ CASCADED | LOCAL ] CHECK OPTION ];
@@ -43,6 +43,18 @@ CREATE [ OR REPLACE ] [ DEFINER = user ] [ SQL SECURITY { DEFINER | INVOKER } ] 
 - **TEMP | TEMPORARY**
 
     创建临时视图。
+
+- **FORCE**
+
+    强制创建视图，而不管视图所依赖的基表、视图或函数是否存在。该选项仅在A兼容下使用。
+    
+    - 如果视图的依赖对象均存在，强制创建的视图与未添加 FORCE 关键字的普通视图行为一致。
+
+    - 如果依赖的底层关系对象在创建时不存在，视图仍会被成功创建（但其本身处于无效状态，并生成一个名为 dummy_force_col 的默认占位列）。此时该视图在 pg_rewrite 系统表中的 ev_enabled 状态字段值为 'F'。在后续首次对该视图进行查询（如 SELECT）时，系统会自动对其进行重编译，如果能转换为有效视图，则自动转换并且其占位列将被替换为真实的视图定义列。
+
+    >[!WARNING]注意 
+    >1. 强制创建出来的无效视图在重新编译成功之前，不支持重命名操作（RENAME）。
+    >2. 不支持通过 CREATE OR REPLACE FORCE VIEW 来替换一个非强制创建的视图或有效视图。
 
 - **view\_name**
 
