@@ -75,11 +75,11 @@ CREATE [ LARGE ] SEQUENCE [ IF NOT EXISTS ] name [ INCREMENT [ BY ] increment ]
 
 - **GLOBAL**
 
-    GLOBAL指定序列缓存是全局缓存。
+    GLOBAL指定序列缓存是全局缓存，是所有session共享的。
 
 - **SESSION**
 
-    SESSION指定序列缓存是session级别缓存。
+    SESSION指定序列缓存是session级别缓存，缓存是各session私有的，默认为SESSION级别。
 
 - **OWNED BY**
 
@@ -147,6 +147,12 @@ OWNED BY customer_address.ca_address_sk;
 openGauss=# DROP TABLE customer_address;
 openGauss=# DROP SEQUENCE serial cascade;
 openGauss=# DROP SEQUENCE serial1 cascade;
+--创建带全局缓存的序列
+openGauss=# CREATE SEQUENCE seq1 START 1 CACHE 100 GLOBAL;
+--显示带指定创建 SESSION级 缓存序列
+openGauss=# CREATE SEQUENCE seq1 START 1 CACHE 100 SESSION;
+--默认创建的序列缓存就是 ESSION级 的
+openGauss=# CREATE SEQUENCE seq2 START 1 CACHE 100;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137208_zh-cn_topic_0237122114_zh-cn_topic_0059778825_section184942174514"></a>

@@ -74,11 +74,11 @@ CREATE [ LARGE ] SEQUENCE [ IF NOT EXISTS ] name [ INCREMENT [ BY ] increment ]
 
 - **GLOBAL**
 
-    GLOBAL is used to specify that the sequence cache is a global cache.
+    GLOBAL specifies that the **sequence** cache is a global cache, and the cache is shared by all sessions.
  
 - **SESSION**
 
-    SESSION is used to specify that the sequence cache is a session cache.
+    SESSION specifies that the sequence cache is a session-level cache, the cache is private to each session, and the default is the SESSION level.
 
 - **OWNED BY**
 
@@ -145,6 +145,13 @@ OWNED BY customer_address.ca_address_sk;
 openGauss=# DROP TABLE customer_address;
 openGauss=# DROP SEQUENCE serial cascade;
 openGauss=# DROP SEQUENCE serial1 cascade;
+
+-- Create a sequence with a global cache.
+openGauss=# CREATE SEQUENCE seq1 START 1 CACHE 100 GLOBAL;
+-- Create a sequence specifying a session-level cache.
+openGauss=# CREATE SEQUENCE seq1 START 1 CACHE 100 SESSION;
+-- Or sequence with a SESSION-level cache created by default.
+openGauss=# CREATE SEQUENCE seq2 START 1 CACHE 100;
 ```
 
 ## Helpful Links<a name="en-us_topic_0283137208_en-us_topic_0237122114_en-us_topic_0059778825_section184942174514"></a>
