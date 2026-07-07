@@ -68,6 +68,26 @@
           "ci": []
         }
       }
+    },
+    "opengauss/openGauss-workbench": {
+      "extendConfig": "base",
+      "branches": {
+        "7.0.0-RC2": {
+          "ci": []
+        },
+        "7.0.0-RC1": {
+          "ci": []
+        },
+        "6.0.0": {
+          "ci": []
+        },
+        "5.1.0": {
+          "ci": []
+        },
+        "5.0.0": {
+          "ci": []
+        }
+      }
     }
   }
 }
