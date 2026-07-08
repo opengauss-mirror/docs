@@ -14,7 +14,9 @@ sections:
       - href: ./sql_reference/_toc.yaml
       - href: ./database_administration_guide/_toc.yaml
       - href: ./database_om_guide/_toc.yaml
-      - href: ./performance_tuning_guide/_toc.yaml
+      - href:
+          upstream: https://gitcode.com/opengauss/openGauss-server/blob/master/docs/zh/performance_tuning_guide/_toc.yaml
+          path: ./performance_tuning_guide
       - href: ./data_migration_guide/_toc.yaml
   - label: 重要特性
     sections:
