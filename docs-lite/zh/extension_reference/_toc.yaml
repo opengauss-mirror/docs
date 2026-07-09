@@ -375,6 +375,8 @@ sections:
             href: ./shark-DROP-TRIGGER.md 
           - label: XACT_ABORT
             href: ./shark_xact_abort.md                    
+          - label: ALIAS
+            href: ./shark_ALIAS.md
       - label: 事务
         sections:
           - label: 管理事务

@@ -101,6 +101,24 @@ Collate: utf8mb4_general_ci
 
 ```
 
+- disable_target_alias：是否允许使用等号别名语法。开启以后内核对等号处理保持原来语法。
+
+```
+openGauss=# SET d_format_behavior_compat_options = '';
+SET
+openGauss=# select a = 1;
+ a
+---
+ 1
+(1 row)
+openGauss=# SET d_format_behavior_compat_options = 'disable_target_alias';
+SET
+openGauss=# select a = 1;
+ERROR:  column "a" does not exist
+LINE 1: select a = 1;
+               ^
+```
+
 ## ANSI_NULLS<a name="section203671436823"></a>
 
 **取值范围**：on/off
