@@ -140,6 +140,26 @@ openGauss=# DELETE FROM multv2;
 -- Failed to delete from a view whose base tables are cross/full joined with each other
 openGauss=# CREATE VIEW multv3 AS SELECT emp.empno, emp.ename, emp.job, dept.* FROM dept CROSS JOIN emp;
 openGauss=# DELETE FROM mutlv3;
+
+-- Create a FORCE view.
+-- Without the FORCE option, creating a view fails if the base table does not exist.
+openGauss=# CREATE VIEW v_no_force AS SELECT * FROM t_non_exist;
+
+-- With the FORCE option, the view is created successfully but remains in an invalid state.
+openGauss=# CREATE FORCE VIEW v_force AS SELECT * FROM t_non_exist;
+
+-- Renaming a forced view in an invalid state is not supported and fails with an error.
+openGauss=# ALTER VIEW v_force RENAME TO v_force_new;
+
+-- Create the missing table and insert data.
+openGauss=# CREATE TABLE t_non_exist (a int, b text);
+openGauss=# INSERT INTO t_non_exist VALUES (1, 'hello');
+
+-- Access the view for the first time, which triggers automatic recompilation and successfully returns data.
+openGauss=# SELECT * FROM v_force;
+
+-- Replacing a non-forced view or a valid view using OR REPLACE is prohibited and fails with an error.
+openGauss=# CREATE OR REPLACE FORCE VIEW v_force AS SELECT * FROM t_non_exist2;
 ```
 
 ## Helpful Links<a name="en-us_topic_0283137480_en-us_topic_0237122126_en-us_topic_0059779377_sfc32bec2a548470ebab19d6ca7d6abe2"></a>

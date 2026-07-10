@@ -194,6 +194,26 @@ openGauss=# DELETE FROM multv2;
 -- 基表之间交叉连接的视图删除数据失败
 openGauss=# CREATE VIEW multv3 AS SELECT emp.empno, emp.ename, emp.job, dept.* FROM dept CROSS JOIN emp;
 openGauss=# DELETE FROM mutlv3;
+
+-- FORCE 视图
+-- 不带FORCE选项，基表不存在时，创建视图失败
+openGauss=# CREATE VIEW v_no_force AS SELECT * FROM t_non_exist;
+
+-- 添加 FORCE 关键字，视图创建成功，处于无效状态
+openGauss=# CREATE FORCE VIEW v_force AS SELECT * FROM t_non_exist;
+
+-- 无效状态下的强制视图不支持重命名，报错失败
+openGauss=# ALTER VIEW v_force RENAME TO v_force_new;
+
+-- 创建缺失的底层表，并插入数据
+openGauss=# CREATE TABLE t_non_exist (a int, b text);
+openGauss=# INSERT INTO t_non_exist VALUES (1, 'hello');
+
+-- 首次查询视图，自动重编译并成功返回数据
+openGauss=# SELECT * FROM v_force;
+
+-- 禁止使用REPLACE替换一个非强制创建的视图或有效视图，报错失败
+openGauss=# CREATE OR REPLACE FORCE VIEW v_force AS SELECT * FROM t_non_exist2;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_sfc32bec2a548470ebab19d6ca7d6abe2"></a>
