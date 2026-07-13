@@ -93,10 +93,8 @@ int main(int argc,char *argv[])
 
 ```
 /**********************************************************************
-* 请在数据源中打开UseBatchProtocol，同时指定数据库中参数support_batch_bind
-* 为on
-* CHECK_ERROR的作用是检查并打印错误信息。
-* 此示例将与用户交互式获取DSN、模拟的数据量，忽略的数据量，并将最终数据入库到test_odbc_batch_insert中
+* 请在数据源中打开UseBatchProtocol，同时指定数据库中参数support_batch_bind为on
+* 此示例将数据批量入库到test_odbc_batch_insert中
 ***********************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
@@ -108,118 +106,54 @@ void Exec(SQLHDBC hdbc, SQLCHAR* sql)
 {
     SQLRETURN retcode;                  // Return status
     SQLHSTMT hstmt = SQL_NULL_HSTMT;    // Statement handle
-    SQLCHAR     loginfo[2048];
 
     // Allocate Statement Handle
     retcode = SQLAllocHandle(SQL_HANDLE_STMT, hdbc, &hstmt);
-    
-    if (!SQL_SUCCEEDED(retcode)) {
-        printf("SQLAllocHandle(SQL_HANDLE_STMT) failed");
-        return;
+    if (retcode != SQL_SUCCESS && retcode != SQL_SUCCESS_WITH_INFO)
+    {
+        printf("Failed to allocate statement handle.\n");
+        SQLFreeHandle(SQL_HANDLE_DBC, hdbc);
     }
 
     // Prepare Statement
-    retcode = SQLPrepare(hstmt, (SQLCHAR*) sql, SQL_NTS);
-    sprintf((char*)loginfo, "SQLPrepare log: %s", (char*)sql);
-    
-    if (!SQL_SUCCEEDED(retcode)) {
-        printf("SQLPrepare(hstmt, (SQLCHAR*) sql, SQL_NTS) failed");
-        return;
-    }
+    SQLPrepare(hstmt, (SQLCHAR*) sql, SQL_NTS);
+    printf("SQLPrepare log: %s\n", (char*)sql);
 
     // Execute Statement
-    retcode = SQLExecute(hstmt);
-    sprintf((char*)loginfo, "SQLExecute stmt log: %s", (char*)sql);
-    
-    if (!SQL_SUCCEEDED(retcode)) {
-        printf("SQLExecute(hstmt) failed");
-        return;
-    }
+    SQLExecute(hstmt);
+    printf("SQLExecute stmt log: %s\n", (char*)sql);
+
     // Free Handle
-    retcode = SQLFreeHandle(SQL_HANDLE_STMT, hstmt);
-    sprintf((char*)loginfo, "SQLFreeHandle stmt log: %s", (char*)sql);
-    
-    if (!SQL_SUCCEEDED(retcode)) {
-        printf("SQLFreeHandle(SQL_HANDLE_STMT, hstmt) failed");
-        return;
-    }
+    SQLFreeHandle(SQL_HANDLE_STMT, hstmt);
+    printf("SQLFreeHandle stmt log: %s\n", (char*)sql);
 }
 
 int main () 
 {
     SQLHENV  henv  = SQL_NULL_HENV;
     SQLHDBC  hdbc  = SQL_NULL_HDBC; 
-    long int      batchCount = 1000; // 批量绑定的数据量
+    int      batchCount = 100;
     SQLLEN   rowsCount = 0;
-    int      ignoreCount = 0; // 批量绑定的数据中，不要入库的数据量
-
     SQLRETURN   retcode;
-    SQLCHAR     dsn[1024] = {'\0'};
-    SQLCHAR     loginfo[2048];
-
-    do 
-    {
-        if (ignoreCount > batchCount)
-        {
-            printf("ignoreCount(%d) should be less than batchCount(%d)\n", ignoreCount, batchCount);
-        }
-    }while(ignoreCount > batchCount);
+    SQLCHAR     dsn[1024] = {"opengaussdb\0"};
 
     retcode = SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &henv);
-    
-    if (!SQL_SUCCEEDED(retcode)) {
-        printf("SQLAllocHandle failed");
-        goto exit;
+    if (retcode != SQL_SUCCESS && retcode != SQL_SUCCESS_WITH_INFO)
+    {
+        printf("Failed to allocate environment handle.\n");
+        return SQL_ERROR;
     }
 
     // Set ODBC Verion
-    retcode = SQLSetEnvAttr(henv, SQL_ATTR_ODBC_VERSION,
-                                        (SQLPOINTER*)SQL_OV_ODBC3, 0);
-    
-    if (!SQL_SUCCEEDED(retcode)) {
-        printf("SQLSetEnvAttr failed");
-        goto exit;
-    }
-
+    SQLSetEnvAttr(henv, SQL_ATTR_ODBC_VERSION, (SQLPOINTER*)SQL_OV_ODBC3, 0);
     // Allocate Connection
-    retcode = SQLAllocHandle(SQL_HANDLE_DBC, henv, &hdbc);
-    
-    if (!SQL_SUCCEEDED(retcode)) {
-        printf("SQLAllocHandle failed");
-        goto exit;
-    }
-
-
+    SQLAllocHandle(SQL_HANDLE_DBC, henv, &hdbc);
     // Set Login Timeout
-    retcode = SQLSetConnectAttr(hdbc, SQL_LOGIN_TIMEOUT, (SQLPOINTER)5, 0);
-    
-    if (!SQL_SUCCEEDED(retcode)) {
-        printf("SQLSetConnectAttr failed");
-        goto exit;
-    }
-
-
+    SQLSetConnectAttr(hdbc, SQL_LOGIN_TIMEOUT, (SQLPOINTER)5, 0);
     // Set Auto Commit
-    retcode = SQLSetConnectAttr(hdbc, SQL_ATTR_AUTOCOMMIT,
-                                        (SQLPOINTER)(1), 0);
-    
-    if (!SQL_SUCCEEDED(retcode)) {
-        printf("SQLSetConnectAttr failed");
-        goto exit;
-    }
-
-
+    SQLSetConnectAttr(hdbc, SQL_ATTR_AUTOCOMMIT, (SQLPOINTER)(1), 0);
     // Connect to DSN
-    // gaussdb替换成用户所使用的数据源名称
-    sprintf(loginfo, "SQLConnect(DSN:%s)", dsn);
-    retcode = SQLConnect(hdbc, (SQLCHAR*) "gaussdb", SQL_NTS,
-                               (SQLCHAR*) NULL, 0, NULL, 0);
-    
-    if (!SQL_SUCCEEDED(retcode)) {
-        printf("SQLConnect failed");
-        goto exit;
-    }
-
+    SQLConnect(hdbc, (SQLCHAR*) dsn, SQL_NTS, (SQLCHAR*) NULL, 0, NULL, 0);
     // init table info.
     Exec(hdbc, "drop table if exists test_odbc_batch_insert");
     Exec(hdbc, "create table test_odbc_batch_insert(id int primary key, col varchar2(50))");
@@ -228,14 +162,12 @@ int main ()
     {
         SQLRETURN retcode; 
         SQLHSTMT hstmtinesrt = SQL_NULL_HSTMT;
-        int          i;
         SQLCHAR      *sql = NULL;
         SQLINTEGER   *ids  = NULL;
         SQLCHAR      *cols = NULL;
         SQLLEN       *bufLenIds = NULL;
         SQLLEN       *bufLenCols = NULL;
         SQLUSMALLINT *operptr = NULL;
-        SQLUSMALLINT *statusptr = NULL;
         SQLULEN      process = 0;
 
         // 这里是按列构造，每个字段的内存连续存放在一起。
@@ -244,17 +176,9 @@ int main ()
         // 这里是每个字段中，每一行数据的内存长度。
         bufLenIds = (SQLLEN*)malloc(sizeof(bufLenIds[0]) * batchCount);
         bufLenCols = (SQLLEN*)malloc(sizeof(bufLenCols[0]) * batchCount);
-        // 该行是否需要被处理，SQL_PARAM_IGNORE 或 SQL_PARAM_PROCEED
-        operptr = (SQLUSMALLINT*)malloc(sizeof(operptr[0]) * batchCount);
-        memset(operptr, 0, sizeof(operptr[0]) * batchCount);
-        // 该行的处理结果。
-        // 注：由于数据库中处理方式是同一语句隶属同一事务中，所以如果出错，那么待处理数据都将是出错的，并不会部分入库。
-        statusptr = (SQLUSMALLINT*)malloc(sizeof(statusptr[0]) * batchCount);
-        memset(statusptr, 88, sizeof(statusptr[0]) * batchCount);
-
         if (NULL == ids || NULL == cols || NULL == bufLenCols || NULL == bufLenIds)
         {
-            fprintf(stderr, "FAILED:\tmalloc data memory failed\n");
+            printf("malloc data memory failed.\n");
             goto exit;
         }
 
@@ -264,159 +188,37 @@ int main ()
             sprintf(cols + 50 * i, "column test value %d", i);
             bufLenIds[i] = sizeof(ids[i]);
             bufLenCols[i] = strlen(cols + 50 * i);
-            operptr[i] = (i < ignoreCount) ? SQL_PARAM_IGNORE : SQL_PARAM_PROCEED;
         }
 
         // Allocate Statement Handle
         retcode = SQLAllocHandle(SQL_HANDLE_STMT, hdbc, &hstmtinesrt);
-        
-        if (!SQL_SUCCEEDED(retcode)) {
-            printf("SQLAllocHandle failed");
-            goto exit;
+        if (retcode != SQL_SUCCESS && retcode != SQL_SUCCESS_WITH_INFO)
+        {
+            printf("Failed to allocate statement handle.\n");
+            SQLFreeHandle(SQL_HANDLE_DBC, hdbc);
+            SQLFreeHandle(SQL_HANDLE_ENV, henv);
+            return SQL_ERROR;
         }
 
         // Prepare Statement
         sql = (SQLCHAR*)"insert into test_odbc_batch_insert values(?, ?)";
-        retcode = SQLPrepare(hstmtinesrt, (SQLCHAR*) sql, SQL_NTS);
-        sprintf((char*)loginfo, "SQLPrepare log: %s", (char*)sql);
+        SQLPrepare(hstmtinesrt, (SQLCHAR*) sql, SQL_NTS);
+        printf("SQLPrepare log: %s\n", (char*)sql);
         
-        if (!SQL_SUCCEEDED(retcode)) {
-            printf("SQLPrepare failed");
-            goto exit;
-        }
-
-        retcode = SQLSetStmtAttr(hstmtinesrt, SQL_ATTR_PARAMSET_SIZE, (SQLPOINTER)batchCount, sizeof(batchCount));
+        SQLSetStmtAttr(hstmtinesrt, SQL_ATTR_PARAMSET_SIZE, (SQLPOINTER)batchCount, sizeof(batchCount));
+        SQLBindParameter(hstmtinesrt, 1, SQL_PARAM_INPUT, SQL_C_SLONG, SQL_INTEGER, sizeof(ids[0]), 0,&(ids[0]), 0, bufLenIds);
+        SQLBindParameter(hstmtinesrt, 2, SQL_PARAM_INPUT, SQL_C_CHAR, SQL_CHAR, 50, 50, cols, 50, bufLenCols);
+        SQLSetStmtAttr(hstmtinesrt, SQL_ATTR_PARAMS_PROCESSED_PTR, (SQLPOINTER)&process, sizeof(process));
         
-        if (!SQL_SUCCEEDED(retcode)) {
-            printf("SQLSetStmtAttr failed");
-            goto exit;
-        }
-
-        retcode = SQLBindParameter(hstmtinesrt, 1, SQL_PARAM_INPUT, SQL_C_SLONG, SQL_INTEGER, sizeof(ids[0]), 0,&(ids[0]), 0, bufLenIds);
-        
-        if (!SQL_SUCCEEDED(retcode)) {
-            printf("SQLBindParameter failed");
-            goto exit;
-        }
-
-        retcode = SQLBindParameter(hstmtinesrt, 2, SQL_PARAM_INPUT, SQL_C_CHAR, SQL_CHAR, 50, 50, cols, 50, bufLenCols);
-        
-        if (!SQL_SUCCEEDED(retcode)) {
-            printf("SQLBindParameter failed");
-            goto exit;
-        }
-
-        retcode = SQLSetStmtAttr(hstmtinesrt, SQL_ATTR_PARAMS_PROCESSED_PTR, (SQLPOINTER)&process, sizeof(process));
-        
-        if (!SQL_SUCCEEDED(retcode)) {
-            printf("SQLSetStmtAttr failed");
-            goto exit;
-        }
-
-        retcode = SQLSetStmtAttr(hstmtinesrt, SQL_ATTR_PARAM_STATUS_PTR, (SQLPOINTER)statusptr, sizeof(statusptr[0]) * batchCount);
-        
-        if (!SQL_SUCCEEDED(retcode)) {
-            printf("SQLSetStmtAttr failed");
-            goto exit;
-        }
-
-        retcode = SQLSetStmtAttr(hstmtinesrt, SQL_ATTR_PARAM_OPERATION_PTR, (SQLPOINTER)operptr, sizeof(operptr[0]) * batchCount);
-        
-        if (!SQL_SUCCEEDED(retcode)) {
-            printf("SQLSetStmtAttr failed");
-            goto exit;
-        }
-
-        retcode = SQLExecute(hstmtinesrt);
-        sprintf((char*)loginfo, "SQLExecute stmt log: %s", (char*)sql);
-        
-        if (!SQL_SUCCEEDED(retcode)) {
-            printf("SQLExecute(hstmtinesrt) failed");
-            goto exit;
-
-        retcode = SQLRowCount(hstmtinesrt, &rowsCount);
-        
-        if (!SQL_SUCCEEDED(retcode)) {
-            printf("SQLRowCount failed");
-            goto exit;
-        }
-
-        if (rowsCount != (batchCount - ignoreCount))
-        {
-            sprintf(loginfo, "(batchCount - ignoreCount)(%d) != rowsCount(%d)", (batchCount - ignoreCount), rowsCount);
-            
-            if (!SQL_SUCCEEDED(retcode)) {
-                printf("SQLExecute failed");
-                goto exit;
-            }
-        }
-        else
-        {
-            sprintf(loginfo, "(batchCount - ignoreCount)(%d) == rowsCount(%d)", (batchCount - ignoreCount), rowsCount);
-            
-            if (!SQL_SUCCEEDED(retcode)) {
-                printf("SQLExecute failed");
-                goto exit;
-            }
-        }
-
-        // check row number returned
-        if (rowsCount != process)
-        {
-            sprintf(loginfo, "process(%d) != rowsCount(%d)", process, rowsCount);
-            
-            if (!SQL_SUCCEEDED(retcode)) {
-                printf("SQLExecute failed");
-                goto exit;
-            }
-        }
-        else
-        {
-            sprintf(loginfo, "process(%d) == rowsCount(%d)", process, rowsCount);
-            
-            if (!SQL_SUCCEEDED(retcode)) {
-                printf("SQLExecute failed");
-                goto exit;
-            }
-        }
-
-        for (int i = 0; i < batchCount; i++)
-        {
-            if (i < ignoreCount)
-            {
-                if (statusptr[i] != SQL_PARAM_UNUSED)
-                {
-                    sprintf(loginfo, "statusptr[%d](%d) != SQL_PARAM_UNUSED", i, statusptr[i]);
-                    
-                    if (!SQL_SUCCEEDED(retcode)) {
-                        printf("SQLExecute failed");
-                        goto exit;
-                    }
-                }
-            }
-            else if (statusptr[i] != SQL_PARAM_SUCCESS)
-            {
-                sprintf(loginfo, "statusptr[%d](%d) != SQL_PARAM_SUCCESS", i, statusptr[i]);
-                
-                if (!SQL_SUCCEEDED(retcode)) {
-                    printf("SQLExecute failed");
-                    goto exit;
-                }
-            }
-        }
-
-        retcode = SQLFreeHandle(SQL_HANDLE_STMT, hstmtinesrt);
-        sprintf((char*)loginfo, "SQLFreeHandle hstmtinesrt");
-        
-        if (!SQL_SUCCEEDED(retcode)) {
-            printf("SQLFreeHandle failed");
-            goto exit;
-        }
+        SQLExecute(hstmtinesrt);
+        printf("SQLExecute stmt log: %s\n", (char*)sql);
+        SQLRowCount(hstmtinesrt, &rowsCount);
+        SQLFreeHandle(SQL_HANDLE_STMT, hstmtinesrt);
+        printf("SQLFreeHandle hstmtinesrt\n");
     }
 
-
 exit:
-    (void) printf ("\nComplete.\n");
+    printf ("\nComplete.\n");
 
     // Connection
     if (hdbc != SQL_NULL_HDBC) {
