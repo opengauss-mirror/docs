@@ -1,12 +1,10 @@
 # 容器镜像安装
 
-本章节主要介绍如何获取openGauss数据库镜像，并通过Docker安装，以便用户能快速开启数据库之旅。
+本章节主要介绍如何获取openGauss数据库镜像，并通过Docker安装，以便用户能快速开启数据库之旅。openGauss镜像主要有两种获取方式，分别可以通过`docker pull`和`docker load`拉取对应镜像，下面将详细介绍这两种获取路径对应的安装方式。
 
-## 1. 获取镜像
+## 1. docker pull获取镜像并安装
 
-openGauss镜像主要有两种获取方式，分别可以通过`docker pull`和`docker load`拉取对应镜像，下面将详细介绍这两种获取路径。
-
-### 拉取dockerhub镜像
+- 拉取dockerhub镜像
 
 ```bash
 $ docker pull opengauss/opengauss-server:latest
@@ -18,12 +16,22 @@ $ docker pull opengauss/opengauss-server:latest
 $ docker images
 
 REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
-opengauss/opengauss-server   latest              9763e8b26794        2 days ago          1.68GB
+opengauss/opengauss-server   latest              9763e8b26794        2 days ago          1.77GB
 ```
 
-### 下载镜像包并加载
+- 运行容器
 
-- 下载镜像包（以arm架构下对应的包为例），镜像包的架构应与主机架构匹配。
+启动数据库并映射宿主机的端口到容器：
+
+```bash
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -p 8888:5432 opengauss/opengauss-server:latest
+```
+
+## 2. docker load下载镜像并安装
+
+- 下载镜像包
+
+以arm架构下对应的包为例，镜像包的架构应与主机架构匹配。
 
 ``` bash
 $ wget https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler22.03/arm/openGauss-Docker-7.0.0-RC3-aarch64.tar
@@ -47,19 +55,19 @@ $ docker load -i openGauss-Docker-7.0.0-RC3-aarch64.tar
 $ docker images
 
 REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
-opengauss                    7.0.0-RC3           9763e8b26794        2 days ago          1.68GB
+opengauss                    7.0.0-RC3           9763e8b26794        2 days ago          1.77GB
 ```
 
 >[!NOTE]说明
-> 
+>
 > 以上镜像包会周期性更新，可以根据自身需求修改路径获取最新镜像包。<br>
 
-## 2. 运行容器
+- 运行容器
 
-以`opengauss/opengauss-server:latest` 版本为例（从官网下载的7.0.0-RC3容器版本为`opengauss:7.0.0-RC3`），以下命令将启动数据库并映射宿主机的端口到容器：
+启动数据库并映射宿主机的端口到容器：
 
 ```bash
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -p 8888:5432 opengauss/opengauss-server:latest
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -p 8888:5432 opengauss:7.0.0-RC3
 ```
 
 ### 启动参数
