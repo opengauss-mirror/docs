@@ -78,7 +78,7 @@ CREATE [ LARGE ] SEQUENCE [ IF NOT EXISTS ] name [ INCREMENT [ BY ] increment ]
  
 - **SESSION**
 
-    SESSION specifies that the sequence cache is a session-level cache, the cache is private to each session, and the default is the SESSION level.
+    SESSION specifies that the sequence cache is a session-level cache, the cache is private to each session, and the default is session-level.
 
 - **OWNED BY**
 
@@ -149,9 +149,9 @@ openGauss=# DROP SEQUENCE serial1 cascade;
 -- Create a sequence with a global cache.
 openGauss=# CREATE SEQUENCE seq1 START 1 CACHE 100 GLOBAL;
 -- Create a sequence specifying a session-level cache.
-openGauss=# CREATE SEQUENCE seq1 START 1 CACHE 100 SESSION;
+openGauss=# CREATE SEQUENCE seq2 START 1 CACHE 100 SESSION;
 -- Or sequence with a SESSION-level cache created by default.
-openGauss=# CREATE SEQUENCE seq2 START 1 CACHE 100;
+openGauss=# CREATE SEQUENCE seq3 START 1 CACHE 100;
 ```
 
 ## Helpful Links<a name="en-us_topic_0283137208_en-us_topic_0237122114_en-us_topic_0059778825_section184942174514"></a>
