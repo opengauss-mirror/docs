@@ -12,7 +12,7 @@
 ## 语法格式<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_s3e7f4ca520974d6984e85b855c05a489"></a>
 
 ```
-CREATE [ OR REPLACE ] [ DEFINER = user ] [ SQL SECURITY { DEFINER | INVOKER } ] [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...] ) ]
+CREATE [ OR REPLACE ] [ DEFINER = user ] [ SQL SECURITY { DEFINER | INVOKER } ] [ TEMP | TEMPORARY ] [ FORCE ] VIEW view_name [ ( column_name [, ...] ) ]
     [ WITH ( {view_option_name [= view_option_value]} [, ... ] ) ]
     AS query
     [ WITH [ CASCADED | LOCAL ] CHECK OPTION ];
@@ -43,6 +43,18 @@ CREATE [ OR REPLACE ] [ DEFINER = user ] [ SQL SECURITY { DEFINER | INVOKER } ] 
 - **TEMP | TEMPORARY**
 
     创建临时视图。
+
+- **FORCE**
+
+    强制创建视图，而不管视图所依赖的基表、视图或函数是否存在。该选项仅在A兼容下使用。
+    
+    - 如果视图的依赖对象均存在，强制创建的视图与未添加 FORCE 关键字的普通视图行为一致。
+
+    - 如果依赖的底层关系对象在创建时不存在，视图仍会被成功创建（但其本身处于无效状态，并生成一个名为 dummy_force_col 的默认占位列）。此时该视图在 pg_rewrite 系统表中的 ev_enabled 状态字段值为 'F'。在后续首次对该视图进行查询（如 SELECT）时，系统会自动对其进行重编译，如果能转换为有效视图，则自动转换并且其占位列将被替换为真实的视图定义列。
+
+    >[!WARNING]注意 
+    >1. 强制创建出来的无效视图在重新编译成功之前，不支持重命名操作（RENAME）。
+    >2. 不支持通过 CREATE OR REPLACE FORCE VIEW 来替换一个非强制创建的视图或有效视图。
 
 - **view\_name**
 
@@ -182,6 +194,35 @@ openGauss=# DELETE FROM multv2;
 -- 基表之间交叉连接的视图删除数据失败
 openGauss=# CREATE VIEW multv3 AS SELECT emp.empno, emp.ename, emp.job, dept.* FROM dept CROSS JOIN emp;
 openGauss=# DELETE FROM mutlv3;
+
+-- FORCE 视图
+-- 不带FORCE选项，基表不存在时，创建视图失败
+openGauss=# CREATE VIEW v_no_force AS SELECT * FROM t_non_exist;
+ERROR:  relation "t_non_exist" does not exist on single_node
+LINE 1: CREATE VIEW v_no_force AS SELECT * FROM t_non_exist;
+                                                ^
+
+-- 添加 FORCE 关键字，视图创建成功，处于无效状态
+openGauss=# CREATE FORCE VIEW v_force AS SELECT * FROM t_non_exist;
+
+-- 无效状态下的强制视图不支持重命名，报错失败
+openGauss=# ALTER VIEW v_force RENAME TO v_force_new;
+ERROR:  Invalid force created view is not supported rename now.
+
+-- 创建缺失的底层表，并插入数据
+openGauss=# CREATE TABLE t_non_exist (a int, b text);
+openGauss=# INSERT INTO t_non_exist VALUES (1, 'hello');
+
+-- 首次查询视图，自动重编译并成功返回数据
+openGauss=# SELECT * FROM v_force;
+ a |   b   
+---+-------
+ 1 | hello
+(1 row)
+
+-- 禁止使用REPLACE替换一个非强制创建的视图或有效视图，报错失败
+openGauss=# CREATE OR REPLACE FORCE VIEW v_force AS SELECT * FROM t_non_exist2;
+ERROR:  Force replace a valid view is not supported.
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_sfc32bec2a548470ebab19d6ca7d6abe2"></a>
