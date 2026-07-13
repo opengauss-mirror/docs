@@ -21,7 +21,9 @@ sections:
   - label: 重要特性
     sections:
       - href: ./datavec/_toc.yaml
-      - href: ./resource_pooling/_toc.yaml
+      - href:
+          upstream: https://gitcode.com/opengauss/openGauss-server/tree/master/docs/zh/resource_pooling/_toc.yaml
+          path: ./resource_pooling
   - label: 开发指南
     sections:
       - href: ./developer_guide/_toc.yaml
