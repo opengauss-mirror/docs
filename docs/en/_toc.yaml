@@ -20,7 +20,9 @@ sections:
   - label: Key Features
     sections:
       - href: ./og_memory/_toc.yaml
-      - href: ./resource_pooling/_toc.yaml
+      - href:
+          upstream: https://gitcode.com/opengauss/openGauss-server/tree/master/docs/en/resource_pooling/_toc.yaml
+          path: ./resource_pooling
   - label: Developer Guide
     sections:
       - href: ./developer_guide/_toc.yaml
