@@ -53,17 +53,17 @@ openGauss相比于其他开源数据库主要有以下几个特点：
 
 - DataPod资源池化架构
 
-    - 提供主备机共享一份存储的[资源池化](../resource_pooling/resource_pooling_overview.md)能力，提供一种新HA部署形态，解决传统HA部署下存储容量较单机翻倍的问题，满足降低存储容量及成本的诉求，同时备机支持实时一致性读。
-    - 资源池化架构下支持[主备双集群容灾](../resource_pooling/resource_pooling_active_standby_dual_cluster_dr.md)，实现主备双集群的XLog日志同步，保证主备双集群的XLog一致性，从而增强主备双集群的容灾能力，降低存储空间，并保证主备集群内节点切换、主备集群间切换功能正常。
+    - 提供主备机共享一份存储的[资源池化](https://docs.opengauss.org/zh/docs/latest/resource_pooling/resource_pooling_overview.html)能力，提供一种新HA部署形态，解决传统HA部署下存储容量较单机翻倍的问题，满足降低存储容量及成本的诉求，同时备机支持实时一致性读。
+    - 资源池化架构下支持[主备双集群容灾](https://docs.opengauss.org/zh/docs/latest/resource_pooling/resource_pooling_active_standby_dual_cluster_dr.html)，实现主备双集群的XLog日志同步，保证主备双集群的XLog一致性，从而增强主备双集群的容灾能力，降低存储空间，并保证主备集群内节点切换、主备集群间切换功能正常。
     - 支持资源池化[算子卸载](../characteristic_description/resource_pooling_operator_offloading.md)，将数据过滤卸载到存储侧执行，去除不需要的数据，从而减少网络通信数据量，提升端到端性能。
     - 支持资源池化[多机并行](../characteristic_description/resource_pooling_multi_machine_paralleism.md)，对于SQL语句生成多机执行计划，并将计划分发到各节点执行，再由查询节点汇聚各节点数据实现所有读节点并行查询，充分发挥集群的OLAP能力。
-    - 支持资源池化[备机事务内透明写转发](../performance_tuning_guide/transparent_forwarding_within_backup_machine_affairs.md)，在资源池化架构下，当开启备机支持写特性后，备机上执行的显式事务(即begin,end包围的sql)，数据库会自动将事务中的涉及修改的写SQL语句转发给主机, 而事务中的读语句仍然在备机本地执行。
+    - 支持资源池化[备机事务内透明写转发](https://docs.opengauss.org/zh/docs/latest/performance_tuning_guide/transparent_forwarding_within_backup_machine_affairs.html)，在资源池化架构下，当开启备机支持写特性后，备机上执行的显式事务(即begin,end包围的sql)，数据库会自动将事务中的涉及修改的写SQL语句转发给主机, 而事务中的读语句仍然在备机本地执行。
 
 - DataKit全生命周期数据管理工具
 
-    - [DataKit](../characteristic_description/tool_chain_datakit.md)是基于Web的openGauss的可视化的平台系统，提供[基础运维](../datakit/base_ops/datakit_base_ops.md)、[实例监控](../datakit/observability_instance/instance_monitoring.md)、[告警监控](../datakit/datakit_alarm_mointor.md)、[业务开发](../datakit/data_studio/datakit_business_development.md)、[智能诊断](../datakit/datakit_intelligent_diagnosis.md)、[兼容性评估](../datakit/compatibility_assessment.md)等能力。
-    - 支持[MySQL到openGauss的迁移能力](../datakit/datakit_data_migration.md)、[PostgreSQL到openGauss的迁移能力](../datakit/datakit_postgresql_migration.md)，包括全量/增量数据迁移、全量/增量数据校验、反向迁移等能力。
-    - 支持[流量录制回放](../datakit/datakit_workload_replay.md)，录制MySQL客户端的业务SQL，然后在openGauss端进行回放。回放结果会输出慢SQL信息和失败SQL信息。
+    - [DataKit](../characteristic_description/tool_chain_datakit.md)是基于Web的openGauss的可视化的平台系统，提供[基础运维](https://docs.opengauss.org/zh/docs/latest/datakit/base_ops/datakit_base_ops.html)、[实例监控](https://docs.opengauss.org/zh/docs/latest/datakit/observability_instance/instance_monitoring.html)、[告警监控](https://docs.opengauss.org/zh/docs/latest/datakit/datakit_alarm_mointor.html)、[业务开发](https://docs.opengauss.org/zh/docs/latest/datakit/data_studio/datakit_business_development.html)、[智能诊断](https://docs.opengauss.org/zh/docs/latest/datakit/datakit_intelligent_diagnosis.html)、[兼容性评估](https://docs.opengauss.org/zh/docs/latest/datakit/compatibility_assessment.html)等能力。
+    - 支持[MySQL到openGauss的迁移能力](https://docs.opengauss.org/zh/docs/latest/datakit/datakit_mysql_migration.html)、[PostgreSQL到openGauss的迁移能力](https://docs.opengauss.org/zh/docs/latest/datakit/datakit_postgresql_migration.html)，包括全量/增量数据迁移、全量/增量数据校验、反向迁移等能力。
+    - 支持[流量录制回放](https://docs.opengauss.org/zh/docs/latest/datakit/datakit_workload_replay.html)，录制MySQL客户端的业务SQL，然后在openGauss端进行回放。回放结果会输出慢SQL信息和失败SQL信息。
 
 - 易运维
     - 基于AI的[智能参数调优](../characteristic_description/parameter_tuning_and_diagnosis.md)和[索引推荐](../characteristic_description/index_recommendation.md)，提供AI自动参数推荐。

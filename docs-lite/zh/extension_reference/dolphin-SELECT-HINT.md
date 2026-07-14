@@ -2,7 +2,7 @@
 
 ## 功能描述<a name="section290819468377"></a>
 
-设置本次查询执行内生效的查询优化相关GUC参数。本章节涉及的是dolphin关于select-hint的语法增强，对内核支持的hint详见[使用Plan Hint进行调优](../performance_tuning_guide/plan_hint_optimization_overview.md).
+设置本次查询执行内生效的查询优化相关GUC参数。本章节涉及的是dolphin关于select-hint的语法增强，对内核支持的hint详见[使用Plan Hint进行调优](https://docs.opengauss.org/zh/docs/latest-lite/performance_tuning_guide/plan_hint_optimization_overview.html).
 
 ## 语法格式<a name="section530131664410"></a>
 

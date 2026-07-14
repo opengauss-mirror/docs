@@ -171,7 +171,7 @@ ss_work_thread_pool_attr = '64'
 >[!NOTE]说明
 >
 >- 参数格式校验失败时输出WARNING日志，并禁用CPU绑核（各队列回退为不绑核）。
->- 更多说明参见[MES灵衢内存语义通信优化](../resource_pooling/mes_ub_shared_memory_communication_optimization.md)。
+>- 更多说明参见[MES灵衢内存语义通信优化](https://docs.opengauss.org/zh/docs/latest/resource_pooling/mes_ub_shared_memory_communication_optimization.html)。
 
 ## ss\_mes\_elapsed\_switch<a name="section_ss_mes_elapsed_switch"></a>
 

@@ -2189,7 +2189,7 @@ You can write ?, \(_R_+|\), \(_R_|\), and  _R_  to the following pattern charact
 
     It indicates that the  **SELECT VERSION\(\)**  statement was run slowly.
 
-    After the database is connected, you can run the  **explain performance select version\(\)**  statement to find the reason why the initialization statement was run slowly. For more information, see [SQL Execution Plan](../performance_tuning_guide/sql_execution_plan_introduction.md).
+    After the database is connected, you can run the  **explain performance select version\(\)**  statement to find the reason why the initialization statement was run slowly. For more information, see [SQL Execution Plan](https://docs.opengauss.org/en/docs/latest-lite/performance_tuning_guide/sql_execution_plan_introduction.html).
 
     An uncommon scenario is that the disk of the machine where the DN resides is full or faulty, affecting queries and leading to user authentication failures. As a result, the connection process is suspended. To solve this problem, simply clear the data disk space of the DN.
 

@@ -2,7 +2,7 @@
 
 ## Function<a name="section290819468377"></a>
 
-SELECT HINT sets GUC parameters related to query optimization that take effect during the query execution. This section describes the enhanced SELECT HINT syntax of Dolphin. For details about the hints supported by the kernel, see [Plan Hint Optimization](../performance_tuning_guide/plan_hint_optimization_overview.md).
+SELECT HINT sets GUC parameters related to query optimization that take effect during the query execution. This section describes the enhanced SELECT HINT syntax of Dolphin. For details about the hints supported by the kernel, see [Plan Hint Optimization](https://docs.opengauss.org/en/docs/latest/performance_tuning_guide/plan_hint_optimization_overview.html).
 
 ## Syntax<a name="section530131664410"></a>
 
