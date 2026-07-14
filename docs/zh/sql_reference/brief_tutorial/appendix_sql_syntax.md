@@ -1550,7 +1550,7 @@ CREATE SCHEMA schema_name
 ```
 CREATE SEQUENCE name [ INCREMENT [ BY ] increment ]
     [ MINVALUE minvalue | NO MINVALUE | NOMINVALUE] [ MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE]
-    [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE]
+    [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE] [ GLOBAL | SESSION ]
     [ OWNED BY { table_name.column_name | NONE } ];
 ```
 

@@ -17,7 +17,7 @@ CREATE SEQUENCE用于向当前数据库里增加一个新的序列。序列的Ow
 ```
 CREATE [ LARGE ] SEQUENCE [ IF NOT EXISTS ] name [ INCREMENT [ BY ] increment ]
     [ MINVALUE minvalue | NO MINVALUE | NOMINVALUE ] [ MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE] 
-    [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE ] 
+    [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE ] [ GLOBAL | SESSION ]
     [ OWNED BY { table_name.column_name | NONE } ];
 ```
 
@@ -72,6 +72,14 @@ CREATE [ LARGE ] SEQUENCE [ IF NOT EXISTS ] name [ INCREMENT [ BY ] increment ]
     缺省值为NO CYCLE。
 
     若定义序列为CYCLE，则不能保证序列的唯一性。
+
+- **GLOBAL**
+
+    GLOBAL指定序列缓存是全局缓存，是所有session共享的。
+
+- **SESSION**
+
+    SESSION指定序列缓存是session级别缓存，缓存是各session私有的，默认为session级别。
 
 - **OWNED BY**
 
@@ -139,6 +147,12 @@ OWNED BY customer_address.ca_address_sk;
 openGauss=# DROP TABLE customer_address;
 openGauss=# DROP SEQUENCE serial cascade;
 openGauss=# DROP SEQUENCE serial1 cascade;
+--创建带全局缓存的序列
+openGauss=# CREATE SEQUENCE seq1 START 1 CACHE 100 GLOBAL;
+--显式创建session级别缓存的序列
+openGauss=# CREATE SEQUENCE seq2 START 1 CACHE 100 SESSION;
+--默认创建session级别缓存的序列
+openGauss=# CREATE SEQUENCE seq3 START 1 CACHE 100;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137208_zh-cn_topic_0237122114_zh-cn_topic_0059778825_section184942174514"></a>
