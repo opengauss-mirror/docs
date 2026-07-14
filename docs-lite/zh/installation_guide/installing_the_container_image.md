@@ -1,12 +1,10 @@
 # 轻量版容器镜像安装
 
-本章节主要介绍如何获取openGauss镜像，并通过Docker安装，以便用户能快速开启数据库之旅。
+本章节主要介绍如何获取openGauss镜像，并通过Docker安装，以便用户能快速开启数据库之旅。openGauss镜像主要有两种获取方式，分别可以通过dockerhub和官网获取对应镜像，下面将详细介绍这两种获取路径对应的安装方式。
 
-## 获取镜像
+## 1. dockerhub获取镜像并安装
 
-openGauss数据库镜像主要有两种获取方式，分别可以通过`docker pull`和`docker load`拉取对应镜像，下面将详细介绍这两种获取路径。
-
-### 拉取dockerhub镜像
+- 拉取dockerhub镜像
 
 ```bash
 $ docker pull opengauss/opengauss:latest
@@ -17,17 +15,33 @@ $ docker pull opengauss/opengauss:latest
 ```bash
 $ docker images
 
-REPOSITORY            TAG                 IMAGE ID            CREATED             SIZE
-opengauss/opengauss   latest              9aa832ba6684        2 hours ago         1.44GB
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+opengauss/opengauss-server   latest              9763e8b26794        2 days ago          1.77GB
 ```
 
-### 下载镜像包并加载
+- 运行容器
 
-- 下载镜像包（以arm架构下对应的包为例），镜像包的架构应与主机架构匹配。x86_64镜像下载方式相同，镜像包获取路径为：https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler22.03/x86/openGauss-Docker-7.0.0-RC3-x86_64.tar 
+启动数据库并映射宿主机的端口到容器：
+
+```bash
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -p 8888:5432 opengauss/opengauss-server:latest
+```
+
+## 2. 官网下载镜像并安装
+
+- 下载镜像包
+
+以arm架构下对应的包为例，镜像包的架构应与主机架构匹配。
 
 ``` bash
 $ wget https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler22.03/arm/openGauss-Docker-7.0.0-RC3-aarch64.tar
 ```
+
+x86_64镜像下载方式相同，镜像包获取路径为：https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler22.03/x86/openGauss-Docker-7.0.0-RC3-x86_64.tar
+
+>[!NOTE]说明
+>
+> 每个架构只有一个容器镜像，由于容器内的系统是基于openEuler22.03的，因此将容器镜像放在openEuler22.03目录下，但可以用于其他操作系统中。<br>
 
 - 加载镜像
 
@@ -40,20 +54,20 @@ $ docker load -i openGauss-Docker-7.0.0-RC3-aarch64.tar
 ```bash
 $ docker images
 
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-opengauss          latest              9aa832ba6684        2 hours ago         1.44GB
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+opengauss                    7.0.0-RC3           9763e8b26794        2 days ago          1.77GB
 ```
 
 >[!NOTE]说明
 > 
 > 以上镜像包会周期性更新，可以根据自身需求修改路径获取最新镜像包。<br>
 
-## 运行容器
+- 运行容器
 
-以`opengauss/opengauss:latest` 版本为例，以下命令将启动数据库并映射宿主机的端口到容器：
+启动数据库并映射宿主机的端口到容器：
 
 ```bash
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -p 8888:5432 opengauss/opengauss:latest
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -p 8888:5432 opengauss:7.0.0-RC3
 ```
 
 ### 启动参数
