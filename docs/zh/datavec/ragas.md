@@ -53,7 +53,7 @@ $ uv --version
 
 | 项目       | 值                                                |
 | ---------- | ------------------------------------------------- |
-| `base_url` | https://dashscope.aliyuncs.com/compatible-mode/v1 |
+| `base_url` | https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/compatible-mode/v1 |
 | `api_key`  | sk-xxxxxxxxxx                                     |
 | 推理模型   | qwen3.5-plus                                      |
 | 评测模型   | qwen3.6-plus                                      |
@@ -319,7 +319,7 @@ openai_client = OpenAI(
         "DASHSCOPE_API_KEY",
         "sk-5e589e8d7788451fae664ec63be51685"
     ),
-    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+    base_url="https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
 )
 
 opengauss_client = OpenGaussClient()
@@ -439,7 +439,7 @@ evaluator_client = AsyncOpenAI(
         "DASHSCOPE_API_KEY",
         "sk-5e589e8d7788451fae664ec63be51685"
     ),
-    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+    base_url="https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
 )
 
 evaluator_llm = llm_factory(
