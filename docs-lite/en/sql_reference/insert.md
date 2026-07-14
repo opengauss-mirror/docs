@@ -62,7 +62,7 @@ INSERT [/*+ plan_hint */] INTO
 
 - **plan\_hint**  clause
 
-    Follows the  **INSERT**  keyword in the  **/\*+ \*/**  format. It is used to optimize the plan of an  **INSERT**  statement block. For details, see  [Hint-based Tuning](../performance_tuning_guide/plan_hint_optimization_overview.md). In each statement, only the first  **/\*+** _plan\_hint_**\*/**  comment block takes effect as a hint. Multiple hints can be written.
+    Follows the  **INSERT**  keyword in the  **/\*+ \*/**  format. It is used to optimize the plan of an  **INSERT**  statement block. For details, see  [Hint-based Tuning](https://docs.opengauss.org/en/docs/latest-lite/performance_tuning_guide/plan_hint_optimization_overview.html). In each statement, only the first  **/\*+** _plan\_hint_**\*/**  comment block takes effect as a hint. Multiple hints can be written.
 
 - **table\_name**
 

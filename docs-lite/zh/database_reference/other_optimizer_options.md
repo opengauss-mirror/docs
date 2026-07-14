@@ -388,7 +388,7 @@ set sql_beta_feature=none;
 >
 > 1. 恢复默认的统计信息。
 >
-> 2. 使用plan hint来调整到之前的查询计划。（详细参见[使用Plan Hint进行调优](../performance_tuning_guide/plan_hint_optimization_overview.md)）
+> 2. 使用plan hint来调整到之前的查询计划。（详细参见[使用Plan Hint进行调优](https://docs.opengauss.org/zh/docs/latest-lite/performance_tuning_guide/plan_hint_optimization_overview.html)）
 >
 >- 当此guc参数设置为负数时，如果计算的采样样本数大于等于总数据量的2%，且用户表的数据量小于1600000时，ANALYZE所需时间相比guc参数为默认值的时间会有所增加。
 >- 当此guc参数设置为负数时，则autoanalyze不生效。
@@ -602,7 +602,7 @@ set sql_beta_feature=none;
 >[!NOTE]说明
 >
 >- 在开启enable\_sonic\_hashagg，且查询达到约束条件使用基于面向列的hash表设计的Hash Agg算子时，查询对应的Hash Agg算子内存使用通常可获得精简。但对于代码生成技术可获得显著性能提升的场景\([enable\_codegen](#zh-cn_topic_0283137690_zh-cn_topic_0237124719_zh-cn_topic_0059779049_sbe5e1dbabf214873baf37dbb7580a7a3)打开后获得较大性能提升\)，对应的算子查询性能可能会出现劣化。
->- 开启enable\_sonic\_hashagg，且查询达到约束条件使用基于面向列的hash表设计的Hash Agg算子时，在Explain Analyze/Performance的执行计划和执行信息中，算子显示为“Sonic Hash Aggregation”，而未达到该约束条件时，算子名称将显示为“Hash Aggregation”，Explain详解请参见[详解](../performance_tuning_guide/sql_execution_plan_introduction.md)。
+>- 开启enable\_sonic\_hashagg，且查询达到约束条件使用基于面向列的hash表设计的Hash Agg算子时，在Explain Analyze/Performance的执行计划和执行信息中，算子显示为“Sonic Hash Aggregation”，而未达到该约束条件时，算子名称将显示为“Hash Aggregation”，Explain详解请参见[详解](https://docs.opengauss.org/zh/docs/latest-lite/performance_tuning_guide/sql_execution_plan_introduction.html)。
 
 **默认值**： on
 
@@ -621,7 +621,7 @@ set sql_beta_feature=none;
 >
 >- 当前开关仅适用于Inner Join的场景。
 >- 在开启enable\_sonic\_hashjoin，查询对应的Hash Inner算子内存使用通常可获得精简。但对于代码生成技术可获得显著性能提升的场景，对应的算子查询性能可能会出现劣化。
->- 开启enable\_sonic\_hashjoin，且查询达到约束条件使用基于面向列的hash表设计的Hash Join算子时，在Explain Analyze/Performance的执行计划和执行信息中，算子显示为“Sonic Hash Join”，而未达到该约束条件时，算子名称将显示为“Hash Join”，Explain详解请参见[详解](../performance_tuning_guide/sql_execution_plan_introduction.md)。
+>- 开启enable\_sonic\_hashjoin，且查询达到约束条件使用基于面向列的hash表设计的Hash Join算子时，在Explain Analyze/Performance的执行计划和执行信息中，算子显示为“Sonic Hash Join”，而未达到该约束条件时，算子名称将显示为“Hash Join”，Explain详解请参见[详解](https://docs.opengauss.org/zh/docs/latest-lite/performance_tuning_guide/sql_execution_plan_introduction.html)。
 
 **默认值**： on
 
