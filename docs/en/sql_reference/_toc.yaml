@@ -695,6 +695,8 @@ sections:
         href: ./dml_syntax_overview.md
       - label: DCL Syntax Overview
         href: ./dcl_syntax_overview.md
+      - label: SQL Syntax
+        href: ./brief_tutorial/appendix-sql-syntax.md  
       - label: ABORT
         href: ./abort.md
       - label: ALTER AGGREGATE
