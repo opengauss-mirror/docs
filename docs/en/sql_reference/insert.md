@@ -26,7 +26,7 @@ INSERT [/*+ plan_hint */] INTO
     | VALUES {( { expression | DEFAULT } [, ...] ) }[, ...] 
     | query }
     [ ON DUPLICATE KEY UPDATE { NOTHING | { column_name = { expression | DEFAULT } } [, ...] [ WHERE condition ] }]
-    [ ON CONFLICT [conflict_target] DO { NOTHING | { UPDATE SET column_name = { expression | DEFAULT } } [, ...] [ WHERE condition ] } ]
+    [ ON CONFLICT [ conflict_target ] conflict_action ]
     [ RETURNING {* | {output_expression [ [ AS ] output_name ] }[, ...]} ];
 ```
 
@@ -155,52 +155,70 @@ INSERT [/*+ plan_hint */] INTO
     - Column-store tables, foreign tables, and memory tables are not supported.
     - Subquery expressions are supported. The syntax and function of the expressions are the same as those of  **UPDATE**. In a subquery expression,  **EXCLUDED**  can be used to select the columns corresponding to the source data.
 
--   **ON CONFLICT**
+- **ON CONFLICT**
 
     The optional ON CONFLICT clause provides a method for handling insert conflicts, mainly used to resolve insert failures caused by unique constraints or primary key constraints. When attempting to insert a row of data, if the unique constraint or primary key constraint already has the same value of data, the ON CONFLICT clause can specify the behavior when a conflict occurs, such as performing an update operation instead of inserting new data, or ignoring the conflict and taking no action.
 
     - Where conflict_target can be one of the following:
 
+      ```sql
+      ( { index_column_name | ( index_expression ) } [ COLLATE collation ] [ opclass ] [, ...] ) [ WHERE index_predicate ] [ ON CONSTRAINT constraint_name ]
       ```
-      ( { index_column_name | ( index_expression ) } [ COLLATE collation ] [ opclass ] [, ...] ) [ WHERE index_predicate ] ON CONSTRAINT constraint_name
-      ```
-    - **conflict\_target**
- 	 
-      By selecting an index, it specifies which conflicts the ON CONFLICT should take alternative actions for. It either performs unique index inference or explicitly names a constraint. For ON CONFLICT DO NOTHING, conflict_target is optional. When omitted, conflicts with all valid constraints (and unique indexes) are handled. For ON CONFLICT DO UPDATE, conflict_target must be provided.
- 	 
-    - **index\_column\_name**
- 	 
-      The name of the index column.
- 	 
-    - **index\_expression**
-
+      - **conflict\_target**
+ 	   
+        By selecting an index, it specifies which conflicts the ON CONFLICT should take alternative actions for. It either performs unique index inference or explicitly names a constraint. For ON CONFLICT DO NOTH  ING, conflict_target is optional. When omitted, conflicts with all valid constraints (and unique indexes) are handled. For ON CONFLICT DO UPDATE, conflict_target must be provided.
+ 	   
+      - **index\_column\_name**
+ 	   
+        The name of the index column.
+ 	   
+      - **index\_expression**
+  
         Similar to index_column_name, but used for expressions of columns that appear in the index (not simple columns).
-
-    - **collation**
-
-        When specified, it requires the corresponding index_column_name or index_expression to match using a specific collation. It is usually omitted because collation usually does not affect whether a constraint is violated.
-    
-    - **opclass**
-        
+  
+      - **collation**
+  
+        When specified, it requires the corresponding index_column_name or index_expression to match using a specific collation. It is usually omitted because collation usually does not affect whether a cons  traint is violated.
+      
+      - **opclass**
+          
         When specified, it requires the corresponding index_column_name or index_expression to match using a specific operator class. It is usually omitted.
-    
-    - **index_predicate**
-        
+      
+      - **index_predicate**
+          
         sed to allow inference of partial unique indexes. Any index that satisfies this predicate (not necessarily a partial index) can be inferred.
-    
-    - **constraint\_name**
-        
+      
+      - **constraint\_name**
+          
         Explicitly specifies an arbitrator constraint by name, instead of inferring a constraint or index.
+    
+    - And conflict_action is one of:
+      
+      ```sql
+      DO { NOTHING | { UPDATE SET column_name = { expression | DEFAULT } } [, ...] [ WHERE condition ] } 
+      ```
+      - column_name
 
-    - **condition**
+        The name of a column in the table named by **table_name**. 
+
+      - expression
         
-        An expression that returns a Boolean value; only records for which this expression returns true will be updated.
+        An expression or value to assign to the corresponding column.
+      
+      - DEFAULT
+  
+        The corresponding column will be filled with its default value. 
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**
-        > - The target table does not support external tables.
-        > - The target table does not support views, which is inconsistent with PostgreSQL behavior.
-        > - Column-store and MOT tables are not supported.
-        > - SQL Bypass is not supported when there is a query statement in the INSERT.
+      - condition
+
+        An expression that returns a value of type boolean. Only rows for which this expression returns true will be updated.
+    
+    >[!NOTE]Constraints
+    > - The target table does not support external tables.
+    > - The target table does not support views, which is inconsistent with PostgreSQL behavior.
+    > - Column-store and MOT tables are not supported.
+    > - SQL Bypass is not supported when there is a query statement in the INSERT.
+    > - Only mode A and PG mode are supported.
 
 ## Examples<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 
@@ -234,14 +252,109 @@ openGauss=# CREATE UNIQUE INDEX reason_t2_u_index ON tpcds.reason_t2(r_reason_sk
 -- Insert multiple records into the table. If the records conflict, update the r_reason_id field in the conflict data row to BBBBBBBBCAAAAAAA.
 openGauss=# INSERT INTO tpcds.reason_t2 VALUES (5, 'BBBBBBBBCAAAAAAA','reason5'),(6, 'AAAAAAAADAAAAAAA', 'reason6') ON DUPLICATE KEY UPDATE r_reason_id = 'BBBBBBBBCAAAAAAA';
 
--- Insert multiple records into the table. If the records conflict, do nothing.
-openGauss=# INSERT INTO tpcds.reason_t2 VALUES (5, 'BBBBBBBBCAAAAAAA','reason5'),(6, 'AAAAAAAADAAAAAAA', 'reason6'),(8, 'CCCCCCDAAAAAAA', 'reason7') ON CONFLICT (r_reason_sk) DO NOTHING;
-
--- Insert multiple records into the table. If the records conflict, do update.
-openGauss=# INSERT INTO tpcds.reason_t2 VALUES (5, 'BBBBBBBBCAAAAAAA','reason5'),(6, 'AAAAAAAADAAAAAAA', 'reason6'),(9, 'CCCCCCDAAAAAAA', 'reason8') ON CONFLICT (r_reason_sk) DO UPDATE SET r_reason_id='upset';
-
 -- Delete the tpcds.reason_t2.
 openGauss=# DROP TABLE tpcds.reason_t2;
+
+------------------------------ ON CONFLICT Usage Examples -------------------------
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY,
+    email TEXT,
+    name VARCHAR(100),
+    status VARCHAR(20),
+    score INTEGER DEFAULT 0
+);
+
+CREATE TABLE new_data (
+    email TEXT,
+    name VARCHAR(100)
+);
+
+insert into new_data(name, email) values ('Bob', 'bob@example.com'),('Bob1', 'bob1@example.com');
+
+-- Ordinary unique index (id primary key is already unique; create a unique index on email for example purposes)
+CREATE UNIQUE INDEX users_email_uidx ON users (email);
+
+-- Partial unique index: email is unique only when status='active'
+CREATE UNIQUE INDEX users_active_email_uidx ON users (email) WHERE status = 'active';
+
+-- Expression-based unique index: case-insensitive email
+CREATE UNIQUE INDEX users_lower_email_uidx ON users (lower(email));
+
+-- Index with opclass (e.g., using text_pattern_ops)
+CREATE UNIQUE INDEX users_email_pattern_uidx ON users (email text_pattern_ops);
+
+-- 1. Basic UPSERT (DO UPDATE): uses an ordinary unique index; update name on conflict.
+INSERT INTO users (id, email, name)
+VALUES (1, 'alice@example.com', 'Alice') ON CONFLICT (id) DO
+UPDATE SET name = EXCLUDED.name;
+-- If id = 1 already exists, update its name to 'Alice'; otherwise insert a new row.
+
+-- 2. Ignore conflicts (DO NOTHING)
+
+-- Without specifying conflict_target, all constraints are checked, and then DO NOTHING.
+INSERT INTO users (id, email, name)
+VALUES (2, 'bob@example.com', 'Bob') ON CONFLICT DO NOTHING;
+
+-- Specifying the conflict column:
+INSERT INTO users (id, email, name)
+VALUES (2, 'bob@example.com', 'Bob') ON CONFLICT (email) DO NOTHING;
+
+-- 3. Using an expression index (index_expression)
+-- Triggers conflict detection through the expression lower(email) to achieve case-insensitive email UPSERT.
+-- When inserting, a conflict will occur with an existing 'alice@example.com' (ignoring case)
+INSERT INTO users (id, email, name)
+VALUES (3, 'Alice@Example.com', 'Alice_new') ON CONFLICT (lower(email)) DO
+UPDATE SET name = EXCLUDED.name;
+
+-- 4. Using a partial unique index (index_predicate)
+-- Enforces email uniqueness only for users with status='active'. The inserted status must match the predicate.
+INSERT INTO users (id, email, name, status)
+VALUES (4, 'carol@example.com', 'Carol', 'active') ON CONFLICT (email)
+WHERE status = 'active' DO
+UPDATE SET name = EXCLUDED.name;
+-- If a row with email='carol@example.com' and status='active' already exists, update name.
+-- If the same email exists but with status='inactive', no conflict occurs and the row is inserted directly.
+
+-- 5. Explicitly specifying a constraint name (ON CONSTRAINT)
+-- Directly use the constraint name without index inference.
+-- Using the primary key constraint name (system-generated or custom)
+INSERT INTO users (id, email, name)
+VALUES (5, 'dave@example.com', 'Dave') ON CONFLICT ON CONSTRAINT users_pkey DO
+UPDATE SET email = EXCLUDED.email, name = EXCLUDED.name;
+
+-- 6. Conditional update (DO UPDATE ... WHERE condition)
+-- After a conflict, the update is performed only if the specified condition is met;
+-- if the condition is not satisfied, it behaves like DO NOTHING, but the conflicting row is still locked.
+-- Update only when the existing score is less than the new score
+INSERT INTO users (id, email, score)
+VALUES (1, 'alice@example.com', 90) ON CONFLICT (id) DO
+UPDATE SET score = EXCLUDED.score
+WHERE users.score < EXCLUDED.score;
+
+-- 7. Using subqueries and row constructors in updates
+-- DO UPDATE SET supports multiple assignment forms: subqueries, row constructors (col1, col2) = ROW(...), etc.
+-- Using a subquery to assign a value to a single column
+INSERT INTO users (id, email, name)
+VALUES (2, 'bob@example.com', 'Bob') ON CONFLICT (email) DO
+UPDATE SET name = (
+        SELECT name
+        FROM new_data
+        WHERE email = 'bob@example.com'
+    );
+
+-- 8. Using COLLATE and opclass to match indexes
+-- Specify a collation or operator class to ensure alignment with the target unique index.
+-- Assume an index with a specific collation exists
+CREATE UNIQUE INDEX users_name_collate_uidx ON users (name COLLATE "en_US.utf8");
+
+-- The conflict target explicitly specifies the same collation
+INSERT INTO users (id, email, name)
+VALUES (6, 'eve@example.com', 'Eve') ON CONFLICT (name COLLATE "en_US.utf8") DO
+UPDATE SET email = EXCLUDED.email;
+
+-- Using opclass to match an index
+INSERT INTO users (id, email, name)
+VALUES (7, 'frank@example.com', 'Frank') ON CONFLICT (email text_pattern_ops) DO NOTHING;
 ```
 
 ## Suggestions<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_section3855297014560"></a>

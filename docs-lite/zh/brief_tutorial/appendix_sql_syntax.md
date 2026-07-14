@@ -2410,7 +2410,7 @@ GRANT ALL { PRIVILEGES | PRIVILEGE }
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 INSERT [/*+ plan_hint */] INTO table_name [ ( column_name [, ...] ) ]
     { DEFAULT VALUES | VALUES {( { expression | DEFAULT } [, ...] ) }[, ...] | query }
-    [ ON CONFLICT [conflict_target] DO { NOTHING | { UPDATE SET column_name = { expression | DEFAULT } } [, ...] [ WHERE condition ] } ]
+    [ ON CONFLICT [ conflict_target ] conflict_action ]
     [ ON DUPLICATE KEY UPDATE { NOTHING | { column_name = { expression | DEFAULT } } [, ...] } ]
     [ RETURNING {* | {output_expression [ [ AS ] output_name ] }[, ...]} ];
 ```

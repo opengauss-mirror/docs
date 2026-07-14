@@ -34,7 +34,7 @@ INSERT [/*+ plan_hint */] INTO
     | VALUES {( { expression | DEFAULT } [, ...] ) }[, ...] 
     | query }
     [ ON DUPLICATE KEY UPDATE { NOTHING | { column_name = { expression | DEFAULT } } [, ...] [ WHERE condition ] }]
-    [ ON CONFLICT [conflict_target] DO { NOTHING | { UPDATE SET column_name = { expression | DEFAULT } } [, ...] [ WHERE condition ] } ]
+    [ ON CONFLICT [ conflict_target ] conflict_action ]
     [ RETURNING {* | {output_expression [ [ AS ] output_name ] }[, ...]} ];
 ```
 
@@ -180,51 +180,75 @@ INSERT [/*+ plan_hint */] INTO
     - 不支持列存，不支持外表、内存表。
     - expression支持使用子查询表达式，其语法与功能同UPDATE。子查询表达式中支持使用“EXCLUDED.”来选择源数据相应的列。
 
--   **ON CONFLICT**
+- **ON CONFLICT**
  	 
     可选的ON CONFLICT子句提供了一种处理插入冲突的方法，主要用于解决唯一约束或者主键约束导致的插入失败问题。当尝试插入一行数据时，如果唯一约束或主键约束已经存在相同值的数据，ON CONFLICT子句可以指定在发生冲突时的行为，例如执行更新操作而不是插入新数据，或者忽略冲突而不进行任何操作。
 
-- 其中conflict_target可以是以下之一：
+    - 其中conflict_target可以是以下之一：
 
-    ```
-    ( { index_column_name | ( index_expression ) } [ COLLATE collation ] [ opclass ] [, ...] ) [ WHERE index_predicate ] ON CONSTRAINT constraint_name
-    ```
+        ```sql
+        ( { index_column_name | ( index_expression ) } [ COLLATE collation ] [ opclass ] [, ...] ) [ WHERE index_predicate ] [ ON CONSTRAINT constraint_name ]
+        ```
 
-    通过选择索引，指定ON CONFLICT对哪些冲突采取替代操作。要么执行唯一索引推断，要么显式命名一个约束。对于ON CONFLICT DO NOTHING来说，conflict_target是可选的。在被省略时，与所有有效约束（以及唯一索引）的冲突都会被处理。对于ON CONFLICT DO UPDATE，必须提供conflict_target。
+        通过选择索引，指定ON CONFLICT对哪些冲突采取替代操作。要么执行唯一索引推断，要么显式命名一个约束。对于ON CONFLICT DO NOTHING来说，conflict_target是可选的。在被省略时，与所有有效约束（以及唯一索引）的冲突都会被处理。对于ON CONFLICT DO UPDATE，必须提供conflict_target。
 
-  -   **index\_column\_name**
+        - **index\_column\_name**
+      
+           索引列名。
+    
+        - **index\_expression**
+    
+          与index_column_name类似，但它是用于推断那些**出现在索引定义中的表达式（而不是简单列）**。
+    
+        - **collation**
+    
+          当指定时，要求相应的index_column_name或index_expression使用特定的排序规则(collation)才能匹配。通常情况下会被省略，因为排序规则通常不会影响是否违反约束。
+    
+        - **opclass**
+      
+          当指定时，要求相应的index_column_name或index_expression使用特定的运算符类(operator class)才能匹配，通常情况下会被省略。
+    
+        - **index\_predicate**
+    
+          推断模式下可选的后缀 WHERE 子句，它专门用来让冲突检测能够匹配到部分唯一索引（Partial Unique Index），也就是带 WHERE 条件的唯一索引。
+          
+          - 它专门用于匹配部分唯一索引，即带WHERE的唯一索引。
+          - 不写它时，系统只会匹配无谓词的唯一索引；写它时，系统会进一步筛选出谓词兼容的索引。
+    
+        - **constraint\_name**
+    
+          用名称显式指定一个仲裁者约束， 而不是推断约束或者索引。
+
+    - **conflict\_action**可以是以下之一：
+
+        ```sql
+        DO { NOTHING | { UPDATE SET column_name = { expression | DEFAULT } } [, ...] [ WHERE condition ] } 
+        ```
+
+        满足唯一约束冲突发生后ON CONFLICT子句要执行的动作：DO NOTHING，什么都不做；DO UPDATE 执行更新旧数据的操作，怎么更新由后面的SET子句指定。
+
+        - **column\_name**
+        
+          需要更新的列名。 
+
+        - **expression**
   
-      索引列名。
+          要赋给column_name“值”或“计算式”。
 
-  -   **index\_expression**
+        - **DEFAULT**
 
-      与index_column_name类似，但用于索引中出现的列（而不是简单列）的表达式。
+          使用定义表时的缺省值来填充对应的列。
 
-  -   **collation**
+        - **condition**
 
-      当指定时，要求相应的index_column_name或index_expression使用特定的排序规则(collation)才能匹配。通常情况下会被省略，因为排序规则通常不会影响是否违反约束。
-
-  -   **opclass**
-  
-      当指定时，要求相应的index_column_name或index_expression使用特定的运算符类(operator class)才能匹配。通常情况下会被省略。
-
-  -   **index\_predicate**
-
-      用于允许推断部分唯一索引。任何满足该谓词（不一定需要是部分索引）的索引都能被推断。
-
-  -   **constraint\_name**
-
-      用名称显式指定一个仲裁者约束， 而不是推断约束或者索引。
-
-  -   **condition**
-
-      返回布尔类型值的表达式，只有该表达式返回true的记录才会被更新。
-
-    >![](public_sys-resources/icon-note.png) **说明：**
-    > - 目标表不支持外部表
-    > - 目标表不支持视图，与PostgreSQL行为不一致
-    > - 不支持列存表和内存表
-    > - INSERT中存在查询语句时不支持SQL Bypass
+          一个bool表达式，用来有条件地执行冲突后的动作，只有condition为true时才真正执行DO UPDATE动作。
+    
+    > [!NOTE]约束说明
+    > - 目标表不支持外部表。
+    > - 目标表不支持视图，与PostgreSQL行为不一致。
+    > - 不支持列存表和内存表。
+    > - INSERT中存在查询语句时不支持SQL Bypass。
+    > - 只支持A模式和PG模式。
 
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 
@@ -288,4 +312,102 @@ INSERT INTO upser VALUES (5, c1 + 100, 100), (6, c1 + 100, 100), (7, c1 + 100, 1
                          (13, c1 + 100, 100), (14, c1 + 100, 100), (15, c1 + 100, c1 + c2)
     ON DUPLICATE KEY UPDATE c2 = c1 + c2, c3 = c2 + c3;
 SELECT * FROM upser ORDER BY c1;
+
+------------------------------ ON CONFLICT使用示例 -------------------------
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY,
+    email TEXT,
+    name VARCHAR(100),
+    status VARCHAR(20),
+    score INTEGER DEFAULT 0
+);
+
+CREATE TABLE new_data (
+    email TEXT,
+    name VARCHAR(100)
+);
+
+insert into new_data(name, email) values ('Bob', 'bob@example.com'),('Bob1', 'bob1@example.com');
+
+--  普通唯一索引 (id 主键已经唯一，再为 email 创建唯一索引用于示例)
+CREATE UNIQUE INDEX users_email_uidx ON users (email);
+
+--  部分唯一索引：只有 status='active' 时 email 唯一
+CREATE UNIQUE INDEX users_active_email_uidx ON users (email) WHERE status = 'active';
+
+--  表达式唯一索引：不区分大小写的 email
+CREATE UNIQUE INDEX users_lower_email_uidx ON users (lower(email));
+
+--  配合 opclass 的索引（例如使用 text_pattern_ops）
+CREATE UNIQUE INDEX users_email_pattern_uidx ON users (email text_pattern_ops);
+
+-- 1. 基本 UPSERT (DO UPDATE) :基于普通唯一索引，冲突时更新姓名。
+INSERT INTO users (id, email, name)
+VALUES (1, 'alice@example.com', 'Alice') ON CONFLICT (id) DO
+UPDATE SET name = EXCLUDED.name;
+--如果 id = 1 已存在 ， 则将其 name 更新为 'Alice' ； 否则插入新行 。 -- 2. 冲突时忽略插入 (DO NOTHING)
+
+-- 不指定 conflict_target，所有约束都会被检测，然后do nothing。
+INSERT INTO users (id, email, name)
+VALUES (2, 'bob@example.com', 'Bob') ON CONFLICT DO NOTHING;
+
+-- 指定冲突列：
+INSERT INTO users (id, email, name)
+VALUES (2, 'bob@example.com', 'Bob') ON CONFLICT (email) DO NOTHING;
+
+-- 3. 使用表达式索引 (index_expression)
+-- 通过表达式 lower(email) 触发冲突检测，实现大小写不敏感邮箱的 UPSERT。
+-- 插入时会与已有 'alice@example.com' 发生冲突（忽略大小写）
+INSERT INTO users (id, email, name)
+VALUES (3, 'Alice@Example.com', 'Alice_new') ON CONFLICT (lower(email)) DO
+UPDATE SET name = EXCLUDED.name;
+
+-- 4. 使用部分唯一索引 (index_predicate)
+-- 只对 status='active' 的用户 进行邮箱唯一性检测。插入的 status 必须匹配谓词。
+INSERT INTO users (id, email, name, status)
+VALUES (4, 'carol@example.com', 'Carol', 'active') ON CONFLICT (email)
+WHERE status = 'active' DO
+UPDATE SET name = EXCLUDED.name;
+-- 如果已存在 email='carol@example.com' 且 status='active' 的行，则更新 name。
+-- 若相同邮箱但 status='inactive'，不冲突，直接插入。
+
+-- 5. 显式指定约束名 (ON CONSTRAINT)
+-- 直接使用约束名，无需推断索引。
+-- 先用主键约束名（系统生成或自定义）
+INSERT INTO users (id, email, name)
+VALUES (5, 'dave@example.com', 'Dave') ON CONFLICT ON CONSTRAINT users_pkey DO
+UPDATE SET email = EXCLUDED.email, name = EXCLUDED.name;
+
+-- 6. 条件更新 (DO UPDATE ... WHERE condition)
+-- 冲突后，仅当满足特定条件才执行更新；条件不满足时相当于 DO NOTHING，但冲突行仍会被锁定。
+-- 只有当原 score 小于新 score 时才更新
+INSERT INTO users (id, email, score)
+VALUES (1, 'alice@example.com', 90) ON CONFLICT (id) DO
+UPDATE SET score = EXCLUDED.score
+WHERE users.score < EXCLUDED.score;
+
+-- 7. 更新时使用子查询和行构造器
+-- DO UPDATE SET 支持多种赋值形式：子查询、行构造器 (col1, col2) = ROW(...) 等。
+-- 使用子查询为单列赋值
+INSERT INTO users (id, email, name)
+VALUES (2, 'bob@example.com', 'Bob') ON CONFLICT (email) DO
+UPDATE SET name = (
+        SELECT name
+        FROM new_data
+        WHERE email = 'bob@example.com'
+    );
+
+-- 8. 使用 COLLATE 和 opclass 匹配索引
+--指定排序规则或运算符类，确保与目标唯一索引一致。
+-- 假设存在使用特定 collation 的索引
+CREATE UNIQUE INDEX users_name_collate_uidx ON users (name COLLATE "en_US.utf8");
+
+-- 冲突目标显式指定相同的 collation
+INSERT INTO users (id, email, name)
+VALUES (6, 'eve@example.com', 'Eve') ON CONFLICT (name COLLATE "en_US.utf8") DO
+UPDATE SET email = EXCLUDED.email;
+
+-- 使用 opclass 匹配索引
+INSERT INTO users (id, email, name)
+VALUES (7, 'frank@example.com', 'Frank') ON CONFLICT (email text_pattern_ops) DO NOTHING;
 ```
