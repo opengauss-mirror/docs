@@ -46,7 +46,7 @@ $ uv --version
 
 | 项目       | 值                                                |
 | ---------- | ------------------------------------------------- |
-| `base_url` | https://dashscope.aliyuncs.com/compatible-mode/v1 |
+| `base_url` | https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/compatible-mode/v1 |
 | `api_key`  | sk-xxxxxxxxxx                                     |
 | 推理模型   | qwen3.5-plus                                      |
 | 向量模型   | text-embedding-v4                                 |
@@ -296,7 +296,7 @@ client = OpenAI(
     api_key=os.getenv(
         "DASHSCOPE_API_KEY"
     ),
-    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+    base_url="https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
 )
 ```
 
@@ -925,7 +925,7 @@ client = OpenAI(
         "DASHSCOPE_API_KEY",
         "sk-03cac48e1e4f4d9badc4f02a73756dc6"
     ),
-    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+    base_url="https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
 )
 
 DB_CONFIG = {
