@@ -120,7 +120,7 @@ sections:
   - label: Enterprise-Level Features
     sections:
       - label: Enhanced Features
-        href: ./enhanced_mysql_compatibility.md    
+        href: ./enterprise_level_enhanced_features.md    
       - label: Support for Functions and Stored Procedures
         href: ./support_for_functions_and_stored_procedures.md
       - label: SQL Hints
