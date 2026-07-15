@@ -80,9 +80,8 @@ CONTAINER ID   IMAGE                           COMMAND                  CREATED 
 e0af667c5477   opengauss/opengauss:latest   "entrypoint.sh gauss…"   14 seconds ago   Up 10 seconds   0.0.0.0:5432->5432/tcp, :::5432->5432/tcp   opengauss
 ```
 
-> [!NOTE] 
->
-> openGauss 容器默认已创建 gaussdb 用户和 postgres 库，启动时使用环境变量 `GS_PASSWORD` 指定用户密码。
+>[!NOTE]说明
+openGauss 容器默认已创建 gaussdb 用户和 postgres 库，启动时使用环境变量 `GS_PASSWORD` 指定用户密码。
 
 ### 配置项目环境
 
