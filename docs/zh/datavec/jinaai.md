@@ -16,11 +16,9 @@ Jina AI 提供三大核心能力，分别对应 RAG 管道的三个关键环节�
 
 与传统的单阶段向量检索相比，两阶段检索（粗排 + 精排）能显著提升检索结果的准确率和召回率。
 
+## 准备工作
 
-
-# 1 准备工作
-
-## 1.1 环境配置
+### 环境配置
 
 **（1）配置 Docker 环境**
 
@@ -48,9 +46,7 @@ $ source ~/.bashrc
 $ uv --version
 ```
 
-
-
-## 1.2 模型与 API 说明
+### 模型与 API 说明
 
 本文使用 Jina AI 的三大核心 API 构建 RAG 管道，并使用 DeepSeek LLM 作为最终生成模型。
 
@@ -90,9 +86,7 @@ export DEEPSEEK_API_KEY="sk-xxxxxxxxxxxx"
 
 在本教程中，入库时使用 `retrieval.passage`，检索时使用 `retrieval.query`，以获得最佳检索效果。
 
-
-
-## 1.3 启动 openGauss 实例
+### 启动 openGauss 实例
 
 本文以容器方式启动 openGauss 实例。
 
@@ -113,13 +107,10 @@ CONTAINER ID   IMAGE                           COMMAND                  CREATED 
 0b27fd4856a6   opengauss/opengauss:7.0.0-RC1   "entrypoint.sh gauss…"   4 hours ago   Up 4 hours   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   opengauss
 ```
 
-> **说明：**
->
+> [!NOTE]说明
 > openGauss 容器默认已创建 gaussdb 用户和 postgres 库，启动时使用环境变量 `GS_PASSWORD` 指定用户密码。
 
-
-
-## 1.4 配置项目环境
+### 配置项目环境
 
 ```shell
 # 创建并进入项目目录
@@ -134,11 +125,9 @@ $ uv pip install openai psycopg2-binary
 
 之后的操作均在该项目环境中进行。
 
+## 使用 Jina Reader API 摄入数据
 
-
-# 2 使用 Jina Reader API 摄入数据
-
-## 2.1 使用 Jina Reader 获取网页内容
+### 使用 Jina Reader 获取网页内容
 
 Jina Reader API 可以将任意网页 URL 转换为干净、结构化的 Markdown，是 RAG 管道的数据入口。只需在 URL 前加上 `r.jina.ai/`，或直接调用 API。
 
@@ -160,8 +149,7 @@ def jina_read(url: str) -> str:
         return resp.read().decode("utf-8")
 ```
 
-> **说明：**
->
+> [!NOTE]说明
 > Reader API 内部使用无头浏览器渲染动态页面，支持 PDF 提取，能处理绝大多数现代网页。免费用户无需 API Key 即可使用（有速率限制），付费用户带上 Key 可获得更高吞吐。
 
 
@@ -180,7 +168,7 @@ print(file)
 
 预期输出结果如下。
 
-```
+```shell
 Title: DataVec向量数据库 | openGauss文档 | openGauss社区
 
 URL Source: https://docs.opengauss.org/zh/docs/latest/datavec/datavec_overview.html
@@ -214,9 +202,7 @@ Markdown Content:
 ......
 ```
 
-
-
-## 2.2 文档分块处理
+### 文档分块处理
 
 获取 Markdown 后，以 `# ` 为分隔符进行简单的分块处理，每个 Markdown 标题段落作为一个独立的文本块。
 
@@ -257,7 +243,7 @@ for i, chunk in enumerate(chunk_texts[:3]):
 
 预期输出结果如下。
 
-```
+```shell
 [Chunk 0]: Title: DataVec向量数据库 | openGauss文档 | openGauss社区
 
 URL Source: https://docs.openga...
@@ -267,11 +253,9 @@ URL Source: https://docs.openga...
 [Chunk 2]: SDK](https://docs.opengauss.org/zh/docs/latest/datavec/integration_csharp.html) ...
 ```
 
+## 生成向量数据
 
-
-# 3 生成向量数据
-
-## 3.1 初始化 Jina Embeddings
+### 初始化 Jina Embeddings
 
 使用 OpenAI 兼容接口初始化 Jina AI 客户端。
 
@@ -306,9 +290,7 @@ def batch_embedder(texts: List[str], task: str = "retrieval.passage") -> List[Li
     return vectors
 ```
 
-
-
-## 3.2 生成向量数据
+### 生成向量数据
 
 构造包含 ID、文本、向量的行数据。
 
@@ -336,15 +318,13 @@ print(dim, rows[0])
 
 预期输出结果如下。
 
-```
+```shell
 1024 ('4ae05e97-4155-4271-bb29-6b87d62c2f28', 'Title: DataVec向量数据库 | openGauss文档 | openGauss社区\n\nURL Source: https://docs.opengauss.org/zh/docs/latest/datavec/datavec_overview.html\n\nMarkdown Content:\n', [-0.07923993468284607, ......, -0.002191937994211912])
 ```
 
+## 将向量数据载入 openGauss
 
-
-# 4 将向量数据载入 openGauss
-
-## 4.1 连接 openGauss 数据库
+### 连接 openGauss 数据库
 
 ```python
 import psycopg2
@@ -366,14 +346,12 @@ print(cursor)
 
 预期输出结果如下。
 
-```
+```shell
 <connection object at 0x79868eb4a700; dsn: 'user=gaussdb password=xxx dbname=postgres host=localhost port=5432', closed: 0>
 <cursor object at 0x79868e7809a0; closed: 0>
 ```
 
-
-
-## 4.2 创建向量表
+### 创建向量表
 
 创建表之前先删除表，防止多次执行脚本时数据被重复写入。
 
@@ -395,10 +373,10 @@ cursor.execute(
 
 创建表，表结构包含：
 
-- **`id`：**每条 chunk 的唯一标识
-- **`content`：**chunk 的原始文本内容
-- **`embedding`：**`content` 对应的向量表示（vector 类型）
-- **`created_at`：**插入时的时间戳
+- **`id`：** 每条 chunk 的唯一标识
+- **`content`：** chunk 的原始文本内容
+- **`embedding`：** `content` 对应的向量表示（vector 类型）
+- **`created_at`：** 插入时的时间戳
 
 ```python
 cursor.execute(
@@ -443,9 +421,7 @@ print(cursor.fetchall())
 [('id', 'text'), ('content', 'text'), ('embedding', 'vector'), ('created_at', 'timestamp without time zone')]
 ```
 
-
-
-## 4.3 载入向量数据
+### 载入向量数据
 
 将向量数据写入到表中。
 
@@ -487,26 +463,20 @@ print(cursor.fetchall())
 
 预期输出结果如下。
 
-```
+```shell
 [('6e84c6ae-1d32-4b32-b004-c8b8ede7cf83', 'Title: DataVec向量数据库 | openGauss文档 | openGauss社区\n\nURL Source: https://docs.opengauss.org/zh/docs/latest/datavec/datavec_overview.html\n\nPublished Time: Fri, 01 May 2026 19:39:43 GMT\n\nMarkdown Content:\n')]
 ```
 
-
-
-
-
-# 5 构建两阶段 RAG 检索
+## 构建两阶段 RAG 检索
 
 这是本文区别于传统 RAG 的核心章节。两阶段检索流程如下：
 
-```
+```shell
 用户问题 → Jina Embeddings (retrieval.query) → openGauss 粗排 (Top-20)
 → Jina Reranker 精排 (Top-5) → DeepSeek LLM → 最终答案
 ```
 
-
-
-## 5.1 将问题向量化处理
+### 将问题向量化处理
 
 将问题以 `retrieval.query` 模式向量化。
 
@@ -522,13 +492,11 @@ print(question_vec)
 
 预期输出结果如下。
 
-```
+```shell
 [-0.026076041162014008, 0.0035898603964596987, ......, -0.03911406174302101, 0.02554747276008129]
 ```
 
-
-
-## 5.2 第一阶段：openGauss 粗排检索
+### 第一阶段：openGauss 粗排检索
 
 在 openGauss 中执行向量相似度检索，返回候选集（例如 Top-20）。
 
@@ -556,7 +524,7 @@ print(candidates[0])
 
 预期输出结果如下。
 
-```
+```shell
 13
 Title: DataVec向量数据库 | openGauss文档 | openGauss社区
 
@@ -567,9 +535,7 @@ Published Time: Fri, 01 May 2026 19:39:43 GMT
 Markdown Content:
 ```
 
-
-
-## 5.3 第二阶段：Jina Reranker 精排
+### 第二阶段：Jina Reranker 精排
 
 将粗排候选交给 jina-reranker-v3 做深度语义匹配和重排序，返回最相关的 Top-K（例如 5 条）。
 
@@ -609,7 +575,7 @@ for r in results:
 
 预期输出结果如下。
 
-```
+```shell
 精排后的文档顺序及相关性得分:
   [3] score=0.6454  向量数据类型 [​](https://docs.opengauss.org/zh/docs/latest/datavec/datavec_overview.ht...
   [1] score=0.3892  特性简介 [​](https://docs.opengauss.org/zh/docs/latest/datavec/datavec_overview.html...
@@ -640,7 +606,7 @@ print(contexts_text)
 
 预期输出结果如下。
 
-```
+```shell
 [1] 向量数据类型 [​](https://docs.opengauss.org/zh/docs/latest/datavec/datavec_overview.html#user-content-%E5%90%91%E9%87%8F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
 
 *   [vector](https://docs.opengauss.org/zh/docs/latest/datavec/vector_data_type.html#vector) - float向量，最高支持16000维
@@ -672,9 +638,7 @@ print(contexts_text)
 #
 ```
 
-
-
-## 5.4 构建 RAG 提示词并生成回答
+### 构建 RAG 提示词并生成回答
 
 将精排后的上下文组装为 Prompt，调用 DeepSeek LLM 生成最终答案。
 
@@ -749,7 +713,7 @@ for chunk in completion:
 
 预期输出结果如下。
 
-```
+```shell
 ====================思考过程====================
 我们被问到：openGauss支持哪些向量数据类型。需要基于参考资料回答。参考资料[1]列出：vector, bitvec, sparsevec, halfvec。也提到最高维度等。所以回答涵盖这些即可。
 ====================完整回复====================
@@ -763,37 +727,22 @@ for chunk in completion:
 这些维度上限均指使用索引场景下的最大维度。
 ```
 
+## 参考资料
+
+- Jina AI 官网：[Jina AI — Search Foundation Models](https://jina.ai)
+
+- Jina Reader API 文档：[Jina AI Reader](https://jina.ai/reader)
+
+- Jina Embeddings API 文档：[Jina AI Embeddings](https://jina.ai/embeddings)
+
+- Jina Reranker API 文档：[Jina AI Reranker](https://jina.ai/reranker)
+
+- DeepSeek API 文档：[首次调用 API | DeepSeek API Docs](https://api-docs.deepseek.com/zh-cn/)
+
+- openGauss DataVec 文档：[openGauss DataVec 向量数据库](https://docs.opengauss.org/zh/docs/latest/docs/DataVec/)
 
 
-# 参考资料
-
-- Jina AI 官网
-
-  [Jina AI — Search Foundation Models](https://jina.ai)
-
-- Jina Reader API 文档
-
-  [Jina AI Reader](https://jina.ai/reader)
-
-- Jina Embeddings API 文档
-
-  [Jina AI Embeddings](https://jina.ai/embeddings)
-
-- Jina Reranker API 文档
-
-  [Jina AI Reranker](https://jina.ai/reranker)
-
-- DeepSeek API 文档
-
-  [首次调用 API | DeepSeek API Docs](https://api-docs.deepseek.com/zh-cn/)
-
-- openGauss DataVec 文档
-
-  [openGauss DataVec 向量数据库](https://docs.opengauss.org/zh/docs/latest/docs/DataVec/)
-
-
-
-# 附录
+## 附录
 
 本文最终完整的测试用例如下。
 
