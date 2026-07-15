@@ -103,6 +103,8 @@ sections:
             href: ./embedding_bgem3.md
           - label: Nomic
             href: ./embedding_nomic.md
+          - label: BentoML
+            href: ./bentoml.md
           - label: openGauss-SentenceTransformer实践
             href: ./sentence_transformer.md
       - label: LLMs
