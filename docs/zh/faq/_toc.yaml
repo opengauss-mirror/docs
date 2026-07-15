@@ -11,3 +11,5 @@ sections:
     href: ./driver.md
   - label: 基础安装常见问题与解决方法
     href: ./installation.md
+  - label: 慢sql常见问题与解决方法
+    href: ./sql.md
