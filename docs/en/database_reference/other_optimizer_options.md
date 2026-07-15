@@ -356,7 +356,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >- Changing settings of this parameter may result in performance deterioration. If query performance deteriorates, you can:
 >
 >   1. Restore to the default statistics.
->   2. Use hints to force the optimizer to use the optimal query plan. For details, see  [Hint-based Tuning](../performance_tuning_guide/plan_hint_optimization_overview.md).
+>   2. Use hints to force the optimizer to use the optimal query plan. For details, see  [Hint-based Tuning](https://docs.opengauss.org/en/docs/latest/performance_tuning_guide/plan_hint_optimization_overview.html).
 >
 >- If this parameter is set to a negative value, the number of samples is greater than or equal to 2% of the total data volume, and the number of records in user tables is less than 1.6 million, the time taken by running  **ANALYZE**  will be longer than when this parameter uses its default value.
 >- If this parameter is set to a negative value, the auto-analyze function is disabled.
@@ -564,7 +564,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >[!NOTE]NOTE 
 >
 >- When the hash aggregation operator designed for column-oriented hash tables is used, the memory usage of the query can be reduced. However, in scenarios when  **[enable\_codegen](#en-us_topic_0283137690_en-us_topic_0237124719_en-us_topic_0059779049_sbe5e1dbabf214873baf37dbb7580a7a3)**  is set to  **on**  and the performance is significantly improved, the performance of the operator may deteriorate.
->- If  **enable\_sonic\_hashagg**  is set to  **on**, when certain constraints are met, the hash aggregation operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Aggregation**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Aggregation**. For details, see  [Description](../performance_tuning_guide/resource_management_preparation.md).
+>- If  **enable\_sonic\_hashagg**  is set to  **on**, when certain constraints are met, the hash aggregation operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Aggregation**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Aggregation**. For details, see  [Description](https://docs.opengauss.org/en/docs/latest/performance_tuning_guide/resource_management_preparation.html).
 
 **Default value**:  **on**
 
@@ -583,7 +583,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >
 >- Currently, the parameter can be used only for Inner Join.
 >- If  **enable\_sonic\_hashjoin**  is enabled, the memory usage of query using the Hash Inner operator can be reduced. However, in scenarios where the code generation technology can significantly improve performance, the performance of the operator may deteriorate.
->- If  **enable\_sonic\_hashjoin**  is set to  **on**, when certain constraints are met, the hash join operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Join**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Join**. For details, see  [Description](../performance_tuning_guide/resource_management_preparation.md).
+>- If  **enable\_sonic\_hashjoin**  is set to  **on**, when certain constraints are met, the hash join operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Join**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Join**. For details, see  [Description](https://docs.opengauss.org/en/docs/latest/performance_tuning_guide/resource_management_preparation.html).
 
 **Default value**:  **on**
 

@@ -126,7 +126,7 @@ In a wide table containing a huge amount of data, a query usually only involves 
 
     - For DML statements, UPDATE, COPY, BULKLOAD, and DELETE are supported.
     - Triggers and primary foreign keys are not supported.
-    - Psort index, B-tree index, and GIN index are supported. For details,  see [Optimizing SQL Self-Diagnosis](../performance_tuning_guide/optimizing_sql_self_diagnosis.md).
+    - Psort index, B-tree index, and GIN index are supported. For details,  see [Optimizing SQL Self-Diagnosis](https://docs.opengauss.org/en/docs/latest/performance_tuning_guide/optimizing_sql_self_diagnosis.html).
 
 - Data compression in column store
 
@@ -194,7 +194,7 @@ openGauss supports 10,000 concurrent connections through server thread pools. It
 
 To locate performance issues of a query, you can use  **EXPLAIN PERFORMANCE**  to query its execution plan. However, this method produces many logs, requires to modify service logic, and depends on expertise to locate problems. SQL self-diagnosis enables users to locate performance issues more efficiently.
 
-Before running a job, set the GUC parameters  **resource\_track\_level**  and  **resource\_track\_cost**, and obtain the possible performance issues after job execution by checking the related system view. The system view describes the possible causes of performance issues. To optimize low-performance jobs, see [Optimizing SQL Self-Diagnosis](../performance_tuning_guide/optimizing_sql_self_diagnosis.md).
+Before running a job, set the GUC parameters  **resource\_track\_level**  and  **resource\_track\_cost**, and obtain the possible performance issues after job execution by checking the related system view. The system view describes the possible causes of performance issues. To optimize low-performance jobs, see [Optimizing SQL Self-Diagnosis](https://docs.opengauss.org/en/docs/latest/performance_tuning_guide/optimizing_sql_self_diagnosis.html).
 
 SQL self-diagnosis helps users locate and optimize performance issues without affecting operations or modifying service logic.
 

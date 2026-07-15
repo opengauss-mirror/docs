@@ -37,6 +37,12 @@
     ALTER [LARGE] SEQUENCE [ IF EXISTS ] name RENAME TO new_name;
     ```
 
+- 修改序列缓存为global或session级别
+
+  ```
+  ALTER [ LARGE ] SEQUENCE [ IF EXISTS ] name [ SESSION | GLOBAL ];
+  ```
+
 ## 参数说明<a name="zh-cn_topic_0283137303_zh-cn_topic_0237122071_zh-cn_topic_0062358310_s8277cc73aecc4f20845d2ddf456a20e7"></a>
 
 - name
@@ -135,7 +141,12 @@ openGauss=# ALTER SEQUENCE serial RESTART 100;
 --重命名序列
 openGauss=# ALTER SEQUENCE serial RENAME TO serial1;
 
+--修改序列的cache为全局或session
+openGauss=# CREATE SEQUENCE seq_1 CACHE 100 GLOBAL; --创建缓存为global级别的序列
+openGauss=# ALTER SEQUENCE seq_1 SESSION; --修改序列的缓存为session级别
+
 --删除序列和表。
+openGauss=# DROP SEQUENCE seq_1;
 openGauss=# DROP SEQUENCE serial cascade;
 openGauss=# DROP TABLE T1;
 ```
