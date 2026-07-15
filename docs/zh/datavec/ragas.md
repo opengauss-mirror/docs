@@ -11,11 +11,9 @@ RAGAS（Retrieval-Augmented Generation Assessment）是一个专为评估 RAG（
 
 在本教程中，我们将向您展示如何使用 使用 Ragas 评估基于 openGauss 的 RAG 管道。
 
+## 准备工作
 
-
-# 1 准备工作
-
-## 1.1 环境配置
+### 环境配置
 
 **（1）配置 Docker 环境**
 
@@ -43,9 +41,7 @@ $ source ~/.bashrc
 $ uv --version
 ```
 
-
-
-## 1.2 LLM 和 Embeddings 模型
+### LLM 和 Embeddings 模型
 
 本文使用千问模型，通过[大模型服务平台百炼控制台](https://bailian.console.aliyun.com/cn-beijing?spm=5176.12818093_47.resourceCenter.1.1b8416d0xa1cot&tab=model#/api-key)获取对应的 API Key 。
 
@@ -59,9 +55,7 @@ $ uv --version
 | 评测模型   | qwen3.6-plus                                      |
 | 向量模型   | text-embedding-v4                                 |
 
-
-
-## 1.3 启动 openGauss 实例
+### 启动 openGauss 实例
 
 本文以容器方式启动 openGauss 实例。
 
@@ -82,13 +76,10 @@ CONTAINER ID   IMAGE                           COMMAND                  CREATED 
 a10287f00892   opengauss/opengauss:7.0.0-RC1   "entrypoint.sh gauss…"   3 seconds ago   Up 3 seconds   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   opengauss
 ```
 
-> **说明：**
->
+> [!NOTE]说明
 > openGauss  容器默认已创建 gaussdb 用户和 postgres 库，启动时使用环境变量 `GS_PASSWORD` 指定用户密码。
 
-
-
-## 1.4 配置项目环境
+### 配置项目环境
 
 ```shell
 # 创建并进入项目目录
@@ -103,9 +94,7 @@ $ uv pip install openai pandas psycopg2-binary ragas tqdm
 
 之后的操作均在该项目环境中进行。
 
-
-
-# 2 构建 RAG 管道
+## 构建 RAG 管道
 
 定义使用 openGauss 作为向量存储、OpenAI 作为 LLM 的 RAG 类：该类包含 `load` 方法（将文本数据加载到 Milvus）、`retrieve` 方法（检索与给定问题最相似的文本数据）和 `answer` 方法（使用检索到的知识回答给定问题）。
 
@@ -327,9 +316,7 @@ opengauss_client = OpenGaussClient()
 rag = RAG(openai_client=openai_client, opengauss_client=opengauss_client)
 ```
 
-
-
-# 3 测试 RAG 管道
+## 测试 RAG 管道
 
 本文以 [Markdown](https://gitcode.com/openGauss/docs/blob/master/docs/zh/datavec/datavec_overview.md) 文件作为源文件进行操作演示。
 
@@ -355,7 +342,7 @@ print(response)
 
 预期输出结果如下。
 
-```
+```shell
 ('自 openGauss 6.0.3 版本开始引入。', ['生态对接\n\nopenGauss DataVec 提供Python、Java、Node.js、Go等多语言生态对接，让你能够通过API调用，快速使能向量数据库能力。同时， DataVec拥抱开源第三方组件，在RAG场景下做到快速兼容，多样选择。\n更详细的指导，参考[向量数据库工具编排使用](dify.md)\n\n#', '特性简介\n\nopenGauss DataVec 向量数据库是一个基于openGauss的向量引擎， 提供向量数据类型的存储、检索。在处理大规模高维向量数据时，能够提供快速、准确的检索结果。适用于智能知识检索、 检索增强生成 RAG(Retrieval-Augmented Generation) 等各种复杂应用场景的智能应用。\n\nDataVec目前支持的向量功能有：精确和近似的最近邻搜索、L2距离&余弦距离&内积、向量索引、向量操作函数和操作符。作为openGauss的内核特性，DataVec使用熟悉的SQL语法操作向量，简化了用户使用向量数据库的过程。\n\n#', '可获得性\n本特性自openGauss 6.0.3版本开始引入。\n\n#'])
 ```
 
@@ -409,9 +396,7 @@ print(df)
 | 1    | DataVec目前支持的向量功能有哪些？           | [DataVec向量数据库\n\n#, 特性简介\n\nopenGauss DataVec 向量数据库是一个基于openGauss的向量引擎， 提供向量数据类型的存储、检索。在处理大规模高维向量数据时，能够提供快速、准确的检索结果。适用于智能知识检索、 检索增强生成 RAG(Retrieval-Augmented Generation) 等各种复杂应用场景的智能应用。\n\nDataVec... | 根据参考资料，DataVec 目前支持的向量功能有：精确和近似的最近邻搜索、L2 距离&余弦距离&内积、向量索引、向量操作函数和操作符。 | 精确和近似的最近邻搜索、L2距离&余弦距离&内积、向量索引、向量操作函数和操作符。 |
 | 2    | openGauss DataVec支持的向量数据类型有哪些？ | [特性简介\n\nopenGauss DataVec 向量数据库是一个基于openGauss的向量引擎， 提供向量数据类型的存储、检索。在处理大规模高维向量数据时，能够提供快速、准确的检索结果。适用于智能知识检索、 检索增强生成 RAG(Retrieval-Augmented Generation) 等各种复杂应用场景的智能应用。\n\nDataVec目前支持的向量功能有：精确和近似的最近... | 根据提供的资料，openGauss DataVec 支持的向量数据类型包括：\n\n- **vector**（float 向量）\n- **bitvec**（bit 向量）\n- **sparsevec**（sparse 向量）\n- **halfvec**（halfvec 向量） | vector、bitvec、sparsevec、halfvec四种向量数据类型。         |
 
-
-
-# 4 使用 Ragas 进行评估
+## 使用 Ragas 进行评估
 
 ```python
 import asyncio
@@ -503,7 +488,7 @@ print(df_results[["answer_relevancy", "faithfulness", "context_recall", "context
 
 预期输出结果如下。
 
-```
+```shell
 Running experiment: 100%|██████████████████████| 3/3 [01:47<00:00, 35.98s/it]
 answer_relevancy     0.950449
 faithfulness         1.000000
@@ -514,23 +499,15 @@ dtype: float64
 
 
 
-> **说明：**
->
+> [!NOTE]说明
 > `context_precision` 低是因为本文只简单使用 `#`（Markdown 标题）来分块，导致切出来的文本块过大或者包含大量无关信息。
 
+## 参考资料
 
+- Ragas 官网：[Ragas](https://docs.ragas.io/en/stable/)
 
-# 参考资料
+- Milvus 官网文档：[使用 Ragas 进行评估 | Milvus 文档](https://milvus.io/docs/zh/integrate_with_ragas.md)
 
-- Ragas 官网
+- 阿里云百炼模型 API：[大模型服务平台百炼控制台](https://bailian.console.aliyun.com/cn-beijing?spm=5176.12818093_47.resourceCenter.1.1b8416d0xa1cot&tab=model#/model-market/detail/qwen3.5-plus?serviceSite=asia-pacific-china)
 
-  [Ragas](https://docs.ragas.io/en/stable/)
-
-- Milvus 官网文档
-
-  [使用 Ragas 进行评估 | Milvus 文档](https://milvus.io/docs/zh/integrate_with_ragas.md)
-
-- 阿里云百炼模型 API
-
-  [大模型服务平台百炼控制台](https://bailian.console.aliyun.com/cn-beijing?spm=5176.12818093_47.resourceCenter.1.1b8416d0xa1cot&tab=model#/model-market/detail/qwen3.5-plus?serviceSite=asia-pacific-china)
 
