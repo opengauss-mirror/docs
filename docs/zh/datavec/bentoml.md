@@ -6,11 +6,9 @@
 
 与传统的单脚本 RAG 不同，BentoML 化的 RAG 管道可以一键部署为独立服务，支持水平扩展、请求批处理和容器化部署。
 
+## 准备工作
 
-
-# 1 准备工作
-
-## 1.1 环境配置
+### 环境配置
 
 **（1）配置 Docker 环境**
 
@@ -38,9 +36,7 @@ $ source ~/.bashrc
 $ uv --version
 ```
 
-
-
-## 1.2 模型与 API 说明
+### 模型与 API 说明
 
 本文使用 BentoML 作为服务化框架，FastEmbed 作为本地 Embedding 模型，DeepSeek 作为 LLM 后端。
 
@@ -79,9 +75,7 @@ $ uv --version
 | 模型名称 | BAAI/bge-small-zh-v1.5 |
 | 向量维度 | 512                    |
 
-
-
-## 1.3 启动 openGauss 实例
+### 启动 openGauss 实例
 
 本文以容器方式启动 openGauss 实例。
 
@@ -102,13 +96,10 @@ CONTAINER ID   IMAGE                           COMMAND                  CREATED 
 0b27fd4856a6   opengauss/opengauss:7.0.0-RC1   "entrypoint.sh gauss…"   4 hours ago   Up 4 hours   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   opengauss
 ```
 
-> **说明：**
->
+> [!NOTE]说明
 > openGauss 容器默认已创建 gaussdb 用户和 postgres 库，启动时使用环境变量 `GS_PASSWORD` 指定用户密码。
 
-
-
-## 1.4 配置项目环境
+### 配置项目环境
 
 ```shell
 # 创建并进入项目目录
@@ -123,15 +114,13 @@ $ uv pip install bentoml fastembed numpy openai psycopg2-binary pydantic tqdm
 
 之后的操作均在该项目环境中进行。
 
-
-
-# 2 构建 RAG 管道
+## 构建 RAG 管道
 
 定义使用 openGauss 作为向量存储、FastEmbed 作为本地嵌入模型、DeepSeek 作为 LLM 的 RAG 管道。
 
 以下代码保存为 `rag.py`。
 
-## 2.1 openGauss 客户端
+### openGauss 客户端
 
 `OpenGaussClient` 负责与 openGauss 数据库的所有交互。包含以下方法：
 
@@ -231,9 +220,7 @@ class OpenGaussClient:
         self.conn.close()
 ```
 
-
-
-## 2.2 文档分块
+### 文档分块
 
 `chunk_source` 函数负责将文档源（URL 或本地文件路径）按 Markdown 的 `# ` 标题标记分割为文本块。以 `# ` 为分隔符可以自然地按文档章节边界进行分块，保留每个章节的语义完整性。
 
@@ -270,9 +257,7 @@ def chunk_source(urls: List[str]) -> List[str]:
     return all_chunks
 ```
 
-
-
-## 2.3 RAG 类
+### RAG 类
 
 `RAG` 类是整个 RAG 管道的核心，集成了 FastEmbed 本地嵌入模型和 DeepSeek LLM。它接收 `OpenGaussClient` 和 `DeepSeek` 客户端作为参数，通过 `_prepare_*` 方法完成初始化。
 
@@ -400,9 +385,7 @@ class RAG:
         return "".join(answer_chunks)
 ```
 
-
-
-## 2.4 构建 RAG
+### 构建 RAG
 
 创建 DeepSeek 客户端和 openGauss 客户端并构建 RAG。
 
@@ -418,9 +401,7 @@ def build_rag():
     return rag
 ```
 
-
-
-## 2.5 测试 RAG 管道
+### 测试 RAG 管道
 
 调用 `load` 方法将 openGauss DataVec 文档页面加载到 RAG 管道中。
 
@@ -448,7 +429,7 @@ print(response)
 
 预期输出结果如下。
 
-```
+```shell
 ====================思考过程====================
 我们被问到："openGauss支持哪些向量数据类型"。参考资料的[3]部分明确列出了四种向量数据类型：vector, bitvec, sparsevec, halfvec，并附有简要说明。因此可以直接回答。
 ====================完整回复====================
@@ -459,13 +440,11 @@ print(response)
 - **halfvec**：halfvec 向量，最高支持 16000 维
 ```
 
-
-
-# 3 部署 BentoML 服务
+## 部署 BentoML 服务
 
 以上以脚本方式完成了 RAG 管道的构建和测试。现在需要将整个 RAG 管道打包为 BentoML Service，使其可以独立部署和水平扩展。
 
-## 3.1 编写 Service 定义
+### 编写 Service 定义
 
 创建 `service.py`，通过 `import rag as rag_module` 导入第 2 节定义的类，使用 `@bentoml.service` 装饰器定义服务。
 
@@ -549,8 +528,7 @@ class OpenGaussRAG:
 
 ```
 
-> **说明：**
->
+> [!NOTE]说明
 > - `service.py` 通过 `import rag as rag_module` 导入第 2 节定义的 `OpenGaussClient` 和 `RAG` 类。
 > - 服务启动时在 `__init__` 中创建 DeepSeek 客户端、openGauss 客户端和 RAG 实例。
 > - `ingest` 端点调用 `_prepare_opengauss` 初始化表结构，再调用 `load` 摄入数据。
@@ -560,7 +538,7 @@ class OpenGaussRAG:
 > - BentoML 支持异步 API（`async def`），可以透明地支持自适应批处理。
 
 
-## 3.2 编写 BentoML 构建配置
+### 编写 BentoML 构建配置
 
 创建 `bentofile.yaml`，描述服务的构建和部署配置。
 
@@ -583,15 +561,12 @@ python:
     - tqdm>=4.67.3
 ```
 
-> **说明：**
->
+> [!NOTE]说明
 > - `service` 字段格式为 `"<文件名>:<类名>"`，指定 BentoML 服务的入口点。
 > - `include` 字段列出需要打包到 Bento 中的 Python 文件。
 > - `python.packages` 声明运行时的 pip 依赖，BentoML 会自动安装。
 
-
-
-## 3.3 本地启动 BentoML 服务
+### 本地启动 BentoML 服务
 
 使用 `bentoml serve` 命令在本地启动 RAG 服务。
 
@@ -605,18 +580,16 @@ $ uv run bentoml serve service:OpenGaussRAG --port 3000
 
 预期输出：
 
-```
+```shell
 2026-05-03T19:36:26+0800 [INFO] [cli] Starting production HTTP BentoServer from "service:OpenGaussRAG" listening on http://localhost:3000 (Press CTRL+C to quit)
 2026-05-03T19:36:28+0800 [INFO] [entry_service:opengauss_rag:1] Service opengauss_rag initialized
 ```
 
-
-
-## 3.4 调用 BentoML 服务 API
+### 调用 BentoML 服务 API
 
 服务启动后，可以通过 HTTP 客户端调用 API。
 
-### 3.4.1 使用 curl
+#### 使用 curl
 
 **（1）摄入数据**
 
@@ -683,9 +656,7 @@ $ curl -X POST http://localhost:3000/health
 }
 ```
 
-
-
-### 3.4.2 使用 Python 客户端
+#### 使用 Python 客户端
 
 BentoML 也提供了 Python 原生客户端，可以直接在代码中调用部署的服务。
 
@@ -762,11 +733,7 @@ print(json.dumps(health_result, indent=2, ensure_ascii=False))
 }
 ```
 
-
-
-
-
-# 4 构建并部署 Bento
+## 构建并部署 Bento
 
 将服务打包为标准化 Bento 格式，便于分发和部署。
 
