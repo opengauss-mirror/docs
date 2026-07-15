@@ -83,6 +83,10 @@ sections:
         sections:
           - label: Dify
             href: ./dify.md
+          - label: DB-GPT
+            href: ./dbgpt.md
+          - label: n8n
+            href: ./n8n.md
           - label: AnythingLLM
             href: ./anythingllm.md
           - label: LlamaIndex
@@ -95,22 +99,36 @@ sections:
             href: ./langgraph.md
           - label: Spring AI
             href: ./spring_ai_opengauss.md
+      - label:  知识工程
+        sections:
+          - label: Cognee
+            href: ./cognee.md
       - label:  嵌入模型
         sections: 
           - label: BGE-M3
             href: ./embedding_bgem3.md
           - label: Nomic
             href: ./embedding_nomic.md
+          - label: BentoML
+            href: ./bentoml.md
           - label: Jina AI
             href: ./jinaai.md
           - label: openGauss-SentenceTransformer实践
             href: ./sentence_transformer.md
+      - label: LLMs
+        sections:
+          - label: vLLM
+            href: ./vllm.md
       - label:  Agents
         sections:
           - label: MCP
             href: ./mcp.md
           - label: Mem0
             href: ./mem0.md
+      - label:  数据来源
+        sections:
+          - label: Docling
+            href: ./docling.md
       - label:  数据迁移
         sections:
           - label: 从Milvus迁移至openGauss DataVec
@@ -141,6 +159,8 @@ sections:
             href: ./opengauss_vector_dbb_ench.md
           - label: AnnBenchmark
             href: ./testtool_annbenchmark.md
+          - label: Ragas
+            href: ./ragas.md
   - label: 教程案例指导
     sections:
       - label: 打破AI黑盒，拥抱开源力量：基于openGauss+DeepSeek的本地知识库，打造你的专属AI助手

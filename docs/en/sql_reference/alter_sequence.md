@@ -30,6 +30,12 @@
     ALTER  SEQUENCE [ IF EXISTS ] name OWNER TO new_owner;
     ```
 
+- Change the cache level of a sequence to global or session level.
+
+  ```
+  ALTER [ LARGE ] SEQUENCE [ IF EXISTS ] name [ SESSION | GLOBAL ];
+  ```
+
 ## Parameter Description<a name="en-us_topic_0283137303_en-us_topic_0237122071_en-us_topic_0062358310_s8277cc73aecc4f20845d2ddf456a20e7"></a>
 
 - name
@@ -120,7 +126,12 @@ openGauss=# ALTER SEQUENCE serial CYCLE;
 --Change serial to restart from 100
 openGauss=# ALTER SEQUENCE serial RESTART 100;
 
+--Change the cache level
+openGauss=# CREATE SEQUENCE seq_1 CACHE 100 GLOBAL; --global level cache
+openGauss=# ALTER SEQUENCE seq_1 SESSION; --change to session level cache
+
 -- Delete a sequence and a table.
+openGauss=# DROP SEQUENCE seq_1;
 openGauss=# DROP SEQUENCE serial cascade;
 openGauss=# DROP TABLE T1;
 ```

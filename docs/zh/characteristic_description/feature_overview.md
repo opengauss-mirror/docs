@@ -13,7 +13,7 @@
         <td><a href="./llvm.md">支持LLVM</a></td>
     </tr>
     <tr>
-        <td><a href="../performance_tuning_guide/vectorized_engine.md">向量化引擎</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/performance_tuning_guide/vectorized_engine.html">向量化引擎</a></td>
     </tr>
     <tr>
         <td><a href="../database_administration_guide/planning_storage_models.md">行列混合存储</a></td>
@@ -40,7 +40,7 @@
         <td><a href="../database_administration_guide/parallel_page_based_redo_for_ustore.md">Parallel Page-based Redo For Ustore</a></td>
     </tr>
     <tr>
-        <td><a href="../performance_tuning_guide/transition_quantitative_analysis.md">行存转向量化</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/performance_tuning_guide/transition_quantitative_analysis.html">行存转向量化</a></td>
     </tr>
     <tr>
         <td><a href="./ock_accelerated_data_transmission.md">OCK加速数据传输</a></td>
@@ -55,7 +55,7 @@
         <td><a href="./huge_page_memory.md">大页内存</a></td>
     </tr>
     <tr>
-        <td><a href="../performance_tuning_guide/heap_tables_support_prefetching.md">堆表支持预读</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/performance_tuning_guide/heap_tables_support_prefetching.html">堆表支持预读</a></td>
     </tr>
     <tr>
         <td><a href="./out_of_the_box.md">开箱即用</a></td>
@@ -252,70 +252,70 @@
         <th>特性</th>
     </tr>
     <tr>
-        <td><a href="../resource_pooling/resource_pooling_overview.md">资源池化特性说明</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/resource_pooling_overview.html">资源池化特性说明</a></td>
     </tr>
     <tr>
-        <td><a href="../performance_tuning_guide/resource_pooling_performance_optimization.md">资源池化性能优化</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/performance_tuning_guide/resource_pooling_performance_optimization.html">资源池化性能优化</a></td>
     </tr>
     <tr>
-        <td><a href="../performance_tuning_guide/transparent_forwarding_within_backup_machine_affairs.md">备机事务内透明写转发</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/performance_tuning_guide/transparent_forwarding_within_backup_machine_affairs.html">备机事务内透明写转发</a></td>
     </tr>
     <tr>
-        <td><a href="../resource_pooling/feature_enhancement.md">DSS功能增强</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/feature_enhancement.html">DSS功能增强</a></td>
     </tr>
     <tr>
         <td><a href="./resource_pooling_operator_offloading.md">资源池化算子卸载</a></td>
     </tr>
     <tr>
-        <td><a href="../resource_pooling/resource_pooling_active_standby_dual_cluster_dr.md">资源池化主备双集群容灾</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/resource_pooling_active_standby_dual_cluster_dr.html">资源池化主备双集群容灾</a></td>
     </tr>
     <tr>
-        <td><a href="../resource_pooling/ultimate_rto_on_demand_playback.md">极致RTO按需回放</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/ultimate_rto_on_demand_playback.html">极致RTO按需回放</a></td>
     </tr>
     <tr>
-        <td><a href="../resource_pooling/dss_thread_pool.md">DSS线程池</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/dss_thread_pool.html">DSS线程池</a></td>
     </tr>
     <tr>
-        <td><a href="../resource_pooling/cm_syssentry_fault_detection.md">CM SysSentry故障检测</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/cm_syssentry_fault_detection.html">CM SysSentry故障检测</a></td>
     </tr>
     <tr>
-        <td><a href="../resource_pooling/mes_ub_shared_memory_communication_optimization.md">MES灵衢内存语义通信优化</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/mes_ub_shared_memory_communication_optimization.html">MES灵衢内存语义通信优化</a></td>
     </tr>
     <tr>
-        <td><a href="../resource_pooling/ub_transaction_snapshot_acceleration_introduction.md">事务快照UB访问加速特性简介</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/ub_transaction_snapshot_acceleration_introduction.html">事务快照UB访问加速特性简介</a></td>
     </tr>
     <tr>
         <td><a href="./resource_pooling_multi_machine_paralleism.md">资源池化多机并行</a></td>
     </tr>
     <tr>
-        <td><a href="../resource_pooling/gs_collector_adaptation_resource_pooling.md">资源池化可维护性增强</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/gs_collector_adaptation_resource_pooling.html">资源池化可维护性增强</a></td>
     </tr>
     <tr>
-        <td><a href="../resource_pooling/gs_collector_adaptation_resource_pooling.md">gs_collector适配资源池化</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/gs_collector_adaptation_resource_pooling.html">gs_collector适配资源池化</a></td>
     </tr>
     <tr>
-        <td><a href="../resource_pooling/dms_resource_statistics_function.md">DMS资源统计函数</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/dms_resource_statistics_function.html">DMS资源统计函数</a></td>
     </tr>
     <tr>
-        <td><a href="../resource_pooling/gs_probackup_adaptation_resource_pooling.md">gs_probackup适配资源池化</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/gs_probackup_adaptation_resource_pooling.html">gs_probackup适配资源池化</a></td>
     </tr>
     <tr>
-        <td><a href="../resource_pooling/cm_supports_dual_cluster_backup_clusters_switchover.md">cm支持双集群备集群switchover</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/cm_supports_dual_cluster_backup_clusters_switchover.html">cm支持双集群备集群switchover</a></td>
     </tr>
     <tr>
-        <td><a href="../resource_pooling/resource_pooling_support_for_primary_and_backup_parameter_synchronization.md">资源池化支持主备参数同步</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/resource_pooling_support_for_primary_and_backup_parameter_synchronization.html">资源池化支持主备参数同步</a></td>
     </tr>
     <tr>
-        <td><a href="../resource_pooling/resource_pooling_xlog_support_archive.md">资源池化XLOG支持归档</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/resource_pooling_xlog_support_archive.html">资源池化XLOG支持归档</a></td>
     </tr>
     <tr>
-        <td><a href="../resource_pooling/online_reform.md">在线reform</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/online_reform.html">在线reform</a></td>
     </tr>
     <tr>
-        <td><a href="../resource_pooling/online_ddl_adapt_failover.md">在线failover</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/online_ddl_adapt_failover.html">在线failover</a></td>
     </tr>
     <tr>
-        <td><a href="../performance_tuning_guide/mes_worker_thread_pooling.md">MES worker线程池化</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/performance_tuning_guide/mes_worker_thread_pooling.html">MES worker线程池化</a></td>
     </tr>
 </table>
 
@@ -568,7 +568,7 @@
         <td><a href="./advanced_features/parallel_query.md">并行查询</a></td>
     </tr>
     <tr>
-        <td><a href="../resource_pooling/resource_pooling_overview.md">资源池化</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/resource_pooling_overview.html">资源池化</a></td>
     </tr>
     <tr>
         <td><a href="./advanced_features/uwal.md">UWAL</a></td>

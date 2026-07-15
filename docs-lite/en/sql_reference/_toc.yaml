@@ -1083,6 +1083,8 @@ sections:
         href: ./network-address-functions-and-operators.md
       - label: Text Search Functions and Operators
         href: ./text-search-functions-and-operators.md
+      - label: UUID Functions
+        href: ./uuid_function.md
       - label: JSON/JSONB Functions and Operators
         href: ./json-jsonb-functions-and-operators.md
       - label: HLL Functions and Operators

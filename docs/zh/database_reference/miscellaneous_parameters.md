@@ -258,7 +258,7 @@
 该参数属于USERSET类型，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 >[!NOTE]说明
->ignore_error hint的信息请参考[将部分Error降级为Warning的Hint](../performance_tuning_guide/hint_for_degrading_some_errors_to_warnings.md)。
+>ignore_error hint的信息请参考[将部分Error降级为Warning的Hint](https://docs.opengauss.org/zh/docs/latest/performance_tuning_guide/hint_for_degrading_some_errors_to_warnings.html)。
 
 **取值范围**： 枚举类型
 

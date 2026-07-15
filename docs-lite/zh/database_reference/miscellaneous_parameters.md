@@ -248,7 +248,7 @@
 
 >[!NOTE]说明
 >
->ignore_error hint的信息请参考[将部分Error降级为Warning的Hint](../performance_tuning_guide/hint_for_degrading_some_errors_to_warnings.md)。
+>ignore_error hint的信息请参考[将部分Error降级为Warning的Hint](https://docs.opengauss.org/zh/docs/latest-lite/performance_tuning_guide/hint_for_degrading_some_errors_to_warnings.html)。
 
 **取值范围**： 枚举类型
 
