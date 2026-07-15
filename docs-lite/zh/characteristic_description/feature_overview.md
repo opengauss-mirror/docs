@@ -10,7 +10,7 @@
         <td><a href="./cbo_optimizer.md">CBO优化器</a></td>
     </tr>
     <tr>
-        <td><a href="../performance_tuning_guide/vectorized_engine.md">向量化执行引擎</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest-lite/performance_tuning_guide/vectorized_engine.html">向量化执行引擎</a></td>
     </tr>
     <tr>
         <td><a href="../database_administration_guide/planning_storage_models.md">行列混合存储</a></td>
@@ -37,7 +37,7 @@
         <td><a href="./parallel_page_based_redo_for_ustore.md">Parallel Page-based Redo For Ustore</a></td>
     </tr>
     <tr>
-        <td><a href="../performance_tuning_guide/transition_quantitative_analysis.md">行存转向量化</a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest-lite/performance_tuning_guide/transition_quantitative_analysis.html">行存转向量化</a></td>
     </tr>
     <tr>
         <td><a href="./optimization_of_subtransaction_concurrent_rollback_process.md">子事务并发回滚流程优化</a></td>

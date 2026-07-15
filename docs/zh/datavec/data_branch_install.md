@@ -126,7 +126,7 @@ SELECT * FROM branch_demo ORDER BY id;
 创建一个新分支，并为该分支启动独立计算节点：
 
 ```bash
-./target/release/neon_local timeline branch1 --branch-name branch1
+./target/release/neon_local timeline branch --branch-name branch1
 ./target/release/neon_local endpoint create branch1 --branch-name branch1
 ./target/release/neon_local endpoint start branch1
 ./target/release/neon_local endpoint list

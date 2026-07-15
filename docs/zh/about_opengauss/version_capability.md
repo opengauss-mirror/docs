@@ -70,7 +70,7 @@
 | **高性能**                            |            |            |            |                                                          |
 | [CBO优化器](../characteristic_description/cbo_optimizer.md)                                          | ✔️      | ✔️      | ✔️      | 基于代价的优化器。                                         |
 | [支持LLVM](../characteristic_description/llvm.md)                                                    | ✔️      | ✔️      | ❌      | 提供查询动态编译执行能力。                                 |
-| [向量化引擎](../performance_tuning_guide/vectorized_engine.md)           | ✔️      | ✔️      | ❌      | 提供向量化引擎。                                           |
+| [向量化引擎](https://docs.opengauss.org/zh/docs/latest/performance_tuning_guide/vectorized_engine.html)           | ✔️      | ✔️      | ❌      | 提供向量化引擎。                                           |
 | [行列混合存储](../database_administration_guide/planning_storage_models.md) | ✔️      | ✔️      | ✔️      | 提供行列混合存储。                                         |
 | [自适应压缩](../database_administration_guide/adaptive_compression.md)     | ✔️      | ✔️      | ✔️      | 提供数据压缩技术。                                         |
 | [SQL by pass](../characteristic_description/sql_by_pass.md)                                          | ✔️      | ✔️      | ✔️      | 提供OLTP查询场景定制化执行方案。                           |
@@ -78,7 +78,7 @@
 | [支持线程池高并发](../characteristic_description/high_concurrency_of_thread_pools.md)                | ✔️      | ✔️      | ✔️      | 支撑数据库大并发稳定运行。                                 |
 | [SMP并行执行](../characteristic_description/smp_for_parallel_execution.md)                           | ✔️      | ✔️      | ✔️      | 利用多核能力提升查询性能。                                 |
 | [Parallel Page-based Redo For Ustore](../database_administration_guide/parallel_page_based_redo_for_ustore.md) | ✔️      | ✔️      | ✔️      | 基于Ustore存储引擎的并行页级重做机制，提升事务恢复效率。   |
-| [行存转向量化](../performance_tuning_guide/transition_quantitative_analysis.md) | ✔️      | ✔️      | ❌      | 提升复杂查询执行性能。                                     |
+| [行存转向量化](https://docs.opengauss.org/zh/docs/latest/performance_tuning_guide/transition_quantitative_analysis.html) | ✔️      | ✔️      | ❌      | 提升复杂查询执行性能。                                     |
 | [OCK加速数据传输](../characteristic_description/ock_accelerated_data_transmission.md)                | ✔️      | ✔️      | ❌      | 提高备机一致性读的性能。                                   |
 | [大页内存](../characteristic_description/huge_page_memory.md)                                        | ✔️      | ✔️      | ✔️      | 提升在大内存环境下数据库的性能表现。                       |
 | [开箱即用](../characteristic_description/out_of_the_box.md)                                          | ✔️      | ✔️      | ❌      | 通过工具自动对数据库进行性能优化。                         |
@@ -126,7 +126,7 @@
 | [账本数据库机制](../characteristic_description/ledger_database_mechanism.md)                        | ✔️      | ✔️      | ❌      | 提高数据库防篡改能力。                                     |
 | [透明数据加密](../characteristic_description/transparent_data_encryption.md)                        | ✔️      | ✔️      | ❌      | 解决静态数据泄露问题。                                     |
 | **资源池化**                          |            |            |            |                                                          |
-| [资源池化特性](../resource_pooling/resource_pooling_overview.md)        | ✔️      | ❌      | ❌      | 实现跨节点计算/存储资源统一调度。                          |
+| [资源池化特性](https://docs.opengauss.org/zh/docs/latest/resource_pooling/resource_pooling_overview.html)        | ✔️      | ❌      | ❌      | 实现跨节点计算/存储资源统一调度。                          |
 | **企业级特性**                                                          |        |        |        |                                                            |
 | [函数及存储过程支持](../characteristic_description/support_for_functions_and_stored_procedures.md)  | ✔️      | ✔️      | ✔️      | 支持PL/pgSQL编程。                                         |
 | [支持SQL hint](../characteristic_description/sql_hints.md)                                          | ✔️      | ✔️      | ✔️      | 提供执行计划调优指令。                                     |

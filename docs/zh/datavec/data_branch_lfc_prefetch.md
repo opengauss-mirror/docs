@@ -80,17 +80,17 @@ LFC 是 Compute 本地共享文件缓存，用于保存 Pageserver 返回的数�
 
 | 参数名 | 说明 | 默认值 | 是否需要重启 |
 | --- | --- | --- | --- |
-| `effective_io_concurrency` | 用户可见预取并发度，openGauss 内部通过 assign hook 换算为 `target_prefetch_pages`，用于控制访问方法的预取窗口。effective_io_concurrency>1时开启预取。 | `1` | 否 |
+| `effective_io_concurrency` | 用户可见预取并发度，openGauss 内部通过 assign hook 换算为 `target_prefetch_pages`，用于控制访问方法的预取窗口。effective_io_concurrency>1时开启预取。 | `8` | 否 |
 | `enable_seqscan_prefetch` | 控制顺序扫描是否启用 Neon 预取。 | `on` | 否 |
 | `enable_indexscan_prefetch` | 控制 B-tree index scan 是否预取后续 heap 页面。 | `on` | 否 |
 | `enable_indexonlyscan_prefetch` | 控制 B-tree index-only scan 是否预取后续索引叶子页。 | `on` | 否 |
-| `neon.readahead_buffer_size` | 控制每个 backend 私有 prefetch ring 容量，即最多保留的在途或已接收预取请求数。 | `64` | 否 |
+| `neon.readahead_buffer_size` | 控制每个 backend 私有 prefetch ring 容量，即最多保留的在途或已接收预取请求数。（修改此值需在compute的pgdata/compute_ctl_temp_override.conf里设置，无需重启，连接会话select pg_reload_conf()后修改生效） | `128` | 否 |
 | `neon.readahead_getpage_pull_timeout` | 控制 backend 主动拉取已到达 GetPage 响应的间隔。`0` 表示关闭定时主动拉取。 | `50ms` | 否 |
 | `neon.store_prefetch_result_in_lfc` | 控制收到预取响应后是否立即写入 LFC。 | `off` | 否 |
-| `neon.max_file_cache_size` | LFC 本地文件缓存硬上限。`0` 表示禁用 LFC。 | `0KB` | 是 |
-| `neon.file_cache_size_limit` | LFC 当前软限制，控制运行期实际可使用容量，不能超过 `neon.max_file_cache_size`。 | `0KB` | 否 |
+| `neon.max_file_cache_size` | LFC 本地文件缓存硬上限。`0` 表示禁用 LFC。（单位为kB，MB，GB） | `0kB` | 是 |
+| `neon.file_cache_size_limit` | LFC 当前软限制，控制运行期实际可使用容量，不能超过 `neon.max_file_cache_size`。（单位为kB，MB，GB） | `0kB` | 否 |
 | `neon.file_cache_path` | LFC 本地缓存文件路径。 | `file.cache` | 是 |
-| `neon.file_cache_chunk_size` | LFC chunk 大小，单位为数据库 block，要求为 2 的幂。 | `128 blocks` | 是 |
+| `neon.file_cache_chunk_size` | LFC chunk 大小，单位为数据库 block，要求为 2 的幂。默认为128block，每个block为8KB，此参数修改需设置为 2 的幂。 | `1MB` | 是 |
 
 ## 七、观测方式
 
