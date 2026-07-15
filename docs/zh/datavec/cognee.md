@@ -4,11 +4,9 @@
 
 本文重点介绍如何将 openGauss 作为 Cognee 的后端向量数据库构建 RAG 管道。
 
+## 准备工作
 
-
-# 1 准备工作
-
-## 1.1 环境配置
+### 环境配置
 
 **（1）配置 Docker 环境**
 
@@ -36,9 +34,7 @@ $ source ~/.bashrc
 $ uv --version
 ```
 
-
-
-## 1.2 LLM 和 Embedding 模型
+### LLM 和 Embedding 模型
 
 **（1）LLM 模型**
 
@@ -66,7 +62,7 @@ $ uv --version
 | `EMBEDDING_MODEL`      | BAAI/bge-small-zh-v1.5 |
 | `EMBEDDING_DIMENSIONS` | 512                    |
 
-## 1.3 启动 openGauss 实例
+### 启动 openGauss 实例
 
 以容器方式启动 openGauss 实例。
 
@@ -87,8 +83,7 @@ CONTAINER ID   IMAGE                           COMMAND                  CREATED 
 9a5d6aec69df   opengauss/opengauss:7.0.0-RC1   "entrypoint.sh gauss…"   6 hours ago   Up 6 hours   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   opengauss
 ```
 
-> **说明：**
->
+> [!NOTE]说明
 > openGauss 容器默认已创建 gaussdb 用户和 postgres 库，启动时使用环境变量 `GS_PASSWORD` 指定用户密码。
 
 
@@ -110,7 +105,7 @@ CONTAINER ID   IMAGE                           COMMAND                  CREATED 
 | `OPENGAUSS_INDEX_TYPE`        | 索引类型               | HNSW   |
 | `OPENGAUSS_DISTANCE_STRATEGY` | 距离策略               | COSINE |
 
-## 1.4 配置项目环境
+### 配置项目环境
 
 ```shell
 # 创建并进入项目目录
@@ -131,9 +126,7 @@ $ uv pip install cognee[fastembed]
 
 之后的操作均在该项目环境中进行。
 
-
-
-# 2 构建 RAG
+## 构建 RAG
 
 **（1）在项目根目录编写 .env 配置文件，提供 LLM、Embddding、openGauss 等相关信息**
 
@@ -261,29 +254,20 @@ print(result)
 
 预期输出结果如下。
 
-```
+```shell
 ['DataVec支持四种向量数据类型：1. vector（float向量，最高16000维）2. bitvec（bit向量，最高83,886,080维）3. sparsevec（sparse向量，最高1,000,000,000维，最高16000非零元素数）4. halfvec（halfvec向量，最高16000维）。']
 ```
 
+## 参考资料
+
+- Cognee 官网文档：[Introduction - Cognee Documentation](https://docs.cognee.ai/getting-started/introduction)
+
+- openGauss 官网文档：[产品描述 | openGauss文档 | openGauss社区](https://docs.opengauss.org/zh/docs/latest/about_opengauss/about_opengauss.html)
+
+- DeepSeek API：[DeepSeek 开放平台](https://platform.deepseek.com/api_keys)
 
 
-# 参考资料
-
-- Cognee 官网文档
-
-  [Introduction - Cognee Documentation](https://docs.cognee.ai/getting-started/introduction)
-
-- openGauss 官网文档
-
-  [产品描述 | openGauss文档 | openGauss社区](https://docs.opengauss.org/zh/docs/latest/about_opengauss/about_opengauss.html)
-
-- DeepSeek API
-
-  [DeepSeek 开放平台](https://platform.deepseek.com/api_keys)
-
-
-
-# 附录
+## 附录
 
 本文最终完整的测试用例如下。
 
@@ -382,6 +366,4 @@ async def main() -> None:
 if __name__ == "__main__":
     asyncio.run(main())
 ```
-
-
 
