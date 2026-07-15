@@ -145,6 +145,8 @@ sections:
             href: ./opengauss_vector_dbb_ench.md
           - label: AnnBenchmark
             href: ./testtool_annbenchmark.md
+          - label: Ragas
+            href: ./ragas.md
   - label: 教程案例指导
     sections:
       - label: 打破AI黑盒，拥抱开源力量：基于openGauss+DeepSeek的本地知识库，打造你的专属AI助手
