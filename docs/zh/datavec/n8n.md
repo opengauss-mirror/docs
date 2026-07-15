@@ -2,9 +2,7 @@
 
 [n8n](https://github.com/n8n-io/n8n) 是一个开源的工作流自动化平台，借助其节点编排能力可以构建从数据集成到 AI 智能体的各类工作流。本文介绍如何在 n8n 中安装并使用社区节点 `n8n-nodes-opengauss-datavec`，将 openGauss DataVec 作为向量数据库用于向量检索和 RAG 等场景。
 
----
-
-# 1 概述
+## 概述
 
 `n8n-nodes-opengauss-datavec` 是一个 n8n 社区节点包，封装了 openGauss / openGauss DataVec 向量数据库扩展，提供两个互补的节点：一个面向 LangChain/AI Agent 生态的向量库节点，一个面向传统数据操作的通用 SQL 节点。两者共用同一套 `openGaussDataVecApi` 凭证，可在同一工作流里自由组合（例如：先用 SQL 节点建表，再用向量库节点灌库与检索）。
 
@@ -26,11 +24,9 @@
 | 结构化表的增删改查（业务表 CRUD）                 | openGauss                 | Insert / Select / Update / Upsert / Delete |
 | 让 AI Agent 直接读写业务表                        | openGauss（usableAsTool） | 任意操作                                   |
 
+## 环境准备
 
-
-# 2 环境准备
-
-## 2.1 启动 openGauss 实例
+### 启动 openGauss 实例
 
 本文以容器方式启动 openGauss 实例。
 
@@ -51,13 +47,10 @@ CONTAINER ID   IMAGE                           COMMAND                  CREATED 
 28f7942c4dba   opengauss/opengauss:7.0.0-RC1   "entrypoint.sh gauss…"   3 seconds ago   Up 3 seconds   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   opengauss
 ```
 
-> **说明：**
->
-> openGauss  容器默认已创建 gaussdb 用户和 postgres 库，启动时使用环境变量 `GS_PASSWORD` 指定用户密码。
+> [!NOTE]说明
+> openGauss 容器默认已创建 gaussdb 用户和 postgres 库，启动时使用环境变量 `GS_PASSWORD` 指定用户密码。
 
-
-
-## 2.2 部署 n8n
+### 部署 n8n
 
 本文以容器方式部署 n8n 。
 
@@ -80,11 +73,9 @@ CONTAINER ID   IMAGE                           COMMAND                  CREATED 
 
 通过访问 http://YOUR_SERVER_IP:5678 进入 n8n 登录页面。
 
+## 安装并配置节点
 
-
-# 3 安装并配置节点
-
-## 3.1 安装节点
+### 安装节点
 
 **（1）通过 n8n UI 在线安装节点**
 
@@ -103,13 +94,11 @@ CONTAINER ID   IMAGE                           COMMAND                  CREATED 
 1. 浏览器访问 `http://YOUR_SERVER_IP:5678`
 2. 左侧菜单点击 **+** 按钮 → **Workflow**，新建工作流
 3. 点击画布中央的 **+** 按钮，在弹出的节点窗口中搜索 **openGauss**
-4. 出现 ***openGauss** 和 **openGauss DataVec Store** 节点即安装成功
+4. 出现 *openGauss** 和 **openGauss DataVec Store** 节点即安装成功
 
 ![](./figures/n8n_load.png)
 
-
-
-## 3.2 配置连接凭据
+### 配置连接凭据
 
 凭据用于建立到 openGauss 的连接，所有节点共享。
 
@@ -133,9 +122,7 @@ CONTAINER ID   IMAGE                           COMMAND                  CREATED 
 
 ![](./figures/n8n_conn.png)
 
-
-
-# 4 AI 服务集成
+## AI 服务集成
 
 **（1）创建表**
 
@@ -167,9 +154,7 @@ CONTAINER ID   IMAGE                           COMMAND                  CREATED 
 
 ![](./figures/n8n_rag.png)
 
-
-
-# 5 参考资料
+## 参考资料
 
 - openGauss 官方文档：<https://docs.opengauss.org/>
 - openGauss DataVec：<https://docs.opengauss.org/zh/docs/latest/datavec/>
