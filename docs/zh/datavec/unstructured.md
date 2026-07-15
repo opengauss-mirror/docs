@@ -1,14 +1,12 @@
-# 使用 Unstructured 和 Docling 构建 RAG
+# 使用 openGauss 和 Unstructured 构建 RAG
 
 [Unstructured](https://docs.unstructured.io/welcome) 库（GitHub、PyPI）提供了一个开源工具包，旨在简化各种数据格式的摄取和预处理，包括图像和基于文本的文档，如 PDF、HTML 文件、Word 文档等。该开源库专注于优化大型语言模型（LLM）的数据工作流程，提供了可无缝协作的模块化功能和连接器。这一整合性系统确保了非结构化数据到结构化格式的高效转换，同时还提供了对各种平台和用例的适应性。
 
 在本教程中，我们将向您展示如何使用 openGauss 和 Unstructured 构建一个检索-增强生成（RAG）管道。该管道集成了 Unstructured（用于文档处理）、openGauss（用于向量存储）和 OpenAI（用于生成具有洞察力的上下文感知响应）。
 
+## 准备工作
 
-
-# 1 准备工作
-
-## 1.1 环境配置
+### 环境配置
 
 **（1）配置 Docker 环境**
 
@@ -36,9 +34,7 @@ $ source ~/.bashrc
 $ uv --version
 ```
 
-
-
-## 1.2 LLM 和 Embeddings 模型
+### LLM 和 Embeddings 模型
 
 本文使用千问模型，通过[大模型服务平台百炼控制台](https://bailian.console.aliyun.com/cn-beijing?spm=5176.12818093_47.resourceCenter.1.1b8416d0xa1cot&tab=model#/api-key)获取对应的 API Key 。
 
@@ -51,9 +47,7 @@ $ uv --version
 | 推理模型   | qwen3.5-plus                                      |
 | 向量模型   | text-embedding-v4                                 |
 
-
-
-## 1.3 启动 openGauss 实例
+### 启动 openGauss 实例
 
 本文以容器方式启动 openGauss 实例。
 
@@ -74,13 +68,10 @@ CONTAINER ID   IMAGE                           COMMAND                  CREATED 
 0b27fd4856a6   opengauss/opengauss:7.0.0-RC1   "entrypoint.sh gauss…"   4 hours ago   Up 4 hours   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   opengauss
 ```
 
-> **说明：**
->
+> [!NOTE]说明
 > openGauss  容器默认已创建 gaussdb 用户和 postgres 库，启动时使用环境变量 `GS_PASSWORD` 指定用户密码。
 
-
-
-## 1.4 配置项目环境
+### 配置项目环境
 
 ```shell
 # 创建并进入项目目录
@@ -93,15 +84,12 @@ $ uv venv
 $ uv pip install unstructured[md] openai psycopg2-binary tqdm
 ```
 
-> **说明：**
->
+> [!NOTE]说明
 > 本文以 Markdown 文档为例进行演示，因此安装的依赖包为 `unstructured[md]`，关于其他格式的支持和安装方法可参考：[Full installation - Unstructured](https://docs.unstructured.io/open-source/installation/full-installation)
 
 之后的操作均在该项目环境中进行。
 
-
-
-# 2 使用 Unstructured 处理文件
+## 使用 Unstructured 处理文件
 
 Unstructured 能够在 `unstructured` 数据中使用分块功能，通过 `partition` 功能检测元数据和文档元素，并将元素后处理成更有用的“块”，以用于检索增强生成 (RAG) 等用例。有关支持的输入格式的完整列表，请参阅[官方文档](https://docs.unstructured.io/open-source/introduction/supported-file-types)。
 
@@ -125,7 +113,7 @@ for index, element in enumerate(elements, start=1):
 
 预期输出结果如下。
 
-```
+```shell
 ===== element 1 =====
 向量函数和操作符
 
@@ -161,7 +149,7 @@ for index, chunk in enumerate(chunks, start=1):
 
 预期输出结果如下。
 
-```
+```shell
 ===== chunk 1 =====
 向量函数和操作符
 
@@ -207,7 +195,6 @@ openGauss=# SELECT '[1,2,3,4,5]'::halfvec::vector(5);
 [!NOTE]说明 向量数据类型会和其他类型使用同样的函数名、操作符，为确保执行向量操作无误，建议对至少一个入参进行显式类型转换，如 SELECT l2_distance('[0,0]'::vector, '[3,4]');。
 ********************
 {'file_directory': '.', 'filename': 'vector_functions_and_operators.md', 'filetype': 'text/markdown', 'languages': ['eng'], 'last_modified': '2026-04-23T11:52:23', 'orig_elements': [<unstructured.documents.elements.Title object at 0x7f4f0f918210>, <unstructured.documents.elements.ListItem object at 0x7f4f0f91b4d0>, <unstructured.documents.elements.CodeSnippet object at 0x7f4f0f918c10>, <unstructured.documents.elements.Title object at 0x7f4f0fc6dc10>, <unstructured.documents.elements.ListItem object at 0x7f4f0fc6f150>, <unstructured.documents.elements.CodeSnippet object at 0x7f4f0fc6e850>, <unstructured.documents.elements.Title object at 0x7f4f0fc6e790>, <unstructured.documents.elements.ListItem object at 0x7f4f0fea9e50>, <unstructured.documents.elements.CodeSnippet object at 0x7f4f0fde8690>, <unstructured.documents.elements.Text object at 0x7f4f0fc82c90>]}
-
 ```
 
 
@@ -230,7 +217,7 @@ for index, text in enumerate(texts, start=1):
 
 预期输出结果如下。
 
-```
+```shell
 ===== text 1 =====
 向量函数和操作符
 
@@ -277,11 +264,9 @@ openGauss=# SELECT '[1,2,3,4,5]'::halfvec::vector(5);
 [!NOTE]说明 向量数据类型会和其他类型使用同样的函数名、操作符，为确保执行向量操作无误，建议对至少一个入参进行显式类型转换，如 SELECT l2_distance('[0,0]'::vector, '[3,4]');。
 ```
 
+## 生成向量数据
 
-
-# 3 生成向量数据
-
-## 3.1 初始化 Embeddings
+### 初始化 Embeddings
 
 使用 DASHSCOPE_API_KEY 环境变量指定 api_key。
 
@@ -333,14 +318,12 @@ print(vector[0])
 
 预期输出结果如下。
 
-```
+```shell
 1024
 [-0.03726935014128685, -0.024831822142004967, 0.02821863442659378, 0.04081469401717186, 0.03643345832824707, -0.016703471541404724, -0.002462645061314106, 0.0009011984220705926, -0.055457256734371185, 0.14181376993656158, 0.03251340240240097, -0.033118702471256256, ......]
 ```
 
-
-
-## 3.2 生成向量数据
+### 生成向量数据
 
 将获取的 text 向量化处理，构造包含 ID、文本、向量数据的行式数据结构。
 
@@ -367,15 +350,13 @@ print(dim, rows[0])
 
 预期输出结果如下。
 
-```
+```shell
 1024 ('cb32f8df-0486-4ad4-8fe7-23a6a275b14a', '向量函数和操作符\n\nVector\n\nVector 操作符', [0.019089097157120705, -0.002286019502207637, ......])
 ```
 
+## 将向量数据载入 openGauss
 
-
-# 4 将向量数据载入 openGauss
-
-## 4.1 连接 openGauss 数据库
+### 连接 openGauss 数据库
 
 连接 openGauss 数据库。
 
@@ -399,14 +380,12 @@ print(cursor)
 
 预期输出结果如下。
 
-```
+```shell
 <connection object at 0x7fbc14e6fc40; dsn: 'user=gaussdb password=xxx dbname=postgres host=localhost port=5432', closed: 0>
 <cursor object at 0x7fbc14a58130; closed: 0>
 ```
 
-
-
-## 4.2 创建表
+### 创建表
 
 创建表之前先删除表，防止多次执行脚本时数据被重复写入。
 
@@ -428,10 +407,10 @@ cursor.execute(
 
 创建表，表结构对应在第 3 章中构造出的行数据：
 
-- **`id`：**每条 chunk 的唯一标识
-- **`content`：**chunk 的原始文本内容
-- **`embedding`：**`content` 对应的向量表示
-- **`created_at`：**插入数据时的时间戳
+- **`id`：** 每条 chunk 的唯一标识
+- **`content`：** chunk 的原始文本内容
+- **`embedding`： **`content` 对应的向量表示
+- **`created_at`：** 插入数据时的时间戳
 
 ```python
 cursor.execute(
@@ -476,9 +455,7 @@ print(cursor.fetchall())
 [('id', 'text'), ('content', 'text'), ('embedding', 'vector'), ('created_at', 'timestamp without time zone')]
 ```
 
-
-
-## 4.3 载入向量数据
+### 载入向量数据
 
 将向量数据写入到表中。
 
@@ -520,15 +497,13 @@ print(cursor.fetchall())
 
 预期输出结果如下。
 
-```
+```shell
 [('04b052fc-104d-413b-b19d-cc67b599d1e4', '向量函数和操作符\n\nVector\n\nVector 操作符'), ('801866f9-02c9-4948-945a-dcc6a67211b9', '操作符 描述 + 元素级加法 - 元素级减法 * 元素级乘法 \\= 等于 \\<> 不等于 || 向量拼接 <-> 欧几里得距离 (L2) <#> 负内积 <=> 余弦距离 <+> 曼哈顿距离 (L1)'), ('f6268a01-1847-4088-bc17-3e19ed8b40fb', "描述：元素级加法。\n\n示例：\n\n``` openGauss=> select '[1,2,3]'::vector + '[4,5,6]'; ?column?\n\n[5,7,9] (1 row) ```\n\n描述：元素级减法。\n\n示例：\n\n``` openGauss=> select '[1,2,3]'::vector - '[4,5,6]'; ?column?\n\n[-3,-3,-3] (1 row) ```\n\n描述：元素级乘法。\n\n示例：\n\n``` openGauss=> select '[1,2,3]'::vector * '[4,5,6]'; ?column?\n\n[4,10,18] (1 row) ```\n\n\\=\n\n描述：等于。\n\n示例：\n\n``` openGauss=# select '[1,2,3]'::vector = '[4,5,6]'; ?column?\n\nf (1 row) ```\n\n\\<>\n\n描述：不等于。\n\n示例：\n\n``` openGauss=# select '[1,2,3]'::vector <> '[4,5,6]'; ?column?")]
 ```
 
+## 构建 RAG
 
-
-# 5 构建 RAG
-
-## 5.1 将问题向量化处理
+### 将问题向量化处理
 
 指定查询问题，并将问题向量化处理。
 
@@ -544,13 +519,11 @@ print(question_vec)
 
 预期输出结果如下。
 
-```
+```shell
 [-0.005004278849810362, 0.02674989216029644, -0.05009854584932327, 0.038640279322862625, 0.017689218744635582, -0.04733852669596672, ......]
 ```
 
-
-
-## 5.2 执行向量检索
+### 执行向量检索
 
 进行向量检索，取前 5 条最接近的结果。
 
@@ -577,7 +550,7 @@ print(contexts)
 
 预期输出结果如下。
 
-```
+```shell
 ["描述：元素级加法。\n\n示例：\n\n``` openGauss=> select '[1,2,3]'::vector + '[4,5,6]'; ?column?\n\n[5,7,9] (1 row) ```\n\n描述：元素级减法。\n\n示例：\n\n``` openGauss=> select '[1,2,3]'::vector - '[4,5,6]'; ?column?\n\n[-3,-3,-3] (1 row) ```\n\n描述：元素级乘法。\n\n示例：\n\n``` openGauss=> select '[1,2,3]'::vector * '[4,5,6]'; ?column?\n\n[4,10,18] (1 row) ```\n\n\\=\n\n描述：等于。\n\n示例：\n\n``` openGauss=# select '[1,2,3]'::vector = '[4,5,6]'; ?column?\n\nf (1 row) ```\n\n\\<>\n\n描述：不等于。\n\n示例：\n\n``` openGauss=# select '[1,2,3]'::vector <> '[4,5,6]'; ?column?", "``` openGauss=# SELECT '[0,0]'::vector <+> '[3,4]'; ?column?\n\n    7\n\n(1 row) ```\n\nVector 函数", "``` openGauss=# SELECT subvector('[1,2,3,4,5]'::vector, 1, 3); subvector\n\n[1,2,3] (1 row) ```\n\nvector_dims\n\n描述：向量的维度数。\n\n返回类型：int\n\n示例：\n\n``` openGauss=# SELECT vector_dims('[1,2,3]'::vector); vector_dims\n\n       3\n\n(1 row) ```\n\nvector_norm\n\n描述：欧几里得范数。\n\n返回类型：float8\n\n示例：\n\n``` openGauss=# SELECT vector_norm('[3,4]'); vector_norm\n\n       5\n\n(1 row) ```\n\nVector 聚合函数", "t (1 row) ```\n\n||\n\n描述：向量拼接。\n\n示例：\n\n``` openGauss=> select '[1,2,3]'::vector || '[4,5,6]'; ?column?\n\n[1,2,3,4,5,6] (1 row) ```\n\n<->\n\n描述：欧几里得距离 (L2)。\n\n示例：\n\n``` openGauss=# SELECT '[0,0]'::vector <-> '[3,4]'; ?column?\n\n    5\n\n(1 row) ```\n\n<#>\n\n描述：负内积。\n\n示例：\n\n``` openGauss=# SELECT '[1,2]'::vector <#> '[3,4]'; ?column?\n\n  -11\n\n(1 row) ```\n\n<=>\n\n描述：余弦距离。\n\n示例：\n\n``` openGauss=# SELECT '[1,2]'::vector <=> '[2,4]'; ?column?\n\n    0\n\n(1 row) ```\n\n<+>\n\n描述：曼哈顿距离。\n\n示例：", "返回类型：float8\n\n示例：\n\n``` openGauss=# SELECT l1_distance('[0,0]'::vector, '[3,4]'); l1_distance\n\n       7\n\n(1 row) ```\n\nl2_distance\n\n描述：欧几里得距离 (L2)。\n\n返回类型：float8\n\n示例：\n\n``` openGauss=# SELECT l2_distance('[0,0]'::vector, '[3,4]'); l2_distance\n\n       5\n\n(1 row) ```\n\nl2_normalize\n\n描述：归一化（使用L2距离）。\n\n返回类型：vector\n\n示例：\n\n``` openGauss=# SELECT l2_normalize('[3,4]'::vector); l2_normalize\n\n[0.6,0.8] (1 row) ```\n\nsubvector\n\n描述：截取子向量。\n\n返回类型：vector\n\n示例："]
 ```
 
@@ -597,7 +570,7 @@ print(context_text)
 
 预期输出结果如下。
 
-```
+```shell
 [1] 描述：元素级加法。
 
 示例：
@@ -781,9 +754,7 @@ subvector
 示例：
 ```
 
-
-
-## 5.3 构建 RAG
+### 构建 RAG
 
 构建上下文，为 LLM 定义系统和用户提示。
 
@@ -849,7 +820,7 @@ for chunk in completion:
 
 预期输出结果如下。
 
-```
+```shell
 ====================思考过程====================
 Thinking Process:
 
@@ -880,25 +851,16 @@ Thinking Process:
 - `<+>`：曼哈顿距离
 ```
 
+## 参考资料
+
+- Unstructured 官网：[Welcome to Unstructured! - Unstructured](https://docs.unstructured.io/welcome)
+
+- Milvus 官网文档：[利用 Milvus 和 Unstructured 创建 RAG | Milvus 文档](https://milvus.io/docs/zh/rag_with_milvus_and_unstructured.md)
+
+- 阿里云百炼模型 API：[大模型服务平台百炼控制台](https://bailian.console.aliyun.com/cn-beijing?spm=5176.12818093_47.resourceCenter.1.1b8416d0xa1cot&tab=model#/model-market/detail/qwen3.5-plus?serviceSite=asia-pacific-china)
 
 
-# 参考资料
-
-- Unstructured 官网
-
-  [Welcome to Unstructured! - Unstructured](https://docs.unstructured.io/welcome)
-
-- Milvus 官网文档
-
-  [利用 Milvus 和 Unstructured 创建 RAG | Milvus 文档](https://milvus.io/docs/zh/rag_with_milvus_and_unstructured.md)
-
-- 阿里云百炼模型 API
-
-  [大模型服务平台百炼控制台](https://bailian.console.aliyun.com/cn-beijing?spm=5176.12818093_47.resourceCenter.1.1b8416d0xa1cot&tab=model#/model-market/detail/qwen3.5-plus?serviceSite=asia-pacific-china)
-
-
-
-# 附录
+## 附录
 
 本文最终完整的测试用例如下。
 
