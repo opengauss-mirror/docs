@@ -4,11 +4,9 @@
 
 在本教程中，我们将向您展示如何使用 openGauss 和 Docling 构建一个检索-增强生成（RAG）管道。该管道集成了 Docling（用于文档解析）、openGauss（用于向量存储）和 OpenAI（用于生成具有洞察力的上下文感知响应）。
 
+## 准备工作
 
-
-# 1 准备工作
-
-## 1.1 环境配置
+### 环境配置
 
 **（1）配置 Docker 环境**
 
@@ -36,9 +34,7 @@ $ source ~/.bashrc
 $ uv --version
 ```
 
-
-
-## 1.2 LLM 和 Embeddings 模型
+### LLM 和 Embeddings 模型
 
 本文使用千问模型，通过[大模型服务平台百炼控制台](https://bailian.console.aliyun.com/cn-beijing?spm=5176.12818093_47.resourceCenter.1.1b8416d0xa1cot&tab=model#/api-key)获取对应的 API Key 。
 
@@ -51,9 +47,7 @@ $ uv --version
 | 推理模型   | qwen3.5-plus                                      |
 | 向量模型   | text-embedding-v4                                 |
 
-
-
-## 1.3 启动 openGauss 实例
+### 启动 openGauss 实例
 
 本文以容器方式启动 openGauss 实例。
 
@@ -74,13 +68,10 @@ CONTAINER ID   IMAGE                           COMMAND                  CREATED 
 0b27fd4856a6   opengauss/opengauss:7.0.0-RC1   "entrypoint.sh gauss…"   4 hours ago   Up 4 hours   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   opengauss
 ```
 
-> **说明：**
->
+> [!NOTE]说明
 > openGauss  容器默认已存在 gaussdb 用户和 postgres 库，启动时使用环境变量 `GS_PASSWORD` 指定用户密码。
 
-
-
-## 1.4 配置项目环境
+### 配置项目环境
 
 ```shell
 # 创建并进入项目目录
@@ -95,15 +86,13 @@ $ uv pip install docling openai psycopg2-binary tqdm
 
 之后的操作均在该项目环境中进行。
 
-
-
-# 2 使用 Docling 处理文件
+## 使用 Docling 处理文件
 
 Docling 的核心优势在于能将复杂的 PDF、Word、PPT 等文档高质量地转换为统一、表达丰富的 DoclingDocument 表示格式，并支持多种导出格式和选项。有关支持的输入和输出格式的完整列表，请参阅[官方文档](https://docling-project.github.io/docling/usage/supported_formats/)。
 
 本文以 [HTML](https://docs.opengauss.org/zh/docs/latest/datavec/datavec_overview.html) 文件作为源文件进行操作演示。
 
-## 2.1 将文件转换为 DoclingDocument 格式
+### 将文件转换为 DoclingDocument 格式
 
 将 HTML 文件转换为 DoclingDocument 格式。
 
@@ -122,13 +111,11 @@ print(doc)
 
 预期输出结果如下。
 
-```
+```shell
 schema_name='DoclingDocument' version='1.10.0' name='datavec_overview' origin=DocumentOrigin(mimetype='text/html', binary_hash=7477499220466221947, filename='datavec_overview.html', uri=None) furniture=GroupItem(self_ref='#/furniture', parent=None, children=[], content_layer=<ContentLayer.FURNITURE: 'furniture'>, meta=None, name='_root_', label=<GroupLabel.UNSPECIFIED: 'unspecified'>) body=GroupItem(self_ref='#/body', parent=None, children=[RefItem(cref='#/texts/0'), RefItem(cref='#/texts/1'), RefItem(cref='#/texts/2'), RefItem(cref='#/texts/3'), RefItem(cref='#/texts/4'), RefItem(cref='#/texts/5'), RefItem(cref='#/texts/6'), RefItem(cref='#/texts/7')], ......
 ```
 
-
-
-## 2.2 将文件分块
+### 将文件分块
 
 直接将整个文档存入向量数据库效果不佳。我们需要将其切分成更小的、有语义的片段（chunks）。
 
@@ -155,7 +142,7 @@ for index, chunk in enumerate(chunks, start=1):
 
 预期输出结果如下。
 
-```
+```shell
 ===== chunk 1 =====
 text='本特性自openGauss 6.0.3版本开始引入。' meta=DocMeta(schema_name='docling_core.transforms.chunker.DocMeta', version='1.0.0', doc_items=[TextItem(self_ref='#/texts/9', parent=RefItem(cref='#/texts/8'), children=[], content_layer=<ContentLayer.BODY: 'body'>, meta=None, label=<DocItemLabel.TEXT: 'text'>, prov=[], source=[], comments=[], orig='本特性自openGauss 6.0.3版本开始引入。', text='本特性自openGauss 6.0.3版本开始引入。', formatting=None, hyperlink=None)], headings=['DataVec向量数据库 ', '可获得性 '], captions=None, origin=DocumentOrigin(mimetype='text/html', binary_hash=7477499220466221947, filename='datavec_overview.html', uri=None))
 
@@ -185,7 +172,7 @@ for index, text in enumerate(texts, start=1):
 
 预期输出结果如下。
 
-```
+```shell
 ===== text 1 =====
 本特性自openGauss 6.0.3版本开始引入。
 
@@ -198,11 +185,9 @@ openGauss DataVec 向量数据库是一个基于openGauss的向量引擎， 提�
 版权所有 ©  openGauss 2026 保留一切权利
 ```
 
+## 生成向量数据
 
-
-# 3 生成向量数据
-
-## 3.1 初始化 Embeddings
+### 初始化 Embeddings
 
 使用 DASHSCOPE_API_KEY 环境变量指定 api_key。
 
@@ -254,14 +239,12 @@ print(vector[0])
 
 预期输出结果如下。
 
-```
+```shell
 1024
 [-0.03726935014128685, -0.024831822142004967, 0.02821863442659378, 0.04081469401717186, 0.03643345832824707, -0.016703471541404724, ......]
 ```
 
-
-
-## 3.2 生成向量数据
+### 生成向量数据
 
 将获取的 text 向量化处理，构造包含 ID、文本、向量数据、元数据 JSON 的行式数据结构。
 
@@ -290,15 +273,13 @@ print(dim, rows[0])
 
 预期输出结果如下。
 
-```
+```shell
 1024 ('b8f54eda-e100-425c-9a55-38404a278f9c', '本特性自openGauss 6.0.3版本开始引入。', [-0.011304672807455063, 0.013176502659916878, -0.006658260710537434, 0.004182139411568642, -0.012962790206074715, -0.045071303844451904, ......], '{"source": "https://docs.opengauss.org/zh/docs/latest/datavec/datavec_overview.html", "chunk_index": 0}')
 ```
 
+## 将向量数据载入 openGauss
 
-
-# 4 将向量数据载入 openGauss
-
-## 4.1 连接 openGauss 数据库
+### 连接 openGauss 数据库
 
 连接 openGauss 数据库。
 
@@ -322,14 +303,12 @@ print(cursor)
 
 预期输出结果如下。
 
-```
+```shell
 <connection object at 0x7f0dfd733100; dsn: 'user=gaussdb password=xxx dbname=postgres host=localhost port=5432', closed: 0>
 <cursor object at 0x7f0dfd3cb100; closed: 0>
 ```
 
-
-
-## 4.2 创建表
+### 创建表
 
 创建表之前先删除表，防止多次执行脚本时数据被重复写入。
 
@@ -351,11 +330,11 @@ cursor.execute(
 
 创建表，表结构对应在第 3 章中构造出的行数据：
 
-- **`id`：**每条 chunk 的唯一标识
-- **`content`：**chunk 的原始文本内容
-- **`embedding`：**`content` 对应的向量表示
-- **`metadata`：**结构化元信息
-- **`created_at`：**插入时的时间戳
+- **`id`：** 每条 chunk 的唯一标识
+- **`content`：** chunk 的原始文本内容
+- **`embedding`： **`content` 对应的向量表示
+- **`metadata`：** 结构化元信息
+- **`created_at`：** 插入时的时间戳
 
 ```python
 cursor.execute(
@@ -401,9 +380,7 @@ print(cursor.fetchall())
 [('id', 'text'), ('content', 'text'), ('embedding', 'vector'), ('metadata', 'jsonb'), ('created_at', 'timestamp without time zone')]
 ```
 
-
-
-## 4.3 载入向量数据
+### 载入向量数据
 
 将向量数据写入到表中。
 
@@ -445,15 +422,13 @@ print(cursor.fetchall())
 
 预期输出结果如下。
 
-```
+```shell
 [('7c7c67b0-87ac-4a65-9cc0-5fbd825d1406', '本特性自openGauss 6.0.3版本开始引入。'), ('34f55878-c234-4ccd-a0fb-dacf216f9c72', 'openGauss DataVec 向量数据库是一个基于openGauss的向量引擎， 提供向量数据类型的存储、检索。在处理大规模高维向量数据时，能够提供快速、准确的检索结果。适用于智能知识检索、 检索增强生成 RAG(Retrieval-Augmented Generation) 等各种复杂应用场景的智能应用。'), ('a3dccf20-ace5-41be-b45d-b90fff626c52', 'DataVec目前支持的向量功能有：精确和近似的最近邻搜索、L2距离&余弦距离&内积、向量索引、向量操作函数和操作符。作为openGauss的内核特性，DataVec使用熟悉的SQL语法操作向量，简化了用户使用向量数据库的过程。')]
 ```
 
+## 构建 RAG
 
-
-# 5 构建 RAG
-
-## 5.1 将问题向量化处理
+### 将问题向量化处理
 
 指定查询问题，并将问题向量化处理。
 
@@ -469,13 +444,11 @@ print(question_vec)
 
 预期输出结果如下。
 
-```
+```shell
 [-0.0018750301096588373, 0.05385503172874451, -0.05283939093351364, 0.020286783576011658, 0.02252640388906002, -0.017109649255871773, ......]
 ```
 
-
-
-## 5.2 执行向量检索
+### 执行向量检索
 
 进行向量检索，取前 5 条最接近的结果。
 
@@ -503,7 +476,7 @@ print(contexts)
 
 预期输出结果如下。
 
-```
+```shell
 ['DataVec目前支持的向量功能有：精确和近似的最近邻搜索、L2距离&余弦距离&内积、向量索引、向量操作函数和操作符。作为openGauss的内核特性，DataVec使用熟悉的SQL语法操作向量，简化了用户使用向量数据库的过程。', 'openGauss DataVec 向量数据库是一个基于openGauss的向量引擎， 提供向量数据类型的存储、检索。在处理大规模高维向量数据时，能够提供快速、准确的检索结果。适用于智能知识检索、 检索增强生成 RAG(Retrieval-Augmented Generation) 等各种复杂应用场景的智能应用。', '- [vector](vector_data_type.html#vector) - float向量，最高支持16000维\n- [bitvec](vector_data_type.html#bit) - bit向量，最高支持83,886,080维\n- [sparsevec](vector_data_type.html#sparsevec) - sparse向量，最高支持1,000,000,000维，最高支持16000非零元素数\n- [halfvec](vector_data_type.html#halfvec) - halfvec向量，最高支持16000维', '支持向量类型与普通类型转换、距离计算、向量计算等，具体可参考 [向量函数和操作符](vector_functions_and_operators.html)', 'openGauss DataVec 提供Python、Java、Node.js、Go等多语言生态对接，让你能够通过API调用，快速使能向量数据库能力。同时， DataVec拥抱开源第三方组件，在RAG场景下做到快速兼容，多样选择。 更详细的指导，参考 [向量数据库工具编排使用](dify.html)']
 ```
 
@@ -523,7 +496,7 @@ print(context_text)
 
 预期输出结果如下。
 
-```
+```shell
 [1] DataVec目前支持的向量功能有：精确和近似的最近邻搜索、L2距离&余弦距离&内积、向量索引、向量操作函数和操作符。作为openGauss的内核特性，DataVec使用熟悉的SQL语法操作向量，简化了用户使用向量数据库的过程。
 
 [2] openGauss DataVec 向量数据库是一个基于openGauss的向量引擎， 提供向量数据类型的存储、检索。在处理大规模高维向量数据时，能够提供快速、准确的检索结果。适用于智能知识检索、 检索增强生成 RAG(Retrieval-Augmented Generation) 等各种复杂应用场景的智能应用。
@@ -538,9 +511,7 @@ print(context_text)
 [5] openGauss DataVec 提供Python、Java、Node.js、Go等多语言生态对接，让你能够通过API调用，快速使能向量数据库能力。同时， DataVec拥抱开源第三方组件，在RAG场景下做到快速兼容，多样选择。 更详细的指导，参考 [向量数据库工具编排使用](dify.html)
 ```
 
-
-
-## 5.3 构建 RAG
+### 构建 RAG
 
 构建上下文，为 LLM 定义系统和用户提示。
 
@@ -606,7 +577,7 @@ for chunk in completion:
 
 预期输出结果如下。
 
-```
+```shell
 ====================思考过程====================
 Thinking Process:
 
@@ -630,25 +601,16 @@ Thinking Process:
 4. halfvec（halfvec 向量）
 ```
 
+## 参考资料
+
+- Docling 官网：[Documentation - Docling](https://docling-project.github.io/docling/)
+
+- Milvus 官网文档：[使用 Milvus 和 Docling 构建 RAG | Milvus 文档](https://milvus.io/docs/zh/build_RAG_with_milvus_and_docling.md)
+
+- 阿里云百炼模型 API：[大模型服务平台百炼控制台](https://bailian.console.aliyun.com/cn-beijing?spm=5176.12818093_47.resourceCenter.1.1b8416d0xa1cot&tab=model#/model-market/detail/qwen3.5-plus?serviceSite=asia-pacific-china)
 
 
-# 参考资料
-
-- Docling 官网
-
-  [Documentation - Docling](https://docling-project.github.io/docling/)
-
-- Milvus 官网文档
-
-  [使用 Milvus 和 Docling 构建 RAG | Milvus 文档](https://milvus.io/docs/zh/build_RAG_with_milvus_and_docling.md)
-
-- 阿里云百炼模型 API
-
-  [大模型服务平台百炼控制台](https://bailian.console.aliyun.com/cn-beijing?spm=5176.12818093_47.resourceCenter.1.1b8416d0xa1cot&tab=model#/model-market/detail/qwen3.5-plus?serviceSite=asia-pacific-china)
-
-
-
-# 附录
+## 附录
 
 本文最终完整的测试用例如下。
 
