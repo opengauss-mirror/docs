@@ -127,6 +127,8 @@ sections:
         sections:
           - label: Docling
             href: ./docling.md
+          - label: Unstructured
+            href: ./unstructured.md
       - label:  数据迁移
         sections:
           - label: 从Milvus迁移至openGauss DataVec
