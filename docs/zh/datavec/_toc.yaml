@@ -85,6 +85,8 @@ sections:
             href: ./dify.md
           - label: DB-GPT
             href: ./dbgpt.md
+          - label: n8n
+            href: ./n8n.md
           - label: AnythingLLM
             href: ./anythingllm.md
           - label: LlamaIndex
