@@ -4,13 +4,9 @@ FastGPT 是一个基于大型语言模型（LLMs）的知识型平台，提供�
 
 FastGPT 从 [v4.14.11](https://github.com/labring/FastGPT/releases/tag/v4.14.11) 版本开始支持将 openGauss 作为向量数据库。本文着重介绍如何基于 openGauss 向量数据库完成 FastGPT 的部署，搭建 RAG 引擎语料库。
 
-
-
 ## 前置条件
 
 确保已经安装 Docker 和 [Docker Compose](https://docs.docker.com/compose/) 插件。
-
-
 
 ## 下载 docker-compose.yml
 
@@ -30,8 +26,6 @@ $ curl -o docker-compose.yml https://raw.githubusercontent.com/labring/FastGPT/r
 $ curl -O https://raw.githubusercontent.com/labring/FastGPT/main/projects/app/data/config.json
 ```
 
-
-
 ## 修改配置参数
 
 ### 修改镜像版本
@@ -41,8 +35,6 @@ $ curl -O https://raw.githubusercontent.com/labring/FastGPT/main/projects/app/da
 - fastgpt-app：如 registry.cn-hangzhou.aliyuncs.com/fastgpt/fastgpt:v4.14.11
 - fastgpt-code-sandbox：如 registry.cn-hangzhou.aliyuncs.com/fastgpt/fastgpt-code-sandbox:v4.14.11
 - fastgpt-mcp-server：如 registry.cn-hangzhou.aliyuncs.com/fastgpt/fastgpt-mcp_server:v4.14.11
-
-
 
 ### 修改数据库连接参数
 
@@ -60,8 +52,6 @@ $ curl -O https://raw.githubusercontent.com/labring/FastGPT/main/projects/app/da
   postgresql://${GS_USERNAME}:${GS_PASSWORD}@fastgpt-vector:5432/${GS_DB}
   ```
 
-
-
 ### 修改访问地址
 
 - 修改存储桶访问地址，环境变量为 `STORAGE_EXTERNAL_ENDPOINT`。可以是固定的宿主机 IP 或者域名，注意不要填写成 127.0.0.1 或者 localhost 等本地回环地址，例如 http://192.168.230.241:9000
@@ -71,8 +61,6 @@ $ curl -O https://raw.githubusercontent.com/labring/FastGPT/main/projects/app/da
   
 
 其他镜像版本、参数按照文件或 FastGPT 官方说明配置即可。
-
-
 
 ## 启动服务
 
@@ -107,6 +95,5 @@ $ docker compose down
 
 
 如果您想进一步了解如何使用 FastGPT，请参阅[官方文档](https://doc.fastgpt.io/zh-CN/docs/introduction)。
-
 
 
