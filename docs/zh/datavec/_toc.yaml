@@ -105,6 +105,10 @@ sections:
             href: ./embedding_nomic.md
           - label: openGauss-SentenceTransformer实践
             href: ./sentence_transformer.md
+      - label: LLMs
+        sections:
+          - label: vLLM
+            href: ./vllm.md
       - label:  Agents
         sections:
           - label: MCP
