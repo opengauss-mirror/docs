@@ -285,10 +285,10 @@ cursor.execute(
 
 创建表，表结构对应在第 3 章中构造出的行数据：
 
-- **`id`：**每条 chunk 的唯一标识
-- **`content`：**chunk 的原始文本内容
-- **`embedding`：**`content` 对应的向量表示
-- **`created_at`：**插入时的时间戳
+- **`id`：** 每条 chunk 的唯一标识
+- **`content`：** chunk 的原始文本内容
+- **`embedding`：** `content` 对应的向量表示
+- **`created_at`：** 插入时的时间戳
 
 ```python
 cursor.execute(
