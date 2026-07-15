@@ -1,8 +1,8 @@
 # 容器镜像安装
 
-本章节主要介绍如何获取openGauss数据库镜像，并通过Docker安装，以便用户能快速开启数据库之旅。openGauss镜像主要有两种获取方式，分别可以通过`docker pull`和`docker load`拉取对应镜像，下面将详细介绍这两种获取路径对应的安装方式。
+本章节主要介绍如何获取openGauss数据库镜像，并通过Docker安装，以便用户能快速开启数据库之旅。openGauss镜像主要有两种获取方式，分别可以通过dockerhub和官网获取对应镜像，下面将详细介绍这两种获取路径对应的安装方式。
 
-## 1. docker pull获取镜像并安装
+## 1. dockerhub获取镜像并安装
 
 - 拉取dockerhub镜像
 
@@ -27,7 +27,7 @@ opengauss/opengauss-server   latest              9763e8b26794        2 days ago 
 $ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -p 8888:5432 opengauss/opengauss-server:latest
 ```
 
-## 2. docker load下载镜像并安装
+## 2. 官网下载镜像并安装
 
 - 下载镜像包
 
