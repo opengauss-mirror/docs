@@ -84,7 +84,7 @@ sections:
           - label: Dify
             href: ./dify.md
           - label: DB-GPT
-            href: ./db-gpt.md
+            href: ./dbgpt.md
           - label: n8n
             href: ./n8n.md
           - label: AnythingLLM
