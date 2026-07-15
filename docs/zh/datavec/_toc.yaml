@@ -87,6 +87,8 @@ sections:
             href: ./dbgpt.md
           - label: n8n
             href: ./n8n.md
+          - label: FastGPT
+            href: ./fastgpt.md
           - label: AnythingLLM
             href: ./anythingllm.md
           - label: LlamaIndex
