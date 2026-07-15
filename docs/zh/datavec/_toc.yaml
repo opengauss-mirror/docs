@@ -111,6 +111,8 @@ sections:
             href: ./embedding_nomic.md
           - label: BentoML
             href: ./bentoml.md
+          - label: Jina AI
+            href: ./jinaai.md
           - label: openGauss-SentenceTransformer实践
             href: ./sentence_transformer.md
       - label: LLMs
