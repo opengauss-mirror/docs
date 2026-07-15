@@ -182,7 +182,7 @@
 </div></div>
 </td>
 </tr>
-<tr id="en-us_topic_0283136990_en-us_topic_0237122327_en-us_topic_0059778496_r91607f1d0ef54e908e99838e10b1991d"><td class="cellrowborder" valign="top" width="17.31%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136990_en-us_topic_0237122327_en-us_topic_0059778496_a2f4539679c6342d9ad03ca2dfa6a31bd"><a name="en-us_topic_0283136990_en-us_topic_0237122327_en-us_topic_0059778496_a2f4539679c6342d9ad03ca2dfa6a31bd"></a><a name="en-us_topic_0283136990_en-us_topic_0237122327_en-us_topic_0059778496_a2f4539679c6342d9ad03ca2dfa6a31bd"></a>typenotnull</p>
+<tr id="en-us_topic_0283136990_en-us_topic_0237122327_en-us_topic_0059778496_r91607f1d0ef54e908e99838e10b1991d"><td class="cellrowborder" valign="top" width="17.31%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136990_en-us_topic_0237122327_en-us_topic_0059778496_a2f4539679c6342d9ad03ca2dfa6a31bd"><a name="en-us_topic_0283136990_en-us_topic_0237122327_en-us_topic_0059778496_a2f4539679c6342d9ad03ca2dfa6a31bd"></a><a name="en-us_topic_0283136990_en-us_topic_0237122327_en-us_topic_0059778496_a2f4539679c6342d9ad03ca2dfa6a31bd"></a>typnotnull</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.35%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136990_en-us_topic_0237122327_en-us_topic_0059778496_acb909a6ff2434bedbbfeeb8a4435d032"><a name="en-us_topic_0283136990_en-us_topic_0237122327_en-us_topic_0059778496_acb909a6ff2434bedbbfeeb8a4435d032"></a><a name="en-us_topic_0283136990_en-us_topic_0237122327_en-us_topic_0059778496_acb909a6ff2434bedbbfeeb8a4435d032"></a><span id="text153841524234"><a name="text153841524234"></a><a name="text153841524234"></a>boolean</span></p>
 </td>
