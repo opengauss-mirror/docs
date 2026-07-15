@@ -117,6 +117,8 @@ sections:
         sections:
           - label: vLLM
             href: ./vllm.md
+          - label: DeepSeek
+            href: ./deepseek.md
       - label:  Agents
         sections:
           - label: MCP
