@@ -83,6 +83,10 @@ sections:
         sections:
           - label: Dify
             href: ./dify.md
+          - label: DB-GPT
+ 	          href: ./dbgpt.md
+ 	        - label: FastGPT
+ 	          href: ./fastgpt.md
           - label: n8n
             href: ./n8n.md
           - label: AnythingLLM

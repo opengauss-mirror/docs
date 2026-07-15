@@ -1528,7 +1528,7 @@ Aadds a sequence to the current database. The owner of the sequence is the user 
 ```
 CREATE SEQUENCE name [ INCREMENT [ BY ] increment ]
     [ MINVALUE minvalue | NO MINVALUE | NOMINVALUE] [ MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE]
-    [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE]
+    [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE] [ GLOBAL | SESSION ]
     [ OWNED BY { table_name.column_name | NONE } ];
 ```
 
@@ -2380,6 +2380,7 @@ Inserts new rows into a table.
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 INSERT [/*+ plan_hint */] INTO table_name [ ( column_name [, ...] ) ]
     { DEFAULT VALUES | VALUES {( { expression | DEFAULT } [, ...] ) }[, ...] | query }
+    [ ON CONFLICT [ conflict_target ] conflict_action ]
     [ ON DUPLICATE KEY UPDATE { NOTHING | { column_name = { expression | DEFAULT } } [, ...] } ]
     [ RETURNING {* | {output_expression [ [ AS ] output_name ] }[, ...]} ];
 ```

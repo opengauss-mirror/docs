@@ -16,7 +16,7 @@ DPA（Data Processing Accelerator）哈希聚合加速是openGauss基于UADK框�
 
 DPA哈希聚合加速功能基于[UADK（Unified Accelerator Development Kit）](https://docs.openeuler.org/zh/docs/22.03_LTS/docs/UADK/UADK-quick-start.html)框架，在向量化执行引擎的Vector Hash Aggregate算子中，将SUM、COUNT等聚合运算卸载到硬件加速器执行。支持INT4、INT8、CHAR、VARCHAR等数据类型的分组键，以及BIGINT类型的SUM和多种类型的COUNT聚合函数。当查询不满足加速条件时，系统自动回退到CPU执行，不会导致查询失败。
 
-详细的配置方法和使用指导请参考[配置DPA哈希聚合加速](../performance_tuning_guide/dpa_hash_aggregation_acceleration.md)。
+详细的配置方法和使用指导请参考[配置DPA哈希聚合加速](https://docs.opengauss.org/zh/docs/latest-lite/performance_tuning_guide/dpa_hash_aggregation_acceleration.html)。
 
 ## 特性增强
 
@@ -33,4 +33,4 @@ DPA哈希聚合加速功能基于[UADK（Unified Accelerator Development Kit）]
 ## 依赖关系
 
 - [UADK加速库](https://docs.openeuler.org/zh/docs/22.03_LTS/docs/UADK/UADK-quick-start.html)
-- [向量化引擎](../performance_tuning_guide/vectorized_engine.md)
+- [向量化引擎](https://docs.opengauss.org/zh/docs/latest-lite/performance_tuning_guide/vectorized_engine.html)
