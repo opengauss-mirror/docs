@@ -217,6 +217,8 @@ An OS tool (such as **gstack**) that **gs\_collector** requires has been install
     Specifies the log collection rate. The value is a non-negative integer in the unit of MB/s.
 
     This parameter is used to prevent high disk or network I/O from being generated during log collection. If database nodes are deployed on the same disk where the *$GAUSSLOG/$PGHOST* path is located, they may become faulty due to high I/O. The value of this parameter must not exceed 1/3 of the minimum value of the disk and network I/O in openGauss.
+    
+    This parameter depends on the rsync tool. If it is not installed, please run: yum -y install rsync
 
 - -?, --help
 
