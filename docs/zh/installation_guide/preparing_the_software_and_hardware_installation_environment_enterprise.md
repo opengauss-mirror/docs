@@ -144,15 +144,15 @@
             <td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><a
                     name="ul1537120034117"></a><a name="ul1537120034117"></a>
                 <ul id="ul1537120034117">
-                    <li>openEuler：支持&gt;=Python 3.6.X且&lt;=Python 3.10.X</li>
+                    <li>openEuler 20.03 LTS：支持&gt;=Python 3.7</li>
+                    <li>openEuler 22.03 LTS：支持&gt;=Python 3.9</li>
+                    <li>openEuler 24.03 LTS：支持&gt;=Python 3.11</li>
                     <li>CentOS：支持&gt;=Python 3.6.X且&lt;=Python 3.10.X</li>
                     <li>麒麟：支持Python 3.7.X</li>
                     <li>Asianux：支持Python 3.6.X<div class="note" id="note4799182210208"><a
                                 name="note4799182210208"></a><a name="note4799182210208"></a><span class="notetitle">
                                 说明： </span>
                             <div class="notebody">
-                                <p id="p19799112232010"><a name="p19799112232010"></a>openEuler 2403 LTS 支持python3.11。
-                                </p>
                                 <p id="p19799112232010"><a name="p19799112232010"></a><a
                                         name="p19799112232010"></a>python需要通过--enable-shared方式编译。</p>
                             </div>
