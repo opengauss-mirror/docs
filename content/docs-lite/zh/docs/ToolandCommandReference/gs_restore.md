@@ -243,6 +243,10 @@ gs_restore [OPTION]... FILE
 
     指定解密算法，只支持使用第三方接口库，支持AES128_CBC、AES128_CTR、AES128_GCM、AES256_CBC、AES256_CTR、AES256_GCM、SM4_CBC、SM4_CTR、AES128_CBC_HMAC_SHA256、AES128_CTR_HMAC_SHA256、AES128_GCM_HMAC_SHA256、AES256_CBC_HMAC_SHA256、AES256_CTR_HMAC_SHA256、AES256_GCM_HMAC_SHA256、SM4_CBC_HMAC_SM3、SM4_CTR_HMAC_SM3。如果不带HMAC，表示只做加密。带HMAC表示需要带HMAC运算做完整性校验。
 
+-   --with-key=KEY
+
+    指定使用第三方接口库还原加密备份时的解密密钥。密钥须采用Base64编码，最长44字节。解密密钥应与备份时使用的密钥一致，并与--with-module-params及相应的解密参数配套使用。
+
 -   --with-salt
     
     指定解密IV，16字节长度。
