@@ -299,6 +299,8 @@ sections:
     href: ./gms_stats.md 
   - label: gms_output Extension
     href: ./gms_output.md
+  - label: gms_xmldom Extension
+    href: ./gms_xmldom.md  
   - label: gms_xmlgen Extension
     href: ./gms_xmlgen.md
   - label: gms_xmlparser Extension
@@ -394,7 +396,7 @@ sections:
           - label: XACT_ABORT
             href: ./shark_xact_abort.md
           - label: ALIAS
-            href: ./shark_ALIAS.md
+            href: ./shark-ALIAS.md
       - label: 事务
         sections: 
           - label: 管理事务

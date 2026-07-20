@@ -225,3 +225,5 @@ sections:
             href: ./dolphin_column_name_identifiers.md
   - label: PostGIS Extensions
     href: ./PostGIS.md
+  - label: gms_xmldom Extension
+    href: ./gms_xmldom.md
