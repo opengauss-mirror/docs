@@ -465,6 +465,19 @@
 
 **默认值**： 0
 
+## audit\_async\_notify<a name="section17588151016"></a>
+
+**参数说明**：这个参数决定是否开启对NOTIFY/LISTEN/UNLISTEN操作的审计功能。
+
+该参数属于SIGHUP类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**：整型，0、1。
+
+- 0表示关闭对NOTIFY/LISTEN/UNLISTEN操作的审计功能。
+- 1表示开启对NOTIFY/LISTEN/UNLISTEN操作的审计功能。
+
+**默认值**： 0
+
 >[!TIP]须知
 >
 >如果开启此开关，审计日志中detail\_info信息则以xid开始，例如：

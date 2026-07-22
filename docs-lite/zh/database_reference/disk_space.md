@@ -27,3 +27,13 @@
 **取值范围**： 整型，-1\~2147483647，单位为KB。其中-1表示没有限制。
 
 **默认值**： -1
+
+## max\_notify\_queue\_pages
+
+**参数说明**： 设置允许堆积的NOTIFY消息占用的最大页数（一个页的大小为一个BLCKSZ，即8KB），关于NOTIFY消息详见[NOTIFY](../sql_reference/notify.md)。
+
+该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**： 整型，64\~INT\_MAX。
+
+**默认值**： 1048576
