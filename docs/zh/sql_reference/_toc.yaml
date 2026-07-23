@@ -159,6 +159,8 @@ sections:
             href: ./character_sets.md
           - label: COLLATIONS
             href: ./collations.md 
+          - label: COLUMNS
+            href: ./columns.md 
           - label: KEY_COLUMN_USAGE
             href: ./KEY_COLUMN_USAGE.md    
           - label: PARAMETERS
