@@ -1081,12 +1081,16 @@ sections:
         href: ./grant.md
       - label: INSERT
         href: ./insert.md
+      - label: LISTEN
+        href: ./listen.md
       - label: LOCK
         href: ./lock_sql.md
       - label: MERGE INTO
         href: ./merge_into.md
       - label: MOVE
         href: ./move.md
+      - label: NOTIFY
+        href: ./notify.md
       - label: PREDICT BY
         href: ./predict_by.md
       - label: PREPARE
@@ -1149,6 +1153,8 @@ sections:
         href: ./timecapsule_table.md
       - label: TRUNCATE
         href: ./truncate.md
+      - label: UNLISTEN
+        href: ./unlisten.md
       - label: UPDATE
         href: ./update.md
       - label: VACUUM
