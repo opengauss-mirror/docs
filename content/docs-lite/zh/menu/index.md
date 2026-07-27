@@ -623,6 +623,7 @@ headless: true
 -   [向量数据库]({{< relref "./docs/DataVec/DataVec-Overview.md" >}})
 	-   [快速入门指南]({{< relref "./docs/DataVec/DataVec-quickstart.md" >}})
 	-   [向量存储引擎]({{< relref "./docs/DataVec/DataVec-architecture.md" >}})
+		-   [RABITQ]({{< relref "./docs/DataVec/Rabitq.md" >}})
 		-   [PQ]({{< relref "./docs/DataVec/PQ.md" >}})
 	-   [全文检索索引]({{< relref "./docs/DataVec/FullText.md" >}})
 		-   [BM25索引]({{< relref "./docs/DataVec/BM25索引.md" >}})
