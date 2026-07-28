@@ -24,7 +24,7 @@ It has the same effect as an unqualified  **DELETE**  on each table, but it is f
 
 ```
 TRUNCATE [ TABLE ] [ ONLY ] {table_name [ * ]} [, ... ]
-    [ CONTINUE IDENTITY ] [ CASCADE | RESTRICT] [ PURGE ]};
+    [ CONTINUE IDENTITY | RESTART IDENTITY ] [ CASCADE | RESTRICT] [ PURGE ]};
 ```
 
 - Truncate the data in a partition.
@@ -52,6 +52,10 @@ ALTER TABLE [ IF EXISTS  ] { [ ONLY  ] table_name
 - **CONTINUE IDENTITY**
 
     Does not change the values of sequences. This is the default action.
+
+- **RESTART IDENTITY**
+    
+    Restart all sequences owned by the truncated table.
 
 - **CASCADE | RESTRICT**
     - **CASCADE**: Clears all tables that are added to a group.
@@ -122,4 +126,56 @@ openGauss=# TRUNCATE TABLE tpcds.reason_p;
 
 -- Delete the table.
 openGauss=# DROP TABLE tpcds.reason_p;
+```
+
+```sql
+-- Create a sequence that will be owned by the table to be created.
+openGauss=# CREATE SEQUENCE seq_own;
+CREATE SEQUENCE
+-- Create a sequence that will not be owned by the table to be created.
+openGauss=# CREATE SEQUENCE seq_not_own;
+CREATE SEQUENCE
+-- Create a table whose columns' default values are from sequences.
+openGauss=# CREATE TABLE truncate_a (
+    id1 serial,
+    id2 int default nextval('seq_own'),
+    id3 int default nextval('seq_not_own')
+);
+NOTICE:  CREATE TABLE will create implicit sequence "truncate_a_id1_seq" for serial column "truncate_a.id1"
+CREATE TABLE
+-- Make sequence seq_own owned by truncate_a.id2.
+openGauss=# ALTER SEQUENCE seq_own OWNED BY truncate_a.id2;
+ALTER SEQUENCE
+-- Insert default values.
+openGauss=# INSERT INTO truncate_a DEFAULT VALUES;
+INSERT 0 1
+openGauss=# INSERT INTO truncate_a DEFAULT VALUES;
+INSERT 0 1
+-- Query the table.
+openGauss=# SELECT * FROM truncate_a;
+ id1 | id2 | id3 
+-----+-----+-----
+   1 |   1 |   1
+   2 |   2 |   2
+(2 rows)
+
+-- Clear the table, and restart the sequence seq_own and truncate_a_id1_seq that are owned by table truncate_a.
+openGauss=# TRUNCATE TABLE truncate_a RESTART IDENTITY;
+TRUNCATE TABLE
+-- Insert default values again.
+openGauss=# INSERT INTO truncate_a DEFAULT VALUES;
+INSERT 0 1
+openGauss=# INSERT INTO truncate_a DEFAULT VALUES;
+INSERT 0 1
+-- Query the table again, values of column id1 and id2 starts from the beginning, while values of id3 are not.
+openGauss=# SELECT * FROM truncate_a;
+ id1 | id2 | id3 
+-----+-----+-----
+   1 |   1 |   3
+   2 |   2 |   4
+(2 rows)
+
+-- Delete the table.
+openGauss=# DROP TABLE truncate_a;
+DROP TABLE
 ```

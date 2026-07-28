@@ -24,7 +24,7 @@
 
 ```
 TRUNCATE [ TABLE ] [ ONLY ] {table_name [ * ]} [, ... ]
-    [ CONTINUE IDENTITY ] [ CASCADE | RESTRICT][PURGE]};
+    [ CONTINUE IDENTITY | RESTART IDENTITY ] [ CASCADE | RESTRICT][PURGE]};
 ```
 
 - 清理表分区的数据。
@@ -52,6 +52,10 @@ ALTER TABLE [ IF EXISTS  ] { [ ONLY  ] table_name
 - **CONTINUE IDENTITY**
 
     不改变序列的值。这是缺省值。
+
+- **RESTART IDENTITY**
+
+    令属于指定表的序列回归初始状态，重新开始产生值。
 
 - **CASCADE | RESTRICT**
     - CASCADE：级联清空所有由于CASCADE而被添加到组中的表。
@@ -122,4 +126,56 @@ openGauss=# TRUNCATE TABLE tpcds.reason_p;
 
 --删除表。
 openGauss=# DROP TABLE tpcds.reason_p;
+```
+
+```sql
+-- 创建将要归属于表的序列。
+openGauss=# CREATE SEQUENCE seq_own;
+CREATE SEQUENCE
+-- 创建不归属于表的序列。
+openGauss=# CREATE SEQUENCE seq_not_own;
+CREATE SEQUENCE
+-- 创建表，且表的列的默认值来自序列。
+openGauss=# CREATE TABLE truncate_a (
+    id1 serial,
+    id2 int default nextval('seq_own'),
+    id3 int default nextval('seq_not_own')
+);
+NOTICE:  CREATE TABLE will create implicit sequence "truncate_a_id1_seq" for serial column "truncate_a.id1"
+CREATE TABLE
+-- 将序列seq_own的属主更改为表truncate_a的id2列。
+openGauss=# ALTER SEQUENCE seq_own OWNED BY truncate_a.id2;
+ALTER SEQUENCE
+-- 向表中插入默认值。
+openGauss=# INSERT INTO truncate_a DEFAULT VALUES;
+INSERT 0 1
+openGauss=# INSERT INTO truncate_a DEFAULT VALUES;
+INSERT 0 1
+-- 查看表中的值。
+openGauss=# SELECT * FROM truncate_a;
+ id1 | id2 | id3 
+-----+-----+-----
+   1 |   1 |   1
+   2 |   2 |   2
+(2 rows)
+
+-- 清空表，同时令表拥有的序列seq_own和truncate_a_id1_seq重新开始。
+openGauss=# TRUNCATE TABLE truncate_a RESTART IDENTITY;
+TRUNCATE TABLE
+-- 再次向表中插入默认值。
+openGauss=# INSERT INTO truncate_a DEFAULT VALUES;
+INSERT 0 1
+openGauss=# INSERT INTO truncate_a DEFAULT VALUES;
+INSERT 0 1
+-- 再次查看表中的值，id1和id2列值从头开始，id3列的值没有从头开始。
+openGauss=# SELECT * FROM truncate_a;
+ id1 | id2 | id3 
+-----+-----+-----
+   1 |   1 |   3
+   2 |   2 |   4
+(2 rows)
+
+-- 删除表。
+openGauss=# DROP TABLE truncate_a;
+DROP TABLE
 ```
