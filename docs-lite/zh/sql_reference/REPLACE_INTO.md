@@ -16,6 +16,7 @@
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 REPLACE [/*+ plan_hint */] INTO table_name [partition_clause] [ AS alias ] [ ( column_name [, ...] ) ]
+    [ OVERRIDING { SYSTEM | USER } VALUE ]
     { DEFAULT VALUES
     | VALUES {( { expression | DEFAULT } [, ...] ) }[, ...] 
     | query }
@@ -80,6 +81,12 @@ NULL。
 
     取值范围：已存在的字段名。
 
+- **OVERRIDING \{ SYSTEM | USER \} VALUE**
+
+    该子句用于插入identity列时的行为控制。
+
+    - `OVERRIDING SYSTEM VALUE`用于覆盖identity列生成的系统值，`OVERRIDING USER VALUE`用于覆盖用户自定义值。
+
 - **expression**
 
     赋予对应column的一个有效表达式或值。
@@ -118,7 +125,8 @@ NULL。
 
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 
-```
+- replace into语句基础示例
+```sql
 -- 创建表test.
 openGauss=# CREATE TABLE test (col1 int PRIMARY KEY, col2 INT);
 
@@ -151,4 +159,20 @@ openGauss=# select * from test;
     1 |    5
     2 |    6
 (4 rows)
+```
 
+- OVERRIDING clause示例
+```sql
+openGauss=# CREATE TABLE test_t1 (a int GENERATED ALWAYS AS IDENTITY, b text, c int);
+NOTICE:  CREATE TABLE will create implicit sequence "test_t1_a_seq" for serial column "test_t1.a"
+CREATE TABLE
+openGauss=# REPLACE INTO test_t1 (a, b, c) VALUES (1, 'alice', 25); -- error
+ERROR:  cannot insert a non-DEFAULT value into column "a"
+DETAIL:  Column "a" is an identity column defined as "GENERATED ALWAYS".
+HINT:  Use OVERRIDING SYSTEM VALUE to override.
+openGauss=# -- error REPLACE can not work on sequence!
+openGauss=# REPLACE INTO test_t1 (a, b, c) OVERRIDING SYSTEM VALUE VALUES (1, 'alice', 25);
+ERROR:  REPLACE can not work on sequence!
+openGauss=# 
+
+```

@@ -190,5 +190,19 @@ PG\_ATTRIBUTE系统表存储关于表字段的信息。
 <p id="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p173371358124510"><a name="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p173371358124510"></a><a name="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p173371358124510"></a>3. ATT_KV_TIMETAG：时间列。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0283137510_zh-cn_topic_0237122272_row1718431494418"><td class="cellrowborder" valign="top" width="14.499999999999998%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p51842014164410"><a name="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p51842014164410"></a><a name="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p51842014164410"></a>attdroppedname</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.919999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p6184101464413"><a name="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p6184101464413"></a><a name="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p6184101464413"></a>name</p>
+</td>
+<td class="cellrowborder" valign="top" width="67.58%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p11841145443"><a name="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p11841145443"></a><a name="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p11841145443"></a>被删除前的字段名</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283137510_zh-cn_topic_0237122272_row1718431494418"><td class="cellrowborder" valign="top" width="14.499999999999998%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p51842014164410"><a name="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p51842014164410"></a><a name="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p51842014164410"></a>attidentity</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.919999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p6184101464413"><a name="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p6184101464413"></a><a name="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p6184101464413"></a>char</p>
+</td>
+<td class="cellrowborder" valign="top" width="67.58%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p11841145443"><a name="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p11841145443"></a><a name="zh-cn_topic_0283137510_zh-cn_topic_0237122272_p11841145443"></a>某一列的identity属性, 取值为'a','d'或者'm'</p>
+</td>
+</tr>
 </tbody>
 </table>

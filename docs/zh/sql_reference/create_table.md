@@ -50,6 +50,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       CHECK ( expression ) |
       DEFAULT default_expr |
       GENERATED ALWAYS AS ( generation_expr ) [STORED] |
+      GENERATED [ ALWAYS | BY DEFAULT ] AS IDENTITY [ ( seq_options ) ] |
       AUTO_INCREMENT |
       ON UPDATE update_expr |
       UNIQUE [KEY] index_parameters |
@@ -85,7 +86,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 - 其中like选项like\_option为：
 
     ```
-    { INCLUDING | EXCLUDING } { DEFAULTS | GENERATED | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | PARTITION | RELOPTIONS | ALL }
+    { INCLUDING | EXCLUDING } { DEFAULTS | GENERATED | IDENTITY | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | PARTITION | RELOPTIONS | ALL }
     ```
 
 - 其中索引参数index\_parameters为：
@@ -93,6 +94,13 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     ```
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
     [ USING INDEX TABLESPACE tablespace_name ]
+    ```
+
+- 其中seq\_options为：
+    ```
+     { MAXVALUE | MINVALUE | START WITH | START | INCREMENT [ BY ] | CACHE | RESTART [ WITH ] } NumericOnly
+     | { NOMAXVALUE | MINVALUE | NO MAXVALUE | NO MINVALUE | NOCYCLE | [ NO ] CYCLE }
+     | OWNED BY name
     ```
 
 ## 参数说明<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428"></a>
@@ -311,7 +319,8 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     - INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION和INCLUDING RELOPTIONS的内容。
     - ATUO_INCREMENT列需要为主键或唯一约束的第一个字段，若复制包含AUTO_INCREAMENT列的表时指定EXCLUDING INDEX，将会报错。其中AUTO_INCREAMENT只在B库中生效。
     - 新表自动从这个表中继承所有字段名及其数据类型和非空约束，新表与源表之间在创建动作完毕之后是完全无关的。
-   
+    - INCLUDING IDENTITY用于复制表列的identity属性，会创建新的序列而不会复制潜在序列的选项，新序列选项默认。该选项不支持分区表。
+
     >[!TIP]须知
     >
     >- 如果源表包含serial、bigserial、smallserial、largeserial类型，或者源表字段的默认值是sequence，且sequence属于源表（通过CREATE SEQUENCE ... OWNED BY创建），这些Sequence不会关联到新表中，新表中会重新创建属于自己的sequence。这和之前版本的处理逻辑不同。如果用户希望源表和新表共享Sequence，需要首先创建一个共享的Sequence（避免使用OWNED BY），并配置为源表字段默认值，这样创建的新表会和源表共享该Sequence。
@@ -323,7 +332,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >- 如果源表是本地临时表，则新表也必须是本地临时表，否则会报错。
     >
     >- 如果源表是hash或list分区表，则在CREATE TABLE ... (LIKE ... INCLUDIING PARTITION)时会报错，不支持复制hash或list分区表的分区，仅支持range分区。对于二级分区表，同样只支持range-range二级分区。
-    
+
 - **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
 
     这个子句为表或索引指定一个可选的存储参数。用于表的WITH子句还可以包含OIDS=FALSE表示不分配OID。
@@ -495,9 +504,9 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         取值范围：on/off。
     
         默认值：on。
-  
-  + collate
-  
+
+    - collate
+
     在B模式数据库下（即sql\_compatibility = 'B'）用于记录表的默认字符序，一般只用于内部存储和导入导出，不推荐用户指定或修改。
   
     取值范围：B模式数据库中独立支持的字符序的oid。
@@ -565,7 +574,8 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     缺省表达式将被用于任何未声明该字段数值的插入操作。如果没有指定缺省值则缺省值为NULL 。
 
-+ **GENERATED ALWAYS AS \( generation\_expr \) \[STORED\]**
+
+- **GENERATED ALWAYS AS \( generation\_expr \) \[STORED\]**
 
   该子句将字段创建为生成列，生成列的值在写入（插入或更新）数据时由generation\_expr计算得到，STORED表示像普通列一样存储生成列的值。
 
@@ -580,6 +590,26 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
   >- 生成列不能被直接写入。在INSERT或UPDATE命令中, 不能为生成列指定值, 但是可以指定关键字DEFAULT。
   >- 生成列的权限控制和普通列一样。
   >- 列存表、内存表MOT不支持生成列。外表中仅postgres\_fdw支持生成列。
+
+- **GENERATED \[ ALWAYS | BY DEFAULT \] AS IDENTITY \[ \( seq\_options \) \]**
+
+    该语句创建identity列，用于生成自增/自减的序列。
+
+    若在插入时不指定此列的值（或者指定为DEFAULT），则会默认生成。
+
+    当列定义为`GANERATED ALWAYS`时，若想插入用户值需要使用`OVERRIDING SYSTEM VALUE`子句，否则会报错，对于UPDATE只能更新为`DEFAULT`；
+    当列定义为`GANERATED BY DEFAULT`时，用户提供的值会优先于默认值。
+
+    `seq_options`可以用于指定序列的选项。
+
+    >[!NOTE]说明
+    >
+    >- 该列的数据类型仅为整型，NUMERIC类型，该列隐式包含`NOT NULL`约束。
+    >- 无法同时定义default，serial，auto_increment，生成列，NULL约束。
+    >- 序列生成非事务操作，当列/表约束检查失败，触发器失败时该列已生成的值不会回滚。
+    >- 用户自定义的值不会影响该列的下一个值的生成，
+    >- 可以定义多列，但同一列不能重复定义。
+    >- 不支持分区表。
 
 - **AUTO\_INCREMENT**
 
@@ -700,8 +730,8 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
 ## 示例<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8"></a>
 
-```
---创建简单的表。
+- 创建简单的表。
+```sql
 openGauss=# CREATE TABLE tpcds.warehouse_t1
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
@@ -739,8 +769,8 @@ openGauss=# CREATE TABLE tpcds.warehouse_t2
 );
 ```
 
-```
---创建表，并指定W_STATE字段的缺省值为GA。
+- 创建表，并指定W_STATE字段的缺省值为GA。
+```sql
 openGauss=# CREATE TABLE tpcds.warehouse_t3
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
@@ -779,8 +809,8 @@ openGauss=# CREATE TABLE tpcds.warehouse_t4
 );
 ```
 
-```
---创建一个带有70%填充因子的表。
+- 创建一个带有70%填充因子的表。
+```sql
 openGauss=# CREATE TABLE tpcds.warehouse_t5
 (
     W_WAREHOUSE_SK            INTEGER                NOT NULL,
@@ -819,7 +849,10 @@ openGauss=# CREATE TABLE tpcds.warehouse_t6
     W_GMT_OFFSET              DECIMAL(5,2)
 ) WITH(fillfactor=70);
 
---创建表，并指定该表数据不写入预写日志。
+```
+
+- 创建表，并指定该表数据不写入预写日志。
+```sql
 openGauss=# CREATE UNLOGGED TABLE tpcds.warehouse_t7
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
@@ -837,8 +870,10 @@ openGauss=# CREATE UNLOGGED TABLE tpcds.warehouse_t7
     W_COUNTRY                 VARCHAR(20)                   ,
     W_GMT_OFFSET              DECIMAL(5,2)
 );
+```
 
---创建表临时表。
+- 创建表临时表。
+```sql
 openGauss=# CREATE TEMPORARY TABLE warehouse_t24
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
@@ -885,7 +920,10 @@ openGauss=# CREATE GLOBAL TEMPORARY TABLE gtt1
     POSTCODE                  CHAR(6)
 ) ON COMMIT PRESERVE ROWS;
 
---创建表时，不希望因为表已存在而报错。
+```
+
+- 创建表时，不希望因为表已存在而报错。
+```sql
 openGauss=# CREATE TABLE IF NOT EXISTS tpcds.warehouse_t8
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
@@ -903,8 +941,10 @@ openGauss=# CREATE TABLE IF NOT EXISTS tpcds.warehouse_t8
     W_COUNTRY                 VARCHAR(20)                   ,
     W_GMT_OFFSET              DECIMAL(5,2)
 );
+```
 
---创建普通表空间。
+- 创建普通表空间。
+```sql
 openGauss=# CREATE TABLESPACE DS_TABLESPACE1 RELATIVE LOCATION 'tablespace/tablespace_1';
 --创建表时，指定表空间。
 openGauss=# CREATE TABLE tpcds.warehouse_t9
@@ -945,8 +985,8 @@ openGauss=# CREATE TABLE tpcds.warehouse_t10
 );
 ```
 
-```
---创建一个有主键约束的表。
+- 创建一个有主键约束的表。
+```sql
 openGauss=# CREATE TABLE tpcds.warehouse_t11
 (
     W_WAREHOUSE_SK            INTEGER            PRIMARY KEY,
@@ -1024,7 +1064,10 @@ openGauss=# CREATE TABLE tpcds.warehouse_t14
     W_GMT_OFFSET              DECIMAL(5,2),
     CONSTRAINT W_CSTR_KEY2 PRIMARY KEY(W_WAREHOUSE_SK, W_WAREHOUSE_ID)
 );
---创建列存表。
+```
+
+- 创建列存表。
+```sql
 openGauss=# CREATE TABLE tpcds.warehouse_t15
 (
     W_WAREHOUSE_SK            INTEGER               NOT NULL,
@@ -1082,8 +1125,10 @@ openGauss=# CREATE TABLE tpcds.warehouse_t17
     W_GMT_OFFSET              DECIMAL(5,2)
 ) WITH (ORIENTATION = COLUMN, COMPRESSION=HIGH);
 
+```
 
---定义一个检查列约束。
+- 定义一个检查列约束。
+```sql
 openGauss=# CREATE TABLE tpcds.warehouse_t19
 (
     W_WAREHOUSE_SK            INTEGER               PRIMARY KEY CHECK (W_WAREHOUSE_SK > 0),
@@ -1121,7 +1166,10 @@ openGauss=# CREATE TABLE tpcds.warehouse_t20
     CONSTRAINT W_CONSTR_KEY2 CHECK(W_WAREHOUSE_SK > 0 AND W_WAREHOUSE_NAME IS NOT NULL) 
 );
 
---创建一个有外键约束的表。
+```
+
+- 创建一个有外键约束的表。
+```sql
 openGauss=# CREATE TABLE tpcds.city_t23
 (
     W_CITY            VARCHAR(60)                PRIMARY KEY,
@@ -1185,30 +1233,40 @@ openGauss=# CREATE TABLE tpcds.warehouse_t23
     CONSTRAINT W_FORE_KEY1 FOREIGN KEY(W_CITY) REFERENCES tpcds.city_t23(W_CITY)
 );
 
---向tpcds.warehouse_t19表中增加一个varchar列。
 ```
 
-```
+- 向tpcds.warehouse_t19表中增加一个varchar列。
+```sql
 openGauss=# ALTER TABLE tpcds.warehouse_t19 ADD W_GOODS_CATEGORY varchar(30);
 
---给tpcds.warehouse_t19表增加一个检查约束。
-openGauss=# ALTER TABLE tpcds.warehouse_t19 ADD CONSTRAINT W_CONSTR_KEY4 CHECK (W_STATE IS NOT NULL);
+```
 
---在一个操作中改变两个现存字段的类型。
+- 给tpcds.warehouse_t19表增加一个检查约束。
+```sql
+openGauss=# ALTER TABLE tpcds.warehouse_t19 ADD CONSTRAINT W_CONSTR_KEY4 CHECK (W_STATE IS NOT NULL);
+```
+
+- 在一个操作中改变两个现存字段的类型。
+```sql
 openGauss=# ALTER TABLE tpcds.warehouse_t19
     ALTER COLUMN W_GOODS_CATEGORY TYPE varchar(80),
     ALTER COLUMN W_STREET_NAME TYPE varchar(100);
 
 --此语句与上面语句等效。
 openGauss=# ALTER TABLE tpcds.warehouse_t19 MODIFY (W_GOODS_CATEGORY varchar(30), W_STREET_NAME varchar(60));
-
---给一个已存在字段添加非空约束。
+```
+- 给一个已存在字段添加非空约束。
+```sql
 openGauss=# ALTER TABLE tpcds.warehouse_t19 ALTER COLUMN W_GOODS_CATEGORY SET NOT NULL;
+```
 
---移除已存在字段的非空约束。
+- 移除已存在字段的非空约束。
+```sql
 openGauss=# ALTER TABLE tpcds.warehouse_t19 ALTER COLUMN W_GOODS_CATEGORY DROP NOT NULL;
+```
 
---如果列存表中还未指定局部聚簇，向在一个列存表中添加局部聚簇列。
+- 如果列存表中还未指定局部聚簇，向在一个列存表中添加局部聚簇列。
+```sql
 openGauss=# ALTER TABLE tpcds.warehouse_t17 ADD PARTIAL CLUSTER KEY(W_WAREHOUSE_SK);
 
 --查看约束的名称，并删除一个列存表中的局部聚簇列。
@@ -1236,8 +1294,10 @@ Has OIDs: no
 Location Nodes: ALL DATANODES
 Options: compression=no, version=0.12
 openGauss=# ALTER TABLE tpcds.warehouse_t17 DROP CONSTRAINT warehouse_t17_cluster;
+```
 
---将表移动到另一个表空间。
+- 将表移动到另一个表空间。
+```sql
 openGauss=# ALTER TABLE tpcds.warehouse_t19 SET TABLESPACE PG_DEFAULT; 
 --创建模式joe。
 openGauss=# CREATE SCHEMA joe;
@@ -1248,10 +1308,15 @@ openGauss=# ALTER TABLE tpcds.warehouse_t19 SET SCHEMA joe;
 --重命名已存在的表。
 openGauss=# ALTER TABLE joe.warehouse_t19 RENAME TO warehouse_t23;
 
---从warehouse_t23表中删除一个字段。
-openGauss=# ALTER TABLE joe.warehouse_t23 DROP COLUMN W_STREET_NAME;
+```
 
---创建带INVISIBLE唯一索引的表，需要在B兼容性数据库下
+- 从warehouse_t23表中删除一个字段。
+```sql
+openGauss=# ALTER TABLE joe.warehouse_t23 DROP COLUMN W_STREET_NAME;
+```
+
+- 创建带INVISIBLE唯一索引的表，需要在B兼容性数据库下
+```sql
 openGauss=# CREATE TABLE tpcds.warehouse_t26
 (
     W_WAREHOUSE_SK            INTEGER                NOT NULL,
@@ -1300,6 +1365,62 @@ openGauss=# DROP TABLE tpcds.warehouse_t26;
 openGauss=# DROP TABLESPACE DS_TABLESPACE1;
 openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
 ```
+
+- 创建identity列
+```sql
+openGauss=# create table t1 (a int generated always as identity, b int);
+NOTICE:  CREATE TABLE will create implicit sequence "t1_a_seq" for serial column "t1.a"
+CREATE TABLE
+openGauss=# \d+ t1
+                                        Table "public.t1"
+ Column |  Type   |               Modifiers               | Storage | Stats target | Description 
+--------+---------+---------------------------------------+---------+--------------+-------------
+ a      | integer | not null generated always as identity | plain   |              | 
+ b      | integer |                                       | plain   |              | 
+Has OIDs: no
+Options: orientation=row, compression=no
+
+openGauss=# create table t2 (a int generated by default as identity, b int);
+NOTICE:  CREATE TABLE will create implicit sequence "t2_a_seq" for serial column "t2.a"
+CREATE TABLE
+openGauss=# \d+ t2
+                                          Table "public.t2"
+ Column |  Type   |                 Modifiers                 | Storage | Stats target | Description 
+--------+---------+-------------------------------------------+---------+--------------+-------------
+ a      | integer | not null generated by default as identity | plain   |              | 
+ b      | integer |                                           | plain   |              | 
+Has OIDs: no
+Options: orientation=row, compression=no
+
+```
+
+- create table like (including identity)
+```sql
+openGauss=# create table t2_1 (like t2);
+CREATE TABLE
+openGauss=# \d+ t2_1
+                         Table "public.t2_1"
+ Column |  Type   | Modifiers | Storage | Stats target | Description 
+--------+---------+-----------+---------+--------------+-------------
+ a      | integer | not null  | plain   |              | 
+ b      | integer |           | plain   |              | 
+Has OIDs: no
+Options: orientation=row, compression=no
+
+openGauss=# create table t2_2 (like t2 including identity);
+NOTICE:  CREATE TABLE will create implicit sequence "t2_2_a_seq" for serial column "t2_2.a"
+CREATE TABLE
+openGauss=# \d+ t2_2
+                                         Table "public.t2_2"
+ Column |  Type   |                 Modifiers                 | Storage | Stats target | Description 
+--------+---------+-------------------------------------------+---------+--------------+-------------
+ a      | integer | not null generated by default as identity | plain   |              | 
+ b      | integer |                                           | plain   |              | 
+Has OIDs: no
+Options: orientation=row, compression=no
+
+```
+
 
 ## 相关链接<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_scd5caca899f849f697cb50d76c49de4c"></a>
 
