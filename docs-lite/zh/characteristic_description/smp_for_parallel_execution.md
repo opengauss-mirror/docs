@@ -36,6 +36,10 @@ SMP并行技术充分利用了系统多核的能力，来提高重查询的性�
 - 会触发trigger的查询不支持并行执行，特别的，对包含外键的表执行INSERT/UPDATE/DELETE操作会触发trigger。 
 - 包含rownum的查询不支持并行执行。
 - 涉及拼接大于1G的LOB的语句不支持并行执行。
+- 不满足条件的INSERT INTO SELECT、UPDATE、DELETE、MERGE INTO操作不支持并行。具体约束如下：
+    - 全局临时表不支持INSERT/UPDATE/DELETE语句并行
+    - 不支持有UPSERT/RETURNING子句的INSERT语句并行
+    - 带有PCR UBTree索引的USTORE表不支持INSERT语句并行。
 
 ## 依赖关系<a name="section20491151513592"></a>
 
