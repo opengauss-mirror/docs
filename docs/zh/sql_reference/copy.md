@@ -1,4 +1,4 @@
-# COPY
+# COPY<a name="ZH-CN_TOPIC_0289899982"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136676_zh-cn_topic_0237122096_zh-cn_topic_0059778766_s0d743b5d862d4cf1829449f474af6d9c"></a>
 
@@ -669,3 +669,5 @@ openGauss=# COPY tpcds.ship_mode_t1 FROM '/home/omm/ds_ship_mode.dat' FIXED FORM
 --删除tpcds.ship_mode_t1。
 openGauss=# DROP TABLE tpcds.ship_mode_t1;
 ```
+## 相关链接 <a name="ZH-CN_TOPIC_0289899982_related_links"></a>
+[PG_STAT_PROGRESS_COPY](../database_reference/PG_STAT_PROGRESS_COPY.md)
