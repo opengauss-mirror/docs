@@ -70,6 +70,11 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
    FROM DUAL
    ```
 
+   >[!NOTE]说明
+   >对于`SELECT * FROM DUAL`，会返回列名为`not_used`类型为`int64`值为`1`的值。
+   >该特殊列只是`*`展开时构造的列，在同一层中`SELECT`的`Target List`/`WHERE`/`HAVING`中无法被引用, `SORT`和`GROUP BY`中可以引用该特殊列名。
+   >作为子查询时，该子查询会导出该列名，外层查询可以引用该列`subquery.not_used`。
+
 - 其中group子句为：
 
     ```
@@ -151,7 +156,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 - SOUNDS LIKE子句示例：同音字段查询
 
-```
+```sql
 openGauss=# CREATE TABLE TEST(id int, name varchar);
 openGauss=# INSERT INTO TEST VALUES(1, 'too');
 openGauss=# SELECT * FROM TEST WHERE name SOUNDS LIKE 'two';
@@ -163,7 +168,7 @@ openGauss=# SELECT * FROM TEST WHERE name SOUNDS LIKE 'two';
 
 - SELECT GROUP BY子句中使用ROLLUP
 
-```
+```sql
 openGauss=# CREATE TABLESPACE t_tbspace ADD DATAFILE 'my_tablespace' ENGINE = test_engine;
 CREATE TABLESPACE
 openGauss=# CREATE TABLE t_with_rollup(id int, name varchar(20), area varchar(50), count int);
@@ -197,7 +202,7 @@ openGauss=# SELECT name, sum(count) FROM t_with_rollup GROUP BY (name) WITH ROLL
 (4 rows)
 ```
 
-```
+```sql
 openGauss=# create table join_1(col1 int4, col2 int8);
 
 openGauss=# create table join_2(col1 int4, col2 int8);
@@ -232,7 +237,7 @@ openGauss=# select join_1 inner join join_2;
 
 - SELECT 语句中使用FROM DUAL 示例
 
-```
+```sql
 openGauss=# select 1 as col;
  col
 -----
@@ -243,11 +248,75 @@ openGauss=# select 1 as col FROM DUAL;
 -----
    1
 (1 row)
+openGauss=# select * from dual;
+ not_used 
+----------
+        1
+(1 row)
+openGauss=# select not_used from dual; -- error
+ERROR:  column "not_used" does not exist
+LINE 1: select not_used from dual;
+               ^
+openGauss= select * from dual where not_used = 1; -- where: can't reference to dual
+ERROR:  column "not_used" does not exist
+LINE 1: select * from dual where not_used = 1;
+                                 ^
+openGauss=# select * from dual having not_used > 1; -- having
+ERROR:  column "not_used" does not exist
+LINE 1: select * from dual having not_used > 1;
+                                  ^
+openGauss=# select * from dual order by not_used; -- order by
+ not_used 
+----------
+        1
+(1 row)
+openGauss= select not_used from (select  * from dual); -- not_used column exported from subquery
+ not_used 
+----------
+        1
+(1 row)
+openGauss=# create table t1 (not_used int);
+CREATE TABLE
+openGauss=# insert into t1 values(1);
+INSERT 0 1
+openGauss=# create table t2 (a int);
+CREATE TABLE
+openGauss=# insert into t2 values(1);
+INSERT 0 1
+openGauss=# create table t3 (id int);
+CREATE TABLE
+openGauss=# insert into t3 values(1);
+INSERT 0 1
+openGauss=# select not_used from t1, (select * from dual) sub1; -- t1 has not_used column, sub1 exports not_used column
+ERROR:  column reference "not_used" is ambiguous
+LINE 1: select not_used from t1, (select * from dual) sub1;
+               ^
+CONTEXT:  referenced column: not_used
+openGauss=# select t1.not_used, sub1.not_used from t1, (select * from dual) sub1; -- with qualified name
+ not_used | not_used 
+----------+----------
+        1 |        1
+(1 row)
+openGauss=# select * from t1 join (select * from dual) s1 on t1.not_used = not_used; -- t1 has not_used column, s1 exports not_used column
+ERROR:  column reference "not_used" is ambiguous
+LINE 1: ...m t1 join (select * from dual) s1 on t1.not_used = not_used;
+                                                              ^
+openGauss=# select * from t1 join (select * from dual) s1 on t1.not_used = s1.not_used; -- same above
+ not_used | not_used 
+----------+----------
+        1 |        1
+(1 row)
+openGauss=# select * from t3, (select * from dual) s1, lateral (select * from t2 where a = not_used); -- s1 exports not_used column, so WHERE in lateral subquery can see that, results: id from t1, not_used from s1, a from t2;
+ id | not_used | a 
+----+----------+---
+  1 |        1 | 1
+(1 row)
+
 ```
 
 - SELECT FROM PARTITION子句指定多个分区
 
-```
+```sql
 openGauss=# create table multi_partition_select_test(C_INT INTEGER) partition by range(C_INT)
 openGauss-# (
 openGauss(#     partition test_part1 values less than (400),
