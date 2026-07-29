@@ -18,7 +18,7 @@
 
 - 修改序列属性
 
-    ```
+    ```EBNF
     ALTER [ LARGE ] SEQUENCE [ IF EXISTS ] name [ INCREMENT [ BY ] increment ]
         [ MINVALUE minvalue | NO MINVALUE | NOMINVALUE ] [MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE]
         [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE ] [ RESTART [ WITH ] restart ] 
@@ -27,14 +27,14 @@
 
 - 修改序列的拥有者
 
-    ```
+    ```EBNF
     ALTER [ LARGE ] SEQUENCE [ IF EXISTS ] name OWNER TO new_owner;
     ```
 
 - 修改序列的名称
 
-    ```
-    ALTER [LARGE] SEQUENCE [ IF EXISTS ] name RENAME TO new_name;
+    ```EBNF
+    ALTER [ LARGE ] SEQUENCE [ IF EXISTS ] name RENAME TO new_name;
     ```
 
 ## 参数说明<a name="zh-cn_topic_0283137303_zh-cn_topic_0237122071_zh-cn_topic_0062358310_s8277cc73aecc4f20845d2ddf456a20e7"></a>
@@ -136,7 +136,7 @@ openGauss=# ALTER SEQUENCE serial RESTART 100;
 openGauss=# ALTER SEQUENCE serial RENAME TO serial1;
 
 --删除序列和表。
-openGauss=# DROP SEQUENCE serial cascade;
+openGauss=# DROP SEQUENCE serial1 cascade;
 openGauss=# DROP TABLE T1;
 ```
 
