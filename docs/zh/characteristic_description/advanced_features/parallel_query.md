@@ -5,6 +5,7 @@ openGauss的SMP并行技术是一种利用计算机多核CPU架构来实现多�
 ## 适用场景与限制<a name="section136321654121411"></a>
 
 SMP特性通过算子并行来提升性能，同时会占用更多的系统资源，包括CPU、内存、I/O等等。本质上SMP是一种以资源换取时间的方式，在合适的场景以及资源充足的情况下，能够起到较好的性能提升效果；但是如果在不合适的场景下，或者资源不足的情况下，反而可能引起性能的劣化。SMP特性适用于分析类查询场景，这类场景的特点是单个查询时间较长，业务并发度低。通过SMP并行技术能够降低查询时延，提高系统吞吐性能。然而在事务类大并发业务场景下，由于单个查询本身的时延很短，使用多线程并行技术反而会增加查询时延，降低系统吞吐性能。
+INSERT SELECT在SMP场景下会并发插表，故同样要求资源充足。且随目标表内数据量持续增多，并发扩页会变慢，性能提升比例会降低。
 
 - 适用场景
     - 支持并行的算子：计划中存在以下算子支持并行。
@@ -12,7 +13,7 @@ SMP特性通过算子并行来提升性能，同时会占用更多的系统资�
         - Join：HashJoin、NestLoop
         - Agg：HashAgg、SortAgg、PlainAgg、WindowAgg（只支持partition by，不支持order by）。
         - Stream：Local Redistribute、Local Broadcast
-        - 其他：Result、Subqueryscan、Unique、Material、Setop、Append、VectoRow
+        - 其他：Result、Subqueryscan、Unique、Material、Setop、Append、VectoRow、Insert、Update、Delete、Merge Into。
 
     - SMP特有算子：为了实现并行，新增了并行线程间的数据交换Stream算子供SMP特性使用。这些新增的算子可以看做Stream算子的子类。
         - Local Gather：实现实例内部并行线程的数据汇总。
@@ -29,7 +30,6 @@ SMP特性通过算子并行来提升性能，同时会占用更多的系统资�
         通过计划Stream算子上表明的dop信息即可看出各个算子的并行情况。
 
 - 非适用场景
-    - 索引扫描不支持并行执行。
     - MergeJoin不支持并行执行，openGauss 7.0.0-RC1版本新增特性，如果最优计划为MergeJoin则走串行计划。
     - WindowAgg order by不支持并行执行。
     - 仅cmd中声明的NO SCROLL游标和作为并行函数入参的游标表达式支持并行，其他cursor不支持并行执行。
@@ -38,6 +38,10 @@ SMP特性通过算子并行来提升性能，同时会占用更多的系统资�
     - 查询语句中带有median操作的查询不支持并行执行。
     - 带全局临时表的查询不支持并行执行。
     - 物化视图的更新不支持并行执行。
+    - 不满足条件的INSERT INTO SELECT、UPDATE、DELETE、MERGE INTO操作不支持并行。具体约束如下：
+        - 全局临时表不支持INSERT/UPDATE/DELETE语句并行
+        - 不支持有UPSERT/RETURNING子句的INSERT语句并行
+        - 带有PCR UBTree索引的USTORE表不支持INSERT语句并行。
 
 ## 资源对SMP性能的影响<a name="section310105992016"></a>
 

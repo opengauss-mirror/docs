@@ -756,6 +756,22 @@ set sql_beta_feature=none;
 
 **默认值**：LOG
 
+## enable\_force\_smp
+
+**参数说明**： 控制是否强制开启SMP计划。参数开启后，代价模型默认拉起stream线程的代价为空，当设置并行度并且算子支持并行时强制选择并行路径。
+
+**取值范围**： 布尔型，true表示开启，false表示关闭。
+
+**默认值**： false
+
+## enable\_smp\_dml
+
+**参数说明**： 标识是否允许DML语句并行执行。
+
+**取值范围**： 布尔型，true表示开启，false表示关闭。
+
+**默认值**： true
+
 ## query\_dop<a name="zh-cn_topic_0059779049_s01c9d749fe8048928eeb2b47c6f61fbb"></a>
 
 **参数说明**： 用户自定义的查询并行度。该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
