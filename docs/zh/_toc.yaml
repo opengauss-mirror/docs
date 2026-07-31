@@ -22,7 +22,7 @@ sections:
     sections:
       - href: ./datavec/_toc.yaml
       - href:
-          upstream: https://gitcode.com/opengauss/openGauss-server/tree/master/docs/zh/resource_pooling/_toc.yaml
+          upstream: https://gitcode.com/opengauss/openGauss-server/blob/master/docs/zh/resource_pooling/_toc.yaml
           path: ./resource_pooling
   - label: 开发指南
     sections:
