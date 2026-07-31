@@ -1,6 +1,6 @@
 # MySQL兼容性说明
 
-openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插件的说明可参考[Dolphin插件介绍](../extension_reference/dolphin.md)。在openGauss内核中实现的MySQL兼容性特性见下表。
+openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插件的说明可参考[Dolphin插件介绍](https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin.html)。在openGauss内核中实现的MySQL兼容性特性见下表。
 
 **表 1**  在openGauss内核中实现的MySQL兼容性特性列表
 
@@ -19,7 +19,7 @@ openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插�
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a>CREATE DATABASE支持IF NOT EXISTS选项</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="../extension_reference/dolphin-CREATE-DATABASE.md">CREATE DATABASE</a>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-CREATE-DATABASE.html">CREATE DATABASE</a>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_row26793117"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a>DDL</p>
@@ -54,9 +54,9 @@ openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插�
 <td>DDL</td>
 <td>支持在创建、修改对象等语句中指定COMMENT选项</td>
 <td>
-<a href="../extension_reference/dolphin-ALTER-FUNCTION.md">ALTER FUNCTION</a>、
+<a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-ALTER-FUNCTION.html">ALTER FUNCTION</a>、
 <a href="../sql_reference/alter_procedure.md">ALTER PROCEDURE</a>、
-<a href="../extension_reference/dolphin-ALTER-TABLE.md">ALTER TABLE</a>、
+<a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-ALTER-TABLE.html">ALTER TABLE</a>、
 <a href="../sql_reference/create_function.md">CREATE FUNCTION</a>、
 <a href="../extension_reference/dolphin-CREATE-INDEX.md">CREATE INDEX</a>、
 <a href="../sql_reference/create_procedure.md">CREATE PROCEDURE</a>、
@@ -76,14 +76,14 @@ openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插�
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"><a UNIQUEname="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a>ALTER TABLE支持创建主键、UNIQUE索引、外键约束</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="../extension_reference/dolphin-ALTER-TABLE.md">ALTER TABLE</a>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-ALTER-TABLE.html">ALTER TABLE</a>
 </td>
 </tr>
 <tr>
 <td>DDL</td>
 <td>支持自增列</td>
 <td>
-<a href="../extension_reference/dolphin-ALTER-TABLE.md">ALTER TABLE</a>、
+<a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-ALTER-TABLE.html">ALTER TABLE</a>、
 <a href="../extension_reference/dolphin-CREATE-TABLE.md">CREATE TABLE</a>
 </td>
 </tr>
@@ -100,7 +100,7 @@ openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插�
 <td>
 <a href="../sql_reference/alter_schema.md">ALTER SCHEMA</a>、
 <a href="../sql_reference/create_schema.md">CREATE SCHEMA</a>、
-<a href="../extension_reference/dolphin-ALTER-TABLE.md">ALTER TABLE</a>、
+<a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-ALTER-TABLE.html">ALTER TABLE</a>、
 <a href="../extension_reference/dolphin-CREATE-TABLE.md">CREATE TABLE</a>
 </td>
 </tr>
@@ -108,14 +108,14 @@ openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插�
 <td>DDL</td>
 <td>修改表时支持在表第一列前面或者在指定列后面添加列</td>
 <td>
-<a href="../extension_reference/dolphin-ALTER-TABLE.md">ALTER TABLE</a>
+<a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-ALTER-TABLE.html">ALTER TABLE</a>
 </td>
 </tr>
 <tr>
 <td>DDL</td>
 <td>修改列名称/定义语法兼容</td>
 <td>
-<a href="../extension_reference/dolphin-ALTER-TABLE.md">ALTER TABLE</a>
+<a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-ALTER-TABLE.html">ALTER TABLE</a>
 </td>
 </tr>
 <tr>
