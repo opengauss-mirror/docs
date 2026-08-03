@@ -45,11 +45,11 @@ openGauss相比于其他开源数据库主要有以下几个特点：
 - 高智能
 
     - 提供[向量数据库](https://docs.opengauss.org/zh/docs/latest/datavec/datavec_overview.html)能力，提供向量数据类型的存储、检索。提供向量的精确和近似的最近邻搜索、L2距离&余弦距离&内积、向量索引、向量操作函数和操作符等。
-    - 提供多种[向量索引算法](../datavec/index.md)，包括IVFFLAT、HNSW、DiskANN、基于乘积量化的索引、基于1bit量化的索引等，适用于不同的场景和数据类型。
-    - 支持[融合查询](../datavec/fusion_queries_using_guide.md)，结合结构化过滤和非结构化检索的技术，使用户在同一查询中使用不同的数据类型和查询方法，以获取更为精确的非结构化数据。
-    - 支持[全文检索索引](../datavec/full_text.md)，通过对文本数据集的文本内容建立索引，支持快速、灵活地查询并返回包含特定关键词或短语的文档，并根据相关性对返回的文档集进行排序。
+    - 提供多种[向量索引算法](https://docs.opengauss.org/zh/docs/latest/datavec/)，包括IVFFLAT、HNSW、DiskANN、基于乘积量化的索引、基于1bit量化的索引等，适用于不同的场景和数据类型。
+    - 支持[融合查询](https://docs.opengauss.org/zh/docs/latest/datavec/fusion_queries_using_guide.html)，结合结构化过滤和非结构化检索的技术，使用户在同一查询中使用不同的数据类型和查询方法，以获取更为精确的非结构化数据。
+    - 支持[全文检索索引](https://docs.opengauss.org/zh/docs/latest/datavec/full_text.html)，通过对文本数据集的文本内容建立索引，支持快速、灵活地查询并返回包含特定关键词或短语的文档，并根据相关性对返回的文档集进行排序。
     - 提供一站式的 AI 能力集成方案[oGAI](../characteristic_description/ogai.md)，用户可以在数据库内部直接调用AI模型进行文本向量化、文本生成、文档重排序等操作，无需依赖外部应用层实现，大幅简化了 RAG（检索增强生成）应用的开发流程。
-    - 丰富的第三方生态接口，支持多个[编排组件](../datavec/dify.md)、[嵌入模型](../datavec/embedding_bgem3.md)、[Agents框架](https://docs.opengauss.org/zh/docs/latest/datavec/mcp.html)等。
+    - 丰富的第三方生态接口，支持多个[编排组件](https://docs.opengauss.org/zh/docs/latest/datavec/dify.html)、[嵌入模型](https://docs.opengauss.org/zh/docs/latest/datavec/embedding_bgem3.html)、[Agents框架](https://docs.opengauss.org/zh/docs/latest/datavec/mcp.html)等。
 
 - DataPod资源池化架构
 
