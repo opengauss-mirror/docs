@@ -6,7 +6,7 @@
 
 ## 特性简介
 
-[gms_match插件](../extension_reference/gms_match.md)用于比较两个字符串之间的相似度。
+[gms_match插件](https://docs.opengauss.org/zh/docs/latest-lite/extension_reference/extension_reference/server/gms_match.html)用于比较两个字符串之间的相似度。
 
 ## 客户价值
 

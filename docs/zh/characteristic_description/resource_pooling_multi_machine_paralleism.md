@@ -125,4 +125,4 @@ openGauss中DML主要分为两部分：查找数据，写入符合要求的数�
 
 ## 使用指导<a name="section8406643144716"></a>
 
-插件安装与使用见：**[spqplugin-Extension](../extension_reference/spqplugin.md)**
+插件安装与使用见：**[spqplugin-Extension](https://docs.opengauss.org/zh/docs/latest/extension_reference/extension_reference/plugin/spqplugin.html)**

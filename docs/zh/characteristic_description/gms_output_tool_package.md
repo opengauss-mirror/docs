@@ -6,7 +6,7 @@
 
 ## 特性简介
 
-特性主要用来实现[GMS_OUTPUT高级包](../extension_reference/gms_output.md)，用于实现多个输出相关的函数接口供用户使用。
+特性主要用来实现[GMS_OUTPUT高级包](https://docs.opengauss.org/zh/docs/latest/extension_reference/extension_reference/server/gms_output.html)，用于实现多个输出相关的函数接口供用户使用。
 
 ## 客户价值
 

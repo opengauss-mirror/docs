@@ -6,7 +6,7 @@
 
 ## 特性简介
 
-特性主要用来实现[GMS_INADDR高级包](../extension_reference/gms_inaddr.md)，用于实现多个ip主机名转换相关的函数接口供用户使用。
+特性主要用来实现[GMS_INADDR高级包](https://docs.opengauss.org/zh/docs/latest-lite/extension_reference/extension_reference/server/gms_inaddr.html)，用于实现多个ip主机名转换相关的函数接口供用户使用。
 
 ## 客户价值
 

@@ -326,10 +326,10 @@
         <th>特性</th>
     </tr>
     <tr>
-        <td><a href="../datavec/datavec_overview.md">向量数据库特性说明 </a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/datavec/datavec_overview.html">向量数据库特性说明 </a></td>
     </tr>
     <tr>
-        <td><a href="../datavec/mcp.md">openGauss MCP </a></td>
+        <td><a href="https://docs.opengauss.org/zh/docs/latest/datavec/mcp.html">openGauss MCP </a></td>
     </tr>
 </table>
 
