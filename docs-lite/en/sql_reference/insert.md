@@ -290,6 +290,9 @@ insert into upser values (5, c1 + 100, 100), (6, c1 + 100, 100), (7, c1 + 100, 1
 select * from upser order by c1;
 
 ------------------------------ ON CONFLICT Usage Examples -------------------------
+CREATE DATABASE db0;
+\c db0
+
 CREATE TABLE users (
     id INTEGER PRIMARY KEY,
     email TEXT,

@@ -323,6 +323,9 @@ INSERT INTO upser VALUES (5, c1 + 100, 100), (6, c1 + 100, 100), (7, c1 + 100, 1
 SELECT * FROM upser ORDER BY c1;
 
 ------------------------------ ON CONFLICT使用示例 -------------------------
+CREATE DATABASE db0;
+\c db0
+
 CREATE TABLE users (
     id INTEGER PRIMARY KEY,
     email TEXT,
