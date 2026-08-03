@@ -117,11 +117,11 @@ ORC文件访问、Kerberos安全校验、JAVA UDF、Codegen、MOT内存表特性
 
   - 在线DDL特性涉及传统主备中Astore、段页式支持修改列数据类型、修改压缩属性、添加约束(包括范围约束和非空约束)、VACUUM FULL、CLUSTER、分区表分裂合并分区，并新增关键字CONCURRENTLY用于触发在线DDL功能：
 
-- 高智能：支持[RabitQ](../datavec/Rabitq.md)量化索引算法。[#8642](https://gitcode.com/opengauss/openGauss-server/pull/8642) [#8645](https://gitcode.com/opengauss/openGauss-server/pull/8645) [#8650](https://gitcode.com/opengauss/openGauss-server/pull/8650) [#8655](https://gitcode.com/opengauss/openGauss-server/pull/8655) [#8658](https://gitcode.com/opengauss/openGauss-server/pull/8658) [@wangjingyuan8](https://gitcode.com/wangjingyuan8) [@weixin_44204324](https://gitcode.com/weixin_44204324)
+- 高智能：支持[RabitQ](https://docs.opengauss.org/zh/docs/latest-lite/datavec/Rabitq.html)量化索引算法。[#8642](https://gitcode.com/opengauss/openGauss-server/pull/8642) [#8645](https://gitcode.com/opengauss/openGauss-server/pull/8645) [#8650](https://gitcode.com/opengauss/openGauss-server/pull/8650) [#8655](https://gitcode.com/opengauss/openGauss-server/pull/8655) [#8658](https://gitcode.com/opengauss/openGauss-server/pull/8658) [@wangjingyuan8](https://gitcode.com/wangjingyuan8) [@weixin_44204324](https://gitcode.com/weixin_44204324)
 
   - RabitQ是一种具有理论保证的最先进的二进制量化方法，与HNSW、IVFFLAT结合使用时，可以确保向量数据在高度压缩的表示下仍能保持搜索的可靠性。
 
-- 高智能：[MCP](../datavec/mcp.md)适配openGauss。[#4](https://gitcode.com/opengauss/mcp-opengauss/pull/4) [@weixin_44204324](https://gitcode.com/weixin_44204324)
+- 高智能：[MCP](https://docs.opengauss.org/zh/docs/latest-lite/datavec/mcp.html)适配openGauss。[#4](https://gitcode.com/opengauss/mcp-opengauss/pull/4) [@weixin_44204324](https://gitcode.com/weixin_44204324)
 
   - MCP是为LLM和Agent系统设计的标准化交互框架，使LLM可以与外部数据库、API和工具进行高效交互。MCP适配openGauss数据库让AI智能体能够通过标准化协议安全、高效地直接操作企业级国产数据库，将结构化数据无缝融入AI工作流，大幅降低AI应用与复杂数据系统集成的开发门槛。
 
@@ -137,7 +137,7 @@ ORC文件访问、Kerberos安全校验、JAVA UDF、Codegen、MOT内存表特性
 
 ## 版本兼容性说明
 
-- [l2_norm函数](../datavec/vector_functions_and_operators.md#sparsevec-函数)表现变更。该函数用来计算欧几里得范数，原始表现l2_norm函数针对vector数据类型的入参，由于代码逻辑问题执行将报错，现通过将入参转化为sparsevec类型，调用l2_norm(sparsevec)函数，并返回正确的结果。[#9093](https://gitcode.com/opengauss/openGauss-server/pull/9093) [@wofanzheng](https://gitcode.com/wofanzheng)
+- [l2_norm函数](https://docs.opengauss.org/zh/docs/latest-lite/datavec/vector_functions_and_operators.html#sparsevec-%E5%87%BD%E6%95%B0)表现变更。该函数用来计算欧几里得范数，原始表现l2_norm函数针对vector数据类型的入参，由于代码逻辑问题执行将报错，现通过将入参转化为sparsevec类型，调用l2_norm(sparsevec)函数，并返回正确的结果。[#9093](https://gitcode.com/opengauss/openGauss-server/pull/9093) [@wofanzheng](https://gitcode.com/wofanzheng)
 - 新增GUC参数[enable_subscription](../database_reference/sending_server.md#enable_subscription)，控制是否支持创建发布订阅。默认值为off，即不支持创建发布订阅。对于升级场景，若升级前集群中有发布订阅，则OM升级时会自动将该参数设置为on，以确保升级后的集群仍支持发布订阅。[#8898](https://gitcode.com/opengauss/openGauss-server/pull/8898) [#1227](https://gitcode.com/opengauss/openGauss-OM/pull/1227) [@wangzhengyuan1](https://gitcode.com/wangzhengyuan1)
 - GUC参数[b_compatibility_user_host_auth](../database_reference/connection_settings.md#b_compatibility_user_host_auth)默认值由off调整为on。修改后的默认值兼容MySQL的行为，允许创建`user@host`、`'user'@'host'`之类的用户名并兼容mysql的`user@host`认证鉴权。对于升级场景，OM升级时将保持该参数默认值和升级前一致，确保升级前后表现兼容。[#8150](https://gitcode.com/opengauss/openGauss-server/pull/8150) [#1239](https://gitcode.com/opengauss/openGauss-OM/pull/1239) [@ywzq1161327784](https://gitcode.com/ywzq1161327784)
 - GUC参数[b_format_behavior_compat_options](../database_reference/platform_and_client_compatibility.md#b_format_behavior_compat_options)默认值由空调整为`enable_set_variables,set_session_transaction,enable_modify_column,default_collation,fetch,enable_multi_charset,diagnostics`。修改后的默认值兼容MySQL的行为，允许设置自定义变量，多字符集等。对于升级场景，OM升级时将保持该参数默认值和升级前一致，确保升级前后表现兼容。[#8150](https://gitcode.com/opengauss/openGauss-server/pull/8150) [#1239](https://gitcode.com/opengauss/openGauss-OM/pull/1239) [@ywzq1161327784](https://gitcode.com/ywzq1161327784)

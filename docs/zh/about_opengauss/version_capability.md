@@ -152,7 +152,7 @@
 | [支持PL/Java](../characteristic_description/pl_java.md)                                              | ✔️      | ✔️      | ✔️      | 支持Java存储过程。                                         |
 | [MySQL兼容性增强](../characteristic_description/enhanced_mysql_compatibility.md)                      | ✔️      | ✔️      | ✔️      | 支持常用MySQL语法与函数。                                  |
 | **AI能力**                                                               |        |        |        |                                                            |
-| [向量数据库](../datavec/datavec_overview.md)                              | ✔️      | ✔️      | ✔️      | DataVec向量能力。                                          |
+| [向量数据库](https://docs.opengauss.org/zh/docs/latest/datavec/datavec_overview.html)                              | ✔️      | ✔️      | ✔️      | DataVec向量能力。                                          |
 | AI4DB：数据库指标采集、预测与异常监控                                      | ✔️      | ✔️      | ❌      | 基于时序预测的智能监控告警系统。                           |
 | AI4DB：慢SQL根因分析                                                      | ✔️      | ✔️      | ❌      | 通过机器学习定位SQL性能瓶颈。                              |
 | [AI4DB：索引推荐](../characteristic_description/advanced_features/index_recommendation.md)            | ✔️      | ✔️      | ❌      | 自动生成最优索引组合建议。                                 |
