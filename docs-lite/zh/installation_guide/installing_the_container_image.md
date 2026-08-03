@@ -16,7 +16,7 @@ $ docker pull opengauss/opengauss:latest
 $ docker images
 
 REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
-opengauss/opengauss-server   latest              9763e8b26794        2 days ago          1.77GB
+opengauss/opengauss          latest              9763e8b26794        2 days ago          1.77GB
 ```
 
 - 运行容器
@@ -24,7 +24,7 @@ opengauss/opengauss-server   latest              9763e8b26794        2 days ago 
 启动数据库并映射宿主机的端口到容器：
 
 ```bash
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -p 8888:5432 opengauss/opengauss-server:latest
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -p 8888:5432 opengauss/opengauss:latest
 ```
 
 ## 2. 官网下载镜像并安装
@@ -51,6 +51,8 @@ $ docker load -i openGauss-Docker-7.0.0-RC3-aarch64.tar
 
 - 验证镜像状态
 
+加载完成后，请使用 `docker images` 查看实际镜像名（`REPOSITORY:TAG`），后续 `docker run` 须使用该实际镜像名，不可照搬 Docker Hub 示例中的镜像名。官网下载加载后的镜像名通常为 `opengauss:7.0.0-RC3`（以实际输出为准）：
+
 ```bash
 $ docker images
 
@@ -64,7 +66,7 @@ opengauss                    7.0.0-RC3           9763e8b26794        2 days ago 
 
 - 运行容器
 
-启动数据库并映射宿主机的端口到容器：
+启动数据库并映射宿主机的端口到容器（镜像名以 `docker images` 实际输出为准）：
 
 ```bash
 $ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -p 8888:5432 opengauss:7.0.0-RC3
@@ -107,11 +109,16 @@ openGauss 镜像配置了本地信任机制，因此在容器内连接数据库�
 $ docker ps 
 ```
 
-输出示例：
+输出示例（`IMAGE` 列显示实际使用的镜像名，以下分别为 Docker Hub 拉取与官网加载两种情况）：
 
 ```
 CONTAINER ID        IMAGE                        COMMAND                  CREATED              STATUS              PORTS                    NAMES
 7abc538f242a        opengauss/opengauss:latest   "entrypoint.sh gauss…"   About a minute ago   Up About a minute   0.0.0.0:8888->5432/tcp   opengauss
+```
+
+```
+CONTAINER ID        IMAGE                COMMAND                  CREATED              STATUS              PORTS                    NAMES
+7abc538f242a        opengauss:7.0.0-RC3  "entrypoint.sh gauss…"   About a minute ago   Up About a minute   0.0.0.0:8888->5432/tcp   opengauss
 ```
 
 ### 容器内部连接数据库
@@ -141,10 +148,18 @@ $ gsql -d postgres -U gaussdb -W YourPassoword -h your-host-ip -p 8888
 
 ### 数据持久化
 
-通过以下命令，将宿主机的`/opengauss`目录挂载到容器的`/var/lib/opengauss`目录，实现数据的持久化存储：
+通过以下命令，将宿主机的`/opengauss`目录挂载到容器的`/var/lib/opengauss`目录，实现数据的持久化存储。镜像名须与获取方式一致：Docker Hub 拉取使用 `opengauss/opengauss:latest`，官网加载使用 `docker images` 查到的实际镜像名（例如 `opengauss:7.0.0-RC3`）。
+
+Docker Hub 示例：
 
 ```bash
 $ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=YourPassoword -v /opengauss:/var/lib/opengauss opengauss/opengauss:latest
+```
+
+官网下载加载示例：
+
+```bash
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=YourPassoword -v /opengauss:/var/lib/opengauss opengauss:7.0.0-RC3
 ```
 
 ### 参数配置<a name="zh-cn_topic_0283136491_section973016196416"></a>
