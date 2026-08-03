@@ -8,5 +8,5 @@ sections:
       upstream: https://gitcode.com/opengauss/openGauss-third_party/blob/master/docs/en/extension_reference/_toc.yaml
       path: ./extension_reference/third_party
   - href:
-      upstream: https://gitcode.com/opengauss/openGauss-server/blob/master/docs/en/extension_referece/_toc.yaml
+      upstream: https://gitcode.com/opengauss/openGauss-server/blob/master/docs/en/extension_reference/_toc.yaml
       path: ./extension_reference/server
