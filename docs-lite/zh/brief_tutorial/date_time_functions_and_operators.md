@@ -732,7 +732,7 @@ timestampdiff函数是计算两个日期时间之间\(timestamp\_expr2-timestamp
 
 >[!NOTE]说明
 >该函数仅在openGauss兼容MY类型时（即dbcompatibility = 'B'）有效，其他类型不支持该函数。
->该函数仅在GUC参数[dolphin.b_compatibility_mode](../extension_reference/dolphin_guc_parameters.md#section203671436825)为true/on时，才可正确兼容MySQL。
+>该函数仅在GUC参数[dolphin.b_compatibility_mode](https://docs.opengauss.org/zh/docs/latest-lite/extension_reference/extension_reference/plugin/dolphin_guc_parameters.html#section203671436825)为true/on时，才可正确兼容MySQL。
 
 - year
 

@@ -6,7 +6,7 @@
 
 ## 特性简介
 
-[gms_raw插件](../extension_reference/gms_raw.md)用于对十六进制raw类型数据进行转换和操作。
+[gms_raw插件](https://docs.opengauss.org/zh/docs/latest-lite/extension_reference/extension_reference/server/gms_raw.html)用于对十六进制raw类型数据进行转换和操作。
 
 ## 客户价值
 

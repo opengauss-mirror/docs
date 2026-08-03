@@ -6,7 +6,7 @@
 
 ## 特性简介
 
-本特性主要用来实现[GMS_ASSERT高级包](../extension_reference/gms_stats.md)，用于验证输入值的属性。
+本特性主要用来实现[GMS_ASSERT高级包](https://docs.opengauss.org/zh/docs/latest/extension_reference/extension_reference/server/gms_stats.html)，用于验证输入值的属性。
 
 ## 客户价值
 

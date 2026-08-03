@@ -6,7 +6,7 @@
 
 ## 特性简介
 
-本特性主要用来实现[GMS_UTILITY高级包](../extension_reference/gms_utility.md)，提供了各种实用的程序和函数。
+本特性主要用来实现[GMS_UTILITY高级包](https://docs.opengauss.org/zh/docs/latest/extension_reference/extension_reference/server/gms_utility.html)，提供了各种实用的程序和函数。
 
 ## 客户价值
 
