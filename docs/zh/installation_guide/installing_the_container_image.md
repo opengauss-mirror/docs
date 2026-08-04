@@ -51,6 +51,8 @@ $ docker load -i openGauss-Docker-7.0.0-RC3-aarch64.tar
 
 - 验证镜像状态
 
+加载完成后，请使用`docker images`查看实际镜像名。镜像名可能为`opengauss:7.0.0-RC3`（以实际输出为准），后续`docker run`需使用该镜像名。
+
 ```bash
 $ docker images
 
@@ -61,10 +63,11 @@ opengauss                    7.0.0-RC3           9763e8b26794        2 days ago 
 >[!NOTE]说明
 > 
 > 以上镜像包会周期性更新，可以根据自身需求修改路径获取最新镜像包。<br>
+> 官网下载加载的镜像名（如`opengauss:7.0.0-RC3`）与 dockerhub 镜像名（`opengauss/opengauss-server:latest`）不同，请勿混用。<br>
 
 - 运行容器
 
-启动数据库并映射宿主机的端口到容器：
+启动数据库并映射宿主机的端口到容器（镜像名以`docker images`实际输出为准）：
 
 ```bash
 $ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -p 8888:5432 opengauss:7.0.0-RC3
@@ -141,10 +144,14 @@ $ gsql -d postgres -U gaussdb -W YourPassoword -h your-host-ip -p 8888
 
 ### 数据持久化
 
-通过以下命令，将宿主机的`/opengauss`目录挂载到容器的`/var/lib/opengauss`目录，实现数据的持久化存储：
+通过以下命令，将宿主机的`/opengauss`目录挂载到容器的`/var/lib/opengauss`目录，实现数据的持久化存储。镜像名需与前文加载或拉取的实际镜像名一致：
 
 ```bash
+# dockerhub 镜像示例
 $ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -v /opengauss:/var/lib/opengauss opengauss/opengauss-server:latest
+
+# 官网下载镜像示例（以 docker images 实际输出为准）
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -v /opengauss:/var/lib/opengauss opengauss:7.0.0-RC3
 ```
 
 ### 参数配置<a name="zh-cn_topic_0283136491_section973016196416"></a>
