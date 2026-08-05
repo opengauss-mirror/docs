@@ -174,7 +174,7 @@ sections:
       - label: 行列融合参数
         href: ./row_and_column_fusion_parameters.md
       - label: 资源池化行列融合参数
-        href: ./资源池化行列融合参数.md        
+        href: ./parameters_for_row_column_fusion_in_resource_rooling.md        
       - label: DataVec向量引擎参数
         href: ./datavec_vector_engine_parameters.md
       - label: BM25全文检索索引参数
