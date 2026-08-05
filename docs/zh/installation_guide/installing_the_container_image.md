@@ -10,6 +10,15 @@
 $ docker pull opengauss/opengauss-server:latest
 ```
 
+>[!NOTE]说明
+>
+> 国内网络环境可能无法直连 Docker Hub，导致`docker pull`超时或失败，可以通过以下方式拉取quay.io镜像：
+>
+> ```bash
+> $ docker pull quay.io/opengauss/opengauss-server:latest
+> $ docker tag quay.io/opengauss/opengauss-server:latest opengauss/opengauss-server:latest
+> ```
+
 - 验证镜像状态
 
 ```bash
