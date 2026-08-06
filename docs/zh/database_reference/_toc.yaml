@@ -490,7 +490,7 @@ sections:
           - label: GS_WLM_PLAN_OPERATOR_HISTORY
             href: ./gs_wlm_plan_operator_history.md
           - label: GS_WLM_REBUILD_USER_RESOURCE_POOL
-            href: ./gs_wlm_rebuild_user_resouce_pool.md
+            href: ./gs_wlm_rebuild_user_resource_pool.md
           - label: GS_WLM_RESOURCE_POOL
             href: ./gs_wlm_resource_pool.md
           - label: GS_WLM_SESSION_HISTORY
