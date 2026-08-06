@@ -34,7 +34,7 @@ openGauss=# SELECT text 'Origin' AS "label", point '(0,0)' AS "value";
 
     因为联合SELECT语句中的所有查询结果必须在一列里显示出来，所以每个SELECT子句中的元素类型必须相互匹配并转换成一个统一类型。类似地，一个CASE构造的结果表达式必须转换成统一的类型，这样整个case表达式会有一个统一的输出类型。同样的要求也存在于ARRAY构造以及GREATEST和LEAST函数中。
 
-系统表pg\_cast存储了有关数据类型之间的转换关系以及如何执行这些转换的信息。详细信息请参见[PG\_CAST](../database_reference/PG_CAST.md)。
+系统表pg\_cast存储了有关数据类型之间的转换关系以及如何执行这些转换的信息。详细信息请参见[PG\_CAST](../database_reference/pg_cast.md)。
 
 语义分析阶段会决定表达式的返回值类型并选择适当的转换行为。数据类型的基本类型分类，包括：Boolean、numeric、string、bitstring、datetime、timespan、geometric和network。每种类型都有一种或多种首选类型用于解决类型选择的问题。根据首选类型和可用的隐含转换，就可能保证有歧义的表达式（那些有多个候选解析方案的）得到有效的方式解决。
 

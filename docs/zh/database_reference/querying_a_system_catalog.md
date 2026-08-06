@@ -68,7 +68,7 @@ ool |      0 |            |
 
 ## 查看和停止正在运行的查询语句<a name="zh-cn_topic_0237120304_zh-cn_topic_0100315815_section1642584412912"></a>
 
-通过视图[PG\_STAT\_ACTIVITY](PG_STAT_ACTIVITY.md)可以查看正在运行的查询语句。方法如下：
+通过视图[PG\_STAT\_ACTIVITY](pg_stat_activity.md)可以查看正在运行的查询语句。方法如下：
 
 1. 设置参数track\_activities为on。
 

@@ -847,7 +847,7 @@
 
 - pg\_stat\_get\_last\_data\_changed\_time\(oid\)
 
-    描述：insert/update/delete, exchange/truncate/drop partition在该表上最后一次操作的时间，[PG\_STAT\_ALL\_TABLES](../database_reference/PG_STAT_ALL_TABLES.md)视图last\_data\_changed列的数据是通过该函数求值，在表数量很大的场景中，通过视图获取表数据最后修改时间的性能较差，建议直接使用该函数获取表数据的最后修改时间。入参可以是表的oid或分区的oid，分别获取表或表的分区的最后修改时间。
+    描述：insert/update/delete, exchange/truncate/drop partition在该表上最后一次操作的时间，[PG\_STAT\_ALL\_TABLES](../database_reference/pg_stat_all_tables.md)视图last\_data\_changed列的数据是通过该函数求值，在表数量很大的场景中，通过视图获取表数据最后修改时间的性能较差，建议直接使用该函数获取表数据的最后修改时间。入参可以是表的oid或分区的oid，分别获取表或表的分区的最后修改时间。
 
     返回值类型：timestamptz
 
@@ -2878,7 +2878,7 @@
 
 - pv\_os\_run\_info
 
-    描述：显示当前操作系统运行的状态信息，具体字段信息参考[GS\_OS\_RUN\_INFO](../database_reference/GS_OS_RUN_INFO.md)。
+    描述：显示当前操作系统运行的状态信息，具体字段信息参考[GS\_OS\_RUN\_INFO](../database_reference/gs_os_run_info.md)。
 
     参数：nan
 
@@ -2886,7 +2886,7 @@
 
 - pv\_session\_stat
 
-    描述：以会话线程或AutoVacuum线程为单位，统计会话状态信息，具体字段信息参考[GS\_SESSION\_STAT](../database_reference/GS_SESSION_STAT.md)。
+    描述：以会话线程或AutoVacuum线程为单位，统计会话状态信息，具体字段信息参考[GS\_SESSION\_STAT](../database_reference/gs_session_stat.md)。
 
     参数：nan
 
@@ -2894,7 +2894,7 @@
 
 - pv\_session\_time
 
-    描述：用于统计会话线程的运行时间信息，及各执行阶段所消耗时间，具体字段信息参考[GS\_SESSION\_TIME](../database_reference/GS_SESSION_TIME.md)。
+    描述：用于统计会话线程的运行时间信息，及各执行阶段所消耗时间，具体字段信息参考[GS\_SESSION\_TIME](../database_reference/gs_session_time.md)。
 
     参数：nan
 
