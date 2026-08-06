@@ -45,7 +45,7 @@ GS\_MASKING\_POLICY\_ACTIONS系统表记录动态数据脱敏策略中相应的�
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p3474109115313"><a name="p3474109115313"></a><a name="p3474109115313"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p647119105316"><a name="p647119105316"></a><a name="p647119105316"></a>该条记录所属的脱敏策略oid，对应<a href="GS_MASKING_POLICY.md">GS_MASKING_POLICY</a>中的oid。</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p647119105316"><a name="p647119105316"></a><a name="p647119105316"></a>该条记录所属的脱敏策略oid，对应<a href="gs_masking_policy.md">GS_MASKING_POLICY</a>中的oid。</p>
 </td>
 </tr>
 <tr id="row12460842185215"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p8829172305414"><a name="p8829172305414"></a><a name="p8829172305414"></a>modifydate</p>

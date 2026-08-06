@@ -2,7 +2,7 @@
 
 PG\_USER\_MAPPING系统表存储从本地用户到远程的映射。
 
-需要有系统管理员权限才可以访问此系统表。普通用户可以使用视图[PG\_USER\_MAPPINGS](PG_USER_MAPPINGS.md)进行查询。
+需要有系统管理员权限才可以访问此系统表。普通用户可以使用视图[PG\_USER\_MAPPINGS](pg_user_mappings.md)进行查询。
 
 **表 1**  PG\_USER\_MAPPING字段
 
@@ -30,7 +30,7 @@ PG\_USER\_MAPPING系统表存储从本地用户到远程的映射。
 </td>
 <td class="cellrowborder" valign="top" width="10.61%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a15600b4ed3614af5a8e44c97330ce200"><a name="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a15600b4ed3614af5a8e44c97330ce200"></a><a name="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a15600b4ed3614af5a8e44c97330ce200"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.630000000000003%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a6fbbe10972894e348e0fe9489b1ea74d"><a name="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a6fbbe10972894e348e0fe9489b1ea74d"></a><a name="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a6fbbe10972894e348e0fe9489b1ea74d"></a><a href="PG_AUTHID.md">PG_AUTHID</a>.oid</p>
+<td class="cellrowborder" valign="top" width="30.630000000000003%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a6fbbe10972894e348e0fe9489b1ea74d"><a name="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a6fbbe10972894e348e0fe9489b1ea74d"></a><a name="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a6fbbe10972894e348e0fe9489b1ea74d"></a><a href="pg_authid.md">PG_AUTHID</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.95%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a8a14bfb4ae8a4c50ba48d26e8cdb6704"><a name="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a8a14bfb4ae8a4c50ba48d26e8cdb6704"></a><a name="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a8a14bfb4ae8a4c50ba48d26e8cdb6704"></a>被映射的本地用户的OID，如果用户映射是公共的则为0。</p>
 </td>
@@ -39,7 +39,7 @@ PG\_USER\_MAPPING系统表存储从本地用户到远程的映射。
 </td>
 <td class="cellrowborder" valign="top" width="10.61%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a53579e9e1542494f82efb9ab44d294b4"><a name="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a53579e9e1542494f82efb9ab44d294b4"></a><a name="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a53579e9e1542494f82efb9ab44d294b4"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.630000000000003%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a88c8990053e34ae799ef584c55664fea"><a name="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a88c8990053e34ae799ef584c55664fea"></a><a name="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a88c8990053e34ae799ef584c55664fea"></a><a href="PG_FOREIGN_SERVER.md">PG_FOREIGN_SERVER</a>.oid</p>
+<td class="cellrowborder" valign="top" width="30.630000000000003%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a88c8990053e34ae799ef584c55664fea"><a name="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a88c8990053e34ae799ef584c55664fea"></a><a name="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_a88c8990053e34ae799ef584c55664fea"></a><a href="pg_foreign_server.md">PG_FOREIGN_SERVER</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.95%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_af4d215e30d2e4cbab030799a8858d6e7"><a name="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_af4d215e30d2e4cbab030799a8858d6e7"></a><a name="zh-cn_topic_0283136770_zh-cn_topic_0237122328_zh-cn_topic_0059777996_af4d215e30d2e4cbab030799a8858d6e7"></a>包含这个映射的外部服务器的OID。</p>
 </td>

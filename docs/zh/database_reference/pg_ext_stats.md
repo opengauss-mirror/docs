@@ -1,6 +1,6 @@
 # PG\_EXT\_STATS
 
-PG\_EXT\_STATS视图提供对存储在[PG\_STATISTIC\_EXT](PG_STATISTIC_EXT.md)表里面的扩展统计信息的访问。扩展统计信息目前包括多列统计信息。
+PG\_EXT\_STATS视图提供对存储在[PG\_STATISTIC\_EXT](pg_statistic_ext.md)表里面的扩展统计信息的访问。扩展统计信息目前包括多列统计信息。
 
 **表 1**  PG\_EXT\_STATS字段
 
@@ -19,7 +19,7 @@ PG\_EXT\_STATS视图提供对存储在[PG\_STATISTIC\_EXT](PG_STATISTIC_EXT.md)�
 </td>
 <td class="cellrowborder" valign="top" width="14.790000000000001%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_a71da762e7afb427aab48ab7244e632f8"><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_a71da762e7afb427aab48ab7244e632f8"></a><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_a71da762e7afb427aab48ab7244e632f8"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="23.880000000000003%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_ad90f239d72d147d08d6a46cd4ceef53b"><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_ad90f239d72d147d08d6a46cd4ceef53b"></a><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_ad90f239d72d147d08d6a46cd4ceef53b"></a><a href="PG_NAMESPACE.md">PG_NAMESPACE</a>.nspname</p>
+<td class="cellrowborder" valign="top" width="23.880000000000003%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_ad90f239d72d147d08d6a46cd4ceef53b"><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_ad90f239d72d147d08d6a46cd4ceef53b"></a><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_ad90f239d72d147d08d6a46cd4ceef53b"></a><a href="pg_namespace.md">PG_NAMESPACE</a>.nspname</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.84%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_a8c5116971c114a559e254fc74ce60537"><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_a8c5116971c114a559e254fc74ce60537"></a><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_a8c5116971c114a559e254fc74ce60537"></a>包含表的模式名。</p>
 </td>
@@ -28,7 +28,7 @@ PG\_EXT\_STATS视图提供对存储在[PG\_STATISTIC\_EXT](PG_STATISTIC_EXT.md)�
 </td>
 <td class="cellrowborder" valign="top" width="14.790000000000001%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_acd0027bdcbe2426986975d6589b44650"><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_acd0027bdcbe2426986975d6589b44650"></a><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_acd0027bdcbe2426986975d6589b44650"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="23.880000000000003%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_a2b895cb023b4455e8a17c99644c8373d"><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_a2b895cb023b4455e8a17c99644c8373d"></a><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_a2b895cb023b4455e8a17c99644c8373d"></a><a href="PG_CLASS.md">PG_CLASS</a>.relname</p>
+<td class="cellrowborder" valign="top" width="23.880000000000003%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_a2b895cb023b4455e8a17c99644c8373d"><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_a2b895cb023b4455e8a17c99644c8373d"></a><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_a2b895cb023b4455e8a17c99644c8373d"></a><a href="pg_class.md">PG_CLASS</a>.relname</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.84%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_af4a415c12d44402690d68730d71296e9"><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_af4a415c12d44402690d68730d71296e9"></a><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_zh-cn_topic_0059779067_af4a415c12d44402690d68730d71296e9"></a>表名。</p>
 </td>
@@ -37,7 +37,7 @@ PG\_EXT\_STATS视图提供对存储在[PG\_STATISTIC\_EXT](PG_STATISTIC_EXT.md)�
 </td>
 <td class="cellrowborder" valign="top" width="14.790000000000001%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137332_zh-cn_topic_0237122416_p816833544417"><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_p816833544417"></a><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_p816833544417"></a>int2vector</p>
 </td>
-<td class="cellrowborder" valign="top" width="23.880000000000003%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137332_zh-cn_topic_0237122416_p171686353448"><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_p171686353448"></a><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_p171686353448"></a><a href="PG_STATISTIC_EXT.md">PG_STATISTIC_EXT</a>.stakey</p>
+<td class="cellrowborder" valign="top" width="23.880000000000003%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137332_zh-cn_topic_0237122416_p171686353448"><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_p171686353448"></a><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_p171686353448"></a><a href="pg_statistic_ext.md">PG_STATISTIC_EXT</a>.stakey</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.84%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137332_zh-cn_topic_0237122416_p18168203516448"><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_p18168203516448"></a><a name="zh-cn_topic_0283137332_zh-cn_topic_0237122416_p18168203516448"></a>统计信息扩展的多列信息。</p>
 </td>

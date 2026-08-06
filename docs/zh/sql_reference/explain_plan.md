@@ -36,7 +36,7 @@ FOR statement ;
 
     >[!NOTE]说明
     >执行EXPLAIN PLAN 后会将计划信息自动存储于PLAN\_TABLE中，不支持对PLAN\_TABLE进行INSERT、UPDATE、ANALYZE等操作。
-    >PLAN\_TABLE详细介绍见[PLAN\_TABLE](../database_reference/PLAN_TABLE.md)。
+    >PLAN\_TABLE详细介绍见[PLAN\_TABLE](../database_reference/plan_table.md)。
 
     ```
     explain plan set statement_id='TPCH-Q4' for

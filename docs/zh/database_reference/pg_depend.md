@@ -2,7 +2,7 @@
 
 PG\_DEPEND系统表记录数据库对象之间的依赖关系。这个信息允许DROP命令找出哪些其它对象必须由DROP CASCADE删除，或者是在DROP RESTRICT的情况下避免删除。
 
-这个表的功能类似[PG\_SHDEPEND](PG_SHDEPEND.md)，用于记录那些在openGauss之间共享的对象之间的依赖性关系。
+这个表的功能类似[PG\_SHDEPEND](pg_shdepend.md)，用于记录那些在openGauss之间共享的对象之间的依赖性关系。
 
 **表 1**  PG\_DEPEND字段
 
@@ -21,7 +21,7 @@ PG\_DEPEND系统表记录数据库对象之间的依赖关系。这个信息允�
 </td>
 <td class="cellrowborder" valign="top" width="11.28%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a421d9e61eae54d72bd19d2ce4859521a"><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a421d9e61eae54d72bd19d2ce4859521a"></a><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a421d9e61eae54d72bd19d2ce4859521a"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a95d261e3b32e445b8d1095d28f3fbd28"><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a95d261e3b32e445b8d1095d28f3fbd28"></a><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a95d261e3b32e445b8d1095d28f3fbd28"></a><a href="PG_CLASS.md">PG_CLASS</a>.oid</p>
+<td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a95d261e3b32e445b8d1095d28f3fbd28"><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a95d261e3b32e445b8d1095d28f3fbd28"></a><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a95d261e3b32e445b8d1095d28f3fbd28"></a><a href="pg_class.md">PG_CLASS</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="50.94%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a829a3cd7c1c146e8b08443412f00b210"><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a829a3cd7c1c146e8b08443412f00b210"></a><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a829a3cd7c1c146e8b08443412f00b210"></a>有依赖对象所在系统表的OID。</p>
 </td>
@@ -48,7 +48,7 @@ PG\_DEPEND系统表记录数据库对象之间的依赖关系。这个信息允�
 </td>
 <td class="cellrowborder" valign="top" width="11.28%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a99347f122d96442b86fb26b4afe34228"><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a99347f122d96442b86fb26b4afe34228"></a><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a99347f122d96442b86fb26b4afe34228"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_af930190c2ec047c3b43c9ba27824899f"><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_af930190c2ec047c3b43c9ba27824899f"></a><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_af930190c2ec047c3b43c9ba27824899f"></a><a href="PG_CLASS.md">PG_CLASS</a>.oid</p>
+<td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_af930190c2ec047c3b43c9ba27824899f"><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_af930190c2ec047c3b43c9ba27824899f"></a><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_af930190c2ec047c3b43c9ba27824899f"></a><a href="pg_class.md">PG_CLASS</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="50.94%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a0012639c2e73476a897a5238e0e0b496"><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a0012639c2e73476a897a5238e0e0b496"></a><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a0012639c2e73476a897a5238e0e0b496"></a>被引用对象所在的系统表的OID。</p>
 </td>
@@ -97,5 +97,5 @@ PG\_DEPEND系统表记录数据库对象之间的依赖关系。这个信息允�
 - DEPENDENCY\_NORMAL \(n\)：独立创建的对象之间的一般关系。有依赖的对象可以在不影响被引用对象的情况下删除。被引用对象只有在声明了CASCADE的情况下删除，这时有依赖的对象也被删除。例子：一个表字段对其数据类型有一般依赖关系。
 - DEPENDENCY\_AUTO \(a\)：有依赖对象可以和被引用对象分别删除，并且如果删除了被引用对象则应该被自动删除（不管是RESTRICT或CASCADE模式）。例子：一个表上面的命名约束是在该表上的自动依赖关系，因此如果删除了表，它也会被删除。
 - DEPENDENCY\_INTERNAL \(i\)：有依赖的对象是作为被引用对象的一部分创建的，实际上只是它的内部实现的一部分。DROP有依赖对象是不能直接允许的（将告诉用户发出一条删除被引用对象的DROP）。一个对被引用对象的DROP将传播到有依赖对象，不管是否声明了CASCADE。
-- DEPENDENCY\_Extension \(e\)：依赖对象是被依赖对象Extension的一个成员（请参见[PG\_EXTENSION](PG_EXTENSION.md)）。依赖对象只可以通过在被依赖对象上DROP Extension删除。函数上这个依赖类型和内部依赖一样动作，但是它为了清晰和简化gs\_dump保持分开。
+- DEPENDENCY\_Extension \(e\)：依赖对象是被依赖对象Extension的一个成员（请参见[PG\_EXTENSION](pg_extension.md)）。依赖对象只可以通过在被依赖对象上DROP Extension删除。函数上这个依赖类型和内部依赖一样动作，但是它为了清晰和简化gs\_dump保持分开。
 - DEPENDENCY\_PIN \(p\)：没有依赖对象；这种类型的记录标志着系统本身依赖于被引用对象，因此这个对象决不能被删除。这种类型的记录只有在initdb的时候创建。有依赖对象的字段里是零。

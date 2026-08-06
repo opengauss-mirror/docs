@@ -19,7 +19,7 @@ GS\_MATVIEWS视图提供了关于数据库中每一个物化视图的信息。
 </td>
 <td class="cellrowborder" valign="top" width="9.84%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a800aa141d95241c2bffae422411df91a"><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a800aa141d95241c2bffae422411df91a"></a><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a800aa141d95241c2bffae422411df91a"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.659999999999997%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a0d2b071600aa476894069659495ce641"><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a0d2b071600aa476894069659495ce641"></a><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a0d2b071600aa476894069659495ce641"></a><a href="PG_NAMESPACE.md">PG_NAMESPACE</a>.nspname</p>
+<td class="cellrowborder" valign="top" width="30.659999999999997%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a0d2b071600aa476894069659495ce641"><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a0d2b071600aa476894069659495ce641"></a><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a0d2b071600aa476894069659495ce641"></a><a href="pg_namespace.md">PG_NAMESPACE</a>.nspname</p>
 </td>
 <td class="cellrowborder" valign="top" width="40.63%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a0f0b904e963347098535b30a55046954"><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a0f0b904e963347098535b30a55046954"></a><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a0f0b904e963347098535b30a55046954"></a>物化视图的模式名。</p>
 </td>
@@ -28,7 +28,7 @@ GS\_MATVIEWS视图提供了关于数据库中每一个物化视图的信息。
 </td>
 <td class="cellrowborder" valign="top" width="9.84%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_aa78ed822b23d4e23b34a8becf42693e7"><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_aa78ed822b23d4e23b34a8becf42693e7"></a><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_aa78ed822b23d4e23b34a8becf42693e7"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.659999999999997%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_aa4bd6b80055b4818825bea7fa2ed45fe"><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_aa4bd6b80055b4818825bea7fa2ed45fe"></a><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_aa4bd6b80055b4818825bea7fa2ed45fe"></a><a href="PG_CLASS.md">PG_CLASS</a>.relname</p>
+<td class="cellrowborder" valign="top" width="30.659999999999997%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_aa4bd6b80055b4818825bea7fa2ed45fe"><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_aa4bd6b80055b4818825bea7fa2ed45fe"></a><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_aa4bd6b80055b4818825bea7fa2ed45fe"></a><a href="pg_class.md">PG_CLASS</a>.relname</p>
 </td>
 <td class="cellrowborder" valign="top" width="40.63%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_ae896aeff85fd4377b4113e7a94a2ec71"><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_ae896aeff85fd4377b4113e7a94a2ec71"></a><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_ae896aeff85fd4377b4113e7a94a2ec71"></a>物化视图名。</p>
 </td>
@@ -37,7 +37,7 @@ GS\_MATVIEWS视图提供了关于数据库中每一个物化视图的信息。
 </td>
 <td class="cellrowborder" valign="top" width="9.84%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_acbcef8e6652a4744b3cc4cb08b8346a2"><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_acbcef8e6652a4744b3cc4cb08b8346a2"></a><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_acbcef8e6652a4744b3cc4cb08b8346a2"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.659999999999997%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_aadc07cb07d734a809af4d110a07c6104"><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_aadc07cb07d734a809af4d110a07c6104"></a><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_aadc07cb07d734a809af4d110a07c6104"></a><a href="PG_AUTHID.md">PG_AUTHID</a>.rolname</p>
+<td class="cellrowborder" valign="top" width="30.659999999999997%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_aadc07cb07d734a809af4d110a07c6104"><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_aadc07cb07d734a809af4d110a07c6104"></a><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_aadc07cb07d734a809af4d110a07c6104"></a><a href="pg_authid.md">PG_AUTHID</a>.rolname</p>
 </td>
 <td class="cellrowborder" valign="top" width="40.63%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a8eebe34c82274f0aafcc2eedea6eb267"><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a8eebe34c82274f0aafcc2eedea6eb267"></a><a name="zh-cn_topic_0283136548_zh-cn_topic_0237122474_zh-cn_topic_0059778302_a8eebe34c82274f0aafcc2eedea6eb267"></a>物化视图的所有者。</p>
 </td>
@@ -46,7 +46,7 @@ GS\_MATVIEWS视图提供了关于数据库中每一个物化视图的信息。
 </td>
 <td class="cellrowborder" valign="top" width="9.84%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136548_p11967142714541"><a name="zh-cn_topic_0283136548_p11967142714541"></a><a name="zh-cn_topic_0283136548_p11967142714541"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.659999999999997%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136548_p09671627195415"><a name="zh-cn_topic_0283136548_p09671627195415"></a><a name="zh-cn_topic_0283136548_p09671627195415"></a><a href="PG_TABLESPACE.md">PG_TABLESPACE</a>.spcname</p>
+<td class="cellrowborder" valign="top" width="30.659999999999997%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136548_p09671627195415"><a name="zh-cn_topic_0283136548_p09671627195415"></a><a name="zh-cn_topic_0283136548_p09671627195415"></a><a href="pg_tablespace.md">PG_TABLESPACE</a>.spcname</p>
 </td>
 <td class="cellrowborder" valign="top" width="40.63%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136548_p59679278541"><a name="zh-cn_topic_0283136548_p59679278541"></a><a name="zh-cn_topic_0283136548_p59679278541"></a>物化视图的表空间名（如果使用数据库默认表空间则为空）。</p>
 </td>

@@ -670,4 +670,4 @@ openGauss=# COPY tpcds.ship_mode_t1 FROM '/home/omm/ds_ship_mode.dat' FIXED FORM
 openGauss=# DROP TABLE tpcds.ship_mode_t1;
 ```
 ## 相关链接 <a name="ZH-CN_TOPIC_0289899982_related_links"></a>
-[PG_STAT_PROGRESS_COPY](../database_reference/PG_STAT_PROGRESS_COPY.md)
+[PG_STAT_PROGRESS_COPY](../database_reference/pg_stat_progress_copy.md)

@@ -46,7 +46,7 @@
 
 该参数属于USERSET类型参数，请参考[表2](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd893d)中对应设置方法进行设置。
 
-**取值范围**： 字符串，可查询视图[PG\_TIMEZONE\_NAMES](PG_TIMEZONE_NAMES.md)获得。
+**取值范围**： 字符串，可查询视图[PG\_TIMEZONE\_NAMES](pg_timezone_names.md)获得。
 
 **默认值**： GMT
 

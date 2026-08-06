@@ -123,7 +123,7 @@
 
 ## enable\_user\_metric\_persistent<a name="zh-cn_topic_0283137479_zh-cn_topic_0237124729_section1255143891414"></a>
 
-**参数说明**：设置是否开启用户历史资源监控转存功能。开启时，对于PG\_TOTAL\_USER\_RESOURCE\_INFO视图中数据，会定期采样保存到[GS\_WLM\_EC\_OPERATOR\_INFO](GS_WLM_EC_OPERATOR_INFO.md)系统表中。
+**参数说明**：设置是否开启用户历史资源监控转存功能。开启时，对于PG\_TOTAL\_USER\_RESOURCE\_INFO视图中数据，会定期采样保存到[GS\_WLM\_EC\_OPERATOR\_INFO](gs_wlm_ec_operator_info.md)系统表中。
 
 该参数属于SIGHUP类型参数，请参考[表2](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -151,7 +151,7 @@
 
 ## enable\_instance\_metric\_persistent<a name="zh-cn_topic_0283137479_zh-cn_topic_0237124729_section18113133910385"></a>
 
-**参数说明**：设置是否开启实例资源监控转存功能。开启时，对实例的监控数据会保存到[GS\_WLM\_INSTANCE\_HISTORY](GS_WLM_INSTANCE_HISTORY.md)系统表中。
+**参数说明**：设置是否开启实例资源监控转存功能。开启时，对实例的监控数据会保存到[GS\_WLM\_INSTANCE\_HISTORY](gs_wlm_instance_history.md)系统表中。
 
 该参数属于SIGHUP类型参数，请参考[表2](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 

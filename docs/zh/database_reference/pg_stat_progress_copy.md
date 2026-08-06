@@ -38,7 +38,7 @@ PG\_STAT\_PROGRESS\__COPY视图显示当前系统内所有正在执行COPY命令
 <tr id="zh-cn_topic_0289900596_4">
 <td class="cellrowborder" valign="top" width="32%" headers="zh-cn_topic_0289900596_4_name"><p id="zh-cn_topic_0289900596_4_name"><a name="zh-cn_topic_0289900596_4_name"></a>datname</p>
 </td>
-<td class="cellrowborder" valign="top" width="32%" headers="zh-cn_topic_0289900596_1_type"><p id="zh-cn_topic_0289900596_4_type"><a name="zh-cn_topic_0289900596_4_type" herf="PG_DATABASE.md">PG_DATABASE</a>.name</p>
+<td class="cellrowborder" valign="top" width="32%" headers="zh-cn_topic_0289900596_1_type"><p id="zh-cn_topic_0289900596_4_type"><a name="zh-cn_topic_0289900596_4_type" herf="pg_database.md">PG_DATABASE</a>.name</p>
 </td>
 <td class="cellrowborder" valign="top" width="48%" headers="zh-cn_topic_0289900596_4_desc"><p id="zh-cn_topic_0289900596_4_desc"><a name="zh-cn_topic_0289900596_4_desc"></a>执行COPY命令的线程连接的数据库名称。</p>
 </td>

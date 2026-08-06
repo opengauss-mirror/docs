@@ -20,13 +20,13 @@
 - 要创建系统管理员，请使用带有SYSADMIN选项的[CREATE USER](../sql_reference/create_user.md)语句 。
 - 要删除现有用户，请使用[DROP USER](../sql_reference/drop_user.md)。
 - 要更改用户帐户（例如，重命名用户或更改密码），请使用[ALTER USER](../sql_reference/alter_user.md)。
-- 要查看用户列表，请查询视图[PG\_USER](../database_reference/PG_USER.md)：
+- 要查看用户列表，请查询视图[PG\_USER](../database_reference/pg_user.md)：
 
     ```
     SELECT * FROM pg_user; 
     ```
 
-- 要查看用户属性，请查询系统表[PG\_AUTHID](../database_reference/PG_AUTHID.md)：
+- 要查看用户属性，请查询系统表[PG\_AUTHID](../database_reference/pg_authid.md)：
 
     ```
     SELECT * FROM pg_authid; 
