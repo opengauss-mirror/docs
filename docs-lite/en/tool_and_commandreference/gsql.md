@@ -2062,12 +2062,45 @@ openGauss=# \sf
 </tr>
 <tr id="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_row18885790"><td class="cellrowborder" valign="top" width="32.86%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p53353993"><a name="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p53353993"></a><a name="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p53353993"></a>\gset</p>
 </td>
-<td class="cellrowborder" valign="top" width="67.14%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p20243739"><a name="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p20243739"></a><a name="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p20243739"></a>Automatically map the single-row result returned by the query to current session variables based on the column names, with variable names is same with the column name. It is not possible to assign values to special control variables with hook functions such as 'AUTOCOMMIT', 'FETCH_COUNT', and 'QUIET'. It is also not possible to assign values to variables that do not conform to naming rules, such as ';b' and '?col'.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_row18885790"><td class="cellrowborder" valign="top" width="32.86%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p53353993"><a name="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p53353993"></a><a name="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p53353993"></a>\gset [COLUMN PREFIX]</p>
-</td>
-<td class="cellrowborder" valign="top" width="67.14%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p20243739"><a name="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p20243739"></a><a name="en-us_topic_0237152146_en-us_topic_0047670632_en-us_topic_0027078248_p20243739"></a>Automatically map the single-row result returned by the query to current session variables based on the column names, with variable names consisting of the prefix followed by the column name. It is not possible to assign values to special control variables with hook functions such as 'AUTOCOMMIT', 'FETCH_COUNT', and 'QUIET'. It is also not possible to assign values to variables that do not conform to naming rules, such as ';b' and '?col'.</p>
+<td class="cellrowborder" valign="top" width="67.14%" headers="mcps1.2.3.1.2 "><a name="en-us_topic_0237152146_en-us_topic_0059778645_6da475e7fa9c91ea7f12"></a>
+Store the query results in a variable. There's no semicolon at the end of the query, just follow it directly with \gset.
+
+1. Without a prefix
+
+	```
+	select 'hello' as var1, 10 as var2 \gset
+	\echo :var1 :var2
+	hello 10
+	```
+2. Has a prefix
+
+	```
+	select 'hello' as var1, 10 as var2 \gset result_
+	\echo :result_var1 :result_var2
+	hello 10
+	```
+3. The query results must have column names, and they have to be valid, otherwise the assignment will fail.
+
+	```
+	select 1 as b \gset ;
+	attempt to \gset set variable ";b" to 1 failed.
+    select 1 \gset
+    attempt to \gset set variable "?column?" to 1 failed.
+	```
+4. It is not possible to assign values to special control variables
+
+	```
+ 	-- Since openGauss automatically converts to lowercase,
+	-- this error usually won't be triggered unless add quotes.
+ 	select '%o' as 'PROMPT1' \gset
+ 	attempt to \gset into specially treated variable "PROMPT1" ignored.
+ 	select '%o' as PROMPT1 \gset
+ 	\echo :PROMPT1
+ 	%o%R%# 
+ 	\echo :prompt1
+ 	%o
+	```
+<span class="notetitle"> Special Control Variables List： </span><a name="en-us_topic_0237152146_en-us_topic_0059778645_6da475e7fa9c91ea7f"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_6da475e7fa9c91ea7f"></a><ol id="en-us_topic_0237152146_en-us_topic_0059778645_6da475e7fa9c91ea7f"><li>AUTOCOMMIT</li><li>ON_ERROR_STOP</li><li>QUIET</li><li>SINGLELINE</li><li>SINGLESTEP</li><li>FETCH_COUNT</li><li>ECHO</li><li>ECHO_HIDDEN</li><li>ON_ERROR_ROLLBACK</li><li>HISTCONTROL</li><li>PROMPT1</li><li>PROMPT2</li><li>PROMPT3</li><li>VERBOSITY</li><li>RETRY</li></ol>
 </td>
 </tr>
 </tbody>

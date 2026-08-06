@@ -2115,12 +2115,44 @@ omm@[local] openGauss=#
 </tr>
 <tr id="zh-cn_topic_0027078248_zh-cn_topic_0051928179_row39029041"><td class="cellrowborder" valign="top" width="32.86%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p6245822"><a name="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p6245822"></a><a name="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p6245822"></a>\gset </p>
 </td>
-<td class="cellrowborder" valign="top" width="67.14%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p17332671"><a name="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p17332671"></a><a name="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p17332671"></a>将查询返回的单行结果按列名自动映射为当前会话变量，变量名为列名。无法给诸如:"AUTOCOMMIT"、"FETCH_COUNT"、"QUIET"之类的有hook函数的特殊控制变量赋值。也无法给";b"、"？col"之类不符合变量命名规则的变量赋值。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0027078248_zh-cn_topic_0051928179_row39029041"><td class="cellrowborder" valign="top" width="32.86%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p6245822"><a name="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p6245822"></a><a name="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p6245822"></a>\gset [COLUMN PREFIX]</p>
-</td>
-<td class="cellrowborder" valign="top" width="67.14%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p17332671"><a name="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p17332671"></a><a name="zh-cn_topic_0027078248_zh-cn_topic_0051928179_p17332671"></a>将查询返回的单行结果按列名自动映射为当前会话变量，变量名为前缀+列名。无法给诸如:"AUTOCOMMIT"、"FETCH_COUNT"、"QUIET"之类的有hook函数的特殊控制变量赋值。也无法给";b"、"？col"之类不符合变量命名规则的变量赋值。</p>
+<td class="cellrowborder" valign="top" width="67.14%" headers="mcps1.2.3.1.2 "><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_6da475e7fa9c91ea7f12"></a>
+将查询结果存储到变量中。查询语句末尾无分号，直接接\gset。
+
+1. 无前缀
+
+	```
+	select 'hello' as var1, 10 as var2 \gset
+	\echo :var1 :var2
+	hello 10
+	```
+2. 有前缀
+
+	```
+	select 'hello' as var1, 10 as var2 \gset result_
+	\echo :result_var1 :result_var2
+	hello 10
+	```
+3. 查询结果必须有列名，且必须是合法列名，否则会赋值失败
+
+	```
+	select 1 as b \gset ;
+	attempt to \gset set variable ";b" to 1 failed.
+    select 1 \gset
+    attempt to \gset set variable "?column?" to 1 failed.
+	```
+4. 不可给特殊控制变量赋值
+
+	```
+ 	-- 由于opengauss会自动转小写，这个报错一般不会被触发，除非加上单引号
+ 	select '%o' as 'PROMPT1' \gset
+ 	attempt to \gset into specially treated variable "PROMPT1" ignored.
+ 	select '%o' as PROMPT1 \gset
+ 	\echo :PROMPT1
+ 	%o%R%# 
+ 	\echo :prompt1
+ 	%o
+	```
+<span class="notetitle"> 特殊控制变量列表： </span><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_6da475e7fa9c91ea7f"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_6da475e7fa9c91ea7f"></a><ol id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_6da475e7fa9c91ea7f"><li>AUTOCOMMIT</li><li>ON_ERROR_STOP</li><li>QUIET</li><li>SINGLELINE</li><li>SINGLESTEP</li><li>FETCH_COUNT</li><li>ECHO</li><li>ECHO_HIDDEN</li><li>ON_ERROR_ROLLBACK</li><li>HISTCONTROL</li><li>PROMPT1</li><li>PROMPT2</li><li>PROMPT3</li><li>VERBOSITY</li><li>RETRY</li></ol>
 </td>
 </tr>
 </tbody>
