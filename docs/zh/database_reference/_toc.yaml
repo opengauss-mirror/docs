@@ -362,7 +362,7 @@ sections:
           - label: PG_RANGE
             href: ./pg_range.md
           - label: PG_REPLICATION_ORIGIN
-            href: ./pg_replication_oigin.md
+            href: ./pg_replication_origin.md
           - label: PG_RESOURCE_POOL
             href: ./pg_resource_pool.md
           - label: PG_REWRITE
@@ -490,7 +490,7 @@ sections:
           - label: GS_WLM_PLAN_OPERATOR_HISTORY
             href: ./gs_wlm_plan_operator_history.md
           - label: GS_WLM_REBUILD_USER_RESOURCE_POOL
-            href: ./gs_wlm_rebuild_user_resouce_poo.md
+            href: ./gs_wlm_rebuild_user_resouce_pool.md
           - label: GS_WLM_RESOURCE_POOL
             href: ./gs_wlm_resource_pool.md
           - label: GS_WLM_SESSION_HISTORY
@@ -508,7 +508,7 @@ sections:
           - label: PG_AVAILABLE_EXTENSIONS
             href: ./pg_available_extensions.md
           - label: PG_AVAILABLE_EXTENSION_VERSIONS
-            href: ./pg_available_extensions_versions.md
+            href: ./pg_available_extension_versions.md
           - label: PG_CURSORS
             href: ./pg_cursors.md
           - label: PG_COMM_DELAY
@@ -566,7 +566,7 @@ sections:
           - label: PG_SECLABELS
             href: ./pg_seclabels.md
           - label: PG_SESSION_IOSTAT
-            href: ./pg_seesion_iostat.md
+            href: ./pg_session_iostat.md
           - label: PG_SESSION_WLMSTAT
             href: ./pg_session_wlmstat.md
           - label: PG_SETTINGS
@@ -602,11 +602,11 @@ sections:
           - label: PG_STAT_REPLICATION
             href: ./pg_stat_replication.md
           - label: PG_STAT_SUBSCRIPTION
-            href: ./pg_stat_subsription.md
+            href: ./pg_stat_subscription.md
           - label: PG_STAT_SYS_INDEXES
             href: ./pg_stat_sys_indexes.md
           - label: PG_STAT_SYS_TABLES
-            href: ./pg_stat_sys_tabes.md
+            href: ./pg_stat_sys_tables.md
           - label: PG_STAT_XACT_ALL_TABLES
             href: ./pg_stat_xact_all_tables.md
           - label: PG_STAT_XACT_SYS_TABLES
@@ -654,7 +654,7 @@ sections:
           - label: PG_USER_MAPPINGS
             href: ./pg_user_mappings.md
           - label: PG_VIEWS
-            href: ./PG_VIEWS.md
+            href: ./pg_views.md
           - label: PG_VARIABLE_INFO
             href: ./pg_variable_info.md
           - label: PG_WLM_STATISTICS

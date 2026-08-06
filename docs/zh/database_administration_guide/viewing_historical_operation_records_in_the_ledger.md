@@ -14,7 +14,7 @@
     SELECT * FROM gs_global_chain;
     ```
 
-    该表有11个字段，每个字段的含义见章节[GS\_GLOBAL\_CHAIN](../database_reference/GS_GLOBAL_CHAIN.md)。
+    该表有11个字段，每个字段的含义见章节[GS\_GLOBAL\_CHAIN](../database_reference/gs_global_chain.md)。
 
 - 查询用户历史表的命令是直接查询BLOCKCHAIN模式下的用户历史表，操作为：
 
