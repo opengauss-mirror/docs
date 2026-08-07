@@ -33,7 +33,7 @@ CREATE USER MAPPING FOR { user_name | USER | CURRENT_USER | PUBLIC }
     这个子句指定用户映射的选项。这些选项通常定义该映射实际的用户名和口令。选项名必须唯一。允许的选项名和值与该服务器的外部数据包装器有关。
 
     >[!NOTE]说明
-    >- 用户的口令会加密后保存到系统表[PG\_USER\_MAPPING](../database_reference/PG_USER_MAPPING.md)中，加密时需要使用usermapping.key.cipher和usermapping.key.rand作为加密密码文件和加密因子。首次使用前需要通过如下命令创建这两个文件，并将这两个文件放入各节点目录$GAUSSHOME/bin，且确保具有读权限。
+    >- 用户的口令会加密后保存到系统表[PG\_USER\_MAPPING](../database_reference/pg_user_mapping.md)中，加密时需要使用usermapping.key.cipher和usermapping.key.rand作为加密密码文件和加密因子。首次使用前需要通过如下命令创建这两个文件，并将这两个文件放入各节点目录$GAUSSHOME/bin，且确保具有读权限。
 >
     > ```
     > gs_guc generate -o usermapping -S default -D $GAUSSHOME/bin

@@ -38,7 +38,7 @@ openGauss 目前所支持的字符集可以参考 [CREATE DATABASE](create_datab
 
 ## 支持的字符序<a name="支持的字符序"></a>
 
-openGauss所有支持的字符序详见[PG\_COLLATION](../database_reference/PG_COLLATION.md)系统表。
+openGauss所有支持的字符序详见[PG\_COLLATION](../database_reference/pg_collation.md)系统表。
 
 还有部分排序规则仅支持在B和D模式下使用，如下：
 **表字符序**

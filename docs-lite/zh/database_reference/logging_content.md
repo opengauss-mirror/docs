@@ -327,7 +327,7 @@
 
 该参数属于SIGHUP类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围**： 字符串，可查询视图[PG\_TIMEZONE\_NAMES](PG_TIMEZONE_NAMES.md)获得。
+**取值范围**： 字符串，可查询视图[PG\_TIMEZONE\_NAMES](pg_timezone_names.md)获得。
 
 **默认值**： GMT
 
