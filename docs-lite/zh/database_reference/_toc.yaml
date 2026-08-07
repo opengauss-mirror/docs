@@ -132,7 +132,7 @@ sections:
       - label: 全局临时表
         href: ./global_temporary_table.md
       - label: HyperLogLog
-        href: ./HyperLogLog.md
+        href: ./hyperLloglog.md
       - label: 用户自定义函数
         href: ./user_defined_functions.md
       - label: 定时任务
@@ -182,7 +182,7 @@ sections:
           - label: GS_AUDITING_POLICY_PRIVILEGES
             href: ./gs_auditing_policy_privileges.md
           - label: GS_CLIENT_GLOBAL_KEYS
-            href: ./gs_client_globl_keys.md
+            href: ./gs_client_global_keys.md
           - label: GS_CLIENT_GLOBAL_KEYS_ARGS
             href: ./gs_client_globl_keys_args.md
           - label: GS_COLUMN_KEYS
@@ -222,7 +222,7 @@ sections:
           - label: GS_POLICY_LABEL
             href: ./gs_policy_label.md
           - label: GS_RECYCLEBIN
-            href: ./gs_recylebin.md
+            href: ./gs_recyclebin.md
           - label: GS_SQL_PATCH
             href: ./gs_sql_patch.md
           - label: GS_TXN_SNAPSHOT
@@ -262,7 +262,7 @@ sections:
           - label: PG_AUTH_HISTORY
             href: ./pg_auth_history.md
           - label: PG_AUTH_MEMBERS
-            href: ./pa_auth_members.md    
+            href: ./pg_auth_members.md    
           - label: PG_CAST
             href: ./pg_cast.md
           - label: PG_CLASS
@@ -294,7 +294,7 @@ sections:
           - label: PG_EXTENSION_DATA_SOURCE
             href: ./pg_extension_data_source.md
           - label: PG_FOREIGN_DATA_WRAPPER
-            href: ./pg_foreign_dat_wrapper.md
+            href: ./pg_foreign_data_wrapper.md
           - label: PG_FOREIGN_SERVER
             href: ./pg_foreign_server.md
           - label: PG_FOREIGN_TABLE
@@ -372,7 +372,7 @@ sections:
           - label: PG_SUBSCRIPTION_REL
             href: ./pg_subscription_rel.md
           - label: PG_SYNONYM
-            href: ./pg_synoym.md
+            href: ./pg_synonym.md
           - label: PG_TABLESPACE
             href: ./pg_tablespace.md
           - label: PG_TRIGGER
@@ -417,8 +417,8 @@ sections:
             href: ./gs_auditing.md
           - label: GS_AUDITING_ACCESS
             href: ./gs_auditing_access.md
-          - label: GS_AUDITING_PRIVILEGE
-            href: ./gs_auditing_privilege.md
+          - label: GS_AUDITING_PRIVILEGES
+            href: ./gs_auditing_privileges.md
           - label: GS_DB_PRIVILEGES
             href: ./gs_db_privileges.md
           - label: GS_FILE_STAT
@@ -492,7 +492,7 @@ sections:
           - label: PG_AVAILABLE_EXTENSIONS
             href: ./pg_available_extensions.md
           - label: PG_AVAILABLE_EXTENSION_VERSIONS
-            href: ./pg_available_extensions_versions.md
+            href: ./pg_available_extension_versions.md
           - label: PG_CURSORS
             href: ./pg_cursors.md
           - label: PG_COMM_DELAY
@@ -508,7 +508,7 @@ sections:
           - label: PG_EXT_STATS
             href: ./pg_ext_stats.md
           - label: PG_GET_INVALID_BACKENDS
-            href: ./[g_get_invalid_backends].md
+            href: ./pg_get_invalid_backends.md
           - label: PG_GET_SENDERS_CATCHUP_TIME
             href: ./pg_get_senders_catchup_time.md
           - label: PG_GROUP
@@ -532,7 +532,7 @@ sections:
           - label: PG_PREPARED_XACTS
             href: ./pg_prepared_xacts.md
           - label: PG_OS_THREADS
-            href: ./pg_os_theads.md
+            href: ./pg_os_threads.md
           - label: PG_PUBLICATION_TABLES
             href: ./pg_publication_tables.md
           - label: PG_REPLICATION_ORIGIN_STATUS
@@ -630,9 +630,9 @@ sections:
           - label: PG_TOTAL_MEMORY_DETAIL
             href: ./pg_total_memory_detail.md
           - label: PG_TOTAL_USER_RESOURCE_INFO
-            href: ./pg_total_user_resouce_info.md
+            href: ./pg_total_user_resource_info.md
           - label: PG_TOTAL_USER_RESOURCE_INFO_OID
-            href: ./pg_total_user_resouce_info_oid.md
+            href: ./pg_total_user_resource_info_oid.md
           - label: PG_VARIABLE_INFO
             href: ./pg_variable_info.md
           - label: PG_VIEWS
