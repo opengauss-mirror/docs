@@ -2007,7 +2007,7 @@ txid\_snapshot的文本表示为：xmin:xmax:xip\_list。
 
 - pg\_shared\_memory\_detail
 
-    描述：返回所有已产生的共享内存上下文的使用信息，各列描述请参考[GS\_SHARED\_MEMORY\_DETAIL](../database_reference/GS_SHARED_MEMORY_DETAIL.md)。
+    描述：返回所有已产生的共享内存上下文的使用信息，各列描述请参考[GS\_SHARED\_MEMORY\_DETAIL](../database_reference/gs_shared_memory_detail.md)。
 
     参数：nan
 

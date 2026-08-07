@@ -22,7 +22,7 @@ GS\_LABELS视图显示所有已配置的资源标签信息。需要有系统管�
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.4.1.2 "><p id="aecd744296d7d4b0397b2fe1fd923b6bf"><a name="aecd744296d7d4b0397b2fe1fd923b6bf"></a><a name="aecd744296d7d4b0397b2fe1fd923b6bf"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p6131333104318"><a name="p6131333104318"></a><a name="p6131333104318"></a>资源标签的类型。对应系统表<a href="GS_POLICY_LABEL.md">GS_POLICY_LABEL</a>中的labeltype字段。</p>
+<td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.4.1.3 "><p id="p6131333104318"><a name="p6131333104318"></a><a name="p6131333104318"></a>资源标签的类型。对应系统表<a href="gs_policy_label.md">GS_POLICY_LABEL</a>中的labeltype字段。</p>
 </td>
 </tr>
 <tr id="r45542ef0924c49f2a21c540acd3c90e3"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.4.1.1 "><p id="p21843251120"><a name="p21843251120"></a><a name="p21843251120"></a>fqdntype</p>

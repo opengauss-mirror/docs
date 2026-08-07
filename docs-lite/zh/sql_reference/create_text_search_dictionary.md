@@ -4,7 +4,7 @@
 
 创建一个新的全文检索词典。词典是一种指定在全文检索时识别特定词并处理的方法。
 
-词典的创建依赖于预定义模板（在系统表[PG\_TS\_TEMPLATE](../database_reference/PG_TS_TEMPLATE.md)中定义），支持创建五种类型的词典，分别是Simple、Ispell、Synonym、Thesaurus、以及Snowball，每种类型的词典可以完成不同的任务。
+词典的创建依赖于预定义模板（在系统表[PG\_TS\_TEMPLATE](../database_reference/pg_ts_template.md)中定义），支持创建五种类型的词典，分别是Simple、Ispell、Synonym、Thesaurus、以及Snowball，每种类型的词典可以完成不同的任务。
 
 ## 注意事项<a name="zh-cn_topic_0283137272_zh-cn_topic_0237122122_zh-cn_topic_0059777936_s1cdad938760340bbbbd8251750b59176"></a>
 
@@ -33,7 +33,7 @@ CREATE TEXT SEARCH DICTIONARY name (
 
     模板名。
 
-    取值范围：系统表[PG\_TS\_TEMPLATE](../database_reference/PG_TS_TEMPLATE.md)中定义的模板：Simple/Synonym/Thesaurus/Ispell/Snowball。
+    取值范围：系统表[PG\_TS\_TEMPLATE](../database_reference/pg_ts_template.md)中定义的模板：Simple/Synonym/Thesaurus/Ispell/Snowball。
 
 - **option**
 

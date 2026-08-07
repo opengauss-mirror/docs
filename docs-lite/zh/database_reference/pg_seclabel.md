@@ -2,7 +2,7 @@
 
 PG\_SECLABEL系统表存储数据对象上的安全标签。
 
-[PG\_SHSECLABEL](PG_SHSECLABEL.md)的作用类似，只是它是用于在一个openGauss内共享的数据库对象的安全标签上的。
+[PG\_SHSECLABEL](pg_shseclabel.md)的作用类似，只是它是用于在一个openGauss内共享的数据库对象的安全标签上的。
 
 **表 1**  PG\_SECLABEL字段
 
@@ -30,7 +30,7 @@ PG\_SECLABEL系统表存储数据对象上的安全标签。
 </td>
 <td class="cellrowborder" valign="top" width="11.940000000000001%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137207_zh-cn_topic_0237122313_zh-cn_topic_0059778223_a79520b0f823541c1a74746966d6ea4c8"><a name="zh-cn_topic_0283137207_zh-cn_topic_0237122313_zh-cn_topic_0059778223_a79520b0f823541c1a74746966d6ea4c8"></a><a name="zh-cn_topic_0283137207_zh-cn_topic_0237122313_zh-cn_topic_0059778223_a79520b0f823541c1a74746966d6ea4c8"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="26.05%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137207_zh-cn_topic_0237122313_zh-cn_topic_0059778223_a563ad3b3eab840ccb3f35c2dacd18d1c"><a name="zh-cn_topic_0283137207_zh-cn_topic_0237122313_zh-cn_topic_0059778223_a563ad3b3eab840ccb3f35c2dacd18d1c"></a><a name="zh-cn_topic_0283137207_zh-cn_topic_0237122313_zh-cn_topic_0059778223_a563ad3b3eab840ccb3f35c2dacd18d1c"></a><a href="PG_CLASS.md">PG_CLASS</a>.oid</p>
+<td class="cellrowborder" valign="top" width="26.05%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137207_zh-cn_topic_0237122313_zh-cn_topic_0059778223_a563ad3b3eab840ccb3f35c2dacd18d1c"><a name="zh-cn_topic_0283137207_zh-cn_topic_0237122313_zh-cn_topic_0059778223_a563ad3b3eab840ccb3f35c2dacd18d1c"></a><a name="zh-cn_topic_0283137207_zh-cn_topic_0237122313_zh-cn_topic_0059778223_a563ad3b3eab840ccb3f35c2dacd18d1c"></a><a href="pg_class.md">PG_CLASS</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.18%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137207_zh-cn_topic_0237122313_zh-cn_topic_0059778223_a1a1092bc7a004c78a317f51c49d0c27f"><a name="zh-cn_topic_0283137207_zh-cn_topic_0237122313_zh-cn_topic_0059778223_a1a1092bc7a004c78a317f51c49d0c27f"></a><a name="zh-cn_topic_0283137207_zh-cn_topic_0237122313_zh-cn_topic_0059778223_a1a1092bc7a004c78a317f51c49d0c27f"></a>出现这个对象的系统目录的OID。</p>
 </td>
