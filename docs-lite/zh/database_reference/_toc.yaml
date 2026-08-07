@@ -132,7 +132,7 @@ sections:
       - label: 全局临时表
         href: ./global_temporary_table.md
       - label: HyperLogLog
-        href: ./hyperLloglog.md
+        href: ./hyperloglog.md
       - label: 用户自定义函数
         href: ./user_defined_functions.md
       - label: 定时任务
@@ -184,7 +184,7 @@ sections:
           - label: GS_CLIENT_GLOBAL_KEYS
             href: ./gs_client_global_keys.md
           - label: GS_CLIENT_GLOBAL_KEYS_ARGS
-            href: ./gs_client_globl_keys_args.md
+            href: ./gs_client_global_keys_args.md
           - label: GS_COLUMN_KEYS
             href: ./gs_column_keys.md
           - label: GS_COLUMN_KEYS_ARGS
@@ -598,7 +598,7 @@ sections:
           - label: PG_STAT_REPLICATION
             href: ./pg_stat_replication.md
           - label: PG_STAT_SUBSCRIPTION
-            href: ./pg_stat_subsciption.md
+            href: ./pg_stat_subscription.md
           - label: PG_STAT_SYS_INDEXES
             href: ./pg_stat_sys_indexes.md
           - label: PG_STAT_SYS_TABLES
