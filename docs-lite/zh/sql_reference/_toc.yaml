@@ -82,15 +82,15 @@ sections:
           - label: 简介
             href: ./information_schema.md        
           - label: _PG_FOREIGN_DATA_WRAPPERS
-            href: ./_PG_FOREIGN_DATA_WRAPPERS.md
+            href: ./_pg_foreign_data_wrappers.md
           - label: _PG_FOREIGN_SERVERS
-            href: ./_PG_FOREIGN_SERVERS.md
+            href: ./_pg_foreign_servers.md
           - label: _PG_FOREIGN_TABLES
-            href: ./_PG_FOREIGN_TABLES.md
+            href: ./_pg_foreign_tables.md
           - label: _PG_FOREIGN_TABLE_COLUMNS
-            href: ./_PG_FOREIGN_TABLE_COLUMNS.md
+            href: ./_pg_foreign_table_columns.md
           - label: _PG_USER_MAPPINGS
-            href: ./_PG_USER_MAPPINGS.md
+            href: ./_pg_user_mappings.md
           - label: CHARACETER_SETS
             href: ./character_sets.md
           - label: COLLATIONS
