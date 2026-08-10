@@ -8,7 +8,7 @@
 
 - 启动事务
 
-    用户可以使用[START TRANSACTION](start_transaction.md)和[BEGIN](BEGIN.md)语法启动事务。
+    用户可以使用[START TRANSACTION](start_transaction.md)和[BEGIN](begin.md)语法启动事务。
 
 - 设置事务
 

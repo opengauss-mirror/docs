@@ -275,4 +275,4 @@ openGauss=# DROP ROLE miriam;
 
 ## 相关链接<a name="zh-cn_topic_0283136858_zh-cn_topic_0237122112_zh-cn_topic_0059778189_s613f76d12a5144f3b503787cece40637"></a>
 
-[SET ROLE](set_role.md)，[ALTER ROLE](alter_role.md)，[DROP ROLE](drop_role.md)，[GRANT](GRANT.md)
+[SET ROLE](set_role.md)，[ALTER ROLE](alter_role.md)，[DROP ROLE](drop_role.md)，[GRANT](grant.md)

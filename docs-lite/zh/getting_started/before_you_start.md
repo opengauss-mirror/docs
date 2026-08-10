@@ -57,7 +57,7 @@ openGauss正常运行。
     openGauss=# GRANT ALL PRIVILEGES TO joe;
     ```
 
-    使用GRANT命令进行相关权限设置，具体操作请参考[GRANT](../sql_reference/GRANT.md)。
+    使用GRANT命令进行相关权限设置，具体操作请参考[GRANT](../sql_reference/grant.md)。
 
     **引申信息：** 关于数据库用户的更多信息请参考[管理用户及权限](../database_administration_guide/default_permission_mechanism.md)。
 

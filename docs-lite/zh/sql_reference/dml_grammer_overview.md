@@ -4,7 +4,7 @@ DML（Data Manipulation Language数据操作语言），用于对数据库表中
 
 ## 插入数据<a name="zh-cn_topic_0283137022_zh-cn_topic_0237122050_zh-cn_topic_0059778364_s56b39a8f9e8c41359c74613c637c93ba"></a>
 
-插入数据是往数据库表中添加一条或多条记录，请参考[INSERT](INSERT.md)。
+插入数据是往数据库表中添加一条或多条记录，请参考[INSERT](insert.md)。
 
 ## 修改数据<a name="zh-cn_topic_0283137022_zh-cn_topic_0237122050_zh-cn_topic_0059778364_sa635baff4808455daf4aa998456672ce"></a>
 
@@ -16,13 +16,13 @@ DML（Data Manipulation Language数据操作语言），用于对数据库表中
 
 ## 删除数据<a name="zh-cn_topic_0283137022_zh-cn_topic_0237122050_zh-cn_topic_0059778364_s0dfc2748bba64d79b39e32e3c0d37324"></a>
 
-openGauss提供了两种删除表数据的语句：删除表中指定条件的数据，请参考[DELETE](DELETE.md)；或删除表的所有数据，请参考[TRUNCATE](TRUNCATE.md)。
+openGauss提供了两种删除表数据的语句：删除表中指定条件的数据，请参考[DELETE](delete.md)；或删除表的所有数据，请参考[TRUNCATE](TRUNCATE.md)。
 
 TRUNCATE快速地从表中删除所有行，它和在每个表上进行无条件的DELETE有同样的效果，不过因为它不做表扫描，因而快得多。在大表上最有用。
 
 ## 拷贝数据<a name="zh-cn_topic_0283137022_zh-cn_topic_0237122050_zh-cn_topic_0059778364_sb955e5ed9d7d4b4eb0ac6198afa0a6ec"></a>
 
-openGauss提供了在表和文件之间拷贝数据的语句，请参考[COPY](COPY.md)。
+openGauss提供了在表和文件之间拷贝数据的语句，请参考[COPY](copy.md)。
 
 ## 锁定表<a name="zh-cn_topic_0283137022_zh-cn_topic_0237122050_zh-cn_topic_0059778364_sc96d73a125be4828991a058d852380fa"></a>
 
@@ -30,7 +30,7 @@ openGauss提供了多种锁模式用于控制对表中数据的并发访问，�
 
 ## 调用函数<a name="zh-cn_topic_0283137022_zh-cn_topic_0237122050_zh-cn_topic_0059778364_s04a7c8870a5f42c18aa48d11bde42b8c"></a>
 
-openGauss提供了三个用于调用函数的语句，它们在语法结构上没有差别，请参考[CALL](CALL.md)。
+openGauss提供了三个用于调用函数的语句，它们在语法结构上没有差别，请参考[CALL](call.md)。
 
 ## 操作会话<a name="zh-cn_topic_0283137022_zh-cn_topic_0237122050_zh-cn_topic_0059777960_s9179d500d4a64533b55cb07c42415a2d"></a>
 

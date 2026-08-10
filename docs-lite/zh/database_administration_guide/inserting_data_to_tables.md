@@ -1,6 +1,6 @@
 # 向表中插入数据<a name="ZH-CN_TOPIC_0289900995"></a>
 
-在创建一个表后，表中并没有数据，在使用这个表之前，需要向表中插入数据。本小节介绍如何使用[INSERT](../sql_reference/INSERT.md)命令插入一行或多行数据，及从指定表插入数据。如果有大量数据需要批量导入表中，请参考[导入数据](../database_om_guide/import_data.md)。
+在创建一个表后，表中并没有数据，在使用这个表之前，需要向表中插入数据。本小节介绍如何使用[INSERT](../sql_reference/insert.md)命令插入一行或多行数据，及从指定表插入数据。如果有大量数据需要批量导入表中，请参考[导入数据](../database_om_guide/import_data.md)。
 
 ## 背景信息<a name="zh-cn_topic_0283137618_zh-cn_topic_0237120300_zh-cn_topic_0059779039_s0ba8d61b4741479585fa6c86df04bad1"></a>
 

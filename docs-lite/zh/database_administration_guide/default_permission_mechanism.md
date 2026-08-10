@@ -1,10 +1,10 @@
 # 默认权限机制<a name="ZH-CN_TOPIC_0289899957"></a>
 
-数据库对象创建后，进行对象创建的用户就是该对象的所有者。数据库安装后的默认情况下，未开启[三权分立](separation_of_duties.md)，数据库系统管理员具有与对象所有者相同的权限。也就是说对象创建后，默认只有对象所有者或者系统管理员可以查询、修改和销毁对象，以及通过[GRANT](../sql_reference/GRANT.md)将对象的权限授予其他用户。
+数据库对象创建后，进行对象创建的用户就是该对象的所有者。数据库安装后的默认情况下，未开启[三权分立](separation_of_duties.md)，数据库系统管理员具有与对象所有者相同的权限。也就是说对象创建后，默认只有对象所有者或者系统管理员可以查询、修改和销毁对象，以及通过[GRANT](../sql_reference/grant.md)将对象的权限授予其他用户。
 
 为使其他用户能够使用对象，必须向用户或包含该用户的角色授予必要的权限。
 
-openGauss支持以下的权限：SELECT、INSERT、UPDATE、DELETE、TRUNCATE、REFERENCES、CREATE、CONNECT、EXECUTE、USAGE、ALTER、DROP、COMMENT、INDEX和VACUUM。不同的权限与不同的对象类型关联。有关各权限的详细信息，请参见[GRANT](../sql_reference/GRANT.md)。
+openGauss支持以下的权限：SELECT、INSERT、UPDATE、DELETE、TRUNCATE、REFERENCES、CREATE、CONNECT、EXECUTE、USAGE、ALTER、DROP、COMMENT、INDEX和VACUUM。不同的权限与不同的对象类型关联。有关各权限的详细信息，请参见[GRANT](../sql_reference/grant.md)。
 
 要撤消已经授予的权限，可以使用[REVOKE](../sql_reference/REVOKE.md)。对象所有者的权限（例如ALTER、 DROP、COMMENT、INDEX、VACUUM、GRANT和REVOKE）是隐式拥有的，即只要拥有对象就可以执行对象所有者的这些隐式权限。对象所有者可以撤消自己的普通权限，例如，使表对自己以及其他人只读，系统管理员用户除外。
 
