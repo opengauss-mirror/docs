@@ -762,25 +762,25 @@ sections:
       - label: ANALYZE | ANALYSE
         href: ./analyze_analyse.md
       - label: BEGIN
-        href: ./BEGIN.md
+        href: ./begin.md
       - label: CALL
-        href: ./CALL.md
+        href: ./call.md
       - label: CHECKPOINT
-        href: ./CHECKPOINT.md
+        href: ./checkpoint.md
       - label: CLEAN CONNECTION
         href: ./clean_connection.md
       - label: CLOSE
-        href: ./CLOSE.md
+        href: ./close.md
       - label: CLUSTER
-        href: ./CLUSTER.md
+        href: ./cluster.md
       - label: COMMENT
-        href: ./COMMENT.md
+        href: ./comment.md
       - label: COMMIT | END
         href: ./commit_end.md
       - label: COMMIT PREPARED
         href: ./commit_prepared.md
       - label: COPY
-        href: ./COPY.md
+        href: ./copy.md
       - label: CREATE ACCESS METHOD
         href: ./create_access_method.md
       - label: CREATE AGGREGATE
@@ -884,15 +884,15 @@ sections:
       - label: CREATE WEAK PASSWORD DICTIONARY
         href: ./create_weak_password_dictionary.md
       - label: CURSOR
-        href: ./CURSOR.md
+        href: ./cursor.md
       - label: DEALLOCATE
-        href: ./DEALLOCATE.md
+        href: ./deallocate.md
       - label: DECLARE
-        href: ./DECLARE.md
+        href: ./declare.md
       - label: DELETE
-        href: ./DELETE.md
+        href: ./delete.md
       - label: DO
-        href: ./DO.md
+        href: ./do.md
       - label: DROP ACCESS METHOD
         href: ./drop_access_method.md
       - label: DROP AGGREGATE
@@ -992,17 +992,17 @@ sections:
       - label: DROP WEAK PASSWORD DICTIONARY
         href: ./drop_weak_password_dictionary.md
       - label: EXECUTE
-        href: ./EXECUTE.md
+        href: ./execute.md
       - label: EXPLAIN
-        href: ./EXPLAIN.md
+        href: ./explain.md
       - label: EXPLAIN PLAN
         href: ./explain_plan.md
       - label: FETCH
-        href: ./FETCH.md
+        href: ./fetch.md
       - label: GRANT
-        href: ./GRANT.md
+        href: ./grant.md
       - label: INSERT
-        href: ./INSERT.md
+        href: ./insert.md
       - label: LISTEN
         href: ./listen.md
       - label: LOCK
@@ -1010,17 +1010,17 @@ sections:
       - label: MERGE INTO
         href: ./merge_into.md
       - label: MOVE
-        href: ./MOVE.md
+        href: ./move.md
       - label: NOTIFY
         href: ./notify.md
       - label: PREDICT BY
         href: ./predict_by.md
       - label: PREPARE
-        href: ./PREPARE.md
+        href: ./prepare.md
       - label: PREPARE TRANSACTION
         href: ./prepare_transaction.md
       - label: PURGE
-        href: ./PURGE.md
+        href: ./purge.md
       - label: REASSIGN OWNED
         href: ./reassign_owned.md
       - label: REFRESH MATERIALIZED VIEW
