@@ -368,7 +368,7 @@ sections:
               - label: SUMMARY_STATIO_USER_INDEXES
                 href: ./summary_statio_user_indexes.md
               - label: GLOBAL_STATIO_USER_INDEXES
-                href: ./summary_statio_user_indexes.md
+                href: ./global_statio_user_indexes.md
               - label: STATIO_USER_SEQUENCES
                 href: ./statio_user_sequences.md
               - label: SUMMARY_STATIO_USER_SEQUENCES
