@@ -24,7 +24,7 @@ SHOW
 
 ## 参数说明<a name="zh-cn_topic_0283136640_zh-cn_topic_0237122191_zh-cn_topic_0059779163_s96f32bd65e9e46f4bf15eb3c1663af3a"></a>
 
-显示变量的参数请参见RESET的[参数说明](RESET.md#zh-cn_topic_0283137385_zh-cn_topic_0237122178_zh-cn_topic_0059779097_s46998dbd2cc84394b47aad2adc8ea141)。
+显示变量的参数请参见RESET的[参数说明](reset.md#zh-cn_topic_0283137385_zh-cn_topic_0237122178_zh-cn_topic_0059779097_s46998dbd2cc84394b47aad2adc8ea141)。
 
 ## 示例<a name="zh-cn_topic_0283136640_zh-cn_topic_0237122191_zh-cn_topic_0059779163_s9926ef8e79984fac9b05d0b6bd0e8fd5"></a>
 
@@ -41,4 +41,4 @@ openGauss=# SHOW VARIABLES LIKE var;
 
 ## 相关链接<a name="zh-cn_topic_0283136640_zh-cn_topic_0237122191_zh-cn_topic_0059779163_s5f7ae1b9fc8c4edfa04138996c61eaa4"></a>
 
-[SET](SET.md)，[RESET](RESET.md)
+[SET](set.md)，[RESET](reset.md)

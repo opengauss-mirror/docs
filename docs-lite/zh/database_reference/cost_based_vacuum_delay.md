@@ -11,7 +11,7 @@
 
 ## 背景信息<a name="zh-cn_topic_0283136744_zh-cn_topic_0237124702_zh-cn_topic_0059778692_s07d4dedef9d24a83acb5d9412d6b68fc"></a>
 
-在[ANALYZE | ANALYSE](../sql_reference/analyze_analyse.md)和[VACUUM](../sql_reference/VACUUM.md)语句执行过程中，系统维护一个内部的记数器，跟踪所执行的各种I/O操作的近似开销。如果积累的开销达到了vacuum\_cost\_limit声明的限制，则执行这个操作的进程将睡眠vacuum\_cost\_delay指定的时间。然后它会重置记数器然后继续执行。
+在[ANALYZE | ANALYSE](../sql_reference/analyze_analyse.md)和[VACUUM](../sql_reference/vacuum.md)语句执行过程中，系统维护一个内部的记数器，跟踪所执行的各种I/O操作的近似开销。如果积累的开销达到了vacuum\_cost\_limit声明的限制，则执行这个操作的进程将睡眠vacuum\_cost\_delay指定的时间。然后它会重置记数器然后继续执行。
 
 这个特性是缺省关闭的。如需开启，需要把vacuum\_cost\_delay变量设置为一个非零值。
 

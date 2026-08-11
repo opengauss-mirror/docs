@@ -156,7 +156,7 @@ sections:
               - label: FILE_REDO_IOSTAT
                 href: ./file_redo_iostat.md
               - label: SUMMARY_FILE_REDO_IOSTAT
-                href: ./summary_flie_redo_iosta.md
+                href: ./summary_file_redo_iostat.md
               - label: GLOBAL_FILE_REDO_IOSTAT
                 href: ./global_file_redo_iostat.md
               - label: GLOBAL_REL_IOSTAT
@@ -164,7 +164,7 @@ sections:
               - label: LOCAL_REL_IOSTAT
                 href: ./local_rel_iostat.md
               - label: SUMMARY_REL_IOSTAT
-                href: ./summary_REL_IOSTAT.md
+                href: ./summary_rel_iostat.md
           - label: Object
             sections:
               - label: STAT_USER_TABLES
@@ -178,7 +178,7 @@ sections:
               - label: STAT_USER_INDEXES
                 href: ./stat_user_indexes.md
               - label: SUMMARY_STAT_USER_INDEXES
-                href: ./summary_user_indexes.md                    
+                href: ./summary_stat_user_indexes.md                    
               - label: GLOBAL_STAT_USER_INDEXES
                 href: ./global_stat_user_indexes.md
               - label: STAT_SYS_TABLES
@@ -514,7 +514,7 @@ sections:
                   - label: SNAPSHOT.TABLES_SNAP_TIMESTAMP
                     href: ./snapshot_tables_snap_timestamp.md
                   - label: SNAP_SEQ
-                    href: ./SNAP_SEQ.md
+                    href: ./snap_seq.md
               - label: WDR Snapshot 数据表
                 href: ./wdr_snapshot_data_table.md
               - label: WDR Snapshot 生成性能报告
@@ -1028,29 +1028,29 @@ sections:
       - label: REFRESH INCREMENTAL MATERIALIZED VIEW
         href: ./refresh_incremental_materialized_view.md
       - label: REINDEX
-        href: ./REINDEX.md
+        href: ./reindex.md
       - label: RELEASE SAVEPOINT
         href: ./release_savepoint.md
       - label: REPLACE INTO
-        href: ./REPLACE_INTO.md
+        href: ./replace_into.md
       - label: RESET
-        href: ./RESET.md
+        href: ./reset.md
       - label: REVOKE
-        href: ./REVOKE.md
+        href: ./revoke.md
       - label: ROLLBACK
-        href: ./ROLLBACK.md
+        href: ./rollback.md
       - label: ROLLBACK PREPARED
         href: ./rollback_prepared.md
       - label: ROLLBACK TO SAVEPOINT
         href: ./rollback_to_savepoint.md
       - label: SAVEPOINT
-        href: ./SAVEPOINT.md
+        href: ./savepoint.md
       - label: SELECT
-        href: ./SELECT.md
+        href: ./select.md
       - label: SELECT INTO
         href: ./select_into.md
       - label: SET
-        href: ./SET.md
+        href: ./set.md
       - label: SET CONSTRAINTS
         href: ./set_constraints.md
       - label: SET ROLE

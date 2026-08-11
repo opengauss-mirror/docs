@@ -94,4 +94,4 @@ openGauss=# COMMIT;
 
 ## 相关链接<a name="zh-cn_topic_0283137090_zh-cn_topic_0237122192_zh-cn_topic_0059777519_s144c0965b0ba447e9d3a73dd5dac1aad"></a>
 
-[COMMIT | END](commit_end.md)，[ROLLBACK](ROLLBACK.md)，[SET TRANSACTION](set_transaction.md)
+[COMMIT | END](commit_end.md)，[ROLLBACK](rollback.md)，[SET TRANSACTION](set_transaction.md)

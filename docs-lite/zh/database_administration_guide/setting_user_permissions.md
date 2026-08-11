@@ -38,4 +38,4 @@
         >[!NOTE]说明
         >当将角色的权限赋予用户时，角色的属性并不会传递到用户。
 
-- 回收用户权限，请使用[REVOKE](../sql_reference/REVOKE.md)。
+- 回收用户权限，请使用[REVOKE](../sql_reference/revoke.md)。

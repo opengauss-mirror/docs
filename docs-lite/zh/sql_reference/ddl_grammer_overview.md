@@ -201,7 +201,7 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 </tr>
 <tr id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_ra8f723d34d33452e9a22ce9fbd46b663"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_zh-cn_topic_0058966187_p546564010305"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_zh-cn_topic_0058966187_p546564010305"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_zh-cn_topic_0058966187_p546564010305"></a>重建索引</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_a60c0aa0e04544d61ad2bbf3d795499ae"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_a60c0aa0e04544d61ad2bbf3d795499ae"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_a60c0aa0e04544d61ad2bbf3d795499ae"></a><a href="REINDEX.md">REINDEX</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_a60c0aa0e04544d61ad2bbf3d795499ae"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_a60c0aa0e04544d61ad2bbf3d795499ae"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_a60c0aa0e04544d61ad2bbf3d795499ae"></a><a href="reindex.md">REINDEX</a></p>
 </td>
 </tr>
 </tbody>

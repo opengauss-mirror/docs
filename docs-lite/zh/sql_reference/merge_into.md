@@ -52,7 +52,7 @@ NOTICE: 'subquery' in the UPDATE and INSERT clauses are only avaliable in CENTRA
     SUBPARTITION { ( subpartition_name ) | FOR ( subpartition_value [, ...] ) }
     ```
 
-    关键字详见[SELECT](SELECT.md)一节介绍。
+    关键字详见[SELECT](select.md)一节介绍。
 
     如果value子句的值和指定分区不一致，会抛出异常。
 

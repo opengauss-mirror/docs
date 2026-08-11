@@ -212,7 +212,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     - var\_name
 
-      用户自定义的变量名。详见[SET章节](SET.md)中的var\_name。
+      用户自定义的变量名。详见[SET章节](set.md)中的var\_name。
 
     - OUTFILE
 

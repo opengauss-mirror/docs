@@ -70,7 +70,7 @@ openGauss提供了针对数据对象和角色授权的语句，请参考[GRANT](
 
 ## 收回权限<a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059778670_s2560fc1e38394aeeae7fc2a8b7231a43"></a>
 
-openGauss提供了收回权限的语句，请参考[REVOKE](REVOKE.md)。
+openGauss提供了收回权限的语句，请参考[REVOKE](revoke.md)。
 
 ## 设置默认权限<a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059778670_s8133f68ab7684b3aaf5afb52fa8be7e7"></a>
 
@@ -78,4 +78,4 @@ openGauss允许设置应用于将来创建的对象的权限，请参考[ALTER D
 
 ## 关闭当前节点<a name="zh-cn_topic_0283136632_section153781731062"></a>
 
-openGauss支持使用shutdown命令关闭当前数据库节点，请参考[SHUTDOWN](SHUTDOWN.md)。
+openGauss支持使用shutdown命令关闭当前数据库节点，请参考[SHUTDOWN](shutdown.md)。

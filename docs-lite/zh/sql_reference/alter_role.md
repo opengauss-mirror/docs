@@ -91,7 +91,7 @@
 
     取值范围：
 
-    configuration\_parameter和value的取值请参见[SET](SET.md)。
+    configuration\_parameter和value的取值请参见[SET](set.md)。
 
     DEFAULT：表示清除configuration\_parameter参数的值，configuration\_parameter参数的值将继承本角色新产生的SESSION的默认值。
 
@@ -129,4 +129,4 @@
 
 ## 相关链接<a name="zh-cn_topic_0283137195_zh-cn_topic_0237122068_zh-cn_topic_0059778744_sb24012e0cec94bc3ba5c2c0e8997d052"></a>
 
-[CREATE ROLE](create_role.md)，[DROP ROLE](drop_role.md)，[SET](SET.md)
+[CREATE ROLE](create_role.md)，[DROP ROLE](drop_role.md)，[SET](set.md)

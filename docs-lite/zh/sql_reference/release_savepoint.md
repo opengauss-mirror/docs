@@ -59,4 +59,4 @@ openGauss=# DROP TABLE tpcds.table1;
 
 ## 相关链接<a name="zh-cn_topic_0283137262_zh-cn_topic_0237122177_zh-cn_topic_0059778044_section1873501692219"></a>
 
-[SAVEPOINT](SAVEPOINT.md)，[ROLLBACK TO SAVEPOINT](rollback_to_savepoint.md)
+[SAVEPOINT](savepoint.md)，[ROLLBACK TO SAVEPOINT](rollback_to_savepoint.md)

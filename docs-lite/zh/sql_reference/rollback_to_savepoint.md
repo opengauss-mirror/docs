@@ -49,4 +49,4 @@ openGauss=# COMMIT;
 
 ## 相关链接<a name="zh-cn_topic_0283137625_zh-cn_topic_0237122182_zh-cn_topic_0059778869_section3863621131515"></a>
 
-[SAVEPOINT](SAVEPOINT.md)，[RELEASE SAVEPOINT](release_savepoint.md)
+[SAVEPOINT](savepoint.md)，[RELEASE SAVEPOINT](release_savepoint.md)
