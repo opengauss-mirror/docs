@@ -1209,8 +1209,6 @@ sections:
         href: ./global_syscache_feature_function.md
       - label: 数据损坏检测修复函数
         href: ./data_corruption_detection_and_repair_function.md
-      - label: 向量函数和操作符
-        href: ../datavec/vector_functions_and_operators.md
       - label: BFILE类型函数
         href: ./bfile_type_function.md        
       - label: 废弃函数
