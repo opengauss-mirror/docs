@@ -26,4 +26,6 @@ sections:
       - label: 录制回放工具
         href: ./workload_tool.md
   - label: SQLServer迁移
-    href: ./sql_server_migration.md      
+    href: ./sql_server_migration.md
+  - label: Oracle2OGRAC迁移
+    href: ./oracle2ograc_migration.md
