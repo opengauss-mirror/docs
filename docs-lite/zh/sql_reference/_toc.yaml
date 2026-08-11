@@ -54,7 +54,7 @@ sections:
           - label: ANYDATA类型
             href: ./anydata_type.md
           - label: 对象类型
-            href: ./Object_type.md
+            href: ./object_type.md
           - label: BFILE类型
             href: ./bfile_type.md
           - label: 类型基础值
@@ -96,9 +96,9 @@ sections:
           - label: COLLATIONS
             href: ./collations.md 
           - label: KEY_COLUMN_USAGE
-            href: ./KEY_COLUMN_USAGE.md    
+            href: ./key_colunmn_usage.md    
           - label: PARAMETERS
-            href: ./PARAMETERS.md 
+            href: ./parameters.md 
           - label: REFERENTIAL_CONSTRAINTS
             href: ./REFERENTIAL_CONSTRAINTS.md       
           - label: ROUTINES
@@ -124,7 +124,7 @@ sections:
           - label: OS
             sections:
               - label: OS_RUNTIME
-                href: ./OS_RUNTIME.md
+                href: ./os_runtime.md
               - label: GLOBAL_OS_RUNTIME
                 href: ./GLOBAL_OS_RUNTIME.md
               - label: OS_THREADS
