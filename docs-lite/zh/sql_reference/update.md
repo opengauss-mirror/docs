@@ -69,7 +69,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     SUBPARTITION \{ \( subpartition\_name \) | FOR \( subpartition\_value \[, ...\] \) \}
 
-    关键字详见[SELECT](SELECT.md)一节介绍
+    关键字详见[SELECT](select.md)一节介绍
 
 - **target\_query**
 
@@ -113,7 +113,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
   子查询。
 
-  使用同一数据库里其他表的信息来更新一个表可以使用子查询的方法。其中SELECT子句具体介绍请参考[SELECT](SELECT.md)。
+  使用同一数据库里其他表的信息来更新一个表可以使用子查询的方法。其中SELECT子句具体介绍请参考[SELECT](select.md)。
 
   在update单列时，支持使用order by子句与limit子句；而在update多列时，则不支持使用order by子句与limit子句。
 
@@ -131,11 +131,11 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 - ORDER BY子句
 
-    关键字详见[SELECT](SELECT.md)一节介绍。
+    关键字详见[SELECT](select.md)一节介绍。
 
 - LIMIT子句
 
-    关键字详见[SELECT](SELECT.md)一节介绍。
+    关键字详见[SELECT](select.md)一节介绍。
 
 - **RETURNING**
 

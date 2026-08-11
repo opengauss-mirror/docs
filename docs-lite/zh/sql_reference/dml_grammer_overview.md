@@ -8,15 +8,15 @@ DML（Data Manipulation Language数据操作语言），用于对数据库表中
 
 ## 修改数据<a name="zh-cn_topic_0283137022_zh-cn_topic_0237122050_zh-cn_topic_0059778364_sa635baff4808455daf4aa998456672ce"></a>
 
-修改数据是修改数据库表中的一条或多条记录，请参考[UPDATE](UPDATE.md)。
+修改数据是修改数据库表中的一条或多条记录，请参考[UPDATE](update.md)。
 
 ## 查询数据<a name="zh-cn_topic_0283137022_zh-cn_topic_0237122050_zh-cn_topic_0059778364_s1633132317ef42edba6e4afdbb2d6b46"></a>
 
-数据库查询语句SELECT是用于在数据库中检索适合条件的信息，请参考[SELECT](SELECT.md)。
+数据库查询语句SELECT是用于在数据库中检索适合条件的信息，请参考[SELECT](select.md)。
 
 ## 删除数据<a name="zh-cn_topic_0283137022_zh-cn_topic_0237122050_zh-cn_topic_0059778364_s0dfc2748bba64d79b39e32e3c0d37324"></a>
 
-openGauss提供了两种删除表数据的语句：删除表中指定条件的数据，请参考[DELETE](delete.md)；或删除表的所有数据，请参考[TRUNCATE](TRUNCATE.md)。
+openGauss提供了两种删除表数据的语句：删除表中指定条件的数据，请参考[DELETE](delete.md)；或删除表的所有数据，请参考[TRUNCATE](truncate.md)。
 
 TRUNCATE快速地从表中删除所有行，它和在每个表上进行无条件的DELETE有同样的效果，不过因为它不做表扫描，因而快得多。在大表上最有用。
 

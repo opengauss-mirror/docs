@@ -173,4 +173,4 @@ ALTER INDEX用于修改现有索引的定义。
 
 ## 相关链接<a name="zh-cn_topic_0283137124_zh-cn_topic_0237122063_zh-cn_topic_0059778960_sc49c6608f7ca4dd6bfacdb1da044d816"></a>
 
-[CREATE INDEX](create_index.md)，[DROP INDEX](drop_index.md)，[REINDEX](REINDEX.md)
+[CREATE INDEX](create_index.md)，[DROP INDEX](drop_index.md)，[REINDEX](reindex.md)

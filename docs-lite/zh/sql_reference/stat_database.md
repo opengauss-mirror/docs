@@ -101,7 +101,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="25.830000000000002%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137020_zh-cn_topic_0237122594_p194620565518"><a name="zh-cn_topic_0283137020_zh-cn_topic_0237122594_p194620565518"></a><a name="zh-cn_topic_0283137020_zh-cn_topic_0237122594_p194620565518"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.900000000000006%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137020_zh-cn_topic_0237122594_p44619562518"><a name="zh-cn_topic_0283137020_zh-cn_topic_0237122594_p44619562518"></a><a name="zh-cn_topic_0283137020_zh-cn_topic_0237122594_p44619562518"></a>由于数据库恢复冲突取消的查询数量（只在备用服务器发生的冲突）。请参见<a href="STAT_DATABASE_CONFLICTS.md">STAT_DATABASE_CONFLICTS</a>获取更多信息。</p>
+<td class="cellrowborder" valign="top" width="56.900000000000006%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137020_zh-cn_topic_0237122594_p44619562518"><a name="zh-cn_topic_0283137020_zh-cn_topic_0237122594_p44619562518"></a><a name="zh-cn_topic_0283137020_zh-cn_topic_0237122594_p44619562518"></a>由于数据库恢复冲突取消的查询数量（只在备用服务器发生的冲突）。请参见<a href="stat_database_conflicts.md">STAT_DATABASE_CONFLICTS</a>获取更多信息。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137020_zh-cn_topic_0237122594_row12467561514"><td class="cellrowborder" valign="top" width="17.270000000000003%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137020_zh-cn_topic_0237122594_p1746856105116"><a name="zh-cn_topic_0283137020_zh-cn_topic_0237122594_p1746856105116"></a><a name="zh-cn_topic_0283137020_zh-cn_topic_0237122594_p1746856105116"></a>temp_files</p>

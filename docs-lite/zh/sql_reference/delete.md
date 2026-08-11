@@ -91,7 +91,7 @@ DELETE [/*+ plan_hint */]
 
     SUBPARTITION \{ \( subpartition\_name \) | FOR \( subpartition\_value \[, ...\] \) \}
 
-    关键字详见[SELECT](SELECT.md)一节介绍
+    关键字详见[SELECT](select.md)一节介绍
 
 - **target\_query**
     
@@ -124,11 +124,11 @@ DELETE [/*+ plan_hint */]
 
 - ORDER BY子句
 
-    关键字详见[SELECT](SELECT.md)一节介绍。
+    关键字详见[SELECT](select.md)一节介绍。
 
 - LIMIT子句
 
-    关键字详见[SELECT](SELECT.md)一节介绍。
+    关键字详见[SELECT](select.md)一节介绍。
 
 - **RETURNING**
 

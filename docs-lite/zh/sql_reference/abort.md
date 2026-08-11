@@ -4,7 +4,7 @@
 
 回滚当前事务并且撤销所有当前事务中所做的更改。
 
-作用等同于[ROLLBACK](ROLLBACK.md)，早期SQL有用ABORT，现在推荐使用ROLLBACK。
+作用等同于[ROLLBACK](rollback.md)，早期SQL有用ABORT，现在推荐使用ROLLBACK。
 
 ## 注意事项<a name="zh-cn_topic_0283136750_zh-cn_topic_0237122053_zh-cn_topic_0059778271_sa23945b94808484d82b947d70ee28dc6"></a>
 
@@ -66,4 +66,4 @@ openGauss=# DROP TABLE customer_demographics_t1;
 
 ## 相关链接<a name="zh-cn_topic_0283136750_zh-cn_topic_0237122053_zh-cn_topic_0059778271_s51afa4e9c2fd4b07b11d4eb49fe546b8"></a>
 
-[SET TRANSACTION](set_transaction.md)，[COMMIT | END](commit_end.md)，[ROLLBACK](ROLLBACK.md)
+[SET TRANSACTION](set_transaction.md)，[COMMIT | END](commit_end.md)，[ROLLBACK](rollback.md)

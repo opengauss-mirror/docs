@@ -76,7 +76,7 @@ sections:
   - label: Schema
     sections:
       - label: 概览
-        href: ./Schema01.md
+        href: ./schema01.md
       - label: Information Schema
         sections:
           - label: 简介
@@ -100,19 +100,19 @@ sections:
           - label: PARAMETERS
             href: ./parameters.md 
           - label: REFERENTIAL_CONSTRAINTS
-            href: ./REFERENTIAL_CONSTRAINTS.md       
+            href: ./referential_constraints.md       
           - label: ROUTINES
-            href: ./ROUTINES.md      
+            href: ./routines.md      
           - label: SCHEMATA
-            href: ./SCHEMATA.md 
+            href: ./schemata.md 
           - label: TABLE_CONSTRAINTS
-            href: ./TABLE_CONSTRAINTS.md 
+            href: ./table_constraints.md 
           - label: TABLES
-            href: ./TABLES.md 
+            href: ./tables.md 
           - label: KEYWORDS
             href: ./keywords_0.md 
           - label: STATISTICS
-            href: ./STATISTICS.md
+            href: ./statistics.md
           - label: PARTITIONS
             href: ./partitions.md
           - label: EVENTS
@@ -126,189 +126,189 @@ sections:
               - label: OS_RUNTIME
                 href: ./os_runtime.md
               - label: GLOBAL_OS_RUNTIME
-                href: ./GLOBAL_OS_RUNTIME.md
+                href: ./global_os_runtime.md
               - label: OS_THREADS
                 href: ./os_threads.md
               - label: GLOBAL_OS_THREADS
-                href: ./GLOBAL_OS_THREADS.md
+                href: ./global_os_threads.md
           - label: Instance
             sections:
               - label: INSTANCE_TIME
                 href: ./instance_time.md    
               - label: GLOBAL_INSTANCE_TIME
-                href: ./GLOBAL_INSTANCE_TIME.md
+                href: ./global_instance_time.md
           - label: Memory
             sections:
               - label: MEMORY_NODE_DETAIL
                 href: ./memory_node_detail.md
               - label: GLOBAL_MEMORY_NODE_DETAIL
-                href: ./GLOBAL_MEMORY_NODE_DETAIL.md
+                href: ./global_memory_node_detail.md
               - label: GLOBAL_SHARED_MEMORY_DETAIL
-                href: ./GLOBAL_SHARED_MEMORY_DETAIL.md
+                href: ./global_shared_memory_detail.md
           - label: File
             sections:
               - label: FILE_IOSTAT
                 href: ./file_iostat.md
               - label: SUMMARY_FILE_IOSTAT
-                href: ./SUMMARY_FILE_IOSTAT.md
+                href: ./summary_file_iostat.md
               - label: GLOBAL_FILE_IOSTAT
-                href: ./GLOBAL_FILE_IOSTAT.md
+                href: ./global_file_iostat.md
               - label: FILE_REDO_IOSTAT
                 href: ./file_redo_iostat.md
               - label: SUMMARY_FILE_REDO_IOSTAT
-                href: ./SUMMARY_FILE_REDO_IOSTAT.md
+                href: ./summary_file_redo_iostat.md
               - label: GLOBAL_FILE_REDO_IOSTAT
-                href: ./GLOBAL_FILE_REDO_IOSTAT.md
+                href: ./global_file_redo_iostat.md
               - label: GLOBAL_REL_IOSTAT
-                href: ./GLOBAL_REL_IOSTAT.md
+                href: ./global_rel_iostat.md
               - label: LOCAL_REL_IOSTAT
                 href: ./local_rel_iostat.md
               - label: SUMMARY_REL_IOSTAT
-                href: ./SUMMARY_REL_IOSTAT.md
+                href: ./summary_rel_iostat.md
           - label: Object
             sections:
               - label: STAT_USER_TABLES
-                href: ./STAT_USER_TABLES.md
+                href: ./stat_user_tables.md
               - label: SUMMARY_STAT_USER_TABLES
-                href: ./SUMMARY_STAT_USER_TABLES.md
+                href: ./summary_stat_user_tables.md
               - label: GLOBAL_STAT_USER_TABLES
-                href: ./GLOBAL_STAT_USER_TABLES.md
+                href: ./global_stat_user_tables.md
               - label: STAT_USER_TABLES
-                href: ./STAT_USER_TABLES.md
+                href: ./stat_user_tables.md
               - label: STAT_USER_INDEXES
-                href: ./STAT_USER_INDEXES.md
+                href: ./stat_user_indexes.md
               - label: SUMMARY_STAT_USER_INDEXES
-                href: ./SUMMARY_STAT_USER_INDEXES.md                    
+                href: ./summary_stat_user_indexes.md                    
               - label: GLOBAL_STAT_USER_INDEXES
-                href: ./GLOBAL_STAT_USER_INDEXES.md
+                href: ./global_stat_user_indexes.md
               - label: STAT_SYS_TABLES
-                href: ./STAT_SYS_TABLES.md   
+                href: ./stat_sys_tables.md   
               - label: SUMMARY_STAT_SYS_TABLES
-                href: ./SUMMARY_STAT_SYS_TABLES.md
+                href: ./summary_stat_sys_tables.md
               - label: GLOBAL_STAT_SYS_TABLES
-                href: ./GLOBAL_STAT_SYS_TABLES.md
+                href: ./global_stat_sys_tables.md
               - label: STAT_SYS_INDEXES
-                href: ./STAT_SYS_INDEXES.md
+                href: ./stat_sys_indexes.md
               - label: SUMMARY_STAT_SYS_INDEXES
-                href: ./SUMMARY_STAT_SYS_INDEXES.md
+                href: ./summary_stat_sys_indexes.md
               - label: GLOBAL_STAT_SYS_INDEXES
-                href: ./GLOBAL_STAT_SYS_INDEXES.md
+                href: ./global_stat_sys_indexes.md
               - label: STAT_ALL_TABLES
-                href: ./STAT_ALL_TABLES.md
+                href: ./stat_all_tables.md
               - label: SUMMARY_STAT_ALL_TABLES
-                href: ./SUMMARY_STAT_ALL_TABLES.md
+                href: ./summary_stat_all_tables.md
               - label: GLOBAL_STAT_ALL_TABLES
-                href: ./GLOBAL_STAT_ALL_TABLES.md
+                href: ./global_stat_all_tables.md
               - label: STAT_ALL_INDEXES
-                href: ./STAT_ALL_INDEXES.md
+                href: ./stat_all_indexes.md
               - label: SUMMARY_STAT_ALL_INDEXES
-                href: ./SUMMARY_STAT_ALL_INDEXES.md
+                href: ./summary_stat_all_indexes.md
               - label: GLOBAL_STAT_ALL_INDEXES
-                href: ./GLOBAL_STAT_ALL_INDEXES.md
+                href: ./global_stat_all_indexes.md
               - label: STAT_DATABASE
-                href: ./STAT_DATABASE.md
+                href: ./stat_database.md
               - label: SUMMARY_STAT_DATABASE
-                href: ./SUMMARY_STAT_DATABASE.md                    
+                href: ./summary_stat_database.md                    
               - label: GLOBAL_STAT_DATABASE
-                href: ./GLOBAL_STAT_DATABASE.md
+                href: ./global_stat_database.md
               - label: STAT_DATABASE_CONFLICTS
-                href: ./STAT_DATABASE_CONFLICTS.md
+                href: ./stat_database_conflicts.md
               - label: SUMMARY_STAT_DATABASE_CONFLICTS
                 href: ./summary_stat_database_conflicts.md
               - label: GLOBAL_STAT_DATABASE_CONFLICTS
-                href: ./GLOBAL_STAT_DATABASE_CONFLICTS.md                
+                href: ./global_stat_database_conflicts.md                
               - label: STAT_XACT_ALL_TABLES
-                href: ./STAT_XACT_ALL_TABLES.md
+                href: ./stat_xact_all_tables.md
               - label: SUMMARY_STAT_XACT_ALL_TABLES
-                href: ./SUMMARY_STAT_XACT_ALL_TABLES.md
+                href: ./summary_stat_xact_all_tables.md
               - label: GLOBAL_STAT_XACT_ALL_TABLES
-                href: ./GLOBAL_STAT_XACT_ALL_TABLES.md
+                href: ./global_stat_xact_all_tables.md
               - label: STAT_XACT_SYS_TABLES
-                href: ./STAT_XACT_SYS_TABLES.md
+                href: ./stat_xact_sys_tables.md
               - label: SUMMARY_STAT_XACT_SYS_TABLES
-                href: ./SUMMARY_STAT_XACT_SYS_TABLES.md
+                href: ./summary_stat_xact_sys_tables.md
               - label: GLOBAL_STAT_XACT_SYS_TABLES
-                href: ./GLOBAL_STAT_XACT_SYS_TABLES.md
+                href: ./global_stat_xact_sys_tables.md
               - label: STAT_XACT_USER_TABLES
-                href: ./STAT_XACT_USER_TABLES.md
+                href: ./stat_xact_user_tables.md
               - label: SUMMARY_STAT_XACT_USER_TABLES
-                href: ./SUMMARY_STAT_XACT_USER_TABLES.md
+                href: ./summary_stat_xact_user_tables.md
               - label: GLOBAL_STAT_XACT_USER_TABLES
-                href: ./GLOBAL_STAT_XACT_USER_TABLES.md    
+                href: ./global_stat_xact_user_tables.md    
               - label: STAT_USER_FUNCTIONS
-                href: ./STAT_USER_FUNCTIONS.md
+                href: ./stat_user_functions.md
               - label: SUMMARY_STAT_USER_FUNCTIONS
-                href: ./SUMMARY_STAT_USER_FUNCTIONS.md
+                href: ./summary_stat_user_functions.md
               - label: GLOBAL_STAT_USER_FUNCTIONS
-                href: ./GLOBAL_STAT_USER_FUNCTIONS.md
+                href: ./global_stat_user_functions.md
               - label: STAT_BAD_BLOCK
-                href: ./STAT_BAD_BLOCK.md
+                href: ./stat_bad_block.md
               - label: SUMMARY_STAT_BAD_BLOCK
-                href: ./SUMMARY_STAT_BAD_BLOCK.md
+                href: ./summary_stat_bad_block.md
               - label: GLOBAL_STAT_BAD_BLOCK
-                href: ./GLOBAL_STAT_BAD_BLOCK.md
+                href: ./global_stat_bad_block.md
               - label: STAT_XACT_USER_FUNCTIONS
-                href: ./STAT_XACT_USER_FUNCTIONS.md
+                href: ./stat_xact_user_functions.md
               - label: SUMMARY_STAT_XACT_USER_FUNCTIONS
-                href: ./SUMMARY_STAT_XACT_USER_FUNCTIONS.md     
+                href: ./summary_stat_xact_user_functions.md     
               - label: GLOBAL_STAT_XACT_USER_FUNCTIONS
-                href: ./GLOBAL_STAT_XACT_USER_FUNCTIONS.md                   
+                href: ./global_stat_xact_user_functions.md                   
           - label: Workload
             sections:
               - label: WORKLOAD_SQL_COUNT
-                href: ./WORKLOAD_SQL_COUNT.md
+                href: ./workload_sql_count.md
               - label: SUMMARY_WORKLOAD_SQL_COUNT
-                href: ./SUMMARY_WORKLOAD_SQL_COUNT.md
+                href: ./summary_workload_sql_count.md
               - label: SUMMARY_WORKLOAD_TRANSACTION
-                href: ./SUMMARY_WORKLOAD_TRANSACTION.md
+                href: ./summary_workload_transaction.md
               - label: SUMMARY_WORKLOAD_SQL_ELAPSE_TIME
-                href: ./SUMMARY_WORKLOAD_SQL_ELAPSE_TIME.md
+                href: ./summary_workload_sql_elapse_time.md
               - label: GLOBAL_WORKLOAD_TRANSACTION
-                href: ./GLOBAL_WORKLOAD_TRANSACTION.md
+                href: ./global_workload_transaction.md
               - label: WORKLOAD_SQL_ELAPSE_TIME
-                href: ./WORKLOAD_SQL_ELAPSE_TIME.md
+                href: ./workload_sql_elapse_time.md
               - label: WORKLOAD_TRANSACTION
-                href: ./WORKLOAD_TRANSACTION.md
+                href: ./workload_transaction.md
               - label: USER_TRANSACTION
-                href: ./USER_TRANSACTION.md
+                href: ./user_transaction.md
               - label: GLOBAL_USER_TRANSACTION
-                href: ./GLOBAL_USER_TRANSACTION.md
+                href: ./global_user_transaction.md
           - label: Session/Thread
             sections:
               - label: SESSION_STAT
-                href: ./SESSION_STAT.md
+                href: ./session_stat.md
               - label: GLOBAL_SESSION_STAT
-                href: ./GLOBAL_SESSION_STAT.md
+                href: ./global_session_stat.md
               - label: SESSION_TIME
-                href: ./SESSION_TIME.md
+                href: ./session_time.md
               - label: GLOBAL_SESSION_TIME
-                href: ./GLOBAL_SESSION_TIME.md
+                href: ./global_session_time.md
               - label: SESSION_MEMORY
-                href: ./SESSION_MEMORY.md
+                href: ./session_memory.md
               - label: GLOBAL_SESSION_MEMORY
-                href: ./GLOBAL_SESSION_MEMORY.md
+                href: ./global_session_memory.md
               - label: SESSION_MEMORY_DETAIL
-                href: ./SESSION_MEMORY_DETAIL.md
+                href: ./session_memory_detail.md
               - label: GLOBAL_SESSION_MEMORY_DETAIL
-                href: ./GLOBAL_SESSION_MEMORY_DETAIL.md
+                href: ./global_session_memory_detail.md
               - label: GLOBAL_SESSION_STAT_ACTIVITY
-                href: ./GLOBAL_SESSION_STAT_ACTIVITY.md
+                href: ./global_session_stat_activity.md
               - label: SESSION_STAT_ACTIVITY
-                href: ./SESSION_STAT_ACTIVITY.md
+                href: ./session_stat_activity.md
               - label: THREAD_WAIT_STATUS
-                href: ./THREAD_WAIT_STATUS.md
+                href: ./thread_wait_status.md
               - label: GLOBAL_THREAD_WAIT_STATUS
-                href: ./GLOBAL_THREAD_WAIT_STATUS.md
+                href: ./global_thread_wait_status.md
               - label: LOCAL_THREADPOOL_STATUS
                 href: ./local_threadpool_status.md
               - label: GLOBAL_THREADPOOL_STATUS
-                href: ./GLOBAL_THREADPOOL_STATUS.md
+                href: ./global_threadpool_status.md
               - label: SESSION_CPU_RUNTIME
-                href: ./SESSION_CPU_RUNTIME.md
+                href: ./session_cpu_runtime.md
               - label: SESSION_MEMORY_RUNTIME
-                href: ./SESSION_MEMORY_RUNTIME.md
+                href: ./session_memory_runtime.md
               - label: STATEMENT_IOSTAT_COMPLEX_RUNTIME
-                href: ./STATEMENT_IOSTAT_COMPLEX_RUNTIME.md
+                href: ./statement_iostat_complex_runtime.md
               - label: LOCAL_ACTIVE_SESSION
                 href: ./local_active_session.md
           - label: Transaction
@@ -318,39 +318,39 @@ sections:
               - label: TRANSACTIONS_RUNNING_XACTS
                 href: ./transaction_running_xacts.md
               - label: SUMMARY_TRANSACTIONS_PREPARED_XACTS
-                href: ./SUMMARY_TRANSACTIONS_PREPARED_XACTS.md
+                href: ./summary_transactions_prepared_xacts.md
               - label: SUMMARY_TRANSACTIONS_RUNNING_XACTS
-                href: ./SUMMARY_TRANSACTIONS_RUNNING_XACTS.md
+                href: ./summary_transactions_running_xacts.md
               - label: GLOBAL_TRANSACTIONS_PREPARED_XACTS
-                href: ./GLOBAL_TRANSACTIONS_PREPARED_XACTS.md
+                href: ./global_transactions_prepared_xacts.md
               - label: GLOBAL_TRANSACTIONS_RUNNING_XACTS
-                href: ./GLOBAL_TRANSACTIONS_RUNNING_XACTS.md
+                href: ./global_transactions_running_xacts.md
           - label: Query
             sections:
               - label: STATEMENT
-                href: ./STATEMENT.md
+                href: ./statement.md
               - label: SUMMARY_STATEMENT
-                href: ./SUMMARY_STATEMENT.md
+                href: ./summary_statement.md
               - label: STATEMENT_COUNT
-                href: ./STATEMENT_COUNT.md
+                href: ./statement_count.md
               - label: SUMMARY_STATEMENT_COUNT
-                href: ./SUMMARY_STATEMENT_COUNT.md
+                href: ./summary_statement_count.md
               - label: GLOBAL_STATEMENT_COUNT
-                href: ./GLOBAL_STATEMENT_COUNT.md
+                href: ./global_statement_count.md
               - label: GLOBAL_STATEMENT_COMPLEX_HISTORY
-                href: ./GLOBAL_STATEMENT_COMPLEX_HISTORY.md
+                href: ./global_statement_complex_history.md
               - label: GLOBAL_STATEMENT_COMPLEX_HISTORY_TABLE
-                href: ./GLOBAL_STATEMENT_COMPLEX_HISTORY_TABLE.md
+                href: ./global_statement_complex_history_table.md
               - label: GLOBAL_STATEMENT_COMPLEX_RUNTIME
-                href: ./GLOBAL_STATEMENT_COMPLEX_RUNTIME.md
+                href: ./global_statement_complex_runtime.md
               - label: STATEMENT_RESPONSETIME_PERCENTILE
-                href: ./STATEMENT_RESPONSETIME_PERCENTILE.md                
+                href: ./statement_responsetime_percentile.md                
               - label: STATEMENT_COMPLEX_HISTORY
-                href: ./STATEMENT_COMPLEX_HISTORY.md
+                href: ./statement_complex_history.md
               - label: STATEMENT_COMPLEX_HISTORY_TABLE
-                href: ./STATEMENT_COMPLEX_HISTORY_TABLE.md
+                href: ./statement_complex_history_table.md
               - label: STATEMENT_COMPLEX_RUNTIME
-                href: ./STATEMENT_COMPLEX_RUNTIME.md
+                href: ./statement_complex_runtime.md
               - label: STATEMENT_WLMSTAT_COMPLEX_RUNTIME
                 href: ./statement_wlmstat_complex_runtime.md
               - label: STATEMENT_HISTORY
@@ -358,121 +358,121 @@ sections:
           - label: Cache/IO
             sections:
               - label: STATIO_USER_TABLES
-                href: ./STATIO_USER_TABLES.md
+                href: ./statio_user_tables.md
               - label: SUMMARY_STATIO_USER_TABLES
-                href: ./SUMMARY_STATIO_USER_TABLES.md
+                href: ./summary_statio_user_tables.md
               - label: GLOBAL_STATIO_USER_TABLES
-                href: ./GLOBAL_STATIO_USER_TABLES.md
+                href: ./global_statio_user_tables.md
               - label: STATIO_USER_INDEXES
-                href: ./STATIO_USER_INDEXES.md
+                href: ./statio_user_indexes.md
               - label: SUMMARY_STATIO_USER_INDEXES
-                href: ./SUMMARY_STATIO_USER_INDEXES.md
+                href: ./summary_statio_user_indexes.md
               - label: GLOBAL_STATIO_USER_INDEXES
-                href: ./GLOBAL_STATIO_USER_INDEXES.md
+                href: ./global_statio_user_indexes.md
               - label: STATIO_USER_SEQUENCES
-                href: ./STATIO_USER_SEQUENCES.md
+                href: ./statio_user_sequences.md
               - label: SUMMARY_STATIO_USER_SEQUENCES
-                href: ./SUMMARY_STATIO_USER_SEQUENCES.md
+                href: ./summary_statio_user_sequences.md
               - label: GLOBAL_STATIO_USER_SEQUENCES
-                href: ./GLOBAL_STATIO_USER_SEQUENCES.md
+                href: ./global_statio_user_sequences.md
               - label: STATIO_SYS_TABLES
-                href: ./STATIO_SYS_TABLES.md
+                href: ./statio_sys_tables.md
               - label: SUMMARY_STATIO_SYS_TABLES
-                href: ./SUMMARY_STATIO_SYS_TABLES.md
+                href: ./summary_statio_sys_tables.md
               - label: GLOBAL_STATIO_SYS_TABLES
-                href: ./GLOBAL_STATIO_SYS_TABLES.md
+                href: ./global_statio_sys_tables.md
               - label: STATIO_SYS_INDEXES
-                href: ./STATIO_SYS_INDEXES.md
+                href: ./statio_sys_indexes.md
               - label: SUMMARY_STATIO_SYS_INDEXES
-                href: ./SUMMARY_STATIO_SYS_INDEXES.md
+                href: ./summary_statio_sys_indexes.md
               - label: GLOBAL_STATIO_SYS_INDEXES
-                href: ./GLOBAL_STATIO_SYS_INDEXES.md
+                href: ./global_statio_sys_indexes.md
               - label: STATIO_SYS_SEQUENCES
-                href: ./STATIO_SYS_SEQUENCES.md
+                href: ./statio_sys_sequences.md
               - label: SUMMARY_STATIO_SYS_SEQUENCES
-                href: ./SUMMARY_STATIO_SYS_SEQUENCES.md
+                href: ./summary_statio_sys_sequences.md
               - label: GLOBAL_STATIO_SYS_SEQUENCES
-                href: ./GLOBAL_STATIO_SYS_SEQUENCES.md
+                href: ./global_statio_sys_sequences.md
               - label: STATIO_ALL_TABLES
-                href: ./STATIO_ALL_TABLES.md
+                href: ./statio_all_tables.md
               - label: SUMMARY_STATIO_ALL_TABLES
-                href: ./SUMMARY_STATIO_ALL_TABLES.md
+                href: ./summary_statio_all_tables.md
               - label: GLOBAL_STATIO_ALL_TABLES
-                href: ./GLOBAL_STATIO_ALL_TABLES.md                    
+                href: ./global_statio_all_tables.md                    
               - label: STATIO_ALL_INDEXES
-                href: ./STATIO_ALL_INDEXES.md
+                href: ./statio_all_indexes.md
               - label: SUMMARY_STATIO_ALL_INDEXES
-                href: ./SUMMARY_STATIO_ALL_INDEXES.md
+                href: ./summary_statio_all_indexes.md
               - label: GLOBAL_STATIO_ALL_INDEXES
-                href: ./GLOBAL_STATIO_ALL_INDEXES.md
+                href: ./global_statio_all_indexes.md
               - label: STATIO_ALL_SEQUENCES
-                href: ./STATIO_ALL_SEQUENCES.md
+                href: ./statio_all_sequences.md
               - label: SUMMARY_STATIO_ALL_SEQUENCES
-                href: ./SUMMARY_STATIO_ALL_SEQUENCES.md
+                href: ./summary_statio_all_sequences.md
               - label: GLOBAL_STATIO_ALL_SEQUENCES
-                href: ./GLOBAL_STATIO_ALL_SEQUENCES.md
+                href: ./global_statio_all_sequences.md
               - label: GLOBAL_STAT_DB_CU
-                href: ./GLOBAL_STAT_DB_CU.md
+                href: ./global_stat_db_cu.md
               - label: GLOBAL_STAT_SESSION_CU
-                href: ./GLOBAL_STAT_SESSION_CU.md
+                href: ./global_stat_session_cu.md
           - label: Utility
             sections:
               - label: REPLICATION_STAT
-                href: ./REPLICATION_STAT.md
+                href: ./replication_stat.md
               - label: GLOBAL_REPLICATION_STAT
-                href: ./GLOBAL_REPLICATION_STAT.md
+                href: ./global_replication_stat.md
               - label: REPLICATION_SLOTS
-                href: ./REPLICATION_SLOTS.md
+                href: ./replication_slots.md
               - label: GLOBAL_REPLICATION_SLOTS
-                href: ./GLOBAL_REPLICATION_SLOTS.md
+                href: ./global_replication_slots.md
               - label: BGWRITER_STAT
                 href: ./bgwriter_stat.md
               - label: GLOBAL_BGWRITER_STAT
-                href: ./GLOBAL_BGWRITER_STAT.md
+                href: ./global_bgwriter_stat.md
               - label: GLOBAL_CKPT_STATUS
-                href: ./GLOBAL_CKPT_STATUS.md
+                href: ./global_ckpt_status.md
               - label: GLOBAL_DOUBLE_WRITE_STATUS
-                href: ./GLOBAL_DOUBLE_WRITE_STATUS.md
+                href: ./global_double_write_status.md
               - label: GLOBAL_PAGEWRITER_STATUS
-                href: ./GLOBAL_PAGEWRITER_STATUS.md
+                href: ./global_pagewriter_status.md
               - label: GLOBAL_RECORD_RESET_TIME
-                href: ./GLOBAL_RECORD_RESET_TIME.md
+                href: ./global_record_reset_time.md
               - label: GLOBAL_RECOVERY_STATUS
-                href: ./GLOBAL_RECOVERY_STATUS.md
+                href: ./global_recovery_status.md
               - label: GLOBAL_REDO_STATUS
-                href: ./GLOBAL_REDO_STATUS.md
+                href: ./global_redo_status.md
               - label: CLASS_VITAL_INFO
                 href: ./class_vital_info.md
               - label: USER_LOGIN
-                href: ./USER_LOGIN.md
+                href: ./user_login.md
               - label: SUMMARY_USER_LOGIN
-                href: ./SUMMARY_USER_LOGIN.md
+                href: ./summary_user_login.md
               - label: GLOBAL_GET_BGWRITER_STATUS
-                href: ./GLOBAL_GET_BGWRITER_STATUS.md
+                href: ./global_get_bgwriter_status.md
               - label: GLOBAL_SINGLE_FLUSH_DW_STATUS
-                href: ./GLOBAL_SINGLE_FLUSH_DW_STATUS.md    
+                href: ./global_single_flush_dw_status.md    
               - label: GLOBAL_CANDIDATE_STATUS
-                href: ./GLOBAL_CANDIDATE_STATUS.md
+                href: ./global_candidate_status.md
               - label: PG_INDEXES_VERBOSE
                 href: ./pg_indexes_verbose.md
           - label: Lock
             sections:
               - label: LOCKS
-                href: ./DBE_PERF_schema_locks.md
+                href: ./dbe_perf_schema_locks.md
               - label: GLOBAL_LOCKS
-                href: ./GLOBAL_LOCKS.md
+                href: ./global_locks.md
           - label: Wait Events
             sections:
               - label: WAIT_EVENTS
-                href: ./WAIT_EVENTS.md
+                href: ./wait_events.md
               - label: GLOBAL_WAIT_EVENTS
-                href: ./GLOBAL_WAIT_EVENTS.md
+                href: ./global_wait_events.md
           - label: Configuration
             sections:
               - label: CONFIG_SETTINGS
                 href: ./config_settings.md
               - label: GLOBAL_CONFIG_SETTINGS
-                href: ./GLOBAL_CONFIG_SETTINGS.md
+                href: ./global_config_settings.md
           - label: Operator
             sections:
               - label: OPERATOR_HISTORY
@@ -482,23 +482,23 @@ sections:
               - label: OPERATOR_RUNTIME
                 href: ./operator_runtime.md
               - label: GLOBAL_OPERATOR_HISTORY
-                href: ./GLOBAL_OPERATOR_HISTORY.md
+                href: ./global_operator_history.md
               - label: GLOBAL_OPERATOR_HISTORY_TABLE
                 href: ./global_operator_history_table.md
               - label: GLOBAL_OPERATOR_RUNTIME
-                href: ./GLOBAL_OPERATOR_RUNTIME.md
+                href: ./global_operator_runtime.md
           - label: Workload Manager
             sections:
               - label: WLM_USER_RESOURCE_CONFIG
-                href: ./WLM_USER_RESOURCE_CONFIG.md
+                href: ./wlm_user_resource_config.md
               - label: WLM_USER_RESOURCE_RUNTIME
-                href: ./WLM_USER_RESOURCE_RUNTIME.md                
+                href: ./wlm_user_resource_runtime.md                
           - label: Global Plancache
             sections:
               - label: GLOBAL_PLANCACHE_CLEAN
-                href: ./GLOBAL_PLANCACHE_CLEAN.md
+                href: ./global_plancache_clean.md
               - label: GLOBAL_PLANCACHE_STATUS
-                href: ./GLOBAL_PLANCACHE_STATUS.md
+                href: ./global_plancache_status.md
           - label: RTO & RPO
             sections:
               - label: global\_rto\_status
@@ -514,7 +514,7 @@ sections:
                   - label: SNAPSHOT.TABLES_SNAP_TIMESTAMP
                     href: ./snapshot_tables_snap_timestamp.md
                   - label: SNAP_SEQ
-                    href: ./SNAP_SEQ.md
+                    href: ./snap_seq.md
               - label: WDR Snapshot 数据表
                 href: ./wdr_snapshot_data_table.md
               - label: WDR Snapshot 生成性能报告
@@ -1028,29 +1028,29 @@ sections:
       - label: REFRESH INCREMENTAL MATERIALIZED VIEW
         href: ./refresh_incremental_materialized_view.md
       - label: REINDEX
-        href: ./REINDEX.md
+        href: ./reindex.md
       - label: RELEASE SAVEPOINT
         href: ./release_savepoint.md
       - label: REPLACE INTO
-        href: ./REPLACE_INTO.md
+        href: ./replace_into.md
       - label: RESET
-        href: ./RESET.md
+        href: ./reset.md
       - label: REVOKE
-        href: ./REVOKE.md
+        href: ./revoke.md
       - label: ROLLBACK
-        href: ./ROLLBACK.md
+        href: ./rollback.md
       - label: ROLLBACK PREPARED
         href: ./rollback_prepared.md
       - label: ROLLBACK TO SAVEPOINT
         href: ./rollback_to_savepoint.md
       - label: SAVEPOINT
-        href: ./SAVEPOINT.md
+        href: ./savepoint.md
       - label: SELECT
-        href: ./SELECT.md
+        href: ./select.md
       - label: SELECT INTO
         href: ./select_into.md
       - label: SET
-        href: ./SET.md
+        href: ./set.md
       - label: SET CONSTRAINTS
         href: ./set_constraints.md
       - label: SET ROLE
@@ -1060,29 +1060,29 @@ sections:
       - label: SET TRANSACTION
         href: ./set_transaction.md
       - label: SHOW
-        href: ./SHOW.md
+        href: ./show.md
       - label: SHOW EVENTS
         href: ./show_events.md
       - label: SHUTDOWN
-        href: ./SHUTDOWN.md
+        href: ./shutdown.md
       - label: SNAPSHOT
-        href: ./SNAPSHOT.md
+        href: ./snapshot.md
       - label: START TRANSACTION
         href: ./start_transaction.md
       - label: TIMECAPSULE TABLE
         href: ./timecapsule_table.md
       - label: TRUNCATE
-        href: ./TRUNCATE.md
+        href: ./truncate.md
       - label: UNLISTEN
         href: ./unlisten.md
       - label: UPDATE
-        href: ./UPDATE.md
+        href: ./update.md
       - label: VACUUM
-        href: ./VACUUM.md
+        href: ./vacuum.md
       - label: VALUES
-        href: ./VALUES.md
+        href: ./values.md
       - label: SHRINK
-        href: ./SHRINK.md
+        href: ./shrink.md
   - label: 表达式
     sections:
       - label: 简单表达式

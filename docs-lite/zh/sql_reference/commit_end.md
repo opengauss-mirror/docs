@@ -62,4 +62,4 @@ openGauss=# DROP TABLE tpcds.customer_demographics_t2;
 
 ## 相关链接<a name="zh-cn_topic_0283137519_zh-cn_topic_0237122094_zh-cn_topic_0059779032_s652dd12556d94ac0a003244758ed74e8"></a>
 
-[ROLLBACK](ROLLBACK.md)
+[ROLLBACK](rollback.md)

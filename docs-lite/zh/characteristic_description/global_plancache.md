@@ -38,7 +38,7 @@
 
 ## 使用指导<a name="section3480125215601"></a>
 
-使用前请参考[GLOBAL_PLANCACHE_STATUS](../sql_reference/GLOBAL_PLANCACHE_STATUS.md)以及[GLOBAL_PLANCACHE_CLEAN](../sql_reference/GLOBAL_PLANCACHE_CLEAN.md)部分
+使用前请参考[GLOBAL_PLANCACHE_STATUS](../sql_reference/global_plancache_status.md)以及[GLOBAL_PLANCACHE_CLEAN](../sql_reference/global_plancache_clean.md)部分
 
 前置条件
 

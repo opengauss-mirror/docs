@@ -739,4 +739,4 @@ openGauss=# DROP USER joe CASCADE;
 
 ## 相关链接<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s3bb41459be684975af982bfe2508c335"></a>
 
-[REVOKE](REVOKE.md)，[ALTER DEFAULT PRIVILEGES](alter_default_privileges.md)
+[REVOKE](revoke.md)，[ALTER DEFAULT PRIVILEGES](alter_default_privileges.md)

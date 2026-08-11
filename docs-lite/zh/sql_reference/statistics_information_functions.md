@@ -2797,7 +2797,7 @@
 
 - DBE\_PERF.global\_threadpool\_status\(\)
 
-    描述：显示在所有节点上的线程池中工作线程及会话的状态信息。函数返回信息具体字段[GLOBAL\_THREADPOOL\_STATUS](GLOBAL_THREADPOOL_STATUS.md)字段。
+    描述：显示在所有节点上的线程池中工作线程及会话的状态信息。函数返回信息具体字段[GLOBAL\_THREADPOOL\_STATUS](global_threadpool_status.md)字段。
 
     返回值类型：record
 

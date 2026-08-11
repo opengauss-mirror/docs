@@ -4,7 +4,7 @@ openGauss通过SQL语句执行不同的系统操作，比如：设置变量，�
 
 ## 设置变量<a name="zh-cn_topic_0283137188_zh-cn_topic_0237122047_zh-cn_topic_0059778982_s996115c71b8847e3a40822daef622a2a"></a>
 
-设置会话或事务中需要使用的各种参数，请参考[SET](SET.md)。
+设置会话或事务中需要使用的各种参数，请参考[SET](set.md)。
 
 ## 显示执行计划<a name="zh-cn_topic_0283137188_zh-cn_topic_0237122047_zh-cn_topic_0059778982_s3e28880506ff4cc8a003199eb5d71864"></a>
 
@@ -16,7 +16,7 @@ openGauss通过SQL语句执行不同的系统操作，比如：设置变量，�
 
 ## 垃圾收集<a name="zh-cn_topic_0283137188_zh-cn_topic_0237122047_zh-cn_topic_0059778982_sb2796f883f6540b78c6f924507e045eb"></a>
 
-进行垃圾收集以及可选择的对数据库进行分析。请参考[VACUUM](VACUUM.md)。
+进行垃圾收集以及可选择的对数据库进行分析。请参考[VACUUM](vacuum.md)。
 
 ## 收集统计信息<a name="zh-cn_topic_0283137188_zh-cn_topic_0237122047_zh-cn_topic_0059778982_sf12fd2f7c9d147f3a9e644d39257f4e6"></a>
 
@@ -28,4 +28,4 @@ openGauss通过SQL语句执行不同的系统操作，比如：设置变量，�
 
 ## 关闭当前数据库节点<a name="zh-cn_topic_0283137188_section1661915568326"></a>
 
-关闭当前数据库节点，请参考[SHUTDOWN](SHUTDOWN.md)。
+关闭当前数据库节点，请参考[SHUTDOWN](shutdown.md)。

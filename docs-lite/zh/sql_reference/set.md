@@ -207,4 +207,4 @@ test_set=#set @@global.most_available_sync = t;
 
 ## 相关链接<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_sb71b84f08d92434d9974424733f4b326"></a>
 
-[RESET](RESET.md)，[SHOW](SHOW.md)
+[RESET](reset.md)，[SHOW](show.md)

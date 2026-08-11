@@ -64,7 +64,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 >[!NOTE]说明
 >
->SELECT INTO的其它参数可参考SELECT的[参数说明](SELECT.md#zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc)。
+>SELECT INTO的其它参数可参考SELECT的[参数说明](select.md#zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc)。
 
 ## 示例<a name="zh-cn_topic_0283137419_zh-cn_topic_0237122185_zh-cn_topic_0059779381_s895bebf9e3214a0783610d5fc1ad2f31"></a>
 
@@ -79,4 +79,4 @@ openGauss=# DROP TABLE tpcds.reason_t1;
 
 ## 相关链接<a name="zh-cn_topic_0283137419_zh-cn_topic_0237122185_zh-cn_topic_0059779381_se82df922609a4e8eb3a6d6a011e508a6"></a>
 
-[SELECT](SELECT.md)
+[SELECT](select.md)

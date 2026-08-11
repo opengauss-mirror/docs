@@ -35,7 +35,7 @@ ALTER SESSION命令用于定义或修改那些对当前会话有影响的条件�
 
 ## 参数说明<a name="zh-cn_topic_0283137033_zh-cn_topic_0237122073_zh-cn_topic_0059778275_sddb6ecf7bf554397a5dcf64a45a2fd33"></a>
 
-修改会话涉及到的参数说明请参见SET语法中的[参数说明](SET.md#zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s39823c7ebd854a9f9c761b3a32b1c3c3)。
+修改会话涉及到的参数说明请参见SET语法中的[参数说明](set.md#zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s39823c7ebd854a9f9c761b3a32b1c3c3)。
 
 ## 示例<a name="zh-cn_topic_0283137033_zh-cn_topic_0237122073_zh-cn_topic_0059778275_sea2dac4896614cbf9f90c11334eb3538"></a>
 
@@ -80,4 +80,4 @@ openGauss=# DROP ROLE joe;
 
 ## 相关链接<a name="zh-cn_topic_0283137033_zh-cn_topic_0237122073_zh-cn_topic_0059778275_sae8fd88368e642f8bec50ae5712a870c"></a>
 
-[SET](SET.md)
+[SET](set.md)

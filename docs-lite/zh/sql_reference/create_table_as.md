@@ -244,4 +244,4 @@ openGauss=# DROP TABLE tpcds.store_returns;
 
 ## 相关链接<a name="zh-cn_topic_0283136662_zh-cn_topic_0237122118_zh-cn_topic_0059777601_sa0d9dc1ba4fb4ce58ecdfe391f0561d3"></a>
 
-[CREATE TABLE](create_table.md)，[SELECT](SELECT.md)
+[CREATE TABLE](create_table.md)，[SELECT](select.md)

@@ -36,14 +36,14 @@
 
 - **[PARTITIONS](partitions.md)**  
 
-- **[REFERENTIAL\_CONSTRAINTS](REFERENTIAL_CONSTRAINTS.md)**  
+- **[REFERENTIAL\_CONSTRAINTS](referential_constraints.md)**  
 
-- **[ROUTINES](ROUTINES.md)**  
+- **[ROUTINES](routines.md)**  
 
-- **[SCHEMATA](SCHEMATA.md)**  
+- **[SCHEMATA](schemata.md)**  
 
-- **[STATISTICS](STATISTICS.md)**  
+- **[STATISTICS](statistics.md)**  
 
-- **[TABLES](TABLES.md)**  
+- **[TABLES](tables.md)**  
 
-- **[TABLE\_CONSTRAINTS](TABLE_CONSTRAINTS.md)**  
+- **[TABLE\_CONSTRAINTS](table_constraints.md)**  
