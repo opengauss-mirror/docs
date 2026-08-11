@@ -10,15 +10,15 @@
 
 下面章节只显示未在上述链接内的视图或列信息。
 
-- **[\_PG\_FOREIGN\_DATA\_WRAPPERS](_PG_FOREIGN_DATA_WRAPPERS.md)**  
+- **[\_PG\_FOREIGN\_DATA\_WRAPPERS](_pg_foreign_data_wrappers.md)**  
 
-- **[\_PG\_FOREIGN\_SERVERS](_PG_FOREIGN_SERVERS.md)**  
+- **[\_PG\_FOREIGN\_SERVERS](_pg_foreign_servers.md)**  
 
-- **[\_PG\_FOREIGN\_TABLE\_COLUMNS](_PG_FOREIGN_TABLE_COLUMNS.md)**  
+- **[\_PG\_FOREIGN\_TABLE\_COLUMNS](_pg_foreign_table_columns.md)**  
 
-- **[\_PG\_FOREIGN\_TABLES](_PG_FOREIGN_TABLES.md)**  
+- **[\_PG\_FOREIGN\_TABLES](_pg_foreign_tables.md)**  
 
-- **[\_PG\_USER\_MAPPINGS](_PG_USER_MAPPINGS.md)**  
+- **[\_PG\_USER\_MAPPINGS](_pg_user_mappings.md)**  
 
 - **[CHARACTER\_SETS](character_sets.md)**  
 
@@ -30,11 +30,11 @@
 
 - **[KEYWORDS](keywords_0.md)**  
 
-- **[KEY\_COLUMN\_USAGE](KEY_COLUMN_USAGE.md)**  
+- **[KEY\_COLUMN\_USAGE](key_column_usage.md)**  
 
-- **[PARAMETERS](PARAMETERS.md)**  
+- **[PARAMETERS](parameters.md)**  
 
-- **[PARTITIONS](PARTITIONS.md)**  
+- **[PARTITIONS](partitions.md)**  
 
 - **[REFERENTIAL\_CONSTRAINTS](REFERENTIAL_CONSTRAINTS.md)**  
 

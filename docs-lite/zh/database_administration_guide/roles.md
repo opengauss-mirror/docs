@@ -2,7 +2,7 @@
 
 角色是一组用户的集合。通过GRANT把角色授予用户后，用户即具有了角色的所有权限。推荐使用角色进行高效权限分配。例如，可以为设计、开发和维护人员创建不同的角色，将角色GRANT给用户后，再向每个角色中的用户授予其工作所需数据的差异权限。在角色级别授予或撤消权限时，这些更改将作用到角色下的所有成员。
 
-openGauss提供了一个隐式定义的拥有所有角色的组PUBLIC，所有创建的用户和角色默认拥有PUBLIC所拥有的权限。关于PUBLIC默认拥有的权限请参考[GRANT](../sql_reference/GRANT.md)。要撤销或重新授予用户和角色对PUBLIC的权限， 可通过在GRANT和REVOKE指定关键字PUBLIC实现。
+openGauss提供了一个隐式定义的拥有所有角色的组PUBLIC，所有创建的用户和角色默认拥有PUBLIC所拥有的权限。关于PUBLIC默认拥有的权限请参考[GRANT](../sql_reference/grant.md)。要撤销或重新授予用户和角色对PUBLIC的权限， 可通过在GRANT和REVOKE指定关键字PUBLIC实现。
 
 要查看所有角色，请查询系统表PG\_ROLES：
 

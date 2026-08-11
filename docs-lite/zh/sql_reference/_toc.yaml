@@ -54,7 +54,7 @@ sections:
           - label: ANYDATA类型
             href: ./anydata_type.md
           - label: 对象类型
-            href: ./Object_type.md
+            href: ./object_type.md
           - label: BFILE类型
             href: ./bfile_type.md
           - label: 类型基础值
@@ -82,23 +82,23 @@ sections:
           - label: 简介
             href: ./information_schema.md        
           - label: _PG_FOREIGN_DATA_WRAPPERS
-            href: ./_PG_FOREIGN_DATA_WRAPPERS.md
+            href: ./_pg_foreign_data_wrappers.md
           - label: _PG_FOREIGN_SERVERS
-            href: ./_PG_FOREIGN_SERVERS.md
+            href: ./_pg_foreign_servers.md
           - label: _PG_FOREIGN_TABLES
-            href: ./_PG_FOREIGN_TABLES.md
+            href: ./_pg_foreign_tables.md
           - label: _PG_FOREIGN_TABLE_COLUMNS
-            href: ./_PG_FOREIGN_TABLE_COLUMNS.md
+            href: ./_pg_foreign_table_columns.md
           - label: _PG_USER_MAPPINGS
-            href: ./_PG_USER_MAPPINGS.md
+            href: ./_pg_user_mappings.md
           - label: CHARACETER_SETS
             href: ./character_sets.md
           - label: COLLATIONS
             href: ./collations.md 
           - label: KEY_COLUMN_USAGE
-            href: ./KEY_COLUMN_USAGE.md    
+            href: ./key_column_usage.md    
           - label: PARAMETERS
-            href: ./PARAMETERS.md 
+            href: ./parameters.md 
           - label: REFERENTIAL_CONSTRAINTS
             href: ./REFERENTIAL_CONSTRAINTS.md       
           - label: ROUTINES
@@ -114,7 +114,7 @@ sections:
           - label: STATISTICS
             href: ./STATISTICS.md
           - label: PARTITIONS
-            href: ./PARTITIONS.md
+            href: ./partitions.md
           - label: EVENTS
             href: ./events.md
       - label: DBE_PERF Schema
@@ -124,23 +124,23 @@ sections:
           - label: OS
             sections:
               - label: OS_RUNTIME
-                href: ./OS_RUNTIME.md
+                href: ./os_runtime.md
               - label: GLOBAL_OS_RUNTIME
                 href: ./GLOBAL_OS_RUNTIME.md
               - label: OS_THREADS
-                href: ./OS_THREADS.md
+                href: ./os_threads.md
               - label: GLOBAL_OS_THREADS
                 href: ./GLOBAL_OS_THREADS.md
           - label: Instance
             sections:
               - label: INSTANCE_TIME
-                href: ./INSTANCE_TIME.md    
+                href: ./instance_time.md    
               - label: GLOBAL_INSTANCE_TIME
                 href: ./GLOBAL_INSTANCE_TIME.md
           - label: Memory
             sections:
               - label: MEMORY_NODE_DETAIL
-                href: ./MEMORY_NODE_DETAIL.md
+                href: ./memory_node_detail.md
               - label: GLOBAL_MEMORY_NODE_DETAIL
                 href: ./GLOBAL_MEMORY_NODE_DETAIL.md
               - label: GLOBAL_SHARED_MEMORY_DETAIL
@@ -148,13 +148,13 @@ sections:
           - label: File
             sections:
               - label: FILE_IOSTAT
-                href: ./FILE_IOSTAT.md
+                href: ./file_iostat.md
               - label: SUMMARY_FILE_IOSTAT
                 href: ./SUMMARY_FILE_IOSTAT.md
               - label: GLOBAL_FILE_IOSTAT
                 href: ./GLOBAL_FILE_IOSTAT.md
               - label: FILE_REDO_IOSTAT
-                href: ./FILE_REDO_IOSTAT.md
+                href: ./file_redo_iostat.md
               - label: SUMMARY_FILE_REDO_IOSTAT
                 href: ./SUMMARY_FILE_REDO_IOSTAT.md
               - label: GLOBAL_FILE_REDO_IOSTAT
@@ -162,7 +162,7 @@ sections:
               - label: GLOBAL_REL_IOSTAT
                 href: ./GLOBAL_REL_IOSTAT.md
               - label: LOCAL_REL_IOSTAT
-                href: ./LOCAL_REL_IOSTAT.md
+                href: ./local_rel_iostat.md
               - label: SUMMARY_REL_IOSTAT
                 href: ./SUMMARY_REL_IOSTAT.md
           - label: Object
@@ -300,7 +300,7 @@ sections:
               - label: GLOBAL_THREAD_WAIT_STATUS
                 href: ./GLOBAL_THREAD_WAIT_STATUS.md
               - label: LOCAL_THREADPOOL_STATUS
-                href: ./LOCAL_THREADPOOL_STATUS.md
+                href: ./local_threadpool_status.md
               - label: GLOBAL_THREADPOOL_STATUS
                 href: ./GLOBAL_THREADPOOL_STATUS.md
               - label: SESSION_CPU_RUNTIME
@@ -310,7 +310,7 @@ sections:
               - label: STATEMENT_IOSTAT_COMPLEX_RUNTIME
                 href: ./STATEMENT_IOSTAT_COMPLEX_RUNTIME.md
               - label: LOCAL_ACTIVE_SESSION
-                href: ./LOCAL_ACTIVE_SESSION.md
+                href: ./local_active_session.md
           - label: Transaction
             sections:
               - label: TRANSACTIONS_PREPARED_XACTS
@@ -426,7 +426,7 @@ sections:
               - label: GLOBAL_REPLICATION_SLOTS
                 href: ./GLOBAL_REPLICATION_SLOTS.md
               - label: BGWRITER_STAT
-                href: ./BGWRITER_STAT.md
+                href: ./bgwriter_stat.md
               - label: GLOBAL_BGWRITER_STAT
                 href: ./GLOBAL_BGWRITER_STAT.md
               - label: GLOBAL_CKPT_STATUS
@@ -442,7 +442,7 @@ sections:
               - label: GLOBAL_REDO_STATUS
                 href: ./GLOBAL_REDO_STATUS.md
               - label: CLASS_VITAL_INFO
-                href: ./CLASS_VITAL_INFO.md
+                href: ./class_vital_info.md
               - label: USER_LOGIN
                 href: ./USER_LOGIN.md
               - label: SUMMARY_USER_LOGIN
@@ -470,17 +470,17 @@ sections:
           - label: Configuration
             sections:
               - label: CONFIG_SETTINGS
-                href: ./CONFIG_SETTINGS.md
+                href: ./config_settings.md
               - label: GLOBAL_CONFIG_SETTINGS
                 href: ./GLOBAL_CONFIG_SETTINGS.md
           - label: Operator
             sections:
               - label: OPERATOR_HISTORY
-                href: ./OPERATOR_HISTORY.md
+                href: ./operator_history.md
               - label: OPERATOR_HISTORY_TABLE
-                href: ./OPERATOR_HISTORY_TABLE.md
+                href: ./operator_history_table.md
               - label: OPERATOR_RUNTIME
-                href: ./OPERATOR_RUNTIME.md
+                href: ./operator_runtime.md
               - label: GLOBAL_OPERATOR_HISTORY
                 href: ./GLOBAL_OPERATOR_HISTORY.md
               - label: GLOBAL_OPERATOR_HISTORY_TABLE
@@ -762,25 +762,25 @@ sections:
       - label: ANALYZE | ANALYSE
         href: ./analyze_analyse.md
       - label: BEGIN
-        href: ./BEGIN.md
+        href: ./begin.md
       - label: CALL
-        href: ./CALL.md
+        href: ./call.md
       - label: CHECKPOINT
-        href: ./CHECKPOINT.md
+        href: ./checkpoint.md
       - label: CLEAN CONNECTION
         href: ./clean_connection.md
       - label: CLOSE
-        href: ./CLOSE.md
+        href: ./close.md
       - label: CLUSTER
-        href: ./CLUSTER.md
+        href: ./cluster.md
       - label: COMMENT
-        href: ./COMMENT.md
+        href: ./comment.md
       - label: COMMIT | END
         href: ./commit_end.md
       - label: COMMIT PREPARED
         href: ./commit_prepared.md
       - label: COPY
-        href: ./COPY.md
+        href: ./copy.md
       - label: CREATE ACCESS METHOD
         href: ./create_access_method.md
       - label: CREATE AGGREGATE
@@ -884,15 +884,15 @@ sections:
       - label: CREATE WEAK PASSWORD DICTIONARY
         href: ./create_weak_password_dictionary.md
       - label: CURSOR
-        href: ./CURSOR.md
+        href: ./cursor.md
       - label: DEALLOCATE
-        href: ./DEALLOCATE.md
+        href: ./deallocate.md
       - label: DECLARE
-        href: ./DECLARE.md
+        href: ./declare.md
       - label: DELETE
-        href: ./DELETE.md
+        href: ./delete.md
       - label: DO
-        href: ./DO.md
+        href: ./do.md
       - label: DROP ACCESS METHOD
         href: ./drop_access_method.md
       - label: DROP AGGREGATE
@@ -992,17 +992,17 @@ sections:
       - label: DROP WEAK PASSWORD DICTIONARY
         href: ./drop_weak_password_dictionary.md
       - label: EXECUTE
-        href: ./EXECUTE.md
+        href: ./execute.md
       - label: EXPLAIN
-        href: ./EXPLAIN.md
+        href: ./explain.md
       - label: EXPLAIN PLAN
         href: ./explain_plan.md
       - label: FETCH
-        href: ./FETCH.md
+        href: ./fetch.md
       - label: GRANT
-        href: ./GRANT.md
+        href: ./grant.md
       - label: INSERT
-        href: ./INSERT.md
+        href: ./insert.md
       - label: LISTEN
         href: ./listen.md
       - label: LOCK
@@ -1010,17 +1010,17 @@ sections:
       - label: MERGE INTO
         href: ./merge_into.md
       - label: MOVE
-        href: ./MOVE.md
+        href: ./move.md
       - label: NOTIFY
         href: ./notify.md
       - label: PREDICT BY
         href: ./predict_by.md
       - label: PREPARE
-        href: ./PREPARE.md
+        href: ./prepare.md
       - label: PREPARE TRANSACTION
         href: ./prepare_transaction.md
       - label: PURGE
-        href: ./PURGE.md
+        href: ./purge.md
       - label: REASSIGN OWNED
         href: ./reassign_owned.md
       - label: REFRESH MATERIALIZED VIEW
@@ -1209,8 +1209,6 @@ sections:
         href: ./global_syscache_feature_function.md
       - label: 数据损坏检测修复函数
         href: ./data_corruption_detection_and_repair_function.md
-      - label: 向量函数和操作符
-        href: ../datavec/vector_functions_and_operators.md
       - label: BFILE类型函数
         href: ./bfile_type_function.md        
       - label: 废弃函数

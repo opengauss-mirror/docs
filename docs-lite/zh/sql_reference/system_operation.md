@@ -8,11 +8,11 @@ openGauss通过SQL语句执行不同的系统操作，比如：设置变量，�
 
 ## 显示执行计划<a name="zh-cn_topic_0283137188_zh-cn_topic_0237122047_zh-cn_topic_0059778982_s3e28880506ff4cc8a003199eb5d71864"></a>
 
-显示openGauss为SQL语句规划的执行计划，请参考[EXPLAIN](EXPLAIN.md)。
+显示openGauss为SQL语句规划的执行计划，请参考[EXPLAIN](explain.md)。
 
 ## 事务日志检查点<a name="zh-cn_topic_0283137188_zh-cn_topic_0237122047_zh-cn_topic_0059778982_s8e74a18e37e74e838ef937d766f9a03c"></a>
 
-预写式日志（WAL）缺省时在事务日志中每隔一段时间放置一个检查点。CHECKPOINT强制立即进行检查，而不是等到下一次调度时的检查点。请参考[CHECKPOINT](CHECKPOINT.md)。
+预写式日志（WAL）缺省时在事务日志中每隔一段时间放置一个检查点。CHECKPOINT强制立即进行检查，而不是等到下一次调度时的检查点。请参考[CHECKPOINT](checkpoint.md)。
 
 ## 垃圾收集<a name="zh-cn_topic_0283137188_zh-cn_topic_0237122047_zh-cn_topic_0059778982_sb2796f883f6540b78c6f924507e045eb"></a>
 

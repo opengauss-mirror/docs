@@ -56,8 +56,8 @@ CURSOR cursor_name
 
 ## 示例<a name="zh-cn_topic_0283137390_zh-cn_topic_0237122128_zh-cn_topic_0059778820_s5587dfafbfee44509237e4eb718ccc55"></a>
 
-请参考FETCH的[示例](FETCH.md#zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_s1ee72832a27547e4949061a010e24578)。
+请参考FETCH的[示例](fetch.md#zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_s1ee72832a27547e4949061a010e24578)。
 
 ## 相关链接<a name="zh-cn_topic_0283137390_zh-cn_topic_0237122128_zh-cn_topic_0059778820_sb9bc0f8b2b464231a9dc551fa79f0485"></a>
 
-[FETCH](FETCH.md)
+[FETCH](fetch.md)

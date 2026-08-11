@@ -32,8 +32,8 @@ CLOSE { cursor_name | ALL } ;
 
 ## 示例<a name="zh-cn_topic_0283137397_zh-cn_topic_0237122091_zh-cn_topic_0059779164_sc77056d6ff5e4461b6f03b2587665cf0"></a>
 
-请参考FETCH的[示例](FETCH.md#zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_s1ee72832a27547e4949061a010e24578)。
+请参考FETCH的[示例](fetch.md#zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_s1ee72832a27547e4949061a010e24578)。
 
 ## 相关链接<a name="zh-cn_topic_0283137397_zh-cn_topic_0237122091_zh-cn_topic_0059779164_sbd6c1c8ef3144346919144e8b416822f"></a>
 
-[FETCH](FETCH.md)，[MOVE](MOVE.md)
+[FETCH](fetch.md)，[MOVE](move.md)

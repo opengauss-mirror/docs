@@ -1,6 +1,6 @@
 # 通过INSERT语句直接写入数据<a name="ZH-CN_TOPIC_0289900427"></a>
 
-用户可以通过以下方式执行[INSERT](../sql_reference/INSERT.md)语句直接向openGauss数据库写入数据：
+用户可以通过以下方式执行[INSERT](../sql_reference/insert.md)语句直接向openGauss数据库写入数据：
 
 - 使用openGauss数据库提供的客户端工具向openGauss数据库写入数据。
 

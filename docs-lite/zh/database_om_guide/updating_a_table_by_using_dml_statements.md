@@ -52,7 +52,7 @@ openGauss=# CREATE TABLE customer_t
     openGauss=# DELETE FROM customer_t WHERE c_last_name = 'Baker';
     ```
 
-    更多关于DELETE的使用方法，请参见[DELETE](../sql_reference/DELETE.md)。
+    更多关于DELETE的使用方法，请参见[DELETE](../sql_reference/delete.md)。
 
 - 使用TRUNCATE命令快速从表中删除所有的行。
 

@@ -2,7 +2,7 @@
 
 ## 功能描述<a name="zh-cn_topic_0283137573_zh-cn_topic_0237122169_zh-cn_topic_0059778649_s0bf0a06c81754f8b9c758ba7660a6d5f"></a>
 
-MOVE在不检索数据的情况下重新定位一个游标。MOVE的作用类似于[FETCH](FETCH.md)命令，但只是重定位游标而不返回行。
+MOVE在不检索数据的情况下重新定位一个游标。MOVE的作用类似于[FETCH](fetch.md)命令，但只是重定位游标而不返回行。
 
 ## 注意事项<a name="zh-cn_topic_0283137573_zh-cn_topic_0237122169_zh-cn_topic_0059778649_sb645366a8585455aaecf9f6d58feef33"></a>
 
@@ -35,7 +35,7 @@ NEXT
 
 ## 参数说明<a name="zh-cn_topic_0283137573_zh-cn_topic_0237122169_zh-cn_topic_0059778649_scd6d2507c45c462a8717666a869f836b"></a>
 
-MOVE命令的参数与FETCH的相同，详细请参见FETCH的[参数说明](FETCH.md#zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_sceb763c430654064b8f61e9aa0792af9)。
+MOVE命令的参数与FETCH的相同，详细请参见FETCH的[参数说明](fetch.md#zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_sceb763c430654064b8f61e9aa0792af9)。
 
 >[!NOTE]说明
 >
@@ -72,4 +72,4 @@ openGauss=# END;
 
 ## 相关链接<a name="zh-cn_topic_0283137573_zh-cn_topic_0237122169_zh-cn_topic_0059778649_s576a05d59d374a6684001f646161ee14"></a>
 
-[CLOSE](CLOSE.md)，[FETCH](FETCH.md)
+[CLOSE](close.md)，[FETCH](fetch.md)

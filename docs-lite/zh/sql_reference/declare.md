@@ -4,7 +4,7 @@
 
 DECLARE命令既可以定义一个游标，用于在一个大的查询里面检索少数几行数据，也可以作为一个匿名块的开始。
 
-本节主要描述定义为游标的用法，开启匿名块的用法见[BEGIN](BEGIN.md)。
+本节主要描述定义为游标的用法，开启匿名块的用法见[BEGIN](begin.md)。
 
 为了处理SQL语句，存储过程进程分配一段内存区域来保存上下文联系。游标是指向上下文区域的句柄或指针。借助游标，存储过程可以控制上下文区域的变化。
 
@@ -81,8 +81,8 @@ DECLARE命令既可以定义一个游标，用于在一个大的查询里面检�
 
 ## 示例<a name="zh-cn_topic_0283137571_zh-cn_topic_0237122130_zh-cn_topic_0059777616_s5587dfafbfee44509237e4eb718ccc55"></a>
 
-定义游标示例请参考FETCH的[示例](FETCH.md#zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_s1ee72832a27547e4949061a010e24578)。
+定义游标示例请参考FETCH的[示例](fetch.md#zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_s1ee72832a27547e4949061a010e24578)。
 
 ## 相关链接<a name="zh-cn_topic_0283137571_zh-cn_topic_0237122130_zh-cn_topic_0059777616_sb9bc0f8b2b464231a9dc551fa79f0485"></a>
 
-[BEGIN](BEGIN.md)，[FETCH](FETCH.md)
+[BEGIN](begin.md)，[FETCH](fetch.md)

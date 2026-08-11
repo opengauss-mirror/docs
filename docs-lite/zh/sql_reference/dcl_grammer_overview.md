@@ -66,7 +66,7 @@ DCL（Data Control Language数据控制语言），是用来创建用户角色�
 
 ## 授权<a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059778670_s372f95d7fc554f2181b8ce8f2095e8f8"></a>
 
-openGauss提供了针对数据对象和角色授权的语句，请参考[GRANT](GRANT.md)。
+openGauss提供了针对数据对象和角色授权的语句，请参考[GRANT](grant.md)。
 
 ## 收回权限<a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059778670_s2560fc1e38394aeeae7fc2a8b7231a43"></a>
 

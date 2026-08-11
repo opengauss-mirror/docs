@@ -255,7 +255,7 @@ REVOKE用于撤销一个或多个角色的权限。
 
 关键字PUBLIC表示一个隐式定义的拥有所有角色的组。
 
-权限类别和参数说明，请参见GRANT的[参数说明](GRANT.md#zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s3557d45c54124d86bc3f619358d806f8)。
+权限类别和参数说明，请参见GRANT的[参数说明](grant.md#zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s3557d45c54124d86bc3f619358d806f8)。
 
 任何特定角色拥有的特权包括直接授予该角色的特权、从该角色作为其成员的角色中得到的权限以及授予给PUBLIC的权限。因此，从PUBLIC收回SELECT特权并不一定会意味着所有角色都会失去在该对象上的SELECT特权，那些直接被授予的或者通过另一个角色被授予的角色仍然会拥有它。类似地，从一个用户收回SELECT后，如果PUBLIC仍有SELECT权限，该用户还是可以使用SELECT。
 
@@ -269,8 +269,8 @@ REVOKE用于撤销一个或多个角色的权限。
 
 ## 示例<a name="zh-cn_topic_0283137669_zh-cn_topic_0237122179_zh-cn_topic_0059779274_s82ec0652acdd4e6091abc851b909926d"></a>
 
-请参考GRANT的[示例](GRANT.md#zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447)。
+请参考GRANT的[示例](grant.md#zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447)。
 
 ## 相关链接<a name="zh-cn_topic_0283137669_zh-cn_topic_0237122179_zh-cn_topic_0059779274_s865f60db543c4043bd5fa9b678295c5a"></a>
 
-[GRANT](GRANT.md)
+[GRANT](grant.md)
