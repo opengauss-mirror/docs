@@ -96,7 +96,7 @@ sections:
           - label: COLLATIONS
             href: ./collations.md 
           - label: KEY_COLUMN_USAGE
-            href: ./key_colunmn_usage.md    
+            href: ./key_column_usage.md    
           - label: PARAMETERS
             href: ./parameters.md 
           - label: REFERENTIAL_CONSTRAINTS
