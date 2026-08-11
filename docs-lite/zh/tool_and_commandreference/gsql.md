@@ -1176,7 +1176,17 @@ omm@[local] openGauss=#
 </tr>
 <tr id="zh-cn_topic_0059778645_r47448e8d5f694bb8a3cbe2198bb2e5fb"><td class="cellrowborder" valign="top" width="18.55%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059778645_ae1970eb0493b419ba68072716fd91574"><a name="zh-cn_topic_0059778645_ae1970eb0493b419ba68072716fd91574"></a><a name="zh-cn_topic_0059778645_ae1970eb0493b419ba68072716fd91574"></a>\g [FILE] or ;</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.31%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059778645_aee0f1f60a7ab41f6a053d54c43cbde76"><a name="zh-cn_topic_0059778645_aee0f1f60a7ab41f6a053d54c43cbde76"></a><a name="zh-cn_topic_0059778645_aee0f1f60a7ab41f6a053d54c43cbde76"></a>执行查询（并将结果发送到文件或管道）。</p>
+<td class="cellrowborder" valign="top" width="52.31%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059778645_aee0f1f60a7ab41f6a053d54c43cbde76"><a name="zh-cn_topic_0059778645_aee0f1f60a7ab41f6a053d54c43cbde76"></a><a name="zh-cn_topic_0059778645_aee0f1f60a7ab41f6a053d54c43cbde76"></a>执行查询（并将结果发送到文件或管道）。
+
+注意： 不能在并行模式下使用\g。
+
+```sql
+\parallel on
+Parallel is on with scale default 1024.
+select 1 as a \g
+Sending the query buffer by a meta-command is not supported in parallel mode.
+```
+</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.14%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059778645_a1d8ad00542514458a3e2d2d6f73f0551"><a name="zh-cn_topic_0059778645_a1d8ad00542514458a3e2d2d6f73f0551"></a><a name="zh-cn_topic_0059778645_a1d8ad00542514458a3e2d2d6f73f0551"></a>-</p>
 </td>
@@ -1192,7 +1202,7 @@ omm@[local] openGauss=#
 </td>
 <td class="cellrowborder" valign="top" width="52.31%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059778645_a54a7382266914ba5979907a7f48880b7"><a name="zh-cn_topic_0059778645_a54a7382266914ba5979907a7f48880b7"></a><a name="zh-cn_topic_0059778645_a54a7382266914ba5979907a7f48880b7"></a>控制并发执行开关。</p>
 <a name="zh-cn_topic_0059778645_u0619712b75054bed8eae2b80ed89a7a6"></a><a name="zh-cn_topic_0059778645_u0619712b75054bed8eae2b80ed89a7a6"></a><ul id="zh-cn_topic_0059778645_u0619712b75054bed8eae2b80ed89a7a6"><li>on：打开控制并发执行开关，且最大并发数为num。</li><li>off：关闭控制并发执行开关。</li></ul>
-<div class="note" id="zh-cn_topic_0059778645_n17e1b3d4e9d547dcb2f0dd42793c3efa"><a name="zh-cn_topic_0059778645_n17e1b3d4e9d547dcb2f0dd42793c3efa"></a><a name="zh-cn_topic_0059778645_n17e1b3d4e9d547dcb2f0dd42793c3efa"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="zh-cn_topic_0059778645_u7c8bd7f404534e31ae0e78702759e31b"></a><a name="zh-cn_topic_0059778645_u7c8bd7f404534e31ae0e78702759e31b"></a><ul id="zh-cn_topic_0059778645_u7c8bd7f404534e31ae0e78702759e31b"><li>不支持事务中开启并发执行以及并发中开启事务。</li><li>不支持\d这类元命令的并发。</li><li>并发select返回结果混乱问题，此为客户可接受，core、进程停止响应不可接受。</li><li>不推荐在并发中使用set语句，否则导致结果与预期不一致。</li><li>不支持创建临时表！如需使用临时表，需要在开启parallel之前创建好，并在parallel内部使用。parallel内部不允许创建临时表。</li><li>\parallel执行时最多会启动num个独立的gsql进程连接服务器。</li><li>\parallel中所有作业的持续时间不能超过session_timeout，否则可能会导致并发执行过程中断连。</li><li>在\parallel on 之后一条或多条命令，会等到\parallel off执行后才会执行，因而，\parallel on之后需要有对应的\parallel off，否则\parallel on后的命令都无法执行。</li></ul>
+<div class="note" id="zh-cn_topic_0059778645_n17e1b3d4e9d547dcb2f0dd42793c3efa"><a name="zh-cn_topic_0059778645_n17e1b3d4e9d547dcb2f0dd42793c3efa"></a><a name="zh-cn_topic_0059778645_n17e1b3d4e9d547dcb2f0dd42793c3efa"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="zh-cn_topic_0059778645_u7c8bd7f404534e31ae0e78702759e31b"></a><a name="zh-cn_topic_0059778645_u7c8bd7f404534e31ae0e78702759e31b"></a><ul id="zh-cn_topic_0059778645_u7c8bd7f404534e31ae0e78702759e31b"><li>不支持事务中开启并发执行以及并发中开启事务。</li><li>不支持\d这类元命令的并发。</li><li>并发select返回结果混乱问题，此为客户可接受，core、进程停止响应不可接受。</li><li>不推荐在并发中使用set语句，否则导致结果与预期不一致。</li><li>不支持创建临时表！如需使用临时表，需要在开启parallel之前创建好，并在parallel内部使用。parallel内部不允许创建临时表。</li><li>\parallel执行时最多会启动num个独立的gsql进程连接服务器。</li><li>\parallel中所有作业的持续时间不能超过session_timeout，否则可能会导致并发执行过程中断连。</li><li>在\parallel on 之后一条或多条命令，会等到\parallel off执行后才会执行，因而，\parallel on之后需要有对应的\parallel off，否则\parallel on后的命令都无法执行。</li><li>在\parallel on 之后不能使用\g或者\gset。</li></ul>
 </div></div>
 </td>
 <td class="cellrowborder" valign="top" width="29.14%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059778645_a90d6c46b05f445bda0c611a7239c2cdd"><a name="zh-cn_topic_0059778645_a90d6c46b05f445bda0c611a7239c2cdd"></a><a name="zh-cn_topic_0059778645_a90d6c46b05f445bda0c611a7239c2cdd"></a>num的默认值：1024。</p>
@@ -2088,21 +2098,21 @@ openGauss=# \sf
 
 1. 无前缀
 
-	```
+	```sql
 	select 'hello' as var1, 10 as var2 \gset
 	\echo :var1 :var2
 	hello 10
 	```
 2. 有前缀
 
-	```
+	```sql
 	select 'hello' as var1, 10 as var2 \gset result_
 	\echo :result_var1 :result_var2
 	hello 10
 	```
 3. 查询结果必须有列名，且必须是合法列名，否则会赋值失败
 
-	```
+	```sql
 	select 1 as b \gset ;
 	attempt to \gset set variable ";b" to 1 failed.
     select 1 \gset
@@ -2110,7 +2120,7 @@ openGauss=# \sf
 	```
 4. 不可给特殊控制变量赋值
 
-	```
+	```sql
  	-- 由于opengauss会自动转小写，这个报错一般不会被触发，除非加上单引号
  	select '%o' as 'PROMPT1' \gset
  	attempt to \gset into specially treated variable "PROMPT1" ignored.
@@ -2120,6 +2130,14 @@ openGauss=# \sf
  	\echo :prompt1
  	%o
 	```
+5. 不能在并行模式下使用\gset
+
+    ```sql
+    \parallel on
+    Parallel is on with scale default 1024.
+    select 1 as a \gset
+    Sending the query buffer by a meta-command is not supported in parallel mode.
+    ```
 <span class="notetitle"> 特殊控制变量列表： </span><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_6da475e7fa9c91ea7f"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_6da475e7fa9c91ea7f"></a><ol id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_6da475e7fa9c91ea7f"><li>AUTOCOMMIT</li><li>ON_ERROR_STOP</li><li>QUIET</li><li>SINGLELINE</li><li>SINGLESTEP</li><li>FETCH_COUNT</li><li>ECHO</li><li>ECHO_HIDDEN</li><li>ON_ERROR_ROLLBACK</li><li>HISTCONTROL</li><li>PROMPT1</li><li>PROMPT2</li><li>PROMPT3</li><li>VERBOSITY</li><li>RETRY</li></ol>
 </td>
 </tr>

@@ -1198,7 +1198,17 @@ For details about meta-commands, see  [Table Common meta-commands](#en-us_topic_
 </tr>
 <tr id="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_r47448e8d5f694bb8a3cbe2198bb2e5fb"><td class="cellrowborder" valign="top" width="18.55%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_ae1970eb0493b419ba68072716fd91574"><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_ae1970eb0493b419ba68072716fd91574"></a><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_ae1970eb0493b419ba68072716fd91574"></a>\g [FILE] or ;</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.31%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_aee0f1f60a7ab41f6a053d54c43cbde76"><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_aee0f1f60a7ab41f6a053d54c43cbde76"></a><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_aee0f1f60a7ab41f6a053d54c43cbde76"></a>Performs a query operation and sends the result to a file or pipe.</p>
+<td class="cellrowborder" valign="top" width="52.31%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_aee0f1f60a7ab41f6a053d54c43cbde76"><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_aee0f1f60a7ab41f6a053d54c43cbde76"></a><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_aee0f1f60a7ab41f6a053d54c43cbde76"></a>Performs a query operation and sends the result to a file or pipe. 
+
+NOTICE: Can't use \g in parallel mode.
+
+```sql
+\parallel on
+Parallel is on with scale default 1024.
+select 1 as a \g
+Sending the query buffer by a meta-command is not supported in parallel mode.
+```
+</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.14%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_a1d8ad00542514458a3e2d2d6f73f0551"><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_a1d8ad00542514458a3e2d2d6f73f0551"></a><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_a1d8ad00542514458a3e2d2d6f73f0551"></a>-</p>
 </td>
@@ -2111,21 +2121,21 @@ Store the query results in a variable. There's no semicolon at the end of the qu
 
 1. Without a prefix
 
-	```
+	```sql
 	select 'hello' as var1, 10 as var2 \gset
 	\echo :var1 :var2
 	hello 10
 	```
 2. Has a prefix
 
-	```
+	```sql
 	select 'hello' as var1, 10 as var2 \gset result_
 	\echo :result_var1 :result_var2
 	hello 10
 	```
 3. The query results must have column names, and they have to be valid, otherwise the assignment will fail.
 
-	```
+	```sql
 	select 1 as b \gset ;
 	attempt to \gset set variable ";b" to 1 failed.
     select 1 \gset
@@ -2133,7 +2143,7 @@ Store the query results in a variable. There's no semicolon at the end of the qu
 	```
 4. It is not possible to assign values to special control variables
 
-	```
+	```sql
  	-- Since openGauss automatically converts to lowercase,
 	-- this error usually won't be triggered unless add quotes.
  	select '%o' as 'PROMPT1' \gset
@@ -2144,6 +2154,14 @@ Store the query results in a variable. There's no semicolon at the end of the qu
  	\echo :prompt1
  	%o
 	```
+5. Can't use \gset in parallel mode
+
+    ```sql
+    \parallel on
+    Parallel is on with scale default 1024.
+    select 1 as a \gset
+    Sending the query buffer by a meta-command is not supported in parallel mode.
+    ```
 <span class="notetitle"> Special Control Variables List： </span><a name="en-us_topic_0237152146_en-us_topic_0059778645_6da475e7fa9c91ea7f"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_6da475e7fa9c91ea7f"></a><ol id="en-us_topic_0237152146_en-us_topic_0059778645_6da475e7fa9c91ea7f"><li>AUTOCOMMIT</li><li>ON_ERROR_STOP</li><li>QUIET</li><li>SINGLELINE</li><li>SINGLESTEP</li><li>FETCH_COUNT</li><li>ECHO</li><li>ECHO_HIDDEN</li><li>ON_ERROR_ROLLBACK</li><li>HISTCONTROL</li><li>PROMPT1</li><li>PROMPT2</li><li>PROMPT3</li><li>VERBOSITY</li><li>RETRY</li></ol>
 </td>
 </tr>
