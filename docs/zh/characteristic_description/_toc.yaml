@@ -258,7 +258,7 @@ sections:
       - label: PostgreSQL迁移
         href: ./postgresql_opengauss_migration_tool_debezium_connector_postgres.md
       - label: PostgreSQL数据迁移工具
-        href: ./SQLServer_openGauss迁移工具oG_datasync_full_migration.md 
+        href: ./sqlserver_opengauss_og_datasync_full_migration.md 
       - label: 数据校验 gs_datacheck
         href: ./data_check_tool_gs_datacheck.md
       - label: MySQL->openGauss迁移工具chameleon

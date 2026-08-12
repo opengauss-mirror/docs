@@ -190,13 +190,13 @@ sections:
           - label: PQerrorMessage
             href: ./pqerrormessage.md
           - label: PQsetdbLogin
-            href: ./PQsetdbLogin.md
+            href: ./pqsetdblogin.md
           - label: PQfinish
             href: ./pqfinish.md
           - label: PQreset
             href: ./pqreset.md
           - label: PQstatus
-            href: ./PQstatus.md  
+            href: ./pqstatus.md  
       - label: libpq接口参考：数据库执行语句函数
         sections:
           - label: 概览

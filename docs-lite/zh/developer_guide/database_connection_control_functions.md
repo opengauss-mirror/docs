@@ -12,10 +12,10 @@
 
 - **[PQerrorMessage](pqerrormessage.md)**  
 
-- **[PQsetdbLogin](PQsetdbLogin.md)**  
+- **[PQsetdbLogin](pqsetdblogin.md)**  
 
 - **[PQfinish](pqfinish.md)**  
 
 - **[PQreset](pqreset.md)**  
 
-- **[PQstatus](PQstatus.md)**  
+- **[PQstatus](pqstatus.md)**  
