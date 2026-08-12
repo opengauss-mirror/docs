@@ -336,13 +336,13 @@ sections:
               - label: STATEMENT_HISTORY
                 href: ./statement_history.md
               - label: GS_SLOW_QUERY_INFO (Discarded)
-                href: ./gs_slow_query_info-discarded.md
+                href: ./gs_slow_query_info_discarded.md
               - label: GS_SLOW_QUERY_HISTORY (Discarded)
-                href: ./gs_slow_query_history-discarded.md
+                href: ./gs_slow_query_history_discarded.md
               - label: GLOBAL_SLOW_QUERY_HISTORY (Discarded)
-                href: ./global_slow_query_history-discarded.md
+                href: ./global_slow_query_history_discarded.md
               - label: GLOBAL_SLOW_QUERY_INFO (Discarded)
-                href: ./global_slow_query_info-discarded.md
+                href: ./global_slow_query_info_discarded.md
           - label: Cache/IO
             sections:
               - label: STATIO_USER_TABLES
@@ -622,7 +622,7 @@ sections:
           - label: DBE_SQL_UTIL Schema
             sections:
               - label: Introduction 
-                href: ./dbe_sql_util-schema.md
+                href: ./dbe_sql_util_schema.md
               - label: DBE_SQL_UTIL.create_hint_sql_patch
                 href: ./dbe_sql_util_create_hint_sql_patch.md
               - label: DBE_SQL_UTIL.create_abort_sql_patch
@@ -830,7 +830,7 @@ sections:
       - label: CREATE TABLE
         href: ./create_table.md
       - label: CREATE TABLE AS
-        href: ./create-table-as.md
+        href: ./create_table_as.md
       - label: CREATE TABLE INHERITS
         href: ./create_table_inherits.md
       - label: CREATE TABLE PARTITION
@@ -906,7 +906,7 @@ sections:
       - label: DROP OPERATOR
         href: ./drop_operator.md
       - label: DROP OWNED
-        href: ./drop-owned.md
+        href: ./drop_owned.md
       - label: DROP PACKAGE
         href: ./drop_package.md
       - label: DROP PROCEDURE
@@ -1076,7 +1076,7 @@ sections:
       - label: Date and Time Processing Functions and Operators
         href: ./date_and_time_processing_functions_and_operators.md
       - label: Type Conversion Functions
-        href: ./type-conversion-functions.md
+        href: ./type_conversion_functions.md
       - label: Geometric Functions and Operators
         href: ./geometric_functions_and_operators.md
       - label: Network Address Functions and Operators
@@ -1208,7 +1208,7 @@ sections:
       - label: Basic Statements
         sections:
           - label: Overview
-            href: ./basic-statements.md
+            href: ./basic_statements.md
           - label: Variable Definition Statements
             href: ./variable_definition_statements.md
           - label: Assignment Statements
@@ -1260,13 +1260,13 @@ sections:
           - label: Cursor Loop
             href: ./cursor_loop.md
       - label: Retry Management
-        href: ./retry-management.md
+        href: ./retry_management.md
       - label: Debugging
         href: ./debugging.md
   - label: Autonomous Transaction
     sections:
       - label: Overview
-        href: ./autonomous-transaction.md
+        href: ./autonomous_transaction.md
       - label: Stored Procedure Supporting Autonomous Transaction
         href: ./stored_procedure_supporting_autonomous_transaction.md
       - label: Anonymous Block Supporting Autonomous Transaction
@@ -1278,7 +1278,7 @@ sections:
   - label: Materialized View
     sections:
       - label: Overview
-        href: ./materialized-view.md
+        href: ./materialized_view.md
       - label: Complete-refresh Materialized View
         href: ./complete_refresh_materialized_view.md
       - label: Fast-refresh Materialized View
@@ -1364,7 +1364,7 @@ sections:
   - label: GIN Indexes
     sections:
       - label: Introduction
-        href: ./introduction-20.md
+        href: ./introduction_20.md
       - label: Scalability
         href: ./scalability.md
       - label: Implementation
