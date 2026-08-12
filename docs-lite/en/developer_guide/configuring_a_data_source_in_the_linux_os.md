@@ -494,7 +494,7 @@ Run the  **./isql -v** _MPPODBC_  command \(**_MPPODBC_**  is the data source na
     >- An MD5 hash can only be generated using the original password, but the password cannot be obtained by reversing its SHA-256 hash. Passwords in the old version will only have SHA-256 hashes and not support MD5 authentication.
     >- The MD5 encryption algorithm has lower security and poses security risks. Therefore, you are advised to use a more secure encryption algorithm.
 
-    To solve this problem, you can update the user password \(see  [ALTER USER](../sql_reference/alter-user.md)\) or create a user \(see  [CREATE USER](../sql_reference/create-user.md)\) having the same permissions as the faulty user.
+    To solve this problem, you can update the user password \(see  [ALTER USER](../sql_reference/alter_user.md)\) or create a user \(see  [CREATE USER](../sql_reference/create_user.md)\) having the same permissions as the faulty user.
 
 - unsupported frontend protocol 3.51: server supports 1.0 to 3.0
 

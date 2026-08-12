@@ -2,7 +2,7 @@
 
 The system catalog PG\_SUBSCRIPTION\_REL contains the status of each replicated table in each subscription. It is a many-to-many mapping.
 
-This system catalog contains only tables known to the subscription after running [CREATE SUBSCRIPTION](../sql_reference/create-subscription.md) or [ALTER SUBSCRIPTION... REFRESH PUBLICATION](../sql_reference/alter-subscription.md).
+This system catalog contains only tables known to the subscription after running [CREATE SUBSCRIPTION](../sql_reference/create_subscription.md) or [ALTER SUBSCRIPTION... REFRESH PUBLICATION](../sql_reference/alter_subscription.md).
 
 **Table 1** PG\_SUBSCRIPTION\_REL columns
 

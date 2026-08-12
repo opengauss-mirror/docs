@@ -15,7 +15,7 @@ The following built-in ranges are available:
 - tstzrange: range of timestamp with the time zone
 - daterange: date range.
 
-In addition, you can define your own range types. For details, see  [CREATE TYPE](create-type.md).
+In addition, you can define your own range types. For details, see  [CREATE TYPE](create_type.md).
 
 ## Example<a name="section19828134904116"></a>
 
@@ -34,7 +34,7 @@ SELECT int4range(10, 20) * int4range(15, 25);
 SELECT isempty(numrange(1, 5)); 
 ```
 
-See the complete list of operators and functions on a range type in  [Range Functions and Operators](range-functions-and-operators.md).
+See the complete list of operators and functions on a range type in  [Range Functions and Operators](range_functions_and_operators.md).
 
 ## Including and Excluding Bounds<a name="section849616485445"></a>
 
@@ -141,7 +141,7 @@ CREATE TYPE timerange AS RANGE (
 SELECT '[11:10, 23:00]'::timerange; 
 ```
 
-For details about how to create a range type, see  [CREATE TYPE](create-type.md).
+For details about how to create a range type, see  [CREATE TYPE](create_type.md).
 
 ## Index<a name="section915193113217"></a>
 
@@ -151,6 +151,6 @@ GiST and SP-GiST indexes can be created for table columns of the range type. For
 CREATE INDEX reservation_idx ON reservation USING GIST (during); 
 ```
 
-A GiST or SP-GiST index can accelerate queries involving the following range operators: =, &&, <@, @\>, <<, \>\>, -|-, &<, and &\> \(see  [Range Functions and Operators](range-functions-and-operators.md)\).
+A GiST or SP-GiST index can accelerate queries involving the following range operators: =, &&, <@, @\>, <<, \>\>, -|-, &<, and &\> \(see  [Range Functions and Operators](range_functions_and_operators.md)\).
 
 In addition, the B-tree and hash index can be created on table columns of the range type. For these index types, basically the only useful range operation is equivalence. Using the corresponding < and \> operators, there is a B-tree sort oder for range value definitions, but that order is fairly arbitrary and is often less useful in the reality. The B-tree and hash support for range types is primarily designed to allow sorting and hashing within a query, rather than creating an index.

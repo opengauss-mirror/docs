@@ -12,9 +12,9 @@ Database objects are generally created in the first schema in a database search 
 
 ## Creating, Modifying, and Deleting Schemas<a name="en-us_topic_0283137084_en-us_topic_0237121104_en-us_topic_0156599225_section0594124724510"></a>
 
-- To create a schema, use  **[CREATE SCHEMA](../sql_reference/create-schema.md)**. By default, the initial user and system administrator can create schemas. Other users can create schemas in the database only when they have the CREATE permission on the database. For details about how to grant the permission, see the syntax in  [GRANT](../sql_reference/grant.md).
-- To change the name or owner of a schema, use  **[ALTER SCHEMA](../sql_reference/alter-schema.md)**. The schema owner can change the schema.
-- To delete a schema and its objects, use  [DROP SCHEMA](../sql_reference/drop-schema.md). Schema owners can delete schemas.
+- To create a schema, use  **[CREATE SCHEMA](../sql_reference/create_schema.md)**. By default, the initial user and system administrator can create schemas. Other users can create schemas in the database only when they have the CREATE permission on the database. For details about how to grant the permission, see the syntax in  [GRANT](../sql_reference/grant.md).
+- To change the name or owner of a schema, use  **[ALTER SCHEMA](../sql_reference/alter_schema.md)**. The schema owner can change the schema.
+- To delete a schema and its objects, use  [DROP SCHEMA](../sql_reference/drop_schema.md). Schema owners can delete schemas.
 - To create a table in a schema, use the  _schema\_name_**.**_table\_name_  format to specify the table. If  _schema\_name_  is not specified, the table will be created in the first schema in  [search path](#en-us_topic_0283137084_en-us_topic_0237121104_en-us_topic_0156599225_section03655314403).
 - To view the owner of a schema, perform the following join query on the system catalogs  **PG\_NAMESPACE**  and  **PG\_USER**. Replace  _schema\_name_  in the statement with the name of the schema to be queried.
 

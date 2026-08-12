@@ -1,6 +1,6 @@
 # Numeric Types<a name="EN-US_TOPIC_0289900280"></a>
 
-[Table 1](#en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_en-us_topic_0058965945_table40398258)  lists all available types. For digit operators and related built-in functions, see  [Mathematical Functions and Operators](mathematical-functions-and-operators.md).
+[Table 1](#en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_en-us_topic_0058965945_table40398258)  lists all available types. For digit operators and related built-in functions, see  [Mathematical Functions and Operators](mathematical_functions_and_operators.md).
 
 **Table  1**  Integer types
 

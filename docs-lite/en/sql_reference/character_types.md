@@ -1,6 +1,6 @@
 # Character Types<a name="EN-US_TOPIC_0289900587"></a>
 
-[Table 1](#en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_table29186418)  lists the character data types supported by openGauss. For string operators and related built-in functions, see  [Character Processing Functions and Operators](character-processing-functions-and-operators.md).
+[Table 1](#en-us_topic_0283136755_en-us_topic_0237121950_en-us_topic_0059777889_en-us_topic_0058966269_table29186418)  lists the character data types supported by openGauss. For string operators and related built-in functions, see  [Character Processing Functions and Operators](character_processing_functions_and_operators.md).
 
 **Table  1**  Character types
 

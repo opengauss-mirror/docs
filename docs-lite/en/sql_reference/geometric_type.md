@@ -81,7 +81,7 @@
 </tbody>
 </table>
 
-A rich set of functions and operators is available in openGauss to perform various geometric operations, such as scaling, translation, rotation, and determining intersections. For details, see  [Geometric Functions and Operators](geometric-functions-and-operators.md).
+A rich set of functions and operators is available in openGauss to perform various geometric operations, such as scaling, translation, rotation, and determining intersections. For details, see  [Geometric Functions and Operators](geometric_functions_and_operators.md).
 
 ## Points<a name="en-us_topic_0283137602_en-us_topic_0237121953_en-us_topic_0059779139_s9ae9a12a122d4391a7c1551baa656056"></a>
 

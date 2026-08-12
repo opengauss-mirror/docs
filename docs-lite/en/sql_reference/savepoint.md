@@ -88,4 +88,4 @@ openGauss=# DROP TABLE table2;
 
 ## Helpful Links<a name="en-us_topic_0283137144_en-us_topic_0237122183_en-us_topic_0059777880_section183301781176"></a>
 
-[RELEASE SAVEPOINT](release-savepoint.md)  and  [ROLLBACK TO SAVEPOINT](rollback-to-savepoint.md)
+[RELEASE SAVEPOINT](release_savepoint.md)  and  [ROLLBACK TO SAVEPOINT](rollback_to_savepoint.md)

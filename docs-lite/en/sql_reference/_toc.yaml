@@ -80,7 +80,7 @@ sections:
   - label: Schemas
     sections:
       - label: Overview
-        href: ./schemas-25.md
+        href: ./schemas_25.md
       - label: Information Schema
         sections:
           - label: Introduction
@@ -100,7 +100,7 @@ sections:
       - label: DBE_PERF Schema
         sections:
           - label: Introduction
-            href: ./dbe_perf-schema.md
+            href: ./dbe_perf_schema.md
           - label: OS
             sections:
               - label: OS_RUNTIME
@@ -336,13 +336,13 @@ sections:
               - label: STATEMENT_HISTORY
                 href: ./statement_history.md
               - label: GS_SLOW_QUERY_INFO (Discarded)
-                href: ./gs_slow_query_info-discarded.md
+                href: ./gs_slow_query_info_discarded.md
               - label: GS_SLOW_QUERY_HISTORY (Discarded)
-                href: ./gs_slow_query_history-discarded.md
+                href: ./gs_slow_query_history_discarded.md
               - label: GLOBAL_SLOW_QUERY_HISTORY (Discarded)
-                href: ./global_slow_query_history-discarded.md
+                href: ./global_slow_query_history_discarded.md
               - label: GLOBAL_SLOW_QUERY_INFO (Discarded)
-                href: ./global_slow_query_info-discarded.md
+                href: ./global_slow_query_info_discarded.md
           - label: Cache/IO
             sections:
               - label: STATIO_USER_TABLES
@@ -494,249 +494,249 @@ sections:
           - label: WDR Snapshot Schema
             sections:
               - label: Introduction
-                href: ./wdr-snapshot-schema.md
+                href: ./wdr_snapshot_schema.md
               - label: Original Information of WDR Snapshots
                 sections:
                   - label: SNAPSHOT.SNAPSHOT
-                    href: ./snapshot-snapshot.md
+                    href: ./snapshot_snapshot.md
                   - label: SNAPSHOT.TABLES_SNAP_TIMESTAMP
-                    href: ./snapshot-tables_snap_timestamp.md
+                    href: ./snapshot_tables_snap_timestamp.md
                   - label: SNAP_SEQ
                     href: ./snap_seq.md
               - label: WDR Snapshot Data Table
-                href: ./wdr-snapshot-data-table.md
+                href: ./wdr_snapshot_data_table.md
               - label: Performance Report Generated Based on WDR Snapshots
-                href: ./performance-report-generated-based-on-wdr-snapshots.md
+                href: ./performance_report_generated_based_on_wdr_snapshots.md
               - label: Viewing WDRs
                 sections:
                   - label: WDRs
                     href: ./wdrs.md
                   - label: Database Stat
-                    href: ./database-stat.md
+                    href: ./database_stat.md
                   - label: Load Profile
-                    href: ./load-profile.md
+                    href: ./load_profile.md
                   - label: Instance Efficiency Percentages
-                    href: ./instance-efficiency-percentages.md
+                    href: ./instance_efficiency_percentages.md
                   - label: Top 10 Events by Total Wait Time
-                    href: ./top-10-events-by-total-wait-time.md
+                    href: ./top_10_events_by_total_wait_time.md
                   - label: Wait Classes by Total Wait Time
-                    href: ./wait-classes-by-total-wait-time.md
+                    href: ./wait_classes_by_total_wait_time.md
                   - label: Host CPU
-                    href: ./host-cpu.md
+                    href: ./host_cpu.md
                   - label: IO Profile
-                    href: ./io-profile.md
+                    href: ./io_profile.md
                   - label: Memory Statistics
-                    href: ./memory-statistics.md
+                    href: ./memory_statistics.md
                   - label: Time Model
-                    href: ./time-model.md
+                    href: ./time_model.md
                   - label: SQL Statistics
-                    href: ./sql-statistics.md
+                    href: ./sql_statistics.md
                   - label: Wait Events
-                    href: ./wait-events-29.md
+                    href: ./wait_events_26.md
                   - label: Cache IO Stats
-                    href: ./cache-io-stats.md
+                    href: ./cache_io_stats.md
                   - label: Utility status
-                    href: ./utility-status.md
+                    href: ./utility_status.md
                   - label: Object stats
-                    href: ./object-stats.md
+                    href: ./object_stats.md
                   - label: Configuration settings
-                    href: ./configuration-settings.md
+                    href: ./configuration_settings.md
                   - label: SQL Detail
-                    href: ./sql-detail.md
+                    href: ./sql_detail.md
           - label: DBE_PLDEBUGGER Schema
             sections:
               - label:  Introduction
-                href: ./dbe_pldebugger-schema.md
+                href: ./dbe_pldebugger_schema.md
               - label: DBE_PLDEBUGGER.turn_on
-                href: ./dbe_pldebugger-turn_on.md
+                href: ./dbe_pldebugger_turn_on.md
               - label: DBE_PLDEBUGGER.turn_off
-                href: ./dbe_pldebugger-turn_off.md
+                href: ./dbe_pldebugger_turn_off.md
               - label: DBE_PLDEBUGGER.local_debug_server_info
-                href: ./dbe_pldebugger-local_debug_server_info.md
+                href: ./dbe_pldebugger_local_debug_server_info.md
               - label: DBE_PLDEBUGGER.attach
-                href: ./dbe_pldebugger-attach.md
+                href: ./dbe_pldebugger_attach.md
               - label: DBE_PLDEBUGGER.info_locals
-                href: ./dbe_pldebugger-info_locals.md
+                href: ./dbe_pldebugger_info_locals.md
               - label: DBE_PLDEBUGGER.next
-                href: ./dbe_pldebugger-next.md
+                href: ./dbe_pldebugger_next.md
               - label: DBE_PLDEBUGGER.continue
-                href: ./dbe_pldebugger-continue.md
+                href: ./dbe_pldebugger_continue.md
               - label: DBE_PLDEBUGGER.abort
-                href: ./dbe_pldebugger-abort.md
+                href: ./dbe_pldebugger_abort.md
               - label: DBE_PLDEBUGGER.print_var
-                href: ./dbe_pldebugger-print_var.md
+                href: ./dbe_pldebugger_print_var.md
               - label: DBE_PLDEBUGGER.info_code
-                href: ./dbe_pldebugger-info_code.md
+                href: ./dbe_pldebugger_info_code.md
               - label: DBE_PLDEBUGGER.step
-                href: ./dbe_pldebugger-step.md
+                href: ./dbe_pldebugger_step.md
               - label: DBE_PLDEBUGGER.add_breakpoint
-                href: ./dbe_pldebugger-add_breakpoint.md
+                href: ./dbe_pldebugger_add_breakpoint.md
               - label: DBE_PLDEBUGGER.delete_breakpoint
-                href: ./dbe_pldebugger-delete_breakpoint.md
+                href: ./dbe_pldebugger_delete_breakpoint.md
               - label: DBE_PLDEBUGGER.info_breakpoints
-                href: ./dbe_pldebugger-info_breakpoints.md
+                href: ./dbe_pldebugger_info_breakpoints.md
               - label: DBE_PLDEBUGGER.backtrace
-                href: ./dbe_pldebugger-backtrace.md
+                href: ./dbe_pldebugger_backtrace.md
               - label: DBE_PLDEBUGGER.enable_breakpoint
-                href: ./dbe_pldebugger-enable_breakpoint.md
+                href: ./dbe_pldebugger_enable_breakpoint.md
               - label: DBE_PLDEBUGGER.disable_breakpoint
-                href: ./dbe_pldebugger-disable_breakpoint.md
+                href: ./dbe_pldebugger_disable_breakpoint.md
               - label: DBE_PLDEBUGGER.finish
-                href: ./dbe_pldebugger-finish.md
+                href: ./dbe_pldebugger_finish.md
               - label: DBE_PLDEBUGGER.set_var
-                href: ./dbe_pldebugger-set_var.md
+                href: ./dbe_pldebugger_set_var.md
           - label: DB4AI Schema
             sections:
               - label: Introduction
-                href: ./db4ai-schema.md
+                href: ./db4ai_schema.md
               - label: DB4AI.SNAPSHOT
-                href: ./db4ai-snapshot.md
+                href: ./db4ai_snapshot.md
               - label: DB4AI.CREATE_SNAPSHOT
-                href: ./db4ai-create_snapshot.md
+                href: ./db4ai_create_snapshot.md
               - label: DB4AI.CREATE_SNAPSHOT_INTERNAL
-                href: ./db4ai-create_snapshot_internal.md
+                href: ./db4ai_create_snapshot_internal.md
               - label: DB4AI.PREPARE_SNAPSHOT
-                href: ./db4ai-prepare_snapshot.md
+                href: ./db4ai_prepare_snapshot.md
               - label: DB4AI.PREPARE_SNAPSHOT_INTERNAL
-                href: ./db4ai-prepare_snapshot_internal.md
+                href: ./db4ai_prepare_snapshot_internal.md
               - label: DB4AI.ARCHIVE_SNAPSHOT
-                href: ./db4ai-archive_snapshot.md
+                href: ./db4ai_archive_snapshot.md
               - label: DB4AI.PUBLISH_SNAPSHOT
-                href: ./db4ai-publish_snapshot.md
+                href: ./db4ai_publish_snapshot.md
               - label: DB4AI.MANAGE_SNAPSHOT_INTERNAL
-                href: ./db4ai-manage_snapshot_internal.md
+                href: ./db4ai_manage_snapshot_internal.md
               - label: DB4AI.SAMPLE_SNAPSHOT
-                href: ./db4ai-sample_snapshot.md
+                href: ./db4ai_sample_snapshot.md
               - label: DB4AI.PURGE_SNAPSHOT
-                href: ./db4ai-purge_snapshot.md
+                href: ./db4ai_purge_snapshot.md
               - label: DB4AI.PURGE_SNAPSHOT_INTERNAL
-                href: ./db4ai-purge_snapshot_internal.md
+                href: ./db4ai_purge_snapshot_internal.md
           - label: DBE_PLDEVELOPER
             sections:
               - label: Introduction
                 href: ./dbe_pldeveloper.md            
               - label: DBE_PLDEVELOPER.gs_source
-                href: ./dbe_pldeveloper-gs_source.md
+                href: ./dbe_pldeveloper_gs_source.md
               - label: DBE_PLDEVELOPER.gs_errors
-                href: ./dbe_pldeveloper-gs_errors.md
+                href: ./dbe_pldeveloper_gs_errors.md
           - label: DBE_SQL_UTIL Schema
             sections:
               - label: Introduction 
-                href: ./dbe_sql_util-schema.md
+                href: ./dbe_sql_util_schema.md
               - label: DBE_SQL_UTIL.create_hint_sql_patch
-                href: ./dbe_sql_util-create_hint_sql_patch.md
+                href: ./dbe_sql_util_create_hint_sql_patch.md
               - label: DBE_SQL_UTIL.create_abort_sql_patch
-                href: ./dbe_sql_util-create_abort_sql_patch.md
+                href: ./dbe_sql_util_create_abort_sql_patch.md
               - label: DBE_SQL_UTIL.drop_sql_patch
-                href: ./dbe_sql_util-drop_sql_patch.md
+                href: ./dbe_sql_util_drop_sql_patch.md
               - label: DBE_SQL_UTIL.enable_sql_patch
-                href: ./dbe_sql_util-enable_sql_patch.md
+                href: ./dbe_sql_util_enable_sql_patch.md
               - label: DBE_SQL_UTIL.disable_sql_patch
-                href: ./dbe_sql_util-disable_sql_patch.md
+                href: ./dbe_sql_util_disable_sql_patch.md
               - label: DBE_SQL_UTIL.show_sql_patch
-                href: ./dbe_sql_util-show_sql_patch.md
+                href: ./dbe_sql_util_show_sql_patch.md
   - label: SQL Syntax
     sections:
       - label: DDL Syntax Overview
-        href: ./ddl-syntax-overview.md
+        href: ./ddl_syntax_overview.md
       - label: DML Syntax Overview
-        href: ./dml-syntax-overview.md
+        href: ./dml_syntax_overview.md
       - label: DCL Syntax Overview
-        href: ./dcl-syntax-overview.md
+        href: ./dcl_syntax_overview.md
       - label: ABORT
         href: ./abort.md
       - label: ALTER AGGREGATE
-        href: ./alter-aggregate.md
+        href: ./alter_aggregate.md
       - label: ALTER AUDIT POLICY
-        href: ./alter-audit-policy.md
+        href: ./alter_audit_policy.md
       - label: ALTER DATABASE
-        href: ./alter-database.md
+        href: ./alter_database.md
       - label: ALTER DATA SOURCE
-        href: ./alter-data-source.md
+        href: ./alter_data_source.md
       - label: ALTER DEFAULT PRIVILEGES
-        href: ./alter-default-privileges.md
+        href: ./alter_default_privileges.md
       - label: ALTER DIRECTORY
-        href: ./alter-directory.md
+        href: ./alter_directory.md
       - label: ALTER EXTENSION
-        href: ./alter-extension.md
+        href: ./alter_extension.md
       - label: ALTER EVENT
-        href: ./alter-event.md
+        href: ./alter_event.md
       - label: ALTER EVENT TRIGGER
-        href: ./alter-event-trigger.md
+        href: ./alter_event_trigger.md
       - label: ALTER FOREIGN DATA WRAPPER
-        href: ./alter-foreign-data-wrapper.md
+        href: ./alter_foreign_data_wrapper.md
       - label: ALTER FOREIGN TABLE
-        href: ./alter-foreign-table.md
+        href: ./alter_foreign_table.md
       - label: ALTER FUNCTION
-        href: ./alter-function.md
+        href: ./alter_function.md
       - label: ALTER GROUP
-        href: ./alter-group.md
+        href: ./alter_group.md
       - label: ALTER INDEX
-        href: ./alter-index.md
+        href: ./alter_index.md
       - label: ALTER LANGUAGE
-        href: ./alter-language.md
+        href: ./alter_language.md
       - label: ALTER LARGE OBJECT
-        href: ./alter-large-object.md
+        href: ./alter_large_object.md
       - label: ALTER MASKING POLICY
-        href: ./alter-masking-policy.md
+        href: ./alter_masking_policy.md
       - label: ALTER MATERIALIZED VIEW
-        href: ./alter-materialized-view.md
+        href: ./alter_materialized_view.md
       - label: ALTER OPERATOR
-        href: ./alter-operator.md
+        href: ./alter_operator.md
       - label: ALTER PACKAGE
-        href: ./alter-package.md
+        href: ./alter_package.md
       - label: ALTER PUBLICATION
-        href: ./alter-publication.md
+        href: ./alter_publication.md
       - label: ALTER RESOURCE LABEL
-        href: ./alter-resource-label.md
+        href: ./alter_resource_label.md
       - label: ALTER RESOURCE POOL
-        href: ./alter-resource-pool.md
+        href: ./alter_resource_pool.md
       - label: ALTER ROLE
-        href: ./alter-role.md
+        href: ./alter_role.md
       - label: ALTER ROW LEVEL SECURITY POLICY
-        href: ./alter-row-level-security-policy.md
+        href: ./alter_row_level_security_policy.md
       - label: ALTER SCHEMA
-        href: ./alter-schema.md
+        href: ./alter_schema.md
       - label: ALTER SEQUENCE
-        href: ./alter-sequence.md
+        href: ./alter_sequence.md
       - label: ALTER SERVER
-        href: ./alter-server.md
+        href: ./alter_server.md
       - label: ALTER SESSION
-        href: ./alter-session.md
+        href: ./alter_session.md
       - label: ALTER SUBSCRIPTION
-        href: ./alter-subscription.md
+        href: ./alter_subscription.md
       - label: ALTER SYNONYM
-        href: ./alter-synonym.md
+        href: ./alter_synonym.md
       - label: ALTER SYSTEM KILL SESSION
-        href: ./alter-system-kill-session.md
+        href: ./alter_system_kill_session.md
       - label: ALTER SYSTEM SET
-        href: ./alter-system-set.md
+        href: ./alter_system_set.md
       - label: ALTER TABLE
-        href: ./alter-table.md
+        href: ./alter_table.md
       - label: ALTER TABLE INHERIT
-        href: ./alter-table-inherit.md
+        href: ./alter_table_inherit.md
       - label: ALTER TABLE PARTITION
-        href: ./alter-table-partition.md
+        href: ./alter_table_partition.md
       - label: ALTER TABLE SUBPARTITION
-        href: ./alter-table-subpartition.md
+        href: ./alter_table_subpartition.md
       - label: ALTER TABLESPACE
-        href: ./alter-tablespace.md
+        href: ./alter_tablespace.md
       - label: ALTER TEXT SEARCH CONFIGURATION
-        href: ./alter-text-search-configuration.md
+        href: ./alter_text_search_configuration.md
       - label: ALTER TEXT SEARCH DICTIONARY
-        href: ./alter-text-search-dictionary.md
+        href: ./alter_text_search_dictionary.md
       - label: ALTER TRIGGER
-        href: ./alter-trigger.md
+        href: ./alter_trigger.md
       - label: ALTER TYPE
-        href: ./alter-type.md
+        href: ./alter_type.md
       - label: ALTER USER
-        href: ./alter-user.md
+        href: ./alter_user.md
       - label: ALTER USER MAPPING
-        href: ./alter-user-mapping.md
+        href: ./alter_user_mapping.md
       - label: ALTER VIEW
-        href: ./alter-view.md
+        href: ./alter_view.md
       - label: ANALYZE | ANALYSE
-        href: ./analyze-analyse.md
+        href: ./analyze_analyse.md
       - label: BEGIN
         href: ./begin.md
       - label: CALL
@@ -744,7 +744,7 @@ sections:
       - label: CHECKPOINT
         href: ./checkpoint.md
       - label: CLEAN CONNECTION
-        href: ./clean-connection.md
+        href: ./clean_connection.md
       - label: CLOSE
         href: ./close.md
       - label: CLUSTER
@@ -752,107 +752,107 @@ sections:
       - label: COMMENT
         href: ./comment.md
       - label: COMMIT | END
-        href: ./commit-end.md
+        href: ./commit_end.md
       - label: COMMIT PREPARED
-        href: ./commit-prepared.md
+        href: ./commit_prepared.md
       - label: COPY
         href: ./copy.md
       - label: CREATE AGGREGATE
-        href: ./create-aggregate.md
+        href: ./create_aggregate.md
       - label: CREATE AUDIT POLICY
-        href: ./create-audit-policy.md
+        href: ./create_audit_policy.md
       - label: CREATE CAST
-        href: ./create-cast.md
+        href: ./create_cast.md
       - label: CREATE CLIENT MASTER KEY
-        href: ./create-client-master-key.md
+        href: ./create_client_master_key.md
       - label: CREATE COLUMN ENCRYPTION KEY
-        href: ./create-column-encryption-key.md
+        href: ./create_column_encryption_key.md
       - label: CREATE DATABASE
-        href: ./create-database.md
+        href: ./create_database.md
       - label: CREATE DATA SOURCE
-        href: ./create-data-source.md
+        href: ./create_data_source.md
       - label: CREATE DIRECTORY
-        href: ./create-directory.md
+        href: ./create_directory.md
       - label: CREATE EXTENSION
-        href: ./create-extension.md
+        href: ./create_extension.md
       - label: CREATE EVENT
-        href: ./create-event.md
+        href: ./create_event.md
       - label: CREATE EVENT TRIGGER
-        href: ./create-event-trigger.md
+        href: ./create_event_trigger.md
       - label: CREATE FOREIGN DATA WRAPPER
-        href: ./create-foreign-data-wrapper.md
+        href: ./create_foreign_data_wrapper.md
       - label: CREATE FOREIGN TABLE
-        href: ./create-foreign-table.md
+        href: ./create_foreign_table.md
       - label: CREATE FUNCTION
-        href: ./create-function.md
+        href: ./create_function.md
       - label: CREATE GROUP
-        href: ./create-group.md
+        href: ./create_group.md
       - label: CREATE INCREMENTAL MATERIALIZED VIEW
-        href: ./create-incremental-materialized-view.md
+        href: ./create_incremental_materialized_view.md
       - label: CREATE INDEX
-        href: ./create-index.md
+        href: ./create_index.md
       - label: CREATE LANGUAGE
-        href: ./create-language.md
+        href: ./create_language.md
       - label: CREATE MASKING POLICY
-        href: ./create-masking-policy.md
+        href: ./create_masking_policy.md
       - label: CREATE MATERIALIZED VIEW
-        href: ./create-materialized-view.md
+        href: ./create_materialized_view.md
       - label: CREATE MODEL
-        href: ./create-model.md
+        href: ./create_model.md
       - label: CREATE OPERATOR
-        href: ./create-operator.md
+        href: ./create_operator.md
       - label: CREATE PACKAGE
-        href: ./create-package.md
+        href: ./create_package.md
       - label: CREATE PROCEDURE
-        href: ./create-procedure.md
+        href: ./create_procedure.md
       - label: CREATE PUBLICATION
-        href: ./create-publication.md
+        href: ./create_publication.md
       - label: CREATE RESOURCE LABEL
-        href: ./create-resource-label.md
+        href: ./create_resource_label.md
       - label: CREATE RESOURCE POOL
-        href: ./create-resource-pool.md
+        href: ./create_resource_pool.md
       - label: CREATE ROLE
-        href: ./create-role.md
+        href: ./create_role.md
       - label: CREATE ROW LEVEL SECURITY POLICY
-        href: ./create-row-level-security-policy.md
+        href: ./create_row_level_security_policy.md
       - label: CREATE RULE
-        href: ./create-rule.md
+        href: ./create_rule.md
       - label: CREATE SCHEMA
-        href: ./create-schema.md
+        href: ./create_schema.md
       - label: CREATE SEQUENCE
-        href: ./create-sequence.md
+        href: ./create_sequence.md
       - label: CREATE SERVER
-        href: ./create-server.md
+        href: ./create_server.md
       - label: CREATE SUBSCRIPTION
-        href: ./create-subscription.md
+        href: ./create_subscription.md
       - label: CREATE SYNONYM
-        href: ./create-synonym.md
+        href: ./create_synonym.md
       - label: CREATE TABLE
-        href: ./create-table.md
+        href: ./create_table.md
       - label: CREATE TABLE AS
-        href: ./create-table-as.md
+        href: ./create_table_as.md
       - label: CREATE TABLE INHERITS
-        href: ./create-table-inherits.md
+        href: ./create_table_inherits.md
       - label: CREATE TABLE PARTITION
-        href: ./create-table-partition.md
+        href: ./create_table_partition.md
       - label: CREATE TABLESPACE
-        href: ./create-tablespace.md
+        href: ./create_tablespace.md
       - label: CREATE TEXT SEARCH CONFIGURATION
-        href: ./create-text-search-configuration.md
+        href: ./create_text_search_configuration.md
       - label: CREATE TEXT SEARCH DICTIONARY
-        href: ./create-text-search-dictionary.md
+        href: ./create_text_search_dictionary.md
       - label: CREATE TRIGGER
-        href: ./create-trigger.md
+        href: ./create_trigger.md
       - label: CREATE TYPE
-        href: ./create-type.md
+        href: ./create_type.md
       - label: CREATE USER
-        href: ./create-user.md
+        href: ./create_user.md
       - label: CREATE USER MAPPING
-        href: ./create-user-mapping.md
+        href: ./create_user_mapping.md
       - label: CREATE VIEW
-        href: ./create-view.md
+        href: ./create_view.md
       - label: CREATE WEAK PASSWORD DICTIONARY
-        href: ./create-weak-password-dictionary.md
+        href: ./create_weak_password_dictionary.md
       - label: CURSOR
         href: ./cursor.md
       - label: DEALLOCATE
@@ -864,101 +864,101 @@ sections:
       - label: DO
         href: ./do.md
       - label: DROP AGGREGATE
-        href: ./drop-aggregate.md
+        href: ./drop_aggregate.md
       - label: DROP AUDIT POLICY
-        href: ./drop-audit-policy.md
+        href: ./drop_audit_policy.md
       - label: DROP CAST
-        href: ./drop-cast.md
+        href: ./drop_cast.md
       - label: DROP CLIENT MASTER KEY
-        href: ./drop-client-master-key.md
+        href: ./drop_client_master_key.md
       - label: DROP COLUMN ENCRYPTION KEY
-        href: ./drop-column-encryption-key.md
+        href: ./drop_column_encryption_key.md
       - label: DROP DATABASE
-        href: ./drop-database.md
+        href: ./drop_database.md
       - label: DROP DATA SOURCE
-        href: ./drop-data-source.md
+        href: ./drop_data_source.md
       - label: DROP DIRECTORY
-        href: ./drop-directory.md
+        href: ./drop_directory.md
       - label: DROP EXTENSION
-        href: ./drop-extension.md
+        href: ./drop_extension.md
       - label: DROP EVENT
-        href: ./drop-event.md
+        href: ./drop_event.md
       - label: DROP EVENT TRIGGER
-        href: ./drop-event-trigger.md
+        href: ./drop_event_trigger.md
       - label: DROP FOREIGN DATA WRAPPER
-        href: ./drop-foreign-data-wrapper.md
+        href: ./drop_foreign_data_wrapper.md
       - label: DROP FOREIGN TABLE
-        href: ./drop-foreign-table.md
+        href: ./drop_foreign_table.md
       - label: DROP FUNCTION
-        href: ./drop-function.md
+        href: ./drop_function.md
       - label: DROP GROUP
-        href: ./drop-group.md
+        href: ./drop_group.md
       - label: DROP INDEX
-        href: ./drop-index.md
+        href: ./drop_index.md
       - label: DROP LANGUAGE
-        href: ./drop-language.md
+        href: ./drop_language.md
       - label: DROP MASKING POLICY
-        href: ./drop-masking-policy.md
+        href: ./drop_masking_policy.md
       - label: DROP MATERIALIZED VIEW
-        href: ./drop-materialized-view.md
+        href: ./drop_materialized_view.md
       - label: DROP MODEL
-        href: ./drop-model.md
+        href: ./drop_model.md
       - label: DROP OPERATOR
-        href: ./drop-operator.md
+        href: ./drop_operator.md
       - label: DROP OWNED
-        href: ./drop-owned.md
+        href: ./drop_owned.md
       - label: DROP PACKAGE
-        href: ./drop-package.md
+        href: ./drop_package.md
       - label: DROP PROCEDURE
-        href: ./drop-procedure.md
+        href: ./drop_procedure.md
       - label: DROP PUBLICATION
-        href: ./drop-publication.md
+        href: ./drop_publication.md
       - label: DROP RESOURCE LABEL
-        href: ./drop-resource-label.md
+        href: ./drop_resource_label.md
       - label: DROP RESOURCE POOL
-        href: ./drop-resource-pool.md
+        href: ./drop_resource_pool.md
       - label: DROP ROLE
-        href: ./drop-role.md
+        href: ./drop_role.md
       - label: DROP ROW LEVEL SECURITY POLICY
-        href: ./drop-row-level-security-policy.md
+        href: ./drop_row_level_security_policy.md
       - label: DROP RULE
-        href: ./drop-rule.md
+        href: ./drop_rule.md
       - label: DROP SCHEMA
-        href: ./drop-schema.md
+        href: ./drop_schema.md
       - label: DROP SEQUENCE
-        href: ./drop-sequence.md
+        href: ./drop_sequence.md
       - label: DROP SERVER
-        href: ./drop-server.md
+        href: ./drop_server.md
       - label: DROP SUBSCRIPTION
-        href: ./drop-subscription.md
+        href: ./drop_subscription.md
       - label: DROP SYNONYM
-        href: ./drop-synonym.md
+        href: ./drop_synonym.md
       - label: DROP TABLE
-        href: ./drop-table.md
+        href: ./drop_table.md
       - label: DROP TABLESPACE
-        href: ./drop-tablespace.md
+        href: ./drop_tablespace.md
       - label: DROP TEXT SEARCH CONFIGURATION
-        href: ./drop-text-search-configuration.md
+        href: ./drop_text_search_configuration.md
       - label: DROP TEXT SEARCH DICTIONARY
-        href: ./drop-text-search-dictionary.md
+        href: ./drop_text_search_dictionary.md
       - label: DROP TRIGGER
-        href: ./drop-trigger.md
+        href: ./drop_trigger.md
       - label: DROP TYPE
-        href: ./drop-type.md
+        href: ./drop_type.md
       - label: DROP USER
-        href: ./drop-user.md
+        href: ./drop_user.md
       - label: DROP USER MAPPING
-        href: ./drop-user-mapping.md
+        href: ./drop_user_mapping.md
       - label: DROP VIEW
-        href: ./drop-view.md
+        href: ./drop_view.md
       - label: DROP WEAK PASSWORD DICTIONARY
-        href: ./drop-weak-password-dictionary.md
+        href: ./drop_weak_password_dictionary.md
       - label: EXECUTE
         href: ./execute.md
       - label: EXPLAIN
         href: ./explain.md
       - label: EXPLAIN PLAN
-        href: ./explain-plan.md
+        href: ./explain_plan.md
       - label: FETCH
         href: ./fetch.md
       - label: GRANT
@@ -968,27 +968,27 @@ sections:
       - label: LOCK
         href: ./lock.md
       - label: MERGE INTO
-        href: ./merge-into.md
+        href: ./merge_into.md
       - label: MOVE
         href: ./move.md
       - label: PREDICT BY
-        href: ./predict-by.md
+        href: ./predict_by.md
       - label: PREPARE
         href: ./prepare.md
       - label: PREPARE TRANSACTION
-        href: ./prepare-transaction.md
+        href: ./prepare_transaction.md
       - label: PURGE
         href: ./purge.md
       - label: REASSIGN OWNED
-        href: ./reassign-owned.md
+        href: ./reassign_owned.md
       - label: REFRESH INCREMENTAL MATERIALIZED VIEW
-        href: ./refresh-incremental-materialized-view.md
+        href: ./refresh_incremental_materialized_view.md
       - label: REFRESH MATERIALIZED VIEW
-        href: ./refresh-materialized-view.md
+        href: ./refresh_materialized_view.md
       - label: REINDEX
         href: ./reindex.md
       - label: RELEASE SAVEPOINT
-        href: ./release-savepoint.md
+        href: ./release_savepoint.md
       - label: REPLACE INTO
         href: ./replace_into.md
       - label: RESET
@@ -998,37 +998,37 @@ sections:
       - label: ROLLBACK
         href: ./rollback.md
       - label: ROLLBACK PREPARED
-        href: ./rollback-prepared.md
+        href: ./rollback_prepared.md
       - label: ROLLBACK TO SAVEPOINT
-        href: ./rollback-to-savepoint.md
+        href: ./rollback_to_savepoint.md
       - label: SAVEPOINT
         href: ./savepoint.md
       - label: SELECT
         href: ./select.md
       - label: SELECT INTO
-        href: ./select-into.md
+        href: ./select_into.md
       - label: SET
         href: ./set.md
       - label: SET CONSTRAINTS
-        href: ./set-constraints.md
+        href: ./set_constraints.md
       - label: SET ROLE
-        href: ./set-role.md
+        href: ./set_role.md
       - label: SET SESSION AUTHORIZATION
-        href: ./set-session-authorization.md
+        href: ./set_session_authorization.md
       - label: SET TRANSACTION
-        href: ./set-transaction.md
+        href: ./set_transaction.md
       - label: SHOW
         href: ./show.md
       - label: SHOW EVENTS
-        href: ./show-events.md
+        href: ./show_events.md
       - label: SHUTDOWN
         href: ./shutdown.md
       - label: SNAPSHOT
         href: ./snapshot.md
       - label: START TRANSACTION
-        href: ./start-transaction.md
+        href: ./start_transaction.md
       - label: TIMECAPSULE TABLE
-        href: ./timecapsule-table.md
+        href: ./timecapsule_table.md
       - label: TRUNCATE
         href: ./truncate.md
       - label: UPDATE
@@ -1040,159 +1040,161 @@ sections:
       - label: SHRINK
         href: ./shrink.md
       - label: ALTER PROCEDURE
-        href: ./alter-procedure.md
+        href: ./alter_procedure.md
       - label: ALTER GLOBAL CONFIGURATION
-        href: ./alter-global-configuration.md
+        href: ./alter_global_configuration.md
       - label: DROP GLOBAL CONFIGURATION
-        href: ./drop-global-configuration.md
+        href: ./drop_global_configuration.md
   - label: Expressions
     sections:
       - label: Simple Expressions
-        href: ./simple-expressions.md
+        href: ./simple_expressions.md
       - label: Condition Expressions
-        href: ./condition-expressions.md
+        href: ./condition_expressions.md
       - label: Subquery Expressions
-        href: ./subquery-expressions.md
+        href: ./subquery_expressions.md
       - label: Array Expressions
-        href: ./array-expressions.md
+        href: ./array_expressions.md
       - label: Row Expressions
-        href: ./row-expressions.md
+        href: ./row_expressions.md
   - label: Functions and Operators
     sections:
       - label: Logical Operators
-        href: ./logical-operators.md
+        href: ./logical_operators.md
       - label: Comparison Operators
-        href: ./comparison-operators.md
+        href: ./comparison_operators.md
       - label: Character Processing Functions and Operators
-        href: ./character-processing-functions-and-operators.md
+        href: ./character_processing_functions_and_operators.md
       - label: Binary String Functions and Operators
-        href: ./binary-string-functions-and-operators.md
+        href: ./binary_string_functions_and_operators.md
       - label: Bit String Functions and Operators
-        href: ./bit-string-functions-and-operators.md
+        href: ./bit_string_functions_and_operators.md
       - label: Mode Matching Operators
-        href: ./mode-matching-operators.md
+        href: ./mode_matching_operators.md
       - label: Mathematical Functions and Operators
-        href: ./mathematical-functions-and-operators.md
+        href: ./mathematical_functions_and_operators.md
       - label: Date and Time Processing Functions and Operators
-        href: ./date-and-time-processing-functions-and-operators.md
+        href: ./date_and_time_processing_functions_and_operators.md
       - label: Type Conversion Functions
-        href: ./type-conversion-functions.md
+        href: ./type_conversion_functions.md
       - label: Geometric Functions and Operators
-        href: ./geometric-functions-and-operators.md
+        href: ./geometric_functions_and_operators.md
       - label: Network Address Functions and Operators
-        href: ./network-address-functions-and-operators.md
+        href: ./network_address_functions_and_operators.md
       - label: Text Search Functions and Operators
-        href: ./text-search-functions-and-operators.md
+        href: ./text_search_functions_and_operators.md
       - label: UUID Functions
         href: ./uuid_function.md
       - label: JSON/JSONB Functions and Operators
-        href: ./json-jsonb-functions-and-operators.md
+        href: ./json_jsonb_functions_and_operators.md
       - label: HLL Functions and Operators
-        href: ./hll-functions-and-operators.md
+        href: ./hll_functions_and_operators.md
       - label: SEQUENCE Functions
-        href: ./sequence-functions.md
+        href: ./sequence_functions.md
       - label: Array Functions and Operators
-        href: ./array-functions-and-operators.md
+        href: ./array_functions_and_operators.md
       - label: Range Functions and Operators
-        href: ./range-functions-and-operators.md
+        href: ./range_functions_and_operators.md
       - label: Aggregate Functions
-        href: ./aggregate-functions.md
+        href: ./aggregate_functions.md
       - label: Window Functions
-        href: ./window-functions.md
+        href: ./window_functions.md
       - label: Security Functions
-        href: ./security-functions.md
+        href: ./security_functions.md
       - label: Ledger Database Functions
-        href: ./ledger-database-functions.md
+        href: ./ledger_database_functions.md
       - label: Encrypted Equality Functions
-        href: ./encrypted-equality-functions.md
+        href: ./encrypted_equality_functions.md
       - label: Set Returning Functions
-        href: ./set-returning-functions.md
+        href: ./set_returning_functions.md
       - label: Conditional Expression Functions
-        href: ./conditional-expression-functions.md
+        href: ./conditional_expression_functions.md
       - label: System Information Functions
-        href: ./system-information-functions.md
+        href: ./system_information_functions.md
       - label: System Administration Functions
         sections:
           - label: Configuration Settings Functions
-            href: ./configuration-settings-functions.md
+            href: ./configuration_settings_functions.md
           - label: Universal File Access Functions
-            href: ./universal-file-access-functions.md
+            href: ./universal_file_access_functions.md
           - label: Server Signal Functions
-            href: ./server-signal-functions.md
+            href: ./server_signal_functions.md
           - label: Backup and Restoration Control Functions
-            href: ./backup-and-restoration-control-functions.md
+            href: ./backup_and_restoration_control_functions.md
           - label: Snapshot Synchronization Functions
-            href: ./snapshot-synchronization-functions.md
+            href: ./snapshot_synchronization_functions.md
           - label: Database Object Functions
-            href: ./database-object-functions.md
+            href: ./database_object_functions.md
           - label: Advisory Lock Functions
-            href: ./advisory-lock-functions.md
+            href: ./advisory_lock_functions.md
           - label: Logical Replication Functions
-            href: ./logical-replication-functions.md
+            href: ./logical_replication_functions.md
           - label: Segment-Page Storage Functions
-            href: ./segment-page-storage-functions.md
+            href: ./segment_page_storage_functions.md
           - label: Other Functions
-            href: ./other-functions.md
+            href: ./other_functions.md
           - label: Undo System Functions
-            href: ./undo-system-functions.md
+            href: ./undo_system_functions.md
           - label: Row-store Compression System Functions
-            href: ./row-store-compression-system-functions.md
+            href: ./row_store_compression_system_functions.md
       - label: Statistics Information Functions
-        href: ./statistics-information-functions.md
+        href: ./statistics_information_functions.md
+      - label: Large Object Operation Function
+        href: ./large_object_operation_function.md
       - label: Trigger Functions
-        href: ./trigger-functions.md
+        href: ./trigger_functions.md
       - label: Hash Function
-        href: ./hash-function.md
+        href: ./hash_function.md
       - label: Prompt Message Function
-        href: ./prompt-message-function.md
+        href: ./prompt_message_function.md
       - label: Global Temporary Table Functions
-        href: ./global-temporary-table-functions.md
+        href: ./global_temporary_table_functions.md
       - label: Fault Injection System Function
-        href: ./fault-injection-system-function.md
+        href: ./fault_injection_system_function.md
       - label: AI Feature Functions
-        href: ./ai-feature-functions.md
+        href: ./ai_feature_functions.md
       - label: Dynamic Data Masking Functions
-        href: ./dynamic-data-masking-functions.md
+        href: ./dynamic_data_masking_functions.md
       - label: Other System Functions
-        href: ./other-system-functions.md
+        href: ./other_system_functions.md
       - label: Internal Functions
-        href: ./internal-functions.md
+        href: ./internal_functions.md
       - label: Obsolete Functions
-        href: ./obsolete-functions.md
+        href: ./obsolete_functions.md
       - label: Global SysCache Feature Functions
-        href: ./global-syscache-feature-functions.md
+        href: ./global_syscache_feature_functions.md
       - label: Data Damage Detection and Repair Functions
-        href: ./data-damage-detection-and-repair-functions.md
+        href: ./data_damage_detection_and_repair_functions.md
   - label: Transactions and Locks
     sections: 
       - label: Locks
-        href: ./locks-1.md
+        href: ./locks_1.md
       - label: Transactions
-        href: ./managing-transactions.md
+        href: ./managing_transactions.md
       - label: Controlling Transactions
-        href: ./controlling-transactions.md        
+        href: ./controlling_transactions.md        
   - label: Tables and Storage
     sections:  
       - label: Creating a Table
-        href: ./creating-a-table.md
+        href: ./creating_a_table.md
       - label: Partitioned Tables
-        href: ./partitioned-tables.md
+        href: ./partitioned_tables.md
   - label: Programmability
     sections:        
       - label: Anonymous Blocks
-        href: ./anonymous-blocks-1.md
+        href: ./anonymous_blocks_1.md
       - label: PL/pgSQL Functions
-        href: ./pl-pgsql-functions.md
+        href: ./pl_pgsql_functions.md
       - label: Triggers
         href: ./triggers.md
   - label: Stored Procedure
     sections:
       - label: Overview
-        href: ./stored-procedure-21.md
+        href: ./stored_procedure_21.md
       - label: Data Types
-        href: ./data-types-22.md
+        href: ./data_types_22.md
       - label: Data Type Conversion
-        href: ./data-type-conversion.md
+        href: ./data_type_conversion.md
       - label: Arrays
         href: ./arrays.md
       - label: Record
@@ -1200,89 +1202,89 @@ sections:
       - label: DECLARE Syntax
         sections:
           - label: Basic Structure
-            href: ./basic-structure.md
+            href: ./basic_structure.md
           - label: Anonymous Blocks
-            href: ./anonymous-blocks.md
+            href: ./anonymous_blocks.md
           - label: Subprogram
             href: ./subprogram.md
       - label: Basic Statements
         sections:
           - label: Overview
-            href: ./basic-statements.md
+            href: ./basic_statements.md
           - label: Variable Definition Statements
-            href: ./variable-definition-statements.md
+            href: ./variable_definition_statements.md
           - label: Assignment Statements
-            href: ./assignment-statements.md
+            href: ./assignment_statements.md
           - label: Call Statements
-            href: ./call-statements.md
+            href: ./call_statements.md
       - label: Dynamic Statements
         sections:
           - label: Executing Dynamic Query Statements
-            href: ./executing-dynamic-query-statements.md
+            href: ./executing_dynamic_query_statements.md
           - label: Executing Dynamic Non-query Statements
-            href: ./executing-dynamic-non-query-statements.md
+            href: ./executing_dynamic_non_query_statements.md
           - label: Dynamically Calling Stored Procedures
-            href: ./dynamically-calling-stored-procedures.md
+            href: ./dynamically_calling_stored_procedures.md
           - label: Dynamically Calling Anonymous Blocks
-            href: ./dynamically-calling-anonymous-blocks.md
+            href: ./dynamically_calling_anonymous_blocks.md
       - label: Control Statements
         sections:
           - label: RETURN Statements
-            href: ./return-statements.md
+            href: ./return_statements.md
           - label: Conditional Statements
-            href: ./conditional-statements.md
+            href: ./conditional_statements.md
           - label: Loop Statements
-            href: ./loop-statements.md
+            href: ./loop_statements.md
           - label: Branch Statements
-            href: ./branch-statements.md
+            href: ./branch_statements.md
           - label: NULL Statements
-            href: ./null-statements.md
+            href: ./null_statements.md
           - label: Error Trapping Statements
-            href: ./error-trapping-statements.md
+            href: ./error_trapping_statements.md
           - label: GOTO Statements
-            href: ./goto-statements.md
+            href: ./goto_statements.md
       - label: Transaction Management
-        href: ./transaction-management.md
+        href: ./transaction_management.md
       - label: Other Statements
         sections:
           - label: Lock Operations
-            href: ./lock-operations.md
+            href: ./lock_operations.md
           - label: Cursor Operations
-            href: ./cursor-operations.md
+            href: ./cursor_operations.md
       - label: Cursors
         sections:
           - label: Overview
-            href: ./overview-23.md
+            href: ./overview_23.md
           - label: Explicit Cursor
-            href: ./explicit-cursor.md
+            href: ./explicit_cursor.md
           - label: Implicit Cursor
-            href: ./implicit-cursor.md
+            href: ./implicit_cursor.md
           - label: Cursor Loop
-            href: ./cursor-loop.md
+            href: ./cursor_loop.md
       - label: Retry Management
-        href: ./retry-management.md
+        href: ./retry_management.md
       - label: Debugging
         href: ./debugging.md
   - label: Autonomous Transaction
     sections:
       - label: Overview
-        href: ./autonomous-transaction.md
+        href: ./autonomous_transaction.md
       - label: Stored Procedure Supporting Autonomous Transaction
-        href: ./stored-procedure-supporting-autonomous-transaction.md
+        href: ./stored_procedure_supporting_autonomous_transaction.md
       - label: Anonymous Block Supporting Autonomous Transaction
-        href: ./anonymous-block-supporting-autonomous-transaction.md
+        href: ./anonymous_block_supporting_autonomous_transaction.md
       - label: Function Supporting Autonomous Transaction
-        href: ./function-supporting-autonomous-transaction.md
+        href: ./function_supporting_autonomous_transaction.md
       - label: Restrictions
         href: ./restrictions.md
   - label: Materialized View
     sections:
       - label: Overview
-        href: ./materialized-view.md
+        href: ./materialized_view.md
       - label: Complete-refresh Materialized View
-        href: ./complete-refresh-materialized-view.md
+        href: ./complete_refresh_materialized_view.md
       - label: Fast-refresh Materialized View
-        href: ./fast-refresh-materialized-view.md
+        href: ./fast_refresh_materialized_view.md
   - label: Subtype
     href: ./subtype.md
   - label: Full Text Search
@@ -1290,84 +1292,84 @@ sections:
       - label: Introduction
         sections:
           - label: Full-Text Retrieval
-            href: ./full-text-retrieval.md
+            href: ./full_text_retrieval.md
           - label: What Is a Document?
-            href: ./what-is-a-document.md
+            href: ./what_is_a_document.md
           - label: Basic Text Matching
-            href: ./basic-text-matching.md
+            href: ./basic_text_matching.md
           - label: Configurations
             href: ./configurations.md
       - label: Tables and Indexes
         sections:
           - label: Searching a Table
-            href: ./searching-a-table.md
+            href: ./searching_a_table.md
           - label: Creating an Index
-            href: ./creating-an-index.md
+            href: ./creating_an_index.md
           - label: Constraints on Index Use
-            href: ./constraints-on-index-use.md
+            href: ./constraints_on_index_use.md
       - label: Controlling Text Search
         sections:
           - label: Parsing Documents
-            href: ./parsing-documents.md
+            href: ./parsing_documents.md
           - label: Parsing Queries
-            href: ./parsing-queries.md
+            href: ./parsing_queries.md
           - label: Ranking Search Results
-            href: ./ranking-search-results.md
+            href: ./ranking_search_results.md
           - label: Highlighting Results
-            href: ./highlighting-results.md
+            href: ./highlighting_results.md
       - label: Additional Features
         sections:
           - label: Manipulating tsvector
-            href: ./manipulating-tsvector.md
+            href: ./manipulating_tsvector.md
           - label: Manipulating Queries
-            href: ./manipulating-queries.md
+            href: ./manipulating_queries.md
           - label: Rewriting Queries
-            href: ./rewriting-queries.md
+            href: ./rewriting_queries.md
           - label: Gathering Document Statistics
-            href: ./gathering-document-statistics.md
+            href: ./gathering_document_statistics.md
       - label: Parser
         href: ./parser.md
       - label: Dictionaries
         sections:
           - label: Overview
-            href: ./overview-19.md
+            href: ./overview_19.md
           - label: Stop Words
-            href: ./stop-words.md
+            href: ./stop_words.md
           - label: Simple Dictionary
-            href: ./simple-dictionary.md
+            href: ./simple_dictionary.md
           - label: Synonym Dictionary
-            href: ./synonym-dictionary.md
+            href: ./synonym_dictionary.md
           - label: Thesaurus Dictionary
-            href: ./thesaurus-dictionary.md
+            href: ./thesaurus_dictionary.md
           - label: Ispell Dictionary
-            href: ./ispell-dictionary.md
+            href: ./ispell_dictionary.md
           - label: Snowball Dictionary
-            href: ./snowball-dictionary.md
+            href: ./snowball_dictionary.md
       - label: Configuration Examples
-        href: ./configuration-examples.md
+        href: ./configuration_examples.md
       - label: Testing and Debugging Text Search
         sections:
           - label: Testing a Configuration
-            href: ./testing-a-configuration.md
+            href: ./testing_a_configuration.md
           - label: Testing a Parser
-            href: ./testing-a-parser.md
+            href: ./testing_a_parser.md
           - label: Testing a Dictionary
-            href: ./testing-a-dictionary.md
+            href: ./testing_a_dictionary.md
       - label: Limitations
         href: ./limitations.md
   - label: Extended Functions
-    href: ./extended-functions.md
+    href: ./extended_functions.md
   - label: Extended Syntax
-    href: ./extended-syntax.md
+    href: ./extended_syntax.md
   - label: System Operation
-    href: ./system-operation.md
+    href: ./system_operation.md
   - label: GIN Indexes
     sections:
       - label: Introduction
-        href: ./introduction-20.md
+        href: ./introduction_20.md
       - label: Scalability
         href: ./scalability.md
       - label: Implementation
         href: ./implementation.md
       - label: GIN Tips and Tricks
-        href: ./gin-tips-and-tricks.md
+        href: ./gin_tips_and_tricks.md

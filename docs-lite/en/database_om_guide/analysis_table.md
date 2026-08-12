@@ -4,7 +4,7 @@ The execution plan generator needs to use table statistics to generate the most 
 
 ## ANALYZE Table<a name="en-us_topic_0283137110_en-us_topic_0237121146_en-us_topic_0165786590_section147211861618"></a>
 
-**ANALYZE**  supports row-store and column-store tables.  **ANALYZE**  can also collect statistics about specified columns of a local table. For details on  **ANALYZE**, see  [ANALYZE | ANALYSE](../sql_reference/analyze-analyse.md).
+**ANALYZE**  supports row-store and column-store tables.  **ANALYZE**  can also collect statistics about specified columns of a local table. For details on  **ANALYZE**, see  [ANALYZE | ANALYSE](../sql_reference/analyze_analyse.md).
 
 1. Update table statistics.
 

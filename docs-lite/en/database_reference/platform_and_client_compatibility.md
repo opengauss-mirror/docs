@@ -95,7 +95,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 >[!TIP]NOTICE 
 >
->- This parameter can be set by **dbcompatibility** only when you run the  [**CREATE DATABASE**](../sql_reference/create-database.md)  command to create a database.
+>- This parameter can be set by **dbcompatibility** only when you run the  [**CREATE DATABASE**](../sql_reference/create_database.md)  command to create a database.
 >- In the database, this parameter must be set to a specific value. It can be set to  **A**  or  **B**  and cannot be changed randomly. Otherwise, the setting is not consistent with the database behavior.
 
 ## behavior\_compat\_options<a name="en-us_topic_0283137574_en-us_topic_0237124754_section1980124735516"></a>
@@ -208,7 +208,7 @@ length
 </tr>
 <tr id="en-us_topic_0283137574_en-us_topic_0237124754_row4359610142013"><td class="cellrowborder" valign="top" width="24.43%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283137574_en-us_topic_0237124754_p123596109205"><a name="en-us_topic_0283137574_en-us_topic_0237124754_p123596109205"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_p123596109205"></a><span id="en-us_topic_0283137574_en-us_topic_0237124754_text938325714529"><a name="en-us_topic_0283137574_en-us_topic_0237124754_text938325714529"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_text938325714529"></a>merge_update_multi</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="75.57000000000001%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283137574_en-us_topic_0237124754_p15359171062012"><a name="en-us_topic_0283137574_en-us_topic_0237124754_p15359171062012"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_p15359171062012"></a>When MERGE INTO... WHEN MATCHED THEN UPDATE (see <a href="../sql_reference/merge-into.md">MERGE INTO</a>) and INSERT... ON DUPLICATE KEY UPDATE (see <a href="../sql_reference/insert.md">INSERT</a>) are used, control the UPDATE behavior if a piece of target data in the target table conflicts with multiple pieces of source data.</p>
+<td class="cellrowborder" valign="top" width="75.57000000000001%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283137574_en-us_topic_0237124754_p15359171062012"><a name="en-us_topic_0283137574_en-us_topic_0237124754_p15359171062012"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_p15359171062012"></a>When MERGE INTO... WHEN MATCHED THEN UPDATE (see <a href="../sql_reference/merge_into.md">MERGE INTO</a>) and INSERT... ON DUPLICATE KEY UPDATE (see <a href="../sql_reference/insert.md">INSERT</a>) are used, control the UPDATE behavior if a piece of target data in the target table conflicts with multiple pieces of source data.</p>
 <p id="en-us_topic_0283137574_en-us_topic_0237124754_p87151258513"><a name="en-us_topic_0283137574_en-us_topic_0237124754_p87151258513"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_p87151258513"></a>If this item is specified and the preceding scenario exists, the system performs multiple UPDATE operations on the conflicting row. If this item is not specified and the preceding scenario exists, an error is reported, that is, the MERGE or INSERT operation fails.</p>
 </td>
 </tr>
