@@ -496,7 +496,7 @@ sections:
           - label: Lock
             sections:
               - label: LOCKS
-                href: ./DBE_PERF_schema_locks.md
+                href: ./dbe_perf_schema_locks.md
               - label: GLOBAL_LOCKS
                 href: ./global_locks.md
           - label: Wait Events
