@@ -1264,7 +1264,7 @@ sections:
       - label: 统计信息函数
         href: ./statistics_information_functions.md
       - label: 大对象操作函数
-        href: ./large_object_operation_functions.md 
+        href: ./large_object_operation_function.md 
       - label: 触发器函数
         href: ./trigger_functions.md          
       - label: 事件触发器函数

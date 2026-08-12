@@ -1199,6 +1199,8 @@ sections:
             href: ./row_store_compression_system_functions.md
       - label: Statistics Information Functions
         href: ./statistics_information_functions.md
+      - label: Large Object Operation Function
+        href: ./large_object_operation_function.md
       - label: Trigger Functions
         href: ./trigger_functions.md
       - label: Event Trigger Functions

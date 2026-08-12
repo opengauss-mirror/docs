@@ -1139,6 +1139,8 @@ sections:
             href: ./row_store_compression_system_functions.md
       - label: Statistics Information Functions
         href: ./statistics_information_functions.md
+      - label: Large Object Operation Function
+        href: ./large_object_operation_function.md
       - label: Trigger Functions
         href: ./trigger_functions.md
       - label: Hash Function
@@ -1180,7 +1182,7 @@ sections:
   - label: Programmability
     sections:        
       - label: Anonymous Blocks
-        href: ./anonymous-blocks-1.md
+        href: ./anonymous_blocks_1.md
       - label: PL/pgSQL Functions
         href: ./pl_pgsql_functions.md
       - label: Triggers
@@ -1330,7 +1332,7 @@ sections:
       - label: Dictionaries
         sections:
           - label: Overview
-            href: ./overview-19.md
+            href: ./overview_19.md
           - label: Stop Words
             href: ./stop_words.md
           - label: Simple Dictionary
