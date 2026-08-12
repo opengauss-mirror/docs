@@ -162,25 +162,25 @@ sections:
           - label: COLUMNS
             href: ./columns.md 
           - label: KEY_COLUMN_USAGE
-            href: ./KEY_COLUMN_USAGE.md    
+            href: ./key_column_usage.md    
           - label: PARAMETERS
-            href: ./PARAMETERS.md 
+            href: ./parameters.md 
           - label: REFERENTIAL_CONSTRAINTS
-            href: ./REFERENTIAL_CONSTRAINTS.md       
+            href: ./referential_constraints.md       
           - label: ROUTINES
-            href: ./ROUTINES.md      
+            href: ./routines.md      
           - label: SCHEMATA
-            href: ./SCHEMATA.md 
+            href: ./schemata.md 
           - label: TABLE_CONSTRAINTS
-            href: ./TABLE_CONSTRAINTS.md 
+            href: ./table_constraints.md 
           - label: TABLES
-            href: ./TABLES.md 
+            href: ./tables.md 
           - label: KEYWORDS
             href: ./keywords_0.md
           - label: STATISTICS
-            href: ./STATISTICS.md
+            href: ./statistics.md
           - label: PARTITIONS
-            href: ./PARTITIONS.md
+            href: ./partitions.md
           - label: EVENTS
             href: ./events.md
       - label: DBE_PERF Schema
@@ -522,7 +522,7 @@ sections:
           - label: Lock
             sections:
               - label: LOCKS
-                href: ./DBE_PERF_schema_locks.md
+                href: ./dbe_perf_schema_locks.md
               - label: GLOBAL_LOCKS
                 href: ./global_locks.md
           - label: Wait Events
