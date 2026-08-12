@@ -381,7 +381,7 @@
 
         Specifies the DATE format for data import. The BINARY format is not supported. When data of such format is imported, error "cannot specify bulkload compatibility options in BINARY mode" will occur. The parameter is valid only for data import using  **COPY FROM**.
 
-        Value range: a valid DATE value For details, see  [Date and Time Processing Functions and Operators](date-and-time-processing-functions-and-operators.md).
+        Value range: a valid DATE value For details, see  [Date and Time Processing Functions and Operators](date_and_time_processing_functions_and_operators.md).
 
         >[!NOTE]NOTE 
         >
@@ -391,19 +391,19 @@
 
         Specifies the TIME format for data import. The BINARY format is not supported. When data of such format is imported, error "cannot specify bulkload compatibility options in BINARY mode" will occur. The parameter is valid only for data import using  **COPY FROM**.
 
-        Value range: a valid TIME value. Time zones cannot be used. For details, see  [Date and Time Processing Functions and Operators](date-and-time-processing-functions-and-operators.md).
+        Value range: a valid TIME value. Time zones cannot be used. For details, see  [Date and Time Processing Functions and Operators](date_and_time_processing_functions_and_operators.md).
 
     - TIMESTAMP\_FORMAT
 
         Specifies the TIMESTAMP format for data import. The BINARY format is not supported. When data of such format is imported, error "cannot specify bulkload compatibility options in BINARY mode" will occur. The parameter is valid only for data import using  **COPY FROM**.
 
-        Value range: a valid TIMESTAMP value. Time zones cannot be used. For details, see  [Date and Time Processing Functions and Operators](date-and-time-processing-functions-and-operators.md).
+        Value range: a valid TIMESTAMP value. Time zones cannot be used. For details, see  [Date and Time Processing Functions and Operators](date_and_time_processing_functions_and_operators.md).
 
     - SMALLDATETIME\_FORMAT
 
         Specifies the SMALLDATETIME format for data import. The BINARY format is not supported. When data of such format is imported, error "cannot specify bulkload compatibility options in BINARY mode" will occur. The parameter is valid only for data import using  **COPY FROM**.
 
-        Value range: a valid SMALLDATETIME value. For details, see  [Date and Time Processing Functions and Operators](date-and-time-processing-functions-and-operators.md).
+        Value range: a valid SMALLDATETIME value. For details, see  [Date and Time Processing Functions and Operators](date_and_time_processing_functions_and_operators.md).
 
 - **COPY\_OPTION \{ option\_name ' value '  \}**
 
@@ -563,7 +563,7 @@
 
         Specifies the DATE format for data import. The BINARY format is not supported. When data of such format is imported, error "cannot specify bulkload compatibility options in BINARY mode" will occur. The parameter is valid only for data import using  **COPY FROM**.
 
-        Value range: a valid DATE value For details, see  [Date and Time Processing Functions and Operators](date-and-time-processing-functions-and-operators.md).
+        Value range: a valid DATE value For details, see  [Date and Time Processing Functions and Operators](date_and_time_processing_functions_and_operators.md).
 
         >[!NOTE]NOTE 
         >
@@ -573,23 +573,23 @@
 
         Specifies the TIME format for data import. The BINARY format is not supported. When data of such format is imported, error "cannot specify bulkload compatibility options in BINARY mode" will occur. The parameter is valid only for data import using  **COPY FROM**.
 
-        Value range: a valid TIME value. Time zones cannot be used. For details, see  [Date and Time Processing Functions and Operators](date-and-time-processing-functions-and-operators.md).
+        Value range: a valid TIME value. Time zones cannot be used. For details, see  [Date and Time Processing Functions and Operators](date_and_time_processing_functions_and_operators.md).
 
     - TIMESTAMP\_FORMAT 'timestamp\_format\_string'
 
         Specifies the TIMESTAMP format for data import. The BINARY format is not supported. When data of such format is imported, error "cannot specify bulkload compatibility options in BINARY mode" will occur. The parameter is valid only for data import using  **COPY FROM**.
 
-        Value range: a valid TIMESTAMP value. Time zones cannot be used. For details, see  [Date and Time Processing Functions and Operators](date-and-time-processing-functions-and-operators.md).
+        Value range: a valid TIMESTAMP value. Time zones cannot be used. For details, see  [Date and Time Processing Functions and Operators](date_and_time_processing_functions_and_operators.md).
 
     - SMALLDATETIME\_FORMAT 'smalldatetime\_format\_string'
 
         Specifies the SMALLDATETIME format for data import. The BINARY format is not supported. When data of such format is imported, error "cannot specify bulkload compatibility options in BINARY mode" will occur. The parameter is valid only for data import using  **COPY FROM**.
 
-        Value range: a valid SMALLDATETIME value. For details, see  [Date and Time Processing Functions and Operators](date-and-time-processing-functions-and-operators.md).
+        Value range: a valid SMALLDATETIME value. For details, see  [Date and Time Processing Functions and Operators](date_and_time_processing_functions_and_operators.md).
 
     - TRANSFORM \( \{ column\_name \[ data\_type \] \[ AS transform\_expr \] \} \[, ...\] \)
 
-        Specify the conversion expression of each column in the table.  **data\_type**  specifies the data type of the column in the expression parameter.  **transform\_expr**  is the target expression that returns the result value whose data type is the same as that of the target column in the table. For details about the expression, see  [Expressions](simple-expressions.md).
+        Specify the conversion expression of each column in the table.  **data\_type**  specifies the data type of the column in the expression parameter.  **transform\_expr**  is the target expression that returns the result value whose data type is the same as that of the target column in the table. For details about the expression, see  [Expressions](simple_expressions.md).
 
     - SKIP int\_number
 

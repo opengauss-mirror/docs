@@ -2,7 +2,7 @@
 
 ## Function<a name="en-us_topic_0283137310_en-us_topic_0237122087_en-us_topic_0059778122_s575f09bb20db48a4a74f6544c1593758"></a>
 
-**BEGIN**  may be used to initiate an anonymous block or a single transaction. This section describes the syntax of  **BEGIN**  used to initiate an anonymous block. For details about the  **BEGIN**  syntax that initiates transactions, see  [START TRANSACTION](start-transaction.md).
+**BEGIN**  may be used to initiate an anonymous block or a single transaction. This section describes the syntax of  **BEGIN**  used to initiate an anonymous block. For details about the  **BEGIN**  syntax that initiates transactions, see  [START TRANSACTION](start_transaction.md).
 
 An anonymous block is a structure that can dynamically create and execute stored procedure code instead of permanently storing code as a database object in the database.
 
@@ -52,4 +52,4 @@ None
 
 ## Helpful Links<a name="en-us_topic_0283137310_en-us_topic_0237122087_en-us_topic_0059778122_section552105014012"></a>
 
-[START TRANSACTION](start-transaction.md)
+[START TRANSACTION](start_transaction.md)

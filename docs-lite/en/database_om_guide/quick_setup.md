@@ -14,13 +14,13 @@ You need to adjust the **pg\_hba.conf** file to allow replication (the value dep
 host     all     repuser     0.0.0.0/0     sha256
 ```
 
-Run the following command in the publisher database. (For details about the command for creating a publication, see [CREATE PUBLICATION](../sql_reference/create-publication.md).)
+Run the following command in the publisher database. (For details about the command for creating a publication, see [CREATE PUBLICATION](../sql_reference/create_publication.md).)
 
 ```
 CREATE PUBLICATION mypub FOR TABLE users, departments;
 ```
 
-Run the following command in the subscriber database: (For details about the command for creating a subscription, see [CREATE SUBSCRIPTION](../sql_reference/create-subscription.md).)
+Run the following command in the subscriber database: (For details about the command for creating a subscription, see [CREATE SUBSCRIPTION](../sql_reference/create_subscription.md).)
 
 ```
 CREATE SUBSCRIPTION mysub CONNECTION 'dbname=foo host=bar user=repuser' PUBLICATION mypub;
@@ -28,25 +28,25 @@ CREATE SUBSCRIPTION mysub CONNECTION 'dbname=foo host=bar user=repuser' PUBLICAT
 
 The preceding statement starts the replication process, synchronizes the initial data of the **users** and **departments** tables, and then starts to replicate incremental changes to those tables.
 
-You can modify the publication later, for example, add or delete the publication table. (For details about the command for modifying a publication, see [ALTER PUBLICATION](../sql_reference/alter-publication.md).)
+You can modify the publication later, for example, add or delete the publication table. (For details about the command for modifying a publication, see [ALTER PUBLICATION](../sql_reference/alter_publication.md).)
 
 ```
 ALTER PUBLICATION mypub ADD TABLE new_tbl;
 ```
 
-After adding a publication table, you need to update the table in the subscriber database. (For details about the command for modifying a subscription, see [ALTER SUBSCRIPTION](../sql_reference/alter-subscription.md).)
+After adding a publication table, you need to update the table in the subscriber database. (For details about the command for modifying a subscription, see [ALTER SUBSCRIPTION](../sql_reference/alter_subscription.md).)
 
 ```
 ALTER SUBSCRIPTION mysub REFRESH PUBLICATION;
 ```
 
-Delete the publication from the publisher database. (For details about the command for deleting a publication, see [DROP PUBLICATION](../sql_reference/drop-publication.md).)
+Delete the publication from the publisher database. (For details about the command for deleting a publication, see [DROP PUBLICATION](../sql_reference/drop_publication.md).)
 
 ```
 DROP PUBLICATION mypub;
 ```
 
-Delete the subscription from the subscriber database. For details about the command for deleting a subscription, see [DROP SUBSCRIPTION](../sql_reference/drop-subscription.md).)
+Delete the subscription from the subscriber database. For details about the command for deleting a subscription, see [DROP SUBSCRIPTION](../sql_reference/drop_subscription.md).)
 
 ```
 DROP SUBSCRIPTION mysub;

@@ -14,9 +14,9 @@ SELECT * FROM PG_ROLES;
 
 In non-[Separation of Duties](separation_of_duties.md)  scenarios, a role can be created, modified, and deleted only by a system administrator or a user with the  **CREATEROLE**  attribute. In separation-of-duties scenarios, a role can be created, modified, and deleted only by an initial user or a user with the  **CREATEROLE**  attribute.
 
-- To create a role, use  **[CREATE ROLE](../sql_reference/create-role.md)**.
-- To add or delete users in an existing role, use  **[ALTER ROLE](../sql_reference/alter-role.md)**.
-- To delete a role, use  **[DROP ROLE](../sql_reference/drop-role.md)**.  **DROP ROLE**  deletes only a role, rather than member users in the role.
+- To create a role, use  **[CREATE ROLE](../sql_reference/create_role.md)**.
+- To add or delete users in an existing role, use  **[ALTER ROLE](../sql_reference/alter_role.md)**.
+- To delete a role, use  **[DROP ROLE](../sql_reference/drop_role.md)**.  **DROP ROLE**  deletes only a role, rather than member users in the role.
 
 ## Built-in roles<a name="section210351882916"></a>
 

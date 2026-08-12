@@ -7,7 +7,7 @@ A sequence is a database object that generates unique integers. Sequence numbers
 You can create a sequence for a column in either of the following methods:
 
 - Set the data type of a column to  sequence integer. A sequence will be automatically created by the database for this column.
-- Run the  [CREATE SEQUENCE](../sql_reference/create-sequence.md)  statement to create a sequence. Set the initial value of the  **nextval**\('_sequence\_name_'\) function to the default value of a column.
+- Run the  [CREATE SEQUENCE](../sql_reference/create_sequence.md)  statement to create a sequence. Set the initial value of the  **nextval**\('_sequence\_name_'\) function to the default value of a column.
 
 ## Procedure<a name="en-us_topic_0283136796_en-us_topic_0237120310_en-us_topic_0093152908_en-us_topic_0064273680_section1199961991514"></a>
 

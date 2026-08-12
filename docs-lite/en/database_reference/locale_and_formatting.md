@@ -32,7 +32,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 - **postgres**  indicates that output matching PostgreSQL 8.4 will be generated when the  [DateStyle](#en-us_topic_0283136798_en-us_topic_0237124733_en-us_topic_0059778109_s6464b29eb2274134845cea28f39d915e)  parameter is set to  **ISO**.
 - **postgres\_verbose**  indicates that output matching PostgreSQL 8.4 will be generated when the  [DateStyle](#en-us_topic_0283136798_en-us_topic_0237124733_en-us_topic_0059778109_s6464b29eb2274134845cea28f39d915e)  parameter is set to  **non\_ISO**.
 - **iso\_8601**  indicates that output matching the time interval "format with designators" defined in ISO 8601 will be generated.
-- **a**  indicates the output result that matches the numtodsinterval function. For details, see  [numtodsinterval](../sql_reference/date-and-time-processing-functions-and-operators.md).
+- **a**  indicates the output result that matches the numtodsinterval function. For details, see  [numtodsinterval](../sql_reference/date_and_time_processing_functions_and_operators.md).
 
 >[!TIP]NOTICE 
 >

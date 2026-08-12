@@ -29,7 +29,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Parameter description**: Specifies the user ID of the current session.
 
-This parameter is of the USERSET type and can be set only using the  [SET SESSION AUTHORIZATION](../sql_reference/set-session-authorization.md)  syntax.
+This parameter is of the USERSET type and can be set only using the  [SET SESSION AUTHORIZATION](../sql_reference/set_session_authorization.md)  syntax.
 
 **Value range**: a string
 

@@ -131,4 +131,4 @@ If a table contains a large amount of data, partition the table based on the fol
     );
     ```
 
-    For details about the table partition syntax, see  [CREATE TABLE PARTITION](../sql_reference/create-table-partition.md).
+    For details about the table partition syntax, see  [CREATE TABLE PARTITION](../sql_reference/create_table_partition.md).

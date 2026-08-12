@@ -4,7 +4,7 @@ Descriptions in  [Default Permission Mechanism](default_permission_mechanism.md)
 
 In actual service management, you can set separation of duties to prevent system administrators from having excessive centralized permissions, which may cause high risks. Some permissions of the system administrator are transferred to the security administrator and audit administrator, implementing separation of duties among the system administrator, security administrator, and audit administrator.
 
-After separation of duties is enabled, a system administrator does not have the  **CREATEROLE**  attribute \(security administrator\) and  **AUDITADMIN**  attribute \(audit administrator\). That is, the system administrator does not have the permissions to create roles and users and the permissions to view and maintain database audit logs. For details about the  **CREATEROLE**  and  **AUDITADMIN**  attributes, see  [CREATE ROLE](../sql_reference/create-role.md).
+After separation of duties is enabled, a system administrator does not have the  **CREATEROLE**  attribute \(security administrator\) and  **AUDITADMIN**  attribute \(audit administrator\). That is, the system administrator does not have the permissions to create roles and users and the permissions to view and maintain database audit logs. For details about the  **CREATEROLE**  and  **AUDITADMIN**  attributes, see  [CREATE ROLE](../sql_reference/create_role.md).
 
 After separation of duties is enabled, system administrators have the permissions only for the objects owned by them.
 

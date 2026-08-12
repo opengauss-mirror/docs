@@ -121,7 +121,7 @@ The main difference between JSON and JSONB lies in the storage mode. JSONB store
 
         GIN indexes can be used to effectively search for keys or key-value pairs that appear in a large number of JSONB documents \(datums\). Two GIN operator classes \(**jsonb\_ops**  and  **jsonb\_hash\_ops**\) are provided for different performance and flexibility choices. The default GIN operator class supports  **@\>**,  **<@**,  **?**,  **?&**  and  **?|**  operator query. The non-default GIN operator class  **jsonb\_path\_ops**  supports only the  **@\>**  and  **<@**  operators.
 
-        For details about the operators, see  [JSON/JSONB Functions and Operators](json-jsonb-functions-and-operators.md).
+        For details about the operators, see  [JSON/JSONB Functions and Operators](json_jsonb_functions_and_operators.md).
 
 - Inclusion and existence
 
@@ -131,8 +131,8 @@ The main difference between JSON and JSONB lies in the storage mode. JSONB store
     -- A simple scalar/original value contains only the same value: SELECT '"foo"'::jsonb @> '"foo"'::jsonb; -- The array on the left contains the string on the right. SELECT' [ 1, "aa", 3 ] '::jsonb? 'aa'; -- The array on the left contains all elements in the array on the right. The sequence and repetition are not specified. SELECT '[1, 2, 3]'::jsonb @> '[1, 3, 1]'::jsonb; -- The object-json on the left contains all key-values of the object-json on the right. SELECT '{"product": "PostgreSQL", "version": 9.4, "jsonb":true}'::jsonb @> '{"version":9.4}'::jsonb; -- The array on the left does not contain all elements of the array on the right, because the three elements of the array on the left are 1, 2, and [1,3], and the elements on the right are 1 and 3. SELECT'[1, 2, [1, 3] ]. '::jsonb @>' [1, 3] '::jsonb; -- Produces a false. SELECT '{"foo": {"bar": "baz"}}'::jsonb @> '{"bar": "baz"}'::jsonb; -- Similarly, false is produced.
     ```
 
-    For details about the operators, see  [JSON/JSONB Functions and Operators](json-jsonb-functions-and-operators.md).
+    For details about the operators, see  [JSON/JSONB Functions and Operators](json_jsonb_functions_and_operators.md).
 
 - Functions and operators
 
-    For details about the functions and operators supported by the JSON/JSONB type, see  [JSON/JSONB Functions and Operators](json-jsonb-functions-and-operators.md).
+    For details about the functions and operators supported by the JSON/JSONB type, see  [JSON/JSONB Functions and Operators](json_jsonb_functions_and_operators.md).

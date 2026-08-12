@@ -1,6 +1,6 @@
 # Date/Time Types<a name="EN-US_TOPIC_0289901014"></a>
 
-[Table 1](#en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_table60826369)  lists the date/time types supported by openGauss. For the operators and built-in functions of the types, see  [Date and Time Processing Functions and Operators](date-and-time-processing-functions-and-operators.md).
+[Table 1](#en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_table60826369)  lists the date/time types supported by openGauss. For the operators and built-in functions of the types, see  [Date and Time Processing Functions and Operators](date_and_time_processing_functions_and_operators.md).
 
 >[!NOTE]NOTE 
 >

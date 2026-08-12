@@ -2,7 +2,7 @@
 
 openGauss offers data types to store IPv4, IPv6, and MAC addresses.
 
-It is better to use these types instead of plain text types to store network addresses, because these types offer input error checking and specialized operators and functions \(see  [Network Address Functions and Operators](network-address-functions-and-operators.md)\).
+It is better to use these types instead of plain text types to store network addresses, because these types offer input error checking and specialized operators and functions \(see  [Network Address Functions and Operators](network_address_functions_and_operators.md)\).
 
 **Table  1**  Network address types
 

@@ -10,7 +10,7 @@ Updating a GIN index tends to be slow because of the intrinsic nature of inverte
 
 The main disadvantage of this approach is that searches must scan the list of pending entries in addition to searching the regular index, and so a large list of pending entries will slow searches significantly. Another disadvantage is that, while most updates are fast, an update that causes the pending list to become "too large" will incur an immediate cleanup cycle and be much slower than other updates. Proper use of autovacuum can minimize both of these problems.
 
-If consistent response time \(of entity cleanup and of update\) is more important than update speed, use of pending entries can be disabled by turning off the  **fastupdate**  storage parameter for a GIN index. For details, see  [CREATE INDEX](create-index.md).
+If consistent response time \(of entity cleanup and of update\) is more important than update speed, use of pending entries can be disabled by turning off the  **fastupdate**  storage parameter for a GIN index. For details, see  [CREATE INDEX](create_index.md).
 
 ## Partial Match Algorithm<a name="en-us_topic_0283137368_en-us_topic_0237122201_en-us_topic_0059778495_s9dc41ea95b9144c38d709b0b9a43fe9e"></a>
 
