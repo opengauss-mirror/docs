@@ -19,7 +19,7 @@ DBE\_PERF Schema内视图如下：
 - **[Query](statement.md)**  
 - **[Cache/IO](global_statio_user_indexes.md)**  
 - **[Utility](global_replication_slots.md)**  
-- **[Lock](DBE_PERF_schema_locks.md)**  
+- **[Lock](dbe_perf_schema_locks.md)**  
 - **[Wait Events](wait_events.md)**  
 - **[Configuration](config_settings.md)**  
 - **[Operator](global_operator_history.md)**  

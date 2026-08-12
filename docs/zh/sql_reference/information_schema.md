@@ -30,20 +30,20 @@
 
 - **[KEYWORDS](keywords_0.md)**  
 
-- **[KEY\_COLUMN\_USAGE](KEY_COLUMN_USAGE.md)**  
+- **[KEY\_COLUMN\_USAGE](key_column_usage.md)**  
 
-- **[PARAMETERS](PARAMETERS.md)**  
+- **[PARAMETERS](parameters.md)**  
 
-- **[PARTITIONS](PARTITIONS.md)**  
+- **[PARTITIONS](partitions.md)**  
 
-- **[REFERENTIAL\_CONSTRAINTS](REFERENTIAL_CONSTRAINTS.md)**  
+- **[REFERENTIAL\_CONSTRAINTS](referential_constraints.md)**  
 
-- **[ROUTINES](ROUTINES.md)**  
+- **[ROUTINES](routines.md)**  
 
-- **[SCHEMATA](SCHEMATA.md)**  
+- **[SCHEMATA](schemata.md)**  
 
-- **[STATISTICS](STATISTICS.md)**  
+- **[STATISTICS](statistics.md)**  
 
-- **[TABLES](TABLES.md)**  
+- **[TABLES](tables.md)**  
 
-- **[TABLE\_CONSTRAINTS](TABLE_CONSTRAINTS.md)**  
+- **[TABLE\_CONSTRAINTS](table_constraints.md)**  
