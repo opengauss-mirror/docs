@@ -91,6 +91,8 @@ sections:
             href: ./brief_tutorial/indexes.md
           - label: 约束
             href: ./brief_tutorial/constraints.md
+          - label: 批处理模式
+            href: ./batch_processing_mode.md
           - label: 视图
             href: ./brief_tutorial/view.md
           - label: INSERT INTO语句
@@ -1279,8 +1281,12 @@ sections:
         href: ./bfile_type_function.md        
       - label: 废弃函数
         href: ./obsolete_functions.md
-  - label: 管理事务
-    href: ./management_transaction.md
+  - label: 事务和锁
+    sections:
+      - label: 锁
+        href: ./locks.md    
+      - label: 管理事务
+        href: ./management_transaction.md
   - label: 表与存储
     sections: 
       - label: 创建表
@@ -1399,6 +1405,8 @@ sections:
         href: ./specification_constraints.md
   - label: 物化视图
     sections:
+      - label: 概述
+        href: ./materialized_view.md
       - label: 全量物化视图
         href: ./full_materialized_view.md
       - label: 增量物化视图
