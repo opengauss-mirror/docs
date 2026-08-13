@@ -3,6 +3,10 @@ isManual: true
 sections:
   - label: SQL语言基础
     sections:
+      - label: 基本概念
+        href: ./brief_tutorial/basic_concepts.md
+      - label: 语法
+        href: ./brief_tutorial/syntax.md
       - label: SQL语法格式说明
         href: ./sql_syntax_formats.md
       - label: 关键字
@@ -73,6 +77,64 @@ sections:
             href: ./union_case_and_related_constructs.md
       - label: 字符集与字符序
         href: ./character_set_and_collation.md
+      - label: 简易教程
+        sections:
+          - label: 创建数据库
+            href: ./brief_tutorial/creating_a_database.md
+          - label: 创建表
+            href: ./brief_tutorial/creating_a_table.md
+          - label: 修改表
+            href: ./brief_tutorial/alter_table_statement.md                
+          - label: 查看对象
+            href: ./brief_tutorial/view_objects.md
+          - label: 索引
+            href: ./indexes.md
+          - label: 约束
+            href: ./constraints.md
+          - label: 视图
+            href: ./brief_tutorial/view.md
+          - label: INSERT INTO语句
+            href: ./brief_tutorial/insert_into_statement.md
+          - label: UPDATE语句
+            href: ./brief_tutorial/update_statement.md
+          - label: DELETE语句
+            href: ./brief_tutorial/delete_statement.md
+          - label: SELECT语句
+            href: ./brief_tutorial/select_statement.md
+          - label: JOIN
+            href: ./brief_tutorial/join.md
+          - label: UNION子句
+            href: ./brief_tutorial/union_clause.md
+          - label: 子查询
+            href: ./brief_tutorial/subqueries.md
+          - label: WHERE子句
+            href: ./brief_tutorial/where_clause.md
+          - label: ORDER BY子句
+            href: ./brief_tutorial/order_by_clause.md
+          - label: DISTINCT子句
+            href: ./brief_tutorial/distinct.md
+          - label: GROUP BY子句
+            href: ./brief_tutorial/group_by_clause.md
+          - label: HAVING子句
+            href: ./brief_tutorial/having_clause.md
+          - label: NULL值
+            href: ./brief_tutorial/null.md
+          - label: IS[NOT]NAN
+            href: ./brief_tutorial/is_not_nan_statement.md
+          - label: IS[NOT]INFINITE
+            href: ./brief_tutorial/is_not_infinite_statement.md 
+          - label: 事务
+            href: ./brief_tutorial/transactions.md                   
+          - label: 别名
+            href: ./aliases.md           
+          - label: 游标
+            href: ./cursors.md
+          - label: 子查询
+            href: ./subqueries.md
+          - label: 权限
+            href: ./brief_tutorial/permissions.md
+          - label: SCHEMA
+            href: ./brief_tutorial/schema.md
   - label: Schema
     sections:
       - label: 概览
@@ -663,6 +725,8 @@ sections:
         href: ./ddl_grammer_overview.md
       - label: DML语法一览表
         href: ./dml_grammer_overview.md
+      - label: SQL语法
+        href: ./brief_tutorial/appendix_sql_syntax.md           
       - label: ABORT
         href: ./abort.md
       - label: ALTER AGGREGATE
@@ -1085,6 +1149,8 @@ sections:
         href: ./shrink.md
   - label: 表达式
     sections:
+      - label: 表达式
+        href: ../brief_tutorial/expression.md    
       - label: 简单表达式
         href: ./simple_expression.md
       - label: 条件表达式
@@ -1417,5 +1483,3 @@ sections:
     href: ./bloom_index.md
   - label: 系统操作
     href: ./system_operation.md
-  - label: 游标
-    href: ./cursor_1.md

@@ -82,13 +82,13 @@ sections:
       - label: 简易教程
         sections:
               - label: 创建数据库
-                href: ./brief_tutorial/create_database.md
+                href: ./brief_tutorial/creating_a_database.md
               - label: 创建表
-                href: ./brief_tutorial/create_table.md
+                href: ./brief_tutorial/creating_a_table.md
               - label: 修改表
                 href: ./brief_tutorial/alter_table_statement.md                
               - label: 查看对象
-                href: ./brief_tutorial/view_object.md
+                href: ./brief_tutorial/view_objects.md
               - label: 索引
                 href: ./indexes.md
               - label: 约束
@@ -108,7 +108,7 @@ sections:
               - label: UNION子句
                 href: ./brief_tutorial/union_clause.md
               - label: 子查询
-                href: ./brief_tutorial/subquery.md
+                href: ./brief_tutorial/subqueries.md
               - label: WHERE子句
                 href: ./brief_tutorial/where_clause.md
               - label: ORDER BY子句
@@ -120,13 +120,13 @@ sections:
               - label: HAVING子句
                 href: ./brief_tutorial/having_clause.md
               - label: NULL值
-                href: ./brief_tutorial/null_value.md
+                href: ./brief_tutorial/null.md
               - label: IS[NOT]NAN
-                href: ./brief_tutorial/is_not_nan_clause.md
+                href: ./brief_tutorial/is_not_nan_statement.md
               - label: IS[NOT]INFINITE
-                href: ./brief_tutorial/is_not_infinite_clause.md 
+                href: ./brief_tutorial/is_not_infinite_statement.md 
               - label: 事务
-                href: ./brief_tutorial/transaction.md                   
+                href: ./brief_tutorial/transactions.md                   
               - label: 别名
                 href: ./aliases.md           
               - label: 游标
@@ -134,7 +134,7 @@ sections:
               - label: 子查询
                 href: ./subqueries.md
               - label: 权限
-                href: ./brief_tutorial/permission.md
+                href: ./brief_tutorial/permissions.md
               - label: SCHEMA
                 href: ./brief_tutorial/schema.md
   - label: Schema

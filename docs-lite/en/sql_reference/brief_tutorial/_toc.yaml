@@ -7,44 +7,7 @@ sections:
     href: ./syntax.md
   - label: Data Types
     href: ./data_types.md
-  - label: Simple Data Management
-    sections:
-      - label: Creating a Database
-        href: ./creating_a_database.md
-      - label: Creating a Table
-        href: ./creating_a_table.md
-      - label: INSERT INTO Statement
-        href: ./insert_into_statement.md
-      - label: UPDATE Statement
-        href: ./update_statement.md
-      - label: DELETE Statement
-        href: ./delete_statement.md
-      - label: Viewing Objects
-        href: ./viewing_objects.md
-      - label: SELECT Statement
-        href: ./select_statement.md
-      - label: Operators
-        href: ./operators.md
-      - label: Expressions
-        href: ./expressions.md
-      - label: WHERE Clause
-        href: ./where_clause.md
-      - label: ORDER BY Clause
-        href: ./order_by_clause.md
-      - label: DISTINCT
-        href: ./distinct.md
-      - label: GROUP BY Clause
-        href: ./group_by_clause.md
-      - label: HAVING Clause
-        href: ./having_clause.md
-      - label: Date/Time Functions and Operators
-        href: ./date_time_functions_and_operators.md
-      - label: Mode Matching Operators
-        href: ./mode_matching_operators.md
-      - label: Aggregate Functions
-        href: ./aggregate_functions.md
-      - label: Event Trigger Functions
-        href: ./event_trigger_functions.md
+
   - label: Advanced Data Management
     sections:
       - label: Overview

@@ -630,7 +630,7 @@
 
 - add\_months\(d,n\)
 
-    描述：用于计算时间点d再加上n个月的时间，可通过[end_month_calculate](../database_reference/platform_and_client_compatibility.md#zh-cn_topic_0283137574_zh-cn_topic_0237124754_row14286165319484)兼容性配置项控制表现。
+    描述：用于计算时间点d再加上n个月的时间，可通过[end_month_calculate](../../database_reference/platform_and_client_compatibility.md#zh-cn_topic_0283137574_zh-cn_topic_0237124754_row14286165319484)兼容性配置项控制表现。
 
     返回值类型：timestamp
 
