@@ -86,11 +86,11 @@ sections:
           - label: 修改表
             href: ./brief_tutorial/alter_table_statement.md                
           - label: 查看对象
-            href: ./brief_tutorial/view_objects.md
+            href: ./brief_tutorial/viewing_objects.md
           - label: 索引
-            href: ./indexes.md
+            href: ./brief_tutorial/indexes.md
           - label: 约束
-            href: ./constraints.md
+            href: ./brief_tutorial/constraints.md
           - label: 视图
             href: ./brief_tutorial/view.md
           - label: INSERT INTO语句
@@ -101,12 +101,12 @@ sections:
             href: ./brief_tutorial/delete_statement.md
           - label: SELECT语句
             href: ./brief_tutorial/select_statement.md
+          - label: 运算符
+            href: ./brief_tutorial/operators.md
           - label: JOIN
             href: ./brief_tutorial/join.md
           - label: UNION子句
             href: ./brief_tutorial/union_clause.md
-          - label: 子查询
-            href: ./brief_tutorial/subqueries.md
           - label: WHERE子句
             href: ./brief_tutorial/where_clause.md
           - label: ORDER BY子句
@@ -1295,6 +1295,8 @@ sections:
         href: ./pl_pgsql_linguistic_function.md
       - label: 触发器
         href: ./trigger.md
+      - label: 事件触发器
+        href: ./event_trigger.md
   - label: 存储过程
     sections:
       - label: 概述

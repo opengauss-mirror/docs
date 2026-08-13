@@ -81,8 +81,14 @@ sections:
             href: ./brief_tutorial/creating-a-table.md
           - label: Viewing Objects
             href: ./brief_tutorial/viewing-objects.md
+          - label: Indexes
+            href: ./indexes.md
+          - label: Constraints
+            href: ./constraints.md
+          - label: Batch Processing Mode
+            href: ./batch_processing_mode.md
           - label: Views
-            href: ./brief_tutorial/views.md
+            href: ./brief_tutorial/views.md      
           - label: INSERT INTO Clause
             href: ./brief_tutorial/insert_into_statement.md
           - label: UPDATE Statement
@@ -111,22 +117,18 @@ sections:
             href: ./brief_tutorial/having_clause.md
           - label: 'NULL'
             href: ./brief_tutorial/null.md
-          - label: Permissions
-            href: ./brief_tutorial/permissions.md
-          - label: SCHEMA
-            href: ./brief_tutorial/schema.md
           - label: Transactions
             href: ./brief_tutorial/transactions.md            
           - label: Aliases
             href: ./aliases.md
-          - label: Indexes
-            href: ./indexes.md
-          - label: Constraints
-            href: ./constraints.md
           - label: Cursors
             href: ./cursors.md
           - label: Subqueries
             href: ./subqueries.md
+          - label: Permissions
+            href: ./brief_tutorial/permissions.md
+          - label: SCHEMA
+            href: ./brief_tutorial/schema.md
   - label: Schema
     sections:
       - label: Overview

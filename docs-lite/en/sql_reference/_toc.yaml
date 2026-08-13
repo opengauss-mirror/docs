@@ -79,6 +79,14 @@ sections:
             href: ./brief_tutorial/creating_a_table.md
           - label: Viewing Objects
             href: ./brief_tutorial/viewing_objects.md
+          - label: Aliases
+            href: ./aliases.md
+          - label: Indexes
+            href: ./indexes.md
+          - label: Constraints
+            href: ./constraints.md
+          - label: VIEW
+            href: ./brief_tutorial/view.md
           - label: INSERT INTO Statement
             href: ./brief_tutorial/insert_into_statement.md
           - label: UPDATE Statement
@@ -103,16 +111,20 @@ sections:
             href: ./brief_tutorial/group_by_clause.md
           - label: HAVING Clause
             href: ./brief_tutorial/having_clause.md
+          - label: NULL
+            href: ./brief_tutorial/null.md
+          - label: Transactions
+            href: ./brief_tutorial/transactions.md
           - label: Aliases
-            href: ./aliases.md
-          - label: Indexes
-            href: ./indexes.md
-          - label: Constraints
-            href: ./constraints.md
+            href: ./aliases.md  
           - label: Cursors
             href: ./cursors.md
           - label: Subqueries
             href: ./subqueries.md
+          - label: Permissions
+            href: ./brief_tutorial/permissions.md
+          - label: SCHEMA
+            href: ./brief_tutorial/schema.md
   - label: Schemas
     sections:
       - label: Overview

@@ -93,6 +93,8 @@ sections:
                 href: ./indexes.md
               - label: 约束
                 href: ./constraints.md
+              - label: 批处理模式
+                href: ./batch_processing_mode.md                
               - label: 视图
                 href: ./brief_tutorial/view.md
               - label: INSERT INTO语句
@@ -1325,6 +1327,8 @@ sections:
         href: ./pl_pgsql_functions.md
       - label: 触发器
         href: ./triggers.md
+      - label: 事件触发器
+        href: ./event_trigger.md
   - label: 存储过程
     sections:
       - label: 概述
