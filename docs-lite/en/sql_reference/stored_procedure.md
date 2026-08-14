@@ -1,6 +1,12 @@
-# Stored Procedures<a name="EN-US_TOPIC_0000001255021827"></a>
+# Stored Procedure<a name="EN-US_TOPIC_0289900514"></a>
 
-A stored procedure is a set of SQL statements that can implement a specific function. You can repeatedly call the stored procedure to reduce the number of repeated SQL statements and improve work efficiency.
+In openGauss, business rules and logics are saved as stored procedures.
+
+A stored procedure is a combination of SQL and PL/SQL. Stored procedures can move the code that executes business rules from applications to databases. Therefore, the code storage can be used by multiple programs at a time.
+
+For details about how to create and call a stored procedure, see  [CREATE PROCEDURE](create_procedure.md).
+
+The application methods for PL/pgSQL functions mentioned in  [PL/pgSQL Functions](pl_pgsql_functions.md)  are similar to those for stored procedures. Unless otherwise specified, the following sections apply to stored procedures and PL/pgSQL functions.
 
 ## Syntax<a name="en-us_topic_0283136646_en-us_topic_0237122110_en-us_topic_0059778640_sbee45c05d759429e9b8cb27ddd67bd30"></a>
 

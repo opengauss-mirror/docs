@@ -2,7 +2,7 @@
 
 **NULL**  indicates unknown data.  **NULL**  and  **0**  cannot be compared because they are not equivalent to each other.
 
-When creating a table, you can specify whether  **NULL**  can be stored in a column. For details, see  [NOT NULL](constraints.md#section74155314398). This section describes the IS NULL and IS NOT NULL operators.
+When creating a table, you can specify whether  **NULL**  can be stored in a column. For details, see  [NOT NULL](../../sql_reference/constraints.md#section74155314398). This section describes the IS NULL and IS NOT NULL operators.
 
 Create the  **customer\_t1**  table. The data in the table is as follows:
 

@@ -46,4 +46,4 @@ using\_clause子句的语法图参见[图2](#zh-cn_topic_0283136869_zh-cn_topic_
 - dynamic\_string：动态查询语句。
 - USING value：在dynamic\_string中存在占位符时使用。
 
-游标的使用请参考[游标](cursor_1.md)。
+游标的使用请参考[游标](cursors.md)。

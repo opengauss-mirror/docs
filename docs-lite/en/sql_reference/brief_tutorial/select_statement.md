@@ -33,11 +33,11 @@ SELECT
 
     - subquery
 
-        Performs a subquery in the  **FROM**  clause. A temporary table is created to save subquery results. For details, see  [Subqueries](subqueries.md).
+        Performs a subquery in the  **FROM**  clause. A temporary table is created to save subquery results. For details, see  [Subqueries](../../sql_reference/subqueries.md).
 
     - alias
 
-        Gives a temporary alias to a table to facilitate the reference by other queries. For details, see  [Aliases](aliases.md).
+        Gives a temporary alias to a table to facilitate the reference by other queries. For details, see  [Aliases](../../sql_reference/aliases.md).
 
     - join\_type
 

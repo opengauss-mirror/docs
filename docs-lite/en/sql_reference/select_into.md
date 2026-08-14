@@ -6,7 +6,7 @@
 
 - SELECT INTO ***var_list*** assigns the query result to the target variable. ***var_list*** can be a user-defined variable, a parameter of a stored procedure or function, or a local variable of a stored program.
 
-​  Note: If *var_list* is a parameter of a stored procedure, function, or local variable of a stored program, see the syntax in [Stored Procedures](../brief_tutorial/stored_procedures.md). The following describes the scenarios where variables are defined by users.
+​  Note: If *var_list* is a parameter of a stored procedure, function, or local variable of a stored program, see the syntax in [Stored Procedures](./stored_procedure.md). The following describes the scenarios where variables are defined by users.
 
 ## Precautions<a name="en-us_topic_0283137419_en-us_topic_0237122185_en-us_topic_0059779381_seabd3b47a66045ed92ad80da65bd79cc"></a>
 

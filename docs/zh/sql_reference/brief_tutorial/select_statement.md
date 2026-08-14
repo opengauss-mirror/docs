@@ -33,7 +33,7 @@ SELECT
 
     - subquery
 
-        FROM子句中可以出现子查询，创建一个临时表保存子查询的输出。详细请参见[子查询](subquery.md)。
+        FROM子句中可以出现子查询，创建一个临时表保存子查询的输出。详细请参见[子查询](../subqueries.md)。
 
     - alias
 
