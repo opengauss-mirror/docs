@@ -37,7 +37,7 @@ SELECT
 
     - alias
 
-        Gives a temporary alias to a table to facilitate the reference by other queries. For details, see  [Aliases](aliases.md).
+        Gives a temporary alias to a table to facilitate the reference by other queries. For details, see  [Aliases](../../sql_reference/aliases.md).
 
     - join\_type
 

@@ -79,6 +79,10 @@ sections:
             href: ./brief_tutorial/creating-a-database.md
           - label: Creating a Table
             href: ./brief_tutorial/creating-a-table.md
+          - label: ALTER TABLE Statement
+            href: ./brief_tutorial/alter_table_statement.md
+          - label: TRUNCATE TABLE Statement
+            href: ./brief_tutorial/truncate_table_statement.md  
           - label: Viewing Objects
             href: ./brief_tutorial/viewing-objects.md
           - label: Indexes

@@ -16,4 +16,4 @@ PL/pgSQL enables a whole computing part and a series of queries to be grouped in
 
 PL/pgSQL can use all data types, operators, and functions in SQL. There are some common functions, such as  **gs\_extend\_library**.
 
-For details about the PL/pgSQL syntax for creating functions, see  [CREATE FUNCTION](create_function.md). PL/pgSQL is a loadable procedural language. Its application method is similar to that of  [Stored Procedure](stored_procedure_21.md). There is only one difference. Stored procedures have no return values but the functions have.
+For details about the PL/pgSQL syntax for creating functions, see  [CREATE FUNCTION](create_function.md). PL/pgSQL is a loadable procedural language. Its application method is similar to that of  [Stored Procedure](stored_procedure.md). There is only one difference. Stored procedures have no return values but the functions have.

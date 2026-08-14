@@ -28,7 +28,7 @@ In the  **DBE\_PERF**  schema, views are used to diagnose performance issues and
 
 - **[Utility](replication_stat.md)**  
 
-- **[Lock](locks.md)**  
+- **[Lock](dbe_perf_schema_locks.md)**  
 
 - **[Wait Events](wait_events.md)**  
 

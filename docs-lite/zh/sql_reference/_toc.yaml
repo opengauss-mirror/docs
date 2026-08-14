@@ -84,7 +84,9 @@ sections:
           - label: 创建表
             href: ./brief_tutorial/creating_a_table.md
           - label: 修改表
-            href: ./brief_tutorial/alter_table_statement.md                
+            href: ./brief_tutorial/alter_table_statement.md 
+          - label: TRUNCATE TABLE语句
+            href: ./brief_tutorial/truncate_table_statement.md                 
           - label: 查看对象
             href: ./brief_tutorial/viewing_objects.md
           - label: 索引
@@ -92,9 +94,9 @@ sections:
           - label: 约束
             href: ./brief_tutorial/constraints.md
           - label: 批处理模式
-            href: ./batch_processing_mode.md
+            href: ./brief_tutorial/batch_processing_mode.md
           - label: 视图
-            href: ./brief_tutorial/view.md
+            href: ./brief_tutorial/views.md
           - label: INSERT INTO语句
             href: ./brief_tutorial/insert_into_statement.md
           - label: UPDATE语句
@@ -1152,7 +1154,7 @@ sections:
   - label: 表达式
     sections:
       - label: 表达式
-        href: ../brief_tutorial/expression.md    
+        href: ../brief_tutorial/expressions.md    
       - label: 简单表达式
         href: ./simple_expression.md
       - label: 条件表达式
@@ -1257,6 +1259,8 @@ sections:
         href: ./large_object_operation_function.md        
       - label: 触发器函数
         href: ./trigger_function.md
+      - label: 事件触发器函数
+        href: ./brief_tutorial/event_trigger_functions.md     
       - label: HashFunc函数
         href: ./hashfunc_function.md    
       - label: 提示信息函数
@@ -1284,7 +1288,7 @@ sections:
   - label: 事务和锁
     sections:
       - label: 锁
-        href: ./locks.md    
+        href: ./brief_tutorial/locks.md    
       - label: 管理事务
         href: ./management_transaction.md
   - label: 表与存储
@@ -1302,14 +1306,12 @@ sections:
       - label: 触发器
         href: ./trigger.md
       - label: 事件触发器
-        href: ./event_trigger.md
+        href: ./brief_tutorial/event_trigger.md
   - label: 存储过程
     sections:
       - label: 概述
         href: ./stored_procedure_20.md
-      - label: 数据类型
-        href: ./data_type_21.md
-      - label: 数据类型转换
+      - label: 数据类型及转换
         href: ./data_type_conversion.md
       - label: 数组
         href: ./array.md
@@ -1406,7 +1408,7 @@ sections:
   - label: 物化视图
     sections:
       - label: 概述
-        href: ./materialized_view.md
+        href: ./brief_tutorial/materialized_views.md
       - label: 全量物化视图
         href: ./full_materialized_view.md
       - label: 增量物化视图
