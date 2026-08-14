@@ -159,7 +159,7 @@
 | AI4DB：参数调优与诊断                                                     | ✔️      | ✔️      | ❌      | 基于强化学习的参数自动优化。                               |
 | AI4DB：慢SQL发现                                                          | ✔️      | ✔️      | ❌      | 智能识别潜在性能风险SQL。                                  |
 | [AI4DB：数据库驱动AI](../characteristic_description/db4ai_database_driven_ai.md)                      | ✔️      | ✔️      | ❌      | 内置机器学习算法库支持库内AI训练。                         |
-| [ABO优化器 > 智能基数估计](../characteristic_description/aifeature_guide/intelligent_cardinality_estimation.md) | ✔️      | ✔️      | ❌      | 基于神经网络的基数预估模型。                               |
+| [ABO优化器 > 智能基数估计](../characteristic_description/intelligent_cardinality_estimation.md) | ✔️      | ✔️      | ❌      | 基于神经网络的基数预估模型。                               |
 | ABO优化器 > 自适应计划选择                                                 | ✔️      | ✔️      | ❌      | 运行时动态调整最优执行计划。                               |
 | **中间件**                                                               |        |        |        |                                                            |
 | [使用kubernetes部署分布式数据库](../characteristic_description/deploying_a_distributed_database_using_kubernetes.md) | ✔️      | ✔️      | ❌      | 支持K8s编排实现自动化扩缩容。                              |

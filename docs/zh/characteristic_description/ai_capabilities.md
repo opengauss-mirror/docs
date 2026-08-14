@@ -13,4 +13,4 @@ AI与数据库结合是近些年的行业研究热点，openGauss较早地参与
 
 - **[DB4AI: 数据库驱动AI](db4ai_database_driven_ai.md)**  
 
-- **[ABO优化器](./aifeature_guide/intelligent_cardinality_estimation.md)** 
+- **[ABO优化器](./intelligent_cardinality_estimation.md)** 
