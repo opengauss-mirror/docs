@@ -1,6 +1,12 @@
-# 存储过程<a name="ZH-CN_TOPIC_0000001255021827"></a>
+# 存储过程<a name="ZH-CN_TOPIC_0289900514"></a>
 
-存储过程是能够完成特定功能的SQL语句集。用户可以进行反复调用，从而减少SQL语句的重复编写数量，提高工作效率。
+商业规则和业务逻辑可以通过程序存储在openGauss中，这个程序就是存储过程。
+
+存储过程是SQL和PL/SQL的组合。存储过程使执行商业规则的代码可以从应用程序中移动到数据库。从而，代码存储一次能够被多个程序使用。
+
+存储过程的创建及调用办法请参考[CREATE PROCEDURE](create_procedure.md)。
+
+[PL/pgSQL语言函数](pl_pgsql_linguistic_function.md)节所提到的PL/pgSQL语言创建的函数与存储过程的应用方法相通。下面各节中，除非特别声明，否则内容通用于存储过程和PL/pgSQL语言函数。
 
 ## 语法格式<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_sbee45c05d759429e9b8cb27ddd67bd30"></a>
 

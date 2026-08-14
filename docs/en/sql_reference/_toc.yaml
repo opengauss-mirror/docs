@@ -90,7 +90,7 @@ sections:
           - label: Constraints
             href: ./constraints.md
           - label: Batch Processing Mode
-            href: ./batch_processing_mode.md
+            href: ./brief_tutorial/batch_processing_mode.md
           - label: Views
             href: ./brief_tutorial/views.md      
           - label: INSERT INTO Clause

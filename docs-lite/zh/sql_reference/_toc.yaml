@@ -139,6 +139,8 @@ sections:
             href: ./brief_tutorial/permissions.md
           - label: SCHEMA
             href: ./brief_tutorial/schema.md
+          - label: 函数
+            href: ./brief_tutorial/functions.md
   - label: Schema
     sections:
       - label: 概览
@@ -1154,7 +1156,7 @@ sections:
   - label: 表达式
     sections:
       - label: 表达式
-        href: ../brief_tutorial/expressions.md    
+        href: ./brief_tutorial/expressions.md    
       - label: 简单表达式
         href: ./simple_expression.md
       - label: 条件表达式
@@ -1310,7 +1312,7 @@ sections:
   - label: 存储过程
     sections:
       - label: 概述
-        href: ./stored_procedure_20.md
+        href: ./stored_procedure.md
       - label: 数据类型及转换
         href: ./data_type_conversion.md
       - label: 数组
