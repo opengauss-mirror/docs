@@ -1330,7 +1330,7 @@ sections:
       - label: 触发器
         href: ./triggers.md
       - label: 事件触发器
-        href: ./event_trigger.md
+        href: ./brief_tutorial/event_trigger.md
   - label: 存储过程
     sections:
       - label: 概述
