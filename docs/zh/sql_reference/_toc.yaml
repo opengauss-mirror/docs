@@ -96,7 +96,7 @@ sections:
           - label: 约束
             href: ./constraints.md
           - label: 批处理模式
-            href: ./batch_processing_mode.md                
+            href: ./brief_tutorial/batch_processing_mode.md                
           - label: 视图
             href: ./brief_tutorial/view.md
           - label: INSERT INTO语句
