@@ -231,8 +231,6 @@ sections:
             href: ./parameter_tuning_and_diagnosis.md
           - label: 慢SQL发现
             href: ./slow_sql_statement_discovery.md
-      - label: "DB4AI: 数据库驱动AI"
-        href: ./db4ai_database_driven_ai.md
       - label: ABO优化器
         sections:
           - label: 智能基数估计
@@ -408,13 +406,7 @@ sections:
           - label: GaussMaster常见问题
             href: ./aifeature_guide/faqs_gaussmaster.md
           - label: GaussMaster附录
-            href: ./aifeature_guide/appendix_gaussmaster.md
-      - label: ABO优化器
-        sections:
-          - label: 智能基数估计
-            href: ./aifeature_guide/intelligent_cardinality_estimation.md
-          - label: 自适应计划选择
-            href: ./aifeature_guide/adaptive_plan_selection.md              
+            href: ./aifeature_guide/appendix_gaussmaster.md    
       - label: "DB4AI: 数据库驱动AI"
         sections:   
           - label: 概述

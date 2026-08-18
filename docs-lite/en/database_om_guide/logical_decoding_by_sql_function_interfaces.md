@@ -4,7 +4,7 @@ In openGauss, you can call SQL functions to create, delete, and push logical rep
 
 ## Prerequisites<a name="en-us_topic_0283137322_en-us_topic_0237121453_section1288315272236"></a>
 
-- Currently, logical logs are extracted from host nodes. To perform logical replication, the GUC parameter  **[ssl](../database_reference/security-and-authentication_postgresql-conf.md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s8c4647db116f44c4b9ce3dceee3d6ffa)**  must be set to  **on**  on host nodes.
+- Currently, logical logs are extracted from host nodes. To perform logical replication, the GUC parameter  **[ssl](../database_reference/security_and_authentication_postgresql_conf.md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s8c4647db116f44c4b9ce3dceee3d6ffa)**  must be set to  **on**  on host nodes.
 
     >[!NOTE]NOTE 
     >For security purposes, ensure that SSL connections are enabled.

@@ -452,7 +452,7 @@
         <td><a href="./db4ai_database_driven_ai.md">DB4AI: 数据库驱动AI</a></td>
     </tr>
     <tr>
-        <td><a href="./aifeature_guide/intelligent_cardinality_estimation.md">ABO优化器</a></td>
+        <td><a href="./intelligent_cardinality_estimation.md">ABO优化器</a></td>
     </tr>
     <tr>
         <td><a href="./ogai.md">OGAI</a></td>

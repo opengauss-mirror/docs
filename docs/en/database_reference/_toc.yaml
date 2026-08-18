@@ -120,11 +120,11 @@ sections:
     - label: CM Parameters
       sections:
         - label: Overview 
-          href: ./cm-parameters.md
+          href: ./cm_parameters.md
         - label: Parameters Related to cm_agent
-          href: ./parameters-related-to-cm_agent.md
+          href: ./parameters_related_to_cm_agent.md
         - label: Parameters Related to cm_server
-          href: ./parameters-related-to-cm_server.md
+          href: ./parameters_related_to_cm_server.md
     - label: Upgrade Parameters
       href: ./upgrade_parameters.md
     - label: Miscellaneous Parameters
@@ -164,9 +164,9 @@ sections:
     - label: Global SysCache Parameters
       href: ./global_syscache_parameters.md
     - label: Resource Pooling Parameters
-      href: ./resource-pooling-parameters.md
+      href: ./resource_pooling_parameters.md
     - label: UWAL Parameters
-      href: ./uwal-parameters.md
+      href: ./uwal_parameters.md
     - label: Parameters Related to Efficient Data Compression Algorithms
       href: ./parameters_related_to_efficient_data_compression_algorithms.md
     - label: Enabling Write Statements on Standby Nodes
@@ -402,11 +402,11 @@ sections:
         - label: PLAN_TABLE_DATA
           href: ./plan_table_data.md
         - label: STATEMENT_HISTORY
-          href: ./statement_history_system-catalogs.md
+          href: ./statement_history_system_catalogs.md
     - label: System Views
       sections:
         - label: GET_GLOBAL_PREPARED_XACTS (Discarded)
-          href: ./get_global_prepared_xacts-discarded.md
+          href: ./get_global_prepared_xacts_discarded.md
         - label: GS_AUDITING
           href: ./gs_auditing.md
         - label: GS_AUDITING_ACCESS
@@ -2424,6 +2424,6 @@ sections:
         - label: GAUSS-53600 -- GAUSS-53699
           href: ./gauss-53600----gauss-53699.md
 - label: Functions of openGauss Executable Scripts
-  href: ./functions-of-opengauss-executable-scripts.md
+  href: ./functions_of_opengauss_executable_scripts.md
 - label: Communication Matrix
   href: ./communication_matrix.md
