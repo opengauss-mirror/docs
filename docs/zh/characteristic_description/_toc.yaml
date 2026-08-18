@@ -241,6 +241,8 @@ sections:
             href: ./adaptive_plan_selection.md
       - label: OGAI
         href: ./ogai.md
+      - label: oGMemory
+        href: ./ogmemory.md
   - label: 工具链
     sections:
       - label: DataKit
