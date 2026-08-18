@@ -186,7 +186,7 @@
         }
       }
     },
-    "opengauss/openGauss-server": {
+    "opengauss/openGauss-third_party": {
       "extendConfig": "base",
       "branches": {
         "7.0.0-RC3": {
