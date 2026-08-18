@@ -7,7 +7,7 @@ Transparent data encryption (TDE) is used to encrypt data when the database writ
 ## Prerequisites<a name="section756657103117"></a>
 
 - Data encryption keys (DEKs) must be protected by KMS so that the database can access KMS. You can apply for KMS on the [Data Encryption Workshop (DEW)](https://www.huaweicloud.com/product/dew.html).
-- The GUC parameter **[enable\_tde](../database_reference/security-configuration.md#section17961238192110)** has been set to **on** to enable the TDE function of the database. In addition, you need to correctly set the **[tde\_cmk\_id](../database_reference/security-configuration.md#section4132027193410)** parameter which indicates the master key ID of the database instance.
+- The GUC parameter **[enable\_tde](../database_reference/security_configuration.md#section17961238192110)** has been set to **on** to enable the TDE function of the database. In addition, you need to correctly set the **[tde\_cmk\_id](../database_reference/security_configuration.md#section4132027193410)** parameter which indicates the master key ID of the database instance.
 
 ## Background<a name="section1049011225714"></a>
 

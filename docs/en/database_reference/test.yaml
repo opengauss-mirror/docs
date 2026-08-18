@@ -64,7 +64,7 @@
         -   [Wait Events](./docs/database_reference/wait_events.md)
         -   [Query](./docs/database_reference/query_62.md)
         -   [System Performance Snapshot](./docs/database_reference/system_performance_snapshot.md)
-        -   [Security Configuration](./docs/database_reference/security-configuration.md)
+        -   [Security Configuration](./docs/database_reference/security_configuration.md)
         -   [Global Temporary Table](./docs/database_reference/global_temporary_table.md)
         -   [HyperLogLog](./docs/database_reference/hyperloglog.md)
         -   [User-defined Functions](./docs/database_reference/user_defined_functions.md)
