@@ -12,7 +12,7 @@ sections:
           - label: Connection Settings
             href: ./connection_settings.md
           - label: Security and Authentication \(postgresql.conf\)
-            href: ./security-and-authentication_postgresql-conf.md
+            href: ./security_and_authentication_postgresql_conf.md
           - label: Communication Library Parameters
             href: ./communication_library_parameters.md
       - label: Resource Consumption
@@ -104,7 +104,7 @@ sections:
       - label: Connection Pool Parameters
         href: ./connection_pool_parameters.md
       - label: openGauss Transactions
-        href: ./opengauss-transactions.md
+        href: ./opengauss_transactions.md
       - label: Replication Parameters of Two Database Instances
         href: ./replication_parameters_of_two_database_instances.md
       - label: Developer Options
@@ -128,7 +128,7 @@ sections:
       - label: System Performance Snapshot
         href: ./system_performance_snapshot.md
       - label: Security Configuration
-        href: ./security-configuration.md
+        href: ./security_configuration.md
       - label: Global Temporary Table
         href: ./global_temporary_table.md
       - label: HyperLogLog
@@ -392,7 +392,7 @@ sections:
       - label: System Views
         sections: 
           - label: GET_GLOBAL_PREPARED_XACTS (Discarded)
-            href: ./get_global_prepared_xacts-discarded.md
+            href: ./get_global_prepared_xacts_discarded.md
           - label: GS_AUDITING
             href: ./gs_auditing.md
           - label: GS_AUDITING_ACCESS
