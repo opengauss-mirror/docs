@@ -1396,7 +1396,7 @@
 - cume\_dist\(expression \[,expression ...\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
 
     描述：计算由函数的参数标识的假设行和相应的排序规范在聚合组中行中的累积分布，也就是expression的值与排序以后行值相同的最后一行的行数在排序分区总行数中的占比
-    - expression：必选。用于指定假设插入到一组行中的行。该表达式必须返回一个内置数据类型的值。表达式必须是常量或变量的常量、变量。可以输入多个参数。参数的个数必须与order-list和个数保持一致。
+    - expression：必选。用于指定假设插入到一组行中的行。该表达式必须返回一个内置数据类型的值。表达式必须是常量或变量。可以输入多个参数。参数的个数必须与order-list的个数保持一致。
     - order-list：必选。排序键可以是列名或排序键表达式。
 
     返回类型：float
@@ -1458,7 +1458,7 @@
 - rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
 
     描述：计算由函数的参数标识的假设行相对于给定排序规范的排名。rank函数的排行的值不是连续的
-    - expression：必选。用于指定假设插入到一组行中的行。该表达式必须返回一个内置数据类型的值。表达式必须是常量或变量的常量、变量。可以输入多个参数。参数的个数必须与order-list和个数保持一致。
+    - expression：必选。用于指定假设插入到一组行中的行。该表达式必须返回一个内置数据类型的值。表达式必须是常量或变量。可以输入多个参数。参数的个数必须与order-list的个数保持一致。
     - order-list：必选。排序键可以是列名或排序键表达式。
 
     返回类型：int
@@ -1496,7 +1496,7 @@
 - dense\_rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
 
     描述：计算由函数的参数标识的假设行相对于给定排序规范的排名。dense_rank函数的排行的值为连续的
-    - expression：必选。用于指定假设插入到一组行中的行。该表达式必须返回一个内置数据类型的值。表达式必须是常量或变量的常量、变量。可以输入多个参数。参数的个数必须与order-list和个数保持一致。
+    - expression：必选。用于指定假设插入到一组行中的行。该表达式必须返回一个内置数据类型的值。表达式必须是常量或变量。可以输入多个参数。参数的个数必须与order-list的个数保持一致。
     - order-list：必选。排序键可以是列名或排序键表达式。
 
     返回类型：int
@@ -1534,7 +1534,7 @@
 - percent\_rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
 
     描述：计算由函数的参数标识的假设行相对于给定排序规范的相对位置的百分比。计算公式为(rank - 1) / (total_rows - 1)
-    - expression：必选。用于指定假设插入到一组行中的行。该表达式必须返回一个内置数据类型的值。表达式必须是常量或变量的常量、变量。可以输入多个参数。参数的个数必须与order-list和个数保持一致。
+    - expression：必选。用于指定假设插入到一组行中的行。该表达式必须返回一个内置数据类型的值。表达式必须是常量或变量。可以输入多个参数。参数的个数必须与order-list的个数保持一致。
     - order-list：必选。排序键可以是列名或排序键表达式。
 
     返回类型：float
