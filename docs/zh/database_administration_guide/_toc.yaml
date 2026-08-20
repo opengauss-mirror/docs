@@ -14,7 +14,7 @@ sections:
               - label: 自适应压缩
                 href: ./adaptive_compression.md
               - label: 支持OLTP场景数据压缩
-                href: ./support_for_data_compression_in_oltp_scenarios.md
+                href: ./data_compression_in_oltp_scenarios.md
           - label: Ustore存储引擎
             sections: 
               - label: 特性介绍

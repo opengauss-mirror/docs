@@ -4,7 +4,6 @@ sections:
   - label: Overview
     href: ./overview.md
   - label: Client Tool
-    href: ./client_tool.md
     sections:
       - label: Meta-Command Reference
         href: ./meta_command_reference.md     
