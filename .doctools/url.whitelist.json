@@ -20,5 +20,6 @@
   "https://docs.openeuler.org/zh/docs/.*?/server/security/secharden/os_hardening_overview.html",
   "https://repo.openeuler.org/openEuler-{version}/OS/$basearch/",
   "https://gitee.com/$user/openEuler",
-  "https://eulercopilot.test.com/.*"
+  "https://eulercopilot.test.com/.*",
+  "https://authhub.eulercopilot.local(或者您自定义的域名)"
 ]
