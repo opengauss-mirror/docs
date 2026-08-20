@@ -192,7 +192,7 @@
     Description: Performs space reclamation on a specified segment-page table. The function reclaims free extents at the tail of the table and returns them to the file for reuse by other objects. It also attempts to compact the table by relocating valid data from the tail into earlier free space. Currently, only segment-page tables in the currently connected database are supported. Unsupported scenarios will be detected and result in an error.
 
     Return value: Returns the number of extents reclaimed during this shrink operation
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!NOTE]NOTE 
     >During the execution of this function, data may be relocated, causing indexes to become invalid and require rebuilding. Please use with caution.
     
 -   gs\_space\_shrink\_compact\(tablespacename TEXT, databasename TEXT\)
