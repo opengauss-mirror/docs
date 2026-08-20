@@ -25,6 +25,8 @@ sections:
         href: ./gs_checkps.md
       - label: gs_collector
         href: ./gs_collector.md
+      - label: gs_desc
+        href: ./gs_desc.md        
       - label: gs_dump
         href: ./gs_dump.md
       - label: gs_dumpall

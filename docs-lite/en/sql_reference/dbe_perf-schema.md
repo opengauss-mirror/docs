@@ -30,7 +30,7 @@ In the  **DBE\_PERF**  schema, views are used to diagnose performance issues and
 
 - **[Lock](locks.md)**  
 
-- **[Wait Events](wait-events.md)**  
+- **[Wait Events](wait_events.md)**  
 
 - **[Configuration](config_settings.md)**  
 
