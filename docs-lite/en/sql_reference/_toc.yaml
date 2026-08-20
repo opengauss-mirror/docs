@@ -1137,6 +1137,8 @@ sections:
             href: ./row-store-compression-system-functions.md
       - label: Statistics Information Functions
         href: ./statistics-information-functions.md
+      - label: Large Object Operation Function
+        href: ./large-object-operation-functions.md        
       - label: Trigger Functions
         href: ./trigger-functions.md
       - label: Hash Function

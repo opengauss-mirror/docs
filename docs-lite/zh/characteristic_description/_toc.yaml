@@ -145,6 +145,8 @@ sections:
         href: ./publication_subscription.md
       - label: 外键锁增强
         href: ./foreign_key_lock_enhancement.md
+      - label: 支持特殊浮点数
+        href: ./support_specila_floating_point_number.md        
       - label: openEuler系统一键安装openGauss
         href: ./opengauss_installation_in_openeuler_in_one_click_mode.md
       - label: 段页式空间回收

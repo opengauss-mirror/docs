@@ -154,6 +154,12 @@ sections:
             href: ./too_many_clients_already_is_reported_or_threads_failed_to_be_created_in_high_concurrency_scenarios.md
           - label: B-tree Index Faults
             href: ./b_tree_index_faults.md
+          - label: DROP TRUNCATE Flashback
+            href: ./drop_truncate_flashback.md
+          - label: Flashback Query
+            href: ./flashback_query.md
+          - label: Flashback Table
+            href: ./flashback_table.md
   - label: Risky Operations
     href: ./risky_operations.md
   - label: Log Reference

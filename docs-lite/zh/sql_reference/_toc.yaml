@@ -95,6 +95,8 @@ sections:
             href: ./character_sets.md
           - label: COLLATIONS
             href: ./collations.md 
+          - label: COLUMNS
+            href: ./columns.md 
           - label: KEY_COLUMN_USAGE
             href: ./KEY_COLUMN_USAGE.md    
           - label: PARAMETERS
@@ -867,6 +869,8 @@ sections:
         href: ./create_table_partition.md
       - label: CREATE TABLE SUBPARTITION
         href: ./create_table_subpartition.md
+      - label: CREATE TABLESPACE
+        href: ./create_tablespace.md
       - label: CREATE TEXT SEARCH CONFIGURATION
         href: ./create_text_search_configuration.md
       - label: CREATE TEXT SEARCH DICTIONARY
@@ -1020,7 +1024,7 @@ sections:
       - label: REASSIGN OWNED
         href: ./reassign_owned.md
       - label: REFRESH MATERIALIZED VIEW
-        href: ./refresh_incremental_materialized_view.md
+        href: ./refresh_materialized_view.md
       - label: REFRESH INCREMENTAL MATERIALIZED VIEW
         href: ./refresh_incremental_materialized_view.md
       - label: REINDEX
@@ -1366,13 +1370,13 @@ sections:
       - label: 附加功能
         sections:
           - label: 处理tsvector
-            href: ./processing_tsvector.md
+            href: ./manipulating_tsvector.md
           - label: 处理查询
-            href: ./process_query.md
+            href: ./manipulating_queries.md
           - label: 查询重写
-            href: ./query_rewriting.md
+            href: ./rewriting_queries.md
           - label: 收集文献统计
-            href: ./collecting_literature_statistics.md
+            href: ./gathering_document_statistics.md
       - label: 解析器
         href: ./resolver.md
       - label: 词典
