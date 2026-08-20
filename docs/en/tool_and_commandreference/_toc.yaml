@@ -7,6 +7,8 @@ sections:
     sections:
       - label: gsql
         href: ./gsql.md
+      - label: Connecting to openGauss Using DBeaver
+        href: ./dbeaver_connect_opengauss.md
   - label: Server Tools
     sections:
       - label: gs_cgroup
