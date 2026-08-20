@@ -19,7 +19,9 @@ sections:
       - href: ./data_migration_guide/_toc.yaml
   - label: Key Features
     sections:
-      - href: ./og_memory/_toc.yaml
+      - href: 
+          upstream: https://gitcode.com/opengauss/openGauss-server/blob/master/src/gausskernel/storage/access/datavec/docs/en/_toc.yaml
+          path: ./datavec
       - href:
           upstream: https://gitcode.com/opengauss/openGauss-server/blob/master/docs/en/resource_pooling/_toc.yaml
           path: ./resource_pooling
