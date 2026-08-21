@@ -17,7 +17,7 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
 - VACUUM和VACUUM FULL时，会根据参数vacuum\_defer\_cleanup\_age延迟清理行存表记录，即不会立即清理刚刚删除的元组。
 - VACUUM ANALYZE先执行一个VACUUM操作，然后给每个选定的表执行一个ANALYZE。对于日常维护脚本而言，这是一个很方便的组合。
 - 简单的VACUUM（不带FULL选项）只是简单地回收空间并且令其可以再次使用。这种形式的命令可以和对表的普通读写并发操作，因为没有请求排他锁。VACUUM FULL执行更广泛的处理，包括跨块移动行，以便把表压缩到最少的磁盘块数目里。这种形式要慢许多并且在处理的时候需要在表上施加一个排他锁。
-- VACUUM列存表内部执行的操作包括三个：迁移delta表中的数据到主表、VACUUM主表的delta表、VACUUM主表的desc表。该操作不会回收delta表的存储空间，如果要回收delta表的冗余存储空间，需要对该列存表执行VACUUM DELTAMERGE。
+- VACUUM列存表内部执行的操作包括三个：迁移delta表中的数据到主表、VACUUM主表的delta表、VACUUM主表的desc表。该操作不会回收delta表的存储空间，如果要回收delta表的冗余存储空间，需要对该列存表执行VACUUM DELTAMERGE，系统以MAX_BATCHROW为上限分批处理，批次行数大于等于DELTAROW_THRESHOLD时迁移到主表，否则仍保留在delta表中。
 - 同时执行多个VACUUM FULL可能出现死锁。
 - 如果没有打开xc\_maintenance\_mode参数，那么VACUUM FULL操作将跳过所有系统表。
 - 执行DELETE后立即执行VACUUM FULL命令，可能不会回收空间，这取决于是否有DELETE事务之前开启的事务仍处于活跃状态。此时需要等待所有事务结束，或者重启数据库，再重新执行VACUUM FULL命令进行清理。
