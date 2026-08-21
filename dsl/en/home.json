@@ -101,6 +101,11 @@
       "title": "Key Features",
       "items": [
         {
+          "title": "DataVec",
+          "desc": "Based on the vector engine of openGauss, it provides storage and retrieval of vector data types.",
+          "href": "/en/docs/latest/datavec/ogmem_introduction.html"
+        },
+        {
           "title": "Resource Pooling",
           "desc": "Get real-time data access for your primary and standby databases from a single shared storage.",
           "href": "/en/docs/latest/resource_pooling/common_fault_locating_methods.html"
