@@ -7,8 +7,6 @@ sections:
     href: ./product_positioning.md
   - label: System Architecture
     href: ./system_architecture.md
-  - label: Application Scenarios
-    href: ./application_scenarios.md
   - label: Product Features
     href: ./product_features.md
   - label: Deployment Solutions

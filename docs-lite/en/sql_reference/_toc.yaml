@@ -86,7 +86,7 @@ sections:
           - label: Aliases
             href: ./aliases.md
           - label: Indexes
-            href: ./brief_tutorial/indexes.md
+            href: ./indexes.md
           - label: Constraints
             href: ./constraints.md
           - label: Batch Processing Mode

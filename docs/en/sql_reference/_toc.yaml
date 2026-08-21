@@ -615,6 +615,8 @@ sections:
                 href: ./dbe_pldebugger_local_debug_server_info.md
               - label: DBE_PLDEBUGGER.attach
                 href: ./dbe_pldebugger_attach.md
+              - label: DBE_PLDEBUGGER.info_locals
+                href: ./dbe_pldebugger_info_locals.md                
               - label: DBE_PLDEBUGGER.next
                 href: ./dbe_pldebugger_next.md
               - label: DBE_PLDEBUGGER.continue
@@ -759,6 +761,8 @@ sections:
         href: ./alter_role.md
       - label: ALTER ROW LEVEL SECURITY POLICY
         href: ./alter_row_level_security_policy.md
+      - label: ALTER RULE
+        href: ./alter_rule.md
       - label: ALTER SCHEMA
         href: ./alter_schema.md
       - label: ALTER SEQUENCE

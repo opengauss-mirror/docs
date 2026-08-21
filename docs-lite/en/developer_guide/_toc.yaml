@@ -177,6 +177,14 @@ sections:
         href: ./development_process_libpq.md
       - label: Example
         href: ./example_libpq.md
+      - label: "libpq API Reference: Database Connection Control Functions"
+        sections:
+          - label: Overview
+            href: ./database_connection_control_functions.md
+      - label: Database Statement Execution Functions
+        sections:
+          - label: Overview
+            href: ./database_statement_execution_functions.md
       - label: "libpq API Reference: Large Object Operation Functions"
         sections:
           - label: Overview
@@ -203,6 +211,20 @@ sections:
             href: ./lo_close.md
           - label: lo_unlink
             href: ./lo_unlink.md
+      - label: Functions for Asynchronous Command Processing
+        sections:
+          - label: Overview
+            href: ./functions_for_asynchronous_command_processing.md
+          - label: PQsendQuery
+            href: ./pqsendquery.md
+          - label: PQsendQueryParams
+            href: ./pqsendqueryparams.md
+          - label: PQsendPrepare
+            href: ./pqsendprepare.md
+          - label: PQsendQueryPrepared
+            href: ./pqsendqueryprepared.md
+          - label: PQflush
+            href: ./pqflush.md
       - label: Link Parameters
         href: ./link_parameters_libpq.md
   - label: Psycopg-Based Development
