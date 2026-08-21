@@ -327,6 +327,7 @@ set sql_beta_feature=none;
 - predpush_same_level：开启predpush hint控制同层参数化路径的功能。
 - disable_bitmap_cost_with_lossy_pages：关闭bitmap路径代价中对lossy pages代价的计算。
 - extract_pushdown_or_clause：开启支持or表达式的提取下推。
+- windowagg_pushdown：支持windowagg的表达式下推。
 
 **默认值**：none
 
