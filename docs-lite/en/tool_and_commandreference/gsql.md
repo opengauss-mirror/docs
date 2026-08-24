@@ -1059,7 +1059,7 @@ For details about  **gsql**  parameters, see  [Table 1](#en-us_topic_0059779319_
 </tr>
 <tr id="row168751313155516"><td class="cellrowborder" valign="top" width="17.52%" headers="mcps1.2.4.1.1 "><p id="p13875513185511"><a name="p13875513185511"></a><a name="p13875513185511"></a>-g,</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.25%" headers="mcps1.2.4.1.2 "><p id="p787516133552"><a name="p787516133552"></a><a name="p787516133552"></a>Prints all SQL statements from a file. Option -g and -f must be specified together. When multiple -c and -f are specified with -g, only SQL statements from files specified by -f will be printed, commands specified by -c will be executed.</p>
+<td class="cellrowborder" valign="top" width="64.25%" headers="mcps1.2.4.1.2 "><p id="p787516133552"><a name="p787516133552"></a><a name="p787516133552"></a>Prints all SQL statements from a file. This option takes effect only in debug or memcheck mode. Option -g and -f must be specified together. When multiple -c and -f are specified with -g, only SQL statements from files specified by -f will be printed, commands specified by -c will be executed.</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.3 "><p id="p587551375510"><a name="p587551375510"></a><a name="p587551375510"></a>-</p>
 </td>
