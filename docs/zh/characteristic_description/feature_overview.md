@@ -150,6 +150,9 @@
         <td><a href="./asynchronous_backup_and_recovery_capability_for_master_data.md">异步备升主数据找回能力</a></td>
     </tr>
     <tr>
+        <td><a href="./rbp_accelerated_recovery.md">RBP加速恢复</a></td>
+    </tr>
+    <tr>
         <td><a href="./sql_firewall_capability.md">SQL防火墙能力</a></td>
     </tr>
     <tr>
