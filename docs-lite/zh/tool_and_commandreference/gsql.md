@@ -1080,7 +1080,7 @@ omm@[local] openGauss=#
 </tr>
 <tr id="row168751313155516"><td class="cellrowborder" valign="top" width="17.52%" headers="mcps1.2.4.1.1 "><p id="p13875513185511"><a name="p13875513185511"></a><a name="p13875513185511"></a>-g,</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.25%" headers="mcps1.2.4.1.2 "><p id="p787516133552"><a name="p787516133552"></a><a name="p787516133552"></a>打印来自文件的所有SQL。指定该选项必须同时指定-f选项。如果指定该选项的同时还指定了多个-f和-c选项，则只有-f选项指定的文件中的SQL会被打印，-c选项指定的命令会正常执行。</p>
+<td class="cellrowborder" valign="top" width="64.25%" headers="mcps1.2.4.1.2 "><p id="p787516133552"><a name="p787516133552"></a><a name="p787516133552"></a>打印来自文件的所有SQL，且只在debug或memcheck模式下生效。指定该选项必须同时指定-f选项。如果指定该选项的同时还指定了多个-f和-c选项，则只有-f选项指定的文件中的SQL会被打印，-c选项指定的命令会正常执行。</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.3 "><p id="p587551375510"><a name="p587551375510"></a><a name="p587551375510"></a>-</p>
 </td>
