@@ -141,7 +141,7 @@
 | [JDBC客户端负载均衡与读写分离](../characteristic_description/jdbc_client_load_balancing_and_read_write_isolation.md) | ✔️      | ✔️      | ✔️      | 支持连接池自动路由。                                       |
 | [In-place Update存储引擎](../database_administration_guide/in_place_update_storage_engine.md) | ✔️      | ✔️      | ✔️      | 支持原地更新减少写放大。                                   |
 | [发布订阅](../characteristic_description/publication_subscription.md)                                | ✔️      | ✔️      | ✔️      | 支持逻辑订阅数据变更。                                     |
-| [支持OLTP场景数据压缩](../database_administration_guide/data_compression_in_oltp_scenarios.md) | ✔️      | ✔️      | ✔️      | 提供行存压缩技术。                                         |
+| [支持OLTP场景数据压缩](../database_administration_guide/support_for_data_compression_in_oltp_scenarios.md) | ✔️      | ✔️      | ✔️      | 提供行存压缩技术。                                         |
 | [事件触发器](../characteristic_description/event_trigger.md)                                        | ✔️      | ✔️      | ❌      | 支持DDL/DML事件触发自定义操作。                            |
 | [支持UWAL特性](../characteristic_description/uwal.md)                                                | ✔️      | ✔️      | ❌      | 统一日志写入优化，提升高并发日志吞吐。                     |
 | **应用开发接口**                      |            |            |            |                                                          |

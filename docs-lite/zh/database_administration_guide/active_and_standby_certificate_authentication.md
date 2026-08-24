@@ -1,18 +1,18 @@
-# 主备证书认证配置 `<a name="ZH-CN_TOPIC_0000001262443815"></a>`
+# 主备证书认证配置 <a name="ZH-CN_TOPIC_0000001262443815"></a>
 
-## 操作场景 `<a name="zh-cn_topic_0283137045_zh-cn_topic_0237121097_zh-cn_topic_0059778589_section12641165319257"></a>`
+## 操作场景 <a name="zh-cn_topic_0283137045_zh-cn_topic_0237121097_zh-cn_topic_0059778589_section12641165319257"></a>
 
 轻量版场景下主备双机直接认证机制需要使用ssl证书。
 
-## 前提条件 `<a name="zh-cn_topic_0283137045_zh-cn_topic_0237121097_zh-cn_topic_0059778589_s2d0511630ed840d180c92fa6bdecb54b"></a>`
+## 前提条件 <a name="zh-cn_topic_0283137045_zh-cn_topic_0237121097_zh-cn_topic_0059778589_s2d0511630ed840d180c92fa6bdecb54b"></a>
 
 用户需要从CA认证中心申请到正式的服务器、客户端的证书和密钥。
 
-## 注意事项 `<a name="zh-cn_topic_0283137045_zh-cn_topic_0237121097_zh-cn_topic_0059778589_s014a1b1bc72240bb9bbbad5e064bf6d3"></a>`
+## 注意事项 <a name="zh-cn_topic_0283137045_zh-cn_topic_0237121097_zh-cn_topic_0059778589_s014a1b1bc72240bb9bbbad5e064bf6d3"></a>
 
 openGauss目前只支持X509v3的PEM格式证书。
 
-## 操作步骤 `<a name="section15831243154011"></a>`
+## 操作步骤 <a name="section15831243154011"></a>
 
 1. 准备证书、私钥。
 

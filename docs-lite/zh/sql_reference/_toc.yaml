@@ -162,7 +162,9 @@ sections:
           - label: CHARACETER_SETS
             href: ./character_sets.md
           - label: COLLATIONS
-            href: ./collations.md 
+            href: ./collations.md
+          - label: COLUMNS
+            href: ./columns.md  
           - label: KEY_COLUMN_USAGE
             href: ./key_column_usage.md    
           - label: PARAMETERS
@@ -937,6 +939,8 @@ sections:
         href: ./create_table_partition.md
       - label: CREATE TABLE SUBPARTITION
         href: ./create_table_subpartition.md
+      - label: CREATE TABLESPACE
+        href: ./create_tablespace.md
       - label: CREATE TEXT SEARCH CONFIGURATION
         href: ./create_text_search_configuration.md
       - label: CREATE TEXT SEARCH DICTIONARY
@@ -1094,7 +1098,7 @@ sections:
       - label: REASSIGN OWNED
         href: ./reassign_owned.md
       - label: REFRESH MATERIALIZED VIEW
-        href: ./refresh_incremental_materialized_view.md
+        href: ./refresh_materialized_view.md
       - label: REFRESH INCREMENTAL MATERIALIZED VIEW
         href: ./refresh_incremental_materialized_view.md
       - label: REINDEX

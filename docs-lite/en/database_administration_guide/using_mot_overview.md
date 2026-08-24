@@ -1,6 +1,6 @@
 # Using MOT Overview<a name="EN-US_TOPIC_0289900146"></a>
 
-MOT is automatically deployed as part of openGauss. You may refer to the  [MOT Preparation](mot_preparation.md)  section for a description of how to estimate and plan required memory and storage resources in order to sustain your workload. The  [MOT Deployment](mot_server_optimization.md)  section describes all the configuration settings in MOT, as well as non-mandatory options for server optimization.
+MOT is automatically deployed as part of openGauss. You may refer to the  [MOT Prerequisites](mot_prerequisites.md)  section for a description of how to estimate and plan required memory and storage resources in order to sustain your workload. The  [MOT Deployment](mot_server_optimization.md)  section describes all the configuration settings in MOT, as well as non-mandatory options for server optimization.
 
 Using MOT tables is quite simple. The syntax of all MOT commands is the same as for disk-based tables and includes support for most of standard PostgreSQL SQL, DDL and DML commands and features, such as Stored Procedures. Only the create and drop table statements in MOT differ from the statements for disk-based tables in openGauss. You may refer to the  [MOT Usage](mot_usage.md)  section for a description of these two simple commands, to learn how to convert a disk-based table into an MOT table, to get higher performance using Query Native Compilation and PREPARE statements and for a description of external tool support and the limitations of the MOT engine.
 
