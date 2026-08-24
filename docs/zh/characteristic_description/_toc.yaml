@@ -59,6 +59,8 @@ sections:
         href: ./global_plancache.md
       - label: 异步备升主数据找回能力
         href: ./asynchronous_backup_and_recovery_capability_for_master_data.md
+      - label: RBP加速恢复
+        href: ./rbp_accelerated_recovery.md
       - label: SQL防火墙能力
         href: ./sql_firewall_capability.md
       - label: 主库备库坏块修复功能
