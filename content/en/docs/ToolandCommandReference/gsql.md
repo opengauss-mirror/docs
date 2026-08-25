@@ -1104,7 +1104,7 @@ For details about gsql parameters, see  [Table Common parameters](#en-us_topic_0
 </tr>
 <tr id="row1427912110539"><td class="cellrowborder" valign="top" width="17.52%" headers="mcps1.2.4.1.1 "><p id="p102801821155314"><a name="p102801821155314"></a><a name="p102801821155314"></a>-g,</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.25%" headers="mcps1.2.4.1.2 "><p id="p22805217537"><a name="p22805217537"></a><a name="p22805217537"></a>Prints all SQL statements from a file.</p>
+<td class="cellrowborder" valign="top" width="64.25%" headers="mcps1.2.4.1.2 "><p id="p22805217537"><a name="p22805217537"></a><a name="p22805217537"></a>Prints all SQL statements from a file. This option takes effect only in debug or memcheck mode.</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.3 "><p id="p82801521185319"><a name="p82801521185319"></a><a name="p82801521185319"></a>-</p>
 </td>
