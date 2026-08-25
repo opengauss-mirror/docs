@@ -197,7 +197,9 @@ sections:
           - label: gms_assert高级包
             href: ./gms_assert_advanced_package.md
           - label: gms_debug高级包
-            href: ./gms_debug_advanced_package.md       
+            href: ./gms_debug_advanced_package.md 
+          - label: gms_xmlparser高级包
+            href: ./gms_xmlparser_advanced_package.md      
           - label: gms_xmlgen高级包
             href: ./gms_xmlgen_advanced_package.md
           - label: gms_lob高级包
