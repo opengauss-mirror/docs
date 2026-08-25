@@ -29,6 +29,8 @@ sections:
           href: ./background_writer.md
         - label: Asynchronous I/O Operations
           href: ./asynchronous_i_o_operations.md
+        - label: Memoize Usage
+          href: ./memoize_example.md  
     - label: Write Ahead Log
       sections:
         - label: Settings
