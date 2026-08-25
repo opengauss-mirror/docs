@@ -62,7 +62,7 @@ openGauss相比于其他开源数据库主要有以下几个特点：
 - DataKit全生命周期数据管理工具
 
     - [DataKit](../characteristic_description/tool_chain_datakit.md)是基于Web的openGauss的可视化的平台系统，提供[基础运维](../datakit/base_ops/datakit_base_ops.md)、[实例监控](../datakit/observability_instance/instance_monitoring.md)、[告警监控](../datakit/datakit_alarm_mointor.md)、[业务开发](../datakit/data_studio/datakit_business_development.md)、[智能诊断](../datakit/datakit_intelligent_diagnosis.md)、[兼容性评估](../datakit/compatibility_assessment.md)等能力。
-    - 支持[MySQL到openGauss的迁移能力](../datakit/datakit_data_migration.md)、[PostgreSQL到openGauss的迁移能力](../datakit/datakit_postgresql_migration.md)，包括全量/增量数据迁移、全量/增量数据校验、反向迁移等能力。
+    - 支持[MySQL到openGauss的迁移能力](../datakit/datakit_mysql_migration.md)、[PostgreSQL到openGauss的迁移能力](../datakit/datakit_postgresql_migration.md)，包括全量/增量数据迁移、全量/增量数据校验、反向迁移等能力。
     - 支持[流量录制回放](../datakit/datakit_workload_replay.md)，录制MySQL客户端的业务SQL，然后在openGauss端进行回放。回放结果会输出慢SQL信息和失败SQL信息。
 
 - 易运维

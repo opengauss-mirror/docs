@@ -1,1 +1,0 @@
-# SQL Structure and Syntax

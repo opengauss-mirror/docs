@@ -135,6 +135,10 @@ sections:
             href: ./resource_pool_storage_dual_cluster_installation_failure_due_to_abnormal_disk_array_write_permissions.md
           - label: 因CM盘符不一致导致安装启动失败的问题
             href: ./installation_startup_failure_due_to_inconsistent_cm_drive_letters.md
+          - label: 磁盘权限问题
+            href: ./disk_permission_incorrect.md
+          - label: 环境未清理
+            href: ./environment_not_clean.md             
       - label: 资源池化企业版使用阶段问题
         sections:
           - label: 因hostname文件权限异常导致设置参数失败的问题
@@ -274,7 +278,23 @@ sections:
           - label: 因CM不满足多数派原则导致集群无法使用的问题
             href: ./cluster_unusable_due_to_cm_not_meeting_the_majority_principle.md
           - label: 一主两备集群停掉两个节点数据库异常
-            href: ./database_anomaly_in_a_one_primary_two_standby_cluster_after_shutting_down_two_nodes.md            
+            href: ./database_anomaly_in_a_one_primary_two_standby_cluster_after_shutting_down_two_nodes.md  
+          - label: 系统重启后磁盘无权限问题
+            href: ./after_system_restart_disk_permission_issue_persists.md
+          - label: cm_ctl stop集群失败
+            href: ./cm_ctl_stop_cluster_failure.md       
+          - label: 数据库启动失败
+            href: ./database_start_failed.md       
+          - label: 数据库重启失败
+            href: ./database_restart_failed.md       
+          - label: 节点启动失败
+            href: ./failed_to_start_the_node.md       
+          - label: om_monitor进程启动未成功
+            href: ./om_monitor_process_failed_to_start_success.md
+          - label: 主节点降备
+            href: ./primary_node_demotion.md    
+          - label: 因DMS端口被占用导致reform失败的问题
+            href: ./reform_failure_due_to_dms_port_being_occupied.md                                 
       - label: 资源池化卸载阶段问题
         sections:
           - label: 因部分目录无权限导致卸载失败问题
