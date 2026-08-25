@@ -18,11 +18,16 @@ This document describes how to use the DBeaver client tool to connect to and ope
 
 2. Configure the user encryption mode.
 
-   Change the value of the system parameter [password_encryption_type](https://docs.opengauss.org/en/docs/latest/database_reference/security_and_authentication_postgresql_conf.html#password_encryption_type) so that the database uses the MD5 encryption mode.
+   This example uses the MD5 authentication method, which requires the database to store MD5 password digests. If the MD5 authentication method needs to be used in a controlled test environment, change the value of the system parameter [password_encryption_type](https://docs.opengauss.org/en/docs/latest/database_reference/security_and_authentication_postgresql_conf.html#password_encryption_type) to 0.
 
    ```sql
    ALTER SYSTEM SET password_encryption_type TO 0;
    ```
+
+   > [!WARNING]
+   >
+   > - password_encryption_type is a global parameter. After it is set to 0, the passwords of all users created or modified subsequently are encrypted using MD5. MD5 is a weak encryption algorithm and will reduce the password security of the entire database. Therefore, perform this operation only in a controlled test environment. Do not perform this operation in the production environment.
+   > - Before the change, run `SHOW password_encryption_type;` to record the original value. After the test is complete, restore the original value in a timely manner, for example, `ALTER SYSTEM SET password_encryption_type TO original_value;`, and then change the password of test_user again so that the new password is encrypted using the restored encryption mode.
 
 3. Create a connection user.
 
@@ -36,11 +41,7 @@ This document describes how to use the DBeaver client tool to connect to and ope
 
 4. Grant permissions to the user.
 
-   In this example, the administrator permissions are granted directly. In the actual production environment, control permissions in a fine-grained manner based on service requirements.
-
-   ```sql
-   grant all privileges to test_user;
-   ```
+   In this example, test_user creates and queries tables only in its own schema, and no additional permissions are required. In the actual production environment, follow the principle of least privilege and grant only the permissions required by services. Do not grant administrator permissions (such as `grant all privileges`) to a common connection user.
 
 5. Exit gsql.
 
@@ -55,13 +56,18 @@ By default, openGauss prohibits remote connections. You need to manually configu
 1. Add a client authentication rule.
 
    ```bash
-   gs_guc set -N all -I all -h "host all test_user 0.0.0.0/0 md5"
+   gs_guc set -N all -I all -h "host all test_user 192.168.0.0/24 md5"
    ```
 
    > [!NOTE]
    >
    > - test_user is the username for connecting to the database.
+   > - 192.168.0.0/24 is an example client network segment. Replace it with the actual IP address or network segment of the client that needs to access the database.
    > - Remote connections cannot use the initial user omm.
+
+   > [!WARNING]
+   >
+   > In the production environment, do not set the network segment to 0.0.0.0/0 (allowing access from any IP address). Otherwise, database accounts are exposed to the entire network, which significantly expands the attack surface. Configure only the controlled client IP addresses or network segments that actually need to access the database.
 
 2. Restart openGauss for the configuration to take effect.
 
