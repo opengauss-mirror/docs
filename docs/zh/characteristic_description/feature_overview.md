@@ -493,6 +493,9 @@
         <td><a href="./postgresql_opengauss_migration_tool_debezium_connector_postgres.md">PostgreSQL迁移</a></td>
     </tr>
     <tr>
+ 	    <td><a href="./oracle_ograc_migration_tool.md">Oracle2OGRAC迁移工具</a></td>
+    </tr>
+    <tr>
         <td><a href="./data_check_tool_gs_datacheck.md">数据校验gs_datacheck</a></td>
     </tr>
     <tr>
