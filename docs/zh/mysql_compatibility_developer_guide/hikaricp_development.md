@@ -437,7 +437,7 @@ id: 6, name: jerry, age: 23
 
 ## 五类标准 SQL 操作示例
 
-以下按 DDL / DML / DQL / DCL / TCL 五类分类，给出通过 HikariCP + MySQL Connector/J 经 dolphin MySQL 协议操作 openGauss B 兼容库的完整示例。每类包含核心关键字、典型语句、Java 代码片段及实测自验结果。
+以下按 DDL / DML / DQL / DCL / TCL 五类分类，给出通过 HikariCP + MySQL Connector/J 经 dolphin MySQL 协议操作 openGauss B 兼容库的完整示例。每类包含核心关键字、典型语句与 Java 代码片段。
 
 ### 操作分类速查
 
@@ -482,16 +482,6 @@ stmt.executeUpdate("DROP TABLE sql_category_test_2");
 // CREATE TABLE AS SELECT 从查询结果创建新表
 stmt.executeUpdate("CREATE TABLE sql_category_test_2 AS SELECT name, age FROM sql_category_test WHERE age > 20");
 ```
-
-自验结果（openGauss 7.0.0-RC3 + dolphin 5.2）：
-
-- [DDL-01] CREATE TABLE 执行成功（含 SERIAL 主键、VARCHAR、INT、DECIMAL、TIMESTAMP 字段） PASS
-- [DDL-02] CREATE INDEX 执行成功 PASS
-- [DDL-03] ALTER TABLE ADD COLUMN 执行成功 PASS
-- [DDL-04] ALTER TABLE RENAME COLUMN 执行成功 PASS
-- [DDL-05] TRUNCATE TABLE 执行成功，清空后行数=0 PASS
-- [DDL-06] DROP TABLE 执行成功 PASS
-- [DDL-07] CREATE TABLE AS SELECT 执行成功 PASS
 
 ### DML：数据操纵
 
@@ -544,14 +534,6 @@ try (PreparedStatement ps = conn.prepareStatement(
 }
 ```
 
-自验结果：
-
-- [DML-01] 单行 INSERT 影响行数=1 PASS
-- [DML-02] 批量 INSERT 3 行影响总行数=3 PASS
-- [DML-03] UPDATE 影响行数=1，确认更新后字段值正确 PASS
-- [DML-04] DELETE 影响行数=3（所有 BatchUser*） PASS
-- [DML-05] INSERT 后获取到自增 id PASS
-
 ### DQL：数据查询
 
 核心操作包括全量查询、条件过滤（WHERE）、排序分页（ORDER BY + LIMIT）、聚合函数（COUNT/SUM/AVG/MIN/MAX）、分组聚合（GROUP BY + HAVING）、去重（DISTINCT）和子查询。
@@ -585,19 +567,9 @@ rs = stmt.executeQuery("SELECT name, age FROM sql_category_test "
         + "WHERE age > (SELECT AVG(age) FROM sql_category_test) ORDER BY age");
 ```
 
-自验结果：
-
-- [DQL-01] SELECT * 返回 N 行，逐行输出 PASS
-- [DQL-02] WHERE 条件过滤返回匹配行数 PASS
-- [DQL-03] TOP 3 by score DESC 排序正确 PASS
-- [DQL-04] 聚合函数 COUNT/SUM/AVG/MIN/MAX 结果正确 PASS
-- [DQL-05] GROUP BY 分组聚合结果正确 PASS
-- [DQL-06] DISTINCT 去重返回唯一值列表 PASS
-- [DQL-07] 子查询返回高于平均值的记录 PASS
-
 ### DCL：数据控制
 
-核心操作包括授予权限（GRANT）、收回权限（REVOKE）和查询当前用户权限信息。DCL 操作需要当前用户具备相应权限（如超级用户或对象属主），部分场景下可能因权限不足返回 WARN 而非 PASS，属正常行为。
+核心操作包括授予权限（GRANT）、收回权限（REVOKE）和查询当前用户权限信息。DCL 操作需要当前用户具备相应权限（如超级用户或对象属主），部分场景下可能因权限不足返回 WARN，属正常行为。
 
 ```java
 // 授予表级 SELECT 权限
@@ -615,13 +587,6 @@ ResultSet rs = stmt.executeQuery(
         + "WHERE table_name = 'sql_category_test' AND grantee = CURRENT_USER");
 while (rs.next()) { String type = rs.getString("privilege_type"); }
 ```
-
-自验结果：
-
-- [DCL-01] GRANT SELECT 执行成功（若已拥有则 WARN） PASS/WARN
-- [DCL-02] GRANT 多权限执行成功 PASS/WARN
-- [DCL-03] REVOKE 执行成功 PASS/WARN
-- [DCL-04] 当前用户权限查询完成 PASS
 
 > [!NOTE]
 > DCL 的 GRANT/REVOKE 在 dolphin MySQL 协议下映射为 openGauss 内部权限管理。普通用户对自身创建的表通常已有默认权限，重复授权可能返回 INFO 级提示；若当前用户非超级用户且无 GRANT OPTION，则 REVOKE 可能被拒绝并返回 WARN。这些行为不影响业务正常使用。
@@ -661,13 +626,6 @@ if (rs.next()) String isolation = rs.getString("iso"); // 如 READ-COMMITTED
 conn.setAutoCommit(true);
 ```
 
-自验结果：
-
-- [TCL-01] COMMIT 后数据可见，行数=1 PASS
-- [TCL-02] ROLLBACK 后数据不存在，行数=0 PASS
-- [TCL-03] ROLLBACK TO SAVEPOINT 后保留点数据存在、回滚段数据消失 PASS
-- [TCL-04] 事务隔离级别查询成功（如 READ-COMMITTED） PASS
-
 ### 并发连接测试
 
 启动多个线程同时从 HikariCP 连接池获取连接并执行完整的增删改查事务，验证并发场景下连接不泄漏、SQL 正确执行。
@@ -693,24 +651,6 @@ startGate.countDown(); // 所有线程同时开始
 executor.awaitTermination(30, TimeUnit.SECONDS);
 // passed.get() == threadCount 即全部通过
 ```
-
-自验结果：
-
-- 10 个并发 worker 同时持连接执行 insert/select/update/delete/commit
-- 通过 10/10，失败 0，线程池正常终止 PASS
-
-### 五类操作自验结论
-
-| 分类 | 操作类型 | 验证项数 | 结果 |
-|------|---------|---------|------|
-| DDL | CREATE / ALTER / DROP / TRUNCATE / CTAS / INDEX | 7 | PASS |
-| DML | INSERT（单行+批量）/ UPDATE / DELETE / RETURNING | 5 | PASS |
-| DQL | SELECT / WHERE / ORDER BY / 聚合 / GROUP BY / DISTINCT / 子查询 | 7 | PASS |
-| DCL | GRANT / REVOKE / 权限查询 | 4 | PASS |
-| TCL | COMMIT / ROLLBACK / SAVEPOINT / 隔离级别 | 4 | PASS |
-| 并发 | 10 worker 同时持连接执行完整事务 | 1 | PASS |
-
-全部五类 SQL 操作 + 并发连接在 openGauss 7.0.0-RC3（dolphin 5.2）上通过 HikariCP + MySQL Connector/J 经 dolphin MySQL 协议验证通过。完整可运行验证程序见 `examples` 仓 `OpengaussCompatibility2hikari/src/main/java/com/linyu/ospp/SqlCategoryVerificationRunner.java`，实测输出见同目录下 `五类SQL操作自验清单.txt`。
 
 ## JDK 与 HikariCP 版本兼容
 
@@ -787,7 +727,7 @@ openGauss 在 B 兼容库开启 dolphin 后，由 dolphin 插件在 `dolphin_ser
 - 连接池上限等待（不突破上限）：先借满 `maximumPoolSize`（10）条连接，再申请第 11 条；验证第 11 条不会突破上限，而是阻塞等待空闲连接，释放 1 条后第 11 条恢复并成功执行 SQL。
 - 真实并发数据库操作（非仅建连）：启动 10 个 worker，每个 worker 持有自己的连接并真实执行 `insert / select / update / select / delete / commit`，证明并发验证端到端完成数据库读写，而非只拿到连接。
 
-完整用例、连接池参数与实测输出（含 `DATABASE()`/`current_schema()` 库名↔schema 映射、dolphin 配置、事务提交等 13 项）见 `examples` 仓该工程的 `README.md` 与 `openGauss端-验证清单.txt` / `spring端-通过清单.txt`。
+完整用例与连接池参数配置见 `examples` 仓该工程的 `README.md`。
 
 ## 与 Spring Boot 集成
 
