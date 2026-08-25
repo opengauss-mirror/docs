@@ -307,3 +307,7 @@ sections:
                 href: ./dms_component_version_number_error.md
               - label: dssserver端口号错误
                 href: ./dssserver_port_number_error.md
+              - label: ss_enable_ondemand_recovery设置失败
+                href: ./ss_enable_ondemand_recovery_set_failed.md
+              - label: 设置shared_buffers后备节点manually stopped
+                href: ./set_shared_buffers_backup_node_manually_stopped.md

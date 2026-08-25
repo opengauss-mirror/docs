@@ -329,6 +329,20 @@ sections:
         href: ./spqplugin.md
       - label: GUC参数说明
         href: ./spqplugin_guc_parameters.md
+      - label: CREATE INDEX
+        href: ./spqplugin-CREATE-INDEX.md
+      - label: DELETE
+        href: ./spqplugin-DELETE.md
+      - label: DML
+        href: ./spqplugin-DML.md
+      - label: INSERT
+        href: ./spqplugin-INSERT.md
+      - label: SELECT
+        href: ./spqplugin-SELECT.md 
+      - label: SQL
+        href: ./spqplugin-SQL.md
+      - label: UPDATE
+        href: ./spqplugin-UPDATE.md
   - label: shark Extension
     href: ./shark.md
   - label: shark语法介绍

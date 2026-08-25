@@ -617,6 +617,8 @@ sections:
                 href: ./dbe_pldebugger_print_var.md
               - label: DBE_PLDEBUGGER.info_code
                 href: ./dbe_pldebugger_info_code.md
+              - label: DBE_PLDEBUGGER.info_locals
+                href: ./dbe_pldebugger_info_locals.md                
               - label: DBE_PLDEBUGGER.step
                 href: ./dbe_pldebugger_step.md
               - label: DBE_PLDEBUGGER.add_breakpoint
@@ -1193,6 +1195,8 @@ sections:
             href: ./row_store_compression_system_functions.md
       - label: Statistics Information Functions
         href: ./statistics_information_functions.md
+      - label: Large Object Operation Function
+        href: ./large_object_operation_functions.md        
       - label: Trigger Functions
         href: ./trigger_functions.md
       - label: Event Trigger Functions

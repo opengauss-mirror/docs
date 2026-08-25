@@ -4,7 +4,7 @@ sections:
   - label: 概述
     href: ./datakit.md
   - label: MySQL数据迁移
-    href: ./datakit_data_migration.md
+    href: ./datakit_mysql_migration.md
   - label: PostgreSQL数据迁移
     href: ./datakit_postgresql_migration.md
   - label: Elasticsearch和Milvus数据迁移
@@ -18,8 +18,9 @@ sections:
   - label: 基础运维
     href: ./base_ops/datakit_base_ops.md
   - label: 业务开发
-    href: ./data_studio/datakit_business_development.md
     sections: 
+      - label: 业务开发-用户操作手册
+        href: ./data_studio/datakit_business_development.md 
       - label: 连接信息
         href: ./data_studio/connection_information.md
       - label: 表

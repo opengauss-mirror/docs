@@ -163,6 +163,8 @@ sections:
                 href: ./checking_the_number_of_database_connections.md
               - label: SSL证书管理
                 href: ./ssl_certificate_management.md
+              - label: 主备证书认证配置
+                href: ./active_and_standby_certificate_authentication.md                
           - label: 管理用户及权限
             sections:
               - label: 默认权限机制
