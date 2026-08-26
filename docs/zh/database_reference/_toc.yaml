@@ -29,6 +29,8 @@ sections:
             href: ./background_writer.md
           - label: 异步IO
             href: ./asynchronous_i_o_operations.md
+          - label: Memoize 使用
+            href: ./memoize_example.md  
       - label: 预写式日志
         sections:
           - label: 设置

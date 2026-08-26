@@ -56,7 +56,7 @@ sections:
       - label: Parallel Logical Decoding
         href: ./parallel_logical_decoding.md
       - label: DCF
-        href: ../database_administration_guide/dcf.md         
+        href: ./dcf.md         
       - label: CM
         href: ./cm.md
       - label: Global SysCache
@@ -150,7 +150,7 @@ sections:
       - label: JDBC Client Load Balancing and Read/Write Isolation
         href: ./jdbc_client_load_balancing_and_read_write_isolation.md
       - label: In-place Update Storage Engine
-        href: ../database_administration_guide/in_place_update_storage_engine.md           
+        href: ./in_place_update_storage_engine.md           
       - label: Publication-Subscription
         href: ./publication_subscription.md
       - label: Foreign Key Lock Enhancement
