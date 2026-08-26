@@ -141,6 +141,8 @@ sections:
                 href: ./mot_durability_concepts.md
               - label: MOT恢复概念
                 href: ./mot_recovery_concepts.md
+              - label: MOT检查点概念
+                href: ./mot_checkpoint_concepts.md                
               - label: MOT查询原生编译（JIT）
                 href: ./mot_query_native_compilation_jit.md
               - label: 对比：磁盘与MOT
@@ -195,6 +197,8 @@ sections:
                 href: ./querying_audit_results.md
               - label: 维护审计日志
                 href: ./maintaining_audit_logs.md
+              - label: 统一审计策略概述
+                href: ./overview_of_unified_audit_strategy.md                
               - label: 设置文件权限安全策略
                 href: ./configuring_file_permission_security_policies.md
           - label: 设置账本数据库
