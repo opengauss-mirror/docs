@@ -153,8 +153,8 @@ sections:
             href: ./comparison_disk_vs_mot.md
   - label: Foreign Data Wrapper
     sections: 
-      - label: Overview
-        href: ./foreign_data_wrapper.md    
+      - label: oracle_fdw
+        href: ./oracle_fdw.md    
       - label: mysql_fdw
         href: ./mysql_fdw.md
       - label: postgres_fdw

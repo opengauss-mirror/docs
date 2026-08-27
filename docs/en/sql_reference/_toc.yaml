@@ -1435,7 +1435,7 @@ sections:
             href: ./snowball_dictionary.md
       - label: Configuration Examples
         href: ./configuration_examples.md
-      - label: 测试和调试文本搜索
+      - label: Testing and Debugging Text Search
         sections:
           - label: Testing a Configuration
             href: ./testing_a_configuration.md

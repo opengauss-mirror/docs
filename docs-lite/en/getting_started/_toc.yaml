@@ -1,6 +1,8 @@
 label: Quick Start
 isManual: true
 sections:
+  - label: Overview
+    href: ./getting_started.md
   - label: Understanding openGauss
     href: ./understanding_opengauss.md
   - label: Installation

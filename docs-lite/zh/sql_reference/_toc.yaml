@@ -1446,13 +1446,13 @@ sections:
       - label: 控制文本搜索
         sections:
           - label: 解析文档
-            href: ./parse_document.md
+            href: ./parsing_documents.md
           - label: 解析查询
-            href: ./parse_query.md
+            href: ./parsing_queries.md
           - label: 排序查询结果
-            href: ./sort_the_query_results.md
+            href: ./ranking_search_results.md
           - label: 高亮搜索结果
-            href: ./highlight_search_results.md
+            href: ./highlighting_results.md
       - label: 附加功能
         sections:
           - label: 处理tsvector
