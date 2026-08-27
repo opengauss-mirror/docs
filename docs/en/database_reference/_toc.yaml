@@ -249,6 +249,8 @@ sections:
           href: ./gs_wlm_session_query_info_all.md
         - label: GS_WLM_USER_RESOURCE_HISTORY
           href: ./gs_wlm_user_resource_history.md
+        - label: GS_WLM_USER_SESSION_INFO
+          href: ./gs_wlm_user_session_info.md
         - label: PG_AGGREGATE
           href: ./pg_aggregate.md
         - label: PG_AM
@@ -2425,6 +2427,8 @@ sections:
           href: ./gauss-53500----gauss-53599.md
         - label: GAUSS-53600 -- GAUSS-53699
           href: ./gauss-53600----gauss-53699.md
+        - label: GAUSS-53700 -- GAUSS-53799
+          href: ./gauss-53700----gauss-53799.md
 - label: Functions of openGauss Executable Scripts
   href: ./functions_of_opengauss_executable_scripts.md
 - label: Communication Matrix

@@ -19,6 +19,10 @@ sections:
         href: ./smp_for_parallel_execution.md
       - label: Xlog no Lock Flush
         href: ./xlog_no_lock_flush.md
+      - label: OCK加速数据传输
+        href: ./ock_accelerated_data_transmission.md
+      - label: 一站式安装数据库
+        href: ./one_stop_installation_database.md        
       - label: SCRLock加速分布式锁
         href: ./scrlock.md
       - label: 大页内存
@@ -200,7 +204,9 @@ sections:
           - label: gms_xmlparser高级包
             href: ./gms_xmlparser_advanced_package.md
           - label: gms_xmlgen高级包
-            href: ./gms_xmlgen_advanced_package.md            
+            href: ./gms_xmlgen_advanced_package.md 
+          - label: gms_lob高级包
+            href: ./gms_lob_advanced_package.md                        
   - label: 应用开发接口
     sections:
       - label: 支持标准SQL
@@ -233,6 +239,8 @@ sections:
             href: ./parameter_tuning_and_diagnosis.md
           - label: 慢SQL发现
             href: ./slow_sql_statement_discovery.md
+      - label: "DB4AI: 数据库驱动AI"
+        href: ./db4ai_database_driven_ai.md
       - label: ABO优化器
         sections:
           - label: 智能基数估计

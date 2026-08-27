@@ -46,7 +46,7 @@ sections:
       - label: High Availability Based on the Paxos Protocol
         href: ./high_availability_based_on_the_paxos_protocol.md   
       - label: Cascaded Standby Server
-        href: ../database_administration_guide/cascaded_standby_node.md   
+        href: ./cascaded_standby_node.md   
       - label: Delayed Replay
         href: ./delayed_replay.md 
       - label: Delaying Entering the Maximum Availability Mode
