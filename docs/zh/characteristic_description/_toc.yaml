@@ -127,6 +127,8 @@ sections:
         href: ./resource_pooling_operator_offloading.md
       - label: 资源池化多机并行
         href: ./resource_pooling_multi_machine_paralleism.md
+      - label: 资源池化灵衢内存语义加速
+        href: ./resource_pooling_ub_memory_semantic_acceleration.md
   - label: 企业级特性
     sections:
       - label: 函数及存储过程支持
