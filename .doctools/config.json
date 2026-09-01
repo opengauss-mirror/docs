@@ -69,6 +69,12 @@
         }
       }
     },
+    "opengauss/oGRAC-docs": {
+      "extendConfig": "base",
+      "branches": {
+
+      }
+    },
     "opengauss/openGauss-workbench": {
       "extendConfig": "base",
       "branches": {
