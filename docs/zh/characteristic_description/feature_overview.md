@@ -282,6 +282,9 @@
         <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/cm_syssentry_fault_detection.html">CM SysSentry故障检测</a></td>
     </tr>
     <tr>
+        <td><a href="./cms_disk_usage_readonly_protection.md">CMS磁盘阈值管理检测</a></td>
+    </tr>
+    <tr>
         <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/mes_ub_shared_memory_communication_optimization.html">MES灵衢内存语义通信优化</a></td>
     </tr>
     <tr>
