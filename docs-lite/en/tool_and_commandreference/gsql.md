@@ -1155,7 +1155,17 @@ For details about meta-commands, see  [Table 1](#en-us_topic_0059778645_en-us_to
 </tr>
 <tr id="en-us_topic_0059778645_r47448e8d5f694bb8a3cbe2198bb2e5fb"><td class="cellrowborder" valign="top" width="18.55%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0059778645_ae1970eb0493b419ba68072716fd91574"><a name="en-us_topic_0059778645_ae1970eb0493b419ba68072716fd91574"></a><a name="en-us_topic_0059778645_ae1970eb0493b419ba68072716fd91574"></a>\g [FILE] or ;</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.31%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059778645_aee0f1f60a7ab41f6a053d54c43cbde76"><a name="en-us_topic_0059778645_aee0f1f60a7ab41f6a053d54c43cbde76"></a><a name="en-us_topic_0059778645_aee0f1f60a7ab41f6a053d54c43cbde76"></a>Performs a query operation and sends the result to a file or pipe.</p>
+<td class="cellrowborder" valign="top" width="52.31%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059778645_aee0f1f60a7ab41f6a053d54c43cbde76"><a name="en-us_topic_0059778645_aee0f1f60a7ab41f6a053d54c43cbde76"></a><a name="en-us_topic_0059778645_aee0f1f60a7ab41f6a053d54c43cbde76"></a>Performs a query operation and sends the result to a file or pipe.
+
+NOTICE: Can't use \g in parallel mode.
+
+```sql
+\parallel on
+Parallel is on with scale default 1024.
+select 1 as a \g
+Sending the query buffer by a meta-command is not supported in parallel mode.
+```
+</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.14%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059778645_a1d8ad00542514458a3e2d2d6f73f0551"><a name="en-us_topic_0059778645_a1d8ad00542514458a3e2d2d6f73f0551"></a><a name="en-us_topic_0059778645_a1d8ad00542514458a3e2d2d6f73f0551"></a>-</p>
 </td>
@@ -1171,7 +1181,7 @@ For details about meta-commands, see  [Table 1](#en-us_topic_0059778645_en-us_to
 </td>
 <td class="cellrowborder" valign="top" width="52.31%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059778645_a54a7382266914ba5979907a7f48880b7"><a name="en-us_topic_0059778645_a54a7382266914ba5979907a7f48880b7"></a><a name="en-us_topic_0059778645_a54a7382266914ba5979907a7f48880b7"></a>Controls the parallel execution function.</p>
 <a name="en-us_topic_0059778645_u0619712b75054bed8eae2b80ed89a7a6"></a><a name="en-us_topic_0059778645_u0619712b75054bed8eae2b80ed89a7a6"></a><ul id="en-us_topic_0059778645_u0619712b75054bed8eae2b80ed89a7a6"><li><strong id="b14471550426169"><a name="b14471550426169"></a><a name="b14471550426169"></a>on</strong>: The switch is enabled and the maximum number of concurrently executed tasks is <strong id="b14458528926169"><a name="b14458528926169"></a><a name="b14458528926169"></a>num</strong>.</li><li><strong id="b842352706115011"><a name="b842352706115011"></a><a name="b842352706115011"></a>off</strong>: This switch is disabled.</li></ul>
-<div class="note" id="en-us_topic_0059778645_n17e1b3d4e9d547dcb2f0dd42793c3efa"><a name="en-us_topic_0059778645_n17e1b3d4e9d547dcb2f0dd42793c3efa"></a><a name="en-us_topic_0059778645_n17e1b3d4e9d547dcb2f0dd42793c3efa"></a><span class="notetitle"> NOTE: </span><div class="notebody"><a name="en-us_topic_0059778645_u7c8bd7f404534e31ae0e78702759e31b"></a><a name="en-us_topic_0059778645_u7c8bd7f404534e31ae0e78702759e31b"></a><ul id="en-us_topic_0059778645_u7c8bd7f404534e31ae0e78702759e31b"><li>Parallel execution is not allowed in a running transaction and a transaction is not allowed to be started during parallel execution.</li><li>Parallel execution of <strong id="b842352706143226"><a name="b842352706143226"></a><a name="b842352706143226"></a>\d</strong> meta-commands is not allowed.</li><li>If <strong id="b3054559786169"><a name="b3054559786169"></a><a name="b3054559786169"></a>SELECT</strong> statements are run concurrently, customers can accept the problem that the return results are displayed randomly but they cannot accept it if a core dump or process response failure occurs.</li><li><strong id="b842352706143419"><a name="b842352706143419"></a><a name="b842352706143419"></a>SET</strong> statements are not allowed in concurrent tasks because they may cause unexpected results.</li><li>Temporary tables cannot be created in parallel. If temporary tables are required, create them before parallel execution is enabled, and use them only in the parallel execution. Temporary tables cannot be created in parallel execution.</li><li>When <strong id="b12712348456169"><a name="b12712348456169"></a><a name="b12712348456169"></a>\parallel</strong> is executed, <em id="i14551669926169"><a name="i14551669926169"></a><a name="i14551669926169"></a>num</em> independent gsql processes can be connected to the database server.</li><li>The total duration of all <strong id="b842352706103617"><a name="b842352706103617"></a><a name="b842352706103617"></a>\parallel</strong> tasks cannot exceed <strong id="b5474144243219"><a name="b5474144243219"></a><a name="b5474144243219"></a>session_timeout</strong>. Otherwise, the connection may fail during concurrent execution.</li><li>One or more commands following <strong id="b2964654162414"><a name="b2964654162414"></a><a name="b2964654162414"></a>\parallel on</strong> will be executed only after <strong id="b13948190112511"><a name="b13948190112511"></a><a name="b13948190112511"></a>\parallel off</strong> is executed. Therefore, <strong id="b361512511"><a name="b361512511"></a><a name="b361512511"></a>\parallel on</strong> must be followed by <strong id="b184603812253"><a name="b184603812253"></a><a name="b184603812253"></a>\parallel off</strong>. Otherwise, the commands following <strong id="b070091352511"><a name="b070091352511"></a><a name="b070091352511"></a>\parallel on</strong> cannot be executed.</li></ul>
+<div class="note" id="en-us_topic_0059778645_n17e1b3d4e9d547dcb2f0dd42793c3efa"><a name="en-us_topic_0059778645_n17e1b3d4e9d547dcb2f0dd42793c3efa"></a><a name="en-us_topic_0059778645_n17e1b3d4e9d547dcb2f0dd42793c3efa"></a><span class="notetitle"> NOTE: </span><div class="notebody"><a name="en-us_topic_0059778645_u7c8bd7f404534e31ae0e78702759e31b"></a><a name="en-us_topic_0059778645_u7c8bd7f404534e31ae0e78702759e31b"></a><ul id="en-us_topic_0059778645_u7c8bd7f404534e31ae0e78702759e31b"><li>Parallel execution is not allowed in a running transaction and a transaction is not allowed to be started during parallel execution.</li><li>Parallel execution of <strong id="b842352706143226"><a name="b842352706143226"></a><a name="b842352706143226"></a>\d</strong> meta-commands is not allowed.</li><li>If <strong id="b3054559786169"><a name="b3054559786169"></a><a name="b3054559786169"></a>SELECT</strong> statements are run concurrently, customers can accept the problem that the return results are displayed randomly but they cannot accept it if a core dump or process response failure occurs.</li><li><strong id="b842352706143419"><a name="b842352706143419"></a><a name="b842352706143419"></a>SET</strong> statements are not allowed in concurrent tasks because they may cause unexpected results.</li><li>Temporary tables cannot be created in parallel. If temporary tables are required, create them before parallel execution is enabled, and use them only in the parallel execution. Temporary tables cannot be created in parallel execution.</li><li>When <strong id="b12712348456169"><a name="b12712348456169"></a><a name="b12712348456169"></a>\parallel</strong> is executed, <em id="i14551669926169"><a name="i14551669926169"></a><a name="i14551669926169"></a>num</em> independent gsql processes can be connected to the database server.</li><li>The total duration of all <strong id="b842352706103617"><a name="b842352706103617"></a><a name="b842352706103617"></a>\parallel</strong> tasks cannot exceed <strong id="b5474144243219"><a name="b5474144243219"></a><a name="b5474144243219"></a>session_timeout</strong>. Otherwise, the connection may fail during concurrent execution.</li><li>One or more commands following <strong id="b2964654162414"><a name="b2964654162414"></a><a name="b2964654162414"></a>\parallel on</strong> will be executed only after <strong id="b13948190112511"><a name="b13948190112511"></a><a name="b13948190112511"></a>\parallel off</strong> is executed. Therefore, <strong id="b361512511"><a name="b361512511"></a><a name="b361512511"></a>\parallel on</strong> must be followed by <strong id="b184603812253"><a name="b184603812253"></a><a name="b184603812253"></a>\parallel off</strong>. Otherwise, the commands following <strong id="b070091352511"><a name="b070091352511"></a><a name="b070091352511"></a>\parallel on</strong> cannot be executed.</li><li>Can't use \g or \gset after \parallel on.</li></ul>
 </div></div>
 </td>
 <td class="cellrowborder" valign="top" width="29.14%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059778645_a90d6c46b05f445bda0c611a7239c2cdd"><a name="en-us_topic_0059778645_a90d6c46b05f445bda0c611a7239c2cdd"></a><a name="en-us_topic_0059778645_a90d6c46b05f445bda0c611a7239c2cdd"></a>The default value of <em id="i842352697113238"><a name="i842352697113238"></a><a name="i842352697113238"></a>num</em> is <strong id="b84235270614356"><a name="b84235270614356"></a><a name="b84235270614356"></a>1024</strong>.</p>
@@ -2067,21 +2077,21 @@ Store the query results in a variable. There's no semicolon at the end of the qu
 
 1. Without a prefix
 
-	```
+	```sql
 	select 'hello' as var1, 10 as var2 \gset
 	\echo :var1 :var2
 	hello 10
 	```
 2. Has a prefix
 
-	```
+	```sql
 	select 'hello' as var1, 10 as var2 \gset result_
 	\echo :result_var1 :result_var2
 	hello 10
 	```
 3. The query results must have column names, and they have to be valid, otherwise the assignment will fail.
 
-	```
+	```sql
 	select 1 as b \gset ;
 	attempt to \gset set variable ";b" to 1 failed.
     select 1 \gset
@@ -2089,7 +2099,7 @@ Store the query results in a variable. There's no semicolon at the end of the qu
 	```
 4. It is not possible to assign values to special control variables
 
-	```
+	```sql
  	-- Since openGauss automatically converts to lowercase,
 	-- this error usually won't be triggered unless add quotes.
  	select '%o' as 'PROMPT1' \gset
@@ -2100,6 +2110,14 @@ Store the query results in a variable. There's no semicolon at the end of the qu
  	\echo :prompt1
  	%o
 	```
+5. Can't use \gset in parallel mode
+
+    ```sql
+    \parallel on
+    Parallel is on with scale default 1024.
+    select 1 as a \gset
+    Sending the query buffer by a meta-command is not supported in parallel mode.
+    ```
 <span class="notetitle"> Special Control Variables List： </span><a name="en-us_topic_0237152146_en-us_topic_0059778645_6da475e7fa9c91ea7f"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_6da475e7fa9c91ea7f"></a><ol id="en-us_topic_0237152146_en-us_topic_0059778645_6da475e7fa9c91ea7f"><li>AUTOCOMMIT</li><li>ON_ERROR_STOP</li><li>QUIET</li><li>SINGLELINE</li><li>SINGLESTEP</li><li>FETCH_COUNT</li><li>ECHO</li><li>ECHO_HIDDEN</li><li>ON_ERROR_ROLLBACK</li><li>HISTCONTROL</li><li>PROMPT1</li><li>PROMPT2</li><li>PROMPT3</li><li>VERBOSITY</li><li>RETRY</li></ol>
 </td>
 </tr>
