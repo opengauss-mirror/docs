@@ -47,6 +47,8 @@ sections:
         href: ./logical_replication.md
       - label: 逻辑备份
         href: ./logical_backup.md
+      - label: gs_probackup备份增强
+        href: ./gs_probackup_backup_enhancements.md
       - label: 作业失败自动重试
         href: ./automatic_job_retry_upon_failure.md
       - label: 并行逻辑解码

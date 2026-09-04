@@ -102,6 +102,9 @@
         <td><a href="../database_om_guide/physical_backup_and_restoration.md">物理备份</a></td>
     </tr>
     <tr>
+        <td><a href="./gs_probackup_backup_enhancements.md">gs_probackup备份增强</a></td>
+    </tr>
+    <tr>
         <td><a href="../database_om_guide/ultimate_rto.md">极致RTO</a></td>
     </tr>
     <tr>
