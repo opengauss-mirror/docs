@@ -18,11 +18,16 @@
 
 2. 配置用户加密方式
 
-   修改系统参数 [password_encryption_type](https://docs.opengauss.org/zh/docs/latest/database_reference/security_and_authentication_postgresql_conf.html#password_encryption_type) 值，使数据库采用md5加密方式。
+   本示例采用 MD5 认证方式，要求数据库存储 MD5 密码摘要。如在受控测试环境中确实需要使用 MD5 认证方式，可修改系统参数 [password_encryption_type](https://docs.opengauss.org/zh/docs/latest/database_reference/security_and_authentication_postgresql_conf.html#password_encryption_type) 值为 0。
 
    ```sql
    ALTER SYSTEM SET password_encryption_type TO 0;
    ```
+
+   > [!WARNING]注意
+   >
+   > - password_encryption_type 为全局参数，设置为 0 后，之后新创建或修改密码的所有用户密码都将采用 MD5 加密。MD5 为弱加密算法，会降低整库账号密码安全性，因此仅可在受控测试环境中执行该操作，生产环境禁止修改。
+   > - 修改前请先执行 `SHOW password_encryption_type;` 记录原值，测试完成后及时恢复原值，例如 `ALTER SYSTEM SET password_encryption_type TO 原值;`，并再次修改 test_user 密码，使新密码按恢复后的加密方式加密。
 
 3. 创建连接用户
 
@@ -36,11 +41,7 @@
 
 4. 授予用户权限
 
-   示例中直接赋予管理员权限，实际生产环境请根据业务需求进行细粒度权限控制。
-
-   ```sql
-   grant all privileges to test_user;
-   ```
+   本示例中 test_user 仅在自身 schema 下创建和查询表，无需额外授权。实际生产环境请遵循最小权限原则，仅授予业务所需权限，禁止向普通连接用户授予管理员权限（如 `grant all privileges`）。
 
 5. 退出gsql
 
@@ -55,13 +56,18 @@ openGauss 默认禁止远程连接，需手动配置客户端接入认证后方�
 1. 添加客户端认证规则
 
    ```bash
-   gs_guc set -N all -I all -h "host all test_user 0.0.0.0/0 md5"
+   gs_guc set -N all -I all -h "host all test_user 192.168.0.0/24 md5"
    ```
 
    > [!NOTE]说明
    >
    > - test_user 为数据库连接用户名
+   > - 192.168.0.0/24 为示例客户端网段，请替换为实际需要访问数据库的客户端 IP 地址或网段
    > - 远程连接禁止使用初始化用户 omm
+
+   > [!WARNING]注意
+   >
+   > 生产环境禁止将网段设置为 0.0.0.0/0（放通任意 IP 访问），否则会将数据库账号暴露给全网，显著扩大攻击面。请仅配置实际需要访问的受控客户端 IP 或网段。
 
 2. 重启 openGauss 使配置生效
 
