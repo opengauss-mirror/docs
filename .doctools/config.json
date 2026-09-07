@@ -96,6 +96,7 @@
       }
     },
     "opengauss/openGauss-server": {
+      "docPath": "^(docs|docs-lite)/(zh|en)|^src/gausskernel/storage/access/datavec/(docs|docs-lite)/(zh|en)",
       "extendConfig": "base",
       "branches": {
         "7.0.0-RC3": {
