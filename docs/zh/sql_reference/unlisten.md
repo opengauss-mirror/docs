@@ -30,4 +30,4 @@ UNLISTEN { channel | * };
 
 [NOTIFY](notify.md)
 
-[UNLISTEN](unlisten.md)
+[LISTEN](listen.md)
