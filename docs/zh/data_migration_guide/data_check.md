@@ -98,75 +98,71 @@
 
   ```yaml
   源端服务配置 修改application-source.yml文件
-
- server:
-  port: 9001 # 为校验服务源端web端口，默认可不修改
-  tomcat:
-    threads:
-      max: 10 # tomcat 线程池大小
-logging:
-  config: config/log4j2.xml #校验服务日志配置文件路径 
-spring:
-  check:
-    server-uri: <http://127.0.0.1:9000> #指定校验端服务接口地址 server.port=9000
-    core-pool-size: 5 # 校验并发核心线程数
-    maximum-pool-size: 10 # 校验最大线程数
-    maximum-topic-size: 4  # 校验topic数量
-    maximum-table-slice-size: 10000  # 校验单表记录分片大小
-    extend-maximum-pool-size: 5 # 校验抽取大表扩展线程池大小
-  extract:
-    schema: test # 源端校验schema，mysql为数据库名称
-    databaseType: MS # 指定数据库类型 {MS MySQL| OG openGauss | O oracle}
-    query-dop: 8 # openGauss数据库并行查询参数，当数据库为openGauss时生效
-    dataLoadMode: jdbc # 数据加载模式 当校验连接数据库时，使用JDBC，当与chameleon协同时使用CSV
-    debezium-enable: false # 增量校验开关
-    debezium-topic: data_check_avro_inc_topic_w1 # 增量迁移debezium topic名称
-    debezium-serializer: AvroSerializer #增量数据序列化类型 StringSerializer or AvroSerializer
-    debezium-avro-registry: <http://localhost:8081> # 增量 avro schema registry
-    debezium-groupId: debezium-extract-group # 增量kafkaf分组 debezium topic groupId
-    debezium-time-period: 1 # 增量校验执行周期 单位分钟
-    debezium-num-period: 1000 # 增量校验执行数据变更数量周 期
-
-  kafka:
-    bootstrap-servers: localhost:9092 #为kafka工作地址，默认安装可不修改
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/test?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&allowPublicKeyRetrieval=true
-    # driver-class-name: org.opengauss.Driver # For openGauss
-    # url: # jdbc:opengauss://127.0.0.1:5432/postgres?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC # For openGauss
-    # driver-class-name: oracle.jdbc.OracleDriver
-    # url: jdbc:oracle:thin:@127.0.0.1:1521/TEST
-    username: root # database user
-    password: 'xxxxxx' # database password
-    druid:
-      initial-size: 5 # initialization connection pool size
-      min-idle: 5 # minimum number of connections
-      max-active: 20 # maximum number of connections
-      test-while-idle: true
-      test-on-borrow: true
-      validation-query: "SELECT 1 FROM DUAL"
-      validation-query-timeout: 10000
-      connection-error-retry-attempts: 0
-      break-after-acquire-failure: true
-      max-wait: 6000
-      keep-alive: true
-      min-evictable-idle-time-millis: 600000
-
+   server:
+    port: 9001 # 为校验服务源端web端口，默认可不修改
+    tomcat:
+      threads:
+        max: 10 # tomcat 线程池大小
+  logging:
+    config: config/log4j2.xml #校验服务日志配置文件路径 
+  spring:
+    check:
+      server-uri: <http://127.0.0.1:9000> #指定校验端服务接口地址 server.port=9000
+      core-pool-size: 5 # 校验并发核心线程数
+      maximum-pool-size: 10 # 校验最大线程数
+      maximum-topic-size: 4  # 校验topic数量
+      maximum-table-slice-size: 10000  # 校验单表记录分片大小
+      extend-maximum-pool-size: 5 # 校验抽取大表扩展线程池大小
+    extract:
+      schema: test # 源端校验schema，mysql为数据库名称
+      databaseType: MS # 指定数据库类型 {MS MySQL| OG openGauss | O oracle}
+      query-dop: 8 # openGauss数据库并行查询参数，当数据库为openGauss时生效
+      dataLoadMode: jdbc # 数据加载模式 当校验连接数据库时，使用JDBC，当与chameleon协同时使用CSV
+      debezium-enable: false # 增量校验开关
+      debezium-topic: data_check_avro_inc_topic_w1 # 增量迁移debezium topic名称
+      debezium-serializer: AvroSerializer #增量数据序列化类型 StringSerializer or AvroSerializer
+      debezium-avro-registry: <http://localhost:8081> # 增量 avro schema registry
+      debezium-groupId: debezium-extract-group # 增量kafkaf分组 debezium topic groupId
+      debezium-time-period: 1 # 增量校验执行周期 单位分钟
+      debezium-num-period: 1000 # 增量校验执行数据变更数量周 期
+  
+    kafka:
+      bootstrap-servers: localhost:9092 #为kafka工作地址，默认安装可不修改
+    datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/test?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      # driver-class-name: org.opengauss.Driver # For openGauss
+      # url: # jdbc:opengauss://127.0.0.1:5432/postgres?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC # For openGauss
+      # driver-class-name: oracle.jdbc.OracleDriver
+      # url: jdbc:oracle:thin:@127.0.0.1:1521/TEST
+      username: root # database user
+      password: 'xxxxxx' # database password
+      druid:
+        initial-size: 5 # initialization connection pool size
+        min-idle: 5 # minimum number of connections
+        max-active: 20 # maximum number of connections
+        test-while-idle: true
+        test-on-borrow: true
+        validation-query: "SELECT 1 FROM DUAL"
+        validation-query-timeout: 10000
+        connection-error-retry-attempts: 0
+        break-after-acquire-failure: true
+        max-wait: 6000
+        keep-alive: true
+        min-evictable-idle-time-millis: 600000
   ```
-
+  
   - application-sink.yml
-
-
-  ```yaml
+  ```
   # 目标端服务配置 修改application-sink.yml文件
- server:
+   server:
   port: 9002  # 为校验服务目标端web端口，默认可不修改
   tomcat:
     threads:
       max: 10 # tomcat 线程池大小
-logging:
+  logging:
   config: config/log4j2.xml #校验服务日志配置文件路径 
-spring:
+  spring:
   check:
     server-uri: http://127.0.0.1:9000 #指定校验端服务接口地址 server.port=9000
     core-pool-size: 5 # 校验并发核心线程数
@@ -211,6 +207,8 @@ spring:
       keep-alive: true
       min-evictable-idle-time-millis: 600000 
   ```
+
+
 
 - 安装
 
