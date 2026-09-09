@@ -11,3 +11,5 @@ sections:
     href: ./mybatis_plus_development.md
   - label: 基于Hibernate开发
     href: ./hibernate_development.md
+  - label: 基于mysql-connector-python开发
+    href: ./mysql_connector_development.md
