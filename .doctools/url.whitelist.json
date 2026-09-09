@@ -21,5 +21,6 @@
   "https://repo.openeuler.org/openEuler-{version}/OS/$basearch/",
   "https://gitee.com/$user/openEuler",
   "https://eulercopilot.test.com/.*",
-  "https://authhub.eulercopilot.local(或者您自定义的域名)"
+  "https://authhub.eulercopilot.local(或者您自定义的域名)",
+  "https://authhub.eulercopilot.local"
 ]
