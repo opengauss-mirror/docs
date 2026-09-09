@@ -17,3 +17,5 @@ sections:
     href: ./mysql_connector_development.md
   - label: 基于Django开发
     href: ./django_development.md
+  - label: 基于PyMySQL开发
+    href: ./pymysql_development.md
