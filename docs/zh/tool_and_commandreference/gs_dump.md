@@ -464,7 +464,7 @@ export PGDATABASE=postgres
     
     在使用第三方接口库时可以生成密钥做加密，并将生成密钥打印到终端，以便解密和复用。不能和--with-key同时指定。
 
-- --include-Extension
+- --include-extensions
 
     在转储中包含扩展。
 
