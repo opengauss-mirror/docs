@@ -103,7 +103,7 @@
         {
           "title": "DataVec",
           "desc": "Based on the vector engine of openGauss, it provides storage and retrieval of vector data types.",
-          "href": "/en/docs/latest/datavec/ogmem_introduction.html"
+          "href": "/en/docs/latest/datavec/datavec_overview.html"
         },
         {
           "title": "Resource Pooling",
