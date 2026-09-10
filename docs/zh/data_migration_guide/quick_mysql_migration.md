@@ -82,7 +82,7 @@ portal的安装目录默认为/ops/portal，可根据实际需要更换。
 git clone https://gitcode.com/opengauss/openGauss-migration-portal.git
 ```
 
-2.使用maven命令编译源代码获得portalControl-1.0-SNAPSHOT-exec.jar，并将jar包放在/ops/portal下。
+2.使用maven命令编译源代码获得portalControl-7.0.0-exec.jar，并将jar包放在/ops/portal下。
 
 ```
 mvn clean package -Dmaven.test.skip=true
@@ -440,7 +440,7 @@ sh gs_rep_portal.sh start_plan3 p1 &
 
 然后再次修改配置文件。
 
-使用workspace.id为p2启动第一个迁移计划（这里以启动计划3为例）：
+使用workspace.id为p2启动第二个迁移计划（这里以启动计划3为例）：
 
    ```
 sh gs_rep_portal.sh start_plan3 p2 &

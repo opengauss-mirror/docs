@@ -16,7 +16,7 @@ oG_datasync_full_migration是一个用Java编写的SQLServer到openGauss的离�
 - SQL Server中money和smallmoney数据类型精确到它们所代表的货币单位的万分之一，openGauss的money类型精确到它们所代表的货币单位的百分之一，该参数控制是否迁移货币类型
 - 表和列的注释暂不支持迁移
 - 几何类型（geometry和geography）暂不支持迁移
-- SQL Server的real（4字节）精度约为7位十进制数字，float（8字节）类型约为15~16位十进制数字，openGauss分别为6位和15位，迁移前后可能有有微小差别
+- SQL Server的real（4字节）精度约为7位十进制数字，float（8字节）类型约为15~16位十进制数字，openGauss分别为6位和15位，迁移前后可能有微小差别
 - 由于SQL Server分区表底层均基于Range分区实现，所以目前迁移到openGauss均为Range类型
 - 视图、函数、触发器和存储过程目前仅支持迁移流程，迁移成功还需语法兼容
 
@@ -28,15 +28,15 @@ oG_datasync_full_migration是一个用Java编写的SQLServer到openGauss的离�
 
 ### 安装方法
 
-安装包下载地址：<https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/full-oG_datasync_full_migration-7.0.0rc2.tar.gz>
-其中7.0.0rc2表示当前版本号。
+安装包下载地址：<https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/openGauss-FullReplicate-7.0.0.tar.gz>
+其中7.0.0表示当前版本号。
 下载完成后，解压压缩包
 
 ```
-tar -zxvf oG_datasync_full_migration-7.0.0rc2.tar.gz
+tar -zxvf openGauss-FullReplicate-7.0.0.tar.gz
 ```
 
-解压后的oG_datasync_full_migration文件夹中有一个config文件夹以及一个jar包，config文件夹下存储配置文件模板。
+解压后的openGauss-FullReplicate文件夹中有一个config文件夹以及一个jar包，config文件夹下存储配置文件模板。
 
 ### 配置文件说明
 
