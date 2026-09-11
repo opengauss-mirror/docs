@@ -337,6 +337,9 @@
     <tr>
         <td><a href="https://docs.opengauss.org/zh/docs/latest/datavec/mcp.html">openGauss MCP </a></td>
     </tr>
+    <tr>
+        <td><a href="./low_memory_disk_retrieval.md">超低内存磁盘检索</a></td>
+    </tr>
 </table>
 
 ## 企业级特性

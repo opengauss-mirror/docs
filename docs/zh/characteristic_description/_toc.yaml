@@ -133,6 +133,10 @@ sections:
         href: ./resource_pooling_multi_machine_paralleism.md
       - label: 资源池化灵衢内存语义加速
         href: ./resource_pooling_ub_memory_semantic_acceleration.md
+  - label: 向量数据库
+    sections:
+      - label: 超低内存磁盘检索
+        href: ./low_memory_disk_retrieval.md
   - label: 企业级特性
     sections:
       - label: 函数及存储过程支持
