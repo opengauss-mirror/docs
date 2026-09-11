@@ -114,6 +114,11 @@
           "title": "DataKit",
           "desc": "Effortlessly manage, install, and monitor your openGauss databases and physical machines.",
           "href": "/en/docs/latest/datakit/datakit.html"
+        },
+        {
+          "title": "oGRAC",
+          "desc": "The next-generation oGRAC multi-write architecture provides multi-read and multi-write capabilities.",
+          "href": "/en/docs/latest/ograc/about_ograc/product_description/ograc_overview.html"
         }
       ]
     },
