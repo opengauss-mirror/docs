@@ -66,7 +66,7 @@ portal/
 				debezium-connector-mysql/
 				debezium-connector-opengauss/
 	portal.portId.lock
-	portalControl-1.0-SNAPSHOT-exec.jar
+	portalControl-6.0.0-exec.jar
 	gs_datacheck.sh
 	gs_mysync.sh
 	gs_rep_portal.sh
@@ -86,7 +86,7 @@ The default portal installation directory is **/ops/portal**. You can change it 
 git clone https://gitcode.com/opengauss/openGauss-migration-portal.git
 ```
 
-2. Run the maven command to compile the source code to obtain the **portalControl-1.0-SNAPSHOT-exec.jar** package and save the JAR package to the **/ops/portal** directory.
+2. Run the maven command to compile the source code to obtain the **portalControl-6.0.0-exec.jar** package and save the JAR package to the **/ops/portal** directory.
 
 ```
 mvn clean package -Dmaven.test.skip=true

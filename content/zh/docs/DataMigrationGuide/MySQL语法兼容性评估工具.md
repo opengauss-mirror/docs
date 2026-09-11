@@ -71,7 +71,7 @@ create procedure showWebsite1() begin select * from website; end
 delimiter ;
 ```
 
-2、从mybatis的mapper文件中提取sql，原始xml文件中占位符#{}使用$1,$2...进行替换，占位符${field}直接替换为filed。对于动态sql标签，沿用mybatis原本的提取规则，但并不对动态标签属性进行类型的校验，仅提取静态sql片段。提取规则及举例如下：
+2、从mybatis的mapper文件中提取sql，原始xml文件中占位符#{}使用$1,$2...进行替换，占位符${field}直接替换为field。对于动态sql标签，沿用mybatis原本的提取规则，但并不对动态标签属性进行类型的校验，仅提取静态sql片段。提取规则及举例如下：
 
 - #####  foreach标签
 
@@ -183,7 +183,7 @@ sh start.sh -d [file|collect] -c assessment.properties -o report.html
   
   mysql.password = ********
   mysql.user = mysql
-  mysql.port = 3389
+  mysql.port = 3306
   mysql.host = 127.0.0.1
   #通过mysql数据库端获取sql时，需指定mysql端的库名
   mysql.dbname = test

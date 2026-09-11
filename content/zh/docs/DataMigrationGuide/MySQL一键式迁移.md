@@ -2,7 +2,7 @@
 
 ## 功能介绍
 
-gs_rep_portal是一个用Java编写的，在linux系统上运行的，集成了全量迁移、增量迁移、反向迁移、数据校验的工具。gs_rep_portal支持以上工具的一键式安装上述工具，设定迁移任务，任务根据用户设定的执行计划顺序的调用相应工具完成每个迁移步骤，并能实时展示每个步骤的状态、进度、异常原因等。
+gs_rep_portal是一个用Java编写的，在linux系统上运行的，集成了全量迁移、增量迁移、反向迁移、数据校验的工具。gs_rep_portal支持以上工具的一键式安装，设定迁移任务，任务根据用户设定的执行计划顺序的调用相应工具完成每个迁移步骤，并能实时展示每个步骤的状态、进度、异常原因等。
 
 ## 注意事项
 
@@ -82,7 +82,7 @@ portal的安装目录默认为/ops/portal，可根据实际需要更换。
 git clone https://gitcode.com/opengauss/openGauss-migration-portal.git
 ```
 
-2.使用maven命令编译源代码获得portalControl-1.0-SNAPSHOT-exec.jar，并将jar包放在/ops/portal下。
+2.使用maven命令编译源代码获得portalControl-6.0.0-exec.jar，并将jar包放在/ops/portal下。
 
 ```
 mvn clean package -Dmaven.test.skip=true
@@ -441,7 +441,7 @@ sh gs_rep_portal.sh start_plan3 p1 &
 
 然后再次修改配置文件。
 
-使用workspace.id为p2启动第一个迁移计划（这里以启动计划3为例）：
+使用workspace.id为p2启动第二个迁移计划（这里以启动计划3为例）：
 
    ```
 sh gs_rep_portal.sh start_plan3 p2 &
