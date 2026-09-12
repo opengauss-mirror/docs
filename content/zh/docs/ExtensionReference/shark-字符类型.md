@@ -6,8 +6,23 @@
 
 
 示例：
-```
-openGauss=# select n'abc';
+```sql
+openGauss=# create database testd dbcompatibility = 'D';
+CREATE DATABASE
+openGauss=# \c testd
+Non-SSL connection (SSL connection is recommended when requiring high-security)
+You are now connected to database "testd" as user "omm".
+testd=# create extension shark;
+CREATE EXTENSION
+testd=# show d_format_behavior_compat_options;
+ d_format_behavior_compat_options
+----------------------------------
+
+(1 row)
+
+testd=# set d_format_behavior_compat_options = '';
+SET
+testd=# select n'abc';
  nvarchar2
 -----------
  abc
