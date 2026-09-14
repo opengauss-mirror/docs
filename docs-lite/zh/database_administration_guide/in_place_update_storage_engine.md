@@ -300,9 +300,10 @@ Ustore 支持标准的 2PC 事务。
 
 ## 特性约束<a name="section69751648124265"></a>
 
-- 不支持物化视图。
+- Ustore表不能作为物化视图的源表；物化视图自身可以通过`WITH (storage_type=ustore)`指定Ustore存储，但其查询源表必须为Astore表。
 - 不支持 gin 索引。
 - 不支持 btree 索引。
+- 不支持 bloom 索引。
 - 不支持 ledger user table 。
 - 不支持 hash 索引。
 - 不支持 gist 索引。
@@ -315,7 +316,8 @@ Ustore 支持标准的 2PC 事务。
 - 在 DELETE 语句中不能与其他存储类型一起使用。
 - 不支持列存表。
 - 不支持 MOT 外表。
-- 不支持 cursor for update/share。
+- 不支持 OIDS。
+- 不支持 CLUSTER。
 
 ## 依赖关系<a name="section45787398"></a>
 

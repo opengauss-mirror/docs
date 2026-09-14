@@ -58,7 +58,7 @@ There are several scenarios in which  **REINDEX**  can be used:
 
     - This option can only specify a name of one index.
     - The  **REINDEX**  statement can be run within a transaction, but  **REINDEX CONCURRENTLY**  cannot.
-    - Column-store tables, global partitioned tables, and temporary tables do not support index recreation using  **CONCURRENTLY**.
+    - Column-store tables, Ustore tables, global partitioned tables, and temporary tables do not support index recreation using  **CONCURRENTLY**.
     - **REINDEX SYSTEM CONCURRENTLY**  does not perform any operations because system catalogs do not support online index recreation.
 
         >[!NOTE]NOTE 

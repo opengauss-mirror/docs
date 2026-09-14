@@ -267,6 +267,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     - 源表上的字段缺省表达式只有在指定INCLUDING DEFAULTS时，才会复制到新表中。缺省是不包含缺省表达式的，即新表中的所有字段的缺省值都是NULL。
     - 源表上的CHECK约束仅在指定INCLUDING CONSTRAINTS时，会复制到新表中，而其他类型的约束永远不会复制到新表中。非空约束总是复制到新表中。此规则同时适用于表约束和列约束。
     - 如果指定了INCLUDING INDEXES，则源表上的索引也将在新表上创建，默认不建立索引。
+      如果源表是Ustore表，复制索引时还需要同时指定INCLUDING RELOPTIONS或INCLUDING ALL（或者显式指定`WITH (storage_type=ustore)`），否则复制UBtree索引时可能因目标表存储类型不匹配而失败。
     - 如果指定了INCLUDING STORAGE，则复制列的STORAGE设置会复制到新表中，默认情况下不包含STORAGE设置。
     - 如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释会复制到新表中。默认情况下，不复制源表的注释。
     - 如果指定了INCLUDING PARTITION，则源表的分区定义会复制到新表中，同时新表将不能再使用PARTITION BY子句。默认情况下，不拷贝源表的分区定义。如果源表上带有索引，可以使用INCLUDING PARTITION INCLUDING INDEXES语法实现。如果对分区表只使用INCLUDING INDEXES，目标表定义将是普通表，但是索引是分区索引，最后结果会报错，因为普通表不支持分区索引。

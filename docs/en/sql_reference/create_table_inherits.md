@@ -25,7 +25,7 @@ The inheritance table has the following characteristics:
 
 - The inheritance table function conflicts with the multi table update function of MySQL, and it is not allowed to create an inheritance table in the B database.
 - It does not support the coexistence of inheritance and partitioned tables or MOT tables (and other foreign table).
-- Supports ustore and segment page, but cannot use the "like parent_name including all" statement in ustore and segment page.
+- Supports ustore and segment page, but cannot use the "like parent_name including all" statement in segment page.
 - Column storage does not support inheriting tables.
 
 ## Syntax<a name="en-us_topic_0283136662_en-us_topic_0237122118_en-us_topic_0059777601_s58148dd6e63843eebaa64756e4b093c9"></a>

@@ -11,7 +11,7 @@ CREATE MATERIALIZED VIEW类似于CREATE TABLE AS，不过它会记住被用来�
 - 创建全量物化视图后，基表中的绝大多数DDL操作不再支持。
 - 不支持对全量物化视图进行IUD操作。
 - 全量物化视图创建后，当基表数据发生变化时，需要使用刷新（REFRESH）命令保持物化视图与基表同步。
-- Ustore引擎不支持物化创建、使用视图。
+- Ustore表不能作为物化视图的查询源表；物化视图自身可以通过`WITH (storage_type=ustore)`指定Ustore存储，但其查询源表必须为Astore表。
 
 ## 语法格式<a name="zh-cn_topic_0283136593_zh-cn_topic_0237122118_zh-cn_topic_0059777601_s58148dd6e63843eebaa64756e4b093c9"></a>
 

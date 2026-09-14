@@ -2,7 +2,7 @@
 
 A materialized view is a special physical table, which is relative to a common view. A common view is a virtual table and has many application limitations. Any query on a view is actually converted into a query on an SQL statement, and performance is not actually improved. The materialized view actually stores the results of the statements executed by the SQL statement, and is used to cache the results.You can directly use data without repeatedly executing query statements, improving performance.
 
-Currently the Ustore engine does not support the creation and use of materialized views.
+Ustore tables cannot be used as query sources for materialized views. A materialized view itself can use Ustore storage, but its query source table must use Astore storage.
 
 - **[Complete-refresh Materialized View](full_materialized_view.md)**: Only created materialized views can be fully refreshed. Incremental refresh is not supported. The syntax for creating a full-refresh materialized view is similar to the  **CREATE TABLE AS**  syntax.  
 

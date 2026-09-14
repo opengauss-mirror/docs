@@ -11,7 +11,7 @@
 - After a complete-refresh materialized view is created, most DDL operations in the base table are no longer supported.
 - The IUD operation cannot be performed on complete-refresh materialized views.
 - After a complete-refresh materialized view is created, if the base table data changes, you need to run the  **REFRESH**  command to synchronize the materialized view with the base table.
-- The Ustore engine does not support the creation and use of materialized views.
+- A Ustore table cannot be used as the query source of a materialized view. The materialized view itself can use Ustore storage by specifying `WITH (storage_type=ustore)`, but its query source table must use Astore storage.
 
 ## Syntax<a name="en-us_topic_0283136593_en-us_topic_0237122118_en-us_topic_0059777601_s58148dd6e63843eebaa64756e4b093c9"></a>
 

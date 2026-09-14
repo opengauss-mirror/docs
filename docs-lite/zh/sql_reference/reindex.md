@@ -58,7 +58,7 @@ REINDEX DATABASE和SYSTEM这种形式的重建索引不能在事务块中执行�
 
     - 此选项只能指定一个索引的名称。
     - 普通REINDEX命令可以在事务内执行，但是REINDEX CONCURRENTLY不可以在事务内执行。
-    - 列存表、全局分区表和临时表不支持CONCURRENTLY方式重建索引。
+    - 列存表、Ustore表、全局分区表和临时表不支持CONCURRENTLY方式重建索引。
     - REINDEX SYSTEM CONCURRENTLY不会执行任何操作，因为系统表不支持在线重建索引。
 
         >[!NOTE]说明
