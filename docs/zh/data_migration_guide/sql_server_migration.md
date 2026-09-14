@@ -1,8 +1,8 @@
 # SQLServer全量迁移
 
-## oG_datasync_full_migration工具介绍
+## openGauss-FullReplicate工具介绍
 
-oG_datasync_full_migration是一个用Java编写的SQLServer到openGauss的离线迁移工具。该工具提供了全量数据、对象的复制。全量数据复制采用多表并行复制，
+openGauss-FullReplicate是一个用Java编写的SQLServer到openGauss的离线迁移工具。该工具提供了全量数据、对象的复制。全量数据复制采用多表并行复制，
 全量对象支持表、约束、索引、外键、视图、函数、触发器、存储过程和序列的复制。
 
 ## 注意事项
@@ -100,39 +100,39 @@ isRecordSnapshot: No
 
 - 迁移表
 
-  `java -jar oG_datasync_full_migration-7.0.0rc2.jar --start table --source sqlserver --config /**/**/config.yml`
+  `java -jar openGauss-FullReplicate-7.0.0.jar --start table --source sqlserver --config /**/**/config.yml`
 
 - 迁移主键
 
-  `java -jar oG_datasync_full_migration-7.0.0rc2.jar --start primarykey --source sqlserver --config /**/**/config.yml`
+  `java -jar openGauss-FullReplicate-7.0.0.jar --start primarykey --source sqlserver --config /**/**/config.yml`
 
 - 迁移外键
 
-  `java -jar oG_datasync_full_migration-7.0.0rc2.jar --start foreignkey --source sqlserver --config /**/**/config.yml`
+  `java -jar openGauss-FullReplicate-7.0.0.jar --start foreignkey --source sqlserver --config /**/**/config.yml`
 
 - 迁移索引
 
-  `java -jar oG_datasync_full_migration-7.0.0rc2.jar --start index --source sqlserver --config /**/**/config.yml`
+  `java -jar openGauss-FullReplicate-7.0.0.jar --start index --source sqlserver --config /**/**/config.yml`
 
 - 迁移视图
 
-  `java -jar oG_datasync_full_migration-7.0.0rc2.jar --start view --source sqlserver --config /**/**/config.yml`
+  `java -jar openGauss-FullReplicate-7.0.0.jar --start view --source sqlserver --config /**/**/config.yml`
 
 - 迁移函数
 
-  `java -jar oG_datasync_full_migration-7.0.0rc2.jar --start function --source sqlserver --config /**/**/config.yml`
+  `java -jar openGauss-FullReplicate-7.0.0.jar --start function --source sqlserver --config /**/**/config.yml`
 
 - 迁移触发器
 
-  `java -jar oG_datasync_full_migration-7.0.0rc2.jar --start trigger --source sqlserver --config /**/**/config.yml`
+  `java -jar openGauss-FullReplicate-7.0.0.jar --start trigger --source sqlserver --config /**/**/config.yml`
 
 - 迁移存储过程
 
-  `java -jar oG_datasync_full_migration-7.0.0rc2.jar --start procedure --source sqlserver --config /**/**/config.yml`
+  `java -jar openGauss-FullReplicate-7.0.0.jar --start procedure --source sqlserver --config /**/**/config.yml`
 
 - 迁移序列
 
-  `java -jar oG_datasync_full_migration-7.0.0rc2.jar --start sequence --source sqlserver --config /**/**/config.yml`
+  `java -jar openGauss-FullReplicate-7.0.0.jar --start sequence --source sqlserver --config /**/**/config.yml`
 
 ## 默认的类型转换规则
 

@@ -88,7 +88,7 @@ git clone https://gitcode.com/opengauss/openGauss-migration-portal.git
 mvn clean package -Dmaven.test.skip=true
 ```
 
-java版本：open JDK11及以上
+java版本：open JDK17及以上
 
 maven版本：3.8.1以上
 
