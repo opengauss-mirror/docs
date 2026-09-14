@@ -15,3 +15,5 @@ sections:
     href: ./hibernate_development.md
   - label: 基于mysql-connector-python开发
     href: ./mysql_connector_development.md
+  - label: 基于Django开发
+    href: ./django_development.md
