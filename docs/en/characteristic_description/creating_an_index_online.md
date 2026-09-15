@@ -26,7 +26,7 @@ None
 
 - Only one index name can be specified when an index is created online.
 - The CREATE INDEX statement can be run within a transaction, but CREATE INDEX CONCURRENTLY cannot.
-- Column-store tables, partitioned tables, and temporary tables do not support CREATE INDEX CONCURRENTLY.
+- Column-store tables, Ustore tables, partitioned tables, and temporary tables do not support CREATE INDEX CONCURRENTLY.
 
 ## Dependencies<a name="section63981393"></a>
 

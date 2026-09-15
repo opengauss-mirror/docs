@@ -63,7 +63,7 @@ The partitioned table does not support partial index creation.
 
     - This option can only specify a name of one index.
     - The  **CREATE INDEX**  statement can be run within a transaction, but  **CREATE INDEX CONCURRENTLY**  cannot.
-    - Column-store tables, partitioned tables, and temporary tables do not support  **CREATE INDEX CONCURRENTLY**.
+    - Column-store tables, Ustore tables, partitioned tables, and temporary tables do not support  **CREATE INDEX CONCURRENTLY**.
 
     >[!NOTE]NOTE 
     >- This keyword is specified when an index is created. The entire table needs to be scanned twice and built. When the table is scanned for the first time, an index is created and the read and write operations are not blocked. During the second scan, changes that have occurred since the first scan are merged and updated.
@@ -106,7 +106,7 @@ The partitioned table does not support partial index creation.
     - **Psort**: psort index. It is used to perform partial sort on column-store tables.
     - **ubtree**: Multi-version B-tree index used only for Ustore tables. The index page contains transaction information and can be recycled. By default, the INSERTPT function is enabled for UBtree indexes.
 
-    Row-store tables \(Astore storage engine\) support the following index types:  **btree**  \(default\),  **hash**,  **gin**, and  **gist**. Row-store tables \(Ustore storage engine\) support the following index type:  **ubtree**. Column-store tables support the following index types:  **Psort**  \(default\),  **btree**, and  **gin**. Global temporary tables do not support GIN and GiST indexes.
+    Row-store tables \(Astore storage engine\) support the following index types:  **btree**  \(default\),  **hash**,  **gin**, and  **gist**. Row-store tables \(Ustore storage engine\) support only **ubtree** indexes and do not support other index access methods such as **btree**, **hash**, **gin**, **gist**, and **bloom**. Column-store tables support the following index types:  **Psort**  \(default\),  **btree**, and  **gin**. Global temporary tables do not support GIN and GiST indexes.
 
     >[!NOTE]NOTE 
     >Column-store tables support GIN indexes only for the tsvector type. That is, the input parameter for creating a column-store GIN index must be the return value of the  **to\_tsvector**  function. This method is commonly used for GIN indexes.

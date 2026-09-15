@@ -22,7 +22,8 @@ None
 
 ## Constraints<a name="section1575615618465"></a>
 
-Only simple filter queries and UNION ALL statements are supported for base tables.
+- Only simple filter queries and UNION ALL statements are supported for base tables.
+- Ustore tables cannot be used as materialized view sources; the materialized view itself can use Ustore storage.
 
 ## Dependencies<a name="section2535204364616"></a>
 

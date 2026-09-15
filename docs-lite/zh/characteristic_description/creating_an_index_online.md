@@ -26,7 +26,7 @@
 
 - 在线添加索引时只能指定一个索引的名称。
 - 普通CREATE INDEX命令可以在事务内执行，但是CREATE INDEX CONCURRENTLY不可以在事务内执行。
-- 列存表、分区表和临时表不支持CONCURRENTLY方式创建索引。
+- 列存表、Ustore表、分区表和临时表不支持CONCURRENTLY方式创建索引。
 
 ## 依赖关系<a name="section63981393"></a>
 
