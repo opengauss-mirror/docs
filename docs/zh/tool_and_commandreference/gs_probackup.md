@@ -40,6 +40,11 @@ gs\_probackup目前支持进度打印，会分别在文件备份、文件验证�
 - 备份将执行checkpoint与xlog switch操作，此行为将产生新的xlog，并提交事务。一主一备或一主多备场景备份时，若配置文件中synchronous_commit设置为on，备机关停可能会导致主机同步提交事务失败，进而导致备份失败。此场景下，请确认各节点状态正常，或将synchronous_commit设置为off以避免备份失败。
 - 在开启enable_cbm_tracking后，不能直接执行增量备份，需要先执行全量备份，即使在开启参数之前已经执行过全量备份。
 - 备份到兼容S3协议的对象存储时，请确保对象存储服务已经开通，可以获取到ak和sk，并且已经创建好bucket。备份到对象存储特性目前不支持执行merge子命令。
+- 累积增量备份只在当前时间线内选择父全量备份，不跨时间线选择父备份。
+- 一个全量备份下存在多个累积增量备份时，执行merge子命令或留存策略操作可能使其他增量备份失去父备份，此时命令会拒绝执行并给出依赖该全量备份的备份清单，请根据清单确认后再手动处理。
+- 备份加密与备份到兼容S3协议的对象存储、资源池化模式、远程备份模式不能同时使用，参数校验阶段会直接报错。
+- 恢复一条备份链时只能提供一份密钥材料，因此同一条备份链中的各备份需要使用相同的口令或密钥文件。如果只对备份链中的部分备份执行rekey，该备份链将无法使用一份密钥材料完成恢复。
+- 历史版本产生的加密备份仅支持读取，不再产生该格式的新备份；使用历史版本的gs\_probackup读取新格式的加密备份时会报错，不会静默出错。
 - 关于物理备份与恢复的更多说明，请参考[物理备份与恢复](../database_om_guide/physical_backup_and_restoration.md)。
 
 ## 功能说明<a name="zh-cn_topic_0287276008_section86861610172815"></a>
@@ -142,6 +147,7 @@ gs\_probackup工具的主要功能如下：
     [--archive-timeout=timeout] [-t rw-timeout]
     [logging_options] [retention_options] [compression_options] [connection_options]
     [remote_options] [dss_options] [pinning_options][--backup-pg-replslot] [s3_options]
+    [incremental_options] [encryption_options]
     [--help]
     ```
 
@@ -152,6 +158,7 @@ gs\_probackup工具的主要功能如下：
     [-D pgdata-path] [-i backup_id] [-j threads_num] [--progress] [--force] [--no-sync] [--no-validate] [--skip-block-validation]
     [--external-mapping=OLDDIR=NEWDIR] [-T OLDDIR=NEWDIR] [--skip-external-dirs] [-I incremental_mode]
     [recovery_options] [remote_options] [dss_options] [logging_options] [s3_options]
+    [encryption_options]
     [--help]
     ```
 
@@ -159,7 +166,7 @@ gs\_probackup工具的主要功能如下：
 
     ```
     gs_probackup merge -B backup-path --instance=instance_name -i backup_id
-    [-j threads_num] [--progress] [logging_options]
+    [-j threads_num] [--progress] [logging_options] [encryption_options]
     [--help]
     ```
 
@@ -183,8 +190,17 @@ gs\_probackup工具的主要功能如下：
     [-j threads_num] [--progress] [--skip-block-validation]
     [--recovery-target-time=time | --recovery-target-xid=xid | --recovery-target-lsn=lsn | --recovery-target-name=target-name]
     [--recovery-target-inclusive=boolean]
-    [logging_options] [s3_options]
+    [logging_options] [s3_options] [encryption_options]
     [--help] 
+    ```
+
+- 更换指定加密备份的加密口令。使用旧口令解开该备份的数据密钥后，用新口令重新保护该数据密钥，备份的数据文件不会被重写。
+
+    ```
+    gs_probackup rekey -B backup-path --instance=instance_name -i backup-id
+    --new-encrypt-key=new-passphrase | --new-encrypt-key-file=new-key-file
+    [encryption_options] [logging_options]
+    [--help]
     ```
 
 ## 参数说明<a name="zh-cn_topic_0287276008_section520716591338"></a>
@@ -193,7 +209,7 @@ gs\_probackup工具的主要功能如下：
 
 - command
 
-    gs\_probackup除version和help以外的子命令：init、add-instance、del-instance、set-config、set-backup、show-config、show、backup、restore、merge、delete、validate。
+    gs\_probackup除version和help以外的子命令：init、add-instance、del-instance、set-config、set-backup、show-config、show、backup、restore、merge、delete、validate、rekey。
 
 - -?, --help
 
@@ -363,6 +379,46 @@ gs\_probackup工具的主要功能如下：
 - --backup-pg-replslot
 
     将pg_replslot下发布订阅的逻辑复制槽目录包含到备份中。默认情况下包含pg_replslot目录，但不包含复制槽文件。
+
+### **增量类型相关参数\(incremental\_options\)**
+
+>[!NOTE]说明
+>这些参数只能与backup命令一起使用，且只能用于增量备份。在全量备份中指定这些参数会报错。
+
+- --incremental-type=_incremental-type_
+
+    指定增量备份的父备份选择方式。取值包括：
+
+    differential：以当前备份链的最后一个备份作为父备份。这是默认值。
+
+    cumulative：以当前时间线内最近一次状态为OK或DONE的全量备份作为父备份。恢复该增量备份时，只需要使用全量备份和该增量备份。
+
+    默认值：differential
+
+- --from-full
+
+    --incremental-type=cumulative的别名。
+
+- --parent-backup-id=_backup-id_
+
+    显式指定父备份。指定的备份必须是有效的全量备份或当前备份链的最后一个备份。该参数不能与cumulative同时使用。
+
+- --cumulative-fallback=_cumulative-fallback_
+
+    指定CBM无法覆盖“父全量备份开始位置～当前位置”时的处理方式。该参数只能与cumulative一起使用。取值包括：
+
+    error：备份失败并报错。这是默认值。
+
+    differential：降级为差异增量备份，即以当前备份链的最后一个备份作为父备份。
+
+    默认值：error
+
+    >[!NOTE]说明
+    >默认取值为error，用于避免在用户未感知的情况下改变恢复该备份所需的备份数量。如果允许降级，请显式指定--cumulative-fallback=differential。
+
+- 累积增量备份的展示方式
+
+    执行show子命令时，plain格式下累积增量备份的备份模式显示为PTRACK/C；json格式下对PTRACK备份输出incremental-type字段。
 
 ### **恢复相关参数**
 
@@ -724,7 +780,62 @@ gs\_probackup工具的主要功能如下：
     unknown：未设置 media-type 为 s3 时进行备份的备份集状态，无实际意义。
 
     可通过set-backup子命令进行设置，通过show子命令查看。
-    
+
+### **备份加密相关参数\(encryption\_options\)**
+
+>[!NOTE]说明
+>
+>- 开启备份加密后，备份数据在写入时完成加密，密文直接写入备份目录。
+>- 对加密备份执行restore、validate、merge和rekey子命令时，只需要提供密钥材料，不需要再次指定--encrypt、--encrypt-algorithm和--encrypt-chunk-size，这些信息记录在备份的元数据中。
+>- 执行show和delete子命令不需要提供密钥材料。
+>- 本节参数与--with-encryption、--with-key、--gen-key、--with-salt和--with-device-params属于不同的加密实现，不能混合使用。后者仅用于读取历史版本产生的加密备份。
+
+- --encrypt
+
+    对备份数据进行加密。该参数只能与backup命令一起使用。
+
+- --encrypt-algorithm=_encrypt-algorithm_
+
+    指定备份加密使用的算法。当前取值仅支持AES128。
+
+    默认值：AES128
+
+- --encrypt-key-source=_encrypt-key-source_
+
+    指定密钥材料的类型。取值包括：
+
+    passphrase：使用口令。
+
+    keyfile：使用密钥文件。
+
+- --encrypt-key=_passphrase_
+
+    指定加密口令。可以和backup、restore、validate、merge子命令一起使用。
+
+- --encrypt-key-file=_key-file_
+
+    指定存放密钥材料的文件，该文件的权限必须为0600。可以和backup、restore、validate、merge子命令一起使用。
+
+- --encrypt-chunk-size=_encrypt-chunk-size_
+
+    指定加密备份中数据分块的大小，取值范围为64kB～16MB。该参数只能与backup命令一起使用。
+
+    默认值：1MB
+
+- --new-encrypt-key=_new-passphrase_
+
+    指定新的加密口令。该参数只能与rekey子命令一起使用，不能和--new-encrypt-key-file同时指定。
+
+- --new-encrypt-key-file=_new-key-file_
+
+    指定存放新密钥材料的文件，该文件的权限必须为0600。该参数只能与rekey子命令一起使用，不能和--new-encrypt-key同时指定。
+
+- 密钥材料的提供方式
+
+    按以下优先级获取密钥材料：--encrypt-key-file、--encrypt-key、环境变量GS\_PROBACKUP\_PASSPHRASE、交互式终端输入。在非交互式环境下，如果未通过上述任一方式提供密钥材料，命令将报错退出。
+
+    为避免密钥材料通过进程信息或日志泄露，建议优先使用--encrypt-key-file或环境变量，不要在脚本中直接书写口令。
+
 ## 备份指令执行顺序（非资源池化模式）<a name="zh-cn_topic_0287276008_section1735727125216"></a>
 
 1. 初始化备份目录。在指定的目录下创建backups/和wal/子目录，分别用于存放备份文件和WAL文件。
