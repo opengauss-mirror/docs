@@ -142,6 +142,12 @@ Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中
         Password=  （数据库用户密码）
         Port=8000 （数据库侦听端口）
         Sslmode=allow
+
+        # 链接失效检测配置，用户可以根据网络情况和业务敏感度进行修改（参数说明参考 表3：odbc.ini文件配置参数）。
+        keepalives_idle=10
+        keepalives_interval=10
+        keepalives_count=3
+        tcp_user_timeout=10
         ```
 
         odbc.ini文件配置参数说明如[表3](#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_t55845a6555f2454297b64ce47ad3d648)所示。
