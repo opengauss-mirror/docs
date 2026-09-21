@@ -4,6 +4,7 @@ sections:
     sections:
       - href: ./terms_of_use/_toc.yaml
       - href: ./release_notes/_toc.yaml
+      - href: ./open_source_notes/_toc.yaml
       - href: ./about_opengauss/_toc.yaml
       - href: ./getting_started/_toc.yaml
   - label: 安装部署
