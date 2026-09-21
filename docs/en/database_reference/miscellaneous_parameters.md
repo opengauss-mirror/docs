@@ -56,7 +56,12 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-You can set  **enable\_ustore\_partial\_seqscan**  \(copy selective columns only during sequential scanning in the ustore table\),  **enable\_candidate\_buf\_usage\_count**  \(whether dirty pages are evicted and added to the use count weight\), and  **ustats\_tracker\_naptime**  \(time for reloading the statistics file\).  **umax\_search\_length\_for\_prune**  \(number of blocks to be pruned before table extension\) and  **ustore\_unit\_test**  \(starting the UStore white box test\). The setting method is ustore\_att ='**enable\_ustore\_partial\_seqscan**=on'.
+You can set  **enable\_ustore\_partial\_seqscan**  \(copy selective columns only during sequential scanning in the ustore table\),  **enable\_candidate\_buf\_usage\_count**  \(whether dirty pages are evicted and added to the use count weight\),  **ustats\_tracker\_naptime**  \(time for reloading the statistics file\),  **umax\_search\_length\_for\_prune**  \(number of blocks to be pruned before table extension\),  **ustore\_verify\_level**  \(verification level\) and  **ustore\_verify\_module**  \(modules to be verified\). The setting method is ustore\_attr='**enable\_ustore\_partial\_seqscan**=true'.
+
+>[!NOTE]
+>- Boolean subkeys \(such as  **enable\_ustore\_partial\_seqscan**  and  **enable\_candidate\_buf\_usage\_count**\) accept only true or false, not on/off. This is different from common Boolean GUC parameters. For example, SET ustore_attr = 'enable_ustore_partial_seqscan=true' succeeds, while SET ustore_attr = 'enable_ustore_partial_seqscan=on' reports an invalid parameter value error.
+>- The subkey  **ustore\_unit\_test**  \(starting the UStore white box test\) is for R&D debugging only and is not supported in release versions.
+>- When  **gs_guc**  is used to set  **ustore\_attr**, if a subkey name or value is invalid, gs_guc may still report Success and write the invalid configuration into the postgresql.conf configuration file. If the configuration takes effect in reload mode, the invalid configuration may be silently ignored. If it takes effect in restart mode, the database instance may fail to start. Ensure that both the subkey name and value are valid before setting this parameter using gs_guc.
 
 **Value range**: a string
 

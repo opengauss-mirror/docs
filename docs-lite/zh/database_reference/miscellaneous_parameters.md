@@ -36,7 +36,12 @@
 
 该参数属于USERSET类型，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-可以设置包括enable\_ustore\_partial\_seqscan（仅在ustore表中顺序扫描时复制选择性列），enable\_candidate\_buf\_usage\_count（是否脏页淘汰加入使用次数权重），ustats\_tracker\_naptime（重新加载统计文件所用的时间），umax\_search\_length\_for\_prune（扩展表前要修剪的块数），ustore\_unit\_test（开启Ustore白盒测试），设置方法为 ustore\_att='需要设置的参数'，例如需要设置enable\_ustore\_partial\_seqscan时，ustore\_attr='enable\_ustore\_partial\_seqscan=on'。
+可以设置包括enable\_ustore\_partial\_seqscan（仅在ustore表中顺序扫描时复制选择性列），enable\_candidate\_buf\_usage\_count（是否脏页淘汰加入使用次数权重），ustats\_tracker\_naptime（重新加载统计文件所用的时间），umax\_search\_length\_for\_prune（扩展表前要修剪的块数），ustore\_verify\_level（控制校验的级别），ustore\_verify\_module（控制校验的模块），设置方法为 ustore\_attr='需要设置的参数'，例如需要设置enable\_ustore\_partial\_seqscan时，ustore\_attr='enable\_ustore\_partial\_seqscan=true'。
+
+>[!NOTE]说明
+>- 布尔类型的子键（如enable\_ustore\_partial\_seqscan、enable\_candidate\_buf\_usage\_count）取值仅为true或false，不支持on/off，与普通布尔类型GUC参数的取值习惯不同。例如，SET ustore_attr = 'enable_ustore_partial_seqscan=true'可以设置成功，而SET ustore_attr = 'enable_ustore_partial_seqscan=on'会报参数值非法错误。
+>- 子键ustore\_unit\_test（开启Ustore白盒测试）仅供研发调试使用，发布版本不支持设置该子键。
+>- 使用gs_guc设置ustore\_attr时，如果子键名称或取值非法，gs_guc可能仍提示Success并将非法配置写入postgresql.conf配置文件：以reload方式生效时，该非法配置可能被静默忽略；以restart方式生效时，可能导致数据库实例无法启动。请确认子键名称和取值均合法后，再通过gs_guc设置该参数。
 
 **取值范围**： 字符串
 

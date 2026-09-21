@@ -318,6 +318,8 @@ Ustore 支持标准的 2PC 事务。
 - 不支持 MOT 外表。
 - 不支持 OIDS。
 - 不支持 CLUSTER。
+- 不支持查询系统列cmin和cmax。
+- 分区表不支持TABLESAMPLE采样。
 
 ## 依赖关系<a name="section45787398"></a>
 

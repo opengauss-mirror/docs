@@ -22,7 +22,8 @@ None.
 
 ## Constraints<a name="section13355203802911"></a>
 
-None.
+- The system columns cmin and cmax cannot be queried.
+- TABLESAMPLE is not supported on partitioned tables.
 
 ## Dependencies<a name="section101449415302"></a>
 
