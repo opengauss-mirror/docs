@@ -5,6 +5,8 @@ sections:
     href: ./mysql_protocol_compatibility_config.md
   - label: 基于MySQL JDBC开发
     href: ./mysql_jdbc_development.md
+  - label: 基于Spring Boot开发
+    href: ./springboot_development.md
   - label: 基于HikariCP开发
     href: ./hikaricp_development.md
   - label: 基于Mybatis开发
