@@ -120,6 +120,38 @@ shared\_buffers需要设置为BLCKSZ的整数倍，BLCKSZ目前设置为8kB，�
    - 系统总内存512G : 推荐范围150G~200G;
    - 系统总内存1024G: 推荐范围300G~400G;
    
+## clog\_buffers<a name="section1790553600000"></a>
+
+**参数说明**： 设置openGauss clog共享内存缓冲区的计算基准大小。实际clog共享内存大小还与num\_internal\_lock\_partitions参数中CLOG\_PART的取值相关：默认配置下，实际clog共享内存大小约为该参数值的1/2。
+
+该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值说明：** 整型，16 \~ 67108864，单位为8kB。
+
+**默认值**： 8MB
+
+**设置建议：**
+
+1. 该参数小于128MB时，实际clog共享内存大小不随该参数变化（默认配置下约32MB），继续调小该参数无效果。
+2. 实际clog共享内存大小存在上限（默认配置下为1GB），该参数超过2GB后继续调大无效果。
+3. 调整num\_internal\_lock\_partitions参数中CLOG\_PART的取值时，需同步评估实际clog共享内存大小的变化。
+
+## csnlog\_buffers<a name="section1790553600001"></a>
+
+**参数说明**： 设置openGauss csnlog共享内存缓冲区的计算基准大小。实际csnlog共享内存大小还与num\_internal\_lock\_partitions参数中CSNLOG\_PART的取值相关：默认配置下，实际csnlog共享内存大小约等于该参数值。
+
+该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值说明：** 整型，16 \~ 67108864，单位为8kB。
+
+**默认值**： 8MB
+
+**设置建议：**
+
+1. 该参数小于192MB时，实际csnlog共享内存大小不随该参数变化（默认配置下约128MB），继续调小该参数无效果。
+2. 实际csnlog共享内存大小存在上限（默认配置下为1GB），该参数超过1GB后继续调大无效果。
+3. 调整num\_internal\_lock\_partitions参数中CSNLOG\_PART的取值时，需同步评估实际csnlog共享内存大小的变化。
+
 ## segment\_buffers<a name="section1581274312490"></a>
 
 **参数说明**： 设置openGauss段页式元数据页的内存大小。
