@@ -48,12 +48,17 @@ WDR报表主要内容如下表所示。
 </tr>
 <tr id="row1212013312166"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p7991716336"><a name="p7991716336"></a><a name="p7991716336"></a><a href="memory_statistics.md">Memory Statistics</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul4459131414205"></a><a name="ul4459131414205"></a><ul id="ul4459131414205"><li>内核内存使用分布。</li><li>节点范围报表，仅node模式下可查看此报表。</li></ul>
+<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul4459131414205"></a><a name="ul4459131414205"></a><ul id="ul4459131414205"><li>内核内存使用分布，以及关键共享内存组件占用与占比。</li><li>节点范围报表，仅node模式下可查看此报表。</li></ul>
 </td>
 </tr>
 <tr id="row1213317120167"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p1316142615558"><a name="p1316142615558"></a><a name="p1316142615558"></a><a href="time_model.md">Time Model</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul16141716192014"></a><a name="ul16141716192014"></a><ul id="ul16141716192014"><li>节点范围的语句的时间分布信息。</li><li>节点范围报表，仅node模式下可查看此报表。</li></ul>
+</td>
+</tr>
+<tr id="row-protocol-message-stat"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p><a href="time_model.md#protocol-message-statistics">Protocol Statistics</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><ul><li>按协议报文类型（Simple Query / Parse / Bind / Execute / Describe / Sync / Close / Batch Bind-Execute）统计执行次数与耗时及占 DB_TIME 比例。</li><li>节点范围报表，仅node模式下的detail或all报告可查看。</li></ul>
 </td>
 </tr>
 <tr id="row849110591151"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p148180593320"><a name="p148180593320"></a><a name="p148180593320"></a><a href="sql_statistics.md">SQL Statistics</a></p>
@@ -78,7 +83,7 @@ WDR报表主要内容如下表所示。
 </tr>
 <tr id="row156411451131512"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p12651331239"><a name="p12651331239"></a><a name="p12651331239"></a><a href="object_stats.md">Object stats</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul8257222112020"></a><a name="ul8257222112020"></a><ul id="ul8257222112020"><li>表、索引维度的性能统计信息。</li><li>数据库、节点范围报表，cluster模式和node模式下均可查看此报表。</li></ul>
+<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul8257222112020"></a><a name="ul8257222112020"></a><ul id="ul8257222112020"><li>表、索引维度的性能统计信息，以及区间内未使用的用户索引。</li><li>数据库、节点范围报表，cluster模式和node模式下均可查看此报表。</li></ul>
 </td>
 </tr>
 <tr id="row8845174912158"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p14537204613311"><a name="p14537204613311"></a><a name="p14537204613311"></a><a href="configuration_settings.md">Configuration settings</a></p>
