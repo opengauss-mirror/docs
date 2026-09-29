@@ -43,43 +43,43 @@ $ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -p 8888
 以arm架构下对应的包为例，镜像包的架构应与主机架构匹配。
 
 ``` bash
-$ wget https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler22.03/arm/openGauss-Docker-7.0.0-RC3-aarch64.tar
+$ wget https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/openEuler24.03/arm/openGauss-Docker-7.0.0-aarch64.tar
 ```
 
-x86_64镜像下载方式相同，镜像包获取路径为：https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler22.03/x86/openGauss-Docker-7.0.0-RC3-x86_64.tar
+x86_64镜像下载方式相同，镜像包获取路径为：https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/openEuler24.03/x86/openGauss-Docker-7.0.0-x86_64.tar
 
 >[!NOTE]说明
 >
-> 每个架构只有一个容器镜像，由于容器内的系统是基于openEuler22.03的，因此将容器镜像放在openEuler22.03目录下，但可以用于其他操作系统中。<br>
+> 每个架构只有一个容器镜像，社区从7.0.0版本开始，由于容器内的系统是基于openEuler24.03的，因此将容器镜像放在openEuler24.03目录下，但可以用于其他操作系统中。<br>
 
 - 加载镜像
 
 ``` bash
-$ docker load -i openGauss-Docker-7.0.0-RC3-aarch64.tar
+$ docker load -i openGauss-Docker-7.0.0-aarch64.tar
 ```
 
 - 验证镜像状态
 
-加载完成后，请使用`docker images`查看实际镜像名。镜像名可能为`opengauss:7.0.0-RC3`（以实际输出为准），后续`docker run`需使用该镜像名。
+加载完成后，请使用`docker images`查看实际镜像名。镜像名可能为`opengauss:7.0.0`（以实际输出为准），后续`docker run`需使用该镜像名。
 
 ```bash
 $ docker images
 
 REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
-opengauss                    7.0.0-RC3           9763e8b26794        2 days ago          1.77GB
+opengauss                    7.0.0           9763e8b26794        2 days ago          1.77GB
 ```
 
 >[!NOTE]说明
 > 
 > 以上镜像包会周期性更新，可以根据自身需求修改路径获取最新镜像包。<br>
-> 官网下载加载的镜像名（如`opengauss:7.0.0-RC3`）与 dockerhub 镜像名（`opengauss/opengauss-server:latest`）不同，请勿混用。<br>
+> 官网下载加载的镜像名（如`opengauss:7.0.0`）与 dockerhub 镜像名（`opengauss/opengauss-server:latest`）不同，请勿混用。<br>
 
 - 运行容器
 
 启动数据库并映射宿主机的端口到容器（镜像名以`docker images`实际输出为准）：
 
 ```bash
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -p 8888:5432 opengauss:7.0.0-RC3
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -p 8888:5432 opengauss:7.0.0
 ```
 
 ### 启动参数
@@ -160,7 +160,7 @@ $ gsql -d postgres -U gaussdb -W YourPassoword -h your-host-ip -p 8888
 $ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -v /opengauss:/var/lib/opengauss opengauss/opengauss-server:latest
 
 # 官网下载镜像示例（以 docker images 实际输出为准）
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -v /opengauss:/var/lib/opengauss opengauss:7.0.0-RC3
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -v /opengauss:/var/lib/opengauss opengauss:7.0.0
 ```
 
 ### 参数配置<a name="zh-cn_topic_0283136491_section973016196416"></a>
@@ -180,3 +180,10 @@ docker restart <CONTAINER ID>
 若在容器外配置参数，需要挂载宿主机路径到容器内部的`/var/lib/opengauss`目录。
 
 有关具体参数的修改，请参考 **[GUC参数说明](../database_reference/guc_parameter_usage.md)**  
+
+>[!NOTE] 基于其他系统的容器镜像
+>
+> 社区从7.0.0版本开始，还提供了基于ubuntu24.04系统构建的容器镜像（因为容器屏蔽了宿主机系统，基于ubuntu的容器和官网发布的基于openEuler24.03的容器镜像使用起来并没有差异），可以按需下载：
+> 
+> aarch64架构：https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/container/openGauss-Ubuntu2404-Docker-7.0.0-aarch64.tar
+> x86_64架构: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/container/openGauss-Ubuntu2404-Docker-7.0.0-x86_64.tar
