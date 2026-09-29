@@ -30,7 +30,7 @@ openGauss 通过om安装的时候，支持用户自定义ssh端口，正常安�
 
 ## 参考文档<a name="section57771982"></a>
 
-开源社区地址： <https://gitcode.com/opengauss/openGauss-OM>
+开源社区地址： <https://atomgit.com/opengauss/openGauss-OM>
 
 创建xml文件文档：<a href="../installation_guide/creating_an_xml_configuration_file.md">创建xml配置文件</a>
 

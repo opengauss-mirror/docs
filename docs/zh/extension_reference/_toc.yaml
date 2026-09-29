@@ -2,11 +2,11 @@ label: 插件参考
 isManual: true
 sections:
   - href:
-      upstream: https://gitcode.com/opengauss/Plugin/blob/7.0.0/docs/zh/extension_reference/_toc.yaml
+      upstream: https://atomgit.com/opengauss/Plugin/blob/7.0.0/docs/zh/extension_reference/_toc.yaml
       path: ./extension_reference/plugin
   - href:
-      upstream: https://gitcode.com/opengauss/openGauss-third_party/blob/7.0.0/docs/zh/extension_reference/_toc.yaml
+      upstream: https://atomgit.com/opengauss/openGauss-third_party/blob/7.0.0/docs/zh/extension_reference/_toc.yaml
       path: ./extension_reference/third_party
   - href:
-      upstream: https://gitcode.com/opengauss/openGauss-server/blob/7.0.0/docs/zh/extension_reference/_toc.yaml
+      upstream: https://atomgit.com/opengauss/openGauss-server/blob/7.0.0/docs/zh/extension_reference/_toc.yaml
       path: ./extension_reference/server

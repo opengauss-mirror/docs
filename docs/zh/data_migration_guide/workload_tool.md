@@ -149,7 +149,7 @@ make
 - 源码地址
 
 ~~~
-https://gitcode.com/opengauss/compatibility-assessment/tree/master/dynamic_sql_collection
+https://atomgit.com/opengauss/compatibility-assessment/tree/master/dynamic_sql_collection
 ~~~
 
 ### 功能脚本

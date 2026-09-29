@@ -33,6 +33,6 @@
 
 ## 参考文档<a name="section57771982"></a>
 
-开源代码地址：<https://gitcode.com/opengauss/openGauss-OM/tree/master/script/base_utils/template。>
+开源代码地址：<https://atomgit.com/opengauss/openGauss-OM/tree/master/script/base_utils/template>。
 
 操作指南文档：<a href="../installation_guide/one_stop_installation_guide.md">一站式安装指南</a>

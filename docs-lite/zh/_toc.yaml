@@ -15,12 +15,12 @@ sections:
       - href: ./database_administration_guide/_toc.yaml
       - href: ./database_om_guide/_toc.yaml
       - href:
-          upstream: https://gitcode.com/opengauss/openGauss-server/blob/master/docs-lite/zh/performance_tuning_guide/_toc.yaml
+          upstream: https://atomgit.com/opengauss/openGauss-server/blob/master/docs-lite/zh/performance_tuning_guide/_toc.yaml
           path: ./performance_tuning_guide
   - label: 重要特性
     sections:
       - href: 
-          upstream: https://gitcode.com/opengauss/openGauss-server/blob/master/src/gausskernel/storage/access/datavec/docs-lite/zh/_toc.yaml
+          upstream: https://atomgit.com/opengauss/openGauss-server/blob/master/src/gausskernel/storage/access/datavec/docs-lite/zh/_toc.yaml
           path: ./datavec
   - label: 开发指南
     sections:

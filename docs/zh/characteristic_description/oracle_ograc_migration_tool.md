@@ -30,4 +30,4 @@ openGauss-FullReplicate工具需要jdk17及以上。
 
 ## 参考文档<a name="section57771982"></a>
 
-openGauss-FullReplicate详细说明和使用文档参考[Oracle-oGRAC全量迁移指南](https://gitcode.com/opengauss/debezium/blob/master/migration-tool/docs/oracle2ograc-readme.md)。
+openGauss-FullReplicate详细说明和使用文档参考[Oracle-oGRAC全量迁移指南](https://atomgit.com/opengauss/debezium/blob/master/migration-tool/docs/oracle2ograc-readme.md)。

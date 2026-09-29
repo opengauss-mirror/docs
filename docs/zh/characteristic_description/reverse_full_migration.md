@@ -28,6 +28,6 @@ debezium opengauss connector的sink端，从kafka拉取消息消费，将文件�
 
 ## 参考文档<a name="section57771982"></a>
 
-反向迁移社区地址：<https://gitcode.com/opengauss/debezium/tree/5.1.0> 
+反向迁移社区地址：<https://atomgit.com/opengauss/debezium/tree/5.1.0> 
 
-详细参考文档 <a href="https://gitcode.com/opengauss/debezium/blob/5.1.0/README.md ">README.md</a>
+详细参考文档 <a href="https://atomgit.com/opengauss/debezium/blob/5.1.0/README.md ">README.md</a>
