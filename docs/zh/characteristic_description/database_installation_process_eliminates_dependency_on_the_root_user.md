@@ -64,7 +64,7 @@ source ENVFILE && gs_om -t start 或者 gs_om -t restart
 
 ## 参考文档<a name="section57771982"></a>
 
-开源社区地址： <https://gitcode.com/opengauss/openGauss-OM>
+开源社区地址： <https://atomgit.com/opengauss/openGauss-OM>
 
 gs_checkos文档：<a href="../tool_and_commandreference/gs_checkos.md">校验</a>
 

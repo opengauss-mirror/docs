@@ -30,4 +30,4 @@
 
 ## 参考文档
 
-使用本特性完成 openGauss 迁移，请参考[openGauss-FullReplicate工具使用指导](https://gitcode.com/opengauss/debezium/tree/master/migration-tool)。
+使用本特性完成 openGauss 迁移，请参考[openGauss-FullReplicate工具使用指导](https://atomgit.com/opengauss/debezium/tree/master/migration-tool)。

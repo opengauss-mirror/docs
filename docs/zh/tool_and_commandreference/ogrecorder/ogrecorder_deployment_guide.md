@@ -48,7 +48,7 @@ oGRecorder（数据保险柜）支持单机部署和集群部署两种部署方�
 
 ### 获取安装包
 
-- **编译方式获取**：[参考链接](https://gitcode.com/opengauss/oGRecorder)
+- **编译方式获取**：[参考链接](https://atomgit.com/opengauss/oGRecorder)
 - **社区官网获取**：[官网地址](https://opengauss.org/zh/download/)
 
 ### 创建安装用户
