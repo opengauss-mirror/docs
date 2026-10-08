@@ -5,20 +5,58 @@ sections:
     href: ./database_concepts.md
   - label: Basic Database Management
     sections:
-      - label: “Data Storage Management： Database Logical Architecture”
-        href: ./database_logical_architecture.md
+      - label: Storage Structure
+        href: ./storage_structure.md
+      - label: Planning Storage Models
+        href: ./planning_storage_models.md
+      - label: Data Compression
+        sections: 
+          - label: Adaptive Compression
+            href: ./adaptive_compression.md
+          - label: Supporting Data Compression in OLTP Scenarios
+            href: ./support_for_data_compression_in_oltp_scenarios.md
+      - label: Ustore Storage Engine
+        sections: 
+          - label: Ustore Storage Engine
+            href: ./in_place_update_storage_engine.md
+          - label: Configuring Ustore
+            href: ./configuring_ustore.md
+          - label: Parallel Page-based Redo For Ustore
+            href: ./parallel_page_based_redo_for_ustore.md
   - label: Database Deployment Solutions
     sections:
       - label: openGauss Common Primary/Standby Deployment Solutions
-        href: ./opengauss_common_primary_standby_deployment_solutions.md
+        sections:  
+          - label: Overview
+            href: ./opengauss_common_primary_standby_deployment_solutions.md
+          - label: Master And Standby Node
+            href: ./master_and_standby_node.md
+          - label: Cascaded Standby Node
+            href: ./cascaded_standby_node.md
+          - label: Add Remover Standby Node
+            href: ./add_remover_standby_node.md
       - label: Two-City Three-DC DR
-        href: ./two_city_three_dc_dr.md
+        sections: 
+          - label: Overview
+            href: ./two_city_three_dc_dr.md
+          - label: Disaster Recovery Solution Based on Streaming Replication
+            href: ./disaster_recovery_solution_based_on_streaming_replication.md
       - label: Resource Pooling Architecture
         sections:
           - label: Overview
             href: ./resource_pooling_architecture.md
           - label: Resource Pooling Environment Deployment
             href: ./resource_pooling_environment_deployment_guide.md
+          - label: Resource Pooling OM Installation and Deployment Guide
+            href: ./resource_pooling_om_installation_and_deployment.md
+          - label: Resource Pooling POC Performance Testing Guide
+            href: ./resource_pooling_poc_performance_testing_guide.md
+          - label: Resource Pooling Dorado Dual-Cluster Deployment
+            href: ./resource_pooling_dorado_dual_cluster_deployment.md
+          - label: Resource Pooling Network Dual-Cluster Deployment
+            href: ./resource_pooling_network_dual_cluster_deployent.md
+          - label: Resource Pooling Multi-path and Multi-link Redundancy Environment Setup Guide
+            href: ./resource_pooling_multipath_multi_link_redundancy_environment_setup_guide.md
           - label: Constraints on the Resource Pooling Architecture
             href: ./constraints_on_the_resource_pooling_architecture.md
   - label: Creating and Managing Databases
@@ -45,10 +83,14 @@ sections:
         href: ./creating_and_managing_partitioned_tables.md
       - label: Creating and Managing Indexes
         href: ./creating_and_managing_indexes.md
+      - label: Using Vector Buffer
+        href: ./using_vector_buffer.md
       - label: Creating and Managing Views
         href: ./creating_and_managing_views.md
       - label: Creating and Managing Sequences
         href: ./creating_and_managing_sequences.md
+      - label: online ddl
+        href: ./online_ddl.md
   - label: MOT Engine
     sections:
       - label: Overview
@@ -151,6 +193,8 @@ sections:
             href: ./mot_query_native_compilation_jit.md
           - label: Comparison – Disk vs. MOT
             href: ./comparison_disk_vs_mot.md
+      - label: Appendix MOT
+        href: ./appendix_mot.md
   - label: Foreign Data Wrapper
     sections: 
       - label: oracle_fdw
@@ -243,3 +287,31 @@ sections:
         href: ./viewing_parameter_values.md
       - label: Resetting Parameters
         href: ./reset_parameters.md
+  - label: Common Fault Cases (Resource Pooling Developer Environment)
+    sections:
+      - label: Compilation Common Fault
+        sections:
+          - label: Compilation of openGauss-server Failed
+            href: ./compilation_of_opengauss_server_failed.md
+      - label: DSSserver Common Fault with Startup Failure
+        sections:
+          - label: dd Simulating Block Device Failure
+            href: ./dd_simulation_block_device_failure_issue.md
+          - label: Insufficient Shared Memory
+            href: ./low_memory_problem.md
+          - label: INST_ID Conflict or Invalidity
+            href: ./inst_id_is_confict_or_illegality.md
+          - label: Header File Not Erased
+            href: ./top_file_not_erased.md
+          - label: Password Setting Error During Database Initialization
+            href: ./initializating_password_setting_an_error.md
+      - label: Database Startup Failure
+        sections:
+          - label: gs_ctl start Failure
+            href: ./gs_ctl_start_faliure.md
+          - label: Unable to Start a Node Independently
+            href: ./unable_to_launch_the_node_independently.md
+          - label: DMS Component Version Number Error
+            href: ./dms_component_version_number_error.md
+          - label: dssserver Port Number Error
+            href: ./dssserver_port_number_error.md   
