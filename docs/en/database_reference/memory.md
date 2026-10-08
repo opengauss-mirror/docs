@@ -288,6 +288,16 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **512 MB**
 
+## logical\_decoding\_work\_mem
+
+**Parameter description**: Specifies the maximum memory to be used by each internal reorder buffer during logical decoding. When changes accumulated in memory for a transaction exceed this size, streaming decoding or spilling to disk is triggered.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: an integer ranging from 64 to 2147483647. The unit is kB.
+
+**Default value**:  **64 MB**
+
 ## max\_loaded\_cudesc<a name="en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_s180b94f02cee4806be39f36f8d2e2a28"></a>
 
 **Parameter description**: Specifies the number of cudesc cached in each column when a column-store table is scanned. Increasing the value will improve query performance and increase memory usage, particularly when there are many columns in the column-store table.
