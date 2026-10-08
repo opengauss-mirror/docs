@@ -1,55 +1,59 @@
-# oracle\_fdw<a name="EN-US_TOPIC_0272283426"></a>
+# oracle_fdw Foreign Data Wrapper for Oracle
 
-oracle\_fdw is an  [open-source plug-in](https://github.com/laurenz/oracle_fdw). openGauss is developed and adapted based on the open-source  [oracle\_fdw Release 2.2.0](https://github.com/laurenz/oracle_fdw/archive/ORACLE_FDW_2_2_0.tar.gz).
+<!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:44:41.584Z pushedAt=2026-09-11T09:27:08.707Z -->
 
-To compile and use oracle\_fdw, the Oracle development packages must be included in the environment. Therefore, openGauss does not compile oracle\_fdw by default. The following describes how to compile and use oracle\_fdw.
+oracle_fdw (foreign data wrapper for oracle) is a foreign data wrapper for Oracle and an [open-source plugin](https://github.com/laurenz/oracle_fdw). openGauss is developed and adapted based on the open-source [oracle_fdw Release 2.2.0](https://github.com/laurenz/oracle_fdw/archive/ORACLE_FDW_2_2_0.tar.gz).
 
-## Compiling oracle\_fdw<a name="section195674224432"></a>
+Compiling and using oracle_fdw requires the Oracle development package in the environment, so openGauss does not compile oracle_fdw by default. The following sections describe how to compile and use oracle_fdw.
 
-To compile oracle\_fdw, install the Oracle development library and header files from the  [Oracle official website](https://www.oracle.com/database/technologies/instant-client/downloads.html).
+## Compiling oracle_fdw<a name="section195674224432"></a>
 
-Select a proper running environment and version, download  **Basic Package**  and  **SDK Package**, and install them. In addition,  **SQLPlus Package**  is a client tool of the Oracle server. You can install it as required to connect to the Oracle server for testing.
+Compiling oracle_fdw requires installing Oracle development libraries and header files.
 
-After installing the development packages, start oracle\_fdw compilation. Add the  **--enable-oracle-fdw**  option when running the  **configure**  command. Perform compilation using the common openGauss compilation method. \(For details about openGauss compilation reference, see  _Software Compilation and Installation_.\)
+Select an appropriate operating environment and version, then download and install the **Basic Package** and **SDK Package**. In addition, the **SQLPlus Package** is an Oracle client tool that can also be installed as needed for connecting to Oracle Server for testing.
 
-After the compilation is complete, the  **oracle\_fdw.so**  file is generated in  **lib/postgresql/**  in the installation directory. SQL files and control files related to oracle\_fdw are stored in  **share/postgresql/extension/**  in the installation directory.
+After installing the development packages, you can begin compiling oracle_fdw. During compilation, you need to add the **--enable-oracle-fdw** option when executing **configure**. Then proceed with the standard openGauss compilation process. (For openGauss compilation, refer to *Software Installation and Compilation*.)
 
-If the  **--enable-oracle-fdw**  option is not added during compilation and installation, compile oracle\_fdw again after openGauss is installed, and then manually place the  **oracle\_fdw.so**  file to  **lib/postgresql/**  in the installation directory, and place  **oracle\_fdw--1.0--1.1.sql**,  **oracle\_fdw--1.1.sql**, and  **oracle\_fdw.control**  to  **share/postgresql/extension/**  in the installation directory.
+After compilation, the output is **oracle_fdw.so**, located in the **lib/postgresql/** directory under the installation path. The SQL files and control files related to oracle_fdw are located in the **share/postgresql/Extension/** directory under the installation path.
 
-## Using oracle\_fdw<a name="section15777182920432"></a>
+If the **--enable-oracle-fdw** option was not included during compilation and installation, you can compile oracle_fdw again after openGauss installation is complete, and then manually place the compilation output **oracle_fdw.so** into the corresponding installation directory **lib/postgresql/**, and place **oracle_fdw--1.0--1.1.sql**, **oracle_fdw--1.1.sql**, and **oracle_fdw.control** into the corresponding installation directory **share/postgresql/Extension/**.
 
-- To use oracle\_fdw, install and connect to the Oracle server.
+## Using oracle_fdw<a name="section15777182920432"></a>
 
-- Load the oracle\_fdw extension using  **CREATE EXTENSION oracle\_fdw;**.
+- Using oracle_fdw requires connecting to Oracle. Install the Oracle server on your own.
 
-- Create a server object using  **CREATE SERVER**.
+- Load the oracle_fdw extension: **CREATE Extension oracle_fdw**
 
-- Create a user mapping using  **CREATE USER MAPPING**.
+- Create a server object: **CREATE SERVER**
 
-- Create a foreign table using  **CREATE FOREIGN TABLE**. The structure of the foreign table must be the same as that of the Oracle table. The first column in the table on the Oracle server must be unique, for example,  **PRIMARY KEY**  and  **UNIQUE**.
+- Create a user mapping: **CREATE USER MAPPING**
 
-- Perform normal operations on the foreign table, such as  **INSERT**,  **UPDATE**,  **DELETE**,  **SELECT**,  **EXPLAIN**,  **ANALYZE**  and  **COPY**.
+- Create a foreign table: **CREATE FOREIGN TABLE**
 
-- Drop a foreign table using  **DROP FOREIGN TABLE**.
+    The table structure of the foreign table must be consistent with that of the table in the Oracle database. Note: The first column of the table on the Oracle server must have a uniqueness constraint (such as PRIMARY KEY or UNIQUE).
 
-- Drop a user mapping using  **DROP USER MAPPING**.
+- Perform normal operations on the foreign table, such as **INSERT**, **UPDATE**, **DELETE**, **SELECT**, **EXPLAIN**, **ANALYZE**, and **COPY**.
 
-- Drop a server object using  **DROP SERVER**.
+- Delete a foreign table: **DROP FOREIGN TABLE**
 
-- Drop an extension using  **DROP EXTENSION oracle\_fdw;**.
+- Delete a user mapping: **DROP USER MAPPING**
 
-## Common Issues<a name="section41707373437"></a>
+- Delete the server object: **DROP SERVER**
 
-- When a foreign table is created on the openGauss, the table is not created on the Oracle server. You need to use the Oracle client to connect to the Oracle server to create a table.
+- Delete the extension: **DROP Extension oracle_fdw**
 
-- The Oracle user used for executing  **CREATE USER MAPPING**  must have the permission to remotely connect to the Oracle server and perform operations on tables. Before using a foreign table, you can use the Oracle client on the machine where the openGauss server is located and use the corresponding user name and password to check whether the Oracle server can be successfully connected and operations can be performed.
+## FAQ <a name="section41707373437"></a>
 
-- When  **CREATE EXTENSION oracle\_fdw;**  is executed, the message  **libclntsh.so: cannot open shared object file: No such file or directory**  is displayed. The reason is that the Oracle development library  **libclntsh.so**  is not in the related path of the system. You can find the specific path of  **libclntsh.so**, and then add the folder where the  **libclntsh.so**  file is located to  **/etc/ld.so.conf**. For example, if the path of  **libclntsh.so**  is  **/usr/lib/oracle/11.2/client64/lib/libclntsh.so.11.1**, add  **/usr/lib/oracle/11.2/client64/lib/**  to the end of  **/etc/ld.so.conf**. Run the  **ldconfig**  command for the modification to take effect. Note that this operation requires the  **root**  permission.
+- When creating a foreign table on openGauss, the corresponding table is not automatically created in the Oracle database. You need to manually create the table in the Oracle database.
+
+- The Oracle user specified in the **CREATE USER MAPPING** statement must have the privileges to connect to the Oracle database remotely and to perform operations on the relevant tables. Before using the foreign table, you can use an Oracle client on the machine where the openGauss server is located to verify that you can successfully connect to Oracle and perform operations using the corresponding username and password.
+
+- When executing **CREATE Extension oracle_fdw;**, the error **libclntsh.so: cannot open shared object file: No such file or directory** may occur. This is because the Oracle development library libclntsh.so is not in a relevant system path. You can first locate the specific path of libclntsh.so, and then add the folder containing the .so file to **/etc/ld.so.conf**. For example, if the path of libclntsh.so is **/usr/lib/oracle/11.2/client64/lib/libclntsh.so.11.1**, add the directory **/usr/lib/oracle/11.2/client64/lib/** to the end of the **/etc/ld.so.conf** file. Then run **ldconfig** to apply the changes. Note that this operation requires **root** privileges.
 
 ## Precautions<a name="section12951245164312"></a>
 
-- **SELECT JOIN**  between two Oracle foreign tables cannot be pushed down to the Oracle server for execution. Instead,  **SELECT JOIN**  is divided into two SQL statements and transferred to the Oracle server for execution. Then the processing result is summarized in the openGauss.
+- **SELECT JOIN** between two Oracle foreign tables does not support pushdown to the Oracle server. It will be split into two SQL statements and sent to Oracle for execution, and the results will be aggregated on the openGauss side.
 
-- The  **IMPORT FOREIGN SCHEMA**  syntax is not supported.
+- The **IMPORT FOREIGN SCHEMA** syntax is not supported.
 
-- **CREATE TRIGGER**  cannot be executed for foreign tables.
+- The **CREATE TRIGGER** operation on foreign tables is not supported.
