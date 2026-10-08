@@ -185,8 +185,6 @@ sections:
             href: ./mot_query_native_compilation_jit.md
           - label: 对比：磁盘与MOT
             href: ./comparison_disk_vs_mot.md
-      - label: 附录
-        href: ./appendix_mot.md
   - label: 访问外部数据库
     sections:
       - label: oracle_fdw

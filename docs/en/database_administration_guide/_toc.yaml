@@ -193,8 +193,6 @@ sections:
             href: ./mot_query_native_compilation_jit.md
           - label: Comparison – Disk vs. MOT
             href: ./comparison_disk_vs_mot.md
-      - label: Appendix MOT
-        href: ./appendix_mot.md
   - label: Foreign Data Wrapper
     sections: 
       - label: oracle_fdw
@@ -255,6 +253,8 @@ sections:
             href: ./querying_audit_results.md
           - label: Maintaining Audit Logs
             href: ./maintaining_audit_logs.md
+          - label: Setting the Unified Audit Policy
+            href: ./setting_the_unified_audit_policy.md
           - label: Configuring File Permission Security Policies
             href: ./configuring_file_permission_security_policies.md
       - label: Setting Encrypted Equality Query
