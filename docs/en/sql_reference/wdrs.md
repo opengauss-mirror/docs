@@ -48,12 +48,17 @@ The following table describes the WDR content of the openGauss database.
 </tr>
 <tr id="row1212013312166"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p7991716336"><a name="p7991716336"></a><a name="p7991716336"></a><a href="memory_statistics.md">Memory Statistics</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul4459131414205"></a><a name="ul4459131414205"></a><ul id="ul4459131414205"><li>Kernel memory usage.</li><li>Node-wide report, which can be viewed in node mode.</li></ul>
+<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul4459131414205"></a><a name="ul4459131414205"></a><ul id="ul4459131414205"><li>Kernel memory usage and key shared-memory component sizes and percentages.</li><li>Node-wide report, which can be viewed in node mode.</li></ul>
 </td>
 </tr>
 <tr id="row1213317120167"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p1316142615558"><a name="p1316142615558"></a><a name="p1316142615558"></a><a href="time_model.md">Time Model</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul16141716192014"></a><a name="ul16141716192014"></a><ul id="ul16141716192014"><li>Time distribution information about the statements in a node.</li><li>Node-wide report, which can be viewed in node mode.</li></ul>
+</td>
+</tr>
+<tr id="row-protocol-message-stat"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p><a href="time_model.md#protocol-message-statistics">Protocol Statistics</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><ul><li>Execution count, elapsed time, and % of DB Time by protocol message type (Simple Query / Parse / Bind / Execute / Describe / Sync / Close / Batch Bind-Execute).</li><li>Node-wide report, which can be viewed in node mode for detail or all report types.</li></ul>
 </td>
 </tr>
 <tr id="row849110591151"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p148180593320"><a name="p148180593320"></a><a name="p148180593320"></a><a href="sql_statistics.md">SQL Statistics</a></p>
@@ -78,7 +83,7 @@ The following table describes the WDR content of the openGauss database.
 </tr>
 <tr id="row156411451131512"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p12651331239"><a name="p12651331239"></a><a name="p12651331239"></a><a href="object_stats.md">Object stats</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul8257222112020"></a><a name="ul8257222112020"></a><ul id="ul8257222112020"><li>Performance statistics on the index and table dimensions.</li><li>Database/Node-wide report, which can be viewed in cluster or node mode.</li></ul>
+<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul8257222112020"></a><a name="ul8257222112020"></a><ul id="ul8257222112020"><li>Performance statistics on the index and table dimensions, and unused user indexes in the snapshot interval.</li><li>Database/Node-wide report, which can be viewed in cluster or node mode.</li></ul>
 </td>
 </tr>
 <tr id="row8845174912158"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p14537204613311"><a name="p14537204613311"></a><a name="p14537204613311"></a><a href="configuration_settings_60.md">Configuration settings</a></p>

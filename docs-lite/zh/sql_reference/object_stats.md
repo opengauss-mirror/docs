@@ -1,6 +1,6 @@
 # Object stats<a name="ZH-CN_TOPIC_0000001260195075"></a>
 
-Object stats包含User Tables stats、User index stats和Bad lock stats三张表，列名称及描述如下所示。
+Object stats包含User Tables stats、User index stats、Bad lock stats和Unused Indexes四张表，列名称及描述如下所示。
 
 ## User Tables stats<a name="section155172118496"></a>
 
@@ -216,5 +216,20 @@ Object stats包含User Tables stats、User index stats和Bad lock stats三张表
 <td class="cellrowborder" valign="top" width="74.11999999999999%" headers="mcps1.2.3.1.2 "><p id="p13186201943"><a name="p13186201943"></a><a name="p13186201943"></a>最近一次发生时间。</p>
 </td>
 </tr>
+</tbody>
+</table>
+## Unused Indexes
+
+筛选begin/end快照之间idx_scan增量为0的用户索引（排除系统schema，与User index stats相同规则）。数据库、节点范围报表，cluster模式和node模式下的detail或all报告可查看，最多200行。
+
+**表 4  Unused Indexes报表主要内容**
+
+<table><thead align="left"><tr><th class="cellrowborder" valign="top" width="19.91%" id="h0"><p><strong>列名称</strong></p></th><th class="cellrowborder" valign="top" width="80.09%" id="h1"><p><strong>描述</strong></p></th></tr></thead>
+<tbody>
+<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>DB Name</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>Database名称。</p></td></tr>
+<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Schema</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>Schema名称。</p></td></tr>
+<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Table Name</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>表名称。</p></td></tr>
+<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Index Name</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>索引名称。</p></td></tr>
+<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Total Index Scans</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>结束快照时刻的累计索引扫描次数（非区间差分）。</p></td></tr>
 </tbody>
 </table>

@@ -60,5 +60,12 @@
 <td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136931_zh-cn_topic_0237122557_p125797399330"><a name="zh-cn_topic_0283136931_zh-cn_topic_0237122557_p125797399330"></a><a name="zh-cn_topic_0283136931_zh-cn_topic_0237122557_p125797399330"></a>时间值（单位：微秒）。</p>
 </td>
 </tr>
+<tr id="row-n-calls"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p>n_calls</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p>对应时间类型的累计调用次数（协议报文类统计等依赖此字段差分）。</p>
+</td>
+</tr>
 </tbody>
 </table>

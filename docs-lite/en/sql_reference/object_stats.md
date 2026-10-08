@@ -1,6 +1,6 @@
 # Object stats<a name="EN-US_TOPIC_0000001260195075"></a>
 
-Object stats contains three tables: User Tables stats, User index stats, and Bad lock stats. Columns in the tables are described as follows:
+Object stats contains four tables: User Tables stats, User index stats, Bad lock stats, and Unused Indexes. Columns in the tables are described as follows:
 
 ## User Tables stats<a name="section155172118496"></a>
 
@@ -216,5 +216,20 @@ Object stats contains three tables: User Tables stats, User index stats, and Bad
 <td class="cellrowborder" valign="top" width="74.11999999999999%" headers="mcps1.2.3.1.2 "><p id="p13186201943"><a name="p13186201943"></a><a name="p13186201943"></a>Last occurrence time.</p>
 </td>
 </tr>
+</tbody>
+</table>
+## Unused Indexes
+
+Lists user indexes whose idx_scan delta between the begin and end snapshots is 0 (system schemas excluded, same rule as User index stats). Database/Node-wide report, which can be viewed in cluster or node mode for detail or all report types, up to 200 rows.
+
+**Table 4 Columns in Unused Indexes**
+
+<table><thead align="left"><tr><th class="cellrowborder" valign="top" width="19.91%" id="h0"><p><strong>Column</strong></p></th><th class="cellrowborder" valign="top" width="80.09%" id="h1"><p><strong>Description</strong></p></th></tr></thead>
+<tbody>
+<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>DB Name</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>Database name.</p></td></tr>
+<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Schema</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>Schema name.</p></td></tr>
+<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Table Name</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>Table name.</p></td></tr>
+<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Index Name</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>Index name.</p></td></tr>
+<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Total Index Scans</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>Cumulative index scan count at the end snapshot (not a delta).</p></td></tr>
 </tbody>
 </table>
