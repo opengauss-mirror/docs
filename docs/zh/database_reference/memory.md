@@ -298,6 +298,16 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 **默认值**： 512MB
 
+## logical\_decoding\_work\_mem
+
+**参数说明**：设置逻辑解码过程中，每个内部重排序缓冲区（Reorder Buffer）可使用的最大内存。当事务在内存中累积的变更量超过该大小时，将触发流式解码或触发落盘。
+
+该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**：整型，64\~2147483647，单位为kB。
+
+**默认值**： 64MB
+
 ## max\_loaded\_cudesc<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_s180b94f02cee4806be39f36f8d2e2a28"></a>
 
 **参数说明**： 设置列存表在做扫描时，每列缓存cudesc信息的个数。增大设置会提高查询性能，但也会增加内存占用，特别是当列存表的列非常多时。
