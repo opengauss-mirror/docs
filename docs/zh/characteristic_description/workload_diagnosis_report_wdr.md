@@ -75,7 +75,7 @@ WDR主要依赖两个组件：
 </tr>
 <tr id="row123476454170"><td class="cellrowborder" valign="top" width="24.759999999999998%" headers="mcps1.2.3.1.1 "><p id="p934714512178"><a name="p934714512178"></a><a name="p934714512178"></a>Memory Statistics</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.24%" headers="mcps1.2.3.1.2 "><p id="p434712455175"><a name="p434712455175"></a><a name="p434712455175"></a>包含最大进程内存、进程已经使用内存、最大共享内存、已经使用共享内存大小等。</p>
+<td class="cellrowborder" valign="top" width="75.24%" headers="mcps1.2.3.1.2 "><p id="p434712455175"><a name="p434712455175"></a><a name="p434712455175"></a>包含最大进程内存、进程已经使用内存、最大共享内存、已经使用共享内存大小，以及关键共享内存组件占用与占比等。</p>
 </td>
 </tr>
 </tbody>
@@ -96,10 +96,16 @@ WDR主要依赖两个组件：
 <p id="p33332484313"><a name="p33332484313"></a><a name="p33332484313"></a>包含系统在各个阶段上消耗的时间：内核时间、CPU时间、执行时间、解析时间、编译时间、查询重写时间、计划生成时间、网络时间、IO时间。</p>
 </td>
 </tr>
+<tr id="row-protocol-statistics"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p>Protocol Statistics</p>
+</td>
+<td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p>按协议报文类型统计执行次数与耗时。</p>
+<p>包含 Simple Query、Parse、Bind、Execute、Describe、Sync、Close、Batch Bind-Execute 的 Exec Count、Total Time(s)、Avg Time(ms)、% of DB Time。</p>
+</td>
+</tr>
 <tr id="row1233374883113"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p10333948163119"><a name="p10333948163119"></a><a name="p10333948163119"></a>SQL Statistics</p>
 </td>
 <td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p367217315715"><a name="p367217315715"></a><a name="p367217315715"></a>主要用于SQL语句性能问题的诊断。</p>
-<p id="p103331848113117"><a name="p103331848113117"></a><a name="p103331848113117"></a>包含归一化的SQL的性能指标在多个维度上的排序：Elapsed Time、CPU Time、Rows Returned、Tuples Reads、Executions、Physical Reads、Logical Reads。这些指标的种类包括：执行时间，执行次数、行活动、Cache IO等。</p>
+<p id="p103331848113117"><a name="p103331848113117"></a><a name="p103331848113117"></a>包含归一化的SQL的性能指标在多个维度上的排序：Elapsed Time、CPU Time、Rows Returned、Tuples Reads、Executions、Physical Reads、Logical Reads。这些指标的种类包括：执行时间，执行次数、行活动、Cache IO等。另包含按数据库聚合的执行次数与耗时。</p>
 </td>
 </tr>
 <tr id="row1933324873111"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p183331348193119"><a name="p183331348193119"></a><a name="p183331348193119"></a>Wait Events</p>
@@ -123,7 +129,7 @@ WDR主要依赖两个组件：
 <tr id="row123341448113113"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p11334848143110"><a name="p11334848143110"></a><a name="p11334848143110"></a>Object stats</p>
 </td>
 <td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p14405135119915"><a name="p14405135119915"></a><a name="p14405135119915"></a>用于诊断数据库对象的性能。</p>
-<p id="p6334174863119"><a name="p6334174863119"></a><a name="p6334174863119"></a>包含用户表、索引上的表、索引扫描活动，insert、update、delete活动，有效行数量，表维护操作的状态等。</p>
+<p id="p6334174863119"><a name="p6334174863119"></a><a name="p6334174863119"></a>包含用户表、索引上的表、索引扫描活动，insert、update、delete活动，有效行数量，表维护操作的状态，以及区间内未使用的用户索引等。</p>
 </td>
 </tr>
 <tr id="row1427793219359"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p32775326355"><a name="p32775326355"></a><a name="p32775326355"></a>Configuration settings</p>
@@ -142,7 +148,10 @@ WDR主要依赖两个组件：
 
 ## 特性增强<a name="section9602018103411"></a>
 
-无。
+- Shared Memory Statistics：展示共享内存候选组件中按大小排序的Top 10及(Total)。节点范围报表，仅node模式下的summary或all报告可查看。
+- Protocol Statistics（Protocol Message Statistics）：按 8 种协议报文类型统计 Exec Count、Total Time(s)、Avg Time(ms)、% of DB Time。节点范围报表，仅 node 模式下的 detail 或 all 报告可查看。
+- SQL Stats by Database：按数据库聚合SQL执行次数与耗时。节点范围报表，仅node模式下的detail或all报告可查看。
+- Unused Indexes：输出区间内未使用的用户索引。数据库、节点范围报表，cluster模式和node模式下的detail或all报告可查看。
 
 ## 特性约束<a name="section1956417145819"></a>
 

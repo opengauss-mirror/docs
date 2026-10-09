@@ -106,6 +106,38 @@ Set  **shared\_buffers**  to a value less than 40% of the memory. Set it to a la
 
 If  **shared\_buffers**  is set to a larger value, increase the value of  **checkpoint\_segments**  because a longer period of time is required to write a large amount of new or changed data.
 
+## clog\_buffers<a name="section1790553600000"></a>
+
+**Parameter description**: Specifies the base size for calculating the shared memory buffers of openGauss clog. The actual clog shared memory size is also related to the value of  **CLOG\_PART**  in the  **num\_internal\_lock\_partitions**  parameter. In the default configuration, the actual clog shared memory size is about 1/2 of the value of this parameter.
+
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: an integer ranging from 16 to 67108864. The unit is 8 kB.
+
+**Default value**:  **8 MB**
+
+**Setting suggestions**:
+
+1. If this parameter is set to less than 128 MB, the actual clog shared memory size does not change with this parameter (about 32 MB in the default configuration). Decreasing the value of this parameter further takes no effect.
+2. The actual clog shared memory size has an upper limit (1 GB in the default configuration). Increasing the value of this parameter beyond 2 GB takes no effect.
+3. If the value of  **CLOG\_PART**  in the  **num\_internal\_lock\_partitions**  parameter is adjusted, evaluate the change of the actual clog shared memory size accordingly.
+
+## csnlog\_buffers<a name="section1790553600001"></a>
+
+**Parameter description**: Specifies the base size for calculating the shared memory buffers of openGauss csnlog. The actual csnlog shared memory size is also related to the value of  **CSNLOG\_PART**  in the  **num\_internal\_lock\_partitions**  parameter. In the default configuration, the actual csnlog shared memory size is approximately equal to the value of this parameter.
+
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: an integer ranging from 16 to 67108864. The unit is 8 kB.
+
+**Default value**:  **8 MB**
+
+**Setting suggestions**:
+
+1. If this parameter is set to less than 192 MB, the actual csnlog shared memory size does not change with this parameter (about 128 MB in the default configuration). Decreasing the value of this parameter further takes no effect.
+2. The actual csnlog shared memory size has an upper limit (1 GB in the default configuration). Increasing the value of this parameter beyond 1 GB takes no effect.
+3. If the value of  **CSNLOG\_PART**  in the  **num\_internal\_lock\_partitions**  parameter is adjusted, evaluate the change of the actual csnlog shared memory size accordingly.
+
 ## segment\_buffers<a name="section1581274312490"></a>
 
 **Parameter description**: Specifies the memory size of an openGauss segment-paged metadata page.
@@ -255,6 +287,16 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Value range**: an integer ranging from 64 to 2147483647. The unit is kB.
 
 **Default value**:  **512 MB**
+
+## logical\_decoding\_work\_mem
+
+**Parameter description**: Specifies the maximum memory to be used by each internal reorder buffer during logical decoding. When changes accumulated in memory for a transaction exceed this size, streaming decoding or spilling to disk is triggered.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: an integer ranging from 64 to 2147483647. The unit is kB.
+
+**Default value**:  **64 MB**
 
 ## max\_loaded\_cudesc<a name="en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_s180b94f02cee4806be39f36f8d2e2a28"></a>
 

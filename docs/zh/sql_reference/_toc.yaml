@@ -207,6 +207,10 @@ sections:
                 href: ./instance_time.md
               - label: GLOBAL_INSTANCE_TIME
                 href: ./global_instance_time.md
+              - label: DATABASE_SQL_STAT
+                href: ./database_sql_stat.md
+              - label: SUMMARY_DATABASE_SQL_STAT
+                href: ./summary_database_sql_stat.md
           - label: Memory
             sections:
               - label: MEMORY_NODE_DETAIL

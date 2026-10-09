@@ -23,17 +23,17 @@ openGauss兼容性评估工具，支持从多个场景下获取sql语句进行�
   - mybatis映射文件。
 
 评估报告中会展示每条sql语句的兼容性详情，包括完全兼容、语法兼容、不兼容、不支持评估。具体介绍参考兼容性评估插件：
- <https://gitcode.com/opengauss/Plugin/tree/master/contrib/assessment>
+ <https://atomgit.com/opengauss/Plugin/tree/master/contrib/assessment>
 
 社区提供兼容性评估工具软件包地址：
-<https://gitcode.com/opengauss/compatibility-assessment/tree/master/compatibility-assessment>
+<https://atomgit.com/opengauss/compatibility-assessment/tree/master/compatibility-assessment>
 
 ## 源码安装
 
 通过git命令下载源代码：
 
 ```
-git clone https://gitcode.com/opengauss/compatibility-assessment.git
+git clone https://atomgit.com/opengauss/compatibility-assessment.git
 ```
 
 进入compatibility-assessment目录，执行sh build.sh进行编译获得可执行jar包compatibility-assessment-5.1.0-exec.jar。
@@ -56,7 +56,7 @@ create extension assessment;
 
 社区提供的数据库二进制包中已包含对应插件。若需要手动编译插件，可参考
 
-<https://gitcode.com/opengauss/Plugin/tree/master/contrib/assessment>
+<https://atomgit.com/opengauss/Plugin/tree/master/contrib/assessment>
 
 ## 注意事项
 

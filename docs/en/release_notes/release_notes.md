@@ -343,26 +343,26 @@ This is the tenth release of openGauss. The disclosed CVEs have been fixed.
 
 openGauss contains the following 18 code repositories.
 
-- Open-source software code repository: [https://gitcode.com/opengauss/openGauss-third\_party](https://gitcode.com/opengauss/openGauss-third_party)
+- Open-source software code repository: [https://atomgit.com/opengauss/openGauss-third\_party](https://atomgit.com/opengauss/openGauss-third_party)
 
-- JDBC driver code repository: [https://gitcode.com/opengauss/openGauss-connector-jdbc](https://gitcode.com/opengauss/openGauss-connector-jdbc)
+- JDBC driver code repository: [https://atomgit.com/opengauss/openGauss-connector-jdbc](https://atomgit.com/opengauss/openGauss-connector-jdbc)
 
-- ODBC driver code repository: [https://gitcode.com/opengauss/openGauss-connector-odbc](https://gitcode.com/opengauss/openGauss-connector-odbc)
-- Database server code repository: [https://gitcode.com/opengauss/openGauss-server](https://gitcode.com/opengauss/openGauss-server)
-- Autonomous O&M platform DBMind code repository: [https://gitcode.com/opengauss/openGauss-DBMind](https://gitcode.com/opengauss/openGauss-DBMind)
-- OM tool code repository: [https://gitcode.com/opengauss/openGauss-OM](https://gitcode.com/opengauss/openGauss-OM)
-- CM tool code repository: [https://gitcode.com/opengauss/CM](https://gitcode.com/opengauss/CM)
-- Database distributed memory service \(DMS\) component code repository: [https://gitcode.com/opengauss/DMS](https://gitcode.com/opengauss/DMS)
-- Database distributed storage service \(DSS\) component code repository: [https://gitcode.com/opengauss/DSS](https://gitcode.com/opengauss/DSS)
-- DCF code repository: [https://gitcode.com/opengauss/DCF](https://gitcode.com/opengauss/DCF)
-- DCC code repository: [https://gitcode.com/opengauss/DCC](https://gitcode.com/opengauss/DCC)
-- Plug-in code repository: [https://gitcode.com/opengauss/Plugin](https://gitcode.com/opengauss/Plugin)
-- MySQL-to-openGauss full migration tool code repository: [https://gitcode.com/opengauss/openGauss-tools-chameleon](https://gitcode.com/opengauss/openGauss-tools-chameleon)
-- MySQL incremental/reverse migration tool code repository: [https://gitcode.com/opengauss/debezium](https://gitcode.com/opengauss/debezium)
-- Data verification tool code repository: [https://gitcode.com/opengauss/openGauss-tools-datachecker-performance](https://gitcode.com/opengauss/openGauss-tools-datachecker-performance)
-- Prometheus-exporter code repository: [https://gitcode.com/opengauss/openGauss-prometheus-exporter](https://gitcode.com/opengauss/openGauss-prometheus-exporter)
-- Database monitoring plug-in generation tool code repository: [https://gitcode.com/opengauss/openGauss-tools-monitor](https://gitcode.com/opengauss/openGauss-tools-monitor)
-- Document repository: [https://gitcode.com/opengauss/docs](https://gitcode.com/opengauss/docs)
+- ODBC driver code repository: [https://atomgit.com/opengauss/openGauss-connector-odbc](https://atomgit.com/opengauss/openGauss-connector-odbc)
+- Database server code repository: [https://atomgit.com/opengauss/openGauss-server](https://atomgit.com/opengauss/openGauss-server)
+- Autonomous O&M platform DBMind code repository: [https://atomgit.com/opengauss/openGauss-DBMind](https://atomgit.com/opengauss/openGauss-DBMind)
+- OM tool code repository: [https://atomgit.com/opengauss/openGauss-OM](https://atomgit.com/opengauss/openGauss-OM)
+- CM tool code repository: [https://atomgit.com/opengauss/CM](https://atomgit.com/opengauss/CM)
+- Database distributed memory service \(DMS\) component code repository: [https://atomgit.com/opengauss/DMS](https://atomgit.com/opengauss/DMS)
+- Database distributed storage service \(DSS\) component code repository: [https://atomgit.com/opengauss/DSS](https://atomgit.com/opengauss/DSS)
+- DCF code repository: [https://atomgit.com/opengauss/DCF](https://atomgit.com/opengauss/DCF)
+- DCC code repository: [https://atomgit.com/opengauss/DCC](https://atomgit.com/opengauss/DCC)
+- Plug-in code repository: [https://atomgit.com/opengauss/Plugin](https://atomgit.com/opengauss/Plugin)
+- MySQL-to-openGauss full migration tool code repository: [https://atomgit.com/opengauss/openGauss-tools-chameleon](https://atomgit.com/opengauss/openGauss-tools-chameleon)
+- MySQL incremental/reverse migration tool code repository: [https://atomgit.com/opengauss/debezium](https://atomgit.com/opengauss/debezium)
+- Data verification tool code repository: [https://atomgit.com/opengauss/openGauss-tools-datachecker-performance](https://atomgit.com/opengauss/openGauss-tools-datachecker-performance)
+- Prometheus-exporter code repository: [https://atomgit.com/opengauss/openGauss-prometheus-exporter](https://atomgit.com/opengauss/openGauss-prometheus-exporter)
+- Database monitoring plug-in generation tool code repository: [https://atomgit.com/opengauss/openGauss-tools-monitor](https://atomgit.com/opengauss/openGauss-tools-monitor)
+- Document repository: [https://atomgit.com/opengauss/docs](https://atomgit.com/opengauss/docs)
 
 ## Contribution<a name="EN-US_TOPIC_0289899196"></a>
 
@@ -374,7 +374,7 @@ As an openGauss user, you can contribute to the openGauss community in multiple 
 
 openGauss brings together people of common interest to form different SIGs. For details about existing SIGs, see the [SIG list](https://opengauss.org/en/contribution/).
 
-You are welcome to join an existing SIG or create a SIG. For details about how to create a SIG, see [Special Interest Group \(SIG\)](https://gitcode.com/opengauss/tc/blob/master/sigs/README.en.md/).
+You are welcome to join an existing SIG or create a SIG. For details about how to create a SIG, see [Special Interest Group \(SIG\)](https://atomgit.com/opengauss/tc/blob/master/sigs/README.en.md/).
 
 **Mail List and Issues**
 

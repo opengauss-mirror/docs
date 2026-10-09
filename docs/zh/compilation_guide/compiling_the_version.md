@@ -19,8 +19,8 @@ openGauss的编译过程和生成安装包的过程已经写成了一个一键�
 1. 执行如下命令下载代码和开源第三方软件仓库：
 
    ```
-   [user@linux sda]$ git clone https://gitcode.com/opengauss/openGauss-server.git openGauss-server -b branchname #openGauss的代码仓库
-   [user@linux sda]$ git clone https://gitcode.com/opengauss/openGauss-third_party.git openGauss-third_party #openGauss依赖的开源第三方软件仓库
+   [user@linux sda]$ git clone https://atomgit.com/opengauss/openGauss-server.git openGauss-server -b branchname #openGauss的代码仓库
+   [user@linux sda]$ git clone https://atomgit.com/opengauss/openGauss-third_party.git openGauss-third_party #openGauss依赖的开源第三方软件仓库
    [user@linux sda]$ # mkdir binarylibs        关于此注释步骤，请阅读说明
    ```
 
@@ -508,7 +508,7 @@ openGauss-server/build.sh是编译过程中的重要脚本工具。其集成了�
 1. git clone OM代码仓：
 
    ```
-   [user@linux sda]$ git clone https://gitcode.com/opengauss/openGauss-OM.git
+   [user@linux sda]$ git clone https://atomgit.com/opengauss/openGauss-OM.git
    ```
 
 2. 执行编译：

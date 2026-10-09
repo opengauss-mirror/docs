@@ -1,0 +1,5 @@
+label: GV_GRAPH向量索引
+isManual: true
+sections:
+  - label: GV_GRAPH使用指南
+    href: ./gv_graph.md

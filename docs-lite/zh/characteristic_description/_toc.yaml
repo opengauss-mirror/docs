@@ -111,6 +111,10 @@ sections:
         href: ./ledger_database_mechanism.md
       - label: 透明数据加密
         href: ./transparent_data_encryption.md
+  - label: 向量数据库
+    sections:
+      - label: 超低内存磁盘检索
+        href: ./low_memory_disk_retrieval.md
   - label: 企业级特性
     sections:
       - label: 函数及存储过程支持

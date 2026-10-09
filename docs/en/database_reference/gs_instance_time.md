@@ -45,5 +45,12 @@
 <td class="cellrowborder" valign="top" width="59.91%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137436_en-us_topic_0237122542_p125797399330"><a name="en-us_topic_0283137436_en-us_topic_0237122542_p125797399330"></a><a name="en-us_topic_0283137436_en-us_topic_0237122542_p125797399330"></a>Time value, in μs</p>
 </td>
 </tr>
+<tr id="row-n-calls"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p>n_calls</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p>Cumulative call count for the corresponding time type (used by protocol-message statistics deltas).</p>
+</td>
+</tr>
 </tbody>
 </table>

@@ -79,7 +79,7 @@ portal的安装目录默认为/ops/portal，可根据实际需要更换。
 1.通过git命令下载源代码，将源代码中的portal文件夹复制到/ops下。
 
 ```
-git clone https://gitcode.com/opengauss/openGauss-migration-portal.git
+git clone https://atomgit.com/opengauss/openGauss-migration-portal.git
 ```
 
 2.使用maven命令编译源代码获得portalControl-7.0.0-exec.jar，并将jar包放在/ops/portal下。

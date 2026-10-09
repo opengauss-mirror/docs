@@ -75,7 +75,7 @@ The WDR depends on the following two components:
 </tr>
 <tr id="row123476454170"><td class="cellrowborder" valign="top" width="24.759999999999998%" headers="mcps1.2.3.1.1 "><p id="p934714512178"><a name="p934714512178"></a><a name="p934714512178"></a>Memory Statistics</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.24%" headers="mcps1.2.3.1.2 "><p id="p434712455175"><a name="p434712455175"></a><a name="p434712455175"></a>Includes maximum process memory, used process memory, maximum shared memory, and used shared memory.</p>
+<td class="cellrowborder" valign="top" width="75.24%" headers="mcps1.2.3.1.2 "><p id="p434712455175"><a name="p434712455175"></a><a name="p434712455175"></a>Includes maximum process memory, used process memory, maximum shared memory, used shared memory, and key shared-memory component sizes and percentages.</p>
 </td>
 </tr>
 </tbody>
@@ -96,10 +96,16 @@ The WDR depends on the following two components:
 <p id="p33332484313"><a name="p33332484313"></a><a name="p33332484313"></a>The statistics include time consumed by the system in each phase, including the kernel time, CPU time, execution time, parsing time, compilation time, query rewriting time, plan generation time, network time, and I/O time.</p>
 </td>
 </tr>
+<tr id="row-protocol-statistics"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p>Protocol Statistics</p>
+</td>
+<td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p>Diagnoses protocol-message execution count and elapsed time.</p>
+<p>Includes Simple Query, Parse, Bind, Execute, Describe, Sync, Close, and Batch Bind-Execute with Exec Count, Total Time(s), Avg Time(ms), and % of DB Time.</p>
+</td>
+</tr>
 <tr id="row1233374883113"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p10333948163119"><a name="p10333948163119"></a><a name="p10333948163119"></a>SQL Statistics</p>
 </td>
 <td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p367217315715"><a name="p367217315715"></a><a name="p367217315715"></a>Diagnoses SQL statement performance problems.</p>
-<p id="p103331848113117"><a name="p103331848113117"></a><a name="p103331848113117"></a>The statistics include normalized SQL performance indicators in multiple dimensions: elapsed time, CPU time, rows returned, tuple reads, executions, physical reads, and logical reads. The indicators can be classified into execution time, number of execution times, row activity, and cache I/O.</p>
+<p id="p103331848113117"><a name="p103331848113117"></a><a name="p103331848113117"></a>The statistics include normalized SQL performance indicators in multiple dimensions: elapsed time, CPU time, rows returned, tuple reads, executions, physical reads, and logical reads. The indicators can be classified into execution time, number of execution times, row activity, and cache I/O. Per-database execution count and elapsed time are also included.</p>
 </td>
 </tr>
 <tr id="row1933324873111"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p183331348193119"><a name="p183331348193119"></a><a name="p183331348193119"></a>Wait Events</p>
@@ -123,7 +129,7 @@ The WDR depends on the following two components:
 <tr id="row123341448113113"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p11334848143110"><a name="p11334848143110"></a><a name="p11334848143110"></a>Object stats</p>
 </td>
 <td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p14405135119915"><a name="p14405135119915"></a><a name="p14405135119915"></a>Diagnoses the performance of database objects.</p>
-<p id="p6334174863119"><a name="p6334174863119"></a><a name="p6334174863119"></a>The statistics include user tables, tables on indexes, index scan activities, as well as insert, update, and delete activities, number of valid rows, and table maintenance status.</p>
+<p id="p6334174863119"><a name="p6334174863119"></a><a name="p6334174863119"></a>The statistics include user tables, tables on indexes, index scan activities, as well as insert, update, and delete activities, number of valid rows, table maintenance status, and unused user indexes in the snapshot interval.</p>
 </td>
 </tr>
 <tr id="row1427793219359"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p32775326355"><a name="p32775326355"></a><a name="p32775326355"></a>Configuration settings</p>
@@ -142,7 +148,10 @@ The WDR depends on the following two components:
 
 ## Enhancements<a name="section9602018103411"></a>
 
-None.
+- Shared Memory Statistics: Top 10 shared-memory candidate components by size plus (Total). Node-wide report, which can be viewed in node mode for summary or all report types.
+- Protocol Statistics (Protocol Message Statistics): Exec Count, Total Time(s), Avg Time(ms), and % of DB Time for eight protocol message types. Node-wide report, which can be viewed in node mode for detail or all report types.
+- SQL Stats by Database: per-database SQL execution count and elapsed time. Node-wide report, which can be viewed in node mode for detail or all report types.
+- Unused Indexes: unused user indexes in the snapshot interval under Object stats. Database/Node-wide report, which can be viewed in cluster or node mode for detail or all report types.
 
 ## Constraints<a name="section1956417145819"></a>
 

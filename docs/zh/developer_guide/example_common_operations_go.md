@@ -1,6 +1,6 @@
 # openGauss Go 语言驱动常用操作示例
 
-本文基于 `gitcode.com/opengauss/openGauss-connector-go-pq` 驱动，给出一套可运行的 Go 使用示例，演示如何在 Go 语言中通过标准 `database/sql` 接口访问 openGauss，并完成常见的增删改查、事务和 JSONB 等操作。
+本文基于 `atomgit.com/opengauss/openGauss-connector-go-pq` 驱动，给出一套可运行的 Go 使用示例，演示如何在 Go 语言中通过标准 `database/sql` 接口访问 openGauss，并完成常见的增删改查、事务和 JSONB 等操作。
 
 示例内容包括：
 
@@ -41,7 +41,7 @@ mkdir opengauss-go-demo
 cd opengauss-go-demo
 
 go mod init opengauss-go-demo
-go get gitcode.com/opengauss/openGauss-connector-go-pq
+go get atomgit.com/opengauss/openGauss-connector-go-pq
 ```
 
 在已有的 openGauss Go 驱动仓库中（已存在 `go.mod`），可直接在仓库根目录下执行示例程序。
@@ -54,7 +54,7 @@ go get gitcode.com/opengauss/openGauss-connector-go-pq
 import (
     "database/sql"
 
-    _ "gitcode.com/opengauss/openGauss-connector-go-pq"
+    _ "atomgit.com/opengauss/openGauss-connector-go-pq"
 )
 ```
 
@@ -96,7 +96,7 @@ import (
     "database/sql"
     "log"
 
-    _ "gitcode.com/opengauss/openGauss-connector-go-pq"
+    _ "atomgit.com/opengauss/openGauss-connector-go-pq"
 )
 
 func openConn() (*sql.DB, error) {
@@ -429,7 +429,7 @@ import (
     "fmt"
     "log"
 
-    _ "gitcode.com/opengauss/openGauss-connector-go-pq"
+    _ "atomgit.com/opengauss/openGauss-connector-go-pq"
 )
 
 type Payload struct {

@@ -33,3 +33,21 @@ Memory Statistics指标名称及描述如下表所示。
 </tr>
 </tbody>
 </table>
+
+## Shared Memory Statistics
+
+展示结束快照时刻共享内存候选组件中按占用大小排序的Top 10及(Total)行。占比分母为max_shared_memory。节点范围报表，仅node模式下的summary或all报告可查看。
+
+候选组件包括：Buffer Blocks、Buffer Descriptors、Buffer Descriptors Extra、Checkpoint BufferIds、clog、XLOG Ctl、CSNLOG Ctl、PgStat、AshContext、IncreCheckPointContext、Undo、imcstore context、DoubleWriteContext。
+
+数据来源：snapshot.snap_global_shared_memory_detail、snapshot.snap_global_memory_node_detail。
+
+**表 2  Shared Memory Statistics报表主要内容**
+
+<table><thead align="left"><tr><th class="cellrowborder" valign="top" width="19.91%" id="h0"><p><strong>列名称</strong></p></th><th class="cellrowborder" valign="top" width="80.09%" id="h1"><p><strong>描述</strong></p></th></tr></thead>
+<tbody>
+<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Shared Memory</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>共享内存组件名称。含(Total)以及候选组件中按大小排序的Top 10。</p></td></tr>
+<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Size</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>组件占用大小（MB或GB）。(Total)行为max_shared_memory。</p></td></tr>
+<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Pct(%)</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>相对max_shared_memory的占比；(Total)为100%。</p></td></tr>
+</tbody>
+</table>

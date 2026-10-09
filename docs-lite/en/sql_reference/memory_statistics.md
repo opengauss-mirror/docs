@@ -33,3 +33,20 @@ The following table lists metrics in the Memory Statistics report.
 </tr>
 </tbody>
 </table>
+## Shared Memory Statistics
+
+Shows the Top 10 shared-memory candidate components by size at the end snapshot, plus a (Total) row. The percentage denominator is max_shared_memory. Node-wide report, which can be viewed in node mode for summary or all report types.
+
+Candidates: Buffer Blocks, Buffer Descriptors, Buffer Descriptors Extra, Checkpoint BufferIds, clog, XLOG Ctl, CSNLOG Ctl, PgStat, AshContext, IncreCheckPointContext, Undo, imcstore context, and DoubleWriteContext.
+
+Data sources: snapshot.snap_global_shared_memory_detail and snapshot.snap_global_memory_node_detail.
+
+**Table 2 Columns in Shared Memory Statistics**
+
+<table><thead align="left"><tr><th class="cellrowborder" valign="top" width="19.91%" id="h0"><p><strong>Column</strong></p></th><th class="cellrowborder" valign="top" width="80.09%" id="h1"><p><strong>Description</strong></p></th></tr></thead>
+<tbody>
+<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Shared Memory</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>Shared-memory component name. Includes (Total) and the Top 10 candidates by size.</p></td></tr>
+<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Size</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>Component size (MB or GB). The (Total) row is max_shared_memory.</p></td></tr>
+<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Pct(%)</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>Percentage relative to max_shared_memory; (Total) is 100%.</p></td></tr>
+</tbody>
+</table>

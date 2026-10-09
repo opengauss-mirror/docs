@@ -5,6 +5,10 @@ sections:
     href: ./mysql_protocol_compatibility_config.md
   - label: 基于MySQL JDBC开发
     href: ./mysql_jdbc_development.md
+  - label: 基于Spring Boot开发          
+    href: ./springboot_development.md
+  - label: 基于SpringDataJPA开发        
+    href: ./springdatajpa_development.md
   - label: 基于HikariCP开发
     href: ./hikaricp_development.md
   - label: 基于Mybatis开发
@@ -15,6 +19,8 @@ sections:
     href: ./mybatis_plus_development.md
   - label: 基于Hibernate开发
     href: ./hibernate_development.md
+  - label: 基于mysqlclient开发
+    href: ./mysqlclient_development.md
   - label: 基于mysql-connector-python开发
     href: ./mysql_connector_development.md
   - label: 基于Django开发

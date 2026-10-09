@@ -33,11 +33,11 @@ EXECUTE DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM,'TABLE
 
 - Path of the openGauss source code:
 
-> https://gitcode.com/opengauss/openGauss-server
+> https://atomgit.com/opengauss/openGauss-server
 
 - Path of the openGauss plug-in repository:
 
-> https://gitcode.com/opengauss/Plugin
+> https://atomgit.com/opengauss/Plugin
 
 ## Compiling Plug-ins
 

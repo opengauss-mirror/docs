@@ -609,6 +609,16 @@ sections:
             href: ./pg_stat_sys_indexes.md
           - label: PG_STAT_SYS_TABLES
             href: ./pg_stat_sys_tables.md
+          - label: PG_STAT_VECTOR_BUFFER
+            href: ./pg_stat_vector_buffer.md
+          - label: PG_STAT_VECTOR_BUFFER_HIT_RATE
+            href: ./pg_stat_vector_buffer_hit_rate.md
+          - label: PG_STAT_VECTOR_BUFFER_POOL
+            href: ./pg_stat_vector_buffer_pool.md
+          - label: PG_STAT_VECTOR_BUFFER_CHUNK
+            href: ./pg_stat_vector_buffer_chunk.md
+          - label: PG_STAT_VECTOR_BUFFER_HASH_CHAIN
+            href: ./pg_stat_vector_buffer_hash_chain.md
           - label: PG_STAT_XACT_ALL_TABLES
             href: ./pg_stat_xact_all_tables.md
           - label: PG_STAT_XACT_SYS_TABLES
