@@ -290,6 +290,8 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     _table\_name_ 可以是普通表，分区表，普通视图，物化视图和键保留（key-preserved）的连接视图；普通视图指在单表上查询创建的视图；键保留的连接视图指对键保留表进行连接操作后创建的视图，但不支持对包含超过一个非键保留表的连接视图进行数据采样。
 
+    对Ustore存储引擎的分区表，不支持使用TABLESAMPLE子句进行数据采样（包括通过PARTITION (partition_name)子句指定分区扫描的场景），执行时会报错"Ustore not support table sampling yet"；Ustore普通表（非分区表）支持TABLESAMPLE采样。
+
   - TIMECAPSULE \{ TIMESTAMP | CSN \} expression
 
       查询指定CSN点或者指定时间点表的内容。
