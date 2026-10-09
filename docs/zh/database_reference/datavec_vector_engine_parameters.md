@@ -221,6 +221,48 @@
 >
 > 较高的值会提升查询的召回率，但同时查询速度会下降。
 
+## gv_graph_nprobes
+
+**参数说明**：使用GV_GRAPH索引扫描时，从图索引中获取的候选记录数。
+
+该参数属于USERSET类型。请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。使用`SET`修改时，只对当前会话生效。
+
+**取值范围**：整型，1\~65535
+
+**默认值**：128
+
+**设置建议**：该值至少应不小于查询语句中的`LIMIT`。增大该值通常可以提高召回率，但也会增加查询耗时；查询包含额外的`WHERE`过滤条件时，可以适当增大候选数，避免候选记录被过滤后返回数量不足。
+
+使用该参数前，需要在当前会话中设置`enable_indexscan_optimization = on`。GV_GRAPH索引的创建和查询方法请参考[GV_GRAPH使用指南](../gv_graph/gv_graph.md#调整查询效果)。
+
+## npu_device_mask
+
+**参数说明**：设置GV_GRAPH索引构建可使用的NPU设备。该参数使用十进制位掩码，每个二进制位对应一张NPU卡。例如，`1`表示使用0号NPU，`3`表示使用0号和1号NPU，`15`表示使用0至3号NPU。
+
+该参数属于USERSET类型，并且仅支持单机部署。使用`SET`修改时，只对当前会话生效。
+
+**取值范围**：整型，0\~INT_MAX
+
+**默认值**：255，对应0至7号NPU
+
+>[!NOTE]说明
+>
+>该参数仅在安装了NPU版GaussVector组件，并使用`prune_alg = npu_knn`创建或重建GV_GRAPH索引时生效。CPU版GaussVector组件和多节点部署不支持NPU剪枝，应使用默认的`prune_alg = vamana`。使用前应根据实际可用的NPU设备设置掩码。虽然参数允许设置为`0`，但使用NPU剪枝时至少需要选择一个设备，否则索引构建会报错。
+
+## npu_device_max_mem
+
+**参数说明**：设置一次GV_GRAPH索引构建最多可以使用的NPU显存。
+
+该参数属于USERSET类型，并且仅支持单机部署。使用`SET`修改时，只对当前会话生效。支持使用`MB`、`GB`等内存单位设置，例如`SET npu_device_max_mem = '8GB';`。
+
+**取值范围**：2MB\~1TB
+
+**默认值**：1GB
+
+>[!NOTE]说明
+>
+>该参数仅在安装了NPU版GaussVector组件，并使用`prune_alg = npu_knn`创建或重建GV_GRAPH索引时生效。设置值不能超过所选NPU设备的实际可用显存。
+
 ## enable_mmap<a name="section14941640131"></a>
 
 **参数说明**：Hnsw检索可以通过开启MMAP功能加速检索，该参数用于初始化Mmap的Hashmap。目前属于beta功能。

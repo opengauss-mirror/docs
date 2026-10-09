@@ -23,6 +23,7 @@ sections:
       - href: 
           upstream: https://atomgit.com/opengauss/openGauss-server/blob/master/src/gausskernel/storage/access/datavec/docs/zh/_toc.yaml
           path: ./datavec
+      - href: ./gv_graph/_toc.yaml
       - href:
           upstream: https://atomgit.com/opengauss/openGauss-server/blob/master/docs/zh/resource_pooling/_toc.yaml
           path: ./resource_pooling
