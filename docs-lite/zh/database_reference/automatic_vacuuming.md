@@ -177,6 +177,23 @@
 
 **默认值**： -1
 
+## autovacuum\_max\_freeze\_workers<a name="zh-cn_topic_0237124730_zh-cn_topic_0059778244_s76932f79410248ba8923017d19982109"></a>
+
+**参数说明**： 设置当触发全库freeze时，限制同时在做freeze的autovacum worker最大个数。
+
+该参数属于SIGHUP类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**： 整型，最小值为0（表示功能关闭，不限制做freeze的worker个数），最大值需要小于autovacuum_max_workers。 
+
+> 说明：
+> openGauss某个库在当前最新的事务id（ txid_current() ）- pg_database.datfrozenxid64 超过了autovacuum_freeze_max_age时候，该库会触发全库freeze，可能会导致所有的autovacuum worker都去做freeze，抢占了资源，对其他库和表正常需要的死元祖清理以及执行计划更新会带来延迟。设置了autovacuum_max_freeze_workers后，会限制最大做freeze的worker个数，预留空闲的worker来做正常表的死元祖清理和计划更新动作。
+> 
+> 比如autovacuum_max_workers=10，autovacuum_freeze_max_age=5，即在出发了全库freeze动作后，最多只有5个autovacuum worker在做freeze，其他5个worker会预留下来做freeze之外的死元祖清理和执行计划更新动作。
+> 
+> 建议配置： autovacuum_freeze_max_age配置为autovacuum_max_workers的一半。
+
+**默认值**： 0
+
 ## defer\_csn\_cleanup\_time<a name="zh-cn_topic_0283137694_zh-cn_topic_0237124730_section355033134211"></a>
 
 **参数说明**： 用来指定本地回收时间间隔，单位为毫秒（ms）。
