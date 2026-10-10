@@ -1,18 +1,20 @@
 label: Feature Reference
 isManual: true
 sections:
+  - label: Feature Overview
+    href: ./feature_overview.md
   - label: High Performance
     sections:
       - label: CBO Optimizer
         href: ./cbo_optimizer.md
       - label: LLVM
         href: ./llvm.md
-      - label: Hybrid Row-Column Store
-        href: ./hybrid_row_column_store.md
       - label: SQL by pass
         href: ./sql_by_pass.md
       - label: Kunpeng NUMA Architecture Optimization
         href: ./kunpeng_numa_architecture_optimization.md
+      - label: Hybrid Row-Column Store
+        href: ./hybrid_row_column_store.md
       - label: High Concurrency of Thread Pools
         href: ./high_concurrency_of_thread_pools.md
       - label: Adaptive Compression
@@ -29,6 +31,26 @@ sections:
         href: ./ock_accelerated_data_transmission.md
       - label: OCK SCRLock
         href: ./scrlock.md
+      - label: Huge Page Memory
+        href: ./huge_page_memory.md
+      - label: Out Of The Box
+        href: ./out_of_the_box.md
+      - label: User Mode Network
+        href: ./user_mode_network.md
+      - label: Xlog no Lock Flush
+        href: ./non_resource_pooling_active_standby_synchronization_acceleration.md
+      - label: HTAP Row-Column Fusion
+        href: ./row_and_column_integration.md
+      - label: Resource Pooling HTAP Row-Column Fusion
+        href: ./resource_pooling_row_and_column_integration.md        
+      - label: Automatic Parameterization
+        href: ./automatic_parameterization.md
+      - label: UDF Result Cache
+        href: ./udf_result_cache.md            
+      - label: BLOOM Index
+        href: ./bloom_index.md
+      - label: DPA Hash Aggregation Acceleration
+        href: ./dpa_hash_agg_acceleration.md
   - label: High Availability (HA)
     sections:
       - label: Primary/Standby
@@ -61,6 +83,16 @@ sections:
         href: ./cm.md
       - label: Global SysCache
         href: ./global_syscache.md
+      - label: Global PlanCache
+        href: ./global_plancache.md
+      - label: Asynchronous Standby-to-Primary Data Retrieval
+        href: ./asynchronous_backup_and_recovery_capability_for_master_data.md
+      - label: SQL Firewall Capability
+        href: ./sql_firewall_capability.md
+      - label: Primary and Standby Database Bad Block Repair
+        href: ./primary_and_standby_database_bad_block_repair_function.md
+      - label: openGauss Application Transparent Failover (ATF)
+        href: './atf.md'     
       - label: Using a Standby Node to Build a Standby Node
         href: ./using_a_standby_node_to_build_a_standby_node.md
       - label: Two-City Three-DC DR
@@ -77,6 +109,10 @@ sections:
         href: ./workload_diagnosis_report_wdr.md
       - label: Slow SQL Diagnosis
         href: ./slow_sql_diagnosis.md
+      - label: Full Link Tracking
+        href: ./full_link_tracking.md
+      - label: Monitoring Alerts
+        href: ./monitoring_alerts.md
       - label: Session Performance Diagnosis
         href: ./session_performance_diagnosis.md
       - label: System KPI-aided Diagnosis
@@ -117,7 +153,15 @@ sections:
         href: ./ledger_database_mechanism.md
       - label: Transparent Data Encryption
         href: ./transparent_data_encryption.md
-  - label: Enterprise-Level Features
+  - label: Resource Pooling
+    sections:
+      - label: Resource Pooling Operator Offloading
+        href: ./resource_pooling_operator_offloading.md
+      - label:  Resource Pooling Multi Machine Paralleism
+        href: ./resource_pooling_multi_machine_paralleism.md
+      - label: Resource Pooling UB Memory Semantic_Acceleration
+        href: ./resource_pooling_ub_memory_semantic_acceleration.md
+  - label: Enhanced Features
     sections:
       - label: Enhanced Features
         href: ./enterprise_level_enhanced_features.md    
@@ -163,12 +207,50 @@ sections:
         href: ./resource_pooling.md
       - label: UWAL Feature
         href: ./uwal.md
+      - label: Segment Space Shrink
+        href: ./segment_space_shrink.md
+      - label: Advanced Package
+        sections:
+          - label: gms_output
+            href: ./gms_output_tool_package.md
+          - label: gms_profiler
+            href: ./gms_profiler_advanced_package.md
+          - label: gms_stats
+            href: ./gms_stats_advanced_package.md
+          - label: gms_i18n
+            href: ./gms_i18n_advanced_package.md  
+          - label: gms_sql
+            href: ./gms_sql_advanced_package.md 
+          - label: gms_tcp
+            href: ./gms_tcp_advanced_package.md
+          - label: gms_compress
+            href: ./gms_compress_advanced_package.md
+          - label: gms_inaddr
+            href: ./gms_inaddr_advanced_package.md
+          - label: gms_utility
+            href: ./gms_utility_advanced_package.md
+          - label: gms_raw
+            href: ./gms_raw_advanced_package.md
+          - label: gms_match
+            href: ./gms_match_advanced_package.md
+          - label: gms_assert
+            href: ./gms_assert_advanced_package.md
+          - label: gms_debug
+            href: ./gms_debug_advanced_package.md       
+          - label: gms_xmlparser
+            href: ./gms_xmlparser_advanced_package.md
+          - label: gms_xmlgen
+            href: ./gms_xmlgen_advanced_package.md 
+          - label: gms_lob
+            href: ./gms_lob_advanced_package.md  
   - label: Application Development Interfaces
     sections:
       - label: Standard SQL
         href: ./standard_sql.md
       - label: Standard Development Interfaces
         href: ./standard_development_interfaces.md
+      - label: Support for the ograc Standard Development Interface
+        href: ./standard_development_interfaces_ograc.md
       - label: Embedded SQL Preprocessor ECPG
         href: ./embedded_sql_preprocessor_ecpg.md
       - label: PostgreSQL API Compatibility
@@ -201,6 +283,8 @@ sections:
             href: ./intelligent_cardinality_estimation.md
           - label: Adaptive Plan Selection
             href: ./adaptive_plan_selection.md
+      - label: OGAI
+        href: ./ogai.md
   - label: Tool Chain
     sections:
       - label: MySQL Migration Tool gs_rep_portal
@@ -211,12 +295,34 @@ sections:
         href: ./incremental_migration_tool_gs_replicate.md
       - label: Reverse Migration gs_replicate (openGauss -> MySQL)
         href: ./reverse_migration_gs_replicate.md
+      - label: Reverse Migration gs_replicate
+        href: ./reverse_full_migration.md
+      - label: PostgreSQL-to-openGauss Migration Tool debezium-connector-postgres
+        href: ./postgresql_opengauss_migration_tool_debezium_connector_postgres.md
+      - label: SQL Server-to-openGauss Migration Tool oG_datasync_full_migration
+        href: ./sqlserver_to_opengauss_migration_tool_og_datasync_full_migration.md
       - label: Data Check Tool gs_datacheck
         href: ./data_check_tool_gs_datacheck.md
+      - label: MySQL-to-openGauss Migration Tool chameleon
+        href: ./mysql_to_opengauss_migration_tool_chameleon.md
       - label: openGauss Client Tool DataStudio
         href: ./opengauss_client_tool_datastudio.md
+      - label: Installation Without Root User Dependency
+        href: ./database_installation_process_eliminates_dependency_on_the_root_user.md
+      - label: Support for Custom SSH Ports
+        href: ./support_for_custom_ssh_ports.md
+      - label: Workload Tool
+        href: ./workload_tool.md
+      - label: libog_query SQL Syntax Audit Tool
+        href: ./sql_syntax_audit_tool_libog_query.md
+      - label: Elasticsearch and Milvus Migration Through DataKit
+        href: ./datakit_support_elasticsearch_milvus_migration.md
+      - label: openGauss-to-openGauss Migration
+        href: ./opengauss_to_opengauss_migration.md
       - label: mysql full migration resume
         href: ./mysql_full_migration_resume.md
+      - label: DataKit Migration Optimization
+        href: ./datakit_migration_optimization.md
   - label: Middleware
     sections:
       - label: Distributed Database Capability
@@ -225,6 +331,10 @@ sections:
         href: ./deploying_a_distributed_database_using_kubernetes.md
       - label: Distributed Analysis Capabilities
         href: ./distributed_analysis_capabilities.md
+  - label: Load Management
+    sections:
+      - label: High-Latency Escape at the Infrastructure Layer
+        href: ./high_latency_escape_at_the_infrastructure_layer.md
   - label: Advanced Features
     sections:
       - label: Index Recommendation
@@ -239,6 +349,8 @@ sections:
         href: ./advanced_features/fully_encrypted_database.md  
       - label: DCF
         href: ./advanced_features/dcf.md  
+      - label: Parallel Query
+        href: ./advanced_features/parallel_query.md  
       - label: UWAL
         href: ./advanced_features/uwal.md 
       - label: Column Store
@@ -250,7 +362,13 @@ sections:
       - label: "AI4DB: Autonomous Database O&M"
         sections:
           - label: Overview
-            href: ./aifeature_guide/ai4db_autonomous_database_o_m.md        
+            href: ./aifeature_guide/ai4db_autonomous_database_o_m.md
+          - label: DBMind Product Description
+            href: ./aifeature_guide/product_description.md
+          - label: DBMind Product Design
+            href: ./aifeature_guide/product_design.md
+          - label: DBMind User Guide
+            href: ./aifeature_guide/user_guide.md        
           - label: DBMind Mode
             sections:
               - label: DBMind Mode
@@ -275,6 +393,14 @@ sections:
                 href: ./aifeature_guide/prometheus_exporter_command_reference.md
               - label: Troubleshooting
                 href: ./aifeature_guide/prometheus_exporter_troubleshooting.md
+          - label: DBMind Server Deployment
+            sections:
+              - label: Start The Collection Component
+                href: ./aifeature_guide/start_the_collection_component.md
+              - label: Generating A Configuration File
+                href: ./aifeature_guide/generating_a_configuration_file.md
+              - label: Main Service Management
+                href: ./aifeature_guide/main_service_management.md
           - label: AI Sub-functions of the DBMind
             sections:
               - label: Overview
@@ -295,12 +421,40 @@ sections:
                 href: ./aifeature_guide/anomaly_detection.md
               - label: "Anomaly-analysis: Multi-Metric Correlation Analysis"
                 href: ./aifeature_guide/anomaly_analysis_multi_metric_correlation_analysis.md
-      - label: ABO Optimizer
-        sections:
-          - label: Intelligent Cardinality Estimation
-            href: ./aifeature_guide/intelligent_cardinality_estimation.md
-          - label: Adaptive Plan Selection
-            href: ./aifeature_guide/adaptive_plan_selection.md
+              - label: Cluster Diagnosis
+                href: ./aifeature_guide/cluster_diagnosis.md
+              - label: Intelligent Inspection
+                href: ./aifeature_guide/intelligent_inspection.md
+              - label: Faqs
+                href: ./aifeature_guide/faqs.md
+              - label: Appendix
+                href: ./aifeature_guide/appendix.md
+          - label: DBMind Installation and Deployment
+            href: ./aifeature_guide/dbmind_deployment.md
+          - label: GaussMaster Product Description Gaussmaster
+            href: ./aifeature_guide/product_description_gaussmaster.md
+          - label: GaussMaster Model Technology
+            sections:
+              - label: Foundation Model Agent Technology
+                href: ./aifeature_guide/foundation_model_agent_technology.md
+              - label: Foundation Model RAG Technology
+                href: ./aifeature_guide/foundation_model_rag_technology.md
+          - label: GaussMaster User Guide
+            sections:
+              - label: Architecture Overview
+                href: ./aifeature_guide/architecture_overview.md
+              - label: Deployment GaussMaster
+                href: ./aifeature_guide/deployment_gaussmaster.md
+              - label: Intelligent O&M
+                href: ./aifeature_guide/artificial_intelligence_for_it_operations.md
+              - label: Intelligent Inspection
+                href: ./aifeature_guide/intelligent_response.md
+              - label: Knowledge Base Management
+                href: ./aifeature_guide/repository_management.md
+          - label: GaussMaster FAQ
+            href: ./aifeature_guide/faqs_gaussmaster.md
+          - label: GaussMaster Appendix
+            href: ./aifeature_guide/appendix_gaussmaster.md
       - label: "DB4AI: Database-driven AI"
         sections:
           - label: Overview

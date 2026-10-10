@@ -1211,6 +1211,8 @@ sections:
             href: ./undo_system_functions.md
           - label: Row-store Compression System Functions
             href: ./row_store_compression_system_functions.md
+          - label: SQL Firewall System Functions
+            href: ./sql_firewall_system_functions.md
       - label: Statistics Information Functions
         href: ./statistics_information_functions.md
       - label: Large Object Operation Function

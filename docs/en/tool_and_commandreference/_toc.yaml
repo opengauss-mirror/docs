@@ -41,6 +41,8 @@ sections:
         href: ./gs_ssh.md
       - label: gs_sdr
         href: ./gs_sdr.md
+      - label: gs_retrieve
+        href: ./gs_retrieve.md
   - label: Tools Used in the Internal System
     sections:
       - label: Overview
