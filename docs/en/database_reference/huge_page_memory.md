@@ -10,7 +10,7 @@ Users can decide whether to enable huge page memory based on the running environ
 
 **Parameter description**: Specifies whether huge page memory is used for database shared memory allocation.
 
-This parameter is of the POSTMASTER type. See [Table 1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846) for the corresponding setting method. In a primary/standby scenario, this parameter is not synchronized to other nodes.
+This parameter is of the POSTMASTER type. See [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846) for the corresponding setting method. In a primary/standby scenario, this parameter is not synchronized to other nodes.
 
 **Value range**: Boolean
 
@@ -26,7 +26,7 @@ This parameter is of the POSTMASTER type. See [Table 1](../database_administrati
 
 **Parameter description**: The page size used by huge page memory. This option takes effect only when `enable_huge_pages` is set to `on`.
 
-This parameter is of the POSTMASTER type. See [Table 1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846) for the corresponding setting method. In a primary/standby scenario, this parameter is not synchronized to other nodes.
+This parameter is of the POSTMASTER type. See [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846) for the corresponding setting method. In a primary/standby scenario, this parameter is not synchronized to other nodes.
 
 **Value range**: An integer ranging from 0–1073741823, in the unit of 8 KB. It can also be set in the format of xxKB, xxMB, or xxGB.
 

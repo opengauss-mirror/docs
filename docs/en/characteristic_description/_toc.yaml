@@ -155,6 +155,8 @@ sections:
     sections:
       - label: Resource Pooling Operator Offloading
         href: ./resource_pooling_operator_offloading.md
+      - label: Resource Pooling Multi Machine Parallelism
+        href: ./resource_pooling_multi_machine_parallelism.md
   - label: Enhanced Features
     sections:
       - label: Enhanced Features
@@ -235,8 +237,6 @@ sections:
             href: ./gms_debug_advanced_package.md       
           - label: gms_xmlparser
             href: ./gms_xmlparser_advanced_package.md
-          - label: gms_xmlgen
-            href: ./gms_xmlgen_advanced_package.md 
   - label: Application Development Interfaces
     sections:
       - label: Standard SQL

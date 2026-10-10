@@ -57,7 +57,7 @@ openGauss=# SHOW vbp_chunk_size;
 
 The default value of `vbp_chunk_size` is 2 MB. The buffer is allocated by complete chunks. When `vector_buffers` is not zero, it should contain at least one chunk. The tail space that is not an integer multiple of the chunk size is not used for payload caching. The shared buffer also requires additional control structures and hash table memory. Therefore, `vector_buffers` is not the total memory overhead of this function.
 
-You are advised to retain the default values of other parameters and adjust the capacity based on the actual working set and monitoring result. For details about the parameter value ranges, effective modes, and recycling configurations, see [DataVec Vector Engine Parameters](../database_reference/datavec_vector_engine_parameters.md#vector-buffers).
+You are advised to retain the default values of other parameters and adjust the capacity based on the actual working set and monitoring result. For details about the parameter value ranges, effective modes, and recycling configurations, see [DataVec Vector Engine Parameters](../database_reference/datavec_vector_engine_parameters.md).
 
 ## Creating an Index and Performing a Query
 
