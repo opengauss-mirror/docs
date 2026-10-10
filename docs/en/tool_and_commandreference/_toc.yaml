@@ -41,6 +41,10 @@ sections:
         href: ./gs_ssh.md
       - label: gs_sdr
         href: ./gs_sdr.md
+      - label: gs_ddr
+        href: ./gs_ddr.md 
+      - label: gs_retrieve
+        href: ./gs_retrieve.md
   - label: Tools Used in the Internal System
     sections:
       - label: Overview
@@ -73,6 +77,8 @@ sections:
         href: ./gs_uninstall.md
       - label: gs_upgradectl
         href: ./gs_upgradectl.md
+      - label: gs_perfconfig
+        href: ./gs_perfconfig.md
       - label: gs_expansion
         href: ./gs_expansion.md
       - label: gs_dropnode

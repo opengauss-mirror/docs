@@ -3,6 +3,14 @@ isManual: true
 sections:
   - label: Installation Overview
     href: ./installation_overview.md
+  - label: Container Image Installation
+    sections:
+      - label: Installing The Container_image
+        href: ./installing_the_container_image.md
+      - label: Installation on a Single Node
+        href: ./installation_on_a_single_node_container.md
+      - label: One-Primary-Two-Standby Installation Without CM_Container
+        href: ./one_primary_and_two_backup_installations_without_cm_container.md
   - label: Simplified Installation Process
     sections:
       - label: Obtaining the Installation Package
@@ -19,8 +27,14 @@ sections:
         sections:
           - label: Installation on a Single Node
             href: ./installation_on_a_single_node_container.md
+          - label: One-Primary-Two-Standby Installation Without CM_Container
+            href: ./one_primary_and_two_backup_installations_without_cm_container_lite_version.md
+          - label: CM Installation
+            href: ./cm_installation_container.md
       - label: Installation Using an RPM Package
         href: ./installation_using_an_rpm_package.md
+      - label: deb Installation
+        href: ./deb_installation.md
   - label: Enterprise-Edition Installation Process
     sections:
       - label: Installation Process
@@ -31,8 +45,12 @@ sections:
         href: ./preparing_the_software_and_hardware_installation_environment_enterprise.md
       - label: Installation User and User Group
         href: ./installation_user_and_user_group.md
+      - label: Pre Installation Operations
+        href: ./pre_installation_operations.md
       - label: Installing the openGauss
         sections:
+          - label: "(optional)One Stop Installation Guide"
+            href: ./one_stop_installation_guide.md
           - label: Creating an XML Configuration File
             href: ./creating_an_xml_configuration_file.md
           - label: Initializing the Installation Environment

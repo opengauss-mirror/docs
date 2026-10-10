@@ -1,0 +1,14 @@
+label: MySQL Compatibility Development Guide
+isManual: true
+sections:
+  - label: Mysql Protocol Compatibility Config
+    href: ./mysql_protocol_compatibility_config.md
+  - label: MySQL JDBC Development
+    href: ./mysql_jdbc_development.md
+  - label: Mybatis Development
+    href: ./mybatis_development.md
+  - label: Mybatis-plus Development
+    href: ./mybatis_plus_development.md
+  - label: Hibernate Development
+    href: ./hibernate_development.md
+

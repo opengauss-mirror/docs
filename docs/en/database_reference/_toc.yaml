@@ -169,10 +169,18 @@ sections:
       href: ./resource_pooling_parameters.md
     - label: UWAL Parameters
       href: ./uwal_parameters.md
+    - label: Row And Column Fusion Parameters
+      href: ./row_and_column_fusion_parameters.md
+    - label: 资源池化行列融合参数
+      href: ./resource_pooling_row_column_fusion_parameters.md
     - label: Parameters Related to Efficient Data Compression Algorithms
       href: ./parameters_related_to_efficient_data_compression_algorithms.md
     - label: Enabling Write Statements on Standby Nodes
       href: ./enabling_write_statements_on_standby_nodes.md
+    - label: Huge Page Memory
+      href: ./huge_page_memory.md
+    - label: DataVec Vector Engine Parameters
+      href: ./datavec_vector_engine_parameters.md
 - label: System Catalogs and System Views
   sections:
     - label: Overview

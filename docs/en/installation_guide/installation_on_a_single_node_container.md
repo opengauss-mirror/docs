@@ -1,42 +1,48 @@
-# Installation on a Single Node<a name="EN-US_TOPIC_0289899741"></a>
+# Single-Node Installation_Container
 
-This section describes how to install openGauss using Docker to facilitate installation, configuration, and environment setting for DevOps users.
+<!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-10T08:50:37.192Z pushedAt=2026-07-14T07:15:07.657Z -->
 
-## Supported Architectures and OSs<a name="en-us_topic_0283136491_section1017214481014"></a>
+This section describes how to install openGauss using Docker, facilitating installation, configuration, and environment setup for DevOps users.
+
+## Architecture and OS Versions for Building Containers<a name="zh-cn_topic_0283136491_section1017214481014"></a>
 
 - x86-64 CentOS 7.6
 
 - ARM64 openEuler 20.03 LTS
 
-## Preparations<a name="en-us_topic_0283136491_section260555142417"></a>
+## Configuration Preparation<a name="zh-cn_topic_0283136491_section260555142417"></a>
 
-Use the  **buildDockerImage.sh**  script to build a Docker image. This script is a shell script that is easy to use and provides SHA-256 check.
+Use the `buildDockerImage.sh` script to build the Docker image. `buildDockerImage.sh` is a shell script that offers SHA256 validation, accessible from the [server repository](https://gitcode.com/opengauss/openGauss-server/tree/master/docker/dockerfiles) or the [container repository](https://gitcode.com/opengauss/openGauss-container).
 
-## Creating an openGauss Docker Image<a name="en-us_topic_0283136491_section159607494319"></a>
+## Installing a Single-node Database Using Containers
 
->[!NOTE]NOTE 
+### Creating an openGauss docker image<a name="zh-cn_topic_0283136491_section159607494319"></a>
+
+>[!NOTE] Note
 >
-> - Before the installation, you need to provide the openGauss binary installation package. After decompressing the package, place the package \(**openGauss-Server-X.X.X-CentOS7-x86_64.tar.bz2**\) in the  **dockerfiles/**<*version*\> folder. The binary package can be downloaded from  [https://opengauss.org/en/download/](https://opengauss.org/en/download/). Ensure that the correct yum source is available.
+>- Before installation, you need to provide the openGauss binary installation package. Decompress it and place the package ending with `bz2` (openGauss-Server-X.X.X-CentOS7-x86_64.tar.bz2, where X.X.X is the current openGauss version number) into the `dockerfiles/<version\>` folder. The binary package can be downloaded from [here](https://www.opengauss.org/en/download/). Ensure that the correct yum repository is available.
 >
-> - If the  **-i**  option is not specified when you run the  **buildDockerImage.sh**  script, the SHA-256 check is performed by default. You need to manually write the check result to the  **sha256\_file\_amd64**  file.
+>- When running the `buildDockerImage.sh` script, leaving parameter `-i` not specified will enable SHA256 validation. Modify the corresponding validation file according to the OS version:
+     CentOS: sha256_file_amd64,
+     openEuler_aarch64: sha256_file_arm64. Taking CentOS as an example, you need to manually write the validation result into the `sha256\_file\_amd64` file.
 >
 > ```
->
-    ## Modify the SHA-256 verification file.
-    cd /soft/openGauss-server/docker/dockerfiles/6.0.0
-    sha256sum openGauss-Server-X.X.X-CentOS7-x86_64.tar.bz2 > sha256_file_amd64 
->
-> ```
->
-> - Before the installation, obtain the  **openEuler\_aarch64.repo**  file from Huawei open-source image website and save it to the  **openGauss-server-master/docker/dockerfiles/6.0.0**  folder. Run the following command to obtain the  **openEuler\_aarch64.repo**  file.
+> ## Modify the sha256 validation file content
+> cd /soft/openGauss-server/docker/dockerfiles/X.X.X
+> sha256sum openGauss-Server-X.X.X-CentOS7-x86_64.tar.bz2 > sha256_file_amd64 
+>    ```
+> 
+>- Before installation, you need to obtain the repo file from Huawei Mirrors and place it in the `openGauss-server-master/docker/dockerfiles/X.X.X` folder.
 >
 > ```
->
-   wget -O openEuler_aarch64.repo <https://mirrors.huaweicloud.com/repository/conf/openeuler_aarch64.repo>
->
-> ```
+> ## Obtaining openEuler_aarch64.repo:
+> wget -O openEuler_aarch64.repo https://mirrors.huaweicloud.com/repository/conf/openeuler_aarch64.repo
+> ## Obtaining CentOS-Base.repo:
+> wget -O CentOS-Base.repo https://mirrors.huaweicloud.com/repository/conf/CentOS-7-anon.repo
+> 
+>    ```
 
-Run the  **buildDockerImage.sh**  script in the  **dockerfiles**  folder.
+Run the `buildDockerImage.sh` script in the `dockerfiles` folder.
 
 ```
 [root@ecs-complie dockerfiles]# ./buildDockerImage.sh
@@ -44,61 +50,61 @@ Usage: buildDockerImage.sh -v [version] [-i] [Docker build option]
 Builds a Docker Image for openGauss
 Parameters:
    -v: version to build
-       Choose one of: 6.0.0
-   -i: ignores the SHA-256 checksums
+       Choose one of: X.X.X
+   -i: ignores the SHA256 checksums
 
 LICENSE UPL 1.0
 ```
 
-## Environment Variables<a name="en-us_topic_0283136491_section14764166174816"></a>
+### Environment Variables<a name="zh-cn_topic_0283136491_section14764166174816"></a>
 
-To flexibly use an openGauss image, you can set additional parameters. In the future, more control parameters will be added. The current version supports the setting of the following variables:
+To use the openGauss image more flexibly, you can set additional parameters. More controllable parameters will be added in the future. The current version supports the following variable settings:
 
 **GS\_PASSWORD**
 
-This parameter is mandatory when the openGauss image is used. The value cannot be empty or undefined. This parameter specifies the passwords of superuser  **omm**  and test user  **gaussdb**  of the openGauss database. During the openGauss installation, the superuser  **omm**  is created by default. This username cannot be changed. The test user  **gaussdb**  is created in  **entrypoint.sh**.
+Required for using the openGauss image. Cannot be empty or undefined. This parameter sets the password for the openGauss database superuser `omm` and the test user `gaussdb`. `omm` is created by default during openGauss installation, and this username cannot be modified at this time. `gaussdb` is a custom user defined in `entrypoint.sh` and created when running the script.
 
-The local trust mechanism is configured for the openGauss image. Therefore, no password is required for connecting to the database in the container. However, if you want to connect to the database from other hosts or containers, you need to enter the password.
+The openGauss image is configured with a local trust mechanism, so connecting to the database from within the container does not require a password. However, you must enter a password when connecting from outside the container (from other hosts or other containers).
 
-**Complexity requirements for openGauss password:**
+**openGauss Password Complexity Requirements**
 
-The password must contain at least eight characters, including uppercase letters, lowercase letters, digits, and special characters \(**\#?!@$%^&\*-**\).  **!$&** must be escaped using a backslash \(\\\).
+The password must be at least 8 characters long and must contain uppercase letters, lowercase letters, digits, and special characters (special characters are limited to `\#?!@$%^&\*-`, and `!$&` must be escaped with a back slash `\`).
 
 **GS\_NODENAME**
 
-Specifies the database node name. The default value is  **gaussdb**.
+Specifies the database node name. Defaults to `gaussdb`.
 
 **GS\_USERNAME**
 
-Specifies the username for connecting to the database. The default value is  **gaussdb**.
+Specifies the name of the user connecting to the database. Defaults to `gaussdb`.
 
 **GS\_PORT**
 
-Specifies the database port. The default value is  **5432**.
+Specifies the database port. Defaults to `5432`.
 
-## Starting an Instance<a name="en-us_topic_0283136491_section148176206211"></a>
-
-```
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx opengauss:6.0.0
-```
-
-## Connecting to the Database from the OS Layer<a name="en-us_topic_0283136491_section53753141964"></a>
+### Launching an Instance<a name="zh-cn_topic_0283136491_section148176206211"></a>
 
 ```
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -p8888:5432 opengauss:6.0.0
-$ gsql -d postgres -U gaussdb -W'xxxxxx' -h your-host-ip -p8888
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx opengauss:X.X.X
 ```
 
-## Data Persistence<a name="en-us_topic_0283136491_section973016196416"></a>
+### Connecting to the Database at the OS Level<a name="zh-cn_topic_0283136491_section53753141964"></a>
 
 ```
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -v /opengauss:/var/lib/opengauss opengauss:6.0.0
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -p8888:5432 opengauss:X.X.X
+$ gsql -d postgres -U gaussdb -W'xxxxxx' -h your-host-ip -p8888  # The host machine must have the gsql client installed.
 ```
 
->**Note**
+### Data Persistence<a name="zh-cn_topic_0283136491_section973016196416"></a>
+
+```
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -v /opengauss:/var/lib/opengauss opengauss:X.X.X
+```
+
+>[!NOTE] Note
 >
->1. For details about how to use a database of another version to build a container image, see the configuration file in `openGauss-server/docker/dockerfiles/6.0.0`. You only need to change the version number to the corresponding version number.
+>1. For building container images for another database version, refer to the configuration files in `openGauss-server/docker/dockerfiles/X.X.X` and simply change the config to the corresponding version number.
 >
->2. If the `openeuler-20.03-lts:latest` image cannot be downloaded, download the container image package `openEuler-docker.aarch64.tar.xz` from the OpenEuler official website `https://repo.openeuler.org/openEuler-20.03-LTS/docker_img/aarch64/` and use `docker load -i openEuler-docker.aarch64.tar.xz` to import the package to the local image list.
->
->3. During the build, if the yum source download times out, check the proxy. You can also `--network host` to the end of the `docker build` command in the `buildDockerImage.sh` script to use the network of the host machine.
+>2. For building openEuler-arm container images, if the `openeuler-20.03-lts:latest` image cannot be downloaded, you can download the container image archive `openEuler-docker.aarch64.tar.xz` from the [official openEuler website](https://repo.openeuler.org/openEuler-20.03-LTS/docker_img/aarch64/), and then import it into the local image list by running `docker load -i openEuler-docker.aarch64.tar.xz`.
+>   
+>3. During the build process, if you encounter a yum repository download timeout, check your proxy settings. You can also add `--network host` after the `docker build` command in the `buildDockerImage.sh` script to use the host machine's network.
