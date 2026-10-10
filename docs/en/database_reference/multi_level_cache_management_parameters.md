@@ -6,7 +6,7 @@
 
 **Parameter description**: Specifies whether to enable the multi-level cache management feature. This parameter cannot be modified after startup.
 
-This parameter is of the POSTMASTER type. See [Table 1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846) for the corresponding setting method.
+This parameter is of the POSTMASTER type. See [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846) for the corresponding setting method.
 
 **Value range**: Boolean, `on`/`off`. `on`: Enables the multi-level cache management feature for the current installation. `off`: Disables it.
 
@@ -21,7 +21,7 @@ This parameter is of the POSTMASTER type. See [Table 1](../database_administrati
 
 **Parameter description**: Size of the NVM buffer pool.
 
-This parameter is of the POSTMASTER type. See [Table 1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846) for the corresponding setting method.
+This parameter is of the POSTMASTER type. See [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846) for the corresponding setting method.
 
 **Value range**: Integer, 0–2147483647
 
@@ -31,7 +31,7 @@ This parameter is of the POSTMASTER type. See [Table 1](../database_administrati
 
 **Parameter description**: Path of the nvm file.
 
-This parameter is of the POSTMASTER type. See [Table 1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846) for the corresponding setting method.
+This parameter is of the POSTMASTER type. See [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846) for the corresponding setting method.
 
 **Value range**: A string, the path of the nvm file
 
@@ -43,7 +43,7 @@ This parameter is of the POSTMASTER type. See [Table 1](../database_administrati
 
 **Parameter description**: Probability that a page that misses the cache is loaded directly into the DRAM buffer pool, bypassing the NVM buffer pool.
 
-This parameter is of the POSTMASTER type. See [Table 1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846) for the corresponding setting method.
+This parameter is of the POSTMASTER type. See [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846) for the corresponding setting method.
 
 **Value range**: Floating point, 0.0 to 1.0
 
@@ -53,7 +53,7 @@ This parameter is of the POSTMASTER type. See [Table 1](../database_administrati
 
 **Parameter description**: The probability that a page is migrated to the DRAM buffer pool after it hits the NVM buffer pool.
 
-This parameter is of the POSTMASTER type. See [Table 1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846) for the corresponding setting method.
+This parameter is of the POSTMASTER type. See [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846) for the corresponding setting method.
 
 **Value range**: Float, 0.0 to 1.0
 

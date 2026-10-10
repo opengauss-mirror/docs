@@ -223,6 +223,10 @@ sections:
           href: ./gs_column_keys_args.md
         - label: GS_DB_PRIVILEGE
           href: ./gs_db_privilege.md
+        - label: GS_DEPENDENCIES
+          href: ./gs_dependencies.md
+        - label: GS_DEPENDENCIES_OBJ
+          href: ./gs_dependencies_obj.md
         - label: GS_ENCRYPTED_COLUMNS
           href: ./gs_encrypted_columns.md
         - label: GS_ENCRYPTED_PROC
@@ -253,6 +257,8 @@ sections:
           href: ./gs_recyclebin.md
         - label: GS_SQL_PATCH
           href: ./gs_sql_patch.md
+        - label: GS_SQL_LIMIT
+          href: ./gs_sql_limit.md
         - label: GS_TXN_SNAPSHOT
           href: ./gs_txn_snapshot.md
         - label: GS_UID
@@ -350,7 +356,7 @@ sections:
         - label: PG_OBJECT
           href: ./pg_object.md
         - label: PG_OBJECT_TYPE
-          href: ./pg_object_type.md
+          href: ./PG_OBJECT_TYPE.md
         - label: PG_OPCLASS
           href: ./pg_opclass.md
         - label: PG_OPERATOR
@@ -364,7 +370,7 @@ sections:
         - label: PG_PROC
           href: ./pg_proc.md
         - label: PG_PROC_EXT
-          href: ./pg_proc_ext.md
+          href: ./PG_PROC_EXT.md
         - label: PG_PUBLICATION
           href: ./pg_publication.md
         - label: PG_PUBLICATION_REL
@@ -394,9 +400,9 @@ sections:
         - label: PG_STATISTIC_EXT
           href: ./pg_statistic_ext.md
         - label: PG_STATISTIC_HISTORY
-          href: ./pg_statistic_history.md
+          href: ./PG_STATISTIC_HISTORY.md
         - label: PG_STATISTIC_LOCK
-          href: ./pg_statistic_lock.md
+          href: ./PG_STATISTIC_LOCK.md
         - label: PG_SUBSCRIPTION
           href: ./pg_subscription.md
         - label: PG_SUBSCRIPTION_REL
@@ -481,6 +487,8 @@ sections:
           href: ./gs_session_stat.md
         - label: GS_SESSION_TIME
           href: ./gs_session_time.md
+        - label: GS_SHARED_MEMORY_DETAIL
+          href: ./gs_shared_memory_detail.md
         - label: GS_SQL_COUNT
           href: ./gs_sql_count.md
         - label: GS_STAT_SESSION_CU
@@ -552,7 +560,7 @@ sections:
         - label: PG_LOCKS
           href: ./pg_locks.md
         - label: PG_MATVIEWS
-          href: ./pg_matviews.md
+          href: ./PG_MATVIEWS.md
         - label: PG_NODE_ENV
           href: ./pg_node_env.md
         - label: PG_OS_THREADS
