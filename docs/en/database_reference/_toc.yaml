@@ -224,9 +224,9 @@ sections:
         - label: GS_DB_PRIVILEGE
           href: ./gs_db_privilege.md
         - label: GS_DEPENDENCIES
-          href: ./gs_dependencies.md
+          href: ./GS_DEPENDENCIES.md
         - label: GS_DEPENDENCIES_OBJ
-          href: ./gs_dependencies_obj.md
+          href: ./GS_DEPENDENCIES_OBJ.md
         - label: GS_ENCRYPTED_COLUMNS
           href: ./gs_encrypted_columns.md
         - label: GS_ENCRYPTED_PROC
@@ -258,7 +258,7 @@ sections:
         - label: GS_SQL_PATCH
           href: ./gs_sql_patch.md
         - label: GS_SQL_LIMIT
-          href: ./gs_sql_limit.md
+          href: ./GS_SQL_LIMIT.md
         - label: GS_TXN_SNAPSHOT
           href: ./gs_txn_snapshot.md
         - label: GS_UID
@@ -488,7 +488,7 @@ sections:
         - label: GS_SESSION_TIME
           href: ./gs_session_time.md
         - label: GS_SHARED_MEMORY_DETAIL
-          href: ./gs_shared_memory_detail.md
+          href: ./GS_SHARED_MEMORY_DETAIL.md
         - label: GS_SQL_COUNT
           href: ./gs_sql_count.md
         - label: GS_STAT_SESSION_CU
