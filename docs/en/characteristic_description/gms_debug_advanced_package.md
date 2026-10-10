@@ -8,7 +8,7 @@ This feature has been available since openGauss 7.0.0-RC1.
 
 ## Feature Overview
 
-The [gms_debug Plug-in](../extension_reference/gms_debug.md) is used to implement a server-side debugger, providing a method for debugging server-side PL/SQL program units.
+The [gms_debug Plug-in](https://atomgit.com/opengauss/openGauss-server/blob/master/docs/en/extension_reference/gms_debug.md) is used to implement a server-side debugger, providing a method for debugging server-side PL/SQL program units.
 
 ## Customer Benefits
 

@@ -58,7 +58,7 @@ The specification constraints of Resource Pooling HTAP Row-Column Fusion are as 
 
 ## Usage Guide<a name="section20491151513592"></a>
 
-The Resource Pooling HTAP Row-Column Fusion feature allows users to perform row-column conversion on an entire table or specified columns of a table and to clear existing column caches. Partitioned tables are not supported. For descriptions of related parameters, see [Resource Pooling Row-Column Fusion Parameters](../database_reference/resource_pooling_row_column_fusion_parameters.md). To enable multi-node parallel queries, see [spqplugin Usage Instructions](../extension_reference/spqplugin.md).
+The Resource Pooling HTAP Row-Column Fusion feature allows users to perform row-column conversion on an entire table or specified columns of a table and to clear existing column caches. Partitioned tables are not supported. For descriptions of related parameters, see [Resource Pooling Row-Column Fusion Parameters](../database_reference/resource_pooling_row_column_fusion_parameters.md). To enable multi-node parallel queries, see [spqplugin Usage Instructions](https://docs.opengauss.org/en/docs/latest/extension_reference/extension_reference/plugin/spqplugin.html).
 
 - **Local memory row-column conversion**
 

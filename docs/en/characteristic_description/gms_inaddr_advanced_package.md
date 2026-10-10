@@ -8,7 +8,7 @@ This feature has been available since openGauss 7.0.0-RC1.
 
 ## Feature Overview
 
-This feature implements the [GMS_INADDR Package](../extension_reference/gms_inaddr.md), providing multiple IP address and host name conversion-related function interfaces for users.
+This feature implements the [GMS_INADDR Package](https://atomgit.com/opengauss/openGauss-server/blob/master/docs/zh/extension_reference/gms_inaddr.md), providing multiple IP address and host name conversion-related function interfaces for users.
 
 ## Customer Benefits
 

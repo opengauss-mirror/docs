@@ -32,7 +32,7 @@ OGAI provides the following core capabilities:
 - **Hybrid search**: Combines vector retrieval with BM25 full-text retrieval.
 - **RAG Q&A**: End-to-end retrieval-augmented generation Q&A.
 
-For detailed system tables, system functions, and usage guidance, see [OGAI Usage Guide](../datavec/ogai_usage_guide.md).
+For detailed system tables, system functions, and usage guidance, see [OGAI Usage Guide](https://docs.opengauss.org/en/docs/latest/datavec/ogai_usage_guide.html).
 
 ## Feature Enhancements
 
@@ -56,4 +56,4 @@ The OGAI feature specification constraints are as follows:
 
 ## Dependencies
 
-[Vector Database Feature](../datavec/datavec_overview.md)
+[Vector Database Feature](https://docs.opengauss.org/en/docs/latest/datavec/datavec_overview.html)

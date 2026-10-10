@@ -6,7 +6,7 @@
 
 This feature has been available since openGauss 6.0.0.
 
-This feature was enhanced in openGauss 7.0.0-RC1, adding 31 interfaces. For details, see [GMS_STATS Overview](../extension_reference/gms_stats.md).
+This feature was enhanced in openGauss 7.0.0-RC1, adding 31 interfaces. For details, see [GMS_STATS Overview](https://atomgit.com/opengauss/openGauss-server/blob/master/docs/en/extension_reference/gms_stats.md).
 
 ## Feature Overview<a name="section47786844"></a>
 
@@ -24,7 +24,7 @@ The gms_stats advanced package is a plug-in based on openGauss. It is used to pr
 
 The gms_stats advanced package plug-in is added based on the local plug-in.
 
-In openGauss 7.0.0-RC1, 31 interfaces were added. For details, see [GMS_STATS Overview](../extension_reference/gms_stats.md).
+In openGauss 7.0.0-RC1, 31 interfaces were added. For details, see [GMS_STATS Overview](https://atomgit.com/opengauss/openGauss-server/blob/master/docs/en/extension_reference/gms_stats.md).
 
 ## Feature Constraints<a name="section06531946143616"></a>
 

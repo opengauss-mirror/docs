@@ -34,7 +34,7 @@ This tool supports three recording modes and two replay modes:
 
    Figure 1. Schematic diagram of tcpdump recording and replay
 
-   <img src="./figures/transcribe.jpg">
+   <img src="./figures/transcribe.PNG">
 
 2. Recording based on attach app can perform dynamic instrumentation on Java apps, directly collecting dynamic SQL from Java apps. The tool must be deployed on the same machine as the Java app.
 
@@ -69,7 +69,7 @@ After recording for a cycle in the production environment, the SQL can be taken 
 
 This tool is supported on Linux. On Windows systems, only the recording mode based on MySQL system tables is supported; therefore, Linux is recommended. The deployment topology of the tool on Linux is as follows:
 
-   <img src="./figures/install.png">
+   <img src="./figures/install.PNG">
 
 ## Constraints
 

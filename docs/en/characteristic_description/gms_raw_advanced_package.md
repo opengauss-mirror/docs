@@ -8,7 +8,7 @@ This feature has been available since openGauss 7.0.0-RC1.
 
 ## Feature Overview
 
-The [gms_raw Plug-in](../extension_reference/gms_raw.md) is used to convert and manipulate hexadecimal raw type data.
+The [gms_raw Plug-in](https://atomgit.com/opengauss/openGauss-server/blob/master/docs/en/extension_reference/gms_raw.md) is used to convert and manipulate hexadecimal raw type data.
 
 ## Customer Benefits
 

@@ -137,4 +137,4 @@ None.
 
 ## Usage Guide<a name="section8406643144716"></a>
 
-For plugin installation and usage, see **[spqplugin-Extension](../extension_reference/spqplugin.md)**.
+For plugin installation and usage, see **[spqplugin-Extension](https://docs.opengauss.org/en/docs/latest/extension_reference/extension_reference/plugin/spqplugin.html)**.

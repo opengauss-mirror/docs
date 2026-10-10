@@ -175,6 +175,10 @@ sections:
       href: ./parameters_related_to_efficient_data_compression_algorithms.md
     - label: Enabling Write Statements on Standby Nodes
       href: ./enabling_write_statements_on_standby_nodes.md
+    - label: Huge Page Memory
+      href: ./huge_page_memory.md
+    - label: DataVec Vector Engine Parameters
+      href: ./datavec_vector_engine_parameters.md
 - label: System Catalogs and System Views
   sections:
     - label: Overview

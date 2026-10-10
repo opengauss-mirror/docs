@@ -8,7 +8,7 @@ This feature has been available since openGauss 6.0.0.
 
 ## Feature Overview
 
-This feature implements the [GMS_OUTPUT Advanced Package](../extension_reference/gms_output.md), providing multiple output-related function interfaces for users.
+This feature implements the [GMS_OUTPUT Advanced Package](https://atomgit.com/opengauss/openGauss-server/blob/master/docs/en/extension_reference/gms_output.md), providing multiple output-related function interfaces for users.
 
 ## Customer Benefits
 

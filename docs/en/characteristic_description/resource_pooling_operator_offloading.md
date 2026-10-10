@@ -39,7 +39,7 @@ The openGauss resource pooling operator offloading feature supports running the 
 
 Operator offloading on the compute side does not change the original execution plan or operator-related information. The NDP data processing logic is implemented through storage engine interface hooks, shielding the execution engine from being aware of the offloading.
 
-For plug-in installation and enabling, see: **[ndpplugin-Extension](../extension_reference/ndpplugin.md)**
+For plug-in installation and enabling, see: **[ndpplugin-Extension](https://docs.opengauss.org/en/docs/latest/extension_reference/extension_reference/server/ndpplugin.html)**
 
 ## Feature Enhancements<a name="section1340684315478"></a>
 

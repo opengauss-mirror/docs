@@ -8,7 +8,7 @@ This feature has been available since openGauss 7.0.0-RC1.
 
 ## Feature Overview
 
-The [gms_match Plug-in](../extension_reference/gms_match.md) is used to compare the similarity between two strings.
+The [gms_match Plug-in](https://atomgit.com/opengauss/openGauss-server/blob/master/docs/en/extension_reference/gms_match.md) is used to compare the similarity between two strings.
 
 ## Customer Benefits
 

@@ -27,3 +27,5 @@ sections:
         href: ./workload_tool.md
   - label: SQLServer Migration
     href: ./sql_server_migration.md
+  - label: Oracle2OGRAC Migration
+    href: ./oracle2ograc_migration.md

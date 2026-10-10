@@ -8,7 +8,7 @@ This feature is introduced in the current version.
 
 ## Feature Overview
 
-The [gms_xmlparser extension](../extension_reference/gms_xmlparser.md) is used to parse XML strings or XML files and provides parser handle and document handle management capabilities.
+The [gms_xmlparser extension](https://atomgit.com/opengauss/openGauss-server/blob/master/docs/en/extension_reference/gms_xmlparser.md) is used to parse XML strings or XML files and provides parser handle and document handle management capabilities.
 
 ## Customer Benefits
 

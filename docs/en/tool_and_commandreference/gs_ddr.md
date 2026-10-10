@@ -213,7 +213,7 @@ This tool provides functions such as automatic DR establishment, DR failover, pl
 
     - --disaster_type
 
-        Specifies the dual-cluster type during setup. The default value is `dorado`. If this parameter is not specified in the `start` command, the dual-cluster resource pooling storage replication is set up by default.</span>
+        Specifies the dual-cluster type during setup. The default value is `dorado`. If this parameter is not specified in the `start` command, the dual-cluster resource pooling storage replication is set up by default.
 
     - -f
     

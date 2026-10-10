@@ -53,7 +53,7 @@ Compared with Astore, Ustore stores the latest version of "valid data" and histo
 
 **Figure 1**  Ustore architecture diagram<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574113"></a>    
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/UstoreStructe.png" height="600px" style="margin:auto;max-width: 100%;">
+    <img src="figures/UstoreStructe.PNG" height="600px" style="margin:auto;max-width: 100%;">
 </div>
 
 ### Ustore Main Functional Modules<a name="section1359382119297"></a>
@@ -94,7 +94,7 @@ The page structure of Ustore is identical to that of Astore. openGauss also uses
 
 **Figure 2**  Ustore page structure<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574213"></a>   
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/UstorePage.png" height="600px" style="margin:auto;max-width: 100%;">
+    <img src="figures/UstorePage.PNG" height="600px" style="margin:auto;max-width: 100%;">
 </div>
 
 ### Ustore Multi-Version Management<a name="section101449415302"></a>
@@ -150,7 +150,7 @@ The reclamation process of Undo space is shown in Figure 4:
 
 **Figure 4** Undo reclamation process<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574413"></a>   
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/undoRecycleProcedure.png" height="600px" style="margin:auto;max-width: 100%;">
+    <img src="figures/undoRecycleProcedure.PNG" height="600px" style="margin:auto;max-width: 100%;">
 </div>
 
 As shown in the figure above, committed transaction 16068 that is less than oldestXmin is reclaimed in UndoZone1, transaction 16050 is reclaimed in UndoZone2, transaction 16056 is reclaimed in UndoZone m, and transaction 16012 is reclaimed in UndoZone n. Transaction 16014 is pending rollback but has not yet been rolled back, so the upper limit of reclaimable transaction IDs in UndoZone n is only up to 16014. The upper limit of other zones is oldestXmin. oldestXidInUndo takes the minimum value among the upper limits of all UndoZones, so oldestXidInUndo equals 16014.
@@ -167,7 +167,7 @@ If a tuple is marked with an invalid transaction directory, it means the transac
 
 **Figure 5**  Tuple query process<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574513"></a>   
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/tupleSearch.png" height="700px" style="margin:auto;max-width: 100%;">
+    <img src="figures/tupleSearch.PNG" height="700px" style="margin:auto;max-width: 100%;">
 </div>
 
 #### Multi-Version Index
@@ -186,7 +186,7 @@ openGauss implements a multi-version index called UBtree, which is a variant of 
 
 **Figure 6** UBtree structure<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574613"></a>  
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/UBTREEStructe.png" height="400px" style="margin:auto;max-width: 100%;">
+    <img src="figures/UBTREEStructe.PNG" height="400px" style="margin:auto;max-width: 100%;">
 </div>
 
 ##### Index Page Organization
@@ -195,7 +195,7 @@ The hierarchy of the multi-version index is basically the same as that of the Bt
 
 **Figure 7** UBtree leaf page structure<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574713"></a>  
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/ubtreeTreePage.png" style="margin:auto;max-width: 100%;">
+    <img src="figures/ubtreeTreePage.PNG" style="margin:auto;max-width: 100%;">
 </div>
 
 Similar to the method of maintaining version information in Astore heap pages, each index tuple in the leaf nodes of UBtree has the corresponding xmin and xmax appended to its tail. An index is merely a structure for accelerating searches and is not inherently tied to the concept of historical versions. The xmin only identifies when this index tuple became valid and when it was deleted, rather than having a pointer to an old version tuple as in the case of heap tuples in Astore.
@@ -219,7 +219,7 @@ For the original Btree index, there are four main types of operations: index cre
 **Figure 8** Scan operation<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574813"></a>
 
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/ScanOperator.png" height="600px" style="margin:auto;max-width: 100%;">
+    <img src="figures/ScanOperator.PNG" height="600px" style="margin:auto;max-width: 100%;">
 </div>
 
 - **Insert operation**: The insertion logic of UBtree remains largely unchanged, except that transaction information must be directly obtained during index insertion to fill in the xmin field.
@@ -230,7 +230,7 @@ For the original Btree index, there are four main types of operations: index cre
 
 **Figure 9** Update operation<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574913"></a>  
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/update.png" height="600px" style="margin:auto;max-width: 100%;">
+    <img src="figures/update.PNG" height="600px" style="margin:auto;max-width: 100%;">
 </div>
 
 In the case of a non-index column update, the index remains unchanged. The index tuple still points to the data tuple from the initial insertion. Uheap does not insert a new data tuple; instead, it modifies the current data tuple and stores the historical data in Undo.

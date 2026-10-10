@@ -1,8 +1,6 @@
 label: Feature Reference
 isManual: true
 sections:
-  - label: Feature Overview
-    href: ./feature_overview.md
   - label: High Performance
     sections:
       - label: CBO Optimizer
@@ -157,10 +155,6 @@ sections:
     sections:
       - label: Resource Pooling Operator Offloading
         href: ./resource_pooling_operator_offloading.md
-      - label:  Resource Pooling Multi Machine Paralleism
-        href: ./resource_pooling_multi_machine_paralleism.md
-      - label: Resource Pooling UB Memory Semantic_Acceleration
-        href: ./resource_pooling_ub_memory_semantic_acceleration.md
   - label: Enhanced Features
     sections:
       - label: Enhanced Features
@@ -199,6 +193,8 @@ sections:
         href: ./publication_subscription.md
       - label: Foreign Key Lock Enhancement
         href: ./foreign_key_lock_enhancement.md
+      - label: Support For Special Floating Point Numbers
+        href: ./support_for_special_floating_point_numbers.md
       - label: Data Compression in OLTP Scenarios
         href: ./data_compression_in_oltp_scenarios.md
       - label: Event Trigger
@@ -241,8 +237,6 @@ sections:
             href: ./gms_xmlparser_advanced_package.md
           - label: gms_xmlgen
             href: ./gms_xmlgen_advanced_package.md 
-          - label: gms_lob
-            href: ./gms_lob_advanced_package.md  
   - label: Application Development Interfaces
     sections:
       - label: Standard SQL

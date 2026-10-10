@@ -8,7 +8,7 @@ This feature has been available since openGauss 7.0.0-RC1.
 
 ## Feature Overview
 
-This feature implements the [GMS_UTILITY Advanced Package](../extension_reference/gms_utility.md), providing various practical programs and functions.
+This feature implements the [GMS_UTILITY Advanced Package](https://atomgit.com/opengauss/openGauss-server/blob/master/docs/en/extension_reference/gms_utility.md), providing various practical programs and functions.
 
 ## Customer Benefits
 
