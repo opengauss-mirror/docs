@@ -54,7 +54,7 @@ openGauss资源池化场景下，支持主、从节点形成行列双格式内�
 
 ## 使用指导<a name="section20491151513592"></a>
 
-资源池化 HTAP 行列融合特性支持用户针对全表、表指定列进行行列转换及清除已有列缓存操作，不支持分区表。相关参数说明请参考[资源池化行列融合参数](../database_reference/parameters_for_row_column_fusion_in_resource_rooling.md)，开启多机并行查询请参考[spqplugin使用说明](https://docs.opengauss.org/zh/docs/latest/extension_reference/extension_reference/plugin/spqplugin.html)。
+资源池化 HTAP 行列融合特性支持用户针对全表、表指定列进行行列转换及清除已有列缓存操作，不支持分区表。相关参数说明请参考[资源池化行列融合参数](../database_reference/resource_pooling_row_column_fusion_parameters.md)，开启多机并行查询请参考[spqplugin使用说明](https://docs.opengauss.org/zh/docs/latest/extension_reference/extension_reference/plugin/spqplugin.html)。
 
 - **本地内存行列转换**
 
