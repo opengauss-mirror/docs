@@ -162,13 +162,7 @@ openGauss=# SELECT p.*
 
 `relfilenode` is the physical file identifier, not the `pg_class.oid`. It may change after indexes are rebuilt. For partitioned indexes, you need to query the physical identifier of the specific indexed partition. The parent index cannot be directly associated with the preceding common index example.
 
-| View| Purpose|
-| --- | --- |
-| [PG_STAT_VECTOR_BUFFER](../database_reference/pg_stat_vector_buffer.md) | Global capacity, usage, loading, rollback, recycling, and invalidation counts.|
-| [PG_STAT_VECTOR_BUFFER_HIT_RATE](../database_reference/pg_stat_vector_buffer_hit_rate.md) | Cache lookups, hits, misses, and hit ratio.|
-| [PG_STAT_VECTOR_BUFFER_POOL](../database_reference/pg_stat_vector_buffer_pool.md) | Physical relationship, payload length, and resource usage of each buffer pool.|
-| [PG_STAT_VECTOR_BUFFER_CHUNK](../database_reference/pg_stat_vector_buffer_chunk.md) | Allocation and slot status of memory blocks.|
-| [PG_STAT_VECTOR_BUFFER_HASH_CHAIN](../database_reference/pg_stat_vector_buffer_hash_chain.md) | Hash chain distribution and scale-out progress.|
+
 
 The chunk and hash-chain views traverse the internal structure. Therefore, they are used for diagnosis as required to avoid frequent polling of a large amount of detailed data.
 
