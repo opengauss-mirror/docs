@@ -55,6 +55,8 @@ sections:
       sections:
         - label: Overview 
           href: ./query_planning.md
+        - label: Optimizer Cost Constants
+          href: ./optimizer_cost_constants.md
         - label: Optimizer Method Configuration
           href: ./optimizer_method_configuration.md
         - label: Optimizer Cost Constants
@@ -119,6 +121,8 @@ sections:
           href: ./user_and_permission_audit.md
         - label: Operation Auditing
           href: ./operation_auditing.md
+    - label: CM Relevant Parameters
+      href: ./cm_relevant_parameters.md
     - label: CM Parameters
       sections:
         - label: Overview 
@@ -165,13 +169,15 @@ sections:
       href: ./ai_features.md
     - label: Global SysCache Parameters
       href: ./global_syscache_parameters.md
+    - label: Multi Level Cache Management Parameters
+      href: ./multi_level_cache_management_parameters.md
     - label: Resource Pooling Parameters
       href: ./resource_pooling_parameters.md
     - label: UWAL Parameters
       href: ./uwal_parameters.md
     - label: Row And Column Fusion Parameters
       href: ./row_and_column_fusion_parameters.md
-    - label: 资源池化行列融合参数
+    - label: Resource Pooling Row Column Fusion Parameters
       href: ./resource_pooling_row_column_fusion_parameters.md
     - label: Parameters Related to Efficient Data Compression Algorithms
       href: ./parameters_related_to_efficient_data_compression_algorithms.md
@@ -179,8 +185,16 @@ sections:
       href: ./enabling_write_statements_on_standby_nodes.md
     - label: Huge Page Memory
       href: ./huge_page_memory.md
+    - label: Data Import And Export
+      href: ./data_import_and_export.md
+    - label: Delimiter
+      href: ./delimiter.md
     - label: DataVec Vector Engine Parameters
       href: ./datavec_vector_engine_parameters.md
+    - label:  BM25 Full-Text Search Index Parameters
+      href: ./bm25_full_text_retrieval_index_parameters.md
+    - label: OGAI Parameters
+      href: ./ogai_parameters.md
 - label: System Catalogs and System Views
   sections:
     - label: Overview
@@ -335,6 +349,8 @@ sections:
           href: ./pg_namespace.md
         - label: PG_OBJECT
           href: ./pg_object.md
+        - label: PG_OBJECT_TYPE
+          href: ./pg_object_type.md
         - label: PG_OPCLASS
           href: ./pg_opclass.md
         - label: PG_OPERATOR
@@ -347,6 +363,8 @@ sections:
           href: ./pg_pltemplate.md
         - label: PG_PROC
           href: ./pg_proc.md
+        - label: PG_PROC_EXT
+          href: ./pg_proc_ext.md
         - label: PG_PUBLICATION
           href: ./pg_publication.md
         - label: PG_PUBLICATION_REL
@@ -375,6 +393,10 @@ sections:
           href: ./pg_statistic.md
         - label: PG_STATISTIC_EXT
           href: ./pg_statistic_ext.md
+        - label: PG_STATISTIC_HISTORY
+          href: ./pg_statistic_history.md
+        - label: PG_STATISTIC_LOCK
+          href: ./pg_statistic_lock.md
         - label: PG_SUBSCRIPTION
           href: ./pg_subscription.md
         - label: PG_SUBSCRIPTION_REL
@@ -517,6 +539,8 @@ sections:
           href: ./pg_get_senders_catchup_time.md
         - label: PG_GROUP
           href: ./pg_group.md
+        - label: PG_GTT_ATTACHED_PIDS
+          href: ./pg_gtt_attached_pids.md  
         - label: PG_GTT_RELSTATS
           href: ./pg_gtt_relstats.md
         - label: PG_GTT_STATS
@@ -527,6 +551,8 @@ sections:
           href: ./pg_indexes.md
         - label: PG_LOCKS
           href: ./pg_locks.md
+        - label: PG_MATVIEWS
+          href: ./pg_matviews.md
         - label: PG_NODE_ENV
           href: ./pg_node_env.md
         - label: PG_OS_THREADS
