@@ -1,28 +1,30 @@
-# Performing a Deep Copy by Using the CREATE TABLE LIKE Statement<a name="EN-US_TOPIC_0242370293"></a>
+# Performing a Deep Copy Using CREATE TABLE LIKE
 
-Run the  **CREATE TABLE LIKE**  statement to create a copy of the original table, batch insert data of the original table into the copy, and rename the copy to the name of the original table. This method does not inherit the primary key attributes of the original table. You can use the  **ALTER TABLE**  statement to add them.
+<!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-14T08:04:31.778Z -->
 
-## Procedure<a name="en-us_topic_0237121143_en-us_topic_0165787115_section1349410417334"></a>
+This method uses the `CREATE TABLE LIKE` statement to create a replica of the source table, populates the replica with data from the source table, renames the replica, and completes the copy operation. This method does not inherit the parent table's primary key attributes. You can use the `ALTER TABLE` statement to add them.
 
-1. Run the  **CREATE TABLE LIKE**  statement to create the copy  **customer\_t\_copy**  of the  **customer\_t**  table.
+## Procedure <a name="zh-cn_topic_0237121143_zh-cn_topic_0165787115_section1349410417334"></a>
+
+1. Use the `CREATE TABLE LIKE` statement to create a replica named `customer\_t\_copy` of the table `customer\_t`.
 
     ```
     CREATE TABLE customer_t_copy (LIKE customer_t);
     ```
 
-2. Run the  **INSERT INTO...SELECT**  statement to batch insert data of the original table into the copy.
+2. Use the `INSERT INTO...SELECT` statement to populate the replica with data from the source table.
 
     ```
     INSERT INTO customer_t_copy (SELECT * FROM customer_t);
     ```
 
-3. Delete the original table.
+3. Drop the source table.
 
     ```
     DROP TABLE customer_t;
     ```
 
-4. Run the  **ALTER TABLE**  statement to rename the copy to the name of the original table.
+4. Use the `ALTER TABLE` statement to rename the replica to the original table name.
 
     ```
     ALTER TABLE customer_t_copy RENAME TO customer_t;
