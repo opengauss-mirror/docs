@@ -129,6 +129,10 @@ sections:
             href: ./brief_tutorial/having_clause.md
           - label: 'NULL'
             href: ./brief_tutorial/null.md
+          - label: IS[NOT]NAN
+            href: ./brief_tutorial/is_not_nan_clause.md
+          - label: IS[NOT]INFINITE
+            href: ./brief_tutorial/is_not_infinite_clause.md 
           - label: Transactions
             href: ./brief_tutorial/transactions.md            
           - label: Aliases
@@ -138,7 +142,7 @@ sections:
           - label: Subqueries
             href: ./subqueries.md
           - label: Permissions
-            href: ./brief_tutorial/permissions.md
+            href: ./brief_tutorial/permission.md
           - label: SCHEMA
             href: ./brief_tutorial/schema.md
   - label: Schema
@@ -1029,6 +1033,8 @@ sections:
         href: ./drop_masking_policy.md
       - label: DROP MATERIALIZED VIEW
         href: ./drop_materialized_view.md
+      - label: DROP MATERIALIZED VIEW LOG
+        href: ./drop_materialized_view_log.md
       - label: DROP MODEL
         href: ./drop_model.md
       - label: DROP OPERATOR
@@ -1274,7 +1280,7 @@ sections:
       - label: Statistics Information Functions
         href: ./statistics_information_functions.md
       - label: Large Object Operation Function
-        href: ./large_object_operation_function.md
+        href: ./large_object_operation_functions.md
       - label: Trigger Functions
         href: ./trigger_functions.md
       - label: Event Trigger Functions
@@ -1316,7 +1322,9 @@ sections:
       - label: Transactions
         sections:
           - label: Managing Transactions
-            href: ./managing_transactions.md      
+            href: ./managing_transactions.md
+          - label: Subtransaction Concurrent Rollback Optimization
+            href: ./optimization_of_subtransaction_concurrent_rollback_process.md      
           - label: Controlling Transactions
             href: ./controlling_transactions.md     
   - label: Tables and Storage
@@ -1395,6 +1403,8 @@ sections:
             href: ./error_trapping_statements.md
           - label: GOTO Statements
             href: ./goto_statements.md
+          - label: Throws An Error Statement
+            href: ./throws_an_error_statement.md
           - label: GET DIAGNOSTICS Statements
             href: ./get_diagnostics.md
       - label: Transaction Management
@@ -1445,6 +1455,8 @@ sections:
         href: ./full_materialized_view.md
       - label: Fast-refresh Materialized View
         href: ./incremental_materialized_view.md
+      - label: Materialized View Log
+        href: ./materialized_view_log.md
   - label: Subtype
     href: ./subtype.md
   - label: Full Text Search
