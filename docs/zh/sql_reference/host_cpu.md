@@ -41,6 +41,11 @@ Host CPU列名称及描述如下表所示。
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p311891215352"><a name="p311891215352"></a><a name="p311891215352"></a>用户态在CPU时间上的占比。</p>
 </td>
 </tr>
+<tr id="row4231125862312"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p81181912143510"><a name="p81181912143510"></a><a name="p81181912143510"></a>%Nice</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p311891215352"><a name="p311891215352"></a><a name="p311891215352"></a>nice 值大于 0 的用户态进程 占用 CPU 时间的占比。</p>
+</td>
+</tr>
 <tr id="row19231558172318"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p1111841218359"><a name="p1111841218359"></a><a name="p1111841218359"></a>%System</p>
 </td>
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p7118141211357"><a name="p7118141211357"></a><a name="p7118141211357"></a>内核态在CPU时间上的占比。</p>

@@ -201,6 +201,14 @@ sections:
                 href: ./os_threads.md
               - label: GLOBAL_OS_THREADS
                 href: ./global_os_threads.md
+              - label: OS_DISK_IO_INFO
+                href: ./os_disk_io_info.md
+              - label: GLOBAL_OS_DISK_IO_INFO
+                href: ./global_os_disk_io_info.md
+              - label: OS_NET_DEV_INFO
+                href: ./os_net_dev_info.md
+              - label: GLOBAL_OS_NET_DEV_INFO
+                href: ./global_os_net_dev_info.md
           - label: Instance
             sections:
               - label: INSTANCE_TIME
@@ -367,6 +375,10 @@ sections:
                 href: ./thread_wait_status.md
               - label: GLOBAL_THREAD_WAIT_STATUS
                 href: ./global_thread_wait_status.md
+              - label: THREAD_IO_STAT
+                href: ./thread_io_stat.md
+              - label: GLOBAL_THREAD_IO_STAT
+                href: ./global_thread_io_stat.md
               - label: LOCAL_THREADPOOL_STATUS
                 href: ./local_threadpool_status.md
               - label: GLOBAL_THREADPOOL_STATUS
@@ -575,6 +587,10 @@ sections:
                 href: ./global_streaming_hadr_rto_and_rpo_stat.md
               - label: gs_hadr_local_rto_and_rpo_stat
                 href: ./gs_hadr_local_rto_and_rpo_stat.md
+          - label: Key Activity
+            sections:
+              - label: GLOBAL_KEY_ACTIVITY
+                href: ./global_key_activity.md
       - label: WDR Snapshot Schema
         sections:
           - label: 简介
@@ -607,6 +623,18 @@ sections:
                 href: ./wait_classes_by_total_wait_time.md
               - label: Host CPU
                 href: ./host_cpu.md
+              - label: Host Memory
+                href: ./host_memory.md
+              - label: Host Disk IO
+                href: ./host_disk_io.md
+              - label: Host Network
+                href: ./host_network.md
+              - label: Key Active
+                href: ./wdr_key_active.md
+              - label: Instance IO
+                href: ./wdr_instance_io.md
+              - label: Lock Active
+                href: ./wdr_lock_active.md
               - label: IO Profile
                 href: ./io_profile.md
               - label: Memory Statistics
