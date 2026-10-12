@@ -13,6 +13,10 @@ sections:
         href: ./overview_for_backup_and_restoration.md
       - label: Backup And Restoration For Configuration Files
         href: ./configuration_files_backup_and_recovery.md
+      - label: Fast Repair of Damaged Pages on Primary and Standby Nodes
+        href: ./fast_repair_of_damaged_acitve_standby_libraries.md
+      - label: Support for Standby-to-Standby Build
+        href: ./standby_node_building.md
       - label: Logical Backup and Restoration
         href: ./logical_backup_and_restoration.md
       - label: Physical Backup and Restoration
@@ -73,6 +77,28 @@ sections:
             href: ./concurrent_write_example.md
   - label: Performing a Primary/Standby Switchover
     href: ./performing_a_primary_standby_switchover.md
+  - label: Active-Standby Synchronization
+    sections:
+      - label: Ultimate RTO
+        href: ./ultimate_rto.md
+      - label: Delayed Replay
+        href: ./delayed_replay.md
+      - label: Delaying Entry into Maximum Availability Mode
+        href: ./delaying_entering_the_maximum_availability_mode.md
+      - label: Enhanced Primary/Standby High Availability
+        href: ./enhanced_active_standby_ha.md
+      - label: Table-Level Parallel Recovery Optimization
+        href: ./table_level_parallel_recovery_optimization.md
+  - label: Cluster Management
+    sections:
+      - label: High Availability Based on the Paxos Protocol
+        href: ./high_availability_based_on_the_paxos_protocol.md
+      - label: DCF
+        sections:
+          - label: Overview
+            href: ./dcf_overview.md
+          - label: DCF Usage
+            href: ./dcf_usage.md
   - label: Logical Replication
     sections:
       - label: Logical Decoding
@@ -103,6 +129,8 @@ sections:
             href: ./configuration_set.md
           - label: Quick Setup
             href: ./quick_setup.md
+      - label: Logical Replication Support for DDL Operations
+        href: ./logical_copy_support_ddl_operation.md
   - label: Upgrade
     sections:
       - label: Before You Start
@@ -123,6 +151,34 @@ sections:
         href: ./troubleshooting.md
       - label: Incrementally Upgrading Cluster Management Components
         href: ./incrementally_upgrading_cluster_management_components.md
+  - label: Security Hardening Guide
+    sections:
+      - label: Overview
+        href: ./secharden/overview_of_database_hardening.md
+      - label: openGauss Security Configuration Baseline Specification
+        href: ./secharden/security_configuration_baseline_specification.md
+      - label: Hardening Guide
+        sections:
+          - label: Connection Configuration
+            href: ./secharden/connection_configuration.md
+          - label: File Directory Security
+            href: ./secharden/file_directory_security.md
+          - label: Security Authentication Configuration
+            href: ./secharden/security_authentication_configuration.md
+          - label: Account And Password Management
+            href: ./secharden/account_and_password_management.md
+          - label: Permission Management
+            href: ./secharden/permission_management.md
+          - label: Database Audit
+            href: ./secharden/database_audit.md
+          - label: Error Reporting And Log Configuration
+            href: ./secharden/error_reporting_and_log_configuration.md
+          - label: WAL Archiving Configuration
+            href: ./secharden/wal_archiving_configuration.md
+          - label: Configuring The Operating Environment
+            href: ./secharden/configuring_the_operating_environment.md
+          - label: Other Configuration
+            href: ./secharden/other_configuration.md
   - label: High-Risk Operations
     href: ./risky_operations.md
   - label: Log Reference

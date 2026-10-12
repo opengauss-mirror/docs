@@ -1,50 +1,52 @@
-# ALTER TABLE Statement<a name="EN-US_TOPIC_0000001224939987"></a>
+# ALTER TABLE
 
-The ALTER TABLE statement modifies tables, including modifying table definitions, renaming tables, renaming specified columns in tables, renaming table constraints, setting table schemas,  enabling or disabling row-level security policies, and adding or updating multiple columns.
+<!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-28T03:10:59.970Z pushedAt=2026-07-28T03:24:55.841Z -->
+
+Alters a table, including modifying the table definition, renaming a table, renaming specified columns in a table, renaming table constraints, setting the schema to which the table belongs, adding/updating multiple columns, and enabling/disabling row-level access control.
 
 ## Syntax<a name="section6112121974310"></a>
 
-- Add a column to an existing table.
+- Adding a column to an existing table.
 
     ```
     ALTER TABLE  table_name
         ADD column_name data_type;
     ```
 
-- Delete a column from an existing table.
+- Dropping a column from an existing table.
 
     ```
-    ALTER TABLE table_name DROP COLUMN column_name;
+    ALTER TABLE table_name DROP [ COLUMN ] column_name;
     ```
 
-- Change the column type of a table.
+- Modifying the data type of a column in a table.
 
     ```
     ALTER TABLE  table_name
      MODIFY column_name data_type;
     ```
 
-- Add or delete a NOT NULL constraint to or from a column of an existing table.
+- Adding or dropping a NOT NULL constraint for a column in an existing table.
 
     ```
     ALTER TABLE  table_name
        ALTER column_name { SET | DROP } NOT NULL;
     ```
 
-- Rename a specified column in a table.
+- Renaming a specified column in the table.
 
     ```
     ALTER TABLE table_name RENAME  column_name TO new_column_name;
     ```
 
-- Update columns.
+- Updating multiple columns.
 
     ```
     ALTER TABLE  table_name 
         MODIFY ( { column_name data_type | column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ] | column_name [ CONSTRAINT constraint_name ] NULL } [, ...] );
     ```
 
-- Rename a table,which does not affect stored data.
+- Renaming does not affect the stored data.
 
     ```
     ALTER TABLE table_name 
@@ -53,35 +55,35 @@ The ALTER TABLE statement modifies tables, including modifying table definitions
 
 ## Parameter Description<a name="section10742894719"></a>
 
-- **table\_name**
+- **table_name**
 
-    Specifies the name of the table to be modified.
+    `table_name` is the name of the table to be altered.
 
-    If  **ONLY**  is specified, only the table is modified. If  **ONLY**  is not specified, the table and all subtables are modified. You can add the asterisk \(\*\) option following the table name to specify that all subtables are scanned, which is the default operation.
+    If the `ONLY` option is specified, only that table is altered. If `ONLY` is not specified, the table and all its sub-tables are altered. In addition, you can explicitly add the `*` option after the table name to specify that sub-tables are included, meaning all descendant tables are scanned. This is the default behavior.
 
-- **column\_name**
+- **column_name**
 
-    Specifies the name of a new or an existing column.
+    Name of an existing or new column.
 
 - **data\_type**
 
-    Specifies the type of a new column or a new type of an existing column.
+    Data type of the new column, or new data type of an existing column.
 
 - **new\_table\_name**
 
-    Specifies the new table name.
+    New table name after modification.
 
 - **new\_column\_name**
 
-    Specifies the new name of a specific column in a table.
+    New name of the specified column in the table after modification.
 
 - **constraint\_name**
 
-    Specifies the name of a constraint.
+    Name of the constraint.
 
 ## Examples<a name="section258851613475"></a>
 
-The data in the  **customer\_t1**  table is as follows:
+The data in table `customer_t1` is as follows.
 
 ```
 openGauss=# SELECT * FROM customer_t1;
@@ -101,15 +103,15 @@ openGauss=# SELECT * FROM customer_t1;
 (11 rows)
 ```
 
-- Add a column.
+- Adding a column
 
-    Add a new column to the preceding table.
+    Add a new column to the table above.
 
     ```
     openGauss=# ALTER TABLE customer_t1 ADD date time;
     ```
 
-    The following shows the structure of the  **customer\_t1**  table. The  **date**  column is added successfully.
+    Query the structure of table `customer_t1`. The column `date` has been added successfully.
 
     ```
     openGauss=# \d customer_t1
@@ -124,15 +126,15 @@ openGauss=# SELECT * FROM customer_t1;
      date          | time without time zone |
     ```
 
-- Change the data type of a column.
+- Modifying a column data type
 
-    Change the data type of the  **c**  column from character\(8\) to character\(12\).
+    Modify the data type of column `c_last_name` from `character(8)` to `character(12)`.
 
     ```
     openGauss=# ALTER TABLE customer_t1 MODIFY c_last_name character(12);
     ```
 
-    Query the structure of the  **customer\_t1**  table. The data type of the  **c\_last\_name**  column is changed successfully.
+    Query the structure of table `customer_t1`. The data type of column `c_last_name` has been modified successfully.
 
     ```
     openGauss=# \d customer_t1
@@ -147,21 +149,21 @@ openGauss=# SELECT * FROM customer_t1;
      date          | time without time zone |
     ```
 
-- Add a column constraint.
+- Adding a column constraint
 
-    Delete the rows where the  **c\_customer\_sk**  column is empty.
+    Delete rows where column `c_customer_sk` is NULL.
 
     ```
     openGauss=# DELETE FROM customer_t1 WHERE c_customer_sk is NULL;
     ```
 
-    Add a not-null constraint to the  **c\_customer\_sk**  column.
+    Add a NOT NULL constraint to column `c_customer_sk`.
 
     ```
     openGauss=# ALTER TABLE customer_t1 ALTER c_customer_sk SET NOT NULL;
     ```
 
-    Query the structure of the  **customer\_t1**  table. The constraint is successfully added to the  **c\_customer\_sk**  column.
+    Query the structure of table `customer_t1`. The constraint has been added to column `c_customer_sk` successfully.
 
     ```
     openGauss=# \d customer_t1
@@ -176,15 +178,15 @@ openGauss=# SELECT * FROM customer_t1;
      date          | time without time zone |
     ```
 
-- Change a column name.
+- Renaming a column
 
-    Change the column name from  **date**  to  **purchase date**.
+    Rename column `date` to `purchase date`.
 
     ```
     openGauss=# ALTER TABLE customer_t1  RENAME  date TO purchase_date;
     ```
 
-    Query the structure of the  **customer\_t1**  table. The name of the  **date**  column is changed successfully.
+    Query the structure of table `customer_t1`. Column `date` has been renamed successfully.
 
     ```
     openGauss=# \d customer_t1
@@ -199,15 +201,15 @@ openGauss=# SELECT * FROM customer_t1;
      purchase_date | time without time zone |
     ```
 
-- Delete a column.
+- Dropping a column
 
-    Delete the  **purchase\_date**  column.
+    Drop the column `purchase_date`.
 
     ```
     openGauss=# ALTER TABLE customer_t1 DROP purchase_date;
     ```
 
-    After deletion, the data in the  **customer\_t1**  table is as follows:
+    After the deletion, the data in table `customer_t1` is as follows.
 
     ```
     openGauss=# SELECT * FROM customer_t1;

@@ -1,19 +1,21 @@
-# Indexes<a name="EN-US_TOPIC_0000001225179935"></a>
+# Index
 
-An index is a pointer to data in a table. The index in a database is very similar to the index directory in a book.
+<!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:22:49.669Z -->
 
-Indexes are primarily used to enhance database performance \(though inappropriate use can result in database performance deterioration\). You are advised to create indexes on:
+An index is a pointer to data in a table. An index in a database is very similar to an index in a book.
 
-- Columns that are often queried
-- Join conditions. For a query on joined columns, you are advised to create a composite index on the columns. For example, select \* from t1 join t2 on t1. a=t2. a and t1. b=t2.b. You can create a composite index on the a and b columns of table t1.
-- Columns having filter criteria \(especially scope criteria\) of a  **WHERE**  clause
-- Columns that are frequently used after **ORDER BY**, **GROUP BY**, and **DISTINCT**
+Indexes can be used to improve database query performance, but improper use will lead to database performance degradation. It is recommended that an index be created only when one of the following principles is met:
 
-## Syntax<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
+- Fields that are frequently queried.
+- Create indexes on join conditions. For queries involving multi-field joins, it is recommended that a composite index be created on these fields. For example, for `SELECT * FROM t1 JOIN t2 ON t1.a=t2.a AND t1.b=t2.b`, a composite index can be created on columns `a` and `b` of table `t1`.
+- Columns used in filter conditions of the WHERE clause (especially range conditions).
+- Columns that frequently appear after ORDER BY, GROUP BY, and DISTINCT.
+
+## Syntax<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 
 - Single-column index
 
-    A single-column index is created based on only one column in a table.
+    A single-column index is an index created on only one column of a table.
 
     ```
     CREATE INDEX [ [schema_name.]index_name ] ON table_name  (column_name);
@@ -21,7 +23,7 @@ Indexes are primarily used to enhance database performance \(though inappropriat
 
 - Composite index
 
-    A composite index is created based on multiple columns in a table.
+    A composite index is an index created on multiple columns of a table.
 
     ```
     CREATE INDEX [ [schema_name.]index_name ] ON table_name  (column1_name,column2_name,...);
@@ -29,15 +31,15 @@ Indexes are primarily used to enhance database performance \(though inappropriat
 
 - Unique index
 
-    Duplicate values cannot be inserted into a column with a unique index.
+    Duplicate values are not allowed in the fields of a unique index.
 
     ```
     CREATE  UNIQUE INDEX [ [schema_name.]index_name ] ON table_name  (column_name);
     ```
 
-- Local index
+- Expression index
 
-    A Local index is created on a subset of a table. The subset is defined by a condition expression.
+    An index built on a subset of a table, where the subset is defined by a conditional expression.
 
     ```
     CREATE INDEX [ [schema_name.]index_name ] ON table_name  (expression);
@@ -45,14 +47,14 @@ Indexes are primarily used to enhance database performance \(though inappropriat
 
 - Partial index
 
-    A partial index contains entries for only a portion of a table, usually a portion that is more useful for indexing than the rest of the table.
+  A partial index is an index that contains only a portion of the table's records, typically the portion that is more useful than other parts of the table.
 
     ```
     CREATE INDEX [ [schema_name.]index_name ] ON table_name  (column_name) 
        [ WHERE predicate ]
     ```
 
-- Index deletion
+- Dropping an Index
 
     ```
     DROP INDEX index_name;
@@ -62,51 +64,51 @@ Indexes are primarily used to enhance database performance \(though inappropriat
 
 - **UNIQUE**
 
-    Creates a unique index. In this way, the system checks whether new values are unique in the index column. Attempts to insert or update data which would result in duplicate entries will generate an error.
+  Creates a unique index. Each time data is added, the table is checked for duplicate values. If an inserted or updated value would cause duplicate records, an error occurs.
 
-    Currently, only the B-tree index supports unique indexes.
+  Currently, only B-tree and UBTree indexes support unique indexes.
 
 - **schema\_name**
 
-    Specifies the schema name.
+  Name of the schema.
 
-    Value range: an existing schema name
+  Value range: An existing schema name.
 
-- **index\_name**
+- **index_name**
 
-    Specifies the name of the index to be created. The schema of the index is the same as that of the table.
+  Name of the index to be created. The schema of the index is the same as that of the table.
 
-    Value range: a string.
+  Value range: A string that conforms to the identifier naming conventions.
 
 - **table\_name**
 
-    Specifies the name of the table for which an index is to be created \(optionally schema-qualified\).
+    Name of the table for which the index is to be created. It can be schema-qualified.
 
-    Value range: an existing table name
+    Value range: An existing table name.
 
 - **column\_name**
 
-    Specifies the name of the column for which an index is to be created.
+    Name of the column (field name) in the table for which the index is to be created.
 
-    Multiple columns can be specified if the index method supports multi-column indexes. A global index supports a maximum of 31 columns, and other indexes support a maximum of 32 columns.
+    If the index method supports multi-column indexes, multiple columns can be declared. A global index can declare up to 31 columns, and other indexes can declare up to 32 columns.
 
 - **expression**
 
-    Specifies an expression index constraint based on one or more columns of the table. It must be written in parentheses. However, the parentheses can be omitted if the expression has the form of a function call.
+    Creates an expression index based on one or more columns of the table, which must generally be written in parentheses. If the expression takes the form of a function call, the parentheses can be omitted.
 
-    The expression index can be used to obtain fast access to data based on some transformation of the basic data. For example, an index computed on  **upper\(col\)**  would allow the  **WHERE upper\(col\) = 'JIM'**  clause to use an index.
+    An expression index can be used to obtain fast access to data based on some transformation of the basic data. For example, a function-based index on `upper(col)` would allow the clause `WHERE upper(col) = 'JIM'` to use an index.
 
-    If an expression contains the  **IS NULL**  clause, the index for this expression is invalid. In this case, you are advised to create a partial index.
+    When creating an expression index, if the expression contains an IS NULL clause, the index is invalid. In this case, it is recommended that you try creating a partial index instead.
 
 - **WHERE predicate**
 
-    Creates a partial index. A partial index contains entries for only a portion of a table, usually a portion that is more useful for indexing than the rest of the table. For example, if you have a table that contains both billed and unbilled orders where the unbilled orders take up a small portion of the total table and yet that is an often used portion, you can improve performance by creating an index on just that portion. In addition, the  **WHERE**  clause with a UNIQUE constraint can be used to enforce uniqueness over a subset of a table.
+    Creates a partial index. A partial index is an index that contains only a portion of the records in a table, typically the portion that is more useful than the rest of the data. For example, if a table contains both billed and unbilled orders, where unbilled orders account for only a small portion of the table and are the most frequently used portion, performance can be improved by creating an index only on the unbilled portion. Another possible use is to enforce uniqueness on a subset of a table by using WHERE with UNIQUE.
 
-    Value range: The predicate expression can only refer to columns of the underlying table, but it can use all columns, not just the ones being indexed. Currently, subqueries and aggregate expressions are forbidden in the  **WHERE**  clause.
+    Value range: The predicate expression can only reference columns of the table, and it can use all columns, not just the indexed columns. Currently, subqueries and aggregate expressions cannot appear in the WHERE clause.
 
-## Examples<a name="section1037364913493"></a>
+## Example<a name="section1037364913493"></a>
 
-Create the  **tpcds.ship\_mode\_t1**  table.
+Create the table `tpcds.ship_mode_t1`.
 
 ```
 openGauss=# CREATE SCHEMA tpcds;
@@ -121,31 +123,31 @@ openGauss=# CREATE TABLE tpcds.ship_mode_t1
 ) ;
 ```
 
-Create a single-column index on the  **SM\_SHIP\_MODE\_ID**  column in the  **tpcds.ship\_mode\_t1**  table.
+Create a single-column index on the `SM_SHIP_MODE_ID` column of the `tpcds.ship_mode_t1` table.
 
 ```
-openGauss=# CREATE UNIQUE INDEX ds_ship_mode_t1_index0 ON tpcds.ship_mode_t1(SM_SHIP_MODE_ID);
+openGauss=# CREATE INDEX ds_ship_mode_t1_index0 ON tpcds.ship_mode_t1(SM_SHIP_MODE_ID);
 ```
 
-Create a common unique index on the  **SM\_SHIP\_MODE\_SK**  column in the  **tpcds.ship\_mode\_t1**  table.
+Create an ordinary unique index on the `SM_SHIP_MODE_SK` column of the `tpcds.ship_mode_t1` table.
 
 ```
 openGauss=# CREATE UNIQUE INDEX ds_ship_mode_t1_index1 ON tpcds.ship_mode_t1(SM_SHIP_MODE_SK);
 ```
 
-Create an expression index on the  **SM\_CODE**  column in the  **tpcds.ship\_mode\_t1**  table.
+Create an expression index on the `SM_CODE` column of the `tpcds.ship_mode_t1` table.
 
 ```
 openGauss=# CREATE INDEX ds_ship_mode_t1_index2 ON tpcds.ship_mode_t1(SUBSTR(SM_CODE,1 ,4));
 ```
 
-Create a partial index on the  **SM\_SHIP\_MODE\_SK**  column where  **SM\_SHIP\_MODE\_SK**  is greater than  **10**  in the  **tpcds.ship\_mode\_t1**  table.
+A partial index is created on the `SM_SHIP_MODE_SK` column of table `tpcds.ship_mode_t1` for rows where `SM_SHIP_MODE_SK` is greater than 10.
 
 ```
 openGauss=# CREATE UNIQUE INDEX ds_ship_mode_t1_index3 ON tpcds.ship_mode_t1(SM_SHIP_MODE_SK) WHERE SM_SHIP_MODE_SK>10;
 ```
 
-Delete the created index.
+The created index is dropped.
 
 ```
 openGauss=# DROP INDEX tpcds.ds_ship_mode_t1_index2;
