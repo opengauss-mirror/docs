@@ -157,8 +157,38 @@ set rewrite_rule=none;           --关闭所有可选查询重写规则
 - disable_pullup_expr_sublink：禁止优化器将expr_sublink类型的子连接提升，关于sublink的分类和提升原理详见《性能调优指南》->《SQL调优指南》->《典型SQL调优点》->《子查询调优》章节。
 - enable_sublink_pullup_enhanced：使用增强后的sublink查询重写规则，包括where、 having子句的非相关子链接提升和winmagic重写优化。
 - remove_redundant_distinct_group_by：去除ANY_sublink子查询中多余的distinct和group by子句，以支持子查询提升。
+- union_all_faststart：对满足条件的无序 UNION ALL + LIMIT/OFFSET 查询，根据取数需求和分支成本估算值调整分支顺序，以改善首行和首批数据响应时间。该选项默认不启用。当分支数≥5 时，该特性还受 `union_all_faststart_limit_threshold` 参数控制。查询块须具有正数常量 LIMIT，且不包含顶层 ORDER BY（包括带 ORDER BY 的 WITH TIES）、PERCENT、聚合、分组、HAVING、DISTINCT、窗口函数或目标列表集合返回函数等排除条件。开启后，无序 LIMIT/OFFSET 返回的具体记录可能变化，实际性能收益取决于成本估算和数据分布。
 
 **默认值**：magicset
+
+## union_all_faststart_limit_threshold
+
+**参数说明**：开启 `rewrite_rule` 中的 `union_all_faststart` 后，设置 5 个及以上 UNION ALL 分支允许进行快速启动重排的最大取数需求量。取数需求量为 `LIMIT + OFFSET`，未指定 OFFSET 或 OFFSET 为 NULL 时按 0 计算。
+
+该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md)中对应设置方法进行设置。
+
+**取值范围**：整型，0～INT\_MAX。
+
+**默认值**：100。
+
+**说明**：
+
+- 查询满足特性的其他适用条件，且 `LIMIT + OFFSET` 小于或等于该阈值时，5 个及以上分支按启动成本升序排列；超过阈值时跳过本特性的分支重排。
+- 设置为 0 时禁用上述 5 个及以上分支的重排，不影响 2～4 分支的重排逻辑。
+- 该参数是允许重排的需求量阈值，不是分支数量上限，也不改变 SQL 中 LIMIT/OFFSET 的取数语义。
+- 只有 `rewrite_rule` 包含 `union_all_faststart` 时，该参数才对本特性生效。查询须由正数常量 LIMIT 直接约束 UNION ALL 结果，并通过排序、聚合等适用性检查；提高阈值不会取消这些限制。
+
+**示例**：
+
+```sql
+SET rewrite_rule = 'union_all_faststart';
+SET union_all_faststart_limit_threshold = 100;
+SHOW union_all_faststart_limit_threshold;
+RESET union_all_faststart_limit_threshold;
+RESET rewrite_rule;
+```
+
+UNION ALL 分支重排的使用案例参见[案例：调整查询重写GUC参数rewrite_rule](https://docs.opengauss.org/zh/docs/latest/performance_tuning_guide/case_modifying_the_guc_parameter_rewrite_rule.html)。
 
 ## enable\_pbe\_optimization<a name="zh-cn_topic_0283137548_zh-cn_topic_0237124743_section4605202011486"></a>
 
