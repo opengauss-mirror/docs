@@ -164,25 +164,25 @@ sections:
           - label: COLLATIONS
             href: ./collations.md
           - label: KEY_COLUMN_USAGE
-            href: ./key_column_usage.md    
+            href: ./KEY_COLUMN_USAGE.md    
           - label: PARAMETERS
-            href: ./parameters.md 
+            href: ./PARAMETERS.md 
           - label: REFERENTIAL_CONSTRAINTS
-            href: ./referential_constraints.md       
+            href: ./REFERENTIAL_CONSTRAINTS.md       
           - label: ROUTINES
-            href: ./routines.md      
+            href: ./ROUTINES.md      
           - label: SCHEMATA
-            href: ./schemata.md 
+            href: ./SCHEMATA.md 
           - label: TABLE_CONSTRAINTS
-            href: ./table_constraints.md 
+            href: ./TABLE_CONSTRAINTS.md 
           - label: TABLES
-            href: ./tables.md 
+            href: ./TABLES.md 
           - label: KEYWORDS
             href: ./keywords_0.md
           - label: STATISTICS
-            href: ./statistics.md
+            href: ./STATISTICS.md
           - label: PARTITIONS
-            href: ./partitions.md
+            href: ./PARTITIONS.md
           - label: EVENTS
             href: ./events.md
           - label: INFORMATION_SCHEMA_CATALOG_NAME
