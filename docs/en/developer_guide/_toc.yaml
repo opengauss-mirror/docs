@@ -45,6 +45,8 @@ sections:
         href: ./connecting_to_a_database_jdbc.md
       - label: Connecting to a Database (Using SSL)
         href: ./connecting_to_a_database_using_ssl_jdbc.md
+      - label: Connecting to a Database (UsingTLCP)
+        href: ./connecting_to_a_database_using_tlcp.md     
       - label: Connecting to a Database (Using UDS)
         href: ./connecting_to_a_database_using_uds.md
       - label: Running SQL Statements
@@ -325,5 +327,11 @@ sections:
             href: ./pqcancel.md
       - label: Link Parameters
         href: ./link_parameters_libpq.md
+  - label: development_based_on_go
+    sections:
+      - label: Overview
+        href: ./development_based_on_go.md
+      - label: Example Common Operations GO
+        href: ./example_common_operations_go.md
   - label: Commissioning
     href: ./commissioning.md
