@@ -59,6 +59,12 @@ sections:
             href: ./data_type_used_by_the_ledger_database.md
           - label: SET Type
             href: ./set_type.md
+          - label: ANYDATA Type
+            href: ./anydata_type.md
+          - label:  Object Type
+            href: ./object_type.md
+          - label: BFILE Type
+            href: ./bfile_type.md
           - label: INSERT_RIGHT_REF_DEFAULT_VALUE
             href: ./insert_right_ref_default_value.md
       - label: Type Conversion
@@ -73,6 +79,8 @@ sections:
             href: ./value_storage.md
           - label: UNION, CASE, and Related Constructs
             href: ./union_case_and_related_constructs.md
+      - label: Character Set And Collation
+        href: ./character_set_and_collation.md
       - label: Brief Tutorial
         sections: 
           - label: Creating a Database
@@ -151,6 +159,32 @@ sections:
             href: ./_pg_foreign_tables.md
           - label: _PG_USER_MAPPINGS
             href: ./_pg_user_mappings.md
+          - label: CHARACETER_SETS
+            href: ./character_sets.md
+          - label: COLLATIONS
+            href: ./collations.md
+          - label: KEY_COLUMN_USAGE
+            href: ./key_column_usage.md    
+          - label: PARAMETERS
+            href: ./parameters.md 
+          - label: REFERENTIAL_CONSTRAINTS
+            href: ./referential_constraints.md       
+          - label: ROUTINES
+            href: ./routines.md      
+          - label: SCHEMATA
+            href: ./schemata.md 
+          - label: TABLE_CONSTRAINTS
+            href: ./table_constraints.md 
+          - label: TABLES
+            href: ./tables.md 
+          - label: KEYWORDS
+            href: ./keywords_0.md
+          - label: STATISTICS
+            href: ./statistics.md
+          - label: PARTITIONS
+            href: ./partitions.md
+          - label: EVENTS
+            href: ./events.md
           - label: INFORMATION_SCHEMA_CATALOG_NAME
             href: ./information_schema_catalog_name.md
       - label: DBE_PERF Schema
@@ -607,98 +641,106 @@ sections:
                     href: ./configuration_settings_60.md
                   - label: SQL Detail
                     href: ./sql_detail.md
-          - label: DBE_PLDEBUGGER Schema
-            sections:
-              - label: Introduction
-                href: ./dbe_pldebugger_schema.md            
-              - label: DBE_PLDEBUGGER.turn_on
-                href: ./dbe_pldebugger_turn_on.md
-              - label: DBE_PLDEBUGGER.turn_off
-                href: ./dbe_pldebugger_turn_off.md
-              - label: DBE_PLDEBUGGER.local_debug_server_info
-                href: ./dbe_pldebugger_local_debug_server_info.md
-              - label: DBE_PLDEBUGGER.attach
-                href: ./dbe_pldebugger_attach.md
-              - label: DBE_PLDEBUGGER.info_locals
-                href: ./dbe_pldebugger_info_locals.md                
-              - label: DBE_PLDEBUGGER.next
-                href: ./dbe_pldebugger_next.md
-              - label: DBE_PLDEBUGGER.continue
-                href: ./dbe_pldebugger_continue.md
-              - label: DBE_PLDEBUGGER.abort
-                href: ./dbe_pldebugger_abort.md
-              - label: DBE_PLDEBUGGER.print_var
-                href: ./dbe_pldebugger_print_var.md
-              - label: DBE_PLDEBUGGER.info_code
-                href: ./dbe_pldebugger_info_code.md
-              - label: DBE_PLDEBUGGER.step
-                href: ./dbe_pldebugger_step.md
-              - label: DBE_PLDEBUGGER.add_breakpoint
-                href: ./dbe_pldebugger_add_breakpoint.md
-              - label: DBE_PLDEBUGGER.delete_breakpoint
-                href: ./dbe_pldebugger_delete_breakpoint.md
-              - label: DBE_PLDEBUGGER.info_breakpoints
-                href: ./dbe_pldebugger_info_breakpoints.md
-              - label: DBE_PLDEBUGGER.backtrace
-                href: ./dbe_pldebugger_backtrace.md
-              - label: DBE_PLDEBUGGER.enable_breakpoint
-                href: ./dbe_pldebugger_enable_breakpoint.md
-              - label: DBE_PLDEBUGGER.disable_breakpoint
-                href: ./dbe_pldebugger_disable_breakpoint.md
-              - label: DBE_PLDEBUGGER.finish
-                href: ./dbe_pldebugger_finish.md
-              - label: DBE_PLDEBUGGER.set_var
-                href: ./dbe_pldebugger_set_var.md
-          - label: DB4AI Schema
-            sections:
-              - label: Introduction
-                href: ./db4ai_schema.md
-              - label: DB4AI.SNAPSHOT
-                href: ./db4ai_snapshot.md
-              - label: DB4AI.CREATE_SNAPSHOT
-                href: ./db4ai_create_snapshot.md
-              - label: DB4AI.CREATE_SNAPSHOT_INTERNAL
-                href: ./db4ai_create_snapshot_internal.md
-              - label: DB4AI.PREPARE_SNAPSHOT
-                href: ./db4ai_prepare_snapshot.md
-              - label: DB4AI.PREPARE_SNAPSHOT_INTERNAL
-                href: ./db4ai_prepare_snapshot_internal.md
-              - label: DB4AI.ARCHIVE_SNAPSHOT
-                href: ./db4ai_archive_snapshot.md
-              - label: DB4AI.PUBLISH_SNAPSHOT
-                href: ./db4ai_publish_snapshot.md
-              - label: DB4AI.MANAGE_SNAPSHOT_INTERNAL
-                href: ./db4ai_manage_snapshot_internal.md
-              - label: DB4AI.SAMPLE_SNAPSHOT
-                href: ./db4ai_sample_snapshot.md
-              - label: DB4AI.PURGE_SNAPSHOT
-                href: ./db4ai_purge_snapshot.md
-              - label: DB4AI.PURGE_SNAPSHOT_INTERNAL
-                href: ./db4ai_purge_snapshot_internal.md
-          - label: DBE_PLDEVELOPER
-            sections:
-              - label: Introduction
-                href: ./dbe_pldeveloper.md
-              - label: DBE_PLDEVELOPER.gs_source
-                href: ./dbe_pldeveloper_gs_source.md
-              - label: DBE_PLDEVELOPER.gs_errors
-                href: ./dbe_pldeveloper_gs_errors.md
-          - label: DBE_SQL_UTIL Schema
-            sections:
-              - label: Introduction
-                href: ./dbe_sql_util_schema.md
-              - label: DBE_SQL_UTIL.create_hint_sql_patch
-                href: ./dbe_sql_util_create_hint_sql_patch.md
-              - label: DBE_SQL_UTIL.create_abort_sql_patch
-                href: ./dbe_sql_util_create_abort_sql_patch.md
-              - label: DBE_SQL_UTIL.drop_sql_patch
-                href: ./dbe_sql_util_drop_sql_patch.md
-              - label: DBE_SQL_UTIL.enable_sql_patch
-                href: ./dbe_sql_util_enable_sql_patch.md
-              - label: DBE_SQL_UTIL.disable_sql_patch
-                href: ./dbe_sql_util_disable_sql_patch.md
-              - label: DBE_SQL_UTIL.show_sql_patch
-                href: ./dbe_sql_util_show_sql_patch.md
+      - label: PROC Coverage Schema
+        sections:
+          - label: Overview
+            href: ./proc_coverage_schema.md
+          - label: coverage.proc_coverage
+            href: ./coverage_proc_coverage.md
+          - label: Generating Stored Procedure Coverage Report
+            href: ./proc_coverage_generate_stored_procedure_coverage_report.md
+      - label: DBE_PLDEBUGGER Schema
+        sections:
+          - label: Introduction
+            href: ./dbe_pldebugger_schema.md            
+          - label: DBE_PLDEBUGGER.turn_on
+            href: ./dbe_pldebugger_turn_on.md
+          - label: DBE_PLDEBUGGER.turn_off
+            href: ./dbe_pldebugger_turn_off.md
+          - label: DBE_PLDEBUGGER.local_debug_server_info
+            href: ./dbe_pldebugger_local_debug_server_info.md
+          - label: DBE_PLDEBUGGER.attach
+            href: ./dbe_pldebugger_attach.md
+          - label: DBE_PLDEBUGGER.info_locals
+            href: ./dbe_pldebugger_info_locals.md                
+          - label: DBE_PLDEBUGGER.next
+            href: ./dbe_pldebugger_next.md
+          - label: DBE_PLDEBUGGER.continue
+            href: ./dbe_pldebugger_continue.md
+          - label: DBE_PLDEBUGGER.abort
+            href: ./dbe_pldebugger_abort.md
+          - label: DBE_PLDEBUGGER.print_var
+            href: ./dbe_pldebugger_print_var.md
+          - label: DBE_PLDEBUGGER.info_code
+            href: ./dbe_pldebugger_info_code.md
+          - label: DBE_PLDEBUGGER.step
+            href: ./dbe_pldebugger_step.md
+          - label: DBE_PLDEBUGGER.add_breakpoint
+            href: ./dbe_pldebugger_add_breakpoint.md
+          - label: DBE_PLDEBUGGER.delete_breakpoint
+            href: ./dbe_pldebugger_delete_breakpoint.md
+          - label: DBE_PLDEBUGGER.info_breakpoints
+            href: ./dbe_pldebugger_info_breakpoints.md
+          - label: DBE_PLDEBUGGER.backtrace
+            href: ./dbe_pldebugger_backtrace.md
+          - label: DBE_PLDEBUGGER.enable_breakpoint
+            href: ./dbe_pldebugger_enable_breakpoint.md
+          - label: DBE_PLDEBUGGER.disable_breakpoint
+            href: ./dbe_pldebugger_disable_breakpoint.md
+          - label: DBE_PLDEBUGGER.finish
+            href: ./dbe_pldebugger_finish.md
+          - label: DBE_PLDEBUGGER.set_var
+            href: ./dbe_pldebugger_set_var.md
+      - label: DB4AI Schema
+        sections:
+          - label: Introduction
+            href: ./db4ai_schema.md
+          - label: DB4AI.SNAPSHOT
+            href: ./db4ai_snapshot.md
+          - label: DB4AI.CREATE_SNAPSHOT
+            href: ./db4ai_create_snapshot.md
+          - label: DB4AI.CREATE_SNAPSHOT_INTERNAL
+            href: ./db4ai_create_snapshot_internal.md
+          - label: DB4AI.PREPARE_SNAPSHOT
+            href: ./db4ai_prepare_snapshot.md
+          - label: DB4AI.PREPARE_SNAPSHOT_INTERNAL
+            href: ./db4ai_prepare_snapshot_internal.md
+          - label: DB4AI.ARCHIVE_SNAPSHOT
+            href: ./db4ai_archive_snapshot.md
+          - label: DB4AI.PUBLISH_SNAPSHOT
+            href: ./db4ai_publish_snapshot.md
+          - label: DB4AI.MANAGE_SNAPSHOT_INTERNAL
+            href: ./db4ai_manage_snapshot_internal.md
+          - label: DB4AI.SAMPLE_SNAPSHOT
+            href: ./db4ai_sample_snapshot.md
+          - label: DB4AI.PURGE_SNAPSHOT
+            href: ./db4ai_purge_snapshot.md
+          - label: DB4AI.PURGE_SNAPSHOT_INTERNAL
+            href: ./db4ai_purge_snapshot_internal.md
+      - label: DBE_PLDEVELOPER
+        sections:
+          - label: Introduction
+            href: ./dbe_pldeveloper.md
+          - label: DBE_PLDEVELOPER.gs_source
+            href: ./dbe_pldeveloper_gs_source.md
+          - label: DBE_PLDEVELOPER.gs_errors
+            href: ./dbe_pldeveloper_gs_errors.md
+      - label: DBE_SQL_UTIL Schema
+        sections:
+          - label: Introduction
+            href: ./dbe_sql_util_schema.md
+          - label: DBE_SQL_UTIL.create_hint_sql_patch
+            href: ./dbe_sql_util_create_hint_sql_patch.md
+          - label: DBE_SQL_UTIL.create_abort_sql_patch
+            href: ./dbe_sql_util_create_abort_sql_patch.md
+          - label: DBE_SQL_UTIL.drop_sql_patch
+            href: ./dbe_sql_util_drop_sql_patch.md
+          - label: DBE_SQL_UTIL.enable_sql_patch
+            href: ./dbe_sql_util_enable_sql_patch.md
+          - label: DBE_SQL_UTIL.disable_sql_patch
+            href: ./dbe_sql_util_disable_sql_patch.md
+          - label: DBE_SQL_UTIL.show_sql_patch
+            href: ./dbe_sql_util_show_sql_patch.md
   - label: SQL Syntax
     sections:
       - label: DDL Syntax Overview
@@ -829,6 +871,8 @@ sections:
         href: ./commit_prepared.md
       - label: COPY
         href: ./copy.md
+      - label: CREATE ACCESS METHOD
+        href: ./create_access_method.md
       - label: CREATE AGGREGATE
         href: ./create_aggregate.md
       - label: CREATE AUDIT POLICY
@@ -869,10 +913,14 @@ sections:
         href: ./create_masking_policy.md
       - label: CREATE MATERIALIZED VIEW
         href: ./create_materialized_view.md
+      - label: CREATE MATERIALIZED VIEW LOG
+        href: ./create_materialized_view_log.md
       - label: CREATE MODEL
         href: ./create_model.md
       - label: CREATE OPERATOR
         href: ./create_operator.md
+      - label: CREATE OPERATOR FAMILY
+        href: ./create_operator_family.md
       - label: CREATE PACKAGE
         href: ./create_package.md
       - label: CREATE PROCEDURE
@@ -939,6 +987,8 @@ sections:
         href: ./do.md
       - label: DELIMITER
         href: ./delimiter.md
+      - label: DROP ACCESS METHOD
+        href: ./drop_access_method.md
       - label: DROP AGGREGATE
         href: ./drop_aggregate.md
       - label: DROP AUDIT POLICY
@@ -1015,6 +1065,8 @@ sections:
         href: ./drop_table.md
       - label: DROP TABLESPACE
         href: ./drop_tablespace.md
+      - label: DROP TABLE PARTITION
+        href: ./drop_table_partition.md     
       - label: DROP TEXT SEARCH CONFIGURATION
         href: ./drop_text_search_configuration.md
       - label: DROP TEXT SEARCH DICTIONARY
@@ -1131,6 +1183,8 @@ sections:
         href: ./array_expressions.md
       - label: Row Expressions
         href: ./row_expressions.md
+      - label: Cursor Expression
+        href: ./cursor_expression.md
   - label: Functions and Operators
     sections:
       - label: Logical Operators
@@ -1173,6 +1227,8 @@ sections:
         href: ./aggregate_functions.md
       - label: Window Functions
         href: ./window_functions.md
+      - label: KEEP Functions
+        href: ./keep_funcation.md
       - label: Security Functions
         href: ./security_functions.md
       - label: Ledger Database Functions
@@ -1211,6 +1267,8 @@ sections:
             href: ./undo_system_functions.md
           - label: Row-store Compression System Functions
             href: ./row_store_compression_system_functions.md
+          - label: HTAP Row-Column Fusion System Functions
+            href: ./htap_row_column_fusion_system_function.md
           - label: SQL Firewall System Functions
             href: ./sql_firewall_system_functions.md
       - label: Statistics Information Functions
@@ -1243,6 +1301,12 @@ sections:
         href: ./data_damage_detection_and_repair_functions.md
       - label: XML Types
         href: ./xml_type_function.md
+      - label: XMLTABLE
+        href: ./xmltable.md
+      - label: Resource Pooling Function
+        href: ./resource_pooling_function.md
+      - label: BFILE Type Function
+        href: ./bfile_type_function.md      
       - label: Obsolete Functions
         href: ./obsolete_functions.md
   - label: Transactions and Locks
@@ -1331,6 +1395,8 @@ sections:
             href: ./error_trapping_statements.md
           - label: GOTO Statements
             href: ./goto_statements.md
+          - label: GET DIAGNOSTICS Statements
+            href: ./get_diagnostics.md
       - label: Transaction Management
         href: ./transaction_management.md
       - label: Other Statements
@@ -1455,6 +1521,8 @@ sections:
     href: ./extended_functions.md
   - label: Extended Syntax
     href: ./extended_syntax.md
+  - label: BLOOM
+    href: ./bloom_index.md      
   - label: System Operation
     href: ./system_operation.md
   - label: GIN Indexes

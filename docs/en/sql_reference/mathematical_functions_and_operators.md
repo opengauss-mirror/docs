@@ -1,6 +1,8 @@
-# Mathematical Functions and Operators<a name="EN-US_TOPIC_0289900469"></a>
+# Mathematical Functions and Operators
 
-## Numeric Operators<a name="en-us_topic_0283136987_en-us_topic_0237121971_en-us_topic_0059777932_s00454841bcf24ad18eed980c0e3a2f75"></a>
+<!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:26:45.153Z -->
+
+## Mathematical Operators<a name="zh-cn_topic_0283136987_zh-cn_topic_0237121971_zh-cn_topic_0059777932_s00454841bcf24ad18eed980c0e3a2f75"></a>
 
 - \+
 
@@ -46,7 +48,7 @@
 
 - /
 
-    Description: Division \(The result is not rounded.\)
+    Description: Division (the division operator does not round)
 
     Example:
 
@@ -82,7 +84,7 @@
 
 - %
 
-    Description: Model \(to obtain the remainder\)
+    Description: Modulo (remainder)
 
     Example:
 
@@ -110,7 +112,7 @@
 
 - ^
 
-    Description: Power \(exponent calculation\)
+    Description: Power (exponentiation)
 
     Example:
 
@@ -138,7 +140,7 @@
 
 - ||/
 
-    Description: Cubic root
+    Description: Cube root
 
     Example:
 
@@ -154,7 +156,7 @@
 
     Description: Factorial
 
-    WARNING:  unsupported in b compatibility mode
+    >[!WARNING]Warning: In B compatibility mode, this operator is not supported. It is recommended to use the factorial function instead.
 
     Example:
 
@@ -168,9 +170,9 @@
 
 - !!
 
-    Description: Factorial \(prefix operator\)
+    Description: Factorial (prefix operator)
 
-    WARNING:  unsupported in b compatibility mode
+    Warning: In B compatibility mode, this operator cannot be used by default. It is recommended to use the factorial function instead.
 
     Example:
 
@@ -182,9 +184,9 @@
     (1 row)
     ```
 
-- &
+- &amp;
 
-    Description: Binary AND
+    Description: Bitwise AND
 
     Example:
 
@@ -198,7 +200,7 @@
 
 - |
 
-    Description: Binary OR
+    Description: Bitwise OR
 
     Example:
 
@@ -238,9 +240,9 @@
     (1 row)
     ```
 
-- <<
+- &lt;&lt;
 
-    Description: Binary shift left
+    Description: Binary left shift
 
     Example:
 
@@ -252,9 +254,9 @@
     (1 row)
     ```
 
-- \>\>
+- \&gt;\&gt;
 
-    Description: Binary shift right
+    Description: Binary right shift
 
     Example:
 
@@ -266,13 +268,13 @@
     (1 row)
     ```
 
-## Numeric Operation Functions<a name="en-us_topic_0283136987_en-us_topic_0237121971_en-us_topic_0059777932_s04c663eefe5a433d9a486b67706e44e1"></a>
+## Mathematical Functions<a name="zh-cn_topic_0283136987_zh-cn_topic_0237121971_zh-cn_topic_0059777932_s04c663eefe5a433d9a486b67706e44e1"></a>
 
-- abs\(x\)
+- abs(x)
 
-    Description: Absolute value
+    Description: Absolute value.
 
-    Return type: same as the input
+    Return type: Same as input.
 
     Example:
 
@@ -286,7 +288,7 @@
 
 - acos\(x\)
 
-    Description: Arc cosine
+    Description: Arccosine.
 
     Return type: double precision
 
@@ -302,7 +304,7 @@
 
 - asin\(x\)
 
-    Description: Arc sine
+    Description: Arcsine.
 
     Return type: double precision
 
@@ -318,7 +320,7 @@
 
 - atan\(x\)
 
-    Description: Arc tangent
+    Description: Arctangent.
 
     Return type: double precision
 
@@ -332,9 +334,9 @@
     (1 row)
     ```
 
-- atan2\(y, x\)
+- atan2(y, x)
 
-    Description: Arc tangent of y/x
+    Description: Arctangent of y/x.
 
     Return type: double precision
 
@@ -350,7 +352,7 @@
 
 - bin_to_num\(VARIADIC number[]\)
 
-    Description: Converts a bit vector to its equivalent number. Each argument to this function represents a bit in the bit vector. Each expr must evaluate to 0 or 1. 
+    Description: Converts a bit vector to its equivalent number. Each argument of this function represents a bit in the bit vector. Each expression must evaluate to 0 or 1.
 
     Return type: number
 
@@ -366,9 +368,9 @@
 
 - bitand\(integer, integer\)
 
-    Description: Performs an AND \(&\) operation on two integers.
+    Description: Computes the result of the bitwise AND (&amp;) operation on two numbers.
 
-    Return type: bigint
+    Return type: A bigint number.
 
     Example:
 
@@ -382,7 +384,7 @@
 
 - cbrt\(dp\)
 
-    Description: Cubic root
+    Description: Cube root.
 
     Return type: double precision
 
@@ -398,9 +400,9 @@
 
 - ceil\(x\)
 
-    Description: Minimum integer greater than or equal to the parameter
+    Description: The smallest integer not less than the argument.
 
-    Return type: integer
+    Return type: integer.
 
     Example:
 
@@ -412,11 +414,11 @@
     (1 row)
     ```
 
-- ceiling\(dp or numeric\)
+- ceiling(dp or numeric)
 
-    Description: Minimum integer \(alias of ceil\) greater than or equal to the parameter
+    Description: The smallest integer not less than the parameter (alias of ceil).
 
-    Return type: dp or numeric. If implicit type conversion is not considered, the return type is the same as the input type.
+    Return type: dp or numeric, same as input without implicit type conversion.
 
     Example:
 
@@ -430,7 +432,7 @@
 
 - cos\(x\)
 
-    Description: Cosine
+    Description: Cosine.
 
     Return type: double precision
 
@@ -446,7 +448,7 @@
 
 - cot\(x\)
 
-    Description: Cotangent
+    Description: Cotangent.
 
     Return type: double precision
 
@@ -462,7 +464,7 @@
 
 - degrees\(dp\)
 
-    Description: Converts radians to angles.
+    Description: Converts radians to degrees.
 
     Return type: double precision
 
@@ -478,7 +480,7 @@
 
 - div\(y numeric, x numeric\)
 
-    Description: Integer part of y/x
+    Description: The integer part of the quotient of y divided by x.
 
     Return type: numeric
 
@@ -492,11 +494,11 @@
     (1 row)
     ```
 
-- exp\(x\)
+- exp(x)
 
-    Description: Natural exponent
+    Description: Natural exponent.
 
-    Return type: dp or numeric. If implicit type conversion is not considered, the return type is the same as the input type.
+    Return type: dp or numeric, same as input without implicit type conversion.
 
     Example:
 
@@ -510,9 +512,9 @@
 
 - floor\(x\)
 
-    Description: Maximum integer not larger than the parameter
+    Description: The largest integer not greater than the argument.
 
-    Return type: same as the input
+    Return type: Same as input.
 
     Example:
 
@@ -526,7 +528,7 @@
 
 - int1\(in\)
 
-    Description: Converts the input text parameter to a value of the int1 type and returns the value.
+    Description: Converts the input text parameter to an int1 type value and returns it.
 
     Return type: int1
 
@@ -547,9 +549,9 @@
 
 - int2\(in\)
 
-    Description: Converts the input parameter to a value of the int2 type and returns the value.
+    Description: Converts the input parameter to an int2 type value and returns it.
 
-    The supported input parameter types include float4, float8, int16, numeric, and text.
+    Supported input parameter types include float4, float8, int16, numeric, and text.
 
     Return type: int2
 
@@ -570,9 +572,9 @@
 
 - int4\(in\)
 
-    Description: Converts the input parameter to a value of the int4 type and returns the value.
+    Description: Converts the input parameter to an int4 type value and returns it.
 
-    The supported input parameter types include bit, boolean, char, double precision, int16, numeric, real, smallint and text
+    Supported input parameter types include bit, boolean, char, double precision, int16, numeric, real, smallint, and text.
 
     Return type: int4
 
@@ -593,233 +595,101 @@
 
 - float4\(in\)
 
-    Description: Converts the input parameter to a value of the float4 type and returns the value. The supported input parameter types include bigint, duoble precision, int16, integer, numeric, smallint, and text.
+  Description: Converts the input parameter to a float4 type value and returns it. Supported input parameter types include: bigint, double precision, int16, integer, numeric, smallint, and text.
 
-    Return type: float4
+  Return type: float4
 
-    Example:
+  Example:
 
-    ```
-    openGauss=# select float4('789');
-     float4
-    --------
-        789
-    (1 row)
-    
-    openGauss=# select float4(99.9);
-     float4
-    --------
-       99.9
-    (1 row)
-    ```
+  ```
+  openGauss=# select float4('789');
+   float4
+  --------
+      789
+  (1 row)
+  
+  openGauss=# select float4(99.9);
+   float4
+  --------
+     99.9
+  (1 row)
+  ```
 
 - float8\(in\)
 
-    Description: Converts the input parameter to a value of the float8 type and returns the value. The supported input parameter types include bigint, int16, integer, numeric, real, smallint, and text.
+  Description: Converts the input parameter to a float8 type value and returns it. Supported input parameter types include: bigint, int16, integer, numeric, real, smallint, and text.
 
-    Return type: float8
+  Return type: float8
 
-    Example:
+  Example:
 
-    ```
-    openGauss=# select float8('789');
-     float8
-    --------
-        789
-    (1 row)
-    
-    openGauss=# select float8(99.9);
-     float8
-    --------
-       99.9
-    (1 row)
-    ```
+  ```
+  openGauss=# select float8('789');
+   float8
+  --------
+      789
+  (1 row)
+  
+  openGauss=# select float8(99.9);
+   float8
+  --------
+     99.9
+  (1 row)
+  ```
 
 - int16\(in\)
 
-    Description: Converts the input parameter to a value of the int16 type and returns the value. The supported input parameter types include bigint, boolean, double precision, integer, numeric, oid, real, smallint, and tinyint.
+  Description: Converts the input parameter to an int16 type value and returns it. Supported input parameter types include: bigint, boolean, double precision, integer, numeric, oid, real, smallint, tinyint.
 
-    Return type: int16
+  Return type: int16
 
-    Example:
+  Example:
 
-    ```
-    openGauss=# select int16('789');
-     int16
-    --------
-        789
-    (1 row)
-    
-    openGauss=# select int16(99.9);
-     int16
-    --------
-       99
-    (1 row)
-    ```
+  ```
+  openGauss=# select int16('789');
+   int16
+  --------
+      789
+  (1 row)
+  
+  openGauss=# select int16(99.9);
+   int16
+  --------
+     99
+  (1 row)
+  ```
 
-- numeric\(in\)
+- numeric(in)
 
-    Description: Converts the input parameter to a value of the numeric type and returns the value. The supported input parameter types include bigint, boolean, double precision, int16, integer, money, real, and smallint.
+  Description: Converts the input parameter to a numeric type value and returns it. Supported input parameter types include: bigint, boolean, double precision, int16, integer, money, real, smallint.
 
-    Return type: numeric
+  Return type: numeric
 
-    Example:
+  Example:
 
-    ```
-    openGauss=# select "numeric"('789');
-     numeric
-    ---------
-         789
-    (1 row)
-    
-    openGauss=# select "numeric"(99.9);
-     numeric
-    ---------
-        99.9
-    (1 row)
-    ```
+  ```
+  openGauss=# select "numeric"('789');
+   numeric
+  ---------
+       789
+  (1 row)
+  
+  openGauss=# select "numeric"(99.9);
+   numeric
+  ---------
+      99.9
+  (1 row)
+  ```
 
 - oid\(in\)
 
-    Description: Converts the input parameter to a value of the oid type and returns the value. The supported input parameter types include bigint and int16.
+  Description: Converts the input parameter to an oid type value and returns it. Supported input parameter types include: bigint, int16.
 
-    Return type: oid
-
-- natural\(in\)
-
-    Description: Converts the input parameter to a value of the natural type and returns the value. The supported input parameter types include tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric.
-
-    Return type: natural
-
-    Example:
-
-    ```
-    openGauss=# select "natural"('789');
-     natural
-    ---------
-         789
-    (1 row)
-    
-    openGauss=# select "natural"(99.9);
-     natural
-    ---------
-          99
-    (1 row)
-    ```
-
-- naturaln\(in\)
-
-    Description: Converts the input parameter to a value of the naturaln type and returns the value. The supported input parameter types include tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric.
-
-    Return type: naturaln
-
-    Example:
-
-    ```
-    openGauss=# select naturaln('789');
-     naturaln
-    ----------
-          789
-    (1 row)
-    
-    openGauss=# select naturaln(99.9);
-     naturaln
-    ----------
-           99
-    (1 row)
-    ```
-
-- positive\(in\)
-
-    Description: Converts the input parameter to a value of the positive type and returns the value. The supported input parameter types include tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric.
-
-    Return type: positive
-
-    Example:
-
-    ```
-    openGauss=# select positive('789');
-     positive
-    ----------
-          789
-    (1 row)
-    
-    openGauss=# select positive(99.9);
-     positive
-    ----------
-           99
-    (1 row)
-    ```
-
-- positiven\(in\)
-
-    Description: Converts the input parameter to a value of the positiven type and returns the value. The supported input parameter types include tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric.
-
-    Return type: positiven
-
-    Example:
-
-    ```
-    openGauss=# select positiven('789');
-     positiven
-    -----------
-           789
-    (1 row)
-    
-    openGauss=# select positiven(99.9);
-     positiven
-    -----------
-            99
-    (1 row)
-    ```
-
-- signtype\(in\)
-
-    Description: Converts the input parameter to a value of the signtype type and returns the value. The supported input parameter types include tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric.
-
-    Return type: signtype
-
-    Example:
-
-    ```
-    openGauss=# select signtype('1.2');
-     signtype
-    ----------
-            1
-    (1 row)
-    
-    openGauss=# select signtype(-0.9);
-     signtype
-    ----------
-           -1
-    (1 row)
-    ```
-
-- simple_integer\(in\)
-
-    Description: Converts the input parameter to a value of the simple_integer type and returns the value. The supported input parameter types include tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric.
-
-    Return type: simple_integer
-
-    Example:
-
-    ```
-    openGauss=# select simple_integer('789');
-     simple_integer
-    ----------------
-                789
-    (1 row)
-    
-    openGauss=# select simple_integer(99.9);
-     simple_integer
-    ----------------
-                 99
-    (1 row)
-    ```
+  Return type: oid
 
 - radians\(dp\)
 
-    Description: Converts angles to radians.
+    Description: Converts degrees to radians.
 
     Return type: double precision
 
@@ -835,7 +705,7 @@
 
 - random\(\)
 
-    Description: Random number between 0.0 and 1.0
+    Description: A random number between 0.0 and 1.0.
 
     Return type: double precision
 
@@ -851,7 +721,7 @@
 
 - multiply\(x double precision or text, y double precision or text\)
 
-    Description: Product of x and y. Only multiply\(x text, y double precision\) or multiply\(x double precision, y text\) is supported.
+    Description: Product of x and y. Only the two scenarios multiply\(x double precision, y text\) and multiply\(x text, y double precision\) are supported.
 
     Return type: double precision
 
@@ -872,9 +742,9 @@
 
 - ln\(x\)
 
-    Description: Natural logarithm
+    Description: Natural logarithm.
 
-    Return type: dp or numeric. If implicit type conversion is not considered, the return type is the same as the input type.
+    Return type: dp or numeric, same as input without implicit type conversion.
 
     Example:
 
@@ -888,9 +758,9 @@
 
 - log\(x\)
 
-    Description: Logarithm with 10 as the base
+    Description: Base-10 logarithm.
 
-    Return type: same as the input
+    Return type: Same as input.
 
     Example:
 
@@ -902,9 +772,21 @@
     (1 row)
     ```
 
+    Supplementary note: In B-compatibility mode databases, the log function returns the natural logarithm.
+
+    Example:
+
+    ```
+    openGauss=# SELECT log(100.0);
+            log         
+    --------------------
+     4.605170185988092
+    (1 row)
+    ```
+
 - log\(b numeric, x numeric\)
 
-    Description: Logarithm with b as the base
+    Description: Base-b logarithm.
 
     Return type: numeric
 
@@ -920,9 +802,9 @@
 
 - mod\(x,y\)
 
-    Description: Remainder of x/y \(model\) If x equals to 0, 0 is returned.
+    Description: Remainder (modulo) of x/y. If x is 0, then 0 is returned.
 
-    Return type: same as the parameter type
+    Return type: Same as the parameter type.
 
     Example:
 
@@ -944,11 +826,11 @@
 
 - pi\(\)
 
-    Description: π constant value
+    Description: The "π" constant.
 
     Return type: double precision
 
-    Example:
+    Examples:
 
     ```
     openGauss=# SELECT pi();
@@ -960,7 +842,7 @@
 
 - power\(a double precision, b double precision\)
 
-    Description: b power of a
+    Description: A raised to the power of b.
 
     Return type: double precision
 
@@ -976,9 +858,9 @@
 
 - round\(x\)
 
-    Description: Integer closest to the input parameter
+    Description: The integer closest to the input parameter.
 
-    Return type: same as the input
+    Return type: Same as the input (double precision or numeric type).
 
     Example:
 
@@ -996,9 +878,9 @@
     (1 row)
     ```
 
-- round\(v numeric, s int\)
+- round(v numeric, s int)
 
-    Description:  **s**  digits are kept after the decimal point.
+    Description: Retains s decimal places, and rounds the digit after the s-th decimal place.
 
     Return type: numeric
 
@@ -1012,9 +894,9 @@
     (1 row)
     ```
 
-- setseed\(dp\)
+- setseed(dp)
 
-    Description: Sets seed for the following random\(\) invoking \(between –1.0 and 1.0, inclusive\).
+    Description: Sets the seed for subsequent random() calls (between -1.0 and 1.0, inclusive).
 
     Return type: void
 
@@ -1028,11 +910,11 @@
     (1 row)
     ```
 
-- sign\(x\)
+- sign(x)
 
-    Description: Returns symbols of this parameter.
+    Description: Returns the sign of this parameter.
 
-    Return type:  **–1**  indicates minus.  **0**  indicates 0, and  **1**  indicates positive numbers.
+    Return type: -1 indicates a negative number, 0 indicates zero, and 1 indicates a positive number.
 
     Example:
 
@@ -1046,7 +928,7 @@
 
 - sin\(x\)
 
-    Description: Sine
+    Description: Sine.
 
     Return type: double precision
 
@@ -1062,9 +944,9 @@
 
 - sqrt\(x\)
 
-    Description: Square root
+    Description: Square root.
 
-    Return type: dp or numeric. If implicit type conversion is not considered, the return type is the same as the input type.
+    Return type: dp or numeric, same as input without considering implicit type conversion.
 
     Example:
 
@@ -1078,7 +960,7 @@
 
 - tan\(x\)
 
-    Description: Tangent
+    Description: Tangent.
 
     Return type: double precision
 
@@ -1094,9 +976,9 @@
 
 - trunc\(x\)
 
-    Description: Truncates \(the integral part\).
+    Description: Truncation (integer part).
 
-    Return type: same as the input
+    Return type: Same as input.
 
     Example:
 
@@ -1108,9 +990,9 @@
     (1 row)
     ```
 
-- trunc\(v numeric, s int\)
+- trunc\(v numeric, s int4\)
 
-    Description: Truncates a number with  **s**  digits after the decimal point.
+    Description: Truncate to s decimal places (trunc only supports truncation up to the number of digits within the maximum value of the int4 type).
 
     Return type: numeric
 
@@ -1126,211 +1008,211 @@
 
 - smgrne\(a smgr, b smgr\)
 
-    Description: Compares two integers of the smgr type to check whether they are different.
+    Description: Compares whether two smgr type integers are not equal.
 
-    Return type: Boolean
+    Return type: bool
 
 - smgreq\(a smgr, b smgr\)
 
-    Description: Compares two integers of the smgr type to check whether they are equivalent.
+    Description: Compares whether two smgr type integers are equal.
 
-    Return type: Boolean
+    Return type: bool
 
 - int1abs
 
-    Description: Returns the absolute value of data of the uint8 type.
+    Description: Returns the absolute value of uint8 type data.
 
-    Parameter: tinyint
+    Parameters: tinyint
 
     Return type: tinyint
 
 - int1and
 
-    Description: Returns the bitwise AND result of two data records of the uint8 type.
+    Description: Returns the result of bitwise AND of two uint8 type data.
 
-    Parameter: tinyint, tinyint
+    Parameters: tinyint, tinyint
 
     Return type: tinyint
 
 - int1cmp
 
-    Description: Returns the comparison result of two data records of the uint8 type. If the value of the first parameter is greater,  **1**  is returned. If the value of the second parameter is greater,  **–1**  is returned. If they are the same,  **0**  is returned.
+    Description: Compares two uint8 data type values. If the first parameter is greater, 1 is returned; if the second parameter is greater, -1 is returned; if they are equal, 0 is returned.
 
-    Parameter: tinyint, tinyint
+    Parameters: tinyint, tinyint
 
     Return type: integer
 
 - int1div
 
-    Description: Returns the result of dividing two data records of the uint8 type. The result is of the float8 type.
+    Description: Returns the result of dividing two uint8 type values. The result is of float8 type.
 
-    Parameter: tinyint, tinyint
+    Parameters: tinyint, tinyint
 
     Return type: tinyint
 
 - int1eq
 
-    Description: Compares two pieces of data of the uint8 type to check whether they are the same.
+    Description: Compares whether two uint8 type data are equal.
 
-    Parameter: tinyint, tinyint
+    Parameters: tinyint, tinyint
 
-    Return type: Boolean
+    Return type: boolean
 
 - int1ge
 
-    Description: Determines whether the value of the first parameter is greater than or equal to the value of the second parameter in two data records of the uint8 type.
+    Description: Determines whether the first parameter is greater than or equal to the second parameter for two uint8 type data.
 
-    Parameter: tinyint, tinyint
+    Parameters: tinyint, tinyint
 
-    Return type: Boolean
+    Return type: boolean
 
 - int1gt
 
-    Description: Performs a greater-than operation on an unsigned 1-byte integer.
+    Description: Performs greater-than operation on unsigned 1-byte integers.
 
-    Parameter: tinyint, tinyint
+    Parameters: tinyint, tinyint
 
-    Return type: Boolean
+    Return type: boolean
 
 - int1larger
 
-    Description: Returns the maximum value of an unsigned 1-byte integer.
+    Description: Returns the maximum value of two unsigned 1-byte integers.
 
-    Parameter: tinyint, tinyint
+    Parameters: tinyint, tinyint
 
     Return type: tinyint
 
 - int1le
 
-    Description: Performs a less-than or an equal-to operation on an unsigned 1-byte integer.
+    Description: Performs a less-than-or-equal-to operation on unsigned 1-byte integers.
 
-    Parameter: tinyint, tinyint
+    Parameters: tinyint, tinyint
 
-    Return type: Boolean
+    Return type: boolean
 
 - int1lt
 
-    Description: Performs a less-than operation on an unsigned 1-byte integer.
+    Description: Performs a less-than comparison on unsigned 1-byte integers.
 
-    Parameter: tinyint, tinyint
+    Parameters: tinyint, tinyint
 
-    Return type: Boolean
+    Return type: boolean
 
 - int1smaller
 
-    Description: Calculates the minimum value of an unsigned 1-byte integer.
+    Description: Returns the smaller of two unsigned 1-byte integers.
 
-    Parameter: tinyint, tinyint
+    Parameters: tinyint, tinyint
 
     Return type: tinyint
 
 - int1inc
 
-    Description: Unsigned 1-byte integer plus 1.
+    Description: Increments an unsigned 1-byte integer by one.
 
-    Parameter: tinyint
+    Parameters: tinyint
 
     Return type: tinyint
 
 - int1mi
 
-    Description: Performs a minus operation on an unsigned 1-byte integer.
+    Description: Performs subtraction on unsigned 1-byte integers.
 
-    Parameter: tinyint, tinyint
+    Parameters: tinyint, tinyint
 
     Return type: tinyint
 
 - int1mod
 
-    Description: Performs a reminder operation on an unsigned 1-byte integer.
+    Description: Performs modulo operation on unsigned 1-byte integers.
 
-    Parameter: tinyint, tinyint
+    Parameters: tinyint, tinyint
 
     Return type: tinyint
 
 - int1mul
 
-    Description: Performs a multiplication operation on unsigned 1-byte integer.
+    Description: Performs multiplication on unsigned 1-byte integers.
 
-    Parameter: tinyint, tinyint
+    Parameters: tinyint, tinyint
 
     Return type: tinyint
 
 - int1ne
 
-    Description: Performs a not-equal-to operation on an unsigned 1-byte integer.
+    Description: Performs inequality comparison on unsigned 1-byte integers.
 
-    Parameter: tinyint, tinyint
+    Parameters: tinyint, tinyint
 
-    Return type: Boolean
+    Return type: boolean
 
 - int1pl
 
-    Description: Performs an addition operation on an unsigned 1-byte integer.
+    Description: Unsigned one-byte integer addition.
 
-    Parameter: tinyint, tinyint
+    Parameters: tinyint, tinyint
 
     Return type: tinyint
 
 - int1um
 
-    Description: Returns an unsigned 2-byte integer after subtracting the opposite number from the unsigned 1-byte integer.
+    Description: Negates an unsigned one-byte integer and returns a signed two-byte integer.
 
-    Parameter: tinyint
+    Parameters: tinyint
 
     Return type: smallint
 
 - int1xor
 
-    Description: Performs an exclusive OR operation on an unsigned 1-byte integer.
+    Description: Bitwise XOR operation on unsigned 1-byte integers.
 
-    Parameter: tinyint, tinyint
+    Parameters: tinyint, tinyint
 
     Return type: tinyint
 
 - cash\_div\_int1
 
-    Description: Performs a division operation on the money type.
+    Description: Performs division on the money type.
 
-    Parameter: money, tinyint
+    Parameters: money, tinyint
 
     Return type: money
 
-- cash\_mul\_int1
+- cash_mul_int1
 
-    Description: Performs a multiplication operation on the money type.
+    Description: Performs multiplication on the money type.
 
-    Parameter: money, tinyint
+    Parameters: money, tinyint
 
     Return type: money
 
 - int1not
 
-    Description: Reverts binary bits of an unsigned 1-byte integer.
+    Description: Performs a binary bit flip on an unsigned 1-byte integer.
 
-    Parameter: tinyint
+    Parameters: tinyint
 
     Return type: tinyint
 
 - int1or
 
-    Description: Performs an OR operation on an unsigned 1-byte integer.
+    Description: Performs a bitwise OR operation on unsigned 1-byte integers.
 
-    Parameter: tinyint, tinyint
+    Parameters: tinyint, tinyint
 
     Return type: tinyint
 
 - int1shl
 
-    Description: Shifts an unsigned 1-byte integer leftwards by a specified number of bits.
+    Description: Performs an unsigned 1-byte integer left shift by a specified number of bits.
 
-    Parameter: tinyint, integer
+    Parameters: tinyint, integer
 
     Return type: tinyint
 
 - width\_bucket\(op numeric, b1 numeric, b2 numeric, count int\)
 
-    Description: Returns a bucket to which the operand will be assigned in an equi-depth histogram with  **count**  buckets, ranging from  **b1**  to  **b2**.
+    Description: Returns the bucket number in an equi-depth histogram with `count` buckets, where b1 is the upper bound and b2 is the lower bound, into which `operand` would be assigned.
 
     Return type: int
 
@@ -1344,9 +1226,9 @@
     (1 row)
     ```
 
-- width\_bucket\(op dp, b1 dp, b2 dp, count int\)
+- width_bucket(op dp, b1 dp, b2 dp, count int)
 
-    Description: Returns a bucket to which the operand will be assigned in an equi-depth histogram with  **count**  buckets, ranging from  **b1**  to  **b2**.
+    Description: Returns the bucket number in an equi-depth histogram with `count` buckets, where b1 is the upper bound and b2 is the lower bound, into which `operand` would be assigned.
 
     Return type: int
 

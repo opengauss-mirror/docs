@@ -1,26 +1,28 @@
-# Constraints<a name="EN-US_TOPIC_0000001225258421"></a>
+# Constraints
 
-Constraint clauses specify constraints that new or updated rows must satisfy for an INSERT or UPDATE operation to succeed. If there is any data behavior that violates the constraints, the behavior is terminated by the constraints.
+<!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:19:48.832Z -->
 
-Constraints can be specified when a table is created \(by executing the CREATE TABLE statement\) or after a table is created \(by executing the ALTER TABLE statement\).
+A constraint clause is used to declare constraints. New or updated rows must satisfy these constraints for the insert or update operation to succeed. If a data operation violates a constraint, the operation is terminated by the constraint.
 
-Constraints can be column-level or table-level. Column-level constraints apply only to columns, and table-level constraints apply to the entire table.
+Constraints can be specified when a table is created (via the CREATE TABLE statement) or after the table is created (via the ALTER TABLE statement).
 
-The common constraints of openGauss are as follows:
+A constraint can be column-level or table-level. A column-level constraint applies only to a column, while a table-level constraint is applied to the entire table.
 
-- NOT NULL: specifies that a column cannot store  **NULL**  values.
-- UNIQUE: ensures that the value of a column is unique.
-- PRIMARY KEY: functions as the combination of NOT NULL and UNIQUE and ensures that a column (or the combination of two or more columns) has a unique identifier to help quickly locate a specific record in a table.
-- FOREIGN KEY: ensures the referential integrity for data in one table to match values in another table.
+The following constraints are commonly used in openGauss:
+
+- NOT NULL: indicates that a column cannot store NULL values.
+- UNIQUE: ensures that values in a column are all unique.
+- PRIMARY KEY: the combination of NOT NULL and UNIQUE. It ensures that a column (or a combination of two or more columns) has a unique identifier, which helps find a specific record in a table more easily and quickly.
+- FOREIGN KEY: ensures the referential integrity of data in one table matching values in another table.
 - CHECK: ensures that values in a column meet specified conditions.
 
-## NOT NULL<a name="section74155314398"></a>
+## NOT NULL Constraint<a name="section74155314398"></a>
 
-If no constraint is specified during table creation, the default value is  **NULL**, indicating that  **NULL**  values can be inserted into columns. If you do not want a column to be set to  **NULL**, you need to define the NOT NULL constraint on the column to specify that  **NULL**  values are not allowed in the column. When you insert data, if the column contains  **NULL**, an error is reported and the data fails to be inserted.
+When creating a table, if no constraint is specified, the default value is NULL, meaning that null values are allowed in the column. If you do not want a column to contain NULL values, you need to define a NOT NULL constraint on that column, specifying that NULL values are not allowed in the column. When inserting data, if a NULL value exists in that column, an error is reported and the insertion fails.
 
-**NULL** does not mean that there is no data. It indicates unknown data.
+NULL is different from having no data; it represents unknown data.
 
-For example, create the **staff** table that contains five columns. The **NAME** and **ID** columns cannot be set to **NULL**.
+For example, create a table named `staff` with five fields, where the NAME and ID fields are set to not accept null values.
 
 ```
 openGauss=# CREATE TABLE staff(
@@ -32,7 +34,7 @@ openGauss=# CREATE TABLE staff(
 );
 ```
 
-Insert data into the  **staff**  table. When a  **NULL**  value is inserted into the  **ID**  column, the database returns an error.
+Insert data into the `staff` table. When a null value is inserted into the ID field, the database returns an error.
 
 ```
 openGauss=# INSERT INTO staff  VALUES (1,'lily',28);
@@ -42,13 +44,13 @@ ERROR:  null value in column "id" violates not-null constraint
 DETAIL:  Failing row contains (null, JUCE    , 28, null, null).
 ```
 
-## UNIQUE<a name="section11621339171820"></a>
+## UNIQUE Constraint<a name="section11621339171820"></a>
 
-The UNIQUE constraint specifies that a group of one or more columns of a table can contain only unique values.
+A UNIQUE constraint ensures that a field or a combination of fields in a table is unique across the entire table.
 
-For the UNIQUE constraint,  **NULL**  is not considered equal.
+For a unique constraint, NULL values are considered distinct from each other.
 
-For example, create the **staff1** table that contains five columns, where **AGE** is set to **UNIQUE**. Therefore, you cannot add two records with the same age.
+For example, create table `staff1` with five fields, where AGE is set to UNIQUE. Therefore, two records with the same age cannot be added.
 
 ```
 openGauss=# CREATE TABLE staff1(
@@ -60,7 +62,7 @@ openGauss=# CREATE TABLE staff1(
 );
 ```
 
-Insert data into the  **staff1**  table. When two identical data records are inserted into the  **AGE**  column, the database returns an error.
+Insert data into table `staff1`. When two identical values are inserted into the AGE field, the database returns an error.
 
 ```
 openGauss=# INSERT INTO staff1  VALUES (1,'lily',28);
@@ -72,11 +74,11 @@ DETAIL:  Key (age)=(28) already exists.
 
 ## PRIMARY KEY<a name="section1523416278320"></a>
 
-PRIMARY KEY is the unique identifier of each record in a data table. It specifies that a column or multiple columns in a table can contain only unique \(non-duplicate\) and non-**NULL**  values.
+PRIMARY KEY is the primary key, which serves as the unique identifier for each record in a data table. A primary key constraint declares that one or more fields in a table can only contain unique, non-NULL values.
 
-PRIMARY KEY is the combination of NOT NULL and UNIQUE. Only one primary key can be specified for a table.
+A primary key is a combination of a NOT NULL constraint and a unique constraint. A table can have only one primary key.
 
-For example, create the  **staff2**  table where  **ID**  indicates the primary key.
+For example, create table `staff2` with `ID` as the primary key.
 
 ```
 openGauss=# CREATE TABLE staff2(
@@ -92,9 +94,9 @@ CREATE TABLE
 
 ## FOREIGN KEY<a name="section73906231756"></a>
 
-The FOREIGN KEY constraint specifies that the value of a column \(or a group of columns\) must match the value in a row of another table. Generally, the FOREIGN KEY constraint in one table points to the UNIQUE KEY constraint in another table. That is, the referential integrity between two related tables is maintained.
+FOREIGN KEY is a foreign key constraint that specifies that the value in a column (or a group of columns) must match a value that appears in a row of another table. Typically, a FOREIGN KEY in one table points to a UNIQUE KEY (the key of a unique constraint) in another table, that is, it maintains referential integrity between two related tables.
 
-For example, create the  **staff3**  table that contains five columns.
+For example, create table `staff3`, which contains five fields.
 
 ```
 openGauss=# CREATE TABLE staff3(
@@ -106,7 +108,7 @@ openGauss=# CREATE TABLE staff3(
 );
 ```
 
-Create the **DEPARTMENT** table and add three columns. The **EMP\_ID** column indicates the foreign key and it is similar to the **ID** column of the **staff3** table.
+Create a `DEPARTMENT` table and add three fields, where `EMP_ID` is the foreign key referencing the `ID` field of `staff3`:
 
 ```
 openGauss=# CREATE TABLE DEPARTMENT(
@@ -116,13 +118,13 @@ openGauss=# CREATE TABLE DEPARTMENT(
 );
 ```
 
-## CHECK<a name="section420253744116"></a>
+## CHECK Constraint<a name="section420253744116"></a>
 
-The CHECK constraint specifies an expression producing a Boolean result where the INSERT or UPDATE operation of new or updated rows can succeed only when the expression result is  **TRUE**  or  **UNKNOWN**; otherwise, an error is thrown and the database is not altered.
+A CHECK constraint specifies a Boolean expression. For each new row to be inserted or each row with updated values, the expression must evaluate to true or unknown for the operation to succeed; otherwise, an exception is thrown and the database is not modified.
 
-A CHECK constraint specified as a column constraint should reference only the column's value, while an expression in a table constraint can reference multiple columns.  **<\>NULL**  and  **!=NULL**  are invalid in an expression. Change them to  **IS NOT NULL**.
+A check constraint declared as a column constraint should only reference the column's value, whereas an expression in a table constraint can reference multiple columns. In the expression, writing `<>NULL` or `!=NULL` is invalid; use `is NOT NULL` instead.
 
-For example, create the  **staff4**  table and add a CHECK constraint to the  **SALARY**  column to ensure that the inserted value is greater than  **0**.
+For example, create table `staff4` and add a CHECK constraint on column `SALARY` to ensure that values inserted into this column are greater than 0.
 
 ```
 openGauss=# CREATE TABLE staff4(
@@ -136,7 +138,7 @@ NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "staff4_pkey" for
 CREATE TABLE
 ```
 
-Insert data into the  **staff4**  table. When the inserted value of the  **SALARY**  column is not greater than  **0**, the database reports an error.
+Insert data into table `staff4`. When the value inserted into column `SALARY` is not greater than 0, the database returns an error.
 
 ```
 openGauss=# INSERT INTO staff4(ID,NAME,AGE,SALARY) VALUES (2, 'JUCE',16,0);

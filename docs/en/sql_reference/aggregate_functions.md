@@ -1,531 +1,823 @@
-# Aggregate Functions<a name="EN-US_TOPIC_0289900330"></a>
+# Aggregate Functions
 
-## Aggregate Functions<a name="en-us_topic_0283136894_en-us_topic_0237121982_en-us_topic_0059778466_s6494488eb2824afa801304697cb740e4"></a>
+<!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T09:48:37.607Z pushedAt=2026-07-30T08:20:15.213Z -->
+
+## Aggregate Functions<a name="zh-cn_topic_0283136894_zh-cn_topic_0237121982_zh-cn_topic_0059778466_s6494488eb2824afa801304697cb740e4"></a>
 
 - sum\(expression\)
 
-    Description: Specifies the sum of expressions across all input values.
+    Description: Sum of expression across all input rows.
 
     Return type:
 
-    Generally, same as the argument data type. In the following cases, type conversion occurs:
+    Normally, the input data type and output data type are the same, but type conversion occurs in the following cases:
 
-    - **BIGINT**  for  **SMALLINT**  or  **INT**  arguments
-    - **NUMBER**  for  **BIGINT**  arguments
-    - **DOUBLE PRECISION**  for floating-point arguments
+    - For SMALLINT or INT input, the output type is BIGINT.
+
+    - For BIGINT input, the output type is NUMBER.
+
+    - For floating-point input, the output type is DOUBLE PRECISION.
 
     Example:
 
     ```
-    openGauss=# SELECT SUM(ss_ext_tax) FROM tpcds.STORE_SALES;
-      sum      
-    --------------
-     213267594.69
-    (1 row)
+    openGauss=# CREATE TABLE tab(a int); 
+    CREATE TABLE 
+    openGauss=# INSERT INTO tab values(1); 
+    INSERT 0 1 
+    openGauss=# INSERT INTO tab values(2); 
+    INSERT 0 1 
+    openGauss=# SELECT sum(a) FROM tab; 
+     sum  
+    ----- 
+       3 
+    (1 row) 
+    openGauss=# DROP TABLE tab;
     ```
 
 - max\(expression\)
 
-    Description: Specifies the maximum value of expression across all input values.
+    Description: Maximum value of expression across all input rows.
 
-    Parameter type: any array, numeric, string, date/time type, or IPv4 and IPv6 addresses \(INET and CIDR data types\)
+    Parameter type: Any array, numeric, string, date/time type, IPv4 and IPv6 addresses (INET and CIDR types).
 
-    Return type: same as the argument type
-
-    Example:
-
-    ```
-    openGauss=# SELECT MAX(inv_quantity_on_hand) FROM tpcds.inventory;
-    ```
-
-- min\(expression\)
-
-    Description: Specifies the minimum value of expression across all input values.
-
-    Parameter type: any array, numeric, string, date/time type, or IPv4 and IPv6 addresses \(INET and CIDR data types\)
-
-    Return type: same as the argument type
+    Return type: Same as the parameter data type
 
     Example:
 
     ```
-    openGauss=# SELECT MIN(inv_quantity_on_hand) FROM tpcds.inventory;
-     min 
+    openGauss=# CREATE TABLE max_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO max_t1 VALUES(1,2),(2,3),(3,4),(4,5); 
+     
+    openGauss=# SELECT MAX(a) FROM max_t1; 
+     max  
+    ----- 
+       4 
+    (1 row) 
+     
+    openGauss=# DROP TABLE max_t1;
+    ```
+
+- min(expression)
+
+    Description: The minimum value of expression across all input rows.
+
+    Parameter type: Any array, numeric, string, date/time type, and IPV4 and IPV6 addresses (INET and CIDR types).
+
+    Return type: Same as the parameter data type
+
+    Example:
+
+    ```
+    openGauss=# CREATE TABLE min_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO min_t1 VALUES(1,2),(2,3),(3,4),(4,5); 
+     
+    openGauss=# SELECT MIN(a) FROM min_t1; 
+     min  
+    ----- 
+       1 
+    (1 row) 
+     
+    openGauss=# DROP TABLE min_t1;
+    ```
+
+    Note: For databases installed using OM, the default database encoding is `SQL_ASCII`. The min/max functions use ASCII collation order for sorting. To use the min/max functions with non-ASCII character set collation for sorting, you need to specify a non-ASCII encoding such as `UTF8` when creating the database or table.
+
+    Example:
+
+    ```
+    -- Use the default character set.
+    openGauss=# create database db dbcompatibility 'b';
+
+    openGauss=# \c db
+
+    db=# CREATE TABLE `t` (
+    db(#  `c_01` int(11) DEFAULT NULL,
+    db(#  `c_02` varchar(20) DEFAULT NULL
+    db(# );
+
+    db=# insert into t values(1,'aa'),(2,'bb'),(3,'CC'),(4,'Dd'),(5,null),(null,null),(null,'eihei');
+
+    db=# select c_02 from t order by c_02;
+    c_02  
+    -------
+    
+    
+    CC
+    Dd
+    aa
+    bb
+    eihei
+    (7 rows)
+
+    db=# select min(c_02) from t;
+    min 
     -----
-       0
+    CC
     (1 row)
+
+    -- Specify the UTF8 character set.
+    openGauss=# create database db_utf8 dbcompatibility 'b' encoding 'utf8';
+
+    openGauss=# \c db_utf8
+
+    db_utf8=# CREATE TABLE `t` (
+    db_utf8(#  `c_01` int(11) DEFAULT NULL,
+    db_utf8(#  `c_02` varchar(20) DEFAULT NULL
+    db_utf8(# )  DEFAULT CHARSET=utf8mb4;
+
+    db_utf8=# insert into t values(1,'aa'),(2,'bb'),(3,'CC'),(4,'Dd'),(5,null),(null,null),(null,'eihei');
+
+    db_utf8=# select c_02 from t order by c_02;
+    c_02  
+    -------
+    
+    
+    aa
+    bb
+    CC
+    Dd
+    eihei
+    (7 rows)
+
+    db_utf8=# select min(c_02) from t;
+    min 
+    -----
+    aa
+    (1 row)
+
     ```
 
-- avg\(expression\)
+- avg(expression)
 
-    Description: Specifies the average \(arithmetic mean\) of all input values.
+    Description: The average (arithmetic mean) of all input values.
 
     Return type:
 
-    **NUMBER**  for any integer-type argument.
+    For any integer type input, the result is of the NUMBER type.
 
-    **DOUBLE PRECISION**  for floating-point arguments.
+    For any floating-point input, the result is of the DOUBLE PRECISION type.
 
-    otherwise the same as the argument data type.
-
-    Example:
-
-    ```
-    openGauss=# SELECT AVG(inv_quantity_on_hand) FROM tpcds.inventory;
-             avg          
-    ----------------------
-     500.0387129084044604
-    (1 row)
-    ```
-
-- count\(expression\)
-
-    Description: Specifies the number of input rows for which the value of the expression is not null.
-
-    Return type: bigint
+    Otherwise, it is the same as the input data type.
 
     Example:
 
     ```
-    openGauss=# SELECT COUNT(inv_quantity_on_hand) FROM tpcds.inventory;
-      count   
-    ----------
-     11158087
-    (1 row)
+    openGauss=# CREATE TABLE avg_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO avg_t1 VALUES(1,2),(2,3),(3,4),(4,5); 
+     
+    openGauss=# SELECT AVG(a) FROM avg_t1; 
+            avg          
+    -------------------- 
+     2.5000000000000000 
+    (1 row) 
+     
+    openGauss=# DROP TABLE avg_t1;
     ```
 
-- count\(\*\)
+- count(expression)
 
-    Description: Returns the number of input rows.
+    Description: Returns the number of rows in the table where expression is not NULL.
 
-    Return type: bigint
+    Return type: BIGINT
 
     Example:
 
     ```
-    openGauss=# SELECT COUNT(*) FROM tpcds.inventory;
-      count   
-    ----------
-     11745000
-    (1 row)
+    openGauss=# CREATE TABLE count_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO count_t1 VALUES (NULL,1),(1,2),(2,3),(3,4),(4,5); 
+     
+    openGauss=# SELECT COUNT(a) FROM count_t1; 
+     count  
+    ------- 
+         4 
+    (1 row) 
+     
+    openGauss=# DROP TABLE count_t1;
     ```
 
-- median\(expression\) \[over \(query partition clause\)\]
+- count(*)
 
-    Description: Returns the median of an expression.  **NULL**  will be ignored by the median function during calculation. The  **DISTINCT**  keyword can be used to exclude duplicate records in an expression. The data type of the input expression can be numeric \(including integer, double, and bigint\) or interval. For other data types, the median cannot be calculated.
+    Description: Returns the number of rows in the table.
 
-    Return type: double or interval
+    Return Type: BIGINT
 
     Example:
 
     ```
-    select median(id) from (values(1), (2), (3), (4), (null)) test(id);
-     median
-    --------
-         2.5
-    (1 row)
+    openGauss=# CREATE TABLE count_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO count_t1 VALUES (NULL,1),(1,2),(2,3),(3,4),(4,5); 
+     
+    openGauss=# SELECT COUNT(*) FROM count_t1; 
+     count  
+    ------- 
+         5 
+    (1 row) 
+    openGauss=# DROP TABLE count_t1;
     ```
 
-- array\_agg\(expression\)
+- median(expression) [over (query partition clause)]
 
-    Description: Concatenates input values, including nulls, into an array.
+    Description: Returns the median of the expression. NULL values are ignored by the median function during calculation. The DISTINCT keyword can be used to exclude duplicate records in the expression. The data type of the input expression can be a numeric type (including integer, double, bigint, etc.) or an interval type. Other data types are not supported for median calculation.
 
-    Return type: array of the argument type
+    Return type: double or interval type
 
     Example:
 
     ```
-    openGauss=# SELECT ARRAY_AGG(sr_fee) FROM tpcds.store_returns WHERE sr_customer_sk = 2;
-       array_agg   
-    ---------------
-     {22.18,63.21}
+    openGauss=# SELECT median(id) FROM (values(1), (2), (3), (4), (null)) test(id); 
+     median 
+    -------- 
+         2.5 
     (1 row)
     ```
 
-- string\_agg\(expression, delimiter\)
+- array_agg(expression)
 
-    Description: Concatenates input values into a string, separated by delimiter.
+    Description: Concatenates all input values (including nulls) into an array.
 
-    Return type: same as the argument type
+    Return type: array of the parameter type.
 
     Example:
 
     ```
-    openGauss=# SELECT string_agg(sr_item_sk, ',') FROM tpcds.store_returns where sr_item_sk < 3;
-             string_agg         
-    ---------------------------------------------------------------------------------
-    ------------------------------
-     1,2,1,2,2,1,1,2,2,1,2,1,2,1,1,1,2,1,1,1,1,1,2,1,1,1,1,1,2,2,1,1,1,1,1,1,1,1,1,2,
-    2,1,1,1,1,1,1,2,2,1,1,2,1,1,1
-    (1 row)
+    openGauss=# CREATE TABLE array_agg_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO array_agg_t1 VALUES (NULL,1),(1,2),(2,3),(3,4),(4,5); 
+     
+    openGauss=# SELECT ARRAY_AGG(a) FROM array_agg_t1; 
+       array_agg     
+    ---------------- 
+     {NULL,1,2,3,4} 
+    (1 row) 
+    openGauss=# DROP TABLE array_agg_t1;
     ```
 
-- listagg\(expression \[, delimiter\]\) WITHIN GROUP\(ORDER BY order-list\)
+- string_agg(expression, delimiter)
 
-    Description: Sorts aggregation column data according to the mode specified by  **WITHIN GROUP**  and concatenates the data to a string using the specified delimiter.
+    Description: Concatenates input values into a string, separated by a delimiter.
 
-    - **expression**: Mandatory. It specifies an aggregation column name or a column-based valid expression. It does not support the  **DISTINCT**  keyword and the  **VARIADIC**  parameter.
-    - **delimiter**: Optional. It specifies a delimiter, which can be a string constant or a deterministic expression based on a group of columns. The default value is empty.
-    - **order-list**: Mandatory. It specifies the sorting mode in a group.
+    Return type: Same as the parameter data type.
+
+    Example:
+
+    ```
+    openGauss=# CREATE TABLE string_agg_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO string_agg_t1 VALUES (NULL,1),(1,2),(2,3),(3,4),(4,5); 
+     
+    openGauss=# SELECT STRING_AGG(a,';') FROM string_agg_t1; 
+     string_agg  
+    ------------ 
+     1;2;3;4 
+    (1 row) 
+
+    openGauss=# DROP TABLE string_agg_t1;
+    ```
+
+- listagg(`expression` [, `delimiter`]) WITHIN GROUP(ORDER BY `order-list`)
+
+    Description: Arranges the aggregate column data in the sort order specified by WITHIN GROUP, and concatenates them into a string using the delimiter specified by `delimiter`.
+
+    - `expression`: Required. Specifies the aggregate column name or a valid expression based on the column. The DISTINCT keyword and VARIADIC parameters are not supported.
+
+    - `delimiter`: Optional. Specifies the delimiter, which can be a string constant or a deterministic expression based on the group column. The default value indicates an empty delimiter.
+
+    - `order-list`: Required. Specifies the sort order within the group.
 
     Return type: text
 
     Example:
 
-    The aggregation column is of the text character set type.
+    The aggregate column is of a text character set type.
 
     ```
-    openGauss=# SELECT deptno, listagg(ename, ',') WITHIN GROUP(ORDER BY ename) AS employees FROM emp GROUP BY deptno;
-     deptno |              employees               
-    --------+--------------------------------------
-         10 | CLARK,KING,MILLER
-         20 | ADAMS,FORD,JONES,SCOTT,SMITH
-         30 | ALLEN,BLAKE,JAMES,MARTIN,TURNER,WARD
-    (3 rows)
+    openGauss=# CREATE TABLE listagg_t1(a int, b text); 
+     
+    openGauss=# INSERT INTO listagg_t1 VALUES (NULL,'a1'),(1,'b2'),(1,'c3'),(2,'d4'),(2,'e5'),(3,'f6'); 
+     
+    openGauss=# SELECT a,LISTAGG(b,';') WITHIN GROUP(ORDER BY b) FROM listagg_t1 group by a; 
+     a | listagg  
+    ---+--------- 
+     1 | b2;c3 
+     2 | d4;e5 
+     3 | f6 
+       | a1 
+    (4 rows) 
+     
+    openGauss=# DROP TABLE listagg_t1;
     ```
 
-    The aggregation column is of the integer type.
+    The aggregate column is of an integer type.
 
     ```
-    openGauss=# SELECT deptno, listagg(mgrno, ',') WITHIN GROUP(ORDER BY mgrno NULLS FIRST) AS mgrnos FROM emp GROUP BY deptno;
-     deptno |            mgrnos             
-    --------+-------------------------------
-         10 | 7782,7839
-         20 | 7566,7566,7788,7839,7902
-         30 | 7698,7698,7698,7698,7698,7839
-    (3 rows)
+    openGauss=# CREATE TABLE listagg_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO listagg_t1 VALUES (NULL,1),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT a,LISTAGG(b,';') WITHIN GROUP(ORDER BY b) FROM listagg_t1 group by a; 
+     a | listagg  
+    ---+--------- 
+     1 | 2;3 
+     2 | 4;5 
+     3 | 6 
+       | 1 
+    (4 rows) 
+     
+    openGauss=# DROP TABLE listagg_t1;
     ```
 
-    The aggregation column is of the floating point type.
+    The aggregate column is of a floating-point type.
 
     ```
-    openGauss=# SELECT job, listagg(bonus, '($); ') WITHIN GROUP(ORDER BY bonus DESC) || '($)' AS bonus FROM emp GROUP BY job;
-        job     |                      bonus                      
-    ------------+-------------------------------------------------
-     CLERK      | 10234.21($); 2000.80($); 1100.00($); 1000.22($)
-     PRESIDENT  | 23011.88($)
-     ANALYST    | 2002.12($); 1001.01($)
-     MANAGER    | 10000.01($); 2399.50($); 999.10($)
-     SALESMAN   | 1000.01($); 899.00($); 99.99($); 9.00($)
-    (5 rows)
+    openGauss=# CREATE TABLE listagg_t1(a int, b float); 
+     
+    openGauss=# INSERT INTO listagg_t1 VALUES (NULL,1.111),(1,2.222),(1,3.333),(2,4.444),(2,5.555),(3,6.666); 
+     
+    openGauss=# SELECT a,LISTAGG(b,';') WITHIN GROUP(ORDER BY b) FROM listagg_t1 group by a; 
+     a |      listagg       
+    ---+------------------- 
+     1 | 2.222000;3.333000 
+     2 | 4.444000;5.555000 
+     3 | 6.666000 
+       | 1.111000 
+    (4 rows) 
+     
+    openGauss=# DROP TABLE listagg_t1;
     ```
 
-    The aggregation column is of the time type.
+    The aggregate column is of a time type.
 
     ```
-    openGauss=# SELECT deptno, listagg(hiredate, ', ') WITHIN GROUP(ORDER BY hiredate DESC) AS hiredates FROM emp GROUP BY deptno;
-     deptno |                                                          hiredates                                                           
-    --------+------------------------------------------------------------------------------------------------------------------------------
-         10 | 1982-01-23 00:00:00, 1981-11-17 00:00:00, 1981-06-09 00:00:00
-         20 | 2001-04-02 00:00:00, 1999-12-17 00:00:00, 1987-05-23 00:00:00, 1987-04-19 00:00:00, 1981-12-03 00:00:00
-         30 | 2015-02-20 00:00:00, 2010-02-22 00:00:00, 1997-09-28 00:00:00, 1981-12-03 00:00:00, 1981-09-08 00:00:00, 1981-05-01 00:00:00
-    (3 rows)
+    openGauss=# CREATE TABLE listagg_t1(a int, b timestamp); 
+     
+    openGauss=# INSERT INTO listagg_t1 VALUES (NULL,'2000-01-01'),(1,'2000-02-02'),(1,'2000-03-03'),(2,'2000-04-04'),(2,'2000-05-05'),(3,'2000-06-06'); 
+     
+    openGauss=# SELECT a,LISTAGG(b,';') WITHIN GROUP(ORDER BY b) FROM listagg_t1 group by a; 
+     a |                 listagg                  
+    ---+----------------------------------------- 
+     1 | 2000-02-02 00:00:00;2000-03-03 00:00:00 
+     2 | 2000-04-04 00:00:00;2000-05-05 00:00:00 
+     3 | 2000-06-06 00:00:00 
+       | 2000-01-01 00:00:00 
+    (4 rows) 
+     
+    openGauss=# DROP TABLE listagg_t1;
     ```
 
-    The aggregation column is of the time interval type.
+    The aggregate column is of a time interval type.
 
     ```
-    openGauss=# SELECT deptno, listagg(vacationTime, '; ') WITHIN GROUP(ORDER BY vacationTime DESC) AS vacationTime FROM emp GROUP BY deptno;
-     deptno |                                    vacationtime                                    
-    --------+------------------------------------------------------------------------------------
-         10 | 1 year 30 days; 40 days; 10 days
-         20 | 70 days; 36 days; 9 days; 5 days
-         30 | 1 year 1 mon; 2 mons 10 days; 30 days; 12 days 12:00:00; 4 days 06:00:00; 24:00:00
-    (3 rows)
+    openGauss=# CREATE TABLE listagg_t1(a int, b interval); 
+     
+    openGauss=# INSERT INTO listagg_t1 VALUES (NULL,'1 days'),(1,'2 days'),(1,'3 days'),(2,'4 days'),(2,'5 days'),(3,'6 days'); 
+     
+    openGauss=# SELECT a,LISTAGG(b,';') WITHIN GROUP(ORDER BY b) FROM listagg_t1 group by a; 
+     a |    listagg     
+    ---+--------------- 
+     1 | 2 days;3 days 
+     2 | 4 days;5 days 
+     3 | 6 days 
+       | 1 day 
+    (4 rows) 
+     
+    openGauss=# DROP TABLE listagg_t1;
     ```
 
-    By default, the delimiter is empty.
+    When the delimiter is omitted, it defaults to empty.
 
     ```
-    openGauss=# SELECT deptno, listagg(job) WITHIN GROUP(ORDER BY job) AS jobs FROM emp GROUP BY deptno;
-     deptno |                     jobs                     
-    --------+----------------------------------------------
-         10 | CLERKMANAGERPRESIDENT
-         20 | ANALYSTANALYSTCLERKCLERKMANAGER
-         30 | CLERKMANAGERSALESMANSALESMANSALESMANSALESMAN
-    (3 rows)
+    openGauss=# CREATE TABLE listagg_t1(a int, b interval); 
+     
+    openGauss=# INSERT INTO listagg_t1 VALUES (NULL,'1 days'),(1,'2 days'),(1,'3 days'),(2,'4 days'),(2,'5 days'),(3,'6 days'); 
+     
+    openGauss=# SELECT a,LISTAGG(b) WITHIN GROUP(ORDER BY b) FROM listagg_t1 group by a; 
+     a |   listagg     
+    ---+-------------- 
+     1 | 2 days3 days 
+     2 | 4 days5 days 
+     3 | 6 days 
+       | 1 day 
+    (4 rows) 
+     
+    openGauss=# DROP TABLE listagg_t1;
     ```
 
-    When  **listagg**  is used as a window function, the  **OVER**  clause does not support the window sorting of  **ORDER BY**, and the  **listagg**  column is an ordered aggregation of the corresponding groups.
+    When LISTAGG is used as a window function, the OVER clause does not support ORDER BY window sorting, and the LISTAGG column is an ordered aggregation of the corresponding group.
 
     ```
-    openGauss=# SELECT deptno, mgrno, bonus, listagg(ename,'; ') WITHIN GROUP(ORDER BY hiredate) OVER(PARTITION BY deptno) AS employees FROM emp;
-     deptno | mgrno |  bonus   |                 employees                 
-    --------+-------+----------+-------------------------------------------
-         10 |  7839 | 10000.01 | CLARK; KING; MILLER
-         10 |       | 23011.88 | CLARK; KING; MILLER
-         10 |  7782 | 10234.21 | CLARK; KING; MILLER
-         20 |  7566 |  2002.12 | FORD; SCOTT; ADAMS; SMITH; JONES
-         20 |  7566 |  1001.01 | FORD; SCOTT; ADAMS; SMITH; JONES
-         20 |  7788 |  1100.00 | FORD; SCOTT; ADAMS; SMITH; JONES
-         20 |  7902 |  2000.80 | FORD; SCOTT; ADAMS; SMITH; JONES
-         20 |  7839 |   999.10 | FORD; SCOTT; ADAMS; SMITH; JONES
-         30 |  7839 |  2399.50 | BLAKE; TURNER; JAMES; MARTIN; WARD; ALLEN
-         30 |  7698 |     9.00 | BLAKE; TURNER; JAMES; MARTIN; WARD; ALLEN
-         30 |  7698 |  1000.22 | BLAKE; TURNER; JAMES; MARTIN; WARD; ALLEN
-         30 |  7698 |    99.99 | BLAKE; TURNER; JAMES; MARTIN; WARD; ALLEN
-         30 |  7698 |  1000.01 | BLAKE; TURNER; JAMES; MARTIN; WARD; ALLEN
-         30 |  7698 |   899.00 | BLAKE; TURNER; JAMES; MARTIN; WARD; ALLEN
-    (14 rows)
+    openGauss=# CREATE TABLE listagg_t1(a int, b interval); 
+     
+    openGauss=# INSERT INTO listagg_t1 VALUES (NULL,'1 days'),(1,'2 days'),(1,'3 days'),(2,'4 days'),(2,'5 days'),(3,'6 days'); 
+     
+    openGauss=# SELECT a,LISTAGG(b) WITHIN GROUP(ORDER BY b) OVER(PARTITION BY a) FROM listagg_t1; 
+     a |   listagg     
+    ---+-------------- 
+     1 | 2 days3 days 
+     1 | 2 days3 days 
+     2 | 4 days5 days 
+     2 | 4 days5 days 
+     3 | 6 days 
+       | 1 day 
+    (6 rows) 
+     
+    openGauss=# DROP TABLE listagg_t1;
     ```
 
-- group_concat\(\[DISTINCT | ALL] expression \[,expression ...\] \[ORDER BY \{ expression \[ \[ ASC | DESC | USING operator \] | nlssort_expression_clause \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\] \[SEPARATOR str_val\]\)
+- group_concat([DISTINCT | ALL] expression [,expression ...] [ORDER BY { expression [ [ ASC | DESC | USING operator ] | nlssort_expression_clause ] [ NULLS { FIRST | LAST } ] } [,...]] [SEPARATOR str_val])
 
-    Description: (Available only in B-compatible mode) The number of parameters is not fixed. Multiple columns can be concatenated. Aggregation column data is sorted based on the value of **ORDER BY** and concatenated into a character string using the separator. This function cannot be used as a window function.
+    Description: (Available only in B compatibility mode) This function accepts a variable number of parameters and can concatenate multiple columns. It arranges the aggregate column data in the sort order specified by ORDER BY and concatenates them into a string using the delimiter specified by SEPARATOR. It cannot be used as a window function.
 
-    - **DISTINCT**: Optional. It deduplicates the result after each row is concatenated.
-    - **expression**: Mandatory. It specifies the aggregation column name or a valid column-based expression.
-    - **ORDER BY**: Optional. It is followed by a variable expression and sorting rule. The group_concat function does not support the (ORDER BY + number) format.
-    - **SEPARATOR**: Optional. It is followed by a CONST character (string). This separator is used to concatenate the expression results of two adjacent lines in a group. If this parameter is not specified, **','** is used by default.
-    - When both DISTINCT and ORDER BY are specified, all ORDER BY expressions of openGauss must be in DISTINCT expressions. Otherwise, an error is reported.
+    - DISTINCT: Optional. Deduplicates the concatenated result of each row.
+
+    - expression: Required. Specifies the aggregate column name or a valid expression based on a column.
+
+    - ORDER BY: Optional, followed by a variable number of expressions and sort specifications. The GROUP_CONCAT function does not support the (ORDER BY + number) form.
+
+    - SEPARATOR clause: Optional, followed by a CONST character (string). The expression results of two adjacent rows in a group are concatenated using this delimiter. If not specified, a comma (',') is used by default.
+
+    - When DISTINCT and ORDER BY are specified at the same time, all ORDER BY expressions in openGauss must be included in the DISTINCT expressions. Otherwise, an error is reported.
 
     Return type: text
 
     Example:
 
-    Set **separator** to **';'**.
+    Use `separator` to specify the delimiter as semicolon (;).
 
     ```
-    test=# select id, group_concat(v separator ';') from t group by id order by id asc;
-     id | group_concat
-    ----+--------------
-      1 | A;C;A
-      2 | B;D;B
-    (2 rows)
+    openGauss=# CREATE TABLE group_concat_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO group_concat_t1 VALUES (NULL,1),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT a,group_concat(b separator ';') FROM group_concat_t1 GROUP BY a ORDER BY a; 
+     a | group_concat  
+    ---+-------------- 
+     1 | 2;3 
+     2 | 4;5 
+     3 | 6 
+       | 1 
+    (4 rows) 
+     
+    openGauss=# DROP TABLE group_concat_t1;
     ```
 
-    By default, the separator is **','**.
+    When the delimiter is not specified, it defaults to a comma (,).
 
     ```
-    test=# select id, group_concat(id,v) from t group by id order by id asc;
-     id | group_concat
-    ----+--------------
-      1 | 1A,1C,1A
-      2 | 2B,2D,2B
-    (2 rows)
+    openGauss=# CREATE TABLE group_concat_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO group_concat_t1 VALUES (NULL,1),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT a,group_concat(a,b) FROM group_concat_t1 GROUP BY a ORDER BY a; 
+     a | group_concat  
+    ---+-------------- 
+     1 | 12,13 
+     2 | 24,25 
+     3 | 36 
+       | 1 
+    (4 rows) 
+     
+    openGauss=# DROP TABLE group_concat_t1;
     ```
 
-    The aggregation column is of the text character set type.
+    The aggregate column is of a text character set type.
 
     ```
-    test=# select id, group_concat(v) from t group by id order by id asc;
-     id | group_concat
-    ----+--------------
-      1 | A,C,A
-      2 | B,D,B
-    (2 rows)
+    openGauss=# CREATE TABLE group_concat_t1(a int, b text); 
+     
+    openGauss=# INSERT INTO group_concat_t1 VALUES (NULL,'a1'),(1,'b2'),(1,'c3'),(2,'d4'),(2,'e5'),(3,'f6'); 
+     
+    openGauss=# SELECT a,group_concat(a,b) FROM group_concat_t1 GROUP BY a ORDER BY a; 
+     a | group_concat  
+    ---+-------------- 
+     1 | 1b2,1c3 
+     2 | 2d4,2e5 
+     3 | 3f6 
+       | a1 
+    (4 rows) 
+     
+    openGauss=# DROP TABLE group_concat_t1;
     ```
 
-    The aggregation column is of the integer type.
+    The aggregate column is of an integer type.
 
     ```
-    test=# select id, group_concat(v separator ';') from t group by id order by id asc;
-     id | group_concat
-    ----+--------------
-      1 | 50;99
-      2 | 20;100
-    (2 rows)
+    openGauss=# CREATE TABLE group_concat_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO group_concat_t1 VALUES (NULL,1),(1, 2),(1, 3),(2, 4),(2, 5),(3,6); 
+     
+    openGauss=# SELECT a,group_concat(b) FROM group_concat_t1 GROUP BY a ORDER BY a; 
+     a | group_concat  
+    ---+-------------- 
+     1 | 2,3 
+     2 | 4,5 
+     3 | 6 
+       | 1 
+    (4 rows) 
+     
+    openGauss=# DROP TABLE group_concat_t1;
     ```
 
-    The aggregation column is of the floating point type.
+    The aggregate column is of a floating-point type.
 
     ```
-    test=# select id, group_concat(v separator ';') from t group by id order by id asc;
-     id | group_concat
-    ----+--------------
-      1 | 50.11;99.33
-      2 | 20.22;100.44
-    (2 rows)
+    openGauss=# CREATE TABLE group_concat_t1(a int, b float); 
+     
+    openGauss=# INSERT INTO group_concat_t1 VALUES (NULL,1.11),(1,2.22),(1,3.33),(2,4.44),(2,5.55),(3,6.66); 
+     
+    openGauss=# SELECT a,group_concat(b) FROM group_concat_t1 GROUP BY a ORDER BY a; 
+     a | group_concat  
+    ---+-------------- 
+     1 | 2.22,3.33 
+     2 | 4.44,5.55 
+     3 | 6.66 
+       | 1.11 
+    (4 rows) 
+     
+    openGauss=# DROP TABLE group_concat_t1;
     ```
 
-    The aggregation column is of the time type.
+    The aggregate column is of a time type.
 
     ```
-    test=# select id, group_concat(hiredate separator ';') from t group by id order by id asc;
-      id |                     group_concat
-    ----+-------------------------------------------------------
-       1 | 2022-08-22 10:51:29.374948;2022-08-22 10:51:29.374948
-       2 | 2022-08-22 10:51:29.374948;2022-08-22 10:51:29.374948
-    (2 rows)
+    openGauss=# CREATE TABLE group_concat_t1(a int, b timestamp); 
+     
+    openGauss=# INSERT INTO group_concat_t1 VALUES (NULL,'2000-01-01'),(1,'2000-02-02'),(1,'2000-03-03'),(2,'2000-04-04'),(2,'2000-05-05'),(3,'2000-06-06'); 
+     
+    openGauss=# SELECT a,group_concat(b) FROM group_concat_t1 GROUP BY a ORDER BY a; 
+     a |              group_concat                
+    ---+----------------------------------------- 
+     1 | 2000-02-02 00:00:00,2000-03-03 00:00:00 
+     2 | 2000-04-04 00:00:00,2000-05-05 00:00:00 
+     3 | 2000-06-06 00:00:00 
+       | 2000-01-01 00:00:00 
+    (4 rows) 
+     
+    openGauss=# DROP TABLE group_concat_t1;
     ```
 
-    The aggregation column is of the binary type.
+    The aggregate column is of a binary type.
 
     ```
-    test=# select id, group_concat(v separator ';') from t group by id order by id asc;
-     id | group_concat
-    ----+--------------
-      1 | 19;1B
-      2 | 1A;1C
-    (2 rows)
+     openGauss=# CREATE TABLE group_concat_t1(a int, b bytea); 
+     
+    openGauss=# INSERT INTO group_concat_t1 VALUES (NULL,'1'),(1,'2'),(1,'3'),(2,'4'),(2,'5'),(3,'6'); 
+     
+    openGauss=# SELECT a,group_concat(b) FROM group_concat_t1 GROUP BY a ORDER BY a; 
+     a | group_concat  
+    ---+-------------- 
+     1 | \x32,\x33 
+     2 | \x34,\x35 
+     3 | \x36 
+       | \x31 
+    (4 rows) 
+     
+    openGauss=# DROP TABLE group_concat_t1;
     ```
 
-    The aggregation column is of the time interval type.
+    The aggregate column is of the interval type.
 
     ```
-    test=# select id, group_concat(vacationt separator ';') from t group by id order by id asc;
-     id |                    group_concat
-    ----+-----------------------------------------------------
-      1 | 8785 days 11:04:01.510189;8783 days 11:04:01.510189
-      2 | 8784 days 11:04:01.510189;8782 days 11:04:01.510189
-    (2 rows)
+    openGauss=# CREATE TABLE group_concat_t1(a int, b interval); 
+     
+    openGauss=# INSERT INTO group_concat_t1 VALUES (NULL,'1 days'),(1,'2 days'),(1,'3 days'),(2,'4 days'),(2,'5 days'),(3,'6 days'); 
+     
+    openGauss=# SELECT a,group_concat(b) FROM group_concat_t1 GROUP BY a ORDER BY a; 
+     a | group_concat   
+    ---+--------------- 
+     1 | 2 days,3 days 
+     2 | 4 days,5 days 
+     3 | 6 days 
+       | 1 day 
+    (4 rows) 
+     
+    openGauss=# DROP TABLE group_concat_t1;
     ```
 
-    Use DISTINCT to deduplicate data.
+    Use DISTINCT to remove duplicates.
 
     ```
-    test=# select id, group_concat(distinct v) from t group by id order by id asc;
-     id | group_concat
-    ----+--------------
-      1 | A,C
-      2 | B,D
-    (2 rows)
+    openGauss=# CREATE TABLE group_concat_t1(a int, b interval); 
+     
+    openGauss=# INSERT INTO group_concat_t1 VALUES (NULL,'1 days'),(1,'2 days'),(1,'2 days'),(1,'3 days'),(1,'3 days'),(2,'4 days'),(2,'5 days'),(3,'6 days'); 
+     
+    openGauss=# SELECT a,group_concat(distinct b) FROM group_concat_t1 GROUP BY a ORDER BY a; 
+     a | group_concat   
+    ---+--------------- 
+     1 | 2 days,3 days 
+     2 | 4 days,5 days 
+     3 | 6 days 
+       | 1 day 
+    (4 rows) 
+     
+    openGauss=# DROP TABLE group_concat_t1;
     ```
 
-    Use ORDER BY to sort data.
+    Use ORDER BY to sort.
 
     ```
-    test=# select id, group_concat(v order by v desc) from t group by id order by id asc;
-     id | group_concat
-    ----+--------------
-      1 | C,A,A
-      2 | D,B,B
-    (2 rows)
+    openGauss=# CREATE TABLE group_concat_t1(a int, b interval); 
+     
+    openGauss=# INSERT INTO group_concat_t1 VALUES (NULL,'1 days'),(1,'2 days'),(1,'3 days'),(2,'4 days'),(2,'5 days'),(3,'6 days'); 
+     
+    openGauss=# SELECT a,group_concat(b ORDER BY b desc) FROM group_concat_t1 GROUP BY a ORDER BY a; 
+     a | group_concat   
+    ---+--------------- 
+     1 | 3 days,2 days 
+     2 | 5 days,4 days 
+     3 | 6 days 
+       | 1 day 
+    (4 rows) 
+     
+    openGauss=# DROP TABLE group_concat_t1;
     ```
 
-- covar\_pop\(Y, X\)
+- covar\_pop(Y, X)
 
-    Description: Specifies the overall covariance.
+    Description: Population covariance.
 
     Return type: double precision
 
     Example:
 
     ```
-    openGauss=# SELECT COVAR_POP(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
-        covar_pop     
-    ------------------
-     829.749627587403
-    (1 row)
+    openGauss=# CREATE TABLE covar_pop_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO covar_pop_t1 VALUES (NULL,11),(11,21),(11,31),(21,41),(21,51),(31,61); 
+     
+    openGauss=# SELECT COVAR_POP(a,b) FROM covar_pop_t1; 
+     covar_pop  
+    ----------- 
+           100 
+    (1 row) 
+     
+    openGauss=# DROP TABLE covar_pop_t1;
     ```
 
-- covar\_samp\(Y, X\)
+- covar_samp(Y, X)
 
-    Description: Specifies the sample covariance.
+    Description: Sample covariance.
 
     Return type: double precision
 
     Example:
 
     ```
-    openGauss=# SELECT COVAR_SAMP(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
-        covar_samp    
-    ------------------
-     830.052235037289
-    (1 row)
+    openGauss=# CREATE TABLE covar_samp_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO covar_samp_t1 VALUES (NULL,11),(11,21),(11,31),(21,41),(21,51),(31,61); 
+     
+    openGauss=# SELECT COVAR_SAMP(a,b) FROM covar_samp_t1; 
+     covar_samp  
+    ------------ 
+            125 
+    (1 row) 
+     
+    openGauss=# DROP TABLE covar_samp_t1;
     ```
 
-- stddev\_pop\(expression\)
+- stddev_pop(expression)
 
-    Description: Specifies the overall standard deviation.
+    Description: Population standard deviation.
 
-    Return type:  **double precision**  for floating-point arguments, otherwise  **numeric**
+    Return type: double precision for floating-point input, and numeric for other inputs.
 
     Example:
 
     ```
-    openGauss=# SELECT STDDEV_POP(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
-        stddev_pop    
-    ------------------
-     289.224294957556
-    (1 row)
+    openGauss=# CREATE TABLE stddev_pop_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO stddev_pop_t1 VALUES (NULL,11),(11,21),(11,31),(21,41),(21,51),(31,61); 
+     
+    openGauss=# SELECT STDDEV_POP(a) FROM stddev_pop_t1; 
+         stddev_pop      
+    -------------------- 
+     7.4833147735478828 
+    (1 row) 
+     
+    openGauss=# DROP TABLE stddev_pop_t1;
     ```
 
-- stddev\_samp\(expression\)
+- stddev_samp(expression)
 
-    Description: Specifies the sample standard deviation of the input values.
+    Description: Sample standard deviation.
 
-    Return type:  **double precision**  for floating-point arguments, otherwise  **numeric**
+    Return type: For floating-point input, returns double precision; for other inputs, returns numeric.
 
     Example:
 
     ```
-    openGauss=# SELECT STDDEV_SAMP(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
-       stddev_samp    
-    ------------------
-     289.224359757315
-    (1 row)
+    openGauss=# CREATE TABLE stddev_samp_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO stddev_samp_t1 VALUES (NULL,11),(11,21),(11,31),(21,41),(21,51),(31,61); 
+     
+    openGauss=# SELECT STDDEV_SAMP(a) FROM stddev_samp_t1; 
+        stddev_samp      
+    -------------------- 
+     8.3666002653407555 
+    (1 row) 
+     
+    openGauss=# DROP TABLE stddev_samp_t1;
     ```
 
-- var\_pop\(expression\)
+- var_pop(expression)
 
-    Description: Specifies the population variance of the input values \(square of the population standard deviation\).
+    Description: Population variance (square of population standard deviation)
 
-    Return type:  **double precision**  for floating-point arguments, otherwise  **numeric**
+    Return type: For floating-point input, double precision is returned; for other inputs, numeric is returned.
 
     Example:
 
     ```
-    openGauss=# SELECT VAR_POP(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
-          var_pop       
-    --------------------
-     83650.692793695475
-    (1 row)
+    openGauss=# CREATE TABLE var_pop_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO var_pop_t1 VALUES (NULL,11),(11,21),(11,31),(21,41),(21,51),(31,61); 
+     
+    openGauss=# SELECT VAR_POP(a) FROM var_pop_t1; 
+           var_pop        
+    --------------------- 
+     56.0000000000000000 
+    (1 row) 
+     
+    openGauss=# DROP TABLE var_pop_t1;
     ```
 
-- var\_samp\(expression\)
+- var_samp(expression)
 
-    Description: Specifies the sample variance of the input values \(square of the sample standard deviation\).
+    Description: Sample variance (square of sample standard deviation)
 
-    Return type:  **double precision**  for floating-point arguments, otherwise  **numeric**
+    Return type: For floating-point input, double precision is returned; for other inputs, numeric is returned.
 
     Example:
 
     ```
-    openGauss=# SELECT VAR_SAMP(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
-          var_samp      
-    --------------------
-     83650.730277028768
-    (1 row)
+    openGauss=# CREATE TABLE var_samp_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO var_samp_t1 VALUES (NULL,11),(11,21),(11,31),(21,41),(21,51),(31,61); 
+     
+    openGauss=# SELECT VAR_SAMP(a) FROM var_samp_t1; 
+          var_samp        
+    --------------------- 
+     70.0000000000000000 
+    (1 row) 
+     
+    openGauss=# DROP TABLE var_samp_t1;
     ```
 
-- bit\_and\(expression\)
+- bit_and(expression)
 
-    Description: bitwise AND of all non-null input values, or null if none
+    Description: Bitwise AND of all non-NULL input values. If all input values are NULL, the result is also NULL.
 
-    Return type: same as the argument type
+    Return type: Same as the parameter data type.
 
     Example:
 
     ```
-    openGauss=# SELECT BIT_AND(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
-     bit_and 
-    ---------
-           0
-    (1 row)
+    openGauss=# CREATE TABLE bit_and_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO bit_and_t1 VALUES (NULL,11),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT BIT_AND(a) FROM bit_and_t1; 
+     bit_and  
+    --------- 
+           0 
+    (1 row) 
+     
+    openGauss=# DROP TABLE bit_and_t1;
     ```
 
 - bit\_or\(expression\)
 
-    Description: bitwise OR of all non-null input values, or null if none
+    Description: Bitwise OR of all non-NULL input values. If all input values are NULL, the result is also NULL.
 
-    Return type: same as the argument type
+    Return type: Same as the parameter data type.
 
     Example:
 
     ```
-    openGauss=# SELECT BIT_OR(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
-     bit_or 
-    --------
-       1023
-    (1 row)
+    openGauss=# CREATE TABLE bit_or_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO bit_or_t1 VALUES (NULL,11),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT BIT_OR(a) FROM bit_or_t1; 
+     bit_or  
+    -------- 
+          3 
+    (1 row) 
+     
+    openGauss=# DROP TABLE bit_or_t1;
     ```
 
-- bool\_and\(expression\)
+- bool\_and(expression)
 
-    Description: Its value is  **true**  if all input values are  **true**, otherwise  **false**.
+    Description: Returns true if all input values are true, otherwise returns false.
 
-    Return type: Boolean
+    Return type: `bool`
 
     Example:
 
@@ -537,11 +829,11 @@
     (1 row)
     ```
 
-- bool\_or\(expression\)
+- bool\_or(expression)
 
-    Description: Its value is  **true**  if at least one input value is  **true**, otherwise  **false**.
+    Description: Returns true if at least one input value is true; otherwise returns false.
 
-    Return type: Boolean
+    Return type: bool
 
     Example:
 
@@ -553,38 +845,44 @@
     (1 row)
     ```
 
-- corr\(Y, X\)
+- corr(Y, X)
 
-    Description: Specifies the correlation coefficient.
+    Description: Correlation coefficient
 
     Return type: double precision
 
-    Example:
+    Examples:
 
     ```
-    openGauss=# SELECT CORR(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
+    openGauss=# CREATE TABLE corr_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO corr_t1 VALUES (NULL,11),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT CORR(a,b) FROM corr_t1; 
            corr        
-    -------------------
-     .0381383624904186
-    (1 row)
+    ------------------ 
+     .944911182523068 
+    (1 row) 
+     
+    openGauss=# DROP TABLE corr_t1;
     ```
 
-- corr_s\(expr1, expr2, return_mode\)
+- corr_s(expr1, expr2, return_mode)
 
-    Description：Spearman correlation coefficient
+    Description: Spearman rank correlation coefficient
 
-    Return type：double precision
+    Return type: double precision
 
-    Return Value: The `return_mode` parameter is optional; if not specified, the function returns the Spearman's rank correlation coefficient (the return value is the same as when `return_mode=COEFFICIENT`). If specified, the value of `return_mode` must be one of the following five options.
+    Return value: `return_mode` is optional. If not specified, the function returns the Spearman's rank correlation coefficient (the return value is the same as when return_mode = COEFFICIENT). If specified, the value of `return_mode` must be one of the following five options.
 
     <table>
         <tr>
-            <th>Return Value</th>
+            <th>Return value</th>
             <th>Meaning</th>
         </tr>
         <tr>
             <td>COEFFICIENT</td>
-            <td>Coefficient of correlation</td>
+            <td>Correlation coefficient</td>
         </tr>
         <tr>
             <td>ONE_SIDED_SIG</td>
@@ -592,7 +890,7 @@
         </tr>
         <tr>
             <td>ONE_SIDED_SIG_POS</td>
-            <td>Same as ONE_SIDED_SIG</td>
+            <td>Equivalent to ONE_SIDED_SIG</td>
         </tr>
         <tr>
             <td>ONE_SIDED_SIG_NEG</td>
@@ -604,7 +902,7 @@
         </tr>
     </table>
 
-    Example：
+    Example:
 
     ```
     openGauss=# CREATE TABLE corr_t1(a int, b int);
@@ -632,13 +930,13 @@
 
 - corr_k\(expr1, expr2, return_mode\)
 
-    Description： Kendall's tau-b correlation coefficient
+    Description: Kendall's tau-b correlation coefficient
 
-    Return type：double precision
+    Return type: double precision
 
-    Return Value: The `return_mode` parameter is optional; if not specified, the function returns Kendall's tau-b correlation coefficient (the return value is the same as when `return_mode=COEFFICIENT`). If specified, the description of the return value is the same as that for the `corr_s` function mentioned above.
+    Return value: `return_mode` is optional. If not specified, the function returns the Kendall's tau-b correlation coefficient (the return value is the same as when return_mode = COEFFICIENT). If specified, the return value description is the same as that of `corr_s` above.
 
-    Example：
+    Example:
 
     ```
     openGauss=# SELECT CORR_K(a,b) FROM corr_t1;
@@ -662,9 +960,9 @@
 
 - every\(expression\)
 
-    Description: Equivalent to  **bool\_and**
+    Description: Equivalent to bool_and.
 
-    Return type: Boolean
+    Return type: bool
 
     Example:
 
@@ -676,242 +974,331 @@
     (1 row)
     ```
 
-- regr\_avgx\(Y, X\)
+- regr_avgx(Y, X)
 
-    Description: Specifies the average of the independent variable \(**sum\(X\)/N**\).
-
-    Return type: double precision
-
-    Example:
-
-    ```
-    openGauss=# SELECT REGR_AVGX(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
-        regr_avgx     
-    ------------------
-     578.606576740795
-    (1 row)
-    ```
-
-- regr\_avgy\(Y, X\)
-
-    Description: Specifies the average of the dependent variable \(**sum\(Y\)/N**\).
+    Description: Average of the independent variable (sum(X)/N).
 
     Return type: double precision
 
     Example:
 
     ```
-    openGauss=# SELECT REGR_AVGY(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
-        regr_avgy     
-    ------------------
-     50.0136711629602
-    (1 row)
+    openGauss=# CREATE TABLE regr_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO regr_t1 VALUES (NULL,11),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT REGR_AVGX(a,b) FROM regr_t1; 
+     regr_avgx  
+    ----------- 
+             4 
+    (1 row) 
+     
+    openGauss=# DROP TABLE regr_t1;
+    ```
+
+- regr_avgy(Y, X)
+
+    Description: average of the dependent variable \(sum(Y)/N\)
+
+    Return type: double precision
+
+    Example:
+
+    ```
+    openGauss=# CREATE TABLE regr_avgy_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO regr_avgy_t1 VALUES (NULL,11),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT REGR_AVGY(a,b) FROM regr_avgy_t1; 
+     regr_avgy  
+    ----------- 
+           1.8 
+    (1 row) 
+     
+    openGauss=# DROP TABLE regr_avgy_t1;
     ```
 
 - regr\_count\(Y, X\)
 
-    Description: Specifies the number of input rows in which both expressions are non-null.
+    Description: Number of input rows in which both expressions are non-NULL.
 
     Return type: bigint
 
     Example:
 
     ```
-    openGauss=# SELECT REGR_COUNT(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
-     regr_count 
-    ------------
-           2743
-    (1 row)
+    openGauss=# CREATE TABLE regr_count_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO regr_count_t1 VALUES (NULL,11),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT REGR_COUNT(a,b) FROM regr_count_t1; 
+     regr_count  
+    ------------ 
+              5 
+    (1 row) 
+     
+    openGauss=# DROP TABLE regr_count_t1;
     ```
 
-- regr\_intercept\(Y, X\)
+- regr_intercept(Y, X)
 
-    Description: Specifies the y-intercept of the least-squares-fit linear equation determined by the \(X, Y\) pairs.
+    Description: Fits a linear equation using the least squares method based on all input points (X, Y), and returns the Y-intercept of the line.
 
     Return type: double precision
 
     Example:
 
     ```
-    openGauss=# SELECT REGR_INTERCEPT(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
-      regr_intercept  
-    ------------------
-     49.2040847848607
-    (1 row)
+    openGauss=# CREATE TABLE regr_intercept_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO regr_intercept_t1 VALUES (NULL,11),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT REGR_INTERCEPT(b,a) FROM regr_intercept_t1; 
+      regr_intercept   
+    ------------------ 
+     .785714285714286 
+    (1 row) 
+     
+    openGauss=# DROP TABLE regr_intercept_t1;
     ```
 
-- regr\_r2\(Y, X\)
+- regr_r2(Y, X)
 
-    Description: Specifies the square of the correlation coefficient.
+    Description: Square of the correlation coefficient.
 
     Return type: double precision
 
     Example:
 
     ```
-    openGauss=# SELECT REGR_R2(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
-          regr_r2       
-    --------------------
-     .00145453469345058
-    (1 row)
+    openGauss=# CREATE TABLE regr_r2_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO regr_r2_t1 VALUES (NULL,11),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT REGR_R2(b,a) FROM regr_r2_t1; 
+         regr_r2       
+    ------------------ 
+     .892857142857143 
+    (1 row) 
+     
+    openGauss=# DROP TABLE regr_r2_t1;
     ```
 
-- regr\_slope\(Y, X\)
+- regr_slope(Y, X)
 
-    Description: Specifies the slope of the least-squares-fit linear equation determined by the \(X, Y\) pairs.
+    Description: Fits a linear equation using the least squares method based on all input points (X, Y), and then returns the slope of the line.
 
     Return type: double precision
 
     Example:
 
     ```
-    openGauss=# SELECT REGR_SLOPE(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
-         regr_slope     
-    --------------------
-     .00139920009665259
-    (1 row)
+    openGauss=# CREATE TABLE regr_slope_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO regr_slope_t1 VALUES (NULL,11),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT REGR_SLOPE(b,a) FROM regr_slope_t1; 
+        regr_slope     
+    ------------------ 
+     1.78571428571429 
+    (1 row) 
+     
+    openGauss=# DROP TABLE regr_slope_t1;
     ```
 
 - regr\_sxx\(Y, X\)
 
-    Description:  **sum\(X^2\) - sum\(X\)^2/N**\(sum of squares of the independent variables\)
+    Description: sum\(X^2\) – sum\(X\)^2/N (the "sum of squares" of the independent variable)
 
     Return type: double precision
 
     Example:
 
     ```
-    openGauss=# SELECT REGR_SXX(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
-         regr_sxx     
-    ------------------
-     1626645991.46135
-    (1 row)
+    openGauss=# CREATE TABLE regr_sxx_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO regr_sxx_t1 VALUES (NULL,11),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT REGR_SXX(b,a) FROM regr_sxx_t1; 
+     regr_sxx  
+    ---------- 
+          2.8 
+    (1 row) 
+     
+    openGauss=# DROP TABLE regr_sxx_t1;
     ```
 
 - regr\_sxy\(Y, X\)
 
-    Description:  **sum\(X\*Y\) - sum\(X\) \* sum\(Y\)/N**  \("sum of products" of independent times dependent variable\)
+    Description: sum\(X\*Y\) – sum\(X\) \* sum\(Y\)/N (the "sum of products" of the independent variable and dependent variable)
 
     Return type: double precision
 
     Example:
 
     ```
-    openGauss=# SELECT REGR_SXY(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
-         regr_sxy     
-    ------------------
-     2276003.22847225
-    (1 row)
+    openGauss=# CREATE TABLE regr_sxy_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO regr_sxy_t1 VALUES (NULL,11),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT REGR_SXY(b,a) FROM regr_sxy_t1; 
+     regr_sxy  
+    ---------- 
+            5 
+    (1 row) 
+     
+    openGauss=# DROP TABLE regr_sxy_t1;
     ```
 
 - regr\_syy\(Y, X\)
 
-    Description:  **sum\(Y^2\) - sum\(Y\)^2/N**  \("sum of squares" of the dependent variable\)
+    Description: sum\(Y^2\) – sum\(Y\)^2/N (sum of squares of the dependent variable)
 
     Return type: double precision
 
     Example:
 
     ```
-    openGauss=# SELECT REGR_SYY(sr_fee, sr_net_loss) FROM tpcds.store_returns WHERE sr_customer_sk < 1000;
-        regr_syy     
-    -----------------
-     2189417.6547314
-    (1 row)
+    openGauss=# CREATE TABLE regr_syy_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO regr_syy_t1 VALUES (NULL,11),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT REGR_SYY(b,a) FROM regr_syy_t1; 
+     regr_syy  
+    ---------- 
+           10 
+    (1 row) 
+     
+    openGauss=# DROP TABLE regr_syy_t1;
     ```
 
 - stddev\(expression\)
 
-    Description: Specifies the alias of  **stddev\_samp**.
+    Description: Alias of `stddev_samp`.
 
-    Return type:  **double precision**  for floating-point arguments, otherwise  **numeric**
-
-    Example:
-
-    ```
-    openGauss=# SELECT STDDEV(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
-          stddev      
-    ------------------
-     289.224359757315
-    (1 row)
-    ```
-
-- variance\(expexpression,ression\)
-
-    Description: Specifies the alias of  **var\_samp**.
-
-    Return type:  **double precision**  for floating-point arguments, otherwise  **numeric**
+    Return type: double precision for floating-point input, and numeric for other input.
 
     Example:
 
     ```
-    openGauss=# SELECT VARIANCE(inv_quantity_on_hand) FROM tpcds.inventory WHERE inv_warehouse_sk = 1;
-          variance      
-    --------------------
-     83650.730277028768
-    (1 row)
+    openGauss=# CREATE TABLE stddev_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO stddev_t1 VALUES (NULL,11),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT STDDEV(a) FROM stddev_t1; 
+            stddev          
+    ----------------------- 
+     .83666002653407554798 
+    (1 row) 
+     
+    openGauss=# DROP TABLE stddev_t1;
+    ```
+
+- variance(expression)
+
+    Description: Alias of `var_samp`.
+
+    Return type: For floating-point input, double precision is returned; for other input, numeric is returned.
+
+    Example:
+
+    ```
+    openGauss=# CREATE TABLE variance_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO variance_t1 VALUES (NULL,11),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT VARIANCE(a) FROM variance_t1; 
+           variance         
+    ----------------------- 
+     .70000000000000000000 
+    (1 row) 
+     
+    openGauss=# DROP TABLE variance_t1;
     ```
 
 - delta
 
     Description: Returns the difference between the current row and the previous row.
 
-    Parameter: numeric
+    Parameter type: numeric
 
     Return type: numeric
 
-- checksum\(expression\)
+- checksum(expression)
 
-    Description: Returns the  **CHECKSUM**  value of all input values. This function can be used to check whether the data in the tables is the same before and after the backup, restoration, or migration of the openGauss database \(databases other than openGauss are not supported\). Before and after database backup, database restoration, or data migration, you need to manually run SQL commands to obtain the execution results. Compare the obtained execution results to check whether the data in the tables before and after the backup or migration is the same.
+  Description: Returns the CHECKSUM value of all input values. This function can be used to verify whether the data in a table is the same before and after backup and recovery or data migration operations in the openGauss database (other databases besides openGauss are not supported). Before and after backup and recovery or data migration operations, users need to manually execute SQL commands to obtain the execution results, and determine whether the data in the table is the same before and after the operation by comparing the obtained results.
 
-    >[!NOTE]NOTE 
-    >- For large tables, the execution of the  **CHECKSUM**  function may take a long time.
-    >- If the  **CHECKSUM**  values of two tables are different, it indicates that the contents of the two tables are different. Using the hash function in the  **CHECKSUM**  function may incur conflicts. There is low possibility that two tables with different contents may have the same  **CHECKSUM**  value. The same problem may occur when  **CHECKSUM**  is used for columns.
-    >- If the time type is timestamp, timestamptz, or smalldatetime, ensure that the time zone settings are the same when calculating the  **CHECKSUM**  value.
+  >[!NOTE]
+  >
+  >- For large tables, the CHECKSUM function may take a long time.
+  >
+  >- If the CHECKSUM values of two tables are different, it indicates that the contents of the two tables are different. Because the hash function used in the CHECKSUM function cannot guarantee collision-free results, two tables with different contents may produce the same CHECKSUM value, though the probability of this occurring is relatively low. The same situation also applies to CHECKSUM performed on columns.
+  >
+  >- For time types timestamp, timestamptz, and smalldatetime, ensure that the time zone settings are consistent when calculating the CHECKSUM value.
 
-    - If the  **CHECKSUM**  value of a column is calculated and the column type can be changed to TEXT by default, set  *expression*  to the column name.
-    - If the  **CHECKSUM**  value of a column is calculated and the column type cannot be converted to TEXT by default, set  *expression*  to  *Column name***::TEXT**.
-    - If the  **CHECKSUM**  value of all columns is calculated, set  *expression*  to  *Table name***::TEXT**.
+  - If the CHECKSUM value of a column is calculated and the column type can be implicitly converted to the TEXT type, then expression is the column name.
 
-    The following types of data can be converted into TEXT types by default: char, name, int8, int2, int1, int4, raw, pg\_node\_tree, float4, float8, bpchar, varchar, nvarchar, nvarchar2, date, timestamp, timestamptz, numeric, and smalldatetime. Other types need to be forcibly converted to TEXT.
+  - If the CHECKSUM value of a column is calculated and the column type cannot be implicitly converted to the TEXT type, the expression is `column_name::TEXT`.
 
-    Return type: numeric
+  - If the CHECKSUM value of all columns is calculated, the expression is `table_name::TEXT`.
 
-    Example:
+  Types that can be implicitly converted to TEXT include: char, name, int8, int2, int1, int4, raw, pg_node_tree, float4, float8, bpchar, varchar, nvarchar, nvarchar2, date, timestamp, timestamptz, numeric, and smalldatetime. Other types must be explicitly cast to TEXT.
 
-    The following shows the  **CHECKSUM**  value of a column that can be converted to the TEXT type by default:
+  Return type: numeric.
 
-    ```
-    openGauss=# SELECT CHECKSUM(inv_quantity_on_hand) FROM tpcds.inventory;
-         checksum      
-    -------------------
-     24417258945265247
-    (1 row)
-    ```
+  Example:
 
-    The following shows the  **CHECKSUM**  value of a column that cannot be converted to the TEXT type by default. Note that the  **CHECKSUM**  parameter is set to  *Column name***::TEXT**.
+  The CHECKSUM value of a column in the table that can be converted to the TEXT type by default.
 
-    ```
-    openGauss=# SELECT CHECKSUM(inv_quantity_on_hand::TEXT) FROM tpcds.inventory;
-         checksum      
-    -------------------
-     24417258945265247
-    (1 row)
-    ```
+  ```
+    openGauss=# CREATE TABLE checksum_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO checksum_t1 VALUES (NULL,11),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT CHECKSUM(a) FROM checksum_t1; 
+      checksum    
+    ------------- 
+     18126842830 
+    (1 row) 
+     
+    openGauss=# DROP TABLE checksum_t1;
+  ```
 
-    The following shows the  **CHECKSUM**  value of all columns in a table. Note that the  **CHECKSUM**  parameter is set to  *Table name***::TEXT**. The table name is not modified by its schema.
+  The CHECKSUM value of a column in the table that cannot be converted to the TEXT type by default. Note: In this case, the CHECKSUM parameter is `column_name::TEXT`.
 
-    ```
-    openGauss=# SELECT CHECKSUM(inventory::TEXT) FROM tpcds.inventory;                    
-         checksum      
-    -------------------
-     25223696246875800
-    (1 row)
-    ```
+  ```
+    openGauss=# CREATE TABLE checksum_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO checksum_t1 VALUES (NULL,11),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT CHECKSUM(a::TEXT) FROM checksum_t1; 
+      checksum    
+    ------------- 
+     18126842830 
+    (1 row) 
+     
+    openGauss=# DROP TABLE checksum_t1;
+  ```
+
+  The CHECKSUM value of all columns in the table. Note: In this case, the CHECKSUM parameter is table_name::TEXT, and the table name is not preceded by a schema.
+
+  ```
+    openGauss=# CREATE TABLE checksum_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO checksum_t1 VALUES (NULL,11),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT CHECKSUM(checksum_t1::TEXT) FROM checksum_t1; 
+      checksum    
+    ------------- 
+     11160522226 
+    (1 row) 
+     
+    openGauss=# DROP TABLE checksum_t1;
+  ```
 
 - first\(anyelement\)
 
-    Description: Returns the first non-null input.
+    Description: Returns the first non-NULL input value.
 
     Return type: anyelement
 
@@ -933,7 +1320,7 @@
 
 - last\(anyelement\)
 
-    Description: Returns the last non-null input.
+    Description: Returns the last non-NULL input.
 
     Return type: anyelement
 
@@ -955,26 +1342,26 @@
 
 - mode\(\) within group \(order by value anyelement\)
 
-    Description: Returns the value with the highest occurrence frequency in a column. If multiple values have the same frequency, the smallest value is returned. The sorting mode is the same as the default sorting mode of the column type.  **value**  is an input parameter and can be of any type.
+    Description: Returns the most frequent value in a column. If multiple values have the same frequency, the smallest value is returned. The sorting method is the same as the default sorting method for the column type. Here, value is the input parameter and can be of any type.
 
-    Return type: same as the input parameter type
+    Return type: Same as the input parameter type.
 
     Example:
 
     ```
-    openGauss=# select mode() within group (order by value) from (values(1, 'a'), (2, 'b'), (2, 'c')) v(value, tag);
-     mode
-    ------
-        2
-    (1 row)
-    openGauss=# select mode() within group (order by tag) from (values(1, 'a'), (2, 'b'), (2, 'c')) v(value, tag);
-     mode
-    ------
-     a
+     openGauss=# SELECT mode() WITHIN GROUP (ORDER BY value) FROM (values(1, 'a'), (2, 'b'), (2, 'c')) v(value, tag); 
+     mode 
+    ------ 
+        2 
+    (1 row) 
+    openGauss=# SELECT mode() WITHIN GROUP (ORDER BY tag) FROM (values(1, 'a'), (2, 'b'), (2, 'c')) v(value, tag); 
+     mode 
+    ------ 
+     a 
     (1 row)
     ```
 
-- json\_agg\(any\)
+- json_agg(any)
 
     Description: Aggregates values into a JSON array.
 
@@ -983,27 +1370,20 @@
     Example:
 
     ```
-    openGauss=# select * from classes;
-    name | score
-    -----+-------
-    A    |     2
-    A    |     3
-    D    |     5
-    D    |
-    (4 rows)
+    openGauss=# CREATE TABLE json_agg_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO json_agg_t1 VALUES (NULL,11),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT JSON_AGG(a) FROM json_agg_t1; 
+           json_agg         
+    ----------------------- 
+     [null, 1, 1, 2, 2, 3] 
+    (1 row) 
+     
+    openGauss=# DROP TABLE json_agg_t1;
     ```
 
-    ```
-    openGauss=# select name, json_agg(score) score from classes group by name order by name;
-    name |      score
-    -----+-----------------
-    A    | [2, 3]
-    D    | [5, null]
-    | [null]
-    (3 rows)
-    ```
-
-- json\_object\_agg\(any, any\)
+- json_object_agg(any, any)
 
     Description: Aggregates values into a JSON object.
 
@@ -1012,37 +1392,32 @@
     Example:
 
     ```
-    openGauss=# select * from classes;
-    name | score
-    -----+-------
-    A    |     2
-    A    |     3
-    D    |     5
-    D    |
-    (4 rows)
+     openGauss=# CREATE TABLE json_object_agg_t1(a int, b int); 
+     
+    openGauss=# INSERT INTO json_object_agg_t1 VALUES (11,NULL),(1,2),(1,3),(2,4),(2,5),(3,6); 
+     
+    openGauss=# SELECT JSON_OBJECT_AGG(a,b) FROM json_object_agg_t1; 
+                           json_object_agg                         
+    -------------------------------------------------------------- 
+     { "11" : null, "1" : 2, "1" : 3, "2" : 4, "2" : 5, "3" : 6 } 
+    (1 row) 
+     
+    openGauss=# DROP TABLE json_object_agg_t1;
     ```
 
-    ```
-    openGauss=# select json_object_agg(name, score) from classes group by name order by name;
-    json_object_agg
-    -------------------------
-    { "A" : 2, "A" : 3 }
-    { "D" : 5, "D" : null }
-    (2 rows)
-    ```
+- cume\_dist(expression [,expression ...] ) WITHIN GROUP (ORDER BY { order-list [ ASC | DESC ] [ NULLS { FIRST | LAST } ] } [,...])
 
-- cume\_dist\(expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
+    Description: Computes the cumulative distribution of a hypothetical row identified by the function's arguments and the corresponding sort specification among the rows in the aggregate group, that is, the proportion of the number of rows up to and including the last row whose value equals the expression value after sorting to the total number of rows in the sorted partition.
 
-    Description: Calculate the cumulative distribution of the assumed rows and corresponding sorting criteria identified by the parameters of the function in the aggregated group rows. in other words, The proportion of the total number of rows in the sorting partition where the value of expression is the same as the value of the last row after sorting
+    - expression: Required. Specifies the row hypothetically inserted into a set of rows. The expression must return a value of a built-in data type. The expression must be a constant or a variable of a constant. Multiple arguments can be input. The number of arguments must match the number of items in order-list.
 
-    - **expression**: Mandatory. specify the rows to be inserted into a set of rows. This expression must return a value of a built-in data type. The expression must be a constant or variable of a constant or variable. Multiple parameters can be entered. The number of parameters must be consistent with the order list and the number of parameters.
-    - **order-list**: Mandatory. The sorting key can be a column name or a sorting key expression.
+    - `order-list`: Required. The sort key can be a column name or a sort key expression.
 
     Return type: float
 
     Example:
 
-    Insert the input 4 into a column sorted by c1, with 4 placed at position 8. Therefore, the function returns a value of 8/14.
+    Using `c1` as the sort column, insert the input value 4 into this sort column. 4 is at position 8, so the function returns 8/14.
 
     ```
     openGauss=# create table aggregates_hypothetical(c1 int, c2 NUMBER(8,2), c3 varchar(20), c4 timestamp);
@@ -1072,7 +1447,7 @@
 
     Example:
 
-    Insert the input (3,0.2) into the column sorted by c1 and c2, and place it in the 5th position. Therefore, the function returns a value of 5/14
+    Using `c1` and `c2` as the sort columns, insert the input values (3, 0.2) into these sort columns. They are at position 5, so the function returns 5/14.
 
     ```
     openGauss=# select cume_dist(3,0.2) within group (order by c1,c2) from aggregates_hypothetical;
@@ -1083,9 +1458,9 @@
     ```
 
     Example:
-    
-    Insert the input string into a column sorted by c1, perform type conversion, and then perform calculations
-    
+
+    Using `c1` as the sort column, the input string is inserted into this sort column, and type conversion is performed before calculation.
+
     ```
     select cume_dist('1') within group (order by c1) from test_aggregate;
         cume_dist     
@@ -1094,17 +1469,19 @@
     (1 row)
     ```
 
-- rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
+- rank( expression [,expression] ) WITHIN GROUP (ORDER BY { order-list [ ASC | DESC ] [ NULLS { FIRST | LAST } ] } [,...])
 
-    Description: Calculate the ranking of a hypothetical row identified by the parameters of a function relative to a given sorting criterion. The ranking values of the rank function are not continuous.
-    - **expression**: Mandatory. specify the rows to be inserted into a set of rows. This expression must return a value of a built-in data type. The expression must be a constant or variable of a constant or variable. Multiple parameters can be entered. The number of parameters must be consistent with the order list and the number of parameters.
-    - **order-list**:Mandatory.The sorting key can be a column name or a sorting key expression.
+    Description: Computes the rank of a hypothetical row identified by the function's arguments relative to a given sort specification. The ranking values of the rank function are not consecutive.
+
+    - expression: Required. Specifies the row to be hypothetically inserted into a set of rows. The expression must return a value of a built-in data type. The expression must be a constant or variable. Multiple parameters can be input. The number of parameters must match the number of items in order-list.
+
+    - order-list: Required. The sort key can be a column name or a sort key expression.
 
     Return type: int
 
     Example
 
-    Using c1 as the sorting column, calculate the ranking value of the input parameter in the sorting column. Duplicate columns are also included in the ranking, so the ranking is discontinuous
+    Use `c1` as the sort column to calculate the ranking value of the input parameter in the sort column. Duplicate columns are also counted in the ranking, so the ranking is non-consecutive.
 
     ```
     openGauss=# select rank(3) within group (order by c1) from aggregates_hypothetical;
@@ -1119,10 +1496,10 @@
         7
     (1 row)
     ```
-   
+
     Example
 
-    Column sorted by c1, c2
+    Uses `c1` and `c2` as the sort columns.
 
     ```
     openGauss=# select rank(4,0.2) within group (order by c1,c2) from aggregates_hypothetical;
@@ -1134,15 +1511,17 @@
 
 - dense\_rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
 
-    Description: Calculate the ranking of a hypothetical row identified by the parameters of a function relative to a given sorting criterion. The ranking value of the dense_rank function is continuous
-    - **expression**: Mandatory. specify the rows to be inserted into a set of rows. This expression must return a value of a built-in data type. The expression must be a constant or variable of a constant or variable. Multiple parameters can be entered. The number of parameters must be consistent with the order list and the number of parameters.
-    - **order-list**:Mandatory.The sorting key can be a column name or a sorting key expression.
+    Description: Computes the rank of a hypothetical row identified by the function's arguments relative to a given sort specification. The ranking values returned by the dense_rank function are consecutive.
+
+    - expression: Required. Specifies the row to be hypothetically inserted into a set of rows. The expression must return a value of a built-in data type. The expression must be a constant or variable. Multiple arguments can be input. The number of arguments must match the number of items in order-list.
+
+    - order-list: Required. The sort key can be a column name or a sort key expression.
 
     Return type: int
 
     Example
 
-    Using c1 as the sorting column, calculate the ranking value of the input parameter in the sorting column. Duplicate columns are not included in the ranking, so the ranking is continuous
+    Using `c1` as the sort column, calculate the ranking value of the input parameter in the sort column. Duplicate values are not counted separately in the ranking, so the ranking is consecutive.
 
     ```
     openGauss=# select dense_rank(3) within group (order by c1) from aggregates_hypothetical;
@@ -1157,10 +1536,10 @@
             4
     (1 row)
     ```
-   
+
     Example
 
-    Column sorted by c1, c2
+    Using `c1` and `c2` as sort columns
 
     ```
     openGauss=# select dense_rank(4,0.2) within group (order by c1,c2) from aggregates_hypothetical;;
@@ -1170,30 +1549,31 @@
     (1 row)
     ```
 
-- percent\_rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
+- percent\_rank( expression [,expression] ) WITHIN GROUP (ORDER BY { order-list [ ASC | DESC ] [ NULLS { FIRST | LAST } ] } [,...])
 
-    Description: Calculate the percentage of the relative position of the assumed rows identified by the parameters of the function with respect to a given sorting criterion. The calculation formula is (rank -1)/(totals -1).
+    Description: Calculates the percentage of the relative position of a hypothetical row identified by the function's arguments with respect to a given sort specification. The calculation formula is (rank - 1) / (total_rows - 1).
 
-    - **expression**: Mandatory. specify the rows to be inserted into a set of rows. This expression must return a value of a built-in data type. The expression must be a constant or variable of a constant or variable. Multiple parameters can be entered. The number of parameters must be consistent with the order list and the number of parameters.
-    - **order-list**:Mandatory.The sorting key can be a column name or a sorting key expression.
+    - expression: Required. Specifies the row to be hypothetically inserted into a set of rows. The expression must return a value of a built-in data type. The expression must be a constant or variable. Multiple arguments can be input. The number of arguments must be consistent with the number of items in order-list.
+
+    - order-list: Required. The sort key can be a column name or a sort key expression.
 
     Return type: float
 
     Example
 
-    The percentage of the input value in the position of the current ranking column sorted by c1
+    Uses `c1` as the sort column, and returns the percentage of the input value's position in the current ranking column.
 
     ```
-    openGauss=# select percent_rank(4) within group (order by c1) from aggregates_hypothetical;
+    openGauss=# select percent_rank(4) within group (order by c1) from aggregates_hypothetical;;
     percent_rank    
     -------------------
     0.461538461538462
     (1 row)
     ```
-   
+
     Example
 
-    Column sorted by c1, c2
+    Uses `c1` and `c2` as the sort columns.
 
     ```
     openGauss=# select percent_rank(3,0.2) within group (order by c1,c2) from aggregates_hypothetical; 
