@@ -13,6 +13,10 @@ sections:
         href: ./overview_for_backup_and_restoration.md
       - label: Backup And Restoration For Configuration Files
         href: ./configuration_files_backup_and_recovery.md
+      - label: Fast Repair of Damaged Pages on Primary and Standby Nodes
+        href: ./fast_repair_of_damaged_acitve_standby_libraries.md
+      - label: Support for Standby-to-Standby Build
+        href: ./standby_node_building.md
       - label: Logical Backup and Restoration
         href: ./logical_backup_and_restoration.md
       - label: Physical Backup and Restoration
@@ -125,6 +129,8 @@ sections:
             href: ./configuration_set.md
           - label: Quick Setup
             href: ./quick_setup.md
+      - label: Logical Replication Support for DDL Operations
+        href: ./logical_copy_support_ddl_operation.md
   - label: Upgrade
     sections:
       - label: Before You Start

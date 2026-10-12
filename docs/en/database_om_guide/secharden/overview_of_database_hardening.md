@@ -35,7 +35,7 @@ openGauss hardening items fall into the following ten categories:
 
 ## Hardening Impact
 
-Certain hardening measures, such as connection configuration and file permission settings, may alter user workflows and affect system usability. For common hardening items that impact usability, refer to [Table 1](#table-1).
+Certain hardening measures, such as connection configuration and file permission settings, may alter user workflows and affect system usability. For common hardening items that impact usability, refer to [Table 1](#zh-cn_topic_0152100325_ta4a48f54ff2849ada7845e2380209917).
 
 **Table 1**  Hardening impact description
 

@@ -81,6 +81,8 @@ sections:
         href: ./gs_preinstall.md
       - label: gs_sshexkey
         href: ./gs_sshexkey.md
+      - label: pagehack
+        href: ./pagehack.md
       - label: gs_tar
         href: ./gs_tar.md
       - label: gs_uninstall
