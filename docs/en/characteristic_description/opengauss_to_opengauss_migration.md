@@ -32,4 +32,4 @@ None.
 
 ## References
 
-To use this feature for openGauss migration, see [openGauss-FullReplicate Tool Usage Guide](https://gitcode.com/opengauss/debezium/tree/master/migration-tool).
+To use this feature for openGauss migration, see [openGauss-FullReplicate Tool Usage Guide](https://atomgit.com/opengauss/debezium/tree/master/migration-tool).

@@ -30,6 +30,6 @@ None.
 
 ## References<a name="section57771982"></a>
 
-Reverse migration community address: <https://gitcode.com/opengauss/debezium/tree/5.1.0>
+Reverse migration community address: <https://atomgit.com/opengauss/debezium/tree/5.1.0>
 
-For detailed reference documentation, see <a href="https://gitcode.com/opengauss/debezium/blob/5.1.0/README.md ">README.md</a>
+For detailed reference documentation, see <a href="https://atomgit.com/opengauss/debezium/blob/5.1.0/README.md ">README.md</a>

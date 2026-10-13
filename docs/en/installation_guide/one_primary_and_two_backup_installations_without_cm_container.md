@@ -13,7 +13,7 @@ docker tag 9763e8b26794 opengauss:7.0.0-RC1
 
 ## 2. Obtaining the Primary/Standby Container Deployment Script
 
-The primary/standby container deployment script is `create_master_slave.sh`, which can be obtained from the [openGauss-server repository](https://gitcode.com/opengauss/openGauss-server/tree/master/docker/dockerfiles).
+The primary/standby container deployment script is `create_master_slave.sh`, which can be obtained from the [openGauss-server repository](https://atomgit.com/opengauss/openGauss-server/tree/master/docker/dockerfiles).
 
 ## 3. Creating Container Path Mapping Directories
 

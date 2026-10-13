@@ -48,7 +48,7 @@ oGRecorder (Data Vault) supports two deployment modes: standalone deployment and
 
 ### Obtain the Installation Package
 
-- **Build from source**: [Reference Link](https://gitcode.com/opengauss/oGRecorder)
+- **Build from source**: [Reference Link](https://atomgit.com/opengauss/oGRecorder)
 - **Official Community**: [Official Website](https://opengauss.org/zh/download/)
 
 ### Create the Installation User

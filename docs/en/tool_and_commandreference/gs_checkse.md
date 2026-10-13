@@ -99,7 +99,7 @@ The `gs_checkse` tool helps check database connection configurations, file direc
 
 **Table 1**  Database Security Configuration Check Items
 
-For details about the database security configuration check items, refer to [Secure Configuration Benchmark](https://gitcode.com/opengauss/security/tree/master/secure-configuration-benchmark).
+For details about the database security configuration check items, refer to [Secure Configuration Benchmark](https://atomgit.com/opengauss/security/tree/master/secure-configuration-benchmark).
 <a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_t5348bfc47f50450687012eacb1a1ba4e"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_r96d5e4d71c8c46a18f130b0cc1968953"><th class="cellrowborder" valign="top" width="9.27%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a03238af3de8f43ab9b7cf45ffc1deafb"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a03238af3de8f43ab9b7cf45ffc1deafb"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a03238af3de8f43ab9b7cf45ffc1deafb"></a>ID</p>
 </th>

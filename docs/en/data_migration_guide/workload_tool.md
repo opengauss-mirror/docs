@@ -162,7 +162,7 @@ A dynamic instrumentation tool used to directly collect dynamic SQL from Java ap
 - Source Code Address
 
 ~~~
-https://gitcode.com/opengauss/compatibility-assessment/tree/master/dynamic_sql_collection
+https://atomgit.com/opengauss/compatibility-assessment/tree/master/dynamic_sql_collection
 ~~~
 
 ### Function Scripts
