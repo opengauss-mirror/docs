@@ -630,11 +630,11 @@ sections:
               - label: Host Network
                 href: ./host_network.md
               - label: Key Active
-                href: ./wdr_key_active.md
+                href: ./key_active_stats.md
               - label: Instance IO
-                href: ./wdr_instance_io.md
+                href: ./instance_io_multidim_stats.md
               - label: Lock Active
-                href: ./wdr_lock_active.md
+                href: ./lock_active_stats.md
               - label: IO Profile
                 href: ./io_profile.md
               - label: Memory Statistics

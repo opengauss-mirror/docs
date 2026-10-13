@@ -1,6 +1,8 @@
 # THREAD\_IO\_STAT
 
-显示当前节点下各线程的IO统计信息。
+显示当前节点按线程角色类型统计的IO信息。
+
+IO统计按“线程IO角色、IO操作对象、IO操作上下文”三个维度组合进行，每个统计项对应一组唯一的“角色+对象+上下文”组合；各维度取值及含义分别见表4（线程IO角色）、表2（IO操作对象）和表3（IO操作上下文）。
 
 **表 1**  THREAD\_IO\_STAT字段
 
@@ -18,41 +20,28 @@
 </td>
 <td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_tio_1_2"><a name="p_tio_1_2"></a><a name="p_tio_1_2"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_tio_1_3"><a name="p_tio_1_3"></a><a name="p_tio_1_3"></a>线程IO角色编号。取值及含义见表2。</p>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_tio_1_3"><a name="p_tio_1_3"></a><a name="p_tio_1_3"></a>线程IO角色编号。取值及对应名称见表4。</p>
 </td>
 </tr>
 <tr id="row_thread_io_stat_2"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_tio_2_1"><a name="p_tio_2_1"></a><a name="p_tio_2_1"></a>role_name</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_tio_2_2"><a name="p_tio_2_2"></a><a name="p_tio_2_2"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_tio_2_3"><a name="p_tio_2_3"></a><a name="p_tio_2_3"></a>线程IO角色名称。与io_role_id的对应关系见表2。</p>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_tio_2_3"><a name="p_tio_2_3"></a><a name="p_tio_2_3"></a>线程IO角色名称。与io_role_id的对应关系见表4。</p>
 </td>
 </tr>
 <tr id="row_thread_io_stat_3"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_tio_3_1"><a name="p_tio_3_1"></a><a name="p_tio_3_1"></a>object_name</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_tio_3_2"><a name="p_tio_3_2"></a><a name="p_tio_3_2"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_tio_3_3"><a name="p_tio_3_3"></a><a name="p_tio_3_3"></a>IO操作对象名称。取值范围：</p>
-<p id="p_tio_3_4"><a name="p_tio_3_4"></a><a name="p_tio_3_4"></a>Relation：普通关系（表、索引等数据文件）IO。</p>
-<p id="p_tio_3_5"><a name="p_tio_3_5"></a><a name="p_tio_3_5"></a>TempRelation：临时关系文件的IO。</p>
-<p id="p_tio_3_6"><a name="p_tio_3_6"></a><a name="p_tio_3_6"></a>Wal：WAL日志文件IO。</p>
-<p id="p_tio_3_7"><a name="p_tio_3_7"></a><a name="p_tio_3_7"></a>Undo：回滚段（undo）文件IO。</p>
-<p id="p_tio_3_8"><a name="p_tio_3_8"></a><a name="p_tio_3_8"></a>Archive：归档文件IO。</p>
-<p id="p_tio_3_9"><a name="p_tio_3_9"></a><a name="p_tio_3_9"></a>Other：其他对象的IO。</p>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_tio_3_3"><a name="p_tio_3_3"></a><a name="p_tio_3_3"></a>IO操作对象名称。取值及描述见表2。</p>
 </td>
 </tr>
 <tr id="row_thread_io_stat_4"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_tio_4_1"><a name="p_tio_4_1"></a><a name="p_tio_4_1"></a>context_name</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_tio_4_2"><a name="p_tio_4_2"></a><a name="p_tio_4_2"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_tio_4_3"><a name="p_tio_4_3"></a><a name="p_tio_4_3"></a>IO操作上下文名称。取值范围：</p>
-<p id="p_tio_4_4"><a name="p_tio_4_4"></a><a name="p_tio_4_4"></a>Normal：常规单点读写IO。</p>
-<p id="p_tio_4_5"><a name="p_tio_4_5"></a><a name="p_tio_4_5"></a>BulkRead：批量读取IO，如预取、全表扫描。</p>
-<p id="p_tio_4_6"><a name="p_tio_4_6"></a><a name="p_tio_4_6"></a>BulkWrite：批量写入IO，如COPY导入。</p>
-<p id="p_tio_4_7"><a name="p_tio_4_7"></a><a name="p_tio_4_7"></a>Vacuum：垃圾回收（VACUUM）IO。</p>
-<p id="p_tio_4_8"><a name="p_tio_4_8"></a><a name="p_tio_4_8"></a>Recovery：崩溃恢复回放IO。</p>
-<p id="p_tio_4_9"><a name="p_tio_4_9"></a><a name="p_tio_4_9"></a>Replication：主备复制IO。</p>
-<p id="p_tio_4_10"><a name="p_tio_4_10"></a><a name="p_tio_4_10"></a>Unknown：无法识别的上下文。</p>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_tio_4_3"><a name="p_tio_4_3"></a><a name="p_tio_4_3"></a>IO操作上下文名称。取值及描述见表3。</p>
 </td>
 </tr>
 <tr id="row_thread_io_stat_5"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_tio_5_1"><a name="p_tio_5_1"></a><a name="p_tio_5_1"></a>num_reads</p>
@@ -191,7 +180,98 @@
 </tbody>
 </table>
 
-**表 2**  线程IO角色编号（io_role_id）与名称（role_name）对应关系
+**表 2**  IO操作对象类型（object_name）取值及描述
+
+<a name="table_thread_io_object"></a>
+<table><thead align="left"><tr id="row_thread_io_object_head"><th class="cellrowborder" valign="top" width="17.169999999999998%" id="mcps1.thread_io_object.1.1"><p id="p_tioobj_1"><a name="p_tioobj_1"></a><a name="p_tioobj_1"></a>取值</p>
+</th>
+<th class="cellrowborder" valign="top" width="82.83%" id="mcps1.thread_io_object.1.2"><p id="p_tioobj_2"><a name="p_tioobj_2"></a><a name="p_tioobj_2"></a>描述</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr id="row_tioobj_1"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.thread_io_object.1.1 "><p id="p_tioobj_r1_1"><a name="p_tioobj_r1_1"></a><a name="p_tioobj_r1_1"></a>Relation</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.thread_io_object.1.2 "><p id="p_tioobj_r1_2"><a name="p_tioobj_r1_2"></a><a name="p_tioobj_r1_2"></a>普通关系（表、索引等数据文件）的IO。</p>
+</td>
+</tr>
+<tr id="row_tioobj_2"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.thread_io_object.1.1 "><p id="p_tioobj_r2_1"><a name="p_tioobj_r2_1"></a><a name="p_tioobj_r2_1"></a>TempRelation</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.thread_io_object.1.2 "><p id="p_tioobj_r2_2"><a name="p_tioobj_r2_2"></a><a name="p_tioobj_r2_2"></a>临时关系文件的IO。</p>
+</td>
+</tr>
+<tr id="row_tioobj_3"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.thread_io_object.1.1 "><p id="p_tioobj_r3_1"><a name="p_tioobj_r3_1"></a><a name="p_tioobj_r3_1"></a>Wal</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.thread_io_object.1.2 "><p id="p_tioobj_r3_2"><a name="p_tioobj_r3_2"></a><a name="p_tioobj_r3_2"></a>WAL日志文件的IO。</p>
+</td>
+</tr>
+<tr id="row_tioobj_4"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.thread_io_object.1.1 "><p id="p_tioobj_r4_1"><a name="p_tioobj_r4_1"></a><a name="p_tioobj_r4_1"></a>Undo</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.thread_io_object.1.2 "><p id="p_tioobj_r4_2"><a name="p_tioobj_r4_2"></a><a name="p_tioobj_r4_2"></a>回滚段（undo）文件的IO。</p>
+</td>
+</tr>
+<tr id="row_tioobj_5"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.thread_io_object.1.1 "><p id="p_tioobj_r5_1"><a name="p_tioobj_r5_1"></a><a name="p_tioobj_r5_1"></a>Archive</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.thread_io_object.1.2 "><p id="p_tioobj_r5_2"><a name="p_tioobj_r5_2"></a><a name="p_tioobj_r5_2"></a>归档文件的IO。</p>
+</td>
+</tr>
+<tr id="row_tioobj_6"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.thread_io_object.1.1 "><p id="p_tioobj_r6_1"><a name="p_tioobj_r6_1"></a><a name="p_tioobj_r6_1"></a>Other</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.thread_io_object.1.2 "><p id="p_tioobj_r6_2"><a name="p_tioobj_r6_2"></a><a name="p_tioobj_r6_2"></a>其他对象的IO（默认值）。</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**表 3**  IO操作上下文类型（context_name）取值及描述
+
+<a name="table_thread_io_context"></a>
+<table><thead align="left"><tr id="row_thread_io_context_head"><th class="cellrowborder" valign="top" width="17.169999999999998%" id="mcps1.thread_io_context.1.1"><p id="p_tioctx_1"><a name="p_tioctx_1"></a><a name="p_tioctx_1"></a>取值</p>
+</th>
+<th class="cellrowborder" valign="top" width="82.83%" id="mcps1.thread_io_context.1.2"><p id="p_tioctx_2"><a name="p_tioctx_2"></a><a name="p_tioctx_2"></a>描述</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr id="row_tioctx_1"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.thread_io_context.1.1 "><p id="p_tioctx_r1_1"><a name="p_tioctx_r1_1"></a><a name="p_tioctx_r1_1"></a>Normal</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.thread_io_context.1.2 "><p id="p_tioctx_r1_2"><a name="p_tioctx_r1_2"></a><a name="p_tioctx_r1_2"></a>常规单点读写IO。</p>
+</td>
+</tr>
+<tr id="row_tioctx_2"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.thread_io_context.1.1 "><p id="p_tioctx_r2_1"><a name="p_tioctx_r2_1"></a><a name="p_tioctx_r2_1"></a>BulkRead</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.thread_io_context.1.2 "><p id="p_tioctx_r2_2"><a name="p_tioctx_r2_2"></a><a name="p_tioctx_r2_2"></a>批量读取IO，如预取、全表扫描。</p>
+</td>
+</tr>
+<tr id="row_tioctx_3"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.thread_io_context.1.1 "><p id="p_tioctx_r3_1"><a name="p_tioctx_r3_1"></a><a name="p_tioctx_r3_1"></a>BulkWrite</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.thread_io_context.1.2 "><p id="p_tioctx_r3_2"><a name="p_tioctx_r3_2"></a><a name="p_tioctx_r3_2"></a>批量写入IO，如COPY导入。</p>
+</td>
+</tr>
+<tr id="row_tioctx_4"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.thread_io_context.1.1 "><p id="p_tioctx_r4_1"><a name="p_tioctx_r4_1"></a><a name="p_tioctx_r4_1"></a>Vacuum</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.thread_io_context.1.2 "><p id="p_tioctx_r4_2"><a name="p_tioctx_r4_2"></a><a name="p_tioctx_r4_2"></a>垃圾回收（VACUUM）IO。</p>
+</td>
+</tr>
+<tr id="row_tioctx_5"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.thread_io_context.1.1 "><p id="p_tioctx_r5_1"><a name="p_tioctx_r5_1"></a><a name="p_tioctx_r5_1"></a>Recovery</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.thread_io_context.1.2 "><p id="p_tioctx_r5_2"><a name="p_tioctx_r5_2"></a><a name="p_tioctx_r5_2"></a>崩溃恢复回放IO。</p>
+</td>
+</tr>
+<tr id="row_tioctx_6"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.thread_io_context.1.1 "><p id="p_tioctx_r6_1"><a name="p_tioctx_r6_1"></a><a name="p_tioctx_r6_1"></a>Replication</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.thread_io_context.1.2 "><p id="p_tioctx_r6_2"><a name="p_tioctx_r6_2"></a><a name="p_tioctx_r6_2"></a>主备复制IO。</p>
+</td>
+</tr>
+<tr id="row_tioctx_7"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.thread_io_context.1.1 "><p id="p_tioctx_r7_1"><a name="p_tioctx_r7_1"></a><a name="p_tioctx_r7_1"></a>Unknown</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.thread_io_context.1.2 "><p id="p_tioctx_r7_2"><a name="p_tioctx_r7_2"></a><a name="p_tioctx_r7_2"></a>无法识别的上下文（默认值）。</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**表 4**  线程IO角色编号（io_role_id）与名称（role_name）对应关系
 
 <a name="table_thread_io_role"></a>
 <table><thead align="left"><tr id="row_thread_io_role_head"><th class="cellrowborder" valign="top" width="17.169999999999998%" id="mcps1.2.3.1.1"><p id="p_tior_1"><a name="p_tior_1"></a><a name="p_tior_1"></a>io_role_id</p>
