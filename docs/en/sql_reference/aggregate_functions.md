@@ -239,9 +239,9 @@
 
 - array_agg(expression)
 
-    Description: Concatenates all input values (including nulls) into an array.
+    Description: Concatenate scalar input values (including NULL) into an array. Concatenate array inputs of the same dimension into an array of one higher dimension. Empty arrays cannot be concatenated; input arrays cannot be entirely NULL (partial NULLs are allowed); arrays of different dimensions cannot be concatenated. The dimension of input arrays must not exceed 5.
 
-    Return type: array of the parameter type.
+    Return type: an array of the parameter type for scalar inputs; an array with the original dimension increased by 1 for array inputs.
 
     Example:
 
@@ -255,6 +255,12 @@
     ---------------- 
      {NULL,1,2,3,4} 
     (1 row) 
+
+    openGauss=# SELECT ARRAY_AGG(ARRAY[i+1.2, i+1.3, i+1.4]) FROM GENERATE_SERIES(1,3) G(i);
+                  array_agg                  
+    ---------------------------------------------
+    {{2.2,2.3,2.4},{3.2,3.3,3.4},{4.2,4.3,4.4}}
+    (1 row)
     openGauss=# DROP TABLE array_agg_t1;
     ```
 
