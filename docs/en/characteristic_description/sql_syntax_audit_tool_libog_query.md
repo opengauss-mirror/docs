@@ -46,6 +46,6 @@ None.
 
 ## References<a name="section57771982"></a>
 
-Open source community address: [libog_query](https://gitcode.com/opengauss/openGauss-server/tree/master/src/bin/libog_query/)
+Open source community address: [libog_query](https://atomgit.com/opengauss/openGauss-server/tree/master/src/bin/libog_query/)
 
-Detailed reference documentation: <a href="https://gitcode.com/opengauss/openGauss-server/blob/master/src/bin/libog_query/readme.md ">README.md</a>
+Detailed reference documentation: <a href="https://atomgit.com/opengauss/openGauss-server/blob/master/src/bin/libog_query/readme.md ">README.md</a>

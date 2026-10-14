@@ -12,7 +12,7 @@ This section describes how to install openGauss using Docker, facilitating insta
 
 ## Configuration Preparation<a name="zh-cn_topic_0283136491_section260555142417"></a>
 
-Use the `buildDockerImage.sh` script to build the Docker image. `buildDockerImage.sh` is a shell script that offers SHA256 validation, accessible from the [server repository](https://gitcode.com/opengauss/openGauss-server/tree/master/docker/dockerfiles) or the [container repository](https://gitcode.com/opengauss/openGauss-container).
+Use the `buildDockerImage.sh` script to build the Docker image. `buildDockerImage.sh` is a shell script that offers SHA256 validation, accessible from the [server repository](https://atomgit.com/opengauss/openGauss-server/tree/master/docker/dockerfiles) or the [container repository](https://atomgit.com/opengauss/openGauss-container).
 
 ## Installing a Single-node Database Using Containers
 

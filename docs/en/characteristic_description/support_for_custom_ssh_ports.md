@@ -32,7 +32,7 @@ None.
 
 ## References<a name="section57771982"></a>
 
-Open source community address: <https://gitcode.com/opengauss/openGauss-OM>.
+Open source community address: <https://atomgit.com/opengauss/openGauss-OM>.
 
 For creating an XML file, see: <a href="../installation_guide/creating_an_xml_configuration_file.md">Creating an XML Configuration File</a>
 

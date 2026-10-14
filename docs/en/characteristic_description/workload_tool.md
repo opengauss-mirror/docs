@@ -42,6 +42,6 @@ When recording using the tcpdump method, it depends on the tcpdump tool.
 
 ## References<a name="section57771982"></a>
 
-Open source community address: [transcribe-replay-tool](https://gitcode.com/opengauss/compatibility-assessment/tree/master/dynamic_sql_collection/transcribe-replay-tool)
+Open source community address: [transcribe-replay-tool](https://atomgit.com/opengauss/compatibility-assessment/tree/master/dynamic_sql_collection/transcribe-replay-tool)
 
-For detailed reference documentation, see <a href="https://gitcode.com/opengauss/compatibility-assessment/tree/master/dynamic_sql_collection/transcribe-replay-tool#sql%E6%B5%81%E9%87%8F%E5%BD%95%E5%88%B6%E5%9B%9E%E6%94%BE%E5%B7%A5%E5%85%B7">README.md</a>
+For detailed reference documentation, see <a href="https://atomgit.com/opengauss/compatibility-assessment/tree/master/dynamic_sql_collection/transcribe-replay-tool#sql%E6%B5%81%E9%87%8F%E5%BD%95%E5%88%B6%E5%9B%9E%E6%94%BE%E5%B7%A5%E5%85%B7">README.md</a>

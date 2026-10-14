@@ -66,7 +66,7 @@ None.
 
 ## References<a name="section57771982"></a>
 
-Open-source community address: <https://gitcode.com/opengauss/openGauss-OM>
+Open-source community address: <https://atomgit.com/opengauss/openGauss-OM>
 
 gs_checkos documentation: <a href="../tool_and_commandreference/gs_checkos.md">Check</a>
 

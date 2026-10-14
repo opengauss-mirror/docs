@@ -6,7 +6,7 @@ This section introduces the installation and upgrade of openGauss with one-prima
 
 ## Steps for Docker-based Installation
 
-The primary/standby deployment script and configurations are stored [here](https://gitcode.com/opengauss/openGauss-server/tree/master/docker/deploy).
+The primary/standby deployment script and configurations are stored [here](https://atomgit.com/opengauss/openGauss-server/tree/master/docker/deploy).
 
 1. Log in to the node as user `root`.
 

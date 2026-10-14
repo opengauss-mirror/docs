@@ -32,4 +32,4 @@ The oG_datasync_full_migration tool requires JDK 11 or later.
 
 ## References<a name="section57771982"></a>
 
-For detailed descriptions and usage documentation of oG_datasync_full_migration, see [SQL Server Full Migration Guide](https://gitcode.com/opengauss/debezium/blob/master/migration-tool/README.md).
+For detailed descriptions and usage documentation of oG_datasync_full_migration, see [SQL Server Full Migration Guide](https://atomgit.com/opengauss/debezium/blob/master/migration-tool/README.md).

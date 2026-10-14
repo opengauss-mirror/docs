@@ -32,4 +32,4 @@ The debezium-connector-postgres tool depends on the third-party components kafka
 
 ## References<a name="section57771982"></a>
 
-For detailed description and usage documentation of debezium-connector-postgres, see [PostgreSQL Migration Guide](https://gitcode.com/opengauss/debezium/blob/master/README.md#debezium-postgres-connector-1).
+For detailed description and usage documentation of debezium-connector-postgres, see [PostgreSQL Migration Guide](https://atomgit.com/opengauss/debezium/blob/master/README.md#debezium-postgres-connector-1).
