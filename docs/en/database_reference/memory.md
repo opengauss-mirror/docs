@@ -63,6 +63,20 @@ The value on the database node is determined based on the physical memory of the
 >[!WARNING]CAUTION 
 >If this parameter is set to a value greater than the physical memory of the server, the OS OOM problem may occur.
 
+## enable\_cached\_size<a name="enable_cached_size"></a>
+
+**Parameter description**: Specifies the maximum number of memory contexts retained in each per-thread context cache list. Default-sized and small-sized memory contexts use separate cache lists. This parameter is an integer count, not a Boolean switch, a cache size in bytes, or an instance-wide memory limit.
+
+This is a POSTMASTER parameter. Set it based on instructions provided in [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: An integer from 0 to 1024, measured in memory contexts. **0** disables memory context caching.
+
+**Default value**: **100**
+
+**Constraints**: The caching optimization path applies to standard memory contexts (STANDARD_CONTEXT) only when `disable_memory_stats` is **on**, `enable_cached_size` is greater than 0, and the build does not enable `ENABLE_MEMORY_CHECK`. Because `disable_memory_stats` is **off** by default, setting `enable_cached_size` alone does not enable this optimization path.
+
+**Setting suggestions**: A larger value can increase context reuse but may also increase memory retained by threads. Evaluate the thread count, available memory, and workload. This value is not an instance-wide cache limit.
+
 ## enable\_memory\_context\_control<a name="en-us_topic_0283136786_en-us_topic_0237124699_section83355314353"></a>
 
 **Parameter description**: Specifies whether to enable the function of checking whether the number of memory contexts exceeds the specified limit. This parameter applies only to the DEBUG version.
