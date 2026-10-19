@@ -18,6 +18,17 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description:**  Specifies one or more shared libraries to be preloaded at server start. If multiple libraries are to be loaded, separate their names using commas \(,\). Only the sysadmin user can access this parameter. For example,  **$libdir/mylib**  will cause  **mylib.so**  \(or on some platforms,  **mylib.sl**\) to be preloaded before the loading of the standard library directory.
 
+Library name resolution works together with [dynamic_library_path](other-default-parameters.md#en-us_topic_0283136682_en-us_topic_0237124734_en-us_topic_0059778260_s8b9823f07b8c4e25b6e81143fbabbe31). Names without a directory component, such as `a.so` and `b.so`, are searched for in the configured directories in order. If the search path is empty and a library file cannot be located, the server fails to start. Names containing a directory component, such as an absolute path or `$libdir/a`, are resolved directly without using the search path.
+
+For example, if the preloaded libraries `a.so` and `b.so` are in `/opt/myplugins`, configure:
+
+```conf
+dynamic_library_path = '/opt/myplugins:$libdir'
+shared_preload_libraries = 'a.so,b.so'
+```
+
+Before applying the configuration, ensure that all effective preload entries, including libraries preloaded by default in the current version, can be located, accessed, and loaded by the server. Setting `dynamic_library_path` to an empty string does not clear the preload list or ignore loading failures.
+
 You can preinstall the openGauss's stored procedure library using the  **$libdir/pl**_XXX_  syntax as described in the preceding text.  _XXX_  can only be  **pgsql**,  **perl**,  **tcl**, or  **python**.
 
 By preloading a shared library and initializing it as required, the library startup time is avoided when the library is first used. However, the time to start each new server process may increase, even if that process never uses the library. Therefore, set this parameter only for libraries that will be used in most sessions.
