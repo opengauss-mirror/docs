@@ -64,6 +64,20 @@
 >当该值设置不合理，即大于服务器物理内存，可能导致操作系统OOM问题。
 >若一台机器上部署多个数据库实例时，需要缩小相关配置。
 
+## enable\_cached\_size<a name="enable_cached_size"></a>
+
+**参数说明**：设置每个线程中每个内存上下文缓存链表可保留的内存上下文数量上限。默认规格和小规格内存上下文分别使用独立的缓存链表。该参数是整数计数，不是布尔开关，也不是缓存内存的字节数或整个实例的内存上限。
+
+该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**：整型，0～1024，单位为个。0表示禁用内存上下文缓存。
+
+**默认值**：100
+
+**使用限制**：缓存优化路径仅在`disable_memory_stats`为on、`enable_cached_size`大于0且构建未启用`ENABLE_MEMORY_CHECK`时用于普通内存上下文（STANDARD_CONTEXT）。`disable_memory_stats`默认为off，因此仅设置`enable_cached_size`不会启用该优化路径。
+
+**设置建议**：增大该值可增加内存上下文的复用机会，也可能增加线程保留的内存。请结合线程数量、内存余量和实际负载评估，不能将该值视为整个实例的缓存总量。
+
 ## enable\_memory\_context\_control<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_section83355314353"></a>
 
 **参数说明**： 启用检查内存上下文是否超过给定限制的功能。仅适用于DEBUG版本。
