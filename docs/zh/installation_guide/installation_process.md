@@ -46,7 +46,7 @@ openGauss的安装流程如[图1](#fig18264185162412)所示。
 </tr>
 <tr id="zh-cn_topic_0241802562_row670315277496"><td class="cellrowborder" valign="top" width="19.439999999999998%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0241802562_p11500125541018"><a name="zh-cn_topic_0241802562_p11500125541018"></a><a name="zh-cn_topic_0241802562_p11500125541018"></a>初始化安装环境</p>
 </td>
-<td class="cellrowborder" valign="top" width="80.56%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0241802562_p050165514102"><a name="zh-cn_topic_0241802562_p050165514102"></a><a name="zh-cn_topic_0241802562_p050165514102"></a>安装环境的初始化包含上传安装包和XML文件、解压安装包、使用gs_preinstall准备好安装环境。</p>
+<td class="cellrowborder" valign="top" width="80.56%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0241802562_p050165514102"><a name="zh-cn_topic_0241802562_p050165514102"></a><a name="zh-cn_topic_0241802562_p050165514102"></a>使用gs_preinstall准备好安装环境。</p>
 <p id="zh-cn_topic_0241802562_p105401311419"><a name="zh-cn_topic_0241802562_p105401311419"></a><a name="zh-cn_topic_0241802562_p105401311419"></a>关于如何初始化安装环境，详细请参见<a href="initializing_the_installation_environment.md">初始化安装环境</a>。</p>
 </td>
 </tr>
