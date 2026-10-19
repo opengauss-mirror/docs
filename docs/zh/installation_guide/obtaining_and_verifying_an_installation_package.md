@@ -48,13 +48,13 @@ openGauss开源社区上提供了安装包的获取方式。
 
 ### 指导操作
 
-文完整性校验操作步骤如下：
+文件完整性校验操作步骤如下：
 
 1. 计算文件的sha256校验值。linux执行命令如下：
 
     ```
-    sha256sum openGauss-OM-6.0.0-openEuler20.03-aarch64.tar.gz
-    sha256sum openGauss-Server-6.0.0-openEuler20.03-aarch64.tar.bz2
+    sha256sum openGauss-OM-x.x.x-openEuler20.03-x86_64.tar.gz
+    sha256sum openGauss-Server-x.x.x-openEuler20.03-x86_64.tar.bz2
     ```
 
     命令执行完成后，输出校验值。
