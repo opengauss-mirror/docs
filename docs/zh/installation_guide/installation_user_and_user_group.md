@@ -1,6 +1,6 @@
 # 了解安装用户及用户组
 
-为了实现安装过程中安装帐户权限最小化，及安装后openGauss的系统运行安全性，安装脚本在安装过程中会自动按照用户指定内容创建安装用户，并将此用户作为后续运行和维护openGauss的管理员帐户。
+为了实现安装过程中安装用户权限最小化，及安装后openGauss的系统运行安全性，安装脚本在安装过程中会自动按照用户指定内容创建安装用户，并将此用户作为后续运行和维护openGauss的管理员用户。
 
 <a name="zh-cn_topic_0241802568_table17383868"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0241802568_row16223649"><th class="cellrowborder" valign="top" width="21.997800219978004%" id="mcps1.1.4.1.1"><p id="zh-cn_topic_0241802568_p64251046"><a name="zh-cn_topic_0241802568_p64251046"></a><a name="zh-cn_topic_0241802568_p64251046"></a>用户/组名</p>
@@ -33,4 +33,4 @@
 </tbody>
 </table>
 
-在安装openGauss过程中运行“gs\_preinstall”时，会创建与安装用户同名的数据库用户，即数据库用户omm。此用户具备数据库的最高操作权限，此用户初始密码由用户指定。
+在安装openGauss过程中运行“gs\_preinstall”时，会创建与安装用户同名的数据库用户，即数据库用户omm。此用户具备数据库的最高操作权限，初始密码由用户指定。
