@@ -19,6 +19,14 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 >[!NOTE]NOTE 
 >If the value of this parameter is set to an empty character string, the automatic path search is turned off.
 
+When configuring `shared_preload_libraries`, set `dynamic_library_path` according to how the library names are specified:
+
+- For names without a directory component, such as `a.so` and `b.so`, the search path must include the directories containing the library files. Use `$libdir` to refer to the standard module installation directory.
+- An empty search path disables lookup through this parameter and does not implicitly fall back to `$libdir`. If a preloaded library cannot be resolved to a loadable file, the server fails to start. An empty string is a valid parameter value, but it does not guarantee successful startup with an arbitrary preload list.
+- An absolute path or a name with a directory component, such as `$libdir/a`, is resolved directly without using this search path. An empty search path does not prohibit loading through an explicit path. The file must still exist, be accessible, and be compatible with the server.
+
+For details, see [shared_preload_libraries](kernel_resource_usage.md#en-us_topic_0283136857_en-us_topic_0237124701_en-us_topic_0059778187_sebbf3e0360214c95b3af62c0fb6d511a).
+
 **Default value**:  **$libdir**
 
 ## gin\_fuzzy\_search\_limit<a name="en-us_topic_0283136682_en-us_topic_0237124734_en-us_topic_0059778260_s9c1fca9cfc7e4a08847cd046aeb5303f"></a>

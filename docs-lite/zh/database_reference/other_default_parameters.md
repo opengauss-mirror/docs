@@ -20,6 +20,14 @@ dynamic_library_path = '/usr/local/lib/gaussdb:/opt/testgs/lib:$libdir'
 >
 >设置为空字符串，表示关闭自动路径搜索。
 
+配置 `shared_preload_libraries` 时，需结合库名的写法设置 `dynamic_library_path`：
+
+- 使用 `a.so`、`b.so` 等不含目录的库名时，应确保搜索路径包含库文件所在目录。可以使用 `$libdir` 表示标准模块安装目录。
+- 将搜索路径设为空字符串后，不再通过本参数查找这些库，也不会自动回退到 `$libdir`。如果预加载库无法定位到可加载的文件，服务器启动失败。空字符串是合法取值，但不保证它与任意预加载库列表组合后都能成功启动。
+- 使用绝对路径或 `$libdir/a` 等含目录的库名时，直接解析指定路径，不依赖本参数的搜索目录列表；空搜索路径不会禁止这种显式路径加载。库文件仍需存在、可访问并与服务器兼容。
+
+详情请参见 [shared_preload_libraries](kernel_resource_usage.md#zh-cn_topic_0283136857_zh-cn_topic_0237124701_zh-cn_topic_0059778187_sebbf3e0360214c95b3af62c0fb6d511a)。
+
 **默认值**： $libdir
 
 ## gin\_fuzzy\_search\_limit<a name="zh-cn_topic_0283136682_zh-cn_topic_0237124734_zh-cn_topic_0059778260_s9c1fca9cfc7e4a08847cd046aeb5303f"></a>

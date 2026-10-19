@@ -18,6 +18,17 @@
 
 **参数说明**： 此参数用于声明一个或者多个在服务器启动的时候预先装载的共享库，多个库名称之间用逗号分隔。比如 '$libdir/mylib' 会在加载标准库目录中的库文件之前预先加载mylib.so（某些平台上可能是mylib.sl）库文件。
 
+库名称的解析方式与 [dynamic_library_path](other_default_parameters.md#zh-cn_topic_0237124734_zh-cn_topic_0059778260_s8b9823f07b8c4e25b6e81143fbabbe31) 配合使用。不含目录的名称（例如 `a.so`、`b.so`）按照该参数指定的目录顺序查找；如果搜索路径为空且库文件无法定位，服务会启动失败。包含目录的名称（例如绝对路径或 `$libdir/a`）直接解析指定路径，不依赖该搜索目录列表。
+
+例如，预加载库 `a.so` 和 `b.so` 位于 `/opt/myplugins` 时，可以配置：
+
+```conf
+dynamic_library_path = '/opt/myplugins:$libdir'
+shared_preload_libraries = 'a.so,b.so'
+```
+
+配置前应确保所有实际预加载的库（包括当前版本默认预加载的库）均可定位、可访问并与服务器兼容。将 `dynamic_library_path` 设为空字符串不会取消预加载列表，也不会忽略加载失败。
+
 可以用这个方法预先装载openGauss的存储过程库，通常是使用 '$libdir/plXXX' 语法。XXX只能是pgsql、perl、tcl、python之一。
 
 通过预先装载一个共享库并在需要的时候初始化它，可以避免第一次使用这个库的加载时间。但是启动每个服务器进程的时间可能会增加，即使进程从来没有使用过这些库。因此建议对那些将被大多数会话使用的库才使用这个选项。
