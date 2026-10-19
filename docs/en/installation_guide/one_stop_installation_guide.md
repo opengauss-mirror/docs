@@ -31,7 +31,7 @@ This section details the one-stop installation of openGauss, which allows you to
     ./gs_preinstall -U omm -G dbgroup --one-stop-install --sep-env-file=ENVFILE
     ```
 
-    Remove --sep-env-file if environment separation is not required. targetDir is the storage path after the package is decompressed. omDir is the storage path after the OM package is decompressed.
+    Remove --sep-env-file if environment separation is not required. targetDir is the storage path after the package is decompressed.
 
 2. After execution, the program first checks the local default character set. Based on the configured language settings, it displays a navigation bar in the corresponding language. The user then selects the language to use for the subsequent installation (supported: Chinese, English).
 
