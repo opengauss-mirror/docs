@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE PUBLICATION in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE PUBLICATION, SQL, Function, Precautions]
+---
+
 # CREATE PUBLICATION<a name="EN-US_TOPIC_0000001243437361"></a>
 
 ## Function<a name="section12584151914217"></a>

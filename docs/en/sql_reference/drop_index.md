@@ -1,3 +1,8 @@
+---
+description: This document describes DROP INDEX in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP INDEX, SQL, Function, Precautions]
+---
+
 # DROP INDEX<a name="EN-US_TOPIC_0289899909"></a>
 
 ## Function<a name="en-us_topic_0283136794_en-us_topic_0237122140_en-us_topic_0059779018_s6e7bed7d44604f749e4ea7043f81b07b"></a>

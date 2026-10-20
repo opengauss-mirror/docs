@@ -1,3 +1,8 @@
+---
+description: This document describes SMP for Parallel Execution in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, SMP for Parallel Execution, features, Availability, Introduction]
+---
+
 # SMP for Parallel Execution<a name="EN-US_TOPIC_0000001105395260"></a>
 
 ## Availability<a name="section3480125215575"></a>

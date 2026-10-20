@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Recovery Concepts in openGauss.
+keywords: [openGauss, MOT Recovery Concepts, database administration]
+---
+
 # MOT Recovery Concepts<a name="EN-US_TOPIC_0270171541"></a>
 
 The MOT Recovery Module provides all the required functionality for recovering the MOT tables data. The main objective of the Recovery module is to restore the data and the MOT engine to a consistent state after a planned \(maintenance for example\) shut down or an unplanned \(power failure for example\) crash.

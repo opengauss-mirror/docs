@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SESSION\_STAT\_ACTIVITY 的相关内容与操作方法。
+keywords: [openGauss, SESSION\_STAT\_ACTIVITY, SQL参考]
+---
+
 # SESSION\_STAT\_ACTIVITY
 
 显示当前节点上正在运行的线程相关的信息。

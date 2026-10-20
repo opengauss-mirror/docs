@@ -1,3 +1,8 @@
+---
+description: This document describes DROP COLUMN ENCRYPTION KEY in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP COLUMN ENCRYPTION KEY, SQL, Function, Precautions]
+---
+
 # DROP COLUMN ENCRYPTION KEY<a name="EN-US_TOPIC_0294528091"></a>
 
 ## Function<a name="section77761618077"></a>

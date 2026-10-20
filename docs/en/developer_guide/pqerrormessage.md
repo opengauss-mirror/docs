@@ -1,3 +1,8 @@
+---
+description: This document describes PQerrorMessage in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, PQerrorMessage, development, Function, Prototype]
+---
+
 # PQerrorMessage<a name="EN-US_TOPIC_0242380693"></a>
 
 ## Function<a name="en-us_topic_0059778058_sa9bd6e837fd4458199f7b677e876f4a9"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes SELECT INTO in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, SELECT INTO, SQL, Function, Precautions]
+---
+
 # SELECT INTO<a name="EN-US_TOPIC_0289900598"></a>
 
 ## Function<a name="en-us_topic_0283137419_en-us_topic_0237122185_en-us_topic_0059779381_s8acfcbcb82b947e08be0c1bb0de2de86"></a>

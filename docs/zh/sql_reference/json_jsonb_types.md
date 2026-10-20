@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss JSON/JSONB类型 的相关内容，涵盖 输入格式、JSONB高级特性 等内容。
+keywords: [openGauss, JSON/JSONB类型, SQL参考, 输入格式, JSONB高级特性]
+---
+
 # JSON/JSONB类型
 
 JSON（JavaScript Object Notation）数据，可以是单独的一个标量，也可以是一个数组，也可以是一个键值对象，其中数组和对象可以统称容器（container）：

@@ -1,3 +1,8 @@
+---
+description: This document describes Ultimate RTO in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Ultimate RTO, features, Availability, Introduction]
+---
+
 # Ultimate RTO<a name="EN-US_TOPIC_0000001152275221"></a>
 
 ## Availability<a name="section57017810"></a>

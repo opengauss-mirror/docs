@@ -1,3 +1,8 @@
+---
+description: This document describes SUBTYPE in openGauss, covering topics such as Brief, Syntax.
+keywords: [openGauss, SUBTYPE, SQL, Brief, Syntax]
+---
+
 # SUBTYPE
 
 ## Brief

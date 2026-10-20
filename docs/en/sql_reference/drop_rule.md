@@ -1,3 +1,8 @@
+---
+description: This document describes DROP RULE in openGauss, covering topics such as Function, Syntax.
+keywords: [openGauss, DROP RULE, SQL, Function, Syntax]
+---
+
 # DROP RULE<a name="EN-US_TOPIC_0306398143"></a>
 
 ## Function<a name="section5400959952"></a>

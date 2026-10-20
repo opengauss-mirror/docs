@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MySQL兼容性说明 的相关内容与操作方法。
+keywords: [openGauss, MySQL兼容性说明, 数据迁移]
+---
+
 # MySQL兼容性说明
 
 openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插件的说明可参考[Dolphin插件介绍](https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin.html)。在openGauss内核中实现的MySQL兼容性特性见下表。

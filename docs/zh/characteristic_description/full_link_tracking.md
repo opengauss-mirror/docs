@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 全链路跟踪 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 全链路跟踪, 特性描述, 可获得性, 特性简介]
+---
+
 # 全链路跟踪
 
 ## 可获得性<a name="section147531742205517"></a>

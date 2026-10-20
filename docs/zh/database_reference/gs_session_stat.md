@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_SESSION\_STAT 的相关内容与操作方法。
+keywords: [openGauss, GS\_SESSION\_STAT, 数据库参考]
+---
+
 # GS\_SESSION\_STAT
 
 GS\_SESSION\_STAT视图以会话线程或AutoVacuum线程为单位，统计会话状态信息。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 其它配置 的相关内容，涵盖 确保backslash_quote参数配置正确、禁止修改系统表结构 等内容。
+keywords: [openGauss, 其它配置, 数据库运维, 确保backslash_quote参数配置正确, 禁止修改系统表结构]
+---
+
 # 其它配置
 
 ## 确保backslash_quote参数配置正确

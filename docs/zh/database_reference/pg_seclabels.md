@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_SECLABELS 的相关内容与操作方法。
+keywords: [openGauss, PG\_SECLABELS, 数据库参考]
+---
+
 # PG\_SECLABELS
 
 PG\_SECLABELS视图提供关于安全标签的信息。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER LARGE OBJECT 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER LARGE OBJECT, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER LARGE OBJECT
 
 ## 功能描述<a name="zh-cn_topic_0283137719_zh-cn_topic_0237122064_zh-cn_topic_0059778505_sbaf83721f63f42a9ba63625707e18b5c"></a>

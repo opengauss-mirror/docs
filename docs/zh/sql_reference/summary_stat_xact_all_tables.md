@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SUMMARY\_STAT\_XACT\_ALL\_TABLES 的相关内容与操作方法。
+keywords: [openGauss, SUMMARY\_STAT\_XACT\_ALL\_TABLES, SQL参考]
+---
+
 # SUMMARY\_STAT\_XACT\_ALL\_TABLES
 
 显示openGauss内汇聚的命名空间中所有普通表和toast表的事务状态信息。

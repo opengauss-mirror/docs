@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 区域和格式化 的相关内容，涵盖 DateStyle、IntervalStyle 等内容。
+keywords: [openGauss, 区域和格式化, 数据库参考, DateStyle, IntervalStyle]
+---
+
 # 区域和格式化
 
 介绍时间格式设置的相关参数。

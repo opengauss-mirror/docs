@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss pg\_recvlogical 的相关内容，涵盖 功能介绍、语法 等内容。
+keywords: [openGauss, pg\_recvlogical, 工具与命令参考, 功能介绍, 语法]
+---
+
 # pg\_recvlogical
 
 ## 功能介绍<a name="section143231619112111"></a>

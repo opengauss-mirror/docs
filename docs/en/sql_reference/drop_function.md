@@ -1,3 +1,8 @@
+---
+description: This document describes DROP FUNCTION in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP FUNCTION, SQL, Function, Precautions]
+---
+
 # DROP FUNCTION<a name="EN-US_TOPIC_0289900712"></a>
 
 ## Function<a name="en-us_topic_0283137306_en-us_topic_0237122138_en-us_topic_0059778261_se0a88dccf4a449189e3598bd873250fe"></a>

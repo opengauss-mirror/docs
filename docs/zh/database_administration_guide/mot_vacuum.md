@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MOT VACUUM清理 的相关内容与操作方法。
+keywords: [openGauss, MOT VACUUM清理, 数据库管理]
+---
+
 # MOT VACUUM清理
 
 使用VACUUM进行垃圾收集，并有选择地分析数据库，如下所示。

@@ -1,3 +1,8 @@
+---
+description: This document describes XML Type in openGauss.
+keywords: [openGauss, XML Type, SQL]
+---
+
 # XML Type<a name="EN-US_TOPIC_0275402505"></a>
 
 XML data types can be used to store XML data. Its internal format is the same as the TEXT type. Its advantages over storing XML data directly in a TEXT domain are that it will use the processing ability of LIBXML2 for XML formatted text, check whether the structure of the input value conforms to the XML standard, and provide support functions based on LIBXML2 to perform type-safe operations on it.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 支持标准SQL 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 支持标准SQL, 特性描述, 可获得性, 特性简介]
+---
+
 # 支持标准SQL
 
 ## 可获得性<a name="section38134078"></a>

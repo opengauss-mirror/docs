@@ -1,3 +1,8 @@
+---
+description: This document describes Data Check in openGauss, covering topics such as Principles, Environment Preparation.
+keywords: [openGauss, Data Check, data migration, Principles, Environment Preparation]
+---
+
 # Data Check<a name="EN-US_TOPIC_0000001398052181"></a>
 
 The data check project **openGauss-tools-datachecker-performance** consists of the check service and extract service. The check service is used for data check, and the extract service is used for data extraction and normalization.

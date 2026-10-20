@@ -1,3 +1,8 @@
+---
+description: This document describes Transaction Isolation in openGauss.
+keywords: [openGauss, Transaction Isolation, database O&M]
+---
+
 # Transaction Isolation<a name="EN-US_TOPIC_0242370299"></a>
 
 openGauss manages transactions based on MVCC and two-phase locks, avoiding conflicts between read and write operations. SELECT is a read-only operation, whereas UPDATE and DELETE are read/write operations.

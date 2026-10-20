@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ROLLBACK 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ROLLBACK, SQL参考, 功能描述, 注意事项]
+---
+
 # ROLLBACK
 
 ## 功能描述<a name="zh-cn_topic_0283137047_zh-cn_topic_0237122180_zh-cn_topic_0059778963_s332087a99fa4409188f6347dab075098"></a>

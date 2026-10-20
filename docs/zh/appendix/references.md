@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 参考文献 的相关内容与操作方法。
+keywords: [openGauss, 参考文献, 附录]
+---
+
 # 参考文献
 
 \[1\] Y. Mao, E. Kohler, and R. T. Morris. Cache craftiness for fast multicore key-value storage. In Proc. 7th ACM European Conference on Computer Systems \(EuroSys\), Apr. 2012.

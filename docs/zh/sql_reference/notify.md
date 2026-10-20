@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss NOTIFY 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, NOTIFY, SQL参考, 功能描述, 注意事项]
+---
+
 # NOTIFY
 
 ## 功能描述<a name="zh-cn_topic_0283137580_zh-cn_topic_0237122171_zh-cn_topic_0059778631_s73bdfafa6f9743e9a9e0a4f7b40cc2c2"></a>

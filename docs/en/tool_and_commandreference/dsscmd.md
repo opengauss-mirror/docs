@@ -1,3 +1,8 @@
+---
+description: This document describes dsscmd in openGauss, covering topics such as Overview, Command.
+keywords: [openGauss, dsscmd, tools and commands, Overview, Command]
+---
+
 # dsscmd<a name="EN-US_TOPIC_0000001321698602"></a>
 
 ## Overview<a name="section1377524355216"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Restrictions in openGauss.
+keywords: [openGauss, Restrictions, SQL]
+---
+
 # Restrictions<a name="EN-US_TOPIC_0289900513"></a>
 
 >[!WARNING]CAUTION 

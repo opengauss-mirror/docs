@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_TXN\_SNAPSHOT in openGauss.
+keywords: [openGauss, GS\_TXN\_SNAPSHOT, database reference]
+---
+
 # GS\_TXN\_SNAPSHOT<a name="EN-US_TOPIC_0000001151428985"></a>
 
 **GS\_TXN\_SNAPSHOT** is a timestamp-CSN mapping table. It periodically samples and maintains an appropriate time range to estimate the CSN value corresponding to the timestamp in the range.

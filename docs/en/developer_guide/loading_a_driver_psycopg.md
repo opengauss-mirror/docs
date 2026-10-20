@@ -1,3 +1,8 @@
+---
+description: This document describes Loading a Driver in openGauss.
+keywords: [openGauss, Loading a Driver, development]
+---
+
 # Loading a Driver<a name="EN-US_TOPIC_0000001080050160"></a>
 
 - Before using the driver, perform the following operations:

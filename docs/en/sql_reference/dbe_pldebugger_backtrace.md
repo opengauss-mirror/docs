@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_PLDEBUGGER.backtrace in openGauss.
+keywords: [openGauss, DBE\_PLDEBUGGER.backtrace, SQL]
+---
+
 # DBE\_PLDEBUGGER.backtrace<a name="EN-US_TOPIC_0000001121763470"></a>
 
 During debugging on the debug end, call  **backtrace**  to view the current call stack.

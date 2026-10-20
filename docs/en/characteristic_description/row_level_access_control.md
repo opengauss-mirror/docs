@@ -1,3 +1,8 @@
+---
+description: This document describes Row-Level Access Control in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Row-Level Access Control, features, Availability, Introduction]
+---
+
 # Row-Level Access Control<a name="EN-US_TOPIC_0000001135403991"></a>
 
 ## Availability<a name="section17746747"></a>

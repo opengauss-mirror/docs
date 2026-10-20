@@ -1,8 +1,13 @@
+---
+description: This document describes Migrating Data from MySQL Database to openGauss in openGauss, covering topics such as Tool Deployment Architecture.
+keywords: [openGauss, Migrating Data from MySQL Database to openGauss, data migration, Tool Deployment Architecture]
+---
+
 # Migrating Data from MySQL Database to openGauss<a name="EN-US_TOPIC_0000001347132520"></a>
 
 ## Tool Deployment Architecture<a name="section12438813102615"></a>
 
-![](figures/en-us_image_0000001368504658.png)
+![Tool Deployment Architecture diagram](figures/en-us_image_0000001368504658.png)
 
 Currently, openGauss supports the following MySQL migration services:
 

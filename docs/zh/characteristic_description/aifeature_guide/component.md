@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss component子命令 的相关内容，涵盖 命令参考 等内容。
+keywords: [openGauss, component子命令, 特性描述, 命令参考]
+---
+
 # component子命令<a name="ZH-CN_TOPIC_0000002293307665"></a>
 
 该子命令可以用于启动DBMind的子组件（或插件），包括可用于监控指标的exporter，以及AI功能等。该命令可以将用户通过命令行传入的命令转发给对应的子组件，故不同的子组件命令需参考其功能的对应说明，详见后文各个子组件对应章节，此处不再赘述。

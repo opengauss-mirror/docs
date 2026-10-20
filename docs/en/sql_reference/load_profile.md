@@ -1,3 +1,8 @@
+---
+description: This document describes Load Profile in openGauss.
+keywords: [openGauss, Load Profile, SQL]
+---
+
 # Load Profile<a name="EN-US_TOPIC_0000001215355218"></a>
 
 The following table lists metrics in the Load Profile report.

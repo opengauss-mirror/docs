@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_OBJECT in openGauss.
+keywords: [openGauss, PG\_OBJECT, database reference]
+---
+
 # PG\_OBJECT<a name="EN-US_TOPIC_0289900403"></a>
 
 **PG\_OBJECT**  records the creator, creation time, and last modification time of objects of specified types \(ordinary tables, indexes, sequences, views, stored procedures, and functions\).

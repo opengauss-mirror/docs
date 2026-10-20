@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Vacuum in openGauss.
+keywords: [openGauss, MOT Vacuum, database administration]
+---
+
 # MOT Vacuum<a name="EN-US_TOPIC_0270171503"></a>
 
 Use VACUUM for garbage collection and optionally to analyze a database, , as follows –

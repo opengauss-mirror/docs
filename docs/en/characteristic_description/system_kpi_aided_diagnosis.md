@@ -1,3 +1,8 @@
+---
+description: This document describes System KPI-aided Diagnosis in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, System KPI-aided Diagnosis, features, Availability, Introduction]
+---
+
 # System KPI-aided Diagnosis<a name="EN-US_TOPIC_0000001105395252"></a>
 
 ## Availability<a name="section6414518829"></a>
@@ -40,7 +45,7 @@ openGauss provides KPIs of 11 categories and 26 sub-categories, covering instanc
 [Figure 1](#fig20286741318)  shows the distribution of kernel KPIs.
 
 **Figure  1**  Distribution of kernel KPIs<a name="fig20286741318"></a>  
-![](figures/distribution-of-kernel-kpis.png)
+![Distribution of kernel KPIs](figures/distribution-of-kernel-kpis.png)
 
 ## Enhancements<a name="section161567423211"></a>
 

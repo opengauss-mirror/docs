@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE VIEW in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE VIEW, SQL, Function, Precautions]
+---
+
 # CREATE VIEW<a name="EN-US_TOPIC_0289900307"></a>
 
 ## Function<a name="en-us_topic_0283137480_en-us_topic_0237122126_en-us_topic_0059779377_sc0d0ea7296f7418d8e0b1a8878cf72ba"></a>

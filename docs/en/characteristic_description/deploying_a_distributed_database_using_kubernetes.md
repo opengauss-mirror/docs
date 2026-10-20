@@ -1,3 +1,8 @@
+---
+description: This document describes Deploying a Distributed Database Using Kubernetes in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Deploying a Distributed Database Using Kubernetes, features, Availability, Introduction]
+---
+
 # Deploying a Distributed Database Using Kubernetes<a name="EN-US_TOPIC_0000001264707841"></a>
 
 ## Availability<a name="section3594727121215"></a>

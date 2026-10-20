@@ -1,3 +1,8 @@
+---
+description: This document describes AI Features in openGauss, covering topics such as enable\_hypo\_index, db4ai\_snapshot\_mode.
+keywords: [openGauss, AI Features, database reference, enable\_hypo\_index, db4ai\_snapshot\_mode]
+---
+
 # AI Features<a name="EN-US_TOPIC_0000001108458456"></a>
 
 ## enable\_hypo\_index<a name="section76151259193016"></a>

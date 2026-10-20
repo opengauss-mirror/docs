@@ -1,3 +1,8 @@
+---
+description: This document describes Rewriting Queries in openGauss.
+keywords: [openGauss, Rewriting Queries, SQL]
+---
+
 # Rewriting Queries<a name="EN-US_TOPIC_0289900843"></a>
 
 The  **ts\_rewrite**  family of functions searches a given  **tsquery**  for occurrences of a target subquery, and replace each occurrence with a substitute subquery. In essence this operation is a  **tsquery**  specific version of substring replacement. A target and substitute combination can be thought of as a query rewrite rule. A collection of such rewrite rules can be a powerful search aid. For example, you can expand the search using synonyms \(that is, new york, big apple, nyc, gotham\) or narrow the search to direct the user to some hot topic. 

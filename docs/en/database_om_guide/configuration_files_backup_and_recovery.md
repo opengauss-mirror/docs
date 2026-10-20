@@ -1,3 +1,8 @@
+---
+description: This document describes Backup And Restoration For Configuration Files in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, Backup And Restoration For Configuration Files, database O&M, Background, Prerequisites]
+---
+
 # Backup And Restoration For Configuration Files<a name="EN-US_TOPIC_0242215051"></a>
 
 ## Background<a name="en-us_topic_0237088792_en-us_topic_0059777801_section728719384439"></a>

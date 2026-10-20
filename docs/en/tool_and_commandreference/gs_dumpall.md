@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_dumpall in openGauss, covering topics such as Background, Precautions.
+keywords: [openGauss, gs\_dumpall, tools and commands, Background, Precautions]
+---
+
 # gs\_dumpall<a name="EN-US_TOPIC_0289899213"></a>
 
 ## Background<a name="en-us_topic_0287276010_en-us_topic_0237152336_en-us_topic_0059778372_section31221112348"></a>

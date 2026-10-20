@@ -1,3 +1,8 @@
+---
+description: This document describes Copy Interface for Error Tolerance in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Copy Interface for Error Tolerance, features, Availability, Introduction]
+---
+
 # Copy Interface for Error Tolerance<a name="EN-US_TOPIC_0000001135302867"></a>
 
 ## Availability<a name="section56086982"></a>

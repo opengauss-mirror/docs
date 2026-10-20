@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss oGRecorder SDK API 文档 的相关内容，涵盖 目录、初始化与退出 等内容。
+keywords: [openGauss, oGRecorder SDK API 文档, 工具与命令参考, 目录, 初始化与退出]
+---
+
 # oGRecorder SDK API 文档
 
 ## 目录

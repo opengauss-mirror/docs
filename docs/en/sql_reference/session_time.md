@@ -1,3 +1,8 @@
+---
+description: This document describes SESSION\_TIME in openGauss.
+keywords: [openGauss, SESSION\_TIME, SQL]
+---
+
 # SESSION\_TIME<a name="EN-US_TOPIC_0245374735"></a>
 
 **SESSION\_TIME**  collects statistics about the running time of session threads and time consumed in each execution phase on the current node.

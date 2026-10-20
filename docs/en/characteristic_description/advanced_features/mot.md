@@ -1,3 +1,8 @@
+---
+description: This document describes MOT in openGauss, covering topics such as MOT Features and Benefits, Key MOT Technologies.
+keywords: [openGauss, MOT, features, MOT Features and Benefits, Key MOT Technologies]
+---
+
 # MOT<a name="EN-US_TOPIC_0000001179976288"></a>
 
 openGauss introduces the memory-optimized table \(MOT\) storage engine, which is a transactional row store and is optimized for multi-core and large-memory servers. MOT is the most advanced production-level feature \(Beta version\) of openGauss databases. It provides higher performance for transactional workloads. MOT fully supports ACID features, especially strict persistence and high availability. Enterprises can use MOT in mission-critical and performance-sensitive online transaction processing \(OLTP\) to achieve high performance, high throughput, predictable low latency, and high utilization of multi-core servers. MOT is especially suitable for running on modern servers with multi-channel and multi-core processors, such as Huawei TaiShan servers based on ARM/Kunpeng processors and Dell or similar x86 servers.

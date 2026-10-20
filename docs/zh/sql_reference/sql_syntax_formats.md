@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SQL语法格式说明 的相关内容与操作方法。
+keywords: [openGauss, SQL语法格式说明, SQL参考]
+---
+
 # SQL语法格式说明
 
 **表 1**  SQL语法格式说明

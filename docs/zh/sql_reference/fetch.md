@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss FETCH 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, FETCH, SQL参考, 功能描述, 注意事项]
+---
+
 # FETCH
 
 ## 功能描述<a name="zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_s1a1f69e123144a83800629a2d8ab2dba"></a>

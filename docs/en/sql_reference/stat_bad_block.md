@@ -1,3 +1,8 @@
+---
+description: This document describes STAT\_BAD\_BLOCK in openGauss.
+keywords: [openGauss, STAT\_BAD\_BLOCK, SQL]
+---
+
 # STAT\_BAD\_BLOCK<a name="EN-US_TOPIC_0245374716"></a>
 
 **STAT\_BAD\_BLOCK**  displays information about table and index read failures on the current node.

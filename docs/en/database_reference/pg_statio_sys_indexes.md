@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_STATIO\_SYS\_INDEXES in openGauss.
+keywords: [openGauss, PG\_STATIO\_SYS\_INDEXES, database reference]
+---
+
 # PG\_STATIO\_SYS\_INDEXES<a name="EN-US_TOPIC_0289901016"></a>
 
 **PG\_STATIO\_SYS\_INDEXES**  displays I/O status information for all system catalog indexes in a namespace.

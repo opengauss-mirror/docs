@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 安全性 的相关内容与操作方法。
+keywords: [openGauss, 安全性, 数据库运维]
+---
+
 # 安全性
 
 用于复制连接的角色必须具有REPLICATION属性(或者是具有SYSADMIN权限用户)。 如果角色缺少SUPERUSER 和 BYPASSRLS，发布者的行安全策略可以执行。 角色的访问权限必须在pg_hba.conf中配置，并且必须具有LOGIN属性。

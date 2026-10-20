@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 使用CREATE TABLE执行深层复制 的相关内容，涵盖 操作步骤 等内容。
+keywords: [openGauss, 使用CREATE TABLE执行深层复制, 数据库运维, 操作步骤]
+---
+
 # 使用CREATE TABLE执行深层复制
 
 该方法使用CREATE TABLE语句创建原始表的副本，将原始表的数据填充至副本并重命名副本，完成原始表的复制。

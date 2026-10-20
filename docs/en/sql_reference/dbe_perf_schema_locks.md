@@ -1,3 +1,8 @@
+---
+description: This document describes LOCKS in openGauss.
+keywords: [openGauss, LOCKS, SQL]
+---
+
 # LOCKS<a name="EN-US_TOPIC_0289899932"></a>
 
 **LOCKS**  displays information about locks held by each open transaction.

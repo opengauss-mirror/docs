@@ -1,3 +1,8 @@
+---
+description: This document describes gstrace in openGauss, covering topics such as Function, Syntax.
+keywords: [openGauss, gstrace, tools and commands, Function, Syntax]
+---
+
 # gstrace<a name="EN-US_TOPIC_0289899251"></a>
 
 ## Function<a name="en-us_topic_0287275941_en-us_topic_0237152426_en-us_topic_0059778103_s1d88b9452b2d4c15811c8ad2670b7682"></a>

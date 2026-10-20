@@ -1,3 +1,8 @@
+---
+description: This document describes In-place Update Storage Engine in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, In-place Update Storage Engine, features, Availability, Introduction]
+---
+
 # In-place Update Storage Engine<a name="EN-US_TOPIC_0000001168230024"></a>
 
 ## Availability<a name="section1076382216287"></a>

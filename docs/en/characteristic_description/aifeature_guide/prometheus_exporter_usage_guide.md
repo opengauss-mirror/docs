@@ -1,3 +1,8 @@
+---
+description: This document describes Usage Guide in openGauss.
+keywords: [openGauss, Usage Guide, features]
+---
+
 # Usage Guide<a name="EN-US_TOPIC_0000001196305050"></a>
 
 You can run the  **gs\_dbmind**  command to start an exporter. The following describes how to set up a complete Prometheus monitoring platform.

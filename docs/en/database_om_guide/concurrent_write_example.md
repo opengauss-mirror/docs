@@ -1,3 +1,8 @@
+---
+description: This document describes Concurrent Write Examples in openGauss, covering topics such as Concurrent INSERT and DELETE in the Same Table, Concurrent INSERT in the Same Table.
+keywords: [openGauss, Concurrent Write Examples, database O&M, Concurrent INSERT and DELETE in the Same Table, Concurrent INSERT in the Same Table]
+---
+
 # Concurrent Write Examples<a name="EN-US_TOPIC_0242370302"></a>
 
 ## Concurrent INSERT and DELETE in the Same Table<a name="EN-US_TOPIC_0242370303"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes PQflush in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, PQflush, development, Function, Prototype]
+---
+
 # PQflush<a name="EN-US_TOPIC_0242380586"></a>
 
 ## Function<a name="en-us_topic_0241735631_section1516183316287"></a>

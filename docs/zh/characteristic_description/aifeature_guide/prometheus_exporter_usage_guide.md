@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 使用指导 的相关内容，涵盖 关闭HISTORY记录、启动Exporter服务 等内容。
+keywords: [openGauss, 使用指导, 特性描述, 关闭HISTORY记录, 启动Exporter服务]
+---
+
 # 使用指导<a name="ZH-CN_TOPIC_0000002294398237"></a>
 
 ## 关闭HISTORY记录<a name="zh-cn_topic_0000001666869748_section851419845918"></a>

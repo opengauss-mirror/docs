@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_FILE\_REDO\_IOSTAT in openGauss.
+keywords: [openGauss, GLOBAL\_FILE\_REDO\_IOSTAT, SQL]
+---
+
 # GLOBAL\_FILE\_REDO\_IOSTAT<a name="EN-US_TOPIC_0245374675"></a>
 
 **GLOBAL\_FILE\_REDO\_IOSTAT**  records statistics about redo logs and WALs on each node in openGauss. 

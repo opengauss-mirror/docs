@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 使用gsql元命令导入数据 的相关内容，涵盖 \\copy命令、参数说明 等内容。
+keywords: [openGauss, 使用gsql元命令导入数据, 数据库运维, \\copy命令, 参数说明]
+---
+
 # 使用gsql元命令导入数据
 
 gsql工具提供了元命令\\copy进行数据导入。

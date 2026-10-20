@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_STATIO\_USER\_INDEXES in openGauss.
+keywords: [openGauss, GLOBAL\_STATIO\_USER\_INDEXES, SQL]
+---
+
 # GLOBAL\_STATIO\_USER\_INDEXES<a name="EN-US_TOPIC_0245374778"></a>
 
 **GLOBAL\_STATIO\_USER\_INDEXES**  displays I/O status information about all user relationship table indexes in namespaces on each node. 

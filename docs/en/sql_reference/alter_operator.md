@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER OPERATOR in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER OPERATOR, SQL, Function, Precautions]
+---
+
 # ALTER OPERATOR<a name="EN-US_TOPIC_0000001127812609"></a>
 
 ## Function<a name="section113331284191"></a>

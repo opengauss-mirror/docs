@@ -1,3 +1,8 @@
+---
+description: This document describes Description of SQL Error Codes in openGauss.
+keywords: [openGauss, Description of SQL Error Codes, database reference]
+---
+
 # Description of SQL Error Codes<a name="EN-US_TOPIC_0302073676"></a>
 
 Based on X/Open and SQL Access Group SQL CAE Specifications \(1992\), SQLERROR returns an SQLSTATE value. An SQLSTATE value is a string composed of five characters, the first two representing an SQL error class and the last three representing a subclass. The five characters can be digits or uppercase letters, which represent various errors or warnings. 00000 indicates success. Most SQLSTATE codes are defined in SQL standards.

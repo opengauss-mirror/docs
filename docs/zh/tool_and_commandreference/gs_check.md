@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs_check 的相关内容，涵盖 背景信息、注意事项 等内容。
+keywords: [openGauss, gs_check, 工具与命令参考, 背景信息, 注意事项]
+---
+
 # gs_check
 
 ## 背景信息<a name="zh-cn_topic_0237152330_zh-cn_topic_0059777799_section2466014153117"></a>

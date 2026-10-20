@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss WAL归档配置 的相关内容，涵盖 确保WAL信息记录级别配置正确、确保开启归档模式 等内容。
+keywords: [openGauss, WAL归档配置, 数据库运维, 确保WAL信息记录级别配置正确, 确保开启归档模式]
+---
+
 # WAL归档配置
 
 ## 确保WAL信息记录级别配置正确

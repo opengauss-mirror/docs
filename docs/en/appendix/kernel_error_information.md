@@ -1,3 +1,8 @@
+---
+description: This document describes Kernel Error Information in openGauss.
+keywords: [openGauss, Kernel Error Information, appendix]
+---
+
 # Kernel Error Information<a name="EN-US_TOPIC_0000001113427790"></a>
 
 ERRMSG: "unsupported syntax: ENCRYPTED WITH in this operation"

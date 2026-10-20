@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER SYSTEM SET in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER SYSTEM SET, SQL, Function, Precautions]
+---
+
 # ALTER SYSTEM SET<a name="EN-US_TOPIC_0289900623"></a>
 
 ## Function<a name="en-us_topic_0283137187_en-us_topic_0237122075_en-us_topic_0059778605_s40bbf40e12d1487aaca3ddd1b9bb55e0"></a>

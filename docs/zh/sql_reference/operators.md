@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 操作符 的相关内容，涵盖 操作符类型解析、示例 等内容。
+keywords: [openGauss, 操作符, SQL参考, 操作符类型解析, 示例]
+---
+
 # 操作符
 
 ## 操作符类型解析<a name="zh-cn_topic_0283137550_zh-cn_topic_0237122008_zh-cn_topic_0059778242_seea12beab1954749bad838953810aa71"></a>

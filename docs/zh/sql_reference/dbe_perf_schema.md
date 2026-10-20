@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBE\_PERF Schema 的相关内容与操作方法。
+keywords: [openGauss, DBE\_PERF Schema, SQL参考]
+---
+
 # DBE\_PERF Schema
 
 DBE\_PERF Schema内视图主要用来诊断性能问题，也是WDR Snapshot的数据来源。数据库安装后，默认只有初始用户具有模式dbe\_perf的权限。若是由旧版本升级而来，为保持权限的前向兼容，模式dbe\_perf的权限与旧版本保持一致。从OS、Instance、Memory等多个维度划分组织视图，并且符合如下命名规范：

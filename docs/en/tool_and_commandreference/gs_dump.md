@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_dump in openGauss, covering topics such as Background, Functions.
+keywords: [openGauss, gs\_dump, tools and commands, Background, Functions]
+---
+
 # gs\_dump<a name="EN-US_TOPIC_0289899246"></a>
 
 ## Background<a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0059777770_section1271019596335"></a>

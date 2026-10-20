@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE TYPE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE TYPE, SQL, Function, Precautions]
+---
+
 # CREATE TYPE<a name="EN-US_TOPIC_0289900603"></a>
 
 ## Function<a name="en-us_topic_0283136568_en-us_topic_0237122124_en-us_topic_0059779377_sc0d0ea7296f7418d8e0b1a8878cf72ba"></a>

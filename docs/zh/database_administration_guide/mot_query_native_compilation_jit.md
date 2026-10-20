@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MOT查询原生编译（JIT） 的相关内容，涵盖 JIT存储过程（JIT SP）、JIT查询 等内容。
+keywords: [openGauss, MOT查询原生编译（JIT）, 数据库管理, JIT存储过程（JIT SP）, JIT查询]
+---
+
 # MOT查询原生编译（JIT）
 
 原生编译（JIT）是MOT提供极低时延和高吞吐量性能的关键技术之一。支持两种原生编译（使用PREPARE语句）：JIT存储过程（JIT SP）和JIT查询。

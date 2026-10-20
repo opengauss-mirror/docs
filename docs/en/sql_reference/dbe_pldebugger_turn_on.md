@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_PLDEBUGGER.turn\_on in openGauss.
+keywords: [openGauss, DBE\_PLDEBUGGER.turn\_on, SQL]
+---
+
 # DBE\_PLDEBUGGER.turn\_on<a name="EN-US_TOPIC_0000001148257915"></a>
 
 This function is used to mark a stored procedure as debuggable. After  **turn\_on**  is executed, the server can execute the stored procedure for debugging. You need to manually obtain the OID of the stored procedure based on the PG\_PROC system catalog and transfer it to the function. After  **turn\_on**  is executed, the execution of the stored procedure in the current session is hung before the first SQL statement to wait for the debugging instruction from the debug end. This setting is cleared by default after the session is disconnected. Currently, stored procedures and functions with autonomous transactions enabled cannot be debugged.

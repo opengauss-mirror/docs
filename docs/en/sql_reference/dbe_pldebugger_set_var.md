@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_PLDEBUGGER.set\_var in openGauss.
+keywords: [openGauss, DBE\_PLDEBUGGER.set\_var, SQL]
+---
+
 # DBE\_PLDEBUGGER.set\_var<a name="EN-US_TOPIC_0000001198398061"></a>
 
 Changes the variable on the top-layer stack in the specified debugging stored procedure to the value of the input parameter. If a stored procedure contains variables with the same name, set\_var supports only the setting of the first variable value.

@@ -1,3 +1,8 @@
+---
+description: This document describes HLL in openGauss.
+keywords: [openGauss, HLL, SQL]
+---
+
 # HLL<a name="EN-US_TOPIC_0308951611"></a>
 
 HyperLoglog \(HLL\) is an approximation algorithm for efficiently counting the number of distinct values in a data set. It features faster computing and lower space usage. You only need to store HLL data structures, instead of data sets. When new data is added to a data set, make hash calculation on the data and insert the result to an HLL. Then, you can obtain the final result based on the HLL.

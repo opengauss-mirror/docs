@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE MASKING POLICY in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE MASKING POLICY, SQL, Function, Precautions]
+---
+
 # CREATE MASKING POLICY<a name="EN-US_TOPIC_0306525303"></a>
 
 ## Function<a name="section1163224811518"></a>

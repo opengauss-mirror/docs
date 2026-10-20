@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 生成配置文件 的相关内容与操作方法。
+keywords: [openGauss, 生成配置文件, 特性描述]
+---
+
 # 生成配置文件<a name="ZH-CN_TOPIC_0000002293307697"></a>
 
 DBMind配置文件解释以及生成方式参考[service子命令](service.md)中的配置文件初始化章节，注意当前DBMind仅支持交互式配置文件生成方式。

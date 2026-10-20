@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 主服务器 的相关内容，涵盖 synchronous\_standby\_names、most\_available\_sync 等内容。
+keywords: [openGauss, 主服务器, 数据库参考, synchronous\_standby\_names, most\_available\_sync]
+---
+
 # 主服务器
 
 ## synchronous\_standby\_names<a name="zh-cn_topic_0283137370_zh-cn_topic_0237124713_zh-cn_topic_0059777578_sed4ef11504b74982b8b64ce158bf0f0e"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 列存表支持的数据类型 的相关内容与操作方法。
+keywords: [openGauss, 列存表支持的数据类型, SQL参考]
+---
+
 # 列存表支持的数据类型
 
 列存表支持的数据类型如[表1](#zh-cn_topic_0283136748_zh-cn_topic_0237121962_table1899319136548)所示。

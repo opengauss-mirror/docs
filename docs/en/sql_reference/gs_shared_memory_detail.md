@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_SHARED\_MEMORY\_DETAIL in openGauss.
+keywords: [openGauss, GS\_SHARED\_MEMORY\_DETAIL, SQL]
+---
+
 # GS\_SHARED\_MEMORY\_DETAIL<a name="EN-US_TOPIC_0245374667"></a>
 
 **SHARED\_MEMORY\_DETAIL**  queries the usage information about shared memory contexts on the current node.

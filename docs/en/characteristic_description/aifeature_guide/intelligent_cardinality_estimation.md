@@ -1,3 +1,8 @@
+---
+description: This document describes Intelligent Cardinality Estimation in openGauss, covering topics such as Overview, Prerequisites.
+keywords: [openGauss, Intelligent Cardinality Estimation, features, Overview, Prerequisites]
+---
+
 # Intelligent Cardinality Estimation<a name="EN-US_TOPIC_0000001316445490"></a>
 
 ## Overview<a name="EN-US_TOPIC_0000001316142064"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Configuration Settings in openGauss.
+keywords: [openGauss, Configuration Settings, database O&M]
+---
+
 # Configuration Settings<a name="EN-US_TOPIC_0000001261761887"></a>
 
 Publication-subscription requires some configuration options to be set.

@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_THREAD\_WAIT\_STATUS in openGauss.
+keywords: [openGauss, GLOBAL\_THREAD\_WAIT\_STATUS, SQL]
+---
+
 # GLOBAL\_THREAD\_WAIT\_STATUS<a name="EN-US_TOPIC_0245374744"></a>
 
 **GLOBAL\_THREAD\_WAIT\_STATUS**  allows you to test the block waiting status of backend threads and auxiliary threads on all nodes.  For details about events, see  [Table 2](../database_reference/pg_thread_wait_status.md),  [Table 3](../database_reference/pg_thread_wait_status.md),  [Table 4](../database_reference/pg_thread_wait_status.md), and  [Table 5](../database_reference/pg_thread_wait_status.md).

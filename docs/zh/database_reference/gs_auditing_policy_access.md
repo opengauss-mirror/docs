@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS_AUDITING_POLICY_ACCESS 的相关内容与操作方法。
+keywords: [openGauss, GS_AUDITING_POLICY_ACCESS, 数据库参考]
+---
+
 # `GS_AUDITING_POLICY_ACCESS`
 
 `GS_AUDITING_POLICY_ACCESS` 系统表记录与DML数据库相关操作的统一审计信息。需要有系统管理员或安全策略管理员权限才可以访问此系统表。

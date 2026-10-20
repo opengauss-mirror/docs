@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER EVENT TRIGGER 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER EVENT TRIGGER, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER EVENT TRIGGER
 
 ## 功能描述<a name="zh-cn_topic_0283137014_zh-cn_topic_0271320281_zh-cn_topic_0059777936_sb9efc89be09141c3b332116dd8c2b35d"></a>

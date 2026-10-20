@@ -1,3 +1,8 @@
+---
+description: This document describes Creating a Table in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, Creating a Table, SQL, Syntax, Parameter Description]
+---
+
 # Creating a Table<a name="EN-US_TOPIC_0000001179662840"></a>
 
 Create an empty table in the current database. The table will be owned by the creator. The same table can be stored in different databases. You can execute the CREATE TABLE statement to create a table.

@@ -1,3 +1,8 @@
+---
+description: This document describes PREDICT BY in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, PREDICT BY, SQL, Function, Precautions]
+---
+
 # PREDICT BY<a name="EN-US_TOPIC_0000001117479700"></a>
 
 ## Function<a name="section1596413142510"></a>

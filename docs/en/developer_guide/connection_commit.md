@@ -1,3 +1,8 @@
+---
+description: This document describes connection.commit\(\) in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, connection.commit\(\), development, Function, Prototype]
+---
+
 # connection.commit\(\)<a name="EN-US_TOPIC_0000001127067907"></a>
 
 ## Function<a name="section5708152714306"></a>

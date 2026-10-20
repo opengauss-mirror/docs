@@ -1,3 +1,8 @@
+---
+description: This document describes Support for Functions and Stored Procedures in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Support for Functions and Stored Procedures, features, Availability, Introduction]
+---
+
 # Support for Functions and Stored Procedures<a name="EN-US_TOPIC_0000001135665705"></a>
 
 ## Availability<a name="section56086982"></a>

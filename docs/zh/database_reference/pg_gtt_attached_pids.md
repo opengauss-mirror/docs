@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_GTT\_ATTACHED\_PIDS 的相关内容与操作方法。
+keywords: [openGauss, PG\_GTT\_ATTACHED\_PIDS, 数据库参考]
+---
+
 # PG\_GTT\_ATTACHED\_PIDS
 
 PG\_GTT\_ATTACHED\_PIDS视图查看哪些会话正在使用全局临时表，调用pg\_get\_attached\_pid函数。

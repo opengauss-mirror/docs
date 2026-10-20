@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 数组表达式 的相关内容，涵盖 IN、NOT IN 等内容。
+keywords: [openGauss, 数组表达式, SQL参考, IN, NOT IN]
+---
+
 # 数组表达式
 
 ## IN<a name="zh-cn_topic_0283137227_zh-cn_topic_0237122004_zh-cn_topic_0059778101_s5f7d92a0eaa14c1ab1215282bce7a3ef"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_TABLESPACE in openGauss.
+keywords: [openGauss, PG\_TABLESPACE, database reference]
+---
+
 # PG\_TABLESPACE<a name="EN-US_TOPIC_0289901005"></a>
 
 **PG\_TABLESPACE**  records tablespace information.

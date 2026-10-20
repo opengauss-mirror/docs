@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_STAT\_USER\_FUNCTIONS 的相关内容与操作方法。
+keywords: [openGauss, PG\_STAT\_USER\_FUNCTIONS, 数据库参考]
+---
+
 # PG\_STAT\_USER\_FUNCTIONS
 
 PG\_STAT\_USER\_FUNCTIONS视图显示命名空间中用户自定义函数（函数语言为非内部语言）的状态信息。

@@ -1,10 +1,15 @@
+---
+description: 本文介绍 openGauss 典型组网 的相关内容与操作方法。
+keywords: [openGauss, 典型组网, 产品介绍]
+---
+
 # 典型组网<a name="ZH-CN_CONCEPT_0251307783"></a>
 
 为了保证整个应用数据的安全性，建议将openGauss的典型组网划分为两个独立网络，前端业务网络和数据库管理存储网络。
 
 **图 1**  典型组网<a name="zh-cn_concept_0238166305_fig7654172218145"></a>  
 
-![](figures/zh-cn_image_0253141769.png)
+![典型组网示意图](figures/zh-cn_image_0253141769.png)
 
 网络划分说明如[表1](#zh-cn_concept_0238166305_zh-cn_topic_0085434654_zh-cn_topic_0059782024_tb80dc4a120b64f6093f63535ce9998ef)所示。
 
@@ -41,4 +46,4 @@
 
 **图 2**  数据库管理存储网络组网示例<a name="zh-cn_concept_0238166305_zh-cn_topic_0085434654_zh-cn_topic_0059782024_fig397545395542"></a>  
 
-![](figures/Database-Management-Storage-Network-Networking-Example.png)
+![典型组网示意图](figures/Database-Management-Storage-Network-Networking-Example.png)

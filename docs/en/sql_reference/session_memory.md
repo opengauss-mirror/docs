@@ -1,3 +1,8 @@
+---
+description: This document describes SESSION\_MEMORY in openGauss.
+keywords: [openGauss, SESSION\_MEMORY, SQL]
+---
+
 # SESSION\_MEMORY<a name="EN-US_TOPIC_0245374737"></a>
 
 **SESSION\_MEMORY**  collects statistics about memory usage at the session level in the unit of MB, including all the memory allocated to Postgres and stream threads on DNs for jobs currently executed by users.

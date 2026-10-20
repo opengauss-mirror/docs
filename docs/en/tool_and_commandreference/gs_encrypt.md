@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_encrypt in openGauss, covering topics such as Background, Syntax.
+keywords: [openGauss, gs\_encrypt, tools and commands, Background, Syntax]
+---
+
 # gs\_encrypt<a name="EN-US_TOPIC_0000001197874537"></a>
 
 ## Background<a name="section16490883164452"></a>

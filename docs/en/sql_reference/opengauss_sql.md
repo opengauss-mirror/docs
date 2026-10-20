@@ -1,3 +1,8 @@
+---
+description: This document describes openGauss SQL in openGauss, covering topics such as What Is SQL?, Development of SQL Standards.
+keywords: [openGauss, openGauss SQL, SQL, What Is SQL?, Development of SQL Standards]
+---
+
 # openGauss SQL<a name="EN-US_TOPIC_0289900158"></a>
 
 ## What Is SQL?<a name="en-us_topic_0283136913_en-us_topic_0237121924_section07961139165815"></a>

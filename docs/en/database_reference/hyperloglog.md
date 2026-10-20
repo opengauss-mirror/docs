@@ -1,3 +1,8 @@
+---
+description: This document describes HyperLogLog in openGauss, covering topics such as hll\_default\_log2m, hll\_default\_log2explicit.
+keywords: [openGauss, HyperLogLog, database reference, hll\_default\_log2m, hll\_default\_log2explicit]
+---
+
 # HyperLogLog<a name="EN-US_TOPIC_0000001083204098"></a>
 
 ## hll\_default\_log2m<a name="section189901634112519"></a>

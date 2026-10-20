@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP PROCEDURE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP PROCEDURE, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP PROCEDURE
 
 ## 功能描述<a name="zh-cn_topic_0283137697_zh-cn_topic_0237122145_zh-cn_topic_0059778377_se53c099099b3499097fe40da9daf8b12"></a>

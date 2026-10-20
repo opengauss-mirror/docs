@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 常见问题 的相关内容，涵盖 4.1 FastAPI中参数类型自动转换问题、4.2 敏感信息输出问题 等内容。
+keywords: [openGauss, 常见问题, 特性描述, 4.1 FastAPI中参数类型自动转换问题, 4.2 敏感信息输出问题]
+---
+
 # 常见问题<a name="ZH-CN_TOPIC_0000002293246437"></a>
 
 ## 4.1 FastAPI中参数类型自动转换问题<a name="section56331925123110"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Basic Text Matching in openGauss.
+keywords: [openGauss, Basic Text Matching, SQL]
+---
+
 # Basic Text Matching<a name="EN-US_TOPIC_0289899963"></a>
 
 Full text search in openGauss is based on the match operator  **@@**, which returns  **true**  if a  **tsvector**  \(document\) matches a  **tsquery**  \(query\). It does not matter which data type is written first:

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP ROLE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP ROLE, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP ROLE
 
 ## 功能描述<a name="zh-cn_topic_0283136937_zh-cn_topic_0237122147_zh-cn_topic_0059778848_s77851fcd69534eafbd3b79f15670b201"></a>

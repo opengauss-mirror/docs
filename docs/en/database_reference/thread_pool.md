@@ -1,3 +1,8 @@
+---
+description: This document describes Thread Pool in openGauss, covering topics such as enable\_thread\_pool, enable\_thread\_pool\_numa\_locality.
+keywords: [openGauss, Thread Pool, database reference, enable\_thread\_pool, enable\_thread\_pool\_numa\_locality]
+---
+
 # Thread Pool<a name="EN-US_TOPIC_0000001130026843"></a>
 
 ## enable\_thread\_pool<a name="en-us_topic_0283137548_en-us_topic_0237124743_section97160555612"></a>

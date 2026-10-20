@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBeaver 连接 openGauss 数据库操作指南 的相关内容，涵盖 前置条件、准备openGauss连接用户 等内容。
+keywords: [openGauss, DBeaver 连接 openGauss 数据库操作指南, 工具与命令参考, 前置条件, 准备openGauss连接用户]
+---
+
 # DBeaver 连接 openGauss 数据库操作指南
 
 本文档详细介绍如何使用 DBeaver 客户端工具连接并操作 openGauss 数据库。

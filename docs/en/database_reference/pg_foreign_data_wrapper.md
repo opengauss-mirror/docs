@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_FOREIGN\_DATA\_WRAPPER in openGauss.
+keywords: [openGauss, PG\_FOREIGN\_DATA\_WRAPPER, database reference]
+---
+
 # PG\_FOREIGN\_DATA\_WRAPPER<a name="EN-US_TOPIC_0289900217"></a>
 
 **PG\_FOREIGN\_DATA\_WRAPPER**  records foreign-data wrapper definitions. A foreign-data wrapper is the mechanism by which external data, residing on foreign servers, is accessed. 

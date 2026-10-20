@@ -1,3 +1,8 @@
+---
+description: This document describes Built-in Stack Tool in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Built-in Stack Tool, features, Availability, Introduction]
+---
+
 # Built-in Stack Tool<a name="EN-US_TOPIC_0000001263689564"></a>
 
 ## Availability<a name="section147531742205517"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Using JDBC to Operate an Encrypted Database in openGauss, covering topics such as Connecting to an Encrypted Database, Example of Calling the IsValid Method to Refresh the Cache.
+keywords: [openGauss, Using JDBC to Operate an Encrypted Database, database administration, Connecting to an Encrypted Database, Example of Calling the IsValid Method to Refresh the Cache]
+---
+
 # Using JDBC to Operate an Encrypted Database<a name="EN-US_TOPIC_0000001102628112"></a>
 
 ## Connecting to an Encrypted Database<a name="section6796167162618"></a>

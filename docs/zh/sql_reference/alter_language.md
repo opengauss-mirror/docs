@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER LANGUAGE 的相关内容，涵盖 功能描述、语法格式 等内容。
+keywords: [openGauss, ALTER LANGUAGE, SQL参考, 功能描述, 语法格式]
+---
+
 # ALTER LANGUAGE
 
 ## 功能描述<a name="section113331284191"></a>

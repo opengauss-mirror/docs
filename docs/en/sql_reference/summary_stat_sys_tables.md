@@ -1,3 +1,8 @@
+---
+description: This document describes SUMMARY\_STAT\_SYS\_TABLES in openGauss.
+keywords: [openGauss, SUMMARY\_STAT\_SYS\_TABLES, SQL]
+---
+
 # SUMMARY\_STAT\_SYS\_TABLES<a name="EN-US_TOPIC_0289900679"></a>
 
 **SUMMARY\_STAT\_SYS\_TABLES**  displays statistics about all the system catalogs in the  **pg\_catalog**,  **information\_schema**, and  **pg\_toast**  schemas in openGauss.

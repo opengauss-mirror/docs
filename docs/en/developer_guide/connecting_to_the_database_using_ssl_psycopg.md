@@ -1,3 +1,8 @@
+---
+description: This document describes Connecting to the Database \(Using SSL\) in openGauss.
+keywords: [openGauss, Connecting to the Database \(Using SSL\), development]
+---
+
 # Connecting to the Database \(Using SSL\)<a name="EN-US_TOPIC_0000001127066489"></a>
 
 When you use psycopy2 to connect to the GaussDB Kernel server, you can enable SSL to encrypt the communication between the client and server. To enable SSL, you must have the server certificate, client certificate, and private key files. For details on how to obtain these files, see related documents and commands of OpenSSL.

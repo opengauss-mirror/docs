@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_STATIO\_USER\_SEQUENCES in openGauss.
+keywords: [openGauss, GLOBAL\_STATIO\_USER\_SEQUENCES, SQL]
+---
+
 # GLOBAL\_STATIO\_USER\_SEQUENCES<a name="EN-US_TOPIC_0245374781"></a>
 
 **GLOBAL\_STATIO\_USER\_SEQUENCES**  displays I/O status information about all user-defined sequences in namespaces on each node. 

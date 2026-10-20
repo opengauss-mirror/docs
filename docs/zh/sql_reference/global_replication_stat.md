@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_REPLICATION\_STAT 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_REPLICATION\_STAT, SQL参考]
+---
+
 # GLOBAL\_REPLICATION\_STAT
 
 GLOBAL\_REPLICATION\_STAT视图用于获得各节点描述日志同步状态信息，如发起端发送日志位置、收端接收日志位置等。

@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_GLOBAL\_CHAIN in openGauss.
+keywords: [openGauss, GS\_GLOBAL\_CHAIN, database reference]
+---
+
 # GS\_GLOBAL\_CHAIN<a name="EN-US_TOPIC_0000001100127692"></a>
 
 **GS\_GLOBAL\_CHAIN**  records information about modification operations performed by users on the tamper-proof user table. Each record corresponds to a table-level modification operation. Users with the audit administrator permission can query this system catalog, but no user is allowed to modify this system catalog.

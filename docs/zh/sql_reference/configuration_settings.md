@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Configuration settings 的相关内容与操作方法。
+keywords: [openGauss, Configuration settings, SQL参考]
+---
+
 # Configuration settings
 
 Configuration settings列名称及描述如下表所示。

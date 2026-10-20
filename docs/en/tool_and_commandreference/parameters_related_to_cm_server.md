@@ -1,3 +1,8 @@
+---
+description: This document describes Parameters Related to cm\_server in openGauss, covering topics such as log\_dir, log\_file\_size.
+keywords: [openGauss, Parameters Related to cm\_server, tools and commands, log\_dir, log\_file\_size]
+---
+
 # Parameters Related to cm\_server<a name="EN-US_TOPIC_0000001246287001"></a>
 
 ## log\_dir<a name="section21021611134413"></a>

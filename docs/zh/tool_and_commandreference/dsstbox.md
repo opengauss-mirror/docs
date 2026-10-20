@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss dsstbox 的相关内容，涵盖 概述、命令 等内容。
+keywords: [openGauss, dsstbox, 工具与命令参考, 概述, 命令]
+---
+
 # dsstbox
 
 ## 概述<a name="section1377524355216"></a>

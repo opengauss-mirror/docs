@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER TABLE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER TABLE, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER TABLE
 
 ## 功能描述<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s2baab5c876044795a12b5949f22d2144"></a>

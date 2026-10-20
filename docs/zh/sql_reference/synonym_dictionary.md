@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Synonym词典 的相关内容，涵盖 示例 等内容。
+keywords: [openGauss, Synonym词典, SQL参考, 示例]
+---
+
 # Synonym词典
 
 Synonym词典用于定义、识别token的同义词并转化，不支持词组（词组形式的同义词可用Thesaurus词典定义，详细请参见[Thesaurus词典](thesaurus_dictionary.md)）。

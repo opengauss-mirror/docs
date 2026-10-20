@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 示例 的相关内容，涵盖 常用功能示例代码 等内容。
+keywords: [openGauss, 示例, 开发指南, 常用功能示例代码]
+---
+
 # 示例
 
 ## 常用功能示例代码<a name="zh-cn_topic_0283137626_zh-cn_topic_0059777697_s1f4a2c1a228a412193b28fb23d146e03"></a>

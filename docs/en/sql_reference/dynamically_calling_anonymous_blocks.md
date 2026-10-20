@@ -1,3 +1,8 @@
+---
+description: This document describes Dynamically Calling Anonymous Blocks in openGauss, covering topics such as Syntax.
+keywords: [openGauss, Dynamically Calling Anonymous Blocks, SQL, Syntax]
+---
+
 # Dynamically Calling Anonymous Blocks<a name="EN-US_TOPIC_0245374618"></a>
 
 This section describes how to execute anonymous blocks in dynamic statements. Append  **IN**  and  **OUT**  behind the  **EXECUTE IMMEDIATE...USING**  statement to input and output parameters.
@@ -7,12 +12,12 @@ This section describes how to execute anonymous blocks in dynamic statements. Ap
 [Figure 1](#en-us_topic_0237122228_en-us_topic_0059778140_fcac14cc166724cca818d8c659b30fbb9)  shows the syntax diagram.
 
 **Figure  1**  call\_anonymous\_block::=<a name="en-us_topic_0237122228_en-us_topic_0059778140_fcac14cc166724cca818d8c659b30fbb9"></a>  
-![](figures/call_anonymous_block.png "call_anonymous_block")
+![call anonymous block syntax diagram](figures/call_anonymous_block.png "call_anonymous_block")
 
 [Figure 2](#en-us_topic_0237122228_en-us_topic_0059778140_f06fb8cdac8dc4c42bacd550e446ca6bd)  shows the syntax diagram for  **using\_clause**.
 
 **Figure  2**  using\_clause::=<a name="en-us_topic_0237122228_en-us_topic_0059778140_f06fb8cdac8dc4c42bacd550e446ca6bd"></a>  
-![](figures/using_clause-2.png "using_clause-2")
+![using clause syntax diagram](figures/using_clause-2.png "using_clause-2")
 
 The above syntax diagram is explained as follows:
 

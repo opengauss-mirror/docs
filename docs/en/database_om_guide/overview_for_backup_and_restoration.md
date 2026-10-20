@@ -1,3 +1,8 @@
+---
+description: This document describes Overview in openGauss.
+keywords: [openGauss, Overview, database O&M]
+---
+
 # Overview
 
 For database security purposes, openGauss provides three backup and restoration types, multiple backup and restoration solutions, and data reliability assurance mechanisms during backup and restoration.

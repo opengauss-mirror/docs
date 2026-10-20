@@ -1,3 +1,8 @@
+---
+description: This document describes Conditional Statements in openGauss.
+keywords: [openGauss, Conditional Statements, SQL]
+---
+
 # Conditional Statements<a name="EN-US_TOPIC_0245374623"></a>
 
 Conditional statements are used to decide whether given conditions are met. Operations are executed based on the decisions made.
@@ -7,7 +12,7 @@ openGauss supports five usages of  **IF**:
 - IF\_THEN
 
     **Figure  1**  IF\_THEN::=<a name="en-us_topic_0237122233_en-us_topic_0059778300_f49f3826ed5ce406fb823979bb5693d75"></a>  
-    ![](figures/if_then.jpg "if_then")
+    ![IF THEN syntax diagram](figures/if_then.jpg "if_then")
 
     **IF\_THEN**  is the simplest form of  **IF**. If the condition is true, statements are executed. If it is false, they are skipped.
 
@@ -22,7 +27,7 @@ openGauss supports five usages of  **IF**:
 - IF\_THEN\_ELSE
 
     **Figure  2**  IF\_THEN\_ELSE::=<a name="en-us_topic_0237122233_en-us_topic_0059778300_f7793c47dee9842d3979aac9ebde3668d"></a>  
-    ![](figures/if_then_else.jpg "if_then_else")
+    ![IF THEN ELSE syntax diagram](figures/if_then_else.jpg "if_then_else")
 
     **IF-THEN-ELSE**  statements add  **ELSE**  branches and can be executed if the condition is false.
 
@@ -56,7 +61,7 @@ openGauss supports five usages of  **IF**:
 - IF\_THEN\_ELSIF\_ELSE
 
     **Figure  3**  IF\_THEN\_ELSIF\_ELSE::=<a name="en-us_topic_0237122233_en-us_topic_0059778300_f4be1510408244e98832b9ac2cf1c9ea9"></a>  
-    ![](figures/if_then_elsif_else.png "if_then_elsif_else")
+    ![IF THEN ELSIF ELSE syntax diagram](figures/if_then_elsif_else.png "if_then_elsif_else")
 
     Example:
 

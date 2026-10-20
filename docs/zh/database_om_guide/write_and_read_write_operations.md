@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 写入和读写操作 的相关内容与操作方法。
+keywords: [openGauss, 写入和读写操作, 数据库运维]
+---
+
 # 写入和读写操作
 
 关于写入和读写操作的命令：

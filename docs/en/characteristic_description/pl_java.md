@@ -1,3 +1,8 @@
+---
+description: This document describes PL/Java in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, PL/Java, features, Availability, Introduction]
+---
+
 # PL/Java<a name="EN-US_TOPIC_0000001135665711"></a>
 
 ## Availability<a name="section56086982"></a>

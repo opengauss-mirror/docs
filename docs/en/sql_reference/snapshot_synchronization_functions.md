@@ -1,3 +1,8 @@
+---
+description: This document describes Snapshot Synchronization Functions in openGauss.
+keywords: [openGauss, Snapshot Synchronization Functions, SQL]
+---
+
 # Snapshot Synchronization Functions<a name="EN-US_TOPIC_0289900332"></a>
 
 Snapshot synchronization functions save the current snapshot and return its identifier.

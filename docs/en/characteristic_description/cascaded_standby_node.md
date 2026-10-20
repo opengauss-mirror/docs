@@ -1,3 +1,8 @@
+---
+description: This document describes Cascaded Standby Server in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Cascaded Standby Server, features, Availability, Introduction]
+---
+
 # Cascaded Standby Server<a name="EN-US_TOPIC_0000001138590185"></a>
 
 ## Availability<a name="section56086982"></a>

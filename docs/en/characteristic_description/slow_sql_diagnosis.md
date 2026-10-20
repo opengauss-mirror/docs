@@ -1,3 +1,8 @@
+---
+description: This document describes Slow SQL Diagnosis in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Slow SQL Diagnosis, features, Availability, Introduction]
+---
+
 # Slow SQL Diagnosis<a name="EN-US_TOPIC_0000001151995075"></a>
 
 ## Availability<a name="section147531742205517"></a>

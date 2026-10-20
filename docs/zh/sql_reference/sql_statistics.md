@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SQL Statistics 的相关内容与操作方法。
+keywords: [openGauss, SQL Statistics, SQL参考]
+---
+
 # SQL Statistics
 
 SQL Statistics列名称及描述如下表所示。

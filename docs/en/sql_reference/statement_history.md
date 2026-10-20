@@ -1,3 +1,8 @@
+---
+description: This document describes STATEMENT\_HISTORY in openGauss.
+keywords: [openGauss, STATEMENT\_HISTORY, SQL]
+---
+
 # STATEMENT\_HISTORY<a name="EN-US_TOPIC_0301824804"></a>
 
 **STATEMENT\_HISTORY**  displays information about execution statements on the current node. To query this system catalog, you must have the  **sysadmin**permission. The result can be queried only in the system database but cannot be queried in the user database.

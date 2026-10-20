@@ -1,3 +1,8 @@
+---
+description: This document describes System Catalogs and Views Supported by gs\_collector in openGauss.
+keywords: [openGauss, System Catalogs and Views Supported by gs\_collector, tools and commands]
+---
+
 # System Catalogs and Views Supported by  **gs\_collector**<a name="EN-US_TOPIC_0249632269"></a>
 
 **Table  1**  System catalogs and views supported by  **gs\_collector**

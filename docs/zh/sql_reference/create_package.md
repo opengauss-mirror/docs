@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE PACKAGE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE PACKAGE, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE PACKAGE
 
 ## 功能描述<a name="section33561436135517"></a>

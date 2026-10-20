@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_INDEXES\_VERBOSE in openGauss.
+keywords: [openGauss, PG\_INDEXES\_VERBOSE, SQL]
+---
+
 # PG\_INDEXES\_VERBOSE
 PG\_INDEXES\_VERBOSE view can be used to query whether an index is covered by other indexes.
 

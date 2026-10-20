@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER SESSION 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER SESSION, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER SESSION
 
 ## 功能描述<a name="zh-cn_topic_0283137033_zh-cn_topic_0237122073_zh-cn_topic_0059778275_s62f804a7ed5a4f278e36b0175ff7bdc9"></a>

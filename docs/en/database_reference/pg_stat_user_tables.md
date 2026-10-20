@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_STAT\_USER\_TABLES in openGauss.
+keywords: [openGauss, PG\_STAT\_USER\_TABLES, database reference]
+---
+
 # PG\_STAT\_USER\_TABLES<a name="EN-US_TOPIC_0289900653"></a>
 
 **PG\_STAT\_USER\_TABLES**  displays information about user-defined ordinary tables and TOAST tables in the namespaces.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Undo系统函数 的相关内容与操作方法。
+keywords: [openGauss, Undo系统函数, SQL参考]
+---
+
 # Undo系统函数
 
 - gs\_undo\_meta\(type, zoneId, location\)

@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE ROLE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE ROLE, SQL, Function, Precautions]
+---
+
 # CREATE ROLE<a name="EN-US_TOPIC_0289900481"></a>
 
 ## Function<a name="en-us_topic_0283136858_en-us_topic_0237122112_en-us_topic_0059778189_s088f05fb7ae447c5b4c28bf78f6a0a56"></a>

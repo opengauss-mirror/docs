@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Query 的相关内容，涵盖 instr\_unique\_sql\_count、instr\_unique\_sql\_track\_type 等内容。
+keywords: [openGauss, Query, 数据库参考, instr\_unique\_sql\_count, instr\_unique\_sql\_track\_type]
+---
+
 # Query
 
 ## instr\_unique\_sql\_count<a name="zh-cn_topic_0283137149_zh-cn_topic_0237124756_section983311682019"></a>

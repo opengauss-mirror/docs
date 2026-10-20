@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss dssserver 的相关内容，涵盖 背景信息、语法 等内容。
+keywords: [openGauss, dssserver, 工具与命令参考, 背景信息, 语法]
+---
+
 # dssserver
 
 ## 背景信息<a name="zh-cn_topic_0287276000_zh-cn_topic_0237152404_zh-cn_topic_0059777816_section2761723143810"></a>

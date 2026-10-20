@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_PUBLICATION\_TABLES in openGauss.
+keywords: [openGauss, PG\_PUBLICATION\_TABLES, database reference]
+---
+
 # PG\_PUBLICATION\_TABLES<a name="EN-US_TOPIC_0000001243437363"></a>
 
 **PG\_PUBLICATION\_TABLES**  displays the mapping information between a publication and its published tables. Unlike the underlying system catalog  **PG\_PUBLICATION\_REL**, this view expands publications defined as  **FOR ALL TABLES**  so that for such publications, there is one row for each eligible table.

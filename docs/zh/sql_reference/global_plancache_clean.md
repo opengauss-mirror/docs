@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL_PLANCACHE_CLEAN 的相关内容，涵盖 使用说明 等内容。
+keywords: [openGauss, GLOBAL_PLANCACHE_CLEAN, SQL参考, 使用说明]
+---
+
 # GLOBAL_PLANCACHE_CLEAN<a name="ZH-CN_TOPIC_0297927202"></a>
 
 GPC相关视图在enable_global_plancache打开且线程池打开的状态下才有效。

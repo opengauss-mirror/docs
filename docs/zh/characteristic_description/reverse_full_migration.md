@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 反向全量迁移 的相关内容，涵盖 特性简介、客户价值 等内容。
+keywords: [openGauss, 反向全量迁移, 特性描述, 特性简介, 客户价值]
+---
+
 # 反向全量迁移
 
 ## 特性简介<a name="section740615433477"></a>

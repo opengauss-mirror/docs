@@ -1,3 +1,8 @@
+---
+description: This document describes Data Export By a User Without Required Permissions in openGauss, covering topics such as Procedure, Examples.
+keywords: [openGauss, Data Export By a User Without Required Permissions, database O&M, Procedure, Examples]
+---
+
 # Data Export By a User Without Required Permissions<a name="EN-US_TOPIC_0289899959"></a>
 
 **gs\_dump**  and  **gs\_dumpall**  use  **-U**  to specify the user that performs the export. If the specified user does not have the required permissions, data cannot be exported. In this case, you need to assign the permission to a user who does not have the permission, and then set the  **--role**  parameter in the export command to specify the role with the permission. Then,  **gs\_dump**  or  **gs\_dumpall**  uses the  **--role**  parameter to specify a role to export data.

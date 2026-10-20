@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 了解安装流程 的相关内容与操作方法。
+keywords: [openGauss, 了解安装流程, 安装指南]
+---
+
 # 了解安装流程
 
 本章节通过流程图简要介绍openGauss的安装流程。
@@ -5,7 +10,7 @@
 openGauss的安装流程如[图1](#fig18264185162412)所示。
 
 **图 1**  安装流程图<a name="fig18264185162412"></a>  
-![](figures/installation_process.png)
+![安装流程图](figures/installation_process.png)
 
 **表 1**  安装流程图说明
 

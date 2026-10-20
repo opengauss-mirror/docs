@@ -1,3 +1,8 @@
+---
+description: This document describes Autonomous Transaction in openGauss.
+keywords: [openGauss, Autonomous Transaction, SQL]
+---
+
 # Autonomous Transaction<a name="EN-US_TOPIC_0289900677"></a>
 
 An autonomous transaction is an independent transaction that is started during the execution of a primary transaction. Committing and rolling back an autonomous transaction does not affect the data that has been committed by the primary transaction. In addition, an autonomous transaction is not affected by the primary transaction.

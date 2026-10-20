@@ -1,3 +1,8 @@
+---
+description: This document describes STAT\_DATABASE in openGauss.
+keywords: [openGauss, STAT\_DATABASE, SQL]
+---
+
 # STAT\_DATABASE<a name="EN-US_TOPIC_0245374698"></a>
 
 **STAT\_DATABASE**  contains statistics for each database on this node.

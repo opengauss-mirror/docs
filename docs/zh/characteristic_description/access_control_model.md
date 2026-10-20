@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 访问控制模型 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 访问控制模型, 特性描述, 可获得性, 特性简介]
+---
+
 # 访问控制模型
 
 ## 可获得性<a name="section65352835"></a>

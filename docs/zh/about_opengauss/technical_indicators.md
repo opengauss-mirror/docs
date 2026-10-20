@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 技术指标 的相关内容与操作方法。
+keywords: [openGauss, 技术指标, 产品介绍]
+---
+
 # 技术指标<a name="ZH-CN_CONCEPT_0289895647"></a>
 
 openGauss的技术指标如[表1](#zh-cn_concept_0283138979_zh-cn_concept_0238166180_table1754017521578)所示。

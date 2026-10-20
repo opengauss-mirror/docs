@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SUMMARY\_USER\_LOGIN 的相关内容与操作方法。
+keywords: [openGauss, SUMMARY\_USER\_LOGIN, SQL参考]
+---
+
 # SUMMARY\_USER\_LOGIN
 
 SUMMARY\_USER\_LOGIN用来记录数据库主节点上用户登录和退出次数的相关信息。

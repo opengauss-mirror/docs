@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_EXT\_STATS in openGauss.
+keywords: [openGauss, PG\_EXT\_STATS, database reference]
+---
+
 # PG\_EXT\_STATS<a name="EN-US_TOPIC_0289900237"></a>
 
 **PG\_EXT\_STATS**  allows for access to extension statistics stored in the  [PG\_STATISTIC\_EXT](pg_statistic_ext.md)  system catalog. The extension statistics means multiple columns of statistics.

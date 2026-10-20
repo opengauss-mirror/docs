@@ -1,3 +1,8 @@
+---
+description: This document describes Triggers in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, Triggers, SQL, Syntax, Parameter Description]
+---
+
 # Triggers<a name="EN-US_TOPIC_0000001179780278"></a>
 
 A trigger automatically executes functions when an event occurs in a specified database.

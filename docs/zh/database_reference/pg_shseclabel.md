@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_SHSECLABEL 的相关内容与操作方法。
+keywords: [openGauss, PG\_SHSECLABEL, 数据库参考]
+---
+
 # PG\_SHSECLABEL
 
 PG\_SHSECLABEL系统表存储在共享数据库对象上的安全标签。安全标签可以用SECURITY LABEL命令操作。

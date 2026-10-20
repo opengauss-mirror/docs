@@ -1,3 +1,8 @@
+---
+description: This document describes PLAN\_TABLE in openGauss.
+keywords: [openGauss, PLAN\_TABLE, database reference]
+---
+
 # PLAN\_TABLE<a name="EN-US_TOPIC_0289900817"></a>
 
 **PLAN\_TABLE**  displays plan information collected by  **EXPLAIN PLAN**. Plan information is in a session-level lifecycle. After a session exits, the data will be deleted. Data is isolated between sessions and between users.

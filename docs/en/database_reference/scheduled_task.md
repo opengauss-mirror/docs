@@ -1,3 +1,8 @@
+---
+description: This document describes Scheduled Task in openGauss, covering topics such as job\_queue\_processes, enable\_prevent\_job\_task\_startup.
+keywords: [openGauss, Scheduled Task, database reference, job\_queue\_processes, enable\_prevent\_job\_task\_startup]
+---
+
 # Scheduled Task<a name="EN-US_TOPIC_0000001083527348"></a>
 
 ## job\_queue\_processes<a name="en-us_topic_0283137574_en-us_topic_0237124754_en-us_topic_0059778487_section10342177134137"></a>

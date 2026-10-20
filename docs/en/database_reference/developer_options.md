@@ -1,3 +1,8 @@
+---
+description: This document describes Developer Options in openGauss, covering topics such as allow\_system\_table\_mods, debug\_assertions.
+keywords: [openGauss, Developer Options, database reference, allow\_system\_table\_mods, debug\_assertions]
+---
+
 # Developer Options<a name="EN-US_TOPIC_0289900863"></a>
 
 ## allow\_system\_table\_mods<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_s4603d5ba740b4e4e9a71e245694cf887"></a>

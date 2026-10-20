@@ -1,3 +1,8 @@
+---
+description: This document describes cursor.fetchone\(\) in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, cursor.fetchone\(\), development, Function, Prototype]
+---
+
 # cursor.fetchone\(\)<a name="EN-US_TOPIC_0000001079923112"></a>
 
 ## Function<a name="section5708152714306"></a>

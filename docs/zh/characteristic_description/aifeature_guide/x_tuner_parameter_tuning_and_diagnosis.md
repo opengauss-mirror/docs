@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss X-Tuner 的相关内容，涵盖 概述、使用准备 等内容。
+keywords: [openGauss, X-Tuner, 特性描述, 概述, 使用准备]
+---
+
 # X-Tuner
 
 ## 概述<a name="ZH-CN_TOPIC_0000002259861202"></a>
@@ -37,7 +42,7 @@ X-Tuner是一款数据库集成的参数调优工具，通过结合深度强化�
 >如果在tune模式下，使用深度强化学习算法，要求必须有一个训练好的模型，且要求训练该模型时的参数与进行调优时的参数列表（包括max与min）必须一致。
 
 **图 1**  X-Tuner结构图<a name="zh-cn_topic_0000001666869716_fig137427353816"></a>  
-![](figures/X-Tuner结构图.png)
+![X-Tuner结构图](figures/X-Tuner结构图.png)
 
 X-Tuner的整体架构如[上方X-Tuner 结构图](#zh-cn_topic_0000001666869716_fig137427353816)所示，系统可以分为：
 
@@ -243,7 +248,7 @@ gs_dbmind component xtuner recommend -f connection.json
 则可以生成诊断报告如[图1](#zh-cn_topic_0000001714829221_fig49748416171)：
 
 **图 1**  recommend模式生成的报告示意<a name="zh-cn_topic_0000001714829221_fig49748416171"></a>  
-![](figures/recommend模式生成的报告示意.png)
+![recommend模式生成的报告示意](figures/recommend模式生成的报告示意.png)
 
 在上述报告中，推荐了该环境上的数据库参数配置，并进行了风险提示。报告同时生成了当前workload的特征信息，其中有几个特征是比较有参考意义的：
 

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 配置设置 的相关内容与操作方法。
+keywords: [openGauss, 配置设置, 数据库运维]
+---
+
 # 配置设置
 
 发布订阅要求设置一些配置选项。

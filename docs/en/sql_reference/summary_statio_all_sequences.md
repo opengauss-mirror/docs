@@ -1,3 +1,8 @@
+---
+description: This document describes SUMMARY\_STATIO\_ALL\_SEQUENCES in openGauss.
+keywords: [openGauss, SUMMARY\_STATIO\_ALL\_SEQUENCES, SQL]
+---
+
 # SUMMARY\_STATIO\_ALL\_SEQUENCES<a name="EN-US_TOPIC_0245374798"></a>
 
 **SUMMARY\_STATIO\_ALL\_SEQUENCES**  contains one row for each sequence in databases in openGauss, showing I/O statistics about specific sequences. 

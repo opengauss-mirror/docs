@@ -1,3 +1,8 @@
+---
+description: This document describes Upgrade Parameters in openGauss, covering topics such as IsInplaceUpgrade, inplace\_upgrade\_next\_system\_object\_oids.
+keywords: [openGauss, Upgrade Parameters, database reference, IsInplaceUpgrade, inplace\_upgrade\_next\_system\_object\_oids]
+---
+
 # Upgrade Parameters<a name="EN-US_TOPIC_0289900654"></a>
 
 ## IsInplaceUpgrade<a name="en-us_topic_0283136680_en-us_topic_0237124753_en-us_topic_0059778487_s1df9119d74fe45da9452d4cb4802f84c"></a>

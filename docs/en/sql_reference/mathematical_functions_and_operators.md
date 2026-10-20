@@ -1,3 +1,8 @@
+---
+description: This document describes Mathematical Functions and Operators in openGauss, covering topics such as Numeric Operators.
+keywords: [openGauss, Mathematical Functions and Operators, SQL, Numeric Operators]
+---
+
 # Mathematical Functions and Operators<a name="EN-US_TOPIC_0289900469"></a>
 
 ## Numeric Operators<a name="en-us_topic_0283136987_en-us_topic_0237121971_en-us_topic_0059777932_s00454841bcf24ad18eed980c0e3a2f75"></a>

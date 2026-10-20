@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 处理结果集 的相关内容，涵盖 设置结果集类型、在结果集中定位 等内容。
+keywords: [openGauss, 处理结果集, 开发指南, 设置结果集类型, 在结果集中定位]
+---
+
 # 处理结果集
 
 ## 设置结果集类型<a name="zh-cn_topic_0237120384_zh-cn_topic_0213179150_zh-cn_topic_0189250321_zh-cn_topic_0059778370_s93cc9b6475b04b76815b70162d174374"></a>

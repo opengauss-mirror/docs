@@ -1,3 +1,8 @@
+---
+description: This document describes Exporting a Single Database in openGauss, covering topics such as Exporting a Database, Examples.
+keywords: [openGauss, Exporting a Single Database, database O&M, Exporting a Database, Examples]
+---
+
 # Exporting a Single Database<a name="EN-US_TOPIC_0242370318"></a>
 
 ## Exporting a Database<a name="EN-US_TOPIC_0000001162579664"></a>

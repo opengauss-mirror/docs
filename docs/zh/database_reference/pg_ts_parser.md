@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_TS\_PARSER 的相关内容与操作方法。
+keywords: [openGauss, PG\_TS\_PARSER, 数据库参考]
+---
+
 # PG\_TS\_PARSER
 
 PG\_TS\_PARSER系统表包含定义文本解析器的记录。解析器负责分裂输入文本为词位，并且为每个词位分配标记类型。新解析器必须由数据库系统管理员创建。

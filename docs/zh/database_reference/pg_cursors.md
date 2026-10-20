@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_CURSORS 的相关内容与操作方法。
+keywords: [openGauss, PG\_CURSORS, 数据库参考]
+---
+
 # PG\_CURSORS
 
 PG\_CURSORS视图列出了当前可用的游标。

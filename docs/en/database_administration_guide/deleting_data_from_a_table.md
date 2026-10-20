@@ -1,3 +1,8 @@
+---
+description: This document describes Deleting Data from a Table in openGauss.
+keywords: [openGauss, Deleting Data from a Table, database administration]
+---
+
 # Deleting Data from a Table<a name="EN-US_TOPIC_0242370189"></a>
 
 Outdated data may need to be deleted when tables are used. Data can be deleted from tables only by row.

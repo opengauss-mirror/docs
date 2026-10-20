@@ -1,3 +1,8 @@
+---
+description: This document describes DO in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DO, SQL, Function, Precautions]
+---
+
 # DO<a name="EN-US_TOPIC_0289900214"></a>
 
 ## Function<a name="en-us_topic_0283137438_en-us_topic_0237122132_en-us_topic_0059778658_s9b63cdf8ade346bb85b02b8dbdf97170"></a>

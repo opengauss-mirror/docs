@@ -1,3 +1,8 @@
+---
+description: This document describes SQLGetDiagRec in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, SQLGetDiagRec, development, Function, Prototype]
+---
+
 # SQLGetDiagRec<a name="EN-US_TOPIC_0242371454"></a>
 
 ## Function<a name="en-us_topic_0238272900_en-us_topic_0237120430_en-us_topic_0059778032_s0088b32a977e44f5a1e1e2b1523fc51c"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Boolean Types in openGauss, covering topics such as Examples.
+keywords: [openGauss, Boolean Types, SQL, Examples]
+---
+
 # Boolean Types<a name="EN-US_TOPIC_0289900487"></a>
 
 **Table  1**  Boolean types

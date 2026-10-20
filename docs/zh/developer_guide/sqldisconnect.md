@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SQLDisconnect 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, SQLDisconnect, 开发指南, 功能描述, 原型]
+---
+
 # SQLDisconnect
 
 ## 功能描述<a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_sf1f063f9cda741e3bddd12ffff9982ea"></a>

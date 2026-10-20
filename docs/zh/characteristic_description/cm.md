@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CM 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, CM, 特性描述, 可获得性, 特性简介]
+---
+
 # CM
 
 ## 可获得性<a name="section15406143204715"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 资源池化算子卸载 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 资源池化算子卸载, 特性描述, 可获得性, 特性简介]
+---
+
 # 资源池化算子卸载
 
 ## 可获得性<a name="section15406143204715"></a>
@@ -10,7 +15,7 @@
 
 **图 1**  资源池化算子卸载方案<a name="fig114741818101675"></a>  
 
-![](figures/near-data-process.png)
+![特性简介示意图](figures/near-data-process.png)
 
 ## 客户价值<a name="section13406743164715"></a>
 

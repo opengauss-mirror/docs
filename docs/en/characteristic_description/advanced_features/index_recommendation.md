@@ -1,3 +1,8 @@
+---
+description: This document describes Index Recommendation in openGauss, covering topics such as Single-query Index Recommendation, Virtual Index Recommendation.
+keywords: [openGauss, Index Recommendation, features, Single-query Index Recommendation, Virtual Index Recommendation]
+---
+
 # Index Recommendation<a name="EN-US_TOPIC_0000001225414545"></a>
 
 openGauss index recommendation has three functions, including single-query index recommendation, virtual index recommendation, and workload-level index recommendation.

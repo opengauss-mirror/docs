@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_PACKAGE 的相关内容与操作方法。
+keywords: [openGauss, GS\_PACKAGE, 数据库参考]
+---
+
 # GS\_PACKAGE
 
 GS\_PACKAGE系统表记录PACKAGE内的信息。

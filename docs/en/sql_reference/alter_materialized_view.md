@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER MATERIALIZED VIEW in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER MATERIALIZED VIEW, SQL, Function, Precautions]
+---
+
 # ALTER MATERIALIZED VIEW<a name="EN-US_TOPIC_0289900865"></a>
 
 ## Function<a name="en-us_topic_0283137307_en-us_topic_0237122084_en-us_topic_0059778428_section1274412112511"></a>

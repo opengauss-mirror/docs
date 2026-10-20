@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS_AUDITING_POLICY 的相关内容与操作方法。
+keywords: [openGauss, GS_AUDITING_POLICY, 数据库参考]
+---
+
 # `GS_AUDITING_POLICY`
 
 `GS_AUDITING_POLICY` 系统表记录统一审计的主体信息，每条记录对应一个设计策略。需要有系统管理员或安全策略管理员权限才可以访问此系统表。

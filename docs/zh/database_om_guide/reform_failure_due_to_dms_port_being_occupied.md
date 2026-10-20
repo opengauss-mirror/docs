@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 因DMS端口被占用导致reform失败的问题 的相关内容，涵盖 一、问题现象、二、定位方法 等内容。
+keywords: [openGauss, 因DMS端口被占用导致reform失败的问题, 数据库运维, 一、问题现象, 二、定位方法]
+---
+
 # 因DMS端口被占用导致reform失败的问题
 
 ## 一、问题现象

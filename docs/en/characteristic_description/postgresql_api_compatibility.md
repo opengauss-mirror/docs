@@ -1,3 +1,8 @@
+---
+description: This document describes PostgreSQL API Compatibility in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, PostgreSQL API Compatibility, features, Availability, Introduction]
+---
+
 # PostgreSQL API Compatibility<a name="EN-US_TOPIC_0000001135302877"></a>
 
 ## Availability<a name="section56086982"></a>

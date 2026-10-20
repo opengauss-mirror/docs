@@ -1,3 +1,8 @@
+---
+description: This document describes DROP CAST in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP CAST, SQL, Function, Precautions]
+---
+
 # DROP CAST<a name="EN-US_TOPIC_0000001127460523"></a>
 
 ## Function<a name="section173831846163116"></a>

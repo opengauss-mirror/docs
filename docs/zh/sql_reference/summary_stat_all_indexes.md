@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SUMMARY\_STAT\_ALL\_INDEXES 的相关内容与操作方法。
+keywords: [openGauss, SUMMARY\_STAT\_ALL\_INDEXES, SQL参考]
+---
+
 # SUMMARY\_STAT\_ALL\_INDEXES
 
 将包含openGauss内汇聚数据库中的每个索引行，显示访问特定索引的统计。

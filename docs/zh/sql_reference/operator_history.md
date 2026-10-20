@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss OPERATOR\_HISTORY 的相关内容与操作方法。
+keywords: [openGauss, OPERATOR\_HISTORY, SQL参考]
+---
+
 # OPERATOR\_HISTORY
 
 OPERATOR\_HISTORY视图显示的是当前用户数据库主节点上执行作业结束后的算子的相关记录。记录的数据同[表1](../database_reference/gs_wlm_operator_info.md#zh-cn_topic_0283136785_zh-cn_topic_0237122263_zh-cn_topic_0111176227_table85181143511)。

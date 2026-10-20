@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 配置客户端接入认证 的相关内容，涵盖 背景信息、操作步骤 等内容。
+keywords: [openGauss, 配置客户端接入认证, 数据库管理, 背景信息, 操作步骤]
+---
+
 # 配置客户端接入认证
 
 ## 背景信息<a name="zh-cn_topic_0237121090_zh-cn_topic_0059778856_sa769b5cf486f45fe92aa0397f870561e"></a>

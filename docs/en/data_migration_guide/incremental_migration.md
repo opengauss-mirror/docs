@@ -1,3 +1,8 @@
+---
+description: This document describes Incremental Migration in openGauss, covering topics such as Function Description, Principles.
+keywords: [openGauss, Incremental Migration, data migration, Function Description, Principles]
+---
+
 # Incremental Migration<a name="EN-US_TOPIC_0000001347292416"></a>
 
 ## Function Description <a name="section41999541027"></a>

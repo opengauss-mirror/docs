@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 文件位置 的相关内容，涵盖 data\_directory、config\_file 等内容。
+keywords: [openGauss, 文件位置, 数据库参考, data\_directory, config\_file]
+---
+
 # 文件位置
 
 数据库安装后会自动生成三个配置文件（postgresql.conf、pg\_hba.conf和pg\_ident.conf），并统一存放在数据目录（data）下。用户可以使用本节介绍的方法修改配置文件的名称和存放路径。

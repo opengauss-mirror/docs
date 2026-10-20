@@ -1,3 +1,8 @@
+---
+description: This document describes References in openGauss.
+keywords: [openGauss, References, appendix]
+---
+
 # References
 
 \[1\] Y. Mao, E. Kohler, and R. T. Morris. Cache craftiness for fast multicore key-value storage. In Proc. 7th ACM European Conference on Computer Systems \(EuroSys\), Apr. 2012.

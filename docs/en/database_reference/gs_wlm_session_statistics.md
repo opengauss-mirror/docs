@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_WLM\_SESSION\_STATISTICS in openGauss.
+keywords: [openGauss, GS\_WLM\_SESSION\_STATISTICS, database reference]
+---
+
 # GS\_WLM\_SESSION\_STATISTICS<a name="EN-US_TOPIC_0000001105202294"></a>
 
 **GS\_WLM\_SESSION\_STATISTICS**  displays load management information about jobs being executed by the current user on the database instance. Only users with the  **sysadmin**  permission can query this view.

@@ -1,3 +1,8 @@
+---
+description: This document describes global\_rto\_status in openGauss.
+keywords: [openGauss, global\_rto\_status, SQL]
+---
+
 # global\_rto\_status<a name="EN-US_TOPIC_0000001150228308"></a>
 
 Displays log flow control information about the primary and standby nodes \(except the current node and standby DNs\).

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_STATS 的相关内容与操作方法。
+keywords: [openGauss, PG\_STATS, 数据库参考]
+---
+
 # PG\_STATS
 
 PG\_STATS视图提供对存储在pg\_statistic表里面的单列统计信息的访问。该视图记录的统计信息更新时间间隔由参数autovacuum\_naptime设置。

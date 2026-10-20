@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_probackup in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, gs\_probackup, tools and commands, Background, Prerequisites]
+---
+
 # gs\_probackup<a name="EN-US_TOPIC_0289899221"></a>
 
 ## Background<a name="en-us_topic_0287276008_section779474172017"></a>

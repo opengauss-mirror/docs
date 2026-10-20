@@ -1,3 +1,8 @@
+---
+description: This document describes MOT in openGauss, covering topics such as About This Manual, Audience.
+keywords: [openGauss, MOT, database administration, About This Manual, Audience]
+---
+
 # MOT<a name="EN-US_TOPIC_0257861804"></a>
 
 MOT is a high-performance row-based memory-optimized transactional storage engine (rowstore) that is a feature of Huawei's openGauss. 

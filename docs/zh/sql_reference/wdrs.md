@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 查看WDR报告 的相关内容与操作方法。
+keywords: [openGauss, 查看WDR报告, SQL参考]
+---
+
 # 查看WDR报告
 
 WDR报表主要内容如下表所示。

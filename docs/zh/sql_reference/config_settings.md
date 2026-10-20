@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CONFIG\_SETTINGS 的相关内容与操作方法。
+keywords: [openGauss, CONFIG\_SETTINGS, SQL参考]
+---
+
 # CONFIG\_SETTINGS
 
 CONFIG\_SETTINGS视图显示数据库运行时参数的相关信息。

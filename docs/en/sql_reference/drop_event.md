@@ -1,3 +1,8 @@
+---
+description: This document describes DROP EVENT in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP EVENT, SQL, Function, Precautions]
+---
+
 # DROP EVENT<a name="EN-US_TOPIC_0000001503113597"></a>
 
 ## Function<a name="section5400959952"></a>

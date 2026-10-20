@@ -1,3 +1,8 @@
+---
+description: This document describes ANALYZE | ANALYSE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ANALYZE | ANALYSE, SQL, Function, Precautions]
+---
+
 # ANALYZE | ANALYSE<a name="EN-US_TOPIC_0289900881"></a>
 
 ## Function<a name="en-us_topic_0283136969_en-us_topic_0237122086_en-us_topic_0059779340_s3b85e88124004279b0fccf70b5953039"></a>

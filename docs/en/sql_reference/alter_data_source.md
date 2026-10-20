@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER DATA SOURCE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER DATA SOURCE, SQL, Function, Precautions]
+---
+
 # ALTER DATA SOURCE<a name="EN-US_TOPIC_0289899857"></a>
 
 ## Function<a name="en-us_topic_0283136847_en-us_topic_0237122056_section1246564332711"></a>

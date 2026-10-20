@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 重设参数 的相关内容，涵盖 背景信息、GUC参数设置 等内容。
+keywords: [openGauss, 重设参数, 数据库管理, 背景信息, GUC参数设置]
+---
+
 # 重设参数
 
 ## 背景信息<a name="zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_s75c9285916664351b9c3e31f0735ea98"></a>

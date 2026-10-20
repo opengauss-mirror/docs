@@ -1,3 +1,8 @@
+---
+description: This document describes SUMMARY\_STAT\_DATABASE in openGauss.
+keywords: [openGauss, SUMMARY\_STAT\_DATABASE, SQL]
+---
+
 # SUMMARY\_STAT\_DATABASE<a name="EN-US_TOPIC_0245374699"></a>
 
 **SUMMARY\_STAT\_DATABASE**  contains every row of each database in the cluster, showing database-wide statistics. 

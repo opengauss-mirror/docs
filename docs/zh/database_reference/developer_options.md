@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 开发人员选项 的相关内容，涵盖 allow\_system\_table\_mods、allow_create_sysobject 等内容。
+keywords: [openGauss, 开发人员选项, 数据库参考, allow\_system\_table\_mods, allow_create_sysobject]
+---
+
 # 开发人员选项
 
 ## allow\_system\_table\_mods<a name="zh-cn_topic_0283137548_zh-cn_topic_0237124743_zh-cn_topic_0059778871_s4603d5ba740b4e4e9a71e245694cf887"></a>

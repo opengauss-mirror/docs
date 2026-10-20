@@ -1,3 +1,8 @@
+---
+description: This document describes STATEMENT\_IOSTAT\_COMPLEX\_RUNTIME in openGauss.
+keywords: [openGauss, STATEMENT\_IOSTAT\_COMPLEX\_RUNTIME, SQL]
+---
+
 # STATEMENT\_IOSTAT\_COMPLEX\_RUNTIME<a name="EN-US_TOPIC_0245374749"></a>
 
 **STATEMENT\_IOSTAT\_COMPLEX\_RUNTIME**  displays I/O load management information about ongoing jobs executed by the current user. IOPS is counted by ones for column storage and by 10 thousands for row storage.

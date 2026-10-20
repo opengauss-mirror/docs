@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 容器镜像安装 的相关内容，涵盖 1. dockerhub获取镜像并安装、2. 官网下载镜像并安装 等内容。
+keywords: [openGauss, 容器镜像安装, 安装指南, 1. dockerhub获取镜像并安装, 2. 官网下载镜像并安装]
+---
+
 # 容器镜像安装
 
 本章节主要介绍如何获取openGauss数据库镜像，并通过Docker安装，以便用户能快速开启数据库之旅。openGauss镜像主要有两种获取方式，分别可以通过dockerhub和官网获取对应镜像，下面将详细介绍这两种获取路径对应的安装方式。

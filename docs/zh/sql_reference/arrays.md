@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 数组 的相关内容，涵盖 特性说明、示例 等内容。
+keywords: [openGauss, 数组, SQL参考, 特性说明, 示例]
+---
+
 # 数组
 
 ## 特性说明<a name="zh-cn_topic_0283137521_zh-cn_topic_0237122214_zh-cn_topic_0059778979_s9b23a1cdca6042f3ae428afa25038607"></a>

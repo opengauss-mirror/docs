@@ -1,3 +1,8 @@
+---
+description: This document describes Incremental Materialized View in openGauss, covering topics such as Overview, Usage.
+keywords: [openGauss, Incremental Materialized View, SQL, Overview, Usage]
+---
+
 # Incremental Materialized View<a name="EN-US_TOPIC_0295970206"></a>
 
 ## Overview<a name="EN-US_TOPIC_0295970207"></a>

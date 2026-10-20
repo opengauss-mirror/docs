@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SUMMARY\_STAT\_XACT\_USER\_TABLES 的相关内容与操作方法。
+keywords: [openGauss, SUMMARY\_STAT\_XACT\_USER\_TABLES, SQL参考]
+---
+
 # SUMMARY\_STAT\_XACT\_USER\_TABLES
 
 显示数据库内汇聚的命名空间中用户表的事务状态信息。

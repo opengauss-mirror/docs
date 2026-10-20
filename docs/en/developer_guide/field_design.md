@@ -1,3 +1,8 @@
+---
+description: This document describes Field Design in openGauss, covering topics such as Selecting a Data Type, Common String Types.
+keywords: [openGauss, Field Design, development, Selecting a Data Type, Common String Types]
+---
+
 # Field Design<a name="EN-US_TOPIC_0000001102708106"></a>
 
 ## Selecting a Data Type<a name="section52674274151022"></a>

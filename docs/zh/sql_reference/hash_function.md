@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss HashFunc函数 的相关内容与操作方法。
+keywords: [openGauss, HashFunc函数, SQL参考]
+---
+
 # HashFunc函数
 
 - bucketabstime\(value，flag\)

@@ -1,3 +1,8 @@
+---
+description: This document describes Data Types Supported by Column-store Tables in openGauss.
+keywords: [openGauss, Data Types Supported by Column-store Tables, SQL]
+---
+
 # Data Types Supported by Column-store Tables<a name="EN-US_TOPIC_0289900452"></a>
 
 [Table 1](#en-us_topic_0283136748_en-us_topic_0237121962_table1899319136548)  lists the data types supported by column-store tables.

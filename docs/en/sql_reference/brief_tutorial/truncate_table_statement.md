@@ -1,3 +1,8 @@
+---
+description: This document describes TRUNCATE TABLE Statement in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, TRUNCATE TABLE Statement, SQL, Syntax, Parameter Description]
+---
+
 # TRUNCATE TABLE Statement<a name="EN-US_TOPIC_0000001180098776"></a>
 
 The TRUNCATE TABLE statement deletes table data but does not delete the table structure. You can also execute the DROP TABLE statement to delete a table. However, this statement deletes the table structure together with the table. To insert data into the table, you need to recreate the table.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss oGRecorder 双向认证 的相关内容，涵盖 证书参数介绍、证书生成 等内容。
+keywords: [openGauss, oGRecorder 双向认证, 工具与命令参考, 证书参数介绍, 证书生成]
+---
+
 # oGRecorder 双向认证
 
 ## 证书参数介绍

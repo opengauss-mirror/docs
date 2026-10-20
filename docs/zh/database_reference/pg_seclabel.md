@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_SECLABEL 的相关内容与操作方法。
+keywords: [openGauss, PG\_SECLABEL, 数据库参考]
+---
+
 # PG\_SECLABEL
 
 PG\_SECLABEL系统表存储数据对象上的安全标签。

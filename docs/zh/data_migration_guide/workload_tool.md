@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 录制回放工具 的相关内容，涵盖 功能介绍、原理简介 等内容。
+keywords: [openGauss, 录制回放工具, 数据迁移, 功能介绍, 原理简介]
+---
+
 # 录制回放工具
 
 ## 功能介绍
@@ -32,7 +37,7 @@ SQL流量录制回放工具，可以录制源端数据库（MySQL）客户端的
 
    图1. tcpdump录制回放示意图
 
-   <img src="./figures/transcribe.jpg">
+   <img src="./figures/transcribe.jpg" alt="录制示意图">
 
 2. 基于attach应用程序的录制，可以对java应用程序进行动态插桩，直接采集java应用程序中的动态SQL，工具需与java应用程序部署在同一台机器上。
 
@@ -67,7 +72,7 @@ SQL流量录制回放工具，可以录制源端数据库（MySQL）客户端的
 
 该工具支持在Linux使用，Windows系统仅支持基于MySQL系统表的录制方式，所以推荐使用Linux系统，Linux上工具部署形态如下：
 
-   <img src="./figures/install.png">
+   <img src="./figures/install.png" alt="环境准备示意图">
 
 ## 约束
 

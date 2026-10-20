@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 子类型 的相关内容，涵盖 功能描述、语法格式 等内容。
+keywords: [openGauss, 子类型, SQL参考, 功能描述, 语法格式]
+---
+
 # 子类型
 
 ## 功能描述

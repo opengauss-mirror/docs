@@ -1,3 +1,8 @@
+---
+description: This document describes DELIMITER in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DELIMITER, SQL, Function, Precautions]
+---
+
 # DELIMITER
 
 ## Function

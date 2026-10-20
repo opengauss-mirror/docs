@@ -1,10 +1,15 @@
+---
+description: This document describes Use of Set Types in openGauss.
+keywords: [openGauss, Use of Set Types, SQL]
+---
+
 # Use of Set Types<a name="EN-US_TOPIC_0000001153159330"></a>
 
 Before the use of sets, a set type needs to be defined.
 
 Define a set type immediately after the  **AS**  keyword in a stored procedure. The definition method is as follows:
 
-![](figures/en-us_image_0000001153515022.png)
+![Use of Set Types diagram](figures/en-us_image_0000001153515022.png)
 
 In the preceding information:
 

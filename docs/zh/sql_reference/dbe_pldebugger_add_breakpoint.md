@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBE\_PLDEBUGGER.add\_breakpoint 的相关内容与操作方法。
+keywords: [openGauss, DBE\_PLDEBUGGER.add\_breakpoint, SQL参考]
+---
+
 # DBE\_PLDEBUGGER.add\_breakpoint
 
 debug端调试过程中，调用add\_breakpoint增加新的断点。如果返回-1则说明指定的断点不合法，请参考[DBE\_PLDEBUGGER.info\_code](dbe_pldebugger_info_code.md)的canbreak字段确定断点合适的位置。

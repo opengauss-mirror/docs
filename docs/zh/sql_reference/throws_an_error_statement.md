@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 抛出错误语句 的相关内容，涵盖 SIGNAL语句、RESIGNAL语句 等内容。
+keywords: [openGauss, 抛出错误语句, SQL参考, SIGNAL语句, RESIGNAL语句]
+---
+
 # 抛出错误语句<a name="ZH-CN_TOPIC_0245374637"></a>
 
 介绍PL/SQL中修改和抛出错误的语句signal和resignal语句。

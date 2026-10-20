@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MOVE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, MOVE, SQL参考, 功能描述, 注意事项]
+---
+
 # MOVE
 
 ## 功能描述<a name="zh-cn_topic_0283137573_zh-cn_topic_0237122169_zh-cn_topic_0059778649_s0bf0a06c81754f8b9c758ba7660a6d5f"></a>

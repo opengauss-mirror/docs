@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_REPLICATION\_ORIGIN\_STATUS in openGauss.
+keywords: [openGauss, PG\_REPLICATION\_ORIGIN\_STATUS, database reference]
+---
+
 # PG\_REPLICATION\_ORIGIN\_STATUS<a name="EN-US_TOPIC_0000001243677367"></a>
 
 **PG\_REPLICATION\_ORIGIN\_STATUS**  displays the replication status of the replication source.

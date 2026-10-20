@@ -1,3 +1,8 @@
+---
+description: This document describes Checkpoints in openGauss, covering topics such as checkpoint\_segments, checkpoint\_timeout.
+keywords: [openGauss, Checkpoints, database reference, checkpoint\_segments, checkpoint\_timeout]
+---
+
 # Checkpoints<a name="EN-US_TOPIC_0289900150"></a>
 
 ## checkpoint\_segments<a name="en-us_topic_0283137153_en-us_topic_0237124708_en-us_topic_0059778936_sbadc77895e6643b882a5e7557e405373"></a>

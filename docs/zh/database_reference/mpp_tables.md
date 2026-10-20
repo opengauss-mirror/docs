@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MPP\_TABLES 的相关内容与操作方法。
+keywords: [openGauss, MPP\_TABLES, 数据库参考]
+---
+
 # MPP\_TABLES
 
 MPP\_TABLES视图显示信息如下。

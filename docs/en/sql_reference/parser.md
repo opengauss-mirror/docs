@@ -1,3 +1,8 @@
+---
+description: This document describes Parser in openGauss.
+keywords: [openGauss, Parser, SQL]
+---
+
 # Parser<a name="EN-US_TOPIC_0289900919"></a>
 
 Text search parsers are responsible for splitting raw document text into tokens and identifying each token's type, where the type set is defined by the parser itself. Note that a parser does not modify the text; it simply identifies plausible word boundaries. Because of this limit, there is less need for application-specific custom parsers than there is for custom dictionaries.

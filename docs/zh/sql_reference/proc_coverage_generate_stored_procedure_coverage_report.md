@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 生成存储过程覆盖率报告 的相关内容，涵盖 前提条件、操作步骤 等内容。
+keywords: [openGauss, 生成存储过程覆盖率报告, SQL参考, 前提条件, 操作步骤]
+---
+
 # 生成存储过程覆盖率报告
 
 基于coverage.proc_coverage数据包汇总，生成存储过程覆盖率报告。

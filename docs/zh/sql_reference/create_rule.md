@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE RULE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE RULE, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE RULE
 
 ## 功能描述<a name="section189661819135511"></a>

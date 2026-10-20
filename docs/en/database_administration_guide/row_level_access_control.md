@@ -1,3 +1,8 @@
+---
+description: This document describes Row-Level Access Control in openGauss.
+keywords: [openGauss, Row-Level Access Control, database administration]
+---
+
 # Row-Level Access Control<a name="EN-US_TOPIC_0246507965"></a>
 
 The row-level access control feature enables database access control to be accurate to each row of data tables. In this way, the same SQL query may return different results for different users.

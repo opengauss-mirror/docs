@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER MASKING POLICY in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER MASKING POLICY, SQL, Function, Precautions]
+---
+
 # ALTER MASKING POLICY<a name="EN-US_TOPIC_0306525300"></a>
 
 ## Function<a name="en-us_topic_0059778839_s878bf4f1569c4d2f87e056f26372448e"></a>

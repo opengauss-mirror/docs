@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 语句行为 的相关内容，涵盖 search\_path、current\_schema 等内容。
+keywords: [openGauss, 语句行为, 数据库参考, search\_path, current\_schema]
+---
+
 # 语句行为
 
 介绍SQL语句执行过程的相关默认参数。

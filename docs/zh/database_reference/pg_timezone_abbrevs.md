@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_TIMEZONE\_ABBREVS 的相关内容与操作方法。
+keywords: [openGauss, PG\_TIMEZONE\_ABBREVS, 数据库参考]
+---
+
 # PG\_TIMEZONE\_ABBREVS
 
 PG\_TIMEZONE\_ABBREVS视图提供了显示了所有可用的时区信息。

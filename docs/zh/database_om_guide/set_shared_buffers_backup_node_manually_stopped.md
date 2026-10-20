@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 设置shared_buffers后备节点manually stopped 的相关内容，涵盖 现象、原因 等内容。
+keywords: [openGauss, 设置shared_buffers后备节点manually stopped, 数据库运维, 现象, 原因]
+---
+
 # 设置shared_buffers后备节点manually stopped
 
 ## 现象

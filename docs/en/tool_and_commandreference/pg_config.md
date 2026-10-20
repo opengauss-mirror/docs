@@ -1,3 +1,8 @@
+---
+description: This document describes pg\_config in openGauss, covering topics such as Function, Syntax.
+keywords: [openGauss, pg\_config, tools and commands, Function, Syntax]
+---
+
 # pg\_config<a name="EN-US_TOPIC_0249632265"></a>
 
 ## Function<a name="en-us_topic_0237152437_section88358281478"></a>

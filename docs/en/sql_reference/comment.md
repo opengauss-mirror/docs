@@ -1,3 +1,8 @@
+---
+description: This document describes COMMENT in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, COMMENT, SQL, Function, Precautions]
+---
+
 # COMMENT<a name="EN-US_TOPIC_0289900191"></a>
 
 ## Function<a name="en-us_topic_0283137624_en-us_topic_0237122093_en-us_topic_0059778518_se3f65a35f2604b18a7024290d26f80cf"></a>

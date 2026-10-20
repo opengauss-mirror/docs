@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 开源软件声明 的相关内容与操作方法。
+keywords: [openGauss, 开源软件声明, 开源声明]
+---
+
 # 开源软件声明
 
 openGauss每个仓库的开源软件声明如下表：

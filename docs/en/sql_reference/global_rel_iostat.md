@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_REL\_IOSTAT in openGauss.
+keywords: [openGauss, GLOBAL\_REL\_IOSTAT, SQL]
+---
+
 # GLOBAL\_REL\_IOSTAT<a name="EN-US_TOPIC_0245374677"></a>
 
 **GLOBAL\_REL\_IOSTAT** is the aggregate statistics of openGauss on the cumulative value of the data file IO status, reflecting the IO performance of the data file access.

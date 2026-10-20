@@ -1,3 +1,8 @@
+---
+description: This document describes javax.sql.PooledConnection in openGauss.
+keywords: [openGauss, javax.sql.PooledConnection, development]
+---
+
 # javax.sql.PooledConnection<a name="EN-US_TOPIC_0289900426"></a>
 
 This section describes  **javax.sql.PooledConnection**, the connection API created by a connection pool.

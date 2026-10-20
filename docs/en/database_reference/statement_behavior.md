@@ -1,3 +1,8 @@
+---
+description: This document describes Statement Behavior in openGauss, covering topics such as search\_path, current\_schema.
+keywords: [openGauss, Statement Behavior, database reference, search\_path, current\_schema]
+---
+
 # Statement Behavior<a name="EN-US_TOPIC_0289900775"></a>
 
 This section describes related default parameters involved in the execution of SQL statements.

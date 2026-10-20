@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 使用JDBC操作密态数据库 的相关内容，涵盖 连接密态数据库、调用isValid方法刷新缓存示例 等内容。
+keywords: [openGauss, 使用JDBC操作密态数据库, 数据库管理, 连接密态数据库, 调用isValid方法刷新缓存示例]
+---
+
 # 使用JDBC操作密态数据库
 
 ## 连接密态数据库<a name="section6796167162618"></a>

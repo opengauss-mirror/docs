@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP SYNONYM 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP SYNONYM, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP SYNONYM
 
 ## 功能描述<a name="zh-cn_topic_0283137394_zh-cn_topic_0237122151_zh-cn_topic_0059778429_s99b7590244bd4c1ab904f72cfc2cc9a0"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 内存表 的相关内容，涵盖 enable\_mot\_server、enable\_codegen\_mot 等内容。
+keywords: [openGauss, 内存表, 数据库参考, enable\_mot\_server, enable\_codegen\_mot]
+---
+
 # 内存表
 
 介绍内存表的配置参数。

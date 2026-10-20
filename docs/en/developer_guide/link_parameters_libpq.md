@@ -1,3 +1,8 @@
+---
+description: This document describes Link Parameters in openGauss.
+keywords: [openGauss, Link Parameters, development]
+---
+
 # Link Parameters<a name="EN-US_TOPIC_0289900649"></a>
 
 **Table  1**  Link parameters

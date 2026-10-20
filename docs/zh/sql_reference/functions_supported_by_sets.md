@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 集合支持的函数 的相关内容，涵盖 集合操作符、集合MULTISET函数 等内容。
+keywords: [openGauss, 集合支持的函数, SQL参考, 集合操作符, 集合MULTISET函数]
+---
+
 # 集合支持的函数
 
 ## 集合操作符<a name="section423710350429"></a>

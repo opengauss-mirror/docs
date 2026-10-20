@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER TABLE SUBPARTITION 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER TABLE SUBPARTITION, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER TABLE SUBPARTITION
 
 ## 功能描述<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_s4954d450a2e8434aa3abac355bac38e6"></a>

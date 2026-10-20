@@ -1,3 +1,8 @@
+---
+description: This document describes Memory Table in openGauss, covering topics such as enable\_codegen\_mot, force\_pseudo\_codegen\_mot.
+keywords: [openGauss, Memory Table, database reference, enable\_codegen\_mot, force\_pseudo\_codegen\_mot]
+---
+
 # Memory Table<a name="EN-US_TOPIC_0289900839"></a>
 
 This section describes the parameters in the memory table.

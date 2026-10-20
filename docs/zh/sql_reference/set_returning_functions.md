@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 返回集合的函数 的相关内容，涵盖 序列号生成函数、下标生成函数 等内容。
+keywords: [openGauss, 返回集合的函数, SQL参考, 序列号生成函数, 下标生成函数]
+---
+
 # 返回集合的函数
 
 ## 序列号生成函数<a name="zh-cn_topic_0283137117_zh-cn_topic_0237121985_zh-cn_topic_0059779332_sfde916b05a3b4024b5cddf1ccf83a8f2"></a>

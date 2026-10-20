@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PQfreeCancel 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, PQfreeCancel, 开发指南, 功能描述, 原型]
+---
+
 # PQfreeCancel
 
 ## 功能描述<a name="zh-cn_topic_0241735637_section97861442183315"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 概述 的相关内容，涵盖 背景信息 等内容。
+keywords: [openGauss, 概述, SQL参考, 背景信息]
+---
+
 # 概述
 
 ## 背景信息<a name="zh-cn_topic_0283136636_zh-cn_topic_0237122007_zh-cn_topic_0059778774_s2b7b7e4374fc4b6b9010857a056985ab"></a>

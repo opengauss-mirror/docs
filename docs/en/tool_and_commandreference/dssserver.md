@@ -1,3 +1,8 @@
+---
+description: This document describes dssserver in openGauss, covering topics such as Background, Syntax.
+keywords: [openGauss, dssserver, tools and commands, Background, Syntax]
+---
+
 # dssserver<a name="ZH-CN_TOPIC_0000001375274965"></a>
 
 ## Background<a name="en-us_topic_0287276000_en-us_topic_0237152404_en-us_topic_0059777816_section2761723143810"></a>

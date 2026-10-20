@@ -1,3 +1,8 @@
+---
+description: This document describes Before You Start in openGauss, covering topics such as Prerequisites, Procedure.
+keywords: [openGauss, Before You Start, getting started, Prerequisites, Procedure]
+---
+
 # Before You Start<a name="EN-US_TOPIC_0242370174"></a>
 
 This section explains how to use databases, including creating databases and tables, inserting data to tables, and querying data in tables.

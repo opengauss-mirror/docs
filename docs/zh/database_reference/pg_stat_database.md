@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_STAT\_DATABASE 的相关内容与操作方法。
+keywords: [openGauss, PG\_STAT\_DATABASE, 数据库参考]
+---
+
 # PG\_STAT\_DATABASE
 
 PG\_STAT\_DATABASE视图将包含openGauss中每个数据库的数据库统计信息。

@@ -1,3 +1,8 @@
+---
+description: This document describes Constraints in openGauss, covering topics such as NOT NULL, UNIQUE.
+keywords: [openGauss, Constraints, SQL, NOT NULL, UNIQUE]
+---
+
 # Constraints<a name="EN-US_TOPIC_0000001225258421"></a>
 
 Constraint clauses specify constraints that new or updated rows must satisfy for an INSERT or UPDATE operation to succeed. If there is any data behavior that violates the constraints, the behavior is terminated by the constraints.

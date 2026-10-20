@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Mysql全量迁移断点续传 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, Mysql全量迁移断点续传, 特性描述, 可获得性, 特性简介]
+---
+
 # Mysql全量迁移断点续传
 
 ## 可获得性<a name="section56086982"></a>

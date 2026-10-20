@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER SEQUENCE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER SEQUENCE, SQL, Function, Precautions]
+---
+
 # ALTER SEQUENCE<a name="EN-US_TOPIC_0289900494"></a>
 
 ## Function<a name="en-us_topic_0283137303_en-us_topic_0237122071_en-us_topic_0062358310_s806d414edb004fa89cd50a1166d1136e"></a>

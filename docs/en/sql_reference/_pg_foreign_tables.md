@@ -1,3 +1,8 @@
+---
+description: This document describes \_PG\_FOREIGN\_TABLES in openGauss.
+keywords: [openGauss, \_PG\_FOREIGN\_TABLES, SQL]
+---
+
 # \_PG\_FOREIGN\_TABLES<a name="EN-US_TOPIC_0310260670"></a>
 
 **\_PG\_FOREIGN\_TABLES**  stores information about all foreign tables defined in the current database, whereas displays information about foreign tables accessible to the current user. Only the sysadmin user has the permission to view this view.

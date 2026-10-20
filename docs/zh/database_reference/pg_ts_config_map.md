@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_TS\_CONFIG\_MAP 的相关内容与操作方法。
+keywords: [openGauss, PG\_TS\_CONFIG\_MAP, 数据库参考]
+---
+
 # PG\_TS\_CONFIG\_MAP
 
 PG\_TS\_CONFIG\_MAP系统表包含为每个文本搜索配置的解析器的每个输出符号类型，显示哪个文本搜索字典应该被咨询、以什么顺序搜索的记录。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PQsendQueryParams 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, PQsendQueryParams, 开发指南, 功能描述, 原型]
+---
+
 # PQsendQueryParams
 
 ## 功能描述<a name="zh-cn_topic_0241735628_section10518135331919"></a>

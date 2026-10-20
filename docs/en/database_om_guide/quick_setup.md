@@ -1,3 +1,8 @@
+---
+description: This document describes Quick Setup in openGauss.
+keywords: [openGauss, Quick Setup, database O&M]
+---
+
 # Quick Setup<a name="EN-US_TOPIC_0289900926"></a>
 
 Set the following configuration items in the **postgresql.conf** file.

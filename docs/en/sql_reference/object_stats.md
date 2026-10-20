@@ -1,3 +1,8 @@
+---
+description: This document describes Object stats in openGauss, covering topics such as User Tables stats, User index stats.
+keywords: [openGauss, Object stats, SQL, User Tables stats, User index stats]
+---
+
 # Object stats<a name="EN-US_TOPIC_0000001260195075"></a>
 
 Object stats contains three tables: User Tables stats, User index stats, and Bad lock stats. Columns in the tables are described as follows:

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STATIO\_SYS\_SEQUENCES 的相关内容与操作方法。
+keywords: [openGauss, STATIO\_SYS\_SEQUENCES, SQL参考]
+---
+
 # STATIO\_SYS\_SEQUENCES
 
 STATIO\_SYS\_SEQUENCES显示命名空间中所有系统表为序列的IO状态信息。

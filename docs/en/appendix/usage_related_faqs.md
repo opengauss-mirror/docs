@@ -1,3 +1,8 @@
+---
+description: This document describes Usage-related FAQs in openGauss.
+keywords: [openGauss, Usage-related FAQs, appendix]
+---
+
 # Usage-related FAQs<a name="EN-US_TOPIC_0000001150545071"></a>
 
 **1. What should I do if the error message "unknow:26000" is displayed when GSQL is used to connect to the database?**
@@ -36,7 +41,7 @@ gs_guc reload -N all -I all -c "modify_initial_password  =  false"
 
 **3. What can I do if an error message is displayed indicating that the PID does not exist when I run the following command?**
 
-![](figures/en-us_image_0000001103872542.png)
+![Usage-related FAQs diagram](figures/en-us_image_0000001103872542.png)
 
 **Answer:**
 
@@ -50,7 +55,7 @@ The possible cause is that the JDK version is incompatible with the system. The 
 
 **5. What do I do if an error occurs when Data Studio connects to the openGauss database and the system displays a message indicating that the connection fails? The error information is as follows.**
 
-![](figures/en-us_image_0000001104198936.png)
+![Usage-related FAQs diagram](figures/en-us_image_0000001104198936.png)
 
 **Answer:**
 

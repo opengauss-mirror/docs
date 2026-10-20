@@ -1,3 +1,8 @@
+---
+description: This document describes Array Expressions in openGauss, covering topics such as IN, NOT IN.
+keywords: [openGauss, Array Expressions, SQL, IN, NOT IN]
+---
+
 # Array Expressions<a name="EN-US_TOPIC_0289900526"></a>
 
 ## IN<a name="en-us_topic_0283137227_en-us_topic_0237122004_en-us_topic_0059778101_s5f7d92a0eaa14c1ab1215282bce7a3ef"></a>

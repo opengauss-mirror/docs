@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 异常处理 的相关内容，涵盖 升级问题FAQ 等内容。
+keywords: [openGauss, 异常处理, 数据库运维, 升级问题FAQ]
+---
+
 # 异常处理
 
 如果升级失败，请按照如下方式进行处理：

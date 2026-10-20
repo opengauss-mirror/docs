@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 安全函数 的相关内容，涵盖 安全函数 等内容。
+keywords: [openGauss, 安全函数, SQL参考]
+---
+
 # 安全函数
 
 ## 安全函数<a name="zh-cn_topic_0283137444_zh-cn_topic_0237121984_zh-cn_topic_0059778224_s8faac65b21ea4e438009735298c2c8d1"></a>

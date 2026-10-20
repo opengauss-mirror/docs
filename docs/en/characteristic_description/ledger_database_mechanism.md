@@ -1,3 +1,8 @@
+---
+description: This document describes Ledger Database Mechanism in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Ledger Database Mechanism, features, Availability, Introduction]
+---
+
 # Ledger Database Mechanism<a name="EN-US_TOPIC_0000001110353738"></a>
 
 ## Availability<a name="section17746747"></a>

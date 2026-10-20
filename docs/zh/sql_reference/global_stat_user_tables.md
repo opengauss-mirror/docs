@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_STAT\_USER\_TABLES 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_STAT\_USER\_TABLES, SQL参考]
+---
+
 # GLOBAL\_STAT\_USER\_TABLES
 
 得到各节点所有命名空间中用户自定义普通表的状态信息。

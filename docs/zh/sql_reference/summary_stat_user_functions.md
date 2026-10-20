@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SUMMARY\_STAT\_USER\_FUNCTIONS 的相关内容与操作方法。
+keywords: [openGauss, SUMMARY\_STAT\_USER\_FUNCTIONS, SQL参考]
+---
+
 # SUMMARY\_STAT\_USER\_FUNCTIONS
 
 SUMMARY\_STAT\_USER\_FUNCTIONS用来统计所数据库节点用户自定义函数的相关统计信息。

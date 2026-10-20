@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss FILE\_REDO\_IOSTAT 的相关内容与操作方法。
+keywords: [openGauss, FILE\_REDO\_IOSTAT, SQL参考]
+---
+
 # FILE\_REDO\_IOSTAT
 
 本节点Redo（WAL）相关的统计信息。

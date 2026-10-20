@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 系统性能快照 的相关内容，涵盖 enable\_wdr\_snapshot、wdr\_snapshot\_retention\_days 等内容。
+keywords: [openGauss, 系统性能快照, 数据库参考, enable\_wdr\_snapshot, wdr\_snapshot\_retention\_days]
+---
+
 # 系统性能快照
 
 ## enable\_wdr\_snapshot<a name="zh-cn_topic_0283137284_zh-cn_topic_0237124757_section983311682019"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes THREAD\_WAIT\_STATUS in openGauss.
+keywords: [openGauss, THREAD\_WAIT\_STATUS, SQL]
+---
+
 # THREAD\_WAIT\_STATUS<a name="EN-US_TOPIC_0245374743"></a>
 
 **THREAD\_WAIT\_STATUS**  allows you to test the block waiting status of the backend thread and auxiliary thread in the current instance. For details about events, see  [Table 2](../database_reference/pg_thread_wait_status.md),  [Table 3](../database_reference/pg_thread_wait_status.md),  [Table 4](../database_reference/pg_thread_wait_status.md), and  [Table 5](../database_reference/pg_thread_wait_status.md).

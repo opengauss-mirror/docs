@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 解析文档 的相关内容与操作方法。
+keywords: [openGauss, 解析文档, SQL参考]
+---
+
 # 解析文档
 
 openGauss中提供了to\_tsvector函数把文档处理成tsvector数据类型。

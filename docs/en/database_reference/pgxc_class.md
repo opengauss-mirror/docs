@@ -1,3 +1,8 @@
+---
+description: This document describes PGXC\_CLASS in openGauss.
+keywords: [openGauss, PGXC\_CLASS, database reference]
+---
+
 # PGXC\_CLASS<a name="EN-US_TOPIC_0000001152052780"></a>
 
 **PGXC\_CLASS**  records the replicated or distributed information for each table. The  **PGXC\_CLASS**  system catalog has specific meanings only in distributed scenarios. openGauss can only query the table definition.

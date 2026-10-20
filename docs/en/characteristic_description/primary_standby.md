@@ -1,3 +1,8 @@
+---
+description: This document describes Primary/Standby in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Primary/Standby, features, Availability, Introduction]
+---
+
 # Primary/Standby<a name="EN-US_TOPIC_0000001152195133"></a>
 
 ## Availability<a name="section14707931165614"></a>

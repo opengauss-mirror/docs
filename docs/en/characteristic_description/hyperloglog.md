@@ -1,3 +1,8 @@
+---
+description: This document describes HyperLogLog in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, HyperLogLog, features, Availability, Introduction]
+---
+
 # HyperLogLog<a name="EN-US_TOPIC_0000001135403983"></a>
 
 ## Availability<a name="section5309649"></a>

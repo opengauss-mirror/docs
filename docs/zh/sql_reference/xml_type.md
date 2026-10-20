@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss XML类型 的相关内容与操作方法。
+keywords: [openGauss, XML类型, SQL参考]
+---
+
 # XML类型
 
 XML数据类型可以被用来存储XML数据。它的内部格式和TEXT类型相同，它比直接在一个TEXT域中存储XML数据的优势在于：它会使用LIBXML2对于XML格式文本的处理能力，检查输入值的结构是不是符合XML标准，并且基于LIBXML2提供了支持函数用于在其上执行类型安全的操作。

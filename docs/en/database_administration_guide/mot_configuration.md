@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Configuration Settings in openGauss, covering topics such as General Guidelines, REDO LOG \(MOT\).
+keywords: [openGauss, MOT Configuration Settings, database administration, General Guidelines, REDO LOG \(MOT\)]
+---
+
 # MOT Configuration Settings<a name="EN-US_TOPIC_0270171581"></a>
 
 MOT is provided preconfigured to creating working MOT Tables. For best results, it is recommended to customize the MOT configuration \(defined in the file named mot.conf\) according to your application's specific requirements and your preferences.

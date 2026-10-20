@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_INDEXES\_VERBOSE 的相关内容与操作方法。
+keywords: [openGauss, PG\_INDEXES\_VERBOSE, SQL参考]
+---
+
 # PG\_INDEXES\_VERBOSE
 PG\_INDEXES\_VERBOSE视图可查询索引是否被其他索引覆盖。
 

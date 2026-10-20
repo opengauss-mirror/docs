@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss deb包安装 的相关内容，涵盖 支持的架构和操作系统版本以及对应的openGauss版本、支持特性 等内容。
+keywords: [openGauss, deb包安装, 安装指南, 支持的架构和操作系统版本以及对应的openGauss版本, 支持特性]
+---
+
 # deb包安装
 
 本章节主要介绍在Ubuntu和Debian操作系统上，通过apt命令一键安装openGauss数据库。

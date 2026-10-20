@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PQsendQuery 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, PQsendQuery, 开发指南, 功能描述, 原型]
+---
+
 # PQsendQuery
 
 ## 功能描述<a name="zh-cn_topic_0241735627_section1650116513199"></a>

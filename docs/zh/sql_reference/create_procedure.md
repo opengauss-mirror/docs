@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE PROCEDURE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE PROCEDURE, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE PROCEDURE
 
 ## 功能描述<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_s824c141a39964bd39575295aebb98d67"></a>

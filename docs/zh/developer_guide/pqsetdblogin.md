@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PQsetdbLogin 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, PQsetdbLogin, 开发指南, 功能描述, 原型]
+---
+
 # PQsetdbLogin
 
 ## 功能描述<a name="zh-cn_topic_0241735615_section189041135191819"></a>

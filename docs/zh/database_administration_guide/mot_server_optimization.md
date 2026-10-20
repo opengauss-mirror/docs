@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MOT服务器优化 的相关内容，涵盖 MOT服务器优化：x86、MOT服务器优化：基于Arm的华为TaiShan2P/4P服务器 等内容。
+keywords: [openGauss, MOT服务器优化, 数据库管理, MOT服务器优化：x86, MOT服务器优化：基于Arm的华为TaiShan2P/4P服务器]
+---
+
 # MOT服务器优化
 
 ## MOT服务器优化：x86
@@ -168,15 +173,15 @@ rc.local：网卡调优
 1. 选择 **BIOS** \>  **Advanced**  \>  **MISC Config**。设置 **Support Smmu** 为 **Disabled**。
 2. 选择 **BIOS** \>  **Advanced**  \>  **MISC Config**。设置 **CPU Prefetching Configuration** 为 **Disabled**。
 
-    ![](figures/zh-cn_image_0280525203.png)
+    ![BIOS示意图](figures/zh-cn_image_0280525203.png)
 
 3. 选择 **BIOS**  \>  **Advanced**  \>  **Memory Config**。设置 **Die Interleaving** 为 **Disabled** 。
 
-    ![](figures/zh-cn_image_0280525205.png)
+    ![BIOS示意图](figures/zh-cn_image_0280525205.png)
 
 4. 选择 **BIOS**  \>  **Advanced**  \>  **Performance Config**。设置 **Power Policy** 为 **Performance**。
 
-    ![](figures/zh-cn_image_0280525207.png)
+    ![BIOS示意图](figures/zh-cn_image_0280525207.png)
 
 ### 操作系统：内核和启动<a name="section11961253"></a>
 

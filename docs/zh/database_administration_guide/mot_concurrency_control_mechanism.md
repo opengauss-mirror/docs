@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MOT并发控制机制 的相关内容，涵盖 MOT本地内存和全局内存、MOT SILO增强特性 等内容。
+keywords: [openGauss, MOT并发控制机制, 数据库管理, MOT本地内存和全局内存, MOT SILO增强特性]
+---
+
 # MOT并发控制机制
 
 通过大量研究，我们找到了最佳的并发控制机制，结论为：基于SILO的OCC算法是MOT中最符合ACID特性的OCC算法。SILO为满足MOT的挑战性需求提供了最好的基础。
@@ -19,7 +24,7 @@ SILO管理本地内存和全局内存，如图1所示。
 本地内存与SILO增强并发控制的基本交互式事务流如下所示：
 
 **图 1**  私有（本地）内存（每个事务）和全局内存（所有核的所有事务）<a name="fig18716015"></a>  
-![](figures/Private-memory-and-global-memory.png)
+![私有（本地）内存（每个事务）和全局内存（所有核的所有事务）](figures/Private-memory-and-global-memory.png)
 
 具体请参见_Industrial-Strength OLTP Using Main Memory and Many-cores_<sup>\[</sup>[对比：磁盘与MOT](comparison_disk_vs_mot.md)<sup>\]</sup>。
 

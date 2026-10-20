@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 日期/时间类型 的相关内容，涵盖 日期输入 等内容。
+keywords: [openGauss, 日期/时间类型, SQL参考, 日期输入]
+---
+
 # 日期/时间类型
 
 openGauss支持的日期/时间类型请参见[表1](#zh-cn_topic_0283136973_zh-cn_topic_0237121952_zh-cn_topic_0059779229_zh-cn_topic_0058965827_table60826369)。该类型的操作符和内置函数请参见[时间和日期处理函数和操作符](date_and_time_processing_functions_and_operators.md)。

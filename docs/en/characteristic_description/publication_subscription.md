@@ -1,3 +1,8 @@
+---
+description: This document describes Publication-Subscription in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Publication-Subscription, features, Availability, Introduction]
+---
+
 # Publication-Subscription<a name="EN-US_TOPIC_0000001220693680"></a>
 
 ## Availability<a name="section1076382216287"></a>

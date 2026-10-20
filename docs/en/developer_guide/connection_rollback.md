@@ -1,3 +1,8 @@
+---
+description: This document describes connection.rollback\(\) in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, connection.rollback\(\), development, Function, Prototype]
+---
+
 # connection.rollback\(\)<a name="EN-US_TOPIC_0000001080371156"></a>
 
 ## Function<a name="section5708152714306"></a>

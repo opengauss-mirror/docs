@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 词典概述 的相关内容与操作方法。
+keywords: [openGauss, 词典概述, SQL参考]
+---
+
 # 词典概述
 
 词典用于定义停用词（stop words），即全文检索时不搜索哪些词。

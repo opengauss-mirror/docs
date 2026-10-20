@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER TEXT SEARCH DICTIONARY 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER TEXT SEARCH DICTIONARY, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER TEXT SEARCH DICTIONARY
 
 ## 功能描述<a name="zh-cn_topic_0283136970_zh-cn_topic_0237122080_zh-cn_topic_0059777936_sb9efc89be09141c3b113326dd8c2b35d"></a>

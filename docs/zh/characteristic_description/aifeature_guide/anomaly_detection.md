@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Anomaly detection 的相关内容，涵盖 概述 等内容。
+keywords: [openGauss, Anomaly detection, 特性描述, 概述]
+---
+
 # Anomaly detection<a name="ZH-CN_TOPIC_0000002259758176"></a>
 
 ## 概述<a name="ZH-CN_TOPIC_0000002294398321"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Example: Parameters for Connecting to the Database in Differ in openGauss, covering topics such as DR, Load Balancing.
+keywords: [openGauss, Example: Parameters for Connecting to the Database in Differ, development, DR, Load Balancing]
+---
+
 # Example: Parameters for Connecting to the Database in Different Scenarios<a name="EN-US_TOPIC_0000001151910145"></a>
 
 >[!NOTE]NOTE 

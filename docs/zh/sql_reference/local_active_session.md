@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss LOCAL\_ACTIVE\_SESSION 的相关内容与操作方法。
+keywords: [openGauss, LOCAL\_ACTIVE\_SESSION, SQL参考]
+---
+
 # LOCAL\_ACTIVE\_SESSION
 
 LOCAL\_ACTIVE\_SESSION视图显示本节点上的ACTIVE SESSION PROFILE内存中的样本。

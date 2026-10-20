@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_TOTAL\_MEMORY\_DETAIL 的相关内容与操作方法。
+keywords: [openGauss, GS\_TOTAL\_MEMORY\_DETAIL, 数据库参考]
+---
+
 # GS\_TOTAL\_MEMORY\_DETAIL
 
 GS\_TOTAL\_MEMORY\_DETAIL视图统计当前数据库节点使用内存的信息，单位为MB。当GUC参数enable\_memory\_limit的值为off时，本视图不可用。

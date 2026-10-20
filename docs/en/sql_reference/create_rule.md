@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE RULE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE RULE, SQL, Function, Precautions]
+---
+
 # CREATE RULE<a name="EN-US_TOPIC_0306398142"></a>
 
 ## Function<a name="section189661819135511"></a>

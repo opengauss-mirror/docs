@@ -1,3 +1,8 @@
+---
+description: This document describes MySQL full migration with resume functionality in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, MySQL full migration with resume functionality, features, Availability, Introduction]
+---
+
 # MySQL full migration with resume functionality
 
 ## Availability<a name="section56086982"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 创建和管理分区表 的相关内容，涵盖 背景信息、操作步骤 等内容。
+keywords: [openGauss, 创建和管理分区表, 数据库管理, 背景信息, 操作步骤]
+---
+
 # 创建和管理分区表
 
 ## 背景信息<a name="zh-cn_topic_0283136996_zh-cn_topic_0237120307_zh-cn_topic_0059777517_s028115c5360a4b5794e150c3a648560e"></a>

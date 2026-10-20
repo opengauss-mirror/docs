@@ -1,3 +1,8 @@
+---
+description: This document describes Array Functions and Operators in openGauss, covering topics such as Array Operators, Array Functions.
+keywords: [openGauss, Array Functions and Operators, SQL, Array Operators, Array Functions]
+---
+
 # Array Functions and Operators<a name="EN-US_TOPIC_0289900198"></a>
 
 ## Array Operators<a name="en-us_topic_0283137239_en-us_topic_0237121980_en-us_topic_0059777596_s7fe6ac87a6fc4d7c8c7bd46484b9d9c3"></a>

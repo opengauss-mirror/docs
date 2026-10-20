@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss EXECUTE DIRECT 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, EXECUTE DIRECT, SQL参考, 功能描述, 注意事项]
+---
+
 # EXECUTE DIRECT
 
 ## 功能描述<a name="zh-cn_topic_0059779060_s1b14773726ac4469a14e509530a7a957"></a>

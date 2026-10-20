@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SQL防火墙系统函数 的相关内容与操作方法。
+keywords: [openGauss, SQL防火墙系统函数, SQL参考]
+---
+
 # SQL防火墙系统函数
 
 - gs\_create\_sql\_limit\(limit\_name, limit\_type, work\_node, max\_concurrency, start\_time, end\_time, limit\_opt, databases, users)

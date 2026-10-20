@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 使用CSV格式写日志 的相关内容，涵盖 前提条件、csvlog定义 等内容。
+keywords: [openGauss, 使用CSV格式写日志, 数据库参考, 前提条件, csvlog定义]
+---
+
 # 使用CSV格式写日志
 
 ## 前提条件<a name="zh-cn_topic_0237124724_zh-cn_topic_0059779007_s429dec1a2f1348e290437382aa165032"></a>

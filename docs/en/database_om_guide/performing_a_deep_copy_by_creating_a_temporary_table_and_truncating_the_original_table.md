@@ -1,3 +1,8 @@
+---
+description: This document describes Performing a Deep Copy by Creating a Temporary Table and Tru in openGauss, covering topics such as Procedure.
+keywords: [openGauss, Performing a Deep Copy by Creating a Temporary Table and Tru, database O&M, Procedure]
+---
+
 # Performing a Deep Copy by Creating a Temporary Table and Truncating the Original Table<a name="EN-US_TOPIC_0242370294"></a>
 
 Run the  **CREATE TABLE ....** **AS**  statement to create a temporary table for the original table, truncate the original table, and batch insert data of the temporary data into the original table.

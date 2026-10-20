@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss java.sql.Connection 的相关内容与操作方法。
+keywords: [openGauss, java.sql.Connection, 开发指南]
+---
+
 # java.sql.Connection
 
 java.sql.Connection是数据库连接接口。

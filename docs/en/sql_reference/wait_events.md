@@ -1,3 +1,8 @@
+---
+description: This document describes WAIT\_EVENTS in openGauss.
+keywords: [openGauss, WAIT\_EVENTS, SQL]
+---
+
 # WAIT\_EVENTS<a name="EN-US_TOPIC_0289900696"></a>
 
 **WAIT\_EVENTS**  displays statistics about wait events on the current node. For details about events, see  [Table 2](../database_reference/pg_thread_wait_status.md),  [Table 3](../database_reference/pg_thread_wait_status.md),  [Table 4](../database_reference/pg_thread_wait_status.md), and  [Table 5](../database_reference/pg_thread_wait_status.md).

@@ -1,3 +1,8 @@
+---
+description: This document describes Creating and Managing Indexes in openGauss, covering topics such as Background, Procedure.
+keywords: [openGauss, Creating and Managing Indexes, database administration, Background, Procedure]
+---
+
 # Creating and Managing Indexes<a name="EN-US_TOPIC_0242370194"></a>
 
 ## Background<a name="en-us_topic_0237120308_en-us_topic_0059777978_s2db1c8bff92b4157a59abc27b435d8c2"></a>

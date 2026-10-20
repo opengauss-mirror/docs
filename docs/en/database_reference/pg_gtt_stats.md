@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_GTT\_STATS in openGauss.
+keywords: [openGauss, PG\_GTT\_STATS, database reference]
+---
+
 # PG\_GTT\_STATS<a name="EN-US_TOPIC_0289900715"></a>
 
 **PG\_GTT\_STATS**  displays statistics about a single column in all global temporary tables of the current session by calling  **pg\_get\_gtt\_relstats**.

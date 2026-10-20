@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Key Technologies in openGauss.
+keywords: [openGauss, MOT Key Technologies, database administration]
+---
+
 # MOT Key Technologies<a name="EN-US_TOPIC_0270171570"></a>
 
 The following key MOT technologies enable its benefits:

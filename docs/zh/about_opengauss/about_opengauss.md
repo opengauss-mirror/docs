@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 产品描述 的相关内容，涵盖 产品定位、技术特点 等内容。
+keywords: [openGauss, 产品描述, 产品介绍, 产品定位, 技术特点]
+---
+
 # 产品描述
 
 本文档对openGauss数据库进行了详细描述，包含产品定位、系统架构介绍、应用场景、运行环境、技术指标、基本功能和特性、企业级增强特性介绍等信息。
@@ -84,7 +89,7 @@ openGauss是单机系统，在这样的系统架构中，业务数据存储在�
 openGauss支持主备部署，openGauss逻辑架构如[图1](#zh-cn_topic_0283136530_zh-cn_topic_0237080634_zh-cn_topic_0231764167_fig5205420191411)所示。
 
 **图 1**  openGauss逻辑架构图<a name="zh-cn_topic_0283136530_zh-cn_topic_0237080634_zh-cn_topic_0231764167_fig5205420191411"></a>  
-![](figures/openGauss逻辑架构图.png)
+![openGauss逻辑架构图](figures/openGauss逻辑架构图.png)
 
 **表 1**  架构说明
 

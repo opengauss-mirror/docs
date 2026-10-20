@@ -1,3 +1,8 @@
+---
+description: This document describes MPP\_TABLES in openGauss.
+keywords: [openGauss, MPP\_TABLES, database reference]
+---
+
 # MPP\_TABLES<a name="EN-US_TOPIC_0289900816"></a>
 
 The following information is displayed in the  **MPP\_TABLES**view:

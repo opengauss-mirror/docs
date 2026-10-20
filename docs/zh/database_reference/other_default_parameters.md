@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 其他缺省 的相关内容，涵盖 dynamic\_library\_path、gin\_fuzzy\_search\_limit 等内容。
+keywords: [openGauss, 其他缺省, 数据库参考, dynamic\_library\_path, gin\_fuzzy\_search\_limit]
+---
+
 # 其他缺省
 
 主要介绍数据库系统默认的库加载参数。

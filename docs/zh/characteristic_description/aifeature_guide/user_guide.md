@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 使用指南 的相关内容，涵盖 DBMind支持的场景规格 等内容。
+keywords: [openGauss, 使用指南, 特性描述, DBMind支持的场景规格]
+---
+
 # 使用指南<a name="ZH-CN_TOPIC_0000002293420717"></a>
 
 ## DBMind支持的场景规格<a name="zh-cn_topic_0000002242140561_section6135748481"></a>

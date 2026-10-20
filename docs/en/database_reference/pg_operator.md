@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_OPERATOR in openGauss.
+keywords: [openGauss, PG\_OPERATOR, database reference]
+---
+
 # PG\_OPERATOR<a name="EN-US_TOPIC_0289899832"></a>
 
 **PG\_OPERATOR**  records information about operators.

@@ -1,3 +1,8 @@
+---
+description: This document describes PGXC\_GROUP in openGauss.
+keywords: [openGauss, PGXC\_GROUP, database reference]
+---
+
 # PGXC\_GROUP<a name="EN-US_TOPIC_0000001198052321"></a>
 
 **PGXC\_GROUP**  records information about node groups. The  **PGXC\_GROUP**  system catalog has specific meanings only in distributed scenarios. openGauss can only query the table definition.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss EXPLAIN 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, EXPLAIN, SQL参考, 功能描述, 注意事项]
+---
+
 # EXPLAIN
 
 ## 功能描述<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_sd22ce4e4c8c14244afb6492e84f92d80"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Tool Overview in openGauss.
+keywords: [openGauss, Tool Overview, tools and commands]
+---
+
 # Tool Overview<a name="EN-US_TOPIC_0289899254"></a>
 
 openGauss provides client and server applications \(tools\) to help users better maintain openGauss.  [Table 1](#en-us_topic_0287276012_en-us_topic_0237152139_table11292939125111)  lists all the tools provided by openGauss. The tools are stored in  **$GPHOME/script**  and  **$GAUSSHOME/bin**  where database servers are installed.

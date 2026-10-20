@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_SESSION\_TIME 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_SESSION\_TIME, SQL参考]
+---
+
 # GLOBAL\_SESSION\_TIME
 
 用于统计各节点会话线程的运行时间信息，及各执行阶段所消耗时间。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_MODEL\_WAREHOUSE 的相关内容与操作方法。
+keywords: [openGauss, GS\_MODEL\_WAREHOUSE, 数据库参考]
+---
+
 # GS\_MODEL\_WAREHOUSE
 
 GS\_MODEL\_WAREHOUSE系统表用于存储AI引擎训练模型，其中包含模型，训练过程的详细描述。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Retry管理 的相关内容与操作方法。
+keywords: [openGauss, Retry管理, SQL参考]
+---
+
 # Retry管理
 
 Retry是数据库在SQL或存储过程（包含匿名块）执行失败时，在数据库内部进行重新执行的过程，以提高执行成功率和用户体验。数据库内部通过检查发生错误时的错误码及Retry相关配置，决定是否进行重试。

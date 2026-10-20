@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SUMMARY\_WORKLOAD\_TRANSACTION 的相关内容与操作方法。
+keywords: [openGauss, SUMMARY\_WORKLOAD\_TRANSACTION, SQL参考]
+---
+
 # SUMMARY\_WORKLOAD\_TRANSACTION
 
 显示openGauss内汇聚的负载事务信息。

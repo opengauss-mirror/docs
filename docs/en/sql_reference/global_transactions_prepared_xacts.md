@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_TRANSACTIONS\_PREPARED\_XACTS in openGauss.
+keywords: [openGauss, GLOBAL\_TRANSACTIONS\_PREPARED\_XACTS, SQL]
+---
+
 # GLOBAL\_TRANSACTIONS\_PREPARED\_XACTS<a name="EN-US_TOPIC_0245374756"></a>
 
 **GLOBAL\_TRANSACTIONS\_PREPARED\_XACTS**  displays information about transactions that are currently prepared for two-phase commit on each node. 

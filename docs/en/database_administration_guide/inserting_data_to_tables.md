@@ -1,3 +1,8 @@
+---
+description: This document describes Inserting Data to Tables in openGauss, covering topics such as Background, Procedure.
+keywords: [openGauss, Inserting Data to Tables, database administration, Background, Procedure]
+---
+
 # Inserting Data to Tables<a name="EN-US_TOPIC_0242370186"></a>
 
 A new table contains no data. You need to insert data to the table before using it. This section describes how to insert a row or multiple rows of data using the  **[INSERT](../sql_reference/insert.md)**  command and to insert data from a specified table. For details about how to insert a large amount of data to a table in batches, see  [Importing Data](../database_om_guide/import_data.md).

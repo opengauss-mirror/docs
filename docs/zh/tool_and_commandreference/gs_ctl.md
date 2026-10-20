@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs_ctl 的相关内容，涵盖 背景信息、参数说明 等内容。
+keywords: [openGauss, gs_ctl, 工具与命令参考, 背景信息, 参数说明]
+---
+
 # gs_ctl
 
 ## 背景信息<a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_saed7059efc5d469189c9e53a984ba786"></a>

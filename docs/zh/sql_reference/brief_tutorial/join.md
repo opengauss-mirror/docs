@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss JOIN 的相关内容，涵盖 交叉连接、内连接 等内容。
+keywords: [openGauss, JOIN, SQL参考, 交叉连接, 内连接]
+---
+
 # JOIN
 
 JOIN子句用于把来自两个或多个表的行结合起来，基于这些表之间的共同字段。

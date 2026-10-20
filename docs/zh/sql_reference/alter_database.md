@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER DATABASE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER DATABASE, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER DATABASE
 
 ## 功能描述<a name="zh-cn_topic_0283136981_zh-cn_topic_0237122055_zh-cn_topic_0059779247_sbb9c79973fbf4b4b8f8e8355b0f67f63"></a>

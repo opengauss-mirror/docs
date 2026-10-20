@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss javax.sql.ConnectionPoolDataSource 的相关内容与操作方法。
+keywords: [openGauss, javax.sql.ConnectionPoolDataSource, 开发指南]
+---
+
 # javax.sql.ConnectionPoolDataSource
 
 javax.sql.ConnectionPoolDataSource是数据源连接池接口。

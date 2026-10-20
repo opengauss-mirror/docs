@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_STAT\_BAD\_BLOCK 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_STAT\_BAD\_BLOCK, SQL参考]
+---
+
 # GLOBAL\_STAT\_BAD\_BLOCK
 
 获得各节点的表、索引等文件的读取失败信息。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_REDO\_STAT 的相关内容与操作方法。
+keywords: [openGauss, GS\_REDO\_STAT, 数据库参考]
+---
+
 # GS\_REDO\_STAT
 
 GS\_REDO\_STAT视图用于统计会话线程日志回放情况。

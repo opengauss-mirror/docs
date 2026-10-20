@@ -1,3 +1,8 @@
+---
+description: This document describes Distributed Database Capability in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Distributed Database Capability, features, Availability, Introduction]
+---
+
 # Distributed Database Capability<a name="EN-US_TOPIC_0000001220467648"></a>
 
 ## Availability<a name="section135316597815"></a>

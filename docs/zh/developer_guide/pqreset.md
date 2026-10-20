@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PQreset 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, PQreset, 开发指南, 功能描述, 原型]
+---
+
 # PQreset
 
 ## 功能描述<a name="zh-cn_topic_0241735617_section396721820257"></a>

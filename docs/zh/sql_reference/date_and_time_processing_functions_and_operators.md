@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 时间和日期处理函数和操作符 的相关内容，涵盖 时间日期操作符、时间/日期函数 等内容。
+keywords: [openGauss, 时间和日期处理函数和操作符, SQL参考, 时间日期操作符, 时间/日期函数]
+---
+
 # 时间和日期处理函数和操作符
 
 ## 时间日期操作符<a name="zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_s0cc044f2acb04adb928696f1f6cfd13d"></a>

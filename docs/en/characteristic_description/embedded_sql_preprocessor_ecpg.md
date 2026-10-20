@@ -1,3 +1,8 @@
+---
+description: This document describes Embedded SQL Preprocessor ECPG in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Embedded SQL Preprocessor ECPG, features, Availability, Introduction]
+---
+
 # Embedded SQL Preprocessor ECPG<a name="EN-US_TOPIC_0000001088406674"></a>
 
 ## Availability<a name="section663215"></a>

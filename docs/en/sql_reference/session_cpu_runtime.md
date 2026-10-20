@@ -1,3 +1,8 @@
+---
+description: This document describes SESSION\_CPU\_RUNTIME in openGauss.
+keywords: [openGauss, SESSION\_CPU\_RUNTIME, SQL]
+---
+
 # SESSION\_CPU\_RUNTIME<a name="EN-US_TOPIC_0245374747"></a>
 
 **SESSION\_CPU\_RUNTIME**  displays load management information about CPU usage of ongoing complex jobs executed by the current user.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 规划存储模型 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 规划存储模型, 数据库管理, 可获得性, 特性简介]
+---
+
 # 规划存储模型
 
 ## 可获得性<a name="section18007590"></a>
@@ -12,7 +17,7 @@ openGauss支持行存储和列存储两种存储模型，用户可以根据具�
 
 **图 1**  列存储示意图<a name="fig114741818102620"></a>  
 
-![](figures/mixed-storage-engine.png)
+![特性简介示意图](figures/mixed-storage-engine.png)
 
 ## 客户价值<a name="section49328722"></a>
 
@@ -34,7 +39,7 @@ openGauss支持行存储和列存储两种存储模型，用户可以根据具�
 
 **图 1**  行存储和列存储的差异<a name="zh-cn_topic_0237120296_fig1417354233018"></a>  
 
-![](figures/zh-cn_image_0242381725.png)
+![特性描述示意图](figures/zh-cn_image_0242381725.png)
 
 上图中，左上为行存表，右上为行存表在硬盘上的存储方式。左下为列存表，右下为列存表在硬盘上的存储方式。
 

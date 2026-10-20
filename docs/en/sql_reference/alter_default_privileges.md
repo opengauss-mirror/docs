@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER DEFAULT PRIVILEGES in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER DEFAULT PRIVILEGES, SQL, Function, Precautions]
+---
+
 # ALTER DEFAULT PRIVILEGES<a name="EN-US_TOPIC_0289900961"></a>
 
 ## Function<a name="en-us_topic_0283136687_en-us_topic_0237122057_en-us_topic_0059778935_sb6d50f1fe847446bb5943799163d59fb"></a>

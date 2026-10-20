@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 备份恢复控制函数 的相关内容，涵盖 备份控制函数 等内容。
+keywords: [openGauss, 备份恢复控制函数, SQL参考, 备份控制函数]
+---
+
 # 备份恢复控制函数
 
 ## 备份控制函数<a name="zh-cn_topic_0283137026_zh-cn_topic_0237121992_zh-cn_topic_0059778344_s540f3b3ffcd845909fe45a65f5cff84f"></a>

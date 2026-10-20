@@ -1,3 +1,8 @@
+---
+description: This document describes Basic Features in openGauss, covering topics such as Basic Features, Enhanced Features.
+keywords: [openGauss, Basic Features, product overview, Enhanced Features]
+---
+
 # Basic Features<a name="EN-US_TOPIC_0289896511"></a>
 
 ## Basic Features
@@ -98,7 +103,7 @@ In a wide table containing a huge amount of data, a query usually only involves 
 
     **Figure  1**  Vectorized executor<a name="en-us_topic_0283136537_en-us_topic_0237080624_en-us_topic_0231764690_en-us_topic_0059777898_f9d90aebe179a40759039d0263492489d"></a>  
     
-    ![](figures/向量化执行引擎.png)
+    ![Vectorized Executor and Hybrid Row-Column Storage Engine diagram](figures/向量化执行引擎.png)
 
 - Hybrid row-column storage engine
 
@@ -110,7 +115,7 @@ In a wide table containing a huge amount of data, a query usually only involves 
 
     **Figure  2**  Hybrid row-column storage engine<a name="en-us_topic_0283136537_en-us_topic_0237080624_en-us_topic_0231764690_en-us_topic_0059777898_fbb2af39ce12a419cb437829aaf1cf4fb"></a>  
     
-    ![](figures/opengauss行列混存引擎.png)
+    ![Vectorized Executor and Hybrid Row-Column Storage Engine diagram](figures/opengauss行列混存引擎.png)
 
     The restrictions of the column store engine are as follows:
 
@@ -145,14 +150,14 @@ The fusion engine architecture supports the pluggable storage engine architectur
 - Indexing multiversion
 
     **Figure  3**  Comparison between UBTree and BTree searching and updating<a name="fig38821655122012"></a>  
-    ![](figures/comparison-between-ubtree-and-btree-searching-and-updating.png)
+    ![Comparison between UBTree and BTree searching and updating](figures/comparison-between-ubtree-and-btree-searching-and-updating.png)
 
     UBtree can check multiversion concurrency control \(MVCC\) visibility at the index layer by maintaining version information on tuples on the index page. In addition, the UBtree can independently determine whether the index tuple is dead based on the version information, so that the in-place update engine can implement page-level space cleanup for the data table and index table, and build an independent garbage collection mechanism independent of AutoVacuum.
 
 - Xlog lockless update
 
     **Figure  4**  Xlog lockless design<a name="fig1120113136417"></a>  
-    ![](figures/xlog-lockless-design.png)
+    ![Xlog lockless design](figures/xlog-lockless-design.png)
 
     This feature optimizes the WalInsertLock mechanism by using log sequence numbers \(LSNs\) and log record counts \(LRCs\) to record the copy progress of each backend and canceling the WalInsertLock mechanism. The backend can directly copy logs to the WalBuffer without contending for the WalInsertLock. In addition, a dedicated WALWriter thread is used to write logs, and the backend thread does not need to ensure the Xlog flushing. After the preceding optimization, the WalInsertLock contention and WalWriter dedicated disk write threads are canceled. The system performance can be further improved while the original Xlog function remains unchanged.
 
@@ -208,13 +213,13 @@ With the rapid growth and maturity of cloud infrastructure, cloud database servi
 
     **Figure  5**  Overall encrypted database architecture <a name="en-us_topic_0231763017_fig141362033122319"></a>  
     
-    ![](figures/向量化执行引擎png-0.png)
+    ![Equality Query in a Fully-encrypted Database diagram](figures/向量化执行引擎png-0.png)
 
     Only the software part of the overall encrypted database architecture needs to be integrated because only the software part is involved in the encrypted equality query.  [Figure 6](#fig18836194875513)  shows the overall implementation solution.
 
     **Figure  6**  Overall encrypted equality query solution<a name="fig18836194875513"></a>  
     
-    ![](figures/向量化执行引擎png-1.png)
+    ![Equality Query in a Fully-encrypted Database diagram](figures/向量化执行引擎png-1.png)
 
     In the overall process, data is encrypted on the client and sent to the openGauss server in ciphertext. That is, an encryption and decryption module needs to be constructed on the client. The encryption and decryption module depends on the key management module which generates the root key \(RK\) and client master key \(CMK\). With the CMK, a column encryption key \(CEK\) can be defined through the SQL syntax. A CMK is encrypted by an RK and then saved in the key store file \(KSF\). Both CMK and RK are managed by the KeyTool. The CMK encrypts a CEK \(using the symmetric encryption algorithm AES256 and the  SM2  algorithm\) and then stores it on the server.
 
@@ -227,7 +232,7 @@ With the rapid growth and maturity of cloud infrastructure, cloud database servi
 - Encrypted database flowchart
 
     **Figure  7**  Encrypted database flowchart<a name="fig19889211143016"></a>  
-    ![](figures/encrypted-database-flowchart.png)
+    ![Encrypted database flowchart](figures/encrypted-database-flowchart.png)
 
     In the flowchart, the encrypted database allows the client to encrypt sensitive data within the client application. During the query period, the entire service data flow exists in the form of ciphertext during data processing. It has the following advantages: 
 
@@ -340,7 +345,7 @@ Two-city three-DC indicates that the three DCs (production center, intra-city DR
 - Incremental replication: After the DR database instance is fully built, streaming replication is established between the DR database instance and the primary database instance for incremental log replication.
 
 **Figure 8** openGauss two-city three-DC DR architecture<a name="fig104604146484"></a> 
-![](figures/openGauss两地三中心容灾架构示意图.png)
+![openGauss two-city three-DC DR architecture](figures/openGauss两地三中心容灾架构示意图.png)
 
 ### Generated Columns<a name="section16281161234015"></a>
 

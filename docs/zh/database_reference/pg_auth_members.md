@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_AUTH\_MEMBERS 的相关内容与操作方法。
+keywords: [openGauss, PG\_AUTH\_MEMBERS, 数据库参考]
+---
+
 # PG\_AUTH\_MEMBERS
 
 PG\_AUTH\_MEMBERS系统表存储显示角色之间的成员关系。

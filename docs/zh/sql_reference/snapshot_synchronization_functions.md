@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 快照同步函数 的相关内容与操作方法。
+keywords: [openGauss, 快照同步函数, SQL参考]
+---
+
 # 快照同步函数
 
 快照同步函数是导出当前快照的标识符。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 简单表达式 的相关内容，涵盖 逻辑表达式、比较表达式 等内容。
+keywords: [openGauss, 简单表达式, SQL参考, 逻辑表达式, 比较表达式]
+---
+
 # 简单表达式
 
 ## 逻辑表达式<a name="zh-cn_topic_0283137643_zh-cn_topic_0237122001_zh-cn_topic_0059778068_s3998c0a95e73437db8ea894c6eecb3f2"></a>

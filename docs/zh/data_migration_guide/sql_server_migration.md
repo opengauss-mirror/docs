@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SQLServer全量迁移 的相关内容，涵盖 openGauss-FullReplicate工具介绍、注意事项 等内容。
+keywords: [openGauss, SQLServer全量迁移, 数据迁移, openGauss-FullReplicate工具介绍, 注意事项]
+---
+
 # SQLServer全量迁移
 
 ## openGauss-FullReplicate工具介绍

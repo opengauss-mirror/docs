@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 相关概念 的相关内容，涵盖 数据库、表空间 等内容。
+keywords: [openGauss, 相关概念, 数据库管理, 数据库, 表空间]
+---
+
 # 相关概念
 
 ## 数据库<a name="zh-cn_topic_0237120248_zh-cn_topic_0059779238_s81123a0249f349a9af2c50cc1641ff54"></a>

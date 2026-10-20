@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER ROW LEVEL SECURITY POLICY in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER ROW LEVEL SECURITY POLICY, SQL, Function, Precautions]
+---
+
 # ALTER ROW LEVEL SECURITY POLICY<a name="EN-US_TOPIC_0289900230"></a>
 
 ## Function<a name="en-us_topic_0283137062_en-us_topic_0237122069_section196521854173211"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes lo_tell in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, lo_tell, development, Function, Prototype]
+---
+
 # lo_tell
 
 ## Function<a name="en-us_topic_0241735622_section696285173721"></a>

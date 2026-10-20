@@ -1,3 +1,8 @@
+---
+description: This document describes SUMMARY\_STAT\_DATABASE\_CONFLICTS in openGauss.
+keywords: [openGauss, SUMMARY\_STAT\_DATABASE\_CONFLICTS, SQL]
+---
+
 # SUMMARY\_STAT\_DATABASE\_CONFLICTS<a name="EN-US_TOPIC_0245374702"></a>
 
 **SUMMARY\_STAT\_DATABASE\_CONFLICTS**  displays statistics about database conflicts in openGauss. 

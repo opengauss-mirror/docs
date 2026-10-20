@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SET CONSTRAINTS 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, SET CONSTRAINTS, SQL参考, 功能描述, 注意事项]
+---
+
 # SET CONSTRAINTS
 
 ## 功能描述<a name="zh-cn_topic_0283136774_zh-cn_topic_0237122187_zh-cn_topic_0059779017_s016571300554457884633ea16394654e"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER EVENT in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER EVENT, SQL, Function, Precautions]
+---
+
 # ALTER EVENT<a name="EN-US_TOPIC_0000001503472553"></a>
 
 ## Function<a name="en-us_topic_0283137021_en-us_topic_0237122084_en-us_topic_0059778428_section1274412112511"></a>

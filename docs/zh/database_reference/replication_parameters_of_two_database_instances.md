@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 双数据库实例复制参数 的相关内容，涵盖 RepOriginId 等内容。
+keywords: [openGauss, 双数据库实例复制参数, 数据库参考, RepOriginId]
+---
+
 # 双数据库实例复制参数
 
 ## RepOriginId<a name="section1622281914212"></a>

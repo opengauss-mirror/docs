@@ -1,9 +1,14 @@
+---
+description: This document describes Upgrade Process in openGauss.
+keywords: [openGauss, Upgrade Process, database O&M]
+---
+
 # Upgrade Process<a name="EN-US_TOPIC_0305491444"></a>
 
 This section describes the process for upgrade from an earlier version to the target version.
 
 **Figure  1**  Upgrade flowchart<a name="fig1492165721411"></a>  
-![](figures/upgrade-flowchart.png "upgrade-flowchart")
+![Upgrade flowchart](figures/upgrade-flowchart.png "upgrade-flowchart")
 
 >[!NOTE]NOTE 
 >The time required for each procedure is an estimate and for reference only.

@@ -1,3 +1,8 @@
+---
+description: This document describes DCF in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, DCF, features, Availability, Introduction]
+---
+
 # DCF<a name="EN-US_TOPIC_0000001265367513"></a>
 
 ## Availability<a name="section15406143204715"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBE\_PLDEBUGGER.backtrace 的相关内容与操作方法。
+keywords: [openGauss, DBE\_PLDEBUGGER.backtrace, SQL参考]
+---
+
 # DBE\_PLDEBUGGER.backtrace
 
 debug端调试过程中，调用backtrace，查看当前的调用堆栈。

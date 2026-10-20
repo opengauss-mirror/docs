@@ -1,3 +1,8 @@
+---
+description: This document describes OS\_RUNTIME in openGauss.
+keywords: [openGauss, OS\_RUNTIME, SQL]
+---
+
 # OS\_RUNTIME<a name="EN-US_TOPIC_0245374656"></a>
 
 **OS\_RUNTIME**  displays the running status of the current OS.

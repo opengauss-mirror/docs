@@ -1,3 +1,8 @@
+---
+description: This document describes Physical File Parsing Tool - gs_filedump in openGauss, covering topics such as Function Introduction, Prerequisites.
+keywords: [openGauss, Physical File Parsing Tool - gs_filedump, tools and commands, Function Introduction, Prerequisites]
+---
+
 # Physical File Parsing Tool - gs_filedump
 
 ## Function Introduction

@@ -1,3 +1,8 @@
+---
+description: This document describes Development and Design Proposal in openGauss.
+keywords: [openGauss, Development and Design Proposal, development]
+---
+
 # Development and Design Proposal<a name="EN-US_TOPIC_0000001149427911"></a>
 
 This section describes the design specifications for database modeling and application development. Modeling based on these specifications can better fit the processing architecture of openGauss and output more efficient service SQL code.

@@ -1,10 +1,15 @@
+---
+description: 本文介绍 openGauss 版本编译 的相关内容，涵盖 编译前准备 等内容。
+keywords: [openGauss, 版本编译, 编译指南, 编译前准备]
+---
+
 # 版本编译
 
 openGauss的编译过程和生成安装包的过程已经写成了一个一键式的脚本build.sh，可以方便的通过脚本进行编译操作。也可以自己配置环境变量，通过命令进行编译。
 
 本章节会介绍openGauss编译需要满足的前提条件，编译的操作步骤等，下图是对编译流程的大致概括，详细内容见下文。
 
-![](figures/Compilation-process.png)
+![版本编译示意图](figures/Compilation-process.png)
 
 ## 编译前准备
 

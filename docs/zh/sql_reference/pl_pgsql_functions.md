@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PL/pgSQL语言函数 的相关内容，涵盖 PL/pgSQL的语法结构 等内容。
+keywords: [openGauss, PL/pgSQL语言函数, SQL参考, PL/pgSQL的语法结构]
+---
+
 # PL/pgSQL语言函数
 
 PL/pgSQL是一种可载入的过程语言。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBE\_PLDEBUGGER.finish 的相关内容与操作方法。
+keywords: [openGauss, DBE\_PLDEBUGGER.finish, SQL参考]
+---
+
 # DBE\_PLDEBUGGER.finish
 
 执行存储过程中当前的SQL直到下一个断点触发或执行到上层栈的下一行。

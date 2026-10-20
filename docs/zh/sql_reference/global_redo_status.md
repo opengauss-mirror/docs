@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_REDO\_STATUS 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_REDO\_STATUS, SQL参考]
+---
+
 # GLOBAL\_REDO\_STATUS
 
 GLOBAL\_REDO\_STATUS视图显示openGauss实例的日志回放情况。

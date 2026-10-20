@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 查看数据 的相关内容与操作方法。
+keywords: [openGauss, 查看数据, 数据库管理]
+---
+
 # 查看数据
 
 - 使用系统表pg\_tables查询数据库所有表的信息。

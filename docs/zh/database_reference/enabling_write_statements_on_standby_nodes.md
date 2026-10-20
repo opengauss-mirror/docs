@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 备机支持写语句参数 的相关内容，涵盖 enable\_remote\_execute 等内容。
+keywords: [openGauss, 备机支持写语句参数, 数据库参考, enable\_remote\_execute]
+---
+
 # 备机支持写语句参数
 
 ## enable\_remote\_execute<a name="section14941640131"></a>

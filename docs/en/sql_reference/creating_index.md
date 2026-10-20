@@ -1,3 +1,8 @@
+---
+description: This document describes Creating an Index in openGauss.
+keywords: [openGauss, Creating an Index, SQL]
+---
+
 # Creating an Index<a name="EN-US_TOPIC_0289900880"></a>
 
 You can create a  **GIN**  index to speed up text searches:

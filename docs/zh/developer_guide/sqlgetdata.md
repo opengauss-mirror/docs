@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SQLGetData 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, SQLGetData, 开发指南, 功能描述, 原型]
+---
+
 # SQLGetData
 
 ## 功能描述<a name="zh-cn_topic_0238272899_zh-cn_topic_0237120429_zh-cn_topic_0059778461_s4c79ae112a6f415a9fed38561c46eebc"></a>

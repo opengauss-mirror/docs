@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER TABLE Statement in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, ALTER TABLE Statement, SQL, Syntax, Parameter Description]
+---
+
 # ALTER TABLE Statement<a name="EN-US_TOPIC_0000001224939987"></a>
 
 The ALTER TABLE statement modifies tables, including modifying table definitions, renaming tables, renaming specified columns in tables, renaming table constraints, setting table schemas,  enabling or disabling row-level security policies, and adding or updating multiple columns.

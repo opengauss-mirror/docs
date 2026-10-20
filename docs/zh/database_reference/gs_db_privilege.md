@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_DB\_PRIVILEGE 的相关内容与操作方法。
+keywords: [openGauss, GS\_DB\_PRIVILEGE, 数据库参考]
+---
+
 # GS\_DB\_PRIVILEGE
 
 GS\_DB\_PRIVILEGE系统表记录ANY权限的授予情况，每条记录对应一条授权信息。

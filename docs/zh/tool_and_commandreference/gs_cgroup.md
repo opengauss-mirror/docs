@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs\_cgroup 的相关内容，涵盖 背景信息、使用示例 等内容。
+keywords: [openGauss, gs\_cgroup, 工具与命令参考, 背景信息, 使用示例]
+---
+
 # gs\_cgroup
 
 ## 背景信息<a name="zh-cn_topic_0059777958_s70c9bd657f6844e6a03a4daa7aa46cd6"></a>

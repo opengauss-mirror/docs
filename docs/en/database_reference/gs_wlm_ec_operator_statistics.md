@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_WLM\_EC\_OPERATOR\_STATISTICS in openGauss.
+keywords: [openGauss, GS\_WLM\_EC\_OPERATOR\_STATISTICS, database reference]
+---
+
 # GS\_WLM\_EC\_OPERATOR\_STATISTICS<a name="EN-US_TOPIC_0000001163041099"></a>
 
 **GS\_WLM\_EC\_OPERATOR\_STATISTICS**  displays operators of the Extension Connector jobs that are being executed by the current user. Only users with the  **sysadmin**  permission can query this view.

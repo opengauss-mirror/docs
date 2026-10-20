@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss BEGIN 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, BEGIN, SQL参考, 功能描述, 注意事项]
+---
+
 # BEGIN
 
 ## 功能描述<a name="zh-cn_topic_0283137310_zh-cn_topic_0237122087_zh-cn_topic_0059778122_s575f09bb20db48a4a74f6544c1593758"></a>

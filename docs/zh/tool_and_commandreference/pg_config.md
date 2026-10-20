@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss pg\_config 的相关内容，涵盖 功能介绍、语法 等内容。
+keywords: [openGauss, pg\_config, 工具与命令参考, 功能介绍, 语法]
+---
+
 # pg\_config
 
 ## 功能介绍<a name="zh-cn_topic_0237152437_section88358281478"></a>

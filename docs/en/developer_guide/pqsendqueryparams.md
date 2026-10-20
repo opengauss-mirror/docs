@@ -1,3 +1,8 @@
+---
+description: This document describes PQsendQueryParams in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, PQsendQueryParams, development, Function, Prototype]
+---
+
 # PQsendQueryParams<a name="EN-US_TOPIC_0242380583"></a>
 
 ## Function<a name="en-us_topic_0241735628_section10518135331919"></a>

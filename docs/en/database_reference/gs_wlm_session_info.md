@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_WLM\_SESSION\_INFO in openGauss.
+keywords: [openGauss, GS\_WLM\_SESSION\_INFO, database reference]
+---
+
 # GS\_WLM\_SESSION\_INFO<a name="EN-US_TOPIC_0000001152042187"></a>
 
 **GS\_WLM\_SESSION\_INFO**  displays load management information about a completed job executed on the database instance. Only the user with sysadmin permission can query this view.

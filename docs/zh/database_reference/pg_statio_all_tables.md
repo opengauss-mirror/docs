@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_STATIO\_ALL\_TABLES 的相关内容与操作方法。
+keywords: [openGauss, PG\_STATIO\_ALL\_TABLES, 数据库参考]
+---
+
 # PG\_STATIO\_ALL\_TABLES
 
 PG\_STATIO\_ALL\_TABLES视图将包含当前数据库中每个表（包括TOAST表）的I/O统计信息。

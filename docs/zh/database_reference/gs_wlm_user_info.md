@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_WLM\_USER\_INFO 的相关内容与操作方法。
+keywords: [openGauss, GS\_WLM\_USER\_INFO, 数据库参考]
+---
+
 # GS\_WLM\_USER\_INFO
 
 用户统计信息视图。

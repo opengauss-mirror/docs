@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_SESSION\_CPU\_STATISTICS 的相关内容与操作方法。
+keywords: [openGauss, GS\_SESSION\_CPU\_STATISTICS, 数据库参考]
+---
+
 # GS\_SESSION\_CPU\_STATISTICS
 
 GS\_SESSION\_CPU\_STATISTICS视图显示当前用户执行的正在运行的复杂作业的CPU使用的负载管理信息。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_OPT\_MODEL 的相关内容与操作方法。
+keywords: [openGauss, GS\_OPT\_MODEL, 数据库参考]
+---
+
 # GS\_OPT\_MODEL
 
 GS\_OPT\_MODEL是启用AiEngine执行计划时间预测功能时的数据表，记录机器学习模型的配置、训练结果、功能、对应系统函数、训练历史等相关信息。

@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER TRIGGER in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER TRIGGER, SQL, Function, Precautions]
+---
+
 # ALTER TRIGGER<a name="EN-US_TOPIC_0289900315"></a>
 
 ## Function<a name="en-us_topic_0283137014_en-us_topic_0237122081_en-us_topic_0059777936_sb9efc89be09141c3b113326dd8c2b35d"></a>

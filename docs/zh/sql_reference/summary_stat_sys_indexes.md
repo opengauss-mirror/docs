@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SUMMARY\_STAT\_SYS\_INDEXES 的相关内容与操作方法。
+keywords: [openGauss, SUMMARY\_STAT\_SYS\_INDEXES, SQL参考]
+---
+
 # SUMMARY\_STAT\_SYS\_INDEXES
 
 openGauss内汇聚pg\_catalog、information\_schema以及pg\_toast模式中所有系统表的索引状态信息。

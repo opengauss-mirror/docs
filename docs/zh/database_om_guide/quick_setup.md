@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 快速设置 的相关内容与操作方法。
+keywords: [openGauss, 快速设置, 数据库运维]
+---
+
 # 快速设置
 
 首先在postgresql.conf中设置配置选项：

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 使用gsql操作密态数据库 的相关内容，涵盖 操作步骤 等内容。
+keywords: [openGauss, 使用gsql操作密态数据库, 数据库管理, 操作步骤]
+---
+
 # 使用gsql操作密态数据库
 
 ## 操作步骤<a name="section199001315531"></a>

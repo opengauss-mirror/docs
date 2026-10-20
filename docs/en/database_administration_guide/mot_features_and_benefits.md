@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Features and Benefits in openGauss.
+keywords: [openGauss, MOT Features and Benefits, database administration]
+---
+
 # MOT Features and Benefits<a name="EN-US_TOPIC_0270171559"></a>
 
 MOT provide users with significant benefits in performance \(query and transaction latency\), scalability \(throughput and concurrency\) and in some cases cost \(high resource utilization\) –

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 设置帐户安全策略 的相关内容，涵盖 背景信息、自动锁定和解锁帐户 等内容。
+keywords: [openGauss, 设置帐户安全策略, 数据库管理, 背景信息, 自动锁定和解锁帐户]
+---
+
 # 设置帐户安全策略
 
 ## 背景信息<a name="zh-cn_topic_0237121108_zh-cn_topic_0151096060_zh-cn_topic_0085032584_zh-cn_topic_0059778228_section1763231181417"></a>

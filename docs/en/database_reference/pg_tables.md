@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_TABLES in openGauss.
+keywords: [openGauss, PG\_TABLES, database reference]
+---
+
 # PG\_TABLES<a name="EN-US_TOPIC_0289900821"></a>
 
 **PG\_TABLES**  provides access to each table in the database.

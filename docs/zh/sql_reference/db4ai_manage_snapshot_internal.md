@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DB4AI.MANAGE\_SNAPSHOT\_INTERNAL 的相关内容与操作方法。
+keywords: [openGauss, DB4AI.MANAGE\_SNAPSHOT\_INTERNAL, SQL参考]
+---
+
 # DB4AI.MANAGE\_SNAPSHOT\_INTERNAL
 
 MANAGE\_SNAPSHOT\_INTERNAL是DB4AI.PUBLISH\_SNAPSHOT和DB4AI.ARCHIVE\_SNAPSHOT函数的内置执行函数。函数存在信息校验，无法直接调用。

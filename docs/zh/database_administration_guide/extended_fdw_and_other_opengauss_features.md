@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 扩展FDW与其他openGauss特性 的相关内容，涵盖 创建表和索引、索引规划与执行的使用方法 等内容。
+keywords: [openGauss, 扩展FDW与其他openGauss特性, 数据库管理, 创建表和索引, 索引规划与执行的使用方法]
+---
+
 # 扩展FDW与其他openGauss特性
 
 为了使MOT存储引擎能够集成到openGauss中，我们利用并扩展了现有的FDW机制。
@@ -9,7 +14,7 @@ MOT存储引擎是嵌入在openGauss内部的，表由openGauss管理。openGaus
 下图显示了MOT存储引擎如何嵌入到openGauss中及其对数据库功能的双向访问。
 
 **图 1**  openGauss内置MOT存储引擎——外部数据库的FDW访问<a name="fig23070208"></a>  
-![](figures/MOT-architecture.png)
+![openGauss内置MOT存储引擎——外部数据库的FDW访问](figures/MOT-architecture.png)
 
 我们通过扩展和修改FdwRoutine结构来扩展FDW的能力，以便引入在MOT引入之前不需要的特性和调用。例如，新增了对以下功能的支持：添加索引、删除索引/表、截断、真空和表/索引内存统计。重点放在了FdwRoutine结构与openGauss日志、复制和检查点机制的集成，以便通过故障为跨表事务提供一致性。在这种情况下，MOT本身有时会通过FDW层发起对openGauss功能的调用。
 

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss JDBC常用参数参考 的相关内容，涵盖 targetServerType、hostRecheckSeconds 等内容。
+keywords: [openGauss, JDBC常用参数参考, 开发指南, targetServerType, hostRecheckSeconds]
+---
+
 # JDBC常用参数参考
 
 ## targetServerType<a name="section556210112155"></a>

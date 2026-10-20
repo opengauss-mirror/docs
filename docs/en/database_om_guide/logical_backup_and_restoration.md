@@ -1,3 +1,8 @@
+---
+description: This document describes Logical Backup and Restoration in openGauss, covering topics such as gs\_dump.
+keywords: [openGauss, Logical Backup and Restoration, database O&M, gs\_dump]
+---
+
 # Logical Backup and Restoration
 
 ## gs\_dump

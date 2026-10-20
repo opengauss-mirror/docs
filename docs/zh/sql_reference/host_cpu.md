@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Host CPU 的相关内容与操作方法。
+keywords: [openGauss, Host CPU, SQL参考]
+---
+
 # Host CPU
 
 Host CPU列名称及描述如下表所示。

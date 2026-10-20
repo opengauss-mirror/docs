@@ -1,3 +1,8 @@
+---
+description: This document describes transfer.py in openGauss, covering topics such as Function, Prerequisites.
+keywords: [openGauss, transfer.py, tools and commands, Function, Prerequisites]
+---
+
 # transfer.py<a name="EN-US_TOPIC_0000001151422084"></a>
 
 ## Function<a name="section51291439191115"></a>

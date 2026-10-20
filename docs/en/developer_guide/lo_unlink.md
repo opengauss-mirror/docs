@@ -1,3 +1,8 @@
+---
+description: This document describes lo_unlink in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, lo_unlink, development, Function, Prototype]
+---
+
 # lo_unlink
 
 ## Function<a name="en-us_topic_0241735622_section696285173724"></a>

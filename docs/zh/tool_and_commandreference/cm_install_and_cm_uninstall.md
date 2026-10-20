@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 安装和卸载工具介绍 的相关内容，涵盖 注意事项、前提条件 等内容。
+keywords: [openGauss, 安装和卸载工具介绍, 工具与命令参考, 注意事项, 前提条件]
+---
+
 # 安装和卸载工具介绍
 
 使用cm_install工具可以在未部署CM的openGauss数据库集群上部署CM，cm_uninstall可以在已部署CM的openGauss集群上卸载掉CM，且不会影响DN集群。  

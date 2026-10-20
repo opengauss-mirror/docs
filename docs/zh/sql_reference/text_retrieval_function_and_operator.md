@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 文本检索函数和操作符 的相关内容，涵盖 文本检索操作符、文本检索函数 等内容。
+keywords: [openGauss, 文本检索函数和操作符, SQL参考, 文本检索操作符, 文本检索函数]
+---
+
 # 文本检索函数和操作符
 
 ## 文本检索操作符<a name="zh-cn_topic_0283137544_zh-cn_topic_0237121976_zh-cn_topic_0059779255_sd5fffb0507864456a3be705c4680bfbb"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss COMMIT | END 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, COMMIT | END, SQL参考, 功能描述, 注意事项]
+---
+
 # COMMIT | END
 
 ## 功能描述<a name="zh-cn_topic_0283137519_zh-cn_topic_0237122094_zh-cn_topic_0059779032_sbacb814400404584828c86483f577b12"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss dsscmd 的相关内容，涵盖 概述、交互式执行命令 等内容。
+keywords: [openGauss, dsscmd, 工具与命令参考, 概述, 交互式执行命令]
+---
+
 # dsscmd
 
 ## 概述<a name="section1377524355216"></a>

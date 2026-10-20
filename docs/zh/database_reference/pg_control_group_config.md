@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_CONTROL\_GROUP\_CONFIG 的相关内容与操作方法。
+keywords: [openGauss, PG\_CONTROL\_GROUP\_CONFIG, 数据库参考]
+---
+
 # PG\_CONTROL\_GROUP\_CONFIG
 
 PG\_CONTROL\_GROUP\_CONFIG视图存储系统的控制组配置信息。查询该视图需要sysadmin权限。

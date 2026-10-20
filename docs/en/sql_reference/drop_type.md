@@ -1,3 +1,8 @@
+---
+description: This document describes DROP TYPE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP TYPE, SQL, Function, Precautions]
+---
+
 # DROP TYPE<a name="EN-US_TOPIC_0289900925"></a>
 
 ## Function<a name="en-us_topic_0283137107_en-us_topic_0237122157_en-us_topic_0059778403_sd8f7b55734434619b381d7be49aed2df"></a>

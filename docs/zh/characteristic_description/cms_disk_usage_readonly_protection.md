@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CMS磁盘阈值管理检测 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, CMS磁盘阈值管理检测, 特性描述, 可获得性, 特性简介]
+---
+
 # CMS磁盘阈值管理检测
 
 ## 可获得性<a name="section3480125215575"></a>

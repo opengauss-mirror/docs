@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 记录日志的内容 的相关内容，涵盖 debug\_print\_parse、debug\_print\_rewritten 等内容。
+keywords: [openGauss, 记录日志的内容, 数据库参考, debug\_print\_parse, debug\_print\_rewritten]
+---
+
 # 记录日志的内容
 
 ## debug\_print\_parse<a name="zh-cn_topic_0237124723_section81174139518"></a>

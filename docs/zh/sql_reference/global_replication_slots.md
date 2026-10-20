@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_REPLICATION\_SLOTS 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_REPLICATION\_SLOTS, SQL参考]
+---
+
 # GLOBAL\_REPLICATION\_SLOTS
 
 GLOBAL\_REPLICATION\_SLOTS视图用于查看openGauss各节点的复制节点的信息。

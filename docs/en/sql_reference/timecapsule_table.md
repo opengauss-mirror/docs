@@ -1,3 +1,8 @@
+---
+description: This document describes TIMECAPSULE TABLE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, TIMECAPSULE TABLE, SQL, Function, Precautions]
+---
+
 # TIMECAPSULE TABLE<a name="EN-US_TOPIC_0000001151110015"></a>
 
 ## Function<a name="section1788163418319"></a>

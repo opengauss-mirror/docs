@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 回滚相关参数 的相关内容，涵盖 max\_undo\_workers、undo\_space\_limit\_size 等内容。
+keywords: [openGauss, 回滚相关参数, 数据库参考, max\_undo\_workers, undo\_space\_limit\_size]
+---
+
 # 回滚相关参数
 
 ## max\_undo\_workers<a name="section1899815549616"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Workload Management in openGauss, covering topics such as use\_workload\_manager, cgroup\_name.
+keywords: [openGauss, Workload Management, database reference, use\_workload\_manager, cgroup\_name]
+---
+
 # Workload Management<a name="EN-US_TOPIC_0289900033"></a>
 
 If database resource usage is not controlled, concurrent tasks may preempt resources. As a result, the OS will be overloaded and cannot respond to user tasks; or even crash and cannot provide any services to users. The openGauss workload management balances the database workload based on available resources to prevent database overloads.

@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_expansion in openGauss, covering topics such as Background, Precautions.
+keywords: [openGauss, gs\_expansion, tools and commands, Background, Precautions]
+---
+
 # gs\_expansion<a name="EN-US_TOPIC_0276337028"></a>
 
 ## Background<a name="section0416152818466"></a>

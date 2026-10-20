@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CM安装_容器 的相关内容，涵盖 支持的架构和操作系统版本、CM容器化部署 等内容。
+keywords: [openGauss, CM安装_容器, 安装指南, 支持的架构和操作系统版本, CM容器化部署]
+---
+
 # CM安装_容器
 
 本章节主要介绍通过Docker安装openGauss，方便DevOps用户的安装、配置和环境设置。

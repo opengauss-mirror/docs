@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DELETE语句 的相关内容，涵盖 语法格式、参数说明 等内容。
+keywords: [openGauss, DELETE语句, SQL参考, 语法格式, 参数说明]
+---
+
 # DELETE语句
 
 DELETE语句可以从指定的表里删除满足WHERE子句的行。如果WHERE子句不存在，将删除表中所有行，结果只保留表结构。

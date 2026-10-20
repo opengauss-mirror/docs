@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_PAGEWRITER\_STATUS in openGauss.
+keywords: [openGauss, GLOBAL\_PAGEWRITER\_STATUS, SQL]
+---
+
 # GLOBAL\_PAGEWRITER\_STATUS<a name="EN-US_TOPIC_0245374821"></a>
 
 **GLOBAL\_PAGEWRITER\_STATUS**  displays the page flushing information and checkpoint information about all instances in openGauss. 

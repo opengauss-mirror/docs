@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER DIRECTORY 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER DIRECTORY, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER DIRECTORY
 
 ## 功能描述<a name="zh-cn_topic_0283137159_zh-cn_topic_0237122058_zh-cn_topic_0059778392_sc84e6980912549c4bbd6895f97ac39f1"></a>

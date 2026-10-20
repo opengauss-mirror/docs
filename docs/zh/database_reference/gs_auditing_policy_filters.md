@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_AUDITING\_POLICY\_FILTERS 的相关内容与操作方法。
+keywords: [openGauss, GS\_AUDITING\_POLICY\_FILTERS, 数据库参考]
+---
+
 # GS\_AUDITING\_POLICY\_FILTERS
 
 GS\_AUDITING\_POLICY\_FILTERS系统表记录统一审计相关的过滤策略相关信息，每条记录对应一个设计策略。需要有系统管理员或安全策略管理员权限才可以访问此系统表。

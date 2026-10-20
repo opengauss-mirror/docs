@@ -1,3 +1,8 @@
+---
+description: This document describes DISTINCT in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, DISTINCT, SQL, Syntax, Parameter Description]
+---
+
 # DISTINCT<a name="EN-US_TOPIC_0000001179984118"></a>
 
 The  **DISTINCT**  keyword is used together with the SELECT statement to remove duplicate records and obtain only unique records.

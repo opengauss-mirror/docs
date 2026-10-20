@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STATIO\_ALL\_SEQUENCES 的相关内容与操作方法。
+keywords: [openGauss, STATIO\_ALL\_SEQUENCES, SQL参考]
+---
+
 # STATIO\_ALL\_SEQUENCES
 
 STATIO\_ALL\_SEQUENCES视图包含数据库中每个序列的每一行，显示特定序列关于I/O的统计。

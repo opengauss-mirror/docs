@@ -1,3 +1,8 @@
+---
+description: This document describes Setting User Permissions in openGauss.
+keywords: [openGauss, Setting User Permissions, database administration]
+---
+
 # Setting User Permissions<a name="EN-US_TOPIC_0246507964"></a>
 
 - To grant permissions for an object to a user, see  [GRANT](../sql_reference/grant.md).

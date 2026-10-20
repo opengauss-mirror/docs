@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_REPLICATION\_ORIGIN 的相关内容与操作方法。
+keywords: [openGauss, PG\_REPLICATION\_ORIGIN, 数据库参考]
+---
+
 # PG\_REPLICATION\_ORIGIN
 
 PG\_REPLICATION\_ORIGIN系统表包含所有已创建的复制源，该表为全局共享表，即在每个节点上只有一份pg\_replication\_origin，而不是每个数据库一份。

@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_PACKAGE in openGauss.
+keywords: [openGauss, GS\_PACKAGE, database reference]
+---
+
 # GS\_PACKAGE<a name="EN-US_TOPIC_0000001161323601"></a>
 
 **GS\_PACKAGE**  records package information.

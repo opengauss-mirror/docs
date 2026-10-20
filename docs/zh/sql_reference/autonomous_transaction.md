@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 自治事务 的相关内容与操作方法。
+keywords: [openGauss, 自治事务, SQL参考]
+---
+
 # 自治事务
 
 自治事务（Autonomous Transaction），在主事务执行过程中新启的独立的事务。自治事务的提交和回滚不会影响主事务已提交的数据，同时自治事务也不受主事务影响。

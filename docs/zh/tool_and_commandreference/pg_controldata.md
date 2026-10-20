@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss pg\_controldata 的相关内容，涵盖 功能介绍、前提条件 等内容。
+keywords: [openGauss, pg\_controldata, 工具与命令参考, 功能介绍, 前提条件]
+---
+
 # pg\_controldata
 
 ## 功能介绍<a name="zh-cn_topic_0237152440_section125419154813"></a>

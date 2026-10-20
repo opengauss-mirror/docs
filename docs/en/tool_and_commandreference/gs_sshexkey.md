@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_sshexkey in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, gs\_sshexkey, tools and commands, Background, Prerequisites]
+---
+
 # gs\_sshexkey<a name="ZH-CN_TOPIC_0249632281"></a>
 
 ## Background<a name="en-us_topic_0237152423_en-us_topic_0059778349_section15111432124318"></a>

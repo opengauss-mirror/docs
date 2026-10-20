@@ -1,3 +1,8 @@
+---
+description: This document describes SELECT Statement in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, SELECT Statement, SQL, Syntax, Parameter Description]
+---
+
 # SELECT Statement<a name="EN-US_TOPIC_0000001225422375"></a>
 
 The SELECT statement can be executed to retrieve data from a table or view. The result is stored in a result table, which is called a result set.

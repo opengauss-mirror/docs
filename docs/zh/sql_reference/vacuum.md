@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss VACUUM 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, VACUUM, SQL参考, 功能描述, 注意事项]
+---
+
 # VACUUM
 
 ## 功能描述<a name="zh-cn_topic_0283137096_zh-cn_topic_0237122195_zh-cn_topic_0059777503_sd160e2f29b7240d88e6b4e9c7c7b8ae3"></a>

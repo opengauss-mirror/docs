@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_SQL\_LIMIT 的相关内容与操作方法。
+keywords: [openGauss, GS\_SQL\_LIMIT, 数据库参考]
+---
+
 # GS\_SQL\_LIMIT
 
 GS\_SQL\_LIMIT系统表存储所有SQL防火墙规则的信息。

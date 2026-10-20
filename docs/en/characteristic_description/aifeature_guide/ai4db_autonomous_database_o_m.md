@@ -1,9 +1,14 @@
+---
+description: This document describes AI4DB: Autonomous Database O&M in openGauss, covering topics such as Environment Setup.
+keywords: [openGauss, AI4DB: Autonomous Database O&M, features, Environment Setup]
+---
+
 # AI4DB: Autonomous Database O&M<a name="EN-US_TOPIC_0000001243723307"></a>
 
 As mentioned above, AI4DB is primarily used for autonomous O&M and management of databases, helping database administrators reduce their workload. In practice, the AI4DB framework in DBMind is monitoring- and service-oriented. It also provides an instant AI toolkit, offering out-of-the-box AI O&M features \(such as index recommendation\). AI4DB mainly uses the open-source Prometheus for monitoring, with DBMind providing an exporter to produce monitoring data, which integrates with the Prometheus platform. The following figure illustrates the AI4DB service architecture in DBMind.
 
 **Figure  1**  AI4DB service architecture of DBMind<a name="fig1555795823612"></a>  
-![](figures/ai4db-service-architecture-of-dbmind.png "ai4db-service-architecture-of-dbmind")
+![AI4DB service architecture of DBMind](figures/ai4db-service-architecture-of-dbmind.png "ai4db-service-architecture-of-dbmind")
 
 Description of key components in the figure:
 

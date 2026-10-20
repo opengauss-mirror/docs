@@ -1,3 +1,8 @@
+---
+description: This document describes Performing the Upgrade in openGauss, covering topics such as Procedure.
+keywords: [openGauss, Performing the Upgrade, database O&M, Procedure]
+---
+
 # Performing the Upgrade<a name="EN-US_TOPIC_0305491427"></a>
 
 This section describes how to perform the gray upgrade.

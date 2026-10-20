@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 透明数据加密 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 透明数据加密, 特性描述, 可获得性, 特性简介]
+---
+
 # 透明数据加密
 
 ## 可获得性<a name="section8174682"></a>

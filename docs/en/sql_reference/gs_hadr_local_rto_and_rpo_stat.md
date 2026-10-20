@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_hadr\_local\_rto\_and\_rpo\_stat in openGauss.
+keywords: [openGauss, gs\_hadr\_local\_rto\_and\_rpo\_stat, SQL]
+---
+
 # gs\_hadr\_local\_rto\_and\_rpo\_stat<a name="ZH-CN_TOPIC_0000001196498547"></a>
 
 **gs\_hadr\_local\_rto\_and\_rpo\_stat** displays the log flow control information about the primary and standby database instances for streaming DR. This view can be used only by primary database node of the primary database instance. Statistics cannot be obtained from the standby database node or standby database instance.

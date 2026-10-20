@@ -1,3 +1,8 @@
+---
+description: This document describes GUC Parameter Usage in openGauss, covering topics such as Precautions.
+keywords: [openGauss, GUC Parameter Usage, database reference, Precautions]
+---
+
 # GUC Parameter Usage<a name="EN-US_TOPIC_0289900179"></a>
 
 A database provides many operation parameters. Configurations of these parameters affect the behavior of the database system. Before modifying these parameters, learn the impact of these parameters on the database. Otherwise, unexpected results may occur.

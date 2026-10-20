@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER SUBSCRIPTION in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER SUBSCRIPTION, SQL, Function, Precautions]
+---
+
 # ALTER SUBSCRIPTION
 
 ## Function<a name="section13387758133316"></a>

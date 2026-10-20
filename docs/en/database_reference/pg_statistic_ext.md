@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_STATISTIC\_EXT in openGauss.
+keywords: [openGauss, PG\_STATISTIC\_EXT, database reference]
+---
+
 # PG\_STATISTIC\_EXT<a name="EN-US_TOPIC_0289899833"></a>
 
 **PG\_STATISTIC\_EXT**  displays extended statistics of tables in a database, such as statistics of multiple columns. Statistics of expressions will be supported later. You can specify the extended statistics to collect. This system catalog is accessible only to the system administrator.

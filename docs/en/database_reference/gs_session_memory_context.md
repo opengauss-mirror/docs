@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_SESSION\_MEMORY\_CONTEXT in openGauss.
+keywords: [openGauss, GS\_SESSION\_MEMORY\_CONTEXT, database reference]
+---
+
 # GS\_SESSION\_MEMORY\_CONTEXT<a name="EN-US_TOPIC_0289900285"></a>
 
 **GS\_SESSION\_MEMORY\_CONTEXT**  displays statistics on memory usage of all sessions based on the MemoryContext node. This view is valid only when  **enable\_thread\_pool**  is set to  **on**. If the GUC parameter  **enable\_memory\_limit**  is set to  **off**, this view is unavailable.

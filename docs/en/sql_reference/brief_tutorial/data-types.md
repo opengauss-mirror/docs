@@ -1,3 +1,8 @@
+---
+description: This document describes Data Types in openGauss, covering topics such as Numeric Types.
+keywords: [openGauss, Data Types, SQL, Numeric Types]
+---
+
 # Data Types<a name="EN-US_TOPIC_0000001235726007"></a>
 
 ## Numeric Types<a name="section7311016172014"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Hash Function in openGauss.
+keywords: [openGauss, Hash Function, SQL]
+---
+
 # Hash Function<a name="EN-US_TOPIC_0311139289"></a>
 
 - bucketabstime\(value, flag\)

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss HTAP 行列融合 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, HTAP 行列融合, 特性描述, 可获得性, 特性简介]
+---
+
 # HTAP 行列融合
 
 ## 可获得性<a name="section15406143204715"></a>
@@ -10,7 +15,7 @@ HTAP 行列融合特性在单机、主备场景下，通过节点的行列双格
 
 **图 1**  主备场景行列转换特性设计方案<a name="fig114741818101675"></a>  
 
-![](figures/HTAP.jpg)
+![特性简介示意图](figures/HTAP.jpg)
 
 ## 客户价值<a name="section13406743164715"></a>
 

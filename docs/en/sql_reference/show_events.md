@@ -1,3 +1,8 @@
+---
+description: This document describes SHOW EVENTS in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, SHOW EVENTS, SQL, Function, Precautions]
+---
+
 # SHOW EVENTS<a name="EN-US_TOPIC_0000001503604049"></a>
 
 ## Function<a name="section5400959952"></a>

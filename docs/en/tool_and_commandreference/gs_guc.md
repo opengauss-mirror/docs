@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_guc in openGauss, covering topics such as Background, Syntax.
+keywords: [openGauss, gs\_guc, tools and commands, Background, Syntax]
+---
+
 # gs\_guc<a name="ZH-CN_TOPIC_0289899223"></a>
 
 ## Background<a name="en-us_topic_0287276018_en-us_topic_0237152338_en-us_topic_0059778019_s59e576e934094b3c9a54d6ed555b5671"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes SET SESSION AUTHORIZATION in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, SET SESSION AUTHORIZATION, SQL, Function, Precautions]
+---
+
 # SET SESSION AUTHORIZATION<a name="EN-US_TOPIC_0289899948"></a>
 
 ## Function<a name="en-us_topic_0283137463_en-us_topic_0237122189_en-us_topic_0059778193_se24abe3c44f645b091e061c97d8957e7"></a>

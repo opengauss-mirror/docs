@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_MATVIEW 的相关内容与操作方法。
+keywords: [openGauss, GS\_MATVIEW, 数据库参考]
+---
+
 # GS\_MATVIEW
 
 GS\_MATVIEW系统表提供了关于数据库中每一个物化视图的信息。

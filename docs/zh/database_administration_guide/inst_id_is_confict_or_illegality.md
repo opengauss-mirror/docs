@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss INST_ID存在冲突或不合法 的相关内容，涵盖 现象、原因 等内容。
+keywords: [openGauss, INST_ID存在冲突或不合法, 数据库管理, 现象, 原因]
+---
+
 # INST_ID存在冲突或不合法
 
 ## 现象

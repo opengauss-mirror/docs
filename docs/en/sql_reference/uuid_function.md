@@ -1,3 +1,8 @@
+---
+description: This document describes UUID Functions in openGauss, covering topics such as UUID Functions.
+keywords: [openGauss, UUID Functions, SQL]
+---
+
 # UUID Functions<a name="EN-US_TOPIC_0289899864"></a>
 
 ## UUID Functions

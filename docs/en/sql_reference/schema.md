@@ -1,3 +1,8 @@
+---
+description: This document describes Schemas in openGauss.
+keywords: [openGauss, Schemas, SQL]
+---
+
 # Schemas<a name="EN-US_TOPIC_0000001190922647"></a>
 
 The following table describes the schemas of openGauss.

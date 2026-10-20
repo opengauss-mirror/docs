@@ -1,3 +1,8 @@
+---
+description: This document describes SESSION\_STAT in openGauss.
+keywords: [openGauss, SESSION\_STAT, SQL]
+---
+
 # SESSION\_STAT<a name="EN-US_TOPIC_0245374733"></a>
 
 **SESSION\_STAT**  collects statistics about session status on the current node based on session threads or the  **AutoVacuum**  thread.

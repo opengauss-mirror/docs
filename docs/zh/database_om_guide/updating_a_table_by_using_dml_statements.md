@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 使用DML命令更新表 的相关内容，涵盖 操作步骤 等内容。
+keywords: [openGauss, 使用DML命令更新表, 数据库运维, 操作步骤]
+---
+
 # 使用DML命令更新表
 
 openGauss支持标准的数据库操作语言（DML）命令，对表进行更新。

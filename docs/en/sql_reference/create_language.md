@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE LANGUAGE in openGauss, covering topics such as Function, Syntax.
+keywords: [openGauss, CREATE LANGUAGE, SQL, Function, Syntax]
+---
+
 # CREATE LANGUAGE<a name="EN-US_TOPIC_0000001080607732"></a>
 
 ## Function<a name="section113331284191"></a>

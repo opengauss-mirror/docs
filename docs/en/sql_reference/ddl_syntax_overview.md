@@ -1,3 +1,8 @@
+---
+description: This document describes DDL Syntax Overview in openGauss, covering topics such as Defining a CMK, Defining a CEK.
+keywords: [openGauss, DDL Syntax Overview, SQL, Defining a CMK, Defining a CEK]
+---
+
 # DDL Syntax Overview<a name="EN-US_TOPIC_0289900414"></a>
 
 Data definition language \(DDL\) is used to define or modify an object in a database, such as a table, an index, or a view.

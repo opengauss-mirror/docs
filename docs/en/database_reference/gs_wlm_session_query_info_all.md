@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_WLM\_SESSION\_QUERY\_INFO\_ALL in openGauss.
+keywords: [openGauss, GS\_WLM\_SESSION\_QUERY\_INFO\_ALL, database reference]
+---
+
 # GS\_WLM\_SESSION\_QUERY\_INFO\_ALL<a name="EN-US_TOPIC_0000001105242266"></a>
 
 **GS\_WLM\_SESSION\_QUERY\_INFO\_ALL**  displays load management information about completed jobs executed on the current database instance. The data is dumped from the kernel to the system catalog. If the GUC parameter `enable_resource_record` is set to  **on**, query information in the kernel is imported to the system catalog  **GS\_WLM\_SESSION\_QUERY\_INFO\_ALL**  every 3 minutes. This system catalog can be queried by users with the  **sysadmin**  permission only in Postgres.

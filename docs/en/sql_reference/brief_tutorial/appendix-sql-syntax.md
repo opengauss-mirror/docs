@@ -1,3 +1,8 @@
+---
+description: This document describes Appendix: SQL Syntax in openGauss, covering topics such as ABORT, ALTER AUDIT POLICY.
+keywords: [openGauss, Appendix: SQL Syntax, SQL, ABORT, ALTER AUDIT POLICY]
+---
+
 # Appendix: SQL Syntax<a name="EN-US_TOPIC_0000001237263391"></a>
 
 ## ABORT<a name="section49831237711"></a>

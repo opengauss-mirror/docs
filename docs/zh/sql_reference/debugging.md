@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 调试 的相关内容，涵盖 语法、示例 等内容。
+keywords: [openGauss, 调试, SQL参考, 语法, 示例]
+---
+
 # 调试
 
 ## 语法<a name="zh-cn_topic_0283137518_zh-cn_topic_0237122256_zh-cn_topic_0059777683_s74daa5f17f364352aa643a41e14579e1"></a>
@@ -7,19 +12,19 @@
 有以下五种语法格式：
 
 **图 1**  raise\_format::=<a name="zh-cn_topic_0283137518_zh-cn_topic_0237122256_zh-cn_topic_0059777683_f6472e23fec9048d4ba578ba43c6695c1"></a>  
-![](figures/raise_format.png)
+![raise format语法图](figures/raise_format.png)
 
 **图 2**  raise\_condition::=<a name="zh-cn_topic_0283137518_zh-cn_topic_0237122256_zh-cn_topic_0059777683_f6ac2ae7415ba4112b5c289de87c4d236"></a>  
-![](figures/raise_condition.png)
+![raise condition语法图](figures/raise_condition.png)
 
 **图 3**  raise\_sqlstate::=<a name="zh-cn_topic_0283137518_zh-cn_topic_0237122256_zh-cn_topic_0059777683_f91407ffec97e43fb870c74c5f81f6c0d"></a>  
-![](figures/raise_sqlstate.png)
+![raise sqlstate语法图](figures/raise_sqlstate.png)
 
 **图 4**  raise\_option::=<a name="zh-cn_topic_0283137518_zh-cn_topic_0237122256_zh-cn_topic_0059777683_ffb6af581afa249b0b37f8bd8b97c55cd"></a>  
-![](figures/raise_option.png)
+![raise option语法图](figures/raise_option.png)
 
 **图 5**  raise::=<a name="zh-cn_topic_0283137518_zh-cn_topic_0237122256_zh-cn_topic_0059777683_f6b9d7253ecad413e9ee92ba78199a6b4"></a>  
-![](figures/raise.png)
+![raise](figures/raise.png)
 
 **参数说明**：
 
@@ -58,7 +63,7 @@
 
 **图 6**  exception\_init::=<a name="fig1171943461612"></a>  
 
-![](figures/exception-init.png)
+![语法示意图](figures/exception-init.png)
 
 **参数说明**：
 

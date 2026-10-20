@@ -1,3 +1,8 @@
+---
+description: This document describes Ledger Database Functions in openGauss.
+keywords: [openGauss, Ledger Database Functions, SQL]
+---
+
 # Ledger Database Functions<a name="EN-US_TOPIC_0000001147093197"></a>
 
 - get\_dn\_hist\_relhash\(text, text\)

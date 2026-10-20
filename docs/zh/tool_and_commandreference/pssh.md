@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss pssh 的相关内容，涵盖 基本功能、语法 等内容。
+keywords: [openGauss, pssh, 工具与命令参考, 基本功能, 语法]
+---
+
 # pssh
 
 ## 基本功能<a name="section6557202811106"></a>

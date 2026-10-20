@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_RECORD\_RESET\_TIME 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_RECORD\_RESET\_TIME, SQL参考]
+---
+
 # GLOBAL\_RECORD\_RESET\_TIME
 
 GLOBAL\_RECORD\_RESET\_TIME用于重置（重启、主备倒换、数据库删除）汇聚openGauss统计信息时间。

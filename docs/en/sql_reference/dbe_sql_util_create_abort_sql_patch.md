@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_SQL\_UTIL.create\_abort\_sql\_patch in openGauss.
+keywords: [openGauss, DBE\_SQL\_UTIL.create\_abort\_sql\_patch, SQL]
+---
+
 # DBE\_SQL\_UTIL.create\_abort\_sql\_patch<a name="EN-US_TOPIC_0000001313953157"></a>
 
 create\_abort\_sql\_patch is an interface function used to create an SQL patch for risk avoidance and return whether the execution is successful.

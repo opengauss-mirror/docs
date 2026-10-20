@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss oGRecorder（数据保险柜） 的相关内容与操作方法。
+keywords: [openGauss, oGRecorder（数据保险柜）, 工具与命令参考]
+---
+
 # oGRecorder（数据保险柜）
 
 GR（oGRecorder）是一款数据库日志保护软件。其典型部署场景是运行于virtCCA中，南向对接Dorado Worm存储，北向通过oGRecorderSDK对接数据库，实现对数据库WAL日志的实时同步，形成对用户数据库系统的日志安全保护的软硬一体组合方案。

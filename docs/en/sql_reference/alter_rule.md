@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER RULE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER RULE, SQL, Function, Precautions]
+---
+
 # ALTER RULE<a name="EN-US_TOPIC_0306398141"></a>
 
 ## Function<a name="section1858233912452"></a>

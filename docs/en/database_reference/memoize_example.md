@@ -1,3 +1,8 @@
+---
+description: This document describes Memoize Usage in openGauss, covering topics such as introduction, limitation.
+keywords: [openGauss, Memoize Usage, database reference, introduction, limitation]
+---
+
 # Memoize Usage
 
 ## introduction

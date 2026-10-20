@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_install in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, gs\_install, tools and commands, Background, Prerequisites]
+---
+
 # gs\_install<a name="EN-US_TOPIC_0249632258"></a>
 
 ## Background<a name="en-us_topic_0237152416_en-us_topic_0059778040_section551843134215"></a>

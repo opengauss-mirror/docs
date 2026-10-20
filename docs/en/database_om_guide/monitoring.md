@@ -1,3 +1,8 @@
+---
+description: This document describes Monitoring in openGauss.
+keywords: [openGauss, Monitoring, database O&M]
+---
+
 # Monitoring<a name="EN-US_TOPIC_0000001261561939"></a>
 
 Because logical replication is based on an architecture similar to physical streaming replication, monitoring on a publication node is similar to monitoring on a primary physical replication node.

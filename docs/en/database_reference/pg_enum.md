@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_ENUM in openGauss.
+keywords: [openGauss, PG\_ENUM, database reference]
+---
+
 # PG\_ENUM<a name="EN-US_TOPIC_0289900547"></a>
 
 **PG\_ENUM**  contains entries showing the values and labels for each enumerated type. The internal representation of a given enumerated value is actually the OID of its associated row in  **PG\_ENUM**.

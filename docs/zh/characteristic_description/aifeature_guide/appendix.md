@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 附录 的相关内容与操作方法。
+keywords: [openGauss, 附录, 特性描述]
+---
+
 # 附录<a name="ZH-CN_TOPIC_0000002258650632"></a>
 
 >[!NOTE]说明

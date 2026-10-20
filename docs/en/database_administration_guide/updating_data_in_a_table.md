@@ -1,3 +1,8 @@
+---
+description: This document describes Updating Data in a Table in openGauss.
+keywords: [openGauss, Updating Data in a Table, database administration]
+---
+
 # Updating Data in a Table<a name="EN-US_TOPIC_0242370187"></a>
 
 Existing data in a database can be updated. You can update one row, all rows, or specified rows of data, or update data in a column without affecting the data in the other columns.

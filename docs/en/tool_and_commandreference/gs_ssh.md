@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_ssh in openGauss, covering topics such as Background, Precautions.
+keywords: [openGauss, gs\_ssh, tools and commands, Background, Precautions]
+---
+
 # gs\_ssh<a name="EN-US_TOPIC_0249632288"></a>
 
 ## Background<a name="en-us_topic_0237152344_en-us_topic_0059777951_section12241205518358"></a>

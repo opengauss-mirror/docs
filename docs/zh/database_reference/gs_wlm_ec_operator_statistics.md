@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_WLM\_EC\_OPERATOR\_STATISTICS 的相关内容与操作方法。
+keywords: [openGauss, GS\_WLM\_EC\_OPERATOR\_STATISTICS, 数据库参考]
+---
+
 # GS\_WLM\_EC\_OPERATOR\_STATISTICS
 
 GS\_WLM\_EC\_OPERATOR\_STATISTICS视图显示当前用户正在执行的EC（Extension Connector）作业的算子相关信息。查询该视图需要sysadmin权限。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBE\_PLDEBUGGER.attach 的相关内容与操作方法。
+keywords: [openGauss, DBE\_PLDEBUGGER.attach, SQL参考]
+---
+
 # DBE\_PLDEBUGGER.attach
 
 server端执行存储过程，停在第一条语句前，等待debug端关联。debug端调用attach，传入nodename和port，关联到该存储过程上。

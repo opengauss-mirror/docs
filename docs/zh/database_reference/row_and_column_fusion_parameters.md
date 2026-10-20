@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 行列融合参数 的相关内容，涵盖 enable\_imcsscan、enable\_parallel\_populate 等内容。
+keywords: [openGauss, 行列融合参数, 数据库参考, enable\_imcsscan, enable\_parallel\_populate]
+---
+
 # 行列融合参数
 
 ## enable\_imcsscan<a name="section14941640131"></a>

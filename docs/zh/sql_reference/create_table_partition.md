@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE TABLE PARTITION 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE TABLE PARTITION, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE TABLE PARTITION
 
 ## 功能描述<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_section1163224811518"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes SQL Statistics in openGauss.
+keywords: [openGauss, SQL Statistics, SQL]
+---
+
 # SQL Statistics<a name="EN-US_TOPIC_0000001215355222"></a>
 
 The following table describes columns in the SQL Statistics report.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss RBP加速恢复 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, RBP加速恢复, 特性描述, 可获得性, 特性简介]
+---
+
 # RBP加速恢复
 
 ## 可获得性

@@ -1,3 +1,8 @@
+---
+description: This document describes Redundant Index Analysis Aid in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Redundant Index Analysis Aid, features, Availability, Introduction]
+---
+
 # Redundant Index Analysis Aid
 
 ## Availability

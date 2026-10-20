@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 创建和管理schema 的相关内容，涵盖 背景信息、注意事项 等内容。
+keywords: [openGauss, 创建和管理schema, 数据库管理, 背景信息, 注意事项]
+---
+
 # 创建和管理schema
 
 ## 背景信息<a name="zh-cn_topic_0237120306_zh-cn_topic_0059779372_sccec47ed8ad54f89b98b83caf9a0b4fd"></a>

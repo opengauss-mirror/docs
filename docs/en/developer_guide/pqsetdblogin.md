@@ -1,3 +1,8 @@
+---
+description: This document describes PQsetdbLogin in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, PQsetdbLogin, development, Function, Prototype]
+---
+
 # PQsetdbLogin<a name="EN-US_TOPIC_0242380572"></a>
 
 ## Function<a name="en-us_topic_0241735615_section189041135191819"></a>

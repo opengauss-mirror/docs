@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 资源池化开发者环境部署指南 的相关内容，涵盖 内容简介、预备知识 等内容。
+keywords: [openGauss, 资源池化开发者环境部署指南, 数据库管理, 内容简介, 预备知识]
+---
+
 # 资源池化开发者环境部署指南
 
 ## 内容简介
@@ -18,7 +23,7 @@ openGauss资源池化是openGauss推出的一种新型的集群架构。该架�
   - 资源池化部署图参考：
 
 <p align="center"><b>图1: openGauss资源池化部署图</b></p>
-<div align="center"><img src="figures/dms1.JPG"/></div>
+<div align="center"><img src="figures/dms1.JPG" alt="注意事项示意图"/></div>
 
   - 在社区上正式发布的企业版安装包中，如果需要搭建资源池化架构，在硬件上需要准备磁阵，服务器和光交换机，且需要部署CM和OM组件。
 

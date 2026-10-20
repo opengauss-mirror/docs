@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_STATEMENT\_COUNT in openGauss.
+keywords: [openGauss, GLOBAL\_STATEMENT\_COUNT, SQL]
+---
+
 # GLOBAL\_STATEMENT\_COUNT<a name="EN-US_TOPIC_0245374761"></a>
 
 **GLOBAL\_STATEMENT\_COUNT**  displays statistics about five types of running statements \(**SELECT**,  **INSERT**,  **UPDATE**,  **DELETE**, and  **MERGE INTO**\) as well as DDL, DML, and DCL statements on each node of the database. 

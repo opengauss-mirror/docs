@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CHECKPOINT 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CHECKPOINT, SQL参考, 功能描述, 注意事项]
+---
+
 # CHECKPOINT
 
 ## 功能描述<a name="zh-cn_topic_0283137558_zh-cn_topic_0237122089_zh-cn_topic_0059778147_s45168794daa74bc2a308ea3c943e0a93"></a>

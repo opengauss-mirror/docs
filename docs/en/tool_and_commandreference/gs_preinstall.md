@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_preinstall in openGauss, covering topics such as Background, Precautions.
+keywords: [openGauss, gs\_preinstall, tools and commands, Background, Precautions]
+---
+
 # gs\_preinstall<a name="EN-US_TOPIC_0249632278"></a>
 
 ## Background<a name="en-us_topic_0237152419_en-us_topic_0059778992_section68942744218"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_TS\_TEMPLATE 的相关内容与操作方法。
+keywords: [openGauss, PG\_TS\_TEMPLATE, 数据库参考]
+---
+
 # PG\_TS\_TEMPLATE
 
 PG\_TS\_TEMPLATE系统表包含定义文本搜索模板的记录。模板是文本搜索字典的类的实现框架。因为模板必须通过C语言级别的函数实现，索引新模板的创建必须由数据库系统管理员创建。

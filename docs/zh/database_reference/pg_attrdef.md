@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_ATTRDEF 的相关内容与操作方法。
+keywords: [openGauss, PG\_ATTRDEF, 数据库参考]
+---
+
 # PG\_ATTRDEF
 
 PG\_ATTRDEF系统表存储列的默认值。

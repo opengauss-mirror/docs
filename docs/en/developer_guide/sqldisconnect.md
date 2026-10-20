@@ -1,3 +1,8 @@
+---
+description: This document describes SQLDisconnect in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, SQLDisconnect, development, Function, Prototype]
+---
+
 # SQLDisconnect<a name="EN-US_TOPIC_0242371444"></a>
 
 ## Function<a name="en-us_topic_0238272890_en-us_topic_0237120420_en-us_topic_0059778556_sf1f063f9cda741e3bddd12ffff9982ea"></a>

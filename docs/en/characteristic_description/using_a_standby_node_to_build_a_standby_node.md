@@ -1,3 +1,8 @@
+---
+description: This document describes Using a Standby Node to Build a Standby Node in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Using a Standby Node to Build a Standby Node, features, Availability, Introduction]
+---
+
 # Using a Standby Node to Build a Standby Node<a name="EN-US_TOPIC_0000001223785974"></a>
 
 ## Availability<a name="section14707931165614"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Query Native Compilation \(JIT\) in openGauss, covering topics such as JIT SP, JIT Query.
+keywords: [openGauss, MOT Query Native Compilation \(JIT\), database administration, JIT SP, JIT Query]
+---
+
 # MOT Query Native Compilation \(JIT\)<a name="EN-US_TOPIC_0270677721"></a>
 
 Native Compilation (JIT) is one of key technologies of MOT for delivering exceptionally low latency and high throughput performance. Two types of Native Compilation (JIT) are supported (using a PREPARE statement): 1) JIT for Stored Procedures (JIT SP), and 2) JIT for Queries (JIT Query).

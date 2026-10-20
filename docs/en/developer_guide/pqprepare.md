@@ -1,3 +1,8 @@
+---
+description: This document describes PQprepare in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, PQprepare, development, Function, Prototype]
+---
+
 # PQprepare<a name="EN-US_TOPIC_0242380578"></a>
 
 ## Function<a name="en-us_topic_0241735620_section1434210205519"></a>

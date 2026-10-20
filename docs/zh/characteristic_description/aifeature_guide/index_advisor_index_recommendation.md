@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Index-advisor：索引推荐 的相关内容，涵盖 单query索引推荐、虚拟索引 等内容。
+keywords: [openGauss, Index-advisor：索引推荐, 特性描述, 单query索引推荐, 虚拟索引]
+---
+
 # Index-advisor：索引推荐
 
 本节介绍索引推荐的功能，共包含三个子功能：单query索引推荐、虚拟索引和workload级别索引推荐。

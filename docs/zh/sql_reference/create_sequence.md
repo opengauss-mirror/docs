@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE SEQUENCE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE SEQUENCE, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE SEQUENCE
 
 ## 功能描述<a name="zh-cn_topic_0283137208_zh-cn_topic_0237122114_zh-cn_topic_0059778825_section11152141914129"></a>

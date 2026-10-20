@@ -1,3 +1,8 @@
+---
+description: This document describes DROP TEXT SEARCH DICTIONARY in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP TEXT SEARCH DICTIONARY, SQL, Function, Precautions]
+---
+
 # DROP TEXT SEARCH DICTIONARY<a name="EN-US_TOPIC_0289900800"></a>
 
 ## Function<a name="en-us_topic_0283137105_en-us_topic_0237122155_en-us_topic_0059777936_sb9efc89be09141c3b113326dd8c2b35d"></a>

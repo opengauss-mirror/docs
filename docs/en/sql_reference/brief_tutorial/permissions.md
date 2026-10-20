@@ -1,3 +1,8 @@
+---
+description: This document describes Permissions in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, Permissions, SQL, Syntax, Parameter Description]
+---
+
 # Permissions<a name="EN-US_TOPIC_0000001225378505"></a>
 
 A user who creates an object is the owner of this object. By default, separation of duties is disabled after database installation. A database system administrator has the same permissions as object owners. After an object is created, only the object owner or system administrator can query, modify, and delete the object, and grant permissions on the object to other users through [GRANT](#li9428175732017) by default.

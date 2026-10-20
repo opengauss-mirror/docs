@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 使用gs\_restore命令导入数据 的相关内容，涵盖 操作场景、操作步骤 等内容。
+keywords: [openGauss, 使用gs\_restore命令导入数据, 数据库运维, 操作场景, 操作步骤]
+---
+
 # 使用gs\_restore命令导入数据
 
 ## 操作场景<a name="zh-cn_topic_0283137171_zh-cn_topic_0237121137_section17330121375310"></a>

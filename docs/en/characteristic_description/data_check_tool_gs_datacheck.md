@@ -1,3 +1,8 @@
+---
+description: This document describes Data Check Tool gs\_datacheck in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Data Check Tool gs\_datacheck, features, Availability, Introduction]
+---
+
 # Data Check Tool gs\_datacheck<a name="EN-US_TOPIC_0000001264707837"></a>
 
 ## Availability<a name="section56086982"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Logging Destination in openGauss, covering topics such as log\_destination, logging\_collector.
+keywords: [openGauss, Logging Destination, database reference, log\_destination, logging\_collector]
+---
+
 # Logging Destination<a name="EN-US_TOPIC_0289900945"></a>
 
 ## log\_destination<a name="en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_sb6c9884f69bd4765a60f80810c94f194"></a>

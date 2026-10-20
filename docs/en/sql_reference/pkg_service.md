@@ -1,3 +1,8 @@
+---
+description: This document describes PKG\_SERVICE in openGauss.
+keywords: [openGauss, PKG\_SERVICE, SQL]
+---
+
 # PKG\_SERVICE<a name="EN-US_TOPIC_0304085685"></a>
 
 [Table 1](#table35465232913)  lists all APIs supported by the  **PKG\_SERVICE**  package.

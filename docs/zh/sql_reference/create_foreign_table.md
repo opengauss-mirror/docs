@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE FOREIGN TABLE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE FOREIGN TABLE, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE FOREIGN TABLE
 
 ## 功能描述<a name="zh-cn_topic_0283137606_section03743713018"></a>

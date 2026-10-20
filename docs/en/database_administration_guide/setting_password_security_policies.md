@@ -1,3 +1,8 @@
+---
+description: This document describes Setting Password Security Policy in openGauss, covering topics such as Procedure.
+keywords: [openGauss, Setting Password Security Policy, database administration, Procedure]
+---
+
 
 # Setting Password Security Policy
 

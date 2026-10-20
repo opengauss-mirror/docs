@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP Extension 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP Extension, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP Extension
 
 ## 功能描述<a name="section173831846163116"></a>

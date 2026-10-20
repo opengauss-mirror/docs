@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Global SysCache参数 的相关内容，涵盖 enable\_global\_syscache、global\_syscache\_threshold 等内容。
+keywords: [openGauss, Global SysCache参数, 数据库参考, enable\_global\_syscache, global\_syscache\_threshold]
+---
+
 # Global SysCache参数
 
 ## enable\_global\_syscache<a name="section97160555612"></a>

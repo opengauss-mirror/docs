@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_COLUMN\_KEYS in openGauss.
+keywords: [openGauss, GS\_COLUMN\_KEYS, database reference]
+---
+
 # GS\_COLUMN\_KEYS<a name="EN-US_TOPIC_0294528094"></a>
 
 **GS\_COLUMN\_KEYS**records information about the CEK in the encrypted equality feature. Each record corresponds to a CEK.

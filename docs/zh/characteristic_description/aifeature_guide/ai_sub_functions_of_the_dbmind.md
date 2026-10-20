@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBMind的AI子功能 的相关内容，涵盖 DBMind定时任务 等内容。
+keywords: [openGauss, DBMind的AI子功能, 特性描述, DBMind定时任务]
+---
+
 # DBMind的AI子功能<a name="ZH-CN_TOPIC_0000002294398245"></a>
 
 用户可以通过gs\_dbmind的component子命令启动对应的AI子功能，下述章节展示不同AI功能的具体内容和使用详情。

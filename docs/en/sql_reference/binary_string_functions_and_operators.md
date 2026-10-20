@@ -1,3 +1,8 @@
+---
+description: This document describes Binary String Functions and Operators in openGauss, covering topics such as String Operators, Other Binary String Functions.
+keywords: [openGauss, Binary String Functions and Operators, SQL, String Operators, Other Binary String Functions]
+---
+
 # Binary String Functions and Operators<a name="EN-US_TOPIC_0289900418"></a>
 
 ## String Operators<a name="en-us_topic_0283137016_en-us_topic_0237121968_en-us_topic_0059778049_s48b25a0eb8364edc885d82ec73d3fdf5"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SUMMARY\_STATEMENT 的相关内容与操作方法。
+keywords: [openGauss, SUMMARY\_STATEMENT, SQL参考]
+---
+
 # SUMMARY\_STATEMENT
 
 获得各数据库主节点的执行语句（归一化SQL）的全量信息（包含数据库节点）。

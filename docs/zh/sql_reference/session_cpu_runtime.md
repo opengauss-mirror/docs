@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SESSION\_CPU\_RUNTIME 的相关内容与操作方法。
+keywords: [openGauss, SESSION\_CPU\_RUNTIME, SQL参考]
+---
+
 # SESSION\_CPU\_RUNTIME
 
 SESSION\_CPU\_RUNTIME视图显示和当前用户执行复杂作业（正在运行）时的负载管理CPU使用的信息。

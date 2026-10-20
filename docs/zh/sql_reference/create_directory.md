@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE DIRECTORY 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE DIRECTORY, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE DIRECTORY
 
 ## 功能描述<a name="zh-cn_topic_0283136620_zh-cn_topic_0237122101_zh-cn_topic_0059778310_section50807000114421"></a>

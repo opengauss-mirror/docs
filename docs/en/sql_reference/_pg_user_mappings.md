@@ -1,3 +1,8 @@
+---
+description: This document describes \_PG\_USER\_MAPPINGS in openGauss.
+keywords: [openGauss, \_PG\_USER\_MAPPINGS, SQL]
+---
+
 # \_PG\_USER\_MAPPINGS<a name="EN-US_TOPIC_0310260671"></a>
 
 **\_PG\_USER\_MAPPINGS**  stores mappings from local users to remote users. Only the sysadmin user has the permission to view this view.

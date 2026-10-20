@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 用户和权限审计 的相关内容，涵盖 audit\_login\_logout、audit\_database\_process 等内容。
+keywords: [openGauss, 用户和权限审计, 数据库参考, audit\_login\_logout, audit\_database\_process]
+---
+
 # 用户和权限审计
 
 ## audit\_login\_logout<a name="zh-cn_topic_0283136655_zh-cn_topic_0237124746_zh-cn_topic_0059778731_se04dd9d17c9445579ca268e0f74196fe"></a>

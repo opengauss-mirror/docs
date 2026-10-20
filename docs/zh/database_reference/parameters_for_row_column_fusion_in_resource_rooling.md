@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 资源池化行列融合参数 的相关内容，涵盖 ss\_max\_imcs\_cache、ss\_htap\_cluster\_map 等内容。
+keywords: [openGauss, 资源池化行列融合参数, 数据库参考, ss\_max\_imcs\_cache, ss\_htap\_cluster\_map]
+---
+
 # 资源池化行列融合参数
 
 资源池化行列融合继承[单机/主备行列融合参数](row_and_column_fusion_parameters.md)，并新增如下参数。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 冗余索引辅助诊断 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 冗余索引辅助诊断, 特性描述, 可获得性, 特性简介]
+---
+
 # 冗余索引辅助诊断
 
 ## 可获得性<a name="section56086982"></a>

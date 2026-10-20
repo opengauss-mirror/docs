@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 示例：jdbc主备集群负载均衡 的相关内容，涵盖 jdbc负载均衡功能说明、集群状态变化时，jdbc快速负载均衡功能说明 等内容。
+keywords: [openGauss, 示例：jdbc主备集群负载均衡, 开发指南, jdbc负载均衡功能说明, 集群状态变化时，jdbc快速负载均衡功能说明]
+---
+
 # 示例：jdbc主备集群负载均衡
 
 >[!NOTE]说明

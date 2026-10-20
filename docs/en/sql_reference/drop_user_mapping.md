@@ -1,3 +1,8 @@
+---
+description: This document describes DROP USER MAPPING in openGauss, covering topics such as Function, Syntax.
+keywords: [openGauss, DROP USER MAPPING, SQL, Function, Syntax]
+---
+
 # DROP USER MAPPING<a name="EN-US_TOPIC_0289900601"></a>
 
 ## Function<a name="en-us_topic_0283136651_section152751851406"></a>

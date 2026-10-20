@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 二进制字符串函数和操作符 的相关内容，涵盖 字符串操作符、二进制字符串函数 等内容。
+keywords: [openGauss, 二进制字符串函数和操作符, SQL参考, 字符串操作符, 二进制字符串函数]
+---
+
 # 二进制字符串函数和操作符
 
 ## 字符串操作符<a name="zh-cn_topic_0283137016_zh-cn_topic_0237121968_zh-cn_topic_0059778049_s48b25a0eb8364edc885d82ec73d3fdf5"></a>

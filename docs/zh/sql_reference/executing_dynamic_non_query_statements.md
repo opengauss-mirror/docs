@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 执行动态非查询语句 的相关内容，涵盖 语法、示例 等内容。
+keywords: [openGauss, 执行动态非查询语句, SQL参考, 语法, 示例]
+---
+
 # 执行动态非查询语句
 
 ## 语法<a name="zh-cn_topic_0237122226_zh-cn_topic_0059777751_s856a2c95da554ee0b5783beeee22397c"></a>
@@ -5,12 +10,12 @@
 语法请参见[图1](#zh-cn_topic_0237122226_zh-cn_topic_0059777751_f039af8fc76c54a54b06d579e56b81232)。
 
 **图 1**  noselect::=<a name="zh-cn_topic_0237122226_zh-cn_topic_0059777751_f039af8fc76c54a54b06d579e56b81232"></a>  
-![](figures/noselect.png)
+![noselect](figures/noselect.png)
 
 using\_clause子句的语法参见[图2](#zh-cn_topic_0237122226_zh-cn_topic_0059777751_fa52bfbcefb174772a5bd22ca73c6a03a)。
 
 **图 2**  using\_clause::=<a name="zh-cn_topic_0237122226_zh-cn_topic_0059777751_fa52bfbcefb174772a5bd22ca73c6a03a"></a>  
-![](figures/using_clause-0.png)
+![using clause语法图](figures/using_clause-0.png)
 
 对以上语法格式的解释如下：
 

@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_RLSPOLICIES in openGauss.
+keywords: [openGauss, PG\_RLSPOLICIES, database reference]
+---
+
 # PG\_RLSPOLICIES<a name="EN-US_TOPIC_0289900609"></a>
 
 **PG\_RLSPOLICIES**  contains row-level access control policies.

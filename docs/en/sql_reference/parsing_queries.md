@@ -1,3 +1,8 @@
+---
+description: This document describes Parsing Queries in openGauss.
+keywords: [openGauss, Parsing Queries, SQL]
+---
+
 # Parsing Queries<a name="EN-US_TOPIC_0289899876"></a>
 
 openGauss provides functions  **to\_tsquery**  and  **plainto\_tsquery**  for converting a query to the  **tsquery**  data type.  **to\_tsquery**  offers access to more features than  **plainto\_tsquery**, but is less forgiving about its input.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs_upgradechk 的相关内容，涵盖 简介、约束 等内容。
+keywords: [openGauss, gs_upgradechk, 工具与命令参考, 简介, 约束]
+---
+
 # gs_upgradechk
 
 ## 简介

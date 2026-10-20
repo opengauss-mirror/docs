@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 调用语句 的相关内容，涵盖 语法、示例 等内容。
+keywords: [openGauss, 调用语句, SQL参考, 语法, 示例]
+---
+
 # 调用语句
 
 ## 语法<a name="zh-cn_topic_0237122223_zh-cn_topic_0059778001_sde66d89c567e4012bf160f6f6421d2af"></a>
@@ -5,7 +10,7 @@
 调用一个语句的语法请参见[图1](#zh-cn_topic_0237122223_zh-cn_topic_0059778001_fa4de2ab1dc7e4c04b4997c6238ee1861)。
 
 **图 1**  call\_clause::=<a name="zh-cn_topic_0237122223_zh-cn_topic_0059778001_fa4de2ab1dc7e4c04b4997c6238ee1861"></a>  
-![](figures/call_clause.png)
+![call clause语法图](figures/call_clause.png)
 
 对以上语法格式的解释如下：
 

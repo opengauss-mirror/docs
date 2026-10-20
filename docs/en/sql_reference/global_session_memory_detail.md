@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_SESSION\_MEMORY\_DETAIL in openGauss.
+keywords: [openGauss, GLOBAL\_SESSION\_MEMORY\_DETAIL, SQL]
+---
+
 # GLOBAL\_SESSION\_MEMORY\_DETAIL<a name="EN-US_TOPIC_0245374740"></a>
 
 **GLOBAL\_SESSION\_MEMORY\_DETAIL**  collects statistics about thread memory usage on each node by MemoryContext node. 

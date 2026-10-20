@@ -1,3 +1,8 @@
+---
+description: This document describes SQLSetStmtAttr in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, SQLSetStmtAttr, development, Function, Prototype]
+---
+
 # SQLSetStmtAttr<a name="EN-US_TOPIC_0242371457"></a>
 
 ## Function<a name="en-us_topic_0238272903_en-us_topic_0237120433_en-us_topic_0059777949_s289df741daf0491095bd3a6eeb7c3397"></a>

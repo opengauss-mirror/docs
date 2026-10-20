@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss UUID函数 的相关内容，涵盖 UUID函数 等内容。
+keywords: [openGauss, UUID函数, SQL参考]
+---
+
 # UUID函数
 
 ## UUID函数

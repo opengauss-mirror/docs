@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss LOCKS 的相关内容与操作方法。
+keywords: [openGauss, LOCKS, SQL参考]
+---
+
 # LOCKS
 
 LOCKS视图用于查看各打开事务所持有的锁信息。

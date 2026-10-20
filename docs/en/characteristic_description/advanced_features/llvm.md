@@ -1,3 +1,8 @@
+---
+description: This document describes LLVM in openGauss, covering topics such as Application Scenarios, Non-applicable Scenarios.
+keywords: [openGauss, LLVM, features, Application Scenarios, Non-applicable Scenarios]
+---
+
 # LLVM<a name="EN-US_TOPIC_0000001225294477"></a>
 
 Based on the query execution plan tree, with the library functions provided by the Low Level Virtual Machine \(LLVM\), openGauss moves the process of determining the actual execution path from the executor phase to the execution initialization phase. In this way, problems such as function calling, logic condition branch determination, and a large amount of data read that are related to the original query execution are avoided, to improve the query performance.
