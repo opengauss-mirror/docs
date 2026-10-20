@@ -1,3 +1,8 @@
+---
+description: This document describes Pre-installation Operations in openGauss, covering topics such as OM Adaptation for Ubuntu.
+keywords: [openGauss, Pre-installation Operations, installation, OM Adaptation for Ubuntu]
+---
+
 # Pre-installation Operations
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-10T08:50:59.852Z pushedAt=2026-07-14T07:15:07.667Z -->
@@ -45,4 +50,4 @@ To use the above openGauss image, you need to choose openEuler 20.03.
 
 Edit`/home/omm/.bashrc` and comment out these lines: (Note: These lines are designed to allow `source` only in interactive shells (CLI). If `.bashrc` is sourced from a script, the `return` guards will abort `.bashrc`, preventing any subsequently appended environment variables from being loaded.)
 
-![](figures/adapt_ubuntu.png)
+![Note diagram](figures/adapt_ubuntu.png)

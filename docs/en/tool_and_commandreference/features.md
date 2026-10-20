@@ -1,3 +1,8 @@
+---
+description: This document describes Features in openGauss, covering topics such as cm\_agent, cm\_server.
+keywords: [openGauss, Features, tools and commands, cm\_agent, cm\_server]
+---
+
 # Features<a name="EN-US_TOPIC_0000001201007180"></a>
 
 ## cm\_agent<a name="section1669543664312"></a>

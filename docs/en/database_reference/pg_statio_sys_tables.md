@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_STATIO\_SYS\_TABLES in openGauss.
+keywords: [openGauss, PG\_STATIO\_SYS\_TABLES, database reference]
+---
+
 # PG\_STATIO\_SYS\_TABLES<a name="EN-US_TOPIC_0289900110"></a>
 
 **PG\_STATIO\_SYS\_TABLES**  shows I/O status information about all the system catalogs in the namespace.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss COPY 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, COPY, SQL参考, 功能描述, 注意事项]
+---
+
 # COPY<a name="ZH-CN_TOPIC_0289899982"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136676_zh-cn_topic_0237122096_zh-cn_topic_0059778766_s0d743b5d862d4cf1829449f474af6d9c"></a>

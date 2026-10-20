@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 货币类型 的相关内容与操作方法。
+keywords: [openGauss, 货币类型, SQL参考]
+---
+
 # 货币类型
 
 货币类型存储带有固定小数精度的货币金额。

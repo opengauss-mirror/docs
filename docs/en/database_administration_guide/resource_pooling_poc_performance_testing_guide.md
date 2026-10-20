@@ -1,3 +1,8 @@
+---
+description: This document describes Resource Pooling POC Performance Testing Guide in openGauss, covering topics such as Introduction, Hardware Environment.
+keywords: [openGauss, Resource Pooling POC Performance Testing Guide, database administration, Introduction, Hardware Environment]
+---
+
 # Resource Pooling POC Performance Testing Guide
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:48:06.106Z pushedAt=2026-09-24T08:38:27.152Z -->

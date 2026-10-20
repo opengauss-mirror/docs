@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 动态调用匿名块 的相关内容，涵盖 语法 等内容。
+keywords: [openGauss, 动态调用匿名块, SQL参考, 语法]
+---
+
 # 动态调用匿名块
 
 动态调用匿名块是指在动态语句中执行匿名块，使用EXECUTE IMMEDIATE…USING语句后面带IN、OUT来输入、输出参数。
@@ -7,12 +12,12 @@
 语法请参见[图1](#zh-cn_topic_0237122228_zh-cn_topic_0059778140_fcac14cc166724cca818d8c659b30fbb9)。
 
 **图 1**  call\_anonymous\_block::=<a name="zh-cn_topic_0237122228_zh-cn_topic_0059778140_fcac14cc166724cca818d8c659b30fbb9"></a>  
-![](figures/call_anonymous_block.png)
+![call anonymous block语法图](figures/call_anonymous_block.png)
 
 using\_clause子句的语法参见[图2](#zh-cn_topic_0237122228_zh-cn_topic_0059778140_f06fb8cdac8dc4c42bacd550e446ca6bd)。
 
 **图 2**  using\_clause::=<a name="zh-cn_topic_0237122228_zh-cn_topic_0059778140_f06fb8cdac8dc4c42bacd550e446ca6bd"></a>  
-![](figures/using_clause-2.png)
+![using clause语法图](figures/using_clause-2.png)
 
 对以上语法格式的解释如下：
 

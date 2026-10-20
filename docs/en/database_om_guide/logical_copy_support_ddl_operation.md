@@ -1,3 +1,8 @@
+---
+description: This document describes Logical Replication Support for DDL Operations in openGauss, covering topics such as Feature Description, Precautions.
+keywords: [openGauss, Logical Replication Support for DDL Operations, database O&M, Feature Description, Precautions]
+---
+
 # Logical Replication Support for DDL Operations
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-14T08:04:32.176Z -->

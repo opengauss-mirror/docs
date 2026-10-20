@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_PROC 的相关内容与操作方法。
+keywords: [openGauss, PG\_PROC, 数据库参考]
+---
+
 # PG\_PROC
 
 PG\_PROC系统表存储函数或过程的信息。

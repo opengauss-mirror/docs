@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER EVENT 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER EVENT, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER EVENT
 
 ## 功能描述<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_section1274412112511"></a>

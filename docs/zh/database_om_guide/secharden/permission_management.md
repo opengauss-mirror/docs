@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 权限管理 的相关内容，涵盖 禁止PUBLIC角色拥有pg_authid系统表的权限、禁止PUBLIC角色在public模式下拥有CREATE权限 等内容。
+keywords: [openGauss, 权限管理, 数据库运维, 禁止PUBLIC角色拥有pg_authid系统表的权限, 禁止PUBLIC角色在public模式下拥有CREATE权限]
+---
+
 # 权限管理
 
 ## 禁止PUBLIC角色拥有pg_authid系统表的权限

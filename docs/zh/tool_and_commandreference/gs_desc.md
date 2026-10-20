@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs_filedump工具辅助工具 - gs_desc 的相关内容，涵盖 功能介绍、前提条件 等内容。
+keywords: [openGauss, gs_filedump工具辅助工具 - gs_desc, 工具与命令参考, 功能介绍, 前提条件]
+---
+
 # gs_filedump工具辅助工具 - gs_desc
 
 ## 功能介绍

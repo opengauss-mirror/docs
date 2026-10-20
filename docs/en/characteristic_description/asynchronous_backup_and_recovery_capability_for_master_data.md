@@ -1,3 +1,8 @@
+---
+description: This document describes Asynchronous Standby-to-Primary Data Retrieval in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, Asynchronous Standby-to-Primary Data Retrieval, features, Availability, Feature Overview]
+---
+
 # Asynchronous Standby-to-Primary Data Retrieval
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:05:41.444Z pushedAt=2026-09-22T11:12:32.604Z -->

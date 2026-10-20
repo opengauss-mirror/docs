@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Host Memory 的相关内容与操作方法。
+keywords: [openGauss, Host Memory, SQL参考]
+---
+
 # Host Memory
 
 Host Memory列名称及描述如下表所示。

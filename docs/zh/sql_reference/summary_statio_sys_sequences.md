@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SUMMARY\_STATIO\_SYS\_SEQUENCES 的相关内容与操作方法。
+keywords: [openGauss, SUMMARY\_STATIO\_SYS\_SEQUENCES, SQL参考]
+---
+
 # SUMMARY\_STATIO\_SYS\_SEQUENCES
 
 SUMMARY\_STATIO\_SYS\_SEQUENCES视图显示openGauss内汇聚的命名空间中所有系统表为序列的IO状态信息。

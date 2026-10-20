@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_STAT\_SYS\_INDEXES in openGauss.
+keywords: [openGauss, PG\_STAT\_SYS\_INDEXES, database reference]
+---
+
 # PG\_STAT\_SYS\_INDEXES<a name="EN-US_TOPIC_0289900028"></a>
 
 **PG\_STAT\_SYS\_INDEXES**  displays index status information about all the system catalogs in the  **pg\_catalog**  and  **information\_schema**  schemas.

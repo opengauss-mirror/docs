@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MOT监控 的相关内容，涵盖 表和索引大小、MOT全局内存详情 等内容。
+keywords: [openGauss, MOT监控, 数据库管理, 表和索引大小, MOT全局内存详情]
+---
+
 # MOT监控
 
 监控的所有语法支持基于Postgres的FDW表，包括下面的表或索引大小。此外，还存在用于监控MOT内存消耗的特殊函数，包括MOT全局内存、MOT本地内存和单个客户端会话。
@@ -111,4 +116,4 @@ select * from mot_session_memory_detail()
 
 结果如下。
 
-![](figures/zh-cn_image_0280525211.png)
+![会话内存示意图](figures/zh-cn_image_0280525211.png)

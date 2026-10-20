@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_PLDEBUGGER.local\_debug\_server\_info in openGauss.
+keywords: [openGauss, DBE\_PLDEBUGGER.local\_debug\_server\_info, SQL]
+---
+
 # DBE\_PLDEBUGGER.local\_debug\_server\_info<a name="EN-US_TOPIC_0000001148137961"></a>
 
 This function is used to query the OID of the stored procedure that has been turned on in the current connection. You can use  **funcoid**  and  **pg\_proc**  together to determine which stored procedures are to be debugged.

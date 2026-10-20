@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss WLM\_USER\_RESOURCE\_CONFIG 的相关内容与操作方法。
+keywords: [openGauss, WLM\_USER\_RESOURCE\_CONFIG, SQL参考]
+---
+
 # WLM\_USER\_RESOURCE\_CONFIG
 
 WLM\_USER\_RESOURCE\_CONFIG视图显示用户的资源配置信息。

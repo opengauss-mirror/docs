@@ -1,3 +1,8 @@
+---
+description: This document describes Predictor: AI Query Time Forecasting in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Predictor: AI Query Time Forecasting, features, Availability, Introduction]
+---
+
 # Predictor: AI Query Time Forecasting<a name="EN-US_TOPIC_0000001151995065"></a>
 
 ## Availability<a name="section56086982"></a>

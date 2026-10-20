@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DB4AI.PUBLISH\_SNAPSHOT 的相关内容与操作方法。
+keywords: [openGauss, DB4AI.PUBLISH\_SNAPSHOT, SQL参考]
+---
+
 # DB4AI.PUBLISH\_SNAPSHOT
 
 PUBLISH\_SNAPSHOT是DB4AI特性用于发布快照的接口函数。通过语法PUBLISH SNAPSHOT调用。

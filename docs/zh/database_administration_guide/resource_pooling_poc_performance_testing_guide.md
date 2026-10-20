@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 资源池化POC性能测试指南 的相关内容，涵盖 内容简介、硬件环境 等内容。
+keywords: [openGauss, 资源池化POC性能测试指南, 数据库管理, 内容简介, 硬件环境]
+---
+
 # 资源池化POC性能测试指南
 
 ## 内容简介

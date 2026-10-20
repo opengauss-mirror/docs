@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_GSC\_MEMORY\_DETAIL in openGauss.
+keywords: [openGauss, GS\_GSC\_MEMORY\_DETAIL, database reference]
+---
+
 # GS\_GSC\_MEMORY\_DETAIL<a name="EN-US_TOPIC_0000001197659934"></a>
 
 **GS\_GSC\_MEMORY\_DETAIL**  displays the memory usage of the global system cache of the current process on the current node. This view is displayed only when GSC is enabled. Note that the query is separated by the database memory context. Therefore, some memory statistics are missing. The memory context corresponding to the missing memory statistics is  **GlobalSysDBCache**.

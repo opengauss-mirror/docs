@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss javax.sql.DataSource 的相关内容与操作方法。
+keywords: [openGauss, javax.sql.DataSource, 开发指南]
+---
+
 # javax.sql.DataSource
 
 javax.sql.DataSource是数据源接口。

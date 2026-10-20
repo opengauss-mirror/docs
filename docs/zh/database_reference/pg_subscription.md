@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_SUBSCRIPTION 的相关内容与操作方法。
+keywords: [openGauss, PG\_SUBSCRIPTION, 数据库参考]
+---
+
 # PG\_SUBSCRIPTION
 
 系统表PG\_SUBSCRIPTION包含所有现有的逻辑复制订阅。需要有系统管理员权限才可以访问此系统表。

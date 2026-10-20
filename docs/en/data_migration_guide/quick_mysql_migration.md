@@ -1,3 +1,8 @@
+---
+description: This document describes Quick MySQL Migration in openGauss, covering topics such as Functions, Precautions.
+keywords: [openGauss, Quick MySQL Migration, data migration, Functions, Precautions]
+---
+
 # Quick MySQL Migration
 
 ## Functions

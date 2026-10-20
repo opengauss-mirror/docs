@@ -1,3 +1,8 @@
+---
+description: This document describes Starting the Collection Component in openGauss.
+keywords: [openGauss, Starting the Collection Component, features]
+---
+
 # Starting the Collection Component<a name="ZH-CN_TOPIC_0000002258707508"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T02:17:54.772Z -->

@@ -1,3 +1,8 @@
+---
+description: This document describes Platform and Client Compatibility in openGauss, covering topics such as convert\_string\_to\_digit, nls\_timestamp\_format.
+keywords: [openGauss, Platform and Client Compatibility, database reference, convert\_string\_to\_digit, nls\_timestamp\_format]
+---
+
 # Platform and Client Compatibility<a name="EN-US_TOPIC_0289900474"></a>
 
 Many platforms use the database system. External compatibility of the database system provides a lot of convenience for platforms.

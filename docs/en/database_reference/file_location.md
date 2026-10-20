@@ -1,3 +1,8 @@
+---
+description: This document describes File Location in openGauss, covering topics such as data\_directory, config\_file.
+keywords: [openGauss, File Location, database reference, data\_directory, config\_file]
+---
+
 # File Location<a name="EN-US_TOPIC_0289900014"></a>
 
 After a database has been installed, three configuration files \(**postgresql.conf**,  **pg\_hba.conf**, and  **pg\_ident.conf**\) are automatically generated and saved in the data directory. You can use the methods described in this section to change the names and save paths of these configuration files.

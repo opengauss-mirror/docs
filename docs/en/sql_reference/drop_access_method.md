@@ -1,3 +1,8 @@
+---
+description: This document describes DROP ACCESS METHOD in openGauss, covering topics such as Description, Precautions.
+keywords: [openGauss, DROP ACCESS METHOD, SQL, Description, Precautions]
+---
+
 # DROP ACCESS METHOD
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:21:10.887Z -->

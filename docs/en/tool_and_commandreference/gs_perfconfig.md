@@ -1,3 +1,8 @@
+---
+description: This document describes gs_perfconfig in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, gs_perfconfig, tools and commands, Background, Prerequisites]
+---
+
 # gs_perfconfig
 
 ## Background<a name="zh-cn_topic_0000001705427697"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_STATEMENT\_COMPLEX\_HISTORY 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_STATEMENT\_COMPLEX\_HISTORY, SQL参考]
+---
+
 # GLOBAL\_STATEMENT\_COMPLEX\_HISTORY
 
 显示各个节点执行作业结束后的负载管理记录。

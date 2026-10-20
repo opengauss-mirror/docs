@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 系统操作 的相关内容，涵盖 设置变量、显示执行计划 等内容。
+keywords: [openGauss, 系统操作, SQL参考, 设置变量, 显示执行计划]
+---
+
 # 系统操作
 
 openGauss通过SQL语句执行不同的系统操作，比如：设置变量、显示执行计划和垃圾收集等操作。

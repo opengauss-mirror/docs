@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBE\_PLDEBUGGER.step 的相关内容与操作方法。
+keywords: [openGauss, DBE\_PLDEBUGGER.step, SQL参考]
+---
+
 # DBE\_PLDEBUGGER.step
 
 debug端调试过程中，如果当前执行的是一个存储过程，则进入该存储过程继续调试，返回该存储过程第一行的行号等信息，如果当前执行的不是存储过程，则和next行为一致，执行该sql后返回下一行的行号等信息。

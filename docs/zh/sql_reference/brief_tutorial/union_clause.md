@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss UNION子句 的相关内容，涵盖 语法格式、示例 等内容。
+keywords: [openGauss, UNION子句, SQL参考, 语法格式, 示例]
+---
+
 # UNION子句
 
 UNION计算多个SELECT语句返回行集合的并集。UNION内部的SELECT语句必须拥有相同数量的列，列也必须拥有相似的数据类型。同时，每条SELECT语句中的列的顺序必须相同。

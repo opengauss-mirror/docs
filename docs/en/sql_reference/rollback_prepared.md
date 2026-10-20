@@ -1,3 +1,8 @@
+---
+description: This document describes ROLLBACK PREPARED in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ROLLBACK PREPARED, SQL, Function, Precautions]
+---
+
 # ROLLBACK PREPARED<a name="EN-US_TOPIC_0289900446"></a>
 
 ## Function<a name="en-us_topic_0283136817_en-us_topic_0237122181_en-us_topic_0059779108_s4ddd2b1606b742109b4066ee1dee112e"></a>

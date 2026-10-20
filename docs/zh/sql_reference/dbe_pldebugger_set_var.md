@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBE\_PLDEBUGGER.set\_var 的相关内容与操作方法。
+keywords: [openGauss, DBE\_PLDEBUGGER.set\_var, SQL参考]
+---
+
 # DBE\_PLDEBUGGER.set\_var
 
 将指定的调试的存储过程中最上层栈上的变量修改为入参的取值。如果存储过程中包含同名的变量，set\_var只支持第一个变量值的设置。

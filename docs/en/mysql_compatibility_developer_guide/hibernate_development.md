@@ -1,3 +1,8 @@
+---
+description: This document describes Hibernate Connection Sample in openGauss, covering topics such as Prerequisites, Hibernate Project Setup.
+keywords: [openGauss, Hibernate Connection Sample, MySQL compatibility, Prerequisites, Hibernate Project Setup]
+---
+
 # Hibernate Connection Sample
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-14T06:38:58.258Z pushedAt=2026-07-17T06:42:53.918Z -->

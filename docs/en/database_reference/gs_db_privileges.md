@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_DB\_PRIVILEGES in openGauss.
+keywords: [openGauss, GS\_DB\_PRIVILEGES, database reference]
+---
+
 # GS\_DB\_PRIVILEGES<a name="EN-US_TOPIC_0000001195224090"></a>
 
 **GS\_DB\_PRIVILEGES**  displays the granting of ANY permissions. Each record corresponds to a piece of authorization information.

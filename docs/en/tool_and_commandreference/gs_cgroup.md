@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_cgroup in openGauss, covering topics such as Background, Examples.
+keywords: [openGauss, gs\_cgroup, tools and commands, Background, Examples]
+---
+
 # gs\_cgroup<a name="EN-US_TOPIC_0000001147386014"></a>
 
 ## Background<a name="en-us_topic_0059777958_s70c9bd657f6844e6a03a4daa7aa46cd6"></a>

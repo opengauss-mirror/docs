@@ -1,3 +1,8 @@
+---
+description: This document describes SUMMARY\_STAT\_ALL\_TABLES in openGauss.
+keywords: [openGauss, SUMMARY\_STAT\_ALL\_TABLES, SQL]
+---
+
 # SUMMARY\_STAT\_ALL\_TABLES<a name="EN-US_TOPIC_0245374693"></a>
 
 **SUMMARY\_STAT\_ALL\_TABLES**  displays statistics about one row for each table \(including TOAST tables\) in databases in openGauss. 

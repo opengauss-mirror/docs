@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE TABLE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE TABLE, SQL, Function, Precautions]
+---
+
 # CREATE TABLE<a name="EN-US_TOPIC_0289900279"></a>
 
 ## Function<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_s0867185fef0f4a228532d432b598cb26"></a>

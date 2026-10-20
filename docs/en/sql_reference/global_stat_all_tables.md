@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_STAT\_ALL\_TABLES in openGauss.
+keywords: [openGauss, GLOBAL\_STAT\_ALL\_TABLES, SQL]
+---
+
 # GLOBAL\_STAT\_ALL\_TABLES<a name="EN-US_TOPIC_0245374694"></a>
 
 **GLOBAL\_STAT\_ALL\_TABLES**  displays statistics about one row for each table \(including TOAST tables\) in databases on each node. 

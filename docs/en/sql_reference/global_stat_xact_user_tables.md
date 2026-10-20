@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_STAT\_XACT\_USER\_TABLES in openGauss.
+keywords: [openGauss, GLOBAL\_STAT\_XACT\_USER\_TABLES, SQL]
+---
+
 # GLOBAL\_STAT\_XACT\_USER\_TABLES<a name="EN-US_TOPIC_0245374712"></a>
 
 **GLOBAL\_STAT\_XACT\_USER\_TABLES**  displays transaction status information about the user tables in namespaces on each node. 

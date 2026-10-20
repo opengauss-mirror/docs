@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_RULES 的相关内容与操作方法。
+keywords: [openGauss, PG\_RULES, 数据库参考]
+---
+
 # PG\_RULES
 
 PG\_RULES视图提供对查询重写规则的有用信息访问的接口。

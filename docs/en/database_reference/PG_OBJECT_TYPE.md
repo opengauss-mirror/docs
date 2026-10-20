@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_OBJECT\_TYPE in openGauss.
+keywords: [openGauss, PG\_OBJECT\_TYPE, database reference]
+---
+
 # PG\_OBJECT\_TYPE
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:47:32.152Z -->

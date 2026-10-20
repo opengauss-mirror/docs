@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SESSION\_MEMORY\_DETAIL 的相关内容与操作方法。
+keywords: [openGauss, SESSION\_MEMORY\_DETAIL, SQL参考]
+---
+
 # SESSION\_MEMORY\_DETAIL
 
 统计线程的内存使用情况，以MemoryContext节点来统计。

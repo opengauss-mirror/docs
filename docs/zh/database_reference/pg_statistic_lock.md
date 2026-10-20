@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG_STATISTIC_LOCK 的相关内容与操作方法。
+keywords: [openGauss, PG_STATISTIC_LOCK, 数据库参考]
+---
+
 # PG_STATISTIC_LOCK
 
 PG_STATISTIC_LOCK表用于记录对统计信息操作加锁状态。

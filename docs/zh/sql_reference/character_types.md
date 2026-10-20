@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 字符类型 的相关内容，涵盖 示例 等内容。
+keywords: [openGauss, 字符类型, SQL参考, 示例]
+---
+
 # 字符类型
 
 openGauss支持的字符类型请参见[表1](#zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_zh-cn_topic_0058966269_table29186418)。字符串操作符和相关的内置函数请参见[字符处理函数和操作符](character_processing_functions_and_operators.md)。

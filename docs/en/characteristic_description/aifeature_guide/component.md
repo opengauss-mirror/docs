@@ -1,3 +1,8 @@
+---
+description: This document describes component in openGauss, covering topics such as Command Reference.
+keywords: [openGauss, component, features, Command Reference]
+---
+
 # component<a name="EN-US_TOPIC_0000001243956557"></a>
 
 This subcommand can be used to start DBMind components, including the exporter for monitoring metrics and other AI functions. It forwards the commands passed by the user through the CLI client to the corresponding components. For details about the commands of different components, see the corresponding sections of the components.

@@ -1,3 +1,8 @@
+---
+description: This document describes RESET in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, RESET, SQL, Function, Precautions]
+---
+
 # RESET<a name="EN-US_TOPIC_0289900889"></a>
 
 ## Function<a name="en-us_topic_0283137385_en-us_topic_0237122178_en-us_topic_0059779097_sa3f93000a69d4ca8b8633a05032af243"></a>

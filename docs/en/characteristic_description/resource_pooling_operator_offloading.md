@@ -1,3 +1,8 @@
+---
+description: This document describes Resource Pooling Operator Offloading in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, Resource Pooling Operator Offloading, features, Availability, Feature Overview]
+---
+
 # Resource Pooling Operator Offloading
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:23:59.700Z pushedAt=2026-09-22T11:12:32.688Z -->
@@ -12,7 +17,7 @@ Although shared storage brings benefits such as elasticity and reliability, its 
 
 **Figure 1**  Resource pooling operator offloading solution<a name="fig114741818101675"></a>  
 
-![](figures/near-data-process.png)
+![Feature Overview diagram](figures/near-data-process.png)
 
 ## Customer Benefits<a name="section13406743164715"></a>
 

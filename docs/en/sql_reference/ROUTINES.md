@@ -1,3 +1,8 @@
+---
+description: This document describes ROUTINES in openGauss.
+keywords: [openGauss, ROUTINES, SQL]
+---
+
 # ROUTINES <a name="ZH-CN_TOPIC_0310260671"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:26:53.448Z -->

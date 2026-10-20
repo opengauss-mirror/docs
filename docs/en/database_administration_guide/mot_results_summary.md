@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Results – Summary in openGauss.
+keywords: [openGauss, MOT Results – Summary, database administration]
+---
+
 # MOT Results – Summary<a name="EN-US_TOPIC_0270171612"></a>
 
 MOT provides higher performance than disk-tables by a factor of 2.5x to 4.1x and reaches 4.8 million tpmC on ARM/Kunpeng-based servers with 256 cores. The results clearly demonstrate MOT's exceptional ability to scale-up and utilize all hardware resources. Performance jumps as the quantity of CPU sockets and server cores increases.

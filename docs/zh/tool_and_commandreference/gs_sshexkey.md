@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs\_sshexkey 的相关内容，涵盖 背景信息、前提条件 等内容。
+keywords: [openGauss, gs\_sshexkey, 工具与命令参考, 背景信息, 前提条件]
+---
+
 # gs\_sshexkey
 
 ## 背景信息<a name="zh-cn_topic_0237152423_zh-cn_topic_0059778349_section15111432124318"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SUMMARY\_REL\_IOSTAT 的相关内容与操作方法。
+keywords: [openGauss, SUMMARY\_REL\_IOSTAT, SQL参考]
+---
+
 # SUMMARY\_REL\_IOSTAT
 
 获取所有节点上的数据文件IO统计信息。

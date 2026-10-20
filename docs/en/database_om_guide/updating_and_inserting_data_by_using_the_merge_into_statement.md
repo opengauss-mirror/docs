@@ -1,3 +1,8 @@
+---
+description: This document describes Updating and Inserting Data by Using the MERGE INTO Statemen in openGauss, covering topics such as Prerequisites, Procedure.
+keywords: [openGauss, Updating and Inserting Data by Using the MERGE INTO Statemen, database O&M, Prerequisites, Procedure]
+---
+
 # Updating and Inserting Data by Using the MERGE INTO Statement<a name="EN-US_TOPIC_0242370290"></a>
 
 To add all or a large amount of data in a table to an existing table, you can run the  **MERGE INTO**  statement in openGauss to merge the two tables so that data can be quickly added to the existing table.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SUMMARY\_DATABASE\_SQL\_STAT 的相关内容与操作方法。
+keywords: [openGauss, SUMMARY\_DATABASE\_SQL\_STAT, SQL参考]
+---
+
 # SUMMARY\_DATABASE\_SQL\_STAT
 
 提供openGauss中各正常节点按数据库聚合的SQL执行统计（字段含义见[DATABASE\_SQL\_STAT](database_sql_stat.md)）。数据由`dbe_perf.get_summary_database_sql_stat()`汇总各节点`database_sql_stat`得到，是WDR快照表`snap_summary_database_sql_stat`的采集来源。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 记录日志的时间 的相关内容，涵盖 client\_min\_messages、log\_min\_messages 等内容。
+keywords: [openGauss, 记录日志的时间, 数据库参考, client\_min\_messages, log\_min\_messages]
+---
+
 # 记录日志的时间
 
 ## client\_min\_messages<a name="zh-cn_topic_0237124722_zh-cn_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE FOREIGN DATA WRAPPER in openGauss, covering topics such as Function Description, Syntax.
+keywords: [openGauss, CREATE FOREIGN DATA WRAPPER, SQL, Function Description, Syntax]
+---
+
 # CREATE FOREIGN DATA WRAPPER
 
 ## Function Description

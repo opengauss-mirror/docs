@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 索引推荐 的相关内容，涵盖 单query索引推荐、虚拟索引 等内容。
+keywords: [openGauss, 索引推荐, 特性描述, 单query索引推荐, 虚拟索引]
+---
+
 # 索引推荐
 
 openGauss的索引推荐的功能，共包含三个子功能：单query索引推荐、虚拟索引和workload级别索引推荐。

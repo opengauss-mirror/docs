@@ -1,3 +1,8 @@
+---
+description: This document describes Resource Pooling OM Installation and Deployment Guide in openGauss, covering topics such as Content Overview, Environment Preparation.
+keywords: [openGauss, Resource Pooling OM Installation and Deployment Guide, database administration, Content Overview, Environment Preparation]
+---
+
 # Resource Pooling OM Installation and Deployment Guide
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:46:32.560Z pushedAt=2026-09-24T08:21:10.633Z -->

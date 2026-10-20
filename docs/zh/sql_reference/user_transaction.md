@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss USER\_TRANSACTION 的相关内容与操作方法。
+keywords: [openGauss, USER\_TRANSACTION, SQL参考]
+---
+
 # USER\_TRANSACTION
 
 USER\_TRANSACTION用来统计用户执行的事务信息。monadmin用户能看到所有用户执行事务的信息，普通用户只能查询到自己执行的事务信息。

@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE DIRECTORY in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE DIRECTORY, SQL, Function, Precautions]
+---
+
 # CREATE DIRECTORY<a name="EN-US_TOPIC_0289900765"></a>
 
 ## Function<a name="en-us_topic_0283136620_en-us_topic_0237122101_en-us_topic_0059778310_section50807000114421"></a>

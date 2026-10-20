@@ -1,3 +1,8 @@
+---
+description: This document describes SQL Server-to-openGauss Migration Tool oG_datasync_full_migr in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, SQL Server-to-openGauss Migration Tool oG_datasync_full_migr, features, Availability, Feature Overview]
+---
+
 # SQL Server-to-openGauss Migration Tool oG_datasync_full_migration
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:31:57.360Z pushedAt=2026-09-22T11:12:32.709Z -->

@@ -1,3 +1,8 @@
+---
+description: This document describes Users in openGauss, covering topics such as Adding, Modifying, and Deleting Users, Private Users.
+keywords: [openGauss, Users, database administration, Adding, Modifying, and Deleting Users, Private Users]
+---
+
 # Users<a name="EN-US_TOPIC_0289900376"></a>
 
 You can use  **CREATE USER**  and  **ALTER USER**  to create and manage database users, respectively. openGauss contains one or more named database users and roles that are shared across openGauss. However, these users and roles do not share data. That is, a user can connect to any database, but after the connection is successful, any user can access only the database declared in the connection request.

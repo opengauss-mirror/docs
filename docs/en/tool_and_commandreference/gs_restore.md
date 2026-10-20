@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_restore in openGauss, covering topics such as Background, Command Format.
+keywords: [openGauss, gs\_restore, tools and commands, Background, Command Format]
+---
+
 # gs\_restore<a name="ZH-CN_TOPIC_0249632267"></a>
 
 ## Background<a name="en-us_topic_0237152343_en-us_topic_0059777561_section182531928123515"></a>

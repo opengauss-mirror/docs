@@ -1,3 +1,8 @@
+---
+description: This document describes OGAI Parameters in openGauss, covering topics such as enable\_async\_ogai, ogai\.hybrid\_search\_ratio.
+keywords: [openGauss, OGAI Parameters, database reference, enable\_async\_ogai, ogai\.hybrid\_search\_ratio]
+---
+
 # OGAI Parameters
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:45:25.789Z -->

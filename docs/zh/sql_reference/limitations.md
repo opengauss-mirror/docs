@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 限制约束 的相关内容与操作方法。
+keywords: [openGauss, 限制约束, SQL参考]
+---
+
 # 限制约束
 
 openGauss的全文检索功能当前限制约束是：

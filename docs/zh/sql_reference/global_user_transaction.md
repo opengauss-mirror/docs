@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_USER\_TRANSACTION 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_USER\_TRANSACTION, SQL参考]
+---
+
 # GLOBAL\_USER\_TRANSACTION
 
 GLOBAL\_USER\_TRANSACTION用来统计全局用户执行的事务信息。

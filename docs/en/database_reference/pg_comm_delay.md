@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_COMM\_DELAY in openGauss.
+keywords: [openGauss, PG\_COMM\_DELAY, database reference]
+---
+
 # PG\_COMM\_DELAY<a name="EN-US_TOPIC_0311526902"></a>
 
 **PG\_COMM\_DELAY**  displays the communication library delay status for a single DN.

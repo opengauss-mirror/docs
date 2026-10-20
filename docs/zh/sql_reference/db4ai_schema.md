@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DB4AI Schema 的相关内容与操作方法。
+keywords: [openGauss, DB4AI Schema, SQL参考]
+---
+
 # DB4AI Schema
 
 DB4AI模式在AI特性中主要是用来存储和管理数据集版本。模式中保存数据表的原始视图快照，每一个数据版本的更改记录以及版本快照的管理信息。模式面向普通用户，用户可在该模式下查找特性DB4AI.SNAPSHOT创建的快照版本信息。

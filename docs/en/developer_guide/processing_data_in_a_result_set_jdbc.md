@@ -1,3 +1,8 @@
+---
+description: This document describes Processing Data in a Result Set in openGauss, covering topics such as Setting a Result Set Type, Positioning a Cursor in a Result Set.
+keywords: [openGauss, Processing Data in a Result Set, development, Setting a Result Set Type, Positioning a Cursor in a Result Set]
+---
+
 # Processing Data in a Result Set<a name="EN-US_TOPIC_0244720265"></a>
 
 ## Setting a Result Set Type<a name="en-us_topic_0237120384_en-us_topic_0213179150_en-us_topic_0189250321_en-us_topic_0059778370_s93cc9b6475b04b76815b70162d174374"></a>

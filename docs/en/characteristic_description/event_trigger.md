@@ -1,3 +1,8 @@
+---
+description: This document describes Event Trigger in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Event Trigger, features, Availability, Introduction]
+---
+
 # Event Trigger<a name="EN-US_TOPIC_0000001562654497"></a>
 
 ## Availability<a name="section15414320604715"></a>

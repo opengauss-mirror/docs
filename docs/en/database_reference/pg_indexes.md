@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_INDEXES in openGauss.
+keywords: [openGauss, PG\_INDEXES, database reference]
+---
+
 # PG\_INDEXES<a name="EN-US_TOPIC_0289900118"></a>
 
 **PG\_INDEXES**  provides access to useful information about each index in the database.

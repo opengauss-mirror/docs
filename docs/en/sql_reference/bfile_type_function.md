@@ -1,3 +1,8 @@
+---
+description: This document describes BFILE Type Functions in openGauss.
+keywords: [openGauss, BFILE Type Functions, SQL]
+---
+
 # BFILE Type Functions
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:18:43.294Z -->

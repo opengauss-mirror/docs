@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss OS\_NET\_DEV\_INFO 的相关内容与操作方法。
+keywords: [openGauss, OS\_NET\_DEV\_INFO, SQL参考]
+---
+
 # OS\_NET\_DEV\_INFO
 
 显示当前节点操作系统网络设备的统计信息，数据来源于/proc/net/dev。

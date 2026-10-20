@@ -1,3 +1,8 @@
+---
+description: This document describes SHUTDOWN in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, SHUTDOWN, SQL, Function, Precautions]
+---
+
 # SHUTDOWN<a name="EN-US_TOPIC_0289900099"></a>
 
 ## Function<a name="en-us_topic_0283136791_en-us_topic_0237122191_en-us_topic_0059779163_s812131d8918641df9772c998b753f87e"></a>

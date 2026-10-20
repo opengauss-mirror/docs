@@ -1,3 +1,8 @@
+---
+description: This document describes SIGNAL and RESIGNAL Statement in openGauss, covering topics such as SIGNAL Statement, RESIGNAL Statement.
+keywords: [openGauss, SIGNAL and RESIGNAL Statement, SQL, SIGNAL Statement, RESIGNAL Statement]
+---
+
 # SIGNAL and RESIGNAL Statement<a name="ZH-CN_TOPIC_0245374637"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:28:06.036Z -->

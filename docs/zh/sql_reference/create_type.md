@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE TYPE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE TYPE, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE TYPE
 
 ## 功能描述<a name="zh-cn_topic_0283136568_zh-cn_topic_0237122124_zh-cn_topic_0059779377_sc0d0ea7296f7418d8e0b1a8878cf72ba"></a>

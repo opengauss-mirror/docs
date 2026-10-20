@@ -1,3 +1,8 @@
+---
+description: This document describes OS\_THREADS in openGauss.
+keywords: [openGauss, OS\_THREADS, SQL]
+---
+
 # OS\_THREADS<a name="EN-US_TOPIC_0245374658"></a>
 
 **OS\_THREADS**  provides status information about all threads on the current node.

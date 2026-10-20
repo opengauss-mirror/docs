@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_LABELS 的相关内容与操作方法。
+keywords: [openGauss, GS\_LABELS, 数据库参考]
+---
+
 # GS\_LABELS
 
 GS\_LABELS视图显示所有已配置的资源标签信息。需要有系统管理员或安全策略管理员权限才可以访问此视图。

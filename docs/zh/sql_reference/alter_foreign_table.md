@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER FOREIGN TABLE 的相关内容，涵盖 功能描述、语法格式 等内容。
+keywords: [openGauss, ALTER FOREIGN TABLE, SQL参考, 功能描述, 语法格式]
+---
+
 # ALTER FOREIGN TABLE
 
 ## 功能描述<a name="zh-cn_topic_0283137201_section178411726125517"></a>

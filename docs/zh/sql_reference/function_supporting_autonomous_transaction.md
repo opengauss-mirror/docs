@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 函数支持自治事务 的相关内容与操作方法。
+keywords: [openGauss, 函数支持自治事务, SQL参考]
+---
+
 # 函数支持自治事务
 
 自治事务可以在函数中定义，标识符为PRAGMA AUTONOMOUS\_TRANSACTION，其余语法与函数语法相同，示例如下。

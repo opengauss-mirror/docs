@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss COMMENT 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, COMMENT, SQL参考, 功能描述, 注意事项]
+---
+
 # COMMENT
 
 ## 功能描述<a name="zh-cn_topic_0283137624_zh-cn_topic_0237122093_zh-cn_topic_0059778518_se3f65a35f2604b18a7024290d26f80cf"></a>

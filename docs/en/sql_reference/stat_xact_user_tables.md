@@ -1,3 +1,8 @@
+---
+description: This document describes STAT\_XACT\_USER\_TABLES in openGauss.
+keywords: [openGauss, STAT\_XACT\_USER\_TABLES, SQL]
+---
+
 # STAT\_XACT\_USER\_TABLES<a name="EN-US_TOPIC_0245374710"></a>
 
 **STAT\_XACT\_USER\_TABLES**  displays transaction status information about the user tables in namespaces on the current node.

@@ -1,4 +1,6 @@
 ---
+description: 本文介绍使用 Spring Boot 3.x 与 Spring Data JPA（Hibernate 6）连接 openGauss B 模式数据库的开发示例，涵盖实体映射、分页与事务等操作。
+keywords: [openGauss, Spring Data JPA, MySQL兼容, Hibernate, 开发示例]
 url: /zh/docs/latest/mysql_compatibility_developer_guide/springdatajpa_development.md
 ---
 # SpringDataJPA 连接示例
@@ -205,3 +207,4 @@ public void batchInsert(boolean rollback) {
 
 - 非 ORM 的 JDBC 使用方式见 [Spring Boot 连接示例](springboot_development.md)；
 - MyBatis 使用方式见 [Mybatis 连接示例](mybatis_development.md)。
+---

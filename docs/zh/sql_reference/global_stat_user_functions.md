@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_STAT\_USER\_FUNCTIONS 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_STAT\_USER\_FUNCTIONS, SQL参考]
+---
+
 # GLOBAL\_STAT\_USER\_FUNCTIONS
 
 提供openGauss中各个节点的用户所创建的函数的状态的统计信息。

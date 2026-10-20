@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DCL语法一览表 的相关内容，涵盖 定义角色、定义用户 等内容。
+keywords: [openGauss, DCL语法一览表, SQL参考, 定义角色, 定义用户]
+---
+
 # DCL语法一览表
 
 DCL（Data Control Language数据控制语言），是用来创建用户角色、设置或更改数据库用户或角色权限的语句。

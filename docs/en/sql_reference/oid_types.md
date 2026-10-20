@@ -1,3 +1,8 @@
+---
+description: This document describes OID Types in openGauss.
+keywords: [openGauss, OID Types, SQL]
+---
+
 # OID Types<a name="EN-US_TOPIC_0289900113"></a>
 
 OIDs are used internally by openGauss as primary keys for various system catalogs. OIDs are not added to user-created tables by the system. The OID type represents an object identifier.

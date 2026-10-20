@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 闪回相关参数 的相关内容，涵盖 enable\_recyclebin、recyclebin\_retention\_time 等内容。
+keywords: [openGauss, 闪回相关参数, 数据库参考, enable\_recyclebin, recyclebin\_retention\_time]
+---
+
 # 闪回相关参数
 
 本章节介绍闪回功能相关参数。

@@ -1,3 +1,8 @@
+---
+description: This document describes Index_advisor: Index Recommendation in openGauss, covering topics such as Single-query Index Recommendation, Virtual Index.
+keywords: [openGauss, Index_advisor: Index Recommendation, features, Single-query Index Recommendation, Virtual Index]
+---
+
 # Index_advisor: Index Recommendation<a name="EN-US_TOPIC_0296549245"></a>
 
 This section describes the index recommendation functions, including single-query index recommendation, virtual index recommendation, and workload_level index recommendation.

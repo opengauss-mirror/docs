@@ -1,3 +1,8 @@
+---
+description: This document describes Limitations in openGauss.
+keywords: [openGauss, Limitations, SQL]
+---
+
 # Limitations<a name="EN-US_TOPIC_0289899883"></a>
 
 The current limitations of openGauss's text search features are:

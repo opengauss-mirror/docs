@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_WLM\_REBUILD\_USER\_RESOURCE\_POOL 的相关内容与操作方法。
+keywords: [openGauss, GS\_WLM\_REBUILD\_USER\_RESOURCE\_POOL, 数据库参考]
+---
+
 # GS\_WLM\_REBUILD\_USER\_RESOURCE\_POOL
 
 该视图用于在当前连接节点上重建内存中用户的资源池信息，无输出。只是用于资源池信息缺失或者错乱时用作补救措施。查询该视图需要sysadmin权限。

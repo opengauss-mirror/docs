@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 范围函数和操作符 的相关内容，涵盖 范围操作符、范围函数 等内容。
+keywords: [openGauss, 范围函数和操作符, SQL参考, 范围操作符, 范围函数]
+---
+
 # 范围函数和操作符
 
 ## 范围操作符<a name="zh-cn_topic_0283136628_zh-cn_topic_0237121981_zh-cn_topic_0059778082_sdbd7817099fd47dd95010675e3f38b03"></a>

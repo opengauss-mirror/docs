@@ -1,3 +1,8 @@
+---
+description: This document describes coverage.proc_coverage in openGauss.
+keywords: [openGauss, coverage.proc_coverage, SQL]
+---
+
 # coverage.proc_coverage
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:19:50.144Z -->

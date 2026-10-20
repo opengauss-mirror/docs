@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER TYPE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER TYPE, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER TYPE
 
 ## 功能描述<a name="zh-cn_topic_0283136571_zh-cn_topic_0237122082_zh-cn_topic_0059777461_s46f3e0aac3a84502bc20eee219bef9cf"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Troubleshooting in openGauss.
+keywords: [openGauss, Troubleshooting, features]
+---
+
 # Troubleshooting<a name="EN-US_TOPIC_0000001195985074"></a>
 
 1. A message is displayed, prompting the user to specify the  **--ssl-keyfile**  and  **--ssl-certfile**  options.

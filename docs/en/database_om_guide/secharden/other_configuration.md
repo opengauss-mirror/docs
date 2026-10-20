@@ -1,3 +1,8 @@
+---
+description: This document describes Other Configurations in openGauss, covering topics such as Ensure Correct Configuration of the backslash_quote Parameter, Prohibit Modification of System Table Structures.
+keywords: [openGauss, Other Configurations, database O&M, Ensure Correct Configuration of the backslash_quote Parameter, Prohibit Modification of System Table Structures]
+---
+
 # Other Configurations
 
 

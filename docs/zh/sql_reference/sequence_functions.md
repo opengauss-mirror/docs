@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SEQUENCE函数 的相关内容与操作方法。
+keywords: [openGauss, SEQUENCE函数, SQL参考]
+---
+
 # SEQUENCE函数
 
 序列函数为用户从序列对象中获取后续的序列值提供了简单的多用户安全的方法。

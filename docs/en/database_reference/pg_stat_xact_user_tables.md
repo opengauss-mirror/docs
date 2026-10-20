@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_STAT\_XACT\_USER\_TABLES in openGauss.
+keywords: [openGauss, PG\_STAT\_XACT\_USER\_TABLES, database reference]
+---
+
 # PG\_STAT\_XACT\_USER\_TABLES<a name="EN-US_TOPIC_0289900075"></a>
 
 **PG\_STAT\_XACT\_USER\_TABLES**  displays transaction status information of the user table in the namespace.

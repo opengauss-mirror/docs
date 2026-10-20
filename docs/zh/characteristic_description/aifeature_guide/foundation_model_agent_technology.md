@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 大模型Agent技术 的相关内容，涵盖 规划、记忆 等内容。
+keywords: [openGauss, 大模型Agent技术, 特性描述, 规划, 记忆]
+---
+
 # 大模型Agent技术<a name="ZH-CN_TOPIC_0000002293246457"></a>
 
 LLM Agent是一种能够感知环境、进行决策和执行动作的智能实体，又称智能体。不同于传统的人工智能，LLM Agent 具备独立思考、调用工具去逐步完成给定目标的能力。LLM Agent往往以问答机器人作为交互入口，通过自然语言触发全自动的工作流，中间没有人工介入。
@@ -14,7 +19,7 @@ LLM Agent主要包括感知、分析、决策和执行四大能力。这些能�
 在基于LLM的智能体中，LLM充当着智能体的大脑的角色，同时还有3个关键部分：**规划**、**记忆**、**工具使用**。如下图[图1](#fig8331451230)所示：
 
 **图 1**  LLM Agent架构<a name="fig8331451230"></a>  
-![](figures/LLM-Agent架构.png)
+![LLM Agent架构](figures/LLM-Agent架构.png)
 
 ## 规划<a name="section10289122563217"></a>
 

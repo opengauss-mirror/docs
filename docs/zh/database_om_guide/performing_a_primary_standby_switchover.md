@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 实例主备切换 的相关内容，涵盖 操作场景、操作步骤 等内容。
+keywords: [openGauss, 实例主备切换, 数据库运维, 操作场景, 操作步骤]
+---
+
 # 实例主备切换
 
 ## 操作场景<a name="zh-cn_topic_0237088791_zh-cn_topic_0141661468_zh-cn_topic_0138952674_zh-cn_topic_0085032066_zh-cn_topic_0059779253_s96a1309d1288457e8d608dbb445140ff"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes DROP SERVER in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP SERVER, SQL, Function, Precautions]
+---
+
 # DROP SERVER<a name="EN-US_TOPIC_0289900384"></a>
 
 ## Function<a name="en-us_topic_0283136745_section18987145713527"></a>

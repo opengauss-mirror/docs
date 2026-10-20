@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Sample PGBench benchmark in openGauss, covering topics such as How to run pgbench with MOT.
+keywords: [openGauss, MOT Sample PGBench benchmark, database administration, How to run pgbench with MOT]
+---
+
 # MOT Sample PGBench benchmark
 
 **pgbench** is a simple program for running benchmark tests on PostgreSQL. It runs the same sequence of SQL commands over and over, possibly in multiple concurrent database sessions, and then calculates the average transaction rate (transactions per second or TPS). By default, pgbench tests a scenario that is loosely based on TPC-B, involving five SELECT, UPDATE, and INSERT commands per transaction.

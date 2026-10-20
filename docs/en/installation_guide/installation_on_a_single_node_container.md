@@ -1,3 +1,8 @@
+---
+description: This document describes Single-Node Installation_Container in openGauss, covering topics such as Architecture and OS Versions for Building Containers, Configuration Preparation.
+keywords: [openGauss, Single-Node Installation_Container, installation, Architecture and OS Versions for Building Containers, Configuration Preparation]
+---
+
 # Single-Node Installation_Container
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-10T08:50:37.192Z pushedAt=2026-07-14T07:15:07.657Z -->

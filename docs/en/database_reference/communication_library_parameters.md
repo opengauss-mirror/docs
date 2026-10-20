@@ -1,3 +1,8 @@
+---
+description: This document describes Communication Library Parameters in openGauss, covering topics such as tcp\_keepalives\_idle, tcp\_keepalives\_interval.
+keywords: [openGauss, Communication Library Parameters, database reference, tcp\_keepalives\_idle, tcp\_keepalives\_interval]
+---
+
 # Communication Library Parameters<a name="EN-US_TOPIC_0289900401"></a>
 
 This section describes parameter settings and value ranges for communication libraries.

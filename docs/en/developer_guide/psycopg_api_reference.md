@@ -1,3 +1,8 @@
+---
+description: This document describes Psycopg API Reference in openGauss.
+keywords: [openGauss, Psycopg API Reference, development]
+---
+
 # Psycopg API Reference<a name="EN-US_TOPIC_0000001126927585"></a>
 
 Psycopg APIs are a set of methods provided for users. This section describes some common APIs.

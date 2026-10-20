@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss RPM安装 的相关内容，涵盖 支持的架构、操作系统版本以及对应的openGauss版本、支持特性 等内容。
+keywords: [openGauss, RPM安装, 安装指南, 支持的架构、操作系统版本以及对应的openGauss版本, 支持特性]
+---
+
 # RPM安装
 
 本章节主要介绍在openEuler、Fedora、RedHat、SUSE操作系统上，通过yum/zypper命令一键安装openGauss数据库。
@@ -47,9 +52,9 @@
 
 - 在安装操作系统过程中，software选择openGauss，安装操作系统时候默认安装上openGauss数据库。
 
-![](figures/soft_select.png)
+![openEuler操作系统示意图](figures/soft_select.png)
 
-![](figures/choose_opengauss.png)
+![openEuler操作系统示意图](figures/choose_opengauss.png)
 
 ### Fedora操作系统
 

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss WDR Snapshot生成性能报告 的相关内容，涵盖 前提条件、操作步骤 等内容。
+keywords: [openGauss, WDR Snapshot生成性能报告, SQL参考, 前提条件, 操作步骤]
+---
+
 # WDR Snapshot生成性能报告
 
 基于WDR Snapshot数据表汇总、统计，生成性能报告，默认初始化用户或监控管理员用户可以生成报告。

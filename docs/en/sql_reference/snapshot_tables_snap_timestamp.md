@@ -1,3 +1,8 @@
+---
+description: This document describes SNAPSHOT.TABLES\_SNAP\_TIMESTAMP in openGauss.
+keywords: [openGauss, SNAPSHOT.TABLES\_SNAP\_TIMESTAMP, SQL]
+---
+
 # SNAPSHOT.TABLES\_SNAP\_TIMESTAMP<a name="EN-US_TOPIC_0245374865"></a>
 
 **TABLES\_SNAP\_TIMESTAMP**  records the start time and end time of data collection, as well as corresponding databases, and table objects for all stored WDR snapshots.

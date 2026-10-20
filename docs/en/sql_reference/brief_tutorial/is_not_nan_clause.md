@@ -1,3 +1,8 @@
+---
+description: This document describes IS [NOT] NAN in openGauss, covering topics such as IS NAN, IS NOT NAN.
+keywords: [openGauss, IS [NOT] NAN, SQL, IS NAN, IS NOT NAN]
+---
+
 # IS [NOT] NAN<a name="ZH-CN_TOPIC_0000001210141893"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-28T03:10:44.648Z pushedAt=2026-07-28T03:33:13.587Z -->

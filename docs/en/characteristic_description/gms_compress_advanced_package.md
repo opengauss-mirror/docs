@@ -1,3 +1,8 @@
+---
+description: This document describes gms_compress Advanced Package in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, gms_compress Advanced Package, features, Availability, Feature Overview]
+---
+
 # gms_compress Advanced Package
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:12:28.653Z pushedAt=2026-09-22T11:12:32.633Z -->

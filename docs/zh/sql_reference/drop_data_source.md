@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP DATA SOURCE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP DATA SOURCE, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP DATA SOURCE
 
 ## 功能描述<a name="zh-cn_topic_0283136822_zh-cn_topic_0237122135_section324414515172"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes CLEAN CONNECTION in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CLEAN CONNECTION, SQL, Function, Precautions]
+---
+
 # CLEAN CONNECTION<a name="ZH-CN_TOPIC_0000001151746656"></a>
 
 ## Function<a name="en-us_topic_0059779060_s1b14773726ac4469a14e509530a7a957"></a>

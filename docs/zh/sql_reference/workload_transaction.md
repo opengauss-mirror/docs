@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss WORKLOAD\_TRANSACTION 的相关内容与操作方法。
+keywords: [openGauss, WORKLOAD\_TRANSACTION, SQL参考]
+---
+
 # WORKLOAD\_TRANSACTION
 
 当前节点上负载的事务信息。

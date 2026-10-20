@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_OPFAMILY in openGauss.
+keywords: [openGauss, PG\_OPFAMILY, database reference]
+---
+
 # PG\_OPFAMILY<a name="EN-US_TOPIC_0289900724"></a>
 
 **PG\_OPFAMILY**  defines operator families.

@@ -1,3 +1,8 @@
+---
+description: This document describes Product Description in openGauss, covering topics such as Background, Usage Scenarios.
+keywords: [openGauss, Product Description, features, Background, Usage Scenarios]
+---
+
 # Product Description<a name="ZH-CN_TOPIC_0000002293119521"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T02:04:59.410Z -->

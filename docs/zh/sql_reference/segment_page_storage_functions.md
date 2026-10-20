@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 段页式存储函数 的相关内容与操作方法。
+keywords: [openGauss, 段页式存储函数, SQL参考]
+---
+
 # 段页式存储函数
 
 - local\_segment\_space\_info\(tablespacename TEXT, databasename TEXT\)

@@ -1,3 +1,8 @@
+---
+description: This document describes Two-City Three-DC DR in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Two-City Three-DC DR, features, Availability, Introduction]
+---
+
 # Two-City Three-DC DR
 
 ## Availability

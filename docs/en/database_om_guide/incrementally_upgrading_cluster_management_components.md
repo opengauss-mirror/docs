@@ -1,3 +1,8 @@
+---
+description: This document describes Incrementally Upgrading Cluster Management Components in openGauss, covering topics such as Procedure, Preparing for and Checking the Cluster Management Component Upgrade.
+keywords: [openGauss, Incrementally Upgrading Cluster Management Components, database O&M, Procedure, Preparing for and Checking the Cluster Management Component Upgrade]
+---
+
 # Incrementally Upgrading Cluster Management Components<a name=""></a>
 
 This chapter describes how to incrementally upgrade cluster management components.

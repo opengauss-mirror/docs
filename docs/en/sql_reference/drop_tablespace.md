@@ -1,3 +1,8 @@
+---
+description: This document describes DROP TABLESPACE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP TABLESPACE, SQL, Function, Precautions]
+---
+
 # DROP TABLESPACE<a name="EN-US_TOPIC_0289899918"></a>
 
 ## Function<a name="en-us_topic_0283137549_en-us_topic_0237122153_en-us_topic_0059779073_s73f8a05d2e0248f18e34a613fcde3fb6"></a>

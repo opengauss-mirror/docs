@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_initdb in openGauss, covering topics such as Introduction, Usage Guide.
+keywords: [openGauss, gs\_initdb, tools and commands, Introduction, Usage Guide]
+---
+
 # gs\_initdb<a name="ZH-CN_TOPIC_0249632240"></a>
 
 ## Introduction<a name="section7777368159"></a>

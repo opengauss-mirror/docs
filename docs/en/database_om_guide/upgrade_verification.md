@@ -1,3 +1,8 @@
+---
+description: This document describes Verifying the Upgrade in openGauss, covering topics such as Verification Checklist, Querying the Version After Upgrade.
+keywords: [openGauss, Verifying the Upgrade, database O&M, Verification Checklist, Querying the Version After Upgrade]
+---
+
 # Verifying the Upgrade<a name="EN-US_TOPIC_0305491432"></a>
 
 This section describes how to verify the upgrade, including the test cases and detailed operation procedure.

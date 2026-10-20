@@ -1,3 +1,8 @@
+---
+description: This document describes Resource Pooling Network Dual-Cluster Deployment in openGauss, covering topics such as Content Overview, Example of Manually Deploying a Network Dual-Cluster.
+keywords: [openGauss, Resource Pooling Network Dual-Cluster Deployment, database administration, Content Overview, Example of Manually Deploying a Network Dual-Cluster]
+---
+
 # Resource Pooling Network Dual-Cluster Deployment
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:46:24.856Z pushedAt=2026-09-11T11:30:48.333Z -->

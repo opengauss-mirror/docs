@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STAT\_SYS\_INDEXES 的相关内容与操作方法。
+keywords: [openGauss, STAT\_SYS\_INDEXES, SQL参考]
+---
+
 # STAT\_SYS\_INDEXES
 
 显示pg\_catalog、information\_schema以及pg\_toast模式中所有系统表的索引状态信息。

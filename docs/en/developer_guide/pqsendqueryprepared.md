@@ -1,3 +1,8 @@
+---
+description: This document describes PQsendQueryPrepared in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, PQsendQueryPrepared, development, Function, Prototype]
+---
+
 # PQsendQueryPrepared<a name="EN-US_TOPIC_0242380585"></a>
 
 ## Function<a name="en-us_topic_0241735630_section1390173422515"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 创建和管理视图 的相关内容，涵盖 背景信息、管理视图 等内容。
+keywords: [openGauss, 创建和管理视图, 数据库管理, 背景信息, 管理视图]
+---
+
 # 创建和管理视图
 
 ## 背景信息<a name="zh-cn_topic_0237120309_zh-cn_topic_0059777564_sd10ac23ddd774a89947f3f6afdc707d9"></a>

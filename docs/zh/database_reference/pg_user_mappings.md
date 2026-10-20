@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_USER\_MAPPINGS 的相关内容与操作方法。
+keywords: [openGauss, PG\_USER\_MAPPINGS, 数据库参考]
+---
+
 # PG\_USER\_MAPPINGS
 
 PG\_USER\_MAPPINGS视图提供访问关于用户映射的信息的接口。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss TIMECAPSULE TABLE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, TIMECAPSULE TABLE, SQL参考, 功能描述, 注意事项]
+---
+
 # TIMECAPSULE TABLE
 
 ## 功能描述<a name="section1788163418319"></a>

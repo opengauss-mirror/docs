@@ -1,3 +1,8 @@
+---
+description: This document describes Workload Replay Tool in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, Workload Replay Tool, features, Availability, Feature Overview]
+---
+
 # Workload Replay Tool
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:35:32.883Z pushedAt=2026-09-22T11:12:32.723Z -->

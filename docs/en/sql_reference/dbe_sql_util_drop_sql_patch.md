@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_SQL\_UTIL.drop\_sql\_patch in openGauss.
+keywords: [openGauss, DBE\_SQL\_UTIL.drop\_sql\_patch, SQL]
+---
+
 # DBE\_SQL\_UTIL.drop\_sql\_patch<a name="EN-US_TOPIC_0000001266752046"></a>
 
 drop\_sql\_patch is an interface function used to drop an SQL patch and return whether the execution is successful.

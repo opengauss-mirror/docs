@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_MASKING in openGauss.
+keywords: [openGauss, GS\_MASKING, database reference]
+---
+
 # GS\_MASKING<a name="EN-US_TOPIC_0306525320"></a>
 
 **GS\_MASKING**  displays all configured dynamic masking policies. Only the users with system administrator or security policy administrator permission can access this view.

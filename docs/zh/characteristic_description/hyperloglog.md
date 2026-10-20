@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 支持HyperLogLog 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 支持HyperLogLog, 特性描述, 可获得性, 特性简介]
+---
+
 # 支持HyperLogLog
 
 ## 可获得性<a name="section5309649"></a>

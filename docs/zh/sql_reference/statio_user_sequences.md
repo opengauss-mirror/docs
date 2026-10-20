@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STATIO\_USER\_SEQUENCES 的相关内容与操作方法。
+keywords: [openGauss, STATIO\_USER\_SEQUENCES, SQL参考]
+---
+
 # STATIO\_USER\_SEQUENCES
 
 STATIO\_USER\_SEQUENCE视图显示当前节点的命名空间中所有用户关系表类型为序列的IO状态信息。

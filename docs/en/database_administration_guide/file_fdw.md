@@ -1,3 +1,8 @@
+---
+description: This document describes file\_fdw in openGauss, covering topics such as Using file\_fdw, Precautions.
+keywords: [openGauss, file\_fdw, database administration, Using file\_fdw, Precautions]
+---
+
 # file\_fdw<a name="EN-US_TOPIC_0000001116194726"></a>
 
 The file\_fdw module provides the external data wrapper file\_fdw, which can be used to access data files in the file system of a server. The format of the data files must be readable by the  **COPY FROM**  command. For details, see  [COPY](../sql_reference/copy.md). file\_fdw is only used to access readable data files, but cannot write data to the data files.

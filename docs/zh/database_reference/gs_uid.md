@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_UID 的相关内容与操作方法。
+keywords: [openGauss, GS\_UID, 数据库参考]
+---
+
 # GS\_UID
 
 GS\_UID系统表存储了数据库中使用hasuids属性表的唯一标识元信息。

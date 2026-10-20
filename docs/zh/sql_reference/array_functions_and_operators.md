@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 数组函数和操作符 的相关内容，涵盖 数组操作符、数组函数 等内容。
+keywords: [openGauss, 数组函数和操作符, SQL参考, 数组操作符, 数组函数]
+---
+
 # 数组函数和操作符
 
 ## 数组操作符<a name="zh-cn_topic_0283137239_zh-cn_topic_0237121980_zh-cn_topic_0059777596_s7fe6ac87a6fc4d7c8c7bd46484b9d9c3"></a>

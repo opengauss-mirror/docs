@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE SERVER 的相关内容，涵盖 功能描述、语法格式 等内容。
+keywords: [openGauss, CREATE SERVER, SQL参考, 功能描述, 语法格式]
+---
+
 # CREATE SERVER
 
 ## 功能描述<a name="zh-cn_topic_0283137586_section1087614114391"></a>

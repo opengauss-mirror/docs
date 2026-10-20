@@ -1,3 +1,8 @@
+---
+description: This document describes Parameter Tuning and Diagnosis in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Parameter Tuning and Diagnosis, features, Availability, Introduction]
+---
+
 # Parameter Tuning and Diagnosis<a name="EN-US_TOPIC_0000001151995073"></a>
 
 ## Availability<a name="section1145114551456"></a>

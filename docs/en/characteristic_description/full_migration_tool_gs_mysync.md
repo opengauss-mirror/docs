@@ -1,3 +1,8 @@
+---
+description: This document describes Full Migration Tool gs\_mysync in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Full Migration Tool gs\_mysync, features, Availability, Introduction]
+---
+
 # Full Migration Tool gs\_mysync<a name="EN-US_TOPIC_0000001264707837"></a>
 
 ## Availability<a name="section56086982"></a>

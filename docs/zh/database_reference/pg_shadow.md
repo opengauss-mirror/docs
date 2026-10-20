@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_SHADOW 的相关内容与操作方法。
+keywords: [openGauss, PG\_SHADOW, 数据库参考]
+---
+
 # PG\_SHADOW
 
 PG\_SHADOW视图显示了所有在PG\_AUTHID中标记了rolcanlogin的角色的属性。

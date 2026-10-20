@@ -1,3 +1,8 @@
+---
+description: This document describes MySQL-to-openGauss Migration Tool chameleon in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, MySQL-to-openGauss Migration Tool chameleon, features, Availability, Feature Overview]
+---
+
 # MySQL-to-openGauss Migration Tool chameleon
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:19:37.413Z pushedAt=2026-09-22T11:12:32.669Z -->

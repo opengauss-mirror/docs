@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SQLSetEnvAttr 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, SQLSetEnvAttr, 开发指南, 功能描述, 原型]
+---
+
 # SQLSetEnvAttr
 
 ## 功能描述<a name="zh-cn_topic_0238272902_zh-cn_topic_0237120432_zh-cn_topic_0059778852_s93fc7574cf154704b8cff271a57b9601"></a>

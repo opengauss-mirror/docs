@@ -1,3 +1,8 @@
+---
+description: This document describes DV\_SESSION\_LONGOPS in openGauss.
+keywords: [openGauss, DV\_SESSION\_LONGOPS, database reference]
+---
+
 # DV\_SESSION\_LONGOPS<a name="EN-US_TOPIC_0000001116401258"></a>
 
 **DV\_SESSION\_LONGOPS**  displays the progress of ongoing operations. Users can access this view only after being authorized.

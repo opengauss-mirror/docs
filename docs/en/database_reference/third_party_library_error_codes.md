@@ -1,3 +1,8 @@
+---
+description: This document describes Third-Party Library Error Codes in openGauss.
+keywords: [openGauss, Third-Party Library Error Codes, database reference]
+---
+
 # Third-Party Library Error Codes<a name="EN-US_TOPIC_0302073329"></a>
 
 A third-party error code contains five characters, the first three indicating the error type and the last two indicating the subclass. The five characters can be digits or uppercase letters, which represent various errors or warnings.

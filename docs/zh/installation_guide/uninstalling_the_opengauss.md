@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 卸载openGauss 的相关内容，涵盖 执行卸载、一键式环境清理 等内容。
+keywords: [openGauss, 卸载openGauss, 安装指南, 执行卸载, 一键式环境清理]
+---
+
 # 卸载openGauss
 
 卸载openGauss的过程包含卸载openGauss和对openGauss服务器的环境做清理。

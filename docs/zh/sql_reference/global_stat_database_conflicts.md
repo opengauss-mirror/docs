@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_STAT\_DATABASE\_CONFLICTS 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_STAT\_DATABASE\_CONFLICTS, SQL参考]
+---
+
 # GLOBAL\_STAT\_DATABASE\_CONFLICTS
 
 显示每个节点的数据库冲突状态的统计信息。

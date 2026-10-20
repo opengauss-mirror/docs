@@ -1,3 +1,8 @@
+---
+description: This document describes One-Stop Installation Guide in openGauss, covering topics such as Prerequisites, Steps.
+keywords: [openGauss, One-Stop Installation Guide, installation, Prerequisites, Steps]
+---
+
 # One-Stop Installation Guide
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-10T08:51:02.857Z pushedAt=2026-07-14T07:15:07.670Z -->

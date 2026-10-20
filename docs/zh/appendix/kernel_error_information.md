@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 内核错误信息 的相关内容与操作方法。
+keywords: [openGauss, 内核错误信息, 附录]
+---
+
 # 内核错误信息
 
 ERRMSG: "unsupported syntax: ENCRYPTED WITH in this operation"

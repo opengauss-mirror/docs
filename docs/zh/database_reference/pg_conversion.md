@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_CONVERSION 的相关内容与操作方法。
+keywords: [openGauss, PG\_CONVERSION, 数据库参考]
+---
+
 # PG\_CONVERSION
 
 PG\_CONVERSION系统表描述编码转换信息。

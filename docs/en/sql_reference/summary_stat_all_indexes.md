@@ -1,3 +1,8 @@
+---
+description: This document describes SUMMARY\_STAT\_ALL\_INDEXES in openGauss.
+keywords: [openGauss, SUMMARY\_STAT\_ALL\_INDEXES, SQL]
+---
+
 # SUMMARY\_STAT\_ALL\_INDEXES<a name="EN-US_TOPIC_0245374696"></a>
 
 **SUMMARY\_STAT\_ALL\_INDEXES**  contains every row of each index in databases in openGauss, showing statistics about accesses to specific indexes. 

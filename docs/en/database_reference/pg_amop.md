@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_AMOP in openGauss.
+keywords: [openGauss, PG\_AMOP, database reference]
+---
+
 # PG\_AMOP<a name="EN-US_TOPIC_0289900719"></a>
 
 **PG\_AMOP**  records information about operators associated with access method operator families. There is one row for each operator that is a member of an operator family. A family member can be either a search operator or an ordering operator. An operator can appear in more than one family, but cannot appear in more than one search position nor more than one ordering position within a family.

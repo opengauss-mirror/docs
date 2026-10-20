@@ -1,3 +1,8 @@
+---
+description: This document describes DROP PUBLICATION in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP PUBLICATION, SQL, Function, Precautions]
+---
+
 # DROP PUBLICATION<a name="EN-US_TOPIC_0000001243797337"></a>
 
 ## Function<a name="section4742194571517"></a>

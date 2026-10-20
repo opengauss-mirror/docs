@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DB4AI.SNAPSHOT 的相关内容与操作方法。
+keywords: [openGauss, DB4AI.SNAPSHOT, SQL参考]
+---
+
 # DB4AI.SNAPSHOT
 
 SNAPSHOT表记录当前用户通过特性DB4AI.SNAPSHOT存储的快照。

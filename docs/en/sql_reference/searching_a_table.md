@@ -1,3 +1,8 @@
+---
+description: This document describes Searching a Table in openGauss.
+keywords: [openGauss, Searching a Table, SQL]
+---
+
 # Searching a Table<a name="EN-US_TOPIC_0289899842"></a>
 
 It is possible to do a full text search without an index.

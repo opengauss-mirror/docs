@@ -1,3 +1,8 @@
+---
+description: This document describes PURGE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, PURGE, SQL, Function, Precautions]
+---
+
 # PURGE<a name="EN-US_TOPIC_0000001151429881"></a>
 
 ## Function<a name="section625854265112"></a>

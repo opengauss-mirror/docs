@@ -1,3 +1,8 @@
+---
+description: This document describes Setting Account Security Policies in openGauss, covering topics such as Background, Automatically Locking and Unlocking Accounts.
+keywords: [openGauss, Setting Account Security Policies, database administration, Background, Automatically Locking and Unlocking Accounts]
+---
+
 # Setting Account Security Policies<a name="EN-US_TOPIC_0246507967"></a>
 
 ## Background<a name="en-us_topic_0237121108_en-us_topic_0151096060_en-us_topic_0085032584_en-us_topic_0059778228_section1763231181417"></a>

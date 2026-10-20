@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_OBJECT 的相关内容与操作方法。
+keywords: [openGauss, PG\_OBJECT, 数据库参考]
+---
+
 # PG\_OBJECT
 
 PG\_OBJECT系统表存储限定类型对象（普通表、索引、序列、视图、存储过程和函数）的创建用户、创建时间和最后修改时间。

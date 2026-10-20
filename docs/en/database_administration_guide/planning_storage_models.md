@@ -1,3 +1,8 @@
+---
+description: This document describes Planning Storage Models in openGauss, covering topics such as Availability, Feature Description.
+keywords: [openGauss, Planning Storage Models, database administration, Availability, Feature Description]
+---
+
 # Planning Storage Models
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:45:50.618Z pushedAt=2026-09-24T07:02:35.383Z -->
@@ -14,7 +19,7 @@ In general, columnar storage is suitable when a table has many columns (a wide t
 
 **Figure 1**  Columnar storage diagram<a name="fig114741818102620"></a>  
 
-![](figures/mixed-storage-engine.png)
+![Feature Description diagram](figures/mixed-storage-engine.png)
 
 ## Customer Value<a name="section49328722"></a>
 
@@ -36,7 +41,7 @@ Row storage stores a table by rows on disk partitions, while columnar storage st
 
 **Figure 1**  Differences between row storage and columnar storage<a name="zh-cn_topic_0237120296_fig1417354233018"></a>  
 
-![](figures/en-us_image_0242381725.png)
+![Feature Description diagram](figures/en-us_image_0242381725.png)
 
 In the preceding figure, the upper-left shows a row-store table, and the upper-right shows how the row-store table is stored on disk. The lower-left shows a column-store table, and the lower-right shows how the column-store table is stored on disk.
 

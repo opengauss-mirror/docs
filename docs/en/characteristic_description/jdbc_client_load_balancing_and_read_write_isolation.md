@@ -1,3 +1,8 @@
+---
+description: This document describes JDBC Client Load Balancing and Read/Write Isolation in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, JDBC Client Load Balancing and Read/Write Isolation, features, Availability, Introduction]
+---
+
 # JDBC Client Load Balancing and Read/Write Isolation<a name="EN-US_TOPIC_0000001168070076"></a>
 
 ## Availability<a name="section1076382216287"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_SESSION\_MEMORY\_STATISTICS 的相关内容与操作方法。
+keywords: [openGauss, GS\_SESSION\_MEMORY\_STATISTICS, 数据库参考]
+---
+
 # GS\_SESSION\_MEMORY\_STATISTICS
 
 GS\_SESSION\_MEMORY\_STATISTICS视图显示和当前用户执行复杂作业正在运行时的负载管理内存使用的信息。

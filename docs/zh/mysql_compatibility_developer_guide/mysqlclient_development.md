@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss mysqlclient 连接示例 的相关内容，涵盖 准备工作、Python 环境 等内容。
+keywords: [openGauss, mysqlclient 连接示例, MySQL兼容, 准备工作, Python 环境]
+---
+
 # mysqlclient 连接示例
 
 本文介绍使用 Python `mysqlclient` 驱动，通过 Dolphin MySQL protocol 连接 openGauss B 兼容数据库的基本方法。示例使用一个独立的 B 兼容数据库、schema、连接用户和业务表，便于按顺序准备环境并验证连接。

@@ -1,3 +1,8 @@
+---
+description: This document describes pg_xlogdump in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, pg_xlogdump, tools and commands, Background, Prerequisites]
+---
+
 # pg_xlogdump
 
 ## Background<a name="zh-cn_topic_0237152442_section125419154814"></a>

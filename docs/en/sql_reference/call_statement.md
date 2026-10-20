@@ -1,3 +1,8 @@
+---
+description: This document describes Call Statement in openGauss, covering topics such as Syntax, Example.
+keywords: [openGauss, Call Statement, SQL, Syntax, Example]
+---
+
 # Call Statement<a name="EN-US_TOPIC_0245374613"></a>
 
 ## Syntax<a name="en-us_topic_0237122223_en-us_topic_0059778001_sde66d89c567e4012bf160f6f6421d2af"></a>
@@ -5,7 +10,7 @@
 [Figure 1](#en-us_topic_0237122223_en-us_topic_0059778001_fa4de2ab1dc7e4c04b4997c6238ee1861)  shows the syntax diagram for calling a clause.
 
 **Figure  1**  call\_clause::=<a name="en-us_topic_0237122223_en-us_topic_0059778001_fa4de2ab1dc7e4c04b4997c6238ee1861"></a>  
-![](figures/call_clause.png "call_clause")
+![call clause syntax diagram](figures/call_clause.png "call_clause")
 
 The above syntax diagram is explained as follows:
 

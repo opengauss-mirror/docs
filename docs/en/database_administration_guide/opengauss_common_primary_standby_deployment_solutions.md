@@ -1,3 +1,8 @@
+---
+description: This document describes Common Primary/Standby Deployment Solutions in openGauss, covering topics such as Single-Center Deployment, Intra-City Dual-Center Deployment.
+keywords: [openGauss, Common Primary/Standby Deployment Solutions, database administration, Single-Center Deployment, Intra-City Dual-Center Deployment]
+---
+
 # Common Primary/Standby Deployment Solutions
 
 ## Single-Center Deployment
@@ -5,7 +10,7 @@
 **Figure 1** Single-center deployment
 
 <a name="en-us_topic_0283139012_en-us_topic_0243295242_en-us_topic_0243253013_fig1843505845112"></a> 
-    <img src="figures/single-center-deployment.png" title="Single-center deployment" style="zoom:80%;" />
+    <img src="figures/single-center-deployment.png" alt="Single-Center Deployment diagram" title="Single-center deployment" style="zoom:80%;" />
 
 Networking features:
 If a single AZ is deployed, one synchronous standby node and one asynchronous standby node can be configured.
@@ -26,7 +31,7 @@ Applicable to service systems that have low requirements on HA.
 **Figure 2** Intra-city dual-center deployment
 
 <a name="en-us_topic_0283139012_en-us_topic_0243295242_en-us_topic_0243253013_fig1843505845112"></a> 
-    <img src="figures/intra-city-dual-center-deployment.png" title="Intra-city dual-center deployment" style="zoom:80%;" />
+    <img src="figures/intra-city-dual-center-deployment.png" alt="Intra-City Dual-Center Deployment diagram" title="Intra-city dual-center deployment" style="zoom:80%;" />
 
 Networking features:
 Two intra-city AZs are more reliable than a single AZ. A synchronous standby node can be configured for the primary center and the intra-city center respectively.
@@ -49,7 +54,7 @@ Applicable to common service systems.
 **Figure 3** Two-city three-dc deployment
 
 <a name="en-us_topic_0283139012_en-us_topic_0243295242_en-us_topic_0243253013_fig1843505845112"></a> 
-    <img src="figures/two-city-three-dc-deployment.png" title="Two-city three-dc deployment" style="zoom:80%;" />
+    <img src="figures/two-city-three-dc-deployment.png" alt="Two-City Three-DC Deployment diagram" title="Two-city three-dc deployment" style="zoom:80%;" />
 
 Networking features:
 In the two-city three-DC deployment, each AZ must have at least one synchronous standby node. The cluster reliability can reach the highest level when the number of cities and data centers increases.
@@ -70,7 +75,7 @@ Applicable to core and important service systems.
 **Figure 4** Two-city three-DC streaming DR solution
 
 <a name="en-us_topic_0283139012_en-us_topic_0243295242_en-us_topic_0243253013_fig1843505845112"></a> 
-    <img src="figures/two-city-three-dc-streaming-dr-solution.png" title="Two-city three-DC streaming DR solution" style="zoom:80%;" />
+    <img src="figures/two-city-three-dc-streaming-dr-solution.png" alt="Two-City Three-DC Streaming DR Solution diagram" title="Two-city three-DC streaming DR solution" style="zoom:80%;" />
 
 Networking features:
 Two independent clusters are deployed in the dual-cluster DR solution. The primary and DR cluster networking modes can be selected as required. The DR cluster selects the first standby DN to connect to the primary DN of the primary cluster. In the DR cluster, the first standby DN is connected in cascading standby mode.

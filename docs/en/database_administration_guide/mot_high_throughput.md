@@ -1,3 +1,8 @@
+---
+description: This document describes MOT High Throughput in openGauss, covering topics such as ARM/Kunpeng 2-Socket 128 Cores, ARM/Kunpeng 4-Socket 256 Cores.
+keywords: [openGauss, MOT High Throughput, database administration, ARM/Kunpeng 2-Socket 128 Cores, ARM/Kunpeng 4-Socket 256 Cores]
+---
+
 # MOT High Throughput<a name="EN-US_TOPIC_0270170872"></a>
 
 The following shows the results of various MOT table high throughput tests.
@@ -16,7 +21,7 @@ Four types of tests were performed –
 MOT tables are represented in orange and disk-based tables are represented in blue.
 
 **Figure  1**  ARM/Kunpeng 2-Socket 128 Cores – Performance Benchmarks<a name="fig744170184120"></a>  
-![](figures/arm-kunpeng-2-socket-128-cores-performance-benchmarks.png "arm-kunpeng-2-socket-128-cores-performance-benchmarks")
+![ARM/Kunpeng 2-Socket 128 Cores – Performance Benchmarks](figures/arm-kunpeng-2-socket-128-cores-performance-benchmarks.png "arm-kunpeng-2-socket-128-cores-performance-benchmarks")
 
 The results showed that:
 
@@ -31,7 +36,7 @@ The results showed that:
 The following figure shows the TPC-C benchmark performance/throughput results per core of the tests performed on a Huawei ARM/Kunpeng server that has two sockets and 128 cores. The same four types of tests were performed \(as described above\).
 
 **Figure  2**  ARM/Kunpeng 2-Socket 128 Cores – Performance per Core Benchmarks<a name="fig4973174704615"></a>  
-![](figures/arm-kunpeng-2-socket-128-cores-performance-per-core-benchmarks.png "arm-kunpeng-2-socket-128-cores-performance-per-core-benchmarks")
+![ARM/Kunpeng 2-Socket 128 Cores – Performance per Core Benchmarks](figures/arm-kunpeng-2-socket-128-cores-performance-per-core-benchmarks.png "arm-kunpeng-2-socket-128-cores-performance-per-core-benchmarks")
 
 The results showed that as expected, the performance of MOT tables is significantly greater per core than of disk-based tables in all cases. It also shows that for production grade \(high-availability\) servers \(Primary/Secondary Node\) that require replication, the benefit of using MOT tables is even more significant than for a Single Node \(without high-availability, meaning no replication\).
 
@@ -40,7 +45,7 @@ The results showed that as expected, the performance of MOT tables is significan
 The following demonstrates MOT's excellent concurrency control performance by showing the tpmC per quantity of connections.
 
 **Figure  3**  ARM/Kunpeng 4-Socket 256 Cores – Performance Benchmarks<a name="fig11792916124118"></a>  
-![](figures/arm-kunpeng-4-socket-256-cores-performance-benchmarks.png "arm-kunpeng-4-socket-256-cores-performance-benchmarks")
+![ARM/Kunpeng 4-Socket 256 Cores – Performance Benchmarks](figures/arm-kunpeng-4-socket-256-cores-performance-benchmarks.png "arm-kunpeng-4-socket-256-cores-performance-benchmarks")
 
 The results show that performance increases significantly even when there are many cores and that peak performance of 4.8M tpmC is achieved at 768 connections.
 
@@ -51,7 +56,7 @@ The results show that performance increases significantly even when there are ma
 The following demonstrates MOT's excellent concurrency control performance by comparing the tpmC per quantity of connections between disk-based tables and MOT. This test was performed on an x86 server with eight sockets and 384 cores. The orange represents the results of the MOT table.
 
 **Figure  4**  x86 8-Socket 384 Cores – Performance Benchmarks<a name="fig16827229164115"></a>  
-![](figures/x86-8-socket-384-cores-performance-benchmarks.png "x86-8-socket-384-cores-performance-benchmarks")
+![x86 8-Socket 384 Cores – Performance Benchmarks](figures/x86-8-socket-384-cores-performance-benchmarks.png "x86-8-socket-384-cores-performance-benchmarks")
 
 The results show that MOT tables significantly outperform disk-based tables and have very highly efficient performance per core on a 386 core server, reaching over 3M tpmC / core.
 
@@ -60,4 +65,4 @@ The results show that MOT tables significantly outperform disk-based tables and 
 3.9 million tpmC was achieved by MOT on this 4-socket 96 cores server. The following figure shows a highly efficient MOT table performance per core reaching 40,000 tpmC / core.
 
 **Figure  5**  4-Socket 96 Cores – Performance Benchmarks<a name="fig1697014113412"></a>  
-![](figures/4-socket-96-cores-performance-benchmarks.png "4-socket-96-cores-performance-benchmarks")
+![4-Socket 96 Cores – Performance Benchmarks](figures/4-socket-96-cores-performance-benchmarks.png "4-socket-96-cores-performance-benchmarks")

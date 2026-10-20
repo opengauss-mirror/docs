@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_RESOURCE\_POOL in openGauss.
+keywords: [openGauss, PG\_RESOURCE\_POOL, database reference]
+---
+
 # PG\_RESOURCE\_POOL<a name="EN-US_TOPIC_0289899854"></a>
 
 **PG\_RESOURCE\_POOL**  provides information about database resource pools.

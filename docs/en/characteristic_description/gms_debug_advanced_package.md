@@ -1,3 +1,8 @@
+---
+description: This document describes gms_debug Plug-in in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, gms_debug Plug-in, features, Availability, Feature Overview]
+---
+
 # gms_debug Plug-in
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:13:07.237Z pushedAt=2026-09-22T11:12:32.636Z -->

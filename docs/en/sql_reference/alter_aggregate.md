@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER AGGREGATE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER AGGREGATE, SQL, Function, Precautions]
+---
+
 # ALTER AGGREGATE<a name="EN-US_TOPIC_0000001127682267"></a>
 
 ## Function<a name="section173831846163116"></a>

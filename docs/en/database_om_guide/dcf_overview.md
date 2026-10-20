@@ -1,3 +1,8 @@
+---
+description: This document describes DCF Overview in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, DCF Overview, database O&M, Availability, Introduction]
+---
+
 # DCF Overview
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-14T08:04:00.263Z -->

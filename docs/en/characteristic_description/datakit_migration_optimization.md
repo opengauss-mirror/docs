@@ -1,3 +1,8 @@
+---
+description: This document describes DataKit Migration Optimization in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, DataKit Migration Optimization, features, Availability, Feature Overview]
+---
+
 # DataKit Migration Optimization
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:06:57.327Z pushedAt=2026-09-22T11:12:32.612Z -->

@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER GROUP in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER GROUP, SQL, Function, Precautions]
+---
+
 # ALTER GROUP<a name="EN-US_TOPIC_0289900959"></a>
 
 ## Function<a name="en-us_topic_0283136839_en-us_topic_0237122062_en-us_topic_0059777426_s9257704722b6426cbb9a62c26d7941f8"></a>

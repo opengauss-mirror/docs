@@ -1,3 +1,8 @@
+---
+description: This document describes Wait Events in openGauss.
+keywords: [openGauss, Wait Events, SQL]
+---
+
 # Wait Events<a name="EN-US_TOPIC_0000001215515174"></a>
 
 The following table describes columns in the Wait Events report.

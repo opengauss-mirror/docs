@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PKG\_SERVICE 的相关内容与操作方法。
+keywords: [openGauss, PKG\_SERVICE, SQL参考]
+---
+
 # PKG\_SERVICE
 
 PKG\_SERVICE支持的所有接口请参见[表1](#table35465232913)。

@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_GTT\_ATTACHED\_PIDS in openGauss.
+keywords: [openGauss, PG\_GTT\_ATTACHED\_PIDS, database reference]
+---
+
 # PG\_GTT\_ATTACHED\_PIDS
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:46:18.395Z -->

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 其他系统函数 的相关内容与操作方法。
+keywords: [openGauss, 其他系统函数, SQL参考]
+---
+
 # 其他系统函数
 
 下述函数详情可参见[PG官方文档](https://www.postgresql.org/docs/9.2/functions.html)。

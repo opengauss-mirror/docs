@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DML语法一览表 的相关内容，涵盖 插入数据、修改数据 等内容。
+keywords: [openGauss, DML语法一览表, SQL参考, 插入数据, 修改数据]
+---
+
 # DML语法一览表
 
 DML（Data Manipulation Language数据操作语言），用于对数据库表中的数据进行操作。如：插入、更新、查询、删除。

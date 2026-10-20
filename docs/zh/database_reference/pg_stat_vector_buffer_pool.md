@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG_STAT_VECTOR_BUFFER_POOL 的相关内容与操作方法。
+keywords: [openGauss, PG_STAT_VECTOR_BUFFER_POOL, 数据库参考]
+---
+
 # PG_STAT_VECTOR_BUFFER_POOL
 
 `PG_STAT_VECTOR_BUFFER_POOL` 显示当前实例中可取得访问引用的向量缓存池，每个池对应一行。普通用户可以查询。缓存未启用或没有可读取的缓存池时，返回空集。

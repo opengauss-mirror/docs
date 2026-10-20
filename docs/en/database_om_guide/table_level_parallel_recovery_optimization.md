@@ -1,3 +1,8 @@
+---
+description: This document describes Table-Level Parallel Recovery Optimization in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Table-Level Parallel Recovery Optimization, database O&M, Availability, Introduction]
+---
+
 # Table-Level Parallel Recovery Optimization
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-14T08:04:55.584Z -->

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss TABLE_CONSTRAINTS 的相关内容与操作方法。
+keywords: [openGauss, TABLE_CONSTRAINTS, SQL参考]
+---
+
 # TABLE_CONSTRAINTS <a name="ZH-CN_TOPIC_0310260671"></a>
 
 存储表约束相关的信息。

@@ -1,3 +1,8 @@
+---
+description: This document describes X-Tuner: Parameter Tuning and Diagnosis in openGauss, covering topics such as Overview, Preparations.
+keywords: [openGauss, X-Tuner: Parameter Tuning and Diagnosis, features, Overview, Preparations]
+---
+
 # X-Tuner: Parameter Tuning and Diagnosis<a name="EN-US_TOPIC_0289899994"></a>
 
 ## Overview<a name="EN-US_TOPIC_0289900339"></a>
@@ -32,7 +37,7 @@ X-Tuner can run in any of the following modes:
 >If the deep reinforcement learning algorithm is used in  **tune**  mode, a trained model must be available, and the parameters for training the model must be the same as those in the parameter list \(including max and min\) for tuning.
 
 **Figure  1**  X-Tuner structure<a name="fig137427353816"></a>  
-![](figures/x-tuner-structure.png "x-tuner-structure")
+![X-Tuner structure](figures/x-tuner-structure.png "x-tuner-structure")
 
 [Figure 1](#fig137427353816)  shows the overall architecture of the X-Tuner. The X-Tuner system can be divided into the following parts:
 
@@ -236,7 +241,7 @@ gs_dbmind component xtuner recommend -f connection.json
 The diagnosis report is generated as follows:
 
 **Figure  1**  Report generated in recommend mode<a name="fig49748416171"></a>  
-![](figures/report-generated-in-recommend-mode.png "report-generated-in-recommend-mode")
+![Report generated in recommend mode](figures/report-generated-in-recommend-mode.png "report-generated-in-recommend-mode")
 
 In the preceding report, the database parameter configurations in the environment are recommended, and a risk warning is provided. The report also generates the current workload features. The following features are for reference:
 

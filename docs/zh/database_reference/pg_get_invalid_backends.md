@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_GET\_INVALID\_BACKENDS 的相关内容与操作方法。
+keywords: [openGauss, PG\_GET\_INVALID\_BACKENDS, 数据库参考]
+---
+
 # PG\_GET\_INVALID\_BACKENDS
 
 PG\_GET\_INVALID\_BACKENDS视图提供显示数据库主节点上连接到当前备机的后台线程信息。

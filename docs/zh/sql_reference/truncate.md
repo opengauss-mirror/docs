@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss TRUNCATE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, TRUNCATE, SQL参考, 功能描述, 注意事项]
+---
+
 # TRUNCATE
 
 ## 功能描述<a name="zh-cn_topic_0283137291_zh-cn_topic_0237122193_zh-cn_topic_0059777694_sf3e0cbc4893c4042ac208fca35e705e8"></a>

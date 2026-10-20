@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Instance IO 的相关内容，涵盖 Thread Type、File Type 等内容。
+keywords: [openGauss, Instance IO, SQL参考, Thread Type, File Type]
+---
+
 # Instance IO
 
 Instance IO列名称及描述如下表所示。

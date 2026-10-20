@@ -1,3 +1,8 @@
+---
+description: This document describes Automatic Parameterization in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, Automatic Parameterization, features, Availability, Feature Overview]
+---
+
 # Automatic Parameterization
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:05:42.861Z pushedAt=2026-09-22T11:12:32.606Z -->
@@ -10,7 +15,7 @@ This feature has been available since openGauss 7.0.0-RC1.
 
 The automatic parameterization feature of openGauss reduces the execution time of SQL statements by reusing the execution plan cache in scenarios where similar or identical simple SQL statements need to be executed repeatedly.
 
-![](./figures/auto_parameterization_1.png)
+![Feature Overview diagram](./figures/auto_parameterization_1.png)
 
 ## Customer Benefits<a name="section148987345722"></a>
 
@@ -20,7 +25,7 @@ Improves performance when a large number of similar simple SQL statements are ex
 
 In scenarios where a large number of similar/repeated simple SQL statements exist, the SQL statements are parameterized and used as keys, and the corresponding execution plans are cached. Subsequently, the corresponding execution plan cache can be directly located through the same parameterized SQL statement, thereby reducing the time consumed in the query rewrite and plan generation steps during SQL statement execution.
 
-![](./figures/auto_parameterization_1.png)
+![Feature Overview diagram](./figures/auto_parameterization_1.png)
 
 ## Feature Enhancements<a name="section23349265924"></a>
 

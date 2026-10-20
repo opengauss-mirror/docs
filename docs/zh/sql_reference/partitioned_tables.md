@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 分区表 的相关内容，涵盖 范围分区表的分类、创建VALUES LESS THAN范围分区表语法格式 等内容。
+keywords: [openGauss, 分区表, SQL参考, 范围分区表的分类, 创建VALUES LESS THAN范围分区表语法格式]
+---
+
 # 分区表
 
 一张表内的数据过多时，就会严重影响到数据的查询和操作效率。openGauss支持把一张表从逻辑上分成多个小的分片，从而避免一次处理大量数据，提高处理效率。

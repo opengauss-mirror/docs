@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STATIO\_SYS\_INDEXES 的相关内容与操作方法。
+keywords: [openGauss, STATIO\_SYS\_INDEXES, SQL参考]
+---
+
 # STATIO\_SYS\_INDEXES
 
 STATIO\_SYS\_INDEXES显示命名空间中所有系统表索引的IO状态信息。

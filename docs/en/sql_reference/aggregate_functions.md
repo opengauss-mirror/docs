@@ -1,3 +1,8 @@
+---
+description: This document describes Aggregate Functions in openGauss, covering topics such as Aggregate Functions.
+keywords: [openGauss, Aggregate Functions, SQL]
+---
+
 # Aggregate Functions
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T09:48:37.607Z pushedAt=2026-07-30T08:20:15.213Z -->

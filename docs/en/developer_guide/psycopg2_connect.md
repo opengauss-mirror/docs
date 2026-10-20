@@ -1,3 +1,8 @@
+---
+description: This document describes psycopg2.connect\(\) in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, psycopg2.connect\(\), development, Function, Prototype]
+---
+
 # psycopg2.connect\(\)<a name="EN-US_TOPIC_0000001127193505"></a>
 
 ## Function<a name="section5708152714306"></a>

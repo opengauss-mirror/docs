@@ -1,3 +1,8 @@
+---
+description: This document describes gsql Connection and Usage in openGauss.
+keywords: [openGauss, gsql Connection and Usage, getting started]
+---
+
 # gsql Connection and Usage<a name="EN-US_TOPIC_0000001178307592"></a>
 
 **gsql**  provided by openGauss is a database connection tool running in the CLI.  **gsql**  provides basic and advanced functions of databases to facilitate user operations. This section describes how to use gsql to connect to a local database. You need to provide a database name and a port number of the primary database node.

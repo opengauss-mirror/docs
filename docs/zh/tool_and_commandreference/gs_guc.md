@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs\_guc 的相关内容，涵盖 背景信息、语法 等内容。
+keywords: [openGauss, gs\_guc, 工具与命令参考, 背景信息, 语法]
+---
+
 # gs\_guc
 
 ## 背景信息<a name="zh-cn_topic_0287276018_zh-cn_topic_0237152338_zh-cn_topic_0059778019_s59e576e934094b3c9a54d6ed555b5671"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Technical Specifications in openGauss.
+keywords: [openGauss, Technical Specifications, product overview]
+---
+
 # Technical Specifications<a name="EN-US_TOPIC_0289896519"></a>
 
 [Table 1](#en-us_topic_0283136531_en-us_topic_0237080616_en-us_topic_0231764304_en-us_topic_0059777844_t24ab71cac351418d8d5b1b8bd1d942c7)  lists the technical specifications of openGauss.

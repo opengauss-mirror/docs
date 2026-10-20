@@ -1,3 +1,8 @@
+---
+description: This document describes DB4AI.PURGE\_SNAPSHOT in openGauss.
+keywords: [openGauss, DB4AI.PURGE\_SNAPSHOT, SQL]
+---
+
 # DB4AI.PURGE\_SNAPSHOT<a name="EN-US_TOPIC_0000001195431135"></a>
 
 **PURGE\_SNAPSHOT**  deletes snapshots for the DB4AI feature. You can invoke  **PURGE SNAPSHOT**  to implement this function.

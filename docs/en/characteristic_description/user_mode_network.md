@@ -1,3 +1,8 @@
+---
+description: This document describes User-Mode Networking in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, User-Mode Networking, features, Availability, Feature Overview]
+---
+
 # User-Mode Networking
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:34:57.236Z pushedAt=2026-09-22T11:12:32.719Z -->

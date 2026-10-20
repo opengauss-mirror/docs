@@ -1,3 +1,8 @@
+---
+description: This document describes Online Node Replacement in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Online Node Replacement, features, Availability, Introduction]
+---
+
 # Online Node Replacement<a name="EN-US_TOPIC_0000001088278196"></a>
 
 ## Availability<a name="section15406143204715"></a>

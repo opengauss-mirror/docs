@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_ATTRIBUTE in openGauss.
+keywords: [openGauss, PG\_ATTRIBUTE, database reference]
+---
+
 # PG\_ATTRIBUTE<a name="EN-US_TOPIC_0289900760"></a>
 
 **PG\_ATTRIBUTE**  records information about table columns.

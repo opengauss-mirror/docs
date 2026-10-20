@@ -1,3 +1,8 @@
+---
+description: This document describes Setting up the Compilation Environment in openGauss, covering topics such as Hardware Requirements, Software Requirements.
+keywords: [openGauss, Setting up the Compilation Environment, compilation, Hardware Requirements, Software Requirements]
+---
+
 # Setting up the Compilation Environment<a name="EN-US_TOPIC_0241496985"></a>
 
 ## Hardware Requirements<a name="section63971240179"></a>

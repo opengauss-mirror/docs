@@ -1,3 +1,8 @@
+---
+description: This document describes oracle_fdw Foreign Data Wrapper for Oracle in openGauss, covering topics such as Compiling oracle_fdw, Using oracle_fdw.
+keywords: [openGauss, oracle_fdw Foreign Data Wrapper for Oracle, database administration, Compiling oracle_fdw, Using oracle_fdw]
+---
+
 # oracle_fdw Foreign Data Wrapper for Oracle
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:44:41.584Z pushedAt=2026-09-11T09:27:08.707Z -->

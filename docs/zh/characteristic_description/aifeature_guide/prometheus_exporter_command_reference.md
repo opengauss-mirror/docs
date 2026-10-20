@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 命令参考 的相关内容与操作方法。
+keywords: [openGauss, 命令参考, 特性描述]
+---
+
 # 命令参考<a name="ZH-CN_TOPIC_0000002259861198"></a>
 
 reprocessing-exporter的使用帮助详情：

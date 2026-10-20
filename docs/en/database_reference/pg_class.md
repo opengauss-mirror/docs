@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_CLASS in openGauss.
+keywords: [openGauss, PG\_CLASS, database reference]
+---
+
 # PG\_CLASS<a name="EN-US_TOPIC_0289899838"></a>
 
 **PG\_CLASS**  records database objects and their relationship.

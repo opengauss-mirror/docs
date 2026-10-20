@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 为MOT创建索引 的相关内容与操作方法。
+keywords: [openGauss, 为MOT创建索引, 数据库管理]
+---
+
 # 为MOT创建索引
 
 支持标准的openGauss创建和删除索引语句。

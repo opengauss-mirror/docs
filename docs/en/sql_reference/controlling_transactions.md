@@ -1,3 +1,8 @@
+---
+description: This document describes Controlling Transactions in openGauss, covering topics such as Starting a Transaction, Setting a Transaction.
+keywords: [openGauss, Controlling Transactions, SQL, Starting a Transaction, Setting a Transaction]
+---
+
 # Controlling Transactions<a name="EN-US_TOPIC_0289899986"></a>
 
 A transaction is a user-defined sequence of database operations, which form an integral unit of work.

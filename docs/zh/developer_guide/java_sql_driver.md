@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss java.sql.Driver 的相关内容与操作方法。
+keywords: [openGauss, java.sql.Driver, 开发指南]
+---
+
 # java.sql.Driver
 
 java.sql.Driver是数据库驱动接口。

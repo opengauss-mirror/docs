@@ -1,3 +1,8 @@
+---
+description: This document describes MOVE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, MOVE, SQL, Function, Precautions]
+---
+
 # MOVE<a name="EN-US_TOPIC_0289900005"></a>
 
 ## Function<a name="en-us_topic_0283137573_en-us_topic_0237122169_en-us_topic_0059778649_s0bf0a06c81754f8b9c758ba7660a6d5f"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Adaptive Compression in openGauss, covering topics such as Availability, Feature Description.
+keywords: [openGauss, Adaptive Compression, database administration, Availability, Feature Description]
+---
+
 # Adaptive Compression
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:41:56.478Z pushedAt=2026-07-29T07:23:24.313Z -->

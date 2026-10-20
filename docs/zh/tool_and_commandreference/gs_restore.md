@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs\_restore 的相关内容，涵盖 背景信息、命令格式 等内容。
+keywords: [openGauss, gs\_restore, 工具与命令参考, 背景信息, 命令格式]
+---
+
 # gs\_restore
 
 ## 背景信息<a name="zh-cn_topic_0237152343_zh-cn_topic_0059777561_section182531928123515"></a>

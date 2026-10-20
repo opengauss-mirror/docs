@@ -1,3 +1,8 @@
+---
+description: This document describes DML Syntax Overview in openGauss, covering topics such as Inserting Data, Updating Data.
+keywords: [openGauss, DML Syntax Overview, SQL, Inserting Data, Updating Data]
+---
+
 # DML Syntax Overview<a name="EN-US_TOPIC_0289900948"></a>
 
 Data manipulation language \(DML\) is used to perform operations on data in database tables, such as inserting, updating, querying, or deleting data.

@@ -1,3 +1,8 @@
+---
+description: This document describes Planning a Storage Model in openGauss, covering topics such as Row-Store Tables, Column-Store Tables.
+keywords: [openGauss, Planning a Storage Model, development, Row-Store Tables, Column-Store Tables]
+---
+
 # Planning a Storage Model<a name="EN-US_TOPIC_0242370182"></a>
 
 openGauss supports hybrid row storage and column storage. Each storage model applies to specific scenarios. Select an appropriate model when creating a table. Generally, openGauss is used for transactional processing databases. By default, row storage is used. Column storage is used only when complex queries in large data volume are performed.
@@ -6,7 +11,7 @@ Row-store stores tables to disk partitions by row, and column-store stores table
 
 **Figure  1**  Differences between row storage and column storage<a name="en-us_topic_0237120296_fig1417354233018"></a>  
 
-![](figures/en-us_image_0242381725.png)
+![Planning a Storage Model diagram](figures/en-us_image_0242381725.png)
 
 In the preceding figure, the upper left part is a row-store table, and the upper right part shows how the row-store table is stored on a disk; the lower left part is a column-store table, and the lower right part shows how the column-store table is stored on a disk.
 

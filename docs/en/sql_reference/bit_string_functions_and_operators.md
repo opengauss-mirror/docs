@@ -1,3 +1,8 @@
+---
+description: This document describes Bit String Functions and Operators in openGauss, covering topics such as Bit String Operators.
+keywords: [openGauss, Bit String Functions and Operators, SQL, Bit String Operators]
+---
+
 # Bit String Functions and Operators<a name="EN-US_TOPIC_0289900942"></a>
 
 ## Bit String Operators<a name="en-us_topic_0283137721_en-us_topic_0237121969_en-us_topic_0059777668_sc2026528bca44ca29cf0ee99329f0598"></a>

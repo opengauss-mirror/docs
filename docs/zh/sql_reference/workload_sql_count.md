@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss WORKLOAD\_SQL\_COUNT 的相关内容与操作方法。
+keywords: [openGauss, WORKLOAD\_SQL\_COUNT, SQL参考]
+---
+
 # WORKLOAD\_SQL\_COUNT
 
 显示当前节点workload上的SQL数量分布。普通用户只可以看到自己在workload上的SQL分布；初始用户可以看到总的workload的负载情况。

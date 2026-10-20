@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 记录日志的位置 的相关内容，涵盖 log\_destination、logging\_collector 等内容。
+keywords: [openGauss, 记录日志的位置, 数据库参考, log\_destination, logging\_collector]
+---
+
 # 记录日志的位置
 
 ## log\_destination<a name="zh-cn_topic_0283136719_zh-cn_topic_0237124721_zh-cn_topic_0059778787_sb6c9884f69bd4765a60f80810c94f194"></a>

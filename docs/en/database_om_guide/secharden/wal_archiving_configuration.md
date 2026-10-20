@@ -1,3 +1,8 @@
+---
+description: This document describes WAL Archiving Configuration in openGauss, covering topics such as Ensure the WAL Information Logging Level Is Correctly Configured, Ensure the Archiving Mode Is Enabled.
+keywords: [openGauss, WAL Archiving Configuration, database O&M, Ensure the WAL Information Logging Level Is Correctly Configured, Ensure the Archiving Mode Is Enabled]
+---
+
 # WAL Archiving Configuration
 
 ## Ensure the WAL Information Logging Level Is Correctly Configured

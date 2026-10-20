@@ -1,3 +1,8 @@
+---
+description: This document describes Installation Without Root User Dependency in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, Installation Without Root User Dependency, features, Availability, Feature Overview]
+---
+
 # Installation Without Root User Dependency
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:05:48.304Z pushedAt=2026-09-22T11:12:32.609Z -->

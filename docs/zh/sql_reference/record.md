@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss record 的相关内容，涵盖 record类型的变量、语法 等内容。
+keywords: [openGauss, record, SQL参考, record类型的变量, 语法]
+---
+
 # record
 
 ## record类型的变量<a name="zh-cn_topic_0237122215_section16992418680"></a>
@@ -11,7 +16,7 @@
 record类型的语法参见[图1](#zh-cn_topic_0237122215_fig092918316312)。
 
 **图 1**  record类型的语法<a name="zh-cn_topic_0237122215_fig092918316312"></a>  
-![](figures/syntax-record-type.png)
+![record类型的语法](figures/syntax-record-type.png)
 
 对以上语法格式的解释如下：
 

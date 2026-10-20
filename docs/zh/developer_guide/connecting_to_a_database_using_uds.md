@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 连接数据库（UDS方式） 的相关内容与操作方法。
+keywords: [openGauss, 连接数据库（UDS方式）, 开发指南]
+---
+
 # 连接数据库（UDS方式）
 
 Unix domain socket用于同一主机上不同进程间的数据交换，通过添加junixsocket获取套接字工厂使用。

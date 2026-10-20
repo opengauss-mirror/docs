@@ -1,3 +1,8 @@
+---
+description: This document describes oGRecorder (Data Vault) in openGauss, covering topics such as Related Documents.
+keywords: [openGauss, oGRecorder (Data Vault), tools and commands, Related Documents]
+---
+
 # oGRecorder (Data Vault)
 
 GR (oGRecorder) is a database log protection software. Its typical deployment scenario runs inside virtCCA, where it connects southbound to Dorado WORM storage and interfaces northbound with the database through the oGRecorder SDK. This enables real-time synchronization of database WAL logs, forming an integrated hardware-software solution for log security protection of user database systems.

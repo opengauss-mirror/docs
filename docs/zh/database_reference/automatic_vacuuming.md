@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 自动清理 的相关内容，涵盖 autovacuum、autovacuum\_mode 等内容。
+keywords: [openGauss, 自动清理, 数据库参考, autovacuum, autovacuum\_mode]
+---
+
 # 自动清理
 
 系统自动清理线程（autovacuum）自动执行VACUUM和ANALYZE命令，回收被标识为删除状态的记录空间，并更新表的统计数据。

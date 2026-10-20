@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Peewee 连接示例 的相关内容，涵盖 准备工作、安装 Python 依赖 等内容。
+keywords: [openGauss, Peewee 连接示例, MySQL兼容, 准备工作, 安装 Python 依赖]
+---
+
 # Peewee 连接示例
 
 openGauss 完成 MySQL 协议兼容配置后，可以使用 Python ORM 框架 Peewee 配合 PyMySQL 驱动连接 openGauss B 兼容模式数据库。

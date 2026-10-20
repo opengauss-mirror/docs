@@ -1,3 +1,8 @@
+---
+description: This document describes STATEMENT\_COMPLEX\_RUNTIME in openGauss.
+keywords: [openGauss, STATEMENT\_COMPLEX\_RUNTIME, SQL]
+---
+
 # STATEMENT\_COMPLEX\_RUNTIME<a name="EN-US_TOPIC_0245374768"></a>
 
 **STATEMENT\_COMPLEX\_RUNTIME**  displays load management information about jobs being executed by the current user on the primary database node.

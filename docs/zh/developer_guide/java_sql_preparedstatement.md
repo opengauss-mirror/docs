@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss java.sql.PreparedStatement 的相关内容与操作方法。
+keywords: [openGauss, java.sql.PreparedStatement, 开发指南]
+---
+
 # java.sql.PreparedStatement
 
 java.sql.PreparedStatement是预处理语句接口。

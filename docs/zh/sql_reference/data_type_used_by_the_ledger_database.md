@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 账本数据库使用的数据类型 的相关内容与操作方法。
+keywords: [openGauss, 账本数据库使用的数据类型, SQL参考]
+---
+
 # 账本数据库使用的数据类型
 
 账本数据库使用HASH16数据类型来存储行级hash摘要或表级hash摘要，使用HASH32数据类型来存储全局hash摘要或者历史表校验hash。

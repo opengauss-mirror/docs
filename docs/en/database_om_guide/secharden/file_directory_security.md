@@ -1,3 +1,8 @@
+---
+description: This document describes File and Directory Security in openGauss, covering topics such as Ensure Database Installation Directory Permission Minimization, Ensure Shared Directory Permission Minimization.
+keywords: [openGauss, File and Directory Security, database O&M, Ensure Database Installation Directory Permission Minimization, Ensure Shared Directory Permission Minimization]
+---
+
 # File and Directory Security
 
 ## Ensure Database Installation Directory Permission Minimization

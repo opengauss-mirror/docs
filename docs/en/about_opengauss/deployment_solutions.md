@@ -1,3 +1,8 @@
+---
+description: This document describes Deployment Solutions in openGauss, covering topics such as Common Concepts, Deployment Modes.
+keywords: [openGauss, Deployment Solutions, product overview, Common Concepts, Deployment Modes]
+---
+
 # Deployment Solutions<a name="EN-US_TOPIC_0251307662"></a>
 
 The openGauss can be deployed in standalone mode or with one primary node and multiple standby nodes.
@@ -133,14 +138,14 @@ The overall deployment solution can be classified into three types: standalone d
 
     **Figure  1**  Standalone deployment<a name="en-us_topic_0243295241_en-us_topic_0243253012_fig1128133574111"></a>  
     
-    ![](figures/en-us_image_0270750231.png)
+    ![Introduction to Deployment Solutions diagram](figures/en-us_image_0270750231.png)
 
 - Primary/Standby Deployment
 
     The primary/standby deployment mode is equivalent to two data copies. The primary and standby nodes each have a data copy. The standby node receives and plays back logs.
 
     **Figure  2**  Primary/Standby deployment<a name="en-us_topic_0243295242_en-us_topic_0243253013_fig1843505845112"></a>  
-    ![](figures/primary-standby-deployment.png "primary-standby-deployment")
+    ![Primary/Standby deployment](figures/primary-standby-deployment.png "primary-standby-deployment")
 
 - Deployment with One Primary and Multiple Standbys
 
@@ -154,7 +159,7 @@ The overall deployment solution can be classified into three types: standalone d
     - The primary and standby instances cannot be deployed on the same physical machine.
 
     **Figure  3**  One-primary and multiple-standby deployment<a name="fig5294135131017"></a>  
-    ![](figures/one-primary-and-multiple-standby-deployment.png "one-primary-and-multiple-standby-deployment")
+    ![One-primary and multiple-standby deployment](figures/one-primary-and-multiple-standby-deployment.png "one-primary-and-multiple-standby-deployment")
 
 - Shared Storage Deployment
 
@@ -162,4 +167,4 @@ The overall deployment solution can be classified into three types: standalone d
 
   Figure 4 Shared storage deployment
 
-  ![](figures/en-us_image_0000001324164196.png)
+  ![Introduction to Deployment Solutions diagram](figures/en-us_image_0000001324164196.png)

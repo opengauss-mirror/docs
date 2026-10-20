@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER LANGUAGE in openGauss, covering topics such as Function, Syntax.
+keywords: [openGauss, ALTER LANGUAGE, SQL, Function, Syntax]
+---
+
 # ALTER LANGUAGE<a name="EN-US_TOPIC_0000001080736216"></a>
 
 ## Function<a name="section113331284191"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 管理员 的相关内容，涵盖 初始用户、系统管理员 等内容。
+keywords: [openGauss, 管理员, 数据库管理, 初始用户, 系统管理员]
+---
+
 # 管理员
 
 ## 初始用户<a name="zh-cn_topic_0283136784_zh-cn_topic_0237121100_section41994915210"></a>

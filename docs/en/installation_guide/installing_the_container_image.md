@@ -1,3 +1,8 @@
+---
+description: This document describes Installation via Container Image in openGauss, covering topics such as 1. Obtaining the Image, 2. Running the Container.
+keywords: [openGauss, Installation via Container Image, installation, 1. Obtaining the Image, 2. Running the Container]
+---
+
 # Installation via Container Image
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-10T08:50:37.594Z pushedAt=2026-07-14T07:15:07.659Z -->

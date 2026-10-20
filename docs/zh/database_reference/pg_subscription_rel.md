@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_SUBSCRIPTION\_REL 的相关内容与操作方法。
+keywords: [openGauss, PG\_SUBSCRIPTION\_REL, 数据库参考]
+---
+
 # PG\_SUBSCRIPTION\_REL
 
 系统表PG\_SUBSCRIPTION\_REL包含每个订阅中每个被复制表的状态，是多对多的映射关系。

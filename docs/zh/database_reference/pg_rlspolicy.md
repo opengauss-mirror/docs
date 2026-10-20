@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_RLSPOLICY 的相关内容与操作方法。
+keywords: [openGauss, PG\_RLSPOLICY, 数据库参考]
+---
+
 # PG\_RLSPOLICY
 
 PG\_RLSPOLICY系统表存储行级访问控制策略。

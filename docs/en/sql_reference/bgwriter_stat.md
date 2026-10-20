@@ -1,3 +1,8 @@
+---
+description: This document describes BGWRITER\_STAT in openGauss.
+keywords: [openGauss, BGWRITER\_STAT, SQL]
+---
+
 # BGWRITER\_STAT<a name="EN-US_TOPIC_0245374816"></a>
 
 **BGWRITER\_STAT**  displays statistics about the background writer process's activities.

@@ -1,3 +1,8 @@
+---
+description: This document describes gs_checkps in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, gs_checkps, tools and commands, Background, Prerequisites]
+---
+
 # gs_checkps
 
 ## Background

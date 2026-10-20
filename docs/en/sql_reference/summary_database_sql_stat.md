@@ -1,3 +1,8 @@
+---
+description: This document describes SUMMARY\_DATABASE\_SQL\_STAT in openGauss.
+keywords: [openGauss, SUMMARY\_DATABASE\_SQL\_STAT, SQL]
+---
+
 # SUMMARY\_DATABASE\_SQL\_STAT
 
 Provides per-database SQL execution statistics from all healthy nodes in openGauss (see [DATABASE\_SQL\_STAT](database_sql_stat.md) for column meanings). Aggregated by `dbe_perf.get_summary_database_sql_stat()` from each node's `database_sql_stat`, and used as the source of the WDR snapshot table `snap_summary_database_sql_stat`.

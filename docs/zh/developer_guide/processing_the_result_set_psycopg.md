@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 处理结果集 的相关内容与操作方法。
+keywords: [openGauss, 处理结果集, 开发指南]
+---
+
 # 处理结果集
 
 1. cursor.fetchone\(\)：这种方法提取查询结果集的下一行，返回一个序列，没有数据可用时则返回空。

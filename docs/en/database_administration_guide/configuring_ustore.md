@@ -1,3 +1,8 @@
+---
+description: This document describes Configuring Ustore in openGauss, covering topics such as Usage Guide.
+keywords: [openGauss, Configuring Ustore, database administration, Usage Guide]
+---
+
 # Configuring Ustore
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:42:42.085Z pushedAt=2026-07-29T09:46:30.201Z -->

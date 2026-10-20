@@ -1,3 +1,8 @@
+---
+description: This document describes KEYWORDS in openGauss.
+keywords: [openGauss, KEYWORDS, SQL]
+---
+
 # KEYWORDS <a name="ZH-CN_TOPIC_0310260671"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:22:40.942Z -->

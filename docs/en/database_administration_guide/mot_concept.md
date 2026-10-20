@@ -1,3 +1,8 @@
+---
+description: This document describes Concepts of MOT in openGauss.
+keywords: [openGauss, Concepts of MOT, database administration]
+---
+
 # Concepts of MOT<a name="EN-US_TOPIC_0270171512"></a>
 
 This chapter describes how openGauss MOT is designed and how it works. It also sheds light on its advanced features and capabilities and how to use them. This chapter serves to educate the reader about various technical details of how MOT operates, details of important MOT features and innovative differentiators. The content of this chapter may be useful for decision-making regarding MOT's suitability to specific application requirements and for using and managing it most efficiently.

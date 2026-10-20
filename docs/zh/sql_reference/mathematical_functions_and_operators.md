@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 数字操作函数和操作符 的相关内容，涵盖 数字操作符、数字操作函数 等内容。
+keywords: [openGauss, 数字操作函数和操作符, SQL参考, 数字操作符, 数字操作函数]
+---
+
 # 数字操作函数和操作符
 
 ## 数字操作符<a name="zh-cn_topic_0283136987_zh-cn_topic_0237121971_zh-cn_topic_0059777932_s00454841bcf24ad18eed980c0e3a2f75"></a>

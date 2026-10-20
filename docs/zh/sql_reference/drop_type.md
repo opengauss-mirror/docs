@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP TYPE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP TYPE, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP TYPE
 
 ## 功能描述<a name="zh-cn_topic_0283137107_zh-cn_topic_0237122157_zh-cn_topic_0059778403_sd8f7b55734434619b381d7be49aed2df"></a>

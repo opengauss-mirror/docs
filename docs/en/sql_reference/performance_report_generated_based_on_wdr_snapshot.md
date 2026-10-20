@@ -1,3 +1,8 @@
+---
+description: This document describes Performance Report Generated Based on WDR Snapshots in openGauss, covering topics such as Prerequisites, Procedure.
+keywords: [openGauss, Performance Report Generated Based on WDR Snapshots, SQL, Prerequisites, Procedure]
+---
+
 # Performance Report Generated Based on WDR Snapshots<a name="EN-US_TOPIC_0289900439"></a>
 
 Performance reports are generated based on the summary and statistics of WDR snapshot data tables. By default, the initial user or monitoring administrator can generate reports.

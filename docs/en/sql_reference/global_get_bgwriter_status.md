@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_GET\_BGWRITER\_STATUS in openGauss.
+keywords: [openGauss, GLOBAL\_GET\_BGWRITER\_STATUS, SQL]
+---
+
 # GLOBAL\_GET\_BGWRITER\_STATUS<a name="EN-US_TOPIC_0281105078"></a>
 
 **GLOBAL\_GET\_BGWRITER\_STATUS**  displays the information about pages flushed by the bgwriter threads of all instances in the cluster, number of pages in the candidate buffer chain, and buffer eviction information.

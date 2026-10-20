@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE MATERIALIZED VIEW LOG 的相关内容，涵盖 注意事项、语法格式 等内容。
+keywords: [openGauss, CREATE MATERIALIZED VIEW LOG, SQL参考, 注意事项, 语法格式]
+---
+
 # CREATE MATERIALIZED VIEW LOG
 
 CREATE MATERIALIZED VIEW LOG会创建一个物化视图日志，物化视图日志和表是一一对应的关系。

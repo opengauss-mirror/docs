@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER TEXT SEARCH DICTIONARY in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER TEXT SEARCH DICTIONARY, SQL, Function, Precautions]
+---
+
 # ALTER TEXT SEARCH DICTIONARY<a name="EN-US_TOPIC_0289900782"></a>
 
 ## Function<a name="en-us_topic_0283136970_en-us_topic_0237122080_en-us_topic_0059777936_sb9efc89be09141c3b113326dd8c2b35d"></a>

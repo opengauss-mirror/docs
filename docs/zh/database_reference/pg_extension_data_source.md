@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_Extension_DATA\_SOURCE 的相关内容与操作方法。
+keywords: [openGauss, PG\_Extension_DATA\_SOURCE, 数据库参考]
+---
+
 # PG\_Extension_DATA\_SOURCE
 
 PG\_Extension_DATA\_SOURCE系统表存储外部数据源对象的信息。一个外部数据源对象（Data Source）包含了外部数据库的一些口令编码等信息，主要配合Extension Connector使用。

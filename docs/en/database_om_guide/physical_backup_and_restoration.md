@@ -1,3 +1,8 @@
+---
+description: This document describes Physical Backup and Restoration in openGauss, covering topics such as gs\_basebackup, PITR Recovery.
+keywords: [openGauss, Physical Backup and Restoration, database O&M, gs\_basebackup, PITR Recovery]
+---
+
 # Physical Backup and Restoration
 
 ## gs\_basebackup

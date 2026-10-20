@@ -1,3 +1,8 @@
+---
+description: This document describes High Availability Based on the Paxos Protocol in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, High Availability Based on the Paxos Protocol, features, Availability, Introduction]
+---
+
 # High Availability Based on the Paxos Protocol<a name="EN-US_TOPIC_0000001241071899"></a>
 
 ## Availability<a name="section57017810"></a>

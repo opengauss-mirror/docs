@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_STAT\_SESSION\_CU in openGauss.
+keywords: [openGauss, GLOBAL\_STAT\_SESSION\_CU, SQL]
+---
+
 # GLOBAL\_STAT\_SESSION\_CU<a name="EN-US_TOPIC_0245374801"></a>
 
 **GLOBAL\_STAT\_SESSION\_CU**  is used to query the CU hit rate of running sessions on each node in openGauss. The data about a session is cleared when you exit this session or restart openGauss. 

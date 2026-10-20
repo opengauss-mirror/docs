@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 内存 的相关内容，涵盖 memorypool\_enable、memorypool\_size 等内容。
+keywords: [openGauss, 内存, 数据库参考, memorypool\_enable, memorypool\_size]
+---
+
 # 内存
 
 介绍与内存相关的参数设置。

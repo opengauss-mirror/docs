@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 统一审计机制 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 统一审计机制, 特性描述, 可获得性, 特性简介]
+---
+
 # 统一审计机制
 
 ## 可获得性<a name="section17746747"></a>

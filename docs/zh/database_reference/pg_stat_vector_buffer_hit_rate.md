@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG_STAT_VECTOR_BUFFER_HIT_RATE 的相关内容与操作方法。
+keywords: [openGauss, PG_STAT_VECTOR_BUFFER_HIT_RATE, 数据库参考]
+---
+
 # PG_STAT_VECTOR_BUFFER_HIT_RATE
 
 `PG_STAT_VECTOR_BUFFER_HIT_RATE` 显示当前数据库实例向量专用缓存的累计查找和命中统计，返回一行。普通用户可以查询。

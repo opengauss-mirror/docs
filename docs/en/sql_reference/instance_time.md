@@ -1,3 +1,8 @@
+---
+description: This document describes INSTANCE\_TIME in openGauss.
+keywords: [openGauss, INSTANCE\_TIME, SQL]
+---
+
 # INSTANCE\_TIME<a name="EN-US_TOPIC_0245374661"></a>
 
 **INSTANCE\_TIME**  records time consumption information on the current cluster node. The time consumption information is classified into the following types:

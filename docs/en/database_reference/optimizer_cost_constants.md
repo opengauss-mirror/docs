@@ -1,3 +1,8 @@
+---
+description: This document describes Optimizer Cost Constants in openGauss, covering topics such as seq\_page\_cost, random\_page\_cost.
+keywords: [openGauss, Optimizer Cost Constants, database reference, seq\_page\_cost, random\_page\_cost]
+---
+
 # Optimizer Cost Constants
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:46:16.047Z -->

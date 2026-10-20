@@ -1,3 +1,8 @@
+---
+description: This document describes LLVM in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, LLVM, features, Availability, Introduction]
+---
+
 # LLVM<a name="EN-US_TOPIC_0000001088566336"></a>
 
 ## Availability<a name="section3480125215575"></a>

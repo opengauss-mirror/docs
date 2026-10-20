@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_TRANSACTIONS\_RUNNING\_XACTS in openGauss.
+keywords: [openGauss, GLOBAL\_TRANSACTIONS\_RUNNING\_XACTS, SQL]
+---
+
 # GLOBAL\_TRANSACTIONS\_RUNNING\_XACTS<a name="EN-US_TOPIC_0000001199229431"></a>
 
 **GLOBAL\_TRANSACTIONS\_RUNNING\_XACTS**  displays information about the running transactions on each node in the cluster.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 用SSH隧道进行安全的TCP/IP连接 的相关内容，涵盖 背景信息、前提条件 等内容。
+keywords: [openGauss, 用SSH隧道进行安全的TCP/IP连接, 数据库管理, 背景信息, 前提条件]
+---
+
 # 用SSH隧道进行安全的TCP/IP连接
 
 ## 背景信息<a name="zh-cn_topic_0237121093_zh-cn_topic_0059778333_section59301241111412"></a>

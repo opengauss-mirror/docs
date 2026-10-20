@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 触发器函数 的相关内容与操作方法。
+keywords: [openGauss, 触发器函数, SQL参考]
+---
+
 # 触发器函数
 
 - pg\_get\_triggerdef\(oid\)

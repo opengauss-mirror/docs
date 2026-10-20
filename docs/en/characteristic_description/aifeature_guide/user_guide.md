@@ -1,3 +1,8 @@
+---
+description: This document describes User Guide in openGauss, covering topics such as DBMind Supported Scenario Specifications.
+keywords: [openGauss, User Guide, features, DBMind Supported Scenario Specifications]
+---
+
 # User Guide<a name="ZH-CN_TOPIC_0000002293420717"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T02:18:24.548Z -->

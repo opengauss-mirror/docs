@@ -1,3 +1,8 @@
+---
+description: This document describes oGRecorder Deployment and Operations Guide in openGauss, covering topics such as Table of Contents, Overview.
+keywords: [openGauss, oGRecorder Deployment and Operations Guide, tools and commands, Table of Contents, Overview]
+---
+
 # oGRecorder Deployment and Operations Guide
 
 ## Table of Contents

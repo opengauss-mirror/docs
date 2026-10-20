@@ -1,3 +1,8 @@
+---
+description: This document describes BFILE Type in openGauss.
+keywords: [openGauss, BFILE Type, SQL]
+---
+
 # BFILE Type
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:18:24.949Z -->

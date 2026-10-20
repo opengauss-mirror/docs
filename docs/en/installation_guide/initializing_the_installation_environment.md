@@ -1,3 +1,8 @@
+---
+description: This document describes Initializing the Installation Environment in openGauss, covering topics such as Creating the Required User Account and Configuring the Installation Environment, Establishing Mutual Trust Manually.
+keywords: [openGauss, Initializing the Installation Environment, installation, Creating the Required User Account and Configuring the Installation Environment, Establishing Mutual Trust Manually]
+---
+
 # Initializing the Installation Environment<a name="EN-US_TOPIC_0283136473"></a>
 
 - [Creating the Required User Account and Configuring the Installation Environment](#creating-the-required-user-account-and-configuring-the-installation-environment) 

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 语法 的相关内容，涵盖 SQL语句 等内容。
+keywords: [openGauss, 语法, SQL参考, SQL语句]
+---
+
 # 语法
 
 默认情况下，数据库安装成功，登录后，可以使用\\help语句查看所有openGauss的SQL语法。

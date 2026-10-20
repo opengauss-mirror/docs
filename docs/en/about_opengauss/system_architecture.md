@@ -1,3 +1,8 @@
+---
+description: This document describes System Architecture in openGauss, covering topics such as Software Architecture.
+keywords: [openGauss, System Architecture, product overview, Software Architecture]
+---
+
 # System Architecture<a name="EN-US_TOPIC_0289896518"></a>
 
 Digital technologies are accelerating the implementation of industry applications and support abundant online applications and services. Industry digitalization accelerates the generation of massive data. Multiple data types, such as graphs, flows, time sequences, and map spaces, are emerging one after another, requiring different computing architectures for processing. The computing requirements of databases evolve from general-purpose CPUs to diversified computing such as GPUs and NPUs. In addition, to effectively meet the ultimate requirements of large-scale databases for reliability, performance, and usability, databases in the industry gradually adopt a unified and standard resource pooling architecture.

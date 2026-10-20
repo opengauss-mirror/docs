@@ -1,3 +1,8 @@
+---
+description: This document describes Configuring TDE in openGauss, covering topics such as Overview, Prerequisites.
+keywords: [openGauss, Configuring TDE, database administration, Overview, Prerequisites]
+---
+
 # Configuring TDE<a name="EN-US_TOPIC_0000001104244594"></a>
 
 ## Overview<a name="section1326254143019"></a>

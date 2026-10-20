@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_TRANSACTIONS\_PREPARED\_XACTS 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_TRANSACTIONS\_PREPARED\_XACTS, SQL参考]
+---
+
 # GLOBAL\_TRANSACTIONS\_PREPARED\_XACTS
 
 显示各节点当前准备好进行两阶段提交的事务的信息。

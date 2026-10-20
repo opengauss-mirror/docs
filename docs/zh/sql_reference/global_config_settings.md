@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_CONFIG\_SETTINGS 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_CONFIG\_SETTINGS, SQL参考]
+---
+
 # GLOBAL\_CONFIG\_SETTINGS
 
 GLOBAL\_CONFIG\_SETTINGS显示各节点数据库运行时参数的相关信息。

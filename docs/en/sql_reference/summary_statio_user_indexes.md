@@ -1,3 +1,8 @@
+---
+description: This document describes SUMMARY\_STATIO\_USER\_INDEXES in openGauss.
+keywords: [openGauss, SUMMARY\_STATIO\_USER\_INDEXES, SQL]
+---
+
 # SUMMARY\_STATIO\_USER\_INDEXES<a name="EN-US_TOPIC_0245374777"></a>
 
 **SUMMARY\_STATIO\_USER\_INDEXES**  displays I/O status information about all user relationship table indexes in namespaces in openGauss. 

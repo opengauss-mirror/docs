@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_COLUMN\_KEYS\_ARGS in openGauss.
+keywords: [openGauss, GS\_COLUMN\_KEYS\_ARGS, database reference]
+---
+
 # GS\_COLUMN\_KEYS\_ARGS<a name="EN-US_TOPIC_0294528095"></a>
 
 **GS\_COLUMN\_KEYS\_ARGS**records the metadata about the CMK in the encrypted equality feature. Each record corresponds to a key-value pair of the CMK.

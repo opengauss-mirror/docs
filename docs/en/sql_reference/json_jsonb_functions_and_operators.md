@@ -1,3 +1,8 @@
+---
+description: This document describes JSON/JSONB Functions and Operators in openGauss, covering topics such as Functions Supported by JSON/JSONB.
+keywords: [openGauss, JSON/JSONB Functions and Operators, SQL, Functions Supported by JSON/JSONB]
+---
+
 # JSON/JSONB Functions and Operators<a name="EN-US_TOPIC_0289900983"></a>
 
 For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_types.md).

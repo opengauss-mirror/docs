@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_TIMEZONE\_NAMES 的相关内容与操作方法。
+keywords: [openGauss, PG\_TIMEZONE\_NAMES, 数据库参考]
+---
+
 # PG\_TIMEZONE\_NAMES
 
 PG\_TIMEZONE\_NAMES视图提供了显示了所有能够被SET TIMEZONE识别的时区名及其缩写、UTC偏移量、是否夏时制。

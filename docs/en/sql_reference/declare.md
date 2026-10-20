@@ -1,3 +1,8 @@
+---
+description: This document describes DECLARE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DECLARE, SQL, Function, Precautions]
+---
+
 # DECLARE<a name="EN-US_TOPIC_0289900564"></a>
 
 ## Function<a name="en-us_topic_0283137571_en-us_topic_0237122130_en-us_topic_0059777616_sf3fcf0507ea74a0ba4c4b4cbf0a0a8ba"></a>

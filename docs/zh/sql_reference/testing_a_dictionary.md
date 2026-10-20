@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 词典测试 的相关内容与操作方法。
+keywords: [openGauss, 词典测试, SQL参考]
+---
+
 # 词典测试
 
 函数ts\_lexize用于进行词典测试。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_CKPT\_STATUS 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_CKPT\_STATUS, SQL参考]
+---
+
 # GLOBAL\_CKPT\_STATUS
 
 GLOBAL\_CKPT\_STATUS视图用于显示openGauss所有实例的检查点信息和各类日志刷页情况。

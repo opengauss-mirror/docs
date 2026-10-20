@@ -1,3 +1,8 @@
+---
+description: This document describes ANYDATA Type in openGauss, covering topics such as Description, ANYTYPE.
+keywords: [openGauss, ANYDATA Type, SQL, Description, ANYTYPE]
+---
+
 # ANYDATA Type
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:19:48.549Z -->

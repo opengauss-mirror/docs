@@ -1,3 +1,8 @@
+---
+description: This document describes Huge Page Memory in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, Huge Page Memory, features, Availability, Feature Overview]
+---
+
 # Huge Page Memory
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:18:47.629Z pushedAt=2026-09-22T11:12:32.666Z -->

@@ -1,3 +1,8 @@
+---
+description: This document describes Top 10 Events by Total Wait Time in openGauss.
+keywords: [openGauss, Top 10 Events by Total Wait Time, SQL]
+---
+
 # Top 10 Events by Total Wait Time<a name="EN-US_TOPIC_0000001260075115"></a>
 
 The following table lists columns in the Top 10 Events by Total Wait Time report.

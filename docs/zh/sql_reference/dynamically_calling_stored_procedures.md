@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 动态调用存储过程 的相关内容，涵盖 语法 等内容。
+keywords: [openGauss, 动态调用存储过程, SQL参考, 语法]
+---
+
 # 动态调用存储过程
 
 动态调用存储过程必须使用匿名的语句块将存储过程或语句块包在里面，使用EXECUTE IMMEDIATE…USING语句后面带IN、OUT来输入、输出参数。
@@ -7,12 +12,12 @@
 语法请参见[图1](#zh-cn_topic_0237122227_zh-cn_topic_0059778625_f7bf3ce30f4aa42d38394f459c525f33b)。
 
 **图 1**  call\_procedure::=<a name="zh-cn_topic_0237122227_zh-cn_topic_0059778625_f7bf3ce30f4aa42d38394f459c525f33b"></a>  
-![](figures/call_procedure.png)
+![call procedure语法图](figures/call_procedure.png)
 
 using\_clause子句的语法参见[图2](#zh-cn_topic_0237122227_zh-cn_topic_0059778625_fd82a97bfa5774a32bd19b36b80dd5248)。
 
 **图 2**  using\_clause::=<a name="zh-cn_topic_0237122227_zh-cn_topic_0059778625_fd82a97bfa5774a32bd19b36b80dd5248"></a>  
-![](figures/using_clause-1.png)
+![using clause语法图](figures/using_clause-1.png)
 
 对以上语法格式的解释如下：
 

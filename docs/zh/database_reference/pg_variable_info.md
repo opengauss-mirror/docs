@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_VARIABLE\_INFO 的相关内容与操作方法。
+keywords: [openGauss, PG\_VARIABLE\_INFO, 数据库参考]
+---
+
 # PG\_VARIABLE\_INFO
 
 PG\_VARIABLE\_INFO视图用于查询openGauss中当前节点的xid、oid的状态。

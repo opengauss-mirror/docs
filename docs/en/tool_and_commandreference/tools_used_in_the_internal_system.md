@@ -1,3 +1,8 @@
+---
+description: This document describes Tools Used in the Internal System in openGauss.
+keywords: [openGauss, Tools Used in the Internal System, tools and commands]
+---
+
 # Tools Used in the Internal System<a name="EN-US_TOPIC_0289899216"></a>
 
 This chapter describes tools used in the openGauss process or invoked among modules. These tools are used only for internal invoking and their accuracy in other scenarios has not been verified. Therefore, you are not advised to execute tasks by directly using these tools to avoid impact on the system.

@@ -1,3 +1,8 @@
+---
+description: This document describes GMS_INADDR Package in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, GMS_INADDR Package, features, Availability, Feature Overview]
+---
+
 # GMS_INADDR Package
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:14:12.493Z pushedAt=2026-09-22T11:12:32.640Z -->

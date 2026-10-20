@@ -1,3 +1,8 @@
+---
+description: This document describes Partitioned Tables in openGauss, covering topics such as Classification of Range Partitioned Tables, Syntax for Creating a VALUES LESS THAN Range Partitioned Table.
+keywords: [openGauss, Partitioned Tables, SQL, Classification of Range Partitioned Tables, Syntax for Creating a VALUES LESS THAN Range Partitioned Table]
+---
+
 # Partitioned Tables<a name="EN-US_TOPIC_0000001225536033"></a>
 
 If a table contains a large amount of data, data query and operation efficiency will be severely affected. openGauss can logically divide a table into multiple shards to avoid processing a large amount of data at a time and then improve the processing efficiency.

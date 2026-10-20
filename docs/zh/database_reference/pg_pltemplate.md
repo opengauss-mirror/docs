@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_PLTEMPLATE 的相关内容与操作方法。
+keywords: [openGauss, PG\_PLTEMPLATE, 数据库参考]
+---
+
 # PG\_PLTEMPLATE
 
 PG\_PLTEMPLATE系统表存储过程语言的“模板”信息。

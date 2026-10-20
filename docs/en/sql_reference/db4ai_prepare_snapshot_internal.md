@@ -1,3 +1,8 @@
+---
+description: This document describes DB4AI.PREPARE\_SNAPSHOT\_INTERNAL in openGauss.
+keywords: [openGauss, DB4AI.PREPARE\_SNAPSHOT\_INTERNAL, SQL]
+---
+
 # DB4AI.PREPARE\_SNAPSHOT\_INTERNAL<a name="EN-US_TOPIC_0000001195271243"></a>
 
 **PREPARE\_SNAPSHOT\_INTERNAL**  is a built-in execution function of the DB4AI.PREPARE\_SNAPSHOT function. The function involves information verification and cannot be directly invoked.

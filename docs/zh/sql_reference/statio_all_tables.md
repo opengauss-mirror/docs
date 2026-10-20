@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STATIO\_ALL\_TABLES 的相关内容与操作方法。
+keywords: [openGauss, STATIO\_ALL\_TABLES, SQL参考]
+---
+
 # STATIO\_ALL\_TABLES
 
 STATIO\_ALL\_TABLES视图将包含数据库中每个表（包括TOAST表）的一行，显示出特定表I/O的统计。

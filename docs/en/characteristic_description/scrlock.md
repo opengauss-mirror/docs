@@ -1,3 +1,8 @@
+---
+description: This document describes SCRLock in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, SCRLock, features, Availability, Introduction]
+---
+
 # SCRLock<a name="EN-US_TOPIC_0000001721808553"></a>
 
 ## Availability<a name="section14611198203513"></a>

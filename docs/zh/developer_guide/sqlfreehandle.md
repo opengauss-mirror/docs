@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SQLFreeHandle 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, SQLFreeHandle, 开发指南, 功能描述, 原型]
+---
+
 # SQLFreeHandle
 
 ## 功能描述<a name="zh-cn_topic_0238272896_zh-cn_topic_0237120426_zh-cn_topic_0059779231_s93f9114d62c04cfa917e8ebc927ec8e9"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes PQexecParamsBatch in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, PQexecParamsBatch, development, Function, Prototype]
+---
+
 # PQexecParamsBatch<a name="EN-US_TOPIC_0242380695"></a>
 
 ## Function<a name="en-us_topic_0059778058_sa9bd6e837fd4458199f7b677e876f4a9"></a>

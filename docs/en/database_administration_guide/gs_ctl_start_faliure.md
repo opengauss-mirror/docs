@@ -1,3 +1,8 @@
+---
+description: This document describes gs_ctl start Failure in openGauss, covering topics such as Symptom, Cause.
+keywords: [openGauss, gs_ctl start Failure, database administration, Symptom, Cause]
+---
+
 # gs_ctl start Failure
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:43:13.706Z pushedAt=2026-09-11T08:16:11.452Z -->

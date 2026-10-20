@@ -1,3 +1,8 @@
+---
+description: This document describes Type Conversion Functions in openGauss, covering topics such as Type Conversion Functions, Encoding Type Conversion.
+keywords: [openGauss, Type Conversion Functions, SQL, Encoding Type Conversion]
+---
+
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:37:51.964Z -->
 # Type Conversion Functions
 

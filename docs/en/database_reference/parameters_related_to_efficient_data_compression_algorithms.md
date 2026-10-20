@@ -1,3 +1,8 @@
+---
+description: This document describes Parameters Related to Efficient Data Compression Algorithms in openGauss, covering topics such as pca\_shared\_buffer.
+keywords: [openGauss, Parameters Related to Efficient Data Compression Algorithms, database reference, pca\_shared\_buffer]
+---
+
 # Parameters Related to Efficient Data Compression Algorithms<a name="EN-US_TOPIC_0000001331391822"></a>
 
 ## pca\_shared\_buffer<a name="section484914735817"></a>

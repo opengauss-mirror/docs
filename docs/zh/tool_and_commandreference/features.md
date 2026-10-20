@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 特性介绍 的相关内容，涵盖 cm\_agent、cm\_server 等内容。
+keywords: [openGauss, 特性介绍, 工具与命令参考, cm\_agent, cm\_server]
+---
+
 # 特性介绍
 
 - **[cm_agent](#cm_agent)**

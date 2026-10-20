@@ -1,3 +1,8 @@
+---
+description: This document describes Support for Custom SSH Ports in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, Support for Custom SSH Ports, features, Availability, Feature Overview]
+---
+
 # Support for Custom SSH Ports
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:33:15.258Z pushedAt=2026-09-22T11:12:32.714Z -->

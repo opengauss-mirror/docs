@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE TABLE INHERITS 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE TABLE INHERITS, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE TABLE INHERITS<a name="ZH-CN_TOPIC_0289900337"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136662_zh-cn_topic_0237122118_zh-cn_topic_0059777601_sf99d8ce0a2bf4859q21d4835e23639b1"></a>

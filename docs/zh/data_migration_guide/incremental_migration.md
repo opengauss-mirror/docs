@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 增量迁移 的相关内容，涵盖 功能介绍、原理简介 等内容。
+keywords: [openGauss, 增量迁移, 数据迁移, 功能介绍, 原理简介]
+---
+
 # 增量迁移
 
 ## 功能介绍<a name="section41999541027"></a>

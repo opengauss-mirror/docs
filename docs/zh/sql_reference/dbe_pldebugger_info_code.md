@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBE\_PLDEBUGGER.info\_code 的相关内容与操作方法。
+keywords: [openGauss, DBE\_PLDEBUGGER.info\_code, SQL参考]
+---
+
 # DBE\_PLDEBUGGER.info\_code
 
 debug端调试过程中，调用info\_code，查看指定存储过程的源语句和各行对应的行号，行号从函数体开始，函数头部分行号为空。

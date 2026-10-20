@@ -1,3 +1,8 @@
+---
+description: This document describes Error Reporting and Log Configuration in openGauss, covering topics such as Ensure That the Log Collector Is Enabled, Ensure Correct Log Name Configuration.
+keywords: [openGauss, Error Reporting and Log Configuration, database O&M, Ensure That the Log Collector Is Enabled, Ensure Correct Log Name Configuration]
+---
+
 # Error Reporting and Log Configuration
 
 ## Ensure That the Log Collector Is Enabled

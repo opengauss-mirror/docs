@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBE\_PLDEBUGGER Schema 的相关内容与操作方法。
+keywords: [openGauss, DBE\_PLDEBUGGER Schema, SQL参考]
+---
+
 # DBE\_PLDEBUGGER Schema
 
 DBE\_PLDEBUGGER下系统函数用于单机下调试存储过程，目前支持的接口及其描述如下所示。仅管理员有权限执行这些调试接口，且无权限修改和创建新函数。

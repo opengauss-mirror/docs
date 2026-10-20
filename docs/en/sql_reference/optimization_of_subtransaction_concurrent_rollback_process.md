@@ -1,3 +1,8 @@
+---
+description: This document describes Subtransaction Concurrent Rollback Optimization in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, Subtransaction Concurrent Rollback Optimization, SQL, Availability, Feature Overview]
+---
+
 # Subtransaction Concurrent Rollback Optimization
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:24:30.410Z -->

@@ -1,3 +1,8 @@
+---
+description: This document describes Product-related FAQs in openGauss.
+keywords: [openGauss, Product-related FAQs, appendix]
+---
+
 # Product-related FAQs<a name="EN-US_TOPIC_0000001150665011"></a>
 
 **1. What is the relationship between ultimate RTO, parallel recovery, and standby node readability?**

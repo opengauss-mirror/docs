@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss file\_fdw 的相关内容，涵盖 使用file\_fdw、注意事项 等内容。
+keywords: [openGauss, file\_fdw, 数据库管理, 使用file\_fdw, 注意事项]
+---
+
 # file\_fdw
 
 file\_fdw模块提供了外部数据封装器file\_fdw，可以用来在服务器的文件系统中访问数据文件。数据文件必须是COPY FROM可读的格式；具体可参照COPY语句的介绍。访问这样的数据文件当前只是可读的。当前不支持对该数据文件的写入操作。

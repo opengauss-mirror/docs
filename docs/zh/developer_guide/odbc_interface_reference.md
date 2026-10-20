@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ODBC接口参考 的相关内容与操作方法。
+keywords: [openGauss, ODBC接口参考, 开发指南]
+---
+
 # ODBC接口参考
 
 ODBC接口是一套提供给用户的API函数，本节将对部分常用接口做具体描述，若涉及其他接口可参考[msdn](https://docs.microsoft.com/zh-cn/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-ver15)中ODBC Programmer's Reference项的相关内容。

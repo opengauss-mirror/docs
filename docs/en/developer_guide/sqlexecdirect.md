@@ -1,3 +1,8 @@
+---
+description: This document describes SQLExecDirect in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, SQLExecDirect, development, Function, Prototype]
+---
+
 # SQLExecDirect<a name="EN-US_TOPIC_0242371445"></a>
 
 ## Function<a name="en-us_topic_0238272891_en-us_topic_0237120421_en-us_topic_0059778538_sa444edc74fad433d8d9beb6eec51f680"></a>

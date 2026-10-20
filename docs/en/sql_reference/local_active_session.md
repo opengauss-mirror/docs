@@ -1,3 +1,8 @@
+---
+description: This document describes LOCAL\_ACTIVE\_SESSION in openGauss.
+keywords: [openGauss, LOCAL\_ACTIVE\_SESSION, SQL]
+---
+
 # LOCAL\_ACTIVE\_SESSION<a name="EN-US_TOPIC_0000001131388624"></a>
 
 **LOCAL\_ACTIVE\_SESSION**  displays samples in the  **ACTIVE SESSION PROFILE**  memory on the current node.

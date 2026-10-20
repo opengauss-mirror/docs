@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_CKPT\_STATUS in openGauss.
+keywords: [openGauss, GLOBAL\_CKPT\_STATUS, SQL]
+---
+
 # GLOBAL\_CKPT\_STATUS<a name="EN-US_TOPIC_0245374819"></a>
 
 **GLOBAL\_CKPT\_STATUS**  displays the checkpoint information and log flushing information about all instances in openGauss. 

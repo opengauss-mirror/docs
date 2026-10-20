@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss cm_ctl stop集群失败 的相关内容，涵盖 现象、原因 等内容。
+keywords: [openGauss, cm_ctl stop集群失败, 数据库运维, 现象, 原因]
+---
+
 # cm_ctl stop集群失败
 
 ## 现象

@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_upgradectl in openGauss, covering topics such as Context, Precautions.
+keywords: [openGauss, gs\_upgradectl, tools and commands, Context, Precautions]
+---
+
 # gs\_upgradectl<a name="EN-US_TOPIC_0289899212"></a>
 
 ## Context<a name="en-us_topic_0287275999_en-us_topic_0237152425_en-us_topic_0059779035_sca8f0f932903424f8ce649c929720f23"></a>

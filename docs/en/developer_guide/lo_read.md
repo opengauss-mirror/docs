@@ -1,3 +1,8 @@
+---
+description: This document describes lo_read in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, lo_read, development, Function, Prototype]
+---
+
 # lo_read
 
 ## Function<a name="en-us_topic_0241735622_section696285173719"></a>

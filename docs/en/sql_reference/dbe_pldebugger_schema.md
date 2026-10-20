@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_PLDEBUGGER Schema in openGauss.
+keywords: [openGauss, DBE\_PLDEBUGGER Schema, SQL]
+---
+
 # DBE\_PLDEBUGGER Schema<a name="EN-US_TOPIC_0000001101338022"></a>
 
 DBE\_PLDEBUGGER system functions are used to debug stored procedures in a standalone system. This chapter describes the interfaces supported by DBE\_PLDEBUGGER. Only the administrator has the permission to execute these debugging interfaces, but does not have the permission to modify or create functions.

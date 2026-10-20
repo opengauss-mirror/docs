@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss KEYWORDS 的相关内容与操作方法。
+keywords: [openGauss, KEYWORDS, SQL参考]
+---
+
 # KEYWORDS <a name="ZH-CN_TOPIC_0310260671"></a>
 
 存储表相关的信息。

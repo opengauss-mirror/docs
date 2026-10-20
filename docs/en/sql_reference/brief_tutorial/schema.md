@@ -1,3 +1,8 @@
+---
+description: This document describes SCHEMA in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, SCHEMA, SQL, Syntax, Parameter Description]
+---
+
 # SCHEMA
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-28T11:06:15.579Z pushedAt=2026-07-29T03:34:22.757Z -->

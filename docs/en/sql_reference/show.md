@@ -1,3 +1,8 @@
+---
+description: This document describes SHOW in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, SHOW, SQL, Function, Precautions]
+---
+
 # SHOW<a name="EN-US_TOPIC_0289900662"></a>
 
 ## Function<a name="en-us_topic_0283136640_en-us_topic_0237122191_en-us_topic_0059779163_s812131d8918641df9772c998b753f87e"></a>

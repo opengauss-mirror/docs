@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER SERVER in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER SERVER, SQL, Function, Precautions]
+---
+
 # ALTER SERVER<a name="EN-US_TOPIC_0289900400"></a>
 
 ## Function<a name="en-us_topic_0283136932_section7100616165720"></a>

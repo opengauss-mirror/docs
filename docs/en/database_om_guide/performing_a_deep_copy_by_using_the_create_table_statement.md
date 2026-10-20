@@ -1,3 +1,8 @@
+---
+description: This document describes Performing a Deep Copy by Using the CREATE TABLE Statement in openGauss, covering topics such as Procedure.
+keywords: [openGauss, Performing a Deep Copy by Using the CREATE TABLE Statement, database O&M, Procedure]
+---
+
 # Performing a Deep Copy by Using the CREATE TABLE Statement<a name="EN-US_TOPIC_0242370292"></a>
 
 Run the  **CREATE TABLE**  statement to create a copy of the original table, batch insert data of the original table into the copy, and rename the copy to the name of the original table.

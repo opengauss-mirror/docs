@@ -1,3 +1,8 @@
+---
+description: This document describes OGAI Feature Documentation in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, OGAI Feature Documentation, features, Availability, Feature Overview]
+---
+
 # OGAI Feature Documentation
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:20:37.648Z pushedAt=2026-09-22T11:12:32.679Z -->

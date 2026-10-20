@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 日志参考 的相关内容，涵盖 日志类型简介、系统日志 等内容。
+keywords: [openGauss, 日志参考, 数据库运维, 日志类型简介, 系统日志]
+---
+
 # 日志参考
 
 ## 日志类型简介<a name="section1680963115278"></a>

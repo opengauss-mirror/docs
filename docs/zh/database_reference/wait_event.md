@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 等待事件 的相关内容，涵盖 enable\_instr\_track\_wait 等内容。
+keywords: [openGauss, 等待事件, 数据库参考, enable\_instr\_track\_wait]
+---
+
 # 等待事件
 
 ## enable\_instr\_track\_wait<a name="zh-cn_topic_0237124755_section983311682019"></a>

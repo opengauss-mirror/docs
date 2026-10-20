@@ -1,3 +1,8 @@
+---
+description: This document describes JOIN in openGauss, covering topics such as CROSS JOIN, INNER JOIN.
+keywords: [openGauss, JOIN, SQL, CROSS JOIN, INNER JOIN]
+---
+
 # JOIN<a name="EN-US_TOPIC_0000001224939985"></a>
 
 The  **JOIN**  clause is used to combine rows in two or more tables based on the common columns in these tables.

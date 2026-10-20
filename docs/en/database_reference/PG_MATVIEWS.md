@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_MATVIEWS in openGauss.
+keywords: [openGauss, PG\_MATVIEWS, database reference]
+---
+
 # PG\_MATVIEWS
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:47:31.481Z -->

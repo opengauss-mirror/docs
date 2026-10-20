@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_CLASS 的相关内容与操作方法。
+keywords: [openGauss, PG\_CLASS, 数据库参考]
+---
+
 # PG\_CLASS
 
 PG\_CLASS系统表存储数据库对象信息及其之间的关系。

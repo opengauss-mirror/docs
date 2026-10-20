@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Prerequisites in openGauss, covering topics such as Supported Hardware, CPU.
+keywords: [openGauss, MOT Prerequisites, database administration, Supported Hardware, CPU]
+---
+
 # MOT Prerequisites<a name="EN-US_TOPIC_0270171545"></a>
 
 The following specifies the hardware and software prerequisites for using openGauss MOT.

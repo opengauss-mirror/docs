@@ -1,3 +1,8 @@
+---
+description: This document describes Simple Dictionary in openGauss, covering topics such as Precautions, Procedure.
+keywords: [openGauss, Simple Dictionary, SQL, Precautions, Procedure]
+---
+
 # Simple Dictionary<a name="EN-US_TOPIC_0289900949"></a>
 
 A  **Simple**  dictionary operates by converting the input token to lower case and checking it against a list of stop words. If the token is found in the list, an empty array will be returned, causing the token to be discarded. If it is not found, the lower-cased form of the word is returned as the normalized lexeme. In addition, you can set  **Accept**  to  **false**  for  **Simple**  dictionaries \(default:  **true**\) to report non-stop-words as unrecognized, allowing them to be passed on to the next dictionary in the list.

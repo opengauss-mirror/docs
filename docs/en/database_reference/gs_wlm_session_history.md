@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_WLM\_SESSION\_HISTORY in openGauss.
+keywords: [openGauss, GS\_WLM\_SESSION\_HISTORY, database reference]
+---
+
 # GS\_WLM\_SESSION\_HISTORY<a name="EN-US_TOPIC_0000001105522102"></a>
 
 **GS\_WLM\_SESSION\_HISTORY**  displays load management information about all completed jobs executed by the current user on database instances. Only the user with the  **sysadmin**  or  **monitor admin**  permission can query this view.

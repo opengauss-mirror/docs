@@ -1,3 +1,8 @@
+---
+description: This document describes Archiving a Ledger Database in openGauss, covering topics such as Prerequisites, Context.
+keywords: [openGauss, Archiving a Ledger Database, database administration, Prerequisites, Context]
+---
+
 # Archiving a Ledger Database<a name="EN-US_TOPIC_0000001099967652"></a>
 
 ## Prerequisites<a name="en-us_topic_0059778013_sfe45a1031ec347ba820649c0cec52027"></a>

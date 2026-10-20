@@ -1,3 +1,8 @@
+---
+description: This document describes java.sql.Connection in openGauss.
+keywords: [openGauss, java.sql.Connection, development]
+---
+
 # java.sql.Connection<a name="EN-US_TOPIC_0289900351"></a>
 
 This section describes  **java.sql.Connection**, the API for connecting to a database.

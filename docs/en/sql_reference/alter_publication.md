@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER PUBLICATION in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER PUBLICATION, SQL, Function, Precautions]
+---
+
 # ALTER PUBLICATION
 
 ## Function<a name="section6411155412312"></a>

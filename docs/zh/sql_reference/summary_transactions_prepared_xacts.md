@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SUMMARY\_TRANSACTIONS\_PREPARED\_XACTS 的相关内容与操作方法。
+keywords: [openGauss, SUMMARY\_TRANSACTIONS\_PREPARED\_XACTS, SQL参考]
+---
+
 # SUMMARY\_TRANSACTIONS\_PREPARED\_XACTS
 
 显示openGauss中数据库主节点当前准备好进行两阶段提交的事务的信息。

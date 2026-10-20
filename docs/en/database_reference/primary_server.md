@@ -1,3 +1,8 @@
+---
+description: This document describes Primary Server in openGauss, covering topics such as synchronous\_standby\_names, most\_available\_sync.
+keywords: [openGauss, Primary Server, database reference, synchronous\_standby\_names, most\_available\_sync]
+---
+
 # Primary Server<a name="EN-US_TOPIC_0289900361"></a>
 
 ## synchronous\_standby\_names<a name="en-us_topic_0283137370_en-us_topic_0237124713_en-us_topic_0059777578_sed4ef11504b74982b8b64ce158bf0f0e"></a>

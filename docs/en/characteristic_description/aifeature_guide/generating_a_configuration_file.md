@@ -1,3 +1,8 @@
+---
+description: This document describes Generating the Configuration File in openGauss.
+keywords: [openGauss, Generating the Configuration File, features]
+---
+
 # Generating the Configuration File<a name="ZH-CN_TOPIC_0000002293307697"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T02:01:04.189Z -->

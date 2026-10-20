@@ -1,3 +1,8 @@
+---
+description: This document describes SET in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, SET, SQL, Function, Precautions]
+---
+
 # SET<a name="EN-US_TOPIC_0289899950"></a>
 
 ## Function<a name="en-us_topic_0283136841_en-us_topic_0237122186_en-us_topic_0059779029_s8a5c6264f78f49e3aa93f388d68cd3e6"></a>

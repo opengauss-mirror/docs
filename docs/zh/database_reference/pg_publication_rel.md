@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_PUBLICATION\_REL 的相关内容与操作方法。
+keywords: [openGauss, PG\_PUBLICATION\_REL, 数据库参考]
+---
+
 # PG\_PUBLICATION\_REL
 
 系统表PG\_PUBLICATION\_REL包含当前数据库中的表和publication之间的映射，这是一种多对多映射。

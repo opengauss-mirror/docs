@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SQLGetDiagRec 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, SQLGetDiagRec, 开发指南, 功能描述, 原型]
+---
+
 # SQLGetDiagRec
 
 ## 功能描述<a name="zh-cn_topic_0238272900_zh-cn_topic_0237120430_zh-cn_topic_0059778032_s0088b32a977e44f5a1e1e2b1523fc51c"></a>

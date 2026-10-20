@@ -1,3 +1,8 @@
+---
+description: This document describes Internal Functions in openGauss.
+keywords: [openGauss, Internal Functions, SQL]
+---
+
 # Internal Functions<a name="EN-US_TOPIC_0308046607"></a>
 
 The following functions of openGauss use internal data types, which cannot be directly called by users.

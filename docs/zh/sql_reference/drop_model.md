@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP MODEL 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP MODEL, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP MODEL
 
 ## 功能描述<a name="section201561822201319"></a>

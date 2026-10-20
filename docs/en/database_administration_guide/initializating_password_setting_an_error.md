@@ -1,3 +1,8 @@
+---
+description: This document describes Password Setting Error During Database Initialization in openGauss, covering topics such as Symptom, Cause.
+keywords: [openGauss, Password Setting Error During Database Initialization, database administration, Symptom, Cause]
+---
+
 # Password Setting Error During Database Initialization
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:43:34.458Z pushedAt=2026-09-11T09:13:34.912Z -->

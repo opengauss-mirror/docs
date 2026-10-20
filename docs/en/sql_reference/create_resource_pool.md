@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE RESOURCE POOL in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE RESOURCE POOL, SQL, Function, Precautions]
+---
+
 # CREATE RESOURCE POOL<a name="EN-US_TOPIC_0000001193907775"></a>
 
 ## Function<a name="en-us_topic_0059777569_sea021d0b1f154052a73b69b89d636f66"></a>

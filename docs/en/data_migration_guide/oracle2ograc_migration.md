@@ -1,3 +1,8 @@
+---
+description: This document describes Migration from Oracle to oGRAC in openGauss, covering topics such as Purpose, Preparations.
+keywords: [openGauss, Migration from Oracle to oGRAC, data migration, Purpose, Preparations]
+---
+
 #  Migration from Oracle to oGRAC
 ## Purpose
 

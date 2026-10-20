@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SNAP_SEQ 的相关内容与操作方法。
+keywords: [openGauss, SNAP_SEQ, SQL参考]
+---
+
 # SNAP_SEQ
 
 snap_seq是一个递增的sequence，其为WDR snapshot提供快照的ID。

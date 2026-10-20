@@ -1,3 +1,8 @@
+---
+description: This document describes HAVING Clause in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, HAVING Clause, SQL, Syntax, Parameter Description]
+---
+
 # HAVING Clause<a name="EN-US_TOPIC_0000001225378499"></a>
 
 The  **HAVING**  clause filters data after grouping.

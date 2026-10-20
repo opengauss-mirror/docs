@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss oGRecorder 配置参数文档 的相关内容，涵盖 配置项总览、字段说明 等内容。
+keywords: [openGauss, oGRecorder 配置参数文档, 工具与命令参考, 配置项总览, 字段说明]
+---
+
 # oGRecorder 配置参数文档
 
 ## 配置项总览

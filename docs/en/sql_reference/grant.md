@@ -1,3 +1,8 @@
+---
+description: This document describes GRANT in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, GRANT, SQL, Function, Precautions]
+---
+
 # GRANT<a name="EN-US_TOPIC_0289900312"></a>
 
 ## Function<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_s4bc6f47f2f9e45c18707d7219f3987ee"></a>

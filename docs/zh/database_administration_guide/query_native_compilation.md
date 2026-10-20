@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 查询原生编译 的相关内容，涵盖 概述、JIT存储过程 等内容。
+keywords: [openGauss, 查询原生编译, 数据库管理, 概述, JIT存储过程]
+---
+
 # 查询原生编译
 
 ## 概述

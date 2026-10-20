@@ -1,3 +1,8 @@
+---
+description: This document describes Parallel Page-based Redo for Ustore in openGauss, covering topics such as Availability, Feature Introduction.
+keywords: [openGauss, Parallel Page-based Redo for Ustore, database administration, Availability, Feature Introduction]
+---
+
 # Parallel Page-based Redo for Ustore
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:44:54.930Z pushedAt=2026-09-11T09:27:23.345Z -->

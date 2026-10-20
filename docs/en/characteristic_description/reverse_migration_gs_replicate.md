@@ -1,3 +1,8 @@
+---
+description: This document describes Reverse Migration in openGauss, covering topics such as Introduction, Benefits.
+keywords: [openGauss, Reverse Migration, features, Introduction, Benefits]
+---
+
 # Reverse Migration<a name="EN-US_TOPIC_0000001220761098"></a>
 
 ## Introduction<a name="section740615433477"></a>

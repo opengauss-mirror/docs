@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER DEFAULT PRIVILEGES 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER DEFAULT PRIVILEGES, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER DEFAULT PRIVILEGES
 
 ## 功能描述<a name="zh-cn_topic_0283136687_zh-cn_topic_0237122057_zh-cn_topic_0059778935_sb6d50f1fe847446bb5943799163d59fb"></a>

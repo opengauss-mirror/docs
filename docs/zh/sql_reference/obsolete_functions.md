@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 废弃函数 的相关内容与操作方法。
+keywords: [openGauss, 废弃函数, SQL参考]
+---
+
 # 废弃函数
 
 openGauss中下列函数在最新版本中已废弃：

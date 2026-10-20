@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Memory Statistics 的相关内容，涵盖 Shared Memory Statistics 等内容。
+keywords: [openGauss, Memory Statistics, SQL参考, Shared Memory Statistics]
+---
+
 # Memory Statistics
 
 Memory Statistics指标名称及描述如下表所示。

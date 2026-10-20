@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 位串函数和操作符 的相关内容，涵盖 位串操作符 等内容。
+keywords: [openGauss, 位串函数和操作符, SQL参考, 位串操作符]
+---
+
 # 位串函数和操作符
 
 ## 位串操作符<a name="zh-cn_topic_0283137721_zh-cn_topic_0237121969_zh-cn_topic_0059777668_sc2026528bca44ca29cf0ee99329f0598"></a>

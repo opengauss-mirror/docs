@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Replication and High Availability in openGauss.
+keywords: [openGauss, MOT Replication and High Availability, database administration]
+---
+
 # MOT Replication and High Availability<a name="EN-US_TOPIC_0270171501"></a>
 
 Since MOT is integrated into openGauss and uses/supports its replication and high availability, both synchronous and asynchronous replication are supported out of the box.

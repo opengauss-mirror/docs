@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_SESSION\_TIME in openGauss.
+keywords: [openGauss, GS\_SESSION\_TIME, database reference]
+---
+
 # GS\_SESSION\_TIME<a name="EN-US_TOPIC_0289899934"></a>
 
 **GS\_SESSION\_TIME**  collects statistics about the running time of session threads and time consumed in each execution phase.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SCRLock加速分布式锁 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, SCRLock加速分布式锁, 特性描述, 可获得性, 特性简介]
+---
+
 # SCRLock加速分布式锁
 
 ## 可获得性

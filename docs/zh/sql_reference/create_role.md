@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE ROLE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE ROLE, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE ROLE
 
 ## 功能描述<a name="zh-cn_topic_0283136858_zh-cn_topic_0237122112_zh-cn_topic_0059778189_s088f05fb7ae447c5b4c28bf78f6a0a56"></a>

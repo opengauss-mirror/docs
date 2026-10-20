@@ -1,3 +1,8 @@
+---
+description: This document describes cursor.execute\(query,vars\_list\) in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, cursor.execute\(query, vars\_list\), development, Function]
+---
+
 # cursor.execute\(query,vars\_list\)<a name="EN-US_TOPIC_0000001126928997"></a>
 
 ## Function<a name="section5708152714306"></a>

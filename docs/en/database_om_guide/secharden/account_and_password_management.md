@@ -1,3 +1,8 @@
+---
+description: This document describes Account and Password Management in openGauss, covering topics such as Ensure Password Complexity Verification Is Enabled, Ensure Correct Password Encryption Configuration.
+keywords: [openGauss, Account and Password Management, database O&M, Ensure Password Complexity Verification Is Enabled, Ensure Correct Password Encryption Configuration]
+---
+
 # Account and Password Management
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-14T08:05:25.243Z -->

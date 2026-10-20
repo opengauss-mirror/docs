@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 安全配置 的相关内容，涵盖 elastic\_search\_ip\_addr、enable\_security\_policy 等内容。
+keywords: [openGauss, 安全配置, 数据库参考, elastic\_search\_ip\_addr, enable\_security\_policy]
+---
+
 # 安全配置
 
 ## elastic\_search\_ip\_addr<a name="section12443144020298"></a>

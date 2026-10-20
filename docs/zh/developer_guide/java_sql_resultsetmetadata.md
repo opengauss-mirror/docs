@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss java.sql.ResultSetMetaData 的相关内容与操作方法。
+keywords: [openGauss, java.sql.ResultSetMetaData, 开发指南]
+---
+
 # java.sql.ResultSetMetaData
 
 java.sql.ResultSetMetaData是对ResultSet对象相关信息的具体描述。

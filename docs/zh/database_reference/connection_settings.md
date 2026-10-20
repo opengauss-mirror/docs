@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 连接设置 的相关内容，涵盖 light\_comm、listen\_addresses 等内容。
+keywords: [openGauss, 连接设置, 数据库参考, light\_comm, listen\_addresses]
+---
+
 # 连接设置
 
 介绍设置客户端和服务器连接方式相关的参数。

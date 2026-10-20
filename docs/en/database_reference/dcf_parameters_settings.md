@@ -1,3 +1,8 @@
+---
+description: This document describes DCF Parameters Settings in openGauss, covering topics such as enable\_dcf, dcf\_ssl.
+keywords: [openGauss, DCF Parameters Settings, database reference, enable\_dcf, dcf\_ssl]
+---
+
 # DCF Parameters Settings<a name="EN-US_TOPIC_0000001083207760"></a>
 
 ## enable\_dcf<a name="section14941640131"></a>

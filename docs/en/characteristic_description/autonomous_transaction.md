@@ -1,3 +1,8 @@
+---
+description: This document describes Autonomous Transaction in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Autonomous Transaction, features, Availability, Introduction]
+---
+
 # Autonomous Transaction<a name="EN-US_TOPIC_0000001138504517"></a>
 
 ## Availability<a name="section1578164915345"></a>

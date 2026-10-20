@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 单节点安装 的相关内容，涵盖 前提条件、操作步骤 等内容。
+keywords: [openGauss, 单节点安装, 安装指南, 前提条件, 操作步骤]
+---
+
 # 单节点安装
 
 ## 前提条件<a name="section9955194683210"></a>

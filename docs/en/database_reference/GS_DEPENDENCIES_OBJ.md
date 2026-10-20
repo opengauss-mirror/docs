@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_DEPENDENCIES\_OBJ in openGauss.
+keywords: [openGauss, GS\_DEPENDENCIES\_OBJ, database reference]
+---
+
 # GS\_DEPENDENCIES\_OBJ
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:41:25.252Z -->

@@ -1,3 +1,8 @@
+---
+description: This document describes Global Plan Cache in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, Global Plan Cache, features, Availability, Feature Overview]
+---
+
 # Global Plan Cache
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:11:24.262Z pushedAt=2026-09-22T11:12:32.628Z -->
@@ -19,11 +24,11 @@ In scenarios with multiple connections that require the execution plan cache, th
 
 After this feature is enabled, new execution plan caches are saved to GPC-related memory for management. Whenever a new execution plan cache is saved, the database first determines whether the execution plan can be shared. If it can, in addition to the original saving process, the related information of the execution plan is also saved in a GPC hash table, and the information of the execution plan can be found through a unique key. If it cannot, the execution plan is saved in basically the same way as the original process.
 
-![](./figures/Global_PlanCache.png)
+![Feature Description diagram](./figures/Global_PlanCache.png)
 
 When an execution plan that has already been cached in one session is cached again by another session, the database first checks the GPC hash table to see whether the same execution plan exists. If it exists, the execution plan is not cached again.
 
-![](./figures/Shared_PlanCache.png)
+![Feature Description diagram](./figures/Shared_PlanCache.png)
 
 ## Feature Enhancements<a name="section3480125215598"></a>
 

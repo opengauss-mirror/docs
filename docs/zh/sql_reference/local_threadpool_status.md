@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss LOCAL\_THREADPOOL\_STATUS 的相关内容与操作方法。
+keywords: [openGauss, LOCAL\_THREADPOOL\_STATUS, SQL参考]
+---
+
 # LOCAL\_THREADPOOL\_STATUS
 
 LOCAL\_THREADPOOL\_STATUS视图显示线程池下工作线程及会话的状态信息。该视图仅在线程池开启（enable\_thread\_pool = on）时生效。

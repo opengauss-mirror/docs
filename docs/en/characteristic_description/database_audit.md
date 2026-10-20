@@ -1,3 +1,8 @@
+---
+description: This document describes Database Audit in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Database Audit, features, Availability, Introduction]
+---
+
 # Database Audit<a name="EN-US_TOPIC_0000001088726274"></a>
 
 ## Availability<a name="section10188029"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Record in openGauss, covering topics such as Record Variables, Syntax.
+keywords: [openGauss, Record, SQL, Record Variables, Syntax]
+---
+
 # Record<a name="EN-US_TOPIC_0000001208139393"></a>
 
 ## Record Variables<a name="en-us_topic_0283136936_en-us_topic_0237122215_section16992418680"></a>
@@ -11,7 +16,7 @@ Define a record type and use this type to declare a variable.
 For the syntax of the record type, see  [Figure 1](#en-us_topic_0283136936_en-us_topic_0237122215_fig092918316312).
 
 **Figure  1**  Syntax of the record type<a name="en-us_topic_0283136936_en-us_topic_0237122215_fig092918316312"></a>  
-![](figures/syntax-of-the-record-type.png "syntax-of-the-record-type")
+![Syntax of the record type](figures/syntax-of-the-record-type.png "syntax-of-the-record-type")
 
 The above syntax diagram is explained as follows:
 

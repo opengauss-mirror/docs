@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SQL编写 的相关内容，涵盖 DDL、数据加载和卸载 等内容。
+keywords: [openGauss, SQL编写, 开发指南, DDL, 数据加载和卸载]
+---
+
 # SQL编写
 
 ## DDL<a name="section60205875143313"></a>

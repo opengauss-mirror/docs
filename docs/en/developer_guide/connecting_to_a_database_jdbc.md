@@ -1,3 +1,8 @@
+---
+description: This document describes Connecting to a Database in openGauss, covering topics such as Function Prototype, Parameters.
+keywords: [openGauss, Connecting to a Database, development, Function Prototype, Parameters]
+---
+
 # Connecting to a Database<a name="EN-US_TOPIC_0289900896"></a>
 
 After a database is connected, you can use JDBC to run SQL statements to operate data.

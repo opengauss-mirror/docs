@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 支持嵌入式SQL预处理器（ECPG） 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 支持嵌入式SQL预处理器（ECPG）, 特性描述, 可获得性, 特性简介]
+---
+
 # 支持嵌入式SQL预处理器（ECPG）
 
 ## 可获得性<a name="section663215"></a>

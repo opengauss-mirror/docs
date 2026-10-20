@@ -1,3 +1,8 @@
+---
+description: This document describes SQLGetData in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, SQLGetData, development, Function, Prototype]
+---
+
 # SQLGetData<a name="EN-US_TOPIC_0242371453"></a>
 
 ## Function<a name="en-us_topic_0238272899_en-us_topic_0237120429_en-us_topic_0059778461_s4c79ae112a6f415a9fed38561c46eebc"></a>

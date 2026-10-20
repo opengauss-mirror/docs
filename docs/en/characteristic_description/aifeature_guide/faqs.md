@@ -1,3 +1,8 @@
+---
+description: This document describes FAQ in openGauss, covering topics such as 4.1 Sensitive Information Output Issue, 4.2 Creating an SSL Certificate for HTTPS Using openssl.
+keywords: [openGauss, FAQ, features, 4.1 Sensitive Information Output Issue, 4.2 Creating an SSL Certificate for HTTPS Using openssl]
+---
+
 # FAQ<a name="ZH-CN_TOPIC_0000002258650656"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T01:57:38.421Z -->

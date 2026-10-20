@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_plan\_simulator in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, gs\_plan\_simulator, tools and commands, Background, Prerequisites]
+---
+
 # gs\_plan\_simulator<a name="EN-US_TOPIC_0000001151403222"></a>
 
 ## Background<a name="section7471933144813"></a>

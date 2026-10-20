@@ -1,9 +1,14 @@
+---
+description: This document describes MOT Introduction in openGauss.
+keywords: [openGauss, MOT Introduction, database administration]
+---
+
 # MOT Introduction<a name="EN-US_TOPIC_0270171553"></a>
 
 openGauss introduces Memory-Optimized Tables \(MOT\) storage engine – a transactional row-based store \(rowstore\), that is optimized for many-core and large memory servers. MOT is a state-of-the-art production-grade feature of the openGauss database that provides greater performance for transactional workloads. MOT is fully ACID compliant and includes strict durability and high availability support. Businesses can leverage MOT for mission-critical, performance-sensitive Online Transaction Processing \(OLTP\) applications in order to achieve high performance, high throughput, low and predictable latency and high utilization of many‑core servers. MOT is especially suited to leverage and scale-up when run on modern servers with multiple sockets and many-core processors, such as Huawei Taishan servers with ARM/Kunpeng processors and x86-based Dell or similar servers.
 
 **Figure  1**  Memory-Optimized Storage Engine Within openGauss<a name="fig16939193016363"></a>  
-![](figures/memory-optimized-storage-engine-within-opengauss.png "memory-optimized-storage-engine-within-opengauss")
+![Memory-Optimized Storage Engine Within openGauss](figures/memory-optimized-storage-engine-within-opengauss.png "memory-optimized-storage-engine-within-opengauss")
 
 [Figure 1](#fig16939193016363)  presents the Memory-Optimized Storage Engine component \(in green\) of openGauss database and is responsible for managing MOT and transactions.
 

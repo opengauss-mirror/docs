@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_TS\_DICT 的相关内容与操作方法。
+keywords: [openGauss, PG\_TS\_DICT, 数据库参考]
+---
+
 # PG\_TS\_DICT
 
 PG\_TS\_DICT系统表包含定义文本搜索字典的记录。字典取决于文本搜索模板，该模板声明所有需要的实现函数；字典本身提供模板支持的用户可设置的参数的值。

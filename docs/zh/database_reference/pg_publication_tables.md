@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_PUBLICATION\_TABLES 的相关内容与操作方法。
+keywords: [openGauss, PG\_PUBLICATION\_TABLES, 数据库参考]
+---
+
 # PG\_PUBLICATION\_TABLES
 
 视图PG\_PUBLICATION\_TABLES提供publication与其所发布的表之间的映射信息。和底层的系统表pg\_publication\_rel不同，这个视图展开了定义为FOR ALL TABLES的publication，这样对这类publication来说，每一个合格的表都有一行。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss VALUES 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, VALUES, SQL参考, 功能描述, 注意事项]
+---
+
 # VALUES
 
 ## 功能描述<a name="zh-cn_topic_0283137477_zh-cn_topic_0237122196_zh-cn_topic_0059779241_s25c2a01507274648bf05cbcb1dc418bf"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes EXECUTE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, EXECUTE, SQL, Function, Precautions]
+---
+
 # EXECUTE<a name="EN-US_TOPIC_0289900825"></a>
 
 ## Function<a name="en-us_topic_0283137468_en-us_topic_0237122161_en-us_topic_0059777447_s984b3ec2b84d48bb843629462288417b"></a>

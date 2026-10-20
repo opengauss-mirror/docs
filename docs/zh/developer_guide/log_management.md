@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 日志管理 的相关内容，涵盖 链路跟踪功能 等内容。
+keywords: [openGauss, 日志管理, 开发指南, 链路跟踪功能]
+---
+
 # 日志管理
 
 openGauss JDBC驱动程序支持使用日志记录来帮助解决在应用程序中使用openGauss JDBC驱动程序时的问题。openGauss JDBC支持如下三种日志管理方式：

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 平台和客户端兼容性 的相关内容，涵盖 convert\_string\_to\_digit、nls\_timestamp\_format 等内容。
+keywords: [openGauss, 平台和客户端兼容性, 数据库参考, convert\_string\_to\_digit, nls\_timestamp\_format]
+---
+
 # 平台和客户端兼容性
 
 很多平台都使用数据库系统，数据库系统的对外兼容性给平台提供了很大的方便。

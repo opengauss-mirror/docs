@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_TDE\_INFO 的相关内容与操作方法。
+keywords: [openGauss, PG\_TDE\_INFO, 数据库参考]
+---
+
 # PG\_TDE\_INFO
 
 PG\_TDE\_INFO视图提供了openGauss加密信息。

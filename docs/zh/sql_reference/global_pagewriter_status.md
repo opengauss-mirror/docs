@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_PAGEWRITER\_STATUS 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_PAGEWRITER\_STATUS, SQL参考]
+---
+
 # GLOBAL\_PAGEWRITER\_STATUS
 
 GLOBAL\_PAGEWRITER\_STATUS视图显示openGauss实例的刷页信息和检查点信息。

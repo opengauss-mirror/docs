@@ -1,3 +1,8 @@
+---
+description: This document describes Delimiter in openGauss, covering topics such as delimiter_name.
+keywords: [openGauss, Delimiter, database reference, delimiter_name]
+---
+
 # Delimiter
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:38:33.421Z -->

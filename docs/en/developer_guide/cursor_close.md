@@ -1,3 +1,8 @@
+---
+description: This document describes cursor.close\(\) in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, cursor.close\(\), development, Function, Prototype]
+---
+
 # cursor.close\(\)<a name="EN-US_TOPIC_0000001127193507"></a>
 
 ## Function<a name="section5708152714306"></a>

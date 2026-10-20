@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss cm\_ctl工具介绍 的相关内容，涵盖 命令说明、命令参考 等内容。
+keywords: [openGauss, cm\_ctl工具介绍, 工具与命令参考, 命令说明, 命令参考]
+---
+
 # cm\_ctl工具介绍
 
 cm\_ctl是openGauss提供的用来控制数据库实例服务的工具。该工具主要供OM调用，及数据库实例服务自恢复时使用。cm\_ctl的主要功能有：

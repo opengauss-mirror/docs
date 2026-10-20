@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 术语表 的相关内容与操作方法。
+keywords: [openGauss, 术语表, 附录]
+---
+
 # 术语表
 
 **表 1**  术语表

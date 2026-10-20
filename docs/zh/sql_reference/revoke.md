@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss REVOKE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, REVOKE, SQL参考, 功能描述, 注意事项]
+---
+
 # REVOKE
 
 ## 功能描述<a name="zh-cn_topic_0283137669_zh-cn_topic_0237122179_zh-cn_topic_0059779274_sda1d739a0a8c460c93bc099fb8208944"></a>

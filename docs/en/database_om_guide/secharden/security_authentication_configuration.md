@@ -1,3 +1,8 @@
+---
+description: This document describes Security Authentication Configuration in openGauss, covering topics such as Ensure the Client Authentication Timeout Is Correctly Configured, Ensure the Authentication Encryption Iteration Count Is Correctly Configured.
+keywords: [openGauss, Security Authentication Configuration, database O&M, Ensure the Client Authentication Timeout Is Correctly Configured, Ensure the Authentication Encryption Iteration Count Is Correctly Configured]
+---
+
 # Security Authentication Configuration
 
 ## Ensure the Client Authentication Timeout Is Correctly Configured

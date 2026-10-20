@@ -1,3 +1,8 @@
+---
+description: This document describes kadmin.local in openGauss, covering topics such as Function, Parameter Description.
+keywords: [openGauss, kadmin.local, tools and commands, Function, Parameter Description]
+---
+
 # kadmin.local<a name="EN-US_TOPIC_0249632275"></a>
 
 ## Function<a name="en-us_topic_0237152429_section10172172474817"></a>

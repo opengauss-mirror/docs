@@ -1,3 +1,8 @@
+---
+description: This document describes Rollback Parameters in openGauss, covering topics such as max\_undo\_workers.
+keywords: [openGauss, Rollback Parameters, database reference, max\_undo\_workers]
+---
+
 # Rollback Parameters<a name="EN-US_TOPIC_0000001151846826"></a>
 
 ## max\_undo\_workers<a name="section1899815549616"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss LOCK 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, LOCK, SQL参考, 功能描述, 注意事项]
+---
+
 # LOCK
 
 ## 功能描述<a name="zh-cn_topic_0237122168_zh-cn_topic_0059778442_s11c25749bd754f4c98e19b29df2baf41"></a>

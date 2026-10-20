@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Global Plan Cache 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, Global Plan Cache, 特性描述, 可获得性, 特性简介]
+---
+
 # Global Plan Cache
 
 ## 可获得性<a name="section3480125215594"></a>
@@ -17,11 +22,11 @@
 
 开启该功能后, 新的执行计划缓存会被保存到GPC相关的内存上进行管理, 每当新的执行计划缓存被保存时, 数据库会先判断该执行计划是否可以被共享, 如果是, 该执行计划除执行原有的保存流程外, 其相关信息还会被保存在GPC的一个哈希表中, 该执行计划的信息可以通过一个唯一键被找到。如果不是, 该执行计划的保存基本与原有流程一致。
 
-![](./figures/Global_PlanCache.png)
+![特性描述示意图](./figures/Global_PlanCache.png)
 
 当某个会话中已经缓存过的执行计划再次被其他会话缓存时, 数据库会先去GPC的哈希表中查看是相同的执行计划是否存在, 如果存在, 则不会重复缓存该执行计划。
 
-![](./figures/Shared_PlanCache.png)
+![特性描述示意图](./figures/Shared_PlanCache.png)
 
 ## 特性增强<a name="section3480125215598"></a>
 

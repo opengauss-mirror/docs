@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE TEXT SEARCH CONFIGURATION in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE TEXT SEARCH CONFIGURATION, SQL, Function, Precautions]
+---
+
 # CREATE TEXT SEARCH CONFIGURATION<a name="EN-US_TOPIC_0289900950"></a>
 
 ## Function<a name="en-us_topic_0283137399_en-us_topic_0237122121_en-us_topic_0059777835_s0e4d513f4465404abcdfaf94e7cbef18"></a>

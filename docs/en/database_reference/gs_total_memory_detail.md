@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_TOTAL\_MEMORY\_DETAIL in openGauss.
+keywords: [openGauss, GS\_TOTAL\_MEMORY\_DETAIL, database reference]
+---
+
 # GS\_TOTAL\_MEMORY\_DETAIL<a name="EN-US_TOPIC_0289899837"></a>
 
 **GS\_TOTAL\_MEMORY\_DETAIL**  collects statistics about memory usage of the current database node in the unit of MB. If the GUC parameter  **enable\_memory\_limit**  is set to  **off**, this view is unavailable.

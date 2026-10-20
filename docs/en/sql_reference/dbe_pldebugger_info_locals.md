@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_PLDEBUGGER.info\_locals in openGauss.
+keywords: [openGauss, DBE\_PLDEBUGGER.info\_locals, SQL]
+---
+
 # DBE\_PLDEBUGGER.info\_locals
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:21:05.465Z -->

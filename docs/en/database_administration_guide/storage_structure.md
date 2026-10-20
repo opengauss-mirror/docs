@@ -1,3 +1,8 @@
+---
+description: This document describes Storage Structure in openGauss, covering topics such as Database Logical Structure Diagram, Segment-Page Storage Structure.
+keywords: [openGauss, Storage Structure, database administration, Database Logical Structure Diagram, Segment-Page Storage Structure]
+---
+
 # Storage Structure
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:47:09.881Z pushedAt=2026-09-24T09:25:45.166Z -->
@@ -7,7 +12,7 @@
 The database node of openGauss is responsible for storing data, and its storage medium is also disk. This section mainly introduces the objects in the database node and the relationships between them from a logical perspective. The database logical structure is shown in [Figure 1](#zh-cn_topic_0237120245_zh-cn_topic_0059779316_fb2fa3b3cc8824dea95318504e0537913).
 
 **Figure 1**  Database logical structure diagram<a name="zh-cn_topic_0237120245_zh-cn_topic_0059779316_fb2fa3b3cc8824dea95318504e0537913"></a>  
-![](figures/Database-logical-structure-diagram.png)
+![Database logical structure diagram](figures/Database-logical-structure-diagram.png)
 
 >[!NOTE]
 >
@@ -22,7 +27,7 @@ The database node of openGauss is responsible for storing data, and its storage 
 This section introduces the database segment-page storage structure from a logical perspective. The segment-page storage structure is shown in Figure 1.
 
 **Figure 1** Segment-page storage structure diagram  
-![](figures/Database-segment-structure.png)  
+![Segment-page storage structure diagram](figures/Database-segment-structure.png)  
 
 >[!NOTE] Note
 >
@@ -34,7 +39,7 @@ This section introduces the database segment-page storage structure from a logic
 > 6. Extent: all data of a segment is stored in the five files of the segment space in units of extents. There are four extent types: 64 KB, 1 MB, 8 MB, and 64 MB. Extents of the same type are stored in the same physical file. The distribution of extents within a segment is shown in Figure 2.  
 
 **Figure 2** Extent distribution structure diagram of a segment  
-![](figures/Database-segment-extent.png)  
+![Extent distribution structure diagram of a segment](figures/Database-segment-extent.png)  
 
 >[!NOTE] Note
 >

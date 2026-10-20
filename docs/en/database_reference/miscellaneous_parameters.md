@@ -1,3 +1,8 @@
+---
+description: This document describes Miscellaneous Parameters in openGauss, covering topics such as enable\_default\_ustore\_table, enable\_ustore.
+keywords: [openGauss, Miscellaneous Parameters, database reference, enable\_default\_ustore\_table, enable\_ustore]
+---
+
 # Miscellaneous Parameters<a name="EN-US_TOPIC_0289900522"></a>
 
 ## enable\_default\_ustore\_table<a name="section477353310529"></a>

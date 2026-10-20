@@ -1,3 +1,8 @@
+---
+description: This document describes Permission Management in openGauss, covering topics such as Disallow PUBLIC Role from Having Permissions on the pg_authid System Table, Disallow PUBLIC Role from Having CREATE Permission in the Public Schema.
+keywords: [openGauss, Permission Management, database O&M, Disallow PUBLIC Role from Having Permissions on the pg_authid System Table, Disallow PUBLIC Role from Having CREATE Permission in the Public Schema]
+---
+
 # Permission Management
 
 ## Disallow PUBLIC Role from Having Permissions on the pg_authid System Table

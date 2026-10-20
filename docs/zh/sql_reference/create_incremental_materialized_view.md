@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE INCREMENTAL MATERIALIZED VIEW 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE INCREMENTAL MATERIALIZED VIEW, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE INCREMENTAL MATERIALIZED VIEW
 
 ## 功能描述<a name="zh-cn_topic_0283136612_zh-cn_topic_0237122161_zh-cn_topic_0059777447_s984b3ec2b84d48bb843629462288417b"></a>

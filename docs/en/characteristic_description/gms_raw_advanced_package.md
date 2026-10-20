@@ -1,3 +1,8 @@
+---
+description: This document describes gms_raw Plug-in in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, gms_raw Plug-in, features, Availability, Feature Overview]
+---
+
 # gms_raw Plug-in
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:15:54.828Z pushedAt=2026-09-22T11:12:32.647Z -->

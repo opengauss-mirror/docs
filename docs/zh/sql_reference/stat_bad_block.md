@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STAT\_BAD\_BLOCK 的相关内容与操作方法。
+keywords: [openGauss, STAT\_BAD\_BLOCK, SQL参考]
+---
+
 # STAT\_BAD\_BLOCK
 
 获得当前节点表、索引等文件的读取失败信息。

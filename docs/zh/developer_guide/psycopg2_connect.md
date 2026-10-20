@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss psycopg2.connect\(\) 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, psycopg2.connect\(\), 开发指南, 功能描述, 原型]
+---
+
 # psycopg2.connect\(\)
 
 ## 功能描述<a name="section5708152714306"></a>

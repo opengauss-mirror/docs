@@ -1,3 +1,8 @@
+---
+description: This document describes Installation User and User Group in openGauss.
+keywords: [openGauss, Installation User and User Group, installation]
+---
+
 # Installation User and User Group<a name="EN-US_TOPIC_0249784587"></a>
 
 To minimize the installation account permissions during the installation and ensure system running security of openGauss after the installation, the installation scripts automatically create a user-specified installation user and this user will be used as the administrator for subsequent running and maintenance of the openGauss.

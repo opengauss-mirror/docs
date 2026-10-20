@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs\_sdr 的相关内容，涵盖 背景信息、约束条件 等内容。
+keywords: [openGauss, gs\_sdr, 工具与命令参考, 背景信息, 约束条件]
+---
+
 # gs\_sdr
 
 ## 背景信息<a name="zh-cn_topic_0287275995_section431817462"></a>

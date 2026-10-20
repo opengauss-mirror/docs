@@ -1,3 +1,8 @@
+---
+description: This document describes DROP MODEL in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP MODEL, SQL, Function, Precautions]
+---
+
 # DROP MODEL<a name="EN-US_TOPIC_0000001148169736"></a>
 
 ## Function<a name="section201561822201319"></a>

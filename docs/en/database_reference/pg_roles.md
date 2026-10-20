@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_ROLES in openGauss.
+keywords: [openGauss, PG\_ROLES, database reference]
+---
+
 # PG\_ROLES<a name="EN-US_TOPIC_0289900636"></a>
 
 PG\_ROLES provides information about database roles. Initialization users and users with the sysadmin or createrole attribute can view information about all roles. Other users can view only their own information.

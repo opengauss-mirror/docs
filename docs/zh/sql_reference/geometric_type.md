@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 几何类型 的相关内容，涵盖 点、线段 等内容。
+keywords: [openGauss, 几何类型, SQL参考, 点, 线段]
+---
+
 # 几何类型
 
 openGauss支持的几何类型请参见[表1](#zh-cn_topic_0283137602_zh-cn_topic_0237121953_zh-cn_topic_0059779139_td12ab9adf8514c2cbd4b5b6aace3ab7e)。最基本的类型：点，是其它类型的基础。

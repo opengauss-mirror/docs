@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss REPLACE INTO 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, REPLACE INTO, SQL参考, 功能描述, 注意事项]
+---
+
 # REPLACE INTO
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>

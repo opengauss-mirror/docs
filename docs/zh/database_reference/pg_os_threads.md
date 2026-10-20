@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_OS\_THREADS 的相关内容与操作方法。
+keywords: [openGauss, PG\_OS\_THREADS, 数据库参考]
+---
+
 # PG\_OS\_THREADS
 
 PG\_OS\_THREADS视图提供当前节点下所有线程的状态信息。

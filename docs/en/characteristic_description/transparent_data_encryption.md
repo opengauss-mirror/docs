@@ -1,3 +1,8 @@
+---
+description: This document describes Transparent Data Encryption in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Transparent Data Encryption, features, Availability, Introduction]
+---
+
 # Transparent Data Encryption<a name="EN-US_TOPIC_0000001156553727"></a>
 
 ## Availability<a name="section8174682"></a>

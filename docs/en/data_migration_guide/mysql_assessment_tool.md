@@ -1,3 +1,8 @@
+---
+description: This document describes MySQL Syntax Compatibility Assessment Tool in openGauss, covering topics such as Obtaining Code, Compiling Plug-ins.
+keywords: [openGauss, MySQL Syntax Compatibility Assessment Tool, data migration, Obtaining Code, Compiling Plug-ins]
+---
+
 # MySQL Syntax Compatibility Assessment Tool<a name="EN-US_TOPIC_0000001245957397"></a>
 
 This tool can use the existing openGauss node to assess the compatibility of data SQL text in openGauss. The restrictions include but are not limited to the following:

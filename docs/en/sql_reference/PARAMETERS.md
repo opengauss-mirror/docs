@@ -1,3 +1,8 @@
+---
+description: This document describes PARAMETERS in openGauss.
+keywords: [openGauss, PARAMETERS, SQL]
+---
+
 # PARAMETERS <a name="ZH-CN_TOPIC_0310260671"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:24:55.483Z -->

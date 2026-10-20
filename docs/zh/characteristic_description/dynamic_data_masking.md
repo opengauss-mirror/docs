@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 动态数据脱敏机制 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 动态数据脱敏机制, 特性描述, 可获得性, 特性简介]
+---
+
 # 动态数据脱敏机制
 
 ## 可获得性<a name="section17746747"></a>

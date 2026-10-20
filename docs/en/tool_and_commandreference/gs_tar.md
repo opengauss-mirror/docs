@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_tar in openGauss, covering topics such as Background, Syntax.
+keywords: [openGauss, gs\_tar, tools and commands, Background, Syntax]
+---
+
 # gs\_tar<a name="EN-US_TOPIC_0277825669"></a>
 
 ## Background<a name="section14892026417"></a>

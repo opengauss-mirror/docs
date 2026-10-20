@@ -1,3 +1,8 @@
+---
+description: This document describes Operating Environment Configuration in openGauss, covering topics such as Ensure File Permission Mask Is Configured Correctly, Ensure Process Information Is Hidden from Other Users.
+keywords: [openGauss, Operating Environment Configuration, database O&M, Ensure File Permission Mask Is Configured Correctly, Ensure Process Information Is Hidden from Other Users]
+---
+
 # Operating Environment Configuration
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-14T08:05:10.892Z -->

@@ -1,3 +1,8 @@
+---
+description: This document describes Configuration File Reference in openGauss.
+keywords: [openGauss, Configuration File Reference, database administration]
+---
+
 # Configuration File Reference<a name="EN-US_TOPIC_0289900190"></a>
 
 **Table  1**  Parameter description

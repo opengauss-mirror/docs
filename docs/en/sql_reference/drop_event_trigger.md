@@ -1,3 +1,8 @@
+---
+description: This document describes DROP EVENT TRIGGER in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP EVENT TRIGGER, SQL, Function, Precautions]
+---
+
 # DROP EVENT TRIGGER<a name="EN-US_TOPIC_0289090035"></a>
 
 ## Function<a name="en-us_topic_0283137186_en-us_topic_0231227156_en-us_topic_0059777895_sed6f06f3d4d94bb10c387592f98bacdb"></a>

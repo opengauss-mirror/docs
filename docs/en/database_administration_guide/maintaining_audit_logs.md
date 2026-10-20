@@ -1,3 +1,8 @@
+---
+description: This document describes Maintaining Audit Logs in openGauss, covering topics such as Prerequisites, Background.
+keywords: [openGauss, Maintaining Audit Logs, database administration, Prerequisites, Background]
+---
+
 # Maintaining Audit Logs<a name="EN-US_TOPIC_0246507973"></a>
 
 ## Prerequisites<a name="en-us_topic_0237121114_en-us_topic_0059778793_sbf90b4aa56054a53b7c697eec67d09ac"></a>

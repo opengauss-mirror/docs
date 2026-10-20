@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 调试 的相关内容与操作方法。
+keywords: [openGauss, 调试, 开发指南]
+---
+
 # 调试
 
 用户可以根据自己的需要，通过修改实例数据目录下的postgresql.conf文件中特定的配置参数来控制日志的输出，从而更好地了解数据库的运行状态。

@@ -1,3 +1,8 @@
+---
+description: This document describes AI Sub_functions of the DBMind in openGauss.
+keywords: [openGauss, AI Sub_functions of the DBMind, features]
+---
+
 # AI Sub_functions of the DBMind<a name="EN-US_TOPIC_0000001198483454"></a>
 
 You can run the  **component**  subcommand of  **gs\_dbmind**  to enable the corresponding AI sub_functions. The following sections describe the AI functions in detail.

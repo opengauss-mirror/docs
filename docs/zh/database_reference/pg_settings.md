@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_SETTINGS 的相关内容与操作方法。
+keywords: [openGauss, PG\_SETTINGS, 数据库参考]
+---
+
 # PG\_SETTINGS
 
 PG\_SETTINGS视图显示数据库运行时参数的相关信息。

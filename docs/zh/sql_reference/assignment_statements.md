@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 赋值语句 的相关内容，涵盖 语法、嵌套赋值 等内容。
+keywords: [openGauss, 赋值语句, SQL参考, 语法, 嵌套赋值]
+---
+
 # 赋值语句
 
 ## 语法<a name="zh-cn_topic_0283137492_zh-cn_topic_0237122222_zh-cn_topic_0059778597_s0d14c5a042e2478fa57514f056522738"></a>
@@ -5,7 +10,7 @@
 给变量赋值的语法请参见[图1](#zh-cn_topic_0283137492_zh-cn_topic_0237122222_zh-cn_topic_0059778597_f1087f61f4ec24addbb3b79a2ccf21917)。
 
 **图 1**  assignment\_value::=<a name="zh-cn_topic_0283137492_zh-cn_topic_0237122222_zh-cn_topic_0059778597_f1087f61f4ec24addbb3b79a2ccf21917"></a>  
-![](figures/assignment_value.png)
+![assignment value语法图](figures/assignment_value.png)
 
 对以上语法格式的解释如下：
 
@@ -29,7 +34,7 @@ END;
 给变量嵌套赋值的语法请参见[图2](#fig178291445115118)。
 
 **图 2**  nested\_assignment\_value::=<a name="fig178291445115118"></a>  
-![](figures/nested_assignment_value.png)
+![nested assignment value语法图](figures/nested_assignment_value.png)
 
 对以上语法格式的解释如下：[图2](#fig178291445115118)
 

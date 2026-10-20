@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_SESSION\_MEMORY\_STATISTICS in openGauss.
+keywords: [openGauss, GS\_SESSION\_MEMORY\_STATISTICS, database reference]
+---
+
 # GS\_SESSION\_MEMORY\_STATISTICS<a name="EN-US_TOPIC_0289900347"></a>
 
 **GS\_SESSION\_MEMORY\_STATISTICS**  displays load management information about memory usage of ongoing complex jobs executed by the current user.

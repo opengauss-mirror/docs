@@ -1,3 +1,8 @@
+---
+description: This document describes Gathering Document Statistics in openGauss.
+keywords: [openGauss, Gathering Document Statistics, SQL]
+---
+
 # Gathering Document Statistics<a name="EN-US_TOPIC_0289900738"></a>
 
 The function  **ts\_stat**  is useful for checking your configuration and for finding stop-word candidates.

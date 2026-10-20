@@ -1,3 +1,8 @@
+---
+description: This document describes Deploying GaussMaster in openGauss, covering topics such as Configuration File, Starting and Stopping the Service.
+keywords: [openGauss, Deploying GaussMaster, features, Configuration File, Starting and Stopping the Service]
+---
+
 # Deploying GaussMaster<a name="ZH-CN_TOPIC_0000002258589386"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T01:51:01.000Z -->

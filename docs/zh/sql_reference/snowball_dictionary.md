@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Snowball词典 的相关内容与操作方法。
+keywords: [openGauss, Snowball词典, SQL参考]
+---
+
 # Snowball词典
 
 Snowball词典模板支持词干分析词典，基于Martin Porter的Snowball项目，内置有许多语言的词干分析算法。openGauss中预定义有多种语言的Snowball词典，可通过系统表[PG\_TS\_DICT](../database_reference/pg_ts_dict.md)查看预定义的词干分析词典以及支持的语言词干分析算法。

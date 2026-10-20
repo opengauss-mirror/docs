@@ -1,3 +1,8 @@
+---
+description: This document describes STATIO\_SYS\_SEQUENCES in openGauss.
+keywords: [openGauss, STATIO\_SYS\_SEQUENCES, SQL]
+---
+
 # STATIO\_SYS\_SEQUENCES<a name="EN-US_TOPIC_0245374788"></a>
 
 **STATIO\_SYS\_SEQUENCES**  shows the I/O status information about all the system sequences in the current namespace.

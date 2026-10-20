@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 获取帮助 的相关内容，涵盖 opengauss-exporter、cmd-exporter 等内容。
+keywords: [openGauss, 获取帮助, 特性描述, opengauss-exporter, cmd-exporter]
+---
+
 # 获取帮助<a name="ZH-CN_TOPIC_0000002294471309"></a>
 
 用户可以通过“--help”命令获取Exporter组件启动或停止等操作的帮助信息，例如：

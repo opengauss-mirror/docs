@@ -1,3 +1,8 @@
+---
+description: This document describes INST_ID Conflict or Invalidity in openGauss, covering topics such as Symptoms, Cause.
+keywords: [openGauss, INST_ID Conflict or Invalidity, database administration, Symptoms, Cause]
+---
+
 # INST_ID Conflict or Invalidity
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:43:41.006Z pushedAt=2026-09-11T09:13:39.337Z -->

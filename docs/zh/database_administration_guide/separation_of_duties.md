@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 三权分立 的相关内容与操作方法。
+keywords: [openGauss, 三权分立, 数据库管理]
+---
+
 # 三权分立
 
 [默认权限机制](default_permission_mechanism.md)和[管理员](administrators.md)两节的描述基于的是openGauss创建之初的默认情况。从前面的介绍可以看出，默认情况下拥有SYSADMIN属性的系统管理员，具备系统最高权限。

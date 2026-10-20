@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_OPCLASS 的相关内容与操作方法。
+keywords: [openGauss, PG\_OPCLASS, 数据库参考]
+---
+
 # PG\_OPCLASS
 
 PG\_OPCLASS系统表定义索引访问方法操作符类。

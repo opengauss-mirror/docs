@@ -1,3 +1,8 @@
+---
+description: This document describes SQL Firewall Capability in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, SQL Firewall Capability, features, Availability, Feature Overview]
+---
+
 # SQL Firewall Capability
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:28:12.111Z pushedAt=2026-09-22T11:12:32.703Z -->

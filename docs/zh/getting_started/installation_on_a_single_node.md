@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 单节点服务器安装 的相关内容与操作方法。
+keywords: [openGauss, 单节点服务器安装, 快速入门]
+---
+
 # 单节点服务器安装
 
 1. 创建用户组dbgroup。

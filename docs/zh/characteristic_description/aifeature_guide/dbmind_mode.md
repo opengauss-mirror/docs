@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBMind模式说明 的相关内容，涵盖 关闭HISTORY记录 等内容。
+keywords: [openGauss, DBMind模式说明, 特性描述, 关闭HISTORY记录]
+---
+
 # DBMind模式说明<a name="ZH-CN_TOPIC_0000002293420721"></a>
 
 ## 关闭HISTORY记录<a name="zh-cn_topic_0000002242300241_section13607179203719"></a>

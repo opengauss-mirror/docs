@@ -1,3 +1,8 @@
+---
+description: This document describes SQL Server Full Migration in openGauss, covering topics such as oG_datasync_full_migration Tool Introduction, Notes.
+keywords: [openGauss, SQL Server Full Migration, data migration, oG_datasync_full_migration Tool Introduction, Notes]
+---
+
 # SQL Server Full Migration
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-16T08:10:09.553Z -->

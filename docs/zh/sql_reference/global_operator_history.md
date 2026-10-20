@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_OPERATOR\_HISTORY 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_OPERATOR\_HISTORY, SQL参考]
+---
+
 # GLOBAL\_OPERATOR\_HISTORY
 
 GLOBAL\_OPERATOR\_HISTORY系统视图显示的是当前用户在数据库主节点上执行作业结束后的算子的相关记录。

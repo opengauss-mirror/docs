@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_SQL\_LIMIT in openGauss.
+keywords: [openGauss, GS\_SQL\_LIMIT, database reference]
+---
+
 # GS\_SQL\_LIMIT
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:44:04.932Z -->

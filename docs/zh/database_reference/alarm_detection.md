@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 告警检测 的相关内容，涵盖 enable\_alarm、connection\_alarm\_rate 等内容。
+keywords: [openGauss, 告警检测, 数据库参考, enable\_alarm, connection\_alarm\_rate]
+---
+
 # 告警检测
 
 在openGauss运行的过程中，会对数据库中的错误场景进行检测，便于用户及早感知到openGauss的错误。

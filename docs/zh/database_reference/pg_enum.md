@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_ENUM 的相关内容与操作方法。
+keywords: [openGauss, PG\_ENUM, 数据库参考]
+---
+
 # PG\_ENUM
 
 PG\_ENUM系统表包含显示每个枚举类型值和标签的记录。给定枚举类型的内部表示实际上是PG\_ENUM里面相关行的OID。

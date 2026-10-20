@@ -1,3 +1,8 @@
+---
+description: This document describes FAQs in openGauss, covering topics such as An Error Is Reported Displaying "Failed to obtain the GPHOME" When a Command Is Executed, Restoration Method for Incomplete Key Files Caused by Interruption During Standby Instance Rebuilding Using gs\_ctl.
+keywords: [openGauss, FAQs, tools and commands, An Error Is Reported Displaying "Failed to obtain the GPHOME" When a Command Is Executed, Restoration Method for Incomplete Key Files Caused by Interruption During Standby Instance Rebuilding Using gs\_ctl]
+---
+
 # FAQs<a name="EN-US_TOPIC_0249632272"></a>
 
 ## An Error Is Reported Displaying "Failed to obtain the GPHOME" When a Command Is Executed<a name="EN-US_TOPIC_0249632274"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes SQLSetConnectAttr in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, SQLSetConnectAttr, development, Function, Prototype]
+---
+
 # SQLSetConnectAttr<a name="EN-US_TOPIC_0242371455"></a>
 
 ## Function<a name="en-us_topic_0238272901_en-us_topic_0237120431_en-us_topic_0059777827_se8dc3eed91144d248bfd9c9d9b144b15"></a>

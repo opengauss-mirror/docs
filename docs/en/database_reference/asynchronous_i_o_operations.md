@@ -1,3 +1,8 @@
+---
+description: This document describes Asynchronous I/O Operations in openGauss, covering topics such as enable\_adio\_debug, enable\_adio\_function.
+keywords: [openGauss, Asynchronous I/O Operations, database reference, enable\_adio\_debug, enable\_adio\_function]
+---
+
 # Asynchronous I/O Operations<a name="EN-US_TOPIC_0289900399"></a>
 
 ## enable\_adio\_debug<a name="en-us_topic_0283137248_en-us_topic_0237124704_en-us_topic_0059778686_se65f9465acfb40c68abb51eaaaf44836"></a>

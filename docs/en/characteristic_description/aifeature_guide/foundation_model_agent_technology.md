@@ -1,3 +1,8 @@
+---
+description: This document describes LLM Agent Technology in openGauss, covering topics such as Planning, Memory.
+keywords: [openGauss, LLM Agent Technology, features, Planning, Memory]
+---
+
 # LLM Agent Technology<a name="ZH-CN_TOPIC_0000002293246457"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T02:00:15.511Z -->
@@ -16,7 +21,7 @@ Working together, these four capabilities enable the agent to run and execute ta
 In an LLM-based agent, the LLM acts as the brain of the agent, and there are three key components: **planning**, **memory**, and **tool usage**, as shown in [Figure 1](#fig8331451230).
 
 **Figure 1**  LLM agent architecture<a name="fig8331451230"></a>  
-![](figures/LLM-Agent-architecture.png)
+![LLM agent architecture](figures/LLM-Agent-architecture.png)
 
 ## Planning<a name="section10289122563217"></a>
 

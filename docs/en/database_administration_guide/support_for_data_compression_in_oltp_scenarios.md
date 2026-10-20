@@ -1,3 +1,8 @@
+---
+description: This document describes Supporting Data Compression in OLTP Scenarios in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, Supporting Data Compression in OLTP Scenarios, database administration, Availability, Feature Overview]
+---
+
 # Supporting Data Compression in OLTP Scenarios
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:47:40.504Z pushedAt=2026-09-11T11:59:02.102Z -->

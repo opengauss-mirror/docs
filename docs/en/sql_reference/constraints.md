@@ -1,3 +1,8 @@
+---
+description: This document describes Constraints in openGauss, covering topics such as NOT NULL Constraint, UNIQUE Constraint.
+keywords: [openGauss, Constraints, SQL, NOT NULL Constraint, UNIQUE Constraint]
+---
+
 # Constraints
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:19:48.832Z -->

@@ -1,3 +1,8 @@
+---
+description: This document describes Huge Page Memory in openGauss, covering topics such as enable\_huge\_pages, huge\_page\_size.
+keywords: [openGauss, Huge Page Memory, database reference, enable\_huge\_pages, huge\_page\_size]
+---
+
 # Huge Page Memory
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:44:57.965Z -->

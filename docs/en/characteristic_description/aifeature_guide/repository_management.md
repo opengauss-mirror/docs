@@ -1,3 +1,8 @@
+---
+description: This document describes Knowledge Base Management in openGauss, covering topics such as Knowledge Base Management Constraints, API Description.
+keywords: [openGauss, Knowledge Base Management, features, Knowledge Base Management Constraints, API Description]
+---
+
 # Knowledge Base Management<a name="ZH-CN_TOPIC_0000002293246461"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T02:18:57.556Z -->

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_DESCRIPTION 的相关内容与操作方法。
+keywords: [openGauss, PG\_DESCRIPTION, 数据库参考]
+---
+
 # PG\_DESCRIPTION
 
 PG\_DESCRIPTION系统表可以给每个数据库对象存储一个可选的描述（注释）。许多内置的系统对象的描述提供了PG\_DESCRIPTION的初始内容。

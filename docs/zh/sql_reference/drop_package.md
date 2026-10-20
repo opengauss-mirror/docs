@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP PACKAGE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP PACKAGE, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP PACKAGE
 
 ## 功能描述<a name="section37715281291"></a>

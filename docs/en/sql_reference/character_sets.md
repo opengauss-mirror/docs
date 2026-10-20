@@ -1,3 +1,8 @@
+---
+description: This document describes CHARACTER_SETS in openGauss.
+keywords: [openGauss, CHARACTER_SETS, SQL]
+---
+
 # CHARACTER_SETS <a name="ZH-CN_TOPIC_0310260671"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:19:01.046Z -->

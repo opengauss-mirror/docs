@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_GLOBAL\_CONFIG in openGauss.
+keywords: [openGauss, GS\_GLOBAL\_CONFIG, database reference]
+---
+
 # GS\_GLOBAL\_CONFIG<a name="EN-US_TOPIC_0000001111762848"></a>
 
 **GS\_GLOBAL\_CONFIG**  records the parameter values specified by users during database instance initialization. In addition, it also stores weak passwords set by users. Initial database users can write, modify, and delete parameters in system catalogs using ALTER and DROP.

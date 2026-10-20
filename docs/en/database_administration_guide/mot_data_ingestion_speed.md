@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Data Ingestion Speed in openGauss.
+keywords: [openGauss, MOT Data Ingestion Speed, database administration]
+---
+
 # MOT Data Ingestion Speed<a name="EN-US_TOPIC_0270171520"></a>
 
 This test simulates realtime data streams arriving from massive IoT, cloud or mobile devices that need to be quickly and continuously ingested into the database on a massive scale.

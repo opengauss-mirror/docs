@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER TABLE INHERIT in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER TABLE INHERIT, SQL, Function, Precautions]
+---
+
 # ALTER TABLE INHERIT<a name="EN-US_TOPIC_0289900691"></a>
 
 ## Function<a name="en-us_topic_0283137443_en-us_topic_0237122090_en-us_topic_0059778762_s7554a451a2e8434ac6abac385bba71e9"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DO 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DO, SQL参考, 功能描述, 注意事项]
+---
+
 # DO
 
 ## 功能描述<a name="zh-cn_topic_0283137438_zh-cn_topic_0237122132_zh-cn_topic_0059778658_s9b63cdf8ade346bb85b02b8dbdf97170"></a>

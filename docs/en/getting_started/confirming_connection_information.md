@@ -1,3 +1,8 @@
+---
+description: This document describes Confirming Connection Information in openGauss, covering topics such as Procedure.
+keywords: [openGauss, Confirming Connection Information, getting started, Procedure]
+---
+
 # Confirming Connection Information<a name="EN-US_TOPIC_0289899830"></a>
 
 You can use a client tool to connect to a database through a the primary node of the database in the database. Before the connection, obtain the IP address and the primary node of the database port number of the server where the primary node of the database is deployed.

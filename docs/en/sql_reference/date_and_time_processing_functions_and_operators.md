@@ -1,3 +1,8 @@
+---
+description: This document describes Date/Time Functions and Operators in openGauss, covering topics such as Date/Time Operators, Date/Time Functions.
+keywords: [openGauss, Date/Time Functions and Operators, SQL, Date/Time Operators, Date/Time Functions]
+---
+
 # Date/Time Functions and Operators
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:25:56.661Z -->

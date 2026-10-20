@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 数据导入导出 的相关内容，涵盖 safe_data_path、enable_copy_server_files 等内容。
+keywords: [openGauss, 数据导入导出, 数据库参考, safe_data_path, enable_copy_server_files]
+---
+
 # 数据导入导出
 
 ## safe_data_path

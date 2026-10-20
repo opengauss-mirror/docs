@@ -1,3 +1,8 @@
+---
+description: This document describes Viewing Objects in openGauss.
+keywords: [openGauss, Viewing Objects, SQL]
+---
+
 # Viewing Objects<a name="EN-US_TOPIC_0000001224982629"></a>
 
 gsql provides several advanced features to facilitate user operations. The common usage is as follows:

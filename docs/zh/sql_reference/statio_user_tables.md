@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STATIO\_USER\_TABLES 的相关内容与操作方法。
+keywords: [openGauss, STATIO\_USER\_TABLES, SQL参考]
+---
+
 # STATIO\_USER\_TABLES
 
 STATIO\_USER\_TABLES视图显示命名空间中所有用户关系表的IO状态信息。

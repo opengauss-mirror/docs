@@ -1,3 +1,8 @@
+---
+description: This document describes Primary and Standby Database Bad Block Repair in openGauss.
+keywords: [openGauss, Primary and Standby Database Bad Block Repair, features]
+---
+
 # Primary and Standby Database Bad Block Repair
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:22:56.494Z pushedAt=2026-09-22T11:12:32.686Z -->

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 逻辑操作符 的相关内容与操作方法。
+keywords: [openGauss, 逻辑操作符, SQL参考]
+---
+
 # 逻辑操作符
 
 常用的逻辑操作符有AND、OR和NOT，他们的运算结果有三个值，分别为TRUE、FALSE和NULL，其中NULL代表未知。他们运算优先级顺序为：NOT\>AND\>OR。

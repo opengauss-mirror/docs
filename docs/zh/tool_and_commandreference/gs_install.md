@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs\_install 的相关内容，涵盖 背景信息、前提条件 等内容。
+keywords: [openGauss, gs\_install, 工具与命令参考, 背景信息, 前提条件]
+---
+
 # gs\_install
 
 ## 背景信息<a name="zh-cn_topic_0237152416_zh-cn_topic_0059778040_section551843134215"></a>

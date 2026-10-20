@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG_STATISTIC_HISTORY 的相关内容与操作方法。
+keywords: [openGauss, PG_STATISTIC_HISTORY, 数据库参考]
+---
+
 # PG_STATISTIC_HISTORY
 
 PG_STATISTIC_HISTORY用于存储统计信息历史数据版本记录，该表默认为只有管理员用户可访问，普通用户需要授权才可以访问。

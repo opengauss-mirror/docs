@@ -1,3 +1,8 @@
+---
+description: This document describes Offline Page Parsing Tool -- pagehack in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, Offline Page Parsing Tool -- pagehack, tools and commands, Background, Prerequisites]
+---
+
 # Offline Page Parsing Tool -- pagehack
 
 ## Background<a name="zh-cn_topic_0237152442_section125419154823"></a>

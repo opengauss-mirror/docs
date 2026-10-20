@@ -1,3 +1,8 @@
+---
+description: This document describes Extended Syntax in openGauss.
+keywords: [openGauss, Extended Syntax, SQL]
+---
+
 # Extended Syntax<a name="EN-US_TOPIC_0289900434"></a>
 
 openGauss provides the following extended syntax:

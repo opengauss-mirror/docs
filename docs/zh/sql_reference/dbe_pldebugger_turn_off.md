@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBE\_PLDEBUGGER.turn\_off 的相关内容与操作方法。
+keywords: [openGauss, DBE\_PLDEBUGGER.turn\_off, SQL参考]
+---
+
 # DBE\_PLDEBUGGER.turn\_off
 
 用于去掉turn\_on添加的调试标记，返回值表示成功或失败。可通过DBE\_PLDEBUGGER.local\_debug\_server\_info查找已经turn\_on的存储过程oid。

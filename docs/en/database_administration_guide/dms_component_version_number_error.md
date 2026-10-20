@@ -1,3 +1,8 @@
+---
+description: This document describes DMS Component Version Number Error in openGauss, covering topics such as Symptom, Cause.
+keywords: [openGauss, DMS Component Version Number Error, database administration, Symptom, Cause]
+---
+
 # DMS Component Version Number Error
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:42:57.300Z pushedAt=2026-09-11T07:45:32.882Z -->

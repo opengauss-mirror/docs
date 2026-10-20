@@ -1,3 +1,8 @@
+---
+description: This document describes Other Optimizer Options in openGauss, covering topics such as explain\_dna\_file, explain\_perf\_mode.
+keywords: [openGauss, Other Optimizer Options, database reference, explain\_dna\_file, explain\_perf\_mode]
+---
+
 # Other Optimizer Options<a name="EN-US_TOPIC_0289900235"></a>
 
 ## explain\_dna\_file<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_s1304d3e4a6f74ad188b804c55313fb69"></a>

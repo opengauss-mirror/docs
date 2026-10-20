@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE PACKAGE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE PACKAGE, SQL, Function, Precautions]
+---
+
 # CREATE PACKAGE<a name="EN-US_TOPIC_0000001114212452"></a>
 
 ## Function<a name="section33561436135517"></a>

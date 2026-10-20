@@ -1,3 +1,8 @@
+---
+description: This document describes Monitoring and Alarms in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, Monitoring and Alarms, features, Availability, Feature Overview]
+---
+
 # Monitoring and Alarms
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:19:33.993Z pushedAt=2026-09-22T11:12:32.671Z -->

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss java.sql.DatabaseMetaData 的相关内容与操作方法。
+keywords: [openGauss, java.sql.DatabaseMetaData, 开发指南]
+---
+
 # java.sql.DatabaseMetaData
 
 java.sql.DatabaseMetaData是数据库对象定义接口。

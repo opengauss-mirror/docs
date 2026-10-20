@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 备份恢复 的相关内容，涵盖 operation\_mode、enable\_cbm\_tracking 等内容。
+keywords: [openGauss, 备份恢复, 数据库参考, operation\_mode, enable\_cbm\_tracking]
+---
+
 # 备份恢复
 
 ## operation\_mode<a name="section0169133413323"></a>

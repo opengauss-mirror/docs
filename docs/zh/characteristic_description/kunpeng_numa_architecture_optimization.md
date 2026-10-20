@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 鲲鹏NUMA架构优化 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 鲲鹏NUMA架构优化, 特性描述, 可获得性, 特性简介]
+---
+
 # 鲲鹏NUMA架构优化
 
 ## 可获得性<a name="section1820817472142"></a>

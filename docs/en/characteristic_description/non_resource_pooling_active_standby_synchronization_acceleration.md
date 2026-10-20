@@ -1,3 +1,8 @@
+---
+description: This document describes Xlog no Lock Flush in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, Xlog no Lock Flush, features, Availability, Feature Overview]
+---
+
 # Xlog no Lock Flush<a name="ZH-CN_TOPIC_0000001209317775"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:20:35.890Z pushedAt=2026-09-22T11:12:32.674Z -->

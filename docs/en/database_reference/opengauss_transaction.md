@@ -1,3 +1,8 @@
+---
+description: This document describes openGauss Transaction in openGauss, covering topics such as transaction\_isolation, transaction\_read\_only.
+keywords: [openGauss, openGauss Transaction, database reference, transaction\_isolation, transaction\_read\_only]
+---
+
 # openGauss Transaction<a name="EN-US_TOPIC_0289900431"></a>
 
 This section describes the settings and value ranges of openGauss transaction parameters.

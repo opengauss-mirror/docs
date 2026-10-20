@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE CAST 的相关内容，涵盖 功能描述、语法格式 等内容。
+keywords: [openGauss, CREATE CAST, SQL参考, 功能描述, 语法格式]
+---
+
 # CREATE CAST
 
 ## 功能描述<a name="section173831846163116"></a>

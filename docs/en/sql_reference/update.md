@@ -1,3 +1,8 @@
+---
+description: This document describes UPDATE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, UPDATE, SQL, Function, Precautions]
+---
+
 # UPDATE<a name="EN-US_TOPIC_0289900207"></a>
 
 ## Function<a name="en-us_topic_0283137651_en-us_topic_0237122194_en-us_topic_0059778969_s85747c5f88e64562a8ff9ddacda19929"></a>

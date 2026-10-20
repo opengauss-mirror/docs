@@ -1,3 +1,8 @@
+---
+description: This document describes SQL PATCH in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, SQL PATCH, features, Availability, Introduction]
+---
+
 # SQL PATCH<a name="EN-US_TOPIC_0000001266435066"></a>
 
 ## Availability<a name="section1964504520318"></a>

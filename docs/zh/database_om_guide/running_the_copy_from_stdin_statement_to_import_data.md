@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 使用COPY FROM STDIN导入数据 的相关内容，涵盖 概述、CopyManager类简介 等内容。
+keywords: [openGauss, 使用COPY FROM STDIN导入数据, 数据库运维, 概述, CopyManager类简介]
+---
+
 # 使用COPY FROM STDIN导入数据
 
 ## 概述

@@ -1,3 +1,8 @@
+---
+description: This document describes kdb5\_util in openGauss, covering topics such as Function, Parameter Description.
+keywords: [openGauss, kdb5\_util, tools and commands, Function, Parameter Description]
+---
+
 # kdb5\_util<a name="EN-US_TOPIC_0249632286"></a>
 
 ## Function<a name="en-us_topic_0237152428_section10172172474817"></a>

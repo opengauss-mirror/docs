@@ -1,3 +1,8 @@
+---
+description: This document describes Batch Processing Mode in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, Batch Processing Mode, SQL, Syntax, Parameter Description]
+---
+
 # Batch Processing Mode<a name="EN-US_TOPIC_0000001179940232"></a>
 
 openGauss supports the execution of SQL statements from text files and provides the gsql tool to process SQL statements in batches.

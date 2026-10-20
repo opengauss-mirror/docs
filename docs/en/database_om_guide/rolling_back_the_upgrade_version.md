@@ -1,3 +1,8 @@
+---
+description: This document describes Rolling Back the Upgrade Version in openGauss, covering topics such as Procedure.
+keywords: [openGauss, Rolling Back the Upgrade Version, database O&M, Procedure]
+---
+
 # Rolling Back the Upgrade Version<a name="EN-US_TOPIC_0305491438"></a>
 
 This section describes how to roll back to the source version.

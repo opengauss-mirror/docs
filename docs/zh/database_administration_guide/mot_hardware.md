@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MOT硬件 的相关内容与操作方法。
+keywords: [openGauss, MOT硬件, 数据库管理]
+---
+
 # MOT硬件
 
 本次测试使用的服务器满足10GbE组网和以下配置：

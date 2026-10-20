@@ -1,3 +1,8 @@
+---
+description: This document describes One-Primary-Two-Standby Installation Without CM_Container in openGauss, covering topics such as 1. Obtaining the Image, 2. Obtaining the Primary/Standby Container Deployment Script.
+keywords: [openGauss, One-Primary-Two-Standby Installation Without CM_Container, installation, 1. Obtaining the Image, 2. Obtaining the Primary/Standby Container Deployment Script]
+---
+
 # One-Primary-Two-Standby Installation Without CM_Container
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-10T08:50:59.059Z pushedAt=2026-07-14T07:15:07.665Z -->

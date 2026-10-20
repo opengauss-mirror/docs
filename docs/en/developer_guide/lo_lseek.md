@@ -1,3 +1,8 @@
+---
+description: This document describes lo_lseek in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, lo_lseek, development, Function, Prototype]
+---
+
 # lo_lseek
 
 ## Function<a name="en-us_topic_0241735622_section696285173720"></a>

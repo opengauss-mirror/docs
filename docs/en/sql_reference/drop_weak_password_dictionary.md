@@ -1,3 +1,8 @@
+---
+description: This document describes DROP WEAK PASSWORD DICTIONARY in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP WEAK PASSWORD DICTIONARY, SQL, Function, Precautions]
+---
+
 # DROP WEAK PASSWORD DICTIONARY<a name="EN-US_TOPIC_0000001151474554"></a>
 
 ## Function<a name="en-us_topic_0283137468_en-us_topic_0237122161_en-us_topic_0059777447_s984b3ec2b84d48bb843629462288417b"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Functions in openGauss, covering topics such as Function Type Resolution, Examples.
+keywords: [openGauss, Functions, SQL, Function Type Resolution, Examples]
+---
+
 # Functions<a name="EN-US_TOPIC_0289900620"></a>
 
 ## Function Type Resolution<a name="en-us_topic_0283137224_en-us_topic_0237122009_en-us_topic_0059777930_sae9dc3fe177e4b349373f0f51975f380"></a>

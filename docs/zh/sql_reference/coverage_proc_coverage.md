@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss coverage.proc_coverage 的相关内容与操作方法。
+keywords: [openGauss, coverage.proc_coverage, SQL参考]
+---
+
 # coverage.proc_coverage
 
 proc_coverage表记录存储过程覆盖率信息。只能在系统库中查询到结果，在用户库中无法查询。

@@ -1,3 +1,8 @@
+---
+description: This document describes Partitioning in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Partitioning, features, Availability, Introduction]
+---
+
 # Partitioning<a name="EN-US_TOPIC_0000001105555110"></a>
 
 ## Availability<a name="section3104013"></a>

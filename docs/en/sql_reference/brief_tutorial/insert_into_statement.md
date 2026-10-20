@@ -1,3 +1,8 @@
+---
+description: This document describes INSERT INTO Statement in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, INSERT INTO Statement, SQL, Syntax, Parameter Description]
+---
+
 # INSERT INTO Statement<a name="EN-US_TOPIC_0000001179344358"></a>
 
 A new table contains no data. You need to insert data to the table before using it. You can execute the INSERT INTO statement to insert data into the table. This statement can be used to insert a row of data or multiple rows of data at the same time.

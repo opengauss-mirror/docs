@@ -1,3 +1,8 @@
+---
+description: This document describes oGRecorder API Optimization in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, oGRecorder API Optimization, tools and commands, Availability, Feature Overview]
+---
+
 # oGRecorder API Optimization
 
 ## Availability<a name="section3480125215575"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_MATVIEW\_DEPENDENCY in openGauss.
+keywords: [openGauss, GS\_MATVIEW\_DEPENDENCY, database reference]
+---
+
 # GS\_MATVIEW\_DEPENDENCY<a name="EN-US_TOPIC_0000001133365251"></a>
 
 **GS\_MATVIEW\_DEPENDENCY**  provides association information about each fast-refresh materialized view, base table, and Mlog table in the database. The Mlog table corresponding to the base table does not exist in the complete-refresh materialized view. Therefore, no record is written into the Mlog table.

@@ -1,3 +1,8 @@
+---
+description: This document describes Complete-refresh Materialized View in openGauss, covering topics such as Overview, Usage.
+keywords: [openGauss, Complete-refresh Materialized View, SQL, Overview, Usage]
+---
+
 # Complete-refresh Materialized View<a name="EN-US_TOPIC_0295970203"></a>
 
 ## Overview<a name="EN-US_TOPIC_0295970204"></a>

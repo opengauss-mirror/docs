@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SET TRANSACTION 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, SET TRANSACTION, SQL参考, 功能描述, 注意事项]
+---
+
 # SET TRANSACTION
 
 ## 功能描述<a name="zh-cn_topic_0283137515_zh-cn_topic_0237122190_zh-cn_topic_0059778135_se7890b9b6c9749168d76cd4ce38ee49f"></a>

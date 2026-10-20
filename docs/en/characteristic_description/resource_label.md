@@ -1,3 +1,8 @@
+---
+description: This document describes Resource Label in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Resource Label, features, Availability, Introduction]
+---
+
 # Resource Label<a name="EN-US_TOPIC_0000001135302875"></a>
 
 ## Availability<a name="section17746747"></a>

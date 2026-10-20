@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_SQL\_PATCH 的相关内容与操作方法。
+keywords: [openGauss, GS\_SQL\_PATCH, 数据库参考]
+---
+
 # GS\_SQL\_PATCH
 
 GS\_SQL\_PATCH系统表存储所有SQL\_PATCH的状态信息。

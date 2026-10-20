@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE AGGREGATE 的相关内容，涵盖 功能描述、语法格式 等内容。
+keywords: [openGauss, CREATE AGGREGATE, SQL参考, 功能描述, 语法格式]
+---
+
 # CREATE AGGREGATE
 
 ## 功能描述<a name="section12436651105814"></a>

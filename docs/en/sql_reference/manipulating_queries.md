@@ -1,3 +1,8 @@
+---
+description: This document describes Manipulating Queries in openGauss.
+keywords: [openGauss, Manipulating Queries, SQL]
+---
+
 # Manipulating Queries<a name="EN-US_TOPIC_0289900752"></a>
 
 openGauss provides functions and operators that can be used to manipulate queries that are already in  **tsquery**  type.

@@ -1,3 +1,8 @@
+---
+description: This document describes Table Design in openGauss, covering topics such as Selecting a Storage Mode, Selecting a Partitioning Mode.
+keywords: [openGauss, Table Design, development, Selecting a Storage Mode, Selecting a Partitioning Mode]
+---
+
 # Table Design<a name="EN-US_TOPIC_0000001102987918"></a>
 
 Comply with the following principles to properly design a table:

@@ -1,3 +1,8 @@
+---
+description: This document describes OCK-accelerated Data Transmission in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, OCK-accelerated Data Transmission, features, Availability, Introduction]
+---
+
 # OCK-accelerated Data Transmission<a name="EN-US_TOPIC_0000001336415954"></a>
 
 ## Availability<a name="section1271121702611"></a>

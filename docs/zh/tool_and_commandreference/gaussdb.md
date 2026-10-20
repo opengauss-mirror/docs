@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gaussdb 的相关内容，涵盖 背景信息、语法 等内容。
+keywords: [openGauss, gaussdb, 工具与命令参考, 背景信息, 语法]
+---
+
 # gaussdb
 
 ## 背景信息<a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_section2761723143810"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 物理备份与恢复 的相关内容，涵盖 物理备份、PITR恢复 等内容。
+keywords: [openGauss, 物理备份与恢复, 数据库运维, 物理备份, PITR恢复]
+---
+
 # 物理备份与恢复
 
 ## 物理备份

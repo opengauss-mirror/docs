@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG_STAT_VECTOR_BUFFER_CHUNK 的相关内容与操作方法。
+keywords: [openGauss, PG_STAT_VECTOR_BUFFER_CHUNK, 数据库参考]
+---
+
 # PG_STAT_VECTOR_BUFFER_CHUNK
 
 `PG_STAT_VECTOR_BUFFER_CHUNK` 显示当前实例向量专用缓存的各内存块及槽位状态，每个 chunk 对应一行。普通用户可以查询；缓存未启用时返回空集。

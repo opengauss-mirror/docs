@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 内部函数 的相关内容与操作方法。
+keywords: [openGauss, 内部函数, SQL参考]
+---
+
 # 内部函数
 
 openGauss中下列函数使用了内部数据类型，用户无法直接调用，在此章节列出。

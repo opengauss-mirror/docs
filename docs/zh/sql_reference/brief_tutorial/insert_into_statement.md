@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss INSERT INTO语句 的相关内容，涵盖 语法格式、参数说明 等内容。
+keywords: [openGauss, INSERT INTO语句, SQL参考, 语法格式, 参数说明]
+---
+
 # INSERT INTO语句
 
 在创建一个表后，表中并没有数据，使用这个表之前，需要向表中插入数据。INSERT INTO语句用于向表中插入新记录。该语句可以插入一行数据也可以同时插入多行数据。

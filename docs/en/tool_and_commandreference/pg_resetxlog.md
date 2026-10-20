@@ -1,3 +1,8 @@
+---
+description: This document describes pg\_resetxlog in openGauss, covering topics such as Function, Prerequisites.
+keywords: [openGauss, pg\_resetxlog, tools and commands, Function, Prerequisites]
+---
+
 # pg\_resetxlog<a name="EN-US_TOPIC_0249632285"></a>
 
 ## Function<a name="en-us_topic_0237152442_section125419154813"></a>

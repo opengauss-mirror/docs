@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 部署GaussMaster 的相关内容，涵盖 配置文件、启停服务 等内容。
+keywords: [openGauss, 部署GaussMaster, 特性描述, 配置文件, 启停服务]
+---
+
 # 部署GaussMaster<a name="ZH-CN_TOPIC_0000002258589386"></a>
 
 ## 配置文件<a id="configfile"></a>

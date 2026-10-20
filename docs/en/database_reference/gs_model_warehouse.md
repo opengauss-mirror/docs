@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_MODEL\_WAREHOUSE in openGauss.
+keywords: [openGauss, GS\_MODEL\_WAREHOUSE, database reference]
+---
+
 # GS\_MODEL\_WAREHOUSE<a name="EN-US_TOPIC_0000001110838812"></a>
 
 **GS\_MODEL\_WAREHOUSE**  stores AI engine training models, including the models and detailed description of the training process.

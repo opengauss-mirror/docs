@@ -1,3 +1,8 @@
+---
+description: This document describes Release Notes in openGauss, covering topics such as Terms of Use, User Notice.
+keywords: [openGauss, Release Notes, release notes, Terms of Use, User Notice]
+---
+
 # Release Notes
 
 ## Terms of Use

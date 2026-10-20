@@ -1,3 +1,8 @@
+---
+description: This document describes TABLES in openGauss.
+keywords: [openGauss, TABLES, SQL]
+---
+
 # TABLES <a name="ZH-CN_TOPIC_0310260671"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:28:03.501Z -->

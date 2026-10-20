@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 提示信息函数 的相关内容与操作方法。
+keywords: [openGauss, 提示信息函数, SQL参考]
+---
+
 # 提示信息函数
 
 - report\_application\_error

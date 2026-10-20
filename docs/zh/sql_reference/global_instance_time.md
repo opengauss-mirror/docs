@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_INSTANCE\_TIME 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_INSTANCE\_TIME, SQL参考]
+---
+
 # GLOBAL\_INSTANCE\_TIME
 
 提供openGauss中所有正常节点下的各种时间消耗信息（时间类型见instance\_time视图）。

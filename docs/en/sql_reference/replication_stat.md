@@ -1,3 +1,8 @@
+---
+description: This document describes REPLICATION\_STAT in openGauss.
+keywords: [openGauss, REPLICATION\_STAT, SQL]
+---
+
 # REPLICATION\_STAT<a name="EN-US_TOPIC_0245374812"></a>
 
 **REPLICATION\_STAT**  describes information about log synchronization status, such as the locations where the sender sends logs and where the receiver receives logs.

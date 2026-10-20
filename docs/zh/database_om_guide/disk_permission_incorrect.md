@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 磁盘权限问题 的相关内容，涵盖 现象、原因 等内容。
+keywords: [openGauss, 磁盘权限问题, 数据库运维, 现象, 原因]
+---
+
 # 磁盘权限问题
 
 ## 现象

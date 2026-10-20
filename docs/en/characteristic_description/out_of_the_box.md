@@ -1,3 +1,8 @@
+---
+description: This document describes Out-of-the-Box in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, Out-of-the-Box, features, Availability, Feature Overview]
+---
+
 # Out-of-the-Box
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:21:58.119Z pushedAt=2026-09-22T11:12:32.681Z -->

@@ -1,3 +1,8 @@
+---
+description: This document describes VACUUM in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, VACUUM, SQL, Function, Precautions]
+---
+
 # VACUUM<a name="EN-US_TOPIC_0289900615"></a>
 
 ## Function<a name="en-us_topic_0283137096_en-us_topic_0237122195_en-us_topic_0059777503_sd160e2f29b7240d88e6b4e9c7c7b8ae3"></a>

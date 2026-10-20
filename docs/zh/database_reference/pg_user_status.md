@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_USER\_STATUS 的相关内容与操作方法。
+keywords: [openGauss, PG\_USER\_STATUS, 数据库参考]
+---
+
 # PG\_USER\_STATUS
 
 PG\_USER\_STATUS系统表提供了访问数据库用户的状态。需要有系统管理员权限才可以访问此系统表

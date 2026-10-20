@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_GET\_SENDERS\_CATCHUP\_TIME in openGauss.
+keywords: [openGauss, PG\_GET\_SENDERS\_CATCHUP\_TIME, database reference]
+---
+
 # PG\_GET\_SENDERS\_CATCHUP\_TIME<a name="EN-US_TOPIC_0289900894"></a>
 
 **PG\_GET\_SENDERS\_CATCHUP\_TIME**  provides catchup information of the currently active primary/standby instance sender thread on the database node.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_WLM\_EC\_OPERATOR\_INFO 的相关内容与操作方法。
+keywords: [openGauss, GS\_WLM\_EC\_OPERATOR\_INFO, 数据库参考]
+---
+
 # GS\_WLM\_EC\_OPERATOR\_INFO
 
 GS\_WLM\_EC\_OPERATOR\_INFO系统表存储执行EC（Extension Connector）作业结束后的算子相关的记录。当设置GUC参数[enable\_resource\_record](workload_management.md#zh-cn_topic_0283137479_zh-cn_topic_0237124729_zh-cn_topic_0059777791_s77bd1023b63c4cd489760aa33f08d1ea)为on时，系统会每3分钟将GS\_WLM\_EC\_OPERATOR\_HISTORY中的记录导入此系统表，开启此功能会占用系统存储空间并对性能有一定影响。查询该系统表需要sysadmin权限。

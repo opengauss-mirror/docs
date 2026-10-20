@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss HTAP行列融合系统函数 的相关内容与操作方法。
+keywords: [openGauss, HTAP行列融合系统函数, SQL参考]
+---
+
 # HTAP行列融合系统函数
 
 - query\_imcstore\_views\(\)

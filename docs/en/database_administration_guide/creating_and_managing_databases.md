@@ -1,3 +1,8 @@
+---
+description: This document describes Creating and Managing Databases in openGauss, covering topics such as Prerequisites, Background.
+keywords: [openGauss, Creating and Managing Databases, database administration, Prerequisites, Background]
+---
+
 # Creating and Managing Databases<a name="EN-US_TOPIC_0000001208299065"></a>
 
 ## Prerequisites<a name="en-us_topic_0283136807_en-us_topic_0237120295_en-us_topic_0059779126_s82a10b03aef44f24a8b835912c58dd5b"></a>

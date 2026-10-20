@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STAT\_USER\_INDEXES 的相关内容与操作方法。
+keywords: [openGauss, STAT\_USER\_INDEXES, SQL参考]
+---
+
 # STAT\_USER\_INDEXES
 
 显示数据库中用户自定义普通表的索引状态信息。

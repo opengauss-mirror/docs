@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_ENCRYPTED\_PROC 的相关内容与操作方法。
+keywords: [openGauss, GS\_ENCRYPTED\_PROC, 数据库参考]
+---
+
 # GS\_ENCRYPTED\_PROC
 
 GS\_ENCRYPTED\_PROC系统表提供了密态函数/存储过程函数参数、返回值的原始数据类型，加密列等信息。

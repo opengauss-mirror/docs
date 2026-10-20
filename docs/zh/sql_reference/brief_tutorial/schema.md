@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SCHEMA 的相关内容，涵盖 语法格式、参数说明 等内容。
+keywords: [openGauss, SCHEMA, SQL参考, 语法格式, 参数说明]
+---
+
 # SCHEMA
 
 SCHEMA又称作模式。通过管理SCHEMA，允许多个用户使用同一数据库而不相互干扰，可以将数据库对象组织成易于管理的逻辑组，同时便于将第三方应用添加到相应的SCHEMA下而不引起冲突。

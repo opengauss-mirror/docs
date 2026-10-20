@@ -1,3 +1,8 @@
+---
+description: This document describes Fast Repair of Damaged Pages on Primary and Standby Nodes in openGauss.
+keywords: [openGauss, Fast Repair of Damaged Pages on Primary and Standby Nodes, database O&M]
+---
+
 # Fast Repair of Damaged Pages on Primary and Standby Nodes
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-14T08:04:23.556Z -->

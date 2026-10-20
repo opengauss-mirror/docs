@@ -1,3 +1,8 @@
+---
+description: This document describes gs_preupgradechk in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, gs_preupgradechk, tools and commands, Background, Prerequisites]
+---
+
 # gs_preupgradechk
 
 ## Background<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_section39821515163211"></a>

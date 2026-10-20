@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_COMM\_STATUS 的相关内容与操作方法。
+keywords: [openGauss, PG\_COMM\_STATUS, 数据库参考]
+---
+
 # PG\_COMM\_STATUS
 
 PG\_COMM\_STATUS视图展示节点的通信库状态。

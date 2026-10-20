@@ -1,3 +1,8 @@
+---
+description: This document describes DB4AI.ARCHIVE\_SNAPSHOT in openGauss.
+keywords: [openGauss, DB4AI.ARCHIVE\_SNAPSHOT, SQL]
+---
+
 # DB4AI.ARCHIVE\_SNAPSHOT<a name="EN-US_TOPIC_0000001195431133"></a>
 
 **ARCHIVE\_SNAPSHOT**  archives snapshots for the DB4AI feature. You can invoke  **ARCHIVE SNAPSHOT**  to implement this function. After taking effect, the snapshot cannot be used for training.

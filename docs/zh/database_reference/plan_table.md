@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PLAN\_TABLE 的相关内容与操作方法。
+keywords: [openGauss, PLAN\_TABLE, 数据库参考]
+---
+
 # PLAN\_TABLE
 
 PLAN\_TABLE显示用户通过执行EXPLAIN PLAN收集到的计划信息。计划信息的生命周期是session级别，session退出后相应的数据将被清除。同时不同session和不同user间的数据是相互隔离的。

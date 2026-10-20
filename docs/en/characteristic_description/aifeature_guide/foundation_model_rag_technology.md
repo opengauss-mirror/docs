@@ -1,3 +1,8 @@
+---
+description: This document describes LLM RAG Technology in openGauss, covering topics such as Retrieval Module, Model Fine-Tuning.
+keywords: [openGauss, LLM RAG Technology, features, Retrieval Module, Model Fine-Tuning]
+---
+
 # LLM RAG Technology<a name="ZH-CN_TOPIC_0000002258486268"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T02:01:06.203Z -->
@@ -11,7 +16,7 @@ GaussMaster builds the openGauss knowledge base and uses RAG technology to obtai
 The main function of the retrieval module is to retrieve the most relevant knowledge chunks from the knowledge base based on the user query. Currently, the industry mainly adopts the vector retrieval solution, which calculates the similarity between the query vector and the knowledge chunk vectors and selects the top K most relevant documents as the context information. However, the similarity between vectors does not necessarily reflect the true semantic similarity, and it is difficult to guarantee the retrieval recall rate by relying solely on vectorization. Therefore, GaussMaster proposes a solution that combines retrieval and reranking. On the basis of vector retrieval, it introduces text retrieval and reranks all retrieval results to obtain the final retrieval results. The introduction of text retrieval addresses the shortcomings of vector retrieval in searching for person names and phrases. It retrieves the corresponding results through keyword matching. After multi-path retrieval, the reranking model determines the similarity between the query and the documents, ranks the most relevant information first, and improves the recall rate of the retrieval module. The overall process of the retrieval module is shown in [Figure 1](#fig060842511242):
 
 **Figure 1**  Overall process flowchart of the retrieval module<a name="fig060842511242"></a>  
-![](figures/retrieval_module_overall_process_flowchart.png)
+![Overall process flowchart of the retrieval module](figures/retrieval_module_overall_process_flowchart.png)
 
 The parts are described as follows:
 
@@ -26,7 +31,7 @@ The parts are described as follows:
 In the fused retrieval scheme, an embedding model is used to vectorize knowledge for subsequent vector similarity calculation, and a reranking model is used to rank the relevance between the query and knowledge chunks across multiple retrieval results, so as to extract the most relevant knowledge chunks. However, general-purpose embedding models are trained on open-source corpora and have no knowledge of Gauss databases. As a result, semantics are lost after vectorization, preventing similarity calculation from achieving optimal results. Similarly, because the reranking model is also trained on open-source corpora, it cannot understand Gauss knowledge when judging the relevance between a query and knowledge chunks, leading to disordered ranking and thus reducing the recall rate of the retrieval module. Therefore, Gauss database knowledge must be used to fine-tune the models so that their performance improves when processing relevant data. The main process of model fine-tuning is shown in [Figure 1](#fig1419564143512).
 
 **Figure 1**  Model fine-tuning flowchart<a name="fig1419564143512"></a>  
-![](figures/model_fine_tuning_flowchart.png)
+![Model fine-tuning flowchart](figures/model_fine_tuning_flowchart.png)
 
 The parts are described as follows:
 
@@ -46,7 +51,7 @@ The parts are described as follows:
 When a user enters a query, colloquial or unclear expression may prevent relevant knowledge chunks from being retrieved. Therefore, a query optimization module is introduced to rewrite the user query. GaussMaster introduces two schemes, query rewriting and hypothetical answer, to transform the query separately, generate appropriate query content for retrieval, expand the retrieved knowledge chunks, and improve the recall rate of the retrieval module. The main process of query optimization is shown in [Figure 1](#fig7240516184920).
 
 **Figure 1**  Query optimization flowchart<a name="fig7240516184920"></a>  
-![](figures/query_optimization_flowchart.png)
+![Query optimization flowchart](figures/query_optimization_flowchart.png)
 
 The parts are described as follows:
 
@@ -59,7 +64,7 @@ The parts are described as follows:
 Based on the preceding three modules, GaussMaster provides an end-to-end Q&A process, as shown in [Figure 1](#fig1172673785210).
 
 **Figure 1**  End-to-end Q&A process flowchart<a name="fig1172673785210"></a>  
-![](figures/end-to-end-q-and-a-process-flowchart.png)
+![End-to-end Q&A process flowchart](figures/end-to-end-q-and-a-process-flowchart.png)
 
 The process is as follows:
 

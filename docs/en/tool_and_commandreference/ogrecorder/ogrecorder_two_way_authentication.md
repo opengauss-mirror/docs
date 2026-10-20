@@ -1,3 +1,8 @@
+---
+description: This document describes oGRecorder Two-Way Authentication in openGauss, covering topics such as Certificate Parameters, Certificate Generation.
+keywords: [openGauss, oGRecorder Two-Way Authentication, tools and commands, Certificate Parameters, Certificate Generation]
+---
+
 # oGRecorder Two-Way Authentication
 
 ## Certificate Parameters

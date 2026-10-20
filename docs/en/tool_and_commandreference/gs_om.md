@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_om in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, gs\_om, tools and commands, Background, Prerequisites]
+---
+
 # gs\_om<a name="ZH-CN_TOPIC_0249632260"></a>
 
 ## Background<a name="section431817462"></a>

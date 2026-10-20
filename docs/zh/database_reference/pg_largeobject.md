@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_LARGEOBJECT 的相关内容与操作方法。
+keywords: [openGauss, PG\_LARGEOBJECT, 数据库参考]
+---
+
 # PG\_LARGEOBJECT
 
 PG\_LARGEOBJECT系统表保存那些标记着“大对象”的数据。一个大对象是使用其创建时分配的OID标识的。每个大对象都分解成足够小的小段或者“页面”以便以行的形式存储在PG\_LARGEOBJECT里。每页的数据定义为LOBLKSIZE。

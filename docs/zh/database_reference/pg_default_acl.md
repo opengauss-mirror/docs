@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_DEFAULT\_ACL 的相关内容与操作方法。
+keywords: [openGauss, PG\_DEFAULT\_ACL, 数据库参考]
+---
+
 # PG\_DEFAULT\_ACL
 
 PG\_DEFAULT\_ACL系统表存储为新建对象设置的初始权限。

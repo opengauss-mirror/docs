@@ -1,3 +1,8 @@
+---
+description: This document describes USER\_TRANSACTION in openGauss.
+keywords: [openGauss, USER\_TRANSACTION, SQL]
+---
+
 # USER\_TRANSACTION<a name="EN-US_TOPIC_0000001199229429"></a>
 
 **USER\_TRANSACTION**  collects statistics about transactions executed by users. Common users can view only transactions executed by themselves, whereas user  **monadmin**  can view transactions executed by all users.

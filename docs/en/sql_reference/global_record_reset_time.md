@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_RECORD\_RESET\_TIME in openGauss.
+keywords: [openGauss, GLOBAL\_RECORD\_RESET\_TIME, SQL]
+---
+
 # GLOBAL\_RECORD\_RESET\_TIME<a name="EN-US_TOPIC_0245374823"></a>
 
 **GLOBAL\_RECORD\_RESET\_TIME**  displays statistics about reset time in openGauss. Restart, primary/standby switchover, and database deletion will cause the time to be reset. 

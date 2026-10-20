@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss UUID类型 的相关内容与操作方法。
+keywords: [openGauss, UUID类型, SQL参考]
+---
+
 # UUID类型
 
 UUID数据类型用来存储RFC 4122，ISO/IEF 9834-8:2005以及相关标准定义的通用唯一标识符（UUID）。这个标识符是一个由算法产生的128位标识符，确保它不可能使用相同算法在已知的模块中产生的相同标识符。

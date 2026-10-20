@@ -1,3 +1,8 @@
+---
+description: This document describes Character Set and Collation in openGauss, covering topics such as Supported Character Sets, Supported Collations.
+keywords: [openGauss, Character Set and Collation, SQL, Supported Character Sets, Supported Collations]
+---
+
 # Character Set and Collation
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:20:56.253Z -->

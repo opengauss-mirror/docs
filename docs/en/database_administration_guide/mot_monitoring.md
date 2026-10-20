@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Monitoring in openGauss, covering topics such as Table and Index Sizes, MOT GLOBAL Memory Details.
+keywords: [openGauss, MOT Monitoring, database administration, Table and Index Sizes, MOT GLOBAL Memory Details]
+---
+
 # MOT Monitoring<a name="EN-US_TOPIC_0270642718"></a>
 
 All syntax for monitoring of PG-based FDW tables is supported. This includes Table or Index sizes \(as described below\). In addition, special functions exist for monitoring MOT memory consumption, including MOT Global Memory, MOT Local Memory and a single client session.
@@ -113,4 +118,4 @@ select * from mot_session_memory_detail()
 
 Result –
 
-![](figures/en-us_image_0270643558.png)
+![Session Memory diagram](figures/en-us_image_0270643558.png)

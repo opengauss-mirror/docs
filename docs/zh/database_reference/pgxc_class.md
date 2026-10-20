@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PGXC\_CLASS 的相关内容与操作方法。
+keywords: [openGauss, PGXC\_CLASS, 数据库参考]
+---
+
 # PGXC\_CLASS
 
 PGXC\_CLASS系统表存储每张表的复制或分布信息。PGXC\_CLASS系统表仅在分布式场景下有具体含义，openGauss只能查询表定义。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss service子命令 的相关内容，涵盖 配置目录初始化、启动服务 等内容。
+keywords: [openGauss, service子命令, 特性描述, 配置目录初始化, 启动服务]
+---
+
 # service子命令<a name="ZH-CN_TOPIC_0000002258707500"></a>
 
 该子命令可用于对配置目录进行初始化，同时也可以实现启动和停止后台任务。

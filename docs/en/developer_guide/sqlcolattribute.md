@@ -1,3 +1,8 @@
+---
+description: This document describes SQLColAttribute in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, SQLColAttribute, development, Function, Prototype]
+---
+
 # SQLColAttribute<a name="EN-US_TOPIC_0242371442"></a>
 
 ## Function<a name="en-us_topic_0238272888_en-us_topic_0237120418_en-us_topic_0059778558_scc387c9cd5a14083903b16db19a589da"></a>

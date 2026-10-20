@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MOT外部支持工具 的相关内容，涵盖 gs\_ctl（全量和增量）、gs\_basebackup 等内容。
+keywords: [openGauss, MOT外部支持工具, 数据库管理, gs\_ctl（全量和增量）, gs\_basebackup]
+---
+
 # MOT外部支持工具
 
 为了支持MOT，修改了以下外部openGauss工具。请确保使用的工具是最新版本。下面将介绍与MOT相关的用法。有关这些工具及其使用方法的完整说明，请参阅《工具与命令参考》。

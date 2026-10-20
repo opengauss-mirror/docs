@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 锁活动详细信息统计 的相关内容，涵盖 LWLock Event Top 10、Lock Event Top 10 等内容。
+keywords: [openGauss, 锁活动详细信息统计, SQL参考, LWLock Event Top 10, Lock Event Top 10]
+---
+
 # 锁活动详细信息统计
 
 锁活动详细信息统计当前节点锁活动信息，包含 **LWLock（轻量级锁）** 和 **Lock（常规锁）**。分别按**总等待时间**和**请求次数**排序，展示排名前 10 的锁。数据来源于 WDR 快照中 `snap_global_wait_events` 表的差分计算结果：`type = 'LWLOCK_EVENT'` 对应 LWLock，`type = 'LOCK_EVENT'` 对应 Lock，用于帮助 DBA 快速定位锁竞争热点。

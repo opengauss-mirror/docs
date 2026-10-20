@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBE\_PLDEVELOPER.gs\_source 的相关内容与操作方法。
+keywords: [openGauss, DBE\_PLDEVELOPER.gs\_source, SQL参考]
+---
+
 # DBE\_PLDEVELOPER.gs\_source
 
 用于记录PLPGSQL对象（存储过程、函数、包、包体）编译相关信息，具体内容见下列字段描述。

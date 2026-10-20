@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Time Model 的相关内容，涵盖 Protocol Message Statistics 等内容。
+keywords: [openGauss, Time Model, SQL参考, Protocol Message Statistics]
+---
+
 # Time Model
 
 Time Model名称及描述如下表所示。

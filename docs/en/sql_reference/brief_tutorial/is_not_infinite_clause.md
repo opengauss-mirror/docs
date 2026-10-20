@@ -1,3 +1,8 @@
+---
+description: This document describes IS [NOT] INFINITE in openGauss, covering topics such as IS INFINITE, IS NOT INFINITE.
+keywords: [openGauss, IS [NOT] INFINITE, SQL, IS INFINITE, IS NOT INFINITE]
+---
+
 # IS [NOT] INFINITE<a name="ZH-CN_TOPIC_0000001210141894"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-28T03:10:47.968Z pushedAt=2026-07-28T03:31:56.801Z -->

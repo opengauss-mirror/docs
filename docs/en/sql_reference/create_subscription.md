@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE SUBSCRIPTION in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE SUBSCRIPTION, SQL, Function, Precautions]
+---
+
 # CREATE SUBSCRIPTION<a name="EN-US_TOPIC_0000001243677365"></a>
 
 ## Function<a name="section1941212243553"></a>

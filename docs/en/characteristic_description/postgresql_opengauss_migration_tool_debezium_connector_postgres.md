@@ -1,3 +1,8 @@
+---
+description: This document describes PostgreSQL-to-openGauss Migration Tool debezium-connector-po in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, PostgreSQL-to-openGauss Migration Tool debezium-connector-po, features, Availability, Feature Overview]
+---
+
 # PostgreSQL-to-openGauss Migration Tool debezium-connector-postgres
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:22:34.880Z pushedAt=2026-09-22T11:12:32.684Z -->

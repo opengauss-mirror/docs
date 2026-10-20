@@ -1,3 +1,8 @@
+---
+description: This document describes Legal Notice in openGauss.
+keywords: [openGauss, Legal Notice, terms of use]
+---
+
 # Legal Notice
 
 **Copyright © 2025 Huawei Technologies Co., Ltd.**

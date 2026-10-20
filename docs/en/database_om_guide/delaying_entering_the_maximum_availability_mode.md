@@ -1,3 +1,8 @@
+---
+description: This document describes Delaying Entry into Maximum Availability Mode in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Delaying Entry into Maximum Availability Mode, database O&M, Availability, Introduction]
+---
+
 # Delaying Entry into Maximum Availability Mode
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-14T08:03:54.763Z -->

@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_sdr in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, gs\_sdr, tools and commands, Background, Prerequisites]
+---
+
 # gs\_sdr<a name="ZH-CN_TOPIC_0000001263109824"></a>
 
 ## Background<a name="en-us_topic_0287275995_section431817462"></a>

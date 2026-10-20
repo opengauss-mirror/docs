@@ -1,3 +1,8 @@
+---
+description: This document describes Fault Tolerance in openGauss, covering topics such as exit\_on\_error, restart\_after\_crash.
+keywords: [openGauss, Fault Tolerance, database reference, exit\_on\_error, restart\_after\_crash]
+---
+
 # Fault Tolerance<a name="EN-US_TOPIC_0289900527"></a>
 
 This section describes parameters used for controlling how the server processes an error occurring in the database system.

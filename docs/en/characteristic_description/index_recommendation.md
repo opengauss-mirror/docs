@@ -1,3 +1,8 @@
+---
+description: This document describes Index Recommendation in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Index Recommendation, features, Availability, Introduction]
+---
+
 # Index Recommendation<a name="EN-US_TOPIC_0000001105075482"></a>
 
 ## Availability<a name="section17365142913365"></a>

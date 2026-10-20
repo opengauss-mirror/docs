@@ -1,3 +1,8 @@
+---
+description: This document describes NULL Statements in openGauss, covering topics such as Syntax.
+keywords: [openGauss, NULL Statements, SQL, Syntax]
+---
+
 # NULL Statements<a name="EN-US_TOPIC_0245374626"></a>
 
 In PL/SQL programs,  **NULL**  statements are used to indicate "nothing should be done", equal to placeholders. They grant meanings to some statements and improve program readability.

@@ -1,3 +1,8 @@
+---
+description: This document describes Hardware and Software Configuration Requirements in openGauss, covering topics such as Software Requirements, Hardware Requirements.
+keywords: [openGauss, Hardware and Software Configuration Requirements, product overview, Software Requirements, Hardware Requirements]
+---
+
 # Hardware and Software Configuration Requirements<a name="EN-US_CONCEPT_0289895602"></a>
 
 ## Software Requirements<a name="en-us_concept_0283139016_section209873376322"></a>

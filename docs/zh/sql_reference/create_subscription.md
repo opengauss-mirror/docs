@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE SUBSCRIPTION 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE SUBSCRIPTION, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE SUBSCRIPTION
 
 ## 功能描述<a name="section1941212243553"></a>

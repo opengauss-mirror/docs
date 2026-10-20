@@ -1,3 +1,8 @@
+---
+description: This document describes Aliases in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, Aliases, SQL, Syntax, Parameter Description]
+---
+
 # Aliases<a name="EN-US_TOPIC_0000001225378501"></a>
 
 SQL can rename a table or a column. The name is the alias of the table or the column. Aliases are created to improve the readability of table names or column names. In SQL,  **AS**  is used to create an alias.

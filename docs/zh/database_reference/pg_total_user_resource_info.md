@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_TOTAL\_USER\_RESOURCE\_INFO 的相关内容与操作方法。
+keywords: [openGauss, PG\_TOTAL\_USER\_RESOURCE\_INFO, 数据库参考]
+---
+
 # PG\_TOTAL\_USER\_RESOURCE\_INFO
 
 PG\_TOTAL\_USER\_RESOURCE\_INFO视图显示所有用户资源使用情况，需要使用管理员用户进行查询。此视图在参数[use\_workload\_manager](workload_management.md)为on时才有效。其中，IO相关监控项在参数enable\_logical\_io\_statistics为on时才有效。

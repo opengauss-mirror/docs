@@ -1,3 +1,8 @@
+---
+description: This document describes UDF Result Cache in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, UDF Result Cache, features, Availability, Feature Overview]
+---
+
 # UDF Result Cache
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:34:39.503Z pushedAt=2026-09-22T11:12:32.721Z -->

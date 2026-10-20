@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_AMOP 的相关内容与操作方法。
+keywords: [openGauss, PG\_AMOP, 数据库参考]
+---
+
 # PG\_AMOP
 
 PG\_AMOP系统表存储有关和访问方法操作符族关联的信息。如果一个操作符是一个操作符族中的成员，则在这个表中会占据一行。一个族成员是一个search操作符或一个ordering操作符。一个操作符可以在多个族中出现，但是不能在一个族中的多个搜索位置或多个排序位置中出现。

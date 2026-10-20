@@ -1,3 +1,8 @@
+---
+description: This document describes Stored Procedure Supporting Autonomous Transaction in openGauss.
+keywords: [openGauss, Stored Procedure Supporting Autonomous Transaction, SQL]
+---
+
 # Stored Procedure Supporting Autonomous Transaction<a name="EN-US_TOPIC_0289899889"></a>
 
 An autonomous transaction can be defined in a stored procedure. The identifier of an autonomous transaction is  **PRAGMA AUTONOMOUS\_TRANSACTION**. The syntax of an autonomous transaction is the same as that of creating a stored procedure. The following is an example.

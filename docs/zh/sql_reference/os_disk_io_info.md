@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss OS\_DISK\_IO\_INFO 的相关内容与操作方法。
+keywords: [openGauss, OS\_DISK\_IO\_INFO, SQL参考]
+---
+
 # OS\_DISK\_IO\_INFO
 
 显示当前节点操作系统磁盘IO的统计信息，数据来源于/proc/diskstats。

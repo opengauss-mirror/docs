@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP ACCESS METHOD 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP ACCESS METHOD, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP ACCESS METHOD
 
 ## 功能描述<a name="zh-cn_topic_0283136794_zh-cn_topic_0237122140_zh-cn_topic_0059779018_s6e7bed7d44604f749e4ea7043f81b07b"></a>

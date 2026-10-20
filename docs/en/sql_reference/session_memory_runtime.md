@@ -1,3 +1,8 @@
+---
+description: This document describes SESSION\_MEMORY\_RUNTIME in openGauss.
+keywords: [openGauss, SESSION\_MEMORY\_RUNTIME, SQL]
+---
+
 # SESSION\_MEMORY\_RUNTIME<a name="EN-US_TOPIC_0245374748"></a>
 
 **SESSION\_MEMORY\_RUNTIME**  displays load management information about memory usage of ongoing complex jobs executed by the current user.

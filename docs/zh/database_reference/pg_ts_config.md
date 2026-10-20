@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_TS\_CONFIG 的相关内容与操作方法。
+keywords: [openGauss, PG\_TS\_CONFIG, 数据库参考]
+---
+
 # PG\_TS\_CONFIG
 
 PG\_TS\_CONFIG系统表包含表示文本搜索配置的记录。一个配置指定一个特定的文本搜索解析器和一个为了每个解析器的输出类型使用的字典的列表。

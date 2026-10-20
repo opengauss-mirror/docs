@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss dblink 的相关内容，涵盖 编译dblink、常用的dblink函数 等内容。
+keywords: [openGauss, dblink, 数据库管理, 编译dblink, 常用的dblink函数]
+---
+
 # dblink
 
 dblink是一个可以在一个openGauss数据库会话中连接到其它openGauss数据库的工具，同libpq支持的连接参数一致，可参考**[链接参数](../developer_guide/link_parameters_libpq.md)**。openGauss默认不编译dblink，下面依次介绍如何编译和使用dblink。

@@ -1,3 +1,8 @@
+---
+description: This document describes Security Functions in openGauss, covering topics such as Security Functions.
+keywords: [openGauss, Security Functions, SQL]
+---
+
 # Security Functions<a name="EN-US_TOPIC_0289900077"></a>
 
 ## Security Functions<a name="en-us_topic_0283137444_en-us_topic_0237121984_en-us_topic_0059778224_s8faac65b21ea4e438009735298c2c8d1"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE MATERIALIZED VIEW LOG in openGauss, covering topics such as Precautions, Syntax.
+keywords: [openGauss, CREATE MATERIALIZED VIEW LOG, SQL, Precautions, Syntax]
+---
+
 # CREATE MATERIALIZED VIEW LOG
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:20:22.730Z -->

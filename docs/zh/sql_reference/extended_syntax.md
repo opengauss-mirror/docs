@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 扩展语法 的相关内容与操作方法。
+keywords: [openGauss, 扩展语法, SQL参考]
+---
+
 # 扩展语法
 
 openGauss提供的扩展语法如下。

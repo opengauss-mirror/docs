@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 创建和管理序列 的相关内容，涵盖 背景信息、操作步骤 等内容。
+keywords: [openGauss, 创建和管理序列, 数据库管理, 背景信息, 操作步骤]
+---
+
 # 创建和管理序列
 
 ## 背景信息<a name="zh-cn_topic_0237120310_zh-cn_topic_0093152908_zh-cn_topic_0064273680_section3970017091331"></a>

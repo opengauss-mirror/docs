@@ -1,3 +1,8 @@
+---
+description: This document describes Operators in openGauss, covering topics such as Arithmetic Operators, Comparison Operators.
+keywords: [openGauss, Operators, SQL, Arithmetic Operators, Comparison Operators]
+---
+
 # Operators<a name="EN-US_TOPIC_0000001179940228"></a>
 
 An operator in openGauss is a reserved keyword or character, and it is generally used in the WHERE statement as a filter condition. Common operators are as follows:

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_WLM\_STATISTICS 的相关内容与操作方法。
+keywords: [openGauss, PG\_WLM\_STATISTICS, 数据库参考]
+---
+
 # PG\_WLM\_STATISTICS
 
 PG\_WLM\_STATISTICS视图显示作业结束后或已被处理异常后的负载管理相关信息。查询该视图需要sysadmin权限。

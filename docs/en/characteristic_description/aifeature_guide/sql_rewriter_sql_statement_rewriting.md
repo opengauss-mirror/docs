@@ -1,3 +1,8 @@
+---
+description: This document describes SQL Rewriter: SQL Statement Rewriting in openGauss, covering topics such as Overview, Usage Guide.
+keywords: [openGauss, SQL Rewriter: SQL Statement Rewriting, features, Overview, Usage Guide]
+---
+
 # SQL Rewriter: SQL Statement Rewriting<a name="EN-US_TOPIC_0000001364336305"></a>
 
 ## Overview<a name="EN-US_TOPIC_0000001311256716"></a>

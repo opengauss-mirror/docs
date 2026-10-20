@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER FOREIGN DATA WRAPPER 的相关内容，涵盖 功能描述、语法格式 等内容。
+keywords: [openGauss, ALTER FOREIGN DATA WRAPPER, SQL参考, 功能描述, 语法格式]
+---
+
 # ALTER FOREIGN DATA WRAPPER
 
 ## 功能描述

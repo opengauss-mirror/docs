@@ -1,3 +1,8 @@
+---
+description: This document describes gs_retrieve in openGauss, covering topics such as Background, Precautions.
+keywords: [openGauss, gs_retrieve, tools and commands, Background, Precautions]
+---
+
 # gs_retrieve
 
 ## Background<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_section1271019596335"></a>

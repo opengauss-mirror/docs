@@ -1,3 +1,8 @@
+---
+description: This document describes PG_STATISTIC_HISTORY in openGauss.
+keywords: [openGauss, PG_STATISTIC_HISTORY, database reference]
+---
+
 # PG_STATISTIC_HISTORY
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:49:10.487Z -->

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss UWAL特性 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, UWAL特性, 特性描述, 可获得性, 特性简介]
+---
+
 # UWAL特性<a name="ZH-CN_TOPIC_0000001687210125"></a>
 
 ## 可获得性<a name="section14611198203513"></a>

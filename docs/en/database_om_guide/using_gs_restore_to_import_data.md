@@ -1,3 +1,8 @@
+---
+description: This document describes Using gs\_restore to Import Data in openGauss, covering topics such as Scenarios, Procedure.
+keywords: [openGauss, Using gs\_restore to Import Data, database O&M, Scenarios, Procedure]
+---
+
 # Using gs\_restore to Import Data<a name="EN-US_TOPIC_0000001208139521"></a>
 
 ## Scenarios<a name="en-us_topic_0283137171_en-us_topic_0237121137_section17330121375310"></a>

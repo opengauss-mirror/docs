@@ -1,3 +1,8 @@
+---
+description: This document describes Deep Copy in openGauss.
+keywords: [openGauss, Deep Copy, database O&M]
+---
+
 # Deep Copy<a name="EN-US_TOPIC_0242370291"></a>
 
 After data is imported, you can perform a deep copy to modify a partition key, change a row-store table to a column-store table, or add a partial cluster key. A deep copy re-creates a table and batch inserts data into the table.

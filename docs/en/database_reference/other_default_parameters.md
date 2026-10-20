@@ -1,3 +1,8 @@
+---
+description: This document describes Other Default Parameters in openGauss, covering topics such as dynamic\_library\_path, gin\_fuzzy\_search\_limit.
+keywords: [openGauss, Other Default Parameters, database reference, dynamic\_library\_path, gin\_fuzzy\_search\_limit]
+---
+
 # Other Default Parameters<a name="EN-US_TOPIC_0289900272"></a>
 
 This section describes the default database loading parameters.

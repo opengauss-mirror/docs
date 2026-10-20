@@ -1,3 +1,8 @@
+---
+description: This document describes Typical Application Scenarios and Configurations in openGauss, covering topics such as Log Diagnosis Scenario, High Performance.
+keywords: [openGauss, Typical Application Scenarios and Configurations, development, Log Diagnosis Scenario, High Performance]
+---
+
 # Typical Application Scenarios and Configurations<a name="EN-US_TOPIC_0000001151863771"></a>
 
 ## Log Diagnosis Scenario<a name="section171801620145817"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_SHARED\_MEMORY\_DETAIL 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_SHARED\_MEMORY\_DETAIL, SQL参考]
+---
+
 # GLOBAL\_SHARED\_MEMORY\_DETAIL
 
 查询openGauss中所有正常节点下的共享内存上下文的使用信息。

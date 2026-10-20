@@ -1,3 +1,8 @@
+---
+description: This document describes Other System Functions in openGauss.
+keywords: [openGauss, Other System Functions, SQL]
+---
+
 # Other System Functions<a name="EN-US_TOPIC_0289900172"></a>
 
 The built-in functions and operators of openGauss are inherited from the open-source PG. For details about the following functions, see the  [official PG documents](https://www.postgresql.org/docs/9.2/functions.html).

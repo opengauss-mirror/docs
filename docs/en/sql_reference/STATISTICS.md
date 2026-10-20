@@ -1,3 +1,8 @@
+---
+description: This document describes STATISTICS in openGauss.
+keywords: [openGauss, STATISTICS, SQL]
+---
+
 # STATISTICS <a name="ZH-CN_TOPIC_0310260671"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:28:05.131Z -->

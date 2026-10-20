@@ -1,3 +1,8 @@
+---
+description: This document describes Resource Pooling HTAP Row-Column Fusion in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, Resource Pooling HTAP Row-Column Fusion, features, Availability, Feature Overview]
+---
+
 # Resource Pooling HTAP Row-Column Fusion
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:25:13.330Z pushedAt=2026-09-22T11:12:32.695Z -->

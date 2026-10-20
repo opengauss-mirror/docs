@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_EXTENSION\_DATA\_SOURCE in openGauss.
+keywords: [openGauss, PG\_EXTENSION\_DATA\_SOURCE, database reference]
+---
+
 # PG\_EXTENSION\_DATA\_SOURCE<a name="EN-US_TOPIC_0289900626"></a>
 
 **PG\_EXTENSION\_DATA\_SOURCE**  records information about external data sources. An external data source contains information about an external database, such as its password encoding. It is mainly used with Extension Connector.

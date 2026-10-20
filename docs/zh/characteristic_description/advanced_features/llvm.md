@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss LLVM 的相关内容，涵盖 适用场景、非适用场景 等内容。
+keywords: [openGauss, LLVM, 特性描述, 适用场景, 非适用场景]
+---
+
 # LLVM
 
 openGauss借助LLVM（Low Level Virtual Machine）提供的库函数，依据查询执行计划树，将原本在执行器阶段才会确定查询实际执行路径的过程提前到执行初始化阶段，从而规避原本查询执行时候伴随的函数调用、逻辑条件分支判断以及大量的数据读取等问题，以达到提升查询性能的目的。

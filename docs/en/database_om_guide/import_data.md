@@ -1,3 +1,8 @@
+---
+description: This document describes Importing Data in openGauss.
+keywords: [openGauss, Importing Data, database O&M]
+---
+
 # Importing Data<a name="EN-US_TOPIC_0242370266"></a>
 
 - **[Running the INSERT Statement to Insert Data](running_the_insert_statement_to_insert_data.md)**  

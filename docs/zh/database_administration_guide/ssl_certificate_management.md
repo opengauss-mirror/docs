@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SSL证书管理 的相关内容，涵盖 证书生成、证书替换 等内容。
+keywords: [openGauss, SSL证书管理, 数据库管理, 证书生成, 证书替换]
+---
+
 # SSL证书管理
 
 openGauss默认配置了通过openssl生成的安全证书、私钥。并且提供证书替换的接口，方便用户进行证书的替换。

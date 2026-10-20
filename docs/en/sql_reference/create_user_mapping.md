@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE USER MAPPING in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE USER MAPPING, SQL, Function, Precautions]
+---
+
 # CREATE USER MAPPING<a name="EN-US_TOPIC_0289899891"></a>
 
 ## Function<a name="en-us_topic_0283136906_section55185111610"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Keywords in openGauss.
+keywords: [openGauss, Keywords, SQL]
+---
+
 # Keywords<a name="EN-US_TOPIC_0289900482"></a>
 
 The SQL contains reserved words and non-reserved words. Standards require that reserved keywords not be used as other identifiers. Non-reserved keywords have special meanings only in a specific environment and can be used as identifiers in other environments.

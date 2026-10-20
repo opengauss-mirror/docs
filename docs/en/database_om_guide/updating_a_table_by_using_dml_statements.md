@@ -1,3 +1,8 @@
+---
+description: This document describes Updating a Table by Using DML Statements in openGauss, covering topics such as Procedure.
+keywords: [openGauss, Updating a Table by Using DML Statements, database O&M, Procedure]
+---
+
 # Updating a Table by Using DML Statements<a name="EN-US_TOPIC_0242370289"></a>
 
 In openGauss, you can update a table by running DML statements.

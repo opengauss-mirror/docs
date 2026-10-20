@@ -1,3 +1,8 @@
+---
+description: This document describes dssserver Port Number Error in openGauss, covering topics such as Symptom, Cause.
+keywords: [openGauss, dssserver Port Number Error, database administration, Symptom, Cause]
+---
+
 # dssserver Port Number Error
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:43:08.016Z pushedAt=2026-09-11T08:16:05.446Z -->

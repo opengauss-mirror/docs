@@ -1,3 +1,8 @@
+---
+description: This document describes Appendix in openGauss, covering topics such as Microservice Mode APIs, Metric Unit Query API.
+keywords: [openGauss, Appendix, features, Microservice Mode APIs, Metric Unit Query API]
+---
+
 # Appendix<a name="ZH-CN_TOPIC_0000002258650632"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T02:03:18.571Z -->

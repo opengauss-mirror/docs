@@ -1,3 +1,8 @@
+---
+description: This document describes Core Database Technologies in openGauss, covering topics such as Basic Functions Oriented to Application Development, High Performance.
+keywords: [openGauss, Core Database Technologies, product overview, Basic Functions Oriented to Application Development, High Performance]
+---
+
 # Core Database Technologies<a name="EN-US_CONCEPT_0252569318"></a>
 
 ## Basic Functions Oriented to Application Development
@@ -99,7 +104,7 @@ Column-store is recommended if a table contains many columns \(called a wide tab
 [Figure 1](#en-us_topic_0242724708_fig4487133722819)  shows the column-store model.
 
 **Figure  1**  Column-store<a name="en-us_topic_0242724708_fig4487133722819"></a>  
-<img src="figures/column-store.png" title="column-store" style="zoom:67%;" />
+<img src="figures/column-store.png" alt="Column-store" title="column-store" style="zoom:67%;" />
 
 In a wide table containing a huge amount of data, a query usually only includes certain columns. In this case, the query performance of the row-store engine is poor. For example, a single table containing the data of a meteorological agency has 200 to 800 columns. Among these columns, only 10 are frequently accessed. In this case, a vectorized execution and column-store engine can significantly improve performance by saving storage space.
 
@@ -142,7 +147,7 @@ The in-place update storage engine solves the problems of space expansion and la
 ### Xlog Lockless Update and Parallel Page Playback<a name="section18905074613"></a>
 
 **Figure  2**  Xlog lock less Design<a name="fig7888181774615"></a>  
-![](figures/xlog-lock-less-design.png "xlog-lock-less-design")
+![Xlog lock less Design](figures/xlog-lock-less-design.png "xlog-lock-less-design")
 
 This feature optimizes the WalInsertLock mechanism by using log sequence numbers \(LSNs\) and log record counts \(LRCs\) to record the copy progress of each backend and canceling the WalInsertLock mechanism. The backend can directly copy logs to the WalBuffer without contending for the WalInsertLock. In addition, a dedicated WALWriter thread is used to write logs, and the backend thread does not need to ensure the Xlog flushing. After the preceding optimization, the WalInsertLock contention and WalWriter dedicated disk write threads are canceled. The system performance can be further improved while the original XLog function remains unchanged. This feature optimizes the Ustore in-place update WALs and Ustore DML operation parallel playback and distribution. Prefixes and suffixes are used to reduce the update WALs. The playback thread is divided into multiple types to solve the problem that most Ustore DML WALs are replayed on multiple pages. In addition, the Ustore data page playback is distributed based on blkno to improve the degree of parallel playback.
 
@@ -263,7 +268,7 @@ In a typical OLTP scenario, simple queries account for a large proportion. This 
 ### Kunpeng NUMA Architecture Optimization<a name="section944319275618"></a>
 
 **Figure  2**  Kunpeng NUMA architecture optimization<a name="fig1684262417126"></a>  
-![](figures/kunpeng-numa-architecture-optimization.png "kunpeng-numa-architecture-optimization")
+![Kunpeng NUMA architecture optimization](figures/kunpeng-numa-architecture-optimization.png "kunpeng-numa-architecture-optimization")
 
 1. Based on the multi-core NUMA architecture of the Kunpeng processor, openGauss optimizes the NUMA architecture to reduce the cross-core memory access latency and maximize the multi-core Kunpeng computing capability. The key technologies include redo log batch insertion, NUMA distribution of hotspot data, and Clog partitions, greatly improving the processing performance of the TP system.
 2. Based on the ARMv8.1 architecture used by the Kunpeng chip, openGauss uses the LSE instruction set to implement efficient atomic operations, effectively improving the CPU usage, multi-thread synchronization performance, and XLog write performance.

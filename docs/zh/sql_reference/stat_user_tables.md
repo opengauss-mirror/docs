@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STAT\_USER\_TABLES 的相关内容与操作方法。
+keywords: [openGauss, STAT\_USER\_TABLES, SQL参考]
+---
+
 # STAT\_USER\_TABLES
 
 显示当前节点所有命名空间中用户自定义普通表的状态信息。
