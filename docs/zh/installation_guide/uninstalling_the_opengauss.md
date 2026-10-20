@@ -111,7 +111,7 @@ UnInstallationGuide succeeded.
 
 5. 删除openGauss数据库各节点root用户的互信，操作参考[手工建立互信](initializing_the_installation_environment.md)的删除root用户互信部分内容。
 
-6. 注销root用户。
+6. 退出root用户。
 
 **示例**
 
