@@ -50,7 +50,7 @@ After the openGauss installation environment is prepared by executing the pre-in
 
     >[!NOTE]NOTE 
     >
-    >- Character set names are case-insensitive, for example, the following values are supported by openGauss:  **gbk**  and  **GBK**;  **UTF-8**,  **UTF8**,  **utf8**, and  **utf-8**; and  **Latine1**  and  **latine1**.
+    >- Character set names are case-insensitive, for example, the following values are supported by openGauss:  **gbk**  and  **GBK**;  **UTF-8**,  **UTF8**,  **utf8**, and  **utf-8**; and  **Latin1**  and  **latin1**.
     >
     >- If no character set is specified during installation, the default character set SQL\_ASCII is used. To simplify and unify the locale, the default locale is  **C**. If you want to specify another character set and locale, use the  **--gsinit-parameter="--locale=LOCALE"**  parameter during installation. The  **LOCALE**  parameter specifies the default locale for the new database.
     

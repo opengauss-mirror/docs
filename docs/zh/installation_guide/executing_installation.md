@@ -33,7 +33,7 @@
 3. 使用gs\_install安装openGauss。若为环境变量分离的模式安装的数据库需要source环境变量分离文件ENVFILE。
 
     ```
-    source ENVFILE(若为环境变量分离的模式)
+    source ENVFILE
     gs_install -X /opt/software/openGauss/cluster_config.xml
     ```
 
@@ -47,11 +47,11 @@
 
     安装过程中会生成ssl证书，证书存放路径为\{gaussdbAppPath\}/share/sslcert/om，其中\{gaussdbAppPath\}为openGauss配置文件中指定的程序安装目录。
 
-    日志文件路径下会生成两个日志文件：“gs\_install-YYYY-MMDD\_HHMMSS.log”和“gs\_local-YYYY-MM-DD\_HHMMSS.log”。
+    日志文件路径下会生成两个日志文件：“gs\_install-YYYY-MM-DD\_HHMMSS.log”和“gs\_local-YYYY-MM-DD\_HHMMSS.log”。
 
     >[!NOTE]说明
     >
-    >- openGauss支持字符集的多种写法：gbk/GBK、UTF-8/UTF8/utf8/utf-8和Latine1/latine1。
+    >- openGauss支持字符集的多种写法：gbk/GBK、UTF-8/UTF8/utf8/utf-8和Latin1/latin1。
     >
     >- 安装时若不指定字符集，默认字符集为SQL\_ASCII，为简化和统一区域locale默认设置为C，若想指定其他字符集和区域，请在安装时使用参数--gsinit-parameter="--locale=LOCALE"来指定，LOCALE为新数据库设置缺省的区域。
 
