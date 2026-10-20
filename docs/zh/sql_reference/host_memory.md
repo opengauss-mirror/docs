@@ -17,7 +17,7 @@ Host Memory列名称及描述如下表所示。
 </tr>
 </thead>
 <tbody>
-<tr id="row1"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p1_1"><a name="p1_1"></a><a name="p1_1"></a>Snapshot</p>
+<tr id="row1"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p1_1"><a name="p1_1"></a><a name="p1_1"></a>  </p>
 </td>
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p1_2"><a name="p1_2"></a><a name="p1_2"></a>内存快照时刻，包含SnapStart（开始快照）和SnapEnd（结束快照）。</p>
 </td>

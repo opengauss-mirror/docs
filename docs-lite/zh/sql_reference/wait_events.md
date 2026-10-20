@@ -76,6 +76,27 @@ WAIT\_EVENTS显示当前节点的event的等待相关的统计信息。具体事
 <td class="cellrowborder" valign="top" width="61.90619061906191%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137083_zh-cn_topic_0237122729_p478418671215"><a name="zh-cn_topic_0283137083_zh-cn_topic_0237122729_p478418671215"></a><a name="zh-cn_topic_0283137083_zh-cn_topic_0237122729_p478418671215"></a>最小等待时间（单位：微秒）。</p>
 </td>
 </tr>
+<tr id="row_wait_events_new1"><td class="cellrowborder" valign="top" width="21.33213321332133%" headers="mcps1.2.4.1.1 "><p id="p_wait_events_new1"><a name="p_wait_events_new1"></a><a name="p_wait_events_new1"></a>request_count</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.761676167616763%" headers="mcps1.2.4.1.2 "><p id="p_wait_events_new2"><a name="p_wait_events_new2"></a><a name="p_wait_events_new2"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.90619061906191%" headers="mcps1.2.4.1.3 "><p id="p_wait_events_new3"><a name="p_wait_events_new3"></a><a name="p_wait_events_new3"></a>请求次数。</p>
+</td>
+</tr>
+<tr id="row_wait_events_new4"><td class="cellrowborder" valign="top" width="21.33213321332133%" headers="mcps1.2.4.1.1 "><p id="p_wait_events_new5"><a name="p_wait_events_new5"></a><a name="p_wait_events_new5"></a>nw_acquired</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.761676167616763%" headers="mcps1.2.4.1.2 "><p id="p_wait_events_new6"><a name="p_wait_events_new6"></a><a name="p_wait_events_new6"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.90619061906191%" headers="mcps1.2.4.1.3 "><p id="p_wait_events_new7"><a name="p_wait_events_new7"></a><a name="p_wait_events_new7"></a>以非等待方式成功获取资源的次数。</p>
+</td>
+</tr>
+<tr id="row_wait_events_new8"><td class="cellrowborder" valign="top" width="21.33213321332133%" headers="mcps1.2.4.1.1 "><p id="p_wait_events_new9"><a name="p_wait_events_new9"></a><a name="p_wait_events_new9"></a>nw_not_acquired</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.761676167616763%" headers="mcps1.2.4.1.2 "><p id="p_wait_events_new10"><a name="p_wait_events_new10"></a><a name="p_wait_events_new10"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.90619061906191%" headers="mcps1.2.4.1.3 "><p id="p_wait_events_new11"><a name="p_wait_events_new11"></a><a name="p_wait_events_new11"></a>以非等待方式获取资源失败的次数。</p>
+</td>
+</tr>
 <tr id="row1515654111218"><td class="cellrowborder" valign="top" width="21.33213321332133%" headers="mcps1.2.4.1.1 "><p id="p252505414573"><a name="p252505414573"></a><a name="p252505414573"></a>last_updated</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.761676167616763%" headers="mcps1.2.4.1.2 "><p id="p165252540572"><a name="p165252540572"></a><a name="p165252540572"></a>timestamp with time zone</p>

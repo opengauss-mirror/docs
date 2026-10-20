@@ -5,7 +5,7 @@ keywords: [openGauss, OS\_RUNTIME, SQL参考]
 
 # OS\_RUNTIME
 
-显示当前操作系统运行的状态信息,包括cpu/内存等。
+显示当前操作系统运行的状态信息，包括cpu、内存等。
 
 **表 1**  OS\_RUNTIME字段
 

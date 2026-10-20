@@ -1,17 +1,12 @@
----
-description: 本文介绍 openGauss Instance IO 的相关内容，涵盖 Thread Type、File Type 等内容。
-keywords: [openGauss, Instance IO, SQL参考, Thread Type, File Type]
----
+# 实例IO
 
-# Instance IO
+实例IO报告提供实例IO的多维度统计视图，支持按线程类型（Thread Type）、文件类型（File Type）、数据库（Database）、表空间（Tablespace）、数据库对象类型（Database Object Type）、数据库对象路径（Database Object Path）六个维度进行IO统计，帮助DBA从不同层面定位实例IO热点。
 
-Instance IO列名称及描述如下表所示。
+## 线程类型（Thread Type）
 
-## Thread Type
+线程类型维度展示实例IO按线程角色（如WalWriter、PageWriter、Worker、Startup等）统计的读写次数、读写数据量、读写耗时及缓存命中、淘汰、fsync等指标。列名称及描述如下表所示。
 
-Thread Type列名称及描述如下表所示。
-
-**表 1**  Thread Type报表主要内容
+**表 1**  线程类型主要内容
 
 <a name="table_instance_io_thread_type"></a>
 <table><thead align="left"><tr id="row_thread_type_head"><th class="cellrowborder" valign="top" width="17.169999999999998%" id="mcps1.thread_type.1.1"><p id="p_thread_type_1"><a name="p_thread_type_1"></a><a name="p_thread_type_1"></a>列名称</p>
@@ -99,11 +94,11 @@ Thread Type列名称及描述如下表所示。
 </tbody>
 </table>
 
-## File Type
+## 文件类型（File Type）
 
-File Type列名称及描述如下表所示。
+文件类型维度展示实例IO按文件类型（Data File：数据/索引文件，WAL Log：Redo日志文件）统计的读写次数、IO数据量（MB）及读写耗时等指标。列名称及描述如下表所示。
 
-**表 2**  File Type报表主要内容
+**表 2**  文件类型主要内容
 
 <a name="table_instance_io_file_type"></a>
 <table><thead align="left"><tr id="row_file_type_head"><th class="cellrowborder" valign="top" width="17.169999999999998%" id="mcps1.file_type.1.1"><p id="p_file_type_1"><a name="p_file_type_1"></a><a name="p_file_type_1"></a>列名称</p>
@@ -161,11 +156,11 @@ File Type列名称及描述如下表所示。
 </tbody>
 </table>
 
-## Database
+## 数据库（Database）
 
-Database列名称及描述如下表所示。
+数据库维度展示实例IO按数据库统计的读写次数、IO数据量（MB）等指标，数据库名称为空时表示全局共享文件。列名称及描述如下表所示。
 
-**表 3**  Database报表主要内容
+**表 3**  数据库主要内容
 
 <a name="table_instance_io_database"></a>
 <table><thead align="left"><tr id="row_database_head"><th class="cellrowborder" valign="top" width="17.169999999999998%" id="mcps1.database.1.1"><p id="p_database_1"><a name="p_database_1"></a><a name="p_database_1"></a>列名称</p>
@@ -213,11 +208,11 @@ Database列名称及描述如下表所示。
 </tbody>
 </table>
 
-## Tablespace
+## 表空间（Tablespace）
 
-Tablespace列名称及描述如下表所示。
+表空间维度展示实例IO按表空间统计的读写次数、IO数据量（MB）等指标。列名称及描述如下表所示。
 
-**表 4**  Tablespace报表主要内容
+**表 4**  表空间主要内容
 
 <a name="table_instance_io_tablespace"></a>
 <table><thead align="left"><tr id="row_tablespace_head"><th class="cellrowborder" valign="top" width="17.169999999999998%" id="mcps1.tablespace.1.1"><p id="p_tablespace_1"><a name="p_tablespace_1"></a><a name="p_tablespace_1"></a>列名称</p>
@@ -265,11 +260,11 @@ Tablespace列名称及描述如下表所示。
 </tbody>
 </table>
 
-## Database Object Type
+## 数据库对象类型（Database Object Type）
 
-Database Object Type列名称及描述如下表所示。
+数据库对象类型维度展示实例IO按对象类型（TABLE：普通表，INDEX：索引，TOAST TABLE：TOAST大字段存储表，OTHER：全局共享对象及其他关联对象）统计的对象数量、读写次数、IO数据量（MB）等指标。列名称及描述如下表所示。
 
-**表 5**  Database Object Type报表主要内容
+**表 5**  数据库对象类型主要内容
 
 <a name="table_instance_io_object_type"></a>
 <table><thead align="left"><tr id="row_object_type_head"><th class="cellrowborder" valign="top" width="17.169999999999998%" id="mcps1.object_type.1.1"><p id="p_object_type_1"><a name="p_object_type_1"></a><a name="p_object_type_1"></a>列名称</p>
@@ -322,11 +317,11 @@ Database Object Type列名称及描述如下表所示。
 </tbody>
 </table>
 
-## Database Object Path
+## 数据库对象路径（Database Object Path）
 
-Database Object Path列名称及描述如下表所示。
+数据库对象路径维度展示实例IO按物理文件路径统计的数据库、表空间、对象名称及读写次数、IO数据量（MB）等指标。列名称及描述如下表所示。
 
-**表 6**  Database Object Path报表主要内容
+**表 6**  数据库对象路径主要内容
 
 <a name="table_instance_io_object_path"></a>
 <table><thead align="left"><tr id="row_object_path_head"><th class="cellrowborder" valign="top" width="17.169999999999998%" id="mcps1.object_path.1.1"><p id="p_object_path_1"><a name="p_object_path_1"></a><a name="p_object_path_1"></a>列名称</p>
