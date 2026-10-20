@@ -43,7 +43,7 @@ mkdir -p /opt/software/openGauss
 >- 不建议把安装包的存放目录规划到openGauss用户的根目录或其子目录下，可能导致权限问题。
 >
 
-2.将安装包“openGauss-All-x.x.x-openEuler20.03-x86_64.tar.gz”和配置文件“cluster_config.xml”都上传至上一步所创建的目录中。
+2.将安装包"openGauss-All-x.x.x-openEuler20.03-x86_64.tar.gz"和配置文件"cluster_config.xml"都上传至上一步所创建的目录中。
 
 3.在第一步所创建的安装包的目录下，解压安装包openGauss-All-x.x.x-openEuler20.03-x86_64.tar.gz。安装包解压后，会有OM安装包和Server安装包。继续解压OM安装包，会在/opt/software/openGauss路径下自动生成script子目录，并且在script目录下生成gs_preinstall等各种OM工具脚本。
 
@@ -77,7 +77,7 @@ chmod 755 -R /opt/software
 cd /opt/software/openGauss/script
 ```
 
-6.如果是openEuler的操作系统（openEuler 20.03），执行如下命令打开performance.sh文件，用#注释sysctl -w vm.min_free_kbytes=112640 &> /dev/null，键入“ESC”键进入指令模式，执行 **:wq** 保存并退出修改。
+6.如果是openEuler的操作系统（openEuler 20.03），执行如下命令打开performance.sh文件，用#注释sysctl -w vm.min_free_kbytes=112640 &> /dev/null，键入"ESC"键进入指令模式，执行 **:wq** 保存并退出修改。
 
 ```shell
 vi /etc/profile.d/performance.sh
@@ -99,21 +99,21 @@ omm为数据库管理员（也是运行openGauss的操作系统用户），dbgrp
 >
 > 分离的环境变量ENVFILE为用户可以访问到的目录，例如，/opt/software/openGauss/ENVFILE,不指定目录的情况下会默认将ENVFILE放在script目录下。
 
-- 允许创建root用户互信时，预安装脚本在执行的时候会将各个主机的ip,hostname写入到/etc/hosts中，并在每个映射关系后边加入注释内容：#Gauss OM IP Hosts Mapping。
-- 不允许创建root用户互信时，此时需要用户手动先建立互信（也就是将各个主机的ip，hostname写入到/etc/hosts中），然后执行预安装脚本
-  
-    a.执行下面命令准备安装环境。
+允许创建root用户互信时，预安装脚本在执行的时候会将各个主机的ip,hostname写入到/etc/hosts中，并在每个映射关系后边加入注释内容：#Gauss OM IP Hosts Mapping。
 
-    ```shell
-    cd /opt/software/openGauss/script
-    ./gs_preinstall -U omm -G dbgrp -L -X /opt/software/openGauss/cluster_config.xml
-    ```
+不允许创建root用户互信时，此时需要用户手动先建立互信（也就是将各个主机的ip，hostname写入到/etc/hosts中），然后执行预安装脚本。
 
-    >[!NOTE]说明
-    >此操作需要在每台主机上执行该命令。
-    >
-    
-    - 采用非交互模式执行前置：
+a.执行下面命令准备安装环境。
+
+```shell
+cd /opt/software/openGauss/script
+./gs_preinstall -U omm -G dbgrp -L -X /opt/software/openGauss/cluster_config.xml
+```
+
+>[!NOTE]说明
+>此操作需要在每台主机上执行该命令。
+
+- 采用非交互模式执行前置：
     
     a.参考[手工建立互信](#手工建立互信)章节手工建立root用户互信和openGauss用户互信。
     
@@ -336,13 +336,13 @@ PreInstallationGuide succeeded.
 
 ### 错误排查
 
-如果准备安装环境失败请根据openGauss日志目录“$GAUSSLOG/om”下的“gs_preinstall-YYYY-MM-DD_HHMMSS.log”和“gs_local-YYYY-MM-DD_HHMMSS.log”中的日志信息排查错误。例如配置文件中“gaussdbLogPath”参数指定的路径为“/var/log/gaussdb”，则“$GAUSSLOG/om”路径为“/var/log/gaussdb/omm/om”，omm用户为运行openGauss的用户。
+如果准备安装环境失败请根据openGauss日志目录`$GAUSSLOG/om`下的gs_preinstall-YYYY-MM-DD_HHMMSS.log和gs_local-YYYY-MM-DD_HHMMSS.log中的日志信息排查错误。例如配置文件中gaussdbLogPath参数指定的路径为/var/log/gaussdb，则`$GAUSSLOG/om`路径为/var/log/gaussdb/omm/om，omm用户为运行openGauss的用户。
 
 >[!TIP]须知
 >
 >准备安装用户及环境的过程中会使用root添加定时任务用于定时巡检和上报。
 
-## 手工建立互信
+## 建立互信
 
 openGauss在安装过程中，需要在openGauss中的主机间执行命令、传送文件等操作。因此，在普通用户安装前需要确保互信是连通的。前置脚本中会先建立root用户间的互信，然后创建普通用户，并建立普通用户间的互信。
 
@@ -392,8 +392,7 @@ plat1:/opt/software/openGauss> vim hostfile
 192.168.0.3
 ```
 
-2.以需要创建互信的用户执行脚本。
-3.执行下面脚本建立互信。
+2.以需要创建互信的用户执行下面脚本建立互信。
 
 ```shell
 plat1:/opt/software/openGauss/script# ./gs_sshexkey -f /opt/software/hostfile
@@ -574,7 +573,7 @@ rm –rf ~/.ssh
 ```shell
 plat1:\~ \# ssh plat2
 
-he authenticity of host ' plssat2 \(plat2\)' can't be established.
+The authenticity of host ' plssat2 \(plat2\)' can't be established.
 
 ECDSA key fingerprint is SHA256:Q4DPRedFytsjsJSKf4l2lHKuzVw4prq3bIUCNVKIa7M.
 
@@ -669,7 +668,7 @@ openGauss要求各主机上的操作系统参数设置成一定的值，以满�
 
 1.以root用户身份登录服务器。
 
-2.对文件“/etc/sysctl.conf”进行编辑修改。
+2.对文件"/etc/sysctl.conf"进行编辑修改。
 
 具体参数的修改请参见[操作系统参数](#操作系统参数)。
 
@@ -780,7 +779,7 @@ sysctl -p
 <tr id="zh-cn_topic_0241805805_zh-cn_topic_0085434661_zh-cn_topic_0085031791_row0188144110571"><td class="cellrowborder" valign="top" width="22.270000000000003%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0241805805_zh-cn_topic_0085434661_zh-cn_topic_0085031791_p203091939195813"><a name="zh-cn_topic_0241805805_zh-cn_topic_0085434661_zh-cn_topic_0085031791_p203091939195813"></a><a name="zh-cn_topic_0241805805_zh-cn_topic_0085434661_zh-cn_topic_0085031791_p203091939195813"></a>net.ipv4.tcp_retries2</p>
 </td>
 <td class="cellrowborder" valign="top" width="48.13000000000001%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0241805805_zh-cn_topic_0085434661_zh-cn_topic_0085031791_p1331013399587"><a name="zh-cn_topic_0241805805_zh-cn_topic_0085434661_zh-cn_topic_0085031791_p1331013399587"></a><a name="zh-cn_topic_0241805805_zh-cn_topic_0085434661_zh-cn_topic_0085031791_p1331013399587"></a>控制内核向已经建立连接的远程主机重新发送数据的次数，低值可以更早的检测到与远程主机失效的连接，因此服务器可以更快的释放该连接。</p>
-<p id="zh-cn_topic_0241805805_zh-cn_topic_0085434661_zh-cn_topic_0085031791_p133103392585"><a name="zh-cn_topic_0241805805_zh-cn_topic_0085434661_zh-cn_topic_0085031791_p133103392585"></a><a name="zh-cn_topic_0241805805_zh-cn_topic_0085434661_zh-cn_topic_0085031791_p133103392585"></a>发生“connection reset by peer”时可以尝试调大该值规避问题。</p>
+<p id="zh-cn_topic_0241805805_zh-cn_topic_0085434661_zh-cn_topic_0085031791_p133103392585"><a name="zh-cn_topic_0241805805_zh-cn_topic_0085434661_zh-cn_topic_0085031791_p133103392585"></a><a name="zh-cn_topic_0241805805_zh-cn_topic_0085434661_zh-cn_topic_0085031791_p133103392585"></a>发生"connection reset by peer"时可以尝试调大该值规避问题。</p>
 </td>
 <td class="cellrowborder" valign="top" width="15.760000000000002%" headers="mcps1.2.5.1.3 "><p id="p1290291518214"><a name="p1290291518214"></a><a name="p1290291518214"></a>是</p>
 </td>
