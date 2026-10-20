@@ -1,0 +1,406 @@
+# GLOBAL\_THREAD\_IO\_STAT
+
+提供openGauss中所有正常节点按线程角色类型统计的IO信息。
+
+IO统计按“线程IO角色、IO操作对象、IO操作上下文”三个维度组合进行，每个统计项对应一组唯一的“角色+对象+上下文”组合；各维度取值及含义分别见表4（线程IO角色）、表2（IO操作对象）和表3（IO操作上下文）。
+
+**表 1**  GLOBAL\_THREAD\_IO\_STAT字段
+
+<a name="table_global_thread_io_stat"></a>
+<table><thead align="left"><tr id="row_global_thread_io_stat_head"><th class="cellrowborder" valign="top" width="16.37836216378362%" id="mcps1.2.4.1.1"><p id="p_global_thread_io_stat_1"><a name="p_global_thread_io_stat_1"></a><a name="p_global_thread_io_stat_1"></a>名称</p>
+</th>
+<th class="cellrowborder" valign="top" width="17.968203179682032%" id="mcps1.2.4.1.2"><p id="p_global_thread_io_stat_2"><a name="p_global_thread_io_stat_2"></a><a name="p_global_thread_io_stat_2"></a>类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="65.65343465653434%" id="mcps1.2.4.1.3"><p id="p_global_thread_io_stat_3"><a name="p_global_thread_io_stat_3"></a><a name="p_global_thread_io_stat_3"></a>描述</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr id="row_global_thread_io_stat_0"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_0_1"><a name="p_gtio_0_1"></a><a name="p_gtio_0_1"></a>node_name</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_0_2"><a name="p_gtio_0_2"></a><a name="p_gtio_0_2"></a>name</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_0_3"><a name="p_gtio_0_3"></a><a name="p_gtio_0_3"></a>节点名称。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_1"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_1_1"><a name="p_gtio_1_1"></a><a name="p_gtio_1_1"></a>io_role_id</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_1_2"><a name="p_gtio_1_2"></a><a name="p_gtio_1_2"></a>integer</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_1_3"><a name="p_gtio_1_3"></a><a name="p_gtio_1_3"></a>线程IO角色编号。取值及对应名称见表4。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_2"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_2_1"><a name="p_gtio_2_1"></a><a name="p_gtio_2_1"></a>role_name</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_2_2"><a name="p_gtio_2_2"></a><a name="p_gtio_2_2"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_2_3"><a name="p_gtio_2_3"></a><a name="p_gtio_2_3"></a>线程IO角色名称。与io_role_id的对应关系见表4。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_3"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_3_1"><a name="p_gtio_3_1"></a><a name="p_gtio_3_1"></a>object_name</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_3_2"><a name="p_gtio_3_2"></a><a name="p_gtio_3_2"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_3_3"><a name="p_gtio_3_3"></a><a name="p_gtio_3_3"></a>IO操作对象名称。取值及描述见表2。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_4"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_4_1"><a name="p_gtio_4_1"></a><a name="p_gtio_4_1"></a>context_name</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_4_2"><a name="p_gtio_4_2"></a><a name="p_gtio_4_2"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_4_3"><a name="p_gtio_4_3"></a><a name="p_gtio_4_3"></a>IO操作上下文名称。取值及描述见表3。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_5"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_5_1"><a name="p_gtio_5_1"></a><a name="p_gtio_5_1"></a>num_reads</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_5_2"><a name="p_gtio_5_2"></a><a name="p_gtio_5_2"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_5_3"><a name="p_gtio_5_3"></a><a name="p_gtio_5_3"></a>读操作次数。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_6"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_6_1"><a name="p_gtio_6_1"></a><a name="p_gtio_6_1"></a>num_writes</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_6_2"><a name="p_gtio_6_2"></a><a name="p_gtio_6_2"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_6_3"><a name="p_gtio_6_3"></a><a name="p_gtio_6_3"></a>写操作次数。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_7"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_7_1"><a name="p_gtio_7_1"></a><a name="p_gtio_7_1"></a>bytes_read</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_7_2"><a name="p_gtio_7_2"></a><a name="p_gtio_7_2"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_7_3"><a name="p_gtio_7_3"></a><a name="p_gtio_7_3"></a>读取的字节数。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_8"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_8_1"><a name="p_gtio_8_1"></a><a name="p_gtio_8_1"></a>bytes_written</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_8_2"><a name="p_gtio_8_2"></a><a name="p_gtio_8_2"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_8_3"><a name="p_gtio_8_3"></a><a name="p_gtio_8_3"></a>写入的字节数。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_9"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_9_1"><a name="p_gtio_9_1"></a><a name="p_gtio_9_1"></a>read_time_ms</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_9_2"><a name="p_gtio_9_2"></a><a name="p_gtio_9_2"></a>double precision</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_9_3"><a name="p_gtio_9_3"></a><a name="p_gtio_9_3"></a>读操作累计耗时（单位：毫秒）。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_10"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_10_1"><a name="p_gtio_10_1"></a><a name="p_gtio_10_1"></a>write_time_ms</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_10_2"><a name="p_gtio_10_2"></a><a name="p_gtio_10_2"></a>double precision</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_10_3"><a name="p_gtio_10_3"></a><a name="p_gtio_10_3"></a>写操作累计耗时（单位：毫秒）。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_11"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_11_1"><a name="p_gtio_11_1"></a><a name="p_gtio_11_1"></a>writebacks</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_11_2"><a name="p_gtio_11_2"></a><a name="p_gtio_11_2"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_11_3"><a name="p_gtio_11_3"></a><a name="p_gtio_11_3"></a>回写操作次数。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_12"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_12_1"><a name="p_gtio_12_1"></a><a name="p_gtio_12_1"></a>writeback_time_ms</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_12_2"><a name="p_gtio_12_2"></a><a name="p_gtio_12_2"></a>double precision</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_12_3"><a name="p_gtio_12_3"></a><a name="p_gtio_12_3"></a>回写操作累计耗时（单位：毫秒）。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_13"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_13_1"><a name="p_gtio_13_1"></a><a name="p_gtio_13_1"></a>max_writeback_time_ms</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_13_2"><a name="p_gtio_13_2"></a><a name="p_gtio_13_2"></a>double precision</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_13_3"><a name="p_gtio_13_3"></a><a name="p_gtio_13_3"></a>最大回写操作耗时（单位：毫秒）。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_14"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_14_1"><a name="p_gtio_14_1"></a><a name="p_gtio_14_1"></a>extend_bytes</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_14_2"><a name="p_gtio_14_2"></a><a name="p_gtio_14_2"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_14_3"><a name="p_gtio_14_3"></a><a name="p_gtio_14_3"></a>文件扩展的大小（单位：字节）。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_15"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_15_1"><a name="p_gtio_15_1"></a><a name="p_gtio_15_1"></a>extend_time_ms</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_15_2"><a name="p_gtio_15_2"></a><a name="p_gtio_15_2"></a>double precision</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_15_3"><a name="p_gtio_15_3"></a><a name="p_gtio_15_3"></a>文件扩展累计耗时（单位：毫秒）。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_16"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_16_1"><a name="p_gtio_16_1"></a><a name="p_gtio_16_1"></a>max_extend_time_ms</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_16_2"><a name="p_gtio_16_2"></a><a name="p_gtio_16_2"></a>double precision</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_16_3"><a name="p_gtio_16_3"></a><a name="p_gtio_16_3"></a>最大文件扩展耗时（单位：毫秒）。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_17"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_17_1"><a name="p_gtio_17_1"></a><a name="p_gtio_17_1"></a>hits</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_17_2"><a name="p_gtio_17_2"></a><a name="p_gtio_17_2"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_17_3"><a name="p_gtio_17_3"></a><a name="p_gtio_17_3"></a>缓存命中次数。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_18"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_18_1"><a name="p_gtio_18_1"></a><a name="p_gtio_18_1"></a>evictions</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_18_2"><a name="p_gtio_18_2"></a><a name="p_gtio_18_2"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_18_3"><a name="p_gtio_18_3"></a><a name="p_gtio_18_3"></a>缓存淘汰次数。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_19"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_19_1"><a name="p_gtio_19_1"></a><a name="p_gtio_19_1"></a>reuses</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_19_2"><a name="p_gtio_19_2"></a><a name="p_gtio_19_2"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_19_3"><a name="p_gtio_19_3"></a><a name="p_gtio_19_3"></a>缓存复用次数。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_20"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_20_1"><a name="p_gtio_20_1"></a><a name="p_gtio_20_1"></a>fsyncs</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_20_2"><a name="p_gtio_20_2"></a><a name="p_gtio_20_2"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_20_3"><a name="p_gtio_20_3"></a><a name="p_gtio_20_3"></a>fsync操作次数。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_21"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_21_1"><a name="p_gtio_21_1"></a><a name="p_gtio_21_1"></a>total_fsync_time_ms</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_21_2"><a name="p_gtio_21_2"></a><a name="p_gtio_21_2"></a>double precision</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_21_3"><a name="p_gtio_21_3"></a><a name="p_gtio_21_3"></a>fsync操作累计耗时（单位：毫秒）。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_22"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_22_1"><a name="p_gtio_22_1"></a><a name="p_gtio_22_1"></a>max_read_time_ms</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_22_2"><a name="p_gtio_22_2"></a><a name="p_gtio_22_2"></a>double precision</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_22_3"><a name="p_gtio_22_3"></a><a name="p_gtio_22_3"></a>最大读操作耗时（单位：毫秒）。</p>
+</td>
+</tr>
+<tr id="row_global_thread_io_stat_23"><td class="cellrowborder" valign="top" width="16.37836216378362%" headers="mcps1.2.4.1.1 "><p id="p_gtio_23_1"><a name="p_gtio_23_1"></a><a name="p_gtio_23_1"></a>max_write_time_ms</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.968203179682032%" headers="mcps1.2.4.1.2 "><p id="p_gtio_23_2"><a name="p_gtio_23_2"></a><a name="p_gtio_23_2"></a>double precision</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.65343465653434%" headers="mcps1.2.4.1.3 "><p id="p_gtio_23_3"><a name="p_gtio_23_3"></a><a name="p_gtio_23_3"></a>最大写操作耗时（单位：毫秒）。</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**表 2**  IO操作对象类型（object_name）取值及描述
+
+<a name="table_global_thread_io_object"></a>
+<table><thead align="left"><tr id="row_global_thread_io_object_head"><th class="cellrowborder" valign="top" width="17.169999999999998%" id="mcps1.global_thread_io_object.1.1"><p id="p_gtioobj_1"><a name="p_gtioobj_1"></a><a name="p_gtioobj_1"></a>取值</p>
+</th>
+<th class="cellrowborder" valign="top" width="82.83%" id="mcps1.global_thread_io_object.1.2"><p id="p_gtioobj_2"><a name="p_gtioobj_2"></a><a name="p_gtioobj_2"></a>描述</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr id="row_gtioobj_1"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.global_thread_io_object.1.1 "><p id="p_gtioobj_r1_1"><a name="p_gtioobj_r1_1"></a><a name="p_gtioobj_r1_1"></a>Relation</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.global_thread_io_object.1.2 "><p id="p_gtioobj_r1_2"><a name="p_gtioobj_r1_2"></a><a name="p_gtioobj_r1_2"></a>普通关系（表、索引等数据文件）的IO。</p>
+</td>
+</tr>
+<tr id="row_gtioobj_2"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.global_thread_io_object.1.1 "><p id="p_gtioobj_r2_1"><a name="p_gtioobj_r2_1"></a><a name="p_gtioobj_r2_1"></a>TempRelation</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.global_thread_io_object.1.2 "><p id="p_gtioobj_r2_2"><a name="p_gtioobj_r2_2"></a><a name="p_gtioobj_r2_2"></a>临时关系文件的IO。</p>
+</td>
+</tr>
+<tr id="row_gtioobj_3"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.global_thread_io_object.1.1 "><p id="p_gtioobj_r3_1"><a name="p_gtioobj_r3_1"></a><a name="p_gtioobj_r3_1"></a>Wal</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.global_thread_io_object.1.2 "><p id="p_gtioobj_r3_2"><a name="p_gtioobj_r3_2"></a><a name="p_gtioobj_r3_2"></a>WAL日志文件的IO。</p>
+</td>
+</tr>
+<tr id="row_gtioobj_4"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.global_thread_io_object.1.1 "><p id="p_gtioobj_r4_1"><a name="p_gtioobj_r4_1"></a><a name="p_gtioobj_r4_1"></a>Undo</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.global_thread_io_object.1.2 "><p id="p_gtioobj_r4_2"><a name="p_gtioobj_r4_2"></a><a name="p_gtioobj_r4_2"></a>回滚段（undo）文件的IO。</p>
+</td>
+</tr>
+<tr id="row_gtioobj_5"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.global_thread_io_object.1.1 "><p id="p_gtioobj_r5_1"><a name="p_gtioobj_r5_1"></a><a name="p_gtioobj_r5_1"></a>Archive</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.global_thread_io_object.1.2 "><p id="p_gtioobj_r5_2"><a name="p_gtioobj_r5_2"></a><a name="p_gtioobj_r5_2"></a>归档文件的IO。</p>
+</td>
+</tr>
+<tr id="row_gtioobj_6"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.global_thread_io_object.1.1 "><p id="p_gtioobj_r6_1"><a name="p_gtioobj_r6_1"></a><a name="p_gtioobj_r6_1"></a>Other</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.global_thread_io_object.1.2 "><p id="p_gtioobj_r6_2"><a name="p_gtioobj_r6_2"></a><a name="p_gtioobj_r6_2"></a>其他对象的IO（默认值）。</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**表 3**  IO操作上下文类型（context_name）取值及描述
+
+<a name="table_global_thread_io_context"></a>
+<table><thead align="left"><tr id="row_global_thread_io_context_head"><th class="cellrowborder" valign="top" width="17.169999999999998%" id="mcps1.global_thread_io_context.1.1"><p id="p_gtioctx_1"><a name="p_gtioctx_1"></a><a name="p_gtioctx_1"></a>取值</p>
+</th>
+<th class="cellrowborder" valign="top" width="82.83%" id="mcps1.global_thread_io_context.1.2"><p id="p_gtioctx_2"><a name="p_gtioctx_2"></a><a name="p_gtioctx_2"></a>描述</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr id="row_gtioctx_1"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.global_thread_io_context.1.1 "><p id="p_gtioctx_r1_1"><a name="p_gtioctx_r1_1"></a><a name="p_gtioctx_r1_1"></a>Normal</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.global_thread_io_context.1.2 "><p id="p_gtioctx_r1_2"><a name="p_gtioctx_r1_2"></a><a name="p_gtioctx_r1_2"></a>常规单点读写IO。</p>
+</td>
+</tr>
+<tr id="row_gtioctx_2"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.global_thread_io_context.1.1 "><p id="p_gtioctx_r2_1"><a name="p_gtioctx_r2_1"></a><a name="p_gtioctx_r2_1"></a>BulkRead</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.global_thread_io_context.1.2 "><p id="p_gtioctx_r2_2"><a name="p_gtioctx_r2_2"></a><a name="p_gtioctx_r2_2"></a>批量读取IO，如预取、全表扫描。</p>
+</td>
+</tr>
+<tr id="row_gtioctx_3"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.global_thread_io_context.1.1 "><p id="p_gtioctx_r3_1"><a name="p_gtioctx_r3_1"></a><a name="p_gtioctx_r3_1"></a>BulkWrite</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.global_thread_io_context.1.2 "><p id="p_gtioctx_r3_2"><a name="p_gtioctx_r3_2"></a><a name="p_gtioctx_r3_2"></a>批量写入IO，如COPY导入。</p>
+</td>
+</tr>
+<tr id="row_gtioctx_4"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.global_thread_io_context.1.1 "><p id="p_gtioctx_r4_1"><a name="p_gtioctx_r4_1"></a><a name="p_gtioctx_r4_1"></a>Vacuum</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.global_thread_io_context.1.2 "><p id="p_gtioctx_r4_2"><a name="p_gtioctx_r4_2"></a><a name="p_gtioctx_r4_2"></a>垃圾回收（VACUUM）IO。</p>
+</td>
+</tr>
+<tr id="row_gtioctx_5"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.global_thread_io_context.1.1 "><p id="p_gtioctx_r5_1"><a name="p_gtioctx_r5_1"></a><a name="p_gtioctx_r5_1"></a>Recovery</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.global_thread_io_context.1.2 "><p id="p_gtioctx_r5_2"><a name="p_gtioctx_r5_2"></a><a name="p_gtioctx_r5_2"></a>崩溃恢复回放IO。</p>
+</td>
+</tr>
+<tr id="row_gtioctx_6"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.global_thread_io_context.1.1 "><p id="p_gtioctx_r6_1"><a name="p_gtioctx_r6_1"></a><a name="p_gtioctx_r6_1"></a>Replication</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.global_thread_io_context.1.2 "><p id="p_gtioctx_r6_2"><a name="p_gtioctx_r6_2"></a><a name="p_gtioctx_r6_2"></a>主备复制IO。</p>
+</td>
+</tr>
+<tr id="row_gtioctx_7"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.global_thread_io_context.1.1 "><p id="p_gtioctx_r7_1"><a name="p_gtioctx_r7_1"></a><a name="p_gtioctx_r7_1"></a>Unknown</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.global_thread_io_context.1.2 "><p id="p_gtioctx_r7_2"><a name="p_gtioctx_r7_2"></a><a name="p_gtioctx_r7_2"></a>无法识别的上下文（默认值）。</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**表 4**  线程IO角色编号（io_role_id）与名称（role_name）对应关系
+
+<a name="table_global_thread_io_role"></a>
+<table><thead align="left"><tr id="row_global_thread_io_role_head"><th class="cellrowborder" valign="top" width="17.169999999999998%" id="mcps1.2.3.1.1"><p id="p_gtior_1"><a name="p_gtior_1"></a><a name="p_gtior_1"></a>io_role_id</p>
+</th>
+<th class="cellrowborder" valign="top" width="27.169999999999998%" id="mcps1.2.3.1.2"><p id="p_gtior_2"><a name="p_gtior_2"></a><a name="p_gtior_2"></a>role_name</p>
+</th>
+<th class="cellrowborder" valign="top" width="55.66%" id="mcps1.2.3.1.3"><p id="p_gtior_3"><a name="p_gtior_3"></a><a name="p_gtior_3"></a>描述</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr id="row_gtior_0"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p_gtior_r0_1"><a name="p_gtior_r0_1"></a><a name="p_gtior_r0_1"></a>0</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.169999999999998%" headers="mcps1.2.3.1.2 "><p id="p_gtior_r0_2"><a name="p_gtior_r0_2"></a><a name="p_gtior_r0_2"></a>Worker</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.66%" headers="mcps1.2.3.1.3 "><p id="p_gtior_r0_3"><a name="p_gtior_r0_3"></a><a name="p_gtior_r0_3"></a>后端工作线程：处理用户SQL读写IO（含线程池工作线程）。</p>
+</td>
+</tr>
+<tr id="row_gtior_1"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p_gtior_r1_1"><a name="p_gtior_r1_1"></a><a name="p_gtior_r1_1"></a>1</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.169999999999998%" headers="mcps1.2.3.1.2 "><p id="p_gtior_r1_2"><a name="p_gtior_r1_2"></a><a name="p_gtior_r1_2"></a>WalSender</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.66%" headers="mcps1.2.3.1.3 "><p id="p_gtior_r1_3"><a name="p_gtior_r1_3"></a><a name="p_gtior_r1_3"></a>WAL发送线程：读取WAL段文件并通过网络发送。</p>
+</td>
+</tr>
+<tr id="row_gtior_2"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p_gtior_r2_1"><a name="p_gtior_r2_1"></a><a name="p_gtior_r2_1"></a>2</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.169999999999998%" headers="mcps1.2.3.1.2 "><p id="p_gtior_r2_2"><a name="p_gtior_r2_2"></a><a name="p_gtior_r2_2"></a>Checkpointer</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.66%" headers="mcps1.2.3.1.3 "><p id="p_gtior_r2_3"><a name="p_gtior_r2_3"></a><a name="p_gtior_r2_3"></a>检查点线程：脏页写回及文件fsync。</p>
+</td>
+</tr>
+<tr id="row_gtior_3"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p_gtior_r3_1"><a name="p_gtior_r3_1"></a><a name="p_gtior_r3_1"></a>3</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.169999999999998%" headers="mcps1.2.3.1.2 "><p id="p_gtior_r3_2"><a name="p_gtior_r3_2"></a><a name="p_gtior_r3_2"></a>BgWriter</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.66%" headers="mcps1.2.3.1.3 "><p id="p_gtior_r3_3"><a name="p_gtior_r3_3"></a><a name="p_gtior_r3_3"></a>后台写线程：脏页写回。</p>
+</td>
+</tr>
+<tr id="row_gtior_4"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p_gtior_r4_1"><a name="p_gtior_r4_1"></a><a name="p_gtior_r4_1"></a>4</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.169999999999998%" headers="mcps1.2.3.1.2 "><p id="p_gtior_r4_2"><a name="p_gtior_r4_2"></a><a name="p_gtior_r4_2"></a>AutoVacWorker</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.66%" headers="mcps1.2.3.1.3 "><p id="p_gtior_r4_3"><a name="p_gtior_r4_3"></a><a name="p_gtior_r4_3"></a>自动清理工作线程：数据页读写。</p>
+</td>
+</tr>
+<tr id="row_gtior_5"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p_gtior_r5_1"><a name="p_gtior_r5_1"></a><a name="p_gtior_r5_1"></a>5</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.169999999999998%" headers="mcps1.2.3.1.2 "><p id="p_gtior_r5_2"><a name="p_gtior_r5_2"></a><a name="p_gtior_r5_2"></a>Startup</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.66%" headers="mcps1.2.3.1.3 "><p id="p_gtior_r5_3"><a name="p_gtior_r5_3"></a><a name="p_gtior_r5_3"></a>启动（恢复）线程：redo回放读取IO。</p>
+</td>
+</tr>
+<tr id="row_gtior_6"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p_gtior_r6_1"><a name="p_gtior_r6_1"></a><a name="p_gtior_r6_1"></a>6</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.169999999999998%" headers="mcps1.2.3.1.2 "><p id="p_gtior_r6_2"><a name="p_gtior_r6_2"></a><a name="p_gtior_r6_2"></a>WalWriter</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.66%" headers="mcps1.2.3.1.3 "><p id="p_gtior_r6_3"><a name="p_gtior_r6_3"></a><a name="p_gtior_r6_3"></a>WAL写线程：WAL段文件写入（含辅助段预分配）。</p>
+</td>
+</tr>
+<tr id="row_gtior_7"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p_gtior_r7_1"><a name="p_gtior_r7_1"></a><a name="p_gtior_r7_1"></a>7</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.169999999999998%" headers="mcps1.2.3.1.2 "><p id="p_gtior_r7_2"><a name="p_gtior_r7_2"></a><a name="p_gtior_r7_2"></a>WalRcvWriter</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.66%" headers="mcps1.2.3.1.3 "><p id="p_gtior_r7_3"><a name="p_gtior_r7_3"></a><a name="p_gtior_r7_3"></a>WAL接收写线程：备机WAL落盘；WALRECEIVER自身不写磁盘。</p>
+</td>
+</tr>
+<tr id="row_gtior_8"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p_gtior_r8_1"><a name="p_gtior_r8_1"></a><a name="p_gtior_r8_1"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.169999999999998%" headers="mcps1.2.3.1.2 "><p id="p_gtior_r8_2"><a name="p_gtior_r8_2"></a><a name="p_gtior_r8_2"></a>Archiver</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.66%" headers="mcps1.2.3.1.3 "><p id="p_gtior_r8_3"><a name="p_gtior_r8_3"></a><a name="p_gtior_r8_3"></a>归档线程：读取WAL段文件并写入归档文件。</p>
+</td>
+</tr>
+<tr id="row_gtior_9"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p_gtior_r9_1"><a name="p_gtior_r9_1"></a><a name="p_gtior_r9_1"></a>9</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.169999999999998%" headers="mcps1.2.3.1.2 "><p id="p_gtior_r9_2"><a name="p_gtior_r9_2"></a><a name="p_gtior_r9_2"></a>UndoWorker</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.66%" headers="mcps1.2.3.1.3 "><p id="p_gtior_r9_3"><a name="p_gtior_r9_3"></a><a name="p_gtior_r9_3"></a>Ustore回滚段（undo）工作/回收线程。</p>
+</td>
+</tr>
+<tr id="row_gtior_10"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p_gtior_r10_1"><a name="p_gtior_r10_1"></a><a name="p_gtior_r10_1"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.169999999999998%" headers="mcps1.2.3.1.2 "><p id="p_gtior_r10_2"><a name="p_gtior_r10_2"></a><a name="p_gtior_r10_2"></a>Catchup</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.66%" headers="mcps1.2.3.1.3 "><p id="p_gtior_r10_3"><a name="p_gtior_r10_3"></a><a name="p_gtior_r10_3"></a>数据页复制追赶线程：顺序读取数据页，类似DataRcvWriter。</p>
+</td>
+</tr>
+<tr id="row_gtior_11"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p_gtior_r11_1"><a name="p_gtior_r11_1"></a><a name="p_gtior_r11_1"></a>11</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.169999999999998%" headers="mcps1.2.3.1.2 "><p id="p_gtior_r11_2"><a name="p_gtior_r11_2"></a><a name="p_gtior_r11_2"></a>ParallelDecode</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.66%" headers="mcps1.2.3.1.3 "><p id="p_gtior_r11_3"><a name="p_gtior_r11_3"></a><a name="p_gtior_r11_3"></a>并行逻辑解码线程：读取WAL进行解码。</p>
+</td>
+</tr>
+<tr id="row_gtior_12"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p_gtior_r12_1"><a name="p_gtior_r12_1"></a><a name="p_gtior_r12_1"></a>12</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.169999999999998%" headers="mcps1.2.3.1.2 "><p id="p_gtior_r12_2"><a name="p_gtior_r12_2"></a><a name="p_gtior_r12_2"></a>ApplyWorker</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.66%" headers="mcps1.2.3.1.3 "><p id="p_gtior_r12_3"><a name="p_gtior_r12_3"></a><a name="p_gtior_r12_3"></a>逻辑复制apply工作线程：读写数据页。</p>
+</td>
+</tr>
+<tr id="row_gtior_13"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p_gtior_r13_1"><a name="p_gtior_r13_1"></a><a name="p_gtior_r13_1"></a>13</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.169999999999998%" headers="mcps1.2.3.1.2 "><p id="p_gtior_r13_2"><a name="p_gtior_r13_2"></a><a name="p_gtior_r13_2"></a>DataRcvWriter</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.66%" headers="mcps1.2.3.1.3 "><p id="p_gtior_r13_3"><a name="p_gtior_r13_3"></a><a name="p_gtior_r13_3"></a>数据页复制接收/写线程。</p>
+</td>
+</tr>
+<tr id="row_gtior_14"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p_gtior_r14_1"><a name="p_gtior_r14_1"></a><a name="p_gtior_r14_1"></a>14</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.169999999999998%" headers="mcps1.2.3.1.2 "><p id="p_gtior_r14_2"><a name="p_gtior_r14_2"></a><a name="p_gtior_r14_2"></a>PageWriter</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.66%" headers="mcps1.2.3.1.3 "><p id="p_gtior_r14_3"><a name="p_gtior_r14_3"></a><a name="p_gtior_r14_3"></a>页压缩写线程。</p>
+</td>
+</tr>
+<tr id="row_gtior_15"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p_gtior_r15_1"><a name="p_gtior_r15_1"></a><a name="p_gtior_r15_1"></a>15</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.169999999999998%" headers="mcps1.2.3.1.2 "><p id="p_gtior_r15_2"><a name="p_gtior_r15_2"></a><a name="p_gtior_r15_2"></a>BgWorker</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.66%" headers="mcps1.2.3.1.3 "><p id="p_gtior_r15_3"><a name="p_gtior_r15_3"></a><a name="p_gtior_r15_3"></a>通用后台工作线程：IO取决于其注册的任务。</p>
+</td>
+</tr>
+</tbody>
+</table>

@@ -3794,3 +3794,44 @@
     </tr>
     </tbody>
     </table>
+
+
+- pg\_os\_disk\_io\_info\(\)
+
+    函数原型：pg_os_disk_io_info()
+
+    描述：采集数据库所在主机的磁盘IO统计信息，数据来源于/proc/diskstats，为DBE_PERF Schema下[os_disk_io_info](os_disk_io_info.md)和[global_os_disk_io_info](global_os_disk_io_info.md)视图的数据源。所有用户均可调用该函数。
+
+    参数说明：无。
+
+    返回值类型：setofrecord。返回字段可参考[os_disk_io_info](os_disk_io_info.md)视图。
+
+- pg\_os\_net\_dev\_info\(\)
+
+    函数原型：pg_os_net_dev_info()
+
+    描述：采集数据库所在主机的网卡IO计数器信息（数据来源于/proc/net/dev），为DBE_PERF Schema下[os_net_dev_info](os_net_dev_info.md)和[global_os_net_dev_info](global_os_net_dev_info.md)视图的数据源。网卡静态属性由pg_os_net_dev_ext()函数采集并并入上述视图。所有用户均可调用该函数。
+
+    参数说明：无。
+
+    返回值类型：setofrecord。返回字段可参考[os_net_dev_info](os_net_dev_info.md)视图。
+
+- pg\_os\_net\_dev\_ext\(\)
+
+    函数原型：pg_os_net_dev_ext()
+
+    描述：采集主机网卡静态属性信息（接口名、IPv4地址、链路速率、设备类型），通过SIOCGIFCONF/SIOCETHTOOL ioctl获取，返回结果已并入pg_os_net_dev_info()函数及[os_net_dev_info](os_net_dev_info.md)视图。所有用户均可调用该函数。
+
+    参数说明：无。
+
+    返回值类型：setofrecord。返回字段可参考[os_net_dev_info](os_net_dev_info.md)视图。
+
+- pg\_thread\_io\_stat\(\)
+
+    函数原型：pg_thread_io_stat()
+
+    描述：按线程IO角色、IO操作对象、IO操作上下文三个维度统计当前节点各线程的IO信息，包括读写次数、读写数据量、读写耗时、回写、文件扩展、fsync及缓存命中/淘汰/复用等指标，为DBE_PERF Schema下[thread_io_stat](thread_io_stat.md)和[global_thread_io_stat](global_thread_io_stat.md)视图的数据源。时间类字段（*_time_ms）的精度依赖GUC参数track_io_timing开启；max_*类字段为进程启动以来的累计最大值，仅可通过pgstat_reset清理。所有用户均可调用该函数。
+
+    参数说明：无。
+
+    返回值类型：setofrecord。返回字段可参考[thread_io_stat](thread_io_stat.md)视图。
