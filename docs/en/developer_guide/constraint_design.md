@@ -1,3 +1,8 @@
+---
+description: This document describes Constraint Design in openGauss, covering topics such as DEFAULT and NULL Constraints, Partial Cluster Keys.
+keywords: [openGauss, Constraint Design, development, DEFAULT and NULL Constraints, Partial Cluster Keys]
+---
+
 # Constraint Design<a name="EN-US_TOPIC_0000001102508296"></a>
 
 ## DEFAULT and NULL Constraints<a name="section555838816718"></a>

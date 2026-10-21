@@ -1,3 +1,8 @@
+---
+description: This document describes Functions Supported by Sets in openGauss, covering topics such as Set Operators, MULTISET.
+keywords: [openGauss, Functions Supported by Sets, SQL, Set Operators, MULTISET]
+---
+
 # Functions Supported by Sets<a name="EN-US_TOPIC_0000001361706622"></a>
 
 ## Set Operators<a name="section423710350429"></a>

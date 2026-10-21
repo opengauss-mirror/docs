@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PARAMETERS 的相关内容与操作方法。
+keywords: [openGauss, PARAMETERS, SQL参考]
+---
+
 # PARAMETERS <a name="ZH-CN_TOPIC_0310260671"></a>
 
 存储函数或者存储过程参数相关的信息。

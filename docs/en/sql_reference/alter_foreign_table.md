@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER FOREIGN TABLE in openGauss, covering topics such as Function, Syntax.
+keywords: [openGauss, ALTER FOREIGN TABLE, SQL, Function, Syntax]
+---
+
 # ALTER FOREIGN TABLE<a name="EN-US_TOPIC_0289900030"></a>
 
 ## Function<a name="en-us_topic_0283137201_section178411726125517"></a>

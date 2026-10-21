@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_AUDITING\_POLICY in openGauss.
+keywords: [openGauss, GS\_AUDITING\_POLICY, database reference]
+---
+
 # GS\_AUDITING\_POLICY<a name="EN-US_TOPIC_0306525308"></a>
 
 **GS\_AUDITING\_POLICY**  records the main information about the unified audit. Each record corresponds to a design policy. Only the system administrator or security policy administrator can access this system catalog.

@@ -1,3 +1,8 @@
+---
+description: This document describes Root Cause Analysis for Slow SQL Statements in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Root Cause Analysis for Slow SQL Statements, features, Availability, Introduction]
+---
+
 # Root Cause Analysis for Slow SQL Statements<a name="EN-US_TOPIC_0000001263251657"></a>
 
 ## Availability<a name="section17365142913365"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_STAT\_XACT\_USER\_TABLES 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_STAT\_XACT\_USER\_TABLES, SQL参考]
+---
+
 # GLOBAL\_STAT\_XACT\_USER\_TABLES
 
 显示各节点命名空间中用户表的事务状态信息。

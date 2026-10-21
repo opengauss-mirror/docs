@@ -1,3 +1,8 @@
+---
+description: This document describes DATABASE\_SQL\_STAT in openGauss.
+keywords: [openGauss, DATABASE\_SQL\_STAT, SQL]
+---
+
 # DATABASE\_SQL\_STAT
 
 Records per-database SQL execution statistics on the current node. Counters are accumulated on the Unique SQL completion path. Unique SQL must be enabled; otherwise the counters do not increase.

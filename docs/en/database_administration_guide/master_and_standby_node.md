@@ -1,3 +1,8 @@
+---
+description: This document describes Active and Standby Nodes in openGauss, covering topics such as Availability, Feature Description.
+keywords: [openGauss, Active and Standby Nodes, database administration, Availability, Feature Description]
+---
+
 # Active and Standby Nodes
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:44:24.311Z pushedAt=2026-09-11T09:16:00.183Z -->

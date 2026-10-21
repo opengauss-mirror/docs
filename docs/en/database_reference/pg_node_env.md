@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_NODE\_ENV in openGauss.
+keywords: [openGauss, PG\_NODE\_ENV, database reference]
+---
+
 # PG\_NODE\_ENV<a name="EN-US_TOPIC_0289899993"></a>
 
 **PG\_NODE\_ENV**  obtains environmental variable information about the current node.

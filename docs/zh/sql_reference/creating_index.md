@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 创建索引 的相关内容与操作方法。
+keywords: [openGauss, 创建索引, SQL参考]
+---
+
 # 创建索引
 
 为了加速文本搜索，可以创建GIN索引。

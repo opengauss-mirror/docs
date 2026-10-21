@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PGXC\_SLICE 的相关内容与操作方法。
+keywords: [openGauss, PGXC\_SLICE, 数据库参考]
+---
+
 # PGXC\_SLICE
 
 PGXC\_SLICE表是针对range范围分布和list分布创建的系统表，用来记录分布具体信息，当前不支持range interval自动扩展分片，不过在系统表中预留。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE RESOURCE LABEL 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE RESOURCE LABEL, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE RESOURCE LABEL
 
 ## 功能描述<a name="section1163224811518"></a>

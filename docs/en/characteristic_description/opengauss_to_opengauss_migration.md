@@ -1,3 +1,8 @@
+---
+description: This document describes openGauss-to-openGauss Migration in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, openGauss-to-openGauss Migration, features, Availability, Feature Overview]
+---
+
 # openGauss-to-openGauss Migration
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:21:08.034Z pushedAt=2026-09-22T11:12:32.676Z -->

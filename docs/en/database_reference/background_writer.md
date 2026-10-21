@@ -1,3 +1,8 @@
+---
+description: This document describes Background Writer in openGauss, covering topics such as bgwriter\_delay, candidate\_buf\_percent\_target.
+keywords: [openGauss, Background Writer, database reference, bgwriter\_delay, candidate\_buf\_percent\_target]
+---
+
 # Background Writer<a name="EN-US_TOPIC_0289900126"></a>
 
 This section describes background writer parameters. The background writer process is used to write dirty data \(new or modified data\) in shared buffers to disks. This mechanism ensures that database processes seldom or never need to wait for a write action to occur when handling user queries.

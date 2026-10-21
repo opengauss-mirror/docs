@@ -1,3 +1,8 @@
+---
+description: This document describes PG_STATISTIC_LOCK in openGauss.
+keywords: [openGauss, PG_STATISTIC_LOCK, database reference]
+---
+
 # PG_STATISTIC_LOCK
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:49:22.606Z -->

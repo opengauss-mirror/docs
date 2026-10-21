@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss pg\_archivecleanup 的相关内容，涵盖 功能介绍、语法 等内容。
+keywords: [openGauss, pg\_archivecleanup, 工具与命令参考, 功能介绍, 语法]
+---
+
 # pg\_archivecleanup
 
 ## 功能介绍<a name="section125419154813"></a>

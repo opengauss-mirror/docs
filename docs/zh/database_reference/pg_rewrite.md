@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_REWRITE 的相关内容与操作方法。
+keywords: [openGauss, PG\_REWRITE, 数据库参考]
+---
+
 # PG\_REWRITE
 
 PG\_REWRITE系统表存储为表和视图定义的重写规则。

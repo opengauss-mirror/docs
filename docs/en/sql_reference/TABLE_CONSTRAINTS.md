@@ -1,3 +1,8 @@
+---
+description: This document describes TABLE_CONSTRAINTS in openGauss.
+keywords: [openGauss, TABLE_CONSTRAINTS, SQL]
+---
+
 # TABLE_CONSTRAINTS <a name="EN-US_TOPIC_0310260671"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:28:11.054Z -->

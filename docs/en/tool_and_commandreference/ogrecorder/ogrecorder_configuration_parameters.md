@@ -1,3 +1,8 @@
+---
+description: This document describes oGRecorder Configuration Parameters in openGauss, covering topics such as Configuration Parameters Overview, Field Descriptions.
+keywords: [openGauss, oGRecorder Configuration Parameters, tools and commands, Configuration Parameters Overview, Field Descriptions]
+---
+
 # oGRecorder Configuration Parameters
 
 ## Configuration Parameters Overview

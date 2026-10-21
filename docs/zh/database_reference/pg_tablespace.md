@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_TABLESPACE 的相关内容与操作方法。
+keywords: [openGauss, PG\_TABLESPACE, 数据库参考]
+---
+
 # PG\_TABLESPACE
 
 PG\_TABLESPACE系统表存储表空间信息。

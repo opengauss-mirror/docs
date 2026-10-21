@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_STATIO\_SYS\_TABLES 的相关内容与操作方法。
+keywords: [openGauss, PG\_STATIO\_SYS\_TABLES, 数据库参考]
+---
+
 # PG\_STATIO\_SYS\_TABLES
 
 PG\_STATIO\_SYS\_TABLES视图显示命名空间中所有系统表的IO状态信息。

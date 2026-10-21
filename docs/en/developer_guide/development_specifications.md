@@ -1,3 +1,8 @@
+---
+description: This document describes Development Specifications in openGauss.
+keywords: [openGauss, Development Specifications, development]
+---
+
 # Development Specifications<a name="EN-US_TOPIC_0289900537"></a>
 
 If the connection pool mechanism is used during application development, comply with the following specifications:

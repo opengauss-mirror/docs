@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 节点启动失败 的相关内容，涵盖 现象、原因 等内容。
+keywords: [openGauss, 节点启动失败, 数据库运维, 现象, 原因]
+---
+
 # 节点启动失败
 
 ## 现象

@@ -1,3 +1,8 @@
+---
+description: This document describes DROP USER in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP USER, SQL, Function, Precautions]
+---
+
 # DROP USER<a name="EN-US_TOPIC_0289900387"></a>
 
 ## Function<a name="en-us_topic_0283137192_en-us_topic_0237122158_en-us_topic_0059778403_sd8f7b55734434619b381d7be49aed2df"></a>

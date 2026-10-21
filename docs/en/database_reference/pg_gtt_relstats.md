@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_GTT\_RELSTATS in openGauss.
+keywords: [openGauss, PG\_GTT\_RELSTATS, database reference]
+---
+
 # PG\_GTT\_RELSTATS<a name="EN-US_TOPIC_0289900546"></a>
 
 **PG\_GTT\_RELSTATS**  displays basic information about all global temporary tables of the current session by invoking  **pg\_get\_gtt\_relstats**.

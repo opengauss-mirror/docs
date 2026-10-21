@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss BGWRITER\_STAT 的相关内容与操作方法。
+keywords: [openGauss, BGWRITER\_STAT, SQL参考]
+---
+
 # BGWRITER\_STAT
 
 BGWRITER\_STAT视图显示关于后端写线程活动的统计信息。

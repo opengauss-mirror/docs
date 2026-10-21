@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Performance Benchmarks in openGauss.
+keywords: [openGauss, MOT Performance Benchmarks, database administration]
+---
+
 # MOT Performance Benchmarks<a name="EN-US_TOPIC_0270171591"></a>
 
 Our performance tests are based on the TPC-C Benchmark that is commonly used both by industry and academia.

@@ -1,3 +1,8 @@
+---
+description: This document describes Support for the ograc Standard Development Interface in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, Support for the ograc Standard Development Interface, features, Availability, Feature Overview]
+---
+
 # Support for the ograc Standard Development Interface
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:32:44.818Z pushedAt=2026-09-22T11:12:32.711Z -->

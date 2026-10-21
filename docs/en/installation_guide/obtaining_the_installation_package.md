@@ -1,3 +1,8 @@
+---
+description: This document describes Obtaining the Installation Package in openGauss, covering topics such as Procedure.
+keywords: [openGauss, Obtaining the Installation Package, installation, Procedure]
+---
+
 # Obtaining the Installation Package<a name="EN-US_TOPIC_0000001092680812"></a>
 
 You can obtain the installation package from the openGauss open-source community.

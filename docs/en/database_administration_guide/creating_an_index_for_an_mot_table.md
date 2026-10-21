@@ -1,3 +1,8 @@
+---
+description: This document describes Creating an Index for an MOT Table in openGauss.
+keywords: [openGauss, Creating an Index for an MOT Table, database administration]
+---
+
 # Creating an Index for an MOT Table<a name="EN-US_TOPIC_0270402395"></a>
 
 Standard PostgreSQL create and drop index statements are supported.

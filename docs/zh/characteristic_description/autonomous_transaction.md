@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 自治事务 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 自治事务, 特性描述, 可获得性, 特性简介]
+---
+
 # 自治事务
 
 ## 可获得性<a name="section1578164915345"></a>

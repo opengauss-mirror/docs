@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_STAT\_ACTIVITY\_NG 的相关内容与操作方法。
+keywords: [openGauss, PG\_STAT\_ACTIVITY\_NG, 数据库参考]
+---
+
 # PG\_STAT\_ACTIVITY\_NG
 
 PG\_STAT\_ACTIVITY\_NG视图显示在当前用户所属的逻辑数据库实例下，所有查询的相关信息。

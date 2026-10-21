@@ -1,3 +1,8 @@
+---
+description: This document describes Geometric in openGauss, covering topics such as Points, Line Segments.
+keywords: [openGauss, Geometric, SQL, Points, Line Segments]
+---
+
 # Geometric<a name="EN-US_TOPIC_0289900156"></a>
 
 [Table 1](#en-us_topic_0283137602_en-us_topic_0237121953_en-us_topic_0059779139_td12ab9adf8514c2cbd4b5b6aace3ab7e)  lists the geometric types that can be used in openGauss. The most fundamental type, the point, forms the basis for all of the other types.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MOT资源利用率 的相关内容与操作方法。
+keywords: [openGauss, MOT资源利用率, 数据库管理]
+---
+
 # MOT资源利用率
 
 在4路96核512GB RAM的x86服务器上测试的资源利用率如下所示。MOT能够高效持续消耗几乎所有可用的CPU资源。例如，192核390万tpmC的CPU利用率几乎达到100%。
@@ -6,4 +11,4 @@
 - CPU利用率（%）：CPU利用率由蓝色线条和右侧的Y轴 **CPU%** 表示。
 
 **图 1**  资源利用率性能基准<a name="fig7436496"></a>  
-![](figures/Resource-utilization-performance-benchmark.png)
+![资源利用率性能基准](figures/Resource-utilization-performance-benchmark.png)

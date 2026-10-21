@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DMS组件版本号错误 的相关内容，涵盖 现象、原因 等内容。
+keywords: [openGauss, DMS组件版本号错误, 数据库管理, 现象, 原因]
+---
+
 # DMS组件版本号错误
 
 ## 现象

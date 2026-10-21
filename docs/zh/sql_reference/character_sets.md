@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CHARACTER_SETS 的相关内容与操作方法。
+keywords: [openGauss, CHARACTER_SETS, SQL参考]
+---
+
 # CHARACTER_SETS <a name="ZH-CN_TOPIC_0310260671"></a>
 
 存储字符集相关的信息。

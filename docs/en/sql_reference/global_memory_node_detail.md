@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_MEMORY\_NODE\_DETAIL in openGauss.
+keywords: [openGauss, GLOBAL\_MEMORY\_NODE\_DETAIL, SQL]
+---
+
 # GLOBAL\_MEMORY\_NODE\_DETAIL<a name="EN-US_TOPIC_0245374665"></a>
 
 The memory usage of all normal nodes in openGauss is displayed. 

@@ -1,3 +1,8 @@
+---
+description: This document describes JSON/JSONB Types in openGauss, covering topics such as Input Format, JSONB Advanced Features.
+keywords: [openGauss, JSON/JSONB Types, SQL, Input Format, JSONB Advanced Features]
+---
+
 # JSON/JSONB Types<a name="EN-US_TOPIC_0289899996"></a>
 
 JavaScript Object Notation \(JSON\) data can be a single scalar, an array, or a key-value pair object. The array and object can be called a container:

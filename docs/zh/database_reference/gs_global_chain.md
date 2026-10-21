@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_GLOBAL\_CHAIN 的相关内容与操作方法。
+keywords: [openGauss, GS\_GLOBAL\_CHAIN, 数据库参考]
+---
+
 # GS\_GLOBAL\_CHAIN
 
 GS\_GLOBAL\_CHAIN系统表记录用户对防篡改用户表的修改操作信息，每条记录对应一次表级修改操作。具有审计管理员权限的用户可以查询此系统表，所有用户均不允许修改此系统表。

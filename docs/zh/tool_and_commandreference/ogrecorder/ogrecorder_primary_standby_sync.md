@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss oGRecorder 主备参数同步 的相关内容，涵盖 特性描述、特性约束 等内容。
+keywords: [openGauss, oGRecorder 主备参数同步, 工具与命令参考, 特性描述, 特性约束]
+---
+
 # oGRecorder 主备参数同步
 
 ## 特性描述<a name="section16406154310471"></a>

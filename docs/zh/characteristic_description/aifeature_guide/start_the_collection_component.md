@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 启动采集组件 的相关内容与操作方法。
+keywords: [openGauss, 启动采集组件, 特性描述]
+---
+
 # 启动采集组件<a name="ZH-CN_TOPIC_0000002258707508"></a>
 
 采集组件介绍和使用方式详见[Prometheus Exporter组件](prometheus_exporter_overview.md)，用户通过gs\_dbmind命令启动对应的exporter。下面为完整的Prometheus监控平台的搭建过程。

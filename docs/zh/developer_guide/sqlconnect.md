@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SQLConnect 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, SQLConnect, 开发指南, 功能描述, 原型]
+---
+
 # SQLConnect
 
 ## 功能描述<a name="zh-cn_topic_0238272889_zh-cn_topic_0237120419_zh-cn_topic_0059778729_s3748e0b0ff1d4511806e76a6047e4b2b"></a>

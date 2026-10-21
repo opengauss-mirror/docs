@@ -1,3 +1,8 @@
+---
+description: This document describes oGRecorder SDK API Documentation in openGauss, covering topics such as Table of Contents, Initialization and Exit.
+keywords: [openGauss, oGRecorder SDK API Documentation, tools and commands, Table of Contents, Initialization and Exit]
+---
+
 # oGRecorder SDK API Documentation
 
 ## Table of Contents

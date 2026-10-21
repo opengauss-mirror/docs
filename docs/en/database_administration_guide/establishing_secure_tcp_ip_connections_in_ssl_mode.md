@@ -1,3 +1,8 @@
+---
+description: This document describes Establishing Secure TCP/IP Connections in SSL Mode in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, Establishing Secure TCP/IP Connections in SSL Mode, database administration, Background, Prerequisites]
+---
+
 # Establishing Secure TCP/IP Connections in SSL Mode<a name="EN-US_TOPIC_0289900924"></a>
 
 ## Background<a name="en-us_topic_0283137035_en-us_topic_0237121092_en-us_topic_0059778374_section1957281971410"></a>

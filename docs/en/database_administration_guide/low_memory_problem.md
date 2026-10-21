@@ -1,3 +1,8 @@
+---
+description: This document describes Insufficient Shared Memory in openGauss, covering topics such as Symptom, Cause.
+keywords: [openGauss, Insufficient Shared Memory, database administration, Symptom, Cause]
+---
+
 # Insufficient Shared Memory
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:44:04.127Z pushedAt=2026-09-24T06:23:26.043Z -->

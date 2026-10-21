@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss om_monitor进程启动未成功 的相关内容，涵盖 现象、原因 等内容。
+keywords: [openGauss, om_monitor进程启动未成功, 数据库运维, 现象, 原因]
+---
+
 # om_monitor进程启动未成功
 
 ## 现象

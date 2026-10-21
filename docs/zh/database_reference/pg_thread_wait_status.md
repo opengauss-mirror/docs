@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_THREAD\_WAIT\_STATUS 的相关内容与操作方法。
+keywords: [openGauss, PG\_THREAD\_WAIT\_STATUS, 数据库参考]
+---
+
 # PG\_THREAD\_WAIT\_STATUS
 
 通过PG\_THREAD\_WAIT\_STATUS视图可以检测当前实例中工作线程（backend thread）、辅助线程（auxiliary thread）以及资源池化DMS线程（MES，需开启GUC参数 `ss_enable_dynamic_trace`）的阻塞等待情况。

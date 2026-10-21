@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_PREPARED\_STATEMENTS in openGauss.
+keywords: [openGauss, PG\_PREPARED\_STATEMENTS, database reference]
+---
+
 # PG\_PREPARED\_STATEMENTS<a name="EN-US_TOPIC_0289900229"></a>
 
 **PG\_PREPARED\_STATEMENTS**  displays all prepared statements that are available in the current session.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PARTITIONS 的相关内容与操作方法。
+keywords: [openGauss, PARTITIONS, SQL参考]
+---
+
 # PARTITIONS <a name="ZH-CN_TOPIC_0310260671"></a>
 
 存储分区相关的信息。

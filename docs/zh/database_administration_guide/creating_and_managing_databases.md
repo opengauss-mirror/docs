@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 创建和管理数据库 的相关内容，涵盖 前提条件、背景信息 等内容。
+keywords: [openGauss, 创建和管理数据库, 数据库管理, 前提条件, 背景信息]
+---
+
 # 创建和管理数据库
 
 ## 前提条件<a name="zh-cn_topic_0283136807_zh-cn_topic_0237120295_zh-cn_topic_0059779126_s82a10b03aef44f24a8b835912c58dd5b"></a>

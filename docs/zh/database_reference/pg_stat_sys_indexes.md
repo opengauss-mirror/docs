@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_STAT\_SYS\_INDEXES 的相关内容与操作方法。
+keywords: [openGauss, PG\_STAT\_SYS\_INDEXES, 数据库参考]
+---
+
 # PG\_STAT\_SYS\_INDEXES
 
 PG\_STAT\_SYS\_INDEXES视图显示pg\_catalog、information\_schema模式中所有系统表的索引状态信息。

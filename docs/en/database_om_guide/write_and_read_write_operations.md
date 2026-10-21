@@ -1,3 +1,8 @@
+---
+description: This document describes Write and Read/Write Operations in openGauss.
+keywords: [openGauss, Write and Read/Write Operations, database O&M]
+---
+
 # Write and Read/Write Operations<a name="EN-US_TOPIC_0242370300"></a>
 
 Statements for write-only and read/write operations are as follows:

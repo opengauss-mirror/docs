@@ -1,3 +1,8 @@
+---
+description: This document describes Security Design in openGauss, covering topics such as Procedure for Manually Replacing Certificates, Certificate Usage Guide.
+keywords: [openGauss, Security Design, tools and commands, Procedure for Manually Replacing Certificates, Certificate Usage Guide]
+---
+
 # Security Design<a name="EN-US_TOPIC_0000001201487108"></a>
 
 ## Procedure for Manually Replacing Certificates <a name="section103992017202219"></a>

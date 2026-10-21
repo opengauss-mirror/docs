@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_STAT\_XACT\_USER\_FUNCTIONS in openGauss.
+keywords: [openGauss, PG\_STAT\_XACT\_USER\_FUNCTIONS, database reference]
+---
+
 # PG\_STAT\_XACT\_USER\_FUNCTIONS<a name="EN-US_TOPIC_0289900002"></a>
 
 **PG\_STAT\_XACT\_USER\_FUNCTIONS**  contains statistics on the execution of each function.

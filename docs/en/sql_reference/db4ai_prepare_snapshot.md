@@ -1,3 +1,8 @@
+---
+description: This document describes DB4AI.PREPARE\_SNAPSHOT in openGauss.
+keywords: [openGauss, DB4AI.PREPARE\_SNAPSHOT, SQL]
+---
+
 # DB4AI.PREPARE\_SNAPSHOT<a name="EN-US_TOPIC_0000001149391558"></a>
 
 **PREPARE\_SNAPSHOT**  prepares data for model training and interprets snapshots for the DB4AI feature. A snapshot provides a complete sequence of data and documents that are changed by all applications. You can invoke  **PREPARE SNAPSHOT**  to implement this function.

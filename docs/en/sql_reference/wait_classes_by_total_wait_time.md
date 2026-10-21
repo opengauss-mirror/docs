@@ -1,3 +1,8 @@
+---
+description: This document describes Wait Classes by Total Wait Time in openGauss.
+keywords: [openGauss, Wait Classes by Total Wait Time, SQL]
+---
+
 # Wait Classes by Total Wait Time<a name="EN-US_TOPIC_0000001259835121"></a>
 
 The following table lists columns in the Wait Classes by Total Wait Time report.

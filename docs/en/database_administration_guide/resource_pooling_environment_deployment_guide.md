@@ -1,3 +1,8 @@
+---
+description: This document describes Resource Pooling Environment Deployment Guide in openGauss, covering topics such as Description, Background Knowledge.
+keywords: [openGauss, Resource Pooling Environment Deployment Guide, database administration, Description, Background Knowledge]
+---
+
 # Resource Pooling Environment Deployment Guide
 
 ## Description
@@ -18,7 +23,7 @@ Developers are advised to:
   - The following figure shows the resource pooling deployment.
 
 <p align="center"><b>Figure 1: openGauss resource pooling deployment</b></p>
-<div align="center"><img src="figures/dms1.jpg"/></div>
+<div align="center"><img src="figures/dms1.jpg" alt="Precautions diagram"/></div>
 
   - In the installation package of the enterprise edition officially released in the community, if the resource pooling architecture needs to be set up, disk arrays, servers, and optical switches need to be prepared, and the CM and OM components need to be deployed.
 

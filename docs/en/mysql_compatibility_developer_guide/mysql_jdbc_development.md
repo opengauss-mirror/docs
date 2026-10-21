@@ -1,3 +1,8 @@
+---
+description: This document describes MySQL JDBC Connection Sample in openGauss, covering topics such as Prerequisites, JDBC Operation Example.
+keywords: [openGauss, MySQL JDBC Connection Sample, MySQL compatibility, Prerequisites, JDBC Operation Example]
+---
+
 # MySQL JDBC Connection Sample
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-14T06:38:53.211Z pushedAt=2026-07-17T06:42:53.910Z -->

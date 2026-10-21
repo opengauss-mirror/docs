@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_TYPE 的相关内容与操作方法。
+keywords: [openGauss, PG\_TYPE, 数据库参考]
+---
+
 # PG\_TYPE
 
 PG\_TYPE系统表存储数据类型的相关信息。

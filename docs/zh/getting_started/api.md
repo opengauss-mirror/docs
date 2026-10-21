@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 应用程序接口 的相关内容，涵盖 支持的应用程序接口 等内容。
+keywords: [openGauss, 应用程序接口, 快速入门, 支持的应用程序接口]
+---
+
 # 应用程序接口
 
 用户可以使用标准的数据库应用程序接口（如ODBC和JDBC），开发基于openGauss的应用程序。

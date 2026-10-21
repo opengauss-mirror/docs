@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 配置 MySQL 协议兼容 的相关内容，涵盖 MySQL 协议兼容简介、MySQL 协议兼容配置 等内容。
+keywords: [openGauss, 配置 MySQL 协议兼容, MySQL兼容, MySQL 协议兼容简介, MySQL 协议兼容配置]
+---
+
 # 配置 MySQL 协议兼容
 
 ## MySQL 协议兼容简介

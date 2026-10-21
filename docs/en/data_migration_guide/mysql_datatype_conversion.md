@@ -1,3 +1,8 @@
+---
+description: This document describes Data Type Comparison Between MySQL and openGauss in openGauss.
+keywords: [openGauss, Data Type Comparison Between MySQL and openGauss, data migration]
+---
+
 # Data Type Comparison Between MySQL and openGauss
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-16T08:10:03.380Z -->

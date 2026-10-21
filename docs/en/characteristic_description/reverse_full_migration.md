@@ -1,3 +1,8 @@
+---
+description: This document describes Reverse Full Migration in openGauss, covering topics such as Feature Overview, Customer Benefits.
+keywords: [openGauss, Reverse Full Migration, features, Feature Overview, Customer Benefits]
+---
+
 # Reverse Full Migration
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:24:54.596Z pushedAt=2026-09-22T11:12:32.690Z -->

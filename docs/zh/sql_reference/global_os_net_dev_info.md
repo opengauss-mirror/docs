@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_OS\_NET\_DEV\_INFO 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_OS\_NET\_DEV\_INFO, SQL参考]
+---
+
 # GLOBAL\_OS\_NET\_DEV\_INFO
 
 提供openGauss中所有正常节点下的操作系统网络设备统计信息，数据来源于各节点的/proc/net/dev。

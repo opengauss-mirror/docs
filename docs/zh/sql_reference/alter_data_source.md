@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER DATA SOURCE 的相关内容，涵盖 功能描述、注意选项 等内容。
+keywords: [openGauss, ALTER DATA SOURCE, SQL参考, 功能描述, 注意选项]
+---
+
 # ALTER DATA SOURCE
 
 ## 功能描述<a name="zh-cn_topic_0283136847_zh-cn_topic_0237122056_section1246564332711"></a>

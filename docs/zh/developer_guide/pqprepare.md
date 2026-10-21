@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PQprepare 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, PQprepare, 开发指南, 功能描述, 原型]
+---
+
 # PQprepare
 
 ## 功能描述<a name="zh-cn_topic_0241735620_section1434210205519"></a>

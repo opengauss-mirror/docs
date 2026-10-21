@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 附录 的相关内容与操作方法。
+keywords: [openGauss, 附录, 特性描述]
+---
+
 # 附录<a name="ZH-CN_TOPIC_0000002293246449"></a>
 
 以下为智能问答模块与知识库管理模块中相关表的详细结构设计。其中，历史问答表（qa\_record）存放用户提出问题的详细信息，知识片段表（gauss\_kb\_zh）存放文档片段的详细信息，知识库管理表（knowledge\_base）存放当前创建的所有知识库的详细信息，数据源管理表（data\_source）存放当前数据源的详细信息。

@@ -1,3 +1,8 @@
+---
+description: This document describes Mathematical Functions and Operators in openGauss, covering topics such as Mathematical Operators, Mathematical Functions.
+keywords: [openGauss, Mathematical Functions and Operators, SQL, Mathematical Operators, Mathematical Functions]
+---
+
 # Mathematical Functions and Operators
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:26:45.153Z -->

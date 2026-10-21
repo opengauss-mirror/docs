@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 处理tsvector 的相关内容与操作方法。
+keywords: [openGauss, 处理tsvector, SQL参考]
+---
+
 # 处理tsvector
 
 openGauss提供了用来操作tsvector类型的函数和操作符。

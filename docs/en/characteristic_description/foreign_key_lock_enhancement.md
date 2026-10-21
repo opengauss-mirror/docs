@@ -1,3 +1,8 @@
+---
+description: This document describes Foreign Key Lock Enhancement in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Foreign Key Lock Enhancement, features, Availability, Introduction]
+---
+
 # Foreign Key Lock Enhancement<a name="EN-US_TOPIC_0000001220343488"></a>
 
 ## Availability<a name="section1076382216287"></a>

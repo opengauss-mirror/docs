@@ -1,3 +1,8 @@
+---
+description: This document describes Main Service Management in openGauss, covering topics such as Starting the DBMind Main Service, Stopping the DBMind Main Service.
+keywords: [openGauss, Main Service Management, features, Starting the DBMind Main Service, Stopping the DBMind Main Service]
+---
+
 # Main Service Management<a name="ZH-CN_TOPIC_0000002293420745"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T02:02:27.826Z -->

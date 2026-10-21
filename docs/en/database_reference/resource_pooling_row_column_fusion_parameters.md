@@ -1,3 +1,8 @@
+---
+description: This document describes Resource Pooling Row-Column Fusion Parameters in openGauss, covering topics such as ss\_max\_imcs\_cache, ss\_htap\_cluster\_map.
+keywords: [openGauss, Resource Pooling Row-Column Fusion Parameters, database reference, ss\_max\_imcs\_cache, ss\_htap\_cluster\_map]
+---
+
 # Resource Pooling Row-Column Fusion Parameters
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:37:58.918Z -->

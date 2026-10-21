@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP TABLESPACE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP TABLESPACE, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP TABLESPACE
 
 ## 功能描述<a name="zh-cn_topic_0283137549_zh-cn_topic_0237122153_zh-cn_topic_0059779073_s73f8a05d2e0248f18e34a613fcde3fb6"></a>

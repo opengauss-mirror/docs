@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 解析查询 的相关内容与操作方法。
+keywords: [openGauss, 解析查询, SQL参考]
+---
+
 # 解析查询
 
 openGauss提供了函数to\_tsquery和plainto\_tsquery将查询转换为tsquery数据类型，to\_tsquery提供比plainto\_tsquery更多的功能，但对其输入要求更严格。

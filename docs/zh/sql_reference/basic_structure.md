@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 基本结构 的相关内容，涵盖 结构、分类 等内容。
+keywords: [openGauss, 基本结构, SQL参考, 结构, 分类]
+---
+
 # 基本结构
 
 ## 结构<a name="zh-cn_topic_0237122217_zh-cn_topic_0059778559_s764fc3b756ed40e6a5ad9af5559feafa"></a>

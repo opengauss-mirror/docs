@@ -1,3 +1,8 @@
+---
+description: This document describes CM-related Parameters in openGauss.
+keywords: [openGauss, CM-related Parameters, database reference]
+---
+
 # CM-related Parameters
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:37:50.468Z -->

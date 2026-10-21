@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_LANGUAGE 的相关内容与操作方法。
+keywords: [openGauss, PG\_LANGUAGE, 数据库参考]
+---
+
 # PG\_LANGUAGE
 
 PG\_LANGUAGE系统表登记编程语言，用户可以用这些语言或接口写函数或者存储过程。

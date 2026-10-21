@@ -1,3 +1,8 @@
+---
+description: This document describes Delayed Replay in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Delayed Replay, features, Availability, Introduction]
+---
+
 # Delayed Replay<a name="EN-US_TOPIC_0000001091568392"></a>
 
 ## Availability<a name="section57017810"></a>

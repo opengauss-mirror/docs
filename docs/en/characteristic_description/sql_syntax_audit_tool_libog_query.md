@@ -1,3 +1,8 @@
+---
+description: This document describes libog_query SQL Syntax Audit Tool in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, libog_query SQL Syntax Audit Tool, features, Availability, Feature Overview]
+---
+
 # libog_query SQL Syntax Audit Tool
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:30:04.510Z pushedAt=2026-09-22T11:12:32.706Z -->

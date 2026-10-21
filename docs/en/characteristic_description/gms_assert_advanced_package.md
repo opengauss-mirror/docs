@@ -1,3 +1,8 @@
+---
+description: This document describes gms_assert Advanced Package in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, gms_assert Advanced Package, features, Availability, Feature Overview]
+---
+
 # gms_assert Advanced Package
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:11:49.630Z pushedAt=2026-09-22T11:12:32.631Z -->

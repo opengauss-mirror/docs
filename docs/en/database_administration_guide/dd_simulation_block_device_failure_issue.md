@@ -1,3 +1,8 @@
+---
+description: This document describes dd Simulating Block Device Failure in openGauss, covering topics such as Symptom, Cause.
+keywords: [openGauss, dd Simulating Block Device Failure, database administration, Symptom, Cause]
+---
+
 # dd Simulating Block Device Failure
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:42:46.728Z pushedAt=2026-09-11T06:24:27.766Z -->

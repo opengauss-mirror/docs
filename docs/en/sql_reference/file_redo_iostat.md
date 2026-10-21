@@ -1,3 +1,8 @@
+---
+description: This document describes FILE\_REDO\_IOSTAT in openGauss.
+keywords: [openGauss, FILE\_REDO\_IOSTAT, SQL]
+---
+
 # FILE\_REDO\_IOSTAT<a name="EN-US_TOPIC_0245374673"></a>
 
 **FILE\_REDO\_IOSTAT**  records statistics about redo logs \(WALs\) on the current node.

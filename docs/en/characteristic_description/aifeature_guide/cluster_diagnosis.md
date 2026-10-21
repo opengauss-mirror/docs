@@ -1,3 +1,8 @@
+---
+description: This document describes Cluster Diagnosis in openGauss, covering topics such as Overview, Usage Guide.
+keywords: [openGauss, Cluster Diagnosis, features, Overview, Usage Guide]
+---
+
 # Cluster Diagnosis<a name="ZH-CN_TOPIC_0000002294471393"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T01:50:03.977Z -->
@@ -59,7 +64,7 @@ gs_dbmind component cluster_diagnosis --conf {confpath} --host {ip_address} --ro
 After this command is entered, the system reads the log records of the three minutes before the specified time and analyzes the selected DN instance by using the selected method. An example of the analysis result is shown in [Figure 1](#zh-cn_topic_0000001714948973_fig0615168103510).
 
 **Figure 1**  DN instance diagnosis using the selected method<a name="zh-cn_topic_0000001714948973_fig0615168103510"></a>  
-![](figures/dn_instance_usage_analysis_using_the_selected_method.png)
+![DN instance diagnosis using the selected method](figures/dn_instance_usage_analysis_using_the_selected_method.png)
 
 The dictionary in the first half of the returned result provides the parsing result of the logs, where Good indicates that the item is normal and Bad indicates that the item is abnormal. The final Output indicates the output result.
 

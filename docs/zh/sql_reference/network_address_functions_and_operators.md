@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 网络地址函数和操作符 的相关内容，涵盖 cidr和inet操作符、cidr和inet函数 等内容。
+keywords: [openGauss, 网络地址函数和操作符, SQL参考, cidr和inet操作符, cidr和inet函数]
+---
+
 # 网络地址函数和操作符
 
 ## cidr和inet操作符<a name="zh-cn_topic_0283136843_zh-cn_topic_0237121975_zh-cn_topic_0059778594_s71ca011b21f64c9891528dc0883de0d3"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER TEXT SEARCH CONFIGURATION 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER TEXT SEARCH CONFIGURATION, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER TEXT SEARCH CONFIGURATION
 
 ## 功能描述<a name="zh-cn_topic_0283137411_zh-cn_topic_0237122079_zh-cn_topic_0059778328_s9adfe253d8074dff8561df762ecd7460"></a>

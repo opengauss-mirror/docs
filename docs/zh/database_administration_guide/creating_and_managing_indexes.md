@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 创建和管理索引 的相关内容，涵盖 背景信息、操作步骤 等内容。
+keywords: [openGauss, 创建和管理索引, 数据库管理, 背景信息, 操作步骤]
+---
+
 # 创建和管理索引
 
 HNSW、IVFFlat 和 DiskANN 索引的向量载荷缓存配置及使用方法，请参见[使用向量专用缓存](using_vector_buffer.md)。

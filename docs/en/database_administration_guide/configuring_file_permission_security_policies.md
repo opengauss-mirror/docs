@@ -1,3 +1,8 @@
+---
+description: This document describes Configuring File Permission Security Policies in openGauss, covering topics such as Background, Directory and File Permissions of Database Programs.
+keywords: [openGauss, Configuring File Permission Security Policies, database administration, Background, Directory and File Permissions of Database Programs]
+---
+
 # Configuring File Permission Security Policies<a name="EN-US_TOPIC_0246507974"></a>
 
 ## Background<a name="en-us_topic_0237121115_en-us_topic_0059779254_s112bbb1269bd4d75bb0129303297d9a6"></a>

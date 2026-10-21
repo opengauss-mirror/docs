@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_UID in openGauss.
+keywords: [openGauss, GS\_UID, database reference]
+---
+
 # GS\_UID<a name="EN-US_TOPIC_0000001192459242"></a>
 
 **GS\_UID**  records the unique identification meta information of the hasuids attribute table in the database.

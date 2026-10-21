@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP CLIENT MASTER KEY 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP CLIENT MASTER KEY, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP CLIENT MASTER KEY
 
 ## 功能描述<a name="zh-cn_topic_0059778607_s8dcd69edcfca47eb88ddb451a360b362"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_TRIGGER 的相关内容与操作方法。
+keywords: [openGauss, PG\_TRIGGER, 数据库参考]
+---
+
 # PG\_TRIGGER
 
 PG\_TRIGGER系统表存储触发器信息。

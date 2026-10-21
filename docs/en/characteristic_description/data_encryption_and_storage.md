@@ -1,3 +1,8 @@
+---
+description: This document describes Data Encryption and Storage in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Data Encryption and Storage, features, Availability, Introduction]
+---
+
 # Data Encryption and Storage<a name="EN-US_TOPIC_0000001105075474"></a>
 
 ## Availability<a name="section8174682"></a>

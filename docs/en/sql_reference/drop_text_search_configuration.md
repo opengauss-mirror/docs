@@ -1,3 +1,8 @@
+---
+description: This document describes DROP TEXT SEARCH CONFIGURATION in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP TEXT SEARCH CONFIGURATION, SQL, Function, Precautions]
+---
+
 # DROP TEXT SEARCH CONFIGURATION<a name="EN-US_TOPIC_0289900892"></a>
 
 ## Function<a name="en-us_topic_0283136862_en-us_topic_0237122154_en-us_topic_0059778389_s12ec071125bd4d4981cbcdad70bd9a1e"></a>

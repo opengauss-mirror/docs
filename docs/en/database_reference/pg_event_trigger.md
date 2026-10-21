@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_EVENT\_TRIGGER in openGauss.
+keywords: [openGauss, PG\_EVENT\_TRIGGER, database reference]
+---
+
 # PG\_EVENT\_TRIGGER<a name="EN-US_TOPIC_0285409907"></a>
 
 PG\_EVENT\_TRIGGER records information about each event trigger.

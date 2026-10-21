@@ -1,3 +1,8 @@
+---
+description: This document describes GS_SHARED\_MEMORY\_DETAIL in openGauss.
+keywords: [openGauss, GS_SHARED\_MEMORY\_DETAIL, database reference]
+---
+
 # GS_SHARED\_MEMORY\_DETAIL
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:43:27.494Z -->

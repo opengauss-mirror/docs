@@ -1,3 +1,8 @@
+---
+description: This document describes Resource Pooling Multi-path and Multi-link Redundancy Enviro in openGauss, covering topics such as I. Software to Be Installed, II. Checking Connectivity Between NICs and the Disk Array.
+keywords: [openGauss, Resource Pooling Multi-path and Multi-link Redundancy Enviro, database administration, I. Software to Be Installed, II. Checking Connectivity Between NICs and the Disk Array]
+---
+
 # Resource Pooling Multi-path and Multi-link Redundancy Environment Setup Guide
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:46:21.617Z pushedAt=2026-09-11T11:23:34.463Z -->

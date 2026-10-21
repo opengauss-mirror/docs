@@ -1,3 +1,8 @@
+---
+description: This document describes Connecting to a Database Using TLCP in openGauss, covering topics such as Server Configuration, Client Configuration.
+keywords: [openGauss, Connecting to a Database Using TLCP, development, Server Configuration, Client Configuration]
+---
+
 # Connecting to a Database Using TLCP
 
 When connecting to an openGauss server via JDBC, users can enable the TLCP (GM/T 0024-2014) cryptographic protocol to encrypt communications between the client and server. This provides a nationally recognized security mechanism for transmitting sensitive data over the Internet. This section describes how to establish a TLCP-based connection to openGauss using JDBC. It assumes that you have already enabled TLCP support on the openGauss server side.

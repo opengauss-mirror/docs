@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 查看参数 的相关内容，涵盖 操作步骤、示例 等内容。
+keywords: [openGauss, 查看参数, 数据库管理, 操作步骤, 示例]
+---
+
 # 查看参数
 
 openGauss安装后，有一套默认的运行参数，为了使openGauss与业务的配合度更高，用户需要根据业务场景和数据量的大小进行GUC参数调整。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP VIEW 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP VIEW, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP VIEW
 
 ## 功能描述<a name="zh-cn_topic_0283137706_zh-cn_topic_0237122159_zh-cn_topic_0059777895_sed6f06f3d4d94b38b10c7592f98bacdb"></a>

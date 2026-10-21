@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Usage in openGauss.
+keywords: [openGauss, MOT Usage, database administration]
+---
+
 # MOT Usage<a name="EN-US_TOPIC_0270171476"></a>
 
 Using MOT tables is quite simple and is described in the few short sections below.
@@ -10,4 +15,4 @@ Workflow Overview
 
 The following is a simple overview of the tasks related to working with MOT tables –
 
-![](figures/en-us_image_0270171684.png)
+![MOT Usage diagram](figures/en-us_image_0270171684.png)

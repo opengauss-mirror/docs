@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_STAT\_XACT\_SYS\_TABLES 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_STAT\_XACT\_SYS\_TABLES, SQL参考]
+---
+
 # GLOBAL\_STAT\_XACT\_SYS\_TABLES
 
 显示各节点命名空间中系统表的事务状态信息。

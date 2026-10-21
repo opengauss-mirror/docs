@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 产品设计 的相关内容，涵盖 架构设计、安全设计 等内容。
+keywords: [openGauss, 产品设计, 特性描述, 架构设计, 安全设计]
+---
+
 # 产品设计
 
 ## 架构设计<a name="ZH-CN_TOPIC_0000002293420737"></a>
@@ -5,7 +10,7 @@
 DBMind的监控平台以开源Prometheus为主，并提供了数据生产者exporter，可与Prometheus平台完成对接。DBMind服务架构如[图1 DBMind服务架构](#fig3224154930)所示：
 
 **图 1**  DBMind服务架构<a name="fig3224154930"></a>  
-![](figures/DBMind服务架构.png)
+![DBMind服务架构](figures/DBMind服务架构.png)
 
 图中各关键组件说明：
 

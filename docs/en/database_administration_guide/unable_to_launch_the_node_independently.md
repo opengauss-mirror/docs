@@ -1,3 +1,8 @@
+---
+description: This document describes Unable to Start a Node Independently in openGauss, covering topics such as Symptom, Cause.
+keywords: [openGauss, Unable to Start a Node Independently, database administration, Symptom, Cause]
+---
+
 # Unable to Start a Node Independently
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:47:39.599Z pushedAt=2026-09-11T12:00:12.494Z -->

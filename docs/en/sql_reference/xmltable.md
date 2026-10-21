@@ -1,3 +1,8 @@
+---
+description: This document describes XMLTABLE in openGauss, covering topics such as Description, Syntax.
+keywords: [openGauss, XMLTABLE, SQL, Description, Syntax]
+---
+
 # XMLTABLE
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:29:09.791Z -->

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss openGauss可运行脚本功能说明 的相关内容与操作方法。
+keywords: [openGauss, openGauss可运行脚本功能说明, 工具与命令参考]
+---
+
 # openGauss可运行脚本功能说明
 
 以下是openGauss常用可执行脚本，仅供openGauss接口使用。

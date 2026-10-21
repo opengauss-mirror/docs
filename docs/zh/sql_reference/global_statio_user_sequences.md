@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_STATIO\_USER\_SEQUENCES 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_STATIO\_USER\_SEQUENCES, SQL参考]
+---
+
 # GLOBAL\_STATIO\_USER\_SEQUENCES
 
 GLOBAL\_STATIO\_USER\_SEQUENCES视图显示各节点的命名空间中所有用户关系表类型为序列的IO状态信息。

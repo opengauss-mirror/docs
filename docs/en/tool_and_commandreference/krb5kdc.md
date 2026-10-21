@@ -1,3 +1,8 @@
+---
+description: This document describes krb5kdc in openGauss, covering topics such as Function, Parameter Description.
+keywords: [openGauss, krb5kdc, tools and commands, Function, Parameter Description]
+---
+
 # krb5kdc<a name="EN-US_TOPIC_0249632277"></a>
 
 ## Function<a name="en-us_topic_0237152432_section10172172474817"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STATEMENT\_COMPLEX\_RUNTIME 的相关内容与操作方法。
+keywords: [openGauss, STATEMENT\_COMPLEX\_RUNTIME, SQL参考]
+---
+
 # STATEMENT\_COMPLEX\_RUNTIME
 
 STATEMENT\_COMPLEX\_RUNTIME视图显示当前用户在数据库主节点上正在执行的作业的负载管理记录。

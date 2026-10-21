@@ -1,3 +1,8 @@
+---
+description: This document describes DROP ROW LEVEL SECURITY POLICY in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP ROW LEVEL SECURITY POLICY, SQL, Function, Precautions]
+---
+
 # DROP ROW LEVEL SECURITY POLICY<a name="EN-US_TOPIC_0289900923"></a>
 
 ## Function<a name="en-us_topic_0283136715_en-us_topic_0237122144_section196521854173211"></a>

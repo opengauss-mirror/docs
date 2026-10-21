@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_GTT\_STATS 的相关内容与操作方法。
+keywords: [openGauss, PG\_GTT\_STATS, 数据库参考]
+---
+
 # PG\_GTT\_STATS
 
 PG\_GTT\_STATS视图查看当前会话所有全局临时表单列统计信息，调用pg\_get\_gtt\_statistics函数。

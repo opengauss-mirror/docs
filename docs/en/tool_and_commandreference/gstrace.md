@@ -1,3 +1,8 @@
+---
+description: This document describes gstrace in openGauss, covering topics such as Background, Syntax.
+keywords: [openGauss, gstrace, tools and commands, Background, Syntax]
+---
+
 # gstrace
 
 ## Background<a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_zh-cn_topic_0059778103_s1d88b9452b2d4c15811c8ad2670b7682"></a>

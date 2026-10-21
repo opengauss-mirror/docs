@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBE\_PLDEBUGGER.print\_var 的相关内容与操作方法。
+keywords: [openGauss, DBE\_PLDEBUGGER.print\_var, SQL参考]
+---
+
 # DBE\_PLDEBUGGER.print\_var
 
 debug端调试过程中，调用print\_var，打印当前存储过程内变量中指定的变量名及其取值。该函数入参frameno表示查询遍历的栈层数，支持不加入该参数调用，缺省为查看最上层栈变量。

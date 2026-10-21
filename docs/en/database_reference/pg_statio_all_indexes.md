@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_STATIO\_ALL\_INDEXES in openGauss.
+keywords: [openGauss, PG\_STATIO\_ALL\_INDEXES, database reference]
+---
+
 # PG\_STATIO\_ALL\_INDEXES<a name="EN-US_TOPIC_0289900974"></a>
 
 **PG\_STATIO\_ALL\_INDEXES**  contains one row for each index in the current database, showing I/O statistics about accesses to that specific index. 

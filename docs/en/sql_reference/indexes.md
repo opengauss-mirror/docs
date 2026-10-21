@@ -1,3 +1,8 @@
+---
+description: This document describes Index in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, Index, SQL, Syntax, Parameter Description]
+---
+
 # Index
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:22:49.669Z -->

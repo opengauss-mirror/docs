@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_TS\_TEMPLATE in openGauss.
+keywords: [openGauss, PG\_TS\_TEMPLATE, database reference]
+---
+
 # PG\_TS\_TEMPLATE<a name="EN-US_TOPIC_0289900632"></a>
 
 **PG\_TS\_TEMPLATE**  contains entries defining text search templates. A template provides a framework for text search dictionaries. Since a template must be implemented by C-language-level functions, templates can be created only by database administrators.

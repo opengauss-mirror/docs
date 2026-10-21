@@ -1,3 +1,8 @@
+---
+description: This document describes Generating Stored Procedure Coverage Report in openGauss, covering topics such as Prerequisites, Procedure.
+keywords: [openGauss, Generating Stored Procedure Coverage Report, SQL, Prerequisites, Procedure]
+---
+
 # Generating Stored Procedure Coverage Report
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:25:12.658Z -->

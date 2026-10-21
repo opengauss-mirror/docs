@@ -1,3 +1,8 @@
+---
+description: This document describes SUMMARY\_STATIO\_ALL\_INDEXES in openGauss.
+keywords: [openGauss, SUMMARY\_STATIO\_ALL\_INDEXES, SQL]
+---
+
 # SUMMARY\_STATIO\_ALL\_INDEXES<a name="EN-US_TOPIC_0245374795"></a>
 
 **SUMMARY\_STATIO\_ALL\_INDEXES**  contains every row of each index in databases in openGauss, showing I/O statistics about specific indexes. 

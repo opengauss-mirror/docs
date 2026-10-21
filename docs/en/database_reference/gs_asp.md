@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_ASP in openGauss.
+keywords: [openGauss, GS\_ASP, database reference]
+---
+
 # GS\_ASP<a name="EN-US_TOPIC_0000001158569987"></a>
 
 **GS\_ASP**  displays the persistent ACTIVE SESSION PROFILE samples.This table can only be queried in the system library, and there is no data in the user library.

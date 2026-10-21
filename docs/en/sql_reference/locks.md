@@ -1,3 +1,8 @@
+---
+description: This document describes Locks in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, Locks, SQL, Syntax, Parameter Description]
+---
+
 # Locks<a name="EN-US_TOPIC_0000001225179937"></a>
 
 To ensure database data consistency, you can execute the LOCK TABLE statement to prevent other users from modifying tables.

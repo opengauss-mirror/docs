@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 网络地址类型 的相关内容，涵盖 cidr、inet 等内容。
+keywords: [openGauss, 网络地址类型, SQL参考, cidr, inet]
+---
+
 # 网络地址类型
 
 openGauss提供用于存储IPv4、IPv6、MAC地址的数据类型。

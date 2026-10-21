@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss UWAL 的相关内容，涵盖 介绍、安装准备 等内容。
+keywords: [openGauss, UWAL, 特性描述, 介绍, 安装准备]
+---
+
 # UWAL
 
 ## 介绍

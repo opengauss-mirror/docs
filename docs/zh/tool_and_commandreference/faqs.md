@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss FAQ 的相关内容，涵盖 执行命令报错“Failed to obtain the GPHOME”、gs\_ctl 重建备实例过程被中断导致秘钥文件不完整恢复方法 等内容。
+keywords: [openGauss, FAQ, 工具与命令参考, 执行命令报错“Failed to obtain the GPHOME”, gs\_ctl 重建备实例过程被中断导致秘钥文件不完整恢复方法]
+---
+
 # FAQ
 
 ## 执行命令报错“Failed to obtain the GPHOME”

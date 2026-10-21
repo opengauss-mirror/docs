@@ -1,3 +1,8 @@
+---
+description: This document describes DROP DATA SOURCE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP DATA SOURCE, SQL, Function, Precautions]
+---
+
 # DROP DATA SOURCE<a name="EN-US_TOPIC_0289900803"></a>
 
 ## Function<a name="en-us_topic_0283136822_en-us_topic_0237122135_section324414515172"></a>

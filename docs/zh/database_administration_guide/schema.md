@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Schema 的相关内容，涵盖 创建、修改和删除Schema、搜索路径 等内容。
+keywords: [openGauss, Schema, 数据库管理, 创建、修改和删除Schema, 搜索路径]
+---
+
 # Schema
 
 Schema又称作模式。通过管理Schema，允许多个用户使用同一数据库而不相互干扰，可以将数据库对象组织成易于管理的逻辑组，同时便于将第三方应用添加到相应的Schema下而不引起冲突。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG_STAT_VECTOR_BUFFER 的相关内容与操作方法。
+keywords: [openGauss, PG_STAT_VECTOR_BUFFER, 数据库参考]
+---
+
 # PG_STAT_VECTOR_BUFFER
 
 `PG_STAT_VECTOR_BUFFER` 显示当前数据库实例向量专用缓存的全局容量、使用情况及运行计数，返回一行。实例中的数据库和会话共享这些统计，普通用户可以查询。

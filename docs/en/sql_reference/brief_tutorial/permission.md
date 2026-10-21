@@ -1,3 +1,8 @@
+---
+description: This document describes Privileges in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, Privileges, SQL, Syntax, Parameter Description]
+---
+
 # Privileges
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-28T11:07:34.544Z pushedAt=2026-07-29T03:42:54.628Z -->

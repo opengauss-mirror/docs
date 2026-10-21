@@ -1,3 +1,8 @@
+---
+description: This document describes Physical Backup in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Physical Backup, features, Availability, Introduction]
+---
+
 # Physical Backup<a name="EN-US_TOPIC_0000001105235302"></a>
 
 ## Availability<a name="section56086982"></a>

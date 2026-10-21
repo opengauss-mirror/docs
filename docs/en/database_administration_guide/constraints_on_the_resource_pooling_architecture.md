@@ -1,3 +1,8 @@
+---
+description: This document describes Constraints on the Resource Pooling Architecture in openGauss, covering topics such as Description, Current Constraints.
+keywords: [openGauss, Constraints on the Resource Pooling Architecture, database administration, Description, Current Constraints]
+---
+
 # Constraints on the Resource Pooling Architecture
 
 ## Description

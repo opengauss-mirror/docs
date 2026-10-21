@@ -1,3 +1,8 @@
+---
+description: This document describes Primary/Standby Shared Storage in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Primary/Standby Shared Storage, features, Availability, Introduction]
+---
+
 # Primary/Standby Shared Storage<a name="EN-US_TOPIC_0000001371444657"></a>
 
 ## Availability<a name="section15406143204715"></a>
@@ -9,7 +14,7 @@ This feature is available since openGauss 3.1.0.
 This feature enables the primary and standby nodes to share the same storage, implementing HA deployment mode for the primary/standby shared storage based on disk arrays. OCK RDMA can be used to improve the real-time read consistency on standby nodes. The following figure shows the architecture of the primary/standby shared storage.
 
 **Figure 1** Primary/Standby shared storage architecture<a name="fig13852124465211"></a>  
-![](figures/primary-standby-shared-storage-architecture.png)
+![Primary/Standby shared storage architecture](figures/primary-standby-shared-storage-architecture.png)
 
 ## Benefits<a name="section13406743164715"></a>
 

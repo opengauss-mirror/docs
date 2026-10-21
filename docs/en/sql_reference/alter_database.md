@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER DATABASE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER DATABASE, SQL, Function, Precautions]
+---
+
 # ALTER DATABASE<a name="EN-US_TOPIC_0289900461"></a>
 
 ## Function<a name="en-us_topic_0283136981_en-us_topic_0237122055_en-us_topic_0059779247_sbb9c79973fbf4b4b8f8e8355b0f67f63"></a>

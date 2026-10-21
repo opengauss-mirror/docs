@@ -1,3 +1,8 @@
+---
+description: This document describes Thesaurus Dictionary in openGauss, covering topics such as Precautions, Procedure.
+keywords: [openGauss, Thesaurus Dictionary, SQL, Precautions, Procedure]
+---
+
 # Thesaurus Dictionary<a name="EN-US_TOPIC_0289900582"></a>
 
 A  **Thesaurus**  dictionary \(sometimes abbreviated as TZ\) is a collection of relationships between words and phrases, such as broader terms \(BT\), narrower terms \(NT\), preferred terms, non-preferred terms, and related terms. Based on definitions in the dictionary file, a TZ replaces all non-preferred terms by one preferred term and, optionally, preserves the original terms for indexing as well. A TZ is an extension of a  **Synonym**  dictionary with added phrase support.

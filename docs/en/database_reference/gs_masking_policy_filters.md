@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_MASKING\_POLICY\_FILTERS in openGauss.
+keywords: [openGauss, GS\_MASKING\_POLICY\_FILTERS, database reference]
+---
+
 # GS\_MASKING\_POLICY\_FILTERS<a name="EN-US_TOPIC_0306525314"></a>
 
 **GS\_MASKING\_POLICY\_FILTERS**  records the user filter criteria corresponding to the dynamic data masking policies. The corresponding masking policy takes effect only when the user information meets the filter criteria. Only the system administrator or security policy administrator can access this system catalog.

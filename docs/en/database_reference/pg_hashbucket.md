@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_HASHBUCKET in openGauss.
+keywords: [openGauss, PG\_HASHBUCKET, database reference]
+---
+
 # PG\_HASHBUCKET<a name="EN-US_TOPIC_0000001151568200"></a>
 
 **PG\_HASHBUCKET**  records hash bucket information.

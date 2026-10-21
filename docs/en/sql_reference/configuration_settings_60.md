@@ -1,3 +1,8 @@
+---
+description: This document describes Configuration settings in openGauss.
+keywords: [openGauss, Configuration settings, SQL]
+---
+
 # Configuration settings<a name="EN-US_TOPIC_0000001215035246"></a>
 
 The following table describes columns in the Configuration settings report.

@@ -1,3 +1,8 @@
+---
+description: This document describes dsstbox in openGauss, covering topics such as Overview, Commands.
+keywords: [openGauss, dsstbox, tools and commands, Overview, Commands]
+---
+
 # dsstbox
 
 ## Overview<a name="section1377524355216"></a>

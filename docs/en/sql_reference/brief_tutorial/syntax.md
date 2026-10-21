@@ -1,3 +1,8 @@
+---
+description: This document describes Syntax in openGauss, covering topics such as SQL Statements.
+keywords: [openGauss, Syntax, SQL, SQL Statements]
+---
+
 # Syntax<a name="EN-US_TOPIC_0000001224742567"></a>
 
 By default, after you log in to the installed database, you can run the  **\\help**  statement to view syntax of all openGauss statements.

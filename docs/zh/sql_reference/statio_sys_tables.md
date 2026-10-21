@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STATIO\_SYS\_TABLES 的相关内容与操作方法。
+keywords: [openGauss, STATIO\_SYS\_TABLES, SQL参考]
+---
+
 # STATIO\_SYS\_TABLES
 
 STATIO\_SYS\_TABLES视图显示命名空间中所有系统表的IO状态信息。

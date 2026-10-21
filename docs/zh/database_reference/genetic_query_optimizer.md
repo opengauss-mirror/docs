@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 基因查询优化器 的相关内容，涵盖 geqo、geqo\_threshold 等内容。
+keywords: [openGauss, 基因查询优化器, 数据库参考, geqo, geqo\_threshold]
+---
+
 # 基因查询优化器
 
 介绍基因查询优化器相关的参数。基因查询优化器（GEQO）是一种启发式的查询规划算法。这个算法减少了对复杂查询规划的时间，而且生成规划的开销有时也小于正常的详尽的查询算法。

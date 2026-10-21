@@ -1,3 +1,8 @@
+---
+description: This document describes Initializing the Database in openGauss.
+keywords: [openGauss, Initializing the Database, installation]
+---
+
 # Initializing the Database<a name="EN-US_TOPIC_0270160634"></a>
 
 Use SQL to create a database.

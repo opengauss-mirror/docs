@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss HLL函数和操作符 的相关内容，涵盖 哈希函数、日志函数 等内容。
+keywords: [openGauss, HLL函数和操作符, SQL参考, 哈希函数, 日志函数]
+---
+
 # HLL函数和操作符
 
 ## 哈希函数<a name="section161615718554"></a>

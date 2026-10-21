@@ -1,3 +1,8 @@
+---
+description: This document describes SESSION\_STAT\_ACTIVITY in openGauss.
+keywords: [openGauss, SESSION\_STAT\_ACTIVITY, SQL]
+---
+
 # SESSION\_STAT\_ACTIVITY<a name="EN-US_TOPIC_0289900870"></a>
 
 **SESSION\_STAT\_ACTIVITY**  displays information about threads that are running on the current node.

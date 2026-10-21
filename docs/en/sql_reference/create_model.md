@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE MODEL in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE MODEL, SQL, Function, Precautions]
+---
+
 # CREATE MODEL<a name="EN-US_TOPIC_0000001117639598"></a>
 
 ## Function<a name="section94489231810"></a>

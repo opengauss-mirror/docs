@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss OPERATOR\_RUNTIME 的相关内容与操作方法。
+keywords: [openGauss, OPERATOR\_RUNTIME, SQL参考]
+---
+
 # OPERATOR\_RUNTIME
 
 OPERATOR\_RUNTIME视图显示当前用户正在执行的作业的算子相关信息。

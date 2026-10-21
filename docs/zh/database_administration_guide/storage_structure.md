@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 存储结构 的相关内容，涵盖 数据库逻辑结构图、段页式存储结构 等内容。
+keywords: [openGauss, 存储结构, 数据库管理, 数据库逻辑结构图, 段页式存储结构]
+---
+
 # 存储结构
 
 ## 数据库逻辑结构图
@@ -5,7 +10,7 @@
 openGauss的数据库节点负责存储数据，其存储介质也是磁盘，本节主要从逻辑视角介绍数据库节点都有哪些对象，以及这些对象之间的关系。数据库逻辑结构如[图1](#zh-cn_topic_0237120245_zh-cn_topic_0059779316_fb2fa3b3cc8824dea95318504e0537913)。
 
 **图 1**  数据库逻辑结构图<a name="zh-cn_topic_0237120245_zh-cn_topic_0059779316_fb2fa3b3cc8824dea95318504e0537913"></a>  
-![](figures/Database-logical-structure-diagram.png)
+![数据库逻辑结构图](figures/Database-logical-structure-diagram.png)
 
 >[!NOTE]说明
 >
@@ -20,7 +25,7 @@ openGauss的数据库节点负责存储数据，其存储介质也是磁盘，�
 本节主要从逻辑视角介绍数据库段页式存储结构，段页式存储结构如图1。
 
 **图 1**  段页式存储结构图  
-![](figures/Database-segment-structure.png)  
+![段页式存储结构图](figures/Database-segment-structure.png)  
 
 >[!NOTE]说明
 >
@@ -32,7 +37,7 @@ openGauss的数据库节点负责存储数据，其存储介质也是磁盘，�
 > 6. extent，即区，一个段的全部数据以区为单位存储在段空间的5个文件中，有64KB/1M/8M/64M四种类型，相同类型的extent存放在同一个物理文件中。extent在segment中的分布如图2所示。  
 
 **图 2**  一个segment的extent分布结构图  
-![](figures/Database-segment-extent.png)  
+![一个segment的extent分布结构图](figures/Database-segment-extent.png)  
 
 >[!NOTE]说明
 >

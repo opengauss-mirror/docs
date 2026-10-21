@@ -1,3 +1,8 @@
+---
+description: This document describes SHRINK in openGauss, covering topics such as Description, Notes.
+keywords: [openGauss, SHRINK, SQL, Description, Notes]
+---
+
 # SHRINK
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:27:11.369Z -->

@@ -1,3 +1,8 @@
+---
+description: This document describes PQconnectdb in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, PQconnectdb, development, Function, Prototype]
+---
+
 # PQconnectdb<a name="EN-US_TOPIC_0242380571"></a>
 
 ## Function<a name="en-us_topic_0241735614_section71985281176"></a>

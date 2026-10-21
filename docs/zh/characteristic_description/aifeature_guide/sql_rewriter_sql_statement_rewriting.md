@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SQL Rewriter 的相关内容，涵盖 概述、使用指导 等内容。
+keywords: [openGauss, SQL Rewriter, 特性描述, 概述, 使用指导]
+---
+
 # SQL Rewriter<a name="ZH-CN_TOPIC_0000002294471381"></a>
 
 ## 概述<a name="ZH-CN_TOPIC_0000002259861270"></a>

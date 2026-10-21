@@ -1,3 +1,8 @@
+---
+description: This document describes Installation Using an RPM Package in openGauss, covering topics such as Supported Architectures and OSs, Restrictions.
+keywords: [openGauss, Installation Using an RPM Package, installation, Supported Architectures and OSs, Restrictions]
+---
+
 # Installation Using an RPM Package
 
 This section describes how to install the openGauss database on openEuler 22.03 LTS by running the yum command.
@@ -25,9 +30,9 @@ This section describes how to install the openGauss database on openEuler 22.03 
 
 - During the OS installation, set **software** to **openGauss**. The openGauss database is installed by default during the OS installation.
 
-![](figures/soft_select.png)
+![Installation Mode diagram](figures/soft_select.png)
 
-![](figures/choose_opengauss.png)
+![Installation Mode diagram](figures/choose_opengauss.png)
 
 ## Usage Guidelines
 

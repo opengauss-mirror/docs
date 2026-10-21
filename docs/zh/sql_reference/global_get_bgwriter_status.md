@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_GET\_BGWRITER\_STATUS 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_GET\_BGWRITER\_STATUS, SQL参考]
+---
+
 # GLOBAL\_GET\_BGWRITER\_STATUS
 
 GLOBAL\_GET\_BGWRITER\_STATUS视图显示所有实例bgwriter线程刷页信息，候选buffer链中页面个数，buffer淘汰信息。

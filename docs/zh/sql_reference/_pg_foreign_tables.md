@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss \_PG\_FOREIGN\_TABLES 的相关内容与操作方法。
+keywords: [openGauss, \_PG\_FOREIGN\_TABLES, SQL参考]
+---
+
 # \_PG\_FOREIGN\_TABLES
 
 存储所有的定义在本数据库的外部表信息。只显示当前用户有权访问的外部表信息。该视图只有sysadmin权限可以查看。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE MATERIALIZED VIEW 的相关内容，涵盖 注意事项、语法格式 等内容。
+keywords: [openGauss, CREATE MATERIALIZED VIEW, SQL参考, 注意事项, 语法格式]
+---
+
 # CREATE MATERIALIZED VIEW
 
 CREATE MATERIALIZED VIEW会创建一个全量物化视图，并且后续可以使用REFRESH MATERIALIZED VIEW（全量刷新）刷新物化视图的数据。

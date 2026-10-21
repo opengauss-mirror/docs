@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Error Messages in openGauss, covering topics such as Errors Written the Log File, Errors Returned to the User.
+keywords: [openGauss, MOT Error Messages, database administration, Errors Written the Log File, Errors Returned to the User]
+---
+
 # MOT Error Messages<a name="EN-US_TOPIC_0270171505"></a>
 
 Errors may be caused by a variety of scenarios. All errors are logged in the database server log file. In addition, user-related errors are returned to the user as part of the response to the query, transaction or stored procedure execution or to database administration action.

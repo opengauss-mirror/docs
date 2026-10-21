@@ -1,3 +1,8 @@
+---
+description: This document describes Manipulating tsvector in openGauss.
+keywords: [openGauss, Manipulating tsvector, SQL]
+---
+
 # Manipulating tsvector<a name="EN-US_TOPIC_0289900182"></a>
 
 openGauss provides functions and operators that can be used to manipulate documents that are already in  **tsvector**  type.

@@ -1,3 +1,8 @@
+---
+description: This document describes Architecture Overview in openGauss, covering topics such as Logical Architecture, Security Design.
+keywords: [openGauss, Architecture Overview, features, Logical Architecture, Security Design]
+---
+
 # Architecture Overview<a name="ZH-CN_TOPIC_0000002293119525"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T01:47:17.008Z -->
@@ -7,7 +12,7 @@
 GaussMaster serves as the server and provides RESTful APIs for the cloud management and control side to call. The APIs support only HTTPS mutual authentication. Its logical architecture is shown in [Figure 1](#fig12416726131415):
 
 **Figure 1**  Logical architecture<a name="fig12416726131415"></a>  
-![](figures/logical_architecture.png)
+![Logical architecture](figures/logical_architecture.png)
 
 ## Security Design<a name="ZH-CN_TOPIC_0000002258486296"></a>
 
@@ -16,19 +21,19 @@ Intermediate results generated during the running of the GaussMaster service are
 The cloud management and control side, acting as the client, uses HTTPS mutual authentication by default when calling APIs. After receiving a request, GaussMaster executes the corresponding service logic. If it needs to connect to openGauss to query or store intermediate results, it decrypts the password from the configuration file. After the service logic is executed, the final result is returned to the cloud management and control side. [Figure 1](#fig11274103110251) shows the sequence diagram of a service request.
 
 **Figure 1**  Service sequence diagram<a name="fig11274103110251"></a>  
-![](figures/service_sequence_diagram.png)
+![Service sequence diagram](figures/service_sequence_diagram.png)
 
 GaussMaster uses the libpq driver to connect to the openGauss database, and the TLS encryption protocol is used by default.
 
 Because GaussMaster needs to connect to DBMind and openGauss, the corresponding passwords must be stored. When the GaussMaster service executes the initialization command, the user enters the password through a pipe, and the password is then stored in the configuration file according to the encryption scheme shown in [Figure 2](#fig13844205852611). If the user name or password is changed, the initialization command must be executed again.
 
 **Figure 2**  Encryption process<a name="fig13844205852611"></a>  
-![](figures/encryption_process.png)
+![Encryption process](figures/encryption_process.png)
 
 When a password is required, the ciphertext is decrypted according to the decryption scheme shown in [Figure 3](#fig117662342814).
 
 **Figure 3**  Decryption process<a name="fig117662342814"></a>  
-![](figures/decryption_process.png)
+![Decryption process](figures/decryption_process.png)
 
 ## Constraints<a name="ZH-CN_TOPIC_0000002293246453"></a>
 

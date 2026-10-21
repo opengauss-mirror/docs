@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_INHERITS in openGauss.
+keywords: [openGauss, PG\_INHERITS, database reference]
+---
+
 # PG\_INHERITS<a name="EN-US_TOPIC_0289900908"></a>
 
 **PG\_INHERITS**  records information about table inheritance hierarchies. There is one entry for each direct child table in the database. Indirect inheritance can be determined by following chains of entries.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss cursor.fetchall\(\) 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, cursor.fetchall\(\), 开发指南, 功能描述, 原型]
+---
+
 # cursor.fetchall\(\)
 
 ## 功能描述<a name="section5708152714306"></a>

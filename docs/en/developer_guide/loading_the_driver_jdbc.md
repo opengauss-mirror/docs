@@ -1,3 +1,8 @@
+---
+description: This document describes Loading the Driver in openGauss.
+keywords: [openGauss, Loading the Driver, development]
+---
+
 # Loading the Driver<a name="EN-US_TOPIC_0244720261"></a>
 
 Load the database driver before creating a database connection.

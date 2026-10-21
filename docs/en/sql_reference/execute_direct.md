@@ -1,3 +1,8 @@
+---
+description: This document describes EXECUTE DIRECT in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, EXECUTE DIRECT, SQL, Function, Precautions]
+---
+
 # EXECUTE DIRECT<a name="EN-US_TOPIC_0000001197786203"></a>
 
 ## Function<a name="en-us_topic_0059779060_s1b14773726ac4469a14e509530a7a957"></a>

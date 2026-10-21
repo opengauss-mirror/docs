@@ -1,3 +1,8 @@
+---
+description: This document describes Package in openGauss.
+keywords: [openGauss, Package, SQL]
+---
+
 # Package<a name="EN-US_TOPIC_0000001151691213"></a>
 
 A package is a combination of PL/SQL programs, such as stored procedures, functions, variables, constants, and cursors. It is object-oriented and can encapsulate PL/SQL program design elements. Functions in a package are created, deleted, and modified in a unified manner.

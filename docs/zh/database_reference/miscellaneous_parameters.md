@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 其它选项 的相关内容，涵盖 enable\_default\_ustore\_table、enable\_ustore 等内容。
+keywords: [openGauss, 其它选项, 数据库参考, enable\_default\_ustore\_table, enable\_ustore]
+---
+
 # 其它选项
 
 ## enable\_default\_ustore\_table<a name="section477353310529"></a>

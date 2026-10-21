@@ -1,3 +1,8 @@
+---
+description: This document describes oGRecorder Key Synchronization in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, oGRecorder Key Synchronization, tools and commands, Availability, Feature Overview]
+---
+
 # oGRecorder Key Synchronization
 
 ## Availability<a name="section3480125215575"></a>

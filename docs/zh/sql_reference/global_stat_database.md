@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_STAT\_DATABASE 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_STAT\_DATABASE, SQL参考]
+---
+
 # GLOBAL\_STAT\_DATABASE
 
 视图将包含openGauss中各节点的每个数据库的每一行，显示数据库统计。

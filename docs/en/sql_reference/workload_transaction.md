@@ -1,3 +1,8 @@
+---
+description: This document describes WORKLOAD\_TRANSACTION in openGauss.
+keywords: [openGauss, WORKLOAD\_TRANSACTION, SQL]
+---
+
 # WORKLOAD\_TRANSACTION<a name="EN-US_TOPIC_0245374725"></a>
 
 **WORKLOAD\_TRANSACTION**  displays information about transactions loaded on the current node.

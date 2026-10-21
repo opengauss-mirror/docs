@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 类型转换函数 的相关内容，涵盖 类型转换函数、编码类型转换 等内容。
+keywords: [openGauss, 类型转换函数, SQL参考, 编码类型转换]
+---
+
 # 类型转换函数
 
 ## 类型转换函数<a name="zh-cn_topic_0283137417_zh-cn_topic_0237121973_zh-cn_topic_0059778246_sd1817f56ca2d4be7a4ad606e0e597c55"></a>

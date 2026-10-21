@@ -1,3 +1,8 @@
+---
+description: This document describes Creating an XML Configuration File in openGauss, covering topics such as Configuring the Database Name and Directories, Configuring the Basic Host Information.
+keywords: [openGauss, Creating an XML Configuration File, installation, Configuring the Database Name and Directories, Configuring the Basic Host Information]
+---
+
 # Creating an XML Configuration File<a name="EN-US_TOPIC_0270171699"></a>
 
 Before installing the openGauss, you need to create the **cluster\_config.xml** file. The **cluster\_config.xml** file contains the information about the server where the openGauss is deployed, installation path, IP address, and port number. This file is used to guide how to deploy the openGauss. You need to configure the XML configuration file according to the actual deployment requirements.

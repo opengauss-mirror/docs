@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss javax.naming.Context 的相关内容与操作方法。
+keywords: [openGauss, javax.naming.Context, 开发指南]
+---
+
 # javax.naming.Context
 
 javax.naming.Context是连接配置的上下文接口。

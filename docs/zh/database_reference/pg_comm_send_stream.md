@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_COMM\_SEND\_STREAM 的相关内容与操作方法。
+keywords: [openGauss, PG\_COMM\_SEND\_STREAM, 数据库参考]
+---
+
 # PG\_COMM\_SEND\_STREAM
 
 PG\_COMM\_SEND\_STREAM视图展示节点上所有的通信库发送流状态。

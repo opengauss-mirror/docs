@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss HikariCP 连接池示例 的相关内容，涵盖 准备工作、HikariCP 项目搭建 等内容。
+keywords: [openGauss, HikariCP 连接池示例, MySQL兼容, 准备工作, HikariCP 项目搭建]
+---
+
 # HikariCP 连接池示例
 
 openGauss 完成 MySQL 协议兼容配置后，即可使用 HikariCP 连接池配合 MySQL JDBC 连接 openGauss B 兼容模式数据库。

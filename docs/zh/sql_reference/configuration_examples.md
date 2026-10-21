@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 配置示例 的相关内容，涵盖 操作步骤 等内容。
+keywords: [openGauss, 配置示例, SQL参考, 操作步骤]
+---
+
 # 配置示例
 
 文本搜索配置（Text Search Configuration），指定了将文档转换成tsvector过程中所必需的组件：

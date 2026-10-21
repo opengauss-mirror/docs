@@ -1,3 +1,8 @@
+---
+description: This document describes Dynamic Data Masking in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Dynamic Data Masking, features, Availability, Introduction]
+---
+
 # Dynamic Data Masking<a name="EN-US_TOPIC_0000001152275229"></a>
 
 ## Availability<a name="section17746747"></a>

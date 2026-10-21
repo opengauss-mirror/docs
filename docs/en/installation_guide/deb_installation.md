@@ -1,3 +1,8 @@
+---
+description: This document describes deb Package Installation in openGauss, covering topics such as Supported Architectures, OS Versions, and Corresponding openGauss Versions, Supported Features.
+keywords: [openGauss, deb Package Installation, installation, Supported Architectures, OS Versions, and Corresponding openGauss Versions, Supported Features]
+---
+
 # deb Package Installation
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-10T08:50:35.613Z pushedAt=2026-07-14T07:15:07.654Z -->

@@ -1,3 +1,8 @@
+---
+description: This document describes DROP RESOURCE POOL in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP RESOURCE POOL, SQL, Function, Precautions]
+---
+
 # DROP RESOURCE POOL<a name="EN-US_TOPIC_0000001193987659"></a>
 
 ## Function<a name="en-us_topic_0059778399_sa24aa65d84e94a079fb987b25652dd8d"></a>

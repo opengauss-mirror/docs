@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs\_backup 的相关内容，涵盖 背景信息、前提条件 等内容。
+keywords: [openGauss, gs\_backup, 工具与命令参考, 背景信息, 前提条件]
+---
+
 # gs\_backup
 
 ## 背景信息<a name="zh-cn_topic_0237152406_zh-cn_topic_0059777806_section48401199395"></a>

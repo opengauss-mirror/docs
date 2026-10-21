@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 配置文件参考 的相关内容与操作方法。
+keywords: [openGauss, 配置文件参考, 数据库管理]
+---
+
 # 配置文件参考
 
 **表 1**  参数说明

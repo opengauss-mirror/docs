@@ -1,3 +1,8 @@
+---
+description: This document describes mysql\_fdw in openGauss, covering topics such as Compiling mysql\_fdw, Using mysql\_fdw.
+keywords: [openGauss, mysql\_fdw, database administration, Compiling mysql\_fdw, Using mysql\_fdw]
+---
+
 # mysql\_fdw<a name="EN-US_TOPIC_0272283427"></a>
 
 mysql\_fdw is an  [open-source plug-in](https://github.com/EnterpriseDB/mysql_fdw). openGauss is developed and adapted based on the open-source  [mysql\_fdw Release 2.5.3](https://github.com/EnterpriseDB/mysql_fdw/archive/REL-2_5_3.tar.gz).

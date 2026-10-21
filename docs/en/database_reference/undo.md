@@ -1,3 +1,8 @@
+---
+description: This document describes Undo in openGauss, covering topics such as undo\_space\_limit\_size, undo\_limit\_size\_per\_transaction.
+keywords: [openGauss, Undo, database reference, undo\_space\_limit\_size, undo\_limit\_size\_per\_transaction]
+---
+
 # Undo<a name="EN-US_TOPIC_0000001129789643"></a>
 
 ## undo\_space\_limit\_size<a name="section13674152315117"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PQexecPreparedBatch 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, PQexecPreparedBatch, 开发指南, 功能描述, 原型]
+---
+
 # PQexecPreparedBatch
 
 ## 功能描述<a name="zh-cn_topic_0059778058_sa9bd6e837fd4458199f7b677e876f4a9"></a>

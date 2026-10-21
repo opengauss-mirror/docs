@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 函数 的相关内容，涵盖 函数类型解析、示例 等内容。
+keywords: [openGauss, 函数, SQL参考, 函数类型解析, 示例]
+---
+
 # 函数
 
 ## 函数类型解析<a name="zh-cn_topic_0283137224_zh-cn_topic_0237122009_zh-cn_topic_0059777930_sae9dc3fe177e4b349373f0f51975f380"></a>

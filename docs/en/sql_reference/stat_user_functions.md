@@ -1,3 +1,8 @@
+---
+description: This document describes STAT\_USER\_FUNCTIONS in openGauss.
+keywords: [openGauss, STAT\_USER\_FUNCTIONS, SQL]
+---
+
 # STAT\_USER\_FUNCTIONS<a name="EN-US_TOPIC_0245374719"></a>
 
 **STAT\_USER\_FUNCTIONS**  displays user-defined function status information in the current namespace. \(The language of the function is non-internal language.\)

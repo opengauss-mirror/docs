@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 聚集函数 的相关内容，涵盖 聚集函数 等内容。
+keywords: [openGauss, 聚集函数, SQL参考]
+---
+
 # 聚集函数
 
 ## 聚集函数<a name="zh-cn_topic_0283136894_zh-cn_topic_0237121982_zh-cn_topic_0059778466_s6494488eb2824afa801304697cb740e4"></a>

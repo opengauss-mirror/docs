@@ -1,3 +1,8 @@
+---
+description: This document describes Arrays in openGauss, covering topics such as Use of Array Types.
+keywords: [openGauss, Arrays, SQL, Use of Array Types]
+---
+
 # Arrays<a name="EN-US_TOPIC_0289900692"></a>
 
 ## Use of Array Types<a name="en-us_topic_0283137521_en-us_topic_0237122214_en-us_topic_0059778979_s9b23a1cdca6042f3ae428afa25038607"></a>

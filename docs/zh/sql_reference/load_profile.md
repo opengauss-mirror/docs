@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Load Profile 的相关内容与操作方法。
+keywords: [openGauss, Load Profile, SQL参考]
+---
+
 # Load Profile
 
 Load Profile指标名称及描述如下表所示。

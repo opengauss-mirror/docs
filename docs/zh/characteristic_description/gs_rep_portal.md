@@ -1,4 +1,9 @@
-﻿# MySQL一键式迁移工具gs_rep_portal
+---
+description: 本文介绍 openGauss MySQL一键式迁移工具gs_rep_portal 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, MySQL一键式迁移工具gs_rep_portal, 特性描述, 可获得性, 特性简介]
+---
+
+# MySQL一键式迁移工具gs_rep_portal
 
 ## 可获得性<a name="section56086982"></a>
 

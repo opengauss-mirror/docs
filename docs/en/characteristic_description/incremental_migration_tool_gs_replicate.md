@@ -1,3 +1,8 @@
+---
+description: This document describes Incremental Migration Tool gs\_replicate in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Incremental Migration Tool gs\_replicate, features, Availability, Introduction]
+---
+
 # Incremental Migration Tool gs\_replicate<a name="EN-US_TOPIC_0000001264707837"></a>
 
 ## Availability<a name="section56086982"></a>

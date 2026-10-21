@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 自动参数化 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 自动参数化, 特性描述, 可获得性, 特性简介]
+---
+
 # 自动参数化
 
 ## 可获得性<a name="section3480125215592"></a>
@@ -16,7 +21,7 @@ openGauss的自动参数化功能是在需要反复执行相似/相同的SQL简�
 
 在存在大量相似/重复的简单SQL语句的场景下，对SQL语句进行参数化操作, 将其作为键值，并将相应的执行计划进行缓存，后续可通过相同参数化SQL语句直接寻找对应执行计划缓存，进而减少SQL语句执行时在查询重写，计划生成步骤所消耗的时间。
 
-![](./figures/auto_parameterization_1.png)
+![特性描述示意图](./figures/auto_parameterization_1.png)
 
 ## 特性增强<a name="section23349265924"></a>
 

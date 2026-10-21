@@ -1,3 +1,8 @@
+---
+description: This document describes Cascaded Standby Node in openGauss, covering topics such as Availability, Feature Description.
+keywords: [openGauss, Cascaded Standby Node, database administration, Availability, Feature Description]
+---
+
 # Cascaded Standby Node
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:42:32.378Z pushedAt=2026-07-29T09:31:18.485Z -->

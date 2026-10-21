@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_OS\_THREADS in openGauss.
+keywords: [openGauss, PG\_OS\_THREADS, database reference]
+---
+
 # PG\_OS\_THREADS<a name="EN-US_TOPIC_0289899829"></a>
 
 **PG\_OS\_THREADS**  provides status information about all the threads under the current node.

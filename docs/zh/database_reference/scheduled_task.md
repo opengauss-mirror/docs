@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 定时任务 的相关内容，涵盖 job\_queue\_processes、enable\_prevent\_job\_task\_startup 等内容。
+keywords: [openGauss, 定时任务, 数据库参考, job\_queue\_processes, enable\_prevent\_job\_task\_startup]
+---
+
 # 定时任务
 
 ## job\_queue\_processes<a name="zh-cn_topic_0283137574_zh-cn_topic_0237124754_zh-cn_topic_0059778487_section10342177134137"></a>

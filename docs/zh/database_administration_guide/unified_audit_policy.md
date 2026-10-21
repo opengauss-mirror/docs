@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 统一审计策略概述 的相关内容，涵盖 背景信息 等内容。
+keywords: [openGauss, 统一审计策略概述, 数据库管理, 背景信息]
+---
+
 # 统一审计策略概述
 
 ## 背景信息<a name="zh-cn_topic_0059779254_scb146a893fd449f79c0fa258dcab03f1"></a>

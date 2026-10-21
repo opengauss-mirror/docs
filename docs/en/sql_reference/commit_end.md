@@ -1,3 +1,8 @@
+---
+description: This document describes COMMIT | END in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, COMMIT | END, SQL, Function, Precautions]
+---
+
 # COMMIT | END<a name="EN-US_TOPIC_0289900020"></a>
 
 ## Function<a name="en-us_topic_0283137519_en-us_topic_0237122094_en-us_topic_0059779032_sbacb814400404584828c86483f577b12"></a>

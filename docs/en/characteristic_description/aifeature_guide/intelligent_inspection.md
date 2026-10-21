@@ -1,3 +1,8 @@
+---
+description: This document describes Intelligent Inspection in openGauss, covering topics such as Overview, Usage Guide.
+keywords: [openGauss, Intelligent Inspection, features, Overview, Usage Guide]
+---
+
 # Intelligent Inspection<a name="ZH-CN_TOPIC_0000002259758188"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T02:04:04.308Z -->
@@ -226,9 +231,9 @@ In live-network services, database instances need to be inspected periodically w
 >[!NOTE]Note
 >
 >The health score is given based on the importance weight and the exception degree of each inspection item, and is finally aggregated into the health score of the current instance. The specific calculation formula is as follows:
->![](figures/en-us_formulaimage_0000002294473813.png)
+>![Implementation Details and Alarm Settings of Each Inspection Item diagram](figures/en-us_formulaimage_0000002294473813.png)
 >Where:
->![](figures/en-us_formulaimage_0000002259760648.png)
+>![Implementation Details and Alarm Settings of Each Inspection Item diagram](figures/en-us_formulaimage_0000002259760648.png)
 >S<sub>i</sub>  = 0 or 1 (where 0 indicates that the inspection item is abnormal and 1 indicates that it is normal).
 >In addition, the conclusion provides a TOP3 list. TOP3 refers to the three inspection items with the most serious exceptions. The number of exceptions of each inspection item is counted, and the items are then sorted together with the weight of the inspection item, and the top 3 are taken as the TOP3 list. If there are no exceptions, the list is empty.
 >Number of exceptions of each inspection item: The network status is calculated based on the number of two-way communication exceptions; the buffer\_hit\_rate inspection item is calculated based on the number of database instance exceptions; long transactions are calculated based on the number of long transactions; and other inspection items are calculated based on the number of node exceptions.

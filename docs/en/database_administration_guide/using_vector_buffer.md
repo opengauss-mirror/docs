@@ -1,3 +1,8 @@
+---
+description: This document describes Using Vector Buffer in openGauss, covering topics such as Functions, Conditions.
+keywords: [openGauss, Using Vector Buffer, database administration, Functions, Conditions]
+---
+
 # Using Vector Buffer
 
 ## Functions

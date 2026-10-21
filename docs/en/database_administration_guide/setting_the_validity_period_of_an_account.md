@@ -1,3 +1,8 @@
+---
+description: This document describes Setting the Validity Period of an Account in openGauss, covering topics such as Precautions, Procedure.
+keywords: [openGauss, Setting the Validity Period of an Account, database administration, Precautions, Procedure]
+---
+
 # Setting the Validity Period of an Account<a name="EN-US_TOPIC_0289900433"></a>
 
 ## Precautions<a name="en-us_topic_0283137215_en-us_topic_0237121109_en-us_topic_0151096201_en-us_topic_0085032332_en-us_topic_0059779299_s4ed40b90fef642e1960afb00e661e34d"></a>

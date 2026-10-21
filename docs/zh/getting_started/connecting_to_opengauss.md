@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 访问openGauss 的相关内容与操作方法。
+keywords: [openGauss, 访问openGauss, 快速入门]
+---
+
 # 访问openGauss
 
 连接数据库的客户端工具包括gsql、应用程序接口（如JDBC）。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 特性概览 的相关内容，涵盖 高性能、高可用 等内容。
+keywords: [openGauss, 特性概览, 特性描述, 高性能, 高可用]
+---
+
 # 特性概览
 
 ## 高性能

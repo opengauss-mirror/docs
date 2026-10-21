@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss WLM\_USER\_RESOURCE\_RUNTIME 的相关内容与操作方法。
+keywords: [openGauss, WLM\_USER\_RESOURCE\_RUNTIME, SQL参考]
+---
+
 # WLM\_USER\_RESOURCE\_RUNTIME
 
 WLM\_USER\_RESOURCE\_RUNTIME视图显示所有用户资源使用情况，需要使用管理员用户进行查询。此视图在GUC参数“use\_workload\_manager”为“on”时才有效。

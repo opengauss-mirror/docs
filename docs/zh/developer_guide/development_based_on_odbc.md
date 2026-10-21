@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 基于ODBC开发 的相关内容与操作方法。
+keywords: [openGauss, 基于ODBC开发, 开发指南]
+---
+
 # 基于ODBC开发
 
 - **[ODBC包及依赖的库和头文件](odbc_packages_dependent_libraries_and_header_files.md)**  
@@ -17,7 +22,7 @@ ODBC（Open Database Connectivity，开放数据库互连）是由Microsoft公�
 ODBC的系统结构参见[图1](#fig1255101034110)。
 
 **图 1**  ODBC系统机构<a name="fig1255101034110"></a>  
-![](figures/ODBC-System-Organization.png)
+![ODBC系统机构](figures/ODBC-System-Organization.png)
 
 openGauss目前在以下环境中提供对ODBC3.5的支持。
 

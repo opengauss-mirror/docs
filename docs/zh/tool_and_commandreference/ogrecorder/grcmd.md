@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss grcmd 工具使用说明 的相关内容，涵盖 基本用法、常用命令 等内容。
+keywords: [openGauss, grcmd 工具使用说明, 工具与命令参考, 基本用法, 常用命令]
+---
+
 # grcmd 工具使用说明
 
 `grcmd` 是 openGauss 数据保险柜（oGRecorder）组件的命令行管理工具，用于管理和维护 GR 服务。支持配置管理、证书生成、服务状态查询等功能。

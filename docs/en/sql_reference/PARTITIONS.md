@@ -1,3 +1,8 @@
+---
+description: This document describes PARTITIONS in openGauss.
+keywords: [openGauss, PARTITIONS, SQL]
+---
+
 # PARTITIONS <a name="ZH-CN_TOPIC_0310260671"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:25:07.044Z -->

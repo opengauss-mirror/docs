@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 设置透明数据加密（TDE） 的相关内容，涵盖 概述、前提条件 等内容。
+keywords: [openGauss, 设置透明数据加密（TDE）, 数据库管理, 概述, 前提条件]
+---
+
 # 设置透明数据加密（TDE）
 
 ## 概述<a name="section1326254143019"></a>

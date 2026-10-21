@@ -1,3 +1,8 @@
+---
+description: This document describes MOT SQL Coverage and Limitations in openGauss, covering topics such as Unsupported Features, MOT Table Limitations.
+keywords: [openGauss, MOT SQL Coverage and Limitations, database administration, Unsupported Features, MOT Table Limitations]
+---
+
 # MOT SQL Coverage and Limitations<a name="EN-US_TOPIC_0270171485"></a>
 
 MOT design enables almost complete coverage of SQL and future feature sets. For example, standard Postgres SQL is mostly supported, as well common database features, such as stored procedures and user defined functions.

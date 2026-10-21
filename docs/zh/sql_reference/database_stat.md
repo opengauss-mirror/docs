@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Database Stat 的相关内容与操作方法。
+keywords: [openGauss, Database Stat, SQL参考]
+---
+
 # Database Stat
 
 Database Stat列名称及描述如下表所示。

@@ -1,3 +1,8 @@
+---
+description: This document describes Recording and Replay Tool in openGauss, covering topics such as Feature Description, Overview.
+keywords: [openGauss, Recording and Replay Tool, data migration, Feature Description, Overview]
+---
+
 # Recording and Replay Tool
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-16T08:11:21.934Z -->
@@ -34,7 +39,7 @@ This tool supports three recording modes and two replay modes:
 
    Figure 1. Schematic diagram of tcpdump recording and replay
 
-   <img src="./figures/transcribe.PNG">
+   <img src="./figures/transcribe.PNG" alt="Recording diagram">
 
 2. Recording based on attach app can perform dynamic instrumentation on Java apps, directly collecting dynamic SQL from Java apps. The tool must be deployed on the same machine as the Java app.
 
@@ -69,7 +74,7 @@ After recording for a cycle in the production environment, the SQL can be taken 
 
 This tool is supported on Linux. On Windows systems, only the recording mode based on MySQL system tables is supported; therefore, Linux is recommended. The deployment topology of the tool on Linux is as follows:
 
-   <img src="./figures/install.PNG">
+   <img src="./figures/install.PNG" alt="Environment Preparation diagram">
 
 ## Constraints
 

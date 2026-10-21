@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 全量迁移 的相关内容，涵盖 功能介绍、特性优势 等内容。
+keywords: [openGauss, 全量迁移, 数据迁移, 功能介绍, 特性优势]
+---
+
 # 全量迁移
 
 ## 功能介绍<a name="section051261814117"></a>

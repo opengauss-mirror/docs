@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ss_enable_ondemand_recovery设置失败 的相关内容，涵盖 现象、原因 等内容。
+keywords: [openGauss, ss_enable_ondemand_recovery设置失败, 数据库运维, 现象, 原因]
+---
+
 # ss_enable_ondemand_recovery设置失败
 
 ## 现象

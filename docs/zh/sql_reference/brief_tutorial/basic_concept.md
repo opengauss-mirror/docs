@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 基本概念 的相关内容，涵盖 数据库（Database）、数据块（Block） 等内容。
+keywords: [openGauss, 基本概念, SQL参考, 数据库（Database）, 数据块（Block）]
+---
+
 # 基本概念
 
 openGauss是一款多模数据库管理系统（MMDBMS）。其中关系型数据库是指采用了关系模型来组织数据的数据库，其以行和列的形式存储数据。
@@ -5,7 +10,7 @@ openGauss是一款多模数据库管理系统（MMDBMS）。其中关系型数�
 openGauss的数据库节点负责存储数据，其存储介质也是磁盘。逻辑视角下，可以看到数据库节点上对象包含表空间、数据库、数据文件、表、数据块。对象之间的关系如[图1](#zh-cn_topic_0283136742_zh-cn_topic_0237120245_zh-cn_topic_0059779316_fb2fa3b3cc8824dea95318504e0537913)。
 
 **图 1**  数据库逻辑结构图<a name="zh-cn_topic_0283136742_zh-cn_topic_0237120245_zh-cn_topic_0059779316_fb2fa3b3cc8824dea95318504e0537913"></a>  
-![](figures/database-logical-architecture.png)
+![数据库逻辑结构图](figures/database-logical-architecture.png)
 
 ## 数据库（Database）<a name="section16264182634412"></a>
 

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 系统信息函数 的相关内容，涵盖 会话信息函数、访问权限查询函数 等内容。
+keywords: [openGauss, 系统信息函数, SQL参考, 会话信息函数, 访问权限查询函数]
+---
+
 # 系统信息函数
 
 ## 会话信息函数<a name="zh-cn_topic_0283136950_zh-cn_topic_0237121987_zh-cn_topic_0059777618_seb0ac642d9594cfe9a06d3d304c6dc75"></a>

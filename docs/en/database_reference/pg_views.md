@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_VIEWS in openGauss.
+keywords: [openGauss, PG\_VIEWS, database reference]
+---
+
 # PG\_VIEWS<a name="EN-US_TOPIC_0289900604"></a>
 
 **PG\_VIEWS**  provides access to basic information about each view in the database.

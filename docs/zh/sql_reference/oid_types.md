@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 对象标识符类型 的相关内容与操作方法。
+keywords: [openGauss, 对象标识符类型, SQL参考]
+---
+
 # 对象标识符类型
 
 openGauss在内部使用对象标识符（OID）作为各种系统表的主键。系统不会给用户创建的表增加一个OID系统字段，OID类型代表一个对象标识符。

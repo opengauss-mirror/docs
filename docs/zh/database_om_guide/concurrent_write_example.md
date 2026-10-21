@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 并发写入示例 的相关内容，涵盖 相同表的INSERT和DELETE并发、相同表的并发INSERT 等内容。
+keywords: [openGauss, 并发写入示例, 数据库运维, 相同表的INSERT和DELETE并发, 相同表的并发INSERT]
+---
+
 # 并发写入示例
 
 本章节以表test为例，分别介绍相同表的INSERT和DELETE并发，相同表的并发INSERT，相同表的并发UPDATE，以及数据导入和查询的并发的执行详情。

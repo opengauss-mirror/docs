@@ -1,3 +1,8 @@
+---
+description: This document describes grcmd Tool Usage Guide in openGauss, covering topics such as Basic Usage, Common Commands.
+keywords: [openGauss, grcmd Tool Usage Guide, tools and commands, Basic Usage, Common Commands]
+---
+
 # grcmd Tool Usage Guide
 
 `grcmd` is the command-line management tool for the openGauss Data Vault (oGRecorder) component. It is used to manage and maintain the GR service, supporting functions such as configuration management, certificate generation, and service status queries.

@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_PLANCACHE\_STATUS in openGauss.
+keywords: [openGauss, GLOBAL\_PLANCACHE\_STATUS, SQL]
+---
+
 # GLOBAL\_PLANCACHE\_STATUS<a name="EN-US_TOPIC_0297927201"></a>
 
 **GLOBAL\_PLANCACHE\_STATUS**displays the GPC status information.

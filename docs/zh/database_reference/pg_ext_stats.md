@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_EXT\_STATS 的相关内容与操作方法。
+keywords: [openGauss, PG\_EXT\_STATS, 数据库参考]
+---
+
 # PG\_EXT\_STATS
 
 PG\_EXT\_STATS视图提供对存储在[PG\_STATISTIC\_EXT](pg_statistic_ext.md)表里面的扩展统计信息的访问。扩展统计信息目前包括多列统计信息。

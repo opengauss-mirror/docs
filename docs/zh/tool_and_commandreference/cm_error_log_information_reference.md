@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CM错误日志信息参考 的相关内容与操作方法。
+keywords: [openGauss, CM错误日志信息参考, 工具与命令参考]
+---
+
 # CM错误日志信息参考
 
 ERRMSG: "Fail to access the cluster static config file."

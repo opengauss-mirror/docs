@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gsql 的相关内容，涵盖 gsql概述 等内容。
+keywords: [openGauss, gsql, 工具与命令参考, gsql概述]
+---
+
 # gsql
 
 gsql是openGauss提供在命令行下运行的数据库连接工具，可以通过此工具连接服务器并对其进行操作和维护，除了具备操作数据库的基本功能，gsql还提供了若干高级特性，便于用户使用。

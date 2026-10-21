@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DataVec向量引擎参数 的相关内容，涵盖 vector_buffers、enable_vector_buffer_cache 等内容。
+keywords: [openGauss, DataVec向量引擎参数, 数据库参考, vector_buffers, enable_vector_buffer_cache]
+---
+
 # DataVec向量引擎参数
 
 向量专用缓存的配置步骤、索引选项及使用限制请参见[使用向量专用缓存](../database_administration_guide/using_vector_buffer.md)。

@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE TABLE SUBPARTITION in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE TABLE SUBPARTITION, SQL, Function, Precautions]
+---
+
 # CREATE TABLE SUBPARTITION<a name="EN-US_TOPIC_0000001198046401"></a>
 
 ## Function<a name="en-us_topic_0283136653_en-us_topic_0237122119_section1163224811518"></a>

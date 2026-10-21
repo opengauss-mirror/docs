@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 安装验证 的相关内容，涵盖 前提条件、操作步骤 等内容。
+keywords: [openGauss, 安装验证, 安装指南, 前提条件, 操作步骤]
+---
+
 # 安装验证
 
 通过openGauss提供的gs\_om工具可以完成数据库状态检查。

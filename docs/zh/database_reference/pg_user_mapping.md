@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_USER\_MAPPING 的相关内容与操作方法。
+keywords: [openGauss, PG\_USER\_MAPPING, 数据库参考]
+---
+
 # PG\_USER\_MAPPING
 
 PG\_USER\_MAPPING系统表存储从本地用户到远程的映射。

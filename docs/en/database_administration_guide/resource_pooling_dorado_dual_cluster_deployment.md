@@ -1,3 +1,8 @@
+---
+description: This document describes Resource Pooling Dorado Dual-Cluster Deployment in openGauss, covering topics such as Content Overview, Manual Deployment Example for Intra-City Dual-Center.
+keywords: [openGauss, Resource Pooling Dorado Dual-Cluster Deployment, database administration, Content Overview, Manual Deployment Example for Intra-City Dual-Center]
+---
+
 # Resource Pooling Dorado Dual-Cluster Deployment
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:46:36.143Z pushedAt=2026-09-24T07:41:29.881Z -->

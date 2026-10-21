@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 执行SQL语句 的相关内容，涵盖 执行普通SQL语句、执行预编译SQL语句 等内容。
+keywords: [openGauss, 执行SQL语句, 开发指南, 执行普通SQL语句, 执行预编译SQL语句]
+---
+
 # 执行SQL语句
 
 ## 执行普通SQL语句<a name="zh-cn_topic_0283137004_zh-cn_topic_0237120383_zh-cn_topic_0213179129_zh-cn_topic_0189250824_zh-cn_topic_0059777674_s6d6619f4f2df48198e8e7a32ccc4b47a"></a>

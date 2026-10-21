@@ -1,3 +1,8 @@
+---
+description: This document describes Value Storage in openGauss, covering topics such as Value Storage Type Resolution, Examples.
+keywords: [openGauss, Value Storage, SQL, Value Storage Type Resolution, Examples]
+---
+
 # Value Storage<a name="EN-US_TOPIC_0289900392"></a>
 
 ## Value Storage Type Resolution<a name="en-us_topic_0283136768_en-us_topic_0237122010_en-us_topic_0059778056_s1bb7f384ffea43e49c3d1f7ee4035041"></a>

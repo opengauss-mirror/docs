@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss oracle\_fdw用于oracle的外部数据包装器 的相关内容，涵盖 编译oracle\_fdw、使用oracle\_fdw 等内容。
+keywords: [openGauss, oracle\_fdw用于oracle的外部数据包装器, 数据库管理, 编译oracle\_fdw, 使用oracle\_fdw]
+---
+
 # oracle\_fdw用于oracle的外部数据包装器
 
 oracle\_fdw（foreign data wrapper for oracle）用于Oracle的外部数据包装器，是一款[开源插件](https://github.com/laurenz/oracle_fdw)。openGauss基于开源的[oracle\_fdw Release 2.2.0 版本](https://github.com/laurenz/oracle_fdw/archive/ORACLE_FDW_2_2_0.tar.gz)进行开发适配。

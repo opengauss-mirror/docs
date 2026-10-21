@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DECLARE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DECLARE, SQL参考, 功能描述, 注意事项]
+---
+
 # DECLARE
 
 ## 功能描述<a name="zh-cn_topic_0283137571_zh-cn_topic_0237122130_zh-cn_topic_0059777616_sf3fcf0507ea74a0ba4c4b4cbf0a0a8ba"></a>

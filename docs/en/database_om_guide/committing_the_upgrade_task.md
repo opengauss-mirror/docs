@@ -1,3 +1,8 @@
+---
+description: This document describes Committing the Upgrade Task in openGauss, covering topics such as Procedure.
+keywords: [openGauss, Committing the Upgrade Task, database O&M, Procedure]
+---
+
 # Committing the Upgrade Task<a name="EN-US_TOPIC_0305491456"></a>
 
 After the upgrade is complete, if no problem is found during the verification, you can commit the upgrade task.

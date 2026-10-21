@@ -1,3 +1,8 @@
+---
+description: This document describes Standby Server in openGauss, covering topics such as hot\_standby, max\_standby\_archive\_delay.
+keywords: [openGauss, Standby Server, database reference, hot\_standby, max\_standby\_archive\_delay]
+---
+
 # Standby Server<a name="EN-US_TOPIC_0289900463"></a>
 
 ## hot\_standby<a name="en-us_topic_0283136835_en-us_topic_0237124714_en-us_topic_0059778071_sa43017102b08472cb160e9f856e664bd"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER SCHEMA in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER SCHEMA, SQL, Function, Precautions]
+---
+
 # ALTER SCHEMA<a name="EN-US_TOPIC_0289900025"></a>
 
 ## Function<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_s806d414edb004fa89cd50a1166d1136e"></a>

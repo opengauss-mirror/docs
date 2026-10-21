@@ -1,3 +1,8 @@
+---
+description: This document describes Text Search Functions and Operators in openGauss, covering topics such as Text Search Operators, Text Search Functions.
+keywords: [openGauss, Text Search Functions and Operators, SQL, Text Search Operators, Text Search Functions]
+---
+
 # Text Search Functions and Operators<a name="EN-US_TOPIC_0289900663"></a>
 
 ## Text Search Operators<a name="en-us_topic_0283137544_en-us_topic_0237121976_en-us_topic_0059779255_sd5fffb0507864456a3be705c4680bfbb"></a>

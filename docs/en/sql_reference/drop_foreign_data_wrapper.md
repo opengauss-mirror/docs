@@ -1,3 +1,8 @@
+---
+description: This document describes DROP FOREIGN DATA WRAPPER in openGauss, covering topics such as Function Description, Syntax.
+keywords: [openGauss, DROP FOREIGN DATA WRAPPER, SQL, Function Description, Syntax]
+---
+
 # DROP FOREIGN DATA WRAPPER
 
 ## Function Description

@@ -1,3 +1,8 @@
+---
+description: This document describes Operation Guide for Connecting Navicat 17 to openGauss in openGauss, covering topics such as Prerequisites, Prepare the openGauss Connection User.
+keywords: [openGauss, Operation Guide for Connecting Navicat 17 to openGauss, tools and commands, Prerequisites, Prepare the openGauss Connection User]
+---
+
 # Operation Guide for Connecting Navicat 17 to openGauss
 
 This document describes how to use the Navicat 17 client to connect to and operate an openGauss database.

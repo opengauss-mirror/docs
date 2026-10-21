@@ -1,3 +1,8 @@
+---
+description: This document describes Unified Audit in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Unified Audit, features, Availability, Introduction]
+---
+
 # Unified Audit<a name="EN-US_TOPIC_0000001105075476"></a>
 
 ## Availability<a name="section17746747"></a>

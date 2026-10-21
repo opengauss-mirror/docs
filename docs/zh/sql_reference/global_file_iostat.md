@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_FILE\_IOSTAT 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_FILE\_IOSTAT, SQL参考]
+---
+
 # GLOBAL\_FILE\_IOSTAT
 
 得到所有节点上的数据文件IO统计信息。

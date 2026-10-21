@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DEALLOCATE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DEALLOCATE, SQL参考, 功能描述, 注意事项]
+---
+
 # DEALLOCATE
 
 ## 功能描述<a name="zh-cn_topic_0283136579_zh-cn_topic_0237122129_zh-cn_topic_0059778612_sf7de006cb8fc48b2bcd0e6d3c6ea1f2f"></a>

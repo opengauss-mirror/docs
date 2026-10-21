@@ -1,3 +1,8 @@
+---
+description: This document describes Intelligent O&M in openGauss, covering topics such as Prerequisites, Tool Interaction.
+keywords: [openGauss, Intelligent O&M, features, Prerequisites, Tool Interaction]
+---
+
 # Intelligent O&M<a name="ZH-CN_TOPIC_0000002293119517"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T01:49:06.718Z -->
@@ -49,7 +54,7 @@ Before performing tool interaction, users must first complete the [prerequisites
 The tool interaction flowchart is shown in [Figure 1](#fig518531224414).
 
 **Figure 1**  Tool interaction flowchart<a name="fig518531224414"></a>  
-![](figures/tool_interaction_flowchart.png)
+![Tool interaction flowchart](figures/tool_interaction_flowchart.png)
 
 ### Tool Interaction Constraints<a name="section199011054151511"></a>
 

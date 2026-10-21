@@ -1,3 +1,8 @@
+---
+description: This document describes Separation of Duties in openGauss.
+keywords: [openGauss, Separation of Duties, database administration]
+---
+
 # Separation of Duties<a name="EN-US_TOPIC_0289900233"></a>
 
 Descriptions in  [Default Permission Mechanism](default_permission_mechanism.md)  and  [Administrator](administrators.md)  are about the initial situation after the database system is created. By default, a system administrator with the  **SYSADMIN**  attribute has the highest-level permissions.

@@ -1,3 +1,8 @@
+---
+description: This document describes Viewing Parameter Values in openGauss, covering topics such as Procedure, Example.
+keywords: [openGauss, Viewing Parameter Values, database administration, Procedure, Example]
+---
+
 # Viewing Parameter Values<a name="EN-US_TOPIC_0242370405"></a>
 
 openGauss uses a set of default running parameters after it is installed. You can modify the parameters to better fit the current service scenarios and data volume.

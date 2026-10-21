@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 通过INSERT语句直接写入数据 的相关内容与操作方法。
+keywords: [openGauss, 通过INSERT语句直接写入数据, 数据库运维]
+---
+
 # 通过INSERT语句直接写入数据
 
 用户可以通过以下方式执行[INSERT](../sql_reference/insert.md)语句直接向openGauss数据库写入数据：

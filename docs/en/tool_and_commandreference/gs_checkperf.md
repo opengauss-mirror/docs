@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_checkperf in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, gs\_checkperf, tools and commands, Background, Prerequisites]
+---
+
 # gs\_checkperf<a name="EN-US_TOPIC_0249632246"></a>
 
 ## Background<a name="en-us_topic_0237152332_en-us_topic_0059778118_section1646074516325"></a>

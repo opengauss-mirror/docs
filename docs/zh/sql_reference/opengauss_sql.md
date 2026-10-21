@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss openGauss SQL 的相关内容，涵盖 什么是SQL、SQL发展简史 等内容。
+keywords: [openGauss, openGauss SQL, SQL参考, 什么是SQL, SQL发展简史]
+---
+
 # openGauss SQL
 
 ## 什么是SQL<a name="zh-cn_topic_0283136913_zh-cn_topic_0237121924_section07961139165815"></a>

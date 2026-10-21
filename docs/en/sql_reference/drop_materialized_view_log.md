@@ -1,3 +1,8 @@
+---
+description: This document describes DROP MATERIALIZED VIEW LOG in openGauss, covering topics such as Description, Notes.
+keywords: [openGauss, DROP MATERIALIZED VIEW LOG, SQL, Description, Notes]
+---
+
 # DROP MATERIALIZED VIEW LOG
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:21:03.121Z -->

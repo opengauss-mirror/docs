@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 导入数据 的相关内容与操作方法。
+keywords: [openGauss, 导入数据, 数据库运维]
+---
+
 # 导入数据
 
 - **[通过INSERT语句直接写入数据](running_the_insert_statement_to_insert_data.md)**  

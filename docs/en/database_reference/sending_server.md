@@ -1,3 +1,8 @@
+---
+description: This document describes Sending Server in openGauss, covering topics such as max\_wal\_senders, wal\_keep\_segments.
+keywords: [openGauss, Sending Server, database reference, max\_wal\_senders, wal\_keep\_segments]
+---
+
 # Sending Server<a name="EN-US_TOPIC_0289900253"></a>
 
 ## max\_wal\_senders<a name="en-us_topic_0283137693_en-us_topic_0237124712_en-us_topic_0059777860_s197194d979964a63a01b4b9fc15b0053"></a>

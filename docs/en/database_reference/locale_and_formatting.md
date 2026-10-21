@@ -1,3 +1,8 @@
+---
+description: This document describes Locale and Formatting in openGauss, covering topics such as DateStyle, IntervalStyle.
+keywords: [openGauss, Locale and Formatting, database reference, DateStyle, IntervalStyle]
+---
+
 # Locale and Formatting<a name="EN-US_TOPIC_0289900528"></a>
 
 This section describes parameters related to the time format setting.

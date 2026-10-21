@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 数据库对象函数 的相关内容，涵盖 数据库对象尺寸函数、数据库对象位置函数 等内容。
+keywords: [openGauss, 数据库对象函数, SQL参考, 数据库对象尺寸函数, 数据库对象位置函数]
+---
+
 # 数据库对象函数
 
 ## 数据库对象尺寸函数<a name="zh-cn_topic_0283137585_zh-cn_topic_0237121994_zh-cn_topic_0059778344_s68d3a043cae24a8ab0446b5c58c024f6"></a>

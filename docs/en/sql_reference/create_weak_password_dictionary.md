@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE WEAK PASSWORD DICTIONARY in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE WEAK PASSWORD DICTIONARY, SQL, Function, Precautions]
+---
+
 # CREATE WEAK PASSWORD DICTIONARY<a name="EN-US_TOPIC_0000001197229715"></a>
 
 ## Function<a name="en-us_topic_0283137390_en-us_topic_0237122128_en-us_topic_0059778820_sf3fcf0507ea74a0ba4c4b4cbf0a0a8ba"></a>

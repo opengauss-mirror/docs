@@ -1,3 +1,8 @@
+---
+description: This document describes Connection Configuration in openGauss, covering topics such as Disable Listening on All IP Addresses on the Host, Ensure Public Service Ports Use Non-Default Port Numbers.
+keywords: [openGauss, Connection Configuration, database O&M, Disable Listening on All IP Addresses on the Host, Ensure Public Service Ports Use Non-Default Port Numbers]
+---
+
 # Connection Configuration
 
 ## Disable Listening on All IP Addresses on the Host

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 模式匹配操作符 的相关内容，涵盖 LIKE、SIMILAR TO 等内容。
+keywords: [openGauss, 模式匹配操作符, SQL参考, LIKE, SIMILAR TO]
+---
+
 # 模式匹配操作符
 
 数据库提供了三种独立的实现模式匹配的方法：SQL LIKE操作符、SIMILAR TO操作符和POSIX-风格的正则表达式。除了这些基本的操作符外，还有一些函数可用于提取或替换匹配子串并在匹配位置分离一个串。

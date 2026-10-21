@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE PROCEDURE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE PROCEDURE, SQL, Function, Precautions]
+---
+
 # CREATE PROCEDURE<a name="EN-US_TOPIC_0289900087"></a>
 
 ## Function<a name="en-us_topic_0283136646_en-us_topic_0237122110_en-us_topic_0059778640_s824c141a39964bd39575295aebb98d67"></a>

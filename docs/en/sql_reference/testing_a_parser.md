@@ -1,3 +1,8 @@
+---
+description: This document describes Testing a Parser in openGauss.
+keywords: [openGauss, Testing a Parser, SQL]
+---
+
 # Testing a Parser<a name="EN-US_TOPIC_0289900442"></a>
 
 The  **ts\_parse**  function allows direct testing of a text search parser.

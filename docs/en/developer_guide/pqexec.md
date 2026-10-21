@@ -1,3 +1,8 @@
+---
+description: This document describes PQexec in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, PQexec, development, Function, Prototype]
+---
+
 # PQexec<a name="EN-US_TOPIC_0242380577"></a>
 
 ## Function<a name="en-us_topic_0241735619_section1294859104916"></a>

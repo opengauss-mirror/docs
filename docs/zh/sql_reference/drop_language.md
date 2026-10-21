@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP LANGUAGE 的相关内容，涵盖 功能描述、语法格式 等内容。
+keywords: [openGauss, DROP LANGUAGE, SQL参考, 功能描述, 语法格式]
+---
+
 # DROP LANGUAGE
 
 ## 功能描述<a name="section113331284191"></a>

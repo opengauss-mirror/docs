@@ -1,3 +1,8 @@
+---
+description: This document describes WORKLOAD\_SQL\_ELAPSE\_TIME in openGauss.
+keywords: [openGauss, WORKLOAD\_SQL\_ELAPSE\_TIME, SQL]
+---
+
 # WORKLOAD\_SQL\_ELAPSE\_TIME<a name="EN-US_TOPIC_0245374728"></a>
 
 **WORKLOAD\_SQL\_ELAPSE\_TIME**  collects statistics about SUIDs in workloads.

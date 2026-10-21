@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_PLDEBUGGER.enable\_breakpoint in openGauss.
+keywords: [openGauss, DBE\_PLDEBUGGER.enable\_breakpoint, SQL]
+---
+
 # DBE\_PLDEBUGGER.enable\_breakpoint<a name="EN-US_TOPIC_0000001198278163"></a>
 
 During debugging on the debug end, calls enable\_breakpoint to enable breakpoints.

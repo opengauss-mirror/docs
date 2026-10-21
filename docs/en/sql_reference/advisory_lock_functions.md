@@ -1,3 +1,8 @@
+---
+description: This document describes Advisory Lock Functions in openGauss.
+keywords: [openGauss, Advisory Lock Functions, SQL]
+---
+
 # Advisory Lock Functions<a name="EN-US_TOPIC_0289900296"></a>
 
 Advisory lock functions manage advisory locks.

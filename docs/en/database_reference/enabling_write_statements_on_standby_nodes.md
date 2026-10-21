@@ -1,3 +1,8 @@
+---
+description: This document describes Enabling Write Statements on Standby Nodes in openGauss, covering topics such as enable\_remote\_execute.
+keywords: [openGauss, Enabling Write Statements on Standby Nodes, database reference, enable\_remote\_execute]
+---
+
 # Enabling Write Statements on Standby Nodes<a name="EN-US_TOPIC_0000001371524841"></a>
 
 ## enable\_remote\_execute<a name="section14941640131"></a>

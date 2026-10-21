@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 系统表和系统视图概述 的相关内容与操作方法。
+keywords: [openGauss, 系统表和系统视图概述, 数据库参考]
+---
+
 # 系统表和系统视图概述
 
 系统表是openGauss存放结构元数据的地方，它是openGauss数据库系统运行控制信息的来源，是数据库系统的核心组成部分。

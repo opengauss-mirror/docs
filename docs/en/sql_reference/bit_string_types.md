@@ -1,3 +1,8 @@
+---
+description: This document describes Bit String Types in openGauss.
+keywords: [openGauss, Bit String Types, SQL]
+---
+
 # Bit String Types<a name="EN-US_TOPIC_0289900674"></a>
 
 Bit strings are strings of 1's and 0's. They can be used to store bit masks.

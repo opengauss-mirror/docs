@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs_preinstall 的相关内容，涵盖 背景信息、注意事项 等内容。
+keywords: [openGauss, gs_preinstall, 工具与命令参考, 背景信息, 注意事项]
+---
+
 # gs_preinstall
 
 ## 背景信息<a name="zh-cn_topic_0237152419_zh-cn_topic_0059778992_section68942744218"></a>

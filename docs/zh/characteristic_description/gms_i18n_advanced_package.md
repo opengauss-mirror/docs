@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gns_i18n高级包 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, gns_i18n高级包, 特性描述, 可获得性, 特性简介]
+---
+
 # gns_i18n高级包
 
 ## 可获得性

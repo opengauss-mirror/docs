@@ -1,3 +1,8 @@
+---
+description: This document describes Database Stat in openGauss.
+keywords: [openGauss, Database Stat, SQL]
+---
+
 # Database Stat<a name="EN-US_TOPIC_0000001259955049"></a>
 
 The following table describes columns in the Database Stat report.

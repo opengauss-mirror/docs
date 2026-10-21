@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 常见问题处理 的相关内容与操作方法。
+keywords: [openGauss, 常见问题处理, 特性描述]
+---
+
 # 常见问题处理<a name="ZH-CN_TOPIC_0000002259758100"></a>
 
 1. 提示需要用户提供--ssl-keyfile与--ssl-certfile选项：

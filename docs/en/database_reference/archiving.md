@@ -1,3 +1,8 @@
+---
+description: This document describes Archiving in openGauss, covering topics such as archive\_mode, archive\_command.
+keywords: [openGauss, Archiving, database reference, archive\_mode, archive\_command]
+---
+
 # Archiving<a name="EN-US_TOPIC_0289900666"></a>
 
 ## archive\_mode<a name="en-us_topic_0283137238_en-us_topic_0237124710_en-us_topic_0059778119_sc70ee2a3ae214c89a156d9ad7a8b81e8"></a>

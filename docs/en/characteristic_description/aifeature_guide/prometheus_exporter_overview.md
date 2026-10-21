@@ -1,3 +1,8 @@
+---
+description: This document describes Overview in openGauss.
+keywords: [openGauss, Overview, features]
+---
+
 # Overview<a name="EN-US_TOPIC_0000001240824995"></a>
 
 Prometheus is a popular open-source monitoring system in the industry. It is also a time series database. The collector of Prometheus is called exporter, which is used to collect metrics of monitored modules. To interconnect with the Prometheus platform, the AI tool provides two types of exporters: openGauss-exporter for collecting database metrics and reprocessing-exporter for reprocessing the collected metrics.

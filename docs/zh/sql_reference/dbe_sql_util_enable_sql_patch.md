@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBE\_SQL\_UTIL.enable\_sql\_patch 的相关内容与操作方法。
+keywords: [openGauss, DBE\_SQL\_UTIL.enable\_sql\_patch, SQL参考]
+---
+
 # DBE\_SQL\_UTIL.enable\_sql\_patch
 
 enable\_sql\_patch是用于开启SQL PATCH的接口函数，返回执行是否成功。

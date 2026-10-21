@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 启停openGauss 的相关内容，涵盖 启动openGauss、停止openGauss 等内容。
+keywords: [openGauss, 启停openGauss, 数据库运维, 启动openGauss, 停止openGauss]
+---
+
 # 启停openGauss
 
 ## 启动openGauss<a name="zh-cn_topic_0237088789_zh-cn_topic_0059777680_se84dd72782a34e9b8b1fb962d2842afa"></a>

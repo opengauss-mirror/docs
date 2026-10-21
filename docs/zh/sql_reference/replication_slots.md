@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss REPLICATION\_SLOTS 的相关内容与操作方法。
+keywords: [openGauss, REPLICATION\_SLOTS, SQL参考]
+---
+
 # REPLICATION\_SLOTS
 
 REPLICATION\_SLOTS视图用于查看复制节点的信息。

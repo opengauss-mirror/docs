@@ -1,3 +1,8 @@
+---
+description: This document describes Mybatis Connection Sample in openGauss, covering topics such as Prerequisites, Mybatis Project Setup.
+keywords: [openGauss, Mybatis Connection Sample, MySQL compatibility, Prerequisites, Mybatis Project Setup]
+---
+
 # Mybatis Connection Sample
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-14T06:38:54.320Z pushedAt=2026-07-17T06:42:53.913Z -->

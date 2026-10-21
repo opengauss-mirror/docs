@@ -1,3 +1,8 @@
+---
+description: This document describes lo_export in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, lo_export, development, Function, Prototype]
+---
+
 # lo_export
 
 ## Function<a name="en-us_topic_0241735622_section696285173716"></a>

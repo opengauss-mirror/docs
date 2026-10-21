@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 创建表 的相关内容，涵盖 背景信息、创建表 等内容。
+keywords: [openGauss, 创建表, 数据库管理, 背景信息]
+---
+
 # 创建表
 
 ## 背景信息<a name="zh-cn_topic_0237120299_zh-cn_topic_0059778113_s98ef8b33479543b8a2dd01ff14f4729b"></a>

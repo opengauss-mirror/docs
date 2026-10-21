@@ -1,3 +1,8 @@
+---
+description: This document describes Configuring MySQL Protocol Compatibility in openGauss, covering topics such as Introduction to MySQL Protocol Compatibility, MySQL Protocol Compatibility Configuration.
+keywords: [openGauss, Configuring MySQL Protocol Compatibility, MySQL compatibility, Introduction to MySQL Protocol Compatibility, MySQL Protocol Compatibility Configuration]
+---
+
 # Configuring MySQL Protocol Compatibility
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-14T06:38:50.250Z pushedAt=2026-07-17T06:42:53.909Z -->

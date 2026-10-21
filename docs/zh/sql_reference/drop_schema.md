@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP SCHEMA 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP SCHEMA, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP SCHEMA
 
 ## 功能描述<a name="zh-cn_topic_0283137271_zh-cn_topic_0237122148_zh-cn_topic_0059778467_s13f49511137f4971b9f2c7f4b3ec109f"></a>

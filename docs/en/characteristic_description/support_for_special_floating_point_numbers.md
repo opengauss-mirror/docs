@@ -1,3 +1,8 @@
+---
+description: This document describes Support for Special Floating-Point Numbers in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, Support for Special Floating-Point Numbers, features, Availability, Feature Overview]
+---
+
 # Support for Special Floating-Point Numbers<a name="ZH-CN_TOPIC_0000001152195135"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:34:07.681Z pushedAt=2026-09-22T11:12:32.716Z -->

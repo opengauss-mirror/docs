@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_PLDEBUGGER.continue in openGauss.
+keywords: [openGauss, DBE\_PLDEBUGGER.continue, SQL]
+---
+
 # DBE\_PLDEBUGGER.continue<a name="EN-US_TOPIC_0000001147937843"></a>
 
 Executes the current stored procedure until reaching the next breakpoint or end, and returns the line number of the next execution and the corresponding query.

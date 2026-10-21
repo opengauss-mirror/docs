@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBE\_PLDEBUGGER.info\_breakpoints 的相关内容与操作方法。
+keywords: [openGauss, DBE\_PLDEBUGGER.info\_breakpoints, SQL参考]
+---
+
 # DBE\_PLDEBUGGER.info\_breakpoints
 
 debug端调试过程中，调用info\_breakpoints，查看当前的函数断点。

@@ -1,3 +1,8 @@
+---
+description: This document describes WDR in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, WDR, features, Availability, Introduction]
+---
+
 # WDR<a name="EN-US_TOPIC_0000001105235298"></a>
 
 ## Availability<a name="section11239174173316"></a>

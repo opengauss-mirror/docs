@@ -1,3 +1,8 @@
+---
+description: This document describes Connection Settings in openGauss, covering topics such as listen\_addresses, local\_bind\_address.
+keywords: [openGauss, Connection Settings, database reference, listen\_addresses, local\_bind\_address]
+---
+
 # Connection Settings<a name="EN-US_TOPIC_0289900801"></a>
 
 This section describes parameters related to client-server connection modes.

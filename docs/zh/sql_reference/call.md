@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CALL 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CALL, SQL参考, 功能描述, 注意事项]
+---
+
 # CALL
 
 ## 功能描述<a name="zh-cn_topic_0283137636_zh-cn_topic_0237122088_zh-cn_topic_0059778236_s17e49a7670334c61978f059adf2cb65d"></a>

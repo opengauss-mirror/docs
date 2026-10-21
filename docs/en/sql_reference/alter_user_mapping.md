@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER USER MAPPING in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER USER MAPPING, SQL, Function, Precautions]
+---
+
 # ALTER USER MAPPING<a name="EN-US_TOPIC_0289900415"></a>
 
 ## Function<a name="en-us_topic_0283137333_section38351127909"></a>

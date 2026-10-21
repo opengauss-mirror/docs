@@ -1,3 +1,8 @@
+---
+description: This document describes Kunpeng NUMA Architecture Optimization in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Kunpeng NUMA Architecture Optimization, features, Availability, Introduction]
+---
+
 # Kunpeng NUMA Architecture Optimization<a name="EN-US_TOPIC_0000001135548527"></a>
 
 ## Availability<a name="section1820817472142"></a>

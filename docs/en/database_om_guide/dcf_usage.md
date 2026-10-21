@@ -1,3 +1,8 @@
+---
+description: This document describes DCF Usage in openGauss, covering topics such as Architecture Overview, Feature Description.
+keywords: [openGauss, DCF Usage, database O&M, Architecture Overview, Feature Description]
+---
+
 # DCF Usage
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-14T08:04:15.558Z -->
@@ -11,7 +16,7 @@ DCF is a high-performance, mature, reliable, scalable, and user-friendly standal
 The DCF functional architecture is shown in [Figure 1](#fig31591049102410), which mainly includes: functional modules, storage modules, communication modules, service layer, etc.
 
 **Figure 1**  DCF functional architecture<a name="fig31591049102410"></a>  
-![](figures/Diagram-Of-The-DCF-Functional-Architecture.png)
+![DCF functional architecture](figures/Diagram-Of-The-DCF-Functional-Architecture.png)
 
 - **Algorithm module:**
 
@@ -66,7 +71,7 @@ The DCF functional architecture is shown in [Figure 1](#fig31591049102410), whic
     The flow control algorithm process is shown in [Figure 2](#fig548518330404):
 
     **Figure 2**  Flow control algorithm process<a name="fig548518330404"></a>  
-    ![](figures/zh-011.PNG)
+    ![Flow control algorithm process](figures/zh-011.PNG)
 
     The core algorithm flow is as follows:
 

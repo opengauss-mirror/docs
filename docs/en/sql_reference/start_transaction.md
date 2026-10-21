@@ -1,3 +1,8 @@
+---
+description: This document describes START TRANSACTION in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, START TRANSACTION, SQL, Function, Precautions]
+---
+
 # START TRANSACTION<a name="EN-US_TOPIC_0289900916"></a>
 
 ## Function<a name="en-us_topic_0283137090_en-us_topic_0237122192_en-us_topic_0059777519_s7c3a854297a0489db05671ba82a741a8"></a>

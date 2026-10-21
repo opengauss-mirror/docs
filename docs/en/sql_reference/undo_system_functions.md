@@ -1,3 +1,8 @@
+---
+description: This document describes Undo System Functions in openGauss.
+keywords: [openGauss, Undo System Functions, SQL]
+---
+
 # Undo System Functions<a name="EN-US_TOPIC_0000001135762588"></a>
 
 - gs\_undo\_meta\(type, zoneId, location\)

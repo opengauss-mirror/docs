@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SNAPSHOT.TABLES\_SNAP\_TIMESTAMP 的相关内容与操作方法。
+keywords: [openGauss, SNAPSHOT.TABLES\_SNAP\_TIMESTAMP, SQL参考]
+---
+
 # SNAPSHOT.TABLES\_SNAP\_TIMESTAMP
 
 TABLES\_SNAP\_TIMESTAMP表记录所有存储的WDR snapshot中数据库、表对象、以及数据采集的开始和结束时间。

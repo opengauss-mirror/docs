@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 循环语句 的相关内容，涵盖 简单LOOP语句、WHILE\_LOOP语句 等内容。
+keywords: [openGauss, 循环语句, SQL参考, 简单LOOP语句, WHILE\_LOOP语句]
+---
+
 # 循环语句
 
 ## 简单LOOP语句<a name="zh-cn_topic_0283137274_zh-cn_topic_0237122234_zh-cn_topic_0059778638_s27557775f6014d78b9a100c65a4cbb41"></a>
@@ -5,7 +10,7 @@
 **语法图**
 
 **图 1**  loop::=<a name="zh-cn_topic_0283137274_zh-cn_topic_0237122234_zh-cn_topic_0059778638_fa21272428ed842298772423d38c5cc4b"></a>  
-![](figures/loop.png)
+![loop](figures/loop.png)
 
 **示例**
 
@@ -36,7 +41,7 @@ CALL proc_loop(10,5);
 **语法图**
 
 **图 2**  while\_loop::=<a name="zh-cn_topic_0283137274_zh-cn_topic_0237122234_zh-cn_topic_0059778638_fc93167bb5ad54010979321d4e0fdbd55"></a>  
-![](figures/while_loop.png)
+![while loop语法图](figures/while_loop.png)
 
 只要条件表达式为真，WHILE语句就会不停的在一系列语句上进行循环，在每次进入循环体的时候进行条件判断。
 
@@ -69,7 +74,7 @@ DROP TABLE integertable;
 **语法图**
 
 **图 3**  for\_loop::=<a name="zh-cn_topic_0283137274_zh-cn_topic_0237122234_zh-cn_topic_0059778638_f225dca3e3bb8473198031bfc2a49f3e1"></a>  
-![](figures/for_loop.png)
+![for loop语法图](figures/for_loop.png)
 
 >[!NOTE]说明
 >
@@ -81,7 +86,7 @@ DROP TABLE integertable;
 **语法图**
 
 **图 4**  for\_loop\_query::=<a name="zh-cn_topic_0283137274_zh-cn_topic_0237122234_zh-cn_topic_0059778638_f4043c6dc0195466388bb2b9b42874e52"></a>  
-![](figures/for_loop_query.png)
+![for loop query语法图](figures/for_loop_query.png)
 
 >[!NOTE]说明
 >变量target会自动定义，类型和query的查询结果的类型一致，并且只在此循环中有效。target的取值就是query的查询结果。
@@ -91,7 +96,7 @@ DROP TABLE integertable;
 **语法图**
 
 **图 5**  forall::=<a name="fig1638718526215"></a>  
-![](figures/forall.png)
+![forall](figures/forall.png)
 
 >[!NOTE]说明
 >

@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_STAT\_ALL\_TABLES in openGauss.
+keywords: [openGauss, PG\_STAT\_ALL\_TABLES, database reference]
+---
+
 # PG\_STAT\_ALL\_TABLES<a name="EN-US_TOPIC_0289900450"></a>
 
 **PG\_STAT\_ALL\_TABLES**  contains one row for each table in the current database \(including TOAST tables\), showing statistics about accesses to that specific table.

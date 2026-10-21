@@ -1,3 +1,8 @@
+---
+description: This document describes Scalability in openGauss.
+keywords: [openGauss, Scalability, SQL]
+---
+
 # Scalability<a name="EN-US_TOPIC_0289900647"></a>
 
 The GIN interface has a high level of abstraction, requiring the access method implementer only to implement the semantics of the data type being accessed. The GIN layer itself takes care of concurrency, logging and searching the tree structure.

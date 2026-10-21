@@ -1,3 +1,8 @@
+---
+description: This document describes PQstatus in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, PQstatus, development, Function, Prototype]
+---
+
 # PQstatus<a name="EN-US_TOPIC_0242380575"></a>
 
 ## Function<a name="en-us_topic_0241735618_section12403151164211"></a>

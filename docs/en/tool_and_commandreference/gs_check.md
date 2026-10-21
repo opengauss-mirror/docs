@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_check in openGauss, covering topics such as Background, Precautions.
+keywords: [openGauss, gs\_check, tools and commands, Background, Precautions]
+---
+
 # gs\_check<a name="EN-US_TOPIC_0289899234"></a>
 
 ## Background<a name="en-us_topic_0287275940_en-us_topic_0237152330_en-us_topic_0059777799_section2466014153117"></a>

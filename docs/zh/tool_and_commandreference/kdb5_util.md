@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss kdb5\_util 的相关内容，涵盖 功能介绍、参数说明 等内容。
+keywords: [openGauss, kdb5\_util, 工具与命令参考, 功能介绍, 参数说明]
+---
+
 # kdb5\_util
 
 ## 功能介绍<a name="zh-cn_topic_0237152428_section10172172474817"></a>

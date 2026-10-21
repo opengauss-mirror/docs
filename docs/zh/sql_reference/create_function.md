@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE FUNCTION 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE FUNCTION, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE FUNCTION
 
 ## 功能描述<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_sd4b3500e6b35475aa19a15933fec5720"></a>

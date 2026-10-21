@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 创建和管理表空间 的相关内容，涵盖 背景信息、注意事项 等内容。
+keywords: [openGauss, 创建和管理表空间, 数据库管理, 背景信息, 注意事项]
+---
+
 # 创建和管理表空间
 
 ## 背景信息<a name="zh-cn_topic_0283137616_zh-cn_topic_0237120297_zh-cn_topic_0059778849_saaab96d21e01450bb4a62113d37a03c7"></a>

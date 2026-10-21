@@ -1,3 +1,8 @@
+---
+description: This document describes Delayed Replay in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Delayed Replay, database O&M, Availability, Introduction]
+---
+
 # Delayed Replay
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-14T08:03:54.596Z -->

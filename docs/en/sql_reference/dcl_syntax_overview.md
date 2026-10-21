@@ -1,3 +1,8 @@
+---
+description: This document describes DCL Syntax Overview in openGauss, covering topics such as Defining a Role, Defining a User.
+keywords: [openGauss, DCL Syntax Overview, SQL, Defining a Role, Defining a User]
+---
+
 # DCL Syntax Overview<a name="EN-US_TOPIC_0289900059"></a>
 
 Data control language \(DCL\) is used to create users and roles and set or modify database users or role rights.

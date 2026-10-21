@@ -1,3 +1,8 @@
+---
+description: This document describes Network Address Types in openGauss, covering topics such as cidr, inet.
+keywords: [openGauss, Network Address Types, SQL, cidr, inet]
+---
+
 # Network Address Types<a name="EN-US_TOPIC_0289899944"></a>
 
 openGauss offers data types to store IPv4, IPv6, and MAC addresses.

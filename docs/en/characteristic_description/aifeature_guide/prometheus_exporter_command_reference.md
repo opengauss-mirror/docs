@@ -1,3 +1,8 @@
+---
+description: This document describes Command Reference in openGauss.
+keywords: [openGauss, Command Reference, features]
+---
+
 # Command Reference<a name="EN-US_TOPIC_0000001240744995"></a>
 
 For details about how to use reprocessing-exporter, see the following help information:

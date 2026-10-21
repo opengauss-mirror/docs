@@ -1,3 +1,8 @@
+---
+description: This document describes Installation on a Single Node in openGauss, covering topics such as Prerequisites, Procedure.
+keywords: [openGauss, Installation on a Single Node, installation, Prerequisites, Procedure]
+---
+
 # Installation on a Single Node<a name="EN-US_TOPIC_0000001138868255"></a>
 
 ## Prerequisites<a name="section9955194683210"></a>

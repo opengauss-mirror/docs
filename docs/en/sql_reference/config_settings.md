@@ -1,3 +1,8 @@
+---
+description: This document describes CONFIG\_SETTINGS in openGauss.
+keywords: [openGauss, CONFIG\_SETTINGS, SQL]
+---
+
 # CONFIG\_SETTINGS<a name="EN-US_TOPIC_0245374836"></a>
 
 **CONFIG\_SETTINGS**  displays information about parameters of the running database.

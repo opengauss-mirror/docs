@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 操作审计 的相关内容，涵盖 audit\_system\_object、audit\_dml\_state 等内容。
+keywords: [openGauss, 操作审计, 数据库参考, audit\_system\_object, audit\_dml\_state]
+---
+
 # 操作审计
 
 ## audit\_system\_object<a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_s05a5cf2a231d43d8aa731caae59abb33"></a>

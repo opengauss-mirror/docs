@@ -1,3 +1,8 @@
+---
+description: This document describes Adaptive Plan Selection in openGauss, covering topics such as Overview, Prerequisites.
+keywords: [openGauss, Adaptive Plan Selection, features, Overview, Prerequisites]
+---
+
 # Adaptive Plan Selection<a name="EN-US_TOPIC_0000001367614253"></a>
 
 ## Overview<a name="EN-US_TOPIC_0000001367634813"></a>

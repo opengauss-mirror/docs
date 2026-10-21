@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_SYNONYM 的相关内容与操作方法。
+keywords: [openGauss, PG\_SYNONYM, 数据库参考]
+---
+
 # PG\_SYNONYM
 
 PG\_SYNONYM系统表存储同义词对象名与其他数据库对象名间的映射信息。

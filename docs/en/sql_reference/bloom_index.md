@@ -1,3 +1,8 @@
+---
+description: This document describes BLOOM in openGauss, covering topics such as 1. Introduction, 2. Parameters.
+keywords: [openGauss, BLOOM, SQL, 1. Introduction, 2. Parameters]
+---
+
 # BLOOM
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:19:48.341Z -->

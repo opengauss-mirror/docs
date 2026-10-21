@@ -1,3 +1,8 @@
+---
+description: This document describes Object Type in openGauss.
+keywords: [openGauss, Object Type, SQL]
+---
+
 # Object Type
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:23:47.070Z -->

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 锁管理 的相关内容，涵盖 deadlock\_timeout、lockwait\_timeout 等内容。
+keywords: [openGauss, 锁管理, 数据库参考, deadlock\_timeout, lockwait\_timeout]
+---
+
 # 锁管理
 
 在openGauss中，并发执行的事务由于竞争资源会导致死锁。本节介绍的参数主要管理事务锁的机制。

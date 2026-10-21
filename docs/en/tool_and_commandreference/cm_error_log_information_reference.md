@@ -1,3 +1,8 @@
+---
+description: This document describes CM Error Log Reference in openGauss.
+keywords: [openGauss, CM Error Log Reference, tools and commands]
+---
+
 # CM Error Log Reference
 
 ERRMSG: "Fail to access the cluster static config file."

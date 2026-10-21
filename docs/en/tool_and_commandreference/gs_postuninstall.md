@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_postuninstall in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, gs\_postuninstall, tools and commands, Background, Prerequisites]
+---
+
 # gs\_postuninstall<a name="EN-US_TOPIC_0249632244"></a>
 
 ## Background<a name="en-us_topic_0237152418_en-us_topic_0059778816_section1822511168423"></a>

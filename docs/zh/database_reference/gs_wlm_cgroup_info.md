@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_WLM\_CGROUP\_INFO 的相关内容与操作方法。
+keywords: [openGauss, GS\_WLM\_CGROUP\_INFO, 数据库参考]
+---
+
 # GS\_WLM\_CGROUP\_INFO
 
 GS\_WLM\_CGROUP\_INFO视图显示当前执行作业的控制组的信息。

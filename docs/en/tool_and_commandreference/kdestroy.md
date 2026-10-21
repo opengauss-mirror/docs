@@ -1,3 +1,8 @@
+---
+description: This document describes kdestroy in openGauss, covering topics such as Function, Parameter Description.
+keywords: [openGauss, kdestroy, tools and commands, Function, Parameter Description]
+---
+
 # kdestroy<a name="EN-US_TOPIC_0249632279"></a>
 
 ## Function<a name="en-us_topic_0237152433_section10172172474817"></a>

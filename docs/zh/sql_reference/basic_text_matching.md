@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 基本文本匹配 的相关内容与操作方法。
+keywords: [openGauss, 基本文本匹配, SQL参考]
+---
+
 # 基本文本匹配
 
 openGauss的全文检索基于匹配算子@@，当一个tsvector\(document\)匹配到一个tsquery\(query\)时，则返回true。其中，tsvector\(document\)和tsquery\(query\)两种数据类型可以任意排序。

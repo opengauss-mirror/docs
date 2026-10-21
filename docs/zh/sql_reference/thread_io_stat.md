@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss THREAD\_IO\_STAT 的相关内容与操作方法。
+keywords: [openGauss, THREAD\_IO\_STAT, SQL参考]
+---
+
 # THREAD\_IO\_STAT
 
 显示当前节点按线程角色类型统计的IO信息。

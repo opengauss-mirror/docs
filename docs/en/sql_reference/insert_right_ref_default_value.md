@@ -1,3 +1,8 @@
+---
+description: This document describes INSERT_RIGHT_REF_DEFAULT_VALUE in openGauss.
+keywords: [openGauss, INSERT_RIGHT_REF_DEFAULT_VALUE, SQL]
+---
+
 # INSERT_RIGHT_REF_DEFAULT_VALUE
 
 In B-compatible mode, the INSERT statement supports right-value reference. If a referenced column has a NOT NULL constraint and does not have a default value, its base value is used for calculation. If there is no basic value, the NULL value is used for calculation (array type or user-defined type).

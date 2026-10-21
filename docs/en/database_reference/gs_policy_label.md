@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_POLICY\_LABEL in openGauss.
+keywords: [openGauss, GS\_POLICY\_LABEL, database reference]
+---
+
 # GS\_POLICY\_LABEL<a name="EN-US_TOPIC_0306525315"></a>
 
 **GS\_POLICY\_LABEL**  records the resource label configuration information. One resource label corresponds to one or more records, and each record identifies the resource label to which a database resource belongs. Only the system administrator or security policy administrator can access this system catalog.

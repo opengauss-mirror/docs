@@ -1,3 +1,8 @@
+---
+description: This document describes BM25 Full-Text Search Index Parameters in openGauss, covering topics such as enable_bm25_taat, bm25_topk.
+keywords: [openGauss, BM25 Full-Text Search Index Parameters, database reference, enable_bm25_taat, bm25_topk]
+---
+
 # BM25 Full-Text Search Index Parameters
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:38:20.974Z -->

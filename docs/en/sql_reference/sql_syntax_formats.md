@@ -1,3 +1,8 @@
+---
+description: This document describes SQL Syntax Formats in openGauss.
+keywords: [openGauss, SQL Syntax Formats, SQL]
+---
+
 # SQL Syntax Formats<a name="EN-US_TOPIC_0000001487936854"></a>
 
 **Table 1** SQL syntax formats

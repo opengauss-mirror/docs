@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SQLBindCol 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, SQLBindCol, 开发指南, 功能描述, 原型]
+---
+
 # SQLBindCol
 
 ## 功能描述<a name="zh-cn_topic_0238272886_zh-cn_topic_0237120416_zh-cn_topic_0059779335_s20aba247faad4486a9207cbeafeadb20"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes WORKLOAD\_SQL\_COUNT in openGauss.
+keywords: [openGauss, WORKLOAD\_SQL\_COUNT, SQL]
+---
+
 # WORKLOAD\_SQL\_COUNT<a name="EN-US_TOPIC_0245374723"></a>
 
 **WORKLOAD\_SQL\_COUNT**  displays the distribution of SQL statements in workloads on the current node. Common users can view only the distribution of SQL statements executed by themselves in workloads, whereas Initial user can view the overall load status of workloads.

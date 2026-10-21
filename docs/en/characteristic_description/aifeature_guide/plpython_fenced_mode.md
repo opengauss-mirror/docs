@@ -1,3 +1,8 @@
+---
+description: This document describes PLPython Fenced Mode in openGauss, covering topics such as Usage Guide.
+keywords: [openGauss, PLPython Fenced Mode, features, Usage Guide]
+---
+
 # PLPython Fenced Mode<a name="EN-US_TOPIC_0000001149506467"></a>
 
 PL/Python is added to the fenced mode, which is insecure. During database compilation, to integrate Python into the database, you can add the  **--with-python**  option to  **configure**, or specify the Python path for installing PL/Python and add the  **--with-includes='/python-dir=path'**  option.

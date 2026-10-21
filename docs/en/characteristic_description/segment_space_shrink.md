@@ -1,3 +1,8 @@
+---
+description: This document describes Segment-Page Space Reclaim in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, Segment-Page Space Reclaim, features, Availability, Feature Overview]
+---
+
 # Segment-Page Space Reclaim
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:26:23.925Z pushedAt=2026-09-22T11:12:32.701Z -->

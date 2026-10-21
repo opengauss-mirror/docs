@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GV_GRAPH向量索引 的相关内容，涵盖 功能介绍、开始之前 等内容。
+keywords: [openGauss, GV_GRAPH向量索引, 功能介绍, 开始之前]
+---
+
 # GV_GRAPH向量索引
 
 ## 功能介绍

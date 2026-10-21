@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss UPDATE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, UPDATE, SQL参考, 功能描述, 注意事项]
+---
+
 # UPDATE
 
 ## 功能描述<a name="zh-cn_topic_0283137651_zh-cn_topic_0237122194_zh-cn_topic_0059778969_s85747c5f88e64562a8ff9ddacda19929"></a>

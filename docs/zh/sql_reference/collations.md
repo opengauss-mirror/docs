@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss COLLATIONS 的相关内容与操作方法。
+keywords: [openGauss, COLLATIONS, SQL参考]
+---
+
 # COLLATIONS <a name="ZH-CN_TOPIC_0310260671"></a>
 
 存储字符序相关的信息。

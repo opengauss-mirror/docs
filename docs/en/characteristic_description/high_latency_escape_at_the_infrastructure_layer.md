@@ -1,3 +1,8 @@
+---
+description: This document describes High-Latency Escape at the Infrastructure Layer in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, High-Latency Escape at the Infrastructure Layer, features, Availability, Feature Overview]
+---
+
 # High-Latency Escape at the Infrastructure Layer
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:18:32.061Z pushedAt=2026-09-22T11:12:32.661Z -->

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss START TRANSACTION 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, START TRANSACTION, SQL参考, 功能描述, 注意事项]
+---
+
 # START TRANSACTION
 
 ## 功能描述<a name="zh-cn_topic_0237122192_zh-cn_topic_0059777519_s7c3a854297a0489db05671ba82a741a8"></a>

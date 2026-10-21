@@ -1,3 +1,8 @@
+---
+description: This document describes COMMIT PREPARED in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, COMMIT PREPARED, SQL, Function, Precautions]
+---
+
 # COMMIT PREPARED<a name="EN-US_TOPIC_0289900574"></a>
 
 ## Function<a name="en-us_topic_0283137183_en-us_topic_0237122095_en-us_topic_0059777686_s06b2916a6c67438087f9f84a0159252a"></a>

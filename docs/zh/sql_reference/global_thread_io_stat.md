@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_THREAD\_IO\_STAT 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_THREAD\_IO\_STAT, SQL参考]
+---
+
 # GLOBAL\_THREAD\_IO\_STAT
 
 提供openGauss中所有正常节点按线程角色类型统计的IO信息。

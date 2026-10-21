@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Deployment in openGauss, covering topics such as MOT Server Optimization – x86, MOT Server Optimization – ARM Huawei Taishan 2P/4P.
+keywords: [openGauss, MOT Deployment, database administration, MOT Server Optimization – x86, MOT Server Optimization – ARM Huawei Taishan 2P/4P]
+---
+
 # MOT Deployment<a name="EN-US_TOPIC_0270171555"></a>
 
 ## MOT Server Optimization – x86<a name="EN-US_TOPIC_0270171556"></a>
@@ -168,15 +173,15 @@ Modify related BIOS settings, as follows –
 1. Select  **BIOS**  -- **Advanced**  -- **MISC Config**. Set  **Support Smmu**  to  **Disabled**.
 2. Select  **BIOS**  --  **Advanced**  --  **MISC Config**. Set  **CPU Prefetching Configuration**  to  **Disabled**.
 
-    ![](figures/en-us_image_0270362942.png)
+    ![BIOS diagram](figures/en-us_image_0270362942.png)
 
 3. Select  **BIOS**  -- **Advanced**  --  **Memory Config**. Set  **Die Interleaving**  to  **Disabled**.
 
-    ![](figures/en-us_image_0270362943.png)
+    ![BIOS diagram](figures/en-us_image_0270362943.png)
 
 4. Select  **BIOS**  --  **Advanced**  -- **Performance Config**. Set  **Power Policy**  to  **Performance**.
 
-    ![](figures/en-us_image_0270362944.png)
+    ![BIOS diagram](figures/en-us_image_0270362944.png)
 
 ### OS – Kernel and Boot<a name="section5765175572217"></a>
 

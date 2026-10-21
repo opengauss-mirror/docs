@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 向表中插入数据 的相关内容，涵盖 背景信息、操作步骤 等内容。
+keywords: [openGauss, 向表中插入数据, 数据库管理, 背景信息, 操作步骤]
+---
+
 # 向表中插入数据
 
 在创建一个表后，表中并没有数据，在使用这个表之前，需要向表中插入数据。本小节介绍如何使用[INSERT](../sql_reference/insert.md)命令插入一行或多行数据，及从指定表插入数据。如果有大量数据需要批量导入表中，请参考[导入数据](../database_om_guide/import_data.md)。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER PACKAGE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER PACKAGE, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER PACKAGE
 
 ## 功能描述<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_sa364f8cdcfd24ba1a68426488e7852d4"></a>

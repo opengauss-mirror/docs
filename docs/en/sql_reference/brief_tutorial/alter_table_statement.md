@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER TABLE in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, ALTER TABLE, SQL, Syntax, Parameter Description]
+---
+
 # ALTER TABLE
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-28T03:10:59.970Z pushedAt=2026-07-28T03:24:55.841Z -->

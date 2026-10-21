@@ -1,3 +1,8 @@
+---
+description: This document describes Global Temporary Table Functions in openGauss.
+keywords: [openGauss, Global Temporary Table Functions, SQL]
+---
+
 # Global Temporary Table Functions<a name="EN-US_TOPIC_0289900393"></a>
 
 - pg\_get\_gtt\_relstats\(relOid\)

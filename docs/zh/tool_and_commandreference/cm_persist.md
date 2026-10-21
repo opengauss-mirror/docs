@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss cm\_persist工具介绍 的相关内容，涵盖 功能介绍、前提条件 等内容。
+keywords: [openGauss, cm\_persist工具介绍, 工具与命令参考, 功能介绍, 前提条件]
+---
+
 # cm\_persist工具介绍
 
 ## 功能介绍<a name="section125419154813"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 发送端服务器 的相关内容，涵盖 max\_wal\_senders、wal_keep_segments 等内容。
+keywords: [openGauss, 发送端服务器, 数据库参考, max\_wal\_senders, wal_keep_segments]
+---
+
 # 发送端服务器
 
 ## max\_wal\_senders<a name="zh-cn_topic_0283137693_zh-cn_topic_0237124712_zh-cn_topic_0059777860_s197194d979964a63a01b4b9fc15b0053"></a>

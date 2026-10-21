@@ -1,3 +1,8 @@
+---
+description: This document describes Database Audit in openGauss, covering topics such as Ensure Database Audit Is Enabled, Ensure User Login and Logout Auditing Is Enabled.
+keywords: [openGauss, Database Audit, database O&M, Ensure Database Audit Is Enabled, Ensure User Login and Logout Auditing Is Enabled]
+---
+
 # Database Audit
 
 ## Ensure Database Audit Is Enabled

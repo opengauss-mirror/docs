@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 使用openGauss 的相关内容，涵盖 前提条件、操作步骤 等内容。
+keywords: [openGauss, 使用openGauss, 快速入门, 前提条件, 操作步骤]
+---
+
 # 使用openGauss
 
 本节描述使用数据库的基本操作。通过此节您可以完成创建数据库、创建表及向表中插入数据和查询表中数据等操作。

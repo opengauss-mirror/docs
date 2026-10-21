@@ -1,3 +1,8 @@
+---
+description: This document describes Basic Statements in openGauss.
+keywords: [openGauss, Basic Statements, SQL]
+---
+
 # Basic Statements<a name="EN-US_TOPIC_0245374610"></a>
 
 During PL/SQL programming, you may define some variables, assign values to variables, and call other stored procedures. This chapter describes basic PL/SQL statements, including variable definition statements, value assignment statements, call statements, and return statements.

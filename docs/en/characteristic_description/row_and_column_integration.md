@@ -1,3 +1,8 @@
+---
+description: This document describes HTAP Row-Column Fusion in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, HTAP Row-Column Fusion, features, Availability, Feature Overview]
+---
+
 # HTAP Row-Column Fusion
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:25:59.567Z pushedAt=2026-09-22T11:12:32.698Z -->
@@ -12,7 +17,7 @@ The HTAP row-column fusion feature implements the openGauss HTAP integrated data
 
 **Figure 1**  Row-column conversion feature design in the primary/standby scenario<a name="fig114741818101675"></a>  
 
-![](figures/HTAP.jpg)
+![Feature Overview diagram](figures/HTAP.jpg)
 
 ## Customer Benefits<a name="section13406743164715"></a>
 

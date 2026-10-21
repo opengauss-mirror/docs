@@ -1,3 +1,8 @@
+---
+description: This document describes DROP TABLE PARTITION in openGauss, covering topics such as Description, Precautions.
+keywords: [openGauss, DROP TABLE PARTITION, SQL, Description, Precautions]
+---
+
 # DROP TABLE PARTITION
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:21:48.723Z -->

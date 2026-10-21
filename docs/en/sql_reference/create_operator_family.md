@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE OPERATOR FAMILY in openGauss, covering topics such as Description, Syntax.
+keywords: [openGauss, CREATE OPERATOR FAMILY, SQL, Description, Syntax]
+---
+
 # CREATE OPERATOR FAMILY
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:20:18.743Z -->

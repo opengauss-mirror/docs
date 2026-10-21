@@ -1,3 +1,8 @@
+---
+description: This document describes PL/pgSQL Functions in openGauss.
+keywords: [openGauss, PL/pgSQL Functions, SQL]
+---
+
 # PL/pgSQL Functions<a name="EN-US_TOPIC_0289901009"></a>
 
 PL/pgSQL is a loadable procedural language.

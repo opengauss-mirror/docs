@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 使用kubernetes部署分布式数据库 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 使用kubernetes部署分布式数据库, 特性描述, 可获得性, 特性简介]
+---
+
 # 使用kubernetes部署分布式数据库
 
 ## 可获得性<a name="section3594727121215"></a>

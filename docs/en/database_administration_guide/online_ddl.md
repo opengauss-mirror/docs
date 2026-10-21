@@ -1,3 +1,8 @@
+---
+description: This document describes openGauss Online DDL Feature Introduction in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, openGauss Online DDL Feature Introduction, database administration, Availability, Feature Overview]
+---
+
 # openGauss Online DDL Feature Introduction
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:46:26.545Z pushedAt=2026-09-11T09:18:32.380Z -->

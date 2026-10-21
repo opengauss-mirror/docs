@@ -1,3 +1,8 @@
+---
+description: This document describes SUMMARY\_USER\_LOGIN in openGauss.
+keywords: [openGauss, SUMMARY\_USER\_LOGIN, SQL]
+---
+
 # SUMMARY\_USER\_LOGIN<a name="EN-US_TOPIC_0245374828"></a>
 
 **SUMMARY\_USER\_LOGIN**  records the number of user logins and logouts on the primary database node. 

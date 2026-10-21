@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE RESOURCE LABEL in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE RESOURCE LABEL, SQL, Function, Precautions]
+---
+
 # CREATE RESOURCE LABEL<a name="EN-US_TOPIC_0306525304"></a>
 
 ## Function<a name="section1163224811518"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Cluster Diagnosis 的相关内容，涵盖 概述、使用指导 等内容。
+keywords: [openGauss, Cluster Diagnosis, 特性描述, 概述, 使用指导]
+---
+
 # Cluster Diagnosis<a name="ZH-CN_TOPIC_0000002294471393"></a>
 
 ## 概述<a name="ZH-CN_TOPIC_0000002259861282"></a>
@@ -70,7 +75,7 @@ gs_dbmind component cluster_diagnosis --conf {confpath} --host {ip_address} --ro
 输入此命令后，系统读取所设定时间前3分钟的日志记录，并对选定的DN实例使用选定方法进行分析，分析的结果示例如[图1](#zh-cn_topic_0000001714948973_fig0615168103510)所示。
 
 **图 1**  DN实例使用选定方法分析<a name="zh-cn_topic_0000001714948973_fig0615168103510"></a>  
-![](figures/DN实例使用选定方法分析.png)
+![DN实例使用选定方法分析](figures/DN实例使用选定方法分析.png)
 
 返回结果前半部分的字典给出对日志的解析结果，其中Good表示该项正常，Bad表示该项有异常；最后的Output表示输出结果。
 

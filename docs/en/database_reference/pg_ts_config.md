@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_TS\_CONFIG in openGauss.
+keywords: [openGauss, PG\_TS\_CONFIG, database reference]
+---
+
 # PG\_TS\_CONFIG<a name="EN-US_TOPIC_0289900274"></a>
 
 **PG\_TS\_CONFIG**  contains entries representing text search configurations. A configuration specifies a particular text search parser and a list of dictionaries to use for each of the parser's output token types.

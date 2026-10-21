@@ -1,3 +1,8 @@
+---
+description: This document describes Development Based on JDBC in openGauss.
+keywords: [openGauss, Development Based on JDBC, development]
+---
+
 # Development Based on JDBC<a name="EN-US_TOPIC_0244720258"></a>
 
 Java Database Connectivity \(JDBC\) is a Java API for running SQL statements. It provides unified access interfaces for different relational databases, based on which applications process data. The openGauss library supports JDBC 4.0 and requires JDK 1.8 for code compiling. It does not support JDBC_ODBC bridge.

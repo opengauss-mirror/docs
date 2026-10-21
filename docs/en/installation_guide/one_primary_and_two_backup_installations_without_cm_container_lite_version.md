@@ -1,3 +1,8 @@
+---
+description: This document describes One-Primary-Two-Standby Installation Without CM_Container in openGauss, covering topics such as Steps for Docker-based Installation, Standby node 2.
+keywords: [openGauss, One-Primary-Two-Standby Installation Without CM_Container, installation, Steps for Docker-based Installation, Standby node 2]
+---
+
 # One-Primary-Two-Standby Installation Without CM_Container
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-10T08:50:37.507Z pushedAt=2026-07-14T07:15:07.662Z -->

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_SET 的相关内容与操作方法。
+keywords: [openGauss, PG\_SET, 数据库参考]
+---
+
 # PG\_SET
 
 PG\_SET系统表存储SET数据类型定义的元数据。

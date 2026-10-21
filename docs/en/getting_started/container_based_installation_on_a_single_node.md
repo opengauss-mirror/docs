@@ -1,3 +1,8 @@
+---
+description: This document describes Container-based Installation on a Single Node in openGauss, covering topics such as Supported Architectures and OSs, Preparations.
+keywords: [openGauss, Container-based Installation on a Single Node, getting started, Supported Architectures and OSs, Preparations]
+---
+
 # Container-based Installation on a Single Node <a name="EN-US_TOPIC_0289899741"></a>
 
 This section describes how to install openGauss using Docker to facilitate installation, configuration, and environment setting for DevOps users.

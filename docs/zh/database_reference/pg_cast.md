@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_CAST 的相关内容与操作方法。
+keywords: [openGauss, PG\_CAST, 数据库参考]
+---
+
 # PG\_CAST
 
 PG\_CAST系统表存储数据类型之间的转化关系。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MySQL与openGauss的数据类型对比 的相关内容与操作方法。
+keywords: [openGauss, MySQL与openGauss的数据类型对比, 数据迁移]
+---
+
 # MySQL与openGauss的数据类型对比
 
 需要注意的是，下面列出来的MySQL数据类型指的是information_schema.COLUMNS中的data_type而非column_type。比如对于 int unsigned的column_type，其data_type实际为 int。对于float(5,2)的column_type，其data_type实际为float。

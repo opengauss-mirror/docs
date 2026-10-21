@@ -1,3 +1,8 @@
+---
+description: This document describes SQLBindCol in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, SQLBindCol, development, Function, Prototype]
+---
+
 # SQLBindCol<a name="EN-US_TOPIC_0242371440"></a>
 
 ## Function<a name="en-us_topic_0238272886_en-us_topic_0237120416_en-us_topic_0059779335_s20aba247faad4486a9207cbeafeadb20"></a>

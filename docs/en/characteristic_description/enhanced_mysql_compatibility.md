@@ -1,3 +1,8 @@
+---
+description: This document describes Enhanced MySQL Compatibility in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Enhanced MySQL Compatibility, features, Availability, Introduction]
+---
+
 
 # Enhanced MySQL Compatibility
 

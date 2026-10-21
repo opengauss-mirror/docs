@@ -1,3 +1,8 @@
+---
+description: This document describes DROP PACKAGE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP PACKAGE, SQL, Function, Precautions]
+---
+
 # DROP PACKAGE<a name="EN-US_TOPIC_0000001114052560"></a>
 
 ## Function<a name="section37715281291"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes SUMMARY\_FILE\_REDO\_IOSTAT in openGauss.
+keywords: [openGauss, SUMMARY\_FILE\_REDO\_IOSTAT, SQL]
+---
+
 # SUMMARY\_FILE\_REDO\_IOSTAT<a name="EN-US_TOPIC_0245374674"></a>
 
 **SUMMARY\_FILE\_REDO\_IOSTAT**  records statistics about all redo logs and WALs in openGauss. 

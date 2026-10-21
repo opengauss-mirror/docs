@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_WORKLOAD\_TRANSACTION 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_WORKLOAD\_TRANSACTION, SQL参考]
+---
+
 # GLOBAL\_WORKLOAD\_TRANSACTION
 
 显示各节点上的workload的负载信息。

@@ -1,3 +1,8 @@
+---
+description: This document describes Starting and Stopping openGauss in openGauss, covering topics such as Starting openGauss, Stopping openGauss.
+keywords: [openGauss, Starting and Stopping openGauss, database O&M, Starting openGauss, Stopping openGauss]
+---
+
 # Starting and Stopping openGauss<a name="EN-US_TOPIC_0242215008"></a>
 
 ## Starting openGauss<a name="en-us_topic_0237088789_en-us_topic_0059777680_se84dd72782a34e9b8b1fb962d2842afa"></a>

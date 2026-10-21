@@ -1,3 +1,8 @@
+---
+description: This document describes DPA Hash Aggregation Acceleration in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, DPA Hash Aggregation Acceleration, features, Availability, Feature Overview]
+---
+
 # DPA Hash Aggregation Acceleration
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:08:52.931Z pushedAt=2026-09-22T11:12:32.621Z -->

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss set子命令 的相关内容，涵盖 命令参考 等内容。
+keywords: [openGauss, set子命令, 特性描述, 命令参考]
+---
+
 # set子命令<a name="ZH-CN_TOPIC_0000002293307673"></a>
 
 该命令用于修改配置文件dbmind.conf中的参数值，与用户手动修改配置文件dbmind.conf一般无差异。例如修改配置目录confpath中的配置文件dbmind.conf中TSDB配置部分，host参数的值，并将其设置为127.0.0.1。则可通过下述命令实现：

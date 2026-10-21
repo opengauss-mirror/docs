@@ -1,3 +1,8 @@
+---
+description: This document describes Performance Statistics in openGauss, covering topics such as Generating Performance Statistics Logs.
+keywords: [openGauss, Performance Statistics, database reference, Generating Performance Statistics Logs]
+---
+
 # Performance Statistics<a name="EN-US_TOPIC_0289900589"></a>
 
 During the running of the database, the lock access, disk I/O operation, and invalid message processing are involved. All these operations are the bottleneck of the database performance. The performance statistics provided by openGauss can facilitate the performance fault location.

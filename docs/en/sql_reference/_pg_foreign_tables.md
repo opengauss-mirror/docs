@@ -1,3 +1,8 @@
+---
+description: This document describes _PG_FOREIGN_TABLES in openGauss.
+keywords: [openGauss, _PG_FOREIGN_TABLES, SQL]
+---
+
 # _PG_FOREIGN_TABLES
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T09:47:38.740Z pushedAt=2026-07-30T01:51:38.726Z -->

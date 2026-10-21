@@ -1,3 +1,8 @@
+---
+description: This document describes JDBC Configuration in openGauss, covering topics such as Connection Parameters, fetchsize.
+keywords: [openGauss, JDBC Configuration, development, Connection Parameters, fetchsize]
+---
+
 # JDBC Configuration<a name="EN-US_TOPIC_0000001149627971"></a>
 
 Currently, third-party tools related to openGauss are connected through JDBC. This section describes the precautions for configuring the tool.

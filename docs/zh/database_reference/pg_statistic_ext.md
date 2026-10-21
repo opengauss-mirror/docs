@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_STATISTIC\_EXT 的相关内容与操作方法。
+keywords: [openGauss, PG\_STATISTIC\_EXT, 数据库参考]
+---
+
 # PG\_STATISTIC\_EXT
 
 PG\_STATISTIC\_EXT系统表存储有关该数据库中表的扩展统计数据，包括多列统计数据和表达式统计数据（后续支持）。收集哪些扩展统计数据是由用户指定的。需要有系统管理员权限才可以访问此系统表。

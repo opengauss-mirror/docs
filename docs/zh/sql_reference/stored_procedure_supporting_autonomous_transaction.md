@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 存储过程支持自治事务 的相关内容与操作方法。
+keywords: [openGauss, 存储过程支持自治事务, SQL参考]
+---
+
 # 存储过程支持自治事务
 
 自治事务可以在存储过程中定义，标识符为PRAGMA AUTONOMOUS\_TRANSACTION，其余语法与创建存储过程语法相同，示例如下。

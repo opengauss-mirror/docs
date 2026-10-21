@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_WLM\_PLAN\_OPERATOR\_INFO 的相关内容与操作方法。
+keywords: [openGauss, GS\_WLM\_PLAN\_OPERATOR\_INFO, 数据库参考]
+---
+
 # GS\_WLM\_PLAN\_OPERATOR\_INFO
 
 GS\_WLM\_PLAN\_OPERATOR\_INFO系统表显示执行作业结束后计划算子级的相关的记录。此数据是从内核中转储到系统表中的数据。

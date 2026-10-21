@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STATEMENT\_WLMSTAT\_COMPLEX\_RUNTIME 的相关内容与操作方法。
+keywords: [openGauss, STATEMENT\_WLMSTAT\_COMPLEX\_RUNTIME, SQL参考]
+---
+
 # STATEMENT\_WLMSTAT\_COMPLEX\_RUNTIME
 
 STATEMENT\_WLMSTAT\_COMPLEX\_RUNTIME视图显示和当前用户执行作业正在运行时的负载管理相关信息。

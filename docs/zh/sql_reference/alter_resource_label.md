@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER RESOURCE LABEL 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER RESOURCE LABEL, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER RESOURCE LABEL
 
 ## 功能描述<a name="zh-cn_topic_0059778839_s878bf4f1569c4d2f87e056f26372448e"></a>

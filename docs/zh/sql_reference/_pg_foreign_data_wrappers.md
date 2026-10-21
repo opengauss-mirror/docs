@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss \_PG\_FOREIGN\_DATA\_WRAPPERS 的相关内容与操作方法。
+keywords: [openGauss, \_PG\_FOREIGN\_DATA\_WRAPPERS, SQL参考]
+---
+
 # \_PG\_FOREIGN\_DATA\_WRAPPERS
 
 显示外部数据封装器的信息。该视图只有sysadmin权限可以查看。

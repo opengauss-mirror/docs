@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_AUTH\_MEMBERS in openGauss.
+keywords: [openGauss, PG\_AUTH\_MEMBERS, database reference]
+---
+
 # PG\_AUTH\_MEMBERS<a name="EN-US_TOPIC_0289900518"></a>
 
 **PG\_AUTH\_MEMBERS**  records the membership between roles.

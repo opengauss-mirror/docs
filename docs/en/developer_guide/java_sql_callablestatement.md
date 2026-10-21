@@ -1,3 +1,8 @@
+---
+description: This document describes java.sql.CallableStatement in openGauss.
+keywords: [openGauss, java.sql.CallableStatement, development]
+---
+
 # java.sql.CallableStatement<a name="EN-US_TOPIC_0289900773"></a>
 
 This section describes  **java.sql.CallableStatement**, the API for executing the stored procedure.

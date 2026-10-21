@@ -1,3 +1,8 @@
+---
+description: This document describes JDBC Interface Reference in openGauss.
+keywords: [openGauss, JDBC Interface Reference, development]
+---
+
 # JDBC Interface Reference<a name="EN-US_TOPIC_0242371419"></a>
 
 This section describes common JDBC interfaces. For more interfaces, check JDK1.8 \(software package\) and JDBC 4.0.

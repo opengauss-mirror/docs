@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_OS\_RUNTIME in openGauss.
+keywords: [openGauss, GLOBAL\_OS\_RUNTIME, SQL]
+---
+
 # GLOBAL\_OS\_RUNTIME<a name="EN-US_TOPIC_0245374657"></a>
 
 **GLOBAL\_OS\_RUNTIME**  provides OS running status information about all normal nodes in openGauss.

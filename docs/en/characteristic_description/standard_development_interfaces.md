@@ -1,3 +1,8 @@
+---
+description: This document describes Standard Development Interfaces in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Standard Development Interfaces, features, Availability, Introduction]
+---
+
 # Standard Development Interfaces<a name="EN-US_TOPIC_0000001088406674"></a>
 
 ## Availability<a name="section663215"></a>

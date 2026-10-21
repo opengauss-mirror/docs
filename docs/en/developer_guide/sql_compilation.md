@@ -1,3 +1,8 @@
+---
+description: This document describes SQL Compilation in openGauss, covering topics such as DDL, Data Loading and Uninstalling.
+keywords: [openGauss, SQL Compilation, development, DDL, Data Loading and Uninstalling]
+---
+
 # SQL Compilation<a name="EN-US_TOPIC_0000001149508025"></a>
 
 ## DDL<a name="section60205875143313"></a>

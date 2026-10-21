@@ -1,3 +1,8 @@
+---
+description: This document describes \_PG\_FOREIGN\_SERVERS in openGauss.
+keywords: [openGauss, \_PG\_FOREIGN\_SERVERS, SQL]
+---
+
 # \_PG\_FOREIGN\_SERVERS<a name="EN-US_TOPIC_0310260668"></a>
 
 **\_PG\_FOREIGN\_SERVERS**  displays information about a foreign server. Only the sysadmin user has the permission to view this view.

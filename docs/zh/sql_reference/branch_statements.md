@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 分支语句 的相关内容，涵盖 语法、示例 等内容。
+keywords: [openGauss, 分支语句, SQL参考, 语法, 示例]
+---
+
 # 分支语句
 
 ## 语法<a name="zh-cn_topic_0237122235_zh-cn_topic_0059779327_sa0d157976d6d4848ae582a3adc20e356"></a>
@@ -5,12 +10,12 @@
 分支语句的语法请参见[图1](#zh-cn_topic_0237122235_zh-cn_topic_0059779327_fe2376535378e44c78c4e70078d0fb779)。
 
 **图 1**  case\_when::=<a name="zh-cn_topic_0237122235_zh-cn_topic_0059779327_fe2376535378e44c78c4e70078d0fb779"></a>  
-![](figures/case_when.png)
+![case when语法图](figures/case_when.png)
 
 when\_clause子句的语法图参见[图2](#zh-cn_topic_0237122235_zh-cn_topic_0059779327_f0b6779d008024e8fb5c2267d8d3bff14)。
 
 **图 2**  when\_clause::=<a name="zh-cn_topic_0237122235_zh-cn_topic_0059779327_f0b6779d008024e8fb5c2267d8d3bff14"></a>  
-![](figures/when_clause.png)
+![when clause语法图](figures/when_clause.png)
 
 参数说明：
 

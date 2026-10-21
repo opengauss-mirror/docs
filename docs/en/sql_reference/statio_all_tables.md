@@ -1,3 +1,8 @@
+---
+description: This document describes STATIO\_ALL\_TABLES in openGauss.
+keywords: [openGauss, STATIO\_ALL\_TABLES, SQL]
+---
+
 # STATIO\_ALL\_TABLES<a name="EN-US_TOPIC_0245374791"></a>
 
 **STATIO\_ALL\_TABLES**  contains one row for each table \(including TOAST tables\) in the current database, showing I/O statistics about specific tables.

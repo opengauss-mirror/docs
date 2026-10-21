@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE AGGREGATE in openGauss, covering topics such as Function, Syntax.
+keywords: [openGauss, CREATE AGGREGATE, SQL, Function, Syntax]
+---
+
 # CREATE AGGREGATE<a name="EN-US_TOPIC_0000001127460521"></a>
 
 ## Function<a name="section12436651105814"></a>

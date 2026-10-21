@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_TYPE in openGauss.
+keywords: [openGauss, PG\_TYPE, database reference]
+---
+
 # PG\_TYPE<a name="EN-US_TOPIC_0289901011"></a>
 
 **PG\_TYPE** stores information about data types.

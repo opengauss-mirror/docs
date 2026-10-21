@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_CANDIDATE\_STATUS 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_CANDIDATE\_STATUS, SQL参考]
+---
+
 # GLOBAL\_CANDIDATE\_STATUS
 
 GLOBAL\_CANDIDATE\_STATUS视图显示整个数据库所有实例候选buffer个数，buffer淘汰信息。

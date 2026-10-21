@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE TABLE PARTITION in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE TABLE PARTITION, SQL, Function, Precautions]
+---
+
 # CREATE TABLE PARTITION<a name="EN-US_TOPIC_0289900346"></a>
 
 ## Function<a name="en-us_topic_0283136653_en-us_topic_0237122119_section1163224811518"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss TRANSACTIONS\_RUNNING\_XACTS 的相关内容与操作方法。
+keywords: [openGauss, TRANSACTIONS\_RUNNING\_XACTS, SQL参考]
+---
+
 # TRANSACTIONS\_RUNNING\_XACTS
 
 显示当前节点运行事务的信息。

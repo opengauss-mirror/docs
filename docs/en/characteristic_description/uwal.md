@@ -1,3 +1,8 @@
+---
+description: This document describes UWAL in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, UWAL, features, Availability, Introduction]
+---
+
 # UWAL<a name="EN-US_TOPIC_0000001687210125"></a>
 
 ## Availability<a name="section14611198203513"></a>

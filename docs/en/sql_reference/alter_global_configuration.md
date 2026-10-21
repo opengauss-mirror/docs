@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER GLOBAL CONFIGURATION in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER GLOBAL CONFIGURATION, SQL, Function, Precautions]
+---
+
 # ALTER GLOBAL CONFIGURATION<a name="EN-US_TOPIC_0000001251302415"></a>
 
 ## Function<a name="en-us_topic_0283136791_en-us_topic_0237122191_en-us_topic_0059779163_s812131d8918641df9772c998b753f87e"></a>

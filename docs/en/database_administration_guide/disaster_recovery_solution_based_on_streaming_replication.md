@@ -1,3 +1,8 @@
+---
+description: This document describes Disaster Recovery Solution Based on Streaming Replication in openGauss, covering topics such as Overview, Specifications and Constraints.
+keywords: [openGauss, Disaster Recovery Solution Based on Streaming Replication, database administration, Overview, Specifications and Constraints]
+---
+
 # Disaster Recovery Solution Based on Streaming Replication
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:44:18.053Z pushedAt=2026-09-11T07:45:20.866Z -->

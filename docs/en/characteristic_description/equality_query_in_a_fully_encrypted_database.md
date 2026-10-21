@@ -1,3 +1,8 @@
+---
+description: This document describes Equality Query in a Fully-encrypted Database in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Equality Query in a Fully-encrypted Database, features, Availability, Introduction]
+---
+
 # Equality Query in a Fully-encrypted Database<a name="EN-US_TOPIC_0000001105235294"></a>
 
 ## Availability<a name="section17746747"></a>

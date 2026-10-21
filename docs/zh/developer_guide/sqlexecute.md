@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SQLExecute 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, SQLExecute, 开发指南, 功能描述, 原型]
+---
+
 # SQLExecute
 
 ## 功能描述<a name="zh-cn_topic_0238272892_zh-cn_topic_0237120422_zh-cn_topic_0059778182_sab94d410ef5f4a509e8d2881ec7373e7"></a>

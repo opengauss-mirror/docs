@@ -1,3 +1,8 @@
+---
+description: This document describes oGRecorder Primary-Standby Parameter Synchronization in openGauss, covering topics such as Feature Description, Feature Constraints.
+keywords: [openGauss, oGRecorder Primary-Standby Parameter Synchronization, tools and commands, Feature Description, Feature Constraints]
+---
+
 # oGRecorder Primary-Standby Parameter Synchronization
 
 ## Feature Description<a name="section16406154310471"></a>

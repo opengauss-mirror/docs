@@ -1,3 +1,8 @@
+---
+description: This document describes Adding and Removing Standby Nodes in openGauss, covering topics such as Availability, Feature Description.
+keywords: [openGauss, Adding and Removing Standby Nodes, database administration, Availability, Feature Description]
+---
+
 # Adding and Removing Standby Nodes
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:41:44.506Z pushedAt=2026-07-29T08:00:42.004Z -->

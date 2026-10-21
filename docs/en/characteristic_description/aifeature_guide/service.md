@@ -1,3 +1,8 @@
+---
+description: This document describes service in openGauss, covering topics such as Initializing the Configuration Directory, Starting a Service.
+keywords: [openGauss, service, features, Initializing the Configuration Directory, Starting a Service]
+---
+
 # service<a name="EN-US_TOPIC_0000001243876531"></a>
 
 This subcommand can be used to initialize the configuration directory and start and stop background tasks.

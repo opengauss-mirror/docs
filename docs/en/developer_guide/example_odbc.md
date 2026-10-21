@@ -1,3 +1,8 @@
+---
+description: This document describes Example in openGauss, covering topics such as Code for Common Functions \(1\), Code for Common Functions \(2\).
+keywords: [openGauss, Example, development, Code for Common Functions \(1\), Code for Common Functions \(2\)]
+---
+
 # Example<a name="EN-US_TOPIC_0242817904"></a>
 
 ## Code for Common Functions \(1\)<a name="en-us_topic_0237120410_en-us_topic_0059777697_s1f4a2c1a228a412193b28fb23d146e03"></a>

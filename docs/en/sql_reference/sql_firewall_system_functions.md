@@ -1,3 +1,8 @@
+---
+description: This document describes SQL Firewall System Functions in openGauss.
+keywords: [openGauss, SQL Firewall System Functions, SQL]
+---
+
 # SQL Firewall System Functions
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:29:05.254Z -->

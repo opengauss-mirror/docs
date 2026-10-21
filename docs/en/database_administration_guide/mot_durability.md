@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Durability in openGauss, covering topics such as MOT Logging – WAL Redo Log, MOT Logging Types.
+keywords: [openGauss, MOT Durability, database administration, MOT Logging – WAL Redo Log, MOT Logging Types]
+---
+
 # MOT Durability<a name="EN-US_TOPIC_0270171494"></a>
 
 Durability refers to long-term data protection \(also known as  _disk persistence_\). Durability means that stored data does not suffer from any kind of degradation or corruption, so that data is never lost or compromised. Durability ensures that data and the MOT engine are restored to a consistent state after a planned shutdown \(for example, for maintenance\) or an unplanned crash \(for example, a power failure\).

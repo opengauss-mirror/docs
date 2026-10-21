@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss RESET 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, RESET, SQL参考, 功能描述, 注意事项]
+---
+
 # RESET
 
 ## 功能描述<a name="zh-cn_topic_0283137385_zh-cn_topic_0237122178_zh-cn_topic_0059779097_sa3f93000a69d4ca8b8633a05032af243"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_CONFIG\_SETTINGS in openGauss.
+keywords: [openGauss, GLOBAL\_CONFIG\_SETTINGS, SQL]
+---
+
 # GLOBAL\_CONFIG\_SETTINGS<a name="EN-US_TOPIC_0245374837"></a>
 
 **GLOBAL\_CONFIG\_SETTINGS**  displays information about parameters of running databases on each node. 

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_STATIO\_ALL\_INDEXES 的相关内容与操作方法。
+keywords: [openGauss, PG\_STATIO\_ALL\_INDEXES, 数据库参考]
+---
+
 # PG\_STATIO\_ALL\_INDEXES
 
 PG\_STATIO\_ALL\_INDEXES视图将包含当前数据库中的每个索引行，显示特定索引的I/O的统计。

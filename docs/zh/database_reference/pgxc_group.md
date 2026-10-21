@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PGXC\_GROUP 的相关内容与操作方法。
+keywords: [openGauss, PGXC\_GROUP, 数据库参考]
+---
+
 # PGXC\_GROUP
 
 PGXC\_GROUP系统表存储节点组信息。PGXC\_GROUP系统表仅在分布式场景下有具体含义，openGauss只能查询表定义。

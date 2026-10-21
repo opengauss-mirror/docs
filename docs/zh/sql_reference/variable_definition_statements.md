@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 定义变量 的相关内容，涵盖 变量声明、变量作用域 等内容。
+keywords: [openGauss, 定义变量, SQL参考, 变量声明, 变量作用域]
+---
+
 # 定义变量
 
 介绍PL/SQL中变量的声明，以及该变量在代码中的作用域。
@@ -7,7 +12,7 @@
 变量声明语法请参见[图1](#zh-cn_topic_0283136825_zh-cn_topic_0237122221_zh-cn_topic_0059777427_f6cc941e0c136457aade3860fc682cbbc)。
 
 **图 1**  declare\_variable::=<a name="zh-cn_topic_0283136825_zh-cn_topic_0237122221_zh-cn_topic_0059777427_f6cc941e0c136457aade3860fc682cbbc"></a>  
-![](figures/declare_variable.png)
+![declare variable语法图](figures/declare_variable.png)
 
 对以上语法格式的解释如下：
 

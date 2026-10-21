@@ -1,3 +1,8 @@
+---
+description: This document describes VALUES in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, VALUES, SQL, Function, Precautions]
+---
+
 # VALUES<a name="EN-US_TOPIC_0289900362"></a>
 
 ## Function<a name="en-us_topic_0283137477_en-us_topic_0237122196_en-us_topic_0059779241_s25c2a01507274648bf05cbcb1dc418bf"></a>

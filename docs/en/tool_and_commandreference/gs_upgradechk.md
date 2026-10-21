@@ -1,3 +1,8 @@
+---
+description: This document describes gs_upgradechk in openGauss, covering topics such as Background, Constraints.
+keywords: [openGauss, gs_upgradechk, tools and commands, Background, Constraints]
+---
+
 # gs_upgradechk
 
 ## Background

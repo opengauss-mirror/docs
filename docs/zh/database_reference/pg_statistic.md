@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_STATISTIC 的相关内容与操作方法。
+keywords: [openGauss, PG\_STATISTIC, 数据库参考]
+---
+
 # PG\_STATISTIC
 
 PG\_STATISTIC系统表存储有关该数据库中表和索引列的统计数据。默认只有系统管理员权限才可以访问此系统表，普通用户需要授权才可以访问。

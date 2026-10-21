@@ -1,3 +1,8 @@
+---
+description: This document describes DBMind Mode in openGauss.
+keywords: [openGauss, DBMind Mode, features]
+---
+
 # DBMind Mode<a name="EN-US_TOPIC_0000001243843273"></a>
 
 You can run the  **gs\_dbmind**  command to invoke all functions of AI4DB. This command provides the following basic functions:

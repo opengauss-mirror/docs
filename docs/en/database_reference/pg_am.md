@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_AM in openGauss.
+keywords: [openGauss, PG\_AM, database reference]
+---
+
 # PG\_AM<a name="EN-US_TOPIC_0289900220"></a>
 
 **PG\_AM**  records information about index access methods. There is one row for each index access method supported by the system.

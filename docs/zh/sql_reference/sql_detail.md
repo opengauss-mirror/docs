@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SQL Detail 的相关内容与操作方法。
+keywords: [openGauss, SQL Detail, SQL参考]
+---
+
 # SQL Detail
 
 SQL Detail列名称及描述如下表所示。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_INSTANCE\_TIME 的相关内容与操作方法。
+keywords: [openGauss, GS\_INSTANCE\_TIME, 数据库参考]
+---
+
 # GS\_INSTANCE\_TIME
 
 提供当前集节点下的各种时间消耗信息，主要分为以下类型：

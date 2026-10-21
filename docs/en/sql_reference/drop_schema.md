@@ -1,3 +1,8 @@
+---
+description: This document describes DROP SCHEMA in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP SCHEMA, SQL, Function, Precautions]
+---
+
 # DROP SCHEMA<a name="EN-US_TOPIC_0289900224"></a>
 
 ## Function<a name="en-us_topic_0283137271_en-us_topic_0237122148_en-us_topic_0059778467_s13f49511137f4971b9f2c7f4b3ec109f"></a>

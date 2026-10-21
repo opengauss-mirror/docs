@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_FOREIGN\_SERVER in openGauss.
+keywords: [openGauss, PG\_FOREIGN\_SERVER, database reference]
+---
+
 # PG\_FOREIGN\_SERVER<a name="EN-US_TOPIC_0289900435"></a>
 
 **PG\_FOREIGN\_SERVER**  records foreign server definitions. A foreign server describes a source of external data, such as a remote server. Foreign servers are accessed via foreign-data wrappers. 

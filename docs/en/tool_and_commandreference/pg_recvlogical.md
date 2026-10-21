@@ -1,3 +1,8 @@
+---
+description: This document describes pg\_recvlogical in openGauss, covering topics such as Function, Syntax.
+keywords: [openGauss, pg\_recvlogical, tools and commands, Function, Syntax]
+---
+
 # pg\_recvlogical<a name="ZH-CN_TOPIC_0000001092048360"></a>
 
 ## Function<a name="section143231619112111"></a>

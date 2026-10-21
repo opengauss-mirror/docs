@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SELECT语句 的相关内容，涵盖 语法格式、参数说明 等内容。
+keywords: [openGauss, SELECT语句, SQL参考, 语法格式, 参数说明]
+---
+
 # SELECT语句
 
 SELECT语句用于从表或视图中取出数据，结果被存储在一个结果表中，称为结果集。

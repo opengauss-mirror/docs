@@ -1,3 +1,8 @@
+---
+description: This document describes DROP DIRECTORY in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP DIRECTORY, SQL, Function, Precautions]
+---
+
 # DROP DIRECTORY<a name="EN-US_TOPIC_0289900633"></a>
 
 ## Function<a name="en-us_topic_0283137028_en-us_topic_0237122136_en-us_topic_0059779050_s7810bb02b5b247fd92d22d7e328c870f"></a>

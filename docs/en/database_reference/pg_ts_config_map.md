@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_TS\_CONFIG\_MAP in openGauss.
+keywords: [openGauss, PG\_TS\_CONFIG\_MAP, database reference]
+---
+
 # PG\_TS\_CONFIG\_MAP<a name="EN-US_TOPIC_0289900785"></a>
 
 **PG\_TS\_CONFIG\_MAP**  contains entries showing which text search dictionaries should be consulted, and in what order, for each output token type of each text search configuration's parser.

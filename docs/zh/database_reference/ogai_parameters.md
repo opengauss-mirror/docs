@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss OGAI参数 的相关内容，涵盖 enable\_async\_ogai、ogai\.hybrid\_search\_ratio 等内容。
+keywords: [openGauss, OGAI参数, 数据库参考, enable\_async\_ogai, ogai\.hybrid\_search\_ratio]
+---
+
 # OGAI参数
 
 ## enable\_async\_ogai

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss COLUMNS 的相关内容与操作方法。
+keywords: [openGauss, COLUMNS, SQL参考]
+---
+
 # COLUMNS <a name="ZH-CN_TOPIC_0310260671"></a>
 
 存储列相关的信息。

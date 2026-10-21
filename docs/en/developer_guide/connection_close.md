@@ -1,3 +1,8 @@
+---
+description: This document describes connection.close\(\) in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, connection.close\(\), development, Function, Prototype]
+---
+
 # connection.close\(\)<a name="EN-US_TOPIC_0000001127310749"></a>
 
 ## Function<a name="section5708152714306"></a>

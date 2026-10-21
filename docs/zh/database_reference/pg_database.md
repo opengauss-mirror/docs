@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_DATABASE 的相关内容与操作方法。
+keywords: [openGauss, PG\_DATABASE, 数据库参考]
+---
+
 # PG\_DATABASE
 
 PG\_DATABASE系统表存储关于可用数据库的信息。

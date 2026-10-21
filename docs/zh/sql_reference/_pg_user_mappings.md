@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss \_PG\_USER\_MAPPINGS 的相关内容与操作方法。
+keywords: [openGauss, \_PG\_USER\_MAPPINGS, SQL参考]
+---
+
 # \_PG\_USER\_MAPPINGS
 
 存储从本地用户到远程的映射。该视图只有sysadmin权限可以查看。

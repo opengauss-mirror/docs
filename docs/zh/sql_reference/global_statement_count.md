@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_STATEMENT\_COUNT 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_STATEMENT\_COUNT, SQL参考]
+---
+
 # GLOBAL\_STATEMENT\_COUNT
 
 显示数据库各节点当前时刻执行的五类语句（SELECT、INSERT、UPDATE、DELETE、MERGE INTO）和（DDL、DML、DCL）统计信息。

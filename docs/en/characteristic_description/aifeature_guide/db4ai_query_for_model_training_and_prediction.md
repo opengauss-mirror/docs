@@ -1,3 +1,8 @@
+---
+description: This document describes DB4AI-Query for Model Training and Prediction in openGauss, covering topics such as Keyword Parsing, Developer Guide.
+keywords: [openGauss, DB4AI-Query for Model Training and Prediction, features, Keyword Parsing, Developer Guide]
+---
+
 # DB4AI-Query for Model Training and Prediction<a name="EN-US_TOPIC_0000001162739736"></a>
 
 The current version of openGauss supports the native DB4AI capability. By introducing native AI operators, openGauss simplifies the operation process and fully utilizes the optimization and execution capabilities of the database optimizer and executor to obtain the high-performance model training capability in the database. With a simpler model training and prediction process and higher performance, developers can focus on model tuning and data analysis in a shorter period of time, avoiding fragmented technology stacks and redundant code implementation.

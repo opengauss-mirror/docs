@@ -1,3 +1,8 @@
+---
+description: This document describes Global SysCache Parameters in openGauss, covering topics such as enable\_global\_syscache, global\_syscache\_threshold.
+keywords: [openGauss, Global SysCache Parameters, database reference, enable\_global\_syscache, global\_syscache\_threshold]
+---
+
 # Global SysCache Parameters<a name="EN-US_TOPIC_0000001242538051"></a>
 
 ## enable\_global\_syscache<a name="section97160555612"></a>

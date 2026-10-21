@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP OPERATOR FAMILY 的相关内容，涵盖 功能描述、语法格式 等内容。
+keywords: [openGauss, DROP OPERATOR FAMILY, SQL参考, 功能描述, 语法格式]
+---
+
 # DROP OPERATOR FAMILY
 
 ## 功能描述

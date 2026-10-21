@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 示例：常用操作 的相关内容，涵盖 示例1、示例2客户端内存占用过多解决 等内容。
+keywords: [openGauss, 示例：常用操作, 开发指南, 示例1, 示例2客户端内存占用过多解决]
+---
+
 # 示例：常用操作
 
 ## 示例1<a name="zh-cn_topic_0283136826_zh-cn_topic_0237120386_zh-cn_topic_0213179152_zh-cn_topic_0189251739_section8820452474"></a>

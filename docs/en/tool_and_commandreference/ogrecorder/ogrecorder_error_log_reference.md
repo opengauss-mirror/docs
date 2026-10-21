@@ -1,3 +1,8 @@
+---
+description: This document describes oGRecorder Error Log Reference in openGauss, covering topics such as File Operation Errors (2130 - 2229), Directory Operation Errors (2230 - 2280).
+keywords: [openGauss, oGRecorder Error Log Reference, tools and commands, File Operation Errors (2130 - 2229), Directory Operation Errors (2230 - 2280)]
+---
+
 # oGRecorder Error Log Reference
 
 ## File Operation Errors (2130 - 2229)

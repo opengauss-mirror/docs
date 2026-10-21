@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP COLUMN ENCRYPTION KEY 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP COLUMN ENCRYPTION KEY, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP COLUMN ENCRYPTION KEY
 
 ## 功能描述<a name="section77761618077"></a>

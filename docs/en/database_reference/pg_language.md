@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_LANGUAGE in openGauss.
+keywords: [openGauss, PG\_LANGUAGE, database reference]
+---
+
 # PG\_LANGUAGE<a name="EN-US_TOPIC_0289900930"></a>
 
 **PG\_LANGUAGE**  registers programming languages. You can use them and interfaces to write functions or stored procedures.

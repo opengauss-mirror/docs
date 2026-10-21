@@ -1,3 +1,8 @@
+---
+description: This document describes Materialized View Log in openGauss, covering topics such as Overview, Usage.
+keywords: [openGauss, Materialized View Log, SQL, Overview, Usage]
+---
+
 # Materialized View Log
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:23:12.902Z -->

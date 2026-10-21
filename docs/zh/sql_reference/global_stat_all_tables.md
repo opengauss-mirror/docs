@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_STAT\_ALL\_TABLES 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_STAT\_ALL\_TABLES, SQL参考]
+---
+
 # GLOBAL\_STAT\_ALL\_TABLES
 
 得到各节点数据中每个表的一行（包括TOAST表）的统计信息。

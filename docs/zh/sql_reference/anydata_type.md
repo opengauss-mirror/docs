@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ANYDATA类型 的相关内容，涵盖 规格描述、ANYTYPE 等内容。
+keywords: [openGauss, ANYDATA类型, SQL参考, 规格描述, ANYTYPE]
+---
+
 # ANYDATA类型
 
 ANYTYPE、ANYDATA 和 ANYDATASET 是用于处理不确定数据类型的一组类型，包含类型的实际数据，以及对该类型的描述，可以用于动态地处理各种数据类型。

@@ -1,3 +1,8 @@
+---
+description: This document describes Automatic Job Retry upon Failure in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Automatic Job Retry upon Failure, features, Availability, Introduction]
+---
+
 # Automatic Job Retry upon Failure<a name="EN-US_TOPIC_0000001135403985"></a>
 
 ## Availability<a name="section57017810"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Product Features in openGauss.
+keywords: [openGauss, Product Features, product overview]
+---
+
 # Product Features<a name="EN-US_TOPIC_0294809831"></a>
 
 openGauss features high performance, availability, security, and maintainability.

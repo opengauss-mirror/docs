@@ -1,3 +1,8 @@
+---
+description: This document describes Support for Advanced Analysis Functions in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Support for Advanced Analysis Functions, features, Availability, Introduction]
+---
+
 # Support for Advanced Analysis Functions<a name="EN-US_TOPIC_0000001135403981"></a>
 
 ## Availability<a name="section5309649"></a>

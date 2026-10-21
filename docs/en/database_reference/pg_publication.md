@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_PUBLICATION in openGauss.
+keywords: [openGauss, PG\_PUBLICATION, database reference]
+---
+
 # PG\_PUBLICATION<a name="EN-US_TOPIC_0000001198437518"></a>
 
 **PG\_PUBLICATION**  contains all publications created in the current database.

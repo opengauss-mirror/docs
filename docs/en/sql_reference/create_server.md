@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE SERVER in openGauss, covering topics such as Function, Syntax.
+keywords: [openGauss, CREATE SERVER, SQL, Function, Syntax]
+---
+
 # CREATE SERVER<a name="EN-US_TOPIC_0289899991"></a>
 
 ## Function<a name="en-us_topic_0283137586_section1087614114391"></a>

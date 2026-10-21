@@ -1,3 +1,8 @@
+---
+description: This document describes High-Risk Operations in openGauss.
+keywords: [openGauss, High-Risk Operations, database O&M]
+---
+
 # High-Risk Operations<a name="EN-US_TOPIC_0289897012"></a>
 
 Strictly follow the operation guide and avoid the following risky operations:

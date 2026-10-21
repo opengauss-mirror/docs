@@ -1,3 +1,8 @@
+---
+description: This document describes Data Type Conversion in openGauss.
+keywords: [openGauss, Data Type Conversion, SQL]
+---
+
 # Data Type Conversion<a name="EN-US_TOPIC_0245374602"></a>
 
 Certain data types in the database support implicit data type conversions, such as assignments and parameters called by functions. For other data types, you can use the type conversion functions provided by openGauss, such as the  **CAST**  function, to forcibly convert them.

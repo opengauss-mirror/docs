@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 字符集与字符序 的相关内容，涵盖 支持的字符集、支持的字符序 等内容。
+keywords: [openGauss, 字符集与字符序, SQL参考, 支持的字符集, 支持的字符序]
+---
+
 # 字符集与字符序
 
 字符集(Character Set)是字符的编码规则，字符序(Collation)是字符的排序规则，本章主要对 openGauss B模式和 openGauss D模式（即sql\_compatibility = 'B' 和 'D'）下的字符集、字符序进行介绍，以下介绍的字符集、字符序规则和语法仅在B和D模式下支持。

@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_SESSION\_STAT in openGauss.
+keywords: [openGauss, GS\_SESSION\_STAT, database reference]
+---
+
 # GS\_SESSION\_STAT<a name="EN-US_TOPIC_0289899893"></a>
 
 **GS\_SESSION\_STAT**  collects statistics about session states based on session threads or the  **AutoVacuum**  thread.

@@ -1,3 +1,8 @@
+---
+description: This document describes Resource Pooling Functions in openGauss.
+keywords: [openGauss, Resource Pooling Functions, SQL]
+---
+
 # Resource Pooling Functions<a name="ZH-CN_TOPIC_0289900393"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:27:06.980Z -->

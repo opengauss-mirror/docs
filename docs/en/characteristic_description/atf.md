@@ -1,3 +1,8 @@
+---
+description: This document describes openGauss Application Transparent Failover (ATF) in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, openGauss Application Transparent Failover (ATF), features, Availability, Feature Overview]
+---
+
 # openGauss Application Transparent Failover (ATF)
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:05:59.987Z pushedAt=2026-09-22T11:12:32.618Z -->

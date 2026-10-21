@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss BM25全文检索索引参数 的相关内容，涵盖 enable_bm25_taat、bm25_topk 等内容。
+keywords: [openGauss, BM25全文检索索引参数, 数据库参考, enable_bm25_taat, bm25_topk]
+---
+
 # BM25全文检索索引参数
 
 ## enable_bm25_taat<a name="section14941640131"></a>

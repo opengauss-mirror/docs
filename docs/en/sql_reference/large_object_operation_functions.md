@@ -1,3 +1,8 @@
+---
+description: This document describes Large Object Operation Functions in openGauss, covering topics such as Notes, Client-side Functions.
+keywords: [openGauss, Large Object Operation Functions, SQL, Notes, Client-side Functions]
+---
+
 # Large Object Operation Functions
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:23:51.497Z -->

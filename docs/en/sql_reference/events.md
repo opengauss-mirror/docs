@@ -1,3 +1,8 @@
+---
+description: This document describes EVENTS in openGauss.
+keywords: [openGauss, EVENTS, SQL]
+---
+
 # EVENTS <a name="ZH-CN_TOPIC_0310260671"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:22:06.794Z -->

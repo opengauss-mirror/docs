@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ABORT 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ABORT, SQL参考, 功能描述, 注意事项]
+---
+
 # ABORT
 
 ## 功能描述<a name="zh-cn_topic_0283136750_zh-cn_topic_0237122053_zh-cn_topic_0059778271_s35ca23dd889c479da90f14c150c52f4b"></a>

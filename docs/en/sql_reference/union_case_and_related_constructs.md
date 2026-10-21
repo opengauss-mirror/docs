@@ -1,3 +1,8 @@
+---
+description: This document describes UNION, CASE, and Related Constructs in openGauss, covering topics such as Type Resolution for UNION, CASE, and Related Constructs, Type Resolution for CASE and COALESCE in TD Compatibility Type.
+keywords: [openGauss, UNION, CASE, and Related Constructs, SQL]
+---
+
 # UNION, CASE, and Related Constructs<a name="EN-US_TOPIC_0289900690"></a>
 
 SQL  **UNION**  constructs must match up possibly dissimilar types to become a single result set. The resolution algorithm is applied separately to each output column of a union query. The  **INTERSECT**  and  **EXCEPT**  construct resolve dissimilar types in the same way as  **UNION**. The  **CASE**,  **ARRAY**,  **VALUES**,  **GREATEST**  and  **LEAST**  constructs use the identical algorithm to match up their component expressions and select a result data type.
@@ -49,7 +54,7 @@ Note 3:
 
 The following figure shows the supported implicit type conversions when the  **set sql\_beta\_feature = 'a\_style\_coerce';**  parameter is enabled in ORA compatibility mode.**\\**  indicates that conversion is not required,  **yes**  indicates that conversion is supported, and blank indicates that conversion is not supported.
 
-![](figures/decode_type.png)
+![Type Resolution for CASE in ORA Compatibility Type diagram](figures/decode_type.png)
 
 ## Examples<a name="en-us_topic_0283136625_en-us_topic_0237122011_en-us_topic_0059779260_sb48a6ac8819342588bbdeeb006db477e"></a>
 

@@ -1,3 +1,8 @@
+---
+description: This document describes Installation Process in openGauss.
+keywords: [openGauss, Installation Process, installation]
+---
+
 # Installation Process<a name="EN-US_TOPIC_0249784563"></a>
 
 This section describes the openGauss installation process.
@@ -5,7 +10,7 @@ This section describes the openGauss installation process.
 [Figure 1](#fig18264185162412)  shows the process for installing openGauss.
 
 **Figure  1**  Installation process<a name="fig18264185162412"></a>  
-<img src="figures/installation-process.png" title="installation-process" style="zoom: 33%;" />
+<img src="figures/installation-process.png" alt="Installation process" title="installation-process" style="zoom: 33%;" />
 
 **Table  1**  Installation process description
 

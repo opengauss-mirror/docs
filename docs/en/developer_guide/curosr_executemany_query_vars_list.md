@@ -1,3 +1,8 @@
+---
+description: This document describes curosr.executemany\(query,vars\_list\) in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, curosr.executemany\(query, vars\_list\), development, Function]
+---
+
 # curosr.executemany\(query,vars\_list\)<a name="EN-US_TOPIC_0000001080211184"></a>
 
 ## Function<a name="section5708152714306"></a>

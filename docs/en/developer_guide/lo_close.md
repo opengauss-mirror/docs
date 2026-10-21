@@ -1,3 +1,8 @@
+---
+description: This document describes lo_close in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, lo_close, development, Function, Prototype]
+---
+
 # lo_close
 
 ## Function<a name="en-us_topic_0241735622_section696285173723"></a>

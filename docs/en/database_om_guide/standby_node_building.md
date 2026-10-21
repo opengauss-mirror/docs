@@ -1,3 +1,8 @@
+---
+description: This document describes Support for Standby-to-Standby Build in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Support for Standby-to-Standby Build, database O&M, Availability, Introduction]
+---
+
 # Support for Standby-to-Standby Build
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-14T08:04:51.683Z -->

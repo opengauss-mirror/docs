@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_SESSION\_MEMORY 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_SESSION\_MEMORY, SQL参考]
+---
+
 # GLOBAL\_SESSION\_MEMORY
 
 统计各节点的Session级别的内存使用情况，包含执行作业在数据节点上openGauss线程和Stream线程分配的所有内存，单位为MB。

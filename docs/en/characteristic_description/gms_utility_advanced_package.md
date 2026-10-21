@@ -1,3 +1,8 @@
+---
+description: This document describes GMS_UTILITY Advanced Package in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, GMS_UTILITY Advanced Package, features, Availability, Feature Overview]
+---
+
 # GMS_UTILITY Advanced Package
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:17:44.755Z pushedAt=2026-09-22T11:12:32.659Z -->

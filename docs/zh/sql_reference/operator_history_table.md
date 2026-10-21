@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss OPERATOR\_HISTORY\_TABLE 的相关内容与操作方法。
+keywords: [openGauss, OPERATOR\_HISTORY\_TABLE, SQL参考]
+---
+
 # OPERATOR\_HISTORY\_TABLE
 
 OPERATOR\_HISTORY\_TABLE系统表显示执行作业结束后的算子相关的记录。此数据是从内核中转储到系统表中的数据。

@@ -1,3 +1,8 @@
+---
+description: This document describes Ultimate RTO in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Ultimate RTO, database O&M, Availability, Introduction]
+---
+
 # Ultimate RTO
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-14T08:05:02.662Z -->

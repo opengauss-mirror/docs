@@ -1,3 +1,8 @@
+---
+description: This document describes Materialized View in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Materialized View, features, Availability, Introduction]
+---
+
 # Materialized View<a name="EN-US_TOPIC_0000001088566338"></a>
 
 ## Availability<a name="section1136213124018"></a>

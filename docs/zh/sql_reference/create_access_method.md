@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE ACCESS METHOD 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE ACCESS METHOD, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE ACCESS METHOD
 
 ## 功能描述<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s0867185fef0f4a228532d432b598cb26"></a>

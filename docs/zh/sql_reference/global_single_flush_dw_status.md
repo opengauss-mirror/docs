@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_SINGLE\_FLUSH\_DW\_STATUS 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_SINGLE\_FLUSH\_DW\_STATUS, SQL参考]
+---
+
 # GLOBAL\_SINGLE\_FLUSH\_DW\_STATUS
 
 GLOBAL\_SINGLE\_FLUSH\_DW\_STATUS视图显示数据库所有实例单页面淘汰双写文件信息。展示内容中，/前是第一个版本双写文件刷页情况，/后是第二个版本双写文件刷页情况。

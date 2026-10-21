@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_CANDIDATE\_STATUS in openGauss.
+keywords: [openGauss, GLOBAL\_CANDIDATE\_STATUS, SQL]
+---
+
 # GLOBAL\_CANDIDATE\_STATUS<a name="EN-US_TOPIC_0000001150694716"></a>
 
 **GLOBAL\_CANDIDATE\_STATUS**  displays the number of candidate buffers and buffer eviction information of all instances in the database.

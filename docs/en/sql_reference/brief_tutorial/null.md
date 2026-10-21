@@ -1,3 +1,8 @@
+---
+description: This document describes NULL in openGauss, covering topics such as IS NOT NULL, IS NULL.
+keywords: [openGauss, NULL, SQL, IS NOT NULL, IS NULL]
+---
+
 # NULL<a name="EN-US_TOPIC_0000001180098774"></a>
 
 **NULL**  indicates unknown data.  **NULL**  and  **0**  cannot be compared because they are not equivalent to each other.

@@ -1,3 +1,8 @@
+---
+description: This document describes gs_checkse in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, gs_checkse, tools and commands, Background, Prerequisites]
+---
+
 # gs_checkse
 
 ## Background<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_section39821515163211"></a>

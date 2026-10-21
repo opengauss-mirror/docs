@@ -1,3 +1,8 @@
+---
+description: This document describes FAQ in openGauss, covering topics such as 4.1 FastAPI Parameter Type Auto-Conversion Issue, 4.2 Sensitive Information Output Issue.
+keywords: [openGauss, FAQ, features, 4.1 FastAPI Parameter Type Auto-Conversion Issue, 4.2 Sensitive Information Output Issue]
+---
+
 # FAQ<a name="ZH-CN_TOPIC_0000002293246437"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T01:52:48.292Z -->

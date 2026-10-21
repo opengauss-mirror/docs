@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 约束设计 的相关内容，涵盖 DEFAULT和NULL约束、局部聚簇 等内容。
+keywords: [openGauss, 约束设计, 开发指南, DEFAULT和NULL约束, 局部聚簇]
+---
+
 # 约束设计
 
 ## DEFAULT和NULL约束<a name="section555838816718"></a>

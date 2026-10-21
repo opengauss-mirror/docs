@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss \_PG\_FOREIGN\_SERVERS 的相关内容与操作方法。
+keywords: [openGauss, \_PG\_FOREIGN\_SERVERS, SQL参考]
+---
+
 # \_PG\_FOREIGN\_SERVERS
 
 显示外部服务器的信息。该视图只有sysadmin权限可以查看。

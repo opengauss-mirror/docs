@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 物化视图 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 物化视图, 特性描述, 可获得性, 特性简介]
+---
+
 # 物化视图
 
 ## 可获得性<a name="section1136213124018"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 产品描述 的相关内容，涵盖 背景、使用场景 等内容。
+keywords: [openGauss, 产品描述, 特性描述, 背景, 使用场景]
+---
+
 # 产品描述<a name="ZH-CN_TOPIC_0000002293119521"></a>
 
 ## 背景<a name="section182372119558"></a>

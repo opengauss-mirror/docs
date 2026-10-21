@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_STAT\_XACT\_USER\_FUNCTIONS 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_STAT\_XACT\_USER\_FUNCTIONS, SQL参考]
+---
+
 # GLOBAL\_STAT\_XACT\_USER\_FUNCTIONS
 
 视图包含各节点本事务内函数执行的统计信息。

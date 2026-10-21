@@ -1,3 +1,8 @@
+---
+description: This document describes openGauss Multi-Level Cache Management Parameters in openGauss, covering topics such as enable\_nvm, nvm\_buffers.
+keywords: [openGauss, openGauss Multi-Level Cache Management Parameters, database reference, enable\_nvm, nvm\_buffers]
+---
+
 # openGauss Multi-Level Cache Management Parameters
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:44:55.737Z -->

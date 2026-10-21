@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs\_checkperf 的相关内容，涵盖 背景信息、前提条件 等内容。
+keywords: [openGauss, gs\_checkperf, 工具与命令参考, 背景信息, 前提条件]
+---
+
 # gs\_checkperf
 
 ## 背景信息<a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_section1646074516325"></a>

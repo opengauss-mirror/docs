@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 备服务器 的相关内容，涵盖 hot\_standby、max\_standby\_base\_page\_size 等内容。
+keywords: [openGauss, 备服务器, 数据库参考, hot\_standby, max\_standby\_base\_page\_size]
+---
+
 # 备服务器
 
 ## hot\_standby<a name="zh-cn_topic_0283136835_zh-cn_topic_0237124714_zh-cn_topic_0059778071_sa43017102b08472cb160e9f856e664bd"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Appendix in openGauss.
+keywords: [openGauss, Appendix, features]
+---
+
 # Appendix<a name="ZH-CN_TOPIC_0000002293246449"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T01:47:41.075Z -->

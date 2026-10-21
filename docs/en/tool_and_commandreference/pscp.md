@@ -1,3 +1,8 @@
+---
+description: This document describes pscp in openGauss, covering topics such as Basic Function, Syntax.
+keywords: [openGauss, pscp, tools and commands, Basic Function, Syntax]
+---
+
 # pscp<a name="EN-US_TOPIC_0000001197541735"></a>
 
 ## Basic Function<a name="section1540721571112"></a>

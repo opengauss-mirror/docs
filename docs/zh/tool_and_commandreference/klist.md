@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss klist 的相关内容，涵盖 功能介绍、参数说明 等内容。
+keywords: [openGauss, klist, 工具与命令参考, 功能介绍, 参数说明]
+---
+
 # klist
 
 ## 功能介绍<a name="zh-cn_topic_0237152431_section10172172474817"></a>

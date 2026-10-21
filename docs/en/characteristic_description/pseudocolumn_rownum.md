@@ -1,3 +1,8 @@
+---
+description: This document describes Pseudocolumn ROWNUM in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Pseudocolumn ROWNUM, features, Availability, Introduction]
+---
+
 # Pseudocolumn ROWNUM<a name="EN-US_TOPIC_0000001138590191"></a>
 
 ## Availability<a name="section56086982"></a>

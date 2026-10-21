@@ -1,3 +1,8 @@
+---
+description: This document describes DBMind Installation and Deployment in openGauss, covering topics such as 1. Installation Preparation, 2. Installing DBMind.
+keywords: [openGauss, DBMind Installation and Deployment, features, 1. Installation Preparation, 2. Installing DBMind]
+---
+
 # DBMind Installation and Deployment
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T01:50:34.300Z -->

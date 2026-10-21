@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs\_collector工具支持收集的系统表和视图列表 的相关内容与操作方法。
+keywords: [openGauss, gs\_collector工具支持收集的系统表和视图列表, 工具与命令参考]
+---
+
 # gs\_collector工具支持收集的系统表和视图列表
 
 **表 1**  gs\_collector工具支持收集的系统表和视图列表

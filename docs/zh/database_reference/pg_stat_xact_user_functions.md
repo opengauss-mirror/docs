@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_STAT\_XACT\_USER\_FUNCTIONS 的相关内容与操作方法。
+keywords: [openGauss, PG\_STAT\_XACT\_USER\_FUNCTIONS, 数据库参考]
+---
+
 # PG\_STAT\_XACT\_USER\_FUNCTIONS
 
 PG\_STAT\_XACT\_USER\_FUNCTIONS视图包含每个函数的执行的统计信息。

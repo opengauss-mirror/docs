@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 返回语句 的相关内容，涵盖 RETURN、RETURN NEXT及RETURN QUERY 等内容。
+keywords: [openGauss, 返回语句, SQL参考, RETURN, RETURN NEXT及RETURN QUERY]
+---
+
 # 返回语句
 
 openGauss提供两种方式返回数据：RETURN或RETURN NEXT及RETURN QUERY。其中，RETURN NEXT和RETURN QUERY只适用于函数，不适用存储过程。
@@ -9,7 +14,7 @@ openGauss提供两种方式返回数据：RETURN或RETURN NEXT及RETURN QUERY。
 返回语句的语法请参见[图1](#zh-cn_topic_0237122231_zh-cn_topic_0059778007_f7ff63e01e2a840c69a1c17b91e7dc3eb)。
 
 **图 1**  return\_clause::=<a name="zh-cn_topic_0237122231_zh-cn_topic_0059778007_f7ff63e01e2a840c69a1c17b91e7dc3eb"></a>  
-![](figures/return_clause.jpg)
+![return clause语法图](figures/return_clause.jpg)
 
 对以上语法的解释如下：
 
@@ -27,11 +32,11 @@ openGauss提供两种方式返回数据：RETURN或RETURN NEXT及RETURN QUERY。
 
 return\_next\_clause::=
 
-![](figures/zh-cn_image_0253403489.png)
+![语法示意图](figures/zh-cn_image_0253403489.png)
 
 return\_query\_clause::=
 
-![](figures/zh-cn_image_0253403490.png)
+![语法示意图](figures/zh-cn_image_0253403490.png)
 
 对以上语法的解释如下：
 
@@ -93,7 +98,7 @@ openGauss=# call fun_for_return_query();
 
 pipe_row_clause::=
 
-![](figures/zh-cn-pipe_row.png)
+![语法示意图](figures/zh-cn-pipe_row.png)
 
 对以上语法的解释如下：
 

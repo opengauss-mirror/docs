@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 其他优化器选项 的相关内容，涵盖 explain\_dna\_file、explain\_perf\_mode 等内容。
+keywords: [openGauss, 其他优化器选项, 数据库参考, explain\_dna\_file, explain\_perf\_mode]
+---
+
 # 其他优化器选项
 
 ## explain\_dna\_file<a name="zh-cn_topic_0283137548_zh-cn_topic_0237124743_zh-cn_topic_0059778871_s1304d3e4a6f74ad188b804c55313fb69"></a>

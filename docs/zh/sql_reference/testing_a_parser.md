@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 解析器测试 的相关内容与操作方法。
+keywords: [openGauss, 解析器测试, SQL参考]
+---
+
 # 解析器测试
 
 函数ts\_parse可以直接测试文本搜索解析器。

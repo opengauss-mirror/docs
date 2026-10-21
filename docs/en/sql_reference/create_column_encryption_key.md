@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE COLUMN ENCRYPTION KEY in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE COLUMN ENCRYPTION KEY, SQL, Function, Precautions]
+---
+
 # CREATE COLUMN ENCRYPTION KEY<a name="EN-US_TOPIC_0294528089"></a>
 
 ## Function<a name="section1020475817135"></a>

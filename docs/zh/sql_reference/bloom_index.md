@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss BLOOM 的相关内容，涵盖 1. 介绍、2. 参数 等内容。
+keywords: [openGauss, BLOOM, SQL参考, 1. 介绍, 2. 参数]
+---
+
 # BLOOM
 
 ## 1. 介绍

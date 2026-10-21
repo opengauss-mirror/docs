@@ -1,3 +1,8 @@
+---
+description: This document describes PROC Coverage Schema in openGauss.
+keywords: [openGauss, PROC Coverage Schema, SQL]
+---
+
 # PROC Coverage Schema
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:25:22.328Z -->

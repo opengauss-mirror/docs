@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss java.sql.Statement 的相关内容与操作方法。
+keywords: [openGauss, java.sql.Statement, 开发指南]
+---
+
 # java.sql.Statement
 
 java.sql.Statement是SQL语句接口。

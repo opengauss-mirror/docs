@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_WLM\_STATISTICS in openGauss.
+keywords: [openGauss, PG\_WLM\_STATISTICS, database reference]
+---
+
 # PG\_WLM\_STATISTICS<a name="EN-US_TOPIC_0000001105362250"></a>
 
 **PG\_WLM\_STATISTICS**  displays information about workload management after the task is complete or the exception has been handled. Only the user with sysadmin permission can query this view.

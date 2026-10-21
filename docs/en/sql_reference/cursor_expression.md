@@ -1,3 +1,8 @@
+---
+description: This document describes Cursor Expression in openGauss.
+keywords: [openGauss, Cursor Expression, SQL]
+---
+
 # Cursor Expression
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:20:15.735Z -->

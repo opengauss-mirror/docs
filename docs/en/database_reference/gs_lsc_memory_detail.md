@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_LSC\_MEMORY\_DETAIL in openGauss.
+keywords: [openGauss, GS\_LSC\_MEMORY\_DETAIL, database reference]
+---
+
 # GS\_LSC\_MEMORY\_DETAIL<a name="EN-US_TOPIC_0000001242540033"></a>
 
 **GS\_LSC\_MEMORY\_DETAIL**  collects statistics about the local SysCache memory usage of all threads based on the MemoryContext node. The statistics are available only when GSC is enabled.

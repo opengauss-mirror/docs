@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_COLLATION 的相关内容与操作方法。
+keywords: [openGauss, PG\_COLLATION, 数据库参考]
+---
+
 # PG\_COLLATION
 
 PG\_COLLATION系统表描述可用的排序规则，本质上从一个SQL名称映射到操作系统本地类别。

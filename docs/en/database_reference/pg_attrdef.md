@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_ATTRDEF in openGauss.
+keywords: [openGauss, PG\_ATTRDEF, database reference]
+---
+
 # PG\_ATTRDEF<a name="EN-US_TOPIC_0289900516"></a>
 
 **PG\_ATTRDEF**  records default values of columns.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Host Disk IO 的相关内容与操作方法。
+keywords: [openGauss, Host Disk IO, SQL参考]
+---
+
 # Host Disk IO
 
 Host Disk IO列名称及描述如下表所示。

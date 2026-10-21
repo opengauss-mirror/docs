@@ -1,3 +1,8 @@
+---
+description: This document describes cursor.fetchall\(\) in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, cursor.fetchall\(\), development, Function, Prototype]
+---
+
 # cursor.fetchall\(\)<a name="EN-US_TOPIC_0000001080051586"></a>
 
 ## Function<a name="section5708152714306"></a>

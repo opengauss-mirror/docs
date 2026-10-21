@@ -1,3 +1,8 @@
+---
+description: This document describes Preparing for and Checking the Upgrade in openGauss, covering topics such as Upgrade Preparation Checklist, Collecting Node Information.
+keywords: [openGauss, Preparing for and Checking the Upgrade, database O&M, Upgrade Preparation Checklist, Collecting Node Information]
+---
+
 # Preparing for and Checking the Upgrade<a name="EN-US_TOPIC_0305491450"></a>
 
 This section describes preparations before the upgrade.

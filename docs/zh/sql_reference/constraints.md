@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 约束 的相关内容，涵盖 NOT NULL约束、UNIQUE约束 等内容。
+keywords: [openGauss, 约束, SQL参考, NOT NULL约束, UNIQUE约束]
+---
+
 # 约束
 
 约束子句用于声明约束，新行或者更新的行必须满足这些约束才能成功插入或更新。如果存在违反约束的数据行为，行为会被约束终止。

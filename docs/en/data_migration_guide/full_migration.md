@@ -1,3 +1,8 @@
+---
+description: This document describes Full Migration in openGauss, covering topics such as Function Description, Feature Advantages.
+keywords: [openGauss, Full Migration, data migration, Function Description, Feature Advantages]
+---
+
 # Full Migration<a name="EN-US_TOPIC_0000001397932673"></a>
 
 ## Function Description <a name="section051261814117"></a>

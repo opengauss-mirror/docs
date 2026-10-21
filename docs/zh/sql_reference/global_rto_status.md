@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss global\_rto\_status 的相关内容与操作方法。
+keywords: [openGauss, global\_rto\_status, SQL参考]
+---
+
 # global\_rto\_status
 
 global\_rto\_status视图显示关于主机和备机的日志流控信息（本节点除外、备DN上不可使用）。

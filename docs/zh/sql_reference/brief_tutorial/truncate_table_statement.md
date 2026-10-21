@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss TRUNCATE TABLE语句 的相关内容，涵盖 语法格式、参数说明 等内容。
+keywords: [openGauss, TRUNCATE TABLE语句, SQL参考, 语法格式, 参数说明]
+---
+
 # TRUNCATE TABLE语句
 
 清理表数据，TRUNCATE TABLE用于删除表的数据，但不删除表结构。也可以用DROP TABLE删除表，但是这个命令会连表的结构一起删除，如果想插入数据，需要重新建立这张表。

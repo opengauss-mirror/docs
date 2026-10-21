@@ -1,3 +1,8 @@
+---
+description: This document describes System Performance Snapshot in openGauss, covering topics such as enable\_wdr\_snapshot, wdr\_snapshot\_retention\_days.
+keywords: [openGauss, System Performance Snapshot, database reference, enable\_wdr\_snapshot, wdr\_snapshot\_retention\_days]
+---
+
 # System Performance Snapshot<a name="EN-US_TOPIC_0289901018"></a>
 
 ## enable\_wdr\_snapshot<a name="en-us_topic_0283137284_en-us_topic_0237124757_section983311682019"></a>

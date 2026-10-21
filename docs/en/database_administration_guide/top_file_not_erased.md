@@ -1,3 +1,8 @@
+---
+description: This document describes Header File Not Erased in openGauss, covering topics such as Symptoms, Cause.
+keywords: [openGauss, Header File Not Erased, database administration, Symptoms, Cause]
+---
+
 # Header File Not Erased
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:47:16.791Z pushedAt=2026-09-11T11:59:34.594Z -->

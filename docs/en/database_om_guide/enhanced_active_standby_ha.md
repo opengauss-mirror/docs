@@ -1,3 +1,8 @@
+---
+description: This document describes Enhanced Primary/Standby High Availability in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Enhanced Primary/Standby High Availability, database O&M, Availability, Introduction]
+---
+
 # Enhanced Primary/Standby High Availability
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-14T08:03:52.206Z -->

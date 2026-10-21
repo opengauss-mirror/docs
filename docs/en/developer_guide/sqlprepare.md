@@ -1,3 +1,8 @@
+---
+description: This document describes SQLPrepare in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, SQLPrepare, development, Function, Prototype]
+---
+
 # SQLPrepare<a name="EN-US_TOPIC_0242371452"></a>
 
 ## Function<a name="en-us_topic_0238272898_en-us_topic_0237120428_en-us_topic_0059779125_s0d00013620f7443fb1bb6deca04314c8"></a>

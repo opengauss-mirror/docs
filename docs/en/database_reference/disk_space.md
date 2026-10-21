@@ -1,3 +1,8 @@
+---
+description: This document describes Disk Space in openGauss, covering topics such as sql\_use\_spacelimit, temp\_file\_limit.
+keywords: [openGauss, Disk Space, database reference, sql\_use\_spacelimit, temp\_file\_limit]
+---
+
 # Disk Space<a name="EN-US_TOPIC_0289899840"></a>
 
 This section describes the disk space parameters, which are used to set limits on the disk space for storing temporary files.

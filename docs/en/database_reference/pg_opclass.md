@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_OPCLASS in openGauss.
+keywords: [openGauss, PG\_OPCLASS, database reference]
+---
+
 # PG\_OPCLASS<a name="EN-US_TOPIC_0289899823"></a>
 
 **PG\_OPCLASS**  defines index access method operator classes.

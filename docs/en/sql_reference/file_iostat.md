@@ -1,3 +1,8 @@
+---
+description: This document describes FILE\_IOSTAT in openGauss.
+keywords: [openGauss, FILE\_IOSTAT, SQL]
+---
+
 # FILE\_IOSTAT<a name="EN-US_TOPIC_0245374670"></a>
 
 **FILE\_IOSTAT**  records statistics about data file I/Os to indicate I/O performance and detect performance problems such as abnormal I/O operations.

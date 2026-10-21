@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 分隔符 的相关内容，涵盖 delimiter_name 等内容。
+keywords: [openGauss, 分隔符, 数据库参考, delimiter_name]
+---
+
 # 分隔符
 
 ## delimiter_name

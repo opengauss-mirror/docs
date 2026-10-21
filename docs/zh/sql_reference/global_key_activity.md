@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_KEY\_ACTIVITY 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_KEY\_ACTIVITY, SQL参考]
+---
+
 # GLOBAL\_KEY\_ACTIVITY
 
 提供openGauss中所有正常节点下的关键活动统计信息。

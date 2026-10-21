@@ -1,3 +1,8 @@
+---
+description: This document describes Statistics Information Functions in openGauss.
+keywords: [openGauss, Statistics Information Functions, SQL]
+---
+
 # Statistics Information Functions<a name="EN-US_TOPIC_0289900249"></a>
 
 Statistics information functions are divided into the following two categories: functions that access databases, using the OID of each table or index in a database to mark the database for which statistics are generated; functions that access servers, identified by the server process ID, whose value ranges from 1 to the number of currently active servers.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 设置帐号有效期 的相关内容，涵盖 注意事项、操作步骤 等内容。
+keywords: [openGauss, 设置帐号有效期, 数据库管理, 注意事项, 操作步骤]
+---
+
 # 设置帐号有效期
 
 ## 注意事项<a name="zh-cn_topic_0237121109_zh-cn_topic_0151096201_zh-cn_topic_0085032332_zh-cn_topic_0059779299_s4ed40b90fef642e1960afb00e661e34d"></a>

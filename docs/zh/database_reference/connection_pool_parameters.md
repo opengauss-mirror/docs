@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 连接池参数 的相关内容，涵盖 pooler\_maximum\_idle\_time、minimum\_pool\_size 等内容。
+keywords: [openGauss, 连接池参数, 数据库参考, pooler\_maximum\_idle\_time, minimum\_pool\_size]
+---
+
 # 连接池参数
 
 当使用连接池访问数据库时，在系统运行过程中，数据库连接是被当作对象存储在内存中的，当用户需要访问数据库时，并非建立一个新的连接，而是从连接池中取出一个已建立的空闲连接来使用。用户使用完毕后，数据库并非将连接关闭，而是将连接放回连接池中，以供下一个请求访问使用。

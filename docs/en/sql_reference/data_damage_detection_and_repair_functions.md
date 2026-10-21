@@ -1,3 +1,8 @@
+---
+description: This document describes Data Damage Detection and Repair Functions in openGauss.
+keywords: [openGauss, Data Damage Detection and Repair Functions, SQL]
+---
+
 # Data Damage Detection and Repair Functions<a name="EN-US_TOPIC_0000001198584734"></a>
 
 - gs\_verify\_data\_file\(verify\_segment bool\)

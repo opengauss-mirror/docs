@@ -1,3 +1,8 @@
+---
+description: This document describes REFRESH MATERIALIZED VIEW in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, REFRESH MATERIALIZED VIEW, SQL, Function, Precautions]
+---
+
 # REFRESH MATERIALIZED VIEW<a name="EN-US_TOPIC_0289899926"></a>
 
 ## Function<a name="en-us_topic_0283136612_en-us_topic_0237122161_en-us_topic_0059777447_s984b3ec2b84d48bb843629462288417b"></a>

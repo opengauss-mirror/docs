@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 通信库参数 的相关内容，涵盖 tcp\_keepalives\_idle、tcp\_keepalives\_interval 等内容。
+keywords: [openGauss, 通信库参数, 数据库参考, tcp\_keepalives\_idle, tcp\_keepalives\_interval]
+---
+
 # 通信库参数
 
 本节介绍通信库相关的参数设置及取值范围等内容。

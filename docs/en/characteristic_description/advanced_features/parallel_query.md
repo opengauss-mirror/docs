@@ -1,3 +1,8 @@
+---
+description: This document describes Parallel Query in openGauss, covering topics such as Applicable Scenarios and Limitations, Impact of Resources on SMP Performance.
+keywords: [openGauss, Parallel Query, features, Applicable Scenarios and Limitations, Impact of Resources on SMP Performance]
+---
+
 # Parallel Query
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T01:47:12.796Z -->
@@ -24,7 +29,7 @@ The SMP feature improves performance through operator parallelism, but it also c
 
     - Example: The parallel plan of TPCH Q1 is used as an example.
 
-        ![](figures/en-us_image_0000001234211585.png)
+        ![Applicable Scenarios and Limitations diagram](figures/en-us_image_0000001234211585.png)
 
         In this plan, the Scan and HashAgg operators are parallelized, and a Local Gather data exchange operator is added. Operator 3 is a Local Gather operator. The "dop: 1/4" marked on it indicates that the parallelism of the sending threads of this operator is 4, while that of the receiving threads is 1. That is, the lower-level operator 4 (HashAggregate) is executed with a parallelism of 4, while the upper-level operator 1\~2 is executed serially. Operator 3 aggregates data from parallel threads within the instance.
 

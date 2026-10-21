@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 事务隔离说明 的相关内容与操作方法。
+keywords: [openGauss, 事务隔离说明, 数据库运维]
+---
+
 # 事务隔离说明
 
 openGauss基于MVCC（多版本并发控制）并结合两阶段锁的方式进行事务管理，其特点是读写之间不阻塞。SELECT是纯读操作，UPDATE和DELETE是读写操作。

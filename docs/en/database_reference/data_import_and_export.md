@@ -1,3 +1,8 @@
+---
+description: This document describes Data Import and Export in openGauss, covering topics such as safe_data_path, enable_copy_server_files.
+keywords: [openGauss, Data Import and Export, database reference, safe_data_path, enable_copy_server_files]
+---
+
 # Data Import and Export
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:38:03.953Z -->

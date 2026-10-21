@@ -1,3 +1,8 @@
+---
+description: This document describes Setting the Unified Audit Policy in openGauss, covering topics such as Background Information, Operation Steps.
+keywords: [openGauss, Setting the Unified Audit Policy, database administration, Background Information, Operation Steps]
+---
+
 # Setting the Unified Audit Policy<a name="ZH-CN_TOPIC_0000001664414974"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-29T02:47:06.968Z pushedAt=2026-09-11T11:52:18.330Z -->

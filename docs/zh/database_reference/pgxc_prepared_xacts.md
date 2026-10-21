@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PGXC\_PREPARED\_XACTS 的相关内容与操作方法。
+keywords: [openGauss, PGXC\_PREPARED\_XACTS, 数据库参考]
+---
+
 # PGXC\_PREPARED\_XACTS
 
 PGXC\_PREPARED\_XACTS视图显示当前处于prepared阶段的两阶段事务。只有system admin和monitor admin用户有权限查看。

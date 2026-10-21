@@ -1,3 +1,8 @@
+---
+description: This document describes DROP AUDIT POLICY in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP AUDIT POLICY, SQL, Function, Precautions]
+---
+
 # DROP AUDIT POLICY<a name="EN-US_TOPIC_0306525305"></a>
 
 ## Function<a name="en-us_topic_0059777864_s9274542cc63647ee9a7ed300d5e21524"></a>

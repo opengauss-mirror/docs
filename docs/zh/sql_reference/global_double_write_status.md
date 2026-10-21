@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_DOUBLE\_WRITE\_STATUS 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_DOUBLE\_WRITE\_STATUS, SQL参考]
+---
+
 # GLOBAL\_DOUBLE\_WRITE\_STATUS
 
 GLOBAL\_DOUBLE\_WRITE\_STATUS视图显示openGauss所有实例的双写文件的情况。它是由每个节点的local\_double\_write\_stat视图组成，属性完全一致。

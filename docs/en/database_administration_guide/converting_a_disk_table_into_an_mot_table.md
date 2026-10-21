@@ -1,3 +1,8 @@
+---
+description: This document describes Converting a Disk Table into an MOT Table in openGauss, covering topics such as Prerequisite Check, Converting.
+keywords: [openGauss, Converting a Disk Table into an MOT Table, database administration, Prerequisite Check, Converting]
+---
+
 # Converting a Disk Table into an MOT Table<a name="EN-US_TOPIC_0270402396"></a>
 
 The direct conversion of disk tables into MOT tables is not yet possible, meaning that no ALTER TABLE statement yet exists that converts a disk-based table into an MOT table.

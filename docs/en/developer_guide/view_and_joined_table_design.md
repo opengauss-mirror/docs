@@ -1,3 +1,8 @@
+---
+description: This document describes View and Joined Table Design in openGauss, covering topics such as View Design, Joined Table Design.
+keywords: [openGauss, View and Joined Table Design, development, View Design, Joined Table Design]
+---
+
 # View and Joined Table Design<a name="EN-US_TOPIC_0000001149748075"></a>
 
 ## View Design<a name="section4431103710524"></a>

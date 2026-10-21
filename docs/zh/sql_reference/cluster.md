@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CLUSTER 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CLUSTER, SQL参考, 功能描述, 注意事项]
+---
+
 # CLUSTER
 
 ## 功能描述<a name="zh-cn_topic_0283137352_zh-cn_topic_0237122092_zh-cn_topic_0059778981_s0e572999489a4677bdb5354183b3efbf"></a>

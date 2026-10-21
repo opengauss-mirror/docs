@@ -1,3 +1,8 @@
+---
+description: This document describes Schemas in openGauss, covering topics such as Creating, Modifying, and Deleting Schemas, Search Path.
+keywords: [openGauss, Schemas, database administration, Creating, Modifying, and Deleting Schemas, Search Path]
+---
+
 # Schemas<a name="EN-US_TOPIC_0289900181"></a>
 
 Schemas allow multiple users to use the same database without interference. In this way, database objects can be organized into logical groups that are easy to manage, and third-party applications can be added to corresponding schemas without causing conflicts.

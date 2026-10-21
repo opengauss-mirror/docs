@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss OCK加速数据传输 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, OCK加速数据传输, 特性描述, 可获得性, 特性简介]
+---
+
 # OCK加速数据传输
 
 ## 可获得性<a name="section1271121702611"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_SESSION\_TIME 的相关内容与操作方法。
+keywords: [openGauss, GS\_SESSION\_TIME, 数据库参考]
+---
+
 # GS\_SESSION\_TIME
 
 GS\_SESSION\_TIME视图用于统计会话线程的运行时间信息，及各执行阶段所消耗时间。

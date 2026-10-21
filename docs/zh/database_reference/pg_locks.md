@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_LOCKS 的相关内容与操作方法。
+keywords: [openGauss, PG\_LOCKS, 数据库参考]
+---
+
 # PG\_LOCKS
 
 PG\_LOCKS视图存储各打开事务所持有的锁信息。

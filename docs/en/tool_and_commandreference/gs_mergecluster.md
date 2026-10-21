@@ -1,3 +1,8 @@
+---
+description: This document describes gs_mergecluster in openGauss, covering topics such as Background, Precautions.
+keywords: [openGauss, gs_mergecluster, tools and commands, Background, Precautions]
+---
+
 # gs_mergecluster
 
 ## Background<a name="zh-cn_topic_0000001705427697"></a>

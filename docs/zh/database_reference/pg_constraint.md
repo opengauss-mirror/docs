@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_CONSTRAINT 的相关内容与操作方法。
+keywords: [openGauss, PG\_CONSTRAINT, 数据库参考]
+---
+
 # PG\_CONSTRAINT
 
 PG\_CONSTRAINT系统表存储表上的检查约束、主键和唯一约束。

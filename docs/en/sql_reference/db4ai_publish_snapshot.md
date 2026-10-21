@@ -1,3 +1,8 @@
+---
+description: This document describes DB4AI.PUBLISH\_SNAPSHOT in openGauss.
+keywords: [openGauss, DB4AI.PUBLISH\_SNAPSHOT, SQL]
+---
+
 # DB4AI.PUBLISH\_SNAPSHOT<a name="EN-US_TOPIC_0000001149551354"></a>
 
 **PUBLISH\_SNAPSHOT**  publishes snapshots for the DB4AI feature. You can invoke  **PUBLISH SNAPSHOT**  to implement this function.

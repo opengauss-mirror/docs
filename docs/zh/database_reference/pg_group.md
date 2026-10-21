@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_GROUP 的相关内容与操作方法。
+keywords: [openGauss, PG\_GROUP, 数据库参考]
+---
+
 # PG\_GROUP
 
 PG\_GROUP视图查看数据库认证角色及角色之间的成员关系。

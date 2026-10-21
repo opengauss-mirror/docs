@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 日志回放 的相关内容，涵盖 recovery\_time\_target、recovery\_max\_workers 等内容。
+keywords: [openGauss, 日志回放, 数据库参考, recovery\_time\_target, recovery\_max\_workers]
+---
+
 # 日志回放
 
 ## recovery\_time\_target<a name="zh-cn_topic_0283136722_zh-cn_topic_0237124709_zh-cn_topic_0059778936_sbadc77895e6643b882a5e7557e405373"></a>

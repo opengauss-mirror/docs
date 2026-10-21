@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DATABASE\_SQL\_STAT 的相关内容与操作方法。
+keywords: [openGauss, DATABASE\_SQL\_STAT, SQL参考]
+---
+
 # DATABASE\_SQL\_STAT
 
 提供当前节点按数据库聚合的SQL执行统计（在Unique SQL完成路径上累计）。需开启Unique SQL相关能力，否则计数不增长。

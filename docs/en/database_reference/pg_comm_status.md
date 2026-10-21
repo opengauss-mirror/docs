@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_COMM\_STATUS in openGauss.
+keywords: [openGauss, PG\_COMM\_STATUS, database reference]
+---
+
 # PG\_COMM\_STATUS<a name="EN-US_TOPIC_0311526905"></a>
 
 **PG\_COMM\_STATUS**  displays the communication library status for a single DN.

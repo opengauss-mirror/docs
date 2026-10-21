@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 资源池化参数 的相关内容，涵盖 ss\_enable\_dss、ss\_enable\_dms 等内容。
+keywords: [openGauss, 资源池化参数, 数据库参考, ss\_enable\_dss, ss\_enable\_dms]
+---
+
 # 资源池化参数
 
 ## ss\_enable\_dss<a name="section14941640131"></a>

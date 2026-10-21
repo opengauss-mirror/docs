@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 范围类型 的相关内容，涵盖 内建范围类型、例子 等内容。
+keywords: [openGauss, 范围类型, SQL参考, 内建范围类型, 例子]
+---
+
 # 范围类型
 
 范围类型是表达某种元素类型（称为范围的_subtype_）的一个值的范围的数据类型。例如，timestamp的范围可以被用来表达一个会议室被保留的时间范围。在这种情况下，数据类型是tsrange（“timestamp range”的简写）而timestamp是 subtype。subtype 必须具有一种总体的顺序，这样对于元素值是在一个范围值之内、之前或之后就是界线清楚的。

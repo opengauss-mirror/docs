@@ -1,3 +1,8 @@
+---
+description: This document describes Checking Ledger Data Consistency in openGauss, covering topics such as Prerequisites, Background.
+keywords: [openGauss, Checking Ledger Data Consistency, database administration, Prerequisites, Background]
+---
+
 # Checking Ledger Data Consistency<a name="EN-US_TOPIC_0000001147007425"></a>
 
 ## Prerequisites<a name="en-us_topic_0059778013_sfe45a1031ec347ba820649c0cec52027"></a>

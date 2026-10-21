@@ -1,3 +1,8 @@
+---
+description: This document describes DROP TRIGGER in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP TRIGGER, SQL, Function, Precautions]
+---
+
 # DROP TRIGGER<a name="EN-US_TOPIC_0289900035"></a>
 
 ## Function<a name="en-us_topic_0283137186_en-us_topic_0237122156_en-us_topic_0059777895_sed6f06f3d4d94b38b10c7592f98bacdb"></a>

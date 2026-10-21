@@ -1,3 +1,8 @@
+---
+description: This document describes Memory in openGauss, covering topics such as memorypool\_enable, memorypool\_size.
+keywords: [openGauss, Memory, database reference, memorypool\_enable, memorypool\_size]
+---
+
 # Memory<a name="EN-US_TOPIC_0289900310"></a>
 
 This section describes memory parameters.

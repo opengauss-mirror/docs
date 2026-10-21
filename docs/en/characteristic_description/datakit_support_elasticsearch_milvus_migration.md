@@ -1,3 +1,8 @@
+---
+description: This document describes Elasticsearch and Milvus Migration Through DataKit in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, Elasticsearch and Milvus Migration Through DataKit, features, Availability, Feature Overview]
+---
+
 # Elasticsearch and Milvus Migration Through DataKit
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:07:06.434Z pushedAt=2026-09-22T11:12:32.615Z -->

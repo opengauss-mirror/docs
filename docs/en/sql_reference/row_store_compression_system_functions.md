@@ -1,3 +1,8 @@
+---
+description: This document describes Row-store Compression System Functions in openGauss.
+keywords: [openGauss, Row-store Compression System Functions, SQL]
+---
+
 # Row-store Compression System Functions<a name="EN-US_TOPIC_0000001331071942"></a>
 
 - compress\_buffer\_stat\_info\(\)

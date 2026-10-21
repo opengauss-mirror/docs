@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_ddr in openGauss, covering topics such as Background, Constraints.
+keywords: [openGauss, gs\_ddr, tools and commands, Background, Constraints]
+---
+
 # gs\_ddr
 
 ## Background<a name="zh-cn_topic_0287275995_section431817462"></a>

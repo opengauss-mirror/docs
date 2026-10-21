@@ -1,3 +1,8 @@
+---
+description: This document describes Database Metric Collection, Forecast, and Exception Detectio in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Database Metric Collection, Forecast, and Exception Detectio, features]
+---
+
 # Database Metric Collection, Forecast, and Exception Detection<a name="EN-US_TOPIC_0000001105075484"></a>
 
 ## Availability<a name="section1394818443613"></a>

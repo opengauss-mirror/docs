@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss JDBC配置 的相关内容，涵盖 连接参数、fetchsize 等内容。
+keywords: [openGauss, JDBC配置, 开发指南, 连接参数, fetchsize]
+---
+
 # JDBC配置
 
 目前，openGauss相关的第三方工具都是通过JDBC进行连接的，此部分将介绍工具配置时的注意事项。

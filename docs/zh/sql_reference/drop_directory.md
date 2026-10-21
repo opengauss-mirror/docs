@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP DIRECTORY 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP DIRECTORY, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP DIRECTORY
 
 ## 功能描述<a name="zh-cn_topic_0283137028_zh-cn_topic_0237122136_zh-cn_topic_0059779050_s7810bb02b5b247fd92d22d7e328c870f"></a>

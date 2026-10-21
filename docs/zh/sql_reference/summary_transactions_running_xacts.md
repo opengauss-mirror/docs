@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SUMMARY\_TRANSACTIONS\_RUNNING\_XACTS 的相关内容与操作方法。
+keywords: [openGauss, SUMMARY\_TRANSACTIONS\_RUNNING\_XACTS, SQL参考]
+---
+
 # SUMMARY\_TRANSACTIONS\_RUNNING\_XACTS
 
 显示集群中各个节点运行事务的信息，字段内容和transactions\_running\_xacts一致。

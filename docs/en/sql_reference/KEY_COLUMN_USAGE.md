@@ -1,3 +1,8 @@
+---
+description: This document describes KEY_COLUMN_USAGE in openGauss.
+keywords: [openGauss, KEY_COLUMN_USAGE, SQL]
+---
+
 # KEY_COLUMN_USAGE <a name="ZH-CN_TOPIC_0310260671"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:22:35.885Z -->

@@ -1,3 +1,8 @@
+---
+description: This document describes GMS_OUTPUT Package in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, GMS_OUTPUT Package, features, Availability, Feature Overview]
+---
+
 # GMS_OUTPUT Package
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:15:04.841Z pushedAt=2026-09-22T11:12:32.645Z -->

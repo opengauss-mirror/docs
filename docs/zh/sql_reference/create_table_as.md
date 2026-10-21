@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE TABLE AS 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE TABLE AS, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE TABLE AS
 
 ## 功能描述<a name="zh-cn_topic_0283136662_zh-cn_topic_0237122118_zh-cn_topic_0059777601_sf40d8ce0a2af4856a44d883e623632b9"></a>

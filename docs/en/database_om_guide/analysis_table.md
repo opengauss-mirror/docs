@@ -1,3 +1,8 @@
+---
+description: This document describes ANALYZE Table in openGauss, covering topics such as ANALYZE Table, autoanalyze.
+keywords: [openGauss, ANALYZE Table, database O&M, autoanalyze]
+---
+
 # ANALYZE Table<a name="EN-US_TOPIC_0242370296"></a>
 
 The execution plan generator needs to use table statistics to generate the most effective query execution plan to improve query performance. After data is imported, you are advised to run the  **ANALYZE**  statement to update table statistics. The statistics are stored in the system catalog  **PG\_STATISTIC**.

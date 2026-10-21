@@ -1,3 +1,8 @@
+---
+description: This document describes HTAP Row-Column Fusion System Functions in openGauss.
+keywords: [openGauss, HTAP Row-Column Fusion System Functions, SQL]
+---
+
 # HTAP Row-Column Fusion System Functions
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:22:01.547Z -->

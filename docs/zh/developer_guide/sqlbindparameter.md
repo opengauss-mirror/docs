@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SQLBindParameter 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, SQLBindParameter, 开发指南, 功能描述, 原型]
+---
+
 # SQLBindParameter
 
 ## 功能描述<a name="zh-cn_topic_0238272887_zh-cn_topic_0237120417_zh-cn_topic_0059778788_s9699227cd3d64b43b542e3e3b9a52f37"></a>

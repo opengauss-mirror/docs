@@ -1,3 +1,8 @@
+---
+description: This document describes What Is a Document? in openGauss.
+keywords: [openGauss, What Is a Document?, SQL]
+---
+
 # What Is a Document?<a name="EN-US_TOPIC_0289900763"></a>
 
 A document is the unit of searching in a full text search system; for example, a magazine article or email message. The text search engine must be able to parse documents and store associations of lexemes \(keywords\) with their parent document. Later, these associations are used to search for documents that contain query words.

@@ -1,3 +1,8 @@
+---
+description: This document describes BLOOM Index in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, BLOOM Index, features, Availability, Feature Overview]
+---
+
 # BLOOM Index
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:05:35.718Z pushedAt=2026-09-22T11:12:32.601Z -->

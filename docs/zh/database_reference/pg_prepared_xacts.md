@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_PREPARED\_XACTS 的相关内容与操作方法。
+keywords: [openGauss, PG\_PREPARED\_XACTS, 数据库参考]
+---
+
 # PG\_PREPARED\_XACTS
 
 PG\_PREPARED\_XACTS视图显示当前准备好进行两阶段提交的事务的信息。

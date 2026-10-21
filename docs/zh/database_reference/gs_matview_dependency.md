@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_MATVIEW\_DEPENDENCY 的相关内容与操作方法。
+keywords: [openGauss, GS\_MATVIEW\_DEPENDENCY, 数据库参考]
+---
+
 # GS\_MATVIEW\_DEPENDENCY
 
 GS\_MATVIEW\_DEPENDENCY系统表提供了关于数据库中每一个增量物化视图、基表和mlog表的关联信息。全量物化视图不存在与基表对应的mlog表，不会写入记录。

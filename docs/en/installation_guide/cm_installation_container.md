@@ -1,3 +1,8 @@
+---
+description: This document describes CM Installation_Container in openGauss, covering topics such as Supported Architectures and OS Versions, Containerized Deployment for CM.
+keywords: [openGauss, CM Installation_Container, installation, Supported Architectures and OS Versions, Containerized Deployment for CM]
+---
+
 # CM Installation_Container
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-10T08:50:35.857Z pushedAt=2026-07-14T07:15:07.655Z -->

@@ -1,3 +1,8 @@
+---
+description: This document describes GET DIAGNOSTICS Statement in openGauss, covering topics such as GET DIAGNOSTICS Statement.
+keywords: [openGauss, GET DIAGNOSTICS Statement, SQL]
+---
+
 # GET DIAGNOSTICS Statement<a name="ZH-CN_TOPIC_0245374637"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:21:47.271Z -->

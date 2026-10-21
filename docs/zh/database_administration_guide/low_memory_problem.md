@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 共享内存不足 的相关内容，涵盖 现象、原因 等内容。
+keywords: [openGauss, 共享内存不足, 数据库管理, 现象, 原因]
+---
+
 # 共享内存不足
 
 ## 现象

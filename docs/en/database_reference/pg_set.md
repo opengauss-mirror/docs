@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_SET in openGauss.
+keywords: [openGauss, PG\_SET, database reference]
+---
+
 # PG\_SET<a name="ZH-CN_TOPIC_0000001369984861"></a>
 
 **PG\_SET** records metadata defined by the SET data type.

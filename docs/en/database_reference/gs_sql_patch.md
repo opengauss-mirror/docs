@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_SQL\_PATCH in openGauss.
+keywords: [openGauss, GS\_SQL\_PATCH, database reference]
+---
+
 # GS\_SQL\_PATCH<a name="EN-US_TOPIC_0000001314273105"></a>
 
 GS\_SQL\_PATCH records the status information about all SQL\_PATCH.

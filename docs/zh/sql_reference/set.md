@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SET 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, SET, SQL参考, 功能描述, 注意事项]
+---
+
 # SET
 
 ## 功能描述<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s8a5c6264f78f49e3aa93f388d68cd3e6"></a>

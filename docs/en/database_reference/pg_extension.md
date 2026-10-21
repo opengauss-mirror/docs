@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_EXTENSION in openGauss.
+keywords: [openGauss, PG\_EXTENSION, database reference]
+---
+
 # PG\_EXTENSION<a name="EN-US_TOPIC_0289900664"></a>
 
 **PG\_EXTENSION**  records information about the installed extensions. Default extensions of openGauss: PLPGSQL and MOT\_FDW.

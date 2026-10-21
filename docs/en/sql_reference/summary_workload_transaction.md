@@ -1,3 +1,8 @@
+---
+description: This document describes SUMMARY\_WORKLOAD\_TRANSACTION in openGauss.
+keywords: [openGauss, SUMMARY\_WORKLOAD\_TRANSACTION, SQL]
+---
+
 # SUMMARY\_WORKLOAD\_TRANSACTION<a name="EN-US_TOPIC_0245374726"></a>
 
 **SUMMARY\_WORKLOAD\_TRANSACTION**  displays information about transactions loaded in openGauss. 

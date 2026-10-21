@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SET SESSION AUTHORIZATION 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, SET SESSION AUTHORIZATION, SQL参考, 功能描述, 注意事项]
+---
+
 # SET SESSION AUTHORIZATION
 
 ## 功能描述<a name="zh-cn_topic_0283137463_zh-cn_topic_0237122189_zh-cn_topic_0059778193_se24abe3c44f645b091e061c97d8957e7"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Comparison – Disk vs. MOT in openGauss, covering topics such as Glossary.
+keywords: [openGauss, Comparison – Disk vs. MOT, database administration, Glossary]
+---
+
 # Comparison – Disk vs. MOT<a name="EN-US_TOPIC_0270171542"></a>
 
 The following table briefly compares the various features of the openGauss disk-based storage engine and the MOT storage engine.

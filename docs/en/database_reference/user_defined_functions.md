@@ -1,3 +1,8 @@
+---
+description: This document describes User-defined Functions in openGauss, covering topics such as udf\_memory\_limit, FencedUDFMemoryLimit.
+keywords: [openGauss, User-defined Functions, database reference, udf\_memory\_limit, FencedUDFMemoryLimit]
+---
+
 # User-defined Functions<a name="EN-US_TOPIC_0000001130221229"></a>
 
 ## udf\_memory\_limit<a name="en-us_topic_0283137548_en-us_topic_0237124743_section1765913299426"></a>

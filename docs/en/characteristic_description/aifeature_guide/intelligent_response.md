@@ -1,3 +1,8 @@
+---
+description: This document describes Intelligent Q&A in openGauss, covering topics such as Intelligent Q&A Constraints, API Description.
+keywords: [openGauss, Intelligent Q&A, features, Intelligent Q&A Constraints, API Description]
+---
+
 # Intelligent Q&A<a name="ZH-CN_TOPIC_0000002258589370"></a>
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T02:03:11.059Z -->

@@ -1,3 +1,8 @@
+---
+description: This document describes Reverse Migration in openGauss, covering topics such as Function Description, Principles.
+keywords: [openGauss, Reverse Migration, data migration, Function Description, Principles]
+---
+
 # Reverse Migration <a name="EN-US_TOPIC_0000001346972848"></a>
 
 ## Function Description <a name="section2900185110452"></a>

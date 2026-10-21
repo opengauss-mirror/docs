@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 外键锁增强 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 外键锁增强, 特性描述, 可获得性, 特性简介]
+---
+
 # 外键锁增强
 
 ## 可获得性<a name="section1076382216287"></a>

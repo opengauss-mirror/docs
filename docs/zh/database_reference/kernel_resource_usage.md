@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 内核资源使用 的相关内容，涵盖 max\_files\_per\_process、shared\_preload\_libraries 等内容。
+keywords: [openGauss, 内核资源使用, 数据库参考, max\_files\_per\_process, shared\_preload\_libraries]
+---
+
 # 内核资源使用
 
 介绍与操作系统内核相关的参数，这些参数是否生效依赖于操作系统的设置。

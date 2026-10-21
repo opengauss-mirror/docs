@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 主节点降备 的相关内容，涵盖 现象、原因 等内容。
+keywords: [openGauss, 主节点降备, 数据库运维, 现象, 原因]
+---
+
 # 主节点降备
 
 ## 现象

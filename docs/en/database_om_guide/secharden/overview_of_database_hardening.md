@@ -1,3 +1,8 @@
+---
+description: This document describes Overview of Database Hardening in openGauss, covering topics such as Hardening Purpose, Hardening Solution.
+keywords: [openGauss, Overview of Database Hardening, database O&M, Hardening Purpose, Hardening Solution]
+---
+
 # Overview of Database Hardening
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-21Txx:xx:xx.xxxZ -->

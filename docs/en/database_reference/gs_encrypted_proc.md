@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_ENCRYPTED\_PROC in openGauss.
+keywords: [openGauss, GS\_ENCRYPTED\_PROC, database reference]
+---
+
 # GS\_ENCRYPTED\_PROC<a name="EN-US_TOPIC_0000001151424329"></a>
 
 **GS\_ENCRYPTED\_PROC**  provides information such as the parameters of encrypted functions and stored procedure functions, original data type of return values, and encrypted columns.

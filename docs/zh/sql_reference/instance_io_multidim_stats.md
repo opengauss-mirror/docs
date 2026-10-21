@@ -1,4 +1,13 @@
+<<<<<<< HEAD:docs/zh/sql_reference/wdr_instance_io.md
+---
+description: 本文介绍 openGauss Instance IO 的相关内容，涵盖 Thread Type、File Type 等内容。
+keywords: [openGauss, Instance IO, SQL参考, Thread Type, File Type]
+---
+
+# Instance IO
+=======
 # 实例IO
+>>>>>>> upstream/master:docs/zh/sql_reference/instance_io_multidim_stats.md
 
 实例IO报告提供实例IO的多维度统计视图，支持按线程类型（Thread Type）、文件类型（File Type）、数据库（Database）、表空间（Tablespace）、数据库对象类型（Database Object Type）、数据库对象路径（Database Object Path）六个维度进行IO统计，帮助DBA从不同层面定位实例IO热点。
 

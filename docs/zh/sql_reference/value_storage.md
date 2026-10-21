@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 值存储 的相关内容，涵盖 值存储数据类型解析、示例 等内容。
+keywords: [openGauss, 值存储, SQL参考, 值存储数据类型解析, 示例]
+---
+
 # 值存储
 
 ## 值存储数据类型解析<a name="zh-cn_topic_0283136768_zh-cn_topic_0237122010_zh-cn_topic_0059778056_s1bb7f384ffea43e49c3d1f7ee4035041"></a>

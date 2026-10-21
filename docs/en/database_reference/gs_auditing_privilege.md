@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_AUDITING\_PRIVILEGE in openGauss.
+keywords: [openGauss, GS\_AUDITING\_PRIVILEGE, database reference]
+---
+
 # GS\_AUDITING\_PRIVILEGE<a name="EN-US_TOPIC_0306525318"></a>
 
 **GS\_AUDITING\_PRIVILEGE**  displays all audit information about database DDL-related operations. Only the users with system administrator or security policy administrator permission can access this view.

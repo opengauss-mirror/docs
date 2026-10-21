@@ -1,3 +1,8 @@
+---
+description: This document describes gms_sql Advanced Package in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, gms_sql Advanced Package, features, Availability, Feature Overview]
+---
+
 # gms_sql Advanced Package
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:16:06.340Z pushedAt=2026-09-22T11:12:32.652Z -->

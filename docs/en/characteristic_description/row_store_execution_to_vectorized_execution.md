@@ -1,3 +1,8 @@
+---
+description: This document describes Row-Store Execution to Vectorized Execution in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Row-Store Execution to Vectorized Execution, features, Availability, Introduction]
+---
+
 # Row-Store Execution to Vectorized Execution<a name="EN-US_TOPIC_0000001265287497"></a>
 
 ## Availability<a name="section15406143204715"></a>

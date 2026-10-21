@@ -1,3 +1,8 @@
+---
+description: This document describes Encrypted Equality Functions in openGauss.
+keywords: [openGauss, Encrypted Equality Functions, SQL]
+---
+
 # Encrypted Equality Functions<a name="EN-US_TOPIC_0299864759"></a>
 
 - byteawithoutorderwithequalcolin\(cstring\)

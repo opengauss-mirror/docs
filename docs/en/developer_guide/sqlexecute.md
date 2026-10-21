@@ -1,3 +1,8 @@
+---
+description: This document describes SQLExecute in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, SQLExecute, development, Function, Prototype]
+---
+
 # SQLExecute<a name="EN-US_TOPIC_0242371446"></a>
 
 ## Function<a name="en-us_topic_0238272892_en-us_topic_0237120422_en-us_topic_0059778182_sab94d410ef5f4a509e8d2881ec7373e7"></a>

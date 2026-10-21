@@ -1,3 +1,8 @@
+---
+description: This document describes DataVec Vector Engine Parameters in openGauss, covering topics such as hnsw_ef_search, ivfflat_probes.
+keywords: [openGauss, DataVec Vector Engine Parameters, database reference, hnsw_ef_search, ivfflat_probes]
+---
+
 # DataVec Vector Engine Parameters
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:38:58.126Z -->

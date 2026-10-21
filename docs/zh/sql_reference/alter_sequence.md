@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER SEQUENCE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER SEQUENCE, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER SEQUENCE
 
 ## 功能描述<a name="zh-cn_topic_0283137303_zh-cn_topic_0237122071_zh-cn_topic_0062358310_s806d414edb004fa89cd50a1166d1136e"></a>

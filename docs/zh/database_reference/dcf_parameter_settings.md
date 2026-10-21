@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DCF参数设置 的相关内容，涵盖 enable\_dcf、dcf\_ssl 等内容。
+keywords: [openGauss, DCF参数设置, 数据库参考, enable\_dcf, dcf\_ssl]
+---
+
 # DCF参数设置
 
 ## enable\_dcf<a name="section14941640131"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 逻辑复制 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 逻辑复制, 特性描述, 可获得性, 特性简介]
+---
+
 # 逻辑复制
 
 ## 可获得性<a name="section15406143204715"></a>

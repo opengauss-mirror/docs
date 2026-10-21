@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss KEY_COLUMN_USAGE 的相关内容与操作方法。
+keywords: [openGauss, KEY_COLUMN_USAGE, SQL参考]
+---
+
 # KEY_COLUMN_USAGE <a name="ZH-CN_TOPIC_0310260671"></a>
 
 存储外键相关的信息。

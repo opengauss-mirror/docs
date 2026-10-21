@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_MATVIEWS 的相关内容与操作方法。
+keywords: [openGauss, PG\_MATVIEWS, 数据库参考]
+---
+
 # PG\_MATVIEWS
 
 PG\_MATVIEWS视图提供访问数据库中当前用户有权限查看的物化视图的信息。

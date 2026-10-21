@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss IO Profile 的相关内容与操作方法。
+keywords: [openGauss, IO Profile, SQL参考]
+---
+
 # IO Profile
 
 IO Profile指标名称及描述如下表所示。

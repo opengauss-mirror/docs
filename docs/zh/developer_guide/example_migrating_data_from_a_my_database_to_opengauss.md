@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 示例：从MY向openGauss进行数据迁移 的相关内容与操作方法。
+keywords: [openGauss, 示例：从MY向openGauss进行数据迁移, 开发指南]
+---
+
 # 示例：从MY向openGauss进行数据迁移
 
 下面示例演示如何通过CopyManager从MY向openGauss进行数据迁移。

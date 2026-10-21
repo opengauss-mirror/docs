@@ -1,3 +1,8 @@
+---
+description: This document describes KEEP Function in openGauss, covering topics such as KEEP Function.
+keywords: [openGauss, KEEP Function, SQL]
+---
+
 # KEEP Function
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:22:38.056Z -->

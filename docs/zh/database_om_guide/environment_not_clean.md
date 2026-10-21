@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 环境未清理 的相关内容，涵盖 现象、原因 等内容。
+keywords: [openGauss, 环境未清理, 数据库运维, 现象, 原因]
+---
+
 # 环境未清理
 
 ## 现象

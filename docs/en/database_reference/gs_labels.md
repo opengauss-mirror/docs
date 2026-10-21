@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_LABELS in openGauss.
+keywords: [openGauss, GS\_LABELS, database reference]
+---
+
 # GS\_LABELS<a name="EN-US_TOPIC_0306525319"></a>
 
 **GS\_LABELS**  displays all configured resource labels. Only the users with system administrator or security policy administrator permission can access this view.

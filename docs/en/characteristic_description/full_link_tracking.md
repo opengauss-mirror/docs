@@ -1,3 +1,8 @@
+---
+description: This document describes Full-Link Tracing in openGauss, covering topics such as Availability, Feature Overview.
+keywords: [openGauss, Full-Link Tracing, features, Availability, Feature Overview]
+---
+
 # Full-Link Tracing
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-06T11:10:35.159Z pushedAt=2026-09-22T11:12:32.626Z -->

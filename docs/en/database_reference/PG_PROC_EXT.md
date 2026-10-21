@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_PROC\_EXT in openGauss.
+keywords: [openGauss, PG\_PROC\_EXT, database reference]
+---
+
 # PG\_PROC\_EXT
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:48:05.302Z -->

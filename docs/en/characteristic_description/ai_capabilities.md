@@ -1,3 +1,8 @@
+---
+description: This document describes AI Capabilities in openGauss.
+keywords: [openGauss, AI Capabilities, features]
+---
+
 # AI Capabilities<a name="EN-US_TOPIC_0000001091443838"></a>
 
 - **[Predictor: AI Query Time Forecasting](predictor_ai_query_time_forecasting.md)**  

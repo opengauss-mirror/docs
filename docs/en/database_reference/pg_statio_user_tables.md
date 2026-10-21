@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_STATIO\_USER\_TABLES in openGauss.
+keywords: [openGauss, PG\_STATIO\_USER\_TABLES, database reference]
+---
+
 # PG\_STATIO\_USER\_TABLES<a name="EN-US_TOPIC_0289899852"></a>
 
 **PG\_STATIO\_USER\_TABLES**  displays I/O status information about all the user relationship tables in the namespace.

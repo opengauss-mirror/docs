@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE RESOURCE POOL 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE RESOURCE POOL, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE RESOURCE POOL
 
 ## 功能描述<a name="zh-cn_topic_0059777569_sea021d0b1f154052a73b69b89d636f66"></a>

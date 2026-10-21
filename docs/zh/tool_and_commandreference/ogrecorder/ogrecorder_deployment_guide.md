@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss oGRecorder 部署与运维指南 的相关内容，涵盖 目录、概述 等内容。
+keywords: [openGauss, oGRecorder 部署与运维指南, 工具与命令参考, 目录, 概述]
+---
+
 # oGRecorder 部署与运维指南
 
 ## 目录

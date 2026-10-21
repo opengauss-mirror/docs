@@ -1,3 +1,8 @@
+---
+description: This document describes DEALLOCATE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DEALLOCATE, SQL, Function, Precautions]
+---
+
 # DEALLOCATE<a name="EN-US_TOPIC_0289900543"></a>
 
 ## Function<a name="en-us_topic_0283136579_en-us_topic_0237122129_en-us_topic_0059778612_sf7de006cb8fc48b2bcd0e6d3c6ea1f2f"></a>

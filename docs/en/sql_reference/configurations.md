@@ -1,3 +1,8 @@
+---
+description: This document describes Configurations in openGauss.
+keywords: [openGauss, Configurations, SQL]
+---
+
 # Configurations<a name="EN-US_TOPIC_0289900037"></a>
 
 Full text search functionality includes the ability to do many more things: skip indexing certain words \(stop words\), process synonyms, and use sophisticated parsing, for example, parse based on more than just white space. This functionality is controlled by text search configurations. openGauss comes with predefined configurations for many languages, and you can easily create your own configurations. \(The  **\\dF**  command of  **gsql**  shows all available configurations.\)

@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_PLDEBUGGER.print\_var in openGauss.
+keywords: [openGauss, DBE\_PLDEBUGGER.print\_var, SQL]
+---
+
 # DBE\_PLDEBUGGER.print\_var<a name="EN-US_TOPIC_0000001116086114"></a>
 
 During debugging on the debug end,  **print\_var**  is invoked to print the name and value of the specified variable in the current stored procedure. The input parameter  **frameno**  of this function indicates the stack layer to be traversed. This function can be invoked without  **frameno**. By default, the top-layer stack variable is queried.

@@ -1,3 +1,8 @@
+---
+description: This document describes Overview in openGauss.
+keywords: [openGauss, Overview, SQL]
+---
+
 # Overview<a name="EN-US_TOPIC_0289900441"></a>
 
 A dictionary is used to define stop words, that is, words to be ignored in full-text retrieval.

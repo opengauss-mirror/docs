@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_PLDEBUGGER.finish in openGauss.
+keywords: [openGauss, DBE\_PLDEBUGGER.finish, SQL]
+---
+
 # DBE\_PLDEBUGGER.finish<a name="EN-US_TOPIC_0000001152478332"></a>
 
 Executes the current SQL statement in the stored procedure until the next breakpoint is triggered or the next line of the upper-layer stack is executed.

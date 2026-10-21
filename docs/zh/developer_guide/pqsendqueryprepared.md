@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PQsendQueryPrepared 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, PQsendQueryPrepared, 开发指南, 功能描述, 原型]
+---
+
 # PQsendQueryPrepared
 
 ## 功能描述<a name="zh-cn_topic_0241735630_section1390173422515"></a>

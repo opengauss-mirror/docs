@@ -1,3 +1,8 @@
+---
+description: This document describes Pattern Matching Operators in openGauss, covering topics such as LIKE, SIMILAR TO.
+keywords: [openGauss, Pattern Matching Operators, SQL, LIKE, SIMILAR TO]
+---
+
 # Pattern Matching Operators
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:24:03.135Z -->

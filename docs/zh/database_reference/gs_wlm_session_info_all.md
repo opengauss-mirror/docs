@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_WLM\_SESSION\_INFO\_ALL 的相关内容与操作方法。
+keywords: [openGauss, GS\_WLM\_SESSION\_INFO\_ALL, 数据库参考]
+---
+
 # GS\_WLM\_SESSION\_INFO\_ALL
 
 GS\_WLM\_SESSION\_INFO\_ALL视图显示在数据库实例上执行作业结束后的负载管理记录。查询该视图需要sysadmin或者monitor admin权限。

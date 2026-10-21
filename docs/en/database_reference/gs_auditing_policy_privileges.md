@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_AUDITING\_POLICY\_PRIVILEGES in openGauss.
+keywords: [openGauss, GS\_AUDITING\_POLICY\_PRIVILEGES, database reference]
+---
+
 # GS\_AUDITING\_POLICY\_PRIVILEGES
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:40:56.702Z -->

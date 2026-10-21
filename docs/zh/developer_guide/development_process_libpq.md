@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 开发流程 的相关内容与操作方法。
+keywords: [openGauss, 开发流程, 开发指南]
+---
+
 # 开发流程
 
 编译并且链接一个libpq的源程序，需要做下面的一些事情：

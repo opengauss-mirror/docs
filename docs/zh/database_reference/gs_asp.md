@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_ASP 的相关内容与操作方法。
+keywords: [openGauss, GS\_ASP, 数据库参考]
+---
+
 # GS\_ASP
 
 GS\_ASP显示被持久化的ACTIVE SESSION PROFILE样本，该表只在系统库下查询，在用户库下查询无数据。

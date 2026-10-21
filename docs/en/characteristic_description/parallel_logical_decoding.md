@@ -1,3 +1,8 @@
+---
+description: This document describes Parallel Logical Decoding in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Parallel Logical Decoding, features, Availability, Introduction]
+---
+
 # Parallel Logical Decoding<a name="EN-US_TOPIC_0000001220761098"></a>
 
 ## Availability<a name="section15406143204715"></a>

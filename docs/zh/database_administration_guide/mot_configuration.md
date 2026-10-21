@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MOT配置 的相关内容，涵盖 总体原则、重做日志（MOT） 等内容。
+keywords: [openGauss, MOT配置, 数据库管理, 总体原则, 重做日志（MOT）]
+---
+
 # MOT配置
 
 预置MOT用于创建工作MOT。为了获得最佳效果，建议根据应用程序的特定要求和偏好自定义MOT配置（在mot.conf文件中定义）。

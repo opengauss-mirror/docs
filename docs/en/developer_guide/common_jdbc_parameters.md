@@ -1,3 +1,8 @@
+---
+description: This document describes Common JDBC Parameters in openGauss, covering topics such as targetServerType, hostRecheckSeconds.
+keywords: [openGauss, Common JDBC Parameters, development, targetServerType, hostRecheckSeconds]
+---
+
 # Common JDBC Parameters<a name="EN-US_TOPIC_0000001399380057"></a>
 
 ## targetServerType<a name="section556210112155"></a>

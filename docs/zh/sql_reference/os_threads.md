@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss OS\_THREADS 的相关内容与操作方法。
+keywords: [openGauss, OS\_THREADS, SQL参考]
+---
+
 # OS\_THREADS
 
 提供当前节点下所有线程的状态信息。

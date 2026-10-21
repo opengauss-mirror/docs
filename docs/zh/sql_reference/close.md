@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CLOSE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CLOSE, SQL参考, 功能描述, 注意事项]
+---
+
 # CLOSE
 
 ## 功能描述<a name="zh-cn_topic_0283137397_zh-cn_topic_0237122091_zh-cn_topic_0059779164_sa18f3afba3784d76b0052fa2fa489b8c"></a>

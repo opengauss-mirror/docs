@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SET类型 的相关内容，涵盖 规格描述、注意事项 等内容。
+keywords: [openGauss, SET类型, SQL参考, 规格描述, 注意事项]
+---
+
 # SET类型
 
 SET类型是一种包含字符串成员的集合类型，在表字段创建时定义。

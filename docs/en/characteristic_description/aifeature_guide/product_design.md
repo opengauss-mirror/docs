@@ -1,3 +1,8 @@
+---
+description: This document describes Product Design in openGauss, covering topics such as Architecture Design, Security Design.
+keywords: [openGauss, Product Design, features, Architecture Design, Security Design]
+---
+
 # Product Design
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-07T02:10:21.083Z -->
@@ -7,7 +12,7 @@
 The DBMind monitoring platform is based on the open-source Prometheus and provides data producer exporters that can be integrated with the Prometheus platform. The DBMind service architecture is shown in [Figure 1 DBMind service architecture](#fig3224154930):
 
 **Figure 1**  DBMind service architecture<a name="fig3224154930"></a>  
-![](figures/DBMind-service-architecture.png)
+![DBMind service architecture](figures/DBMind-service-architecture.png)
 
 The key components in the figure are described as follows:
 

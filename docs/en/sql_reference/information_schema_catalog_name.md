@@ -1,3 +1,8 @@
+---
+description: This document describes INFORMATION\_SCHEMA\_CATALOG\_NAME in openGauss.
+keywords: [openGauss, INFORMATION\_SCHEMA\_CATALOG\_NAME, SQL]
+---
+
 # INFORMATION\_SCHEMA\_CATALOG\_NAME<a name="EN-US_TOPIC_0310263776"></a>
 
 **INFORMATION\_SCHEMA\_CATALOG\_NAME**  displays the name of the current database.

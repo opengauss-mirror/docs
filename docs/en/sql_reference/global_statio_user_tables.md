@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_STATIO\_USER\_TABLES in openGauss.
+keywords: [openGauss, GLOBAL\_STATIO\_USER\_TABLES, SQL]
+---
+
 # GLOBAL\_STATIO\_USER\_TABLES<a name="EN-US_TOPIC_0245374775"></a>
 
 **GLOBAL\_STATIO\_USER\_TABLES**  displays I/O status information about all user relationship tables in namespaces on each node. 

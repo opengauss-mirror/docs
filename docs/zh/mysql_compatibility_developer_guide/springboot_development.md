@@ -1,4 +1,6 @@
 ---
+description: 本文介绍使用 Spring Boot 3.x 通过 MySQL JDBC 驱动连接 openGauss B 模式数据库的开发示例，涵盖项目构建、CRUD、事务与安全等操作。
+keywords: [openGauss, Spring Boot, MySQL兼容, JDBC, 开发示例]
 url: /zh/docs/latest/mysql_compatibility_developer_guide/springboot_development.md
 ---
 # Spring Boot 连接示例
@@ -277,3 +279,4 @@ try (Connection c = DriverManager.getConnection(url, "mysql_test_db", "******"))
 ## 相关资源
 
 - MyBatis 使用方式见 [Mybatis 连接示例](mybatis_development.md)。
+---

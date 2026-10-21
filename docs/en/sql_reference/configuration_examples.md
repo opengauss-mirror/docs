@@ -1,3 +1,8 @@
+---
+description: This document describes Configuration Examples in openGauss, covering topics such as Procedure.
+keywords: [openGauss, Configuration Examples, SQL, Procedure]
+---
+
 # Configuration Examples<a name="EN-US_TOPIC_0289900764"></a>
 
 Text search configuration specifies the following components required for converting a document into a **tsvector**:

@@ -1,3 +1,8 @@
+---
+description: This document describes DROP SEQUENCE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP SEQUENCE, SQL, Function, Precautions]
+---
+
 # DROP SEQUENCE<a name="EN-US_TOPIC_0289900269"></a>
 
 ## Function<a name="en-us_topic_0283137072_en-us_topic_0237122149_en-us_topic_0059778402_section892464917343"></a>

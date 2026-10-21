@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBE\_PLDEBUGGER.abort 的相关内容与操作方法。
+keywords: [openGauss, DBE\_PLDEBUGGER.abort, SQL参考]
+---
+
 # DBE\_PLDEBUGGER.abort
 
 令server端执行的存储过程报错跳出。返回值表示是否成功发送abort。

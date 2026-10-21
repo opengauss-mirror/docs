@@ -1,3 +1,8 @@
+---
+description: This document describes CBO Optimizer in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, CBO Optimizer, features, Availability, Introduction]
+---
+
 # CBO Optimizer<a name="EN-US_TOPIC_0000001088278192"></a>
 
 ## Availability<a name="section3480125215575"></a>

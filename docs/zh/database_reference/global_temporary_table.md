@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 全局临时表 的相关内容，涵盖 max\_active\_global\_temporary\_table、vacuum\_gtt\_defer\_check\_age 等内容。
+keywords: [openGauss, 全局临时表, 数据库参考, max\_active\_global\_temporary\_table, vacuum\_gtt\_defer\_check\_age]
+---
+
 # 全局临时表
 
 ## max\_active\_global\_temporary\_table<a name="section18307271684"></a>

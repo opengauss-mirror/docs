@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_PLDEBUGGER.step in openGauss.
+keywords: [openGauss, DBE\_PLDEBUGGER.step, SQL]
+---
+
 # DBE\_PLDEBUGGER.step<a name="EN-US_TOPIC_0000001162765995"></a>
 
 During debugging on the debug end, if a stored procedure is being executed, the stored procedure continues to be executed and information such as the line number in the first line of the stored procedure is returned. If the executed object is not a stored procedure, the return is the same as that for  **next**. After the SQL statement is executed, information such as the line number in the next line is returned.

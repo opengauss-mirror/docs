@@ -1,3 +1,8 @@
+---
+description: This document describes Row-Column Fusion Parameters in openGauss, covering topics such as enable\_imcsscan, enable\_parallel\_populate.
+keywords: [openGauss, Row-Column Fusion Parameters, database reference, enable\_imcsscan, enable\_parallel\_populate]
+---
+
 # Row-Column Fusion Parameters
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-09-03T11:49:35.134Z -->

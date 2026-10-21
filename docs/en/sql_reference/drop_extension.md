@@ -1,3 +1,8 @@
+---
+description: This document describes DROP EXTENSION in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP EXTENSION, SQL, Function, Precautions]
+---
+
 # DROP EXTENSION<a name="EN-US_TOPIC_0000001127565047"></a>
 
 ## Function<a name="section173831846163116"></a>

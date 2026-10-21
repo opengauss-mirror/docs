@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE USER in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE USER, SQL, Function, Precautions]
+---
+
 # CREATE USER<a name="EN-US_TOPIC_0289899951"></a>
 
 ## Function<a name="en-us_topic_0283136891_en-us_topic_0237122125_en-us_topic_0059778166_s08b0f056b5f14492970a9037c63fa70c"></a>

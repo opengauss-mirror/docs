@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_PLDEBUGGER.info\_breakpoints in openGauss.
+keywords: [openGauss, DBE\_PLDEBUGGER.info\_breakpoints, SQL]
+---
+
 # DBE\_PLDEBUGGER.info\_breakpoints<a name="EN-US_TOPIC_0000001162605977"></a>
 
 During debugging on the debug end, call  **info\_breakpoints**  to view the current function breakpoint.

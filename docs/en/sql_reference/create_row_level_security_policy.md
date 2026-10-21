@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE ROW LEVEL SECURITY POLICY in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE ROW LEVEL SECURITY POLICY, SQL, Function, Precautions]
+---
+
 # CREATE ROW LEVEL SECURITY POLICY<a name="EN-US_TOPIC_0289901001"></a>
 
 ## Function<a name="en-us_topic_0283137345_en-us_topic_0237122109_section196521854173211"></a>

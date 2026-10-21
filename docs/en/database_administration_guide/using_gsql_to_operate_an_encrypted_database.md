@@ -1,3 +1,8 @@
+---
+description: This document describes Using GSQL to Operate an Encrypted Database in openGauss, covering topics such as Procedure.
+keywords: [openGauss, Using GSQL to Operate an Encrypted Database, database administration, Procedure]
+---
+
 # Using GSQL to Operate an Encrypted Database<a name="EN-US_TOPIC_0000001149387921"></a>
 
 ## Procedure<a name="section199001315531"></a>

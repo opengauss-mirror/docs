@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE ACCESS METHOD in openGauss, covering topics such as Description, Notes.
+keywords: [openGauss, CREATE ACCESS METHOD, SQL, Description, Notes]
+---
+
 # CREATE ACCESS METHOD
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-31T09:20:24.044Z -->

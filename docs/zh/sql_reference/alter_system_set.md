@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER SYSTEM SET 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER SYSTEM SET, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER SYSTEM SET
 
 ## 功能描述<a name="zh-cn_topic_0283137187_zh-cn_topic_0237122075_zh-cn_topic_0059778605_s40bbf40e12d1487aaca3ddd1b9bb55e0"></a>

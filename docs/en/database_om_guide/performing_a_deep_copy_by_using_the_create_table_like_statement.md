@@ -1,3 +1,8 @@
+---
+description: This document describes Performing a Deep Copy Using CREATE TABLE LIKE in openGauss, covering topics such as Procedure.
+keywords: [openGauss, Performing a Deep Copy Using CREATE TABLE LIKE, database O&M, Procedure]
+---
+
 # Performing a Deep Copy Using CREATE TABLE LIKE
 
 <!-- md-trans-meta sourceCommit=unknown translatedAt=2026-07-14T08:04:31.778Z -->

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SUMMARY\_STAT\_SYS\_TABLES 的相关内容与操作方法。
+keywords: [openGauss, SUMMARY\_STAT\_SYS\_TABLES, SQL参考]
+---
+
 # SUMMARY\_STAT\_SYS\_TABLES
 
 openGauss内汇聚pg\_catalog、information\_schema以及pg_toast模式下的所有系统表的统计信息。

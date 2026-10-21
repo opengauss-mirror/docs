@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_STAT\_SESSION\_CU 的相关内容与操作方法。
+keywords: [openGauss, GS\_STAT\_SESSION\_CU, 数据库参考]
+---
+
 # GS\_STAT\_SESSION\_CU
 
 GS\_STAT\_SESSION\_CU视图查询openGauss各个节点，当前运行session的CU命中情况。session退出相应的统计数据会清零。openGauss重启后，统计数据也会清零。

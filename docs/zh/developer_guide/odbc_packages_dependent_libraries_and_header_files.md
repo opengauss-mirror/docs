@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ODBC包及依赖的库和头文件 的相关内容，涵盖 Linux下的ODBC包、Windows下的ODBC包 等内容。
+keywords: [openGauss, ODBC包及依赖的库和头文件, 开发指南, Linux下的ODBC包, Windows下的ODBC包]
+---
+
 # ODBC包及依赖的库和头文件
 
 ## Linux下的ODBC包<a name="zh-cn_topic_0237120406_zh-cn_topic_0059778054_s4f531225ebb34e5a9d05a3042695060d"></a>

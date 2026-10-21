@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG_STAT_VECTOR_BUFFER_HASH_CHAIN 的相关内容与操作方法。
+keywords: [openGauss, PG_STAT_VECTOR_BUFFER_HASH_CHAIN, 数据库参考]
+---
+
 # PG_STAT_VECTOR_BUFFER_HASH_CHAIN
 
 `PG_STAT_VECTOR_BUFFER_HASH_CHAIN` 显示当前实例中可读取的向量缓存池哈希链分布及扩容进度。普通用户可以查询；缓存未启用或没有可读取的缓存池哈希信息时返回空集。

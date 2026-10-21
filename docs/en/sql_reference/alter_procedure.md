@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER PROCEDURE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER PROCEDURE, SQL, Function, Precautions]
+---
+
 # ALTER PROCEDURE<a name="EN-US_TOPIC_0000001197866299"></a>
 
 ## Function<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sa364f8cdcfd24ba1a68426488e7852d4"></a>
