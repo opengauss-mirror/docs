@@ -1,14 +1,29 @@
 label: MySQL Compatibility Development Guide
 isManual: true
 sections:
-  - label: Mysql Protocol Compatibility Config
+  - label: Configuring MySQL Protocol Compatibility
     href: ./mysql_protocol_compatibility_config.md
-  - label: MySQL JDBC Development
+  - label: MySQL JDBC Connection Sample
     href: ./mysql_jdbc_development.md
-  - label: Mybatis Development
+  - label: Mybatis Connection Sample
     href: ./mybatis_development.md
-  - label: Mybatis-plus Development
+  - label: Mybatis-plus Connection Sample
     href: ./mybatis_plus_development.md
-  - label: Hibernate Development
+  - label: Hibernate Connection Sample
     href: ./hibernate_development.md
-
+  - label: Django Connection Example
+    href: ./django_development.md
+  - label: HikariCP Connection Pool Example
+    href: ./hikaricp_development.md
+  - label: mysqlclient Connection Example
+    href: ./mysqlclient_development.md
+  - label: mysql-connector-python Connection Example
+    href: ./mysql_connector_development.md
+  - label: Peewee Connection Example
+    href: ./peewee_development.md
+  - label: PyMySQL Connection Example
+    href: ./pymysql_development.md
+  - label: Spring Boot Connection Example
+    href: ./springboot_development.md
+  - label: SpringDataJPA Connection Example
+    href: ./springdatajpa_development.md
