@@ -325,5 +325,11 @@ sections:
             href: ./pqcancel.md
       - label: Link Parameters
         href: ./link_parameters_libpq.md
+  - label: development_based_on_go
+    sections:
+      - label: Overview
+        href: ./development_based_on_go.md
+      - label: openGauss Go Driver Common Operation Examples
+        href: ./example_common_operations_go.md
   - label: Commissioning
     href: ./commissioning.md
