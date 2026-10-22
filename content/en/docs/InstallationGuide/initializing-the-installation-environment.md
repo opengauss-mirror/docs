@@ -507,7 +507,7 @@ The mutual trust established between users  **root**  may incur security risks. 
 
     plat1:\~ \# ssh plat2
 
-    he authenticity of host ' plssat2 \(plat2\)' can't be established.
+    The authenticity of host ' plssat2 \(plat2\)' can't be established.
 
     ECDSA key fingerprint is SHA256:Q4DPRedFytsjsJSKf4l2lHKuzVw4prq3bIUCNVKIa7M.
 

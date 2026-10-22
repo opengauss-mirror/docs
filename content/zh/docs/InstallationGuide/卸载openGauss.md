@@ -28,28 +28,28 @@ openGauss提供了卸载脚本帮助用户完整的卸载openGauss。
 
 ```
 gs_uninstall --delete-data
-Checking unInstallationGuide.
-Successfully checked unInstallationGuide.
+Checking unInstallation.
+Successfully checked unInstallation.
 Stopping the cluster.
 Successfully stopped the cluster.
 Successfully deleted instances.
 Uninstalling application.
 Successfully uninstalled application.
-UnInstallationGuide succeeded.
+UnInstallation succeeded.
 ```
 
 单机卸载场景使用gs\_uninstall脚本进行卸载。
 
 ```
 gs_uninstall --delete-data
-Checking unInstallationGuide.
-Successfully checked unInstallationGuide.
+Checking unInstallation.
+Successfully checked unInstallation.
 Stopping the cluster.
 Successfully stopped the cluster.
 Successfully deleted instances.
 Uninstalling application.
 Successfully uninstalled application.
-UnInstallationGuide succeeded.
+UnInstallation succeeded.
 ```
 
 **错误排查**
@@ -112,7 +112,7 @@ UnInstallationGuide succeeded.
 
 5. 删除openGauss数据库各节点root用户的互信，操作参考[手工建立互信](初始化安装环境.md)的删除root用户互信部分内容。
 
-6. 注销root用户。
+6. 退出root用户。
 
 **示例**
 

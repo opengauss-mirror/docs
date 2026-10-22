@@ -75,7 +75,7 @@
     <!-- uwal文件大小 -->
     <PARAM name="uwal_disk_size" value="8589934592"/>
     <!-- uwal日志路径 -->
-    <PARAM name="uwal_log_path" value="'/home/omm/data/log/omm/omm/pg_log'"/>
+    <PARAM name="uwal_log_path" value="/home/omm/data/log/omm/omm/pg_log"/>
     <!-- uwal压缩开关 -->
     <PARAM name="uwal_rpc_compression_switch" value="false"/>
     <!-- uwal流控开关 -->
@@ -85,7 +85,7 @@
     <!-- uwal异步写开关 -->
     <PARAM name="uwal_async_append_switch" value="false"/>
     <!-- uwal挂载路径 -->
-    <PARAM name="uwal_devices_path" value="'/home/omm/data/dn'"/>
+    <PARAM name="uwal_devices_path" value="/home/omm/data/dn"/>
 
     <!-- VIP信息  -->
     <PARAM name="floatIp1" value="10.10.10.100"/>
