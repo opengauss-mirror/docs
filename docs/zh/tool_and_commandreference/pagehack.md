@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 离线页面解析工具——pagehack 的相关内容，涵盖 功能介绍、前提条件 等内容。
+keywords: [openGauss, 离线页面解析工具——pagehack, 工具与命令参考, 功能介绍, 前提条件]
+---
+
 # 离线页面解析工具——pagehack
 
 ## 功能介绍<a name="zh-cn_topic_0237152442_section125419154823"></a>

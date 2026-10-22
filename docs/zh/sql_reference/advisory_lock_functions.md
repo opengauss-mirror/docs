@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 咨询锁函数 的相关内容与操作方法。
+keywords: [openGauss, 咨询锁函数, SQL参考]
+---
+
 # 咨询锁函数
 
 咨询锁函数用于管理咨询锁（Advisory Lock）。

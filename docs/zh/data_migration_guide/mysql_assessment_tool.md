@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MySQL语法兼容性评估工具 的相关内容，涵盖 工具介绍、源码安装 等内容。
+keywords: [openGauss, MySQL语法兼容性评估工具, 数据迁移, 工具介绍, 源码安装]
+---
+
 # MySQL语法兼容性评估工具
 
 ## 工具介绍

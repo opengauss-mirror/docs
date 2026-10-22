@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CLASS\_VITAL\_INFO 的相关内容与操作方法。
+keywords: [openGauss, CLASS\_VITAL\_INFO, SQL参考]
+---
+
 # CLASS\_VITAL\_INFO
 
 CLASS\_VITAL\_INFO视图用于做WDR时校验相同的表或者索引的oid是否一致。

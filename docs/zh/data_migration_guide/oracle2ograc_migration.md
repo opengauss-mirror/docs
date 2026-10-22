@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Oracle 迁移 oGRAC 工具介绍 的相关内容，涵盖 目的、迁移前准备 等内容。
+keywords: [openGauss, Oracle 迁移 oGRAC 工具介绍, 数据迁移, 目的, 迁移前准备]
+---
+
 #  Oracle 迁移 oGRAC 工具介绍
 ## 目的
 

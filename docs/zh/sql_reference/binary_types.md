@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 二进制类型 的相关内容与操作方法。
+keywords: [openGauss, 二进制类型, SQL参考]
+---
+
 # 二进制类型
 
 openGauss支持的二进制类型请参见[表1](#zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_t910f42f45b374d94afe2798c42fc5ef6)。

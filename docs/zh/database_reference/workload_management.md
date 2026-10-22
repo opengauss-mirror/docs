@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 负载管理 的相关内容，涵盖 use\_workload\_manager、cgroup\_name 等内容。
+keywords: [openGauss, 负载管理, 数据库参考, use\_workload\_manager, cgroup\_name]
+---
+
 # 负载管理
 
 未对数据库资源做控制时，容易出现并发任务抢占资源导致操作系统过载甚至最终崩溃。操作系统过载时，其响应用户任务的速度会变慢甚至无响应；操作系统崩溃时，整个系统将无法对用户提供任何服务。openGauss的负载管理功能能够基于可用资源的多少均衡数据库的负载，以避免数据库系统过载。

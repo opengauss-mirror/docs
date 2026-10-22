@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_REPLICATION\_SLOTS 的相关内容与操作方法。
+keywords: [openGauss, PG\_REPLICATION\_SLOTS, 数据库参考]
+---
+
 # PG\_REPLICATION\_SLOTS
 
 PG\_REPLICATION\_SLOTS视图查看复制槽的信息。

@@ -1,3 +1,8 @@
+---
+description: This document describes Constraints on Index Use in openGauss, covering topics such as Constraints.
+keywords: [openGauss, Constraints on Index Use, SQL, Constraints]
+---
+
 # Constraints on Index Use<a name="EN-US_TOPIC_0289900239"></a>
 
 The following is an example of index use:

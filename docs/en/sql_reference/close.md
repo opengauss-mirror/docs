@@ -1,3 +1,8 @@
+---
+description: This document describes CLOSE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CLOSE, SQL, Function, Precautions]
+---
+
 # CLOSE<a name="EN-US_TOPIC_0289899821"></a>
 
 ## Function<a name="en-us_topic_0283137397_en-us_topic_0237122091_en-us_topic_0059779164_sa18f3afba3784d76b0052fa2fa489b8c"></a>

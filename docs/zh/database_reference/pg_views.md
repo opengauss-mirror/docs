@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_VIEWS 的相关内容与操作方法。
+keywords: [openGauss, PG\_VIEWS, 数据库参考]
+---
+
 # PG\_VIEWS
 
 PG\_VIEWS视图提供访问数据库中每个视图的有用信息。

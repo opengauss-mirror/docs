@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_STATIO\_ALL\_TABLES in openGauss.
+keywords: [openGauss, PG\_STATIO\_ALL\_TABLES, database reference]
+---
+
 # PG\_STATIO\_ALL\_TABLES<a name="EN-US_TOPIC_0289900072"></a>
 
 **PG\_STATIO\_ALL\_TABLES**  contains I/O statistics for each table \(including the TOAST table\) in the current database.

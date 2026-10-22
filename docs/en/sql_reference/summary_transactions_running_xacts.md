@@ -1,3 +1,8 @@
+---
+description: This document describes SUMMARY\_TRANSACTIONS\_RUNNING\_XACTS in openGauss.
+keywords: [openGauss, SUMMARY\_TRANSACTIONS\_RUNNING\_XACTS, SQL]
+---
+
 # SUMMARY\_TRANSACTIONS\_RUNNING\_XACTS<a name="EN-US_TOPIC_0000001153389738"></a>
 
 **SUMMARY\_TRANSACTIONS\_RUNNING\_XACTS**  displays information about the running transactions on each CN in the cluster. The column content is the same as that of  **TRANSACTIONS\_RUNNING\_XACTS**.

@@ -1,3 +1,8 @@
+---
+description: This document describes IO Profile in openGauss.
+keywords: [openGauss, IO Profile, SQL]
+---
+
 # IO Profile<a name="EN-US_TOPIC_0000001215035244"></a>
 
 The following table lists metrics in the IO Profile report.

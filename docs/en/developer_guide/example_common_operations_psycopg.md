@@ -1,3 +1,8 @@
+---
+description: This document describes Examples: Common Operations in openGauss, covering topics such as Example 1:, Example 2: High Client Memory Usage.
+keywords: [openGauss, Examples: Common Operations, development, Example 1:, Example 2: High Client Memory Usage]
+---
+
 # Examples: Common Operations<a name="EN-US_TOPIC_0289899917"></a>
 
 ## Example 1:<a name="en-us_topic_0283136826_en-us_topic_0237120386_en-us_topic_0213179152_en-us_topic_0189251739_section8820452474"></a>

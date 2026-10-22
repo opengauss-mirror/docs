@@ -1,3 +1,8 @@
+---
+description: This document describes PQfinish in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, PQfinish, development, Function, Prototype]
+---
+
 # PQfinish<a name="EN-US_TOPIC_0242380573"></a>
 
 ## Function<a name="en-us_topic_0241735616_section1251161713252"></a>

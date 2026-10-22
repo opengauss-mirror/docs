@@ -1,3 +1,8 @@
+---
+description: This document describes Stored Procedures in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, Stored Procedures, SQL, Syntax, Parameter Description]
+---
+
 # Stored Procedures<a name="EN-US_TOPIC_0000001224939989"></a>
 
 A stored procedure is a set of SQL statements that can implement a specific function. You can repeatedly call the stored procedure to reduce the number of repeated SQL statements and improve work efficiency.

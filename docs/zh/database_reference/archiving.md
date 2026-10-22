@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 归档 的相关内容，涵盖 archive\_mode、archive\_command 等内容。
+keywords: [openGauss, 归档, 数据库参考, archive\_mode, archive\_command]
+---
+
 # 归档
 
 ## archive\_mode<a name="zh-cn_topic_0283137238_zh-cn_topic_0237124710_zh-cn_topic_0059778119_sc70ee2a3ae214c89a156d9ad7a8b81e8"></a>

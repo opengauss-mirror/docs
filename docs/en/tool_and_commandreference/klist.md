@@ -1,3 +1,8 @@
+---
+description: This document describes klist in openGauss, covering topics such as Function, Parameter Description.
+keywords: [openGauss, klist, tools and commands, Function, Parameter Description]
+---
+
 # klist<a name="EN-US_TOPIC_0249632262"></a>
 
 ## Function<a name="en-us_topic_0237152431_section10172172474817"></a>

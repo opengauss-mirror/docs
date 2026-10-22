@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 将磁盘表转换为MOT 的相关内容，涵盖 前置条件检查、转换 等内容。
+keywords: [openGauss, 将磁盘表转换为MOT, 数据库管理, 前置条件检查, 转换]
+---
+
 # 将磁盘表转换为MOT
 
 磁盘表直接转换为MOT尚不能实现，这意味着尚不存在将基于磁盘的表转换为MOT的ALTER TABLE语句。

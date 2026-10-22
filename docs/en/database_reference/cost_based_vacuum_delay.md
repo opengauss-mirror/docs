@@ -1,3 +1,8 @@
+---
+description: This document describes Cost-based Vacuum Delay in openGauss, covering topics such as Background, vacuum\_cost\_delay.
+keywords: [openGauss, Cost-based Vacuum Delay, database reference, Background, vacuum\_cost\_delay]
+---
+
 # Cost-based Vacuum Delay<a name="EN-US_TOPIC_0289900148"></a>
 
 This feature allows administrators to reduce the I/O impact of the  **VACUUM**  and  **ANALYZE**  statements on concurrent database activities. It is often more important to prevent maintenance statements, such as  **VACUUM**  and  **ANALYZE**, from affecting other database operations than to run them quickly. Cost-based vacuum delay provides a way for administrators to achieve this purpose.

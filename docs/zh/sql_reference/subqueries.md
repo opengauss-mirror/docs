@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 子查询 的相关内容，涵盖 SELECT语句中的子查询使用、INSERT语句中的子查询使用 等内容。
+keywords: [openGauss, 子查询, SQL参考, SELECT语句中的子查询使用, INSERT语句中的子查询使用]
+---
+
 # 子查询
 
 子查询或称为内部查询，嵌套查询，指的是在数据库查询的WHERE子句中嵌入查询语句，相当于临时表。一个SELECT语句的查询结果能够作为另一个语句的输入值。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 运行环境 的相关内容，涵盖 支持的硬件平台、支持的操作系统 等内容。
+keywords: [openGauss, 运行环境, 产品介绍, 支持的硬件平台, 支持的操作系统]
+---
+
 # 运行环境
 
 ## 支持的硬件平台<a name="zh-cn_topic_0283136535_zh-cn_topic_0237080615_zh-cn_topic_0231763749_zh-cn_topic_0059777704_se9be325cd0b04ac59d1bed4ff50dc00a"></a>

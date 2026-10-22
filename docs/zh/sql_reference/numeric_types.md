@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 数值类型 的相关内容与操作方法。
+keywords: [openGauss, 数值类型, SQL参考]
+---
+
 # 数值类型
 
 [表1](#zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_table40398258)列出了所有的可用类型。数字操作符和相关的内置函数请参见[数字操作函数和操作符](mathematical_functions_and_operators.md)。

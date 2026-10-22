@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SUMMARY\_WORKLOAD\_SQL\_COUNT 的相关内容与操作方法。
+keywords: [openGauss, SUMMARY\_WORKLOAD\_SQL\_COUNT, SQL参考]
+---
+
 # SUMMARY\_WORKLOAD\_SQL\_COUNT
 
 显示openGauss内各数据库主节点的workload上的SQL数量分布。

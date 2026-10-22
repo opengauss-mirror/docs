@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 开发规范 的相关内容与操作方法。
+keywords: [openGauss, 开发规范, 开发指南]
+---
+
 # 开发规范
 
 如果用户在APP的开发中，使用了连接池机制，那么需要遵循如下规范：

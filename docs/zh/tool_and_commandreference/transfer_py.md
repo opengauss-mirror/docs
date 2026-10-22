@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss transfer.py 的相关内容，涵盖 功能介绍、前提条件 等内容。
+keywords: [openGauss, transfer.py, 工具与命令参考, 功能介绍, 前提条件]
+---
+
 # transfer.py
 
 ## 功能介绍<a name="section51291439191115"></a>

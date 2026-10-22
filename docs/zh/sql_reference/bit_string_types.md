@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 位串类型 的相关内容与操作方法。
+keywords: [openGauss, 位串类型, SQL参考]
+---
+
 # 位串类型
 
 位串就是一串1和0的字符串。它们可以用于存储位掩码。

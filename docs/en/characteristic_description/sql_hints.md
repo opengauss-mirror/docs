@@ -1,3 +1,8 @@
+---
+description: This document describes SQL Hints in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, SQL Hints, features, Availability, Introduction]
+---
+
 # SQL Hints<a name="EN-US_TOPIC_0000001135548521"></a>
 
 ## Availability<a name="section56086982"></a>

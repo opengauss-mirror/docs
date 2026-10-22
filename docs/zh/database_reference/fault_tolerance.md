@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 容错性 的相关内容，涵盖 exit\_on\_error、restart\_after\_crash 等内容。
+keywords: [openGauss, 容错性, 数据库参考, exit\_on\_error, restart\_after\_crash]
+---
+
 # 容错性
 
 当数据库系统发生错误时，以下参数控制服务器处理错误的方式。

@@ -1,3 +1,8 @@
+---
+description: This document describes DELETE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DELETE, SQL, Function, Precautions]
+---
+
 # DELETE<a name="EN-US_TOPIC_0289900955"></a>
 
 ## Function<a name="en-us_topic_0283136795_en-us_topic_0237122131_en-us_topic_0059778379_se9507fb26df547a795ac7940e3a19ecf"></a>

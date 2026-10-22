@@ -1,3 +1,8 @@
+---
+description: This document describes Event Trigger Functions in openGauss.
+keywords: [openGauss, Event Trigger Functions, SQL]
+---
+
 # Event Trigger Functions<a name="EN-US_TOPIC_0289014904"></a>
 
 - pg\_event\_trigger\_ddl\_commands

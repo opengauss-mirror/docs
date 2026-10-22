@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ROLLBACK TO SAVEPOINT 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ROLLBACK TO SAVEPOINT, SQL参考, 功能描述, 注意事项]
+---
+
 # ROLLBACK TO SAVEPOINT
 
 ## 功能描述<a name="zh-cn_topic_0283137625_zh-cn_topic_0237122182_zh-cn_topic_0059778869_section2860121201518"></a>

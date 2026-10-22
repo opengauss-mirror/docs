@@ -1,3 +1,8 @@
+---
+description: This document describes cm\_install and cm\_uninstall in openGauss, covering topics such as Precautions, Prerequisites.
+keywords: [openGauss, cm\_install and cm\_uninstall, tools and commands, Precautions, Prerequisites]
+---
+
 # cm\_install and cm\_uninstall<a name="EN-US_TOPIC_0000001201210100"></a>
 
 The cm\_install tool can be used to deploy CMs in the openGauss database cluster. The cm\_uninstall tool can be used to uninstall CMs from the openGauss database cluster without affecting the DN cluster. 

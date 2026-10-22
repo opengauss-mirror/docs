@@ -1,3 +1,8 @@
+---
+description: This document describes Querying a System Catalog in openGauss, covering topics such as Querying Database Tables, Viewing Database Users.
+keywords: [openGauss, Querying a System Catalog, database reference, Querying Database Tables, Viewing Database Users]
+---
+
 # Querying a System Catalog<a name="EN-US_TOPIC_0289900778"></a>
 
 In addition to the created tables, a database contains many system catalogs. These system catalogs contain openGauss installation information and information about various queries and processes in openGauss. You can collect information about the database by querying system catalogs.

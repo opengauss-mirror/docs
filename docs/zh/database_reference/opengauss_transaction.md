@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss openGauss事务 的相关内容，涵盖 transaction\_isolation、transaction\_read\_only 等内容。
+keywords: [openGauss, openGauss事务, 数据库参考, transaction\_isolation, transaction\_read\_only]
+---
+
 # openGauss事务
 
 介绍openGauss事务隔离、事务只读、最大prepared事务数、维护模式目的参数设置及取值范围等内容。

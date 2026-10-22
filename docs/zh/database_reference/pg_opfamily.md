@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_OPFAMILY 的相关内容与操作方法。
+keywords: [openGauss, PG\_OPFAMILY, 数据库参考]
+---
+
 # PG\_OPFAMILY
 
 PG\_OPFAMILY系统表定义操作符族。

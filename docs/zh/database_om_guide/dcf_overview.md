@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DCF 概述 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, DCF 概述, 数据库运维, 可获得性, 特性简介]
+---
+
 # DCF 概述
 
 ## 可获得性<a name="section15406143204715"></a>

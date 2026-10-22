@@ -1,3 +1,8 @@
+---
+description: This document describes Adaptive Plan Selection in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Adaptive Plan Selection, features, Availability, Introduction]
+---
+
 # Adaptive Plan Selection<a name="EN-US_TOPIC_0000001372795033"></a>
 
 ## Availability<a name="section1420315335481"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_PARTITION in openGauss.
+keywords: [openGauss, PG\_PARTITION, database reference]
+---
+
 # PG\_PARTITION<a name="EN-US_TOPIC_0289899859"></a>
 
 **PG\_PARTITION**  records all partitioned tables, table partitions, TOAST tables on table partitions, and index partitions in the database. Partitioned index information is not stored in the system catalog  **PG\_PARTITION**.

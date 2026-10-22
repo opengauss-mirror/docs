@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_DB\_ROLE\_SETTING 的相关内容与操作方法。
+keywords: [openGauss, PG\_DB\_ROLE\_SETTING, 数据库参考]
+---
+
 # PG\_DB\_ROLE\_SETTING
 
 PG\_DB\_ROLE\_SETTING系统表存储数据库运行时每个角色与数据绑定的配置项的默认值。

@@ -1,3 +1,8 @@
+---
+description: This document describes Replication Parameters of Two Database Instances in openGauss, covering topics such as RepOriginId.
+keywords: [openGauss, Replication Parameters of Two Database Instances, database reference, RepOriginId]
+---
+
 # Replication Parameters of Two Database Instances<a name="EN-US_TOPIC_0311767368"></a>
 
 ## RepOriginId<a name="section1622281914212"></a>

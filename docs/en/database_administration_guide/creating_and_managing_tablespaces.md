@@ -1,3 +1,8 @@
+---
+description: This document describes Creating and Managing Tablespaces in openGauss, covering topics such as Background, Precautions.
+keywords: [openGauss, Creating and Managing Tablespaces, database administration, Background, Precautions]
+---
+
 # Creating and Managing Tablespaces<a name="EN-US_TOPIC_0289900987"></a>
 
 ## Background<a name="en-us_topic_0283137616_en-us_topic_0237120297_en-us_topic_0059778849_saaab96d21e01450bb4a62113d37a03c7"></a>

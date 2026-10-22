@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 数据库对象命名 的相关内容与操作方法。
+keywords: [openGauss, 数据库对象命名, 开发指南]
+---
+
 # 数据库对象命名
 
 数据库对象命名需要满足约束：

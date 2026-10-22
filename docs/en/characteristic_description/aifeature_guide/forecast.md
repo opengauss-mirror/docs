@@ -1,3 +1,8 @@
+---
+description: This document describes Forecast in openGauss, covering topics such as Overview, Environment Deployment.
+keywords: [openGauss, Forecast, features, Overview, Environment Deployment]
+---
+
 # Forecast<a name="EN-US_TOPIC_0000001195431216"></a>
 
 ## Overview<a name="EN-US_TOPIC_0000001240671135"></a>

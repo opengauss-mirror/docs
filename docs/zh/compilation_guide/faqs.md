@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss FAQ 的相关内容，涵盖 如何清除编译过程中生成的临时文件、如何解决“Configure error: C compiler cannot create executables”报错 等内容。
+keywords: [openGauss, FAQ, 编译指南, 如何清除编译过程中生成的临时文件, 如何解决“Configure error: C compiler cannot create executables”报错]
+---
+
 # FAQ
 
 ## 如何清除编译过程中生成的临时文件

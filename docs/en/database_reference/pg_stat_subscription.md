@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_STAT\_SUBSCRIPTION in openGauss.
+keywords: [openGauss, PG\_STAT\_SUBSCRIPTION, database reference]
+---
+
 # PG\_STAT\_SUBSCRIPTION<a name="EN-US_TOPIC_0000001197272474"></a>
 
 **PG\_STAT\_SUBSCRIPTION** displays the detailed synchronization information about the subscription.

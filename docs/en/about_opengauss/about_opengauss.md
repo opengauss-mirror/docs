@@ -1,3 +1,8 @@
+---
+description: This document describes Product Description in openGauss, covering topics such as Technical Characteristics, Software Architecture.
+keywords: [openGauss, Product Description, product overview, Technical Characteristics, Software Architecture]
+---
+
 # Product Description 
 
 This document describes the openGauss database in terms of its product positioning, system architecture, application scenarios, operating environment, technical specifications, basic functions and features, and enterprise-level enhanced features. 
@@ -42,7 +47,7 @@ Service data is stored on a single physical node, and data access tasks are push
 [Figure 1](#en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_fig5205420191411)  shows the logical components of openGauss.
 
 **Figure  1**  openGauss logical architecture<a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_fig5205420191411"></a>  
-<img src="figures/opengauss-logical-architecture.png" title="opengauss-logical-architecture" style="zoom:67%;" />
+<img src="figures/opengauss-logical-architecture.png" alt="openGauss logical architecture" title="opengauss-logical-architecture" style="zoom:67%;" />
 
 **Table  1**  Architecture description
 

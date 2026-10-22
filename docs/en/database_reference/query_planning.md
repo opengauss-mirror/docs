@@ -1,3 +1,8 @@
+---
+description: This document describes Query Planning in openGauss.
+keywords: [openGauss, Query Planning, database reference]
+---
+
 # Query Planning<a name="EN-US_TOPIC_0289900907"></a>
 
 This section describes the method configuration, cost constants, planning algorithm, and some configuration parameters for the optimizer.

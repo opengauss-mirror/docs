@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 审计概述 的相关内容，涵盖 背景信息 等内容。
+keywords: [openGauss, 审计概述, 数据库管理, 背景信息]
+---
+
 # 审计概述
 
 ## 背景信息<a name="zh-cn_topic_0283137487_zh-cn_topic_0237121112_zh-cn_topic_0059778562_sf060bc235e8f4b7c817de579b31cc45a"></a>

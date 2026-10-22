@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Simple词典 的相关内容，涵盖 注意事项、操作步骤 等内容。
+keywords: [openGauss, Simple词典, SQL参考, 注意事项, 操作步骤]
+---
+
 # Simple词典
 
 Simple词典首先将输入标记转换为小写字母，然后检查停用词表。如果识别为停用词则返回空数组，即表示该标记会被丢弃。否则，输入标记的小写形式作为规范化后的lexeme返回。此外，Simple词典可通过设置参数Accept为false（默认值true），将非停用词报告为未识别，传递给后继词典继续处理。

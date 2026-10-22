@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 动态数据脱敏函数 的相关内容与操作方法。
+keywords: [openGauss, 动态数据脱敏函数, SQL参考]
+---
+
 # 动态数据脱敏函数
 
 >[!NOTE]说明

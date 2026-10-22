@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PQresultStatus 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, PQresultStatus, 开发指南, 功能描述, 原型]
+---
+
 # PQresultStatus
 
 ## 功能描述<a name="zh-cn_topic_0241735621_section17608142135118"></a>

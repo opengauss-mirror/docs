@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SELECT INTO 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, SELECT INTO, SQL参考, 功能描述, 注意事项]
+---
+
 # SELECT INTO
 
 ## 功能描述<a name="zh-cn_topic_0283137419_zh-cn_topic_0237122185_zh-cn_topic_0059779381_s8acfcbcb82b947e08be0c1bb0de2de86"></a>

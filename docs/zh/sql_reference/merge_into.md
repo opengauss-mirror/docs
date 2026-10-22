@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MERGE INTO 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, MERGE INTO, SQL参考, 功能描述, 注意事项]
+---
+
 # MERGE INTO
 
 ## 功能描述<a name="zh-cn_topic_0283137308_zh-cn_topic_0237122170_section11462163155618"></a>

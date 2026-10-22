@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Instance Efficiency Percentages 的相关内容与操作方法。
+keywords: [openGauss, Instance Efficiency Percentages, SQL参考]
+---
+
 # Instance Efficiency Percentages
 
 Instance Efficiency Percentages指标名称及描述如下表所示。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_LSC\_MEMORY\_DETAIL 的相关内容与操作方法。
+keywords: [openGauss, GS\_LSC\_MEMORY\_DETAIL, 数据库参考]
+---
+
 # GS\_LSC\_MEMORY\_DETAIL
 
 GS\_LSC\_MEMORY\_DETAIL视图统计所有的线程的本地SysCache内存使用情况，以MemoryContext节点来统计，仅在开启GSC的模式下有数据。

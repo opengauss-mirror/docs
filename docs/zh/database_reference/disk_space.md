@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 磁盘空间 的相关内容，涵盖 sql\_use\_spacelimit、temp\_file\_limit 等内容。
+keywords: [openGauss, 磁盘空间, 数据库参考, sql\_use\_spacelimit, temp\_file\_limit]
+---
+
 # 磁盘空间
 
 介绍与磁盘空间相关的参数，用于限制临时文件所占用的磁盘空间。

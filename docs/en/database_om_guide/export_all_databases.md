@@ -1,3 +1,8 @@
+---
+description: This document describes Exporting All Databases in openGauss, covering topics such as Exporting All Databases, Exporting Global Objects.
+keywords: [openGauss, Exporting All Databases, database O&M, Exporting Global Objects]
+---
+
 # Exporting All Databases<a name="EN-US_TOPIC_0000001162579676"></a>
 
 ## Exporting All Databases<a name="EN-US_TOPIC_0242370323"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Creating/Dropping an MOT Table in openGauss.
+keywords: [openGauss, Creating/Dropping an MOT Table, database administration]
+---
+
 # Creating/Dropping an MOT Table<a name="EN-US_TOPIC_0270171478"></a>
 
 Creating a Memory Optimized Table \(MOT\) is very simple. Only the create and drop table statements in MOT differ from the statements for disk-based tables in openGauss. The syntax of  **all other**  commands for SELECT, DML and DDL are the same for MOT tables as for openGauss disk-based tables.

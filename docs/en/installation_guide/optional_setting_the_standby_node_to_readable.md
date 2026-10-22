@@ -1,3 +1,8 @@
+---
+description: This document describes \(Optional\) Setting the Standby Node to Readable in openGauss, covering topics such as Procedure.
+keywords: [openGauss, \(Optional\) Setting the Standby Node to Readable, installation, Procedure]
+---
+
 # \(Optional\) Setting the Standby Node to Readable<a name="EN-US_TOPIC_0249784573"></a>
 
 Readable standby node is an optional feature. You need to modify the configuration parameters and restart the primary and standby nodes before using this feature. After the readable standby node function is enabled, the standby node is readable, meeting data consistency requirements.

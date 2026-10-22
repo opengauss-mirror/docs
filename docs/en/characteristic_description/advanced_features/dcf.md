@@ -1,3 +1,8 @@
+---
+description: This document describes DCF in openGauss, covering topics such as Architecture, Features.
+keywords: [openGauss, DCF, features, Architecture, Features]
+---
+
 # DCF<a name="EN-US_TOPIC_0000001255021817"></a>
 
 Distributed Consensus Framework \(DCF\) implements typical algorithms such as Paxos and Raft to solve distribution consistency problems. DCF provides capabilities such as log replication, cluster HA, and automatic leader election, and can forcibly start the minority and dynamically adjust traffic for log replication. In addition, multiple Paxos-based roles are provided and can be adjusted.
@@ -9,7 +14,7 @@ DCF is a high-performance, highly mature, reliable, scalable, and easy-to-use in
 [Figure 1](#fig31591049102410)  shows the functional architecture of the DCF, including the algorithm modules, storage module, communication module, and service layer.
 
 **Figure  1**  Functional architecture of the DCF<a name="fig31591049102410"></a>  
-![](figures/functional-architecture-of-the-dcf.png "functional-architecture-of-the-dcf")
+![Functional architecture of the DCF](figures/functional-architecture-of-the-dcf.png "functional-architecture-of-the-dcf")
 
 - **Algorithm modules:**
 
@@ -59,7 +64,7 @@ DCF is a high-performance, highly mature, reliable, scalable, and easy-to-use in
     [Figure 2](#fig548518330404)  shows the process of the flow control algorithm.
 
     **Figure  2**  Process of the flow control algorithm<a name="fig548518330404"></a>  
-    ![](figures/process-of-the-flow-control-algorithm.jpg "process-of-the-flow-control-algorithm")
+    ![Process of the flow control algorithm](figures/process-of-the-flow-control-algorithm.jpg "process-of-the-flow-control-algorithm")
 
     The core algorithm process is as follows:
 

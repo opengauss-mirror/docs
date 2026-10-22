@@ -1,3 +1,8 @@
+---
+description: This document describes GOTO Statements in openGauss, covering topics such as Syntax, Examples.
+keywords: [openGauss, GOTO Statements, SQL, Syntax, Examples]
+---
+
 # GOTO Statements<a name="EN-US_TOPIC_0245374628"></a>
 
 A  **GOTO**  statement unconditionally transfers the control from the current statement to a labeled statement. The  **GOTO**  statement changes the execution logic. Therefore, use this statement only when necessary. Alternatively, you can use the  **EXCEPTION**  statement to handle issues in special scenarios. To run a  **GOTO**  statement, the labeled statement must be unique.
@@ -6,11 +11,11 @@ A  **GOTO**  statement unconditionally transfers the control from the current st
 
 label declaration ::=
 
-![](figures/en-us_image_0253404022.png)
+![Syntax diagram](figures/en-us_image_0253404022.png)
 
 goto statement ::=
 
-![](figures/en-us_image_0253404023.png)
+![Syntax diagram](figures/en-us_image_0253404023.png)
 
 ## Examples<a name="en-us_topic_0237122238_section147058110414"></a>
 

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 用户自定义函数 的相关内容，涵盖 udf\_memory\_limit、FencedUDFMemoryLimit 等内容。
+keywords: [openGauss, 用户自定义函数, 数据库参考, udf\_memory\_limit, FencedUDFMemoryLimit]
+---
+
 # 用户自定义函数
 
 ## udf\_memory\_limit<a name="zh-cn_topic_0283137548_zh-cn_topic_0237124743_section1765913299426"></a>

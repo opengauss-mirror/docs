@@ -1,3 +1,8 @@
+---
+description: This document describes java.sql.PreparedStatement in openGauss.
+keywords: [openGauss, java.sql.PreparedStatement, development]
+---
+
 # java.sql.PreparedStatement<a name="EN-US_TOPIC_0289899873"></a>
 
 This section describes  **java.sql.PreparedStatement**, the API for preparing statements.

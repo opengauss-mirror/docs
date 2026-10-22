@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 物理文件解析工具 - gs_filedump 的相关内容，涵盖 功能介绍、前提条件 等内容。
+keywords: [openGauss, 物理文件解析工具 - gs_filedump, 工具与命令参考, 功能介绍, 前提条件]
+---
+
 # 物理文件解析工具 - gs_filedump
 
 ## 功能介绍

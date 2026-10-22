@@ -1,3 +1,8 @@
+---
+description: This document describes Other Functions in openGauss.
+keywords: [openGauss, Other Functions, SQL]
+---
+
 # Other Functions<a name="EN-US_TOPIC_0289900063"></a>
 
 - plan\_seed\(\)

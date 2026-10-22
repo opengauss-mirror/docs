@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MOT使用概述 的相关内容与操作方法。
+keywords: [openGauss, MOT使用概述, 数据库管理]
+---
+
 # MOT使用概述
 
 MOT作为openGauss的一部分自动部署。有关如何计算和规划所需的内存和存储资源以维持工作负载的说明，请参阅[MOT准备](mot_prerequisites.md)。参考[MOT部署](mot_server_optimization.md)了解MOT中所有的配置，以及服务器优化的非必须选项。
@@ -9,7 +14,7 @@ MOT作为openGauss的一部分自动部署。有关如何计算和规划所需�
 - 阅读以下内容了解如何使用MOT：
 
     <a name="table28609126"></a>
-    <table><tbody><tr id="row984423"><td class="cellrowborder" valign="top" width="100%"><p id="p12629440"><a name="p12629440"></a><a name="p12629440"></a><a name="image46556104"></a><a name="image46556104"></a><span><img id="image46556104" src="figures/zh-cn_image_0280525201.png" width="249.375" height="262.34250000000003"></span></p>
+    <table><tbody><tr id="row984423"><td class="cellrowborder" valign="top" width="100%"><p id="p12629440"><a name="p12629440"></a><a name="p12629440"></a><a name="image46556104"></a><a name="image46556104"></a><span><img id="image46556104" src="figures/zh-cn_image_0280525201.png" alt="MOT使用概述示意图" width="249.375" height="262.34250000000003"></span></p>
     </td>
     </tr>
     </tbody>

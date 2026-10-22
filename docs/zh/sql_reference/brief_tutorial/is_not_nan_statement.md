@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss IS [NOT] NAN 的相关内容，涵盖 IS NAN、IS NOT NAN 等内容。
+keywords: [openGauss, IS [NOT] NAN, SQL参考, IS NAN, IS NOT NAN]
+---
+
 # IS [NOT] NAN<a name="ZH-CN_TOPIC_0000001210141893"></a>
 
 在`SELECT`和`WHERE`子句中使用，判断输入数值是否为`NaN（Not a Number）`。若为非数字，则会转换为数字，若转换失败，则报错。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss javax.sql.PooledConnection 的相关内容与操作方法。
+keywords: [openGauss, javax.sql.PooledConnection, 开发指南]
+---
+
 # javax.sql.PooledConnection
 
 javax.sql.PooledConnection是由连接池创建的连接接口。

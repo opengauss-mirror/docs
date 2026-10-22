@@ -1,3 +1,8 @@
+---
+description: This document describes TRUNCATE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, TRUNCATE, SQL, Function, Precautions]
+---
+
 # TRUNCATE<a name="EN-US_TOPIC_0289900169"></a>
 
 ## Function<a name="en-us_topic_0283137291_en-us_topic_0237122193_en-us_topic_0059777694_sf3e0cbc4893c4042ac208fca35e705e8"></a>

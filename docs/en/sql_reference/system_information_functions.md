@@ -1,3 +1,8 @@
+---
+description: This document describes System Information Functions in openGauss, covering topics such as Session Information Functions.
+keywords: [openGauss, System Information Functions, SQL, Session Information Functions]
+---
+
 # System Information Functions<a name="EN-US_TOPIC_0289899824"></a>
 
 ## Session Information Functions<a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_seb0ac642d9594cfe9a06d3d304c6dc75"></a>

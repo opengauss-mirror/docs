@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss JDBC包、驱动类和环境类 的相关内容，涵盖 JDBC包、驱动类 等内容。
+keywords: [openGauss, JDBC包, 驱动类和环境类, 开发指南, 驱动类]
+---
+
 # JDBC包、驱动类和环境类
 
 ## JDBC包<a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_zh-cn_topic_0189249669_zh-cn_topic_0059778950_s9694406852de4db0afcc99b19079f446"></a>

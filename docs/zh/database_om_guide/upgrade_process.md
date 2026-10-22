@@ -1,9 +1,14 @@
+---
+description: 本文介绍 openGauss 升级流程 的相关内容与操作方法。
+keywords: [openGauss, 升级流程, 数据库运维]
+---
+
 # 升级流程
 
 本章介绍升级到该版本的主要升级过程。
 
 **图 1**  升级流程图<a name="fig1492165721411"></a>  
-![](figures/upgrade-flowchart.png)
+![升级流程图](figures/upgrade-flowchart.png)
 
 >[!NOTE]说明
 >本文档中描述的时间仅供参考，实际操作时间以现场情况为准。

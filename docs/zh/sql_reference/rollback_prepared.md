@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ROLLBACK PREPARED 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ROLLBACK PREPARED, SQL参考, 功能描述, 注意事项]
+---
+
 # ROLLBACK PREPARED
 
 ## 功能描述<a name="zh-cn_topic_0283136817_zh-cn_topic_0237122181_zh-cn_topic_0059779108_s4ddd2b1606b742109b4066ee1dee112e"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_checkos in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, gs\_checkos, tools and commands, Background, Prerequisites]
+---
+
 # gs\_checkos<a name="ZH-CN_TOPIC_0249632239"></a>
 
 ## Background<a name="en-us_topic_0237152331_en-us_topic_0059778883_section39821515163211"></a>

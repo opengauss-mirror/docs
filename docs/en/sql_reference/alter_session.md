@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER SESSION in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER SESSION, SQL, Function, Precautions]
+---
+
 # ALTER SESSION<a name="EN-US_TOPIC_0289900721"></a>
 
 ## Function<a name="en-us_topic_0283137033_en-us_topic_0237122073_en-us_topic_0059778275_s62f804a7ed5a4f278e36b0175ff7bdc9"></a>

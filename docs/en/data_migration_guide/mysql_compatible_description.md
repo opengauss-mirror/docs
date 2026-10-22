@@ -1,3 +1,8 @@
+---
+description: This document describes MySQL-compatible Kernel Description in openGauss.
+keywords: [openGauss, MySQL-compatible Kernel Description, data migration]
+---
+
 # MySQL-compatible Kernel Description<a name="EN-US_TOPIC_0000001201277572"></a>
 
 **Table 1** MySQL-compatible features implemented in the openGauss kernel

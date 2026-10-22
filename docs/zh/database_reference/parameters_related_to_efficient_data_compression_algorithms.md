@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 高效数据压缩算法相关参数 的相关内容，涵盖 pca\_shared\_buffers 等内容。
+keywords: [openGauss, 高效数据压缩算法相关参数, 数据库参考, pca\_shared\_buffers]
+---
+
 # 高效数据压缩算法相关参数
 
 ## pca\_shared\_buffers<a name="section484914735817"></a>

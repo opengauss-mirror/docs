@@ -1,3 +1,8 @@
+---
+description: This document describes Overview in openGauss.
+keywords: [openGauss, Overview, SQL]
+---
+
 # Overview<a name="EN-US_TOPIC_0245374633"></a>
 
 To process SQL statements, the stored procedure process assigns a memory segment to store context association. Cursors are handles or pointers pointing to context regions. With cursors, stored procedures can control alterations in context regions.

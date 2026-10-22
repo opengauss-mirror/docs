@@ -1,3 +1,8 @@
+---
+description: This document describes Comparison Operators in openGauss.
+keywords: [openGauss, Comparison Operators, SQL]
+---
+
 # Comparison Operators<a name="EN-US_TOPIC_0289900789"></a>
 
 Comparison operators are available for the most data types and return Boolean values.

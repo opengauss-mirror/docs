@@ -1,3 +1,8 @@
+---
+description: This document describes SUMMARY\_STAT\_BAD\_BLOCK in openGauss.
+keywords: [openGauss, SUMMARY\_STAT\_BAD\_BLOCK, SQL]
+---
+
 # SUMMARY\_STAT\_BAD\_BLOCK<a name="EN-US_TOPIC_0245374717"></a>
 
 **SUMMARY\_STAT\_BAD\_BLOCK**  displays information about table and index read failures in openGauss. 

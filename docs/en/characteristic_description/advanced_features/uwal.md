@@ -1,3 +1,8 @@
+---
+description: This document describes UWAL in openGauss, covering topics such as Introduction, Preparations.
+keywords: [openGauss, UWAL, features, Introduction, Preparations]
+---
+
 # UWAL
 
 ## Introduction

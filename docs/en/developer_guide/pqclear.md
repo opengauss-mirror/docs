@@ -1,3 +1,8 @@
+---
+description: This document describes PQclear in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, PQclear, development, Function, Prototype]
+---
+
 # PQclear<a name="EN-US_TOPIC_0242380580"></a>
 
 ## Function<a name="en-us_topic_0241735622_section696285173713"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DISTINCT 的相关内容，涵盖 语法格式、参数说明 等内容。
+keywords: [openGauss, DISTINCT, SQL参考, 语法格式, 参数说明]
+---
+
 # DISTINCT
 
 DISTINCT关键字与SELECT语句一起使用，用于去除重复记录，只获取唯一的记录。

@@ -1,3 +1,8 @@
+---
+description: This document describes Distributed Analysis Capabilities in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Distributed Analysis Capabilities, features, Availability, Introduction]
+---
+
 # Distributed Analysis Capabilities<a name="EN-US_TOPIC_0000001363569014"></a>
 
 ## Availability<a name="section8727154203020"></a>

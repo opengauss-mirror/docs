@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE AUDIT POLICY in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE AUDIT POLICY, SQL, Function, Precautions]
+---
+
 # CREATE AUDIT POLICY<a name="EN-US_TOPIC_0306525302"></a>
 
 ## Function<a name="section1163224811518"></a>

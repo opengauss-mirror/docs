@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss NULL值 的相关内容，涵盖 IS NOT NULL、IS NULL 等内容。
+keywords: [openGauss, NULL值, SQL参考, IS NOT NULL, IS NULL]
+---
+
 # NULL值
 
 NULL值代表未知数据。无法比较NULL和0，因为它们是不等价的。

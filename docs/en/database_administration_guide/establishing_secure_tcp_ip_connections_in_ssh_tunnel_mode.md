@@ -1,3 +1,8 @@
+---
+description: This document describes Establishing Secure TCP/IP Connections in SSH Tunnel Mode in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, Establishing Secure TCP/IP Connections in SSH Tunnel Mode, database administration, Background, Prerequisites]
+---
+
 # Establishing Secure TCP/IP Connections in SSH Tunnel Mode<a name="EN-US_TOPIC_0246507952"></a>
 
 ## Background<a name="en-us_topic_0237121093_en-us_topic_0059778333_section59301241111412"></a>

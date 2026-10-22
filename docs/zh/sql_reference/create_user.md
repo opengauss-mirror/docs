@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE USER 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE USER, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE USER
 
 ## 功能描述<a name="zh-cn_topic_0283136891_zh-cn_topic_0237122125_zh-cn_topic_0059778166_s08b0f056b5f14492970a9037c63fa70c"></a>

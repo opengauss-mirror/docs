@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SQLColAttribute 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, SQLColAttribute, 开发指南, 功能描述, 原型]
+---
+
 # SQLColAttribute
 
 ## 功能描述<a name="zh-cn_topic_0238272888_zh-cn_topic_0237120418_zh-cn_topic_0059778558_scc387c9cd5a14083903b16db19a589da"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_RECOVERY\_STATUS 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_RECOVERY\_STATUS, SQL参考]
+---
+
 # GLOBAL\_RECOVERY\_STATUS
 
 GLOBAL\_RECOVERY\_STATUS视图显示关于主机和备机的日志流控信息。

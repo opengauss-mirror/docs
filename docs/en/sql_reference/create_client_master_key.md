@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE CLIENT MASTER KEY in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE CLIENT MASTER KEY, SQL, Function, Precautions]
+---
+
 # CREATE CLIENT MASTER KEY<a name="EN-US_TOPIC_0294528088"></a>
 
 ## Function<a name="section1163224811518"></a>

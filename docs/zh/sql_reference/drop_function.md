@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP FUNCTION 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP FUNCTION, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP FUNCTION
 
 ## 功能描述<a name="zh-cn_topic_0283137306_zh-cn_topic_0237122138_zh-cn_topic_0059778261_se0a88dccf4a449189e3598bd873250fe"></a>

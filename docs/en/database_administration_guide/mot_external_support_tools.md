@@ -1,3 +1,8 @@
+---
+description: This document describes MOT External Support Tools in openGauss, covering topics such as gs\_ctl \(Full and Incremental\), gs\_basebackup.
+keywords: [openGauss, MOT External Support Tools, database administration, gs\_ctl \(Full and Incremental\), gs\_basebackup]
+---
+
 # MOT External Support Tools<a name="EN-US_TOPIC_0270171479"></a>
 
 The following external openGauss tools have been modified in order to support MOT. Make sure to use the most recent version of each. An overview describing MOT-related usage is provided below. For a full description of these tools and their usage, refer to the openGauss Tools Reference document.

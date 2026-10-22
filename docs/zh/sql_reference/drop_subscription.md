@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP SUBSCRIPTION 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP SUBSCRIPTION, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP SUBSCRIPTION
 
 ## **功能描述**<a name="section131281394204"></a>

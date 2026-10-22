@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 搭建编译环境 的相关内容，涵盖 硬件要求、软件要求 等内容。
+keywords: [openGauss, 搭建编译环境, 编译指南, 硬件要求, 软件要求]
+---
+
 # 搭建编译环境
 
 ## 硬件要求<a name="section11295135645810"></a>

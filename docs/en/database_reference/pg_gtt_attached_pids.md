@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_GTT\_ATTACHED\_PIDS in openGauss.
+keywords: [openGauss, PG\_GTT\_ATTACHED\_PIDS, database reference]
+---
+
 # PG\_GTT\_ATTACHED\_PIDS<a name="EN-US_TOPIC_0289900591"></a>
 
 **PG\_GTT\_ATTACHED\_PIDS**  checks which sessions are using global temporary tables by calling the  **pg\_get\_attached\_pid**  function.

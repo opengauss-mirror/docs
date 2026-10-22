@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 查看状态 的相关内容，涵盖 背景信息、前提条件 等内容。
+keywords: [openGauss, 查看状态, 数据库运维, 背景信息, 前提条件]
+---
+
 # 查看状态
 
 ## 背景信息<a name="zh-cn_topic_0237088790_zh-cn_topic_0059778948_section199712094115"></a>

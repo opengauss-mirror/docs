@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER RESOURCE POOL in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER RESOURCE POOL, SQL, Function, Precautions]
+---
+
 # ALTER RESOURCE POOL<a name="EN-US_TOPIC_0000001148027836"></a>
 
 ## Function<a name="en-us_topic_0059778630_sad90a3a714584faa8f5b38b344e0c313"></a>

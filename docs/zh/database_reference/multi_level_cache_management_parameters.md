@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss openGauss多级缓存管理参数 的相关内容，涵盖 enable\_nvm、nvm\_buffers 等内容。
+keywords: [openGauss, openGauss多级缓存管理参数, 数据库参考, enable\_nvm, nvm\_buffers]
+---
+
 # openGauss多级缓存管理参数
 
 ## enable\_nvm

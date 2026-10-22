@@ -1,3 +1,8 @@
+---
+description: This document describes Fully-encrypted Database in openGauss, covering topics such as Connecting to a Fully-encrypted Database, Creating a User Key.
+keywords: [openGauss, Fully-encrypted Database, features, Connecting to a Fully-encrypted Database, Creating a User Key]
+---
+
 # Fully-encrypted Database<a name="EN-US_TOPIC_0000001180134828"></a>
 
 The fully-encrypted database aims to protect privacy throughout the data lifecycle. In this way, data is always in ciphertext during transmission, computing, and storage regardless of the service scenario and environment. After the data owner encrypts data on a client and sends the encrypted data to the server, attackers cannot obtain valuable information even if the attackers steal user data by exploiting system vulnerabilities. In this way, data privacy is protected.

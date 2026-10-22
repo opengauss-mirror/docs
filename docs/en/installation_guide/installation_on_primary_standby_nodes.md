@@ -1,3 +1,8 @@
+---
+description: This document describes Installation on Primary/Standby Nodes in openGauss, covering topics such as Prerequisites, Procedure.
+keywords: [openGauss, Installation on Primary/Standby Nodes, installation, Prerequisites, Procedure]
+---
+
 # Installation on Primary/Standby Nodes<a name="EN-US_TOPIC_0000001091808934"></a>
 
 ## Prerequisites<a name="section9955194683210"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 存储过程 的相关内容，涵盖 语法格式、参数说明 等内容。
+keywords: [openGauss, 存储过程, SQL参考, 语法格式, 参数说明]
+---
+
 # 存储过程
 
 商业规则和业务逻辑可以通过程序存储在openGauss中，这个程序就是存储过程。

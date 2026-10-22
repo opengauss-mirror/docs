@@ -1,3 +1,8 @@
+---
+description: This document describes Testing a Configuration in openGauss.
+keywords: [openGauss, Testing a Configuration, SQL]
+---
+
 # Testing a Configuration<a name="EN-US_TOPIC_0289900260"></a>
 
 The  **ts\_debug**  function allows easy testing of a text search configuration.

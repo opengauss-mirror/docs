@@ -1,3 +1,8 @@
+---
+description: This document describes LOCK in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, LOCK, SQL, Function, Precautions]
+---
+
 # LOCK<a name="EN-US_TOPIC_0289899976"></a>
 
 ## Function<a name="en-us_topic_0283136808_en-us_topic_0237122168_en-us_topic_0059778442_s11c25749bd754f4c98e19b29df2baf41"></a>

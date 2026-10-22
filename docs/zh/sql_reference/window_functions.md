@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 窗口函数 的相关内容，涵盖 窗口函数 等内容。
+keywords: [openGauss, 窗口函数, SQL参考]
+---
+
 # 窗口函数
 
 ## 窗口函数<a name="zh-cn_topic_0283137174_zh-cn_topic_0237121983_zh-cn_topic_0059778391_s454ef5048f3142508bc4f06cb3454ebe"></a>

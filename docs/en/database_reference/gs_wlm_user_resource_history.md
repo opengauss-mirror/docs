@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_WLM\_USER\_RESOURCE\_HISTORY in openGauss.
+keywords: [openGauss, GS\_WLM\_USER\_RESOURCE\_HISTORY, database reference]
+---
+
 # GS\_WLM\_USER\_RESOURCE\_HISTORY<a name="EN-US_TOPIC_0000001152202091"></a>
 
 **GS\_WLM\_USER\_RESOURCE\_HISTORY**  stores information about resources used by users. Each record in this system catalog indicates resource usage of a user at a time point, including the memory, number of CPU cores, storage space, temporary space, operator flushing space, logical I/O traffic, number of logical I/O operations, and logical I/O rate. The memory, CPU, and I/O monitoring items record only resource usage of complex jobs. For I/O monitoring items, this parameter is valid only when  **enable\_logical\_io\_statistics**  is set to  **on**. The function of saving user monitoring data is enabled only when  **enable\_user\_metric\_persistent**  is set to  **on**. Data in the system catalog  **GS\_WLM\_USER\_RESOURCE\_HISTORY**  comes from the  **PG\_TOTAL\_USER\_RESOURCE\_INFO**  view. This system catalog can be queried by users with the  **sysadmin**  permission only in Postgres.

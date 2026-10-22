@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_PLDEBUGGER.abort in openGauss.
+keywords: [openGauss, DBE\_PLDEBUGGER.abort, SQL]
+---
+
 # DBE\_PLDEBUGGER.abort<a name="EN-US_TOPIC_0000001101338024"></a>
 
 This function is used to abort the stored procedure executed on the server and report an error. The return value indicates whether the abort message is successfully sent.

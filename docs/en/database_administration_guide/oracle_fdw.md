@@ -1,3 +1,8 @@
+---
+description: This document describes oracle\_fdw in openGauss, covering topics such as Compiling oracle\_fdw, Using oracle\_fdw.
+keywords: [openGauss, oracle\_fdw, database administration, Compiling oracle\_fdw, Using oracle\_fdw]
+---
+
 # oracle\_fdw<a name="EN-US_TOPIC_0272283426"></a>
 
 oracle\_fdw is an  [open-source plug-in](https://github.com/laurenz/oracle_fdw). openGauss is developed and adapted based on the open-source  [oracle\_fdw Release 2.2.0](https://github.com/laurenz/oracle_fdw/archive/ORACLE_FDW_2_2_0.tar.gz).

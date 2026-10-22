@@ -1,7 +1,12 @@
+---
+description: This document describes Development Process in openGauss, covering topics such as APIs Involved in the Development Process.
+keywords: [openGauss, Development Process, development, APIs Involved in the Development Process]
+---
+
 # Development Process<a name="EN-US_TOPIC_0244721237"></a>
 
 **Figure  1**  ODBC-based application development process<a name="en-us_topic_0237120409_en-us_topic_0059778957_fba9450765c4b4dc8b2809b91c8de76b3"></a>  
-![](figures/odbc-based-application-development-process.png "odbc-based-application-development-process")
+![ODBC-based application development process](figures/odbc-based-application-development-process.png "odbc-based-application-development-process")
 
 ## APIs Involved in the Development Process<a name="en-us_topic_0237120409_en-us_topic_0059778957_sc80403b34b784a2cbb2e52f9e00c3f7e"></a>
 

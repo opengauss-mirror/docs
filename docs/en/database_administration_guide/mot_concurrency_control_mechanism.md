@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Concurrency Control Mechanism in openGauss, covering topics such as MOT Local and Global Memory, MOT SILO Enhancements.
+keywords: [openGauss, MOT Concurrency Control Mechanism, database administration, MOT Local and Global Memory, MOT SILO Enhancements]
+---
+
 # MOT Concurrency Control Mechanism<a name="EN-US_TOPIC_0270171515"></a>
 
 After investing extensive research to find the best concurrency control mechanism, we concluded that SILO based on OCC is the best ACID-compliant OCC algorithm for MOT. SILO provides the best foundation for MOT's challenging requirements.
@@ -23,7 +28,7 @@ The basic interactive transactional flow with our SILO-enhanced concurrency cont
 
 **Figure  1**  Private \(Local\) Memory \(for each transaction\) and a Global Memory \(for all the transactions of all the cores\)
 
-![](figures/private-local-memory-for-each-transaction-and-a-global-memory.png)
+![MOT Local and Global Memory diagram](figures/private-local-memory-for-each-transaction-and-a-global-memory.png)
 
 For more details, refer to the Industrial-Strength OLTP Using Main Memory and Many-cores document<sup>\[</sup>[Comparison – Disk vs. MOT](comparison_disk_vs_mot.md)<sup>\]</sup>.
 

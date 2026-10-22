@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_SQL\_COUNT in openGauss.
+keywords: [openGauss, GS\_SQL\_COUNT, database reference]
+---
+
 # GS\_SQL\_COUNT<a name="EN-US_TOPIC_0289900440"></a>
 
 **GS\_SQL\_COUNT**  displays statistics about five types of running statements \(**SELECT**,  **INSERT**,  **UPDATE**,  **DELETE**, and  **MERGE INTO**\) on the current node of the database.

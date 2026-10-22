@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 创建和管理索引 的相关内容，涵盖 背景信息、操作步骤 等内容。
+keywords: [openGauss, 创建和管理索引, 数据库管理, 背景信息, 操作步骤]
+---
+
 # 创建和管理索引
 
 ## 背景信息<a name="zh-cn_topic_0237120308_zh-cn_topic_0059777978_s2db1c8bff92b4157a59abc27b435d8c2"></a>

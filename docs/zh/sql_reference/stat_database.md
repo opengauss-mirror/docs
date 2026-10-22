@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STAT\_DATABASE 的相关内容与操作方法。
+keywords: [openGauss, STAT\_DATABASE, SQL参考]
+---
+
 # STAT\_DATABASE
 
 视图将包含本节点中每个数据库的统计信息。

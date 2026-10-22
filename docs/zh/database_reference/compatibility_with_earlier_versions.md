@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 历史版本兼容性 的相关内容，涵盖 array\_nulls、backslash\_quote 等内容。
+keywords: [openGauss, 历史版本兼容性, 数据库参考, array\_nulls, backslash\_quote]
+---
+
 # 历史版本兼容性
 
 openGauss介绍数据库的向下兼容性和对外兼容性特性的参数控制。数据库系统的向后兼容性能够为旧版本的数据库应用提供支持。本节介绍的参数主要控制数据库的向后兼容性。

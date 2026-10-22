@@ -1,3 +1,8 @@
+---
+description: This document describes SQLConnect in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, SQLConnect, development, Function, Prototype]
+---
+
 # SQLConnect<a name="EN-US_TOPIC_0242371443"></a>
 
 ## Function<a name="en-us_topic_0238272889_en-us_topic_0237120419_en-us_topic_0059778729_s3748e0b0ff1d4511806e76a6047e4b2b"></a>

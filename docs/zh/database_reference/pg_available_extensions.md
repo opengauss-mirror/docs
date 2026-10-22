@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_AVAILABLE\_ExtensionS 的相关内容与操作方法。
+keywords: [openGauss, PG\_AVAILABLE\_ExtensionS, 数据库参考]
+---
+
 # PG\_AVAILABLE\_ExtensionS
 
 PG\_AVAILABLE\_ExtensionS视图显示数据库中某些特性的扩展信息。

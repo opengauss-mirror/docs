@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 法律声明 的相关内容与操作方法。
+keywords: [openGauss, 法律声明, 使用条款]
+---
+
 # 法律声明
 
 **版权所有 © 2026华为技术有限公司。**

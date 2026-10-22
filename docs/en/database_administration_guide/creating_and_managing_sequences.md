@@ -1,3 +1,8 @@
+---
+description: This document describes Creating and Managing Sequences in openGauss, covering topics such as Background, Procedure.
+keywords: [openGauss, Creating and Managing Sequences, database administration, Background, Procedure]
+---
+
 # Creating and Managing Sequences<a name="EN-US_TOPIC_0242370196"></a>
 
 ## Background<a name="en-us_topic_0237120310_en-us_topic_0093152908_en-us_topic_0064273680_section3970017091331"></a>

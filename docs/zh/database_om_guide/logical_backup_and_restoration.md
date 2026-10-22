@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 逻辑备份与恢复 的相关内容，涵盖 gs\_dump 等内容。
+keywords: [openGauss, 逻辑备份与恢复, 数据库运维, gs\_dump]
+---
+
 # 逻辑备份与恢复
 
 ## gs\_dump

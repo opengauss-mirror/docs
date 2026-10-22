@@ -1,3 +1,8 @@
+---
+description: This document describes XML Types in openGauss.
+keywords: [openGauss, XML Types, SQL]
+---
+
 # XML Types<a name="EN-US_TOPIC_0000001426952708"></a>
 
 The following functions are inherited from the open source PG9.2.

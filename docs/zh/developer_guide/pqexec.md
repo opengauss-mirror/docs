@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PQexec 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, PQexec, 开发指南, 功能描述, 原型]
+---
+
 # PQexec
 
 ## 功能描述<a name="zh-cn_topic_0241735619_section1294859104916"></a>

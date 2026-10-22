@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss lo_read 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, lo_read, 开发指南, 功能描述, 原型]
+---
+
 # lo_read
 
 ## 功能描述<a name="zh-cn_topic_0241735622_section696285173719"></a>

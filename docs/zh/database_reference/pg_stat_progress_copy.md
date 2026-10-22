@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_STAT\_PROGRESS\_COPY 的相关内容与操作方法。
+keywords: [openGauss, PG\_STAT\_PROGRESS\_COPY, 数据库参考]
+---
+
 # PG\_STAT\_PROGRESS\_COPY<a name="ZH-CN_TOPIC_0289900596"></a>
 
 PG\_STAT\_PROGRESS\__COPY视图显示当前系统内所有正在执行COPY命令的进度信息。

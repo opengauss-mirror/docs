@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBE\_PLDEBUGGER.delete\_breakpoint 的相关内容与操作方法。
+keywords: [openGauss, DBE\_PLDEBUGGER.delete\_breakpoint, SQL参考]
+---
+
 # DBE\_PLDEBUGGER.delete\_breakpoint
 
 debug端调试过程中，调用delete\_breakpoint删除已有的断点。

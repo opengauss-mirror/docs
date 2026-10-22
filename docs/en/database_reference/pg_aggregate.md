@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_AGGREGATE in openGauss.
+keywords: [openGauss, PG\_AGGREGATE, database reference]
+---
+
 # PG\_AGGREGATE<a name="EN-US_TOPIC_0289900746"></a>
 
 PG\_AGGREGATE records information about aggregate functions. Each entry in  **PG\_AGGREGATE**  is an extension of an entry in  **PG\_PROC**. The  **PG\_PROC**  entry carries the aggregate's name, input and output data types, and other information that is similar to ordinary functions.

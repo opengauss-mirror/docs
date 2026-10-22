@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_STATISTIC in openGauss.
+keywords: [openGauss, PG\_STATISTIC, database reference]
+---
+
 # PG\_STATISTIC<a name="EN-US_TOPIC_0289900694"></a>
 
 **PG\_STATISTIC**  stores statistics about tables and index columns in a database. By default, only the system administrator can access the system catalog. Common users can access the system catalog only after being authorized.

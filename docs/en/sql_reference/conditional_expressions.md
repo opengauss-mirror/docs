@@ -1,3 +1,8 @@
+---
+description: This document describes Condition Expressions in openGauss.
+keywords: [openGauss, Condition Expressions, SQL]
+---
+
 # Condition Expressions<a name="EN-US_TOPIC_0289899945"></a>
 
 Data that meets the requirements specified by conditional expressions are filtered during SQL statement execution.
@@ -11,7 +16,7 @@ Conditional expressions include the following types:
     [Figure 1](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f6defc8307fd0434380b6ba22838ed5f1)  shows the syntax of a  **CASE**  expression.
 
     **Figure  1**  case::=<a name="en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f6defc8307fd0434380b6ba22838ed5f1"></a>  
-    ![](figures/case.jpg "case")
+    ![case](figures/case.jpg "case")
 
     A  **CASE**  clause can be used in a valid expression.  **condition**  is an expression that returns a value of Boolean type.
 
@@ -50,7 +55,7 @@ Conditional expressions include the following types:
     [Figure 2](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f8e62b15fa92349339fcdb77fcc5fef4d)  shows the syntax of a  **DECODE**  expression.
 
     **Figure  2**  decode::=<a name="en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f8e62b15fa92349339fcdb77fcc5fef4d"></a>  
-    ![](figures/decode.png "decode")
+    ![decode](figures/decode.png "decode")
 
     Compare each following  **compare\(n\)**  with  **base\_expr**.  **value\(n\)**  is returned if a  **compare\(n\)**  matches the  **base\_expr**  expression. If  **base\_expr**  does not match each  **compare\(n\)**, the default value is returned.
 
@@ -69,7 +74,7 @@ Conditional expressions include the following types:
     [Figure 3](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f1877c9f8d2ac4964828a6eaaddf5f35f)  shows the syntax of a  **COALESCE**  expression.
 
     **Figure  3**  coalesce::=<a name="en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f1877c9f8d2ac4964828a6eaaddf5f35f"></a>  
-    ![](figures/coalesce.png "coalesce")
+    ![coalesce](figures/coalesce.png "coalesce")
 
     **COALESCE**  returns its first not-**NULL**  value. If all the parameters are  **NULL**,  **NULL**  is returned. This value is replaced by the default value when data is displayed. Like a  **CASE**  expression,  **COALESCE**  only evaluates the parameters that are needed to determine the result. That is, parameters to the right of the first non-null parameter are not evaluated.
 
@@ -109,7 +114,7 @@ Conditional expressions include the following types:
     [Figure 4](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f6c5bc64bf5de4b728ed1d73d97768e6e)  shows the syntax of a  **NULLIF**  expression.
 
     **Figure  4**  nullif::=<a name="en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f6c5bc64bf5de4b728ed1d73d97768e6e"></a>  
-    ![](figures/nullif.png "nullif")
+    ![nullif](figures/nullif.png "nullif")
 
     Only if  **value1**  is equal to  **value2**  can  **NULLIF**  return the  **NULL**  value. Otherwise,  **value1**  is returned.
 
@@ -149,7 +154,7 @@ Conditional expressions include the following types:
     [Figure 5](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f23a83b0f987a49e0b6890280568afbd2)  shows the syntax of a  **GREATEST**  expression.
 
     **Figure  5**  greatest::=<a name="en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f23a83b0f987a49e0b6890280568afbd2"></a>  
-    ![](figures/greatest.png "greatest")
+    ![greatest](figures/greatest.png "greatest")
 
     You can select the maximum value from any numerical expression list.
 
@@ -164,7 +169,7 @@ Conditional expressions include the following types:
     [Figure 6](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f30a16b0edbde4750a42053619840b384)  shows the syntax of a  **LEAST**  expression.
 
     **Figure  6**  least::=<a name="en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f30a16b0edbde4750a42053619840b384"></a>  
-    ![](figures/least.png "least")
+    ![least](figures/least.png "least")
 
     You can select the minimum value from any numerical expression list.
 
@@ -187,7 +192,7 @@ Conditional expressions include the following types:
     [Figure 7](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f69cd4e01dd6e4280b756eb98d3c77c91)  shows the syntax of an  **NVL**  expression.
 
     **Figure  7**  nvl::=<a name="en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f69cd4e01dd6e4280b756eb98d3c77c91"></a>  
-    ![](figures/nvl.jpg "nvl")
+    ![nvl](figures/nvl.jpg "nvl")
 
     If the value of  **value1**  is  **NULL**, the value of  **value2**  is returned. Otherwise, the value of  **value1**  is returned.
 

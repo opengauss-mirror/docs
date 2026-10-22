@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_backup in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, gs\_backup, tools and commands, Background, Prerequisites]
+---
+
 # gs\_backup<a name="EN-US_TOPIC_0249632295"></a>
 
 ## Background<a name="en-us_topic_0237152406_en-us_topic_0059777806_section48401199395"></a>

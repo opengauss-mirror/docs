@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_USER\_STATUS in openGauss.
+keywords: [openGauss, PG\_USER\_STATUS, database reference]
+---
+
 # PG\_USER\_STATUS<a name="EN-US_TOPIC_0289900511"></a>
 
 **PG\_USER\_STATUS**  provides the states of users who access the database. This system catalog is accessible only to system administrators.

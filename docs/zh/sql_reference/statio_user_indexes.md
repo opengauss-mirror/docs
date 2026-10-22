@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STATIO\_USER\_INDEXES 的相关内容与操作方法。
+keywords: [openGauss, STATIO\_USER\_INDEXES, SQL参考]
+---
+
 # STATIO\_USER\_INDEXES
 
 STATIO\_USER\_INDEXES视图显示当前节点命名空间中所有用户关系表索引的IO状态信息。

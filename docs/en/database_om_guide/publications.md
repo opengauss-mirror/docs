@@ -1,3 +1,8 @@
+---
+description: This document describes Publications in openGauss.
+keywords: [openGauss, Publications, database O&M]
+---
+
 # Publications<a name="EN-US_TOPIC_0000001261761883"></a>
 
 A publication can be defined on any primary physical replication server. The node where a publication is defined is called the publisher. A publication is a set of changes generated from a table or a group of tables. It can also be described as a change set or replication set. Each publication exists in only one database.

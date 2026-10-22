@@ -1,3 +1,8 @@
+---
+description: This document describes PGXC\_PREPARED\_XACTS in openGauss.
+keywords: [openGauss, PGXC\_PREPARED\_XACTS, database reference]
+---
+
 # PGXC\_PREPARED\_XACTS<a name="EN-US_TOPIC_0000001197451547"></a>
 
 **PGXC\_PREPARED\_XACTS**  displays two-phase transactions in the  **prepared**  phase. Only users with the  **system admin**  or  **monitor admin**  permission can view the information.

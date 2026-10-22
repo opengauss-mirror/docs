@@ -1,3 +1,8 @@
+---
+description: This document describes set in openGauss, covering topics such as Command Reference.
+keywords: [openGauss, set, features, Command Reference]
+---
+
 # set<a name="EN-US_TOPIC_0000001199316674"></a>
 
 This command is used to change the parameter values in the  **dbmind.conf**  configuration file. You can also manually modify the  **dbmind.conf**  configuration file. The two methods have no difference. For example, to change the value of  **host**  in the  **TSDB**  configuration item of the  **dbmind.conf**  file in the  **confpath**  directory to  **127.0.0.1**, run the following command:

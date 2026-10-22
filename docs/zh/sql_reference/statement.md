@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STATEMENT 的相关内容与操作方法。
+keywords: [openGauss, STATEMENT, SQL参考]
+---
+
 # STATEMENT
 
 获得当前节点的执行语句（归一化SQL）的信息。查询视图必须具有sysadmin权限或者monitor admin权限。数据库主节点上可以看到此数据库主节点接收到的归一化的SQL的全量统计信息（包含数据库节点）；数据库节点上仅可看到归一化的SQL的此节点执行的统计信息。

@@ -1,3 +1,8 @@
+---
+description: This document describes Running the COPY FROM STDIN Statement to Import Data in openGauss, covering topics such as Data Import Using COPY FROM STDIN, Introduction to the CopyManager Class.
+keywords: [openGauss, Running the COPY FROM STDIN Statement to Import Data, database O&M, Data Import Using COPY FROM STDIN, Introduction to the CopyManager Class]
+---
+
 # Running the COPY FROM STDIN Statement to Import Data<a name="EN-US_TOPIC_0242370281"></a>
 
 ## Data Import Using COPY FROM STDIN<a name="EN-US_TOPIC_0242370282"></a>

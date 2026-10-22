@@ -1,3 +1,8 @@
+---
+description: This document describes Configuring Client Access Authentication in openGauss, covering topics such as Background, Procedure.
+keywords: [openGauss, Configuring Client Access Authentication, database administration, Background, Procedure]
+---
+
 # Configuring Client Access Authentication<a name="EN-US_TOPIC_0246507949"></a>
 
 ## Background<a name="en-us_topic_0237121090_en-us_topic_0059778856_sa769b5cf486f45fe92aa0397f870561e"></a>

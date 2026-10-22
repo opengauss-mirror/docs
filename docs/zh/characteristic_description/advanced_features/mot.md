@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MOT 的相关内容，涵盖 MOT特性及价值、MOT关键技术 等内容。
+keywords: [openGauss, MOT, 特性描述, MOT特性及价值, MOT关键技术]
+---
+
 # MOT
 
 openGauss引入了MOT（Memory-Optimized Table，MOT）存储引擎，它是一种事务性行存储，针对多核和大内存服务器进行了优化。MOT是openGauss数据库最先进的生产级特性（Beta版本），它为事务性工作负载提供更高的性能。MOT完全支持ACID特性，并包括严格的持久性和高可用性支持。企业可以在关键任务、性能敏感的在线事务处理（OLTP）中使用MOT，以实现高性能、高吞吐、可预测低延迟以及多核服务器的高利用率。MOT尤其适合在多路和多核处理器的现代服务器上运行，例如基于Arm/鲲鹏处理器的华为TaiShan服务器，以及基于x86的戴尔或类似服务器。

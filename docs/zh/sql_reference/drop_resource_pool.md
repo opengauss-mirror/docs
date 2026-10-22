@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP RESOURCE POOL 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP RESOURCE POOL, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP RESOURCE POOL
 
 ## 功能描述<a name="zh-cn_topic_0059778399_sa24aa65d84e94a079fb987b25652dd8d"></a>

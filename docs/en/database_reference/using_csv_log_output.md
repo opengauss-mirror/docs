@@ -1,3 +1,8 @@
+---
+description: This document describes Using CSV Log Output in openGauss, covering topics such as Prerequisites, Definition of csvlog.
+keywords: [openGauss, Using CSV Log Output, database reference, Prerequisites, Definition of csvlog]
+---
+
 # Using CSV Log Output<a name="EN-US_TOPIC_0289900524"></a>
 
 ## Prerequisites<a name="en-us_topic_0283136999_en-us_topic_0237124724_en-us_topic_0059779007_s429dec1a2f1348e290437382aa165032"></a>

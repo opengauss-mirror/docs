@@ -1,3 +1,8 @@
+---
+description: This document describes gsql in openGauss, covering topics such as Overview.
+keywords: [openGauss, gsql, tools and commands, Overview]
+---
+
 # gsql<a name="EN-US_TOPIC_0249632261"></a>
 
 **gsql**  is a database connection tool provided by openGauss and runs in the command-line interface \(CLI\). Users can use  **gsql**  to connect to a server and perform operations and maintenance on the server. In addition to basic functions for performing operations on a database,  **gsql**  provides several advanced features for users.

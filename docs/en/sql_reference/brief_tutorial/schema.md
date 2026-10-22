@@ -1,3 +1,8 @@
+---
+description: This document describes SCHEMA in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, SCHEMA, SQL, Syntax, Parameter Description]
+---
+
 # SCHEMA<a name="EN-US_TOPIC_0000001225258423"></a>
 
 Schemas function as models. Schema management allows multiple users to use the same database without mutual impacts, to organize database objects as manageable logical groups, and to add third-party applications to the same schema without causing conflicts.

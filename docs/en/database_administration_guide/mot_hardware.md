@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Hardware in openGauss.
+keywords: [openGauss, MOT Hardware, database administration]
+---
+
 # MOT Hardware<a name="EN-US_TOPIC_0270171602"></a>
 
 The tests were performed on servers with the following configuration and with 10Gbe networking –

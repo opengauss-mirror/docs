@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_CONSTRAINT in openGauss.
+keywords: [openGauss, PG\_CONSTRAINT, database reference]
+---
+
 # PG\_CONSTRAINT<a name="EN-US_TOPIC_0289899922"></a>
 
 **PG\_CONSTRAINT**  records check, primary key, and unique constraints on tables.

@@ -1,3 +1,8 @@
+---
+description: This document describes Rolling Upgrade in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Rolling Upgrade, features, Availability, Introduction]
+---
+
 # Rolling Upgrade
 
 ## Availability

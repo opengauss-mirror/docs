@@ -1,3 +1,8 @@
+---
+description: This document describes Roles in openGauss, covering topics such as Adding, Modifying, and Deleting Roles, Built-in roles.
+keywords: [openGauss, Roles, database administration, Adding, Modifying, and Deleting Roles, Built-in roles]
+---
+
 # Roles<a name="EN-US_TOPIC_0000001208537885"></a>
 
 A role is a set of users. After a role is granted to a user through  **GRANT**, the user will have all the permissions of the role. It is recommended that roles be used to efficiently grant permissions. For example, you can create different roles of design, development, and maintenance personnel, grant the roles to users, and then grant specific data permissions required by different users. When permissions are granted or revoked at the role level, these changes take effect on all members of the role.

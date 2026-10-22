@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SUMMARY\_WORKLOAD\_SQL\_ELAPSE\_TIME 的相关内容与操作方法。
+keywords: [openGauss, SUMMARY\_WORKLOAD\_SQL\_ELAPSE\_TIME, SQL参考]
+---
+
 # SUMMARY\_WORKLOAD\_SQL\_ELAPSE\_TIME
 
 SUMMARY\_WORKLOAD\_SQL\_ELAPSE\_TIME用来统计数据库主节点上workload（业务）负载的SUID信息。

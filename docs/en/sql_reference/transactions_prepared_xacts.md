@@ -1,3 +1,8 @@
+---
+description: This document describes TRANSACTIONS\_PREPARED\_XACTS in openGauss.
+keywords: [openGauss, TRANSACTIONS\_PREPARED\_XACTS, SQL]
+---
+
 # TRANSACTIONS\_PREPARED\_XACTS<a name="EN-US_TOPIC_0245374754"></a>
 
 **TRANSACTIONS\_PREPARED\_XACTS**  displays information about transactions that are currently prepared for two-phase commit.

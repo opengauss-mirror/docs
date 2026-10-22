@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_PLTEMPLATE in openGauss.
+keywords: [openGauss, PG\_PLTEMPLATE, database reference]
+---
+
 # PG\_PLTEMPLATE<a name="EN-US_TOPIC_0289900451"></a>
 
 **PG\_PLTEMPLATE**  records template information for procedural languages.

@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_JOB in openGauss.
+keywords: [openGauss, PG\_JOB, database reference]
+---
+
 # PG\_JOB<a name="EN-US_TOPIC_0289900558"></a>
 
 **PG\_JOB**  records detailed information about jobs created by users. Dedicated threads poll the system catalog  **PG\_JOB**  and trigger jobs based on scheduled job execution time, and update job status in  **PG\_JOB**. This system catalog belongs to the Shared Relation category. All job records are visible to all databases.

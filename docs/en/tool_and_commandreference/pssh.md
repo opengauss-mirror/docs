@@ -1,3 +1,8 @@
+---
+description: This document describes pssh in openGauss, covering topics such as Basic Function, Syntax.
+keywords: [openGauss, pssh, tools and commands, Basic Function, Syntax]
+---
+
 # pssh<a name="EN-US_TOPIC_0000001197461637"></a>
 
 ## Basic Function<a name="section6557202811106"></a>

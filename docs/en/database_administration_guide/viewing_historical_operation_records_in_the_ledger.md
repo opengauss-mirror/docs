@@ -1,3 +1,8 @@
+---
+description: This document describes Viewing Historical Operation Records in the Ledger in openGauss, covering topics such as Prerequisites, Background.
+keywords: [openGauss, Viewing Historical Operation Records in the Ledger, database administration, Prerequisites, Background]
+---
+
 # Viewing Historical Operation Records in the Ledger<a name="EN-US_TOPIC_0000001147087459"></a>
 
 ## Prerequisites<a name="en-us_topic_0059778013_sfe45a1031ec347ba820649c0cec52027"></a>

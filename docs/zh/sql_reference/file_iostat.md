@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss FILE\_IOSTAT 的相关内容与操作方法。
+keywords: [openGauss, FILE\_IOSTAT, SQL参考]
+---
+
 # FILE\_IOSTAT
 
 通过对数据文件IO的统计，反映数据的IO性能，用以发现IO操作异常等性能问题。

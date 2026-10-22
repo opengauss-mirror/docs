@@ -1,3 +1,8 @@
+---
+description: This document describes Intelligent Cardinality Estimation in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Intelligent Cardinality Estimation, features, Availability, Introduction]
+---
+
 # Intelligent Cardinality Estimation<a name="EN-US_TOPIC_0000001321634298"></a>
 
 ## Availability<a name="section1420315335481"></a>

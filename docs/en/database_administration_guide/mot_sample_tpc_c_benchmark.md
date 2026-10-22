@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Sample TPC-C Benchmark in openGauss, covering topics such as TPC-C Introduction, System-Level Optimization.
+keywords: [openGauss, MOT Sample TPC-C Benchmark, database administration, TPC-C Introduction, System-Level Optimization]
+---
+
 # MOT Sample TPC-C Benchmark<a name="EN-US_TOPIC_0270171506"></a>
 
 ## TPC-C Introduction<a name="section31809499012"></a>
@@ -150,7 +155,7 @@ To run the benchmark –
 
     BenchmarkSQL results should appear as follows –
 
-    ![](figures/en-us_image_0270447139.jpg)
+    ![Results Report diagram](figures/en-us_image_0270447139.jpg)
 
     Over time, the benchmark measures and averages the committed transactions. The example above benchmarks for two minutes.
 
@@ -161,9 +166,9 @@ To run the benchmark –
     The following is an example of a detailed result report –
 
     **Figure  1**  Detailed Result Report<a name="fig73452720221"></a>  
-    ![](figures/detailed-result-report.png "detailed-result-report")
+    ![Detailed Result Report](figures/detailed-result-report.png "detailed-result-report")
 
-    ![](figures/en-us_image_0270447141.png)
+    ![Results Report diagram](figures/en-us_image_0270447141.png)
 
     BenchmarkSQL collects detailed performance statistics and operating system performance data \(if configured\).
 
@@ -176,4 +181,4 @@ To run the benchmark –
     A near linear scalability was demonstrated, as shown below –
 
     **Figure  2**  Results of TPC-C of MOT on Huawei Taishan 2480<a name="fig19612208102319"></a>  
-    ![](figures/results-of-tpc-c-of-mot-on-huawei-taishan-2480.png "results-of-tpc-c-of-mot-on-huawei-taishan-2480")
+    ![Results of TPC-C of MOT on Huawei Taishan 2480](figures/results-of-tpc-c-of-mot-on-huawei-taishan-2480.png "results-of-tpc-c-of-mot-on-huawei-taishan-2480")

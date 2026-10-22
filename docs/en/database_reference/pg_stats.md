@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_STATS in openGauss.
+keywords: [openGauss, PG\_STATS, database reference]
+---
+
 # PG\_STATS<a name="EN-US_TOPIC_0289900648"></a>
 
 **PG\_STATS**  provides access to the single-column statistics stored in the  **pg\_statistic**  table. The  **autovacuum\_naptime**  parameter specifies the interval for updating statistics recorded in the view.

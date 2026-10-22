@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Object stats 的相关内容，涵盖 User Tables stats、User index stats 等内容。
+keywords: [openGauss, Object stats, SQL参考, User Tables stats, User index stats]
+---
+
 # Object stats
 
 Object stats包含User Tables stats、User index stats和Bad lock stats三张表，列名称及描述如下所示。

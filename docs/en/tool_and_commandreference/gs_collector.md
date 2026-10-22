@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_collector in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, gs\_collector, tools and commands, Background, Prerequisites]
+---
+
 # gs\_collector<a name="ZH-CN_TOPIC_0249632249"></a>
 
 ## Background<a name="en-us_topic_0237152334_en-us_topic_0059778085_section1813744893314"></a>

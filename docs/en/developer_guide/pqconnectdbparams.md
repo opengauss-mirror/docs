@@ -1,3 +1,8 @@
+---
+description: This document describes PQconnectdbParams in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, PQconnectdbParams, development, Function, Prototype]
+---
+
 # PQconnectdbParams<a name="EN-US_TOPIC_0242380570"></a>
 
 ## Function<a name="en-us_topic_0241735613_section735013014140"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes PQcancel in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, PQcancel, development, Function, Prototype]
+---
+
 # PQcancel<a name="EN-US_TOPIC_0242380590"></a>
 
 ## Function<a name="en-us_topic_0241735638_section744771516345"></a>

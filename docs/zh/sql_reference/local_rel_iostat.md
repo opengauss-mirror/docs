@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss LOCAL\_REL\_IOSTAT 的相关内容与操作方法。
+keywords: [openGauss, LOCAL\_REL\_IOSTAT, SQL参考]
+---
+
 # LOCAL\_REL\_IOSTAT
 
 获取当前节点中数据文件IO状态的累计值，显示为所有数据文件IO状态的总和。

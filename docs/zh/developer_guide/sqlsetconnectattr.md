@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SQLSetConnectAttr 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, SQLSetConnectAttr, 开发指南, 功能描述, 原型]
+---
+
 # SQLSetConnectAttr
 
 ## 功能描述<a name="zh-cn_topic_0238272901_zh-cn_topic_0237120431_zh-cn_topic_0059777827_se8dc3eed91144d248bfd9c9d9b144b15"></a>

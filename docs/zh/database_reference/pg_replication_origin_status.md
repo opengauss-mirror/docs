@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_REPLICATION\_ORIGIN\_STATUS 的相关内容与操作方法。
+keywords: [openGauss, PG\_REPLICATION\_ORIGIN\_STATUS, 数据库参考]
+---
+
 # PG\_REPLICATION\_ORIGIN\_STATUS
 
 获取复制源的复制状态。

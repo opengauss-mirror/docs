@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS_SHARED\_MEMORY\_DETAIL 的相关内容与操作方法。
+keywords: [openGauss, GS_SHARED\_MEMORY\_DETAIL, 数据库参考]
+---
+
 # GS_SHARED\_MEMORY\_DETAIL
 
 查询当前节点所有已产生的共享内存上下文的使用信息。

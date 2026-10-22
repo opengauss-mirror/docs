@@ -1,3 +1,8 @@
+---
+description: This document describes Server Signal Functions in openGauss.
+keywords: [openGauss, Server Signal Functions, SQL]
+---
+
 # Server Signal Functions<a name="EN-US_TOPIC_0289900291"></a>
 
 Server signal functions send control signals to other server processes. Only the system administrator can use these functions.

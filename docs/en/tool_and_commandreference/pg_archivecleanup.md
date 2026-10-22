@@ -1,3 +1,8 @@
+---
+description: This document describes pg\_archivecleanup in openGauss, covering topics such as Function, Syntax.
+keywords: [openGauss, pg\_archivecleanup, tools and commands, Function, Syntax]
+---
+
 # pg\_archivecleanup<a name="EN-US_TOPIC_0000001196676731"></a>
 
 ## Function<a name="section125419154813"></a>

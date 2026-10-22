@@ -1,3 +1,8 @@
+---
+description: This document describes PQreset in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, PQreset, development, Function, Prototype]
+---
+
 # PQreset<a name="EN-US_TOPIC_0242380574"></a>
 
 ## Function<a name="en-us_topic_0241735617_section396721820257"></a>

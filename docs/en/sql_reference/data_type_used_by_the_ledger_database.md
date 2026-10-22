@@ -1,3 +1,8 @@
+---
+description: This document describes Data Type Used by the Ledger Database in openGauss.
+keywords: [openGauss, Data Type Used by the Ledger Database, SQL]
+---
+
 # Data Type Used by the Ledger Database<a name="EN-US_TOPIC_0000001147012469"></a>
 
 The ledger database uses the hash16 data type to store row-level hash digests or table-level hash digests, and uses the hash32 data type to store global hash digests or history table verification hashes.

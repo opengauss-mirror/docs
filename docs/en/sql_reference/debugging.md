@@ -1,3 +1,8 @@
+---
+description: This document describes Debugging in openGauss, covering topics such as Syntax, Example.
+keywords: [openGauss, Debugging, SQL, Syntax, Example]
+---
+
 # Debugging<a name="EN-US_TOPIC_0289899819"></a>
 
 ## Syntax<a name="en-us_topic_0283137518_en-us_topic_0237122256_en-us_topic_0059777683_s74daa5f17f364352aa643a41e14579e1"></a>
@@ -7,19 +12,19 @@
 The syntax of RAISE is as follows:
 
 **Figure  1**  raise\_format::=<a name="en-us_topic_0283137518_en-us_topic_0237122256_en-us_topic_0059777683_f6472e23fec9048d4ba578ba43c6695c1"></a>  
-![](figures/raise_format.png "raise_format")
+![raise format syntax diagram](figures/raise_format.png "raise_format")
 
 **Figure  2**  raise\_condition::=<a name="en-us_topic_0283137518_en-us_topic_0237122256_en-us_topic_0059777683_f6ac2ae7415ba4112b5c289de87c4d236"></a>  
-![](figures/raise_condition.png "raise_condition")
+![raise condition syntax diagram](figures/raise_condition.png "raise_condition")
 
 **Figure  3**  raise\_sqlstate::=<a name="en-us_topic_0283137518_en-us_topic_0237122256_en-us_topic_0059777683_f91407ffec97e43fb870c74c5f81f6c0d"></a>  
-![](figures/raise_sqlstate.png "raise_sqlstate")
+![raise sqlstate syntax diagram](figures/raise_sqlstate.png "raise_sqlstate")
 
 **Figure  4**  raise\_option::=<a name="en-us_topic_0283137518_en-us_topic_0237122256_en-us_topic_0059777683_ffb6af581afa249b0b37f8bd8b97c55cd"></a>  
-![](figures/raise_option.png "raise_option")
+![raise option syntax diagram](figures/raise_option.png "raise_option")
 
 **Figure  5**  raise::=<a name="en-us_topic_0283137518_en-us_topic_0237122256_en-us_topic_0059777683_f6b9d7253ecad413e9ee92ba78199a6b4"></a>  
-![](figures/raise.png "raise")
+![raise](figures/raise.png "raise")
 
 **Parameter description**:
 
@@ -58,7 +63,7 @@ In O-compatible mode, EXCEPTION\_INIT can be used to define the SQLCODE error co
 
 **Figure  6**  exception\_init::=<a name="fig1171943461612"></a>  
 
-![](figures/捕获.png)
+![Syntax diagram](figures/捕获.png)
 
 **Parameter description**:
 

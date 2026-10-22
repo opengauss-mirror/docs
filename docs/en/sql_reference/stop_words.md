@@ -1,3 +1,8 @@
+---
+description: This document describes Stop Words in openGauss.
+keywords: [openGauss, Stop Words, SQL]
+---
+
 # Stop Words<a name="EN-US_TOPIC_0289900996"></a>
 
 Stop words are words that are very common, appear in almost every document, and have no discrimination value. Therefore, they can be ignored in the context of full text searching. Each type of dictionaries treats stop words in different ways. For example,  **Ispell**  dictionaries first normalize words and then check the list of stop words, while  **Snowball**  dictionaries first check the list of stop words.

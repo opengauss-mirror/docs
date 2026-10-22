@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 逻辑复制支持DDL操作 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, 逻辑复制支持DDL操作, 数据库运维, 功能描述, 注意事项]
+---
+
 # 逻辑复制支持DDL操作
 
 ## 功能描述

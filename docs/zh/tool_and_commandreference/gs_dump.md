@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs\_dump 的相关内容，涵盖 背景信息、主要功能 等内容。
+keywords: [openGauss, gs\_dump, 工具与命令参考, 背景信息, 主要功能]
+---
+
 # gs\_dump
 
 ## 背景信息<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_section1271019596335"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBMind安装和部署 的相关内容，涵盖 1. 安装准备、2. 安装DBMind 等内容。
+keywords: [openGauss, DBMind安装和部署, 特性描述, 1. 安装准备, 2. 安装DBMind]
+---
+
 # DBMind安装和部署
 
 ## 1. 安装准备

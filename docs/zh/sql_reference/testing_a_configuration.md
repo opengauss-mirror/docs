@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 分词器测试 的相关内容与操作方法。
+keywords: [openGauss, 分词器测试, SQL参考]
+---
+
 # 分词器测试
 
 函数ts\_debug允许简单测试文本搜索分词器。

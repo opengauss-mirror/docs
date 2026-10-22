@@ -1,3 +1,8 @@
+---
+description: This document describes Logical Decoding by SQL Function Interfaces in openGauss, covering topics such as Prerequisites, Procedure.
+keywords: [openGauss, Logical Decoding by SQL Function Interfaces, database O&M, Prerequisites, Procedure]
+---
+
 # Logical Decoding by SQL Function Interfaces<a name="EN-US_TOPIC_0289900929"></a>
 
 In openGauss, you can call SQL functions to create, delete, and push logical replication slots, as well as obtain decoded transaction logs.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 资源池化架构 的相关内容与操作方法。
+keywords: [openGauss, 资源池化架构, 数据库管理]
+---
+
 # 资源池化架构
 
 本文档主要介绍资源池化架构下的一些最佳实践和使用注意事项，用于支撑对相关特性感兴趣的开发者可以快速部署、实践或进行定制化开发。
@@ -7,7 +12,7 @@
 
 <p align="center"><b>图1: openGauss资源池化架构图</b></p>
 
-![](figures/shared_storage.JPG)
+![资源池化架构示意图](figures/shared_storage.JPG)
 
 - 读写节点和只读节点共享一份底层存储。
 - 读写节点和只读节点之间通过TCP或RDMA协议使用DMS组件共享Shared Buffer Pool中的热数据页。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MOT恢复 的相关内容与操作方法。
+keywords: [openGauss, MOT恢复, 数据库管理]
+---
+
 # MOT恢复
 
 MOT恢复的主要目标是在有计划停机（例如维护）或计划外崩溃（例如电源故障后）后，将数据和MOT引擎恢复到一致状态。

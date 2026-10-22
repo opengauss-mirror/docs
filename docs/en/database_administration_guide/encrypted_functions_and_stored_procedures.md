@@ -1,3 +1,8 @@
+---
+description: This document describes Encrypted Functions and Stored Procedures in openGauss, covering topics such as Creating and Executing a Function or Stored Procedure that Involves Encrypted Columns.
+keywords: [openGauss, Encrypted Functions and Stored Procedures, database administration, Creating and Executing a Function or Stored Procedure that Involves Encrypted Columns]
+---
+
 # Encrypted Functions and Stored Procedures<a name="EN-US_TOPIC_0000001149587981"></a>
 
 In the current version, only encrypted functions and stored procedures in SQL or PL/pgSQL are supported. Because users are unaware of the creation and execution of functions or stored procedures in an encrypted stored procedure, the syntax has no difference from that of non-encrypted functions and stored procedures.

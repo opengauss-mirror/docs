@@ -1,3 +1,8 @@
+---
+description: This document describes kinit in openGauss, covering topics such as Function, Parameter Description.
+keywords: [openGauss, kinit, tools and commands, Function, Parameter Description]
+---
+
 # kinit<a name="EN-US_TOPIC_0249632273"></a>
 
 ## Function<a name="en-us_topic_0237152430_section10172172474817"></a>

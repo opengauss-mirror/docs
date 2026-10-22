@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 文本搜索类型 的相关内容，涵盖 tsvector、tsquery 等内容。
+keywords: [openGauss, 文本搜索类型, SQL参考, tsvector, tsquery]
+---
+
 # 文本搜索类型
 
 openGauss提供了两种数据类型用于支持全文检索。tsvector类型表示为文本搜索优化的文件格式，tsquery类型表示文本查询。

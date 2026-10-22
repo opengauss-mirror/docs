@@ -1,3 +1,8 @@
+---
+description: This document describes SQLFetch in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, SQLFetch, development, Function, Prototype]
+---
+
 # SQLFetch<a name="EN-US_TOPIC_0242371447"></a>
 
 ## Function<a name="en-us_topic_0238272893_en-us_topic_0237120423_en-us_topic_0059777989_se050a9bc14bc47f1bb3b6d4650b37d67"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Stored Procedure Debugging in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Stored Procedure Debugging, features, Availability, Introduction]
+---
+
 # Stored Procedure Debugging<a name="EN-US_TOPIC_0000001138290305"></a>
 
 ## Availability<a name="section1076382216287"></a>

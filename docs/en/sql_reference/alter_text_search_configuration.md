@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER TEXT SEARCH CONFIGURATION in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER TEXT SEARCH CONFIGURATION, SQL, Function, Precautions]
+---
+
 # ALTER TEXT SEARCH CONFIGURATION<a name="EN-US_TOPIC_0289900161"></a>
 
 ## Function<a name="en-us_topic_0283137411_en-us_topic_0237122079_en-us_topic_0059778328_s9adfe253d8074dff8561df762ecd7460"></a>

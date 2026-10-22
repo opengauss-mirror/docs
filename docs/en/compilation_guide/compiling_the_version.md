@@ -1,10 +1,15 @@
+---
+description: This document describes Compiling the Version in openGauss, covering topics such as Preparation Before Compiling.
+keywords: [openGauss, Compiling the Version, compilation, Preparation Before Compiling]
+---
+
 # Compiling the Version<a name="EN-US_TOPIC_0241496980"></a>
 
 A  **build.sh**  script is provided for compiling openGauss and generating the installation package. You can compile openGauss by using the script. You can also configure environment variables and run commands to compile openGauss.
 
 This section describes the prerequisites and procedure for openGauss compilation. The following figure shows the compilation process.
 
-![](figures/绘图1.png)  
+![Compiling the Version diagram](figures/绘图1.png)  
 
 ## Preparation Before Compiling
 

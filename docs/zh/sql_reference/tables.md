@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss TABLES 的相关内容与操作方法。
+keywords: [openGauss, TABLES, SQL参考]
+---
+
 # TABLES <a name="ZH-CN_TOPIC_0310260671"></a>
 
 存储表相关的信息。

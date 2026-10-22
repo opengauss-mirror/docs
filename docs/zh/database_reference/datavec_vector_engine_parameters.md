@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DataVec向量引擎参数 的相关内容，涵盖 hnsw_ef_search、ivfflat_probes 等内容。
+keywords: [openGauss, DataVec向量引擎参数, 数据库参考, hnsw_ef_search, ivfflat_probes]
+---
+
 # DataVec向量引擎参数
 
 ## hnsw_ef_search<a name="section14941640131"></a>

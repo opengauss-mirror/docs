@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_SQL\_UTIL Schema in openGauss.
+keywords: [openGauss, DBE\_SQL\_UTIL Schema, SQL]
+---
+
 # DBE\_SQL\_UTIL Schema<a name="EN-US_TOPIC_0000001266273310"></a>
 
 DBE\_SQL\_UTIL schema stores SQL patch management tools, such as system functions for creating, deleting, enabling, and disabling SQL patches. Common users have only the usage permission and do not have the create, alter, drop, and comment permissions.

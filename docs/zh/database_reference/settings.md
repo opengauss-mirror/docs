@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 设置 的相关内容，涵盖 wal\_level、fsync 等内容。
+keywords: [openGauss, 设置, 数据库参考, wal\_level, fsync]
+---
+
 # 设置
 
 ## wal\_level<a name="zh-cn_topic_0283137354_zh-cn_topic_0237124707_zh-cn_topic_0059778393_s2c76f5957066407a959191148f2c780f"></a>

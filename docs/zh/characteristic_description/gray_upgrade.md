@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 灰度升级 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 灰度升级, 特性描述, 可获得性, 特性简介]
+---
+
 # 灰度升级
 
 ## 可获得性<a name="section56086982"></a>

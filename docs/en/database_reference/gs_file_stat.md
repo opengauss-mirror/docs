@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_FILE\_STAT in openGauss.
+keywords: [openGauss, GS\_FILE\_STAT, database reference]
+---
+
 # GS\_FILE\_STAT<a name="EN-US_TOPIC_0289900832"></a>
 
 **GS\_FILE\_STAT**  records statistics about data file I/O to indicate I/O performance and detect performance problems such as abnormal I/O operations.

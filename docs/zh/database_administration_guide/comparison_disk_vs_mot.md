@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 对比：磁盘与MOT 的相关内容与操作方法。
+keywords: [openGauss, 对比：磁盘与MOT, 数据库管理]
+---
+
 # 对比：磁盘与MOT
 
 下表简要对比了基于openGauss磁盘的存储引擎和MOT存储引擎的各种特性。

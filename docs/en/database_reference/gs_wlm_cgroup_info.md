@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_WLM\_CGROUP\_INFO in openGauss.
+keywords: [openGauss, GS\_WLM\_CGROUP\_INFO, database reference]
+---
+
 # GS\_WLM\_CGROUP\_INFO<a name="EN-US_TOPIC_0289900833"></a>
 
 **GS\_WLM\_CGROUP\_INFO**  displays information about a Cgroup for a job that is being executed.

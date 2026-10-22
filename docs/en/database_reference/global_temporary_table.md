@@ -1,3 +1,8 @@
+---
+description: This document describes Global Temporary Table in openGauss, covering topics such as max\_active\_global\_temporary\_table, vacuum\_gtt\_defer\_check\_age.
+keywords: [openGauss, Global Temporary Table, database reference, max\_active\_global\_temporary\_table, vacuum\_gtt\_defer\_check\_age]
+---
+
 # Global Temporary Table<a name="EN-US_TOPIC_0303812074"></a>
 
 ## max\_active\_global\_temporary\_table<a name="section18307271684"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_STAT\_BAD\_BLOCK in openGauss.
+keywords: [openGauss, PG\_STAT\_BAD\_BLOCK, database reference]
+---
+
 # PG\_STAT\_BAD\_BLOCK<a name="EN-US_TOPIC_0289900534"></a>
 
 **PG\_STAT\_BAD\_BLOCK**  shows statistics about Page or CU verification failures after a node is started.

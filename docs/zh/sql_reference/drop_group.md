@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP GROUP 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP GROUP, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP GROUP
 
 ## 功能描述<a name="zh-cn_topic_0283137231_zh-cn_topic_0237122139_zh-cn_topic_0059778284_s39299576fef14e66bcb9eece71686c4a"></a>

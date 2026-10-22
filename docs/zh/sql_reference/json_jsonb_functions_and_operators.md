@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss JSON/JSONB函数和操作符 的相关内容与操作方法。
+keywords: [openGauss, JSON/JSONB函数和操作符, SQL参考]
+---
+
 # JSON/JSONB函数和操作符
 
 JSON/JSONB数据类型参考[JSON/JSONB类型](json_jsonb_types.md)。

@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_PLDEBUGGER.disable\_breakpoint in openGauss.
+keywords: [openGauss, DBE\_PLDEBUGGER.disable\_breakpoint, SQL]
+---
+
 # DBE\_PLDEBUGGER.disable\_breakpoint<a name="EN-US_TOPIC_0000001152318526"></a>
 
 During debugging on the debug end, call disable\_breakpoint to disable breakpoints.

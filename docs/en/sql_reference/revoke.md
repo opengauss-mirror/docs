@@ -1,3 +1,8 @@
+---
+description: This document describes REVOKE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, REVOKE, SQL, Function, Precautions]
+---
+
 # REVOKE<a name="EN-US_TOPIC_0289900263"></a>
 
 ## Function<a name="en-us_topic_0283137669_en-us_topic_0237122179_en-us_topic_0059779274_sda1d739a0a8c460c93bc099fb8208944"></a>

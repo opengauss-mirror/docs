@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER FOREIGN DATA WRAPPER in openGauss, covering topics such as Function Description, Syntax.
+keywords: [openGauss, ALTER FOREIGN DATA WRAPPER, SQL, Function Description, Syntax]
+---
+
 # ALTER FOREIGN DATA WRAPPER
 
 ## Function Description

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER ROLE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER ROLE, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER ROLE
 
 ## 功能描述<a name="zh-cn_topic_0283137195_zh-cn_topic_0237122068_zh-cn_topic_0059778744_sa4ec5e4feca4419193486c30e3c50708"></a>

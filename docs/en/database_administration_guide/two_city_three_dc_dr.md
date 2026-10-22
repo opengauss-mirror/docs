@@ -1,3 +1,8 @@
+---
+description: This document describes Two-City Three-DC DR in openGauss, covering topics such as Streaming Replication-based Remote DR Solution.
+keywords: [openGauss, Two-City Three-DC DR, database administration, Streaming Replication-based Remote DR Solution]
+---
+
 # Two-City Three-DC DR
 
 To implement cross-region DR, you need to deploy two database instances, one primary database instance and one DR database instance. The primary database instance and DR database instance are usually deployed in two cities far away from each other. Full and incremental data synchronization is implemented between database instances by using storage media or without using storage media. A regional fault occurs in the primary database instance (production database instance) and data cannot be restored. You can enable the DR database instance to be promoted to primary to take over services.

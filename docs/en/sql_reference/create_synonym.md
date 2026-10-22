@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE SYNONYM in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE SYNONYM, SQL, Function, Precautions]
+---
+
 # CREATE SYNONYM<a name="EN-US_TOPIC_0289900787"></a>
 
 ## Function<a name="en-us_topic_0283136599_en-us_topic_0237122116_en-us_topic_0059778169_s0867185fef0f4a228532d432b598cb26"></a>

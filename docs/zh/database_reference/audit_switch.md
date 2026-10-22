@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 审计开关 的相关内容，涵盖 audit\_enabled、audit\_directory 等内容。
+keywords: [openGauss, 审计开关, 数据库参考, audit\_enabled, audit\_directory]
+---
+
 # 审计开关
 
 ## audit\_enabled<a name="zh-cn_topic_0237124745_zh-cn_topic_0059777744_sb3d1b703f24c49f096b36087a60fdfcd"></a>

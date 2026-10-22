@@ -1,3 +1,8 @@
+---
+description: This document describes SUMMARY\_STATIO\_SYS\_INDEXES in openGauss.
+keywords: [openGauss, SUMMARY\_STATIO\_SYS\_INDEXES, SQL]
+---
+
 # SUMMARY\_STATIO\_SYS\_INDEXES<a name="EN-US_TOPIC_0245374786"></a>
 
 **SUMMARY\_STATIO\_SYS\_INDEXES**  displays I/O status information about all system catalog indexes in namespaces in openGauss. 

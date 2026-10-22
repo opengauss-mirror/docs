@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_STATIO\_SYS\_TABLES in openGauss.
+keywords: [openGauss, GLOBAL\_STATIO\_SYS\_TABLES, SQL]
+---
+
 # GLOBAL\_STATIO\_SYS\_TABLES<a name="EN-US_TOPIC_0245374784"></a>
 
 **GLOBAL\_STATIO\_SYS\_TABLES**  displays I/O status information about all system catalogs in namespaces on each node. 

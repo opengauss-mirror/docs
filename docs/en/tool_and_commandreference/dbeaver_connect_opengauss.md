@@ -1,3 +1,8 @@
+---
+description: This document describes Connecting to openGauss Using DBeaver in openGauss, covering topics such as Prerequisites, Preparing the openGauss Connection User.
+keywords: [openGauss, Connecting to openGauss Using DBeaver, tools and commands, Prerequisites, Preparing the openGauss Connection User]
+---
+
 # Connecting to openGauss Using DBeaver
 
 This document describes how to use the DBeaver client tool to connect to and operate an openGauss database.

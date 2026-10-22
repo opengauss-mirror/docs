@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_PLDEBUGGER.info\_code in openGauss.
+keywords: [openGauss, DBE\_PLDEBUGGER.info\_code, SQL]
+---
+
 # DBE\_PLDEBUGGER.info\_code<a name="EN-US_TOPIC_0000001162605975"></a>
 
 During debugging on the debug end,  **info\_code**  is invoked to view the source statement of the specified stored procedure and the line number corresponding to each line. The line number starts from the function body, and the line number in the function header is empty.

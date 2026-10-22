@@ -1,3 +1,8 @@
+---
+description: This document describes Query in openGauss, covering topics such as instr\_unique\_sql\_count, instr\_unique\_sql\_track\_type.
+keywords: [openGauss, Query, database reference, instr\_unique\_sql\_count, instr\_unique\_sql\_track\_type]
+---
+
 # Query<a name="EN-US_TOPIC_0289900490"></a>
 
 ## instr\_unique\_sql\_count<a name="en-us_topic_0283137149_en-us_topic_0237124756_section983311682019"></a>

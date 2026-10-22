@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 扩展函数 的相关内容与操作方法。
+keywords: [openGauss, 扩展函数, SQL参考]
+---
+
 # 扩展函数
 
 下表列举了openGauss中支持的扩展函数，不作为商用特性交付，仅供参考。

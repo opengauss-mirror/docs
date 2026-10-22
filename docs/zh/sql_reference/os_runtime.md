@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss OS\_RUNTIME 的相关内容与操作方法。
+keywords: [openGauss, OS\_RUNTIME, SQL参考]
+---
+
 # OS\_RUNTIME
 
 显示当前操作系统运行的状态信息。

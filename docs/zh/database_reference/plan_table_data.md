@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PLAN\_TABLE\_DATA 的相关内容与操作方法。
+keywords: [openGauss, PLAN\_TABLE\_DATA, 数据库参考]
+---
+
 # PLAN\_TABLE\_DATA
 
 PLAN\_TABLE\_DATA存储了用户通过执行EXPLAIN PLAN收集到的计划信息。与PLAN\_TABLE视图不同的是PLAN\_TABLE\_DATA表存储了所有session和user执行EXPLAIN PLAN收集的计划信息。

@@ -1,3 +1,8 @@
+---
+description: This document describes Performing a Primary/Standby Switchover in openGauss, covering topics such as Scenarios, Procedure.
+keywords: [openGauss, Performing a Primary/Standby Switchover, database O&M, Scenarios, Procedure]
+---
+
 # Performing a Primary/Standby Switchover<a name="EN-US_TOPIC_0289896999"></a>
 
 ## Scenarios<a name="en-us_topic_0283140544_en-us_topic_0237088791_en-us_topic_0141661468_en-us_topic_0138952674_en-us_topic_0085032066_en-us_topic_0059779253_s96a1309d1288457e8d608dbb445140ff"></a>

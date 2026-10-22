@@ -1,3 +1,8 @@
+---
+description: This document describes CM in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, CM, features, Availability, Introduction]
+---
+
 # CM<a name="EN-US_TOPIC_0000001265167501"></a>
 
 ## Availability<a name="section15406143204715"></a>

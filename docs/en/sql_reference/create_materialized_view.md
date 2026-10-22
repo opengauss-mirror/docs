@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE MATERIALIZED VIEW in openGauss, covering topics such as Precautions, Syntax.
+keywords: [openGauss, CREATE MATERIALIZED VIEW, SQL, Precautions, Syntax]
+---
+
 # CREATE MATERIALIZED VIEW<a name="EN-US_TOPIC_0289899973"></a>
 
 **CREATE MATERIALIZED VIEW**  creates a complete-refresh materialized view, and you can use  **REFRESH MATERIALIZED VIEW**  to fully refresh the data in the materialized view.

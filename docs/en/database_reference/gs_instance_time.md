@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_INSTANCE\_TIME in openGauss.
+keywords: [openGauss, GS\_INSTANCE\_TIME, database reference]
+---
+
 # GS\_INSTANCE\_TIME<a name="EN-US_TOPIC_0289900080"></a>
 
 **GS\_INSTANCE\_TIME**  records time consumption information of the current node. The time consumption information is classified into the following types:

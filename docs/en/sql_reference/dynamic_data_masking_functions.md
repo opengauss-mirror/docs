@@ -1,3 +1,8 @@
+---
+description: This document describes Dynamic Data Masking Functions in openGauss.
+keywords: [openGauss, Dynamic Data Masking Functions, SQL]
+---
+
 # Dynamic Data Masking Functions<a name="EN-US_TOPIC_0000001151866048"></a>
 
 >[!NOTE]NOTE 

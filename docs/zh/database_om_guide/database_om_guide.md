@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 数据库运维 的相关内容与操作方法。
+keywords: [openGauss, 数据库运维, 运维指南]
+---
+
 # 数据库运维
 
 本文档提供了openGauss数据库常用的运维操作指导，方便管理员更好地使用openGauss。本文档适用于所有使用openGauss数据库的管理员。

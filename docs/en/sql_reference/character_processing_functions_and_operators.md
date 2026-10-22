@@ -1,3 +1,8 @@
+---
+description: This document describes Character Processing Functions and Operators in openGauss.
+keywords: [openGauss, Character Processing Functions and Operators, SQL]
+---
+
 # Character Processing Functions and Operators<a name="EN-US_TOPIC_0289900656"></a>
 
 String functions and operators provided by openGauss are for concatenating strings with each other, concatenating strings with non-strings, and matching the patterns of strings. Note: Except length-related functions, other functions and operators of string processing functions do not support parameters greater than 1 GB.

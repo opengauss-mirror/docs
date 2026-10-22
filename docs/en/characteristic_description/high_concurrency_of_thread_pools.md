@@ -1,3 +1,8 @@
+---
+description: This document describes High Concurrency of Thread Pools in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, High Concurrency of Thread Pools, features, Availability, Introduction]
+---
+
 # High Concurrency of Thread Pools<a name="EN-US_TOPIC_0000001135548519"></a>
 
 ## Availability<a name="section5309649"></a>

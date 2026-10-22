@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_COMM\_DELAY 的相关内容与操作方法。
+keywords: [openGauss, PG\_COMM\_DELAY, 数据库参考]
+---
+
 # PG\_COMM\_DELAY
 
 PG\_COMM\_DELAY视图展示单个节点的通信库时延状态。

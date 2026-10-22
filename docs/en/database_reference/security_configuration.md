@@ -1,3 +1,8 @@
+---
+description: This document describes Security Configuration in openGauss, covering topics such as elastic\_search\_ip\_addr, enable\_security\_policy.
+keywords: [openGauss, Security Configuration, database reference, elastic\_search\_ip\_addr, enable\_security\_policy]
+---
+
 # Security Configuration<a name="EN-US_TOPIC_0311764209"></a>
 
 ## elastic\_search\_ip\_addr<a name="section12443144020298"></a>

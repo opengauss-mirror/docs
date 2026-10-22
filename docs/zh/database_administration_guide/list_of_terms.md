@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 术语表 的相关内容与操作方法。
+keywords: [openGauss, 术语表, 数据库管理]
+---
+
 # 术语表
 
 <a name="table19681404"></a>

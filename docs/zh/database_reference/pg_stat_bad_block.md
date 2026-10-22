@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_STAT\_BAD\_BLOCK 的相关内容与操作方法。
+keywords: [openGauss, PG\_STAT\_BAD\_BLOCK, 数据库参考]
+---
+
 # PG\_STAT\_BAD\_BLOCK
 
 PG\_STAT\_BAD\_BLOCK视图显示自节点启动后，读取数据时出现Page/CU校验失败的统计信息。

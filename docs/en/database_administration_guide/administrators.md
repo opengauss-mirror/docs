@@ -1,3 +1,8 @@
+---
+description: This document describes Administrators in openGauss, covering topics such as Initial Users, System Administrators.
+keywords: [openGauss, Administrators, database administration, Initial Users, System Administrators]
+---
+
 # Administrators<a name="EN-US_TOPIC_0246507959"></a>
 
 ## Initial Users<a name="en-us_topic_0237121100_section41994915210"></a>

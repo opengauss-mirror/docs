@@ -1,3 +1,8 @@
+---
+description: This document describes Row Expressions in openGauss.
+keywords: [openGauss, Row Expressions, SQL]
+---
+
 # Row Expressions<a name="EN-US_TOPIC_0289900619"></a>
 
 Syntax:

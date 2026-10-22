@@ -1,3 +1,8 @@
+---
+description: This document describes Concepts in openGauss, covering topics such as Database, Tablespace.
+keywords: [openGauss, Concepts, database administration, Database, Tablespace]
+---
+
 # Concepts<a name="EN-US_TOPIC_0242370172"></a>
 
 ## Database<a name="en-us_topic_0237120248_en-us_topic_0059779238_s81123a0249f349a9af2c50cc1641ff54"></a>

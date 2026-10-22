@@ -1,3 +1,8 @@
+---
+description: This document describes Overview in openGauss, covering topics such as Background, Procedure.
+keywords: [openGauss, Overview, database administration, Background, Procedure]
+---
+
 # Overview<a name="EN-US_TOPIC_0000001147207387"></a>
 
 ## Background<a name="section129831239555"></a>

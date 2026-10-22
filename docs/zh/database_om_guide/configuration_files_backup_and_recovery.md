@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 配置文件的备份与恢复 的相关内容，涵盖 背景信息、前置条件 等内容。
+keywords: [openGauss, 配置文件的备份与恢复, 数据库运维, 背景信息, 前置条件]
+---
+
 # 配置文件的备份与恢复
 
 ## 背景信息<a name="zh-cn_topic_0237088792_zh-cn_topic_0059777801_section728719384439"></a>

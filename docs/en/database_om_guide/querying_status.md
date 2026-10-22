@@ -1,3 +1,8 @@
+---
+description: This document describes Querying Status in openGauss, covering topics such as Background, Prerequisites.
+keywords: [openGauss, Querying Status, database O&M, Background, Prerequisites]
+---
+
 # Querying Status<a name="EN-US_TOPIC_0242215009"></a>
 
 ## Background<a name="en-us_topic_0237088790_en-us_topic_0059778948_section199712094115"></a>

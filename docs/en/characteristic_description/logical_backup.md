@@ -1,3 +1,8 @@
+---
+description: This document describes Logical Backup in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Logical Backup, features, Availability, Introduction]
+---
+
 # Logical Backup<a name="EN-US_TOPIC_0000001088726280"></a>
 
 ## Availability<a name="section56086982"></a>

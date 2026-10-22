@@ -1,3 +1,8 @@
+---
+description: This document describes STAT\_XACT\_USER\_FUNCTIONS in openGauss.
+keywords: [openGauss, STAT\_XACT\_USER\_FUNCTIONS, SQL]
+---
+
 # STAT\_XACT\_USER\_FUNCTIONS<a name="EN-US_TOPIC_0245374713"></a>
 
 **STAT\_XACT\_USER\_FUNCTIONS**  displays statistics about function executions in the current transaction.

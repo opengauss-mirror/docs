@@ -1,3 +1,8 @@
+---
+description: This document describes Reserved Parameters in openGauss.
+keywords: [openGauss, Reserved Parameters, database reference]
+---
+
 # Reserved Parameters<a name="EN-US_TOPIC_0311762489"></a>
 
 >[!NOTE]NOTE 

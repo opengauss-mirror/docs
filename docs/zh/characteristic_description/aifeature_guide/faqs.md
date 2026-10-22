@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 常见问题 的相关内容，涵盖 4.1 敏感信息输出问题、4.2 使用openssl创建HTTPS所使用的SSL证书 等内容。
+keywords: [openGauss, 常见问题, 特性描述, 4.1 敏感信息输出问题, 4.2 使用openssl创建HTTPS所使用的SSL证书]
+---
+
 # 常见问题<a name="ZH-CN_TOPIC_0000002258650656"></a>
 
 ## 4.1 敏感信息输出问题<a name="section749764217348"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_GROUP in openGauss.
+keywords: [openGauss, PG\_GROUP, database reference]
+---
+
 # PG\_GROUP<a name="EN-US_TOPIC_0289900390"></a>
 
 **PG\_GROUP**  displays the database role authentication and the relationship between roles.

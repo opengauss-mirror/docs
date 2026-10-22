@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 批处理模式 的相关内容，涵盖 语法格式、参数说明 等内容。
+keywords: [openGauss, 批处理模式, SQL参考, 语法格式, 参数说明]
+---
+
 # 批处理模式
 
 openGauss支持从文本文件执行SQL语句。openGauss提供了gsql工具实现SQL语句的批量处理。

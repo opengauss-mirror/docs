@@ -1,3 +1,8 @@
+---
+description: This document describes STATIO\_USER\_TABLES in openGauss.
+keywords: [openGauss, STATIO\_USER\_TABLES, SQL]
+---
+
 # STATIO\_USER\_TABLES<a name="EN-US_TOPIC_0245374773"></a>
 
 **STATIO\_USER\_TABLES**  displays I/O status information about all user relationship tables in the namespace.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_NODE\_ENV 的相关内容与操作方法。
+keywords: [openGauss, PG\_NODE\_ENV, 数据库参考]
+---
+
 # PG\_NODE\_ENV
 
 PG\_NODE\_ENV视图提供获取当前节点的环境变量信息。

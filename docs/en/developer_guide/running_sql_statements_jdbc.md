@@ -1,3 +1,8 @@
+---
+description: This document describes Running SQL Statements in openGauss, covering topics such as Running a Common SQL Statement, Running a Prepared SQL Statement.
+keywords: [openGauss, Running SQL Statements, development, Running a Common SQL Statement, Running a Prepared SQL Statement]
+---
+
 # Running SQL Statements<a name="EN-US_TOPIC_0289900186"></a>
 
 ## Running a Common SQL Statement<a name="en-us_topic_0283137004_en-us_topic_0237120383_en-us_topic_0213179129_en-us_topic_0189250824_en-us_topic_0059777674_s6d6619f4f2df48198e8e7a32ccc4b47a"></a>

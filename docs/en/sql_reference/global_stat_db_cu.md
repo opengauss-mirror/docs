@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_STAT\_DB\_CU in openGauss.
+keywords: [openGauss, GLOBAL\_STAT\_DB\_CU, SQL]
+---
+
 # GLOBAL\_STAT\_DB\_CU<a name="EN-US_TOPIC_0245374800"></a>
 
 **GLOBAL\_STAT\_DB\_CU**  is used to query CU hits in each database in openGauss. You can clear it using  **pg\_stat\_reset\(\)**. 

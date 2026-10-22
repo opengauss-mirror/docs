@@ -1,3 +1,8 @@
+---
+description: This document describes DROP DATABASE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP DATABASE, SQL, Function, Precautions]
+---
+
 # DROP DATABASE<a name="EN-US_TOPIC_0289900003"></a>
 
 ## Function<a name="en-us_topic_0283137424_en-us_topic_0237122133_en-us_topic_0059778607_s8dcd69edcfca47eb88ddb451a360b362"></a>

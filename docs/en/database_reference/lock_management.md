@@ -1,3 +1,8 @@
+---
+description: This document describes Lock Management in openGauss, covering topics such as deadlock\_timeout, lockwait\_timeout.
+keywords: [openGauss, Lock Management, database reference, deadlock\_timeout, lockwait\_timeout]
+---
+
 # Lock Management<a name="EN-US_TOPIC_0289900212"></a>
 
 In openGauss, a deadlock may occur when concurrently executed transactions compete for resources. This section describes parameters used for managing transaction locks.

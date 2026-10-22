@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gms_tcp高级包 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, gms_tcp高级包, 特性描述, 可获得性, 特性简介]
+---
+
 # gms_tcp高级包
 
 ## 可获得性<a name="section5309649"></a>

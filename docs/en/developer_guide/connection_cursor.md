@@ -1,3 +1,8 @@
+---
+description: This document describes connection.cursor\(\) in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, connection.cursor\(\), development, Function, Prototype]
+---
+
 # connection.cursor\(\)<a name="EN-US_TOPIC_0000001127310747"></a>
 
 ## Function<a name="section5708152714306"></a>

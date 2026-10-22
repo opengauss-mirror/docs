@@ -1,3 +1,8 @@
+---
+description: This document describes Executing Installation in openGauss, covering topics such as Prerequisites, Procedure.
+keywords: [openGauss, Executing Installation, installation, Prerequisites, Procedure]
+---
+
 # Executing Installation<a name="EN-US_TOPIC_0289899734"></a>
 
 After the openGauss installation environment is prepared by executing the pre-installation script, deploy openGauss based on the installation process.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss REASSIGN OWNED 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, REASSIGN OWNED, SQL参考, 功能描述, 注意事项]
+---
+
 # REASSIGN OWNED
 
 ## 功能描述<a name="zh-cn_topic_0283136605_zh-cn_topic_0237122173_zh-cn_topic_0059779106_sfb032500d9624f8fb05a202a274cb9e9"></a>

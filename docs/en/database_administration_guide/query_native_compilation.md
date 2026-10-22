@@ -1,3 +1,8 @@
+---
+description: This document describes Query Native Compilation in openGauss, covering topics such as Query Compilation – PREPARE Statement, Execute Command.
+keywords: [openGauss, Query Native Compilation, database administration, Query Compilation – PREPARE Statement, Execute Command]
+---
+
 # Query Native Compilation<a name="EN-US_TOPIC_0270402397"></a>
 
 An additional feature of MOT is the ability to prepare and parse  _pre-compiled full queries_  in a native format \(using a PREPARE statement\) before they are needed for execution.

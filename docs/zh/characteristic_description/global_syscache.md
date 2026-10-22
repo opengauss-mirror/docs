@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 支持Global SysCache 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 支持Global SysCache, 特性描述, 可获得性, 特性简介]
+---
+
 # 支持Global SysCache
 
 ## 可获得性<a name="section15406143204715"></a>
@@ -37,7 +42,7 @@
 全局系统缓存（Global SysCache）是系统表数据的全局缓存和本地缓存。原理如[图1](#fig15658164619166)所示。
 
 **图 1**  Global SysCache原理图<a name="fig15658164619166"></a>  
-![](figures/Global-SysCache-Schemati.png)
+![Global SysCache原理图](figures/Global-SysCache-Schemati.png)
 
 ## 使用指导<a name="section8406643144718"></a>
 

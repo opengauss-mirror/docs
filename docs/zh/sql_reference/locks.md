@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 锁 的相关内容，涵盖 语法格式、参数说明 等内容。
+keywords: [openGauss, 锁, SQL参考, 语法格式, 参数说明]
+---
+
 # 锁
 
 如果需要保持数据库数据的一致性，可以使用LOCK TABLE来阻止其他用户修改表。

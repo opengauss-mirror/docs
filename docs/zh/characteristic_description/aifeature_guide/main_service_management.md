@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 主服务管理 的相关内容，涵盖 DBMind主服务启动、DBMind主服务停止 等内容。
+keywords: [openGauss, 主服务管理, 特性描述, DBMind主服务启动, DBMind主服务停止]
+---
+
 # 主服务管理<a name="ZH-CN_TOPIC_0000002293420745"></a>
 
 ## DBMind主服务启动<a name="section972585733516"></a>

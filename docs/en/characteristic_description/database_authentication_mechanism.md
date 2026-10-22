@@ -1,3 +1,8 @@
+---
+description: This document describes Database Authentication Mechanism in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Database Authentication Mechanism, features, Availability, Introduction]
+---
+
 # Database Authentication Mechanism<a name="EN-US_TOPIC_0000001088406686"></a>
 
 ## Availability<a name="section65447064"></a>

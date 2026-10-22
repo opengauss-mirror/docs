@@ -1,3 +1,8 @@
+---
+description: This document describes cm\_ctl in openGauss, covering topics such as Command Description.
+keywords: [openGauss, cm\_ctl, tools and commands, Command Description]
+---
+
 # cm\_ctl<a name="EN-US_TOPIC_0000001201327140"></a>
 
 **cm\_ctl** is a tool provided by openGauss to control database instance services. This tool is called by O&M personnel for automatic database instance service restoration. cm\_ctl provides the following functions:

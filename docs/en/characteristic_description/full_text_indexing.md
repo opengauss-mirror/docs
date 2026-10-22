@@ -1,3 +1,8 @@
+---
+description: This document describes Full-Text Indexing in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Full-Text Indexing, features, Availability, Introduction]
+---
+
 # Full-Text Indexing<a name="EN-US_TOPIC_0000001088566342"></a>
 
 ## Availability<a name="section3480125215575"></a>

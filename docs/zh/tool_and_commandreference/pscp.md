@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss pscp 的相关内容，涵盖 基本功能、语法 等内容。
+keywords: [openGauss, pscp, 工具与命令参考, 基本功能, 语法]
+---
+
 # pscp
 
 ## 基本功能<a name="section1540721571112"></a>

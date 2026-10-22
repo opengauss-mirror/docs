@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE GROUP 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE GROUP, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE GROUP
 
 ## 功能描述<a name="zh-cn_topic_0283137568_zh-cn_topic_0237122105_zh-cn_topic_0059779249_sf157d08ffdd84191875e1481ee3a4626"></a>

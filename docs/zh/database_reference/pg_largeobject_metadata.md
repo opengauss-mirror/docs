@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_LARGEOBJECT\_METADATA 的相关内容与操作方法。
+keywords: [openGauss, PG\_LARGEOBJECT\_METADATA, 数据库参考]
+---
+
 # PG\_LARGEOBJECT\_METADATA
 
 PG\_LARGEOBJECT\_METADATA系统表存储与大数据相关的元数据。实际的大对象数据存储在PG\_LARGEOBJECT里。

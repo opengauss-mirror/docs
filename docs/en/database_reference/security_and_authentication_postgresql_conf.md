@@ -1,3 +1,8 @@
+---
+description: This document describes Security and Authentication \(postgresql.conf\) in openGauss, covering topics such as authentication\_timeout, auth\_iteration\_count.
+keywords: [openGauss, Security and Authentication \(postgresql.conf\), database reference, authentication\_timeout, auth\_iteration\_count]
+---
+
 # Security and Authentication \(postgresql.conf\)<a name="EN-US_TOPIC_0289899967"></a>
 
 This section describes parameters about client-to-server authentication.

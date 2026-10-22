@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PGXC\_NODE 的相关内容与操作方法。
+keywords: [openGauss, PGXC\_NODE, 数据库参考]
+---
+
 # PGXC\_NODE
 
 PGXC\_NODE系统表存储集群节点信息。PGXC\_NODE系统表仅在分布式场景下有具体含义，openGauss只能查询表定义。

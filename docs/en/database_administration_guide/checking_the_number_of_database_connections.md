@@ -1,3 +1,8 @@
+---
+description: This document describes Checking the Number of Database Connections in openGauss, covering topics such as Background, Procedure.
+keywords: [openGauss, Checking the Number of Database Connections, database administration, Background, Procedure]
+---
+
 # Checking the Number of Database Connections<a name="EN-US_TOPIC_0246507953"></a>
 
 ## Background<a name="en-us_topic_0237121094_en-us_topic_0059779140_s4018f18115b340a780a46830079d366b"></a>

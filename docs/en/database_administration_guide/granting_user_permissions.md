@@ -1,3 +1,8 @@
+---
+description: This document describes Granting User Permissions in openGauss.
+keywords: [openGauss, Granting User Permissions, database administration]
+---
+
 # Granting User Permissions<a name="EN-US_TOPIC_0270171477"></a>
 
 The following describes how to assign a database user permission to access the MOT storage engine. This is performed only once per database user, and is usually done during the initial configuration phase.

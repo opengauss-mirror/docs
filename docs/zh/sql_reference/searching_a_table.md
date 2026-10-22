@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 搜索表 的相关内容与操作方法。
+keywords: [openGauss, 搜索表, SQL参考]
+---
+
 # 搜索表
 
 在不使用索引的情况下也可以进行全文检索。

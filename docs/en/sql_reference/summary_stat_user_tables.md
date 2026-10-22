@@ -1,3 +1,8 @@
+---
+description: This document describes SUMMARY\_STAT\_USER\_TABLES in openGauss.
+keywords: [openGauss, SUMMARY\_STAT\_USER\_TABLES, SQL]
+---
+
 # SUMMARY\_STAT\_USER\_TABLES<a name="EN-US_TOPIC_0245374681"></a>
 
 **SUMMARY\_STAT\_USER\_TABLES**  displays the status information about user-defined ordinary tables in all namespaces in openGauss. 

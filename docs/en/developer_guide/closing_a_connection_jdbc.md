@@ -1,3 +1,8 @@
+---
+description: This document describes Closing a Connection in openGauss.
+keywords: [openGauss, Closing a Connection, development]
+---
+
 # Closing a Connection<a name="EN-US_TOPIC_0289900572"></a>
 
 After you complete required data operations in the database, close the database connection.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_OPERATOR\_RUNTIME 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_OPERATOR\_RUNTIME, SQL参考]
+---
+
 # GLOBAL\_OPERATOR\_RUNTIME
 
 GLOBAL\_OPERATOR\_RUNTIME视图显示当前用户在数据库主节点上正在执行的作业的算子相关信息。

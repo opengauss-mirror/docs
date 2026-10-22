@@ -1,3 +1,8 @@
+---
+description: This document describes Time Model in openGauss.
+keywords: [openGauss, Time Model, SQL]
+---
+
 # Time Model<a name="EN-US_TOPIC_0000001259955051"></a>
 
 The following table describes metrics in the Time Model report.

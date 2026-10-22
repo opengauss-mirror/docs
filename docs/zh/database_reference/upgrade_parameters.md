@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 升级参数 的相关内容，涵盖 IsInplaceUpgrade、inplace\_upgrade\_next\_system\_object\_oids 等内容。
+keywords: [openGauss, 升级参数, 数据库参考, IsInplaceUpgrade, inplace\_upgrade\_next\_system\_object\_oids]
+---
+
 # 升级参数
 
 ## IsInplaceUpgrade<a name="zh-cn_topic_0237124753_zh-cn_topic_0059778487_s1df9119d74fe45da9452d4cb4802f84c"></a>

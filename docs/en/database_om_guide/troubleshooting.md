@@ -1,3 +1,8 @@
+---
+description: This document describes Troubleshooting in openGauss, covering topics such as FAQs About the Upgrade.
+keywords: [openGauss, Troubleshooting, database O&M, FAQs About the Upgrade]
+---
+
 # Troubleshooting<a name="EN-US_TOPIC_0305491443"></a>
 
 If the upgrade fails, perform the following operations:

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MOT样例TPC-C基准 的相关内容，涵盖 TPC-C简介、系统级优化 等内容。
+keywords: [openGauss, MOT样例TPC-C基准, 数据库管理, TPC-C简介, 系统级优化]
+---
+
 # MOT样例TPC-C基准
 
 ## TPC-C简介<a name="section46845508"></a>
@@ -151,7 +156,7 @@ tpm-C指标单位表示为每分钟事务数-C，而C表示TPC-C特定基准。
 
     BenchmarkSQL结果应如下所示：
 
-    ![](figures/zh-cn_image_0280525213.jpg)
+    ![结果报告示意图](figures/zh-cn_image_0280525213.jpg)
 
     随着时间的推移，基准测量并平均已提交的事务。上面的例子是两分钟的基准测试。
 
@@ -162,9 +167,9 @@ tpm-C指标单位表示为每分钟事务数-C，而C表示TPC-C特定基准。
     详细结果报告示例：
 
 **图 1**  详细结果报告<a name="fig49333891"></a>  
-![](figures/Detailed-Results-Report.png)
+![详细结果报告](figures/Detailed-Results-Report.png)
 
-![](figures/zh-cn_image_0280525217.png)
+![结果报告示意图](figures/zh-cn_image_0280525217.png)
 
 BenchmarkSQL收集详细的性能统计数据和操作系统性能数据（如果配置了的话）。
 
@@ -177,4 +182,4 @@ BenchmarkSQL收集详细的性能统计数据和操作系统性能数据（如�
 下图展示了近乎线性的可扩展性：
 
 **图 2**  华为TaiShan 2480 MOT TPC-C测试结果<a name="fig6118042"></a>  
-![](figures/Huawei-TaiShan-2480-MOT-TPC-C-Test-Results.png)
+![华为TaiShan 2480 MOT TPC-C测试结果](figures/Huawei-TaiShan-2480-MOT-TPC-C-Test-Results.png)

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP TABLE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, DROP TABLE, SQL参考, 功能描述, 注意事项]
+---
+
 # DROP TABLE
 
 ## 功能描述<a name="zh-cn_topic_0283136462_zh-cn_topic_0237122152_zh-cn_topic_0059778107_s74e2e8764aa64af1b093f8f68069bce6"></a>

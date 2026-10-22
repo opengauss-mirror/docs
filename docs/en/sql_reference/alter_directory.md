@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER DIRECTORY in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER DIRECTORY, SQL, Function, Precautions]
+---
+
 # ALTER DIRECTORY<a name="EN-US_TOPIC_0289899981"></a>
 
 ## Function<a name="en-us_topic_0283137159_en-us_topic_0237122058_en-us_topic_0059778392_sc84e6980912549c4bbd6895f97ac39f1"></a>

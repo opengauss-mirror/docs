@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER TABLESPACE 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER TABLESPACE, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER TABLESPACE
 
 ## 功能描述<a name="zh-cn_topic_0283137270_zh-cn_topic_0237122078_zh-cn_topic_0059777507_s15c266ccb0b240ddaab9e5fadcfb4313"></a>

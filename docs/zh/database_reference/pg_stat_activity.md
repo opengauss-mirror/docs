@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_STAT\_ACTIVITY 的相关内容与操作方法。
+keywords: [openGauss, PG\_STAT\_ACTIVITY, 数据库参考]
+---
+
 # PG\_STAT\_ACTIVITY
 
 PG\_STAT\_ACTIVITY视图显示和当前用户查询相关的信息，字段保存的是上一次执行的信息。

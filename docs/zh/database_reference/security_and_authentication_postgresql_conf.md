@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 安全和认证（postgresql.conf） 的相关内容，涵盖 authentication\_timeout、auth\_iteration\_count 等内容。
+keywords: [openGauss, 安全和认证（postgresql.conf）, 数据库参考, authentication\_timeout, auth\_iteration\_count]
+---
+
 # 安全和认证（postgresql.conf）
 
 介绍设置客户端和服务器的安全认证方式的相关参数。

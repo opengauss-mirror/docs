@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE DATABASE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE DATABASE, SQL, Function, Precautions]
+---
+
 # CREATE DATABASE<a name="EN-US_TOPIC_0289900066"></a>
 
 ## Function<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_s3ea6af3a84d74f1ab7dceb8bb54ed134"></a>

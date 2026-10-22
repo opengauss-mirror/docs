@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 账本数据库的函数 的相关内容与操作方法。
+keywords: [openGauss, 账本数据库的函数, SQL参考]
+---
+
 # 账本数据库的函数
 
 - get\_dn\_hist\_relhash\(text, text\)

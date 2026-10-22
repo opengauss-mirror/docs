@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 环境部署 的相关内容与操作方法。
+keywords: [openGauss, 环境部署, 特性描述]
+---
+
 # 环境部署<a name="ZH-CN_TOPIC_0000002259758088"></a>
 
 用户可以从Prometheus的官网上下载Prometheus-server和node-exporter，然后根据官方文档中的说明启动它们；

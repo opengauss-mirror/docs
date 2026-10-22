@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 导出所有数据库 的相关内容，涵盖 操作步骤、示例 等内容。
+keywords: [openGauss, 导出所有数据库, 数据库运维, 操作步骤, 示例]
+---
+
 # 导出所有数据库
 
 openGauss支持使用gs\_dumpall工具导出所有数据库的全量信息，包含openGauss中每个数据库信息和公共的全局对象信息。可根据需要自定义导出如下信息：

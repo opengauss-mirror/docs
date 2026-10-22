@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_AUTH\_HISTORY 的相关内容与操作方法。
+keywords: [openGauss, PG\_AUTH\_HISTORY, 数据库参考]
+---
+
 # PG\_AUTH\_HISTORY
 
 PG\_AUTH\_HISTORY系统表记录了角色的认证历史。需要有系统管理员权限才可以访问此系统表。

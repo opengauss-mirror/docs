@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ODBC 的相关内容，涵盖 Linux下的ODBC包、配置数据源 等内容。
+keywords: [openGauss, ODBC, 快速入门, Linux下的ODBC包, 配置数据源]
+---
+
 # ODBC
 
 ODBC（Open Database Connectivity，开放数据库互连）是由Microsoft公司基于X/OPEN CLI提出的用于访问数据库的应用程序编程接口。应用程序通过ODBC提供的API与数据库进行交互，增强了应用程序的可移植性、扩展性和可维护性。
@@ -5,7 +10,7 @@ ODBC（Open Database Connectivity，开放数据库互连）是由Microsoft公�
 ODBC的系统结构参见[图1](#zh-cn_topic_0283137057_fig1255101034110)。
 
 **图 1**  ODBC系统机构<a name="zh-cn_topic_0283137057_fig1255101034110"></a>  
-![](figures/ODBC-System-Organization.png)
+![ODBC系统机构](figures/ODBC-System-Organization.png)
 
 openGauss目前在以下环境中提供对ODBC的支持。
 
@@ -638,7 +643,7 @@ Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中
 ## 开发流程<a name="section3537202314458"></a>
 
 **图 2**  ODBC开发应用程序的流程<a name="zh-cn_topic_0283137079_zh-cn_topic_0237120409_zh-cn_topic_0059778957_fba9450765c4b4dc8b2809b91c8de76b3"></a>  
-![](figures/The-process-of-developing-application-programs-using-ODBC.png)
+![ODBC开发应用程序的流程](figures/The-process-of-developing-application-programs-using-ODBC.png)
 
 ## 常用接口<a name="section1274764216461"></a>
 

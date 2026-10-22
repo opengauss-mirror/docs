@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE PUBLICATION 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE PUBLICATION, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE PUBLICATION
 
 ## **功能描述**<a name="section12584151914217"></a>

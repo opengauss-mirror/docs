@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_PROC\_EXT 的相关内容与操作方法。
+keywords: [openGauss, PG\_PROC\_EXT, 数据库参考]
+---
+
 # PG\_PROC\_EXT
 
 PG\_PROC\_EXT系统表是PG\_PROC的扩展，存储函数或过程的额外信息。

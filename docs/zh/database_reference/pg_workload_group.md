@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_WORKLOAD\_GROUP 的相关内容与操作方法。
+keywords: [openGauss, PG\_WORKLOAD\_GROUP, 数据库参考]
+---
+
 # PG\_WORKLOAD\_GROUP
 
 PG\_WORKLOAD\_GROUP系统表提供了数据库负载组的信息。

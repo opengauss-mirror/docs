@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_AM 的相关内容与操作方法。
+keywords: [openGauss, PG\_AM, 数据库参考]
+---
+
 # PG\_AM
 
 PG\_AM系统表存储有关索引访问方法的信息。系统支持的每种索引访问方法都有一行。

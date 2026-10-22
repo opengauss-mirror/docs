@@ -1,3 +1,8 @@
+---
+description: This document describes Alarm Detection in openGauss, covering topics such as enable\_alarm, connection\_alarm\_rate.
+keywords: [openGauss, Alarm Detection, database reference, enable\_alarm, connection\_alarm\_rate]
+---
+
 # Alarm Detection<a name="EN-US_TOPIC_0289900903"></a>
 
 During the running of openGauss, error scenarios can be detected so that users are informed of the errors in time. You can view the  **system\_alarm**  log written by the alarm in the  _$GAUSSLOG_**/cm**  directory.

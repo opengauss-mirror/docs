@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_RANGE 的相关内容与操作方法。
+keywords: [openGauss, PG\_RANGE, 数据库参考]
+---
+
 # PG\_RANGE
 
 PG\_RANGE系统表存储关于范围类型的信息。除了[PG\_TYPE](pg_type.md)里类型的记录。

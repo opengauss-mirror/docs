@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_STAT\_USER\_INDEXES 的相关内容与操作方法。
+keywords: [openGauss, PG\_STAT\_USER\_INDEXES, 数据库参考]
+---
+
 # PG\_STAT\_USER\_INDEXES
 
 PG\_STAT\_USER\_INDEXES视图显示数据库中用户自定义普通表和toast表的索引状态信息。

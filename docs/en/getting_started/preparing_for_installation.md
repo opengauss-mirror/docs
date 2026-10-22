@@ -1,3 +1,8 @@
+---
+description: This document describes Preparing for Installation in openGauss, covering topics such as Obtaining and Verifying an Installation Package, Preparing the Software and Hardware Installation Environment.
+keywords: [openGauss, Preparing for Installation, getting started, Obtaining and Verifying an Installation Package, Preparing the Software and Hardware Installation Environment]
+---
+
 # Preparing for Installation<a name="EN-US_TOPIC_0000001092968956"></a>
 
 This section describes how to prepare and configure an environment for simplified openGauss installation. The simplified installation can be performed on a single node or on primary/standby nodes. Read this section carefully before installation. If the configuration in this section has been completed, skip this section.

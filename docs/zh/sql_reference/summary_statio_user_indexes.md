@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SUMMARY\_STATIO\_USER\_INDEXES 的相关内容与操作方法。
+keywords: [openGauss, SUMMARY\_STATIO\_USER\_INDEXES, SQL参考]
+---
+
 # SUMMARY\_STATIO\_USER\_INDEXES
 
 SUMMARY\_STATIO\_USER\_INDEXES视图显示openGauss内汇聚的命名空间中所有用户关系表索引的IO状态信息。

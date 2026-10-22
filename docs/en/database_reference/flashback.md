@@ -1,3 +1,8 @@
+---
+description: This document describes Flashback in openGauss, covering topics such as enable\_recyclebin, recyclebin\_retention\_time.
+keywords: [openGauss, Flashback, database reference, enable\_recyclebin, recyclebin\_retention\_time]
+---
+
 # Flashback<a name="EN-US_TOPIC_0000001104548132"></a>
 
 This section describes parameters related to the flashback function. In V100R002C10, only the Ustore engine supports flashback, while the Astore engine does not support flashback.

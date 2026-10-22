@@ -1,3 +1,8 @@
+---
+description: This document describes WLM\_USER\_RESOURCE\_RUNTIME in openGauss.
+keywords: [openGauss, WLM\_USER\_RESOURCE\_RUNTIME, SQL]
+---
+
 # WLM\_USER\_RESOURCE\_RUNTIME<a name="EN-US_TOPIC_0245374858"></a>
 
 **WLM\_USER\_RESOURCE\_RUNTIME**  displays resource usage of all users. Only administrators can query this view. This view is valid only when the GUC parameter  **use\_workload\_manager**  is set to  **on**.

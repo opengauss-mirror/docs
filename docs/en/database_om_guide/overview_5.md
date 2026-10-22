@@ -1,3 +1,8 @@
+---
+description: This document describes Overview in openGauss, covering topics such as Precautions.
+keywords: [openGauss, Overview, database O&M, Precautions]
+---
+
 # Overview<a name="EN-US_TOPIC_0242370317"></a>
 
 openGauss provides  **gs\_dump**  and  **gs\_dumpall**  to export required database objects and related information. You can use a tool to import the exported data to a target database for database migration.  **gs\_dump**  exports a single database or its objects.  **gs\_dumpall**  exports all databases or global objects in openGauss. For details, see  [Table 1](#en-us_topic_0237121167_table08278213504).

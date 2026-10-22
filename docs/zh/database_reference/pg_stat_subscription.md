@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_STAT\_SUBSCRIPTION 的相关内容与操作方法。
+keywords: [openGauss, PG\_STAT\_SUBSCRIPTION, 数据库参考]
+---
+
 # PG\_STAT\_SUBSCRIPTION
 
 获取订阅的详细同步信息。

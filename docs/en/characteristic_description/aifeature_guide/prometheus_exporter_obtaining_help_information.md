@@ -1,3 +1,8 @@
+---
+description: This document describes Obtaining Help Information in openGauss.
+keywords: [openGauss, Obtaining Help Information, features]
+---
+
 # Obtaining Help Information<a name="EN-US_TOPIC_0000001240944981"></a>
 
 You can run the  **--help**  command to obtain the help information. For example:

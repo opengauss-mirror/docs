@@ -1,3 +1,8 @@
+---
+description: This document describes Preparing the Software and Hardware Installation Environment in openGauss, covering topics such as Software and Hardware Requirements, Modifying OS Configuration.
+keywords: [openGauss, Preparing the Software and Hardware Installation Environment, installation, Software and Hardware Requirements, Modifying OS Configuration]
+---
+
 # Preparing the Software and Hardware Installation Environment<a name="EN-US_TOPIC_0000001093128896"></a>
 
 This section describes the preparations for installation.

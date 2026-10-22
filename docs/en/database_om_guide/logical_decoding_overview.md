@@ -1,3 +1,8 @@
+---
+description: This document describes Overview in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, Overview, database O&M, Function, Precautions]
+---
+
 # Overview<a name="EN-US_TOPIC_0289900926"></a>
 
 ## Function<a name="en-us_topic_0283136720_en-us_topic_0237121452_section187151209719"></a>
@@ -9,7 +14,7 @@ Data is periodically synchronized to heterogeneous databases \(such as Oracle\) 
 openGauss provides the logical decoding function to generate logical logs by decoding Xlogs. A target database parses logical logs to replicate data in real time. For details, see  [Figure 1](#en-us_topic_0283136720_en-us_topic_0237121452_fig65787201989). Logical replication reduces the restrictions on target databases, allowing for data synchronization between heterogeneous databases and homogeneous databases with different forms. It allows data to be read and written during data synchronization on a target database, reducing the data synchronization latency.
 
 **Figure  1**  Logical replication<a name="en-us_topic_0283136720_en-us_topic_0237121452_fig65787201989"></a>  
-![](figures/logical-replication.png "logical-replication")
+![Logical replication](figures/logical-replication.png "logical-replication")
 
 Logical replication consists of logical decoding and data replication. Logical decoding outputs logical logs by transaction. The database service or middleware parses the logical logs to implement data replication. Currently, openGauss supports only logical decoding. Therefore, this section involves only logical decoding.
 

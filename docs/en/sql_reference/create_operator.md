@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE OPERATOR in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE OPERATOR, SQL, Function, Precautions]
+---
+
 # CREATE OPERATOR<a name="EN-US_TOPIC_0000001080835908"></a>
 
 ## Function<a name="section173831846163116"></a>

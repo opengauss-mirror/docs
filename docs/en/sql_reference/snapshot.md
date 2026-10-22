@@ -1,3 +1,8 @@
+---
+description: This document describes SNAPSHOT in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, SNAPSHOT, SQL, Function, Precautions]
+---
+
 # SNAPSHOT<a name="EN-US_TOPIC_0000001163839469"></a>
 
 ## Function<a name="section1590014447254"></a>

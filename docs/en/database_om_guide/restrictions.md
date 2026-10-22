@@ -1,3 +1,8 @@
+---
+description: This document describes Restrictions in openGauss.
+keywords: [openGauss, Restrictions, database O&M]
+---
+
 # Restrictions<a name="EN-US_TOPIC_0000001216722064"></a>
 
 Publication-subscription is implemented based on logical replication and inherits all restrictions of logical replication. In addition, publication-subscription has the following additional restrictions or missing functions.

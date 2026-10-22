@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 收集文献统计 的相关内容与操作方法。
+keywords: [openGauss, 收集文献统计, SQL参考]
+---
+
 # 收集文献统计
 
 函数ts\_stat可用于检查配置和查找候选停用词。

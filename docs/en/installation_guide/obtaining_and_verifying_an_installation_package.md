@@ -1,3 +1,8 @@
+---
+description: This document describes Obtaining and Verifying an Installation Package in openGauss, covering topics such as Procedure.
+keywords: [openGauss, Obtaining and Verifying an Installation Package, installation, Procedure]
+---
+
 # Obtaining and Verifying an Installation Package<a name="EN-US_TOPIC_0289899746"></a>
 
 You can obtain the installation package from the openGauss open-source community.

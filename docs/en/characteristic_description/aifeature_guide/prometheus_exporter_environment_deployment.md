@@ -1,3 +1,8 @@
+---
+description: This document describes Environment Deployment in openGauss.
+keywords: [openGauss, Environment Deployment, features]
+---
+
 # Environment Deployment <a name="EN-US_TOPIC_0000001196145058"></a>
 
 1. You can download Prometheus-server and node-exporter from the Prometheus official website and start them according to the official documents. You can also use the quick deployment tool provided by DBMind to deploy them. If you deploy the software by yourself, go to [3](#li353612310452).

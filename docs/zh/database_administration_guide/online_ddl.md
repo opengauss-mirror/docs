@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss openGauss在线DDL特性简介 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, openGauss在线DDL特性简介, 数据库管理, 可获得性, 特性简介]
+---
+
 # openGauss在线DDL特性简介
 
 ## 可获得性

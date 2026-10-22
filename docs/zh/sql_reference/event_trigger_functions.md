@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 事件触发器函数 的相关内容与操作方法。
+keywords: [openGauss, 事件触发器函数, SQL参考]
+---
+
 # 事件触发器函数
 
 - pg\_event\_trigger\_ddl\_commands

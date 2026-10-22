@@ -1,3 +1,8 @@
+---
+description: This document describes Creating and Managing Views in openGauss, covering topics such as Background, Managing Views.
+keywords: [openGauss, Creating and Managing Views, database administration, Background, Managing Views]
+---
+
 # Creating and Managing Views<a name="EN-US_TOPIC_0242370195"></a>
 
 ## Background<a name="en-us_topic_0237120309_en-us_topic_0059777564_sd10ac23ddd774a89947f3f6afdc707d9"></a>

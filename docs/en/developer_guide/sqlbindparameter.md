@@ -1,3 +1,8 @@
+---
+description: This document describes SQLBindParameter in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, SQLBindParameter, development, Function, Prototype]
+---
+
 # SQLBindParameter<a name="EN-US_TOPIC_0242371441"></a>
 
 ## Function<a name="en-us_topic_0238272887_en-us_topic_0237120417_en-us_topic_0059778788_s9699227cd3d64b43b542e3e3b9a52f37"></a>

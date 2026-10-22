@@ -1,3 +1,8 @@
+---
+description: This document describes Product Positioning in openGauss.
+keywords: [openGauss, Product Positioning, product overview]
+---
+
 # Product Positioning<a name="EN-US_TOPIC_0289896521"></a>
 
 openGauss is a HA rational database that supports the SQL2003 standard and primary/standby deployment.

@@ -1,3 +1,8 @@
+---
+description: This document describes Executing Dynamic Query Statements in openGauss, covering topics such as EXECUTE IMMEDIATE, OPEN FOR.
+keywords: [openGauss, Executing Dynamic Query Statements, SQL, EXECUTE IMMEDIATE, OPEN FOR]
+---
+
 # Executing Dynamic Query Statements<a name="EN-US_TOPIC_0245374615"></a>
 
 You can perform dynamic queries openGauss provides two modes:  EXECUTE IMMEDIATE  and  OPEN FOR.  **EXECUTE IMMEDIATE**  dynamically executes  **SELECT**  statements and  **OPEN FOR**  combines use of cursors. If you need to store query results in a data set, use  **OPEN FOR**.
@@ -7,12 +12,12 @@ You can perform dynamic queries openGauss provides two modes:  EXECUTE IMMEDIATE
 [Figure 1](#en-us_topic_0237122225_en-us_topic_0059778916_f67de6df4c6ef4404b41f0f30de36ee64)  shows the syntax diagram.
 
 **Figure  1**  EXECUTE IMMEDIATE dynamic\_select\_clause::=<a name="en-us_topic_0237122225_en-us_topic_0059778916_f67de6df4c6ef4404b41f0f30de36ee64"></a>  
-![](figures/execute-immediate-dynamic_select_clause.png "execute-immediate-dynamic_select_clause")
+![EXECUTE IMMEDIATE dynamic select clause syntax diagram](figures/execute-immediate-dynamic_select_clause.png "execute-immediate-dynamic_select_clause")
 
 [Figure 2](#en-us_topic_0237122225_en-us_topic_0059778916_fcfce5c125aec449ba3ce27eec6f7a82b)  shows the syntax diagram for  **using\_clause**.
 
 **Figure  2**  using\_clause::=<a name="en-us_topic_0237122225_en-us_topic_0059778916_fcfce5c125aec449ba3ce27eec6f7a82b"></a>  
-![](figures/using_clause.png "using_clause")
+![using clause syntax diagram](figures/using_clause.png "using_clause")
 
 The above syntax diagram is explained as follows:
 
@@ -33,7 +38,7 @@ Dynamic query statements can be executed by using  **OPEN FOR**  to open dynamic
 [Figure 3](#en-us_topic_0237122225_en-us_topic_0059778916_f3f108da94a694175ac707f4511b7f1a1)  shows the syntax diagram.
 
 **Figure  3**  open\_for::=<a name="en-us_topic_0237122225_en-us_topic_0059778916_f3f108da94a694175ac707f4511b7f1a1"></a>  
-![](figures/open_for.png "open_for")
+![open for syntax diagram](figures/open_for.png "open_for")
 
 Parameter description:
 

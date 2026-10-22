@@ -1,3 +1,8 @@
+---
+description: This document describes CREATE EVENT in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CREATE EVENT, SQL, Function, Precautions]
+---
+
 # CREATE EVENT<a name="EN-US_TOPIC_0000001503312881"></a>
 
 ## Function<a name="section189661819135511"></a>

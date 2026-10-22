@@ -1,3 +1,8 @@
+---
+description: This document describes Communication Matrix in openGauss.
+keywords: [openGauss, Communication Matrix, database reference]
+---
+
 # Communication Matrix<a name="EN-US_TOPIC_0000001340003136"></a>
 
 **Table 1** Communication matrix

@@ -1,3 +1,8 @@
+---
+description: This document describes DROP SUBSCRIPTION in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP SUBSCRIPTION, SQL, Function, Precautions]
+---
+
 # DROP SUBSCRIPTION<a name="EN-US_TOPIC_0000001198597488"></a>
 
 ## Function<a name="section131281394204"></a>

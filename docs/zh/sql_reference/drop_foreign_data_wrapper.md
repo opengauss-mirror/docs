@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DROP FOREIGN DATA WRAPPER 的相关内容，涵盖 功能描述、语法格式 等内容。
+keywords: [openGauss, DROP FOREIGN DATA WRAPPER, SQL参考, 功能描述, 语法格式]
+---
+
 # DROP FOREIGN DATA WRAPPER
 
 ## 功能描述

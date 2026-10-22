@@ -1,3 +1,8 @@
+---
+description: This document describes Text Search Types in openGauss, covering topics such as tsvector, tsquery.
+keywords: [openGauss, Text Search Types, SQL, tsvector, tsquery]
+---
+
 # Text Search Types<a name="EN-US_TOPIC_0289900823"></a>
 
 openGauss offers two data types that are designed to support full text search. The  **tsvector**  type represents a document in a form optimized for text search. The  **tsquery**  type similarly represents a text query.

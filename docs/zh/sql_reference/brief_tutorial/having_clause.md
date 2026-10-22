@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss HAVING子句 的相关内容，涵盖 语法格式、参数说明 等内容。
+keywords: [openGauss, HAVING子句, SQL参考, 语法格式, 参数说明]
+---
+
 # HAVING子句
 
 HAVING子句可以让我们筛选分组后的各组数据。

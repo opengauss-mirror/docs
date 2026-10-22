@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_COLUMN\_KEYS 的相关内容与操作方法。
+keywords: [openGauss, GS\_COLUMN\_KEYS, 数据库参考]
+---
+
 # GS\_COLUMN\_KEYS
 
 GS\_COLUMN\_KEYS系统表记录密态等值特性中列加密密钥相关信息，每条记录对应一个列加密密钥。

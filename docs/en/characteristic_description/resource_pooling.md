@@ -1,3 +1,8 @@
+---
+description: This document describes Resource Pooling in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Resource Pooling, features, Availability, Introduction]
+---
+
 # Resource Pooling<a name="EN-US_TOPIC_0000001371444657"></a>
 
 ## Availability<a name="section15406143204715"></a>
@@ -9,7 +14,7 @@ This feature is available since openGauss 3.1.1.
 This feature enables the primary and standby nodes to share the same storage, implementing resource pooling HA deployment based on disk arrays. This solves the problem that the storage capacity is doubled compared with that of a single server in traditional HA deployment. In addition, the standby server supports real-time consistent read. The following figure shows the resource pooling architecture.
 
 **Figure 1** Resource pooling architecture<a name="fig13852124465211"></a> 
-![](figures/resource-pooling-architecture.jpg)
+![Resource pooling architecture](figures/resource-pooling-architecture.jpg)
 
 ## Benefits<a name="section13406743164715"></a>
 

@@ -1,3 +1,8 @@
+---
+description: This document describes ODBC Interface Reference in openGauss.
+keywords: [openGauss, ODBC Interface Reference, development]
+---
+
 # ODBC Interface Reference<a name="EN-US_TOPIC_0244721239"></a>
 
 The ODBC interface is a set of API functions provided to users. This chapter describes its common interfaces. For details on other interfaces, see "ODBC Programmer's Reference" at MSDN (<https://learn.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?redirectedfrom=MSDN&view=sql-server-ver16>).

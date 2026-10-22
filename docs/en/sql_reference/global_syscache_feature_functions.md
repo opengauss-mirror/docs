@@ -1,3 +1,8 @@
+---
+description: This document describes Global SysCache Feature Functions in openGauss.
+keywords: [openGauss, Global SysCache Feature Functions, SQL]
+---
+
 # Global SysCache Feature Functions<a name="EN-US_TOPIC_0000001242498033"></a>
 
 - gs\_gsc\_table\_detail\(database\_id dafault NULL, rel\_id default NULL\)

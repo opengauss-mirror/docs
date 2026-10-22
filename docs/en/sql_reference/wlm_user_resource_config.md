@@ -1,3 +1,8 @@
+---
+description: This document describes WLM\_USER\_RESOURCE\_CONFIG in openGauss.
+keywords: [openGauss, WLM\_USER\_RESOURCE\_CONFIG, SQL]
+---
+
 # WLM\_USER\_RESOURCE\_CONFIG<a name="EN-US_TOPIC_0245374857"></a>
 
 **WLM\_USER\_RESOURCE\_CONFIG**  displays the resource configuration information of a user.

@@ -1,3 +1,8 @@
+---
+description: This document describes Audit Switch in openGauss, covering topics such as audit\_enabled, audit\_directory.
+keywords: [openGauss, Audit Switch, database reference, audit\_enabled, audit\_directory]
+---
+
 # Audit Switch<a name="EN-US_TOPIC_0289900617"></a>
 
 ## audit\_enabled<a name="en-us_topic_0283137524_en-us_topic_0237124745_en-us_topic_0059777744_sb3d1b703f24c49f096b36087a60fdfcd"></a>

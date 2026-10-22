@@ -1,3 +1,8 @@
+---
+description: This document describes Log Replay in openGauss, covering topics such as recovery\_time\_target, recovery\_max\_workers.
+keywords: [openGauss, Log Replay, database reference, recovery\_time\_target, recovery\_max\_workers]
+---
+
 # Log Replay<a name="EN-US_TOPIC_0289900128"></a>
 
 ## recovery\_time\_target<a name="en-us_topic_0283136722_en-us_topic_0237124709_en-us_topic_0059778936_sbadc77895e6643b882a5e7557e405373"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Creating an Index Online in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Creating an Index Online, features, Availability, Introduction]
+---
+
 # Creating an Index Online<a name="EN-US_TOPIC_0000001138285643"></a>
 
 ## Availability<a name="section5309649"></a>

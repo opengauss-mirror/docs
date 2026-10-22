@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE WEAK PASSWORD DICTIONARY 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE WEAK PASSWORD DICTIONARY, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE WEAK PASSWORD DICTIONARY
 
 ## 功能描述<a name="zh-cn_topic_0283137390_zh-cn_topic_0237122128_zh-cn_topic_0059778820_sf3fcf0507ea74a0ba4c4b4cbf0a0a8ba"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes Basic Structure in openGauss, covering topics such as Structure, Category.
+keywords: [openGauss, Basic Structure, SQL, Structure, Category]
+---
+
 # Basic Structure<a name="EN-US_TOPIC_0245374607"></a>
 
 ## Structure<a name="en-us_topic_0237122217_en-us_topic_0059778559_s764fc3b756ed40e6a5ad9af5559feafa"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes DROP SYNONYM in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP SYNONYM, SQL, Function, Precautions]
+---
+
 # DROP SYNONYM<a name="EN-US_TOPIC_0289900036"></a>
 
 ## Function<a name="en-us_topic_0283137394_en-us_topic_0237122151_en-us_topic_0059778429_s99b7590244bd4c1ab904f72cfc2cc9a0"></a>

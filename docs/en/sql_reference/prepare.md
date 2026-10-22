@@ -1,3 +1,8 @@
+---
+description: This document describes PREPARE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, PREPARE, SQL, Function, Precautions]
+---
+
 # PREPARE<a name="EN-US_TOPIC_0289900196"></a>
 
 ## Function<a name="en-us_topic_0283137580_en-us_topic_0237122171_en-us_topic_0059778631_s73bdfafa6f9743e9a9e0a4f7b40cc2c2"></a>

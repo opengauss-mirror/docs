@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_CLIENT\_GLOBAL\_KEYS\_ARGS 的相关内容与操作方法。
+keywords: [openGauss, GS\_CLIENT\_GLOBAL\_KEYS\_ARGS, 数据库参考]
+---
+
 # GS\_CLIENT\_GLOBAL\_KEYS\_ARGS
 
 GS\_CLIENT\_GLOBAL\_KEYS\_ARGS系统表记录密态等值特性中客户端加密主密钥相关元数据信息，每条记录对应客户端加密主密钥的一个键值对信息。

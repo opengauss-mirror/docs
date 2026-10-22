@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_USER\_MAPPINGS in openGauss.
+keywords: [openGauss, PG\_USER\_MAPPINGS, database reference]
+---
+
 # PG\_USER\_MAPPINGS<a name="EN-US_TOPIC_0289900498"></a>
 
 **PG\_USER\_MAPPINGS**  provides access to information about user mappings.

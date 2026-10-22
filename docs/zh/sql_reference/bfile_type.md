@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss BFILE类型 的相关内容与操作方法。
+keywords: [openGauss, BFILE类型, SQL参考]
+---
+
 # BFILE类型
 
 BFILE数据类型用于存储指向外部二进制大对象（LOB）文件的指针。这些文件通常存储在数据库服务器的文件系统中，而不是直接存储在数据库内。BFILE数据类型适用于处理大型二进制文件，如图像、音频、视频等。

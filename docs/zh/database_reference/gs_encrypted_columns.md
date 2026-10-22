@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_ENCRYPTED\_COLUMNS 的相关内容与操作方法。
+keywords: [openGauss, GS\_ENCRYPTED\_COLUMNS, 数据库参考]
+---
+
 # GS\_ENCRYPTED\_COLUMNS
 
 GS\_ENCRYPTED\_COLUMNS系统表记录密态等值特性中表的加密列相关信息，每条记录对应一条加密列信息。

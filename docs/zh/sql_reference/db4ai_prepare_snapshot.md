@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DB4AI.PREPARE\_SNAPSHOT 的相关内容与操作方法。
+keywords: [openGauss, DB4AI.PREPARE\_SNAPSHOT, SQL参考]
+---
+
 # DB4AI.PREPARE\_SNAPSHOT
 
 PREPARE\_SNAPSHOT是DB4AI特性中数据准备模型训练和解释快照进行协作。快照为所有应用更改的数据和文档提供了完整的序列。通过语法PREPARE SNAPSHOT调用。

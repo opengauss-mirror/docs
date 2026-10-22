@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss MEMORY\_NODE\_DETAIL 的相关内容与操作方法。
+keywords: [openGauss, MEMORY\_NODE\_DETAIL, SQL参考]
+---
+
 # MEMORY\_NODE\_DETAIL
 
 显示某个数据库节点内存使用情况。

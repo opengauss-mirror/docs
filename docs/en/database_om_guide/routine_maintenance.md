@@ -1,3 +1,8 @@
+---
+description: This document describes Routine Maintenance in openGauss, covering topics such as Routine Maintenance Check Items, Checking OS Parameters.
+keywords: [openGauss, Routine Maintenance, database O&M, Routine Maintenance Check Items, Checking OS Parameters]
+---
+
 # Routine Maintenance<a name="EN-US_TOPIC_0242215052"></a>
 
 ## Routine Maintenance Check Items

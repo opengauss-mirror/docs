@@ -1,4 +1,9 @@
-﻿# MySQL一键式迁移
+---
+description: 本文介绍 openGauss MySQL一键式迁移 的相关内容，涵盖 功能介绍、注意事项 等内容。
+keywords: [openGauss, MySQL一键式迁移, 数据迁移, 功能介绍, 注意事项]
+---
+
+# MySQL一键式迁移
 
 ## 功能介绍
 

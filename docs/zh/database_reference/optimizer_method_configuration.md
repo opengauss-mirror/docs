@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 优化器方法配置 的相关内容，涵盖 enable\_inner\_unique\_opt、enable\_broadcast 等内容。
+keywords: [openGauss, 优化器方法配置, 数据库参考, enable\_inner\_unique\_opt, enable\_broadcast]
+---
+
 # 优化器方法配置
 
 这些配置参数提供了影响查询优化器选择查询规划的原始方法。如果优化器为特定的查询选择的缺省规划并不是最优的，可以通过使用这些配置参数强制优化器选择一个不同的规划来临时解决这个问题。更好的方法包括调节优化器开销常量、手动运行ANALYZE、增加配置参数default\_statistics\_target的值、增加使用ALTER TABLE SET STATISTICS为指定列增加收集的统计信息。

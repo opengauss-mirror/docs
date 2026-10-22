@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_PLDEVELOPER.gs\_source in openGauss.
+keywords: [openGauss, DBE\_PLDEVELOPER.gs\_source, SQL]
+---
+
 # DBE\_PLDEVELOPER.gs\_source<a name="EN-US_TOPIC_0000001214644937"></a>
 
 Records PLPGSQL object \(stored procedure, function, package, and package body\) compilation information. For details, see the following column description.

@@ -1,3 +1,8 @@
+---
+description: This document describes gaussdb in openGauss, covering topics such as Background, Syntax.
+keywords: [openGauss, gaussdb, tools and commands, Background, Syntax]
+---
+
 # gaussdb<a name="EN-US_TOPIC_0249632245"></a>
 
 ## Background<a name="en-us_topic_0237152404_en-us_topic_0059777816_section2761723143810"></a>

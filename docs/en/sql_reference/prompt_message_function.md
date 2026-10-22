@@ -1,3 +1,8 @@
+---
+description: This document describes Prompt Message Function in openGauss.
+keywords: [openGauss, Prompt Message Function, SQL]
+---
+
 # Prompt Message Function<a name="EN-US_TOPIC_0311139290"></a>
 
 - report\_application\_error

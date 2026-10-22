@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STATEMENT\_RESPONSETIME\_PERCENTILE 的相关内容与操作方法。
+keywords: [openGauss, STATEMENT\_RESPONSETIME\_PERCENTILE, SQL参考]
+---
+
 # STATEMENT\_RESPONSETIME\_PERCENTILE
 
 获取openGaussSQL响应时间P80，P95分布信息。

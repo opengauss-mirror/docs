@@ -1,3 +1,8 @@
+---
+description: This document describes DB4AI: Database-driven AI in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, DB4AI: Database-driven AI, features, Availability, Introduction]
+---
+
 # DB4AI: Database-driven AI<a name="EN-US_TOPIC_0000001263249913"></a>
 
 ## Availability<a name="section1420315335481"></a>

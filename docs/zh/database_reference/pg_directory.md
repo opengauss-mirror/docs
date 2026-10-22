@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_DIRECTORY 的相关内容与操作方法。
+keywords: [openGauss, PG\_DIRECTORY, 数据库参考]
+---
+
 # PG\_DIRECTORY
 
 PG\_DIRECTORY系统表用于保存用户添加的directory对象可以通过CREATE DIRECTORY语句向该表中添加记录，目前只有系统管理员用户可以向该表中添加记录。

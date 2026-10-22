@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_CURSORS in openGauss.
+keywords: [openGauss, PG\_CURSORS, database reference]
+---
+
 # PG\_CURSORS<a name="EN-US_TOPIC_0289900055"></a>
 
 **PG\_CURSORS**  displays cursors that are currently available.

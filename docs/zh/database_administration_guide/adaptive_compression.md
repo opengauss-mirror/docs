@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 自适应压缩 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 自适应压缩, 数据库管理, 可获得性, 特性简介]
+---
+
 # 自适应压缩
 
 ## 可获得性<a name="section33236420"></a>

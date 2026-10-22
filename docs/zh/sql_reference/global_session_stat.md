@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_SESSION\_STAT 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_SESSION\_STAT, SQL参考]
+---
+
 # GLOBAL\_SESSION\_STAT
 
 各节点上以会话线程或AutoVacuum线程为单位，统计会话状态信息。

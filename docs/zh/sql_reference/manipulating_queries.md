@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 处理查询 的相关内容与操作方法。
+keywords: [openGauss, 处理查询, SQL参考]
+---
+
 # 处理查询
 
 openGauss提供了函数和操作符用来操作tsquery类型的查询。

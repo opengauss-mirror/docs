@@ -1,3 +1,8 @@
+---
+description: This document describes Resource Pooling Parameters in openGauss, covering topics such as ss\_enable\_dss, ss\_enable\_dms.
+keywords: [openGauss, Resource Pooling Parameters, database reference, ss\_enable\_dss, ss\_enable\_dms]
+---
+
 # Resource Pooling Parameters<a name="EN-US_TOPIC_0000001371524841"></a>
 
 ## ss\_enable\_dss<a name="section14941640131"></a>

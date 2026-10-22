@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_STAT\_XACT\_SYS\_TABLES in openGauss.
+keywords: [openGauss, GLOBAL\_STAT\_XACT\_SYS\_TABLES, SQL]
+---
+
 # GLOBAL\_STAT\_XACT\_SYS\_TABLES<a name="EN-US_TOPIC_0245374709"></a>
 
 **GLOBAL\_STAT\_XACT\_SYS\_TABLES**  displays transaction status information about the system catalogs in namespaces on each node. 

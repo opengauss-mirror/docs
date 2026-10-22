@@ -1,3 +1,8 @@
+---
+description: This document describes Functions of openGauss Executable Scripts in openGauss.
+keywords: [openGauss, Functions of openGauss Executable Scripts, tools and commands]
+---
+
 # Functions of openGauss Executable Scripts<a name="EN-US_TOPIC_0000001258392839"></a>
 
 The following lists common executable scripts of openGauss, which are used only by openGauss APIs.

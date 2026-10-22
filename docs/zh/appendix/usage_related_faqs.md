@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 使用FAQ 的相关内容，涵盖 Q1：gsql连接数据库，提示“unknow:26000”，错误如下，要如何处理？、Q2：第一次使用数据库报错，提示需要修改用户名密码，要如何处理？ 等内容。
+keywords: [openGauss, 使用FAQ, 附录, Q1：gsql连接数据库，提示“unknow:26000”，错误如下，要如何处理？, Q2：第一次使用数据库报错，提示需要修改用户名密码，要如何处理？]
+---
+
 # 使用FAQ
 
 ## **Q1：gsql连接数据库，提示“unknow:26000”，错误如下，要如何处理？**
@@ -36,7 +41,7 @@ gs_guc reload -N all -I all -c "modify_initial_password  =  false"
 
 ## **Q3：执行如下命令时，报错提示PID不存在，如何处理？**
 
-![](figures/zh-cn_image_0000001103872542.png)
+![PID不存在报错处理示例](figures/zh-cn_image_0000001103872542.png)
 
 **回答：**
 

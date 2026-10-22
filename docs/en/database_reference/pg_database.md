@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_DATABASE in openGauss.
+keywords: [openGauss, PG\_DATABASE, database reference]
+---
+
 # PG\_DATABASE<a name="EN-US_TOPIC_0289900413"></a>
 
 **PG\_DATABASE**  records information about available databases.

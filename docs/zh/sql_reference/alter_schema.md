@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER SCHEMA 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER SCHEMA, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER SCHEMA
 
 ## 功能描述<a name="zh-cn_topic_0283136607_zh-cn_topic_0237122070_zh-cn_topic_0059779037_s806d414edb004fa89cd50a1166d1136e"></a>

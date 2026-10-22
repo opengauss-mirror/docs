@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss INSERT语句右值引用基础值 的相关内容与操作方法。
+keywords: [openGauss, INSERT语句右值引用基础值, SQL参考]
+---
+
 # INSERT语句右值引用基础值
 
 在兼容B模式下，INSERT语句支持右值引用，当被引用列有NOT NULL约束且没有默认值时，将使用其基础值参与计算。若无基础值则继续使用NULL值参与计算（数组类型、用户自定义类型等）。

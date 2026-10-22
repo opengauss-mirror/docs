@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss CREATE EVENT 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, CREATE EVENT, SQL参考, 功能描述, 注意事项]
+---
+
 # CREATE EVENT
 
 ## 功能描述<a name="section189661819135511"></a>

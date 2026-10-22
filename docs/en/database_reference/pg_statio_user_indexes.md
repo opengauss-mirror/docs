@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_STATIO\_USER\_INDEXES in openGauss.
+keywords: [openGauss, PG\_STATIO\_USER\_INDEXES, database reference]
+---
+
 # PG\_STATIO\_USER\_INDEXES<a name="EN-US_TOPIC_0289900049"></a>
 
 **PG\_STATIO\_USER\_INDEXES**  displays I/O status information about all the user relationship table indexes in the namespace.

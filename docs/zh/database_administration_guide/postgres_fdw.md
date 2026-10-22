@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss postgres\_fdw 的相关内容，涵盖 使用postgres\_fdw、postgres_fdw下推主要成分 等内容。
+keywords: [openGauss, postgres\_fdw, 数据库管理, 使用postgres\_fdw, postgres_fdw下推主要成分]
+---
+
 # postgres\_fdw
 
 postgres\_fdw是一款开源插件，其代码随PostgreSQL源码一同发布。openGauss基于开源的PostgreSQL 9.4.26版本中的postgres\_fdw源码（[https://ftp.postgresql.org/pub/source/v9.4.26/postgresql-9.4.26.tar.gz](https://ftp.postgresql.org/pub/source/v9.4.26/postgresql-9.4.26.tar.gz)  ）进行开发适配。

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss javax.naming.spi.InitialContextFactory 的相关内容与操作方法。
+keywords: [openGauss, javax.naming.spi.InitialContextFactory, 开发指南]
+---
+
 # javax.naming.spi.InitialContextFactory
 
 javax.naming.spi.InitialContextFactory是初始连接上下文工厂接口。

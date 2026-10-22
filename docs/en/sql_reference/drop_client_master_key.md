@@ -1,3 +1,8 @@
+---
+description: This document describes DROP CLIENT MASTER KEY in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP CLIENT MASTER KEY, SQL, Function, Precautions]
+---
+
 # DROP CLIENT MASTER KEY<a name="EN-US_TOPIC_0294528090"></a>
 
 ## Function<a name="en-us_topic_0059778607_s8dcd69edcfca47eb88ddb451a360b362"></a>

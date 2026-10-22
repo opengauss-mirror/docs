@@ -1,3 +1,8 @@
+---
+description: This document describes Logical Replication in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Logical Replication, features, Availability, Introduction]
+---
+
 # Logical Replication<a name="EN-US_TOPIC_0000001088278188"></a>
 
 ## Availability<a name="section15406143204715"></a>

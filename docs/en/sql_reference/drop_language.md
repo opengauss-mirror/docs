@@ -1,3 +1,8 @@
+---
+description: This document describes DROP LANGUAGE in openGauss, covering topics such as Function, Syntax.
+keywords: [openGauss, DROP LANGUAGE, SQL, Function, Syntax]
+---
+
 # DROP LANGUAGE<a name="EN-US_TOPIC_0000001127872509"></a>
 
 ## Function<a name="section113331284191"></a>

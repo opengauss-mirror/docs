@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Psycopg接口参考 的相关内容与操作方法。
+keywords: [openGauss, Psycopg接口参考, 开发指南]
+---
+
 # Psycopg接口参考
 
 Psycopg接口是一套提供给用户的API方法，本节将对部分常用接口做具体描述。

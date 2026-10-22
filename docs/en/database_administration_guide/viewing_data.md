@@ -1,3 +1,8 @@
+---
+description: This document describes Viewing Data in openGauss.
+keywords: [openGauss, Viewing Data, database administration]
+---
+
 # Viewing Data<a name="EN-US_TOPIC_0242370188"></a>
 
 - Run the following command to query information about all tables in a database in the system catalog  **pg\_tables**:

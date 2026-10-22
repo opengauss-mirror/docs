@@ -1,3 +1,8 @@
+---
+description: This document describes DB4AI.CREATE\_SNAPSHOT in openGauss.
+keywords: [openGauss, DB4AI.CREATE\_SNAPSHOT, SQL]
+---
+
 # DB4AI.CREATE\_SNAPSHOT<a name="EN-US_TOPIC_0000001195431131"></a>
 
 **CREATE\_SNAPSHOT**  creates snapshots for the DB4AI feature. You can invoke  **CREATE SNAPSHOT**  to implement this function.

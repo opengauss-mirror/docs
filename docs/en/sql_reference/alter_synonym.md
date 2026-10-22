@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER SYNONYM in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER SYNONYM, SQL, Function, Precautions]
+---
+
 # ALTER SYNONYM<a name="EN-US_TOPIC_0289900326"></a>
 
 ## Function<a name="en-us_topic_0283137325_en-us_topic_0237122074_en-us_topic_0059778392_sc84e6980912549c4bbd6895f97ac39f1"></a>

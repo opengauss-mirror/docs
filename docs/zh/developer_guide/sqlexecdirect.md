@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SQLExecDirect 的相关内容，涵盖 功能描述、原型 等内容。
+keywords: [openGauss, SQLExecDirect, 开发指南, 功能描述, 原型]
+---
+
 # SQLExecDirect
 
 ## 功能描述<a name="zh-cn_topic_0238272891_zh-cn_topic_0237120421_zh-cn_topic_0059778538_sa444edc74fad433d8d9beb6eec51f680"></a>

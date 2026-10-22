@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 发布订阅 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 发布订阅, 特性描述, 可获得性, 特性简介]
+---
+
 # 发布订阅
 
 ## 可获得性<a name="section3104013"></a>

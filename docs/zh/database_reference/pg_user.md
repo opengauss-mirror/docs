@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_USER 的相关内容与操作方法。
+keywords: [openGauss, PG\_USER, 数据库参考]
+---
+
 # PG\_USER
 
 PG\_USER视图提供了访问数据库用户的信息，默认只有初始化用户和具有sysadmin属性的用户可以查看，其余用户需要赋权后才可以查看。

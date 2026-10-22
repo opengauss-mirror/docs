@@ -1,3 +1,8 @@
+---
+description: This document describes postgres\_fdw in openGauss, covering topics such as Using postgres\_fdw, Common Issues.
+keywords: [openGauss, postgres\_fdw, database administration, Using postgres\_fdw, Common Issues]
+---
+
 # postgres\_fdw<a name="EN-US_TOPIC_0289899930"></a>
 
 postgres\_fdw is an open-source plug-in. Its code is released with the PostgreSQL source code. openGauss is developed and adapted based on the open-source postgres\_fdw source code \([https://ftp.postgresql.org/pub/source/v9.4.26/postgresql-9.4.26.tar.gz](https://ftp.postgresql.org/pub/source/v9.4.26/postgresql-9.4.26.tar.gz)\) in PostgreSQL 9.4.26.

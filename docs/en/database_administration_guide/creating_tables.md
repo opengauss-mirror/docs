@@ -1,3 +1,8 @@
+---
+description: This document describes Creating Tables in openGauss, covering topics such as Background, Procedure.
+keywords: [openGauss, Creating Tables, database administration, Background, Procedure]
+---
+
 # Creating Tables<a name="EN-US_TOPIC_0242370185"></a>
 
 ## Background<a name="en-us_topic_0237120299_en-us_topic_0059778113_s98ef8b33479543b8a2dd01ff14f4729b"></a>

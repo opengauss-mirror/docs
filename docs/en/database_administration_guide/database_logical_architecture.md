@@ -1,9 +1,14 @@
+---
+description: This document describes Database Logical Architecture in openGauss.
+keywords: [openGauss, Database Logical Architecture, database administration]
+---
+
 # Database Logical Architecture<a name="EN-US_TOPIC_0242370169"></a>
 
 Data nodes \(DNs\) in openGauss store data on disks. This section describes the objects on each DN from the logical view and the relationship between these objects.  [Figure 1](#en-us_topic_0237120245_en-us_topic_0059779316_fb2fa3b3cc8824dea95318504e0537913)  shows the database logical structure.
 
 **Figure  1**  Database logical architecture<a name="en-us_topic_0237120245_en-us_topic_0059779316_fb2fa3b3cc8824dea95318504e0537913"></a>  
-![](figures/database-logical-architecture.png "database-logical-architecture")
+![Database logical architecture](figures/database-logical-architecture.png "database-logical-architecture")
 
 >[!NOTE]NOTE   
 >

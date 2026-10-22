@@ -1,3 +1,8 @@
+---
+description: This document describes Example: Retrying SQL Queries for Applications in openGauss.
+keywords: [openGauss, Example: Retrying SQL Queries for Applications, development]
+---
+
 # Example: Retrying SQL Queries for Applications<a name="EN-US_TOPIC_0289900303"></a>
 
 If the primary database node is faulty and cannot be restored within 10s, openGauss automatically switches the standby database node to the active state to ensure the normal running of openGauss. During the switchover, jobs that are running will fail and those start running after the switchover are not affected. To prevent upper-layer services from being affected by the failover, refer to the following example to construct an SQL retry mechanism at the service layer.

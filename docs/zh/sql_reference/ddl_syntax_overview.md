@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DDL语法一览表 的相关内容，涵盖 定义客户端加密主密钥、定义列加密密钥 等内容。
+keywords: [openGauss, DDL语法一览表, SQL参考, 定义客户端加密主密钥, 定义列加密密钥]
+---
+
 # DDL语法一览表
 
 DDL（Data Definition Language数据定义语言），用于定义或修改数据库中的对象。如：表、索引、视图等。

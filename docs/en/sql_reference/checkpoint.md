@@ -1,3 +1,8 @@
+---
+description: This document describes CHECKPOINT in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, CHECKPOINT, SQL, Function, Precautions]
+---
+
 # CHECKPOINT<a name="EN-US_TOPIC_0289900495"></a>
 
 ## Function<a name="en-us_topic_0283137558_en-us_topic_0237122089_en-us_topic_0059778147_s45168794daa74bc2a308ea3c943e0a93"></a>

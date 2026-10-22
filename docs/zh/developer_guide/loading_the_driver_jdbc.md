@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 加载驱动 的相关内容与操作方法。
+keywords: [openGauss, 加载驱动, 开发指南]
+---
+
 # 加载驱动
 
 在创建数据库连接之前，需要先加载数据库驱动程序。

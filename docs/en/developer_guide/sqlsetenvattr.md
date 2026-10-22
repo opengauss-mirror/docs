@@ -1,3 +1,8 @@
+---
+description: This document describes SQLSetEnvAttr in openGauss, covering topics such as Function, Prototype.
+keywords: [openGauss, SQLSetEnvAttr, development, Function, Prototype]
+---
+
 # SQLSetEnvAttr<a name="EN-US_TOPIC_0242371456"></a>
 
 ## Function<a name="en-us_topic_0238272902_en-us_topic_0237120432_en-us_topic_0059778852_s93fc7574cf154704b8cff271a57b9601"></a>

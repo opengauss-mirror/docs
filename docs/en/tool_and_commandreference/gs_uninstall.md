@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_uninstall in openGauss, covering topics such as Background, Syntax.
+keywords: [openGauss, gs\_uninstall, tools and commands, Background, Syntax]
+---
+
 # gs\_uninstall<a name="EN-US_TOPIC_0289899255"></a>
 
 ## Background<a name="en-us_topic_0287275992_en-us_topic_0237152424_en-us_topic_0059778700_section104365437437"></a>

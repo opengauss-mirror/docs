@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss COMMIT PREPARED 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, COMMIT PREPARED, SQL参考, 功能描述, 注意事项]
+---
+
 # COMMIT PREPARED
 
 ## 功能描述<a name="zh-cn_topic_0283137183_zh-cn_topic_0237122095_zh-cn_topic_0059777686_s06b2916a6c67438087f9f84a0159252a"></a>

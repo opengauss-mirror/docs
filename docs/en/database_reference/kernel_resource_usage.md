@@ -1,3 +1,8 @@
+---
+description: This document describes Kernel Resource Usage in openGauss, covering topics such as max\_files\_per\_process, shared\_preload\_libraries.
+keywords: [openGauss, Kernel Resource Usage, database reference, max\_files\_per\_process, shared\_preload\_libraries]
+---
+
 # Kernel Resource Usage<a name="EN-US_TOPIC_0289900757"></a>
 
 This section describes kernel resource parameters. Whether these parameters take effect depends on OS settings.

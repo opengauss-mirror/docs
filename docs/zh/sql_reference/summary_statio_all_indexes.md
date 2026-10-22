@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SUMMARY\_STATIO\_ALL\_INDEXES 的相关内容与操作方法。
+keywords: [openGauss, SUMMARY\_STATIO\_ALL\_INDEXES, SQL参考]
+---
+
 # SUMMARY\_STATIO\_ALL\_INDEXES
 
 SUMMARY\_STATIO\_ALL\_INDEXES视图包含openGauss内汇聚的数据库中的每个索引行， 显示特定索引的I/O的统计。

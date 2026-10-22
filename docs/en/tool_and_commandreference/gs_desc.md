@@ -1,3 +1,8 @@
+---
+description: This document describes gs_filedump Tool Auxiliary Tool - gs_desc in openGauss, covering topics such as Function Introduction, Prerequisites.
+keywords: [openGauss, gs_filedump Tool Auxiliary Tool - gs_desc, tools and commands, Function Introduction, Prerequisites]
+---
+
 # gs_filedump Tool Auxiliary Tool - gs_desc
 
 ## Function Introduction

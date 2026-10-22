@@ -1,3 +1,8 @@
+---
+description: This document describes Adding or Deleting a Standby Node in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Adding or Deleting a Standby Node, features, Availability, Introduction]
+---
+
 # Adding or Deleting a Standby Node<a name="EN-US_TOPIC_0000001152075185"></a>
 
 ## Availability<a name="section118411122194813"></a>

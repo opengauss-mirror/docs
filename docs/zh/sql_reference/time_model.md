@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Time Model 的相关内容与操作方法。
+keywords: [openGauss, Time Model, SQL参考]
+---
+
 # Time Model
 
 Time Model名称及描述如下表所示。

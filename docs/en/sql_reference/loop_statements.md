@@ -1,3 +1,8 @@
+---
+description: This document describes Loop Statements in openGauss, covering topics such as Simple LOOP Statements, WHILE\_LOOP Statements.
+keywords: [openGauss, Loop Statements, SQL, Simple LOOP Statements, WHILE\_LOOP Statements]
+---
+
 # Loop Statements<a name="EN-US_TOPIC_0289900479"></a>
 
 ## Simple LOOP Statements<a name="en-us_topic_0283137274_en-us_topic_0237122234_en-us_topic_0059778638_s27557775f6014d78b9a100c65a4cbb41"></a>
@@ -5,7 +10,7 @@
 **Syntax diagram**
 
 **Figure  1**  loop::=<a name="en-us_topic_0283137274_en-us_topic_0237122234_en-us_topic_0059778638_fa21272428ed842298772423d38c5cc4b"></a>  
-![](figures/loop.png "loop")
+![loop](figures/loop.png "loop")
 
 **Example**
 
@@ -36,7 +41,7 @@ CALL proc_loop(10,5);
 **Syntax diagram**
 
 **Figure  2**  while\_loop::=<a name="en-us_topic_0283137274_en-us_topic_0237122234_en-us_topic_0059778638_fc93167bb5ad54010979321d4e0fdbd55"></a>  
-![](figures/while_loop.png "while_loop")
+![while loop syntax diagram](figures/while_loop.png "while_loop")
 
 If the conditional expression is true, a series of statements in the WHILE statement are repeatedly executed and the condition is decided each time the loop body is executed.
 
@@ -69,7 +74,7 @@ DROP TABLE integertable;
 **Syntax diagram**
 
 **Figure  3**  for\_loop::=<a name="en-us_topic_0283137274_en-us_topic_0237122234_en-us_topic_0059778638_f225dca3e3bb8473198031bfc2a49f3e1"></a>  
-![](figures/for_loop.png "for_loop")
+![for loop syntax diagram](figures/for_loop.png "for_loop")
 
 >[!NOTE]NOTE 
 >
@@ -81,7 +86,7 @@ DROP TABLE integertable;
 **Syntax diagram**
 
 **Figure  4**  for\_loop\_query::=<a name="en-us_topic_0283137274_en-us_topic_0237122234_en-us_topic_0059778638_f4043c6dc0195466388bb2b9b42874e52"></a>  
-![](figures/for_loop_query.png "for_loop_query")
+![for loop query syntax diagram](figures/for_loop_query.png "for_loop_query")
 
 >[!NOTE]NOTE 
 >The variable  *target*  is automatically defined, its type is the same as that in the query result, and it is valid only in this loop. The value of  *target*  is the query result.
@@ -91,7 +96,7 @@ DROP TABLE integertable;
 **Syntax diagram**
 
 **Figure  5**  forall::=<a name="fig1638718526215"></a>  
-![](figures/forall.png "forall")
+![forall](figures/forall.png "forall")
 
 >[!NOTE]NOTE 
 >

@@ -1,3 +1,8 @@
+---
+description: This document describes Backup and Restoration in openGauss, covering topics such as operation\_mode, enable\_cbm\_tracking.
+keywords: [openGauss, Backup and Restoration, database reference, operation\_mode, enable\_cbm\_tracking]
+---
+
 # Backup and Restoration<a name="EN-US_TOPIC_0000001083079268"></a>
 
 ## operation\_mode<a name="section0169133413323"></a>

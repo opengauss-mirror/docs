@@ -1,3 +1,8 @@
+---
+description: This document describes MOT Durability Concepts in openGauss, covering topics such as MOT Logging – WAL Redo Log Concepts.
+keywords: [openGauss, MOT Durability Concepts, database administration, MOT Logging – WAL Redo Log Concepts]
+---
+
 # MOT Durability Concepts<a name="EN-US_TOPIC_0270171530"></a>
 
 Durability refers to long-term data protection \(also known as  _disk persistence_\). Durability means that stored data does not suffer from any kind of degradation or corruption, so that data is never lost or compromised. Durability ensures that data and the MOT engine are restored to a consistent state after a planned shutdown \(for example, for maintenance\) or an unplanned crash \(for example, a power failure\).
@@ -53,7 +58,7 @@ The  **Synchronous Redo Logging**  option is the simplest and most strict redo l
 
 When a transaction ends, the SynchronousRedoLogHandler serializes its transaction buffer and write it to the XLOG iLogger implementation.
 
-**Figure  1**  Synchronous Logging![](figures/synchronous-logging.png)
+**Figure  1**  Synchronous Logging![Synchronous logging diagram](figures/synchronous-logging.png)
 
 ##### **Summary**
 
@@ -87,7 +92,7 @@ When a transaction commits, a group of entries are recorded in the WAL Redo Log,
 
 The four colors represent 4 NUMA nodes. Thus each NUMA node has its own memory log enabling a group commit of multiple connections.
 
-**Figure  1**  Group Commit – with NUMA-awareness![](figures/group-commit-with-numa-awareness.png)
+**Figure  1**  Group Commit – with NUMA-awareness![Group commit with NUMA awareness diagram](figures/group-commit-with-numa-awareness.png)
 
 #### **Summary**
 
@@ -111,7 +116,7 @@ When a transaction is committed by a client application, the transaction redo en
 
 Upon transaction commit, the transaction buffer is moved \(pointer assignment – not a data copy\) to a centralized buffer and a new transaction buffer is allocated for the transaction. The transaction is released as soon as its buffer is moved to the centralized buffer and the transaction thread is not blocked. The actual write to the log uses the Postgres walwriter thread. When the walwriter timer elapses, it first calls the AsynchronousRedoLogHandler \(via registered callback\) to write its buffers and then continues with its logic and flushes the data to the XLOG.
 
-**Figure  1**  Asynchronous Logging![](figures/asynchronous-logging.png)
+**Figure  1**  Asynchronous Logging![Asynchronous logging diagram](figures/asynchronous-logging.png)
 
 #### **Summary**
 
@@ -123,7 +128,7 @@ Logging Design Details
 
 The following describes the design details of each persistence-related component in the In-Memory Engine Module.
 
-**Figure  2**  Three Logging Options![](figures/three-logging-options.png)
+**Figure  2**  Three Logging Options![Three logging options diagram](figures/three-logging-options.png)
 
 The RedoLog component is used by both by backend threads that use the In-Memory Engine and by the WAL writer in order to persist their data. Checkpoints are performed using the Checkpoint Manager, which is triggered by the Postgres checkpointer.
 
@@ -137,7 +142,7 @@ The MOT Engine uses the existing openGauss logging facilities, enabling it also 
 
 **Figure  1**  Three Logging Options
 
-![](figures/figure1.jpg)
+![Logging Design Overview diagram](figures/figure1.jpg)
 
 The RedoLog component is used by both by backend threads that use the MOT Engine and by the WAL writer in order to persist their data. Checkpoints are performed using the Checkpoint Manager, which is triggered by the Postgres checkpointer.
 
@@ -145,7 +150,7 @@ The RedoLog component is used by both by backend threads that use the MOT Engine
 
 In the In-Memory Engine, the transaction log records are stored in a transaction buffer which is part of the transaction object \(TXN\). The transaction buffer is logged during the calls to addToLog\(\) – if the buffer exceeds a threshold it is then flushed and reused. When a transaction commits and passes the validation phase \(OCC SILO<sup>\[</sup>[Comparison – Disk vs. MOT](comparison_disk_vs_mot.md)<sup>\]</sup>  validation\) or aborts for some reason, the appropriate message is saved in the log as well in order to make it possible to determine the transaction's state during a recovery.
 
-**Figure  1**  Per-transaction Logging![](figures/per-transaction-logging.png)
+**Figure  1**  Per-transaction Logging![Per-transaction Logging diagram](figures/per-transaction-logging.png)
 
 Parallel Logging is performed both by MOT and disk engines. However, the MOT engine enhances this design with a log-buffer per transaction, lockless preparation and a single log record.
 

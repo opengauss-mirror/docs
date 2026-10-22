@@ -1,3 +1,8 @@
+---
+description: This document describes DB4AI-Snapshots for Data Version Management in openGauss, covering topics such as Lifecycle of DB4AI-Snapshots, DB4AI-Snapshots Usage Guide.
+keywords: [openGauss, DB4AI-Snapshots for Data Version Management, features, Lifecycle of DB4AI-Snapshots, DB4AI-Snapshots Usage Guide]
+---
+
 # DB4AI-Snapshots for Data Version Management<a name="EN-US_TOPIC_0000001149626401"></a>
 
 DB4AI-Snapshots is used by the DB4AI module to manage dataset versions. With the DB4AI-Snapshots component, developers can easily and quickly perform data preprocessing operations such as feature filtering and type conversion. In addition, developers can perform version control on training datasets like Git. After a data table snapshot is created, it can be used as a view. However, once the data table snapshot is released, it is fixed as static data. To modify the content of this data table snapshot, you need to create a data table snapshot with a different version number.

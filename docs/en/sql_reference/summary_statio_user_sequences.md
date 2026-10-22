@@ -1,3 +1,8 @@
+---
+description: This document describes SUMMARY\_STATIO\_USER\_SEQUENCES in openGauss.
+keywords: [openGauss, SUMMARY\_STATIO\_USER\_SEQUENCES, SQL]
+---
+
 # SUMMARY\_STATIO\_USER\_SEQUENCES<a name="EN-US_TOPIC_0245374780"></a>
 
 **SUMMARY\_STATIO\_USER\_SEQUENCES**  displays I/O status information about all user-defined sequences in namespaces in openGauss. 

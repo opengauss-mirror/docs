@@ -1,3 +1,8 @@
+---
+description: This document describes MERGE INTO in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, MERGE INTO, SQL, Function, Precautions]
+---
+
 # MERGE INTO<a name="EN-US_TOPIC_0289900297"></a>
 
 ## Function<a name="en-us_topic_0283137308_en-us_topic_0237122170_section11462163155618"></a>

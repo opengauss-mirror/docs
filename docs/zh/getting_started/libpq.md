@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss libpq 的相关内容，涵盖 libpq使用依赖的头文件、开发流程 等内容。
+keywords: [openGauss, libpq, 快速入门, libpq使用依赖的头文件, 开发流程]
+---
+
 # libpq
 
 libpq是openGauss C应用程序接口。libpq允许客户程序向openGauss服务器服务进程发送查询并且获得查询返回的库函数。同时也是其他几个openGauss应用接口下面的引擎，如ODBC等依赖的库文件。

@@ -1,3 +1,8 @@
+---
+description: This document describes Access Control Model in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Access Control Model, features, Availability, Introduction]
+---
+
 # Access Control Model<a name="EN-US_TOPIC_0000001135403979"></a>
 
 ## Availability<a name="section65352835"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBE\_PLDEBUGGER.info\_locals 的相关内容与操作方法。
+keywords: [openGauss, DBE\_PLDEBUGGER.info\_locals, SQL参考]
+---
+
 # DBE\_PLDEBUGGER.info\_locals
 
 debug端调试过程中，调用info\_locals，打印当前存储过程内变量。该函数入参frameno表示查询遍历的栈层数，支持无入参调用，缺省为查看最上层栈变量。

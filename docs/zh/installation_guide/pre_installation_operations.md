@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 安装前置操作 的相关内容，涵盖 om适配ubuntu 等内容。
+keywords: [openGauss, 安装前置操作, 安装指南, om适配ubuntu]
+---
+
 # 安装前置操作
 
 ## om适配Ubuntu
@@ -44,4 +49,4 @@ PRETTY_NAME="Ubuntu 20.04.6 LTS"
 
 vi  /home/omm/.bashrc 注释掉这几行：（说明：这几行含义是只允许命令行执行source，从脚本里面执行source会直接return，导致后面追加的环境变量没法加载）
 
-![](figures/adapt_ubuntu.png)
+![说明示意图](figures/adapt_ubuntu.png)

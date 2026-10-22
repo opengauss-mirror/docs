@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss dd模拟块设备失败 的相关内容，涵盖 现象、原因 等内容。
+keywords: [openGauss, dd模拟块设备失败, 数据库管理, 现象, 原因]
+---
+
 # dd模拟块设备失败
 
 ## 现象

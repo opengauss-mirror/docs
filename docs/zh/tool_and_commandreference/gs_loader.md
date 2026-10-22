@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs\_loader 的相关内容，涵盖 概述、安装部署 等内容。
+keywords: [openGauss, gs\_loader, 工具与命令参考, 概述, 安装部署]
+---
+
 # gs\_loader<a name="ZH-CN_TOPIC_0000001705427697"></a>
 
 ## 概述<a name="section191131516122118"></a>

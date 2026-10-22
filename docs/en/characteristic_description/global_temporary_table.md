@@ -1,3 +1,8 @@
+---
+description: This document describes Global Temporary Table in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Global Temporary Table, features, Availability, Introduction]
+---
+
 # Global Temporary Table<a name="EN-US_TOPIC_0000001138387371"></a>
 
 ## Availability<a name="section5309649"></a>

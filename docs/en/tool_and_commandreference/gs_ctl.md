@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_ctl in openGauss, covering topics such as Function, Parameter Description.
+keywords: [openGauss, gs\_ctl, tools and commands, Function, Parameter Description]
+---
+
 # gs\_ctl<a name="EN-US_TOPIC_0294748973"></a>
 
 ## Function<a name="en-us_topic_0059777628_saed7059efc5d469189c9e53a984ba786"></a>

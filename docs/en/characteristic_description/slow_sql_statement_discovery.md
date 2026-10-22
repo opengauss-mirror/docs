@@ -1,3 +1,8 @@
+---
+description: This document describes Slow SQL Statement Discovery in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Slow SQL Statement Discovery, features, Availability, Introduction]
+---
+
 # Slow SQL Statement Discovery<a name="EN-US_TOPIC_0000001105555120"></a>
 
 ## Availability<a name="section1420315335481"></a>

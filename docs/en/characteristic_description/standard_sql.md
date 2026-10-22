@@ -1,3 +1,8 @@
+---
+description: This document describes Standard SQL in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Standard SQL, features, Availability, Introduction]
+---
+
 # Standard SQL<a name="EN-US_TOPIC_0000001088566346"></a>
 
 ## Availability<a name="section38134078"></a>

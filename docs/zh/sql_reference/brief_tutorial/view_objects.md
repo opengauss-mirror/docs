@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 查看对象 的相关内容与操作方法。
+keywords: [openGauss, 查看对象, SQL参考]
+---
+
 # 查看对象
 
 gsql工具提供了若干高级特性，便于用户使用。常见用法如下：

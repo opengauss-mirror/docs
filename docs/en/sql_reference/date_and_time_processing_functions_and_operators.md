@@ -1,3 +1,8 @@
+---
+description: This document describes Date and Time Processing Functions and Operators in openGauss, covering topics such as Date and Time Operators, Time/Date Functions.
+keywords: [openGauss, Date and Time Processing Functions and Operators, SQL, Date and Time Operators, Time/Date Functions]
+---
+
 # Date and Time Processing Functions and Operators<a name="EN-US_TOPIC_0289900496"></a>
 
 ## Date and Time Operators<a name="en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_s0cc044f2acb04adb928696f1f6cfd13d"></a>

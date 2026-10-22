@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_STAT\_ALL\_INDEXES in openGauss.
+keywords: [openGauss, GLOBAL\_STAT\_ALL\_INDEXES, SQL]
+---
+
 # GLOBAL\_STAT\_ALL\_INDEXES<a name="EN-US_TOPIC_0245374697"></a>
 
 **GLOBAL\_STAT\_ALL\_INDEXES**  contains every row of each index in databases on each node, showing statistics about accesses to specific indexes. 

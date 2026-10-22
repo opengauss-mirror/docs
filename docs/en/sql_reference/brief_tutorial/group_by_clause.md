@@ -1,3 +1,8 @@
+---
+description: This document describes GROUP BY Clause in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, GROUP BY Clause, SQL, Syntax, Parameter Description]
+---
+
 # GROUP BY Clause<a name="EN-US_TOPIC_0000001180258708"></a>
 
 The  **GROUP BY**  clause is used together with the SELECT statement to group the same data. You can group one or more columns, but the columns to be grouped must exist.

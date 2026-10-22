@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_SHDEPEND in openGauss.
+keywords: [openGauss, PG\_SHDEPEND, database reference]
+---
+
 # PG\_SHDEPEND<a name="EN-US_TOPIC_0289900698"></a>
 
 **PG\_SHDEPEND**  records the dependency between database objects and shared objects, such as roles. Based on this information, openGauss can ensure that those objects are unreferenced before attempting to delete them.

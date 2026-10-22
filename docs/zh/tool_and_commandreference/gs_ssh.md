@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs\_ssh 的相关内容，涵盖 背景信息、注意事项 等内容。
+keywords: [openGauss, gs\_ssh, 工具与命令参考, 背景信息, 注意事项]
+---
+
 # gs\_ssh
 
 ## 背景信息<a name="zh-cn_topic_0237152344_zh-cn_topic_0059777951_section12241205518358"></a>

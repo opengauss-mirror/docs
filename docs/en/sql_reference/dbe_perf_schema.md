@@ -1,3 +1,8 @@
+---
+description: This document describes DBE\_PERF Schema in openGauss.
+keywords: [openGauss, DBE\_PERF Schema, SQL]
+---
+
 # DBE\_PERF Schema<a name="EN-US_TOPIC_0245374654"></a>
 
 In the  **DBE\_PERF**  schema, views are used to diagnose performance issues and are also the data source of WDR snapshots. After the database is installed, only the initial user have permissions for the  **DBE\_PERF**  schema by default. If the database is upgraded from an earlier version, permissions for the  **DBE\_PERF**  schema are the same as those of the earlier version to ensure forward compatibility. Organization views are divided based on multiple dimensions, such as OS, instance, and memory. These views comply with the following naming rules:

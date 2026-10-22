@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 线程池 的相关内容，涵盖 enable\_thread\_pool、enable\_thread\_pool\_numa\_locality 等内容。
+keywords: [openGauss, 线程池, 数据库参考, enable\_thread\_pool, enable\_thread\_pool\_numa\_locality]
+---
+
 # 线程池
 
 ## enable\_thread\_pool<a name="zh-cn_topic_0283137548_zh-cn_topic_0237124743_section97160555612"></a>

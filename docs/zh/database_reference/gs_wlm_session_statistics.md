@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_WLM\_SESSION\_STATISTICS 的相关内容与操作方法。
+keywords: [openGauss, GS\_WLM\_SESSION\_STATISTICS, 数据库参考]
+---
+
 # GS\_WLM\_SESSION\_STATISTICS
 
 GS\_WLM\_SESSION\_STATISTICS视图显示当前用户在数据库实例上正在执行的作业的负载管理记录。查询该视图需要sysadmin权限。

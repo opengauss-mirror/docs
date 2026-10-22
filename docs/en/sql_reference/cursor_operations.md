@@ -1,3 +1,8 @@
+---
+description: This document describes Cursor Operations in openGauss.
+keywords: [openGauss, Cursor Operations, SQL]
+---
+
 # Cursor Operations<a name="EN-US_TOPIC_0245374631"></a>
 
 openGauss provides cursors as a data buffer for users to store execution results of SQL statements. Each cursor region has a name. Users can use SQL statements to obtain records one by one from cursors and grant the records to master variables, then being processed further by host languages.

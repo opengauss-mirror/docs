@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 异步IO 的相关内容，涵盖 enable\_adio\_function、enable\_adio\_debug 等内容。
+keywords: [openGauss, 异步IO, 数据库参考, enable\_adio\_function, enable\_adio\_debug]
+---
+
 # 异步IO
 
 ## enable\_adio\_function

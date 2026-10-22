@@ -1,3 +1,8 @@
+---
+description: This document describes pg\_controldata in openGauss, covering topics such as Function, Prerequisites.
+keywords: [openGauss, pg\_controldata, tools and commands, Function, Prerequisites]
+---
+
 # pg\_controldata<a name="EN-US_TOPIC_0249632253"></a>
 
 ## Function<a name="en-us_topic_0237152440_section125419154813"></a>

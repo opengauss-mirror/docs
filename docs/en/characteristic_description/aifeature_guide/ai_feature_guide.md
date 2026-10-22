@@ -1,3 +1,8 @@
+---
+description: This document describes AI Features in openGauss.
+keywords: [openGauss, AI Features, features]
+---
+
 # AI Features<a name="EN-US_TOPIC_0289900557"></a>
 
 The history of artificial intelligence \(AI\) can be traced back to the 1950s, even predating the development of database systems. However, due to various objective constraints, AI technology was not applied on a large scale for quite some time and even experienced several significant downturns. In recent years, with the advancement of information technology, many of the factors that previously hindered AI development have gradually diminished, giving rise to the so-called ABC technologies—AI, Big Data, and Cloud Computing.

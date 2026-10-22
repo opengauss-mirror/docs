@@ -1,3 +1,8 @@
+---
+description: This document describes Anomaly-detection: Database Indicator Collection, Forecastin in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Anomaly-detection: Database Indicator Collection, Forecastin, features, Availability]
+---
+
 # Anomaly-detection: Database Indicator Collection, Forecasting, and Exception Monitoring<a name="EN-US_TOPIC_0000001091892904"></a>
 
 ## Availability<a name="section1394818443613"></a>

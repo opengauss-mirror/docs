@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gstrace 的相关内容，涵盖 功能介绍、语法 等内容。
+keywords: [openGauss, gstrace, 工具与命令参考, 功能介绍, 语法]
+---
+
 # gstrace
 
 ## 功能介绍<a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_zh-cn_topic_0059778103_s1d88b9452b2d4c15811c8ad2670b7682"></a>

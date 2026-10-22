@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_ROLES 的相关内容与操作方法。
+keywords: [openGauss, PG\_ROLES, 数据库参考]
+---
+
 # PG\_ROLES
 
 PG\_ROLES视图提供访问数据库角色的相关信息，初始化用户和具有sysadmin属性或createrole属性的用户可以查看全部角色的信息，其他用户只能查看自己的信息。

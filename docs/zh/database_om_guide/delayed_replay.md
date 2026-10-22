@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 延时回放 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, 延时回放, 数据库运维, 可获得性, 特性简介]
+---
+
 # 延时回放
 
 ## 可获得性<a name="section57017810"></a>

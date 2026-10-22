@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_POLICY\_LABEL 的相关内容与操作方法。
+keywords: [openGauss, GS\_POLICY\_LABEL, 数据库参考]
+---
+
 # GS\_POLICY\_LABEL
 
 GS\_POLICY\_LABEL系统表记录资源标签配置信息，一个资源标签对应着一条或多条记录，每条记录标记了数据库资源所属的资源标签。需要有系统管理员或安全策略管理员权限才可以访问此系统表。

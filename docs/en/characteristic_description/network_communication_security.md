@@ -1,3 +1,8 @@
+---
+description: This document describes Network Communication Security in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Network Communication Security, features, Availability, Introduction]
+---
+
 # Network Communication Security<a name="EN-US_TOPIC_0000001088566340"></a>
 
 ## Availability<a name="section17746747"></a>

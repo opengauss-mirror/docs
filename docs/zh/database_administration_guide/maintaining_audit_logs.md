@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 维护审计日志 的相关内容，涵盖 前提条件、背景信息 等内容。
+keywords: [openGauss, 维护审计日志, 数据库管理, 前提条件, 背景信息]
+---
+
 # 维护审计日志
 
 ## 前提条件<a name="zh-cn_topic_0237121114_zh-cn_topic_0059778793_sbf90b4aa56054a53b7c697eec67d09ac"></a>

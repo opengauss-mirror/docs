@@ -1,3 +1,8 @@
+---
+description: This document describes REINDEX in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, REINDEX, SQL, Function, Precautions]
+---
+
 # REINDEX<a name="EN-US_TOPIC_0289899863"></a>
 
 ## Function<a name="en-us_topic_0283137442_en-us_topic_0237122174_en-us_topic_0059777511_sf1cc0970ae31445a9e063cf504569e6e"></a>

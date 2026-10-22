@@ -1,3 +1,8 @@
+---
+description: This document describes RETURN Statements in openGauss, covering topics such as RETURN, RETURN NEXT and RETURN QUERY.
+keywords: [openGauss, RETURN Statements, SQL, RETURN, RETURN NEXT and RETURN QUERY]
+---
+
 # RETURN Statements<a name="EN-US_TOPIC_0245374620"></a>
 
 In openGauss, data can be returned in either of the following ways:  **RETURN**,  **RETURN NEXT**, or  **RETURN QUERY**.  **RETURN NEXT**  and  **RETURN QUERY**  are used only for functions and cannot be used for stored procedures.
@@ -9,7 +14,7 @@ In openGauss, data can be returned in either of the following ways:  **RETURN**,
 [Figure 1](#en-us_topic_0237122231_en-us_topic_0059778007_f7ff63e01e2a840c69a1c17b91e7dc3eb)  shows the syntax diagram for a return statement.
 
 **Figure  1**  return\_clause::=<a name="en-us_topic_0237122231_en-us_topic_0059778007_f7ff63e01e2a840c69a1c17b91e7dc3eb"></a>  
-![](figures/return_clause.jpg "return_clause")
+![return clause syntax diagram](figures/return_clause.jpg "return_clause")
 
 The above syntax diagram is explained as follows:
 
@@ -27,11 +32,11 @@ When creating a function, specify  **SETOF**_datatype_  for the return values.
 
 return\_next\_clause::=
 
-![](figures/en-us_image_0253403489.png)
+![Syntax diagram](figures/en-us_image_0253403489.png)
 
 return\_query\_clause::=
 
-![](figures/en-us_image_0253403490.png)
+![Syntax diagram](figures/en-us_image_0253403490.png)
 
 The above syntax diagram is explained as follows:
 

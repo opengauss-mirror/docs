@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 几何函数和操作符 的相关内容，涵盖 几何操作符 等内容。
+keywords: [openGauss, 几何函数和操作符, SQL参考, 几何操作符]
+---
+
 # 几何函数和操作符
 
 ## 几何操作符<a name="zh-cn_topic_0283137097_zh-cn_topic_0237121974_zh-cn_topic_0059778617_sf6144d7c3ed34b8c801ec2d86e2dea63"></a>

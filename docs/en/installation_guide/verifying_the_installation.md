@@ -1,3 +1,8 @@
+---
+description: This document describes Verifying the Installation in openGauss, covering topics such as Prerequisites, Procedure.
+keywords: [openGauss, Verifying the Installation, installation, Prerequisites, Procedure]
+---
+
 # Verifying the Installation<a name="EN-US_TOPIC_0283136489"></a>
 
 Use the  **gs\_om**  tool provided by openGauss to check the database status.

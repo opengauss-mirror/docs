@@ -1,3 +1,8 @@
+---
+description: This document describes LOCAL\_THREADPOOL\_STATUS in openGauss.
+keywords: [openGauss, LOCAL\_THREADPOOL\_STATUS, SQL]
+---
+
 # LOCAL\_THREADPOOL\_STATUS<a name="EN-US_TOPIC_0245374745"></a>
 
 **LOCAL\_THREADPOOL\_STATUS**  displays the status of worker threads and sessions in a thread pool. This view is valid only when  **enable\_thread\_pool**  is set to  **on**.

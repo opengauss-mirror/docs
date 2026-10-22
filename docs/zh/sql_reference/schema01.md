@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Schema 的相关内容与操作方法。
+keywords: [openGauss, Schema, SQL参考]
+---
+
 # Schema
 
 openGauss支持的Schema如下表所示。

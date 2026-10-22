@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss mysql\_fdw 的相关内容，涵盖 编译mysql\_fdw、使用mysql\_fdw 等内容。
+keywords: [openGauss, mysql\_fdw, 数据库管理, 编译mysql\_fdw, 使用mysql\_fdw]
+---
+
 # mysql\_fdw
 
 mysql\_fdw是一款[开源插件](https://github.com/EnterpriseDB/mysql_fdw)。openGauss基于开源的[mysql\_fdw Release 2.5.3 版本](https://github.com/EnterpriseDB/mysql_fdw/archive/REL-2_5_3.tar.gz)进行开发适配。

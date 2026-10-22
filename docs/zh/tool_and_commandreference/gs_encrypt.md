@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs\_encrypt 的相关内容，涵盖 背景信息、语法 等内容。
+keywords: [openGauss, gs\_encrypt, 工具与命令参考, 背景信息, 语法]
+---
+
 # gs\_encrypt
 
 ## 背景信息<a name="section16490883164452"></a>

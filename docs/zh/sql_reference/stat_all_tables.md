@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STAT\_ALL\_TABLES 的相关内容与操作方法。
+keywords: [openGauss, STAT\_ALL\_TABLES, SQL参考]
+---
+
 # STAT\_ALL\_TABLES
 
 本节点内数据库中每个表（包括TOAST表）的一行的统计信息。

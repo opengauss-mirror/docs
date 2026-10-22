@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 链接参数 的相关内容与操作方法。
+keywords: [openGauss, 链接参数, 开发指南]
+---
+
 # 链接参数
 
 **表 1**  链接参数

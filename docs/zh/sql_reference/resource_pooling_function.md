@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 资源池化的函数 的相关内容与操作方法。
+keywords: [openGauss, 资源池化的函数, SQL参考]
+---
+
 # 资源池化的函数<a name="ZH-CN_TOPIC_0289900393"></a>
 
 - ss_buffer_ctrl()

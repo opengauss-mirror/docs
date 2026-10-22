@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL_PLANCACHE_STATUS 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL_PLANCACHE_STATUS, SQL参考]
+---
+
 # GLOBAL_PLANCACHE_STATUS
 
 GPC相关视图在enable\_global\_plancache打开且线程池打开的状态下才有效。

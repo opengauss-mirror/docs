@@ -1,3 +1,8 @@
+---
+description: This document describes Before You Start in openGauss, covering topics such as Overview, Intended Audience.
+keywords: [openGauss, Before You Start, database O&M, Overview, Intended Audience]
+---
+
 # Before You Start<a name="EN-US_TOPIC_0305491437"></a>
 
 ## Overview<a name="section1881820588012"></a>

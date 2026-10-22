@@ -1,3 +1,8 @@
+---
+description: This document describes Obsolete Functions in openGauss.
+keywords: [openGauss, Obsolete Functions, SQL]
+---
+
 # Obsolete Functions<a name="EN-US_TOPIC_0308046608"></a>
 
 The following functions in openGauss have been discarded in the latest version:

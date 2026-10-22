@@ -1,3 +1,8 @@
+---
+description: This document describes Installation on a Single Node in openGauss.
+keywords: [openGauss, Installation on a Single Node, getting started]
+---
+
 # Installation on a Single Node<a name="EN-US_TOPIC_0000001178307594"></a>
 
 1. Create a user group  **dbgroup**.

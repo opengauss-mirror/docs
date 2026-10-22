@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 全量物化视图 的相关内容，涵盖 概述、使用 等内容。
+keywords: [openGauss, 全量物化视图, SQL参考, 概述, 使用]
+---
+
 # 全量物化视图
 
 ## 概述

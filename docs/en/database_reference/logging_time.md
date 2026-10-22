@@ -1,3 +1,8 @@
+---
+description: This document describes Logging Time in openGauss, covering topics such as client\_min\_messages, log\_min\_messages.
+keywords: [openGauss, Logging Time, database reference, client\_min\_messages, log\_min\_messages]
+---
+
 # Logging Time<a name="EN-US_TOPIC_0289900345"></a>
 
 ## client\_min\_messages<a name="en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0"></a>

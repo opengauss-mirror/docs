@@ -1,3 +1,8 @@
+---
+description: This document describes ROLLBACK TO SAVEPOINT in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ROLLBACK TO SAVEPOINT, SQL, Function, Precautions]
+---
+
 # ROLLBACK TO SAVEPOINT<a name="EN-US_TOPIC_0289900687"></a>
 
 ## Function<a name="en-us_topic_0283137625_en-us_topic_0237122182_en-us_topic_0059778869_section2860121201518"></a>

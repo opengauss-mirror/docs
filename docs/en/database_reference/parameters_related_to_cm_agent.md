@@ -1,3 +1,8 @@
+---
+description: This document describes Parameters Related to cm\_agent in openGauss, covering topics such as log\_dir, log\_file\_size.
+keywords: [openGauss, Parameters Related to cm\_agent, database reference, log\_dir, log\_file\_size]
+---
+
 # Parameters Related to cm\_agent<a name="EN-US_TOPIC_0295386222"></a>
 
 ## log\_dir<a name="en-us_topic_0059779159_sffb0266aeee84425addb74a3f8a1c5a9"></a>

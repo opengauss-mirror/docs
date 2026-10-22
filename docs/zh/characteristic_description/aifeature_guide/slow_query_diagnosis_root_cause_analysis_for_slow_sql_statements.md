@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Slow Query Diagnosis 的相关内容，涵盖 概述、环境部署 等内容。
+keywords: [openGauss, Slow Query Diagnosis, 特性描述, 概述, 环境部署]
+---
+
 # Slow Query Diagnosis<a name="ZH-CN_TOPIC_0000002294398257"></a>
 
 ## 概述<a name="ZH-CN_TOPIC_0000002294471361"></a>

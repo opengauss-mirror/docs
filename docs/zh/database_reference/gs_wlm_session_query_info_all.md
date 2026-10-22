@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GS\_WLM\_SESSION\_QUERY\_INFO\_ALL 的相关内容与操作方法。
+keywords: [openGauss, GS\_WLM\_SESSION\_QUERY\_INFO\_ALL, 数据库参考]
+---
+
 # GS\_WLM\_SESSION\_QUERY\_INFO\_ALL
 
 GS\_WLM\_SESSION\_QUERY\_INFO\_ALL系统表显示当前数据库实例执行作业结束后的负载管理记录。此数据是从内核中转储到系统表中的数据。当设置GUC参数[enable\_resource\_record](workload_management.md)为on时，系统会定时（周期为3分钟）将内核中query信息导入GS\_WLM\_SESSION\_QUERY\_INFO\_ALL系统表。查询该系统表需要sysadmin权限，且仅在数据库postgres下面查询时有数据。

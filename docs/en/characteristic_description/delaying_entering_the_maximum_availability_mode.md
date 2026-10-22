@@ -1,3 +1,8 @@
+---
+description: This document describes Delaying Entering the Maximum Availability Mode in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Delaying Entering the Maximum Availability Mode, features, Availability, Introduction]
+---
+
 # Delaying Entering the Maximum Availability Mode<a name="EN-US_TOPIC_0000001220197752"></a>
 
 ## Availability<a name="section118411122194813"></a>

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs\_uninstall 的相关内容，涵盖 背景信息、语法 等内容。
+keywords: [openGauss, gs\_uninstall, 工具与命令参考, 背景信息, 语法]
+---
+
 # gs\_uninstall
 
 ## 背景信息<a name="zh-cn_topic_0287275992_zh-cn_topic_0237152424_zh-cn_topic_0059778700_section104365437437"></a>

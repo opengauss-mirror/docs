@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 索引使用约束 的相关内容，涵盖 使用约束 等内容。
+keywords: [openGauss, 索引使用约束, SQL参考, 使用约束]
+---
+
 # 索引使用约束
 
 下面是一个使用索引的例子：

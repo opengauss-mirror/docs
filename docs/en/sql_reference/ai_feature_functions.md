@@ -1,3 +1,8 @@
+---
+description: This document describes AI Feature Functions in openGauss.
+keywords: [openGauss, AI Feature Functions, SQL]
+---
+
 # AI Feature Functions<a name="EN-US_TOPIC_0303599451"></a>
 
 - gs\_index\_advise\(text\)

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss SHUTDOWN 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, SHUTDOWN, SQL参考, 功能描述, 注意事项]
+---
+
 # SHUTDOWN
 
 ## 功能描述<a name="zh-cn_topic_0283136791_zh-cn_topic_0237122191_zh-cn_topic_0059779163_s812131d8918641df9772c998b753f87e"></a>

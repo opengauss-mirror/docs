@@ -1,3 +1,8 @@
+---
+description: This document describes Separation of Control and Access Permissions in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Separation of Control and Access Permissions, features, Availability, Introduction]
+---
+
 # Separation of Control and Access Permissions<a name="EN-US_TOPIC_0000001088726276"></a>
 
 ## Availability<a name="section17746747"></a>

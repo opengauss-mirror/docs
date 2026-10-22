@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss gs_ctl start 失败 的相关内容，涵盖 现象、原因 等内容。
+keywords: [openGauss, gs_ctl start 失败, 数据库管理, 现象, 原因]
+---
+
 # gs_ctl start 失败
 
 ## 现象

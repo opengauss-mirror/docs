@@ -1,3 +1,8 @@
+---
+description: This document describes Log Reference in openGauss, covering topics such as Log Overview, System Logs.
+keywords: [openGauss, Log Reference, database O&M, Log Overview, System Logs]
+---
+
 # Log Reference<a name="EN-US_TOPIC_0242215138"></a>
 
 ## Log Overview<a name="section178115524113"></a>

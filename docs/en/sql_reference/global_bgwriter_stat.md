@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_BGWRITER\_STAT in openGauss.
+keywords: [openGauss, GLOBAL\_BGWRITER\_STAT, SQL]
+---
+
 # GLOBAL\_BGWRITER\_STAT<a name="EN-US_TOPIC_0245374817"></a>
 
 **GLOBAL\_BGWRITER\_STAT**  displays statistics about the background writer process's activities on each node. 

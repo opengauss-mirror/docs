@@ -1,3 +1,8 @@
+---
+description: This document describes Installation of One Primary and One Standby Nodes in openGauss, covering topics such as Procedure.
+keywords: [openGauss, Installation of One Primary and One Standby Nodes, SQL, Procedure]
+---
+
 # Installation of One Primary and One Standby Nodes<a name="EN-US_TOPIC_0000001180125584"></a>
 
 ## Procedure<a name="section4241123615573"></a>

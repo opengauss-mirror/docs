@@ -1,3 +1,8 @@
+---
+description: This document describes Password Strength Verification in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Password Strength Verification, features, Availability, Introduction]
+---
+
 # Password Strength Verification<a name="EN-US_TOPIC_0000001088278198"></a>
 
 ## Availability<a name="section17746747"></a>

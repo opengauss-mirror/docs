@@ -1,3 +1,8 @@
+---
+description: This document describes GS\_WLM\_OPERATOR\_INFO in openGauss.
+keywords: [openGauss, GS\_WLM\_OPERATOR\_INFO, database reference]
+---
+
 # GS\_WLM\_OPERATOR\_INFO<a name="EN-US_TOPIC_0289900540"></a>
 
 **GS\_WLM\_OPERATOR\_INFO**  displays records about operators of completed jobs. The data is dumped from the kernel to the system catalog. This system catalog can be queried by users with the  **sysadmin**  permission only in Postgres.

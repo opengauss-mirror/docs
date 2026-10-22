@@ -1,3 +1,8 @@
+---
+description: This document describes openGauss Client Tool DataStudio in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, openGauss Client Tool DataStudio, features, Availability, Introduction]
+---
+
 # openGauss Client Tool DataStudio<a name="EN-US_TOPIC_0000001220227672"></a>
 
 ## Availability<a name="section56086982"></a>

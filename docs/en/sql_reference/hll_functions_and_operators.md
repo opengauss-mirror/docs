@@ -1,3 +1,8 @@
+---
+description: This document describes HLL Functions and Operators in openGauss, covering topics such as Hash Functions.
+keywords: [openGauss, HLL Functions and Operators, SQL, Hash Functions]
+---
+
 # HLL Functions and Operators<a name="EN-US_TOPIC_0309006541"></a>
 
 ## Hash Functions<a name="section161615718554"></a>

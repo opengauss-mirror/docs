@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_SHDescription 的相关内容与操作方法。
+keywords: [openGauss, PG\_SHDescription, 数据库参考]
+---
+
 # PG\_SHDescription
 
 PG\_SHDescription系统表为共享数据库对象存储可选的注释。可以使用COMMENT命令操作注释的内容，使用gsql的\\d命令查看注释内容。

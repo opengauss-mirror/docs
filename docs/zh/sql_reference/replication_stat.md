@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss REPLICATION\_STAT 的相关内容与操作方法。
+keywords: [openGauss, REPLICATION\_STAT, SQL参考]
+---
+
 # REPLICATION\_STAT
 
 REPLICATION\_STAT用于描述日志同步状态信息，如发起端发送日志位置、收端接收日志位置等。

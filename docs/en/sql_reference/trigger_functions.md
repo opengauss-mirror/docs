@@ -1,3 +1,8 @@
+---
+description: This document describes Trigger Functions in openGauss.
+keywords: [openGauss, Trigger Functions, SQL]
+---
+
 # Trigger Functions<a name="EN-US_TOPIC_0289900144"></a>
 
 - pg\_get\_triggerdef\(oid\)

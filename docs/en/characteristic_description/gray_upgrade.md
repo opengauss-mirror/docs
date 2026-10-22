@@ -1,3 +1,8 @@
+---
+description: This document describes Gray Upgrade in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, Gray Upgrade, features, Availability, Introduction]
+---
+
 # Gray Upgrade<a name="EN-US_TOPIC_0000001105235296"></a>
 
 ## Availability<a name="section56086982"></a>

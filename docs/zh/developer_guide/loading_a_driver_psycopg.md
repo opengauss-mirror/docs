@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 加载驱动 的相关内容与操作方法。
+keywords: [openGauss, 加载驱动, 开发指南]
+---
+
 # 加载驱动
 
 - 在使用驱动之前，需要做如下操作：

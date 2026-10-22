@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_INDEXES 的相关内容与操作方法。
+keywords: [openGauss, PG\_INDEXES, 数据库参考]
+---
+
 # PG\_INDEXES
 
 PG\_INDEXES视图提供对数据库中每个索引的有用信息的访问。

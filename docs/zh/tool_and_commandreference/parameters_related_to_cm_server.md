@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss cm\_server参数 的相关内容，涵盖 log\_dir、log\_file\_size 等内容。
+keywords: [openGauss, cm\_server参数, 工具与命令参考, log\_dir, log\_file\_size]
+---
+
 # cm\_server参数
 
 ## log\_dir<a name="section21021611134413"></a>

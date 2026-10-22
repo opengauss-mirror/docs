@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_JOB\_PROC in openGauss.
+keywords: [openGauss, PG\_JOB\_PROC, database reference]
+---
+
 # PG\_JOB\_PROC<a name="EN-US_TOPIC_0289900489"></a>
 
 **PG\_JOB\_PROC**  records the content of each job in the  **PG\_JOB**  table, including the PL/SQL code blocks and anonymous blocks. Storing such information in the system catalog  **PG\_JOB**  and loading it to the shared memory will result in excessive memory usage. Therefore, such information is stored in a separate table and is retrieved when needed.

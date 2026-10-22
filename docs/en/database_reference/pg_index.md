@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_INDEX in openGauss.
+keywords: [openGauss, PG\_INDEX, database reference]
+---
+
 # PG\_INDEX<a name="EN-US_TOPIC_0289900943"></a>
 
 **PG\_INDEX**  records part of index information. The rest is mostly recorded in  **PG\_CLASS**.

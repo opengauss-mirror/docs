@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_SESSION\_MEMORY in openGauss.
+keywords: [openGauss, GLOBAL\_SESSION\_MEMORY, SQL]
+---
+
 # GLOBAL\_SESSION\_MEMORY<a name="EN-US_TOPIC_0245374738"></a>
 
 **GLOBAL\_SESSION\_MEMORY**  collects statistics about memory usage at the session level on each node in the unit of MB, including all the memory allocated to Postgres and stream threads on DNs for jobs currently executed by users. 

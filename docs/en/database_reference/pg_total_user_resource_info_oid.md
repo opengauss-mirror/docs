@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID in openGauss.
+keywords: [openGauss, PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID, database reference]
+---
+
 # PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID<a name="EN-US_TOPIC_0289901019"></a>
 
 **PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID**  displays resource usage of all users. Only administrators can query this view. This view is valid only when `use_workload_manager`  is set to  **on**.

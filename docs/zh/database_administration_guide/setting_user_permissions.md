@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 用户权限设置 的相关内容与操作方法。
+keywords: [openGauss, 用户权限设置, 数据库管理]
+---
+
 # 用户权限设置
 
 - 给用户直接授予某对象的权限，请使用[GRANT](../sql_reference/grant.md)。

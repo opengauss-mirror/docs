@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STATEMENT\_HISTORY 的相关内容与操作方法。
+keywords: [openGauss, STATEMENT\_HISTORY, SQL参考]
+---
+
 # STATEMENT\_HISTORY
 
 获得当前节点的执行语句的信息。查询视图必须具有sysadmin权限或者monitor admin权限。只可在系统库中查询到结果，用户库中无法查询。query长度受参数[track_activity_query_size](../database_reference/query_and_index_statistics_collector.md)控制。

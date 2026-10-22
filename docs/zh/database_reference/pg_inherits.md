@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_INHERITS 的相关内容与操作方法。
+keywords: [openGauss, PG\_INHERITS, 数据库参考]
+---
+
 # PG\_INHERITS
 
 PG\_INHERITS系统表记录关于表继承层次的信息。数据库里每个直接的子系表都有一条记录。间接的继承可以通过追溯记录链来判断。

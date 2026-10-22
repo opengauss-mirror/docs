@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss ALTER INDEX 的相关内容，涵盖 功能描述、注意事项 等内容。
+keywords: [openGauss, ALTER INDEX, SQL参考, 功能描述, 注意事项]
+---
+
 # ALTER INDEX
 
 ## 功能描述<a name="zh-cn_topic_0283137124_zh-cn_topic_0237122063_zh-cn_topic_0059778960_sfe4d0517393c4151ab84ea0450924b7c"></a>

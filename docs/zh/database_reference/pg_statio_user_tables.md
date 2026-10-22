@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss PG\_STATIO\_USER\_TABLES 的相关内容与操作方法。
+keywords: [openGauss, PG\_STATIO\_USER\_TABLES, 数据库参考]
+---
+
 # PG\_STATIO\_USER\_TABLES
 
 PG\_STATIO\_USER\_TABLES视图显示命名空间中所有用户关系表的IO状态信息。

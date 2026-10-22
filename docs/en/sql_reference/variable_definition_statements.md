@@ -1,3 +1,8 @@
+---
+description: This document describes Variable Definition Statements in openGauss, covering topics such as Variable Declaration, Scope of a Variable.
+keywords: [openGauss, Variable Definition Statements, SQL, Variable Declaration, Scope of a Variable]
+---
+
 # Variable Definition Statements<a name="EN-US_TOPIC_0289900208"></a>
 
 This section describes the declaration of variables in the PL/SQL and the scope of this variable in codes.
@@ -7,7 +12,7 @@ This section describes the declaration of variables in the PL/SQL and the scope 
 For details about the variable declaration syntax, see  [Figure 1](#en-us_topic_0283136825_en-us_topic_0237122221_en-us_topic_0059777427_f6cc941e0c136457aade3860fc682cbbc).
 
 **Figure  1**  declare\_variable::=<a name="en-us_topic_0283136825_en-us_topic_0237122221_en-us_topic_0059777427_f6cc941e0c136457aade3860fc682cbbc"></a>  
-![](figures/declare_variable.png "declare_variable")
+![declare variable syntax diagram](figures/declare_variable.png "declare_variable")
 
 The above syntax diagram is explained as follows:
 

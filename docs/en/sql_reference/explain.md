@@ -1,3 +1,8 @@
+---
+description: This document describes EXPLAIN in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, EXPLAIN, SQL, Function, Precautions]
+---
+
 # EXPLAIN<a name="EN-US_TOPIC_0289900742"></a>
 
 ## Function<a name="en-us_topic_0283136728_en-us_topic_0237122163_en-us_topic_0059777774_sd22ce4e4c8c14244afb6492e84f92d80"></a>

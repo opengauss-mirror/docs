@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 前提条件 的相关内容，涵盖 参数配置、硬件支持 等内容。
+keywords: [openGauss, 前提条件, 数据库管理, 参数配置, 硬件支持]
+---
+
 # 前提条件
 
 以下是使用openGauss MOT的软硬件前提条件。

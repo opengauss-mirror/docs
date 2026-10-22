@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Ustore 存储引擎 的相关内容，涵盖 可获得性、特性简介 等内容。
+keywords: [openGauss, Ustore 存储引擎, 数据库管理, 可获得性, 特性简介]
+---
+
 # Ustore 存储引擎
 
 ## 可获得性<a name="section1076382216287"></a>
@@ -56,7 +61,7 @@ Ustore 是 openGauss 内核新增的一种存储模式，其最大程度结合�
 
 **图 1**  Ustore框架图<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574113"></a>    
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/UstoreStructe.png" height="600px" style="margin:auto;max-width: 100%;">
+    <img src="figures/UstoreStructe.png" alt="特性描述示意图" height="600px" style="margin:auto;max-width: 100%;">
 </div>
 
 ### Ustore主要功能模块<a name="section1359382119297"></a>
@@ -110,7 +115,7 @@ Ustore 的页面结构和 Astore 的页面结构相同，在 openGauss 中也使
 
 **图 2**  Ustore页面结构<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574213"></a>   
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/UstorePage.png" height="600px" style="margin:auto;max-width: 100%;">
+    <img src="figures/UstorePage.png" alt="Ustore页面结构示意图" height="600px" style="margin:auto;max-width: 100%;">
 </div>
 
 ### Ustore的多版本管理<a name="section101449415302"></a>
@@ -135,7 +140,7 @@ Ustore的老版本管理的核心是通过 **回滚段 ( Undo Segment )** 来记
 
 **图 3**  版本管理<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574313"></a>   
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/VersionManage.png" height="600px" style="margin:auto;max-width: 100%;">
+    <img src="figures/VersionManage.png" alt="PBRCR Ustore 旧版本管理示意图" height="600px" style="margin:auto;max-width: 100%;">
 </div>
 
 - 旧版本数据会集中存放在回滚段的 Undo 目录中，为了减少读写冲突，旧版本的数据（回滚段记录）采用追加写的方式写入数据目录的 Undo 目录下。这样旧版本数据数据的读取和写入不会发生冲突，同一个事物的旧版本数据也会连续存放，便于进行回滚操作。
@@ -153,7 +158,7 @@ Undo 空间的回收过程如图 4 所示：
 
 **图 4**  Undo 回收过程<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574413"></a>   
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/undoRecycleProcedure.png" height="600px" style="margin:auto;max-width: 100%;">
+    <img src="figures/undoRecycleProcedure.png" alt="PBRCR Ustore 旧版本管理示意图" height="600px" style="margin:auto;max-width: 100%;">
 </div>
 
 如上图所示，UndoZone1 中回收到小于 oldestXmin 的已提交事务 16068，UndoZone2 中回收到16050，UndoZone m 回收到 16056，UndoZone n 回收到事务 16012，而事务 16014 待回滚但未发生回滚，因此 UndoZone n 回收事务 ID 上限只到16014.其他 zone 的上限是 oldestXmin，oldestXidInUndo 会取所有 Undozone 上的上限最小值，因此 oldestXidInUndo 等于 16014。
@@ -173,7 +178,7 @@ Ustore 在获取元组时，会先检查对应的事务目录。事务目录分�
 
 **图 5**  元组查询过程<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574513"></a>   
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/tupleSearch.png" height="700px" style="margin:auto;max-width: 100%;">
+    <img src="figures/tupleSearch.png" alt="MVCC示意图" height="700px" style="margin:auto;max-width: 100%;">
 </div>
 
 #### 多版本索引
@@ -188,7 +193,7 @@ openGauss实现了多版本索引 UBtree ，是专用于 Ustore 的 Btree 索引
 
 **图 6**  UBtree结构<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574613"></a>  
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/UBTREEStructe.png" height="400px" style="margin:auto;max-width: 100%;">
+    <img src="figures/UBTREEStructe.png" alt="多版本索引示意图" height="400px" style="margin:auto;max-width: 100%;">
 </div>
 
 ##### 索引页面组织
@@ -197,7 +202,7 @@ openGauss实现了多版本索引 UBtree ，是专用于 Ustore 的 Btree 索引
 
 **图 7**  UBtree叶子页面结构<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574713"></a>  
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/ubtreeTreePage.png" style="margin:auto;max-width: 100%;">
+    <img src="figures/ubtreeTreePage.png" alt="索引页面组织示意图" style="margin:auto;max-width: 100%;">
 </div>
 
 与Astore堆页面中维护版本信息的方法类似，UBtree 的叶子节点中每个索引元组尾部都附加了对应的 xmin 和 xmax。索引只是用于加速搜索的结构，本身不与历史版本的概念强相关，仅通过xmin 来标识这个索引元组是从什么时候开始有效的，又是从什么时候被删除的，而不是像astore中堆元组一样会有指向旧版本元组的指针。
@@ -219,7 +224,7 @@ openGauss实现了多版本索引 UBtree ，是专用于 Ustore 的 Btree 索引
 **图 8**  Scan操作<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574813"></a>
 
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/ScanOperator.png" height="600px" style="margin:auto;max-width: 100%;">
+    <img src="figures/ScanOperator.png" alt="索引操作示意图" height="600px" style="margin:auto;max-width: 100%;">
 </div>
 
 - **Insert操作**：UBtree的插入逻辑基本不变，只需增加索引插入时直接获取事务信息填写xmin字段。
@@ -228,7 +233,7 @@ openGauss实现了多版本索引 UBtree ，是专用于 Ustore 的 Btree 索引
 
 **图 9**  update 操作<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574913"></a>  
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/update.png" height="600px" style="margin:auto;max-width: 100%;">
+    <img src="figures/update.png" alt="索引操作示意图" height="600px" style="margin:auto;max-width: 100%;">
 </div>
 
 在非索引列更新的情况下，索引不发生任何变化，index tuple 仍指向第一次插入的 data tuple，Uheap 不会插入新的 data tuple，而是修改当下 data tuple 并将历史数据存入Undo中。

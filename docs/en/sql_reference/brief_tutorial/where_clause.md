@@ -1,3 +1,8 @@
+---
+description: This document describes WHERE Clause in openGauss, covering topics such as Syntax, Parameter Description.
+keywords: [openGauss, WHERE Clause, SQL, Syntax, Parameter Description]
+---
+
 # WHERE Clause<a name="EN-US_TOPIC_0000001225663811"></a>
 
 When you need to query data from a table based on specified conditions, you can add a  **WHERE**  clause to the SELECT statement to filter out unnecessary data. The  **WHERE**  clause forms an expression for row selection and is used to obtain data based on specified conditions. Values in the table are returned only when the specified conditions are met.

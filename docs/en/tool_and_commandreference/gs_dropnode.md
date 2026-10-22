@@ -1,3 +1,8 @@
+---
+description: This document describes gs\_dropnode in openGauss, covering topics such as Background, Precautions.
+keywords: [openGauss, gs\_dropnode, tools and commands, Background, Precautions]
+---
+
 # gs\_dropnode<a name="EN-US_TOPIC_0293898578"></a>
 
 ## Background<a name="section1015619218480"></a>

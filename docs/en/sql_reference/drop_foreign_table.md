@@ -1,3 +1,8 @@
+---
+description: This document describes DROP FOREIGN TABLE in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, DROP FOREIGN TABLE, SQL, Function, Precautions]
+---
+
 # DROP FOREIGN TABLE<a name="EN-US_TOPIC_0289899895"></a>
 
 ## Function<a name="en-us_topic_0283137169_section57611418144918"></a>

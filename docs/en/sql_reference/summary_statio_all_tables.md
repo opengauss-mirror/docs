@@ -1,3 +1,8 @@
+---
+description: This document describes SUMMARY\_STATIO\_ALL\_TABLES in openGauss.
+keywords: [openGauss, SUMMARY\_STATIO\_ALL\_TABLES, SQL]
+---
+
 # SUMMARY\_STATIO\_ALL\_TABLES<a name="EN-US_TOPIC_0245374792"></a>
 
 **SUMMARY\_STATIO\_ALL\_TABLES**  contains I/O statistics about each table \(including TOAST tables\) in databases in openGauss. 

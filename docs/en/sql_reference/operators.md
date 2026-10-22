@@ -1,3 +1,8 @@
+---
+description: This document describes Operators in openGauss, covering topics such as Operator Type Resolution, Examples.
+keywords: [openGauss, Operators, SQL, Operator Type Resolution, Examples]
+---
+
 # Operators<a name="EN-US_TOPIC_0289900672"></a>
 
 ## Operator Type Resolution<a name="en-us_topic_0283137550_en-us_topic_0237122008_en-us_topic_0059778242_seea12beab1954749bad838953810aa71"></a>

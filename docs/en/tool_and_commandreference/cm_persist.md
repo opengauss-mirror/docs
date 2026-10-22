@@ -1,3 +1,8 @@
+---
+description: This document describes cm\_persist in openGauss, covering topics such as Function, Prerequisites.
+keywords: [openGauss, cm\_persist, tools and commands, Function, Prerequisites]
+---
+
 # cm\_persist<a name="EN-US_TOPIC_0000001322542352"></a>
 
 ## Function<a name="section125419154813"></a>

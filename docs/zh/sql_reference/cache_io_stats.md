@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Cache IO Stats 的相关内容，涵盖 User table IO activity ordered by heap blks hit ratio、User index IO activity ordered by idx blks hit ratio 等内容。
+keywords: [openGauss, Cache IO Stats, SQL参考, User table IO activity ordered by heap blks hit ratio, User index IO activity ordered by idx blks hit ratio]
+---
+
 # Cache IO Stats
 
 Cache IO Stats包含User table和User index两张表，列名称及描述如下所示。

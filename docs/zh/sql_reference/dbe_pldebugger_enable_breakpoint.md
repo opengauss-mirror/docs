@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss DBE\_PLDEBUGGER.enable\_breakpoint 的相关内容与操作方法。
+keywords: [openGauss, DBE\_PLDEBUGGER.enable\_breakpoint, SQL参考]
+---
+
 # DBE\_PLDEBUGGER.enable\_breakpoint
 
 debug端调试过程中，调用enable\_breakpoint激活已被禁用的断点。

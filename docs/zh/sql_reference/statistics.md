@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss STATISTICS 的相关内容与操作方法。
+keywords: [openGauss, STATISTICS, SQL参考]
+---
+
 # STATISTICS <a name="ZH-CN_TOPIC_0310260671"></a>
 
 存储索引相关的信息。

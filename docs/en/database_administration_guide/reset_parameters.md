@@ -1,3 +1,8 @@
+---
+description: This document describes Resetting Parameters in openGauss, covering topics such as Background, Setting GUC Parameters.
+keywords: [openGauss, Resetting Parameters, database administration, Background, Setting GUC Parameters]
+---
+
 # Resetting Parameters<a name="EN-US_TOPIC_0289899927"></a>
 
 ## Background<a name="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_s75c9285916664351b9c3e31f0735ea98"></a>

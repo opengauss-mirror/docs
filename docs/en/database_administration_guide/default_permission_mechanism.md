@@ -1,3 +1,8 @@
+---
+description: This document describes Default Permission Mechanism in openGauss.
+keywords: [openGauss, Default Permission Mechanism, database administration]
+---
+
 # Default Permission Mechanism<a name="EN-US_TOPIC_0289899957"></a>
 
 A user who creates an object is the owner of this object. By default,  [Separation of Duties](separation_of_duties.md)  is disabled after database installation. A database system administrator has the same permissions as object owners. After an object is created, only the object owner or system administrator can query, modify, and delete the object, and grant permissions for the object to other users through  [GRANT](../sql_reference/grant.md)  by default.

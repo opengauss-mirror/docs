@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss Wait Events 的相关内容与操作方法。
+keywords: [openGauss, Wait Events, SQL参考]
+---
+
 # Wait Events
 
 Wait Events列名称及描述如下表所示。

@@ -1,3 +1,8 @@
+---
+description: This document describes MySQL Migration Tool gs\_rep\_portal in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, MySQL Migration Tool gs\_rep\_portal, features, Availability, Introduction]
+---
+
 # MySQL Migration Tool gs\_rep\_portal<a name="EN-US_TOPIC_0000001264707837"></a>
 
 ## Availability<a name="section56086982"></a>

@@ -1,3 +1,8 @@
+---
+description: This document describes SQL by pass in openGauss, covering topics such as Availability, Introduction.
+keywords: [openGauss, SQL by pass, features, Availability, Introduction]
+---
+
 # SQL by pass<a name="EN-US_TOPIC_0000001088566334"></a>
 
 ## Availability<a name="section5309649"></a>

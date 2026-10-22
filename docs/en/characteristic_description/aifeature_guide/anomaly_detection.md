@@ -1,3 +1,8 @@
+---
+description: This document describes Anomaly Detection in openGauss, covering topics such as Overview, Usage Guide.
+keywords: [openGauss, Anomaly Detection, features, Overview, Usage Guide]
+---
+
 # Anomaly Detection<a name="EN-US_TOPIC_0000001364416149"></a>
 
 ## Overview<a name="EN-US_TOPIC_0000001311416516"></a>

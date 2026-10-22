@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss GLOBAL\_WAIT\_EVENTS 的相关内容与操作方法。
+keywords: [openGauss, GLOBAL\_WAIT\_EVENTS, SQL参考]
+---
+
 # GLOBAL\_WAIT\_EVENTS
 
 GLOBAL\_WAIT\_EVENTS视图显示各节点的event的等待相关的统计信息。

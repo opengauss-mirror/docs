@@ -1,3 +1,8 @@
+---
+description: This document describes SET Type in openGauss, covering topics such as Specifications, Precautions.
+keywords: [openGauss, SET Type, SQL, Specifications, Precautions]
+---
+
 # SET Type<a name="EN-US_TOPIC_0000001370104697"></a>
 
 The SET type is a collection type that contains string members and is defined when a table column is created.

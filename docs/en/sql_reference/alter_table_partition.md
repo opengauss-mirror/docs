@@ -1,3 +1,8 @@
+---
+description: This document describes ALTER TABLE PARTITION in openGauss, covering topics such as Function, Precautions.
+keywords: [openGauss, ALTER TABLE PARTITION, SQL, Function, Precautions]
+---
+
 # ALTER TABLE PARTITION<a name="EN-US_TOPIC_0289900688"></a>
 
 ## Function<a name="en-us_topic_0283137443_en-us_topic_0237122077_en-us_topic_0059778761_s4954d450a2e8434aa3abac355bac38e6"></a>

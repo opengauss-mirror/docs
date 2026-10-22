@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 条件表达式函数 的相关内容，涵盖 条件表达式函数 等内容。
+keywords: [openGauss, 条件表达式函数, SQL参考]
+---
+
 # 条件表达式函数
 
 ## 条件表达式函数<a name="zh-cn_topic_0283136903_zh-cn_topic_0237121986_zh-cn_topic_0059778809_s67706c61c09047c4bca384689f7f5c08"></a>

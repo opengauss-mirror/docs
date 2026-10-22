@@ -1,3 +1,8 @@
+---
+description: This document describes Example: Logical Replication Code in openGauss.
+keywords: [openGauss, Example: Logical Replication Code, development]
+---
+
 # Example: Logical Replication Code<a name="EN-US_TOPIC_0289900901"></a>
 
 The following example demonstrates how to use the logical replication function through the JDBC API.

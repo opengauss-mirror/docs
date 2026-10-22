@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_TIMEZONE\_NAMES in openGauss.
+keywords: [openGauss, PG\_TIMEZONE\_NAMES, database reference]
+---
+
 # PG\_TIMEZONE\_NAMES<a name="EN-US_TOPIC_0289900200"></a>
 
 **PG\_TIMEZONE\_NAMES**  provides all time zone names that can be recognized by  **SET TIMEZONE**, along with their abbreviations, UTC offsets, and daylight saving time \(DST\) statuses.

@@ -1,3 +1,8 @@
+---
+description: 本文介绍 openGauss 设置统一审计策略 的相关内容，涵盖 背景信息、操作步骤 等内容。
+keywords: [openGauss, 设置统一审计策略, 数据库管理, 背景信息, 操作步骤]
+---
+
 # 设置统一审计策略<a name="ZH-CN_TOPIC_0000001664414974"></a>
 
 ## 背景信息<a name="section69135713151"></a>

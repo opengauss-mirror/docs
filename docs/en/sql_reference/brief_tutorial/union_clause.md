@@ -1,3 +1,8 @@
+---
+description: This document describes UNION Clause in openGauss, covering topics such as Syntax, Examples.
+keywords: [openGauss, UNION Clause, SQL, Syntax, Examples]
+---
+
 # UNION Clause<a name="EN-US_TOPIC_0000001180258710"></a>
 
 The  **UNION**  clause computes the set union of the rows returned by the involved SELECT statements. The SELECT statement inside the  **UNION**  clause must have the same number of columns, and the values of the columns must have similar data types. In addition, the sequence of columns in each SELECT statement must be the same.

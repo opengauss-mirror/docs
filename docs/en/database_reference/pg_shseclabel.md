@@ -1,3 +1,8 @@
+---
+description: This document describes PG\_SHSECLABEL in openGauss.
+keywords: [openGauss, PG\_SHSECLABEL, database reference]
+---
+
 # PG\_SHSECLABEL<a name="EN-US_TOPIC_0289900523"></a>
 
 **PG\_SHSECLABEL**  records security labels on shared database objects. Security labels can be manipulated with the  **SECURITY LABEL**  command.

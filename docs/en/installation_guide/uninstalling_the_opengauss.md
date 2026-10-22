@@ -1,3 +1,8 @@
+---
+description: This document describes Uninstalling the openGauss in openGauss, covering topics such as Executing Uninstallation, Deleting Cluster Configurations.
+keywords: [openGauss, Uninstalling the openGauss, installation, Executing Uninstallation, Deleting Cluster Configurations]
+---
+
 # Uninstalling the openGauss<a name="EN-US_TOPIC_0249784556"></a>
 
 The process of uninstalling the openGauss includes uninstalling the openGauss and clearing the environment of the openGauss server.

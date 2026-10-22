@@ -1,3 +1,8 @@
+---
+description: This document describes GLOBAL\_STATEMENT\_COMPLEX\_HISTORY in openGauss.
+keywords: [openGauss, GLOBAL\_STATEMENT\_COMPLEX\_HISTORY, SQL]
+---
+
 # GLOBAL\_STATEMENT\_COMPLEX\_HISTORY<a name="EN-US_TOPIC_0245374763"></a>
 
 **GLOBAL\_STATEMENT\_COMPLEX\_HISTORY**  displays load management records after jobs are executed on each node. 
