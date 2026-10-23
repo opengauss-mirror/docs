@@ -1,6 +1,6 @@
 ---
 description: This document describes UWAL Parameters in openGauss, covering topics such as replconninfo\{N\}, enable_uwal.
-keywords: [openGauss, UWAL Parameters, database reference, replconninfo\{N\}, enable_uwal]
+keywords: [openGauss, UWAL Parameters, database reference, 'replconninfo\{N\}', enable_uwal]
 ---
 
 # UWAL Parameters<a name="EN-US_TOPIC_0000001371524841"></a>
