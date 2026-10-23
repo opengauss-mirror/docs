@@ -1,6 +1,6 @@
 ---
-description: This document describes Anomaly_analysis: Multi_Metric Correlation Analysis in openGauss, covering topics such as Overview, Usage Guide.
-keywords: [openGauss, Anomaly_analysis: Multi_Metric Correlation Analysis, features, Overview, Usage Guide]
+description: "This document describes Anomaly_analysis: Multi_Metric Correlation Analysis in openGauss, covering topics such as Overview, Usage Guide."
+keywords: [openGauss, "Anomaly_analysis: Multi_Metric Correlation Analysis", features, Overview, Usage Guide]
 ---
 
 # Anomaly_analysis: Multi_Metric Correlation Analysis<a name="EN-US_TOPIC_0000001195431216"></a>

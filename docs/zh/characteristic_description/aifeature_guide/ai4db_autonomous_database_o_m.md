@@ -1,6 +1,6 @@
 ---
-description: 本文介绍 openGauss AI4DB: 数据库自治运维 的相关内容与操作方法。
-keywords: [openGauss, AI4DB: 数据库自治运维, 特性描述]
+description: "本文介绍 openGauss AI4DB: 数据库自治运维 的相关内容与操作方法。"
+keywords: [openGauss, "AI4DB: 数据库自治运维", 特性描述]
 ---
 
 # AI4DB: 数据库自治运维
