@@ -61,7 +61,7 @@ keywords: [openGauss, 创建XML配置文件, 安装指南, 配置数据库名称
     <!-- uwal文件大小 -->
     <PARAM name="uwal_disk_size" value="8589934592"/>
     <!-- uwal日志路径 -->
-    <PARAM name="uwal_log_path" value="'/home/omm/data/log/omm/omm/pg_log'"/>
+    <PARAM name="uwal_log_path" value="/home/omm/data/log/omm/omm/pg_log"/>
     <!-- uwal压缩开关 -->
     <PARAM name="uwal_rpc_compression_switch" value="false"/>
     <!-- uwal流控开关 -->
@@ -71,7 +71,7 @@ keywords: [openGauss, 创建XML配置文件, 安装指南, 配置数据库名称
     <!-- uwal异步写开关 -->
     <PARAM name="uwal_async_append_switch" value="false"/>
     <!-- uwal挂载路径 -->
-    <PARAM name="uwal_devices_path" value="'/home/omm/data/dn'"/>
+    <PARAM name="uwal_devices_path" value="/home/omm/data/dn"/>
 
     <!-- 启用二进制代码段大页 -->
     <PARAM name="enableHugeBin" value="on"/>
@@ -153,7 +153,7 @@ keywords: [openGauss, 创建XML配置文件, 安装指南, 配置数据库名称
 <tr id="zh-cn_topic_0283136466_row13251729125910"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63389166101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63389166101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63389166101039"></a>tmpMppdbPath</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136466_p79071485351"><a name="zh-cn_topic_0283136466_p79071485351"></a><a name="zh-cn_topic_0283136466_p79071485351"></a>数据库临时文件存放目录。</p>
-<p id="zh-cn_topic_0283136466_p29071084358"><a name="zh-cn_topic_0283136466_p29071084358"></a><a name="zh-cn_topic_0283136466_p29071084358"></a>若不配置tmpMppdbPath，默认存放在/opt/huawei/wisequery/安装用户名_mppdb目录下，其中"opt/huawei/wisequery"是默认指定的数据库系统工具目录，数据库安装时unix_socket_directory默认配置使用了该路径。</p>
+<p id="zh-cn_topic_0283136466_p29071084358"><a name="zh-cn_topic_0283136466_p29071084358"></a><a name="zh-cn_topic_0283136466_p29071084358"></a>若不配置tmpMppdbPath，默认存放在/opt/huawei/wisequery/安装用户名_mppdb目录下，其中"/opt/huawei/wisequery"是默认指定的数据库系统工具目录，数据库安装时unix_socket_directory默认配置使用了该路径。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136466_row123267298592"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p2890619101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p2890619101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p2890619101039"></a>gaussdbToolPath</p>

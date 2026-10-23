@@ -16,7 +16,8 @@ Installing openGauss on Ubuntu 20.04
 ```shell
 omm@sdr-0007:~$ uname -a
 Linux sdr-0007 5.4.0-190-generic #210-Ubuntu SMP Fri Jul 5 17:03:38 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
-omm@sdr-0007:~$ cat /etc/os-release NAME="Ubuntu"
+omm@sdr-0007:~$ cat /etc/os-release 
+NAME="Ubuntu"
 VERSION="20.04.6 LTS (Focal Fossa)"
 ID=ubuntu ID_LIKE=debian
 PRETTY_NAME="Ubuntu 20.04.6 LTS"
@@ -30,14 +31,14 @@ To use the above openGauss image, you need to choose openEuler 20.03.
 
     ```shell
     unlink /bin/sh
-    In -s /bin/bash /bin/sh
+    ln -s /bin/bash /bin/sh
     ```
 
 2. Install the dependencies required by the database. Additionally, a soft link for the readline.so.7 version needs to be created. (Whether this step is necessary depends on the specific situation. If readline.so.7 cannot be found, execute the following commands.)
 
     ```shell
-    apt install libreadline-dev libaio-devel
-    In -s /usr/lib/x86_64-linux-gnu/libreadline.so.8 /usr/lib/x86_64-linux-gnu/libreadline.so.7
+    apt install libreadline-dev libaio-dev
+    ln -s /usr/lib/x86_64-linux-gnu/libreadline.so.8 /usr/lib/x86_64-linux-gnu/libreadline.so.7
     ```
 
 3. Create user groups and users, modify `.bashrc`, and comment out the `case..esac` block.

@@ -114,7 +114,7 @@ keywords: [openGauss, 准备软硬件安装环境, 安装指南, 软硬件环境
                                     name="note222515135376"></a><span class="notetitle"> 说明： </span>
                                 <div class="notebody">
                                     <p id="p1225613103712"><a name="p1225613103712"></a><a
-                                            name="p1225613103712"></a>1、当前安装包只能在英文操作系统上安装使用；2、OM工具已经支持对基于openEuler/Centos等商业操作系统的安装使用，具体配置信息可以查看OM中的osid.conf文件。
+                                            name="p1225613103712"></a>1、当前安装包只能在英文操作系统上安装使用；2、OM工具已经支持对基于openEuler/CentOS等商业操作系统的安装使用，具体配置信息可以查看OM中的osid.conf文件。
                                     </p>
                                 </div>
                             </div>
@@ -259,63 +259,9 @@ yum install libaio-devel readline-devel expect libedit-devel libxml2-devel lz4-d
 
 >[!WARNING]注意 
 >
->以下动作需要以root用户进行操作，操作完成后请及时注销root用户，避免误操作。
+>以下动作需要以root用户进行操作，操作完成后请及时退出root用户，避免误操作。
 
-### 关闭操作系统防火墙
-
-为了在防火墙开启的状态下，确保openGauss的正常使用。用户需要将同openGauss相关的服务、协议、IP以及端口添加到openGauss各主机的防火墙白名单中。
-
-以openEuler操作系统为例，假设openGauss信息如[表4](#zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_table4312170510523)所示。
-
-**表 4**  openGauss信息
-
-<a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_table4312170510523"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_row3906252510523"><th class="cellrowborder" valign="top" width="19.36%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p2242248110523"><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p2242248110523"></a><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p2242248110523"></a>主机名称</p>
-</th>
-<th class="cellrowborder" valign="top" width="30.64%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p43549248144742"><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p43549248144742"></a><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p43549248144742"></a>内部IP</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p428167710523"><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p428167710523"></a><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p428167710523"></a>外部IP</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_row3853509710523"><td class="cellrowborder" valign="top" width="19.36%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p3433512010523"><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p3433512010523"></a><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p3433512010523"></a>plat1</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.64%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p37828238144742"><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p37828238144742"></a><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p37828238144742"></a>192.168.0.11</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p2968135610523"><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p2968135610523"></a><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p2968135610523"></a>10.10.0.11</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_row6580562010523"><td class="cellrowborder" valign="top" width="19.36%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p2865497810523"><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p2865497810523"></a><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p2865497810523"></a>plat2</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.64%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p44188448144742"><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p44188448144742"></a><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p44188448144742"></a>192.168.0.12</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p40149025111953"><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p40149025111953"></a><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p40149025111953"></a>10.10.0.12</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_row1862231610523"><td class="cellrowborder" valign="top" width="19.36%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p3201261810523"><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p3201261810523"></a><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p3201261810523"></a>plat3</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.64%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p22494559144742"><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p22494559144742"></a><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p22494559144742"></a>192.168.0.13</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p4288526910523"><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p4288526910523"></a><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p4288526910523"></a>10.10.0.13</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_row45383578144959"><td class="cellrowborder" valign="top" width="19.36%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p5799022144959"><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p5799022144959"></a><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p5799022144959"></a>plat4</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.64%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p67067662144959"><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p67067662144959"></a><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p67067662144959"></a>192.168.0.14</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p63771559144959"><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p63771559144959"></a><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p63771559144959"></a>10.10.0.14</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_row8271151181015"><td class="cellrowborder" valign="top" width="19.36%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p65983533181015"><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p65983533181015"></a><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p65983533181015"></a>管理网络</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.64%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p43065967181015"><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p43065967181015"></a><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p43065967181015"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p65791326181015"><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p65791326181015"></a><a name="zh-cn_topic_0241802566_zh-cn_topic_0085434636_zh-cn_topic_0059782018_p65791326181015"></a>10.10.64.236</p>
-</td>
-</tr>
-</tbody>
-</table>
-
+### 关闭操作系统防火墙和SELINUX
 **操作步骤**
 
 目前仅支持在防火墙关闭的状态下进行安装。
@@ -374,7 +320,7 @@ cp /usr/share/zoneinfo/$地区/$时区 /etc/localtime
 ```
 
 >[!NOTE]说明  
->`\$地区/$时区`为需要设置时区的信息，例如：Asia_Shanghai。
+>`/$地区/$时区`为需要设置时区的信息，例如：Asia/Shanghai。
 
 使用date -s命令将各主机的时间设置为统一时间，举例如下。
 
@@ -502,7 +448,7 @@ source /etc/profile
 
 >[!NOTE]说明 
 >
->数据库需要root互信时才开启远程连接。在各主机操作完成并且验证完毕后请及时注销root用户，避免误操作。
+>数据库需要root互信时才开启远程连接。在各主机操作完成并且验证完毕后请及时退出root用户，避免误操作。
 
 1. 修改PermitRootLogin配置，允许用户远程登录。
 
