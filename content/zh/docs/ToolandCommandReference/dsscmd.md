@@ -290,7 +290,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd find <-p path> <-n name> [-U UDS:socket_domain]
     ```
 
--   创建软连接
+-   创建软链接
 
     ```
     dsscmd ln <-s src_path> <-t target_path> [-U UDS:socket_domain]
@@ -304,7 +304,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd readlink <-p path> [-U UDS:socket_domain]
     ```
 
--   取消软连接
+-   取消软链接
 
     ```
     dsscmd unlink <-p path> [-U UDS:socket_domain]

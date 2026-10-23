@@ -233,7 +233,7 @@
 
 8.  <a name="li1840654753618"></a>对数据进行分盘。
 
-    在性能测试过程中，为了增加IO的吞吐量，需要将数据分散到不同的存储介质上。由于机器上有4块NVME盘，可以将数据分散到不同的盘上。将pg\_xlog、tablespace2、tablespace3这三个目录放置在其他3个NVME盘上，并在原有的位置给出指向真实位置的软连接。pg\_xlog位于数据库目录下，tablespace2、tablespace3分别位于数据库目录pg\_location下。对tablespace2分盘的命令如下:
+    在性能测试过程中，为了增加IO的吞吐量，需要将数据分散到不同的存储介质上。由于机器上有4块NVME盘，可以将数据分散到不同的盘上。将pg\_xlog、tablespace2、tablespace3这三个目录放置在其他3个NVME盘上，并在原有的位置给出指向真实位置的软链接。pg\_xlog位于数据库目录下，tablespace2、tablespace3分别位于数据库目录pg\_location下。对tablespace2分盘的命令如下:
 
     ```
     mv $DATA_DIR/pg_location/tablespace2 $TABSPACE2_DIR/tablespace2 
