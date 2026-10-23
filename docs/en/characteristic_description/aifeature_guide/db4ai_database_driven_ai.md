@@ -1,6 +1,6 @@
 ---
-description: This document describes DB4AI: Database-driven AI in openGauss.
-keywords: [openGauss, DB4AI: Database-driven AI, features]
+description: "This document describes DB4AI: Database-driven AI in openGauss."
+keywords: [openGauss, "DB4AI: Database-driven AI", features]
 ---
 
 # DB4AI: Database-driven AI<a name="EN-US_TOPIC_0000001198803406"></a>
