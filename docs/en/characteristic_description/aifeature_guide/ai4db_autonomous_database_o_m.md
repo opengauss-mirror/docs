@@ -1,6 +1,6 @@
 ---
-description: “This document describes AI4DB: Autonomous Database O&M in openGauss, covering topics such as Environment Setup.”
-keywords: [openGauss, AI4DB: Autonomous Database O&M, features, Environment Setup]
+description: "This document describes AI4DB: Autonomous Database O&M in openGauss, covering topics such as Environment Setup."
+keywords: [openGauss, "AI4DB: Autonomous Database O&M", features, Environment Setup]
 ---
 
 # AI4DB: Autonomous Database O&M<a name="EN-US_TOPIC_0000001243723307"></a>

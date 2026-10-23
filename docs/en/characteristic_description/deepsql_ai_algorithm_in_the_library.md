@@ -1,6 +1,6 @@
 ---
-description: This document describes DeepSQL: AI Algorithm in the Library in openGauss, covering topics such as Availability, Introduction.
-keywords: [openGauss, DeepSQL: AI Algorithm in the Library, features, Availability, Introduction]
+description: "This document describes DeepSQL: AI Algorithm in the Library in openGauss, covering topics such as Availability, Introduction."
+keywords: [openGauss, "DeepSQL: AI Algorithm in the Library", features, Availability, Introduction]
 ---
 
 # DeepSQL: AI Algorithm in the Library<a name="EN-US_TOPIC_0000001138595127"></a>

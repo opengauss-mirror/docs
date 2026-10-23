@@ -1,6 +1,6 @@
 ---
-description: This document describes Slow Query Diagnosis: Root Cause Analysis for Slow SQL State in openGauss, covering topics such as Overview, Environment Deployment.
-keywords: [openGauss, Slow Query Diagnosis: Root Cause Analysis for Slow SQL State, features, Overview, Environment Deployment]
+description: "This document describes Slow Query Diagnosis: Root Cause Analysis for Slow SQL State in openGauss, covering topics such as Overview, Environment Deployment."
+keywords: [openGauss, "Slow Query Diagnosis: Root Cause Analysis for Slow SQL State", features, Overview, Environment Deployment]
 ---
 
 # Slow Query Diagnosis: Root Cause Analysis for Slow SQL Statements<a name="EN-US_TOPIC_0000001240824997"></a>

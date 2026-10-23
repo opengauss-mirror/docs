@@ -1,6 +1,6 @@
 ---
-description: This document describes Example: JDBC Primary/Standby Cluster Load Balancing in openGauss, covering topics such as JDBC Load Balancing Functions, JDBC Quick Load Balancing Functions when Cluster Status Changes.
-keywords: [openGauss, Example: JDBC Primary/Standby Cluster Load Balancing, development, JDBC Load Balancing Functions, JDBC Quick Load Balancing Functions when Cluster Status Changes]
+description: "This document describes Example: JDBC Primary/Standby Cluster Load Balancing in openGauss, covering topics such as JDBC Load Balancing Functions, JDBC Quick Load Balancing Functions when Cluster Status Changes."
+keywords: [openGauss, "Example: JDBC Primary/Standby Cluster Load Balancing", development, JDBC Load Balancing Functions, JDBC Quick Load Balancing Functions when Cluster Status Changes]
 ---
 
 # Example: JDBC Primary/Standby Cluster Load Balancing<a name="EN-US_TOPIC_0000001151910145"></a>

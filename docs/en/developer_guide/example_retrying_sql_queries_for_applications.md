@@ -1,6 +1,6 @@
 ---
-description: This document describes Example: Retrying SQL Queries for Applications in openGauss.
-keywords: [openGauss, Example: Retrying SQL Queries for Applications, development]
+description: "This document describes Example: Retrying SQL Queries for Applications in openGauss."
+keywords: [openGauss, "Example: Retrying SQL Queries for Applications", development]
 ---
 
 # Example: Retrying SQL Queries for Applications<a name="EN-US_TOPIC_0289900303"></a>

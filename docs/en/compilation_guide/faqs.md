@@ -1,6 +1,6 @@
 ---
-description: This document describes FAQs in openGauss, covering topics such as How Do I Delete Temporary Files Generated During Compilation?, How Do I Resolve the "Configure error: C compiler cannot create executables" Error?.
-keywords: [openGauss, FAQs, compilation, How Do I Delete Temporary Files Generated During Compilation?, How Do I Resolve the "Configure error: C compiler cannot create executables" Error?]
+description: "This document describes FAQs in openGauss, covering topics such as How Do I Delete Temporary Files Generated During Compilation?, How Do I Resolve the \"Configure error: C compiler cannot create executables\" Error?."
+keywords: [openGauss, FAQs, compilation, How Do I Delete Temporary Files Generated During Compilation?, "How Do I Resolve the \"Configure error: C compiler cannot create executables\" Error?"]
 ---
 
 # FAQs<a name="EN-US_TOPIC_0241496990"></a>

@@ -1,6 +1,6 @@
 ---
-description: This document describes X-Tuner: Parameter Tuning and Diagnosis in openGauss, covering topics such as Overview, Preparations.
-keywords: [openGauss, X-Tuner: Parameter Tuning and Diagnosis, features, Overview, Preparations]
+description: "This document describes X-Tuner: Parameter Tuning and Diagnosis in openGauss, covering topics such as Overview, Preparations."
+keywords: [openGauss, "X-Tuner: Parameter Tuning and Diagnosis", features, Overview, Preparations]
 ---
 
 # X-Tuner: Parameter Tuning and Diagnosis<a name="EN-US_TOPIC_0289899994"></a>
