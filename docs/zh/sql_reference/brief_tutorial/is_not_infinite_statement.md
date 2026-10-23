@@ -1,6 +1,6 @@
 ---
 description: 本文介绍 openGauss IS [NOT] INFINITE 的相关内容，涵盖 IS INFINITE、IS NOT INFINITE 等内容。
-keywords: [openGauss, IS [NOT] INFINITE, SQL参考, IS INFINITE, IS NOT INFINITE]
+keywords: [openGauss, "IS [NOT] INFINITE", SQL参考, IS INFINITE, IS NOT INFINITE]
 ---
 
 # IS [NOT] INFINITE<a name="ZH-CN_TOPIC_0000001210141894"></a>
