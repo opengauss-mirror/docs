@@ -1,6 +1,6 @@
 ---
-description: This document describes Index-advisor: Index Recommendation in openGauss, covering topics such as Availability, Introduction.
-keywords: [openGauss, Index-advisor: Index Recommendation, features, Availability, Introduction]
+description: "This document describes Index-advisor: Index Recommendation in openGauss, covering topics such as Availability, Introduction."
+keywords: [openGauss, "Index-advisor: Index Recommendation", features, Availability, Introduction]
 ---
 
 # Index-advisor: Index Recommendation<a name="EN-US_TOPIC_0000001091732976"></a>

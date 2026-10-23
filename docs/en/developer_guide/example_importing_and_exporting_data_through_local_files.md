@@ -1,6 +1,6 @@
 ---
-description: This document describes Example: Importing and Exporting Data Through Local Files in openGauss.
-keywords: [openGauss, Example: Importing and Exporting Data Through Local Files, development]
+description: "This document describes Example: Importing and Exporting Data Through Local Files in openGauss."
+keywords: [openGauss, "Example: Importing and Exporting Data Through Local Files", development]
 ---
 
 # Example: Importing and Exporting Data Through Local Files<a name="EN-US_TOPIC_0289900308"></a>

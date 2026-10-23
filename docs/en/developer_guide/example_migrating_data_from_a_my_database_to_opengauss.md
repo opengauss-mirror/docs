@@ -1,6 +1,6 @@
 ---
-description: This document describes Example: Migrating Data from a MY Database to openGauss in openGauss.
-keywords: [openGauss, Example: Migrating Data from a MY Database to openGauss, development]
+description: "This document describes Example: Migrating Data from a MY Database to openGauss in openGauss."
+keywords: [openGauss, "Example: Migrating Data from a MY Database to openGauss", development]
 ---
 
 # Example: Migrating Data from a MY Database to openGauss<a name="EN-US_TOPIC_0244721230"></a>

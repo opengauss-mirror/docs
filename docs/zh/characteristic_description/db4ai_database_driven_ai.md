@@ -1,6 +1,6 @@
 ---
-description: 本文介绍 openGauss DB4AI: 数据库驱动AI 的相关内容，涵盖 可获得性、特性简介 等内容。
-keywords: [openGauss, DB4AI: 数据库驱动AI, 特性描述, 可获得性, 特性简介]
+description: "本文介绍 openGauss DB4AI: 数据库驱动AI 的相关内容，涵盖 可获得性、特性简介 等内容。"
+keywords: [openGauss, "DB4AI: 数据库驱动AI", 特性描述, 可获得性, 特性简介]
 ---
 
 # DB4AI: 数据库驱动AI

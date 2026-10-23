@@ -1,6 +1,6 @@
 ---
-description: This document describes SQLdiag: Slow SQL Discovery in openGauss, covering topics such as Overview, Usage Guide.
-keywords: [openGauss, SQLdiag: Slow SQL Discovery, features, Overview, Usage Guide]
+description: "This document describes SQLdiag: Slow SQL Discovery in openGauss, covering topics such as Overview, Usage Guide."
+keywords: [openGauss, "SQLdiag: Slow SQL Discovery", features, Overview, Usage Guide]
 ---
 
 # SQLdiag: Slow SQL Discovery<a name="EN-US_TOPIC_0289900849"></a>

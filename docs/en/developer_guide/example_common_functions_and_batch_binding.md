@@ -1,6 +1,6 @@
 ---
-description: This document describes Example: Common Functions and Batch Binding in openGauss, covering topics such as Code for Common Functions, Code for Batch Processing.
-keywords: [openGauss, Example: Common Functions and Batch Binding, development, Code for Common Functions, Code for Batch Processing]
+description: "This document describes Example: Common Functions and Batch Binding in openGauss, covering topics such as Code for Common Functions, Code for Batch Processing."
+keywords: [openGauss, "Example: Common Functions and Batch Binding", development, Code for Common Functions, Code for Batch Processing]
 ---
 
 # Example: Common Functions and Batch Binding<a name="EN-US_TOPIC_0289900122"></a>

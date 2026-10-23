@@ -1,6 +1,6 @@
 ---
-description: This document describes Examples: Common Operations in openGauss, covering topics such as Example 1:, Example 2: High Client Memory Usage.
-keywords: [openGauss, Examples: Common Operations, development, Example 1:, Example 2: High Client Memory Usage]
+description: "This document describes Examples: Common Operations in openGauss, covering topics such as Example 1:, Example 2: High Client Memory Usage."
+keywords: [openGauss, "Examples: Common Operations", development, "Example 1:", "Example 2: High Client Memory Usage"]
 ---
 
 # Examples: Common Operations<a name="EN-US_TOPIC_0289899917"></a>
