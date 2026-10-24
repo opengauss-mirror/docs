@@ -22,7 +22,7 @@ Host Network列名称及描述如下表所示。
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p2_2"><a name="p2_2"></a><a name="p2_2"></a>网卡接口名称。</p>
 </td>
 </tr>
-<tr id="row3"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p3_1"><a name="p3_1"></a><a name="p3_1"></a>Ip Address</p>
+<tr id="row3"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p3_1"><a name="p3_1"></a><a name="p3_1"></a>IP Address</p>
 </td>
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p3_2"><a name="p3_2"></a><a name="p3_2"></a>网卡IP地址。</p>
 </td>
@@ -127,17 +127,17 @@ Host Network列名称及描述如下表所示。
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p23_2"><a name="p23_2"></a><a name="p23_2"></a>每秒发送的数据包数。</p>
 </td>
 </tr>
-<tr id="row24"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p24_1"><a name="p24_1"></a><a name="p24_1"></a>Rx Errs/s</p>
+<tr id="row24"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p24_1"><a name="p24_1"></a><a name="p24_1"></a>Rx Err/s</p>
 </td>
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p24_2"><a name="p24_2"></a><a name="p24_2"></a>每秒接收错误数。</p>
 </td>
 </tr>
-<tr id="row25"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p25_1"><a name="p25_1"></a><a name="p25_1"></a>Rx Drops/s</p>
+<tr id="row25"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p25_1"><a name="p25_1"></a><a name="p25_1"></a>Rx Drop/s</p>
 </td>
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p25_2"><a name="p25_2"></a><a name="p25_2"></a>每秒接收丢包数。</p>
 </td>
 </tr>
-<tr id="row26"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p26_1"><a name="p26_1"></a><a name="p26_1"></a>Tx Carrier Errs</p>
+<tr id="row26"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p26_1"><a name="p26_1"></a><a name="p26_1"></a>Tx Carrier Err/s</p>
 </td>
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p26_2"><a name="p26_2"></a><a name="p26_2"></a>每秒发送载波错误数。</p>
 </td>

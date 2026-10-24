@@ -41,6 +41,36 @@ openGauss数据库WDR报表主要内容如下表所示。
 <td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul6732512112017"></a><a name="ul6732512112017"></a><ul id="ul6732512112017"><li>主机CPU消耗。</li><li>节点范围报表，仅node模式下可查看此报表。</li></ul>
 </td>
 </tr>
+<tr id="row1017324095016"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p1163118164017"><a name="p1163118164017"></a><a name="p1163118164017"></a><a href="host_memory.md">Host Memory</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul1163118164017"></a><a name="ul1163118164017"></a><ul id="ul1163118164017"><li>主机内存使用情况。</li><li>节点范围报表，仅node模式下可查看此报表。</li></ul>
+</td>
+</tr>
+<tr id="row102081253120520"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p162352531355"><a name="p162352531355"></a><a name="p162352531355"></a><a href="host_disk_io.md">Host Disk IO</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul162352531355"></a><a name="ul162352531355"></a><ul id="ul162352531355"><li>主机磁盘IO使用情况。</li><li>节点范围报表，仅node模式下可查看此报表。</li></ul>
+</td>
+</tr>
+<tr id="row7860118451519"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p1864013451219"><a name="p1864013451219"></a><a name="p1864013451219"></a><a href="host_network.md">Host Network</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul1864013451219"></a><a name="ul1864013451219"></a><ul id="ul1864013451219"><li>主机网络使用情况。</li><li>节点范围报表，仅node模式下可查看此报表。</li></ul>
+</td>
+</tr>
+<tr id="row123371930201517"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p16376173062011"><a name="p16376173062011"></a><a name="p16376173062011"></a><a href="key_active_stats.md">Key Active</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul16376173062011"></a><a name="ul16376173062011"></a><ul id="ul16376173062011"><li>关键活动统计信息：Buffer（缓冲）、Transaction（事务）、Executor（执行器）、Lock（锁）、SMGR（存储管理）、WAL（重做日志）等类别活动。</li><li>节点范围报表，仅node模式下可查看此报表。</li></ul>
+</td>
+</tr>
+<tr id="row1444119451218"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p944119451218"><a name="p944119451218"></a><a name="p944119451218"></a><a href="instance_io_multidim_stats.md">Instance IO</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul944119451218"></a><a name="ul944119451218"></a><ul id="ul944119451218"><li>实例IO多维度统计：线程类型、文件类型、数据库、表空间、数据库对象类型、数据库对象路径等维度的IO指标。</li><li>节点范围报表，仅node模式下可查看此报表。</li></ul>
+</td>
+</tr>
+<tr id="row684313201319"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p1684313201319"><a name="p1684313201319"></a><a name="p1684313201319"></a><a href="lock_active_stats.md">Lock Active</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul1684313201319"></a><a name="ul1684313201319"></a><ul id="ul1684313201319"><li>锁活动统计信息：LWLock（轻量级锁）和Lock（常规锁）分别按总等待时间、请求次数排序的Top 10。</li><li>节点范围报表，仅node模式下可查看此报表。</li></ul>
+</td>
+</tr>
 <tr id="row17551185391511"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p1315310231485"><a name="p1315310231485"></a><a name="p1315310231485"></a><a href="io_profile.md">IO Profile</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul101821751121920"></a><a name="ul101821751121920"></a><ul id="ul101821751121920"><li>数据库或者节点维度的IO的使用情况。</li><li>数据库、节点范围报表，cluster模式和node模式下均可查看此报表。</li></ul>
@@ -105,6 +135,18 @@ openGauss数据库WDR报表主要内容如下表所示。
 - **[Wait Classes by Total Wait Time](wait_classes_by_total_wait_time.md)**  
 
 - **[Host CPU](host_cpu.md)**  
+
+- **[Host Memory](host_memory.md)**  
+
+- **[Host Disk IO](host_disk_io.md)**  
+
+- **[Host Network](host_network.md)**  
+
+- **[Key Active](key_active_stats.md)**  
+
+- **[Instance IO](instance_io_multidim_stats.md)**  
+
+- **[Lock Active](lock_active_stats.md)**  
 
 - **[IO Profile](io_profile.md)**  
 
