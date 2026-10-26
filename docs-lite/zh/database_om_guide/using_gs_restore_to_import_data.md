@@ -79,7 +79,7 @@ gs\_restore工具在导入时，允许用户选择需要导入的内容，并支
     </tr>
     <tr id="zh-cn_topic_0283137171_zh-cn_topic_0237121137_row057817297550"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137171_zh-cn_topic_0237121137_p1557922912557"><a name="zh-cn_topic_0283137171_zh-cn_topic_0237121137_p1557922912557"></a><a name="zh-cn_topic_0283137171_zh-cn_topic_0237121137_p1557922912557"></a>-c</p>
     </td>
-    <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137171_zh-cn_topic_0237121137_p1762611020568"><a name="zh-cn_topic_0283137171_zh-cn_topic_0237121137_p1762611020568"></a><a name="zh-cn_topic_0283137171_zh-cn_topic_0237121137_p1762611020568"></a>在重新创建数据库对象前，清理（删除）已存在于将要导入的数据库中的数据库对象。</p>
+    <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137171_zh-cn_topic_0237121137_p1762611020568"><a name="zh-cn_topic_0283137171_zh-cn_topic_0237121137_p1762611020568"></a><a name="zh-cn_topic_0283137171_zh-cn_topic_0237121137_p1762611020568"></a>在重新创建数据库对象前，清理（删除）已存在于将要导入的数据库中的同名数据库对象，适用于目标库已有同名对象需先清理的场景。</p>
     </td>
     <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137171_zh-cn_topic_0237121137_p55791029105515"><a name="zh-cn_topic_0283137171_zh-cn_topic_0237121137_p55791029105515"></a><a name="zh-cn_topic_0283137171_zh-cn_topic_0237121137_p55791029105515"></a>-</p>
     </td>
