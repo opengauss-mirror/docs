@@ -65,7 +65,7 @@ gs\_dump和gs\_dumpall通过-U指定执行导出的用户帐户。如果当前�
     </td>
     <td class="cellrowborder" valign="top" width="44.16%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136762_zh-cn_topic_0237121175_p8618101717583"><a name="zh-cn_topic_0283136762_zh-cn_topic_0237121175_p8618101717583"></a><a name="zh-cn_topic_0283136762_zh-cn_topic_0237121175_p8618101717583"></a>指定导出使用的角色名。选择该选项，会使导出工具连接数据库后，发起一个SET ROLE角色名命令。当所授权用户（由-U指定）没有导出工具要求的权限时，该选项会起到作用，即切换到具备相应权限的角色。</p>
     </td>
-    <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136762_zh-cn_topic_0237121175_p66581345155917"><a name="zh-cn_topic_0283136762_zh-cn_topic_0237121175_p66581345155917"></a><a name="zh-cn_topic_0283136762_zh-cn_topic_0237121175_p66581345155917"></a>-r role1</p>
+    <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136762_zh-cn_topic_0237121175_p66581345155917"><a name="zh-cn_topic_0283136762_zh-cn_topic_0237121175_p66581345155917"></a><a name="zh-cn_topic_0283136762_zh-cn_topic_0237121175_p66581345155917"></a>--role role1</p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0283136762_zh-cn_topic_0237121175_row1899681910160"><td class="cellrowborder" valign="top" width="24.169999999999998%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136762_zh-cn_topic_0237121175_p18625164815715"><a name="zh-cn_topic_0283136762_zh-cn_topic_0237121175_p18625164815715"></a><a name="zh-cn_topic_0283136762_zh-cn_topic_0237121175_p18625164815715"></a>--rolepassword</p>
