@@ -83,7 +83,7 @@ You can specify and sort the data to import.
     </tr>
     <tr id="en-us_topic_0283137171_en-us_topic_0237121137_row057817297550"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137171_en-us_topic_0237121137_p1557922912557"><a name="en-us_topic_0283137171_en-us_topic_0237121137_p1557922912557"></a><a name="en-us_topic_0283137171_en-us_topic_0237121137_p1557922912557"></a>-c</p>
     </td>
-    <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137171_en-us_topic_0237121137_p1762611020568"><a name="en-us_topic_0283137171_en-us_topic_0237121137_p1762611020568"></a><a name="en-us_topic_0283137171_en-us_topic_0237121137_p1762611020568"></a>Cleans existing objects from the target database before the import.</p>
+    <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137171_en-us_topic_0237121137_p1762611020568"><a name="en-us_topic_0283137171_en-us_topic_0237121137_p1762611020568"></a><a name="en-us_topic_0283137171_en-us_topic_0237121137_p1762611020568"></a>Before recreating database objects, cleans (deletes) the database objects with the same names that already exist in the database to be imported into. This parameter applies to scenarios where objects with the same names already exist in the target database and need to be cleaned up first.</p>
     </td>
     <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137171_en-us_topic_0237121137_p55791029105515"><a name="en-us_topic_0283137171_en-us_topic_0237121137_p55791029105515"></a><a name="en-us_topic_0283137171_en-us_topic_0237121137_p55791029105515"></a>-</p>
     </td>
