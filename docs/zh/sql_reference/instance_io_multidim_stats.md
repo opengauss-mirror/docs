@@ -1,4 +1,3 @@
-<<<<<<< HEAD:docs/zh/sql_reference/wdr_instance_io.md
 ---
 description: 本文介绍 openGauss Instance IO 的相关内容，涵盖 Thread Type、File Type 等内容。
 keywords: [openGauss, Instance IO, SQL参考, Thread Type, File Type]
