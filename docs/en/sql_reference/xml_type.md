@@ -15,23 +15,32 @@ The XML underlying uses the same data structure as the text type for storage, wi
 
 Example:
 
-```
-openGauss= CREATE TABLE xmltest (id int, data xml); 
-openGauss= INSERT INTO xmltest VALUES (1, '<value>one</value>');
-openGauss= INSERT INTO xmltest VALUES (2, '<value>two</value>');
-openGauss= SELECT * FROM xmltest ORDER BY 1;
- id | data 
+```sql
+openGauss=# CREATE TABLE xmltest (id int, data xml);
+CREATE TABLE
+openGauss=# INSERT INTO xmltest VALUES (1, '<value>one</value>');
+INSERT 0 1
+openGauss=# INSERT INTO xmltest VALUES (2, '<value>two</value>');
+INSERT 0 1
+openGauss=# SELECT * FROM xmltest ORDER BY 1;
+ id |        data
 ----+--------------------
-1 | <value>one</value> 
-2 | <value>two</value>  
+  1 | <value>one</value>
+  2 | <value>two</value>
 (2 rows)
-openGauss= SELECT xmlconcat(xmlcomment('hello'),
-                            xmlelement(NAME qux, 'xml'),
-                            xmlcomment('world'));
-               xmlconcat                
+
+openGauss=# SELECT xmlconcat(xmlcomment('hello'), xmlelement(NAME qux, 'xml'), xmlcomment('world'));
+               xmlconcat
 ----------------------------------------
  <!--hello--><qux>xml</qux><!--world-->
 (1 row)
+
+openGauss=# SELECT xmlconcat('', NULL, '');
+ xmlconcat
+-----------
+
+(1 row)
+
 ```
 
 >[!NOTE]NOTE 
@@ -65,3 +74,132 @@ openGauss= SELECT xmlconcat(xmlcomment('hello'),
 > - The addition, deletion, modification and query of the compound type in the user-defined type when it involves the XML type, and the same as the XML field in the ordinary table, it needs to be inserted and modified according to the XML syntax.
 > - Support JDBC and ODBC to operate on XML data types, select, update, insert, delete the fields, input XML values using SQL syntax, and obtain XML values using the getSQLXML method of the ResultSet class. It supports the JDBC-related binding parameter transfer interface, the setSQLXML method in the PreparedStatement preprocessing statement interface, and the getSQLXML (int columnIndex) method in the ResultSet execution result set interface.
 > - Call process: You need to use the java.sql.SQLXML interface class to construct an XML object, then set the specified object type to Oid.XML, and then send the type ID and XML value to the server. After obtaining the returned result from the server, you first call ResultSet.getString, and then use the java.sql.SQLXML interface class to construct an XML object through the obtained character string. At this time, you will check again whether the content conforms to the XML standard format. Therefore, you can also use ResultSet. getString to directly obtain the XML string object.
+
+XMLType is a SQL data type for XML data. It is an abstract data type that provides XMLType constructors and various PL methods for XML operations. XMLType can be used in the same way as other SQL data types, for example, to create an XMLType table or view. In PL stored procedures, XMLType can be used for parameters, return values, and variables.
+
+Example:
+
+```sql
+drop table if exists test_xmltype;
+create table test_xmltype (
+    id int,
+    name varchar2(4000),
+    data xmltype
+);
+-- 插入正确xmltype
+insert into test_xmltype
+values (1,'test xml doc',
+'<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="">
+  <record>
+    <leader>-----nam0-22-----^^^450-</leader>
+    <datafield tag="200" ind1="1" ind2=" ">
+      <subfield code="a">抗震救灾</subfield>
+      <subfield code="f">奥运会</subfield>
+    </datafield>
+    <datafield tag="209" ind1=" " ind2=" ">
+      <subfield code="a">经济学</subfield>
+      <subfield code="b">计算机</subfield>
+      <subfield code="c">10001</subfield>
+      <subfield code="d">2005-07-09</subfield>
+    </datafield>
+    <datafield tag="610" ind1="0" ind2=" ">
+      <subfield code="a">计算机</subfield>
+      <subfield code="a">笔记本</subfield>
+    </datafield>
+  </record>
+</collection>');
+-- 使用createXML函数插入
+insert into test_xmltype
+values (2,'test xml doc',xmlType.createXML(
+'<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="">
+  <record>
+    <leader>-----nam0-22-----^^^450-</leader>
+    <datafield tag="200" ind1="1" ind2=" ">
+      <subfield code="a">抗震救灾</subfield>
+      <subfield code="f">奥运会</subfield>
+    </datafield>
+    <datafield tag="209" ind1=" " ind2=" ">
+      <subfield code="a">经济学</subfield>
+      <subfield code="b">计算机</subfield>
+      <subfield code="c">10001</subfield>
+      <subfield code="d">2005-07-09</subfield>
+    </datafield>
+    <datafield tag="610" ind1="0" ind2=" ">
+      <subfield code="a">计算机</subfield>
+      <subfield code="a">笔记本</subfield>
+    </datafield>
+  </record>
+</collection>'));
+-- 使用xmltype插入
+insert into test_xmltype
+values (3,'test xml doc',xmltype(
+'<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="">
+  <record>
+    <leader>-----nam0-22-----^^^450-</leader>
+    <datafield tag="209" ind1=" " ind2=" ">
+      <subfield code="a">经济学</subfield>
+      <subfield code="b">计算机</subfield>
+      <subfield code="c">10001</subfield>
+      <subfield code="d">2005-07-09</subfield>
+    </datafield>
+  </record>
+</collection>'));
+
+openGauss=# select * from test_xmltype;
+ id |     name     |                      data
+----+--------------+------------------------------------------------
+  1 | test xml doc | <collection xmlns="">                         +
+    |              |   <record>                                    +
+    |              |     <leader>-----nam0-22-----^^^450-</leader> +
+    |              |     <datafield tag="200" ind1="1" ind2=" ">   +
+    |              |       <subfield code="a">抗震救灾</subfield>  +
+    |              |       <subfield code="f">奥运会</subfield>    +
+    |              |     </datafield>                              +
+    |              |     <datafield tag="209" ind1=" " ind2=" ">   +
+    |              |       <subfield code="a">经济学</subfield>    +
+    |              |       <subfield code="b">计算机</subfield>    +
+    |              |       <subfield code="c">10001</subfield>     +
+    |              |       <subfield code="d">2005-07-09</subfield>+
+    |              |     </datafield>                              +
+    |              |     <datafield tag="610" ind1="0" ind2=" ">   +
+    |              |       <subfield code="a">计算机</subfield>    +
+    |              |       <subfield code="a">笔记本</subfield>    +
+    |              |     </datafield>                              +
+    |              |   </record>                                   +
+    |              | </collection>
+  2 | test xml doc | <collection xmlns="">                         +
+    |              |   <record>                                    +
+    |              |     <leader>-----nam0-22-----^^^450-</leader> +
+    |              |     <datafield tag="200" ind1="1" ind2=" ">   +
+    |              |       <subfield code="a">抗震救灾</subfield>  +
+    |              |       <subfield code="f">奥运会</subfield>    +
+    |              |     </datafield>                              +
+    |              |     <datafield tag="209" ind1=" " ind2=" ">   +
+    |              |       <subfield code="a">经济学</subfield>    +
+    |              |       <subfield code="b">计算机</subfield>    +
+    |              |       <subfield code="c">10001</subfield>     +
+    |              |       <subfield code="d">2005-07-09</subfield>+
+    |              |     </datafield>                              +
+    |              |     <datafield tag="610" ind1="0" ind2=" ">   +
+    |              |       <subfield code="a">计算机</subfield>    +
+    |              |       <subfield code="a">笔记本</subfield>    +
+    |              |     </datafield>                              +
+    |              |   </record>                                   +
+    |              | </collection>
+  3 | test xml doc | <collection xmlns="">                         +
+    |              |   <record>                                    +
+    |              |     <leader>-----nam0-22-----^^^450-</leader> +
+    |              |     <datafield tag="209" ind1=" " ind2=" ">   +
+    |              |       <subfield code="a">经济学</subfield>    +
+    |              |       <subfield code="b">计算机</subfield>    +
+    |              |       <subfield code="c">10001</subfield>     +
+    |              |       <subfield code="d">2005-07-09</subfield>+
+    |              |     </datafield>                              +
+    |              |   </record>                                   +
+    |              | </collection>
+(3 rows)
+
+```
