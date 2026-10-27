@@ -528,9 +528,9 @@ ss_work_thread_pool_attr = '64'
 
 该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围**：  整型，1024~1048576KB。代表从本地磁盘读取CLOG, CSNLOG文件预热的窗口上限。
+**取值范围**：  整型，0~1048576KB。代表从本地磁盘读取CLOG, CSNLOG文件预热的窗口上限。
 
-**默认值**： 10240KB
+**默认值**： 0KB
 >[!NOTE]说明
 >
 >- 参数越大，切换后热点事务命中率越高，但恢复尾段耗时也越长；参数越小，恢复更快，但冷启动爬坡更明显
