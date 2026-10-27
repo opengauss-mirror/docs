@@ -1,13 +1,9 @@
-<<<<<<< HEAD:docs/zh/sql_reference/wdr_key_active.md
 ---
-description: 本文介绍 openGauss Key Activity - Buffer 的相关内容与操作方法。
-keywords: [openGauss, Key Activity - Buffer, SQL参考]
+description: "本文介绍 openGauss Key Activity - Buffer 的相关内容与操作方法。"
+keywords: ["openGauss, Key Activity - Buffer", "SQL参考"]
 ---
 
-# Key Activity - Buffer
-=======
 # 关键活动（Key Activity）
->>>>>>> upstream/master:docs/zh/sql_reference/key_active_stats.md
 
 关键活动展示数据库运行过程中的关键活动统计信息，包括Buffer（缓冲）、Transaction（事务）、Executor（执行器）、Lock（锁）、SMGR（存储管理）、WAL（重做日志）六大类活动，帮助DBA快速定位关键活动热点。
 
