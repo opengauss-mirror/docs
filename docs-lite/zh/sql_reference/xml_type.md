@@ -5,22 +5,32 @@
 
 openGauss支持XML类型，使用示例如下。
 
-```
-openGauss= CREATE TABLE xmltest (id int, data xml); 
-openGauss= INSERT INTO xmltest VALUES (1, '<value>one</value>');
-openGauss= INSERT INTO xmltest VALUES (2, '<value>two</value>');
-openGauss= SELECT * FROM xmltest ORDER BY 1;
- id | data 
+```sql
+openGauss=# CREATE TABLE xmltest (id int, data xml);
+CREATE TABLE
+openGauss=# INSERT INTO xmltest VALUES (1, '<value>one</value>');
+INSERT 0 1
+openGauss=# INSERT INTO xmltest VALUES (2, '<value>two</value>');
+INSERT 0 1
+openGauss=# SELECT * FROM xmltest ORDER BY 1;
+ id |        data
 ----+--------------------
-1 | <value>one</value> 
-2 | <value>two</value> 
+  1 | <value>one</value>
+  2 | <value>two</value>
 (2 rows)
-openGauss= SELECT xmlconcat('', NULL, ''); 
-xmlconcat
+
+openGauss=# SELECT xmlconcat(xmlcomment('hello'), xmlelement(NAME qux, 'xml'), xmlcomment('world'));
+               xmlconcat
+----------------------------------------
+ <!--hello--><qux>xml</qux><!--world-->
 (1 row)
-openGauss= SELECT xmlconcat('', NULL, ''); 
-xmlconcat
+
+openGauss=# SELECT xmlconcat('', NULL, '');
+ xmlconcat
+-----------
+
 (1 row)
+
 ```
 
 >[!NOTE]说明
