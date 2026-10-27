@@ -276,7 +276,7 @@ java -jar openGauss-FullReplicate-7.0.0-RC3.jar --start sequence --source oracle
 | INTERVAL DAY(n) TO SECOND(m)      | INTERVAL DAY(n) TO SECOND(m)      | 当长度<=6且精度<=6时保持原类型                       |
 | INTERVAL DAY(n) TO SECOND(m)      | INTERVAL DAY(6) TO SECOND(6)      | 当长度>6或精度>6时转换为INTERVAL DAY(6) TO SECOND(6) |
 | **特殊类型**                      |                                   |                                                      |
-| XMLTYPE                           |                                   | 转换为CLOB                                           |
+| XMLTYPE                           | CLOB                               | 转换为CLOB                                           |
 | JSON                              |                                   | 不兼容，抛出异常                                     |
 | ANYDATA                           |                                   | 不兼容，抛出异常                                     |
 
