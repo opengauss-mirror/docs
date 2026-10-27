@@ -105,16 +105,6 @@ Lock Event Top 10列名称及描述如下表所示。
 <td class="cellrowborder" valign="top" width="75%" headers="mcps1.2.5.2 "><p id="p_lk_1_2"><a name="p_lk_1_2"></a><a name="p_lk_1_2"></a>常规锁名称/类型，如 relation、transactionid、tuple、virtualxid、page、advisory、object 等。</p>
 </td>
 </tr>
-<tr id="row_lk_2"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1 "><p id="p_lk_2_1"><a name="p_lk_2_1"></a><a name="p_lk_2_1"></a>Lock Mode</p>
-</td>
-<td class="cellrowborder" valign="top" width="75%" headers="mcps1.2.5.2 "><p id="p_lk_2_2"><a name="p_lk_2_2"></a><a name="p_lk_2_2"></a>锁模式，如 AccessShareLock、RowShareLock、RowExclusiveLock、ShareUpdateExclusiveLock、ShareLock、ShareRowExclusiveLock、ExclusiveLock、AccessExclusiveLock 等。</p>
-</td>
-</tr>
-<tr id="row_lk_3"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1 "><p id="p_lk_3_1"><a name="p_lk_3_1"></a><a name="p_lk_3_1"></a>Lock Object</p>
-</td>
-<td class="cellrowborder" valign="top" width="75%" headers="mcps1.2.5.2 "><p id="p_lk_3_2"><a name="p_lk_3_2"></a><a name="p_lk_3_2"></a>锁对象标识，如表名、事务 ID、元组 ID、咨询锁 key 等；无对象信息时可为空。</p>
-</td>
-</tr>
 <tr id="row_lk_4"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1 "><p id="p_lk_4_1"><a name="p_lk_4_1"></a><a name="p_lk_4_1"></a>Total Requests</p>
 </td>
 <td class="cellrowborder" valign="top" width="75%" headers="mcps1.2.5.2 "><p id="p_lk_4_2"><a name="p_lk_4_2"></a><a name="p_lk_4_2"></a>总请求次数，为四类获取结果之和：Acquired NoWait + Failed NoWait + Acquired Wait + Failed Wait。</p>

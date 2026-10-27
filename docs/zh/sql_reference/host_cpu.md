@@ -16,7 +16,7 @@ Host CPU列名称及描述如下表所示。
 </th>
 </tr>
 </thead>
-<tbody><tr id="row623125811239"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p1411821233517"><a name="p1411821233517"></a><a name="p1411821233517"></a>Cpus</p>
+<tbody><tr id="row623125811239"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p1411821233517"><a name="p1411821233517"></a><a name="p1411821233517"></a>CPUs</p>
 </td>
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p411817129357"><a name="p411817129357"></a><a name="p411817129357"></a>CPU数量。</p>
 </td>
