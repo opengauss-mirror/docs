@@ -10,23 +10,32 @@ XML底层使用和text类型一样的数据结构进行存储，最大为1GB。
 
 示例：
 
-```
-openGauss= CREATE TABLE xmltest (id int, data xml); 
-openGauss= INSERT INTO xmltest VALUES (1, '<value>one</value>');
-openGauss= INSERT INTO xmltest VALUES (2, '<value>two</value>');
-openGauss= SELECT * FROM xmltest ORDER BY 1;
- id | data 
+```sql
+openGauss=# CREATE TABLE xmltest (id int, data xml);
+CREATE TABLE
+openGauss=# INSERT INTO xmltest VALUES (1, '<value>one</value>');
+INSERT 0 1
+openGauss=# INSERT INTO xmltest VALUES (2, '<value>two</value>');
+INSERT 0 1
+openGauss=# SELECT * FROM xmltest ORDER BY 1;
+ id |        data
 ----+--------------------
-1 | <value>one</value> 
-2 | <value>two</value>  
+  1 | <value>one</value>
+  2 | <value>two</value>
 (2 rows)
-openGauss= SELECT xmlconcat(xmlcomment('hello'),
-                            xmlelement(NAME qux, 'xml'),
-                            xmlcomment('world'));
-               xmlconcat                
+
+openGauss=# SELECT xmlconcat(xmlcomment('hello'), xmlelement(NAME qux, 'xml'), xmlcomment('world'));
+               xmlconcat
 ----------------------------------------
  <!--hello--><qux>xml</qux><!--world-->
 (1 row)
+
+openGauss=# SELECT xmlconcat('', NULL, '');
+ xmlconcat
+-----------
+
+(1 row)
+
 ```
 
 >![](public_sys-resources/icon-note.png) **说明：** 
@@ -64,123 +73,126 @@ XMLType 是 XML 数据的 SQL 数据类型。它是一种抽象数据类型，�
 
 示例：
 
-```
+```sql
+drop table if exists test_xmltype;
 create table test_xmltype (
     id int,
     name varchar2(4000),
     data xmltype
 );
 -- 插入正确xmltype
-Insert INTO test_xmltype
-VALUES (1,'test xml doc','<?xml version="1.0" encoding="UTF-8" ?>
+insert into test_xmltype
+values (1,'test xml doc',
+'<?xml version="1.0" encoding="UTF-8"?>
 <collection xmlns="">
-<record>
-<leader>-----nam0-22-----^^^450-</leader>
-<datafield tag="200" ind1="1" ind2=" ">
-<subfield code="a">抗震救灾</subfield>
-<subfield code="f">奥运会</subfield>
-</datafield>
-<datafield tag="209" ind1=" " ind2=" ">
-<subfield code="a">经济学</subfield>
-<subfield code="b">计算机</subfield>
-<subfield code="c">10001</subfield>
-<subfield code="d">2005-07-09</subfield>
-</datafield>
-<datafield tag="610" ind1="0" ind2=" ">
-<subfield code="a">计算机</subfield>
-<subfield code="a">笔记本</subfield>
-</datafield>
-</record>
-</collection>') ;
+  <record>
+    <leader>-----nam0-22-----^^^450-</leader>
+    <datafield tag="200" ind1="1" ind2=" ">
+      <subfield code="a">抗震救灾</subfield>
+      <subfield code="f">奥运会</subfield>
+    </datafield>
+    <datafield tag="209" ind1=" " ind2=" ">
+      <subfield code="a">经济学</subfield>
+      <subfield code="b">计算机</subfield>
+      <subfield code="c">10001</subfield>
+      <subfield code="d">2005-07-09</subfield>
+    </datafield>
+    <datafield tag="610" ind1="0" ind2=" ">
+      <subfield code="a">计算机</subfield>
+      <subfield code="a">笔记本</subfield>
+    </datafield>
+  </record>
+</collection>');
 -- 使用createXML函数插入
-Insert INTO test_xmltype
-VALUES (2,'test xml doc',xmlType.createXML('<?xml version="1.0" encoding="UTF-8" ?>
+insert into test_xmltype
+values (2,'test xml doc',xmlType.createXML(
+'<?xml version="1.0" encoding="UTF-8"?>
 <collection xmlns="">
-<record>
-<leader>-----nam0-22-----^^^450-</leader>
-<datafield tag="200" ind1="1" ind2=" ">
-<subfield code="a">抗震救灾</subfield>
-<subfield code="f">奥运会</subfield>
-</datafield>
-<datafield tag="209" ind1=" " ind2=" ">
-<subfield code="a">经济学</subfield>
-<subfield code="b">计算机</subfield>
-<subfield code="c">10001</subfield>
-<subfield code="d">2005-07-09</subfield>
-</datafield>
-<datafield tag="610" ind1="0" ind2=" ">
-<subfield code="a">计算机</subfield>
-<subfield code="a">笔记本</subfield>
-</datafield>
-</record>
-</collection>')) ;
+  <record>
+    <leader>-----nam0-22-----^^^450-</leader>
+    <datafield tag="200" ind1="1" ind2=" ">
+      <subfield code="a">抗震救灾</subfield>
+      <subfield code="f">奥运会</subfield>
+    </datafield>
+    <datafield tag="209" ind1=" " ind2=" ">
+      <subfield code="a">经济学</subfield>
+      <subfield code="b">计算机</subfield>
+      <subfield code="c">10001</subfield>
+      <subfield code="d">2005-07-09</subfield>
+    </datafield>
+    <datafield tag="610" ind1="0" ind2=" ">
+      <subfield code="a">计算机</subfield>
+      <subfield code="a">笔记本</subfield>
+    </datafield>
+  </record>
+</collection>'));
 -- 使用xmltype插入
-Insert INTO test_xmltype
-VALUES (3,'test xml doc',xmltype('<?xml version="1.0" encoding="UTF-8" ?>
+insert into test_xmltype
+values (3,'test xml doc',xmltype(
+'<?xml version="1.0" encoding="UTF-8"?>
 <collection xmlns="">
-<record>
-<leader>-----nam0-22-----^^^450-</leader>
-<datafield tag="209" ind1=" " ind2=" ">
-<subfield code="a">经济学</subfield>
-<subfield code="b">计算机</subfield>
-<subfield code="c">10001</subfield>
-<subfield code="d">2005-07-09</subfield>
-</datafield>
-</record>
-</collection>')) ;
-select *from test_xmltype;
-id |     name     |                   data                    
-----+--------------+-------------------------------------------
-  1 | test xml doc | <collection xmlns="">                    +
-    |              | <record>                                 +
-    |              | <leader>-----nam0-22-----^^^450-</leader>+
-    |              | <datafield tag="200" ind1="1" ind2=" ">  +
-    |              | <subfield code="a">抗震救灾</subfield>   +
-    |              | <subfield code="f">奥运会</subfield>     +
-    |              | </datafield>                             +
-    |              | <datafield tag="209" ind1=" " ind2=" ">  +
-    |              | <subfield code="a">经济学</subfield>     +
-    |              | <subfield code="b">计算机</subfield>     +
-    |              | <subfield code="c">10001</subfield>      +
-    |              | <subfield code="d">2005-07-09</subfield> +
-    |              | </datafield>                             +
-    |              | <datafield tag="610" ind1="0" ind2=" ">  +
-    |              | <subfield code="a">计算机</subfield>     +
-    |              | <subfield code="a">笔记本</subfield>     +
-    |              | </datafield>                             +
-    |              | </record>                                +
+  <record>
+    <leader>-----nam0-22-----^^^450-</leader>
+    <datafield tag="209" ind1=" " ind2=" ">
+      <subfield code="a">经济学</subfield>
+      <subfield code="b">计算机</subfield>
+      <subfield code="c">10001</subfield>
+      <subfield code="d">2005-07-09</subfield>
+    </datafield>
+  </record>
+</collection>'));
+openGauss=# select * from test_xmltype;
+ id |     name     |                      data
+----+--------------+------------------------------------------------
+  1 | test xml doc | <collection xmlns="">                         +
+    |              |   <record>                                    +
+    |              |     <leader>-----nam0-22-----^^^450-</leader> +
+    |              |     <datafield tag="200" ind1="1" ind2=" ">   +
+    |              |       <subfield code="a">抗震救灾</subfield>  +
+    |              |       <subfield code="f">奥运会</subfield>    +
+    |              |     </datafield>                              +
+    |              |     <datafield tag="209" ind1=" " ind2=" ">   +
+    |              |       <subfield code="a">经济学</subfield>    +
+    |              |       <subfield code="b">计算机</subfield>    +
+    |              |       <subfield code="c">10001</subfield>     +
+    |              |       <subfield code="d">2005-07-09</subfield>+
+    |              |     </datafield>                              +
+    |              |     <datafield tag="610" ind1="0" ind2=" ">   +
+    |              |       <subfield code="a">计算机</subfield>    +
+    |              |       <subfield code="a">笔记本</subfield>    +
+    |              |     </datafield>                              +
+    |              |   </record>                                   +
     |              | </collection>
-  2 | test xml doc | <collection xmlns="">                    +
-    |              | <record>                                 +
-    |              | <leader>-----nam0-22-----^^^450-</leader>+
-    |              | <datafield tag="200" ind1="1" ind2=" ">  +
-    |              | <subfield code="a">抗震救灾</subfield>   +
-    |              | <subfield code="f">奥运会</subfield>     +
-    |              | </datafield>                             +
-    |              | <datafield tag="209" ind1=" " ind2=" ">  +
-    |              | <subfield code="a">经济学</subfield>     +
-    |              | <subfield code="b">计算机</subfield>     +
-    |              | <subfield code="c">10001</subfield>      +
-    |              | <subfield code="d">2005-07-09</subfield> +
-    |              | </datafield>                             +
-    |              | <datafield tag="610" ind1="0" ind2=" ">  +
-    |              | <subfield code="a">计算机</subfield>     +
-    |              | <subfield code="a">笔记本</subfield>     +
-    |              | </datafield>                             +
-    |              | </record>                                +
+  2 | test xml doc | <collection xmlns="">                         +
+    |              |   <record>                                    +
+    |              |     <leader>-----nam0-22-----^^^450-</leader> +
+    |              |     <datafield tag="200" ind1="1" ind2=" ">   +
+    |              |       <subfield code="a">抗震救灾</subfield>  +
+    |              |       <subfield code="f">奥运会</subfield>    +
+    |              |     </datafield>                              +
+    |              |     <datafield tag="209" ind1=" " ind2=" ">   +
+    |              |       <subfield code="a">经济学</subfield>    +
+    |              |       <subfield code="b">计算机</subfield>    +
+    |              |       <subfield code="c">10001</subfield>     +
+    |              |       <subfield code="d">2005-07-09</subfield>+
+    |              |     </datafield>                              +
+    |              |     <datafield tag="610" ind1="0" ind2=" ">   +
+    |              |       <subfield code="a">计算机</subfield>    +
+    |              |       <subfield code="a">笔记本</subfield>    +
+    |              |     </datafield>                              +
+    |              |   </record>                                   +
     |              | </collection>
-  3 | test xml doc | <collection xmlns="">                    +
-    |              | <record>                                 +
-    |              | <leader>-----nam0-22-----^^^450-</leader>+
-    |              | <datafield tag="209" ind1=" " ind2=" ">  +
-    |              | <subfield code="a">经济学</subfield>     +
-    |              | <subfield code="b">计算机</subfield>     +
-    |              | <subfield code="c">10001</subfield>      +
-    |              | <subfield code="d">2005-07-09</subfield> +
-    |              | </datafield>                             +
-    |              | </record>                                +
+  3 | test xml doc | <collection xmlns="">                         +
+    |              |   <record>                                    +
+    |              |     <leader>-----nam0-22-----^^^450-</leader> +
+    |              |     <datafield tag="209" ind1=" " ind2=" ">   +
+    |              |       <subfield code="a">经济学</subfield>    +
+    |              |       <subfield code="b">计算机</subfield>    +
+    |              |       <subfield code="c">10001</subfield>     +
+    |              |       <subfield code="d">2005-07-09</subfield>+
+    |              |     </datafield>                              +
+    |              |   </record>                                   +
     |              | </collection>
 (3 rows)
 
 ```
-
