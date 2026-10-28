@@ -205,5 +205,5 @@ sh start.sh -d [file|collect] -c assessment.properties -o report.html
   sh start.sh -d collect -c assessment.properties -o report.html
   ```
 
-  进行评估之前，用户可以手动创建好评估库，然后通过opengauss.dbname指定评估库；或者用户不指定评估库，通过提供数据库节点所在主机的操作系统用户名和密码，由工具自动创建评估库，工具自动创建评估库是通过ssh远程登陆到对应主机，并通过gsql连接到数据库节点，然后创建对应的评估库，所以使用这种方式进行评估时，用户需要保证osuser登录主机时能自动加载到数据库环境变量。当opengauss.dbname和(osuser, ospassword)同时指定时，会优先使用opengauss.dbname指定的库作为评估库。
+  进行评估之前，用户可以手动创建好评估库，然后通过opengauss.dbname指定评估库；或者用户不指定评估库，通过提供数据库节点所在主机的操作系统用户名和密码，由工具自动创建评估库，工具自动创建评估库是通过ssh远程登录到对应主机，并通过gsql连接到数据库节点，然后创建对应的评估库，所以使用这种方式进行评估时，用户需要保证osuser登录主机时能自动加载到数据库环境变量。当opengauss.dbname和(osuser, ospassword)同时指定时，会优先使用opengauss.dbname指定的库作为评估库。
 
