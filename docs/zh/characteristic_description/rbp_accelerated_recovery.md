@@ -61,4 +61,4 @@ RBP_IP=node1_rbp_ip,node0_rbp_ip
 
 ## 使用指导
 
-详细配置、检查和问题处理方法请参考[RBP加速恢复参考](https://docs.opengauss.org/zh/docs/latest/ograc/database_reference/rbp_accelerated_recovery_reference.html)。
+详细配置、检查和问题处理方法请参考[RBP加速恢复参考](https://docs.opengauss.org/zh/docs/7.0.0/ograc/database_reference/rbp_accelerated_recovery_reference.html)。

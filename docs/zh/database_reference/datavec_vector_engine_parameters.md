@@ -28,7 +28,7 @@ keywords: [openGauss, DataVec向量引擎参数, 数据库参考, hnsw_ef_search
 
 **取值范围**： 整型，1\~32768
 
-**设置建议**： `sqrt(lists)`，`list`为IVFFLAT索引构建时的入参，详情请参考[向量索引](https://docs.opengauss.org/zh/docs/latest/datavec/vector_index.html)。
+**设置建议**： `sqrt(lists)`，`list`为IVFFLAT索引构建时的入参，详情请参考[向量索引](https://docs.opengauss.org/zh/docs/7.0.0/datavec/vector_index.html)。
 
 **默认值**： 1
 

@@ -23,7 +23,7 @@ This document describes how to use the DBeaver client tool to connect to and ope
 
 2. Configure the user encryption mode.
 
-   This example uses the MD5 authentication method, which requires the database to store MD5 password digests. If the MD5 authentication method needs to be used in a controlled test environment, change the value of the system parameter [password_encryption_type](https://docs.opengauss.org/en/docs/latest/database_reference/security_and_authentication_postgresql_conf.html#password_encryption_type) to 0.
+   This example uses the MD5 authentication method, which requires the database to store MD5 password digests. If the MD5 authentication method needs to be used in a controlled test environment, change the value of the system parameter [password_encryption_type](https://docs.opengauss.org/en/docs/7.0.0/database_reference/security_and_authentication_postgresql_conf.html#password_encryption_type) to 0.
 
    ```sql
    ALTER SYSTEM SET password_encryption_type TO 0;
@@ -80,7 +80,7 @@ By default, openGauss prohibits remote connections. You need to manually configu
    gs_om -t restart
    ```
 
-For details about the configuration, see [Configuring Client Access Authentication](https://docs.opengauss.org/en/docs/latest/database_administration_guide/configuring_client_access_authentication.html).
+For details about the configuration, see [Configuring Client Access Authentication](https://docs.opengauss.org/en/docs/7.0.0/database_administration_guide/configuring_client_access_authentication.html).
 
 ## Connecting to openGauss Using DBeaver
 

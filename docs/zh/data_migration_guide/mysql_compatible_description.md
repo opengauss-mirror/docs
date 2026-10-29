@@ -5,7 +5,7 @@ keywords: [openGauss, MySQL兼容性说明, 数据迁移]
 
 # MySQL兼容性说明
 
-openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插件的说明可参考[Dolphin插件介绍](https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin.html)。在openGauss内核中实现的MySQL兼容性特性见下表。
+openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插件的说明可参考[Dolphin插件介绍](https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin.html)。在openGauss内核中实现的MySQL兼容性特性见下表。
 
 **表 1**  在openGauss内核中实现的MySQL兼容性特性列表
 
@@ -24,7 +24,7 @@ openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插�
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a>CREATE DATABASE支持IF NOT EXISTS选项</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-CREATE-DATABASE.html">CREATE DATABASE</a>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin-CREATE-DATABASE.html">CREATE DATABASE</a>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_row26793117"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a>DDL</p>
@@ -59,13 +59,13 @@ openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插�
 <td>DDL</td>
 <td>支持在创建、修改对象等语句中指定COMMENT选项</td>
 <td>
-<a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-ALTER-FUNCTION.html">ALTER FUNCTION</a>、
+<a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin-ALTER-FUNCTION.html">ALTER FUNCTION</a>、
 <a href="../sql_reference/alter_procedure.md">ALTER PROCEDURE</a>、
-<a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-ALTER-TABLE.html">ALTER TABLE</a>、
+<a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin-ALTER-TABLE.html">ALTER TABLE</a>、
 <a href="../sql_reference/create_function.md">CREATE FUNCTION</a>、
-<a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-CREATE-INDEX.html">CREATE INDEX</a>、
+<a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin-CREATE-INDEX.html">CREATE INDEX</a>、
 <a href="../sql_reference/create_procedure.md">CREATE PROCEDURE</a>、
-<a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-CREATE-TABLE.html">CREATE TABLE</a>、
+<a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin-CREATE-TABLE.html">CREATE TABLE</a>、
 <a href="../sql_reference/create_table_partition.md">CREATE TABLE PARTITION</a>、
 <a href="../sql_reference/create_table_subpartition.md">CREATE TABLE SUBPARTITION</a>
 </td>
@@ -74,29 +74,29 @@ openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插�
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"><a UNIQUEname="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a>CREATE TABLE支持创建主键、UNIQUE索引、外键约束</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-CREATE-TABLE.html">CREATE TABLE</a>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin-CREATE-TABLE.html">CREATE TABLE</a>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_row26793117"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a>DDL</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"><a UNIQUEname="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a>ALTER TABLE支持创建主键、UNIQUE索引、外键约束</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-ALTER-TABLE.html">ALTER TABLE</a>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin-ALTER-TABLE.html">ALTER TABLE</a>
 </td>
 </tr>
 <tr>
 <td>DDL</td>
 <td>支持自增列</td>
 <td>
-<a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-ALTER-TABLE.html">ALTER TABLE</a>、
-<a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-CREATE-TABLE.html">CREATE TABLE</a>
+<a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin-ALTER-TABLE.html">ALTER TABLE</a>、
+<a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin-CREATE-TABLE.html">CREATE TABLE</a>
 </td>
 </tr>
 <tr>
 <td>DDL</td>
 <td>支持前缀索引</td>
 <td>
-<a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-CREATE-INDEX.html">CREATE INDEX</a>
+<a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin-CREATE-INDEX.html">CREATE INDEX</a>
 </td>
 </tr>
 <tr>
@@ -105,22 +105,22 @@ openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插�
 <td>
 <a href="../sql_reference/alter_schema.md">ALTER SCHEMA</a>、
 <a href="../sql_reference/create_schema.md">CREATE SCHEMA</a>、
-<a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-ALTER-TABLE.html">ALTER TABLE</a>、
-<a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-CREATE-TABLE.html">CREATE TABLE</a>
+<a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin-ALTER-TABLE.html">ALTER TABLE</a>、
+<a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin-CREATE-TABLE.html">CREATE TABLE</a>
 </td>
 </tr>
 <tr>
 <td>DDL</td>
 <td>修改表时支持在表第一列前面或者在指定列后面添加列</td>
 <td>
-<a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-ALTER-TABLE.html">ALTER TABLE</a>
+<a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin-ALTER-TABLE.html">ALTER TABLE</a>
 </td>
 </tr>
 <tr>
 <td>DDL</td>
 <td>修改列名称/定义语法兼容</td>
 <td>
-<a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-ALTER-TABLE.html">ALTER TABLE</a>
+<a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin-ALTER-TABLE.html">ALTER TABLE</a>
 </td>
 </tr>
 <tr>
@@ -137,7 +137,7 @@ openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插�
 <td>DDL</td>
 <td>创建分区表语法兼容</td>
 <td>
-<a href="https://docs.opengauss.org/zh/docs/latest/sql_reference/create_table_partition.html">CREATE TABLE PARTITION</a>、
+<a href="https://docs.opengauss.org/zh/docs/7.0.0/sql_reference/create_table_partition.html">CREATE TABLE PARTITION</a>、
 <a href="../sql_reference/create_table_subpartition.md">CREATE TABLE SUBPARTITION</a>
 </td>
 </tr>
@@ -166,28 +166,28 @@ openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插�
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a>INSERT VALUES的右值表达式支持字段引用</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-INSERT.html">INSERT</a>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin-INSERT.html">INSERT</a>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_row26793117"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a>DML</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"><a UPDATEname="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a>UPDATE支持从多个表中更新数据</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-UPDATE.html">UPDATE</a>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin-UPDATE.html">UPDATE</a>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_row26793117"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a>DML</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"><a UPDATEname="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a>UPDATE支持ORDER BY和LIMIT</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-UPDATE.html">UPDATE</a>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin-UPDATE.html">UPDATE</a>
 </td>
 </tr>
 <tr>
 <td>DML</td>
 <td>SELECT INTO语法兼容</td>
 <td>
-<a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-SELECT.html">SELECT</a>
+<a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin-SELECT.html">SELECT</a>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_row26793117"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a>DCL</p>
@@ -215,7 +215,7 @@ openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插�
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a>支持NVARCHAR类型</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin_character_types.html">字符类型</a>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin_character_types.html">字符类型</a>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_row26793117"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a>数据类型</p>
@@ -264,7 +264,7 @@ openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插�
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a>支持字符处理函数sha/sha1/sha2</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin_character_processing_functions_and_operators.html">字符处理函数和操作符</a>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin_character_processing_functions_and_operators.html">字符处理函数和操作符</a>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_row26793117"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a>控制语句</p>
@@ -278,14 +278,14 @@ openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插�
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a>支持create table as语法中定义表字段属性</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-CREATE-TABLE-AS.html">CREATE TABLE AS</a>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin-CREATE-TABLE-AS.html">CREATE TABLE AS</a>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_row26793117"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a>优化器hint</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p31526653"></a>支持force|use|ignore index语法指定扫描表使用的索引</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/latest/performance_tuning_guide/index_hints.html">INDEX_HINTS</a>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/zh/docs/7.0.0/performance_tuning_guide/index_hints.html">INDEX_HINTS</a>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_row26793117"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a>声明语法</p>

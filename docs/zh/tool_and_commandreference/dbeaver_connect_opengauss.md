@@ -23,7 +23,7 @@ keywords: [openGauss, DBeaver 连接 openGauss 数据库操作指南, 工具与�
 
 2. 配置用户加密方式
 
-   本示例采用 MD5 认证方式，要求数据库存储 MD5 密码摘要。如在受控测试环境中确实需要使用 MD5 认证方式，可修改系统参数 [password_encryption_type](https://docs.opengauss.org/zh/docs/latest/database_reference/security_and_authentication_postgresql_conf.html#password_encryption_type) 值为 0。
+   本示例采用 MD5 认证方式，要求数据库存储 MD5 密码摘要。如在受控测试环境中确实需要使用 MD5 认证方式，可修改系统参数 [password_encryption_type](https://docs.opengauss.org/zh/docs/7.0.0/database_reference/security_and_authentication_postgresql_conf.html#password_encryption_type) 值为 0。
 
    ```sql
    ALTER SYSTEM SET password_encryption_type TO 0;
@@ -80,7 +80,7 @@ openGauss 默认禁止远程连接，需手动配置客户端接入认证后方�
    gs_om -t restart
    ```
 
-如需了解更多配置细节，请参阅 [配置客户端接入认证](https://docs.opengauss.org/zh/docs/latest/database_administration_guide/configuring_client_access_authentication.html)。
+如需了解更多配置细节，请参阅 [配置客户端接入认证](https://docs.opengauss.org/zh/docs/7.0.0/database_administration_guide/configuring_client_access_authentication.html)。
 
 ## 使用 DBeaver 连接 openGauss
 

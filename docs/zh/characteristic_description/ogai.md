@@ -35,7 +35,7 @@ OGAI 提供以下核心能力：
 - **混合搜索（Hybrid Search）**：结合向量检索与 BM25 全文检索
 - **RAG 问答**：端到端的检索增强生成问答
 
-详细的系统表、系统函数及使用指导请参考 [OGAI 使用指南](https://docs.opengauss.org/zh/docs/latest/datavec/ogai_usage_guide.html)。
+详细的系统表、系统函数及使用指导请参考 [OGAI 使用指南](https://docs.opengauss.org/zh/docs/7.0.0/datavec/ogai_usage_guide.html)。
 
 ## 特性增强
 
@@ -59,4 +59,4 @@ OGAI 特性规格约束如下：
 
 ## 依赖关系
 
-[向量数据库特性](https://docs.opengauss.org/zh/docs/latest/datavec/datavec_overview.html)
+[向量数据库特性](https://docs.opengauss.org/zh/docs/7.0.0/datavec/datavec_overview.html)

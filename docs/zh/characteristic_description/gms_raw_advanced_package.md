@@ -11,7 +11,7 @@ keywords: [openGauss, gms_raw插件, 特性描述, 可获得性, 特性简介]
 
 ## 特性简介
 
-[gms_raw插件](https://docs.opengauss.org/zh/docs/latest/extension_reference/extension_reference/server/gms_raw.html)用于对十六进制raw类型数据进行转换和操作。
+[gms_raw插件](https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/extension_reference/server/gms_raw.html)用于对十六进制raw类型数据进行转换和操作。
 
 ## 客户价值
 

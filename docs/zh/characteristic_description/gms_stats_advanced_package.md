@@ -9,7 +9,7 @@ keywords: [openGauss, gms_stats高级包, 特性描述, 可获得性, 特性简�
 
 本特性自openGauss 6.0.0 版本开始引入。
 
-本特性于openGauss 7.0.0-RC1 版本进行增强，新增31个接口，详情参考[gms_stats概述](https://docs.opengauss.org/zh/docs/latest/extension_reference/extension_reference/server/gms_stats.html).
+本特性于openGauss 7.0.0-RC1 版本进行增强，新增31个接口，详情参考[gms_stats概述](https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/extension_reference/server/gms_stats.html).
 
 ## 特性简介<a name="section47786844"></a>
 
@@ -27,7 +27,7 @@ gms_stats高级包是一个基于openGauss的插件，用于良好地估计统�
 
 在本地插件的基础上增加了gms_stats高级包的插件。
 
-在openGauss 7.0.0-RC1 版本中，新增31个接口，详情参考[gms_stats概述](https://docs.opengauss.org/zh/docs/latest/extension_reference/extension_reference/server/gms_stats.html).
+在openGauss 7.0.0-RC1 版本中，新增31个接口，详情参考[gms_stats概述](https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/extension_reference/server/gms_stats.html).
 
 ## 特性约束<a name="section06531946143616"></a>
 

@@ -11,7 +11,7 @@ keywords: [openGauss, GMS_INADDR工具包, 特性描述, 可获得性, 特性简
 
 ## 特性简介
 
-特性主要用来实现[GMS_INADDR高级包](https://docs.opengauss.org/zh/docs/latest/extension_reference/extension_reference/server/gms_inaddr.html)，用于实现多个ip主机名转换相关的函数接口供用户使用。
+特性主要用来实现[GMS_INADDR高级包](https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/extension_reference/server/gms_inaddr.html)，用于实现多个ip主机名转换相关的函数接口供用户使用。
 
 ## 客户价值
 

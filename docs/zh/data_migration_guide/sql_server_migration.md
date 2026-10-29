@@ -33,7 +33,7 @@ openGauss-FullReplicate是一个用Java编写的SQLServer到openGauss的离线�
 
 ### 安装方法
 
-安装包下载地址：<https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/openGauss-FullReplicate-7.0.0.tar.gz>
+安装包下载地址：<https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/tools/openGauss-FullReplicate-7.0.0.tar.gz>
 其中7.0.0表示当前版本号。
 下载完成后，解压压缩包
 

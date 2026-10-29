@@ -34,13 +34,13 @@ openGauss的编译过程和生成安装包的过程已经写成了一个一键�
    >- branchname：代码分支名称，缺省可不填，如需编译openGauss 2.1.0的代码，可加上-b 2.1.0的参数。
    >- binarylibs：存放编译构建好的开源第三方软件的文件夹，用户可通过[开源软件编译构建](#开源软件编译构建)获取。由于开源软件编译构建耗时长，我们特地使用openGauss-third\_party编译构建出了一份binarylibs并压缩上传，用户可以直接下载获取。  
    > 社区提供五个操作系统编译好的二进制文件。对应下载地址：\
-      **openEuler20.03_arm:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/binarylibs/gcc10.3/openGauss-third_party_binarylibs_openEuler_arm.tar.gz> \
-      **openEuler20.03_x86:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/binarylibs/gcc10.3/openGauss-third_party_binarylibs_openEuler_x86_64.tar.gz> \
-      **Centos_x86:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/binarylibs/gcc10.3/openGauss-third_party_binarylibs_Centos7.6_x86_64.tar.gz> \
-      **openEuler22.03_arm:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/binarylibs/gcc10.3/openGauss-third_party_binarylibs_openEuler_2203_arm.tar.gz> \
-      **openEuler22.03_x86:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/binarylibs/gcc10.3/openGauss-third_party_binarylibs_openEuler_2203_x86_64.tar.gz> \
-      **openEuler24.03_arm:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/binarylibs/gcc10.3/openGauss-third_party_binarylibs_openEuler_2403_arm.tar.gz> \
-      **openEuler24.03_x86:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/binarylibs/gcc10.3/openGauss-third_party_binarylibs_openEuler_2403_x86_64.tar.gz>
+      **openEuler20.03_arm:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/binarylibs/gcc10.3/openGauss-third_party_binarylibs_openEuler_arm.tar.gz> \
+      **openEuler20.03_x86:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/binarylibs/gcc10.3/openGauss-third_party_binarylibs_openEuler_x86_64.tar.gz> \
+      **Centos_x86:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/binarylibs/gcc10.3/openGauss-third_party_binarylibs_Centos7.6_x86_64.tar.gz> \
+      **openEuler22.03_arm:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/binarylibs/gcc10.3/openGauss-third_party_binarylibs_openEuler_2203_arm.tar.gz> \
+      **openEuler22.03_x86:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/binarylibs/gcc10.3/openGauss-third_party_binarylibs_openEuler_2203_x86_64.tar.gz> \
+      **openEuler24.03_arm:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/binarylibs/gcc10.3/openGauss-third_party_binarylibs_openEuler_2403_arm.tar.gz> \
+      **openEuler24.03_x86:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/binarylibs/gcc10.3/openGauss-third_party_binarylibs_openEuler_2403_x86_64.tar.gz>
    >- 建议下载完毕后执行解压并重命名 mv openGauss-third_party_binarylibs binarylibs。
 
 2. 下载项进度均显示为100%时表示下载成功。

@@ -61,11 +61,11 @@ keywords: [openGauss, Oracle 迁移 oGRAC 工具介绍, 数据迁移, 目的, �
 
 ### 安装包下载
 
-安装包下载地址：https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/openGauss-FullReplicate-7.0.0-RC3.tar.gz
+安装包下载地址：https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/tools/openGauss-FullReplicate-7.0.0-RC3.tar.gz
 其中7.0.0-RC3表示当前版本号。
 
 ```bash
-wget https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/openGauss-FullReplicate-7.0.0-RC3.tar.gz
+wget https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/tools/openGauss-FullReplicate-7.0.0-RC3.tar.gz
 ```
 
 ### 安装包解压

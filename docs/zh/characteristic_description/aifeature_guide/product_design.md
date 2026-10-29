@@ -68,11 +68,11 @@ exporter是用来采集数据库等指标信息的组件，DBMind自研的export
 gs_dbmind component reprocessing_exporter 127.0.0.1 9090 --web.listen-address 127.0.0.1 --web.listen-port 8181 --ssl-certfile /path/to/cert --ssl-keyfile /path/to/keyfile --ssl-ca-file /path/to/ca
 ```
 
-如果用户配置了SSL协议的CA证书，则会使用双向认证的形式，在Prometheus采集侧也应进行对应的证书文件配置，配置详情可以通过[Prometheus官方网站](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#tls_config)获取详情。
+如果用户配置了SSL协议的CA证书，则会使用双向认证的形式，在Prometheus采集侧也应进行对应的证书文件配置，配置详情可以通过[Prometheus官方网站](https://prometheus.io/docs/prometheus/7.0.0/configuration/configuration/#tls_config)获取详情。
 
 ### 获取时序数据过程的安全加固<a name="section13702193818172"></a>
 
-DBMind Service也可以从Prometheus中获取时序数据，该通道也可以使用SSL协议进行加固。Prometheus默认是支持使用HTTPS协议的，关于Prometheus配置HTTPS协议的方式，可以参考[Prometheus的官方网站](https://prometheus.io/docs/prometheus/latest/configuration/https/)。
+DBMind Service也可以从Prometheus中获取时序数据，该通道也可以使用SSL协议进行加固。Prometheus默认是支持使用HTTPS协议的，关于Prometheus配置HTTPS协议的方式，可以参考[Prometheus的官方网站](https://prometheus.io/docs/prometheus/7.0.0/configuration/https/)。
 
 在DBMind侧生成的配置文件目录中，手动修改dbmind.conf文件，配置其关于Prometheus数据采集的部分，设置该过程使用安全协议。例如：
 
