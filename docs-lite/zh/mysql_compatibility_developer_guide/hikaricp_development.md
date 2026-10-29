@@ -754,6 +754,6 @@ spring:
 1. 对于连接用户的权限管理，可参考 [GRANT](https://docs.opengauss.org/zh/docs/latest/sql_reference/grant.html) 使用教程。初次调试时建议赋予连接用户 SYSADMIN 权限，避免因权限问题频繁报错。
 2. 连接串中 `maxLifetime` 必须小于 openGauss 服务端的连接/会话超时（openGauss 默认 `session_timeout` 为 600000ms/10 分钟），否则可能取到被服务端关闭的失效连接。
 3. 使用 MySQL native 密码且服务端启用 `caching_sha2_password` 时，建议在连接串追加 `allowPublicKeyRetrieval=true`。
-4. 对于 JDBC 连接串中连接参数的支持情况，请参考 [JDBC 常用连接参数的兼容表现](https://docs.opengauss.org/zh/docs/latest-lite/extension_reference/dolphin_mysql_protocol_compatibility.html#jdbc%E5%B8%B8%E7%94%A8%E8%BF%9E%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E5%85%BC%E5%AE%B9%E8%A1%A8%E7%8E%B0)。
+4. 对于 JDBC 连接串中连接参数的支持情况，请参考 [JDBC 常用连接参数的兼容表现](https://docs.opengauss.org/zh/docs/latest-lite/extension_reference/extension_reference/plugin/dolphin_mysql_protocol_compatibility.html#user-content-jdbc%E5%B8%B8%E7%94%A8%E8%BF%9E%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E5%85%BC%E5%AE%B9%E8%A1%A8%E7%8E%B0)。
 5. 应用关闭时应调用 `HikariDataSource.close()` 释放连接池资源，避免连接泄漏。
 6. 历史兼容性提示：事务隔离级别探测。早期 dolphin 版本 6.0.0-RC1 及更早，在 MySQL JDBC 驱动经 HikariCP 连接时，因对 MySQL 系统变量 `@@session.transaction_isolation` 返回无法映射的隔离级别字面量 `'default'`，会导致 HikariCP 抛出 `Default transaction isolation level detection failed` 而建连失败。该问题属于 dolphin 插件（`opengauss/Plugin` 仓）对 MySQL 系统变量兼容实现的演进，已在 openGauss 7.0.0-RC3 中修复，对应 dolphin 5.2 版本。若使用更早版本，可在连接串追加 `sessionVariables=transaction_isolation='READ-COMMITTED'` 规避。详细根因与 dolphin 修复定位参见 `examples` 仓 `OpengaussCompatibility2hikari/README.md`。
