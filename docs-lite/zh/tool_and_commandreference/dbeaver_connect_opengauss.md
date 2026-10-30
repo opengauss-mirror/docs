@@ -18,7 +18,7 @@
 
 2. 配置用户加密方式
 
-   修改系统参数 [password_encryption_type](https://docs.opengauss.org/zh/docs/latest/database_reference/security_and_authentication_postgresql_conf.html#password_encryption_type) 值，使数据库采用md5加密方式。
+   修改系统参数 [password_encryption_type](https://docs.opengauss.org/zh/docs/7.0.0-lite/database_reference/security_and_authentication_postgresql_conf.html#password_encryption_type) 值，使数据库采用md5加密方式。
 
    ```sql
    ALTER SYSTEM SET password_encryption_type TO 0;
@@ -69,7 +69,7 @@ openGauss 默认禁止远程连接，需手动配置客户端接入认证后方�
    gs_om -t restart
    ```
 
-如需了解更多配置细节，请参阅 [配置客户端接入认证](https://docs.opengauss.org/zh/docs/latest/database_administration_guide/configuring_client_access_authentication.html)。
+如需了解更多配置细节，请参阅 [配置客户端接入认证](https://docs.opengauss.org/zh/docs/7.0.0-lite/database_administration_guide/configuring_client_access_authentication.html)。
 
 ## 使用 DBeaver 连接 openGauss
 

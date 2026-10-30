@@ -4,7 +4,7 @@
 
 本特性自openGauss 6.0.0 版本开始引入。
 
-本特性于openGauss 7.0.0-RC1 版本进行增强，新增31个接口，详情参考[gms_stats概述](https://docs.opengauss.org/zh/docs/latest-lite/extension_reference/extension_reference/server/gms_stats.html).
+本特性于openGauss 7.0.0-RC1 版本进行增强，新增31个接口，详情参考[gms_stats概述](https://docs.opengauss.org/zh/docs/7.0.0-lite/extension_reference/extension_reference/server/gms_stats.html).
 
 ## 特性简介<a name="section47786844"></a>
 
@@ -18,7 +18,7 @@
 
 gms_stats高级包是一个基于openGauss的插件，用于良好地估计统计数据（尤其是针对较大的分区表），并能获得更好的统计结果，最终制定出速度更快的SQL执行计划。目前支持的接口有：GATHER_SCHEMA_STATS（用于收集某个schema下对象的统计信息）。
 
-在openGauss 7.0.0-RC1 版本中，新增31个接口，详情参考[gms_stats概述](https://docs.opengauss.org/zh/docs/latest-lite/extension_reference/extension_reference/server/gms_stats.html).
+在openGauss 7.0.0-RC1 版本中，新增31个接口，详情参考[gms_stats概述](https://docs.opengauss.org/zh/docs/7.0.0-lite/extension_reference/extension_reference/server/gms_stats.html).
 
 ## 特性增强<a name="section7109043"></a>
 

@@ -748,7 +748,7 @@ cm_ctl res --edit --res_name="VIP_az3" --add_inst="node_id=7,res_instance_id=600
 
 4. 信息接收地址说明。  
    信息接收地址示例：<http://ip:port/CMRestAPI> ,
-   CMRestAPI使用PUT方法，推送主机信息context为MasterInfo，即链接为<http://ip:port/CMRestAPI/MasterInfo，> 发送对象类型为String，主机信息格式为ip:port，推送备机context为StanbyInfo，发送对象类型为String，备机信息格式为ip1:port1,ip2:port2,...,ipn:portn，一个应用端的demo参见CMRestAPI仓库中的applicationdemo，<https://gitcode.com/opengauss/CM-RestAPI/tree/master/applicationdemo/src/main/java/com/application/applicationdemo。>
+   CMRestAPI使用PUT方法，推送主机信息context为MasterInfo，即链接为<http://ip:port/CMRestAPI/MasterInfo，> 发送对象类型为String，主机信息格式为ip:port，推送备机context为StanbyInfo，发送对象类型为String，备机信息格式为ip1:port1,ip2:port2,...,ipn:portn，一个应用端的demo参见CMRestAPI仓库中的applicationdemo，<https://gitcode.com/opengauss/CM-RestAPI/tree/master/applicationdemo/src/main/java/com/application/applicationdemo>。
 
 5. 新增oGRecorder场景下接口。
 
@@ -815,7 +815,7 @@ curl -s --cacert $GAUSSHOME/share/sslcert/restapi/cacert.pem --cert $GAUSSHOME/s
 ```
 
    (2) stopRestApi为POST类型接口。
-   (3) oGRecorder场景下，可以通过脚本和oGRecorder一起部署。参考链接[部署流程](https://docs.opengauss.org/zh/docs/latest/tool_and_commandreference/ogrecorder/black_box_deployment_introduction.html#数据保险柜部署介绍)
+   (3) oGRecorder场景下，可以通过脚本和oGRecorder一起部署。参考链接[部署流程](https://docs.opengauss.org/zh/docs/7.0.0/tool_and_commandreference/ogrecorder/ogrecorder_deployment_guide.html#部署流程)
 
 **操作步骤说明：**  
 

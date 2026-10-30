@@ -72,7 +72,7 @@ host     all     dbuser     standby_ip/32     trust
 
 ## 依赖关系<a name="section8406643144716"></a>
 
-[向量化引擎](https://docs.opengauss.org/zh/docs/latest/performance_tuning_guide/vectorized_engine.html)
+[向量化引擎](https://docs.opengauss.org/zh/docs/7.0.0/performance_tuning_guide/vectorized_engine.html)
 
 ## 使用指导<a name="section20491151513592"></a>
 

@@ -1,0 +1,6 @@
+label: Extension Reference
+isManual: true
+sections:
+  - href:
+      upstream: https://gitcode.com/opengauss/openGauss-server/blob/7.0.0/docs-lite/en/extension_reference/_toc.yaml
+      path: ./extension_reference/server

@@ -42,28 +42,28 @@ keywords: [openGauss, MySQL-compatible Kernel Description, data migration]
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p31526653"><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p31526653"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p31526653"></a>ALTER VIEW supports the DEFINER option.</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/en/docs/latest/extension_reference/dolphin-alter-view.html">ALTER VIEW</a>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/en/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin-alter-view.html">ALTER VIEW</a>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_row26793117"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a>DDL</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p31526653"><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p31526653"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p31526653"></a>CREATE VIEW supports the DEFINER option.</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/en/docs/latest/extension_reference/dolphin-create-view.html">CREATE VIEW</a>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/en/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin-create-view.html">CREATE VIEW</a>
 </td>
 </tr>
 <tr>
 <td>DDL</td>
 <td>The COMMENT option can be specified in the statements for creating and modifying objects.</td>
 <td>
-<a href="https://docs.opengauss.org/en/docs/latest/extension_reference/dolphin-alter-function.html">ALTER FUNCTION</a>,
-<a href="https://docs.opengauss.org/en/docs/latest/extension_reference/dolphin-alter-procedure.html">ALTER PROCEDURE</a>,
-<a href="https://docs.opengauss.org/en/docs/latest/extension_reference/dolphin-alter-table.html">ALTER TABLE</a>,
-<a href="https://docs.opengauss.org/en/docs/latest/extension_reference/dolphin-create-function.html">CREATE FUNCTION</a>,
-<a href="https://docs.opengauss.org/en/docs/latest/extension_reference/dolphin-create-index.html">CREATE INDEX</a>,
-<a href="https://docs.opengauss.org/en/docs/latest/extension_reference/dolphin-create-procedure.html">CREATE PROCEDURE</a>,
-<a href="https://docs.opengauss.org/en/docs/latest/extension_reference/dolphin-create-table.html">CREATE TABLE</a>,
-<a href="https://docs.opengauss.org/en/docs/latest/extension_reference/dolphin-create-table-partition.html">CREATE TABLE PARTITION</a>, and
+<a href="https://docs.opengauss.org/en/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin-alter-function.html">ALTER FUNCTION</a>,
+<a href="https://docs.opengauss.org/en/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin-alter-procedure.html">ALTER PROCEDURE</a>,
+<a href="https://docs.opengauss.org/en/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin-alter-table.html">ALTER TABLE</a>,
+<a href="https://docs.opengauss.org/en/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin-create-function.html">CREATE FUNCTION</a>,
+<a href="https://docs.opengauss.org/en/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin-create-index.html">CREATE INDEX</a>,
+<a href="https://docs.opengauss.org/en/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin-create-procedure.html">CREATE PROCEDURE</a>,
+<a href="https://docs.opengauss.org/en/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin-create-table.html">CREATE TABLE</a>,
+<a href="https://docs.opengauss.org/en/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin-create-table-partition.html">CREATE TABLE PARTITION</a>, and
 <a href="../sql_reference/create_table_subpartition.md">CREATE TABLE SUBPARTITION</a>
 </td>
 </tr>
@@ -71,21 +71,21 @@ keywords: [openGauss, MySQL-compatible Kernel Description, data migration]
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p31526653"><a UNIQUEname="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p31526653"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p31526653"></a>CREATE TABLE supports the creation of primary keys, UNIQUE indexes, and foreign key constraints.</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/en/docs/latest/extension_reference/dolphin-create-table.html">CREATE TABLE</a>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/en/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin-create-table.html">CREATE TABLE</a>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_row26793117"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a>DDL</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p31526653"><a UNIQUEname="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p31526653"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p31526653"></a>ALTER TABLE supports the creation of primary keys, UNIQUE indexes, and foreign key constraints.</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/en/docs/latest/extension_reference/dolphin-alter-table.html">ALTER TABLE</a>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/en/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin-alter-table.html">ALTER TABLE</a>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_row26793117"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a>DDL</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p31526653"><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p31526653"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p31526653"></a>CREATE TABLE supports the creation of auto-increment columns.</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/en/docs/latest/extension_reference/dolphin-create-table.html">CREATE TABLE</a>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="https://docs.opengauss.org/en/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin-create-table.html">CREATE TABLE</a>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_row26793117"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p22758839"></a>DML</p>

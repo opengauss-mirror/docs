@@ -7,11 +7,11 @@ keywords: [openGauss, GMS_UTILITY高级包, 特性描述, 可获得性, 特性�
 
 ## 可获得性
 
-本特性自openGauss 7.0.0RC1版本开始引入。
+本特性自openGauss 7.0.0-RC1版本开始引入。
 
 ## 特性简介
 
-本特性主要用来实现[GMS_UTILITY高级包](https://docs.opengauss.org/zh/docs/latest/extension_reference/extension_reference/server/gms_utility.html)，提供了各种实用的程序和函数。
+本特性主要用来实现[GMS_UTILITY高级包](https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/extension_reference/server/gms_utility.html)，提供了各种实用的程序和函数。
 
 ## 客户价值
 

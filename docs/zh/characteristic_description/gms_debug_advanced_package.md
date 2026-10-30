@@ -11,7 +11,7 @@ keywords: [openGauss, gms_debug插件, 特性描述, 可获得性, 特性简介]
 
 ## 特性简介
 
-[gms_debug插件](https://docs.opengauss.org/zh/docs/latest/extension_reference/extension_reference/server/gms_debug.html)用于实现服务器端调试器，提供一种调试服务端PL/SQL程序单元的方法。
+[gms_debug插件](https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/extension_reference/server/gms_debug.html)用于实现服务器端调试器，提供一种调试服务端PL/SQL程序单元的方法。
 
 ## 客户价值
 

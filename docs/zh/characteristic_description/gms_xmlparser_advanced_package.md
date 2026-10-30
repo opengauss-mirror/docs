@@ -11,7 +11,7 @@ keywords: [openGauss, gms_xmlparser高级包, 特性描述, 可获得性, 特性
 
 ## 特性简介
 
-[gms_xmlparser扩展](https://docs.opengauss.org/zh/docs/latest/extension_reference/extension_reference/server/gms_xmlparser.html)用于解析 XML 字符串或 XML 文件，并提供解析器句柄与文档句柄管理能力。
+[gms_xmlparser扩展](https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/extension_reference/server/gms_xmlparser.html)用于解析 XML 字符串或 XML 文件，并提供解析器句柄与文档句柄管理能力。
 
 ## 客户价值
 

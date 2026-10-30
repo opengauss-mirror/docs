@@ -109,7 +109,7 @@ gs_guc set -N all -I all -h "host all mysql_test_db 0.0.0.0/0 sha256"
 gs_om -t restart
 ```
 
-更多详细内容请参考，[配置客户端接入认证](https://docs.opengauss.org/zh/docs/latest/database_administration_guide/configuring_client_access_authentication.html)。
+更多详细内容请参考，[配置客户端接入认证](https://docs.opengauss.org/zh/docs/7.0.0-lite/database_administration_guide/configuring_client_access_authentication.html)。
 
 ## JDBC 操作示例
 
@@ -312,5 +312,5 @@ id: 3, name: 王五, age: 20
 
 ## 注意事项
 
-1. 对于连接用户的权限管理，可参考 [GRANT](https://docs.opengauss.org/zh/docs/latest/sql_reference/grant.html) 使用教程。初次调试时建议赋予连接用户 SYSADMIN 权限，避免因权限问题频繁报错。
-2. 对于JDBC连接串中连接参数的支持情况，请参考 [JDBC常用连接参数的兼容表现](https://docs.opengauss.org/zh/docs/latest-lite/extension_reference/dolphin_mysql_protocol_compatibility.html#jdbc%E5%B8%B8%E7%94%A8%E8%BF%9E%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E5%85%BC%E5%AE%B9%E8%A1%A8%E7%8E%B0)。
+1. 对于连接用户的权限管理，可参考 [GRANT](https://docs.opengauss.org/zh/docs/7.0.0-lite/sql_reference/grant.html) 使用教程。初次调试时建议赋予连接用户 SYSADMIN 权限，避免因权限问题频繁报错。
+2. 对于JDBC连接串中连接参数的支持情况，请参考 [JDBC常用连接参数的兼容表现](https://docs.opengauss.org/zh/docs/7.0.0-lite/extension_reference/extension_reference/plugin/dolphin_mysql_protocol_compatibility.html#jdbc%E5%B8%B8%E7%94%A8%E8%BF%9E%E6%8E%A5%E5%8F%82%E6%95%B0%E7%9A%84%E5%85%BC%E5%AE%B9%E8%A1%A8%E7%8E%B0)。

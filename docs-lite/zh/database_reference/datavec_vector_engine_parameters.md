@@ -23,7 +23,7 @@
 
 **取值范围**： 整型，1\~32768
 
-**设置建议**： `sqrt(lists)`，`list`为IVFFLAT索引构建时的入参，详情请参考[向量索引](https://docs.opengauss.org/zh/docs/latest-lite/datavec/vector_index.html)。
+**设置建议**： `sqrt(lists)`，`list`为IVFFLAT索引构建时的入参，详情请参考[向量索引](https://docs.opengauss.org/zh/docs/7.0.0-lite/datavec/vector_index.html)。
 
 **默认值**： 1
 

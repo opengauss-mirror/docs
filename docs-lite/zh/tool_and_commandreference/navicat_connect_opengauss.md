@@ -57,7 +57,7 @@ openGauss 默认禁止远程连接，需手动配置客户端接入认证后方�
    gs_om -t restart
    ```
 
-如需了解更多配置细节，请参阅 [配置客户端接入认证](https://docs.opengauss.org/zh/docs/latest/database_administration_guide/configuring_client_access_authentication.html)。
+如需了解更多配置细节，请参阅 [配置客户端接入认证](https://docs.opengauss.org/zh/docs/7.0.0-lite/database_administration_guide/configuring_client_access_authentication.html)。
 
 ## 使用 Navicat 连接 openGauss
 

@@ -139,7 +139,7 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
 - 数据集级字符集、字符序语法非B模式特有，所有模式均可使用，详细语法参考 [CREATE DATABASE](create_database.md)。
 - lc_colalte / lc_ctype 语法不支持指定B模式特有的字符序，参数的取值范围取决于本地环境支持的字符集，可通过 locale -a查看。
-- 在加载dolphin插件后，CREATE DATABASE 语法支持指定B模式字符集、字符序，具体语法使用参考 [CREATE DATABASE](https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-CREATE-DATABASE.html)
+- 在加载dolphin插件后，CREATE DATABASE 语法支持指定B模式字符集、字符序，具体语法使用参考 [CREATE DATABASE](https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin-CREATE-DATABASE.html)
 
 ### 模式级字符集和字符序<a name="模式级字符集和字符序"></a>
 
@@ -183,7 +183,7 @@ openGauss通过以下方式选择模式的字符集和字符序：
 
 [!NOTE]说明
 
-- openGauss 的 SCHEMA 等价于 MySQL的 SCHEMA / DATABASE；在加载dolphin插件后，openGauss的 SCHEMA / DATABASE 与 MySQL 含义相同，语法参考 [CREATE DATABASE](https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin-CREATE-DATABASE.html)。
+- openGauss 的 SCHEMA 等价于 MySQL的 SCHEMA / DATABASE；在加载dolphin插件后，openGauss的 SCHEMA / DATABASE 与 MySQL 含义相同，语法参考 [CREATE DATABASE](https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin-CREATE-DATABASE.html)。
 - `default_charact` 仅支持指定为带有默认字符序的字符集，如果指定的字符集没有默认字符序则报错。
 - `default_collation` 仅支持指定为B模式下的字符序，指定其他字符序报错。所有B模式字符序详见**表字符序**。
 - 创建新 SCHEMA 的字符集、字符序与数据库的 server_encoding 不同时需要先设置 `b_format_behavior_compat_options` 参数包含`enable_multi_charset`。

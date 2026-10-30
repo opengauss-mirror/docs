@@ -18,7 +18,7 @@ keywords: [openGauss, deb包安装, 安装指南, 支持的架构和操作系统
 
 ## 支持特性
 
-- 从openGauss 5.0.1开始，支持兼容性B库，详细参考[dolphin插件](https://docs.opengauss.org/zh/docs/latest/extension_reference/dolphin.html)。
+- 从openGauss 5.0.1开始，支持兼容性B库，详细参考[dolphin插件](https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin.html)。
   
 ## 约束
 

@@ -49,26 +49,26 @@ openGauss相比于其他开源数据库主要有以下几个特点：
 
 - 高智能
 
-    - 提供[向量数据库](https://docs.opengauss.org/zh/docs/latest/datavec/datavec_overview.html)能力，提供向量数据类型的存储、检索。提供向量的精确和近似的最近邻搜索、L2距离&余弦距离&内积、向量索引、向量操作函数和操作符等。
-    - 提供多种[向量索引算法](https://docs.opengauss.org/zh/docs/latest/datavec/)，包括IVFFLAT、HNSW、DiskANN、基于乘积量化的索引、基于1bit量化的索引等，适用于不同的场景和数据类型。
-    - 支持[融合查询](https://docs.opengauss.org/zh/docs/latest/datavec/fusion_queries_using_guide.html)，结合结构化过滤和非结构化检索的技术，使用户在同一查询中使用不同的数据类型和查询方法，以获取更为精确的非结构化数据。
-    - 支持[全文检索索引](https://docs.opengauss.org/zh/docs/latest/datavec/full_text.html)，通过对文本数据集的文本内容建立索引，支持快速、灵活地查询并返回包含特定关键词或短语的文档，并根据相关性对返回的文档集进行排序。
+    - 提供[向量数据库](https://docs.opengauss.org/zh/docs/7.0.0/datavec/datavec_overview.html)能力，提供向量数据类型的存储、检索。提供向量的精确和近似的最近邻搜索、L2距离&余弦距离&内积、向量索引、向量操作函数和操作符等。
+    - 提供多种[向量索引算法](https://docs.opengauss.org/zh/docs/7.0.0/datavec/)，包括IVFFLAT、HNSW、DiskANN、基于乘积量化的索引、基于1bit量化的索引等，适用于不同的场景和数据类型。
+    - 支持[融合查询](https://docs.opengauss.org/zh/docs/7.0.0/datavec/fusion_queries_using_guide.html)，结合结构化过滤和非结构化检索的技术，使用户在同一查询中使用不同的数据类型和查询方法，以获取更为精确的非结构化数据。
+    - 支持[全文检索索引](https://docs.opengauss.org/zh/docs/7.0.0/datavec/full_text.html)，通过对文本数据集的文本内容建立索引，支持快速、灵活地查询并返回包含特定关键词或短语的文档，并根据相关性对返回的文档集进行排序。
     - 提供一站式的 AI 能力集成方案[oGAI](../characteristic_description/ogai.md)，用户可以在数据库内部直接调用AI模型进行文本向量化、文本生成、文档重排序等操作，无需依赖外部应用层实现，大幅简化了 RAG（检索增强生成）应用的开发流程。
-    - 丰富的第三方生态接口，支持多个[编排组件](https://docs.opengauss.org/zh/docs/latest/datavec/dify.html)、[嵌入模型](https://docs.opengauss.org/zh/docs/latest/datavec/embedding_bgem3.html)、[Agents框架](https://docs.opengauss.org/zh/docs/latest/datavec/mcp.html)等。
+    - 丰富的第三方生态接口，支持多个[编排组件](https://docs.opengauss.org/zh/docs/7.0.0/datavec/dify.html)、[嵌入模型](https://docs.opengauss.org/zh/docs/7.0.0/datavec/embedding_bgem3.html)、[Agents框架](https://docs.opengauss.org/zh/docs/7.0.0/datavec/mcp.html)等。
 
 - DataPod资源池化架构
 
-    - 提供主备机共享一份存储的[资源池化](https://docs.opengauss.org/zh/docs/latest/resource_pooling/resource_pooling_overview.html)能力，提供一种新HA部署形态，解决传统HA部署下存储容量较单机翻倍的问题，满足降低存储容量及成本的诉求，同时备机支持实时一致性读。
-    - 资源池化架构下支持[主备双集群容灾](https://docs.opengauss.org/zh/docs/latest/resource_pooling/resource_pooling_active_standby_dual_cluster_dr.html)，实现主备双集群的XLog日志同步，保证主备双集群的XLog一致性，从而增强主备双集群的容灾能力，降低存储空间，并保证主备集群内节点切换、主备集群间切换功能正常。
+    - 提供主备机共享一份存储的[资源池化](https://docs.opengauss.org/zh/docs/7.0.0/resource_pooling/resource_pooling_overview.html)能力，提供一种新HA部署形态，解决传统HA部署下存储容量较单机翻倍的问题，满足降低存储容量及成本的诉求，同时备机支持实时一致性读。
+    - 资源池化架构下支持[主备双集群容灾](https://docs.opengauss.org/zh/docs/7.0.0/resource_pooling/resource_pooling_active_standby_dual_cluster_dr.html)，实现主备双集群的XLog日志同步，保证主备双集群的XLog一致性，从而增强主备双集群的容灾能力，降低存储空间，并保证主备集群内节点切换、主备集群间切换功能正常。
     - 支持资源池化[算子卸载](../characteristic_description/resource_pooling_operator_offloading.md)，将数据过滤卸载到存储侧执行，去除不需要的数据，从而减少网络通信数据量，提升端到端性能。
     - 支持资源池化[多机并行](../characteristic_description/resource_pooling_multi_machine_paralleism.md)，对于SQL语句生成多机执行计划，并将计划分发到各节点执行，再由查询节点汇聚各节点数据实现所有读节点并行查询，充分发挥集群的OLAP能力。
-    - 支持资源池化[备机事务内透明写转发](https://docs.opengauss.org/zh/docs/latest/performance_tuning_guide/transparent_forwarding_within_backup_machine_affairs.html)，在资源池化架构下，当开启备机支持写特性后，备机上执行的显式事务(即begin,end包围的sql)，数据库会自动将事务中的涉及修改的写SQL语句转发给主机, 而事务中的读语句仍然在备机本地执行。
+    - 支持资源池化[备机事务内透明写转发](https://docs.opengauss.org/zh/docs/7.0.0/performance_tuning_guide/transparent_forwarding_within_backup_machine_affairs.html)，在资源池化架构下，当开启备机支持写特性后，备机上执行的显式事务(即begin,end包围的sql)，数据库会自动将事务中的涉及修改的写SQL语句转发给主机, 而事务中的读语句仍然在备机本地执行。
 
 - DataKit全生命周期数据管理工具
 
-    - [DataKit](../characteristic_description/tool_chain_datakit.md)是基于Web的openGauss的可视化的平台系统，提供[基础运维](https://docs.opengauss.org/zh/docs/latest/datakit/base_ops/datakit_base_ops.html)、[实例监控](https://docs.opengauss.org/zh/docs/latest/datakit/observability_instance/instance_monitoring.html)、[告警监控](https://docs.opengauss.org/zh/docs/latest/datakit/datakit_alarm_mointor.html)、[业务开发](https://docs.opengauss.org/zh/docs/latest/datakit/data_studio/datakit_business_development.html)、[智能诊断](https://docs.opengauss.org/zh/docs/latest/datakit/datakit_intelligent_diagnosis.html)、[兼容性评估](https://docs.opengauss.org/zh/docs/latest/datakit/compatibility_assessment.html)等能力。
-    - 支持[MySQL到openGauss的迁移能力](https://docs.opengauss.org/zh/docs/latest/datakit/datakit_mysql_migration.html)、[PostgreSQL到openGauss的迁移能力](https://docs.opengauss.org/zh/docs/latest/datakit/datakit_postgresql_migration.html)，包括全量/增量数据迁移、全量/增量数据校验、反向迁移等能力。
-    - 支持[流量录制回放](https://docs.opengauss.org/zh/docs/latest/datakit/datakit_workload_replay.html)，录制MySQL客户端的业务SQL，然后在openGauss端进行回放。回放结果会输出慢SQL信息和失败SQL信息。
+    - [DataKit](../characteristic_description/tool_chain_datakit.md)是基于Web的openGauss的可视化的平台系统，提供[基础运维](https://docs.opengauss.org/zh/docs/7.0.0/datakit/base_ops/datakit_base_ops.html)、[实例监控](https://docs.opengauss.org/zh/docs/7.0.0/datakit/observability_instance/instance_monitoring.html)、[告警监控](https://docs.opengauss.org/zh/docs/7.0.0/datakit/datakit_alarm_mointor.html)、[业务开发](https://docs.opengauss.org/zh/docs/7.0.0/datakit/data_studio/datakit_business_development.html)、[智能诊断](https://docs.opengauss.org/zh/docs/7.0.0/datakit/datakit_intelligent_diagnosis.html)、[兼容性评估](https://docs.opengauss.org/zh/docs/7.0.0/datakit/compatibility_assessment.html)等能力。
+    - 支持[MySQL到openGauss的迁移能力](https://docs.opengauss.org/zh/docs/7.0.0/datakit/datakit_mysql_migration.html)、[PostgreSQL到openGauss的迁移能力](https://docs.opengauss.org/zh/docs/7.0.0/datakit/datakit_postgresql_migration.html)，包括全量/增量数据迁移、全量/增量数据校验、反向迁移等能力。
+    - 支持[流量录制回放](https://docs.opengauss.org/zh/docs/7.0.0/datakit/datakit_workload_replay.html)，录制MySQL客户端的业务SQL，然后在openGauss端进行回放。回放结果会输出慢SQL信息和失败SQL信息。
 
 - 易运维
     - 基于AI的[智能参数调优](../characteristic_description/parameter_tuning_and_diagnosis.md)和[索引推荐](../characteristic_description/index_recommendation.md)，提供AI自动参数推荐。
@@ -113,4 +113,4 @@ openGauss支持主备部署，openGauss逻辑架构如[图1](#zh-cn_topic_028313
 
 - AI应用
 
-    [向量数据库](https://docs.opengauss.org/zh/docs/latest/datavec/datavec_overview.html)通过高效的相似性搜索能力，让大模型能精准召回相关私有知识，从而在检索增强生成（RAG）、推荐、语义搜索等场景中实现更低延迟、更高准确率的企业级AI应用。
+    [向量数据库](https://docs.opengauss.org/zh/docs/7.0.0/datavec/datavec_overview.html)通过高效的相似性搜索能力，让大模型能精准召回相关私有知识，从而在检索增强生成（RAG）、推荐、语义搜索等场景中实现更低延迟、更高准确率的企业级AI应用。

@@ -105,7 +105,7 @@ gs_guc set -N all -I all -h "host all mysql_test_db 0.0.0.0/0 sha256"
 gs_om -t restart
 ```
 
-更多详细内容请参考[配置客户端接入认证](https://docs.opengauss.org/zh/docs/latest/database_administration_guide/configuring_client_access_authentication.html)。
+更多详细内容请参考[配置客户端接入认证](https://docs.opengauss.org/zh/docs/7.0.0-lite/database_administration_guide/configuring_client_access_authentication.html)。
 
 ## mysql-connector-python 项目搭建
 

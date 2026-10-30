@@ -68,7 +68,7 @@ ARM+openEuler 20.03 或 X86+CentOS 7
   # 全量迁移用户相关路径
   chameleon.path=~/.pg_chameleon/
   # 全量迁移tar包的下载路径
-  chameleon.pkg.url=https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/${system.name}/chameleon-${tools.version}-${system.arch}.tar.gz
+  chameleon.pkg.url=https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/tools/${system.name}/chameleon-${tools.version}-${system.arch}.tar.gz
   # 全量迁移安装包的路径，可自定义修改
   chameleon.pkg.path=/ops/portal/pkg/chameleon/
   # 全量迁移安装包的名称

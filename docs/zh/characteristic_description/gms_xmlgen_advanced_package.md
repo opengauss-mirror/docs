@@ -11,7 +11,7 @@ keywords: [openGauss, gms_xmlgen高级包, 特性描述, 可获得性, 特性简
 
 ## 特性简介
 
-本特性主要用来实现[gms_xmlgen高级包](https://docs.opengauss.org/zh/docs/latest/extension_reference/extension_reference/server/gms_xmlgen.html)，用于将sql查询结果转换成规范的xml格式。
+本特性主要用来实现[gms_xmlgen高级包](https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/extension_reference/server/gms_xmlgen.html)，用于将sql查询结果转换成规范的xml格式。
 
 ## 客户价值
 

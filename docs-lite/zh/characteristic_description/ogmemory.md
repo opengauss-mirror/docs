@@ -58,8 +58,8 @@ oGMemory 特性规格约束如下：
 
 ## 依赖关系
 
-- [向量数据库特性](https://docs.opengauss.org/zh/docs/latest/datavec/datavec_overview.html)
-- [oGMemory具体介绍](https://docs.opengauss.org/zh/docs/latest/datavec/ogmem_introduction.html)
+- [向量数据库特性](https://docs.opengauss.org/zh/docs/7.0.0-lite/datavec/datavec_overview.html)
+- [oGMemory具体介绍](https://docs.opengauss.org/zh/docs/7.0.0-lite/datavec/ogmem_introduction.html)
 - AGFS 文件存储服务，或者兼容的 openGauss/PostgreSQL SQL 存储后端
 - 大语言模型服务，用于记忆识别、抽取、合并和会话状态压缩
 - Embedding 模型服务，用于记忆向量化及语义检索
