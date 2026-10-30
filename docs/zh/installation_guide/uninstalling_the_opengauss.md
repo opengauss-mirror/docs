@@ -27,28 +27,28 @@ openGauss提供了卸载脚本帮助用户完整的卸载openGauss。
 
 ```
 gs_uninstall --delete-data
-Checking unInstallation.
-Successfully checked unInstallation.
+Checking uninstallation.
+Successfully checked uninstallation.
 Stopping the cluster.
 Successfully stopped the cluster.
 Successfully deleted instances.
 Uninstalling application.
 Successfully uninstalled application.
-UnInstallation succeeded.
+Uninstallation succeeded.
 ```
 
 单机卸载场景使用gs\_uninstall脚本进行卸载。
 
 ```
-gs_uninstall --delete-data
-Checking unInstallation.
-Successfully checked unInstallation.
+gs_uninstall --delete-data -L
+Checking uninstallation.
+Successfully checked uninstallation.
 Stopping the cluster.
 Successfully stopped the cluster.
 Successfully deleted instances.
 Uninstalling application.
 Successfully uninstalled application.
-UnInstallation succeeded.
+Uninstallation succeeded.
 ```
 
 **错误排查**
@@ -123,14 +123,14 @@ Parsing the configuration file.
 Successfully parsed the configuration file.
 Check log file path.
 Successfully checked log file path.
-Checking unpreInstallationGuide.
-Successfully checked unpreInstallationGuide.
+Checking unpreinstallation.
+Successfully checked unpreinstallation.
 Deleting Cgroup.
 Successfully deleted Cgroup.
 Deleting the instance's directory.
 Successfully deleted the instance's directory.
-Deleting the InstallationGuide directory.
-Successfully deleted the InstallationGuide directory.
+Deleting the installation directory.
+Successfully deleted the installation directory.
 Deleting the temporary directory.
 Successfully deleted the temporary directory.
 Deleting remote OS user.
