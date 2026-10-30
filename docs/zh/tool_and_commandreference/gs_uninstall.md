@@ -67,14 +67,14 @@ openGauss提供了gs\_uninstall工具来帮助完成openGauss的卸载。
 
 ```
 gs_uninstall --delete-data
-Checking unInstallation.
-Successfully checked unInstallation.
+Checking uninstallation.
+Successfully checked uninstallation.
 Stopping the cluster.
 Successfully stopped the cluster.
 Successfully deleted instances.
 Uninstalling application.
 Successfully uninstalled application.
-UnInstallation succeeded.
+Uninstallation succeeded.
 ```
 
 ## 相关命令<a name="zh-cn_topic_0287275992_zh-cn_topic_0237152424_zh-cn_topic_0059778700_s81551f14e776431db12f55306b1d2250"></a>
