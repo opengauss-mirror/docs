@@ -8,7 +8,7 @@ keywords: [openGauss, MySQL与openGauss的数据类型对比, 数据迁移]
 需要注意的是，下面列出来的MySQL数据类型指的是information_schema.COLUMNS中的data_type而非column_type。比如对于 int unsigned的column_type，其data_type实际为 int。对于float(5,2)的column_type，其data_type实际为float。
 
 char(1)类型能够正常插入汉字跟数据库模式有关。当数据库是B模式（加载了dolphin插件），char(1)可成功插入1个汉字；当数据库是A模式时，插入1个汉字会失败。
-openGauss B库数据类型参考：<https://docs-opengauss.osinfra.cn/zh/docs/7.0.0/docs/ExtensionReference/dolphin-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html>
+openGauss B库数据类型参考：[数据类型](https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin_numeric_types.html)
 
 | MySQL              | openGauss | 备注                                                                                                                                                                                                                                         |
 |--------------------|--|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

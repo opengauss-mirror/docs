@@ -761,7 +761,7 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
   指定兼容的数据库的类型，默认兼容O。
 
-  取值范围：A、B、C、PG、D。分别表示兼容O、MY、TD、POSTGRES和S数据库。在B兼容性场景下，必须加载dolphin插件才允许被连接。详见[dolphin限制](https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/dolphin.html)。
+  取值范围：A、B、C、PG、D。分别表示兼容O、MY、TD、POSTGRES和S数据库。在B兼容性场景下，必须加载dolphin插件才允许被连接。详见[dolphin限制](https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin.html)。
 
   >[!NOTE]说明
   >

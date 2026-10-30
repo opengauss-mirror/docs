@@ -759,7 +759,7 @@ CREATE DATABASE database_name
 
     指定兼容的数据库的类型，默认兼容O。
 
-    取值范围：A、B、C、PG、D。分别表示兼容O、MY、TD、POSTGRES和S数据库。在B兼容性场景下，必须加载dolphin插件才允许被连接。详见[Dolphin限制](https://docs.opengauss.org/zh/docs/7.0.0-lite/extension_reference/dolphin.html)。
+    取值范围：A、B、C、PG、D。分别表示兼容O、MY、TD、POSTGRES和S数据库。在B兼容性场景下，必须加载dolphin插件才允许被连接。详见[Dolphin限制](https://docs.opengauss.org/zh/docs/7.0.0-lite/extension_reference/extension_reference/plugin/dolphin.html)。
 
     >[!NOTE]说明
     >- A兼容性下，数据库将空字符串作为NULL处理，数据类型DATE会被替换为TIMESTAMP\(0\) WITHOUT TIME ZONE。

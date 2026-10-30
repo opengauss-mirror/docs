@@ -133,7 +133,7 @@ gs_om -t restart
    alter user mysql_test_db set dolphin.sql_mode = 'sql_mode_strict,no_zero_date,block_return_multi_results,error_for_division_by_zero,escape_quotes,disable_escape_bytea';
    ```
 
-   参考资料：[dolphin.sql_mode参数说明](https://docs.opengauss.org/zh/docs/7.0.0-lite/extension_reference/dolphin_guc_parameters.html#dolphinsql_mode)
+   参考资料：[dolphin.sql_mode参数说明](https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin_guc_parameters.html#dolphinsql_mode)
 
 4. 配置大小写敏感参数为不敏感
 
@@ -141,7 +141,7 @@ gs_om -t restart
    alter user mysql_test_db set dolphin.lower_case_table_names = 1;
    ```
 
-   参考资料：[dolphin.lower_case_table_names参数说明](https://docs.opengauss.org/zh/docs/7.0.0-lite/extension_reference/dolphin_guc_parameters.html#dolphinlower_case_table_names)
+   参考资料：[dolphin.lower_case_table_names参数说明](https://docs.opengauss.org/zh/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin_guc_parameters.html#dolphinlower_case_table_names)
 
 > [!TIP]须知
 > 上述配置均为用户级别修改，如果使用其他用户连接时，需要重新配置。如果需要全局进行配置，请参考上述官网资料。
