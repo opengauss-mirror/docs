@@ -100,7 +100,7 @@ gs_probackup backup -B backup-path --instance=instance_name \
 
 - 增加`--incremental-type=cumulative`参数，明确指定使用累积增量备份；
 - 增加`--from-full`参数，作为累积增量备份的简化写法；
-- 支持通过`--parent-backup-id`显式指定父备份；
+- 支持通过`--parent-backup-id`显式指定累积增量备份的父全量备份；
 - CBM范围不足时默认报错，避免静默降级后改变用户预期的恢复代价；
 - 支持通过`--cumulative-fallback=differential`显式降级为差异增量备份；
 - 识别多分支备份链，避免`merge`或留存策略操作破坏其他恢复点；
