@@ -406,7 +406,7 @@ gs\_probackup工具的主要功能如下：
 
 - --parent-backup-id=_backup-id_
 
-    显式指定父备份。指定的备份必须是有效的全量备份或当前备份链的最后一个备份。该参数不能与cumulative同时使用。
+    显式指定累积增量备份的父全量备份，生成的增量备份为累积增量备份。指定的备份必须是有效的全量备份，指定增量备份时报错。该参数不能与cumulative同时使用。
 
 - --cumulative-fallback=_cumulative-fallback_
 
