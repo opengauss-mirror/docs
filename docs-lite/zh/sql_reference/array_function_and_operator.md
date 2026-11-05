@@ -545,6 +545,67 @@
     (1 row)
     ```
 
+- array\_sort\(anyarray \[, descending \[, nulls\_first\]\]\)
+
+    描述：返回数组排序后的结果。
+
+    - anyarray：要排序的数组。
+    - descending：可选参数，标识是否降序或升序排列，为true时降序，缺省为false。
+    - nulls_first：可选参数，标识NULL元素排最前还是排最后，为true时排最前，为false时排最后，缺省时取值与descending相同。
+
+    返回类型：anyarray
+
+    示例：
+
+    ```sql
+    openGauss=# SELECT array_sort(ARRAY[2,NULL,1]) AS RESULT;
+       result   
+    ------------
+     {1,2,NULL}
+    (1 row)
+    openGauss=# SELECT array_sort(ARRAY[2,NULL,1], true) AS RESULT;
+       result   
+    ------------
+     {NULL,2,1}
+    (1 row)
+    openGauss=# SELECT array_sort(ARRAY[2,NULL,1], true, false) AS RESULT;
+       result   
+    ------------
+     {2,1,NULL}
+    (1 row)
+    openGauss=# SELECT array_sort(ARRAY[2,NULL,1], true, true) AS RESULT;
+       result   
+    ------------
+     {NULL,2,1}
+    (1 row)
+    openGauss=# SELECT array_sort(ARRAY[[2,4],[2,1],[6,5]]) AS RESULT;
+           result        
+    ---------------------
+     {{2,1},{2,4},{6,5}}
+    (1 row)
+    ```
+
+- array\_reverse\(anyarray\)
+
+    描述：返回数组顺序反转后的结果。
+
+    返回类型：anyarray
+
+    示例：
+
+    ```sql
+    openGauss=# SELECT array_reverse(ARRAY[1,2,3]) AS RESULT;
+     result  
+    ---------
+     {3,2,1}
+    (1 row)
+    openGauss=# SELECT array_reverse(ARRAY[[1,2],[3,4],[5,6]]) AS RESULT;
+           result        
+    ---------------------
+     {{5,6},{3,4},{1,2}}
+    (1 row)
+    ```
+
 在string\_to\_array中，如果分隔符参数是NULL，输入字符串中的每个字符将在结果数组中变成一个独立的元素。如果分隔符是一个空白字符串，则整个输入的字符串将变为一个元素的数组。否则输入字符串将在每个分隔字符串处分开。
 
 在string\_to\_array中，如果省略null字符串参数或为NULL，将字符串中没有输入内容的子串替换为NULL。

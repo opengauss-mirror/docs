@@ -609,6 +609,67 @@ Array comparisons compare the array contents element-by-element, using the defau
     (2 rows)
     ```
 
+- array\_sort\(anyarray \[, descending \[, nulls\_first\]\]\)
+
+    Description: Returns the sorted result of an array.
+
+    - anyarray: the array to sort.
+    - descending: optional parameter indicating whether to sort in descending or ascending order. **true** for descending, which defaults to **false**.
+    - nulls_first: optional parameter indicating whether NULL elements are placed first or last. **true** for first and **false** for last, following **descending** when omitted.
+
+    Return type: anyarray
+
+    Example:
+
+    ```sql
+    openGauss=# SELECT array_sort(ARRAY[2,NULL,1]) AS RESULT;
+       result   
+    ------------
+     {1,2,NULL}
+    (1 row)
+    openGauss=# SELECT array_sort(ARRAY[2,NULL,1], true) AS RESULT;
+       result   
+    ------------
+     {NULL,2,1}
+    (1 row)
+    openGauss=# SELECT array_sort(ARRAY[2,NULL,1], true, false) AS RESULT;
+       result   
+    ------------
+     {2,1,NULL}
+    (1 row)
+    openGauss=# SELECT array_sort(ARRAY[2,NULL,1], true, true) AS RESULT;
+       result   
+    ------------
+     {NULL,2,1}
+    (1 row)
+    openGauss=# SELECT array_sort(ARRAY[[2,4],[2,1],[6,5]]) AS RESULT;
+           result        
+    ---------------------
+     {{2,1},{2,4},{6,5}}
+    (1 row)
+    ```
+
+- array\_reverse\(anyarray\)
+
+    Description: Returns the reversed result of an array.
+
+    Return type: anyarray
+
+    Example:
+
+    ```sql
+    openGauss=# SELECT array_reverse(ARRAY[1,2,3]) AS RESULT;
+     result  
+    ---------
+     {3,2,1}
+    (1 row)
+    openGauss=# SELECT array_reverse(ARRAY[[1,2],[3,4],[5,6]]) AS RESULT;
+           result        
+    ---------------------
+     {{5,6},{3,4},{1,2}}
+    (1 row)
+    ```
+
 In  **string\_to\_array**, if the delimiter parameter is NULL, each character in the input string will become a separate element in the resulting array. If the delimiter is an empty string, then the entire input string is returned as a one-element array. Otherwise the input string is split at each occurrence of the delimiter string.
 
 In  **string\_to\_array**, if the null-string parameter is omitted or NULL, none of the substrings of the input will be replaced by NULL.
