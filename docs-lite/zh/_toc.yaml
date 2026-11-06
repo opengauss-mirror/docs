@@ -22,7 +22,6 @@ sections:
       - href: 
           upstream: https://atomgit.com/opengauss/openGauss-server/blob/master/src/gausskernel/storage/access/datavec/docs-lite/zh/_toc.yaml
           path: ./datavec
-      - href: ./gv_graph/_toc.yaml
   - label: 开发指南
     sections:
       - href: ./developer_guide/_toc.yaml
