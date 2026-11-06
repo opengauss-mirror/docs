@@ -12,7 +12,7 @@ keywords: [openGauss, Configuring MySQL Protocol Compatibility, MySQL compatibil
 openGauss implements MySQL protocol compatibility through the dolphin plugin via an abstract protocol layer. Once you set the relevant parameters, you can connect directly to openGauss in B‑compatible mode using the MySQL JDBC driver.
 
 
-For more details, see [MySQL Protocol Compatibility](https://docs.opengauss.org/en/docs/latest/extension_reference/dolphin_mysql_protocol_compatibility.html).
+For more details, see [MySQL Protocol Compatibility](https://docs.opengauss.org/en/docs/latest/extension_reference/extension_reference/plugin/dolphin_mysql_protocol_compatibility.html).
 
 ## MySQL Protocol Compatibility Configuration
 
@@ -84,7 +84,7 @@ openGauss supports two authentication methods for MySQL protocol compatibility: 
    \c proto_test_db
    ```
 
-10. Set the default connected database name to the newly created B-compatible database name, using [dolphin.default_database_name](https://docs.opengauss.org/en/docs/latest/extension_reference/dolphin_guc_parameters.html#dolphindefault_database_name).
+10. Set the default connected database name to the newly created B-compatible database name, using [dolphin.default_database_name](https://docs.opengauss.org/en/docs/latest/extension_reference/extension_reference/plugin/dolphin_guc_parameters.html#dolphindefault_database_name).
 
     ```sql
     ALTER SYSTEM SET dolphin.default_database_name TO proto_test_db;
@@ -96,8 +96,8 @@ openGauss supports two authentication methods for MySQL protocol compatibility: 
 
 ### dolphin.sql_mode
 
-openGauss provides the GUC parameter [dolphin.sql_mode](https://docs.opengauss.org/en/docs/latest/extension_reference/dolphin_guc_parameters.html#dolphinsql_mode) as an equivalent to MySQL's `sql_mode` options.
+openGauss provides the GUC parameter [dolphin.sql_mode](https://docs.opengauss.org/en/docs/latest/extension_reference/extension_reference/plugin/dolphin_guc_parameters.html#dolphinsql_mode) as an equivalent to MySQL's `sql_mode` options.
 
 ### dolphin.lower_case_table_names
 
-The GUC parameter [dolphin.lower_case_table_names](https://docs.opengauss.org/en/docs/latest/extension_reference/dolphin_guc_parameters.html#dolphinlower_case_table_names) controls case sensitivity for usernames, table names, view names, and schema names.
+The GUC parameter [dolphin.lower_case_table_names](https://docs.opengauss.org/en/docs/latest/extension_reference/extension_reference/plugin/dolphin_guc_parameters.html#dolphinlower_case_table_names) controls case sensitivity for usernames, table names, view names, and schema names.
