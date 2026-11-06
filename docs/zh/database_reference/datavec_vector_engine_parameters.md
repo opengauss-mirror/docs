@@ -238,7 +238,7 @@ keywords: [openGauss, DataVec向量引擎参数, 数据库参考, vector_buffers
 
 **设置建议**：该值至少应不小于查询语句中的`LIMIT`。增大该值通常可以提高召回率，但也会增加查询耗时；查询包含额外的`WHERE`过滤条件时，可以适当增大候选数，避免候选记录被过滤后返回数量不足。
 
-使用该参数前，需要在当前会话中设置`enable_indexscan_optimization = on`。GV_GRAPH索引的创建和查询方法请参考[GV_GRAPH使用指南](../gv_graph/gv_graph.md#调整查询效果)。
+使用该参数前，需要在当前会话中设置`enable_indexscan_optimization = on`。GV_GRAPH索引的创建和查询方法请参考[GV_GRAPH使用指南](https://docs.opengauss.org/zh/docs/latest/datavec/gv_graph.html#调整查询效果)。
 
 ## npu_device_mask
 
