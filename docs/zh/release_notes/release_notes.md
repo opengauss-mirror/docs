@@ -55,7 +55,7 @@ openGauss 7.0.0(LTS)是openGauss 2026年9月发布的LTS版本，该版本生命
   - [CM支持订阅sysSentry](https://docs.opengauss.org/zh/docs/7.0.0/resource_pooling/cm_syssentry_fault_detection.html)，及时获取节点级故障通知，故障检测时间<1s。 [#482](https://atomgit.com/opengauss/CM/pull/482) [@liuzhanfeng](https://atomgit.com/liuzhanfeng)
 
 - **高安全**：[黑匣子](https://docs.opengauss.org/zh/docs/7.0.0/tool_and_commandreference/ogrecorder/ogrecorder_overview.html)接口能力增强
-  - 增加查询查询内存、cpu、nfs设备io接口，文件名称列表接口优化支持排序，详见[API列表](../tool_and_commandreference/ogrecorder/ogrecorder_api_introduction.md)。 [#101](https://atomgit.com/opengauss/oGRecorder/pull/101) [#28](https://atomgit.com/opengauss/CM-RestAPI/pull/28) [@liuzhanfeng](https://atomgit.com/liuzhanfeng) [@zkcarl](https://atomgit.com/zkcarl)
+  - 增加查询内存、cpu、nfs设备io接口，文件名称列表接口优化支持排序，详见[API列表](../tool_and_commandreference/ogrecorder/ogrecorder_api_introduction.md)。 [#101](https://atomgit.com/opengauss/oGRecorder/pull/101) [#28](https://atomgit.com/opengauss/CM-RestAPI/pull/28) [@liuzhanfeng](https://atomgit.com/liuzhanfeng) [@zkcarl](https://atomgit.com/zkcarl)
 
 - **高智能**：[BM25索引](https://docs.opengauss.org/zh/docs/7.0.0/datavec/bm25_full_text_search_index.html)优化。
   - 支持[自定义BM25索引jieba分词器的词典](https://docs.opengauss.org/zh/docs/7.0.0/datavec/bm25_usage_guide.html#3-%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%8D%E5%85%B8dict_path)。[#9036](https://atomgit.com/opengauss/openGauss-server/pull/9036) [@Setname](https://atomgit.com/Setname)
