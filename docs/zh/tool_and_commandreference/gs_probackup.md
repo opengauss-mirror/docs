@@ -47,7 +47,7 @@ gs\_probackup目前支持进度打印，会分别在文件备份、文件验证�
 - 备份到兼容S3协议的对象存储时，请确保对象存储服务已经开通，可以获取到ak和sk，并且已经创建好bucket。备份到对象存储特性目前不支持执行merge子命令。
 - 累积增量备份只在当前时间线内选择父全量备份，不跨时间线选择父备份。
 - 一个全量备份下存在多个累积增量备份时，执行merge子命令或留存策略操作可能使其他增量备份失去父备份，此时命令会拒绝执行并给出依赖该全量备份的备份清单，请根据清单确认后再手动处理。
-- 备份加密与备份到兼容S3协议的对象存储、资源池化模式、远程备份模式不能同时使用，参数校验阶段会直接报错。
+- 备份加密不能与备份到兼容S3协议的对象存储、资源池化模式同时使用，参数校验阶段会直接报错。远程备份模式（remote-proto=ssh）下支持备份加密。
 - 恢复一条备份链时只能提供一份密钥材料，因此同一条备份链中的各备份需要使用相同的口令或密钥文件。如果只对备份链中的部分备份执行rekey，该备份链将无法使用一份密钥材料完成恢复。
 - 历史版本产生的加密备份仅支持读取，不再产生该格式的新备份；使用历史版本的gs\_probackup读取新格式的加密备份时会报错，不会静默出错。
 - 关于物理备份与恢复的更多说明，请参考[物理备份与恢复](../database_om_guide/physical_backup_and_restoration.md)。
@@ -807,19 +807,21 @@ gs\_probackup工具的主要功能如下：
 
 - --encrypt-key-source=_encrypt-key-source_
 
-    指定密钥材料的类型。取值包括：
+    指定密钥材料的类型，用于校验命令行提供的密钥材料是否符合预期。取值包括：
 
-    passphrase：使用口令。
+    passphrase：使用口令。口令通过--encrypt-key、环境变量GS\_PROBACKUP\_PASSPHRASE或交互式终端输入提供，不能同时指定--encrypt-key-file。
 
-    keyfile：使用密钥文件。
+    keyfile：使用密钥文件。必须同时指定--encrypt-key-file，不能同时指定--encrypt-key。
+
+    不指定该参数时，按照实际提供的密钥材料确定类型，不做上述校验。
 
 - --encrypt-key=_passphrase_
 
-    指定加密口令。可以和backup、restore、validate、merge子命令一起使用。
+    指定加密口令。可以和backup、restore、validate、merge、rekey子命令一起使用，与rekey子命令一起使用时表示备份当前的口令。不能和--encrypt-key-file同时指定，同时指定时命令报错退出。
 
 - --encrypt-key-file=_key-file_
 
-    指定存放密钥材料的文件，该文件的权限必须为0600。可以和backup、restore、validate、merge子命令一起使用。
+    指定存放密钥材料的文件，该文件的权限必须为0600。可以和backup、restore、validate、merge、rekey子命令一起使用，与rekey子命令一起使用时表示备份当前的密钥材料。不能和--encrypt-key同时指定，同时指定时命令报错退出。
 
 - --encrypt-chunk-size=_encrypt-chunk-size_
 
@@ -837,7 +839,15 @@ gs\_probackup工具的主要功能如下：
 
 - 密钥材料的提供方式
 
-    按以下优先级获取密钥材料：--encrypt-key-file、--encrypt-key、环境变量GS\_PROBACKUP\_PASSPHRASE、交互式终端输入。在非交互式环境下，如果未通过上述任一方式提供密钥材料，命令将报错退出。
+    --encrypt-key和--encrypt-key-file只能指定其中一个，同时指定时命令报错退出，不会按优先级选择其中一个。按以下顺序获取密钥材料：
+
+    1. 命令行指定的--encrypt-key或--encrypt-key-file。
+    2. 环境变量GS\_PROBACKUP\_PASSPHRASE。仅在命令行未指定密钥材料时使用；命令行已指定时忽略该环境变量。
+    3. 交互式终端输入。仅在以上方式均未提供密钥材料时提示输入。
+
+    在非交互式环境下，如果未通过上述任一方式提供密钥材料，命令将报错退出。
+
+    执行rekey子命令时，以上方式用于提供备份当前的密钥材料；新的密钥材料只能通过--new-encrypt-key或--new-encrypt-key-file提供。
 
     为避免密钥材料通过进程信息或日志泄露，建议优先使用--encrypt-key-file或环境变量，不要在脚本中直接书写口令。
 
