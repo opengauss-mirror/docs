@@ -5,7 +5,7 @@ PERFORMANCE_SCHEMA.FILE_SUMMARY_BY_INSTANCE视图，通过对数据文件IO的�
 >![](public_sys-resources/icon-note.png) **说明：** 
 >-   很多列openGauss并没有与Mysql相对应的信息，或者暂时不支持的输出，为了最大限度保持兼容性，用NULL填充。
 >-   仅统计数据文件相关IO，不统计日志文件，配置文件等IO。
->-   底层访问DBE_PERF.FILE_IOSTAT，其中miniotim，avgiotim，maxiowtm的统计信息不区分读写，但mysql分读、写、等待、misc来统计min,max,avg。为尽量多的展示信息，都使用相同信息做展示。
+>-   底层访问DBE_PERF.FILE_IOSTAT，其中miniotim、avgiotim、maxiowtm的统计信息不区分读写，读、写的最小、平均、最大时长列分别复用这三个字段。misc统计暂不支持，五个misc字段均固定为SQL NULL。
 
 **表 1**  FILE_SUMMARY_BY_INSTANCE字段
 
@@ -159,5 +159,25 @@ PERFORMANCE_SCHEMA.FILE_SUMMARY_BY_INSTANCE视图，通过对数据文件IO的�
 </td>
 </tr>
 
+<tr id="row_count_misc"><td class="cellrowborder" headers="mcps1.2.4.1.1"><p>COUNT_MISC</p></td>
+<td class="cellrowborder" headers="mcps1.2.4.1.2"><p>text</p></td>
+<td class="cellrowborder" headers="mcps1.2.4.1.3"><p>暂不支持，固定为SQL NULL。</p></td>
+</tr>
+<tr id="row_sum_timer_misc"><td class="cellrowborder" headers="mcps1.2.4.1.1"><p>SUM_TIMER_MISC</p></td>
+<td class="cellrowborder" headers="mcps1.2.4.1.2"><p>text</p></td>
+<td class="cellrowborder" headers="mcps1.2.4.1.3"><p>暂不支持，固定为SQL NULL。</p></td>
+</tr>
+<tr id="row_min_timer_misc"><td class="cellrowborder" headers="mcps1.2.4.1.1"><p>MIN_TIMER_MISC</p></td>
+<td class="cellrowborder" headers="mcps1.2.4.1.2"><p>text</p></td>
+<td class="cellrowborder" headers="mcps1.2.4.1.3"><p>暂不支持，固定为SQL NULL。</p></td>
+</tr>
+<tr id="row_avg_timer_misc"><td class="cellrowborder" headers="mcps1.2.4.1.1"><p>AVG_TIMER_MISC</p></td>
+<td class="cellrowborder" headers="mcps1.2.4.1.2"><p>text</p></td>
+<td class="cellrowborder" headers="mcps1.2.4.1.3"><p>暂不支持，固定为SQL NULL。</p></td>
+</tr>
+<tr id="row_max_timer_misc"><td class="cellrowborder" headers="mcps1.2.4.1.1"><p>MAX_TIMER_MISC</p></td>
+<td class="cellrowborder" headers="mcps1.2.4.1.2"><p>text</p></td>
+<td class="cellrowborder" headers="mcps1.2.4.1.3"><p>暂不支持，固定为SQL NULL。</p></td>
+</tr>
 </tbody>
 </table>

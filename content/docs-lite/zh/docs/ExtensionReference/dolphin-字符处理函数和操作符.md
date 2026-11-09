@@ -411,7 +411,7 @@
     (1 row)
     ```
 
--   char_length(string)或character_leng(string)
+-   char_length(string)或character_length(string)
 
     描述：字符串中的字符个数,一个汉字长度为1，并且支持二进制类型。
 
@@ -420,7 +420,7 @@
     示例：
 
     ```
-    openGauss=# SELECT char_length('hello');
+    b_compatibility_database=# SELECT char_length('hello');
     char_length
     -------------
             5
