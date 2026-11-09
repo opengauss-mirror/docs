@@ -56,7 +56,7 @@ keywords: [openGauss, ALTER SEQUENCE, SQL, Function, Precautions]
     Specifies the step for the sequence.
 
 - MINVALUE minvalue | NO MINVALUE| NOMINVALUE
-    Specifies the minimum value of the sequence. If  **MINVALUE**  is not declared, or  **NO MINVALUE**  is declared, the default value of the ascending sequence is  **1**, and that of the descending sequence is  **-2<sup>63</sup>+1** or **-2<sup>127</sup>+1** if it's also a LARGE sequence.  **NOMINVALUE**  is equivalent to  **NO MINVALUE**.
+    Specifies the minimum value of the sequence. If  **MINVALUE**  is not declared, or  **NO MINVALUE**  is declared, the default value of the ascending sequence is  **1**, and that of the descending sequence is  **-2<sup>63</sup>** or **-2<sup>127</sup>** if it's also a LARGE sequence.  **NOMINVALUE**  is equivalent to  **NO MINVALUE**.
 
 - MAXVALUE maxvalue | NO MAXVALUE| NOMAXVALUE
 
