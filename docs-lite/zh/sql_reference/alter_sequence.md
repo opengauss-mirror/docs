@@ -53,7 +53,7 @@
 
 - MINVALUE minvalue | NO MINVALUE| NOMINVALUE
 
-    指定序列的最小值。如果没有声明minvalue或者声明了NO MINVALUE，则递增序列的缺省值为1，递减序列的缺省值为-2<sup>63</sup>+1（Large序列为-2<sup>127</sup>+1）。NOMINVALUE等价于NO MINVALUE
+    指定序列的最小值。如果没有声明minvalue或者声明了NO MINVALUE，则递增序列的缺省值为1，递减序列的缺省值为-2<sup>63</sup>（Large序列为-2<sup>127</sup>）。NOMINVALUE等价于NO MINVALUE
 
 - MAXVALUE maxvalue | NO MAXVALUE| NOMAXVALUE
 
