@@ -46,7 +46,7 @@ CREATE [ LARGE ] SEQUENCE [ IF NOT EXISTS ] name [ INCREMENT [ BY ] increment ]
 
 - **MINVALUE minvalue | NO MINVALUE| NOMINVALUE**
 
-    Specifies the minimum value of the sequence. If  **MINVALUE**  is not declared, or  **NO MINVALUE**  is declared, the default value of the ascending sequence is  **1**, and that of the descending sequence is  **-2<sup>63</sup>+1**.  **NOMINVALUE**  is equivalent to  **NO MINVALUE**.
+    Specifies the minimum value of the sequence. If  **MINVALUE**  is not declared, or  **NO MINVALUE**  is declared, the default value of the ascending sequence is  **1**, and that of the descending sequence is  **-2<sup>63</sup>**.  **NOMINVALUE**  is equivalent to  **NO MINVALUE**.
 
 - **MAXVALUE maxvalue | NO MAXVALUE| NOMAXVALUE**
 
