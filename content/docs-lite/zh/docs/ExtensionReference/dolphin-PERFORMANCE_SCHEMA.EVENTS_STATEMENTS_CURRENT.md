@@ -1,6 +1,6 @@
 # PERFORMANCE_SCHEMA.EVENTS_STATEMENTS_CURRENT
 
-PERFORMANCE_SCHEMA.EVENTS_STATEMENTS_CURRENT视图，兼容Mysql对应视图，仅在B库创建。显示和当前用户查询相关的信息，字段保存的是上一次执行的信息。
+PERFORMANCE_SCHEMA.EVENTS_STATEMENTS_CURRENT视图，兼容Mysql对应视图，仅在B库创建。语句执行期间显示当前正在执行的语句信息；会话空闲时保留最近一次执行的语句信息。
 
 >![](public_sys-resources/icon-note.png) **说明：** 
 >-   很多列openGauss并没有与Mysql相对应的信息，或者暂时不支持的输出，为了最大限度保持兼容性，用NULL填充。
