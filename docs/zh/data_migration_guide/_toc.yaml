@@ -29,3 +29,5 @@ sections:
     href: ./sql_server_migration.md
   - label: Oracle2OGRAC迁移
     href: ./oracle2ograc_migration.md
+  - label: Oracle2OGRAC校验
+    href: ./oracle2ograc_verification.md
