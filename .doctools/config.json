@@ -6,6 +6,7 @@
       "markdownlintRemoteConfigUrl": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/markdownlint.config.json",
       "linkValidityCheckRemoteWhitelistUrl": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/url.whitelist.json",
       "resourceExistenceCheckRemoteWhitelistUrl": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/url.whitelist.json",
+      "resourceExistenceCheckInSameLevel": true,
       "codespellCheckRemoteWhitelistUrl": "https://raw.gitcode.com/opengauss/docs/raw/common/.doctools/codespell.whitelist.json",
       "tocCheckDisableMdInToc": true,
       "ci": [
