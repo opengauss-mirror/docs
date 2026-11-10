@@ -20,6 +20,8 @@ openGauss在逻辑复制过程中支持如下DDL操作：
 
 ## 注意事项
 
+> 逻辑复制默认不复制DDL操作，需在创建发布时通过 ddl='table' 或 ddl='all' 选项显式启用。
+
 - 只支持行存表的DDL操作。
 - 不支持列存，Ustore存储引擎。
 - TYPE仅支持复合类型和枚举类型。
@@ -78,7 +80,7 @@ CREATE DATABASE dzy_soudb;
 4、在订阅端执行加密操作。
 
 ```sql
-gs_guc generate Aa123456 -D $GAUSSHOME/bin -o subscription
+gs_guc generate -S Aa123456 -D $GAUSSHOME/bin -o subscription
 ```
 
 5、在订阅端创建数据库dzy_desdb。
@@ -179,4 +181,3 @@ select * from logical_tb1_中文名;
  {f,t,t}
 (5 rows)
 ```
-
