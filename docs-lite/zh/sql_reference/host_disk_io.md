@@ -22,9 +22,9 @@ Host Disk IO列名称及描述如下表所示。
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p2_2"><a name="p2_2"></a><a name="p2_2"></a>设备在两个快照之间每秒读取操作的次数。</p>
 </td>
 </tr>
-<tr id="row3"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p3_1"><a name="p3_1"></a><a name="p3_1"></a>Read KB/s</p>
+<tr id="row3"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p3_1"><a name="p3_1"></a><a name="p3_1"></a>Read MB/s</p>
 </td>
-<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p3_2"><a name="p3_2"></a><a name="p3_2"></a>设备在两个快照之间每秒读取的数据量大小（KB）。</p>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p3_2"><a name="p3_2"></a><a name="p3_2"></a>设备在两个快照之间每秒读取的数据量大小（MB）。</p>
 </td>
 </tr>
 <tr id="row4"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p4_1"><a name="p4_1"></a><a name="p4_1"></a>Read Time/s</p>
@@ -37,9 +37,9 @@ Host Disk IO列名称及描述如下表所示。
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p5_2"><a name="p5_2"></a><a name="p5_2"></a>设备在两个快照之间每秒写入操作的次数。</p>
 </td>
 </tr>
-<tr id="row6"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p6_1"><a name="p6_1"></a><a name="p6_1"></a>Write KB/s</p>
+<tr id="row6"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p6_1"><a name="p6_1"></a><a name="p6_1"></a>Write MB/s</p>
 </td>
-<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p6_2"><a name="p6_2"></a><a name="p6_2"></a>设备在两个快照之间每秒写入的数据量大小（KB）。</p>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p6_2"><a name="p6_2"></a><a name="p6_2"></a>设备在两个快照之间每秒写入的数据量大小（MB）。</p>
 </td>
 </tr>
 <tr id="row7"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p7_1"><a name="p7_1"></a><a name="p7_1"></a>Write Time/s</p>
