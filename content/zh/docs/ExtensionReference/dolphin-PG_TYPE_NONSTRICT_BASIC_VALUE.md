@@ -1,6 +1,6 @@
 # PG\_TYPE\_NONSTRICT\_BASIC\_VALUE
 
-PG\_TYPE\_NONSTRICT\_BASIC\_VALUE视图存储类型的基础值，用于insert values()的插入。默认只有系统管理员权限才可以访问此系统表，普通用户需要授权才可以访问。
+PG\_TYPE\_NONSTRICT\_BASIC\_VALUE视图存储类型的基础值，用于insert values()的插入。默认公开该视图的 SELECT 和 REFERENCES 权限。
 
 **表 1**  PG\_TYPE\_NONSTRICT\_BASIC\_VALUE字段
 
