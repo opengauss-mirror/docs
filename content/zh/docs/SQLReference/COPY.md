@@ -8,7 +8,8 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
 ## 注意事项<a name="zh-cn_topic_0283136676_zh-cn_topic_0237122096_zh-cn_topic_0059778766_sc996fd2c14664963bae3e1e0ce655441"></a>
 
--   当参数enable\_copy\_server\_files关闭时，只允许初始用户执行COPY FROM FILENAME或COPY TO FILENAME命令，当参数enable\_copy\_server\_files打开，允许具有SYSADMIN权限的用户或继承了内置角色gs\_role\_copy\_files权限的用户执行，但默认禁止对数据库配置文件、密钥文件、证书文件和审计日志执行COPY FROM FILENAME或COPY TO FILENAME，以防止用户越权查看或修改敏感文件。
+-   初始用户可以执行COPY FROM FILENAME或COPY TO FILENAME命令，不受enable\_copy\_server\_files参数及下述敏感文件访问限制。
+-   对于非初始用户，当参数enable\_copy\_server\_files关闭时，禁止执行上述命令；当该参数打开时，只允许具有SYSADMIN权限的用户或继承了内置角色gs\_role\_copy\_files权限的用户执行，但仍禁止这些用户对数据库配置文件、密钥文件、证书文件和审计日志执行上述命令，以防止用户越权查看或修改敏感文件。
 -   COPY只能用于表，不能用于视图。
 -   COPY TO需要读取的表的select权限，copy from需要插入的表的insert权限。
 -   如果声明了一个字段列表，COPY将只在文件和表之间拷贝已声明字段的数据。如果表中有任何不在字段列表里的字段，COPY FROM将为那些字段插入缺省值。
