@@ -283,3 +283,11 @@ WAL类活动展示WAL写入次数、写入数据量、写入耗时及检查点�
 </tr>
 </tbody>
 </table>
+
+## 备注
+
+>[!NOTE]说明
+>
+> 耗时类指标的采集依赖 `track_io_timing` 参数。该参数未开启时，SMGR、WAL 等卡片中的耗时指标（如 Data File Read Elapse、Physical Write Elapse、WAL Write Elapse、Checkpoint Write Elapse、Checkpoint Sync Elapse）值为 0，需开启该参数后重新生成报表才能获取真实耗时。
+>
+> 报表中显示为 — 的指标，表示当前指标不存在对应列数据（该活动类型不包含该项统计）。
