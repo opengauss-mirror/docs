@@ -631,12 +631,22 @@ sections:
                     href: ./host_disk_io.md
                   - label: Host Network
                     href: ./host_network.md
+                  - label: Key Active
+                    href: ./key_active_stats.md
+                  - label: Instance IO
+                    href: ./instance_io_multidim_stats.md
+                  - label: Lock Active
+                    href: ./lock_active_stats.md
                   - label: IO Profile
                     href: ./io_profile.md
                   - label: Memory Statistics
                     href: ./memory_statistics.md
                   - label: Time Model
                     href: ./time_model.md
+                  - label: Protocol Statistics
+                    href: ./protocol_statistics.md
+                  - label: Database SQL Statistics
+                    href: ./database_sql_statistics.md
                   - label: SQL Statistics
                     href: ./sql_statistics.md
                   - label: Wait Events
@@ -651,12 +661,6 @@ sections:
                     href: ./configuration_settings.md
                   - label: SQL Detail
                     href: ./sql_detail.md
-                  - label: Key Active
-                    href: ./key_active_stats.md
-                  - label: Instance IO
-                    href: ./instance_io_multidim_stats.md
-                  - label: Lock Active
-                    href: ./lock_active_stats.md
       - label: PROC Coverage Schema
         sections:
           - label: 简介
