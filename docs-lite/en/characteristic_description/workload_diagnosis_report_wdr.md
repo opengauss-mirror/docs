@@ -102,10 +102,16 @@ The WDR depends on the following two components:
 <p>Includes Simple Query, Parse, Bind, Execute, Describe, Sync, Close, and Batch Bind-Execute with Exec Count, Total Time(s), Avg Time(ms), and % of DB Time.</p>
 </td>
 </tr>
+<tr id="row-database-sql-statistics"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p>Database SQL Statistics</p>
+</td>
+<td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p>Aggregates Unique SQL execution count and elapsed time by database (table title: SQL Stats by Database).</p>
+<p>Includes DB Name, Exec Count, Total Time(s), Avg Time(ms), and % of DB Time.</p>
+</td>
+</tr>
 <tr id="row1233374883113"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p10333948163119"><a name="p10333948163119"></a><a name="p10333948163119"></a>SQL Statistics</p>
 </td>
 <td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p367217315715"><a name="p367217315715"></a><a name="p367217315715"></a>Diagnoses SQL statement performance problems.</p>
-<p id="p103331848113117"><a name="p103331848113117"></a><a name="p103331848113117"></a>The statistics include normalized SQL performance indicators in multiple dimensions: elapsed time, CPU time, rows returned, tuple reads, executions, physical reads, and logical reads. The indicators can be classified into execution time, number of execution times, row activity, and cache I/O. Per-database execution count and elapsed time are also included.</p>
+<p id="p103331848113117"><a name="p103331848113117"></a><a name="p103331848113117"></a>The statistics include normalized SQL performance indicators in multiple dimensions: elapsed time, CPU time, rows returned, tuple reads, executions, physical reads, and logical reads. The indicators can be classified into execution time, number of execution times, row activity, and cache I/O.</p>
 </td>
 </tr>
 <tr id="row1933324873111"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p183331348193119"><a name="p183331348193119"></a><a name="p183331348193119"></a>Wait Events</p>
@@ -150,7 +156,7 @@ The WDR depends on the following two components:
 
 - Shared Memory Statistics: Top 10 shared-memory candidate components by size plus (Total). Node-wide report, which can be viewed in node mode for summary or all report types.
 - Protocol Statistics (Protocol Message Statistics): Exec Count, Total Time(s), Avg Time(ms), and % of DB Time for eight protocol message types. Node-wide report, which can be viewed in node mode for detail or all report types.
-- SQL Stats by Database: per-database SQL execution count and elapsed time. Node-wide report, which can be viewed in node mode for detail or all report types.
+- Database SQL Statistics (SQL Stats by Database): per-database SQL execution count and elapsed time. Node-wide report, which can be viewed in node mode for detail or all report types.
 - Unused Indexes: unused user indexes in the snapshot interval under Object stats. Database/Node-wide report, which can be viewed in cluster or node mode for detail or all report types.
 
 ## Constraints<a name="section1956417145819"></a>

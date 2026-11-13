@@ -12,4 +12,4 @@ WDR snapshot data tables come from all views in  [DBE\_PERF Schema](dbe_perf_sch
 Related additions/extensions for this feature:
 
 - `snap_global_instance_time` adds `snap_n_calls`, corresponding to `n_calls` of `pv_instance_time` / `dbe_perf.instance_time`, used by Protocol Message Statistics deltas.
-- New table `snap_summary_database_sql_stat` is sourced from `dbe_perf.summary_database_sql_stat` and used by SQL Stats by Database.
+- New table `snap_summary_database_sql_stat` is sourced from `dbe_perf.summary_database_sql_stat` and used by Database SQL Statistics (table title: SQL Stats by Database).

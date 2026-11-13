@@ -18,7 +18,7 @@ SQL Statistics列名称及描述如下表所示。
 </tr>
 <tr id="row3529101319150"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p5715192416419"><a name="p5715192416419"></a><a name="p5715192416419"></a>Node Name</p>
 </td>
-<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p4715192418417"><a name="p4715192418417"></a><a name="p4715192418417"></a>节点名称。</p>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p4715192418417"><a name="p4715192418417"></a><a name="p4715192418417"></a>节点名称。仅 cluster 模式下显示该字段；node 模式下不显示。</p>
 </td>
 </tr>
 <tr id="row123110587238"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p1762018546385"><a name="p1762018546385"></a><a name="p1762018546385"></a>User Name</p>
@@ -143,22 +143,3 @@ SQL Statistics列名称及描述如下表所示。
 </tr>
 </tbody>
 </table>
-## SQL Stats by Database
-
-按数据库聚合Unique SQL完成路径上的执行次数与总耗时，并计算占实例DB_TIME的比例。节点范围报表，仅node模式下的detail或all报告可查看。需开启Unique SQL相关能力。
-
-数据来源：snapshot.snap_summary_database_sql_stat（由dbe_perf.summary_database_sql_stat / dbe_perf.database_sql_stat采集）。
-
-**表 2  SQL Stats by Database报表主要内容**
-
-<table><thead align="left"><tr><th class="cellrowborder" valign="top" width="19.91%" id="h0"><p><strong>列名称</strong></p></th><th class="cellrowborder" valign="top" width="80.09%" id="h1"><p><strong>描述</strong></p></th></tr></thead>
-<tbody>
-<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>DB Name</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>数据库名称。</p></td></tr>
-<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Exec Count</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>区间内该库SQL执行次数差分。</p></td></tr>
-<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Total Time(s)</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>区间内总耗时（秒）。</p></td></tr>
-<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Avg Time(ms)</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>平均耗时（毫秒）；Exec Count为0时为0。</p></td></tr>
-<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>% of DB Time</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>相对实例DB_TIME差分的百分比。</p></td></tr>
-</tbody>
-</table>
-
-仅输出Exec Count或总耗时差分大于0的库，按Total Time降序排列。

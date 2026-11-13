@@ -91,9 +91,14 @@ WDR报表主要内容如下表所示。
 <td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul16141716192014"></a><a name="ul16141716192014"></a><ul id="ul16141716192014"><li>节点范围的语句的时间分布信息。</li><li>节点范围报表，仅node模式下可查看此报表。</li></ul>
 </td>
 </tr>
-<tr id="row-protocol-message-stat"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p><a href="time_model.md#protocol-message-statistics">Protocol Statistics</a></p>
+<tr id="row-protocol-message-stat"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p><a href="protocol_statistics.md">Protocol Statistics</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><ul><li>按协议报文类型（Simple Query / Parse / Bind / Execute / Describe / Sync / Close / Batch Bind-Execute）统计执行次数与耗时及占 DB_TIME 比例。</li><li>节点范围报表，仅node模式下的detail或all报告可查看。</li></ul>
+</td>
+</tr>
+<tr id="row-database-sql-statistics"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p><a href="database_sql_statistics.md">Database SQL Statistics</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><ul><li>按数据库聚合Unique SQL执行次数与总耗时，并计算占实例DB_TIME的比例（表标题为 SQL Stats by Database）。</li><li>节点范围报表，仅node模式下的detail或all报告可查看。</li></ul>
 </td>
 </tr>
 <tr id="row849110591151"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p148180593320"><a name="p148180593320"></a><a name="p148180593320"></a><a href="sql_statistics.md">SQL Statistics</a></p>

@@ -61,9 +61,14 @@ The following table describes the WDR content of the openGauss database.
 <td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul16141716192014"></a><a name="ul16141716192014"></a><ul id="ul16141716192014"><li>Time distribution information about the statements in a node.</li><li>Node-wide report, which can be viewed in node mode.</li></ul>
 </td>
 </tr>
-<tr id="row-protocol-message-stat"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p><a href="time_model.md#protocol-message-statistics">Protocol Statistics</a></p>
+<tr id="row-protocol-message-stat"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p><a href="protocol_statistics.md">Protocol Statistics</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><ul><li>Execution count, elapsed time, and % of DB Time by protocol message type (Simple Query / Parse / Bind / Execute / Describe / Sync / Close / Batch Bind-Execute).</li><li>Node-wide report, which can be viewed in node mode for detail or all report types.</li></ul>
+</td>
+</tr>
+<tr id="row-database-sql-statistics"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p><a href="database_sql_statistics.md">Database SQL Statistics</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><ul><li>Unique SQL execution count and elapsed time aggregated by database, with % of instance DB_TIME (table title: SQL Stats by Database).</li><li>Node-wide report, which can be viewed in node mode for detail or all report types.</li></ul>
 </td>
 </tr>
 <tr id="row849110591151"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p148180593320"><a name="p148180593320"></a><a name="p148180593320"></a><a href="sql_statistics.md">SQL Statistics</a></p>
@@ -103,35 +108,3 @@ The following table describes the WDR content of the openGauss database.
 </tr>
 </tbody>
 </table>
-
-- **[Database Stat](database_stat.md)**  
-
-- **[Load Profile](load_profile.md)**  
-
-- **[Instance Efficiency Percentages](instance_efficiency_percentages.md)**  
-
-- **[Top 10 Events by Total Wait Time](top_10_events_by_total_wait_time.md)**  
-
-- **[Wait Classes by Total Wait Time](wait_classes_by_total_wait_time.md)**  
-
-- **[Host CPU](host_cpu.md)**  
-
-- **[IO Profile](io_profile.md)**  
-
-- **[Memory Statistics](memory_statistics.md)**  
-
-- **[Time Model](time_model.md)**  
-
-- **[SQL Statistics](sql_statistics.md)**  
-
-- **[Wait Events](wait_events_60.md)**  
-
-- **[Cache IO Stats](cache_io_stats.md)**  
-
-- **[Utility status](utility_status.md)**  
-
-- **[Object stats](object_stats.md)**  
-
-- **[Configuration settings](configuration_settings_60.md)**  
-
-- **[SQL Detail](sql_detail.md)**  

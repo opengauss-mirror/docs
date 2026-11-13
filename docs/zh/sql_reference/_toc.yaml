@@ -645,6 +645,10 @@ sections:
                 href: ./memory_statistics.md
               - label: Time Model
                 href: ./time_model.md
+              - label: Protocol Statistics
+                href: ./protocol_statistics.md
+              - label: Database SQL Statistics
+                href: ./database_sql_statistics.md
               - label: SQL Statistics
                 href: ./sql_statistics.md
               - label: Wait Events

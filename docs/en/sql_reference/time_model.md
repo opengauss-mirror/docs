@@ -1,6 +1,6 @@
 ---
-description: This document describes Time Model in openGauss, covering topics such as Protocol Message Statistics.
-keywords: [openGauss, Time Model, SQL, Protocol Message Statistics]
+description: This document describes Time Model in openGauss.
+keywords: [openGauss, Time Model, SQL]
 ---
 
 # Time Model<a name="EN-US_TOPIC_0000001259955051"></a>
@@ -69,43 +69,4 @@ The following table describes metrics in the Time Model report.
 </tbody>
 </table>
 
-## Protocol Message Statistics
-
-In the WDR report, the module title is **Protocol Statistics** and the table title is **Protocol Message Statistics**.
-
-Aggregates execution count and elapsed time by protocol message type between snapshots, and computes the percentage of instance DB_TIME. Data comes from `snapshot.snap_global_instance_time` (`snap_value` / `snap_n_calls`), the same source as Time Model. Node-wide report, which can be viewed in node mode for detail or all report types.
-
-**Table 2 Protocol message type mapping**
-
-<table><thead align="left"><tr>
-<th class="cellrowborder" valign="top" width="8%" id="h0"><p><strong>No.</strong></p></th>
-<th class="cellrowborder" valign="top" width="22%" id="h1"><p><strong>Report name (Message Type)</strong></p></th>
-<th class="cellrowborder" valign="top" width="28%" id="h2"><p><strong>Internal stat_name</strong></p></th>
-<th class="cellrowborder" valign="top" width="42%" id="h3"><p><strong>Meaning</strong></p></th>
-</tr></thead>
-<tbody>
-<tr><td class="cellrowborder" valign="top" headers="h0 "><p>1</p></td><td class="cellrowborder" valign="top" headers="h1 "><p>Simple Query</p></td><td class="cellrowborder" valign="top" headers="h2 "><p>Exact match SRT2_SIMPLE_QUERY</p></td><td class="cellrowborder" valign="top" headers="h3 "><p>Simple-query protocol path (Q message): elapsed time and execution count</p></td></tr>
-<tr><td class="cellrowborder" valign="top" headers="h0 "><p>2</p></td><td class="cellrowborder" valign="top" headers="h1 "><p>Parse</p></td><td class="cellrowborder" valign="top" headers="h2 "><p>Exact match SRT6_P</p></td><td class="cellrowborder" valign="top" headers="h3 "><p>Extended-query Parse phase</p></td></tr>
-<tr><td class="cellrowborder" valign="top" headers="h0 "><p>3</p></td><td class="cellrowborder" valign="top" headers="h1 "><p>Bind</p></td><td class="cellrowborder" valign="top" headers="h2 "><p>Exact match SRT7_B</p></td><td class="cellrowborder" valign="top" headers="h3 "><p>Extended-query Bind phase</p></td></tr>
-<tr><td class="cellrowborder" valign="top" headers="h0 "><p>4</p></td><td class="cellrowborder" valign="top" headers="h1 "><p>Execute</p></td><td class="cellrowborder" valign="top" headers="h2 "><p>Exact match SRT8_E</p></td><td class="cellrowborder" valign="top" headers="h3 "><p>Extended-query Execute phase</p></td></tr>
-<tr><td class="cellrowborder" valign="top" headers="h0 "><p>5</p></td><td class="cellrowborder" valign="top" headers="h1 "><p>Describe</p></td><td class="cellrowborder" valign="top" headers="h2 "><p>Exact match SRT9_D</p></td><td class="cellrowborder" valign="top" headers="h3 "><p>Extended-query Describe phase</p></td></tr>
-<tr><td class="cellrowborder" valign="top" headers="h0 "><p>6</p></td><td class="cellrowborder" valign="top" headers="h1 "><p>Sync</p></td><td class="cellrowborder" valign="top" headers="h2 "><p>Exact match SRT10_S</p></td><td class="cellrowborder" valign="top" headers="h3 "><p>Extended-query Sync phase</p></td></tr>
-<tr><td class="cellrowborder" valign="top" headers="h0 "><p>7</p></td><td class="cellrowborder" valign="top" headers="h1 "><p>Close</p></td><td class="cellrowborder" valign="top" headers="h2 "><p>Exact match SRT11_C</p></td><td class="cellrowborder" valign="top" headers="h3 "><p>Extended-query Close phase</p></td></tr>
-<tr><td class="cellrowborder" valign="top" headers="h0 "><p>8</p></td><td class="cellrowborder" valign="top" headers="h1 "><p>Batch Bind-Execute</p></td><td class="cellrowborder" valign="top" headers="h2 "><p>Exact match SRT12_U</p></td><td class="cellrowborder" valign="top" headers="h3 "><p>Batch Bind-Execute path (U message): elapsed time and execution count</p></td></tr>
-</tbody>
-</table>
-
-
-**Table 3 Columns in Protocol Message Statistics**
-
-<table><thead align="left"><tr><th class="cellrowborder" valign="top" width="19.91%" id="h0"><p><strong>Column</strong></p></th><th class="cellrowborder" valign="top" width="80.09%" id="h1"><p><strong>Description</strong></p></th></tr></thead>
-<tbody>
-<tr><td class="cellrowborder" valign="top" headers="h0 "><p>Message Type</p></td><td class="cellrowborder" valign="top" headers="h1 "><p>Protocol message type (see the mapping above).</p></td></tr>
-<tr><td class="cellrowborder" valign="top" headers="h0 "><p>Exec Count</p></td><td class="cellrowborder" valign="top" headers="h1 "><p>Execution-count delta between snapshots (end − begin n_calls).</p></td></tr>
-<tr><td class="cellrowborder" valign="top" headers="h0 "><p>Total Time(s)</p></td><td class="cellrowborder" valign="top" headers="h1 "><p>Total elapsed time in seconds (converted from microsecond delta).</p></td></tr>
-<tr><td class="cellrowborder" valign="top" headers="h0 "><p>Avg Time(ms)</p></td><td class="cellrowborder" valign="top" headers="h1 "><p>Average elapsed time in milliseconds; 0 when Exec Count is 0.</p></td></tr>
-<tr><td class="cellrowborder" valign="top" headers="h0 "><p>% of DB Time</p></td><td class="cellrowborder" valign="top" headers="h1 "><p>Percentage of the instance DB_TIME delta.</p></td></tr>
-</tbody>
-</table>
-
-Rows are ordered by Total Time descending. Exec Count and elapsed time may be 0 when there is no activity for that message type.
+For protocol-message statistics, see [Protocol Statistics](protocol_statistics.md).

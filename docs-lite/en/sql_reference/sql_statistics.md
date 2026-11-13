@@ -18,7 +18,7 @@ The following table describes columns in the SQL Statistics report.
 </tr>
 <tr id="row3529101319150"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p5715192416419"><a name="p5715192416419"></a><a name="p5715192416419"></a>Node Name</p>
 </td>
-<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p4715192418417"><a name="p4715192418417"></a><a name="p4715192418417"></a>Node name.</p>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p4715192418417"><a name="p4715192418417"></a><a name="p4715192418417"></a>Node name. This column is displayed only in cluster mode; it is not displayed in node mode.</p>
 </td>
 </tr>
 <tr id="row123110587238"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p1762018546385"><a name="p1762018546385"></a><a name="p1762018546385"></a>User Name</p>
@@ -143,22 +143,3 @@ The following table describes columns in the SQL Statistics report.
 </tr>
 </tbody>
 </table>
-## SQL Stats by Database
-
-Aggregates Unique SQL completion-path execution count and elapsed time by database, and computes the percentage of instance DB_TIME. Node-wide report, which can be viewed in node mode for detail or all report types. Unique SQL must be enabled.
-
-Data source: snapshot.snap_summary_database_sql_stat (from dbe_perf.summary_database_sql_stat / dbe_perf.database_sql_stat).
-
-**Table 2 Columns in SQL Stats by Database**
-
-<table><thead align="left"><tr><th class="cellrowborder" valign="top" width="19.91%" id="h0"><p><strong>Column</strong></p></th><th class="cellrowborder" valign="top" width="80.09%" id="h1"><p><strong>Description</strong></p></th></tr></thead>
-<tbody>
-<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>DB Name</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>Database name.</p></td></tr>
-<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Exec Count</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>Execution-count delta for the database between snapshots.</p></td></tr>
-<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Total Time(s)</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>Total elapsed time in seconds.</p></td></tr>
-<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>Avg Time(ms)</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>Average elapsed time in milliseconds; 0 when Exec Count is 0.</p></td></tr>
-<tr><td class="cellrowborder" valign="top" width="19.91%" headers="h0 "><p>% of DB Time</p></td><td class="cellrowborder" valign="top" width="80.09%" headers="h1 "><p>Percentage of the instance DB_TIME delta.</p></td></tr>
-</tbody>
-</table>
-
-Only databases with Exec Count or elapsed-time delta greater than 0 are listed, ordered by Total Time descending.

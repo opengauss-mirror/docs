@@ -107,10 +107,16 @@ WDR主要依赖两个组件：
 <p>包含 Simple Query、Parse、Bind、Execute、Describe、Sync、Close、Batch Bind-Execute 的 Exec Count、Total Time(s)、Avg Time(ms)、% of DB Time。</p>
 </td>
 </tr>
+<tr id="row-database-sql-statistics"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p>Database SQL Statistics</p>
+</td>
+<td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p>按数据库聚合 Unique SQL 执行次数与耗时（表标题为 SQL Stats by Database）。</p>
+<p>包含 DB Name、Exec Count、Total Time(s)、Avg Time(ms)、% of DB Time。</p>
+</td>
+</tr>
 <tr id="row1233374883113"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p10333948163119"><a name="p10333948163119"></a><a name="p10333948163119"></a>SQL Statistics</p>
 </td>
 <td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p367217315715"><a name="p367217315715"></a><a name="p367217315715"></a>主要用于SQL语句性能问题的诊断。</p>
-<p id="p103331848113117"><a name="p103331848113117"></a><a name="p103331848113117"></a>包含归一化的SQL的性能指标在多个维度上的排序：Elapsed Time、CPU Time、Rows Returned、Tuples Reads、Executions、Physical Reads、Logical Reads。这些指标的种类包括：执行时间，执行次数、行活动、Cache IO等。另包含按数据库聚合的执行次数与耗时。</p>
+<p id="p103331848113117"><a name="p103331848113117"></a><a name="p103331848113117"></a>包含归一化的SQL的性能指标在多个维度上的排序：Elapsed Time、CPU Time、Rows Returned、Tuples Reads、Executions、Physical Reads、Logical Reads。这些指标的种类包括：执行时间，执行次数、行活动、Cache IO等。</p>
 </td>
 </tr>
 <tr id="row1933324873111"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p183331348193119"><a name="p183331348193119"></a><a name="p183331348193119"></a>Wait Events</p>
@@ -155,7 +161,7 @@ WDR主要依赖两个组件：
 
 - Shared Memory Statistics：展示共享内存候选组件中按大小排序的Top 10及(Total)。节点范围报表，仅node模式下的summary或all报告可查看。
 - Protocol Statistics（Protocol Message Statistics）：按 8 种协议报文类型统计 Exec Count、Total Time(s)、Avg Time(ms)、% of DB Time。节点范围报表，仅 node 模式下的 detail 或 all 报告可查看。
-- SQL Stats by Database：按数据库聚合SQL执行次数与耗时。节点范围报表，仅node模式下的detail或all报告可查看。
+- Database SQL Statistics（SQL Stats by Database）：按数据库聚合SQL执行次数与耗时。节点范围报表，仅node模式下的detail或all报告可查看。
 - Unused Indexes：输出区间内未使用的用户索引。数据库、节点范围报表，cluster模式和node模式下的detail或all报告可查看。
 
 ## 特性约束<a name="section1956417145819"></a>
