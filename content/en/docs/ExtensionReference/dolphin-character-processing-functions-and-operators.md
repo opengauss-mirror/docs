@@ -328,7 +328,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   char_length (string) or character_leng (string)
+-   char_length (string) or character_length (string)
 
     Description: Specifies the number of characters in a character string. The length of a Chinese character is 1. The binary type is supported.
 
@@ -337,7 +337,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     Example:
 
     ```
-    openGauss=# SELECT char_length('hello');
+    b_compatibility_database=# SELECT char_length('hello');
     char_length
     -------------
             5
