@@ -11,13 +11,13 @@ The naming rules for identifiers are as follows:
     > 
     >-   The naming rules are recommended but not mandatory.
     >
-    >-   In special cases, double quotation marks (") can be used to avoid special character errors.
+    >-   In special cases, backticks can be used to quote identifiers and avoid special character errors. Double quotation marks can also be used to quote identifiers when `dolphin.sql_mode` includes `ansi_quotes`.
 
 Compared with the original openGauss, Dolphin modifies keywords as follows:
 
 1. MEDIUMINT is added as a non-reserved keyword.
 2. The keyword `DATE` can be used as a function.
-3. `LAST_DAY` is added as a reserved keyword to distinguish the original LAST\_DAY function of openGauss from the LAST\_DAY function of Dolphin at the syntax level.
+3. `LAST_DAY` is added as a non-reserved keyword (cannot be a function or type name) to distinguish the original LAST\_DAY function of openGauss from the LAST\_DAY function of Dolphin at the syntax level.
 4. `GET_FORMAT` is added as a non-reserved keyword to identify the GET\_FORMAT function in syntax.
 5. `DAY_HOUR, DAY_MINUTE, DAY_SECOND, DAY_MICROSECOND, HOUR_MINUTE, HOUR_SECOND, HOUR_MICROSECOND, MINUTE_SECOND, MINUTE_MICROSECOND, and SECOND_MICROSECOND` are added as non-reserved keywords for the EXTRACT function to identify the corresponding unit in syntax.
 
@@ -110,7 +110,7 @@ Compared with the original openGauss, Dolphin modifies keywords as follows:
 <tr>
 <td>LAST_DAY
 </td>
-<td>Reserved
+<td>Non-reserved (excluding functions and types)
 </td>
 <td>-
 </td>
