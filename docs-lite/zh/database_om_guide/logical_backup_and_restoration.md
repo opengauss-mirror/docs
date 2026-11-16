@@ -2,6 +2,14 @@
 
 - **[gs\_dump](../tool_and_commandreference/gs_dump.md)**  
 
+  纯文本（默认或`-F p`/`--format=plain`）输出包含配对的`\restrict key`和`\unrestrict key`保护命令。`--restrict-key=RESTRICT_KEY`仅适用于纯文本格式，key必须是非空ASCII字母数字串（`A-Z`、`a-z`、`0-9`），默认随机生成；不能与`-F c/d/t`一起使用。tar归档内嵌的`restore.sql`同样包含受限模式保护。使用gsql执行前，须将 `restore.sql` 中所有 `$$PATH$$` 占位符替换为解包数据文件所在目录的绝对路径。使用INSERT模式导出时，须将脚本引用的 `restore-<id>.sql` 文件保留在该目录中，并保留所有脚本中生成的 `\restrict` 和 `\unrestrict` 保护命令，不要只复制或执行单独的 `restore.sql`。
+
 - **[gs\_dumpall](../tool_and_commandreference/gs_dumpall.md)**  
 
+  输出的纯文本脚本包含受限模式保护。`--restrict-key=RESTRICT_KEY`指定非空ASCII字母数字串作为key，并将显式指定的值传给各子gs\_dump；未指定时，gs\_dumpall和各子gs\_dump分别随机生成key。
+
 - **[gs\_restore](../tool_and_commandreference/gs_restore.md)**  
+
+  当前命令行必须且只能指定`-d/--dbname`或`-l/--list`之一，两者均未指定时会报错，不提供恢复脚本生成功能。`-d`直接恢复通过数据库连接执行SQL，不发送gsql元命令；`-l`列出归档目录（TOC），可配合`-f/--file`写入指定文件，默认输出到标准输出。新增的`--restrict-key=RESTRICT_KEY`是兼容/预留的脚本保护参数，不能启用脚本模式，不得与`-d`一起使用，`-l`也不使用该key。脚本保护机制要求key为非空ASCII字母数字串（`A-Z`、`a-z`、`0-9`），但当前CLI没有使用该key生成脚本的可用模式。
+
+固定key用于稳定回归测试或输出比较，不建议在常规生产备份中使用；它不是数据库密码或备份加密密码。恢复上述脚本必须使用支持`\restrict`和`\unrestrict`的gsql客户端，不要为兼容旧客户端而删除保护命令。[gsql受限模式](../tool_and_commandreference/gsql.md#gsql-restricted-mode)限制客户端元命令，并非SQL安全沙箱，仍须确认备份来源可信。
