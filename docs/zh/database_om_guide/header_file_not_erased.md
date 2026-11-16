@@ -9,7 +9,7 @@ keywords: [openGauss, 未擦除头部文件, 数据库运维, 现象, 原因]
 
 如果该环境之前安装过数据库，再次安装时出现如下错误。
 
-![Alt text](../database_om_guide/image-1.png)
+![Alt text](./image-1.png)
 
 ## 原因
 
