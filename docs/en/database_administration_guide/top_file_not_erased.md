@@ -11,7 +11,7 @@ keywords: [openGauss, Header File Not Erased, database administration, Symptoms,
 
 When installing the database again in the same environment where a database was previously installed, the following error occurs.
 
-![Alt text](../database_administration_guide/figures/image-1.png)
+![Alt text](./figures/image-1.png)
 
 ## Cause
 

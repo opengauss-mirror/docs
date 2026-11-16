@@ -10,7 +10,7 @@ keywords: [openGauss, Unable to Start a Node Independently, database administrat
 ## Symptom
 
 Starting a single node independently using gs_ctl start fails and remains in a waiting state. The log displays the following error.
-![Image: Error log when starting a node independently](../database_om_guide/image-3.png)
+![Image: Error log when starting a node independently](./figures/image-3.png)
 
 ## Cause
 

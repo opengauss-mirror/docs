@@ -12,7 +12,7 @@ GR (oGRecorder) is a database log protection software. Its typical deployment sc
 - **oGRecorder** implements a VFS-like (Virtual File System) interface that supports high-performance data writing and reading, as well as secure authentication and safe data writing between the SDK and the storage layer.
 - **oGRecorder SDK** provides a comprehensive set of file operation APIs for third-party software to call, enabling real-time synchronization and disaster recovery replay of database logs.
 
-![oGRecorder Architecture](../figures/image.png)
+![oGRecorder Architecture](./figures/image.png)
 
 ## Related Documents
 

@@ -14,7 +14,7 @@ Failed to start dssserver, with the error message "dss failed to startup".
 ## Cause
 
 Insufficient shared memory. You can check the logs in the /dss/dss0/dssdba/run directory, where you will see an error similar to the following screenshot.
-![Alt text](../database_om_guide/image-1.png)
+![Alt text](./figures/image-1.png)
 
 ## Solution
 
