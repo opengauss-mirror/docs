@@ -10,9 +10,13 @@ gs\_restore具备如下两种功能。
 
     如果指定了数据库，则数据将被导入到指定的数据库中。其中，并行导入必须指定连接数据库的密码。导入时生成列会自动更新，并像普通列一样保存。
 
-- 导入至脚本文件
+- 列出归档目录（TOC）
 
-    如果未指定导入数据库，则创建包含重建数据库所需的SQL语句脚本，并将其写入至文件或者标准输出。该脚本文件等效于gs\_dump导出的纯文本格式文件。
+    使用`-l/--list`列出归档目录，默认输出到标准输出；可配合`-f/--file`将目录写入指定文件。
+
+当前gs\_restore命令行必须且只能指定`-d/--dbname`或`-l/--list`之一，两者均未指定时会报错，不提供恢复脚本生成功能。`-d`直接恢复通过数据库连接执行SQL，不发送gsql元命令。新增的`--restrict-key=RESTRICT_KEY`是兼容/预留的脚本保护参数，不能启用脚本模式，不得与`-d`一起使用，`-l`列目录时也不使用该key。参数详情请参见[gs\_restore](../tool_and_commandreference/gs_restore.md)。
+
+由gs\_dump生成的tar归档内嵌的`restore.sql`包含配对的`\restrict key`和`\unrestrict key`保护命令；这并不表示gs\_restore命令行提供脚本生成模式。执行此脚本必须使用支持[gsql受限模式](../tool_and_commandreference/gsql.md#gsql-restricted-mode)的客户端，不要为兼容旧客户端而删除保护命令。受限模式限制客户端元命令，并非SQL安全沙箱，仍须确认备份来源可信。
 
 gs\_restore工具在导入时，允许用户选择需要导入的内容，并支持在数据导入前对等待导入的内容进行排序。
 
