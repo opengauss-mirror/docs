@@ -19,7 +19,7 @@ The generated columns are not dumped during  **gs\_dump**  is used.
 
 **gs\_dump**  can export database information to a plain-text SQL script file or archive file.
 
--   Plain-text SQL script: It contains the SQL statements required to restore the database. You can use gsql to execute the SQL script. With only a little modification, the SQL script can rebuild a database on other hosts or database products.
+-   Plain-text SQL script: It contains the SQL statements required to restore the database, together with matching `\restrict key` and `\unrestrict key` protection commands. Restore with a client that supports [gsql restricted mode](../ToolandCommandReference/gsql.md#gsql-restricted-mode) and retain the protection commands; do not remove them to accommodate an older client. To rebuild a database on other hosts or database products, adjust the SQL dialect as needed and verify that the target client supports the gsql meta-commands in the script; do not assume the script can be executed unchanged by any SQL client. Restricted mode limits client meta-commands, not SQL execution, and is not a SQL security sandbox. Restore only backups from trusted sources. The `restore.sql` script embedded in a tar archive also includes restricted-mode protection.
 -   Archive file: It contains data required to restore the database. It can be a tar-, directory-, or custom-format archive. For details, see  [Table 1](#en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5). The export result must be used with  **gs\_restore**to restore the database. The system allows users to select or even to sort the content to be imported.
 
 #### Functions<a name="en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0059777770_s59719e8badd54d11a09df49f558d8b20"></a>
@@ -135,6 +135,12 @@ Common parameters
 
   Sends the output to the specified file or directory. If this parameter is omitted, the standard output is generated. If the output format is  **\(-F c/-F d/-F t\)**, the  **-f**  parameter must be specified. If the value of the  **-f**  parameter contains a directory, the current user must have the read and write permissions on the directory, and the directory cannot be an existing one.
 
+- --restrict-key=RESTRICT_KEY
+
+  Specifies the key used by `\restrict` and `\unrestrict` in plain-text output. This option applies only to plain-text output (the default, or `-F p`/`--format=plain`); using it with `-F c/d/t` causes an error. The key must be a nonempty ASCII alphanumeric string (`A-Z`, `a-z`, `0-9`); no fixed length is required. If omitted, a random key is generated.
+
+  A fixed key is intended for stable regression tests or output comparisons and is not recommended for routine production backups. It is neither a database password nor a backup encryption password. If the source database side can predict the key, protection against client-side command injection is weakened. Restore with a client that supports [gsql restricted mode](../ToolandCommandReference/gsql.md#gsql-restricted-mode) and retain the protection commands in the script.
+
 - -F, --format=c|d|t|p
 
   Selects the exported file format. The format can be:
@@ -147,7 +153,7 @@ Common parameters
 
   - **t|tar**: Outputs a .tar archive as the input of  **gs\_restore**. The .tar format is compatible with the directory format. Extracting a .tar archive generates a valid directory-format archive. However, the .tar archive cannot be further compressed and has an 8-GB limitation on the size of a single table. The order of table data items cannot be changed during restoration.
 
-    A .tar archive can be used as input of  **gsql**.
+    After extracting a .tar archive, use a gsql client that supports `\restrict` and `\unrestrict` to execute its embedded `restore.sql`. Before execution, replace every `$$PATH$$` placeholder in `restore.sql` with the absolute path to the directory containing the extracted data files. For INSERT-mode dumps, retain the referenced `restore-<id>.sql` files in that directory; do not copy or execute `restore.sql` on its own. Preserve the generated `\restrict` and `\unrestrict` commands in all scripts. The archive itself is not a SQL script and must not be passed directly to gsql.
 
 
 - -v, --verbose
@@ -368,6 +374,8 @@ Dump parameters:
 
   Dumps data by the  **INSERT**  statement \(rather than  **COPY**\). This will cause a slow restoration.
 
+  This option and --column-inserts can be used for cross-product data migration that requires INSERT statements, but the target SQL dialect and client compatibility with the gsql meta-commands in the script must still be checked. Using INSERT does not remove restricted-mode protection or make the script directly executable by any SQL client.
+
   However, since this option generates an independent command for each row, an error in reloading a row causes only the loss of the row rather than the entire table content. The restoration may fail if you rearrange the column order. The  **--column-inserts**  option is unaffected against column order changes, though even slower.
 
 - --no-publications
@@ -558,7 +566,7 @@ gs_dump[port='37300'][postgres][2018-06-27 09:49:17]: dump database postgres suc
 gs_dump[port='37300'][postgres][2018-06-27 09:49:17]: total time: 1274  ms
 ```
 
-Use  **gsql**  to import data from the exported plain-text file.
+Use a gsql version that supports `\restrict` and `\unrestrict` to import data from the exported plain-text file, and retain the protection lines. The preceding output is terminal progress logging, not the contents of MPPDB\_backup.sql; the script uses a random protection token by default.
 
 Example 2: Use  **gs\_dump**  to export the full information of the postgres database. The exported  **MPPDB\_backup.tar**  file is in .tar format.
 
@@ -649,7 +657,7 @@ The generated columns are not dumped during  **gs\_dumpall**  is used.
 -   **gs\_dumpall**  exports all global objects, including information about database users and groups, tablespaces, and attributes \(for example, global access permissions\).
 -   **gs\_dumpall**  invokes  **gs\_dump**  to export SQL scripts from each openGauss database, which contain all the SQL statements required to restore databases.
 
-The exported files are both plain-text SQL scripts. Use  gsql to execute them to restore openGauss databases.
+The exported files are both plain-text SQL scripts. The global-object script and the database scripts generated by child gs\_dump processes each contain matching `\restrict key` and `\unrestrict key` protection commands. Restore with a client that supports [gsql restricted mode](../ToolandCommandReference/gsql.md#gsql-restricted-mode); do not remove the protection commands to accommodate an older client. Restricted mode limits client meta-commands and is not a SQL security sandbox. Restore only backups from trusted sources.
 
 #### Precautions<a name="en-us_topic_0249632251_en-us_topic_0237152336_en-us_topic_0059778372_s67532b3f6d2a42e183672fae6c4ba753"></a>
 
@@ -666,6 +674,12 @@ gs_dumpall [OPTION]...
 #### Parameter Description<a name="en-us_topic_0249632251_en-us_topic_0237152336_en-us_topic_0059778372_s8a1ffa824f1b4371a430896ee8fd2020"></a>
 
 Common parameters:
+
+- --restrict-key=RESTRICT_KEY
+
+  Specifies the key used by `\restrict` and `\unrestrict` in the output script. The key must be a nonempty ASCII alphanumeric string (`A-Z`, `a-z`, `0-9`); no fixed length is required. An explicitly specified value is also passed to each child gs\_dump process. If omitted, gs\_dumpall and each child gs\_dump generate their own random keys rather than sharing one automatically generated key. Each section manages restricted mode separately, so the complete output is not limited to one pair of protection commands. Database reconnections remain supported.
+
+  A fixed key is intended for stable regression tests or output comparisons and is not recommended for routine production backups. It is neither a database password nor a backup encryption password. If the source database side can predict the key, protection against client-side command injection is weakened.
 
 - -f, --filename=FILENAME
 
@@ -745,6 +759,8 @@ Dump parameters:
 - --inserts
 
   Dumps data by the  **INSERT**  statement \(rather than  **COPY**\). This will cause a slow restoration. The restoration may fail if you rearrange the column order. The  **--column-inserts**  option is unaffected against column order changes, though even slower.
+
+  This option and --column-inserts can be used for cross-product data migration that requires INSERT statements, but the target SQL dialect and client compatibility with the gsql meta-commands in the script must still be checked. Using INSERT does not remove restricted-mode protection or make the script directly executable by any SQL client.
 
 - --no-publications
 
@@ -897,7 +913,7 @@ Once  **gs\_dumpall**  is restored, run ANALYZE on each database so that the opt
 Use  **gs\_dumpall**  to export all openGauss databases at a time.
 
 ![](public_sys-resources/icon-note.gif) **NOTE:** 
-**gs\_dumpall**  supports only plain-text format export. Therefore, only  **gsql**  can be used to restore a file exported using  **gs\_dumpall**.
+**gs\_dumpall** supports only plain-text format export. Restore the script using a gsql version that supports `\restrict` and `\unrestrict`, and retain the protection lines. The following output is terminal logging, not the backup script contents; script sections use independently generated random protection tokens by default.
 
 ```
 gs_dumpall -f backup/bkp2.sql -p 37300
@@ -923,9 +939,13 @@ It has the following functions:
 
   If a database is specified, data is imported to the database. For parallel import, the password for connecting to the database is required. During data import, the generated columns are automatically updated and saved as common columns.
 
-- Importing data to the script file
+- Listing the archive table of contents (TOC)
 
-  If the database storing imported data is not specified, a script containing the SQL statement to recreate the database is created and written to a file or standard output. This script output is equivalent to the plain text output format of  **gs\_dump**.
+  Use `-l/--list` to list the archive TOC, optionally with `-f/--file` to write it to a specified file. The default output is standard output.
+
+The current gs\_restore CLI requires exactly one of `-d/--dbname` and `-l/--list`. It reports an error if neither is specified and does not provide restore script generation. Direct restoration with `-d` executes SQL through the database connection and does not send gsql meta-commands. `--restrict-key` cannot be used in this mode.
+
+The `restore.sql` script embedded in a tar archive generated by gs\_dump contains matching `\restrict key` and `\unrestrict key` protection commands. This does not mean that the gs\_restore CLI provides a script generation mode. Execute this script with a client that supports [gsql restricted mode](../ToolandCommandReference/gsql.md#gsql-restricted-mode); do not remove the protection commands to accommodate an older client. Restricted mode limits client meta-commands and is not a SQL security sandbox. Restore only backups from trusted sources.
 
 
 #### Command Format<a name="en-us_topic_0249632267_en-us_topic_0237152343_en-us_topic_0059777561_s5a64660d88db4dfb8e2b35d0b4645264"></a>
@@ -937,7 +957,7 @@ gs_restore [OPTION]... FILE
 >![](F:/opengauss-docs/docs/content/en/docs/Administratorguide/public_sys-resources/icon-note.gif) **NOTE:**    
 >
 >-   **FILE**  does not have a short or long parameter. It is used to specify the location for the archive files.   
->-   The  **dbname**  or  **-l**  parameter is required as prerequisites. Users cannot enter  **dbname**  and  **-l**  parameters at the same time.  
+>-   Specify exactly one of **-d/--dbname** to restore directly to a database and **-l/--list** to list the archive TOC. If neither is specified, the command reports an error. The current CLI does not provide restore script generation; specifying **-f** or **--restrict-key** does not enable a script mode.
 >-   **gs\_restore**  incrementally imports data by default. To prevent data exceptions caused by multiple import operations, you are advised to use the  **-c**  parameter during the import. Before recreating database objects, delete the database objects that already exist in the database to be restored.  
 >-   There is no option to control log printing. To hide logs, redirect the logs to the log file. If a large amount of table data needs to be restored, the table data will be restored in batches. Therefore, the log indicating that the table data has been imported is generated for multiple times.  
 
@@ -951,12 +971,18 @@ Common parameters
 
 - -f, --file=FILENAME
 
-  Specifies the output file for the generated script, or uses the output file in the list specified using  **-l**.
+  Currently specifies only the output file for the archive TOC when used with **-l/--list**. It does not generate a restore script.
 
   The default is the standard output.
 
   >![](public_sys-resources/icon-note.gif) **NOTE:**   
   >**-f**  cannot be used in conjunction with  **-d**.  
+
+- --restrict-key=RESTRICT_KEY
+
+  A compatibility/reserved parameter parsed by the current CLI to specify the key used by `\restrict` and `\unrestrict` in the shared script protection mechanism. This mechanism requires a nonempty ASCII alphanumeric key (`A-Z`, `a-z`, `0-9`); no fixed length is required, and internal script generation can generate a random key if none is supplied. This does not mean that the current gs\_restore CLI exposes a script mode.
+
+  The current entry point requires either `-d/--dbname` or `-l/--list`: this option conflicts with `-d` and causes an error, and `-l` only lists the TOC without using the key. Therefore, neither this option nor `-f` can be used to generate a restore script. The key is neither a database password nor a backup encryption password. A fixed key is intended only for stable test output and is not recommended for routine production backups. If the source database side can predict the key, protection against client-side command injection is weakened. The input must still be a custom-, directory-, or tar-format archive, not a plain-text SQL script.
 
 - -F, --format=c|d|t
 
@@ -1023,7 +1049,7 @@ Parameters for importing data
 
   The optimal value for this option depends on the server hardware setting, the client, the network, the number of CPU cores, and disk settings. It is recommended that the parameter be set to the number of CPU cores on the server. In addition, a larger value can also lead to faster import in many cases. However, an overly large value will lead to decreased performance because of thrashing.
 
-  This parameter supports custom-format archives only. The input file must be a regular file \(not the pipe file\). This parameter can be ignored when you select the script method rather than connect to a database server. In addition, multiple jobs cannot be used in conjunction with the  **--single-transaction**  parameter.
+  This parameter supports custom-format archives only. The input file must be a regular file \(not the pipe file\). This parameter is used for parallel restoration through direct database connections, not for listing the TOC with **-l**; the current CLI does not provide a script generation mode. In addition, multiple jobs cannot be used in conjunction with the  **--single-transaction**  parameter.
 
 - -L, --use-list=FILENAME
 
@@ -1121,7 +1147,7 @@ Parameters for importing data
 
   By default, table data will be imported even if the statement to create a table fails \(for example, the table already exists\). Data in such table is skipped using this parameter. This operation is useful if the target database already contains the desired table contents.
 
-  This parameter takes effect only when you import data directly into a database, not when you output SQL scripts.
+  This parameter takes effect only when you import data directly into a database, not when listing the TOC with **-l**. The current CLI does not provide SQL script generation.
 
 - --no-publications
 
@@ -1235,6 +1261,8 @@ GRANT
 GRANT
 total time: 30476  ms
 ```
+
+Run the preceding gsql command using a client that supports `\restrict` and `\unrestrict`, and retain the protection lines in the input script. The displayed output is execution results, not SQL script contents.
 
 **gs\_restore**  is used to import the files exported by  **gs\_dump**.
 
