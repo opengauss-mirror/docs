@@ -17,7 +17,7 @@ gs\_dumpall在导出openGauss所有数据库时分为两部分：
 -   gs\_dumpall自身对所有数据库公共的全局对象进行导出，包括有关数据库用户和组、表空间以及属性（例如，适用于数据库整体的访问权限）信息。
 -   gs\_dumpall通过调用gs\_dump来完成openGauss中各数据库的SQL脚本文件导出，该脚本文件包含将数据库恢复为其保存时的状态所需要的全部SQL语句。
 
-以上两部分导出的结果为纯文本格式的SQL脚本文件，使用gsql运行该脚本文件可以恢复openGauss数据库。
+以上两部分导出的结果为纯文本格式的SQL脚本文件，包含 `\restrict` 和 `\unrestrict` 保护命令。恢复数据库时必须使用支持这两个命令的gsql，并保留保护行，详见[gsql受限模式](gsql.md#gsql-restricted-mode)。受限模式用于防范客户端命令注入，并非SQL安全沙箱；仍应只恢复可信来源的脚本并审查其中的SQL。
 
 gs\_dumpall工具支持MySQL兼容性。（仅限于3.0.0，3.1.0，3.1.1的MySQL兼容性需求）
 
@@ -124,6 +124,8 @@ gs_dumpall [OPTION]...
 
     发出INSERT命令（而非COPY命令）转储数据。这会导致恢复缓慢。注意：如果重排列顺序，可能会导致恢复整个失败。--column-inserts选项更加安全，虽然可能更慢些。
 
+    该选项及--column-inserts可用于需要INSERT语句的跨产品数据迁移，但仍须检查目标SQL方言和客户端对脚本中gsql元命令的兼容性；改用INSERT不会移除受限模式保护，也不意味着脚本可由任意SQL客户端直接执行。
+
 -    --no-publications
 
     不转储发布。
@@ -157,6 +159,14 @@ gs_dumpall [OPTION]...
 -   --quote-all-identifiers
 
     强制对所有标识符加引号。为了向后续版本迁移，且其中可能涉及引入额外关键词，在转储相应数据库时该选项会有帮助。此选项在兼容B库中强制开启。
+
+-   --restrict-key=KEY
+
+    指定生成脚本中gsql `\restrict` 和 `\unrestrict` 命令使用的保护标识。KEY必须为非空字符串，且只能包含ASCII字母（A-Z、a-z）和数字（0-9），不要求固定长度。该标识不是密码，也不用于加密。
+
+    显式指定的KEY也会传给子gs\_dump进程。不指定时，gs\_dumpall及各子gs\_dump进程各自随机生成标识。全局对象部分和各数据库脚本分别管理受限模式，完整输出不保证只有一对保护命令；数据库重连仍受支持。
+
+    固定KEY可用于回归测试中的输出比较，但不建议将其作为生产环境的默认配置。如果源数据库一方能够预测KEY，会削弱对客户端命令注入的防护。
 
 -   --dont-overwrite-file
 
@@ -307,7 +317,7 @@ gs\_dumpall恢复前需要所有必要的表空间目录为空；否则，对于
 使用gs\_dumpall一次导出openGauss的所有数据库。
 
 >![](public_sys-resources/icon-note.png) **说明：** 
->gs\_dumpall仅支持纯文本格式导出。所以只能使用gsql恢复gs\_dumpall导出的转储内容。
+>gs\_dumpall仅支持纯文本格式导出，恢复时须使用支持 `\restrict` 和 `\unrestrict` 的gsql，并保留保护行。以下显示的是终端日志，而非备份脚本内容；脚本各部分默认使用各自随机生成的保护标识。
 
 ```
 gs_dumpall -f backup/bkp2.sql -p 37300

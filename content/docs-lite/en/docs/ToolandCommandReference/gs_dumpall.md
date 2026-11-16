@@ -15,7 +15,7 @@ gs\_dumpall exports all databases in two parts:
 -   gs\_dumpall exports all global objects, including information about database users and groups, tablespaces, and attributes \(for example, global access permissions\).
 -   gs\_dumpall invokes gs\_dump to export SQL scripts from each database, which contain all the SQL statements required to restore databases.
 
-The exported files are both plain-text SQL scripts. Use  [gsql](gsql.md)  to execute them to restore databases.
+The exported files are both plain-text SQL scripts containing `\restrict` and `\unrestrict` protection commands. To restore databases, use a gsql version that supports both commands and retain the protection lines. For details, see [gsql restricted mode](meta-command-reference.md#gsql-restricted-mode). Restricted mode helps prevent client-side command injection, but is not a SQL security sandbox. Restore only scripts from trusted sources and review their SQL.
 
 ## Precautions<a name="en-us_topic_0059778372_s67532b3f6d2a42e183672fae6c4ba753"></a>
 
@@ -113,6 +113,8 @@ Dump parameters:
 
     Dumps data when the INSERT statement \(rather than COPY\) is issued. This will cause a slow restoration. The restoration may fail if you rearrange the column order. The --column-inserts parameter is safer against column order changes, though even slower.
 
+    This option and --column-inserts can be used for cross-product data migration that requires INSERT statements, but the target SQL dialect and client compatibility with the gsql meta-commands in the script must still be checked. Using INSERT does not remove restricted-mode protection or make the script directly executable by any SQL client.
+
 -   --no-security-labels
 
     Reserved for function extension. The option is not recommended.
@@ -132,6 +134,14 @@ Dump parameters:
 -   --quote-all-identifiers
 
     Forcibly quotes all identifiers. This parameter is useful when you dump a database for migration to a later version, in which additional keywords may be introduced.
+
+-   --restrict-key=KEY
+
+    Specifies the protection token used by the gsql `\restrict` and `\unrestrict` commands in the generated script. KEY must be a nonempty string containing only ASCII letters (A-Z, a-z) and digits (0-9); no fixed length is required. This token is not a password and is not used for encryption.
+
+    An explicitly specified KEY is also passed to child gs\_dump processes. By default, gs\_dumpall and each child gs\_dump process generate their own random tokens. The global-object section and each database script manage restricted mode separately, so the complete output is not limited to one pair of protection commands. Database reconnections remain supported.
+
+    A fixed KEY can be used to compare output in regression tests, but is not recommended as a production default. If the source database side can predict KEY, protection against client-side command injection is weakened.
 
 -   --dont-overwrite-file
 
@@ -253,7 +263,7 @@ Connection parameters:
 Use gs\_dumpall to export all databases at a time.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->gs\_dumpall supports only plain-text format export. Therefore, only gsql can be used to restore a file exported using gs\_dumpall.
+>gs\_dumpall supports only plain-text format export. Restore the script using a gsql version that supports `\restrict` and `\unrestrict`, and retain the protection lines. The following output is terminal logging, not the backup script contents; script sections use independently generated random protection tokens by default.
 
 ```
 gs_dumpall -f backup/bkp2.sql -p 37300

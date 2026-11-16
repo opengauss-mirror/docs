@@ -10,7 +10,9 @@
 
 -   **[Command Reference](command-reference.md)**  
 
--   **[Meta-Command Reference](meta-command-reference.md)**  
+-   **[Meta-Command Reference](meta-command-reference.md)**
+
+    Before restoring a plain-text backup script, read [Restricted Mode](meta-command-reference.md#gsql-restricted-mode) and retain the `\restrict` and `\unrestrict` protection commands in the script.
 
 -   **[Troubleshooting](troubleshooting.md)**  
 

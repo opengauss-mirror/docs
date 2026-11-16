@@ -31,6 +31,7 @@
 <tr id="zh-cn_topic_0059779319_r9f41226b80114eda9b6529ce60d822cd"><td class="cellrowborder" valign="top" width="22.34%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059779319_af0a2cf69d07743b2b1d21ebd820f9659"><a name="zh-cn_topic_0059779319_af0a2cf69d07743b2b1d21ebd820f9659"></a><a name="zh-cn_topic_0059779319_af0a2cf69d07743b2b1d21ebd820f9659"></a>-f, --file=FILENAME</p>
 </td>
 <td class="cellrowborder" valign="top" width="53.6%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p431573395731"><a name="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p431573395731"></a><a name="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p431573395731"></a>使用文件作为命令源而不是交互式输入。gsql将在处理完文件后结束。如果FILENAME是-（连字符），则从标准输入读取。</p>
+<p>恢复纯文本转储时，另请参见<a href="元命令参考.md#gsql-restricted-mode">受限模式</a>。</p>
 </td>
 <td class="cellrowborder" valign="top" width="24.060000000000002%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p111442891021"><a name="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p111442891021"></a><a name="zh-cn_topic_0059779319_zh-cn_topic_0058968145_p111442891021"></a>绝对路径或相对路径，且满足操作系统路径命名规则。</p>
 </td>
