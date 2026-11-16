@@ -791,6 +791,7 @@ For details about  **gsql**  parameters, see  [Table 1](#en-us_topic_0059779319_
 <tr id="en-us_topic_0059779319_r9f41226b80114eda9b6529ce60d822cd"><td class="cellrowborder" valign="top" width="22.34%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0059779319_af0a2cf69d07743b2b1d21ebd820f9659"><a name="en-us_topic_0059779319_af0a2cf69d07743b2b1d21ebd820f9659"></a><a name="en-us_topic_0059779319_af0a2cf69d07743b2b1d21ebd820f9659"></a>-f, --file=FILENAME</p>
 </td>
 <td class="cellrowborder" valign="top" width="53.6%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059779319_en-us_topic_0058968145_p431573395731"><a name="en-us_topic_0059779319_en-us_topic_0058968145_p431573395731"></a><a name="en-us_topic_0059779319_en-us_topic_0058968145_p431573395731"></a>Specifies that files are used as the command source instead of interactively-entered commands. This option can be specified more than once and can be combined with the option -c in any order, the options will be proccessed according to the order. After the files and commands are processed, <strong id="b842352706162329"><a name="b842352706162329"></a><a name="b842352706162329"></a>gsql</strong> exits. If <em id="i842352697115459"><a name="i842352697115459"></a><a name="i842352697115459"></a>FILENAME</em> is - (hyphen), then standard input is read.</p>
+<p>When restoring a plain-text dump, see also <a href="#gsql-restricted-mode">Restricted Mode</a>.</p>
 </td>
 <td class="cellrowborder" valign="top" width="24.060000000000002%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059779319_en-us_topic_0058968145_p111442891021"><a name="en-us_topic_0059779319_en-us_topic_0058968145_p111442891021"></a><a name="en-us_topic_0059779319_en-us_topic_0058968145_p111442891021"></a>An absolute path or relative path that meets the OS path naming convention</p>
 </td>
@@ -1122,11 +1123,22 @@ This section describes meta-commands provided by  **gsql**  after the openGauss 
 
 - The format of the  **gsql**  meta-command is a backslash \(\\\) followed by a command verb, and then a parameter. The parameters are separated from the command verb and from each other by any number of whitespace characters.
 - To include whitespace characters into an argument, you must quote them with a single straight quotation mark. To include a single straight quotation mark into such an argument, precede it by a backslash. Anything contained in single quotation marks is furthermore subject to C-like substitutions for \\n \(new line\), \\t \(tab\), \\b \(backspace\), \\r \(carriage return\), \\f \(form feed\), \\digits \(octal\), and \\xdigits \(hexadecimal\).
-- Within a parameter, text enclosed in double quotation marks \(""\) is taken as a command line input to the shell. The output of the command \(with any trailing newline removed\) is taken as the argument value.
+- Within a parameter, text enclosed in backticks (<code>&#96;</code>) is taken as a command line input to the shell. The output of the command \(with any trailing newline removed\) is taken as the argument value.
 - If an unquoted argument begins with a colon \(:\), the argument is taken as a  **gsql**  variable and the value of the variable is used as the argument value instead.
 - Some commands take an SQL identifier \(such as a table name\) as a parameter. These parameters follow the SQL syntax rules: Unquoted letters are forced to lowercase, while double quotation marks \(""\) protect letters from case conversion and allow incorporation of whitespace into the identifier. Within double quotation marks, paired double quotation marks reduce to a single double quotation mark in the result name. For example,  **FOO"BAR"BAZ**  is interpreted as  **fooBARbaz**, and  **"Aweird""name"**  becomes  **A weird"name**.
 - Parsing for arguments stops when another unquoted backslash is found. This is taken as the beginning of a new meta-command. The special sequence \\\\ \(two backslashes\) marks the end of parameters and continues parsing SQL statements if any. In this way, SQL and  **gsql**  commands can be freely mixed in a line. But in any case, the arguments of a meta-command cannot continue beyond the end of the line.
 - In most cases the gsqlrc file won't be applied to the execution of commands the -c options specifies, except when -c options are used together with the -f options.
+
+>[!NOTE]NOTE
+>The rules above describe general meta-command parsing. `\unrestrict` is an exception: it reads the rest of the line as a literal key, without removing quotes, expanding variables or backticks, or treating a backslash as the start of another command. In [restricted mode](#gsql-restricted-mode), rejected meta-commands discard the rest of the line without these expansions.
+
+### Restricted Mode<a name="gsql-restricted-mode"></a>
+
+- Each gsql process starts with restricted mode disabled, so meta-commands are available normally. After `\restrict RESTRICT_KEY`, the only allowed meta-command is `\unrestrict`. All other backslash commands (including `\!`, `\i`, `\ir`, `\connect`, `\q`, and another `\restrict`) are rejected before their parameters are parsed. The rest of the line is discarded without variable expansion or backtick evaluation, and no subsequent commands on that line are executed. Restricted mode cannot be nested.
+- Restricted mode applies to the current gsql process, not just one input file. Reaching the end of a file read through `-f`, `\i`, or `\ir` does not automatically disable it. Only `\unrestrict` with a matching key can unlock that process.
+- Restricted mode is not an SQL sandbox: ordinary SQL statements still run, and gsql variable expansion in SQL remains enabled. It restricts client meta-commands and does not make untrusted SQL safe.
+
+Plain-text scripts generated by [gs_dump](gs_dump.md) or [gs_dumpall](gs_dumpall.md), and the `restore.sql` script embedded in tar archives generated by gs_dump, contain `\restrict` and `\unrestrict` protection commands. Preserve these protection commands and restore with a gsql version that supports them; do not remove them or arbitrarily disable restricted mode to bypass errors.
 
 ### Meta-command<a name="en-us_topic_0059778645_s180deee1bdf347639010abe523b324fe"></a>
 
@@ -1196,6 +1208,16 @@ Sending the query buffer by a meta-command is not supported in parallel mode.
 <td class="cellrowborder" valign="top" width="29.14%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059778645_en-us_topic_0058968158_p976241910229"><a name="en-us_topic_0059778645_en-us_topic_0058968158_p976241910229"></a><a name="en-us_topic_0059778645_en-us_topic_0058968158_p976241910229"></a>-</p>
 </td>
 </tr>
+<tr>
+<td class="cellrowborder" valign="top" width="18.55%" headers="mcps1.2.4.1.1 "><p><a name="gsql-restrict"></a><code>\restrict RESTRICT_KEY</code></p></td>
+<td class="cellrowborder" valign="top" width="52.31%" headers="mcps1.2.4.1.2 "><p>Enters <a href="#gsql-restricted-mode">restricted mode</a> with the specified key. The key follows normal meta-command parameter parsing, including quote processing, variable expansion, and backtick evaluation, and must be nonempty after parsing. This command cannot be run again while restricted mode is active.</p></td>
+<td class="cellrowborder" valign="top" width="29.14%" headers="mcps1.2.4.1.3 "><p>A nonempty string. Unquoted ASCII letters and digits are recommended for straightforward literal unlocking; gsql itself does not enforce an ASCII-alphanumeric-only key.</p></td>
+</tr>
+<tr>
+<td class="cellrowborder" valign="top" width="18.55%" headers="mcps1.2.4.1.1 "><p><a name="gsql-unrestrict"></a><code>\unrestrict RESTRICT_KEY</code></p></td>
+<td class="cellrowborder" valign="top" width="52.31%" headers="mcps1.2.4.1.2 "><p>Exits restricted mode only if the key matches the saved value byte for byte, with case sensitivity. Reads the rest of the line after the command literally, ignoring leading whitespace and removing trailing ASCII whitespace and semicolons, without removing quotes or expanding variables or backticks. A missing or mismatched key, or calling this command when restricted mode is inactive, causes an error and leaves the restriction state unchanged.</p></td>
+<td class="cellrowborder" valign="top" width="29.14%" headers="mcps1.2.4.1.3 "><p>A nonempty string exactly matching the saved key. For example, after <code>\restrict RestoreKey123</code>, use <code>\unrestrict RestoreKey123</code>, not <code>\unrestrict 'RestoreKey123'</code> or a variable reference.</p></td>
+</tr>
 </tbody>
 </table>
 
@@ -1261,7 +1283,7 @@ Sending the query buffer by a meta-command is not supported in parallel mode.
 </tr>
 <tr id="en-us_topic_0059778645_en-us_topic_0058968158_row28244462"><td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0059778645_en-us_topic_0058968158_p6100063"><a name="en-us_topic_0059778645_en-us_topic_0058968158_p6100063"></a><a name="en-us_topic_0059778645_en-us_topic_0058968158_p6100063"></a>\i FILE</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.99999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0059778645_en-us_topic_0058968158_p17880725"><a name="en-us_topic_0059778645_en-us_topic_0058968158_p17880725"></a><a name="en-us_topic_0059778645_en-us_topic_0058968158_p17880725"></a>Reads content from <em id="i842352697143627"><a name="i842352697143627"></a><a name="i842352697143627"></a>FILE</em> and uses them as the input for a query.</p>
+<td class="cellrowborder" valign="top" width="56.99999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0059778645_en-us_topic_0058968158_p17880725"><a name="en-us_topic_0059778645_en-us_topic_0058968158_p17880725"></a><a name="en-us_topic_0059778645_en-us_topic_0058968158_p17880725"></a>Reads content from <em id="i842352697143627"><a name="i842352697143627"></a><a name="i842352697143627"></a>FILE</em> and uses them as the input for a query. Available when restricted mode is inactive; see <a href="#gsql-restricted-mode">Restricted Mode</a> for protection commands in input files and the scope of the restriction state.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0059778645_en-us_topic_0058968158_row17761542"><td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0059778645_en-us_topic_0058968158_p29398782"><a name="en-us_topic_0059778645_en-us_topic_0058968158_p29398782"></a><a name="en-us_topic_0059778645_en-us_topic_0058968158_p29398782"></a>\i+ FILE KEY</p>
@@ -1271,7 +1293,7 @@ Sending the query buffer by a meta-command is not supported in parallel mode.
 </tr>
 <tr id="en-us_topic_0059778645_en-us_topic_0058968158_row23984611"><td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0059778645_en-us_topic_0058968158_p63705339"><a name="en-us_topic_0059778645_en-us_topic_0058968158_p63705339"></a><a name="en-us_topic_0059778645_en-us_topic_0058968158_p63705339"></a>\ir FILE</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.99999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0059778645_en-us_topic_0058968158_p59858848"><a name="en-us_topic_0059778645_en-us_topic_0058968158_p59858848"></a><a name="en-us_topic_0059778645_en-us_topic_0058968158_p59858848"></a>Similar to <strong id="b842352706165351"><a name="b842352706165351"></a><a name="b842352706165351"></a>\i</strong>, but resolves relative path names differently.</p>
+<td class="cellrowborder" valign="top" width="56.99999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0059778645_en-us_topic_0058968158_p59858848"><a name="en-us_topic_0059778645_en-us_topic_0058968158_p59858848"></a><a name="en-us_topic_0059778645_en-us_topic_0058968158_p59858848"></a>Similar to <strong id="b842352706165351"><a name="b842352706165351"></a><a name="b842352706165351"></a>\i</strong>, but resolves relative path names differently. The same <a href="#gsql-restricted-mode">restricted-mode</a> rules apply.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0059778645_en-us_topic_0058968158_row1858722"><td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0059778645_en-us_topic_0058968158_p16338821"><a name="en-us_topic_0059778645_en-us_topic_0058968158_p16338821"></a><a name="en-us_topic_0059778645_en-us_topic_0058968158_p16338821"></a>\ir+ FILE KEY</p>
