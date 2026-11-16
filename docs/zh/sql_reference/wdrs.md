@@ -123,7 +123,7 @@ WDR报表主要内容如下表所示。
 </tr>
 <tr id="row156411451131512"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p12651331239"><a name="p12651331239"></a><a name="p12651331239"></a><a href="object_stats.md">Object stats</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul8257222112020"></a><a name="ul8257222112020"></a><ul id="ul8257222112020"><li>表、索引维度的性能统计信息，以及区间内未使用的用户索引。</li><li>数据库、节点范围报表，cluster模式和node模式下均可查看此报表。</li></ul>
+<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul8257222112020"></a><a name="ul8257222112020"></a><ul id="ul8257222112020"><li>表、索引维度的性能统计信息，以及区间内未使用的非唯一用户索引（排除主键/UNIQUE索引）。</li><li>数据库、节点范围报表，cluster模式和node模式下均可查看此报表。</li></ul>
 </td>
 </tr>
 <tr id="row8845174912158"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p14537204613311"><a name="p14537204613311"></a><a name="p14537204613311"></a><a href="configuration_settings.md">Configuration settings</a></p>

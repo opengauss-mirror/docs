@@ -226,7 +226,7 @@ Object stats contains four tables: User Tables stats, User index stats, Bad lock
 
 ## Unused Indexes
 
-Lists user indexes whose idx_scan delta between the begin and end snapshots is 0 (system schemas excluded, same rule as User index stats). Database/Node-wide report, which can be viewed in cluster or node mode for detail or all report types, up to 200 rows.
+Lists non-unique user indexes whose idx_scan delta between the begin and end snapshots is 0 (system schemas excluded, same rule as User index stats). Primary key indexes, UNIQUE constraint indexes, and indexes created by CREATE UNIQUE INDEX are excluded, because uniqueness checks do not increment idx_scan. Database/Node-wide report, which can be viewed in cluster or node mode for detail or all report types, up to 200 rows.
 
 **Table 4 Columns in Unused Indexes**
 

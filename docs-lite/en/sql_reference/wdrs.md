@@ -88,7 +88,7 @@ The following table describes the WDR content of the openGauss database.
 </tr>
 <tr id="row156411451131512"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p12651331239"><a name="p12651331239"></a><a name="p12651331239"></a><a href="object_stats.md">Object stats</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul8257222112020"></a><a name="ul8257222112020"></a><ul id="ul8257222112020"><li>Performance statistics on the index and table dimensions, and unused user indexes in the snapshot interval.</li><li>Database/Node-wide report, which can be viewed in cluster or node mode.</li></ul>
+<td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul8257222112020"></a><a name="ul8257222112020"></a><ul id="ul8257222112020"><li>Performance statistics on the index and table dimensions, and unused non-unique user indexes in the snapshot interval (primary/UNIQUE indexes excluded).</li><li>Database/Node-wide report, which can be viewed in cluster or node mode.</li></ul>
 </td>
 </tr>
 <tr id="row8845174912158"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p14537204613311"><a name="p14537204613311"></a><a name="p14537204613311"></a><a href="configuration_settings.md">Configuration settings</a></p>

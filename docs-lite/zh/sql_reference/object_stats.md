@@ -220,7 +220,7 @@ Object stats包含User Tables stats、User index stats、Bad lock stats和Unused
 </table>
 ## Unused Indexes
 
-筛选begin/end快照之间idx_scan增量为0的用户索引（排除系统schema，与User index stats相同规则）。数据库、节点范围报表，cluster模式和node模式下的detail或all报告可查看，最多200行。
+筛选begin/end快照之间idx_scan增量为0的非唯一用户索引（排除系统schema，与User index stats相同规则）。同时排除主键索引、UNIQUE约束索引以及CREATE UNIQUE INDEX创建的唯一索引（唯一性检查不会增加idx_scan）。数据库、节点范围报表，cluster模式和node模式下的detail或all报告可查看，最多200行。
 
 **表 4  Unused Indexes报表主要内容**
 

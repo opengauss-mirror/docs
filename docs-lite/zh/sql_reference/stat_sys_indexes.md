@@ -69,5 +69,19 @@
 <td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137311_zh-cn_topic_0237122585_p624913132436"><a name="zh-cn_topic_0283137311_zh-cn_topic_0237122585_p624913132436"></a><a name="zh-cn_topic_0283137311_zh-cn_topic_0237122585_p624913132436"></a>通过使用索引的简单索引扫描抓取的活表行数。</p>
 </td>
 </tr>
+<tr id="row_indisunique"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p>indisunique</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p>boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p>若为真，表示该索引是唯一索引（含主键索引、UNIQUE约束索引以及CREATE UNIQUE INDEX创建的唯一索引）。</p>
+</td>
+</tr>
+<tr id="row_indisprimary"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p>indisprimary</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p>boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p>若为真，表示该索引是表的主键索引。</p>
+</td>
+</tr>
 </tbody>
 </table>
