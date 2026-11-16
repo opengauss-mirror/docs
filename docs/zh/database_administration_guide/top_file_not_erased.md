@@ -4,7 +4,7 @@
 
 同一环境上安装过数据库，再次安装时出现如下图错误。
 
-![Alt text](../database_administration_guide/figures/image-1.png)
+![Alt text](./figures/image-1.png)
 
 ## 原因
 

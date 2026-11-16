@@ -3,9 +3,9 @@
 ## 现象
 
 gs_initdb初始化数据库过程中出现如下。
-![!\[Alt text\]](../database_om_guide/image-4.png)
+![!\[Alt text\]](./figures/image-4.png)
 进入到$DSS_HOME目录下后再进入debug查看dssinstance.dlog日志，出现如下报错：
-![!\[Alt text\]](../database_om_guide/image-5.png)
+![!\[Alt text\]](./figures/image-5.png)
 
 ## 原因
 
