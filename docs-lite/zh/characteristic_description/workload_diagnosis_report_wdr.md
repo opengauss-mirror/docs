@@ -135,7 +135,7 @@ WDR主要依赖两个组件：
 <tr id="row123341448113113"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p11334848143110"><a name="p11334848143110"></a><a name="p11334848143110"></a>Object stats</p>
 </td>
 <td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p14405135119915"><a name="p14405135119915"></a><a name="p14405135119915"></a>用于诊断数据库对象的性能。</p>
-<p id="p6334174863119"><a name="p6334174863119"></a><a name="p6334174863119"></a>包含用户表、索引上的表、索引扫描活动，insert、update、delete活动，有效行数量，表维护操作的状态，以及区间内未使用的用户索引等。</p>
+<p id="p6334174863119"><a name="p6334174863119"></a><a name="p6334174863119"></a>包含用户表、索引上的表、索引扫描活动，insert、update、delete活动，有效行数量，表维护操作的状态，以及区间内未使用的非唯一用户索引（排除主键/UNIQUE索引）等。</p>
 </td>
 </tr>
 <tr id="row1427793219359"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p32775326355"><a name="p32775326355"></a><a name="p32775326355"></a>Configuration settings</p>
@@ -157,7 +157,7 @@ WDR主要依赖两个组件：
 - Shared Memory Statistics：展示共享内存候选组件中按大小排序的Top 10及(Total)。节点范围报表，仅node模式下的summary或all报告可查看。
 - Protocol Statistics（Protocol Message Statistics）：按 8 种协议报文类型统计 Exec Count、Total Time(s)、Avg Time(ms)、% of DB Time。节点范围报表，仅 node 模式下的 detail 或 all 报告可查看。
 - Database SQL Statistics（SQL Stats by Database）：按数据库聚合SQL执行次数与耗时。节点范围报表，仅node模式下的detail或all报告可查看。
-- Unused Indexes：输出区间内未使用的用户索引。数据库、节点范围报表，cluster模式和node模式下的detail或all报告可查看。
+- Unused Indexes：输出区间内未使用的非唯一用户索引（排除主键索引、UNIQUE约束索引以及CREATE UNIQUE INDEX创建的唯一索引）。数据库、节点范围报表，cluster模式和node模式下的detail或all报告可查看。
 
 ## 特性约束<a name="section1956417145819"></a>
 

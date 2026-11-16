@@ -82,5 +82,19 @@ keywords: [openGauss, GLOBAL\_STAT\_USER\_INDEXES, SQL]
 <td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122581_p123755117385"><a name="en-us_topic_0237122581_p123755117385"></a><a name="en-us_topic_0237122581_p123755117385"></a>Number of live table rows fetched by simple index scans using the index </p>
 </td>
 </tr>
+<tr id="row_indisunique"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p>indisunique</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p>boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p>If true, the index is unique (including primary key indexes, UNIQUE constraint indexes, and indexes created by CREATE UNIQUE INDEX).</p>
+</td>
+</tr>
+<tr id="row_indisprimary"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p>indisprimary</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p>boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p>If true, the index is the primary key index of the table.</p>
+</td>
+</tr>
 </tbody>
 </table>

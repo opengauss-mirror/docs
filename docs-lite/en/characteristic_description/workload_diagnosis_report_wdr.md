@@ -135,7 +135,7 @@ The WDR depends on the following two components:
 <tr id="row123341448113113"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p11334848143110"><a name="p11334848143110"></a><a name="p11334848143110"></a>Object stats</p>
 </td>
 <td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p14405135119915"><a name="p14405135119915"></a><a name="p14405135119915"></a>Diagnoses the performance of database objects.</p>
-<p id="p6334174863119"><a name="p6334174863119"></a><a name="p6334174863119"></a>The statistics include user tables, tables on indexes, index scan activities, as well as insert, update, and delete activities, number of valid rows, table maintenance status, and unused user indexes in the snapshot interval.</p>
+<p id="p6334174863119"><a name="p6334174863119"></a><a name="p6334174863119"></a>The statistics include user tables, tables on indexes, index scan activities, as well as insert, update, and delete activities, number of valid rows, table maintenance status, and unused non-unique user indexes in the snapshot interval (primary/UNIQUE indexes excluded).</p>
 </td>
 </tr>
 <tr id="row1427793219359"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p32775326355"><a name="p32775326355"></a><a name="p32775326355"></a>Configuration settings</p>
@@ -157,7 +157,7 @@ The WDR depends on the following two components:
 - Shared Memory Statistics: Top 10 shared-memory candidate components by size plus (Total). Node-wide report, which can be viewed in node mode for summary or all report types.
 - Protocol Statistics (Protocol Message Statistics): Exec Count, Total Time(s), Avg Time(ms), and % of DB Time for eight protocol message types. Node-wide report, which can be viewed in node mode for detail or all report types.
 - Database SQL Statistics (SQL Stats by Database): per-database SQL execution count and elapsed time. Node-wide report, which can be viewed in node mode for detail or all report types.
-- Unused Indexes: unused user indexes in the snapshot interval under Object stats. Database/Node-wide report, which can be viewed in cluster or node mode for detail or all report types.
+- Unused Indexes: unused non-unique user indexes in the snapshot interval under Object stats (primary key indexes, UNIQUE constraint indexes, and CREATE UNIQUE INDEX indexes excluded). Database/Node-wide report, which can be viewed in cluster or node mode for detail or all report types.
 
 ## Constraints<a name="section1956417145819"></a>
 
