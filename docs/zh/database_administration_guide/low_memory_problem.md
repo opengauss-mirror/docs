@@ -7,7 +7,7 @@
 ## 原因
 
 共享内存不足，可以进入/dss/dss0/dssdba/run目录查看日志，出现如下图的报错。
-![Alt text](../database_om_guide/image-1.png)
+![Alt text](./figures/image-1.png)
 
 ## 解决方案
 
