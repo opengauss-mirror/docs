@@ -605,7 +605,7 @@ detail      | 111 Rows successfully loaded.
 >- 使用rows参数时，提交次数不要超过1000次，否则会对性能产生影响。提交次数约等于数据文件中数据行数除以rows参数取值。不指定rows参数时，rows无默认取值，表现为只进行一次提交，即所有数据都导入表中后进行一次事务提交。
 >- 小数据量频繁的提交会影响导入数据的性能，推荐合理配置rows参数的取值，保证每次提交的数据量大于5MB。对于常用的16U128G规格机器，一主两备部署场景下，向5个字段的表内导入13GB数据，排除网络影响，多次提交和单次提交（每次提交5MB数据）的速率基本持平，为10MB/s左右。
 >- compatible\_nul参数实际控制guc参数loader\_support\_nul\_character值的设置：
-> - compatible\_nul=true对应session级set loader\_support\_nul\_charchter='s2'。
+> - compatible\_nul=true对应session级set loader\_support\_nul\_character='s2'。
 > - compatible\_nul=false对应session级set loader\_support\_nul\_character='s1'。
 >        建议通过命令行设置此参数且通过compatible\_nul设置优先级高于guc\_param中设置。
 >- 当前gs\_loader仅支持数据文件中存在nul字符时的兼容，不支持ctl控制文件中存在nul字符。ctl文件中存在nul字符会存在不可预期的问题。
@@ -794,7 +794,7 @@ detail      | 111 Rows successfully loaded.
 
     >[!WARNING]注意
     >- 不支持OPTIONS、INFILE、BADFILE，仅在特定场景下不报语法错误。
-    >- gs\_loader使用bad文件来记录出错数据，如果设置guc参数enable\_copy\_error\_log开启错误表，该数据来自错误表的rawrecord字段，由于错误表对于以某种编码无法读起的错误不记录rawrecord，因此bad文件中遇到此情况时记录空行。
+    >- gs\_loader使用bad文件来记录出错数据，如果设置guc参数enable\_copy\_error\_log开启错误表，该数据来自错误表的rawrecord字段，由于错误表对于以某种编码无法读取的错误不记录rawrecord，因此bad文件中遇到此情况时记录空行。
     >- gs\_loader在设置guc参数a\_format\_load\_with\_constraints\_violation开启支持约束冲突不回滚场景时，如果表带有BEFORE/AFTER ROW INSERT触发器，则每次提交行数不能超过1000万行。
     >- gs\_loader在设置guc参数a\_format\_load\_with\_constraints\_violation开启支持约束冲突不回滚场景时，不支持语句级触发器。
 

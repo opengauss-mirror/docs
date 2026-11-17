@@ -13,7 +13,7 @@ openGauss提供了gs\_checkps工具用于校验集群主备节点的数据文件
 
 ## 前提条件
 
-- 在解析pg_filenode.map文件时用到了pagehack工具，若未安装报表中会提示 pagahack工具未安装。。
+- 在解析pg_filenode.map文件时用到了pagehack工具，若未安装报表中会提示 pagehack 工具未安装。
 - 若数据库未启动，无法解析对象名称和类型（仅展示物理文件差异）。
 
 ## 注意事项
