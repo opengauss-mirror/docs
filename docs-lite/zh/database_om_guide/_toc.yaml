@@ -153,12 +153,6 @@ sections:
             href: ./too_many_clients_already_is_reported_or_threads_failed_to_be_created_in_high_concurrency_scenarios.md
           - label: btree 索引故障情况下应对策略
             href: ./b_tree_index_faults.md
-          - label: 闪回DROP/TRUNCATE
-            href: ./drop_truncate_flashback.md
-          - label: 闪回查询
-            href: ./flashback_query.md
-          - label: 闪回表
-            href: ./flashback_table.md
   - label: 安全加固指南
     sections:
       - label: 数据库加固概述

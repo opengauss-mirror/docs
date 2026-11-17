@@ -8,7 +8,7 @@ keywords: [openGauss, 无法单独拉起节点, 数据库管理, 现象, 原因]
 ## 现象
 
 单独gs_ctl start单个节点无法拉起一直在等待，进入日志显示如下错误。
-![!\[Alt text\]](../database_om_guide/image-3.png)
+![!\[Alt text\]](./figures/image-3.png)
 
 ## 原因
 

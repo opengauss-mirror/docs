@@ -10,9 +10,9 @@ keywords: [openGauss, dssserver Port Number Error, database administration, Symp
 ## Symptom
 
 The following occurs during database initialization with gs_initdb.
-![!\[Alt text\]](../database_om_guide/image-4.png)
+![!\[Alt text\]](./figures/image-4.png)
 After navigating to the $DSS_HOME directory and then entering debug to view the dssinstance.dlog log, the following error is reported:
-![!\[Alt text\]](../database_om_guide/image-5.png)
+![!\[Alt text\]](./figures/image-5.png)
 
 ## Cause
 
