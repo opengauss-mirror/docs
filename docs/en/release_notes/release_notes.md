@@ -1,253 +1,394 @@
 ---
-description: This document describes openGauss release notes, covering the version introduction, new features, and other content.
-keywords: [openGauss, release notes, version description, version introduction, new features]
+description: This document describes Release Notes in openGauss, covering topics such as Terms of Use, User Notice.
+keywords: [openGauss, Release Notes, release notes, Terms of Use, User Notice]
 ---
 
 # Release Notes
 
-<!-- md-trans-meta sourceCommit=unknown translatedAt=2026-11-02T08:53:48.549Z pushedAt=2026-11-03T09:13:41.603Z nl=2 -->
+## Terms of Use
 
-## Versions
+**Copyright © Huawei Technologies Co., Ltd. 2022.**
 
-openGauss 7.0.0 (LTS) is an LTS version released by openGauss in September 2026, with a lifecycle of 3 years. This document applies only to the enterprise edition.
+Your replication, use, modification, and distribution of this document are governed by the Creative Commons License Attribution-ShareAlike 4.0 International Public License \(CC BY-SA 4.0\). You can visit [https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/) to view a human-readable summary of \(and not a substitute for\) CC BY-SA 4.0. For the complete CC BY-SA 4.0, visit [https://creativecommons.org/licenses/by-sa/4.0/legalcode](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
-7.0.0 (LTS) is compatible with the features and functions of previous versions. Its main features are as follows:
+Certain document contents (such as standard APIs and parameter descriptions) on this website are from the official PostgreSQL website (<https://www.postgresql.org/docs/>) and comply with the following protocols:
+PostgreSQL is Copyright © 1996–2020 by the PostgreSQL Global Development Group.
+Postgres95 is Copyright © 1994–5 by the Regents of the University of California.
+
+Permission to use, copy, modify, and distribute this software and its documentation for any purpose, without fee, and without a written agreement is hereby granted, provided that the above copyright notice and this paragraph and the following two paragraphs appear in all copies.
+
+IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS, ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+THE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE PROVIDED HEREUNDER IS ON AN  "AS-IS"  BASIS, AND THE UNIVERSITY OF CALIFORNIA HAS NO OBLIGATIONS TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
+
+**Trademarks and Permissions**
+
+openGauss is a trademark of Huawei Technologies Co., Ltd. All other trademarks and registered trademarks mentioned in this document are the property of their respective holders.
+
+**Disclaimer**
+
+This document is used only as a guide. Unless otherwise specified by applicable laws or agreed by both parties in written form, all statements, information, and recommendations in this document are provided "AS IS" without warranties, guarantees or representations of any kind, including but not limited to non-infringement, timeliness, and specific purposes.
+
+## User Notice<a name="EN-US_TOPIC_0289899191"></a>
+
+openGauss is an open-source, secure, and reliable relational OLTP database with ultimate performance. It is released with the Mulan PSL v2 protocol, allowing users to copy, use, modify, and distribute the source code.
+
+The version number of openGauss follows the format of X.Y.0-RCx, which aims to distinguish different types of version updates. Specifically:
+
+- LTS version (X.0.0): It is released every two years and marks a long-term stable support version, which is suitable for large-scale deployment and use in production environments. The community commits to providing maintenance support for each LTS version for a period of three years to ensure its continuous stability and security.
+- Innovation version (X.Y.0-RCx): It is launched every six months and aims for rapid iteration, providing the latest features and technology previews. These versions are mainly used for user testing and innovation cooperation. The community will provide maintenance support for a period of six months to encourage exploration and feedback.
+- Patch version (X.Y.0): When major issues are encountered, it will be released in a timely manner, aiming to quickly fix critical errors and ensure the stable operation of the system.  
+
+## Versions<a name="EN-US_TOPIC_0289899200"></a>
+
+openGauss 5.0.0 is the third LTS version of openGauss, and its lifecycle is three years. This document applies only to the enterprise edition.
+
+5.0.0 is compatible with the earlier versions. Main functions are as follows:
+
+- Inherited functions:
+
+  - Basic functions: standard SQL syntax, data types, tables \(including temporary tables, global temporary tables, and foreign tables\), views, materialized views, foreign keys, indexes \(including B-tree indexes, GIN indexes, and hash indexes\), sequences, functions, triggers, MEDIAN aggregate function, ROWNUM, UPSERT, JSONB data type, and GB18030 character set.
+  - Enhanced SQL engine: range partitioning, global partitioned index, list partitioning, hash partitioning, automatic extended partitioning based on range partitioning, row-store execution to vectorized execution, autonomous transaction, parallel query, Global SysCache, IPv6 protocol, and PostGIS extensions.
+  - Enhanced storage engine: delayed standby node replay, logical replication on standby nodes, parallel logical decoding, gray upgrade, rolling upgrade, hash index, unique primary key constraint for column-store tables, Ustore storage engine, segment-page storage, publication-subscription, row-store table compression, memory-optimized table (MOT), and NUMA-aware high-performance capability.
+  - Stored procedure, commit/rollback in a stored procedure, omission of parameter parentheses \(\) from the stored procedure or function calling, and stored procedure debugging.
+  - Security functions: authentication, permission management, network communication security, database audit, fully encrypted database, dynamic masking, Chinese national cryptographic algorithm, tamper-proof ledger database, built-in role and permission management, transparent encryption, and ANY permission management.
+  - High availability: primary/standby two-node cluster, cascaded standby node, logical replication, ultimate RTO, standby node scale-out, Paxos-based distributed consensus framework \(DCF\), and two-city three-DC DR.
+  - Backup and restoration: Full physical backup, logical backup, standby node backup, incremental backup and restoration, and point-in-time recovery \(PITR\).
+  - AI capabilities: parameter self-tuning, slow SQL discovery, AI query time forecasting, database metric collection, forecast, and exception detection, DBMind autonomous O&M platform, intelligent optimizer, intelligent index recommendation, and DeepSQL in-database AI algorithms (supporting XGBoost, multiclass, and PCA).
+  - O&M capabilities: database running metrics in WDRs, diagnosis view for slow SQL statements on the standby node, and automatic eviction of unique SQL statements.
+  - JDBC client load is balanced and read and write are isolated.
+  - Cluster management (CM) supports customized resource management and control, and external status query and push.
+  - Toolchain: development tool DataStudio, MySQL full migration tool, incremental migration tool, reverse migration tool, and data check tool.
+  - Middleware: ShardingSphere and openLookeng.
+  - Peripheral ecosystem: dblink, supporting openEuler, CentOS, and FusionOS.
+  - Others: CMake script compilation, container-based deployment, and Kubernetes.
+
+- New functions:
+  - High performance: The performance of basic operators is improved. (For details, see the feature description.)
+  - High performance: The SCRLock feature improves distributed lock performance. 
+  - High security: user-level audit.
+  - High availability: CM supports VIP management.
+  - High availability: CM can be deployed on two nodes.
+  - High availability: The read-only detection capability of CM disks is enhanced.
+  - High availability: CM usability is improved.
+  - High intelligence: Exception detection supports self-configuration.
+  - Enterprise-level feature: event trigger.
+  - Enterprise-level feature: openGauss resource pooling architecture is implemented based on storage pooling, memory pooling, and computing pooling (beta feature).
+  - Enterprise-level feature: The Unified Write-Ahead Log \(UWAL\) feature accelerates the Write-Ahead Log \(WAL\) performance of the database.
+  - Application development interface: enhanced JDBC capabilities.
+  - Middleware: ShardingSphere supports read/write isolation in multiple modes and cross-database query.
+  - Middleware: 32-node networking performance of openGauss+ShardingSphere > 21 million tpmC
+  - Toolchain: full-lifecycle data production tool DataKit
+  - Toolchain: MySQL migration tool gs\_rep\_portal
+  - Toolchain: MySQL incremental and reverse migration tool gs\_replicate
+  - Toolchain: gs\_datacheck based on the Merkle tree
+  - Compatibilities: Compatible with most common MySQL syntax, including data types, operators, system functions, DDL, DML, DCL, and PL/SQL, implementing application migration without modification.
+
+- Fixed defects:
+    - I6NVAB: An error is reported during rollback and forcible rollback after gray upgrade from 3.0.3 to 5.0.0.
+    - I6NK8U: When a publication/subscription name is changed to an existing name, the error message "ERROR: unsupported object class xxx" is displayed.
+    - I6N2QD: When ESCAPE is used in SIMILAR TO, if the escape character is Chinese, an error is reported. If the LIKE escape character is Chinese, the operation is successful.
+    - I6MOCS: In the B-compatible database, if the partition key of a level-2 partitioned table is the year function, an unknown error is reported when pg\_get\_tabledef is used after the ADD PARTITION operation is performed.
+    - I6LMTU: In B-compatible mode, objects in backquotes are not supported.
+    - I6KO5S: [Resource pooling] When the upgrade command is executed to upgrade shared storage, the upgrade fails.
+    - I6KRZ6: [Resource pooling] The **dsscmd du -p +data -f a** command calculates only directories but not files.
+    - I6IZH9: [Resource Pooling] The reform fails and does not enter the next round. The cluster is suspended.
+    - I6O0K6: The versions 2.0.1, 2.0.0, and 2.0.5 without the CM tool fail to be committed after being gray upgraded to version 5.0.0 with the CM tool.
+    - I61OX7: No error is reported when the value of the CM agent parameter **log\_dir** is changed to null. After the CM agent is restarted for the change to take effect, no new CM agent log is generated.
+    - I6K2BZ: Chameleon migration fails due to double quotation marks.
+    - I6KIWQ: During Debezium+kafka incremental migration, the timestamp after the migration is incorrect.
+    - I6I640: When the data check tool is used to check data in 150,000 tables, the check process is suspended.
+
+## Features<a name="EN-US_TOPIC_0289899195"></a>
 
 - Standard SQL support
 
-    Supports the standard SQL92/SQL99/SQL2003/SQL2011 specifications, the GBK, UTF-8, and GB18030 character sets, SQL standard functions and analytic functions, and stored procedures.
+    Supports SQL-92, SQL-99, SQL:2003, and SQL:2011 standards, GBK and UTF-8 character sets, SQL standard functions and analytic functions, and stored procedures.
 
 - Database storage management
 
-    Supports tablespaces, allowing different tables to be placed in different storage locations. The enterprise edition supports multiple storage engines such as Ustore, Astore, and MOT.
+    Tablespaces are supported. Different tables can be stored in different locations. The enterprise edition supports storage engines such as Ustore, Astore, and MOT.
 
 - Primary/standby deployment
 
-    Transactions support ACID properties, single-node fault recovery, data synchronization between the primary and standby, and primary/standby switchover. The enterprise edition also provides the CM tool, which supports database instance state query, primary/standby switchover, log management, VIP management, and cluster state query and push.
+    Supports the ACID feature of transactions, single-node recovery, HA data synchronization, and HA switchover. The enterprise edition provides the CM tool to support database instance status query, primary/standby switchover, log management, and cluster status query and push.
 
 - Resource pooling
 
-    Supports a resource pooling architecture based on shared storage and shared memory, achieving real-time consistency for reads on standby nodes.
+    Supports the resource pooling architecture based on shared storage and shared memory to ensure real-time read consistency on standby nodes.
 
-- Application programming interfaces
+- Application programming interface (API)
 
-    Supports standard JDBC 4.0 and ODBC 3.5 features, Python and Go connection drivers, and MySQL protocol compatibility.
+    Supports standard JDBC 4.0 and ODBC 3.5 features, and Python and Go connection drivers.
 
 - Management tools
 
-    Provides installation and deployment tools, instance start and stop tools, backup and restoration tools, scale-out and scale-in tools, and upgrade tools. Supports DataKit, a tool for the full lifecycle of data, and full/incremental/reverse migration tools for MySQL, Oracle, and PostgreSQL (PG), as well as a data verification tool.
+    Provides the installation and deployment tools, instance start and stop tools, backup and restoration tools, scaling tool, and upgrade tool, supports the full-lifecycle data production tool DataKit, MySQL full/incremental/reverse migration tools, and data check tool.
 
 - Security management
 
-    Supports SSL secure network connections, user privilege management, password management, security audit, fine-grained ANY privilege control, and the TLCP protocol, ensuring database security at the management, application, system, and network layers.
+    Supports SSL network connections, user permission management, password management, security auditing, fine-grained ANY permission control, and other functions, to ensure data security at the management, application, system, and network layers.
 
-- AI-powered capabilities
+- AI
 
-    The enterprise edition supports automatic parameter tuning, slow SQL discovery, single-query index recommendation, virtual indexes, workload index recommendation, database metric collection, prediction, and anomaly monitoring. The in-database AI native engine supports more than 10 high-performance machine learning algorithms.
+    Supports parameter self-tuning, slow SQL discovery, single query index recommendation, virtual index, workload index recommendation, database metric collection, forecast, and exception detection. The native AI engine in the database supports more than 10 high-performance machine learning algorithms.
 
-## New Features
+### New Features<a name="en-us_topic_0283136327_section383172195410"></a>
 
-This section describes the new features of openGauss 7.0.0 (LTS) based on the features of 7.0.0-RC3:
+This section describes openGauss 5.0.0. Compared with openGauss 3.1.0, it has the following new features:
 
-- **High Performance**: Kunpeng SuperPoD hardware-software co-optimization for performance
-  - [MES Lingqu memory-semantic communication optimization](https://docs.opengauss.org/en/docs/7.0.0/resource_pooling/mes_ub_shared_memory_communication_optimization.html), applicable to the resource pooling architecture. Based on the Kunpeng SuperPoD UBS Memory service and the ub_dist_comm_queue (ubs-atomic library capability) distributed communication queue, it establishes a shared-memory ring buffer between nodes to enable zero-copy message exchange. [#717](https://atomgit.com/opengauss/DMS/pull/717) [#9230](https://atomgit.com/opengauss/openGauss-server/pull/9230) [#363](https://atomgit.com/opengauss/CBB/pull/363) [#364](https://atomgit.com/opengauss/CBB/pull/364) [@meankkkk](https://atomgit.com/meankkkk)
-  - [Transaction snapshot transfer performance optimization](https://docs.opengauss.org/en/docs/7.0.0/resource_pooling/ub_transaction_snapshot_acceleration_introduction.html), applicable to the resource pooling architecture. Based on the UB (Unified Bus) shared memory capability provided by Kunpeng SuperPoD, it establishes a shared memory acceleration channel for CLOG, CSNLOG, Snapshot, and OldestXmin in a resource pooling cluster. High-frequency transaction metadata access is optimized from "message fetch" to "direct shared memory read", reducing cross-node access latency, relieving the message processing load on the primary node, and improving transaction processing efficiency in resource pooling scenarios. [#9299](https://atomgit.com/opengauss/openGauss-server/pull/9229) [@g75596197](https://atomgit.com/g75596197)
+- High performance: The performance of basic operators is improved.
+    
+ The performance of the scan operators and aggregate operators is optimized, improving the end-to-end performance by 37% in the TPC-H 100 GB data scenario.
+    - Parser optimization: The method of searching for keywords in the parser is optimized.
+    - Expression and operator optimization: The expression framework is flattened and the operator performance is optimized.
+    - Inner Unique optimization.
+    - Predicate optimization: New pushdown predicates are obtained through predicate equivalence inference.
+    - Scan operator optimization: The index scanning and full table scanning operators are optimized.
+    - Aggregate operator optimization: The performance of the aggregate operators is optimized.
 
-- **High Availability**: Kunpeng SuperPoD hardware-software co-optimization for reliability
-  - [CM supports subscribing to sysSentry](https://docs.opengauss.org/en/docs/7.0.0/resource_pooling/cm_syssentry_fault_detection.html), obtaining node-level fault notifications in a timely manner, with a fault detection time of less than 1s. [#482](https://atomgit.com/opengauss/CM/pull/482) [@liuzhanfeng](https://atomgit.com/liuzhanfeng)
+- High performance: SCRLock provides the distributed lock capability to improve distributed lock performance.
 
-- **High Security**: Enhanced [black box](https://docs.opengauss.org/en/docs/7.0.0/tool_and_commandreference/ogrecorder/ogrecorder_overview.html) API capabilities
-  - Adds APIs for querying memory, CPU, and NFS device I/O, and optimizes the file name list API to support sorting. For details, see the [API list](../tool_and_commandreference/ogrecorder/ogrecorder_api_introduction.md). [#101](https://atomgit.com/opengauss/oGRecorder/pull/101) [#28](https://atomgit.com/opengauss/CM-RestAPI/pull/28) [@liuzhanfeng](https://atomgit.com/liuzhanfeng) [@zkcarl](https://atomgit.com/zkcarl)
+    - SCRLock provides distributed locks in optimistic mode based on the RDMA protocol. The RDMA network improves the efficiency of obtaining locks, and the optimistic mode features a simplified process.
+    - SCRLock ensures lock fairness and prevents permanent waiting events in a cluster.
+    - SCRLock also provides the local lock cache capability to reduce the frequency of obtaining remote locks, reducing the latency. 
 
-- **High Intelligence**: [BM25 index](https://docs.opengauss.org/en/docs/7.0.0/datavec/bm25_full_text_search_index.html) optimization.
-  - Supports [customizing the dictionary of the jieba tokenizer for BM25 indexes](https://docs.opengauss.org/en/docs/7.0.0/datavec/bm25_usage_guide.html#3-%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%8D%E5%85%B8dict_path). [#9036](https://atomgit.com/opengauss/openGauss-server/pull/9036) [@Setname](https://atomgit.com/Setname)
-  - Implements the [variable block feature for BM25 indexes](https://docs.opengauss.org/en/docs/7.0.0/datavec/bm25_usage_guide.html#4-%E7%B4%A2%E5%BC%95%E7%A9%BA%E9%97%B4%E4%BC%98%E5%8C%96%E8%AF%B4%E6%98%8E), reducing index space usage by 40%. [#9134](https://atomgit.com/opengauss/openGauss-server/pull/9134) [@Setname](https://atomgit.com/Setname)
+- High security: user-level audit.
+    
+    - User-level audit is supported. The GUC parameter **full\_audit\_users** is added to set the list of audited users. Audit logs are recorded for all SQL statements executed by users in the list. Administrators' operations can be fully audited to audit administrators' access to user data.
+    - The audit operation can be configured based on client information. The GUC parameter **no\_audit\_client** is added to configure the list of clients that do not need to be audited. Audit logs are not recorded for specified client apps and IP addresses.
+    - Audit logs are recorded for high-risk system function calls. The list of system functions that support audit recording must be specified in documents.
+    
+- High availability: CM supports VIP management.
+    
+    - The host can be directly found based on the virtual IP (VIP), and the reconnection is more accurate and faster (millisecond-level).
+    - When a host is faulty and a new primary CM is selected, the VIP is migrated to the new primary CM.
+    - When two primary nodes exist, only one host can be accessed through the VIP, reducing the risk of data loss.
+    
+- High availability: CM can be deployed on two nodes.
+    
+    - The third-party gateway IP address is introduced to effectively solve the self-quorum problem in the two-node CM cluster deployment mode. The CMS and DN can be deployed on two nodes.
+    - In addition, the CM cluster failover policy and database cluster split-brain recovery policy can be dynamically configured to ensure cluster data integrity and consistency.
+    
+- High availability: The read-only detection capability of CM disks is enhanced.
+    
+    - The read-only status is obtained from the database to ensure accuracy.
+    - Read-only quorum arbitrates only the instances that exceed the threshold. Other nodes are not affected.
+    - After the primary server is read-only, a primary/standby switchover is automatically performed. An available standby server is promoted to primary to ensure that the cluster can work properly.
+    
+- High availability: CM usability is improved.
+    
+    - The CM cluster service can be stopped in one-click mode.
+    - Decoupling from kernel installation and deployment is supported.
+    - User-defined scripts can be invoked by event.
+    - The CM component can be upgraded independently to enhance the reliability of the database cluster.
+    - The CM supports monitoring and management of user-defined components based on the configuration information.
+    
+- High intelligence: Exception detection supports self-configuration.
+    
+    - To adapt to actual scenarios and avoid resource occupation, DBMind supports self-configuration of exception detection at the system, database, and log layers. Users can add, pause, or delete exception detection items in real time before or during running. Exception detection items support different exception detection algorithms. The exception detection function obtains the intersection of the results of different exception detectors to adapt to specific application scenarios.
+    
+- Enterprise-level feature: event trigger.
+    
+    - DDL operations in the current database and their target objects are captured and processed.
+    - The following DDL events can be captured: ddl\_command\_start, ddl\_command\_end, sql\_drop, and table\_rewrite.
+    
+- Enterprise-level feature: openGauss resource pooling architecture is implemented based on storage pooling, memory pooling, and computing pooling (beta feature).
+    
+    - Storage pooling supports multiple storage forms, such as enterprise high-end storage and distributed storage. One data service can be used for multiple types of computing, improving storage utilization by more than 50%.
+    - Memory pooling implements memory interconnection between compute nodes. Transaction information and database cache are synchronized to implement consistent read of multi-version snapshots on multiple nodes. RDMA-accelerated RoCE hardware is used to achieve ultra-low latency and high throughput communication across nodes.
+    - Computing pooling supports diversified computing power. ShardingSphere is used to build the openGauss distributed computing capability, achieving 32-node networking performance > 21 million tpmC.
+    - In terms of cluster management, technologies such as dual heartbeat detection, shared disk quorum , and I/O fencing are used to automatically detect, rectify, and isolate cluster node faults, providing a highly reliable running environment for resource pooling.   
 
-- **High Intelligence**: [oGMemory](https://docs.opengauss.org/en/docs/7.0.0/datavec/ogmem_introduction.html) context memory management framework.
-  - [The oGMemory framework supports integration with OpenClaw](https://docs.opengauss.org/en/docs/7.0.0/datavec/ogmem_case01.html), improving multi-turn dialogue accuracy by 30% and reducing token overhead by 50% for scenario-based test cases. [#22](https://atomgit.com/opengauss/oGMemory/pull/22) [#66](https://atomgit.com/opengauss/oGMemory/pull/66) [#65](https://atomgit.com/opengauss/oGMemory/pull/65) [#64](https://atomgit.com/opengauss/oGMemory/pull/64) [#63](https://atomgit.com/opengauss/oGMemory/pull/63) [#39](https://atomgit.com/opengauss/oGMemory/pull/39) [#35](https://atomgit.com/opengauss/oGMemory/pull/35) [#23](https://atomgit.com/opengauss/oGMemory/pull/23) [#18](https://atomgit.com/opengauss/oGMemory/pull/18) [@Vincent__Sun](https://atomgit.com/Vincent__Sun)
+- Enterprise-level feature: UWAL accelerates the WAL performance of the database.
+    - The database and UWAL component are combined to accelerate the WAL performance of the database.
+    - This feature solves the problem of performance loss during active/standby streaming replication and improves the performance of active/standby transaction submission as well as streaming replication and transmission.  
 
-- **Data Branch**: Enhanced [data branch](https://docs.opengauss.org/en/docs/7.0.0/datavec/data_branch_architecture.html) capabilities
-  - Supports [LFC (Local File Cache) and prefetch](https://docs.opengauss.org/en/docs/7.0.0/datavec/data_branch_lfc_prefetch.html). [#4](https://atomgit.com/opengauss/neon/pull/4) [#9289](https://atomgit.com/opengauss/openGauss-server/pull/9289) [@wangjingyuan8](https://atomgit.com/wangjingyuan8)
-  - [Pageserver supports parallel replay](https://docs.opengauss.org/en/docs/7.0.0/datavec/data_branch_parallel_replay.html), reducing queuing time when multiple pages trigger WAL redo simultaneously. [#11](https://atomgit.com/opengauss/neon/pull/11) [@wangjingyuan8](https://atomgit.com/wangjingyuan8) [@xudabiao2024](https://atomgit.com/xudabiao2024)
-  - Supports [branch merge](https://docs.opengauss.org/en/docs/7.0.0/datavec/data_branch_merge.html), which compares and merges data differences between two data branches. [#10](https://atomgit.com/opengauss/neon/pull/10) [@wangjingyuan8](https://atomgit.com/wangjingyuan8)
+- Application development interface: enhanced JDBC capabilities.
 
-- **Enterprise-Grade Capabilities**
-  - Supports the [GS_XMLDOM advanced package](https://docs.opengauss.org/en/docs/7.0.0/extension_reference/extension_reference/server/gms_xmldom.html). Implemented in PL/Python, it encapsulates low-level Python XML DOM operations into standard-compliant PL/pgSQL functions and defines a set of custom data types for representing different DOM objects at the SQL layer. [#8887](https://atomgit.com/opengauss/openGauss-server/pull/8887) [#9281](https://atomgit.com/opengauss/openGauss-server/pull/9281) [@2504_92042799](https://atomgit.com/2504_92042799) [@mchxyz](https://atomgit.com/mchxyz)
-  - Supports the [INSERT ON CONFLICT](../sql_reference/insert.md#parameter-description) syntax, which specifies the behavior when a unique constraint or primary key constraint conflict occurs, for example, performing an update instead of inserting new data, or ignoring the conflict without any operation. [#8765](https://atomgit.com/opengauss/openGauss-server/pull/8765) [@sunquancheng01](https://atomgit.com/sunquancheng01)
-  - Supports a [global sequence cache](../sql_reference/create_sequence.md#parameter-description). The sequence cache is a global cache shared by all sessions. [#8647](https://atomgit.com/opengauss/openGauss-server/pull/8647) [@sunquancheng01](https://atomgit.com/sunquancheng01)
-  - Column attributes support [GENERATED { ALWAYS | BY DEFAULT } AS IDENTITY](../sql_reference/create_table.md#parameter-description) when a table is created, specifying a column as an auto-increment column through syntax. [#9137](https://atomgit.com/opengauss/openGauss-server/pull/9137) [@CXXXXZ](https://atomgit.com/CXXXXZ)
-  - Adds the [`pg_stat_progress_copy` view](../database_reference/pg_stat_progress_copy.md), which monitors the progress of COPY data import and displays the number of imported rows and filtered rows (where filter). [#9115](https://atomgit.com/opengauss/openGauss-server/pull/9115) [@CXXXXZ](https://atomgit.com/CXXXXZ)
-  - Supports the [NOTIFY](../sql_reference/notify.md)/[LISTEN](../sql_reference/listen.md) feature, enabling communication between different sessions. [#9352](https://atomgit.com/opengauss/openGauss-server/pull/9352) [@Solataire](https://atomgit.com/Solataire)
-  - Supports the [CREATE FORCE VIEW](../sql_reference/create_view.md#parameter-description) syntax, which forces a view to be created regardless of whether the base tables, views, or functions on which the view depends exist. [#9363](https://atomgit.com/opengauss/openGauss-server/pull/9363) [@Coder_Zero1](https://atomgit.com/Coder_Zero1)
-  - Uses shared memory for statistics collection, eliminating the pgstat background thread and reducing CPU and I/O consumption. [#9009](https://atomgit.com/opengauss/openGauss-server/pull/9009) [@hw_hbj](https://atomgit.com/hw_hbj)
+    - Quick load balancing can be triggered when the cluster status changes.
+    - The heartbeat thread can be enabled to periodically maintain the heartbeat of the primary node. When the primary node is faulty, the old connection is quickly killed and the new connection is connected to the new primary node.
 
-- **[DataKit](https://docs.opengauss.org/en/docs/7.0.0/datakit/datakit.html)**: Migration tool enhancements
-  - Supports [migrating users during the MySQL full migration process](../characteristic_description/datakit_migration_optimization.md), creating users with the same names in openGauss and granting privileges to them. [#298](https://atomgit.com/opengauss/openGauss-tools-chameleon/pull/298) [#1444](https://atomgit.com/opengauss/openGauss-workbench/pull/1444) [@duanguoqiang4](https://atomgit.com/duanguoqiang4)
-  - Supports [skipping the data verification process](../characteristic_description/datakit_migration_optimization.md) entirely, effectively improving migration efficiency for migration scenarios that do not require data verification. [#1451](https://atomgit.com/opengauss/openGauss-workbench/pull/1451) [#249](https://atomgit.com/opengauss/openGauss-migration-portal/pull/249) [@duanguoqiang4](https://atomgit.com/duanguoqiang4)
-  - Supports controlling, through an option when DataKit is uninstalled, whether components such as Prometheus and the portal are uninstalled at the same time. [#252](https://atomgit.com/opengauss/openGauss-migration-portal/pull/252) [#1457](https://atomgit.com/opengauss/openGauss-workbench/pull/1457) [#1460](https://atomgit.com/opengauss/openGauss-workbench/pull/1460) [#1464](https://atomgit.com/opengauss/openGauss-workbench/pull/1464) [@duanguoqiang4](https://atomgit.com/duanguoqiang4)
-  - MySQL full migration supports resumable migration. If the migration is interrupted midway, tables whose data has already been migrated are not migrated again, achieving table-level resumable migration. [#304](https://atomgit.com/opengauss/openGauss-tools-chameleon/pull/304) [#1447](https://atomgit.com/opengauss/openGauss-workbench/pull/1447) [#248](https://atomgit.com/opengauss/openGauss-migration-portal/pull/248) [#299](https://atomgit.com/opengauss/openGauss-tools-chameleon/pull/299) [@tt1819798371](https://atomgit.com/tt1819798371)
+- Middleware: ShardingSphere supports read/write isolation in multiple modes and cross-database query.
 
-## Version Compatibility
+    - The read/write isolation of statements in a transaction is supported.
+    - The computing capability of the aggregate operator is supported to implement associated query across sharded tables in the database.
 
-- The default value of the GUC parameter [`d_format_behavior_compat_options`](https://docs.opengauss.org/en/docs/7.0.0/extension_reference/extension_reference/server/shark_guc_parameters.html#d_format_behavior_compat_options) is changed from empty to 'enable_sbr_identifier, default_collation'. This change affects only D-compatible databases. After the change, identifiers (including data types) enclosed in '[]' are supported by default, while '[]' is not supported as array syntax. For character type fields, the collation inherits the table-level collation when the table-level collation is not empty, and is set to the default collation corresponding to the database encoding when the table-level collation is empty. In upgrade scenarios, when upgrading through OM, if the user database contains D-compatible databases and is upgraded from a version before the change to a version after the change, the original `d_format_behavior_compat_options` value is retained after the upgrade without modification. If the old version does not contain D-compatible databases, the default value for new databases created after the upgrade is the new default value. [#9034](https://atomgit.com/opengauss/openGauss-server/pull/9034) [#1245](https://atomgit.com/opengauss/openGauss-OM/pull/1245) [@shijuzheng1997](https://atomgit.com/shijuzheng1997)
-- Lock wait related views and functions add a `waitstart` field, which marks the time when the lock wait starts. Affected views and functions include [`dbe_perf.locks`](../sql_reference/dbe_perf_schema_locks.md), [`pg_catalog.pg_locks`](../database_reference/pg_locks.md), and [`pg_catalog.pg_lock_status`](../sql_reference/statistics_information_functions.md). [#9133](https://atomgit.com/opengauss/openGauss-server/pull/9133) [@2504_92042799](https://atomgit.com/2504_92042799)
-- Sequence related views and functions support displaying global sequence information, indicating whether the current sequence is a global sequence. Affected views and functions include [`dbe_perf.statio_all_sequences`](../sql_reference/statio_all_sequences.md), [`information_schema.sequences`](../sql_reference/columns.md), [`pg_catalog.pg_gtt_attached_pids`](../database_reference/pg_gtt_attached_pids.md), [`pg_catalog.pg_seclabels`](../database_reference/pg_seclabels.md), [`pg_catalog.pg_statio_all_sequences`](../database_reference/pg_statio_all_sequences.md), [`pg_catalog.pg_sequence_all_parameters`](../sql_reference/system_information_functions.md), and [`pg_catalog.pg_sequence_parameters`](../sql_reference/system_information_functions.md). [#8647](https://atomgit.com/opengauss/openGauss-server/pull/8647) [@sunquancheng01](https://atomgit.com/sunquancheng01)
-- The [`information_schema.columns`](../sql_reference/columns.md) view supports displaying identity-related information. The `is_identity`, `identity_generation`, `identity_start`, `identity_increment`, `identity_maximum`, `identity_minimum`, and `identity_cycle` columns display real information based on the identity status. Previously, the values of these columns were always NO or NULL. [#9137](https://atomgit.com/opengauss/openGauss-server/pull/9137) [@CXXXXZ](https://atomgit.com/CXXXXZ)
-- [WLM statistics related views](../database_reference/pg_session_wlmstat.md) support displaying the number of RowDescription cache hits. Four fields are added: `rowdesc_a_store_count`, `rowdesc_a_hit_count`, `rowdesc_b_store_count`, and `rowdesc_b_hit_count`. They indicate the cumulative number of slots created and the cumulative number of cache hits for the RowDescription cache when connecting to openGauss through the openGauss protocol, and the corresponding cumulative slot creation count and cumulative cache hit count when connecting to openGauss through the MySQL protocol. RowDescription is used when processing D messages in the openGauss protocol and result set output in the MySQL protocol. [#2419](https://atomgit.com/opengauss/Plugin/pull/2419) [#9202](https://atomgit.com/opengauss/openGauss-server/pull/9202) [@wofanzheng](https://atomgit.com/wofanzheng)
-- The `provolatile` attribute of the [`text_date`](../sql_reference/type_conversion_functions.md) function is changed from 'i' (immutable) to 's' (stable). This means that for a fixed input, the result of the function remains unchanged within a single scan, but the same input may produce different results across multiple scans. [#9548](https://atomgit.com/opengauss/openGauss-server/pull/9548) [@liyangx](https://atomgit.com/liyangx)
+- Middleware: 32-node networking performance of openGauss+ShardingSphere > 21 million tpmC
 
-## Known Issues
+    - ShardingSphere uses asynchronous JDBC at the backend to reduce connection consumption. openGauss uses the resource pooling architecture to improve the single-sharding capability. When 32 Kunpeng 920 \(128 cores\) nodes are used for networking \(1 x shardingsphere-proxy ,11 x shardingsphere-jdbc, 20 x openGauss\), the perfect sharding performance is greater than 21 million tpmc.
 
-- openGauss does not monitor file permissions or slow disks. When file permissions are abnormal, the database exits and the corresponding information is recorded in the log. On a slow disk, database operations become slower.
-- MOT (Memory Optimized Tables) is incompatible with the incremental checkpoint feature. If MOT is used, the incremental checkpoint function must be disabled.
-- LLVM does not work well with the ARM architecture, and LLVM-related errors are reported when TPCC data is imported into MOT. This can be avoided by not enabling JIT, which is controlled by the `enable_mot_codegen` switch. To reduce the performance impact of disabling JIT on TPCC tests, set `force_mot_pseudo_codegen = true`.
+- Toolchain: full-lifecycle data production tool DataKit
+   
+    - DataKit is positioned as a full-lifecycle data productivity tool of openGauss. It supports full-lifecycle data management, covering openGauss deployment, migration, development, and O&M.
+    - DataKit is a tool kit of openGauss. It uses the browser/server (B/S) software architecture and provides basic software and hardware resource management capabilities such as servers and database instances.
+    - In addition, on-demand deployment of function extensions is supported. Currently, the community provides function extensions such as installation and deployment, data migration, data development, and intelligent O&M.
+    - The DataKit is also a tool development platform that allows users to implement their own functions based on extension interfaces and specifications. Function extensions can be dynamically loaded to and run on the DataKit or dynamically uninstalled from the DataKit. Extensions can invoke open interfaces of the platform and other extensions to obtain corresponding data and functions, implementing quick construction of featured functions.
+   
+- Toolchain: MySQL migration tool gs\_rep\_portal
+   
+    - gs\_rep\_portal can connect to Debezium+kafka and gs\_mysync to integrate full migration, incremental migration, and data check capabilities, implementing full migration, incremental migration, reverse migration, and data check.
+    - Users are allowed to create parallel migration task flows and customize migration plans. Each migration step is automatically executed based on the preset execution sequence.
+    - The migration progress (including the total amount, remaining amount and time, and replication delay) and statements that fail to be migrated can be displayed.
+   
+- Toolchain: MySQL full migration tool gs\_mysync
+   
+    - The gs\_mysync (original Chameleon) full migration tool supports progress display and enhanced debugging. The full migration performance is greater than 300 MB/s, that is, 1 TB/h.
+   
+- Toolchain: MySQL incremental and reverse migration tool gs\_replicate
+   
+    - Incremental migration and reverse migration are incorporated into Debezium+kafka and integrated into gs\_replicate. The incremental migration performance is greater than 30,000 TPS.
+   
+- Toolchain: gs\_datacheck based on the Merkle tree
+   
+    - The data check performance reaches 70 MB/s.
+    - The row-level, column-level, and table-level data checks are supported.
+    - Data exported from a full migration can be directly read and checked.
+   
+- Compatibilities: Compatible with most common MySQL syntax, including data types, operators, system functions, DDL, DML, DCL, and PL/SQL, implementing application migration without modification.
+   
+    Version 5.0.0 supports the following syntax points: (Only some typical syntax points are listed. For details, see section "MySQL Compatibility" in the *Data Migration Guide*.)
+   
+    - Data types:
+   
+      (1) XML type
+      (2) Binary data types and operators
+      (3) Converting the output of the Boolean type to tinyint
+      (4) Signed and unsigned tinyint types
 
-## Resolved Issues
+    - System functions: ADDDATE(), ADDTIME(), CONVERT\_TZ(), CURDATE(), DATE\_ADD(), DATE\_FORMAT(), DATE\_SUB(), DATEDIFF(), DAY(), DAYNAME(), EXTRACT(), FROM\_DAYS(), FROM\_UNIXTIME(), GET\_FORMAT(), LAST\_DAY, LOCALTIME(), LOCALTIME, LOCALTIMESTAMP, LOCALTIMESTAMP(), MAKEDATE(), MAKETIME(), MONTH(), MONTHNAME(), NOW(), JSON\_ARRAY(), JSON\_OBJECT(), JSON\_QUOTE(), JSON\_CONTAINS(), JSON\_CONTAINS\_PATH(), JSON\_EXTRACT(), JSON\_UNQUOTE(), JSON\_KEYS(), JSON\_SEARCH(), JSON\_APPEND(), JSON\_ARRAY\_APPEND(), JSON\_ARRAY\_INSERT(), JSON\_INSERT(), JSON\_MERGE(), JSON\_MERGE\_PATCH(), DATABASE(), ROW\_COUNT() and ANY\_VALUE()
 
-For the complete issue list, see [Complete Issue List](https://atomgit.com/opengauss/openGauss-server/issues).
+    - DDLs:
 
-For the complete kernel commit history, see [Commit History](https://atomgit.com/opengauss/openGauss-server/commits/7.0.0).
+      (1) The default character set and collation can be set and modified at the schema, table, and column levels. The character set of a table can be converted.
+      (2) Columns can be added before the first column of a table or after a specified column.
+      (3) The syntax for modifying column names and column definitions is compatible.
+      (4) The ALTER TABLE tablename ADD CONSTRAINT UNIQUE INDEX|KEY syntax is supported.
+      (5) The CREATE/ALTER/DROP DATABASE can be converted to the CREATE/ALTER/DROP SCHEMA when the character set is specified.
+      (6) Indexes can be hidden and index visibility can be set.
+      (7) Compatibility with uncommon options in table creation statements is supported, such as checksum and max_rows;
+      (8) Columns can be specified when a table is created in CREATE TABLE SELECT mode.
+      (9) Columns are case sensitive.
+      (10) The dual tables are supported.
+      (11) The authid can be used as the column name.
 
-The resolved issues are listed in the following table.
+    - DMLs:
 
-| ISSUE                                                        | Associated Repository                                | Description                                                     |
-| ------------------------------------------------------------ | --------------------------------------- | ------------------------------------------------------------ |
-| [8056](https://atomgit.com/opengauss/openGauss-server/issues/8056) | openGauss-server | [Bug]: [Compatibility] After the `b_format_behavior_compat_options` parameter is set to '' in a B-compatible database, the database crashes when a column modification is performed. |
-| [8061](https://atomgit.com/opengauss/openGauss-server/issues/8061) | openGauss-server | [Bug]: [Compatibility] In a 7.0.0RC3B023 database, executing the D-compatible syntax select CONVERT(date, '1956-12-30 20:00:00', 0); causes the database to crash. |
-| [8069](https://atomgit.com/opengauss/openGauss-server/issues/8069) | openGauss-server | [Bug]: During a 2*24h stability test of resource pooling, the cluster crashes and primary/standby services are interrupted. |
-| [8071](https://atomgit.com/opengauss/openGauss-server/issues/8071) | openGauss-server | [Bug]: [Upgrade] Upgrading from 6.0.3 or 7.0.0RC2 to the latest version 7.0.0RC3B024 fails with an error. |
-| [8073](https://atomgit.com/opengauss/openGauss-server/issues/8073) | openGauss-server | [Bug]: When ultimate RTO standby read and feedback are enabled and Global Syscache is disabled on the standby, starting the standby directly causes a core dump [M]. |
-| [8075](https://atomgit.com/opengauss/openGauss-server/issues/8075) | openGauss-server | [Bug]: After a policy is added to a table, inserting data that triggers the policy causes a memory leak. [DR] |
-| [8076](https://atomgit.com/opengauss/openGauss-server/issues/8076) | openGauss-server | [Bug]: When two packages have interdependent variables, calling them causes a core dump. |
-| [8095](https://atomgit.com/opengauss/openGauss-server/issues/8095) | openGauss-server | [Bug]: BM25 supports custom dictionaries. When `enable_remote_execute`=on, the custom dictionary is readable on the primary but not on the standby, and the database crashes when queried after creation on the standby. |
-| [8109](https://atomgit.com/opengauss/openGauss-server/issues/8109) | openGauss-server | [Bug]: [Test Type: Upgrade] [Test Version: 6.0.5] [Resource Pooling] A core dump occurs after upgrading to 7.0.0 LTS B002. |
-| [8142](https://atomgit.com/opengauss/openGauss-server/issues/8142) | openGauss-server | [Bug]: During batch data insertion through openGauss JDBC, an xlog insertion panic occurs and the process actively core dumps. |
-| [8171](https://atomgit.com/opengauss/openGauss-server/issues/8171) | openGauss-server | [Bug]: A core dump occurs during a full fastcheck. |
-| [8206](https://atomgit.com/opengauss/openGauss-server/issues/8206) | openGauss-server | [Bug]: [Test Feature: Traditional Stability] When the traditional stability B007 version runs the TPCC compressed table workload, the log continuously outputs "WARNING: you don't own a lock of type AccessShareLock". |
-| [8209](https://atomgit.com/opengauss/openGauss-server/issues/8209) | openGauss-server | [Bug]: After the UB transaction acceleration access feature is enabled, primary node performance degrades noticeably. |
-| [8235](https://atomgit.com/opengauss/openGauss-server/issues/8235) | openGauss-server | [Bug]: [Stability] [Traditional Primary/Standby] When Ustore workloads run in a stability environment with ultimate RTO enabled, a core dump occurs after a period of time, with the message "PANIC: [REDO_LOG_TRACE] DispatchRedoRecord encounter fatal error: rmgrID:22, info:48, indexid:22". |
-| [8244](https://atomgit.com/opengauss/openGauss-server/issues/8244) | openGauss-server | [Bug]: [Ustore] In concurrent interaction scenarios, updating a Ustore table reports an error. |
-| [8260](https://atomgit.com/opengauss/openGauss-server/issues/8260) | openGauss-server | [Bug]: With insert on conflict do update, when the newly inserted update value is the same as data inserted at the same time, the openGauss execution result differs from that of PG. |
-| [8261](https://atomgit.com/opengauss/openGauss-server/issues/8261) | openGauss-server | [Bug]: With insert on conflict do update, when the newly inserted data itself conflicts, the openGauss execution result differs from that of PG. |
-| [8272](https://atomgit.com/opengauss/openGauss-server/issues/8272) | openGauss-server | [Bug]: For the convert function in a B-compatible database, executing select convert('ffff1测试646测试nhjhio' using 'latin1'); through JDBC causes the database to crash. |
-| [8289](https://atomgit.com/opengauss/openGauss-server/issues/8289) | openGauss-server | [Bug]: When the jieba tokenizer dictionary of a BM25 index is empty, the database process core dumps. |
-| [8297](https://atomgit.com/opengauss/openGauss-server/issues/8297) | openGauss-server | [Bug]: [Upgrade] [Traditional Primary/Standby] Upgrading from 6.0.6 to 7.0.0LTSB013 fails with an error. |
-| [8336](https://atomgit.com/opengauss/openGauss-server/issues/8336) | openGauss-server | [Bug]: When `hot_standby_feedback` is enabled, the physical replication slot carries the xmin field. After a primary/standby switchover, the standby has inactive replication slots that carry xmin, so csnlog cannot be cleaned up [M]. |
-| [8344](https://atomgit.com/opengauss/openGauss-server/issues/8344) | openGauss-server | [Bug]: When `sql_mode_full_group` is disabled, a core dump occurs in some scenarios. |
-| [8360](https://atomgit.com/opengauss/openGauss-server/issues/8360) | openGauss-server | [Bug]: COPY FROM on a USTORE table does not verify foreign key constraints (ASTORE works normally). |
-| [8361](https://atomgit.com/opengauss/openGauss-server/issues/8361) | openGauss-server | [Bug]: [Ustore] [HA] [gs_probackup] After an incremental restoration, executing alter table ... alter column ... type int on a Ustore table causes a core dump. |
-| [8357](https://atomgit.com/opengauss/openGauss-server/issues/8357) | openGauss-server | [Bug]: In resource pooling CI 6.0.0 FORWARD_OLDEST_XMIN Case0002, after a cms server node stops, a new cms primary cannot be elected. |
-| [8392](https://atomgit.com/opengauss/openGauss-server/issues/8392) | openGauss-server | [Bug]: When memcheck runs the autonomous_cursor test case, a core dump occurs. |
-| [8316](https://atomgit.com/opengauss/openGauss-server/issues/8316) | openGauss-server | [Bug]: In stability scenarios with hot reads on a Ustore standby, the standby quickly core dumps. |
-| [8449](https://atomgit.com/opengauss/openGauss-server/issues/8449) | openGauss-server | [Bug]: After Ustore runs for 1x24h in a stability test, the standby core dumps and primary/standby replication is interrupted. |
-| [8479](https://atomgit.com/opengauss/openGauss-server/issues/8479) | openGauss-server | [Bug][Resource Pooling]: Upgrading from 7.0.0RC3 to 7.0.0LTS fails with an error. |
-| [8485](https://atomgit.com/opengauss/openGauss-server/issues/8485) | openGauss-server | [Documentation issue]: In resource pooling, executing query_all_drc_info(0) according to the documentation reports a return row type mismatch. |
-| [8494](https://atomgit.com/opengauss/openGauss-server/issues/8494) | openGauss-server | [Bug]: gs_probackup authentication fails during a remote full backup. |
-| [8496](https://atomgit.com/opengauss/openGauss-server/issues/8496) | openGauss-server | [Bug]: [Resource Pooling] Upgrading from 6.0.x to 7.0.0LTSB022 fails with an error. |
-| [270](https://atomgit.com/opengauss/debezium/issues/270) | debezium | [Bug]: The Oracle2oGRAC migration toolkit is missing an executable jar after extraction. |
-| [284](https://atomgit.com/opengauss/debezium/issues/284) | debezium | [Bug]: After online migration is started in DataKit and the full migration is interrupted, some data is inserted into the source database. After the environment is repaired and the full migration resumes, the incremental migration gets stuck and the migration process is blocked. |
-| [291](https://atomgit.com/opengauss/debezium/issues/291) | debezium | [Bug]: PG reverse incremental migration fails. |
-| [311](https://atomgit.com/opengauss/openGauss-tools-chameleon/issues/311) | openGauss-tools-chameleon | [Bug]: MySQL full migration supports resumable migration. After the target database stops, the DataKit page shows a blocked state. After the target database starts, DataKit resumes the migration; when the resume completes and full verification begins, data loss occurs. |
-| [312](https://atomgit.com/opengauss/openGauss-tools-chameleon/issues/312) | openGauss-tools-chameleon | [Bug]: MySQL full migration supports resumable migration. After the source database stops, the DataKit page shows that the migration is interrupted. After the source database starts, clicking the resume button in DataKit results in data loss. |
-| [387](https://atomgit.com/opengauss/DSS/issues/387) | DSS | [Bug]: A core dump is caused by a stress test that concurrently creates files. |
-| [272](https://atomgit.com/opengauss/CM/issues/272) | CM | [Bug]: The CM majority and minority repeatedly flip back and forth, causing an excessively large term value and database restart. |
-| [279](https://atomgit.com/opengauss/CM/issues/279) | CM | [Bug]: When upgrading from 6.0.6 to 7.0.0LTSB020 in a scenario that involves a CM version, the cluster state is abnormal after the upgrade. |
-| [777](https://atomgit.com/opengauss/openGauss-OM/issues/777) | openGauss-OM | [Bug]: [Test Type: Tool Function] [Test Tool: gsql] With parallel mode enabled, gsql core dumps after executing an SQL statement that does not contain ';' or an SQL statement combined with meta-commands (\g, \gset, ...). |
+      (1) Column aliases can be specified when INSERT is used.
+      (2) The SELECT INTO syntax is compatible. OUTFILE, DUMPFILE, and variables are added after SELECT INTO.
+      (3) The LOAD DATA statement can be used to import table data.
+      (4) The union query can be associated with columns of different types.
+      (5) DISTINCT supports ORDER BY with expressions.
+      (6) Foreign keys can be associated with non-unique indexes.
+      (7) The SELECT statement supports the FORCE keyword to forcibly use the index.
+      (8) The SELECT statement supports user-defined variables.
+      (9) Views can be inserted, deleted, and updated.
+      (10) In an INSERT statement, the right value of an expression following SET can contain the column name.
+      (11) Multiple partitions can be specified to query data.
+      (12) The default function can be used for SQL statements.
 
-## Inherited Features
+    - DCLs:
 
-- **Basic Features**: [SQL standard syntax](../sql_reference/opengauss_sql.md), [data types](../sql_reference/numeric_types.md) (including [JSON and JSONB](../sql_reference/json_jsonb_types.md)), tables (including temporary tables, global temporary tables, and foreign tables), [views](../sql_reference/brief_tutorial/view.md), [materialized views](../sql_reference/materialized_view.md), foreign keys, [indexes](../sql_reference/indexes.md) (including btree, Gin, and hash indexes), [sequences](../database_administration_guide/creating_and_managing_sequences.md), functions, [triggers](../sql_reference/triggers.md), [aggregate functions](../sql_reference/aggregate_functions.md) such as `median`, ROWNUM, UPSERT, and the GB18030 character set.
+      (1) The syntax tree of SET TRANSACTION can be used to set the session level, global isolation level, and read/write permission.
+      (2) The event scheduler can be used to periodically execute specified statements at intervals, create, modify, and delete events, and support SHOW EVENTS.
+      (3) LOCK TABLE and UNLOCK TABLE are supported.
+      (4) SHOW STATUS, SHOW TABLE STATUS, SHOW PRIVILEGES, SHOW WARNING, and SHOW ERRORS are supported.
+      (5) The IF NOT EXISTS option is supported when a user is created.
+      (6) Users can be specified in the 'user'@'host' format.
 
-- **SQL Engine Enhancements**: [Range, LIST, and HASH partitioning](../sql_reference/partitioned_tables.md#classification-of-range-partitioned-tables), automatic partition extension based on range partitioning, global partitioned indexes, row-store execution to vectorized execution, [autonomous transactions](../characteristic_description/autonomous_transaction.md), [parallel query](../characteristic_description/smp_for_parallel_execution.md), [Global Syscache](../characteristic_description/global_syscache.md), Global PlanCache, the [IPv6 protocol](../sql_reference/network_address_types.md), the [postgis plug-in](https://docs.opengauss.org/en/docs/7.0.0/extension_reference/PostGIS.html), and [event triggers](../characteristic_description/event_trigger.md). Supports [inherited tables](../sql_reference/create_table_inherits.md). Supports PIPELINED functions, which can return a set of rows. SELECT statements support data sampling on specified subpartitions, views, and materialized views through the [TABLESAMPLE clause](../sql_reference/select.md#parameter-description). A single trigger can be disabled or enabled through ALTER TRIGGER. SELECT statements support row-column conversion through the ROTATE and NOT ROTATE clauses. Table constraints can be enabled or disabled through SQL. Numbers ending with f or d are treated as floating-point numbers. 'NaN' and 'infinity' are supported to represent special floating-point values. The IS [NOT] INFINITE and IS [NOT] NAN conditional expressions are supported. For the numeric data type, precision can be greater than scale, and scale can be negative. The CROSS/OUTER APPLY JOIN syntax is supported. When an object referenced by a view (such as a table, column, function, or view) is modified or dropped, the view is set to an invalid state. Supports [XMLTABLE](../sql_reference/xmltable.md), which expands an XML document into relational table results by the specified row path, maps nodes, attributes, or expressions to output columns through the `COLUMNS` clause, and is used as a table function in the `FROM` clause. JSONB capabilities are enhanced: the [jsonb_path_exists](../sql_reference/json_jsonb_functions_and_operators.md) function checks whether any item exists at the specified JSON path, and the [jsonb_path_query_first](../sql_reference/json_jsonb_types.md#jsonpath-types) function extracts a specific expression from JSON data through JSONPATH.
+    - PLs/SQLs:
 
-- **Storage Engine Enhancements**: Delayed standby, [logical replication on standby](../characteristic_description/logical_replication.md), [parallel logical decoding](../characteristic_description/parallel_logical_decoding.md), [gray upgrade](../characteristic_description/gray_upgrade.md), [specified-node upgrade](../characteristic_description/rolling_upgrade.md), Hash indexes, primary key and unique constraints on column-store tables, the [Ustore storage engine](../database_administration_guide/in_place_update_storage_engine.md), [segment-page storage](../database_administration_guide/storage_structure.md#segment-page-storage-structure), [publication/subscription](../characteristic_description/publication_subscription.md), row-store table compression, [MOT memory tables](../database_administration_guide/mot_memory_and_storage_planning.md), and [NUMA-aware optimization](../database_administration_guide/numa_awareness_allocation_and_affinity.md). [Segment-page tables support space reclamation](../characteristic_description/segment_space_shrink.md). After DELETE and UPDATE operations on a segment-page table, space is reclaimed through system functions, so that the storage resources occupied by table files are released more effectively without affecting normal user services.
+      (1) The WHILE loops with labels are supported.
+      (2) The CASE WHEN condition control syntax is supported.
+      (3) The IF_THEN control syntax is supported.
+      (4) The cursor-related syntax is supported.
+      (5) The stored procedure processes the condition.
+      (6) The DROP TRIGGER supports cascading deletion without specifying the table name.
+      (7) The DO statement is supported.
+      (8) The stored procedure supports REPEAT.
+      (9) The CREATE PROCEDURE SELECT syntax is supported.
+      (10) The stored procedure supports RETURN.
+      (11) The **as $$begin** and **end; $$language plpgsql** are not added to the beginning and end of CREATE FUNCTION.
+      (12) A slash (/) is not added at the end of CREATE TRIGGER.
+      (13) DECLARE HANDLER, CONTINUE HANDLER, and EXIT HANDLER are supported.
 
-- **Resource Pooling**: The [openGauss three-tier pooling architecture](https://docs.opengauss.org/en/docs/7.0.0/resource_pooling/resource_pooling_overview.html) based on storage pooling, memory pooling, and compute pooling. [Optimized standby visibility judgment logic, optimized primary oldestxmin advancement logic, and standby snapshot caching](https://docs.opengauss.org/en/docs/7.0.0/performance_tuning_guide/resource_pooling_performance_optimization.html) achieve 60K tps on 2 nodes in sysbench scenarios, with 1.6x linearity, a 50% improvement over the pre-optimization baseline. Supports [transparent forwarding of write statements within a standby transaction to the primary for execution](https://docs.opengauss.org/en/docs/7.0.0/performance_tuning_guide/transparent_forwarding_within_backup_machine_affairs.html). [DSS capability enhancements](https://docs.opengauss.org/en/docs/7.0.0/resource_pooling/feature_enhancement.html) support the NoF/NoF+ protocol, thread pool mode for high-concurrency processing, upgrade mode, and black box diagnostics. With distributed storage, [database operator offloading](../characteristic_description/resource_pooling_operator_offloading.md) accelerates TPCH performance by 40%. Supports the [SPQ multi-node parallel query framework](https://docs.opengauss.org/en/docs/7.0.0/extension_reference/spqplugin.html). [DMS](https://docs.opengauss.org/en/docs/7.0.0/resource_pooling/dms_resource_statistics_function.html) and CBB add wait event statistics. Supports RTO < 10s under a 500K TPMC workload. Supports [primary/standby dual-cluster DR based on Dorado storage synchronous replication](https://docs.opengauss.org/en/docs/7.0.0/resource_pooling/resource_pooling_active_standby_dual_cluster_dr.html). Supports [resource pooling primary/standby dual-cluster DR based on stream replication](https://docs.opengauss.org/en/docs/7.0.0/resource_pooling/resource_pooling_active_standby_dual_cluster_dr.html). DDL execution is supported during the on-demand replay redo phase. Supports [offline scale-out and scale-in of resource pooling standbys](../tool_and_commandreference/gs_expansion.md). Supports [virtual machine deployment](../database_administration_guide/resource_pooling_om_installation_and_deployment.md#virtual-environment). Supports xlog log unification. Real-time build supports flow control. Supports [primary/standby parameter synchronization](https://docs.opengauss.org/en/docs/7.0.0/resource_pooling/resource_pooling_support_for_primary_and_backup_parameter_synchronization.html). Supports page storage. Supports scaling a dual cluster in to a single cluster. Supports [archiving](https://docs.opengauss.org/en/docs/7.0.0/resource_pooling/resource_pooling_xlog_support_archive.html).
+    - Other syntax compatibility:
 
-- **Stored Procedures**: [Stored procedures](../sql_reference/stored_procedures.md), [commit/rollback within stored procedures](../sql_reference/transaction_management.md), and [stored procedure debugging](../characteristic_description/stored_procedure_debugging.md). Supports [stored procedure coverage tests](../sql_reference/proc_coverage_generate_stored_procedure_coverage_report.md). [Cursors](../sql_reference/cursors.md) support nested definition. A cursor can be used as an inserted value. When a dynamic cursor REF CURSOR is defined with TYPE syntax, the data type returned by the cursor can be specified through RETURN. [Cursor parameters support default values](../sql_reference/explicit_cursor.md). Supports [nested arrays and records](../sql_reference/arrays.md). Supports [assigning values to cursors with ROWTYPE](../sql_reference/variable_definition_statements.md).
+      (1) Users are allowed to customize variables to save the result of the SELECT statement.
+      (2) Seven character sequences are supported: utf8_general_ci, utf8_bin, utf8_unicode_ci, utf8mb4_general_ci, utf8mb4_bin, and utf8mb4_unicode_ci and binary.
+      (3) The utf8mb4 character set is supported.
+      (4) The operator behavior is the same as that of MySQL.
+      (5) Character strings can be enclosed in double quotation marks.
 
-- **Security Features**: [Authentication](../database_administration_guide/configuring_client_access_authentication.md), [permission management](../database_om_guide/secharden/permission_management.md), secure network communication, [database audit](../characteristic_description/database_audit.md), [fully encrypted databases](../characteristic_description/advanced_features/full_encrypted_database.md), [dynamic data masking](../characteristic_description/dynamic_data_masking.md), SM series cryptographic algorithms, [tamper-proof ledger databases](../characteristic_description/ledger_database_mechanism.md), [built-in roles](../database_administration_guide/roles.md) and permission management, [transparent data encryption](../characteristic_description/transparent_data_encryption.md), ANY permission management, and [user-level audit](../characteristic_description/database_audit.md). Supports third-party key management services. On Kunpeng servers, the KAE component improves the performance of the SM4 encryption and decryption algorithm by 5%. Supports [auditing of service start and stop operations](../characteristic_description/database_audit.md) and [auditing of database backup and restoration operations](../characteristic_description/database_audit.md). Supports [SHA-256 integrity verification of audit logs](../characteristic_description/database_audit.md). Releases security configuration baselines and a security configuration inspection tool. Supports prohibiting non-owner users from remotely executing DDL operations. Supports enhanced [black box](../characteristic_description/advanced_features/oGRecorder.md) capabilities, including parameter synchronization between black box primary and standby processes, encrypted generation and inter-node synchronization of certificates and keys to enable a unified certificate system shared by multiple nodes, REST API-based remote management for querying data vault cluster information and controlling cluster state, and online rolling upgrades and offline upgrades.
+## Important Notes<a name="EN-US_TOPIC_0289899192"></a>
 
-- **High Availability**: [Primary/standby deployment](../database_administration_guide/master_and_standby_node.md), [cascaded standbys](../database_administration_guide/cascaded_standby_node.md), [logical replication](../characteristic_description/logical_replication.md), [ultimate RTO](../database_om_guide/ultimate_rto.md), [standby scaling](../database_administration_guide/add_remover_standby_node.md), [Paxos-based distributed consensus protocol (DCF)](../database_om_guide/high_availability_based_on_the_paxos_protocol.md), and [two-city three-DC cross-region DR](../database_administration_guide/two_city_three_dc_dr.md). Parallel replay performance is optimized, improving standby redo performance by 50% to 100% in TPCC scenarios. [Ultimate RTO supports readable standbys](../database_om_guide/ultimate_rto.md), maintaining RTO < 10s with one primary and one standby at 700K tpmC. [Primary/standby HA capabilities are enhanced](../database_om_guide/enhanced_active_standby_ha.md). Supports [data recovery when an asynchronous standby is promoted to primary](../characteristic_description/asynchronous_backup_and_recovery_capability_for_master_data.md). [Logical replication is enhanced](../characteristic_description/logical_replication.md). [CM supports switchover of the first standby and secondary standby in the standby cluster of a dual cluster](https://docs.opengauss.org/en/docs/7.0.0/resource_pooling/cm_supports_dual_cluster_backup_clusters_switchover.html). CM supports selecting a real-time replay node to be preferentially promoted when the primary fails. The CM primary election logic is optimized to promptly elect the old primary when the majority of standbys have not finished replay. CM supports dynamically enabling and disabling maximum availability when the DN majority condition is met: enable it when a standby is lost and disable it after the standby recovers. [CM](../characteristic_description/cm.md) two-node deployment supports heartbeat networks and multiple third-party IP detections, reducing split-brain occurrences. [Logical replication is enhanced](../database_om_guide/logical_copy_support_ddl_operation.md) to support the Alter/Truncate/Rename DDL syntax for tables and partitioned tables. In resource pooling scenarios, the CM cluster management component can detect through CM whether the kernel hangs in the reform phase. DCC supports inter-node data build and can trigger a build operation through cm_ctl. Supports [online DDL](../database_administration_guide/online_ddl.md), reducing the time high-level locks are held during DDL and reducing blocking of concurrent DML. Online DDL supports modifying column data types and compression attributes on Astore and segment-page tables in traditional primary/standby deployments, adding constraints (including range constraints and NOT NULL constraints), VACUUM FULL, CLUSTER, and splitting and merging partitions of partitioned tables, and triggers online DDL through the new CONCURRENTLY keyword.
+- For details about technical specifications, see the *Technical White Paper*.
+- You can select a deployment architecture based on the database deployment solutions in the *Database Management Guide* to ensure the reliability and availability of the database cluster.
+- The resource pooling primary/standby shared storage feature is a beta feature and is in the trial phase.
 
-- **High Performance**: Supports [allocating the shared buffer from huge pages](../database_reference/huge_page_memory.md), improving performance by 5% in a 4k pagesize environment. The kernel GCC version is upgraded to GCC 10.3, and feedback-based optimization improves TPCC performance by 6%. [SCRLock improves distributed lock performance](../characteristic_description/scrlock.md). [Partitioned table performance is optimized](../characteristic_description/partitioning.md). [UWAL](../characteristic_description/advanced_features/uwal.md) accelerates database WAL performance, improving TPCC performance by about 20%. The control granularity of the primary/standby lock mechanism and the ordered queue locking logic are optimized, improving TPCC performance by 10% in the one-primary-one-synchronous-standby scenario. Functions and PACKAGEs support specifying parallelism-related parameters. [NO SCROLL cursors](../sql_reference/cursors.md) and cursor expressions passed as parallel function arguments support parallel execution. [User-mode networking](../characteristic_description/user_mode_network.md) optimizes the northbound network, improving single-node TPCC performance by 15%. Row-column conversion is supported in traditional primary/standby deployment mode, and standbys support column-store queries, achieving an average 5x performance improvement over the original row-store approach in the TPCH 100G benchmark environment. SMP scenarios are extended: in IUD scenarios, stream operators are moved up to improve parallel efficiency and performance by more than 50%. Subtransaction scenario performance is improved: the size of Multixact-related SLRU buffers is configurable, and SLRU bank partitioning improves performance by more than 100% in scenarios with many subtransactions. Supports [automatic parameterization](../characteristic_description/automatic_parameterization.md), which reduces the execution time of SQL statements by reusing the execution plan cache when similar or identical simple SQL statements need to be executed repeatedly (only IUD is supported). Supports the [parameterized path](../characteristic_description/automatic_parameterization.md) feature for simple SELECT statements, consolidating related memory into the plan cache and supporting the global plan cache. Supports GPC (Global Plan Cache). When GPC is enabled and the parameterization feature is used, parameterized statements are also cached in GPC (when the execution plan uses Generic Plan) and can be queried through the `DBE_PERF.GLOBAL_PLANCACHE_STATUS` view. Supports [ADIO](../database_reference/asynchronous_i_o_operations.md): file access to row-store tables supports direct I/O without going through the operating system page cache, and page flushing and VACUUM FULL use asynchronous I/O. Supports [DPA hash aggregation acceleration](../characteristic_description/dpa_hash_agg_acceleration.md), which offloads vectorized hash aggregation operations to hardware accelerators based on the UADK framework, significantly improving aggregation query efficiency.
+## Known Issues<a name="EN-US_TOPIC_0289899194"></a>
 
-- **Vector Database**: Supports [native vector storage](https://docs.opengauss.org/en/docs/7.0.0/datavec/datavec_overview.html) and vector index types such as IVF-FLAT/IVF-PQ/HNSW/HNSW-PQ. Supports [scalar-vector hybrid queries](https://docs.opengauss.org/en/docs/7.0.0/datavec/datavec_architecture.html#%E6%A0%87%E9%87%8F%E5%90%91%E9%87%8F%E6%B7%B7%E5%90%88%E6%9F%A5%E8%AF%A2), generating optimal plans based on the CBO. [ANN indexes support parallel construction](https://docs.opengauss.org/en/docs/7.0.0/datavec/datavec_architecture.html#%E5%B9%B6%E8%A1%8C%E6%9E%84%E5%BB%BA%E7%B4%A2%E5%BC%95), improving efficiency in processing large-scale datasets. Supports the [RabitQ](https://docs.opengauss.org/en/docs/7.0.0/datavec/RabitQ.html) quantized index algorithm, an advanced binary quantization method with theoretical guarantees. When combined with HNSW and IVFFLAT, it ensures search reliability even when vector data is represented in a highly compressed form.
+- openGauss cannot monitor file permissions and slow disks. When the file permission is abnormal, the database exits and the corresponding information is recorded in logs. On a slow disk, the response to database operations is slower than usual.
 
-- **AI4DB**: [Automatic parameter tuning](../characteristic_description/aifeature_guide/x_tuner_parameter_tuning_and_diagnosis.md), [slow SQL discovery](../characteristic_description/slow_sql_statement_discovery.md), AI query time prediction, database metric collection, prediction, and anomaly monitoring, self-configuration for anomaly detection, the [DBMind](../characteristic_description/aifeature_guide/dbmind_mode.md) autonomous O&M platform, an intelligent optimizer, and [intelligent index recommendation](../characteristic_description/aifeature_guide/index_advisor_index_recommendation.md). Supports [oGAI](../characteristic_description/ogai.md), a one-stop AI capability integration solution that serves as an intelligent vectorization framework plug-in for the openGauss database, allowing users to directly call AI models inside the database for text vectorization, text generation, document reranking, and other operations without relying on an external application layer, greatly simplifying the development of RAG (Retrieval-Augmented Generation) applications. Supports [MCP](https://docs.opengauss.org/en/docs/7.0.0/datavec/mcp.html) integration with the openGauss database, enabling AI agents to securely and efficiently operate the enterprise-grade database directly through a standardized protocol.
+- The read-only mode of the standby node and cascaded standby node is incompatible with the ultimate RTO feature. If the ultimate RTO feature is enabled, disable the read-only mode of the standby node and cascaded standby node.
 
-- [**DB4AI**](../characteristic_description/db4ai_database_driven_ai.md): deepSQL in-database AI algorithms; the in-database AI algorithms support XGBoost, multiclass, and PCA.
+- Memory Optimized Tables (MOTs) are incompatible with the incremental checkpoint feature. If MOTs are used, disable the incremental checkpoint function.
 
-- **Backup and Restoration**: [Full physical backup](../database_om_guide/physical_backup_and_restoration.md), [logical backup](../database_om_guide/logical_backup_and_restoration.md), standby backup, [incremental backup and restoration](../database_om_guide/physical_backup_and_restoration.md), and point-in-time recovery (PITR).
+- LLVM does not support the Arm architecture. When the MOT TPC-C is imported, an LLVM error is reported. To avoid this problem, disable the JIT function using the **enable\_mot\_codegen** parameter. You can configure **force\_mot\_pseudo\_codegen= true** to reduce the impact on TPC-C test performance when the JIT function is disabled.
 
-- **O&M Capabilities**: The [WDR diagnostic report](../characteristic_description/workload_diagnosis_report_wdr.md) adds database runtime metrics, standby [slow SQL diagnostic views](../characteristic_description/root_cause_analysis_for_slow_sql_statements.md), [automatic unique SQL eviction](../database_reference/query_62.md#enable_auto_clean_unique_sql), and optimized slow SQL root cause analysis with better conclusions. Slow SQL statistics time gaps are filled, and fine-grained phase statistics are supported. Node stacks are printed when a switchover times out. Statistics recording is added for the WalSender, WalRecv, and WalRecvWriter threads. When the primary is down, the current synchronization position of the transaction log can be obtained on the standby. Supports [full-link tracing](../characteristic_description/full_link_tracking.md), which traces and records the end-to-end network time of SQL statements executed through the JDBC query API and records it in the database [`dbe_perf.statement`](../sql_reference/dbe_perf_schema.md) view and the [`statement_history`](../database_reference/statement_history.md) table. Plan statistics are enabled by default for slow SQL statistics to reduce performance overhead. Supports obtaining the content of the pg_hba.conf file through the built-in function `gs_get_hba_conf()`.
+## Common Vulnerabilities and Exposures \(CVEs\)<a name="EN-US_TOPIC_0289899199"></a>
 
-- **JDBC**: Supports [JDBC client load balancing and read/write splitting](../characteristic_description/jdbc_client_load_balancing_and_read_write_isolation.md) and primary node heartbeat detection.
+This is the tenth release of openGauss. The disclosed CVEs have been fixed.
 
-- **Cluster Management**: Supports CM cluster management. CM supports [custom resource monitoring](../tool_and_commandreference/features.md#custom-resource), VIP management, [two-node deployment](../installation_guide/creating_an_xml_configuration_file.md#configuring-the-cm-server-primarynon-primary-information), and external state query and push capabilities.
+## Resolved Issues<a name="EN-US_TOPIC_0289899193"></a>
 
-- **Toolchain**: [DataStudio development tool](../characteristic_description/opengauss_client_tool_datastudio.md), [gs_mysync MySQL full migration tool](../characteristic_description/full_migration_tool_gs_mysync.md), [gs_replicate incremental and reverse migration tool](../characteristic_description/incremental_migration_tool_gs_replicate.md), gs_datacheck data verification tool, and [DataKit, a tool for the full lifecycle of data](../characteristic_description/tool_chain_datakit.md). Supports a data dictionary verification tool for upgrade scenarios. The OM tool is decoupled from OS version dependencies. Supports instance monitoring and intelligent diagnosis plug-ins for SQL, session, instance, and cluster metric monitoring, as well as historical data analysis, SQL diagnosis, alarm monitoring, and alarm notification, improving intelligent O&M capabilities. The database development plug-in is enhanced to support object management for tables, views, user roles, functions, and stored procedures. MySQL full migration: supports reading CSV files directly for data migration, parallel index creation, removal of cross-platform dependencies, and enhanced reliability. MySQL incremental and reverse migration: supports resumable migration and migration progress display; reverse migration supports full migration. Data verification: supports sharded verification by table, better cooperation with the full migration process, and improves verification performance to 150 MB/s. Provides [gs_perfconfig](../characteristic_description/out_of_the_box.md) for out-of-the-box use with optimal performance. Supports Oracle full, incremental, and reverse migration, as well as data verification. DataKit integrates a [compatibility assessment tool](https://docs.opengauss.org/en/docs/7.0.0/datakit/compatibility_assessment.html), supports cluster topology display, adds new metrics to the instance monitoring plug-in, optimizes the collection architecture, adds diagnostic experience to intelligent diagnosis, optimizes SQL diagnosis tasks, adds CM log collection to the [log retrieval plug-in](https://docs.opengauss.org/en/docs/7.0.0/datakit/datakit_log_retrieval.html) with Lucene syntax search support, adds built-in rules and alarm convergence to the [alarm monitoring plug-in](https://docs.opengauss.org/en/docs/7.0.0/datakit/datakit_alarm_mointor.html), optimizes pages, supports optional component installation paths, supports an intelligent parameter tuning plug-in, and supports resource pooling dual-cluster deployment. Supports a workload [capture and replay tool](https://docs.opengauss.org/en/docs/7.0.0/datakit/datakit_workload_replay.html), which can connect to a source database (MySQL), collect SQL, and replay and stress test the SQL against an openGauss database. Supports collecting SQL by parsing the General Log table or file of a MySQL database, attaching to a Java application, and intercepting and parsing MySQL network packets. Supports multiple replays and comparison of results and performance. The portal supports offline installation of dependency packages. Migration plug-ins support connecting to database clusters. Supports batch addition of servers and users by file import. Supports parallel installation of multiple database clusters. Supports unified login with SSO and DevKit, so the same user can log in to both DevKit and DataKit. Capture and replay supports collecting openGauss workloads and comparing capture and replay results. Supports [PostgreSQL-to-openGauss migration](../characteristic_description/postgresql_opengauss_migration_tool_debezium_connector_postgres.md). Supports adding IPv6 instances. Supports the [primary/standby data verification tool](../tool_and_commandreference/gs_checkps.md), which displays, in visual HTML reports, files whose MD5 values on standby nodes differ from those on the primary node, making it easy to compare data files with inconsistent MD5 values. DataKit integrates [Elasticsearch and Milvus to openGauss migration](../characteristic_description/datakit_support_elasticsearch_milvus_migration.md) capabilities.
+This is the tenth release of openGauss. The disclosed CVEs have been fixed.
 
-- **Middleware**: [shardingSphere](../characteristic_description/distributed_database_capability.md) and [openLookeng](../characteristic_description/distributed_analysis_capabilities.md).
+## Source Code<a name="EN-US_TOPIC_0289899190"></a>
 
-- **Ecosystem**: [dblink](../database_administration_guide/dblink.md); supports openEuler, CentOS, and FusionOS; [compatible with most MySQL syntax and protocols](https://docs.opengauss.org/en/docs/7.0.0/extension_reference/extension_reference/plugin/dolphin.html).
+openGauss contains the following 18 code repositories.
 
-- **Plug-ins**: The [GMS_STATS plug-in](https://docs.opengauss.org/en/docs/7.0.0/extension_reference/gms_stats.html) collects statistics for objects in a specified schema. The [GMS_PROFILER plug-in](../characteristic_description/gms_profiler_advanced_package.md) collects PL/pgSQL program execution information. The [GMS_OUTPUT plug-in](../characteristic_description/gms_output_tool_package.md) writes text lines to memory for later retrieval and display. Supports the [wal2json plug-in](https://docs.opengauss.org/en/docs/7.0.0/extension_reference/wal2json.html), which converts data changes in WAL (Write-Ahead Log) into JSON output.
+- Open-source software code repository: [https://gitcode.com/opengauss/openGauss-third\_party](https://gitcode.com/opengauss/openGauss-third_party)
 
-- **Enterprise-Grade Features**: Supports modifying table compression attributes. [The subtransaction concurrent rollback process is optimized](../sql_reference/optimization_of_subtransaction_concurrent_rollback_process.md), reducing lock contention and improving concurrent execution efficiency. Supports the GB18030-2022 standard. [Stored procedures support nested debugging](../characteristic_description/stored_procedure_debugging.md), and anonymous blocks support debugging. [Publication/subscription](../database_om_guide/subscriptions.md) supports user-defined conflict resolution. Supports multi-language logs. Supports limiting the maximum disk space occupied by kernel logs. Supports compilation on the Loongson platform. Index creation supports pre-extension, and heap tables support prefetching. Compressed tables support both page storage and segment-page storage modes.
+- JDBC driver code repository: [https://gitcode.com/opengauss/openGauss-connector-jdbc](https://gitcode.com/opengauss/openGauss-connector-jdbc)
 
-- **Others**: CMake script compilation, containerized deployment, and Kubernetes.
+- ODBC driver code repository: [https://gitcode.com/opengauss/openGauss-connector-odbc](https://gitcode.com/opengauss/openGauss-connector-odbc)
+- Database server code repository: [https://gitcode.com/opengauss/openGauss-server](https://gitcode.com/opengauss/openGauss-server)
+- Autonomous O&M platform DBMind code repository: [https://gitcode.com/opengauss/openGauss-DBMind](https://gitcode.com/opengauss/openGauss-DBMind)
+- OM tool code repository: [https://gitcode.com/opengauss/openGauss-OM](https://gitcode.com/opengauss/openGauss-OM)
+- CM tool code repository: [https://gitcode.com/opengauss/CM](https://gitcode.com/opengauss/CM)
+- Database distributed memory service \(DMS\) component code repository: [https://gitcode.com/opengauss/DMS](https://gitcode.com/opengauss/DMS)
+- Database distributed storage service \(DSS\) component code repository: [https://gitcode.com/opengauss/DSS](https://gitcode.com/opengauss/DSS)
+- DCF code repository: [https://gitcode.com/opengauss/DCF](https://gitcode.com/opengauss/DCF)
+- DCC code repository: [https://gitcode.com/opengauss/DCC](https://gitcode.com/opengauss/DCC)
+- Plug-in code repository: [https://gitcode.com/opengauss/Plugin](https://gitcode.com/opengauss/Plugin)
+- MySQL-to-openGauss full migration tool code repository: [https://gitcode.com/opengauss/openGauss-tools-chameleon](https://gitcode.com/opengauss/openGauss-tools-chameleon)
+- MySQL incremental/reverse migration tool code repository: [https://gitcode.com/opengauss/debezium](https://gitcode.com/opengauss/debezium)
+- Data verification tool code repository: [https://gitcode.com/opengauss/openGauss-tools-datachecker-performance](https://gitcode.com/opengauss/openGauss-tools-datachecker-performance)
+- Prometheus-exporter code repository: [https://gitcode.com/opengauss/openGauss-prometheus-exporter](https://gitcode.com/opengauss/openGauss-prometheus-exporter)
+- Database monitoring plug-in generation tool code repository: [https://gitcode.com/opengauss/openGauss-tools-monitor](https://gitcode.com/opengauss/openGauss-tools-monitor)
+- Document repository: [https://gitcode.com/opengauss/docs](https://gitcode.com/opengauss/docs)
 
-## CVE Vulnerabilities
+## Contribution<a name="EN-US_TOPIC_0289899196"></a>
 
-This version is an LTS version released in September 2026. The CVEs involved in this version can be found in the [CVE list](https://opengauss.org/en/cve).
+**Participating in Contribution**
 
-## Performance Test Report
+As an openGauss user, you can contribute to the openGauss community in multiple ways. For details about how to contribute to the community, see [Contribution](https://opengauss.org/en/contribution/). Here, some methods are listed for reference.
 
-See the [openGauss 7.0.0 LTS version test report](https://atomgit.com/opengauss/QA/blob/master/Test_Result/openGauss_7.0.0/版本集成测试报告/openGauss%207.0.0LTS版本测试报告.md#423-性能测试)
+**Special Interest Groups \(SIGs\)**
 
-## Important Notes
+openGauss brings together people of common interest to form different SIGs. For details about existing SIGs, see the [SIG list](https://opengauss.org/en/contribution/).
 
-- For version technical specifications, see [Technical Specifications](../about_opengauss/technical_indicators.md) in About openGauss.
-- Refer to [Database Deployment Solutions](../database_administration_guide/opengauss_common_primary_standby_deployment_solutions.md) in the Database Administration Guide to choose the deployment architecture that meets your business needs, ensuring the reliability and availability of the database cluster.
+You are welcome to join an existing SIG or create a SIG. For details about how to create a SIG, see [Special Interest Group \(SIG\)](https://gitcode.com/opengauss/tc/blob/master/sigs/README.en.md/).
 
-## Source Code
+**Mail List and Issues**
 
-openGauss mainly contains 20 code repositories: the patch code repository for referenced open-source software, the JDBC driver code repository, the ODBC driver code repository, the database server code repository, the DBMind autonomous O&M platform code repository, the database OM tool code repository, the database CM tool code repository, the database DMS code repository, the database DSS code repository, the database CBB code repository, the database DCF code repository, the database DCC code repository, the database plug-in code repository, the DataKit code repository, the MySQL-to-openGauss full migration tool code repository, the MySQL incremental/reverse migration code repository, the data verification code repository, the database prometheus-exporter code repository, the monitoring plug-in generation tool code repository, and the documentation repository:
+You are welcome to actively help users solve problems raised in the [mail list](https://opengauss.org/en/community/onlineCommunication/) and issues \(including [code repository issues](https://gitee.com/organizations/opengauss/issues)\). In addition, you can commit an issue. All these will help the openGauss community develop better.
 
-- Open-source software code repository: [https://atomgit.com/opengauss/openGauss-third\_party](https://atomgit.com/opengauss/openGauss-third_party)
-- JDBC driver code repository: [https://atomgit.com/opengauss/openGauss-connector-jdbc](https://atomgit.com/opengauss/openGauss-connector-jdbc)
-- ODBC driver code repository: [https://atomgit.com/opengauss/openGauss-connector-odbc](https://atomgit.com/opengauss/openGauss-connector-odbc)
-- Database server code repository: [https://atomgit.com/opengauss/openGauss-server](https://atomgit.com/opengauss/openGauss-server)
-- DBMind autonomous O&M platform code repository: [https://atomgit.com/opengauss/openGauss-DBMind](https://atomgit.com/opengauss/openGauss-DBMind)
-- Database OM tool code repository: [https://atomgit.com/opengauss/openGauss-OM](https://atomgit.com/opengauss/openGauss-OM)
-- Database CM\(Cluster Manager\) tool code repository: [https://atomgit.com/opengauss/CM](https://atomgit.com/opengauss/CM)
-- Database DMS\(Distributed Memory Service\) component code repository: [https://atomgit.com/opengauss/DMS](https://atomgit.com/opengauss/DMS)
-- Database DSS\(Distributed Storage Service\) component code repository: [https://atomgit.com/opengauss/DSS](https://atomgit.com/opengauss/DSS)
-- Database CBB\(Common Building Block\) component code repository: [https://atomgit.com/opengauss/CBB](https://atomgit.com/opengauss/CBB)
-- Database DCF\(Distributed Consensus Framework\) code repository: [https://atomgit.com/opengauss/DCF](https://atomgit.com/opengauss/DCF)
-- Database DCC\(Distributed Configuration Center\) code repository: [https://atomgit.com/opengauss/DCC](https://atomgit.com/opengauss/DCC)
-- Database plug-in code repository: [https://atomgit.com/opengauss/Plugin](https://atomgit.com/opengauss/Plugin)
-- DataKit code repository: [https://atomgit.com/opengauss/openGauss-workbench](https://atomgit.com/opengauss/openGauss-workbench)
-- MySQL-to-openGauss full migration tool code repository: [https://atomgit.com/opengauss/openGauss-tools-chameleon](https://atomgit.com/opengauss/openGauss-tools-chameleon)
-- MySQL incremental/reverse migration tool code repository: [https://atomgit.com/opengauss/debezium](https://atomgit.com/opengauss/debezium)
-- Data verification tool code repository: [https://atomgit.com/opengauss/openGauss-tools-datachecker-performance](https://atomgit.com/opengauss/openGauss-tools-datachecker-performance)
-- Database prometheus-exporter code repository: [https://atomgit.com/opengauss/openGauss-prometheus-exporter](https://atomgit.com/opengauss/openGauss-prometheus-exporter)
-- Database monitoring plug-in generation tool code repository: [https://atomgit.com/opengauss/openGauss-tools-monitor](https://atomgit.com/opengauss/openGauss-tools-monitor)
-- Database documentation repository: [https://atomgit.com/opengauss/docs](https://atomgit.com/opengauss/docs)
+**Documents**
 
-## User Notice
+You can contribute to the community by committing code. We also welcome your feedback on problems and difficulties, or suggestions on improving the usability and integrity of documents, for example, problems encountered when obtaining software or documents and difficulties encountered when using the system. You are welcome to pay attention to and help us improve the documentation module of the openGauss community.
 
-openGauss is a multi-model open-source database with ultimate performance, security, and reliability. It is licensed under the Mulan Permissive Software License (Mulan PSL V2), allowing users to flexibly copy, use, modify, and distribute the software, whether modified or not.
+## Acknowledgement<a name="EN-US_TOPIC_0289899198"></a>
 
-The openGauss version number follows the X.Y.0-RCx format to distinguish different types of version updates. Specifically:
-
- + LTS version (X.0.0): Released every two years, it marks a long-term stable support version suitable for large-scale deployment and production environments. The community commits to three years of maintenance support for each LTS version to ensure its continuous stability and security.
- + Innovation version (X.Y.0-RCx): Released every six months, it is designed for rapid iteration and provides the latest features and technology previews. These versions are mainly used for user testing and innovation cooperation. The community provides six months of maintenance support and encourages exploration and feedback.
- + Patch version (X.Y.0): Released as appropriate when major issues occur, it is designed to quickly fix critical errors and ensure stable system operation.
-
-## Acknowledgement
-
-We sincerely thank all developers and partners who participated in and assisted with the release of openGauss 7.0.0 (LTS), including Huawei Technologies Co., Ltd., Beijing Vastdata Technology Co., Ltd. (VASTDATA), China Mobile Information Technology Co., Ltd., Tianjin Shenzhou General Data Technology Co., Ltd., General Data Technology Co., Ltd. (GBASE), ENMOTECH, the Greater Bay Area National Center of Technology Innovation (GBA NCTI), SI-TECH Information Technology Co., Ltd., Postal Savings Bank of China Co., Ltd. (PSBC), China Minsheng Banking Corp., Ltd. (CMBC), Shenhua Information Technology Co., Ltd., Hangzhou Hikvision Digital Technology Co., Ltd. (HIKVISION), and Zhejiang Dahua Technology Co., Ltd. (DAHUA). Your hard work made this release possible and will help openGauss grow even stronger.
-
-![openGauss developer cloud map](./opengauss_logo.png)
+We sincerely thank all the members who participated in and assisted in the openGauss project, including Huawei, ENMOTECH, VASTDATA, China Unicom, GBASE, Greater Bay Area National Center of Technology Innovation (GBA NCTI), iSoftStone, Beijing SuperMap Software Co., Ltd., China Minsheng Banking, SHENTONGDATA, School of Computer Science and Engineering of UESTC, School of Information Engineering of Ningxia University, School of Software Engineering of SCUT, School of Computer Science and Engineering of Sun Yat-sen University, School of Information Engineering of Minzu University of China, Xi'an Rita Network Technology Co., Ltd., SphereEx, and SANGFOR. It is your hard work to make the version released successfully and provide the possibility for the better development of openGauss.

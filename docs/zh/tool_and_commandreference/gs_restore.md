@@ -330,7 +330,7 @@ CREATE DATABASE foo WITH TEMPLATE template0;
 
     所连接的用户名。普通用户需要管理员提前设置GUC参数session_replication_role = replica，避免报错造成的影响。
 
-    环境变量：PGUESR
+    环境变量：PGUSER
 
 - -w, --no-password
 

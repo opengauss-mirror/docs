@@ -29,8 +29,6 @@ keywords: [openGauss, gs\_retrieve, 工具与命令参考, 背景信息, 注意�
 gs_retrieve [OPTION]...
 ```
 
-[!NOTE]说明
-
 ## 参数说明<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_s6822518f650f4ad4ab67d1084cd8ffdd"></a>
 
 通用参数：
