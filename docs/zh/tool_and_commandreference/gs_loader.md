@@ -615,7 +615,7 @@ detail      | 111 Rows successfully loaded.
 > - 对于gs\_loader的命令行及控制文件中有以下要求：
 >        - 不支持字符集配置。
 >        - 不支持WHEN条件过滤及DISCARD生成。
->        - 不支持enable\_copy\_error\_log = off下将错误数据直接写入bad文件。errors默认取值unlimited，会默认记录编码异常数据。
+>        - 不支持enable\_copy\_error\_log = off下将错误数据直接写入bad文件。errors默认取值0，会默认记录编码异常数据。
 >        - 不支持配置CSV模式，不支持指定分隔符及包裹符，不支持TRAILING NULLCOLS语法。
 >        - 不支持数据类型配置、POSITION配置及列表达式使用。
 >        - 不支持FILLER、CONSTANT、SEQUENCE、NULLIF参数。
