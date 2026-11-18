@@ -31,7 +31,8 @@ Log in to the OS as the OS user **omm** to run the **gs\_om** command.
 -   Query the openGauss status.
 
     ```
-    gs_om -t status [-h HOSTNAME] [-o OUTPUT] [--detail] [--all] [-l LOGFILE]
+        gs_om -t status [-h HOSTNAME] [-o OUTPUT] [--detail] [--all] [--az=AZ] [-l LOGFILE]
+                    [--time-out=SECS]
     ```
 
 - Generate a static configuration file.
@@ -62,7 +63,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_om** command.
 -   Replace SSL certificates.
 
     ```
-    gs_om -t cert --cert-file=CERTFILE [-l LOGFILE]
+    gs_om -t cert --cert-file=CERTFILE [-L] [-l LOGFILE]
     gs_om -t cert --rollback
     ```
 
@@ -94,7 +95,7 @@ The **gs\_om** tool can use the following types of parameters:
 
         Specifies the **gs\_om** command type.
 
-        Value range: **start**, **stop**, **status**, **generateconf**, **cert**, **view**, **query**, **refreshconf**, and **kerberos**
+        Value range: start、stop、restart、status、generateconf、cert、kerberos、view、query、refreshconf、killmonitor、generate_xml。
 
     -   -l
 

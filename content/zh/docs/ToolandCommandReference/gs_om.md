@@ -31,7 +31,8 @@ openGauss提供了gs\_om工具帮助对openGauss进行维护，包括启动openG
 -   查询openGauss状态
 
     ```
-    gs_om -t status [-h HOSTNAME] [-o OUTPUT] [--detail] [--all] [-l LOGFILE]
+    gs_om -t status [-h HOSTNAME] [-o OUTPUT] [--detail] [--all] [--az=AZ] [-l LOGFILE]
+                    [--time-out=SECS]
     ```
 
 - 生成静态配置文件
@@ -62,7 +63,7 @@ openGauss提供了gs\_om工具帮助对openGauss进行维护，包括启动openG
 -   SSL证书替换
 
     ```
-    gs_om -t cert --cert-file=CERTFILE [-l LOGFILE]
+    gs_om -t cert --cert-file=CERTFILE [-L] [-l LOGFILE]
     gs_om -t cert --rollback
     ```
 
@@ -102,7 +103,7 @@ gs\_om参数可以分为如下几类：
 
         gs\_om命令的类型。
 
-        取值范围：start、stop、status、generateconf、cert、view、query、refreshconf、kerberos。
+        取值范围：start、stop、restart、status、generateconf、cert、kerberos、view、query、refreshconf、killmonitor、generate_xml。
 
     -   -l
 
@@ -286,7 +287,7 @@ gs\_om参数可以分为如下几类：
     
     - -L
     
-      制定该参数时，仅对当前节点进行。
+      指定该参数时，仅对当前节点进行。
 
 
 -   根据当前集群状态生成xml配置文件参数。
