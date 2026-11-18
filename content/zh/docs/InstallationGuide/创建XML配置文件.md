@@ -225,7 +225,7 @@
 </tr>
 <tr id="row195477449524"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p9547204411523"><a name="p9547204411523"></a><a name="p9547204411523"></a><span id="ph1398217580526"><a name="ph1398217580526"></a><a name="ph1398217580526"></a>ss_interconnect_type</span></p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p354734417527"><a name="p354734417527"></a><a name="p354734417527"></a><span id="ph89401381618"><a name="ph89401381618"></a><a name="ph89401381618"></a>mes通信协议类型，默认值TCP，取值范围</span><span id="ph14853227014"><a name="ph14853227014"></a><a name="ph14853227014"></a>TCP/RDMA，默认为TCP</span><span id="ph103917226213"><a name="ph103917226213"></a><a name="ph103917226213"></a>。</span></p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p354734417527"><a name="p354734417527"></a><a name="p354734417527"></a><span id="ph89401381618"><a name="ph89401381618"></a><a name="ph89401381618"></a>mes通信协议类型，取值范围</span><span id="ph14853227014"><a name="ph14853227014"></a><a name="ph14853227014"></a>TCP/RDMA，默认为TCP</span><span id="ph103917226213"><a name="ph103917226213"></a><a name="ph103917226213"></a>。</span></p>
 </td>
 </tr>
 <tr id="row1636215345219"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p73629537522"><a name="p73629537522"></a><a name="p73629537522"></a><span id="ph62489207537"><a name="ph62489207537"></a><a name="ph62489207537"></a>ss_rdma_work_config</span></p>
