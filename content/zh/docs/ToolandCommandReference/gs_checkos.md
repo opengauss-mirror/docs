@@ -51,7 +51,7 @@ gs_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等�
     >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >A1...A14 表示只检查操作系统参数，并不设置。
-    >B1...B8 表示将参数系统参数设置为期望值。
+    >B1...B8 表示将操作系统参数设置为期望值。
     >A和B不能同时输入。
     >
     >root可以检查A1-A14所有检查项；普通用户只能检查A1,A2,A3,A4,A5,A8,A12,A13这些检查项。
@@ -520,7 +520,7 @@ gs_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等�
 </tr>
 <tr id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_row199407451592"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p111418818011"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p111418818011"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p111418818011"></a>net.ipv4.tcp_timestamps</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p10141681903"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p10141681903"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p10141681903"></a>TCP时间戳（会在TCP包头增加12节），以一种比重发超时更精确的方式（参考RFC 1323）来启用对RTT的计算，启用可以实现更好的性能。</p>
+<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p10141681903"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p10141681903"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p10141681903"></a>TCP时间戳（会在TCP包头增加12字节），以一种比重发超时更精确的方式（参考RFC 1323）来启用对RTT的计算，启用可以实现更好的性能。</p>
 <a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul814881508"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul814881508"></a><ul id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_ul814881508"><li>0表示关闭。</li><li>1表示开启。</li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p18151381901"><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p18151381901"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0085031791_p18151381901"></a>1</p>

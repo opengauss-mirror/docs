@@ -6,7 +6,7 @@ gs\_loader工具用于进行数据导入。gs\_loader将控制文件支持的语
 
 使用gs\_loader前请确保gs\_loader版本与gsql版本、数据库版本保持一致。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >gs\_loader工具当前不支持M-Compatibility数据库。
 >gs\_loader工具当前支持PDB。
 
@@ -87,7 +87,7 @@ GUC参数enable\_copy\_error\_log是控制是否使用错误表pgxc\_copy\_error
 
 3.  创建并给新用户授权gs\_copy\_summary表：
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >gs\_copy\_summary表中不能含有RULE、TRIGGER、索引函数、行级访问控制、CHECK约束、GENERATED列、DEFAULT列、ON UPDATE列等可能导致提权的对象，否则将认为是恶意用户创建而报错退出。
 
     ```
@@ -97,7 +97,7 @@ GUC参数enable\_copy\_error\_log是控制是否使用错误表pgxc\_copy\_error
 
 4.  （可选）创建并给新用户授权错误表pgxc\_copy\_error\_log：
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >-   如果guc参数enable\_copy\_error\_log未设置（默认为off），或者设置为off，则无需使用错误表，无需创建。否则需要创建该错误表。
     >-   pgxc\_copy\_error\_log表中不能含有RULE、TRIGGER、索引函数、行级访问控制、CHECK约束、GENERATED列、DEFAULT列、ON UPDATE列等可能导致提权的对象，否则将认为是恶意用户创建而报错退出。
 
@@ -129,7 +129,7 @@ GUC参数enable\_copy\_error\_log是控制是否使用错误表pgxc\_copy\_error
 
 4.  （可选）创建pgxc\_copy\_error\_log表并添加索引：
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >1.  如果guc参数enable\_copy\_error\_log未设置（默认为off），或者设置为off，则无需使用错误表，无需创建。否则需要创建该错误表。
 
     ```
@@ -266,7 +266,7 @@ detail      | 111 Rows successfully loaded.
 
     4.  （可选，在管理员用户下）创建并给用户授权错误表pgxc\_copy\_error\_log：
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >如果guc参数enable\_copy\_error\_log未设置（默认为off），或者设置为off，则无需使用错误表，无需创建。否则需要创建该错误表。
 
         ```
@@ -302,7 +302,7 @@ detail      | 111 Rows successfully loaded.
 
     4.  （可选）创建pgxc\_copy\_error\_log表并添加索引。
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >如果guc参数enable\_copy\_error\_log未设置（默认为off），或者设置为off，则无需使用错误表，无需创建。否则需要创建该错误表。
 
         ```
@@ -384,7 +384,7 @@ detail      | 111 Rows successfully loaded.
      loader.log
     ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >gs\_copy\_summary用于记录调用的copy语法及其详细情况，_\[badfile\]\_bad.log_文件用于记录错误数据及其详细情况。为防止上一次导入时记录的错误数据以及详细情况被覆盖，建议每次执行导入时使用不同的bad参数。如果使用错误表pgxc\_copy\_error\_log记录错误数据以及详细情况，请开启GUC参数enable\_copy\_error\_log。如需删除表中的数据，可以对上述表执行truncate或者delete操作。
 
 ## 参数说明<a name="section790261685316"></a>
@@ -594,12 +594,12 @@ detail      | 111 Rows successfully loaded.
 </tbody>
 </table>
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：** 
 >-   参数均为小写，不支持大写，同时兼容gsql登录方式：-p端口号，-h主机，-d数据库，-U用户名，-W密码方式。
 >-   使用rows参数时，提交次数不要超过1000次，否则会对性能产生影响。提交次数约等于数据文件中数据行数除以rows参数取值。不指定rows参数时，rows无默认取值，表现为只进行一次提交，即所有数据都导入表中后进行一次事务提交。
 >-   小数据量频繁的提交会影响导入数据的性能，推荐合理配置rows参数的取值，保证每次提交的数据量大于5MB。对于常用的16U128G规格机器，一主两备部署场景下，向5个字段的表内导入13GB数据，排除网络影响，多次提交和单次提交（每次提交5MB数据）的速率基本持平，为10MB/s左右。
 >-   compatible\_nul参数实际控制guc参数loader\_support\_nul\_character值的设置：
->    -   compatible\_nul=true对应session级set loader\_support\_nul\_charchter='s2'。
+>    -   compatible\_nul=true对应session级set loader\_support\_nul\_character='s2'。
 >    -   compatible\_nul=false对应session级set loader\_support\_nul\_character='s1'。
 >        建议通过命令行设置此参数且通过compatible\_nul设置优先级高于guc\_param中设置。
 >-   当前gs\_loader仅支持数据文件中存在nul字符时的兼容，不支持ctl控制文件中存在nul字符。ctl文件中存在nul字符会存在不可预期的问题。
@@ -609,7 +609,7 @@ detail      | 111 Rows successfully loaded.
 >    -   对于gs\_loader的命令行及控制文件中有以下要求：
 >        -   不支持字符集配置。
 >        -   不支持WHEN条件过滤及DISCARD生成。
->        -   不支持enable\_copy\_error\_log = off下将错误数据直接写入bad文件。errors默认取值unlimited，会默认记录编码异常数据。
+>        -   不支持enable\_copy\_error\_log = off下将错误数据直接写入bad文件。errors默认取值0，会默认记录编码异常数据。
 >        -   不支持配置CSV模式，不支持指定分隔符及包裹符，不支持TRAILING NULLCOLS语法。
 >        -   不支持数据类型配置、POSITION配置及列表达式使用。
 >        -   不支持FILLER、CONSTANT、SEQUENCE、NULLIF参数。
@@ -684,7 +684,7 @@ detail      | 111 Rows successfully loaded.
 
         **TRUNCATE：**如果表中有数据，则全部删除，然后再插入。
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >-   在写控制文件\(.ctl\)文件时，在INTO TABLE table\_name语句前后都可以指定（导入模式，INSERT | APPEND | REPLACE | TRUNCATE），使用优先级为：在INTO TABLE table\_name语句后面指定导入模式优先级高于在INTO TABLE table\_name语句前面指定导入模式，在INTO TABLE table\_name语句后面指定导入模式会覆盖在前面指定的导入模式。
         >-   当开启多个gs\_loader会话，并发地向同一张表中导入数据时，推荐以APPEND的方式进行导入，以INSERT|REPLACE|TRUNCATE的方式会出现导入报错或数据导入不全的问题。
 
@@ -692,7 +692,7 @@ detail      | 111 Rows successfully loaded.
 
         标识使用copy的CSV模式。在CSV模式下分隔符缺省值为逗号，引号字符的缺省值为双引号。
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >-   当前CSV模式下，被双引号包含的换行符被视为字段数据的一部分。
         >-   CSV模式下，设置了GUC参数a\_format\_copy\_version为's1'时，会跳过字段开头空格。并且当某个字段第一个非空格字符不是enclosed字符时，忽略enclosed设置。当未匹配到关闭enclosed字符，先匹配到行末时，会进行报错。
         >-   CSV模式下，在不打开0字符GUC开关support\_zero\_characters时，如果使用了compatible\_nul或者compatible\_illegal\_chars参数对0x00字符进行兼容，由于0x00转换0x20的行为发生在跳过开头空格的行为之前，因此字段开头的0x00字符会被当作0x20处理被删除掉。
@@ -711,7 +711,7 @@ detail      | 111 Rows successfully loaded.
 
         缺省值：在文本模式下，缺省是水平制表符，在CSV模式下是一个逗号。
 
-        >![](public_sys-resources/icon-caution.gif) **注意：** 
+        >![](public_sys-resources/icon-caution.png) **注意：** 
         >开启nul字符兼容，即compatible\_nul=true，如果指定分隔符为' '空格字符\(0x20\)时需要注意，所判断的分隔符为数据文件中已存在的空格字符，并非nul字符转换而来的空格字符。
 
     -   **OPTIONALLY ENCLOSED BY \{ 'string' \}**
@@ -722,7 +722,7 @@ detail      | 111 Rows successfully loaded.
 
         其余模式下无缺省值。
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >-   设置**OPTIONALLY ENCLOSED BY \{ 'string' \}**时，数据左边可以不带引号字符，如果有引号字符，数据左右都必须为奇数个，但个数不必相等。
         >-   当前仅CSV模式支持**OPTIONALLY ENCLOSED BY \{ 'string' \}**。当指定**OPTIONALLY ENCLOSED BY \{ 'string' \}**时，默认进入CSV模式。
 
@@ -738,7 +738,7 @@ detail      | 111 Rows successfully loaded.
 
         取值范围：字符串。
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >-   当GUC参数enable\_copy\_when\_filler=on（默认）时，支持根据FILLER类型列进行过滤。当GUC参数enable\_copy\_when\_filler=off时，则不支持。
         >-   WHEN条件后的常量字符串中不支持'\\0'、'\\r'等特殊字符。
 
@@ -756,7 +756,7 @@ detail      | 111 Rows successfully loaded.
 
         对列进行处理，如果出现FILLER，则这个字段跳过。
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >当前不支持FILLER与POSITION  **\(\{ start:end \}\)**同时使用。
 
     -   **column\_type \[external\]**
@@ -786,9 +786,9 @@ detail      | 111 Rows successfully loaded.
 
         当前只支持COL POSITION\(\) CHAR NULLIF \(COL=BLANKS\)语法。具体使用详见[•NULLIF使用用例](#li1413683033117)。
 
-    >![](public_sys-resources/icon-caution.gif) **注意：** 
+    >![](public_sys-resources/icon-caution.png) **注意：** 
     >-   不支持OPTIONS、INFILE、BADFILE，仅在特定场景下不报语法错误。
-    >-   gs\_loader使用bad文件来记录出错数据，如果设置guc参数enable\_copy\_error\_log开启错误表，该数据来自错误表的rawrecord字段，由于错误表对于以某种编码无法读起的错误不记录rawrecord，因此bad文件中遇到此情况时记录空行。
+    >-   gs\_loader使用bad文件来记录出错数据，如果设置guc参数enable\_copy\_error\_log开启错误表，该数据来自错误表的rawrecord字段，由于错误表对于以某种编码无法读取的错误不记录rawrecord，因此bad文件中遇到此情况时记录空行。
     >-   gs\_loader在设置guc参数a\_format\_load\_with\_constraints\_violation开启支持约束冲突不回滚场景时，如果表带有BEFORE/AFTER ROW INSERT触发器，则每次提交行数不能超过1000万行。
     >-   gs\_loader在设置guc参数a\_format\_load\_with\_constraints\_violation开启支持约束冲突不回滚场景时，不支持语句级触发器。
 
@@ -1052,7 +1052,7 @@ detail      | 111 Rows successfully loaded.
             (1 row)
             ```
 
-        >![](public_sys-resources/icon-caution.gif) **注意：** 
+        >![](public_sys-resources/icon-caution.png) **注意：** 
         >-   在多列导入场景中，不指定guc参数时，部分position与分隔符不能同时使用。
         >-   在多列导入场景中，SYSDATE和CONSTANT运算不能和POSITION运算同时使用。
         >-   指定数据类型导入时，包含普通数据类型需要通过guc\_param设置a\_format\_copy\_version参数，包含特殊数据类型则需要通过guc\_param设置a\_format\_copy\_version和a\_format\_dev\_version及a\_format\_version参数。

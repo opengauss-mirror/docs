@@ -8,7 +8,7 @@ gs\_restore工具支持MySQL兼容性。（仅限于3.0.0，3.1.0，3.1.1的MySQ
 
 gs\_restore工具目前支持进度打印，会根据已经恢复的对象数比上需要恢复的总对象数打印进度。
 
->![](public_sys-resources/icon-notice.png) **须知：**
+>![](public_sys-resources/icon-notice.gif) **须知：**
 >-   show create procedure/function等show create语句的database collation和collation connection与数据库的lc_collate相同，由于InitSession会重新初始化lc_collate参数，lc_collate有时会被初始化为C，所以show create procedure/function等show create语句的database collation和collation connection这两个列的值不稳定。
 >-   临时表不支持导入导出。
 
@@ -267,7 +267,7 @@ gs_restore [OPTION]... FILE
     -   MODULE_LIB_PATH:包含库文件名称的绝对路径;
     -   MODULE_CONFIG_FILE_PATH:GDACCARD不需要,JNTAKMS 不包含文件名称的绝对路径,SWXA 包含文件名称的绝对路径。
 
-> ![](public_sys-resources/icon-notice.png) **须知：** 
+> ![](public_sys-resources/icon-notice.gif) **须知：** 
 >-   如果安装过程中有任何本地数据要添加到template1数据库，请谨慎将gs\_restore的输出载入到一个真正的空数据库中；否则可能会因为被添加对象的定义被复制，而出现错误。要创建一个无本地添加的空数据库，需从template0而非template1复制，例如：
     ```
 

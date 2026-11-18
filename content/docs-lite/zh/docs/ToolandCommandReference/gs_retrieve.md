@@ -24,9 +24,7 @@
 gs_retrieve [OPTION]...
 ```
 
-![](public_sys-resources/icon-note.png) **说明：** 
-
-
+![](public_sys-resources/icon-note.gif) **说明：** 
 
 ## 参数说明<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_s6822518f650f4ad4ab67d1084cd8ffdd"></a>
 
@@ -70,7 +68,7 @@ gs_retrieve [OPTION]...
 
     --force
 
-    强制使用不创建历史快照的方式进行解码，该方式在表元数据发生表更（DDL）的场景下，可能发生数据丢失。
+    强制使用不创建历史快照的方式进行解码，该方式在表元数据发生变更（DDL）的场景下，可能发生数据丢失。
 
 ## 示例<a name="zh-cn_topic_0237152335_s969fde25c47f45ed897e29d208d57649"></a>
 

@@ -329,7 +329,7 @@ gs_restore [OPTION]... FILE
 
     所连接的用户名。
 
-    环境变量：PGUESR
+    环境变量：PGUSER
 
 -   -w, --no-password
 

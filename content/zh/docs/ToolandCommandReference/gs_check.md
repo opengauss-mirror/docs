@@ -438,7 +438,7 @@ gs_check改进增强，统一化当前系统中存在的各种检查工具，例
 </tr>
 <tr id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_r0a5fd8bf84b9414bb3b61a1902384a53"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p825032735719"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p825032735719"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p825032735719"></a>CheckDebugSwitch（检查日志级别）</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p41031453125713"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p41031453125713"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p41031453125713"></a>在各节点检查各实例的配置文件中log_min_messages参数的值，为空则认为是Warning，判断日志级别非waring，则报warning。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p41031453125713"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p41031453125713"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p41031453125713"></a>在各节点检查各实例的配置文件中log_min_messages参数的值，为空则认为是Warning，判断日志级别非warning，则报warning。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p15884707481"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p15884707481"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p15884707481"></a>是</p>
 </td>
