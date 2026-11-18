@@ -57,7 +57,7 @@ WDR Snapshot启动（即参数[enable\_wdr\_snapshot](../database_reference/syst
         select generate_wdr_report(1, 2, 'all', 'cluster',null);
         ```
 
-        示例二，生成某个节点的报告：
+        示例二，生成节点级别的报告：
 
         ```
         select generate_wdr_report(1, 2, 'all', 'node', pgxc_node_str()::cstring);
@@ -67,6 +67,7 @@ WDR Snapshot启动（即参数[enable\_wdr\_snapshot](../database_reference/syst
         >
         >当前openGauss的节点名固定是“dn\_6001\_6002\_6003”，也可直接代入。
         >若两个快照之间发生了数据库重启事件，生成WDR报告会失败。
+        >快照报告只支持主节点生成。
 
         **表 1**  generate\_wdr\_report函数参数说明
 
