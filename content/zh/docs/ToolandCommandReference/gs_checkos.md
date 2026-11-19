@@ -39,7 +39,6 @@ gs_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等�
     gs_checkos -V | --version
     ```
 
-
 ## 参数说明<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_s79c5f0d8e9e742deacd81d9e296c2960"></a>
 
 -   -i
