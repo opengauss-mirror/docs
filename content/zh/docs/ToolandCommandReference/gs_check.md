@@ -1221,7 +1221,7 @@ gs_check改进增强，统一化当前系统中存在的各种检查工具，例
 </tr>
 <tr id="zh-cn_topic_0237152330_row199407451592"><td class="cellrowborder" valign="top" width="24.08240824082408%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152330_p111418818011"><a name="zh-cn_topic_0237152330_p111418818011"></a><a name="zh-cn_topic_0237152330_p111418818011"></a>net.ipv4.tcp_timestamps</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p10141681903"><a name="zh-cn_topic_0237152330_p10141681903"></a><a name="zh-cn_topic_0237152330_p10141681903"></a>TCP时间戳（会在TCP包头增加12节），以一种比重发超时更精确的方式（参考RFC 1323）来启用对RTT的计算，启用可以实现更好的性能。</p>
+<td class="cellrowborder" valign="top" width="52.04520452045204%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152330_p10141681903"><a name="zh-cn_topic_0237152330_p10141681903"></a><a name="zh-cn_topic_0237152330_p10141681903"></a>TCP时间戳（会在TCP包头增加12字节），以一种比重发超时更精确的方式（参考RFC 1323）来启用对RTT的计算，启用可以实现更好的性能。</p>
 <a name="zh-cn_topic_0237152330_ul814881508"></a><a name="zh-cn_topic_0237152330_ul814881508"></a><ul id="zh-cn_topic_0237152330_ul814881508"><li>0表示关闭。</li><li>1表示开启。</li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="23.87238723872387%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152330_p18151381901"><a name="zh-cn_topic_0237152330_p18151381901"></a><a name="zh-cn_topic_0237152330_p18151381901"></a>1</p>
