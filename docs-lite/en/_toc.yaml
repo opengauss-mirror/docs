@@ -27,6 +27,7 @@ sections:
       - href: ./compilation_guide/_toc.yaml
   - label: References
     sections:
+      - href: ./extension_reference/_toc.yaml
       - href: ./database_reference/_toc.yaml
       - href: ./tool_and_commandreference/_toc.yaml
       - href: ./characteristic_description/_toc.yaml
