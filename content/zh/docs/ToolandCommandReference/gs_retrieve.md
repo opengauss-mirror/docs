@@ -1,4 +1,4 @@
-PGUESR# gs\_retrieve
+# gs\_retrieve
 
 ## 背景信息<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_section1271019596335"></a>
 
