@@ -242,7 +242,7 @@ keywords: [openGauss, DataVec向量引擎参数, 数据库参考, vector_buffers
 
 ## npu_device_mask
 
-**参数说明**：设置GV_GRAPH索引构建可使用的NPU设备。该参数使用十进制位掩码，每个二进制位对应一张NPU卡。例如，`1`表示使用0号NPU，`3`表示使用0号和1号NPU，`15`表示使用0至3号NPU。
+**参数说明**：设置GV_GRAPH索引构建可使用的NPU设备。设为`0`时，使用数据库进程可见的全部NPU设备。设为非零值时，按十进制位掩码选择设备，每个二进制位对应一张NPU卡。例如，`1`表示使用0号NPU，`3`表示使用0号和1号NPU，`15`表示使用0至3号NPU。
 
 该参数属于USERSET类型，并且仅支持单机部署。使用`SET`修改时，只对当前会话生效。
 
@@ -252,7 +252,9 @@ keywords: [openGauss, DataVec向量引擎参数, 数据库参考, vector_buffers
 
 >[!NOTE]说明
 >
->该参数仅在安装了NPU版GaussVector组件，并使用`prune_alg = npu_knn`创建或重建GV_GRAPH索引时生效。CPU版GaussVector组件和多节点部署不支持NPU剪枝，应使用默认的`prune_alg = vamana`。使用前应根据实际可用的NPU设备设置掩码。虽然参数允许设置为`0`，但使用NPU剪枝时至少需要选择一个设备，否则索引构建会报错。
+>该参数仅在安装了NPU版GaussVector组件，并使用`prune_alg = npu_knn`创建或重建GV_GRAPH索引时生效。CPU版GaussVector组件和多节点部署不支持NPU剪枝，应使用默认的`prune_alg = vamana`。
+>
+>使用NPU剪枝前，请确认运行数据库服务的操作系统用户已加入NPU设备所属的用户组，以便数据库进程访问NPU设备。
 
 ## npu_device_max_mem
 
