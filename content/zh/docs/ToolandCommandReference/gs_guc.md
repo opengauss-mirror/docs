@@ -434,7 +434,7 @@ Total instances: 3. Failed instances: 0.
 Success to perform gs_guc!
 ```
 
-示例8：通过用户输入的明文密码，生自定义的test.key.cipher和test.key.rand文件。
+示例8：通过用户输入的明文密码，生成自定义的test.key.cipher和test.key.rand文件。
 
 ```
 gs_guc generate -S Mppdb@123 -D data/xzg/wisequery/gaussdb -o test

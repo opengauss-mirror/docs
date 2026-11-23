@@ -24,8 +24,6 @@
 gs_retrieve [OPTION]...
 ```
 
-![](public_sys-resources/icon-note.png) **说明：** 
-
 ## 参数说明<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_s6822518f650f4ad4ab67d1084cd8ffdd"></a>
 
 通用参数：
