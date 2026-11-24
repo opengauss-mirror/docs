@@ -76,6 +76,8 @@ gs_probackup backup -B backup-path --instance=instance_name \
 - `GS_PROBACKUP_PASSPHRASE`环境变量；
 - 交互式终端输入。
 
+其中口令（`--encrypt-key`）和keyfile（`--encrypt-key-file`）不能同时指定，同时指定时命令报错退出。命令行未指定密钥材料时，依次使用`GS_PROBACKUP_PASSPHRASE`环境变量和交互式终端输入。
+
 每个备份使用独立的数据加密密钥。用户口令用于保护该数据加密密钥，而不是直接用于加密全部备份数据，因此更换口令时不需要重新加密数据文件。
 
 加密备份示例：
@@ -161,9 +163,12 @@ gs_probackup validate -B backup-path --instance=instance_name \
 
 ### 更换加密口令
 
+更换口令时需要同时提供备份当前的密钥材料和新的密钥材料：
+
 ```bash
 gs_probackup rekey -B backup-path --instance=instance_name \
-    -i backup-id --new-encrypt-key-file=/path/to/new-backup.key
+    -i backup-id --encrypt-key-file=/path/to/backup.key \
+    --new-encrypt-key-file=/path/to/new-backup.key
 ```
 
 ## 特性约束<a name="section06531946143616"></a>
@@ -176,7 +181,7 @@ gs_probackup rekey -B backup-path --instance=instance_name \
 - 多分支备份链执行`merge`或留存策略操作时，需要避免删除或合并仍被其他恢复点依赖的备份。
 - 同一恢复链应使用一致的密钥材料。只对恢复链中的部分备份更换口令，可能导致该恢复链无法使用一份密钥材料完成恢复。
 - 新加密备份需要使用支持新格式的`gs_probackup`版本读取，老版本工具不能静默读取新格式备份。
-- 加密备份的具体存储介质、远程备份和资源池化支持范围，以当前版本`gs_probackup`命令参数校验和版本说明为准。
+- 加密备份支持远程备份模式，不支持备份到兼容S3协议的对象存储，也不支持资源池化模式，后两种场景在参数校验阶段直接报错。
 - 加密密钥不应直接写入脚本、日志或命令历史；生产环境建议使用权限受限的keyfile或安全的密钥管理方式。
 
 ## 依赖关系<a name="section57771982"></a>
