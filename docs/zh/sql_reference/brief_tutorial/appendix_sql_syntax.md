@@ -2284,6 +2284,8 @@ ANALYZE [ boolean ] |
     BUFFERS [ boolean ] |
     TIMING [ boolean ] |
     PLAN [ boolean ] |
+    NORMALIZED [ boolean ] |
+    GENERIC_PLAN [ boolean ] |
     FORMAT { TEXT | XML | JSON | YAML }
 ```
 
