@@ -191,7 +191,7 @@ keywords: [openGauss, 自动清理, 数据库参考, autovacuum, autovacuum\_mod
 **取值范围**： 整型，最小值为0（表示功能关闭，不限制做freeze的worker个数），最大值需要小于autovacuum_max_workers。 
 
 > 说明：
-> openGauss某个库在当前最新的事务id（ txid_current() ）- pg_database.datfrozenxid64 超过了autovacuum_freeze_max_age时候，该库会触发全库freeze，可能会导致所有的autovacuum worker都去做freeze，抢占了资源，对其他库和表正常需要的死元祖清理以及执行计划更新会带来延迟。设置了autovacuum_max_freeze_workers后，会限制最大做freeze的worker个数，预留空闲的worker来做正常表的死元组清理和执行计划更新动作。
+> openGauss某个库在当前最新的事务id（ txid_current() ）- pg_database.datfrozenxid64 超过了autovacuum_freeze_max_age时候，该库会触发全库freeze，可能会导致所有的autovacuum worker都去做freeze，抢占了资源，对其他库和表正常需要的死元组清理以及执行计划更新会带来延迟。设置了autovacuum_max_freeze_workers后，会限制最大做freeze的worker个数，预留空闲的worker来做正常表的死元组清理和执行计划更新动作。
 > 
 > 比如autovacuum_max_workers=10，autovacuum_max_freeze_workers=5，即在触发了全库freeze动作后，最多只有5个autovacuum worker在做freeze，其他5个worker会预留下来做freeze之外的死元组清理和执行计划更新动作。
 > 
