@@ -271,6 +271,46 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **off**
 
+## batch\_insert\_min\_rows<a name="batch_insert_min_rows"></a>
+
+**Parameter description**: Specifies the minimum estimated row count of the input plan for the optimizer to select batch insertion for `INSERT INTO ... SELECT ...`. This optimization applies to permanent Astore tables in a single-node deployment, including non-partitioned tables, partitioned tables, and subpartitioned tables.
+
+This parameter is a **USERSET** parameter. Set it based on the instructions in [Table 1](../database_administration_guide/reset_parameters.md).
+
+**Value range**: Integer, from -1 to 2147483647.
+
+- **-1**: Prevents the optimizer from selecting this batch insertion path.
+- **0**: Removes the estimated row count restriction. The other conditions for batch insertion still apply.
+- **1 to 2147483647**: Selects batch insertion when the estimated row count of the input plan is greater than or equal to this value and the other conditions are met.
+
+**Default value**: **1000**
+
+**Usage notes**:
+
+- `enable_heap_multi_insert_for_insert_select` must also be enabled. This parameter is independent of [enable_partition_oid_caching](#enable_partition_oid_caching). Batch insertion can be used when partition key values vary or rows are inserted into multiple partitions.
+- Ustore tables, temporary tables, UNLOGGED tables, and foreign tables are not supported. Statements containing `IGNORE`, UPSERT conflict handling, `REPLACE`, or `RETURNING` are not supported.
+- Target tables with auto-increment columns or BEFORE INSERT or INSTEAD OF INSERT row triggers, and statements containing volatile functions, are not supported. Ordinary single-row or multi-row `VALUES` inserts do not use this batch insertion path.
+- Use `EXPLAIN` to inspect the plan. An Insert node name containing `batch mode` indicates that batch insertion has been selected.
+
+## enable\_partition\_oid\_caching<a name="enable_partition_oid_caching"></a>
+
+**Parameter description**: Specifies whether to cache the target partition OID for `INSERT INTO ... SELECT ...` into a partitioned table when the planner can prove that the partition key values actually being inserted are constant. When enabled, the first row that is routed successfully and passes the specified partition checks determines the target partition. Subsequent rows reuse its OID to reduce repeated partition routing.
+
+This parameter is a **USERSET** parameter. Set it based on the instructions in [Table 1](../database_administration_guide/reset_parameters.md).
+
+**Value range**: Boolean
+
+- **on**: Allows the target partition OID to be cached when the conditions are met.
+- **off**: Disables this partition OID caching optimization.
+
+**Default value**: **on**
+
+**Usage notes**:
+
+- Both Astore and Ustore partitioned tables are supported. The partition key values actually being inserted can be constants, expanded constant DEFAULT values, or expressions constrained to constants by equality conditions. For subpartitioned tables, both the partition key and the subpartition key must satisfy the constant-value requirement.
+- Expression partition keys, bucket tables, auto-increment partition keys, and target tables with BEFORE INSERT or INSTEAD OF INSERT row triggers are not supported. Ordinary single-row or multi-row `VALUES` inserts and statements with UPSERT conflict handling do not use this optimization.
+- Use `EXPLAIN` to inspect the plan. An Insert node name containing `const partition key` indicates that the planner has selected partition OID caching for a constant partition key. If the name also contains `batch mode`, batch insertion has also been selected.
+
 ## sql\_beta\_feature<a name="section29331229203010"></a>
 
 **Parameter description**: Specifies the SQL engine's optional beta features to be enabled, including optimization of row count estimation and query equivalence estimation.

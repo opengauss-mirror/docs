@@ -325,6 +325,46 @@ UNION ALL 分支重排的使用案例参见[案例：调整查询重写GUC参数
 
 **默认值**：off
 
+## batch\_insert\_min\_rows<a name="batch_insert_min_rows"></a>
+
+**参数说明**：设置优化器为`INSERT INTO ... SELECT ...`选择批量插入时，输入计划估算行数的下限。适用于单机下的永久Astore表，包括普通表、一级分区表和二级分区表。
+
+该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md)中对应设置方法进行设置。
+
+**取值范围**：整型，-1～2147483647。
+
+- -1：禁止优化器选择该批插路径。
+- 0：不限制输入计划的估算行数，仍需满足批插的其他条件。
+- 1～2147483647：输入计划的估算行数大于或等于该值，且满足其他条件时，选择批插。
+
+**默认值**：1000
+
+**使用说明**：
+
+- 需要同时开启`enable_heap_multi_insert_for_insert_select`。该参数与[enable_partition_oid_caching](#enable_partition_oid_caching)独立控制，分区键不固定或数据写入多个分区时也可以使用批插。
+- 不支持Ustore表、临时表、UNLOGGED表、外表，以及包含`IGNORE`、UPSERT冲突处理、`REPLACE`或`RETURNING`的语句。
+- 不支持含自动增长列、BEFORE INSERT或INSTEAD OF INSERT行级触发器的目标表，以及包含volatile函数的语句。普通单行或多行`VALUES`插入不使用该批插路径。
+- 使用`EXPLAIN`查看计划，Insert节点名称包含`batch mode`时，表示计划选择了批插。
+
+## enable\_partition\_oid\_caching<a name="enable_partition_oid_caching"></a>
+
+**参数说明**：控制向分区表执行`INSERT INTO ... SELECT ...`时，是否在规划器能够证明实际写入的分区键固定的情况下缓存目标分区OID。开启后，首次正常路由并通过指定分区检查的记录确定目标分区，后续记录复用该分区OID，减少重复分区定位开销。
+
+该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md)中对应设置方法进行设置。
+
+**取值范围**：布尔型
+
+- on表示允许在满足条件时缓存目标分区OID。
+- off表示关闭该分区OID缓存优化。
+
+**默认值**：on
+
+**使用说明**：
+
+- Astore和Ustore分区表均可使用。实际写入的分区键可以是常量、展开后的常量DEFAULT，或由等值条件约束为常量的表达式。二级分区表需要父分区键和子分区键均满足固定条件。
+- 不支持表达式分区键、bucket表、自动增长分区键，以及存在BEFORE INSERT或INSTEAD OF INSERT行级触发器的目标表。普通单行或多行`VALUES`插入、带UPSERT冲突处理的语句不使用该优化。
+- 使用`EXPLAIN`查看计划，Insert节点名称包含`const partition key`时，表示规划器已选择固定分区键OID缓存；同时包含`batch mode`时，表示还选择了批插。
+
 ## sql\_beta\_feature<a name="section29331229203010"></a>
 
 **参数说明**：标识开启的可选SQL引擎Beta特性，其中包括对行数估算、查询等价估算等优化。
