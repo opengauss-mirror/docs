@@ -135,6 +135,8 @@ sections:
         href: ./resource_pooling_multi_machine_paralleism.md
       - label: 资源池化灵衢内存语义加速
         href: ./resource_pooling_ub_memory_semantic_acceleration.md
+      - label: 透明数据加密支持内生国密
+        href: ./resource_pooling_transparent_data_encryption.md
   - label: 向量数据库
     sections:
       - label: 超低内存磁盘检索
