@@ -302,6 +302,9 @@ keywords: [openGauss, 特性概览, 特性描述, 高性能, 高可用]
         <td><a href="./resource_pooling_ub_memory_semantic_acceleration.md">资源池化灵衢内存语义加速</a></td>
     </tr>
     <tr>
+        <td><a href="./resource_pooling_transparent_data_encryption.md">透明数据加密支持内生国密</a></td>
+    </tr>
+    <tr>
         <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/gs_collector_adaptation_resource_pooling.html">资源池化可维护性增强</a></td>
     </tr>
     <tr>

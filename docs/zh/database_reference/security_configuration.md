@@ -59,7 +59,7 @@ off：不是初始用户。
 
 ## enable\_tde<a name="section17961238192110"></a>
 
-**参数说明**： 透明数据加密功能开关。创建加密表前需要将此参数置为on。当前参数值为off时，禁止创建新的加密表，对于已经创建的加密表只在读取数据时解密，写入数据时不再加密。
+**参数说明**： 透明数据加密功能开关。创建加密表前需要将此参数置为on。当前参数值为off时，禁止创建新的加密表；对已加密页面的写入会被拒绝，且关闭开关不会解密已有数据，如需继续使用加密表请保持该参数为on。该参数与[tde\_key\_provider](#section_tde_key_provider)配合使用，以选择密钥管理方式。
 
 该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -71,9 +71,29 @@ off：关闭透明数据加密功能。
 
 **默认值** ：off
 
+## tde\_key\_provider<a name="section_tde_key_provider"></a>
+
+**参数说明**： 透明数据加密使用的密钥管理方式。
+
+- kms：对接外部密钥管理服务（KMS）。根密钥和主密钥由KMS托管，支持AES\_128\_CTR和SM4\_CTR加密算法，通过[tde\_cmk\_id](#section4132027193410)指定主密钥ID。
+- sdf：使用服务器内置的国密密码模块（内生国密）。通过GM/T 0018标准的SDF接口访问密码模块，根密钥由密码模块内部的硬件根密钥承担，主密钥为密码模块槽位内的SM4 KEK（由根密钥保护），主密钥ID由KEK槽位编码生成，仅支持SM4\_CTR加密算法，数据库不接触数据加密密钥明文。
+
+该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。使用SDF方式时，该参数需要在所有数据节点上保持一致。
+
+**取值范围**： 枚举类型，有效值为kms、sdf。
+
+**默认值** ：kms
+
+> [!NOTE]说明
+> - 修改该参数不会迁移已有加密数据。KMS方式和SDF方式不能混用，已创建加密表的数据必须继续使用创建时所用的密钥管理方式解密。
+> - sdf方式仅支持资源池化部署，且必须同时开启ss\_enable\_dms和ss\_enable\_dss，否则数据库启动失败。
+> - sdf方式需要在每个数据节点的数据目录下准备tde\_config/sdf\_info.json，并使用gs\_tde\_sdf工具完成KEK的准备与分发，详细操作请参考[设置透明数据加密（TDE）](../database_administration_guide/configuring_tde.md)和[gs\_tde\_sdf](../tool_and_commandreference/gs_tde_sdf.md)。
+
 ## tde\_cmk\_id<a name="section4132027193410"></a>
 
 **参数说明**： 透明数据加密功能使用的数据库实例主密钥CMK的ID编号，由使用的密钥管理服务KMS生成。数据库实例主密钥CMK用于对数据加密密钥DEK进行加密保护，当前需要对DEK进行解密时，需要给KMS发起请求报文，将DEK密文和对应CMK的ID编号一起发送给KMS。
+
+该参数仅在使用KMS方式（tde\_key\_provider=kms）时生效。使用内生国密方式（tde\_key\_provider=sdf）时该参数可保持为空，主密钥ID由KEK槽位编码自动生成。
 
 该参数属于SIGHUP类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 

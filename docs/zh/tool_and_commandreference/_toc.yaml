@@ -53,6 +53,8 @@ sections:
         href: ./gs_ddr.md 
       - label: gs_retrieve
         href: ./gs_retrieve.md
+      - label: gs_tde_sdf
+        href: ./gs_tde_sdf.md
   - label: 系统内部使用的工具
     sections:
       - label: 概述

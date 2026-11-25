@@ -107,5 +107,10 @@ openGauss提供客户端和服务器端应用程序（工具），帮助用户�
 <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p6470150955"><a name="p6470150955"></a><a name="p6470150955"></a><span id="zh-cn_topic_0287275995_text1932176617"><a name="zh-cn_topic_0287275995_text1932176617"></a><a name="zh-cn_topic_0287275995_text1932176617"></a>openGauss</span><span id="ph0565084814"><a name="ph0565084814"></a><a name="ph0565084814"></a>提供了gs_ddr工具，可完成容灾搭建、容灾升主、计划内主备切换、容灾解除、容灾状态监控功能、显示帮助信息和显示版本号信息等功能。</span></p>
 </td>
 </tr>
+<tr id="row_gs_tde_sdf"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p_gs_tde_sdf"><a href="gs_tde_sdf.md">gs_tde_sdf</a></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p_gs_tde_sdf_desc">openGauss提供了gs_tde_sdf工具，用于透明数据加密内生国密（SDF）方式的KEK槽位查询、KEK创建与受保护备份导出、跨节点KEK导入与一致性校验，以及节点本地SDF配置文件和访问口令文件的生成。</p>
+</td>
+</tr>
 </tbody>
 </table>
