@@ -1,3 +1,8 @@
+---
+description: Statistics are summarized and collected based on WDR snapshot data tables to generate a performance report. By default, the initial user or monitor administrator can generate reports.
+keywords: [openGauss, Performance Report Generated Based on WDR Snapshots]
+---
+
 # Performance Report Generated Based on WDR Snapshots<a name="EN-US_TOPIC_0289900439"></a>
 
 Statistics are summarized and collected based on WDR snapshot data tables to generate a performance report. By default, the initial user or monitor administrator can generate reports.

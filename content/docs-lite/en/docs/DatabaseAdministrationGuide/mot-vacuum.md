@@ -1,3 +1,8 @@
+---
+description: Use VACUUM for garbage collection and optionally to analyze a database, , as follows –.
+keywords: [openGauss, MOT Vacuum]
+---
+
 # MOT Vacuum<a name="EN-US_TOPIC_0289900748"></a>
 
 Use VACUUM for garbage collection and optionally to analyze a database, , as follows –

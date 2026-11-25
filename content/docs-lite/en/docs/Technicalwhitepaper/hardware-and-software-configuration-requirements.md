@@ -1,3 +1,8 @@
+---
+description: Table 1 Software requirements.
+keywords: [openGauss, Hardware and Software Configuration Requirements]
+---
+
 # Hardware and Software Configuration Requirements<a name="EN-US_CONCEPT_0289895602"></a>
 
 ## Software Configuration Requirements<a name="en-us_concept_0283139016_section209873376322"></a>

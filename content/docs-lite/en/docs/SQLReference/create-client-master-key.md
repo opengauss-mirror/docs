@@ -1,3 +1,8 @@
+---
+description: CREATE CLIENT MASTER KEY creates a CMK object that can be used to encrypt a CEK object.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE CLIENT MASTER KEY<a name="EN-US_TOPIC_0294528088"></a>
 
 ## Function<a name="section1163224811518"></a>

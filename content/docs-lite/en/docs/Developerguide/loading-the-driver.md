@@ -1,3 +1,8 @@
+---
+description: Load the database driver before creating a database connection.
+keywords: [openGauss, Loading the Driver]
+---
+
 # Loading the Driver<a name="EN-US_TOPIC_0289900851"></a>
 
 Load the database driver before creating a database connection.

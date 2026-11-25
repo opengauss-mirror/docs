@@ -1,3 +1,8 @@
+---
+description: The history of artificial intelligence \(AI\) can be dated back to as early as the 1950s, even longer than the history of the database development. However, the AI technology has not been applied on a.
+keywords: [openGauss, AI Capabilities]
+---
+
 # AI Capabilities<a name="EN-US_TOPIC_0000001105235306"></a>
 
 The history of artificial intelligence \(AI\) can be dated back to as early as the 1950s, even longer than the history of the database development. However, the AI technology has not been applied on a large scale for a long time due to various objective factors, and even experienced several obvious troughs. With the further development of information technologies in recent years, factors that restrict the AI development have been gradually weakened, and the AI, big data, and cloud computing \(ABC\) technologies are born.

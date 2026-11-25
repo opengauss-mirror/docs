@@ -1,3 +1,8 @@
+---
+description: CREATE TRIGGER creates a trigger. The trigger will be associated with the specified table or view, and will execute the specified function operations are performed.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE TRIGGER<a name="EN-US_TOPIC_0289900727"></a>
 
 ## Function<a name="en-us_topic_0283137165_en-us_topic_0237122123_en-us_topic_0059778166_s08b0f056b5f14492970a9037c63fa70c"></a>

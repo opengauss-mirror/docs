@@ -1,3 +1,8 @@
+---
+description: Many platforms use the database system. External compatibility of the database system provides a lot of convenience for platforms.
+keywords: [openGauss, Platform and Client Compatibility]
+---
+
 # Platform and Client Compatibility<a name="EN-US_TOPIC_0289900474"></a>
 
 Many platforms use the database system. External compatibility of the database system provides a lot of convenience for platforms.

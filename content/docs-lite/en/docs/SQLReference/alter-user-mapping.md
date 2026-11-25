@@ -1,3 +1,8 @@
+---
+description: ALTER USER MAPPING changes the definition of a user mapping.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER USER MAPPING<a name="EN-US_TOPIC_0289900415"></a>
 
 ## Function<a name="en-us_topic_0283137333_section38351127909"></a>

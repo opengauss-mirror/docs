@@ -1,3 +1,8 @@
+---
+description: gs\_restore is an import tool provided by the openGauss database. You can use this tool to import the files exported by gs\_dump to a database. gs\_restore can import the files in .ta.
+keywords: [openGauss, Using gs_restore to Import Data]
+---
+
 # Using gs\_restore to Import Data<a name="EN-US_TOPIC_0289900222"></a>
 
 ## Scenarios<a name="en-us_topic_0283137171_en-us_topic_0237121137_section17330121375310"></a>

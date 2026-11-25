@@ -1,3 +1,8 @@
+---
+description: ALTER TEXT SEARCH CONFIGURATION modifies the definition of a text search configuration. You can modify its mappings from token types to dictionaries, change the configuration's name or owner, or.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER TEXT SEARCH CONFIGURATION<a name="EN-US_TOPIC_0289900161"></a>
 
 ## Function<a name="en-us_topic_0283137411_en-us_topic_0237122079_en-us_topic_0059778328_s9adfe253d8074dff8561df762ecd7460"></a>

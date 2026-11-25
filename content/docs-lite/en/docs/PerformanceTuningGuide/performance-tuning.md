@@ -1,3 +1,8 @@
+---
+description: Introduces Performance Tuning in openGauss, covering .
+keywords: [openGauss, Performance Tuning]
+---
+
 # Performance Tuning<a name="EN-US_TOPIC_0289900353"></a>
 
 -   **[Overview](performance-tuning-overview.md)**  

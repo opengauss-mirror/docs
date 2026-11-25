@@ -1,3 +1,8 @@
+---
+description: Introduces Publication-Subscription in openGauss, covering .
+keywords: [openGauss, Publication-Subscription]
+---
+
 # Publication-Subscription<a name="EN-US_TOPIC_0264264805"></a>
 
 - **[Publications](publications.md)** 

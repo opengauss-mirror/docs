@@ -1,3 +1,8 @@
+---
+description: As described in Overview, EXPLAIN displays the execution plan, but will not actually run SQL statements. EXPLAIN ANALYZE and EXPLAIN PERFORMANCE bo.
+keywords: [openGauss, Description]
+---
+
 # Description<a name="EN-US_TOPIC_0289899920"></a>
 
 As described in  [Overview](sql-execution-plan-overview.md),  **EXPLAIN**  displays the execution plan, but will not actually run SQL statements.  **EXPLAIN ANALYZE**  and  **EXPLAIN PERFORMANCE**  both will actually run SQL statements and return the execution information. This section describes the execution plan and execution information in detail.
@@ -12,7 +17,7 @@ SELECT * FROM t1, t2 WHERE t1.c1 = t2.c2;
 
 Run the  **EXPLAIN**  command and the output is as follows:
 
-![](figures/zh-cn_image_0289900952.png)
+![Execution Plans](figures/zh-cn_image_0289900952.png)
 
 **Interpretation of the execution plan level \(vertical\)**:
 
@@ -95,5 +100,5 @@ select sum(t2.c1) from t1,t2 where t1.c1=t2.c2 group by t1.c2;
 
 The output of running  **EXPLAIN PERFORMANCE**  is as follows:
 
-![](figures/zh-cn_image_0289900964.png)
+![Execution Information](figures/zh-cn_image_0289900964.png)
 

@@ -1,3 +1,8 @@
+---
+description: The concurrency control \(CC\) module provides all transactional requirements for the main memory engine. The CC module mainly provides various levels of isolation support for the main memory engine.
+keywords: [openGauss, MOT Optimistic Concurrency Control OCC]
+---
+
 # MOT Optimistic Concurrency Control \(OCC\)<a name="EN-US_TOPIC_0289899956"></a>
 
 The concurrency control \(CC\) module provides all transactional requirements for the main memory engine. The CC module mainly provides various levels of isolation support for the main memory engine.

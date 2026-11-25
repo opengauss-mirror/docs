@@ -1,3 +1,8 @@
+---
+description: Introduces AI Feature Functions in openGauss, covering .
+keywords: [openGauss, AI Feature Functions]
+---
+
 # AI Feature Functions<a name="EN-US_TOPIC_0303599451"></a>
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 

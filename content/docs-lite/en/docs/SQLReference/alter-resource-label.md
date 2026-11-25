@@ -1,3 +1,8 @@
+---
+description: ALTER RESOURCE LABEL modifies resource labels.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER RESOURCE LABEL<a name="EN-US_TOPIC_0306525301"></a>
 
 ## Function<a name="en-us_topic_0059778839_s878bf4f1569c4d2f87e056f26372448e"></a>

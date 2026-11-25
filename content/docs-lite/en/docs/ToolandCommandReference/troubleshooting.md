@@ -1,3 +1,8 @@
+---
+description: - log\_hostname is enabled, but DNS is incorrect.
+keywords: [openGauss, troubleshooting, Troubleshooting]
+---
+
 # Troubleshooting<a name="EN-US_TOPIC_0294749066"></a>
 
 ## Low Connection Performance<a name="en-us_topic_0078149561_section625869329424"></a>

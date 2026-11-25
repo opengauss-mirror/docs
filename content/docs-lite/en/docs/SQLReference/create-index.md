@@ -1,3 +1,8 @@
+---
+description: CREATE INDEX-bak defines a new index.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE INDEX<a name="EN-US_TOPIC_0289900160"></a>
 
 ## Function<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_s10bd477b6f0a4b4687123335b61aa981"></a>

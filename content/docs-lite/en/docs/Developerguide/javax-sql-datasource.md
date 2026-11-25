@@ -1,3 +1,8 @@
+---
+description: This section describes javax.sql.DataSource, the interface for data sources.
+keywords: [openGauss, javax.sql.DataSource]
+---
+
 # javax.sql.DataSource<a name="EN-US_TOPIC_0242371429"></a>
 
 This section describes  **javax.sql.DataSource**, the interface for data sources.

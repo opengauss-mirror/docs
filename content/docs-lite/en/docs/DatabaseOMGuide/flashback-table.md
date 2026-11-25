@@ -1,3 +1,8 @@
+---
+description: Flashback table enables you to restore a table to a specific point in time. When only one table or a group of tables are logically damaged instead of the entire database, this feature can be used to q.
+keywords: [openGauss, Flashback]
+---
+
 # Flashback Table<a name="EN-US_TOPIC_0000001177933862"></a>
 
 ## Context<a name="section116901421161613"></a>

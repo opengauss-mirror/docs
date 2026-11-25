@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_PAGEWRITER\_STATUS displays the page flushing information and checkpoint information about all instances in openGauss.
+keywords: [openGauss, GLOBAL_PAGEWRITER_STATUS]
+---
+
 # GLOBAL\_PAGEWRITER\_STATUS<a name="EN-US_TOPIC_0289900355"></a>
 
 **GLOBAL\_PAGEWRITER\_STATUS**  displays the page flushing information and checkpoint information about all instances in openGauss.

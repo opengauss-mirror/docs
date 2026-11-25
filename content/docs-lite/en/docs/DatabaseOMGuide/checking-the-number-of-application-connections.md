@@ -1,3 +1,8 @@
+---
+description: If the number of connections between applications and the database exceeds the maximum value, new connections cannot be established. You are advised to daily check the number of connections, release i.
+keywords: [openGauss, Checking the Number of Application Connections]
+---
+
 # Checking the Number of Application Connections<a name="EN-US_TOPIC_0289897019"></a>
 
 If the number of connections between applications and the database exceeds the maximum value, new connections cannot be established. You are advised to daily check the number of connections, release idle connections in time, or increase the allowed maximum number of connections.

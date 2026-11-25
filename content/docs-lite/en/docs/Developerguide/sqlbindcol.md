@@ -1,3 +1,8 @@
+---
+description: SQLBindCol is used to bind columns in a result set to an application data buffer.
+keywords: [openGauss, SQLBindCol]
+---
+
 # SQLBindCol<a name="EN-US_TOPIC_0242371440"></a>
 
 ## Function<a name="en-us_topic_0238272886_en-us_topic_0237120416_en-us_topic_0059779335_s20aba247faad4486a9207cbeafeadb20"></a>

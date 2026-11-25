@@ -1,3 +1,8 @@
+---
+description: Run the CREATE TEMP TABLE ... AS statement to create a temporary table for the original table, truncate the original table, and batch insert data of the temporary data into the original table.
+keywords: [openGauss, Performing a Deep Copy by Creating a Temporary Table and Truncating the Original Table]
+---
+
 # Performing a Deep Copy by Creating a Temporary Table and Truncating the Original Table<a name="EN-US_TOPIC_0289899871"></a>
 
 Run the  **CREATE TEMP TABLE ... AS**  statement to create a temporary table for the original table, truncate the original table, and batch insert data of the temporary data into the original table.

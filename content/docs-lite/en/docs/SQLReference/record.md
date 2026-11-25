@@ -1,3 +1,8 @@
+---
+description: Perform the following operations to create a record variable:.
+keywords: [openGauss, record]
+---
+
 # record<a name="EN-US_TOPIC_0289899954"></a>
 
 ## record Variables<a name="en-us_topic_0283136936_en-us_topic_0237122215_section16992418680"></a>
@@ -11,7 +16,7 @@ Define a record type and use this type to declare a variable.
 For the syntax of the record type, see  [Figure 1](#en-us_topic_0283136936_en-us_topic_0237122215_fig092918316312).
 
 **Figure  1**  Syntax of the record type<a name="en-us_topic_0283136936_en-us_topic_0237122215_fig092918316312"></a>  
-![](figures/syntax-of-the-record-type.png "syntax-of-the-record-type")
+![Syntax](figures/syntax-of-the-record-type.png "syntax-of-the-record-type")
 
 The above syntax diagram is explained as follows:
 

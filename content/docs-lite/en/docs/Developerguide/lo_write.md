@@ -1,3 +1,8 @@
+---
+description: Write data to a large object.
+keywords: [openGauss, lo_write]
+---
+
 # lo_write<a name="EN-US_TOPIC_0242380601"></a>
 
 ## Function<a name="en-us_topic_0241735627_section696285173718"></a>

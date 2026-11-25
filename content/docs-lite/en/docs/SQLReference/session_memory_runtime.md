@@ -1,3 +1,8 @@
+---
+description: SESSION\_MEMORY\_RUNTIME displays load management information about memory usage of ongoing complex jobs executed by the current user.
+keywords: [openGauss, SESSION_MEMORY_RUNTIME]
+---
+
 # SESSION\_MEMORY\_RUNTIME<a name="EN-US_TOPIC_0289900333"></a>
 
 **SESSION\_MEMORY\_RUNTIME**  displays load management information about memory usage of ongoing complex jobs executed by the current user.

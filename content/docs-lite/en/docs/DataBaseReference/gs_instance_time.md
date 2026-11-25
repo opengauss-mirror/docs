@@ -1,3 +1,8 @@
+---
+description: GS\_INSTANCE\_TIME records time consumption information of the current node. The time consumption information is classified into the following types:.
+keywords: [openGauss, GS_INSTANCE_TIME]
+---
+
 # GS\_INSTANCE\_TIME<a name="EN-US_TOPIC_0289900080"></a>
 
 **GS\_INSTANCE\_TIME**  records time consumption information of the current node. The time consumption information is classified into the following types:

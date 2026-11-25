@@ -1,3 +1,8 @@
+---
+description: - Stored Procedure.
+keywords: [openGauss, Stored Procedure]
+---
+
 # Stored Procedure<a name="EN-US_TOPIC_0289900792"></a>
 
 -   **[Stored Procedure](stored-procedure-21.md)**  

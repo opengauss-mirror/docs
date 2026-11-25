@@ -1,3 +1,8 @@
+---
+description: PG\_STAT\_SUBSCRIPTION displays the detailed synchronization information about the subscription.
+keywords: [openGauss, PG_STAT_SUBSCRIPTION]
+---
+
 # PG\_STAT\_SUBSCRIPTION<a name="EN-US_TOPIC_0000001243798253"></a>
 
 **PG\_STAT\_SUBSCRIPTION**  displays the detailed synchronization information about the subscription.

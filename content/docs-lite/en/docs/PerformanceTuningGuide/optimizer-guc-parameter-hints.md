@@ -1,3 +1,8 @@
+---
+description: Sets GUC parameters related to query optimization that take effect during the query execution. For details about the application scenarios of hints, see the description of each GUC parameter.
+keywords: [openGauss, Optimizer]
+---
+
 # Optimizer GUC Parameter Hints<a name="EN-US_TOPIC_0000001096400532"></a>
 
 ## Function<a name="section290819468377"></a>

@@ -1,3 +1,8 @@
+---
+description: PG\_CONSTRAINT records check, primary key, and unique constraints on tables.
+keywords: [openGauss, PG_CONSTRAINT]
+---
+
 # PG\_CONSTRAINT<a name="EN-US_TOPIC_0289899922"></a>
 
 **PG\_CONSTRAINT**  records check, primary key, and unique constraints on tables.

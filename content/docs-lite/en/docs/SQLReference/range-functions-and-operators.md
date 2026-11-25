@@ -1,3 +1,8 @@
+---
+description: Introduces Range Functions and Operators in openGauss, covering Range Operators, Range Functions.
+keywords: [openGauss, Range Functions and Operators]
+---
+
 # Range Functions and Operators<a name="EN-US_TOPIC_0289900548"></a>
 
 ## Range Operators<a name="en-us_topic_0283136628_en-us_topic_0237121981_en-us_topic_0059778082_sdbd7817099fd47dd95010675e3f38b03"></a>

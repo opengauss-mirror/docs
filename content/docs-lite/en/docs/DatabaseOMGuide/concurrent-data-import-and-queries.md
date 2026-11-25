@@ -1,3 +1,8 @@
+---
+description: Introduces Concurrent Data Import and Queries in openGauss, covering .
+keywords: [openGauss, Concurrent Data Import and Queries]
+---
+
 # Concurrent Data Import and Queries<a name="EN-US_TOPIC_0289900745"></a>
 
 Transaction T1:

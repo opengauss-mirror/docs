@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Materialized View]
+---
+
 # Materialized View<a name="EN-US_TOPIC_0000001105235292"></a>
 
 ## Availability<a name="section1136213124018"></a>

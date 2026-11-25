@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 2.1.0.
+keywords: [openGauss, DB4AI Database-driven AI]
+---
+
 # DB4AI: Database-driven AI<a name="EN-US_TOPIC_0000001263249913"></a>
 
 ## Availability<a name="section1420315335481"></a>

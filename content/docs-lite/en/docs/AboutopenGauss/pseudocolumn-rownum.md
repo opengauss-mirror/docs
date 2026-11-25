@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.0.1.
+keywords: [openGauss, Pseudocolumn ROWNUM]
+---
+
 # Pseudocolumn ROWNUM<a name="EN-US_TOPIC_0000001152275227"></a>
 
 ## Availability<a name="section56086982"></a>

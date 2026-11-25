@@ -1,3 +1,8 @@
+---
+description: Introduces TPC-C Performance Tunning Test Guide in openGauss, covering .
+keywords: [openGauss, TPC-C Performance Tunning Test Guide]
+---
+
 # TPC-C Performance Tunning Test Guide<a name="EN-US_TOPIC_0289900878"></a>
 
 -   **[Overview](tpc-c-performance-tunning-test-guide-overview.md)**  

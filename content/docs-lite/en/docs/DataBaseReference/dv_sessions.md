@@ -1,3 +1,8 @@
+---
+description: DV\_SESSIONS displays all session information about the current session. By default, only the system administrator can access this view. Common users can access the view only after being authoriz.
+keywords: [openGauss, DV_SESSIONS]
+---
+
 # DV\_SESSIONS<a name="EN-US_TOPIC_0000001116241344"></a>
 
 **DV\_SESSIONS**  displays all session information about the current session. By default, only the system administrator can access this view. Common users can access the view only after being authorized.

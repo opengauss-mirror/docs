@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 3.0.0.
+keywords: [openGauss, Row-Store Execution to Vectorized Execution]
+---
+
 # Row-Store Execution to Vectorized Execution<a name="EN-US_TOPIC_0000001265287497"></a>
 
 ## Availability<a name="section15406143204715"></a>

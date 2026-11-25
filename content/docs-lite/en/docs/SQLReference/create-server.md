@@ -1,3 +1,8 @@
+---
+description: Defines a new foreign server.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE SERVER<a name="ZH-CN_TOPIC_0289899991"></a>
 
 ## Function<a name="en-us_topic_0283137586_section1087614114391"></a>

@@ -1,3 +1,8 @@
+---
+description: 1. Log in as the OS user omm to the primary node of the database.
+keywords: [openGauss, Starting and Stopping openGauss]
+---
+
 # Starting and Stopping openGauss<a name="EN-US_TOPIC_0242215008"></a>
 
 ## Starting openGauss<a name="en-us_topic_0237088789_en-us_topic_0059777680_se84dd72782a34e9b8b1fb962d2842afa"></a>

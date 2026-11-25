@@ -1,3 +1,8 @@
+---
+description: PG\_TABLES provides access to each table in the database.
+keywords: [openGauss, PG_TABLES]
+---
+
 # PG\_TABLES<a name="EN-US_TOPIC_0289900821"></a>
 
 **PG\_TABLES**  provides access to each table in the database.

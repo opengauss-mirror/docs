@@ -1,3 +1,8 @@
+---
+description: Table 1 Link parameters.
+keywords: [openGauss, Link Parameters]
+---
+
 # Link Parameters<a name="EN-US_TOPIC_0289900649"></a>
 
 **Table  1**  Link parameters

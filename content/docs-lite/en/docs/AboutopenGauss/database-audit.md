@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Database Audit]
+---
+
 # Database Audit<a name="EN-US_TOPIC_0000001151995069"></a>
 
 ## Availability<a name="section10188029"></a>

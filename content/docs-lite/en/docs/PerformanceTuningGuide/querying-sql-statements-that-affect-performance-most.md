@@ -1,3 +1,8 @@
+---
+description: This section describes how to query SQL statements whose execution takes a long time, leading to poor system performance.
+keywords: [openGauss, Querying SQL Statements That Affect Performance Most]
+---
+
 # Querying SQL Statements That Affect Performance Most<a name="EN-US_TOPIC_0289900933"></a>
 
 This section describes how to query SQL statements whose execution takes a long time, leading to poor system performance.

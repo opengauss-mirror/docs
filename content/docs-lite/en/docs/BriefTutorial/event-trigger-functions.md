@@ -1,3 +1,8 @@
+---
+description: - pg\_event\_trigger\_ddl\_commands.
+keywords: [openGauss, Event Trigger Functions]
+---
+
 # Event Trigger Functions<a name="EN-US_TOPIC_0289014904"></a>
 
 -   pg\_event\_trigger\_ddl\_commands

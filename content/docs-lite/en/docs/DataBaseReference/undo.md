@@ -1,3 +1,8 @@
+---
+description: Parameter description: Specifies the threshold for forcibly recycling undo space. When the undo space usage reaches 80% of the threshold, forcible recycling starts. You can set this parameter to a.
+keywords: [openGauss, Undo]
+---
+
 # Undo<a name="EN-US_TOPIC_0000001129789643"></a>
 
 ## undo\_space\_limit\_size<a name="section13674152315117"></a>

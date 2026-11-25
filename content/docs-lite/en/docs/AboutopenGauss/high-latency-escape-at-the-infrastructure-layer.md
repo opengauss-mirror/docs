@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 3.0.0.
+keywords: [openGauss, High-Latency Escape at the Infrastructure Layer]
+---
+
 # High-Latency Escape at the Infrastructure Layer<a name="EN-US_TOPIC_0000001348775901"></a>
 
 ## Availability<a name="section41616539"></a>

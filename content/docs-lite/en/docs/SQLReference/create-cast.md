@@ -1,3 +1,8 @@
+---
+description: CREATE CAST defines a conversion.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE CAST<a name="EN-US_TOPIC_0000001080982678"></a>
 
 ## Function<a name="section173831846163116"></a>

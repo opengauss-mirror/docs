@@ -1,3 +1,8 @@
+---
+description: openGauss 5.0.0 is the third LTS version of openGauss, and its lifecycle is three years. This document applies only to the lite edition.
+keywords: [openGauss, Versions]
+---
+
 # Versions<a name="EN-US_TOPIC_0289899200"></a>
 
 openGauss 5.0.0 is the third LTS version of openGauss, and its lifecycle is three years. This document applies only to the lite edition.

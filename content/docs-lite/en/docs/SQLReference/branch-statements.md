@@ -1,3 +1,8 @@
+---
+description: Figure 1 shows the syntax diagram for a branch statement.
+keywords: [openGauss, Branch]
+---
+
 # Branch Statements<a name="EN-US_TOPIC_0289899970"></a>
 
 ## Syntax<a name="en-us_topic_0283137347_en-us_topic_0237122235_en-us_topic_0059779327_sa0d157976d6d4848ae582a3adc20e356"></a>
@@ -5,12 +10,12 @@
 [Figure 1](#en-us_topic_0283137347_en-us_topic_0237122235_en-us_topic_0059779327_fe2376535378e44c78c4e70078d0fb779)  shows the syntax diagram for a branch statement.
 
 **Figure  1**  case\_when::=<a name="en-us_topic_0283137347_en-us_topic_0237122235_en-us_topic_0059779327_fe2376535378e44c78c4e70078d0fb779"></a>  
-![](figures/case_when.png "case_when")
+![Syntax](figures/case_when.png "case_when")
 
 [Figure 2](#en-us_topic_0283137347_en-us_topic_0237122235_en-us_topic_0059779327_f0b6779d008024e8fb5c2267d8d3bff14)  shows the syntax diagram for  **when\_clause**.
 
 **Figure  2**  when\_clause::=<a name="en-us_topic_0283137347_en-us_topic_0237122235_en-us_topic_0059779327_f0b6779d008024e8fb5c2267d8d3bff14"></a>  
-![](figures/when_clause.png "when_clause")
+![Syntax](figures/when_clause.png "when_clause")
 
 Parameter description:
 

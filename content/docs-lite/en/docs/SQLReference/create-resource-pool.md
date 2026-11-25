@@ -1,3 +1,8 @@
+---
+description: CREATE RESOURCE POOL creates a resource pool and specifies the Cgroup of the resource pool.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE RESOURCE POOL<a name="EN-US_TOPIC_0000001193907775"></a>
 
 ## Function<a name="en-us_topic_0059777569_sea021d0b1f154052a73b69b89d636f66"></a>

@@ -1,3 +1,8 @@
+---
+description: - Configuring Client Access Authentication.
+keywords: [openGauss, Client Access Authentication]
+---
+
 # Client Access Authentication<a name="EN-US_TOPIC_0289900294"></a>
 
 -   **[Configuring Client Access Authentication](configuring-client-access-authentication.md)**  

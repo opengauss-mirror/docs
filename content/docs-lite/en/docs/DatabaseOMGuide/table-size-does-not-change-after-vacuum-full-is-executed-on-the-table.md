@@ -1,3 +1,8 @@
+---
+description: A user runs the VACUUM FULL command to clear a table, the table size does not change.
+keywords: [openGauss, Table Size Does not Change After VACUUM FULL Is Executed on the Table]
+---
+
 # Table Size Does not Change After VACUUM FULL Is Executed on the Table<a name="EN-US_TOPIC_0291615102"></a>
 
 ## Symptom<a name="section6396133915314"></a>

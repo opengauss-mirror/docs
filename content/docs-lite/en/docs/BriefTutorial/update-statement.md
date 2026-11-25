@@ -1,3 +1,8 @@
+---
+description: Existing data in a database can be updated. You can update one row, all rows, or specified rows of data, or update data in a single column without affecting the data in the other columns. The UPDATE s.
+keywords: [openGauss, UPDATE]
+---
+
 # UPDATE Statement<a name="EN-US_TOPIC_0000001209981902"></a>
 
 Existing data in a database can be updated. You can update one row, all rows, or specified rows of data, or update data in a single column without affecting the data in the other columns. The UPDATE statement changes the values of the specified columns in all rows that satisfy the condition. The  **WHERE**  clause clarifies conditions. The columns to be modified need to be mentioned in the  **SET**  clause; columns not explicitly modified retain their previous values.

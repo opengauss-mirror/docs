@@ -1,3 +1,8 @@
+---
+description: This method closes the database connection.
+keywords: [openGauss, connection.close]
+---
+
 # connection.close\(\)<a name="EN-US_TOPIC_0000001127310749"></a>
 
 ## Function<a name="section5708152714306"></a>

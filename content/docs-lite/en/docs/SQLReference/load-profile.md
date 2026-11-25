@@ -1,3 +1,8 @@
+---
+description: The following table lists metrics in the Load Profile report.
+keywords: [openGauss, Load Profile]
+---
+
 # Load Profile<a name="EN-US_TOPIC_0000001215355218"></a>
 
 The following table lists metrics in the Load Profile report.

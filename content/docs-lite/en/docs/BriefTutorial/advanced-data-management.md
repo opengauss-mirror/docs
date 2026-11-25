@@ -1,3 +1,8 @@
+---
+description: Introduces Advanced Data Management in openGauss, covering .
+keywords: [openGauss, Advanced Data Management]
+---
+
 # Advanced Data Management<a name="EN-US_TOPIC_0000001255221825"></a>
 
 -   **[Constraints](constraints.md)**  

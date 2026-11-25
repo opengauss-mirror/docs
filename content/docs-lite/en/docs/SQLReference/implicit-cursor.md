@@ -1,3 +1,8 @@
+---
+description: Implicit cursors are automatically set by the system for non-query statements such as modify or delete operations, along with their workspace. Implicit cursors are named SQL, which is defined by.
+keywords: [openGauss, Implicit Cursor]
+---
+
 # Implicit Cursor<a name="EN-US_TOPIC_0289900081"></a>
 
 Implicit cursors are automatically set by the system for non-query statements such as modify or delete operations, along with their workspace. Implicit cursors are named  **SQL**, which is defined by the system.

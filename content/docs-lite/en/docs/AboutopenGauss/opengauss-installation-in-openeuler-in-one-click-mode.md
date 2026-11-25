@@ -1,3 +1,8 @@
+---
+description: This feature is available since openEuler 22.03 LTS.
+keywords: [openGauss, openGauss Installation in openEuler in One-Click Mode]
+---
+
 # openGauss Installation in openEuler in One-Click Mode<a name="EN-US_TOPIC_0000001222174034"></a>
 
 ## Availability<a name="section15406143204715"></a>

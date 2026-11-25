@@ -1,3 +1,8 @@
+---
+description: To fine-tune openGauss performance, you need to identify performance bottlenecks, adjust key parameters, and optimize SQL statements. During performance tuning, locate and analyze performance issues b.
+keywords: [openGauss, Overview]
+---
+
 # Overview<a name="EN-US_TOPIC_0289900313"></a>
 
 To fine-tune openGauss performance, you need to identify performance bottlenecks, adjust key parameters, and optimize SQL statements. During performance tuning, locate and analyze performance issues based on performance elements, such as system resources, throughput, and loads to achieve required system performance.
@@ -12,7 +17,7 @@ Various factors must be considered during openGauss performance tuning. Therefor
 [Figure 1](#en-us_topic_0283137244_fig36820421398)  shows the procedure of performance tuning.
 
 **Figure  1**  openGauss performance tuning<a name="en-us_topic_0283137244_fig36820421398"></a>  
-![](figures/opengauss-performance-tuning.png "opengauss-performance-tuning")
+![Tuning Process](figures/opengauss-performance-tuning.png "opengauss-performance-tuning")
 
 [Table 1](#en-us_topic_0283137244_en-us_topic_0237121483_en-us_topic_0073253541_en-us_topic_0040046511_table18747316113544)  lists the details about each phase.
 

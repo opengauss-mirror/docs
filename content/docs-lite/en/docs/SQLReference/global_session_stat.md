@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_SESSION\_STAT collects statistics about session status on each node based on session threads or the AutoVacuum thread.
+keywords: [openGauss, GLOBAL_SESSION_STAT]
+---
+
 # GLOBAL\_SESSION\_STAT<a name="EN-US_TOPIC_0289900205"></a>
 
 **GLOBAL\_SESSION\_STAT**  collects statistics about session status on each node based on session threads or the  **AutoVacuum**  thread.

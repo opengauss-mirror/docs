@@ -1,3 +1,8 @@
+---
+description: openGauss has a large object facility, which provides stream-style access to user data that is stored in a special large-object structure. Streaming access is useful when working with data values that.
+keywords: [openGauss, Large Object Operation Function]
+---
+
 # Large Object Operation Function<a name="EN-US_TOPIC_0289900319"></a>
 openGauss has a large object facility, which provides stream-style access to user data that is stored in a special large-object structure. Streaming access is useful when working with data values that are too large to manipulate conveniently as a whole.
 

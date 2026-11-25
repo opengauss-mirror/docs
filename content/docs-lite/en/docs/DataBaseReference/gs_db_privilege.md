@@ -1,3 +1,8 @@
+---
+description: GS\_DB\_PRIVILEGE records the granting of ANY permissions. Each record corresponds to a piece of authorization information.
+keywords: [openGauss, GS_DB_PRIVILEGE]
+---
+
 # GS\_DB\_PRIVILEGE<a name="EN-US_TOPIC_0000001195704008"></a>
 
 **GS\_DB\_PRIVILEGE**  records the granting of ANY permissions. Each record corresponds to a piece of authorization information.

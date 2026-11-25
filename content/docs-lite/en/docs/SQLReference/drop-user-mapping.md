@@ -1,3 +1,8 @@
+---
+description: DROP USER MAPPING drops a user mapping for a foreign server.
+keywords: [openGauss, DROP]
+---
+
 # DROP USER MAPPING<a name="EN-US_TOPIC_0289900601"></a>
 
 ## Function<a name="en-us_topic_0283136651_section152751851406"></a>

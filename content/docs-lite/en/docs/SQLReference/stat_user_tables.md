@@ -1,3 +1,8 @@
+---
+description: STAT\_USER\_TABLES displays the status information about user-defined ordinary tables in all namespaces on the current node.
+keywords: [openGauss, STAT_USER_TABLES]
+---
+
 # STAT\_USER\_TABLES<a name="EN-US_TOPIC_0289900986"></a>
 
 **STAT\_USER\_TABLES**  displays the status information about user-defined ordinary tables in all namespaces on the current node.

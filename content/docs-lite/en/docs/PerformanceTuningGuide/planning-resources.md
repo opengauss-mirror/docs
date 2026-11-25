@@ -1,3 +1,8 @@
+---
+description: Before configuring resource load management, plan tenant resources based on service models. After services run for a period of time, you can adjust the configurations based on resource usage.
+keywords: [openGauss, Planning Resources]
+---
+
 # Planning Resources<a name="EN-US_TOPIC_0000001147834736"></a>
 
 Before configuring resource load management, plan tenant resources based on service models. After services run for a period of time, you can adjust the configurations based on resource usage.

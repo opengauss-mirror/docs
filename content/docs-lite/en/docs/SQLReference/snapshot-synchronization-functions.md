@@ -1,3 +1,8 @@
+---
+description: Snapshot synchronization functions save the current snapshot and return its identifier.
+keywords: [openGauss, Snapshot Synchronization Functions]
+---
+
 # Snapshot Synchronization Functions<a name="EN-US_TOPIC_0289900332"></a>
 
 Snapshot synchronization functions save the current snapshot and return its identifier.

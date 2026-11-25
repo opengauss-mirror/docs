@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.0.0.
+keywords: [openGauss, PostgreSQL API Compatibility]
+---
+
 # PostgreSQL API Compatibility<a name="EN-US_TOPIC_0000001105555106"></a>
 
 ## Availability<a name="section56086982"></a>

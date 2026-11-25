@@ -1,3 +1,8 @@
+---
+description: After data is imported, you can perform a deep copy to modify a partition key, change a row-store table to a column-store table, or add a partial cluster key. A deep copy re-creates a table and batch.
+keywords: [openGauss, Deep Copy]
+---
+
 # Deep Copy<a name="EN-US_TOPIC_0289900500"></a>
 
 After data is imported, you can perform a deep copy to modify a partition key, change a row-store table to a column-store table, or add a partial cluster key. A deep copy re-creates a table and batch inserts data into the table.

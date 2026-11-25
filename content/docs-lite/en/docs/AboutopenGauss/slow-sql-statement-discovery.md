@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Slow SQL Statement Discovery]
+---
+
 # Slow SQL Statement Discovery<a name="EN-US_TOPIC_0000001105555120"></a>
 
 ## Availability<a name="section1420315335481"></a>

@@ -1,3 +1,8 @@
+---
+description: The administrator can use tablespaces to control the layout of disks where a database is installed. This has the following advantages:.
+keywords: [openGauss, Creating and Managing Tablespaces]
+---
+
 # Creating and Managing Tablespaces<a name="EN-US_TOPIC_0289900987"></a>
 
 ## Background<a name="en-us_topic_0283137616_en-us_topic_0237120297_en-us_topic_0059778849_saaab96d21e01450bb4a62113d37a03c7"></a>

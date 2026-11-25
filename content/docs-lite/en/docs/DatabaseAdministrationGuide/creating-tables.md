@@ -1,3 +1,8 @@
+---
+description: A table is created in a database and can be saved in different databases. Tables under different schemas in a database can have the same name. Before creating a table, refer to [Planning a Storage Mo.
+keywords: [openGauss, Creating Tables]
+---
+
 # Creating Tables<a name="EN-US_TOPIC_0289900736"></a>
 
 ## Background<a name="en-us_topic_0283137451_en-us_topic_0237120299_en-us_topic_0059778113_s98ef8b33479543b8a2dd01ff14f4729b"></a>

@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 2.0.0.
+keywords: [openGauss, Delayed Replay]
+---
+
 # Delayed Replay<a name="EN-US_TOPIC_0000001152275225"></a>
 
 ## Availability<a name="section57017810"></a>

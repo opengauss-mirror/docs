@@ -1,3 +1,8 @@
+---
+description: - Access Control Model.
+keywords: [openGauss, Database Security]
+---
+
 # Database Security<a name="EN-US_TOPIC_0000001105555116"></a>
 
 -   **[Access Control Model](access-control-model.md)**  

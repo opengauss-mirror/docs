@@ -1,3 +1,8 @@
+---
+description: CREATE AGGREGATE defines a new aggregate function.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE AGGREGATE<a name="EN-US_TOPIC_0000001127460521"></a>
 
 ## Function<a name="section12436651105814"></a>

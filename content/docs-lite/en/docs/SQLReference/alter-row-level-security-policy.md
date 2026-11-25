@@ -1,3 +1,8 @@
+---
+description: ALTER ROW LEVEL SECURITY POLICY modifies an existing row-level access control policy, including the policy name and the users and expressions affected by the policy.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER ROW LEVEL SECURITY POLICY<a name="EN-US_TOPIC_0289900230"></a>
 
 ## Function<a name="en-us_topic_0283137062_en-us_topic_0237122069_section196521854173211"></a>

@@ -1,3 +1,8 @@
+---
+description: Introduces Logical Decoding in openGauss, covering .
+keywords: [openGauss, Logical Decoding]
+---
+
 # Logical Decoding<a name="EN-US_TOPIC_0289900774"></a>
 
 -   **[Overview](overview-30.md)**  

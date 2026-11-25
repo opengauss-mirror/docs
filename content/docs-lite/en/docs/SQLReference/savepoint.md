@@ -1,3 +1,8 @@
+---
+description: SAVEPOINT establishes a new savepoint within the current transaction.
+keywords: [openGauss, SAVEPOINT]
+---
+
 # SAVEPOINT<a name="EN-US_TOPIC_0289899933"></a>
 
 ## Function<a name="en-us_topic_0283137144_en-us_topic_0237122183_en-us_topic_0059777880_section532518817713"></a>

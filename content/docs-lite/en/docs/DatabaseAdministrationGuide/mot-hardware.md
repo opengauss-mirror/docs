@@ -1,3 +1,8 @@
+---
+description: The tests were performed on servers with the following configuration and with 10Gbe networking –.
+keywords: [openGauss, MOT Hardware]
+---
+
 # MOT Hardware<a name="EN-US_TOPIC_0289900957"></a>
 
 The tests were performed on servers with the following configuration and with 10Gbe networking –

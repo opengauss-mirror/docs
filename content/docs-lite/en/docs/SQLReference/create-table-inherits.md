@@ -1,3 +1,8 @@
+---
+description: CREATE TABLE AS creates a inheritance table from the results of a query.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE TABLE INHERITS<a name="EN-US_TOPIC_0289900337"></a>
 
 ## Function<a name="en-us_topic_0283136662_en-us_topic_0237122118_en-us_topic_0059777601_sf99d8ce0a2bf4859q21d4835e23639b1"></a>

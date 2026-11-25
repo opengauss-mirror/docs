@@ -1,3 +1,8 @@
+---
+description: - Planning Resources.
+keywords: [openGauss, Resource Management Preparation]
+---
+
 # Resource Management Preparation<a name="EN-US_TOPIC_0000001193874453"></a>
 
 -   **[Planning Resources](planning-resources.md)**  

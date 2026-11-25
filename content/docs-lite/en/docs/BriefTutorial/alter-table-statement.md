@@ -1,3 +1,8 @@
+---
+description: The ALTER TABLE statement modifies tables, including modifying table definitions, renaming tables, renaming specified columns in tables, renaming table constraints, setting table schemas, enabling or.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER TABLE Statement<a name="EN-US_TOPIC_0000001255221831"></a>
 
 The ALTER TABLE statement modifies tables, including modifying table definitions, renaming tables, renaming specified columns in tables, renaming table constraints, setting table schemas,  enabling or disabling row-level security policies, and adding or updating multiple columns.

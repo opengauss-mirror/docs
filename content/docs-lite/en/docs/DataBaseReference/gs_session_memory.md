@@ -1,3 +1,8 @@
+---
+description: GS\_SESSION\_MEMORY collects statistics about memory usage at the session level, including all the memory allocated to GaussDB and Stream threads on DNs for jobs currently executed by users. If t.
+keywords: [openGauss, GS_SESSION_MEMORY]
+---
+
 # GS\_SESSION\_MEMORY<a name="EN-US_TOPIC_0289900076"></a>
 
 **GS\_SESSION\_MEMORY**  collects statistics about memory usage at the session level, including all the memory allocated to GaussDB and Stream threads on DNs for jobs currently executed by users. If the GUC parameter  **enable\_memory\_limit**  is set to  **off**, this view is unavailable.

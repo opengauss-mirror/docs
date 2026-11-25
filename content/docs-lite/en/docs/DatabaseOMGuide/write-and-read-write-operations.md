@@ -1,3 +1,8 @@
+---
+description: Statements for write-only and read/write operations are as follows:.
+keywords: [openGauss, Write and ReadWrite Operations]
+---
+
 # Write and Read/Write Operations<a name="EN-US_TOPIC_0289900963"></a>
 
 Statements for write-only and read/write operations are as follows:

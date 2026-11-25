@@ -1,3 +1,8 @@
+---
+description: DROP SEQUENCE deletes a sequence from the current database.
+keywords: [openGauss, DROP]
+---
+
 # DROP SEQUENCE<a name="EN-US_TOPIC_0289900269"></a>
 
 ## Function<a name="en-us_topic_0283137072_en-us_topic_0237122149_en-us_topic_0059778402_section892464917343"></a>

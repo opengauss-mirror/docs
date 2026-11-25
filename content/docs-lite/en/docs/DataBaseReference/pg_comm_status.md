@@ -1,3 +1,8 @@
+---
+description: PG\_COMM\_STATUS displays the communication library status for a node.
+keywords: [openGauss, PG_COMM_STATUS]
+---
+
 # PG\_COMM\_STATUS<a name="EN-US_TOPIC_0311526905"></a>
 
 **PG\_COMM\_STATUS**  displays the communication library status for  a node.

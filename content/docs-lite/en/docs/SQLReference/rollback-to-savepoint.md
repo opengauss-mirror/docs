@@ -1,3 +1,8 @@
+---
+description: ROLLBACK TO SAVEPOINT rolls back to a savepoint. It implicitly destroys all savepoints that were established after the named savepoint.
+keywords: [openGauss, ROLLBACK]
+---
+
 # ROLLBACK TO SAVEPOINT<a name="EN-US_TOPIC_0289900687"></a>
 
 ## Function<a name="en-us_topic_0283137625_en-us_topic_0237122182_en-us_topic_0059778869_section2860121201518"></a>

@@ -1,3 +1,8 @@
+---
+description: gstrace is used to trace the kernel code execution path, record the kernel data structure, and analyze code performance. The limited trace points and data are fixed in the version and cannot be d.
+keywords: [openGauss, gstrace]
+---
+
 # gstrace<a name="EN-US_TOPIC_0000001197872989"></a>
 
 ## Function<a name="en-us_topic_0287275941_en-us_topic_0237152426_en-us_topic_0059778103_s1d88b9452b2d4c15811c8ad2670b7682"></a>

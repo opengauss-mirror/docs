@@ -1,3 +1,8 @@
+---
+description: PG\_STATIO\_SYS\_SEQUENCES displays I/O status information about all the sequences in the namespace.
+keywords: [openGauss, PG_STATIO_SYS_SEQUENCES]
+---
+
 # PG\_STATIO\_SYS\_SEQUENCES<a name="EN-US_TOPIC_0289899955"></a>
 
 **PG\_STATIO\_SYS\_SEQUENCES**  displays I/O status information about all the sequences in the namespace.

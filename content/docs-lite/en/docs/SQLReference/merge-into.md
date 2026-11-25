@@ -1,3 +1,8 @@
+---
+description: MERGE INTO conditionally matches data in a target table with that in a source table. If data matches, UPDATE is executed on the target table; if data does not match, INSERT is execute.
+keywords: [openGauss, MERGE]
+---
+
 # MERGE INTO<a name="EN-US_TOPIC_0289900297"></a>
 
 ## Function<a name="en-us_topic_0283137308_en-us_topic_0237122170_section11462163155618"></a>

@@ -1,3 +1,8 @@
+---
+description: To ensure secure communication between the database server and its clients, secure SSH tunnels can be established between the database server and clients. SSH is a reliable security protocol dedicated.
+keywords: [openGauss, Establishing Secure TCPIP Connections in SSH Tunnel Mode]
+---
+
 # Establishing Secure TCP/IP Connections in SSH Tunnel Mode<a name="EN-US_TOPIC_0289900939"></a>
 
 ## Background<a name="en-us_topic_0283136790_en-us_topic_0237121093_en-us_topic_0059778333_section59301241111412"></a>

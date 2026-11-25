@@ -1,3 +1,8 @@
+---
+description: GS\_STAT\_SESSION\_CU queries the CU hit rate of running sessions on each node of openGauss. The data about a session is cleared when you exit this session or restart openGauss.
+keywords: [openGauss, GS_STAT_SESSION_CU]
+---
+
 # GS\_STAT\_SESSION\_CU<a name="EN-US_TOPIC_0289900990"></a>
 
 **GS\_STAT\_SESSION\_CU**  queries the CU hit rate of running sessions on each node of openGauss. The data about a session is cleared when you exit this session or restart openGauss.

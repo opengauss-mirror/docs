@@ -1,3 +1,8 @@
+---
+description: PG\_STAT\_USER\_FUNCTIONS shows user-defined function status information in the namespace. \(The language of the function is non-internal language.\).
+keywords: [openGauss, PG_STAT_USER_FUNCTIONS]
+---
+
 # PG\_STAT\_USER\_FUNCTIONS<a name="EN-US_TOPIC_0289900978"></a>
 
 **PG\_STAT\_USER\_FUNCTIONS**  shows user-defined function status information in the namespace. \(The language of the function is non-internal language.\) 

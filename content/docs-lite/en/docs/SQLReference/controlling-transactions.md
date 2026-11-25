@@ -1,3 +1,8 @@
+---
+description: A transaction is a user-defined sequence of database operations, which form an integral unit of work.
+keywords: [openGauss, Controlling Transactions]
+---
+
 # Controlling Transactions<a name="EN-US_TOPIC_0289899986"></a>
 
 A transaction is a user-defined sequence of database operations, which form an integral unit of work.

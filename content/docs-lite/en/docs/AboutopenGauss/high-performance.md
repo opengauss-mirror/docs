@@ -1,3 +1,8 @@
+---
+description: Introduces High Performance in openGauss, covering .
+keywords: [openGauss, High Performance]
+---
+
 # High Performance<a name="EN-US_TOPIC_0000001151995071"></a>
 
 -   **[CBO Optimizer](cbo-optimizer.md)**  

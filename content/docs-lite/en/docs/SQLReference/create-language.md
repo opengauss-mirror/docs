@@ -1,3 +1,8 @@
+---
+description: CREATE LANGUAGE defines a new procedural language. A single-node system or centralized system does not support creating procedural languages.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE LANGUAGE<a name="EN-US_TOPIC_0000001080607732"></a>
 
 ## Function<a name="section113331284191"></a>

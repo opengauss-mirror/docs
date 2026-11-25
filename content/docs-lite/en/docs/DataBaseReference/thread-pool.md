@@ -1,3 +1,8 @@
+---
+description: Parameter description: Specifies whether to enable the thread pool function. This parameter is a POSTMASTER parameter. Set it based on instructions provided in [Table 1](../DatabaseAdministration.
+keywords: [openGauss, Thread Pool]
+---
+
 # Thread Pool<a name="EN-US_TOPIC_0000001130026843"></a>
 
 ## enable\_thread\_pool<a name="en-us_topic_0283137548_en-us_topic_0237124743_section97160555612"></a>

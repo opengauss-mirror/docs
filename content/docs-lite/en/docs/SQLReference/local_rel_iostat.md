@@ -1,3 +1,8 @@
+---
+description: LOCAL\_REL\_IOSTAT displays the accumulated I/O status of all data files on the current node.
+keywords: [openGauss, LOCAL_REL_IOSTAT]
+---
+
 # LOCAL\_REL\_IOSTAT<a name="EN-US_TOPIC_0289899847"></a>
 
 **LOCAL\_REL\_IOSTAT**  displays the accumulated I/O status of all data files on the current node.

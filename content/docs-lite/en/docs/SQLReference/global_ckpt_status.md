@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_CKPT\_STATUS displays the checkpoint information and log flushing information about all instances in openGauss.
+keywords: [openGauss, GLOBAL_CKPT_STATUS]
+---
+
 # GLOBAL\_CKPT\_STATUS<a name="EN-US_TOPIC_0289900342"></a>
 
 **GLOBAL\_CKPT\_STATUS**  displays the checkpoint information and log flushing information about all instances in openGauss.

@@ -1,3 +1,8 @@
+---
+description: PREDICT BY uses a trained model to perform inference tasks.
+keywords: [openGauss, PREDICT]
+---
+
 # PREDICT BY<a name="EN-US_TOPIC_0000001117479700"></a>
 
 ## Function<a name="section1596413142510"></a>

@@ -1,3 +1,8 @@
+---
+description: Table 1 SQL syntax formats.
+keywords: [openGauss, SQL Syntax Formats]
+---
+
 # SQL Syntax Formats<a name="EN-US_TOPIC_0000001487936854"></a>
 
 **Table 1** SQL syntax formats

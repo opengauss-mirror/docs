@@ -1,3 +1,8 @@
+---
+description: 1. Run the ethtool -i enp3s0 command to check whether the NIC firmware version in the current environment is 2.4.1.0. If not, you are advised to replace it with 2.4.1.0 for better performance.
+keywords: [openGauss, Confirming and Updating the NIC Firmware]
+---
+
 # Confirming and Updating the NIC Firmware<a name="EN-US_TOPIC_0289900065"></a>
 
 1.  Run the  **ethtool -i enp3s0**  command to check whether the NIC firmware version in the current environment is 2.4.1.0. If not, you are advised to replace it with 2.4.1.0 for better performance.

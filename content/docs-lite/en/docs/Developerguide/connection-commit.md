@@ -1,3 +1,8 @@
+---
+description: This method commits the currently pending transaction to the database.
+keywords: [openGauss, connection.commit]
+---
+
 # connection.commit\(\)<a name="EN-US_TOPIC_0000001127067907"></a>
 
 ## Function<a name="section5708152714306"></a>

@@ -1,3 +1,8 @@
+---
+description: The following table briefly compares the various features of the openGauss disk-based storage engine and the MOT storage engine.
+keywords: [openGauss, Comparison Disk vs. MOT]
+---
+
 # Comparison: Disk vs. MOT<a name="EN-US_TOPIC_0289900141"></a>
 
 The following table briefly compares the various features of the openGauss disk-based storage engine and the MOT storage engine.

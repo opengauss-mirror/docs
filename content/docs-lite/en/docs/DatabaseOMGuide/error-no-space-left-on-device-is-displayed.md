@@ -1,3 +1,8 @@
+---
+description: The following error message is displayed when the database is being used:.
+keywords: [openGauss, ErrorNo space left on device Is Displayed]
+---
+
 # "Error:No space left on device" Is Displayed<a name="EN-US_TOPIC_0291615090"></a>
 
 ## Symptom<a name="section668912633713"></a>

@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.0.0.
+keywords: [openGauss, Automatic Job Retry upon Failure]
+---
+
 # Automatic Job Retry upon Failure<a name="EN-US_TOPIC_0000001152275231"></a>
 
 ## Availability<a name="section57017810"></a>

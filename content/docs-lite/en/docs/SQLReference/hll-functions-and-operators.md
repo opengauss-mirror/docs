@@ -1,3 +1,8 @@
+---
+description: - hll\_hash\_boolean\(bool\).
+keywords: [openGauss, HLL Functions and Operators]
+---
+
 # HLL Functions and Operators<a name="EN-US_TOPIC_0309006541"></a>
 
 ## Hash Functions<a name="section161615718554"></a>

@@ -1,3 +1,8 @@
+---
+description: Open Database Connectivity \(ODBC\) is a Microsoft API for accessing databases based on the X/OPEN CLI. Applications interact with the database through the APIs provided by ODBC, which enhances their.
+keywords: [openGauss, ODBC]
+---
+
 # ODBC<a name="EN-US_TOPIC_0000001210461846"></a>
 
 Open Database Connectivity \(ODBC\) is a Microsoft API for accessing databases based on the X/OPEN CLI. Applications interact with the database through the APIs provided by ODBC, which enhances their portability, scalability, and maintainability.
@@ -5,7 +10,7 @@ Open Database Connectivity \(ODBC\) is a Microsoft API for accessing databases b
 [Figure 1](#en-us_topic_0283137057_fig1255101034110)  shows the system structure of ODBC.
 
 **Figure  1**  ODBC system structure<a name="en-us_topic_0283137057_fig1255101034110"></a>  
-![](figures/odbc-system-structure.png "odbc-system-structure")
+![ODBC](figures/odbc-system-structure.png "odbc-system-structure")
 
 openGauss supports ODBC in the following environments.
 
@@ -449,7 +454,7 @@ Run the  **./isql -v** *MPPODBC*  command \(***MPPODBC***  is the data source na
 ## Development Process<a name="section3537202314458"></a>
 
 **Figure  2**  ODBC-based application development process<a name="en-us_topic_0283137079_en-us_topic_0237120409_en-us_topic_0059778957_fba9450765c4b4dc8b2809b91c8de76b3"></a>  
-![](figures/odbc-based-application-development-process.png "odbc-based-application-development-process")
+![Development Process](figures/odbc-based-application-development-process.png "odbc-based-application-development-process")
 
 ## Common APIs<a name="section1274764216461"></a>
 

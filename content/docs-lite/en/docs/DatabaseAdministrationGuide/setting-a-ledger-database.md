@@ -1,3 +1,8 @@
+---
+description: Introduces Setting a Ledger Database in openGauss, covering .
+keywords: [openGauss, Setting a Ledger Database]
+---
+
 # Setting a Ledger Database<a name="EN-US_TOPIC_0000001100127484"></a>
 
 -   **[Overview](overview-leader-database.md)**  

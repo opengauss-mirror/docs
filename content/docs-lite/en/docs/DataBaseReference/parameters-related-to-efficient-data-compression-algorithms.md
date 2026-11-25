@@ -1,3 +1,8 @@
+---
+description: Parameter description: Similar to shared\_buffers, this parameter is used to set the size of the page compression block address mapping management buffer.
+keywords: [openGauss, Parameters Related to Efficient Data Compression Algorithms]
+---
+
 # Parameters Related to Efficient Data Compression Algorithms<a name="EN-US_TOPIC_0000001331391822"></a>
 
 ## pca\_shared\_buffer<a name="section484914735817"></a>

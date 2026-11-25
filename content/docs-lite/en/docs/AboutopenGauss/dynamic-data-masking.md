@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Dynamic Data Masking]
+---
+
 # Dynamic Data Masking<a name="EN-US_TOPIC_0000001152275229"></a>
 
 ## Availability<a name="section17746747"></a>

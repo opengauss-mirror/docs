@@ -1,3 +1,8 @@
+---
+description: Figure 1 shows the syntax diagram for a return statement.
+keywords: [openGauss, RETURN]
+---
+
 # RETURN<a name="EN-US_TOPIC_0289900893"></a>
 
 ## Syntax<a name="en-us_topic_0283137214_en-us_topic_0237122231_en-us_topic_0059778007_s016991a2aeae4600b9f678c46d8de828"></a>
@@ -5,7 +10,7 @@
 [Figure 1](#en-us_topic_0283137214_en-us_topic_0237122231_en-us_topic_0059778007_f7ff63e01e2a840c69a1c17b91e7dc3eb)  shows the syntax diagram for a return statement.
 
 **Figure  1**  return\_clause::=<a name="en-us_topic_0283137214_en-us_topic_0237122231_en-us_topic_0059778007_f7ff63e01e2a840c69a1c17b91e7dc3eb"></a>  
-![](figures/return_clause.jpg "return_clause")
+![Syntax](figures/return_clause.jpg "return_clause")
 
 The above syntax diagram is explained as follows:
 

@@ -1,3 +1,8 @@
+---
+description: - Supports statements for querying a single table.
+keywords: [openGauss, Support and Constraints]
+---
+
 # Support and Constraints<a name="EN-US_TOPIC_0295970209"></a>
 
 ## Supported Scenarios<a name="section1490618598164"></a>

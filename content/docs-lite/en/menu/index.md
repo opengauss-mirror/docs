@@ -1,5 +1,7 @@
 ---
 headless: true
+description: Navigation index of the openGauss Lite (docs-lite) English documentation, listing release notes and core guide entries.
+keywords: [openGauss, docs-lite, navigation index, release notes]
 ---
 
 

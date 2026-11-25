@@ -1,3 +1,8 @@
+---
+description: ALTER ROLE modifies role attributes.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER ROLE<a name="EN-US_TOPIC_0289900826"></a>
 
 ## Function<a name="en-us_topic_0283137195_en-us_topic_0237122068_en-us_topic_0059778744_sa4ec5e4feca4419193486c30e3c50708"></a>

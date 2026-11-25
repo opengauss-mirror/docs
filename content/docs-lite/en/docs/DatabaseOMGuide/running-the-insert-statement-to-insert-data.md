@@ -1,3 +1,8 @@
+---
+description: Run the INSERT statement to write data into the openGauss database in either of the following ways:.
+keywords: [openGauss, Running the INSERT Statement to Insert Data]
+---
+
 # Running the INSERT Statement to Insert Data<a name="EN-US_TOPIC_0289900427"></a>
 
 Run the  **[INSERT](../SQLReference/insert.md)**  statement to write data into the openGauss database in either of the following ways:

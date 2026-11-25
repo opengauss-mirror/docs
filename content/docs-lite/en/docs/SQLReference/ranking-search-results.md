@@ -1,3 +1,8 @@
+---
+description: Ranking attempts to measure how relevant documents are to a particular query, so that when there are many matches the most relevant ones can be shown first. openGauss provides two predefined ranking f.
+keywords: [openGauss, Ranking Search Results]
+---
+
 # Ranking Search Results<a name="EN-US_TOPIC_0289900374"></a>
 
 Ranking attempts to measure how relevant documents are to a particular query, so that when there are many matches the most relevant ones can be shown first. openGauss provides two predefined ranking functions. The functions take into account lexical, proximity, and structural information; that is, they consider how often the query terms appear in the document, how close together the terms are in the document, and how important is the part of the document where they occur. However, the concept of relevancy is vague and application-specific. Different applications might require additional information for ranking, for example, document modification time. The built-in ranking functions are only examples. You can write your own ranking functions and/or combine their results with additional factors to fit your specific needs.

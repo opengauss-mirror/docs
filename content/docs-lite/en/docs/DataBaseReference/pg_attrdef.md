@@ -1,3 +1,8 @@
+---
+description: PG\_ATTRDEF records default values of columns.
+keywords: [openGauss, PG_ATTRDEF]
+---
+
 # PG\_ATTRDEF<a name="EN-US_TOPIC_0289900516"></a>
 
 **PG\_ATTRDEF**  records default values of columns.

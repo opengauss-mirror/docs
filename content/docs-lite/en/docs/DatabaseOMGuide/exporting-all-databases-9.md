@@ -1,3 +1,8 @@
+---
+description: You can use gs\_dumpall to export full information of all databases in openGauss, including information about each database and global objects. You can specify the information to export as follo.
+keywords: [openGauss, Exporting All Databases]
+---
+
 # Exporting All Databases<a name="EN-US_TOPIC_0289900968"></a>
 
 You can use  **gs\_dumpall**  to export full information of all databases in openGauss, including information about each database and global objects. You can specify the information to export as follows:

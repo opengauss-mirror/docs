@@ -1,3 +1,8 @@
+---
+description: Transparent data encryption (TDE) is used to encrypt data when the database writes the data to the storage medium and automatically decrypts the data when reading the data from the storage medium. Thi.
+keywords: [openGauss, Configuring TDE]
+---
+
 # Configuring TDE<a name="EN-US_TOPIC_0000001104244594"></a>
 
 ## Overview<a name="section1326254143019"></a>

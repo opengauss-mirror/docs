@@ -1,3 +1,8 @@
+---
+description: Table 1 lists all available types.
+keywords: [openGauss, Data Types]
+---
+
 # Data Types<a name="EN-US_TOPIC_0000001255021821"></a>
 
 ## Numeric Types<a name="section7311016172014"></a>

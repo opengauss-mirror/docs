@@ -1,3 +1,8 @@
+---
+description: Text search configuration specifies the following components required for converting a document into a tsvector:.
+keywords: [openGauss, Configuration Examples]
+---
+
 # Configuration Examples<a name="EN-US_TOPIC_0289900764"></a>
 
 Text search configuration specifies the following components required for converting a document into a  **tsvector**:

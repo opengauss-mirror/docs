@@ -1,3 +1,8 @@
+---
+description: Participating in Contribution.
+keywords: [openGauss, Contribution]
+---
+
 # Contribution<a name="EN-US_TOPIC_0289899196"></a>
 
 **Participating in Contribution**

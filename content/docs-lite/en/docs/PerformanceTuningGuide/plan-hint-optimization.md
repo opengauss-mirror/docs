@@ -1,3 +1,8 @@
+---
+description: In plan hints, you can specify a join order, join and scan operations, and the number of rows in a result to tune an execution plan, improving query performance.
+keywords: [openGauss, Plan Hint Optimization]
+---
+
 # Plan Hint Optimization<a name="EN-US_TOPIC_0289900090"></a>
 
 In plan hints, you can specify a join order, join and scan operations, and the number of rows in a result to tune an execution plan, improving query performance.
@@ -256,5 +261,5 @@ group by i_product_name
 ;
 ```
 
-![](figures/3-15-4-9.png)
+![Examples](figures/3-15-4-9.png)
 

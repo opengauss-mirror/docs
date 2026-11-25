@@ -1,3 +1,8 @@
+---
+description: A build/script/cmake\_package\_mini.sh script is provided for building openGauss Lite and generating the installation package.
+keywords: [openGauss, Version Build]
+---
+
 # Version Build<a name="EN-US_TOPIC_0289899545"></a>
 
 A  **build/script/cmake\_package\_mini.sh**  script is provided for building openGauss Lite and generating the installation package.

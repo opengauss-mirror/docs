@@ -1,3 +1,8 @@
+---
+description: PG\_OPCLASS defines index access method operator classes.
+keywords: [openGauss, PG_OPCLASS]
+---
+
 # PG\_OPCLASS<a name="EN-US_TOPIC_0289899823"></a>
 
 **PG\_OPCLASS**  defines index access method operator classes.

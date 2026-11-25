@@ -1,3 +1,8 @@
+---
+description: Introduces DECLARE Syntax in openGauss, covering .
+keywords: [openGauss, DECLARE Syntax]
+---
+
 # DECLARE Syntax<a name="EN-US_TOPIC_0289899856"></a>
 
 -   **[Basic Structure](basic-structure.md)**  

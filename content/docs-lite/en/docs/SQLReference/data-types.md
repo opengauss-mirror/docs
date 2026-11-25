@@ -1,3 +1,8 @@
+---
+description: openGauss supports implicit conversions between certain data types. For details, seePG\_CAST .
+keywords: [openGauss, Data Types]
+---
+
 # Data Types<a name="EN-US_TOPIC_0289900421"></a>
 
 openGauss supports implicit conversions between certain data types. For details, see[PG\_CAST](../DataBaseReference/pg_cast.md)  .

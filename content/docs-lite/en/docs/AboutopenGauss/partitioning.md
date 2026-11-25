@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Partitioning]
+---
+
 # Partitioning<a name="EN-US_TOPIC_0000001105555110"></a>
 
 ## Availability<a name="section3104013"></a>

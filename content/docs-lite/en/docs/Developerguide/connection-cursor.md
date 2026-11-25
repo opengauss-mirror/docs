@@ -1,3 +1,8 @@
+---
+description: This method returns a new cursor object.
+keywords: [openGauss, connection.cursor]
+---
+
 # connection.cursor\(\)<a name="EN-US_TOPIC_0000001127310747"></a>
 
 ## Function<a name="section5708152714306"></a>

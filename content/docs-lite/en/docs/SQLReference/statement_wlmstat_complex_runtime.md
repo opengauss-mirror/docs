@@ -1,3 +1,8 @@
+---
+description: STATEMENT\_WLMSTAT\_COMPLEX\_RUNTIME displays load management information about ongoing jobs executed by the current user.
+keywords: [openGauss, STATEMENT_WLMSTAT_COMPLEX_RUNTIME]
+---
+
 # STATEMENT\_WLMSTAT\_COMPLEX\_RUNTIME<a name="EN-US_TOPIC_0289900404"></a>
 
 **STATEMENT\_WLMSTAT\_COMPLEX\_RUNTIME**  displays load management information about ongoing jobs executed by the current user.

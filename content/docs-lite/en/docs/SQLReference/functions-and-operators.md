@@ -1,3 +1,8 @@
+---
+description: - Logical Operators.
+keywords: [openGauss, Functions and Operators]
+---
+
 # Functions and Operators<a name="EN-US_TOPIC_0289900013"></a>
 
 -   **[Logical Operators](logical-operators.md)**  

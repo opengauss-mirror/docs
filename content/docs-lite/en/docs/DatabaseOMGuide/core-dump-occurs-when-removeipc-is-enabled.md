@@ -1,3 +1,8 @@
+---
+description: The RemoveIPC parameter in the OS configuration is set to yes. The database breaks down during running, and the following log information is displayed:.
+keywords: [openGauss, Core Dump Occurs when RemoveIPC Is Enabled]
+---
+
 # Core Dump Occurs when RemoveIPC Is Enabled<a name="EN-US_TOPIC_0289900135"></a>
 
 ## Symptom<a name="en-us_topic_0283136554_section54529241124"></a>

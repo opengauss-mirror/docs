@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, SQL Hints]
+---
+
 # SQL Hints<a name="EN-US_TOPIC_0000001152195131"></a>
 
 ## Availability<a name="section56086982"></a>

@@ -1,3 +1,8 @@
+---
+description: SQLGetData is used to retrieve data for a single column in the result set. It can be called for many times to retrieve data of variable lengths.
+keywords: [openGauss, SQLGetData]
+---
+
 # SQLGetData<a name="EN-US_TOPIC_0242371453"></a>
 
 ## Function<a name="en-us_topic_0238272899_en-us_topic_0237120429_en-us_topic_0059778461_s4c79ae112a6f415a9fed38561c46eebc"></a>

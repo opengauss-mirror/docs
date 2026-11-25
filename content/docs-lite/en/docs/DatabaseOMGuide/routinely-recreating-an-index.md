@@ -1,3 +1,8 @@
+---
+description: When data deletion is repeatedly performed in the database, index keys will be deleted from the index pages, resulting in index bloat. Recreating an index routinely improves query efficiency.
+keywords: [openGauss, Routinely Recreating an Index]
+---
+
 # Routinely Recreating an Index<a name="EN-US_TOPIC_0289897018"></a>
 
 ## Background<a name="en-us_topic_0283140542_en-us_topic_0237088811_en-us_topic_0059779198_sb20e9236c2ee4359bd71385a42b73ce8"></a>

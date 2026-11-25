@@ -1,3 +1,8 @@
+---
+description: Records PLPGSQL object \(stored procedure, function, package, and package body\) compilation information. For details, see the following column description.
+keywords: [openGauss, DBE_PLDEVELOPER.gs_source]
+---
+
 # DBE\_PLDEVELOPER.gs\_source<a name="EN-US_TOPIC_0000001214644937"></a>
 
 Records PLPGSQL object \(stored procedure, function, package, and package body\) compilation information. For details, see the following column description.

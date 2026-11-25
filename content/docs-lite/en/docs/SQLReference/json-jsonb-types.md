@@ -1,3 +1,8 @@
+---
+description: JavaScript Object Notation \(JSON\) data can be a single scalar, an array, or a key-value pair object. The array and object can be called a container:.
+keywords: [openGauss, JSONJSONB Types]
+---
+
 # JSON/JSONB Types<a name="EN-US_TOPIC_0289899996"></a>
 
 JavaScript Object Notation \(JSON\) data can be a single scalar, an array, or a key-value pair object. The array and object can be called a container:

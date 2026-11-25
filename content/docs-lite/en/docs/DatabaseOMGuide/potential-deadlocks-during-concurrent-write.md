@@ -1,3 +1,8 @@
+---
+description: Whenever transactions involve updates of more than one table, there is always the possibility that concurrently running transactions become deadlocked when they both try to write to the same set of ta.
+keywords: [openGauss, Potential Deadlocks During Concurrent Write]
+---
+
 # Potential Deadlocks During Concurrent Write<a name="EN-US_TOPIC_0289899942"></a>
 
 Whenever transactions involve updates of more than one table, there is always the possibility that concurrently running transactions become deadlocked when they both try to write to the same set of tables. A transaction releases all of its locks at once when it either commits or rolls back; it does not relinquish locks one at a time. For example, transactions T1 and T2 start at roughly the same time.

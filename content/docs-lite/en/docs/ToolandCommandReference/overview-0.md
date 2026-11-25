@@ -1,3 +1,8 @@
+---
+description: - Connect to the database: By default, only the local server can be connected. To connect to a remote database, you must configure the server. For details, see [Gsql Connection and Usage](../Ge.
+keywords: [openGauss, Overview]
+---
+
 # Overview<a name="EN-US_TOPIC_0294748922"></a>
 
 ## Basic Features<a name="en-us_topic_0059778819_s8ce37a15763045549311205e19f06a45"></a>

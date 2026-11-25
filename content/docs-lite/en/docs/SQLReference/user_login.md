@@ -1,3 +1,8 @@
+---
+description: USER\_LOGIN records the number of user logins and logouts.
+keywords: [openGauss, USER_LOGIN]
+---
+
 # USER\_LOGIN<a name="EN-US_TOPIC_0289900488"></a>
 
 **USER\_LOGIN**  records the number of user logins and logouts.

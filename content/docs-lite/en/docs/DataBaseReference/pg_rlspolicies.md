@@ -1,3 +1,8 @@
+---
+description: PG\_RLSPOLICIES contains row-level access control policies.
+keywords: [openGauss, PG_RLSPOLICIES]
+---
+
 # PG\_RLSPOLICIES<a name="EN-US_TOPIC_0289900609"></a>
 
 **PG\_RLSPOLICIES**  contains row-level access control policies.

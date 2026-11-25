@@ -1,3 +1,8 @@
+---
+description: For details about the JSON/JSONB data type, see JSON/JSONB Types.
+keywords: [openGauss, JSONJSONB Functions and Operators]
+---
+
 # JSON/JSONB Functions and Operators<a name="EN-US_TOPIC_0289900983"></a>
 
 For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-types.md).

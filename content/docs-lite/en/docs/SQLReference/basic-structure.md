@@ -1,3 +1,8 @@
+---
+description: A PL/SQL block can contain a sub-block which can be placed in any section. The following describes the architecture of a PL/SQL block:.
+keywords: [openGauss, Basic Structure]
+---
+
 # Basic Structure<a name="EN-US_TOPIC_0289900940"></a>
 
 ## Structure<a name="en-us_topic_0283136783_en-us_topic_0237122217_en-us_topic_0059778559_s764fc3b756ed40e6a5ad9af5559feafa"></a>

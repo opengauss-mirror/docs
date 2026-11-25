@@ -1,3 +1,8 @@
+---
+description: A subscription is the downstream side of logical replication. The node where a subscription is defined is called the subscriber. A subscription defines the connection to another database and the set o.
+keywords: [openGauss, Subscriptions]
+---
+
 # Subscriptions<a name="EN-US_TOPIC_0289900926"></a>
 
 A subscription is the downstream side of logical replication. The node where a subscription is defined is called the subscriber. A subscription defines the connection to another database and the set of publications (one or more) that it wants to subscribe to.

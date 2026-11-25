@@ -1,3 +1,8 @@
+---
+description: To improve query efficiency, comply with the following rules when designing columns:.
+keywords: [openGauss, Field Design]
+---
+
 # Field Design<a name="EN-US_TOPIC_0000001102708106"></a>
 
 ## Selecting a Data Type<a name="section52674274151022"></a>

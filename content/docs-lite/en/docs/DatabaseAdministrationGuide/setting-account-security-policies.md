@@ -1,3 +1,8 @@
+---
+description: For data security purposes, openGauss provides a series of security measures, such as automatically locking and unlocking accounts, manually locking and unlocking abnormal accounts, and deleting accou.
+keywords: [openGauss, Setting Account Security Policies]
+---
+
 # Setting Account Security Policies<a name="EN-US_TOPIC_0289901008"></a>
 
 ## Background<a name="en-us_topic_0283136674_en-us_topic_0237121108_en-us_topic_0151096060_en-us_topic_0085032584_en-us_topic_0059778228_section1763231181417"></a>

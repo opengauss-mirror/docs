@@ -1,3 +1,8 @@
+---
+description: DELETE deletes rows that satisfy the WHERE clause from the specified table. If the WHERE clause is absent, the effect is to delete all rows in the table. The result is a valid, but an.
+keywords: [openGauss, DELETE]
+---
+
 # DELETE<a name="EN-US_TOPIC_0289900955"></a>
 
 ## Function<a name="en-us_topic_0283136795_en-us_topic_0237122131_en-us_topic_0059778379_se9507fb26df547a795ac7940e3a19ecf"></a>

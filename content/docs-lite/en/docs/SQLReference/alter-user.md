@@ -1,3 +1,8 @@
+---
+description: ALTER USER modifies the attributes of a database user.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER USER<a name="EN-US_TOPIC_0289900744"></a>
 
 ## Function<a name="en-us_topic_0283136971_en-us_topic_0237122083_en-us_topic_0059777461_s46f3e0aac3a84502bc20eee219bef9cf"></a>

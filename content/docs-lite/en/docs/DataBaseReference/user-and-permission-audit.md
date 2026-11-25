@@ -1,3 +1,8 @@
+---
+description: Parameter description: Specifies whether to audit the openGauss user's login \(including login success and failure\) and logout.
+keywords: [openGauss, User and Permission Audit]
+---
+
 # User and Permission Audit<a name="EN-US_TOPIC_0289900660"></a>
 
 ## audit\_login\_logout<a name="en-us_topic_0283136655_en-us_topic_0237124746_en-us_topic_0059778731_se04dd9d17c9445579ca268e0f74196fe"></a>

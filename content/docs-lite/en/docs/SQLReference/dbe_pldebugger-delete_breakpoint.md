@@ -1,3 +1,8 @@
+---
+description: During debugging on the debug end, call delete\_breakpoint to delete the existing breakpoint.
+keywords: [openGauss, DBE_PLDEBUGGER.delete_breakpoint]
+---
+
 # DBE\_PLDEBUGGER.delete\_breakpoint<a name="EN-US_TOPIC_0000001116086116"></a>
 
 During debugging on the debug end, call  **delete\_breakpoint**  to delete the existing breakpoint.

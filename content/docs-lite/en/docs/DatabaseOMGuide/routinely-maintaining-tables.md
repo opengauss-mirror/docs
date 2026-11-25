@@ -1,3 +1,8 @@
+---
+description: To ensure proper database running, after insert and delete operations, you need to routinely run VACUUM FULL and ANALYZE as appropriate for customer scenarios and update statistics to obta.
+keywords: [openGauss, Routinely Maintaining Tables]
+---
+
 # Routinely Maintaining Tables<a name="EN-US_TOPIC_0289897016"></a>
 
 To ensure proper database running, after insert and delete operations, you need to routinely run  **VACUUM FULL**  and  **ANALYZE**  as appropriate for customer scenarios and update statistics to obtain better performance.

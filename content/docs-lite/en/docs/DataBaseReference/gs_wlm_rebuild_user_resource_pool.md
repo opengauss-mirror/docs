@@ -1,3 +1,8 @@
+---
+description: GS\_WLM\_REBUILD\_USER\_RESOURCE\_POOL is used to rebuild a user's resource pool information in memory on the current connection node, with no output. This view is only used as a remedy when reso.
+keywords: [openGauss, GS_WLM_REBUILD_USER_RESOURCE_POOL]
+---
+
 # GS\_WLM\_REBUILD\_USER\_RESOURCE\_POOL<a name="EN-US_TOPIC_0289900396"></a>
 
 **GS\_WLM\_REBUILD\_USER\_RESOURCE\_POOL**  is used to rebuild a user's resource pool information in memory on the current connection node, with no output. This view is only used as a remedy when resource pool information is missing or misplaced. Only the user with sysadmin permission can query this view.

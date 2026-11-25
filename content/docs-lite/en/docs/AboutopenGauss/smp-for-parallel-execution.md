@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, SMP for Parallel Execution]
+---
+
 # SMP for Parallel Execution<a name="EN-US_TOPIC_0000001105395260"></a>
 
 ## Availability<a name="section3480125215575"></a>

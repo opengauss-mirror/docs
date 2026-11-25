@@ -1,3 +1,8 @@
+---
+description: Schemas function as models. Schema management allows multiple users to use the same database without mutual impacts, to organize database objects as manageable logical groups, and to add third-party a.
+keywords: [openGauss, Creating and Managing Schemas]
+---
+
 # Creating and Managing Schemas<a name="EN-US_TOPIC_0289900215"></a>
 
 ## Background<a name="en-us_topic_0283136693_en-us_topic_0237120306_en-us_topic_0059779372_sccec47ed8ad54f89b98b83caf9a0b4fd"></a>

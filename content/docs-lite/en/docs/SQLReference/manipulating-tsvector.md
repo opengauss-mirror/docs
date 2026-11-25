@@ -1,3 +1,8 @@
+---
+description: openGauss provides functions and operators that can be used to manipulate documents that are already in tsvector type.
+keywords: [openGauss, Manipulating tsvector]
+---
+
 # Manipulating tsvector<a name="EN-US_TOPIC_0289900182"></a>
 
 openGauss provides functions and operators that can be used to manipulate documents that are already in  **tsvector**  type.

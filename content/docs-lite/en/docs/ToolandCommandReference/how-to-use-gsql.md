@@ -1,3 +1,8 @@
+---
+description: The user using gsql must have the permission to access the database.
+keywords: [openGauss, How to Use gsql]
+---
+
 # How to Use gsql<a name="EN-US_TOPIC_0294748989"></a>
 
 ## Prerequisites<a name="en-us_topic_0059779027_s7c2e433674384463a42b1e562a499257"></a>

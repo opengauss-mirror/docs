@@ -1,3 +1,8 @@
+---
+description: The following table lists the extended functions supported by openGauss. These functions are for reference only.
+keywords: [openGauss, Extended Functions]
+---
+
 # Extended Functions<a name="EN-US_TOPIC_0289900972"></a>
 
 The following table lists the extended functions supported by openGauss. These functions are for reference only.

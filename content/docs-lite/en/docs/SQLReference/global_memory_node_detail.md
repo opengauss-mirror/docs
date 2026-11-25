@@ -1,3 +1,8 @@
+---
+description: The memory usage of all normal nodes in openGauss is displayed.
+keywords: [openGauss, GLOBAL_MEMORY_NODE_DETAIL]
+---
+
 # GLOBAL\_MEMORY\_NODE\_DETAIL<a name="EN-US_TOPIC_0289900506"></a>
 
 The memory usage of all normal nodes in openGauss is displayed.

@@ -1,3 +1,8 @@
+---
+description: DROP OWNED deletes the database objects owned by a database role.
+keywords: [openGauss, DROP]
+---
+
 # DROP OWNED<a name="EN-US_TOPIC_0289900859"></a>
 
 ## Function<a name="en-us_topic_0283136635_en-us_topic_0237122143_en-us_topic_0059777620_sa3265773225d4612b9bafd61c332eae0"></a>

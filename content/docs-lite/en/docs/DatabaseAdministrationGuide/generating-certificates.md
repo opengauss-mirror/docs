@@ -1,3 +1,8 @@
+---
+description: In the test environment, users can use either of the following methods to test digital certificates. In a customer's operating environment, only a digital certificate obtained from a CA can be used.
+keywords: [openGauss, Generating Certificates]
+---
+
 # Generating Certificates<a name="EN-US_TOPIC_0289900216"></a>
 
 ## Scenarios<a name="en-us_topic_0283137709_en-us_topic_0237121096_en-us_topic_0059777789_section10143135711718"></a>

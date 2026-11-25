@@ -1,3 +1,8 @@
+---
+description: openGauss features high performance, availability, security, and maintainability.
+keywords: [openGauss, Product Features]
+---
+
 # Product Features<a name="EN-US_TOPIC_0294809831"></a>
 
 openGauss features high performance, availability, security, and maintainability.

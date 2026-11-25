@@ -1,3 +1,8 @@
+---
+description: The following external openGauss tools have been modified in order to support MOT. Make sure to use the most recent version of each. An overview describing MOT-related usage is provided below. For a f.
+keywords: [openGauss, MOT External Support Tools]
+---
+
 # MOT External Support Tools<a name="EN-US_TOPIC_0289900391"></a>
 
 The following external openGauss tools have been modified in order to support MOT. Make sure to use the most recent version of each. An overview describing MOT-related usage is provided below. For a full description of these tools and their usage, refer to the openGauss Tools Reference document.

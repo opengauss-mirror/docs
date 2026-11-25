@@ -1,3 +1,8 @@
+---
+description: Sets the current user identifier of the current session.
+keywords: [openGauss, SET]
+---
+
 # SET ROLE<a name="EN-US_TOPIC_0289900009"></a>
 
 ## Function<a name="en-us_topic_0283137642_en-us_topic_0237122188_en-us_topic_0059777965_s1907f5458adb46ecbefdfb865dee04c1"></a>

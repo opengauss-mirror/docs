@@ -1,3 +1,8 @@
+---
+description: Introduces Restrictions in openGauss, covering .
+keywords: [openGauss, Restrictions]
+---
+
 # Restrictions<a name="EN-US_TOPIC_0289900513"></a>
 
 >![](public_sys-resources/icon-caution.gif) **CAUTION:** 

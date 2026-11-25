@@ -1,3 +1,8 @@
+---
+description: Introduces Type Conversion in openGauss, covering .
+keywords: [openGauss, Type Conversion]
+---
+
 # Type Conversion<a name="EN-US_TOPIC_0289900861"></a>
 
 -   **[Overview](overview-18.md)**  

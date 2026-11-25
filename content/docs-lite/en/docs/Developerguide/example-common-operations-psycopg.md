@@ -1,3 +1,8 @@
+---
+description: Introduces Example: Common Operations in openGauss, covering .
+keywords: [openGauss, Example Common Operations]
+---
+
 # Example: Common Operations<a name="EN-US_TOPIC_0000001127192087"></a>
 
 ```

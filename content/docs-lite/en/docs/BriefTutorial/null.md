@@ -1,3 +1,8 @@
+---
+description: NULL indicates unknown data. NULL and 0 cannot be compared because they are not equivalent to each other.
+keywords: [openGauss, NULL]
+---
+
 # NULL<a name="EN-US_TOPIC_0000001210141892"></a>
 
 **NULL**  indicates unknown data.  **NULL**  and  **0**  cannot be compared because they are not equivalent to each other.

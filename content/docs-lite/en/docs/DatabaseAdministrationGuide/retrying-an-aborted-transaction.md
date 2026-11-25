@@ -1,3 +1,8 @@
+---
+description: In Optimistic Concurrency Control \(OCC\) \(such as the one used by MOT\) during a transaction \(using any isolation level\) no locks are placed on a record until the COMMIT phase. This is a powerful.
+keywords: [openGauss, Retrying an Aborted Transaction]
+---
+
 # Retrying an Aborted Transaction<a name="EN-US_TOPIC_0289900438"></a>
 
 In Optimistic Concurrency Control \(OCC\) \(such as the one used by MOT\) during a transaction \(using any isolation level\) no locks are placed on a record until the COMMIT phase. This is a powerful advantage that significantly increases performance. Its drawback is that an update may fail if another session attempts to update the same record. This results in an entire transaction that must be aborted. These so called  _Update Conflicts_  are detected by MOT at the commit time by a version checking mechanism.

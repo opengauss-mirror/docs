@@ -1,3 +1,8 @@
+---
+description: The Unix domain socket is used for data exchange between different processes on the same host. You can add junixsocket to obtain the socket factory.
+keywords: [openGauss, Connecting to a Database Using UDS]
+---
+
 # Connecting to a Database (Using UDS)<a name="EN-US_TOPIC_0000001307859622"></a>
 
 The Unix domain socket is used for data exchange between different processes on the same host. You can add **junixsocket** to obtain the socket factory.

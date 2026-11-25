@@ -1,3 +1,8 @@
+---
+description: CREATE RESOURCE LABEL creates a resource label.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE RESOURCE LABEL<a name="EN-US_TOPIC_0306525304"></a>
 
 ## Function<a name="section1163224811518"></a>

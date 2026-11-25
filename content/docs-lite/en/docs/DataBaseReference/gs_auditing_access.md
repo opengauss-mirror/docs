@@ -1,3 +1,8 @@
+---
+description: GS\_AUDITING\_ACCESS displays all audit information about database DML-related operations. Only the users with system administrator or security policy administrator permission can access this vie.
+keywords: [openGauss, GS_AUDITING_ACCESS]
+---
+
 # GS\_AUDITING\_ACCESS<a name="EN-US_TOPIC_0306525317"></a>
 
 **GS\_AUDITING\_ACCESS**  displays all audit information about database DML-related operations. Only the users with system administrator or security policy administrator permission can access this view.

@@ -1,3 +1,8 @@
+---
+description: An anonymous block applies to a script infrequently executed or a one-off activity. An anonymous block is executed in a session and is not stored.
+keywords: [openGauss, Anonymous Blocks]
+---
+
 # Anonymous Blocks<a name="EN-US_TOPIC_0289900292"></a>
 
 An anonymous block applies to a script infrequently executed or a one-off activity. An anonymous block is executed in a session and is not stored.
@@ -7,7 +12,7 @@ An anonymous block applies to a script infrequently executed or a one-off activi
 [Figure 1](#en-us_topic_0283137481_en-us_topic_0237122218_en-us_topic_0059779171_f19ed9f384e0646f29744951d7eec8c3b)  shows the syntax diagrams for an anonymous block.
 
 **Figure  1**  anonymous\_block::=<a name="en-us_topic_0283137481_en-us_topic_0237122218_en-us_topic_0059779171_f19ed9f384e0646f29744951d7eec8c3b"></a>  
-![](figures/anonymous_block.png "anonymous_block")
+![Syntax](figures/anonymous_block.png "anonymous_block")
 
 Details about the syntax diagram are as follows:
 

@@ -1,3 +1,8 @@
+---
+description: - generate\_series\(start, stop\).
+keywords: [openGauss, Set Returning Functions]
+---
+
 # Set Returning Functions<a name="EN-US_TOPIC_0289900562"></a>
 
 ## Series Generating Functions<a name="en-us_topic_0283137117_en-us_topic_0237121985_en-us_topic_0059779332_sfde916b05a3b4024b5cddf1ccf83a8f2"></a>

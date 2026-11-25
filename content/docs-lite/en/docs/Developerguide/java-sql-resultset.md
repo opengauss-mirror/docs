@@ -1,3 +1,8 @@
+---
+description: This section describes java.sql.ResultSet, the API for execution result sets.
+keywords: [openGauss, JDBC, ResultSet]
+---
+
 # java.sql.ResultSet<a name="EN-US_TOPIC_0289900530"></a>
 
 This section describes  **java.sql.ResultSet**, the API for execution result sets.

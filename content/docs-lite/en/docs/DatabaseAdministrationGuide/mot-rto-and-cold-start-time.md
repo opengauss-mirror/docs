@@ -1,3 +1,8 @@
+---
+description: High Availability Recovery Time Objective \(RTO\).
+keywords: [openGauss, MOT RTO and Cold-Start Time]
+---
+
 # MOT RTO and Cold-Start Time<a name="EN-US_TOPIC_0289900802"></a>
 
 High Availability Recovery Time Objective \(RTO\)
@@ -22,7 +27,7 @@ Our MOT tests used x86 servers and SSD disks to demonstrate the ability to load 
 The following figure demonstrates cold-start process and how long it takes to load data into a MOT table from the disk after a cold start.
 
 **Figure  1**  Cold-Start Time – Performance Benchmarks<a name="en-us_topic_0283136642_en-us_topic_0270171499_fig89536207425"></a>  
-![](figures/cold-start-time-performance-benchmarks.png "cold-start-time-performance-benchmarks")
+![MOT RTO and Cold-Start Time](figures/cold-start-time-performance-benchmarks.png "cold-start-time-performance-benchmarks")
 
 -   **Database Size –**  The total amount of time to load the entire database \(per database GB\) is represented by the blue line and the  **TIME \(sec\)**  Y axis on the left.
 -   **Throughput –**  The quantity of database GB throughput per second is represented by the orange line and the  **Throughput GB/sec**  Y axis on the right.

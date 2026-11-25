@@ -1,3 +1,8 @@
+---
+description: CLEAN CONNECTION clears database connections. You may use this statement to delete a specific user's connections to a specified database.
+keywords: [openGauss, CLEAN]
+---
+
 # CLEAN CONNECTION<a name="EN-US_TOPIC_0000001151746656"></a>
 
 ## Function<a name="en-us_topic_0059779060_s1b14773726ac4469a14e509530a7a957"></a>

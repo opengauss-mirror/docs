@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Password Strength Verification]
+---
+
 # Password Strength Verification<a name="EN-US_TOPIC_0000001152075189"></a>
 
 ## Availability<a name="section17746747"></a>

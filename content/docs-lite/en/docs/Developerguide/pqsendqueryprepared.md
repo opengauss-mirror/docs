@@ -1,3 +1,8 @@
+---
+description: PQsendQueryPrepared is used to send a request to execute a prepared statement with given parameters, without waiting for the result.
+keywords: [openGauss, PQsendQueryPrepared]
+---
+
 # PQsendQueryPrepared<a name="EN-US_TOPIC_0242380585"></a>
 
 ## Function<a name="en-us_topic_0241735630_section1390173422515"></a>

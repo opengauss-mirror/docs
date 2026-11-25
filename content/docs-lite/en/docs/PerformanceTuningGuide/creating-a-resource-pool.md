@@ -1,3 +1,8 @@
+---
+description: openGauss creates resource pools to divide host resources. After resource load management is enabled, the default resource pool alone is insufficient to address the resource load management requiremen.
+keywords: [openGauss, Creating a Resource Pool]
+---
+
 # Creating a Resource Pool<a name="EN-US_TOPIC_0000001193874455"></a>
 
 ## Background<a name="section4704103619115"></a>

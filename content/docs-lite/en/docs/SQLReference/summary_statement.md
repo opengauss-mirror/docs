@@ -1,3 +1,8 @@
+---
+description: SUMMARY\_STATEMENT obtains all information about executed statements \(normalized SQL statements\) on the primary database node and other database nodes.
+keywords: [openGauss, SUMMARY_STATEMENT]
+---
+
 # SUMMARY\_STATEMENT<a name="EN-US_TOPIC_0289900134"></a>
 
 **SUMMARY\_STATEMENT**  obtains all information about executed statements \(normalized SQL statements\) on the primary database node and other database nodes.

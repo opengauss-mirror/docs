@@ -1,3 +1,8 @@
+---
+description: The performance of complex query statements strongly depends on the configuration parameters of the database memory. The database memory parameters include the control parameters for logical memory ma.
+keywords: [openGauss, Optimizing Database Memory Parameters]
+---
+
 # Optimizing Database Memory Parameters<a name="EN-US_TOPIC_0289900947"></a>
 
 The performance of complex query statements strongly depends on the configuration parameters of the database memory. The database memory parameters include the control parameters for logical memory management and parameters determining whether execution operators are spilled to disks.

@@ -1,3 +1,8 @@
+---
+description: Introduces GIN Tips and Tricks in openGauss, covering .
+keywords: [openGauss, GIN Tips and Tricks]
+---
+
 # GIN Tips and Tricks<a name="EN-US_TOPIC_0289900456"></a>
 
 Create vs. Insert

@@ -1,3 +1,8 @@
+---
+description: ABORT rolls back the current transaction and cancels the changes in the transaction.
+keywords: [openGauss, ABORT]
+---
+
 # ABORT<a name="EN-US_TOPIC_0289900704"></a>
 
 ## Function<a name="en-us_topic_0283136750_en-us_topic_0237122053_en-us_topic_0059778271_s35ca23dd889c479da90f14c150c52f4b"></a>

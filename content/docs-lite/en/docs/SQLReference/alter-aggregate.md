@@ -1,3 +1,8 @@
+---
+description: ALTER AGGREGATE modifies the definition of an aggregate function.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER AGGREGATE<a name="EN-US_TOPIC_0000001127682267"></a>
 
 ## Function<a name="section173831846163116"></a>

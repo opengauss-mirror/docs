@@ -1,3 +1,8 @@
+---
+description: openGauss provides online resources that contain a lot of useful information, such as common syntaxes, descriptions, and examples. If you encounter any problem when using the database, you are advised.
+keywords: [openGauss, Obtaining openGauss Resources]
+---
+
 # Obtaining openGauss Resources<a name="EN-US_TOPIC_0000001255141775"></a>
 
 openGauss provides online resources that contain a lot of useful information, such as common syntaxes, descriptions, and examples. If you encounter any problem when using the database, you are advised to search for solutions on our website. In addition, you can communicate with openGauss users about your problems through the open source community or emails.
@@ -146,7 +151,7 @@ The openGauss community uses the mailing list for online communication. We since
 -   openGauss community
     -   WeChat official account
 
-        ![](figures/en-us_image_0000001209981920.jpg)
+        ![Learning Platform](figures/en-us_image_0000001209981920.jpg)
 
     -   bilibili
     -   [CSDN](https://blog.csdn.net/weixin_49727236)
@@ -154,7 +159,7 @@ The openGauss community uses the mailing list for online communication. We since
 -   Gauss Squirrel Club
     -   WeChat official account
 
-        ![](figures/en-us_image_0000001210301878.jpg)
+        ![Learning Platform](figures/en-us_image_0000001210301878.jpg)
 
     -   bilibili
     -   [CSDN](https://blog.csdn.net/GaussDB)

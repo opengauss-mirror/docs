@@ -1,3 +1,8 @@
+---
+description: openGauss is a standalone database. It has the basic features of relational databases as well as enhanced features.
+keywords: [openGauss, Basic Features]
+---
+
 # Basic Features<a name="EN-US_TOPIC_0289896511"></a>
 
 ## Context<a name="en-us_topic_0283136538_en-us_topic_0239777185_en-us_topic_0231764142_en-us_topic_0059779329_section107976496546"></a>

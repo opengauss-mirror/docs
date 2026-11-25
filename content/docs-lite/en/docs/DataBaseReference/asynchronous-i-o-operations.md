@@ -1,3 +1,8 @@
+---
+description: Parameter description: Specifies whether O&M personnel are allowed to generate some ADIO logs to locate ADIO issues. This parameter is used only by developers. Common users are advised not to use.
+keywords: [openGauss, Asynchronous IO Operations]
+---
+
 # Asynchronous I/O Operations<a name="EN-US_TOPIC_0289900399"></a>
 
 ## enable\_adio\_debug<a name="en-us_topic_0283137248_en-us_topic_0237124704_en-us_topic_0059778686_se65f9465acfb40c68abb51eaaaf44836"></a>

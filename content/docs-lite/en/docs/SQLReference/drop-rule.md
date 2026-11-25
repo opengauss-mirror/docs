@@ -1,3 +1,8 @@
+---
+description: DROP RULE deletes a rewriting rule.
+keywords: [openGauss, DROP]
+---
+
 # DROP RULE<a name="EN-US_TOPIC_0306398143"></a>
 
 ## Function<a name="section5400959952"></a>

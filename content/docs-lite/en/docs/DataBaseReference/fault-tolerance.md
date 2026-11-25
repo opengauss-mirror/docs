@@ -1,3 +1,8 @@
+---
+description: This section describes parameters used for controlling how the server processes an error occurring in the database system.
+keywords: [openGauss, Fault Tolerance]
+---
+
 # Fault Tolerance<a name="EN-US_TOPIC_0289900527"></a>
 
 This section describes parameters used for controlling how the server processes an error occurring in the database system.

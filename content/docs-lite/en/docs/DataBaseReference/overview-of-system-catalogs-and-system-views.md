@@ -1,3 +1,8 @@
+---
+description: System catalogs store structured metadata of openGauss. They are the source of information used by openGauss to control system running and are a core component of the database system.
+keywords: [openGauss, Overview of System Catalogs and System Views]
+---
+
 # Overview of System Catalogs and System Views<a name="EN-US_TOPIC_0289900580"></a>
 
 System catalogs store structured metadata of openGauss. They are the source of information used by openGauss to control system running and are a core component of the database system.

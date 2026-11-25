@@ -1,3 +1,8 @@
+---
+description: Change the current read or write position of a large object descriptor.
+keywords: [openGauss, lo_lseek]
+---
+
 # lo_lseek<a name="EN-US_TOPIC_0242380595"></a>
 
 ## Function<a name="en-us_topic_0241735627_section696285173720"></a>

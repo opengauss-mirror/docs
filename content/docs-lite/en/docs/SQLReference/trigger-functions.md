@@ -1,3 +1,8 @@
+---
+description: - pg\_get\_triggerdef\(oid\).
+keywords: [openGauss, Trigger Functions]
+---
+
 # Trigger Functions<a name="EN-US_TOPIC_0289900144"></a>
 
 -   pg\_get\_triggerdef\(oid\)

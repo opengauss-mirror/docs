@@ -1,3 +1,8 @@
+---
+description: SQL is a typed language. That is, every data item has an associated data type which determines its behavior and allowed usage. openGauss has an extensible type system that is more general and flexible.
+keywords: [openGauss, Overview]
+---
+
 # Overview<a name="EN-US_TOPIC_0289900250"></a>
 
 ## Background<a name="en-us_topic_0283136636_en-us_topic_0237122007_en-us_topic_0059778774_s2b7b7e4374fc4b6b9010857a056985ab"></a>

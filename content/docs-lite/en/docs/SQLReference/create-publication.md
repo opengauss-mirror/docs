@@ -1,3 +1,8 @@
+---
+description: CREATE PUBLICATION adds a new publication to the current database. The publication name must be different from the name of any existing publication in the current database. A publication is essent.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE PUBLICATION
 
 ## **Function Description**<a name="section12584151914217"></a>

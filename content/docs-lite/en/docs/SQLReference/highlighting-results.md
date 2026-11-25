@@ -1,3 +1,8 @@
+---
+description: To present search results it is ideal to show a part of each document and how it is related to the query. Usually, search engines show fragments of the document with marked search terms. openGauss pro.
+keywords: [openGauss, Highlighting Results]
+---
+
 # Highlighting Results<a name="EN-US_TOPIC_0289899896"></a>
 
 To present search results it is ideal to show a part of each document and how it is related to the query. Usually, search engines show fragments of the document with marked search terms. openGauss provides a function  **ts\_headline**  that implements this functionality.

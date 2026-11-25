@@ -1,3 +1,8 @@
+---
+description: SQLConnect is used to establish a connection between a driver and a data source. After the connection is established, the connection handle can be used to access all information about the data source,.
+keywords: [openGauss, SQLConnect]
+---
+
 # SQLConnect<a name="EN-US_TOPIC_0242371443"></a>
 
 ## Function<a name="en-us_topic_0238272889_en-us_topic_0237120419_en-us_topic_0059778729_s3748e0b0ff1d4511806e76a6047e4b2b"></a>

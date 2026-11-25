@@ -1,3 +1,8 @@
+---
+description: PG\_STATIO\_USER\_INDEXES displays I/O status information about all the user relationship table indexes in the namespace.
+keywords: [openGauss, PG_STATIO_USER_INDEXES]
+---
+
 # PG\_STATIO\_USER\_INDEXES<a name="EN-US_TOPIC_0289900049"></a>
 
 **PG\_STATIO\_USER\_INDEXES**  displays I/O status information about all the user relationship table indexes in the namespace.

@@ -1,3 +1,8 @@
+---
+description: How do I resolve the "g++: fatal error: Killed signal terminated program cclplus" error that occurs during build?.
+keywords: [openGauss, How Do I Resolve the g fatal error Killed signal terminated program cclplus Error]
+---
+
 # How Do I Resolve the "g++: fatal error: Killed signal terminated program cclplus" Error?<a name="EN-US_TOPIC_0289899547"></a>
 
 ## Question<a name="en-us_topic_0283136304_section14676321181511"></a>

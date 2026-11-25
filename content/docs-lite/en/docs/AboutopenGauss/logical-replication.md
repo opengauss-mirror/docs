@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.0.0.
+keywords: [openGauss, Logical Replication]
+---
+
 # Logical Replication<a name="EN-US_TOPIC_0000001152275215"></a>
 
 ## Availability<a name="section15406143204715"></a>

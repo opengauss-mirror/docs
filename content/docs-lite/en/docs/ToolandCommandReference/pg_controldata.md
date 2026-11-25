@@ -1,3 +1,8 @@
+---
+description: The pg\_controldata tool is used to display information about control files in the database directory.
+keywords: [openGauss, pg_controldata]
+---
+
 # pg\_controldata<a name="EN-US_TOPIC_0294748993"></a>
 
 ## Function<a name="section125419154813"></a>

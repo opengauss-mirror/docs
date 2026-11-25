@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 2.1.0.
+keywords: [openGauss, In-place Update Storage Engine]
+---
+
 # In-place Update Storage Engine<a name="EN-US_TOPIC_0000001168230024"></a>
 
 ## Availability<a name="section1076382216287"></a>

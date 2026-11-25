@@ -1,3 +1,8 @@
+---
+description: PG\_REWRITE records rewrite rules defined for tables and views.
+keywords: [openGauss, PG_REWRITE]
+---
+
 # PG\_REWRITE<a name="EN-US_TOPIC_0289900611"></a>
 
 **PG\_REWRITE**  records rewrite rules defined for tables and views.

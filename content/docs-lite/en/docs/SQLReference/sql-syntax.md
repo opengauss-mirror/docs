@@ -1,3 +1,8 @@
+---
+description: Introduces SQL Syntax in openGauss, covering .
+keywords: [openGauss, SQL Syntax]
+---
+
 # SQL Syntax<a name="EN-US_TOPIC_0289900416"></a>
 
 - **[ABORT](abort.md)**  

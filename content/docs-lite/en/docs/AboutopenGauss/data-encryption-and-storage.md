@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Data Encryption and Storage]
+---
+
 # Data Encryption and Storage<a name="EN-US_TOPIC_0000001105075474"></a>
 
 ## Availability<a name="section8174682"></a>

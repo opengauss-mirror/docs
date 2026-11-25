@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.0.0.
+keywords: [openGauss, CBO Optimizer]
+---
+
 # CBO Optimizer<a name="EN-US_TOPIC_0000001152075187"></a>
 
 ## Availability<a name="section3480125215575"></a>

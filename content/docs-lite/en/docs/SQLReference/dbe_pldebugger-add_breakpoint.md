@@ -1,3 +1,8 @@
+---
+description: During debugging on the debug end, call add\_breakpoint to add a breakpoint. If –1 is returned, the specified breakpoint is invalid. Determine the proper position of the breakpoint based o.
+keywords: [openGauss, DBE_PLDEBUGGER.add_breakpoint]
+---
+
 # DBE\_PLDEBUGGER.add\_breakpoint<a name="EN-US_TOPIC_0000001115926210"></a>
 
 During debugging on the debug end, call  **add\_breakpoint**  to add a breakpoint. If  **–1**  is returned, the specified breakpoint is invalid. Determine the proper position of the breakpoint based on the  **canbreak**  column in  [DBE\_PLDEBUGGER.info\_code](dbe_pldebugger-info_code.md).

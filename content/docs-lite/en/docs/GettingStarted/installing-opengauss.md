@@ -1,3 +1,8 @@
+---
+description: openGauss supports simplified installation using scripts.
+keywords: [openGauss, Installation]
+---
+
 # Installation<a name="EN-US_TOPIC_0000001223947251"></a>
 
 openGauss supports simplified installation using scripts. 

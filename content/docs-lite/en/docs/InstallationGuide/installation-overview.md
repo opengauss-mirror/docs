@@ -1,3 +1,8 @@
+---
+description: openGauss can be deployed in standalone or in standalone HA mode. In standalone mode, multiple database instances can be deployed on a single host. However, this mode is not recommended for data secur.
+keywords: [openGauss, Installation Overview]
+---
+
 # Installation Overview<a name="EN-US_TOPIC_0249784550"></a>
 
 openGauss can be deployed in standalone or in standalone HA mode. In standalone mode, multiple database instances can be deployed on a single host. However, this mode is not recommended for data security purposes. In the standalone HA deployment mode, one primary server and at least one standby server are supported, and a maximum of four standby servers are supported.

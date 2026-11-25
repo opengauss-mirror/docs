@@ -1,3 +1,8 @@
+---
+description: PQsendQueryParams is used to commit a command and separate parameters to the server without waiting for the result.
+keywords: [openGauss, PQsendQueryParams]
+---
+
 # PQsendQueryParams<a name="EN-US_TOPIC_0242380583"></a>
 
 ## Function<a name="en-us_topic_0241735628_section10518135331919"></a>

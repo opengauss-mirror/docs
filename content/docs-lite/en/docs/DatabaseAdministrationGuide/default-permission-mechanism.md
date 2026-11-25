@@ -1,3 +1,8 @@
+---
+description: A user who creates an object is the owner of this object. By default, Separation of Duties is disabled after database installation. A database system administrator has the.
+keywords: [openGauss, Default Permission Mechanism]
+---
+
 # Default Permission Mechanism<a name="EN-US_TOPIC_0289899957"></a>
 
 A user who creates an object is the owner of this object. By default,  [Separation of Duties](separation-of-duties.md)  is disabled after database installation. A database system administrator has the same permissions as object owners. After an object is created, only the object owner or system administrator can query, modify, and delete the object, and grant permissions for the object to other users through  [GRANT](../SQLReference/grant.md)  by default.

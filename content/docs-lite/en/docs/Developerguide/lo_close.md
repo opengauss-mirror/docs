@@ -1,3 +1,8 @@
+---
+description: Close a large object descriptor.
+keywords: [openGauss, lo_close]
+---
+
 # lo_close<a name="EN-US_TOPIC_0242380591"></a>
 
 ## Function<a name="en-us_topic_0241735627_section696285173723"></a>

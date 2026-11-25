@@ -1,3 +1,8 @@
+---
+description: 1. Download the TPC-C standard test tool BenchmarkSQL 5.0.
+keywords: [openGauss, Testing TPC-C Performance]
+---
+
 # Testing TPC-C Performance<a name="EN-US_TOPIC_0289900017"></a>
 
 1.  Download the TPC-C standard test tool BenchmarkSQL 5.0.
@@ -243,9 +248,9 @@
 
     The following figure shows the creation result.
 
-    ![](figures/en-us_image_0283137569.png)
+    ![Testing TPC-C Performance](figures/en-us_image_0283137569.png)
 
-    ![](figures/en-us_image_0283136597.png)
+    ![Testing TPC-C Performance](figures/en-us_image_0283136597.png)
 
 9.  Run the TPC-C program.
 
@@ -255,7 +260,7 @@
 
     The following figure shows the test result. The tpmC part is the test result.
 
-    ![](figures/en-us_image_0283137501.png)
+    ![Testing TPC-C Performance](figures/en-us_image_0283137501.png)
 
 10. <a name="en-us_topic_0283137363_en-us_topic_0263913274_li202511145123814"></a>Verify the correctness of the data test process.
 
@@ -263,7 +268,7 @@
 
     The following figure shows the usage of all CPUs in the best performance test. The CPU in the yellow box processes network interruption.
 
-    ![](figures/en-us_image_0283136616.png)
+    ![Testing TPC-C Performance](figures/en-us_image_0283136616.png)
 
 11. If you need to perform the test again to avoid data interference, you can copy the data backed up in  [step 7](#en-us_topic_0283137363_en-us_topic_0263913274_li11139125793619)  to restore the data. Repeat  [step 8](#en-us_topic_0283137363_en-us_topic_0263913274_li1840654753618)  to  [step 10](#en-us_topic_0283137363_en-us_topic_0263913274_li202511145123814)  to perform the test again.
 

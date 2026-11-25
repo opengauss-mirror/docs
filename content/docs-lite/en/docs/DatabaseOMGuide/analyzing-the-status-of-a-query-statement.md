@@ -1,3 +1,8 @@
+---
+description: Some query statements are executed for an excessively long time in the system. You need to analyze the status of the query statements.
+keywords: [openGauss, Analyzing the Status of a Query Statement]
+---
+
 # Analyzing the Status of a Query Statement<a name="EN-US_TOPIC_0291615097"></a>
 
 ## Symptom<a name="section4792154194213"></a>

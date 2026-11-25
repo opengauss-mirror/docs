@@ -1,3 +1,8 @@
+---
+description: ALTER RESOURCE POOL changes the Cgroup of a resource pool.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER RESOURCE POOL<a name="EN-US_TOPIC_0000001148027836"></a>
 
 ## Function<a name="en-us_topic_0059778630_sad90a3a714584faa8f5b38b344e0c313"></a>

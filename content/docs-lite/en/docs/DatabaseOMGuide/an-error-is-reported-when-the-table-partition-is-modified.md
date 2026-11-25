@@ -1,3 +1,8 @@
+---
+description: When ALTER TABLE PARTITION is performed, the following error message is displayed:.
+keywords: [openGauss, An Error Is Reported When the Table Partition Is Modified]
+---
+
 # An Error Is Reported When the Table Partition Is Modified<a name="EN-US_TOPIC_0291615103"></a>
 
 ## Symptom<a name="section2456113514495"></a>

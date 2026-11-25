@@ -1,3 +1,8 @@
+---
+description: The system table in DBE\_PLDEVELOPER records information required for compiling PLPGSQL packages, functions, and stored procedures.
+keywords: [openGauss, DBE_PLDEVELOPER]
+---
+
 # DBE\_PLDEVELOPER<a name="EN-US_TOPIC_0000001214846417"></a>
 
 The system table in DBE\_PLDEVELOPER records information required for compiling PLPGSQL packages, functions, and stored procedures.

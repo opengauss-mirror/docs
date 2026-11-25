@@ -1,3 +1,8 @@
+---
+description: PG\_STAT\_ACTIVITY\_NG displays information about all queries in the logical database instance of the current user.
+keywords: [openGauss, PG_STAT_ACTIVITY_NG]
+---
+
 # PG\_STAT\_ACTIVITY\_NG<a name="EN-US_TOPIC_0000001197514779"></a>
 
 **PG\_STAT\_ACTIVITY\_NG**  displays information about all queries in the logical database instance of the current user.

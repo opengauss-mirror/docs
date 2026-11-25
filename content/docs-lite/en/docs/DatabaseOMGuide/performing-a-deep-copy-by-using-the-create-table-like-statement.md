@@ -1,3 +1,8 @@
+---
+description: Run the CREATE TABLE LIKE statement to create a copy of the original table, batch insert data of the original table into the copy, and rename the copy to the name of the original table. This met.
+keywords: [openGauss, Performing a Deep Copy by Using the CREATE TABLE LIKE Statement]
+---
+
 # Performing a Deep Copy by Using the CREATE TABLE LIKE Statement<a name="EN-US_TOPIC_0289900994"></a>
 
 Run the  **CREATE TABLE LIKE**  statement to create a copy of the original table, batch insert data of the original table into the copy, and rename the copy to the name of the original table. This method does not inherit the primary key attributes of the original table. You can use the  **ALTER TABLE**  statement to add them.

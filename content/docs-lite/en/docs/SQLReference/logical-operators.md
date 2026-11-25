@@ -1,3 +1,8 @@
+---
+description: The usual logical operators include AND, OR, and NOT. SQL uses a three-valued logical system with true, false, and null, which represents "unknown". Their priorities are NOT \> AND \> OR.
+keywords: [openGauss, Logical Operators]
+---
+
 # Logical Operators<a name="EN-US_TOPIC_0289900814"></a>
 
 The usual logical operators include AND, OR, and NOT. SQL uses a three-valued logical system with true, false, and null, which represents "unknown". Their priorities are NOT \> AND \> OR.

@@ -1,3 +1,8 @@
+---
+description: This section describes memory parameters.
+keywords: [openGauss, Memory]
+---
+
 # Memory<a name="EN-US_TOPIC_0289900310"></a>
 
 This section describes memory parameters.

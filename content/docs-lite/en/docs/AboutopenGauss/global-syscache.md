@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 3.0.0.
+keywords: [openGauss, Global SysCache]
+---
+
 # Global SysCache<a name="EN-US_TOPIC_0000001220767350"></a>
 
 ## Availability<a name="section15406143204715"></a>
@@ -9,7 +14,7 @@ This feature is available since openGauss 3.0.0.
 Global SysCache is the global and local caches of system catalog data.  [Figure 1](#fig15658164619166)  illustrates the principle.
 
 **Figure  1**  Global SysCache principle<a name="fig15658164619166"></a>  
-![](figures/global-syscache-principle.png "global-syscache-principle")
+![Introduction](figures/global-syscache-principle.png "global-syscache-principle")
 
 ## Benefits<a name="section13406743164715"></a>
 

@@ -1,3 +1,8 @@
+---
+description: Only the database system administrator or users granted with database creation permissions can create a database. For details about how to grant database creation permissions to a user, see [Managing.
+keywords: [openGauss, Creating and Managing Databases]
+---
+
 # Creating and Managing Databases<a name="EN-US_TOPIC_0289900988"></a>
 
 ## Prerequisites<a name="en-us_topic_0283136807_en-us_topic_0237120295_en-us_topic_0059779126_s82a10b03aef44f24a8b835912c58dd5b"></a>

@@ -1,3 +1,8 @@
+---
+description: When a connection pool is used to access the database, database connections are established and then stored in the memory as objects during system running. When you need to access the database, no new.
+keywords: [openGauss, Connection Pool Parameters]
+---
+
 # Connection Pool Parameters<a name="EN-US_TOPIC_0289900768"></a>
 
 When a connection pool is used to access the database, database connections are established and then stored in the memory as objects during system running. When you need to access the database, no new connection is established. Instead, an existing idle connection is selected from the connection pool. After you finish accessing the database, the database does not disable the connection but puts it back into the connection pool. The connection can be used for the next access request.

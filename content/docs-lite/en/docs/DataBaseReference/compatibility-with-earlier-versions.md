@@ -1,3 +1,8 @@
+---
+description: This section describes the parameters that control the backward compatibility and external compatibility of openGauss. A backward compatible database supports applications of earlier versions. This se.
+keywords: [openGauss, Compatibility with Earlier Versions]
+---
+
 # Compatibility with Earlier Versions<a name="EN-US_TOPIC_0289900918"></a>
 
 This section describes the parameters that control the backward compatibility and external compatibility of openGauss. A backward compatible database supports applications of earlier versions. This section describes parameters used for controlling backward compatibility of a database.

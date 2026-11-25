@@ -1,3 +1,8 @@
+---
+description: It is easy to create an MOT. Only the statements for creating and deleting MOTs are different from those for creating and deleting disk-based tables in openGauss. The syntax of all other SELECT, DML,.
+keywords: [openGauss, CreatingDeleting an MOT]
+---
+
 # Creating/Deleting an MOT<a name="EN-US_TOPIC_0289900751"></a>
 
 It is easy to create an MOT. Only the statements for creating and deleting MOTs are different from those for creating and deleting disk-based tables in openGauss. The syntax of all other SELECT, DML, and DDL commands is the same for MOTs and openGauss disk-based tables.

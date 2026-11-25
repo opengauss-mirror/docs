@@ -1,3 +1,8 @@
+---
+description: DB4AI.SNAPSHOT records the snapshots stored by the current user through the DB4AI.SNAPSHOT feature.
+keywords: [openGauss, DB4AI.SNAPSHOT]
+---
+
 # DB4AI.SNAPSHOT<a name="EN-US_TOPIC_0000001195271241"></a>
 
 DB4AI.SNAPSHOT records the snapshots stored by the current user through the DB4AI.SNAPSHOT feature.

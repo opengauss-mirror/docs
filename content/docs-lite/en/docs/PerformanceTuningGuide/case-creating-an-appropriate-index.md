@@ -1,3 +1,8 @@
+---
+description: Query the information about all personnel in the sales department.
+keywords: [openGauss, Case Creating an Appropriate Index]
+---
+
 # Case: Creating an Appropriate Index<a name="EN-US_TOPIC_0000001382270689"></a>
 
 ## Symptom<a name="en-us_topic_0073253825_en-us_topic_0040046522_section52209455"></a>

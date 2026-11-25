@@ -1,3 +1,8 @@
+---
+description: Indexes accelerate data access but increase the processing time of insertion, update, and deletion operations. Therefore, before creating an index, consider whether it is necessary and select the colu.
+keywords: [openGauss, Creating and Managing Indexes]
+---
+
 # Creating and Managing Indexes<a name="EN-US_TOPIC_0289900357"></a>
 
 ## Background<a name="en-us_topic_0283136615_en-us_topic_0237120308_en-us_topic_0059777978_s2db1c8bff92b4157a59abc27b435d8c2"></a>

@@ -1,3 +1,8 @@
+---
+description: CLOSE frees the resources associated with an open cursor.
+keywords: [openGauss, CLOSE]
+---
+
 # CLOSE<a name="EN-US_TOPIC_0289899821"></a>
 
 ## Function<a name="en-us_topic_0283137397_en-us_topic_0237122091_en-us_topic_0059779164_sa18f3afba3784d76b0052fa2fa489b8c"></a>

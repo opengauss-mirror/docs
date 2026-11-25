@@ -1,3 +1,8 @@
+---
+description: You can obtain the installation package of DataStudio from the openGauss official website or obtain the source code from Gitee and compile by yourself.
+keywords: [openGauss, openGauss Client Tool DataStudio]
+---
+
 # openGauss Client Tool DataStudio<a name="EN-US_TOPIC_0000001220227672"></a>
 
 ## Availability<a name="section56086982"></a>

@@ -1,3 +1,8 @@
+---
+description: PG\_OPERATOR records information about operators.
+keywords: [openGauss, PG_OPERATOR]
+---
+
 # PG\_OPERATOR<a name="EN-US_TOPIC_0289899832"></a>
 
 **PG\_OPERATOR**  records information about operators.

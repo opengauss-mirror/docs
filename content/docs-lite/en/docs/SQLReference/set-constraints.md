@@ -1,3 +1,8 @@
+---
+description: SET CONSTRAINTS sets the behavior of constraint checking within the current transaction.
+keywords: [openGauss, SET]
+---
+
 # SET CONSTRAINTS<a name="EN-US_TOPIC_0289900402"></a>
 
 ## Function<a name="en-us_topic_0283136774_en-us_topic_0237122187_en-us_topic_0059779017_s016571300554457884633ea16394654e"></a>

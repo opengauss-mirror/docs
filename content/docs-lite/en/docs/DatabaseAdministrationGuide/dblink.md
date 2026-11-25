@@ -1,3 +1,8 @@
+---
+description: dblink is a tool that can connect to other openGauss databases in an openGauss database session. The connection parameters supported by dblink are the same as those supported by libpq. For details, se.
+keywords: [openGauss, dblink]
+---
+
 # dblink<a name="EN-US_TOPIC_0000001111753952"></a>
 
 dblink is a tool that can connect to other openGauss databases in an openGauss database session. The connection parameters supported by dblink are the same as those supported by libpq. For details, see  [Link Parameters](../Developerguide/link-parameters-libpq.md). By default, openGauss does not compile dblink. The following describes how to compile and use dblink.

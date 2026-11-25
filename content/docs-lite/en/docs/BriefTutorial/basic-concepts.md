@@ -1,3 +1,8 @@
+---
+description: openGauss is a relational database management system \(RDBMS\). A relational database organizes data using a relational model, that is, data is stored in rows and columns.
+keywords: [openGauss, Basic Concepts]
+---
+
 # Basic Concepts<a name="EN-US_TOPIC_0000001255141773"></a>
 
 openGauss is a relational database management system \(RDBMS\). A relational database organizes data using a relational model, that is, data is stored in rows and columns.
@@ -5,7 +10,7 @@ openGauss is a relational database management system \(RDBMS\). A relational dat
 openGauss database nodes store data on disks. Logically, objects on a database node include tablespaces, databases, datafile segments, tables, and blocks.  [Figure 1](#en-us_topic_0283136742_en-us_topic_0237120245_en-us_topic_0059779316_fb2fa3b3cc8824dea95318504e0537913)  shows the relationships between objects.
 
 **Figure  1**  Database logical architecture<a name="en-us_topic_0283136742_en-us_topic_0237120245_en-us_topic_0059779316_fb2fa3b3cc8824dea95318504e0537913"></a>  
-![](figures/database-logical-architecture.png "database-logical-architecture")
+![Basic Concepts](figures/database-logical-architecture.png "database-logical-architecture")
 
 ## Database<a name="section16264182634412"></a>
 

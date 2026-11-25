@@ -1,3 +1,8 @@
+---
+description: In the following simple SQL statements, the performance bottlenecks exist in the scan operation on the normal\_date table.
+keywords: [openGauss, Case Reconstructing Partitioned Tables]
+---
+
 # Case: Reconstructing Partitioned Tables<a name="EN-US_TOPIC_0000001330911106"></a>
 
 ## Symptom<a name="en-us_topic_0075873749_section3352584712931"></a>

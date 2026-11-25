@@ -1,3 +1,8 @@
+---
+description: - Development and Design Proposal.
+keywords: [openGauss, Development and Design Proposal]
+---
+
 # Development and Design Proposal<a name="EN-US_TOPIC_0000001149748073"></a>
 
 -   **[Development and Design Proposal](development-and-design-proposal-overview.md)**  

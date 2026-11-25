@@ -1,3 +1,8 @@
+---
+description: CREATE SUBSCRIPTION adds a new subscription to the current database. The subscription name must be different from that of any existing subscription in the database. A subscription represents a rep.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE SUBSCRIPTION<a name="EN-US_TOPIC_0000001195412354"></a>
 
 ## Function Description<a name="section1941212243553"></a>

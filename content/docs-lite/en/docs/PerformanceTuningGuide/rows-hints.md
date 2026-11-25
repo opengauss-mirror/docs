@@ -1,3 +1,8 @@
+---
+description: These hints specify the number of rows in an intermediate result set. Both absolute values and relative values are supported.
+keywords: [openGauss, Rows]
+---
+
 # Rows Hints<a name="EN-US_TOPIC_0289900383"></a>
 
 ## Function<a name="en-us_topic_0283137731_en-us_topic_0237121535_section290819468377"></a>
@@ -38,5 +43,5 @@ select /*+ rows(store_sales store_returns *50) */ i_product_name product_name ..
 
 Multiply the result set of joined  **store\_sales**  and  **store\_returns**  by 50. The optimized plan is as follows:
 
-![](figures/en-us_image_0283137025.png)
+![Examples](figures/en-us_image_0283137025.png)
 

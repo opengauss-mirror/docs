@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Full-Text Indexing]
+---
+
 # Full-Text Indexing<a name="EN-US_TOPIC_0000001105555112"></a>
 
 ## Availability<a name="section3480125215575"></a>

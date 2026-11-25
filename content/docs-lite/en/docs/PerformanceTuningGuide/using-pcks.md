@@ -1,3 +1,8 @@
+---
+description: The PCK is the column-store-based technology. It can minimize or maximize sparse indexes to quickly filter base tables. You are advised to select a maximum of two columns as PCKs. Use the following pr.
+keywords: [openGauss, Using PCKs]
+---
+
 # Using PCKs<a name="EN-US_TOPIC_0289900213"></a>
 
 The PCK is the column-store-based technology. It can minimize or maximize sparse indexes to quickly filter base tables. You are advised to select a maximum of two columns as PCKs. Use the following principles to specify PCKs:

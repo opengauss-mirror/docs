@@ -1,3 +1,8 @@
+---
+description: ALTER TABLESPACE modifies the attributes of a tablespace.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER TABLESPACE<a name="EN-US_TOPIC_0289899866"></a>
 
 ## Function<a name="en-us_topic_0283137270_en-us_topic_0237122078_en-us_topic_0059777507_s15c266ccb0b240ddaab9e5fadcfb4313"></a>

@@ -1,3 +1,8 @@
+---
+description: Introduces Creating and Managing Tables in openGauss, covering .
+keywords: [openGauss, Creating and Managing Tables]
+---
+
 # Creating and Managing Tables<a name="EN-US_TOPIC_0289900834"></a>
 
 -   **[Creating Tables](creating-tables.md)**  

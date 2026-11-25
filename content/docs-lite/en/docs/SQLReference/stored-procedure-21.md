@@ -1,3 +1,8 @@
+---
+description: In openGauss, business rules and logics are saved as stored procedures.
+keywords: [openGauss, Stored Procedure]
+---
+
 # Stored Procedure<a name="EN-US_TOPIC_0289900514"></a>
 
 In openGauss, business rules and logics are saved as stored procedures.

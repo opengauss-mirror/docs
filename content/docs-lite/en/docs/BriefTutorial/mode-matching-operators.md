@@ -1,3 +1,8 @@
+---
+description: There are three separate approaches to mode matching provided by the database: traditional SQL LIKE operator, SIMILAR TO operator, and POSIX-style regular expression. Besides these basic operators, so.
+keywords: [openGauss, Mode Matching Operators]
+---
+
 # Mode Matching Operators<a name="EN-US_TOPIC_0000001255341789"></a>
 
 There are three separate approaches to mode matching provided by the database: traditional SQL LIKE operator, SIMILAR TO operator, and POSIX-style regular expression. Besides these basic operators, some functions can be used to extract or replace matching substrings and to split a string at matching locations.

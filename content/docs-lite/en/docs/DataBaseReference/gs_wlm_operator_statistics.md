@@ -1,3 +1,8 @@
+---
+description: GS\_WLM\_OPERATOR\_STATISTICS displays the operators of the jobs that are being executed by the current user. Only users with the sysadmin permission can query this view.
+keywords: [openGauss, GS_WLM_OPERATOR_STATISTICS]
+---
+
 # GS\_WLM\_OPERATOR\_STATISTICS<a name="EN-US_TOPIC_0000001105362248"></a>
 
 **GS\_WLM\_OPERATOR\_STATISTICS**  displays the operators of the jobs that are being executed by the current user. Only users with the  **sysadmin**  permission can query this view.

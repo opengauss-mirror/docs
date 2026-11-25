@@ -1,3 +1,8 @@
+---
+description: Psycopg is a Python API used to execute SQL statements and provides a unified access API for PostgreSQL and GaussDB. Applications can perform data operations based on psycopg. Psycopg2 encapsulates li.
+keywords: [openGauss, Python]
+---
+
 # Python<a name="EN-US_TOPIC_0000001255221839"></a>
 
 Psycopg is a Python API used to execute SQL statements and provides a unified access API for PostgreSQL and GaussDB. Applications can perform data operations based on psycopg. Psycopg2 encapsulates libpq. Some code is implemented using the C language, which is efficient and secure. It provides client-side and server-side cursors, asynchronous communication and notification, and the COPY TO and COPY FROM functions. Psycopg2 supports multiple types of Python out-of-the-box and adapts to PostgreSQL data types. Through the flexible object adaptation system, you can extend and customize APIs. Psycopg2 is compatible with Unicode and Python 3.

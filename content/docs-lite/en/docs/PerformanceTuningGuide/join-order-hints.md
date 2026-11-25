@@ -1,3 +1,8 @@
+---
+description: Theses hints specify the join order and outer/inner tables.
+keywords: [openGauss, Join]
+---
+
 # Join Order Hints<a name="EN-US_TOPIC_0289900980"></a>
 
 ## Function<a name="en-us_topic_0283136909_en-us_topic_0237121533_section97491741123412"></a>
@@ -57,7 +62,7 @@ select /*+ leading((((((store_sales store) promotion) item) customer) ad2) store
 
 First,  **store\_sales**  and  **store**  are joined and  **store\_sales**  is the inner table. Then, the result is joined with  **promotion**,  **item**,  **customer**,  **ad2**, and  **store\_returns**  in sequence. The optimized plan is as follows:
 
-![](figures/en-us_image_0289899975.png)
+![Example](figures/en-us_image_0289899975.png)
 
 For details about the warning at the top of the plan, see  [Hint Errors, Conflicts, and Other Warnings](hint-errors-conflicts-and-other-warnings.md).
 

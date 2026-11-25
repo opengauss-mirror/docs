@@ -1,3 +1,8 @@
+---
+description: Introduces Reviewing and Modifying a Table Definition in openGauss, covering .
+keywords: [openGauss, Reviewing and Modifying a Table Definition]
+---
+
 # Reviewing and Modifying a Table Definition<a name="EN-US_TOPIC_0289900185"></a>
 
 -   **[Overview](reviewing-and-modifying-a-table-definition-overview.md)**  

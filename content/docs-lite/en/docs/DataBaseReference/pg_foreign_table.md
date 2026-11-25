@@ -1,3 +1,8 @@
+---
+description: PG\_FOREIGN\_TABLE records auxiliary information about foreign tables.
+keywords: [openGauss, PG_FOREIGN_TABLE]
+---
+
 # PG\_FOREIGN\_TABLE<a name="EN-US_TOPIC_0289900920"></a>
 
 **PG\_FOREIGN\_TABLE**  records auxiliary information about foreign tables.

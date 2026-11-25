@@ -1,3 +1,8 @@
+---
+description: TRANSACTIONS\_RUNNING\_XACTS displays information about running transactions on the current node.
+keywords: [openGauss, TRANSACTIONS_RUNNING_XACTS]
+---
+
 # TRANSACTIONS\_RUNNING\_XACTS<a name="EN-US_TOPIC_0000001153229920"></a>
 
 **TRANSACTIONS\_RUNNING\_XACTS**  displays information about running transactions on the current node.

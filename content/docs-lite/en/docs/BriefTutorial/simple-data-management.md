@@ -1,3 +1,8 @@
+---
+description: - Creating a Database.
+keywords: [openGauss, Simple Data Management]
+---
+
 # Simple Data Management<a name="EN-US_TOPIC_0000001255341777"></a>
 
 -   **[Creating a Database](creating-a-database.md)**  

@@ -1,3 +1,8 @@
+---
+description: You can improve the openGauss performance by modifying key parameters of the OS based on actual service requirements during the performance optimization.
+keywords: [openGauss, Optimizing OS Parameters]
+---
+
 # Optimizing OS Parameters<a name="EN-US_TOPIC_0289900831"></a>
 
 You can improve the openGauss performance by modifying key parameters of the OS based on actual service requirements during the performance optimization.

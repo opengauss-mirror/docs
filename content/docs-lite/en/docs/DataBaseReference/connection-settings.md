@@ -1,3 +1,8 @@
+---
+description: This section describes parameters related to client-server connection modes.
+keywords: [openGauss, Connection Settings]
+---
+
 # Connection Settings<a name="EN-US_TOPIC_0289900801"></a>
 
 This section describes parameters related to client-server connection modes.

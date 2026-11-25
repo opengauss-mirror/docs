@@ -1,3 +1,8 @@
+---
+description: CREATE MODEL trains a machine learning model and saves the model.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE MODEL<a name="EN-US_TOPIC_0000001117639598"></a>
 
 ## Function<a name="section94489231810"></a>

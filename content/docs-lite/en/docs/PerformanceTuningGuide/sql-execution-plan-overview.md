@@ -1,3 +1,8 @@
+---
+description: The SQL execution plan is a node tree, which displays detailed procedure when openGauss runs an SQL statement. A database operator indicates one step.
+keywords: [openGauss, Overview]
+---
+
 # Overview<a name="EN-US_TOPIC_0289900579"></a>
 
 The SQL execution plan is a node tree, which displays detailed procedure when openGauss runs an SQL statement. A database operator indicates one step.
@@ -5,7 +10,7 @@ The SQL execution plan is a node tree, which displays detailed procedure when op
 You can run the  **EXPLAIN**  command to view the execution plan generated for each query by an optimizer. The output of  **EXPLAIN**  has one row for each execution node, showing the basic node type and the cost estimation that the optimizer made for the execution of this node, as shown in  [Figure 1](#en-us_topic_0283137711_en-us_topic_0237121510_en-us_topic_0073548187_en-us_topic_0040046537_fig27100601101634).
 
 **Figure  1**  SQL execution plan example<a name="en-us_topic_0283137711_en-us_topic_0237121510_en-us_topic_0073548187_en-us_topic_0040046537_fig27100601101634"></a>  
-![](figures/sql-execution-plan-example.png "sql-execution-plan-example")
+![Overview](figures/sql-execution-plan-example.png "sql-execution-plan-example")
 
 -   Nodes at the bottom level are scan nodes. They scan tables and return raw rows. The types of scan nodes \(sequential scans and index scans\) vary depending on the table access methods. Objects scanned by the bottom layer nodes may not be row-store data \(not directly read from a table\), such as  **VALUES**  clauses and functions that return rows, which have their own types of scan nodes.
 -   If the query requires join, aggregation, sorting, or other operations on the raw rows, there will be other nodes above the scan nodes to perform these operations. In addition, there is more than one way to perform these operations, so different types of execution nodes may be displayed here.

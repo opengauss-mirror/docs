@@ -1,3 +1,8 @@
+---
+description: When an application runs a SQL statement to operate the database, a large number of subqueries are used because they are more clear than table join. Especially in complicated query statements, subquer.
+keywords: [openGauss, Optimizing Subqueries]
+---
+
 # Optimizing Subqueries<a name="EN-US_TOPIC_0289900705"></a>
 
 ## Background<a name="en-us_topic_0283137293_en-us_topic_0237121525_en-us_topic_0118337169_s7525ddd98a4f4ee784a4ca2ffbec1296"></a>
@@ -83,7 +88,7 @@ To optimize a sublink, a subquery is pulled up to join with tables in outer quer
 
 Example:
 
-![](figures/en-us_image_0283137269.png)
+![Sublink Optimization on openGauss](figures/en-us_image_0283137269.png)
 
 Replace the execution plan on the right of the arrow with the following execution plan:
 
@@ -104,7 +109,7 @@ Filter: (c1 = t1.c1)
         -   The subquery cannot contain columns in the outer query \(columns in more outer queries are allowed\).
         -   The subquery cannot contain volatile functions.
 
-        ![](figures/en-us_image_0283137289.png)
+        ![Sublink Optimization on openGauss](figures/en-us_image_0283137289.png)
 
         Replace the execution plan on the right of the arrow with the following execution plan:
 
@@ -132,7 +137,7 @@ Filter: (c1 = t1.c1)
         -   The subquery cannot contain a  **SET**,  **SORT**,  **LIMIT**,  **WindowAgg**, or  **HAVING**  operation.
         -   The subquery cannot contain volatile functions.
 
-        ![](figures/en-us_image_0283137454.png)
+        ![Sublink Optimization on openGauss](figures/en-us_image_0283137454.png)
 
         Replace the execution plan on the right of the arrow with the following execution plan:
 

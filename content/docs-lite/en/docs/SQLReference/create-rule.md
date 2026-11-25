@@ -1,3 +1,8 @@
+---
+description: CREATE RULE defines a new rewriting rule.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE RULE<a name="EN-US_TOPIC_0306398142"></a>
 
 ## Function<a name="section189661819135511"></a>

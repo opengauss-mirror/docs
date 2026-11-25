@@ -1,3 +1,8 @@
+---
+description: Parameter description: Specifies the IP address of the Elasticsearch system.
+keywords: [openGauss, Security Configuration]
+---
+
 # Security Configuration<a name="EN-US_TOPIC_0311764209"></a>
 
 ## elastic\_search\_ip\_addr<a name="section12443144020298"></a>

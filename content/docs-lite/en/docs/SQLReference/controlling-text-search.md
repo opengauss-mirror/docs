@@ -1,3 +1,8 @@
+---
+description: - Parsing Documents.
+keywords: [openGauss, Controlling Text Search]
+---
+
 # Controlling Text Search<a name="EN-US_TOPIC_0289900613"></a>
 
 -   **[Parsing Documents](parsing-documents.md)**  

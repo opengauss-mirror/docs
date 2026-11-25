@@ -1,3 +1,8 @@
+---
+description: - Setting Account Security Policies.
+keywords: [openGauss, Setting Security Policies]
+---
+
 # Setting Security Policies<a name="EN-US_TOPIC_0289900408"></a>
 
 -   **[Setting Account Security Policies](setting-account-security-policies.md)**  

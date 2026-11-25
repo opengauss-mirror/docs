@@ -1,3 +1,8 @@
+---
+description: The SET type is a collection type that contains string members and is defined when a table column is created.
+keywords: [openGauss, SET Type]
+---
+
 # SET Type<a name="EN-US_TOPIC_0000001370344985"></a>
 
 The SET type is a collection type that contains string members and is defined when a table column is created.

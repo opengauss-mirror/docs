@@ -1,3 +1,8 @@
+---
+description: PGXC\_SLICE is a system catalog created for recording range distribution and list distribution details. Currently, range interval cannot be used to automatically scale out shards. It is reserved.
+keywords: [openGauss, PGXC_SLICE]
+---
+
 # PGXC\_SLICE<a name="EN-US_TOPIC_0000001152212582"></a>
 
 **PGXC\_SLICE**  is a system catalog created for recording range distribution and list distribution details. Currently, range interval cannot be used to automatically scale out shards. It is reserved in the system catalog.

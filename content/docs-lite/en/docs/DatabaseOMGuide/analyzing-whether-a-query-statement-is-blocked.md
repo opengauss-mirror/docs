@@ -1,3 +1,8 @@
+---
+description: During database running, query statements are blocked in some service scenarios. As a result, the query statements are executed for an excessively long time.
+keywords: [openGauss, Analyzing Whether a Query Statement Is Blocked]
+---
+
 # Analyzing Whether a Query Statement Is Blocked<a name="EN-US_TOPIC_0291615099"></a>
 
 ## Symptom<a name="section148995712711"></a>

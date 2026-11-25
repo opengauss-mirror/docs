@@ -1,3 +1,8 @@
+---
+description: - Logging Destination.
+keywords: [openGauss, Error Reporting and Logging]
+---
+
 # Error Reporting and Logging<a name="EN-US_TOPIC_0289899825"></a>
 
 -   **[Logging Destination](logging-destination.md)**  

@@ -1,3 +1,8 @@
+---
+description: CREATE TABLE PARTITION creates a partitioned table. Partitioning refers to splitting what is logically one large table into smaller physical pieces based on specific schemes. The table based on t.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE TABLE PARTITION<a name="EN-US_TOPIC_0289900346"></a>
 
 ## Function<a name="en-us_topic_0283136653_en-us_topic_0237122119_section1163224811518"></a>

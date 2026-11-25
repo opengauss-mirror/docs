@@ -1,3 +1,8 @@
+---
+description: This section describes common JDBC interfaces. For more interfaces, check JDK1.8 (software package) and JDBC 4.0.
+keywords: [openGauss, JDBC, JDBC API Reference]
+---
+
 # JDBC API Reference<a name="EN-US_TOPIC_0289900772"></a>
 
 This section describes common JDBC interfaces. For more interfaces, check JDK1.8 (software package) and JDBC 4.0.

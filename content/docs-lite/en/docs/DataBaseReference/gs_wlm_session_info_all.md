@@ -1,3 +1,8 @@
+---
+description: GS\_WLM\_SESSION\_INFO\_ALL displays load management information about a completed job executed on the database instance. Only the user with the sysadmin or monitor admin permission can qu.
+keywords: [openGauss, GS_WLM_SESSION_INFO_ALL]
+---
+
 # GS\_WLM\_SESSION\_INFO\_ALL<a name="ZH-CN_TOPIC_0000001151962063"></a>
 
 **GS\_WLM\_SESSION\_INFO\_ALL** displays load management information about a completed job executed on the database instance. Only the user with the **sysadmin** or **monitor admin** permission can query this view.

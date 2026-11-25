@@ -1,3 +1,8 @@
+---
+description: CREATE FUNCTION creates a function.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE FUNCTION<a name="EN-US_TOPIC_0289900779"></a>
 
 ## Function<a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_sd4b3500e6b35475aa19a15933fec5720"></a>

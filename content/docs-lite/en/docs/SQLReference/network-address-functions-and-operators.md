@@ -1,3 +1,8 @@
+---
+description: The operators <<, <<=, \>\>, and \>\>= test for subnet inclusion. They consider only the network parts of the two addresses \(ignoring any host part\) and determine whether one ne.
+keywords: [openGauss, Network Address Functions and Operators]
+---
+
 # Network Address Functions and Operators<a name="EN-US_TOPIC_0289900807"></a>
 
 ## cidr and inet Operators<a name="en-us_topic_0283136843_en-us_topic_0237121975_en-us_topic_0059778594_s71ca011b21f64c9891528dc0883de0d3"></a>

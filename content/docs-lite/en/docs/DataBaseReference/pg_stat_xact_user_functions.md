@@ -1,3 +1,8 @@
+---
+description: PG\_STAT\_XACT\_USER\_FUNCTIONS contains statistics on the execution of each function.
+keywords: [openGauss, PG_STAT_XACT_USER_FUNCTIONS]
+---
+
 # PG\_STAT\_XACT\_USER\_FUNCTIONS<a name="EN-US_TOPIC_0289900002"></a>
 
 **PG\_STAT\_XACT\_USER\_FUNCTIONS**  contains statistics on the execution of each function.

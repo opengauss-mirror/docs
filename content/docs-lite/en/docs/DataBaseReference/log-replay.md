@@ -1,3 +1,8 @@
+---
+description: Parameter description: Specifies the time for a standby server to write and replay logs.
+keywords: [openGauss, Log Replay]
+---
+
 # Log Replay<a name="EN-US_TOPIC_0289900128"></a>
 
 ## recovery\_time\_target<a name="en-us_topic_0283136722_en-us_topic_0237124709_en-us_topic_0059778936_sbadc77895e6643b882a5e7557e405373"></a>

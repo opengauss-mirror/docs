@@ -1,3 +1,8 @@
+---
+description: OS\_THREADS provides status information about all threads on the current node.
+keywords: [openGauss, OS_THREADS]
+---
+
 # OS\_THREADS<a name="EN-US_TOPIC_0289900354"></a>
 
 **OS\_THREADS**  provides status information about all threads on the current node.

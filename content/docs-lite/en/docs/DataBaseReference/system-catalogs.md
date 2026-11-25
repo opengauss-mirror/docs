@@ -1,3 +1,8 @@
+---
+description: Introduces System Catalogs in openGauss, covering .
+keywords: [openGauss, System Catalogs]
+---
+
 # System Catalogs<a name="EN-US_TOPIC_0289900034"></a>
 
 -   **[GS\_ASP](gs_asp.md)**  

@@ -1,3 +1,8 @@
+---
+description: MOT can significantly speed up an application's overall performance, depending on the characteristics of the workload. MOT improves the performance of transaction processing by making data access and.
+keywords: [openGauss, MOT Usage Scenarios]
+---
+
 # MOT Usage Scenarios<a name="EN-US_TOPIC_0289900874"></a>
 
 MOT can significantly speed up an application's overall performance, depending on the characteristics of the workload. MOT improves the performance of transaction processing by making data access and transaction execution more efficient and minimizing redirections by removing lock and latch contention between concurrently executing transactions.

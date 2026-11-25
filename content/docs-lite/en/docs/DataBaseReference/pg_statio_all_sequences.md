@@ -1,3 +1,8 @@
+---
+description: PG\_STATIO\_ALL\_SEQUENCES contains the I/O statistics of each sequence in the current database.
+keywords: [openGauss, PG_STATIO_ALL_SEQUENCES]
+---
+
 # PG\_STATIO\_ALL\_SEQUENCES<a name="EN-US_TOPIC_0289900183"></a>
 
 **PG\_STATIO\_ALL\_SEQUENCES**  contains the I/O statistics of each sequence in the current database.

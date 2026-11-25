@@ -1,3 +1,8 @@
+---
+description: - You are an audit administrator or a role that has the audit administrator permissions.
+keywords: [openGauss, Archiving a Ledger Database]
+---
+
 # Archiving a Ledger Database<a name="EN-US_TOPIC_0000001099967652"></a>
 
 ## Prerequisites<a name="en-us_topic_0059778013_sfe45a1031ec347ba820649c0cec52027"></a>

@@ -1,3 +1,8 @@
+---
+description: EXECUTE executes a prepared statement. Because a prepared statement exists only in the lifetime of the session, the prepared statement must be created earlier in the current session by using the.
+keywords: [openGauss, EXECUTE]
+---
+
 # EXECUTE<a name="EN-US_TOPIC_0289900825"></a>
 
 ## Function<a name="en-us_topic_0283137468_en-us_topic_0237122161_en-us_topic_0059777447_s984b3ec2b84d48bb843629462288417b"></a>

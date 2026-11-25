@@ -1,3 +1,8 @@
+---
+description: You can obtain the installation package from the openGauss open-source community.
+keywords: [openGauss, Obtaining the Installation Package]
+---
+
 # Obtaining the Installation Package<a name="EN-US_TOPIC_0000001092680812"></a>
 
 You can obtain the installation package from the openGauss open-source community.

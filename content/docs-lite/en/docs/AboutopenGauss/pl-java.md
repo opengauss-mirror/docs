@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.0.0.
+keywords: [openGauss, PLJava]
+---
+
 # PL/Java<a name="EN-US_TOPIC_0000001135665711"></a>
 
 ## Availability<a name="section56086982"></a>

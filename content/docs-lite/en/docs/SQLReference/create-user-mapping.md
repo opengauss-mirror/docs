@@ -1,3 +1,8 @@
+---
+description: CREATE USER MAPPING defines a new mapping from a user to a foreign server.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE USER MAPPING<a name="EN-US_TOPIC_0289899891"></a>
 
 ## Function<a name="en-us_topic_0283136906_section55185111610"></a>

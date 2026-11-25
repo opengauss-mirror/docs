@@ -1,3 +1,8 @@
+---
+description: The openGauss JDBC driver uses log records to help solve problems when the openGauss JDBC driver is used in applications. openGauss JDBC supports the following log management methods:.
+keywords: [openGauss, Log Management]
+---
+
 # Log Management<a name="EN-US_TOPIC_0311515902"></a>
 
 The openGauss JDBC driver uses log records to help solve problems when the openGauss JDBC driver is used in applications. openGauss JDBC supports the following log management methods:

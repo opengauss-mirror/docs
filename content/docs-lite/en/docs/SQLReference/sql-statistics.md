@@ -1,3 +1,8 @@
+---
+description: The following table describes columns in the SQL Statistics report.
+keywords: [openGauss, SQL Statistics]
+---
+
 # SQL Statistics<a name="EN-US_TOPIC_0000001215355222"></a>
 
 The following table describes columns in the SQL Statistics report.

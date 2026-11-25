@@ -1,3 +1,8 @@
+---
+description: Table 1 and Table 2 list commonly used and uncommonly used parameters requi.
+keywords: [openGauss, Command Reference]
+---
+
 # Command Reference<a name="EN-US_TOPIC_0294748983"></a>
 
 ## Command Reference<a name="en-us_topic_0059778168_s0bfc8ae9e6bc445480335198cc89f358"></a>

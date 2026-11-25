@@ -1,3 +1,8 @@
+---
+description: Using MOT tables is quite simple and is described in the few short sections below.
+keywords: [openGauss, MOT Usage]
+---
+
 # MOT Usage<a name="EN-US_TOPIC_0289899990"></a>
 
 Using MOT tables is quite simple and is described in the few short sections below.
@@ -10,7 +15,7 @@ Workflow Overview
 
 The following is a simple overview of the tasks related to working with MOT tables –
 
-![](figures/en-us_image_0289899953.png)
+![MOT Usage](figures/en-us_image_0289899953.png)
 
 -   [Granting User Permissions](granting-user-permissions.md)
 -   [Creating/Deleting an MOT](creating-deleting-an-mot-table.md)

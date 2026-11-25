@@ -1,3 +1,8 @@
+---
+description: Database performance tuning often happens when users are not satisfied with the service execution efficiency and want to improve the efficiency. The database performance is affected by many factors as.
+keywords: [openGauss, Determining the Scope of Performance Tuning]
+---
+
 # Determining the Scope of Performance Tuning<a name="EN-US_TOPIC_0289900998"></a>
 
 Database performance tuning often happens when users are not satisfied with the service execution efficiency and want to improve the efficiency. The database performance is affected by many factors as described in section  [Performance Elements](#en-us_topic_0283136943_en-us_topic_0237121484_en-us_topic_0073259659_en-us_topic_0040046511_section218827915473). Therefore, performance tuning is a complex process and sometimes cannot be systematically described or explained. It depends more on the database administrator's experience. However, this section still attempts to illustrate the performance tuning methods that can be referred to by application development personnel and new openGauss administrators.

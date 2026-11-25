@@ -1,3 +1,8 @@
+---
+description: PREPARE TRANSACTION prepares the current transaction for two-phase commit.
+keywords: [openGauss, PREPARE]
+---
+
 # PREPARE TRANSACTION<a name="EN-US_TOPIC_0289900175"></a>
 
 ## Function<a name="en-us_topic_0283137205_en-us_topic_0237122172_en-us_topic_0059779173_s84c1f6c6e66743a3b5e71a25e070e50f"></a>

@@ -1,3 +1,8 @@
+---
+description: During its installation, the database sets permissions for its files, including files \(such as log files\) generated during the running process. File permissions are set as follows:.
+keywords: [openGauss, Configuring File Permission Security Policies]
+---
+
 # Configuring File Permission Security Policies<a name="EN-US_TOPIC_0289899964"></a>
 
 ## Background<a name="en-us_topic_0283137309_en-us_topic_0237121115_en-us_topic_0059779254_s112bbb1269bd4d75bb0129303297d9a6"></a>

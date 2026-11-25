@@ -1,3 +1,8 @@
+---
+description: This section describes java.sql.PreparedStatement, the API for preparing statements.
+keywords: [openGauss, JDBC, PreparedStatement]
+---
+
 # java.sql.PreparedStatement<a name="EN-US_TOPIC_0289899873"></a>
 
 This section describes  **java.sql.PreparedStatement**, the API for preparing statements.

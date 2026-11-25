@@ -1,3 +1,8 @@
+---
+description: Parameter description: Specifies whether global temporary tables can be created.
+keywords: [openGauss, Global Temporary Table]
+---
+
 # Global Temporary Table<a name="EN-US_TOPIC_0303812074"></a>
 
 ## max\_active\_global\_temporary\_table<a name="section18307271684"></a>

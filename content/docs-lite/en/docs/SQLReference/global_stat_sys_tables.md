@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_STAT\_SYS\_TABLES displays statistics about all the system catalogs in the pg\_catalog, information\_schema, and pg\_toast schemas on each node.
+keywords: [openGauss, GLOBAL_STAT_SYS_TABLES]
+---
+
 # GLOBAL\_STAT\_SYS\_TABLES<a name="EN-US_TOPIC_0289900682"></a>
 
 **GLOBAL\_STAT\_SYS\_TABLES**  displays statistics about all the system catalogs in the  **pg\_catalog**,  **information\_schema**, and  **pg\_toast**  schemas on each node.

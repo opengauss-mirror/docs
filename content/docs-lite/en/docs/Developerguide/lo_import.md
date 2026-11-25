@@ -1,3 +1,8 @@
+---
+description: Import a server-side operating system file into a large object.
+keywords: [openGauss, lo_import]
+---
+
 # lo_import<a name="EN-US_TOPIC_0242380594"></a>
 
 ## Function<a name="en-us_topic_0241735627_section696285173715"></a>

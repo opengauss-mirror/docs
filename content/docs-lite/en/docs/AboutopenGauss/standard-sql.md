@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.0.0.
+keywords: [openGauss, Standard SQL]
+---
+
 # Standard SQL<a name="EN-US_TOPIC_0000001105555114"></a>
 
 ## Availability<a name="section38134078"></a>

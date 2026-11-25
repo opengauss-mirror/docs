@@ -1,3 +1,8 @@
+---
+description: - sum\(expression\).
+keywords: [openGauss, Aggregate Functions]
+---
+
 # Aggregate Functions<a name="EN-US_TOPIC_0000001255221837"></a>
 
 -   sum\(expression\)

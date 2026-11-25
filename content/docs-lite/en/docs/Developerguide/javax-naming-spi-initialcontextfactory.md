@@ -1,3 +1,8 @@
+---
+description: This section describes javax.naming.spi.InitialContextFactory, the initial context factory interface.
+keywords: [openGauss, javax.naming.spi.InitialContextFactory]
+---
+
 # javax.naming.spi.InitialContextFactory<a name="EN-US_TOPIC_0242371432"></a>
 
 This section describes  **javax.naming.spi.InitialContextFactory**, the initial context factory interface.

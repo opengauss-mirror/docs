@@ -1,3 +1,8 @@
+---
+description: SQLExecDirect is used to execute a prepared SQL statement specified in this parameter. This is the fastest method for executing only one SQL statement at a time.
+keywords: [openGauss, SQLExecDirect]
+---
+
 # SQLExecDirect<a name="EN-US_TOPIC_0242371445"></a>
 
 ## Function<a name="en-us_topic_0238272891_en-us_topic_0237120421_en-us_topic_0059778538_sa444edc74fad433d8d9beb6eec51f680"></a>

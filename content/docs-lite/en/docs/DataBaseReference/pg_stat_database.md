@@ -1,3 +1,8 @@
+---
+description: PG\_STAT\_DATABASE contains database statistics for each database in openGauss.
+keywords: [openGauss, PG_STAT_DATABASE]
+---
+
 # PG\_STAT\_DATABASE<a name="EN-US_TOPIC_0289900750"></a>
 
 **PG\_STAT\_DATABASE**  contains database statistics for each database in openGauss.

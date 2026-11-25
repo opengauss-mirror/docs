@@ -1,3 +1,8 @@
+---
+description: Records errors that occur during PLPGSQL object \(stored procedure, function, package, and package body\) compilation. For details, see the following column description.
+keywords: [openGauss, DBE_PLDEVELOPER.gs_errors]
+---
+
 # DBE\_PLDEVELOPER.gs\_errors<a name="EN-US_TOPIC_0000001214726465"></a>
 
 Records errors that occur during PLPGSQL object \(stored procedure, function, package, and package body\) compilation. For details, see the following column description.

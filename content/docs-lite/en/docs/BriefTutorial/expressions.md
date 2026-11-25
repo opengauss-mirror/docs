@@ -1,3 +1,8 @@
+---
+description: An expression is similar to a formula. You can use it in a query statement to search for the result set of a specified condition in a database.
+keywords: [openGauss, Expressions]
+---
+
 # Expressions<a name="EN-US_TOPIC_0000001210141898"></a>
 
 An expression is similar to a formula. You can use it in a query statement to search for the result set of a specified condition in a database.
@@ -83,7 +88,7 @@ Conditional expressions include the following types:
     [Figure 1](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f6defc8307fd0434380b6ba22838ed5f1)  shows the syntax of a  **CASE**  expression.
 
     **Figure  1**  case::=<a name="en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f6defc8307fd0434380b6ba22838ed5f1"></a>  
-    ![](figures/case.jpg "case")
+    ![Condition Expressions](figures/case.jpg "case")
 
     A  **CASE**  clause can be used in a valid expression.  **condition**  is an expression that returns a value of Boolean type.
 
@@ -122,7 +127,7 @@ Conditional expressions include the following types:
     [Figure 2](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f8e62b15fa92349339fcdb77fcc5fef4d)  shows the syntax of a  **DECODE**  expression.
 
     **Figure  2**  decode::=<a name="en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f8e62b15fa92349339fcdb77fcc5fef4d"></a>  
-    ![](figures/decode.png "decode")
+    ![Condition Expressions](figures/decode.png "decode")
 
     Compare each following  **compare\(n\)**  with  **base\_expr**.  **value\(n\)**  is returned if a  **compare\(n\)**  matches the  **base\_expr**  expression. If  **base\_expr**  does not match each  **compare\(n\)**, the default value is returned.
 
@@ -141,7 +146,7 @@ Conditional expressions include the following types:
     [Figure 3](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f1877c9f8d2ac4964828a6eaaddf5f35f)  shows the syntax of a  **COALESCE**  expression.
 
     **Figure  3**  coalesce::=<a name="en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f1877c9f8d2ac4964828a6eaaddf5f35f"></a>  
-    ![](figures/coalesce.png "coalesce")
+    ![Condition Expressions](figures/coalesce.png "coalesce")
 
     **COALESCE**  returns its first not-**NULL**  value. If all the parameters are  **NULL**,  **NULL**  is returned. This value is replaced by the default value when data is displayed. Like a  **CASE**  expression,  **COALESCE**  only calculates the parameters that are needed to determine the result. That is, parameters to the right of the first non-null parameter are not calculated.
 
@@ -181,7 +186,7 @@ Conditional expressions include the following types:
     [Figure 4](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f6c5bc64bf5de4b728ed1d73d97768e6e)  shows the syntax of a  **NULLIF**  expression.
 
     **Figure  4**  nullif::=<a name="en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f6c5bc64bf5de4b728ed1d73d97768e6e"></a>  
-    ![](figures/nullif.png "nullif")
+    ![Condition Expressions](figures/nullif.png "nullif")
 
     Only if the value of  **value1**  is equal to that of  **value2**  can  **NULLIF**  return  **NULL**. Otherwise,  **value1**  is returned.
 
@@ -221,7 +226,7 @@ Conditional expressions include the following types:
     [Figure 5](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f23a83b0f987a49e0b6890280568afbd2)  shows the syntax of a  **GREATEST**  expression.
 
     **Figure  5**  greatest::=<a name="en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f23a83b0f987a49e0b6890280568afbd2"></a>  
-    ![](figures/greatest.png "greatest")
+    ![Condition Expressions](figures/greatest.png "greatest")
 
     You can select the maximum value from any numerical expression list.
 
@@ -236,7 +241,7 @@ Conditional expressions include the following types:
     [Figure 6](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f30a16b0edbde4750a42053619840b384)  shows the syntax of a  **LEAST**  expression.
 
     **Figure  6**  least::=<a name="en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f30a16b0edbde4750a42053619840b384"></a>  
-    ![](figures/least.png "least")
+    ![Condition Expressions](figures/least.png "least")
 
     You can select the minimum value from any numerical expression list.
 
@@ -259,7 +264,7 @@ Conditional expressions include the following types:
     [Figure 7](#en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f69cd4e01dd6e4280b756eb98d3c77c91)  shows the syntax of an  **NVL**  expression.
 
     **Figure  7**  nvl::=<a name="en-us_topic_0283136958_en-us_topic_0237122002_en-us_topic_0059777797_f69cd4e01dd6e4280b756eb98d3c77c91"></a>  
-    ![](figures/nvl.jpg "nvl")
+    ![Condition Expressions](figures/nvl.jpg "nvl")
 
     If the value of  **value1**  is  **NULL**, the value of  **value2**  is returned. Otherwise, the value of  **value1**  is returned.
 
@@ -289,7 +294,7 @@ Subquery expressions include the following types:
     [Figure 8](#en-us_topic_0283136595_en-us_topic_0237122003_en-us_topic_0059777701_f0d971ea580d241e5a0dca682165b4d16)  shows the syntax of an  **EXISTS/NOT EXISTS**  expression.
 
     **Figure  8**  EXISTS/NOT EXISTS::=<a name="en-us_topic_0283136595_en-us_topic_0237122003_en-us_topic_0059777701_f0d971ea580d241e5a0dca682165b4d16"></a>  
-    ![](figures/exists-not-exists.png "exists-not-exists")
+    ![Subquery Expressions](figures/exists-not-exists.png "exists-not-exists")
 
     The parameter of an  **EXISTS**  expression is an arbitrary  **SELECT**  statement, or a subquery. The subquery is computed to determine whether it returns any rows. If it returns at least one row, the result of  **EXISTS**  is  **true**. If it returns no rows, the result of  **EXISTS**  is  **false**.
 
@@ -324,7 +329,7 @@ Subquery expressions include the following types:
     [Figure 9](#en-us_topic_0283136595_en-us_topic_0237122003_en-us_topic_0059777701_fd3c74d5deb5f456bab447575214b74b0)  shows the syntax of an  **IN/NOT IN**  expression.
 
     **Figure  9**  IN/NOT IN::=<a name="en-us_topic_0283136595_en-us_topic_0237122003_en-us_topic_0059777701_fd3c74d5deb5f456bab447575214b74b0"></a>  
-    ![](figures/in-not-in.png "in-not-in")
+    ![Subquery Expressions](figures/in-not-in.png "in-not-in")
 
     The right-side parenthesized subquery returns only one column. The left-side expression is calculated and compared to each row of the subquery result. The result of  **IN**  is  **true**  if any equal subquery row is found. The result is  **false**  if no equal row is found \(including the case where the subquery returns no rows\).
 
@@ -363,7 +368,7 @@ Subquery expressions include the following types:
     [Figure 10](#en-us_topic_0283136595_en-us_topic_0237122003_en-us_topic_0059777701_f34ef57cea9fe4936b6874f259ee5bc0f)  shows the syntax of an  **ANY/SOME**  expression.
 
     **Figure  10**  any/some::=<a name="en-us_topic_0283136595_en-us_topic_0237122003_en-us_topic_0059777701_f34ef57cea9fe4936b6874f259ee5bc0f"></a>  
-    ![](figures/any-some.png "any-some")
+    ![Subquery Expressions](figures/any-some.png "any-some")
 
     The right-side parenthesized subquery returns only one column. The left-side expression is calculated and compared to each row of the subquery result by using a given operator, which must yield a Boolean result. The result of  **ANY**  is  **true**  if any true result is obtained. The result is  **false**  if no true result is found \(including the case where the subquery returns no rows\).  **SOME**  is a synonym of  **ANY**.  **IN**  can be equivalently replaced by  **ANY**.
 
@@ -400,7 +405,7 @@ Subquery expressions include the following types:
     [Figure 11](#en-us_topic_0283136595_en-us_topic_0237122003_en-us_topic_0059777701_fdf5a38b067314bf7b8847e80f5346f52)  shows the syntax of an  **ALL**  expression.
 
     **Figure  11**  all::=<a name="en-us_topic_0283136595_en-us_topic_0237122003_en-us_topic_0059777701_fdf5a38b067314bf7b8847e80f5346f52"></a>  
-    ![](figures/all.png "all")
+    ![Subquery Expressions](figures/all.png "all")
 
     The right-side parenthesized subquery returns only one column. The left-side expression is calculated and compared to each row of the subquery result by using a given operator, which must yield a Boolean result. The result of  **ALL**  is  **true**  if all rows yield true results \(including the case where the subquery returns no rows\). The result is  **false**  if any false result is found.
 

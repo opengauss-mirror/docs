@@ -1,3 +1,8 @@
+---
+description: PG\_PREPARED\_XACTS displays information about transactions that are currently prepared for two-phase commit.
+keywords: [openGauss, PG_PREPARED_XACTS]
+---
+
 # PG\_PREPARED\_XACTS<a name="EN-US_TOPIC_0289900641"></a>
 
 **PG\_PREPARED\_XACTS**  displays information about transactions that are currently prepared for two-phase commit.

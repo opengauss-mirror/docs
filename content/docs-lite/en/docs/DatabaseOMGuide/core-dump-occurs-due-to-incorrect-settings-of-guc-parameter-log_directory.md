@@ -1,3 +1,8 @@
+---
+description: After the database process is started, a core dump occurs and no log is recorded.
+keywords: [openGauss, Core Dump Occurs Due to Incorrect Settings of GUC Parameter log_directory]
+---
+
 # Core Dump Occurs Due to Incorrect Settings of GUC Parameter log\_directory<a name="EN-US_TOPIC_0289901017"></a>
 
 ## Symptom<a name="en-us_topic_0283137178_en-us_topic_0059778167_s7a2ed06fefd0448fae90f40fe4291f8d"></a>

@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_STAT\_BAD\_BLOCK displays information about table and index read failures on each node.
+keywords: [openGauss, GLOBAL_STAT_BAD_BLOCK]
+---
+
 # GLOBAL\_STAT\_BAD\_BLOCK<a name="EN-US_TOPIC_0289900965"></a>
 
 **GLOBAL\_STAT\_BAD\_BLOCK**  displays information about table and index read failures on each node.

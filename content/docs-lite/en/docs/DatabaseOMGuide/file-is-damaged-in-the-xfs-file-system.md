@@ -1,3 +1,8 @@
+---
+description: When a database is in use, error reports such as an input/output error or the structure needs cleaning generally do not occur in the XFS file system.
+keywords: [openGauss, File Is Damaged in the XFS File System]
+---
+
 # File Is Damaged in the XFS File System<a name="EN-US_TOPIC_0291615092"></a>
 
 ## Symptom<a name="section172487523295"></a>

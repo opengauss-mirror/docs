@@ -1,3 +1,8 @@
+---
+description: - SELECT INTO new_table defines a new table based on a query result and inserts data obtained by query to the new table. Different from SELECT, data found by SELECT INTO is not returned.
+keywords: [openGauss, SELECT]
+---
+
 # SELECT INTO<a name="EN-US_TOPIC_0289900598"></a>
 
 ## Function<a name="en-us_topic_0283137419_en-us_topic_0237122185_en-us_topic_0059779381_s8acfcbcb82b947e08be0c1bb0de2de86"></a>

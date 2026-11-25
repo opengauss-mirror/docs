@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_STATIO\_SYS\_SEQUENCES displays I/O status information about all system sequences in namespaces on each node.
+keywords: [openGauss, GLOBAL_STATIO_SYS_SEQUENCES]
+---
+
 # GLOBAL\_STATIO\_SYS\_SEQUENCES<a name="EN-US_TOPIC_0289900855"></a>
 
 **GLOBAL\_STATIO\_SYS\_SEQUENCES**  displays I/O status information about all system sequences in namespaces on each node.

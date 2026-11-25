@@ -1,3 +1,8 @@
+---
+description: PG\_TS\_PARSER contains entries defining text search parsers. A parser is responsible for splitting input text into lexemes and assigning a token type to each lexeme. The new parser must be creat.
+keywords: [openGauss, PG_TS_PARSER]
+---
+
 # PG\_TS\_PARSER<a name="EN-US_TOPIC_0289900658"></a>
 
 **PG\_TS\_PARSER**  contains entries defining text search parsers. A parser is responsible for splitting input text into lexemes and assigning a token type to each lexeme. The new parser must be created by the database system administrator.

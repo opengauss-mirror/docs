@@ -1,3 +1,8 @@
+---
+description: Introduces Resource Consumption in openGauss, covering .
+keywords: [openGauss, Resource Consumption]
+---
+
 # Resource Consumption<a name="EN-US_TOPIC_0289900295"></a>
 
 -   **[Memory](memory-35.md)**  

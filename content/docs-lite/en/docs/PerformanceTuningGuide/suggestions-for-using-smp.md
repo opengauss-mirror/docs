@@ -1,3 +1,8 @@
+---
+description: To use the SMP feature to improve the performance, ensure that the following conditions are met:.
+keywords: [openGauss, Suggestions for Using SMP]
+---
+
 # Suggestions for Using SMP<a name="EN-US_TOPIC_0000001085291122"></a>
 
 ## Limitations<a name="section545621551611"></a>

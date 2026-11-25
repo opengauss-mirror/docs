@@ -1,3 +1,8 @@
+---
+description: The following information is displayed in the MPP\_TABLES view:.
+keywords: [openGauss, MPP_TABLES]
+---
+
 # MPP\_TABLES<a name="EN-US_TOPIC_0289900816"></a>
 
 The following information is displayed in the  **MPP\_TABLES **view:

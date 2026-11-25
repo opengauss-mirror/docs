@@ -1,3 +1,8 @@
+---
+description: The PURGE statement can be used to:.
+keywords: [openGauss, PURGE]
+---
+
 # PURGE<a name="EN-US_TOPIC_0000001151429881"></a>
 
 ## Function<a name="section625854265112"></a>

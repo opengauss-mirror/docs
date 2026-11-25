@@ -1,3 +1,8 @@
+---
+description: CREATE MASKING POLICY creates a masking policy.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE MASKING POLICY<a name="EN-US_TOPIC_0306525303"></a>
 
 ## Function<a name="section1163224811518"></a>

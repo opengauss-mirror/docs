@@ -1,3 +1,8 @@
+---
+description: During database running, a large number of logs are generated, including write-ahead logs \(WALs, also called Xlogs\) for ensuring database security and reliability and run logs and operation logs for.
+keywords: [openGauss, Log Reference]
+---
+
 # Log Reference<a name="EN-US_TOPIC_0289897020"></a>
 
 ## Log Overview<a name="en-us_topic_0283140584_section1680963115278"></a>

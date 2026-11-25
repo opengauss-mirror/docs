@@ -1,3 +1,8 @@
+---
+description: DROP ROLE deletes a role.
+keywords: [openGauss, DROP]
+---
+
 # DROP ROLE<a name="EN-US_TOPIC_0289900731"></a>
 
 ## Function<a name="en-us_topic_0283136937_en-us_topic_0237122147_en-us_topic_0059778848_s77851fcd69534eafbd3b79f15670b201"></a>

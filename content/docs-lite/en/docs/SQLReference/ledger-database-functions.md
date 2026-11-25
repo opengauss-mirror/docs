@@ -1,3 +1,8 @@
+---
+description: - get\_dn\_hist\_relhash\(text, text\).
+keywords: [openGauss, Ledger Database Functions]
+---
+
 # Ledger Database Functions<a name="EN-US_TOPIC_0000001147093197"></a>
 
 -   get\_dn\_hist\_relhash\(text, text\)

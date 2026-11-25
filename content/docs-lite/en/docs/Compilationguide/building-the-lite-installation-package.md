@@ -1,3 +1,8 @@
+---
+description: Use the build/script/cmake\_package\_mini.sh script to build the openGauss Lite installation package.
+keywords: [openGauss, Building the Lite Installation Package]
+---
+
 # Building the Lite Installation Package<a name="EN-US_TOPIC_0289899546"></a>
 
 Use the  **build/script/cmake\_package\_mini.sh**  script to build the openGauss Lite installation package.

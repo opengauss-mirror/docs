@@ -1,3 +1,8 @@
+---
+description: You can run the top command to check the CPU usage of each node in openGauss and analyze whether performance bottleneck caused by heavy CPU load exists.
+keywords: [openGauss, CPU]
+---
+
 # CPU<a name="EN-US_TOPIC_0289900497"></a>
 
 You can run the  **top**  command to check the CPU usage of each node in openGauss and analyze whether performance bottleneck caused by heavy CPU load exists.

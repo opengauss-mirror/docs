@@ -1,3 +1,8 @@
+---
+description: DROP PACKAGE deletes the existing package or package body.
+keywords: [openGauss, DROP PACKAGE]
+---
+
 # DROP PACKAGE<a name="EN-US_TOPIC_0000001114052560"></a>
 
 ## Function<a name="section37715281291"></a>

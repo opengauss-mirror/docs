@@ -1,3 +1,8 @@
+---
+description: Exits the current transaction.
+keywords: [openGauss, Appendix SQL Syntax]
+---
+
 # Appendix: SQL Syntax<a name="EN-US_TOPIC_0000001210461834"></a>
 
 ## ABORT<a name="section49831237711"></a>

@@ -1,3 +1,8 @@
+---
+description: Run the top command to check the memory usage of each node in openGauss and analyze whether a performance bottleneck occurs due to high memory usage.
+keywords: [openGauss, Memory]
+---
+
 # Memory<a name="EN-US_TOPIC_0289900635"></a>
 
 Run the  **top**  command to check the memory usage of each node in openGauss and analyze whether a performance bottleneck occurs due to high memory usage.

@@ -1,3 +1,8 @@
+---
+description: This section describes how to install openGauss using Docker to facilitate installation, configuration, and environment setting for DevOps users.
+keywords: [openGauss, Container-based Installation on a Single Node]
+---
+
 # Container-based Installation on a Single Node <a name="EN-US_TOPIC_0289899741"></a>
 
 This section describes how to install openGauss using Docker to facilitate installation, configuration, and environment setting for DevOps users.

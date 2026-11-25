@@ -1,3 +1,8 @@
+---
+description: Publication-subscription requires some configuration options to be set.
+keywords: [openGauss, Configuration Settings]
+---
+
 # Configuration Settings<a name="EN-US_TOPIC_0289900926"></a>
 
 Publication-subscription requires some configuration options to be set.

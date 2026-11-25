@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 3.0.0.
+keywords: [openGauss, Delaying Entering the Maximum Availability Mode]
+---
+
 # Delaying Entering the Maximum Availability Mode<a name="EN-US_TOPIC_0000001220197752"></a>
 
 ## Availability<a name="section118411122194813"></a>

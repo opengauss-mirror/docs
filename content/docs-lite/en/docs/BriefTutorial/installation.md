@@ -1,3 +1,8 @@
+---
+description: - A user group and a common user have been created.
+keywords: [openGauss, Installation]
+---
+
 # Installation<a name="EN-US_TOPIC_0000001120430818"></a>
 
 ## Prerequisites<a name="section9955194683210"></a>

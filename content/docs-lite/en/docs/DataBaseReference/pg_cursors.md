@@ -1,3 +1,8 @@
+---
+description: PG\_CURSORS displays cursors that are currently available.
+keywords: [openGauss, PG_CURSORS]
+---
+
 # PG\_CURSORS<a name="EN-US_TOPIC_0289900055"></a>
 
 **PG\_CURSORS**  displays cursors that are currently available.

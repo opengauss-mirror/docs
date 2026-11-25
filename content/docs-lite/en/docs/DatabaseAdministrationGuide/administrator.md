@@ -1,3 +1,8 @@
+---
+description: The account automatically generated during database installation is called an initial user. The initial user has the highest-level permissions in the system and can perform all operations. If the init.
+keywords: [openGauss, Administrator]
+---
+
 # Administrator<a name="EN-US_TOPIC_0289900895"></a>
 
 ## Initial User<a name="en-us_topic_0283136784_en-us_topic_0237121100_section41994915210"></a>

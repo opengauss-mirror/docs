@@ -1,3 +1,8 @@
+---
+description: The row-level security feature enables database access control to be accurate to each row of data tables. In this way, the same SQL query may return different results for different users.
+keywords: [openGauss, Row-Level Security Policy]
+---
+
 # Row-Level Security Policy<a name="EN-US_TOPIC_0289900607"></a>
 
 The row-level security feature enables database access control to be accurate to each row of data tables. In this way, the same SQL query may return different results for different users.

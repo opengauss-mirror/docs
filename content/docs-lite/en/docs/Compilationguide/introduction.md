@@ -1,3 +1,8 @@
+---
+description: This document helps you quickly understand the software and hardware requirements, environment configuration, and how to build software or installation packages from the source code for building openG.
+keywords: [openGauss, Introduction]
+---
+
 # Introduction<a name="EN-US_TOPIC_0289899552"></a>
 
 ## Purpose<a name="en-us_topic_0283136298_section1152420685710"></a>

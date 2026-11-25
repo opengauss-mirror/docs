@@ -1,3 +1,8 @@
+---
+description: An Ispell dictionary is a morphological dictionary, which can normalize different linguistic forms of a word into the same lexeme. For example, an English Ispell dictionary can match all d.
+keywords: [openGauss, Ispell Dictionary]
+---
+
 # Ispell Dictionary<a name="EN-US_TOPIC_0289900767"></a>
 
 An  **Ispell**  dictionary is a morphological dictionary, which can normalize different linguistic forms of a word into the same lexeme. For example, an English  **Ispell**  dictionary can match all declensions and conjugations of the search term  **bank**, such as,  **banking**,  **banked**,  **banks**,  **banks'**, and  **bank's**.

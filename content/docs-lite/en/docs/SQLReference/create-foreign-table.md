@@ -1,3 +1,8 @@
+---
+description: CREATE FOREIGN TABLE creates a foreign table.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE FOREIGN TABLE<a name="EN-US_TOPIC_0289900252"></a>
 
 ## Function<a name="en-us_topic_0283137606_section03743713018"></a>

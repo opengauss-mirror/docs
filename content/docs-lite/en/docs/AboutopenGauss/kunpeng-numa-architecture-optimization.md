@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.0.0.
+keywords: [openGauss, Kunpeng NUMA Architecture Optimization]
+---
+
 # Kunpeng NUMA Architecture Optimization<a name="EN-US_TOPIC_0000001105075478"></a>
 
 ## Availability<a name="section1820817472142"></a>

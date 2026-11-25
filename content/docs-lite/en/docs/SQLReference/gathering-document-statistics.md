@@ -1,3 +1,8 @@
+---
+description: The function ts\_stat is useful for checking your configuration and for finding stop-word candidates.
+keywords: [openGauss, Gathering Document Statistics]
+---
+
 # Gathering Document Statistics<a name="EN-US_TOPIC_0289900738"></a>
 
 The function  **ts\_stat**  is useful for checking your configuration and for finding stop-word candidates.

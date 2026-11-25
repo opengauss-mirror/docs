@@ -1,3 +1,8 @@
+---
+description: GS\_AUDITING\_POLICY\_ACCESS records the unified audit information about DML database operations. Only the system administrator or security policy administrator can access this system catalog.
+keywords: [openGauss, GS_AUDITING_POLICY_ACCESS]
+---
+
 # GS\_AUDITING\_POLICY\_ACCESS<a name="EN-US_TOPIC_0306525309"></a>
 
 **GS\_AUDITING\_POLICY\_ACCESS**  records the unified audit information about DML database operations. Only the system administrator or security policy administrator can access this system catalog.

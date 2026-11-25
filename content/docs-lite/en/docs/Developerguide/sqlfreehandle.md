@@ -1,3 +1,8 @@
+---
+description: SQLFreeHandle is used to release resources associated with a specific environment, connection, or statement handle. It replaces the ODBC 2.x functions: SQLFreeEnv, SQLFreeConnect, and SQLFreeStmt.
+keywords: [openGauss, SQLFreeHandle]
+---
+
 # SQLFreeHandle<a name="EN-US_TOPIC_0242371450"></a>
 
 ## Function<a name="en-us_topic_0238272896_en-us_topic_0237120426_en-us_topic_0059779231_s93f9114d62c04cfa917e8ebc927ec8e9"></a>

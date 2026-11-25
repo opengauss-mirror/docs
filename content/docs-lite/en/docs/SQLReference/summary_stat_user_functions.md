@@ -1,3 +1,8 @@
+---
+description: SUMMARY\_STAT\_USER\_FUNCTIONS displays statistics about user-defined functions on all database nodes.
+keywords: [openGauss, SUMMARY_STAT_USER_FUNCTIONS]
+---
+
 # SUMMARY\_STAT\_USER\_FUNCTIONS<a name="EN-US_TOPIC_0289899911"></a>
 
 **SUMMARY\_STAT\_USER\_FUNCTIONS**  displays statistics about user-defined functions on all database nodes.

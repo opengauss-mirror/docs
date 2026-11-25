@@ -1,3 +1,8 @@
+---
+description: The openGauss database supports the row executor and vectorized executor for processing row-store tables and column-store tables, respectively.
+keywords: [openGauss, Configuring Vectorization]
+---
+
 # Configuring Vectorization<a name="EN-US_TOPIC_0000001241171615"></a>
 
 The openGauss database supports the row executor and vectorized executor for processing row-store tables and column-store tables, respectively.

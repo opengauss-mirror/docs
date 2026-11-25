@@ -1,3 +1,8 @@
+---
+description: This method rolls back the current pending transaction.
+keywords: [openGauss, connection.rollback]
+---
+
 # connection.rollback\(\)<a name="EN-US_TOPIC_0000001080371156"></a>
 
 ## Function<a name="section5708152714306"></a>

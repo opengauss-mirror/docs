@@ -1,3 +1,8 @@
+---
+description: Database object size functions calculate the actual disk space used by database objects.
+keywords: [openGauss, Database Object Functions]
+---
+
 # Database Object Functions<a name="EN-US_TOPIC_0289900989"></a>
 
 ## Database Object Size Functions<a name="en-us_topic_0283137585_en-us_topic_0237121994_en-us_topic_0059778344_s68d3a043cae24a8ab0446b5c58c024f6"></a>

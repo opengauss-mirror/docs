@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 3.0.0.
+keywords: [openGauss, Publication-Subscription]
+---
+
 # Publication-Subscription<a name="EN-US_TOPIC_0000001208298901"></a>
 
 ## Availability<a name="section3104013"></a>

@@ -1,3 +1,8 @@
+---
+description: To ensure data security in openGauss and prevent accidents, such as data loss and illegal data access, read this section carefully.
+keywords: [openGauss, Data Security Maintenance Suggestions]
+---
+
 # Data Security Maintenance Suggestions<a name="EN-US_TOPIC_0289897026"></a>
 
 To ensure data security in openGauss and prevent accidents, such as data loss and illegal data access, read this section carefully.

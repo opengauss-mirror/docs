@@ -1,3 +1,8 @@
+---
+description: To ensure the security of application data, you are advised to divide the openGauss typical network into two independent networks: front-end service network and data management and storage network.
+keywords: [openGauss, Typical Networking]
+---
+
 # Typical Networking<a name="EN-US_CONCEPT_0289895601"></a>
 
 To ensure the security of application data, you are advised to divide the openGauss typical network into two independent networks: front-end service network and data management and storage network.
@@ -5,7 +10,7 @@ To ensure the security of application data, you are advised to divide the openGa
 **Figure  1**  Typical networking<a name="en-us_concept_0283139009_en-us_concept_0238166305_fig7654172218145"></a>  
 
 
-![](figures/en-us_image_0283139010.png)
+![Typical Networking](figures/en-us_image_0283139010.png)
 
 [Table 1](#en-us_concept_0283139009_en-us_concept_0238166305_en-us_topic_0085434654_en-us_topic_0059782024_tb80dc4a120b64f6093f63535ce9998ef)  describes the network division.
 
@@ -41,5 +46,5 @@ Network exclusiveness and 1:1 bandwidth convergence ratio are the basic requirem
 For the test system, the preceding requirements can be lowered.
 
 **Figure  2**  Database management and storage network<a name="en-us_concept_0283139009_en-us_concept_0238166305_en-us_topic_0085434654_en-us_topic_0059782024_fig397545395542"></a>  
-![](figures/database-management-and-storage-network.png "database-management-and-storage-network")
+![Typical Networking](figures/database-management-and-storage-network.png "database-management-and-storage-network")
 

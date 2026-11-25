@@ -1,3 +1,8 @@
+---
+description: This section describes the parameters in the memory table.
+keywords: [openGauss, Memory Table]
+---
+
 # Memory Table<a name="EN-US_TOPIC_0289900839"></a>
 
 This section describes the parameters in the memory table.

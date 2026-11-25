@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Network Communication Security]
+---
+
 # Network Communication Security<a name="EN-US_TOPIC_0000001105395246"></a>
 
 ## Availability<a name="section17746747"></a>

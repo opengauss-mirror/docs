@@ -1,3 +1,8 @@
+---
+description: Drops a foreign data wrapper (FDW).
+keywords: [openGauss, DROP]
+---
+
 # DROP FOREIGN DATA WRAPPER
 
 ## Function Description

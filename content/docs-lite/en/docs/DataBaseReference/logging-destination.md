@@ -1,3 +1,8 @@
+---
+description: Parameter description: openGauss supports several methods of logging server messages. Set this parameter to a list of desired log destinations separated by commas. \(For example, log\_destination=.
+keywords: [openGauss, Logging Destination]
+---
+
 # Logging Destination<a name="EN-US_TOPIC_0289900945"></a>
 
 ## log\_destination<a name="en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_sb6c9884f69bd4765a60f80810c94f194"></a>

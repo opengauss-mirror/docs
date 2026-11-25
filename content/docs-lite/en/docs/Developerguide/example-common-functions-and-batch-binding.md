@@ -1,3 +1,8 @@
+---
+description: //The following example shows how to obtain data from openGauss through the ODBC interface.
+keywords: [openGauss, Example Common Functions and Batch Binding]
+---
+
 # Example: Common Functions and Batch Binding<a name="EN-US_TOPIC_0289900122"></a>
 
 ## Code for Common Functions<a name="en-us_topic_0283137582_en-us_topic_0237120410_en-us_topic_0059777697_s1f4a2c1a228a412193b28fb23d146e03"></a>

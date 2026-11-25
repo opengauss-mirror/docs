@@ -1,3 +1,8 @@
+---
+description: The following specifies the hardware and software prerequisites for using openGauss MOT.
+keywords: [openGauss, MOT Prerequisites]
+---
+
 # MOT Prerequisites<a name="EN-US_TOPIC_0289901003"></a>
 
 The following specifies the hardware and software prerequisites for using openGauss MOT.

@@ -1,3 +1,8 @@
+---
+description: This section describes javax.sql.ConnectionPoolDataSource, the API for data source connection pools.
+keywords: [openGauss, javax.sql.ConnectionPoolDataSource]
+---
+
 # javax.sql.ConnectionPoolDataSource<a name="EN-US_TOPIC_0289900321"></a>
 
 This section describes  **javax.sql.ConnectionPoolDataSource**, the API for data source connection pools.

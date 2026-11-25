@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_WORKLOAD\_TRANSACTION displays load information about workloads on each node.
+keywords: [openGauss, GLOBAL_WORKLOAD_TRANSACTION]
+---
+
 # GLOBAL\_WORKLOAD\_TRANSACTION<a name="EN-US_TOPIC_0289900443"></a>
 
 **GLOBAL\_WORKLOAD\_TRANSACTION**  displays load information about workloads on each node.

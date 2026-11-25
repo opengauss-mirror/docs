@@ -1,3 +1,8 @@
+---
+description: Bit strings are strings of 1's and 0's. They can be used to store bit masks.
+keywords: [openGauss, Bit String Types]
+---
+
 # Bit String Types<a name="EN-US_TOPIC_0289900674"></a>
 
 Bit strings are strings of 1's and 0's. They can be used to store bit masks.

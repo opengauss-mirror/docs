@@ -1,3 +1,8 @@
+---
+description: A checkpoint is a point in the transaction log sequence at which all data files have been updated to reflect the information in the log. All data files will be flushed to a disk.
+keywords: [openGauss, CHECKPOINT]
+---
+
 # CHECKPOINT<a name="EN-US_TOPIC_0289900495"></a>
 
 ## Function<a name="en-us_topic_0283137558_en-us_topic_0237122089_en-us_topic_0059778147_s45168794daa74bc2a308ea3c943e0a93"></a>

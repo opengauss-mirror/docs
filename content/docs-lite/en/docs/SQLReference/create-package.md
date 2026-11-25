@@ -1,3 +1,8 @@
+---
+description: CREATE PACKAGE creates a package.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE PACKAGE<a name="EN-US_TOPIC_0000001114212452"></a>
 
 ## Function<a name="section33561436135517"></a>

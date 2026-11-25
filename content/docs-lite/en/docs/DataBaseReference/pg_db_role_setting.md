@@ -1,3 +1,8 @@
+---
+description: PG\_DB\_ROLE\_SETTING records the default values of configuration items bound to each role and database when the database is running.
+keywords: [openGauss, PG_DB_ROLE_SETTING]
+---
+
 # PG\_DB\_ROLE\_SETTING<a name="EN-US_TOPIC_0289900360"></a>
 
 **PG\_DB\_ROLE\_SETTING**  records the default values of configuration items bound to each role and database when the database is running.

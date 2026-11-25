@@ -1,3 +1,8 @@
+---
+description: CREATE TABLESPACE creates a tablespace in a database.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE TABLESPACE<a name="EN-US_TOPIC_0289900078"></a>
 
 ## Function<a name="en-us_topic_0283137328_en-us_topic_0237122120_en-us_topic_0059777670_sbf00214c21e441f5adc2bc08ecaca4e7"></a>

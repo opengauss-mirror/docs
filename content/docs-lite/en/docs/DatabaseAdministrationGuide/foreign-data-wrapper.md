@@ -1,3 +1,8 @@
+---
+description: The foreign data wrapper \(FDW\) of openGauss can implement cross-database operations between openGauss databases and remote databases or between openGauss databases themselves. Currently, the followi.
+keywords: [openGauss, Foreign Data Wrapper]
+---
+
 # Foreign Data Wrapper<a name="EN-US_TOPIC_0289900378"></a>
 
 The foreign data wrapper \(FDW\) of openGauss can implement cross-database operations between openGauss databases and remote databases or between openGauss databases themselves. Currently, the following remote databases are supported: Oracle, MySQL \(MariaDB\), openGauss \(postgres\_fdw\), file\_fdw and DBLINK.

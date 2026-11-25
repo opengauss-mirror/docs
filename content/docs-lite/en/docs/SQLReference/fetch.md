@@ -1,3 +1,8 @@
+---
+description: FETCH retrieves rows using a previously created cursor.
+keywords: [openGauss, FETCH]
+---
+
 # FETCH<a name="EN-US_TOPIC_0289900300"></a>
 
 ## Function<a name="en-us_topic_0283137321_en-us_topic_0237122165_en-us_topic_0059778422_s1a1f69e123144a83800629a2d8ab2dba"></a>

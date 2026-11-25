@@ -1,3 +1,8 @@
+---
+description: openGauss generates optimal execution plans based on the cost estimation. Optimizers need to estimate the number of data rows and the cost based on statistics collected using ANALYZE. Therefore,.
+keywords: [openGauss, Optimizing Statistics]
+---
+
 # Optimizing Statistics<a name="EN-US_TOPIC_0289899879"></a>
 
 ## Background<a name="en-us_topic_0283137257_en-us_topic_0237121526_en-us_topic_0073253803_en-us_topic_0062578363_section5394576019248"></a>

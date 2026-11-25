@@ -1,3 +1,8 @@
+---
+description: Introduces Reserved Parameters in openGauss, covering .
+keywords: [openGauss, Reserved Parameters]
+---
+
 # Reserved Parameters<a name="EN-US_TOPIC_0311762489"></a>
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 

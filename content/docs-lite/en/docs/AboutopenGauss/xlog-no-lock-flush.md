@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Xlog no Lock Flush]
+---
+
 # Xlog no Lock Flush<a name="EN-US_TOPIC_0000001209317775"></a>
 
 ## Availability<a name="section3480125215575"></a>

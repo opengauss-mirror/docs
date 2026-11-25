@@ -1,3 +1,8 @@
+---
+description: SUMMARY\_STATIO\_SYS\_SEQUENCES displays I/O status information about all system sequences in namespaces in openGauss.
+keywords: [openGauss, SUMMARY_STATIO_SYS_SEQUENCES]
+---
+
 # SUMMARY\_STATIO\_SYS\_SEQUENCES<a name="EN-US_TOPIC_0289900324"></a>
 
 **SUMMARY\_STATIO\_SYS\_SEQUENCES**  displays I/O status information about all system sequences in namespaces in openGauss.

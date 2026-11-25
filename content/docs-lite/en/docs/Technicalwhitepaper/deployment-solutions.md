@@ -1,3 +1,8 @@
+---
+description: openGauss can be deployed in standalone mode or with one primary node and multiple standby nodes. openGauss does not provide the CM. Therefore, the high availability solution in the subsequent descrip.
+keywords: [openGauss, Deployment Solutions]
+---
+
 # Deployment Solutions<a name="EN-US_TOPIC_0289895652"></a>
 
 openGauss can be deployed in standalone mode or with one primary node and multiple standby nodes. openGauss does not provide the CM. Therefore, the high availability solution in the subsequent description is achieved based on the cluster management, arbitration, and recovery provided by users.
@@ -116,13 +121,13 @@ The overall deployment solutions can be classified into two types: standalone an
     **Figure  1**  Standalone deployment<a name="en-us_topic_0283139012_en-us_topic_0243295241_en-us_topic_0243253012_fig1128133574111"></a>  
     
 
-    ![](figures/en-us_image_0283139013.png)
+    ![Introduction to Deployment Solutions](figures/en-us_image_0283139013.png)
 
 -   Primary/standby deployment
 
     The primary/standby mode is equivalent to two data copies, one for the primary node and the other for the standby node. The standby node receives logs and plays back the logs.
 
     **Figure  2**  Primary/standby deployment<a name="en-us_topic_0283139012_en-us_topic_0243295242_en-us_topic_0243253013_fig1843505845112"></a>  
-    ![](figures/primary-standby-deployment.png "primary-standby-deployment")
+    ![Introduction to Deployment Solutions](figures/primary-standby-deployment.png "primary-standby-deployment")
 
 

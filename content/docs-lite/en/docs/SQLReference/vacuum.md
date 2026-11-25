@@ -1,3 +1,8 @@
+---
+description: VACUUM recycles storage space occupied by tables or B-Tree indexes. In normal database operation, rows that have been deleted are not physically removed from their table; they remain presen.
+keywords: [openGauss, VACUUM]
+---
+
 # VACUUM<a name="EN-US_TOPIC_0289900615"></a>
 
 ## Function<a name="en-us_topic_0283137096_en-us_topic_0237122195_en-us_topic_0059777503_sd160e2f29b7240d88e6b4e9c7c7b8ae3"></a>

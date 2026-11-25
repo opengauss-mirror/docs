@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.0.0.
+keywords: [openGauss, Hybrid Row-Column Store]
+---
+
 # Hybrid Row-Column Store<a name="EN-US_TOPIC_0000001151995063"></a>
 
 ## Availability<a name="section18007590"></a>
@@ -13,7 +18,7 @@ Column-store is recommended if a table contains many columns \(called a wide tab
 **Figure  1**  Column-store<a name="fig114741818102620"></a>  
 
 
-![](figures/8-3行列混存引擎.png)
+![Introduction](figures/8-3行列混存引擎.png)
 
 ## Benefits<a name="section49328722"></a>
 

@@ -1,3 +1,8 @@
+---
+description: Introduces Cursors in openGauss, covering .
+keywords: [openGauss, Cursors]
+---
+
 # Cursors<a name="EN-US_TOPIC_0289900395"></a>
 
 -   **[Overview](overview-23.md)**  

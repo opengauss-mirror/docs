@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Ultimate RTO]
+---
+
 # Ultimate RTO<a name="EN-US_TOPIC_0000001152275221"></a>
 
 ## Availability<a name="section57017810"></a>

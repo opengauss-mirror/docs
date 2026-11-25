@@ -1,3 +1,8 @@
+---
+description: Parameter description: Specifies whether to enable real-time collection of wait event information.
+keywords: [openGauss, Wait Events]
+---
+
 # Wait Events<a name="EN-US_TOPIC_0289900098"></a>
 
 ## enable\_instr\_track\_wait<a name="en-us_topic_0283137742_en-us_topic_0237124755_section983311682019"></a>

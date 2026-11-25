@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 2.1.0.
+keywords: [openGauss, Ledger Database Mechanism]
+---
+
 # Ledger Database Mechanism<a name="EN-US_TOPIC_0000001110353738"></a>
 
 ## Availability<a name="section17746747"></a>

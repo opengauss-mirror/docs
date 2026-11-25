@@ -1,3 +1,8 @@
+---
+description: Introduces High Availability \(HA\) in openGauss, covering .
+keywords: [openGauss, High Availability HA]
+---
+
 # High Availability \(HA\)<a name="EN-US_TOPIC_0000001105075488"></a>
 
 -   **[Primary/Standby](primary-standby.md)**  

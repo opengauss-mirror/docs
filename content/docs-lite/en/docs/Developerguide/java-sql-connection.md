@@ -1,3 +1,8 @@
+---
+description: This section describes java.sql.Connection, the API for connecting to a database.
+keywords: [openGauss, JDBC, Connection]
+---
+
 # java.sql.Connection<a name="EN-US_TOPIC_0289900351"></a>
 
 This section describes  **java.sql.Connection**, the API for connecting to a database.

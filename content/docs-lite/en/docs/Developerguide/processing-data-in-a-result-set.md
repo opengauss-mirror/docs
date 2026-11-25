@@ -1,3 +1,8 @@
+---
+description: Different types of result sets apply to different application scenarios. Applications select proper types of result sets based on requirements. Before running an SQL statement, you must create a state.
+keywords: [openGauss, Processing Data in a Result Set]
+---
+
 # Processing Data in a Result Set<a name="EN-US_TOPIC_0289900954"></a>
 
 ## Setting a Result Set Type<a name="en-us_topic_0283136621_en-us_topic_0237120384_en-us_topic_0213179150_en-us_topic_0189250321_en-us_topic_0059778370_s93cc9b6475b04b76815b70162d174374"></a>

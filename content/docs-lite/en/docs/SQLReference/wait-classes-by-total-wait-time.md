@@ -1,3 +1,8 @@
+---
+description: The following table lists columns in the Wait Classes by Total Wait Time report.
+keywords: [openGauss, Wait Classes by Total Wait Time]
+---
+
 # Wait Classes by Total Wait Time<a name="EN-US_TOPIC_0000001259835121"></a>
 
 The following table lists columns in the Wait Classes by Total Wait Time report.

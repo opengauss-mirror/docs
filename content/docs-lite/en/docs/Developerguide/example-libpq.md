@@ -1,3 +1,8 @@
+---
+description: Introduces Example in openGauss, covering Code for Common Functions.
+keywords: [openGauss, Example]
+---
+
 # Example<a name="EN-US_TOPIC_0289900590"></a>
 
 ## Code for Common Functions<a name="en-us_topic_0283137626_en-us_topic_0059777697_s1f4a2c1a228a412193b28fb23d146e03"></a>

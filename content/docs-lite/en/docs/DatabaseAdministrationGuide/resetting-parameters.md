@@ -1,3 +1,8 @@
+---
+description: openGauss provides multiple methods to set the GUC parameters of databases, users, or sessions.
+keywords: [openGauss, Resetting Parameters]
+---
+
 # Resetting Parameters<a name="EN-US_TOPIC_0289899927"></a>
 
 ## Background<a name="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_s75c9285916664351b9c3e31f0735ea98"></a>

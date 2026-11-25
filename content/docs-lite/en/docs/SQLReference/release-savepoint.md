@@ -1,3 +1,8 @@
+---
+description: RELEASE SAVEPOINT destroys a savepoint previously defined in the current transaction.
+keywords: [openGauss, RELEASE]
+---
+
 # RELEASE SAVEPOINT<a name="EN-US_TOPIC_0289899874"></a>
 
 ## Function<a name="en-us_topic_0283137262_en-us_topic_0237122177_en-us_topic_0059778044_section16730316162219"></a>

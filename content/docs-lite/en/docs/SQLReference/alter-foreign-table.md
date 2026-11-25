@@ -1,3 +1,8 @@
+---
+description: ALTER FOREIGN TABLE modifies a foreign table.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER FOREIGN TABLE<a name="EN-US_TOPIC_0289900030"></a>
 
 ## Function<a name="en-us_topic_0283137201_section178411726125517"></a>

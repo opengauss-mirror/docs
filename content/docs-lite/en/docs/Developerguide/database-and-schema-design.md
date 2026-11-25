@@ -1,3 +1,8 @@
+---
+description: In openGauss, services can be isolated by databases and schemas. Databases share little resources and cannot directly access each other. Connections to and permissions on them are also isolated. Schem.
+keywords: [openGauss, Database and Schema Design]
+---
+
 # Database and Schema Design<a name="EN-US_TOPIC_0000001102948064"></a>
 
 In openGauss, services can be isolated by databases and schemas. Databases share little resources and cannot directly access each other. Connections to and permissions on them are also isolated. Schemas share more resources than databases do. User permissions on schemas and subordinate objects can be controlled using the  **GRANT**  and  **REVOKE**  syntax.

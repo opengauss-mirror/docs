@@ -1,3 +1,8 @@
+---
+description: - Parameter values before adjustment:.
+keywords: [openGauss, Case Adjusting IO Parameters to Reduce the Log Bloat Rate]
+---
+
 # Case: Adjusting I/O Parameters to Reduce the Log Bloat Rate<a name="EN-US_TOPIC_0000001102191372"></a>
 
 -   Parameter values before adjustment:

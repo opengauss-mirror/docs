@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_REL\_IOSTAT displays statistics about data file I/Os on all nodes.
+keywords: [openGauss, GLOBAL_REL_IOSTAT]
+---
+
 # GLOBAL\_REL\_IOSTAT<a name="EN-US_TOPIC_0289900967"></a>
 
 **GLOBAL\_REL\_IOSTAT**  displays statistics about data file I/Os on all nodes.

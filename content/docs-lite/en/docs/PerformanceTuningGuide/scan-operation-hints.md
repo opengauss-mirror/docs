@@ -1,3 +1,8 @@
+---
+description: These hints specify a scan operation, which can be tablescan, indexscan, or indexonlyscan.
+keywords: [openGauss, Scan]
+---
+
 # Scan Operation Hints<a name="EN-US_TOPIC_0289900472"></a>
 
 ## Function<a name="en-us_topic_0283137382_en-us_topic_0237121537_section290819468377"></a>
@@ -38,5 +43,5 @@ select /*+ indexscan(item i) */ i_product_name product_name ...
 
 **item**  is scanned based on an index. The optimized plan is as follows:
 
-![](figures/en-us_image_0283137339.png)
+![Example](figures/en-us_image_0283137339.png)
 

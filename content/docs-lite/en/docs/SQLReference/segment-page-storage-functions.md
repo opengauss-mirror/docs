@@ -1,3 +1,8 @@
+---
+description: - local\_segment\_space\_info\(tablespacename TEXT, databasename TEXT\).
+keywords: [openGauss, Segment-Page Storage Functions]
+---
+
 # Segment-Page Storage Functions<a name="EN-US_TOPIC_0000001101431812"></a>
 
 -   local\_segment\_space\_info\(tablespacename TEXT, databasename TEXT\)

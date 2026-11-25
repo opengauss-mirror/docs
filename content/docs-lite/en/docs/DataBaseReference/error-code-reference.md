@@ -1,3 +1,8 @@
+---
+description: - Description of SQL Error Codes.
+keywords: [openGauss, Error Code Reference]
+---
+
 # Error Code Reference<a name="EN-US_TOPIC_0302073359"></a>
 
 -   **[Description of SQL Error Codes](description-of-sql-error-codes.md)**  

@@ -1,3 +1,8 @@
+---
+description: These hints specify the name of a sublink block.
+keywords: [openGauss, Sublink]
+---
+
 # Sublink Name Hints<a name="EN-US_TOPIC_0289900257"></a>
 
 ## Function<a name="en-us_topic_0283136961_en-us_topic_0237121538_section290819468377"></a>
@@ -27,5 +32,5 @@ explain select /*+nestloop(store_sales tt) */ * from store_sales where ss_item_s
 
 **tt**  indicates the sublink block name. After being pulled up, the sublink is joined with the outer-query table  **store\_sales**  by using  **nestloop**. The optimized plan is as follows:
 
-![](figures/en-us_image_0283137112.png)
+![Example](figures/en-us_image_0283137112.png)
 

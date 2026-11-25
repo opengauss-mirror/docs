@@ -1,3 +1,8 @@
+---
+description: When a user specifies only an index name to modify the index, a message indicating that the index does not exist is displayed. The following provides an example:.
+keywords: [openGauss, When a User Specifies Only an Index Name to Modify the Index A Message Indicating That the Index Does Not Exist Is Displayed]
+---
+
 # When a User Specifies Only an Index Name to Modify the Index, A Message Indicating That the Index Does Not Exist Is Displayed<a name="EN-US_TOPIC_0291615105"></a>
 
 ## Symptom<a name="section11297759192710"></a>

@@ -1,3 +1,8 @@
+---
+description: An operator in openGauss is a reserved keyword or character, and it is generally used in the WHERE statement as a filter condition. Common operators are as follows:.
+keywords: [openGauss, Operators]
+---
+
 # Operators<a name="EN-US_TOPIC_0000001255341783"></a>
 
 An operator in openGauss is a reserved keyword or character, and it is generally used in the WHERE statement as a filter condition. Common operators are as follows:

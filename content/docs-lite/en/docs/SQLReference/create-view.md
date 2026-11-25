@@ -1,3 +1,8 @@
+---
+description: Creates a view. The view is a virtual table, not a base table. A database only stores the definition of a view and does not store its data. The data is still stored in the original basic table. If dat.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE VIEW<a name="EN-US_TOPIC_0289900307"></a>
 
 ## Function<a name="en-us_topic_0283137480_en-us_topic_0237122126_en-us_topic_0059779377_sc0d0ea7296f7418d8e0b1a8878cf72ba"></a>

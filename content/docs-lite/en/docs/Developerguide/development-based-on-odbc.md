@@ -1,3 +1,8 @@
+---
+description: Open Database Connectivity \(ODBC\) is a Microsoft API for accessing databases based on the X/OPEN CLI. Applications interact with the database through the APIs provided by ODBC, which enhances their.
+keywords: [openGauss, ODBC, Development Based on ODBC]
+---
+
 # Development Based on ODBC<a name="EN-US_TOPIC_0244721233"></a>
 
 Open Database Connectivity \(ODBC\) is a Microsoft API for accessing databases based on the X/OPEN CLI. Applications interact with the database through the APIs provided by ODBC, which enhances their portability, scalability, and maintainability.
@@ -5,7 +10,7 @@ Open Database Connectivity \(ODBC\) is a Microsoft API for accessing databases b
 [Figure 1](#fig1255101034110)  shows the system structure of ODBC.
 
 **Figure  1**  ODBC system structure<a name="fig1255101034110"></a>  
-![](figures/odbc-system-structure.png "odbc-system-structure")
+![Development Based on ODBC](figures/odbc-system-structure.png "odbc-system-structure")
 
 openGauss supports ODBC 3.5 in the following environments.
 

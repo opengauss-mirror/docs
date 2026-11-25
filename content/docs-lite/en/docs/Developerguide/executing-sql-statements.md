@@ -1,3 +1,8 @@
+---
+description: 1. Construct an operation statement and use %s as a placeholder. During execution, psycopg2 will replace the placeholder with the parameter value. You can add the RETURNING clause to obtain the.
+keywords: [openGauss, Executing SQL Statements]
+---
+
 # Executing SQL Statements<a name="EN-US_TOPIC_0000001127309327"></a>
 
 1.  Construct an operation statement and use  **%s**  as a placeholder. During execution, psycopg2 will replace the placeholder with the parameter value. You can add the RETURNING clause to obtain the automatically generated column values.

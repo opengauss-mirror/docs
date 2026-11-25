@@ -1,3 +1,8 @@
+---
+description: PG\_STAT\_USER\_INDEXES displays information about the index status of user-defined ordinary tables and TOAST tables.
+keywords: [openGauss, PG_STAT_USER_INDEXES]
+---
+
 # PG\_STAT\_USER\_INDEXES<a name="EN-US_TOPIC_0289900946"></a>
 
 **PG\_STAT\_USER\_INDEXES**  displays information about the index status of user-defined ordinary tables and TOAST tables.

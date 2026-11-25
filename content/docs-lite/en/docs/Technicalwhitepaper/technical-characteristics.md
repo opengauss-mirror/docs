@@ -1,3 +1,8 @@
+---
+description: Compared with other databases, openGauss features multiple storage modes, NUMA-based kernel structure, and high availability.
+keywords: [openGauss, Technical Characteristics]
+---
+
 # Technical Characteristics<a name="EN-US_CONCEPT_0289895596"></a>
 
 Compared with other databases, openGauss features multiple storage modes, NUMA-based kernel structure, and high availability.

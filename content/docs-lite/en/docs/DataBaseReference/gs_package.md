@@ -1,3 +1,8 @@
+---
+description: GS\_PACKAGE records package information.
+keywords: [openGauss, GS_PACKAGE]
+---
+
 # GS\_PACKAGE<a name="EN-US_TOPIC_0000001161323601"></a>
 
 **GS\_PACKAGE**  records package information.

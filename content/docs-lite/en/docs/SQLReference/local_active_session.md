@@ -1,3 +1,8 @@
+---
+description: LOCAL\_ACTIVE\_SESSION displays samples in the ACTIVE SESSION PROFILE memory on the current node.
+keywords: [openGauss, LOCAL_ACTIVE_SESSION]
+---
+
 # LOCAL\_ACTIVE\_SESSION<a name="EN-US_TOPIC_0000001131388624"></a>
 
 **LOCAL\_ACTIVE\_SESSION**  displays samples in the  **ACTIVE SESSION PROFILE**  memory on the current node.

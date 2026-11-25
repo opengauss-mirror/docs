@@ -1,3 +1,8 @@
+---
+description: CREATE SEQUENCE adds a sequence to the current database. The owner of a sequence is the user who creates the sequence.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE SEQUENCE<a name="EN-US_TOPIC_0289899862"></a>
 
 ## Function<a name="en-us_topic_0283137208_en-us_topic_0237122114_en-us_topic_0059778825_section11152141914129"></a>

@@ -1,3 +1,8 @@
+---
+description: WORKLOAD\_TRANSACTION displays information about transactions loaded on the current node.
+keywords: [openGauss, WORKLOAD_TRANSACTION]
+---
+
 # WORKLOAD\_TRANSACTION<a name="EN-US_TOPIC_0289899903"></a>
 
 **WORKLOAD\_TRANSACTION**  displays information about transactions loaded on the current node.

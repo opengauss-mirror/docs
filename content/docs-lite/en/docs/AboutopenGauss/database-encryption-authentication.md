@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Database Encryption Authentication]
+---
+
 # Database Encryption Authentication<a name="EN-US_TOPIC_0000001152195135"></a>
 
 ## Availability<a name="section65447064"></a>

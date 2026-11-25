@@ -1,3 +1,8 @@
+---
+description: SELECT FROM join_a a JOIN join_b b ON a.b = b.b;.
+keywords: [openGauss, Case Adding NOT NULL for JOIN Columns]
+---
+
 # **Case: Adding NOT NULL for JOIN Columns**<a name="EN-US_TOPIC_0000001382351029"></a>
 
 ```

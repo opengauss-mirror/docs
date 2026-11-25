@@ -1,3 +1,8 @@
+---
+description: Figure 1 shows the syntax diagram for assigning a value to a variable.
+keywords: [openGauss, Assignment Statements]
+---
+
 # Assignment Statements<a name="EN-US_TOPIC_0289899984"></a>
 
 ## Syntax<a name="en-us_topic_0283137492_en-us_topic_0237122222_en-us_topic_0059778597_s0d14c5a042e2478fa57514f056522738"></a>
@@ -5,7 +10,7 @@
 [Figure 1](#en-us_topic_0283137492_en-us_topic_0237122222_en-us_topic_0059778597_f1087f61f4ec24addbb3b79a2ccf21917)  shows the syntax diagram for assigning a value to a variable.
 
 **Figure  1**  assignment\_value::=<a name="en-us_topic_0283137492_en-us_topic_0237122222_en-us_topic_0059778597_f1087f61f4ec24addbb3b79a2ccf21917"></a>  
-![](figures/assignment_value.png "assignment_value")
+![Syntax](figures/assignment_value.png "assignment_value")
 
 The above syntax diagram is explained as follows:
 
@@ -29,7 +34,7 @@ END;
 [Figure 2](#fig178291445115118)  shows the syntax diagram for assigning a nested value to a variable.
 
 **Figure  2**  nested\_assignment\_value::=<a name="fig178291445115118"></a>  
-![](figures/nested_assignment_value.png "nested_assignment_value")
+![Nested Value Assignment](figures/nested_assignment_value.png "nested_assignment_value")
 
 The syntax in  [Figure 2](#fig178291445115118)  is described as follows:
 

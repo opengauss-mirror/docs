@@ -1,3 +1,8 @@
+---
+description: An index is a pointer to data in a table. The index in a database is very similar to the index directory in a book.
+keywords: [openGauss, Indexes]
+---
+
 # Indexes<a name="EN-US_TOPIC_0000001225179935"></a>
 
 An index is a pointer to data in a table. The index in a database is very similar to the index directory in a book.

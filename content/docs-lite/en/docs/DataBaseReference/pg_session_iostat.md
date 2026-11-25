@@ -1,3 +1,8 @@
+---
+description: PG\_SESSION\_IOSTAT shows I/O load management information about the task currently executed by the user. Only users with the sysadmin or monitor admin permission can query this view.
+keywords: [openGauss, PG_SESSION_IOSTAT]
+---
+
 # PG\_SESSION\_IOSTAT<a name="EN-US_TOPIC_0000001151882223"></a>
 
 **PG\_SESSION\_IOSTAT**  shows I/O load management information about the task currently executed by the user. Only users with the  **sysadmin**  or  **monitor admin**  permission can query this view.

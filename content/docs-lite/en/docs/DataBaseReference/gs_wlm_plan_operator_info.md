@@ -1,3 +1,8 @@
+---
+description: GS\_WLM\_PLAN\_OPERATOR\_INFO displays records about plan operator levels of completed jobs. The data is dumped from the kernel to the system catalog.
+keywords: [openGauss, GS_WLM_PLAN_OPERATOR_INFO]
+---
+
 # GS\_WLM\_PLAN\_OPERATOR\_INFO<a name="EN-US_TOPIC_0289900711"></a>
 
 **GS\_WLM\_PLAN\_OPERATOR\_INFO**  displays records about plan operator levels of completed jobs. The data is dumped from the kernel to the system catalog.

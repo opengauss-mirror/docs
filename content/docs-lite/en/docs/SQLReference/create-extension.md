@@ -1,3 +1,8 @@
+---
+description: CREATE EXTENSION installs an extension.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE EXTENSION<a name="EN-US_TOPIC_0000001080534638"></a>
 
 ## Function<a name="section173831846163116"></a>

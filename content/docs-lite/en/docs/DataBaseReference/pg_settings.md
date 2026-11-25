@@ -1,3 +1,8 @@
+---
+description: PG\_SETTINGS displays information about parameters of the running database.
+keywords: [openGauss, PG_SETTINGS]
+---
+
 # PG\_SETTINGS<a name="EN-US_TOPIC_0289900570"></a>
 
 **PG\_SETTINGS**  displays information about parameters of the running database.

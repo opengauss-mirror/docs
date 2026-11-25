@@ -1,3 +1,8 @@
+---
+description: Shrinks chunks in a specified compressed table to facilitate page read and write.
+keywords: [openGauss, SHRINK]
+---
+
 # SHRINK<a name="ZH-CN_TOPIC_0000001382191657"></a>
 
 ## Function<a name="en-us_topic_0283137477_en-us_topic_0237122196_en-us_topic_0059779241_s25c2a01507274648bf05cbcb1dc418bf"></a>

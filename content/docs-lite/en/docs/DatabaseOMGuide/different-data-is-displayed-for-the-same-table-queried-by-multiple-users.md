@@ -1,3 +1,8 @@
+---
+description: Two users log in to the same database human\_resource and run the following statement separately to query the areas table, but obtain different results.
+keywords: [openGauss, Different Data Is Displayed for the Same Table Queried By Multiple Users]
+---
+
 # Different Data Is Displayed for the Same Table Queried By Multiple Users<a name="EN-US_TOPIC_0291615104"></a>
 
 ## Symptom<a name="section4581718173618"></a>

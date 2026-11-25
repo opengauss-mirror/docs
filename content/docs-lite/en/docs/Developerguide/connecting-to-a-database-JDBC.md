@@ -1,3 +1,8 @@
+---
+description: After a database is connected, you can use JDBC to run SQL statements to operate data.
+keywords: [openGauss, Connecting to a Database]
+---
+
 # Connecting to a Database<a name="EN-US_TOPIC_0289900896"></a>
 
 After a database is connected, you can use JDBC to run SQL statements to operate data.

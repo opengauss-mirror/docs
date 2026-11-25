@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 3.0.0.
+keywords: [openGauss, SQL PATCHa nameEN-US_TOPIC_0000001266435066]
+---
+
 # SQL PATCH<a name="EN-US_TOPIC_0000001266435066"></>
 
 ## Availability<a name="section1964504520318"></a>

@@ -1,3 +1,8 @@
+---
+description: Hardware requirements for building openGauss are as follows:.
+keywords: [openGauss, Setting up the Build Environment]
+---
+
 # Setting up the Build Environment<a name="EN-US_TOPIC_0289899544"></a>
 
 ## Hardware Requirements<a name="en-us_topic_0283136407_section11295135645810"></a>

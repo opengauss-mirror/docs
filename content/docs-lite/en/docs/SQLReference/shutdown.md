@@ -1,3 +1,8 @@
+---
+description: SHUTDOWN shuts down the currently connected database node.
+keywords: [openGauss, SHUTDOWN]
+---
+
 # SHUTDOWN<a name="EN-US_TOPIC_0289900099"></a>
 
 ## Function<a name="en-us_topic_0283136791_en-us_topic_0237122191_en-us_topic_0059779163_s812131d8918641df9772c998b753f87e"></a>

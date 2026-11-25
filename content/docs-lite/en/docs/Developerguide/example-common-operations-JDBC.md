@@ -1,3 +1,8 @@
+---
+description: The following illustrates how to develop applications based on openGauss JDBC APIs.
+keywords: [openGauss, Examples Common Operations]
+---
+
 # Examples: Common Operations<a name="EN-US_TOPIC_0289899917"></a>
 
 ## Example 1:<a name="en-us_topic_0283136826_en-us_topic_0237120386_en-us_topic_0213179152_en-us_topic_0189251739_section8820452474"></a>

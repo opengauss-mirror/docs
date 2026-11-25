@@ -1,3 +1,8 @@
+---
+description: Introduces Date and Time Processing Functions and Operators in openGauss, covering Date and Time Operators, Time/Date Functions, TIMESTAMPDIFF.
+keywords: [openGauss, Date and Time Processing Functions and Operators]
+---
+
 # Date and Time Processing Functions and Operators<a name="EN-US_TOPIC_0289900496"></a>
 
 ## Date and Time Operators<a name="en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_s0cc044f2acb04adb928696f1f6cfd13d"></a>

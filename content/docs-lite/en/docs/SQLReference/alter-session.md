@@ -1,3 +1,8 @@
+---
+description: ALTER SESSION defines or modifies the conditions or parameters that affect the current session. Modified session parameters are kept until the current session is disconnected.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER SESSION<a name="EN-US_TOPIC_0289900721"></a>
 
 ## Function<a name="en-us_topic_0283137033_en-us_topic_0237122073_en-us_topic_0059778275_s62f804a7ed5a4f278e36b0175ff7bdc9"></a>

@@ -1,3 +1,8 @@
+---
+description: If the connection pool mechanism is used during application development, comply with the following specifications:.
+keywords: [openGauss, Development Specifications]
+---
+
 # Development Specifications<a name="EN-US_TOPIC_0289900537"></a>
 
 If the connection pool mechanism is used during application development, comply with the following specifications:

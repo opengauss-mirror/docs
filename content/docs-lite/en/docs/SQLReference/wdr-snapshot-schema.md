@@ -1,3 +1,8 @@
+---
+description: After the WDR snapshot function is enabled \(enable\_wdr\_snapshot is set to.
+keywords: [openGauss, WDR Snapshot Schema]
+---
+
 # WDR Snapshot Schema<a name="EN-US_TOPIC_0289900334"></a>
 
 After the WDR snapshot function is enabled \([enable\_wdr\_snapshot](../DataBaseReference/system-performance-snapshot.md#en-us_topic_0283137284_en-us_topic_0237124757_section983311682019)  is set to  **on**\), schema  **snapshot**  is created in user tablespace  **pg\_default**  in database  **postgres**  to flush WDR snapshot data. By default, the initial user or the  **monadmin**  user can access the snapshot schema.

@@ -1,3 +1,8 @@
+---
+description: DROP GROUP deletes a user group.
+keywords: [openGauss, DROP]
+---
+
 # DROP GROUP<a name="EN-US_TOPIC_0289900616"></a>
 
 ## Function<a name="en-us_topic_0283137231_en-us_topic_0237122139_en-us_topic_0059778284_s39299576fef14e66bcb9eece71686c4a"></a>

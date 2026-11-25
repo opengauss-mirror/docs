@@ -1,3 +1,8 @@
+---
+description: The following table describes metrics in the Time Model report.
+keywords: [openGauss, Time Model]
+---
+
 # Time Model<a name="EN-US_TOPIC_0000001259955051"></a>
 
 The following table describes metrics in the Time Model report.

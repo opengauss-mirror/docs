@@ -1,3 +1,8 @@
+---
+description: How do I resolve the "out of memory allocating xxx bytes after a total of xxx bytes" error that occurs during build?.
+keywords: [openGauss, How Do I Handle the out of memory allocating xxx bytes after a total of xxx bytes Error]
+---
+
 # How Do I Handle the "out of memory allocating xxx bytes after a total of xxx bytes" Error?<a name="EN-US_TOPIC_0289899550"></a>
 
 ## Question<a name="en-us_topic_0283136297_section1450054211918"></a>

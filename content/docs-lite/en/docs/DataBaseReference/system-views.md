@@ -1,3 +1,8 @@
+---
+description: - GET\_GLOBAL\_PREPARED\_XACTS \(Discarded\).
+keywords: [openGauss, System Views]
+---
+
 # System Views<a name="EN-US_TOPIC_0289901002"></a>
 
 -   **[GET\_GLOBAL\_PREPARED\_XACTS \(Discarded\)](get_global_prepared_xacts-discarded.md)**  

@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_STAT\_DATABASE\_CONFLICTS displays statistics about database conflicts on each node.
+keywords: [openGauss, GLOBAL_STAT_DATABASE_CONFLICTS]
+---
+
 # GLOBAL\_STAT\_DATABASE\_CONFLICTS<a name="EN-US_TOPIC_0289900060"></a>
 
 **GLOBAL\_STAT\_DATABASE\_CONFLICTS**  displays statistics about database conflicts on each node.

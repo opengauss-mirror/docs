@@ -1,3 +1,8 @@
+---
+description: Cache IO Stats contains two tables: User table and User index. The columns in the tables are described as follows.
+keywords: [openGauss, Cache IO Stats]
+---
+
 # Cache IO Stats<a name="EN-US_TOPIC_0000001260075117"></a>
 
 Cache IO Stats contains two tables: User table and User index. The columns in the tables are described as follows.

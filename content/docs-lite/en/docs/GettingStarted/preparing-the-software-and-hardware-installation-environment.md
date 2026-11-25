@@ -1,3 +1,8 @@
+---
+description: This section describes the preparations for installation. It is recommended that servers to be deployed on openGauss have the same software and hardware configurations.
+keywords: [openGauss, Preparing the Software and Hardware Installation Environment]
+---
+
 # Preparing the Software and Hardware Installation Environment<a name="EN-US_TOPIC_0000001223947253"></a>
 
 This section describes the preparations for installation. It is recommended that servers to be deployed on openGauss have the same software and hardware configurations.

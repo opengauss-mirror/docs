@@ -1,3 +1,8 @@
+---
+description: - Supports the same query scope as the CREATE TABLE AS statement does.
+keywords: [openGauss, Support and Constraints]
+---
+
 # Support and Constraints<a name="EN-US_TOPIC_0295970434"></a>
 
 ## Supported Scenarios<a name="section794144810159"></a>

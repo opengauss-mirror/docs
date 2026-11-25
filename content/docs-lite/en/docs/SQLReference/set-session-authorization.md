@@ -1,3 +1,8 @@
+---
+description: Sets the session user identifier and the current user identifier of the current SQL session to a specified user.
+keywords: [openGauss, SET]
+---
+
 # SET SESSION AUTHORIZATION<a name="EN-US_TOPIC_0289899948"></a>
 
 ## Function<a name="en-us_topic_0283137463_en-us_topic_0237122189_en-us_topic_0059778193_se24abe3c44f645b091e061c97d8957e7"></a>

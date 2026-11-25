@@ -1,3 +1,8 @@
+---
+description: - compress\_buffer\_stat\_info\(\).
+keywords: [openGauss, Row-store Compression System Functions]
+---
+
 # Row-store Compression System Functions<a name="EN-US_TOPIC_0000001382371333"></a>
 
 -   compress\_buffer\_stat\_info\(\)

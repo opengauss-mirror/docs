@@ -1,3 +1,8 @@
+---
+description: For query statements and DML statements executed in PBE mode, the optimizer generates a custom plan or generic plan based on factors such as rules, costs, and parameters. You can use the hint of us.
+keywords: [openGauss, Hint]
+---
+
 # Hint for Selecting the Custom Plan or Generic Plan<a name="EN-US_TOPIC_0000001096560522"></a>
 
 ## Function<a name="section290819468377"></a>
@@ -35,7 +40,7 @@ explain execute p(1);
 
 In the following plan, the filtering condition is the actual value of the input parameter, that is, the plan is a custom plan.
 
-![](figures/en-us_image_0000001209735947.png)
+![Examples](figures/en-us_image_0000001209735947.png)
 
 Forcibly use the generic plan.
 
@@ -47,5 +52,5 @@ explain execute p(1);
 
 In the following plan, the filtering condition is the input parameter to be added, that is, the plan is a custom plan.
 
-![](figures/en-us_image_0000001209457383.png)
+![Examples](figures/en-us_image_0000001209457383.png)
 

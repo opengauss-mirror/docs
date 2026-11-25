@@ -1,3 +1,8 @@
+---
+description: UPDATE updates data in a table. UPDATE changes the values of the specified columns in all rows that satisfy the condition. The WHERE clause clarifies conditions. The columns to be mod.
+keywords: [openGauss, UPDATE]
+---
+
 # UPDATE<a name="EN-US_TOPIC_0289900207"></a>
 
 ## Function<a name="en-us_topic_0283137651_en-us_topic_0237122194_en-us_topic_0059778969_s85747c5f88e64562a8ff9ddacda19929"></a>

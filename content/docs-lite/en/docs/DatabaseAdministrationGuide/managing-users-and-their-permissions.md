@@ -1,3 +1,8 @@
+---
+description: - Default Permission Mechanism.
+keywords: [openGauss, Managing Users and Their Permissions]
+---
+
 # Managing Users and Their Permissions<a name="EN-US_TOPIC_0289900092"></a>
 
 -   **[Default Permission Mechanism](default-permission-mechanism.md)**  

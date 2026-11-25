@@ -1,3 +1,8 @@
+---
+description: openGauss text runs SQL statements to perform different system operations, such as setting variables, displaying the execution plan, and collecting garbage data.
+keywords: [openGauss, System Operation]
+---
+
 # System Operation<a name="EN-US_TOPIC_0289900756"></a>
 
 openGauss text runs SQL statements to perform different system operations, such as setting variables, displaying the execution plan, and collecting garbage data.

@@ -1,3 +1,8 @@
+---
+description: Advisory lock functions manage advisory locks.
+keywords: [openGauss, Advisory Lock Functions]
+---
+
 # Advisory Lock Functions<a name="EN-US_TOPIC_0289900296"></a>
 
 Advisory lock functions manage advisory locks.

@@ -1,3 +1,8 @@
+---
+description: CREATE TYPE registers a new data type for use in the current database. The user who defines a type becomes its owner. Types are designed only for row-store tables.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE TYPE<a name="EN-US_TOPIC_0289900603"></a>
 
 ## Function<a name="en-us_topic_0283136568_en-us_topic_0237122124_en-us_topic_0059779377_sc0d0ea7296f7418d8e0b1a8878cf72ba"></a>

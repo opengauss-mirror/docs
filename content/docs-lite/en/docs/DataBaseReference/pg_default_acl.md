@@ -1,3 +1,8 @@
+---
+description: PG\_DEFAULT\_ACL records initial permissions assigned to newly created objects.
+keywords: [openGauss, PG_DEFAULT_ACL]
+---
+
 # PG\_DEFAULT\_ACL<a name="EN-US_TOPIC_0289900956"></a>
 
 **PG\_DEFAULT\_ACL**  records initial permissions assigned to newly created objects.

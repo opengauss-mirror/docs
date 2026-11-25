@@ -1,3 +1,8 @@
+---
+description: Parameter description: Specifies whether the system enters the backup and restoration mode.
+keywords: [openGauss, Backup and Restoration]
+---
+
 # Backup and Restoration<a name="EN-US_TOPIC_0000001083079268"></a>
 
 ## operation\_mode<a name="section0169133413323"></a>

@@ -1,3 +1,8 @@
+---
+description: 1. Select the functions to be considered from the pg\_proc system catalog. If a non-schema-qualified function name was used, the functions in the current search path are considered. If a qualif.
+keywords: [openGauss, Functions]
+---
+
 # Functions<a name="EN-US_TOPIC_0289900620"></a>
 
 ## Function Type Resolution<a name="en-us_topic_0283137224_en-us_topic_0237122009_en-us_topic_0059777930_sae9dc3fe177e4b349373f0f51975f380"></a>

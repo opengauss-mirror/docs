@@ -1,3 +1,8 @@
+---
+description: MOT design enables almost complete coverage of SQL and future feature sets. For example, standard Postgres SQL is mostly supported, as well common database features, such as stored procedures and user.
+keywords: [openGauss, MOT SQL Coverage and Limitations]
+---
+
 # MOT SQL Coverage and Limitations<a name="EN-US_TOPIC_0289900340"></a>
 
 MOT design enables almost complete coverage of SQL and future feature sets. For example, standard Postgres SQL is mostly supported, as well common database features, such as stored procedures and user defined functions.

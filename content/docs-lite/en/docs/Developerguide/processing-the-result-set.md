@@ -1,3 +1,8 @@
+---
+description: 1. cursor.fetchone\(\): Fetches the next row in a query result set and returns a sequence. If no data is available, null is returned.
+keywords: [openGauss, Processing the Result Set]
+---
+
 # Processing the Result Set<a name="EN-US_TOPIC_0000001080209766"></a>
 
 1.  **cursor.fetchone\(\)**: Fetches the next row in a query result set and returns a sequence. If no data is available, null is returned.
