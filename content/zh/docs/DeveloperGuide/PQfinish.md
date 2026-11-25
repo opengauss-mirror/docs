@@ -1,3 +1,8 @@
+---
+description: 关闭与服务器的连接，同时释放被PGconn对象使用的存储器。.
+keywords: [openGauss, PQfinish]
+---
+
 # PQfinish
 
 ## 功能描述<a name="zh-cn_topic_0241735616_section1251161713252"></a>

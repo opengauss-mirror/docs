@@ -1,3 +1,8 @@
+---
+description: 视图将包含openGauss中各节点的每个数据库的每一行，显示数据库统计。.
+keywords: [openGauss, GLOBAL_STAT_DATABASE]
+---
+
 # GLOBAL\_STAT\_DATABASE
 
 视图将包含openGauss中各节点的每个数据库的每一行，显示数据库统计。

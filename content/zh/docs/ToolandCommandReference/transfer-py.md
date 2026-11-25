@@ -1,3 +1,8 @@
+---
+description: 在非单节点模式下，可以通过transfer.py工具将全文检索所使用的词典文件和PostGIS插件所需的文件发送到其他节点。.
+keywords: [openGauss, transfer.py]
+---
+
 # transfer.py
 
 ## 功能介绍<a name="section51291439191115"></a>

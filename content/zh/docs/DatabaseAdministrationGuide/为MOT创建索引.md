@@ -1,3 +1,8 @@
+---
+description: 支持标准的PostgreSQL创建和删除索引语句。.
+keywords: [openGauss, 为MOT创建索引]
+---
+
 # 为MOT创建索引
 
 支持标准的PostgreSQL创建和删除索引语句。

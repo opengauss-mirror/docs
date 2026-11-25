@@ -1,3 +1,8 @@
+---
+description: 表 1 gs\_dbmind component forecast 命令行说明.
+keywords: [openGauss, 命令参考]
+---
+
 # 命令参考
 
 **表 1**  gs\_dbmind component forecast 命令行说明

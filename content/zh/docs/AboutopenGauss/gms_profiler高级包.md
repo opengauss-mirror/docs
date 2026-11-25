@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 6.0.0版本开始引入。.
+keywords: [openGauss, gms_profiler高级包]
+---
+
 # gms_profiler高级包
 
 ## 可获得性<a name="section3104013"></a>

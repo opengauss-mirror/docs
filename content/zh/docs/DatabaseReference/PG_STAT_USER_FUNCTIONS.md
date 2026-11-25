@@ -1,3 +1,8 @@
+---
+description: PG\_STAT\_USER\_FUNCTIONS视图显示命名空间中用户自定义函数（函数语言为非内部语言）的状态信息。.
+keywords: [openGauss, PG_STAT_USER_FUNCTIONS]
+---
+
 # PG\_STAT\_USER\_FUNCTIONS
 
 PG\_STAT\_USER\_FUNCTIONS视图显示命名空间中用户自定义函数（函数语言为非内部语言）的状态信息。

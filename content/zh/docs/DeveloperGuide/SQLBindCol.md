@@ -1,3 +1,8 @@
+---
+description: 将应用程序数据缓冲区绑定到结果集的列中。.
+keywords: [openGauss, SQLBindCol]
+---
+
 # SQLBindCol
 
 ## 功能描述<a name="zh-cn_topic_0238272886_zh-cn_topic_0237120416_zh-cn_topic_0059779335_s20aba247faad4486a9207cbeafeadb20"></a>

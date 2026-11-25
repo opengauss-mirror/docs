@@ -1,3 +1,8 @@
+---
+description: 基于WDR Snapshot数据表汇总、统计，生成性能报告，默认初始化用户或监控管理员用户可以生成报告。.
+keywords: [openGauss, WDR Snapshot生成性能报告]
+---
+
 # WDR Snapshot生成性能报告
 
 基于WDR Snapshot数据表汇总、统计，生成性能报告，默认初始化用户或监控管理员用户可以生成报告。

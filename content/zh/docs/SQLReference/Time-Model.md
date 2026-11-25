@@ -1,3 +1,8 @@
+---
+description: Time Model名称及描述如下表所示。.
+keywords: [openGauss, Time Model]
+---
+
 # Time Model
 
 Time Model名称及描述如下表所示。

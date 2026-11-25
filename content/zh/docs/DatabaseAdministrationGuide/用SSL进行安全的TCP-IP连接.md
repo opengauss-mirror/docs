@@ -1,3 +1,8 @@
+---
+description: openGauss支持SSL标准协议（TLS 1.2），SSL协议是安全性更高的协议标准，它们加入了数字签名和数字证书来实现客户端和服务器的双向身份验证，保证了通信双方更加安全的数据传输。.
+keywords: [openGauss, 用SSL进行安全的TCPIP连接]
+---
+
 # 用SSL进行安全的TCP/IP连接
 
 ## 背景信息<a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_section1957281971410"></a>

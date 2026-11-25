@@ -1,3 +1,8 @@
+---
+description: Introduces DROP TYPE in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP TYPE]
+---
+
 # DROP TYPE
 
 ## 功能描述<a name="zh-cn_topic_0283137107_zh-cn_topic_0237122157_zh-cn_topic_0059778403_sd8f7b55734434619b381d7be49aed2df"></a>

@@ -1,3 +1,8 @@
+---
+description: Introduces CREATE OPERATOR FAMILY in openGauss, covering 功能描述, 语法格式, 参数说明.
+keywords: [openGauss, CREATE OPERATOR FAMILY]
+---
+
 # CREATE OPERATOR FAMILY
 
 ## 功能描述

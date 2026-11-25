@@ -1,3 +1,8 @@
+---
+description: - global\_rto\_status.
+keywords: [openGauss, RTO  RPO]
+---
+
 # RTO & RPO
 
 -   **[global\_rto\_status](global_rto_status.md)**  

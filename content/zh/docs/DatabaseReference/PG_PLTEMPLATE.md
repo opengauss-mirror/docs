@@ -1,3 +1,8 @@
+---
+description: PG\_PLTEMPLATE系统表存储过程语言的“模板”信息。.
+keywords: [openGauss, PG_PLTEMPLATE]
+---
+
 # PG\_PLTEMPLATE
 
 PG\_PLTEMPLATE系统表存储过程语言的“模板”信息。

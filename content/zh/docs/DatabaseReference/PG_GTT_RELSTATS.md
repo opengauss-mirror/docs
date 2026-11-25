@@ -1,3 +1,8 @@
+---
+description: PG\_GTT\_RELSTATS视图查看当前会话所有全局临时表基本信息，调用pg\_get\_gtt\_relstats函数。.
+keywords: [openGauss, PG_GTT_RELSTATS]
+---
+
 # PG\_GTT\_RELSTATS
 
 PG\_GTT\_RELSTATS视图查看当前会话所有全局临时表基本信息，调用pg\_get\_gtt\_relstats函数。

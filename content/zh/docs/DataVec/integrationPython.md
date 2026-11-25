@@ -1,3 +1,8 @@
+---
+description: 本文介绍如何使用Python语言调用openGauss向量数据库.
+keywords: [openGauss, Python SDK对接向量数据库]
+---
+
 # Python SDK对接向量数据库
 本文介绍如何使用Python语言调用openGauss向量数据库
 

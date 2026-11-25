@@ -1,3 +1,8 @@
+---
+description: Introduces 子链接块名的hint in openGauss, covering 功能描述, 语法格式, 参数说明.
+keywords: [openGauss, 子链接块名的hint]
+---
+
 # 子链接块名的hint
 
 ## 功能描述<a name="zh-cn_topic_0237121538_section290819468377"></a>
@@ -28,5 +33,5 @@ explain select /*+nestloop(store_sales tt) */ * from store_sales where ss_item_s
 
 该hint表示：子链接的别名为tt，提升后与上层的store\_sales表关联时使用nestloop。生成计划如下所示：
 
-![](figures/zh-cn_image_0253038757.png)
+![示例](figures/zh-cn_image_0253038757.png)
 

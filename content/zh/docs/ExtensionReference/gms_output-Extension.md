@@ -1,3 +1,8 @@
+---
+description: Introduces gms_output Extension in openGauss, covering .
+keywords: [openGauss, gms_output Extension]
+---
+
 # gms_output Extension
 
 -   **[gms_output概述](gms_output概述.md)**  

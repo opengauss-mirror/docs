@@ -1,3 +1,8 @@
+---
+description: create\_hint\_sql\_patch是用于创建调优SQL PATCH的接口函数，返回执行是否成功。.
+keywords: [openGauss, DBE_SQL_UTIL.create_hint_sql_patch]
+---
+
 # DBE\_SQL\_UTIL.create\_hint\_sql\_patch
 
 create\_hint\_sql\_patch是用于创建调优SQL PATCH的接口函数，返回执行是否成功。

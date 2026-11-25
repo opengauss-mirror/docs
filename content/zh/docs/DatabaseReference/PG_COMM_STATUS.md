@@ -1,3 +1,8 @@
+---
+description: PG\_COMM\_STATUS视图展示节点的通信库状态。.
+keywords: [openGauss, PG_COMM_STATUS]
+---
+
 # PG\_COMM\_STATUS
 
 PG\_COMM\_STATUS视图展示节点的通信库状态。

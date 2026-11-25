@@ -1,3 +1,8 @@
+---
+description: 显示openGauss中用户的权限信息。.
+keywords: [openGauss, SHOW GRANTS]
+---
+
 # SHOW GRANTS
 
 ## 功能描述

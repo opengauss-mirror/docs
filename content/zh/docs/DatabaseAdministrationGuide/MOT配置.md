@@ -1,3 +1,8 @@
+---
+description: 预置MOT用于创建工作MOT。为了获得最佳效果，建议根据应用程序的特定要求和偏好自定义MOT配置（在mot.conf文件中定义）。.
+keywords: [openGauss, MOT配置]
+---
+
 # MOT配置
 
 预置MOT用于创建工作MOT。为了获得最佳效果，建议根据应用程序的特定要求和偏好自定义MOT配置（在mot.conf文件中定义）。

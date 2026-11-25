@@ -1,3 +1,8 @@
+---
+description: - bucketabstime\(value，flag\).
+keywords: [openGauss, HashFunc函数]
+---
+
 # HashFunc函数
 
 -   bucketabstime\(value，flag\)

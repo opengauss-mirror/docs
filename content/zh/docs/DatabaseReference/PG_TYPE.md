@@ -1,3 +1,8 @@
+---
+description: PG\_TYPE系统表存储数据类型的相关信息。.
+keywords: [openGauss, PG_TYPE]
+---
+
 # PG\_TYPE
 
 PG\_TYPE系统表存储数据类型的相关信息。

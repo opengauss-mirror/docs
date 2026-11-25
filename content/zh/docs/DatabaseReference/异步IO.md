@@ -1,3 +1,8 @@
+---
+description: Introduces 异步IO in openGauss, covering enable\_adio\_function, enable\_adio\_debug, adio\_buffer\_align\_size.
+keywords: [openGauss, 异步IO]
+---
+
 # 异步IO
 
 ## enable\_adio\_function

@@ -1,3 +1,8 @@
+---
+description: Introduces Prometheus Exporter组件 in openGauss, covering .
+keywords: [openGauss, Prometheus Exporter组件]
+---
+
 # Prometheus Exporter组件
 
 -   **[概述](Prometheus-Exporter组件概述.md)**  

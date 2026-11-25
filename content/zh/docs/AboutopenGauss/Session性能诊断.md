@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 1.0.0 版本开始引入。.
+keywords: [openGauss, Session性能诊断]
+---
+
 # Session性能诊断
 
 ## 可获得性<a name="section5314201001"></a>
@@ -30,7 +35,7 @@ Session采样数据分为两级，如[图1](#fig197862247217)所示：
 2.  第二级为持久化历史信息，存储在磁盘文件中，展示过去很长一段时间的历史活跃Session信息，从内存数据中抽样而来，适合长时间跨度的统计分析。
 
 **图 1**  Session性能诊断原理<a name="fig197862247217"></a>  
-![](figures/Principle-of-Session-Performance-Diagnosis.png "Session性能诊断原理")
+![特性描述](figures/Principle-of-Session-Performance-Diagnosis.png "Session性能诊断原理")
 
 部分使用场景如下所示：
 

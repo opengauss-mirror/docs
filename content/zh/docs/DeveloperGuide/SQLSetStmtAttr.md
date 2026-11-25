@@ -1,3 +1,8 @@
+---
+description: Introduces SQLSetStmtAttr in openGauss, covering 功能描述, 原型, 参数.
+keywords: [openGauss, SQLSetStmtAttr]
+---
+
 # SQLSetStmtAttr
 
 ## 功能描述<a name="zh-cn_topic_0238272903_zh-cn_topic_0237120433_zh-cn_topic_0059777949_s289df741daf0491095bd3a6eeb7c3397"></a>

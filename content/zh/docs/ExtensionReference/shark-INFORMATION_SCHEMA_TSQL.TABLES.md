@@ -1,3 +1,8 @@
+---
+description: TABLES视图返回数据库中的表或视图信息。.
+keywords: [openGauss, TABLES]
+---
+
 # TABLES
 
 TABLES视图返回数据库中的表或视图信息。

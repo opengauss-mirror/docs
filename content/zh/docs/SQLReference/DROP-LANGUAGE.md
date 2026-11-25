@@ -1,3 +1,8 @@
+---
+description: 删除一个过程语言。单机和集中式暂不支持删除过程语言。.
+keywords: [openGauss, DROP LANGUAGE]
+---
+
 # DROP LANGUAGE
 
 ## 功能描述<a name="section113331284191"></a>

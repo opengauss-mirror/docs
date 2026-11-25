@@ -1,3 +1,8 @@
+---
+description: - SNAPSHOT.SNAPSHOT.
+keywords: [openGauss, WDR Snapshot 原信息表]
+---
+
 # WDR Snapshot 原信息表
 
 -   **[SNAPSHOT.SNAPSHOT](SNAPSHOT-SNAPSHOT.md)**  

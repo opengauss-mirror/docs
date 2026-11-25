@@ -1,3 +1,8 @@
+---
+description: 相比于原始的openGauss，dolphin对于位串类型的修改主要为：.
+keywords: [openGauss, 位串类型]
+---
+
 # 位串类型
 
 相比于原始的openGauss，dolphin对于位串类型的修改主要为：

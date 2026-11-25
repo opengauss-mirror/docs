@@ -1,4 +1,9 @@
-﻿# GLOBAL\_STAT\_DB\_CU
+﻿---
+description: ﻿# GLOBAL\_STAT\_DB\_CU.
+keywords: [openGauss, ]
+---
+
+# GLOBAL\_STAT\_DB\_CU
 
 GLOBAL\_STAT\_DB\_CU视图用于查询openGauss，每个数据库的CU命中情况。可以通过pg\_stat\_reset\(\)进行清零。
 

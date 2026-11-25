@@ -1,3 +1,8 @@
+---
+description: Introduces PREPARE in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, PREPARE]
+---
+
 # PREPARE
 
 ## 功能描述<a name="zh-cn_topic_0283137580_zh-cn_topic_0237122171_zh-cn_topic_0059778631_s73bdfafa6f9743e9a9e0a4f7b40cc2c2"></a>

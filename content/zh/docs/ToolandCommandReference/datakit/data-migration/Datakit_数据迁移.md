@@ -1,3 +1,8 @@
+---
+description: data-migration项目目前版本为1.0.0。.
+keywords: [openGauss, Portal数据迁移]
+---
+
 # Portal数据迁移
 
 ## 版本介绍

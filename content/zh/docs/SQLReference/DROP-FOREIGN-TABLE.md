@@ -1,3 +1,8 @@
+---
+description: Introduces DROP FOREIGN TABLE in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP FOREIGN TABLE]
+---
+
 # DROP FOREIGN TABLE
 
 ## 功能描述<a name="zh-cn_topic_0283137169_section57611418144918"></a>

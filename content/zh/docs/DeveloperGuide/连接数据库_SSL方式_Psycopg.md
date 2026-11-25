@@ -1,3 +1,8 @@
+---
+description: 用户通过psycopy2连接openGauss服务器时，可以通过开启SSL加密客户端和服务器之间的通讯。在使用SSL时，默认用户已经获取了服务端和客户端所需要的证书和私钥文件，关于证书等文件的获取请参考Openssl相关文档和命令。.
+keywords: [openGauss, 连接数据库SSL方式]
+---
+
 # 连接数据库（SSL方式）
 
 用户通过psycopy2连接openGauss服务器时，可以通过开启SSL加密客户端和服务器之间的通讯。在使用SSL时，默认用户已经获取了服务端和客户端所需要的证书和私钥文件，关于证书等文件的获取请参考[Openssl相关文档和命令](https://www.openssl.net.cn/)。

@@ -1,3 +1,8 @@
+---
+description: openGauss提供了gs_preinstall工具来帮助完成openGauss的环境配置，以保证openGauss安装的正常进行。.
+keywords: [openGauss, gs_preinstall]
+---
+
 # gs_preinstall
 
 ## 背景信息<a name="zh-cn_topic_0237152419_zh-cn_topic_0059778992_section68942744218"></a>

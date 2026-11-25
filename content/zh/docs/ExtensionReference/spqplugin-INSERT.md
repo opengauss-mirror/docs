@@ -1,3 +1,8 @@
+---
+description: Introduces INSERT in openGauss, covering 功能描述, 注意事项, 示例.
+keywords: [openGauss, INSERT]
+---
+
 # INSERT
 
 ## 功能描述

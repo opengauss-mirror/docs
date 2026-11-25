@@ -1,4 +1,9 @@
-﻿# 全量迁移gs_mysync
+﻿---
+description: Introduces  in openGauss, covering 可获得性, 特性简介, 客户价值.
+keywords: [openGauss, ]
+---
+
+# 全量迁移gs_mysync
 
 ## 可获得性<a name="section56086982"></a>
 

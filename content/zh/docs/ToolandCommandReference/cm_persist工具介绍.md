@@ -1,3 +1,8 @@
+---
+description: cm\_persist工具用来在资源池化设备上实现抢占磁盘锁功能。该工具是系统内部工具，由cm\_server实例自动调用，不建议用户使用。.
+keywords: [openGauss, cm_persist工具介绍]
+---
+
 # cm\_persist工具介绍
 
 ## 功能介绍<a name="section125419154813"></a>

@@ -1,3 +1,8 @@
+---
+description: 在当前数据库中创建一个新的空白表，该表由命令执行者所有。.
+keywords: [openGauss, CREATE TABLE]
+---
+
 # CREATE TABLE
 
 ## 功能描述<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s0867185fef0f4a228532d432b598cb26"></a>

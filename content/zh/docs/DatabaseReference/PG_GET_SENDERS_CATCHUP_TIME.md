@@ -1,3 +1,8 @@
+---
+description: PG\_GET\_SENDERS\_CATCHUP\_TIME视图显示数据库节点上当前活跃的主备发送线程的追赶信息。.
+keywords: [openGauss, PG_GET_SENDERS_CATCHUP_TIME]
+---
+
 # PG\_GET\_SENDERS\_CATCHUP\_TIME
 
 PG\_GET\_SENDERS\_CATCHUP\_TIME视图显示数据库节点上当前活跃的主备发送线程的追赶信息。

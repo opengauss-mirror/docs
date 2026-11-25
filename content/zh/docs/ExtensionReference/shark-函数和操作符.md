@@ -1,3 +1,8 @@
+---
+description: Introduces shark-函数和操作符 in openGauss, covering .
+keywords: [openGauss, shark-函数和操作符]
+---
+
 # shark-函数和操作符
 
 -   **[系统信息函数](shark-系统信息函数.md)**

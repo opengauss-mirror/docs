@@ -1,3 +1,8 @@
+---
+description: PG\_TOTAL\_MEMORY\_DETAIL视图显示某个数据库节点内存使用情况。.
+keywords: [openGauss, PG_TOTAL_MEMORY_DETAIL]
+---
+
 # PG\_TOTAL\_MEMORY\_DETAIL
 
 PG\_TOTAL\_MEMORY\_DETAIL视图显示某个数据库节点内存使用情况。

@@ -1,3 +1,8 @@
+---
+description: - WORKLOAD\_SQL\_COUNT.
+keywords: [openGauss, Workload]
+---
+
 # Workload
 
 -   **[WORKLOAD\_SQL\_COUNT](WORKLOAD_SQL_COUNT.md)**  

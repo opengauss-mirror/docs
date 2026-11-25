@@ -1,3 +1,8 @@
+---
+description: Introduces SHOW TRIGGERS in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, SHOW TRIGGERS]
+---
+
 # SHOW TRIGGERS
 
 ## 功能描述

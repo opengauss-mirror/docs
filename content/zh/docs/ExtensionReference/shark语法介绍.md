@@ -1,3 +1,8 @@
+---
+description: Introduces shark语法介绍 in openGauss, covering .
+keywords: [openGauss, shark语法介绍]
+---
+
 # shark语法介绍
 
 -   **[SQL参考](shark-SQL参考.md)**

@@ -1,3 +1,8 @@
+---
+description: PG\_DATABASE系统表存储关于可用数据库的信息。.
+keywords: [openGauss, PG_DATABASE]
+---
+
 # PG\_DATABASE
 
 PG\_DATABASE系统表存储关于可用数据库的信息。

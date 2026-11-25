@@ -1,3 +1,8 @@
+---
+description: Introduces ALTER TYPE in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, ALTER TYPE]
+---
+
 # ALTER TYPE
 
 ## 功能描述<a name="zh-cn_topic_0283136571_zh-cn_topic_0237122082_zh-cn_topic_0059777461_s46f3e0aac3a84502bc20eee219bef9cf"></a>

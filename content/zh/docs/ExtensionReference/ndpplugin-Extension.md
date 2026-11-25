@@ -1,3 +1,8 @@
+---
+description: Introduces NDPPlugin Extension in openGauss, covering .
+keywords: [openGauss, NDPPlugin Extension]
+---
+
 # NDPPlugin Extension
 
 -   **[NDPPlugin概述](ndpplugin概述.md)**  

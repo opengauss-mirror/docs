@@ -1,3 +1,8 @@
+---
+description: 要使用该功能首先安装 torch、torchvision、torchaudio，可通过pip方式安装、conda方式安装.
+keywords: [openGauss, openGauss-SentenceTransformer实践]
+---
+
 # openGauss-SentenceTransformer实践
 
 要使用该功能首先安装 torch、torchvision、torchaudio，可通过pip方式安装、conda方式安装

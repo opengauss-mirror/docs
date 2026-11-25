@@ -1,3 +1,8 @@
+---
+description: 如果语句中存在参数标记的话，SQLExecute函数使用参数标记参数的当前值，执行一条准备好的SQL语句。.
+keywords: [openGauss, SQLExecute]
+---
+
 # SQLExecute
 
 ## 功能描述<a name="zh-cn_topic_0238272892_zh-cn_topic_0237120422_zh-cn_topic_0059778182_sab94d410ef5f4a509e8d2881ec7373e7"></a>

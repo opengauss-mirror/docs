@@ -1,3 +1,8 @@
+---
+description: 在数据库使用过程中，出现如下错误提示。.
+keywords: [openGauss, 出现ErrorNo space left on device提示]
+---
+
 # 出现“Error:No space left on device”提示
 
 ## 问题现象<a name="section668912633713"></a>

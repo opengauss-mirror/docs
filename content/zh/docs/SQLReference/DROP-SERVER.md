@@ -1,3 +1,8 @@
+---
+description: Introduces DROP SERVER in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP SERVER]
+---
+
 # DROP SERVER
 
 ## 功能描述<a name="zh-cn_topic_0283136745_section18987145713527"></a>

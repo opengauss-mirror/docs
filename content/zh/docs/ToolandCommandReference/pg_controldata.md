@@ -1,3 +1,8 @@
+---
+description: pg\_controldata工具用来显示数据库目录下control文件的信息。.
+keywords: [openGauss, pg_controldata]
+---
+
 # pg\_controldata
 
 ## 功能介绍<a name="zh-cn_topic_0237152440_section125419154813"></a>

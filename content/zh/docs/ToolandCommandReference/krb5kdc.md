@@ -1,3 +1,8 @@
+---
+description: 为openGauss认证服务Kerberos提供列认证和秘钥管理服务。.
+keywords: [openGauss, krb5kdc]
+---
+
 # krb5kdc
 
 ## 功能介绍<a name="zh-cn_topic_0237152432_section10172172474817"></a>

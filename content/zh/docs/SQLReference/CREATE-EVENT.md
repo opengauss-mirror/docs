@@ -1,3 +1,8 @@
+---
+description: Introduces CREATE EVENT in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, CREATE EVENT]
+---
+
 # CREATE EVENT
 
 ## 功能描述<a name="section189661819135511"></a>

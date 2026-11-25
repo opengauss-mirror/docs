@@ -1,3 +1,8 @@
+---
+description: Describes common 产品FAQ issues in openGauss, including symptoms, causes, and solutions.
+keywords: [openGauss, troubleshooting, 产品FAQ]
+---
+
 # 产品FAQ
 
 ### **Q1：“极致RTO”、“并行恢复”与“备机可读”的关系是什么？**

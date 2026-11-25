@@ -1,3 +1,8 @@
+---
+description: gs_upgradechk是一个升级之后元数据完整性的检测工具，由python3编写，在数据库升级之后，对元数据进行检验，检查在升级过程前后，是否出现元数据的损坏。目前仅支持检测builtin、initdb的元数据，对于用户所创建的表等，暂时不会进行检测。.
+keywords: [openGauss, gs_upgradechk]
+---
+
 # gs_upgradechk
 
 ## 简介

@@ -1,3 +1,8 @@
+---
+description: 显示当前准备好进行两阶段提交的事务的信息。.
+keywords: [openGauss, TRANSACTIONS_PREPARED_XACTS]
+---
+
 # TRANSACTIONS\_PREPARED\_XACTS
 
 显示当前准备好进行两阶段提交的事务的信息。

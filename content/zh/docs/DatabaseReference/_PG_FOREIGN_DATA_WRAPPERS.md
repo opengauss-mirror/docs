@@ -1,3 +1,8 @@
+---
+description: 显示外部数据封装器的信息。该视图只有sysadmin权限可以查看。.
+keywords: [openGauss, _PG_FOREIGN_DATA_WRAPPERS]
+---
+
 # \_PG\_FOREIGN\_DATA\_WRAPPERS
 
 显示外部数据封装器的信息。该视图只有sysadmin权限可以查看。

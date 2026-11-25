@@ -1,3 +1,8 @@
+---
+description: 为openGauss认证服务Kerberos提供列出凭证缓存中的用户和票据能力。.
+keywords: [openGauss, klist]
+---
+
 # klist
 
 ## 功能介绍<a name="zh-cn_topic_0237152431_section10172172474817"></a>

@@ -1,3 +1,8 @@
+---
+description: 目前，openGauss相关的第三方工具都是通过JDBC进行连接的，此部分将介绍工具配置时的注意事项。.
+keywords: [openGauss, JDBC, JDBC配置]
+---
+
 # JDBC配置
 
 目前，openGauss相关的第三方工具都是通过JDBC进行连接的，此部分将介绍工具配置时的注意事项。

@@ -1,3 +1,8 @@
+---
+description: gs_initdb初始化数据库过程中出现如下。.
+keywords: [openGauss, dssserver端口号错误]
+---
+
 # dssserver端口号错误
 
 ## 现象

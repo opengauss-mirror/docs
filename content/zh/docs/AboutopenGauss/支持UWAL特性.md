@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 6.0.0-RC1版本开始引入。.
+keywords: [openGauss, UWAL特性]
+---
+
 # UWAL特性<a name="ZH-CN_TOPIC_0000001687210125"></a>
 
 ## 可获得性<a name="section14611198203513"></a>

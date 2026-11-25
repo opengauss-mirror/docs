@@ -1,3 +1,8 @@
+---
+description: 获得各节点的表、索引等文件的读取失败信息。.
+keywords: [openGauss, GLOBAL_STAT_BAD_BLOCK]
+---
+
 # GLOBAL\_STAT\_BAD\_BLOCK
 
 获得各节点的表、索引等文件的读取失败信息。

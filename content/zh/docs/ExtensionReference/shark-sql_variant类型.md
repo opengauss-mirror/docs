@@ -1,3 +1,8 @@
+---
+description: openGauss在shark中支持sql_variant类型，sql_variant类型可以保存非用户定义类型（除特殊说明的类型）的值，并保留原类型信息，可以用在列、参数、变量和函数返回值中。.
+keywords: [openGauss, sql_variant类型]
+---
+
 # sql_variant类型
 
 ## 功能描述

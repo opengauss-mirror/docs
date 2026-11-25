@@ -1,3 +1,8 @@
+---
+description: 介绍设置客户端和服务器的安全认证方式的相关参数。.
+keywords: [openGauss, 安全和认证postgresql.conf]
+---
+
 # 安全和认证（postgresql.conf）
 
 介绍设置客户端和服务器的安全认证方式的相关参数。

@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 1.0.0版本开始引入。.
+keywords: [openGauss, SQL by pass]
+---
+
 # SQL by pass
 
 ## 可获得性<a name="section5309649"></a>

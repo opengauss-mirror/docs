@@ -1,3 +1,8 @@
+---
+description: 显示openGauss中数据库主节点当前准备好进行两阶段提交的事务的信息。.
+keywords: [openGauss, SUMMARY_TRANSACTIONS_PREPARED_XACTS]
+---
+
 # SUMMARY\_TRANSACTIONS\_PREPARED\_XACTS
 
 显示openGauss中数据库主节点当前准备好进行两阶段提交的事务的信息。

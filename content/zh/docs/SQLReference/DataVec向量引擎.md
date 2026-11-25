@@ -1,3 +1,8 @@
+---
+description: Introduces DataVec向量引擎 in openGauss, covering .
+keywords: [openGauss, DataVec向量引擎]
+---
+
 # DataVec向量引擎
 
 -   **[向量数据类型](向量数据类型.md)**  

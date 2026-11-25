@@ -1,3 +1,8 @@
+---
+description: Introduces CREATE MASKING POLICY in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, CREATE MASKING POLICY]
+---
+
 # CREATE MASKING POLICY
 
 ## 功能描述<a name="section1163224811518"></a>

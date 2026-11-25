@@ -1,3 +1,8 @@
+---
+description: 向当前数据库添加一个新的发布，发布的名称必须与当前数据库中任何现有发布的名称不同。发布本质上是通过逻辑复制将一组表的数据变更进行复制。.
+keywords: [openGauss, CREATE PUBLICATION]
+---
+
 # CREATE PUBLICATION
 
 ## **功能描述**<a name="section12584151914217"></a>

@@ -1,3 +1,8 @@
+---
+description: GS\_WLM\_PLAN\_ENCODING\_TABLE系统表显示计划算子级的编码信息，为机器学习模型的提供包括startup time、total time、peak memory、rows等标签值的训练、预测集。.
+keywords: [openGauss, GS_WLM_PLAN_ENCODING_TABLE]
+---
+
 # GS\_WLM\_PLAN\_ENCODING\_TABLE
 
 GS\_WLM\_PLAN\_ENCODING\_TABLE系统表显示计划算子级的编码信息，为机器学习模型的提供包括startup time、total time、peak memory、rows等标签值的训练、预测集。

@@ -1,3 +1,8 @@
+---
+description: 此方法提取查询结果集的下一行，并返回一个元组。.
+keywords: [openGauss, cursor.fetchone]
+---
+
 # cursor.fetchone\(\)
 
 ## 功能描述<a name="section5708152714306"></a>

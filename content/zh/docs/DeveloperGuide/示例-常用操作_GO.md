@@ -1,3 +1,8 @@
+---
+description: 本文基于 gitcode.com/opengauss/openGauss-connector-go-pq 驱动，给出一套可运行的 Go 使用示例，演示如何在 Go 语言中通过标准 database/sql 接口访问 openGauss，并完成常见的增删改查、事务和 JSONB 等操作。.
+keywords: [openGauss, openGauss Go 语言驱动常用操作示例]
+---
+
 # openGauss Go 语言驱动常用操作示例
 
 本文基于 `gitcode.com/opengauss/openGauss-connector-go-pq` 驱动，给出一套可运行的 Go 使用示例，演示如何在 Go 语言中通过标准 `database/sql` 接口访问 openGauss，并完成常见的增删改查、事务和 JSONB 等操作。

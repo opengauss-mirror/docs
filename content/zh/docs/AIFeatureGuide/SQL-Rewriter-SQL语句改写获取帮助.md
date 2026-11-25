@@ -1,3 +1,8 @@
+---
+description: 使用SQL Rewriter前，您可以通过以下指令获取帮助。.
+keywords: [openGauss, 获取帮助]
+---
+
 # 获取帮助
 
 使用SQL Rewriter前，您可以通过以下指令获取帮助。

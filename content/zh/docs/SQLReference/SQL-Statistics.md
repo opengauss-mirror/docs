@@ -1,3 +1,8 @@
+---
+description: SQL Statistics列名称及描述如下表所示。.
+keywords: [openGauss, SQL Statistics]
+---
+
 # SQL Statistics
 
 SQL Statistics列名称及描述如下表所示。

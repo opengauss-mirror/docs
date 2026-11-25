@@ -1,3 +1,8 @@
+---
+description: 1.获取Libsmartscan_5.1.0_openEuler_aarch64.tar.gz。.
+keywords: [openGauss, libsmartscan 安装]
+---
+
 # libsmartscan 安装
 1.获取Libsmartscan_5.1.0_openEuler_aarch64.tar.gz。
 

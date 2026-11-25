@@ -1,3 +1,8 @@
+---
+description: openGauss提供了多种修改GUC参数的方法，用户可以方便的针对数据库、用户、会话进行设置。.
+keywords: [openGauss, 重设参数]
+---
+
 # 重设参数
 
 ## 背景信息<a name="zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_s75c9285916664351b9c3e31f0735ea98"></a>

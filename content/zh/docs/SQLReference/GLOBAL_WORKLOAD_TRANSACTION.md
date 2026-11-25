@@ -1,3 +1,8 @@
+---
+description: 显示各节点上的workload的负载信息。.
+keywords: [openGauss, GLOBAL_WORKLOAD_TRANSACTION]
+---
+
 # GLOBAL\_WORKLOAD\_TRANSACTION
 
 显示各节点上的workload的负载信息。

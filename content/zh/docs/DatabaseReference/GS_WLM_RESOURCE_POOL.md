@@ -1,3 +1,8 @@
+---
+description: Introduces GS\_WLM\_RESOURCE\_POOL in openGauss, covering .
+keywords: [openGauss, GS_WLM_RESOURCE_POOL]
+---
+
 # GS\_WLM\_RESOURCE\_POOL
 
 这是资源池上的一些统计信息。

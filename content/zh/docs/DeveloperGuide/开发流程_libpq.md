@@ -1,3 +1,8 @@
+---
+description: 编译并且链接一个libpq的源程序，需要做下面的一些事情：.
+keywords: [openGauss, 开发流程]
+---
+
 # 开发流程
 
 编译并且链接一个libpq的源程序，需要做下面的一些事情：

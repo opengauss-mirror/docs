@@ -1,3 +1,8 @@
+---
+description: Host CPU列名称及描述如下表所示。.
+keywords: [openGauss, Host CPU]
+---
+
 # Host CPU
 
 Host CPU列名称及描述如下表所示。

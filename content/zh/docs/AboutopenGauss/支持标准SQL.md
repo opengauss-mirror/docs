@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 1.0.0版本开始引入。.
+keywords: [openGauss, 支持标准SQL]
+---
+
 # 支持标准SQL
 
 ## 可获得性<a name="section38134078"></a>

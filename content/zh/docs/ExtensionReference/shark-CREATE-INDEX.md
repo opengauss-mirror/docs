@@ -1,3 +1,8 @@
+---
+description: Introduces CREATE INDEX in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, CREATE INDEX]
+---
+
 # CREATE INDEX
 
 ## 功能描述<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s2baab5c876044795a12b5949f22d2144"></a>

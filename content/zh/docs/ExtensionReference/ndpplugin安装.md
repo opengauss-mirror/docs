@@ -1,3 +1,8 @@
+---
+description: openGauss-5.1.0版本已经默认编译安装NDPPlugin插件，使用步骤如下：.
+keywords: [openGauss, NDPPlugin安装]
+---
+
 # NDPPlugin安装
 
 openGauss-5.1.0版本已经默认编译安装NDPPlugin插件，使用步骤如下：

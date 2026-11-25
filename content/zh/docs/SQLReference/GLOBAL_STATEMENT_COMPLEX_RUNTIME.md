@@ -1,3 +1,8 @@
+---
+description: 显示当前用户在各个节点上正在执行的作业的负载管理记录。.
+keywords: [openGauss, GLOBAL_STATEMENT_COMPLEX_RUNTIME]
+---
+
 # GLOBAL\_STATEMENT\_COMPLEX\_RUNTIME
 
 显示当前用户在各个节点上正在执行的作业的负载管理记录。

@@ -1,3 +1,8 @@
+---
+description: 下表简要对比了基于openGauss磁盘的存储引擎和MOT存储引擎的各种特性。.
+keywords: [openGauss, 对比磁盘与MOT]
+---
+
 # 对比：磁盘与MOT
 
 下表简要对比了基于openGauss磁盘的存储引擎和MOT存储引擎的各种特性。

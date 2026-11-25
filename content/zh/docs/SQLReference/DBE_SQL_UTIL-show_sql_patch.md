@@ -1,3 +1,8 @@
+---
+description: show\_sql\_patch是用于显示给定patch\_name对应的SQL PATCH的接口函数，返回运行结果。.
+keywords: [openGauss, DBE_SQL_UTIL.show_sql_patch]
+---
+
 # DBE\_SQL\_UTIL.show\_sql\_patch
 
 show\_sql\_patch是用于显示给定patch\_name对应的SQL PATCH的接口函数，返回运行结果。

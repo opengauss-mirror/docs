@@ -1,3 +1,8 @@
+---
+description: Introduces OS in openGauss, covering .
+keywords: [openGauss, OS]
+---
+
 # OS
 
 -   **[OS\_RUNTIME](OS_RUNTIME.md)**  

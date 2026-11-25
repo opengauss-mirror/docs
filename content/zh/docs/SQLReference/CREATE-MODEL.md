@@ -1,3 +1,8 @@
+---
+description: Introduces CREATE MODEL in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, CREATE MODEL]
+---
+
 # CREATE MODEL
 
 ## 功能描述<a name="section94489231810"></a>

@@ -1,3 +1,8 @@
+---
+description: Database Stat列名称及描述如下表所示。.
+keywords: [openGauss, Database Stat]
+---
+
 # Database Stat
 
 Database Stat列名称及描述如下表所示。

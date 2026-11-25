@@ -1,3 +1,8 @@
+---
+description: Introduces 内存表特性 in openGauss, covering .
+keywords: [openGauss, 内存表特性]
+---
+
 # 内存表特性
 
 -   **[MOT介绍](MOT介绍.md)**  

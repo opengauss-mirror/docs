@@ -1,3 +1,8 @@
+---
+description: PG\_CONTROL\_GROUP\_CONFIG视图存储系统的控制组配置信息。查询该视图需要sysadmin权限。.
+keywords: [openGauss, PG_CONTROL_GROUP_CONFIG]
+---
+
 # PG\_CONTROL\_GROUP\_CONFIG
 
 PG\_CONTROL\_GROUP\_CONFIG视图存储系统的控制组配置信息。查询该视图需要sysadmin权限。

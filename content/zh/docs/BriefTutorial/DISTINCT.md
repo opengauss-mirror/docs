@@ -1,3 +1,8 @@
+---
+description: DISTINCT关键字与SELECT语句一起使用，用于去除重复记录，只获取唯一的记录。.
+keywords: [openGauss, DISTINCT]
+---
+
 # DISTINCT
 
 DISTINCT关键字与SELECT语句一起使用，用于去除重复记录，只获取唯一的记录。

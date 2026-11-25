@@ -1,3 +1,8 @@
+---
+description: 通过EXPLAIN PLAN命令可以将查询执行的计划信息存储于PLAN\_TABLE表中。与EXPLAIN命令不同的是，EXPLAIN PLAN仅将计划信息进行存储，而不会打印到屏幕。.
+keywords: [openGauss, EXPLAIN PLAN]
+---
+
 # EXPLAIN PLAN
 
 ## 功能描述<a name="zh-cn_topic_0283136849_zh-cn_topic_0237122164_section0601642305"></a>
@@ -69,7 +74,7 @@ FOR statement ;
     SELECT * FROM PLAN_TABLE;
     ```
 
-    ![](figures/document.png)
+    ![示例](figures/document.png)
 
 3.  清理PLAN\_TABLE表中的数据。
 

@@ -1,3 +1,8 @@
+---
+description: 删除一个数据库角色所拥有的数据库对象。.
+keywords: [openGauss, DROP OWNED]
+---
+
 # DROP OWNED
 
 ## 功能描述<a name="zh-cn_topic_0283136635_zh-cn_topic_0237122143_zh-cn_topic_0059777620_sa3265773225d4612b9bafd61c332eae0"></a>

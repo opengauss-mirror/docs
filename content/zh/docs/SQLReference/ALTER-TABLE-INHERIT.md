@@ -1,3 +1,8 @@
+---
+description: 修改继承表，包括将普通表改为继承表及将继承表改为普通表。.
+keywords: [openGauss, ALTER TABLE INHERIT]
+---
+
 # ALTER TABLE INHERIT
 
 ## 功能描述<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122090_zh-cn_topic_0059778762_s7554a451a2e8434ac6abac385bba71e9"></a>

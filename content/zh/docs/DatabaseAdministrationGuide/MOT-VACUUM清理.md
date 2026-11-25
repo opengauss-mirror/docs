@@ -1,3 +1,8 @@
+---
+description: 使用VACUUM进行垃圾收集，并有选择地分析数据库，如下所示。.
+keywords: [openGauss, MOT VACUUM清理]
+---
+
 # MOT VACUUM清理
 
 使用VACUUM进行垃圾收集，并有选择地分析数据库，如下所示。

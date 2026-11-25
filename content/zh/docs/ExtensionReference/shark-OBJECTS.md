@@ -1,3 +1,8 @@
+---
+description: Introduces OBJECTS in openGauss, covering .
+keywords: [openGauss, OBJECTS]
+---
+
 # OBJECTS
 
 所有架构范围内的用户定义对象。

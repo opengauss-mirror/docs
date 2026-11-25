@@ -1,3 +1,8 @@
+---
+description: GS\_DB\_PRIVILEGE系统表记录ANY权限的授予情况，每条记录对应一条授权信息。.
+keywords: [openGauss, GS_DB_PRIVILEGE]
+---
+
 # GS\_DB\_PRIVILEGE
 
 GS\_DB\_PRIVILEGE系统表记录ANY权限的授予情况，每条记录对应一条授权信息。

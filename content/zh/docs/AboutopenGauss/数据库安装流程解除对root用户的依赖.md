@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 6.0.0-RC1版本开始引入，在openGauss 6.0.0 LTS版本中增强。.
+keywords: [openGauss, 数据库安装流程解除对root用户的依赖]
+---
+
 # 数据库安装流程解除对root用户的依赖
 
 ## 可获得性<a name="section56086982"></a>

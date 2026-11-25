@@ -1,3 +1,8 @@
+---
+description: 1. 使用psycopg2.connect函数获得connection对象。.
+keywords: [openGauss, 连接数据库]
+---
+
 # 连接数据库
 
 1. 使用psycopg2.connect函数获得connection对象。

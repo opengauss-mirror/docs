@@ -1,3 +1,8 @@
+---
+description: openGauss内汇聚pg\_catalog、information\_schema以及pg_toast模式下的所有系统表的统计信息。.
+keywords: [openGauss, SUMMARY_STAT_SYS_TABLES]
+---
+
 # SUMMARY\_STAT\_SYS\_TABLES
 
 openGauss内汇聚pg\_catalog、information\_schema以及pg_toast模式下的所有系统表的统计信息。

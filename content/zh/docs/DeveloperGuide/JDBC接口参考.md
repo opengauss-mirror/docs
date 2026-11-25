@@ -1,3 +1,8 @@
+---
+description: JDBC接口是一套提供给用户的API方法，本节将对部分常用接口做具体描述，若涉及其他接口可参考JDK1.8（软件包）/JDBC4.0中相关内容。.
+keywords: [openGauss, JDBC, JDBC接口参考]
+---
+
 # JDBC接口参考
 
 JDBC接口是一套提供给用户的API方法，本节将对部分常用接口做具体描述，若涉及其他接口可参考JDK1.8（软件包）/JDBC4.0中相关内容。

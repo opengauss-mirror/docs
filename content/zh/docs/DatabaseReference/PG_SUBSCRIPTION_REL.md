@@ -1,3 +1,8 @@
+---
+description: 系统表PG\_SUBSCRIPTION\_REL包含每个订阅中每个被复制表的状态，是多对多的映射关系。.
+keywords: [openGauss, PG_SUBSCRIPTION_REL]
+---
+
 # PG\_SUBSCRIPTION\_REL
 
 系统表PG\_SUBSCRIPTION\_REL包含每个订阅中每个被复制表的状态，是多对多的映射关系。

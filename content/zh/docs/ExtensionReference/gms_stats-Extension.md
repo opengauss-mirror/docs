@@ -1,3 +1,8 @@
+---
+description: Introduces gms_stats Extension in openGauss, covering .
+keywords: [openGauss, gms_stats Extension]
+---
+
 # gms_stats Extension
 
 -   **[gms_stats概述](gms_stats概述.md)**  

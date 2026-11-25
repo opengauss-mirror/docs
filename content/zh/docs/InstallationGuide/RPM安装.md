@@ -1,3 +1,8 @@
+---
+description: 本章节主要介绍在openEuler（openEuler版本大于等于22.03 LTS）操作系统上，通过yum命令一键安装openGauss数据库。.
+keywords: [openGauss, RPM安装]
+---
+
 # RPM安装
 
 本章节主要介绍在openEuler（openEuler版本大于等于22.03 LTS）操作系统上，通过yum命令一键安装openGauss数据库。
@@ -35,9 +40,9 @@
 
 - 在安装操作系统过程中，software选择openGauss，安装操作系统时候默认安装上openGauss数据库。
 
-![](figures/soft_select.png)
+![安装方式](figures/soft_select.png)
 
-![](figures/choose_opengauss.png)
+![安装方式](figures/choose_opengauss.png)
 
 
 ## 使用说明

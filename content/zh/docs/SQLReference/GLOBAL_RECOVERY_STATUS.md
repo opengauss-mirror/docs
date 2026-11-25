@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_RECOVERY\_STATUS视图显示关于主机和备机的日志流控信息。.
+keywords: [openGauss, GLOBAL_RECOVERY_STATUS]
+---
+
 # GLOBAL\_RECOVERY\_STATUS
 
 GLOBAL\_RECOVERY\_STATUS视图显示关于主机和备机的日志流控信息。

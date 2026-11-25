@@ -1,3 +1,8 @@
+---
+description: Introduces LOCK in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, LOCK]
+---
+
 # LOCK
 
 ## 功能描述<a name="zh-cn_topic_0237122168_zh-cn_topic_0059778442_s11c25749bd754f4c98e19b29df2baf41"></a>

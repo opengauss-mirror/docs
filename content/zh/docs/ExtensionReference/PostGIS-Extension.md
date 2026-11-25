@@ -1,3 +1,8 @@
+---
+description: Introduces PostGIS Extension in openGauss, covering .
+keywords: [openGauss, PostGIS Extension]
+---
+
 # PostGIS Extension
 
 -   **[PostGIS概述](PostGIS概述.md)**  

@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_STATIO\_USER\_INDEXES视图显示各节点的命名空间中所有用户关系表索引的IO状态信息。.
+keywords: [openGauss, GLOBAL_STATIO_USER_INDEXES]
+---
+
 # GLOBAL\_STATIO\_USER\_INDEXES
 
 GLOBAL\_STATIO\_USER\_INDEXES视图显示各节点的命名空间中所有用户关系表索引的IO状态信息。

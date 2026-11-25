@@ -1,3 +1,8 @@
+---
+description: - MEMORY\_NODE\_DETAIL.
+keywords: [openGauss, Memory]
+---
+
 # Memory
 
 -   **[MEMORY\_NODE\_DETAIL](MEMORY_NODE_DETAIL.md)**  

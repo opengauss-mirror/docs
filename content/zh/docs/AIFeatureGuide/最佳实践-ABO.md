@@ -1,3 +1,8 @@
+---
+description: Introduces 最佳实践 in openGauss, covering .
+keywords: [openGauss, 最佳实践]
+---
+
 # 最佳实践
 
 生成如下数据表：

@@ -1,3 +1,8 @@
+---
+description: - TRANSACTIONS\_PREPARED\_XACTS.
+keywords: [openGauss, Transaction]
+---
+
 # Transaction
 
 -   **[TRANSACTIONS\_PREPARED\_XACTS](TRANSACTIONS_PREPARED_XACTS.md)**  

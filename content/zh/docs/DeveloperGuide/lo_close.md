@@ -1,3 +1,8 @@
+---
+description: Introduces lo_close in openGauss, covering 功能描述, 原型, 参数.
+keywords: [openGauss, lo_close]
+---
+
 # lo_close
 
 ## 功能描述<a name="zh-cn_topic__section696285173723"></a>

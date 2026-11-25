@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 3.0.0版本开始引入。.
+keywords: [openGauss, 支持备机build备机]
+---
+
 # 支持备机build备机
 
 ## 可获得性<a name="section14707931165614"></a>

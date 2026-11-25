@@ -1,3 +1,8 @@
+---
+description: Wait Events列名称及描述如下表所示。.
+keywords: [openGauss, Wait Events]
+---
+
 # Wait Events
 
 Wait Events列名称及描述如下表所示。

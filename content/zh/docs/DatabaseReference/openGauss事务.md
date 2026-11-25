@@ -1,3 +1,8 @@
+---
+description: 介绍openGauss事务隔离、事务只读、最大prepared事务数、维护模式目的参数设置及取值范围等内容。.
+keywords: [openGauss, openGauss事务]
+---
+
 # openGauss事务
 
 介绍openGauss事务隔离、事务只读、最大prepared事务数、维护模式目的参数设置及取值范围等内容。

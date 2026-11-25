@@ -1,3 +1,8 @@
+---
+description: 用户根据openGauss提供的新特性和数据库现状，确定是否对现有系统进行升级。.
+keywords: [openGauss, gs_upgradectl]
+---
+
 # gs\_upgradectl
 
 ## 背景信息<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_sca8f0f932903424f8ce649c929720f23"></a>

@@ -1,3 +1,8 @@
+---
+description: 原生编译（JIT）是MOT提供极低时延和高吞吐量性能的关键技术之一。支持两种原生编译（使用PREPARE语句）：JIT存储过程（JIT SP）和JIT查询。.
+keywords: [openGauss, MOT查询原生编译JIT]
+---
+
 # MOT查询原生编译（JIT）
 
 原生编译（JIT）是MOT提供极低时延和高吞吐量性能的关键技术之一。支持两种原生编译（使用PREPARE语句）：JIT存储过程（JIT SP）和JIT查询。

@@ -1,3 +1,8 @@
+---
+description: X-Tuner支持三种模式，分别是获取参数诊断报告的recommend模式、训练强化学习模型的train模式、以及使用算法进行调优的tune模式。上述三种模式可以通过命令行参数来区别，通过配置文件来指定具体的细节。.
+keywords: [openGauss, 使用示例]
+---
+
 # 使用示例
 
 X-Tuner支持三种模式，分别是获取参数诊断报告的recommend模式、训练强化学习模型的train模式、以及使用算法进行调优的tune模式。上述三种模式可以通过命令行参数来区别，通过配置文件来指定具体的细节。
@@ -48,7 +53,7 @@ gs_dbmind component xtuner recommend -f connection.json
 则可以生成诊断报告如下：
 
 **图 1**  recommend模式生成的报告示意图<a name="fig49748416171"></a>  
-![](figures/report-generated-in-recommend-mode.png "recommend模式生成的报告示意图")
+![recommend模式使用示例](figures/report-generated-in-recommend-mode.png "recommend模式生成的报告示意图")
 
 在上述报告中，推荐了该环境上的数据库参数配置，并进行了风险提示。报告同时生成了当前workload的特征信息，其中有几个特征是比较有参考意义的：
 

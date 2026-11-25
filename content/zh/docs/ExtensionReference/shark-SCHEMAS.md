@@ -1,3 +1,8 @@
+---
+description: SCHEMAS视图返回数据库中的名称空间信息。.
+keywords: [openGauss, SCHEMAS]
+---
+
 # SCHEMAS
 
 SCHEMAS视图返回数据库中的名称空间信息。

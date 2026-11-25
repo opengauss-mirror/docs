@@ -1,3 +1,8 @@
+---
+description: 本文介绍如何使用JavaScript语言调用openGauss向量数据库.
+keywords: [openGauss, Node.js SDK对接向量数据库]
+---
+
 # Node.js SDK对接向量数据库
 本文介绍如何使用JavaScript语言调用openGauss向量数据库
 

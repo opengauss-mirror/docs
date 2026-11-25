@@ -1,3 +1,8 @@
+---
+description: openGauss兼容性评估工具，支持从多个场景下获取sql语句进行兼容性评估，并输出评估报告。.
+keywords: [openGauss, MySQL语法兼容性评估工具]
+---
+
 # MySQL语法兼容性评估工具
 
 #### 工具介绍

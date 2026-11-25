@@ -1,3 +1,8 @@
+---
+description: 本节点内数据库中每个表（包括TOAST表）的一行的统计信息。.
+keywords: [openGauss, STAT_ALL_TABLES]
+---
+
 # STAT\_ALL\_TABLES
 
 本节点内数据库中每个表（包括TOAST表）的一行的统计信息。

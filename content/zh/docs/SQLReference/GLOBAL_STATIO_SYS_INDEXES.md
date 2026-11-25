@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_STATIO\_SYS\_INDEXES视图显示各节点的命名空间中所有系统表索引的IO状态信息。.
+keywords: [openGauss, GLOBAL_STATIO_SYS_INDEXES]
+---
+
 # GLOBAL\_STATIO\_SYS\_INDEXES
 
 GLOBAL\_STATIO\_SYS\_INDEXES视图显示各节点的命名空间中所有系统表索引的IO状态信息。

@@ -1,3 +1,8 @@
+---
+description: 本次测试使用的服务器满足10GbE组网和以下配置：.
+keywords: [openGauss, MOT硬件]
+---
+
 # MOT硬件
 
 本次测试使用的服务器满足10GbE组网和以下配置：

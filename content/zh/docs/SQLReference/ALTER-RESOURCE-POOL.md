@@ -1,3 +1,8 @@
+---
+description: Introduces ALTER RESOURCE POOL in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, ALTER RESOURCE POOL]
+---
+
 # ALTER RESOURCE POOL
 
 ## 功能描述<a name="zh-cn_topic_0059778630_sad90a3a714584faa8f5b38b344e0c313"></a>

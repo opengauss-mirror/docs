@@ -1,3 +1,8 @@
+---
+description: Introduces PQcancel in openGauss, covering 功能描述, 原型, 参数.
+keywords: [openGauss, PQcancel]
+---
+
 # PQcancel
 
 ## 功能描述<a name="zh-cn_topic_0241735638_section744771516345"></a>

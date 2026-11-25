@@ -1,3 +1,8 @@
+---
+description: PG\_STATIO\_SYS\_SEQUENCES视图显示命名空间中所有序列的IO状态信息。.
+keywords: [openGauss, PG_STATIO_SYS_SEQUENCES]
+---
+
 # PG\_STATIO\_SYS\_SEQUENCES
 
 PG\_STATIO\_SYS\_SEQUENCES视图显示命名空间中所有序列的IO状态信息。

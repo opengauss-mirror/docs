@@ -1,3 +1,8 @@
+---
+description: 1. 以操作系统用户omm登录CN所在主机。.
+keywords: [openGauss, 使用gsql操作密态数据库]
+---
+
 # 使用gsql操作密态数据库
 
 ## 操作步骤<a name="section199001315531"></a>

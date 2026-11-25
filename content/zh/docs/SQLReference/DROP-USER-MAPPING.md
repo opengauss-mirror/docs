@@ -1,3 +1,8 @@
+---
+description: Introduces DROP USER MAPPING in openGauss, covering 功能描述, 语法格式, 参数描述.
+keywords: [openGauss, DROP USER MAPPING]
+---
+
 # DROP USER MAPPING
 
 ## 功能描述<a name="zh-cn_topic_0283136651_section152751851406"></a>

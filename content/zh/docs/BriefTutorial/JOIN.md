@@ -1,3 +1,8 @@
+---
+description: JOIN子句用于把来自两个或多个表的行结合起来，基于这些表之间的共同字段。.
+keywords: [openGauss, JOIN]
+---
+
 # JOIN
 
 JOIN子句用于把来自两个或多个表的行结合起来，基于这些表之间的共同字段。

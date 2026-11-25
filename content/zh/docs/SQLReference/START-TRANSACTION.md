@@ -1,3 +1,8 @@
+---
+description: 通过START TRANSACTION启动事务。如果声明了隔离级别、读写模式，那么新事务就使用这些特性，类似执行了SET TRANSACTION。.
+keywords: [openGauss, START TRANSACTION]
+---
+
 # START TRANSACTION
 
 ## 功能描述<a name="zh-cn_topic_0237122192_zh-cn_topic_0059777519_s7c3a854297a0489db05671ba82a741a8"></a>

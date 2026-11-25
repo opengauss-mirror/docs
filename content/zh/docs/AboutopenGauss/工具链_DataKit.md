@@ -1,4 +1,9 @@
-﻿# DataKit
+﻿---
+description: Introduces  in openGauss, covering 可获得性, 特性简介, 客户价值.
+keywords: [openGauss, ]
+---
+
+# DataKit
 
 ## 可获得性<a name="section56086982"></a>
 

@@ -1,3 +1,8 @@
+---
+description: 以下是基于Arm/鲲鹏架构的华为TaiShan 2280 v2服务器（2路128核）和TaiShan 2480 v2服务器（4路256核）上运行MOT时的建议配置。.
+keywords: [openGauss, MOT服务器优化基于Arm的华为TaiShan2P4P服务器]
+---
+
 # MOT服务器优化：基于Arm的华为TaiShan2P/4P服务器
 
 以下是基于Arm/鲲鹏架构的华为TaiShan 2280 v2服务器（2路128核）和TaiShan 2480 v2服务器（4路256核）上运行MOT时的建议配置。
@@ -11,15 +16,15 @@
 1.  选择 **BIOS** \>  **Advanced**  \>  **MISC Config**。设置 **Support Smmu** 为 **Disabled**。
 2.  选择 **BIOS** \>  **Advanced**  \>  **MISC Config**。设置 **CPU Prefetching Configuration** 为 **Disabled**。
 
-    ![](figures/zh-cn_image_0280525203.png)
+    ![BIOS](figures/zh-cn_image_0280525203.png)
 
 3.  选择 **BIOS**  \>  **Advanced**  \>  **Memory Config**。设置 **Die Interleaving** 为 **Disabled** 。
 
-    ![](figures/zh-cn_image_0280525205.png)
+    ![BIOS](figures/zh-cn_image_0280525205.png)
 
 4.  选择 **BIOS**  \>  **Advanced**  \>  **Performance Config**。设置 **Power Policy** 为 **Performance**。
 
-    ![](figures/zh-cn_image_0280525207.png)
+    ![BIOS](figures/zh-cn_image_0280525207.png)
 
 
 ## 操作系统：内核和启动<a name="section11961253"></a>

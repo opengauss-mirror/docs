@@ -1,3 +1,8 @@
+---
+description: Introduces ALTER USER in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, ALTER USER]
+---
+
 # ALTER USER
 
 ## 功能描述<a name="zh-cn_topic_0283136971_zh-cn_topic_0237122083_zh-cn_topic_0059777461_s46f3e0aac3a84502bc20eee219bef9cf"></a>

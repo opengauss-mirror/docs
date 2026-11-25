@@ -1,3 +1,8 @@
+---
+description: 参数说明：参数值为布尔类型，该参数用于使能插件。.
+keywords: [openGauss, NDPPlugin GUC参数说明]
+---
+
 # NDPPlugin GUC参数说明
 
 ## ndpplugin.enable_ndp

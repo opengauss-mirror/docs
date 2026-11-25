@@ -1,3 +1,8 @@
+---
+description: java.sql.Driver是数据库驱动接口。.
+keywords: [openGauss, JDBC, Driver]
+---
+
 # java.sql.Driver
 
 java.sql.Driver是数据库驱动接口。

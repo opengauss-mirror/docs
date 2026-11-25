@@ -1,3 +1,8 @@
+---
+description: 获得openGauss内汇聚的表、索引等文件的读取失败信息。.
+keywords: [openGauss, SUMMARY_STAT_BAD_BLOCK]
+---
+
 # SUMMARY\_STAT\_BAD\_BLOCK
 
 获得openGauss内汇聚的表、索引等文件的读取失败信息。

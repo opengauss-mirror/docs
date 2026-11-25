@@ -1,3 +1,8 @@
+---
+description: openGauss提供了gs\_ssh工具帮助用户在openGauss各节点上执行相同的命令。.
+keywords: [openGauss, gs_ssh]
+---
+
 # gs\_ssh
 
 ## 背景信息<a name="zh-cn_topic_0237152344_zh-cn_topic_0059777951_section12241205518358"></a>

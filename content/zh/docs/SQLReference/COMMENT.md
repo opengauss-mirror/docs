@@ -1,3 +1,8 @@
+---
+description: Introduces COMMENT in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, COMMENT]
+---
+
 # COMMENT
 
 ## 功能描述<a name="zh-cn_topic_0283137624_zh-cn_topic_0237122093_zh-cn_topic_0059778518_se3f65a35f2604b18a7024290d26f80cf"></a>

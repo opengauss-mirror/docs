@@ -1,3 +1,8 @@
+---
+description: GS\_SLOW\_QUERY\_INFO视图显示当前节点上已经转储的慢查询信息。此数据是从内核中转储到系统表中的数据。当设置GUC参数enable\_resource\_record为on时，系统会定时（周期为3分钟）将内核中query信息导入GS\_WLM\_SESSION\_QUERY\_INFO\_ALL系统表，开启此功能会占用系统存储空间并对性能有一定影响。用户通过查询GS\_SLOW\.
+keywords: [openGauss, GS_SLOW_QUERY_INFO废弃]
+---
+
 # GS\_SLOW\_QUERY\_INFO（废弃）
 
 GS\_SLOW\_QUERY\_INFO视图显示当前节点上已经转储的慢查询信息。此数据是从内核中转储到系统表中的数据。当设置GUC参数enable\_resource\_record为on时，系统会定时（周期为3分钟）将内核中query信息导入GS\_WLM\_SESSION\_QUERY\_INFO\_ALL系统表，开启此功能会占用系统存储空间并对性能有一定影响。用户通过查询GS\_SLOW\_QUERY\_INFO视图，可以查看已经转储的慢查询信息，本版本中已废弃。

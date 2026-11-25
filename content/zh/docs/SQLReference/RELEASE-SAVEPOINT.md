@@ -1,3 +1,8 @@
+---
+description: RELEASE SAVEPOINT删除一个当前事务先前定义的保存点。.
+keywords: [openGauss, RELEASE SAVEPOINT]
+---
+
 # RELEASE SAVEPOINT
 
 ## 功能描述<a name="zh-cn_topic_0283137262_zh-cn_topic_0237122177_zh-cn_topic_0059778044_section16730316162219"></a>

@@ -1,3 +1,8 @@
+---
+description: 在数据库使用过程中，有极小的概率出现XFS文件系统的报错（Input/Output error , structure needs cleaning）。.
+keywords: [openGauss, 在XFS文件系统中出现文件损坏]
+---
+
 # 在XFS文件系统中，出现文件损坏
 
 ## 问题现象<a name="section172487523295"></a>

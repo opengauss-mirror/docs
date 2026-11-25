@@ -1,3 +1,8 @@
+---
+description: Introduces GIN索引 in openGauss, covering .
+keywords: [openGauss, GIN索引]
+---
+
 # GIN索引
 
 -   **[介绍](介绍_GIN.md)**  

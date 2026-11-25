@@ -1,3 +1,8 @@
+---
+description: dssserver是独立进程，直接管理磁阵裸设备，并对外提供类似分布式文件系统的能力。通过共享内存和客户端API动态库，为数据库提供创建文件、删除文件、扩展和收缩文件、读写文件的能力。也是一个可执行的命令，能够通过其启动一个dssserver进程。.
+keywords: [openGauss, dssserver]
+---
+
 # dssserver
 
 ## 背景信息<a name="zh-cn_topic_0287276000_zh-cn_topic_0237152404_zh-cn_topic_0059777816_section2761723143810"></a>

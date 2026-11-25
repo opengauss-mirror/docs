@@ -1,3 +1,8 @@
+---
+description: Introduces gs\_initdb in openGauss, covering 简介, 使用指导, 命令参考.
+keywords: [openGauss, gs_initdb]
+---
+
 # gs\_initdb
 
 ## 简介<a name="section7777368159"></a>

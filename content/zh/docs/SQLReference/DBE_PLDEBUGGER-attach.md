@@ -1,3 +1,8 @@
+---
+description: server端执行存储过程，停在第一条语句前，等待debug端关联。debug端调用attach，传入nodename和port，关联到该存储过程上。.
+keywords: [openGauss, DBE_PLDEBUGGER.attach]
+---
+
 # DBE\_PLDEBUGGER.attach
 
 server端执行存储过程，停在第一条语句前，等待debug端关联。debug端调用attach，传入nodename和port，关联到该存储过程上。

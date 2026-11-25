@@ -1,3 +1,8 @@
+---
+description: 创建gms_profiler Extension可直接使用CREATE Extension命令进行创建：.
+keywords: [openGauss, gms_profiler使用]
+---
+
 # gms_profiler使用
 
 ## 创建Extension<a name="section21088306113"></a>

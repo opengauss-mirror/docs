@@ -1,3 +1,8 @@
+---
+description: DEALLOCATE用于删除前面编写的预备语句。如果用户没有明确删除一个预备语句，那么它将在会话结束的时候被删除。.
+keywords: [openGauss, DEALLOCATE]
+---
+
 # DEALLOCATE
 
 ## 功能描述<a name="zh-cn_topic_0283136579_zh-cn_topic_0237122129_zh-cn_topic_0059778612_sf7de006cb8fc48b2bcd0e6d3c6ea1f2f"></a>

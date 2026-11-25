@@ -1,3 +1,8 @@
+---
+description: 本章节主要介绍通过Docker安装和升级一主两备不带cm的openGauss，方便用户了解步骤。.
+keywords: [openGauss, 一主两备不带cm安装_容器]
+---
+
 # 一主两备不带cm安装_容器
 
 本章节主要介绍通过Docker安装和升级一主两备不带cm的openGauss，方便用户了解步骤。

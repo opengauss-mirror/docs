@@ -1,3 +1,8 @@
+---
+description: SQL Detail列名称及描述如下表所示。.
+keywords: [openGauss, SQL Detail]
+---
+
 # SQL Detail
 
 SQL Detail列名称及描述如下表所示。

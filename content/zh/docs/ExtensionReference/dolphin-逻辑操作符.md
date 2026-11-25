@@ -1,3 +1,8 @@
+---
+description: 相比于原始的openGauss，dolphin新增了如下特性：.
+keywords: [openGauss, 逻辑操作符]
+---
+
 # 逻辑操作符
 
 相比于原始的openGauss，dolphin新增了如下特性：

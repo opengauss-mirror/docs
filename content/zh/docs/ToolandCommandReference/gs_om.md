@@ -1,3 +1,8 @@
+---
+description: openGauss提供了gs\_om工具帮助对openGauss进行维护，包括启动openGauss、停止openGauss、查询openGauss状态、查询静态配置、生成静态配置文件、查询openGauss状态详细信息、生成动态配置文件、SSL证书替换、显示帮助信息和显示版本号信息等功能。.
+keywords: [openGauss, gs_om]
+---
+
 # gs\_om
 
 ## 背景信息<a name="section431817462"></a>

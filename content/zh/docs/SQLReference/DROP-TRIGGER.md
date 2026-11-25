@@ -1,3 +1,8 @@
+---
+description: Introduces DROP TRIGGER in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP TRIGGER]
+---
+
 # DROP TRIGGER
 
 ## 功能描述<a name="zh-cn_topic_0283137186_zh-cn_topic_0237122156_zh-cn_topic_0059777895_sed6f06f3d4d94b38b10c7592f98bacdb"></a>

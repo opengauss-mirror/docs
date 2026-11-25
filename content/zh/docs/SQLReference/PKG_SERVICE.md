@@ -1,3 +1,8 @@
+---
+description: PKG\_SERVICE支持的所有接口请参见表1。.
+keywords: [openGauss, PKG_SERVICE]
+---
+
 # PKG\_SERVICE
 
 PKG\_SERVICE支持的所有接口请参见[表1](#table35465232913)。

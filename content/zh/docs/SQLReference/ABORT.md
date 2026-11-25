@@ -1,3 +1,8 @@
+---
+description: 回滚当前事务并且撤销所有当前事务中所做的更改。.
+keywords: [openGauss, ABORT]
+---
+
 # ABORT
 
 ## 功能描述<a name="zh-cn_topic_0283136750_zh-cn_topic_0237122053_zh-cn_topic_0059778271_s35ca23dd889c479da90f14c150c52f4b"></a>

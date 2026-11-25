@@ -1,3 +1,8 @@
+---
+description: pushdown_statics视图显示下推查询基础统计信息。.
+keywords: [openGauss, NDPPlugin 系统视图]
+---
+
 # NDPPlugin 系统视图
 
 pushdown_statics视图显示下推查询基础统计信息。

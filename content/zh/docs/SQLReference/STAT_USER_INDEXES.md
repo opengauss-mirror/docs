@@ -1,3 +1,8 @@
+---
+description: 显示数据库中用户自定义普通表的索引状态信息。.
+keywords: [openGauss, STAT_USER_INDEXES]
+---
+
 # STAT\_USER\_INDEXES
 
 显示数据库中用户自定义普通表的索引状态信息。

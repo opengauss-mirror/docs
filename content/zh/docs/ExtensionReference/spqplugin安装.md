@@ -1,3 +1,8 @@
+---
+description: 插件自动安装，无须手动安装。如果需要手动编译加载插件，步骤如下：.
+keywords: [openGauss, spqplugin安装]
+---
+
 # spqplugin安装
 
 插件自动安装，无须手动安装。如果需要手动编译加载插件，步骤如下：

@@ -1,3 +1,8 @@
+---
+description: pg\_resetxlog是一个重新设置数据库事务文件的工具。.
+keywords: [openGauss, pg_resetxlog]
+---
+
 # pg\_resetxlog
 
 ## 功能介绍<a name="zh-cn_topic_0237152442_section125419154813"></a>

@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 1.1.0版本开始引入。.
+keywords: [openGauss, 慢SQL发现]
+---
+
 # 慢SQL发现
 
 ## 可获得性<a name="section1420315335481"></a>

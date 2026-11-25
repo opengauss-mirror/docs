@@ -1,3 +1,8 @@
+---
+description: Introduces CREATE FUNCTION in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, CREATE FUNCTION]
+---
+
 # CREATE FUNCTION
 
 ## 功能描述<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_sd4b3500e6b35475aa19a15933fec5720"></a>

@@ -1,3 +1,8 @@
+---
+description: Introduces TRANSACTIONS\_RUNNING\_XACTS in openGauss, covering .
+keywords: [openGauss, TRANSACTIONS_RUNNING_XACTS]
+---
+
 # TRANSACTIONS\_RUNNING\_XACTS
 
 显示当前节点运行事务的信息。

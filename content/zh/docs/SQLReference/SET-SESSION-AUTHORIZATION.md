@@ -1,3 +1,8 @@
+---
+description: 把当前会话里的会话用户标识和当前用户标识都设置为指定的用户。.
+keywords: [openGauss, SET SESSION AUTHORIZATION]
+---
+
 # SET SESSION AUTHORIZATION
 
 ## 功能描述<a name="zh-cn_topic_0283137463_zh-cn_topic_0237122189_zh-cn_topic_0059778193_se24abe3c44f645b091e061c97d8957e7"></a>

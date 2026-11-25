@@ -1,3 +1,8 @@
+---
+description: GS\_UID系统表存储了数据库中使用hasuids属性表的唯一标识元信息。.
+keywords: [openGauss, GS_UID]
+---
+
 # GS\_UID
 
 GS\_UID系统表存储了数据库中使用hasuids属性表的唯一标识元信息。

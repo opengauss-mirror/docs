@@ -1,3 +1,8 @@
+---
+description: Introduces DROP SCHEMA in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP SCHEMA]
+---
+
 # DROP SCHEMA
 
 ## 功能描述<a name="zh-cn_topic_0283137271_zh-cn_topic_0237122148_zh-cn_topic_0059778467_s13f49511137f4971b9f2c7f4b3ec109f"></a>

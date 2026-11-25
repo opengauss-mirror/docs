@@ -1,3 +1,8 @@
+---
+description: SELECT用于从表或视图中取出数据。.
+keywords: [openGauss, SELECT]
+---
+
 # SELECT
 
 ## 功能描述

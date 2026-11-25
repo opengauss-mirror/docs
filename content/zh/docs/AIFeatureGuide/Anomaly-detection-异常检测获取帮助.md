@@ -1,3 +1,8 @@
+---
+description: Introduces 获取帮助 in openGauss, covering .
+keywords: [openGauss, 获取帮助]
+---
+
 # 获取帮助
 
 模块命令行说明：

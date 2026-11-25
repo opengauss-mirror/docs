@@ -1,3 +1,8 @@
+---
+description: 假设用户已经初始化配置文件目录confpath，则可以通过下述命令实现本特性的功能：.
+keywords: [openGauss, 使用指导]
+---
+
 # 使用指导
 
 假设用户已经[初始化配置文件目录confpath](service子命令.md#配置目录初始化)，则可以通过下述命令实现本特性的功能：

@@ -1,3 +1,8 @@
+---
+description: Introduces LLVM适用场景与限制 in openGauss, covering 适用场景, 非适用场景.
+keywords: [openGauss, LLVM适用场景与限制]
+---
+
 # LLVM适用场景与限制
 
 ## 适用场景<a name="zh-cn_topic_0237121504_zh-cn_topic_0066033419_section279430195545"></a>

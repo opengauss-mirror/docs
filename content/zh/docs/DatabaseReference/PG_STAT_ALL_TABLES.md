@@ -1,3 +1,8 @@
+---
+description: PG\_STAT\_ALL\_TABLES视图将包含当前数据库中每个表的一行（包括TOAST表），显示访问特定表的统计信息。.
+keywords: [openGauss, PG_STAT_ALL_TABLES]
+---
+
 # PG\_STAT\_ALL\_TABLES
 
 PG\_STAT\_ALL\_TABLES视图将包含当前数据库中每个表的一行（包括TOAST表），显示访问特定表的统计信息。

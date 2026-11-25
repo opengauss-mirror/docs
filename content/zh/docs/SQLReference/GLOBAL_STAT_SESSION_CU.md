@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_STAT\_SESSION\_CU用于查询openGauss各个节点，当前运行session的CU命中情况。session退出相应的统计数据会清零。openGauss重启后，统计数据也会清零。.
+keywords: [openGauss, GLOBAL_STAT_SESSION_CU]
+---
+
 # GLOBAL\_STAT\_SESSION\_CU
 
 GLOBAL\_STAT\_SESSION\_CU用于查询openGauss各个节点，当前运行session的CU命中情况。session退出相应的统计数据会清零。openGauss重启后，统计数据也会清零。

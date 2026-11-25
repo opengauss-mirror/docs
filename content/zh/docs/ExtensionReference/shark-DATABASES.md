@@ -1,3 +1,8 @@
+---
+description: DATABASES视图返回数据库的信息。.
+keywords: [openGauss, DATABASES]
+---
+
 # DATABASES
 
 DATABASES视图返回数据库的信息。

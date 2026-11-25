@@ -1,3 +1,8 @@
+---
+description: MOT设计几乎能够覆盖SQL和未来特性集。例如，大多数支持标准的Postgres SQL，也支持常见的数据库特性，如存储过程、自定义函数等。.
+keywords: [openGauss, MOT SQL覆盖和限制]
+---
+
 # MOT SQL覆盖和限制
 
 MOT设计几乎能够覆盖SQL和未来特性集。例如，大多数支持标准的Postgres SQL，也支持常见的数据库特性，如存储过程、自定义函数等。

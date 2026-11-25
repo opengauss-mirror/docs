@@ -1,3 +1,8 @@
+---
+description: 提供openGauss中所有正常节点下的操作系统运行状态信息。.
+keywords: [openGauss, GLOBAL_OS_RUNTIME]
+---
+
 # GLOBAL\_OS\_RUNTIME
 
 提供openGauss中所有正常节点下的操作系统运行状态信息。

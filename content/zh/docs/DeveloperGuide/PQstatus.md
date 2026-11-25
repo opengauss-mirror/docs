@@ -1,3 +1,8 @@
+---
+description: Introduces PQstatus in openGauss, covering 功能描述, 原型, 参数.
+keywords: [openGauss, PQstatus]
+---
+
 # PQstatus
 
 ## 功能描述<a name="zh-cn_topic_0241735618_section12403151164211"></a>

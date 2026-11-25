@@ -1,3 +1,8 @@
+---
+description: 删除已存在的PACKAGE或者PACKAGE BODY。.
+keywords: [openGauss, DROP PACKAGE]
+---
+
 # DROP PACKAGE
 
 ## 功能描述<a name="section37715281291"></a>

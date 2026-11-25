@@ -1,3 +1,8 @@
+---
+description: openGauss支持的Schema如下表所示。.
+keywords: [openGauss, Schema]
+---
+
 # Schema
 
 openGauss支持的Schema如下表所示。

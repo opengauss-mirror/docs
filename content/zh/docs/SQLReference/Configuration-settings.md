@@ -1,3 +1,8 @@
+---
+description: Configuration settings列名称及描述如下表所示。.
+keywords: [openGauss, Configuration settings]
+---
+
 # Configuration settings
 
 Configuration settings列名称及描述如下表所示。

@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 2.1.0版本开始引入。.
+keywords: [openGauss, DB4AI 数据库驱动AI]
+---
+
 # DB4AI: 数据库驱动AI
 
 ## 可获得性<a name="section1420315335481"></a>

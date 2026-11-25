@@ -1,3 +1,8 @@
+---
+description: PG\_Extension系统表存储关于所安装扩展的信息。openGauss默认扩展是PLPGSQL和MOT\_FDW。.
+keywords: [openGauss, PG_Extension]
+---
+
 # PG\_Extension
 
 PG\_Extension系统表存储关于所安装扩展的信息。openGauss默认扩展是PLPGSQL和MOT\_FDW。

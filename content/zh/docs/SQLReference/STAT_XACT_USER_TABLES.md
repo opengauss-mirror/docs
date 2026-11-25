@@ -1,3 +1,8 @@
+---
+description: 显示当前节点命名空间中用户表的事务状态信息。.
+keywords: [openGauss, STAT_XACT_USER_TABLES]
+---
+
 # STAT\_XACT\_USER\_TABLES
 
 显示当前节点命名空间中用户表的事务状态信息。

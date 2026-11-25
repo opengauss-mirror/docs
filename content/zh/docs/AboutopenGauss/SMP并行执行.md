@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 1.1.0版本开始引入。.
+keywords: [openGauss, SMP并行执行]
+---
+
 # SMP并行执行
 
 ## 可获得性<a name="section3480125215575"></a>

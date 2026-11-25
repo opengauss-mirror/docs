@@ -1,3 +1,8 @@
+---
+description: 查看wal（xlog）日志同步状态信息，例如发起端发送日志位置，接收端接收日志位置等。.
+keywords: [openGauss, SHOW SLAVE STATUS]
+---
+
 # SHOW SLAVE STATUS 
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>

@@ -1,3 +1,8 @@
+---
+description: 显示openGauss内汇聚的命名空间中所有普通表和toast表的事务状态信息。.
+keywords: [openGauss, SUMMARY_STAT_XACT_ALL_TABLES]
+---
+
 # SUMMARY\_STAT\_XACT\_ALL\_TABLES
 
 显示openGauss内汇聚的命名空间中所有普通表和toast表的事务状态信息。

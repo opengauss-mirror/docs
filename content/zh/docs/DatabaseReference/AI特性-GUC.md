@@ -1,3 +1,8 @@
+---
+description: 参数说明： 该参数控制数据库的优化器进行EXPLAIN时是否考虑创建虚拟索引。通过对特定的查询语句执行explain，用户可根据优化器给出的执行计划评估该索引是否能够提升该查询语句的执行效率。.
+keywords: [openGauss, AI特性]
+---
+
 # AI特性
 
 ## enable\_hypo\_index<a name="section76151259193016"></a>

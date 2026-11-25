@@ -1,3 +1,8 @@
+---
+description: openGauss提供了gs_perfconfig工具帮助对openGauss进行性能调整。包括操作系统配置、数据库搭建、数据库参数三个方面，可以给出调整方案或建议，或者直接进行配置调整。.
+keywords: [openGauss, gs_perfconfig]
+---
+
 # gs_perfconfig
 
 

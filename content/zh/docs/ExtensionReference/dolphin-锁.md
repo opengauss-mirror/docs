@@ -1,3 +1,8 @@
+---
+description: 如果需要保持数据库数据的一致性，可以使用LOCK TABLES来阻止其他用户修改表。.
+keywords: [openGauss, B数据库锁]
+---
+
 # B数据库锁
 
 如果需要保持数据库数据的一致性，可以使用LOCK TABLES来阻止其他用户修改表。

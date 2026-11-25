@@ -1,3 +1,8 @@
+---
+description: javax.sql.DataSource是数据源接口。.
+keywords: [openGauss, javax.sql.DataSource]
+---
+
 # javax.sql.DataSource
 
 javax.sql.DataSource是数据源接口。

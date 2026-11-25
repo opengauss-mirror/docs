@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_STATIO\_SYS\_TABLES视图显示各节点的命名空间中所有系统表的IO状态信息。.
+keywords: [openGauss, GLOBAL_STATIO_SYS_TABLES]
+---
+
 # GLOBAL\_STATIO\_SYS\_TABLES
 
 GLOBAL\_STATIO\_SYS\_TABLES视图显示各节点的命名空间中所有系统表的IO状态信息。

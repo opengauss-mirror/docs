@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 5.1.0 版本开始引入。.
+keywords: [openGauss, 极致RTO按需回放]
+---
+
 # 极致RTO按需回放
 
 ## 可获得性

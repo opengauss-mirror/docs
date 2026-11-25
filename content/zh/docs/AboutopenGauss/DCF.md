@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 2.0.0版本开始引入。.
+keywords: [openGauss, DCF]
+---
+
 # DCF
 
 ## 可获得性<a name="section15406143204715"></a>

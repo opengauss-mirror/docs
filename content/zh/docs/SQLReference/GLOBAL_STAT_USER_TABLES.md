@@ -1,3 +1,8 @@
+---
+description: 得到各节点所有命名空间中用户自定义普通表的状态信息。.
+keywords: [openGauss, GLOBAL_STAT_USER_TABLES]
+---
+
 # GLOBAL\_STAT\_USER\_TABLES
 
 得到各节点所有命名空间中用户自定义普通表的状态信息。

@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_PAGEWRITER\_STATUS视图显示openGauss实例的刷页信息和检查点信息。.
+keywords: [openGauss, GLOBAL_PAGEWRITER_STATUS]
+---
+
 # GLOBAL\_PAGEWRITER\_STATUS
 
 GLOBAL\_PAGEWRITER\_STATUS视图显示openGauss实例的刷页信息和检查点信息。

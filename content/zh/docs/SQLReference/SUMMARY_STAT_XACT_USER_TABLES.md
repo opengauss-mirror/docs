@@ -1,3 +1,8 @@
+---
+description: 显示数据库内汇聚的命名空间中用户表的事务状态信息。.
+keywords: [openGauss, SUMMARY_STAT_XACT_USER_TABLES]
+---
+
 # SUMMARY\_STAT\_XACT\_USER\_TABLES
 
 显示数据库内汇聚的命名空间中用户表的事务状态信息。

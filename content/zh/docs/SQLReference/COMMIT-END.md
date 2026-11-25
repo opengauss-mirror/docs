@@ -1,3 +1,8 @@
+---
+description: 通过COMMIT或者END可完成提交事务的功能，即提交事务的所有操作。.
+keywords: [openGauss, COMMIT  END]
+---
+
 # COMMIT | END
 
 ## 功能描述<a name="zh-cn_topic_0283137519_zh-cn_topic_0237122094_zh-cn_topic_0059779032_sbacb814400404584828c86483f577b12"></a>

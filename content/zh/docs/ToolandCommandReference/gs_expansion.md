@@ -1,3 +1,8 @@
+---
+description: openGauss提供了gs_expansion工具对数据库的备机进行扩容。支持从单机或者一主多备最多扩容到一主八备。.
+keywords: [openGauss, gs_expansion]
+---
+
 # gs_expansion
 
 ## 背景信息

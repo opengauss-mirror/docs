@@ -1,3 +1,8 @@
+---
+description: 此方法执行SQL命令所有参数序列或序列中的SQL映射。.
+keywords: [openGauss, curosr.executemanyqueryvars_list]
+---
+
 # curosr.executemany\(query,vars\_list\)
 
 ## 功能描述<a name="section5708152714306"></a>

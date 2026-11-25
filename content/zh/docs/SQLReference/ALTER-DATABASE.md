@@ -1,3 +1,8 @@
+---
+description: 修改数据库的属性，包括它的名称、所有者、连接数限制、对象隔离属性等。.
+keywords: [openGauss, ALTER DATABASE]
+---
+
 # ALTER DATABASE
 
 ## 功能描述<a name="zh-cn_topic_0283136981_zh-cn_topic_0237122055_zh-cn_topic_0059779247_sbb9c79973fbf4b4b8f8e8355b0f67f63"></a>

@@ -1,3 +1,8 @@
+---
+description: 假设在主控节点192.168.100.4上部署DBMind，有一套端口号为19999的集群环境，环境信息如下：.
+keywords: [openGauss, DBMind安装和部署]
+---
+
 # DBMind安装和部署
 
 ## 1. 安装准备

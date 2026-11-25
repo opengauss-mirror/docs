@@ -1,3 +1,8 @@
+---
+description: Introduces 函数和操作符 in openGauss, covering .
+keywords: [openGauss, 函数和操作符]
+---
+
 # 函数和操作符
 
 -   **[赋值操作符](dolphin-赋值操作符.md)**  

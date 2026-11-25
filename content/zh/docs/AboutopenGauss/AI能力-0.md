@@ -1,3 +1,8 @@
+---
+description: - X-Tuner: 参数调优与诊断.
+keywords: [openGauss, AI能力]
+---
+
 # AI能力
 
 -   **[X-Tuner: 参数调优与诊断](X_Tuner_参数调优与诊断.md)**  

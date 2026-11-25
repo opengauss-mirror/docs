@@ -1,3 +1,8 @@
+---
+description: 支持openGauss的增量数据在线迁移至MySQL。.
+keywords: [openGauss, 反向迁移gs_replicate]
+---
+
 # 反向迁移gs_replicate
 
 ## 特性简介<a name="section740615433477"></a>

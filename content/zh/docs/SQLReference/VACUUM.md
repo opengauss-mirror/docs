@@ -1,3 +1,8 @@
+---
+description: VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。在一般的数据库操作里，那些已经DELETE的行并没有从它们所属的表中物理删除；在完成VACUUM之前它们仍然存在。因此有必要周期地运行VACUUM，特别是在经常更新的表上。.
+keywords: [openGauss, VACUUM]
+---
+
 # VACUUM
 
 ## 功能描述<a name="zh-cn_topic_0283137096_zh-cn_topic_0237122195_zh-cn_topic_0059777503_sd160e2f29b7240d88e6b4e9c7c7b8ae3"></a>

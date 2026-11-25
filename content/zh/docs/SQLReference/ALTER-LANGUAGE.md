@@ -1,3 +1,8 @@
+---
+description: 修改一个过程语言的定义。单机和集中式暂不支持修改过程语言。.
+keywords: [openGauss, ALTER LANGUAGE]
+---
+
 # ALTER LANGUAGE
 
 ## 功能描述<a name="section113331284191"></a>

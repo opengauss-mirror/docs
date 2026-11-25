@@ -1,3 +1,8 @@
+---
+description: 参数说明：控制是否使用全局系统缓存功能。该参数属于POSTMASTER类型参数，请参考表1中对应设置方法进行设置。.
+keywords: [openGauss, Global SysCache参数]
+---
+
 # Global SysCache参数
 
 ## enable\_global\_syscache<a name="section97160555612"></a>

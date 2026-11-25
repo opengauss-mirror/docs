@@ -1,3 +1,8 @@
+---
+description: openGauss的开发运维涉及到很多复杂操作，DataKit提供了一个可视化操作的运维界面，可以帮助用户管理，安装，监控运维自己的openGauss数据库以及对应的物理机资源。.
+keywords: [openGauss, DataKit]
+---
+
 # DataKit
 
 ## 功能介绍

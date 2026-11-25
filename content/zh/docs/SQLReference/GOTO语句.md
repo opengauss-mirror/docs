@@ -1,3 +1,8 @@
+---
+description: GOTO语句可以实现从GOTO位置到目标语句的无条件跳转。GOTO语句会改变原本的执行逻辑，因此应该慎重使用，或者也可以使用EXCEPTION处理特殊场景。当执行GOTO语句时，目标Label必须是唯一的。.
+keywords: [openGauss, GOTO语句]
+---
+
 # GOTO语句
 
 GOTO语句可以实现从GOTO位置到目标语句的无条件跳转。GOTO语句会改变原本的执行逻辑，因此应该慎重使用，或者也可以使用EXCEPTION处理特殊场景。当执行GOTO语句时，目标Label必须是唯一的。
@@ -6,11 +11,11 @@ GOTO语句可以实现从GOTO位置到目标语句的无条件跳转。GOTO语�
 
 label declaration ::=
 
-![](figures/zh-cn_image_0253404022.png)
+![语法](figures/zh-cn_image_0253404022.png)
 
 goto statement ::=
 
-![](figures/zh-cn_image_0253404023.png)
+![语法](figures/zh-cn_image_0253404023.png)
 
 ## 示例<a name="zh-cn_topic_0237122238_section147058110414"></a>
 

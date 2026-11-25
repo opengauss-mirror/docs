@@ -1,3 +1,8 @@
+---
+description: CHECK_CONSTRAINTS视图返回数据库中的检查约束信息。.
+keywords: [openGauss, CHECK_CONSTRAINTS]
+---
+
 # CHECK_CONSTRAINTS
 
 CHECK_CONSTRAINTS视图返回数据库中的检查约束信息。

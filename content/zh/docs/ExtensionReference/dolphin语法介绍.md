@@ -1,3 +1,8 @@
+---
+description: Introduces dolphin语法介绍 in openGauss, covering .
+keywords: [openGauss, dolphin语法介绍]
+---
+
 # dolphin语法介绍
 
 -   **[SQL参考](dolphin-SQL参考.md)**  

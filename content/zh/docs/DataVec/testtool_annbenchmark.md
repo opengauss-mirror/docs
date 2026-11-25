@@ -1,3 +1,8 @@
+---
+description: Introduces 向量分析性能测试-AnnBenchmark in openGauss, covering 1. 准备工作, 2. 测试流程, 3. 测试结果.
+keywords: [openGauss, 向量分析性能测试-AnnBenchmark]
+---
+
 # 向量分析性能测试-AnnBenchmark
 
 ## 1. 准备工作

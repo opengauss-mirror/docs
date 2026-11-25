@@ -1,3 +1,8 @@
+---
+description: Introduces DROP FUNCTION in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP FUNCTION]
+---
+
 # DROP FUNCTION
 
 ## 功能描述<a name="zh-cn_topic_0283137306_zh-cn_topic_0237122138_zh-cn_topic_0059778261_se0a88dccf4a449189e3598bd873250fe"></a>

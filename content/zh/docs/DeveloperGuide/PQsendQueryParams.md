@@ -1,3 +1,8 @@
+---
+description: 给服务器提交一个命令和分隔的参数，而不等待结果。.
+keywords: [openGauss, PQsendQueryParams]
+---
+
 # PQsendQueryParams
 
 ## 功能描述<a name="zh-cn_topic_0241735628_section10518135331919"></a>

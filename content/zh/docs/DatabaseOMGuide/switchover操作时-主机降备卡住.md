@@ -1,3 +1,8 @@
+---
+description: 一主多备模式下，系统资源不足时，发生switchover，出现主机降备时卡住。.
+keywords: [openGauss, switchover操作时主机降备卡住]
+---
+
 # switchover操作时，主机降备卡住
 
 ## 问题现象<a name="section6629536475"></a>

@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 1.0.0 版本开始引入。.
+keywords: [openGauss, 支持WDR诊断报告]
+---
+
 # 支持WDR诊断报告
 
 ## 可获得性<a name="section11239174173316"></a>

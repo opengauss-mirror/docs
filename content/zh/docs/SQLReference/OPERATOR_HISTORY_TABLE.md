@@ -1,3 +1,8 @@
+---
+description: OPERATOR\_HISTORY\_TABLE系统表显示执行作业结束后的算子相关的记录。此数据是从内核中转储到系统表中的数据。.
+keywords: [openGauss, OPERATOR_HISTORY_TABLE]
+---
+
 # OPERATOR\_HISTORY\_TABLE
 
 OPERATOR\_HISTORY\_TABLE系统表显示执行作业结束后的算子相关的记录。此数据是从内核中转储到系统表中的数据。

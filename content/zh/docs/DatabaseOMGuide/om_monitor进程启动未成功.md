@@ -1,3 +1,8 @@
+---
+description: 数据库无法启动，检查进程发现不存在om_monitor进程，且报错出现limit设置过小。.
+keywords: [openGauss, om_monitor进程启动未成功]
+---
+
 # om_monitor进程启动未成功
 
 ## 现象

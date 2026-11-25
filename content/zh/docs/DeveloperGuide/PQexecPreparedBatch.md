@@ -1,3 +1,8 @@
+---
+description: 发送一个请求来用给定的批量参数执行一个预备语句，并且等待结果。.
+keywords: [openGauss, PQexecPreparedBatch]
+---
+
 # PQexecPreparedBatch
 
 ## 功能描述<a name="zh-cn_topic_0059778058_sa9bd6e837fd4458199f7b677e876f4a9"></a>

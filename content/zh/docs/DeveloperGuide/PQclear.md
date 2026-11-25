@@ -1,3 +1,8 @@
+---
+description: 释放与PGresult相关联的存储空间，任何不再需要的查询结果都应该用PQclear释放掉。.
+keywords: [openGauss, PQclear]
+---
+
 # PQclear
 
 ## 功能描述<a name="zh-cn_topic_0241735622_section696285173713"></a>

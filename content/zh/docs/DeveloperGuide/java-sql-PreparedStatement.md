@@ -1,3 +1,8 @@
+---
+description: java.sql.PreparedStatement是预处理语句接口。.
+keywords: [openGauss, JDBC, PreparedStatement]
+---
+
 # java.sql.PreparedStatement
 
 java.sql.PreparedStatement是预处理语句接口。

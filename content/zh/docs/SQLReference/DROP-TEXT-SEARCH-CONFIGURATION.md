@@ -1,3 +1,8 @@
+---
+description: Introduces DROP TEXT SEARCH CONFIGURATION in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP TEXT SEARCH CONFIGURATION]
+---
+
 # DROP TEXT SEARCH CONFIGURATION
 
 ## 功能描述<a name="zh-cn_topic_0283136862_zh-cn_topic_0237122154_zh-cn_topic_0059778389_s12ec071125bd4d4981cbcdad70bd9a1e"></a>

@@ -1,3 +1,8 @@
+---
+description: 用于执行数据库节点间的访问，发送命令给远程节点。.
+keywords: [openGauss, pssh]
+---
+
 # pssh
 
 ## 基本功能<a name="section6557202811106"></a>

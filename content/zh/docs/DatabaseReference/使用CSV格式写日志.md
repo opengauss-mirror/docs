@@ -1,3 +1,8 @@
+---
+description: - log\_destination的值设置为csvlog。.
+keywords: [openGauss, 使用CSV格式写日志]
+---
+
 # 使用CSV格式写日志
 
 ## 前提条件<a name="zh-cn_topic_0237124724_zh-cn_topic_0059779007_s429dec1a2f1348e290437382aa165032"></a>

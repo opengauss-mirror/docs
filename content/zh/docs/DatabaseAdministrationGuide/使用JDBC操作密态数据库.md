@@ -1,3 +1,8 @@
+---
+description: 连接密态数据库需要使用驱动包，具体JDBC连接参数参考基于JDBC开发章节介绍。JDBC支持密态数据库相关操作，需要设置enable\_ce=1，示例如下。.
+keywords: [openGauss, JDBC, 使用JDBC操作密态数据库]
+---
+
 # 使用JDBC操作密态数据库
 
 ## 连接密态数据库<a name="section6796167162618"></a>

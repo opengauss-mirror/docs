@@ -1,3 +1,8 @@
+---
+description: - WLM\_USER\_RESOURCE\_CONFIG.
+keywords: [openGauss, Workload Manager]
+---
+
 # Workload Manager
 
 -   **[WLM\_USER\_RESOURCE\_CONFIG](WLM_USER_RESOURCE_CONFIG.md)**  

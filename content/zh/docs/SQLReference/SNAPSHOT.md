@@ -1,3 +1,8 @@
+---
+description: 针对多用户情况下，对数据进行统一的版本控制。.
+keywords: [openGauss, SNAPSHOT]
+---
+
 # SNAPSHOT
 
 ## 功能描述<a name="section1590014447254"></a>

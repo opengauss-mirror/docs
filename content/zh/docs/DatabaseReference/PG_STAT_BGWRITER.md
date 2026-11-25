@@ -1,3 +1,8 @@
+---
+description: PG\_STAT\_BGWRITER视图显示关于后端写线程活动的统计信息。.
+keywords: [openGauss, PG_STAT_BGWRITER]
+---
+
 # PG\_STAT\_BGWRITER
 
 PG\_STAT\_BGWRITER视图显示关于后端写线程活动的统计信息。

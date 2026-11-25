@@ -1,3 +1,8 @@
+---
+description: 在当前数据库中创建一种新的访问方法，访问方法名称在数据库中必须唯一，只有超级用户可以定义新的访问方法。.
+keywords: [openGauss, CREATE ACCESS METHOD]
+---
+
 # CREATE ACCESS METHOD
 
 ## 功能描述<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s0867185fef0f4a228532d432b598cb26"></a>

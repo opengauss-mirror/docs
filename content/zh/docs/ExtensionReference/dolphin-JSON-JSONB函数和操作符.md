@@ -1,3 +1,8 @@
+---
+description: Introduces JSON-JSONB函数和操作符 in openGauss, covering .
+keywords: [openGauss, JSON-JSONB函数和操作符]
+---
+
 # JSON-JSONB函数和操作符
 
 **新增json函数**

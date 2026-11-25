@@ -1,3 +1,8 @@
+---
+description: 通过LOAD DATA命令实现从一个文件拷贝数据到一个表。.
+keywords: [openGauss, LOAD DATA]
+---
+
 # LOAD DATA
 
 ## 功能描述<a name="zh-cn_topic_0283136676_zh-cn_topic_0237122096_zh-cn_topic_0059778766_s0d743b5d862d4cf1829449f474af6d7z"></a>

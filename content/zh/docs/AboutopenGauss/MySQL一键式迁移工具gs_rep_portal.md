@@ -1,4 +1,9 @@
-﻿# MySQL一键式迁移工具gs_rep_portal
+﻿---
+description: ﻿# MySQL一键式迁移工具gs_rep_portal.
+keywords: [openGauss, ]
+---
+
+# MySQL一键式迁移工具gs_rep_portal
 
 ## 可获得性<a name="section56086982"></a>
 

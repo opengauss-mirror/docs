@@ -1,3 +1,8 @@
+---
+description: Introduces dd模拟块设备失败 in openGauss, covering 现象, 原因, 解决方案.
+keywords: [openGauss, dd模拟块设备失败]
+---
+
 # dd模拟块设备失败
 
 ## 现象

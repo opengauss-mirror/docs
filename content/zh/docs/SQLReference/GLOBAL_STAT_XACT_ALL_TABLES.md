@@ -1,3 +1,8 @@
+---
+description: 显示各节点的命名空间中所有普通表和toast表的事务状态信息。.
+keywords: [openGauss, GLOBAL_STAT_XACT_ALL_TABLES]
+---
+
 # GLOBAL\_STAT\_XACT\_ALL\_TABLES
 
 显示各节点的命名空间中所有普通表和toast表的事务状态信息。

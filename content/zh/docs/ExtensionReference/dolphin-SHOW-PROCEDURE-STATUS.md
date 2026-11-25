@@ -1,3 +1,8 @@
+---
+description: Introduces SHOW PROCEDURE STATUS in openGauss, covering 注意事项, 功能描述, 语法格式.
+keywords: [openGauss, SHOW PROCEDURE STATUS]
+---
+
 # SHOW PROCEDURE STATUS
 
 ## 注意事项

@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 6.0.0版本开始引入.
+keywords: [openGauss, GMS_OUTPUT工具包]
+---
+
 # GMS_OUTPUT工具包
 
 ## 可获得性

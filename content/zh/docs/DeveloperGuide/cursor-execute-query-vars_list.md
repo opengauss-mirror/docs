@@ -1,3 +1,8 @@
+---
+description: 此方法执行被参数化的SQL语句（即占位符，而不是SQL文字）。psycopg2模块支持用％s标志的占位符。.
+keywords: [openGauss, cursor.executequeryvars_list]
+---
+
 # cursor.execute\(query,vars\_list\)
 
 ## 功能描述<a name="section5708152714306"></a>

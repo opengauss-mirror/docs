@@ -1,3 +1,8 @@
+---
+description: Introduces NDPPlugin介绍 in openGauss, covering .
+keywords: [openGauss, NDPPlugin介绍]
+---
+
 # NDPPlugin介绍
 
 - **[系统视图](ndpplugin-系统视图.md)**

@@ -1,3 +1,8 @@
+---
+description: Introduces DROP Extension in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP Extension]
+---
+
 # DROP Extension
 
 ## 功能描述<a name="section173831846163116"></a>

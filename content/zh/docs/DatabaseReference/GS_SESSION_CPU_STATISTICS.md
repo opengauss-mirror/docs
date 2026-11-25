@@ -1,3 +1,8 @@
+---
+description: GS\_SESSION\_CPU\_STATISTICS视图显示当前用户执行的正在运行的复杂作业的CPU使用的负载管理信息。.
+keywords: [openGauss, GS_SESSION_CPU_STATISTICS]
+---
+
 # GS\_SESSION\_CPU\_STATISTICS
 
 GS\_SESSION\_CPU\_STATISTICS视图显示当前用户执行的正在运行的复杂作业的CPU使用的负载管理信息。

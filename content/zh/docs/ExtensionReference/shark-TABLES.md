@@ -1,3 +1,8 @@
+---
+description: Introduces TABLES in openGauss, covering .
+keywords: [openGauss, TABLES]
+---
+
 # TABLES
 
 所有架构范围内的用户定义表。

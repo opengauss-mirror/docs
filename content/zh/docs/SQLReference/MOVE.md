@@ -1,3 +1,8 @@
+---
+description: MOVE在不检索数据的情况下重新定位一个游标。MOVE的作用类似于FETCH命令，但只是重定位游标而不返回行。.
+keywords: [openGauss, MOVE]
+---
+
 # MOVE
 
 ## 功能描述<a name="zh-cn_topic_0283137573_zh-cn_topic_0237122169_zh-cn_topic_0059778649_s0bf0a06c81754f8b9c758ba7660a6d5f"></a>

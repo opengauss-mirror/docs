@@ -1,3 +1,8 @@
+---
+description: 提交一个早先为两阶段提交准备好的事务。.
+keywords: [openGauss, COMMIT PREPARED]
+---
+
 # COMMIT PREPARED
 
 ## 功能描述<a name="zh-cn_topic_0283137183_zh-cn_topic_0237122095_zh-cn_topic_0059777686_s06b2916a6c67438087f9f84a0159252a"></a>

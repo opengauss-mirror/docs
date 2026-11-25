@@ -1,3 +1,8 @@
+---
+description: Introduces gms_profiler Extension in openGauss, covering .
+keywords: [openGauss, gms_profiler Extension]
+---
+
 # gms_profiler Extension
 
 -   **[gms_profiler概述](gms_profiler概述.md)**  

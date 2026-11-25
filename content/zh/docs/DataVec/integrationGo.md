@@ -1,3 +1,8 @@
+---
+description: 本文介绍如何使用Go语言调用openGauss向量数据库。.
+keywords: [openGauss, Go SDK对接向量数据库]
+---
+
 # Go SDK对接向量数据库
 本文介绍如何使用Go语言调用openGauss向量数据库。
 

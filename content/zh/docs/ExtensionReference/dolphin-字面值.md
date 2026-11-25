@@ -1,3 +1,8 @@
+---
+description: 相比于原始的openGauss，dolphin对于字符串文本的修改主要为：.
+keywords: [openGauss, dolphin-字面值]
+---
+
 # dolphin-字面值
 
 ## 字符串文本

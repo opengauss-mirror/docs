@@ -1,3 +1,8 @@
+---
+description: Describes common FAQ issues in openGauss, including symptoms, causes, and solutions.
+keywords: [openGauss, troubleshooting, FAQ]
+---
+
 # FAQ
 
 ## 如何清除编译过程中生成的临时文件

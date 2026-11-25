@@ -1,3 +1,8 @@
+---
+description: 视图包含openGauss内汇聚的本事务内函数执行的统计信息。.
+keywords: [openGauss, SUMMARY_STAT_XACT_USER_FUNCTIONS]
+---
+
 # SUMMARY\_STAT\_XACT\_USER\_FUNCTIONS
 
 视图包含openGauss内汇聚的本事务内函数执行的统计信息。

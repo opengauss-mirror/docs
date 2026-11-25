@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 3.1.0版本开始引入。.
+keywords: [openGauss, OCK加速数据传输]
+---
+
 # OCK加速数据传输
 
 ## 可获得性<a name="section1271121702611"></a>

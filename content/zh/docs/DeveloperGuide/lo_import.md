@@ -1,3 +1,8 @@
+---
+description: 将一个服务器端的操作系统文件导入成一个大对象。.
+keywords: [openGauss, lo_import]
+---
+
 # lo_import
 
 ## 功能描述<a name="zh-cn_topic_0241735622_section696285173715"></a>

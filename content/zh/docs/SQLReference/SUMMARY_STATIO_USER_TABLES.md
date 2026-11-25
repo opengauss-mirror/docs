@@ -1,3 +1,8 @@
+---
+description: SUMMARY\_STATIO\_USER\_TABLES视图显示openGauss内汇聚的命名空间中所有用户关系表的IO状态信息。.
+keywords: [openGauss, SUMMARY_STATIO_USER_TABLES]
+---
+
 # SUMMARY\_STATIO\_USER\_TABLES
 
 SUMMARY\_STATIO\_USER\_TABLES视图显示openGauss内汇聚的命名空间中所有用户关系表的IO状态信息。

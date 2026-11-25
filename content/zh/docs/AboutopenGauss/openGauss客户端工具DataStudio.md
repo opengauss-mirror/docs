@@ -1,3 +1,8 @@
+---
+description: DataStudio可在openGauss官网获取安装包，或在gitee上获取源码自行编译。.
+keywords: [openGauss, openGauss客户端工具DataStudio]
+---
+
 # openGauss客户端工具DataStudio
 
 ## 可获得性<a name="section56086982"></a>

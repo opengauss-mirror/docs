@@ -1,3 +1,8 @@
+---
+description: 显示各节点当前准备好进行两阶段提交的事务的信息。.
+keywords: [openGauss, GLOBAL_TRANSACTIONS_PREPARED_XACTS]
+---
+
 # GLOBAL\_TRANSACTIONS\_PREPARED\_XACTS
 
 显示各节点当前准备好进行两阶段提交的事务的信息。

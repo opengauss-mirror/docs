@@ -1,3 +1,8 @@
+---
+description: gsql -d postgres -p 26000 -r.
+keywords: [openGauss, troubleshooting, 使用FAQ]
+---
+
 # 使用FAQ
 
 ### **Q1：gsql连接数据库，提示“unknow:26000”，错误如下，要如何处理？**
@@ -36,7 +41,7 @@ gs_guc reload -N all -I all -c "modify_initial_password  =  false"
 
 ### **Q3：执行如下命令时，报错提示PID不存在，如何处理？**
 
-![](figures/zh-cn_image_0000001103872542.png)
+![Q3：执行如下命令时，报错提示PID不存在，如何处理？](figures/zh-cn_image_0000001103872542.png)
 
 **回答：**
 

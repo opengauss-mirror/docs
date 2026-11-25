@@ -1,3 +1,8 @@
+---
+description: PERFORMANCE_SCHEMA.STATEMENT_HISTORY视图仅在B兼容数据库中创建，通过pg_catalog.get_statement_history()读取本节点postgres数据库中的dbe_perf.statement_history，展示其中的14个字段。.
+keywords: [openGauss, PERFORMANCE_SCHEMA.STATEMENT_HISTORY]
+---
+
 # PERFORMANCE_SCHEMA.STATEMENT_HISTORY
 
 PERFORMANCE_SCHEMA.STATEMENT_HISTORY视图仅在B兼容数据库中创建，通过pg_catalog.get_statement_history()读取本节点postgres数据库中的dbe_perf.statement_history，展示其中的14个字段。

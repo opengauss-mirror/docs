@@ -1,3 +1,8 @@
+---
+description: Introduces ALTER SEQUENCE in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, ALTER SEQUENCE]
+---
+
 # ALTER SEQUENCE
 
 ## 功能描述<a name="zh-cn_topic_0283137303_zh-cn_topic_0237122071_zh-cn_topic_0062358310_s806d414edb004fa89cd50a1166d1136e"></a>

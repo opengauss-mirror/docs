@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_WAIT\_EVENTS视图显示各节点的event的等待相关的统计信息。.
+keywords: [openGauss, GLOBAL_WAIT_EVENTS]
+---
+
 # GLOBAL\_WAIT\_EVENTS
 
 GLOBAL\_WAIT\_EVENTS视图显示各节点的event的等待相关的统计信息。

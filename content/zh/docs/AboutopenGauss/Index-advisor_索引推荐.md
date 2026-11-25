@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss1.1.0开始引入。.
+keywords: [openGauss, Index-advisor索引推荐]
+---
+
 # Index-advisor：索引推荐
 
 ## 可获得性<a name="section17365142913365"></a>

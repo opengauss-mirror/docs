@@ -1,3 +1,8 @@
+---
+description: PG\_TRIGGER系统表存储触发器信息。.
+keywords: [openGauss, PG_TRIGGER]
+---
+
 # PG\_TRIGGER
 
 PG\_TRIGGER系统表存储触发器信息。

@@ -1,3 +1,8 @@
+---
+description: Introduces 使用Plan Hint进行调优 in openGauss, covering .
+keywords: [openGauss, 使用Plan Hint进行调优]
+---
+
 # 使用Plan Hint进行调优
 
 -   **[Plan Hint调优概述](Plan-Hint调优概述.md)**  

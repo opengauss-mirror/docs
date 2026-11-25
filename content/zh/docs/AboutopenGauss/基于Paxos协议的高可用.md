@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 2.1.0 版本开始引入。.
+keywords: [openGauss, 基于Paxos协议的高可用]
+---
+
 # 基于Paxos协议的高可用
 
 ## 可获得性<a name="section57017810"></a>

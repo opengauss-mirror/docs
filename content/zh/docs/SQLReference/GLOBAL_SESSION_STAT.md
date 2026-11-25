@@ -1,3 +1,8 @@
+---
+description: 各节点上以会话线程或AutoVacuum线程为单位，统计会话状态信息。.
+keywords: [openGauss, GLOBAL_SESSION_STAT]
+---
+
 # GLOBAL\_SESSION\_STAT
 
 各节点上以会话线程或AutoVacuum线程为单位，统计会话状态信息。

@@ -1,3 +1,8 @@
+---
+description: 参考容器镜像安装，获取openGauss docker镜像并且修改镜像名称.
+keywords: [openGauss, 一主两备不带cm安装_容器]
+---
+
 # 一主两备不带cm安装_容器
 
 ### 1. 获取镜像

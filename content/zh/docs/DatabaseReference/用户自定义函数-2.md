@@ -1,3 +1,8 @@
+---
+description: 参数说明： 控制每个数据库节点执行UDF时可用的最大物理内存量。本参数当前版本不生效，请使用FencedUDFMemoryLimit和UDFWorkerMemHardLimit参数控制fenced udf worker虚存。.
+keywords: [openGauss, 用户自定义函数]
+---
+
 # 用户自定义函数
 
 ## udf\_memory\_limit<a name="zh-cn_topic_0283137548_zh-cn_topic_0237124743_section1765913299426"></a>

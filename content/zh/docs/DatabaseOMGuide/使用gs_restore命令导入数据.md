@@ -1,3 +1,8 @@
+---
+description: gs\_restore是openGauss数据库提供的与gs\_dump配套的导入工具。通过该工具，可将gs\_dump导出的文件导入至数据库。gs\_restore支持导入的文件格式包含自定义归档格式、目录归档格式和tar归档格式。.
+keywords: [openGauss, 使用gs_restore命令导入数据]
+---
+
 # 使用gs\_restore命令导入数据
 
 ## 操作场景<a name="zh-cn_topic_0283137171_zh-cn_topic_0237121137_section17330121375310"></a>

@@ -1,3 +1,8 @@
+---
+description: Introduces SQL in openGauss, covering .
+keywords: [openGauss, SQL]
+---
+
 # SQL
 
 -   **[CREATE INDEX](spqplugin-CREATE-INDEX.md)**

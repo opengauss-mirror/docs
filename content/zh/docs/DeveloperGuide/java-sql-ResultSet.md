@@ -1,3 +1,8 @@
+---
+description: java.sql.ResultSet是执行结果集接口。.
+keywords: [openGauss, JDBC, ResultSet]
+---
+
 # java.sql.ResultSet
 
 java.sql.ResultSet是执行结果集接口。

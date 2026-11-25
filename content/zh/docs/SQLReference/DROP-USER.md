@@ -1,3 +1,8 @@
+---
+description: 删除用户，同时会删除同名的schema。.
+keywords: [openGauss, DROP USER]
+---
+
 # DROP USER
 
 ## 功能描述<a name="zh-cn_topic_0283137192_zh-cn_topic_0237122158_zh-cn_topic_0059778403_sd8f7b55734434619b381d7be49aed2df"></a>

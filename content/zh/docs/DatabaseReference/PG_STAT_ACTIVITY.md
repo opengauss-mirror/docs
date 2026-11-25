@@ -1,3 +1,8 @@
+---
+description: PG\_STAT\_ACTIVITY视图显示和当前用户查询相关的信息，字段保存的是上一次执行的信息。.
+keywords: [openGauss, PG_STAT_ACTIVITY]
+---
+
 # PG\_STAT\_ACTIVITY
 
 PG\_STAT\_ACTIVITY视图显示和当前用户查询相关的信息，字段保存的是上一次执行的信息。

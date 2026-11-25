@@ -1,3 +1,8 @@
+---
+description: gs_checkse工具用来帮助检查数据库连接配置、文件目录安全、安全认证配置等内容，并对数据库这些安全配置信息进行设置。.
+keywords: [openGauss, gs_checkse]
+---
+
 # gs_checkse
 
 ## 背景信息<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_section39821515163211"></a>

@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 3.1.0 版本开始引入。.
+keywords: [openGauss, 支持嵌入式SQL预处理器ECPG]
+---
+
 # 支持嵌入式SQL预处理器（ECPG）
 
 ## 可获得性<a name="section663215"></a>

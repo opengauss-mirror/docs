@@ -1,3 +1,8 @@
+---
+description: SUMMARY\_STATIO\_ALL\_TABLES视图将包含openGauss内汇聚的数据库中每个表（包括TOAST表）的I/O的统计。.
+keywords: [openGauss, SUMMARY_STATIO_ALL_TABLES]
+---
+
 # SUMMARY\_STATIO\_ALL\_TABLES
 
 SUMMARY\_STATIO\_ALL\_TABLES视图将包含openGauss内汇聚的数据库中每个表（包括TOAST表）的I/O的统计。
