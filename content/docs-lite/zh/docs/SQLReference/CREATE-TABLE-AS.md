@@ -1,3 +1,8 @@
+---
+description: Introduces CREATE TABLE AS in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, CREATE TABLE AS]
+---
+
 # CREATE TABLE AS<a name="ZH-CN_TOPIC_0289900336"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136662_zh-cn_topic_0237122118_zh-cn_topic_0059777601_sf40d8ce0a2af4856a44d883e623632b9"></a>

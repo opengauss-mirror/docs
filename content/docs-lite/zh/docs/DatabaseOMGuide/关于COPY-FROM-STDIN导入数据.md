@@ -1,3 +1,8 @@
+---
+description: 用户可以使用以下方式通过COPY FROM STDIN语句直接向openGauss写入数据。.
+keywords: [openGauss, 关于COPY FROM STDIN导入数据]
+---
+
 # 关于COPY FROM STDIN导入数据<a name="ZH-CN_TOPIC_0289899877"></a>
 
 用户可以使用以下方式通过COPY FROM STDIN语句直接向openGauss写入数据。

@@ -1,3 +1,8 @@
+---
+description: 使用gsql命令行访问openGauss.
+keywords: [openGauss, 访问openGauss]
+---
+
 # 访问openGauss
 
 **[使用gsql命令行访问openGauss](使用gsql访问openGauss.md)**

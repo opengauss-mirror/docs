@@ -1,3 +1,8 @@
+---
+description: 获取当前节点中数据文件IO状态的累计值，显示为所有数据文件IO状态的总和。.
+keywords: [openGauss, LOCAL_REL_IOSTAT]
+---
+
 # LOCAL\_REL\_IOSTAT<a name="ZH-CN_TOPIC_0289899847"></a>
 
 获取当前节点中数据文件IO状态的累计值，显示为所有数据文件IO状态的总和。

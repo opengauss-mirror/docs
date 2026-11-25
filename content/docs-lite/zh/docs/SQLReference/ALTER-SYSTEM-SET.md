@@ -1,3 +1,8 @@
+---
+description: ALTER SYSTEM SET命令用于设置POSTMASTER、SIGHUP、BACKEND级别的GUC参数。此命令会将参数写入配置文件，不同级别生效方式有所不同。.
+keywords: [openGauss, ALTER SYSTEM SET]
+---
+
 # ALTER SYSTEM SET
 
 ## 功能描述

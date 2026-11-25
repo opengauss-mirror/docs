@@ -1,3 +1,8 @@
+---
+description: Time Model名称及描述如下表所示。.
+keywords: [openGauss, Time Model]
+---
+
 # Time Model<a name="ZH-CN_TOPIC_0000001259955051"></a>
 
 Time Model名称及描述如下表所示。

@@ -1,3 +1,8 @@
+---
+description: 通过MERGE INTO语句，将目标表和源表中数据针对关联条件进行匹配，若关联条件匹配时对目标表进行UPDATE，无法匹配时对目标表执行INSERT。此语法可以很方便地用来合并执行UPDATE和INSERT，避免多次执行。.
+keywords: [openGauss, MERGE INTO]
+---
+
 # MERGE INTO<a name="ZH-CN_TOPIC_0289900297"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137308_zh-cn_topic_0237122170_section11462163155618"></a>

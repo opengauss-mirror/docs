@@ -1,3 +1,8 @@
+---
+description: 相比于原始的openGauss，dolphin对于条件表达式的修改主要为:.
+keywords: [openGauss, 条件表达式]
+---
+
 # 条件表达式
 
 相比于原始的openGauss，dolphin对于条件表达式的修改主要为:
@@ -8,7 +13,7 @@
     等价于NVL，NVL的语法图请参见[图7](#zh-cn_topic_0283136958_zh-cn_topic_0237122002_zh-cn_topic_0059777797_f69cd4e01dd6e4280b756eb98d3c77c91)。
 
     **图 7**  nvl::=<a name="zh-cn_topic_0283136958_zh-cn_topic_0237122002_zh-cn_topic_0059777797_f69cd4e01dd6e4280b756eb98d3c77c91"></a>  
-    ![](figures/nvl.jpg "nvl")
+    ![条件表达式](figures/nvl.jpg "nvl")
 
     如果value1为NULL则返回value2，如果value1非NULL，则返回value1。
 
@@ -38,7 +43,7 @@
     CASE表达式的语法图请参考[图1](#zh-cn_topic_0283136958_zh-cn_topic_0237122002_zh-cn_topic_0059777797_f6defc8307fd0434380b6ba22838ed5f1)。
 
     **图 1**  case::=<a name="zh-cn_topic_0283136958_zh-cn_topic_0237122002_zh-cn_topic_0059777797_f6defc8307fd0434380b6ba22838ed5f1"></a>  
-    ![](figures/case.jpg "case")
+    ![条件表达式](figures/case.jpg "case")
 
     CASE子句可以用于合法的表达式中。condition是一个返回BOOLEAN数据类型的表达式：
 

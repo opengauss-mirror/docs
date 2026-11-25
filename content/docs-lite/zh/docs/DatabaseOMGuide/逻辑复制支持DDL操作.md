@@ -1,3 +1,8 @@
+---
+description: openGauss在逻辑复制过程中支持如下DDL操作：.
+keywords: [openGauss, 逻辑复制支持DDL操作]
+---
+
 # 逻辑复制支持DDL操作
 
 ## 功能描述

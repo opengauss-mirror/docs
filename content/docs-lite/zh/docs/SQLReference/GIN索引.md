@@ -1,3 +1,8 @@
+---
+description: Introduces GIN索引 in openGauss, covering .
+keywords: [openGauss, GIN索引]
+---
+
 # GIN索引<a name="ZH-CN_TOPIC_0289900571"></a>
 
 -   **[介绍](介绍-19.md)**  

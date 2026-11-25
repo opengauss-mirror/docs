@@ -1,3 +1,8 @@
+---
+description: Introduces MOT管理 in openGauss, covering .
+keywords: [openGauss, MOT管理]
+---
+
 # MOT管理<a name="ZH-CN_TOPIC_0289900637"></a>
 
 下面介绍MOT管理。

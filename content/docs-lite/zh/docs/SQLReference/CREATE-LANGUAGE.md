@@ -1,3 +1,8 @@
+---
+description: 定义一种新的过程语言。单机和集中式暂不支持创建过程语言。.
+keywords: [openGauss, CREATE LANGUAGE]
+---
+
 # CREATE LANGUAGE<a name="ZH-CN_TOPIC_0000001080607732"></a>
 
 ## 功能描述<a name="section113331284191"></a>

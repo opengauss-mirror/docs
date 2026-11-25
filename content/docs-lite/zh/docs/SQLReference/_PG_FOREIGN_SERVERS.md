@@ -1,3 +1,8 @@
+---
+description: 显示外部服务器的信息。该视图只有sysadmin权限可以查看。.
+keywords: [openGauss, _PG_FOREIGN_SERVERS]
+---
+
 # \_PG\_FOREIGN\_SERVERS<a name="ZH-CN_TOPIC_0310260668"></a>
 
 显示外部服务器的信息。该视图只有sysadmin权限可以查看。

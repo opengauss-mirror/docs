@@ -1,3 +1,8 @@
+---
+description: - 连接数据库时，可以使用如下命令获取帮助信息。.
+keywords: [openGauss, 获取帮助]
+---
+
 # 获取帮助<a name="ZH-CN_TOPIC_0294748948"></a>
 
 ## 操作步骤<a name="zh-cn_topic_0059778941_s24c36ac1563e42cb99f9773e8cd9c78c"></a>

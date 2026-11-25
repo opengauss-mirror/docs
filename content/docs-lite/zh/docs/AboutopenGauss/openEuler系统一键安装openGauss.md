@@ -1,3 +1,8 @@
+---
+description: 本特性自openEuler 22.03 LTS版本开始支持。.
+keywords: [openGauss, openEuler系统一键安装openGauss]
+---
+
 # openEuler系统一键安装openGauss<a name="ZH-CN_TOPIC_0000001222174034"></a>
 
 ## 可获得性<a name="section15406143204715"></a>

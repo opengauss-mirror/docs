@@ -1,3 +1,8 @@
+---
+description: Introduces OS\_RUNTIME in openGauss, covering .
+keywords: [openGauss, OS_RUNTIME]
+---
+
 # OS\_RUNTIME<a name="ZH-CN_TOPIC_0289900429"></a>
 
 显示当前操作系统运行的状态信息。

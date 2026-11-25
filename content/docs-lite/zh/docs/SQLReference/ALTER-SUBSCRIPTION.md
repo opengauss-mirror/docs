@@ -1,3 +1,8 @@
+---
+description: ALTER SUBSCRIPTION可以修改在CREATE SUBSCRIPTION中指定的订阅属性。.
+keywords: [openGauss, ALTER SUBSCRIPTION]
+---
+
 # ALTER SUBSCRIPTION
 
 ## 功能描述<a name="section13387758133316"></a>

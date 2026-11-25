@@ -1,3 +1,8 @@
+---
+description: Introduces DROP COLUMN ENCRYPTION KEY in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP COLUMN ENCRYPTION KEY]
+---
+
 # DROP COLUMN ENCRYPTION KEY<a name="ZH-CN_TOPIC_0294528091"></a>
 
 ## 功能描述<a name="section77761618077"></a>

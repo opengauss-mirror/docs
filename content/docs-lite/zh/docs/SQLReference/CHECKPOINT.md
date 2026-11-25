@@ -1,3 +1,8 @@
+---
+description: 检查点（CHECKPOINT）是一个事务日志中的点，所有数据文件都在该点被更新以反映日志中的信息，所有数据文件都将被刷新到磁盘。.
+keywords: [openGauss, CHECKPOINT]
+---
+
 # CHECKPOINT<a name="ZH-CN_TOPIC_0289900495"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137558_zh-cn_topic_0237122089_zh-cn_topic_0059778147_s45168794daa74bc2a308ea3c943e0a93"></a>

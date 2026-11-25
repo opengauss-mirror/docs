@@ -1,3 +1,8 @@
+---
+description: LOCKS视图用于查看各打开事务所持有的锁信息。.
+keywords: [openGauss, LOCKS]
+---
+
 # LOCKS<a name="ZH-CN_TOPIC_0289899932"></a>
 
 LOCKS视图用于查看各打开事务所持有的锁信息。

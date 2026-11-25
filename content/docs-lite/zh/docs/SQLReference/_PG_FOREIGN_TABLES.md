@@ -1,3 +1,8 @@
+---
+description: 存储所有的定义在本数据库的外部表信息。只显示当前用户有权访问的外部表信息。该视图只有sysadmin权限可以查看。.
+keywords: [openGauss, _PG_FOREIGN_TABLES]
+---
+
 # \_PG\_FOREIGN\_TABLES<a name="ZH-CN_TOPIC_0310260670"></a>
 
 存储所有的定义在本数据库的外部表信息。只显示当前用户有权访问的外部表信息。该视图只有sysadmin权限可以查看。

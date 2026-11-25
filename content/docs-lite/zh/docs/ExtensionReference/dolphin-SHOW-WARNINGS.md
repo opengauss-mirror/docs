@@ -1,3 +1,8 @@
+---
+description: 显示当前会话执行的sql，所产生的信息(包含errors, warnings, notes)。.
+keywords: [openGauss, SHOW WARNINGSERRORS]
+---
+
 # SHOW WARNINGS/ERRORS
 
 ## 功能描述

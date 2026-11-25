@@ -1,3 +1,8 @@
+---
+description: 详细的gsql参数请参见表1、表2、[表3](#zh-cn_topic_0059779319_t47c174e145784f16ac251d3c6aea8e.
+keywords: [openGauss, 命令参考]
+---
+
 # 命令参考<a name="ZH-CN_TOPIC_0294749022"></a>
 
 详细的gsql参数请参见[表1](#zh-cn_topic_0059779319_t5f35328143ec419983a1c23d13c46e49)、[表2](#zh-cn_topic_0059779319_t0233128ab394456c80e339179cb56739)、[表3](#zh-cn_topic_0059779319_t47c174e145784f16ac251d3c6aea8ea8)和[表4](#zh-cn_topic_0059779319_td7e646abbf6a4d85bc54cd9741c80b68)。

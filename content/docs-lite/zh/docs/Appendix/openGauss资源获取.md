@@ -1,3 +1,8 @@
+---
+description: openGauss提供了在线资源，其中包含大量有用的信息，例如常用的语法格式、解释以及示例。如果您在使用过程中遇到一些困难，建议您在官方网站上进行查找以解决问题。同时，您也可以通过开源社区、邮件列表等方式将您遇到的问题与openGauss的使用者们进行交流。.
+keywords: [openGauss, openGauss资源获取]
+---
+
 # openGauss资源获取<a name="ZH-CN_TOPIC_0000001255141775"></a>
 
 openGauss提供了在线资源，其中包含大量有用的信息，例如常用的语法格式、解释以及示例。如果您在使用过程中遇到一些困难，建议您在官方网站上进行查找以解决问题。同时，您也可以通过开源社区、邮件列表等方式将您遇到的问题与openGauss的使用者们进行交流。
@@ -146,7 +151,7 @@ openGauss社区使用邮件列表进行线上沟通交流。我们真诚地邀�
 -   openGauss社区
     -   微信公众号
 
-        ![](figures/zh-cn_image_0000001209981920.jpg)
+        ![学习交流平台](figures/zh-cn_image_0000001209981920.jpg)
 
     -   [B站](https://space.bilibili.com/543286270?from=search&seid=7579369334374103192&spm_id_from=333.337.0.0)
     -   [CSDN](https://blog.csdn.net/weixin_49727236)
@@ -154,7 +159,7 @@ openGauss社区使用邮件列表进行线上沟通交流。我们真诚地邀�
 -   Gauss松鼠会技术交流圈
     -   微信公众号
 
-        ![](figures/zh-cn_image_0000001210301878.jpg)
+        ![学习交流平台](figures/zh-cn_image_0000001210301878.jpg)
 
     -   [B站](https://space.bilibili.com/629605267?from=search&seid=8790769897413776977&spm_id_from=333.337.0.0)
     -   [CSDN](https://blog.csdn.net/GaussDB)

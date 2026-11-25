@@ -1,3 +1,8 @@
+---
+description: 1. cursor.fetchone\(\)：这种方法提取的查询结果集的下一行，返回一个序列，没有数据可用时则返回空。.
+keywords: [openGauss, 处理结果集]
+---
+
 # 处理结果集<a name="ZH-CN_TOPIC_0000001080209766"></a>
 
 1.  cursor.fetchone\(\)：这种方法提取的查询结果集的下一行，返回一个序列，没有数据可用时则返回空。

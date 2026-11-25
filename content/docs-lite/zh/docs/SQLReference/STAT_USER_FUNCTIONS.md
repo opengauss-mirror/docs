@@ -1,3 +1,8 @@
+---
+description: STAT\_USER\_FUNCTIONS视图显示命名空间中用户自定义函数（函数语言为非内部语言）的状态信息。.
+keywords: [openGauss, STAT_USER_FUNCTIONS]
+---
+
 # STAT\_USER\_FUNCTIONS<a name="ZH-CN_TOPIC_0289900542"></a>
 
 STAT\_USER\_FUNCTIONS视图显示命名空间中用户自定义函数（函数语言为非内部语言）的状态信息。

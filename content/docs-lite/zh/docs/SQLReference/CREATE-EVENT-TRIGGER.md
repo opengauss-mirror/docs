@@ -1,3 +1,8 @@
+---
+description: 创建一个事件触发器，在指定事件发生发生时执行指定的事件触发器函数。.
+keywords: [openGauss, CREATE TRIGGER]
+---
+
 # CREATE TRIGGER<a name="ZH-CN_TOPIC_0289900727"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_s08b0f056b5f14492970a9037c63fa70c"></a>

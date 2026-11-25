@@ -1,3 +1,8 @@
+---
+description: 删除外部数据包装器。在首次使用此功能时，需设置参数support_extended_features为on并重启数据库。.
+keywords: [openGauss, DROP FOREIGN DATA WRAPPER]
+---
+
 # DROP FOREIGN DATA WRAPPER
 
 ## 功能描述

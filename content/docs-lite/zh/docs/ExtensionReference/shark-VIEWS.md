@@ -1,3 +1,8 @@
+---
+description: Introduces VIEWS in openGauss, covering .
+keywords: [openGauss, VIEWS]
+---
+
 # VIEWS
 
 所有架构范围内的用户定义视图。

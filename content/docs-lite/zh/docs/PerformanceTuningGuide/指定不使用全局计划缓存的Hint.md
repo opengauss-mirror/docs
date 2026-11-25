@@ -1,3 +1,8 @@
+---
+description: 全局计划缓存打开时，可以通过no\_gpc Hint来强制单个查询语句不在全局共享计划缓存，只保留会话生命周期的计划缓存。.
+keywords: [openGauss, 指定不使用全局计划缓存的Hint]
+---
+
 # 指定不使用全局计划缓存的Hint<a name="ZH-CN_TOPIC_0000001096240528"></a>
 
 ## 功能描述<a name="section290819468377"></a>
@@ -16,7 +21,7 @@ no_gpc
 
 ## 示例<a name="section5736356154"></a>
 
-![](figures/zh-cn_image_0000001144139135.png)
+![示例](figures/zh-cn_image_0000001144139135.png)
 
 dbe\_perf.global\_plancache\_status视图中无结果即没有计划被全局缓存。
 

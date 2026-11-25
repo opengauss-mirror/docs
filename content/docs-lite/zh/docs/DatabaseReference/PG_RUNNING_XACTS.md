@@ -1,3 +1,8 @@
+---
+description: PG\_RUNNING\_XACTS视图主要功能是显示当前节点运行事务的信息。.
+keywords: [openGauss, PG_RUNNING_XACTS]
+---
+
 # PG\_RUNNING\_XACTS<a name="ZH-CN_TOPIC_0000001151571796"></a>
 
 PG\_RUNNING\_XACTS视图主要功能是显示当前节点运行事务的信息。

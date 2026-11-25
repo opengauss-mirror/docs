@@ -1,3 +1,8 @@
+---
+description: 支持标准的openGauss创建和删除索引语句。.
+keywords: [openGauss, 为MOT创建索引]
+---
+
 # 为MOT创建索引<a name="ZH-CN_TOPIC_0289900796"></a>
 
 支持标准的openGauss创建和删除索引语句。

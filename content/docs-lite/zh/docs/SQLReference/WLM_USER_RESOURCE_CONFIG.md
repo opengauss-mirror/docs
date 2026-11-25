@@ -1,3 +1,8 @@
+---
+description: WLM\_USER\_RESOURCE\_CONFIG视图显示用户的资源配置信息。.
+keywords: [openGauss, WLM_USER_RESOURCE_CONFIG]
+---
+
 # WLM\_USER\_RESOURCE\_CONFIG<a name="ZH-CN_TOPIC_0289900124"></a>
 
 WLM\_USER\_RESOURCE\_CONFIG视图显示用户的资源配置信息。

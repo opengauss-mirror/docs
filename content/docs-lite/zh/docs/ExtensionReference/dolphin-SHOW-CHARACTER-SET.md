@@ -1,3 +1,8 @@
+---
+description: Introduces SHOW CHARACTER SET in openGauss, covering 注意事项, 功能描述, 语法格式.
+keywords: [openGauss, SHOW CHARACTER SET]
+---
+
 # SHOW CHARACTER SET
 
 ## 注意事项

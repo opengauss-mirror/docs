@@ -1,3 +1,8 @@
+---
+description: 获取openGaussSQL响应时间P80，P95分布信息。.
+keywords: [openGauss, STATEMENT_RESPONSETIME_PERCENTILE]
+---
+
 # STATEMENT\_RESPONSETIME\_PERCENTILE<a name="ZH-CN_TOPIC_0289900157"></a>
 
 获取openGaussSQL响应时间P80，P95分布信息。

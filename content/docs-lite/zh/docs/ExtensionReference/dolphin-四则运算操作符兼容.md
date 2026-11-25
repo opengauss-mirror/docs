@@ -1,3 +1,8 @@
+---
+description: 在将参数开关dolphin.b_compatibility_mode设置为on时，表示启用四则运算的MySQL兼容。相比于原始的openGauss，dolphin对于四则运算的修改主要为:.
+keywords: [openGauss, 操作符运算兼容]
+---
+
 # 操作符运算兼容
 
 在将参数开关dolphin.b_compatibility_mode设置为on时，表示启用四则运算的MySQL兼容。相比于原始的openGauss，dolphin对于四则运算的修改主要为:

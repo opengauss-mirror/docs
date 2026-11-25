@@ -1,3 +1,8 @@
+---
+description: Introduces DROP EVENT in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP EVENT]
+---
+
 # DROP EVENT<a name="ZH-CN_TOPIC_0000001503113597"></a>
 
 ## 功能描述<a name="section5400959952"></a>

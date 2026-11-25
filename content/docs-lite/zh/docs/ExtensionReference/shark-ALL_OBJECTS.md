@@ -1,3 +1,8 @@
+---
+description: 所有架构范围内的用户定义对象和系统对象的集合。.
+keywords: [openGauss, ALL_OBJECTS]
+---
+
 # ALL_OBJECTS
 
 所有架构范围内的用户定义对象和系统对象的集合。

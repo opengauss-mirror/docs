@@ -1,3 +1,8 @@
+---
+description: SELECT语句用于从表或视图中取出数据，结果被存储在一个结果表中，称为结果集。.
+keywords: [openGauss, SELECT语句]
+---
+
 # SELECT语句<a name="ZH-CN_TOPIC_0000001255141779"></a>
 
 SELECT语句用于从表或视图中取出数据，结果被存储在一个结果表中，称为结果集。

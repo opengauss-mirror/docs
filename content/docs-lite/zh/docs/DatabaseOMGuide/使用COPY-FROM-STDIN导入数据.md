@@ -1,3 +1,8 @@
+---
+description: - 关于COPY FROM STDIN导入数据.
+keywords: [openGauss, 使用COPY FROM STDIN导入数据]
+---
+
 # 使用COPY FROM STDIN导入数据<a name="ZH-CN_TOPIC_0289900600"></a>
 
 -   **[关于COPY FROM STDIN导入数据](关于COPY-FROM-STDIN导入数据.md)**  

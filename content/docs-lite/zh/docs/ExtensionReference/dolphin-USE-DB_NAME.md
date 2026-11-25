@@ -1,3 +1,8 @@
+---
+description: USE db_name语句将db_name的模式schema作为默认（当前）模式使用，用于后续语句。该模式保持为默认模式，直到语段的结尾，或者直到发布一个不同的USE语句。.
+keywords: [openGauss, USE db_name]
+---
+
 # USE db_name
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>

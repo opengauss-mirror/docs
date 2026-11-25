@@ -1,3 +1,8 @@
+---
+description: MOT使您可以在执行之前以原生格式（使用PREPARE语句）准备并分析预编译的完整查询。.
+keywords: [openGauss, MOT查询原生编译JIT]
+---
+
 # MOT查询原生编译（JIT）<a name="ZH-CN_TOPIC_0289899928"></a>
 
 MOT使您可以在执行之前以原生格式（使用PREPARE语句）准备并分析预编译的完整查询。

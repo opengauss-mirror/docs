@@ -1,3 +1,8 @@
+---
+description: TPC-C基准是衡量联机事务处理（OLTP）系统性能的行业标准基准。它基于一个复杂的数据库和许多不同的事务类型。这些事务类型在此基准上执行。TPC-C基准测试既不依赖硬件，也不依赖软件，因此可以在每个测试平台上运行。基准模型的官方概述，见tpc.org网站（http://www.tpc.org/default5.asp）。.
+keywords: [openGauss, 测试MOT-TPCC性能]
+---
+
 # 测试MOT-TPCC性能<a name="ZH-CN_TOPIC_0289900962"></a>
 
 ## TPC-C简介<a name="zh-cn_topic_0283137680_zh-cn_topic_0280525151_section46845508"></a>
@@ -152,7 +157,7 @@ tpm-C指标单位表示为每分钟事务数-C，而C表示TPC-C特定基准。
 
     BenchmarkSQL结果应如下所示：
 
-    ![](figures/zh-cn_image_0289899941.jpg)
+    ![结果报告](figures/zh-cn_image_0289899941.jpg)
 
     随着时间的推移，基准测量并平均已提交的事务。上面的例子是两分钟的基准测试。
 
@@ -164,9 +169,9 @@ tpm-C指标单位表示为每分钟事务数-C，而C表示TPC-C特定基准。
 
 
 **图 1**  详细结果报告<a name="zh-cn_topic_0283137680_zh-cn_topic_0280525151_fig49333891"></a>  
-![](figures/详细结果报告.png "详细结果报告")
+![结果报告](figures/详细结果报告.png "详细结果报告")
 
-![](figures/zh-cn_image_0289900100.png)
+![结果报告](figures/zh-cn_image_0289900100.png)
 
 BenchmarkSQL收集详细的性能统计数据和操作系统性能数据（如果配置了的话）。
 
@@ -179,5 +184,5 @@ BenchmarkSQL收集详细的性能统计数据和操作系统性能数据（如�
 下图展示了近乎线性的可扩展性：
 
 **图 2**  华为TaiShan 2480 MOT TPC-C测试结果<a name="zh-cn_topic_0283137680_zh-cn_topic_0280525151_fig6118042"></a>  
-![](figures/华为TaiShan-2480-MOT-TPC-C测试结果.png "华为TaiShan-2480-MOT-TPC-C测试结果")
+![结果报告](figures/华为TaiShan-2480-MOT-TPC-C测试结果.png "华为TaiShan-2480-MOT-TPC-C测试结果")
 

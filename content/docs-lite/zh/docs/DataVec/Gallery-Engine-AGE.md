@@ -1,3 +1,8 @@
+---
+description: 图数据库由于能够处理数据之前的复杂关系，近年来得到了广泛的应用。与传统关系型数据库不同，图数据库将数据表示为节点、边和属性。节点表示实体，边表示实体之间的关系，属性表示两者的属性。.
+keywords: [openGauss, Apache AGE incubating for openGauss]
+---
+
 # Apache AGE (incubating) for openGauss
 
 ## 介绍
@@ -9,7 +14,7 @@ Apache AGE在数据库内核的查询解析，查询重写，查询计划，查�
 
 <a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574113"></a>
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/doc_img_AGE-think.png" style>
+    <img src="figures/doc_img_AGE-think.png" alt="介绍" style>
 </div>
 
 openGauss数据库使用插件的方式支持图数据库引擎，在openGauss数据库中可直接采用创建插件的方式使用Apache AGE的能力。

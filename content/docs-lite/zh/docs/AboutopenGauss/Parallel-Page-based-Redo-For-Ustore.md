@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 1.1.0版本开始引入。.
+keywords: [openGauss, Parallel Page-based Redo For Ustore]
+---
+
 # Parallel Page-based Redo For Ustore<a name="ZH-CN_TOPIC_0000001164037824"></a>
 
 ## 可获得性<a name="section1136213124018"></a>

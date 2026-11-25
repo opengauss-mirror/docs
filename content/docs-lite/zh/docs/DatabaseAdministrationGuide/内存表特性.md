@@ -1,3 +1,8 @@
+---
+description: Introduces 内存表特性 in openGauss, covering .
+keywords: [openGauss, 内存表特性]
+---
+
 # 内存表特性<a name="ZH-CN_TOPIC_0289900398"></a>
 
 -   **[MOT介绍](MOT介绍.md)**  

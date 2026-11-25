@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_RECORD\_RESET\_TIME用于重置（重启，主备倒换，数据库删除）汇聚openGauss统计信息时间。.
+keywords: [openGauss, GLOBAL_RECORD_RESET_TIME]
+---
+
 # GLOBAL\_RECORD\_RESET\_TIME<a name="ZH-CN_TOPIC_0289899965"></a>
 
 GLOBAL\_RECORD\_RESET\_TIME用于重置（重启，主备倒换，数据库删除）汇聚openGauss统计信息时间。

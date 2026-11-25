@@ -1,3 +1,8 @@
+---
+description: PG\_PREPARED\_STATEMENTS视图整个数据库实例的预备语句。.
+keywords: [openGauss, PG_PREPARED_STATEMENTS]
+---
+
 # PG\_PREPARED\_STATEMENTS<a name="ZH-CN_TOPIC_0289900229"></a>
 
 PG\_PREPARED\_STATEMENTS视图整个数据库实例的预备语句。

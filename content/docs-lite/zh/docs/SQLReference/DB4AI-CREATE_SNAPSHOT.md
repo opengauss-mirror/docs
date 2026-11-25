@@ -1,3 +1,8 @@
+---
+description: CREATE\_SNAPSHOT是DB4AI特性用于创建快照的接口函数。通过语法CREATE SNAPSHOT调用。.
+keywords: [openGauss, DB4AI.CREATE_SNAPSHOT]
+---
+
 # DB4AI.CREATE\_SNAPSHOT<a name="ZH-CN_TOPIC_0000001195431131"></a>
 
 CREATE\_SNAPSHOT是DB4AI特性用于创建快照的接口函数。通过语法CREATE SNAPSHOT调用。

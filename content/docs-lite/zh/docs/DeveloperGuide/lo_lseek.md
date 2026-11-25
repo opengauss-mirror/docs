@@ -1,3 +1,8 @@
+---
+description: 改变一个大对象描述符的当前读或写位置。.
+keywords: [openGauss, lo_lseek]
+---
+
 # lo_lseek<a name="ZH-CN_TOPIC_0242380595"></a>
 
 ## 功能描述<a name="zh-cn_topic_0241735619_section696285173720"></a>

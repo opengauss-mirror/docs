@@ -1,3 +1,8 @@
+---
+description: 得到各节点pg\_catalog、information\_schema以及pg\_toast模式中所有系统表的索引状态信息。.
+keywords: [openGauss, GLOBAL_STAT_SYS_INDEXES]
+---
+
 # GLOBAL\_STAT\_SYS\_INDEXES<a name="ZH-CN_TOPIC_0289900006"></a>
 
 得到各节点pg\_catalog、information\_schema以及pg\_toast模式中所有系统表的索引状态信息。

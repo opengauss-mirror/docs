@@ -1,3 +1,8 @@
+---
+description: SET类型是一种包含字符串成员的集合类型，在表字段创建时定义。.
+keywords: [openGauss, SET类型]
+---
+
 # SET类型<a name="ZH-CN_TOPIC_0000001370344985"></a>
 
 SET类型是一种包含字符串成员的集合类型，在表字段创建时定义。

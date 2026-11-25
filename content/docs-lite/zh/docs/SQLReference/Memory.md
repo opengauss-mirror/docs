@@ -1,3 +1,8 @@
+---
+description: - MEMORY\_NODE\_DETAIL.
+keywords: [openGauss, Memory]
+---
+
 # Memory<a name="ZH-CN_TOPIC_0289900388"></a>
 
 -   **[MEMORY\_NODE\_DETAIL](MEMORY_NODE_DETAIL.md)**  

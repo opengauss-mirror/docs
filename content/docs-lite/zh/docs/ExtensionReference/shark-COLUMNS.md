@@ -1,3 +1,8 @@
+---
+description: Introduces COLUMNS in openGauss, covering .
+keywords: [openGauss, COLUMNS]
+---
+
 # COLUMNS
 
 用户定义对象的所有列。

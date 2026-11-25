@@ -1,3 +1,8 @@
+---
+description: - gs\_undo\_meta\(type, zoneId, location\).
+keywords: [openGauss, Undo系统函数]
+---
+
 # Undo系统函数<a name="ZH-CN_TOPIC_0000001135762588"></a>
 
 -   gs\_undo\_meta\(type, zoneId, location\)

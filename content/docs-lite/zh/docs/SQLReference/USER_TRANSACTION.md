@@ -1,3 +1,8 @@
+---
+description: USER\_TRANSACTION用来统计用户执行的事务信息。monadmin用户能看到所有用户执行事务的信息，普通用户只能查询到自己执行的事务信息。.
+keywords: [openGauss, USER_TRANSACTION]
+---
+
 # USER\_TRANSACTION<a name="ZH-CN_TOPIC_0000001199229429"></a>
 
 USER\_TRANSACTION用来统计用户执行的事务信息。monadmin用户能看到所有用户执行事务的信息，普通用户只能查询到自己执行的事务信息。

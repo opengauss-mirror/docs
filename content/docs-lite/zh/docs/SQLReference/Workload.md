@@ -1,3 +1,8 @@
+---
+description: - WORKLOAD\_SQL\_COUNT.
+keywords: [openGauss, Workload]
+---
+
 # Workload<a name="ZH-CN_TOPIC_0289899818"></a>
 
 -   **[WORKLOAD\_SQL\_COUNT](WORKLOAD_SQL_COUNT.md)**  

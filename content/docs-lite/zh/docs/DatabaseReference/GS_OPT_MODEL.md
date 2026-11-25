@@ -1,3 +1,8 @@
+---
+description: GS\_OPT\_MODEL是启用AiEngine执行计划时间预测功能时的数据表，记录机器学习模型的配置、训练结果、功能、对应系统函数、训练历史等相关信息。.
+keywords: [openGauss, GS_OPT_MODEL]
+---
+
 # GS\_OPT\_MODEL<a name="ZH-CN_TOPIC_0289900860"></a>
 
 GS\_OPT\_MODEL是启用AiEngine执行计划时间预测功能时的数据表，记录机器学习模型的配置、训练结果、功能、对应系统函数、训练历史等相关信息。

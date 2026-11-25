@@ -1,3 +1,8 @@
+---
+description: PG\_CURSORS视图列出了当前可用的游标。.
+keywords: [openGauss, PG_CURSORS]
+---
+
 # PG\_CURSORS<a name="ZH-CN_TOPIC_0289900055"></a>
 
 PG\_CURSORS视图列出了当前可用的游标。

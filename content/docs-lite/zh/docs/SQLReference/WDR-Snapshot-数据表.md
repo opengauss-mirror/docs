@@ -1,3 +1,8 @@
+---
+description: WDR Snapshot数据表命名原则： snap\_\{源数据表\}。.
+keywords: [openGauss, WDR Snapshot 数据表]
+---
+
 # WDR Snapshot 数据表<a name="ZH-CN_TOPIC_0289900045"></a>
 
 WDR Snapshot数据表命名原则： snap\_\{源数据表\}。

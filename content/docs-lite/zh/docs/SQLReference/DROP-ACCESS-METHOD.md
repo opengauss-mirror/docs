@@ -1,3 +1,8 @@
+---
+description: 移除一种现有的访问方法。只有超级用户能够删除访问方法。。.
+keywords: [openGauss, DROP ACCESS METHOD]
+---
+
 # DROP ACCESS METHOD
 
 ## 功能描述<a name="zh-cn_topic_0283136794_zh-cn_topic_0237122140_zh-cn_topic_0059779018_s6e7bed7d44604f749e4ea7043f81b07b"></a>

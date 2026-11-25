@@ -1,3 +1,8 @@
+---
+description: PG\_STATIO\_SYS\_TABLES视图显示命名空间中所有系统表的IO状态信息。.
+keywords: [openGauss, PG_STATIO_SYS_TABLES]
+---
+
 # PG\_STATIO\_SYS\_TABLES<a name="ZH-CN_TOPIC_0289900110"></a>
 
 PG\_STATIO\_SYS\_TABLES视图显示命名空间中所有系统表的IO状态信息。

@@ -1,3 +1,8 @@
+---
+description: javax.sql.ConnectionPoolDataSource是数据源连接池接口。.
+keywords: [openGauss, javax.sql.ConnectionPoolDataSource]
+---
+
 # javax.sql.ConnectionPoolDataSource<a name="ZH-CN_TOPIC_0289900321"></a>
 
 javax.sql.ConnectionPoolDataSource是数据源连接池接口。

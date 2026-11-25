@@ -1,3 +1,8 @@
+---
+description: debug端调试过程中，调用delete\_breakpoint删除已有的断点。.
+keywords: [openGauss, DBE_PLDEBUGGER.delete_breakpoint]
+---
+
 # DBE\_PLDEBUGGER.delete\_breakpoint<a name="ZH-CN_TOPIC_0000001116086116"></a>
 
 debug端调试过程中，调用delete\_breakpoint删除已有的断点。

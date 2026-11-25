@@ -1,3 +1,8 @@
+---
+description: ROLLBACK TO SAVEPOINT用于回滚到一个保存点，隐含地删除所有在该保存点之后建立的保存点。.
+keywords: [openGauss, ROLLBACK TO SAVEPOINT]
+---
+
 # ROLLBACK TO SAVEPOINT<a name="ZH-CN_TOPIC_0289900687"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137625_zh-cn_topic_0237122182_zh-cn_topic_0059778869_section2860121201518"></a>

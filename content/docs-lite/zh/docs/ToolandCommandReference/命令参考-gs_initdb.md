@@ -1,3 +1,8 @@
+---
+description: gs\_initdb支持的常用参数和不常用参数请分别参见表1和表2。.
+keywords: [openGauss, 命令参考]
+---
+
 # 命令参考<a name="ZH-CN_TOPIC_0294748983"></a>
 
 ## 命令参考<a name="zh-cn_topic_0059778168_s0bfc8ae9e6bc445480335198cc89f358"></a>

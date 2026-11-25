@@ -1,3 +1,8 @@
+---
+description: Introduces OS in openGauss, covering .
+keywords: [openGauss, OS]
+---
+
 # OS<a name="ZH-CN_TOPIC_0289900140"></a>
 
 -   **[OS\_RUNTIME](OS_RUNTIME.md)**  

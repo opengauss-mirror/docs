@@ -1,3 +1,8 @@
+---
+description: 使用CREATE DIRECTORY语句创建一个目录对象，该目录对象定义了服务器文件系统上目录的别名，用于存放用户使用的数据文件。.
+keywords: [openGauss, CREATE DIRECTORY]
+---
+
 # CREATE DIRECTORY<a name="ZH-CN_TOPIC_0289900765"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136620_zh-cn_topic_0237122101_zh-cn_topic_0059778310_section50807000114421"></a>

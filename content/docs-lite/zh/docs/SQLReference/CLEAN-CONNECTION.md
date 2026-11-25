@@ -1,3 +1,8 @@
+---
+description: 用来清理数据库连接。允许在节点上清理指定数据库的指定用户的相关连接。.
+keywords: [openGauss, CLEAN CONNECTION]
+---
+
 # CLEAN CONNECTION<a name="ZH-CN_TOPIC_0000001151746656"></a>
 
 ## 功能描述<a name="zh-cn_topic_0059779060_s1b14773726ac4469a14e509530a7a957"></a>

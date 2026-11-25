@@ -1,3 +1,8 @@
+---
+description: GROUP BY语句和SELECT语句一起使用，用来对相同的数据进行分组。您可以对一列或者多列进行分组，但是被分组的列必须存在。.
+keywords: [openGauss, GROUP BY子句]
+---
+
 # GROUP BY子句<a name="ZH-CN_TOPIC_0000001210301876"></a>
 
 GROUP BY语句和SELECT语句一起使用，用来对相同的数据进行分组。您可以对一列或者多列进行分组，但是被分组的列必须存在。

@@ -1,3 +1,8 @@
+---
+description: Introduces 系统视图 in openGauss, covering .
+keywords: [openGauss, 系统视图]
+---
+
 # 系统视图
 
 - **[ALL_COLUMNS](shark-ALL_COLUMNS.md)**

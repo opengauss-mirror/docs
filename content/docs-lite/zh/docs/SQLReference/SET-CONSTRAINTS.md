@@ -1,3 +1,8 @@
+---
+description: SET CONSTRAINTS设置当前事务检查行为的约束条件。.
+keywords: [openGauss, SET CONSTRAINTS]
+---
+
 # SET CONSTRAINTS<a name="ZH-CN_TOPIC_0289900402"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136774_zh-cn_topic_0237122187_zh-cn_topic_0059779017_s016571300554457884633ea16394654e"></a>

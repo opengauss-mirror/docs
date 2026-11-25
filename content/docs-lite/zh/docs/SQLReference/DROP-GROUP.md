@@ -1,3 +1,8 @@
+---
+description: Introduces DROP GROUP in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP GROUP]
+---
+
 # DROP GROUP<a name="ZH-CN_TOPIC_0289900616"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137231_zh-cn_topic_0237122139_zh-cn_topic_0059778284_s39299576fef14e66bcb9eece71686c4a"></a>

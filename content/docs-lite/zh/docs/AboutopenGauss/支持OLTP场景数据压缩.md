@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 3.0.0版本开始引入。.
+keywords: [openGauss, 支持OLTP场景数据压缩]
+---
+
 # 支持OLTP场景数据压缩<a name="ZH-CN_TOPIC_0000001221740288"></a>
 
 ## 可获得性<a name="section15406143204715"></a>

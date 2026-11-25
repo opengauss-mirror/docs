@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_SINGLE\_FLUSH\_DW\_STATUS视图显示数据库所有实例单页面淘汰双写文件信息。展示内容中，/前是第一个版本双写文件刷页情况，/后是第二个版本双写文件刷页情况。.
+keywords: [openGauss, GLOBAL_SINGLE_FLUSH_DW_STATUS]
+---
+
 # GLOBAL\_SINGLE\_FLUSH\_DW\_STATUS<a name="ZH-CN_TOPIC_0000001196694399"></a>
 
 GLOBAL\_SINGLE\_FLUSH\_DW\_STATUS视图显示数据库所有实例单页面淘汰双写文件信息。展示内容中，/前是第一个版本双写文件刷页情况，/后是第二个版本双写文件刷页情况。

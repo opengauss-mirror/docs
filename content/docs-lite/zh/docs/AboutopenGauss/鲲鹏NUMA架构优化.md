@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 1.0.0版本开始引入。.
+keywords: [openGauss, 鲲鹏NUMA架构优化]
+---
+
 # 鲲鹏NUMA架构优化<a name="ZH-CN_TOPIC_0000001105075478"></a>
 
 ## 可获得性<a name="section1820817472142"></a>

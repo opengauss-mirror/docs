@@ -1,3 +1,8 @@
+---
+description: Introduces DROP RULE in openGauss, covering 功能描述, 语法格式, 参数说明.
+keywords: [openGauss, DROP RULE]
+---
+
 # DROP RULE<a name="ZH-CN_TOPIC_0306398143"></a>
 
 ## 功能描述<a name="section5400959952"></a>

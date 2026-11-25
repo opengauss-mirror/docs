@@ -1,3 +1,8 @@
+---
+description: 统计线程的内存使用情况，以MemoryContext节点来统计。.
+keywords: [openGauss, SESSION_MEMORY_DETAIL]
+---
+
 # SESSION\_MEMORY\_DETAIL<a name="ZH-CN_TOPIC_0289900909"></a>
 
 统计线程的内存使用情况，以MemoryContext节点来统计。

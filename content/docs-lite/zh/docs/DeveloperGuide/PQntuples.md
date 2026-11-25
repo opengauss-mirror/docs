@@ -1,3 +1,8 @@
+---
+description: 返回查询结果中的行（元组）数。因为它返回一个整数结果，在 32 位操作系统上大型的结果集可能使返回值溢出。.
+keywords: [openGauss, PQntuples]
+---
+
 # PQntuples<a name="ZH-CN_TOPIC_0242380701"></a>
 
 ## 功能描述<a name="zh-cn_topic_0059778058_sa9bd6e837fd4458199f7b677e876f4a9"></a>

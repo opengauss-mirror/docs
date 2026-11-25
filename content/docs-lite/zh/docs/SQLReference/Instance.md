@@ -1,3 +1,8 @@
+---
+description: Introduces Instance in openGauss, covering .
+keywords: [openGauss, Instance]
+---
+
 # Instance<a name="ZH-CN_TOPIC_0289900683"></a>
 
 -   **[INSTANCE\_TIME](INSTANCE_TIME.md)**  

@@ -1,3 +1,8 @@
+---
+description: Introduces 表达式 in openGauss, covering .
+keywords: [openGauss, 表达式]
+---
+
 # 表达式
 
 -   **[条件表达式](dolphin-条件表达式.md)**  

@@ -1,3 +1,8 @@
+---
+description: 连接数据库时使用的用户需要具备访问数据库的权限。.
+keywords: [openGauss, 使用指导]
+---
+
 # 使用指导<a name="ZH-CN_TOPIC_0294748989"></a>
 
 ## 前提条件<a name="zh-cn_topic_0059779027_s7c2e433674384463a42b1e562a499257"></a>

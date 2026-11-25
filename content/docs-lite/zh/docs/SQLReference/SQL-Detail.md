@@ -1,3 +1,8 @@
+---
+description: SQL Detail列名称及描述如下表所示。.
+keywords: [openGauss, SQL Detail]
+---
+
 # SQL Detail<a name="ZH-CN_TOPIC_0000001215195228"></a>
 
 SQL Detail列名称及描述如下表所示。

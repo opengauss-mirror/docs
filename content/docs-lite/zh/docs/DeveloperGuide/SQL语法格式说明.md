@@ -1,3 +1,8 @@
+---
+description: Introduces SQL语法格式说明 in openGauss, covering .
+keywords: [openGauss, SQL语法格式说明]
+---
+
 # SQL语法格式说明<a name="ZH-CN_TOPIC_0000001487936854"></a>
 
 **表 1**  SQL语法格式说明

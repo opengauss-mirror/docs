@@ -1,3 +1,8 @@
+---
+description: Introduces SHOW COLLATION in openGauss, covering 注意事项, 功能描述, 语法格式.
+keywords: [openGauss, SHOW COLLATION]
+---
+
 # SHOW COLLATION
 
 ## 注意事项

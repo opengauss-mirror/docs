@@ -1,3 +1,8 @@
+---
+description: openGauss内汇聚所有数据库中用户自定义普通表的索引状态信息。.
+keywords: [openGauss, SUMMARY_STAT_USER_INDEXES]
+---
+
 # SUMMARY\_STAT\_USER\_INDEXES<a name="ZH-CN_TOPIC_0289900242"></a>
 
 openGauss内汇聚所有数据库中用户自定义普通表的索引状态信息。

@@ -1,3 +1,8 @@
+---
+description: SUMMARY\_STAT\_USER\_FUNCTIONS用来统计所数据库节点用户自定义函数的相关统计信息。.
+keywords: [openGauss, SUMMARY_STAT_USER_FUNCTIONS]
+---
+
 # SUMMARY\_STAT\_USER\_FUNCTIONS<a name="ZH-CN_TOPIC_0289899911"></a>
 
 SUMMARY\_STAT\_USER\_FUNCTIONS用来统计所数据库节点用户自定义函数的相关统计信息。

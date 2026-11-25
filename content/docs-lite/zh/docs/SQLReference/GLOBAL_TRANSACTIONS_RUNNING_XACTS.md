@@ -1,3 +1,8 @@
+---
+description: Introduces GLOBAL\_TRANSACTIONS\_RUNNING\_XACTS in openGauss, covering .
+keywords: [openGauss, GLOBAL_TRANSACTIONS_RUNNING_XACTS]
+---
+
 # GLOBAL\_TRANSACTIONS\_RUNNING\_XACTS<a name="ZH-CN_TOPIC_0000001199229431"></a>
 
 显示集群中各个节点运行事务的信息。

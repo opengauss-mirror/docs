@@ -1,3 +1,8 @@
+---
+description: 显示openGauss内汇聚的命名空间中系统表的事务状态信息。.
+keywords: [openGauss, SUMMARY_STAT_XACT_SYS_TABLES]
+---
+
 # SUMMARY\_STAT\_XACT\_SYS\_TABLES<a name="ZH-CN_TOPIC_0289900389"></a>
 
 显示openGauss内汇聚的命名空间中系统表的事务状态信息。

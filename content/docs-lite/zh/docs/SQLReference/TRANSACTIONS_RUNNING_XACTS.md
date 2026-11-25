@@ -1,3 +1,8 @@
+---
+description: Introduces TRANSACTIONS\_RUNNING\_XACTS in openGauss, covering .
+keywords: [openGauss, TRANSACTIONS_RUNNING_XACTS]
+---
+
 # TRANSACTIONS\_RUNNING\_XACTS<a name="ZH-CN_TOPIC_0000001153229920"></a>
 
 显示当前节点运行事务的信息。

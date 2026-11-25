@@ -1,3 +1,8 @@
+---
+description: 指明中间结果集的大小，支持绝对值和相对值的hint。.
+keywords: [openGauss, 行数的Hint]
+---
+
 # 行数的Hint<a name="ZH-CN_TOPIC_0289900383"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137731_zh-cn_topic_0237121535_section290819468377"></a>
@@ -38,5 +43,5 @@ select /*+ rows(store_sales store_returns *50) */ i_product_name product_name ..
 
 该hint表示：store\_sales，store\_returns关联的结果集估算行数在原估算行数基础上乘以50。生成计划如下所示：
 
-![](figures/zh-cn_image_0289900697.png)
+![示例](figures/zh-cn_image_0289900697.png)
 

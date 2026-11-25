@@ -1,3 +1,8 @@
+---
+description: javax.naming.spi.InitialContextFactory是初始连接上下文工厂接口。.
+keywords: [openGauss, javax.naming.spi.InitialContextFactory]
+---
+
 # javax.naming.spi.InitialContextFactory<a name="ZH-CN_TOPIC_0242371432"></a>
 
 javax.naming.spi.InitialContextFactory是初始连接上下文工厂接口。

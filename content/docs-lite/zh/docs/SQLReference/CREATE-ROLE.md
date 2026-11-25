@@ -1,3 +1,8 @@
+---
+description: Introduces CREATE ROLE in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, CREATE ROLE]
+---
+
 # CREATE ROLE<a name="ZH-CN_TOPIC_0289900481"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136858_zh-cn_topic_0237122112_zh-cn_topic_0059778189_s088f05fb7ae447c5b4c28bf78f6a0a56"></a>

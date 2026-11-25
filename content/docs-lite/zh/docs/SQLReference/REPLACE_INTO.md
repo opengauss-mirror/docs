@@ -1,3 +1,8 @@
+---
+description: REPLACE INTO 向表中插入新数据或删除表中原来的数据并插入新的数据.
+keywords: [openGauss, REPLACE INTO]
+---
+
 # REPLACE INTO
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>

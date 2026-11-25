@@ -1,3 +1,8 @@
+---
+description: PG\_TS\_CONFIG\_MAP系统表包含为每个文本搜索配置的解析器的每个输出符号类型，显示哪个文本搜索字典应该被咨询、以什么顺序搜索的记录。.
+keywords: [openGauss, PG_TS_CONFIG_MAP]
+---
+
 # PG\_TS\_CONFIG\_MAP<a name="ZH-CN_TOPIC_0289900785"></a>
 
 PG\_TS\_CONFIG\_MAP系统表包含为每个文本搜索配置的解析器的每个输出符号类型，显示哪个文本搜索字典应该被咨询、以什么顺序搜索的记录。

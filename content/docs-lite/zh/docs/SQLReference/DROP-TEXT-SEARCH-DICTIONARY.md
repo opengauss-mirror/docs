@@ -1,3 +1,8 @@
+---
+description: Introduces DROP TEXT SEARCH DICTIONARY in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP TEXT SEARCH DICTIONARY]
+---
+
 # DROP TEXT SEARCH DICTIONARY<a name="ZH-CN_TOPIC_0289900800"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137105_zh-cn_topic_0237122155_zh-cn_topic_0059777936_sb9efc89be09141c3b113326dd8c2b35d"></a>

@@ -1,3 +1,8 @@
+---
+description: 它返回可用于重新创建命名触发器的确切字符串。.
+keywords: [openGauss, SHOW CREATE TRIGGER]
+---
+
 # SHOW CREATE TRIGGER
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>

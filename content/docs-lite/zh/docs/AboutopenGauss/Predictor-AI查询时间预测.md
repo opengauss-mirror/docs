@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 1.0.0版本开始引入。.
+keywords: [openGauss, Predictor AI查询时间预测]
+---
+
 # Predictor: AI查询时间预测<a name="ZH-CN_TOPIC_0000001151995065"></a>
 
 ## 可获得性<a name="section56086982"></a>

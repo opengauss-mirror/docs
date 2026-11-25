@@ -1,3 +1,8 @@
+---
+description: 重建表和索引的物理空间，释放可回收空间给操作系统，并更新相关表的统计信息。.
+keywords: [openGauss, OPTIMIZE TABLE]
+---
+
 # OPTIMIZE TABLE 
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>

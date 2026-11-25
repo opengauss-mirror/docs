@@ -1,3 +1,8 @@
+---
+description: 执行当前存储过程，直到下一个断点或结束，返回执行的下一条的行数和对应query。.
+keywords: [openGauss, DBE_PLDEBUGGER.continue]
+---
+
 # DBE\_PLDEBUGGER.continue<a name="ZH-CN_TOPIC_0000001147937843"></a>
 
 执行当前存储过程，直到下一个断点或结束，返回执行的下一条的行数和对应query。

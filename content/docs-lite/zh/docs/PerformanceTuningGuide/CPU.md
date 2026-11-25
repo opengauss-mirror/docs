@@ -1,3 +1,8 @@
+---
+description: 通过top命令查看openGauss内节点CPU使用情况，分析是否存在由于CPU负载过高导致的性能瓶颈。.
+keywords: [openGauss, CPU]
+---
+
 # CPU<a name="ZH-CN_TOPIC_0289900497"></a>
 
 通过top命令查看openGauss内节点CPU使用情况，分析是否存在由于CPU负载过高导致的性能瓶颈。

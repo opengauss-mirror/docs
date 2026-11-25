@@ -1,3 +1,8 @@
+---
+description: GS\_MATVIEWS视图提供了关于数据库中每一个物化视图的信息。.
+keywords: [openGauss, GS_MATVIEWS]
+---
+
 # GS\_MATVIEWS<a name="ZH-CN_TOPIC_0000001086469042"></a>
 
 GS\_MATVIEWS视图提供了关于数据库中每一个物化视图的信息。

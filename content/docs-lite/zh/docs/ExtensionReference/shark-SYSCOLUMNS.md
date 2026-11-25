@@ -1,3 +1,8 @@
+---
+description: SYSCOLUMNS视图为每个表和视图中的每列返回一行，并为数据库中的存储过程的每个参数返回一行。.
+keywords: [openGauss, SYSCOLUMNS]
+---
+
 # SYSCOLUMNS
 
 SYSCOLUMNS视图为每个表和视图中的每列返回一行，并为数据库中的存储过程的每个参数返回一行。

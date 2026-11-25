@@ -1,3 +1,8 @@
+---
+description: Introduces PQnfields in openGauss, covering 功能描述, 原型, 参数.
+keywords: [openGauss, PQnfields]
+---
+
 # PQnfields<a name="ZH-CN_TOPIC_0242380700"></a>
 
 ## 功能描述<a name="zh-cn_topic_0059778058_sa9bd6e837fd4458199f7b677e876f4a9"></a>

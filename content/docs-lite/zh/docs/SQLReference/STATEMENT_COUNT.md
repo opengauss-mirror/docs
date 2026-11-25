@@ -1,3 +1,8 @@
+---
+description: 显示数据库当前节点当前时刻执行的五类语句（SELECT、INSERT、UPDATE、DELETE、MERGE INTO）和（DDL、DML、DCL）统计信息。.
+keywords: [openGauss, STATEMENT_COUNT]
+---
+
 # STATEMENT\_COUNT<a name="ZH-CN_TOPIC_0289900883"></a>
 
 显示数据库当前节点当前时刻执行的五类语句（SELECT、INSERT、UPDATE、DELETE、MERGE INTO）和（DDL、DML、DCL）统计信息。

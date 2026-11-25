@@ -1,3 +1,8 @@
+---
+description: 本教程通过Python编程语言，支持将本地Milvus数据迁移至openGauss DataVec实例中.
+keywords: [openGauss, 从Milvus迁移至openGauss DataVec]
+---
+
 # 从Milvus迁移至openGauss DataVec
 
 本教程通过Python编程语言，支持将本地Milvus数据迁移至openGauss DataVec实例中

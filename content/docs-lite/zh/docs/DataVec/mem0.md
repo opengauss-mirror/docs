@@ -1,3 +1,8 @@
+---
+description: Mem0为大型语言模型提供了一个智能、自我改进的内存层，从而实现跨应用程序的个性化AI体验。.
+keywords: [openGauss, Mem0  openGauss]
+---
+
 # Mem0 + openGauss
 Mem0为大型语言模型提供了一个智能、自我改进的内存层，从而实现跨应用程序的个性化AI体验。
 

@@ -1,3 +1,8 @@
+---
+description: 修改表分区，包括增删分区、切割分区、合成分区以及修改分区属性等。.
+keywords: [openGauss, ALTER TABLE PARTITION]
+---
+
 # ALTER TABLE PARTITION
 
 ## 功能描述<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_s4954d450a2e8434aa3abac355bac38e6"></a>

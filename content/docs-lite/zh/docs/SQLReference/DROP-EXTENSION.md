@@ -1,3 +1,8 @@
+---
+description: Introduces DROP EXTENSION in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP EXTENSION]
+---
+
 # DROP EXTENSION<a name="ZH-CN_TOPIC_0000001127565047"></a>
 
 ## 功能描述<a name="section173831846163116"></a>

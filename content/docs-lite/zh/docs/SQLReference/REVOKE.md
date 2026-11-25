@@ -1,3 +1,8 @@
+---
+description: REVOKE用于撤销一个或多个角色的权限。.
+keywords: [openGauss, REVOKE]
+---
+
 # REVOKE<a name="ZH-CN_TOPIC_0289900263"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137669_zh-cn_topic_0237122179_zh-cn_topic_0059779274_sda1d739a0a8c460c93bc099fb8208944"></a>

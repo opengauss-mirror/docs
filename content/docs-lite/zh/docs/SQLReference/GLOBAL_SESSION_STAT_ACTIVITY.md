@@ -1,3 +1,8 @@
+---
+description: 显示openGauss内各节点上正在运行的线程相关的信息。.
+keywords: [openGauss, GLOBAL_SESSION_STAT_ACTIVITY]
+---
+
 # GLOBAL\_SESSION\_STAT\_ACTIVITY<a name="ZH-CN_TOPIC_0289900735"></a>
 
 显示openGauss内各节点上正在运行的线程相关的信息。

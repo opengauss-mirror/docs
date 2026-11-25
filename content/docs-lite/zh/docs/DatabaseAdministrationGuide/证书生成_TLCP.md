@@ -1,3 +1,8 @@
+---
+description: 在测试环境下，用户可以用通过以下方式进行数字证书测试。在客户的运行环境中，请使用从CA认证中心申请的数字证书。.
+keywords: [openGauss, 证书生成]
+---
+
 # 证书生成<a name="ZH-CN_TOPIC_0289900216"></a>
 
 ## 操作场景<a name="zh-cn_topic_0283137709_zh-cn_topic_0237121096_zh-cn_topic_0059777789_section10143135711718"></a>

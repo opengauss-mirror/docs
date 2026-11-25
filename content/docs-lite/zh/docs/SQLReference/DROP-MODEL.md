@@ -1,3 +1,8 @@
+---
+description: Introduces DROP MODEL in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP MODEL]
+---
+
 # DROP MODEL<a name="ZH-CN_TOPIC_0000001148169736"></a>
 
 ## 功能描述<a name="section201561822201319"></a>

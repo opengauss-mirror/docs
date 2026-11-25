@@ -1,3 +1,8 @@
+---
+description: java.sql.Connection是数据库连接接口。.
+keywords: [openGauss, JDBC, Connection]
+---
+
 # java.sql.Connection<a name="ZH-CN_TOPIC_0289900351"></a>
 
 java.sql.Connection是数据库连接接口。

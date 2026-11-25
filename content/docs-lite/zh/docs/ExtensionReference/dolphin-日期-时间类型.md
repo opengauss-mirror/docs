@@ -1,3 +1,8 @@
+---
+description: 相比于原始的openGauss，dolphin对于日期/时间类型的修改主要为:.
+keywords: [openGauss, ]
+---
+
 ## 兼容MySQL时间类型
 
 相比于原始的openGauss，dolphin对于日期/时间类型的修改主要为: 

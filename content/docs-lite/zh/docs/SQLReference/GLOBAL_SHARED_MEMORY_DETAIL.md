@@ -1,3 +1,8 @@
+---
+description: 查询openGauss中所有正常节点下的共享内存上下文的使用信息。.
+keywords: [openGauss, GLOBAL_SHARED_MEMORY_DETAIL]
+---
+
 # GLOBAL\_SHARED\_MEMORY\_DETAIL<a name="ZH-CN_TOPIC_0289900284"></a>
 
 查询openGauss中所有正常节点下的共享内存上下文的使用信息。

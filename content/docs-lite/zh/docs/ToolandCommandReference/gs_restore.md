@@ -1,3 +1,8 @@
+---
+description: gs\_restore是openGauss提供的针对gs\_dump导出数据的导入工具。通过此工具可将gs\_dump导出生成的文件进行导入。.
+keywords: [openGauss, gs_restore]
+---
+
 # gs\_restore<a name="ZH-CN_TOPIC_0304555559"></a>
 
 ## 背景信息<a name="zh-cn_topic_0059777561_section182531928123515"></a>

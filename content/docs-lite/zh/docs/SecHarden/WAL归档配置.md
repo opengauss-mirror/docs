@@ -1,3 +1,8 @@
+---
+description: WAL（Write Ahead Log）即预写式日志，是数据库用于恢复事务持久性的一种机制。wal_level决定了写入WAL的信息量。为了在备机上开启只读查询，wal_level需要在主机上设置成hot_standby，并且备机设置hot_standby参数为on。.
+keywords: [openGauss, WAL归档配置]
+---
+
 # WAL归档配置
 
 ## 确保WAL信息记录级别配置正确

@@ -1,3 +1,8 @@
+---
+description: 高并发执行SQL，报错"sorry, too many clients already"；或报无法创建线程、无法fork进程等错误。.
+keywords: [openGauss, 高并发报错too many clients already或无法创建线程]
+---
+
 # 高并发报错"too many clients already"或无法创建线程<a name="ZH-CN_TOPIC_0291615108"></a>
 
 ## 问题现象<a name="section1556012104711"></a>

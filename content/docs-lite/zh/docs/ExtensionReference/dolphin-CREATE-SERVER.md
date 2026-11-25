@@ -1,3 +1,8 @@
+---
+description: Introduces CREATE SERVER in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, CREATE SERVER]
+---
+
 # CREATE SERVER
 
 ## 功能描述<a name="zh-cn_topic_0283137586_section1087614114391"></a>

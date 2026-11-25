@@ -1,3 +1,8 @@
+---
+description: CopyManager是openGauss JDBC驱动中提供的一个API接口类，用于批量向openGauss中导入数据。.
+keywords: [openGauss, CopyManager]
+---
+
 # CopyManager<a name="ZH-CN_TOPIC_0289900143"></a>
 
 CopyManager是openGauss JDBC驱动中提供的一个API接口类，用于批量向openGauss中导入数据。

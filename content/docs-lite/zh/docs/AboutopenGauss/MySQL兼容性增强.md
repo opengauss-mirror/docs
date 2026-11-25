@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 3.0.0版本开始引入。.
+keywords: [openGauss, MySQL兼容性增强]
+---
+
 
 # MySQL兼容性增强
 

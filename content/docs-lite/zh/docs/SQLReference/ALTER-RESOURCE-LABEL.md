@@ -1,3 +1,8 @@
+---
+description: Introduces ALTER RESOURCE LABEL in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, ALTER RESOURCE LABEL]
+---
+
 # ALTER RESOURCE LABEL<a name="ZH-CN_TOPIC_0306525301"></a>
 
 ## 功能描述<a name="zh-cn_topic_0059778839_s878bf4f1569c4d2f87e056f26372448e"></a>

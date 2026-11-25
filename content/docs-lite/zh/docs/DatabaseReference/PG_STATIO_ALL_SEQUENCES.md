@@ -1,3 +1,8 @@
+---
+description: PG\_STATIO\_ALL\_SEQUENCES视图包含当前数据库中每个序列的I/O的统计信息。.
+keywords: [openGauss, PG_STATIO_ALL_SEQUENCES]
+---
+
 # PG\_STATIO\_ALL\_SEQUENCES<a name="ZH-CN_TOPIC_0289900183"></a>
 
 PG\_STATIO\_ALL\_SEQUENCES视图包含当前数据库中每个序列的I/O的统计信息。

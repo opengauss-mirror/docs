@@ -1,3 +1,8 @@
+---
+description: Introduces OS\_THREADS in openGauss, covering .
+keywords: [openGauss, OS_THREADS]
+---
+
 # OS\_THREADS<a name="ZH-CN_TOPIC_0289900354"></a>
 
 提供当前节点下所有线程的状态信息。

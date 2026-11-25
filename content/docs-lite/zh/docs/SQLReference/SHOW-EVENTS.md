@@ -1,3 +1,8 @@
+---
+description: 显示指定schema下所有定时任务的基本信息。.
+keywords: [openGauss, SHOW EVENTS]
+---
+
 # SHOW EVENTS<a name="ZH-CN_TOPIC_0000001503604049"></a>
 
 ## 功能描述<a name="section5400959952"></a>

@@ -1,3 +1,8 @@
+---
+description: 1. 下载TPCC标准测试工具BenchmarkSQL5.0。.
+keywords: [openGauss, 测试TPCC性能]
+---
+
 # 测试TPCC性能<a name="ZH-CN_TOPIC_0289900017"></a>
 
 1.  下载TPCC标准测试工具BenchmarkSQL5.0**。**
@@ -243,9 +248,9 @@
 
     创建完成后的效果如下图：
 
-    ![](figures/zh-cn_image_0289900596.png)
+    ![测试TPCC性能](figures/zh-cn_image_0289900596.png)
 
-    ![](figures/zh-cn_image_0289899860.png)
+    ![测试TPCC性能](figures/zh-cn_image_0289899860.png)
 
 9.  运行TPCC程序。
 
@@ -255,7 +260,7 @@
 
     运行后的结果如下图，tpmC部分即为测试结果。
 
-    ![](figures/zh-cn_image_0289899998.png)
+    ![测试TPCC性能](figures/zh-cn_image_0289899998.png)
 
 10. <a name="zh-cn_topic_0283137363_zh-cn_topic_0263913274_li202511145123814"></a>验证数据测试过程正确性。
 
@@ -263,7 +268,7 @@
 
     下图是最佳性能测试情况下所有CPU的使用情况，其中黄线框中的是处理网络中断的CPU。
 
-    ![](figures/zh-cn_image_0289900329.png)
+    ![测试TPCC性能](figures/zh-cn_image_0289900329.png)
 
 11. 如果为了避免数据的干扰，需要进行重新测试，可以通过[步骤7](#zh-cn_topic_0283137363_zh-cn_topic_0263913274_li11139125793619)备份的数据通过拷贝的方式恢复数据。重复[步骤8](#zh-cn_topic_0283137363_zh-cn_topic_0263913274_li1840654753618)\~[步骤10](#zh-cn_topic_0283137363_zh-cn_topic_0263913274_li202511145123814)可以重新进行测试。
 

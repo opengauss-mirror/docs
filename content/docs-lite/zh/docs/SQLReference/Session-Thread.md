@@ -1,3 +1,8 @@
+---
+description: Introduces Session/Thread in openGauss, covering .
+keywords: [openGauss, SessionThread]
+---
+
 # Session/Thread<a name="ZH-CN_TOPIC_0289900210"></a>
 
 -   **[SESSION\_STAT](SESSION_STAT.md)**  

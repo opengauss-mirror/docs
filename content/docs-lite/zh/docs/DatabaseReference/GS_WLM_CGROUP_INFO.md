@@ -1,3 +1,8 @@
+---
+description: GS\_WLM\_CGROUP\_INFO视图显示当前执行作业的控制组的信息。.
+keywords: [openGauss, GS_WLM_CGROUP_INFO]
+---
+
 # GS\_WLM\_CGROUP\_INFO<a name="ZH-CN_TOPIC_0289900833"></a>
 
 GS\_WLM\_CGROUP\_INFO视图显示当前执行作业的控制组的信息。

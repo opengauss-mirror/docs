@@ -1,3 +1,8 @@
+---
+description: 执行存储过程中当前的SQL直到下一个断点触发或执行到上层栈的下一行。.
+keywords: [openGauss, DBE_PLDEBUGGER.finish]
+---
+
 # DBE\_PLDEBUGGER.finish<a name="ZH-CN_TOPIC_0000001152478332"></a>
 
 执行存储过程中当前的SQL直到下一个断点触发或执行到上层栈的下一行。

@@ -1,3 +1,8 @@
+---
+description: 返回与给定列号相关联的列名。列号从0开始。调用者不应该直接释放该结果。它将在相关的PGresult句柄被传递给PQclear之后被释放。.
+keywords: [openGauss, PQfname]
+---
+
 # PQfname<a name="ZH-CN_TOPIC_0242380698"></a>
 
 ## 功能描述<a name="zh-cn_topic_0059778058_sa9bd6e837fd4458199f7b677e876f4a9"></a>

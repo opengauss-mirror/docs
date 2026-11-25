@@ -1,3 +1,8 @@
+---
+description: PG\_COMM\_DELAY视图展示节点的通信库时延状态。.
+keywords: [openGauss, PG_COMM_DELAY]
+---
+
 # PG\_COMM\_DELAY<a name="ZH-CN_TOPIC_0311526902"></a>
 
 PG\_COMM\_DELAY视图展示节点的通信库时延状态。

@@ -1,3 +1,8 @@
+---
+description: DECLARE命令既可以定义一个游标，用于在一个大的查询里面检索少数几行数据，也可以作为一个匿名块的开始。.
+keywords: [openGauss, DECLARE]
+---
+
 # DECLARE<a name="ZH-CN_TOPIC_0289900564"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137571_zh-cn_topic_0237122130_zh-cn_topic_0059777616_sf3fcf0507ea74a0ba4c4b4cbf0a0a8ba"></a>

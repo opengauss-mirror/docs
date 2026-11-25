@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 3.1.0版本开始引入。.
+keywords: [openGauss, 支持SQL PATCH]
+---
+
 # 支持SQL PATCH<a name="ZH-CN_TOPIC_0000001266435066"></a>
 
 ## 可获得性<a name="section1964504520318"></a>

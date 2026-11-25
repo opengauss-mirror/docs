@@ -1,3 +1,8 @@
+---
+description: 在将参数开关dolphin.b_compatibility_mode设置为on时，表示启用四则运算，以及JSON类型操作符的MySQL兼容。相比于原始的openGauss，dolphin对于JSON操作符的修改主要为支持:.
+keywords: [openGauss, JSON操作符兼容]
+---
+
 # JSON操作符兼容
 在将参数开关dolphin.b_compatibility_mode设置为on时，表示启用四则运算，以及JSON类型操作符的MySQL兼容。相比于原始的openGauss，dolphin对于JSON操作符的修改主要为支持:
 ## 一元左操作符

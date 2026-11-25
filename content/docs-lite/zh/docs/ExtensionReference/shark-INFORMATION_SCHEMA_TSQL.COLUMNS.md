@@ -1,3 +1,8 @@
+---
+description: COLUMNS视图返回数据库中的列信息。.
+keywords: [openGauss, COLUMNS]
+---
+
 # COLUMNS
 
 COLUMNS视图返回数据库中的列信息。

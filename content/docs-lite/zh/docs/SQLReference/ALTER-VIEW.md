@@ -1,3 +1,8 @@
+---
+description: ALTER VIEW更改视图的各种辅助属性。（如果用户是更改视图的查询定义，要使用CREATE OR REPLACE VIEW。）.
+keywords: [openGauss, ALTER VIEW]
+---
+
 # ALTER VIEW<a name="ZH-CN_TOPIC_0289900061"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_section1274412112511"></a>

@@ -1,3 +1,8 @@
+---
+description: SUMMARY\_STATIO\_SYS\_SEQUENCES视图显示openGauss内汇聚的命名空间中所有系统序列的IO状态信息。.
+keywords: [openGauss, SUMMARY_STATIO_SYS_SEQUENCES]
+---
+
 # SUMMARY\_STATIO\_SYS\_SEQUENCES<a name="ZH-CN_TOPIC_0289900324"></a>
 
 SUMMARY\_STATIO\_SYS\_SEQUENCES视图显示openGauss内汇聚的命名空间中所有系统序列的IO状态信息。

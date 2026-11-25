@@ -1,3 +1,8 @@
+---
+description: TPCC运行时，注入磁盘满故障，TPCC卡住，故障消除后，TPCC自动续跑。.
+keywords: [openGauss, TPCC运行时注入磁盘满故障TPCC卡住的问题]
+---
+
 # TPCC运行时，注入磁盘满故障，TPCC卡住的问题<a name="ZH-CN_TOPIC_0289900262"></a>
 
 ## 问题现象<a name="zh-cn_topic_0283136782_section526616331423"></a>

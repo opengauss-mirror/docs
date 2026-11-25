@@ -1,3 +1,8 @@
+---
+description: 从发布包中获取，包名为openGauss-xxxx-操作系统版本号-64bit-Python.tar.gz。.
+keywords: [openGauss, Psycopg包]
+---
+
 # Psycopg包<a name="ZH-CN_TOPIC_0000001127192085"></a>
 
 从发布包中获取，包名为openGauss-xxxx-操作系统版本号-64bit-Python.tar.gz。

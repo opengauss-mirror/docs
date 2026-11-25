@@ -1,3 +1,8 @@
+---
+description: SYSOBJECTS视图返回数据库中创建的每个对象（例如表、视图、索引、约束、默认值、以及存储过程等）.
+keywords: [openGauss, SYSOBJECTS]
+---
+
 # SYSOBJECTS
 
 SYSOBJECTS视图返回数据库中创建的每个对象（例如表、视图、索引、约束、默认值、以及存储过程等）

@@ -1,3 +1,8 @@
+---
+description: 下面示例演示如何通过CopyManager从MY向openGauss进行数据迁移。.
+keywords: [openGauss, 示例从MY迁移数据]
+---
+
 # 示例：从MY迁移数据<a name="ZH-CN_TOPIC_0289900689"></a>
 
 下面示例演示如何通过CopyManager从MY向openGauss进行数据迁移。

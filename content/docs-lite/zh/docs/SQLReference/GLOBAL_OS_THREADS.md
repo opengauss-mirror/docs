@@ -1,3 +1,8 @@
+---
+description: 提供openGauss中所有正常节点下的线程状态信息。.
+keywords: [openGauss, GLOBAL_OS_THREADS]
+---
+
 # GLOBAL\_OS\_THREADS<a name="ZH-CN_TOPIC_0289900599"></a>
 
 提供openGauss中所有正常节点下的线程状态信息。

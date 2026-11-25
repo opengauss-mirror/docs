@@ -1,3 +1,8 @@
+---
+description: 相比于原始的openGauss，dolphin对于字符类型的修改主要为：.
+keywords: [openGauss, 字符类型]
+---
+
 # 字符类型
 
 相比于原始的openGauss，dolphin对于字符类型的修改主要为：

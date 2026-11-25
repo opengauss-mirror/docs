@@ -1,3 +1,8 @@
+---
+description: 用户定义对象和系统对象的所有列的集合。.
+keywords: [openGauss, ALL_COLUMNS]
+---
+
 # ALL_COLUMNS
 
 用户定义对象和系统对象的所有列的集合。

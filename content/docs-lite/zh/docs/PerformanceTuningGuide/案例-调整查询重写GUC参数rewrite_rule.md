@@ -1,3 +1,8 @@
+---
+description: rewrite\_rule包含了多个查询重写规则：magicset、partialpush、uniquecheck、disablerep、intargetlist、predpush。下面简要说明一下其中重要的几个规则的使用场景：.
+keywords: [openGauss, 案例调整查询重写GUC参数rewrite_rule]
+---
+
 # 案例：调整查询重写GUC参数rewrite\_rule<a name="ZH-CN_TOPIC_0000001086786554"></a>
 
 rewrite\_rule包含了多个查询重写规则：magicset、partialpush、uniquecheck、disablerep、intargetlist、predpush。下面简要说明一下其中重要的几个规则的使用场景：

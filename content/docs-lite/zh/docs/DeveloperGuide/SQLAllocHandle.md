@@ -1,3 +1,8 @@
+---
+description: 分配环境、连接、语句或描述符的句柄，它替代了ODBC 2.x函数SQLAllocEnv、SQLAllocConnect及SQLAllocStmt。.
+keywords: [openGauss, SQLAllocHandle]
+---
+
 # SQLAllocHandle<a name="ZH-CN_TOPIC_0242371438"></a>
 
 ## 功能描述<a name="zh-cn_topic_0238272884_zh-cn_topic_0237120414_zh-cn_topic_0059778058_sa9bd6e837fd4458199f7b677e876f4a9"></a>

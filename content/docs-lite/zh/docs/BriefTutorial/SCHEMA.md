@@ -1,3 +1,8 @@
+---
+description: SCHEMA又称作模式。通过管理SCHEMA，允许多个用户使用同一数据库而不相互干扰，可以将数据库对象组织成易于管理的逻辑组，同时便于将第三方应用添加到相应的SCHEMA下而不引起冲突。.
+keywords: [openGauss, SCHEMA]
+---
+
 # SCHEMA<a name="ZH-CN_TOPIC_0000001255141789"></a>
 
 SCHEMA又称作模式。通过管理SCHEMA，允许多个用户使用同一数据库而不相互干扰，可以将数据库对象组织成易于管理的逻辑组，同时便于将第三方应用添加到相应的SCHEMA下而不引起冲突。

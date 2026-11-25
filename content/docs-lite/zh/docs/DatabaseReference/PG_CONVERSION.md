@@ -1,3 +1,8 @@
+---
+description: PG\_CONVERSION系统表描述编码转换信息。.
+keywords: [openGauss, PG_CONVERSION]
+---
+
 # PG\_CONVERSION<a name="ZH-CN_TOPIC_0289900266"></a>
 
 PG\_CONVERSION系统表描述编码转换信息。

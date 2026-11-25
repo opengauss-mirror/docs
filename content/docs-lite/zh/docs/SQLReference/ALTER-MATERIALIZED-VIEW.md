@@ -1,3 +1,8 @@
+---
+description: 更改一个现有物化视图的多个辅助属性。.
+keywords: [openGauss, ALTER MATERIALIZED VIEW]
+---
+
 # ALTER MATERIALIZED VIEW<a name="ZH-CN_TOPIC_0289900865"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137307_zh-cn_topic_0237122084_zh-cn_topic_0059778428_section1274412112511"></a>

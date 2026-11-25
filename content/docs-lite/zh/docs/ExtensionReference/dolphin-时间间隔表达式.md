@@ -1,3 +1,8 @@
+---
+description: - interval_expr是一个时间间隔表达式，其语法表示为：.
+keywords: [openGauss, 时间间隔表达式]
+---
+
 # 时间间隔表达式
 
 -   interval_expr是一个时间间隔表达式，其语法表示为：

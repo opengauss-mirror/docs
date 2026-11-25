@@ -1,3 +1,8 @@
+---
+description: 查当前外部连接（或内部线程）相关信息。.
+keywords: [openGauss, SHOW PROCESSLIST]
+---
+
 # SHOW PROCESSLIST
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>

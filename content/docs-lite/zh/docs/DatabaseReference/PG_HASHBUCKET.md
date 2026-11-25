@@ -1,3 +1,8 @@
+---
+description: PG\_HASHBUCKET系统表存储hash bucket信息。.
+keywords: [openGauss, PG_HASHBUCKET]
+---
+
 # PG\_HASHBUCKET<a name="ZH-CN_TOPIC_0000001151568200"></a>
 
 PG\_HASHBUCKET系统表存储hash bucket信息。

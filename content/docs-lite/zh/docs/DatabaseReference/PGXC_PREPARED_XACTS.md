@@ -1,3 +1,8 @@
+---
+description: PGXC\_PREPARED\_XACTS视图显示当前处于prepared阶段的两阶段事务。只有system admin和monitor admin用户有权限查看。.
+keywords: [openGauss, PGXC_PREPARED_XACTS]
+---
+
 # PGXC\_PREPARED\_XACTS<a name="ZH-CN_TOPIC_0000001197451547"></a>
 
 PGXC\_PREPARED\_XACTS视图显示当前处于prepared阶段的两阶段事务。只有system admin和monitor admin用户有权限查看。

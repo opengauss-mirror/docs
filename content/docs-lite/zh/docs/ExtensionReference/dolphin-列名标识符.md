@@ -1,3 +1,8 @@
+---
+description: 相比于原始的openGauss，dolphin对于列名标识符的修改为：.
+keywords: [openGauss, 列名标识符]
+---
+
 # 列名标识符
 
 ## 注意事项

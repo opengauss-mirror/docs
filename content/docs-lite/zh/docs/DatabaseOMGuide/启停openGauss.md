@@ -1,3 +1,8 @@
+---
+description: 1. 以操作系统用户omm登录数据库主节点。.
+keywords: [openGauss, 启停openGauss]
+---
+
 # 启停openGauss<a name="ZH-CN_TOPIC_0289897005"></a>
 
 ## 启动openGauss<a name="zh-cn_topic_0283140572_zh-cn_topic_0237088789_zh-cn_topic_0059777680_se84dd72782a34e9b8b1fb962d2842afa"></a>

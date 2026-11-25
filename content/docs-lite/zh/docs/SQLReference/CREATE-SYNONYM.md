@@ -1,3 +1,8 @@
+---
+description: 创建一个同义词对象。同义词是数据库对象的别名，用于记录与其他数据库对象名间的映射关系，用户可以使用同义词访问关联的数据库对象。.
+keywords: [openGauss, CREATE SYNONYM]
+---
+
 # CREATE SYNONYM<a name="ZH-CN_TOPIC_0289900787"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136599_zh-cn_topic_0237122116_zh-cn_topic_0059778169_s0867185fef0f4a228532d432b598cb26"></a>

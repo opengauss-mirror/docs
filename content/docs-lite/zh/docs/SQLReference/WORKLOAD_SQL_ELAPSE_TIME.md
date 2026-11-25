@@ -1,3 +1,8 @@
+---
+description: WORKLOAD\_SQL\_ELAPSE\_TIME用来统计workload（业务负载）上的SUID信息。.
+keywords: [openGauss, WORKLOAD_SQL_ELAPSE_TIME]
+---
+
 # WORKLOAD\_SQL\_ELAPSE\_TIME<a name="ZH-CN_TOPIC_0289901006"></a>
 
 WORKLOAD\_SQL\_ELAPSE\_TIME用来统计workload（业务负载）上的SUID信息。

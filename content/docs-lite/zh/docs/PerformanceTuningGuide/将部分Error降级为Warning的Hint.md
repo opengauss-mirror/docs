@@ -1,3 +1,8 @@
+---
+description: 指定执行INSERT、UPDATE语句时可将部分Error降级为Warning，且不影响语句执行完成的hint。.
+keywords: [openGauss, 将部分Error降级为Warning的Hint]
+---
+
 # 将部分Error降级为Warning的Hint<a name="ZH-CN_TOPIC_0245374572"></a>
 
 ## 功能描述<a name="zh-cn_topic_0237121537_section290819468377"></a>

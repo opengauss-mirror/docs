@@ -1,3 +1,8 @@
+---
+description: Introduces CREATE FOREIGN DATA WRAPPER in openGauss, covering 功能描述, 语法格式, 参数说明.
+keywords: [openGauss, CREATE FOREIGN DATA WRAPPER]
+---
+
 # CREATE FOREIGN DATA WRAPPER
 
 ## 功能描述

@@ -1,3 +1,8 @@
+---
+description: 显示外部表的列信息。该视图只有sysadmin权限可以查看。.
+keywords: [openGauss, _PG_FOREIGN_TABLE_COLUMNS]
+---
+
 # \_PG\_FOREIGN\_TABLE\_COLUMNS<a name="ZH-CN_TOPIC_0310260669"></a>
 
 显示外部表的列信息。该视图只有sysadmin权限可以查看。

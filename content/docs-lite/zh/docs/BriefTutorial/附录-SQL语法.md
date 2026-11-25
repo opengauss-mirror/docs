@@ -1,3 +1,8 @@
+---
+description: Introduces 附录：SQL语法 in openGauss, covering ABORT, ALTER AUDIT POLICY, ALTER DATA SOURCE.
+keywords: [openGauss, 附录SQL语法]
+---
+
 # 附录：SQL语法<a name="ZH-CN_TOPIC_0000001210461834"></a>
 
 ## ABORT<a name="section49831237711"></a>

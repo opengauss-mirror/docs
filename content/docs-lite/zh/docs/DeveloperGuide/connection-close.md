@@ -1,3 +1,8 @@
+---
+description: Introduces connection.close\(\) in openGauss, covering 功能描述, 原型, 参数.
+keywords: [openGauss, connection.close]
+---
+
 # connection.close\(\)<a name="ZH-CN_TOPIC_0000001127310749"></a>
 
 ## 功能描述<a name="section5708152714306"></a>

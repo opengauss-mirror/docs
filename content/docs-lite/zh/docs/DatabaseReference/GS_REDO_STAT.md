@@ -1,3 +1,8 @@
+---
+description: GS\_REDO\_STAT视图用于统计会话线程日志回放情况。.
+keywords: [openGauss, GS_REDO_STAT]
+---
+
 # GS\_REDO\_STAT<a name="ZH-CN_TOPIC_0289900539"></a>
 
 GS\_REDO\_STAT视图用于统计会话线程日志回放情况。

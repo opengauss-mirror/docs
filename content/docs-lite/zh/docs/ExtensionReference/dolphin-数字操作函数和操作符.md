@@ -1,3 +1,8 @@
+---
+description: 相比于原始的openGauss，dolphin对于数字操作函数和操作符的修改主要为:.
+keywords: [openGauss, 数字操作函数和操作符]
+---
+
 # 数字操作函数和操作符
 
 相比于原始的openGauss，dolphin对于数字操作函数和操作符的修改主要为:

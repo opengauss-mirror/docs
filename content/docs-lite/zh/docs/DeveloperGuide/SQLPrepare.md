@@ -1,3 +1,8 @@
+---
+description: Introduces SQLPrepare in openGauss, covering 功能描述, 原型, 参数.
+keywords: [openGauss, SQLPrepare]
+---
+
 # SQLPrepare<a name="ZH-CN_TOPIC_0242371452"></a>
 
 ## 功能描述<a name="zh-cn_topic_0238272898_zh-cn_topic_0237120428_zh-cn_topic_0059779125_s0d00013620f7443fb1bb6deca04314c8"></a>

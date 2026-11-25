@@ -1,3 +1,8 @@
+---
+description: - 在使用驱动之前，需要做如下操作：.
+keywords: [openGauss, 加载驱动]
+---
+
 # 加载驱动<a name="ZH-CN_TOPIC_0000001080050160"></a>
 
 -   在使用驱动之前，需要做如下操作：

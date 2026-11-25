@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_CONFIG\_SETTINGS显示各节点数据库运行时参数的相关信息。.
+keywords: [openGauss, GLOBAL_CONFIG_SETTINGS]
+---
+
 # GLOBAL\_CONFIG\_SETTINGS<a name="ZH-CN_TOPIC_0289900503"></a>
 
 GLOBAL\_CONFIG\_SETTINGS显示各节点数据库运行时参数的相关信息。

@@ -1,3 +1,8 @@
+---
+description: debug端调试过程中，调用add\_breakpoint增加新的断点。如果返回-1则说明指定的断点不合法，请参考DBE\_PLDEBUGGER.info\_code的canbreak字段确定断点合适的位置。.
+keywords: [openGauss, DBE_PLDEBUGGER.add_breakpoint]
+---
+
 # DBE\_PLDEBUGGER.add\_breakpoint<a name="ZH-CN_TOPIC_0000001115926210"></a>
 
 debug端调试过程中，调用add\_breakpoint增加新的断点。如果返回-1则说明指定的断点不合法，请参考[DBE\_PLDEBUGGER.info\_code](DBE_PLDEBUGGER-info_code.md)的canbreak字段确定断点合适的位置。

@@ -1,3 +1,8 @@
+---
+description: REFRESH MATERIALIZED VIEW会以全量刷新的方式对物化视图进行刷新。.
+keywords: [openGauss, REFRESH MATERIALIZED VIEW]
+---
+
 # REFRESH MATERIALIZED VIEW<a name="ZH-CN_TOPIC_0289899926"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136612_zh-cn_topic_0237122161_zh-cn_topic_0059777447_s984b3ec2b84d48bb843629462288417b"></a>

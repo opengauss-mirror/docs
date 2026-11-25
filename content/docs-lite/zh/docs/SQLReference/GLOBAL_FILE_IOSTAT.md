@@ -1,3 +1,8 @@
+---
+description: 得到所有节点上的数据文件IO 统计信息。.
+keywords: [openGauss, GLOBAL_FILE_IOSTAT]
+---
+
 # GLOBAL\_FILE\_IOSTAT<a name="ZH-CN_TOPIC_0289900790"></a>
 
 得到所有节点上的数据文件IO 统计信息。

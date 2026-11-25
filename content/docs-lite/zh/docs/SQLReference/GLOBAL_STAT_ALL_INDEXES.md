@@ -1,3 +1,8 @@
+---
+description: 将包含各节点数据库中的每个索引行，显示访问特定索引的统计。.
+keywords: [openGauss, GLOBAL_STAT_ALL_INDEXES]
+---
+
 # GLOBAL\_STAT\_ALL\_INDEXES<a name="ZH-CN_TOPIC_0289900519"></a>
 
 将包含各节点数据库中的每个索引行，显示访问特定索引的统计。

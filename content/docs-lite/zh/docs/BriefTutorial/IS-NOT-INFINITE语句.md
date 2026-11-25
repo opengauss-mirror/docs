@@ -1,3 +1,8 @@
+---
+description: 在SELECT和WHERE子句中使用，判断输入数值是否为Infinity。若为非数字，则会转换为数字，若转换失败，则报错。.
+keywords: [openGauss, IS NOT INFINITE]
+---
+
 # IS [NOT] INFINITE<a name="ZH-CN_TOPIC_0000001210141894"></a>
 
 在`SELECT`和`WHERE`子句中使用，判断输入数值是否为`Infinity`。若为非数字，则会转换为数字，若转换失败，则报错。

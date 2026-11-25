@@ -1,3 +1,8 @@
+---
+description: Introduces Lock in openGauss, covering .
+keywords: [openGauss, Lock]
+---
+
 # Lock<a name="ZH-CN_TOPIC_0289900886"></a>
 
 -   **[LOCKS](LOCKS.md)**  

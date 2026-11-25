@@ -1,3 +1,8 @@
+---
+description: 对于以PBE方式执行的查询语句和DML语句，优化器会基于规则、代价、参数等因素选择生成Custom Plan或Generic Plan执行。用户可以通过use\_cplan/use\_gplan的hint指定使用哪种计划执行方式。.
+keywords: [openGauss, Custom Plan和Generic Plan选择的Hint]
+---
+
 # Custom Plan和Generic Plan选择的Hint<a name="ZH-CN_TOPIC_0000001096560522"></a>
 
 ## 功能描述<a name="section290819468377"></a>
@@ -36,7 +41,7 @@ explain execute p(1);
 
 计划如下。可以看到过滤条件为入参的实际值，即此计划为Custom Plan。
 
-![](figures/zh-cn_image_0000001209735947.png)
+![示例](figures/zh-cn_image_0000001209735947.png)
 
 强制使用Generic Plan
 
@@ -48,5 +53,5 @@ explain execute p(1);
 
 计划如下。可以看到过滤条件为待填充的入参，即此计划为Generic Plan。
 
-![](figures/zh-cn_image_0000001209457383.png)
+![示例](figures/zh-cn_image_0000001209457383.png)
 

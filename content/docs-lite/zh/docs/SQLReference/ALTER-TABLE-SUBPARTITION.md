@@ -1,3 +1,8 @@
+---
+description: 修改二级分区表分区，包括增删分区、清空分区、切割分区、移动分区表空间、交换分区、重命名分区，以及修改分区属性等。.
+keywords: [openGauss, ALTER TABLE SUBPARTITION]
+---
+
 # ALTER TABLE SUBPARTITION<a name="ZH-CN_TOPIC_0000001152048640"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_s4954d450a2e8434aa3abac355bac38e6"></a>

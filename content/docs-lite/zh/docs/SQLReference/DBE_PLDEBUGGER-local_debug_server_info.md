@@ -1,3 +1,8 @@
+---
+description: 用于查找当前连接中已经turn\_on的存储过程oid。便于用户确认在调试哪些存储过程，需要通过funcoid和pg\_proc配合使用。.
+keywords: [openGauss, DBE_PLDEBUGGER.local_debug_server_info]
+---
+
 # DBE\_PLDEBUGGER.local\_debug\_server\_info<a name="ZH-CN_TOPIC_0000001148137961"></a>
 
 用于查找当前连接中已经turn\_on的存储过程oid。便于用户确认在调试哪些存储过程，需要通过funcoid和pg\_proc配合使用。

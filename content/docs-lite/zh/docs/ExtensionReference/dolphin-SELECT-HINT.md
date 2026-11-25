@@ -1,3 +1,8 @@
+---
+description: 设置本次查询执行内生效的查询优化相关GUC参数。本章节涉及的是dolphin关于select-hint的语法增强，对内核支持的hint详见使用Plan Hint进行调优.
+keywords: [openGauss, SELECT HINT]
+---
+
 # SELECT HINT
 
 ## 功能描述<a name="section290819468377"></a>

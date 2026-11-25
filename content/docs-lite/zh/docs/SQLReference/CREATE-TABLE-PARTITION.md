@@ -1,3 +1,8 @@
+---
+description: 创建分区表。分区表是把逻辑上的一张表根据某种方案分成几张物理块进行存储，这张逻辑上的表称之为分区表，物理块称之为分区。分区表是一张逻辑表，不存储数据，数据实际是存储在分区上的。.
+keywords: [openGauss, CREATE TABLE PARTITION]
+---
+
 # CREATE TABLE PARTITION<a name="ZH-CN_TOPIC_0289900346"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_section1163224811518"></a>

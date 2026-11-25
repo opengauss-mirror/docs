@@ -1,3 +1,8 @@
+---
+description: 修改表名，包括修改表的schema、重命名表、删除表的权限。.
+keywords: [openGauss, RENAME TABLE]
+---
+
 # RENAME TABLE
 
 ## 功能描述<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s2baab5c876044795a12b5949f22d2144"></a>

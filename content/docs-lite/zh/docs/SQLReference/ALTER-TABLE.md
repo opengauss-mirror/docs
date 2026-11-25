@@ -1,3 +1,8 @@
+---
+description: 修改表，包括修改表的定义、重命名表、重命名表中指定的列、重命名表的约束、设置表的所属模式、添加/更新多个列、打开/关闭行访问控制开关。.
+keywords: [openGauss, ALTER TABLE]
+---
+
 # ALTER TABLE<a name="ZH-CN_TOPIC_0289899912"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s2baab5c876044795a12b5949f22d2144"></a>

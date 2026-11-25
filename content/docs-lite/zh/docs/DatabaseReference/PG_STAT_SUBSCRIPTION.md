@@ -1,3 +1,8 @@
+---
+description: Introduces PG\_STAT\_SUBSCRIPTION in openGauss, covering .
+keywords: [openGauss, PG_STAT_SUBSCRIPTION]
+---
+
 # PG\_STAT\_SUBSCRIPTION<a name="ZH-CN_TOPIC_0000001243798253"></a>
 
 获取订阅的详细同步信息。

@@ -1,3 +1,8 @@
+---
+description: Introduces DROP PUBLICATION in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP PUBLICATION]
+---
+
 # DROP PUBLICATION<a name="ZH-CN_TOPIC_0000001240652289"></a>
 
 ## **功能描述**<a name="section4742194571517"></a>

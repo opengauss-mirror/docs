@@ -1,3 +1,8 @@
+---
+description: PG\_USER\_STATUS系统表提供了访问数据库用户的状态。需要有系统管理员权限才可以访问此系统表.
+keywords: [openGauss, PG_USER_STATUS]
+---
+
 # PG\_USER\_STATUS<a name="ZH-CN_TOPIC_0289900511"></a>
 
 PG\_USER\_STATUS系统表提供了访问数据库用户的状态。需要有系统管理员权限才可以访问此系统表

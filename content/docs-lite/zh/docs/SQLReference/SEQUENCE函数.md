@@ -1,3 +1,8 @@
+---
+description: 序列函数为用户从序列对象中获取后续的序列值提供了简单的多用户安全的方法。.
+keywords: [openGauss, SEQUENCE函数]
+---
+
 # SEQUENCE函数<a name="ZH-CN_TOPIC_0289899881"></a>
 
 序列函数为用户从序列对象中获取后续的序列值提供了简单的多用户安全的方法。

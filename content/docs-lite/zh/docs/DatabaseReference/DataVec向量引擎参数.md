@@ -1,3 +1,8 @@
+---
+description: 参数说明： 使用HNSW索引扫描时的动态候选集大小。.
+keywords: [openGauss, DataVec向量引擎参数]
+---
+
 # DataVec向量引擎参数
 
 ## hnsw_ef_search<a name="section14941640131"></a>

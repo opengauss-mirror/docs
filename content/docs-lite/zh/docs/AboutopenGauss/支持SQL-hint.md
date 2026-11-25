@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 1.1.0版本开始引入。.
+keywords: [openGauss, 支持SQL hint]
+---
+
 # 支持SQL hint<a name="ZH-CN_TOPIC_0000001152195131"></a>
 
 ## 可获得性<a name="section56086982"></a>

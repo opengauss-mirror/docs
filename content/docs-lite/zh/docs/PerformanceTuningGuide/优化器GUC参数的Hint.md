@@ -1,3 +1,8 @@
+---
+description: 设置本次查询执行内生效的查询优化相关GUC参数。hint的推荐使用场景可以参考各guc参数的说明，此处不作赘述。.
+keywords: [openGauss, 优化器GUC参数的Hint]
+---
+
 # 优化器GUC参数的Hint<a name="ZH-CN_TOPIC_0000001096400532"></a>
 
 ## 功能描述<a name="section290819468377"></a>

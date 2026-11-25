@@ -1,3 +1,8 @@
+---
+description: PG\_PROC系统表存储函数或过程的信息。.
+keywords: [openGauss, PG_PROC]
+---
+
 # PG\_PROC<a name="ZH-CN_TOPIC_0289900818"></a>
 
 PG\_PROC系统表存储函数或过程的信息。

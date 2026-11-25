@@ -1,3 +1,8 @@
+---
+description: 返回诊断记录的多个字段的当前值，其中诊断记录包含错误、警告及状态信息。.
+keywords: [openGauss, SQLGetDiagRec]
+---
+
 # SQLGetDiagRec<a name="ZH-CN_TOPIC_0242371454"></a>
 
 ## 功能描述<a name="zh-cn_topic_0238272900_zh-cn_topic_0237120430_zh-cn_topic_0059778032_s0088b32a977e44f5a1e1e2b1523fc51c"></a>

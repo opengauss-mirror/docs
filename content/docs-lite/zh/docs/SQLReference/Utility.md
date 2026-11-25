@@ -1,3 +1,8 @@
+---
+description: - REPLICATION\_STAT.
+keywords: [openGauss, Utility]
+---
+
 # Utility<a name="ZH-CN_TOPIC_0289900805"></a>
 
 -   **[REPLICATION\_STAT](REPLICATION_STAT.md)**  

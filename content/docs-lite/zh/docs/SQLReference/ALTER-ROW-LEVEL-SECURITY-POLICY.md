@@ -1,3 +1,8 @@
+---
+description: 对已存在的行访问控制策略（包括行访问控制策略的名称，行访问控制指定的用户，行访问控制的策略表达式）进行修改。.
+keywords: [openGauss, ALTER ROW LEVEL SECURITY POLICY]
+---
+
 # ALTER ROW LEVEL SECURITY POLICY<a name="ZH-CN_TOPIC_0289900230"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137062_zh-cn_topic_0237122069_section196521854173211"></a>

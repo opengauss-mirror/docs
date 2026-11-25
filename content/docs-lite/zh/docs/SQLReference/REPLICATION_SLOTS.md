@@ -1,3 +1,8 @@
+---
+description: REPLICATION\_SLOTS视图用于查看复制节点的信息。.
+keywords: [openGauss, REPLICATION_SLOTS]
+---
+
 # REPLICATION\_SLOTS<a name="ZH-CN_TOPIC_0289900718"></a>
 
 REPLICATION\_SLOTS视图用于查看复制节点的信息。

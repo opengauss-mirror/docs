@@ -1,3 +1,8 @@
+---
+description: openGauss内汇聚所有的Redo\(WAL）相关的统计信息。.
+keywords: [openGauss, SUMMARY_FILE_REDO_IOSTAT]
+---
+
 # SUMMARY\_FILE\_REDO\_IOSTAT<a name="ZH-CN_TOPIC_0289900618"></a>
 
 openGauss内汇聚所有的Redo\(WAL）相关的统计信息。

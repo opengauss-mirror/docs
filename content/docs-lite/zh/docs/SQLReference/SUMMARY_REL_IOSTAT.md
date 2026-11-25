@@ -1,3 +1,8 @@
+---
+description: 获取所有节点上的数据文件IO 统计信息。.
+keywords: [openGauss, SUMMARY_REL_IOSTAT]
+---
+
 # SUMMARY\_REL\_IOSTAT<a name="ZH-CN_TOPIC_0289900734"></a>
 
 获取所有节点上的数据文件IO 统计信息。

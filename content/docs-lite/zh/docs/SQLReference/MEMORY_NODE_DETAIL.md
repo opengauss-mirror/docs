@@ -1,3 +1,8 @@
+---
+description: Introduces MEMORY\_NODE\_DETAIL in openGauss, covering .
+keywords: [openGauss, MEMORY_NODE_DETAIL]
+---
+
 # MEMORY\_NODE\_DETAIL<a name="ZH-CN_TOPIC_0289900211"></a>
 
 显示某个数据库节点内存使用情况。

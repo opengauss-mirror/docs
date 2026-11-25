@@ -1,3 +1,8 @@
+---
+description: STATIO\_SYS\_SEQUENCES显示命名空间中所有系统序列的IO状态信息。.
+keywords: [openGauss, STATIO_SYS_SEQUENCES]
+---
+
 # STATIO\_SYS\_SEQUENCES<a name="ZH-CN_TOPIC_0289900985"></a>
 
 STATIO\_SYS\_SEQUENCES显示命名空间中所有系统序列的IO状态信息。
