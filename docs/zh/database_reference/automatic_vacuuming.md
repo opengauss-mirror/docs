@@ -95,7 +95,7 @@ keywords: [openGauss, 自动清理, 数据库参考, autovacuum, autovacuum\_mod
 
 该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围**： 整型，最小值为0（表示不会自动进行autovacuum），理论最大值为262143，实际最大值为动态值，计算公式为“262143 - max\_connections的值 - job\_queue\_processes的值 - 辅助线程数 – autovacuum的lancher线程数 - 1”，其中辅助线程数和autovacuum的lancher线程数由两个宏来指定，当前版本的默认值分别为20和2。
+**取值范围**： 整型，最小值为0（表示不会自动进行autovacuum），理论最大值为262143，实际最大值为动态值，计算公式为“262143 - max\_connections的值 - job\_queue\_processes的值 - 辅助线程数 – autovacuum的launcher线程数 - 1”，其中辅助线程数和autovacuum的launcher线程数由两个宏来指定，当前版本的默认值分别为20和2。
 
 **默认值**： 3
 
