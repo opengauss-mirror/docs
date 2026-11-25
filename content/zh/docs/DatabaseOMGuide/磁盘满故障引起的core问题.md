@@ -1,10 +1,15 @@
+---
+description: TPCC运行时，注入磁盘满故障，数据库进程gaussdb core掉，如下图所示。.
+keywords: [openGauss, 磁盘满故障引起的core问题]
+---
+
 # 磁盘满故障引起的core问题
 
 ## 问题现象<a name="zh-cn_topic_0283137100_zh-cn_topic_0059778167_s7a2ed06fefd0448fae90f40fe4291f8d"></a>
 
 TPCC运行时，注入磁盘满故障，数据库进程gaussdb core掉，如下图所示。
 
-![](figures/zh_image_0289900420.png)
+![问题现象](figures/zh_image_0289900420.png)
 
 ## 原因分析<a name="zh-cn_topic_0283137100_zh-cn_topic_0059778167_s74d2dfcb815b4d8ca504c549a923e5ed"></a>
 

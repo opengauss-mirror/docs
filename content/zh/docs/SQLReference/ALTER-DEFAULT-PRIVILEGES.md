@@ -1,3 +1,8 @@
+---
+description: 设置应用于将来创建的对象的权限（这不会影响分配到已有对象中的权限）。.
+keywords: [openGauss, ALTER DEFAULT PRIVILEGES]
+---
+
 # ALTER DEFAULT PRIVILEGES
 
 ## 功能描述<a name="zh-cn_topic_0283136687_zh-cn_topic_0237122057_zh-cn_topic_0059778935_sb6d50f1fe847446bb5943799163d59fb"></a>

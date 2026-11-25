@@ -1,3 +1,8 @@
+---
+description: 使用VACUUM FULL命令对一张表进行清理，清理完成后表大小和清理前一样大。.
+keywords: [openGauss, VACUUM FULL一张表后表文件大小无变化]
+---
+
 # VACUUM FULL一张表后，表文件大小无变化
 
 ## 问题现象<a name="section6396133915314"></a>

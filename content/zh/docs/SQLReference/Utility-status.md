@@ -1,3 +1,8 @@
+---
+description: Utility status包含Replication slot和Replication stat两张表，列名称及描述如下所示。.
+keywords: [openGauss, Utility status]
+---
+
 # Utility status
 
 Utility status包含Replication slot和Replication stat两张表，列名称及描述如下所示。

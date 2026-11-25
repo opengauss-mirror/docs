@@ -1,3 +1,8 @@
+---
+description: PG\_GROUP视图查看数据库认证角色及角色之间的成员关系。.
+keywords: [openGauss, PG_GROUP]
+---
+
 # PG\_GROUP
 
 PG\_GROUP视图查看数据库认证角色及角色之间的成员关系。

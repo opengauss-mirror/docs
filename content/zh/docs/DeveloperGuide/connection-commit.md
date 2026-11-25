@@ -1,3 +1,8 @@
+---
+description: 此方法将当前挂起的事务提交到数据库。.
+keywords: [openGauss, connection.commit]
+---
+
 # connection.commit\(\)
 
 ## 功能描述<a name="section5708152714306"></a>

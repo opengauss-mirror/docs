@@ -1,3 +1,8 @@
+---
+description: debug端调试过程中，调用enable\_breakpoint激活已被禁用的断点。.
+keywords: [openGauss, DBE_PLDEBUGGER.enable_breakpoint]
+---
+
 # DBE\_PLDEBUGGER.enable\_breakpoint
 
 debug端调试过程中，调用enable\_breakpoint激活已被禁用的断点。

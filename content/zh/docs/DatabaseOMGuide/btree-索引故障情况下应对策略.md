@@ -1,3 +1,8 @@
+---
+description: Introduces btree 索引故障情况下应对策略 in openGauss, covering 问题现象, 原因分析, 处理办法.
+keywords: [openGauss, btree 索引故障情况下应对策略]
+---
+
 # btree 索引故障情况下应对策略
 
 ## 问题现象<a name="section14883333175911"></a>

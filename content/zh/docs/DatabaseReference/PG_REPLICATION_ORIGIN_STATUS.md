@@ -1,3 +1,8 @@
+---
+description: Introduces PG\_REPLICATION\_ORIGIN\_STATUS in openGauss, covering .
+keywords: [openGauss, PG_REPLICATION_ORIGIN_STATUS]
+---
+
 # PG\_REPLICATION\_ORIGIN\_STATUS
 
 获取复制源的复制状态。

@@ -1,3 +1,8 @@
+---
+description: 多机查询特性默认是关闭的，需要新增以下GUC配置参数使能插件：.
+keywords: [openGauss, spqplugin使用参考]
+---
+
 # spqplugin使用参考
 
 ## 加载插件

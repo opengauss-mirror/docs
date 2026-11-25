@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 6.0.0版本开始引入。.
+keywords: [openGauss, cm支持双集群备集群switchover]
+---
+
 # cm支持双集群备集群switchover
 
 ## 可获得性<a name="section15406143204715"></a>

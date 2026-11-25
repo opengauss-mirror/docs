@@ -1,3 +1,8 @@
+---
+description: 相比于原始的openGauss，dolphin对于位串函数的修改主要为:.
+keywords: [openGauss, 位串操作函数和操作符]
+---
+
 # 位串操作函数和操作符
 
 相比于原始的openGauss，dolphin对于位串函数的修改主要为:

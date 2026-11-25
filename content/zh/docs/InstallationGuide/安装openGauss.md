@@ -1,3 +1,8 @@
+---
+description: Introduces 安装openGauss in openGauss, covering .
+keywords: [openGauss, 安装openGauss]
+---
+
 # 安装openGauss
 
 -   **[创建XML配置文件](创建XML配置文件.md)**  

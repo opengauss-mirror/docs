@@ -1,3 +1,8 @@
+---
+description: Introduces AI4DB: 慢SQL根因分析 in openGauss, covering .
+keywords: [openGauss, AI4DB 慢SQL根因分析]
+---
+
 # AI4DB: 慢SQL根因分析
 
 -   **[概述](Slow-Query-Diagnosis-慢SQL根因分析概述.md)**  

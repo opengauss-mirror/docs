@@ -1,3 +1,8 @@
+---
+description: gs_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等内容，并对系统控制参数、I/O配置、网络配置和THP服务等信息进行配置。.
+keywords: [openGauss, gs_checkos]
+---
+
 # gs_checkos
 
 ## 背景信息<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_section39821515163211"></a>

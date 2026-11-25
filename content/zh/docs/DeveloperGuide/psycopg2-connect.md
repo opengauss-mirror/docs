@@ -1,3 +1,8 @@
+---
+description: 此方法创建新的数据库会话并返回新的connection对象。.
+keywords: [openGauss, psycopg2.connect]
+---
+
 # psycopg2.connect\(\)
 
 ## 功能描述<a name="section5708152714306"></a>

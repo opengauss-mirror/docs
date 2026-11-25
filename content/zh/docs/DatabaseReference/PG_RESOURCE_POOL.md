@@ -1,3 +1,8 @@
+---
+description: PG\_RESOURCE\_POOL系统表提供了数据库资源池的信息。.
+keywords: [openGauss, PG_RESOURCE_POOL]
+---
+
 # PG\_RESOURCE\_POOL
 
 PG\_RESOURCE\_POOL系统表提供了数据库资源池的信息。

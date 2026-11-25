@@ -1,3 +1,8 @@
+---
+description: CLOSE释放和一个游标关联的所有资源。.
+keywords: [openGauss, CLOSE]
+---
+
 # CLOSE
 
 ## 功能描述<a name="zh-cn_topic_0283137397_zh-cn_topic_0237122091_zh-cn_topic_0059779164_sa18f3afba3784d76b0052fa2fa489b8c"></a>

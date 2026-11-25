@@ -1,3 +1,8 @@
+---
+description: openGauss部署成功后，在数据库运行的过程中，会遇到各种问题及异常状态。openGauss提供了gs\_backup工具帮助openGauss备份、恢复重要数据、显示帮助信息和版本号信息。.
+keywords: [openGauss, gs_backup]
+---
+
 # gs\_backup
 
 ## 背景信息<a name="zh-cn_topic_0237152406_zh-cn_topic_0059777806_section48401199395"></a>

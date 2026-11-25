@@ -1,3 +1,8 @@
+---
+description: 利用命令"gs_guc set -N all -I all -c "shared_buffers=80GB""设置guc参数shared_buffers后，集群重启，原主节点starting，原备节点manually stopped。.
+keywords: [openGauss, 设置shared_buffers后备节点manually stopped]
+---
+
 # 设置shared_buffers后备节点manually stopped
 
 ## 现象

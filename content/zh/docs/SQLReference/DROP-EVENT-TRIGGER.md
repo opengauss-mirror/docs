@@ -1,3 +1,8 @@
+---
+description: Introduces DROP EVENT TRIGGER in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP EVENT TRIGGER]
+---
+
 # DROP EVENT TRIGGER
 
 ## 功能描述<a name="zh-cn_topic_0283137186_zh-cn_topic_0231227156_zh-cn_topic_0059777895_sed6f06f3d4d94bb10c387592f98bacdb"></a>

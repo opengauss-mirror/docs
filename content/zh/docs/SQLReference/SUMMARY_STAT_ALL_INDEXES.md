@@ -1,3 +1,8 @@
+---
+description: 将包含openGauss内汇聚数据库中的每个索引行，显示访问特定索引的统计。.
+keywords: [openGauss, SUMMARY_STAT_ALL_INDEXES]
+---
+
 # SUMMARY\_STAT\_ALL\_INDEXES
 
 将包含openGauss内汇聚数据库中的每个索引行，显示访问特定索引的统计。

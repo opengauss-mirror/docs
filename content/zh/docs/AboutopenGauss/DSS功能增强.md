@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 5.1.0版本开始引入，仅适用于资源池化架构。.
+keywords: [openGauss, DSS功能增强]
+---
+
 # DSS功能增强
 
 ## 可获得性<a name="section15406143204715"></a>

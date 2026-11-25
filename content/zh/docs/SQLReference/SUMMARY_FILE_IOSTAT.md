@@ -1,3 +1,8 @@
+---
+description: 通过openGauss内对数据文件汇聚IO的统计，反映数据的IO性能，用以发现IO操作异常等性能问题。.
+keywords: [openGauss, SUMMARY_FILE_IOSTAT]
+---
+
 # SUMMARY\_FILE\_IOSTAT
 
 通过openGauss内对数据文件汇聚IO的统计，反映数据的IO性能，用以发现IO操作异常等性能问题。

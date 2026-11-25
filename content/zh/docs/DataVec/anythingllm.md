@@ -1,3 +1,8 @@
+---
+description: AnythingLLM是一个全栈应用程序，可以将任何文档、资源（如网址链接、音频、视频）或内容片段转换为上下文，以便任何大语言模型（LLM）在聊天期间作为参考使用。此应用允许您自定义LLM模型，并通过openGauss向量数据库RAG方案，解决大模型"幻视"问题，同时支持多用户管理并设置不同权限。.
+keywords: [openGauss, 使用openGauss部署AnythingLLM]
+---
+
 # 使用openGauss部署AnythingLLM
 AnythingLLM是一个全栈应用程序，可以将任何文档、资源（如网址链接、音频、视频）或内容片段转换为上下文，以便任何大语言模型（LLM）在聊天期间作为参考使用。此应用允许您自定义LLM模型，并通过openGauss向量数据库RAG方案，解决大模型"幻视"问题，同时支持多用户管理并设置不同权限。
 
@@ -29,7 +34,7 @@ OPENGAUSS_DATABASE=
 ```
 如果使用docker安装openGauss，配置应如下图所示（需要修改password）
 
-![](./figures/AnythingLLM-env.png)
+![配置参数](./figures/AnythingLLM-env.png)
 
 ### 启动容器
 执行以下命令，自动拉取对应Docker镜像并启动服务。
@@ -55,4 +60,4 @@ http://your_server_ip:3001
 
 之后可以在设置界面修改LLM参数等，配置LLM后即可体验RAG功能
 
-![](./figures/AnythingLLM-setting.png)
+![创建用户并登录](./figures/AnythingLLM-setting.png)

@@ -1,3 +1,8 @@
+---
+description: PG\_AMPROC系统表存储有关与访问方法操作符族相关联的支持过程的信息。每个属于某个操作符族的支持过程都占有一行。.
+keywords: [openGauss, PG_AMPROC]
+---
+
 # PG\_AMPROC
 
 PG\_AMPROC系统表存储有关与访问方法操作符族相关联的支持过程的信息。每个属于某个操作符族的支持过程都占有一行。

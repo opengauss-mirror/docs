@@ -1,3 +1,8 @@
+---
+description: CLASS\_VITAL\_INFO视图用于做WDR时校验相同的表或者索引的oid是否一致。.
+keywords: [openGauss, CLASS_VITAL_INFO]
+---
+
 # CLASS\_VITAL\_INFO
 
 CLASS\_VITAL\_INFO视图用于做WDR时校验相同的表或者索引的oid是否一致。

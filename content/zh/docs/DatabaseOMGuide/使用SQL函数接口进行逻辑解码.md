@@ -1,3 +1,8 @@
+---
+description: openGauss可以通过调用SQL函数，进行创建、删除、推进逻辑复制槽，获取解码后的事务日志。.
+keywords: [openGauss, 使用SQL函数接口进行逻辑解码]
+---
+
 # 使用SQL函数接口进行逻辑解码
 
 openGauss可以通过调用SQL函数，进行创建、删除、推进逻辑复制槽，获取解码后的事务日志。

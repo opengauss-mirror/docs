@@ -1,3 +1,8 @@
+---
+description: FETCH通过已创建的游标来检索数据。.
+keywords: [openGauss, FETCH]
+---
+
 # FETCH
 
 ## 功能描述<a name="zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_s1a1f69e123144a83800629a2d8ab2dba"></a>

@@ -1,3 +1,8 @@
+---
+description: reprocessing-exporter的使用帮助详情：.
+keywords: [openGauss, 命令参考]
+---
+
 # 命令参考
 
 reprocessing-exporter的使用帮助详情：

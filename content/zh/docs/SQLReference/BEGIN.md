@@ -1,3 +1,8 @@
+---
+description: BEGIN可以用于开始一个匿名块，也可以用于开始一个事务。本节描述用BEGIN开始匿名块的语法，以BEGIN开始事务的语法见START TRANSACTION。.
+keywords: [openGauss, BEGIN]
+---
+
 # BEGIN
 
 ## 功能描述<a name="zh-cn_topic_0283137310_zh-cn_topic_0237122087_zh-cn_topic_0059778122_s575f09bb20db48a4a74f6544c1593758"></a>

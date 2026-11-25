@@ -1,3 +1,8 @@
+---
+description: 更新表中的数据。UPDATE修改满足条件的所有行中指定的字段值，WHERE子句声明条件，SET子句指定的字段会被修改，没有出现的字段则保持它们的原值。.
+keywords: [openGauss, UPDATE]
+---
+
 # UPDATE
 
 ## 功能描述

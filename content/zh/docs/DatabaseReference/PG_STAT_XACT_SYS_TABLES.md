@@ -1,3 +1,8 @@
+---
+description: PG\_STAT\_XACT\_SYS\_TABLES视图显示命名空间中系统表的事务状态信息。.
+keywords: [openGauss, PG_STAT_XACT_SYS_TABLES]
+---
+
 # PG\_STAT\_XACT\_SYS\_TABLES
 
 PG\_STAT\_XACT\_SYS\_TABLES视图显示命名空间中系统表的事务状态信息。

@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 6.0.0-RC1版本开始引入。.
+keywords: [openGauss, gs_collector适配资源池化]
+---
+
 # gs_collector适配资源池化
 
 ## 可获得性<a name="section15406143204715"></a>

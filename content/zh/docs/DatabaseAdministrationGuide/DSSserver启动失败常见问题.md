@@ -1,3 +1,8 @@
+---
+description: Introduces DSSserver启动失败常见问题 in openGauss, covering .
+keywords: [openGauss, DSSserver启动失败常见问题]
+---
+
 # DSSserver启动失败常见问题
 
 -  **[dd模拟块设备失败问题](dd模拟块设备失败问题.md)**

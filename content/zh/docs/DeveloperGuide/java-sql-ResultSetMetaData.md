@@ -1,3 +1,8 @@
+---
+description: java.sql.ResultSetMetaData是对ResultSet对象相关信息的具体描述。.
+keywords: [openGauss, JDBC, ResultSetMetaData]
+---
+
 # java.sql.ResultSetMetaData
 
 java.sql.ResultSetMetaData是对ResultSet对象相关信息的具体描述。

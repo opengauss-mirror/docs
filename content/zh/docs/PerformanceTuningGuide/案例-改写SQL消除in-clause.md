@@ -1,3 +1,8 @@
+---
+description: in-clause/any-clause是常见的SQL语句约束条件，有时in或any后面的clause都是常量，类似于：.
+keywords: [openGauss, 案例改写SQL消除in-clause]
+---
+
 # 案例：**改写SQL消除in-clause**
 
 ## 现象描述<a name="zh-cn_topic_0075873761_section47054049113429"></a>

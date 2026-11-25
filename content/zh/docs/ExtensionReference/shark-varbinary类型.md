@@ -1,3 +1,8 @@
+---
+description: varbinary是可变长度二进制数据。 所输入数据的长度可以是 0 字节。支持输入16进制形式的二进制数据常量。.
+keywords: [openGauss, varbinary类型]
+---
+
 # varbinary类型
 
 ## 功能简述

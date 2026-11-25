@@ -1,3 +1,8 @@
+---
+description: Introduces INDEX HINTS in openGauss, covering 注意事项, 功能描述, 语法格式.
+keywords: [openGauss, INDEX HINTS]
+---
+
 # INDEX HINTS
 
 ## 注意事项

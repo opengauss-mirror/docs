@@ -1,3 +1,8 @@
+---
+description: 利用gs_ctl start命令启动数据库失败.
+keywords: [openGauss, gs_ctl start 失败]
+---
+
 # gs_ctl start 失败
 
 ## 现象

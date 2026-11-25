@@ -1,3 +1,8 @@
+---
+description: STATEMENT\_COMPLEX\_RUNTIME视图显示当前用户在数据库主节点上正在执行的作业的负载管理记录。.
+keywords: [openGauss, STATEMENT_COMPLEX_RUNTIME]
+---
+
 # STATEMENT\_COMPLEX\_RUNTIME
 
 STATEMENT\_COMPLEX\_RUNTIME视图显示当前用户在数据库主节点上正在执行的作业的负载管理记录。

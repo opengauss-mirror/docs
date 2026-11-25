@@ -1,3 +1,8 @@
+---
+description: 连接数据库的客户端工具包括gsql、应用程序接口（如JDBC）。.
+keywords: [openGauss, 访问openGauss]
+---
+
 # 访问openGauss
 
 连接数据库的客户端工具包括gsql、应用程序接口（如JDBC）。

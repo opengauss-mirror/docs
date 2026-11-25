@@ -1,3 +1,8 @@
+---
+description: 数据库的部署是一个复杂的过程。openGauss提供了gs\_install工具来帮助完成openGauss的安装和部署。.
+keywords: [openGauss, gs_install]
+---
+
 # gs\_install
 
 ## 背景信息<a name="zh-cn_topic_0237152416_zh-cn_topic_0059778040_section551843134215"></a>

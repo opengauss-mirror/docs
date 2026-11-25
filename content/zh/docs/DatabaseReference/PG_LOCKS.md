@@ -1,3 +1,8 @@
+---
+description: PG\_LOCKS视图存储各打开事务所持有的锁信息。.
+keywords: [openGauss, PG_LOCKS]
+---
+
 # PG\_LOCKS
 
 PG\_LOCKS视图存储各打开事务所持有的锁信息。

@@ -1,3 +1,8 @@
+---
+description: Instance Efficiency Percentages指标名称及描述如下表所示。.
+keywords: [openGauss, Instance Efficiency Percentages]
+---
+
 # Instance Efficiency Percentages
 
 Instance Efficiency Percentages指标名称及描述如下表所示。

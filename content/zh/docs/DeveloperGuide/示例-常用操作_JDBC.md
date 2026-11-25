@@ -1,3 +1,8 @@
+---
+description: 此示例将演示如何基于openGauss提供的JDBC接口开发应用程序。.
+keywords: [openGauss, 示例常用操作]
+---
+
 # 示例：常用操作
 
 ## 示例1<a name="zh-cn_topic_0283136826_zh-cn_topic_0237120386_zh-cn_topic_0213179152_zh-cn_topic_0189251739_section8820452474"></a>

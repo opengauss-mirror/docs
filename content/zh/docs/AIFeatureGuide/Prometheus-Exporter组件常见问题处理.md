@@ -1,3 +1,8 @@
+---
+description: 1. 提示需要用户提供--ssl-keyfile与--ssl-certfile选项：.
+keywords: [openGauss, 常见问题处理]
+---
+
 # 常见问题处理
 
 1.  提示需要用户提供--ssl-keyfile与--ssl-certfile选项：

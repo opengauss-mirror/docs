@@ -1,3 +1,8 @@
+---
+description: 执行存储过程中当前的sql，返回执行的下一条的行数和对应query。.
+keywords: [openGauss, DBE_PLDEBUGGER.next]
+---
+
 # DBE\_PLDEBUGGER.next
 
 执行存储过程中当前的sql，返回执行的下一条的行数和对应query。

@@ -1,3 +1,8 @@
+---
+description: 卸载openGauss的过程包含卸载openGauss和对openGauss服务器的环境做清理。.
+keywords: [openGauss, 卸载openGauss]
+---
+
 # 卸载openGauss
 
 卸载openGauss的过程包含卸载openGauss和对openGauss服务器的环境做清理。

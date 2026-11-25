@@ -1,3 +1,8 @@
+---
+description: 创建函数时需要指定返回值SETOF datatype。.
+keywords: [openGauss, RETURN NEXT及RETURN QUERY]
+---
+
 # RETURN NEXT及RETURN QUERY
 
 ## 语法<a name="zh-cn_topic_0237122232_section66906369117"></a>
@@ -6,11 +11,11 @@
 
 return\_next\_clause::=
 
-![](figures/zh-cn_image_0253403489.png)
+![语法](figures/zh-cn_image_0253403489.png)
 
 return\_query\_clause::=
 
-![](figures/zh-cn_image_0253403490.png)
+![语法](figures/zh-cn_image_0253403490.png)
 
 对以上语法的解释如下：
 

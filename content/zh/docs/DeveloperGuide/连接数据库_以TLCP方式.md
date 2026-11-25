@@ -1,3 +1,8 @@
+---
+description: 用户通过JDBC连接openGauss服务器时，可以通过开启TLCP国密协议加密客户端和服务器之间的通讯，为敏感数据在Internet上的传输提供了被国家所认可的安全保障手段。本小节主要介绍应用程序通过JDBC如何采用TLCP的方式连接openGauss。在使用本小节所描述的方法前，默认用户已经掌握在openGauss服务端开启TLCP能力的步骤。.
+keywords: [openGauss, 连接数据库以TLCP方式]
+---
+
 # 连接数据库（以TLCP方式）
 
 用户通过JDBC连接openGauss服务器时，可以通过开启TLCP国密协议加密客户端和服务器之间的通讯，为敏感数据在Internet上的传输提供了被国家所认可的安全保障手段。本小节主要介绍应用程序通过JDBC如何采用TLCP的方式连接openGauss。在使用本小节所描述的方法前，默认用户已经掌握在openGauss服务端开启TLCP能力的步骤。

@@ -1,3 +1,8 @@
+---
+description: Introduces PREDICT BY in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, PREDICT BY]
+---
+
 # PREDICT BY
 
 ## 功能描述<a name="section1596413142510"></a>

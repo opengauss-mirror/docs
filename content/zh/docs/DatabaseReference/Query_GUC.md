@@ -1,3 +1,8 @@
+---
+description: 参数说明： 控制系统中unique sql信息实时收集功能。配置为0表示不启用unique sql信息收集功能。.
+keywords: [openGauss, Query]
+---
+
 # Query
 
 ## instr\_unique\_sql\_count<a name="zh-cn_topic_0283137149_zh-cn_topic_0237124756_section983311682019"></a>

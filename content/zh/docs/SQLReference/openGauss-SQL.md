@@ -1,3 +1,8 @@
+---
+description: SQL是用于访问和处理数据库的标准计算机语言。.
+keywords: [openGauss, openGauss SQL]
+---
+
 # openGauss SQL
 
 ## 什么是SQL<a name="zh-cn_topic_0283136913_zh-cn_topic_0237121924_section07961139165815"></a>

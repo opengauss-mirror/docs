@@ -1,3 +1,8 @@
+---
+description: javax.sql.PooledConnection是由连接池创建的连接接口。.
+keywords: [openGauss, javax.sql.PooledConnection]
+---
+
 # javax.sql.PooledConnection
 
 javax.sql.PooledConnection是由连接池创建的连接接口。

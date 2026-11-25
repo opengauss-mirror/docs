@@ -1,3 +1,8 @@
+---
+description: VIEWS视图返回数据库中的视图信息。.
+keywords: [openGauss, VIEWS]
+---
+
 # VIEWS 
 
 VIEWS视图返回数据库中的视图信息。

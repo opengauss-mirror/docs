@@ -1,3 +1,8 @@
+---
+description: 编译openGauss-server失败，出现"configure failed"字样报错。.
+keywords: [openGauss, 编译openGauss-server失败]
+---
+
 # 编译openGauss-server失败
 
 ## 现象

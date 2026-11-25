@@ -1,3 +1,8 @@
+---
+description: 如果在root用户下执行工具命令时，出现如下信息。.
+keywords: [openGauss, troubleshooting, FAQ]
+---
+
 # FAQ
 
 

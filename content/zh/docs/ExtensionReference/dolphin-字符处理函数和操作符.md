@@ -1,3 +1,8 @@
+---
+description: 相比于原始的openGauss，dolphin对于字符处理函数和操作符的修改主要为：.
+keywords: [openGauss, 字符处理函数和操作符]
+---
+
 # 字符处理函数和操作符
 
 相比于原始的openGauss，dolphin对于字符处理函数和操作符的修改主要为：

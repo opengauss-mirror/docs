@@ -1,3 +1,8 @@
+---
+description: 通过iostat、pidstat命令或openGauss健康检查工具查看openGauss内节点I/O繁忙度和吞吐量，分析是否存在由于I/O导致的性能瓶颈。.
+keywords: [openGauss, IO]
+---
+
 # I/O
 
 通过iostat、pidstat命令或openGauss健康检查工具查看openGauss内节点I/O繁忙度和吞吐量，分析是否存在由于I/O导致的性能瓶颈。

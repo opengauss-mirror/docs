@@ -1,3 +1,8 @@
+---
+description: SELECT FROM join_a a JOIN join_b b ON a.b = b.b;.
+keywords: [openGauss, 案例增加JOIN列非空条件]
+---
+
 # **案例：增加JOIN列非空条件**
 
 ```

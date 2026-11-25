@@ -1,3 +1,8 @@
+---
+description: JIT存储过程（JIT SP）由openGauss MOT引擎（从5.0版本开始）支持，其目标是提供更高的性能和更低的延迟。.
+keywords: [openGauss, JIT存储过程]
+---
+
 # JIT存储过程
 
 JIT存储过程（JIT SP）由openGauss MOT引擎（从5.0版本开始）支持，其目标是提供更高的性能和更低的延迟。

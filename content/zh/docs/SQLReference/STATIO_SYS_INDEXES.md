@@ -1,3 +1,8 @@
+---
+description: STATIO\_SYS\_INDEXES显示命名空间中所有系统表索引的IO状态信息。.
+keywords: [openGauss, STATIO_SYS_INDEXES]
+---
+
 # STATIO\_SYS\_INDEXES
 
 STATIO\_SYS\_INDEXES显示命名空间中所有系统表索引的IO状态信息。

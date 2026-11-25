@@ -1,3 +1,8 @@
+---
+description: PG\_TABLESPACE系统表存储表空间信息。.
+keywords: [openGauss, PG_TABLESPACE]
+---
+
 # PG\_TABLESPACE
 
 PG\_TABLESPACE系统表存储表空间信息。

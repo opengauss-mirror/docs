@@ -1,3 +1,8 @@
+---
+description: LlamaIndex（原GPT Index）是一个专为大型语言模型（LLM）应用设计的数据框架。使用LlamaIndex进行开发时，通常需要结合其核心功能与选定的集成插件（plugins）。.
+keywords: [openGauss, 使用openGauss部署LlamaIndex]
+---
+
 # 使用openGauss部署LlamaIndex
 LlamaIndex（原GPT Index）是一个专为大型语言模型（LLM）应用设计的数据框架。使用LlamaIndex进行开发时，通常需要结合其核心功能与选定的集成插件（plugins）。
 

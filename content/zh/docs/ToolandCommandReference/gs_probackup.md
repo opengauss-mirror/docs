@@ -1,3 +1,8 @@
+---
+description: gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。它对openGauss实例进行定期备份，以便在数据库出现故障时能够恢复服务器。.
+keywords: [openGauss, gs_probackup]
+---
+
 # gs\_probackup
 
 ## 背景信息<a name="zh-cn_topic_0287276008_section779474172017"></a>

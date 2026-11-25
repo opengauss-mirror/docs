@@ -1,3 +1,8 @@
+---
+description: PG\_OPCLASS系统表定义索引访问方法操作符类。.
+keywords: [openGauss, PG_OPCLASS]
+---
+
 # PG\_OPCLASS
 
 PG\_OPCLASS系统表定义索引访问方法操作符类。

@@ -1,3 +1,8 @@
+---
+description: 修改PACKAGE的属性或重编译PACKAGE。当PACKAGE因为依赖的引用对象发生改变而变为失效状态后，直接使用PACKAGE中失效的对象可能会导致错误的执行结果。如PACKAGE中定义存储过程的入参依赖自定义的类型或表字段，对自定义类型或表字段添加新属性后，调用原来的存储过程无法向新添加的属性传参，openGauss支持对这种场景下的PACKAGE进行重新编译，恢复其有效状态。.
+keywords: [openGauss, ALTER PACKAGE]
+---
+
 # ALTER PACKAGE
 
 ## 功能描述<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_sa364f8cdcfd24ba1a68426488e7852d4"></a>

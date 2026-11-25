@@ -1,3 +1,8 @@
+---
+description: - gs\_gsc\_table\_detail\(database\_id default NULL, rel\_id default NULL\).
+keywords: [openGauss, Global SysCache特性函数]
+---
+
 # Global SysCache特性函数
 
 -   gs\_gsc\_table\_detail\(database\_id default NULL, rel\_id default NULL\)

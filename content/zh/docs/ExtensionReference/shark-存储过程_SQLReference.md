@@ -1,3 +1,8 @@
+---
+description: 商业规则和业务逻辑可以通过程序存储在openGauss中，这个程序就是存储过程。.
+keywords: [openGauss, 存储过程]
+---
+
 # 存储过程
 
 商业规则和业务逻辑可以通过程序存储在openGauss中，这个程序就是存储过程。

@@ -1,3 +1,8 @@
+---
+description: 从openGauss 3.1.0版本开始，openGauss提供了gs\_sdr工具，在不借助额外存储介质的情况下实现跨region的异地容灾。提供流式容灾搭建，容灾升主，计划内主备切换，容灾解除、容灾状态监控功能、显示帮助信息和显示版本号信息等功能。.
+keywords: [openGauss, gs_sdr]
+---
+
 # gs\_sdr
 
 ## 背景信息<a name="zh-cn_topic_0287275995_section431817462"></a>

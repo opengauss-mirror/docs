@@ -1,3 +1,8 @@
+---
+description: GS\_AUDITING\_POLICY系统表记录统一审计的主体信息，每条记录对应一个设计策略。需要有系统管理员或安全策略管理员权限才可以访问此系统表。.
+keywords: [openGauss, GS_AUDITING_POLICY]
+---
+
 # GS\_AUDITING\_POLICY
 
 GS\_AUDITING\_POLICY系统表记录统一审计的主体信息，每条记录对应一个设计策略。需要有系统管理员或安全策略管理员权限才可以访问此系统表。

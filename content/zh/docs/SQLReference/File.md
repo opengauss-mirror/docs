@@ -1,3 +1,8 @@
+---
+description: Introduces File in openGauss, covering .
+keywords: [openGauss, File]
+---
+
 # File
 
 -   **[FILE\_IOSTAT](FILE_IOSTAT.md)**  

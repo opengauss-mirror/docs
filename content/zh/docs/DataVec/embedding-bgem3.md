@@ -1,3 +1,8 @@
+---
+description: BGE M3是一款由BAAI开发的多语言高性能文本嵌入模型，能够将文本转化为语义丰富的高维向量表示。本文将围绕BGE M3和向量数据库openGauss DataVec，介绍如何实现文本向量生成与高效存储。通过这两个工具的结合，能够构建更加智能化的数据检索和处理系统。.
+keywords: [openGauss, 使用BGE M3和openGauss DataVec进行向量生成与存储]
+---
+
 # 使用BGE M3和openGauss DataVec进行向量生成与存储
 [BGE M3](https://huggingface.co/BAAI/bge-m3)是一款由BAAI开发的多语言高性能文本嵌入模型，能够将文本转化为语义丰富的高维向量表示。本文将围绕BGE M3和向量数据库openGauss DataVec，介绍如何实现文本向量生成与高效存储。通过这两个工具的结合，能够构建更加智能化的数据检索和处理系统。
 

@@ -1,3 +1,8 @@
+---
+description: Introduces dolphin Extension in openGauss, covering .
+keywords: [openGauss, dolphin Extension]
+---
+
 # dolphin Extension
 
 -   **[dolphin概述](dolphin概述.md)**  

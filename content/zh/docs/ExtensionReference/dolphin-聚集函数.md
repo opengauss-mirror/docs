@@ -1,3 +1,8 @@
+---
+description: - any_value\(expression\).
+keywords: [openGauss, dolphin-聚集函数]
+---
+
 # dolphin-聚集函数
 
 -   any_value\(expression\)

@@ -1,3 +1,8 @@
+---
+description: Introduces 相同表的并发INSERT in openGauss, covering .
+keywords: [openGauss, 相同表的并发INSERT]
+---
+
 # 相同表的并发INSERT
 
 事务T1：

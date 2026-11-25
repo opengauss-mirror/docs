@@ -1,3 +1,8 @@
+---
+description: 将包含本节点数据库中的每个索引行，显示访问特定索引的统计。.
+keywords: [openGauss, STAT_ALL_INDEXES]
+---
+
 # STAT\_ALL\_INDEXES
 
 将包含本节点数据库中的每个索引行，显示访问特定索引的统计。

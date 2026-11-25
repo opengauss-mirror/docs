@@ -1,3 +1,8 @@
+---
+description: 创建一个数据结构，其中包含取消通过特定数据库连接发出的命令所需的信息。.
+keywords: [openGauss, PQgetCancel]
+---
+
 # PQgetCancel
 
 ## 功能描述<a name="zh-cn_topic_0241735636_section5708152714306"></a>

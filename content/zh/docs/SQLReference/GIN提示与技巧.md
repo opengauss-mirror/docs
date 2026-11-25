@@ -1,3 +1,8 @@
+---
+description: Introduces GIN提示与技巧 in openGauss, covering .
+keywords: [openGauss, GIN提示与技巧]
+---
+
 # GIN提示与技巧
 
 创建vs插入

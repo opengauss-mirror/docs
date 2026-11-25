@@ -1,3 +1,8 @@
+---
+description: Introduces 使用指导 in openGauss, covering 前提条件, 使用方法示例.
+keywords: [openGauss, 使用指导]
+---
+
 # 使用指导
 
 ## 前提条件<a name="section11307523175912"></a>

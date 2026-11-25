@@ -1,3 +1,8 @@
+---
+description: SUMMARY\_STATIO\_USER\_INDEXES视图显示openGauss内汇聚的命名空间中所有用户关系表索引的IO状态信息。.
+keywords: [openGauss, SUMMARY_STATIO_USER_INDEXES]
+---
+
 # SUMMARY\_STATIO\_USER\_INDEXES
 
 SUMMARY\_STATIO\_USER\_INDEXES视图显示openGauss内汇聚的命名空间中所有用户关系表索引的IO状态信息。

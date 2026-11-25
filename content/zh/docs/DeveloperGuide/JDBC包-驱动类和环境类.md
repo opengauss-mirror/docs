@@ -1,3 +1,8 @@
+---
+description: openGauss提供两种JDBCjar包：postgresql.jar和openGauss-jdbc-x.x.x.jar，两种jar包功能一致，仅仅是为了解决和PostgreSQL之间的JDBC驱动包名冲突。.
+keywords: [openGauss, JDBC, JDBC包驱动类和环境类]
+---
+
 # JDBC包、驱动类和环境类
 
 ## JDBC包<a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_zh-cn_topic_0189249669_zh-cn_topic_0059778950_s9694406852de4db0afcc99b19079f446"></a>

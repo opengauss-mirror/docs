@@ -1,3 +1,8 @@
+---
+description: 根据查询结果创建继承表。继承表的子表可以完全继承父表结构，也可以在父表结构的基础上添加字段，并且可以继承多父表或进行次级继承。.
+keywords: [openGauss, CREATE TABLE INHERITS]
+---
+
 # CREATE TABLE INHERITS<a name="ZH-CN_TOPIC_0289900337"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136662_zh-cn_topic_0237122118_zh-cn_topic_0059777601_sf99d8ce0a2bf4859q21d4835e23639b1"></a>

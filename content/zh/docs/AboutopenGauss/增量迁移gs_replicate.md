@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 5.0.0版本开始引入。.
+keywords: [openGauss, 增量迁移gs_replicate]
+---
+
 # 增量迁移gs_replicate
 
 ## 可获得性<a name="section56086982"></a>

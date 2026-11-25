@@ -1,3 +1,8 @@
+---
+description: GS\_OS\_RUN\_INFO视图显示当前操作系统运行的状态信息。.
+keywords: [openGauss, GS_OS_RUN_INFO]
+---
+
 # GS\_OS\_RUN\_INFO
 
 GS\_OS\_RUN\_INFO视图显示当前操作系统运行的状态信息。

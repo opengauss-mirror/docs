@@ -1,3 +1,8 @@
+---
+description: Introduces libsmartscan介绍 in openGauss, covering .
+keywords: [openGauss, libsmartscan介绍]
+---
+
 # libsmartscan介绍
 
 -   **[libsmartscan安装](libsmartscan-安装.md)**  

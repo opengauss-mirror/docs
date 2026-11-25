@@ -1,3 +1,8 @@
+---
+description: GAUSS-06231: "There is no exist vararrno with 0".
+keywords: [openGauss, GAUSS-06231 -- GAUSS-0640]
+---
+
 # GAUSS-06231 -- GAUSS-0640
 
 GAUSS-06231: "There is no exist vararrno with 0"

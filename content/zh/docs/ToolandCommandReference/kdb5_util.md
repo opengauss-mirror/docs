@@ -1,3 +1,8 @@
+---
+description: 为openGauss认证服务Kerberos提供数据库管理操作的工具，可以新建、销毁、导入和导出数据库。.
+keywords: [openGauss, kdb5_util]
+---
+
 # kdb5\_util
 
 ## 功能介绍<a name="zh-cn_topic_0237152428_section10172172474817"></a>

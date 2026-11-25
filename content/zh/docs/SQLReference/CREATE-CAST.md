@@ -1,3 +1,8 @@
+---
+description: Introduces CREATE CAST in openGauss, covering 功能描述, 语法格式, 参数说明.
+keywords: [openGauss, CREATE CAST]
+---
+
 # CREATE CAST
 
 ## 功能描述<a name="section173831846163116"></a>

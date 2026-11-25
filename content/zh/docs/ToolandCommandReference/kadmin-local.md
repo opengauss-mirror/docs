@@ -1,3 +1,8 @@
+---
+description: 为openGauss认证服务Kerberos提供命令行接口，直接接入kdc服务的数据库，进行增加、删除、修改Kerberos用户等操作。.
+keywords: [openGauss, kadmin.local]
+---
+
 # kadmin.local
 
 ## 功能介绍<a name="zh-cn_topic_0237152429_section10172172474817"></a>

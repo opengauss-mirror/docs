@@ -1,3 +1,8 @@
+---
+description: 释放与指定环境、连接、语句或描述符相关联的资源，它替代了ODBC 2.x函数SQLFreeEnv、SQLFreeConnect及SQLFreeStmt。.
+keywords: [openGauss, SQLFreeHandle]
+---
+
 # SQLFreeHandle
 
 ## 功能描述<a name="zh-cn_topic_0238272896_zh-cn_topic_0237120426_zh-cn_topic_0059779231_s93f9114d62c04cfa917e8ebc927ec8e9"></a>

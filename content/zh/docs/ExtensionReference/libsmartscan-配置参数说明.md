@@ -1,3 +1,8 @@
+---
+description: 参数说明：参数值为字符串，该参数为日志文件写入路径。.
+keywords: [openGauss, 配置参数说明]
+---
+
 # 配置参数说明
 
 ## logPath

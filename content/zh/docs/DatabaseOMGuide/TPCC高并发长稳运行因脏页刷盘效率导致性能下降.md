@@ -1,3 +1,8 @@
+---
+description: TPCC高并发长稳运行因脏页刷盘效率导致性能下降，具体表现为：初始性能较高，随着运行时间增加，数据库tmpTotal值下降，WalWriter线程CPU占用100%，其他CPU几乎没有负载，WDR报告中，脏页刷盘等待时间占比最高。.
+keywords: [openGauss, TPCC高并发长稳运行因脏页刷盘效率导致性能下降]
+---
+
 # TPCC高并发长稳运行因脏页刷盘效率导致性能下降
 
 ## 问题现象<a name="zh-cn_topic_0283136782_section526616331423"></a>

@@ -1,3 +1,8 @@
+---
+description: openGauss的fdw实现的功能是各个openGauss数据库及远程服务器（包括数据库、文件系统）之间的跨库操作。目前支持的远程服务器类型包括Oracle、MySQL（MariaDB）、openGauss（postgres_fdw）、file_fdw 、dblink。.
+keywords: [openGauss, Foreign Data Wrapper]
+---
+
 # Foreign Data Wrapper
 openGauss的fdw实现的功能是各个openGauss数据库及远程服务器（包括数据库、文件系统）之间的跨库操作。目前支持的远程服务器类型包括Oracle、MySQL（MariaDB）、openGauss（postgres_fdw）、file_fdw 、dblink。
 

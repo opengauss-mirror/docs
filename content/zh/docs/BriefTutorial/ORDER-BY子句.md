@@ -1,3 +1,8 @@
+---
+description: ORDER BY对对SELECT语句检索得到的一列或者多列数据进行升序（ASC）或者降序（DESC）排列。.
+keywords: [openGauss, ORDER BY子句]
+---
+
 # ORDER BY子句
 
 ORDER BY对对SELECT语句检索得到的一列或者多列数据进行升序（ASC）或者降序（DESC）排列。

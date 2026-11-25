@@ -1,3 +1,8 @@
+---
+description: 此方法获取查询结果的所有（剩余）行，并将它们作为元组列表返回。.
+keywords: [openGauss, cursor.fetchall]
+---
+
 # cursor.fetchall\(\)
 
 ## 功能描述<a name="section5708152714306"></a>

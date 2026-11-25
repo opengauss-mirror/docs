@@ -1,3 +1,8 @@
+---
+description: 视图将包含本节点中每个数据库的统计信息。.
+keywords: [openGauss, STAT_DATABASE]
+---
+
 # STAT\_DATABASE
 
 视图将包含本节点中每个数据库的统计信息。

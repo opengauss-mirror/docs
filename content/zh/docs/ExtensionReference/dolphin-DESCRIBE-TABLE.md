@@ -1,3 +1,8 @@
+---
+description: DESCRIBE 和 EXPLAIN 互为同义词，可以用于查看指定表结构，或查看指定 SQL 的执行计划。.
+keywords: [openGauss, DESCRIBE]
+---
+
 # DESCRIBE
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>

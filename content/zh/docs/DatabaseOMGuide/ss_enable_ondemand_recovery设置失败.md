@@ -1,3 +1,8 @@
+---
+description: 设置参数"gs_guc set -N all -I all -c"ss_enable_ondemand_recovery=on""后，数据库启动失败。.
+keywords: [openGauss, ss_enable_ondemand_recovery设置失败]
+---
+
 # ss_enable_ondemand_recovery设置失败
 
 ## 现象

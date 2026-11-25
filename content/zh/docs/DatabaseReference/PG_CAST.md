@@ -1,3 +1,8 @@
+---
+description: PG\_CAST系统表存储数据类型之间的转化关系。.
+keywords: [openGauss, PG_CAST]
+---
+
 # PG\_CAST
 
 PG\_CAST系统表存储数据类型之间的转化关系。

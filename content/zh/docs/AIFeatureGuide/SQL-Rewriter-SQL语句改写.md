@@ -1,3 +1,8 @@
+---
+description: Introduces SQL Rewriter: SQL语句改写 in openGauss, covering .
+keywords: [openGauss, SQL Rewriter SQL语句改写]
+---
+
 # SQL Rewriter: SQL语句改写
 
 -   **[概述](SQL-Rewriter-SQL语句改写概述.md)**  

@@ -1,3 +1,8 @@
+---
+description: 执行SQL语句时，提示“Lock wait timeout”。.
+keywords: [openGauss, 执行 SQL 语句时提示 Lock wait timeout]
+---
+
 # 执行 SQL 语句时，提示 Lock wait timeout
 
 ## 问题现象<a name="section158125414577"></a>

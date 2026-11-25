@@ -1,3 +1,8 @@
+---
+description: Introduces 查看WDR报告 in openGauss, covering .
+keywords: [openGauss, 查看WDR报告]
+---
+
 # 查看WDR报告
 
 WDR报表主要内容如下表所示。

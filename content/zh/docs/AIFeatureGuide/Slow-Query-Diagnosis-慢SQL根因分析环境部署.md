@@ -1,3 +1,8 @@
+---
+description: Introduces 环境部署 in openGauss, covering .
+keywords: [openGauss, 环境部署]
+---
+
 # 环境部署
 
 -   数据库运行正常。

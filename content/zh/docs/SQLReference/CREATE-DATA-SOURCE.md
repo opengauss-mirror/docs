@@ -1,3 +1,8 @@
+---
+description: 创建一个新的外部数据源对象，该对象用于定义openGauss要连接的目标库信息。.
+keywords: [openGauss, CREATE DATA SOURCE]
+---
+
 # CREATE DATA SOURCE
 
 ## 功能描述<a name="zh-cn_topic_0283137069_zh-cn_topic_0237122100_section1697927113919"></a>

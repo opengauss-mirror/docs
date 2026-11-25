@@ -1,3 +1,8 @@
+---
+description: 1. 用户可以从Prometheus的官网上下载Prometheus-server和node-exporter，然后根据官方文档中的说明启动它们；也可以通过DBMind提供的快捷部署工具进行部署；如果用户自行部署，则可以跳到 部署过程中为支持部署位置正确以及后续的运行和监测...。.
+keywords: [openGauss, 环境部署]
+---
+
 # 环境部署
 
 1.  用户可以从Prometheus的官网上下载Prometheus-server和node-exporter，然后根据官方文档中的说明启动它们；也可以通过DBMind提供的快捷部署工具进行部署；如果用户自行部署，则可以跳到 **[部署过程中为支持部署位置正确以及后续的运行和监测...](#li353612310452)。**

@@ -1,3 +1,8 @@
+---
+description: 使用PURGE语句可以实现如下功能：.
+keywords: [openGauss, PURGE]
+---
+
 # PURGE
 
 ## 功能描述<a name="section625854265112"></a>

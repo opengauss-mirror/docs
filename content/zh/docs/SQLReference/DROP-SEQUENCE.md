@@ -1,3 +1,8 @@
+---
+description: Introduces DROP SEQUENCE in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP SEQUENCE]
+---
+
 # DROP SEQUENCE
 
 ## 功能描述<a name="zh-cn_topic_0283137072_zh-cn_topic_0237122149_zh-cn_topic_0059778402_section892464917343"></a>

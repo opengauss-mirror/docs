@@ -1,3 +1,8 @@
+---
+description: Introduces lo_read in openGauss, covering 功能描述, 原型, 参数.
+keywords: [openGauss, lo_read]
+---
+
 # lo_read
 
 ## 功能描述<a name="zh-cn_topic_0241735622_section696285173719"></a>

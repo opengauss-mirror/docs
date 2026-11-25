@@ -1,3 +1,8 @@
+---
+description: 回滚当前事务并取消当前事务中的所有更新。.
+keywords: [openGauss, ROLLBACK]
+---
+
 # ROLLBACK
 
 ## 功能描述<a name="zh-cn_topic_0283137047_zh-cn_topic_0237122180_zh-cn_topic_0059778963_s332087a99fa4409188f6347dab075098"></a>

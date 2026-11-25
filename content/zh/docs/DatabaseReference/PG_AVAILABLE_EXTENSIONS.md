@@ -1,3 +1,8 @@
+---
+description: PG\_AVAILABLE\_ExtensionS视图显示数据库中某些特性的扩展信息。.
+keywords: [openGauss, PG_AVAILABLE_ExtensionS]
+---
+
 # PG\_AVAILABLE\_ExtensionS
 
 PG\_AVAILABLE\_ExtensionS视图显示数据库中某些特性的扩展信息。

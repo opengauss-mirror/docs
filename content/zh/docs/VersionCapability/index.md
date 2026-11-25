@@ -1,3 +1,8 @@
+---
+description: Introduces  in openGauss, covering .
+keywords: [openGauss, ]
+---
+
 ### **版本功能对比**
 
 | **分类/功能**     | **企业版** | **极简版** | **轻量版** | **说明**                           |

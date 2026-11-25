@@ -1,3 +1,8 @@
+---
+description: 获取所有节点上的数据文件IO统计信息。.
+keywords: [openGauss, SUMMARY_REL_IOSTAT]
+---
+
 # SUMMARY\_REL\_IOSTAT
 
 获取所有节点上的数据文件IO统计信息。

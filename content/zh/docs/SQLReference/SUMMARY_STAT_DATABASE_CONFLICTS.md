@@ -1,3 +1,8 @@
+---
+description: 显示openGauss内汇聚的数据库冲突状态的统计信息。.
+keywords: [openGauss, SUMMARY_STAT_DATABASE_CONFLICTS]
+---
+
 # SUMMARY\_STAT\_DATABASE\_CONFLICTS
 
 显示openGauss内汇聚的数据库冲突状态的统计信息。

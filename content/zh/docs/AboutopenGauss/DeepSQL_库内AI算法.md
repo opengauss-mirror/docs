@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss1.1.0版本开始引入。.
+keywords: [openGauss, DeepSQL库内AI算法]
+---
+
 # DeepSQL：库内AI算法
 
 ## 可获得性<a name="section76684290441"></a>

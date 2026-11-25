@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss1.1.0版本开始引入。.
+keywords: [openGauss, Anomaly-detection数据库指标采集预测与异常监控]
+---
+
 # Anomaly-detection：数据库指标采集、预测与异常监控
 
 ## 可获得性<a name="section1394818443613"></a>

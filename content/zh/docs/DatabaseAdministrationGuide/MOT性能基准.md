@@ -1,3 +1,8 @@
+---
+description: 我们的性能测试是基于业界和学术界通用的TPC-C基准。.
+keywords: [openGauss, MOT性能基准]
+---
+
 # MOT性能基准
 
 我们的性能测试是基于业界和学术界通用的TPC-C基准。

@@ -1,3 +1,8 @@
+---
+description: Introduces X-Tuner：参数调优与诊断 in openGauss, covering .
+keywords: [openGauss, X-Tuner参数调优与诊断]
+---
+
 # X-Tuner：参数调优与诊断
 
 -   **[概述](X-Tuner-参数调优与诊断概述.md)**  

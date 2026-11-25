@@ -1,3 +1,8 @@
+---
+description: Introduces 相同表的INSERT和DELETE并发 in openGauss, covering .
+keywords: [openGauss, 相同表的INSERT和DELETE并发]
+---
+
 # 相同表的INSERT和DELETE并发
 
 事务T1：

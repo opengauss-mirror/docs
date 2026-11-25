@@ -1,3 +1,8 @@
+---
+description: Introduces 案例：调整I/O相关参数降低日志膨胀率 in openGauss, covering .
+keywords: [openGauss, 案例调整IO相关参数降低日志膨胀率]
+---
+
 # 案例：调整I/O相关参数降低日志膨胀率
 
 -   调整参数前的参数值：

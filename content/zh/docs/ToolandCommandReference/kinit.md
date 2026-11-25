@@ -1,3 +1,8 @@
+---
+description: 为openGauss认证服务Kerberos提供特定用户获取和缓存TGT能力。.
+keywords: [openGauss, kinit]
+---
+
 # kinit
 
 ## 功能介绍<a name="zh-cn_topic_0237152430_section10172172474817"></a>

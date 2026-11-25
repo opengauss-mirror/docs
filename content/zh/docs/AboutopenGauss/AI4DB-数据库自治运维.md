@@ -1,3 +1,8 @@
+---
+description: Introduces AI4DB: 数据库自治运维 in openGauss, covering .
+keywords: [openGauss, AI4DB 数据库自治运维]
+---
+
 # AI4DB: 数据库自治运维
 
 -   **[数据库指标采集、预测与异常监控](数据库指标采集-预测与异常监控.md)**  

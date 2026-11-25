@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 2.1.0 版本开始引入。.
+keywords: [openGauss, JDBC, JDBC客户端负载均衡与读写分离]
+---
+
 # JDBC客户端负载均衡与读写分离
 
 ## 可获得性<a name="section1076382216287"></a>

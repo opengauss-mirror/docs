@@ -1,3 +1,8 @@
+---
+description: 获得当前节点表、索引等文件的读取失败信息。.
+keywords: [openGauss, STAT_BAD_BLOCK]
+---
+
 # STAT\_BAD\_BLOCK
 
 获得当前节点表、索引等文件的读取失败信息。

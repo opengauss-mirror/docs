@@ -1,3 +1,8 @@
+---
+description: REPLICATION\_SLOTS视图用于查看复制节点的信息。.
+keywords: [openGauss, REPLICATION_SLOTS]
+---
+
 # REPLICATION\_SLOTS
 
 REPLICATION\_SLOTS视图用于查看复制节点的信息。

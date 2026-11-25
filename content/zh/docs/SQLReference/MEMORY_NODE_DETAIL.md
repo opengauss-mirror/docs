@@ -1,3 +1,8 @@
+---
+description: Introduces MEMORY\_NODE\_DETAIL in openGauss, covering .
+keywords: [openGauss, MEMORY_NODE_DETAIL]
+---
+
 # MEMORY\_NODE\_DETAIL
 
 显示某个数据库节点内存使用情况。

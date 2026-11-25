@@ -1,3 +1,8 @@
+---
+description: ERRMSG: "Fail to access the cluster static config file.".
+keywords: [openGauss, CM错误日志信息参考]
+---
+
 # CM错误日志信息参考
 
 ERRMSG: "Fail to access the cluster static config file."

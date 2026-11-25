@@ -1,3 +1,8 @@
+---
+description: Introduces MOT关键技术 in openGauss, covering .
+keywords: [openGauss, MOT关键技术]
+---
+
 # MOT关键技术
 
 MOT的关键技术如下：

@@ -1,3 +1,8 @@
+---
+description: openGauss提供了gs\_encrypt工具为输入的明文字符串进行加密操作。.
+keywords: [openGauss, gs_encrypt]
+---
+
 # gs\_encrypt
 
 ## 背景信息<a name="section16490883164452"></a>

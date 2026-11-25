@@ -1,3 +1,8 @@
+---
+description: 本文档主要介绍openGauss数据库的安装方法，以指导用户顺利完成openGauss数据库安装。.
+keywords: [openGauss, 安装指南]
+---
+
 # 安装指南
 
 ## 概述

@@ -1,3 +1,8 @@
+---
+description: 指明scan使用的方法，可以是tablescan、indexscan和indexonlyscan。.
+keywords: [openGauss, Scan方式的Hint]
+---
+
 # Scan方式的Hint
 
 ## 功能描述<a name="zh-cn_topic_0237121537_section290819468377"></a>
@@ -38,5 +43,5 @@ select /*+ indexscan(item i) */ i_product_name product_name ...
 
 该hint表示：item表使用索引i进行扫描。生成计划如下所示：
 
-![](figures/zh-cn_image_0253037239.png)
+![示例](figures/zh-cn_image_0253037239.png)
 

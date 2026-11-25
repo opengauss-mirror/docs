@@ -1,3 +1,8 @@
+---
+description: 执行一个前面准备好的预备语句。因为一个预备语句只在会话的生命期里存在，那么预备语句必须是在当前会话的前些时候用PREPARE语句创建的。.
+keywords: [openGauss, EXECUTE]
+---
+
 # EXECUTE
 
 ## 功能描述<a name="zh-cn_topic_0283137468_zh-cn_topic_0237122161_zh-cn_topic_0059777447_s984b3ec2b84d48bb843629462288417b"></a>

@@ -1,3 +1,8 @@
+---
+description: openGauss提供了gs_dropnode工具从一主多备的数据库中移除不需要的备机，最多可以删除到只剩下单机。.
+keywords: [openGauss, gs_dropnode]
+---
+
 # gs_dropnode
 
 ## 背景信息

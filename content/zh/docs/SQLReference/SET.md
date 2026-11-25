@@ -1,3 +1,8 @@
+---
+description: Introduces SET in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, SET]
+---
+
 # SET
 
 ## 功能描述<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s8a5c6264f78f49e3aa93f388d68cd3e6"></a>

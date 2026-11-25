@@ -1,3 +1,8 @@
+---
+description: PERFORMANCE_SCHEMA.EVENTS_STATEMENTS_CURRENT视图，兼容Mysql对应视图，仅在B库创建。语句执行期间显示当前正在执行的语句信息；会话空闲时保留最近一次执行的语句信息。.
+keywords: [openGauss, PERFORMANCE_SCHEMA.EVENTS_STATEMENTS_CURRENT]
+---
+
 # PERFORMANCE_SCHEMA.EVENTS_STATEMENTS_CURRENT
 
 PERFORMANCE_SCHEMA.EVENTS_STATEMENTS_CURRENT视图，兼容Mysql对应视图，仅在B库创建。语句执行期间显示当前正在执行的语句信息；会话空闲时保留最近一次执行的语句信息。

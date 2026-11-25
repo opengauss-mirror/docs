@@ -1,3 +1,8 @@
+---
+description: 用于记录PLPGSQL对象（存储过程、函数、包、包体）编译相关信息，具体内容见下列字段描述。.
+keywords: [openGauss, DBE_PLDEVELOPER.gs_source]
+---
+
 # DBE\_PLDEVELOPER.gs\_source
 
 用于记录PLPGSQL对象（存储过程、函数、包、包体）编译相关信息，具体内容见下列字段描述。

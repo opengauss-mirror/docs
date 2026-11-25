@@ -1,3 +1,8 @@
+---
+description: 更改文本搜索配置的定义。用户可以将映射从字串类型调整为字典，或者改变配置的名称或者所有者，或者修改搜索配置的配置参数。.
+keywords: [openGauss, ALTER TEXT SEARCH CONFIGURATION]
+---
+
 # ALTER TEXT SEARCH CONFIGURATION
 
 ## 功能描述<a name="zh-cn_topic_0283137411_zh-cn_topic_0237122079_zh-cn_topic_0059778328_s9adfe253d8074dff8561df762ecd7460"></a>

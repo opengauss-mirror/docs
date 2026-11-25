@@ -1,3 +1,8 @@
+---
+description: - gs\_undo\_meta\(type, zoneId, location\).
+keywords: [openGauss, Undo系统函数]
+---
+
 # Undo系统函数
 
 -   gs\_undo\_meta\(type, zoneId, location\)

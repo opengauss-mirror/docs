@@ -1,3 +1,8 @@
+---
+description: STATIO\_ALL\_INDEXES视图包含数据库中的每个索引行，显示特定索引的I/O的统计。.
+keywords: [openGauss, STATIO_ALL_INDEXES]
+---
+
 # STATIO\_ALL\_INDEXES
 
 STATIO\_ALL\_INDEXES视图包含数据库中的每个索引行，显示特定索引的I/O的统计。

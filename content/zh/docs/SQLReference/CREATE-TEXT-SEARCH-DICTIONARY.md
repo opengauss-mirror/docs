@@ -1,3 +1,8 @@
+---
+description: 创建一个新的全文检索词典。词典是一种指定在全文检索时识别特定词并处理的方法。.
+keywords: [openGauss, CREATE TEXT SEARCH DICTIONARY]
+---
+
 # CREATE TEXT SEARCH DICTIONARY
 
 ## 功能描述<a name="zh-cn_topic_0283137272_zh-cn_topic_0237122122_zh-cn_topic_0059777936_sb9efc89be09141c3b113326dd8c2b35d"></a>

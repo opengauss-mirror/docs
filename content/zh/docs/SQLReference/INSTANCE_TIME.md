@@ -1,3 +1,8 @@
+---
+description: 提供当前节点下的各种时间消耗信息，主要分为以下类型：.
+keywords: [openGauss, INSTANCE_TIME]
+---
+
 # INSTANCE\_TIME
 
 提供当前节点下的各种时间消耗信息，主要分为以下类型：

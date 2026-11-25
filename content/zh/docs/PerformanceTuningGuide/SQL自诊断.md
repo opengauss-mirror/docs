@@ -1,3 +1,8 @@
+---
+description: 用户在执行查询或者执行INSERT/DELETE/UPDATE/CREATE TABLE AS语句时，可能会遇到性能问题。这种情况下，通过查询GS\_WLM\_SESSION\_STATISTICS、[GS\_WLM\_SESSION\_HISTORY](../DatabaseReferenc.
+keywords: [openGauss, SQL自诊断]
+---
+
 # SQL自诊断
 
 用户在执行查询或者执行INSERT/DELETE/UPDATE/CREATE TABLE AS语句时，可能会遇到性能问题。这种情况下，通过查询[GS\_WLM\_SESSION\_STATISTICS](../DatabaseReference/GS_WLM_SESSION_STATISTICS.md)、[GS\_WLM\_SESSION\_HISTORY](../DatabaseReference/GS_WLM_SESSION_HISTORY.md)视图的warning字段可以获得对应查询可能导致性能问题的告警信息，为性能调优提供参考。

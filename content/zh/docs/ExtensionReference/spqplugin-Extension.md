@@ -1,3 +1,8 @@
+---
+description: Introduces spqplugin Extension in openGauss, covering .
+keywords: [openGauss, spqplugin Extension]
+---
+
 # spqplugin Extension
 
 -   **[spqplugin概述](spqplugin概述.md)**  

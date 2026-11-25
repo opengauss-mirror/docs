@@ -1,3 +1,8 @@
+---
+description: MOT完全集成到openGauss中，包括支持主备部署的高可用场景。WAL重做日志的复制机制将把复制更改到数据库备节点并使用备节点进行重放。.
+keywords: [openGauss, MOT恢复时间目标RTO和冷启动时间]
+---
+
 # MOT恢复时间目标（RTO）和冷启动时间
 
 ## 高可用RTO
@@ -20,7 +25,7 @@ MOT测试使用40 GB/s的ARM磁盘测试，可以在100 GB/s的时间内加载�
 冷启动过程和从磁盘加载数据到MOT所需时间如下图所示。
 
 **图 1**  冷启动时间性能基准<a name="fig46666290"></a>  
-![](figures/cold-start-time-performance-benchmarks2.png "冷启动时间性能基准")
+![冷启动恢复时间](figures/cold-start-time-performance-benchmarks2.png "冷启动时间性能基准")
 
 -   数据库大小：加载整个数据库（每数据库GB）的总时间由蓝色线条和左侧的Y轴 **时间（秒）** 表示。
 -   吞吐量：数据库每秒GB吞吐量由橙色线和右侧的Y轴 **吞吐量GB/秒** 表示。

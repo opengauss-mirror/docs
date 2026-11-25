@@ -1,3 +1,8 @@
+---
+description: Introduces Forecast：趋势预测 in openGauss, covering .
+keywords: [openGauss, Forecast趋势预测]
+---
+
 # Forecast：趋势预测
 
 -   **[概述](Forecast-趋势预测概述.md)**  

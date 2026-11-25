@@ -1,3 +1,8 @@
+---
+description: 只能在指定了PIPELINED的函数中使用。.
+keywords: [openGauss, PIPE ROW]
+---
+
 # PIPE ROW
 
 ## 限制
@@ -8,7 +13,7 @@
 
 pipe_row_clause::=
 
-![](figures/zh-cn-pipe_row.png)
+![语法](figures/zh-cn-pipe_row.png)
 
 对以上语法的解释如下：
 

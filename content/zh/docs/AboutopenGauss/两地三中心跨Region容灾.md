@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 3.1.0版本开始引入。.
+keywords: [openGauss, 两地三中心跨Region容灾]
+---
+
 # 两地三中心跨Region容灾
 
 ## 可获得性

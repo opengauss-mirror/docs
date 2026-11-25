@@ -1,3 +1,8 @@
+---
+description: GS\_WLM\_SESSION\_STATISTICS视图显示当前用户在数据库实例上正在执行的作业的负载管理记录。查询该视图需要sysadmin权限。.
+keywords: [openGauss, GS_WLM_SESSION_STATISTICS]
+---
+
 # GS\_WLM\_SESSION\_STATISTICS
 
 GS\_WLM\_SESSION\_STATISTICS视图显示当前用户在数据库实例上正在执行的作业的负载管理记录。查询该视图需要sysadmin权限。

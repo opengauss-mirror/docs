@@ -1,3 +1,8 @@
+---
+description: 将指定的调试的存储过程中最上层栈上的变量修改为入参的取值。如果存储过程中包含同名的变量，set\_var只支持第一个变量值的设置。.
+keywords: [openGauss, DBE_PLDEBUGGER.set_var]
+---
+
 # DBE\_PLDEBUGGER.set\_var
 
 将指定的调试的存储过程中最上层栈上的变量修改为入参的取值。如果存储过程中包含同名的变量，set\_var只支持第一个变量值的设置。

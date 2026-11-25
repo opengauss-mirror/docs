@@ -1,3 +1,8 @@
+---
+description: 参数说明： 是否开启DCF模式，该参数不允许修改。.
+keywords: [openGauss, DCF参数设置]
+---
+
 # DCF参数设置
 
 ## enable\_dcf<a name="section14941640131"></a>

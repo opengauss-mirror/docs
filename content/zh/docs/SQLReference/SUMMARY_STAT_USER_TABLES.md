@@ -1,3 +1,8 @@
+---
+description: openGauss内汇聚所有命名空间中用户自定义普通表的状态信息。.
+keywords: [openGauss, SUMMARY_STAT_USER_TABLES]
+---
+
 # SUMMARY\_STAT\_USER\_TABLES
 
 openGauss内汇聚所有命名空间中用户自定义普通表的状态信息。

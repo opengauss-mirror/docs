@@ -1,3 +1,8 @@
+---
+description: 通过gs_basebackup的压缩格式备份，主数据目录将被写入到一个名为 base.tar 的文件中，并且其他表空间将被以其 OID 命名。生成的数据文件，需要通过gs_tar命令作解压。.
+keywords: [openGauss, gs_tar]
+---
+
 # gs\_tar
 
 ## 背景信息

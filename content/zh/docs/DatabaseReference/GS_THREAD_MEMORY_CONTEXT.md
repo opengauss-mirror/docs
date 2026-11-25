@@ -1,3 +1,8 @@
+---
+description: GS\_THREAD\_MEMORY\_CONTEXT视图统计所有的线程的内存使用情况，以MemoryContext节点来统计。该视图在关闭线程池（enable\_thread\_pool = off）时等价于GS\_SESSION\_MEMORY\_DETAIL视图。.
+keywords: [openGauss, GS_THREAD_MEMORY_CONTEXT]
+---
+
 # GS\_THREAD\_MEMORY\_CONTEXT
 
 GS\_THREAD\_MEMORY\_CONTEXT视图统计所有的线程的内存使用情况，以MemoryContext节点来统计。该视图在关闭线程池（enable\_thread\_pool = off）时等价于GS\_SESSION\_MEMORY\_DETAIL视图。

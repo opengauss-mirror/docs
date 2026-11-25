@@ -1,3 +1,8 @@
+---
+description: GET [CURRENT | STACKED] DIAGNOSTICS {.
+keywords: [openGauss, GET DIAGNOSTICS语句]
+---
+
 # GET DIAGNOSTICS语句<a name="ZH-CN_TOPIC_0245374637"></a>
 
 ## **GET DIAGNOSTICS**语句<a name="zh-cn_topic_0245374637_zh-cn_topic_0245374637_zh-cn_topic_0245374637_scd87586ffb304dfca616ff3dff504b81"></a>

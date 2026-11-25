@@ -1,3 +1,8 @@
+---
+description: 在人为操作或应用程序错误时，使用TIMECAPSULE TABLE语句恢复可将表恢复到一个早期状态。.
+keywords: [openGauss, TIMECAPSULE TABLE]
+---
+
 # TIMECAPSULE TABLE
 
 ## 功能描述<a name="section1788163418319"></a>

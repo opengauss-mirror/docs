@@ -1,3 +1,8 @@
+---
+description: javax.naming.Context是连接配置的上下文接口。.
+keywords: [openGauss, javax.naming.Context]
+---
+
 # javax.naming.Context
 
 javax.naming.Context是连接配置的上下文接口。

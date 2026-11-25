@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_BGWRITER\_STAT视图显示各节点关于后端写线程活动的统计信息。.
+keywords: [openGauss, GLOBAL_BGWRITER_STAT]
+---
+
 # GLOBAL\_BGWRITER\_STAT
 
 GLOBAL\_BGWRITER\_STAT视图显示各节点关于后端写线程活动的统计信息。

@@ -1,3 +1,8 @@
+---
+description: 启动时出现"dms library version is not matched"字样报错。.
+keywords: [openGauss, DMS组件版本号错误]
+---
+
 # DMS组件版本号错误
 
 ## 现象

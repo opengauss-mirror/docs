@@ -1,3 +1,8 @@
+---
+description: 显示当前openGauss中所有正常节点下的内存使用情况。.
+keywords: [openGauss, GLOBAL_MEMORY_NODE_DETAIL]
+---
+
 # GLOBAL\_MEMORY\_NODE\_DETAIL
 
 显示当前openGauss中所有正常节点下的内存使用情况。

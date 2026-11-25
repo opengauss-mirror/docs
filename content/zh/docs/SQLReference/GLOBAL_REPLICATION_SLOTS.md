@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_REPLICATION\_SLOTS视图用于查看openGauss各节点的复制节点的信息。.
+keywords: [openGauss, GLOBAL_REPLICATION_SLOTS]
+---
+
 # GLOBAL\_REPLICATION\_SLOTS
 
 GLOBAL\_REPLICATION\_SLOTS视图用于查看openGauss各节点的复制节点的信息。

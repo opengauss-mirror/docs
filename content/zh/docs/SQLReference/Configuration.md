@@ -1,3 +1,8 @@
+---
+description: - CONFIG\_SETTINGS.
+keywords: [openGauss, Configuration]
+---
+
 # Configuration
 
 -   **[CONFIG\_SETTINGS](CONFIG_SETTINGS.md)**  

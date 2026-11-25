@@ -1,3 +1,8 @@
+---
+description: - OPERATOR\_HISTORY\_TABLE.
+keywords: [openGauss, Operator]
+---
+
 # Operator
 
 -   **[OPERATOR\_HISTORY\_TABLE](OPERATOR_HISTORY_TABLE.md)**  

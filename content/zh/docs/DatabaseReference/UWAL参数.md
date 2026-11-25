@@ -1,3 +1,8 @@
+---
+description: 参数说明： 配置远端UWAL节点的IP地址及Port，需要在原有参数后面增加remotenodeid（远端节点的uwal_nodeid）、remoteuwalhost（远端节点的uwal_ip）、remoteuwalport（远端节点的uwal_port），“N”表示设置本端侦听和鉴权的第N个节点信息。.
+keywords: [openGauss, UWAL参数]
+---
+
 # UWAL参数
 
 ## replconninfo\{N\}<a name="section14941640131"></a>

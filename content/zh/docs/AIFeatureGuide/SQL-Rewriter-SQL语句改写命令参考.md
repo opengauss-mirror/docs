@@ -1,3 +1,8 @@
+---
+description: Introduces 命令参考 in openGauss, covering .
+keywords: [openGauss, 命令参考]
+---
+
 # 命令参考
 
 **表 1**  命令行参数说明

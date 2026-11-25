@@ -1,3 +1,8 @@
+---
+description: Introduces dolphin限制 in openGauss, covering .
+keywords: [openGauss, dolphin限制]
+---
+
 # dolphin限制
 
 -   不支持删除dolphin插件。

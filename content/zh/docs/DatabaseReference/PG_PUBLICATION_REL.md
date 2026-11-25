@@ -1,3 +1,8 @@
+---
+description: 系统表PG\_PUBLICATION\_REL包含当前数据库中的表和publication之间的映射，这是一种多对多映射。.
+keywords: [openGauss, PG_PUBLICATION_REL]
+---
+
 # PG\_PUBLICATION\_REL
 
 系统表PG\_PUBLICATION\_REL包含当前数据库中的表和publication之间的映射，这是一种多对多映射。

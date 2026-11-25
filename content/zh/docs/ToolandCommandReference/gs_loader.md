@@ -1,3 +1,8 @@
+---
+description: gs\_loader工具用于进行数据导入。gs\_loader将控制文件支持的语法转换为\\COPY语法，然后利用已有的\\COPY功能，做主要数据导入工作，同时gs\_loader将\\COPY结果记录到日志中。.
+keywords: [openGauss, gs_loader]
+---
+
 # gs\_loader<a name="ZH-CN_TOPIC_0000001705427697"></a>
 
 ## 概述<a name="section191131516122118"></a>

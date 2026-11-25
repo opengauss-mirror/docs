@@ -1,3 +1,8 @@
+---
+description: Introduces CREATE RESOURCE LABEL in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, CREATE RESOURCE LABEL]
+---
+
 # CREATE RESOURCE LABEL
 
 ## 功能描述<a name="section1163224811518"></a>

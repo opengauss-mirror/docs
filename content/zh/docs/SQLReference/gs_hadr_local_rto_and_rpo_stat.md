@@ -1,3 +1,8 @@
+---
+description: gs\_hadr\_local\_rto\_and\_rpo\_stat视图显示流式容灾的主数据库实例和备数据库实例日志流控信息（只可在主数据库实例的数据库主节点使用，数据库备节点以及备数据库实例均上不可获取到统计信息）。.
+keywords: [openGauss, gs_hadr_local_rto_and_rpo_stat]
+---
+
 # gs\_hadr\_local\_rto\_and\_rpo\_stat
 
 gs\_hadr\_local\_rto\_and\_rpo\_stat视图显示流式容灾的主数据库实例和备数据库实例日志流控信息（只可在主数据库实例的数据库主节点使用，数据库备节点以及备数据库实例均上不可获取到统计信息）。

@@ -1,3 +1,8 @@
+---
+description: 定义一个用户到一个外部服务器的新映射。.
+keywords: [openGauss, CREATE USER MAPPING]
+---
+
 # CREATE USER MAPPING
 
 ## 功能描述<a name="zh-cn_topic_0283136906_section55185111610"></a>

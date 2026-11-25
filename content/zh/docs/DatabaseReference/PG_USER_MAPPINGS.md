@@ -1,3 +1,8 @@
+---
+description: PG\_USER\_MAPPINGS视图提供访问关于用户映射的信息的接口。.
+keywords: [openGauss, PG_USER_MAPPINGS]
+---
+
 # PG\_USER\_MAPPINGS
 
 PG\_USER\_MAPPINGS视图提供访问关于用户映射的信息的接口。

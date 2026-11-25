@@ -1,3 +1,8 @@
+---
+description: Introduces GRANT/REVOKE PROXY in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, GRANTREVOKE PROXY]
+---
+
 # GRANT/REVOKE PROXY
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_82447c9355baf6b6fe87ecdad394891bca"></a>

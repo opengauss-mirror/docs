@@ -1,3 +1,8 @@
+---
+description: Introduces PREPARE TRANSACTION in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, PREPARE TRANSACTION]
+---
+
 # PREPARE TRANSACTION
 
 ## 功能描述<a name="zh-cn_topic_0283137205_zh-cn_topic_0237122172_zh-cn_topic_0059779173_s84c1f6c6e66743a3b5e71a25e070e50f"></a>

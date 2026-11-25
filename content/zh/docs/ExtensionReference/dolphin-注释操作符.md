@@ -1,3 +1,8 @@
+---
+description: 相比于原始的openGauss，dolphin对于注释操作符的修改主要为：.
+keywords: [openGauss, 注释操作符]
+---
+
 # 注释操作符
 
 相比于原始的openGauss，dolphin对于注释操作符的修改主要为：

@@ -1,3 +1,8 @@
+---
+description: 以下是openGauss常用可执行脚本，仅供openGauss接口使用。.
+keywords: [openGauss, openGauss可运行脚本功能说明]
+---
+
 # openGauss可运行脚本功能说明
 
 以下是openGauss常用可执行脚本，仅供openGauss接口使用。

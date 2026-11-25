@@ -1,3 +1,8 @@
+---
+description: 显示当前节点所有命名空间中用户自定义普通表的状态信息。.
+keywords: [openGauss, STAT_USER_TABLES]
+---
+
 # STAT\_USER\_TABLES
 
 显示当前节点所有命名空间中用户自定义普通表的状态信息。

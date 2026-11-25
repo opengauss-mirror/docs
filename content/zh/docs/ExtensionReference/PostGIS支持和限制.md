@@ -1,3 +1,8 @@
+---
+description: openGauss的PostGIS Extension支持如下数据类型：.
+keywords: [openGauss, PostGIS支持和限制]
+---
+
 # PostGIS支持和限制
 
 ## 支持数据类型<a name="section59521232327"></a>

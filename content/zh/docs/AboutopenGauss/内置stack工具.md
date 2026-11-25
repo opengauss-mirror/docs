@@ -1,3 +1,8 @@
+---
+description: Introduces 内置stack工具 in openGauss, covering 可获得性, 特性简介, 客户价值.
+keywords: [openGauss, 内置stack工具]
+---
+
 # 内置stack工具
 
 ## 可获得性<a name="section147531742205517"></a>

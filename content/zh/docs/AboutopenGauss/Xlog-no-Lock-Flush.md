@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 2.0.0 版本开始引入。.
+keywords: [openGauss, Xlog no Lock Flush]
+---
+
 # Xlog no Lock Flush
 
 ## 可获得性<a name="section3480125215575"></a>

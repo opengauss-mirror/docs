@@ -1,3 +1,8 @@
+---
+description: NDPPlugin视图用于查看查询语句下推详细统计信息，帮助用户判断语句下推情况。.
+keywords: [openGauss, NDPPlugin 查看视图]
+---
+
 # NDPPlugin 查看视图
 
 NDPPlugin视图用于查看查询语句下推详细统计信息，帮助用户判断语句下推情况。

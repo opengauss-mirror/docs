@@ -1,3 +1,8 @@
+---
+description: Memory Statistics指标名称及描述如下表所示。.
+keywords: [openGauss, Memory Statistics]
+---
+
 # Memory Statistics
 
 Memory Statistics指标名称及描述如下表所示。

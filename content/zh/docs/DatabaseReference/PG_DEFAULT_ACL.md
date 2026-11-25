@@ -1,3 +1,8 @@
+---
+description: PG\_DEFAULT\_ACL系统表存储为新建对象设置的初始权限。.
+keywords: [openGauss, PG_DEFAULT_ACL]
+---
+
 # PG\_DEFAULT\_ACL
 
 PG\_DEFAULT\_ACL系统表存储为新建对象设置的初始权限。

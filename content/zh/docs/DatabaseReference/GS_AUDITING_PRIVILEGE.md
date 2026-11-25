@@ -1,3 +1,8 @@
+---
+description: GS\_AUDITING\_PRIVILEGE视图显示对数据库DDL相关操作的所有审计信息。需要有系统管理员或安全策略管理员权限才可以访问此视图。.
+keywords: [openGauss, GS_AUDITING_PRIVILEGE]
+---
+
 # GS\_AUDITING\_PRIVILEGE
 
 GS\_AUDITING\_PRIVILEGE视图显示对数据库DDL相关操作的所有审计信息。需要有系统管理员或安全策略管理员权限才可以访问此视图。

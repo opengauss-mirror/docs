@@ -1,3 +1,8 @@
+---
+description: openGauss备机出现Standby Need repair\(WAL\)故障。.
+keywords: [openGauss, 备机处于need repairWAL状态问题]
+---
+
 # 备机处于need repair\(WAL\)状态问题
 
 ## 问题现象<a name="section19264812163110"></a>

@@ -1,3 +1,8 @@
+---
+description: Introduces 使用指导 in openGauss, covering 前提条件, SQL流水采集方法, 操作步骤.
+keywords: [openGauss, 使用指导]
+---
+
 # 使用指导
 
 ## 前提条件<a name="zh-cn_topic_0283137132_zh-cn_topic_0059779027_s7c2e433674384463a42b1e562a499257"></a>

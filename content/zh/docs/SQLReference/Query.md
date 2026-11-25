@@ -1,3 +1,8 @@
+---
+description: Introduces Query in openGauss, covering .
+keywords: [openGauss, Query]
+---
+
 # Query<a name="EN-US_TOPIC_0289900016"></a>
 
 -   **[STATEMENT](STATEMENT.md)**  

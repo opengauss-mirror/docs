@@ -1,3 +1,8 @@
+---
+description: package是一组相关存储过程、函数、变量、常量、游标等PL/SQL程序的组合，具有面向对象的特点，可以对PL/SQL程序设计元素进行封装。package中的函数具有统一性，创建、删除、修改都统一进行。.
+keywords: [openGauss, package]
+---
+
 # package
 
 package是一组相关存储过程、函数、变量、常量、游标等PL/SQL程序的组合，具有面向对象的特点，可以对PL/SQL程序设计元素进行封装。package中的函数具有统一性，创建、删除、修改都统一进行。

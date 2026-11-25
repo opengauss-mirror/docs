@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 1.0.0版本开始引入。.
+keywords: [openGauss, 支持LLVM]
+---
+
 # 支持LLVM
 
 ## 可获得性<a name="section3480125215575"></a>

@@ -1,3 +1,8 @@
+---
+description: Introduces dolphin-系统信息函数 in openGauss, covering dolphin-会话信息函数.
+keywords: [openGauss, dolphin-系统信息函数]
+---
+
 # dolphin-系统信息函数
 
 ## dolphin-会话信息函数<a name="zh-cn_topic_0283136950_zh-cn_topic_0237121987_zh-cn_topic_0059777618_seb0ac642d9594cfe9a06d3d304c6dc75"></a>

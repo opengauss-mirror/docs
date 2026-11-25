@@ -1,3 +1,8 @@
+---
+description: PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID视图显示所有用户资源使用情况，需要使用管理员用户进行查询。此视图在参数use\_workload\_manager为on时才有效。.
+keywords: [openGauss, PG_TOTAL_USER_RESOURCE_INFO_OID]
+---
+
 # PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID
 
 PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID视图显示所有用户资源使用情况，需要使用管理员用户进行查询。此视图在参数[use\_workload\_manager](负载管理.md)为on时才有效。

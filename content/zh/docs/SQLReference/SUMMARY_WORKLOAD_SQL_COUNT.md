@@ -1,3 +1,8 @@
+---
+description: 显示openGauss内各数据库主节点的workload上的SQL数量分布。.
+keywords: [openGauss, SUMMARY_WORKLOAD_SQL_COUNT]
+---
+
 # SUMMARY\_WORKLOAD\_SQL\_COUNT
 
 显示openGauss内各数据库主节点的workload上的SQL数量分布。

@@ -1,3 +1,8 @@
+---
+description: java.sql.CallableStatement是存储过程执行接口。.
+keywords: [openGauss, JDBC, CallableStatement]
+---
+
 # java.sql.CallableStatement
 
 java.sql.CallableStatement是存储过程执行接口。

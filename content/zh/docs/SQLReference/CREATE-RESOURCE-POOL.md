@@ -1,3 +1,8 @@
+---
+description: 创建一个资源池，并指定此资源池相关联的控制组。.
+keywords: [openGauss, CREATE RESOURCE POOL]
+---
+
 # CREATE RESOURCE POOL
 
 ## 功能描述<a name="zh-cn_topic_0059777569_sea021d0b1f154052a73b69b89d636f66"></a>

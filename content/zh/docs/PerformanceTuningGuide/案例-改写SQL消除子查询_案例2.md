@@ -1,3 +1,8 @@
+---
+description: Introduces 案例：改写SQL消除子查询（案例2） in openGauss, covering 现象描述, 优化说明.
+keywords: [openGauss, 案例改写SQL消除子查询案例2]
+---
+
 # **案例：改写SQL消除子查询（案例2）**
 
 ## 现象描述<a name="section162711147142017"></a>

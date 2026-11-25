@@ -1,3 +1,8 @@
+---
+description: 删除一个客户端加密主密钥（CMK）。.
+keywords: [openGauss, DROP CLIENT MASTER KEY]
+---
+
 # DROP CLIENT MASTER KEY
 
 ## 功能描述<a name="zh-cn_topic_0059778607_s8dcd69edcfca47eb88ddb451a360b362"></a>

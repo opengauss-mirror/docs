@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 6.0.0 版本开始引入。.
+keywords: [openGauss, gms_stats高级包]
+---
+
 # gms_stats高级包
 
 ## 可获得性<a name="section5309649"></a>

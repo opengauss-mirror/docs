@@ -1,3 +1,8 @@
+---
+description: 发送一个请求，创建一个给定参数的预备语句，而不等待结束。.
+keywords: [openGauss, PQsendPrepare]
+---
+
 # PQsendPrepare
 
 ## 功能描述<a name="zh-cn_topic_0241735629_section11692173220256"></a>

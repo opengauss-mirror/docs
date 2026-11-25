@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 5.0.0版本开始引入。.
+keywords: [openGauss, SCRLock加速分布式锁]
+---
+
 # SCRLock加速分布式锁
 
 ## 可获得性

@@ -1,3 +1,8 @@
+---
+description: 与数据库服务器建立一次非阻塞的连接。.
+keywords: [openGauss, PQconnectStart]
+---
+
 # PQconnectStart
 
 ## 功能描述<a name="zh-cn_topic_0059778058_sa9bd6e837fd4458199f7b677e876f4a9"></a>

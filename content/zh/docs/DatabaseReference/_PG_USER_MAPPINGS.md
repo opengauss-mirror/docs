@@ -1,3 +1,8 @@
+---
+description: 存储从本地用户到远程的映射。该视图只有sysadmin权限可以查看。.
+keywords: [openGauss, _PG_USER_MAPPINGS]
+---
+
 # \_PG\_USER\_MAPPINGS
 
 存储从本地用户到远程的映射。该视图只有sysadmin权限可以查看。

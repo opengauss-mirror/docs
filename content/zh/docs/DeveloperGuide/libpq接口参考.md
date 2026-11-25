@@ -1,3 +1,8 @@
+---
+description: Introduces libpq接口参考 in openGauss, covering .
+keywords: [openGauss, libpq接口参考]
+---
+
 # libpq接口参考
 
 -   **[数据库连接控制函数](数据库连接控制函数.md)**  

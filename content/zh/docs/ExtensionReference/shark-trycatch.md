@@ -1,3 +1,8 @@
+---
+description: shark实现了一种与异常处理的类似的错误处理机制，当TRY控制块内的SQL语句出现错误时，会继续执行CATCH控制块内的语句。.
+keywords: [openGauss, TRY...CATCH语句]
+---
+
 # TRY...CATCH语句
 
 shark实现了一种与异常处理的类似的错误处理机制，当TRY控制块内的SQL语句出现错误时，会继续执行CATCH控制块内的语句。

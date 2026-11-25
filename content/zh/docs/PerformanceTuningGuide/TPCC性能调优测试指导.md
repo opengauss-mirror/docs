@@ -1,3 +1,8 @@
+---
+description: Introduces TPCC性能调优测试指导 in openGauss, covering .
+keywords: [openGauss, TPCC性能调优测试指导]
+---
+
 # TPCC性能调优测试指导
 
 - [概述](TPCC性能调优测试指导概述.md)

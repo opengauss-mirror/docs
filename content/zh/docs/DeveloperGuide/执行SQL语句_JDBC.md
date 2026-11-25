@@ -1,3 +1,8 @@
+---
+description: 应用程序通过执行SQL语句来操作数据库的数据（不用传递参数的语句），需要按以下步骤执行：.
+keywords: [openGauss, 执行SQL语句]
+---
+
 # 执行SQL语句
 
 ## 执行普通SQL语句<a name="zh-cn_topic_0283137004_zh-cn_topic_0237120383_zh-cn_topic_0213179129_zh-cn_topic_0189250824_zh-cn_topic_0059777674_s6d6619f4f2df48198e8e7a32ccc4b47a"></a>

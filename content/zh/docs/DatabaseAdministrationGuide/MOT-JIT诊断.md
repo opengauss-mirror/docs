@@ -1,3 +1,8 @@
+---
+description: 该内置函数用于查询JIT编译（代码生成）的详细信息。.
+keywords: [openGauss, MOT JIT诊断]
+---
+
 # MOT JIT诊断
 
 

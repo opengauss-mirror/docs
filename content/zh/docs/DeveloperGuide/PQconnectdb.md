@@ -1,3 +1,8 @@
+---
+description: Introduces PQconnectdb in openGauss, covering 功能描述, 原型, 参数.
+keywords: [openGauss, PQconnectdb]
+---
+
 # PQconnectdb
 
 ## 功能描述<a name="zh-cn_topic_0241735614_section71985281176"></a>

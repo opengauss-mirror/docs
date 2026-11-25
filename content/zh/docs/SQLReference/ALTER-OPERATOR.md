@@ -1,3 +1,8 @@
+---
+description: Introduces ALTER OPERATOR in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, ALTER OPERATOR]
+---
+
 # ALTER OPERATOR
 
 ## 功能描述<a name="section113331284191"></a>

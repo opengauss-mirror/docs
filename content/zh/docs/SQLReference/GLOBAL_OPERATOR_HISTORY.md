@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_OPERATOR\_HISTORY系统视图显示的是当前用户在数据库主节点上执行作业结束后的算子的相关记录。.
+keywords: [openGauss, GLOBAL_OPERATOR_HISTORY]
+---
+
 # GLOBAL\_OPERATOR\_HISTORY
 
 GLOBAL\_OPERATOR\_HISTORY系统视图显示的是当前用户在数据库主节点上执行作业结束后的算子的相关记录。

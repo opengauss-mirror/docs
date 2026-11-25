@@ -1,3 +1,8 @@
+---
+description: 当openGauss发生故障时，使用此工具收集OS信息、日志信息以及配置文件等信息，来定位问题。可以使用-C参数，指定收集不同的信息内容，具体支持收集的内容信息如表1所示。.
+keywords: [openGauss, gs_collector]
+---
+
 # gs\_collector
 
 ## 背景信息<a name="zh-cn_topic_0237152334_zh-cn_topic_0059778085_section1813744893314"></a>

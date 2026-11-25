@@ -1,3 +1,8 @@
+---
+description: PG\_ATTRDEF系统表存储列的默认值。.
+keywords: [openGauss, PG_ATTRDEF]
+---
+
 # PG\_ATTRDEF
 
 PG\_ATTRDEF系统表存储列的默认值。

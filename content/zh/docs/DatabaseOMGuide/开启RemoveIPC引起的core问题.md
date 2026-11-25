@@ -1,3 +1,8 @@
+---
+description: 操作系统配置中RemoveIPC参数设置为yes，数据库运行过程中出现宕机，并显示如下日志消息。.
+keywords: [openGauss, 开启RemoveIPC引起的core问题]
+---
+
 # 开启RemoveIPC引起的core问题
 
 ## 问题现象<a name="zh-cn_topic_0283136554_section54529241124"></a>

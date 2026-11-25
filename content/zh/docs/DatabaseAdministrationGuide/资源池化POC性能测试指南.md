@@ -1,3 +1,8 @@
+---
+description: 本章节主要介绍资源池化架构下TPCC的极限性能的测试方法，以及为达到最佳tpmC性能所依赖的相关GUC参数调优和OS调优。.
+keywords: [openGauss, 资源池化POC性能测试指南]
+---
+
 # 资源池化POC性能测试指南
 
 ## 内容简介

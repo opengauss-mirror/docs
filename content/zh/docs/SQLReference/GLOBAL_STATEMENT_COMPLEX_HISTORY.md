@@ -1,3 +1,8 @@
+---
+description: 显示各个节点执行作业结束后的负载管理记录。.
+keywords: [openGauss, GLOBAL_STATEMENT_COMPLEX_HISTORY]
+---
+
 # GLOBAL\_STATEMENT\_COMPLEX\_HISTORY
 
 显示各个节点执行作业结束后的负载管理记录。

@@ -1,3 +1,8 @@
+---
+description: 尝试将任何排队的输出数据刷新到服务器。.
+keywords: [openGauss, PQflush]
+---
+
 # PQflush
 
 ## 功能描述<a name="zh-cn_topic_0241735631_section1516183316287"></a>

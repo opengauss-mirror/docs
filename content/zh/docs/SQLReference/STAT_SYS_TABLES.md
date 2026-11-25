@@ -1,3 +1,8 @@
+---
+description: 显示单节点内pg\_catalog、information\_schema以及pg_toast模式下的所有系统表的统计信息。.
+keywords: [openGauss, STAT_SYS_TABLES]
+---
+
 # STAT\_SYS\_TABLES
 
 显示单节点内pg\_catalog、information\_schema以及pg_toast模式下的所有系统表的统计信息。

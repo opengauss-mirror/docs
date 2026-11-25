@@ -1,3 +1,8 @@
+---
+description: 用给定的参数提交请求，创建一个预备语句，然后等待结束。.
+keywords: [openGauss, PQprepare]
+---
+
 # PQprepare
 
 ## 功能描述<a name="zh-cn_topic_0241735620_section1434210205519"></a>

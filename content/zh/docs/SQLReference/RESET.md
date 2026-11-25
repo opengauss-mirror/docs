@@ -1,3 +1,8 @@
+---
+description: RESET将指定的运行时参数恢复为缺省值。这些参数的缺省值是指postgresql.conf配置文件中所描述的参数缺省值。.
+keywords: [openGauss, RESET]
+---
+
 # RESET
 
 ## 功能描述<a name="zh-cn_topic_0283137385_zh-cn_topic_0237122178_zh-cn_topic_0059779097_sa3f93000a69d4ca8b8633a05032af243"></a>

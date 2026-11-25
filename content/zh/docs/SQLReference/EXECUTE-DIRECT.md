@@ -1,3 +1,8 @@
+---
+description: 在指定的节点上执行SQL语句。一般情况下，SQL语句的执行是由集群负载自动分配到合适的节点上，execute direct主要用于数据库维护和测试。.
+keywords: [openGauss, EXECUTE DIRECT]
+---
+
 # EXECUTE DIRECT
 
 ## 功能描述<a name="zh-cn_topic_0059779060_s1b14773726ac4469a14e509530a7a957"></a>

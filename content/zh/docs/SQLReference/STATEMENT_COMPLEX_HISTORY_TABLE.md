@@ -1,3 +1,8 @@
+---
+description: STATEMENT\_COMPLEX\_HISTORY\_TABLE系统表显示数据库主节点执行作业结束后的负载管理记录。此数据是从内核中转储到系统表中的数据。具体的字段请参考表1。.
+keywords: [openGauss, STATEMENT_COMPLEX_HISTORY_TABLE]
+---
+
 # STATEMENT\_COMPLEX\_HISTORY\_TABLE
 
 STATEMENT\_COMPLEX\_HISTORY\_TABLE系统表显示数据库主节点执行作业结束后的负载管理记录。此数据是从内核中转储到系统表中的数据。具体的字段请参考[表1](./GLOBAL_STATEMENT_COMPLEX_RUNTIME.md#zh-cn_topic_0237122661_table9446192117461)。

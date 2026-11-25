@@ -1,3 +1,8 @@
+---
+description: 查询当前节点所有已产生的共享内存上下文的使用信息。.
+keywords: [openGauss, GS_SHARED_MEMORY_DETAIL]
+---
+
 # GS_SHARED\_MEMORY\_DETAIL
 
 查询当前节点所有已产生的共享内存上下文的使用信息。

@@ -1,3 +1,8 @@
+---
+description: ALTER INDEX用于修改现有索引的定义。.
+keywords: [openGauss, ALTER INDEX]
+---
+
 # ALTER INDEX
 
 ## 功能描述<a name="zh-cn_topic_0283137124_zh-cn_topic_0237122063_zh-cn_topic_0059778960_sfe4d0517393c4151ab84ea0450924b7c"></a>

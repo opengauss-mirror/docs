@@ -1,3 +1,8 @@
+---
+description: 返回一个PGresult的一行的单一域值。行和列号从 0 开始。调用者不应该直接释放该结果。它将在相关的PGresult句柄被传递给PQclear之后被释放。.
+keywords: [openGauss, PQgetvalue]
+---
+
 # PQgetvalue
 
 ## 功能描述<a name="zh-cn_topic_0059778058_sa9bd6e837fd4458199f7b677e876f4a9"></a>

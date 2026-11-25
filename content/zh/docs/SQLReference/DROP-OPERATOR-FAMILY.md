@@ -1,3 +1,8 @@
+---
+description: 此语法仅在开启 support_extended_features 参数时可用。.
+keywords: [openGauss, DROP OPERATOR FAMILY]
+---
+
 # DROP OPERATOR FAMILY
 
 ## 功能描述

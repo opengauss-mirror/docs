@@ -1,3 +1,8 @@
+---
+description: 创建gms_output Extension可直接使用CREATE Extension命令进行创建：.
+keywords: [openGauss, gms_output使用]
+---
+
 # gms_output使用
 
 ## 创建Extension<a name="section21088306113"></a>

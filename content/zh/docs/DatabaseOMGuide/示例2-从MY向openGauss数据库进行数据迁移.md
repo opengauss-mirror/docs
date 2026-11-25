@@ -1,3 +1,8 @@
+---
+description: 下面示例演示如何通过CopyManager从MY向openGauss数据库进行数据迁移的过程。.
+keywords: [openGauss, 示例2从MY向openGauss数据库进行数据迁移]
+---
+
 # 示例2：从MY向openGauss数据库进行数据迁移
 
 下面示例演示如何通过CopyManager从MY向openGauss数据库进行数据迁移的过程。

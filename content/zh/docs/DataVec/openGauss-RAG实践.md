@@ -1,3 +1,8 @@
+---
+description: LLM (Large Language Model，大语言模型): 就像 ChatGPT 这样的 AI 模型，拥有强大的语言理解和生成能力，但它们的知识局限于训练数据，且可能产生“幻觉”（即生成不准确的信息）。.
+keywords: [openGauss, 打破AI黑盒拥抱开源力量基于openGaussDeepSeek的本地知识库打造你的专属AI助手]
+---
+
 # 打破AI黑盒，拥抱开源力量：基于openGauss+DeepSeek的本地知识库，打造你的专属AI助手！
 
 ## 引言：什么是RAG和LLM？

@@ -1,3 +1,8 @@
+---
+description: Introduces OS\_THREADS in openGauss, covering .
+keywords: [openGauss, OS_THREADS]
+---
+
 # OS\_THREADS
 
 提供当前节点下所有线程的状态信息。

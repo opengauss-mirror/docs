@@ -1,3 +1,8 @@
+---
+description: 显示每个节点的数据库冲突状态的统计信息。.
+keywords: [openGauss, GLOBAL_STAT_DATABASE_CONFLICTS]
+---
+
 # GLOBAL\_STAT\_DATABASE\_CONFLICTS
 
 显示每个节点的数据库冲突状态的统计信息。

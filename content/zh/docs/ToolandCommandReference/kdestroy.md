@@ -1,3 +1,8 @@
+---
+description: 为openGauss认证服务Kerberos提供销毁用户的授权票据操作。.
+keywords: [openGauss, kdestroy]
+---
+
 # kdestroy
 
 ## 功能介绍<a name="zh-cn_topic_0237152433_section10172172474817"></a>

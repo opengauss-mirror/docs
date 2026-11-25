@@ -1,3 +1,8 @@
+---
+description: 显示openGauss内汇聚的负载事务信息。.
+keywords: [openGauss, SUMMARY_WORKLOAD_TRANSACTION]
+---
+
 # SUMMARY\_WORKLOAD\_TRANSACTION
 
 显示openGauss内汇聚的负载事务信息。

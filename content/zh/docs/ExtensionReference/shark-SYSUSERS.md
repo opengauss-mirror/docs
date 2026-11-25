@@ -1,3 +1,8 @@
+---
+description: SYSUSERS视图返回数据库中的用户信息。.
+keywords: [openGauss, SYSUSERS]
+---
+
 # SYSUSERS
 
 SYSUSERS视图返回数据库中的用户信息。

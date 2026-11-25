@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 1.1.0版本开始引入。.
+keywords: [openGauss, 支持HyperLogLog]
+---
+
 # 支持HyperLogLog
 
 ## 可获得性<a name="section5309649"></a>

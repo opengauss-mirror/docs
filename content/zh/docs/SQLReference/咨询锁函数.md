@@ -1,3 +1,8 @@
+---
+description: 咨询锁函数用于管理咨询锁（Advisory Lock）。.
+keywords: [openGauss, 咨询锁函数]
+---
+
 # 咨询锁函数
 
 咨询锁函数用于管理咨询锁（Advisory Lock）。

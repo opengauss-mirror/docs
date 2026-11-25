@@ -1,3 +1,8 @@
+---
+description: openGauss提供了gs\_postuninstall工具来帮助清理准备openGauss环境阶段所做配置，使得卸载后的环境得到清理。.
+keywords: [openGauss, gs_postuninstall]
+---
+
 # gs\_postuninstall
 
 ## 背景信息<a name="zh-cn_topic_0237152418_zh-cn_topic_0059778816_section1822511168423"></a>

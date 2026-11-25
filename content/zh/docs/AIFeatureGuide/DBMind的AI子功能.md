@@ -1,3 +1,8 @@
+---
+description: 用户可以通过gs\_dbmind的component子命令启动对应的AI子功能，下述章节展示不同AI功能的具体内容和使用详情。.
+keywords: [openGauss, DBMind的AI子功能]
+---
+
 # DBMind的AI子功能
 
 用户可以通过gs\_dbmind的component子命令启动对应的AI子功能，下述章节展示不同AI功能的具体内容和使用详情。

@@ -1,3 +1,8 @@
+---
+description: openGauss支持以脚本方式进行极简安装。.
+keywords: [openGauss, 安装openGauss]
+---
+
 # 安装openGauss
 
 openGauss支持以脚本方式进行极简安装。

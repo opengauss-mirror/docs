@@ -1,3 +1,8 @@
+---
+description: Load Profile指标名称及描述如下表所示。.
+keywords: [openGauss, Load Profile]
+---
+
 # Load Profile
 
 Load Profile指标名称及描述如下表所示。

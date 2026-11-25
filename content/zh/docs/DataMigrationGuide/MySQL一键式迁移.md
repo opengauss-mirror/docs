@@ -1,4 +1,9 @@
-﻿# MySQL一键式迁移
+﻿---
+description: Introduces  in openGauss, covering 功能介绍, 注意事项, 默认文件结构.
+keywords: [openGauss, ]
+---
+
+# MySQL一键式迁移
 
 ## 功能介绍
 

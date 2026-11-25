@@ -1,3 +1,8 @@
+---
+description: 创建PostGIS Extension可直接使用CREATE Extension命令进行创建：.
+keywords: [openGauss, PostGIS使用]
+---
+
 # PostGIS使用
 
 ## 创建Extension<a name="section21088306113"></a>

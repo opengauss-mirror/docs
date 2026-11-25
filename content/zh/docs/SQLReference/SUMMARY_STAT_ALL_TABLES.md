@@ -1,3 +1,8 @@
+---
+description: openGauss内汇聚数据库中每个表的一行（包括TOAST表）的统计信息。.
+keywords: [openGauss, SUMMARY_STAT_ALL_TABLES]
+---
+
 # SUMMARY\_STAT\_ALL\_TABLES
 
 openGauss内汇聚数据库中每个表的一行（包括TOAST表）的统计信息。

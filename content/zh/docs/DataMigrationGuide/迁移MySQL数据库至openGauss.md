@@ -1,8 +1,13 @@
-﻿# 迁移MySQL数据库至openGauss
+﻿---
+description: ﻿# 迁移MySQL数据库至openGauss.
+keywords: [openGauss, ]
+---
+
+# 迁移MySQL数据库至openGauss
 
 ## 工具部署架构图<a name="section12438813102615"></a>
 
-![](figures/zh-cn_image_0000001368504658.png)
+![工具部署架构图](figures/zh-cn_image_0000001368504658.png)
 
 当前openGauss支持对MySQL迁移服务，具体包括：
 

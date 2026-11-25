@@ -1,3 +1,8 @@
+---
+description: Introduces XML类型函数 in openGauss, covering .
+keywords: [openGauss, XML类型函数]
+---
+
 # XML类型函数
 
 以下函数均继承自开源PG9.2。

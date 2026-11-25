@@ -1,3 +1,8 @@
+---
+description: Introduces ALTER PROCEDURE in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, ALTER PROCEDURE]
+---
+
 # ALTER PROCEDURE
 
 ## 功能描述<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_sa364f8cdcfd24ba1a68426488e7852d4"></a>

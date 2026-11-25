@@ -1,3 +1,8 @@
+---
+description: 本章节主要介绍openGauss数据库DataVec向量引擎PQ（Product Quantization）特性的安装使用步骤，以指导用户顺利完成操作。本特性将DataVec向量引擎和自研PQ算法相结合，以提高向量检索的查询性能。.
+keywords: [openGauss, PQ]
+---
+
 # PQ
 
 ## 介绍

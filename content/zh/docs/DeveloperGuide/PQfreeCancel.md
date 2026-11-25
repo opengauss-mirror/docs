@@ -1,3 +1,8 @@
+---
+description: 释放PQgetCancel创建的数据结构。.
+keywords: [openGauss, PQfreeCancel]
+---
+
 # PQfreeCancel
 
 ## 功能描述<a name="zh-cn_topic_0241735637_section97861442183315"></a>

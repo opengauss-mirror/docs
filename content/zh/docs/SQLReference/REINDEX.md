@@ -1,3 +1,8 @@
+---
+description: Introduces REINDEX in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, REINDEX]
+---
+
 # REINDEX
 
 ## 功能描述<a name="zh-cn_topic_0283137442_zh-cn_topic_0237122174_zh-cn_topic_0059777511_sf1cc0970ae31445a9e063cf504569e6e"></a>

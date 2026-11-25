@@ -1,3 +1,8 @@
+---
+description: - 数据库状态正常、客户端能够正常连接、且要求数据库内导入数据，以便调优程序可以执行benchmark测试调优效果。.
+keywords: [openGauss, 使用准备]
+---
+
 # 使用准备
 
 ## 前提条件与使用事项<a name="zh-cn_topic_0283137591_section887921944913"></a>
@@ -26,7 +31,7 @@
 >如果在tune模式下，使用深度强化学习算法，要求必须有一个训练好的模型，且要求**训练该模型时的参数与进行调优时的参数列表（包括max与min）必须一致**。
 
 **图 1**  X-Tuner结构图<a name="fig137427353816"></a>  
-![](figures/x-tuner-structure.png "X-Tuner结构图")
+![原理简介](figures/x-tuner-structure.png "X-Tuner结构图")
 
 X-Tuner的整体架构如[图1 X-Tuner 结构图](#fig137427353816)所示，系统可以分为：
 

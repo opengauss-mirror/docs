@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 6.0.0-RC1版本开始引入。.
+keywords: [openGauss, DMS资源统计函数]
+---
+
 # DMS资源统计函数
 
 ## 可获得性<a name="section15406143204715"></a>

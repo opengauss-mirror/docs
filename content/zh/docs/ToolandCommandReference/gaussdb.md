@@ -1,3 +1,8 @@
+---
+description: gaussdb是openGauss数据库的主进程，也是一个可执行的命令，能够通过其启动一个数据库进程。.
+keywords: [openGauss, gaussdb]
+---
+
 # gaussdb
 
 ## 背景信息<a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_section2761723143810"></a>

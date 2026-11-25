@@ -1,3 +1,8 @@
+---
+description: 利用命令"gs_guc set -N all -I all -c "client_min_messages=DEBUG5"",设置日志级别为DEBUG5后查看节点状态，主节点CoreDump。.
+keywords: [openGauss, 设置日志级别导致主节点coredump]
+---
+
 # 设置日志级别导致主节点coredump
 
 ## 现象

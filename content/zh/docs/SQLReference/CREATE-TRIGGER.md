@@ -1,3 +1,8 @@
+---
+description: 创建一个触发器。 触发器将与指定的表或视图关联，并在特定条件下执行指定的函数。.
+keywords: [openGauss, CREATE TRIGGER]
+---
+
 # CREATE TRIGGER
 
 ## 功能描述<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_s08b0f056b5f14492970a9037c63fa70c"></a>

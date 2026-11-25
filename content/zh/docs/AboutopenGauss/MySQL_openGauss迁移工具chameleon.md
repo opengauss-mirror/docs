@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 3.0.0版本开始引入。.
+keywords: [openGauss, MySQL-openGauss迁移工具chameleon]
+---
+
 # MySQL-\>openGauss迁移工具chameleon
 
 ## 可获得性<a name="section56086982"></a>

@@ -1,3 +1,8 @@
+---
+description: 由于MOT集成到openGauss中，并且使用或支持其复制和高可用，因此，MOT原厂功能即支持同步复制和异步复制。.
+keywords: [openGauss, MOT复制和高可用]
+---
+
 # MOT复制和高可用
 
 由于MOT集成到openGauss中，并且使用或支持其复制和高可用，因此，MOT原厂功能即支持同步复制和异步复制。

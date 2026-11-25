@@ -1,3 +1,8 @@
+---
+description: 参数说明：参数值为布尔类型，该参数用于开启/关闭插件。.
+keywords: [openGauss, ]
+---
+
 ## spqplugin.enable_spq
 
 **参数说明**：参数值为布尔类型，该参数用于开启/关闭插件。

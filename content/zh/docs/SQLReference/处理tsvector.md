@@ -1,3 +1,8 @@
+---
+description: openGauss提供了用来操作tsvector类型的函数和操作符。.
+keywords: [openGauss, 处理tsvector]
+---
+
 # 处理tsvector
 
 openGauss提供了用来操作tsvector类型的函数和操作符。
