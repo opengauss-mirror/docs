@@ -1,3 +1,8 @@
+---
+description: PG\_SHADOW displays properties of all roles that are marked as rolcanlogin in PG\_AUTHID.
+keywords: [openGauss, PG_SHADOW]
+---
+
 # PG\_SHADOW<a name="EN-US_TOPIC_0289900422"></a>
 
 **PG\_SHADOW**  displays properties of all roles that are marked as  **rolcanlogin**  in  **PG\_AUTHID**.

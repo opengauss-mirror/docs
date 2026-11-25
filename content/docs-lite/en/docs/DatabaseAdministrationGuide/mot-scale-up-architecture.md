@@ -1,3 +1,8 @@
+---
+description: To scale up means to add additional cores to the _same machine_ in order to add computing power. To scale up refers to the most common traditional form of adding computing power in a machine t.
+keywords: [openGauss, MOT Scale-up Architecture]
+---
+
 # MOT Scale-up Architecture<a name="EN-US_TOPIC_0289899834"></a>
 
 To  **scale up**  means to add additional cores to the  _same machine_  in order to add computing power. To scale up refers to the most common traditional form of adding computing power in a machine that has a single pair of controllers and multiple cores. Scale-up architecture is limited by the scalability limits of a machine's controller.
@@ -38,7 +43,7 @@ The PostgreSQL Foreign Data Wrapper \(FDW\) feature enables the creation of fore
 openGauss relies on the PostgreSQL Foreign Data Wrappers \(FDW\) and Index support so that SQL is entirely covered, including stored procedures, user defined functions, system functions calls.
 
 **Figure  1**  MOT Architecture<a name="en-us_topic_0283136704_en-us_topic_0280525153_fig30085468"></a>  
-![](figures/mot-architecture.png "mot-architecture")
+![Integration using Foreign Data Wrappers \(FDW\)](figures/mot-architecture.png "mot-architecture")
 
 In the diagram above, the MOT engine is represented in green, while the existing openGauss \(based on Postgres\) components are represented in the top part of this diagram in blue. As you can see, the Foreign Data Wrapper \(FDW\) mediates between the MOT engine and the openGauss components.
 
@@ -69,12 +74,12 @@ openGauss and MOT have been tested on the following many-core systems with excel
 Our TPC-C benchmark dated June 2020 tested an openGauss MOT database on a Taishan 2480 server. A 4-socket ARM/Kunpeng server, achieved throughput of 4.8 M tpmC. The following graph shows the near-linear nature of the results, meaning that it shows a significant increase in performance correlating to the increase of the quantity of cores –
 
 **Figure  2**  TPC-C on ARM \(256 Cores\)<a name="en-us_topic_0283136704_en-us_topic_0280525153_fig13530558"></a>  
-![](figures/tpc-c-on-arm-(256-cores).png "tpc-c-on-arm-(256-cores)")
+![Result – Linear Scale-up](figures/tpc-c-on-arm-(256-cores).png "tpc-c-on-arm-(256-cores)")
 
 The following is an additional example that shows a test on an x86-based server also showing CPU utilization.
 
 **Figure  3**  tpmC vs CPU Usage<a name="en-us_topic_0283136704_en-us_topic_0280525153_fig34899073"></a>  
-![](figures/tpmc-vs-cpu-usage.png "tpmc-vs-cpu-usage")
+![Result – Linear Scale-up](figures/tpmc-vs-cpu-usage.png "tpmc-vs-cpu-usage")
 
 The chart shows that MOT demonstrates a significant performance increase correlation with an increase of the quantity of cores. MOT consumes more and more of the CPU correlating to the increase of the quantity of cores. Other industry solutions do not increase and sometimes show slightly degraded performance, which is a well-known problem in the database industry that affects customers' CAPEX and OPEX expenses and operational efficiency.
 

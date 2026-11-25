@@ -1,3 +1,8 @@
+---
+description: Performance logs focus on the access performance of external resources.
+keywords: [openGauss, Performance Logs]
+---
+
 # Performance Logs<a name="EN-US_TOPIC_0289900271"></a>
 
 Performance logs focus on the access performance of external resources.

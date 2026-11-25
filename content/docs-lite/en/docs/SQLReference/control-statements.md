@@ -1,3 +1,8 @@
+---
+description: - RETURN Statements.
+keywords: [openGauss, Control Statements]
+---
+
 # Control Statements<a name="EN-US_TOPIC_0289900411"></a>
 
 -   **[RETURN Statements](return-statements.md)**  

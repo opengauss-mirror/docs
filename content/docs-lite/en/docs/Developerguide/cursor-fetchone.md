@@ -1,3 +1,8 @@
+---
+description: This method extracts the next row of the query result set and returns a tuple.
+keywords: [openGauss, cursor.fetchone]
+---
+
 # cursor.fetchone\(\)<a name="EN-US_TOPIC_0000001079923112"></a>
 
 ## Function<a name="section5708152714306"></a>

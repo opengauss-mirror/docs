@@ -1,3 +1,8 @@
+---
+description: CREATE TABLE AS creates a table from the results of a query.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE TABLE AS<a name="EN-US_TOPIC_0289900336"></a>
 
 ## Function<a name="en-us_topic_0283136662_en-us_topic_0237122118_en-us_topic_0059777601_sf40d8ce0a2af4856a44d883e623632b9"></a>

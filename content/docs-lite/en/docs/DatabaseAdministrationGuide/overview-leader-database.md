@@ -1,3 +1,8 @@
+---
+description: The ledger database, which integrates a blockchain idea, records a user operation in two types of historical tables: a user history table and a global blockchain table. When a user creates a tamper-pr.
+keywords: [openGauss, Overview]
+---
+
 # Overview<a name="EN-US_TOPIC_0000001147207387"></a>
 
 ## Background<a name="section129831239555"></a>

@@ -1,3 +1,8 @@
+---
+description: Plan hints change an execution plan. You can run EXPLAIN to view the changes.
+keywords: [openGauss, Hint Errors Conflicts and Other Warnings]
+---
+
 # Hint Errors, Conflicts, and Other Warnings<a name="EN-US_TOPIC_0289899816"></a>
 
 Plan hints change an execution plan. You can run  **EXPLAIN**  to view the changes.

@@ -1,3 +1,8 @@
+---
+description: This method executes an SQL command against all parameter sequences or mappings found in the sequence SQL.
+keywords: [openGauss, curosr.executemanyqueryvars_list]
+---
+
 # curosr.executemany\(query,vars\_list\)<a name="EN-US_TOPIC_0000001080211184"></a>
 
 ## Function<a name="section5708152714306"></a>

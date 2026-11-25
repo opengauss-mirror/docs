@@ -1,3 +1,8 @@
+---
+description: PG\_DESCRIPTION records optional descriptions \(comments\) for each database object. Descriptions of many built-in system objects are provided in the initial contents of PG\_DESCRIPTION.
+keywords: [openGauss, PG_DESCRIPTION]
+---
+
 # PG\_DESCRIPTION<a name="EN-US_TOPIC_0289900837"></a>
 
 **PG\_DESCRIPTION**  records optional descriptions \(comments\) for each database object. Descriptions of many built-in system objects are provided in the initial contents of  **PG\_DESCRIPTION**.

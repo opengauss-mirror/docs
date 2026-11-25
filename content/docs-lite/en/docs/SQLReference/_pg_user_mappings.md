@@ -1,3 +1,8 @@
+---
+description: \_PG\_USER\_MAPPINGS stores mappings from local users to remote users. Only the sysadmin user has the permission to view this view.
+keywords: [openGauss, _PG_USER_MAPPINGS]
+---
+
 # \_PG\_USER\_MAPPINGS<a name="EN-US_TOPIC_0310260671"></a>
 
 **\_PG\_USER\_MAPPINGS**  stores mappings from local users to remote users. Only the sysadmin user has the permission to view this view.

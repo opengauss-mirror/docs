@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.0.0.
+keywords: [openGauss, Parameter Tuning and Diagnosis]
+---
+
 # Parameter Tuning and Diagnosis<a name="EN-US_TOPIC_0000001151995073"></a>
 
 ## Availability<a name="section1145114551456"></a>

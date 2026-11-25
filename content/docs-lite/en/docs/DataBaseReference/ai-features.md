@@ -1,3 +1,8 @@
+---
+description: Introduces AI Features in openGauss, covering enable\_hypo\_index, db4ai\_snapshot\_mode, db4ai\_snapshot\_version\_delimiter.
+keywords: [openGauss, AI Features]
+---
+
 # AI Features<a name="EN-US_TOPIC_0000001108458456"></a>
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 

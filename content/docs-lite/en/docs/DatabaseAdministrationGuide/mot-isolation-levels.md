@@ -1,3 +1,8 @@
+---
+description: Even though MOT is fully ACID-compliant \(as described in the section\), not all isolation levels are supported in openGauss 1.0. The following table describes all isolation levels, as well as what is.
+keywords: [openGauss, MOT Isolation Levels]
+---
+
 # MOT Isolation Levels<a name="EN-US_TOPIC_0289900771"></a>
 
 Even though MOT is fully ACID-compliant \(as described in the section\), not all isolation levels are supported in openGauss 1.0. The following table describes all isolation levels, as well as what is and what is not supported by MOT.

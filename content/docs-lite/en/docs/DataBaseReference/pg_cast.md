@@ -1,3 +1,8 @@
+---
+description: PG\_CAST records the conversion relationship between data types.
+keywords: [openGauss, PG_CAST]
+---
+
 # PG\_CAST<a name="EN-US_TOPIC_0289900432"></a>
 
 **PG\_CAST**  records the conversion relationship between data types.

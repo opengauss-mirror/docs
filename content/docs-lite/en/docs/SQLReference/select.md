@@ -1,3 +1,8 @@
+---
+description: SELECT retrieves data from a table or view.
+keywords: [openGauss, SELECT]
+---
+
 # SELECT<a name="EN-US_TOPIC_0289900232"></a>
 
 ## Function<a name="en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_s65596fb5f1d44a428e41dd508d2044a7"></a>

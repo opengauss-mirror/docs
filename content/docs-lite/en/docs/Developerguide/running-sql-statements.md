@@ -1,3 +1,8 @@
+---
+description: To enable an application to operate data in the database by running SQL statements \(statements that do not need to transfer parameters\), perform the following operations:.
+keywords: [openGauss, Running SQL Statements]
+---
+
 # Running SQL Statements<a name="EN-US_TOPIC_0289900186"></a>
 
 ## Running a Common SQL Statement<a name="en-us_topic_0283137004_en-us_topic_0237120383_en-us_topic_0213179129_en-us_topic_0189250824_en-us_topic_0059777674_s6d6619f4f2df48198e8e7a32ccc4b47a"></a>

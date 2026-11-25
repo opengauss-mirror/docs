@@ -1,3 +1,8 @@
+---
+description: Flashback query enables you to query a snapshot of a table at a certain time point in the past. This feature can be used to view and logically rebuild damaged data that is accidentally deleted or modi.
+keywords: [openGauss, Flashback]
+---
+
 # Flashback Query<a name="EN-US_TOPIC_0000001178093828"></a>
 
 ## Context<a name="section028145412219"></a>

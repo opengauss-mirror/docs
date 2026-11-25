@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_REPLICATION\_STAT displays information about log synchronization status on each node, such as the locations where the sender sends logs and where the receiver receives logs.
+keywords: [openGauss, GLOBAL_REPLICATION_STAT]
+---
+
 # GLOBAL\_REPLICATION\_STAT<a name="EN-US_TOPIC_0289900243"></a>
 
 **GLOBAL\_REPLICATION\_STAT**  displays information about log synchronization status on each node, such as the locations where the sender sends logs and where the receiver receives logs.

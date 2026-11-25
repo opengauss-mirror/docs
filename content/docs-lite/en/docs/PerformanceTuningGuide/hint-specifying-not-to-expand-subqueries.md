@@ -1,3 +1,8 @@
+---
+description: When the database optimizes the query logic, some subqueries can be promoted to the upper layer to avoid nested execution. However, for some subqueries that have a low selection rate and can use index.
+keywords: [openGauss, Hint]
+---
+
 # Hint Specifying Not to Expand Subqueries<a name="EN-US_TOPIC_0000001143320483"></a>
 
 ## Function<a name="section290819468377"></a>
@@ -20,7 +25,7 @@ explain select * from t1 where t1.a in (select t2.a from t2);
 
 Plan:
 
-![](figures/en-us_image_0000001209615959.png)
+![Examples](figures/en-us_image_0000001209615959.png)
 
 After  **no\_expand**  is added:
 
@@ -30,5 +35,5 @@ explain select * from t1 where t1.a in (select /*+ no_expand*/ t2.a from t2);
 
 Plan:
 
-![](figures/en-us_image_0000001209736009.png)
+![Examples](figures/en-us_image_0000001209736009.png)
 

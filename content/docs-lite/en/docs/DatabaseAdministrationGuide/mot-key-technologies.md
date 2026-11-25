@@ -1,3 +1,8 @@
+---
+description: The following key MOT technologies enable its benefits:.
+keywords: [openGauss, MOT Key Technologies]
+---
+
 # MOT Key Technologies<a name="EN-US_TOPIC_0289900293"></a>
 
 The following key MOT technologies enable its benefits:

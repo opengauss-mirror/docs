@@ -1,3 +1,8 @@
+---
+description: This method creates a database session and returns a new connection object.
+keywords: [openGauss, psycopg2.connect]
+---
+
 # psycopg2.connect\(\)<a name="EN-US_TOPIC_0000001127193505"></a>
 
 ## Function<a name="section5708152714306"></a>

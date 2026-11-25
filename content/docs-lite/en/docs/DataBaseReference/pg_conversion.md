@@ -1,3 +1,8 @@
+---
+description: PG\_CONVERSION describes encoding conversion information.
+keywords: [openGauss, PG_CONVERSION]
+---
+
 # PG\_CONVERSION<a name="EN-US_TOPIC_0289900266"></a>
 
 **PG\_CONVERSION**  describes encoding conversion information.

@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_INSTANCE\_TIME provides time consumption information about all normal nodes in openGauss. For details about the time types, see the INSTANCE\_TIME view.
+keywords: [openGauss, GLOBAL_INSTANCE_TIME]
+---
+
 # GLOBAL\_INSTANCE\_TIME<a name="EN-US_TOPIC_0289900975"></a>
 
 **GLOBAL\_INSTANCE\_TIME**  provides time consumption information about all normal nodes in openGauss. For details about the time types, see the  **INSTANCE\_TIME**  view.

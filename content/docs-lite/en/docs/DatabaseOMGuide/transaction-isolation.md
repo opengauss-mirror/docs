@@ -1,3 +1,8 @@
+---
+description: openGauss manages transactions based on MVCC and two-phase locks, avoiding conflicts between read and write operations. SELECT is a read-only operation, whereas UPDATE and DELETE are read/write operat.
+keywords: [openGauss, Transaction Isolation]
+---
+
 # Transaction Isolation<a name="EN-US_TOPIC_0289899887"></a>
 
 openGauss manages transactions based on MVCC and two-phase locks, avoiding conflicts between read and write operations. SELECT is a read-only operation, whereas UPDATE and DELETE are read/write operations.

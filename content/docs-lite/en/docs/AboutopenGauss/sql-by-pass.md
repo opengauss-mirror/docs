@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.0.0.
+keywords: [openGauss, SQL by pass]
+---
+
 # SQL by pass<a name="EN-US_TOPIC_0000001151995059"></a>
 
 ## Availability<a name="section5309649"></a>

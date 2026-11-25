@@ -1,3 +1,8 @@
+---
+description: - \[Proposal\] Do not nest views unless they have strong dependency on each other.
+keywords: [openGauss, View and Joined Table Design]
+---
+
 # View and Joined Table Design<a name="EN-US_TOPIC_0000001149748075"></a>
 
 ## View Design<a name="section4431103710524"></a>

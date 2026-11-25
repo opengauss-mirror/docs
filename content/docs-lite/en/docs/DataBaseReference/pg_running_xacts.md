@@ -1,3 +1,8 @@
+---
+description: PG\_RUNNING\_XACTS displays the running transaction information on the current node.
+keywords: [openGauss, PG_RUNNING_XACTS]
+---
+
 # PG\_RUNNING\_XACTS<a name="EN-US_TOPIC_0000001151571796"></a>
 
 **PG\_RUNNING\_XACTS**  displays the running transaction information on the current node.

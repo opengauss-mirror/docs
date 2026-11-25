@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_STAT\_SYS\_INDEXES displays index status information about all the system catalogs in the pg\_catalog, information\_schema, and pg\_toast schemas on each node.
+keywords: [openGauss, GLOBAL_STAT_SYS_INDEXES]
+---
+
 # GLOBAL\_STAT\_SYS\_INDEXES<a name="EN-US_TOPIC_0289900006"></a>
 
 **GLOBAL\_STAT\_SYS\_INDEXES**  displays index status information about all the system catalogs in the  **pg\_catalog**,  **information\_schema**, and  **pg\_toast**  schemas on each node.

@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.0.0.
+keywords: [openGauss, WDR]
+---
+
 # WDR<a name="EN-US_TOPIC_0000001105235298"></a>
 
 ## Availability<a name="section11239174173316"></a>

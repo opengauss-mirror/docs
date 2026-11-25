@@ -1,3 +1,8 @@
+---
+description: DROP MODEL deletes a model object that has been trained and saved.
+keywords: [openGauss, DROP]
+---
+
 # DROP MODEL<a name="EN-US_TOPIC_0000001148169736"></a>
 
 ## Function<a name="section201561822201319"></a>

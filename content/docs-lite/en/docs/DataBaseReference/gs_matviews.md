@@ -1,3 +1,8 @@
+---
+description: GS\_MATVIEWS provides information about each materialized view in the database.
+keywords: [openGauss, GS_MATVIEWS]
+---
+
 # GS\_MATVIEWS<a name="EN-US_TOPIC_0000001086469042"></a>
 
 **GS\_MATVIEWS**  provides information about each materialized view in the database.

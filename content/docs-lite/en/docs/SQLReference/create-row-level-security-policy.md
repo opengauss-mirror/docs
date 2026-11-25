@@ -1,3 +1,8 @@
+---
+description: CREATE ROW LEVEL SECURITY POLICY creates a row-level access control policy for a table.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE ROW LEVEL SECURITY POLICY<a name="EN-US_TOPIC_0289901001"></a>
 
 ## Function<a name="en-us_topic_0283137345_en-us_topic_0237122109_section196521854173211"></a>

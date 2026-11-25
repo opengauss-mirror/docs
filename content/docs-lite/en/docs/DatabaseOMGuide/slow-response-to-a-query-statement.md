@@ -1,3 +1,8 @@
+---
+description: After a query statement has been executed, no response is returned for a long time.
+keywords: [openGauss, Slow Response to a Query Statement]
+---
+
 # Slow Response to a Query Statement<a name="EN-US_TOPIC_0291615096"></a>
 
 ## Symptom<a name="section262711486472"></a>

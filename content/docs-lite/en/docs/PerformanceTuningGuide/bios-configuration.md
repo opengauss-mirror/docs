@@ -1,3 +1,8 @@
+---
+description: 1. Restore BIOS factory defaults.
+keywords: [openGauss, BIOS Configuration]
+---
+
 # BIOS Configuration<a name="EN-US_TOPIC_0289900176"></a>
 
 1.  Restore BIOS factory defaults.
@@ -5,13 +10,13 @@
     1.  Choose  **BIOS**  \>  **Advanced**  \>  **MISC Config**  and set  **Support** **Smmu**  to  **Disabled**, as shown in  [Figure 1](#en-us_topic_0283136610_en-us_topic_0263913266_fig1464144318512).
 
         **Figure  1**  Modifying BIOS settings \(1\)<a name="en-us_topic_0283136610_en-us_topic_0263913266_fig1464144318512"></a>  
-        ![](figures/modifying-bios-settings-(1).png "modifying-bios-settings-(1)")
+        ![BIOS Configuration](figures/modifying-bios-settings-(1).png "modifying-bios-settings-(1)")
 
     2.  Choose  **BIOS**  \>  **Advanced**  \>  **MISC Config**  and set  **CPU Prefetching Configuration**  to  **Disabled**, as shown in  [Figure 1](#en-us_topic_0283136610_en-us_topic_0263913266_fig1464144318512).
     3.  Choose  **BIOS**  \>  **Advanced**  \>  **Memory Config**  and set  **Die Interleaving**  to  **Disable**, as shown in  [Figure 1](#en-us_topic_0283136610_en-us_topic_0263913266_fig1464144318512).
 
         **Figure  2**  Modifying BIOS settings \(2\)<a name="en-us_topic_0283136610_en-us_topic_0263913266_fig6430185319610"></a>  
-        ![](figures/modifying-bios-settings-(2).png "modifying-bios-settings-(2)")
+        ![BIOS Configuration](figures/modifying-bios-settings-(2).png "modifying-bios-settings-(2)")
 
 3.  Restart the BIOS.
 

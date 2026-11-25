@@ -1,3 +1,8 @@
+---
+description: - \[Proposal\] If all the column values can be obtained from services, you are not advised to use the DEFAULT constraint. Otherwise, unexpected results will be generated during data loading.
+keywords: [openGauss, Constraint Design]
+---
+
 # Constraint Design<a name="EN-US_TOPIC_0000001102508296"></a>
 
 ## DEFAULT and NULL Constraints<a name="section555838816718"></a>

@@ -1,3 +1,8 @@
+---
+description: When creating a function, specify SETOF _datatype_ for the return values.
+keywords: [openGauss, RETURN]
+---
+
 # RETURN NEXT and RETURN QUERY<a name="EN-US_TOPIC_0289900097"></a>
 
 ## Syntax<a name="en-us_topic_0283137380_en-us_topic_0237122232_section66906369117"></a>
@@ -6,11 +11,11 @@ When creating a function, specify  **SETOF **_datatype_  for the return values.
 
 return\_next\_clause::=
 
-![](figures/en-us_image_0283137092.png)
+![Syntax](figures/en-us_image_0283137092.png)
 
 return\_query\_clause::=
 
-![](figures/en-us_image_0283137739.png)
+![Syntax](figures/en-us_image_0283137739.png)
 
 The above syntax diagram is explained as follows:
 

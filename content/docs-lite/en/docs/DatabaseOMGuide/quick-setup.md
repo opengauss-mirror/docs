@@ -1,3 +1,8 @@
+---
+description: Set the following configuration items in the postgresql.conf file.
+keywords: [openGauss, Quick Setup]
+---
+
 # Quick Setup<a name="EN-US_TOPIC_0289900926"></a>
 
 Set the following configuration items in the **postgresql.conf** file.

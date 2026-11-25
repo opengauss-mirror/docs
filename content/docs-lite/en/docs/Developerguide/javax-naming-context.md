@@ -1,3 +1,8 @@
+---
+description: This section describes javax.naming.Context, the context interface for connection configuration.
+keywords: [openGauss, javax.naming.Context]
+---
+
 # javax.naming.Context<a name="EN-US_TOPIC_0242371431"></a>
 
 This section describes  **javax.naming.Context**, the context interface for connection configuration.

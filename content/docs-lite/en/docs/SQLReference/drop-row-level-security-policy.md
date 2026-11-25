@@ -1,3 +1,8 @@
+---
+description: DROP ROW LEVEL SECURITY POLICY deletes a row-level access control policy from a table.
+keywords: [openGauss, DROP]
+---
+
 # DROP ROW LEVEL SECURITY POLICY<a name="EN-US_TOPIC_0289900923"></a>
 
 ## Function<a name="en-us_topic_0283136715_en-us_topic_0237122144_section196521854173211"></a>

@@ -1,3 +1,8 @@
+---
+description: PQsendQuery is used to commit a command to the server without waiting for the result. If the query is successful, 1 is returned. Otherwise, 0 is returned.
+keywords: [openGauss, PQsendQuery]
+---
+
 # PQsendQuery<a name="EN-US_TOPIC_0242380582"></a>
 
 ## Function<a name="en-us_topic_0241735627_section1650116513199"></a>

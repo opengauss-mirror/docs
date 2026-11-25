@@ -1,3 +1,8 @@
+---
+description: CREATE OPERATOR defines a new operator.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE OPERATOR<a name="EN-US_TOPIC_0000001080835908"></a>
 
 ## Function<a name="section173831846163116"></a>

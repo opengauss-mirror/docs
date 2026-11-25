@@ -1,3 +1,8 @@
+---
+description: This section describes the preparations for installation.
+keywords: [openGauss, Preparing the Software and Hardware Installation Environment]
+---
+
 # Preparing the Software and Hardware Installation Environment<a name="EN-US_TOPIC_0000001093128896"></a>
 
 This section describes the preparations for installation.

@@ -1,3 +1,8 @@
+---
+description: DROP LANGUAGE deletes a procedural language. A single-node system or centralized system does not support deleting procedural languages.
+keywords: [openGauss, DROP]
+---
+
 # DROP LANGUAGE<a name="EN-US_TOPIC_0000001127872509"></a>
 
 ## Function<a name="section113331284191"></a>

@@ -1,3 +1,8 @@
+---
+description: Open an existing large object for reading and writing.
+keywords: [openGauss, lo_open]
+---
+
 # lo_open<a name="EN-US_TOPIC_0242380596"></a>
 
 ## Function<a name="en-us_topic_0241735627_section696285173717"></a>

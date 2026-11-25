@@ -1,3 +1,8 @@
+---
+description: The following table lists metrics in the Memory Statistics report.
+keywords: [openGauss, Memory Statistics]
+---
+
 # Memory Statistics<a name="EN-US_TOPIC_0000001215195226"></a>
 
 The following table lists metrics in the Memory Statistics report.

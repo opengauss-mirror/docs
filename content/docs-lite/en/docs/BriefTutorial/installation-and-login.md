@@ -1,3 +1,8 @@
+---
+description: openGauss supports simplified installation using scripts. Simplified installation includes standalone installation and installation of one primary and one standby nodes.
+keywords: [openGauss, Installation and Login]
+---
+
 # Installation and Login<a name="EN-US_TOPIC_0000001209981908"></a>
 
 openGauss supports simplified installation using scripts. Simplified installation includes standalone installation and installation of one primary and one standby nodes.

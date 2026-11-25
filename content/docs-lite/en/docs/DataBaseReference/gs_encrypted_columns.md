@@ -1,3 +1,8 @@
+---
+description: GS\_ENCRYPTED\_COLUMNS records information about encrypted columns in the encrypted equality feature. Each record corresponds to an encrypted column.
+keywords: [openGauss, GS_ENCRYPTED_COLUMNS]
+---
+
 # GS\_ENCRYPTED\_COLUMNS<a name="EN-US_TOPIC_0294528096"></a>
 
 **GS\_ENCRYPTED\_COLUMNS**  records information about encrypted columns in the encrypted equality feature. Each record corresponds to an encrypted column.

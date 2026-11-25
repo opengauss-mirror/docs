@@ -1,3 +1,8 @@
+---
+description: The following table lists the technical specifications of the openGauss database.
+keywords: [openGauss, Technical Specifications]
+---
+
 # Technical Specifications<a name="EN-US_CONCEPT_0289895647"></a>
 
 The following table lists the technical specifications of the openGauss database.

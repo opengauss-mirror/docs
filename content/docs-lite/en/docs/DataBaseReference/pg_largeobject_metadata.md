@@ -1,3 +1,8 @@
+---
+description: PG\_LARGEOBJECT\_METADATA records metadata associated with large objects. The actual large object data is stored in PG\_LARGEOBJECT.
+keywords: [openGauss, PG_LARGEOBJECT_METADATA]
+---
+
 # PG\_LARGEOBJECT\_METADATA<a name="EN-US_TOPIC_0289900891"></a>
 
 **PG\_LARGEOBJECT\_METADATA**  records metadata associated with large objects. The actual large object data is stored in  **PG\_LARGEOBJECT**.

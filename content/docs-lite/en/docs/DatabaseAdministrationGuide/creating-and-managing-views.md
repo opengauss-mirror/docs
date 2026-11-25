@@ -1,3 +1,8 @@
+---
+description: If some columns in one or more tables in a database are frequently searched for, an administrator can define a view for these columns, and then users can directly access these columns in the view with.
+keywords: [openGauss, Creating and Managing Views]
+---
+
 # Creating and Managing Views<a name="EN-US_TOPIC_0289900594"></a>
 
 ## Background<a name="en-us_topic_0283136608_en-us_topic_0237120309_en-us_topic_0059777564_sd10ac23ddd774a89947f3f6afdc707d9"></a>

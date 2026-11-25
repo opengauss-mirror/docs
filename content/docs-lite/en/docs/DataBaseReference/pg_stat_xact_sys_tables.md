@@ -1,3 +1,8 @@
+---
+description: PG\_STAT\_XACT\_SYS\_TABLES displays transaction status information of the system catalog in the namespace.
+keywords: [openGauss, PG_STAT_XACT_SYS_TABLES]
+---
+
 # PG\_STAT\_XACT\_SYS\_TABLES<a name="EN-US_TOPIC_0289900316"></a>
 
 **PG\_STAT\_XACT\_SYS\_TABLES**  displays transaction status information of the system catalog in the namespace.

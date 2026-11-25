@@ -1,3 +1,8 @@
+---
+description: BEGIN may be used to initiate an anonymous block or a single transaction. This section describes the syntax of BEGIN used to initiate an anonymous block. For details about the BEGIN s.
+keywords: [openGauss, BEGIN]
+---
+
 # BEGIN<a name="EN-US_TOPIC_0289900173"></a>
 
 ## Function<a name="en-us_topic_0283137310_en-us_topic_0237122087_en-us_topic_0059778122_s575f09bb20db48a4a74f6544c1593758"></a>

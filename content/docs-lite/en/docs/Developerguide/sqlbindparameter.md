@@ -1,3 +1,8 @@
+---
+description: SQLBindParameter is used to bind parameter markers in an SQL statement to a buffer.
+keywords: [openGauss, SQLBindParameter]
+---
+
 # SQLBindParameter<a name="EN-US_TOPIC_0242371441"></a>
 
 ## Function<a name="en-us_topic_0238272887_en-us_topic_0237120417_en-us_topic_0059778788_s9699227cd3d64b43b542e3e3b9a52f37"></a>

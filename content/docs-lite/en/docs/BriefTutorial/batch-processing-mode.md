@@ -1,3 +1,8 @@
+---
+description: openGauss supports the execution of SQL statements from text files and provides the gsql tool to process SQL statements in batches.
+keywords: [openGauss, Batch]
+---
+
 # Batch Processing Mode<a name="EN-US_TOPIC_0000001255021831"></a>
 
 openGauss supports the execution of SQL statements from text files and provides the gsql tool to process SQL statements in batches.

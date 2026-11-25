@@ -1,3 +1,8 @@
+---
+description: Default security certificates and private keys required for SSL connection are configured in openGauss. You can change them as needed.
+keywords: [openGauss, Replacing Certificates]
+---
+
 # Replacing Certificates<a name="EN-US_TOPIC_0289900549"></a>
 
 ## Scenarios<a name="en-us_topic_0283137045_en-us_topic_0237121097_en-us_topic_0059778589_section12641165319257"></a>

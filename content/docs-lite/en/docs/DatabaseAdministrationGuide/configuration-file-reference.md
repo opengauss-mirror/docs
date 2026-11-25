@@ -1,3 +1,8 @@
+---
+description: Table 1 Parameter description.
+keywords: [openGauss, Configuration File Reference]
+---
+
 # Configuration File Reference<a name="EN-US_TOPIC_0289900190"></a>
 
 **Table  1**  Parameter description

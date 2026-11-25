@@ -1,3 +1,8 @@
+---
+description: These hints specify the join method, which can be nested loop join, hash join, or merge join.
+keywords: [openGauss, Join]
+---
+
 # Join Operation Hints<a name="EN-US_TOPIC_0289899985"></a>
 
 ## Function<a name="en-us_topic_0283137375_en-us_topic_0237121534_section290819468377"></a>
@@ -31,5 +36,5 @@ select /*+ nestloop(store_sales store_returns item) */ i_product_name product_na
 
 **nestloop**  is used for the last join between  **store\_sales**,  **store\_returns**, and  **item**. The optimized plan is as follows:
 
-![](figures/en-us_image_0283137630.png)
+![Example](figures/en-us_image_0283137630.png)
 

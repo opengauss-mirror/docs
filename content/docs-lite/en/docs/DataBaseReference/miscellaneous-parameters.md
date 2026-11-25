@@ -1,3 +1,8 @@
+---
+description: Parameter description: Specifies whether to enable the UStore storage engine by default. If this parameter is set to on, all created tables are UStore tables.
+keywords: [openGauss, Miscellaneous Parameters]
+---
+
 # Miscellaneous Parameters<a name="EN-US_TOPIC_0289900522"></a>
 
 ## enable\_default\_ustore\_table<a name="section477353310529"></a>

@@ -1,3 +1,8 @@
+---
+description: Backup control functions help with online backup.
+keywords: [openGauss, Backup and Restoration Control Functions]
+---
+
 # Backup and Restoration Control Functions<a name="EN-US_TOPIC_0289900147"></a>
 
 ## Backup Control Functions<a name="en-us_topic_0283137026_en-us_topic_0237121992_en-us_topic_0059778344_s540f3b3ffcd845909fe45a65f5cff84f"></a>

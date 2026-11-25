@@ -1,3 +1,8 @@
+---
+description: A subquery, also called an internal query, is a nested query. The subquery embeds a query statement in the WHERE clause of a database query and it is equivalent to a temporary table. The query r.
+keywords: [openGauss, Subqueries]
+---
+
 # Subqueries<a name="EN-US_TOPIC_0000001255021825"></a>
 
 A subquery, also called an internal query, is a nested query. The subquery embeds a query statement in the  **WHERE**  clause of a database query and it is equivalent to a temporary table. The query result of a SELECT statement can be used as the input value of another statement.

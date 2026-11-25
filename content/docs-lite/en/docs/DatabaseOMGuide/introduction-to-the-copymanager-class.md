@@ -1,3 +1,8 @@
+---
+description: CopyManager is an API class provided by the JDBC driver in openGauss. It is used to import data to the openGauss database in batches.
+keywords: [openGauss, Introduction to the CopyManager Class]
+---
+
 # Introduction to the CopyManager Class<a name="EN-US_TOPIC_0289900684"></a>
 
 CopyManager is an API class provided by the JDBC driver in openGauss. It is used to import data to the openGauss database in batches.

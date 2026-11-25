@@ -1,3 +1,8 @@
+---
+description: SUMMARY\_STAT\_XACT\_SYS\_TABLES displays transaction status information about the system catalogs in namespaces in openGauss.
+keywords: [openGauss, SUMMARY_STAT_XACT_SYS_TABLES]
+---
+
 # SUMMARY\_STAT\_XACT\_SYS\_TABLES<a name="EN-US_TOPIC_0289900389"></a>
 
 **SUMMARY\_STAT\_XACT\_SYS\_TABLES**  displays transaction status information about the system catalogs in namespaces in openGauss.

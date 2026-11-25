@@ -1,3 +1,8 @@
+---
+description: - bucketabstime\(value, flag\).
+keywords: [openGauss, Hash Function]
+---
+
 # Hash Function<a name="EN-US_TOPIC_0311139289"></a>
 
 -   bucketabstime\(value, flag\)

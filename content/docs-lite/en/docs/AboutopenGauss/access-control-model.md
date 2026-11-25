@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Access Control Model]
+---
+
 # Access Control Model<a name="EN-US_TOPIC_0000001105555108"></a>
 
 ## Availability<a name="section65352835"></a>

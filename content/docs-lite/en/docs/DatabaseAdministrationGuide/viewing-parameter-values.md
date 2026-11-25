@@ -1,3 +1,8 @@
+---
+description: openGauss uses a set of default running parameters after it is installed. You can modify the parameters to better fit the current service scenarios and data volume.
+keywords: [openGauss, Viewing Parameter Values]
+---
+
 # Viewing Parameter Values<a name="EN-US_TOPIC_0289900197"></a>
 
 openGauss uses a set of default running parameters after it is installed. You can modify the parameters to better fit the current service scenarios and data volume.

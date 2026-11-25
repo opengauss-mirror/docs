@@ -1,3 +1,8 @@
+---
+description: The query and index statistics collector is used to collect statistics during database running. The statistics include the times of inserting and updating a table and index, the number of disk blocks.
+keywords: [openGauss, Query and Index Statistics Collector]
+---
+
 # Query and Index Statistics Collector<a name="EN-US_TOPIC_0289900686"></a>
 
 The query and index statistics collector is used to collect statistics during database running. The statistics include the times of inserting and updating a table and index, the number of disk blocks and tuples, and the time required for the last cleanup and analysis on each table. The statistics can be viewed by querying system view families pg\_stats and pg\_statistic. The following parameters are used to set the statistics collection feature in the server scope.

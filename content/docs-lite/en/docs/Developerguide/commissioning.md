@@ -1,3 +1,8 @@
+---
+description: To control the output of log files and better understand the operating status of the database, modify specific configuration parameters in the postgresql.conf file in the instance data directory.
+keywords: [openGauss, Commissioning]
+---
+
 # Commissioning<a name="EN-US_TOPIC_0289900586"></a>
 
 To control the output of log files and better understand the operating status of the database, modify specific configuration parameters in the  **postgresql.conf**  file in the instance data directory.

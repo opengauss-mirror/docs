@@ -1,3 +1,8 @@
+---
+description: Introduces File in openGauss, covering .
+keywords: [openGauss, File]
+---
+
 # File<a name="EN-US_TOPIC_0289899968"></a>
 
 -   **[FILE\_IOSTAT](file_iostat.md)**  

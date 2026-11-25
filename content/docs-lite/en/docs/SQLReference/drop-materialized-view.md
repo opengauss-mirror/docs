@@ -1,3 +1,8 @@
+---
+description: DROP MATERIALIZED VIEW forcibly deletes an existing materialized view from the database.
+keywords: [openGauss, DROP]
+---
+
 # DROP MATERIALIZED VIEW<a name="EN-US_TOPIC_0289899894"></a>
 
 ## Function<a name="en-us_topic_0283137529_en-us_topic_0237122159_en-us_topic_0059777895_sed6f06f3d4d94b38b10c7592f98bacdb"></a>

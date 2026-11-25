@@ -1,3 +1,8 @@
+---
+description: The single-core capability of TaiShan servers is insufficient and the number of cores is large. Therefore, NIC multi-queue interruption \(16 queues by default\) needs to be deployed on the server and.
+keywords: [openGauss, NIC Multi-Queue Interruption Settings]
+---
+
 # NIC Multi-Queue Interruption Settings<a name="EN-US_TOPIC_0289900555"></a>
 
 The single-core capability of TaiShan servers is insufficient and the number of cores is large. Therefore, NIC multi-queue interruption \(16 queues by default\) needs to be deployed on the server and the client. The client and server must be configured with at least GE NICs and are connected through optical fibers.
@@ -13,13 +18,13 @@ The recommended configuration is as follows:
 2.  Decompress  **IN500\_solution\_5.1.0.SPC401.zip**  and go to the  **tools\\linux\_arm**  directory.
 3.  Decompress the  **nic-ZIP**  package and install the hinicadm as user  **root**.
 
-    ![](figures/en-us_image_0289900286.png)
+    ![Procedure](figures/en-us_image_0289900286.png)
 
 4.  Check the NIC corresponding to the connected physical port. The network port and the NIC name vary according to different hardware platforms. Take the following server as an example. The private network port enp3s0 is used and belongs to the hinic0 NIC.
 
-    ![](figures/en-us_image_0289900165.png)
+    ![Procedure](figures/en-us_image_0289900165.png)
 
-    ![](figures/en-us_image_0289899960.png)
+    ![Procedure](figures/en-us_image_0289899960.png)
 
 5.  Go to the  **config**  directory and use the hinicconfig tool to configure the interrupt queue FW configuration file. Modify the value according to the actual situation.
     -   64-queue configuration file:  **std\_sh\_4x25ge\_dpdk\_cfg\_template0.ini**
@@ -35,7 +40,7 @@ The recommended configuration is as follows:
         2.  Run the  **reboot**  command to restart OS for the modification to take effect.
         3.  Run the  **ethtool -l enp3s0**  command to check whether the modification is successful. For example, the following figure shows that the value is changed to  **64**.
 
-            ![](figures/en-us_image_0289900783.png)
+            ![Procedure](figures/en-us_image_0289900783.png)
 
     2.  Modify the number of queues in use.
 

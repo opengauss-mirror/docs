@@ -1,3 +1,8 @@
+---
+description: PG\_STAT\_DATABASE\_CONFLICTS displays statistics about database conflicts.
+keywords: [openGauss, PG_STAT_DATABASE_CONFLICTS]
+---
+
 # PG\_STAT\_DATABASE\_CONFLICTS<a name="EN-US_TOPIC_0289900566"></a>
 
 **PG\_STAT\_DATABASE\_CONFLICTS**  displays statistics about database conflicts.

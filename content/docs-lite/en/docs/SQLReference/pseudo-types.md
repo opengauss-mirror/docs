@@ -1,3 +1,8 @@
+---
+description: openGauss type system contains a number of special-purpose entries that are collectively called pseudo-types. A pseudo-type cannot be used as a column data type, but it can be used to declare a functi.
+keywords: [openGauss, Pseudo-Types]
+---
+
 # Pseudo-Types<a name="EN-US_TOPIC_0289900680"></a>
 
 openGauss type system contains a number of special-purpose entries that are collectively called pseudo-types. A pseudo-type cannot be used as a column data type, but it can be used to declare a function's argument or result type.

@@ -1,3 +1,8 @@
+---
+description: SUMMARY\_STATEMENT\_COUNT displays statistics about five types of running statements \(SELECT, INSERT, UPDATE, DELETE, and MERGE INTO\) as well as DDL, DML, and DCL statem.
+keywords: [openGauss, SUMMARY_STATEMENT_COUNT]
+---
+
 # SUMMARY\_STATEMENT\_COUNT<a name="EN-US_TOPIC_0289900608"></a>
 
 **SUMMARY\_STATEMENT\_COUNT**  displays statistics about five types of running statements \(**SELECT**,  **INSERT**,  **UPDATE**,  **DELETE**, and  **MERGE INTO**\) as well as DDL, DML, and DCL statements on all nodes \(database nodes\) of the database.

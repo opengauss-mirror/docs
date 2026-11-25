@@ -1,3 +1,8 @@
+---
+description: This feature was introduced in openGauss 1.0.0. After the third-party library code directory structure was adjusted, this feature was temporarily deleted and is now available since openGauss 1.1.0.
+keywords: [openGauss, Stored Procedure Debugging]
+---
+
 # Stored Procedure Debugging<a name="EN-US_TOPIC_0000001105395258"></a>
 
 ## Availability<a name="section1076382216287"></a>

@@ -1,3 +1,8 @@
+---
+description: The following table lists metrics in the IO Profile report.
+keywords: [openGauss, IO Profile]
+---
+
 # IO Profile<a name="EN-US_TOPIC_0000001215035244"></a>
 
 The following table lists metrics in the IO Profile report.

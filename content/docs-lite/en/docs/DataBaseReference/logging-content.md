@@ -1,3 +1,8 @@
+---
+description: Parameter description: Specifies whether to print parsing tree results.
+keywords: [openGauss, Logging Content]
+---
+
 # Logging Content<a name="EN-US_TOPIC_0289900137"></a>
 
 ## debug\_print\_parse<a name="en-us_topic_0283136613_en-us_topic_0237124723_section81174139518"></a>

@@ -1,3 +1,8 @@
+---
+description: Global plan cache \(GPC\) views are valid only when enable\_global\_plancache and the thread pool are enabled.
+keywords: [openGauss, Global Plancache]
+---
+
 # Global Plancache<a name="EN-US_TOPIC_0297927200"></a>
 
 Global plan cache \(GPC\) views are valid only when  **enable\_global\_plancache **and the thread pool are enabled.

@@ -1,3 +1,8 @@
+---
+description: Durability refers to long-term data protection \(also known as disk persistence\). Durability means that stored data does not suffer from any kind of degradation or corruption, so that data is neve.
+keywords: [openGauss, MOT Durability]
+---
+
 # MOT Durability<a name="EN-US_TOPIC_0289900585"></a>
 
 Durability refers to long-term data protection \(also known as  *disk persistence*\). Durability means that stored data does not suffer from any kind of degradation or corruption, so that data is never lost or compromised. Durability ensures that data and the MOT engine are restored to a consistent state after a planned shutdown \(for example, for maintenance\) or an unplanned crash \(for example, a power failure\).

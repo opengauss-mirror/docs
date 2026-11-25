@@ -1,3 +1,8 @@
+---
+description: in-clause/any-clause is a common SQL statement constraint. Sometimes, the clause following in or any is a constant. For example:.
+keywords: [openGauss, Case Rewriting SQL Statements and Deleting in-clause]
+---
+
 # Case: Rewriting SQL Statements and Deleting in-clause<a name="EN-US_TOPIC_0000001382071337"></a>
 
 ## Symptom <a name="en-us_topic_0075873761_section47054049113429"></a>

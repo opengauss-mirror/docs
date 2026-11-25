@@ -1,3 +1,8 @@
+---
+description: ERRMSG: "unsupported syntax: ENCRYPTED WITH in this operation".
+keywords: [openGauss, Kernel Error Information]
+---
+
 # Kernel Error Information<a name="EN-US_TOPIC_0000001113427790"></a>
 
 ERRMSG: "unsupported syntax: ENCRYPTED WITH in this operation"

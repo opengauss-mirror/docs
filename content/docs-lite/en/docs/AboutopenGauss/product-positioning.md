@@ -1,3 +1,8 @@
+---
+description: openGauss is an HA rational database that supports the SQL2003 standard and primary/standby deployment.
+keywords: [openGauss, Product Positioning]
+---
+
 # Product Positioning<a name="EN-US_TOPIC_0289896521"></a>
 
 openGauss is an HA rational database that supports the SQL2003 standard and primary/standby deployment.

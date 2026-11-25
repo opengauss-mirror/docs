@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 3.0.0.
+keywords: [openGauss, Root Cause Analysis for Slow SQL Statements]
+---
+
 # Root Cause Analysis for Slow SQL Statements<a name="EN-US_TOPIC_0000001263251657"></a>
 
 ## Availability<a name="section17365142913365"></a>

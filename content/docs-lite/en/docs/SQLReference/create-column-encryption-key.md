@@ -1,3 +1,8 @@
+---
+description: CREATE COLUMN ENCRYPTION KEY creates a CEK that can be used to encrypt a specified column in a table.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE COLUMN ENCRYPTION KEY<a name="EN-US_TOPIC_0294528089"></a>
 
 ## Function<a name="section1020475817135"></a>

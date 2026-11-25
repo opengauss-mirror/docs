@@ -1,3 +1,8 @@
+---
+description: This section describes java.sql.Statement, the interface for executing SQL statements.
+keywords: [openGauss, JDBC, Statement]
+---
+
 # java.sql.Statement<a name="EN-US_TOPIC_0289900015"></a>
 
 This section describes  **java.sql.Statement**, the interface for executing SQL statements.

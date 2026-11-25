@@ -1,3 +1,8 @@
+---
+description: CREATE DATA SOURCE creates an external data source, which defines the information about the database that openGauss will connect to.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE DATA SOURCE<a name="EN-US_TOPIC_0289900178"></a>
 
 ## Function<a name="en-us_topic_0283137069_en-us_topic_0237122100_section1697927113919"></a>

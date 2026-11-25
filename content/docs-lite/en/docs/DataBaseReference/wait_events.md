@@ -1,3 +1,8 @@
+---
+description: WAIT\_EVENTS displays statistics about wait events on the current node. For details about events, see [Table 2](pg_thread_wait_status.md#en-us_topic_0283136724_en-us_topic_0237122466_en-us_topic.
+keywords: [openGauss, WAIT_EVENTS]
+---
+
 # WAIT\_EVENTS<a name="EN-US_TOPIC_0289900696"></a>
 
 **WAIT\_EVENTS**  displays statistics about wait events on the current node. For details about events, see  [Table 2](pg_thread_wait_status.md#en-us_topic_0283136724_en-us_topic_0237122466_en-us_topic_0059777957_t794f802302c24514a5db22d51eabacc4),  [Table 3](pg_thread_wait_status.md#en-us_topic_0283136724_en-us_topic_0237122466_table38811324183420),  [Table 4](pg_thread_wait_status.md#en-us_topic_0283136724_en-us_topic_0237122466_table124603113369)  and  [Table 5](pg_thread_wait_status.md#en-us_topic_0283136724_en-us_topic_0237122466_table11826123533718). For details about the impact of each transaction lock on services, see  [LOCK](../SQLReference/lock.md).

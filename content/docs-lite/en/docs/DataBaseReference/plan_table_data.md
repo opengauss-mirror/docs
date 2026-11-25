@@ -1,3 +1,8 @@
+---
+description: PLAN\_TABLE\_DATA stores plan information collected by EXPLAIN PLAN. Different from the PLAN\_TABLE view, the system catalog PLAN\_TABLE\_DATA stores EXPLAIN PLAN informati.
+keywords: [openGauss, PLAN_TABLE_DATA]
+---
+
 # PLAN\_TABLE\_DATA<a name="EN-US_TOPIC_0289900483"></a>
 
 **PLAN\_TABLE\_DATA**  stores plan information collected by  **EXPLAIN PLAN**. Different from the  **PLAN\_TABLE**  view, the system catalog  **PLAN\_TABLE\_DATA**  stores  **EXPLAIN PLAN**  information collected by all sessions and users.

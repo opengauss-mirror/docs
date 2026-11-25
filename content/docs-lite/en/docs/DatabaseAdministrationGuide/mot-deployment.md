@@ -1,3 +1,8 @@
+---
+description: - The following sections describe various mandatory and optional settings for optimal deployment.
+keywords: [openGauss, MOT Deployment]
+---
+
 # MOT Deployment<a name="EN-US_TOPIC_0289900245"></a>
 
 -   The following sections describe various mandatory and optional settings for optimal deployment.

@@ -1,3 +1,8 @@
+---
+description: PG\_PROC stores information about functions or stored procedures.
+keywords: [openGauss, PG_PROC]
+---
+
 # PG\_PROC<a name="EN-US_TOPIC_0289900818"></a>
 
 **PG\_PROC**  stores information about functions or stored procedures.

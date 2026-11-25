@@ -1,3 +1,8 @@
+---
+description: To add all or a large amount of data in a table to an existing table, you can run the MERGE INTO statement in openGauss to merge the two tables so that data can be quickly added to the existing.
+keywords: [openGauss, Updating and Inserting Data by Using the MERGE INTO Statement]
+---
+
 # Updating and Inserting Data by Using the MERGE INTO Statement<a name="EN-US_TOPIC_0289899987"></a>
 
 To add all or a large amount of data in a table to an existing table, you can run the  **MERGE INTO**  statement in openGauss to merge the two tables so that data can be quickly added to the existing table.

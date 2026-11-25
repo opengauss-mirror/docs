@@ -1,3 +1,8 @@
+---
+description: The tools mentioned in this section are used for openGauss running processes or calling modules. These tools are used only for internal invoking and their accuracy in other scenarios has not been veri.
+keywords: [openGauss, Tools Called in the Internal System]
+---
+
 # Tools Called in the Internal System<a name="EN-US_TOPIC_0294748949"></a>
 
 The tools mentioned in this section are used for openGauss running processes or calling modules. These tools are used only for internal invoking and their accuracy in other scenarios has not been verified. Therefore, you are not advised to execute tasks by directly using these tools to avoid impact on the system.

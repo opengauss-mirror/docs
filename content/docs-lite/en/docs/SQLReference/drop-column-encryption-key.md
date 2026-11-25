@@ -1,3 +1,8 @@
+---
+description: CREATE COLUMN ENCRYPTION KEY deletes a column encryption key \(CEK\).
+keywords: [openGauss, DROP]
+---
+
 # DROP COLUMN ENCRYPTION KEY<a name="EN-US_TOPIC_0294528091"></a>
 
 ## Function<a name="section77761618077"></a>

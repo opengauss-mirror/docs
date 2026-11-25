@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_STATIO\_ALL\_SEQUENCES contains every row of each sequence in databases on each node, showing I/O statistics about specific sequences.
+keywords: [openGauss, GLOBAL_STATIO_ALL_SEQUENCES]
+---
+
 # GLOBAL\_STATIO\_ALL\_SEQUENCES<a name="EN-US_TOPIC_0289900184"></a>
 
 **GLOBAL\_STATIO\_ALL\_SEQUENCES**  contains every row of each sequence in databases on each node, showing I/O statistics about specific sequences.

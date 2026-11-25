@@ -1,3 +1,8 @@
+---
+description: ALTER EXTENSION modifies the plug-in extension.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER EXTENSION<a name="EN-US_TOPIC_0000001127799415"></a>
 
 ## Function<a name="section173831846163116"></a>

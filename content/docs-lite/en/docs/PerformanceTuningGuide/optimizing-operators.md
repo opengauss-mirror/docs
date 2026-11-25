@@ -1,3 +1,8 @@
+---
+description: A query statement needs to go through multiple operator procedures to generate the final result. Sometimes, the overall query performance deteriorates due to long execution time of certain operators,.
+keywords: [openGauss, Optimizing Operators]
+---
+
 # Optimizing Operators<a name="EN-US_TOPIC_0289900563"></a>
 
 ## Background<a name="en-us_topic_0283137632_en-us_topic_0237121527_en-us_topic_0073253804_en-us_topic_0062578364_section1340508119330"></a>
@@ -6,7 +11,7 @@ A query statement needs to go through multiple operator procedures to generate t
 
 For example, in the following execution process, the execution time of the  **Hashagg**  operator accounts for about 66% \[\(51016-13535\)/56476 ≈ 66%\] of the total execution time. Therefore, the  **Hashagg**  operator is the bottleneck operator for this query. Optimize this operator first.
 
-![](figures/zh-cn_image_0118861065.jpg)
+![Background](figures/zh-cn_image_0118861065.jpg)
 
 ## Example<a name="en-us_topic_0283137632_en-us_topic_0237121527_en-us_topic_0073253804_en-us_topic_0062578364_section22173273193836"></a>
 
@@ -42,13 +47,13 @@ In this example, the full table scan filters much data and returns 3360 records.
 
 2: If NestLoop is used for joining tables with a large number of rows, the join may take a long time. In the following example, NestLoop takes 181s. If  **enable\_mergejoin**  is set to  **off**  to disable merge join and  **enable\_nestloop**  is set to  **off**  to disable NestLoop so that the optimizer selects hash join, the join takes more than 200 ms.
 
-![](figures/12-4-5-4-算子级调优(示例错乱调整1).png)
+![Example](figures/12-4-5-4-算子级调优(示例错乱调整1).png)
 
-![](figures/12-4-5-4-算子级调优(示例错乱调整2).png)
+![Example](figures/12-4-5-4-算子级调优(示例错乱调整2).png)
 
 3. Generally, query performance can be improved by selecting  **HashAgg**. If  **Sort**  and  **GroupAgg**  are used for a large result set, you need to set  **enable\_sort**  to  **off**.  **HashAgg**  consumes less time than  **Sort**  and  **GroupAgg**.
 
-![](figures/12-4-5-4-算子级调优(示例错乱调整示例3).png)
+![Example](figures/12-4-5-4-算子级调优(示例错乱调整示例3).png)
 
-![](figures/12-4-5-4-算子级调优(示例错乱调整示例3-1).png)
+![Example](figures/12-4-5-4-算子级调优(示例错乱调整示例3-1).png)
 

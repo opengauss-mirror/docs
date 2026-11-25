@@ -1,3 +1,8 @@
+---
+description: Logical Operators lists the operators and calculation rules of logical expressions.
+keywords: [openGauss, Simple Expressions]
+---
+
 # Simple Expressions<a name="EN-US_TOPIC_0289900627"></a>
 
 ## Logical Expressions<a name="en-us_topic_0283137643_en-us_topic_0237122001_en-us_topic_0059778068_s3998c0a95e73437db8ea894c6eecb3f2"></a>

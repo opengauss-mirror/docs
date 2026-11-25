@@ -1,3 +1,8 @@
+---
+description: You can analyze slow SQL statements to optimize them.
+keywords: [openGauss, Tuning Process]
+---
+
 # Tuning Process<a name="EN-US_TOPIC_0289899868"></a>
 
 You can analyze slow SQL statements to optimize them.

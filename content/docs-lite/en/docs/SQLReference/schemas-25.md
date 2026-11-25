@@ -1,3 +1,8 @@
+---
+description: The following table describes the schemas of .
+keywords: [openGauss, Schemas]
+---
+
 # Schemas<a name="EN-US_TOPIC_0000001190922647"></a>
 
 The following table describes the schemas of .

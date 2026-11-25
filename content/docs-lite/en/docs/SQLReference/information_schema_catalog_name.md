@@ -1,3 +1,8 @@
+---
+description: INFORMATION\_SCHEMA\_CATALOG\_NAME displays the name of the current database.
+keywords: [openGauss, INFORMATION_SCHEMA_CATALOG_NAME]
+---
+
 # INFORMATION\_SCHEMA\_CATALOG\_NAME<a name="EN-US_TOPIC_0310263776"></a>
 
 **INFORMATION\_SCHEMA\_CATALOG\_NAME**  displays the name of the current database.

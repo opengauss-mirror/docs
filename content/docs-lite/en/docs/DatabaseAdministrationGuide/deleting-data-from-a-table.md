@@ -1,3 +1,8 @@
+---
+description: Outdated data may need to be deleted when tables are used. Data can be deleted from tables only by row.
+keywords: [openGauss, Deleting Data from a Table]
+---
+
 # Deleting Data from a Table<a name="EN-US_TOPIC_0289900119"></a>
 
 Outdated data may need to be deleted when tables are used. Data can be deleted from tables only by row.

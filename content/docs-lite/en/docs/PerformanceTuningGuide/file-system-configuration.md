@@ -1,3 +1,8 @@
+---
+description: To improve the I/O efficiency of the database, NVMe disks are used as data disks. The file system type is XFS and the data block size is 8 KB. The procedure is as follows:.
+keywords: [openGauss, File System Configuration]
+---
+
 # File System Configuration<a name="EN-US_TOPIC_0289900419"></a>
 
 To improve the I/O efficiency of the database, NVMe disks are used as data disks. The file system type is XFS and the data block size is 8 KB. The procedure is as follows:
@@ -27,7 +32,7 @@ To improve the I/O efficiency of the database, NVMe disks are used as data disks
         For example, run the  **xfs\_info /data1**  command. As shown in  [Figure 1](#fig790551418911), the block size is 8 KB and does not need to be changed. If the block size does not meet the requirement of 8 KB, you need to format the block again. Before formatting, back up the data.
 
         **Figure  1**  Viewing the NVMe disk information<a name="fig790551418911"></a>  
-        ![](figures/viewing-the-nvme-disk-information.png "viewing-the-nvme-disk-information")
+        ![File System Configuration](figures/viewing-the-nvme-disk-information.png "viewing-the-nvme-disk-information")
 
 2.  Back up the data on the disk to be modified to other disks or servers.
 3.  Format the disk as an XFS file system.

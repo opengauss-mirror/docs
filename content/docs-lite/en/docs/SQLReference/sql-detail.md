@@ -1,3 +1,8 @@
+---
+description: The following table describes columns in the SQL Detail report.
+keywords: [openGauss, SQL Detail]
+---
+
 # SQL Detail<a name="EN-US_TOPIC_0000001215195228"></a>
 
 The following table describes columns in the SQL Detail report.

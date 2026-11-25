@@ -1,3 +1,8 @@
+---
+description: PG\_STAT\_ALL\_INDEXES contains one row for each index in the current database, showing statistics about accesses to that specific index.
+keywords: [openGauss, PG_STAT_ALL_INDEXES]
+---
+
 # PG\_STAT\_ALL\_INDEXES<a name="EN-US_TOPIC_0289900643"></a>
 
 **PG\_STAT\_ALL\_INDEXES**  contains one row for each index in the current database, showing statistics about accesses to that specific index. 

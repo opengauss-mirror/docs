@@ -1,3 +1,8 @@
+---
+description: Parameter description: Specifies whether to allow connections and queries on a standby server during its recovery.
+keywords: [openGauss, Standby Server]
+---
+
 # Standby Server<a name="EN-US_TOPIC_0289900463"></a>
 
 ## hot\_standby<a name="en-us_topic_0283136835_en-us_topic_0237124714_en-us_topic_0059778071_sa43017102b08472cb160e9f856e664bd"></a>

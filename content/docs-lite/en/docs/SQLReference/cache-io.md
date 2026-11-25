@@ -1,3 +1,8 @@
+---
+description: - STATIO\_USER\_TABLES.
+keywords: [openGauss, CacheIO]
+---
+
 # Cache/IO<a name="EN-US_TOPIC_0245374772"></a>
 
 -   **[STATIO\_USER\_TABLES](statio_user_tables.md)**  

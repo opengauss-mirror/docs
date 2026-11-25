@@ -1,3 +1,8 @@
+---
+description: SQLAllocHandle is used to allocate environment, connection, statement, or descriptor handles. This function replaces the deprecated ODBC 2.x functions SQLAllocEnv, SQLAllocConnect, and SQLAllocStmt.
+keywords: [openGauss, SQLAllocHandle]
+---
+
 # SQLAllocHandle<a name="EN-US_TOPIC_0242371438"></a>
 
 ## Function<a name="en-us_topic_0238272884_en-us_topic_0237120414_en-us_topic_0059778058_sa9bd6e837fd4458199f7b677e876f4a9"></a>

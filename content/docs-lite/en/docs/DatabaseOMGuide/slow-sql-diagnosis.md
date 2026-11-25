@@ -1,3 +1,8 @@
+---
+description: If the SQL statement execution performance does not meet expectations, you can view the SQL statement execution information to analyze the behavior and diagnose problems that occur during the executio.
+keywords: [openGauss, Slow SQL Diagnosis]
+---
+
 # Slow SQL Diagnosis<a name="EN-US_TOPIC_0290917654"></a>
 
 ## Background<a name="section11436171655914"></a>

@@ -1,3 +1,8 @@
+---
+description: The service startup failed.
+keywords: [openGauss, Service Startup Failure]
+---
+
 # Service Startup Failure<a name="EN-US_TOPIC_0291613863"></a>
 
 ## Symptom<a name="section385257175213"></a>

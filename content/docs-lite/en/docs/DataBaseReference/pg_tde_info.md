@@ -1,3 +1,8 @@
+---
+description: PG\_TDE\_INFO provides encryption information of openGauss.
+keywords: [openGauss, PG_TDE_INFO]
+---
+
 # PG\_TDE\_INFO<a name="EN-US_TOPIC_0289900902"></a>
 
 **PG\_TDE\_INFO**  provides encryption information of openGauss.

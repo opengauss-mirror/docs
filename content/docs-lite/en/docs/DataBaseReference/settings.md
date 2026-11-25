@@ -1,3 +1,8 @@
+---
+description: Parameter description: Specifies the level of information to be written to the WAL. The value cannot be empty or commented out.
+keywords: [openGauss, Settings]
+---
+
 # Settings<a name="EN-US_TOPIC_0289900114"></a>
 
 ## wal\_level<a name="en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f"></a>

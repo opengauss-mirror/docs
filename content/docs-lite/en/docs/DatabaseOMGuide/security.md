@@ -1,3 +1,8 @@
+---
+description: The role used for the replication connection must have the REPLICATION attribute \(or be a user with the SYSADMIN permission\). If the role lacks SUPERUSER and BYPASSRLS, the publisher's row security.
+keywords: [openGauss, Security]
+---
+
 # Security<a name="EN-US_TOPIC_0289900926"></a>
 
 The role used for the replication connection must have the REPLICATION attribute \(or be a user with the SYSADMIN permission\). If the role lacks SUPERUSER and BYPASSRLS, the publisher's row security policies can be executed. The access permission of a role must be configured in **pg_hba.conf** and must have the LOGIN attribute.

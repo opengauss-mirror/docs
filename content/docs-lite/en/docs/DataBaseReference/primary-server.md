@@ -1,3 +1,8 @@
+---
+description: Parameter description: Specifies a comma-separated list of names of potential standby servers that support synchronous replication.
+keywords: [openGauss, Primary Server]
+---
+
 # Primary Server<a name="EN-US_TOPIC_0289900361"></a>
 
 ## synchronous\_standby\_names<a name="en-us_topic_0283137370_en-us_topic_0237124713_en-us_topic_0059777578_sed4ef11504b74982b8b64ce158bf0f0e"></a>

@@ -1,3 +1,8 @@
+---
+description: - MEMORY\_NODE\_DETAIL.
+keywords: [openGauss, Memory]
+---
+
 # Memory<a name="EN-US_TOPIC_0289900388"></a>
 
 -   **[MEMORY\_NODE\_DETAIL](memory_node_detail.md)**  

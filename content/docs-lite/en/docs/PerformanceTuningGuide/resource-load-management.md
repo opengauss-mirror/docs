@@ -1,3 +1,8 @@
+---
+description: Introduces Resource Load Management in openGauss, covering .
+keywords: [openGauss, Resource Load Management]
+---
+
 # Resource Load Management<a name="EN-US_TOPIC_0000001193794329"></a>
 
 -   **[Overview](resource-load-management-overview.md)**  

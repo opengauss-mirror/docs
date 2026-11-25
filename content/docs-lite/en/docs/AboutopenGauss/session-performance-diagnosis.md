@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.0.0.
+keywords: [openGauss, Session Performance Diagnosis]
+---
+
 # Session Performance Diagnosis<a name="EN-US_TOPIC_0000001152275223"></a>
 
 ## Availability<a name="section5314201001"></a>
@@ -26,7 +31,7 @@ Session sampling data is classified into two levels, as shown in  [Figure 1](#fi
 2.  The second level is the persistent historical information stored in disk files. It displays the historical active session information in a long period of time and is sampled from the memory data. This level is suitable for long-run statistics and analysis.
 
 **Figure  1**  Session performance diagnosis principle<a name="fig197862247217"></a>  
-![](figures/session-performance-diagnosis-principle.png "session-performance-diagnosis-principle")
+![Description](figures/session-performance-diagnosis-principle.png "session-performance-diagnosis-principle")
 
 Some application scenarios are as follows:
 

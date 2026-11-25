@@ -1,3 +1,8 @@
+---
+description: SUMMARY\_STATIO\_USER\_TABLES displays I/O status information about all user relationship tables in namespaces in openGauss.
+keywords: [openGauss, SUMMARY_STATIO_USER_TABLES]
+---
+
 # SUMMARY\_STATIO\_USER\_TABLES<a name="EN-US_TOPIC_0289899850"></a>
 
 **SUMMARY\_STATIO\_USER\_TABLES**  displays I/O status information about all user relationship tables in namespaces in openGauss.

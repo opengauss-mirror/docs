@@ -1,3 +1,8 @@
+---
+description: STATEMENT\_RESPONSETIME\_PERCENTILE obtains the response times of 80% and 95% SQL statements in openGauss.
+keywords: [openGauss, STATEMENT_RESPONSETIME_PERCENTILE]
+---
+
 # STATEMENT\_RESPONSETIME\_PERCENTILE<a name="EN-US_TOPIC_0289900157"></a>
 
 **STATEMENT\_RESPONSETIME\_PERCENTILE**  obtains the response times of 80% and 95% SQL statements in openGauss.

@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_STAT\_DB\_CU queries CU hits in each database in openGauss. You can clear it using pg\_stat\_reset\(\).
+keywords: [openGauss, GLOBAL_STAT_DB_CU]
+---
+
 # GLOBAL\_STAT\_DB\_CU<a name="EN-US_TOPIC_0289900164"></a>
 
 **GLOBAL\_STAT\_DB\_CU**  queries CU hits in each database in openGauss. You can clear it using  **pg\_stat\_reset\(\)**.

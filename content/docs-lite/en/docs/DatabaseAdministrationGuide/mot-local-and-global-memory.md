@@ -1,3 +1,8 @@
+---
+description: SILO manages both a local memory and a global memory, as shown in.
+keywords: [openGauss, MOT Local and Global Memory]
+---
+
 # MOT Local and Global Memory<a name="EN-US_TOPIC_0289900476"></a>
 
 SILO manages both a local memory and a global memory, as shown in.
@@ -10,7 +15,7 @@ When a transaction change is required, SILO handles the copying of all that tran
 The basic interactive transactional flow with our SILO-enhanced concurrency control is shown in the figure below:
 
 **Figure  1**  Private \(Local\) Memory \(for each transaction\) and a Global Memory \(for all the transactions of all the cores\)<a name="en-us_topic_0283136457_en-us_topic_0280525155_fig18716015"></a>  
-![](figures/private-(local)-memory-(for-each-transaction)-and-a-global-memory-(for-all-the-transactions-of-all-t.png "private-(local)-memory-(for-each-transaction)-and-a-global-memory-(for-all-the-transactions-of-all-t")
+![MOT Local and Global Memory](figures/private-(local)-memory-(for-each-transaction)-and-a-global-memory-(for-all-the-transactions-of-all-t.png "private-(local)-memory-(for-each-transaction)-and-a-global-memory-(for-all-the-transactions-of-all-t")
 
 For more details, refer to the Industrial-Strength OLTP Using Main Memory and Many-cores document<sup>\[</sup>[Comparison: Disk vs. MOT](comparison-disk-vs-mot.md)<sup>\]</sup>.
 

@@ -1,3 +1,8 @@
+---
+description: CREATE TEXT SEARCH CONFIGURATION creates a text search configuration. A text search configuration specifies a text search parser that can divide a string into tokens, plus dictionaries that can b.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE TEXT SEARCH CONFIGURATION<a name="EN-US_TOPIC_0289900950"></a>
 
 ## Function<a name="en-us_topic_0283137399_en-us_topic_0237122121_en-us_topic_0059777835_s0e4d513f4465404abcdfaf94e7cbef18"></a>

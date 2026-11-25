@@ -1,3 +1,8 @@
+---
+description: REASSIGN OWNED changes the owner of the database object.
+keywords: [openGauss, REASSIGN]
+---
+
 # REASSIGN OWNED<a name="EN-US_TOPIC_0289900011"></a>
 
 ## Function<a name="en-us_topic_0283136605_en-us_topic_0237122173_en-us_topic_0059779106_sfb032500d9624f8fb05a202a274cb9e9"></a>

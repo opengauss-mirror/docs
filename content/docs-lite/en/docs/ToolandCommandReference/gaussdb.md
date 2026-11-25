@@ -1,3 +1,8 @@
+---
+description: gaussdb is a major process of openGauss and also an executable command. A database process can be started using gaussdb.
+keywords: [openGauss, gaussdb]
+---
+
 # gaussdb<a name="EN-US_TOPIC_0294749040"></a>
 
 ## Background<a name="en-us_topic_0059777816_section2761723143810"></a>

@@ -1,3 +1,8 @@
+---
+description: This section describes how to configure parameters for resource load management.
+keywords: [openGauss, Enabling Resource Load Management]
+---
+
 # Enabling Resource Load Management<a name="EN-US_TOPIC_0000001193794331"></a>
 
 ## Background<a name="section4704103619115"></a>

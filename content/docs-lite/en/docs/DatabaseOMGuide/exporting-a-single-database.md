@@ -1,3 +1,8 @@
+---
+description: - Exporting a Database.
+keywords: [openGauss, Exporting a Single Database]
+---
+
 # Exporting a Single Database<a name="EN-US_TOPIC_0289900499"></a>
 
 -   **[Exporting a Database](exporting-a-database.md)**  

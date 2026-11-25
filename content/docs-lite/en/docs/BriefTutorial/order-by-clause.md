@@ -1,3 +1,8 @@
+---
+description: The ORDER BY clause sorts the data in one or more columns retrieved by the SELECT statement in ascending \(ASC\) or descending \(DESC\) order.
+keywords: [openGauss, ORDER]
+---
+
 # ORDER BY Clause<a name="EN-US_TOPIC_0000001255021833"></a>
 
 The  **ORDER BY**  clause sorts the data in one or more columns retrieved by the SELECT statement in ascending \(**ASC**\) or descending \(**DESC**\) order.

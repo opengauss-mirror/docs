@@ -1,3 +1,8 @@
+---
+description: - Create an fast-refresh materialized view.
+keywords: [openGauss, Usage]
+---
+
 # Usage<a name="EN-US_TOPIC_0295970208"></a>
 
 ## Syntax<a name="section1980464963719"></a>

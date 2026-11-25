@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_STATIO\_ALL\_TABLES contains I/O statistics about each table \(including TOAST tables\) in databases on each node.
+keywords: [openGauss, GLOBAL_STATIO_ALL_TABLES]
+---
+
 # GLOBAL\_STATIO\_ALL\_TABLES<a name="EN-US_TOPIC_0289900070"></a>
 
 **GLOBAL\_STATIO\_ALL\_TABLES**  contains I/O statistics about each table \(including TOAST tables\) in databases on each node.

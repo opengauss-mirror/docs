@@ -1,3 +1,8 @@
+---
+description: Run build.sh in the source code directory on Linux OS to obtain the driver JAR package postgresql.jar, which is stored in the source code directory. Obtain the package from the release pack.
+keywords: [openGauss, JDBC, JDBC Package Driver Class and Environment Class]
+---
+
 # JDBC Package, Driver Class, and Environment Class<a name="EN-US_TOPIC_0289900723"></a>
 
 ## JDBC Package<a name="en-us_topic_0283136979_en-us_topic_0237120378_en-us_topic_0213179123_en-us_topic_0189249669_en-us_topic_0059778950_s9694406852de4db0afcc99b19079f446"></a>

@@ -1,3 +1,8 @@
+---
+description: MOT is automatically deployed as part of openGauss. You may refer to the MOT Preparation section for a description of how to estimate and plan required memory and storage resou.
+keywords: [openGauss, Using MOT Overview]
+---
+
 # Using MOT Overview<a name="EN-US_TOPIC_0289900146"></a>
 
 MOT is automatically deployed as part of openGauss. You may refer to the  [MOT Preparation](mot-preparation.md)  section for a description of how to estimate and plan required memory and storage resources in order to sustain your workload. The  [MOT Deployment](mot-deployment.md)  section describes all the configuration settings in MOT, as well as non-mandatory options for server optimization.
@@ -9,7 +14,7 @@ The  [MOT Administration](mot-administration.md)  section describes how to perfo
 -   Read the following topics to learn how to use MOT –
 
     <a name="en-us_topic_0283137698_en-us_topic_0270171536_table16769368"></a>
-    <table><tbody><tr id="en-us_topic_0283137698_en-us_topic_0270171536_row32398645"><td class="cellrowborder" valign="top" width="100%"><p id="en-us_topic_0283137698_en-us_topic_0270171536_p7044574"><a name="en-us_topic_0283137698_en-us_topic_0270171536_p7044574"></a><a name="en-us_topic_0283137698_en-us_topic_0270171536_p7044574"></a><a name="en-us_topic_0283137698_en-us_topic_0270171536_image63401170"></a><a name="en-us_topic_0283137698_en-us_topic_0270171536_image63401170"></a><span><img id="en-us_topic_0283137698_en-us_topic_0270171536_image63401170" src="figures/en-us_image_0289900154.png" width="219.45000000000002" height="221.44500000000002"></span></p>
+    <table><tbody><tr id="en-us_topic_0283137698_en-us_topic_0270171536_row32398645"><td class="cellrowborder" valign="top" width="100%"><p id="en-us_topic_0283137698_en-us_topic_0270171536_p7044574"><a name="en-us_topic_0283137698_en-us_topic_0270171536_p7044574"></a><a name="en-us_topic_0283137698_en-us_topic_0270171536_p7044574"></a><a name="en-us_topic_0283137698_en-us_topic_0270171536_image63401170"></a><a name="en-us_topic_0283137698_en-us_topic_0270171536_image63401170"></a><span><img id="en-us_topic_0283137698_en-us_topic_0270171536_image63401170" src="figures/en-us_image_0289900154.png" alt="Using MOT Overview" width="219.45000000000002" height="221.44500000000002"></span></p>
     </td>
     </tr>
     </tbody>

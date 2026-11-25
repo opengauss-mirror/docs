@@ -1,3 +1,8 @@
+---
+description: 1. Select the operators to be considered from the pg\_operator system catalog. Considered operators are those with the matching name and argument count. If the search path finds multiple availa.
+keywords: [openGauss, Operators]
+---
+
 # Operators<a name="EN-US_TOPIC_0289900672"></a>
 
 ## Operator Type Resolution<a name="en-us_topic_0283137550_en-us_topic_0237122008_en-us_topic_0059778242_seea12beab1954749bad838953810aa71"></a>

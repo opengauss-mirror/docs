@@ -1,3 +1,8 @@
+---
+description: During database design, some key factors about table design will greatly affect the subsequent query performance of the database. Table design affects data storage as well. Scientific table design red.
+keywords: [openGauss, Selecting a Storage Model]
+---
+
 # Selecting a Storage Model<a name="EN-US_TOPIC_0289900051"></a>
 
 During database design, some key factors about table design will greatly affect the subsequent query performance of the database. Table design affects data storage as well. Scientific table design reduces I/O operations and minimizes memory usage, improving the query performance.

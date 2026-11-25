@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_STAT\_XACT\_USER\_FUNCTIONS displays statistics about function executions in transactions on each node.
+keywords: [openGauss, GLOBAL_STAT_XACT_USER_FUNCTIONS]
+---
+
 # GLOBAL\_STAT\_XACT\_USER\_FUNCTIONS<a name="EN-US_TOPIC_0289900424"></a>
 
 **GLOBAL\_STAT\_XACT\_USER\_FUNCTIONS**  displays statistics about function executions in transactions on each node.

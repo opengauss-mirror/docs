@@ -1,3 +1,8 @@
+---
+description: During PL/SQL programming, you may define some variables, assign values to variables, and call other stored procedures. This chapter describes basic PL/SQL statements, including variable definition st.
+keywords: [openGauss, Basic Statements]
+---
+
 # Basic Statements<a name="EN-US_TOPIC_0289900467"></a>
 
 During PL/SQL programming, you may define some variables, assign values to variables, and call other stored procedures. This chapter describes basic PL/SQL statements, including variable definition statements, value assignment statements, call statements, and return statements.

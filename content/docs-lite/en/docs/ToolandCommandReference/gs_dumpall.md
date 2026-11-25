@@ -1,3 +1,8 @@
+---
+description: gs\_dumpall, provided by openGauss, is used to export all database information, including the data of the default postgres database, data of user-specified databases, and global objects of all d.
+keywords: [openGauss, gs_dumpall]
+---
+
 # gs\_dumpall<a name="EN-US_TOPIC_0294749044"></a>
 
 ## Background<a name="en-us_topic_0059778372_section31221112348"></a>

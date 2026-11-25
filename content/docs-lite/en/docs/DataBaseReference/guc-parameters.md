@@ -1,3 +1,8 @@
+---
+description: - GUC Parameter Usage.
+keywords: [openGauss, GUC Parameters]
+---
+
 # GUC Parameters<a name="EN-US_TOPIC_0289899843"></a>
 
 -   **[GUC Parameter Usage](guc-parameter-usage.md)**  

@@ -1,3 +1,8 @@
+---
+description: PG\_REPLICATION\_ORIGIN contains all created replication sources and is a globally shared table. That is, each node has only one copy, not one copy per database.
+keywords: [openGauss, PG_REPLICATION_ORIGIN]
+---
+
 # PG\_REPLICATION\_ORIGIN<a name="EN-US_TOPIC_0000001198757478"></a>
 
 **PG\_REPLICATION\_ORIGIN**  contains all created replication sources and is a globally shared table. That is, each node has only one copy, not one copy per database.

@@ -1,3 +1,8 @@
+---
+description: Introduces Using gs\_dump and gs\_dumpall to Export Data in openGauss, covering .
+keywords: [openGauss, Using gs_dump and gs_dumpall to Export Data]
+---
+
 # Using gs\_dump and gs\_dumpall to Export Data<a name="EN-US_TOPIC_0289900502"></a>
 
 -   **[Overview](overview-8.md)**  

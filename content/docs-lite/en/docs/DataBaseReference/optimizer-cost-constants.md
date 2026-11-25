@@ -1,3 +1,8 @@
+---
+description: This section describes the optimizer cost constants. The cost variables described here are measured on an arbitrary scale. Only their relative values matter, therefore scaling them all up or down by t.
+keywords: [openGauss, Optimizer Cost Constants]
+---
+
 # Optimizer Cost Constants<a name="EN-US_TOPIC_0289900101"></a>
 
 This section describes the optimizer cost constants. The cost variables described here are measured on an arbitrary scale. Only their relative values matter, therefore scaling them all up or down by the same factor will result in no change in the optimizer's choices. By default, these cost variables are based on the cost of sequential page fetches, that is,  **seq\_page\_cost**  is conventionally set to  **1.0**  and the other cost variables are set with reference to the parameter. However, you can use a different scale, such as actual execution time in milliseconds.

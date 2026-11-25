@@ -1,3 +1,8 @@
+---
+description: Parameter description: This parameter is a session-level GUC parameter. In bidirectional logical replication, set it to a non-zero value to avoid infinite data replication.
+keywords: [openGauss, Replication Parameters of Two Database Instances]
+---
+
 # Replication Parameters of Two Database Instances<a name="EN-US_TOPIC_0311767368"></a>
 
 ## RepOriginId<a name="section1622281914212"></a>

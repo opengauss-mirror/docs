@@ -1,3 +1,8 @@
+---
+description: STATIO\_ALL\_INDEXES contains one row for each index in the current database, showing I/O statistics about specific indexes.
+keywords: [openGauss, STATIO_ALL_INDEXES]
+---
+
 # STATIO\_ALL\_INDEXES<a name="EN-US_TOPIC_0289899828"></a>
 
 **STATIO\_ALL\_INDEXES**  contains one row for each index in the current database, showing I/O statistics about specific indexes.

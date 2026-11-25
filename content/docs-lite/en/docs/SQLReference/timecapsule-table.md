@@ -1,3 +1,8 @@
+---
+description: The TIMECAPSULE TABLE statement restores a table to an earlier state in the event of human or application errors.
+keywords: [openGauss, TIMECAPSULE]
+---
+
 # TIMECAPSULE TABLE<a name="EN-US_TOPIC_0000001151110015"></a>
 
 ## Function<a name="section1788163418319"></a>

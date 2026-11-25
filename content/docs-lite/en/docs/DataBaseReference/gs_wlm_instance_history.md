@@ -1,3 +1,8 @@
+---
+description: GS\_WLM\_INSTANCE\_HISTORY records information about resource usage related to instances \(primary database node or database node\). Each record in this system catalog indicates resource usage of.
+keywords: [openGauss, GS_WLM_INSTANCE_HISTORY]
+---
+
 # GS\_WLM\_INSTANCE\_HISTORY<a name="EN-US_TOPIC_0289900166"></a>
 
 **GS\_WLM\_INSTANCE\_HISTORY**  records information about resource usage related to instances \(primary database node or database node\). Each record in this system catalog indicates resource usage of an instance at a specific time point, including the memory, number of CPU cores, disk I/O, physical I/O of the process, and logical I/O of the process. This system catalog can be queried by users with the  **sysadmin**  permission only in Postgres.

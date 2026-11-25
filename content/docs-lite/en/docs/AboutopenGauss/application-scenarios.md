@@ -1,3 +1,8 @@
+---
+description: - Transaction applications.
+keywords: [openGauss, Application Scenarios]
+---
+
 # Application Scenarios<a name="EN-US_TOPIC_0289896515"></a>
 
 -   Transaction applications

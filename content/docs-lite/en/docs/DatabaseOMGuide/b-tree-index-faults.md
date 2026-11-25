@@ -1,3 +1,8 @@
+---
+description: The following error message is displayed, indicating that the index is lost occasionally.
+keywords: [openGauss, B-tree Index Faults]
+---
+
 # B-tree Index Faults<a name="EN-US_TOPIC_0291615109"></a>
 
 ## Symptom<a name="section14883333175911"></a>

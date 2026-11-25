@@ -1,3 +1,8 @@
+---
+description: Introduces Concurrent INSERT in the Same Table in openGauss, covering .
+keywords: [openGauss, Concurrent INSERT in the Same Table]
+---
+
 # Concurrent INSERT in the Same Table<a name="EN-US_TOPIC_0289899992"></a>
 
 Transaction T1:

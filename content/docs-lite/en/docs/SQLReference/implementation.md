@@ -1,3 +1,8 @@
+---
+description: Internally, a GIN index contains a B-tree index constructed over keys, where each key is an element of one or more indexed items \(a member of an array, for example\) and where each tuple in a page co.
+keywords: [openGauss, Implementation]
+---
+
 # Implementation<a name="EN-US_TOPIC_0289899904"></a>
 
 Internally, a GIN index contains a B-tree index constructed over keys, where each key is an element of one or more indexed items \(a member of an array, for example\) and where each tuple in a page contains either a pointer to a B-tree of heap pointers \(a "posting tree"\), or a simple list of heap pointers \(a "posting list"\) when the list is small enough to fit into a single index tuple along with the key value.

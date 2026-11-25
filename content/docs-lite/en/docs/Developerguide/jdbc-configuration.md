@@ -1,3 +1,8 @@
+---
+description: Currently, third-party tools related to openGauss are connected through JDBC. This section describes the precautions for configuring the tool.
+keywords: [openGauss, JDBC, JDBC Configuration]
+---
+
 # JDBC Configuration<a name="EN-US_TOPIC_0000001149627971"></a>
 
 Currently, third-party tools related to openGauss are connected through JDBC. This section describes the precautions for configuring the tool.

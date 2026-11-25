@@ -1,3 +1,8 @@
+---
+description: A view is a virtual table, not a base table. A database only stores the definition of a view and does not store its data. The data is still stored in the original basic table. If data in the base tabl.
+keywords: [openGauss, Views]
+---
+
 # Views<a name="EN-US_TOPIC_0000001210301874"></a>
 
 A view is a virtual table, not a base table. A database only stores the definition of a view and does not store its data. The data is still stored in the original basic table. If data in the base table changes, the data in the view changes accordingly. In this sense, a view is like a window through which users can know their interested data and data changes in the database.

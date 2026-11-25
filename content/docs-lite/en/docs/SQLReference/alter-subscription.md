@@ -1,3 +1,8 @@
+---
+description: ALTER SUBSCRIPTION alters the attributes of a subscription specified in CREATE SUBSCRIPTION.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER SUBSCRIPTION
 
 ## Function Description<a name="section13387758133316"></a>

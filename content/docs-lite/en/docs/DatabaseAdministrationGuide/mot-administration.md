@@ -1,3 +1,8 @@
+---
+description: The following describes various MOT administration topics –.
+keywords: [openGauss, MOT Administration]
+---
+
 # MOT Administration<a name="EN-US_TOPIC_0289900637"></a>
 
 The following describes various MOT administration topics –

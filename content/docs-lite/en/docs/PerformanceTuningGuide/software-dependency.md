@@ -1,3 +1,8 @@
+---
+description: Table 1 Software dependency requirements.
+keywords: [openGauss, Software Dependency]
+---
+
 # Software Dependency<a name="EN-US_TOPIC_0289899962"></a>
 
 **Table  1**  Software dependency requirements

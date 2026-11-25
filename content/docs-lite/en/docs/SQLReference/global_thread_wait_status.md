@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_THREAD\_WAIT\_STATUS allows you to test the block waiting status of backend threads and auxiliary threads on all nodes. To query this view, you must have the monadmin permission. Fo.
+keywords: [openGauss, GLOBAL_THREAD_WAIT_STATUS]
+---
+
 # GLOBAL\_THREAD\_WAIT\_STATUS<a name="EN-US_TOPIC_0289899924"></a>
 
 **GLOBAL\_THREAD\_WAIT\_STATUS**  allows you to test the block waiting status of backend threads and auxiliary threads on all nodes. To query this view, you must have the  **monadmin**  permission. For details about events, see  [Table 2](../DataBaseReference/pg_thread_wait_status.md#en-us_topic_0283136724_en-us_topic_0237122466_en-us_topic_0059777957_t794f802302c24514a5db22d51eabacc4),  [Table 3](../DataBaseReference/pg_thread_wait_status.md#en-us_topic_0283136724_en-us_topic_0237122466_table38811324183420),  [Table 4](../DataBaseReference/pg_thread_wait_status.md#en-us_topic_0283136724_en-us_topic_0237122466_table124603113369), and  [Table 5](../DataBaseReference/pg_thread_wait_status.md#en-us_topic_0283136724_en-us_topic_0237122466_table11826123533718).

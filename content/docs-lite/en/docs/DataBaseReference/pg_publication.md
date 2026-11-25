@@ -1,3 +1,8 @@
+---
+description: PG\_PUBLICATION contains all publications created in the current database.
+keywords: [openGauss, PG_PUBLICATION]
+---
+
 # PG\_PUBLICATION<a name="EN-US_TOPIC_0000001198437518"></a>
 
 **PG\_PUBLICATION**  contains all publications created in the current database.

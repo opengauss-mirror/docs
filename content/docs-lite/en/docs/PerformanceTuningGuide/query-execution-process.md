@@ -1,9 +1,14 @@
+---
+description: The process from receiving SQL statements to the statement execution by the SQL engine is shown in Figure 1 and described in [Table 1](#en-us_topic_02831.
+keywords: [openGauss, Query Execution Process]
+---
+
 # Query Execution Process<a name="EN-US_TOPIC_0289900900"></a>
 
 The process from receiving SQL statements to the statement execution by the SQL engine is shown in  [Figure 1](#en-us_topic_0283137202_fig1295418215491)  and described in  [Table 1](#en-us_topic_0283137202_en-us_topic_0237121508_en-us_topic_0073320637_en-us_topic_0071158048_table11198623152535). The texts in red are steps where database administrators can optimize queries.
 
 **Figure  1**  Execution process of query-related SQL statements by the SQL engine<a name="en-us_topic_0283137202_fig1295418215491"></a>  
-![](figures/execution-process-of-query-related-sql-statements-by-the-sql-engine.png "execution-process-of-query-related-sql-statements-by-the-sql-engine")
+![Query Execution Process](figures/execution-process-of-query-related-sql-statements-by-the-sql-engine.png "execution-process-of-query-related-sql-statements-by-the-sql-engine")
 
 **Table  1**  Execution process of query-related SQL statements by the SQL engine
 

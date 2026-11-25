@@ -1,3 +1,8 @@
+---
+description: DROP SUBSCRIPTION deletes a subscription from a database instance.
+keywords: [openGauss, DROP]
+---
+
 # DROP SUBSCRIPTION<a name="ZH-CN_TOPIC_0000001240332295"></a>
 
 ## **Function Description**<a name="section131281394204"></a>

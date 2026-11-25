@@ -1,3 +1,8 @@
+---
+description: A sequence is a database object that generates unique integers. Sequence numbers are generated according to a certain rule. Sequences are unique because they increase automatically. This is why they a.
+keywords: [openGauss, Creating and Managing Sequences]
+---
+
 # Creating and Managing Sequences<a name="EN-US_TOPIC_0289900094"></a>
 
 ## Background<a name="en-us_topic_0283136796_en-us_topic_0237120310_en-us_topic_0093152908_en-us_topic_0064273680_section3970017091331"></a>

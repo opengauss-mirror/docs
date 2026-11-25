@@ -1,3 +1,8 @@
+---
+description: Logical replication behaves similarly to common DML operations. Even if the data is modified locally on the subscriber node, logical replication updates the data based on the received changes. If the.
+keywords: [openGauss, Conflicts]
+---
+
 # Conflicts<a name="EN-US_TOPIC_0289900926"></a>
 
 Logical replication behaves similarly to common DML operations. Even if the data is modified locally on the subscriber node, logical replication updates the data based on the received changes. If the incoming data violates any constraints, the replication will stop. This situation is called a conflict. When UPDATE or DELETE operations are replicated, the missing data will not cause conflicts and such operations will be simply skipped.

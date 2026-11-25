@@ -1,3 +1,8 @@
+---
+description: openGauss manages resource load to balance system resource usage for jobs.
+keywords: [openGauss, Overview]
+---
+
 # Overview<a name="EN-US_TOPIC_0000001147994524"></a>
 
 ## Function<a name="section19652145945315"></a>

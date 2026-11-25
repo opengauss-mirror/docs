@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_PLANCACHE\_STATUS displays the GPC status information.
+keywords: [openGauss, GLOBAL_PLANCACHE_STATUS]
+---
+
 # GLOBAL\_PLANCACHE\_STATUS<a name="EN-US_TOPIC_0297927201"></a>
 
 **GLOBAL\_PLANCACHE\_STATUS **displays the GPC status information.

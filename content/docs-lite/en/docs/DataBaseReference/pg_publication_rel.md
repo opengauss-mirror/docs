@@ -1,3 +1,8 @@
+---
+description: PG\_PUBLICATION\_REL contains mappings between tables and publications in the current database. This is a many-to-many mapping.
+keywords: [openGauss, PG_PUBLICATION_REL]
+---
+
 # PG\_PUBLICATION\_REL<a name="EN-US_TOPIC_0000001243597361"></a>
 
 **PG\_PUBLICATION\_REL**  contains mappings between tables and publications in the current database. This is a many-to-many mapping.

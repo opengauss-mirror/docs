@@ -1,3 +1,8 @@
+---
+description: Universal file access functions provide local access interfaces for files on a database server. Only files in the openGauss directory and the log\_directory directory can be accessed. Use a rela.
+keywords: [openGauss, Universal File Access Functions]
+---
+
 # Universal File Access Functions<a name="EN-US_TOPIC_0289900407"></a>
 
 Universal file access functions provide local access interfaces for files on a database server. Only files in the openGauss directory and the  **log\_directory**  directory can be accessed. Use a relative path for files in the openGauss directory, and a path matching the  **log\_directory**  configuration setting for log files. Only database initialization users can use these functions.

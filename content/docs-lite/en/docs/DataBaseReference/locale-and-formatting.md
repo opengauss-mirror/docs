@@ -1,3 +1,8 @@
+---
+description: This section describes parameters related to the time format setting.
+keywords: [openGauss, Locale and Formatting]
+---
+
 # Locale and Formatting<a name="EN-US_TOPIC_0289900528"></a>
 
 This section describes parameters related to the time format setting.

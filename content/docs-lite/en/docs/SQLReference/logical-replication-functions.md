@@ -1,3 +1,8 @@
+---
+description: - pg\_create\_logical\_replication\_slot\('slot\_name', 'plugin\_name'\).
+keywords: [openGauss, Logical Replication Functions]
+---
+
 # Logical Replication Functions<a name="EN-US_TOPIC_0289900082"></a>
 
 -   pg\_create\_logical\_replication\_slot\('slot\_name', 'plugin\_name'\)

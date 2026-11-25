@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 3.0.0.
+keywords: [openGauss, MySQL to openGauss Migration Tool Chameleon]
+---
+
 # MySQL to openGauss Migration Tool Chameleon<a name="EN-US_TOPIC_0000001264707837"></a>
 
 ## Availability<a name="section56086982"></a>

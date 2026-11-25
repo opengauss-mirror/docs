@@ -1,3 +1,8 @@
+---
+description: Introduces Other Statements in openGauss, covering .
+keywords: [openGauss, Other Statements]
+---
+
 # Other Statements<a name="EN-US_TOPIC_0289900317"></a>
 
 -   **[Lock Operations](lock-operations.md)**  

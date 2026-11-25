@@ -1,3 +1,8 @@
+---
+description: For database security purposes, openGauss provides three backup types, multiple backup and restoration solutions, and data reliability assurance mechanisms.
+keywords: [openGauss, Overview]
+---
+
 # Overview<a name="EN-US_TOPIC_0289897023"></a>
 
 For database security purposes, openGauss provides three backup types, multiple backup and restoration solutions, and data reliability assurance mechanisms.

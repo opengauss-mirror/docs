@@ -1,3 +1,8 @@
+---
+description: Run the COPY FROM STDIN statement to import data to openGauss in either of the following ways:.
+keywords: [openGauss, Data Import Using COPY FROM STDIN]
+---
+
 # Data Import Using COPY FROM STDIN<a name="EN-US_TOPIC_0289899877"></a>
 
 Run the  **COPY FROM STDIN**  statement to import data to openGauss in either of the following ways:

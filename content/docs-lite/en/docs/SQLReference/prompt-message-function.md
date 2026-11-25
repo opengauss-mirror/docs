@@ -1,3 +1,8 @@
+---
+description: - report\_application\_error.
+keywords: [openGauss, Prompt Message Function]
+---
+
 # Prompt Message Function<a name="EN-US_TOPIC_0311139290"></a>
 
 -   report\_application\_error

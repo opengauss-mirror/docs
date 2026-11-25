@@ -1,3 +1,8 @@
+---
+description: GS\_CLIENT\_GLOBAL\_KEYS records information about the CMK in the encrypted equality feature. Each record corresponds to a CMK.
+keywords: [openGauss, GS_CLIENT_GLOBAL_KEYS]
+---
+
 # GS\_CLIENT\_GLOBAL\_KEYS<a name="EN-US_TOPIC_0294528092"></a>
 
 **GS\_CLIENT\_GLOBAL\_KEYS **records information about the CMK in the encrypted equality feature. Each record corresponds to a CMK.

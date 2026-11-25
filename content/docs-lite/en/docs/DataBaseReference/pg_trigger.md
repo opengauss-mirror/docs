@@ -1,3 +1,8 @@
+---
+description: PG\_TRIGGER records trigger information.
+keywords: [openGauss, PG_TRIGGER]
+---
+
 # PG\_TRIGGER<a name="EN-US_TOPIC_0289900828"></a>
 
 **PG\_TRIGGER**  records trigger information.

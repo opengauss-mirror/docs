@@ -1,3 +1,8 @@
+---
+description: Data control language \(DCL\) is used to create users and roles and set or modify database users or role rights.
+keywords: [openGauss, DCL Syntax Overview]
+---
+
 # DCL Syntax Overview<a name="EN-US_TOPIC_0289900059"></a>
 
 Data control language \(DCL\) is used to create users and roles and set or modify database users or role rights.

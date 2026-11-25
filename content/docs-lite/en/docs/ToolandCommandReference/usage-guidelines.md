@@ -1,3 +1,8 @@
+---
+description: During installation, you are advised to use the -D parameter to invoke gs\_initdb to initialize a database. If a database needs to be initialized to rectify a fault, run gs\_initdb.
+keywords: [openGauss, Usage Guidelines]
+---
+
 # Usage Guidelines<a name="EN-US_TOPIC_0294749037"></a>
 
 ## Background<a name="en-us_topic_0059777429_s6837c9e0a8604641a9462dd6f720f91d"></a>

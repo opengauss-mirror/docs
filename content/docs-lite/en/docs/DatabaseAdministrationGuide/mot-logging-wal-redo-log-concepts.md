@@ -1,3 +1,8 @@
+---
+description: Write-Ahead Logging \(WAL\) is a standard method for ensuring data durability. The main concept of WAL is that changes to data files \(where tables and indexes reside\) are only written after those ch.
+keywords: [openGauss, MOT Logging  WAL Redo Log Concepts]
+---
+
 # MOT Logging – WAL Redo Log Concepts<a name="EN-US_TOPIC_0289899880"></a>
 
 ## Overview<a name="en-us_topic_0283136556_en-us_topic_0280525164_section57612679"></a>
@@ -38,7 +43,7 @@ According to your configuration, one of the following types of logging is implem
     When a transaction ends, the SynchronousRedoLogHandler serializes its transaction buffer and write it to the XLOG iLogger implementation.
 
     **Figure  1**  Synchronous Logging<a name="en-us_topic_0283136556_en-us_topic_0280525164_fig25836861"></a>  
-    ![](figures/synchronous-logging.png "synchronous-logging")
+    ![Logging Types](figures/synchronous-logging.png "synchronous-logging")
 
     **Summary**
 
@@ -73,7 +78,7 @@ According to your configuration, one of the following types of logging is implem
     The four colors represent 4 NUMA nodes. Thus each NUMA node has its own memory log enabling a group commit of multiple connections.
 
     **Figure  2**  Group Commit – with NUMA-awareness<a name="en-us_topic_0283136556_en-us_topic_0280525164_fig34015509"></a>  
-    ![](figures/group-commit-with-numa-awareness.png "group-commit-with-numa-awareness")
+    ![Logging Types](figures/group-commit-with-numa-awareness.png "group-commit-with-numa-awareness")
 
     **Summary**
 
@@ -99,7 +104,7 @@ According to your configuration, one of the following types of logging is implem
     Upon transaction commit, the transaction buffer is moved \(pointer assignment – not a data copy\) to a centralized buffer and a new transaction buffer is allocated for the transaction. The transaction is released as soon as its buffer is moved to the centralized buffer and the transaction thread is not blocked. The actual write to the log uses the Postgres walwriter thread. When the walwriter timer elapses, it first calls the AsynchronousRedoLogHandler \(via registered callback\) to write its buffers and then continues with its logic and flushes the data to the XLOG.
 
     **Figure  3**  Asynchronous Logging<a name="en-us_topic_0283136556_en-us_topic_0280525164_fig44824869"></a>  
-    ![](figures/asynchronous-logging.png "asynchronous-logging")
+    ![Logging Types](figures/asynchronous-logging.png "asynchronous-logging")
 
     **Summary**
 
@@ -112,7 +117,7 @@ According to your configuration, one of the following types of logging is implem
     The following describes the design details of each persistence-related component in the In-Memory Engine Module.
 
     **Figure  4**  Three Logging Options<a name="en-us_topic_0283136556_en-us_topic_0280525164_fig48696192"></a>  
-    ![](figures/three-logging-options.png "three-logging-options")
+    ![Logging Types](figures/three-logging-options.png "three-logging-options")
 
 
 The RedoLog component is used by both by backend threads that use the In-Memory Engine and by the WAL writer in order to persist their data. Checkpoints are performed using the Checkpoint Manager, which is triggered by the Postgres checkpointer.
@@ -129,7 +134,7 @@ The RedoLog component is used by both by backend threads that use the In-Memory 
 
 
 **Figure  5**  Per-transaction Logging<a name="en-us_topic_0283136556_en-us_topic_0280525164_fig28147941"></a>  
-![](figures/per-transaction-logging.png "per-transaction-logging")
+![Logging Types](figures/per-transaction-logging.png "per-transaction-logging")
 
 Parallel Logging is performed both by MOT and disk engines. However, the MOT engine enhances this design with a log-buffer per transaction, lockless preparation and a single log record.
 

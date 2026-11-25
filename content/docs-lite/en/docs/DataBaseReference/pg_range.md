@@ -1,3 +1,8 @@
+---
+description: PG\_RANGE records information about range types. Entries in PG\_TYPE are excluded.
+keywords: [openGauss, PG_RANGE]
+---
+
 # PG\_RANGE<a name="EN-US_TOPIC_0289900661"></a>
 
 **PG\_RANGE**  records information about range types. Entries in  [PG\_TYPE](pg_type.md)  are excluded.

@@ -1,3 +1,8 @@
+---
+description: The SMP architecture uses abundant resources to obtain time. After the plan parallelism is executed, the resource consumption is added, including the CPU, memory, and I/O resources. As the parallelism.
+keywords: [openGauss, Resource Impact on SMP Performance]
+---
+
 # Resource Impact on SMP Performance<a name="EN-US_TOPIC_0000001085002992"></a>
 
 The SMP architecture uses abundant resources to obtain time. After the plan parallelism is executed, the resource consumption is added, including the CPU, memory, and I/O resources. As the parallelism degree is expanded, the resource consumption increases. If these resources become a bottleneck, the SMP cannot improve the performance and the overall performance of the database instance may be deteriorated. The following information describes the situations that the SMP affects theses resources:

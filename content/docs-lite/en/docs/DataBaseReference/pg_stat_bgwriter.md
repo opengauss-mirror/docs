@@ -1,3 +1,8 @@
+---
+description: PG\_STAT\_BGWRITER showing statistics about the background writer process's activity.
+keywords: [openGauss, PG_STAT_BGWRITER]
+---
+
 # PG\_STAT\_BGWRITER<a name="EN-US_TOPIC_0289899919"></a>
 
 **PG\_STAT\_BGWRITER**  showing statistics about the background writer process's activity.

@@ -1,3 +1,8 @@
+---
+description: PG\_TYPE stores information about data types.
+keywords: [openGauss, PG_TYPE]
+---
+
 # PG\_TYPE<a name="EN-US_TOPIC_0289901011"></a>
 
 **PG\_TYPE**  stores information about data types.

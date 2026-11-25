@@ -1,3 +1,8 @@
+---
+description: This section describes the default database loading parameters.
+keywords: [openGauss, Other Default Parameters]
+---
+
 # Other Default Parameters<a name="EN-US_TOPIC_0289900272"></a>
 
 This section describes the default database loading parameters.

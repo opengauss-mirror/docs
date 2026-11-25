@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Creating an Index Online]
+---
+
 # Creating an Index Online<a name="EN-US_TOPIC_0000001152075195"></a>
 
 ## Availability<a name="section5309649"></a>

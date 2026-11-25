@@ -1,3 +1,8 @@
+---
+description: - Number of servers: two Kunpeng 920 servers \(one for the database server and the other for the TPC-C client\).
+keywords: [openGauss, Hardware Requirements]
+---
+
 # Hardware Requirements<a name="EN-US_TOPIC_0289900042"></a>
 
 -   Number of servers: two Kunpeng 920 servers \(one for the database server and the other for the TPC-C client\)

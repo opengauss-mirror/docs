@@ -1,3 +1,8 @@
+---
+description: This document describes how to install the openGauss.
+keywords: [openGauss, Installation Guide]
+---
+
 # Installation Guide<a name="EN-US_TOPIC_0242381303"></a>
 
 ## Overview

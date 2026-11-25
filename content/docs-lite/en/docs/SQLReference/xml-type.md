@@ -1,3 +1,8 @@
+---
+description: Introduces XML Type in openGauss, covering .
+keywords: [openGauss, XML Type]
+---
+
 # XML Type<a name="EN-US_TOPIC_0289900228"></a>
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 

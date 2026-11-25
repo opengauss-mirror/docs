@@ -1,3 +1,8 @@
+---
+description: Obtain the current read or write position of a large object descriptor.
+keywords: [openGauss, lo_tell]
+---
+
 # lo_tell<a name="EN-US_TOPIC_0242380598"></a>
 
 ## Function<a name="en-us_topic_0241735627_section696285173721"></a>

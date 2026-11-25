@@ -1,3 +1,8 @@
+---
+description: openGauss provides the following extended syntax:.
+keywords: [openGauss, Extended Syntax]
+---
+
 # Extended Syntax<a name="EN-US_TOPIC_0289900434"></a>
 
 openGauss provides the following extended syntax:

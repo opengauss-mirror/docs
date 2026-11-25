@@ -1,3 +1,8 @@
+---
+description: The following are optional settings for optimizing MOT database performance running on an ARM/Kunpeng-based Huawei Taishan 2280 v2 server powered by 2-sockets with a total of 256 Cores<sup>\[</sup><su.
+keywords: [openGauss, MOT Server Optimization  ARM Huawei Taishan 2P4P]
+---
+
 # MOT Server Optimization – ARM Huawei Taishan 2P/4P<a name="EN-US_TOPIC_0289900749"></a>
 
 The following are optional settings for optimizing MOT database performance running on an ARM/Kunpeng-based Huawei Taishan 2280 v2 server powered by 2-sockets with a total of 256 Cores<sup>\[</sup><sup>[Comparison: Disk vs. MOT](comparison-disk-vs-mot.md)</sup><sup>\]</sup>  and Taishan 2480 v2 server powered by 4-sockets with a total of 256 Cores<sup>\[</sup>[Comparison: Disk vs. MOT](comparison-disk-vs-mot.md)<sup>\]</sup>.
@@ -11,15 +16,15 @@ Modify related BIOS settings, as follows –
 1.  Select  **BIOS**  è  **Advanced**  è  **MISC Config**. Set  **Support Smmu**  to  **Disabled**.
 2.  Select  **BIOS**  è  **Advanced**  è  **MISC Config**. Set  **CPU Prefetching Configuration**  to  **Disabled**.
 
-    ![](figures/en-us_image_0289900038.png)
+    ![BIOS](figures/en-us_image_0289900038.png)
 
 3.  Select  **BIOS**  è  **Advanced**  è  **Memory Config**. Set  **Die Interleaving**  to  **Disabled**.
 
-    ![](figures/en-us_image_0289900642.png)
+    ![BIOS](figures/en-us_image_0289900642.png)
 
 4.  Select  **BIOS**  è  **Advanced**  è  **Performance Config**. Set  **Power Policy**  to  **Performance**.
 
-    ![](figures/en-us_image_0289901020.png)
+    ![BIOS](figures/en-us_image_0289901020.png)
 
 
 ## OS – Kernel and Boot<a name="en-us_topic_0283136697_en-us_topic_0270171568_section5765175572217"></a>

@@ -1,3 +1,8 @@
+---
+description: CREATE GROUP creates a user group.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE GROUP<a name="EN-US_TOPIC_0289900676"></a>
 
 ## Function<a name="en-us_topic_0283137568_en-us_topic_0237122105_en-us_topic_0059779249_sf157d08ffdd84191875e1481ee3a4626"></a>

@@ -1,3 +1,8 @@
+---
+description: - For details about technical specifications, see section "Technical Specifications" in Technical White Paper.
+keywords: [openGauss, Important Notes]
+---
+
 # Important Notes<a name="EN-US_TOPIC_0289899192"></a>
 
 -   For details about technical specifications, see section "Technical Specifications" in *Technical White Paper*.

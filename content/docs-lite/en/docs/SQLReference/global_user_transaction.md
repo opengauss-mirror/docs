@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_USER\_TRANSACTION collects statistics about transactions executed by all users.
+keywords: [openGauss, GLOBAL_USER_TRANSACTION]
+---
+
 # GLOBAL\_USER\_TRANSACTION<a name="EN-US_TOPIC_0000001199149535"></a>
 
 **GLOBAL\_USER\_TRANSACTION**  collects statistics about transactions executed by all users.

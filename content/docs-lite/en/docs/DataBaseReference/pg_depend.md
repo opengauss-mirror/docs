@@ -1,3 +1,8 @@
+---
+description: PG\_DEPEND records the dependency between database objects. This information allows DROP commands to find which other objects must be dropped by DROP CASCADE or prevent dropping in th.
+keywords: [openGauss, PG_DEPEND]
+---
+
 # PG\_DEPEND<a name="EN-US_TOPIC_0289900127"></a>
 
 **PG\_DEPEND**  records the dependency between database objects. This information allows  **DROP**  commands to find which other objects must be dropped by  **DROP CASCADE**  or prevent dropping in the  **DROP RESTRICT**  case.

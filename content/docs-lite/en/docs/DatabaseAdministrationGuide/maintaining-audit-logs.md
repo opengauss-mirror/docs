@@ -1,3 +1,8 @@
+---
+description: You have the audit permission.
+keywords: [openGauss, Maintaining Audit Logs]
+---
+
 # Maintaining Audit Logs<a name="EN-US_TOPIC_0289900145"></a>
 
 ## Prerequisites<a name="en-us_topic_0283136629_en-us_topic_0237121114_en-us_topic_0059778793_sbf90b4aa56054a53b7c697eec67d09ac"></a>

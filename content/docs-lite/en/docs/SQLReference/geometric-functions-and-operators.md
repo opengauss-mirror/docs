@@ -1,3 +1,8 @@
+---
+description: Introduces Geometric Functions and Operators in openGauss, covering Geometric Operators, Geometric Functions, Geometric Type Conversion Functions.
+keywords: [openGauss, Geometric Functions and Operators]
+---
+
 # Geometric Functions and Operators<a name="EN-US_TOPIC_0289900606"></a>
 
 ## Geometric Operators<a name="en-us_topic_0283137097_en-us_topic_0237121974_en-us_topic_0059778617_sf6144d7c3ed34b8c801ec2d86e2dea63"></a>

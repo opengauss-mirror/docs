@@ -1,3 +1,8 @@
+---
+description: Read data from a large object.
+keywords: [openGauss, lo_read]
+---
+
 # lo_read<a name="EN-US_TOPIC_0242380597"></a>
 
 ## Function<a name="en-us_topic_0241735627_section696285173719"></a>

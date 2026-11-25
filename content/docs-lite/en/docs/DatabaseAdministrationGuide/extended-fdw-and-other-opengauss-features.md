@@ -1,3 +1,8 @@
+---
+description: openGauss is based on PostgreSQL, which does not have a built-in storage engine adapter, such as MySQL handlerton. To enable the integration of the MOT storage engine into openGauss, we have leveraged.
+keywords: [openGauss, Extended FDW and Other openGauss Features]
+---
+
 # Extended FDW and Other openGauss Features<a name="EN-US_TOPIC_0289900283"></a>
 
 openGauss is based on PostgreSQL, which does not have a built-in storage engine adapter, such as MySQL handlerton. To enable the integration of the MOT storage engine into openGauss, we have leveraged and extended the existing Foreign Data Wrapper \(FDW\) mechanism. With the introduction of FDW into PostgreSQL 9.1, externally managed databases can now be accessed in a way that presents these foreign tables and data sources as united, locally accessible relations.
@@ -9,7 +14,7 @@ We refer to all the components that are in use or are accessing the MOT storage 
 The following figure shows how the MOT storage engine is embedded inside openGauss and its bi‑directional access to database functionality.
 
 **Figure  1**  MOT Storage Engine Embedded inside openGauss – FDW Access to External Databases<a name="en-us_topic_0283136890_en-us_topic_0270171527_fig391615571359"></a>  
-![](figures/mot-storage-engine-embedded-inside-opengauss-fdw-access-to-external-databases.png "mot-storage-engine-embedded-inside-opengauss-fdw-access-to-external-databases")
+![Extended FDW and Other openGauss Features](figures/mot-storage-engine-embedded-inside-opengauss-fdw-access-to-external-databases.png "mot-storage-engine-embedded-inside-opengauss-fdw-access-to-external-databases")
 
 We have extended the capabilities of FDW by extending and modifying the FdwRoutine structure in order to introduce features and calls that were not required before the introduction of MOT. For example, support for The following new features was added – Add Index, Drop Index/Table, Truncate, Vacuum and Table/Index Memory Statistics. A significant emphasis was put on integration with openGauss logging, replication and checkpointing mechanisms in order to provide consistency for cross-table transactions through failures. In this case, the MOT itself sometimes initiates calls to openGauss functionality through the FDW layer.
 

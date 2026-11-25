@@ -1,3 +1,8 @@
+---
+description: A trigger automatically executes functions when the specified DDL event occurs. Currently, event triggers are available only in PG-compatible mode.
+keywords: [openGauss, Event]
+---
+
 # Event Trigger<a name="EN-US_TOPIC_0000001209983516"></a>
 
 A trigger automatically executes functions when the specified DDL event occurs. Currently, event triggers are available only in PG-compatible mode.

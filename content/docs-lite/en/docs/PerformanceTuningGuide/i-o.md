@@ -1,3 +1,8 @@
+---
+description: You can run the iostat or pidstat command, or use openGauss health check tools to check the I/O usage and throughput on each node in openGauss and analyze whether performance bottleneck ca.
+keywords: [openGauss, IO]
+---
+
 # I/O<a name="EN-US_TOPIC_0289900470"></a>
 
 You can run the  **iostat**  or  **pidstat**  command, or use openGauss health check tools to check the I/O usage and throughput on each node in openGauss and analyze whether performance bottleneck caused by I/O exists.

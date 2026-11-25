@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_OS\_THREADS provides status information about threads on all normal nodes in openGauss.
+keywords: [openGauss, GLOBAL_OS_THREADS]
+---
+
 # GLOBAL\_OS\_THREADS<a name="EN-US_TOPIC_0289900599"></a>
 
 **GLOBAL\_OS\_THREADS**  provides status information about threads on all normal nodes in openGauss.

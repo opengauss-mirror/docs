@@ -1,3 +1,8 @@
+---
+description: - coalesce\(expr1, expr2, ..., exprn\).
+keywords: [openGauss, Conditional Expression Functions]
+---
+
 # Conditional Expression Functions<a name="EN-US_TOPIC_0289900535"></a>
 
 ## Conditional Expression Functions<a name="en-us_topic_0283136903_en-us_topic_0237121986_en-us_topic_0059778809_s67706c61c09047c4bca384689f7f5c08"></a>

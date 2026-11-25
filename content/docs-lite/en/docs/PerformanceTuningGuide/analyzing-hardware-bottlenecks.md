@@ -1,3 +1,8 @@
+---
+description: The CPU, memory, I/O, and network resource usage of each node in openGauss are obtained to check whether these resources are fully used and whether any bottleneck exists.
+keywords: [openGauss, Analyzing Hardware Bottlenecks]
+---
+
 # Analyzing Hardware Bottlenecks<a name="EN-US_TOPIC_0289900309"></a>
 
 The CPU, memory, I/O, and network resource usage of each node in openGauss are obtained to check whether these resources are fully used and whether any bottleneck exists.

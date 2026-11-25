@@ -1,3 +1,8 @@
+---
+description: - When connecting to the database, run the following command to obtain the help information:.
+keywords: [openGauss, Obtaining Help Information]
+---
+
 # Obtaining Help Information<a name="EN-US_TOPIC_0294748948"></a>
 
 ## Procedure<a name="en-us_topic_0059778941_s24c36ac1563e42cb99f9773e8cd9c78c"></a>

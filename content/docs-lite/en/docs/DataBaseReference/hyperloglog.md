@@ -1,3 +1,8 @@
+---
+description: Parameter description: Specifies the number of buckets for HLL data. The number of buckets affects the precision of distinct values calculated by HLL. The more buckets there are, the smaller the d.
+keywords: [openGauss, HyperLogLog]
+---
+
 # HyperLogLog<a name="EN-US_TOPIC_0000001083204098"></a>
 
 ## hll\_default\_log2m<a name="section189901634112519"></a>

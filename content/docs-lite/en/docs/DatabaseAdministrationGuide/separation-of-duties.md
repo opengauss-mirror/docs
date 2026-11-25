@@ -1,3 +1,8 @@
+---
+description: Descriptions in Default Permission Mechanism and Administrator are about the initial situation after the database system is created. By defau.
+keywords: [openGauss, Separation of Duties]
+---
+
 # Separation of Duties<a name="EN-US_TOPIC_0289900233"></a>
 
 Descriptions in  [Default Permission Mechanism](default-permission-mechanism.md)  and  [Administrator](administrator.md)  are about the initial situation after the database system is created. By default, a system administrator with the  **SYSADMIN**  attribute has the highest-level permissions.

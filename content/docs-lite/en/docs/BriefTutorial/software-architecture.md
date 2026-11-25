@@ -1,3 +1,8 @@
+---
+description: openGauss is a standalone system that supports one primary and up to eight standby servers.
+keywords: [openGauss, Software Architecture]
+---
+
 # Software Architecture<a name="EN-US_TOPIC_0000001209981910"></a>
 
 openGauss is a standalone system that supports one primary and up to eight standby servers.
@@ -9,7 +14,7 @@ Service data is stored on a single physical node, and data access tasks are push
 [Figure 1](#en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_fig5205420191411)  shows the logical components of openGauss.
 
 **Figure  1**  openGauss logical architecture<a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_fig5205420191411"></a>  
-![](figures/opengauss-logical-architecture.png "opengauss-logical-architecture")
+![Software Architecture](figures/opengauss-logical-architecture.png "opengauss-logical-architecture")
 
 **Table  1**  Architecture description
 

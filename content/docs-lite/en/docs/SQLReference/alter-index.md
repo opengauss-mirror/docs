@@ -1,3 +1,8 @@
+---
+description: ALTER INDEX modifies the definition of an existing index.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER INDEX<a name="EN-US_TOPIC_0289900645"></a>
 
 ## Function<a name="en-us_topic_0283137124_en-us_topic_0237122063_en-us_topic_0059778960_sfe4d0517393c4151ab84ea0450924b7c"></a>

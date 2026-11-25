@@ -1,3 +1,8 @@
+---
+description: The TPC-C Benchmark is an industry standard benchmark for measuring the performance of Online Transaction Processing \(OLTP\) systems. It is based on a complex database and a number of different trans.
+keywords: [openGauss, MOT Sample TPC-C Benchmark]
+---
+
 # MOT Sample TPC-C Benchmark<a name="EN-US_TOPIC_0289900962"></a>
 
 ## TPC-C Introduction<a name="en-us_topic_0283137680_en-us_topic_0270171506_section31809499012"></a>
@@ -152,7 +157,7 @@ To run the benchmark –
 
     BenchmarkSQL results should appear as follows –
 
-    ![](figures/en-us_image_0289899941.jpg)
+    ![Results Report](figures/en-us_image_0289899941.jpg)
 
     Over time, the benchmark measures and averages the committed transactions. The example above benchmarks for two minutes.
 
@@ -163,9 +168,9 @@ To run the benchmark –
     The following is an example of a detailed result report –
 
     **Figure  1**  Detailed Result Report<a name="en-us_topic_0283137680_en-us_topic_0270171506_fig73452720221"></a>  
-    ![](figures/detailed-result-report.png "detailed-result-report")
+    ![Results Report](figures/detailed-result-report.png "detailed-result-report")
 
-    ![](figures/en-us_image_0289900100.png)
+    ![Results Report](figures/en-us_image_0289900100.png)
 
     BenchmarkSQL collects detailed performance statistics and operating system performance data \(if configured\).
 
@@ -178,6 +183,6 @@ To run the benchmark –
     A near linear scalability was demonstrated, as shown below –
 
     **Figure  2**  Results of TPC-C of MOT on Huawei Taishan 2480<a name="en-us_topic_0283137680_en-us_topic_0270171506_fig19612208102319"></a>  
-    ![](figures/results-of-tpc-c-of-mot-on-huawei-taishan-2480.png "results-of-tpc-c-of-mot-on-huawei-taishan-2480")
+    ![Results Report](figures/results-of-tpc-c-of-mot-on-huawei-taishan-2480.png "results-of-tpc-c-of-mot-on-huawei-taishan-2480")
 
 

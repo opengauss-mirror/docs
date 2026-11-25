@@ -1,3 +1,8 @@
+---
+description: When the TPC-C is running and a disk to be injected is full, the TPC-C stops responding. After the fault is rectified, the TPC-C automatically continues to run.
+keywords: [openGauss, When the TPC-C is running and a disk to be injected is full the TPC-C stops responding.]
+---
+
 # When the TPC-C is running and a disk to be injected is full, the TPC-C stops responding.<a name="EN-US_TOPIC_0289900262"></a>
 
 ## Symptom<a name="en-us_topic_0283136782_section526616331423"></a>

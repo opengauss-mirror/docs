@@ -1,3 +1,8 @@
+---
+description: openGauss is a standalone database where data is stored on a single physical node and data access tasks are pushed to service nodes. In this way, high concurrency of servers enables quick data process.
+keywords: [openGauss, System Architecture]
+---
+
 # System Architecture<a name="EN-US_TOPIC_0289896518"></a>
 
 openGauss is a standalone database where data is stored on a single physical node and data access tasks are pushed to service nodes. In this way, high concurrency of servers enables quick data processing. In addition, data can be copied to the standby server through log replication, ensuring high reliability and scalability.
@@ -7,7 +12,7 @@ openGauss is a standalone database and can be deployed in primary/standby mode.
 [Figure 1](#en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_fig5205420191411)  and  show the logical architecture of openGauss.
 
 **Figure  1**  openGauss logical architecture<a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_fig5205420191411"></a>  
-![](figures/opengauss-logical-architecture.png "opengauss-logical-architecture")
+![System Architecture](figures/opengauss-logical-architecture.png "opengauss-logical-architecture")
 
 **Table  1**  Architecture description
 

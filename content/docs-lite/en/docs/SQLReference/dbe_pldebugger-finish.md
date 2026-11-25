@@ -1,3 +1,8 @@
+---
+description: Executes the current SQL statement in the stored procedure until the next breakpoint is triggered or the next line of the upper-layer stack is executed.
+keywords: [openGauss, DBE_PLDEBUGGER.finish]
+---
+
 # DBE\_PLDEBUGGER.finish<a name="EN-US_TOPIC_0000001152478332"></a>
 
 Executes the current SQL statement in the stored procedure until the next breakpoint is triggered or the next line of the upper-layer stack is executed.

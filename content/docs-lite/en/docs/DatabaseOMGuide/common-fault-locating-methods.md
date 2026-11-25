@@ -1,3 +1,8 @@
+---
+description: If all instances on a node are abnormal, an OS fault may have occurred.
+keywords: [openGauss, Common Fault Locating Methods]
+---
+
 # Common Fault Locating Methods<a name="EN-US_TOPIC_0291553838"></a>
 
 ## Locating OS Faults<a name="section1115263119119"></a>

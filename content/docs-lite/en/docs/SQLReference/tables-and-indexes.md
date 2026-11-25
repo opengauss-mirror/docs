@@ -1,3 +1,8 @@
+---
+description: - Searching a Table.
+keywords: [openGauss, Tables and Indexes]
+---
+
 # Tables and Indexes<a name="EN-US_TOPIC_0289900304"></a>
 
 -   **[Searching a Table](searching-a-table.md)**  

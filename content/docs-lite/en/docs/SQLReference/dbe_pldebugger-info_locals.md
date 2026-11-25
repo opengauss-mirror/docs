@@ -1,3 +1,8 @@
+---
+description: During debugging on the debug end, info\_locals is invoked to print the variables in the current stored procedure. The input parameter frameno of this function indicates the stack layer to.
+keywords: [openGauss, DBE_PLDEBUGGER.info_locals]
+---
+
 # DBE\_PLDEBUGGER.info\_locals<a name="EN-US_TOPIC_0000001101617996"></a>
 
 During debugging on the debug end,  **info\_locals**  is invoked to print the variables in the current stored procedure. The input parameter  **frameno**  of this function indicates the stack layer to be traversed. This function can be invoked without input parameters. By default, the top-layer stack variable is queried.

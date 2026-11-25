@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 2.0.0.
+keywords: [openGauss, Gray Upgrade]
+---
+
 # Gray Upgrade<a name="EN-US_TOPIC_0000001105235296"></a>
 
 ## Availability<a name="section56086982"></a>

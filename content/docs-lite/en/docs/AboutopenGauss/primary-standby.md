@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.0.0.
+keywords: [openGauss, PrimaryStandby]
+---
+
 # Primary/Standby<a name="EN-US_TOPIC_0000001152195133"></a>
 
 ## Availability<a name="section14707931165614"></a>

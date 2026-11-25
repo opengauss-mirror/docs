@@ -1,3 +1,8 @@
+---
+description: - Configuration Settings Functions.
+keywords: [openGauss, System Administration Functions]
+---
+
 # System Administration Functions<a name="EN-US_TOPIC_0289900149"></a>
 
 -   **[Configuration Settings Functions](configuration-settings-functions.md)**  

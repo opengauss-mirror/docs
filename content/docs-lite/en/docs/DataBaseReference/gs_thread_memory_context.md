@@ -1,3 +1,8 @@
+---
+description: GS\_THREAD\_MEMORY\_CONTEXT displays statistics about memory usage of all threads based on MemoryContext nodes. This view is equivalent to the GS\_SESSION\_MEMORY\_DETAIL view when enabl.
+keywords: [openGauss, GS_THREAD_MEMORY_CONTEXT]
+---
+
 # GS\_THREAD\_MEMORY\_CONTEXT<a name="EN-US_TOPIC_0289900729"></a>
 
 **GS\_THREAD\_MEMORY\_CONTEXT**  displays statistics about memory usage of all threads based on MemoryContext nodes. This view is equivalent to the  **GS\_SESSION\_MEMORY\_DETAIL**  view when  **enable\_thread\_pool**  is set to  **off**. If the GUC parameter  **enable\_memory\_limit**  is set to  **off**, this view is unavailable.

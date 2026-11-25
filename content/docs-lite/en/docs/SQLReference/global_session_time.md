@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_SESSION\_TIME collects statistics about the running time of session threads and time consumed in each execution phase on each node.
+keywords: [openGauss, GLOBAL_SESSION_TIME]
+---
+
 # GLOBAL\_SESSION\_TIME<a name="EN-US_TOPIC_0289900209"></a>
 
 **GLOBAL\_SESSION\_TIME**  collects statistics about the running time of session threads and time consumed in each execution phase on each node.

@@ -1,3 +1,8 @@
+---
+description: The database is running properly, and a series of addition, deletion, and modification operations are performed on the tamper-proof database to ensure that operation records are generated in the ledge.
+keywords: [openGauss, Checking Ledger Data Consistency]
+---
+
 # Checking Ledger Data Consistency<a name="EN-US_TOPIC_0000001147007425"></a>
 
 ## Prerequisites<a name="en-us_topic_0059778013_sfe45a1031ec347ba820649c0cec52027"></a>

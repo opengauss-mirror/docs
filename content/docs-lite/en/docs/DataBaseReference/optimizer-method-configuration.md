@@ -1,3 +1,8 @@
+---
+description: These configuration parameters provide a crude method of influencing the query plans chosen by the query optimizer. If the default plan chosen by the optimizer for a particular query is not optimal, a.
+keywords: [openGauss, Optimizer Method Configuration]
+---
+
 # Optimizer Method Configuration<a name="EN-US_TOPIC_0289900000"></a>
 
 These configuration parameters provide a crude method of influencing the query plans chosen by the query optimizer. If the default plan chosen by the optimizer for a particular query is not optimal, a temporary solution is to use one of these configuration parameters to force the optimizer to choose a different plan. Better ways include adjusting the optimizer cost constants, manually running  **ANALYZE**, increasing the value of the  **default\_statistics\_target**  parameter, and increasing the amount of the statistics collected in specific columns using  **ALTER TABLE SET STATISTICS**.

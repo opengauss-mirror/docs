@@ -1,3 +1,8 @@
+---
+description: The following table lists metrics in the Instance Efficiency Percentages report.
+keywords: [openGauss, Instance Efficiency Percentages]
+---
+
 # Instance Efficiency Percentages<a name="EN-US_TOPIC_0000001215515172"></a>
 
 The following table lists metrics in the Instance Efficiency Percentages report.

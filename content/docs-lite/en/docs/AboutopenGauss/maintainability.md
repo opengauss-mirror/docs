@@ -1,3 +1,8 @@
+---
+description: Introduces Maintainability in openGauss, covering .
+keywords: [openGauss, Maintainability]
+---
+
 # Maintainability<a name="EN-US_TOPIC_0000001105075472"></a>
 
 -   **[Gray Upgrade](gray-upgrade.md)**  

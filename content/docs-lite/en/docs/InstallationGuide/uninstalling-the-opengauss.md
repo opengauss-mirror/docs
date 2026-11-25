@@ -1,3 +1,8 @@
+---
+description: The process of uninstalling the openGauss includes uninstalling the openGauss and clearing the environment of the openGauss server.
+keywords: [openGauss, Uninstalling the openGauss]
+---
+
 # Uninstalling the openGauss<a name="EN-US_TOPIC_0249784556"></a>
 
 The process of uninstalling the openGauss includes uninstalling the openGauss and clearing the environment of the openGauss server.

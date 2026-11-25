@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_SESSION\_STAT\_ACTIVITY displays information about threads that are running on each node in openGauss.
+keywords: [openGauss, GLOBAL_SESSION_STAT_ACTIVITY]
+---
+
 # GLOBAL\_SESSION\_STAT\_ACTIVITY<a name="EN-US_TOPIC_0289900735"></a>
 
 **GLOBAL\_SESSION\_STAT\_ACTIVITY**  displays information about threads that are running on each node in openGauss.

@@ -1,3 +1,8 @@
+---
+description: SILO<sup>\</sup>[Comparison: Disk vs. MOT<sup>\]</sup> in its basic algorithm flow outperformed many other ACID-compliant OCCs that we tested in our research experiments.
+keywords: [openGauss, MOT SILO Enhancements]
+---
+
 # MOT SILO Enhancements<a name="EN-US_TOPIC_0289900804"></a>
 
 SILO<sup>\[</sup>[Comparison: Disk vs. MOT](comparison-disk-vs-mot.md)<sup>\]</sup>  in its basic algorithm flow outperformed many other ACID-compliant OCCs that we tested in our research experiments. However, in order to make SILO a product-grade mechanism, we had to enhance it with many essential functionalities that were missing in the original design, such as:

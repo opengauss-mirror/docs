@@ -1,3 +1,8 @@
+---
+description: The following error is reported during integer conversion:.
+keywords: [openGauss, An Error Occurs During Integer Conversion]
+---
+
 # An Error Occurs During Integer Conversion<a name="EN-US_TOPIC_0291615107"></a>
 
 ## Symptom<a name="section24920212218"></a>

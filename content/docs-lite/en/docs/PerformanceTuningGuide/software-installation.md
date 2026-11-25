@@ -1,3 +1,8 @@
+---
+description: Introduces Software Installation in openGauss, covering .
+keywords: [openGauss, Software Installation]
+---
+
 # Software Installation<a name="EN-US_TOPIC_0289900367"></a>
 
 1.  Install JDK.

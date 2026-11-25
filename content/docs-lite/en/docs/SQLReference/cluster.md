@@ -1,3 +1,8 @@
+---
+description: CLUSTER is used to cluster a table based on an index.
+keywords: [openGauss, CLUSTER]
+---
+
 # CLUSTER<a name="EN-US_TOPIC_0289899899"></a>
 
 ## Function<a name="en-us_topic_0283137352_en-us_topic_0237122092_en-us_topic_0059778981_s0e572999489a4677bdb5354183b3efbf"></a>

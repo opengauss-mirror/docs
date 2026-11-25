@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Autonomous Transaction]
+---
+
 # Autonomous Transaction<a name="EN-US_TOPIC_0000001152075193"></a>
 
 ## Availability<a name="section1578164915345"></a>

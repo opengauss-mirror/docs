@@ -1,3 +1,8 @@
+---
+description: Introduces Glossary in openGauss, covering .
+keywords: [openGauss, Glossary]
+---
+
 # Glossary<a name="EN-US_TOPIC_0289899187"></a>
 
 **Table  1**  Glossary

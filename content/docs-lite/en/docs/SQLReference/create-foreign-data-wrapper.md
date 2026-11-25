@@ -1,3 +1,8 @@
+---
+description: Defines a new foreign data wrapper (FDW).
+keywords: [openGauss, CREATE]
+---
+
 # CREATE FUNCTION DATA WRAPPER
 
 ## Function Description

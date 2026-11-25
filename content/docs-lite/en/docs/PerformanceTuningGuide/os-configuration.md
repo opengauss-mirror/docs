@@ -1,3 +1,8 @@
+---
+description: 1. Install the openEuler OS. For details, see openEuler Installation Guide.
+keywords: [openGauss, OS Configuration]
+---
+
 # OS Configuration<a name="EN-US_TOPIC_0289900544"></a>
 
 1.  Install the openEuler OS. For details, see  [openEuler Installation Guide](https://openeuler.org/en/docs/20.03_LTS/docs/Installation/Installation.html).
@@ -13,7 +18,7 @@
         As shown in  [Figure 1](#en-us_topic_0283137217_en-us_topic_0263913267_fig1277156123020), the  **PAGESIZE**  value is  **64** **KB**.
 
         **Figure  1**  Checking the  **PAGESIZE**  value<a name="en-us_topic_0283137217_en-us_topic_0263913267_fig1277156123020"></a>  
-        ![](figures/checking-the-pagesize-value.png "checking-the-pagesize-value")
+        ![OS Configuration](figures/checking-the-pagesize-value.png "checking-the-pagesize-value")
 
     2.  If the  **PAGESIZE**  value is not  **64** **KB**, you need to modify the parameters and recompile the kernel. For details, see  [https://bbs.huaweicloud.com/blogs/154313](https://bbs.huaweicloud.com/blogs/154313).
 

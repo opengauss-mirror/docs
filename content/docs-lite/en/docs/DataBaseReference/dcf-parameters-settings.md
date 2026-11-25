@@ -1,3 +1,8 @@
+---
+description: Introduces DCF Parameters Settings in openGauss, covering enable\_dcf, dcf\_ssl, dcf\_config.
+keywords: [openGauss, DCF Parameters Settings]
+---
+
 # DCF Parameters Settings<a name="EN-US_TOPIC_0000001083207760"></a>
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 

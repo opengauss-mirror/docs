@@ -1,3 +1,8 @@
+---
+description: Performance issues may occur when you query data or run the INSERT, DELETE, UPDATE, or CREATE TABLE AS statement. In this case, you can query the warning column in the [GS\_.
+keywords: [openGauss, Optimizing SQL Self-Diagnosis]
+---
+
 # Optimizing SQL Self-Diagnosis<a name="EN-US_TOPIC_0289899908"></a>
 
 Performance issues may occur when you query data or run the  **INSERT**,  **DELETE**,  **UPDATE**, or  **CREATE TABLE AS**  statement. In this case, you can query the  **warning**  column in the [GS\_WLM\_SESSION\_STATISTICS](../DataBaseReference/gs_wlm_session_statistics.md)  and  [GS\_WLM\_SESSION\_HISTORY](../DataBaseReference/gs_wlm_session_history.md) views to obtain reference for performance optimization.

@@ -1,3 +1,8 @@
+---
+description: PQflush is used to try to flush any queued output data to the server.
+keywords: [openGauss, PQflush]
+---
+
 # PQflush<a name="EN-US_TOPIC_0242380586"></a>
 
 ## Function<a name="en-us_topic_0241735631_section1516183316287"></a>

@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 3.0.0.
+keywords: [openGauss, Foreign Key Lock Enhancement]
+---
+
 # Foreign Key Lock Enhancement<a name="EN-US_TOPIC_0000001220343488"></a>
 
 ## Availability<a name="section1076382216287"></a>

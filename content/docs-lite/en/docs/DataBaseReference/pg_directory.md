@@ -1,3 +1,8 @@
+---
+description: PG\_DIRECTORY stores directories added by users. You can run the CREATE DIRECTORY statement to add directories to the system catalog. Currently, only system administrators can perform this.
+keywords: [openGauss, PG_DIRECTORY]
+---
+
 # PG\_DIRECTORY<a name="EN-US_TOPIC_0289900041"></a>
 
 **PG\_DIRECTORY**  stores directories added by users. You can run the  **CREATE DIRECTORY**  statement to add directories to the system catalog. Currently, only system administrators can perform this operation.

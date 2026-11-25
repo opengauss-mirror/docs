@@ -1,3 +1,8 @@
+---
+description: Configuration setting functions are used for querying and modifying configuration parameters during running.
+keywords: [openGauss, Configuration Settings Functions]
+---
+
 # Configuration Settings Functions<a name="EN-US_TOPIC_0289900255"></a>
 
 Configuration setting functions are used for querying and modifying configuration parameters during running.

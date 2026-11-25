@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.0.0.
+keywords: [openGauss, Predictor AI Query Time Forecasting]
+---
+
 # Predictor: AI Query Time Forecasting<a name="EN-US_TOPIC_0000001151995065"></a>
 
 ## Availability<a name="section56086982"></a>

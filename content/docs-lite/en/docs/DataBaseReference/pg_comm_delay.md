@@ -1,3 +1,8 @@
+---
+description: PG\_COMM\_DELAY displays the communication library delay status for a node.
+keywords: [openGauss, PG_COMM_DELAY]
+---
+
 # PG\_COMM\_DELAY<a name="EN-US_TOPIC_0311526902"></a>
 
 **PG\_COMM\_DELAY**  displays the communication library delay status for  a node.

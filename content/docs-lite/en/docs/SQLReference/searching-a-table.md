@@ -1,3 +1,8 @@
+---
+description: It is possible to do a full text search without an index.
+keywords: [openGauss, Searching a Table]
+---
+
 # Searching a Table<a name="EN-US_TOPIC_0289899842"></a>
 
 It is possible to do a full text search without an index.

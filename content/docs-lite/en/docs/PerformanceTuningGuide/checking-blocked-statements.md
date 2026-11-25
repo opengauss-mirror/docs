@@ -1,3 +1,8 @@
+---
+description: During database running, query statements are blocked in some service scenarios and run for an excessively long time. In this case, you can forcibly terminate the faulty session.
+keywords: [openGauss, Checking Blocked Statements]
+---
+
 # Checking Blocked Statements<a name="EN-US_TOPIC_0289900192"></a>
 
 During database running, query statements are blocked in some service scenarios and run for an excessively long time. In this case, you can forcibly terminate the faulty session.

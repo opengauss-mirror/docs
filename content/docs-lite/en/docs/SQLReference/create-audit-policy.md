@@ -1,3 +1,8 @@
+---
+description: CREATE AUDIT POLICY creates a unified audit policy.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE AUDIT POLICY<a name="EN-US_TOPIC_0306525302"></a>
 
 ## Function<a name="section1163224811518"></a>

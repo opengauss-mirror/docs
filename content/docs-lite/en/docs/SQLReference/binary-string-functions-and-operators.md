@@ -1,3 +1,8 @@
+---
+description: SQL defines some string functions that use keywords, rather than commas, to separate arguments.
+keywords: [openGauss, Binary String Functions and Operators]
+---
+
 # Binary String Functions and Operators<a name="EN-US_TOPIC_0289900418"></a>
 
 ## String Operators<a name="en-us_topic_0283137016_en-us_topic_0237121968_en-us_topic_0059778049_s48b25a0eb8364edc885d82ec73d3fdf5"></a>

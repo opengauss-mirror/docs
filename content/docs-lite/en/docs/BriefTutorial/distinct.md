@@ -1,3 +1,8 @@
+---
+description: The DISTINCT keyword is used together with the SELECT statement to remove duplicate records and obtain only unique records.
+keywords: [openGauss, DISTINCT]
+---
+
 # DISTINCT<a name="EN-US_TOPIC_0000001209981904"></a>
 
 The  **DISTINCT**  keyword is used together with the SELECT statement to remove duplicate records and obtain only unique records.

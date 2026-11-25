@@ -1,3 +1,8 @@
+---
+description: ROLLBACK rolls back the current transaction and backs out all updates in the transaction.
+keywords: [openGauss, ROLLBACK]
+---
+
 # ROLLBACK<a name="EN-US_TOPIC_0289900944"></a>
 
 ## Function<a name="en-us_topic_0283137047_en-us_topic_0237122180_en-us_topic_0059778963_s332087a99fa4409188f6347dab075098"></a>

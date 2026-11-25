@@ -1,3 +1,8 @@
+---
+description: REPLICATION\_SLOTS displays replication node information.
+keywords: [openGauss, REPLICATION_SLOTS]
+---
+
 # REPLICATION\_SLOTS<a name="EN-US_TOPIC_0289900718"></a>
 
 **REPLICATION\_SLOTS**  displays replication node information.

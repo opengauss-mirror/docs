@@ -1,3 +1,8 @@
+---
+description: The following table describes columns in the Wait Events report.
+keywords: [openGauss, Wait Events]
+---
+
 # Wait Events<a name="EN-US_TOPIC_0000001215515174"></a>
 
 The following table describes columns in the Wait Events report.

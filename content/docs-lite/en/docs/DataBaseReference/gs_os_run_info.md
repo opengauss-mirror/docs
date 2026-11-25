@@ -1,3 +1,8 @@
+---
+description: GS\_OS\_RUN\_INFO displays the running status of the OS.
+keywords: [openGauss, GS_OS_RUN_INFO]
+---
+
 # GS\_OS\_RUN\_INFO<a name="EN-US_TOPIC_0289900344"></a>
 
 **GS\_OS\_RUN\_INFO**  displays the running status of the OS.

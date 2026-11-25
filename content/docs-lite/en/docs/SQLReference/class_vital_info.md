@@ -1,3 +1,8 @@
+---
+description: CLASS\_VITAL\_INFO is used to check whether the OIDs of the same table or index are consistent for WDR snapshots.
+keywords: [openGauss, CLASS_VITAL_INFO]
+---
+
 # CLASS\_VITAL\_INFO<a name="EN-US_TOPIC_0289900597"></a>
 
 **CLASS\_VITAL\_INFO**  is used to check whether the OIDs of the same table or index are consistent for WDR snapshots.

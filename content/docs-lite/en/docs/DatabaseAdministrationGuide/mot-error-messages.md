@@ -1,3 +1,8 @@
+---
+description: Errors may be caused by multiple scenarios. All errors are recorded in the log files of the database server. In addition, user-related errors are returned to the user as part of the response to a quer.
+keywords: [openGauss, MOT Error Messages]
+---
+
 # MOT Error Messages<a name="EN-US_TOPIC_0289900897"></a>
 
 Errors may be caused by multiple scenarios. All errors are recorded in the log files of the database server. In addition, user-related errors are returned to the user as part of the response to a query, transaction, or stored procedure execution, or database management operation.

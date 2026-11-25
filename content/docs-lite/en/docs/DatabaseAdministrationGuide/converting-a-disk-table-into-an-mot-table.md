@@ -1,3 +1,8 @@
+---
+description: The direct conversion of disk tables into MOTs is not yet possible, meaning that no ALTER TABLE statement yet exists that converts a disk-based table into an MOT.
+keywords: [openGauss, Converting a Disk Table into an MOT]
+---
+
 # Converting a Disk Table into an MOT<a name="EN-US_TOPIC_0289899851"></a>
 
 The direct conversion of disk tables into MOTs is not yet possible, meaning that no ALTER TABLE statement yet exists that converts a disk-based table into an MOT.

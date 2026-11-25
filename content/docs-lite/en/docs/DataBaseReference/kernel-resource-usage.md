@@ -1,3 +1,8 @@
+---
+description: This section describes kernel resource parameters. Whether these parameters take effect depends on OS settings.
+keywords: [openGauss, Kernel Resource Usage]
+---
+
 # Kernel Resource Usage<a name="EN-US_TOPIC_0289900757"></a>
 
 This section describes kernel resource parameters. Whether these parameters take effect depends on OS settings.

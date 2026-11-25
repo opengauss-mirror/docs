@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.0.0.
+keywords: [openGauss, Adaptive Compression]
+---
+
 # Adaptive Compression<a name="EN-US_TOPIC_0000001105235300"></a>
 
 ## Availability<a name="section33236420"></a>

@@ -1,3 +1,8 @@
+---
+description: - gs\_verify\_data\_file\(verify\_segment bool\).
+keywords: [openGauss, Data Damage Detection and Repair Functions]
+---
+
 # Data Damage Detection and Repair Functions<a name="EN-US_TOPIC_0000001198584734"></a>
 
 -   gs\_verify\_data\_file\(verify\_segment bool\)

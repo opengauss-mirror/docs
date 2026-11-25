@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 2.1.0.
+keywords: [openGauss, JDBC, JDBC Client Load Balancing and ReadWrite Isolation]
+---
+
 # JDBC Client Load Balancing and Read/Write Isolation<a name="EN-US_TOPIC_0000001168070076"></a>
 
 ## Availability<a name="section1076382216287"></a>

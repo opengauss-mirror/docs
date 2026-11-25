@@ -1,3 +1,8 @@
+---
+description: PG\_NAMESPACE records namespaces, that is, schema-related information.
+keywords: [openGauss, PG_NAMESPACE]
+---
+
 # PG\_NAMESPACE<a name="EN-US_TOPIC_0289899902"></a>
 
 **PG\_NAMESPACE**  records namespaces, that is, schema-related information.

@@ -1,3 +1,8 @@
+---
+description: Parameter description: Specifies whether an upgrade is ongoing. This parameter cannot be modified by users. Only the sysadmin user can access this parameter.
+keywords: [openGauss, Upgrade Parameters]
+---
+
 # Upgrade Parameters<a name="EN-US_TOPIC_0289900654"></a>
 
 ## IsInplaceUpgrade<a name="en-us_topic_0283136680_en-us_topic_0237124753_en-us_topic_0059778487_s1df9119d74fe45da9452d4cb4802f84c"></a>

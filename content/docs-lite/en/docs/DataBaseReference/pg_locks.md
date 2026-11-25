@@ -1,3 +1,8 @@
+---
+description: PG\_LOCKS displays information about locks held by open transactions.
+keywords: [openGauss, PG_LOCKS]
+---
+
 # PG\_LOCKS<a name="EN-US_TOPIC_0289900103"></a>
 
 **PG\_LOCKS**  displays information about locks held by open transactions.

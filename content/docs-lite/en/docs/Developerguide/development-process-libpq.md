@@ -1,3 +1,8 @@
+---
+description: To compile and connect to a libpq source program, perform the following operations:.
+keywords: [openGauss, Development Process]
+---
+
 # Development Process<a name="EN-US_TOPIC_0000001166619840"></a>
 
 To compile and connect to a libpq source program, perform the following operations:

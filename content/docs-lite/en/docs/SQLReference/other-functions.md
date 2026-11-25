@@ -1,3 +1,8 @@
+---
+description: Introduces Other Functions in openGauss, covering .
+keywords: [openGauss, Other Functions]
+---
+
 # Other Functions<a name="EN-US_TOPIC_0289900063"></a>
 
 -   plan\_seed\(\)

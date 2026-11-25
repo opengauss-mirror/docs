@@ -1,3 +1,8 @@
+---
+description: The common functions of openGauss are as follows:.
+keywords: [openGauss, Functions]
+---
+
 # Functions<a name="EN-US_TOPIC_0000001210461850"></a>
 
 The common functions of openGauss are as follows:

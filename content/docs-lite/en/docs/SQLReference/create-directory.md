@@ -1,3 +1,8 @@
+---
+description: CREATE DIRECTORY creates a directory. The directory defines an alias for a path in the server file system and is used to store data files used by users.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE DIRECTORY<a name="EN-US_TOPIC_0289900765"></a>
 
 ## Function<a name="en-us_topic_0283136620_en-us_topic_0237122101_en-us_topic_0059778310_section50807000114421"></a>

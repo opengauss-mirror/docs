@@ -1,3 +1,8 @@
+---
+description: PG\_INDEX records part of index information. The rest is mostly recorded in PG\_CLASS.
+keywords: [openGauss, PG_INDEX]
+---
+
 # PG\_INDEX<a name="EN-US_TOPIC_0289900943"></a>
 
 **PG\_INDEX**  records part of index information. The rest is mostly recorded in  **PG\_CLASS**.

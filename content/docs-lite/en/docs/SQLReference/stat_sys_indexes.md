@@ -1,3 +1,8 @@
+---
+description: STAT\_SYS\_INDEXES displays index status information about all the system catalogs in the pg\_catalog, information\_schema, and pg\_toast schemas.
+keywords: [openGauss, STAT_SYS_INDEXES]
+---
+
 # STAT\_SYS\_INDEXES<a name="EN-US_TOPIC_0289899888"></a>
 
 **STAT\_SYS\_INDEXES**  displays index status information about all the system catalogs in the  **pg\_catalog**,  **information\_schema**, and  **pg\_toast**  schemas.

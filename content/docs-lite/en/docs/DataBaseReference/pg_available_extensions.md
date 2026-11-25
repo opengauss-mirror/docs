@@ -1,3 +1,8 @@
+---
+description: PG\_AVAILABLE\_EXTENSIONS displays extended information about certain database features.
+keywords: [openGauss, PG_AVAILABLE_EXTENSIONS]
+---
+
 # PG\_AVAILABLE\_EXTENSIONS<a name="EN-US_TOPIC_0289900593"></a>
 
 **PG\_AVAILABLE\_EXTENSIONS**  displays extended information about certain database features.

@@ -1,3 +1,8 @@
+---
+description: - Plan Hint Optimization.
+keywords: [openGauss, Hint-based Tuning]
+---
+
 # Hint-based Tuning<a name="EN-US_TOPIC_0289900289"></a>
 
 -   **[Plan Hint Optimization](plan-hint-optimization.md)**  

@@ -1,3 +1,8 @@
+---
+description: - Executing Dynamic Query Statements.
+keywords: [openGauss, Dynamic Statements]
+---
+
 # Dynamic Statements<a name="EN-US_TOPIC_0289900460"></a>
 
 -   **[Executing Dynamic Query Statements](executing-dynamic-query-statements.md)**  

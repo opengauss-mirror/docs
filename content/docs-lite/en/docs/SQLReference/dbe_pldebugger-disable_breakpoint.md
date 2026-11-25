@@ -1,3 +1,8 @@
+---
+description: During debugging on the debug end, call disable\_breakpoint to disable breakpoints.
+keywords: [openGauss, DBE_PLDEBUGGER.disable_breakpoint]
+---
+
 # DBE\_PLDEBUGGER.disable\_breakpoint<a name="EN-US_TOPIC_0000001152318526"></a>
 
 During debugging on the debug end, call disable\_breakpoint to disable breakpoints.

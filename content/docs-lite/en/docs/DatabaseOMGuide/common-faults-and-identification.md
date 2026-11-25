@@ -1,3 +1,8 @@
+---
+description: - Common Fault Locating Methods.
+keywords: [openGauss, Common Faults and Identification]
+---
+
 # Common Faults and Identification<a name="EN-US_TOPIC_0289899949"></a>
 
 -   **[Common Fault Locating Methods](common-fault-locating-methods.md)**  

@@ -1,3 +1,8 @@
+---
+description: You need to install and upgrade the database, and perform health management on the database when using openGauss. To facilitate database maintenance, openGauss provides a series of database management.
+keywords: [openGauss, Server Tools]
+---
+
 # Server Tools<a name="EN-US_TOPIC_0294749055"></a>
 
 You need to install and upgrade the database, and perform health management on the database when using openGauss. To facilitate database maintenance, openGauss provides a series of database management tools.

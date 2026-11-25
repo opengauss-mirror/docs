@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Separation of Control and Access Permissions]
+---
+
 # Separation of Control and Access Permissions<a name="EN-US_TOPIC_0000001105395256"></a>
 
 ## Availability<a name="section17746747"></a>

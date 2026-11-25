@@ -1,3 +1,8 @@
+---
+description: If a large number of rows were updated or deleted during import, run VACUUM FULL before ANALYZE. A large number of UPDATE and DELETE operations generate huge disk page fragments, which redu.
+keywords: [openGauss, Doing VACUUM to a Table]
+---
+
 # Doing VACUUM to a Table<a name="EN-US_TOPIC_0289900069"></a>
 
 If a large number of rows were updated or deleted during import, run  **VACUUM FULL**  before  **ANALYZE**. A large number of UPDATE and DELETE operations generate huge disk page fragments, which reduces query efficiency.  **VACUUM FULL**  can restore disk page fragments and return them to the OS.

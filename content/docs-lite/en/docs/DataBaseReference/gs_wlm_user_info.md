@@ -1,3 +1,8 @@
+---
+description: GS\_WLM\_USER\_INFO displays user statistics.
+keywords: [openGauss, GS_WLM_USER_INFO]
+---
+
 # GS\_WLM\_USER\_INFO<a name="EN-US_TOPIC_0289901012"></a>
 
 **GS\_WLM\_USER\_INFO**  displays user statistics.

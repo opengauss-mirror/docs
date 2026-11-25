@@ -1,3 +1,8 @@
+---
+description: A Synonym dictionary is used to define, identify, and convert synonyms of a token. Phrases are not supported. Synonyms of phrases can be defined in a Thesaurus dictionary. For details, see.
+keywords: [openGauss, Synonym Dictionary]
+---
+
 # Synonym Dictionary<a name="EN-US_TOPIC_0289900265"></a>
 
 A  **Synonym**  dictionary is used to define, identify, and convert synonyms of a token. Phrases are not supported. Synonyms of phrases can be defined in a  **Thesaurus**  dictionary. For details, see  [Thesaurus Dictionary](thesaurus-dictionary.md).

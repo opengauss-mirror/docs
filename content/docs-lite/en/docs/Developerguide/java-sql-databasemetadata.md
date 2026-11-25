@@ -1,3 +1,8 @@
+---
+description: This section describes java.sql.DatabaseMetaData, the API for defining database objects.
+keywords: [openGauss, JDBC, DatabaseMetaData]
+---
+
 # java.sql.DatabaseMetaData<a name="EN-US_TOPIC_0289900323"></a>
 
 This section describes  **java.sql.DatabaseMetaData**, the API for defining database objects.

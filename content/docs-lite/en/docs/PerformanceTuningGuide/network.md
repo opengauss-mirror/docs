@@ -1,3 +1,8 @@
+---
+description: You can run the sar or ifconfig command to check the network status on each node in openGauss and analyze whether performance bottlenecks caused by network faults occur.
+keywords: [openGauss, Network]
+---
+
 # Network<a name="EN-US_TOPIC_0289900966"></a>
 
 You can run the  **sar**  or  **ifconfig**  command to check the network status on each node in openGauss and analyze whether performance bottlenecks caused by network faults occur.

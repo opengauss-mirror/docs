@@ -1,3 +1,8 @@
+---
+description: - Database Metric Collection, Forecast, and Exception Detection.
+keywords: [openGauss, AI4DB Autonomous Database OM]
+---
+
 # AI4DB: Autonomous Database O&M<a name="EN-US_TOPIC_0000001218250146"></a>
 
 -   **[Database Metric Collection, Forecast, and Exception Detection](database-metric-collection-forecast-and-exception-detection.md)**  

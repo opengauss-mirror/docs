@@ -1,3 +1,8 @@
+---
+description: gsql provides several advanced features to facilitate user operations. The common usage is as follows:.
+keywords: [openGauss, Viewing Objects]
+---
+
 # Viewing Objects<a name="EN-US_TOPIC_0000001255221829"></a>
 
 gsql provides several advanced features to facilitate user operations. The common usage is as follows:

@@ -1,3 +1,8 @@
+---
+description: ALTER SERVER adds, modifies, or deletes the parameters of an existing server. You can query existing servers from the pg\_foreign\_server system catalog.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER SERVER<a name="EN-US_TOPIC_0289900400"></a>
 
 ## Function<a name="en-us_topic_0283136932_section7100616165720"></a>

@@ -1,3 +1,8 @@
+---
+description: Generally, databases are bounded by the following components –.
+keywords: [openGauss, MOT Server Optimization  x86]
+---
+
 # MOT Server Optimization – x86<a name="EN-US_TOPIC_0289900027"></a>
 
 Generally, databases are bounded by the following components –

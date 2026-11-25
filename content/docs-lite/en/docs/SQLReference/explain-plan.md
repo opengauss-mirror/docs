@@ -1,3 +1,8 @@
+---
+description: EXPLAIN PLAN saves information about an execution plan into the PLAN\_TABLE table. Different from the EXPLAIN statement, EXPLAIN PLAN only saves plan information and does not pr.
+keywords: [openGauss, EXPLAIN]
+---
+
 # EXPLAIN PLAN<a name="EN-US_TOPIC_0289900301"></a>
 
 ## Function<a name="en-us_topic_0283136849_en-us_topic_0237122164_section0601642305"></a>
@@ -70,7 +75,7 @@ You can perform the following steps to collect execution plans of SQL statements
     SELECT * FROM PLAN_TABLE;
     ```
 
-    ![](figures/文档.png)
+    ![Example 1](figures/文档.png)
 
 3.  Delete data from  **PLAN\_TABLE**.
 

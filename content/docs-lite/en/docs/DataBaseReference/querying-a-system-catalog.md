@@ -1,3 +1,8 @@
+---
+description: In addition to the created tables, a database contains many system catalogs. These system catalogs contain openGauss installation information and information about various queries and processes in ope.
+keywords: [openGauss, Querying a System Catalog]
+---
+
 # Querying a System Catalog<a name="EN-US_TOPIC_0289900778"></a>
 
 In addition to the created tables, a database contains many system catalogs. These system catalogs contain openGauss installation information and information about various queries and processes in openGauss. You can collect information about the database by querying system catalogs.

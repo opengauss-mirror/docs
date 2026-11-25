@@ -1,3 +1,8 @@
+---
+description: This feature is available since 3.0.0.
+keywords: [openGauss, Built-in Stack Tool]
+---
+
 # Built-in Stack Tool<a name="EN-US_TOPIC_0000001263689564"></a>
 
 ## Availability<a name="section147531742205517"></a>

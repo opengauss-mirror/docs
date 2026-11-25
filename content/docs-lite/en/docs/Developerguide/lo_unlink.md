@@ -1,3 +1,8 @@
+---
+description: Remove a large object from the database.
+keywords: [openGauss, lo_unlink]
+---
+
 # lo_unlink<a name="EN-US_TOPIC_0242380600"></a>
 
 ## Function<a name="en-us_topic_0241735627_section696285173724"></a>

@@ -1,3 +1,8 @@
+---
+description: Copyright © Huawei Technologies Co., Ltd. 2022.
+keywords: [openGauss, Terms of Use]
+---
+
 # Terms of Use
 
 **Copyright © Huawei Technologies Co., Ltd. 2022.**

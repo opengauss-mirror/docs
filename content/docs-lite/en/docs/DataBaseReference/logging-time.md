@@ -1,3 +1,8 @@
+---
+description: Parameter description: Specifies which level of messages will be sent to the client. Each level covers all the levels following it. The lower the level is, the fewer messages are sent.
+keywords: [openGauss, Logging Time]
+---
+
 # Logging Time<a name="EN-US_TOPIC_0289900345"></a>
 
 ## client\_min\_messages<a name="en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0"></a>

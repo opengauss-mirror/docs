@@ -1,3 +1,8 @@
+---
+description: ALTER PUBLICATION alters the attributes of a publication.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER PUBLICATION
 
 ## Function Description<a name="section6411155412312"></a>

@@ -1,3 +1,8 @@
+---
+description: - Logical Decoding.
+keywords: [openGauss, Logical Replication]
+---
+
 # Logical Replication<a name="EN-US_TOPIC_0289900406"></a>
 
 -   **[Logical Decoding](logical-decoding.md)**  

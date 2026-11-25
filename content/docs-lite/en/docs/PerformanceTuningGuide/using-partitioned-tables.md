@@ -1,3 +1,8 @@
+---
+description: A partitioned table is a logical table that is divided into several physical partitions based on a specific plan. The table based on the logic is called a partitioned table, and each physical block is.
+keywords: [openGauss, Using Partitioned Tables]
+---
+
 # Using Partitioned Tables<a name="EN-US_TOPIC_0000001119972376"></a>
 
 A partitioned table is a logical table that is divided into several physical partitions based on a specific plan. The table based on the logic is called a partitioned table, and each physical block is called a partition. A partitioned table is a logical table and does not store data. Data is actually stored in partitions. A partitioned table has the following advantages over an ordinary table:

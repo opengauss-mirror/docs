@@ -1,3 +1,8 @@
+---
+description: Changes on publishers are sent to subscribers in real time as they occur. The subscriber applies data in the order in which it is committed on the publisher to ensure transactional consistency of publ.
+keywords: [openGauss, Architecture]
+---
+
 # Architecture<a name="EN-US_TOPIC_0289900926"></a>
 
 Changes on publishers are sent to subscribers in real time as they occur. The subscriber applies data in the order in which it is committed on the publisher to ensure transactional consistency of publications in any single subscription.

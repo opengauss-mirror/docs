@@ -1,3 +1,8 @@
+---
+description: Introduces Encrypted Equality Functions in openGauss, covering .
+keywords: [openGauss, Encrypted Equality Functions]
+---
+
 # Encrypted Equality Functions<a name="EN-US_TOPIC_0299864759"></a>
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 

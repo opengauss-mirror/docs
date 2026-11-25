@@ -1,3 +1,8 @@
+---
+description: SUMMARY\_WORKLOAD\_TRANSACTION displays information about transactions loaded in openGauss.
+keywords: [openGauss, SUMMARY_WORKLOAD_TRANSACTION]
+---
+
 # SUMMARY\_WORKLOAD\_TRANSACTION<a name="EN-US_TOPIC_0289900770"></a>
 
 **SUMMARY\_WORKLOAD\_TRANSACTION**  displays information about transactions loaded in openGauss.

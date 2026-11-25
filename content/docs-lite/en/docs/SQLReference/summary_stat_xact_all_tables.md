@@ -1,3 +1,8 @@
+---
+description: SUMMARY\_STAT\_XACT\_ALL\_TABLES displays transaction status information about all ordinary tables and TOAST tables in all namespaces in openGauss.
+keywords: [openGauss, SUMMARY_STAT_XACT_ALL_TABLES]
+---
+
 # SUMMARY\_STAT\_XACT\_ALL\_TABLES<a name="EN-US_TOPIC_0289900910"></a>
 
 **SUMMARY\_STAT\_XACT\_ALL\_TABLES**  displays transaction status information about all ordinary tables and TOAST tables in all namespaces in openGauss.

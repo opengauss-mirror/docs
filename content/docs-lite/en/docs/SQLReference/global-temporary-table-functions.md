@@ -1,3 +1,8 @@
+---
+description: - pg\_get\_gtt\_relstats\(relOid\).
+keywords: [openGauss, Global Temporary Table Functions]
+---
+
 # Global Temporary Table Functions<a name="EN-US_TOPIC_0289900393"></a>
 
 -   pg\_get\_gtt\_relstats\(relOid\)

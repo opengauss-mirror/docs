@@ -1,3 +1,8 @@
+---
+description: The execution plan generator needs to use table statistics to generate the most effective query execution plan to improve query performance. After data is imported, you are advised to run the ANALY.
+keywords: [openGauss, ANALYZE Table]
+---
+
 # ANALYZE Table<a name="EN-US_TOPIC_0289900953"></a>
 
 The execution plan generator needs to use table statistics to generate the most effective query execution plan to improve query performance. After data is imported, you are advised to run the  **ANALYZE**  statement to update table statistics. The statistics are stored in the system catalog  **PG\_STATISTIC**.

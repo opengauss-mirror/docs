@@ -1,3 +1,8 @@
+---
+description: This section describes parameter settings and value ranges for communication libraries.
+keywords: [openGauss, Communication Library Parameters]
+---
+
 # Communication Library Parameters<a name="EN-US_TOPIC_0289900401"></a>
 
 This section describes parameter settings and value ranges for communication libraries.

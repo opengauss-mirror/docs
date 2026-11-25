@@ -1,3 +1,8 @@
+---
+description: This section describes parameters related to genetic query optimizer. The genetic query optimizer \(GEQO\) is an algorithm that plans queries by using heuristic searching. This algorithm reduces plann.
+keywords: [openGauss, Genetic Query Optimizer]
+---
+
 # Genetic Query Optimizer<a name="EN-US_TOPIC_0289899978"></a>
 
 This section describes parameters related to genetic query optimizer. The genetic query optimizer \(GEQO\) is an algorithm that plans queries by using heuristic searching. This algorithm reduces planning time for complex queries and the costs of producing plans are sometimes inferior to those found by the normal exhaustive-search algorithm.

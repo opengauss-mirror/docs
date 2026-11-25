@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_FILE\_IOSTAT records statistics about data file I/Os on all nodes.
+keywords: [openGauss, GLOBAL_FILE_IOSTAT]
+---
+
 # GLOBAL\_FILE\_IOSTAT<a name="EN-US_TOPIC_0289900790"></a>
 
 **GLOBAL\_FILE\_IOSTAT**  records statistics about data file I/Os on all nodes.

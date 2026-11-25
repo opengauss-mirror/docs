@@ -1,3 +1,8 @@
+---
+description: Truncate a large object to a given length.
+keywords: [openGauss, lo_truncate]
+---
+
 # lo_truncate<a name="EN-US_TOPIC_0242380599"></a>
 
 ## Function<a name="en-us_topic_0241735627_section696285173722"></a>

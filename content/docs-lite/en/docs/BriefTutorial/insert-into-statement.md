@@ -1,3 +1,8 @@
+---
+description: A new table contains no data. You need to insert data to the table before using it. You can execute the INSERT INTO statement to insert data into the table. This statement can be used to insert a row.
+keywords: [openGauss, INSERT]
+---
+
 # INSERT INTO Statement<a name="EN-US_TOPIC_0000001255341793"></a>
 
 A new table contains no data. You need to insert data to the table before using it. You can execute the INSERT INTO statement to insert data into the table. This statement can be used to insert a row of data or multiple rows of data at the same time.

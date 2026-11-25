@@ -1,3 +1,8 @@
+---
+description: PG\_RULES provides access to query useful information about rewrite rules.
+keywords: [openGauss, PG_RULES]
+---
+
 # PG\_RULES<a name="EN-US_TOPIC_0289900412"></a>
 
 **PG\_RULES**  provides access to query useful information about rewrite rules.

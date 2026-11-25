@@ -1,3 +1,8 @@
+---
+description: The JOIN clause is used to combine rows in two or more tables based on the common columns in these tables.
+keywords: [openGauss, JOIN]
+---
+
 # JOIN<a name="EN-US_TOPIC_0000001255221823"></a>
 
 The  **JOIN**  clause is used to combine rows in two or more tables based on the common columns in these tables.

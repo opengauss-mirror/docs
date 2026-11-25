@@ -1,3 +1,8 @@
+---
+description: SUMMARY\_STAT\_DATABASE contains every row of each database in the database, showing database-wide statistics.
+keywords: [openGauss, SUMMARY_STAT_DATABASE]
+---
+
 # SUMMARY\_STAT\_DATABASE<a name="EN-US_TOPIC_0289900276"></a>
 
 **SUMMARY\_STAT\_DATABASE**  contains every row of each database in the database, showing database-wide statistics.

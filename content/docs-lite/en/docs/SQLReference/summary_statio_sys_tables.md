@@ -1,3 +1,8 @@
+---
+description: SUMMARY\_STATIO\_SYS\_TABLES displays I/O status information about all system catalogs in namespaces in openGauss.
+keywords: [openGauss, SUMMARY_STATIO_SYS_TABLES]
+---
+
 # SUMMARY\_STATIO\_SYS\_TABLES<a name="EN-US_TOPIC_0289900651"></a>
 
 **SUMMARY\_STATIO\_SYS\_TABLES**  displays I/O status information about all system catalogs in namespaces in openGauss.

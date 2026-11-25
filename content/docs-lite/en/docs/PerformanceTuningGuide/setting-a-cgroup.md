@@ -1,3 +1,8 @@
+---
+description: The core of openGauss resource load management is resource pools. The first step of configuring a resource pool is to configure Cgroups in the environment. For details about Cgroup principles, see the.
+keywords: [openGauss, Setting a Cgroup]
+---
+
 # Setting a Cgroup<a name="EN-US_TOPIC_0000001147994526"></a>
 
 ## Background<a name="section4704103619115"></a>

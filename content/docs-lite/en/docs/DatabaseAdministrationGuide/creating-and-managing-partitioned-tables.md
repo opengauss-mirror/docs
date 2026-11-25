@@ -1,3 +1,8 @@
+---
+description: openGauss supports range partitioned tables, interval partitioned tables, list partitioned tables, and hash partitioned tables.
+keywords: [openGauss, Creating and Managing Partitioned Tables]
+---
+
 # Creating and Managing Partitioned Tables<a name="EN-US_TOPIC_0289899817"></a>
 
 ## Background<a name="en-us_topic_0283136996_en-us_topic_0237120307_en-us_topic_0059777517_s028115c5360a4b5794e150c3a648560e"></a>

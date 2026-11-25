@@ -1,3 +1,8 @@
+---
+description: openGauss contains the following 16 code repositories.
+keywords: [openGauss, Source Code]
+---
+
 # Source Code<a name="EN-US_TOPIC_0289899190"></a>
 
 openGauss contains the following 16 code repositories.

@@ -1,3 +1,8 @@
+---
+description: - You are an audit administrator or a role that has the audit administrator permissions.
+keywords: [openGauss, Viewing Historical Operation Records in the Ledger]
+---
+
 # Viewing Historical Operation Records in the Ledger<a name="EN-US_TOPIC_0000001147087459"></a>
 
 ## Prerequisites<a name="en-us_topic_0059778013_sfe45a1031ec347ba820649c0cec52027"></a>

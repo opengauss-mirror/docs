@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.0.0.
+keywords: [openGauss, Copy Interface for Error Tolerance]
+---
+
 # Copy Interface for Error Tolerance<a name="EN-US_TOPIC_0000001105395254"></a>
 
 ## Availability<a name="section56086982"></a>

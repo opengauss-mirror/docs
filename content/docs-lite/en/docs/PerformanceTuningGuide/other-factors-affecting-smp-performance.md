@@ -1,3 +1,8 @@
+---
+description: Besides resource factors, there are other factors that impact the SMP performance, such as uneven data distribution in a partitioned table and system parallelism degree.
+keywords: [openGauss, Other Factors Affecting SMP Performance]
+---
+
 # Other Factors Affecting SMP Performance<a name="EN-US_TOPIC_0000001132033355"></a>
 
 Besides resource factors, there are other factors that impact the SMP performance, such as uneven data distribution in a partitioned table and system parallelism degree.

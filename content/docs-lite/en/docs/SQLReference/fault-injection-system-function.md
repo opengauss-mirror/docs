@@ -1,3 +1,8 @@
+---
+description: - gs\_fault\_inject\(int64, text, text, text, text, text\).
+keywords: [openGauss, Fault Injection System Function]
+---
+
 # Fault Injection System Function<a name="EN-US_TOPIC_0311139291"></a>
 
 -   gs\_fault\_inject\(int64, text, text, text, text, text\)

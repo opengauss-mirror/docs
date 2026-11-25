@@ -1,3 +1,8 @@
+---
+description: The PQexec function is adequate for committing commands in common, synchronous applications. However, it has several defects, which may be important to some users:.
+keywords: [openGauss, Functions for Asynchronous Command Processing]
+---
+
 # Functions for Asynchronous Command Processing<a name="EN-US_TOPIC_0242380581"></a>
 
 The PQexec function is adequate for committing commands in common, synchronous applications. However, it has several defects, which may be important to some users:

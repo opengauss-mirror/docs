@@ -1,3 +1,8 @@
+---
+description: openGauss supports:.
+keywords: [openGauss, Operating Environment]
+---
+
 # Operating Environment<a name="EN-US_TOPIC_0289896513"></a>
 
 ## Hardware<a name="en-us_topic_0283136535_en-us_topic_0237080615_en-us_topic_0231763749_en-us_topic_0059777704_se9be325cd0b04ac59d1bed4ff50dc00a"></a>

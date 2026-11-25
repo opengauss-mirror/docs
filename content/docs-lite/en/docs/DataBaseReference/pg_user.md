@@ -1,3 +1,8 @@
+---
+description: PG\_USER provides information about database users. By default, only the initial user and users with the sysadmin attribute can view the information. Other users can view the information only aft.
+keywords: [openGauss, PG_USER]
+---
+
 # PG\_USER<a name="EN-US_TOPIC_0289900531"></a>
 
 **PG\_USER**  provides information about database users. By default, only the initial user and users with the sysadmin attribute can view the information. Other users can view the information only after being granted permissions.

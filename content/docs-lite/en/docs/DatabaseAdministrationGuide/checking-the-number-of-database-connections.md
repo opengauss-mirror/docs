@@ -1,3 +1,8 @@
+---
+description: If the number of connections reaches its upper limit, new connections cannot be created. Therefore, if a user fails to connect a database, the administrator must check whether the number of connection.
+keywords: [openGauss, Checking the Number of Database Connections]
+---
+
 # Checking the Number of Database Connections<a name="EN-US_TOPIC_0289900335"></a>
 
 ## Background<a name="en-us_topic_0283136582_en-us_topic_0237121094_en-us_topic_0059779140_s4018f18115b340a780a46830079d366b"></a>

@@ -1,3 +1,8 @@
+---
+description: PG\_PREPARED\_STATEMENTS displays all prepared statements that are available in the current session.
+keywords: [openGauss, PG_PREPARED_STATEMENTS]
+---
+
 # PG\_PREPARED\_STATEMENTS<a name="EN-US_TOPIC_0289900229"></a>
 
 **PG\_PREPARED\_STATEMENTS**  displays all prepared statements that are available in the current session.

@@ -1,3 +1,8 @@
+---
+description: Data manipulation language \(DML\) is used to perform operations on data in database tables, such as inserting, updating, querying, or deleting data.
+keywords: [openGauss, DML Syntax Overview]
+---
+
 # DML Syntax Overview<a name="EN-US_TOPIC_0289900948"></a>
 
 Data manipulation language \(DML\) is used to perform operations on data in database tables, such as inserting, updating, querying, or deleting data.

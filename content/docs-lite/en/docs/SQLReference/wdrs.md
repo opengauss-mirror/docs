@@ -1,3 +1,8 @@
+---
+description: The following table describes the WDR content of the openGauss database.
+keywords: [openGauss, WDRs]
+---
+
 # WDRs<a name="EN-US_TOPIC_0000001215195224"></a>
 
 The following table describes the WDR content of the openGauss database.

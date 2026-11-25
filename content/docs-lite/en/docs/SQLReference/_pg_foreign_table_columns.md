@@ -1,3 +1,8 @@
+---
+description: \_PG\_FOREIGN\_TABLE\_COLUMNS displays column information about a foreign table. Only the sysadmin user has the permission to view this view.
+keywords: [openGauss, _PG_FOREIGN_TABLE_COLUMNS]
+---
+
 # \_PG\_FOREIGN\_TABLE\_COLUMNS<a name="EN-US_TOPIC_0310260669"></a>
 
 **\_PG\_FOREIGN\_TABLE\_COLUMNS**  displays column information about a foreign table. Only the sysadmin user has the permission to view this view.

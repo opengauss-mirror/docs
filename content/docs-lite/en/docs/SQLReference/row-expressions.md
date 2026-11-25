@@ -1,3 +1,8 @@
+---
+description: Introduces Row Expressions in openGauss, covering .
+keywords: [openGauss, Row Expressions]
+---
+
 # Row Expressions<a name="EN-US_TOPIC_0289900619"></a>
 
 Syntax:

@@ -1,3 +1,8 @@
+---
+description: DROP SERVER drops a data server.
+keywords: [openGauss, DROP]
+---
+
 # DROP SERVER<a name="EN-US_TOPIC_0289900384"></a>
 
 ## Function<a name="en-us_topic_0283136745_section18987145713527"></a>

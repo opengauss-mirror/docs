@@ -1,3 +1,8 @@
+---
+description: This section describes java.sql.Driver, the database driver API.
+keywords: [openGauss, JDBC, Driver]
+---
+
 # java.sql.Driver<a name="EN-US_TOPIC_0289900174"></a>
 
 This section describes  **java.sql.Driver**, the database driver API.

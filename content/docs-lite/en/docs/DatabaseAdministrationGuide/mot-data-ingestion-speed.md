@@ -1,3 +1,8 @@
+---
+description: This test simulates realtime data streams arriving from massive IoT, cloud or mobile devices that need to be quickly and continuously ingested into the database on a massive scale.
+keywords: [openGauss, MOT Data Ingestion Speed]
+---
+
 # MOT Data Ingestion Speed<a name="EN-US_TOPIC_0289899914"></a>
 
 This test simulates realtime data streams arriving from massive IoT, cloud or mobile devices that need to be quickly and continuously ingested into the database on a massive scale.

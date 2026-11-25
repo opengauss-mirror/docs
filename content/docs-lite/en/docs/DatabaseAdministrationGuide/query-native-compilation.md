@@ -1,3 +1,8 @@
+---
+description: An additional feature of MOT is the ability to prepare and parse _pre-compiled full queries_ in a native format \(using a PREPARE statement\) before they are needed for execution.
+keywords: [openGauss, Query Native Compilation]
+---
+
 # Query Native Compilation<a name="EN-US_TOPIC_0289900932"></a>
 
 An additional feature of MOT is the ability to prepare and parse  _pre-compiled full queries_  in a native format \(using a PREPARE statement\) before they are needed for execution.

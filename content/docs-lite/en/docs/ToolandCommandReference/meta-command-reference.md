@@ -1,3 +1,8 @@
+---
+description: This section describes meta-commands provided by gsql after the openGauss database CLI tool is used to connect to a database. A gsql meta-command can be anything that you enter in gsql.
+keywords: [openGauss, Meta-Command Reference]
+---
+
 # Meta-Command Reference<a name="EN-US_TOPIC_0294749032"></a>
 
 This section describes meta-commands provided by  **gsql**  after the openGauss database CLI tool is used to connect to a database. A  **gsql**  meta-command can be anything that you enter in  **gsql**  and begins with an unquoted backslash.

@@ -1,3 +1,8 @@
+---
+description: - Before using the driver, perform the following operations:.
+keywords: [openGauss, Loading a Driver]
+---
+
 # Loading a Driver<a name="EN-US_TOPIC_0000001080050160"></a>
 
 -   Before using the driver, perform the following operations:

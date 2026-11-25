@@ -1,3 +1,8 @@
+---
+description: In openGauss, a deadlock may occur when concurrently executed transactions compete for resources. This section describes parameters used for managing transaction locks.
+keywords: [openGauss, Lock Management]
+---
+
 # Lock Management<a name="EN-US_TOPIC_0289900212"></a>
 
 In openGauss, a deadlock may occur when concurrently executed transactions compete for resources. This section describes parameters used for managing transaction locks.

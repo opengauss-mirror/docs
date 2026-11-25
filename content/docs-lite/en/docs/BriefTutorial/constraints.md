@@ -1,3 +1,8 @@
+---
+description: Constraint clauses specify constraints that new or updated rows must satisfy for an INSERT or UPDATE operation to succeed. If there is any data behavior that violates the constraints, the behavior is.
+keywords: [openGauss, Constraints]
+---
+
 # Constraints<a name="EN-US_TOPIC_0000001210141896"></a>
 
 Constraint clauses specify constraints that new or updated rows must satisfy for an INSERT or UPDATE operation to succeed. If there is any data behavior that violates the constraints, the behavior is terminated by the constraints.

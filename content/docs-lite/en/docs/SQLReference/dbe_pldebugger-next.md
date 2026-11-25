@@ -1,3 +1,8 @@
+---
+description: This function is used to execute the current SQL statement in a stored procedure and return the number of the next SQL statement and the corresponding query.
+keywords: [openGauss, DBE_PLDEBUGGER.next]
+---
+
 # DBE\_PLDEBUGGER.next<a name="EN-US_TOPIC_0000001101577996"></a>
 
 This function is used to execute the current SQL statement in a stored procedure and return the number of the next SQL statement and the corresponding query.

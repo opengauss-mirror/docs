@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 2.1.0.
+keywords: [openGauss, Deploying a Distributed Database Using Kubernetes]
+---
+
 # Deploying a Distributed Database Using Kubernetes<a name="EN-US_TOPIC_0000001264707841"></a>
 
 ## Availability<a name="section3594727121215"></a>

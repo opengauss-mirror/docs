@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Database Metric Collection Forecast and Exception Detection]
+---
+
 # Database Metric Collection, Forecast, and Exception Detection<a name="EN-US_TOPIC_0000001105075484"></a>
 
 ## Availability<a name="section1394818443613"></a>

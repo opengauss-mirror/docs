@@ -1,3 +1,8 @@
+---
+description: - gs\_undo\_meta\(type, zoneId, location\).
+keywords: [openGauss, Undo System Functions]
+---
+
 # Undo System Functions<a name="EN-US_TOPIC_0000001135762588"></a>
 
 -   gs\_undo\_meta\(type, zoneId, location\)

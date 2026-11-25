@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.0.0.
+keywords: [openGauss, High Concurrency of Thread Pools]
+---
+
 # High Concurrency of Thread Pools<a name="EN-US_TOPIC_0000001152195139"></a>
 
 ## Availability<a name="section5309649"></a>

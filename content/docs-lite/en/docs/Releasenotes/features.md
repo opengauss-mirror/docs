@@ -1,3 +1,8 @@
+---
+description: - Standard SQL support.
+keywords: [openGauss, Features]
+---
+
 # Features<a name="EN-US_TOPIC_0289899195"></a>
 
 -   Standard SQL support

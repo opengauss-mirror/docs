@@ -1,3 +1,8 @@
+---
+description: The following functions in openGauss have been discarded in the latest version:.
+keywords: [openGauss, Obsolete Functions]
+---
+
 # Obsolete Functions<a name="EN-US_TOPIC_0308046608"></a>
 
 The following functions in openGauss have been discarded in the latest version:

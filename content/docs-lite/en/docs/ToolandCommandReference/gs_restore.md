@@ -1,3 +1,8 @@
+---
+description: gs\_restore, provided by openGauss, is used to import data that was exported using gs\_dump. It can also be used to import files exported by gs\_dump.
+keywords: [openGauss, gs_restore]
+---
+
 # gs\_restore<a name="EN-US_TOPIC_0304555559"></a>
 
 ## Background<a name="en-us_topic_0059777561_section182531928123515"></a>

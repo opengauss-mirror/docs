@@ -1,3 +1,8 @@
+---
+description: All syntax for monitoring of PG-based FDW tables is supported. This includes Table or Index sizes \(as described below\). In addition, special functions exist for monitoring MOT memory consumption, in.
+keywords: [openGauss, MOT Monitoring]
+---
+
 # MOT Monitoring<a name="EN-US_TOPIC_0289900884"></a>
 
 All syntax for monitoring of PG-based FDW tables is supported. This includes Table or Index sizes \(as described below\). In addition, special functions exist for monitoring MOT memory consumption, including MOT Global Memory, MOT Local Memory and a single client session.
@@ -113,5 +118,5 @@ select * from mot_session_memory_detail()
 
 Result –
 
-![](figures/en-us_image_0289900225.png)
+![Session Memory](figures/en-us_image_0289900225.png)
 

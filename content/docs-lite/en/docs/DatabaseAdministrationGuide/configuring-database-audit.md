@@ -1,3 +1,8 @@
+---
+description: Introduces Configuring Database Audit in openGauss, covering .
+keywords: [openGauss, Configuring Database Audit]
+---
+
 # Configuring Database Audit<a name="EN-US_TOPIC_0289900858"></a>
 
 -   **[Overview](overview-database-audit.md)**  

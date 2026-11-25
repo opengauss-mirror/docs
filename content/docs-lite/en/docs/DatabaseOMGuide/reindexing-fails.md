@@ -1,3 +1,8 @@
+---
+description: When an index of the desc table is damaged, a series of operations cannot be performed. The error information may be as follows:.
+keywords: [openGauss, Reindexing Fails]
+---
+
 # Reindexing Fails<a name="EN-US_TOPIC_0291615106"></a>
 
 ## Symptom<a name="section094511327226"></a>

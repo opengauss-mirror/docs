@@ -1,3 +1,8 @@
+---
+description: PG\_STATIO\_SYS\_TABLES displays I/O status information about all system catalogs in the current namespace.
+keywords: [openGauss, STATIO_SYS_TABLES]
+---
+
 # STATIO\_SYS\_TABLES<a name="EN-US_TOPIC_0289900102"></a>
 
 **PG\_STATIO\_SYS\_TABLES**  displays I/O status information about all system catalogs in the current namespace.

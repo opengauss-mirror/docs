@@ -1,3 +1,8 @@
+---
+description: ALTER TYPE modifies the definition of a type.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER TYPE<a name="EN-US_TOPIC_0289899831"></a>
 
 ## Function<a name="en-us_topic_0283136571_en-us_topic_0237122082_en-us_topic_0059777461_s46f3e0aac3a84502bc20eee219bef9cf"></a>

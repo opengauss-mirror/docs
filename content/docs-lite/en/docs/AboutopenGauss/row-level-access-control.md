@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Row-Level Access Control]
+---
+
 # Row-Level Access Control<a name="EN-US_TOPIC_0000001105235304"></a>
 
 ## Availability<a name="section17746747"></a>

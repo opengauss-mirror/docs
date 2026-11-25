@@ -1,3 +1,8 @@
+---
+description: openGauss is an open-source, secure, and reliable relational OLTP database with ultimate performance. It is released with the Mulan PSL v2 protocol, allowing users to copy, use, modify, and distribute.
+keywords: [openGauss, User Notice]
+---
+
 # User Notice<a name="EN-US_TOPIC_0289899191"></a>
 
 openGauss is an open-source, secure, and reliable relational OLTP database with ultimate performance. It is released with the Mulan PSL v2 protocol, allowing users to copy, use, modify, and distribute the source code.

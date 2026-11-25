@@ -1,3 +1,8 @@
+---
+description: Introduces SQL Reference in openGauss, covering .
+keywords: [openGauss, SQL Reference]
+---
+
 # SQL Reference<a name="EN-US_TOPIC_0289900204"></a>
 
 -   **[openGauss SQL](sql-syntax.md)**  

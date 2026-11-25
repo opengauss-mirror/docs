@@ -1,3 +1,8 @@
+---
+description: 1. Download the installation package of the corresponding platform from the openGauss community.
+keywords: [openGauss, Obtaining and Verifying an Installation Package]
+---
+
 # Obtaining and Verifying an Installation Package<a name="EN-US_TOPIC_0000001224028753"></a>
 
 ## Procedure<a name="en-us_topic_0289899746_en-us_topic_0283136484_en-us_topic_0241802590_en-us_topic_0085434667_en-us_topic_0059782060_section62223956163549"></a>

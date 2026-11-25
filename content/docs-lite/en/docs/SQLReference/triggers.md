@@ -1,3 +1,8 @@
+---
+description: A trigger automatically executes functions when an event occurs in a specified database.
+keywords: [openGauss, Triggers]
+---
+
 # Triggers<a name="EN-US_TOPIC_0000001179780278"></a>
 
 A trigger automatically executes functions when an event occurs in a specified database.

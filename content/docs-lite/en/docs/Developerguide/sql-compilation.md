@@ -1,3 +1,8 @@
+---
+description: - \[Proposal\] In openGauss, you are advised to execute DDL operations, such as creating table or making comments, separately from batch processing jobs to avoid performance deterioration caused by.
+keywords: [openGauss, SQL Compilation]
+---
+
 # SQL Compilation<a name="EN-US_TOPIC_0000001149508025"></a>
 
 ## DDL<a name="section60205875143313"></a>

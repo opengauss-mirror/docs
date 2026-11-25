@@ -1,3 +1,8 @@
+---
+description: SHOW EVENTS displays basic information about all scheduled tasks in a specified schema.
+keywords: [openGauss, SHOW]
+---
+
 # SHOW EVENTS<a name="EN-US_TOPIC_0000001503604049"></a>
 
 ## Function<a name="section5400959952"></a>

@@ -1,3 +1,8 @@
+---
+description: - To grant permissions for an object to a user, use GRANT.
+keywords: [openGauss, Setting User Permissions]
+---
+
 # Setting User Permissions<a name="EN-US_TOPIC_0289900074"></a>
 
 -   To grant permissions for an object to a user, use  **[GRANT](../SQLReference/grant.md)**.

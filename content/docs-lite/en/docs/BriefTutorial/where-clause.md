@@ -1,3 +1,8 @@
+---
+description: When you need to query data from a table based on specified conditions, you can add a WHERE clause to the SELECT statement to filter out unnecessary data. The WHERE clause forms an express.
+keywords: [openGauss, WHERE]
+---
+
 # WHERE Clause<a name="EN-US_TOPIC_0000001210141890"></a>
 
 When you need to query data from a table based on specified conditions, you can add a  **WHERE**  clause to the SELECT statement to filter out unnecessary data. The  **WHERE**  clause forms an expression for row selection and is used to obtain data based on specified conditions. Values in the table are returned only when the specified conditions are met.

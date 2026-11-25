@@ -1,3 +1,8 @@
+---
+description: PL/pgSQL is a loadable procedural language.
+keywords: [openGauss, PLpgSQL Functions]
+---
+
 # PL/pgSQL Functions<a name="EN-US_TOPIC_0289901009"></a>
 
 PL/pgSQL is a loadable procedural language.

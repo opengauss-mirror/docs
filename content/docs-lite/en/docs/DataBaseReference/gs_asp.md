@@ -1,3 +1,8 @@
+---
+description: GS\_ASP displays the persistent ACTIVE SESSION PROFILE samples. This catalog can be queried only in the system database but cannot be queried in the user database.
+keywords: [openGauss, GS_ASP]
+---
+
 # GS\_ASP<a name="EN-US_TOPIC_0000001158569987"></a>
 
 **GS\_ASP**  displays the persistent ACTIVE SESSION PROFILE samples. This catalog can be queried only in the system database but cannot be queried in the user database.

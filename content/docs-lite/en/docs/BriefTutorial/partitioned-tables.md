@@ -1,3 +1,8 @@
+---
+description: If a table contains a large amount of data, data query and operation efficiency will be severely affected. openGauss can logically divide a table into multiple shards to avoid processing a large amoun.
+keywords: [openGauss, Partitioned]
+---
+
 # Partitioned Tables<a name="EN-US_TOPIC_0000001210141886"></a>
 
 If a table contains a large amount of data, data query and operation efficiency will be severely affected. openGauss can logically divide a table into multiple shards to avoid processing a large amount of data at a time and then improve the processing efficiency.

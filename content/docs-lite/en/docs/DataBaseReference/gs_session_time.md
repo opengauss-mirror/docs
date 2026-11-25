@@ -1,3 +1,8 @@
+---
+description: GS\_SESSION\_TIME collects statistics about the running time of session threads and time consumed in each execution phase.
+keywords: [openGauss, GS_SESSION_TIME]
+---
+
 # GS\_SESSION\_TIME<a name="EN-US_TOPIC_0289899934"></a>
 
 **GS\_SESSION\_TIME**  collects statistics about the running time of session threads and time consumed in each execution phase.

@@ -1,3 +1,8 @@
+---
+description: ODBC logs are classified into unixODBC driver manager logs and psqlODBC driver logs. The former is used to trace whether the application API is successfully executed, and the latter is used to locate.
+keywords: [openGauss, Typical Application Scenarios and Configurations]
+---
+
 # Typical Application Scenarios and Configurations<a name="EN-US_TOPIC_0000001151863771"></a>
 
 ## Log Diagnosis Scenario<a name="section171801620145817"></a>

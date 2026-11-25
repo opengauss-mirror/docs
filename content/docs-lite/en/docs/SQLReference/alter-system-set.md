@@ -1,3 +1,8 @@
+---
+description: ALTER SYSTEM SET sets GUC parameters of the POSTMASTER, SIGHUP, and BACKEND levels. This command writes parameters into the configuration file. The time to take effect varies according to the lev.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER SYSTEM SET<a name="EN-US_TOPIC_0289900623"></a>
 
 ## Function<a name="en-us_topic_0283137187_en-us_topic_0237122075_en-us_topic_0059778605_s40bbf40e12d1487aaca3ddd1b9bb55e0"></a>

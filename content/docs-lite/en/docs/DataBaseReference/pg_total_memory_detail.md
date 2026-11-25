@@ -1,3 +1,8 @@
+---
+description: PG\_TOTAL\_MEMORY\_DETAIL displays memory usage of a node in the database.
+keywords: [openGauss, PG_TOTAL_MEMORY_DETAIL]
+---
+
 # PG\_TOTAL\_MEMORY\_DETAIL<a name="EN-US_TOPIC_0289900722"></a>
 
 **PG\_TOTAL\_MEMORY\_DETAIL**  displays memory usage of a node in the database.

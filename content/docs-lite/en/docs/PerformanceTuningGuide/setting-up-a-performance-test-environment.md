@@ -1,3 +1,8 @@
+---
+description: - Hardware Requirements.
+keywords: [openGauss, Setting up a Performance Test Environment]
+---
+
 # Setting up a Performance Test Environment<a name="EN-US_TOPIC_0289900854"></a>
 
 -   **[Hardware Requirements](hardware-requirements.md)**  

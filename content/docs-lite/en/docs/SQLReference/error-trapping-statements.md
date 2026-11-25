@@ -1,3 +1,8 @@
+---
+description: By default, any error occurring in a PL/SQL function aborts execution of the function, and indeed of the surrounding transaction as well. You can trap errors and restore from them by using a BEGIN.
+keywords: [openGauss, Error Trapping Statements]
+---
+
 # Error Trapping Statements<a name="EN-US_TOPIC_0289900163"></a>
 
 By default, any error occurring in a PL/SQL function aborts execution of the function, and indeed of the surrounding transaction as well. You can trap errors and restore from them by using a  **BEGIN**  block with an  **EXCEPTION**  clause. The syntax is an extension of the normal syntax for a  **BEGIN**  block:

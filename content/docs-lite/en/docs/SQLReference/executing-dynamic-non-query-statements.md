@@ -1,3 +1,8 @@
+---
+description: Figure 1 shows the syntax diagram.
+keywords: [openGauss, Executing]
+---
+
 # Executing Dynamic Non-query Statements<a name="EN-US_TOPIC_0289900338"></a>
 
 ## Syntax<a name="en-us_topic_0283136884_en-us_topic_0237122226_en-us_topic_0059777751_s856a2c95da554ee0b5783beeee22397c"></a>
@@ -5,12 +10,12 @@
 [Figure 1](#en-us_topic_0283136884_en-us_topic_0237122226_en-us_topic_0059777751_f039af8fc76c54a54b06d579e56b81232)  shows the syntax diagram.
 
 **Figure  1**  noselect::=<a name="en-us_topic_0283136884_en-us_topic_0237122226_en-us_topic_0059777751_f039af8fc76c54a54b06d579e56b81232"></a>  
-![](figures/noselect.png "noselect")
+![Syntax](figures/noselect.png "noselect")
 
 [Figure 2](#en-us_topic_0283136884_en-us_topic_0237122226_en-us_topic_0059777751_fa52bfbcefb174772a5bd22ca73c6a03a)  shows the syntax diagram for  **using\_clause**.
 
 **Figure  2**  using\_clause::=<a name="en-us_topic_0283136884_en-us_topic_0237122226_en-us_topic_0059777751_fa52bfbcefb174772a5bd22ca73c6a03a"></a>  
-![](figures/using_clause-0.png "using_clause-0")
+![Syntax](figures/using_clause-0.png "using_clause-0")
 
 The above syntax diagram is explained as follows:
 

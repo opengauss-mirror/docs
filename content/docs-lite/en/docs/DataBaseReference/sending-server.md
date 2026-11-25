@@ -1,3 +1,8 @@
+---
+description: Parameter description: Specifies the maximum number of simultaneously running WAL sender processes. The value cannot be greater than or equal to that of [max\_connections](connection-settings.m.
+keywords: [openGauss, Sending Server]
+---
+
 # Sending Server<a name="EN-US_TOPIC_0289900253"></a>
 
 ## max\_wal\_senders<a name="en-us_topic_0283137693_en-us_topic_0237124712_en-us_topic_0059777860_s197194d979964a63a01b4b9fc15b0053"></a>

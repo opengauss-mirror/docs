@@ -1,3 +1,8 @@
+---
+description: - Support for Functions and Stored Procedures.
+keywords: [openGauss, Enterprise-Level Features]
+---
+
 # Enterprise-Level Features<a name="EN-US_TOPIC_0000001105555118"></a>
 
 -   **[Support for Functions and Stored Procedures](support-for-functions-and-stored-procedures.md)**  

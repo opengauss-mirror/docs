@@ -1,3 +1,8 @@
+---
+description: The following table describes columns in the Configuration settings report.
+keywords: [openGauss, Configuration settings]
+---
+
 # Configuration settings<a name="EN-US_TOPIC_0000001215035246"></a>
 
 The following table describes columns in the Configuration settings report.

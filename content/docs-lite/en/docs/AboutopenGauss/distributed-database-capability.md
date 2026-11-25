@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 2.1.0.
+keywords: [openGauss, Distributed Database Capability]
+---
+
 # Distributed Database Capability<a name="EN-US_TOPIC_0000001220467648"></a>
 
 ## Availability<a name="section135316597815"></a>

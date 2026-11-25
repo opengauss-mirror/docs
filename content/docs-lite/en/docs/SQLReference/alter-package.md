@@ -1,3 +1,8 @@
+---
+description: ALTER PACKAGE alters the attributes of a package.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER PACKAGE<a name="EN-US_TOPIC_0000001242228489"></a>
 
 ## Function<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sa364f8cdcfd24ba1a68426488e7852d4"></a>

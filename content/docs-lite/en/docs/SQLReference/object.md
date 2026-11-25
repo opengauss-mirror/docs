@@ -1,3 +1,8 @@
+---
+description: - STAT\_USER\_TABLES.
+keywords: [openGauss, Object]
+---
+
 # Object<a name="EN-US_TOPIC_0289899961"></a>
 
 -   **[STAT\_USER\_TABLES](stat_user_tables.md)**  

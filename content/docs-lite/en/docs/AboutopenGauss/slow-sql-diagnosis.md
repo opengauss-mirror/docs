@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0. The following slow SQL views have been discarded before reconstruction: dbe\_perf.gs\_slow\_query\_info, dbe\_perf.gs\_slow\_query\_history, dbe\_perf.
+keywords: [openGauss, Slow SQL Diagnosis]
+---
+
 # Slow SQL Diagnosis<a name="EN-US_TOPIC_0000001151995075"></a>
 
 ## Availability<a name="section147531742205517"></a>

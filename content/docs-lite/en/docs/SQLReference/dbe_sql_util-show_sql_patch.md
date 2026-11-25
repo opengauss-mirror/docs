@@ -1,3 +1,8 @@
+---
+description: show\_sql\_patch is an interface function used to display the SQL PATCH corresponding to the specified patch\_name and return the execution result.
+keywords: [openGauss, DBE_SQL_UTIL.show_sql_patch]
+---
+
 # DBE\_SQL\_UTIL.show\_sql\_patch<a name="EN-US_TOPIC_0000001314153109"></a>
 
 show\_sql\_patch is an interface function used to display the SQL PATCH corresponding to the specified patch\_name and return the execution result.

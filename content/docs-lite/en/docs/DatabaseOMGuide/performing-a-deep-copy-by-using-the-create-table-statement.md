@@ -1,3 +1,8 @@
+---
+description: Run the CREATE TABLE statement to create a copy of the original table, batch insert data of the original table into the copy, and rename the copy to the name of the original table.
+keywords: [openGauss, Performing a Deep Copy by Using the CREATE TABLE Statement]
+---
+
 # Performing a Deep Copy by Using the CREATE TABLE Statement<a name="EN-US_TOPIC_0289900646"></a>
 
 Run the  **CREATE TABLE**  statement to create a copy of the original table, batch insert data of the original table into the copy, and rename the copy to the name of the original table.

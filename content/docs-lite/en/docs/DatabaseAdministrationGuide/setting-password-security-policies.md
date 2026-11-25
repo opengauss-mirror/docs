@@ -1,3 +1,8 @@
+---
+description: User passwords are stored in the system catalog pg\_authid. To prevent password leakage, openGauss encrypts user passwords before storing them. The encryption algorithm is determined by the confi.
+keywords: [openGauss, Setting Password Security Policies]
+---
+
 # Setting Password Security Policies<a name="EN-US_TOPIC_0289900602"></a>
 
 ## Procedure<a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_s3a1d8e5070044faa84acbb053ba19602"></a>

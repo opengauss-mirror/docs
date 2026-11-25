@@ -1,3 +1,8 @@
+---
+description: This chapter introduces openGauss Memory-Optimized Tables \(MOT\), describes its features and benefits, key technologies, applicable scenarios, performance benchmarks and its competitive advantages.
+keywords: [openGauss, Introducing MOT]
+---
+
 # Introducing MOT<a name="EN-US_TOPIC_0289900248"></a>
 
 This chapter introduces openGauss Memory-Optimized Tables \(MOT\), describes its features and benefits, key technologies, applicable scenarios, performance benchmarks and its competitive advantages.

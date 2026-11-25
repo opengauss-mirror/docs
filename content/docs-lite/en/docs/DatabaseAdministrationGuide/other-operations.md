@@ -1,3 +1,8 @@
+---
+description: - Creating and Managing Schemas.
+keywords: [openGauss, Other Operations]
+---
+
 # Other Operations<a name="EN-US_TOPIC_0289901015"></a>
 
 -   **[Creating and Managing Schemas](creating-and-managing-schemas.md)**  

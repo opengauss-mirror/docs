@@ -1,3 +1,8 @@
+---
+description: The client or logs contain the error message memory usage reach the max\_dynamic\_memory.
+keywords: [openGauss, Insufficient Memory]
+---
+
 # Insufficient Memory<a name="EN-US_TOPIC_0289900068"></a>
 
 ## Symptom<a name="en-us_topic_0283137168_section4753114614509"></a>

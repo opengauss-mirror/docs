@@ -1,3 +1,8 @@
+---
+description: Use the following principles to select efficient data types:.
+keywords: [openGauss, Selecting a Data Type]
+---
+
 # Selecting a Data Type<a name="EN-US_TOPIC_0289900882"></a>
 
 Use the following principles to select efficient data types:

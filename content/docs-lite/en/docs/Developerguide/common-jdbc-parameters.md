@@ -1,3 +1,8 @@
+---
+description: Principle: If the value is master, JDBC attempts to connect to the IP addresses configured in the string in sequence until the primary node in the cluster is connected.
+keywords: [openGauss, JDBC, Common JDBC Parameters]
+---
+
 # Common JDBC Parameters<a name="EN-US_TOPIC_0000001399380057"></a>
 
 ## targetServerType<a name="section556210112155"></a>

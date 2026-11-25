@@ -1,3 +1,8 @@
+---
+description: When the database breaks down or needs to be rolled back to a previous state, the point-in-time recovery (PITR) function of openGauss can be used to restore the database to any time point after the ba.
+keywords: [openGauss, Physical Backup and Restoration]
+---
+
 # Physical Backup and Restoration<a name="EN-US_TOPIC_0289897025"></a>
 
 ## PITR<a name="EN-US_TOPIC_0289897007"></a>

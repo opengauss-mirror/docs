@@ -1,3 +1,8 @@
+---
+description: STAT\_USER\_INDEXES displays the status information about the index of user-defined ordinary tables in the current database.
+keywords: [openGauss, STAT_USER_INDEXES]
+---
+
 # STAT\_USER\_INDEXES<a name="EN-US_TOPIC_0289899905"></a>
 
 **STAT\_USER\_INDEXES**  displays the status information about the index of user-defined ordinary tables in the current database.

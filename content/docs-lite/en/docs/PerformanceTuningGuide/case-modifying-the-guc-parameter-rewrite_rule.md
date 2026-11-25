@@ -1,3 +1,8 @@
+---
+description: rewrite\_rule contains multiple query rewriting rules: magicset, partialpush, uniquecheck, disablerep, intargetlist, and predpush. The following describes the applic.
+keywords: [openGauss, Case Modifying the GUC Parameter rewrite_rule]
+---
+
 # Case: Modifying the GUC Parameter rewrite\_rule<a name="EN-US_TOPIC_0000001086786554"></a>
 
 **rewrite\_rule**  contains multiple query rewriting rules:  **magicset**,  **partialpush**,  **uniquecheck**,  **disablerep**,  **intargetlist**, and  **predpush**. The following describes the application scenarios of some important rules:

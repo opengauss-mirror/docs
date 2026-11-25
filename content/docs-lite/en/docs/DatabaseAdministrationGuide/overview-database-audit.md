@@ -1,3 +1,8 @@
+---
+description: Database security is essential for a database system. openGauss writes all user operations in the database to audit logs. Database security administrators can use the audit logs to reproduce a series.
+keywords: [openGauss, Overview]
+---
+
 # Overview<a name="EN-US_TOPIC_0289900454"></a>
 
 ## Background<a name="en-us_topic_0283137487_en-us_topic_0237121112_en-us_topic_0059778562_sf060bc235e8f4b7c817de579b31cc45a"></a>

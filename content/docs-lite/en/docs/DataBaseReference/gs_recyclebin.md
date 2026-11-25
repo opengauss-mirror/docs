@@ -1,3 +1,8 @@
+---
+description: gs\_recyclebin describes details about objects in the recycle bin.
+keywords: [openGauss, GS_RECYCLEBIN]
+---
+
 # GS\_RECYCLEBIN<a name="EN-US_TOPIC_0000001151309157"></a>
 
 **gs\_recyclebin**  describes details about objects in the recycle bin.

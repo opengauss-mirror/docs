@@ -1,3 +1,8 @@
+---
+description: For details about gsql parameters, see Table 1, Table 2, [Table 3](#e.
+keywords: [openGauss, Command Reference]
+---
+
 # Command Reference<a name="EN-US_TOPIC_0294749022"></a>
 
 For details about  **gsql**  parameters, see  [Table 1](#en-us_topic_0059779319_t5f35328143ec419983a1c23d13c46e49),  [Table 2](#en-us_topic_0059779319_t0233128ab394456c80e339179cb56739),  [Table 3](#en-us_topic_0059779319_t47c174e145784f16ac251d3c6aea8ea8), and  [Table 4](#en-us_topic_0059779319_td7e646abbf6a4d85bc54cd9741c80b68).

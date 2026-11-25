@@ -1,3 +1,8 @@
+---
+description: PG\_STATIO\_SYS\_INDEXES displays I/O status information for all system catalog indexes in a namespace.
+keywords: [openGauss, PG_STATIO_SYS_INDEXES]
+---
+
 # PG\_STATIO\_SYS\_INDEXES<a name="EN-US_TOPIC_0289901016"></a>
 
 **PG\_STATIO\_SYS\_INDEXES**  displays I/O status information for all system catalog indexes in a namespace.

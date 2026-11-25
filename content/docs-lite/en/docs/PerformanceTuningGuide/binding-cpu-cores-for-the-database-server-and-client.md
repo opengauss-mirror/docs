@@ -1,3 +1,8 @@
+---
+description: 1. Install the openGauss database. For details, see _openGauss Installation Guide_.
+keywords: [openGauss, Binding CPU Cores for the Database Server and Client]
+---
+
 # Binding CPU Cores for the Database Server and Client<a name="EN-US_TOPIC_0289900458"></a>
 
 1.  Install the openGauss database. For details, see  _openGauss Installation Guide_.

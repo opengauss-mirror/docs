@@ -1,3 +1,8 @@
+---
+description: A query task that used to take a few milliseconds to complete is now requiring several seconds, and that used to take several seconds is now requiring even half an hour.
+keywords: [openGauss, Low Query Efficiency]
+---
+
 # Low Query Efficiency<a name="EN-US_TOPIC_0291615100"></a>
 
 ## Symptom<a name="section6698114504"></a>

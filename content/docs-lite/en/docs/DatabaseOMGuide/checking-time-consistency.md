@@ -1,3 +1,8 @@
+---
+description: Database transaction consistency is guaranteed by a logical clock and is not affected by OS time. However, OS time inconsistency will lead to problems, such as abnormal backend O&M and monitoring func.
+keywords: [openGauss, Checking Time Consistency]
+---
+
 # Checking Time Consistency<a name="EN-US_TOPIC_0289897011"></a>
 
 Database transaction consistency is guaranteed by a logical clock and is not affected by OS time. However, OS time inconsistency will lead to problems, such as abnormal backend O&M and monitoring functions. Therefore, you are advised to monthly check time consistency among nodes.

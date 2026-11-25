@@ -1,3 +1,8 @@
+---
+description: PG\_THREAD\_WAIT\_STATUS allows you to test the block waiting status about the backend thread and auxiliary thread of the current instance.
+keywords: [openGauss, PG_THREAD_WAIT_STATUS]
+---
+
 # PG\_THREAD\_WAIT\_STATUS<a name="EN-US_TOPIC_0289900410"></a>
 
 **PG\_THREAD\_WAIT\_STATUS**  allows you to test the block waiting status about the backend thread and auxiliary thread of the current instance.

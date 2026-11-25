@@ -1,3 +1,8 @@
+---
+description: openGauss offers data types to store IPv4, IPv6, and MAC addresses.
+keywords: [openGauss, Network Address Types]
+---
+
 # Network Address Types<a name="EN-US_TOPIC_0289899944"></a>
 
 openGauss offers data types to store IPv4, IPv6, and MAC addresses.

@@ -1,3 +1,8 @@
+---
+description: Because logical replication is based on an architecture similar to physical streaming replication, monitoring on a publication node is similar to monitoring on a primary physical replication node.
+keywords: [openGauss, Monitoring]
+---
+
 # Monitoring<a name="EN-US_TOPIC_0289900926"></a>
 
 Because logical replication is based on an architecture similar to physical streaming replication, monitoring on a publication node is similar to monitoring on a primary physical replication node.

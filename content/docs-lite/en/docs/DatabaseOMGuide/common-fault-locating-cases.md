@@ -1,3 +1,8 @@
+---
+description: - Core Fault Locating.
+keywords: [openGauss, Common Fault Locating Cases]
+---
+
 # Common Fault Locating Cases<a name="EN-US_TOPIC_0291613862"></a>
 
 -   **[Core Fault Locating](core-fault-locating.md)**  

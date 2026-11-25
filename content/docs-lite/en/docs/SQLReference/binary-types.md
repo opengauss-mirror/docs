@@ -1,3 +1,8 @@
+---
+description: Table 1 lists the binary data types supported by openGauss.
+keywords: [openGauss, Binary Types]
+---
+
 # Binary Types<a name="EN-US_TOPIC_0289900777"></a>
 
 [Table 1](#en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_t910f42f45b374d94afe2798c42fc5ef6)  lists the binary data types supported by openGauss.

@@ -1,3 +1,8 @@
+---
+description: The HAVING clause filters data after grouping.
+keywords: [openGauss, HAVING]
+---
+
 # HAVING Clause<a name="EN-US_TOPIC_0000001255341781"></a>
 
 The  **HAVING**  clause filters data after grouping.

@@ -1,3 +1,8 @@
+---
+description: ALTER TABLE PARTITION modifies table partitions, including adding, deleting, splitting, merging partitions, and altering partition attributes.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER TABLE PARTITION<a name="EN-US_TOPIC_0289900688"></a>
 
 ## Function<a name="en-us_topic_0283137443_en-us_topic_0237122077_en-us_topic_0059778761_s4954d450a2e8434aa3abac355bac38e6"></a>

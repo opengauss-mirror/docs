@@ -1,3 +1,8 @@
+---
+description: OPERATOR\_RUNTIME displays information about operators of the jobs that are being executed by the current user.
+keywords: [openGauss, OPERATOR_RUNTIME]
+---
+
 # OPERATOR\_RUNTIME<a name="EN-US_TOPIC_0289899865"></a>
 
 **OPERATOR\_RUNTIME**  displays information about operators of the jobs that are being executed by the current user.

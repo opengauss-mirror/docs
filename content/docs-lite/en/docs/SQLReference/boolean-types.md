@@ -1,3 +1,8 @@
+---
+description: Table 1 Boolean types.
+keywords: [openGauss, Boolean Types]
+---
+
 # Boolean Types<a name="EN-US_TOPIC_0289900487"></a>
 
 **Table  1**  Boolean types

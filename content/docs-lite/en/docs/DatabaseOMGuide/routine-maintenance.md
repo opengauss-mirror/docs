@@ -1,3 +1,8 @@
+---
+description: - Checking Time Consistency.
+keywords: [openGauss, Routine Maintenance]
+---
+
 # Routine Maintenance<a name="EN-US_TOPIC_0289897003"></a>
 
 -   **[Checking Time Consistency](checking-time-consistency.md)**  

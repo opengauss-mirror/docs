@@ -1,3 +1,8 @@
+---
+description: STAT\_DATABASE\_CONFLICTS displays statistics about database conflicts on the current node.
+keywords: [openGauss, STAT_DATABASE_CONFLICTS]
+---
+
 # STAT\_DATABASE\_CONFLICTS<a name="EN-US_TOPIC_0289900631"></a>
 
 **STAT\_DATABASE\_CONFLICTS**  displays statistics about database conflicts on the current node.

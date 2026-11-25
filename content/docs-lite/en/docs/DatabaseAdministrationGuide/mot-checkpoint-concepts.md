@@ -1,3 +1,8 @@
+---
+description: In openGauss, a checkpoint is a snapshot of a point in the sequence of transactions at which it is guaranteed that the heap and index data files have been updated with all information written before t.
+keywords: [openGauss, MOT Checkpoint Concepts]
+---
+
 # MOT Checkpoint Concepts<a name="EN-US_TOPIC_0289901022"></a>
 
 In openGauss, a checkpoint is a snapshot of a point in the sequence of transactions at which it is guaranteed that the heap and index data files have been updated with all information written before the checkpoint.

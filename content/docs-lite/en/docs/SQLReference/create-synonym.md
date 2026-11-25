@@ -1,3 +1,8 @@
+---
+description: CREATE SYNONYM creates a synonym object. A synonym is an alias of a database object and is used to record the mapping between database object names. You can use synonyms to access associated data.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE SYNONYM<a name="EN-US_TOPIC_0289900787"></a>
 
 ## Function<a name="en-us_topic_0283136599_en-us_topic_0237122116_en-us_topic_0059778169_s0867185fef0f4a228532d432b598cb26"></a>

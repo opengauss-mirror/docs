@@ -1,3 +1,8 @@
+---
+description: The DELETE statement can be executed to delete rows that satisfy the WHERE clause from a specified table. If the WHERE clause does not exist, all rows in the table will be deleted and only.
+keywords: [openGauss, DELETE]
+---
+
 # DELETE Statement<a name="EN-US_TOPIC_0000001210461838"></a>
 
 The DELETE statement can be executed to delete rows that satisfy the  **WHERE**  clause from a specified table. If the  **WHERE**  clause does not exist, all rows in the table will be deleted and only the table structure is retained.

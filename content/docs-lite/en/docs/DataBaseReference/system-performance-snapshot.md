@@ -1,3 +1,8 @@
+---
+description: Parameter description: Specifies whether to enable the database monitoring snapshot function.
+keywords: [openGauss, System Performance Snapshot]
+---
+
 # System Performance Snapshot<a name="EN-US_TOPIC_0289901018"></a>
 
 ## enable\_wdr\_snapshot<a name="en-us_topic_0283137284_en-us_topic_0237124757_section983311682019"></a>

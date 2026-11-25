@@ -1,3 +1,8 @@
+---
+description: An explicit cursor is used to process query statements, particularly when query results are multiple records.
+keywords: [openGauss, Explicit Cursor]
+---
+
 # Explicit Cursor<a name="EN-US_TOPIC_0289900877"></a>
 
 An explicit cursor is used to process query statements, particularly when query results are multiple records.
@@ -11,7 +16,7 @@ An explicit cursor performs the following six PL/SQL steps to process query stat
     [Figure 1](#en-us_topic_0283137015_en-us_topic_0237122244_en-us_topic_0059778930_f3cd97ed9f2474aa785f5626e468a75de)  shows the syntax diagram for defining a static cursor.
 
     **Figure  1**  static\_cursor\_define::=<a name="en-us_topic_0283137015_en-us_topic_0237122244_en-us_topic_0059778930_f3cd97ed9f2474aa785f5626e468a75de"></a>  
-    ![](figures/static_cursor_define.jpg "static_cursor_define")
+    ![Procedure](figures/static_cursor_define.jpg "static_cursor_define")
 
     Parameter description:
 
@@ -34,24 +39,24 @@ An explicit cursor performs the following six PL/SQL steps to process query stat
     [Figure 2](#en-us_topic_0283137015_en-us_topic_0237122244_en-us_topic_0059778930_f1579c1867b984124b10da33d032a55b0)  and  [Figure 3](#en-us_topic_0283137015_en-us_topic_0237122244_en-us_topic_0059778930_fceaf870eaa73494496e8a65e7afc8cec)  show the syntax diagrams for defining a dynamic cursor.
 
     **Figure  2**  cursor\_typename::=<a name="en-us_topic_0283137015_en-us_topic_0237122244_en-us_topic_0059778930_f1579c1867b984124b10da33d032a55b0"></a>  
-    ![](figures/cursor_typename.png "cursor_typename")
+    ![Procedure](figures/cursor_typename.png "cursor_typename")
 
     **Figure  3**  dynamic\_cursor\_define::=<a name="en-us_topic_0283137015_en-us_topic_0237122244_en-us_topic_0059778930_fceaf870eaa73494496e8a65e7afc8cec"></a>  
-    ![](figures/dynamic_cursor_define.png "dynamic_cursor_define")
+    ![Procedure](figures/dynamic_cursor_define.png "dynamic_cursor_define")
 
 2.  Open the static cursor: Execute the  **SELECT**  statement corresponding to the cursor. The query result is placed in the workspace and the pointer directs to the head of the workspace to identify the cursor result set. If the cursor query statement carries the  **FOR UPDATE**  option, the  **OPEN**  statement locks the data rows corresponding to the cursor result set in the database table.
 
     [Figure 4](#en-us_topic_0283137015_en-us_topic_0237122244_en-us_topic_0059778930_fac5b397fa6184f35a416626255a9280d)  shows the syntax diagram for opening a static cursor.
 
     **Figure  4**  open\_static\_cursor::=<a name="en-us_topic_0283137015_en-us_topic_0237122244_en-us_topic_0059778930_fac5b397fa6184f35a416626255a9280d"></a>  
-    ![](figures/open_static_cursor.png "open_static_cursor")
+    ![Procedure](figures/open_static_cursor.png "open_static_cursor")
 
     Open the dynamic cursor: Use the  **OPEN FOR**  statement to open the dynamic cursor and the SQL statement is dynamically bound.
 
     [Figure 5](#en-us_topic_0283137015_en-us_topic_0237122244_en-us_topic_0059778930_f8e95270034c744b3bec53bd78cf56a22)  shows the syntax diagrams for opening a dynamic cursor.
 
     **Figure  5**  open\_dynamic\_cursor::=<a name="en-us_topic_0283137015_en-us_topic_0237122244_en-us_topic_0059778930_f8e95270034c744b3bec53bd78cf56a22"></a>  
-    ![](figures/open_dynamic_cursor.png "open_dynamic_cursor")
+    ![Procedure](figures/open_dynamic_cursor.png "open_dynamic_cursor")
 
     A PL/SQL program cannot use the  **OPEN**  statement to repeatedly open a cursor.
 
@@ -60,7 +65,7 @@ An explicit cursor performs the following six PL/SQL steps to process query stat
     [Figure 6](#en-us_topic_0283137015_en-us_topic_0237122244_en-us_topic_0059778930_f0759ffa7118d4c4481c0f0fd9a600351)  shows the syntax diagrams for fetching cursor data.
 
     **Figure  6**  fetch\_cursor::=<a name="en-us_topic_0283137015_en-us_topic_0237122244_en-us_topic_0059778930_f0759ffa7118d4c4481c0f0fd9a600351"></a>  
-    ![](figures/fetch_cursor.png "fetch_cursor")
+    ![Procedure](figures/fetch_cursor.png "fetch_cursor")
 
 4.  Process the record.
 5.  Continue to process until the active set has no record.
@@ -69,7 +74,7 @@ An explicit cursor performs the following six PL/SQL steps to process query stat
     [Figure 7](#en-us_topic_0283137015_en-us_topic_0237122244_en-us_topic_0059778930_fdd13133c237949828f65e55cb3ec2f5b)  shows the syntax diagram for closing a cursor.
 
     **Figure  7**  close\_cursor::=<a name="en-us_topic_0283137015_en-us_topic_0237122244_en-us_topic_0059778930_fdd13133c237949828f65e55cb3ec2f5b"></a>  
-    ![](figures/close_cursor.jpg "close_cursor")
+    ![Procedure](figures/close_cursor.jpg "close_cursor")
 
 
 ## Attributes<a name="en-us_topic_0283137015_en-us_topic_0237122244_en-us_topic_0059778930_s1bdd24dd1cbd463db67fcb2eb8a5dfbd"></a>

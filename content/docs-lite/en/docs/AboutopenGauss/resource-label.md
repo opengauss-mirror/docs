@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Resource Label]
+---
+
 # Resource Label<a name="EN-US_TOPIC_0000001105395248"></a>
 
 ## Availability<a name="section17746747"></a>

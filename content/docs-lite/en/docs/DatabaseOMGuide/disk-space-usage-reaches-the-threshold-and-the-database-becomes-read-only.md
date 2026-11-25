@@ -1,3 +1,8 @@
+---
+description: The following error is reported when a non-read-only SQL statement is executed:.
+keywords: [openGauss, Disk Space Usage Reaches the Threshold and the Database Becomes Read-only]
+---
+
 # Disk Space Usage Reaches the Threshold and the Database Becomes Read-only<a name="EN-US_TOPIC_0291615095"></a>
 
 ## Symptom<a name="section19815185425919"></a>

@@ -1,3 +1,8 @@
+---
+description: DROP PUBLICATION deletes an existing publication from a database.
+keywords: [openGauss, DROP]
+---
+
 # DROP PUBLICATION<a name="EN-US_TOPIC_0000001240652289"></a>
 
 ## **Function Description**<a name="section4742194571517"></a>

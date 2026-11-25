@@ -1,3 +1,8 @@
+---
+description: ALTER SYSTEM KILL SESSION ends a session.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER SYSTEM KILL SESSION<a name="EN-US_TOPIC_0289900551"></a>
 
 ## Function<a name="en-us_topic_0283137036_en-us_topic_0237122075_en-us_topic_0059778605_s40bbf40e12d1487aaca3ddd1b9bb55e0"></a>

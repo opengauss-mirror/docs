@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 3.0.0.
+keywords: [openGauss, Data Compression in OLTP Scenarios]
+---
+
 # Data Compression in OLTP Scenarios<a name="EN-US_TOPIC_0000001221740288"></a>
 
 ## Availability<a name="section15406143204715"></a>

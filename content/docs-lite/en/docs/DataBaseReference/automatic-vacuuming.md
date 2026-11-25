@@ -1,3 +1,8 @@
+---
+description: The autovacuum process automatically runs the VACUUM and ANALYZE statements to recycle the record space marked as deleted and update statistics about the table.
+keywords: [openGauss, Automatic Vacuuming]
+---
+
 # Automatic Vacuuming<a name="EN-US_TOPIC_0289900634"></a>
 
 The  **autovacuum**  process automatically runs the  **VACUUM**  and  **ANALYZE**  statements to recycle the record space marked as deleted and update statistics about the table.

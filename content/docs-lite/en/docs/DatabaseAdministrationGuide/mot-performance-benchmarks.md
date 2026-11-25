@@ -1,3 +1,8 @@
+---
+description: Our performance tests are based on the TPC-C Benchmark that is commonly used both by industry and academia.
+keywords: [openGauss, MOT Performance Benchmarks]
+---
+
 # MOT Performance Benchmarks<a name="EN-US_TOPIC_0289900510"></a>
 
 Our performance tests are based on the TPC-C Benchmark that is commonly used both by industry and academia.

@@ -1,3 +1,8 @@
+---
+description: - Connection Settings.
+keywords: [openGauss, Connection and Authentication]
+---
+
 # Connection and Authentication<a name="EN-US_TOPIC_0289900244"></a>
 
 -   **[Connection Settings](connection-settings.md)**  

@@ -1,3 +1,8 @@
+---
+description: Standard openGauss statements for creating and deleting indexes are supported.
+keywords: [openGauss, Creating an Index for an MOT]
+---
+
 # Creating an Index for an MOT<a name="EN-US_TOPIC_0289900796"></a>
 
 Standard openGauss statements for creating and deleting indexes are supported.

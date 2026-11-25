@@ -1,3 +1,8 @@
+---
+description: gs\_ctl is a tool provided by openGauss for controlling database services. It can be used to start or stop a database and to query the database status. It is invoked by the database management mo.
+keywords: [openGauss, gs_ctl]
+---
+
 # gs\_ctl<a name="EN-US_TOPIC_0294748973"></a>
 
 ## Function<a name="en-us_topic_0059777628_saed7059efc5d469189c9e53a984ba786"></a>

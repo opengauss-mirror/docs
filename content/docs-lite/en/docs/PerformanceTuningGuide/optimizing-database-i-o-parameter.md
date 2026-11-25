@@ -1,3 +1,8 @@
+---
+description: - pagewriter\_sleep: controls the page flushing frequency of the backend write process pagewriter in incremental checkpoint mode. When the ratio of dirty pages to the value of shared\_buffers.
+keywords: [openGauss, Optimizing Database IO Parameter]
+---
+
 # Optimizing Database I/O Parameter<a name="EN-US_TOPIC_0000001149231237"></a>
 
 ## I/O Parameters<a name="section181599115402"></a>

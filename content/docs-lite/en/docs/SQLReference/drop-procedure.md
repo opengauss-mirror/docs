@@ -1,3 +1,8 @@
+---
+description: DROP PROCEDURE deletes a stored procedure.
+keywords: [openGauss, DROP]
+---
+
 # DROP PROCEDURE<a name="EN-US_TOPIC_0289900018"></a>
 
 ## Function<a name="en-us_topic_0283137697_en-us_topic_0237122145_en-us_topic_0059778377_se53c099099b3499097fe40da9daf8b12"></a>

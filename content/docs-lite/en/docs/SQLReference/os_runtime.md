@@ -1,3 +1,8 @@
+---
+description: OS\_RUNTIME displays the running status of the current OS.
+keywords: [openGauss, OS_RUNTIME]
+---
+
 # OS\_RUNTIME<a name="EN-US_TOPIC_0289900429"></a>
 
 **OS\_RUNTIME**  displays the running status of the current OS.

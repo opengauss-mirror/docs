@@ -1,3 +1,8 @@
+---
+description: - Updating a Table by Using DML Statements.
+keywords: [openGauss, Updating Data in a Table]
+---
+
 # Updating Data in a Table<a name="EN-US_TOPIC_0289900657"></a>
 
 -   **[Updating a Table by Using DML Statements](updating-a-table-by-using-dml-statements.md)**  

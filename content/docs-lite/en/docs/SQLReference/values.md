@@ -1,3 +1,8 @@
+---
+description: VALUES computes a row or a set of rows based on given values. It is most commonly used to generate a constant table within a large statement.
+keywords: [openGauss, VALUES]
+---
+
 # VALUES<a name="EN-US_TOPIC_0289900362"></a>
 
 ## Function<a name="en-us_topic_0283137477_en-us_topic_0237122196_en-us_topic_0059779241_s25c2a01507274648bf05cbcb1dc418bf"></a>

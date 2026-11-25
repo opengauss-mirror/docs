@@ -1,3 +1,8 @@
+---
+description: When the server executes a stored procedure, the server hangs the execution before the first statement and waits for attaching with the debug end. The debug end invokes the attach function and transfe.
+keywords: [openGauss, DBE_PLDEBUGGER.attach]
+---
+
 # DBE\_PLDEBUGGER.attach<a name="EN-US_TOPIC_0000001101178202"></a>
 
 When the server executes a stored procedure, the server hangs the execution before the first statement and waits for attaching with the debug end. The debug end invokes the attach function and transfers node name and port number to attach with the specified stored procedure.

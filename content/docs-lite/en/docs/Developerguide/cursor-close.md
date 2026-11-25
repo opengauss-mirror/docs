@@ -1,3 +1,8 @@
+---
+description: This method closes the cursor of the current connection.
+keywords: [openGauss, cursor.close]
+---
+
 # cursor.close\(\)<a name="EN-US_TOPIC_0000001127193507"></a>
 
 ## Function<a name="section5708152714306"></a>

@@ -1,3 +1,8 @@
+---
+description: CALL calls defined functions and stored procedures.
+keywords: [openGauss, CALL]
+---
+
 # CALL<a name="EN-US_TOPIC_0289900888"></a>
 
 ## Function<a name="en-us_topic_0283137636_en-us_topic_0237122088_en-us_topic_0059778236_s17e49a7670334c61978f059adf2cb65d"></a>

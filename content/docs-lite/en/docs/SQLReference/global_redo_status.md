@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_REDO\_STATUS displays the log replay status of all instances in openGauss.
+keywords: [openGauss, GLOBAL_REDO_STATUS]
+---
+
 # GLOBAL\_REDO\_STATUS<a name="EN-US_TOPIC_0289900969"></a>
 
 **GLOBAL\_REDO\_STATUS**  displays the log replay status of all instances in openGauss.

@@ -1,3 +1,8 @@
+---
+description: Create a large object.
+keywords: [openGauss, lo_creat]
+---
+
 # lo_creat<a name="EN-US_TOPIC_0242380592"></a>
 
 ## Function<a name="en-us_topic_0241735627_section696285173714"></a>

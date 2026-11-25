@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.0.0.
+keywords: [openGauss, Standard Development APIs]
+---
+
 # Standard Development APIs<a name="EN-US_TOPIC_0000001152275217"></a>
 
 ## Availability<a name="section663215"></a>

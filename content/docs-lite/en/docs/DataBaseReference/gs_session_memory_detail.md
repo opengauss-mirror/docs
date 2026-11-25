@@ -1,3 +1,8 @@
+---
+description: GS\_SESSION\_MEMORY\_DETAIL collects statistics about thread memory usage by the memory context. When enable\_thread\_pool is set to on, this view contains memory usage of all threads.
+keywords: [openGauss, GS_SESSION_MEMORY_DETAIL]
+---
+
 # GS\_SESSION\_MEMORY\_DETAIL<a name="EN-US_TOPIC_0289900281"></a>
 
 **GS\_SESSION\_MEMORY\_DETAIL**  collects statistics about thread memory usage by the memory context. When  **enable\_thread\_pool**  is set to  **on**, this view contains memory usage of all threads and sessions. If the GUC parameter  **enable\_memory\_limit**  is set to  **off**, this view is unavailable.

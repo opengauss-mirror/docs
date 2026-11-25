@@ -1,3 +1,8 @@
+---
+description: - Core Dump Occurs due to Full Disk Space.
+keywords: [openGauss, Core Fault Locating]
+---
+
 # Core Fault Locating<a name="EN-US_TOPIC_0289900556"></a>
 
 -   **[Core Dump Occurs due to Full Disk Space](core-dump-occurs-due-to-full-disk-space.md)**  

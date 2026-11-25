@@ -1,3 +1,8 @@
+---
+description: SQLFetch is used to advance the cursor to the next row of the result set and retrieve any bound columns.
+keywords: [openGauss, SQLFetch]
+---
+
 # SQLFetch<a name="EN-US_TOPIC_0242371447"></a>
 
 ## Function<a name="en-us_topic_0238272893_en-us_topic_0237120423_en-us_topic_0059777989_se050a9bc14bc47f1bb3b6d4650b37d67"></a>

@@ -1,3 +1,8 @@
+---
+description: - Distributed Database Capability.
+keywords: [openGauss, Middleware]
+---
+
 # Middleware<a name="EN-US_TOPIC_0000001220187664"></a>
 
 -   **[Distributed Database Capability](distributed-database-capability.md)**  

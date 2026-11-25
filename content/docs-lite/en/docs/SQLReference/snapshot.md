@@ -1,3 +1,8 @@
+---
+description: SNAPSHOT controls data in a unified manner for multiple users.
+keywords: [openGauss, SNAPSHOT]
+---
+
 # SNAPSHOT<a name="EN-US_TOPIC_0000001163839469"></a>
 
 ## Function<a name="section1590014447254"></a>

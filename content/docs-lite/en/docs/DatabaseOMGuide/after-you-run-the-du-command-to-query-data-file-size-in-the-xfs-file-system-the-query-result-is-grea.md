@@ -1,3 +1,8 @@
+---
+description: After you run the du command to query data file size in the database, the query result is probably greater than the actual file size.
+keywords: [openGauss, After You Run the du Command to Query Data File Size In the XFS File System the Query Result Is Greater than the Actual File Size]
+---
+
 # After You Run the du Command to Query Data File Size In the XFS File System, the Query Result Is Greater than the Actual File Size<a name="EN-US_TOPIC_0291615091"></a>
 
 ## Symptom<a name="section1585924603013"></a>

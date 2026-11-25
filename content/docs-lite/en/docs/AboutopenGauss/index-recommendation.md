@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Index Recommendation]
+---
+
 # Index Recommendation<a name="EN-US_TOPIC_0000001105075482"></a>
 
 ## Availability<a name="section17365142913365"></a>

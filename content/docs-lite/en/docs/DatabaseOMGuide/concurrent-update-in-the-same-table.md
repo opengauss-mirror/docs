@@ -1,3 +1,8 @@
+---
+description: Introduces Concurrent UPDATE in the Same Table in openGauss, covering .
+keywords: [openGauss, Concurrent UPDATE in the Same Table]
+---
+
 # Concurrent UPDATE in the Same Table<a name="EN-US_TOPIC_0289899884"></a>
 
 Transaction T1:

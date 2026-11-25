@@ -1,3 +1,8 @@
+---
+description: The ts\_lexize function facilitates dictionary testing.
+keywords: [openGauss, Testing a Dictionary]
+---
+
 # Testing a Dictionary<a name="EN-US_TOPIC_0289900550"></a>
 
 The  **ts\_lexize**  function facilitates dictionary testing.

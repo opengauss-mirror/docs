@@ -1,3 +1,8 @@
+---
+description: Handle errors that occurred during data import.
+keywords: [openGauss, Handling Import Errors]
+---
+
 # Handling Import Errors<a name="EN-US_TOPIC_0000001092778597"></a>
 
 ## Scenarios<a name="en-us_topic_0117407722_s5bc517f6771b4e53b45ed36b7d50db7d"></a>

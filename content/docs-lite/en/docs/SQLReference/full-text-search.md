@@ -1,3 +1,8 @@
+---
+description: Introduces Full Text Search in openGauss, covering .
+keywords: [openGauss, Full Text Search]
+---
+
 # Full Text Search<a name="EN-US_TOPIC_0289900577"></a>
 
 -   **[Introduction](introduction.md)**  

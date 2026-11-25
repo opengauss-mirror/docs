@@ -1,3 +1,8 @@
+---
+description: The following functions of openGauss use internal data types, which cannot be directly called by users.
+keywords: [openGauss, Internal Functions]
+---
+
 # Internal Functions<a name="EN-US_TOPIC_0308046607"></a>
 
 The following functions of openGauss use internal data types, which cannot be directly called by users.

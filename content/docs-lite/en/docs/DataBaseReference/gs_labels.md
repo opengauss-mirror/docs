@@ -1,3 +1,8 @@
+---
+description: GS\_LABELS displays all configured resource labels. Only the users with system administrator or security policy administrator permission can access this view.
+keywords: [openGauss, GS_LABELS]
+---
+
 # GS\_LABELS<a name="EN-US_TOPIC_0306525319"></a>
 
 **GS\_LABELS**  displays all configured resource labels. Only the users with system administrator or security policy administrator permission can access this view.

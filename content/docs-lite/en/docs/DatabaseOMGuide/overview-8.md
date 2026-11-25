@@ -1,3 +1,8 @@
+---
+description: openGauss provides gs\_dump and gs\_dumpall to export required database objects and related information. You can use a tool to import the exported data to a target database for database mi.
+keywords: [openGauss, Overview]
+---
+
 # Overview<a name="EN-US_TOPIC_0289899921"></a>
 
 openGauss provides  **gs\_dump**  and  **gs\_dumpall**  to export required database objects and related information. You can use a tool to import the exported data to a target database for database migration.  **gs\_dump**  exports a single database or its objects.  **gs\_dumpall**  exports all databases or global objects in  openGauss. For details, see  [Table 1](#en-us_topic_0283136743_en-us_topic_0237121167_table08278213504).

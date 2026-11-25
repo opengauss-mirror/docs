@@ -1,3 +1,8 @@
+---
+description: - Database and Schema Design.
+keywords: [openGauss, Database Object Design]
+---
+
 # Database Object Design<a name="EN-US_TOPIC_0000001149508023"></a>
 
 -   **[Database and Schema Design](database-and-schema-design.md)**  

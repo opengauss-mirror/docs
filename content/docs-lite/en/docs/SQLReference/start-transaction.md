@@ -1,3 +1,8 @@
+---
+description: START TRANSACTION starts a transaction. If the isolation level or read/write mode is specified, a new transaction will have those characteristics. You can also specify them using [SET TRANSACTIO.
+keywords: [openGauss, START]
+---
+
 # START TRANSACTION<a name="EN-US_TOPIC_0289900916"></a>
 
 ## Function<a name="en-us_topic_0283137090_en-us_topic_0237122192_en-us_topic_0059777519_s7c3a854297a0489db05671ba82a741a8"></a>

@@ -1,3 +1,8 @@
+---
+description: This section uses the test table as an example to describe how to perform concurrent INSERT and DELETE in the same table, concurrent INSERT in the same table, concurrent UPD.
+keywords: [openGauss, Concurrent Write Examples]
+---
+
 # Concurrent Write Examples<a name="EN-US_TOPIC_0289900799"></a>
 
 This section uses the  **test**  table as an example to describe how to perform concurrent  **INSERT**  and  **DELETE**  in the same table, concurrent  **INSERT**  in the same table, concurrent  **UPDATE**  in the same table, and concurrent import and queries.

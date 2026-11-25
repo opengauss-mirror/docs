@@ -1,3 +1,8 @@
+---
+description: CREATE EVENT creates a scheduled event.
+keywords: [openGauss, CREATE]
+---
+
 # CREATE EVENT<a name="EN-US_TOPIC_0000001503312881"></a>
 
 ## Function<a name="section189661819135511"></a>

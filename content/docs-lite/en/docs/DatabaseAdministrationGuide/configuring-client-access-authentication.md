@@ -1,3 +1,8 @@
+---
+description: If a host needs to connect to a database remotely, you need to add information about the host in configuration file of the database system and perform client access authentication. The configuration f.
+keywords: [openGauss, Configuring Client Access Authentication]
+---
+
 # Configuring Client Access Authentication<a name="EN-US_TOPIC_0289900238"></a>
 
 ## Background<a name="en-us_topic_0283136866_en-us_topic_0237121090_en-us_topic_0059778856_sa769b5cf486f45fe92aa0397f870561e"></a>

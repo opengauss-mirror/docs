@@ -1,3 +1,8 @@
+---
+description: This section describes parameters about client-to-server authentication.
+keywords: [openGauss, Security and Authentication postgresql.conf]
+---
+
 # Security and Authentication \(postgresql.conf\)<a name="EN-US_TOPIC_0289899967"></a>
 
 This section describes parameters about client-to-server authentication.

@@ -1,3 +1,8 @@
+---
+description: - SNAPSHOT.SNAPSHOT.
+keywords: [openGauss, Original Information of WDR Snapshots]
+---
+
 # Original Information of WDR Snapshots<a name="EN-US_TOPIC_0289900726"></a>
 
 -   **[SNAPSHOT.SNAPSHOT](snapshot-snapshot.md)**  

@@ -1,3 +1,8 @@
+---
+description: GS\_CLIENT\_GLOBAL\_KEYS\_ARGS records the metadata about the CMK in the encrypted equality feature. Each record corresponds to a key-value pair of the CMK.
+keywords: [openGauss, GS_CLIENT_GLOBAL_KEYS_ARGS]
+---
+
 # GS\_CLIENT\_GLOBAL\_KEYS\_ARGS<a name="EN-US_TOPIC_0294528093"></a>
 
 **GS\_CLIENT\_GLOBAL\_KEYS\_ARGS **records the metadata about the CMK in the encrypted equality feature. Each record corresponds to a key-value pair of the CMK.

@@ -1,3 +1,8 @@
+---
+description: ALTER LARGE OBJECT changes the owner of a large object.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER LARGE OBJECT<a name="EN-US_TOPIC_0289900449"></a>
 
 ## Function<a name="en-us_topic_0283137719_en-us_topic_0237122064_en-us_topic_0059778505_sbaf83721f63f42a9ba63625707e18b5c"></a>

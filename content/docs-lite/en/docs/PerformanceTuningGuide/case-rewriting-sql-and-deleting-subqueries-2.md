@@ -1,3 +1,8 @@
+---
+description: Take the following SQL statement as an example:.
+keywords: [openGauss, Case Rewriting SQL and Deleting Subqueries 2]
+---
+
 # Case: Rewriting SQL and Deleting Subqueries (2)<a name="EN-US_TOPIC_0000001331390682"></a>
 
 ## Symptom <a name="section162711147142017"></a>

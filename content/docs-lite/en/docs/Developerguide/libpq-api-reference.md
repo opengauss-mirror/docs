@@ -1,3 +1,8 @@
+---
+description: - Database Connection Control Functions.
+keywords: [openGauss, libpq API Reference]
+---
+
 # libpq API Reference<a name="EN-US_TOPIC_0000001166778402"></a>
 
 -   **[Database Connection Control Functions](database-connection-control-functions.md)**  

@@ -1,3 +1,8 @@
+---
+description: When Java is used for secondary development based on openGauss, you can use the CopyManager interface to export data from the database to a local file or import a local file to the database by streami.
+keywords: [openGauss, Example 1 Importing and Exporting Data Through Local Files]
+---
+
 # Example 1: Importing and Exporting Data Through Local Files<a name="EN-US_TOPIC_0289900348"></a>
 
 When Java is used for secondary development based on openGauss, you can use the CopyManager interface to export data from the database to a local file or import a local file to the database by streaming. The file can be in CSV or TEXT format.

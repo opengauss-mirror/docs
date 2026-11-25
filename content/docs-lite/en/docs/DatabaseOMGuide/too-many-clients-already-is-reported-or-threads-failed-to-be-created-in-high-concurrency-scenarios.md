@@ -1,3 +1,8 @@
+---
+description: When a large number of SQL statements are concurrently executed, the error message "sorry, too many clients already" is displayed or an error is reported, indicating that threads cannot be created or.
+keywords: [openGauss, too many clients already Is Reported or Threads Failed To Be Created in High Concurrency Scenarios]
+---
+
 # "too many clients already" Is Reported or Threads Failed To Be Created in High Concurrency Scenarios<a name="EN-US_TOPIC_0291615108"></a>
 
 ## Symptom<a name="section1556012104711"></a>

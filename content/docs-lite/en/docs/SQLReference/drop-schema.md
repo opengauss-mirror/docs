@@ -1,3 +1,8 @@
+---
+description: DROP SCHEMA deletes a schema from the current database.
+keywords: [openGauss, DROP]
+---
+
 # DROP SCHEMA<a name="EN-US_TOPIC_0289900224"></a>
 
 ## Function<a name="en-us_topic_0283137271_en-us_topic_0237122148_en-us_topic_0059778467_s13f49511137f4971b9f2c7f4b3ec109f"></a>

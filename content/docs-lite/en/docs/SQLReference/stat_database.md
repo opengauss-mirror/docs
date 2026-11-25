@@ -1,3 +1,8 @@
+---
+description: STAT\_DATABASE contains statistics for each database on this node.
+keywords: [openGauss, STAT_DATABASE]
+---
+
 # STAT\_DATABASE<a name="EN-US_TOPIC_0289899935"></a>
 
 **STAT\_DATABASE**  contains statistics for each database on this node.

@@ -1,3 +1,8 @@
+---
+description: The sequence functions provide a simple method to ensure security of multiple users for users to obtain sequence values from sequence objects.
+keywords: [openGauss, SEQUENCE Functions]
+---
+
 # SEQUENCE Functions<a name="EN-US_TOPIC_0289899881"></a>
 
 The sequence functions provide a simple method to ensure security of multiple users for users to obtain sequence values from sequence objects.

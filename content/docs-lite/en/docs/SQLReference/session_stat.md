@@ -1,3 +1,8 @@
+---
+description: SESSION\_STAT collects statistics about session status on the current node based on session threads or the AutoVacuum thread.
+keywords: [openGauss, SESSION_STAT]
+---
+
 # SESSION\_STAT<a name="EN-US_TOPIC_0289900364"></a>
 
 **SESSION\_STAT**  collects statistics about session status on the current node based on session threads or the  **AutoVacuum**  thread.

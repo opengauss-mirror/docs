@@ -1,3 +1,8 @@
+---
+description: In some cases, the administrator must forcibly terminate abnormal sessions to keep the system healthy.
+keywords: [openGauss, Forcibly Terminating a Session]
+---
+
 # Forcibly Terminating a Session<a name="EN-US_TOPIC_0291615098"></a>
 
 ## Symptom<a name="section14515143811220"></a>

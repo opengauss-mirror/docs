@@ -1,3 +1,8 @@
+---
+description: A transaction is a user-defined sequence of database operations, which form an integral unit of work. In openGauss, you can start, set, commit, and roll back transactions. openGauss supports the RE.
+keywords: [openGauss, Transactions]
+---
+
 # Transactions<a name="EN-US_TOPIC_0000001210461840"></a>
 
 A transaction is a user-defined sequence of database operations, which form an integral unit of work. In openGauss, you can start, set, commit, and roll back transactions. openGauss supports the  **READ COMMITTED**  and  **REPEATABLE READ**  transaction isolation levels.

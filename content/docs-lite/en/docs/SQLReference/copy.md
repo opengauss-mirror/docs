@@ -1,3 +1,8 @@
+---
+description: COPY copies data between tables and files.
+keywords: [openGauss, COPY]
+---
+
 # COPY<a name="EN-US_TOPIC_0289899980"></a>
 
 ## Function<a name="en-us_topic_0283136676_en-us_topic_0237122096_en-us_topic_0059778766_s0d743b5d862d4cf1829449f474af6d9c"></a>

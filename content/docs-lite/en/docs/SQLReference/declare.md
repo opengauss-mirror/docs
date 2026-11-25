@@ -1,3 +1,8 @@
+---
+description: DECLARE defines a cursor to retrieve a small number of rows at a time out of a larger query and can be the start of an anonymous block.
+keywords: [openGauss, DECLARE]
+---
+
 # DECLARE<a name="EN-US_TOPIC_0289900564"></a>
 
 ## Function<a name="en-us_topic_0283137571_en-us_topic_0237122130_en-us_topic_0059777616_sf3fcf0507ea74a0ba4c4b4cbf0a0a8ba"></a>

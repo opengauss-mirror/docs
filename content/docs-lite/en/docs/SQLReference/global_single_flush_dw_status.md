@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_SINGLE\_FLUSH\_DW\_STATUS displays information about doublewrite files eliminated on a single page of all instances in the database. In the displayed information, the information before t.
+keywords: [openGauss, GLOBAL_SINGLE_FLUSH_DW_STATUS]
+---
+
 # GLOBAL\_SINGLE\_FLUSH\_DW\_STATUS<a name="EN-US_TOPIC_0000001196694399"></a>
 
 **GLOBAL\_SINGLE\_FLUSH\_DW\_STATUS**  displays information about doublewrite files eliminated on a single page of all instances in the database. In the displayed information, the information before the slash \(/\) indicates the page flushing status of the first version, and the information after the slash \(/\) indicates the page flushing status of the second version.

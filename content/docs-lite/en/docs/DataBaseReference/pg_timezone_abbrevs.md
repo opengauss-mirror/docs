@@ -1,3 +1,8 @@
+---
+description: PG\_TIMEZONE\_ABBREVS displays information about all available time zones.
+keywords: [openGauss, PG_TIMEZONE_ABBREVS]
+---
+
 # PG\_TIMEZONE\_ABBREVS<a name="EN-US_TOPIC_0289900639"></a>
 
 **PG\_TIMEZONE\_ABBREVS**  displays information about all available time zones.

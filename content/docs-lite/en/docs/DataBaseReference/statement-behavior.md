@@ -1,3 +1,8 @@
+---
+description: This section describes related default parameters involved in the execution of SQL statements.
+keywords: [openGauss, Statement Behavior]
+---
+
 # Statement Behavior<a name="EN-US_TOPIC_0289900775"></a>
 
 This section describes related default parameters involved in the execution of SQL statements.

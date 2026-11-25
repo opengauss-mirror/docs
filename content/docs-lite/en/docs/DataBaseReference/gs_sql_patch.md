@@ -1,3 +1,8 @@
+---
+description: GS_SQL_PATCH records the status information about all SQL_PATCH.
+keywords: [openGauss, GS_SQL_PATCH]
+---
+
 # GS_SQL_PATCH
 
 GS_SQL_PATCH records the status information about all SQL_PATCH.

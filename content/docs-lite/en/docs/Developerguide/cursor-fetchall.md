@@ -1,3 +1,8 @@
+---
+description: This method obtains all the \(remaining\) rows of the query result and returns them as a list of tuples.
+keywords: [openGauss, cursor.fetchall]
+---
+
 # cursor.fetchall\(\)<a name="EN-US_TOPIC_0000001080051586"></a>
 
 ## Function<a name="section5708152714306"></a>

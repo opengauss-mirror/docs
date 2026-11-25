@@ -1,3 +1,8 @@
+---
+description: DROP GLOBAL CONFIGURATION deletes parameter values from the gs\_global\_config system catalog.
+keywords: [openGauss, DROP]
+---
+
 # DROP GLOBAL CONFIGURATION<a name="EN-US_TOPIC_0000001207108002"></a>
 
 ## Function<a name="en-us_topic_0283136791_en-us_topic_0237122191_en-us_topic_0059779163_s812131d8918641df9772c998b753f87e"></a>

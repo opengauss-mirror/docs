@@ -1,3 +1,8 @@
+---
+description: GS\_AUDITING\_POLICY\_FILTERS records the filtering policies about the unified audit. Each record corresponds to a design policy. Only the system administrator or security policy administrator ca.
+keywords: [openGauss, GS_AUDITING_POLICY_FILTERS]
+---
+
 # GS\_AUDITING\_POLICY\_FILTERS<a name="EN-US_TOPIC_0306525310"></a>
 
 **GS\_AUDITING\_POLICY\_FILTERS**  records the filtering policies about the unified audit. Each record corresponds to a design policy. Only the system administrator or security policy administrator can access this system catalog.

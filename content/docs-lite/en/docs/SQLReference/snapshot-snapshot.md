@@ -1,3 +1,8 @@
+---
+description: SNAPSHOT records the index information, start time, and end time of WDR snapshots stored in the current system. The result can be queried only in the system database but cannot be queried in the.
+keywords: [openGauss, SNAPSHOT.SNAPSHOT]
+---
+
 # SNAPSHOT.SNAPSHOT<a name="EN-US_TOPIC_0289900058"></a>
 
 **SNAPSHOT**  records the index information, start time, and end time of WDR snapshots stored in the current system. The result can be queried only in the system database but cannot be queried in the user database.

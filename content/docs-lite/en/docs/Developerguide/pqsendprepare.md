@@ -1,3 +1,8 @@
+---
+description: PQsendPrepare is used to send a request to create a prepared statement with given parameters, without waiting for completion.
+keywords: [openGauss, PQsendPrepare]
+---
+
 # PQsendPrepare<a name="EN-US_TOPIC_0242380584"></a>
 
 ## Function<a name="en-us_topic_0241735629_section11692173220256"></a>

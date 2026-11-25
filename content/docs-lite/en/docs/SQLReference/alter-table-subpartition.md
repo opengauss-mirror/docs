@@ -1,3 +1,8 @@
+---
+description: ALTER TABLE SUBPARTITION modifies partitions from a level-2 partitioned table, including adding, deleting, clearing, and splitting partitions.
+keywords: [openGauss, ALTER]
+---
+
 # ALTER TABLE SUBPARTITION<a name="EN-US_TOPIC_0000001152048640"></a>
 
 ## Function<a name="en-us_topic_0283137443_en-us_topic_0237122077_en-us_topic_0059778761_s4954d450a2e8434aa3abac355bac38e6"></a>

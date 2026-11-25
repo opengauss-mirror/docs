@@ -1,3 +1,8 @@
+---
+description: GS\_MASKING\_POLICY records the main information about dynamic data masking policies. Each record corresponds to a masking policy. Only the system administrator or security policy administrator c.
+keywords: [openGauss, GS_MASKING_POLICY]
+---
+
 # GS\_MASKING\_POLICY<a name="EN-US_TOPIC_0306525312"></a>
 
 **GS\_MASKING\_POLICY**  records the main information about dynamic data masking policies. Each record corresponds to a masking policy. Only the system administrator or security policy administrator can access this system catalog.

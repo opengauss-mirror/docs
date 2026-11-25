@@ -1,3 +1,8 @@
+---
+description: A stored procedure is a set of SQL statements that can implement a specific function. You can repeatedly call the stored procedure to reduce the number of repeated SQL statements and improve work effi.
+keywords: [openGauss, Stored]
+---
+
 # Stored Procedures<a name="EN-US_TOPIC_0000001255021827"></a>
 
 A stored procedure is a set of SQL statements that can implement a specific function. You can repeatedly call the stored procedure to reduce the number of repeated SQL statements and improve work efficiency.

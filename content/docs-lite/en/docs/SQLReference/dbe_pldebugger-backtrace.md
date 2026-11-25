@@ -1,3 +1,8 @@
+---
+description: During debugging on the debug end, call backtrace to view the current call stack.
+keywords: [openGauss, DBE_PLDEBUGGER.backtrace]
+---
+
 # DBE\_PLDEBUGGER.backtrace<a name="EN-US_TOPIC_0000001121763470"></a>
 
 During debugging on the debug end, call  **backtrace**  to view the current call stack.

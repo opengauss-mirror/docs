@@ -1,3 +1,8 @@
+---
+description: SET TRANSACTION sets characteristics of a transaction. Available transaction characteristics include the transaction isolation level and transaction access mode \(read/write or read only\). You c.
+keywords: [openGauss, SET]
+---
+
 # SET TRANSACTION<a name="EN-US_TOPIC_0289900810"></a>
 
 ## Function<a name="en-us_topic_0283137515_en-us_topic_0237122190_en-us_topic_0059778135_se7890b9b6c9749168d76cd4ce38ee49f"></a>

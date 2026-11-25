@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 1.1.0.
+keywords: [openGauss, Support for Functions and Stored Procedures]
+---
+
 # Support for Functions and Stored Procedures<a name="EN-US_TOPIC_0000001152195137"></a>
 
 ## Availability<a name="section56086982"></a>

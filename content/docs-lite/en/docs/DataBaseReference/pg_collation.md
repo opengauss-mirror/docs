@@ -1,3 +1,8 @@
+---
+description: PG\_COLLATION describes available collations, which are essentially mappings from an SQL name to operating system locale categories.
+keywords: [openGauss, PG_COLLATION]
+---
+
 # PG\_COLLATION<a name="EN-US_TOPIC_0289900999"></a>
 
 **PG\_COLLATION**  describes available collations, which are essentially mappings from an SQL name to operating system locale categories.

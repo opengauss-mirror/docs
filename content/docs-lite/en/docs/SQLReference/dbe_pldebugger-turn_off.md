@@ -1,3 +1,8 @@
+---
+description: This function is used to remove the debugging flag added by turn\_on. The return value indicates success or failure. You can run the DBE\_PLDEBUGGER.local\_debug\_server\_info command to qu.
+keywords: [openGauss, DBE_PLDEBUGGER.turn_off]
+---
+
 # DBE\_PLDEBUGGER.turn\_off<a name="EN-US_TOPIC_0000001148017993"></a>
 
 This function is used to remove the debugging flag added by  **turn\_on**. The return value indicates success or failure. You can run the  **DBE\_PLDEBUGGER.local\_debug\_server\_info**  command to query the OID of the stored procedure that has been turned on.

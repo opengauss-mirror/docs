@@ -1,3 +1,8 @@
+---
+description: Comply with the following principles to properly design a table:.
+keywords: [openGauss, Table Design]
+---
+
 # Table Design<a name="EN-US_TOPIC_0000001102987918"></a>
 
 Comply with the following principles to properly design a table:

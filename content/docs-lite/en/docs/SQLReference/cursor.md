@@ -1,3 +1,8 @@
+---
+description: CURSOR defines a cursor to retrieve a small number of rows at a time out of a larger query.
+keywords: [openGauss, CURSOR]
+---
+
 # CURSOR<a name="EN-US_TOPIC_0289900700"></a>
 
 ## Function<a name="en-us_topic_0283137390_en-us_topic_0237122128_en-us_topic_0059778820_sf3fcf0507ea74a0ba4c4b4cbf0a0a8ba"></a>

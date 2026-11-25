@@ -1,3 +1,8 @@
+---
+description: Export a large object to a server-side operating system file.
+keywords: [openGauss, lo_export]
+---
+
 # lo_export<a name="EN-US_TOPIC_0242380593"></a>
 
 ## Function<a name="en-us_topic_0241735627_section696285173716"></a>

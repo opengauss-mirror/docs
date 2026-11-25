@@ -1,3 +1,8 @@
+---
+description: Data partitioning is a general function for most database products. In the openGauss, data is partitioned horizontally with a user-specified policy. This operation splits a table into multiple partiti.
+keywords: [openGauss, Enhanced Features]
+---
+
 # Enhanced Features<a name="EN-US_TOPIC_0289896516"></a>
 
 ## Data Partitioning<a name="en-us_topic_0283136537_section829318456016"></a>
@@ -65,7 +70,7 @@ In a wide table containing a huge amount of data, a query usually only involves 
     **Figure  1**  Vectorized executor<a name="en-us_topic_0283136537_en-us_topic_0237080624_en-us_topic_0231764690_en-us_topic_0059777898_f9d90aebe179a40759039d0263492489d"></a>  
     
 
-    ![](figures/向量化执行引擎(png).png)
+    ![Vectorized Executor and Hybrid Row-Column Storage Engine](figures/向量化执行引擎(png).png)
 
 -   Hybrid row-column storage engine
 
@@ -78,7 +83,7 @@ In a wide table containing a huge amount of data, a query usually only involves 
     **Figure  2**  Hybrid row-column storage engine<a name="en-us_topic_0283136537_en-us_topic_0237080624_en-us_topic_0231764690_en-us_topic_0059777898_fbb2af39ce12a419cb437829aaf1cf4fb"></a>  
     
 
-    ![](figures/opengauss行列混存引擎.png)
+    ![Vectorized Executor and Hybrid Row-Column Storage Engine](figures/opengauss行列混存引擎.png)
 
     The restrictions of the column store engine are as follows:
 
@@ -114,7 +119,7 @@ The fusion engine architecture supports the pluggable storage engine architectur
 -   Indexing multiversion
 
     **Figure  3**  Comparison between UBTree and BTree searching and updating<a name="fig38821655122012"></a>  
-    ![](figures/comparison-between-ubtree-and-btree-searching-and-updating.png "comparison-between-ubtree-and-btree-searching-and-updating")
+    ![Fusion Storage Engine](figures/comparison-between-ubtree-and-btree-searching-and-updating.png "comparison-between-ubtree-and-btree-searching-and-updating")
 
     UBtree can check multiversion concurrency control \(MVCC\) visibility at the index layer by maintaining version information on tuples on the index page. In addition, the UBtree can independently determine whether the index tuple is dead based on the version information, so that the in-place update engine can implement page-level space cleanup for the data table and index table, and build an independent garbage collection mechanism independent of AutoVacuum.
 
@@ -122,7 +127,7 @@ The fusion engine architecture supports the pluggable storage engine architectur
 -   Xlog lockless update
 
     **Figure  4**  Xlog lockless design<a name="fig1120113136417"></a>  
-    ![](figures/xlog-lockless-design.png "xlog-lockless-design")
+    ![Fusion Storage Engine](figures/xlog-lockless-design.png "xlog-lockless-design")
 
     This feature optimizes the WalInsertLock mechanism by using log sequence numbers \(LSNs\) and log record counts \(LRCs\) to record the copy progress of each backend and canceling the WalInsertLock mechanism. The backend can directly copy logs to the WalBuffer without contending for the WalInsertLock. In addition, a dedicated WALWriter thread is used to write logs, and the backend thread does not need to ensure the Xlog flushing. After the preceding optimization, the WalInsertLock contention and WalWriter dedicated disk write threads are canceled. The system performance can be further improved while the original Xlog function remains unchanged.
 

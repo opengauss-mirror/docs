@@ -1,3 +1,8 @@
+---
+description: When a database is initialized using gs\_initdb, a database directory is created, a system catalog is generated, and a default database and a template database are created.
+keywords: [openGauss, Overview]
+---
+
 # Overview<a name="EN-US_TOPIC_0294749014"></a>
 
 ## Background<a name="en-us_topic_0059779348_section840612614118"></a>

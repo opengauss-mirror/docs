@@ -1,3 +1,8 @@
+---
+description: - cash\_words\(money\).
+keywords: [openGauss, Type Conversion Functions]
+---
+
 # Type Conversion Functions<a name="EN-US_TOPIC_0289900669"></a>
 
 ## Type Conversion Functions<a name="en-us_topic_0283137417_en-us_topic_0237121973_en-us_topic_0059778246_sd1817f56ca2d4be7a4ad606e0e597c55"></a>

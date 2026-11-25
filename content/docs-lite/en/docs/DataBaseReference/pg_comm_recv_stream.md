@@ -1,3 +1,8 @@
+---
+description: PG\_COMM\_RECV\_STREAM displays the receiving stream status of all the communication libraries for a node.
+keywords: [openGauss, PG_COMM_RECV_STREAM]
+---
+
 # PG\_COMM\_RECV\_STREAM<a name="EN-US_TOPIC_0311526903"></a>
 
 **PG\_COMM\_RECV\_STREAM**  displays the receiving stream status of all the communication libraries for  a node.

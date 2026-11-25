@@ -1,3 +1,8 @@
+---
+description: This feature is available since openGauss 2.1.0.
+keywords: [openGauss, Transparent Data Encryption]
+---
+
 # Transparent Data Encryption<a name="EN-US_TOPIC_0000001156553727"></a>
 
 ## Availability<a name="section8174682"></a>

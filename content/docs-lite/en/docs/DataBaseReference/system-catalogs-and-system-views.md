@@ -1,3 +1,8 @@
+---
+description: - Overview of System Catalogs and System Views.
+keywords: [openGauss, System Catalogs and System Views]
+---
+
 # System Catalogs and System Views<a name="EN-US_TOPIC_0289900139"></a>
 
 -   **[Overview of System Catalogs and System Views](overview-of-system-catalogs-and-system-views.md)**  

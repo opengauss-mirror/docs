@@ -1,3 +1,8 @@
+---
+description: The money type stores a currency amount with fixed fractional precision.
+keywords: [openGauss, Monetary Types]
+---
+
 # Monetary Types<a name="EN-US_TOPIC_0289901013"></a>
 
 The money type stores a currency amount with fixed fractional precision.

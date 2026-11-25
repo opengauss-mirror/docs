@@ -1,3 +1,8 @@
+---
+description: ALTER VIEW modifies all auxiliary attributes of a view. \(To modify the query definition of a view, use CREATE OR REPLACE VIEW.\).
+keywords: [openGauss, ALTER]
+---
+
 # ALTER VIEW<a name="EN-US_TOPIC_0289900061"></a>
 
 ## Function<a name="en-us_topic_0283137021_en-us_topic_0237122084_en-us_topic_0059778428_section1274412112511"></a>

@@ -1,3 +1,8 @@
+---
+description: PG\_APP\_WORKLOADGROUP\_MAPPING provides load mapping group information in the database.
+keywords: [openGauss, PG_APP_WORKLOADGROUP_MAPPING]
+---
+
 # PG\_APP\_WORKLOADGROUP\_MAPPING<a name="EN-US_TOPIC_0289900377"></a>
 
 **PG\_APP\_WORKLOADGROUP\_MAPPING**  provides load mapping group information in the database.

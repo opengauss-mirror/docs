@@ -1,3 +1,8 @@
+---
+description: The SELECT statement can be executed to retrieve data from a table or view. The result is stored in a result table, which is called a result set.
+keywords: [openGauss, SELECT]
+---
+
 # SELECT Statement<a name="EN-US_TOPIC_0000001255141779"></a>
 
 The SELECT statement can be executed to retrieve data from a table or view. The result is stored in a result table, which is called a result set.

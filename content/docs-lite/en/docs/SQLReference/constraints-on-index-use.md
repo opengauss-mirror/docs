@@ -1,3 +1,8 @@
+---
+description: The following is an example of index use:.
+keywords: [openGauss, Constraints on Index Use]
+---
+
 # Constraints on Index Use<a name="EN-US_TOPIC_0289900239"></a>
 
 The following is an example of index use:

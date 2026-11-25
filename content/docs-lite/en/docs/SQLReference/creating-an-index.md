@@ -1,3 +1,8 @@
+---
+description: You can create a GIN index to speed up text searches:.
+keywords: [openGauss, Creating an Index]
+---
+
 # Creating an Index<a name="EN-US_TOPIC_0289900880"></a>
 
 You can create a  **GIN**  index to speed up text searches:

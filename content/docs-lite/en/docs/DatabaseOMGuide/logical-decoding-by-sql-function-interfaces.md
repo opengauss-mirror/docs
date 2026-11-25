@@ -1,3 +1,8 @@
+---
+description: In openGauss, you can call SQL functions to create, delete, and push logical replication slots, as well as obtain decoded transaction logs.
+keywords: [openGauss, Logical Decoding by SQL Function Interfaces]
+---
+
 # Logical Decoding by SQL Function Interfaces<a name="EN-US_TOPIC_0289900929"></a>
 
 In openGauss, you can call SQL functions to create, delete, and push logical replication slots, as well as obtain decoded transaction logs.

@@ -1,3 +1,8 @@
+---
+description: The following table describes columns in the Host CPU report.
+keywords: [openGauss, Host CPU]
+---
+
 # Host CPU<a name="EN-US_TOPIC_0000001260195073"></a>
 
 The following table describes columns in the Host CPU report.

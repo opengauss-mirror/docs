@@ -1,3 +1,8 @@
+---
+description: Modifies the definition of a foreign data wrapper (FDW).
+keywords: [openGauss, ALTER]
+---
+
 # ALTER FOREIGN DATA WRAPPER
 
 ## Function Description

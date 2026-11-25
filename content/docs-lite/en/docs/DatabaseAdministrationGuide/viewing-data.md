@@ -1,3 +1,8 @@
+---
+description: - Run the following command to query information about all tables in a database in the system catalog pg\_tables:.
+keywords: [openGauss, Viewing Data]
+---
+
 # Viewing Data<a name="EN-US_TOPIC_0289900707"></a>
 
 -   Run the following command to query information about all tables in a database in the system catalog  **pg\_tables**:

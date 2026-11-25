@@ -1,3 +1,8 @@
+---
+description: By default, after you log in to the installed database, you can run the \\help statement to view syntax of all the SQL syntax of the openGauss.
+keywords: [openGauss, Syntax]
+---
+
 # Syntax<a name="EN-US_TOPIC_0000001210301872"></a>
 
 By default, after you log in to the installed database, you can run the  **\\help**  statement to view syntax of all the SQL syntax of the openGauss.

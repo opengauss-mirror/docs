@@ -1,3 +1,8 @@
+---
+description: During the running of the database, the lock access, disk I/O operation, and invalid message processing are involved. All these operations are the bottleneck of the database performance. The performan.
+keywords: [openGauss, Performance Statistics]
+---
+
 # Performance Statistics<a name="EN-US_TOPIC_0289900589"></a>
 
 During the running of the database, the lock access, disk I/O operation, and invalid message processing are involved. All these operations are the bottleneck of the database performance. The performance statistics provided by openGauss can facilitate the performance fault location.

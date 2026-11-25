@@ -1,3 +1,8 @@
+---
+description: DROP EXTENSION deletes an extension.
+keywords: [openGauss, DROP]
+---
+
 # DROP EXTENSION<a name="EN-US_TOPIC_0000001127565047"></a>
 
 ## Function<a name="section173831846163116"></a>
