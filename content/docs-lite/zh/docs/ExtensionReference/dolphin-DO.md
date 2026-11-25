@@ -1,3 +1,8 @@
+---
+description: Introduces DO in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DO]
+---
+
 # DO
 
 ## 功能描述<a name="zh-cn_topic_0283137438_zh-cn_topic_0237122132_zh-cn_topic_0059778658_s9b63cdf8ade346bb85b02b8dbdf97170"></a>

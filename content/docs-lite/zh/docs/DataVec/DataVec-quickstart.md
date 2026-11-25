@@ -1,3 +1,8 @@
+---
+description: Introduces 向量数据库快速入门 in openGauss, covering 快速部署, 创建向量表, 数据插入.
+keywords: [openGauss, 向量数据库快速入门]
+---
+
 # 向量数据库快速入门
 
 ## 快速部署

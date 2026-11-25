@@ -1,3 +1,8 @@
+---
+description: Introduces ALTER FOREIGN TABLE in openGauss, covering 功能描述, 语法格式, 参数说明.
+keywords: [openGauss, ALTER FOREIGN TABLE]
+---
+
 # ALTER FOREIGN TABLE<a name="ZH-CN_TOPIC_0289900030"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137201_section178411726125517"></a>

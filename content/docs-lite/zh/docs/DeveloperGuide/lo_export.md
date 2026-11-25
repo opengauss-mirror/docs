@@ -1,3 +1,8 @@
+---
+description: 把一个大对象导出到一个服务器端的操作系统文件。.
+keywords: [openGauss, lo_export]
+---
+
 # lo_export<a name="ZH-CN_TOPIC_0242380593"></a>
 
 ## 功能描述<a name="zh-cn_topic_0241735619_section696285173716"></a>

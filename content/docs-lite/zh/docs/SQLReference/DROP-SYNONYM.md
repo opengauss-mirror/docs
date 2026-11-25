@@ -1,3 +1,8 @@
+---
+description: Introduces DROP SYNONYM in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP SYNONYM]
+---
+
 # DROP SYNONYM<a name="ZH-CN_TOPIC_0289900036"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137394_zh-cn_topic_0237122151_zh-cn_topic_0059778429_s99b7590244bd4c1ab904f72cfc2cc9a0"></a>

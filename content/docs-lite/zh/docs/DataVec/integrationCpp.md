@@ -1,3 +1,8 @@
+---
+description: 本文介绍如何使用C++语言调用openGauss向量数据库.
+keywords: [openGauss, C SDK对接向量数据库]
+---
+
 # C++ SDK对接向量数据库
 本文介绍如何使用C++语言调用openGauss向量数据库
 

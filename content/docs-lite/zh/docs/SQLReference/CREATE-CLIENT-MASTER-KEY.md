@@ -1,3 +1,8 @@
+---
+description: 创建一个客户端主密钥对象，该对象可用于加密Column Encryption Key对象。.
+keywords: [openGauss, CREATE CLIENT MASTER KEY]
+---
+
 # CREATE CLIENT MASTER KEY<a name="ZH-CN_TOPIC_0294528088"></a>
 
 ## 功能描述<a name="section1163224811518"></a>

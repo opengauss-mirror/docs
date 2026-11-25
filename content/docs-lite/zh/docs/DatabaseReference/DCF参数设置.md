@@ -1,3 +1,8 @@
+---
+description: Introduces DCF参数设置 in openGauss, covering enable\_dcf, dcf\_ssl, dcf\_config.
+keywords: [openGauss, DCF参数设置]
+---
+
 # DCF参数设置<a name="ZH-CN_TOPIC_0000001083207760"></a>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 

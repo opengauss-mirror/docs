@@ -1,3 +1,8 @@
+---
+description: Introduces CREATE PACKAGE in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, CREATE PACKAGE]
+---
+
 # CREATE PACKAGE<a name="ZH-CN_TOPIC_0000001114212452"></a>
 
 ## 功能描述<a name="section33561436135517"></a>

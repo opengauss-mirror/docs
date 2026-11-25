@@ -1,3 +1,8 @@
+---
+description: 本章节提供基于openGauss DataVec 的教程案例，帮助你更好的了解向量数据库的使用模式。.
+keywords: [openGauss, 向量数据库教程案例]
+---
+
 # 向量数据库教程案例
 
 本章节提供基于openGauss DataVec 的教程案例，帮助你更好的了解向量数据库的使用模式。

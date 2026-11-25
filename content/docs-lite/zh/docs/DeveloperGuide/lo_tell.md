@@ -1,3 +1,8 @@
+---
+description: 得到一个大对象描述符的当前读或写位置。.
+keywords: [openGauss, lo_tell]
+---
+
 # lo_tell<a name="ZH-CN_TOPIC_0242380598"></a>
 
 ## 功能描述<a name="zh-cn_topic_0241735619_section696285173721"></a>

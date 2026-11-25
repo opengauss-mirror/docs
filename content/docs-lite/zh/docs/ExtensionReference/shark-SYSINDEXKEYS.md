@@ -1,3 +1,8 @@
+---
+description: SYSINDEXKEYS视图包含有关数据库的索引中列的信息。.
+keywords: [openGauss, SYSINDEXKEYS]
+---
+
 # SYSINDEXKEYS
 
 SYSINDEXKEYS视图包含有关数据库的索引中列的信息。

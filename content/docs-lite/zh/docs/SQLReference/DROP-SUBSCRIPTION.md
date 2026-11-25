@@ -1,3 +1,8 @@
+---
+description: Introduces DROP SUBSCRIPTION in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP SUBSCRIPTION]
+---
+
 # DROP SUBSCRIPTION<a name="ZH-CN_TOPIC_0000001240332295"></a>
 
 ## **功能描述**<a name="section131281394204"></a>

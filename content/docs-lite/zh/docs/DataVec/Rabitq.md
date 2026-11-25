@@ -1,3 +1,8 @@
+---
+description: RABITQ是一种具有理论保证的最先进的二进制量化方法，与HNSW、IVFFLAT结合使用时，可以确保向量数据在高度压缩的表示下仍能保持搜索的可靠性。本章节主要介绍openGauss数据库DataVec向量引擎RABITQ特性的使用步骤，以指导用户顺利完成操作。本特性将DataVec向量引擎和RABITQ算法相结合，以提高在内存受限的情况下向量检索的查询性能。.
+keywords: [openGauss, RABITQ]
+---
+
 # RABITQ
 
 ## 介绍

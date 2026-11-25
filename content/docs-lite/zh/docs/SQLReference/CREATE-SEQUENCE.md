@@ -1,3 +1,8 @@
+---
+description: CREATE SEQUENCE用于向当前数据库里增加一个新的序列。序列的Owner为创建此序列的用户。.
+keywords: [openGauss, CREATE SEQUENCE]
+---
+
 # CREATE SEQUENCE<a name="ZH-CN_TOPIC_0289899862"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137208_zh-cn_topic_0237122114_zh-cn_topic_0059778825_section11152141914129"></a>

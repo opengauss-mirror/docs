@@ -1,3 +1,8 @@
+---
+description: Introduces 相同表的并发UPDATE in openGauss, covering .
+keywords: [openGauss, 相同表的并发UPDATE]
+---
+
 # 相同表的并发UPDATE<a name="ZH-CN_TOPIC_0289899884"></a>
 
 事务T1：

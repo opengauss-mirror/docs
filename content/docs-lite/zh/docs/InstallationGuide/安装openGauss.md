@@ -1,3 +1,8 @@
+---
+description: Introduces  in openGauss, covering 前提条件, 操作步骤.
+keywords: [openGauss, ]
+---
+
 安装<a name="ZH-CN_TOPIC_0000001120430818"></a>
 
 ## 前提条件<a name="section9955194683210"></a>

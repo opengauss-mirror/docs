@@ -1,3 +1,8 @@
+---
+description: Introduces 数据类型 in openGauss, covering .
+keywords: [openGauss, 数据类型]
+---
+
 # 数据类型
 
 -   **[字符类型](shark-字符类型.md)**  

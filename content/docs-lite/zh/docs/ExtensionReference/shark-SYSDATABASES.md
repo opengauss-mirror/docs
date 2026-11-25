@@ -1,3 +1,8 @@
+---
+description: SYSDATABASES视图返回数据库的信息。.
+keywords: [openGauss, SYSDATABASES]
+---
+
 # SYSDATABASES
 
 SYSDATABASES视图返回数据库的信息。

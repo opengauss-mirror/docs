@@ -1,3 +1,8 @@
+---
+description: Apache AGE通过创建插件的形式使用。.
+keywords: [openGauss, Apache AGE incubating for openGauss 适配详情]
+---
+
 # Apache AGE (incubating) for openGauss 适配详情
 
 ## 说明

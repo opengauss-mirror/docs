@@ -1,3 +1,8 @@
+---
+description: 显示openGauss数据库的每个索引的访问统计信息。.
+keywords: [openGauss, SUMMARY_STAT_ALL_INDEXES]
+---
+
 # SUMMARY\_STAT\_ALL\_INDEXES<a name="ZH-CN_TOPIC_0289900188"></a>
 
 显示openGauss数据库的每个索引的访问统计信息。

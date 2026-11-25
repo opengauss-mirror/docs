@@ -1,3 +1,8 @@
+---
+description: 使用参数的当前值，执行一条准备好的语句。对于一次只执行一条SQL语句，SQLExecDirect是最快的执行方式。.
+keywords: [openGauss, SQLExecDirect]
+---
+
 # SQLExecDirect<a name="ZH-CN_TOPIC_0242371445"></a>
 
 ## 功能描述<a name="zh-cn_topic_0238272891_zh-cn_topic_0237120421_zh-cn_topic_0059778538_sa444edc74fad433d8d9beb6eec51f680"></a>

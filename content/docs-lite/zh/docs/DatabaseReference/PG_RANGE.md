@@ -1,3 +1,8 @@
+---
+description: PG\_RANGE系统表存储关于范围类型的信息。除了PG\_TYPE里类型的记录。.
+keywords: [openGauss, PG_RANGE]
+---
+
 # PG\_RANGE<a name="ZH-CN_TOPIC_0289900661"></a>
 
 PG\_RANGE系统表存储关于范围类型的信息。除了[PG\_TYPE](PG_TYPE.md)里类型的记录。

@@ -1,3 +1,8 @@
+---
+description: GS\_WLM\_SESSION\_INFO视图显示数据库实例执行作业结束后的负载管理记录。查询该视图需要sysadmin权限。.
+keywords: [openGauss, GS_WLM_SESSION_INFO]
+---
+
 # GS\_WLM\_SESSION\_INFO<a name="ZH-CN_TOPIC_0000001152042187"></a>
 
 GS\_WLM\_SESSION\_INFO视图显示数据库实例执行作业结束后的负载管理记录。查询该视图需要sysadmin权限。

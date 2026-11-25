@@ -1,3 +1,8 @@
+---
+description: 相比于原始的openGauss，dolphin对于赋值语法的修改为：.
+keywords: [openGauss, 存储过程]
+---
+
 # 存储过程
 
 ## 注意事项
@@ -11,7 +16,7 @@
 给变量赋值的语法请参见[图1](#zh-cn_topic_0283137492_zh-cn_topic_0237122222_zh-cn_topic_0059778597_f1087f61f4ec24addbb3b79a2ccf21917)。
 
 **图 1**  assignment\_value::=<a name="zh-cn_topic_0283137492_zh-cn_topic_0237122222_zh-cn_topic_0059778597_f1087f61f4ec24addbb3b79a2ccf21917"></a>\
-![](figures/assignment_value.png "assignment_value")
+![语法](figures/assignment_value.png "assignment_value")
 
 B模式下支持：
 

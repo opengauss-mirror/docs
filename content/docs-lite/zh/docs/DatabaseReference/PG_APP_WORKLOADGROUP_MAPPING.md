@@ -1,3 +1,8 @@
+---
+description: PG\_APP\_WORKLOADGROUP\_MAPPING系统表提供了数据库负载映射组的信息。.
+keywords: [openGauss, PG_APP_WORKLOADGROUP_MAPPING]
+---
+
 # PG\_APP\_WORKLOADGROUP\_MAPPING<a name="ZH-CN_TOPIC_0289900377"></a>
 
 PG\_APP\_WORKLOADGROUP\_MAPPING系统表提供了数据库负载映射组的信息。

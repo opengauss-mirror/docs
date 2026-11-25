@@ -1,3 +1,8 @@
+---
+description: PG\_WORKLOAD\_GROUP系统表提供了数据库负载组的信息。.
+keywords: [openGauss, PG_WORKLOAD_GROUP]
+---
+
 # PG\_WORKLOAD\_GROUP<a name="ZH-CN_TOPIC_0289900064"></a>
 
 PG\_WORKLOAD\_GROUP系统表提供了数据库负载组的信息。

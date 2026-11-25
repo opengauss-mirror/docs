@@ -1,3 +1,8 @@
+---
+description: PG\_ATTRDEF系统表存储列的默认值。.
+keywords: [openGauss, PG_ATTRDEF]
+---
+
 # PG\_ATTRDEF<a name="ZH-CN_TOPIC_0289900516"></a>
 
 PG\_ATTRDEF系统表存储列的默认值。

@@ -1,3 +1,8 @@
+---
+description: Introduces Wait Events in openGauss, covering .
+keywords: [openGauss, Wait Events]
+---
+
 # Wait Events<a name="ZH-CN_TOPIC_0289899845"></a>
 
 -   **[WAIT\_EVENTS](WAIT_EVENTS.md)**  

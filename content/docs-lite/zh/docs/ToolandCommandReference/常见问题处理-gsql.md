@@ -1,3 +1,8 @@
+---
+description: - 开启了log\_hostname，但是配置了错误的DNS导致的连接性能问题。.
+keywords: [openGauss, 常见问题处理]
+---
+
 # 常见问题处理<a name="ZH-CN_TOPIC_0294749066"></a>
 
 ## 连接性能问题<a name="zh-cn_topic_0078149561_section625869329424"></a>

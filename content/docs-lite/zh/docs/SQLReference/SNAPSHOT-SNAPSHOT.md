@@ -1,3 +1,8 @@
+---
+description: SNAPSHOT表记录当前系统中存储的WDR 快照数据的索引信息，开始，结束时间。只能在系统库中查询到结果，用户库中无法查询。.
+keywords: [openGauss, SNAPSHOT.SNAPSHOT]
+---
+
 # SNAPSHOT.SNAPSHOT<a name="ZH-CN_TOPIC_0289900058"></a>
 
 SNAPSHOT表记录当前系统中存储的WDR 快照数据的索引信息，开始，结束时间。只能在系统库中查询到结果，用户库中无法查询。

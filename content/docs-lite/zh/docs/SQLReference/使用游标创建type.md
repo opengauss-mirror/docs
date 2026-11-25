@@ -1,3 +1,8 @@
+---
+description: 该功能用于在包package或者匿名块、存储过程、函数中使用record类型创建一个游标的type类型。.
+keywords: [openGauss, 使用游标创建type]
+---
+
 # 使用游标创建type
 
 ## 功能描述

@@ -1,3 +1,8 @@
+---
+description: SYSINDEXES视图为当前数据库中的每个索引和表各对应一行。此视图不支持 XML 索引。 此视图中不支持已分区表和索引。.
+keywords: [openGauss, SYSINDEXES]
+---
+
 # SYSINDEXES
 
 SYSINDEXES视图为当前数据库中的每个索引和表各对应一行。此视图不支持 XML 索引。 此视图中不支持已分区表和索引。

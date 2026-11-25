@@ -1,3 +1,8 @@
+---
+description: Introduces ALTER GROUP in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, ALTER GROUP]
+---
+
 # ALTER GROUP<a name="ZH-CN_TOPIC_0289900959"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136839_zh-cn_topic_0237122062_zh-cn_topic_0059777426_s9257704722b6426cbb9a62c26d7941f8"></a>

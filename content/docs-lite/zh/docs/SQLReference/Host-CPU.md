@@ -1,3 +1,8 @@
+---
+description: Host CPU列名称及描述如下表所示。.
+keywords: [openGauss, Host CPU]
+---
+
 # Host CPU<a name="ZH-CN_TOPIC_0000001260195073"></a>
 
 Host CPU列名称及描述如下表所示。

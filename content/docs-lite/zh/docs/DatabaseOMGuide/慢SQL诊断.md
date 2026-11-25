@@ -1,3 +1,8 @@
+---
+description: 在SQL语句执行性能不符合预期时，可以查看SQL语句执行信息，便于事后分析SQL语句执行时的行为，从而诊断SQL语句执行出现的相关问题。.
+keywords: [openGauss, 慢SQL诊断]
+---
+
 # 慢SQL诊断<a name="ZH-CN_TOPIC_0290917654"></a>
 
 ## 背景信息<a name="section11436171655914"></a>

@@ -1,3 +1,8 @@
+---
+description: Introduces record in openGauss, covering record类型的变量, 语法, 示例.
+keywords: [openGauss, record]
+---
+
 # record<a name="ZH-CN_TOPIC_0289899954"></a>
 
 ## record类型的变量<a name="zh-cn_topic_0283136936_zh-cn_topic_0237122215_section16992418680"></a>
@@ -11,7 +16,7 @@
 record类型的语法参见[图1](#zh-cn_topic_0283136936_zh-cn_topic_0237122215_fig092918316312)。
 
 **图 1**  record类型的语法<a name="zh-cn_topic_0283136936_zh-cn_topic_0237122215_fig092918316312"></a>  
-![](figures/record类型的语法.png "record类型的语法")
+![语法](figures/record类型的语法.png "record类型的语法")
 
 对以上语法格式的解释如下：
 

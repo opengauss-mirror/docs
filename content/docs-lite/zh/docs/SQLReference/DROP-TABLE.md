@@ -1,3 +1,8 @@
+---
+description: Introduces DROP TABLE in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP TABLE]
+---
+
 # DROP TABLE<a name="ZH-CN_TOPIC_0289900931"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136462_zh-cn_topic_0237122152_zh-cn_topic_0059778107_s74e2e8764aa64af1b093f8f68069bce6"></a>

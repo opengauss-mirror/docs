@@ -1,3 +1,8 @@
+---
+description: Introduces SET ROLE in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, SET ROLE]
+---
+
 # SET ROLE<a name="ZH-CN_TOPIC_0289900009"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137642_zh-cn_topic_0237122188_zh-cn_topic_0059777965_s1907f5458adb46ecbefdfb865dee04c1"></a>

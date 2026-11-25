@@ -1,3 +1,8 @@
+---
+description: GS\_PACKAGE系统表记录PACKAGE内的信息。.
+keywords: [openGauss, GS_PACKAGE]
+---
+
 # GS\_PACKAGE<a name="ZH-CN_TOPIC_0000001161323601"></a>
 
 GS\_PACKAGE系统表记录PACKAGE内的信息。

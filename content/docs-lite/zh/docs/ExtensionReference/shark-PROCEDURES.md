@@ -1,3 +1,8 @@
+---
+description: Introduces PROCEDURES in openGauss, covering .
+keywords: [openGauss, PROCEDURES]
+---
+
 # PROCEDURES
 
 所有存储过程

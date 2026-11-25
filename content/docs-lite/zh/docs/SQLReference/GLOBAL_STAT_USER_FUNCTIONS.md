@@ -1,3 +1,8 @@
+---
+description: 提供openGauss中各个节点的用户所创建的函数的状态的统计信息。.
+keywords: [openGauss, GLOBAL_STAT_USER_FUNCTIONS]
+---
+
 # GLOBAL\_STAT\_USER\_FUNCTIONS<a name="ZH-CN_TOPIC_0289900655"></a>
 
 提供openGauss中各个节点的用户所创建的函数的状态的统计信息。

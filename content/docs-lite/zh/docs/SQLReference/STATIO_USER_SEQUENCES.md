@@ -1,3 +1,8 @@
+---
+description: STATIO\_USER\_SEQUENCE视图显示当前节点的命名空间中所有用户关系表类型为序列的IO状态信息。.
+keywords: [openGauss, STATIO_USER_SEQUENCES]
+---
+
 # STATIO\_USER\_SEQUENCES<a name="ZH-CN_TOPIC_0289900254"></a>
 
 STATIO\_USER\_SEQUENCE视图显示当前节点的命名空间中所有用户关系表类型为序列的IO状态信息。

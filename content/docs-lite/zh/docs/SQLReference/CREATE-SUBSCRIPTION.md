@@ -1,3 +1,8 @@
+---
+description: 为当前数据库添加一个新的订阅。订阅名称必须与数据库中任何现有的订阅不同。 订阅表示到发布者的复制连接。因此，此命令不仅在本地系统表中添加定义，还会在发布端创建复制槽。 在运行此命令的事务提交时，将启动逻辑复制线程以复制新订阅的数据。.
+keywords: [openGauss, CREATE SUBSCRIPTION]
+---
+
 # CREATE SUBSCRIPTION<a name="ZH-CN_TOPIC_0000001195412354"></a>
 
 ## 功能描述<a name="section1941212243553"></a>

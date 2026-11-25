@@ -1,3 +1,8 @@
+---
+description: PERFORMANCE_SCHEMA.FILE_SUMMARY_BY_INSTANCE视图，通过对数据文件IO的统计，反映数据的IO性能，用以发现IO操作异常等性能问题。兼容Mysql的同名视图，仅在B库创建。.
+keywords: [openGauss, PERFORMANCE_SCHEMA.FILE_SUMMARY_BY_INSTANCE]
+---
+
 # PERFORMANCE_SCHEMA.FILE_SUMMARY_BY_INSTANCE
 
 PERFORMANCE_SCHEMA.FILE_SUMMARY_BY_INSTANCE视图，通过对数据文件IO的统计，反映数据的IO性能，用以发现IO操作异常等性能问题。兼容Mysql的同名视图，仅在B库创建。

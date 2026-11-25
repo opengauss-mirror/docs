@@ -1,3 +1,8 @@
+---
+description: 创建一个列加密密钥，该密钥可用于加密表中指定列。.
+keywords: [openGauss, CREATE COLUMN ENCRYPTION KEY]
+---
+
 # CREATE COLUMN ENCRYPTION KEY<a name="ZH-CN_TOPIC_0294528089"></a>
 
 ## 功能描述<a name="section1020475817135"></a>

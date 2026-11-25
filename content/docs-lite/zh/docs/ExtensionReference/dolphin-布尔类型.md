@@ -1,3 +1,8 @@
+---
+description: 相比于原始的openGauss，dolphin对于布尔类型的修改主要为：.
+keywords: [openGauss, 布尔类型]
+---
+
 # 布尔类型
 
 相比于原始的openGauss，dolphin对于布尔类型的修改主要为：

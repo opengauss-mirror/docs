@@ -1,3 +1,8 @@
+---
+description: PG\_RLSPOLICY系统表存储行级访问控制策略。.
+keywords: [openGauss, PG_RLSPOLICY]
+---
+
 # PG\_RLSPOLICY<a name="ZH-CN_TOPIC_0289900111"></a>
 
 PG\_RLSPOLICY系统表存储行级访问控制策略。

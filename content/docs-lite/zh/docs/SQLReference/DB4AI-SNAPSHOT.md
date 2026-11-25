@@ -1,3 +1,8 @@
+---
+description: SNAPSHOT表记录当前用户通过特性DB4AI.SNAPSHOT存储的快照。.
+keywords: [openGauss, DB4AI.SNAPSHOT]
+---
+
 # DB4AI.SNAPSHOT<a name="ZH-CN_TOPIC_0000001195271241"></a>
 
 SNAPSHOT表记录当前用户通过特性DB4AI.SNAPSHOT存储的快照。

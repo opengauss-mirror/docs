@@ -1,3 +1,8 @@
+---
+description: 令server端执行的存储过程报错跳出。返回值表示是否成功发送abort。.
+keywords: [openGauss, DBE_PLDEBUGGER.abort]
+---
+
 # DBE\_PLDEBUGGER.abort<a name="ZH-CN_TOPIC_0000001101338024"></a>
 
 令server端执行的存储过程报错跳出。返回值表示是否成功发送abort。

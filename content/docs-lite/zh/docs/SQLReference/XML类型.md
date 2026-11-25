@@ -1,3 +1,8 @@
+---
+description: Introduces XML类型 in openGauss, covering .
+keywords: [openGauss, XML类型]
+---
+
 # XML类型<a name="ZH-CN_TOPIC_0289900228"></a>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 

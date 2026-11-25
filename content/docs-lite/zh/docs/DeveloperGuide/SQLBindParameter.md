@@ -1,3 +1,8 @@
+---
+description: 将一条SQL语句中的一个参数标志和一个缓冲区绑定起来。.
+keywords: [openGauss, SQLBindParameter]
+---
+
 # SQLBindParameter<a name="ZH-CN_TOPIC_0242371441"></a>
 
 ## 功能描述<a name="zh-cn_topic_0238272887_zh-cn_topic_0237120417_zh-cn_topic_0059778788_s9699227cd3d64b43b542e3e3b9a52f37"></a>

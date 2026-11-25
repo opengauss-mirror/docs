@@ -1,3 +1,8 @@
+---
+description: 为了保证服务器和客户端之间的安全通讯，可以在服务器和客户端之间构建安全的SSH隧道。SSH是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。.
+keywords: [openGauss, 用SSH隧道进行安全的TCPIP连接]
+---
+
 # 用SSH隧道进行安全的TCP/IP连接<a name="ZH-CN_TOPIC_0289900939"></a>
 
 ## 背景信息<a name="zh-cn_topic_0283136790_zh-cn_topic_0237121093_zh-cn_topic_0059778333_section59301241111412"></a>

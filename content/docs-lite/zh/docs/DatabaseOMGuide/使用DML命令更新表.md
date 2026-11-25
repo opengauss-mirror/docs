@@ -1,3 +1,8 @@
+---
+description: openGauss支持标准的数据库操作语言（DML）命令，对表进行更新。.
+keywords: [openGauss, 使用DML命令更新表]
+---
+
 # 使用DML命令更新表<a name="ZH-CN_TOPIC_0289900189"></a>
 
 openGauss支持标准的数据库操作语言（DML）命令，对表进行更新。

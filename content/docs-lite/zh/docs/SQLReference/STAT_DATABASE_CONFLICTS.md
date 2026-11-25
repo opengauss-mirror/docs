@@ -1,3 +1,8 @@
+---
+description: 显示当前节点数据库冲突状态的统计信息。.
+keywords: [openGauss, STAT_DATABASE_CONFLICTS]
+---
+
 # STAT\_DATABASE\_CONFLICTS<a name="ZH-CN_TOPIC_0289900631"></a>
 
 显示当前节点数据库冲突状态的统计信息。

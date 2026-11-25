@@ -1,3 +1,8 @@
+---
+description: 参数说明： 允许维护人员输出一些与ADIO相关的日志，便于定位ADIO相关问题。开发人员专用，不建议普通用户使用。.
+keywords: [openGauss, 异步IO]
+---
+
 # 异步IO<a name="ZH-CN_TOPIC_0289900399"></a>
 
 ## enable\_adio\_debug<a name="zh-cn_topic_0283137248_zh-cn_topic_0237124704_zh-cn_topic_0059778686_se65f9465acfb40c68abb51eaaaf44836"></a>

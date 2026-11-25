@@ -1,3 +1,8 @@
+---
+description: Introduces MOT服务器优化：x86 in openGauss, covering BIOS, 操作系统环境设置, 网络.
+keywords: [openGauss, MOT服务器优化x86]
+---
+
 # MOT服务器优化：x86<a name="ZH-CN_TOPIC_0289900027"></a>
 
 通常情况下，数据库由以下组件绑定：

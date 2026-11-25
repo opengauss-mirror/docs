@@ -1,3 +1,8 @@
+---
+description: INDEX\_STATISTIC视图存储当前数据库的索引信息。.
+keywords: [openGauss, INDEX_STATISTIC]
+---
+
 # INDEX\_STATISTIC
 
 INDEX\_STATISTIC视图存储当前数据库的索引信息。

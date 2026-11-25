@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_STATIO\_SYS\_SEQUENCES视图显示各节点的命名空间中所有系统序列的IO状态信息。.
+keywords: [openGauss, GLOBAL_STATIO_SYS_SEQUENCES]
+---
+
 # GLOBAL\_STATIO\_SYS\_SEQUENCES<a name="ZH-CN_TOPIC_0289900855"></a>
 
 GLOBAL\_STATIO\_SYS\_SEQUENCES视图显示各节点的命名空间中所有系统序列的IO状态信息。

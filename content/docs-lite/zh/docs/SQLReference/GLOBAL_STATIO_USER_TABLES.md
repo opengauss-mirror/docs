@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_STATIO\_USER\_TABLES视图显示各节点的命名空间中所有用户关系表的IO状态信息。.
+keywords: [openGauss, GLOBAL_STATIO_USER_TABLES]
+---
+
 # GLOBAL\_STATIO\_USER\_TABLES<a name="ZH-CN_TOPIC_0289900491"></a>
 
 GLOBAL\_STATIO\_USER\_TABLES视图显示各节点的命名空间中所有用户关系表的IO状态信息。

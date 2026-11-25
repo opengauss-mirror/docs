@@ -1,3 +1,8 @@
+---
+description: 用于统计各节点会话线程的运行时间信息，及各执行阶段所消耗时间。.
+keywords: [openGauss, GLOBAL_SESSION_TIME]
+---
+
 # GLOBAL\_SESSION\_TIME<a name="ZH-CN_TOPIC_0289900209"></a>
 
 用于统计各节点会话线程的运行时间信息，及各执行阶段所消耗时间。

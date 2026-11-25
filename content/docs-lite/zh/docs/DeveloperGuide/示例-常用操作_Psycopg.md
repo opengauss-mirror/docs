@@ -1,3 +1,8 @@
+---
+description: Introduces 示例：常用操作 in openGauss, covering .
+keywords: [openGauss, 示例常用操作]
+---
+
 # 示例：常用操作<a name="ZH-CN_TOPIC_0000001127192087"></a>
 
 ```

@@ -1,3 +1,8 @@
+---
+description: 监控的所有语法支持基于openGauss的FDW表，包括下面的表或索引大小。此外，还存在用于监控MOT内存消耗的特殊函数，包括MOT全局内存、MOT本地内存和单个客户端会话。.
+keywords: [openGauss, MOT监控]
+---
+
 # MOT监控<a name="ZH-CN_TOPIC_0289900884"></a>
 
 监控的所有语法支持基于openGauss的FDW表，包括下面的表或索引大小。此外，还存在用于监控MOT内存消耗的特殊函数，包括MOT全局内存、MOT本地内存和单个客户端会话。
@@ -111,5 +116,5 @@ select * from mot_session_memory_detail()
 
 结果如下。
 
-![](figures/zh-cn_image_0289900225.png)
+![会话内存](figures/zh-cn_image_0289900225.png)
 

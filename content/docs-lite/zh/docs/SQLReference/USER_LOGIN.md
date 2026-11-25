@@ -1,3 +1,8 @@
+---
+description: USER\_LOGIN用来记录用户登录和退出次数的相关信息。.
+keywords: [openGauss, USER_LOGIN]
+---
+
 # USER\_LOGIN<a name="ZH-CN_TOPIC_0289900488"></a>
 
 USER\_LOGIN用来记录用户登录和退出次数的相关信息。

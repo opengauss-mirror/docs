@@ -1,3 +1,8 @@
+---
+description: Introduces CREATE ROW LEVEL SECURITY POLICY in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, CREATE ROW LEVEL SECURITY POLICY]
+---
+
 # CREATE ROW LEVEL SECURITY POLICY<a name="ZH-CN_TOPIC_0289901001"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137345_zh-cn_topic_0237122109_section196521854173211"></a>

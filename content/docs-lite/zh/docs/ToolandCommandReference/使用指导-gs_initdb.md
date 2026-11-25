@@ -1,3 +1,8 @@
+---
+description: 在安装时，推荐使用-D参数调用gs\_initdb初始化数据库。如果由于故障恢复等原因，需要重新初始化一个数据库，可以通过执行gs\_initdb来完成。.
+keywords: [openGauss, 使用指导]
+---
+
 # 使用指导<a name="ZH-CN_TOPIC_0294749037"></a>
 
 ## 背景信息<a name="zh-cn_topic_0059777429_s6837c9e0a8604641a9462dd6f720f91d"></a>

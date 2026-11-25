@@ -1,3 +1,8 @@
+---
+description: Wait Classes by Total Wait Time列名称及描述如下表所示。.
+keywords: [openGauss, Wait Classes by Total Wait Time]
+---
+
 # Wait Classes by Total Wait Time<a name="ZH-CN_TOPIC_0000001259835121"></a>
 
 Wait Classes by Total Wait Time列名称及描述如下表所示。

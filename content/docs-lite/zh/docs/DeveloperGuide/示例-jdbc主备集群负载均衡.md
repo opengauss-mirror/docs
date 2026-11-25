@@ -1,3 +1,8 @@
+---
+description: Describes the 示例：jdbc主备集群负载均衡 interface in openGauss, covering its definition and usage.
+keywords: [openGauss, JDBC, 示例jdbc主备集群负载均衡]
+---
+
 # 示例：jdbc主备集群负载均衡<a name="ZH-CN_TOPIC_0000001151910145"></a>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 

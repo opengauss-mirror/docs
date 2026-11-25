@@ -1,3 +1,8 @@
+---
+description: PL/pgSQL是一种可载入的过程语言。.
+keywords: [openGauss, PLpgSQL语言函数]
+---
+
 # PL/pgSQL语言函数<a name="ZH-CN_TOPIC_0289901009"></a>
 
 PL/pgSQL是一种可载入的过程语言。

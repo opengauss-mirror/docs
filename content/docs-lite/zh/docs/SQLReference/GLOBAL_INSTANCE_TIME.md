@@ -1,3 +1,8 @@
+---
+description: 提供openGauss中所有正常节点下的各种时间消耗信息（时间类型见instance\_time视图）。.
+keywords: [openGauss, GLOBAL_INSTANCE_TIME]
+---
+
 # GLOBAL\_INSTANCE\_TIME<a name="ZH-CN_TOPIC_0289900975"></a>
 
 提供openGauss中所有正常节点下的各种时间消耗信息（时间类型见instance\_time视图）。

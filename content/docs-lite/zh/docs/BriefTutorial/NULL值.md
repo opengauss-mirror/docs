@@ -1,3 +1,8 @@
+---
+description: NULL值代表未知数据。无法比较NULL和0，因为它们是不等价的。.
+keywords: [openGauss, NULL值]
+---
+
 # NULL值<a name="ZH-CN_TOPIC_0000001210141892"></a>
 
 NULL值代表未知数据。无法比较NULL和0，因为它们是不等价的。

@@ -1,3 +1,8 @@
+---
+description: 增加、修改和删除一个现有server的参数。已有server可以从pg\_foreign\_server系统表中查询。.
+keywords: [openGauss, ALTER SERVER]
+---
+
 # ALTER SERVER<a name="ZH-CN_TOPIC_0289900400"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136932_section7100616165720"></a>

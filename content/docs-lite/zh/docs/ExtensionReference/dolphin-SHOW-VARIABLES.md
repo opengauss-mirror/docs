@@ -1,3 +1,8 @@
+---
+description: SHOW VARIABLES显示系统变量的值。 该语句不需要任何特权。它仅需要连接到服务器的能力。.
+keywords: [openGauss, SHOW VARIABLES]
+---
+
 # SHOW VARIABLES
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>

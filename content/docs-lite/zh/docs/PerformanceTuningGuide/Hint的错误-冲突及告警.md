@@ -1,3 +1,8 @@
+---
+description: Plan Hint的结果会体现在计划的变化上，可以通过explain来查看变化。.
+keywords: [openGauss, Hint的错误冲突及告警]
+---
+
 # Hint的错误、冲突及告警<a name="ZH-CN_TOPIC_0289899816"></a>
 
 Plan Hint的结果会体现在计划的变化上，可以通过explain来查看变化。

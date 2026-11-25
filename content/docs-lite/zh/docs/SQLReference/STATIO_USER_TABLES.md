@@ -1,3 +1,8 @@
+---
+description: STATIO\_USER\_TABLES视图显示命名空间中所有用户关系表的IO状态信息。.
+keywords: [openGauss, STATIO_USER_TABLES]
+---
+
 # STATIO\_USER\_TABLES<a name="ZH-CN_TOPIC_0289900270"></a>
 
 STATIO\_USER\_TABLES视图显示命名空间中所有用户关系表的IO状态信息。

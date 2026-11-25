@@ -1,3 +1,8 @@
+---
+description: 显示各节点命名空间中系统表的事务状态信息。.
+keywords: [openGauss, GLOBAL_STAT_XACT_SYS_TABLES]
+---
+
 # GLOBAL\_STAT\_XACT\_SYS\_TABLES<a name="ZH-CN_TOPIC_0289900532"></a>
 
 显示各节点命名空间中系统表的事务状态信息。

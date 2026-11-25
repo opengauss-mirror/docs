@@ -1,3 +1,8 @@
+---
+description: Introduces AI特性函数 in openGauss, covering .
+keywords: [openGauss, AI特性函数]
+---
+
 # AI特性函数<a name="ZH-CN_TOPIC_0303599451"></a>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 

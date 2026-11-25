@@ -1,3 +1,8 @@
+---
+description: 此方法用于返回新的cursor对象。.
+keywords: [openGauss, connection.cursor]
+---
+
 # connection.cursor\(\)<a name="ZH-CN_TOPIC_0000001127310747"></a>
 
 ## 功能描述<a name="section5708152714306"></a>

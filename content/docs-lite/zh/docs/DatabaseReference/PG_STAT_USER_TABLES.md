@@ -1,3 +1,8 @@
+---
+description: PG\_STAT\_USER\_TABLES视图显示所有命名空间中用户自定义普通表和toast表的状态信息。.
+keywords: [openGauss, PG_STAT_USER_TABLES]
+---
+
 # PG\_STAT\_USER\_TABLES<a name="ZH-CN_TOPIC_0289900653"></a>
 
 PG\_STAT\_USER\_TABLES视图显示所有命名空间中用户自定义普通表和toast表的状态信息。

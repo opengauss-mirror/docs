@@ -1,3 +1,8 @@
+---
+description: Introduces core问题定位 in openGauss, covering .
+keywords: [openGauss, core问题定位]
+---
+
 # core问题定位<a name="ZH-CN_TOPIC_0289900556"></a>
 
 -   **[磁盘满故障引起的core问题](磁盘满故障引起的core问题.md)**  

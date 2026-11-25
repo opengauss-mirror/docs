@@ -1,3 +1,8 @@
+---
+description: Introduces ALTER USER MAPPING in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, ALTER USER MAPPING]
+---
+
 # ALTER USER MAPPING<a name="ZH-CN_TOPIC_0289900415"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137333_section38351127909"></a>

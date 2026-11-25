@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 3.0.0开始引入。.
+keywords: [openGauss, 慢SQL根因分析]
+---
+
 # 慢SQL根因分析<a name="ZH-CN_TOPIC_0000001263251657"></a>
 
 ## 可获得性<a name="section17365142913365"></a>

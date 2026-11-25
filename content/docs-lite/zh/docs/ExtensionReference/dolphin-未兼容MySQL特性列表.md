@@ -1,3 +1,8 @@
+---
+description: dolphin插件的目标是兼容MySQL数据库的语法、功能等。但是在实际使用对比MySQL的过程中，发现部分MySQL的表现并不符合使用习惯，在此列出。.
+keywords: [openGauss, 未兼容MySQL特性列表]
+---
+
 # 未兼容MySQL特性列表
 
 dolphin插件的目标是兼容MySQL数据库的语法、功能等。但是在实际使用对比MySQL的过程中，发现部分MySQL的表现并不符合使用习惯，在此列出。

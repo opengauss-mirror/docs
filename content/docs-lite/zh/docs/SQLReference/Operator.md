@@ -1,3 +1,8 @@
+---
+description: - OPERATOR\_HISTORY\_TABLE.
+keywords: [openGauss, Operator]
+---
+
 # Operator<a name="ZH-CN_TOPIC_0289900478"></a>
 
 -   **[OPERATOR\_HISTORY\_TABLE](OPERATOR_HISTORY_TABLE.md)**  

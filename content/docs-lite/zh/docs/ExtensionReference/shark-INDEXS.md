@@ -1,3 +1,8 @@
+---
+description: Introduces INDEXS in openGauss, covering .
+keywords: [openGauss, INDEXS]
+---
+
 # INDEXS
 
 返回所有索引。

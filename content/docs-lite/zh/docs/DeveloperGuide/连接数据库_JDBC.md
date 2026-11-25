@@ -1,3 +1,8 @@
+---
+description: 在创建数据库连接之后，才能使用它来执行SQL语句操作数据。.
+keywords: [openGauss, 连接数据库]
+---
+
 # 连接数据库<a name="ZH-CN_TOPIC_0289900896"></a>
 
 在创建数据库连接之后，才能使用它来执行SQL语句操作数据。

@@ -1,3 +1,8 @@
+---
+description: 纵向扩容即为同一台机器添加额外的核以增加算力。纵向扩容是传统上为单对控制器和多核的机器增加算力的常见形式。纵向扩容架构受限于控制器的可扩展性。.
+keywords: [openGauss, MOT纵向扩容架构]
+---
+
 # MOT纵向扩容架构<a name="ZH-CN_TOPIC_0289899834"></a>
 
 纵向扩容即为同一台机器添加额外的核以增加算力。纵向扩容是传统上为单对控制器和多核的机器增加算力的常见形式。纵向扩容架构受限于控制器的可扩展性。
@@ -38,7 +43,7 @@ MOT遵循并利用了openGauss的标准扩展机制——外部数据封装（FD
 openGauss依赖PostgreSQL外部数据封装和索引支持，因此SQL完全覆盖，包括存储过程、用户定义函数、系统函数调用。
 
 **图 1**  MOT架构<a name="zh-cn_topic_0283136704_zh-cn_topic_0280525153_fig30085468"></a>  
-![](figures/MOT架构.png "MOT架构")
+![使用外部数据封装（FDW）进行集成](figures/MOT架构.png "MOT架构")
 
 上图中绿色表示MOT引擎，蓝色表示现有的openGauss组件。由此可见，FDW在MOT引擎和openGauss组件之间进行中介。
 
@@ -69,12 +74,12 @@ openGauss和MOT在以下多核系统上进行了测试，性能可扩展性良�
 以2020年6月的TPC-C基准测试了一台泰山2480服务器上的openGauss MOT数据库（4路ARM/鲲鹏服务器，吞吐量：480万tpmC）。下图显示了MOT数据库的近线性性质，即MOT数据库通过增加核数显著提高性能。
 
 **图 2**  ARM上的TPC-C（256核）<a name="zh-cn_topic_0283136704_zh-cn_topic_0280525153_fig13530558"></a>  
-![](figures/ARM上的TPC-C（256核）.png "ARM上的TPC-C（256核）")
+![结果：线性扩容](figures/ARM上的TPC-C（256核）.png "ARM上的TPC-C（256核）")
 
 下面是另一个测试示例，一台基于x86的服务器上也显示了CPU使用率。
 
 **图 3**  tpmC 对比CPU使用率<a name="zh-cn_topic_0283136704_zh-cn_topic_0280525153_fig34899073"></a>  
-![](figures/tpmC-对比CPU使用率.png "tpmC-对比CPU使用率")
+![结果：线性扩容](figures/tpmC-对比CPU使用率.png "tpmC-对比CPU使用率")
 
 图表显示，MOT性能提高与核数增加有显著的相关性。随着核数的增加，MOT对CPU的消耗也越来越大。其他行业解决方案不能提高MOT性能，有时性能甚至略有下降，影响客户的CAPEX和OPEX支出以及运营效率。这是数据库行业的公认问题。
 

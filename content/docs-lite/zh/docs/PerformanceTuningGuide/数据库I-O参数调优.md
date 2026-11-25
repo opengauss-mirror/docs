@@ -1,3 +1,8 @@
+---
+description: - pagewriter\_sleep：增量checkpoint模式，控制后端写线程pagewriter刷页频率，当脏页占据shared\_buffers的比例达到dirty\_page\_percent\_max时，每批脏页数量以设定的max\_io\_capacity计算出的值刷页。pagewriter线程刷页用于推进recovery点，设置时间较长时，会导致recovery点推进慢，宕机.
+keywords: [openGauss, 数据库IO参数调优]
+---
+
 # 数据库I/O参数调优<a name="ZH-CN_TOPIC_0000001149231237"></a>
 
 ## I/O相关参数<a name="section181599115402"></a>

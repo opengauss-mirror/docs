@@ -1,3 +1,8 @@
+---
+description: java.sql.DatabaseMetaData是数据库对象定义接口。.
+keywords: [openGauss, JDBC, DatabaseMetaData]
+---
+
 # java.sql.DatabaseMetaData<a name="ZH-CN_TOPIC_0289900323"></a>
 
 java.sql.DatabaseMetaData是数据库对象定义接口。

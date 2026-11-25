@@ -1,3 +1,8 @@
+---
+description: 提供当前集节点下的各种时间消耗信息，主要分为以下类型:.
+keywords: [openGauss, GS_INSTANCE_TIME]
+---
+
 # GS\_INSTANCE\_TIME<a name="ZH-CN_TOPIC_0289900080"></a>
 
 提供当前集节点下的各种时间消耗信息，主要分为以下类型:

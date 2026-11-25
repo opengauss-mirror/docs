@@ -1,3 +1,8 @@
+---
+description: Introduces lo_unlink in openGauss, covering 功能描述, 原型, 参数.
+keywords: [openGauss, lo_unlink]
+---
+
 # lo_unlink<a name="ZH-CN_TOPIC_0242380600"></a>
 
 ## 功能描述<a name="zh-cn_topic_0241735619_section696285173724"></a>

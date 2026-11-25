@@ -1,3 +1,8 @@
+---
+description: - SNAPSHOT.SNAPSHOT.
+keywords: [openGauss, WDR Snapshot原信息]
+---
+
 # WDR Snapshot原信息<a name="ZH-CN_TOPIC_0289900726"></a>
 
 -   **[SNAPSHOT.SNAPSHOT](SNAPSHOT-SNAPSHOT.md)**  

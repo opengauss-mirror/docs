@@ -1,3 +1,8 @@
+---
+description: PG\_RLSPOLICIES视图提供查询行级访问控制策略。.
+keywords: [openGauss, PG_RLSPOLICIES]
+---
+
 # PG\_RLSPOLICIES<a name="ZH-CN_TOPIC_0289900609"></a>
 
 PG\_RLSPOLICIES视图提供查询行级访问控制策略。

@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_PLANCACHE\_STATUS视图显示GPC全局计划缓存状态信息。.
+keywords: [openGauss, GLOBAL_PLANCACHE_STATUS]
+---
+
 # GLOBAL\_PLANCACHE\_STATUS<a name="ZH-CN_TOPIC_0297927201"></a>
 
 GLOBAL\_PLANCACHE\_STATUS视图显示GPC全局计划缓存状态信息。

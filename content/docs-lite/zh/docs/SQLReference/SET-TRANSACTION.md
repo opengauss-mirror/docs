@@ -1,3 +1,8 @@
+---
+description: 为事务设置特性。事务特性包括事务隔离级别、事务访问模式\(读/写或者只读\)。可以设置当前事务的特性（LOCAL\)，也可以设置会话的默认事务特性（SESSION），也可以设置当前数据库的全局会话的事务特性（GLOBAL）。.
+keywords: [openGauss, SET TRANSACTION]
+---
+
 # SET TRANSACTION<a name="ZH-CN_TOPIC_0289900810"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137515_zh-cn_topic_0237122190_zh-cn_topic_0059778135_se7890b9b6c9749168d76cd4ce38ee49f"></a>

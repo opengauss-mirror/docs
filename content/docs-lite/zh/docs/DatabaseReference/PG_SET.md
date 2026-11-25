@@ -1,3 +1,8 @@
+---
+description: PG\_SET系统表存储SET数据类型定义的元数据。.
+keywords: [openGauss, PG_SET]
+---
+
 # PG\_SET<a name="ZH-CN_TOPIC_0000001319136330"></a>
 
 PG\_SET系统表存储SET数据类型定义的元数据。

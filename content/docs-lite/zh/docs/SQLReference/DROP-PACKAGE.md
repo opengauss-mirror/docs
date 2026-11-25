@@ -1,3 +1,8 @@
+---
+description: 删除已存在的PACKAGE或者PACKAGE BODY。.
+keywords: [openGauss, DROP PACKAGE]
+---
+
 # DROP PACKAGE<a name="ZH-CN_TOPIC_0000001114052560"></a>
 
 ## 功能描述<a name="section37715281291"></a>

@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_LOCKS视图用于查看各节点各打开事务所持有的锁信息。.
+keywords: [openGauss, GLOBAL_LOCKS]
+---
+
 # GLOBAL\_LOCKS<a name="ZH-CN_TOPIC_0289899983"></a>
 
 GLOBAL\_LOCKS视图用于查看各节点各打开事务所持有的锁信息。

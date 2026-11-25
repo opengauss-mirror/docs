@@ -1,3 +1,8 @@
+---
+description: Introduces GS\_WLM\_USER\_INFO in openGauss, covering .
+keywords: [openGauss, GS_WLM_USER_INFO]
+---
+
 # GS\_WLM\_USER\_INFO<a name="ZH-CN_TOPIC_0289901012"></a>
 
 用户统计信息视图。

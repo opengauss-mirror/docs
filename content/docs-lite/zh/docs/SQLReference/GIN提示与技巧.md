@@ -1,3 +1,8 @@
+---
+description: Introduces GIN提示与技巧 in openGauss, covering .
+keywords: [openGauss, GIN提示与技巧]
+---
+
 # GIN提示与技巧<a name="ZH-CN_TOPIC_0289900456"></a>
 
 创建vs插入

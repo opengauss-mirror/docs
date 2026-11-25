@@ -1,3 +1,8 @@
+---
+description: Cache IO Stats包含User table和User index两张表，列名称及描述如下所示。.
+keywords: [openGauss, Cache IO Stats]
+---
+
 # Cache IO Stats<a name="ZH-CN_TOPIC_0000001260075117"></a>
 
 Cache IO Stats包含User table和User index两张表，列名称及描述如下所示。

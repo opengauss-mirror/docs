@@ -1,3 +1,8 @@
+---
+description: - Embedding：支持与DeepSeek、Qwen、盘古大模型对接，将高维数据转化为向量。.
+keywords: [openGauss, 向量存储引擎]
+---
+
 # 向量存储引擎
 
 ## 架构设计
@@ -17,7 +22,7 @@ openGauss DataVec 深度结合鲲鹏硬件，通过量化压缩算法、Rerank�
 
 **图 1**  BoostKit 加速检索
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/boostkit.png" height=600px style="width: 750;height: 600;">
+    <img src="figures/boostkit.png" alt="BoostKit加速" height=600px style="width: 750;height: 600;">
 </div>
 
 ### PQ量化压缩
@@ -34,7 +39,7 @@ openGauss DataVec 深度结合鲲鹏硬件，通过量化压缩算法、Rerank�
 
 **图 2**  PQ码本训练<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574113"></a>
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/PQTrain-datavec.png" style>
+    <img src="figures/PQTrain-datavec.png" alt="PQ码本训练" style>
 </div>
 
 #### PQ检索
@@ -43,7 +48,7 @@ openGauss DataVec 深度结合鲲鹏硬件，通过量化压缩算法、Rerank�
 
 **图 3**  PQ检索<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574113"></a>
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/PQSearch-datavec.png" style>
+    <img src="figures/PQSearch-datavec.png" alt="PQ检索" style>
 </div>
 
 ### 分层导航+PQ融合索引
@@ -62,7 +67,7 @@ DataVec还能够同时处理标量数据（如数值、类别）和向量数据�
 
 **图 4**  融合查询
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/hybridsearch.png" height=400px style="width: 900;height:500;">
+    <img src="figures/hybridsearch.png" alt="标量向量混合查询" height=400px style="width: 900;height:500;">
 </div>
 
 - SQL Join ：支持相似性搜索JOIN关系型数据。
@@ -79,7 +84,7 @@ ANN索引页面中在每个Element Tuple尾部附加xmin和xmax字段，从而�
 
 **图 5**  ANN原位更新索引页面<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574113"></a>
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/SupportUstore-datavec.png" height=400px style="width: 900;height:500;">
+    <img src="figures/SupportUstore-datavec.png" alt="支持原地更新引擎" height=400px style="width: 900;height:500;">
 </div>
 
 ## 并行构建索引
@@ -91,5 +96,5 @@ ANN支持并行构建索引，通过将数据集分成若干个子集分配到�
 
 **图 6**  ANN并行索引构建<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574113"></a>
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/ParallelBuild-datavec.png" height=600px style="width: 750;height: 600;">
+    <img src="figures/ParallelBuild-datavec.png" alt="并行构建索引" height=600px style="width: 750;height: 600;">
 </div>

@@ -1,3 +1,8 @@
+---
+description: java.sql.Statement是SQL语句接口。.
+keywords: [openGauss, JDBC, Statement]
+---
+
 # java.sql.Statement<a name="ZH-CN_TOPIC_0289900015"></a>
 
 java.sql.Statement是SQL语句接口。

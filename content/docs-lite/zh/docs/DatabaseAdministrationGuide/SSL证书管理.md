@@ -1,3 +1,8 @@
+---
+description: openGauss默认配置了通过openssl生成的安全证书、私钥。并且提供证书替换的接口，方便用户进行证书的替换。.
+keywords: [openGauss, SSL证书管理]
+---
+
 # SSL证书管理<a name="ZH-CN_TOPIC_0289900057"></a>
 
 openGauss默认配置了通过openssl生成的安全证书、私钥。并且提供证书替换的接口，方便用户进行证书的替换。

@@ -1,3 +1,8 @@
+---
+description: 用于收集与数据库中普通表内容相关的统计信息，统计结果存储在系统表PG\_STATISTIC下。执行计划生成器会使用这些统计数据，以确定最有效的执行计划。.
+keywords: [openGauss, ANALYZE  ANALYSE]
+---
+
 # ANALYZE | ANALYSE<a name="ZH-CN_TOPIC_0289900881"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136969_zh-cn_topic_0237122086_zh-cn_topic_0059779340_s3b85e88124004279b0fccf70b5953039"></a>

@@ -1,3 +1,8 @@
+---
+description: 磁盘表直接转换为MOT尚不能实现，这意味着尚不存在将基于磁盘的表转换为MOT的ALTER TABLE语句。.
+keywords: [openGauss, 将磁盘表转换为MOT]
+---
+
 # 将磁盘表转换为MOT<a name="ZH-CN_TOPIC_0289899851"></a>
 
 磁盘表直接转换为MOT尚不能实现，这意味着尚不存在将基于磁盘的表转换为MOT的ALTER TABLE语句。

@@ -1,3 +1,8 @@
+---
+description: 本章节只包含shark插件新增的系统信息函数。.
+keywords: [openGauss, shark-系统信息函数]
+---
+
 # shark-系统信息函数
 
 本章节只包含shark插件新增的系统信息函数。

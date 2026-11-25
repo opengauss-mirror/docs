@@ -1,3 +1,8 @@
+---
+description: 得到各节点pg\_catalog、information\_schema以及pg\_toast模式下所有系统表的统计信息。.
+keywords: [openGauss, GLOBAL_STAT_SYS_TABLES]
+---
+
 # GLOBAL\_STAT\_SYS\_TABLES<a name="ZH-CN_TOPIC_0289900682"></a>
 
 得到各节点pg\_catalog、information\_schema以及pg\_toast模式下所有系统表的统计信息。

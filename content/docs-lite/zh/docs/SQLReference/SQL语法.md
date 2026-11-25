@@ -1,3 +1,8 @@
+---
+description: Introduces SQL语法 in openGauss, covering .
+keywords: [openGauss, SQL语法]
+---
+
 # SQL语法<a name="ZH-CN_TOPIC_0289900416"></a>
 
 - **[ABORT](ABORT.md)**  

@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 1.0.0版本开始引入。.
+keywords: [openGauss, CBO优化器]
+---
+
 # CBO优化器<a name="ZH-CN_TOPIC_0000001152075187"></a>
 
 ## 可获得性<a name="section3480125215575"></a>

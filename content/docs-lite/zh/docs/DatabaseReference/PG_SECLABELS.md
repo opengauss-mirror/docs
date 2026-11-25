@@ -1,3 +1,8 @@
+---
+description: PG\_SECLABELS视图提供关于安全标签的信息。.
+keywords: [openGauss, PG_SECLABELS]
+---
+
 # PG\_SECLABELS<a name="ZH-CN_TOPIC_0289900914"></a>
 
 PG\_SECLABELS视图提供关于安全标签的信息。

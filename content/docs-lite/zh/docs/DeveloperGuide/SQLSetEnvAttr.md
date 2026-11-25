@@ -1,3 +1,8 @@
+---
+description: Introduces SQLSetEnvAttr in openGauss, covering 功能描述, 原型, 参数.
+keywords: [openGauss, SQLSetEnvAttr]
+---
+
 # SQLSetEnvAttr<a name="ZH-CN_TOPIC_0242371456"></a>
 
 ## 功能描述<a name="zh-cn_topic_0238272902_zh-cn_topic_0237120432_zh-cn_topic_0059778852_s93fc7574cf154704b8cff271a57b9601"></a>

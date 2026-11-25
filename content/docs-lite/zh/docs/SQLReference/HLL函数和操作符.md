@@ -1,3 +1,8 @@
+---
+description: - hll\_hash\_boolean\(bool\).
+keywords: [openGauss, HLL函数和操作符]
+---
+
 # HLL函数和操作符<a name="ZH-CN_TOPIC_0309006541"></a>
 
 ## 哈希函数<a name="section161615718554"></a>

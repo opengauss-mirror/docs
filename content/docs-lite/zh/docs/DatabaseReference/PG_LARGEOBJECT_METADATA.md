@@ -1,3 +1,8 @@
+---
+description: PG\_LARGEOBJECT\_METADATA系统表存储与大数据相关的元数据。实际的大对象数据存储在PG\_LARGEOBJECT里。.
+keywords: [openGauss, PG_LARGEOBJECT_METADATA]
+---
+
 # PG\_LARGEOBJECT\_METADATA<a name="ZH-CN_TOPIC_0289900891"></a>
 
 PG\_LARGEOBJECT\_METADATA系统表存储与大数据相关的元数据。实际的大对象数据存储在PG\_LARGEOBJECT里。

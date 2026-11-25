@@ -1,3 +1,8 @@
+---
+description: 通过pg\_config工具打印的当前所安装数据库的配置参数信息，可用于找到与数据库相连接的软件包所对应的头文件和库。.
+keywords: [openGauss, pg_config]
+---
+
 # pg\_config<a name="ZH-CN_TOPIC_0294748978"></a>
 
 ## 功能介绍<a name="section88358281478"></a>

@@ -1,3 +1,8 @@
+---
+description: PG\_USER\_MAPPING系统表存储从本地用户到远程的映射。.
+keywords: [openGauss, PG_USER_MAPPING]
+---
+
 # PG\_USER\_MAPPING<a name="ZH-CN_TOPIC_0289900512"></a>
 
 PG\_USER\_MAPPING系统表存储从本地用户到远程的映射。

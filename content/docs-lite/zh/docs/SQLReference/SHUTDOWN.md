@@ -1,3 +1,8 @@
+---
+description: SHUTDOWN将关闭当前连接的数据库节点。.
+keywords: [openGauss, SHUTDOWN]
+---
+
 # SHUTDOWN<a name="ZH-CN_TOPIC_0289900099"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136791_zh-cn_topic_0237122191_zh-cn_topic_0059779163_s812131d8918641df9772c998b753f87e"></a>

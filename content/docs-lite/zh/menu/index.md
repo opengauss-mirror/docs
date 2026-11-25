@@ -1,5 +1,7 @@
 ---
 headless: true
+description: openGauss 轻量版（docs-lite）中文文档的导航目录索引，汇总发行说明与各功能模块文档入口。
+keywords: [openGauss, 轻量版, 文档导航, 发行说明]
 ---
 
 

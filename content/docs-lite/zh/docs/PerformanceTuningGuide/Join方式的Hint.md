@@ -1,3 +1,8 @@
+---
+description: 指明Join使用的方法，可以为Nested Loop，Hash Join和Merge Join。.
+keywords: [openGauss, Join方式的Hint]
+---
+
 # Join方式的Hint<a name="ZH-CN_TOPIC_0289899985"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137375_zh-cn_topic_0237121534_section290819468377"></a>
@@ -31,7 +36,7 @@ select /*+ nestloop(store_sales store_returns item) */ i_product_name product_na
 
 该hint表示：生成store\_sales，store\_returns和item三表的结果集时，最后的两表关联使用nestloop。生成计划如下所示：
 
-![](figures/zh-cn_image_0289899972.png)
+![示例](figures/zh-cn_image_0289899972.png)
 
 >![](public_sys-resources/icon-notice.gif) **须知：**
 >

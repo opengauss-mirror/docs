@@ -1,3 +1,8 @@
+---
+description: 视图包含各节点本事务内函数执行的统计信息。.
+keywords: [openGauss, GLOBAL_STAT_XACT_USER_FUNCTIONS]
+---
+
 # GLOBAL\_STAT\_XACT\_USER\_FUNCTIONS<a name="ZH-CN_TOPIC_0289900424"></a>
 
 视图包含各节点本事务内函数执行的统计信息。

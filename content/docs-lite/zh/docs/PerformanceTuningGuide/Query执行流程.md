@@ -1,9 +1,14 @@
+---
+description: SQL引擎从接受SQL语句到执行SQL语句需要经历的步骤如图1和表1所示。其中，.
+keywords: [openGauss, Query执行流程]
+---
+
 # Query执行流程<a name="ZH-CN_TOPIC_0289900900"></a>
 
 SQL引擎从接受SQL语句到执行SQL语句需要经历的步骤如[图1](#zh-cn_topic_0283137202_fig1295418215491)和[表1](#zh-cn_topic_0283137202_zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_table11198623152535)所示。其中，红色字体部分为DBA可以介入实施调优的环节。
 
 **图 1**  SQL引擎执行查询类SQL语句的流程<a name="zh-cn_topic_0283137202_fig1295418215491"></a>  
-![](figures/SQL引擎执行查询类SQL语句的流程.png "SQL引擎执行查询类SQL语句的流程")
+![Query执行流程](figures/SQL引擎执行查询类SQL语句的流程.png "SQL引擎执行查询类SQL语句的流程")
 
 **表 1**  SQL引擎执行查询类SQL语句的步骤说明
 

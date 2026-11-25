@@ -1,3 +1,8 @@
+---
+description: Dify是一个开源的大语言模型(LLM)应用开发平台。借助检索增强(RAG)引擎，可以对从智能体到复杂人工智能工作流程的大语言模型应用进行编排。.
+keywords: [openGauss, 使用openGauss部署Dify]
+---
+
 # 使用openGauss部署Dify
 Dify是一个开源的大语言模型(LLM)应用开发平台。借助检索增强(RAG)引擎，可以对从智能体到复杂人工智能工作流程的大语言模型应用进行编排。
 本文着重介绍如何部署Dify，并使用openGauss DataVec向量数据库作为RAG引擎语料库。
@@ -18,7 +23,7 @@ cd /usr/local/dify/dify-1.1.0/docker
 cp .env.example .env
 vim .env
 ```
-![](./figures/ENV.png)
+![配置参数](./figures/ENV.png)
 
 ### 启动容器
 执行以下命令，自动拉取对应Docker镜像并启动服务。
@@ -26,7 +31,7 @@ vim .env
 docker-compose up -d
 ```
 容器启动后执行docker ps确保服务都正常运行，如下图所示：
-![](./figures/Docker.png)
+![启动容器](./figures/Docker.png)
 
 ## AI服务集成
 ### 创建用户并登录

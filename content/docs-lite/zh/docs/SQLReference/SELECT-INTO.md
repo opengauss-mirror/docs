@@ -1,3 +1,8 @@
+---
+description: SELECT INTO用于根据查询结果创建一个新表，并且将查询到的数据插入到新表中。.
+keywords: [openGauss, SELECT INTO]
+---
+
 # SELECT INTO<a name="ZH-CN_TOPIC_0289900598"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137419_zh-cn_topic_0237122185_zh-cn_topic_0059779381_s8acfcbcb82b947e08be0c1bb0de2de86"></a>

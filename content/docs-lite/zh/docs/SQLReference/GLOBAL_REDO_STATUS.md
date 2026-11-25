@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_REDO\_STATUS视图显示openGauss实例的日志回放情况。.
+keywords: [openGauss, GLOBAL_REDO_STATUS]
+---
+
 # GLOBAL\_REDO\_STATUS<a name="ZH-CN_TOPIC_0289900969"></a>
 
 GLOBAL\_REDO\_STATUS视图显示openGauss实例的日志回放情况。

@@ -1,3 +1,8 @@
+---
+description: PG\_STAT\_XACT\_USER\_TABLES视图显示命名空间中用户表的事务状态信息。.
+keywords: [openGauss, PG_STAT_XACT_USER_TABLES]
+---
+
 # PG\_STAT\_XACT\_USER\_TABLES<a name="ZH-CN_TOPIC_0289900075"></a>
 
 PG\_STAT\_XACT\_USER\_TABLES视图显示命名空间中用户表的事务状态信息。

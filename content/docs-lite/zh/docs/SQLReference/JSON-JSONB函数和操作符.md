@@ -1,3 +1,8 @@
+---
+description: JSON/JSONB数据类型参考JSON/JSONB类型。.
+keywords: [openGauss, JSONJSONB函数和操作符]
+---
+
 # JSON/JSONB函数和操作符
 
 JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。

@@ -1,3 +1,8 @@
+---
+description: PG\_OPFAMILY系统表定义操作符族。.
+keywords: [openGauss, PG_OPFAMILY]
+---
+
 # PG\_OPFAMILY<a name="ZH-CN_TOPIC_0289900724"></a>
 
 PG\_OPFAMILY系统表定义操作符族。

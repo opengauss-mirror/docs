@@ -1,3 +1,8 @@
+---
+description: 指明join的顺序，包括内外表顺序。.
+keywords: [openGauss, Join顺序的Hint]
+---
+
 # Join顺序的Hint<a name="ZH-CN_TOPIC_0289900980"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136909_zh-cn_topic_0237121533_section97491741123412"></a>
@@ -57,7 +62,7 @@ select /*+ leading((((((store_sales store) promotion) item) customer) ad2) store
 
 该hint表示：表之间的join关系是：store\_sales和store先join， store\_sales做内表，然后依次跟promotion, item, customer, ad2, store\_returns做join。生成计划如下所示：
 
-![](figures/zh-cn_image_0289899975.png)
+![示例](figures/zh-cn_image_0289899975.png)
 
 图中计划顶端warning的提示详见[Hint的错误、冲突及告警](Hint的错误-冲突及告警.md)的说明。
 

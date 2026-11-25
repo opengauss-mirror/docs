@@ -1,3 +1,8 @@
+---
+description: debug端调试过程中，调用backtrace，查看当前的调用堆栈。.
+keywords: [openGauss, DBE_PLDEBUGGER.backtrace]
+---
+
 # DBE\_PLDEBUGGER.backtrace<a name="ZH-CN_TOPIC_0000001121763470"></a>
 
 debug端调试过程中，调用backtrace，查看当前的调用堆栈。

@@ -1,3 +1,8 @@
+---
+description: PERFORMANCE_SCHEMA.EVENTS_WAITS_CURRENT视图，可以检测当前线程的阻塞等待情况。兼容Mysql对应视图，仅在B库创建。.
+keywords: [openGauss, PERFORMANCE_SCHEMA.EVENTS_WAITS_CURRENT]
+---
+
 # PERFORMANCE_SCHEMA.EVENTS_WAITS_CURRENT
 
 PERFORMANCE_SCHEMA.EVENTS_WAITS_CURRENT视图，可以检测当前线程的阻塞等待情况。兼容Mysql对应视图，仅在B库创建。

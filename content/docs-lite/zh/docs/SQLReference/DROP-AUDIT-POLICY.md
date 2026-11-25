@@ -1,3 +1,8 @@
+---
+description: Introduces DROP AUDIT POLICY in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP AUDIT POLICY]
+---
+
 # DROP AUDIT POLICY<a name="ZH-CN_TOPIC_0306525305"></a>
 
 ## 功能描述<a name="zh-cn_topic_0059777864_s9274542cc63647ee9a7ed300d5e21524"></a>

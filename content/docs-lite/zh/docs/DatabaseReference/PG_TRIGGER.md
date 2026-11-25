@@ -1,3 +1,8 @@
+---
+description: PG\_TRIGGER系统表存储触发器信息。.
+keywords: [openGauss, PG_TRIGGER]
+---
+
 # PG\_TRIGGER<a name="ZH-CN_TOPIC_0289900828"></a>
 
 PG\_TRIGGER系统表存储触发器信息。

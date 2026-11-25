@@ -1,3 +1,8 @@
+---
+description: PG\_GET\_INVALID\_BACKENDS视图提供显示数据库主节点上连接到当前备机的后台线程信息。.
+keywords: [openGauss, PG_GET_INVALID_BACKENDS]
+---
+
 # PG\_GET\_INVALID\_BACKENDS<a name="ZH-CN_TOPIC_0289900437"></a>
 
 PG\_GET\_INVALID\_BACKENDS视图提供显示数据库主节点上连接到当前备机的后台线程信息。

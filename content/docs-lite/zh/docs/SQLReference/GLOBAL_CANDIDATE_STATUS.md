@@ -1,3 +1,8 @@
+---
+description: GLOBAL\_CANDIDATE\_STATUS视图显示整个数据库所有实例候选buffer个数，buffer淘汰信息。.
+keywords: [openGauss, GLOBAL_CANDIDATE_STATUS]
+---
+
 # GLOBAL\_CANDIDATE\_STATUS<a name="ZH-CN_TOPIC_0000001150694716"></a>
 
 GLOBAL\_CANDIDATE\_STATUS视图显示整个数据库所有实例候选buffer个数，buffer淘汰信息。

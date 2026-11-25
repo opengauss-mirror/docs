@@ -1,3 +1,8 @@
+---
+description: PG\_CLASS系统表存储数据库对象信息及其之间的关系。.
+keywords: [openGauss, PG_CLASS]
+---
+
 # PG\_CLASS<a name="ZH-CN_TOPIC_0289899838"></a>
 
 PG\_CLASS系统表存储数据库对象信息及其之间的关系。

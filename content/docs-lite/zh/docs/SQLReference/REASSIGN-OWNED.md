@@ -1,3 +1,8 @@
+---
+description: Introduces REASSIGN OWNED in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, REASSIGN OWNED]
+---
+
 # REASSIGN OWNED<a name="ZH-CN_TOPIC_0289900011"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136605_zh-cn_topic_0237122173_zh-cn_topic_0059779106_sfb032500d9624f8fb05a202a274cb9e9"></a>

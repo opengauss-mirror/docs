@@ -1,3 +1,8 @@
+---
+description: Introduces DROP CAST in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP CAST]
+---
+
 # DROP CAST<a name="ZH-CN_TOPIC_0000001127460523"></a>
 
 ## 功能描述<a name="section173831846163116"></a>

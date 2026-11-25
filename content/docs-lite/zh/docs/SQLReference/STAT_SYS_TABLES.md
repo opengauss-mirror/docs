@@ -1,3 +1,8 @@
+---
+description: 显示单节点内pg\_catalog、information\_schema以及pg\_toast模式下所有系统表的统计信息。.
+keywords: [openGauss, STAT_SYS_TABLES]
+---
+
 # STAT\_SYS\_TABLES<a name="ZH-CN_TOPIC_0289900852"></a>
 
 显示单节点内pg\_catalog、information\_schema以及pg\_toast模式下所有系统表的统计信息。

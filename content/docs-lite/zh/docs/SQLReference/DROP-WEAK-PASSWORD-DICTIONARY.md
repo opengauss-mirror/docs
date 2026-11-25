@@ -1,3 +1,8 @@
+---
+description: 清空gs\_global\_config中的所有弱口令。.
+keywords: [openGauss, DROP WEAK PASSWORD DICTIONARY]
+---
+
 # DROP WEAK PASSWORD DICTIONARY<a name="ZH-CN_TOPIC_0000001151474554"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137468_zh-cn_topic_0237122161_zh-cn_topic_0059777447_s984b3ec2b84d48bb843629462288417b"></a>

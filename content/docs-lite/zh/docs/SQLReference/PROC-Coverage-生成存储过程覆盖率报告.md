@@ -1,3 +1,8 @@
+---
+description: 基于coverage.proc_coverage数据包汇总，生成存储过程覆盖率报告。.
+keywords: [openGauss, 生成存储过程覆盖率报告]
+---
+
 # 生成存储过程覆盖率报告
 
 基于coverage.proc_coverage数据包汇总，生成存储过程覆盖率报告。

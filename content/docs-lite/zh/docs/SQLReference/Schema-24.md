@@ -1,3 +1,8 @@
+---
+description: openGauss支持的Schema如下表所示。.
+keywords: [openGauss, Schema]
+---
+
 # Schema<a name="ZH-CN_TOPIC_0000001190922647"></a>
 
 openGauss支持的Schema如下表所示。

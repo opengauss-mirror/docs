@@ -1,3 +1,8 @@
+---
+description: shark插件随内核一同编译，需要手动创建该插件，步骤如下：.
+keywords: [openGauss, shark安装]
+---
+
 # shark安装
 
 shark插件随内核一同编译，需要手动创建该插件，步骤如下：

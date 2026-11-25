@@ -1,3 +1,8 @@
+---
+description: GS\_SESSION\_STAT视图以会话线程或AutoVacuum线程为单位，统计会话状态信息。.
+keywords: [openGauss, GS_SESSION_STAT]
+---
+
 # GS\_SESSION\_STAT<a name="ZH-CN_TOPIC_0289899893"></a>
 
 GS\_SESSION\_STAT视图以会话线程或AutoVacuum线程为单位，统计会话状态信息。

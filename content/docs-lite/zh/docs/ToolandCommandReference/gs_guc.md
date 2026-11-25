@@ -1,3 +1,8 @@
+---
+description: 目前openGauss配置文件（“postgresql.conf”、“pg\_hba.conf”）中的参数默认值都是单机的配置模式。应用程序可以通过调用gs\_guc来设置适合自己的参数。.
+keywords: [openGauss, gs_guc]
+---
+
 # gs\_guc<a name="ZH-CN_TOPIC_0294749028"></a>
 
 ## 背景信息<a name="zh-cn_topic_0059778019_s59e576e934094b3c9a54d6ed555b5671"></a>

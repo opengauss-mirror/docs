@@ -1,3 +1,8 @@
+---
+description: 向gs\_global\_config表中插入一个或者多个弱口令。.
+keywords: [openGauss, CREATE WEAK PASSWORD DICTIONARY]
+---
+
 # CREATE WEAK PASSWORD DICTIONARY<a name="ZH-CN_TOPIC_0000001197229715"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137390_zh-cn_topic_0237122128_zh-cn_topic_0059778820_sf3fcf0507ea74a0ba4c4b4cbf0a0a8ba"></a>

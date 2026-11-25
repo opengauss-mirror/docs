@@ -1,3 +1,8 @@
+---
+description: Introduces PQsetdbLogin in openGauss, covering 功能描述, 原型, 参数.
+keywords: [openGauss, PQsetdbLogin]
+---
+
 # PQsetdbLogin<a name="ZH-CN_TOPIC_0242380572"></a>
 
 ## 功能描述<a name="zh-cn_topic_0241735615_section189041135191819"></a>

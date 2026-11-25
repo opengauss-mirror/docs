@@ -1,3 +1,8 @@
+---
+description: Introduces GUC参数说明 in openGauss, covering .
+keywords: [openGauss, GUC参数说明]
+---
+
 # GUC参数说明<a name="ZH-CN_TOPIC_0289899843"></a>
 
 -   **[GUC使用说明](GUC使用说明.md)**  

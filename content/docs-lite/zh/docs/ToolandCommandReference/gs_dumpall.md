@@ -1,3 +1,8 @@
+---
+description: gs\_dumpall是openGauss用于导出所有数据库相关信息工具，它可以导出数据库的所有数据，包括默认数据库postgres的数据、自定义数据库的数据、以及所有数据库公共的全局对象。.
+keywords: [openGauss, gs_dumpall]
+---
+
 # gs\_dumpall<a name="ZH-CN_TOPIC_0294749044"></a>
 
 ## 背景信息<a name="zh-cn_topic_0059778372_section31221112348"></a>

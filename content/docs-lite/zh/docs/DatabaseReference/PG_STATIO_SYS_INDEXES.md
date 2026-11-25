@@ -1,3 +1,8 @@
+---
+description: PG\_STATIO\_SYS\_INDEXES视图显示命名空间中所有系统表索引的IO状态信息。.
+keywords: [openGauss, PG_STATIO_SYS_INDEXES]
+---
+
 # PG\_STATIO\_SYS\_INDEXES<a name="ZH-CN_TOPIC_0289901016"></a>
 
 PG\_STATIO\_SYS\_INDEXES视图显示命名空间中所有系统表索引的IO状态信息。

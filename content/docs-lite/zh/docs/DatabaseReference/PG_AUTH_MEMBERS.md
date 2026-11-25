@@ -1,3 +1,8 @@
+---
+description: PG\_AUTH\_MEMBERS系统表存储显示角色之间的成员关系。.
+keywords: [openGauss, PG_AUTH_MEMBERS]
+---
+
 # PG\_AUTH\_MEMBERS<a name="ZH-CN_TOPIC_0289900518"></a>
 
 PG\_AUTH\_MEMBERS系统表存储显示角色之间的成员关系。

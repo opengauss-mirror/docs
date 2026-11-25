@@ -1,3 +1,8 @@
+---
+description: Introduces WORKLOAD\_TRANSACTION in openGauss, covering .
+keywords: [openGauss, WORKLOAD_TRANSACTION]
+---
+
 # WORKLOAD\_TRANSACTION<a name="ZH-CN_TOPIC_0289899903"></a>
 
 当前节点上负载的事务信息。

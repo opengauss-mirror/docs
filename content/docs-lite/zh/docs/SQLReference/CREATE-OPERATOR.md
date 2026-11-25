@@ -1,3 +1,8 @@
+---
+description: Introduces CREATE OPERATOR in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, CREATE OPERATOR]
+---
+
 # CREATE OPERATOR<a name="ZH-CN_TOPIC_0000001080835908"></a>
 
 ## 功能描述<a name="section173831846163116"></a>

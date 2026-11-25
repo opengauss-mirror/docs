@@ -1,3 +1,8 @@
+---
+description: PG\_TOTAL\_USER\_RESOURCE\_INFO视图显示所有用户资源使用情况，需要使用管理员用户进行查询。此视图在参数[use\_workload\_manager](负载管理.md#zh-cn_topic_0283137479_zh-cn_topic_0237124729_zh-cn_topic_0059777791_s9608d330c6a14d2cbd6ae7549343782.
+keywords: [openGauss, PG_TOTAL_USER_RESOURCE_INFO]
+---
+
 # PG\_TOTAL\_USER\_RESOURCE\_INFO<a name="ZH-CN_TOPIC_0289900504"></a>
 
 PG\_TOTAL\_USER\_RESOURCE\_INFO视图显示所有用户资源使用情况，需要使用管理员用户进行查询。此视图在参数[use\_workload\_manager](负载管理.md#zh-cn_topic_0283137479_zh-cn_topic_0237124729_zh-cn_topic_0059777791_s9608d330c6a14d2cbd6ae75493437820)为on时才有效。其中，IO相关监控项在参数enable\_logical\_io\_statistics为on时才有效。

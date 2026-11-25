@@ -1,3 +1,8 @@
+---
+description: Introduces SQL语法 in openGauss, covering .
+keywords: [openGauss, SQL语法]
+---
+
 # SQL语法
 
 -   **[ALTER DATABASE](dolphin-ALTER-DATABASE.md)**

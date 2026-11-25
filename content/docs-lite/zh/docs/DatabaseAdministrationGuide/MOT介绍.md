@@ -1,3 +1,8 @@
+---
+description: 本章介绍了openGauss内存优化表（Memory-Optimized Table，MOT）的特性及价值、关键技术、应用场景、性能基准和竞争优势。.
+keywords: [openGauss, MOT介绍]
+---
+
 # MOT介绍<a name="ZH-CN_TOPIC_0289900248"></a>
 
 本章介绍了openGauss内存优化表（Memory-Optimized Table，MOT）的特性及价值、关键技术、应用场景、性能基准和竞争优势。

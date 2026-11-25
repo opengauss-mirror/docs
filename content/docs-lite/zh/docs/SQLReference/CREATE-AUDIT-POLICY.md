@@ -1,3 +1,8 @@
+---
+description: Introduces CREATE AUDIT POLICY in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, CREATE AUDIT POLICY]
+---
+
 # CREATE AUDIT POLICY<a name="ZH-CN_TOPIC_0306525302"></a>
 
 ## 功能描述<a name="section1163224811518"></a>

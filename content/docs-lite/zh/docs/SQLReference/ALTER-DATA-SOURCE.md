@@ -1,3 +1,8 @@
+---
+description: 修改Data Source对象的属性和内容。.
+keywords: [openGauss, ALTER DATA SOURCE]
+---
+
 # ALTER DATA SOURCE<a name="ZH-CN_TOPIC_0289899857"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136847_zh-cn_topic_0237122056_section1246564332711"></a>

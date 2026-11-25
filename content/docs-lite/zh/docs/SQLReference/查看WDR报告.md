@@ -1,3 +1,8 @@
+---
+description: openGauss数据库WDR报表主要内容如下表所示。.
+keywords: [openGauss, 查看WDR报告]
+---
+
 # 查看WDR报告<a name="ZH-CN_TOPIC_0000001215195224"></a>
 
 openGauss数据库WDR报表主要内容如下表所示。

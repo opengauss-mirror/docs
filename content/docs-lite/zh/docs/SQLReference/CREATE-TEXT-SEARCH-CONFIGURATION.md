@@ -1,3 +1,8 @@
+---
+description: 创建新的文本搜索配置。一个文本搜索配置声明一个能将一个字符串划分成符号的文本搜索解析器，加上可以用于确定搜索对哪些标记感兴趣的字典。.
+keywords: [openGauss, CREATE TEXT SEARCH CONFIGURATION]
+---
+
 # CREATE TEXT SEARCH CONFIGURATION<a name="ZH-CN_TOPIC_0289900950"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137399_zh-cn_topic_0237122121_zh-cn_topic_0059777835_s0e4d513f4465404abcdfaf94e7cbef18"></a>

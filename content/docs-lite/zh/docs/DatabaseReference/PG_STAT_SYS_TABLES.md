@@ -1,3 +1,8 @@
+---
+description: PG\_STAT\_SYS\_TABLES视图显示pg\_catalog、information\_schema模式的所有命名空间中系统表的统计信息。.
+keywords: [openGauss, PG_STAT_SYS_TABLES]
+---
+
 # PG\_STAT\_SYS\_TABLES<a name="ZH-CN_TOPIC_0289900493"></a>
 
 PG\_STAT\_SYS\_TABLES视图显示pg\_catalog、information\_schema模式的所有命名空间中系统表的统计信息。

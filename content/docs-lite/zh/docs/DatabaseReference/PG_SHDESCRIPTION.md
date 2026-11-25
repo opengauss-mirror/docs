@@ -1,3 +1,8 @@
+---
+description: PG\_SHDESCRIPTION系统表为共享数据库对象存储可选的注释。可以使用COMMENT命令操作注释的内容，使用gsql的\\d命令查看注释内容。.
+keywords: [openGauss, PG_SHDESCRIPTION]
+---
+
 # PG\_SHDESCRIPTION<a name="ZH-CN_TOPIC_0289900363"></a>
 
 PG\_SHDESCRIPTION系统表为共享数据库对象存储可选的注释。可以使用COMMENT命令操作注释的内容，使用gsql的\\d命令查看注释内容。

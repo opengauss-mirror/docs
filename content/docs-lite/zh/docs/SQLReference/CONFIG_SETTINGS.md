@@ -1,3 +1,8 @@
+---
+description: CONFIG\_SETTINGS视图显示数据库运行时参数的相关信息。.
+keywords: [openGauss, CONFIG_SETTINGS]
+---
+
 # CONFIG\_SETTINGS<a name="ZH-CN_TOPIC_0289899836"></a>
 
 CONFIG\_SETTINGS视图显示数据库运行时参数的相关信息。

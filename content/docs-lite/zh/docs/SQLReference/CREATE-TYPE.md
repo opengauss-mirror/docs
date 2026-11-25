@@ -1,3 +1,8 @@
+---
+description: 在当前数据库中定义一种新的数据类型。定义数据类型的用户将成为该数据类型的拥有者。类型只适用于行存表.
+keywords: [openGauss, CREATE TYPE]
+---
+
 # CREATE TYPE<a name="ZH-CN_TOPIC_0289900603"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136568_zh-cn_topic_0237122124_zh-cn_topic_0059779377_sc0d0ea7296f7418d8e0b1a8878cf72ba"></a>

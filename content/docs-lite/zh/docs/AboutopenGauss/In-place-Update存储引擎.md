@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 2.1.0版本开始引入。.
+keywords: [openGauss, In-place Update存储引擎]
+---
+
 # In-place Update存储引擎<a name="ZH-CN_TOPIC_0000001168230024"></a>
 
 ## 可获得性<a name="section1076382216287"></a>

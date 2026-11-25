@@ -1,3 +1,8 @@
+---
+description: 显示openGauss内汇聚数据库中每个表的一行（包括TOAST表）的统计信息。.
+keywords: [openGauss, SUMMARY_STAT_ALL_TABLES]
+---
+
 # SUMMARY\_STAT\_ALL\_TABLES<a name="ZH-CN_TOPIC_0289900095"></a>
 
 显示openGauss内汇聚数据库中每个表的一行（包括TOAST表）的统计信息。

@@ -1,3 +1,8 @@
+---
+description: 卸载openGauss轻量版的过程包含清理openGauss进程和对相关目录的清理。.
+keywords: [openGauss, 卸载]
+---
+
 # 卸载<a name="ZH-CN_TOPIC_0289899737"></a>
 
 卸载openGauss轻量版的过程包含清理openGauss进程和对相关目录的清理。

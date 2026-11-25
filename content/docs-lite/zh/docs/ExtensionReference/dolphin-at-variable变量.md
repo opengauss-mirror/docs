@@ -1,3 +1,8 @@
+---
+description: Vastbase在MySQL兼容模式下，支持用户变量@variable的以下两种使用形式：.
+keywords: [openGauss, variable变量]
+---
+
 # @variable变量
 
 ## 功能描述

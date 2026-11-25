@@ -1,3 +1,8 @@
+---
+description: SAVEPOINT用于在当前事务里建立一个新的保存点。.
+keywords: [openGauss, SAVEPOINT]
+---
+
 # SAVEPOINT<a name="ZH-CN_TOPIC_0289899933"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283137144_zh-cn_topic_0237122183_zh-cn_topic_0059777880_section532518817713"></a>

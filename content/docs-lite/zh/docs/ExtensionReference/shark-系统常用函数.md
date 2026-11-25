@@ -1,3 +1,8 @@
+---
+description: 本章节只包含shark插件新增的系统常用函数。.
+keywords: [openGauss, shark-系统常用函数]
+---
+
 # shark-系统常用函数
 
 本章节只包含shark插件新增的系统常用函数。

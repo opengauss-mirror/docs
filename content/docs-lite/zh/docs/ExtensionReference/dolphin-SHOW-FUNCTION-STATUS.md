@@ -1,3 +1,8 @@
+---
+description: Introduces SHOW FUNCTION STATUS in openGauss, covering 注意事项, 功能描述, 语法格式.
+keywords: [openGauss, SHOW FUNCTION STATUS]
+---
+
 # SHOW FUNCTION STATUS
 
 ## 注意事项

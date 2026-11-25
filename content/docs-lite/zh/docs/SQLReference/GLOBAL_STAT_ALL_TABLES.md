@@ -1,3 +1,8 @@
+---
+description: 得到各节点数据中每个表的一行（包括TOAST表）的统计信息。.
+keywords: [openGauss, GLOBAL_STAT_ALL_TABLES]
+---
+
 # GLOBAL\_STAT\_ALL\_TABLES<a name="ZH-CN_TOPIC_0289900887"></a>
 
 得到各节点数据中每个表的一行（包括TOAST表）的统计信息。

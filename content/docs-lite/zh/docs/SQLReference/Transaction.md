@@ -1,3 +1,8 @@
+---
+description: - TRANSACTIONS\_PREPARED\_XACTS.
+keywords: [openGauss, Transaction]
+---
+
 # Transaction<a name="ZH-CN_TOPIC_0289900455"></a>
 
 -   **[TRANSACTIONS\_PREPARED\_XACTS](TRANSACTIONS_PREPARED_XACTS.md)**  

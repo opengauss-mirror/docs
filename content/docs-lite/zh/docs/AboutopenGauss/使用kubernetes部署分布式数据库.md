@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 2.1.0版本开始引入。.
+keywords: [openGauss, 使用kubernetes部署分布式数据库]
+---
+
 # 使用kubernetes部署分布式数据库<a name="ZH-CN_TOPIC_0000001264707841"></a>
 
 ## 可获得性<a name="section3594727121215"></a>

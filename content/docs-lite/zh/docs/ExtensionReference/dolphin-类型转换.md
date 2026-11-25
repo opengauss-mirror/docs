@@ -1,3 +1,8 @@
+---
+description: 相比原始的openGauss，dolphin插件补全了以下数据类型间相互转换的规则，这些类型包括：.
+keywords: [openGauss, 类型转换]
+---
+
 # 类型转换
 
 相比原始的openGauss，dolphin插件补全了以下数据类型间相互转换的规则，这些类型包括：

@@ -1,3 +1,8 @@
+---
+description: PG\_ATTRIBUTE系统表存储关于表字段的信息。.
+keywords: [openGauss, PG_ATTRIBUTE]
+---
+
 # PG\_ATTRIBUTE<a name="ZH-CN_TOPIC_0289900760"></a>
 
 PG\_ATTRIBUTE系统表存储关于表字段的信息。

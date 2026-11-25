@@ -1,3 +1,8 @@
+---
+description: 更改发布PUBLICATION的属性。.
+keywords: [openGauss, ALTER PUBLICATION]
+---
+
 # ALTER PUBLICATION
 
 ## 功能描述<a name="section6411155412312"></a>

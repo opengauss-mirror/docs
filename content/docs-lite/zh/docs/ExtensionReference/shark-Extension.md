@@ -1,3 +1,8 @@
+---
+description: Introduces shark Extension in openGauss, covering .
+keywords: [openGauss, shark Extension]
+---
+
 # shark Extension
 
 -   **[shark概述](shark概述.md)**  

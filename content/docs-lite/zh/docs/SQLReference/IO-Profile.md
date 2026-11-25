@@ -1,3 +1,8 @@
+---
+description: IO Profile指标名称及描述如下表所示。.
+keywords: [openGauss, IO Profile]
+---
+
 # IO Profile<a name="ZH-CN_TOPIC_0000001215035244"></a>
 
 IO Profile指标名称及描述如下表所示。

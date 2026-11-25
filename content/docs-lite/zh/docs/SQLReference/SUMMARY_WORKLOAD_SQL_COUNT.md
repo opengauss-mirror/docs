@@ -1,3 +1,8 @@
+---
+description: 显示openGauss内各数据库主节点的workload上的SQL数量分布。.
+keywords: [openGauss, SUMMARY_WORKLOAD_SQL_COUNT]
+---
+
 # SUMMARY\_WORKLOAD\_SQL\_COUNT<a name="ZH-CN_TOPIC_0289900629"></a>
 
 显示openGauss内各数据库主节点的workload上的SQL数量分布。

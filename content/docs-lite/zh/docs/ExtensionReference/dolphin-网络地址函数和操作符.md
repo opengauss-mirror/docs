@@ -1,3 +1,8 @@
+---
+description: openGauss提供网络相关的功能函数。.
+keywords: [openGauss, 网络地址函数和操作符]
+---
+
 # 网络地址函数和操作符
 
 openGauss提供网络相关的功能函数。

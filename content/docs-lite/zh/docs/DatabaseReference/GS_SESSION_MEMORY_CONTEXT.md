@@ -1,3 +1,8 @@
+---
+description: GS\_SESSION\_MEMORY\_CONTEXT视图统计所有的会话的内存使用情况，以MemoryContext节点来统计。该视图仅在开启线程池（enable\_thread\_pool = on）时生效。.
+keywords: [openGauss, GS_SESSION_MEMORY_CONTEXT]
+---
+
 # GS\_SESSION\_MEMORY\_CONTEXT<a name="ZH-CN_TOPIC_0289900285"></a>
 
 GS\_SESSION\_MEMORY\_CONTEXT视图统计所有的会话的内存使用情况，以MemoryContext节点来统计。该视图仅在开启线程池（enable\_thread\_pool = on）时生效。

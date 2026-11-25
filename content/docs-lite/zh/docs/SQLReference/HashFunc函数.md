@@ -1,3 +1,8 @@
+---
+description: - bucketabstime\(value，flag\).
+keywords: [openGauss, HashFunc函数]
+---
+
 # HashFunc函数<a name="ZH-CN_TOPIC_0311139289"></a>
 
 -   bucketabstime\(value，flag\)

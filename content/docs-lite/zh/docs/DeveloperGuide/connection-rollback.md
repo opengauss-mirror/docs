@@ -1,3 +1,8 @@
+---
+description: Introduces connection.rollback\(\) in openGauss, covering 功能描述, 原型, 参数.
+keywords: [openGauss, connection.rollback]
+---
+
 # connection.rollback\(\)<a name="ZH-CN_TOPIC_0000001080371156"></a>
 
 ## 功能描述<a name="section5708152714306"></a>

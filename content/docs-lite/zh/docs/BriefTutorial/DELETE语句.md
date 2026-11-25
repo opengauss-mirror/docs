@@ -1,3 +1,8 @@
+---
+description: DELETE语句可以从指定的表里删除满足WHERE子句的行。如果WHERE子句不存在，将删除表中所有行，结果只保留表结构。.
+keywords: [openGauss, DELETE语句]
+---
+
 # DELETE语句<a name="ZH-CN_TOPIC_0000001210461838"></a>
 
 DELETE语句可以从指定的表里删除满足WHERE子句的行。如果WHERE子句不存在，将删除表中所有行，结果只保留表结构。

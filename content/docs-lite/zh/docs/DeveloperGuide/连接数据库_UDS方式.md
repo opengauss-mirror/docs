@@ -1,3 +1,8 @@
+---
+description: Unix domain socket用于同一主机上不同进程间的数据交换，通过添加junixsocket获取套接字工厂使用。.
+keywords: [openGauss, 连接数据库UDS方式]
+---
+
 # 连接数据库（UDS方式）<a name="ZH-CN_TOPIC_0000001307859622"></a>
 
 Unix domain socket用于同一主机上不同进程间的数据交换，通过添加junixsocket获取套接字工厂使用。

@@ -1,3 +1,8 @@
+---
+description: gsql工具提供了元命令\\copy进行数据导入。.
+keywords: [openGauss, 使用gsql元命令导入数据]
+---
+
 # 使用gsql元命令导入数据<a name="ZH-CN_TOPIC_0289900838"></a>
 
 gsql工具提供了元命令\\copy进行数据导入。

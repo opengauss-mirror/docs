@@ -1,3 +1,8 @@
+---
+description: Introduces AI特性 in openGauss, covering enable\_hypo\_index, db4ai\_snapshot\_mode, db4ai\_snapshot\_version\_delimiter.
+keywords: [openGauss, AI特性]
+---
+
 # AI特性<a name="ZH-CN_TOPIC_0000001108458456"></a>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 

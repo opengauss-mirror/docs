@@ -1,3 +1,8 @@
+---
+description: Introduces 示例 in openGauss, covering 常用功能示例代码.
+keywords: [openGauss, 示例]
+---
+
 # 示例<a name="ZH-CN_TOPIC_0289900590"></a>
 
 ## 常用功能示例代码<a name="zh-cn_topic_0283137626_zh-cn_topic_0059777697_s1f4a2c1a228a412193b28fb23d146e03"></a>

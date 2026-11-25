@@ -1,3 +1,8 @@
+---
+description: PG\_TIMEZONE\_ABBREVS视图提供了显示了所有可用的时区信息。.
+keywords: [openGauss, PG_TIMEZONE_ABBREVS]
+---
+
 # PG\_TIMEZONE\_ABBREVS<a name="ZH-CN_TOPIC_0289900639"></a>
 
 PG\_TIMEZONE\_ABBREVS视图提供了显示了所有可用的时区信息。

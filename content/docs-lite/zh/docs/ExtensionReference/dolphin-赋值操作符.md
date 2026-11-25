@@ -1,3 +1,8 @@
+---
+description: 相比于原始的openGauss，dolphin对于赋值操作符的修改主要为:.
+keywords: [openGauss, 赋值操作符]
+---
+
 # 赋值操作符
 
 相比于原始的openGauss，dolphin对于赋值操作符的修改主要为:

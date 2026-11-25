@@ -1,3 +1,8 @@
+---
+description: - 如何解决“Configure error: C compiler cannot create executables”报错.
+keywords: [openGauss, troubleshooting, FAQ]
+---
+
 # FAQ<a name="ZH-CN_TOPIC_0289899555"></a>
 
 -   **[如何解决“Configure error: C compiler cannot create executables”报错](如何解决-Configure-error-C-compiler-cannot-create-executables-报错.md)**  

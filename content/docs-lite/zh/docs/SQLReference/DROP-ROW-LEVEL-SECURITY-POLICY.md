@@ -1,3 +1,8 @@
+---
+description: Introduces DROP ROW LEVEL SECURITY POLICY in openGauss, covering 功能描述, 注意事项, 语法格式.
+keywords: [openGauss, DROP ROW LEVEL SECURITY POLICY]
+---
+
 # DROP ROW LEVEL SECURITY POLICY<a name="ZH-CN_TOPIC_0289900923"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136715_zh-cn_topic_0237122144_section196521854173211"></a>

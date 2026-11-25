@@ -1,3 +1,8 @@
+---
+description: PG\_RULES视图提供对查询重写规则的有用信息访问的接口。.
+keywords: [openGauss, PG_RULES]
+---
+
 # PG\_RULES<a name="ZH-CN_TOPIC_0289900412"></a>
 
 PG\_RULES视图提供对查询重写规则的有用信息访问的接口。

@@ -1,3 +1,8 @@
+---
+description: 下文介绍了使用MOT的前提条件以及内存和存储规划。.
+keywords: [openGauss, MOT准备]
+---
+
 # MOT准备<a name="ZH-CN_TOPIC_0289900788"></a>
 
 下文介绍了使用MOT的前提条件以及内存和存储规划。

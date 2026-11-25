@@ -1,3 +1,8 @@
+---
+description: 本特性自openGauss 1.0.1版本开始引入。.
+keywords: [openGauss, 伪列ROWNUM]
+---
+
 # 伪列ROWNUM<a name="ZH-CN_TOPIC_0000001152275227"></a>
 
 ## 可获得性<a name="section56086982"></a>

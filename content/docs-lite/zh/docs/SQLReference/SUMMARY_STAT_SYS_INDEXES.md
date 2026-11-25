@@ -1,3 +1,8 @@
+---
+description: openGauss内汇聚pg\_catalog、information\_schema以及pg\_toast模式中所有系统表的索引状态信息。.
+keywords: [openGauss, SUMMARY_STAT_SYS_INDEXES]
+---
+
 # SUMMARY\_STAT\_SYS\_INDEXES<a name="ZH-CN_TOPIC_0289900625"></a>
 
 openGauss内汇聚pg\_catalog、information\_schema以及pg\_toast模式中所有系统表的索引状态信息。

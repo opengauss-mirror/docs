@@ -1,3 +1,8 @@
+---
+description: PG\_TIMEZONE\_NAMES视图提供了显示了所有能够被SET TIMEZONE识别的时区名及其缩写、UTC偏移量、是否夏时制。.
+keywords: [openGauss, PG_TIMEZONE_NAMES]
+---
+
 # PG\_TIMEZONE\_NAMES<a name="ZH-CN_TOPIC_0289900200"></a>
 
 PG\_TIMEZONE\_NAMES视图提供了显示了所有能够被SET TIMEZONE识别的时区名及其缩写、UTC偏移量、是否夏时制。

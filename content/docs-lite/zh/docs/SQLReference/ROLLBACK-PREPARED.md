@@ -1,3 +1,8 @@
+---
+description: 取消一个先前为两阶段提交准备好的事务。.
+keywords: [openGauss, ROLLBACK PREPARED]
+---
+
 # ROLLBACK PREPARED<a name="ZH-CN_TOPIC_0289900446"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136817_zh-cn_topic_0237122181_zh-cn_topic_0059779108_s4ddd2b1606b742109b4066ee1dee112e"></a>

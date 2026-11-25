@@ -1,3 +1,8 @@
+---
+description: 使用MOT非常简单，以下几个小节将会进行描述。.
+keywords: [openGauss, MOT使用]
+---
+
 # MOT使用<a name="ZH-CN_TOPIC_0289899990"></a>
 
 使用MOT非常简单，以下几个小节将会进行描述。
@@ -10,7 +15,7 @@ openGauss允许应用程序使用MOT和基于标准磁盘的表。MOT适用于�
 
 以下是与使用MOT相关的任务的简单概述：
 
-![](figures/zh-cn_image_0289899953.png)
+![MOT使用](figures/zh-cn_image_0289899953.png)
 
 -   [授予用户权限](授予用户权限.md)
 -   [创建/删除MOT](创建-删除MOT.md)

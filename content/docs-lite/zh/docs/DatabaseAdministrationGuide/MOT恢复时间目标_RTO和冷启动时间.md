@@ -1,3 +1,8 @@
+---
+description: Introduces MOT恢复时间目标（RTO）和冷启动时间 in openGauss, covering .
+keywords: [openGauss, MOT恢复时间目标RTO和冷启动时间]
+---
+
 # MOT恢复时间目标（RTO）和冷启动时间<a name="ZH-CN_TOPIC_0289900802"></a>
 
 -   高可用RTO
@@ -24,7 +29,7 @@
     冷启动过程和从磁盘加载数据到MOT所需时间如下图所示。
 
     **图 1**  冷启动时间性能基准<a name="zh-cn_topic_0283136642_zh-cn_topic_0280525098_fig46666290"></a>  
-    ![](figures/冷启动时间性能基准.png "冷启动时间性能基准")
+    ![MOT恢复时间目标（RTO）和冷启动时间](figures/冷启动时间性能基准.png "冷启动时间性能基准")
 
     -   数据库大小：加载整个数据库（每数据库GB）的总时间由蓝色线条和左侧的Y轴 **时间（秒）** 表示。
     -   吞吐量：数据库每秒GB吞吐量由橙色线和右侧的Y轴 **吞吐量GB/秒** 表示。

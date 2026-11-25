@@ -1,3 +1,8 @@
+---
+description: Introduces 附录 in openGauss, covering .
+keywords: [openGauss, 附录]
+---
+
 # 附录<a name="ZH-CN_TOPIC_0289900922"></a>
 
 -   **[参考文献](参考文献.md)**  

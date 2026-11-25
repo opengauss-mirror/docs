@@ -1,3 +1,8 @@
+---
+description: 如何解决编译过程中出现的 "g++: fatal error: Killed signal terminated program cclplus" 报错。.
+keywords: [openGauss, 如何解决 g fatal error Killed signal terminated program cclplus 报错]
+---
+
 # 如何解决 "g++: fatal error: Killed signal terminated program cclplus" 报错<a name="ZH-CN_TOPIC_0289899547"></a>
 
 ## 问题<a name="zh-cn_topic_0283136304_section14676321181511"></a>

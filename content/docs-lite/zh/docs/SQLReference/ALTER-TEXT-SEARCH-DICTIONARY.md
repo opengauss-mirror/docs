@@ -1,3 +1,8 @@
+---
+description: 修改全文检索词典的相关定义，包括参数、名称、所有者、以及模式等。.
+keywords: [openGauss, ALTER TEXT SEARCH DICTIONARY]
+---
+
 # ALTER TEXT SEARCH DICTIONARY<a name="ZH-CN_TOPIC_0289900782"></a>
 
 ## 功能描述<a name="zh-cn_topic_0283136970_zh-cn_topic_0237122080_zh-cn_topic_0059777936_sb9efc89be09141c3b113326dd8c2b35d"></a>

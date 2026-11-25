@@ -1,3 +1,8 @@
+---
+description: HAVING子句可以让我们筛选分组后的各组数据。.
+keywords: [openGauss, HAVING子句]
+---
+
 # HAVING子句<a name="ZH-CN_TOPIC_0000001255341781"></a>
 
 HAVING子句可以让我们筛选分组后的各组数据。
