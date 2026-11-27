@@ -1,6 +1,6 @@
 # MOT使用概述<a name="ZH-CN_TOPIC_0289900146"></a>
 
-MOT作为openGauss的一部分自动部署。有关如何计算和规划所需的内存和存储资源以维持工作负载的说明，请参阅[MOT准备](mot_prerequisites.md)。参考[MOT部署](mot_server_optimization_x86.md)了解MOT中所有的配置，以及服务器优化的非必须选项。
+MOT作为openGauss的一部分自动部署。有关如何计算和规划所需的内存和存储资源以维持工作负载的说明，请参阅[MOT准备](mot_prerequisites.md)。参考[MOT部署](mot_server_optimization.md)了解MOT中所有的配置，以及服务器优化的非必须选项。
 
 使用MOT的方法非常简单。MOT命令的语法与基于磁盘的表的语法相同，并支持大多数标准，如openGauss SQL、DDL和DML命令和功能，如存储过程。只有MOT中的创建和删除表语句与openGauss中基于磁盘的表的语句不同。您可以参考[MOT使用](mot_usage.md)了解这两个简单命令的说明，如何将基于磁盘的表转换为MOT，如何使用查询原生编译和PREPARE语句获得更高的性能，以及了解外部工具支持和MOT引擎的限制。
 

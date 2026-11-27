@@ -161,7 +161,7 @@ openGauss正常运行。
 
    **引申信息：**
 
-   - 默认情况下，新的数据库对象是创建在“$user”模式下的，例如刚刚新建的表。关于模式的更多信息请参考[创建和管理schema](../database_administration_guide/creating_and_managing_schema.md)。
+   - 默认情况下，新的数据库对象是创建在“$user”模式下的，例如刚刚新建的表。关于模式的更多信息请参考[创建和管理schema](../database_administration_guide/creating_and_managing_schemas.md)。
    - 关于创建表的更多信息请参见[创建和管理表](../database_administration_guide/creating_tables.md)。
    - 除了创建的表以外，数据库还包含很多系统表。这些系统表包含openGauss安装信息以及openGauss上运行的各种查询和进程的信息。可以通过查询系统表来收集有关数据库的信息。请参见[查看系统表](../database_reference/querying_a_system_catalog.md)。
 

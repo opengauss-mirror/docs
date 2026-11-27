@@ -162,7 +162,7 @@ sections:
           - label: Default Permission Mechanism
             href: ./default_permission_mechanism.md
           - label: Administrator
-            href: ./administrator.md
+            href: ./administrators.md
           - label: Separation of Duties
             href: ./separation_of_duties.md
           - label: Users
@@ -174,7 +174,7 @@ sections:
           - label: Setting User Permissions
             href: ./setting_user_permissions.md
           - label: Row-Level Security Policy
-            href: ./row_level_security_policy.md
+            href: ./row_level_access_control.md
           - label: Setting Account Security Policies
             href: ./setting_account_security_policies.md
           - label: Setting the Validity Period of an Account

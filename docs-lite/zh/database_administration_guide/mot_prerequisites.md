@@ -49,4 +49,4 @@ openGauss 7.0.0-RC1版本在x86环境下去除rdtscp指令集限制，相关功�
 
 ## 操作系统优化<a name="zh-cn_topic_0283136672_zh-cn_topic_0280525104_section17957270"></a>
 
-MOT不需要任何特殊修改或安装新软件。但是，一些优化可以提高性能。有关实现最大性能的优化说明，请参阅[MOT服务器优化：x86](mot_server_optimization_x86.md)和[MOT服务器优化：基于Arm的华为TaiShan2P/4P服务器](mot_server_optimization_arm_huawei_taishan_2p_4p.md)。
+MOT不需要任何特殊修改或安装新软件。但是，一些优化可以提高性能。有关实现最大性能的优化说明，请参阅[MOT服务器优化：x86](mot_server_optimization.md)和[MOT服务器优化：基于Arm的华为TaiShan2P/4P服务器](mot_server_optimization_arm_huawei_taishan_2p_4p.md)。
