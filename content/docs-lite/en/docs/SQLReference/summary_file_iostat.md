@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_FILE\_IOSTAT records statistics about data file I/Os in openGauss to indicate I/O performance and detect performance problems such as abnormal I/O operations.
+description: SUMMARY_FILE_IOSTAT records statistics about data file I/Os in openGauss to indicate I/O performance and detect performance problems such as abnormal I/O operations.
 keywords: [openGauss, SUMMARY_FILE_IOSTAT]
 ---
 

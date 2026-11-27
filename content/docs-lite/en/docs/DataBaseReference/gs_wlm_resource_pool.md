@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_RESOURCE\_POOL records statistics on a resource pool.
+description: GS_WLM_RESOURCE_POOL records statistics on a resource pool.
 keywords: [openGauss, GS_WLM_RESOURCE_POOL]
 ---
 

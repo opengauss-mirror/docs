@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_OS\_RUNTIME provides OS running status information about all normal nodes in openGauss.
+description: GLOBAL_OS_RUNTIME provides OS running status information about all normal nodes in openGauss.
 keywords: [openGauss, GLOBAL_OS_RUNTIME]
 ---
 

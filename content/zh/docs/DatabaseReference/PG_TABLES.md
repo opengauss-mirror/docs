@@ -1,5 +1,5 @@
 ---
-description: PG\_TABLES视图提供了对数据库中每个表访问的有用信息。.
+description: PG_TABLES视图提供了对数据库中每个表访问的有用信息。.
 keywords: [openGauss, PG_TABLES]
 ---
 

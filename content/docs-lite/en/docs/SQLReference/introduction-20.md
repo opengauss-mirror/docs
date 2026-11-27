@@ -1,5 +1,5 @@
 ---
-description: Generalized Inverted Index \(GIN\) is designed for handling cases where the items to be indexed are composite values, and the queries to be handled by the index need to search for element values that.
+description: Generalized Inverted Index (GIN) is designed for handling cases where the items to be indexed are composite values, and the queries to be handled by the index need to search for element values that.
 keywords: [openGauss, Introduction]
 ---
 

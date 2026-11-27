@@ -1,5 +1,5 @@
 ---
-description: To enable an application to operate data in the database by running SQL statements \(statements that do not need to transfer parameters\), perform the following operations:.
+description: To enable an application to operate data in the database by running SQL statements (statements that do not need to transfer parameters), perform the following operations:.
 keywords: [openGauss, Running SQL Statements]
 ---
 

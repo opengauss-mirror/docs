@@ -1,5 +1,5 @@
 ---
-description: - Manipulating tsvector.
+description: Manipulating tsvector.
 keywords: [openGauss, Additional Features]
 ---
 

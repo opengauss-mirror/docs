@@ -1,5 +1,5 @@
 ---
-description: GS\_SLOW\_QUERY\_INFO视图显示当前节点上已经转储的慢查询信息。此数据是从内核中转储到系统表中的数据。当设置GUC参数[enable\_resource\_record](../DatabaseReference/负载管理.md#zh-cn_topic_0283137479_zh-cn_topic_0237124729_zh-cn_topic_0059777791_s77bd10.
+description: GS_SLOW_QUERY_INFO视图显示当前节点上已经转储的慢查询信息。此数据是从内核中转储到系统表中的数据。当设置GUC参数[enable_resource_record](../DatabaseReference/负载管理.md#zh-cn_topic_0283137479_zh-cn_topic_0237124729_zh-cn_topic_0059777791_s77bd10.
 keywords: [openGauss, GS_SLOW_QUERY_INFO废弃]
 ---
 

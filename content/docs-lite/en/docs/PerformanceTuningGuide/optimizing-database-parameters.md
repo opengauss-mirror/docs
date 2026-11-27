@@ -1,5 +1,5 @@
 ---
-description: To ensure high performance of the database, it is recommended that you set the database system parameters \(GUC parameters\) based on the hardware resources and actual services. This section describes.
+description: To ensure high performance of the database, it is recommended that you set the database system parameters (GUC parameters) based on the hardware resources and actual services. This section describes.
 keywords: [openGauss, Optimizing Database Parameters]
 ---
 

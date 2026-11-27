@@ -1,5 +1,5 @@
 ---
-description: GS\_GLOBAL\_CONFIG records the parameter values specified by users during database instance initialization. In addition, it also stores weak passwords set by users. Initial database users can wri.
+description: GS_GLOBAL_CONFIG records the parameter values specified by users during database instance initialization. In addition, it also stores weak passwords set by users. Initial database users can wri.
 keywords: [openGauss, GS_GLOBAL_CONFIG]
 ---
 

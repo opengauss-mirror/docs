@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_DATABASE\_CONFLICTS displays statistics about database conflicts.
+description: PG_STAT_DATABASE_CONFLICTS displays statistics about database conflicts.
 keywords: [openGauss, PG_STAT_DATABASE_CONFLICTS]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - WORKLOAD\_SQL\_COUNT.
+description: WORKLOAD_SQL_COUNT.
 keywords: [openGauss, Workload]
 ---
 

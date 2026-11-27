@@ -1,5 +1,5 @@
 ---
-description: The file\_fdw module provides the external data wrapper file\_fdw, which can be used to access data files in the file system of a server. The format of the data files must be readable by the COPY F.
+description: The file_fdw module provides the external data wrapper file_fdw, which can be used to access data files in the file system of a server. The format of the data files must be readable by the COPY F.
 keywords: [openGauss, file_fdw]
 ---
 

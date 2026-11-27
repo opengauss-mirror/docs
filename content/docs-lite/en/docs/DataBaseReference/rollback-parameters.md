@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies the number of undo worker threads invoked during asynchronous rollback. The parameter setting takes effect after the system is restarted.
+description: 'Parameter description: Specifies the number of undo worker threads invoked during asynchronous rollback. The parameter setting takes effect after the system is restarted.'
 keywords: [openGauss, Rollback Parameters]
 ---
 

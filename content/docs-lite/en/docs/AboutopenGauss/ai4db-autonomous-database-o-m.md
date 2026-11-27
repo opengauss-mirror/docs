@@ -1,5 +1,5 @@
 ---
-description: - Database Metric Collection, Forecast, and Exception Detection.
+description: Database Metric Collection, Forecast, and Exception Detection.
 keywords: [openGauss, AI4DB Autonomous Database OM]
 ---
 

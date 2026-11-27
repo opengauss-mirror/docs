@@ -1,5 +1,5 @@
 ---
-description: GS\_ENCRYPTED\_PROC系统表提供了密态函数/存储过程函数参数、返回值的原始数据类型，加密列等信息。.
+description: GS_ENCRYPTED_PROC系统表提供了密态函数/存储过程函数参数、返回值的原始数据类型，加密列等信息。.
 keywords: [openGauss, GS_ENCRYPTED_PROC]
 ---
 

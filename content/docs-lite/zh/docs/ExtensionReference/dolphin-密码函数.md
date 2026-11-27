@@ -1,5 +1,5 @@
 ---
-description: - set_native_password\(role text, new_password text, old_password text).
+description: set_native_password(role text, new_password text, old_password text).
 keywords: [openGauss, dolphin-密码函数]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - gs\_gsc\_table\_detail\(database\_id dafault NULL, rel\_id default NULL\).
+description: gs_gsc_table_detail(database_id dafault NULL, rel_id default NULL).
 keywords: [openGauss, Global SysCache Feature Functions]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: GS\_SLOW\_QUERY\_HISTORY displays the slow query information that is not dumped on the current node. For details, see GS\_SLOW\_QUERY\_INFO. Only the system admin and monitor admin.
+description: GS_SLOW_QUERY_HISTORY displays the slow query information that is not dumped on the current node. For details, see GS_SLOW_QUERY_INFO. Only the system admin and monitor admin.
 keywords: [openGauss, GS_SLOW_QUERY_HISTORY Discarded]
 ---
 

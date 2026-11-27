@@ -1,5 +1,5 @@
 ---
-description: PG\_JOB\_PROC records the content of each job in the PG\_JOB table, including the PL/SQL code blocks and anonymous blocks. Storing such information in the system catalog PG\_JOB and l.
+description: PG_JOB_PROC records the content of each job in the PG_JOB table, including the PL/SQL code blocks and anonymous blocks. Storing such information in the system catalog PG_JOB and l.
 keywords: [openGauss, PG_JOB_PROC]
 ---
 

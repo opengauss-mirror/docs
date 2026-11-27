@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_FILE\_REDO\_IOSTAT records statistics about all redo logs and WALs in openGauss.
+description: SUMMARY_FILE_REDO_IOSTAT records statistics about all redo logs and WALs in openGauss.
 keywords: [openGauss, SUMMARY_FILE_REDO_IOSTAT]
 ---
 

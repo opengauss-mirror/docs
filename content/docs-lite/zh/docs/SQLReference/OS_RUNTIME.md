@@ -1,5 +1,5 @@
 ---
-description: Introduces OS\_RUNTIME in openGauss, covering .
+description: Introduces OS_RUNTIME in openGauss, covering .
 keywords: [openGauss, OS_RUNTIME]
 ---
 

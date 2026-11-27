@@ -1,5 +1,5 @@
 ---
-description: 1. 设置采样方式为按照采样率采样，即设置GUC参数default\_statistics\_target为\[-100, -1\]之间的整数，表示采样百分比。.
+description: 1. 设置采样方式为按照采样率采样，即设置GUC参数default_statistics_target为[-100, -1]之间的整数，表示采样百分比。.
 keywords: [openGauss, 使用指导]
 ---
 

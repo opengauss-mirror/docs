@@ -1,5 +1,5 @@
 ---
-description: PG\_SET系统表存储SET数据类型定义的元数据。.
+description: PG_SET系统表存储SET数据类型定义的元数据。.
 keywords: [openGauss, PG_SET]
 ---
 

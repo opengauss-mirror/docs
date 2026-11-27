@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Similar to shared\_buffers, this parameter is used to set the size of the page compression block address mapping management buffer.
+description: 'Parameter description: Similar to shared_buffers, this parameter is used to set the size of the page compression block address mapping management buffer.'
 keywords: [openGauss, Parameters Related to Efficient Data Compression Algorithms]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_XACT\_USER\_FUNCTIONS contains statistics on the execution of each function.
+description: PG_STAT_XACT_USER_FUNCTIONS contains statistics on the execution of each function.
 keywords: [openGauss, PG_STAT_XACT_USER_FUNCTIONS]
 ---
 

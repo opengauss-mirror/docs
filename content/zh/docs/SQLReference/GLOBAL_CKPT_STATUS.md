@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_CKPT\_STATUS视图用于显示openGauss所有实例的检查点信息和各类日志刷页情况。.
+description: GLOBAL_CKPT_STATUS视图用于显示openGauss所有实例的检查点信息和各类日志刷页情况。.
 keywords: [openGauss, GLOBAL_CKPT_STATUS]
 ---
 

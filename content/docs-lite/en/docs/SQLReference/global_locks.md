@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_LOCKS displays information about locks held by open transactions on each node.
+description: GLOBAL_LOCKS displays information about locks held by open transactions on each node.
 keywords: [openGauss, GLOBAL_LOCKS]
 ---
 

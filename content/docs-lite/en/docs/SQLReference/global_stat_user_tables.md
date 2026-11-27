@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_STAT\_USER\_TABLES displays the status information about user-defined ordinary tables in all namespaces on each node.
+description: GLOBAL_STAT_USER_TABLES displays the status information about user-defined ordinary tables in all namespaces on each node.
 keywords: [openGauss, GLOBAL_STAT_USER_TABLES]
 ---
 

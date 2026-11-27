@@ -1,5 +1,5 @@
 ---
-description: - Standard SQL support.
+description: Standard SQL support.
 keywords: [openGauss, Features]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_SHADOW视图显示了所有在PG\_AUTHID中标记了rolcanlogin的角色的属性。.
+description: PG_SHADOW视图显示了所有在PG_AUTHID中标记了rolcanlogin的角色的属性。.
 keywords: [openGauss, PG_SHADOW]
 ---
 

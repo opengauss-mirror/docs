@@ -1,5 +1,5 @@
 ---
-description: - Viewing Parameter Values.
+description: Viewing Parameter Values.
 keywords: [openGauss, Configuring Running Parameters]
 ---
 

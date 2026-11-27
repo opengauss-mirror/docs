@@ -1,5 +1,5 @@
 ---
-description: Introduces WORKLOAD\_TRANSACTION in openGauss, covering .
+description: Introduces WORKLOAD_TRANSACTION in openGauss, covering .
 keywords: [openGauss, WORKLOAD_TRANSACTION]
 ---
 

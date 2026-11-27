@@ -1,5 +1,5 @@
 ---
-description: There are three separate approaches to pattern matching provided by the database: the traditional SQL LIKE operator, the more recent SIMILAR TO operator, and POSIX-style regular expressions. Besides t.
+description: 'There are three separate approaches to pattern matching provided by the database: the traditional SQL LIKE operator, the more recent SIMILAR TO operator, and POSIX-style regular expressions. Besides t.'
 keywords: [openGauss, Mode Matching Operators]
 ---
 

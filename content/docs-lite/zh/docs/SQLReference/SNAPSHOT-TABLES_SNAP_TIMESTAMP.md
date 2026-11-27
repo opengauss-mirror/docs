@@ -1,5 +1,5 @@
 ---
-description: TABLES\_SNAP\_TIMESTAMP表记录所有存储的WDR snapshot中数据库、表对象以及WDR快照的开始和结束时间。.
+description: TABLES_SNAP_TIMESTAMP表记录所有存储的WDR snapshot中数据库、表对象以及WDR快照的开始和结束时间。.
 keywords: [openGauss, SNAPSHOT.TABLES_SNAP_TIMESTAMP]
 ---
 

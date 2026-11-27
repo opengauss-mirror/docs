@@ -1,5 +1,5 @@
 ---
-description: - hll\_hash\_boolean\(bool\).
+description: hll_hash_boolean(bool).
 keywords: [openGauss, HLL函数和操作符]
 ---
 

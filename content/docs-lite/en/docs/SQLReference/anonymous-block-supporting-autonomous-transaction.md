@@ -1,5 +1,5 @@
 ---
-description: An autonomous transaction can be defined in an anonymous block. The identifier of an autonomous transaction is PRAGMA AUTONOMOUS\_TRANSACTION. The syntax of an autonomous transaction is the same.
+description: An autonomous transaction can be defined in an anonymous block. The identifier of an autonomous transaction is PRAGMA AUTONOMOUS_TRANSACTION. The syntax of an autonomous transaction is the same.
 keywords: [openGauss, Anonymous Block Supporting Autonomous Transaction]
 ---
 

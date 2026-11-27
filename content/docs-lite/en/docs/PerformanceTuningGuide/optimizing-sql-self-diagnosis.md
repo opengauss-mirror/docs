@@ -1,5 +1,5 @@
 ---
-description: Performance issues may occur when you query data or run the INSERT, DELETE, UPDATE, or CREATE TABLE AS statement. In this case, you can query the warning column in the [GS\_.
+description: Performance issues may occur when you query data or run the INSERT, DELETE, UPDATE, or CREATE TABLE AS statement. In this case, you can query the warning column in the [GS_.
 keywords: [openGauss, Optimizing SQL Self-Diagnosis]
 ---
 

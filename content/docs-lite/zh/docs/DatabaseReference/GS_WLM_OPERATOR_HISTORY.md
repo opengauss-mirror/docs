@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_OPERATOR\_HISTORY视图显示的是当前用户当前数据库主节点上执行作业结束后的算子的相关记录。查询该视图需要sysadmin权限。.
+description: GS_WLM_OPERATOR_HISTORY视图显示的是当前用户当前数据库主节点上执行作业结束后的算子的相关记录。查询该视图需要sysadmin权限。.
 keywords: [openGauss, GS_WLM_OPERATOR_HISTORY]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: STAT\_BAD\_BLOCK displays information about table and index read failures on the current node.
+description: STAT_BAD_BLOCK displays information about table and index read failures on the current node.
 keywords: [openGauss, STAT_BAD_BLOCK]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_APP\_WORKLOADGROUP\_MAPPING系统表提供了数据库负载映射组的信息。.
+description: PG_APP_WORKLOADGROUP_MAPPING系统表提供了数据库负载映射组的信息。.
 keywords: [openGauss, PG_APP_WORKLOADGROUP_MAPPING]
 ---
 

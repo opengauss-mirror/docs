@@ -1,5 +1,5 @@
 ---
-description: - Case: Modifying the GUC Parameter rewrite\_rule.
+description: 'Case: Modifying the GUC Parameter rewrite_rule.'
 keywords: [openGauss, Optimization Cases]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies whether to allow connections and queries on a standby server during its recovery.
+description: 'Parameter description: Specifies whether to allow connections and queries on a standby server during its recovery.'
 keywords: [openGauss, Standby Server]
 ---
 

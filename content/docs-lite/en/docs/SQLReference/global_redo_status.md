@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_REDO\_STATUS displays the log replay status of all instances in openGauss.
+description: GLOBAL_REDO_STATUS displays the log replay status of all instances in openGauss.
 keywords: [openGauss, GLOBAL_REDO_STATUS]
 ---
 

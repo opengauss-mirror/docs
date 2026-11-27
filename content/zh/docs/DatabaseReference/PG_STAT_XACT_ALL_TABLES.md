@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_XACT\_ALL\_TABLES视图显示命名空间中所有普通表和toast表的事务状态信息。.
+description: PG_STAT_XACT_ALL_TABLES视图显示命名空间中所有普通表和toast表的事务状态信息。.
 keywords: [openGauss, PG_STAT_XACT_ALL_TABLES]
 ---
 

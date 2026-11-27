@@ -1,5 +1,5 @@
 ---
-description: GS\_MASKING\_POLICY\_FILTERS records the user filter criteria corresponding to the dynamic data masking policies. The corresponding masking policy takes effect only when the user information meet.
+description: GS_MASKING_POLICY_FILTERS records the user filter criteria corresponding to the dynamic data masking policies. The corresponding masking policy takes effect only when the user information meet.
 keywords: [openGauss, GS_MASKING_POLICY_FILTERS]
 ---
 

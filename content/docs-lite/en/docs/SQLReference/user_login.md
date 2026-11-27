@@ -1,5 +1,5 @@
 ---
-description: USER\_LOGIN records the number of user logins and logouts.
+description: USER_LOGIN records the number of user logins and logouts.
 keywords: [openGauss, USER_LOGIN]
 ---
 

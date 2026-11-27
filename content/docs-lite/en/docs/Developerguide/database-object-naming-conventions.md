@@ -1,5 +1,5 @@
 ---
-description: The name of a database object must meet the following requirements: The name of a non-time series table ranges from 1 to 63 bytes and that of a time series table ranges from 1 to 53 characters. The na.
+description: 'The name of a database object must meet the following requirements: The name of a non-time series table ranges from 1 to 63 bytes and that of a time series table ranges from 1 to 53 characters. The na.'
 keywords: [openGauss, Database Object Naming Conventions]
 ---
 

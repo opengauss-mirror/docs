@@ -1,5 +1,5 @@
 ---
-description: GS\_COLUMN\_KEYS系统表记录密态等值特性中列加密密钥相关信息，每条记录对应一个列加密密钥。.
+description: GS_COLUMN_KEYS系统表记录密态等值特性中列加密密钥相关信息，每条记录对应一个列加密密钥。.
 keywords: [openGauss, GS_COLUMN_KEYS]
 ---
 

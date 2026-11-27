@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies the threshold for forcibly recycling undo space. When the undo space usage reaches 80% of the threshold, forcible recycling starts. You can set this parameter to a.
+description: 'Parameter description: Specifies the threshold for forcibly recycling undo space. When the undo space usage reaches 80% of the threshold, forcible recycling starts. You can set this parameter to a.'
 keywords: [openGauss, Undo]
 ---
 

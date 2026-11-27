@@ -1,5 +1,5 @@
 ---
-description: - Basic Functions Oriented to Application Development.
+description: Basic Functions Oriented to Application Development.
 keywords: [openGauss, Core Database Technologies]
 ---
 

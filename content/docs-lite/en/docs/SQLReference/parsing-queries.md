@@ -1,5 +1,5 @@
 ---
-description: openGauss provides functions to\_tsquery and plainto\_tsquery for converting a query to the tsquery data type. to\_tsquery offers access to more features than plainto\_tsque.
+description: openGauss provides functions to_tsquery and plainto_tsquery for converting a query to the tsquery data type. to_tsquery offers access to more features than plainto_tsque.
 keywords: [openGauss, Parsing Queries]
 ---
 

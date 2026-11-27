@@ -1,5 +1,5 @@
 ---
-description: STATEMENT\_IOSTAT\_COMPLEX\_RUNTIME视图显示当前用户执行作业正在运行时的IO负载管理相关信息。以下涉及到iops，对于行存，均以万次/s为单位，对于列存，均以次/s为单位。.
+description: STATEMENT_IOSTAT_COMPLEX_RUNTIME视图显示当前用户执行作业正在运行时的IO负载管理相关信息。以下涉及到iops，对于行存，均以万次/s为单位，对于列存，均以次/s为单位。.
 keywords: [openGauss, STATEMENT_IOSTAT_COMPLEX_RUNTIME]
 ---
 

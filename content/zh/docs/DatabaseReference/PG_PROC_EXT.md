@@ -1,5 +1,5 @@
 ---
-description: PG\_PROC\_EXT系统表是PG\_PROC的扩展，存储函数或过程的额外信息。.
+description: PG_PROC_EXT系统表是PG_PROC的扩展，存储函数或过程的额外信息。.
 keywords: [openGauss, PG_PROC_EXT]
 ---
 

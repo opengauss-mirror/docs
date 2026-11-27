@@ -1,5 +1,5 @@
 ---
-description: MANAGE\_SNAPSHOT\_INTERNAL is a built-in execution function of the DB4AI.PUBLISH\_SNAPSHOT and DB4AI.ARCHIVE\_SNAPSHOT functions. The function involves information verification and ca.
+description: MANAGE_SNAPSHOT_INTERNAL is a built-in execution function of the DB4AI.PUBLISH_SNAPSHOT and DB4AI.ARCHIVE_SNAPSHOT functions. The function involves information verification and ca.
 keywords: [openGauss, DB4AI.MANAGE_SNAPSHOT_INTERNAL]
 ---
 

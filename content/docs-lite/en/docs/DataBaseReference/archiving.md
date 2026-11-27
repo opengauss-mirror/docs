@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies whether to archive WALs.
+description: 'Parameter description: Specifies whether to archive WALs.'
 keywords: [openGauss, Archiving]
 ---
 

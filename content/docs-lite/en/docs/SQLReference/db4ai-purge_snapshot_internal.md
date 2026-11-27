@@ -1,5 +1,5 @@
 ---
-description: PURGE\_SNAPSHOT\_INTERNAL is a built-in execution function of the DB4AI.PURGE\_SNAPSHOT function. The function involves information verification and cannot be directly invoked.
+description: PURGE_SNAPSHOT_INTERNAL is a built-in execution function of the DB4AI.PURGE_SNAPSHOT function. The function involves information verification and cannot be directly invoked.
 keywords: [openGauss, DB4AI.PURGE_SNAPSHOT_INTERNAL]
 ---
 

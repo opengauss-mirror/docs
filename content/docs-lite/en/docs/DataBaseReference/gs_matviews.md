@@ -1,5 +1,5 @@
 ---
-description: GS\_MATVIEWS provides information about each materialized view in the database.
+description: GS_MATVIEWS provides information about each materialized view in the database.
 keywords: [openGauss, GS_MATVIEWS]
 ---
 

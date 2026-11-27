@@ -1,5 +1,5 @@
 ---
-description: - sum\(expression\).
+description: sum(expression).
 keywords: [openGauss, Aggregate Functions]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: The ODBC DRIVER \(psqlodbcw.so\) provided by openGauss can be used after it has been configured in a data source. To configure a data source, you must configure the odbc.ini and odbcinst.
+description: The ODBC DRIVER (psqlodbcw.so) provided by openGauss can be used after it has been configured in a data source. To configure a data source, you must configure the odbc.ini and odbcinst.
 keywords: [openGauss, Configuring a Data Source in the Linux OS]
 ---
 

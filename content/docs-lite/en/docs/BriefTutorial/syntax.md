@@ -1,5 +1,5 @@
 ---
-description: By default, after you log in to the installed database, you can run the \\help statement to view syntax of all the SQL syntax of the openGauss.
+description: By default, after you log in to the installed database, you can run the \help statement to view syntax of all the SQL syntax of the openGauss.
 keywords: [openGauss, Syntax]
 ---
 

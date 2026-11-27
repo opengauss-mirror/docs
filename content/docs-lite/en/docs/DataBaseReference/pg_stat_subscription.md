@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_SUBSCRIPTION displays the detailed synchronization information about the subscription.
+description: PG_STAT_SUBSCRIPTION displays the detailed synchronization information about the subscription.
 keywords: [openGauss, PG_STAT_SUBSCRIPTION]
 ---
 

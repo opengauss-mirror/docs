@@ -1,5 +1,5 @@
 ---
-description: TRANSACTIONS\_PREPARED\_XACTS displays information about transactions that are currently prepared for two-phase commit.
+description: TRANSACTIONS_PREPARED_XACTS displays information about transactions that are currently prepared for two-phase commit.
 keywords: [openGauss, TRANSACTIONS_PREPARED_XACTS]
 ---
 

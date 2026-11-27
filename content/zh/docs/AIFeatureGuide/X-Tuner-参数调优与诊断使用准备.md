@@ -1,5 +1,5 @@
 ---
-description: - 数据库状态正常、客户端能够正常连接、且要求数据库内导入数据，以便调优程序可以执行benchmark测试调优效果。.
+description: 数据库状态正常、客户端能够正常连接、且要求数据库内导入数据，以便调优程序可以执行benchmark测试调优效果。.
 keywords: [openGauss, 使用准备]
 ---
 

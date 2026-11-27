@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_CANDIDATE\_STATUS视图显示整个数据库所有实例候选buffer个数，buffer淘汰信息。.
+description: GLOBAL_CANDIDATE_STATUS视图显示整个数据库所有实例候选buffer个数，buffer淘汰信息。.
 keywords: [openGauss, GLOBAL_CANDIDATE_STATUS]
 ---
 

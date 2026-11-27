@@ -1,5 +1,5 @@
 ---
-description: - Setting Account Security Policies.
+description: Setting Account Security Policies.
 keywords: [openGauss, Setting Security Policies]
 ---
 

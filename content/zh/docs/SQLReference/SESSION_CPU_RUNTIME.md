@@ -1,5 +1,5 @@
 ---
-description: SESSION\_CPU\_RUNTIME视图显示和当前用户执行复杂作业（正在运行）时的负载管理CPU使用的信息。.
+description: SESSION_CPU_RUNTIME视图显示和当前用户执行复杂作业（正在运行）时的负载管理CPU使用的信息。.
 keywords: [openGauss, SESSION_CPU_RUNTIME]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_STATEMENT\_COMPLEX\_HISTORY displays load management information about completed jobs executed on each node.
+description: GLOBAL_STATEMENT_COMPLEX_HISTORY displays load management information about completed jobs executed on each node.
 keywords: [openGauss, GLOBAL_STATEMENT_COMPLEX_HISTORY]
 ---
 

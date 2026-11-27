@@ -1,5 +1,5 @@
 ---
-description: PGXC\_NODE系统表存储集群节点信息。PGXC\_NODE系统表仅在分布式场景下有具体含义，openGauss只能查询表定义。.
+description: PGXC_NODE系统表存储集群节点信息。PGXC_NODE系统表仅在分布式场景下有具体含义，openGauss只能查询表定义。.
 keywords: [openGauss, PGXC_NODE]
 ---
 

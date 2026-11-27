@@ -1,5 +1,5 @@
 ---
-description: PG\_STATIO\_USER\_SEQUENCES shows I/O status information about all the user relationship table sequences in the namespace.
+description: PG_STATIO_USER_SEQUENCES shows I/O status information about all the user relationship table sequences in the namespace.
 keywords: [openGauss, PG_STATIO_USER_SEQUENCES]
 ---
 

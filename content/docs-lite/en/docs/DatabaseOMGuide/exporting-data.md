@@ -1,5 +1,5 @@
 ---
-description: - Using gs\_dump and gs\_dumpall to Export Data.
+description: Using gs_dump and gs_dumpall to Export Data.
 keywords: [openGauss, Exporting Data]
 ---
 

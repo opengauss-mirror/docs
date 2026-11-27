@@ -1,5 +1,5 @@
 ---
-description: - The log\_destination parameter is set to csvlog.
+description: The log_destination parameter is set to csvlog.
 keywords: [openGauss, Using CSV Log Output]
 ---
 

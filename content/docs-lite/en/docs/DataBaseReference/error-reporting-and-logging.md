@@ -1,5 +1,5 @@
 ---
-description: - Logging Destination.
+description: Logging Destination.
 keywords: [openGauss, Error Reporting and Logging]
 ---
 

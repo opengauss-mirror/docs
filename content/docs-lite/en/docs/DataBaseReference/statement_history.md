@@ -1,5 +1,5 @@
 ---
-description: STATEMENT\_HISTORY displays information about execution statements on the current node. To query this system catalog, you must have the sysadmin permission. The result can be queried only in.
+description: STATEMENT_HISTORY displays information about execution statements on the current node. To query this system catalog, you must have the sysadmin permission. The result can be queried only in.
 keywords: [openGauss, STATEMENT_HISTORY]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Introduces AI4DB: 慢SQL根因分析 in openGauss, covering .
+description: 'Introduces AI4DB: 慢SQL根因分析 in openGauss, covering .'
 keywords: [openGauss, AI4DB 慢SQL根因分析]
 ---
 

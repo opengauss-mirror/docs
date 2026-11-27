@@ -1,5 +1,5 @@
 ---
-description: - High-Latency Escape at the Infrastructure Layer.
+description: High-Latency Escape at the Infrastructure Layer.
 keywords: [openGauss, Workload Management]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_SHARED\_MEMORY\_DETAIL is used to query the usage of shared memory contexts on all normal nodes in openGauss.
+description: GLOBAL_SHARED_MEMORY_DETAIL is used to query the usage of shared memory contexts on all normal nodes in openGauss.
 keywords: [openGauss, GLOBAL_SHARED_MEMORY_DETAIL]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: MOT provide users with significant benefits in performance \(query and transaction latency\), scalability \(throughput and concurrency\) and in some cases cost \(high resource utilization\) –.
+description: MOT provide users with significant benefits in performance (query and transaction latency), scalability (throughput and concurrency) and in some cases cost (high resource utilization) –.
 keywords: [openGauss, MOT Features and Benefits]
 ---
 

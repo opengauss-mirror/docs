@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_GET\_BGWRITER\_STATUS displays the information about pages flushed by the bgwriter threads of all instances in the database, number of pages in the candidate buffer chain, and buffer evic.
+description: GLOBAL_GET_BGWRITER_STATUS displays the information about pages flushed by the bgwriter threads of all instances in the database, number of pages in the candidate buffer chain, and buffer evic.
 keywords: [openGauss, GLOBAL_GET_BGWRITER_STATUS]
 ---
 

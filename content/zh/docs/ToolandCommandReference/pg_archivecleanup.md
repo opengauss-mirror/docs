@@ -1,5 +1,5 @@
 ---
-description: pg\_archivecleanup是一个用于清理旧的归档日志的工具。.
+description: pg_archivecleanup是一个用于清理旧的归档日志的工具。.
 keywords: [openGauss, pg_archivecleanup]
 ---
 

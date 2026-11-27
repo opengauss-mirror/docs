@@ -1,5 +1,5 @@
 ---
-description: - STAT\_USER\_TABLES.
+description: STAT_USER_TABLES.
 keywords: [openGauss, Object]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_PLAN\_OPERATOR\_INFO系统表显示执行作业结束后计划算子级的相关的记录。此数据是从内核中转储到系统表中的数据。.
+description: GS_WLM_PLAN_OPERATOR_INFO系统表显示执行作业结束后计划算子级的相关的记录。此数据是从内核中转储到系统表中的数据。.
 keywords: [openGauss, GS_WLM_PLAN_OPERATOR_INFO]
 ---
 

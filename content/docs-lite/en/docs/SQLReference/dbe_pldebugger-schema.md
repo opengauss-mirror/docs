@@ -1,5 +1,5 @@
 ---
-description: DBE\_PLDEBUGGER system functions are used to debug stored procedures in a standalone system. This chapter describes the interfaces supported by DBE\_PLDEBUGGER. Only the administrator has the permissi.
+description: DBE_PLDEBUGGER system functions are used to debug stored procedures in a standalone system. This chapter describes the interfaces supported by DBE_PLDEBUGGER. Only the administrator has the permissi.
 keywords: [openGauss, DBE_PLDEBUGGER Schema]
 ---
 

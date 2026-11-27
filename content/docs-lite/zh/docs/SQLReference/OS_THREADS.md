@@ -1,5 +1,5 @@
 ---
-description: Introduces OS\_THREADS in openGauss, covering .
+description: Introduces OS_THREADS in openGauss, covering .
 keywords: [openGauss, OS_THREADS]
 ---
 

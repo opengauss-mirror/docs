@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_THREADPOOL\_STATUS displays the status of worker threads and sessions in thread pools on all nodes. Columns in this view are the same as those in [Table 1](local_threadpool_status.md#e.
+description: GLOBAL_THREADPOOL_STATUS displays the status of worker threads and sessions in thread pools on all nodes. Columns in this view are the same as those in [Table 1](local_threadpool_status.md#e.
 keywords: [openGauss, GLOBAL_THREADPOOL_STATUS]
 ---
 

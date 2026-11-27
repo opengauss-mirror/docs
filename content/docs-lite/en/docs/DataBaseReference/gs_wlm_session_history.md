@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_SESSION\_HISTORY displays load management information about all completed jobs executed by the current user on database instances. Only users with the sysadmin or monitor admin.
+description: GS_WLM_SESSION_HISTORY displays load management information about all completed jobs executed by the current user on database instances. Only users with the sysadmin or monitor admin.
 keywords: [openGauss, GS_WLM_SESSION_HISTORY]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: During debugging on the debug end, info\_locals is invoked to print the variables in the current stored procedure. The input parameter frameno of this function indicates the stack layer to.
+description: During debugging on the debug end, info_locals is invoked to print the variables in the current stored procedure. The input parameter frameno of this function indicates the stack layer to.
 keywords: [openGauss, DBE_PLDEBUGGER.info_locals]
 ---
 

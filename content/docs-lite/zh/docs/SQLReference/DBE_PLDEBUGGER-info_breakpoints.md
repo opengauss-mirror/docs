@@ -1,5 +1,5 @@
 ---
-description: debug端调试过程中，调用info\_breakpoints，查看当前的函数断点。.
+description: debug端调试过程中，调用info_breakpoints，查看当前的函数断点。.
 keywords: [openGauss, DBE_PLDEBUGGER.info_breakpoints]
 ---
 

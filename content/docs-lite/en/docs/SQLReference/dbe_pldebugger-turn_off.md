@@ -1,5 +1,5 @@
 ---
-description: This function is used to remove the debugging flag added by turn\_on. The return value indicates success or failure. You can run the DBE\_PLDEBUGGER.local\_debug\_server\_info command to qu.
+description: This function is used to remove the debugging flag added by turn_on. The return value indicates success or failure. You can run the DBE_PLDEBUGGER.local_debug_server_info command to qu.
 keywords: [openGauss, DBE_PLDEBUGGER.turn_off]
 ---
 

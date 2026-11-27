@@ -1,5 +1,5 @@
 ---
-description: - Overview of System Catalogs and System Views.
+description: Overview of System Catalogs and System Views.
 keywords: [openGauss, System Catalogs and System Views]
 ---
 

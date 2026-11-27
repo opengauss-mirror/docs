@@ -1,5 +1,5 @@
 ---
-description: PURGE\_SNAPSHOT\_INTERNAL是DB4AI.PURGE\_SNAPSHOT函数的内置执行函数。函数存在信息校验，无法直接调用.
+description: PURGE_SNAPSHOT_INTERNAL是DB4AI.PURGE_SNAPSHOT函数的内置执行函数。函数存在信息校验，无法直接调用.
 keywords: [openGauss, DB4AI.PURGE_SNAPSHOT_INTERNAL]
 ---
 

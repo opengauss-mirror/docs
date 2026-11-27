@@ -1,5 +1,5 @@
 ---
-description: - Embedding：支持与DeepSeek、Qwen、盘古大模型对接，将高维数据转化为向量。.
+description: Embedding：支持与DeepSeek、Qwen、盘古大模型对接，将高维数据转化为向量。.
 keywords: [openGauss, 向量存储引擎]
 ---
 

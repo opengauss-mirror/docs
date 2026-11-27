@@ -1,5 +1,5 @@
 ---
-description: Introduces SQL Rewriter: SQL语句改写 in openGauss, covering .
+description: 'Introduces SQL Rewriter: SQL语句改写 in openGauss, covering .'
 keywords: [openGauss, SQL Rewriter SQL语句改写]
 ---
 

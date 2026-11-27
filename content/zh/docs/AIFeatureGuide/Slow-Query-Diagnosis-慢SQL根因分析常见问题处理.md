@@ -1,5 +1,5 @@
 ---
-description: - 如果用户对没有执行过的慢SQL执行交互式诊断命令，则无法给出诊断结果。.
+description: 如果用户对没有执行过的慢SQL执行交互式诊断命令，则无法给出诊断结果。.
 keywords: [openGauss, 常见问题处理]
 ---
 

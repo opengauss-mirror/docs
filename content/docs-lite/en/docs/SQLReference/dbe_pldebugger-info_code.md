@@ -1,5 +1,5 @@
 ---
-description: During debugging on the debug end, info\_code is invoked to view the source statement of the specified stored procedure and the line number corresponding to each line. The line number starts fro.
+description: During debugging on the debug end, info_code is invoked to view the source statement of the specified stored procedure and the line number corresponding to each line. The line number starts fro.
 keywords: [openGauss, DBE_PLDEBUGGER.info_code]
 ---
 

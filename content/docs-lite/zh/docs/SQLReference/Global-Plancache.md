@@ -1,5 +1,5 @@
 ---
-description: GPC相关视图在enable\_global\_plancache打开且线程池打开的状态下才有效。.
+description: GPC相关视图在enable_global_plancache打开且线程池打开的状态下才有效。.
 keywords: [openGauss, Global Plancache]
 ---
 

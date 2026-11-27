@@ -1,5 +1,5 @@
 ---
-description: - 连接数据库： 默认只支持从服务器本机连接，如果需要连接到远端的数据库，必须在服务端进行配置。详细操作请参见《快速入门》中“访问openGauss \> 使用gsql访问openGauss”章节。.
+description: 连接数据库： 默认只支持从服务器本机连接，如果需要连接到远端的数据库，必须在服务端进行配置。详细操作请参见《快速入门》中“访问openGauss > 使用gsql访问openGauss”章节。.
 keywords: [openGauss, gsql概述]
 ---
 

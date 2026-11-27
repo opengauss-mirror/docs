@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies the number of buckets for HLL data. The number of buckets affects the precision of distinct values calculated by HLL. The more buckets there are, the smaller the d.
+description: 'Parameter description: Specifies the number of buckets for HLL data. The number of buckets affects the precision of distinct values calculated by HLL. The more buckets there are, the smaller the d.'
 keywords: [openGauss, HyperLogLog]
 ---
 

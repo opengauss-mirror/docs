@@ -1,5 +1,5 @@
 ---
-description: CREATE\_SNAPSHOT creates snapshots for the DB4AI feature. You can invoke CREATE SNAPSHOT to implement this function.
+description: CREATE_SNAPSHOT creates snapshots for the DB4AI feature. You can invoke CREATE SNAPSHOT to implement this function.
 keywords: [openGauss, DB4AI.CREATE_SNAPSHOT]
 ---
 

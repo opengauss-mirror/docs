@@ -1,5 +1,5 @@
 ---
-description: PG\_TS\_TEMPLATE contains entries defining text search templates. A template provides a framework for text search dictionaries. Since a template must be implemented by C-language-level functions,.
+description: PG_TS_TEMPLATE contains entries defining text search templates. A template provides a framework for text search dictionaries. Since a template must be implemented by C-language-level functions,.
 keywords: [openGauss, PG_TS_TEMPLATE]
 ---
 

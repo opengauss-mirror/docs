@@ -1,5 +1,5 @@
 ---
-description: gs\_dump and gs\_dumpall use -U to specify the user that performs the export. If the specified user does not have the required permissions, data cannot be exported. In this case, you.
+description: gs_dump and gs_dumpall use -U to specify the user that performs the export. If the specified user does not have the required permissions, data cannot be exported. In this case, you.
 keywords: [openGauss, Data Export By a User Without Required Permissions]
 ---
 

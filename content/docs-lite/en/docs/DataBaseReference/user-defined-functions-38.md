@@ -1,5 +1,5 @@
 ---
-description: Introduces User-defined Functions in openGauss, covering udf\_memory\_limit, FencedUDFMemoryLimit, UDFWorkerMemHardLimit.
+description: Introduces User-defined Functions in openGauss, covering udf_memory_limit, FencedUDFMemoryLimit, UDFWorkerMemHardLimit.
 keywords: [openGauss, User-defined Functions]
 ---
 

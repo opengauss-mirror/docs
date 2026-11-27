@@ -1,5 +1,5 @@
 ---
-description: - gs\_verify\_data\_file\(verify\_segment bool\).
+description: gs_verify_data_file(verify_segment bool).
 keywords: [openGauss, Data Damage Detection and Repair Functions]
 ---
 

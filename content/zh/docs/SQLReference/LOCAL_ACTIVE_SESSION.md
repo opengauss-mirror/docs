@@ -1,5 +1,5 @@
 ---
-description: LOCAL\_ACTIVE\_SESSION视图显示本节点上的ACTIVE SESSION PROFILE内存中的样本。.
+description: LOCAL_ACTIVE_SESSION视图显示本节点上的ACTIVE SESSION PROFILE内存中的样本。.
 keywords: [openGauss, LOCAL_ACTIVE_SESSION]
 ---
 

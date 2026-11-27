@@ -1,5 +1,5 @@
 ---
-description: 本节点Redo\(WAL\)相关的统计信息。.
+description: 本节点Redo(WAL)相关的统计信息。.
 keywords: [openGauss, FILE_REDO_IOSTAT]
 ---
 

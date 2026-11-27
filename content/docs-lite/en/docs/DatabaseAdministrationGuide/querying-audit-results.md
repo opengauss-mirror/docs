@@ -1,5 +1,5 @@
 ---
-description: - Audit has been enabled.
+description: Audit has been enabled.
 keywords: [openGauss, Querying Audit Results]
 ---
 

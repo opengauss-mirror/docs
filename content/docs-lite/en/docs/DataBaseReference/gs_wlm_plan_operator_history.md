@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_PLAN\_OPERATOR\_HISTORY displays the execution plan operator-level records of the current user on the primary database node after the job is complete.
+description: GS_WLM_PLAN_OPERATOR_HISTORY displays the execution plan operator-level records of the current user on the primary database node after the job is complete.
 keywords: [openGauss, GS_WLM_PLAN_OPERATOR_HISTORY]
 ---
 

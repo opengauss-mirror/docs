@@ -1,5 +1,5 @@
 ---
-description: PG\_OBJECT records the creator, creation time, and last modification time of objects of specified types \(ordinary tables, indexes, sequences, views, stored procedures, and functions\).
+description: PG_OBJECT records the creator, creation time, and last modification time of objects of specified types (ordinary tables, indexes, sequences, views, stored procedures, and functions).
 keywords: [openGauss, PG_OBJECT]
 ---
 

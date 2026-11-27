@@ -1,5 +1,5 @@
 ---
-description: PG\_VIEWS provides access to basic information about each view in the database.
+description: PG_VIEWS provides access to basic information about each view in the database.
 keywords: [openGauss, PG_VIEWS]
 ---
 

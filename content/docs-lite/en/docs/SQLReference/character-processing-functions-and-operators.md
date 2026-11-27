@@ -1,5 +1,5 @@
 ---
-description: String functions and operators provided by openGauss are for concatenating strings with each other, concatenating strings with non-strings, and matching the patterns of strings. Note: Except length-re.
+description: 'String functions and operators provided by openGauss are for concatenating strings with each other, concatenating strings with non-strings, and matching the patterns of strings. Note: Except length-re.'
 keywords: [openGauss, Character Processing Functions and Operators]
 ---
 

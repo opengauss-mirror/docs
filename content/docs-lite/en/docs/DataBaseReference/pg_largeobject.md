@@ -1,5 +1,5 @@
 ---
-description: PG\_LARGEOBJECT records data making up large objects. A large object is identified by an OID assigned when it is created. Each large object is broken into segments or "pages" small enough to be c.
+description: PG_LARGEOBJECT records data making up large objects. A large object is identified by an OID assigned when it is created. Each large object is broken into segments or "pages" small enough to be c.
 keywords: [openGauss, PG_LARGEOBJECT]
 ---
 

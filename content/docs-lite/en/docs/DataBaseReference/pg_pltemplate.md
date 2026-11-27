@@ -1,5 +1,5 @@
 ---
-description: PG\_PLTEMPLATE records template information for procedural languages.
+description: PG_PLTEMPLATE records template information for procedural languages.
 keywords: [openGauss, PG_PLTEMPLATE]
 ---
 

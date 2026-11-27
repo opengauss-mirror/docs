@@ -1,5 +1,5 @@
 ---
-description: You can use gs\_dump to export data and all object definitions of a schema from openGauss. You can export one or more specified schemas as needed. You can specify the information to export as fo.
+description: You can use gs_dump to export data and all object definitions of a schema from openGauss. You can export one or more specified schemas as needed. You can specify the information to export as fo.
 keywords: [openGauss, Exporting a Schema]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies the minimum number of WAL segment files in the period specified by [checkpoint\_timeout](#en-us_topic_0283137153_en-us_topic_0237124708_en-us_topic_0059778936_s.
+description: 'Parameter description: Specifies the minimum number of WAL segment files in the period specified by [checkpoint_timeout](#en-us_topic_0283137153_en-us_topic_0237124708_en-us_topic_0059778936_s.'
 keywords: [openGauss, Checkpoints]
 ---
 

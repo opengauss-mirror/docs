@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_STATIO\_ALL\_INDEXES contains one row for each index in databases on each node, showing I/O statistics about specific indexes.
+description: GLOBAL_STATIO_ALL_INDEXES contains one row for each index in databases on each node, showing I/O statistics about specific indexes.
 keywords: [openGauss, GLOBAL_STATIO_ALL_INDEXES]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - Planning Resources.
+description: Planning Resources.
 keywords: [openGauss, Resource Management Preparation]
 ---
 

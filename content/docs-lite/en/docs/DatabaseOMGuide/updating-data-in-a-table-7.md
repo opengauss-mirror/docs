@@ -1,5 +1,5 @@
 ---
-description: - Updating a Table by Using DML Statements.
+description: Updating a Table by Using DML Statements.
 keywords: [openGauss, Updating Data in a Table]
 ---
 

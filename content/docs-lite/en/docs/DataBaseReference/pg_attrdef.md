@@ -1,5 +1,5 @@
 ---
-description: PG\_ATTRDEF records default values of columns.
+description: PG_ATTRDEF records default values of columns.
 keywords: [openGauss, PG_ATTRDEF]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_VIEWS视图提供访问数据库中每个视图的有用信息。.
+description: PG_VIEWS视图提供访问数据库中每个视图的有用信息。.
 keywords: [openGauss, PG_VIEWS]
 ---
 

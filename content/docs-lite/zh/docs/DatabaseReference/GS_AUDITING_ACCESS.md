@@ -1,5 +1,5 @@
 ---
-description: GS\_AUDITING\_ACCESS视图显示对数据库DML相关操作的所有审计信息。需要有系统管理员或安全策略管理员权限才可以访问此视图。.
+description: GS_AUDITING_ACCESS视图显示对数据库DML相关操作的所有审计信息。需要有系统管理员或安全策略管理员权限才可以访问此视图。.
 keywords: [openGauss, GS_AUDITING_ACCESS]
 ---
 

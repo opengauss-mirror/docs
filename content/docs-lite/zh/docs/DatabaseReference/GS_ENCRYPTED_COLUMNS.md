@@ -1,5 +1,5 @@
 ---
-description: GS\_ENCRYPTED\_COLUMNS系统表记录密态等值特性中表的加密列相关信息，每条记录对应一条加密列信息。.
+description: GS_ENCRYPTED_COLUMNS系统表记录密态等值特性中表的加密列相关信息，每条记录对应一条加密列信息。.
 keywords: [openGauss, GS_ENCRYPTED_COLUMNS]
 ---
 

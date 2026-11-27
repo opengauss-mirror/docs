@@ -1,5 +1,5 @@
 ---
-description: PG\_STATIO\_ALL\_SEQUENCES视图包含当前数据库中每个序列的I/O的统计信息。.
+description: PG_STATIO_ALL_SEQUENCES视图包含当前数据库中每个序列的I/O的统计信息。.
 keywords: [openGauss, PG_STATIO_ALL_SEQUENCES]
 ---
 

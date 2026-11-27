@@ -1,5 +1,5 @@
 ---
-description: - Logical Decoding.
+description: Logical Decoding.
 keywords: [openGauss, Logical Replication]
 ---
 

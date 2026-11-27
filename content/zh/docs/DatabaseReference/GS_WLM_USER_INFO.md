@@ -1,5 +1,5 @@
 ---
-description: Introduces GS\_WLM\_USER\_INFO in openGauss, covering .
+description: Introduces GS_WLM_USER_INFO in openGauss, covering .
 keywords: [openGauss, GS_WLM_USER_INFO]
 ---
 

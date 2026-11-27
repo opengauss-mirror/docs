@@ -1,5 +1,5 @@
 ---
-description: disable\_sql\_patch is an interface function used to disable an SQL patch and return whether the execution is successful.
+description: disable_sql_patch is an interface function used to disable an SQL patch and return whether the execution is successful.
 keywords: [openGauss, DBE_SQL_UTIL.disable_sql_patch]
 ---
 

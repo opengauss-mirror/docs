@@ -1,5 +1,5 @@
 ---
-description: PG\_PREPARED\_XACTS视图显示当前准备好进行两阶段提交的事务的信息。.
+description: PG_PREPARED_XACTS视图显示当前准备好进行两阶段提交的事务的信息。.
 keywords: [openGauss, PG_PREPARED_XACTS]
 ---
 

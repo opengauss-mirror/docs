@@ -1,5 +1,5 @@
 ---
-description: In ODBC 3.x, SQLAllocConnect \(an ODBC 2.x function\) was deprecated and replaced by SQLAllocHandle. For details, see SQLAllocHandle.
+description: In ODBC 3.x, SQLAllocConnect (an ODBC 2.x function) was deprecated and replaced by SQLAllocHandle. For details, see SQLAllocHandle.
 keywords: [openGauss, SQLAllocConnect]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - Distributed Database Capability.
+description: Distributed Database Capability.
 keywords: [openGauss, Middleware]
 ---
 

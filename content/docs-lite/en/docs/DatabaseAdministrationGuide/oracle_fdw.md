@@ -1,5 +1,5 @@
 ---
-description: oracle\_fdw \(foreign data wrapper for oracle\) is an external data wrapper for Oracle and is an open source plug-in. openGauss is developed and adapted based.
+description: oracle_fdw (foreign data wrapper for oracle) is an external data wrapper for Oracle and is an open source plug-in. openGauss is developed and adapted based.
 keywords: [openGauss, External Data Wrapper for Oracle]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: STATEMENT\_WLMSTAT\_COMPLEX\_RUNTIME displays load management information about ongoing jobs executed by the current user.
+description: STATEMENT_WLMSTAT_COMPLEX_RUNTIME displays load management information about ongoing jobs executed by the current user.
 keywords: [openGauss, STATEMENT_WLMSTAT_COMPLEX_RUNTIME]
 ---
 

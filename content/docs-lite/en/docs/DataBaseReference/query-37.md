@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies the maximum number of Unique SQL records to be collected. The value 0 indicates that the function of collecting Unique SQL information is disabled.
+description: 'Parameter description: Specifies the maximum number of Unique SQL records to be collected. The value 0 indicates that the function of collecting Unique SQL information is disabled.'
 keywords: [openGauss, Query]
 ---
 

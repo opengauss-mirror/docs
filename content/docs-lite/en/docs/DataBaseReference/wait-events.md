@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies whether to enable real-time collection of wait event information.
+description: 'Parameter description: Specifies whether to enable real-time collection of wait event information.'
 keywords: [openGauss, Wait Events]
 ---
 

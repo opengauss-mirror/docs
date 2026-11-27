@@ -1,5 +1,5 @@
 ---
-description: PG\_ROLES provides information about database roles. Initialization users and users with the sysadmin or createrole attribute can view information about all roles. Other users can view only their own.
+description: PG_ROLES provides information about database roles. Initialization users and users with the sysadmin or createrole attribute can view information about all roles. Other users can view only their own.
 keywords: [openGauss, PG_ROLES]
 ---
 

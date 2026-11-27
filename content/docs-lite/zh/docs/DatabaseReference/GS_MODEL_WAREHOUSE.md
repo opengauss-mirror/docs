@@ -1,5 +1,5 @@
 ---
-description: GS\_MODEL\_WAREHOUSE系统表用于存储AI引擎训练模型，其中包含模型，训练过程的详细描述。.
+description: GS_MODEL_WAREHOUSE系统表用于存储AI引擎训练模型，其中包含模型，训练过程的详细描述。.
 keywords: [openGauss, GS_MODEL_WAREHOUSE]
 ---
 

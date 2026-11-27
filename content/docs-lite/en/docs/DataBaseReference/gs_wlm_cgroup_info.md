@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_CGROUP\_INFO displays information about a Cgroup for a job that is being executed.
+description: GS_WLM_CGROUP_INFO displays information about a Cgroup for a job that is being executed.
 keywords: [openGauss, GS_WLM_CGROUP_INFO]
 ---
 

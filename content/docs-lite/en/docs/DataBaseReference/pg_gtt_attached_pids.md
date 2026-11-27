@@ -1,5 +1,5 @@
 ---
-description: PG\_GTT\_ATTACHED\_PIDS checks which sessions are using global temporary tables by calling the pg\_get\_attached\_pid function.
+description: PG_GTT_ATTACHED_PIDS checks which sessions are using global temporary tables by calling the pg_get_attached_pid function.
 keywords: [openGauss, PG_GTT_ATTACHED_PIDS]
 ---
 

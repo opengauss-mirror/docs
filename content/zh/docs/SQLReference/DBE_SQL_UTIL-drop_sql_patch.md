@@ -1,5 +1,5 @@
 ---
-description: drop\_sql\_patch是用于删除SQL PATCH的接口函数，返回执行是否成功。.
+description: drop_sql_patch是用于删除SQL PATCH的接口函数，返回执行是否成功。.
 keywords: [openGauss, DBE_SQL_UTIL.drop_sql_patch]
 ---
 

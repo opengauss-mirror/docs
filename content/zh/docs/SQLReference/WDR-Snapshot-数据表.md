@@ -1,5 +1,5 @@
 ---
-description: WDR Snapshot数据表命名原则：snap\_\{源数据表\}。.
+description: WDR Snapshot数据表命名原则：snap_{源数据表}。.
 keywords: [openGauss, WDR Snapshot 数据表]
 ---
 

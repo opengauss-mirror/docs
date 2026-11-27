@@ -1,5 +1,5 @@
 ---
-description: openGauss provides gs\_dump and gs\_dumpall to export required database objects and related information. You can use a tool to import the exported data to a target database for database mi.
+description: openGauss provides gs_dump and gs_dumpall to export required database objects and related information. You can use a tool to import the exported data to a target database for database mi.
 keywords: [openGauss, Overview]
 ---
 

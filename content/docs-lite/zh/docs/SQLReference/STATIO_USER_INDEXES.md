@@ -1,5 +1,5 @@
 ---
-description: STATIO\_USER\_INDEXES视图显示当前节点命名空间中所有用户关系表索引的IO状态信息。.
+description: STATIO_USER_INDEXES视图显示当前节点命名空间中所有用户关系表索引的IO状态信息。.
 keywords: [openGauss, STATIO_USER_INDEXES]
 ---
 

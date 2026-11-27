@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_USER\_TRANSACTION用来统计全局用户执行的事务信息。.
+description: GLOBAL_USER_TRANSACTION用来统计全局用户执行的事务信息。.
 keywords: [openGauss, GLOBAL_USER_TRANSACTION]
 ---
 

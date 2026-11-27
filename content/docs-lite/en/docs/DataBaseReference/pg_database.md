@@ -1,5 +1,5 @@
 ---
-description: PG\_DATABASE records information about available databases.
+description: PG_DATABASE records information about available databases.
 keywords: [openGauss, PG_DATABASE]
 ---
 

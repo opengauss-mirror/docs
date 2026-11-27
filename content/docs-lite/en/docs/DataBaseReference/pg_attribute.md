@@ -1,5 +1,5 @@
 ---
-description: PG\_ATTRIBUTE records information about table columns.
+description: PG_ATTRIBUTE records information about table columns.
 keywords: [openGauss, PG_ATTRIBUTE]
 ---
 

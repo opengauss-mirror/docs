@@ -1,5 +1,5 @@
 ---
-description: CREATE\_SNAPSHOT\_INTERNAL is a built-in execution function of the DB4AI.CREATE\_SNAPSHOT function. The function involves information verification and cannot be directly invoked.
+description: CREATE_SNAPSHOT_INTERNAL is a built-in execution function of the DB4AI.CREATE_SNAPSHOT function. The function involves information verification and cannot be directly invoked.
 keywords: [openGauss, DB4AI.CREATE_SNAPSHOT_INTERNAL]
 ---
 

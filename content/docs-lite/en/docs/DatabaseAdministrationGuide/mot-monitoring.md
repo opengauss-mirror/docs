@@ -1,5 +1,5 @@
 ---
-description: All syntax for monitoring of PG-based FDW tables is supported. This includes Table or Index sizes \(as described below\). In addition, special functions exist for monitoring MOT memory consumption, in.
+description: All syntax for monitoring of PG-based FDW tables is supported. This includes Table or Index sizes (as described below). In addition, special functions exist for monitoring MOT memory consumption, in.
 keywords: [openGauss, MOT Monitoring]
 ---
 

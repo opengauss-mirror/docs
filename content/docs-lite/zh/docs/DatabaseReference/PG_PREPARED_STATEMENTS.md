@@ -1,5 +1,5 @@
 ---
-description: PG\_PREPARED\_STATEMENTS视图整个数据库实例的预备语句。.
+description: PG_PREPARED_STATEMENTS视图整个数据库实例的预备语句。.
 keywords: [openGauss, PG_PREPARED_STATEMENTS]
 ---
 

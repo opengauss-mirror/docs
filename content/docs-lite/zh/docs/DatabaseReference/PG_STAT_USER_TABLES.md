@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_USER\_TABLES视图显示所有命名空间中用户自定义普通表和toast表的状态信息。.
+description: PG_STAT_USER_TABLES视图显示所有命名空间中用户自定义普通表和toast表的状态信息。.
 keywords: [openGauss, PG_STAT_USER_TABLES]
 ---
 

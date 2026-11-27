@@ -1,5 +1,5 @@
 ---
-description: PG\_EVENT\_TRIGGER系统表存储每个事件触发器的信息。.
+description: PG_EVENT_TRIGGER系统表存储每个事件触发器的信息。.
 keywords: [openGauss, PG_EVENT_TRIGGER]
 ---
 

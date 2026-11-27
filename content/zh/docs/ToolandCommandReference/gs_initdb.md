@@ -1,5 +1,5 @@
 ---
-description: Introduces gs\_initdb in openGauss, covering 简介, 使用指导, 命令参考.
+description: Introduces gs_initdb in openGauss, covering 简介, 使用指导, 命令参考.
 keywords: [openGauss, gs_initdb]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_STATIO\_ALL\_TABLES视图将包含当前数据库中每个表（包括TOAST表）的I/O统计信息。.
+description: PG_STATIO_ALL_TABLES视图将包含当前数据库中每个表（包括TOAST表）的I/O统计信息。.
 keywords: [openGauss, PG_STATIO_ALL_TABLES]
 ---
 

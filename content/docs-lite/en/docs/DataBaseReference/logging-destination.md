@@ -1,5 +1,5 @@
 ---
-description: Parameter description: openGauss supports several methods of logging server messages. Set this parameter to a list of desired log destinations separated by commas. \(For example, log\_destination=.
+description: 'Parameter description: openGauss supports several methods of logging server messages. Set this parameter to a list of desired log destinations separated by commas. (For example, log_destination=.'
 keywords: [openGauss, Logging Destination]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_JOB records detailed information about jobs created by users. Dedicated threads poll the system catalog PG\_JOB and trigger jobs based on scheduled job execution time, and update job st.
+description: PG_JOB records detailed information about jobs created by users. Dedicated threads poll the system catalog PG_JOB and trigger jobs based on scheduled job execution time, and update job st.
 keywords: [openGauss, PG_JOB]
 ---
 

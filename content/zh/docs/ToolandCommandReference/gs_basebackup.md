@@ -1,5 +1,5 @@
 ---
-description: openGauss部署成功后，在数据库运行的过程中，会遇到各种问题及异常状态。openGauss提供了gs\_basebackup工具做基础的物理备份。gs\_basebackup的实现目标是对服务器数据库文件的二进制进行拷贝，其实现原理使用了复制协议。远程执行gs\_basebackup时，需要使用系统管理员账户。gs\_basebackup当前支持热备份模式和压缩格式备份模式。.
+description: openGauss部署成功后，在数据库运行的过程中，会遇到各种问题及异常状态。openGauss提供了gs_basebackup工具做基础的物理备份。gs_basebackup的实现目标是对服务器数据库文件的二进制进行拷贝，其实现原理使用了复制协议。远程执行gs_basebackup时，需要使用系统管理员账户。gs_basebackup当前支持热备份模式和压缩格式备份模式。.
 keywords: [openGauss, gs_basebackup]
 ---
 

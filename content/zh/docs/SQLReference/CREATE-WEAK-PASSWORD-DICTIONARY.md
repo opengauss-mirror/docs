@@ -1,5 +1,5 @@
 ---
-description: 向gs\_global\_config表中插入一个或者多个弱口令。.
+description: 向gs_global_config表中插入一个或者多个弱口令。.
 keywords: [openGauss, CREATE WEAK PASSWORD DICTIONARY]
 ---
 

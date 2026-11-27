@@ -1,5 +1,5 @@
 ---
-description: - bucketabstime\(value，flag\).
+description: bucketabstime(value，flag).
 keywords: [openGauss, HashFunc函数]
 ---
 

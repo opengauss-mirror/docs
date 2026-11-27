@@ -1,5 +1,5 @@
 ---
-description: PG\_RLSPOLICY records row-level access control policies.
+description: PG_RLSPOLICY records row-level access control policies.
 keywords: [openGauss, PG_RLSPOLICY]
 ---
 

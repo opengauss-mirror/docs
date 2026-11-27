@@ -1,5 +1,5 @@
 ---
-description: - CONFIG\_SETTINGS.
+description: CONFIG_SETTINGS.
 keywords: [openGauss, Configuration]
 ---
 

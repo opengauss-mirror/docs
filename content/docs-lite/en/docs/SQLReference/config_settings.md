@@ -1,5 +1,5 @@
 ---
-description: CONFIG\_SETTINGS displays information about parameters of the running database.
+description: CONFIG_SETTINGS displays information about parameters of the running database.
 keywords: [openGauss, CONFIG_SETTINGS]
 ---
 

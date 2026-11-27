@@ -1,5 +1,5 @@
 ---
-description: PG\_PREPARED\_STATEMENTS displays all prepared statements that are available in the current session.
+description: PG_PREPARED_STATEMENTS displays all prepared statements that are available in the current session.
 keywords: [openGauss, PG_PREPARED_STATEMENTS]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Java Database Connectivity \(JDBC\) is a Java API for running SQL statements. It provides unified access APIs for different relational databases, based on which applications process data. The openGaus.
+description: Java Database Connectivity (JDBC) is a Java API for running SQL statements. It provides unified access APIs for different relational databases, based on which applications process data. The openGaus.
 keywords: [openGauss, Java]
 ---
 

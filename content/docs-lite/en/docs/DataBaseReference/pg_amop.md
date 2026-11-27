@@ -1,5 +1,5 @@
 ---
-description: PG\_AMOP records information about operators associated with access method operator families. There is one row for each operator that is a member of an operator family. A family member can be eit.
+description: PG_AMOP records information about operators associated with access method operator families. There is one row for each operator that is a member of an operator family. A family member can be eit.
 keywords: [openGauss, PG_AMOP]
 ---
 

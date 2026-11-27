@@ -1,5 +1,5 @@
 ---
-description: PG\_STATISTIC系统表存储有关该数据库中表和索引列的统计数据。默认只有系统管理员权限才可以访问此系统表，普通用户需要授权才可以访问。.
+description: PG_STATISTIC系统表存储有关该数据库中表和索引列的统计数据。默认只有系统管理员权限才可以访问此系统表，普通用户需要授权才可以访问。.
 keywords: [openGauss, PG_STATISTIC]
 ---
 

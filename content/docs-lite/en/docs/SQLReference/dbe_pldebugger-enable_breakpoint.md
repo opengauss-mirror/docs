@@ -1,5 +1,5 @@
 ---
-description: During debugging on the debug end, calls enable\_breakpoint to enable breakpoints.
+description: During debugging on the debug end, calls enable_breakpoint to enable breakpoints.
 keywords: [openGauss, DBE_PLDEBUGGER.enable_breakpoint]
 ---
 

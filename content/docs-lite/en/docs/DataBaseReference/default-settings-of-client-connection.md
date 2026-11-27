@@ -1,5 +1,5 @@
 ---
-description: - Statement Behavior.
+description: Statement Behavior.
 keywords: [openGauss, Default Settings of Client Connection]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - get\_dn\_hist\_relhash\(text, text\).
+description: get_dn_hist_relhash(text, text).
 keywords: [openGauss, Ledger Database Functions]
 ---
 

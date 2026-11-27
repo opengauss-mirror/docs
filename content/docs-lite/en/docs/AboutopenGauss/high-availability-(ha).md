@@ -1,5 +1,5 @@
 ---
-description: Introduces High Availability \(HA\) in openGauss, covering .
+description: Introduces High Availability (HA) in openGauss, covering .
 keywords: [openGauss, High Availability HA]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - Stored Procedure.
+description: Stored Procedure.
 keywords: [openGauss, Stored Procedure]
 ---
 

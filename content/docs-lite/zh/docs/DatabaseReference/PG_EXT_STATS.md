@@ -1,5 +1,5 @@
 ---
-description: PG\_EXT\_STATS视图提供对存储在PG\_STATISTIC\_EXT表里面的扩展统计信息的访问。扩展统计信息目前包括多列统计信息。.
+description: PG_EXT_STATS视图提供对存储在PG_STATISTIC_EXT表里面的扩展统计信息的访问。扩展统计信息目前包括多列统计信息。.
 keywords: [openGauss, PG_EXT_STATS]
 ---
 

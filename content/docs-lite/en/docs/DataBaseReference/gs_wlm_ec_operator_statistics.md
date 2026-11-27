@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_EC\_OPERATOR\_STATISTICS displays operators of the Extension Connector jobs that are being executed by the current user. Only users with the sysadmin permission can query this view.
+description: GS_WLM_EC_OPERATOR_STATISTICS displays operators of the Extension Connector jobs that are being executed by the current user. Only users with the sysadmin permission can query this view.
 keywords: [openGauss, GS_WLM_EC_OPERATOR_STATISTICS]
 ---
 

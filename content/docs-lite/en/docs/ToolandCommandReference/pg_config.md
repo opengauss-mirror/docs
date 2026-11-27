@@ -1,5 +1,5 @@
 ---
-description: pg\_config is used to print the configuration parameters of the installed database, which helps find the header file and library corresponding to the software package connected to the database.
+description: pg_config is used to print the configuration parameters of the installed database, which helps find the header file and library corresponding to the software package connected to the database.
 keywords: [openGauss, pg_config]
 ---
 

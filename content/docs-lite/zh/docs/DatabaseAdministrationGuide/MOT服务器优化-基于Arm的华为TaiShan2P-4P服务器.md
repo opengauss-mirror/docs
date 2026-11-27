@@ -1,5 +1,5 @@
 ---
-description: 以下是基于Arm/鲲鹏架构的华为TaiShan 2280 v2服务器（2路128核<sup>\</sup>[对比：磁盘与MOT<sup>\]</sup>）和TaiShan 2480 v2服务器（4路256核<sup>\</sup>[对比：磁盘与MOT<sup>\]</sup>）上运行MOT时的建议配置。.
+description: 以下是基于Arm/鲲鹏架构的华为TaiShan 2280 v2服务器（2路128核<sup></sup>[对比：磁盘与MOT<sup>]</sup>）和TaiShan 2480 v2服务器（4路256核<sup></sup>[对比：磁盘与MOT<sup>]</sup>）上运行MOT时的建议配置。.
 keywords: [openGauss, MOT服务器优化基于Arm的华为TaiShan2P4P服务器]
 ---
 

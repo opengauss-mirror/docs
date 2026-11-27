@@ -1,5 +1,5 @@
 ---
-description: SNAP\_SEQ is an ascending sequence, which provides IDs for WDR snapshots.
+description: SNAP_SEQ is an ascending sequence, which provides IDs for WDR snapshots.
 keywords: [openGauss, SNAP_SEQ]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_SET records metadata defined by the SET data type.
+description: PG_SET records metadata defined by the SET data type.
 keywords: [openGauss, PG_SET]
 ---
 

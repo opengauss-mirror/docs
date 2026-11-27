@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_SYS\_INDEXES视图显示pg\_catalog、information\_schema模式中所有系统表的索引状态信息。.
+description: PG_STAT_SYS_INDEXES视图显示pg_catalog、information_schema模式中所有系统表的索引状态信息。.
 keywords: [openGauss, PG_STAT_SYS_INDEXES]
 ---
 

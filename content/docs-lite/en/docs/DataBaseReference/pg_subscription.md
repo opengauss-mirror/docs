@@ -1,5 +1,5 @@
 ---
-description: PG\_SUBSCRIPTION contains all existing logical replication subscriptions. This system catalog is accessible only to system administrators.
+description: PG_SUBSCRIPTION contains all existing logical replication subscriptions. This system catalog is accessible only to system administrators.
 keywords: [openGauss, PG_SUBSCRIPTION]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: The following are optional settings for optimizing MOT database performance running on an ARM/Kunpeng-based Huawei Taishan 2280 v2 server powered by 2-sockets with a total of 256 Cores<sup>\[</sup><su.
+description: The following are optional settings for optimizing MOT database performance running on an ARM/Kunpeng-based Huawei Taishan 2280 v2 server powered by 2-sockets with a total of 256 Cores<sup>[</sup><su.
 keywords: [openGauss, MOT Server Optimization  ARM Huawei Taishan 2P4P]
 ---
 

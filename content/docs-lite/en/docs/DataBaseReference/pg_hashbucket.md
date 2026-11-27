@@ -1,5 +1,5 @@
 ---
-description: PG\_HASHBUCKET records hash bucket information.
+description: PG_HASHBUCKET records hash bucket information.
 keywords: [openGauss, PG_HASHBUCKET]
 ---
 

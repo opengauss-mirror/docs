@@ -1,5 +1,5 @@
 ---
-description: Introduces AI4DB: 数据库自治运维 in openGauss, covering .
+description: 'Introduces AI4DB: 数据库自治运维 in openGauss, covering .'
 keywords: [openGauss, AI4DB 数据库自治运维]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - NIC Multi-Queue Interruption Settings.
+description: NIC Multi-Queue Interruption Settings.
 keywords: [openGauss, Network Configuration]
 ---
 

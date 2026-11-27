@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_STAT\_USER\_FUNCTIONS displays statistics about user-defined functions on all database nodes.
+description: SUMMARY_STAT_USER_FUNCTIONS displays statistics about user-defined functions on all database nodes.
 keywords: [openGauss, SUMMARY_STAT_USER_FUNCTIONS]
 ---
 

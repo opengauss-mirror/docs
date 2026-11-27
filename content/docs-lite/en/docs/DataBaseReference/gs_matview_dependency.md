@@ -1,5 +1,5 @@
 ---
-description: GS\_MATVIEW\_DEPENDENCY provides association information about each fast-refresh materialized view, base table, and Mlog table in the database. The Mlog table corresponding to the base table does.
+description: GS_MATVIEW_DEPENDENCY provides association information about each fast-refresh materialized view, base table, and Mlog table in the database. The Mlog table corresponding to the base table does.
 keywords: [openGauss, GS_MATVIEW_DEPENDENCY]
 ---
 

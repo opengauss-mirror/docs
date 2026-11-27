@@ -1,5 +1,5 @@
 ---
-description: - gs\_encrypt\_aes128\(encryptstr,keystr\).
+description: gs_encrypt_aes128(encryptstr,keystr).
 keywords: [openGauss, Security Functions]
 ---
 

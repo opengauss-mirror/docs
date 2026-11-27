@@ -1,5 +1,5 @@
 ---
-description: SESSION\_TIME collects statistics about the running time of session threads and time consumed in each execution phase on the current node.
+description: SESSION_TIME collects statistics about the running time of session threads and time consumed in each execution phase on the current node.
 keywords: [openGauss, SESSION_TIME]
 ---
 

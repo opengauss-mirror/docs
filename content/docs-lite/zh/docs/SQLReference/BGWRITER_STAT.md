@@ -1,5 +1,5 @@
 ---
-description: BGWRITER\_STAT视图显示关于后端写线程活动的统计信息。.
+description: BGWRITER_STAT视图显示关于后端写线程活动的统计信息。.
 keywords: [openGauss, BGWRITER_STAT]
 ---
 

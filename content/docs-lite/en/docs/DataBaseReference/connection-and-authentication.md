@@ -1,5 +1,5 @@
 ---
-description: - Connection Settings.
+description: Connection Settings.
 keywords: [openGauss, Connection and Authentication]
 ---
 

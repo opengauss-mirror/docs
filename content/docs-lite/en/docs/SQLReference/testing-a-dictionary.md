@@ -1,5 +1,5 @@
 ---
-description: The ts\_lexize function facilitates dictionary testing.
+description: The ts_lexize function facilitates dictionary testing.
 keywords: [openGauss, Testing a Dictionary]
 ---
 

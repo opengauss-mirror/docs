@@ -1,5 +1,5 @@
 ---
-description: PG\_FOREIGN\_TABLE records auxiliary information about foreign tables.
+description: PG_FOREIGN_TABLE records auxiliary information about foreign tables.
 keywords: [openGauss, PG_FOREIGN_TABLE]
 ---
 

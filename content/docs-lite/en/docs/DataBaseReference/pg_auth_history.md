@@ -1,5 +1,5 @@
 ---
-description: PG\_AUTH\_HISTORY records the authentication history of a role. This system catalog is accessible only to system administrators.
+description: PG_AUTH_HISTORY records the authentication history of a role. This system catalog is accessible only to system administrators.
 keywords: [openGauss, PG_AUTH_HISTORY]
 ---
 

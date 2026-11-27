@@ -1,5 +1,5 @@
 ---
-description: The pg\_controldata tool is used to display information about control files in the database directory.
+description: The pg_controldata tool is used to display information about control files in the database directory.
 keywords: [openGauss, pg_controldata]
 ---
 

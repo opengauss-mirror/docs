@@ -1,5 +1,5 @@
 ---
-description: GS\_DEPENDENCIES\_OBJ系统表记录被存储过程/包/类型所引用的对象信息。信息允许记录当前尚未定义的引用对象，并在引用对象创建/更改/删除时修改表中记录的对象信息。在GS\_DEPENDENCIES\_OBJ系统表记录引用对象信息需要设置guc参数behavior\_compat\_options='plpgsql\_dependency'。.
+description: GS_DEPENDENCIES_OBJ系统表记录被存储过程/包/类型所引用的对象信息。信息允许记录当前尚未定义的引用对象，并在引用对象创建/更改/删除时修改表中记录的对象信息。在GS_DEPENDENCIES_OBJ系统表记录引用对象信息需要设置guc参数behavior_compat_options='plpgsql_dependency'。.
 keywords: [openGauss, GS_DEPENDENCIES_OBJ]
 ---
 

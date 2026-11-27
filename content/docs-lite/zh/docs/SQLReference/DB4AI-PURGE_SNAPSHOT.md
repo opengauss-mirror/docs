@@ -1,5 +1,5 @@
 ---
-description: PURGE\_SNAPSHOT是DB4AI特性用于删除快照的接口函数。通过语法PURGE SNAPSHOT调用。.
+description: PURGE_SNAPSHOT是DB4AI特性用于删除快照的接口函数。通过语法PURGE SNAPSHOT调用。.
 keywords: [openGauss, DB4AI.PURGE_SNAPSHOT]
 ---
 

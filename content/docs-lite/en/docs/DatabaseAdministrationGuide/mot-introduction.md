@@ -1,5 +1,5 @@
 ---
-description: openGauss introduces the MOT storage engine, which is a transactional row storage and is optimized for multi-core and large-memory servers. MOT is the most advanced production-level feature \(Beta ver.
+description: openGauss introduces the MOT storage engine, which is a transactional row storage and is optimized for multi-core and large-memory servers. MOT is the most advanced production-level feature (Beta ver.
 keywords: [openGauss, Introduction to MOT]
 ---
 

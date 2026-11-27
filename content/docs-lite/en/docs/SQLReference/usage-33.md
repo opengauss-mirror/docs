@@ -1,5 +1,5 @@
 ---
-description: - Create an fast-refresh materialized view.
+description: Create an fast-refresh materialized view.
 keywords: [openGauss, Usage]
 ---
 

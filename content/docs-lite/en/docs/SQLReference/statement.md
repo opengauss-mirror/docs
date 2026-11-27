@@ -1,5 +1,5 @@
 ---
-description: STATEMENT obtains information about executed statements \(normalized SQL statements\) on the current node. To query a view, you must have the sysadmin or monitor admin permission. You.
+description: STATEMENT obtains information about executed statements (normalized SQL statements) on the current node. To query a view, you must have the sysadmin or monitor admin permission. You.
 keywords: [openGauss, STATEMENT]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - 本章节仅包含dolphin新增的条件表达式函数，原openGauss的条件表达式函数请参考条件表达式函数.
+description: 本章节仅包含dolphin新增的条件表达式函数，原openGauss的条件表达式函数请参考条件表达式函数.
 keywords: [openGauss, 条件表达式函数]
 ---
 

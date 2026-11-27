@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_SESSION\_QUERY\_INFO\_ALL displays load management information about completed jobs executed on the current database instance. The data is dumped from the kernel to the system catalog. I.
+description: GS_WLM_SESSION_QUERY_INFO_ALL displays load management information about completed jobs executed on the current database instance. The data is dumped from the kernel to the system catalog. I.
 keywords: [openGauss, GS_WLM_SESSION_QUERY_INFO_ALL]
 ---
 

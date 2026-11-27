@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_STATIO\_USER\_INDEXES displays I/O status information about all user relationship table indexes in namespaces in openGauss.
+description: SUMMARY_STATIO_USER_INDEXES displays I/O status information about all user relationship table indexes in namespaces in openGauss.
 keywords: [openGauss, SUMMARY_STATIO_USER_INDEXES]
 ---
 

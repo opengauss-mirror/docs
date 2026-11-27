@@ -1,5 +1,5 @@
 ---
-description: To ensure the security of application data, you are advised to divide the openGauss typical network into two independent networks: front-end service network and data management and storage network.
+description: 'To ensure the security of application data, you are advised to divide the openGauss typical network into two independent networks: front-end service network and data management and storage network.'
 keywords: [openGauss, Typical Networking]
 ---
 

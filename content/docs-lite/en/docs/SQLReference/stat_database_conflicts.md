@@ -1,5 +1,5 @@
 ---
-description: STAT\_DATABASE\_CONFLICTS displays statistics about database conflicts on the current node.
+description: STAT_DATABASE_CONFLICTS displays statistics about database conflicts on the current node.
 keywords: [openGauss, STAT_DATABASE_CONFLICTS]
 ---
 

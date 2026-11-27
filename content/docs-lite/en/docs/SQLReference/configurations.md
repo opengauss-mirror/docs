@@ -1,5 +1,5 @@
 ---
-description: Full text search functionality includes the ability to do many more things: skip indexing certain words \(stop words\), process synonyms, and use sophisticated parsing, for example, parse based on mor.
+description: 'Full text search functionality includes the ability to do many more things: skip indexing certain words (stop words), process synonyms, and use sophisticated parsing, for example, parse based on mor.'
 keywords: [openGauss, Configurations]
 ---
 

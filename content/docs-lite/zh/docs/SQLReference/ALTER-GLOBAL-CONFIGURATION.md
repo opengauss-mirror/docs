@@ -1,5 +1,5 @@
 ---
-description: 新增、修改系统表gs\_global\_config，增加key-value值。.
+description: 新增、修改系统表gs_global_config，增加key-value值。.
 keywords: [openGauss, ALTER GLOBAL CONFIGURATION]
 ---
 

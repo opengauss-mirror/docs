@@ -1,5 +1,5 @@
 ---
-description: PG\_EVENT\_TRIGGER records information about each event trigger.
+description: PG_EVENT_TRIGGER records information about each event trigger.
 keywords: [openGauss, PG_EVENT_TRIGGER]
 ---
 

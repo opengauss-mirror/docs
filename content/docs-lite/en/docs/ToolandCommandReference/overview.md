@@ -1,5 +1,5 @@
 ---
-description: openGauss provides client-side and server-side applications \(tools\) to help users better maintain openGauss. The tools are stored in _$GAUSSHOME_/bin where database servers are installed.
+description: openGauss provides client-side and server-side applications (tools) to help users better maintain openGauss. The tools are stored in _$GAUSSHOME_/bin where database servers are installed.
 keywords: [openGauss, Overview]
 ---
 

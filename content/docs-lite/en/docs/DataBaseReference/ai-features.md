@@ -1,5 +1,5 @@
 ---
-description: Introduces AI Features in openGauss, covering enable\_hypo\_index, db4ai\_snapshot\_mode, db4ai\_snapshot\_version\_delimiter.
+description: Introduces AI Features in openGauss, covering enable_hypo_index, db4ai_snapshot_mode, db4ai_snapshot_version_delimiter.
 keywords: [openGauss, AI Features]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_XACT\_ALL\_TABLES displays transaction status information about all ordinary tables and TOAST tables in the namespaces.
+description: PG_STAT_XACT_ALL_TABLES displays transaction status information about all ordinary tables and TOAST tables in the namespaces.
 keywords: [openGauss, PG_STAT_XACT_ALL_TABLES]
 ---
 

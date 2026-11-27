@@ -1,5 +1,5 @@
 ---
-description: PGXC\_NODE records information about cluster nodes. The PGXC\_NODE system catalog has specific meanings only in distributed scenarios. openGauss can only query the table definition.
+description: PGXC_NODE records information about cluster nodes. The PGXC_NODE system catalog has specific meanings only in distributed scenarios. openGauss can only query the table definition.
 keywords: [openGauss, PGXC_NODE]
 ---
 

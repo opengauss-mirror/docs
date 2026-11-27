@@ -1,5 +1,5 @@
 ---
-description: MPP\_TABLES视图显示信息如下。.
+description: MPP_TABLES视图显示信息如下。.
 keywords: [openGauss, MPP_TABLES]
 ---
 

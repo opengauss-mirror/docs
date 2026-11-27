@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_STAT\_USER\_INDEXES displays the status information about the index of user-defined ordinary tables in all databases of each node.
+description: GLOBAL_STAT_USER_INDEXES displays the status information about the index of user-defined ordinary tables in all databases of each node.
 keywords: [openGauss, GLOBAL_STAT_USER_INDEXES]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_CAST records the conversion relationship between data types.
+description: PG_CAST records the conversion relationship between data types.
 keywords: [openGauss, PG_CAST]
 ---
 

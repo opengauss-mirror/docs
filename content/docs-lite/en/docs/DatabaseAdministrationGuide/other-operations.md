@@ -1,5 +1,5 @@
 ---
-description: - Creating and Managing Schemas.
+description: Creating and Managing Schemas.
 keywords: [openGauss, Other Operations]
 ---
 

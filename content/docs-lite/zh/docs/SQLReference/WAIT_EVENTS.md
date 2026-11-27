@@ -1,5 +1,5 @@
 ---
-description: WAIT\_EVENTS显示当前节点的event的等待相关的统计信息。具体事件信息见[15.3.67-表2 等待状态列表](../DatabaseReference/PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_t794f802302c24514a5db22.
+description: WAIT_EVENTS显示当前节点的event的等待相关的统计信息。具体事件信息见[15.3.67-表2 等待状态列表](../DatabaseReference/PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_t794f802302c24514a5db22.
 keywords: [openGauss, WAIT_EVENTS]
 ---
 

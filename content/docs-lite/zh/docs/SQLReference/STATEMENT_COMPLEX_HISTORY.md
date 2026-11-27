@@ -1,5 +1,5 @@
 ---
-description: STATEMENT\_COMPLEX\_HISTORY视图显示在数据库主节点上执行作业结束后的负载管理记录。具体的字段请参考表1。.
+description: STATEMENT_COMPLEX_HISTORY视图显示在数据库主节点上执行作业结束后的负载管理记录。具体的字段请参考表1。.
 keywords: [openGauss, STATEMENT_COMPLEX_HISTORY]
 ---
 

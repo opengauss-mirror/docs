@@ -1,5 +1,5 @@
 ---
-description: PG\_OS\_THREADS视图提供当前节点下所有线程的状态信息。.
+description: PG_OS_THREADS视图提供当前节点下所有线程的状态信息。.
 keywords: [openGauss, PG_OS_THREADS]
 ---
 

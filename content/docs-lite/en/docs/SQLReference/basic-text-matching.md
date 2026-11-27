@@ -1,5 +1,5 @@
 ---
-description: Full text search in openGauss is based on the match operator @@, which returns true if a tsvector \(document\) matches a tsquery \(query\). It does not matter which data type is.
+description: Full text search in openGauss is based on the match operator @@, which returns true if a tsvector (document) matches a tsquery (query). It does not matter which data type is.
 keywords: [openGauss, Basic Text Matching]
 ---
 

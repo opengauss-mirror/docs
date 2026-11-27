@@ -1,5 +1,5 @@
 ---
-description: - Predictor: AI查询时间预测.
+description: 'Predictor: AI查询时间预测.'
 keywords: [openGauss, AI in DB 数据库内AI功能]
 ---
 

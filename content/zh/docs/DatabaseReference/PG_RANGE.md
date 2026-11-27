@@ -1,5 +1,5 @@
 ---
-description: PG\_RANGE系统表存储关于范围类型的信息。除了PG\_TYPE里类型的记录。.
+description: PG_RANGE系统表存储关于范围类型的信息。除了PG_TYPE里类型的记录。.
 keywords: [openGauss, PG_RANGE]
 ---
 

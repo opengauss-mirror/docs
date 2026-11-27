@@ -1,5 +1,5 @@
 ---
-description: Introduces Anomaly detection: 异常检测 in openGauss, covering .
+description: 'Introduces Anomaly detection: 异常检测 in openGauss, covering .'
 keywords: [openGauss, Anomaly detection 异常检测]
 ---
 

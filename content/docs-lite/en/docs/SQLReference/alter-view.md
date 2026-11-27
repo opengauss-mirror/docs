@@ -1,5 +1,5 @@
 ---
-description: ALTER VIEW modifies all auxiliary attributes of a view. \(To modify the query definition of a view, use CREATE OR REPLACE VIEW.\).
+description: ALTER VIEW modifies all auxiliary attributes of a view. (To modify the query definition of a view, use CREATE OR REPLACE VIEW.).
 keywords: [openGauss, ALTER]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: STATIO\_USER\_TABLES displays I/O status information about all user relationship tables in the namespace.
+description: STATIO_USER_TABLES displays I/O status information about all user relationship tables in the namespace.
 keywords: [openGauss, STATIO_USER_TABLES]
 ---
 

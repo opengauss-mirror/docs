@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_STAT\_DATABASE contains every row of each database on each node in openGauss, showing database-wide statistics.
+description: GLOBAL_STAT_DATABASE contains every row of each database on each node in openGauss, showing database-wide statistics.
 keywords: [openGauss, GLOBAL_STAT_DATABASE]
 ---
 

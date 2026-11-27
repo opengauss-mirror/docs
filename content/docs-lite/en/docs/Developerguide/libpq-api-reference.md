@@ -1,5 +1,5 @@
 ---
-description: - Database Connection Control Functions.
+description: Database Connection Control Functions.
 keywords: [openGauss, libpq API Reference]
 ---
 

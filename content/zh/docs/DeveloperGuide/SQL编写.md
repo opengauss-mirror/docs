@@ -1,5 +1,5 @@
 ---
-description: - 【建议】在openGauss中，建议DDL（建表、comments等）操作统一执行，在批处理作业中尽量避免DDL操作。避免大量并发事务对性能的影响。.
+description: 【建议】在openGauss中，建议DDL（建表、comments等）操作统一执行，在批处理作业中尽量避免DDL操作。避免大量并发事务对性能的影响。.
 keywords: [openGauss, SQL编写]
 ---
 

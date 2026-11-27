@@ -1,5 +1,5 @@
 ---
-description: - MEMORY\_NODE\_DETAIL.
+description: MEMORY_NODE_DETAIL.
 keywords: [openGauss, Memory]
 ---
 

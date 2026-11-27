@@ -1,5 +1,5 @@
 ---
-description: gs\_recyclebin描述了回收站对象的详细信息。.
+description: gs_recyclebin描述了回收站对象的详细信息。.
 keywords: [openGauss, GS_RECYCLEBIN]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_STATS provides access to the single-column statistics stored in the pg\_statistic table. The autovacuum\_naptime parameter specifies the interval for updating statistics recorded.
+description: PG_STATS provides access to the single-column statistics stored in the pg_statistic table. The autovacuum_naptime parameter specifies the interval for updating statistics recorded.
 keywords: [openGauss, PG_STATS]
 ---
 

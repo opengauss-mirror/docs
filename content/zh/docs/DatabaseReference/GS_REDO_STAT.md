@@ -1,5 +1,5 @@
 ---
-description: GS\_REDO\_STAT视图用于统计会话线程日志回放情况。.
+description: GS_REDO_STAT视图用于统计会话线程日志回放情况。.
 keywords: [openGauss, GS_REDO_STAT]
 ---
 

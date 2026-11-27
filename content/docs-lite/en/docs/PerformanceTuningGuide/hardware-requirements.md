@@ -1,5 +1,5 @@
 ---
-description: - Number of servers: two Kunpeng 920 servers \(one for the database server and the other for the TPC-C client\).
+description: 'Number of servers: two Kunpeng 920 servers (one for the database server and the other for the TPC-C client).'
 keywords: [openGauss, Hardware Requirements]
 ---
 

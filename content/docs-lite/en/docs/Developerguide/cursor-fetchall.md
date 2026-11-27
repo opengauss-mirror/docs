@@ -1,5 +1,5 @@
 ---
-description: This method obtains all the \(remaining\) rows of the query result and returns them as a list of tuples.
+description: This method obtains all the (remaining) rows of the query result and returns them as a list of tuples.
 keywords: [openGauss, cursor.fetchall]
 ---
 

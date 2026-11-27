@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_ACTIVITY shows information about the current user's queries. The columns save information about the last query.
+description: PG_STAT_ACTIVITY shows information about the current user's queries. The columns save information about the last query.
 keywords: [openGauss, PG_STAT_ACTIVITY]
 ---
 

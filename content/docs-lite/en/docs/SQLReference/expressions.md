@@ -1,5 +1,5 @@
 ---
-description: - Simple Expressions.
+description: Simple Expressions.
 keywords: [openGauss, Expressions]
 ---
 

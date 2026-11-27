@@ -1,5 +1,5 @@
 ---
-description: GS\_STAT\_SESSION\_CU视图查询openGauss各个节点，当前运行session的CU命中情况。session退出相应的统计数据会清零。openGauss重启后，统计数据也会清零。.
+description: GS_STAT_SESSION_CU视图查询openGauss各个节点，当前运行session的CU命中情况。session退出相应的统计数据会清零。openGauss重启后，统计数据也会清零。.
 keywords: [openGauss, GS_STAT_SESSION_CU]
 ---
 

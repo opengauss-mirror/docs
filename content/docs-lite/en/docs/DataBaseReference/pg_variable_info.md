@@ -1,5 +1,5 @@
 ---
-description: PG\_VARIABLE\_INFO records information about transaction IDs and OIDs of the current node in openGauss.
+description: PG_VARIABLE_INFO records information about transaction IDs and OIDs of the current node in openGauss.
 keywords: [openGauss, PG_VARIABLE_INFO]
 ---
 

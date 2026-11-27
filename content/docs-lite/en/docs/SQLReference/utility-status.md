@@ -1,5 +1,5 @@
 ---
-description: Utility status contains two tables: Replication slot and Replication stat. Columns in the tables are described as follows:.
+description: 'Utility status contains two tables: Replication slot and Replication stat. Columns in the tables are described as follows:.'
 keywords: [openGauss, Utility status]
 ---
 

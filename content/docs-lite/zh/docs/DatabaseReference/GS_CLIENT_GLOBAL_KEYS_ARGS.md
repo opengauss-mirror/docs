@@ -1,5 +1,5 @@
 ---
-description: GS\_CLIENT\_GLOBAL\_KEYS\_ARGS系统表记录密态等值特性中客户端加密主密钥相关元数据信息，每条记录对应客户端加密主密钥的一个键值对信息。.
+description: GS_CLIENT_GLOBAL_KEYS_ARGS系统表记录密态等值特性中客户端加密主密钥相关元数据信息，每条记录对应客户端加密主密钥的一个键值对信息。.
 keywords: [openGauss, GS_CLIENT_GLOBAL_KEYS_ARGS]
 ---
 

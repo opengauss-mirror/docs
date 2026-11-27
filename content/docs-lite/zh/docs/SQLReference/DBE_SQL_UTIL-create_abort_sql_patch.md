@@ -1,5 +1,5 @@
 ---
-description: create\_abort\_sql\_patch是用于创建避险SQL PATCH的接口函数，返回执行是否成功。.
+description: create_abort_sql_patch是用于创建避险SQL PATCH的接口函数，返回执行是否成功。.
 keywords: [openGauss, DBE_SQL_UTIL.create_abort_sql_patch]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PGXC\_PREPARED\_XACTS displays two-phase transactions in the prepared phase. Only users with the system admin or monitor admin permission can view the information.
+description: PGXC_PREPARED_XACTS displays two-phase transactions in the prepared phase. Only users with the system admin or monitor admin permission can view the information.
 keywords: [openGauss, PGXC_PREPARED_XACTS]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_ROLES视图提供访问数据库角色的相关信息，初始化用户和具有sysadmin属性或createrole属性的用户可以查看全部角色的信息，其他用户只能查看自己的信息。.
+description: PG_ROLES视图提供访问数据库角色的相关信息，初始化用户和具有sysadmin属性或createrole属性的用户可以查看全部角色的信息，其他用户只能查看自己的信息。.
 keywords: [openGauss, PG_ROLES]
 ---
 

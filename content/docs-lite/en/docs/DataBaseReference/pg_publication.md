@@ -1,5 +1,5 @@
 ---
-description: PG\_PUBLICATION contains all publications created in the current database.
+description: PG_PUBLICATION contains all publications created in the current database.
 keywords: [openGauss, PG_PUBLICATION]
 ---
 

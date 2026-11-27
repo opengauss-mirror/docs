@@ -1,5 +1,5 @@
 ---
-description: THREAD\_WAIT\_STATUS allows you to test the block waiting status of the backend thread and auxiliary thread in the current instance. For details about events, see [Table 2](../DataBaseReference/.
+description: THREAD_WAIT_STATUS allows you to test the block waiting status of the backend thread and auxiliary thread in the current instance. For details about events, see [Table 2](../DataBaseReference/.
 keywords: [openGauss, THREAD_WAIT_STATUS]
 ---
 

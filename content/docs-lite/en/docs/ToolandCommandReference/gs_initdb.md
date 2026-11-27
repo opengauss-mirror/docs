@@ -1,5 +1,5 @@
 ---
-description: Introduces gs\_initdb in openGauss, covering .
+description: Introduces gs_initdb in openGauss, covering .
 keywords: [openGauss, gs_initdb]
 ---
 

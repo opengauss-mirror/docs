@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_OPERATOR\_INFO displays records about operators of completed jobs. The data is dumped from the kernel to the system catalog. This system catalog can be queried by users with the sysad.
+description: GS_WLM_OPERATOR_INFO displays records about operators of completed jobs. The data is dumped from the kernel to the system catalog. This system catalog can be queried by users with the sysad.
 keywords: [openGauss, GS_WLM_OPERATOR_INFO]
 ---
 

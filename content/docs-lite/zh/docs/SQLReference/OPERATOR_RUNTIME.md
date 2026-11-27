@@ -1,5 +1,5 @@
 ---
-description: OPERATOR\_RUNTIME视图显示当前用户正在执行的作业的算子相关信息。.
+description: OPERATOR_RUNTIME视图显示当前用户正在执行的作业的算子相关信息。.
 keywords: [openGauss, OPERATOR_RUNTIME]
 ---
 

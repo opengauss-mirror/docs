@@ -1,5 +1,5 @@
 ---
-description: Principle: If the value is master, JDBC attempts to connect to the IP addresses configured in the string in sequence until the primary node in the cluster is connected.
+description: 'Principle: If the value is master, JDBC attempts to connect to the IP addresses configured in the string in sequence until the primary node in the cluster is connected.'
 keywords: [openGauss, JDBC, Common JDBC Parameters]
 ---
 

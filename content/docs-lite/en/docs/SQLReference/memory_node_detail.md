@@ -1,5 +1,5 @@
 ---
-description: MEMORY\_NODE\_DETAIL displays memory usage of a node in the database.
+description: MEMORY_NODE_DETAIL displays memory usage of a node in the database.
 keywords: [openGauss, MEMORY_NODE_DETAIL]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Internally, a GIN index contains a B-tree index constructed over keys, where each key is an element of one or more indexed items \(a member of an array, for example\) and where each tuple in a page co.
+description: Internally, a GIN index contains a B-tree index constructed over keys, where each key is an element of one or more indexed items (a member of an array, for example) and where each tuple in a page co.
 keywords: [openGauss, Implementation]
 ---
 

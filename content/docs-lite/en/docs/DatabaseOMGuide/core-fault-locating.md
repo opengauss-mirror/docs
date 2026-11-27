@@ -1,5 +1,5 @@
 ---
-description: - Core Dump Occurs due to Full Disk Space.
+description: Core Dump Occurs due to Full Disk Space.
 keywords: [openGauss, Core Fault Locating]
 ---
 

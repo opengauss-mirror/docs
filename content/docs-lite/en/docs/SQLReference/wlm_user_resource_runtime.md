@@ -1,5 +1,5 @@
 ---
-description: WLM\_USER\_RESOURCE\_RUNTIME displays resource usage of all users. Only administrators can query this view. This view is valid only when the GUC parameter use\_workload\_manager is set to.
+description: WLM_USER_RESOURCE_RUNTIME displays resource usage of all users. Only administrators can query this view. This view is valid only when the GUC parameter use_workload_manager is set to.
 keywords: [openGauss, WLM_USER_RESOURCE_RUNTIME]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: SAMPLE\_SNAPSHOT samples basic data to generate snapshots for the DB4AI feature. You can invoke SAMPLE SNAPSHOT to implement this function.
+description: SAMPLE_SNAPSHOT samples basic data to generate snapshots for the DB4AI feature. You can invoke SAMPLE SNAPSHOT to implement this function.
 keywords: [openGauss, DB4AI.SAMPLE_SNAPSHOT]
 ---
 

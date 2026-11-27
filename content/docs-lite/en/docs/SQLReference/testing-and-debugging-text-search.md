@@ -1,5 +1,5 @@
 ---
-description: - Testing a Configuration.
+description: Testing a Configuration.
 keywords: [openGauss, Testing and Debugging Text Search]
 ---
 

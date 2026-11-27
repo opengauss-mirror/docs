@@ -1,5 +1,5 @@
 ---
-description: STAT\_ALL\_INDEXES contains every row of each index in databases on the current node, showing statistics about accesses to specific indexes.
+description: STAT_ALL_INDEXES contains every row of each index in databases on the current node, showing statistics about accesses to specific indexes.
 keywords: [openGauss, STAT_ALL_INDEXES]
 ---
 

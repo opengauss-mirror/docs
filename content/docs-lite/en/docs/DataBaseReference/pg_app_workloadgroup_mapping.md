@@ -1,5 +1,5 @@
 ---
-description: PG\_APP\_WORKLOADGROUP\_MAPPING provides load mapping group information in the database.
+description: PG_APP_WORKLOADGROUP_MAPPING provides load mapping group information in the database.
 keywords: [openGauss, PG_APP_WORKLOADGROUP_MAPPING]
 ---
 

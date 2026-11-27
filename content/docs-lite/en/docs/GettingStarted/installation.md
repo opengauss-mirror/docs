@@ -1,5 +1,5 @@
 ---
-description: - A user group and a common user have been created.
+description: A user group and a common user have been created.
 keywords: [openGauss, Installation]
 ---
 

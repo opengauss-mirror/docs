@@ -1,5 +1,5 @@
 ---
-description: Introduces DCF参数设置 in openGauss, covering enable\_dcf, dcf\_ssl, dcf\_config.
+description: Introduces DCF参数设置 in openGauss, covering enable_dcf, dcf_ssl, dcf_config.
 keywords: [openGauss, DCF参数设置]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: GS\_SESSION\_STAT collects statistics about session states based on session threads or the AutoVacuum thread.
+description: GS_SESSION_STAT collects statistics about session states based on session threads or the AutoVacuum thread.
 keywords: [openGauss, GS_SESSION_STAT]
 ---
 

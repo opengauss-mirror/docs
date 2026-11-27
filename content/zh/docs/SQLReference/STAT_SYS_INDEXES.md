@@ -1,5 +1,5 @@
 ---
-description: 显示pg\_catalog、information\_schema以及pg\_toast模式中所有系统表的索引状态信息。.
+description: 显示pg_catalog、information_schema以及pg_toast模式中所有系统表的索引状态信息。.
 keywords: [openGauss, STAT_SYS_INDEXES]
 ---
 

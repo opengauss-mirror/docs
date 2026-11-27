@@ -1,5 +1,5 @@
 ---
-description: Introduces GUC参数说明 in openGauss, covering d\_format\_behavior\_compat\_options, ANSI_NULLS, IDENTITY_INSERT.
+description: Introduces GUC参数说明 in openGauss, covering d_format_behavior_compat_options, ANSI_NULLS, IDENTITY_INSERT.
 keywords: [openGauss, GUC参数说明]
 ---
 

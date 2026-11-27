@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_USER\_TABLES displays information about user-defined ordinary tables and TOAST tables in the namespaces.
+description: PG_STAT_USER_TABLES displays information about user-defined ordinary tables and TOAST tables in the namespaces.
 keywords: [openGauss, PG_STAT_USER_TABLES]
 ---
 

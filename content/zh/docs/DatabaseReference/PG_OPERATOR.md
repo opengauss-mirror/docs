@@ -1,5 +1,5 @@
 ---
-description: PG\_OPERATOR系统表存储有关操作符的信息。.
+description: PG_OPERATOR系统表存储有关操作符的信息。.
 keywords: [openGauss, PG_OPERATOR]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_STATEMENT obtains all information about executed statements \(normalized SQL statements\) on the primary database node and other database nodes.
+description: SUMMARY_STATEMENT obtains all information about executed statements (normalized SQL statements) on the primary database node and other database nodes.
 keywords: [openGauss, SUMMARY_STATEMENT]
 ---
 

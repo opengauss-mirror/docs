@@ -1,5 +1,5 @@
 ---
-description: openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经常需要对基于磁阵实现的集群文件系统进行各种查询，操作和管理。为了对dss创建的文件系统进行有效的管理，资源池化提供了dsscmd管理工具。.
+description: openGauss部署资源池化模式且开启ss_enable_dss功能情况下，经常需要对基于磁阵实现的集群文件系统进行各种查询，操作和管理。为了对dss创建的文件系统进行有效的管理，资源池化提供了dsscmd管理工具。.
 keywords: [openGauss, dsscmd]
 ---
 

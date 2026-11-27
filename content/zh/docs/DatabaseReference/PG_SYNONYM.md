@@ -1,5 +1,5 @@
 ---
-description: PG\_SYNONYM系统表存储同义词对象名与其他数据库对象名间的映射信息。.
+description: PG_SYNONYM系统表存储同义词对象名与其他数据库对象名间的映射信息。.
 keywords: [openGauss, PG_SYNONYM]
 ---
 

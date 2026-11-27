@@ -1,5 +1,5 @@
 ---
-description: This section describes the usage restrictions, application scenarios, and configuration guide of symmetric multiprocessing \(SMP\).
+description: This section describes the usage restrictions, application scenarios, and configuration guide of symmetric multiprocessing (SMP).
 keywords: [openGauss, Configuring SMP]
 ---
 

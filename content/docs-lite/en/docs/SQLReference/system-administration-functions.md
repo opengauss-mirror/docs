@@ -1,5 +1,5 @@
 ---
-description: - Configuration Settings Functions.
+description: Configuration Settings Functions.
 keywords: [openGauss, System Administration Functions]
 ---
 

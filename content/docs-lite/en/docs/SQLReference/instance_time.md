@@ -1,5 +1,5 @@
 ---
-description: INSTANCE\_TIME records time consumption information on the current database node. The time consumption information is classified into the following types:.
+description: INSTANCE_TIME records time consumption information on the current database node. The time consumption information is classified into the following types:.
 keywords: [openGauss, INSTANCE_TIME]
 ---
 

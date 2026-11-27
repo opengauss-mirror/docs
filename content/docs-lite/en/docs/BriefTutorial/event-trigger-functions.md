@@ -1,5 +1,5 @@
 ---
-description: - pg\_event\_trigger\_ddl\_commands.
+description: pg_event_trigger_ddl_commands.
 keywords: [openGauss, Event Trigger Functions]
 ---
 

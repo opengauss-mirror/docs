@@ -1,5 +1,5 @@
 ---
-description: EXPLAIN PLAN saves information about an execution plan into the PLAN\_TABLE table. Different from the EXPLAIN statement, EXPLAIN PLAN only saves plan information and does not pr.
+description: EXPLAIN PLAN saves information about an execution plan into the PLAN_TABLE table. Different from the EXPLAIN statement, EXPLAIN PLAN only saves plan information and does not pr.
 keywords: [openGauss, EXPLAIN]
 ---
 

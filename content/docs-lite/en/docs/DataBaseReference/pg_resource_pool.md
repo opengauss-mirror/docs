@@ -1,5 +1,5 @@
 ---
-description: PG\_RESOURCE\_POOL provides information about database resource pools.
+description: PG_RESOURCE_POOL provides information about database resource pools.
 keywords: [openGauss, PG_RESOURCE_POOL]
 ---
 

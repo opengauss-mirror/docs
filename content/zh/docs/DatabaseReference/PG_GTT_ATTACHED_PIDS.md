@@ -1,5 +1,5 @@
 ---
-description: PG\_GTT\_ATTACHED\_PIDS视图查看哪些会话正在使用全局临时表，调用pg\_get\_attached\_pid函数。.
+description: PG_GTT_ATTACHED_PIDS视图查看哪些会话正在使用全局临时表，调用pg_get_attached_pid函数。.
 keywords: [openGauss, PG_GTT_ATTACHED_PIDS]
 ---
 

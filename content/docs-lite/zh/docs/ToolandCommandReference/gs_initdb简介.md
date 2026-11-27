@@ -1,5 +1,5 @@
 ---
-description: gs\_initdb初始化数据库时，会创建数据库目录、生成系统表、创建默认数据库和模板数据库。.
+description: gs_initdb初始化数据库时，会创建数据库目录、生成系统表、创建默认数据库和模板数据库。.
 keywords: [openGauss, gs_initdb简介]
 ---
 

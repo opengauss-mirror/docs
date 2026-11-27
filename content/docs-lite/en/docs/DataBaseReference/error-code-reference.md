@@ -1,5 +1,5 @@
 ---
-description: - Description of SQL Error Codes.
+description: Description of SQL Error Codes.
 keywords: [openGauss, Error Code Reference]
 ---
 

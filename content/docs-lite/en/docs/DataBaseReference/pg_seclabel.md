@@ -1,5 +1,5 @@
 ---
-description: PG\_SECLABEL records security labels on database objects.
+description: PG_SECLABEL records security labels on database objects.
 keywords: [openGauss, PG_SECLABEL]
 ---
 

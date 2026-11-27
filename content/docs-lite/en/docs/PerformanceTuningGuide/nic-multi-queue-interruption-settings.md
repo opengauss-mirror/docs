@@ -1,5 +1,5 @@
 ---
-description: The single-core capability of TaiShan servers is insufficient and the number of cores is large. Therefore, NIC multi-queue interruption \(16 queues by default\) needs to be deployed on the server and.
+description: The single-core capability of TaiShan servers is insufficient and the number of cores is large. Therefore, NIC multi-queue interruption (16 queues by default) needs to be deployed on the server and.
 keywords: [openGauss, NIC Multi-Queue Interruption Settings]
 ---
 

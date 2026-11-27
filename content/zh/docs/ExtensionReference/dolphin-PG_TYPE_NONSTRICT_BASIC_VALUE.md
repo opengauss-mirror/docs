@@ -1,5 +1,5 @@
 ---
-description: PG\_TYPE\_NONSTRICT\_BASIC\_VALUE视图存储类型的基础值，用于insert values()的插入。默认公开该视图的 SELECT 和 REFERENCES 权限。.
+description: PG_TYPE_NONSTRICT_BASIC_VALUE视图存储类型的基础值，用于insert values()的插入。默认公开该视图的 SELECT 和 REFERENCES 权限。.
 keywords: [openGauss, PG_TYPE_NONSTRICT_BASIC_VALUE]
 ---
 

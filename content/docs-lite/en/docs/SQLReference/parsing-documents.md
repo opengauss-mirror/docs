@@ -1,5 +1,5 @@
 ---
-description: openGauss provides function to\_tsvector for converting a document to the tsvector data type.
+description: openGauss provides function to_tsvector for converting a document to the tsvector data type.
 keywords: [openGauss, Parsing Documents]
 ---
 

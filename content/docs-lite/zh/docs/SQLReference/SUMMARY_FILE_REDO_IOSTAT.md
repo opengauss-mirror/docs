@@ -1,5 +1,5 @@
 ---
-description: openGauss内汇聚所有的Redo\(WAL）相关的统计信息。.
+description: openGauss内汇聚所有的Redo(WAL）相关的统计信息。.
 keywords: [openGauss, SUMMARY_FILE_REDO_IOSTAT]
 ---
 

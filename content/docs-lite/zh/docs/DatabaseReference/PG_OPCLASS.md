@@ -1,5 +1,5 @@
 ---
-description: PG\_OPCLASS系统表定义索引访问方法操作符类。.
+description: PG_OPCLASS系统表定义索引访问方法操作符类。.
 keywords: [openGauss, PG_OPCLASS]
 ---
 

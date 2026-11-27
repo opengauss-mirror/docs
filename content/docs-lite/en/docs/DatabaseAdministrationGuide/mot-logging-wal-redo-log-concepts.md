@@ -1,5 +1,5 @@
 ---
-description: Write-Ahead Logging \(WAL\) is a standard method for ensuring data durability. The main concept of WAL is that changes to data files \(where tables and indexes reside\) are only written after those ch.
+description: Write-Ahead Logging (WAL) is a standard method for ensuring data durability. The main concept of WAL is that changes to data files (where tables and indexes reside) are only written after those ch.
 keywords: [openGauss, MOT Logging  WAL Redo Log Concepts]
 ---
 

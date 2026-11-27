@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_EC\_OPERATOR\_STATISTICS视图显示当前用户正在执行的EC（Extension Connector）作业的算子相关信息。查询该视图需要sysadmin权限。.
+description: GS_WLM_EC_OPERATOR_STATISTICS视图显示当前用户正在执行的EC（Extension Connector）作业的算子相关信息。查询该视图需要sysadmin权限。.
 keywords: [openGauss, GS_WLM_EC_OPERATOR_STATISTICS]
 ---
 

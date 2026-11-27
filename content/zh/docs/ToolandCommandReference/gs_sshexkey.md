@@ -1,5 +1,5 @@
 ---
-description: openGauss在安装过程中，需要在openGauss中的节点间进行执行命令、传送文件等操作。因此，安装前需要确保互信是连通的。openGauss提供了gs\_sshexkey工具来帮助用户建立互信。.
+description: openGauss在安装过程中，需要在openGauss中的节点间进行执行命令、传送文件等操作。因此，安装前需要确保互信是连通的。openGauss提供了gs_sshexkey工具来帮助用户建立互信。.
 keywords: [openGauss, gs_sshexkey]
 ---
 

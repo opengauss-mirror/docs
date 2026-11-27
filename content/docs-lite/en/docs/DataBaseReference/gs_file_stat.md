@@ -1,5 +1,5 @@
 ---
-description: GS\_FILE\_STAT records statistics about data file I/O to indicate I/O performance and detect performance problems such as abnormal I/O operations.
+description: GS_FILE_STAT records statistics about data file I/O to indicate I/O performance and detect performance problems such as abnormal I/O operations.
 keywords: [openGauss, GS_FILE_STAT]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - Predictor: AI Query Time Forecasting.
+description: 'Predictor: AI Query Time Forecasting.'
 keywords: [openGauss, AI in DB]
 ---
 

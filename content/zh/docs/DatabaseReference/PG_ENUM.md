@@ -1,5 +1,5 @@
 ---
-description: PG\_ENUM系统表包含显示每个枚举类型值和标签的记录。给定枚举类型的内部表示实际上是PG\_ENUM里面相关行的OID。.
+description: PG_ENUM系统表包含显示每个枚举类型值和标签的记录。给定枚举类型的内部表示实际上是PG_ENUM里面相关行的OID。.
 keywords: [openGauss, PG_ENUM]
 ---
 

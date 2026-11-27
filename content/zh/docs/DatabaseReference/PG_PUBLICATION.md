@@ -1,5 +1,5 @@
 ---
-description: 系统表pg\_publication包含当前数据库中创建的所有publication。.
+description: 系统表pg_publication包含当前数据库中创建的所有publication。.
 keywords: [openGauss, PG_PUBLICATION]
 ---
 

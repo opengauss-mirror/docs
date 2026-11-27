@@ -1,5 +1,5 @@
 ---
-description: PG\_AM系统表存储有关索引访问方法的信息。系统支持的每种索引访问方法都有一行。.
+description: PG_AM系统表存储有关索引访问方法的信息。系统支持的每种索引访问方法都有一行。.
 keywords: [openGauss, PG_AM]
 ---
 

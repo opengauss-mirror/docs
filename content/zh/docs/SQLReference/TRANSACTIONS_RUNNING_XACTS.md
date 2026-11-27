@@ -1,5 +1,5 @@
 ---
-description: Introduces TRANSACTIONS\_RUNNING\_XACTS in openGauss, covering .
+description: Introduces TRANSACTIONS_RUNNING_XACTS in openGauss, covering .
 keywords: [openGauss, TRANSACTIONS_RUNNING_XACTS]
 ---
 

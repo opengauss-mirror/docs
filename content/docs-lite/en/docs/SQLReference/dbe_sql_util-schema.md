@@ -1,5 +1,5 @@
 ---
-description: DBE\_SQL\_UTIL schema stores SQL patch management tools, such as system functions for creating, deleting, enabling, and disabling SQL patches. Common users have only the usage permission and do not ha.
+description: DBE_SQL_UTIL schema stores SQL patch management tools, such as system functions for creating, deleting, enabling, and disabling SQL patches. Common users have only the usage permission and do not ha.
 keywords: [openGauss, DBE_SQL_UTIL Schema]
 ---
 

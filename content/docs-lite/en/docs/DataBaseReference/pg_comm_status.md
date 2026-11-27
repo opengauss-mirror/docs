@@ -1,5 +1,5 @@
 ---
-description: PG\_COMM\_STATUS displays the communication library status for a node.
+description: PG_COMM_STATUS displays the communication library status for a node.
 keywords: [openGauss, PG_COMM_STATUS]
 ---
 

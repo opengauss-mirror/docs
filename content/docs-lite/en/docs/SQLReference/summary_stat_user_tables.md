@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_STAT\_USER\_TABLES displays the status information about user-defined ordinary tables in all namespaces in openGauss.
+description: SUMMARY_STAT_USER_TABLES displays the status information about user-defined ordinary tables in all namespaces in openGauss.
 keywords: [openGauss, SUMMARY_STAT_USER_TABLES]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: GS\_MATVIEW系统表提供了关于数据库中每一个物化视图的信息。.
+description: GS_MATVIEW系统表提供了关于数据库中每一个物化视图的信息。.
 keywords: [openGauss, GS_MATVIEW]
 ---
 

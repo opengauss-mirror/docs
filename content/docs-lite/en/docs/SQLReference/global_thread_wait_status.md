@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_THREAD\_WAIT\_STATUS allows you to test the block waiting status of backend threads and auxiliary threads on all nodes. To query this view, you must have the monadmin permission. Fo.
+description: GLOBAL_THREAD_WAIT_STATUS allows you to test the block waiting status of backend threads and auxiliary threads on all nodes. To query this view, you must have the monadmin permission. Fo.
 keywords: [openGauss, GLOBAL_THREAD_WAIT_STATUS]
 ---
 

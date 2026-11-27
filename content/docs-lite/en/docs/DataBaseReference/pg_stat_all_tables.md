@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_ALL\_TABLES contains one row for each table in the current database \(including TOAST tables\), showing statistics about accesses to that specific table.
+description: PG_STAT_ALL_TABLES contains one row for each table in the current database (including TOAST tables), showing statistics about accesses to that specific table.
 keywords: [openGauss, PG_STAT_ALL_TABLES]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_OPCLASS defines index access method operator classes.
+description: PG_OPCLASS defines index access method operator classes.
 keywords: [openGauss, PG_OPCLASS]
 ---
 

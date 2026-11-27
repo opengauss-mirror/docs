@@ -1,5 +1,5 @@
 ---
-description: GS\_SESSION\_TIME视图用于统计会话线程的运行时间信息，及各执行阶段所消耗时间。.
+description: GS_SESSION_TIME视图用于统计会话线程的运行时间信息，及各执行阶段所消耗时间。.
 keywords: [openGauss, GS_SESSION_TIME]
 ---
 

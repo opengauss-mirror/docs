@@ -1,5 +1,5 @@
 ---
-description: Currently, column-store tables only support rank\(expression\) and row\_number\(expression\) functions.
+description: Currently, column-store tables only support rank(expression) and row_number(expression) functions.
 keywords: [openGauss, Window Functions]
 ---
 

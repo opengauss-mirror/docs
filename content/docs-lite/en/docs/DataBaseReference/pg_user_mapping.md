@@ -1,5 +1,5 @@
 ---
-description: PG\_USER\_MAPPING records mappings from local users to remote.
+description: PG_USER_MAPPING records mappings from local users to remote.
 keywords: [openGauss, PG_USER_MAPPING]
 ---
 

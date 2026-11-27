@@ -1,5 +1,5 @@
 ---
-description: This section describes background writer parameters. The background writer process is used to write dirty data \(new or modified data\) in shared buffers to disks. This mechanism ensures that database.
+description: This section describes background writer parameters. The background writer process is used to write dirty data (new or modified data) in shared buffers to disks. This mechanism ensures that database.
 keywords: [openGauss, Background Writer]
 ---
 

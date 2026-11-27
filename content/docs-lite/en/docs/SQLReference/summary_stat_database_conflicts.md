@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_STAT\_DATABASE\_CONFLICTS displays statistics about database conflicts in openGauss.
+description: SUMMARY_STAT_DATABASE_CONFLICTS displays statistics about database conflicts in openGauss.
 keywords: [openGauss, SUMMARY_STAT_DATABASE_CONFLICTS]
 ---
 

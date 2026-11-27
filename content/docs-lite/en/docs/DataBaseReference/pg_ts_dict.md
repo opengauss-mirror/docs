@@ -1,5 +1,5 @@
 ---
-description: PG\_TS\_DICT contains entries that define text search dictionaries. A dictionary depends on a text search template, which specifies all the implementation functions needed; the dictionary itself.
+description: PG_TS_DICT contains entries that define text search dictionaries. A dictionary depends on a text search template, which specifies all the implementation functions needed; the dictionary itself.
 keywords: [openGauss, PG_TS_DICT]
 ---
 

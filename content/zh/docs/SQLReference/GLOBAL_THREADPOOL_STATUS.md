@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_THREADPOOL\_STATUS视图显示在所有节点上的线程池中工作线程及会话的状态信息。具体的字段表1。.
+description: GLOBAL_THREADPOOL_STATUS视图显示在所有节点上的线程池中工作线程及会话的状态信息。具体的字段表1。.
 keywords: [openGauss, GLOBAL_THREADPOOL_STATUS]
 ---
 

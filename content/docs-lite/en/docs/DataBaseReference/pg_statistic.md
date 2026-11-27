@@ -1,5 +1,5 @@
 ---
-description: PG\_STATISTIC stores statistics about tables and index columns in a database. By default, only the system administrator can access the system catalog. Common users can access the system catalog o.
+description: PG_STATISTIC stores statistics about tables and index columns in a database. By default, only the system administrator can access the system catalog. Common users can access the system catalog o.
 keywords: [openGauss, PG_STATISTIC]
 ---
 

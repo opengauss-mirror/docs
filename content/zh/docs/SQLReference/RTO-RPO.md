@@ -1,5 +1,5 @@
 ---
-description: - global\_rto\_status.
+description: global_rto_status.
 keywords: [openGauss, RTO  RPO]
 ---
 

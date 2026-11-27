@@ -1,5 +1,5 @@
 ---
-description: PG\_TABLESPACE records tablespace information.
+description: PG_TABLESPACE records tablespace information.
 keywords: [openGauss, PG_TABLESPACE]
 ---
 

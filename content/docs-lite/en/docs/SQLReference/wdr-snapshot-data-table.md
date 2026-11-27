@@ -1,5 +1,5 @@
 ---
-description: The naming rule of a WDR snapshot data table is snap\__\{Source data table\}_.
+description: The naming rule of a WDR snapshot data table is snap__{Source data table}_.
 keywords: [openGauss, WDR Snapshot Data Table]
 ---
 

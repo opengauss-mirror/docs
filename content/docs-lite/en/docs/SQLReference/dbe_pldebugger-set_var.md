@@ -1,5 +1,5 @@
 ---
-description: Changes the variable on the top-layer stack in the specified debugging stored procedure to the value of the input parameter. If a stored procedure contains variables with the same name, set\_var suppo.
+description: Changes the variable on the top-layer stack in the specified debugging stored procedure to the value of the input parameter. If a stored procedure contains variables with the same name, set_var suppo.
 keywords: [openGauss, DBE_PLDEBUGGER.set_var]
 ---
 

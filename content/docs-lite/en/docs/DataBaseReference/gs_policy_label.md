@@ -1,5 +1,5 @@
 ---
-description: GS\_POLICY\_LABEL records the resource label configuration information. One resource label corresponds to one or more records, and each record identifies the resource label to which a database re.
+description: GS_POLICY_LABEL records the resource label configuration information. One resource label corresponds to one or more records, and each record identifies the resource label to which a database re.
 keywords: [openGauss, GS_POLICY_LABEL]
 ---
 

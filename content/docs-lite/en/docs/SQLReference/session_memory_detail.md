@@ -1,5 +1,5 @@
 ---
-description: SESSION\_MEMORY\_DETAIL collects statistics about thread memory usage by MemoryContext node.
+description: SESSION_MEMORY_DETAIL collects statistics about thread memory usage by MemoryContext node.
 keywords: [openGauss, SESSION_MEMORY_DETAIL]
 ---
 

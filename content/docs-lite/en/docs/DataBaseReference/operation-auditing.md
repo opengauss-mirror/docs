@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies whether to audit the CREATE, DROP, and ALTER operations on the openGauss database object. The openGauss database objects include databases, users, schemas, and tab.
+description: 'Parameter description: Specifies whether to audit the CREATE, DROP, and ALTER operations on the openGauss database object. The openGauss database objects include databases, users, schemas, and tab.'
 keywords: [openGauss, Operation Auditing]
 ---
 

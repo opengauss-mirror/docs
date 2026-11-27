@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_REL\_IOSTAT displays statistics about data file I/Os on all nodes.
+description: SUMMARY_REL_IOSTAT displays statistics about data file I/Os on all nodes.
 keywords: [openGauss, SUMMARY_REL_IOSTAT]
 ---
 

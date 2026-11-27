@@ -1,5 +1,5 @@
 ---
-description: ANALYZE collects statistics about ordinary tables in a database, and stores the results in the PG\_STATISTIC system catalog. The execution plan generator uses these statistics to determine.
+description: ANALYZE collects statistics about ordinary tables in a database, and stores the results in the PG_STATISTIC system catalog. The execution plan generator uses these statistics to determine.
 keywords: [openGauss, ANALYZE]
 ---
 

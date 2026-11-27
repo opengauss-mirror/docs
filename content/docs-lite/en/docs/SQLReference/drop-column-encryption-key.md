@@ -1,5 +1,5 @@
 ---
-description: CREATE COLUMN ENCRYPTION KEY deletes a column encryption key \(CEK\).
+description: CREATE COLUMN ENCRYPTION KEY deletes a column encryption key (CEK).
 keywords: [openGauss, DROP]
 ---
 

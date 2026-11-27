@@ -1,5 +1,5 @@
 ---
-description: WAIT\_EVENTS displays statistics about wait events on the current node. For details about events, see [Table 2](pg_thread_wait_status.md#en-us_topic_0283136724_en-us_topic_0237122466_en-us_topic.
+description: WAIT_EVENTS displays statistics about wait events on the current node. For details about events, see [Table 2](pg_thread_wait_status.md#en-us_topic_0283136724_en-us_topic_0237122466_en-us_topic.
 keywords: [openGauss, WAIT_EVENTS]
 ---
 

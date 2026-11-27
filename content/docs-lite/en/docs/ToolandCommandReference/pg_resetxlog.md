@@ -1,5 +1,5 @@
 ---
-description: pg\_resetxlog is a tool for re-setting database transaction files.
+description: pg_resetxlog is a tool for re-setting database transaction files.
 keywords: [openGauss, pg_resetxlog]
 ---
 

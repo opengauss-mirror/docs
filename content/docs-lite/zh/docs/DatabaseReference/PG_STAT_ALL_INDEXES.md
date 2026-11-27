@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_ALL\_INDEXES视图将包含当前数据库中的每个索引行，显示访问特定索引的统计。.
+description: PG_STAT_ALL_INDEXES视图将包含当前数据库中的每个索引行，显示访问特定索引的统计。.
 keywords: [openGauss, PG_STAT_ALL_INDEXES]
 ---
 

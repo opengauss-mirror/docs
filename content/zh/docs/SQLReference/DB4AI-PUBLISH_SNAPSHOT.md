@@ -1,5 +1,5 @@
 ---
-description: PUBLISH\_SNAPSHOT是DB4AI特性用于发布快照的接口函数。通过语法PUBLISH SNAPSHOT调用。.
+description: PUBLISH_SNAPSHOT是DB4AI特性用于发布快照的接口函数。通过语法PUBLISH SNAPSHOT调用。.
 keywords: [openGauss, DB4AI.PUBLISH_SNAPSHOT]
 ---
 

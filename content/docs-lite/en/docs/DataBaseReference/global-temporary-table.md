@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies whether global temporary tables can be created.
+description: 'Parameter description: Specifies whether global temporary tables can be created.'
 keywords: [openGauss, Global Temporary Table]
 ---
 

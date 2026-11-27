@@ -1,5 +1,5 @@
 ---
-description: PG\_TIMEZONE\_NAMES provides all time zone names that can be recognized by SET TIMEZONE, along with their abbreviations, UTC offsets, and daylight saving time \(DST\) statuses.
+description: PG_TIMEZONE_NAMES provides all time zone names that can be recognized by SET TIMEZONE, along with their abbreviations, UTC offsets, and daylight saving time (DST) statuses.
 keywords: [openGauss, PG_TIMEZONE_NAMES]
 ---
 

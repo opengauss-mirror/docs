@@ -1,5 +1,5 @@
 ---
-description: 用户在执行查询或者执行INSERT/DELETE/UPDATE/CREATE TABLE AS语句时，可能会遇到性能问题。这种情况下，通过查询GS\_WLM\_SESSION\_STATISTICS、[GS\_WLM\_SESSION\_HISTORY](../DatabaseReferenc.
+description: 用户在执行查询或者执行INSERT/DELETE/UPDATE/CREATE TABLE AS语句时，可能会遇到性能问题。这种情况下，通过查询GS_WLM_SESSION_STATISTICS、[GS_WLM_SESSION_HISTORY](../DatabaseReferenc.
 keywords: [openGauss, SQL自诊断]
 ---
 

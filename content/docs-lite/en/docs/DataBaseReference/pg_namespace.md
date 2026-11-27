@@ -1,5 +1,5 @@
 ---
-description: PG\_NAMESPACE records namespaces, that is, schema-related information.
+description: PG_NAMESPACE records namespaces, that is, schema-related information.
 keywords: [openGauss, PG_NAMESPACE]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - gs\_index\_advise\(text\).
+description: gs_index_advise(text).
 keywords: [openGauss, AI特性函数]
 ---
 

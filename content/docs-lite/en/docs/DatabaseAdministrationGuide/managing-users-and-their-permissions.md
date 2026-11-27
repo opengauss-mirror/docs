@@ -1,5 +1,5 @@
 ---
-description: - Default Permission Mechanism.
+description: Default Permission Mechanism.
 keywords: [openGauss, Managing Users and Their Permissions]
 ---
 

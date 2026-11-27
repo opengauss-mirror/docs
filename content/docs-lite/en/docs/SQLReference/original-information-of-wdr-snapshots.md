@@ -1,5 +1,5 @@
 ---
-description: - SNAPSHOT.SNAPSHOT.
+description: SNAPSHOT.SNAPSHOT.
 keywords: [openGauss, Original Information of WDR Snapshots]
 ---
 

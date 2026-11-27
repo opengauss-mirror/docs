@@ -1,5 +1,5 @@
 ---
-description: PG\_SYNONYM records the mapping between synonym object names and other database object names.
+description: PG_SYNONYM records the mapping between synonym object names and other database object names.
 keywords: [openGauss, PG_SYNONYM]
 ---
 

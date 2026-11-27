@@ -1,5 +1,5 @@
 ---
-description: - For details about technical specifications, see section "Technical Specifications" in Technical White Paper.
+description: For details about technical specifications, see section "Technical Specifications" in Technical White Paper.
 keywords: [openGauss, Important Notes]
 ---
 

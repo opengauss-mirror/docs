@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_STAT\_USER\_INDEXES displays the status information about the index of user-defined ordinary tables in all databases in openGauss.
+description: SUMMARY_STAT_USER_INDEXES displays the status information about the index of user-defined ordinary tables in all databases in openGauss.
 keywords: [openGauss, SUMMARY_STAT_USER_INDEXES]
 ---
 

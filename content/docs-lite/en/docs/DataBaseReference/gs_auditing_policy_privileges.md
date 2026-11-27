@@ -1,5 +1,5 @@
 ---
-description: GS\_AUDITING\_POLICY\_PRIVILEGES records the DDL database operations about the unified audit. Each record corresponds to a design policy. Only the system administrator or security policy administ.
+description: GS_AUDITING_POLICY_PRIVILEGES records the DDL database operations about the unified audit. Each record corresponds to a design policy. Only the system administrator or security policy administ.
 keywords: [openGauss, GS_AUDITING_POLICY_PRIVILEGES]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: SESSION\_STAT\_ACTIVITY displays information about threads that are running on the current node.
+description: SESSION_STAT_ACTIVITY displays information about threads that are running on the current node.
 keywords: [openGauss, SESSION_STAT_ACTIVITY]
 ---
 

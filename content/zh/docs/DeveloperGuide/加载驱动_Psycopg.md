@@ -1,5 +1,5 @@
 ---
-description: - 在使用驱动之前，需要做如下操作：.
+description: 在使用驱动之前，需要做如下操作：.
 keywords: [openGauss, 加载驱动]
 ---
 

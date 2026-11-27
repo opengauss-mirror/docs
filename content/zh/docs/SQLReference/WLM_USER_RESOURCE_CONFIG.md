@@ -1,5 +1,5 @@
 ---
-description: WLM\_USER\_RESOURCE\_CONFIG视图显示用户的资源配置信息。.
+description: WLM_USER_RESOURCE_CONFIG视图显示用户的资源配置信息。.
 keywords: [openGauss, WLM_USER_RESOURCE_CONFIG]
 ---
 

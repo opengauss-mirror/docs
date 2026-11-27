@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_STAT\_USER\_FUNCTIONS displays statistics about user-defined functions on each node in openGauss.
+description: GLOBAL_STAT_USER_FUNCTIONS displays statistics about user-defined functions on each node in openGauss.
 keywords: [openGauss, GLOBAL_STAT_USER_FUNCTIONS]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: GS\_SLOW\_QUERY\_INFO displays the slow query information that has been dumped on the current node. The data is dumped from the kernel to the system catalog. If [enable\_resource\_record](../Dat.
+description: GS_SLOW_QUERY_INFO displays the slow query information that has been dumped on the current node. The data is dumped from the kernel to the system catalog. If [enable_resource_record](../Dat.
 keywords: [openGauss, GS_SLOW_QUERY_INFO Discarded]
 ---
 

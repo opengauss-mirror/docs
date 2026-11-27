@@ -1,5 +1,5 @@
 ---
-description: PG\_REPLICATION\_SLOTS contains replication node information.
+description: PG_REPLICATION_SLOTS contains replication node information.
 keywords: [openGauss, PG_REPLICATION_SLOTS]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_STATIO\_ALL\_SEQUENCES contains one row for each sequence in a database in openGauss, showing I/O statistics about specific sequences.
+description: SUMMARY_STATIO_ALL_SEQUENCES contains one row for each sequence in a database in openGauss, showing I/O statistics about specific sequences.
 keywords: [openGauss, SUMMARY_STATIO_ALL_SEQUENCES]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - openGauss Lite cannot monitor storage space, file permission, and slow disks. When the storage space is full or the file permission is abnormal, the database exits and the corresponding informatio.
+description: openGauss Lite cannot monitor storage space, file permission, and slow disks. When the storage space is full or the file permission is abnormal, the database exits and the corresponding informatio.
 keywords: [openGauss, troubleshooting, Known Issues]
 ---
 

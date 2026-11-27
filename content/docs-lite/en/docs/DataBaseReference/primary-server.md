@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies a comma-separated list of names of potential standby servers that support synchronous replication.
+description: 'Parameter description: Specifies a comma-separated list of names of potential standby servers that support synchronous replication.'
 keywords: [openGauss, Primary Server]
 ---
 

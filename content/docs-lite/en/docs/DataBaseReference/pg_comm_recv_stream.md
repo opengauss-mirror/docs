@@ -1,5 +1,5 @@
 ---
-description: PG\_COMM\_RECV\_STREAM displays the receiving stream status of all the communication libraries for a node.
+description: PG_COMM_RECV_STREAM displays the receiving stream status of all the communication libraries for a node.
 keywords: [openGauss, PG_COMM_RECV_STREAM]
 ---
 

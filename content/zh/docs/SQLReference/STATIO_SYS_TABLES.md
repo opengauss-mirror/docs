@@ -1,5 +1,5 @@
 ---
-description: STATIO\_SYS\_TABLES视图显示命名空间中所有系统表的IO状态信息。.
+description: STATIO_SYS_TABLES视图显示命名空间中所有系统表的IO状态信息。.
 keywords: [openGauss, STATIO_SYS_TABLES]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_RANGE records information about range types. Entries in PG\_TYPE are excluded.
+description: PG_RANGE records information about range types. Entries in PG_TYPE are excluded.
 keywords: [openGauss, PG_RANGE]
 ---
 

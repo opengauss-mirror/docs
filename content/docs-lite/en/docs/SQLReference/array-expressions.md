@@ -1,5 +1,5 @@
 ---
-description: _expression _IN _\(value \[, ...\]\)_.
+description: _expression _IN _(value [, ...])_.
 keywords: [openGauss, Array Expressions]
 ---
 

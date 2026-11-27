@@ -1,5 +1,5 @@
 ---
-description: Two users log in to the same database human\_resource and run the following statement separately to query the areas table, but obtain different results.
+description: Two users log in to the same database human_resource and run the following statement separately to query the areas table, but obtain different results.
 keywords: [openGauss, Different Data Is Displayed for the Same Table Queried By Multiple Users]
 ---
 

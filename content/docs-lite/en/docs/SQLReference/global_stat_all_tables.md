@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_STAT\_ALL\_TABLES displays statistics about one row for each table \(including TOAST tables\) in databases on each node.
+description: GLOBAL_STAT_ALL_TABLES displays statistics about one row for each table (including TOAST tables) in databases on each node.
 keywords: [openGauss, GLOBAL_STAT_ALL_TABLES]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_INDEX records part of index information. The rest is mostly recorded in PG\_CLASS.
+description: PG_INDEX records part of index information. The rest is mostly recorded in PG_CLASS.
 keywords: [openGauss, PG_INDEX]
 ---
 

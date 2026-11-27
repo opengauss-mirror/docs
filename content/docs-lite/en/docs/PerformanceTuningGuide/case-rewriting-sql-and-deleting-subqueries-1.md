@@ -1,5 +1,5 @@
 ---
-description: Introduces Case: Rewriting SQL and Deleting Subqueries (1) in openGauss, covering Symptom, Optimization Description.
+description: 'Introduces Case: Rewriting SQL and Deleting Subqueries (1) in openGauss, covering Symptom, Optimization Description.'
 keywords: [openGauss, Case Rewriting SQL and Deleting Subqueries 1]
 ---
 

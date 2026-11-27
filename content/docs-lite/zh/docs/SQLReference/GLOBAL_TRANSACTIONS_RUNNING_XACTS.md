@@ -1,5 +1,5 @@
 ---
-description: Introduces GLOBAL\_TRANSACTIONS\_RUNNING\_XACTS in openGauss, covering .
+description: Introduces GLOBAL_TRANSACTIONS_RUNNING_XACTS in openGauss, covering .
 keywords: [openGauss, GLOBAL_TRANSACTIONS_RUNNING_XACTS]
 ---
 

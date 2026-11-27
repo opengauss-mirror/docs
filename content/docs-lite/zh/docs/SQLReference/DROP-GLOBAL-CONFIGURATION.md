@@ -1,5 +1,5 @@
 ---
-description: 删除系统表gs\_global\_config中的参数值。.
+description: 删除系统表gs_global_config中的参数值。.
 keywords: [openGauss, DROP GLOBAL CONFIGURATION]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: ALTER GLOBAL CONFIGURATION adds and modifies the gs\_global\_config system catalog and adds the value of key-value.
+description: ALTER GLOBAL CONFIGURATION adds and modifies the gs_global_config system catalog and adds the value of key-value.
 keywords: [openGauss, ALTER]
 ---
 

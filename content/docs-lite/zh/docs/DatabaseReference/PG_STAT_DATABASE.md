@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_DATABASE视图将包含openGauss中每个数据库的数据库统计信息。.
+description: PG_STAT_DATABASE视图将包含openGauss中每个数据库的数据库统计信息。.
 keywords: [openGauss, PG_STAT_DATABASE]
 ---
 

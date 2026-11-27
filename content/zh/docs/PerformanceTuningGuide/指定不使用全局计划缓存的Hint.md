@@ -1,5 +1,5 @@
 ---
-description: 全局计划缓存打开时，可以通过no\_gpc Hint来强制单个查询语句不在全局共享计划缓存，只保留会话生命周期的计划缓存。.
+description: 全局计划缓存打开时，可以通过no_gpc Hint来强制单个查询语句不在全局共享计划缓存，只保留会话生命周期的计划缓存。.
 keywords: [openGauss, 指定不使用全局计划缓存的Hint]
 ---
 

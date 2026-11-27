@@ -1,5 +1,5 @@
 ---
-description: PG\_FOREIGN\_TABLE系统表存储外部表的辅助信息。.
+description: PG_FOREIGN_TABLE系统表存储外部表的辅助信息。.
 keywords: [openGauss, PG_FOREIGN_TABLE]
 ---
 

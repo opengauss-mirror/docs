@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_SESSION\_INFO displays load management information about a completed job executed on the database instance. Only the user with sysadmin permission can query this view.
+description: GS_WLM_SESSION_INFO displays load management information about a completed job executed on the database instance. Only the user with sysadmin permission can query this view.
 keywords: [openGauss, GS_WLM_SESSION_INFO]
 ---
 

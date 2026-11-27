@@ -1,5 +1,5 @@
 ---
-description: - compress\_buffer\_stat\_info\(\).
+description: compress_buffer_stat_info().
 keywords: [openGauss, Row-store Compression System Functions]
 ---
 

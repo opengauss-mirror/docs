@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies whether the system enters the backup and restoration mode.
+description: 'Parameter description: Specifies whether the system enters the backup and restoration mode.'
 keywords: [openGauss, Backup and Restoration]
 ---
 

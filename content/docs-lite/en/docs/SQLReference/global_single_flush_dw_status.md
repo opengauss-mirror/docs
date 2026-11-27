@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_SINGLE\_FLUSH\_DW\_STATUS displays information about doublewrite files eliminated on a single page of all instances in the database. In the displayed information, the information before t.
+description: GLOBAL_SINGLE_FLUSH_DW_STATUS displays information about doublewrite files eliminated on a single page of all instances in the database. In the displayed information, the information before t.
 keywords: [openGauss, GLOBAL_SINGLE_FLUSH_DW_STATUS]
 ---
 

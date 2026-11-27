@@ -1,5 +1,5 @@
 ---
-description: The Need Repair \(WAL\) fault occurs on a standby node of openGauss.
+description: The Need Repair (WAL) fault occurs on a standby node of openGauss.
 keywords: [openGauss, Standby Node in the Need Repair WAL State]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_STAT\_XACT\_USER\_FUNCTIONS displays statistics about function executions in transactions in openGauss.
+description: SUMMARY_STAT_XACT_USER_FUNCTIONS displays statistics about function executions in transactions in openGauss.
 keywords: [openGauss, SUMMARY_STAT_XACT_USER_FUNCTIONS]
 ---
 

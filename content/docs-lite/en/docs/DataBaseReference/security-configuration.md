@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies the IP address of the Elasticsearch system.
+description: 'Parameter description: Specifies the IP address of the Elasticsearch system.'
 keywords: [openGauss, Security Configuration]
 ---
 

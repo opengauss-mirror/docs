@@ -1,5 +1,5 @@
 ---
-description: - The following sections describe various mandatory and optional settings for optimal deployment.
+description: The following sections describe various mandatory and optional settings for optimal deployment.
 keywords: [openGauss, MOT Deployment]
 ---
 

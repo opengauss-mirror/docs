@@ -1,5 +1,5 @@
 ---
-description: The ts\_rewrite family of functions searches a given tsquery for occurrences of a target subquery, and replace each occurrence with a substitute subquery. In essence this operation is a.
+description: The ts_rewrite family of functions searches a given tsquery for occurrences of a target subquery, and replace each occurrence with a substitute subquery. In essence this operation is a.
 keywords: [openGauss, Rewriting Queries]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - pg\_get\_gtt\_relstats\(relOid\).
+description: pg_get_gtt_relstats(relOid).
 keywords: [openGauss, Global Temporary Table Functions]
 ---
 

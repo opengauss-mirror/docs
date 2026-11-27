@@ -1,5 +1,5 @@
 ---
-description: High Availability Recovery Time Objective \(RTO\).
+description: High Availability Recovery Time Objective (RTO).
 keywords: [openGauss, MOT RTO and Cold-Start Time]
 ---
 

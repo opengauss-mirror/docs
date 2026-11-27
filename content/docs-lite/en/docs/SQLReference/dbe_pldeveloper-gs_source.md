@@ -1,5 +1,5 @@
 ---
-description: Records PLPGSQL object \(stored procedure, function, package, and package body\) compilation information. For details, see the following column description.
+description: Records PLPGSQL object (stored procedure, function, package, and package body) compilation information. For details, see the following column description.
 keywords: [openGauss, DBE_PLDEVELOPER.gs_source]
 ---
 

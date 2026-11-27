@@ -1,5 +1,5 @@
 ---
-description: - Operating System.
+description: Operating System.
 keywords: [openGauss, Software Requirements]
 ---
 

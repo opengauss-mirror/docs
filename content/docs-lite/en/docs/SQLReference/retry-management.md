@@ -1,5 +1,5 @@
 ---
-description: Retry is a process in which the database executes a SQL statement or stored procedure \(including anonymous block\) again in the case of execution failure, improving the execution success rate and use.
+description: Retry is a process in which the database executes a SQL statement or stored procedure (including anonymous block) again in the case of execution failure, improving the execution success rate and use.
 keywords: [openGauss, Retry Management]
 ---
 

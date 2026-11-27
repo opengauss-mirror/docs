@@ -1,5 +1,5 @@
 ---
-description: - Logical Operators.
+description: Logical Operators.
 keywords: [openGauss, Functions and Operators]
 ---
 

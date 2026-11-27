@@ -1,5 +1,5 @@
 ---
-description: - 关于COPY FROM STDIN导入数据.
+description: 关于COPY FROM STDIN导入数据.
 keywords: [openGauss, 使用COPY FROM STDIN导入数据]
 ---
 

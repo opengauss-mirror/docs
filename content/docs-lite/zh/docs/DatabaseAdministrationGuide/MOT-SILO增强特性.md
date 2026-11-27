@@ -1,5 +1,5 @@
 ---
-description: SILO<sup>\</sup>[对比：磁盘与MOT<sup>\]</sup>凭借其基本算法流程，优于我们在研究实验中测试的许多其他符合ACID的OCC算法。然而，为了使SILO成为产品级机制，我们必须用许多在最初设计中缺失的基本功能来增强它，例如：.
+description: SILO<sup></sup>[对比：磁盘与MOT<sup>]</sup>凭借其基本算法流程，优于我们在研究实验中测试的许多其他符合ACID的OCC算法。然而，为了使SILO成为产品级机制，我们必须用许多在最初设计中缺失的基本功能来增强它，例如：.
 keywords: [openGauss, MOT SILO增强特性]
 ---
 

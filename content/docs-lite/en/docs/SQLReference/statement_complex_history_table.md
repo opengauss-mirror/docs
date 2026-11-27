@@ -1,5 +1,5 @@
 ---
-description: STATEMENT\_COMPLEX\_HISTORY\_TABLE displays load management information about completed jobs executed on the current primary database node. Data is dumped from the kernel to this system catalog.
+description: STATEMENT_COMPLEX_HISTORY_TABLE displays load management information about completed jobs executed on the current primary database node. Data is dumped from the kernel to this system catalog.
 keywords: [openGauss, STATEMENT_COMPLEX_HISTORY_TABLE]
 ---
 

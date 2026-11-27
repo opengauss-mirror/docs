@@ -1,5 +1,5 @@
 ---
-description: Describes the Example: JDBC Primary/Standby Cluster Load Balancing interface in openGauss, covering its definition and usage.
+description: 'Describes the Example: JDBC Primary/Standby Cluster Load Balancing interface in openGauss, covering its definition and usage.'
 keywords: [openGauss, JDBC, Example JDBC PrimaryStandby Cluster Load Balancing]
 ---
 

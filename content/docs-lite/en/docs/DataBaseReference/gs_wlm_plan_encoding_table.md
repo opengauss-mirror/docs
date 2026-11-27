@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_PLAN\_ENCODING\_TABLE displays encoding information of the plan operator level and provides the training and prediction sets of label values such as startup time, total time, peak memory.
+description: GS_WLM_PLAN_ENCODING_TABLE displays encoding information of the plan operator level and provides the training and prediction sets of label values such as startup time, total time, peak memory.
 keywords: [openGauss, GS_WLM_PLAN_ENCODING_TABLE]
 ---
 

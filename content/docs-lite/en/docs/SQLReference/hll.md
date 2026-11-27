@@ -1,5 +1,5 @@
 ---
-description: HyperLoglog \(HLL\) is an approximation algorithm for efficiently counting the number of distinct values in a data set. It features faster computing and lower space usage. You only need to store HLL d.
+description: HyperLoglog (HLL) is an approximation algorithm for efficiently counting the number of distinct values in a data set. It features faster computing and lower space usage. You only need to store HLL d.
 keywords: [openGauss, HLL]
 ---
 

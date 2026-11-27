@@ -1,5 +1,5 @@
 ---
-description: - You are an audit administrator or a role that has the audit administrator permissions.
+description: You are an audit administrator or a role that has the audit administrator permissions.
 keywords: [openGauss, Repairing a Ledger Database]
 ---
 

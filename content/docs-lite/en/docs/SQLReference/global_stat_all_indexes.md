@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_STAT\_ALL\_INDEXES contains every row of each index in databases on each node, showing statistics about accesses to specific indexes.
+description: GLOBAL_STAT_ALL_INDEXES contains every row of each index in databases on each node, showing statistics about accesses to specific indexes.
 keywords: [openGauss, GLOBAL_STAT_ALL_INDEXES]
 ---
 

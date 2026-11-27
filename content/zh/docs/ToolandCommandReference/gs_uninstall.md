@@ -1,5 +1,5 @@
 ---
-description: openGauss提供了gs\_uninstall工具来帮助完成openGauss的卸载。.
+description: openGauss提供了gs_uninstall工具来帮助完成openGauss的卸载。.
 keywords: [openGauss, gs_uninstall]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_AMPROC records information about the support procedures associated with the access method operator families. There is one row for each support procedure that belongs to an operator family.
+description: PG_AMPROC records information about the support procedures associated with the access method operator families. There is one row for each support procedure that belongs to an operator family.
 keywords: [openGauss, PG_AMPROC]
 ---
 

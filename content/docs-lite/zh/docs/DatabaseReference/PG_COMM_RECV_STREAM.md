@@ -1,5 +1,5 @@
 ---
-description: PG\_COMM\_RECV\_STREAM视图展示节点上所有的通信库接收流状态。.
+description: PG_COMM_RECV_STREAM视图展示节点上所有的通信库接收流状态。.
 keywords: [openGauss, PG_COMM_RECV_STREAM]
 ---
 

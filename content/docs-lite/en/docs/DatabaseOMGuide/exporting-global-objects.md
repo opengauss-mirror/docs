@@ -1,5 +1,5 @@
 ---
-description: You can use gs\_dumpall to export global objects, including database users, user groups, tablespaces, and attributes \(for example, global access permissions\), from openGauss.
+description: You can use gs_dumpall to export global objects, including database users, user groups, tablespaces, and attributes (for example, global access permissions), from openGauss.
 keywords: [openGauss, Exporting Global Objects]
 ---
 

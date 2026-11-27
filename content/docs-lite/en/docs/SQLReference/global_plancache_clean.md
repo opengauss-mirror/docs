@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_PLANCACHE\_CLEAN clears the global plan cache that is not used on all nodes. The return value is of the Boolean type.
+description: GLOBAL_PLANCACHE_CLEAN clears the global plan cache that is not used on all nodes. The return value is of the Boolean type.
 keywords: [openGauss, GLOBAL_PLANCACHE_CLEAN]
 ---
 

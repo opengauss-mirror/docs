@@ -1,5 +1,5 @@
 ---
-description: pg\_recvlogical工具通过连接指定的节点，创建或删除逻辑复制槽，以及持续、实时的从该节点获取逻辑解码中间结果，输出到文件或标准输出。.
+description: pg_recvlogical工具通过连接指定的节点，创建或删除逻辑复制槽，以及持续、实时的从该节点获取逻辑解码中间结果，输出到文件或标准输出。.
 keywords: [openGauss, pg_recvlogical]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_INDEX系统表存储索引的一部分信息，其他的信息大多数在PG\_CLASS中。.
+description: PG_INDEX系统表存储索引的一部分信息，其他的信息大多数在PG_CLASS中。.
 keywords: [openGauss, PG_INDEX]
 ---
 

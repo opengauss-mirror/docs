@@ -1,5 +1,5 @@
 ---
-description: PG\_SECLABEL系统表存储数据对象上的安全标签。.
+description: PG_SECLABEL系统表存储数据对象上的安全标签。.
 keywords: [openGauss, PG_SECLABEL]
 ---
 

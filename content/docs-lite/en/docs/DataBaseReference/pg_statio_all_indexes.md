@@ -1,5 +1,5 @@
 ---
-description: PG\_STATIO\_ALL\_INDEXES contains one row for each index in the current database, showing I/O statistics about accesses to that specific index.
+description: PG_STATIO_ALL_INDEXES contains one row for each index in the current database, showing I/O statistics about accesses to that specific index.
 keywords: [openGauss, PG_STATIO_ALL_INDEXES]
 ---
 
