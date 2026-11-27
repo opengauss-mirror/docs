@@ -6,7 +6,7 @@ sections:
   - label: SQL语言基础
     sections:
       - label: 基本概念
-        href: ./brief_tutorial/basic_concept.md
+        href: ./brief_tutorial/basic_concepts.md
       - label: 语法
         href: ./brief_tutorial/syntax.md  
       - label: SQL语法格式说明
@@ -90,7 +90,7 @@ sections:
           - label: TRUNCATE TABLE语句
             href: ./brief_tutorial/truncate_table_statement.md                    
           - label: 查看对象
-            href: ./brief_tutorial/view_objects.md
+            href: ./brief_tutorial/viewing_objects.md
           - label: 索引
             href: ./indexes.md
           - label: 约束
@@ -98,7 +98,7 @@ sections:
           - label: 批处理模式
             href: ./brief_tutorial/batch_processing_mode.md                
           - label: 视图
-            href: ./brief_tutorial/view.md
+            href: ./brief_tutorial/views.md
           - label: INSERT INTO语句
             href: ./brief_tutorial/insert_into_statement.md
           - label: UPDATE语句
@@ -1304,7 +1304,7 @@ sections:
       - label: 统计信息函数
         href: ./statistics_information_functions.md
       - label: 大对象操作函数
-        href: ./large_object_operation_function.md 
+        href: ./large_object_operation_functions.md 
       - label: 触发器函数
         href: ./trigger_functions.md          
       - label: 事件触发器函数

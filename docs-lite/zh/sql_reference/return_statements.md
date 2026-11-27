@@ -17,7 +17,7 @@ openGauss提供两种方式返回数据：RETURN或RETURN NEXT及RETURN QUERY。
 
 ### 示例<a name="zh-cn_topic_0283137214_zh-cn_topic_0237122231_section11628101012578"></a>
 
-请参见调用语句的[示例](call_statement.md#zh-cn_topic_0283136925_zh-cn_topic_0237122223_zh-cn_topic_0059778001_scfc5c5fdac3e4a11a915ebac95b49f79)。
+请参见调用语句的[示例](call_statements.md#zh-cn_topic_0283136925_zh-cn_topic_0237122223_zh-cn_topic_0059778001_scfc5c5fdac3e4a11a915ebac95b49f79)。
 
 ## RETURN NEXT及RETURN QUERY<a name="ZH-CN_TOPIC_0289900097"></a>
 

@@ -54,7 +54,7 @@
 
     将表达式base\_expr与后面的每个compare\(n\) 进行比较，如果匹配返回相应的value\(n\)。如果没有发生匹配，则返回default。
 
-    示例请参见[条件表达式函数](conditional_expression_function.md)。
+    示例请参见[条件表达式函数](conditional_expression_functions.md)。
 
     ```
     openGauss=# SELECT DECODE('A','A',1,'B',2,0);
@@ -180,7 +180,7 @@
     (1 row)
     ```
 
-    示例请参见[条件表达式函数](conditional_expression_function.md)。
+    示例请参见[条件表达式函数](conditional_expression_functions.md)。
 
 - NVL
 

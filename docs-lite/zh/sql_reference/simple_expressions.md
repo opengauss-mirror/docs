@@ -6,7 +6,7 @@
 
 ## 比较表达式<a name="zh-cn_topic_0283137643_zh-cn_topic_0237122001_zh-cn_topic_0059778068_s1b8089e350ba466f9baafc8c95e678ce"></a>
 
-常用的比较操作符，请参见[操作符](operator.md)。
+常用的比较操作符，请参见[操作符](operators.md)。
 
 除比较操作符外，还可以使用以下句式结构：
 

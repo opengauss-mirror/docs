@@ -8,6 +8,6 @@
 
 - **[定义变量](define_variables.md)**  
 
-- **[赋值语句](assignment_statement.md)**  
+- **[赋值语句](assignment_statements.md)**  
 
-- **[调用语句](call_statement.md)**  
+- **[调用语句](call_statements.md)**  

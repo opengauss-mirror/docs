@@ -10,7 +10,7 @@
 
 - 比较表达式
 
-    常用的比较操作符，请参见[操作符](../../sql_reference/operator.md)。
+    常用的比较操作符，请参见[操作符](../../sql_reference/operators.md)。
 
     除比较操作符外，还可以使用以下句式结构：
 
