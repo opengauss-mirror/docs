@@ -100,4 +100,4 @@ SELECT id, name FROM t1;
 </tbody>
 </table>
 
-For details about the SQL syntax, see  [Appendix: SQL Syntax](appendix-sql-syntax.md).
+For details about the SQL syntax, see  [Appendix: SQL Syntax](appendix_sql_syntax.md).

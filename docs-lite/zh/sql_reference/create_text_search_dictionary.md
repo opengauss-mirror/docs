@@ -135,7 +135,7 @@ CREATE TEXT SEARCH DICTIONARY name (
 
 ## 示例<a name="zh-cn_topic_0283137272_zh-cn_topic_0237122122_zh-cn_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
 
-请参见[配置示例](configuration_example.md)一节的示例。
+请参见[配置示例](configuration_examples.md)一节的示例。
 
 ## 相关链接<a name="zh-cn_topic_0283137272_zh-cn_topic_0237122122_zh-cn_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
 

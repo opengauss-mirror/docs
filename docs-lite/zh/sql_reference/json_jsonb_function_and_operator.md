@@ -1,6 +1,6 @@
 # JSON/JSONB函数和操作符
 
-JSON/JSONB数据类型参考[JSON/JSONB类型](json_jsonb_type.md)。
+JSON/JSONB数据类型参考[JSON/JSONB类型](json_jsonb_types.md)。
 
 **表 1**  JSON/JSONB通用操作符
 

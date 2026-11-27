@@ -11,6 +11,6 @@ You can set the parameter  [wdr\_snapshot\_retention\_days](../database_referenc
 
 - **[WDR Snapshot Data Table](wdr_snapshot_data_table.md)**  
 
-- **[Performance Report Generated Based on WDR Snapshots](performance_report_generated_based_on_wdr_snapshots.md)**  
+- **[Performance Report Generated Based on WDR Snapshots](performance_report_generated_based_on_wdr_snapshot.md)**  
 
 - **[WDRs](wdrs.md)**  

@@ -564,7 +564,7 @@ sections:
               - label: WDR Snapshot Data Table
                 href: ./wdr_snapshot_data_table.md
               - label: Performance Report Generated Based on WDR Snapshots
-                href: ./performance_report_generated_based_on_wdr_snapshots.md
+                href: ./performance_report_generated_based_on_wdr_snapshot.md
               - label: Viewing WDRs
                 sections:
                   - label: WDRs
@@ -1236,7 +1236,7 @@ sections:
   - label: Transactions and Locks
     sections: 
       - label: Locks
-        href: ./locks_1.md
+        href: ./locks.md
       - label: Transactions
         href: ./managing_transactions.md
       - label: Controlling Transactions
@@ -1328,7 +1328,7 @@ sections:
       - label: Cursors
         sections:
           - label: Overview
-            href: ./overview_23.md
+            href: ./cursor_overview.md
           - label: Explicit Cursor
             href: ./explicit_cursor.md
           - label: Implicit Cursor
@@ -1406,7 +1406,7 @@ sections:
       - label: Dictionaries
         sections:
           - label: Overview
-            href: ./overview_19.md
+            href: ./dictionary_overview.md
           - label: Stop Words
             href: ./stop_words.md
           - label: Simple Dictionary
@@ -1440,7 +1440,7 @@ sections:
   - label: GIN Indexes
     sections:
       - label: Introduction
-        href: ./introduction_20.md
+        href: ./introduction_gin.md
       - label: Scalability
         href: ./scalability.md
       - label: Implementation

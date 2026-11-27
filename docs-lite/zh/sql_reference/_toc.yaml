@@ -38,7 +38,7 @@ sections:
           - label: UUID类型
             href: ./uuid.md    
           - label: JSON/JSONB类型
-            href: ./json_jsonb_type.md    
+            href: ./json_jsonb_types.md    
           - label: HLL数据类型
             href: ./hll_data_type.md    
           - label: 范围类型
@@ -68,7 +68,7 @@ sections:
           - label: 概述
             href: ./overview_type_conversion.md
           - label: 操作符
-            href: ./operator.md
+            href: ./operators.md
           - label: 函数
             href: ./functions.md
           - label: 值存储
@@ -1198,15 +1198,15 @@ sections:
       - label: 表达式
         href: ./brief_tutorial/expressions.md    
       - label: 简单表达式
-        href: ./simple_expression.md
+        href: ./simple_expressions.md
       - label: 条件表达式
         href: ./conditional_expression.md
       - label: 子查询表达式
-        href: ./subquery_expression.md
+        href: ./subquery_expressions.md
       - label: 数组表达式
-        href: ./array_expression.md    
+        href: ./array_expressions.md    
       - label: 行表达式
-        href: ./row_expression.md    
+        href: ./row_expressions.md    
       - label: 游标表达式
         href: ./cursor_expression.md
   - label: 函数和操作符
@@ -1228,7 +1228,7 @@ sections:
       - label: 时间和日期处理函数和操作符
         href: ./date_and_time_processing_functions_and_operators.md    
       - label: 类型转换函数
-        href: ./type_conversion_function.md    
+        href: ./type_conversion_functions.md    
       - label: 几何函数和操作符
         href: ./geometric_functions_and_operators.md
       - label: 网络地址函数和操作符
@@ -1242,15 +1242,15 @@ sections:
       - label: HLL函数和操作符
         href: ./hll_function_and_operator.md
       - label: SEQUENCE函数
-        href: ./sequence_function.md
+        href: ./sequence_functions.md
       - label: 数组函数和操作符
         href: ./array_function_and_operator.md    
       - label: 范围函数和操作符
         href: ./range_functions_and_operators.md
       - label: 聚集函数
-        href: ./aggregate_function.md
+        href: ./aggregate_functions.md
       - label: 窗口函数
-        href: ./window_function.md
+        href: ./window_functions.md
       - label: KEEP函数
         href: ./keep_function.md    
       - label: 安全函数
@@ -1258,15 +1258,15 @@ sections:
       - label: 账本数据库的函数
         href: ./ledger_database_functions.md    
       - label: 密态等值的函数
-        href: ./encrypted_equality_function.md    
+        href: ./encrypted_equality_functions.md    
       - label: 返回集合的函数
         href: ./set_returning_functions.md
       - label: XMLTABLE
         href: ./xmltable.md
       - label: 条件表达式函数
-        href: ./conditional_expression_function.md    
+        href: ./conditional_expression_functions.md    
       - label: 系统信息函数
-        href: ./system_information_function.md
+        href: ./system_information_functions.md
       - label: 系统管理函数
         sections: 
           - label: 配置设置函数
@@ -1278,13 +1278,13 @@ sections:
           - label: 备份恢复控制函数
             href: ./backup_and_recovery_control_function.md    
           - label: 快照同步函数
-            href: ./snapshot_synchronization_function.md    
+            href: ./snapshot_synchronization_functions.md    
           - label: 数据库对象函数
-            href: ./database_object_function.md    
+            href: ./database_object_functions.md    
           - label: 咨询锁函数
             href: ./advisory_lock_functions.md
           - label: 逻辑复制函数
-            href: ./logical_replication_function.md
+            href: ./logical_replication_functions.md
           - label: 段页式存储函数
             href: ./segmented_paging_storage_function.md    
           - label: 其它函数
@@ -1300,7 +1300,7 @@ sections:
       - label: 大对象操作函数
         href: ./large_object_operation_function.md        
       - label: 触发器函数
-        href: ./trigger_function.md
+        href: ./trigger_functions.md
       - label: 事件触发器函数
         href: ./brief_tutorial/event_trigger_functions.md     
       - label: HashFunc函数
@@ -1320,7 +1320,7 @@ sections:
       - label: 内部函数
         href: ./internel_function.md
       - label: Global SysCache特性函数
-        href: ./global_syscache_feature_function.md
+        href: ./global_syscache_feature_functions.md
       - label: 数据损坏检测修复函数
         href: ./data_corruption_detection_and_repair_function.md
       - label: BFILE类型函数
@@ -1356,7 +1356,7 @@ sections:
       - label: 数据类型及转换
         href: ./data_type_conversion.md
       - label: 数组
-        href: ./array.md
+        href: ./arrays.md
       - label: 集合
         sections:
           - label: 集合类型的使用
@@ -1370,7 +1370,7 @@ sections:
           - label: 基本结构
             href: ./basic_structure.md
           - label: 匿名块
-            href: ./anonymous_block.md
+            href: ./anonymous_blocks.md
           - label: 子程序
             href: ./subroutine.md
       - label: 基本语句
@@ -1380,9 +1380,9 @@ sections:
           - label: 定义变量
             href: ./define_variables.md
           - label: 赋值语句
-            href: ./assignment_statement.md
+            href: ./assignment_statements.md
           - label: 调用语句
-            href: ./call_statement.md
+            href: ./call_statements.md
       - label: 动态语句
         sections:
           - label: 执行动态非查询语句
@@ -1396,11 +1396,11 @@ sections:
       - label: 控制语句
         sections:
           - label: 返回语句
-            href: ./return_statement.md
+            href: ./return_statements.md
           - label: 条件语句
             href: ./conditional_statements.md
           - label: 循环语句
-            href: ./loop_statement.md
+            href: ./loop_statements.md
           - label: 分支语句
             href: ./branch_statements.md
           - label: 空语句
@@ -1408,7 +1408,7 @@ sections:
           - label: 错误捕获语句
             href: ./error_trapping_statements.md
           - label: GOTO语句
-            href: ./goto_statement.md
+            href: ./goto_statements.md
           - label: 抛出错误语句
             href: ./throws_an_error_statement.md
           - label: GET DIAGNOSTICS语句
@@ -1418,9 +1418,9 @@ sections:
       - label: 其他语句
         sections:
           - label: 锁操作
-            href: ./lock_operation.md
+            href: ./lock_operations.md
           - label: 游标操作
-            href: ./cursor_operation.md
+            href: ./cursor_operations.md
       - label: 游标
         sections:
           - label: 游标概述
@@ -1506,7 +1506,7 @@ sections:
           - label: 词典概述
             href: ./dictionary_overview.md
           - label: 停用词
-            href: ./stop_word.md
+            href: ./stop_words.md
           - label: Simple词典
             href: ./simple_dictionary.md
           - label: Synonym词典
@@ -1518,7 +1518,7 @@ sections:
           - label: Snowball词典
             href: ./snowball_dictionary.md
       - label: 配置示例
-        href: ./configuration_example.md
+        href: ./configuration_examples.md
       - label: 测试和调试文本搜索
         sections:
           - label: 分词器测试
@@ -1530,7 +1530,7 @@ sections:
       - label: 限制约束
         href: ./restriction_and_constraint.md
   - label: 扩展函数
-    href: ./extended_function.md
+    href: ./extended_functions.md
   - label: 扩展语法
     href: ./extended_grammar.md
   - label: BLOOM索引

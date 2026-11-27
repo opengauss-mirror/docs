@@ -605,7 +605,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
     - TRANSFORM \( \{ column\_name \[ data\_type \] \[ AS transform\_expr \] \} \[, ...\] \)
 
-        指定表中各个列的转换表达式；其中data\_type指定该列在表达式参数中的数据类型；transform\_expr为目标表达式，返回与表中目标列数据类型一致的结果值，表达式可参考[表达式](simple_expression.md)。
+        指定表中各个列的转换表达式；其中data\_type指定该列在表达式参数中的数据类型；transform\_expr为目标表达式，返回与表中目标列数据类型一致的结果值，表达式可参考[表达式](simple_expressions.md)。
 
     - SKIP int\_number
 

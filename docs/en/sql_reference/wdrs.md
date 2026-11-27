@@ -96,7 +96,7 @@ The following table describes the WDR content of the openGauss database.
 <td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul8257222112020"></a><a name="ul8257222112020"></a><ul id="ul8257222112020"><li>Performance statistics on the index and table dimensions, and unused non-unique user indexes in the snapshot interval (primary/UNIQUE indexes excluded).</li><li>Database/Node-wide report, which can be viewed in cluster or node mode.</li></ul>
 </td>
 </tr>
-<tr id="row8845174912158"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p14537204613311"><a name="p14537204613311"></a><a name="p14537204613311"></a><a href="configuration_settings_60.md">Configuration settings</a></p>
+<tr id="row8845174912158"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p14537204613311"><a name="p14537204613311"></a><a name="p14537204613311"></a><a href="configuration_settings.md">Configuration settings</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul168342610201"></a><a name="ul168342610201"></a><ul id="ul168342610201"><li>Node configuration.</li><li>Node-wide report, which can be viewed in node mode.</li></ul>
 </td>

@@ -18,7 +18,7 @@ sections:
       - label: Data Types
         sections:
           - label: Data Types
-            href: ./brief_tutorial/data-types.md       
+            href: ./brief_tutorial/data_types.md       
           - label: Numeric Types
             href: ./numeric_types.md
           - label: Monetary Types
@@ -70,7 +70,7 @@ sections:
       - label: Type Conversion
         sections:
           - label: Overview
-            href: ./overview.md
+            href: ./overview_type_conversion.md
           - label: Operators
             href: ./operators.md
           - label: Functions
@@ -84,15 +84,15 @@ sections:
       - label: Brief Tutorial
         sections: 
           - label: Creating a Database
-            href: ./brief_tutorial/creating-a-database.md
+            href: ./brief_tutorial/creating_a_database.md
           - label: Creating a Table
-            href: ./brief_tutorial/creating-a-table.md
+            href: ./brief_tutorial/creating_a_table.md
           - label: ALTER TABLE Statement
             href: ./brief_tutorial/alter_table_statement.md
           - label: TRUNCATE TABLE Statement
             href: ./brief_tutorial/truncate_table_statement.md  
           - label: Viewing Objects
-            href: ./brief_tutorial/viewing-objects.md
+            href: ./brief_tutorial/viewing_objects.md
           - label: Indexes
             href: ./indexes.md
           - label: Constraints
@@ -130,9 +130,9 @@ sections:
           - label: 'NULL'
             href: ./brief_tutorial/null.md
           - label: IS[NOT]NAN
-            href: ./brief_tutorial/is_not_nan_clause.md
+            href: ./brief_tutorial/is_not_nan_statement.md
           - label: IS[NOT]INFINITE
-            href: ./brief_tutorial/is_not_infinite_clause.md 
+            href: ./brief_tutorial/is_not_infinite_statement.md 
           - label: Transactions
             href: ./brief_tutorial/transactions.md            
           - label: Aliases
@@ -168,25 +168,25 @@ sections:
           - label: COLLATIONS
             href: ./collations.md
           - label: KEY_COLUMN_USAGE
-            href: ./KEY_COLUMN_USAGE.md    
+            href: ./key_column_usage.md    
           - label: PARAMETERS
-            href: ./PARAMETERS.md 
+            href: ./parameters.md 
           - label: REFERENTIAL_CONSTRAINTS
-            href: ./REFERENTIAL_CONSTRAINTS.md       
+            href: ./referential_constraints.md       
           - label: ROUTINES
-            href: ./ROUTINES.md      
+            href: ./routines.md      
           - label: SCHEMATA
-            href: ./SCHEMATA.md 
+            href: ./schemata.md 
           - label: TABLE_CONSTRAINTS
-            href: ./TABLE_CONSTRAINTS.md 
+            href: ./table_constraints.md 
           - label: TABLES
-            href: ./TABLES.md 
+            href: ./tables.md 
           - label: KEYWORDS
             href: ./keywords_0.md
           - label: STATISTICS
-            href: ./STATISTICS.md
+            href: ./statistics.md
           - label: PARTITIONS
-            href: ./PARTITIONS.md
+            href: ./partitions.md
           - label: EVENTS
             href: ./events.md
           - label: INFORMATION_SCHEMA_CATALOG_NAME
@@ -646,7 +646,7 @@ sections:
                   - label: Object stats
                     href: ./object_stats.md
                   - label: Configuration settings
-                    href: ./configuration_settings_60.md
+                    href: ./configuration_settings.md
                   - label: SQL Detail
                     href: ./sql_detail.md
       - label: PROC Coverage Schema
@@ -758,7 +758,7 @@ sections:
       - label: DCL Syntax Overview
         href: ./dcl_syntax_overview.md
       - label: SQL Syntax
-        href: ./brief_tutorial/appendix-sql-syntax.md  
+        href: ./brief_tutorial/appendix_sql_syntax.md  
       - label: ABORT
         href: ./abort.md
       - label: ALTER AGGREGATE
