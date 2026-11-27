@@ -6,7 +6,7 @@ sections:
       - label: 数据存储管理
         sections:
           - label: "存储结构: 段页式存储结构"
-            href: ./segmentation_with_paging_storage_structure.md
+            href: ./storage_structure.md
           - label: "存储模型: 规划存储模型"
             href: ./planning_storage_models.md    
           - label: 数据压缩
@@ -14,7 +14,7 @@ sections:
               - label: 自适应压缩
                 href: ./adaptive_compression.md
               - label: 支持OLTP场景数据压缩
-                href: ./data_compression_in_oltp_scenarios.md
+                href: ./support_for_data_compression_in_oltp_scenarios.md
           - label: Ustore存储引擎
             href: ./in_place_update_storage_engine.md
       - label: 创建和管理数据库
@@ -86,7 +86,7 @@ sections:
               - label: MOT准备：MOT内存和存储规划
                 href: ./mot_memory_and_storage_planning.md
               - label: MOT部署： MOT服务器优化（x86）
-                href: ./mot_server_optimization_x86.md
+                href: ./mot_server_optimization.md
               - label: MOT部署： MOT服务器优化（基于Arm的华为TaiShan2P/4P服务器）
                 href: ./mot_server_optimization_arm_huawei_taishan_2p_4p.md
               - label: MOT部署： MOT配置
@@ -200,7 +200,7 @@ sections:
               - label: 维护审计日志
                 href: ./maintaining_audit_logs.md
               - label: 统一审计策略概述
-                href: ./overview_of_unified_audit_strategy.md                
+                href: ./unified_audit_policy.md                
               - label: 设置文件权限安全策略
                 href: ./configuring_file_permission_security_policies.md
           - label: 设置账本数据库

@@ -257,7 +257,7 @@
         <td><a href="./foreign_key_lock_enhancement.md">外键锁增强</a></td>
     </tr>
     <tr>
-        <td><a href="../database_administration_guide/data_compression_in_oltp_scenarios.md">支持OLTP场景数据压缩</a></td>
+        <td><a href="../database_administration_guide/support_for_data_compression_in_oltp_scenarios.md">支持OLTP场景数据压缩</a></td>
     </tr>
     <tr>
         <td><a href="./support_specila_floating_point_number.md">支持特殊浮点数</a></td>

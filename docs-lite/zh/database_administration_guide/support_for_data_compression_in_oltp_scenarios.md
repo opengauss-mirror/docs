@@ -89,7 +89,7 @@ extent扩展：
 
 ### 段页式适配
 
-段页式的详细介绍可见[段页式存储结构](../database_administration_guide/segmentation_with_paging_storage_structure.md)。段页式下，数据分布满足如下特点：
+段页式的详细介绍可见[段页式存储结构](../database_administration_guide/storage_structure.md)。段页式下，数据分布满足如下特点：
 
 - 每个`<tablespace, database>`共享同一个段页式空间（`SegSpace`），其中包含5个`Group`，每个`Group`对应1个逻辑文件，相同类型的extent存放在同一个逻辑文件中，逻辑文件由多个1G物理文件组成，例如`Group 0`对应逻辑文件的文件名为1，其由1、1.1、1.2等一系列物理文件组成，每个物理文件大小上限为1G，超过1G则触发下个物理文件的创建；
 

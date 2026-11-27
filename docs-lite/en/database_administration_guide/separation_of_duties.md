@@ -1,6 +1,6 @@
 # Separation of Duties<a name="EN-US_TOPIC_0289900233"></a>
 
-Descriptions in  [Default Permission Mechanism](default_permission_mechanism.md)  and  [Administrator](administrator.md)  are about the initial situation after the database system is created. By default, a system administrator with the  **SYSADMIN**  attribute has the highest-level permissions.
+Descriptions in  [Default Permission Mechanism](default_permission_mechanism.md)  and  [Administrator](administrators.md)  are about the initial situation after the database system is created. By default, a system administrator with the  **SYSADMIN**  attribute has the highest-level permissions.
 
 In actual service management, you can set separation of duties to prevent system administrators from having excessive centralized permissions, which may cause high risks. Some permissions of the system administrator are transferred to the security administrator and audit administrator, implementing separation of duties among the system administrator, security administrator, and audit administrator.
 
