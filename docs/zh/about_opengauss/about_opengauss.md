@@ -61,7 +61,7 @@ openGauss相比于其他开源数据库主要有以下几个特点：
     - 提供主备机共享一份存储的[资源池化](https://docs.opengauss.org/zh/docs/latest/resource_pooling/resource_pooling_overview.html)能力，提供一种新HA部署形态，解决传统HA部署下存储容量较单机翻倍的问题，满足降低存储容量及成本的诉求，同时备机支持实时一致性读。
     - 资源池化架构下支持[主备双集群容灾](https://docs.opengauss.org/zh/docs/latest/resource_pooling/resource_pooling_active_standby_dual_cluster_dr.html)，实现主备双集群的XLog日志同步，保证主备双集群的XLog一致性，从而增强主备双集群的容灾能力，降低存储空间，并保证主备集群内节点切换、主备集群间切换功能正常。
     - 支持资源池化[算子卸载](../characteristic_description/resource_pooling_operator_offloading.md)，将数据过滤卸载到存储侧执行，去除不需要的数据，从而减少网络通信数据量，提升端到端性能。
-    - 支持资源池化[多机并行](../characteristic_description/resource_pooling_multi_machine_paralleism.md)，对于SQL语句生成多机执行计划，并将计划分发到各节点执行，再由查询节点汇聚各节点数据实现所有读节点并行查询，充分发挥集群的OLAP能力。
+    - 支持资源池化[多机并行](../characteristic_description/resource_pooling_multi_machine_parallelism.md)，对于SQL语句生成多机执行计划，并将计划分发到各节点执行，再由查询节点汇聚各节点数据实现所有读节点并行查询，充分发挥集群的OLAP能力。
     - 支持资源池化[备机事务内透明写转发](https://docs.opengauss.org/zh/docs/latest/performance_tuning_guide/transparent_forwarding_within_backup_machine_affairs.html)，在资源池化架构下，当开启备机支持写特性后，备机上执行的显式事务(即begin,end包围的sql)，数据库会自动将事务中的涉及修改的写SQL语句转发给主机, 而事务中的读语句仍然在备机本地执行。
 
 - DataKit全生命周期数据管理工具

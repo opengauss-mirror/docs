@@ -47,7 +47,7 @@ openGauss资源池化场景下，支持主、从节点形成行列双格式内�
 
 - 行列融合约束参考[单机/主备行列融合特性约束](row_and_column_integration.md)。
 
-- 资源池化 HTAP 依赖资源池化多机并行查询特性，相应约束参考[资源池化多机并行特性约束](resource_pooling_multi_machine_paralleism.md)。
+- 资源池化 HTAP 依赖资源池化多机并行查询特性，相应约束参考[资源池化多机并行特性约束](resource_pooling_multi_machine_parallelism.md)。
 
 - 资源池化 HTAP 使用共享内存存储列存数据，依赖灵衢提供共享内存能力，非灵衢环境无法使用。
 
@@ -55,7 +55,7 @@ openGauss资源池化场景下，支持主、从节点形成行列双格式内�
 
 [行列融合特性](row_and_column_integration.md)
 
-[资源池化多机并行特性](resource_pooling_multi_machine_paralleism.md)
+[资源池化多机并行特性](resource_pooling_multi_machine_parallelism.md)
 
 ## 使用指导<a name="section20491151513592"></a>
 

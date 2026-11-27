@@ -296,7 +296,7 @@ keywords: [openGauss, 特性概览, 特性描述, 高性能, 高可用]
         <td><a href="https://docs.opengauss.org/zh/docs/latest/resource_pooling/ub_transaction_snapshot_acceleration_introduction.html">事务快照UB访问加速特性简介</a></td>
     </tr>
     <tr>
-        <td><a href="./resource_pooling_multi_machine_paralleism.md">资源池化多机并行</a></td>
+        <td><a href="./resource_pooling_multi_machine_parallelism.md">资源池化多机并行</a></td>
     </tr>
     <tr>
         <td><a href="./resource_pooling_ub_memory_semantic_acceleration.md">资源池化灵衢内存语义加速</a></td>
@@ -600,6 +600,6 @@ keywords: [openGauss, 特性概览, 特性描述, 高性能, 高可用]
         <td><a href="./advanced_features/uwal.md">UWAL</a></td>
     </tr>
     <tr>
-        <td><a href="./advanced_features/oGRecorder.md">数据保险柜</a></td>
+        <td><a href="./advanced_features/ogrecorder.md">数据保险柜</a></td>
     </tr>
 </table>

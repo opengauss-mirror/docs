@@ -132,7 +132,7 @@ sections:
       - label: 资源池化算子卸载
         href: ./resource_pooling_operator_offloading.md
       - label: 资源池化多机并行
-        href: ./resource_pooling_multi_machine_paralleism.md
+        href: ./resource_pooling_multi_machine_parallelism.md
       - label: 资源池化灵衢内存语义加速
         href: ./resource_pooling_ub_memory_semantic_acceleration.md
       - label: 透明数据加密支持内生国密
@@ -334,7 +334,7 @@ sections:
       - label: UWAL
         href: ./advanced_features/uwal.md  
       - label: oGRecorder
-        href: ./advanced_features/oGRecorder.md  
+        href: ./advanced_features/ogrecorder.md  
   - label: AI特性
     sections:
       - label: "AI4DB: 数据库自治运维"

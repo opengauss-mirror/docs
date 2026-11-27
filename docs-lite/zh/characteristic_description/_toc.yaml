@@ -34,13 +34,13 @@ sections:
   - label: 高可用
     sections:
       - label: 主备机
-        href: ./master_and_standby_vms.md
+        href: ./primary_standby.md
       - label: 逻辑复制
         href: ./logical_replication.md
       - label: 逻辑备份
         href: ./logical_backup.md
       - label: 物理备份
-        href: ./physical_backup_and_restoration.md
+        href: ./physical_backup.md
       - label: 作业失败自动重试
         href: ./automatic_job_retry_upon_failure.md
       - label: 极致RTO
@@ -150,7 +150,7 @@ sections:
       - label: 外键锁增强
         href: ./foreign_key_lock_enhancement.md
       - label: 支持特殊浮点数
-        href: ./support_specila_floating_point_number.md
+        href: ./support_for_special_floating_point_numbers.md
       - label: openEuler系统一键安装openGauss
         href: ./opengauss_installation_in_openeuler_in_one_click_mode.md
       - label: 段页式空间回收
@@ -222,7 +222,7 @@ sections:
       - label: "AI in DB: 数据库内AI功能"
         sections:
           - label: "Predictor: AI查询时间预测"
-            href: ./predictor_ai_query_time_prediction.md
+            href: ./predictor_ai_query_time_forecasting.md
       - label: oGMemory
         href: ./ogmemory.md
   - label: 工具链

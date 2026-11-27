@@ -561,7 +561,7 @@
         <td><a href="./advanced_features/mot.md">MOT</a></td>
     </tr>
     <tr>
-        <td><a href="./advanced_features/fully_encrypted_database.md">Fully Encrypted Database</a></td>
+        <td><a href="./advanced_features/full_encrypted_database.md">Fully Encrypted Database</a></td>
     </tr>
     <tr>
         <td><a href="./advanced_features/dcf.md">DCF</a></td>

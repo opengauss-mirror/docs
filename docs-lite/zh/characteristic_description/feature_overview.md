@@ -66,7 +66,7 @@
         <th>特性</th>
     </tr>
     <tr>
-        <td><a href="./master_and_standby_vms.md">主备机</a></td>
+        <td><a href="./primary_standby.md">主备机</a></td>
     </tr>
     <tr>
         <td><a href="./logical_replication.md">逻辑复制</a></td>
@@ -75,7 +75,7 @@
         <td><a href="./logical_backup.md">逻辑备份</a></td>
     </tr>
     <tr>
-        <td><a href="./physical_backup_and_restoration.md">物理备份</a></td>
+        <td><a href="./physical_backup.md">物理备份</a></td>
     </tr>
     <tr>
         <td><a href="./automatic_job_retry_upon_failure.md">作业失败自动重试</a></td>
@@ -260,7 +260,7 @@
         <td><a href="../database_administration_guide/data_compression_in_oltp_scenarios.md">支持OLTP场景数据压缩</a></td>
     </tr>
     <tr>
-        <td><a href="./support_specila_floating_point_number.md">支持特殊浮点数</a></td>
+        <td><a href="./support_for_special_floating_point_numbers.md">支持特殊浮点数</a></td>
     </tr>
     <tr>
         <td><a href="./segment_space_shrink.md">段页式空间回收</a></td>
