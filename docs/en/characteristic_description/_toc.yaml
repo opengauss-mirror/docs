@@ -294,7 +294,7 @@ sections:
       - label: PostgreSQL-to-openGauss Migration Tool debezium-connector-postgres
         href: ./postgresql_opengauss_migration_tool_debezium_connector_postgres.md
       - label: SQL Server-to-openGauss Migration Tool oG_datasync_full_migration
-        href: ./sqlserver_to_opengauss_migration_tool_og_datasync_full_migration.md
+        href: ./sqlserver_opengauss_og_datasync_full_migration.md
       - label: Data Check Tool gs_datacheck
         href: ./data_check_tool_gs_datacheck.md
       - label: MySQL-to-openGauss Migration Tool chameleon
@@ -340,7 +340,7 @@ sections:
       - label: MOT
         href: ./advanced_features/mot.md  
       - label: Fully Encrypted Database
-        href: ./advanced_features/fully_encrypted_database.md  
+        href: ./advanced_features/full_encrypted_database.md  
       - label: DCF
         href: ./advanced_features/dcf.md  
       - label: Parallel Query
