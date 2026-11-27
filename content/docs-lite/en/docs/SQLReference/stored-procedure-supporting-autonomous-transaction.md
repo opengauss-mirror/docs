@@ -1,5 +1,5 @@
 ---
-description: An autonomous transaction can be defined in a stored procedure. The identifier of an autonomous transaction is PRAGMA AUTONOMOUS\_TRANSACTION. The syntax of an autonomous transaction is the same.
+description: An autonomous transaction can be defined in a stored procedure. The identifier of an autonomous transaction is PRAGMA AUTONOMOUS_TRANSACTION. The syntax of an autonomous transaction is the same.
 keywords: [openGauss, Stored Procedure Supporting Autonomous Transaction]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: SHARED\_MEMORY\_DETAIL queries the usage information about shared memory contexts on the current node.
+description: SHARED_MEMORY_DETAIL queries the usage information about shared memory contexts on the current node.
 keywords: [openGauss, GS_SHARED_MEMORY_DETAIL]
 ---
 

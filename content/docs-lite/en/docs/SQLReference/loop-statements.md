@@ -1,5 +1,5 @@
 ---
-description: Introduces Loop Statements in openGauss, covering Simple LOOP Statements, WHILE\_LOOP Statements, FOR\_LOOP \(Integer variable\) Statement.
+description: Introduces Loop Statements in openGauss, covering Simple LOOP Statements, WHILE_LOOP Statements, FOR_LOOP (Integer variable) Statement.
 keywords: [openGauss, Loop Statements]
 ---
 

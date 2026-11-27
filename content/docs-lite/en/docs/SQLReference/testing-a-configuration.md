@@ -1,5 +1,5 @@
 ---
-description: The ts\_debug function allows easy testing of a text search configuration.
+description: The ts_debug function allows easy testing of a text search configuration.
 keywords: [openGauss, Testing a Configuration]
 ---
 

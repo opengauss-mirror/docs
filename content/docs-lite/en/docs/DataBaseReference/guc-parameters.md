@@ -1,5 +1,5 @@
 ---
-description: - GUC Parameter Usage.
+description: GUC Parameter Usage.
 keywords: [openGauss, GUC Parameters]
 ---
 

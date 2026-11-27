@@ -1,5 +1,5 @@
 ---
-description: - Data Import Using COPY FROM STDIN.
+description: Data Import Using COPY FROM STDIN.
 keywords: [openGauss, Running the COPY FROM STDIN Statement to Import Data]
 ---
 

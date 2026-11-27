@@ -1,5 +1,5 @@
 ---
-description: - Exporting All Databases.
+description: Exporting All Databases.
 keywords: [openGauss, Exporting All Databases]
 ---
 

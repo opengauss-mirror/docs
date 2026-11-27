@@ -1,5 +1,5 @@
 ---
-description: In Optimistic Concurrency Control \(OCC\) \(such as the one used by MOT\) during a transaction \(using any isolation level\) no locks are placed on a record until the COMMIT phase. This is a powerful.
+description: In Optimistic Concurrency Control (OCC) (such as the one used by MOT) during a transaction (using any isolation level) no locks are placed on a record until the COMMIT phase. This is a powerful.
 keywords: [openGauss, Retrying an Aborted Transaction]
 ---
 

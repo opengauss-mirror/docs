@@ -1,5 +1,5 @@
 ---
-description: PG\_SECLABELS provides information about security labels.
+description: PG_SECLABELS provides information about security labels.
 keywords: [openGauss, PG_SECLABELS]
 ---
 

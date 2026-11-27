@@ -1,5 +1,5 @@
 ---
-description: - Create a complete-refresh materialized view.
+description: Create a complete-refresh materialized view.
 keywords: [openGauss, Usage]
 ---
 

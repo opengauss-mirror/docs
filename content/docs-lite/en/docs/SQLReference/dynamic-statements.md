@@ -1,5 +1,5 @@
 ---
-description: - Executing Dynamic Query Statements.
+description: Executing Dynamic Query Statements.
 keywords: [openGauss, Dynamic Statements]
 ---
 

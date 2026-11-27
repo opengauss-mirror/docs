@@ -1,5 +1,5 @@
 ---
-description: GS\_SESSION\_CPU\_STATISTICS shows load management information about CPU usage of ongoing complex jobs executed by the current user.
+description: GS_SESSION_CPU_STATISTICS shows load management information about CPU usage of ongoing complex jobs executed by the current user.
 keywords: [openGauss, GS_SESSION_CPU_STATISTICS]
 ---
 

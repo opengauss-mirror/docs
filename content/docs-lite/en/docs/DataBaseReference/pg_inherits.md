@@ -1,5 +1,5 @@
 ---
-description: PG\_INHERITS records information about table inheritance hierarchies. There is one entry for each direct child table in the database. Indirect inheritance can be determined by following chains of.
+description: PG_INHERITS records information about table inheritance hierarchies. There is one entry for each direct child table in the database. Indirect inheritance can be determined by following chains of.
 keywords: [openGauss, PG_INHERITS]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Statistics are intended for performance analysis or debugging. It is uncommon to turn them ON in a production environment \(by default, they are OFF\). Statistics are primarily used by database develo.
+description: Statistics are intended for performance analysis or debugging. It is uncommon to turn them ON in a production environment (by default, they are OFF). Statistics are primarily used by database develo.
 keywords: [openGauss, MOT Statistics]
 ---
 

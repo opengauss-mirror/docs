@@ -1,5 +1,5 @@
 ---
-description: All the current default values for parameters in the openGauss configuration files \(postgresql.conf and pg\_hba.conf\) are applied in single-server configuration mode. You can set applicati.
+description: All the current default values for parameters in the openGauss configuration files (postgresql.conf and pg_hba.conf) are applied in single-server configuration mode. You can set applicati.
 keywords: [openGauss, gs_guc]
 ---
 

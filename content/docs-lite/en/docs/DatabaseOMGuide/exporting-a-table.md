@@ -1,5 +1,5 @@
 ---
-description: You can use gs\_dump to export data and definition of a table-level object from openGauss. Views, sequences, and foreign tables are special tables. You can export one or more specified tables as.
+description: You can use gs_dump to export data and definition of a table-level object from openGauss. Views, sequences, and foreign tables are special tables. You can export one or more specified tables as.
 keywords: [openGauss, Exporting a Table]
 ---
 

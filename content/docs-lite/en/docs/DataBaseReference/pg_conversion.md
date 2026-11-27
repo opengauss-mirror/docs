@@ -1,5 +1,5 @@
 ---
-description: PG\_CONVERSION describes encoding conversion information.
+description: PG_CONVERSION describes encoding conversion information.
 keywords: [openGauss, PG_CONVERSION]
 ---
 

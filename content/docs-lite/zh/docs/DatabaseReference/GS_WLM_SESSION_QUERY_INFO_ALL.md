@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_SESSION\_QUERY\_INFO\_ALL系统表显示当前数据库实例执行作业结束后的负载管理记录。此数据是从内核中转储到系统表中的数据。当设置GUC参数[enable\_resource\_record](负载管理.md#zh-cn_topic_0283137479_zh-cn_topic_0237124729_zh-cn_topic_0059777791_s77bd102.
+description: GS_WLM_SESSION_QUERY_INFO_ALL系统表显示当前数据库实例执行作业结束后的负载管理记录。此数据是从内核中转储到系统表中的数据。当设置GUC参数[enable_resource_record](负载管理.md#zh-cn_topic_0283137479_zh-cn_topic_0237124729_zh-cn_topic_0059777791_s77bd102.
 keywords: [openGauss, GS_WLM_SESSION_QUERY_INFO_ALL]
 ---
 

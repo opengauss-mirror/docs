@@ -1,5 +1,5 @@
 ---
-description: gs\_dump是openGauss用于导出数据库相关信息的工具，用户可以自定义导出一个数据库或其中的对象（模式、表、视图等）。支持导出的数据库可以是默认数据库postgres，也可以是自定义数据库。.
+description: gs_dump是openGauss用于导出数据库相关信息的工具，用户可以自定义导出一个数据库或其中的对象（模式、表、视图等）。支持导出的数据库可以是默认数据库postgres，也可以是自定义数据库。.
 keywords: [openGauss, gs_dump]
 ---
 

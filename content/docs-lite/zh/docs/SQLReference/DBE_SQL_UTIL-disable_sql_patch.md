@@ -1,5 +1,5 @@
 ---
-description: disable\_sql\_patch是用于禁用SQL PATCH的接口函数，返回执行是否成功。.
+description: disable_sql_patch是用于禁用SQL PATCH的接口函数，返回执行是否成功。.
 keywords: [openGauss, DBE_SQL_UTIL.disable_sql_patch]
 ---
 

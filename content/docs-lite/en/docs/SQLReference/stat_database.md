@@ -1,5 +1,5 @@
 ---
-description: STAT\_DATABASE contains statistics for each database on this node.
+description: STAT_DATABASE contains statistics for each database on this node.
 keywords: [openGauss, STAT_DATABASE]
 ---
 

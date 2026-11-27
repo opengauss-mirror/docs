@@ -1,5 +1,5 @@
 ---
-description: An autonomous transaction can be defined in a function. The identifier of an autonomous transaction is PRAGMA AUTONOMOUS\_TRANSACTION. The syntax of an autonomous transaction is the same as that.
+description: An autonomous transaction can be defined in a function. The identifier of an autonomous transaction is PRAGMA AUTONOMOUS_TRANSACTION. The syntax of an autonomous transaction is the same as that.
 keywords: [openGauss, Function Supporting Autonomous Transaction]
 ---
 

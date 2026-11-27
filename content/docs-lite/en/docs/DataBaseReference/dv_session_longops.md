@@ -1,5 +1,5 @@
 ---
-description: DV\_SESSION\_LONGOPS displays the progress of ongoing operations. Users can access this view only after being authorized.
+description: DV_SESSION_LONGOPS displays the progress of ongoing operations. Users can access this view only after being authorized.
 keywords: [openGauss, DV_SESSION_LONGOPS]
 ---
 

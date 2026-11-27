@@ -1,5 +1,5 @@
 ---
-description: 增加、修改和删除一个现有server的参数。已有server可以从pg\_foreign\_server系统表中查询。.
+description: 增加、修改和删除一个现有server的参数。已有server可以从pg_foreign_server系统表中查询。.
 keywords: [openGauss, ALTER SERVER]
 ---
 

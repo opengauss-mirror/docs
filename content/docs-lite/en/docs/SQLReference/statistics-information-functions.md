@@ -1,5 +1,5 @@
 ---
-description: Statistics information functions are divided into the following two categories: functions that access databases, using the OID of each table or index in a database to mark the database for which stati.
+description: 'Statistics information functions are divided into the following two categories: functions that access databases, using the OID of each table or index in a database to mark the database for which stati.'
 keywords: [openGauss, Statistics Information Functions]
 ---
 

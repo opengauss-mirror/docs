@@ -1,5 +1,5 @@
 ---
-description: - Before using the driver, perform the following operations:.
+description: Before using the driver, perform the following operations:.
 keywords: [openGauss, Loading a Driver]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - Searching a Table.
+description: Searching a Table.
 keywords: [openGauss, Tables and Indexes]
 ---
 

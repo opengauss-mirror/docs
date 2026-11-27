@@ -1,5 +1,5 @@
 ---
-description: CREATE WEAK PASSWORD DICTIONARY inserts one or more weak passwords into the gs\_global\_config table.
+description: CREATE WEAK PASSWORD DICTIONARY inserts one or more weak passwords into the gs_global_config table.
 keywords: [openGauss, CREATE]
 ---
 

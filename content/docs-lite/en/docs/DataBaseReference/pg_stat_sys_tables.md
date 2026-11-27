@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_SYS\_TABLES displays statistics about the system catalogs of all the namespaces in pg\_catalog and information\_schema schemas.
+description: PG_STAT_SYS_TABLES displays statistics about the system catalogs of all the namespaces in pg_catalog and information_schema schemas.
 keywords: [openGauss, PG_STAT_SYS_TABLES]
 ---
 

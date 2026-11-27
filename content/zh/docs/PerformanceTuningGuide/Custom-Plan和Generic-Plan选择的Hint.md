@@ -1,5 +1,5 @@
 ---
-description: 对于以PBE方式执行的查询语句和DML语句，优化器会基于规则、代价、参数等因素选择生成Custom Plan或Generic Plan执行。用户可以通过use\_cplan/use\_gplan的hint指定使用哪种计划执行方式。.
+description: 对于以PBE方式执行的查询语句和DML语句，优化器会基于规则、代价、参数等因素选择生成Custom Plan或Generic Plan执行。用户可以通过use_cplan/use_gplan的hint指定使用哪种计划执行方式。.
 keywords: [openGauss, Custom Plan和Generic Plan选择的Hint]
 ---
 

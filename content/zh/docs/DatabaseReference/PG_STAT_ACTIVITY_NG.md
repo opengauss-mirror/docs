@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_ACTIVITY\_NG视图显示在当前用户所属的逻辑数据库实例下，所有查询的相关信息。.
+description: PG_STAT_ACTIVITY_NG视图显示在当前用户所属的逻辑数据库实例下，所有查询的相关信息。.
 keywords: [openGauss, PG_STAT_ACTIVITY_NG]
 ---
 

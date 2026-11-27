@@ -1,5 +1,5 @@
 ---
-description: GS\_COLUMN\_KEYS records information about the CEK in the encrypted equality feature. Each record corresponds to a CEK.
+description: GS_COLUMN_KEYS records information about the CEK in the encrypted equality feature. Each record corresponds to a CEK.
 keywords: [openGauss, GS_COLUMN_KEYS]
 ---
 

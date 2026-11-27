@@ -1,5 +1,5 @@
 ---
-description: PG\_SESSION\_WLMSTAT displays corresponding load management information about the task currently executed by the user. Only the user with sysadmin permission can query this view.
+description: PG_SESSION_WLMSTAT displays corresponding load management information about the task currently executed by the user. Only the user with sysadmin permission can query this view.
 keywords: [openGauss, PG_SESSION_WLMSTAT]
 ---
 

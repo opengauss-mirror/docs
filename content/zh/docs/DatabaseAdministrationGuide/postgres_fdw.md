@@ -1,5 +1,5 @@
 ---
-description: postgres\_fdw是一款开源插件，其代码随PostgreSQL源码一同发布。openGauss基于开源的PostgreSQL 9.4.26版本中的postgres\_fdw源码（[https://ftp.postgresql.org/pub/source/v9.4.26/postgresql-9.4.26.tar.gz](https://ftp.postgresql.org/pub/sou.
+description: postgres_fdw是一款开源插件，其代码随PostgreSQL源码一同发布。openGauss基于开源的PostgreSQL 9.4.26版本中的postgres_fdw源码（[https://ftp.postgresql.org/pub/source/v9.4.26/postgresql-9.4.26.tar.gz](https://ftp.postgresql.org/pub/sou.
 keywords: [openGauss, postgres_fdw]
 ---
 

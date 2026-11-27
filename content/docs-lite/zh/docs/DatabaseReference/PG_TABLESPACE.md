@@ -1,5 +1,5 @@
 ---
-description: PG\_TABLESPACE系统表存储表空间信息。.
+description: PG_TABLESPACE系统表存储表空间信息。.
 keywords: [openGauss, PG_TABLESPACE]
 ---
 

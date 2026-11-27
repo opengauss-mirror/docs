@@ -1,5 +1,5 @@
 ---
-description: - log\_hostname is enabled, but DNS is incorrect.
+description: log_hostname is enabled, but DNS is incorrect.
 keywords: [openGauss, troubleshooting, Troubleshooting]
 ---
 

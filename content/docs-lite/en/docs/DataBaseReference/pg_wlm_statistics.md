@@ -1,5 +1,5 @@
 ---
-description: PG\_WLM\_STATISTICS displays information about workload management after the task is complete or the exception has been handled. Only the user with sysadmin permission can query this view.
+description: PG_WLM_STATISTICS displays information about workload management after the task is complete or the exception has been handled. Only the user with sysadmin permission can query this view.
 keywords: [openGauss, PG_WLM_STATISTICS]
 ---
 

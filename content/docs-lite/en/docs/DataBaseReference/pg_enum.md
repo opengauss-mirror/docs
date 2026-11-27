@@ -1,5 +1,5 @@
 ---
-description: PG\_ENUM contains entries showing the values and labels for each enumerated type. The internal representation of a given enumerated value is actually the OID of its associated row in PG\_ENUM.
+description: PG_ENUM contains entries showing the values and labels for each enumerated type. The internal representation of a given enumerated value is actually the OID of its associated row in PG_ENUM.
 keywords: [openGauss, PG_ENUM]
 ---
 

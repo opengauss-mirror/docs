@@ -1,5 +1,5 @@
 ---
-description: PG\_AVAILABLE\_EXTENSION\_VERSIONS displays extension versions of certain database features.
+description: PG_AVAILABLE_EXTENSION_VERSIONS displays extension versions of certain database features.
 keywords: [openGauss, PG_AVAILABLE_EXTENSION_VERSIONS]
 ---
 

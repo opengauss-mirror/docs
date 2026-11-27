@@ -1,5 +1,5 @@
 ---
-description: - Kernel Error Information.
+description: Kernel Error Information.
 keywords: [openGauss, Error Log Reference]
 ---
 

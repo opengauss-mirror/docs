@@ -1,5 +1,5 @@
 ---
-description: JSON\(JavaScript Object Notation\)数据，可以是单独的一个标量，也可以是一个数组，也可以是一个键值对象，其中数组和对象可以统称容器\(container\)：.
+description: JSON(JavaScript Object Notation)数据，可以是单独的一个标量，也可以是一个数组，也可以是一个键值对象，其中数组和对象可以统称容器(container)：.
 keywords: [openGauss, JSONJSONB类型]
 ---
 

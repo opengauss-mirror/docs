@@ -1,5 +1,5 @@
 ---
-description: The role used for the replication connection must have the REPLICATION attribute \(or be a user with the SYSADMIN permission\). If the role lacks SUPERUSER and BYPASSRLS, the publisher's row security.
+description: The role used for the replication connection must have the REPLICATION attribute (or be a user with the SYSADMIN permission). If the role lacks SUPERUSER and BYPASSRLS, the publisher's row security.
 keywords: [openGauss, Security]
 ---
 

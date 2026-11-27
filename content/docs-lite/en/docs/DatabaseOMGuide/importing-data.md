@@ -1,5 +1,5 @@
 ---
-description: You can use INSERT, COPY, or \\copy \(a gsql meta-command\) to import data to the openGauss database. The methods have different characteristics. For details, see [Table 1](#en-.
+description: You can use INSERT, COPY, or \copy (a gsql meta-command) to import data to the openGauss database. The methods have different characteristics. For details, see [Table 1](#en-.
 keywords: [openGauss, Importing Data]
 ---
 

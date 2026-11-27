@@ -1,5 +1,5 @@
 ---
-description: WDR Snapshot在启动后（打开参数enable\_wdr\_snapshot）,会在用户表空间"pg\_default"，数据库"postgres"下新建schema "snapshot"，用.
+description: WDR Snapshot在启动后（打开参数enable_wdr_snapshot）,会在用户表空间"pg_default"，数据库"postgres"下新建schema "snapshot"，用.
 keywords: [openGauss, WDR Snapshot Schema]
 ---
 

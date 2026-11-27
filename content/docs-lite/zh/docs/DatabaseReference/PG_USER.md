@@ -1,5 +1,5 @@
 ---
-description: PG\_USER视图提供了访问数据库用户的信息，默认只有初始化用户和具有sysadmin属性的用户可以查看，其余用户需要赋权后才可以查看。.
+description: PG_USER视图提供了访问数据库用户的信息，默认只有初始化用户和具有sysadmin属性的用户可以查看，其余用户需要赋权后才可以查看。.
 keywords: [openGauss, PG_USER]
 ---
 

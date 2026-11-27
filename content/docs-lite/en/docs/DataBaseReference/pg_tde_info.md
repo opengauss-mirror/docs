@@ -1,5 +1,5 @@
 ---
-description: PG\_TDE\_INFO provides encryption information of openGauss.
+description: PG_TDE_INFO provides encryption information of openGauss.
 keywords: [openGauss, PG_TDE_INFO]
 ---
 

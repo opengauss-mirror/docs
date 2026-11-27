@@ -1,5 +1,5 @@
 ---
-description: - Supports the same query scope as the CREATE TABLE AS statement does.
+description: Supports the same query scope as the CREATE TABLE AS statement does.
 keywords: [openGauss, Support and Constraints]
 ---
 

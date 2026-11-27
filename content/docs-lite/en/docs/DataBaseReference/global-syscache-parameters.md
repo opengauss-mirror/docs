@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies whether to enable the global system cache function. This parameter is a POSTMASTER parameter. Set it based on instructions provided in [Table 1](../DatabaseAdmini.
+description: 'Parameter description: Specifies whether to enable the global system cache function. This parameter is a POSTMASTER parameter. Set it based on instructions provided in [Table 1](../DatabaseAdmini.'
 keywords: [openGauss, Global SysCache Parameters]
 ---
 

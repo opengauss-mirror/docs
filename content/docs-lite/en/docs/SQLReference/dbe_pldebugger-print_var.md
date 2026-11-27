@@ -1,5 +1,5 @@
 ---
-description: During debugging on the debug end, print\_var is invoked to print the name and value of the specified variable in the current stored procedure. The input parameter frameno of this function.
+description: During debugging on the debug end, print_var is invoked to print the name and value of the specified variable in the current stored procedure. The input parameter frameno of this function.
 keywords: [openGauss, DBE_PLDEBUGGER.print_var]
 ---
 

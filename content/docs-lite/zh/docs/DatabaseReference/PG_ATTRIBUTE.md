@@ -1,5 +1,5 @@
 ---
-description: PG\_ATTRIBUTE系统表存储关于表字段的信息。.
+description: PG_ATTRIBUTE系统表存储关于表字段的信息。.
 keywords: [openGauss, PG_ATTRIBUTE]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - Supports statements for querying a single table.
+description: Supports statements for querying a single table.
 keywords: [openGauss, Support and Constraints]
 ---
 

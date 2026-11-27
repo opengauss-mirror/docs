@@ -1,5 +1,5 @@
 ---
-description: - Hardware Requirements.
+description: Hardware Requirements.
 keywords: [openGauss, Setting up a Performance Test Environment]
 ---
 

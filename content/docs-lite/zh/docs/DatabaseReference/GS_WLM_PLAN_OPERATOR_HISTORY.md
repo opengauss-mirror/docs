@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_PLAN\_OPERATOR\_HISTORY视图显示的是当前用户数据库主节点上执行作业结束后的执行计划算子级的相关记录。.
+description: GS_WLM_PLAN_OPERATOR_HISTORY视图显示的是当前用户数据库主节点上执行作业结束后的执行计划算子级的相关记录。.
 keywords: [openGauss, GS_WLM_PLAN_OPERATOR_HISTORY]
 ---
 

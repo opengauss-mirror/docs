@@ -1,5 +1,5 @@
 ---
-description: - Database and Schema Design.
+description: Database and Schema Design.
 keywords: [openGauss, Database Object Design]
 ---
 

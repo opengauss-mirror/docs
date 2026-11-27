@@ -1,5 +1,5 @@
 ---
-description: GS\_TOTAL\_MEMORY\_DETAIL视图统计当前数据库节点使用内存的信息，单位为MB。当GUC参数enable\_memory\_limit的值为off时，本视图不可用。.
+description: GS_TOTAL_MEMORY_DETAIL视图统计当前数据库节点使用内存的信息，单位为MB。当GUC参数enable_memory_limit的值为off时，本视图不可用。.
 keywords: [openGauss, GS_TOTAL_MEMORY_DETAIL]
 ---
 

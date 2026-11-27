@@ -1,5 +1,5 @@
 ---
-description: - Transaction applications.
+description: Transaction applications.
 keywords: [openGauss, Application Scenarios]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: 执行dsscmd命令出现"Invalid DSS parameter: the value of 'INST_ID' is invalid"报错字样。.
+description: '执行dsscmd命令出现"Invalid DSS parameter: the value of ''INST_ID'' is invalid"报错字样。.'
 keywords: [openGauss, INST_ID存在冲突或不合法]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_TRANSACTIONS\_PREPARED\_XACTS displays information about transactions that are currently prepared for two-phase commit on the primary database node in openGauss.
+description: SUMMARY_TRANSACTIONS_PREPARED_XACTS displays information about transactions that are currently prepared for two-phase commit on the primary database node in openGauss.
 keywords: [openGauss, SUMMARY_TRANSACTIONS_PREPARED_XACTS]
 ---
 

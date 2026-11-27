@@ -1,5 +1,5 @@
 ---
-description: Introduces MEMORY\_NODE\_DETAIL in openGauss, covering .
+description: Introduces MEMORY_NODE_DETAIL in openGauss, covering .
 keywords: [openGauss, MEMORY_NODE_DETAIL]
 ---
 

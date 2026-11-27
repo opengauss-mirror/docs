@@ -1,5 +1,5 @@
 ---
-description: The main objective of MOT Recovery is to restore the data and the MOT engine to a consistent state after a planned shutdown \(for example, for maintenance\) or an unplanned crash \(for example, after.
+description: The main objective of MOT Recovery is to restore the data and the MOT engine to a consistent state after a planned shutdown (for example, for maintenance) or an unplanned crash (for example, after.
 keywords: [openGauss, MOT Recovery]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_STAT\_XACT\_SYS\_TABLES displays transaction status information about the system catalogs in namespaces on each node.
+description: GLOBAL_STAT_XACT_SYS_TABLES displays transaction status information about the system catalogs in namespaces on each node.
 keywords: [openGauss, GLOBAL_STAT_XACT_SYS_TABLES]
 ---
 

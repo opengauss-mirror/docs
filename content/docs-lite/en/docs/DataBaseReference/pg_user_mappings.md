@@ -1,5 +1,5 @@
 ---
-description: PG\_USER\_MAPPINGS provides access to information about user mappings.
+description: PG_USER_MAPPINGS provides access to information about user mappings.
 keywords: [openGauss, PG_USER_MAPPINGS]
 ---
 

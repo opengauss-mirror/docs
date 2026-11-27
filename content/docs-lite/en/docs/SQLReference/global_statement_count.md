@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_STATEMENT\_COUNT displays statistics about five types of running statements \(SELECT, INSERT, UPDATE, DELETE, and MERGE INTO\) as well as DDL, DML, and DCL stateme.
+description: GLOBAL_STATEMENT_COUNT displays statistics about five types of running statements (SELECT, INSERT, UPDATE, DELETE, and MERGE INTO) as well as DDL, DML, and DCL stateme.
 keywords: [openGauss, GLOBAL_STATEMENT_COUNT]
 ---
 

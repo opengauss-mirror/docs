@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies whether to print parsing tree results.
+description: 'Parameter description: Specifies whether to print parsing tree results.'
 keywords: [openGauss, Logging Content]
 ---
 

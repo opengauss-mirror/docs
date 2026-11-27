@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_PLANCACHE\_STATUS displays the GPC status information.
+description: GLOBAL_PLANCACHE_STATUS displays the GPC status information.
 keywords: [openGauss, GLOBAL_PLANCACHE_STATUS]
 ---
 

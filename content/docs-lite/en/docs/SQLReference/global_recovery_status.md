@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_RECOVERY\_STATUS displays log flow control information about the primary and standby nodes.
+description: GLOBAL_RECOVERY_STATUS displays log flow control information about the primary and standby nodes.
 keywords: [openGauss, GLOBAL_RECOVERY_STATUS]
 ---
 

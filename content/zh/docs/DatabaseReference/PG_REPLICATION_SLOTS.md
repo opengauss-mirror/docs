@@ -1,5 +1,5 @@
 ---
-description: PG\_REPLICATION\_SLOTS视图查看复制槽的信息。.
+description: PG_REPLICATION_SLOTS视图查看复制槽的信息。.
 keywords: [openGauss, PG_REPLICATION_SLOTS]
 ---
 

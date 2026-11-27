@@ -1,5 +1,5 @@
 ---
-description: 表 1 gs\_dbmind component slow\_query\_diagnosis 命令行说明.
+description: 表 1 gs_dbmind component slow_query_diagnosis 命令行说明.
 keywords: [openGauss, 命令参考]
 ---
 

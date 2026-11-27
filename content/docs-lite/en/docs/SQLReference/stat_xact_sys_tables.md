@@ -1,5 +1,5 @@
 ---
-description: STAT\_XACT\_SYS\_TABLES displays transaction status information about the system catalogs in namespaces on the current node.
+description: STAT_XACT_SYS_TABLES displays transaction status information about the system catalogs in namespaces on the current node.
 keywords: [openGauss, STAT_XACT_SYS_TABLES]
 ---
 

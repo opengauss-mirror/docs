@@ -1,5 +1,5 @@
 ---
-description: Introduces 使用gs\_dump和gs\_dumpall命令导出数据 in openGauss, covering .
+description: Introduces 使用gs_dump和gs_dumpall命令导出数据 in openGauss, covering .
 keywords: [openGauss, 使用gs_dump和gs_dumpall命令导出数据]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_TS\_CONFIG contains entries representing text search configurations. A configuration specifies a particular text search parser and a list of dictionaries to use for each of the parser's outpu.
+description: PG_TS_CONFIG contains entries representing text search configurations. A configuration specifies a particular text search parser and a list of dictionaries to use for each of the parser's outpu.
 keywords: [openGauss, PG_TS_CONFIG]
 ---
 

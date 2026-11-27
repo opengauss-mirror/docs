@@ -1,5 +1,5 @@
 ---
-description: ERRMSG: "unsupported syntax: ENCRYPTED WITH in this operation".
+description: 'ERRMSG: "unsupported syntax: ENCRYPTED WITH in this operation".'
 keywords: [openGauss, Kernel Error Information]
 ---
 

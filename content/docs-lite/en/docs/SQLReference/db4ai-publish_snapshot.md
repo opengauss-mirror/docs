@@ -1,5 +1,5 @@
 ---
-description: PUBLISH\_SNAPSHOT publishes snapshots for the DB4AI feature. You can invoke PUBLISH SNAPSHOT to implement this function.
+description: PUBLISH_SNAPSHOT publishes snapshots for the DB4AI feature. You can invoke PUBLISH SNAPSHOT to implement this function.
 keywords: [openGauss, DB4AI.PUBLISH_SNAPSHOT]
 ---
 

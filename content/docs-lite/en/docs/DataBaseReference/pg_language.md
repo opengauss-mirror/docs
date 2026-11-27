@@ -1,5 +1,5 @@
 ---
-description: PG\_LANGUAGE registers programming languages. You can use them and interfaces to write functions or stored procedures.
+description: PG_LANGUAGE registers programming languages. You can use them and interfaces to write functions or stored procedures.
 keywords: [openGauss, PG_LANGUAGE]
 ---
 

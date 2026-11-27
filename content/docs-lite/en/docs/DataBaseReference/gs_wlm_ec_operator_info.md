@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_EC\_OPERATOR\_INFO records operator information after an Extension Connector job ends. If [enable\_resource\_record](workload-management.md#en-us_topic_0283137479_en-us_topic_02371247.
+description: GS_WLM_EC_OPERATOR_INFO records operator information after an Extension Connector job ends. If [enable_resource_record](workload-management.md#en-us_topic_0283137479_en-us_topic_02371247.
 keywords: [openGauss, GS_WLM_EC_OPERATOR_INFO]
 ---
 

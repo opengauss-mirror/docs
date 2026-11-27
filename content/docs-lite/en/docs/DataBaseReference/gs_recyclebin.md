@@ -1,5 +1,5 @@
 ---
-description: gs\_recyclebin describes details about objects in the recycle bin.
+description: gs_recyclebin describes details about objects in the recycle bin.
 keywords: [openGauss, GS_RECYCLEBIN]
 ---
 

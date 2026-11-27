@@ -1,5 +1,5 @@
 ---
-description: - Parsing Documents.
+description: Parsing Documents.
 keywords: [openGauss, Controlling Text Search]
 ---
 

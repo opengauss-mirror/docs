@@ -1,5 +1,5 @@
 ---
-description: PG\_CURSORS displays cursors that are currently available.
+description: PG_CURSORS displays cursors that are currently available.
 keywords: [openGauss, PG_CURSORS]
 ---
 

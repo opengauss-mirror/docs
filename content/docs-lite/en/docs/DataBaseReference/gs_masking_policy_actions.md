@@ -1,5 +1,5 @@
 ---
-description: GS\_MASKING\_POLICY\_ACTIONS records the masking actions of a masking policy in the dynamic data masking policies. One masking policy corresponds to one or more rows of records in the catalog. On.
+description: GS_MASKING_POLICY_ACTIONS records the masking actions of a masking policy in the dynamic data masking policies. One masking policy corresponds to one or more rows of records in the catalog. On.
 keywords: [openGauss, GS_MASKING_POLICY_ACTIONS]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_STAT\_XACT\_USER\_TABLES displays the transaction status information about the user tables in namespaces in the database.
+description: SUMMARY_STAT_XACT_USER_TABLES displays the transaction status information about the user tables in namespaces in the database.
 keywords: [openGauss, SUMMARY_STAT_XACT_USER_TABLES]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - pg\_get\_triggerdef\(oid\).
+description: pg_get_triggerdef(oid).
 keywords: [openGauss, Trigger Functions]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Aside from the usual comparison operators, the following operators can be used. Bit string operands of &, |, and \# must be of equal length. In case of bit shifting, the original lengt.
+description: 'Aside from the usual comparison operators, the following operators can be used. Bit string operands of &, |, and # must be of equal length. In case of bit shifting, the original lengt.'
 keywords: [openGauss, Bit String Functions and Operators]
 ---
 

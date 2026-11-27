@@ -1,5 +1,5 @@
 ---
-description: GS\_ENCRYPTED\_PROC provides information such as the parameters of encrypted functions and stored procedure functions, original data type of return values, and encrypted columns.
+description: GS_ENCRYPTED_PROC provides information such as the parameters of encrypted functions and stored procedure functions, original data type of return values, and encrypted columns.
 keywords: [openGauss, GS_ENCRYPTED_PROC]
 ---
 

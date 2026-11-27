@@ -1,5 +1,5 @@
 ---
-description: After the WDR snapshot function is enabled \(enable\_wdr\_snapshot is set to.
+description: After the WDR snapshot function is enabled (enable_wdr_snapshot is set to.
 keywords: [openGauss, WDR Snapshot Schema]
 ---
 

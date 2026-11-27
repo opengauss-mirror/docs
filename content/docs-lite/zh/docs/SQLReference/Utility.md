@@ -1,5 +1,5 @@
 ---
-description: - REPLICATION\_STAT.
+description: REPLICATION_STAT.
 keywords: [openGauss, Utility]
 ---
 

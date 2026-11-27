@@ -1,5 +1,5 @@
 ---
-description: gs\_dump, provided by openGauss, is used to export database information. You can export a database or its objects \(such as schemas, tables, and views\). The database can be the default postgres.
+description: gs_dump, provided by openGauss, is used to export database information. You can export a database or its objects (such as schemas, tables, and views). The database can be the default postgres.
 keywords: [openGauss, gs_dump]
 ---
 

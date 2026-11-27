@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_STAT\_ALL\_INDEXES displays access statistics about each index in the openGauss database.
+description: SUMMARY_STAT_ALL_INDEXES displays access statistics about each index in the openGauss database.
 keywords: [openGauss, SUMMARY_STAT_ALL_INDEXES]
 ---
 

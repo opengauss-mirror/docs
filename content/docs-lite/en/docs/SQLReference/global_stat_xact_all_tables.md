@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_STAT\_XACT\_ALL\_TABLES displays transaction status information about all ordinary tables and TOAST tables in namespaces on each node.
+description: GLOBAL_STAT_XACT_ALL_TABLES displays transaction status information about all ordinary tables and TOAST tables in namespaces on each node.
 keywords: [openGauss, GLOBAL_STAT_XACT_ALL_TABLES]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_GROUP displays the database role authentication and the relationship between roles.
+description: PG_GROUP displays the database role authentication and the relationship between roles.
 keywords: [openGauss, PG_GROUP]
 ---
 

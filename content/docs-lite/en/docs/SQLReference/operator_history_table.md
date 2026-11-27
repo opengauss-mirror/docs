@@ -1,5 +1,5 @@
 ---
-description: OPERATOR\_HISTORY\_TABLE displays records about operators of completed jobs. Data is dumped from the kernel to this system catalog.
+description: OPERATOR_HISTORY_TABLE displays records about operators of completed jobs. Data is dumped from the kernel to this system catalog.
 keywords: [openGauss, OPERATOR_HISTORY_TABLE]
 ---
 

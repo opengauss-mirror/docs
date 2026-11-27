@@ -1,5 +1,5 @@
 ---
-description: MOT enables you to prepare and parse _pre-compiled full queries_ in a native format \(using a PREPARE statement\) before they are needed for execution.
+description: MOT enables you to prepare and parse _pre-compiled full queries_ in a native format (using a PREPARE statement) before they are needed for execution.
 keywords: [openGauss, MOT Query Native Compilation JIT]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: gs\_initdb支持的常用参数和不常用参数请分别参见表1和表2。.
+description: gs_initdb支持的常用参数和不常用参数请分别参见表1和表2。.
 keywords: [openGauss, 命令参考]
 ---
 

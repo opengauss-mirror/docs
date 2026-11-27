@@ -1,5 +1,5 @@
 ---
-description: The following was measured on ARM/Kunpeng 2-socket server \(128 cores\). The numbers scale is milliseconds \(ms\).
+description: The following was measured on ARM/Kunpeng 2-socket server (128 cores). The numbers scale is milliseconds (ms).
 keywords: [openGauss, MOT Low Latency]
 ---
 

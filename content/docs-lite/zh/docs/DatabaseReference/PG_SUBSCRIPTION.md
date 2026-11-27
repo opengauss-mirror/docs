@@ -1,5 +1,5 @@
 ---
-description: 系统表PG\_SUBSCRIPTION包含所有现有的逻辑复制订阅。需要有系统管理员权限才可以访问此系统表。.
+description: 系统表PG_SUBSCRIPTION包含所有现有的逻辑复制订阅。需要有系统管理员权限才可以访问此系统表。.
 keywords: [openGauss, PG_SUBSCRIPTION]
 ---
 

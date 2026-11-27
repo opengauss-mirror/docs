@@ -1,5 +1,5 @@
 ---
-description: - Support for Functions and Stored Procedures.
+description: Support for Functions and Stored Procedures.
 keywords: [openGauss, Enterprise-Level Features]
 ---
 

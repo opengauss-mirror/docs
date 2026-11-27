@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_OPERATOR\_RUNTIME视图显示当前用户在数据库主节点上正在执行的作业的算子相关信息。.
+description: GLOBAL_OPERATOR_RUNTIME视图显示当前用户在数据库主节点上正在执行的作业的算子相关信息。.
 keywords: [openGauss, GLOBAL_OPERATOR_RUNTIME]
 ---
 

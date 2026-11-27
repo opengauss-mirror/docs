@@ -1,5 +1,5 @@
 ---
-description: You can perform dynamic queries openGauss provides two modes: EXECUTE IMMEDIATE and OPEN FOR. EXECUTE IMMEDIATE dynamically executes SELECT statements and OPEN FOR combines use of.
+description: 'You can perform dynamic queries openGauss provides two modes: EXECUTE IMMEDIATE and OPEN FOR. EXECUTE IMMEDIATE dynamically executes SELECT statements and OPEN FOR combines use of.'
 keywords: [openGauss, Executing Dynamic Query Statements]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Introduces Other Optimizer Options in openGauss, covering explain\_dna\_file, explain\_perf\_mode, analysis\_options.
+description: Introduces Other Optimizer Options in openGauss, covering explain_dna_file, explain_perf_mode, analysis_options.
 keywords: [openGauss, Other Optimizer Options]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - Configuring Running Parameters.
+description: Configuring Running Parameters.
 keywords: [openGauss, Parameter Configuration Guide]
 ---
 

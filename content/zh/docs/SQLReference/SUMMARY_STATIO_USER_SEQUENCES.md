@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_STATIO\_USER\_SEQUENCES视图显示openGauss内汇聚的命名空间中所有用户关系表类型为序列的IO状态信息。.
+description: SUMMARY_STATIO_USER_SEQUENCES视图显示openGauss内汇聚的命名空间中所有用户关系表类型为序列的IO状态信息。.
 keywords: [openGauss, SUMMARY_STATIO_USER_SEQUENCES]
 ---
 

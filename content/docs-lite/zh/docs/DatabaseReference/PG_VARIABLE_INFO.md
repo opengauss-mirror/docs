@@ -1,5 +1,5 @@
 ---
-description: PG\_VARIABLE\_INFO视图用于查询openGauss中当前节点的xid、oid的状态。.
+description: PG_VARIABLE_INFO视图用于查询openGauss中当前节点的xid、oid的状态。.
 keywords: [openGauss, PG_VARIABLE_INFO]
 ---
 

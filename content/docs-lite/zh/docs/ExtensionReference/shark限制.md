@@ -1,5 +1,5 @@
 ---
-description: - shark插件只能在D兼容性数据库下创建。.
+description: shark插件只能在D兼容性数据库下创建。.
 keywords: [openGauss, shark限制]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: cm\_ctl是openGauss提供的用来控制数据库实例服务的工具。该工具主要供OM调用，及数据库实例服务自恢复时使用。cm\_ctl的主要功能有：.
+description: cm_ctl是openGauss提供的用来控制数据库实例服务的工具。该工具主要供OM调用，及数据库实例服务自恢复时使用。cm_ctl的主要功能有：.
 keywords: [openGauss, cm_ctl工具介绍]
 ---
 

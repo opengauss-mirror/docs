@@ -1,5 +1,5 @@
 ---
-description: In ODBC 3.x, SQLFreeEnv \(an ODBC 2.x function\) was deprecated and replaced by SQLFreeHandle. For details, see SQLFreeHandle.
+description: In ODBC 3.x, SQLFreeEnv (an ODBC 2.x function) was deprecated and replaced by SQLFreeHandle. For details, see SQLFreeHandle.
 keywords: [openGauss, SQLFreeEnv]
 ---
 

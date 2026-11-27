@@ -1,5 +1,5 @@
 ---
-description: PG\_PARTITION records all partitioned tables, table partitions, TOAST tables on table partitions, and index partitions in the database. Partitioned index information is not stored in the system c.
+description: PG_PARTITION records all partitioned tables, table partitions, TOAST tables on table partitions, and index partitions in the database. Partitioned index information is not stored in the system c.
 keywords: [openGauss, PG_PARTITION]
 ---
 

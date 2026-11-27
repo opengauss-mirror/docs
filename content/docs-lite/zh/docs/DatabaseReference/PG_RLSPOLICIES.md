@@ -1,5 +1,5 @@
 ---
-description: PG\_RLSPOLICIES视图提供查询行级访问控制策略。.
+description: PG_RLSPOLICIES视图提供查询行级访问控制策略。.
 keywords: [openGauss, PG_RLSPOLICIES]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_COMM\_SEND\_STREAM视图展示节点上所有的通信库发送流状态。.
+description: PG_COMM_SEND_STREAM视图展示节点上所有的通信库发送流状态。.
 keywords: [openGauss, PG_COMM_SEND_STREAM]
 ---
 

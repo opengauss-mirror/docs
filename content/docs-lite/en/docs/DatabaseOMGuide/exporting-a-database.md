@@ -1,5 +1,5 @@
 ---
-description: You can use gs\_dump to export data and all object definitions of a database from openGauss. You can specify the information to export as follows:.
+description: You can use gs_dump to export data and all object definitions of a database from openGauss. You can specify the information to export as follows:.
 keywords: [openGauss, Exporting a Database]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: OPERATOR\_HISTORY视图显示的是当前用户数据库主节点上执行作业结束后的算子的相关记录。记录的数据同表1。.
+description: OPERATOR_HISTORY视图显示的是当前用户数据库主节点上执行作业结束后的算子的相关记录。记录的数据同表1。.
 keywords: [openGauss, OPERATOR_HISTORY]
 ---
 

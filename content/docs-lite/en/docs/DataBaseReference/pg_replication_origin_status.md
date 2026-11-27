@@ -1,5 +1,5 @@
 ---
-description: PG\_REPLICATION\_ORIGIN\_STATUS displays the replication status of the replication source.
+description: PG_REPLICATION_ORIGIN_STATUS displays the replication status of the replication source.
 keywords: [openGauss, PG_REPLICATION_ORIGIN_STATUS]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_REPLICATION displays information about log synchronization status, such as the locations of the sender sending logs and the receiver receiving logs.
+description: PG_STAT_REPLICATION displays information about log synchronization status, such as the locations of the sender sending logs and the receiver receiving logs.
 keywords: [openGauss, PG_STAT_REPLICATION]
 ---
 

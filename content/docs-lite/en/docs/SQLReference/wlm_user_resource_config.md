@@ -1,5 +1,5 @@
 ---
-description: WLM\_USER\_RESOURCE\_CONFIG displays the resource configuration information of a user.
+description: WLM_USER_RESOURCE_CONFIG displays the resource configuration information of a user.
 keywords: [openGauss, WLM_USER_RESOURCE_CONFIG]
 ---
 

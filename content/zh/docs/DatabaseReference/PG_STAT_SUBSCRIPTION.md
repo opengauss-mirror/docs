@@ -1,5 +1,5 @@
 ---
-description: Introduces PG\_STAT\_SUBSCRIPTION in openGauss, covering .
+description: Introduces PG_STAT_SUBSCRIPTION in openGauss, covering .
 keywords: [openGauss, PG_STAT_SUBSCRIPTION]
 ---
 

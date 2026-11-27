@@ -1,5 +1,5 @@
 ---
-description: PG\_TABLES provides access to each table in the database.
+description: PG_TABLES provides access to each table in the database.
 keywords: [openGauss, PG_TABLES]
 ---
 

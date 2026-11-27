@@ -1,5 +1,5 @@
 ---
-description: During debugging on the debug end, call info\_breakpoints to view the current function breakpoint.
+description: During debugging on the debug end, call info_breakpoints to view the current function breakpoint.
 keywords: [openGauss, DBE_PLDEBUGGER.info_breakpoints]
 ---
 

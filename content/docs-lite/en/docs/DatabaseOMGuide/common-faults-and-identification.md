@@ -1,5 +1,5 @@
 ---
-description: - Common Fault Locating Methods.
+description: Common Fault Locating Methods.
 keywords: [openGauss, Common Faults and Identification]
 ---
 

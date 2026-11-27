@@ -1,5 +1,5 @@
 ---
-description: Introduces GUC参数说明 in openGauss, covering dolphin.sql\_mode, dolphin.b\_db\_timestamp, dolphin.default\_week\_format.
+description: Introduces GUC参数说明 in openGauss, covering dolphin.sql_mode, dolphin.b_db_timestamp, dolphin.default_week_format.
 keywords: [openGauss, GUC参数说明]
 ---
 

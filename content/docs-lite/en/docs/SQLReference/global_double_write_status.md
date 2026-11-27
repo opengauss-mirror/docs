@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_DOUBLE\_WRITE\_STATUS displays doublewrite file status of all instances in openGauss. It consists of the local\_double\_write\_stat view of each node. Columns in the view on each no.
+description: GLOBAL_DOUBLE_WRITE_STATUS displays doublewrite file status of all instances in openGauss. It consists of the local_double_write_stat view of each node. Columns in the view on each no.
 keywords: [openGauss, GLOBAL_DOUBLE_WRITE_STATUS]
 ---
 

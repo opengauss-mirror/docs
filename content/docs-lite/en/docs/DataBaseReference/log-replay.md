@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies the time for a standby server to write and replay logs.
+description: 'Parameter description: Specifies the time for a standby server to write and replay logs.'
 keywords: [openGauss, Log Replay]
 ---
 

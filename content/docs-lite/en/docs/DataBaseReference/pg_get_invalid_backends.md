@@ -1,5 +1,5 @@
 ---
-description: PG\_GET\_INVALID\_BACKENDS provides information about background threads on the primary database node that are connected to the current standby server.
+description: PG_GET_INVALID_BACKENDS provides information about background threads on the primary database node that are connected to the current standby server.
 keywords: [openGauss, PG_GET_INVALID_BACKENDS]
 ---
 

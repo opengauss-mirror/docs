@@ -1,5 +1,5 @@
 ---
-description: PG\_AUTH\_MEMBERS records the membership between roles.
+description: PG_AUTH_MEMBERS records the membership between roles.
 keywords: [openGauss, PG_AUTH_MEMBERS]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: TRANSACTIONS\_RUNNING\_XACTS displays information about running transactions on the current node.
+description: TRANSACTIONS_RUNNING_XACTS displays information about running transactions on the current node.
 keywords: [openGauss, TRANSACTIONS_RUNNING_XACTS]
 ---
 

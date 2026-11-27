@@ -1,5 +1,5 @@
 ---
-description: Parameter description: This parameter is a session-level GUC parameter. In bidirectional logical replication, set it to a non-zero value to avoid infinite data replication.
+description: 'Parameter description: This parameter is a session-level GUC parameter. In bidirectional logical replication, set it to a non-zero value to avoid infinite data replication.'
 keywords: [openGauss, Replication Parameters of Two Database Instances]
 ---
 

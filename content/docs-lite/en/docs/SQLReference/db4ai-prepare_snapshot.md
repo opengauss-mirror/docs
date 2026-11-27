@@ -1,5 +1,5 @@
 ---
-description: PREPARE\_SNAPSHOT prepares data for model training and interprets snapshots for the DB4AI feature. A snapshot provides a complete sequence of data and documents that are changed by all applicatio.
+description: PREPARE_SNAPSHOT prepares data for model training and interprets snapshots for the DB4AI feature. A snapshot provides a complete sequence of data and documents that are changed by all applicatio.
 keywords: [openGauss, DB4AI.PREPARE_SNAPSHOT]
 ---
 

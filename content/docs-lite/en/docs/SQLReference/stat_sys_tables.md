@@ -1,5 +1,5 @@
 ---
-description: STAT\_SYS\_TABLES displays statistics about all the system catalogs in the pg\_catalog, information\_schema, and pg\_toast schemas on a single node.
+description: STAT_SYS_TABLES displays statistics about all the system catalogs in the pg_catalog, information_schema, and pg_toast schemas on a single node.
 keywords: [openGauss, STAT_SYS_TABLES]
 ---
 

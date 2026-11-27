@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_SESSION\_STATISTICS displays load management information about jobs being executed by the current user on the database instance. Only users with the sysadmin permission can query t.
+description: GS_WLM_SESSION_STATISTICS displays load management information about jobs being executed by the current user on the database instance. Only users with the sysadmin permission can query t.
 keywords: [openGauss, GS_WLM_SESSION_STATISTICS]
 ---
 

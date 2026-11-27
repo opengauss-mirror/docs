@@ -1,5 +1,5 @@
 ---
-description: DBE\_PLDEBUGGER下系统函数用于单机下调试存储过程，目前支持的接口及其描述如下所示。仅管理员有权限执行这些调试接口，且无权限修改和创建新函数。.
+description: DBE_PLDEBUGGER下系统函数用于单机下调试存储过程，目前支持的接口及其描述如下所示。仅管理员有权限执行这些调试接口，且无权限修改和创建新函数。.
 keywords: [openGauss, DBE_PLDEBUGGER Schema]
 ---
 

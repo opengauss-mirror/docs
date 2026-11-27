@@ -1,5 +1,5 @@
 ---
-description: PG\_TS\_CONFIG\_MAP contains entries showing which text search dictionaries should be consulted, and in what order, for each output token type of each text search configuration's parser.
+description: PG_TS_CONFIG_MAP contains entries showing which text search dictionaries should be consulted, and in what order, for each output token type of each text search configuration's parser.
 keywords: [openGauss, PG_TS_CONFIG_MAP]
 ---
 

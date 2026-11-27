@@ -1,5 +1,5 @@
 ---
-description: The predpush\_same\_level hint is used to specify the generation of parameterized paths between tables or MVs at the same level.
+description: The predpush_same_level hint is used to specify the generation of parameterized paths between tables or MVs at the same level.
 keywords: [openGauss, Hint]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_CONVERSION系统表描述编码转换信息。.
+description: PG_CONVERSION系统表描述编码转换信息。.
 keywords: [openGauss, PG_CONVERSION]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: STATIO\_ALL\_SEQUENCES contains one row for each sequence in the current database, showing I/O statistics about specific sequences.
+description: STATIO_ALL_SEQUENCES contains one row for each sequence in the current database, showing I/O statistics about specific sequences.
 keywords: [openGauss, STATIO_ALL_SEQUENCES]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_INDEXES视图提供对数据库中每个索引的有用信息的访问。.
+description: PG_INDEXES视图提供对数据库中每个索引的有用信息的访问。.
 keywords: [openGauss, PG_INDEXES]
 ---
 

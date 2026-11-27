@@ -1,5 +1,5 @@
 ---
-description: 目前openGauss配置文件（“postgresql.conf”、“pg\_hba.conf”）中的参数默认值都是单机的配置模式。应用程序可以通过调用gs\_guc来设置适合自己的参数。.
+description: 目前openGauss配置文件（“postgresql.conf”、“pg_hba.conf”）中的参数默认值都是单机的配置模式。应用程序可以通过调用gs_guc来设置适合自己的参数。.
 keywords: [openGauss, gs_guc]
 ---
 

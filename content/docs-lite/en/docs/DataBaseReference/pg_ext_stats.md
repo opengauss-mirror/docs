@@ -1,5 +1,5 @@
 ---
-description: PG\_EXT\_STATS allows for access to extension statistics stored in the PG\_STATISTIC\_EXT system catalog. The extension statistics means multiple columns of statistics.
+description: PG_EXT_STATS allows for access to extension statistics stored in the PG_STATISTIC_EXT system catalog. The extension statistics means multiple columns of statistics.
 keywords: [openGauss, PG_EXT_STATS]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_DOUBLE\_WRITE\_STATUS视图显示openGauss所有实例的双写文件的情况。它是由每个节点的local\_double\_write\_stat视图组成，属性完全一致。.
+description: GLOBAL_DOUBLE_WRITE_STATUS视图显示openGauss所有实例的双写文件的情况。它是由每个节点的local_double_write_stat视图组成，属性完全一致。.
 keywords: [openGauss, GLOBAL_DOUBLE_WRITE_STATUS]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_DATABASE系统表存储关于可用数据库的信息。.
+description: PG_DATABASE系统表存储关于可用数据库的信息。.
 keywords: [openGauss, PG_DATABASE]
 ---
 

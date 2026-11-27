@@ -1,5 +1,5 @@
 ---
-description: 在openGauss主备的架构下，当主机异常宕机，需要异步备升主时，旧主可能有数据未同步到异步备。gs\_retrieve工具可以在旧主恢复之后，将未同步的数据通过逻辑解码的方式找回。.
+description: 在openGauss主备的架构下，当主机异常宕机，需要异步备升主时，旧主可能有数据未同步到异步备。gs_retrieve工具可以在旧主恢复之后，将未同步的数据通过逻辑解码的方式找回。.
 keywords: [openGauss, gs_retrieve]
 ---
 

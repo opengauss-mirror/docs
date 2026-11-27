@@ -1,5 +1,5 @@
 ---
-description: - MySQL to openGauss Migration Tool Chameleon.
+description: MySQL to openGauss Migration Tool Chameleon.
 keywords: [openGauss, Tool Chain]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_STATIO\_ALL\_SEQUENCES包含各节点的数据库中每个序列的每一行，显示特定序列关于I/O的统计。.
+description: GLOBAL_STATIO_ALL_SEQUENCES包含各节点的数据库中每个序列的每一行，显示特定序列关于I/O的统计。.
 keywords: [openGauss, GLOBAL_STATIO_ALL_SEQUENCES]
 ---
 

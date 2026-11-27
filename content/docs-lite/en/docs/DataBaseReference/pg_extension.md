@@ -1,5 +1,5 @@
 ---
-description: PG\_EXTENSION records information about the installed extensions. Default extensions of openGauss: PLPGSQL and MOT\_FDW.
+description: 'PG_EXTENSION records information about the installed extensions. Default extensions of openGauss: PLPGSQL and MOT_FDW.'
 keywords: [openGauss, PG_EXTENSION]
 ---
 

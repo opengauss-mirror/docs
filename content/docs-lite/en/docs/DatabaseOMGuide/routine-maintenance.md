@@ -1,5 +1,5 @@
 ---
-description: - Checking Time Consistency.
+description: Checking Time Consistency.
 keywords: [openGauss, Routine Maintenance]
 ---
 

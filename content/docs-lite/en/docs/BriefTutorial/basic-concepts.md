@@ -1,5 +1,5 @@
 ---
-description: openGauss is a relational database management system \(RDBMS\). A relational database organizes data using a relational model, that is, data is stored in rows and columns.
+description: openGauss is a relational database management system (RDBMS). A relational database organizes data using a relational model, that is, data is stored in rows and columns.
 keywords: [openGauss, Basic Concepts]
 ---
 

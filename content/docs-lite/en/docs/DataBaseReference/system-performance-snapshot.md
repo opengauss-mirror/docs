@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies whether to enable the database monitoring snapshot function.
+description: 'Parameter description: Specifies whether to enable the database monitoring snapshot function.'
 keywords: [openGauss, System Performance Snapshot]
 ---
 

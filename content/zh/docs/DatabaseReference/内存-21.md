@@ -1,5 +1,5 @@
 ---
-description: Introduces 内存 in openGauss, covering memorypool\_enable, memorypool\_size, enable\_memory\_limit.
+description: Introduces 内存 in openGauss, covering memorypool_enable, memorypool_size, enable_memory_limit.
 keywords: [openGauss, 内存]
 ---
 

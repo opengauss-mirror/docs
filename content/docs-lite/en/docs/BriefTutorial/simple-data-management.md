@@ -1,5 +1,5 @@
 ---
-description: - Creating a Database.
+description: Creating a Database.
 keywords: [openGauss, Simple Data Management]
 ---
 

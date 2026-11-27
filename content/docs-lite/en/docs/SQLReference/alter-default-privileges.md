@@ -1,5 +1,5 @@
 ---
-description: ALTER DEFAULT PRIVILEGES allows you to set the permissions that will be applied to objects created in the future. \(It does not affect permissions granted to existing objects.\).
+description: ALTER DEFAULT PRIVILEGES allows you to set the permissions that will be applied to objects created in the future. (It does not affect permissions granted to existing objects.).
 keywords: [openGauss, ALTER]
 ---
 

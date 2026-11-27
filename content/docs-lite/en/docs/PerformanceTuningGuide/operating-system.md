@@ -1,5 +1,5 @@
 ---
-description: OS requirements: openEuler-20.03-LTS \(aarch64 architecture\).
+description: 'OS requirements: openEuler-20.03-LTS (aarch64 architecture).'
 keywords: [openGauss, Operating System]
 ---
 

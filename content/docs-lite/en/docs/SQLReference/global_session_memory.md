@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_SESSION\_MEMORY collects statistics about memory usage at the session level on each node in the unit of MB, including all the memory allocated to openGauss and stream threads on DNs for j.
+description: GLOBAL_SESSION_MEMORY collects statistics about memory usage at the session level on each node in the unit of MB, including all the memory allocated to openGauss and stream threads on DNs for j.
 keywords: [openGauss, GLOBAL_SESSION_MEMORY]
 ---
 

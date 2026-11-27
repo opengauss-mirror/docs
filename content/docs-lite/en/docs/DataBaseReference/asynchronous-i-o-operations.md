@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies whether O&M personnel are allowed to generate some ADIO logs to locate ADIO issues. This parameter is used only by developers. Common users are advised not to use.
+description: 'Parameter description: Specifies whether O&M personnel are allowed to generate some ADIO logs to locate ADIO issues. This parameter is used only by developers. Common users are advised not to use.'
 keywords: [openGauss, Asynchronous IO Operations]
 ---
 

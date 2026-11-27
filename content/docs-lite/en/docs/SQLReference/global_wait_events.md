@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_WAIT\_EVENTS displays statistics about wait events on each node.
+description: GLOBAL_WAIT_EVENTS displays statistics about wait events on each node.
 keywords: [openGauss, GLOBAL_WAIT_EVENTS]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_AVAILABLE\_Extension\_VERSIONS视图显示数据库中某些特性的扩展版本信息。.
+description: PG_AVAILABLE_Extension_VERSIONS视图显示数据库中某些特性的扩展版本信息。.
 keywords: [openGauss, PG_AVAILABLE_Extension_VERSIONS]
 ---
 

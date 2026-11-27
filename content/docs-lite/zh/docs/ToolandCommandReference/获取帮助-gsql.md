@@ -1,5 +1,5 @@
 ---
-description: - 连接数据库时，可以使用如下命令获取帮助信息。.
+description: 连接数据库时，可以使用如下命令获取帮助信息。.
 keywords: [openGauss, 获取帮助]
 ---
 

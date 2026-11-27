@@ -1,5 +1,5 @@
 ---
-description: GS\_MASKING displays all configured dynamic masking policies. Only the users with system administrator or security policy administrator permission can access this view.
+description: GS_MASKING displays all configured dynamic masking policies. Only the users with system administrator or security policy administrator permission can access this view.
 keywords: [openGauss, GS_MASKING]
 ---
 

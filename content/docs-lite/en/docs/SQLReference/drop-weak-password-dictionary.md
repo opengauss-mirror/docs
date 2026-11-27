@@ -1,5 +1,5 @@
 ---
-description: DROP WEAK PASSWORD DICTIONARY clears all weak passwords in gs\_global\_config.
+description: DROP WEAK PASSWORD DICTIONARY clears all weak passwords in gs_global_config.
 keywords: [openGauss, DROP]
 ---
 

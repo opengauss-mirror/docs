@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies the number of jobs that can be concurrently executed. This parameter is a POSTMASTER parameter. You can set it using gs\_guc, and you need to restart gaus.
+description: 'Parameter description: Specifies the number of jobs that can be concurrently executed. This parameter is a POSTMASTER parameter. You can set it using gs_guc, and you need to restart gaus.'
 keywords: [openGauss, Scheduled Task]
 ---
 

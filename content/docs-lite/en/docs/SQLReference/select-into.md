@@ -1,5 +1,5 @@
 ---
-description: - SELECT INTO new_table defines a new table based on a query result and inserts data obtained by query to the new table. Different from SELECT, data found by SELECT INTO is not returned.
+description: SELECT INTO new_table defines a new table based on a query result and inserts data obtained by query to the new table. Different from SELECT, data found by SELECT INTO is not returned.
 keywords: [openGauss, SELECT]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_STATIO\_ALL\_TABLES视图将包含各节点的数据库中每个表（包括TOAST表）的I/O的统计。.
+description: GLOBAL_STATIO_ALL_TABLES视图将包含各节点的数据库中每个表（包括TOAST表）的I/O的统计。.
 keywords: [openGauss, GLOBAL_STATIO_ALL_TABLES]
 ---
 

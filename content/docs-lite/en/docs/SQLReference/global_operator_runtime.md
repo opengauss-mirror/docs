@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_OPERATOR\_RUNTIME displays information about operators of the jobs that are being executed by the current user on the primary database node.
+description: GLOBAL_OPERATOR_RUNTIME displays information about operators of the jobs that are being executed by the current user on the primary database node.
 keywords: [openGauss, GLOBAL_OPERATOR_RUNTIME]
 ---
 

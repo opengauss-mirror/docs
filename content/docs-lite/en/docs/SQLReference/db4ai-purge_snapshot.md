@@ -1,5 +1,5 @@
 ---
-description: PURGE\_SNAPSHOT deletes snapshots for the DB4AI feature. You can invoke PURGE SNAPSHOT to implement this function.
+description: PURGE_SNAPSHOT deletes snapshots for the DB4AI feature. You can invoke PURGE SNAPSHOT to implement this function.
 keywords: [openGauss, DB4AI.PURGE_SNAPSHOT]
 ---
 

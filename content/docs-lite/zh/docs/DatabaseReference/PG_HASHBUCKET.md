@@ -1,5 +1,5 @@
 ---
-description: PG\_HASHBUCKET系统表存储hash bucket信息。.
+description: PG_HASHBUCKET系统表存储hash bucket信息。.
 keywords: [openGauss, PG_HASHBUCKET]
 ---
 

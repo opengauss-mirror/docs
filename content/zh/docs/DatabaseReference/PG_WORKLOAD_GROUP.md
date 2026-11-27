@@ -1,5 +1,5 @@
 ---
-description: PG\_WORKLOAD\_GROUP系统表提供了数据库负载组的信息。.
+description: PG_WORKLOAD_GROUP系统表提供了数据库负载组的信息。.
 keywords: [openGauss, PG_WORKLOAD_GROUP]
 ---
 

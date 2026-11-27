@@ -1,5 +1,5 @@
 ---
-description: GS\_COLUMN\_KEYS\_ARGS records the metadata about the CMK in the encrypted equality feature. Each record corresponds to a key-value pair of the CMK.
+description: GS_COLUMN_KEYS_ARGS records the metadata about the CMK in the encrypted equality feature. Each record corresponds to a key-value pair of the CMK.
 keywords: [openGauss, GS_COLUMN_KEYS_ARGS]
 ---
 

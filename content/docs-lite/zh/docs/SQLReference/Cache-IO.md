@@ -1,5 +1,5 @@
 ---
-description: - STATIO\_USER\_TABLES.
+description: STATIO_USER_TABLES.
 keywords: [openGauss, CacheIO]
 ---
 

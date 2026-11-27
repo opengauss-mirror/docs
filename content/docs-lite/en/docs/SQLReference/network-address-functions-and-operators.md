@@ -1,5 +1,5 @@
 ---
-description: The operators <<, <<=, \>\>, and \>\>= test for subnet inclusion. They consider only the network parts of the two addresses \(ignoring any host part\) and determine whether one ne.
+description: The operators <<, <<=, >>, and >>= test for subnet inclusion. They consider only the network parts of the two addresses (ignoring any host part) and determine whether one ne.
 keywords: [openGauss, Network Address Functions and Operators]
 ---
 

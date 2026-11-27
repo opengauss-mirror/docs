@@ -1,5 +1,5 @@
 ---
-description: openGauss supports the standard SSL \(TLS 1.2\). As a highly secure protocol, SSL authenticates bidirectional identification between the server and client using digital signatures and digital certific.
+description: openGauss supports the standard SSL (TLS 1.2). As a highly secure protocol, SSL authenticates bidirectional identification between the server and client using digital signatures and digital certific.
 keywords: [openGauss, Establishing Secure TCPIP Connections in SSL Mode]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: 数据库的部署是一个复杂的过程。openGauss提供了gs\_install工具来帮助完成openGauss的安装和部署。.
+description: 数据库的部署是一个复杂的过程。openGauss提供了gs_install工具来帮助完成openGauss的安装和部署。.
 keywords: [openGauss, gs_install]
 ---
 

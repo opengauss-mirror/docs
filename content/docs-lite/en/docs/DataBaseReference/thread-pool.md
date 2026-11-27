@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies whether to enable the thread pool function. This parameter is a POSTMASTER parameter. Set it based on instructions provided in [Table 1](../DatabaseAdministration.
+description: 'Parameter description: Specifies whether to enable the thread pool function. This parameter is a POSTMASTER parameter. Set it based on instructions provided in [Table 1](../DatabaseAdministration.'
 keywords: [openGauss, Thread Pool]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PGXC\_GROUP系统表存储节点组信息。PGXC\_GROUP系统表仅在分布式场景下有具体含义，openGauss只能查询表定义。.
+description: PGXC_GROUP系统表存储节点组信息。PGXC_GROUP系统表仅在分布式场景下有具体含义，openGauss只能查询表定义。.
 keywords: [openGauss, PGXC_GROUP]
 ---
 

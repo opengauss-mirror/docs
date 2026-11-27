@@ -1,5 +1,5 @@
 ---
-description: OPERATOR\_RUNTIME displays information about operators of the jobs that are being executed by the current user.
+description: OPERATOR_RUNTIME displays information about operators of the jobs that are being executed by the current user.
 keywords: [openGauss, OPERATOR_RUNTIME]
 ---
 

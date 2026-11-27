@@ -1,5 +1,5 @@
 ---
-description: GS\_OPT\_MODEL is a data table used when the AI engine is enabled to predict the planned time. It records the configurations, training results, features, corresponding system functions, and train.
+description: GS_OPT_MODEL is a data table used when the AI engine is enabled to predict the planned time. It records the configurations, training results, features, corresponding system functions, and train.
 keywords: [openGauss, GS_OPT_MODEL]
 ---
 

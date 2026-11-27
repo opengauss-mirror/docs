@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies whether to audit the openGauss user's login \(including login success and failure\) and logout.
+description: 'Parameter description: Specifies whether to audit the openGauss user''s login (including login success and failure) and logout.'
 keywords: [openGauss, User and Permission Audit]
 ---
 

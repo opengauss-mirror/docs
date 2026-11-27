@@ -1,5 +1,5 @@
 ---
-description: - GET\_GLOBAL\_PREPARED\_XACTS \(Discarded\).
+description: GET_GLOBAL_PREPARED_XACTS (Discarded).
 keywords: [openGauss, System Views]
 ---
 

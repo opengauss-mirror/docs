@@ -1,5 +1,5 @@
 ---
-description: PG\_TIMEZONE\_ABBREVS displays information about all available time zones.
+description: PG_TIMEZONE_ABBREVS displays information about all available time zones.
 keywords: [openGauss, PG_TIMEZONE_ABBREVS]
 ---
 

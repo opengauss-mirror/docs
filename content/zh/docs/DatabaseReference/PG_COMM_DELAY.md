@@ -1,5 +1,5 @@
 ---
-description: PG\_COMM\_DELAY视图展示单个节点的通信库时延状态。.
+description: PG_COMM_DELAY视图展示单个节点的通信库时延状态。.
 keywords: [openGauss, PG_COMM_DELAY]
 ---
 

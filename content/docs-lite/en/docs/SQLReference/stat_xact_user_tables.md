@@ -1,5 +1,5 @@
 ---
-description: STAT\_XACT\_USER\_TABLES displays transaction status information about the user tables in namespaces on the current node.
+description: STAT_XACT_USER_TABLES displays transaction status information about the user tables in namespaces on the current node.
 keywords: [openGauss, STAT_XACT_USER_TABLES]
 ---
 

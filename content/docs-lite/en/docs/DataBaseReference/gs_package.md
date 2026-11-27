@@ -1,5 +1,5 @@
 ---
-description: GS\_PACKAGE records package information.
+description: GS_PACKAGE records package information.
 keywords: [openGauss, GS_PACKAGE]
 ---
 

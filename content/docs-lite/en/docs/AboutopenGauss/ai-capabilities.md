@@ -1,5 +1,5 @@
 ---
-description: The history of artificial intelligence \(AI\) can be dated back to as early as the 1950s, even longer than the history of the database development. However, the AI technology has not been applied on a.
+description: The history of artificial intelligence (AI) can be dated back to as early as the 1950s, even longer than the history of the database development. However, the AI technology has not been applied on a.
 keywords: [openGauss, AI Capabilities]
 ---
 

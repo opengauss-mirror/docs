@@ -1,5 +1,5 @@
 ---
-description: 显示openGauss内各节点的Redo\(WAL\)相关统计信息。.
+description: 显示openGauss内各节点的Redo(WAL)相关统计信息。.
 keywords: [openGauss, GLOBAL_FILE_REDO_IOSTAT]
 ---
 

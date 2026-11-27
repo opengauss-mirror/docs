@@ -1,5 +1,5 @@
 ---
-description: PG\_FOREIGN\_SERVER系统表存储外部服务器定义。一个外部服务器描述了一个外部数据源，例如一个远程服务器。外部服务器通过外部数据封装器访问。.
+description: PG_FOREIGN_SERVER系统表存储外部服务器定义。一个外部服务器描述了一个外部数据源，例如一个远程服务器。外部服务器通过外部数据封装器访问。.
 keywords: [openGauss, PG_FOREIGN_SERVER]
 ---
 

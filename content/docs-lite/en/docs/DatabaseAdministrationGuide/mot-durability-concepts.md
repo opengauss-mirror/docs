@@ -1,5 +1,5 @@
 ---
-description: Durability refers to long-term data protection \(also known as _disk persistence_\). Durability means that stored data does not suffer from any kind of degradation or corruption, so that data is neve.
+description: Durability refers to long-term data protection (also known as _disk persistence_). Durability means that stored data does not suffer from any kind of degradation or corruption, so that data is neve.
 keywords: [openGauss, MOT Durability Concepts]
 ---
 

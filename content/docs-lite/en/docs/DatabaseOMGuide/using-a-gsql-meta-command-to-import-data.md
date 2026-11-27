@@ -1,5 +1,5 @@
 ---
-description: The GSQL tool provides the \\copy meta-command to import data.
+description: The GSQL tool provides the \copy meta-command to import data.
 keywords: [openGauss, Using a gsql Meta-Command to Import Data]
 ---
 

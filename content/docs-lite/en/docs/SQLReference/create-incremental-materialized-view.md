@@ -1,5 +1,5 @@
 ---
-description: CREATE INCREMENTAL MATERIALIZED VIEW creates a fast-refresh materialized view, and you can refresh the data of the materialized view by using REFRESH MATERIALIZED VIEW \(full refresh\) and.
+description: CREATE INCREMENTAL MATERIALIZED VIEW creates a fast-refresh materialized view, and you can refresh the data of the materialized view by using REFRESH MATERIALIZED VIEW (full refresh) and.
 keywords: [openGauss, CREATE]
 ---
 

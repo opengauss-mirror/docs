@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_DATABASE\_CONFLICTS视图显示数据库冲突状态的统计信息。.
+description: PG_STAT_DATABASE_CONFLICTS视图显示数据库冲突状态的统计信息。.
 keywords: [openGauss, PG_STAT_DATABASE_CONFLICTS]
 ---
 

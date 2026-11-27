@@ -1,5 +1,5 @@
 ---
-description: This method executes the parameterized SQL statements \(that is, placeholders instead of SQL literals\). The psycopg2 module supports placeholders marked with %s.
+description: This method executes the parameterized SQL statements (that is, placeholders instead of SQL literals). The psycopg2 module supports placeholders marked with %s.
 keywords: [openGauss, cursor.executequeryvars_list]
 ---
 

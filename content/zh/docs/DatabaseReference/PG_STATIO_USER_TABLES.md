@@ -1,5 +1,5 @@
 ---
-description: PG\_STATIO\_USER\_TABLES视图显示命名空间中所有用户关系表的IO状态信息。.
+description: PG_STATIO_USER_TABLES视图显示命名空间中所有用户关系表的IO状态信息。.
 keywords: [openGauss, PG_STATIO_USER_TABLES]
 ---
 

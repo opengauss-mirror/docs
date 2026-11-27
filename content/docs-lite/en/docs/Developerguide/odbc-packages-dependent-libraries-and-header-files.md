@@ -1,5 +1,5 @@
 ---
-description: Obtain the openGauss-\.\.0-ODBC.tar.gz package from the release package. In the Linux OS, header files \(including sql.h and sqlext.h\) and a library file \(libodbc.so\) are req.
+description: Obtain the openGauss-..0-ODBC.tar.gz package from the release package. In the Linux OS, header files (including sql.h and sqlext.h) and a library file (libodbc.so) are req.
 keywords: [openGauss, ODBC, ODBC Packages Dependent Libraries and Header Files]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PLAN\_TABLE\_DATA stores plan information collected by EXPLAIN PLAN. Different from the PLAN\_TABLE view, the system catalog PLAN\_TABLE\_DATA stores EXPLAIN PLAN informati.
+description: PLAN_TABLE_DATA stores plan information collected by EXPLAIN PLAN. Different from the PLAN_TABLE view, the system catalog PLAN_TABLE_DATA stores EXPLAIN PLAN informati.
 keywords: [openGauss, PLAN_TABLE_DATA]
 ---
 

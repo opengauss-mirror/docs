@@ -1,5 +1,5 @@
 ---
-description: Displays log flow control information about the primary and standby nodes \(except the current node and standby DNs\).
+description: Displays log flow control information about the primary and standby nodes (except the current node and standby DNs).
 keywords: [openGauss, global_rto_status]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_WORKLOAD\_SQL\_ELAPSE\_TIME collects statistics about SUIDs in workloads on the primary database node.
+description: SUMMARY_WORKLOAD_SQL_ELAPSE_TIME collects statistics about SUIDs in workloads on the primary database node.
 keywords: [openGauss, SUMMARY_WORKLOAD_SQL_ELAPSE_TIME]
 ---
 

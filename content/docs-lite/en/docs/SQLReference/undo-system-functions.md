@@ -1,5 +1,5 @@
 ---
-description: - gs\_undo\_meta\(type, zoneId, location\).
+description: gs_undo_meta(type, zoneId, location).
 keywords: [openGauss, Undo System Functions]
 ---
 

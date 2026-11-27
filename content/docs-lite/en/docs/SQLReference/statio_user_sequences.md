@@ -1,5 +1,5 @@
 ---
-description: STATIO\_USER\_SEQUENCE displays I/O status information about all user relationship table sequences in namespaces on the current node.
+description: STATIO_USER_SEQUENCE displays I/O status information about all user relationship table sequences in namespaces on the current node.
 keywords: [openGauss, STATIO_USER_SEQUENCES]
 ---
 

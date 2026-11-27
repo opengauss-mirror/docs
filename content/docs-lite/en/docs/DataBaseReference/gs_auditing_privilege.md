@@ -1,5 +1,5 @@
 ---
-description: GS\_AUDITING\_PRIVILEGE displays all audit information about database DDL-related operations. Only the users with system administrator or security policy administrator permission can access this.
+description: GS_AUDITING_PRIVILEGE displays all audit information about database DDL-related operations. Only the users with system administrator or security policy administrator permission can access this.
 keywords: [openGauss, GS_AUDITING_PRIVILEGE]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Data definition language \(DDL\) is used to define or modify an object in a database, such as a table, an index, or a view.
+description: Data definition language (DDL) is used to define or modify an object in a database, such as a table, an index, or a view.
 keywords: [openGauss, DDL Syntax Overview]
 ---
 

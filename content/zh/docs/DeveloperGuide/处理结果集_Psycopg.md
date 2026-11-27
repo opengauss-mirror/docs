@@ -1,5 +1,5 @@
 ---
-description: 1. cursor.fetchone\(\)：这种方法提取查询结果集的下一行，返回一个序列，没有数据可用时则返回空。.
+description: 1. cursor.fetchone()：这种方法提取查询结果集的下一行，返回一个序列，没有数据可用时则返回空。.
 keywords: [openGauss, 处理结果集]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_USER\_LOGIN records information about user logins and logouts on the primary database node.
+description: SUMMARY_USER_LOGIN records information about user logins and logouts on the primary database node.
 keywords: [openGauss, SUMMARY_USER_LOGIN]
 ---
 

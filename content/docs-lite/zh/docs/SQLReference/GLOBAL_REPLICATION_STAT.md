@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_REPLICATION\_STAT视图用于获得各节点描述日志同步状态信息，如发起端发送日志位置，接收端接收日志位置等。.
+description: GLOBAL_REPLICATION_STAT视图用于获得各节点描述日志同步状态信息，如发起端发送日志位置，接收端接收日志位置等。.
 keywords: [openGauss, GLOBAL_REPLICATION_STAT]
 ---
 

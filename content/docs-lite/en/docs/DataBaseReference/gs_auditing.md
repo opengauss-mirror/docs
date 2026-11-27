@@ -1,5 +1,5 @@
 ---
-description: GS\_AUDITING displays all audit information about database-related operations. Only the users with system administrator or security policy administrator permission can access this view.
+description: GS_AUDITING displays all audit information about database-related operations. Only the users with system administrator or security policy administrator permission can access this view.
 keywords: [openGauss, GS_AUDITING]
 ---
 

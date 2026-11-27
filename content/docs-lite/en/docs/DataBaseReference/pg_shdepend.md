@@ -1,5 +1,5 @@
 ---
-description: PG\_SHDEPEND records the dependency between database objects and shared objects, such as roles. Based on this information, openGauss can ensure that those objects are unreferenced before attempti.
+description: PG_SHDEPEND records the dependency between database objects and shared objects, such as roles. Based on this information, openGauss can ensure that those objects are unreferenced before attempti.
 keywords: [openGauss, PG_SHDEPEND]
 ---
 

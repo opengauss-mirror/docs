@@ -1,5 +1,5 @@
 ---
-description: PG\_GTT\_STATS displays statistics about a single column in all global temporary tables of the current session by calling pg\_get\_gtt\_relstats.
+description: PG_GTT_STATS displays statistics about a single column in all global temporary tables of the current session by calling pg_get_gtt_relstats.
 keywords: [openGauss, PG_GTT_STATS]
 ---
 

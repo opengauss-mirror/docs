@@ -1,5 +1,5 @@
 ---
-description: PG\_COLLATION系统表描述可用的排序规则，本质上从一个SQL名称映射到操作系统本地类别。.
+description: PG_COLLATION系统表描述可用的排序规则，本质上从一个SQL名称映射到操作系统本地类别。.
 keywords: [openGauss, PG_COLLATION]
 ---
 

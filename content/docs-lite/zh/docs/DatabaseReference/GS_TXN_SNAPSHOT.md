@@ -1,5 +1,5 @@
 ---
-description: GS\_TXN\_SNAPSHOT是“时间戳-CSN”映射表，周期性采样，并维护适当的时间范围，用于估算范围内的时间戳对应的CSN值。.
+description: GS_TXN_SNAPSHOT是“时间戳-CSN”映射表，周期性采样，并维护适当的时间范围，用于估算范围内的时间戳对应的CSN值。.
 keywords: [openGauss, GS_TXN_SNAPSHOT]
 ---
 

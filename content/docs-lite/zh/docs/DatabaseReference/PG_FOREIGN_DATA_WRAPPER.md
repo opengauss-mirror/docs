@@ -1,5 +1,5 @@
 ---
-description: PG\_FOREIGN\_DATA\_WRAPPER系统表存储外部数据封装器定义。一个外部数据封装器是在外部服务器上驻留外部数据的机制，是可以访问的。.
+description: PG_FOREIGN_DATA_WRAPPER系统表存储外部数据封装器定义。一个外部数据封装器是在外部服务器上驻留外部数据的机制，是可以访问的。.
 keywords: [openGauss, PG_FOREIGN_DATA_WRAPPER]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_TRIGGER records trigger information.
+description: PG_TRIGGER records trigger information.
 keywords: [openGauss, PG_TRIGGER]
 ---
 

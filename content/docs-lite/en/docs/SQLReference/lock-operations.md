@@ -1,5 +1,5 @@
 ---
-description: openGauss provides multiple lock modes to control concurrent accesses to table data. These modes are used when Multi-Version Concurrency Control \(MVCC\) cannot give expected behaviors. Alike, most op.
+description: openGauss provides multiple lock modes to control concurrent accesses to table data. These modes are used when Multi-Version Concurrency Control (MVCC) cannot give expected behaviors. Alike, most op.
 keywords: [openGauss, Lock Operations]
 ---
 

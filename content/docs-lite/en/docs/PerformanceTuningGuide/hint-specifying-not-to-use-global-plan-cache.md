@@ -1,5 +1,5 @@
 ---
-description: When global plan cache is enabled, you can use the no\_gpc hint to force a single query statement not to share the plan cache globally. Only the plan cache within the current session lifecycle i.
+description: When global plan cache is enabled, you can use the no_gpc hint to force a single query statement not to share the plan cache globally. Only the plan cache within the current session lifecycle i.
 keywords: [openGauss, Hint Specifying Not to Use Global Plan Cache]
 ---
 

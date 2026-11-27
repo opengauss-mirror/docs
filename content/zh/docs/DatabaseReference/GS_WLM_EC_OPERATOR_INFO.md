@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_EC\_OPERATOR\_INFO系统表存储执行EC（Extension Connector）作业结束后的算子相关的记录。当设置GUC参数[enable\_resource\_record](负载管理.md#zh-cn_topic_0283137479_zh-cn_topic_0237124729_zh-cn_topic_0059777791_s77bd1023b63c4cd4.
+description: GS_WLM_EC_OPERATOR_INFO系统表存储执行EC（Extension Connector）作业结束后的算子相关的记录。当设置GUC参数[enable_resource_record](负载管理.md#zh-cn_topic_0283137479_zh-cn_topic_0237124729_zh-cn_topic_0059777791_s77bd1023b63c4cd4.
 keywords: [openGauss, GS_WLM_EC_OPERATOR_INFO]
 ---
 

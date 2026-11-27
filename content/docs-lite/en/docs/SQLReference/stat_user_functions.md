@@ -1,5 +1,5 @@
 ---
-description: STAT\_USER\_FUNCTIONS displays user-defined function status information in the current namespace. \(The language of the function is non-internal language.\).
+description: STAT_USER_FUNCTIONS displays user-defined function status information in the current namespace. (The language of the function is non-internal language.).
 keywords: [openGauss, STAT_USER_FUNCTIONS]
 ---
 

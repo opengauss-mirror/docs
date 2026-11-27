@@ -1,5 +1,5 @@
 ---
-description: 表 1 gs\_collector工具支持收集的系统表和视图列表.
+description: 表 1 gs_collector工具支持收集的系统表和视图列表.
 keywords: [openGauss, gs_collector工具支持收集的系统表和视图列表]
 ---
 

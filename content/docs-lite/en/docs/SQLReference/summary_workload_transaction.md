@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_WORKLOAD\_TRANSACTION displays information about transactions loaded in openGauss.
+description: SUMMARY_WORKLOAD_TRANSACTION displays information about transactions loaded in openGauss.
 keywords: [openGauss, SUMMARY_WORKLOAD_TRANSACTION]
 ---
 

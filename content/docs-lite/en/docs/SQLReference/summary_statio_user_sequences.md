@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_STATIO\_USER\_SEQUENCES displays I/O status information about all user-defined sequences in namespaces in openGauss.
+description: SUMMARY_STATIO_USER_SEQUENCES displays I/O status information about all user-defined sequences in namespaces in openGauss.
 keywords: [openGauss, SUMMARY_STATIO_USER_SEQUENCES]
 ---
 

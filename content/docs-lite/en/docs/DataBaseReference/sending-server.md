@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies the maximum number of simultaneously running WAL sender processes. The value cannot be greater than or equal to that of [max\_connections](connection-settings.m.
+description: 'Parameter description: Specifies the maximum number of simultaneously running WAL sender processes. The value cannot be greater than or equal to that of [max_connections](connection-settings.m.'
 keywords: [openGauss, Sending Server]
 ---
 

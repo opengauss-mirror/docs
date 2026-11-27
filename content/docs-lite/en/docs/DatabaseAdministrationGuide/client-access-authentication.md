@@ -1,5 +1,5 @@
 ---
-description: - Configuring Client Access Authentication.
+description: Configuring Client Access Authentication.
 keywords: [openGauss, Client Access Authentication]
 ---
 

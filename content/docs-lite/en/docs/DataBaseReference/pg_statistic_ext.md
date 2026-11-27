@@ -1,5 +1,5 @@
 ---
-description: PG\_STATISTIC\_EXT displays extended statistics of tables in a database, such as statistics of multiple columns. Statistics of expressions will be supported later. You can specify the extended st.
+description: PG_STATISTIC_EXT displays extended statistics of tables in a database, such as statistics of multiple columns. Statistics of expressions will be supported later. You can specify the extended st.
 keywords: [openGauss, PG_STATISTIC_EXT]
 ---
 

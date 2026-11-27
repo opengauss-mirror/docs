@@ -1,5 +1,5 @@
 ---
-description: - Access Control Model.
+description: Access Control Model.
 keywords: [openGauss, Database Security]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: GS\_DEPENDENCIES系统表记录存储过程/包与被引用对象的依赖信息。与现有记录依赖信息的PG\_DEPEND系统表不同的是，GS\_DEPENDENCIES系统表允许记录存储过程/包对象与当前尚未定义的引用对象之间的依赖关系。引用对象的信息记录在GS\_DEPENDENCIES\_OBJ系统表中，refobjoid字段记录了引用对象在GS\_DEPENDENCIES\_OBJ系统表中的O.
+description: GS_DEPENDENCIES系统表记录存储过程/包与被引用对象的依赖信息。与现有记录依赖信息的PG_DEPEND系统表不同的是，GS_DEPENDENCIES系统表允许记录存储过程/包对象与当前尚未定义的引用对象之间的依赖关系。引用对象的信息记录在GS_DEPENDENCIES_OBJ系统表中，refobjoid字段记录了引用对象在GS_DEPENDENCIES_OBJ系统表中的O.
 keywords: [openGauss, GS_DEPENDENCIES]
 ---
 

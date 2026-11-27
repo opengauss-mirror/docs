@@ -1,5 +1,5 @@
 ---
-description: PG\_SETTINGS视图显示数据库运行时参数的相关信息。.
+description: PG_SETTINGS视图显示数据库运行时参数的相关信息。.
 keywords: [openGauss, PG_SETTINGS]
 ---
 

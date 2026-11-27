@@ -1,5 +1,5 @@
 ---
-description: An information schema named INFORMATION\_SCHEMA automatically exists in all databases. An information schema consists of a group of views that contain information about objects defined in the cu.
+description: An information schema named INFORMATION_SCHEMA automatically exists in all databases. An information schema consists of a group of views that contain information about objects defined in the cu.
 keywords: [openGauss, Information Schema]
 ---
 

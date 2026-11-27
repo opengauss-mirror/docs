@@ -1,5 +1,5 @@
 ---
-description: PG\_AUTHID records information about database authentication identifiers \(roles\). The concept of users is contained in that of roles. A user is actually a role whose rolcanlogin has been.
+description: PG_AUTHID records information about database authentication identifiers (roles). The concept of users is contained in that of roles. A user is actually a role whose rolcanlogin has been.
 keywords: [openGauss, PG_AUTHID]
 ---
 

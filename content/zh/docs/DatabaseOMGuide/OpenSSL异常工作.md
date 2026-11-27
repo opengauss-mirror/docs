@@ -1,5 +1,5 @@
 ---
-description: 安装过程出现,"GAUSS-53700: "Failed to execute the command: %s."字样错误。.
+description: '安装过程出现,"GAUSS-53700: "Failed to execute the command: %s."字样错误。.'
 keywords: [openGauss, OpenSSL异常工作]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_TRANSACTIONS\_RUNNING\_XACTS displays information about the running transactions on each node in the cluster. The column content is the same as that of TRANSACTIONS\_RUNNING\_XACTS.
+description: SUMMARY_TRANSACTIONS_RUNNING_XACTS displays information about the running transactions on each node in the cluster. The column content is the same as that of TRANSACTIONS_RUNNING_XACTS.
 keywords: [openGauss, SUMMARY_TRANSACTIONS_RUNNING_XACTS]
 ---
 

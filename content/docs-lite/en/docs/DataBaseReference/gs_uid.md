@@ -1,5 +1,5 @@
 ---
-description: GS\_UID records the unique identification meta information of the hasuids attribute table in the database.
+description: GS_UID records the unique identification meta information of the hasuids attribute table in the database.
 keywords: [openGauss, GS_UID]
 ---
 

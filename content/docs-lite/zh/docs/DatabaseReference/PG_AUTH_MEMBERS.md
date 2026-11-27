@@ -1,5 +1,5 @@
 ---
-description: PG\_AUTH\_MEMBERS系统表存储显示角色之间的成员关系。.
+description: PG_AUTH_MEMBERS系统表存储显示角色之间的成员关系。.
 keywords: [openGauss, PG_AUTH_MEMBERS]
 ---
 

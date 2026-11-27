@@ -1,5 +1,5 @@
 ---
-description: PG\_INDEXES provides access to useful information about each index in the database.
+description: PG_INDEXES provides access to useful information about each index in the database.
 keywords: [openGauss, PG_INDEXES]
 ---
 

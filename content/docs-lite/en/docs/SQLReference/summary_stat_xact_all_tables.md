@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_STAT\_XACT\_ALL\_TABLES displays transaction status information about all ordinary tables and TOAST tables in all namespaces in openGauss.
+description: SUMMARY_STAT_XACT_ALL_TABLES displays transaction status information about all ordinary tables and TOAST tables in all namespaces in openGauss.
 keywords: [openGauss, SUMMARY_STAT_XACT_ALL_TABLES]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - Transaction Isolation.
+description: Transaction Isolation.
 keywords: [openGauss, Managing Concurrent Write Operations]
 ---
 

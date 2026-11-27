@@ -1,5 +1,5 @@
 ---
-description: PG\_PUBLICATION\_TABLES displays the mapping information between a publication and its published tables. Unlike the underlying system catalog PG\_PUBLICATION\_REL, this view expands publicat.
+description: PG_PUBLICATION_TABLES displays the mapping information between a publication and its published tables. Unlike the underlying system catalog PG_PUBLICATION_REL, this view expands publicat.
 keywords: [openGauss, PG_PUBLICATION_TABLES]
 ---
 

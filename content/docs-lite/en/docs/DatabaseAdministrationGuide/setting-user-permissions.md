@@ -1,5 +1,5 @@
 ---
-description: - To grant permissions for an object to a user, use GRANT.
+description: To grant permissions for an object to a user, use GRANT.
 keywords: [openGauss, Setting User Permissions]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: SILO<sup>\</sup>[Comparison: Disk vs. MOT<sup>\]</sup> in its basic algorithm flow outperformed many other ACID-compliant OCCs that we tested in our research experiments.
+description: 'SILO<sup></sup>[Comparison: Disk vs. MOT<sup>]</sup> in its basic algorithm flow outperformed many other ACID-compliant OCCs that we tested in our research experiments.'
 keywords: [openGauss, MOT SILO Enhancements]
 ---
 

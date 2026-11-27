@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_STATEMENT\_COMPLEX\_RUNTIME displays load management records of jobs that are being executed by the current user on each node.
+description: GLOBAL_STATEMENT_COMPLEX_RUNTIME displays load management records of jobs that are being executed by the current user on each node.
 keywords: [openGauss, GLOBAL_STATEMENT_COMPLEX_RUNTIME]
 ---
 

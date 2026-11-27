@@ -1,5 +1,5 @@
 ---
-description: PLAN\_TABLE displays plan information collected by EXPLAIN PLAN. Plan information is in a session-level lifecycle. After a session exits, the data will be deleted. Data is isolated between s.
+description: PLAN_TABLE displays plan information collected by EXPLAIN PLAN. Plan information is in a session-level lifecycle. After a session exits, the data will be deleted. Data is isolated between s.
 keywords: [openGauss, PLAN_TABLE]
 ---
 

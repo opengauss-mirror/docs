@@ -1,5 +1,5 @@
 ---
-description: This function is used to mark a stored procedure as debuggable. After turn\_on is executed, the server can execute the stored procedure for debugging. You need to manually obtain the OID of the.
+description: This function is used to mark a stored procedure as debuggable. After turn_on is executed, the server can execute the stored procedure for debugging. You need to manually obtain the OID of the.
 keywords: [openGauss, DBE_PLDEBUGGER.turn_on]
 ---
 

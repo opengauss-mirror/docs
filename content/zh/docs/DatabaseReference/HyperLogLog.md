@@ -1,5 +1,5 @@
 ---
-description: 参数说明： 该参数可以指定hll数据结构桶的个数。桶的个数会影响hll计算distinct值的精度，桶的个数越多，误差越小。误差范围为：\[-1.04/2<sup>log2m\1/2</sup>,+1.04/2<sup>log2m\1/2</sup>\]。.
+description: 参数说明： 该参数可以指定hll数据结构桶的个数。桶的个数会影响hll计算distinct值的精度，桶的个数越多，误差越小。误差范围为：[-1.04/2<sup>log2m\1/2</sup>,+1.04/2<sup>log2m\1/2</sup>]。.
 keywords: [openGauss, HyperLogLog]
 ---
 

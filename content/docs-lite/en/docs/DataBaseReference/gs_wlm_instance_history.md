@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_INSTANCE\_HISTORY records information about resource usage related to instances \(primary database node or database node\). Each record in this system catalog indicates resource usage of.
+description: GS_WLM_INSTANCE_HISTORY records information about resource usage related to instances (primary database node or database node). Each record in this system catalog indicates resource usage of.
 keywords: [openGauss, GS_WLM_INSTANCE_HISTORY]
 ---
 

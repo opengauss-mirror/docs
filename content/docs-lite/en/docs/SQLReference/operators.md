@@ -1,5 +1,5 @@
 ---
-description: 1. Select the operators to be considered from the pg\_operator system catalog. Considered operators are those with the matching name and argument count. If the search path finds multiple availa.
+description: 1. Select the operators to be considered from the pg_operator system catalog. Considered operators are those with the matching name and argument count. If the search path finds multiple availa.
 keywords: [openGauss, Operators]
 ---
 

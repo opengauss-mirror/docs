@@ -1,5 +1,5 @@
 ---
-description: 通过大量研究，我们找到了最佳的并发控制机制，结论为：基于SILO<sup>\[</sup>的OCC算法是MOT中最符合ACID特性的OCC算法。SILO为满足MOT的挑战性需求提供了最好的基础。.
+description: 通过大量研究，我们找到了最佳的并发控制机制，结论为：基于SILO<sup>[</sup>的OCC算法是MOT中最符合ACID特性的OCC算法。SILO为满足MOT的挑战性需求提供了最好的基础。.
 keywords: [openGauss, MOT并发控制机制]
 ---
 

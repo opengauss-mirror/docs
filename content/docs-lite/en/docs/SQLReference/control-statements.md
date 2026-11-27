@@ -1,5 +1,5 @@
 ---
-description: - RETURN Statements.
+description: RETURN Statements.
 keywords: [openGauss, Control Statements]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: CREATE\_SNAPSHOT\_INTERNAL是db4ai.create\_snapshot函数的内置执行函数。函数存在信息校验，无法直接调用。.
+description: CREATE_SNAPSHOT_INTERNAL是db4ai.create_snapshot函数的内置执行函数。函数存在信息校验，无法直接调用。.
 keywords: [openGauss, DB4AI.CREATE_SNAPSHOT_INTERNAL]
 ---
 

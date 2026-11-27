@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_XACT\_USER\_FUNCTIONS视图包含每个函数的执行的统计信息。.
+description: PG_STAT_XACT_USER_FUNCTIONS视图包含每个函数的执行的统计信息。.
 keywords: [openGauss, PG_STAT_XACT_USER_FUNCTIONS]
 ---
 

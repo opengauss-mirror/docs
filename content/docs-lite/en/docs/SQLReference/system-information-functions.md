@@ -1,5 +1,5 @@
 ---
-description: - current\_catalog.
+description: current_catalog.
 keywords: [openGauss, System Information Functions]
 ---
 

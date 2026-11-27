@@ -1,5 +1,5 @@
 ---
-description: - Full-Text Retrieval.
+description: Full-Text Retrieval.
 keywords: [openGauss, Introduction]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: STAT\_ALL\_TABLES displays statistics about one row for each table \(including TOAST tables\) in databases on this node.
+description: STAT_ALL_TABLES displays statistics about one row for each table (including TOAST tables) in databases on this node.
 keywords: [openGauss, STAT_ALL_TABLES]
 ---
 

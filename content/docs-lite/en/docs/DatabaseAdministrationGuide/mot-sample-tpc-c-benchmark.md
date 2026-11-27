@@ -1,5 +1,5 @@
 ---
-description: The TPC-C Benchmark is an industry standard benchmark for measuring the performance of Online Transaction Processing \(OLTP\) systems. It is based on a complex database and a number of different trans.
+description: The TPC-C Benchmark is an industry standard benchmark for measuring the performance of Online Transaction Processing (OLTP) systems. It is based on a complex database and a number of different trans.
 keywords: [openGauss, MOT Sample TPC-C Benchmark]
 ---
 

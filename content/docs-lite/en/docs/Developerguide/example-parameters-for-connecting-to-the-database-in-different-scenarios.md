@@ -1,5 +1,5 @@
 ---
-description: Introduces Example: Parameters for Connecting to the Database in Different Scenarios in openGauss, covering DR, Load Balancing, Log Diagnosis Scenario.
+description: 'Introduces Example: Parameters for Connecting to the Database in Different Scenarios in openGauss, covering DR, Load Balancing, Log Diagnosis Scenario.'
 keywords: [openGauss, Example Parameters for Connecting to the Database in Different Scenarios]
 ---
 

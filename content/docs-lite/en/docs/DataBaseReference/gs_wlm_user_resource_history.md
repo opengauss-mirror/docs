@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_USER\_RESOURCE\_HISTORY stores information about resources used by users. Each record in this system catalog indicates resource usage of a user at a time point, including the memory, num.
+description: GS_WLM_USER_RESOURCE_HISTORY stores information about resources used by users. Each record in this system catalog indicates resource usage of a user at a time point, including the memory, num.
 keywords: [openGauss, GS_WLM_USER_RESOURCE_HISTORY]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - 创建一个触发器。 触发器将与指定的表或视图关联，并在特定条件下执行指定的函数。.
+description: 创建一个触发器。 触发器将与指定的表或视图关联，并在特定条件下执行指定的函数。.
 keywords: [openGauss, CREATE TRIGGER]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: GS\_PACKAGE系统表记录PACKAGE内的信息。.
+description: GS_PACKAGE系统表记录PACKAGE内的信息。.
 keywords: [openGauss, GS_PACKAGE]
 ---
 

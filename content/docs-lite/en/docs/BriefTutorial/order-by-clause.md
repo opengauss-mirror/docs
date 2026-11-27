@@ -1,5 +1,5 @@
 ---
-description: The ORDER BY clause sorts the data in one or more columns retrieved by the SELECT statement in ascending \(ASC\) or descending \(DESC\) order.
+description: The ORDER BY clause sorts the data in one or more columns retrieved by the SELECT statement in ascending (ASC) or descending (DESC) order.
 keywords: [openGauss, ORDER]
 ---
 

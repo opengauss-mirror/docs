@@ -1,5 +1,5 @@
 ---
-description: 用户可通过gs\_dbmind命令调用AI4DB的全部功能，该命令可实现下列基本功能：.
+description: 用户可通过gs_dbmind命令调用AI4DB的全部功能，该命令可实现下列基本功能：.
 keywords: [openGauss, DBMind模式说明]
 ---
 

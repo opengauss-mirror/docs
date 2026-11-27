@@ -1,5 +1,5 @@
 ---
-description: 本特性自openGauss 1.1.0版本开始引入。重构前慢SQL相关视图已废弃，包括：dbe\_perf. gs\_slow\_query\_info、dbe\_perf.gs\_slow\_query\_history、dbe\_perf.global\_slow\_query\_hisotry、dbe\_perf.global\_slow\_query\_info。.
+description: 本特性自openGauss 1.1.0版本开始引入。重构前慢SQL相关视图已废弃，包括：dbe_perf. gs_slow_query_info、dbe_perf.gs_slow_query_history、dbe_perf.global_slow_query_hisotry、dbe_perf.global_slow_query_info。.
 keywords: [openGauss, 慢SQL诊断]
 ---
 

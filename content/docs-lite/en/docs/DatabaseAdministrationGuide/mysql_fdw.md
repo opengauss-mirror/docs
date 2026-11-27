@@ -1,5 +1,5 @@
 ---
-description: mysql\_fdw is an open-source plug-in. openGauss is developed and adapted based on the open-source [mysql\_fdw Release 2.5.3](https://github.com/Enterpris.
+description: mysql_fdw is an open-source plug-in. openGauss is developed and adapted based on the open-source [mysql_fdw Release 2.5.3](https://github.com/Enterpris.
 keywords: [openGauss, mysql_fdw]
 ---
 

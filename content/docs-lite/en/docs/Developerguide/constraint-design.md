@@ -1,5 +1,5 @@
 ---
-description: - \[Proposal\] If all the column values can be obtained from services, you are not advised to use the DEFAULT constraint. Otherwise, unexpected results will be generated during data loading.
+description: '[Proposal] If all the column values can be obtained from services, you are not advised to use the DEFAULT constraint. Otherwise, unexpected results will be generated during data loading.'
 keywords: [openGauss, Constraint Design]
 ---
 

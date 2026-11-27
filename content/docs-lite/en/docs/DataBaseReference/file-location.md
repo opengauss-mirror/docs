@@ -1,5 +1,5 @@
 ---
-description: After a database has been installed, three configuration files \(postgresql.conf, pg\_hba.conf, and pg\_ident.conf\) are automatically generated and saved in the data directory. You can.
+description: After a database has been installed, three configuration files (postgresql.conf, pg_hba.conf, and pg_ident.conf) are automatically generated and saved in the data directory. You can.
 keywords: [openGauss, File Location]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Introduces Example: Common Operations in openGauss, covering .
+description: 'Introduces Example: Common Operations in openGauss, covering .'
 keywords: [openGauss, Example Common Operations]
 ---
 

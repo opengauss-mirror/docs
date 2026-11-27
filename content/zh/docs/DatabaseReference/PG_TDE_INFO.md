@@ -1,5 +1,5 @@
 ---
-description: PG\_TDE\_INFO视图提供了openGauss加密信息。.
+description: PG_TDE_INFO视图提供了openGauss加密信息。.
 keywords: [openGauss, PG_TDE_INFO]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: STATEMENT\_HISTORY displays information about execution statements on the current node. To query a view, you must have the sysadmin or monitor admin permission. The result can be queri.
+description: STATEMENT_HISTORY displays information about execution statements on the current node. To query a view, you must have the sysadmin or monitor admin permission. The result can be queri.
 keywords: [openGauss, STATEMENT_HISTORY]
 ---
 

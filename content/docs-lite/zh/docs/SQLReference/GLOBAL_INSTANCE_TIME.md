@@ -1,5 +1,5 @@
 ---
-description: 提供openGauss中所有正常节点下的各种时间消耗信息（时间类型见instance\_time视图）。.
+description: 提供openGauss中所有正常节点下的各种时间消耗信息（时间类型见instance_time视图）。.
 keywords: [openGauss, GLOBAL_INSTANCE_TIME]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: "Lock wait timeout" is displayed when a user executes an SQL statement.
+description: '"Lock wait timeout" is displayed when a user executes an SQL statement.'
 keywords: [openGauss, Lock wait timeout Is Displayed When a User Executes an SQL Statement]
 ---
 

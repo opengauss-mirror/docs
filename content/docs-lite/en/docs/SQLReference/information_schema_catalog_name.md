@@ -1,5 +1,5 @@
 ---
-description: INFORMATION\_SCHEMA\_CATALOG\_NAME displays the name of the current database.
+description: INFORMATION_SCHEMA_CATALOG_NAME displays the name of the current database.
 keywords: [openGauss, INFORMATION_SCHEMA_CATALOG_NAME]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: GS\_ASP显示被持久化的ACTIVE SESSION PROFILE样本，该表只在系统库下查询，在用户库下查询无数据。.
+description: GS_ASP显示被持久化的ACTIVE SESSION PROFILE样本，该表只在系统库下查询，在用户库下查询无数据。.
 keywords: [openGauss, GS_ASP]
 ---
 

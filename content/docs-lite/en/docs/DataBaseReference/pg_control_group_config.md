@@ -1,5 +1,5 @@
 ---
-description: PG\_CONTROL\_GROUP\_CONFIG stores Cgroup configuration information in the system. Only the user with sysadmin permission can query this view.
+description: PG_CONTROL_GROUP_CONFIG stores Cgroup configuration information in the system. Only the user with sysadmin permission can query this view.
 keywords: [openGauss, PG_CONTROL_GROUP_CONFIG]
 ---
 

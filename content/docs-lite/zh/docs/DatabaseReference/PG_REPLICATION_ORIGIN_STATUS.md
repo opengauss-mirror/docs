@@ -1,5 +1,5 @@
 ---
-description: Introduces PG\_REPLICATION\_ORIGIN\_STATUS in openGauss, covering .
+description: Introduces PG_REPLICATION_ORIGIN_STATUS in openGauss, covering .
 keywords: [openGauss, PG_REPLICATION_ORIGIN_STATUS]
 ---
 

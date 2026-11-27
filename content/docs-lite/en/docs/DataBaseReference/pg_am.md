@@ -1,5 +1,5 @@
 ---
-description: PG\_AM records information about index access methods. There is one row for each index access method supported by the system.
+description: PG_AM records information about index access methods. There is one row for each index access method supported by the system.
 keywords: [openGauss, PG_AM]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: USER\_TRANSACTION collects statistics about transactions executed by users. Common users can view only transactions executed by themselves, whereas user monadmin can view transactions execu.
+description: USER_TRANSACTION collects statistics about transactions executed by users. Common users can view only transactions executed by themselves, whereas user monadmin can view transactions execu.
 keywords: [openGauss, USER_TRANSACTION]
 ---
 

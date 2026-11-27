@@ -1,5 +1,5 @@
 ---
-description: - local\_segment\_space\_info\(tablespacename TEXT, databasename TEXT\).
+description: local_segment_space_info(tablespacename TEXT, databasename TEXT).
 keywords: [openGauss, Segment-Page Storage Functions]
 ---
 

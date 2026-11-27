@@ -1,5 +1,5 @@
 ---
-description: This function is used to query the OID of the stored procedure that has been turned on in the current connection. You can use funcoid and pg\_proc together to determine which stored proced.
+description: This function is used to query the OID of the stored procedure that has been turned on in the current connection. You can use funcoid and pg_proc together to determine which stored proced.
 keywords: [openGauss, DBE_PLDEBUGGER.local_debug_server_info]
 ---
 

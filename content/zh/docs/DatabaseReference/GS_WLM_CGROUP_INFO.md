@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_CGROUP\_INFO视图显示当前执行作业的控制组的信息。.
+description: GS_WLM_CGROUP_INFO视图显示当前执行作业的控制组的信息。.
 keywords: [openGauss, GS_WLM_CGROUP_INFO]
 ---
 

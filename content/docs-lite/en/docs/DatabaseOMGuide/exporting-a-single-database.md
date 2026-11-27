@@ -1,5 +1,5 @@
 ---
-description: - Exporting a Database.
+description: Exporting a Database.
 keywords: [openGauss, Exporting a Single Database]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: A range type is a data type that represents the range of a value of an element type \(called the subtype of a range\). For example, the range of timestamp may be used to express a time range in which.
+description: A range type is a data type that represents the range of a value of an element type (called the subtype of a range). For example, the range of timestamp may be used to express a time range in which.
 keywords: [openGauss, Range]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - Parameter values before adjustment:.
+description: Parameter values before adjustment:.
 keywords: [openGauss, Case Adjusting IO Parameters to Reduce the Log Bloat Rate]
 ---
 

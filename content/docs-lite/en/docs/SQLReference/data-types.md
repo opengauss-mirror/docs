@@ -1,5 +1,5 @@
 ---
-description: openGauss supports implicit conversions between certain data types. For details, seePG\_CAST .
+description: openGauss supports implicit conversions between certain data types. For details, seePG_CAST .
 keywords: [openGauss, Data Types]
 ---
 

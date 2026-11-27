@@ -1,5 +1,5 @@
 ---
-description: STATEMENT\_WLMSTAT\_COMPLEX\_RUNTIME视图显示和当前用户执行作业正在运行时的负载管理相关信息。.
+description: STATEMENT_WLMSTAT_COMPLEX_RUNTIME视图显示和当前用户执行作业正在运行时的负载管理相关信息。.
 keywords: [openGauss, STATEMENT_WLMSTAT_COMPLEX_RUNTIME]
 ---
 

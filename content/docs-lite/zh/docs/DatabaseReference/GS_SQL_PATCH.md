@@ -1,5 +1,5 @@
 ---
-description: GS\_SQL\_PATCH系统表存储所有SQL\_PATCH的状态信息。.
+description: GS_SQL_PATCH系统表存储所有SQL_PATCH的状态信息。.
 keywords: [openGauss, GS_SQL_PATCH]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: In the following simple SQL statements, the performance bottlenecks exist in the scan operation on the normal\_date table.
+description: In the following simple SQL statements, the performance bottlenecks exist in the scan operation on the normal_date table.
 keywords: [openGauss, Case Reconstructing Partitioned Tables]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: global\_rto\_status视图显示关于主机和备机的日志流控信息（本节点除外、备DN上不可使用）。.
+description: global_rto_status视图显示关于主机和备机的日志流控信息（本节点除外、备DN上不可使用）。.
 keywords: [openGauss, global_rto_status]
 ---
 

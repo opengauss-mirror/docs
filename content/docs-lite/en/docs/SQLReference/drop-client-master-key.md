@@ -1,5 +1,5 @@
 ---
-description: DROP CLIENT MASTER KEY deletes a client master key \(CMK\).
+description: DROP CLIENT MASTER KEY deletes a client master key (CMK).
 keywords: [openGauss, DROP]
 ---
 

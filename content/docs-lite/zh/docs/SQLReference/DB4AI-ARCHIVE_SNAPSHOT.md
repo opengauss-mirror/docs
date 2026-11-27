@@ -1,5 +1,5 @@
 ---
-description: ARCHIVE\_SNAPSHOT是DB4AI特性用于存档快照的接口函数。通过语法ARCHIVE SNAPSHOT调用。生效后的快照无法参与训练等任务。.
+description: ARCHIVE_SNAPSHOT是DB4AI特性用于存档快照的接口函数。通过语法ARCHIVE SNAPSHOT调用。生效后的快照无法参与训练等任务。.
 keywords: [openGauss, DB4AI.ARCHIVE_SNAPSHOT]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: 1. Select the functions to be considered from the pg\_proc system catalog. If a non-schema-qualified function name was used, the functions in the current search path are considered. If a qualif.
+description: 1. Select the functions to be considered from the pg_proc system catalog. If a non-schema-qualified function name was used, the functions in the current search path are considered. If a qualif.
 keywords: [openGauss, Functions]
 ---
 

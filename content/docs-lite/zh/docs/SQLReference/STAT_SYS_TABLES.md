@@ -1,5 +1,5 @@
 ---
-description: 显示单节点内pg\_catalog、information\_schema以及pg\_toast模式下所有系统表的统计信息。.
+description: 显示单节点内pg_catalog、information_schema以及pg_toast模式下所有系统表的统计信息。.
 keywords: [openGauss, STAT_SYS_TABLES]
 ---
 

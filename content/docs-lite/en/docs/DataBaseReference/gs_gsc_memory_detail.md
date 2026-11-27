@@ -1,5 +1,5 @@
 ---
-description: GS\_GSC\_MEMORY\_DETAIL displays the memory usage of the global system cache of the current process on the current node. This view is displayed only when GSC is enabled. Note that the query is se.
+description: GS_GSC_MEMORY_DETAIL displays the memory usage of the global system cache of the current process on the current node. This view is displayed only when GSC is enabled. Note that the query is se.
 keywords: [openGauss, GS_GSC_MEMORY_DETAIL]
 ---
 

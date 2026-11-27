@@ -1,5 +1,5 @@
 ---
-description: openGauss提供了gs\_checkperf工具来帮助对openGauss级别（主机CPU占用率、Gauss CPU占用率、I/O使用情况等）、节点级别（CPU使用情况、内存使用情况、I/O使用情况）、会话/进程级别（CPU使用情况、内存使用情况、I/O使用情况）、SSD性能（写入、读取性能）进行定期检查，让用户了解openGauss的负载情况，采取对应的改进措施。.
+description: openGauss提供了gs_checkperf工具来帮助对openGauss级别（主机CPU占用率、Gauss CPU占用率、I/O使用情况等）、节点级别（CPU使用情况、内存使用情况、I/O使用情况）、会话/进程级别（CPU使用情况、内存使用情况、I/O使用情况）、SSD性能（写入、读取性能）进行定期检查，让用户了解openGauss的负载情况，采取对应的改进措施。.
 keywords: [openGauss, gs_checkperf]
 ---
 

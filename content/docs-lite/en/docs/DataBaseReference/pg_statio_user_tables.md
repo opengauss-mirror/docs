@@ -1,5 +1,5 @@
 ---
-description: PG\_STATIO\_USER\_TABLES displays I/O status information about all the user relationship tables in the namespace.
+description: PG_STATIO_USER_TABLES displays I/O status information about all the user relationship tables in the namespace.
 keywords: [openGauss, PG_STATIO_USER_TABLES]
 ---
 

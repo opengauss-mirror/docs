@@ -1,5 +1,5 @@
 ---
-description: Universal file access functions provide local access interfaces for files on a database server. Only files in the openGauss directory and the log\_directory directory can be accessed. Use a rela.
+description: Universal file access functions provide local access interfaces for files on a database server. Only files in the openGauss directory and the log_directory directory can be accessed. Use a rela.
 keywords: [openGauss, Universal File Access Functions]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_OS\_THREADS provides status information about all the threads under the current node.
+description: PG_OS_THREADS provides status information about all the threads under the current node.
 keywords: [openGauss, PG_OS_THREADS]
 ---
 

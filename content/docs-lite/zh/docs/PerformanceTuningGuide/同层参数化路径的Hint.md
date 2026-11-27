@@ -1,5 +1,5 @@
 ---
-description: 通过predpush\_same\_level Hint来指定同层表或物化视图之间参数化路径生成。.
+description: 通过predpush_same_level Hint来指定同层表或物化视图之间参数化路径生成。.
 keywords: [openGauss, 同层参数化路径的Hint]
 ---
 

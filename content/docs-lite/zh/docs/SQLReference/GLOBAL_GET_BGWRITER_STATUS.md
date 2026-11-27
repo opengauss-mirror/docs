@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_GET\_BGWRITER\_STATUS视图显示整个数据库所有实例bgwriter线程刷页信息，候选buffer链中页面个数，buffer淘汰信息。.
+description: GLOBAL_GET_BGWRITER_STATUS视图显示整个数据库所有实例bgwriter线程刷页信息，候选buffer链中页面个数，buffer淘汰信息。.
 keywords: [openGauss, GLOBAL_GET_BGWRITER_STATUS]
 ---
 

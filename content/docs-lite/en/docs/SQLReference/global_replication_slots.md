@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_REPLICATION\_SLOTS displays replication node information of each node in openGauss.
+description: GLOBAL_REPLICATION_SLOTS displays replication node information of each node in openGauss.
 keywords: [openGauss, GLOBAL_REPLICATION_SLOTS]
 ---
 

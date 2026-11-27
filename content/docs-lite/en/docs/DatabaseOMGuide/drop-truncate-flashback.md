@@ -1,5 +1,5 @@
 ---
-description: - Flashback DROP enables you to restore tables that are dropped by mistake and their auxiliary structures, such as indexes and table constraints, from the recycle bin. Flashback DROP is based on the.
+description: Flashback DROP enables you to restore tables that are dropped by mistake and their auxiliary structures, such as indexes and table constraints, from the recycle bin. Flashback DROP is based on the.
 keywords: [openGauss, DROPTRUNCATE]
 ---
 

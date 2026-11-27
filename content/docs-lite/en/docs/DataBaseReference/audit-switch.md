@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies whether to enable or disable the audit process. After the audit process is enabled, the auditing information written by the background process can be read from the.
+description: 'Parameter description: Specifies whether to enable or disable the audit process. After the audit process is enabled, the auditing information written by the background process can be read from the.'
 keywords: [openGauss, Audit Switch]
 ---
 

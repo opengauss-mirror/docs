@@ -1,5 +1,5 @@
 ---
-description: PG\_CONSTRAINT records check, primary key, and unique constraints on tables.
+description: PG_CONSTRAINT records check, primary key, and unique constraints on tables.
 keywords: [openGauss, PG_CONSTRAINT]
 ---
 

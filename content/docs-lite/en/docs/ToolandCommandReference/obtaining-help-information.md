@@ -1,5 +1,5 @@
 ---
-description: - When connecting to the database, run the following command to obtain the help information:.
+description: When connecting to the database, run the following command to obtain the help information:.
 keywords: [openGauss, Obtaining Help Information]
 ---
 

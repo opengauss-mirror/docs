@@ -1,5 +1,5 @@
 ---
-description: During the running of openGauss, error scenarios can be detected so that users are informed of the errors in time. You can view the system\_alarm log written by the alarm in the _$GAUSSLOG_/c.
+description: During the running of openGauss, error scenarios can be detected so that users are informed of the errors in time. You can view the system_alarm log written by the alarm in the _$GAUSSLOG_/c.
 keywords: [openGauss, Alarm Detection]
 ---
 

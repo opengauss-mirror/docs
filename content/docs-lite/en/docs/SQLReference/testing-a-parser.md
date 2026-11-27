@@ -1,5 +1,5 @@
 ---
-description: The ts\_parse function allows direct testing of a text search parser.
+description: The ts_parse function allows direct testing of a text search parser.
 keywords: [openGauss, Testing a Parser]
 ---
 

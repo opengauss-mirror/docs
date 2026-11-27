@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_SYS\_TABLES视图显示pg\_catalog、information\_schema模式的所有命名空间中系统表的统计信息。.
+description: PG_STAT_SYS_TABLES视图显示pg_catalog、information_schema模式的所有命名空间中系统表的统计信息。.
 keywords: [openGauss, PG_STAT_SYS_TABLES]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_OPERATOR\_HISTORY displays records of operators in jobs that have been executed by the current user on the primary database node.
+description: GLOBAL_OPERATOR_HISTORY displays records of operators in jobs that have been executed by the current user on the primary database node.
 keywords: [openGauss, GLOBAL_OPERATOR_HISTORY]
 ---
 

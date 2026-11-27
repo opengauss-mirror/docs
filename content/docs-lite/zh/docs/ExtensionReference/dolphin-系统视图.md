@@ -1,5 +1,5 @@
 ---
-description: - PG\_TYPE\_NONSTRICT\_BASIC\_VALUE.
+description: PG_TYPE_NONSTRICT_BASIC_VALUE.
 keywords: [openGauss, 系统视图]
 ---
 

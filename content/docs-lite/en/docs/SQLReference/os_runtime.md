@@ -1,5 +1,5 @@
 ---
-description: OS\_RUNTIME displays the running status of the current OS.
+description: OS_RUNTIME displays the running status of the current OS.
 keywords: [openGauss, OS_RUNTIME]
 ---
 

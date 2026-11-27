@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies whether an upgrade is ongoing. This parameter cannot be modified by users. Only the sysadmin user can access this parameter.
+description: 'Parameter description: Specifies whether an upgrade is ongoing. This parameter cannot be modified by users. Only the sysadmin user can access this parameter.'
 keywords: [openGauss, Upgrade Parameters]
 ---
 

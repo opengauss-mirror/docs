@@ -1,5 +1,5 @@
 ---
-description: - Core Fault Locating.
+description: Core Fault Locating.
 keywords: [openGauss, Common Fault Locating Cases]
 ---
 

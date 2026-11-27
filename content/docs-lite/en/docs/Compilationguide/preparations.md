@@ -1,5 +1,5 @@
 ---
-description: Introduces Preparations in openGauss, covering Downloading Code, Building Open-source Software, Introduction to cmake\_package\_mini.sh.
+description: Introduces Preparations in openGauss, covering Downloading Code, Building Open-source Software, Introduction to cmake_package_mini.sh.
 keywords: [openGauss, Preparations]
 ---
 

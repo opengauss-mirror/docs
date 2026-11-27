@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_OPERATOR\_HISTORY\_TABLE displays the records about operators of completed jobs on the primary database node. Data is dumped from the kernel to the system catalog GS\_WLM\_OPERATOR\_IN.
+description: GLOBAL_OPERATOR_HISTORY_TABLE displays the records about operators of completed jobs on the primary database node. Data is dumped from the kernel to the system catalog GS_WLM_OPERATOR_IN.
 keywords: [openGauss, GLOBAL_OPERATOR_HISTORY_TABLE]
 ---
 

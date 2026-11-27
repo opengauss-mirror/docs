@@ -1,5 +1,5 @@
 ---
-description: Introduces cursor.close\(\) in openGauss, covering 功能描述, 原型, 参数.
+description: Introduces cursor.close() in openGauss, covering 功能描述, 原型, 参数.
 keywords: [openGauss, cursor.close]
 ---
 

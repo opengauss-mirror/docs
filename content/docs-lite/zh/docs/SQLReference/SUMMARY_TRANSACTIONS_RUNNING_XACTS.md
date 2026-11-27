@@ -1,5 +1,5 @@
 ---
-description: 显示集群中各个节点运行事务的信息，字段内容和transactions\_running\_xacts一致。.
+description: 显示集群中各个节点运行事务的信息，字段内容和transactions_running_xacts一致。.
 keywords: [openGauss, SUMMARY_TRANSACTIONS_RUNNING_XACTS]
 ---
 

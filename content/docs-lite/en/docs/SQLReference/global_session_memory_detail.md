@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_SESSION\_MEMORY\_DETAIL collects statistics about thread memory usage on each node by MemoryContext node.
+description: GLOBAL_SESSION_MEMORY_DETAIL collects statistics about thread memory usage on each node by MemoryContext node.
 keywords: [openGauss, GLOBAL_SESSION_MEMORY_DETAIL]
 ---
 

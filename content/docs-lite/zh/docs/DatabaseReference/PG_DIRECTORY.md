@@ -1,5 +1,5 @@
 ---
-description: PG\_DIRECTORY系统表用于保存用户添加的directory对象可以通过CREATE DIRECTORY语句向该表中添加记录，目前只有系统管理员用户可以向该表中添加记录。.
+description: PG_DIRECTORY系统表用于保存用户添加的directory对象可以通过CREATE DIRECTORY语句向该表中添加记录，目前只有系统管理员用户可以向该表中添加记录。.
 keywords: [openGauss, PG_DIRECTORY]
 ---
 

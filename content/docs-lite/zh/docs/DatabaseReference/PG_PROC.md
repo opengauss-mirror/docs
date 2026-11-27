@@ -1,5 +1,5 @@
 ---
-description: PG\_PROC系统表存储函数或过程的信息。.
+description: PG_PROC系统表存储函数或过程的信息。.
 keywords: [openGauss, PG_PROC]
 ---
 

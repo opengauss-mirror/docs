@@ -1,5 +1,5 @@
 ---
-description: STATEMENT\_COMPLEX\_HISTORY displays load management information about a completed job executed on the primary database node. Columns in this view are the same as those in [Table 1](../DataBaseR.
+description: STATEMENT_COMPLEX_HISTORY displays load management information about a completed job executed on the primary database node. Columns in this view are the same as those in [Table 1](../DataBaseR.
 keywords: [openGauss, STATEMENT_COMPLEX_HISTORY]
 ---
 

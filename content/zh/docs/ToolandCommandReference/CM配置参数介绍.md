@@ -1,5 +1,5 @@
 ---
-description: cm\_agent相关参数可通过cm\_agent数据目录下的cm\_agent.conf文件查看，cm\_server相关参数可通过cm\_server数据目录下的cm\_server.conf文件查看。.
+description: cm_agent相关参数可通过cm_agent数据目录下的cm_agent.conf文件查看，cm_server相关参数可通过cm_server数据目录下的cm_server.conf文件查看。.
 keywords: [openGauss, CM配置参数介绍]
 ---
 

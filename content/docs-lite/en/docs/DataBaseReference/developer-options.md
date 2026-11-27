@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies whether the structures of system tables can be modified.
+description: 'Parameter description: Specifies whether the structures of system tables can be modified.'
 keywords: [openGauss, Developer Options]
 ---
 

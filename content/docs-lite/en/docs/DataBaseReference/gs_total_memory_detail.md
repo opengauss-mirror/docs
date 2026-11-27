@@ -1,5 +1,5 @@
 ---
-description: GS\_TOTAL\_MEMORY\_DETAIL collects statistics about memory usage of the current database node in the unit of MB. If the GUC parameter enable\_memory\_limit is set to off, this view is.
+description: GS_TOTAL_MEMORY_DETAIL collects statistics about memory usage of the current database node in the unit of MB. If the GUC parameter enable_memory_limit is set to off, this view is.
 keywords: [openGauss, GS_TOTAL_MEMORY_DETAIL]
 ---
 

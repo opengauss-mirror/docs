@@ -1,5 +1,5 @@
 ---
-description: - Plan Hint Optimization.
+description: Plan Hint Optimization.
 keywords: [openGauss, Hint-based Tuning]
 ---
 

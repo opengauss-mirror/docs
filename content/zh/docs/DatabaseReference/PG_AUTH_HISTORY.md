@@ -1,5 +1,5 @@
 ---
-description: PG\_AUTH\_HISTORY系统表记录了角色的认证历史。需要有系统管理员权限才可以访问此系统表。.
+description: PG_AUTH_HISTORY系统表记录了角色的认证历史。需要有系统管理员权限才可以访问此系统表。.
 keywords: [openGauss, PG_AUTH_HISTORY]
 ---
 

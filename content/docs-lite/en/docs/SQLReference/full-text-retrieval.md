@@ -1,5 +1,5 @@
 ---
-description: Textual search operators have been used in databases for years. openGauss has \~, \~\, LIKE, and ILIKE operators for textual data types, but they lack many essential properties r.
+description: Textual search operators have been used in databases for years. openGauss has ~, ~, LIKE, and ILIKE operators for textual data types, but they lack many essential properties r.
 keywords: [openGauss, Full-Text Retrieval]
 ---
 

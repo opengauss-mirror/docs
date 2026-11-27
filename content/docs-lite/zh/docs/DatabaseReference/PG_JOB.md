@@ -1,5 +1,5 @@
 ---
-description: PG\_JOB系统表存储用户创建的定时任务的任务详细信息，定时任务线程定时轮询pg\_job系统表中的时间，当任务到期会触发任务的执行，并更新pg\_job表中的任务状态。该系统表属于Shared Relation，所有创建的job记录对所有数据库可见。.
+description: PG_JOB系统表存储用户创建的定时任务的任务详细信息，定时任务线程定时轮询pg_job系统表中的时间，当任务到期会触发任务的执行，并更新pg_job表中的任务状态。该系统表属于Shared Relation，所有创建的job记录对所有数据库可见。.
 keywords: [openGauss, PG_JOB]
 ---
 

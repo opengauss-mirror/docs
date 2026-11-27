@@ -1,5 +1,5 @@
 ---
-description: PG\_OBJECT系统表存储限定类型对象（普通表，索引，序列，视图，存储过程和函数）的创建用户、创建时间和最后修改时间。.
+description: PG_OBJECT系统表存储限定类型对象（普通表，索引，序列，视图，存储过程和函数）的创建用户、创建时间和最后修改时间。.
 keywords: [openGauss, PG_OBJECT]
 ---
 

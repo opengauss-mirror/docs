@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_BGWRITER\_STAT displays statistics about the background writer process's activities on each node.
+description: GLOBAL_BGWRITER_STAT displays statistics about the background writer process's activities on each node.
 keywords: [openGauss, GLOBAL_BGWRITER_STAT]
 ---
 

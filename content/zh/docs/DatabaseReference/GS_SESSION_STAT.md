@@ -1,5 +1,5 @@
 ---
-description: GS\_SESSION\_STAT视图以会话线程或AutoVacuum线程为单位，统计会话状态信息。.
+description: GS_SESSION_STAT视图以会话线程或AutoVacuum线程为单位，统计会话状态信息。.
 keywords: [openGauss, GS_SESSION_STAT]
 ---
 

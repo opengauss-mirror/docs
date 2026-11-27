@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies the level of information to be written to the WAL. The value cannot be empty or commented out.
+description: 'Parameter description: Specifies the level of information to be written to the WAL. The value cannot be empty or commented out.'
 keywords: [openGauss, Settings]
 ---
 

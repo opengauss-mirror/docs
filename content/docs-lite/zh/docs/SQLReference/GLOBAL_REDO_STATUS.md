@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_REDO\_STATUS视图显示openGauss实例的日志回放情况。.
+description: GLOBAL_REDO_STATUS视图显示openGauss实例的日志回放情况。.
 keywords: [openGauss, GLOBAL_REDO_STATUS]
 ---
 

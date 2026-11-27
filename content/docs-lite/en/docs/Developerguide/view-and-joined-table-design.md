@@ -1,5 +1,5 @@
 ---
-description: - \[Proposal\] Do not nest views unless they have strong dependency on each other.
+description: '[Proposal] Do not nest views unless they have strong dependency on each other.'
 keywords: [openGauss, View and Joined Table Design]
 ---
 

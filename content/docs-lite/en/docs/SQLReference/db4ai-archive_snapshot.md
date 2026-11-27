@@ -1,5 +1,5 @@
 ---
-description: ARCHIVE\_SNAPSHOT archives snapshots for the DB4AI feature. You can invoke ARCHIVE SNAPSHOT to implement this function. After taking effect, the snapshot cannot be used for training.
+description: ARCHIVE_SNAPSHOT archives snapshots for the DB4AI feature. You can invoke ARCHIVE SNAPSHOT to implement this function. After taking effect, the snapshot cannot be used for training.
 keywords: [openGauss, DB4AI.ARCHIVE_SNAPSHOT]
 ---
 

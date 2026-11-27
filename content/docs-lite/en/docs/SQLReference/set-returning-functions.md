@@ -1,5 +1,5 @@
 ---
-description: - generate\_series\(start, stop\).
+description: generate_series(start, stop).
 keywords: [openGauss, Set Returning Functions]
 ---
 

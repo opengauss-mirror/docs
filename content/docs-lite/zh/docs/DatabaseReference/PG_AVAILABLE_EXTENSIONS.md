@@ -1,5 +1,5 @@
 ---
-description: PG\_AVAILABLE\_EXTENSIONS视图显示数据库中某些特性的扩展信息。.
+description: PG_AVAILABLE_EXTENSIONS视图显示数据库中某些特性的扩展信息。.
 keywords: [openGauss, PG_AVAILABLE_EXTENSIONS]
 ---
 

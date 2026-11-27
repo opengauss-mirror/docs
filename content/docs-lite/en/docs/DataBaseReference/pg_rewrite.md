@@ -1,5 +1,5 @@
 ---
-description: PG\_REWRITE records rewrite rules defined for tables and views.
+description: PG_REWRITE records rewrite rules defined for tables and views.
 keywords: [openGauss, PG_REWRITE]
 ---
 

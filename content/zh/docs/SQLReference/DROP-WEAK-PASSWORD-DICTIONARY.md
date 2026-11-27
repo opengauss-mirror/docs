@@ -1,5 +1,5 @@
 ---
-description: 清空gs\_global\_config中的所有弱口令。.
+description: 清空gs_global_config中的所有弱口令。.
 keywords: [openGauss, DROP WEAK PASSWORD DICTIONARY]
 ---
 

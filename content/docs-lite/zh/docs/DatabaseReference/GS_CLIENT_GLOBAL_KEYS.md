@@ -1,5 +1,5 @@
 ---
-description: GS\_CLIENT\_GLOBAL\_KEYS系统表记录密态等值特性中客户端加密主密钥相关信息，每条记录对应一个客户端加密主密钥。.
+description: GS_CLIENT_GLOBAL_KEYS系统表记录密态等值特性中客户端加密主密钥相关信息，每条记录对应一个客户端加密主密钥。.
 keywords: [openGauss, GS_CLIENT_GLOBAL_KEYS]
 ---
 

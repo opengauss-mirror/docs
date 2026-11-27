@@ -1,5 +1,5 @@
 ---
-description: - OPERATOR\_HISTORY\_TABLE.
+description: OPERATOR_HISTORY_TABLE.
 keywords: [openGauss, Operator]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Databases manage various data objects and are isolated from each other. While creating a database, you can specify a tablespace. If you do not specify it, the object will be saved to the PG\_DEFAUL.
+description: Databases manage various data objects and are isolated from each other. While creating a database, you can specify a tablespace. If you do not specify it, the object will be saved to the PG_DEFAUL.
 keywords: [openGauss, Concepts]
 ---
 

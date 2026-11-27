@@ -1,5 +1,5 @@
 ---
-description: REPLICATION\_SLOTS displays replication node information.
+description: REPLICATION_SLOTS displays replication node information.
 keywords: [openGauss, REPLICATION_SLOTS]
 ---
 

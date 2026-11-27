@@ -1,5 +1,5 @@
 ---
-description: A Thesaurus dictionary \(sometimes abbreviated as TZ\) is a collection of relationships between words and phrases, such as broader terms \(BT\), narrower terms \(NT\), preferred terms, non-prefe.
+description: A Thesaurus dictionary (sometimes abbreviated as TZ) is a collection of relationships between words and phrases, such as broader terms (BT), narrower terms (NT), preferred terms, non-prefe.
 keywords: [openGauss, Thesaurus Dictionary]
 ---
 

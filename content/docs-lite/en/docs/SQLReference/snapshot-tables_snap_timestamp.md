@@ -1,5 +1,5 @@
 ---
-description: TABLES\_SNAP\_TIMESTAMP records the start time and end time of data collection, as well as corresponding databases, and table objects for all stored WDR snapshots.
+description: TABLES_SNAP_TIMESTAMP records the start time and end time of data collection, as well as corresponding databases, and table objects for all stored WDR snapshots.
 keywords: [openGauss, SNAPSHOT.TABLES_SNAP_TIMESTAMP]
 ---
 

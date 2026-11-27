@@ -1,5 +1,5 @@
 ---
-description: GS\_REDO\_STAT displays statistics on the replay of session thread logs.
+description: GS_REDO_STAT displays statistics on the replay of session thread logs.
 keywords: [openGauss, GS_REDO_STAT]
 ---
 

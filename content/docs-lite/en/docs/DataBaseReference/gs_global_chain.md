@@ -1,5 +1,5 @@
 ---
-description: GS\_GLOBAL\_CHAIN records information about modification operations performed by users on the tamper-proof user table. Each record corresponds to a table-level modification operation. Users with.
+description: GS_GLOBAL_CHAIN records information about modification operations performed by users on the tamper-proof user table. Each record corresponds to a table-level modification operation. Users with.
 keywords: [openGauss, GS_GLOBAL_CHAIN]
 ---
 

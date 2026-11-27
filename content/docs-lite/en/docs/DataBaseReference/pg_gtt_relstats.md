@@ -1,5 +1,5 @@
 ---
-description: PG\_GTT\_RELSTATS displays basic information about all global temporary tables of the current session by invoking pg\_get\_gtt\_relstats.
+description: PG_GTT_RELSTATS displays basic information about all global temporary tables of the current session by invoking pg_get_gtt_relstats.
 keywords: [openGauss, PG_GTT_RELSTATS]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - Client Access Authentication.
+description: Client Access Authentication.
 keywords: [openGauss, Database Security Management]
 ---
 

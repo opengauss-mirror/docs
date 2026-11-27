@@ -1,5 +1,5 @@
 ---
-description: - Development and Design Proposal.
+description: Development and Design Proposal.
 keywords: [openGauss, Development and Design Proposal]
 ---
 

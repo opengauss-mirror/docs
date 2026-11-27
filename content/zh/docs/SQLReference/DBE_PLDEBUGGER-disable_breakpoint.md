@@ -1,5 +1,5 @@
 ---
-description: debug端调试过程中，调用disable\_breakpoint禁用已被激活的断点。.
+description: debug端调试过程中，调用disable_breakpoint禁用已被激活的断点。.
 keywords: [openGauss, DBE_PLDEBUGGER.disable_breakpoint]
 ---
 

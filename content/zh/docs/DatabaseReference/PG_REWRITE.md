@@ -1,5 +1,5 @@
 ---
-description: PG\_REWRITE系统表存储为表和视图定义的重写规则。.
+description: PG_REWRITE系统表存储为表和视图定义的重写规则。.
 keywords: [openGauss, PG_REWRITE]
 ---
 

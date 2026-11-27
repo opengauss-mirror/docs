@@ -1,5 +1,5 @@
 ---
-description: Based on X/Open and SQL Access Group SQL CAE Specifications \(1992\), SQLERROR returns an SQLSTATE value. An SQLSTATE value is a string composed of five characters, the first two representing an SQL e.
+description: Based on X/Open and SQL Access Group SQL CAE Specifications (1992), SQLERROR returns an SQLSTATE value. An SQLSTATE value is a string composed of five characters, the first two representing an SQL e.
 keywords: [openGauss, Description of SQL Error Codes]
 ---
 

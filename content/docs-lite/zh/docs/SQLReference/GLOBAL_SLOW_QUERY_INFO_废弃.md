@@ -1,5 +1,5 @@
 ---
-description: GS\_SLOW\_QUERY\_HISTORY显示所有节点上已经转储的慢查询信息，本版本中已废弃。具体字段信息请参考GS\_SLOW\_QUERY\_INFO。.
+description: GS_SLOW_QUERY_HISTORY显示所有节点上已经转储的慢查询信息，本版本中已废弃。具体字段信息请参考GS_SLOW_QUERY_INFO。.
 keywords: [openGauss, GLOBAL_SLOW_QUERY_INFO废弃]
 ---
 

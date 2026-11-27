@@ -1,5 +1,5 @@
 ---
-description: In the DBE\_PERF schema, views are used to diagnose performance issues and are also the data source of WDR snapshots. After the database is installed, only the initial user has the permission fo.
+description: In the DBE_PERF schema, views are used to diagnose performance issues and are also the data source of WDR snapshots. After the database is installed, only the initial user has the permission fo.
 keywords: [openGauss, DBE_PERF Schema]
 ---
 

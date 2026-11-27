@@ -1,5 +1,5 @@
 ---
-description: PKG\_SERVICE支持的所有接口请参见表1。.
+description: PKG_SERVICE支持的所有接口请参见表1。.
 keywords: [openGauss, PKG_SERVICE]
 ---
 

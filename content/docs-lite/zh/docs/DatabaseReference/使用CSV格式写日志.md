@@ -1,5 +1,5 @@
 ---
-description: - log\_destination的值设置为csvlog。.
+description: log_destination的值设置为csvlog。.
 keywords: [openGauss, 使用CSV格式写日志]
 ---
 

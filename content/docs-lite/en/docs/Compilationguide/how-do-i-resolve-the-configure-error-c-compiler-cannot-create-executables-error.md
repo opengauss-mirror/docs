@@ -1,5 +1,5 @@
 ---
-description: How do I resolve the "Configure error: C compiler cannot create executables" error reported during version build?.
+description: 'How do I resolve the "Configure error: C compiler cannot create executables" error reported during version build?.'
 keywords: [openGauss, How Do I Resolve the Configure error C compiler cannot create executables Error]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_WORKLOAD\_GROUP provides workload group information in the database.
+description: PG_WORKLOAD_GROUP provides workload group information in the database.
 keywords: [openGauss, PG_WORKLOAD_GROUP]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: MOT Index is a lock-free index based on state-of-the-art Masstree<sup>\</sup>[Comparison: Disk vs. MOT<sup>\]</sup>, which is a fast and scalable Key Value \(KV\) store fo.
+description: 'MOT Index is a lock-free index based on state-of-the-art Masstree<sup></sup>[Comparison: Disk vs. MOT<sup>]</sup>, which is a fast and scalable Key Value (KV) store fo.'
 keywords: [openGauss, MOT Indexes]
 ---
 

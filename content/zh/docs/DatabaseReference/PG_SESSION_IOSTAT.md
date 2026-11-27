@@ -1,5 +1,5 @@
 ---
-description: PG\_SESSION\_IOSTAT视图显示当前用户执行作业正在运行时的IO负载管理相关信息。查询该视图需要sysadmin权限或者monitor admin权限。.
+description: PG_SESSION_IOSTAT视图显示当前用户执行作业正在运行时的IO负载管理相关信息。查询该视图需要sysadmin权限或者monitor admin权限。.
 keywords: [openGauss, PG_SESSION_IOSTAT]
 ---
 

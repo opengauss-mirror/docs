@@ -1,5 +1,5 @@
 ---
-description: PG\_OPERATOR records information about operators.
+description: PG_OPERATOR records information about operators.
 keywords: [openGauss, PG_OPERATOR]
 ---
 

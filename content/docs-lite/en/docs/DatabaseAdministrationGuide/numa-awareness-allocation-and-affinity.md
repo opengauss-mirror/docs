@@ -1,5 +1,5 @@
 ---
-description: Non-Uniform Memory Access \(NUMA\) is a computer memory design used in multiprocessing, where the memory access time depends on the memory location relative to the processor. Under NUMA, a processor c.
+description: Non-Uniform Memory Access (NUMA) is a computer memory design used in multiprocessing, where the memory access time depends on the memory location relative to the processor. Under NUMA, a processor c.
 keywords: [openGauss, NUMA Awareness Allocation and Affinity]
 ---
 

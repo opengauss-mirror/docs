@@ -1,5 +1,5 @@
 ---
-description: SESSION\_MEMORY collects statistics about memory usage at the session level in the unit of MB, including all the memory allocated to openGauss and stream threads on DNs for jobs currently execute.
+description: SESSION_MEMORY collects statistics about memory usage at the session level in the unit of MB, including all the memory allocated to openGauss and stream threads on DNs for jobs currently execute.
 keywords: [openGauss, SESSION_MEMORY]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: - cash\_words\(money\).
+description: cash_words(money).
 keywords: [openGauss, Type Conversion Functions]
 ---
 

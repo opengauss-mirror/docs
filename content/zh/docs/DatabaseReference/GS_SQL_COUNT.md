@@ -1,5 +1,5 @@
 ---
-description: GS\_SQL\_COUNT视图显示数据库当前节点当前时刻执行的五类语句（SELECT、INSERT、UPDATE、DELETE、MERGE INTO）统计信息。.
+description: GS_SQL_COUNT视图显示数据库当前节点当前时刻执行的五类语句（SELECT、INSERT、UPDATE、DELETE、MERGE INTO）统计信息。.
 keywords: [openGauss, GS_SQL_COUNT]
 ---
 

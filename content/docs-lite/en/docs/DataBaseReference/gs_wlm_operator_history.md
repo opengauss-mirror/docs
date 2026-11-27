@@ -1,5 +1,5 @@
 ---
-description: GS\_WLM\_OPERATOR\_HISTORY displays records of operators in jobs that have been executed by the current user on the current primary database node. Only the user with sysadmin permission can query.
+description: GS_WLM_OPERATOR_HISTORY displays records of operators in jobs that have been executed by the current user on the current primary database node. Only the user with sysadmin permission can query.
 keywords: [openGauss, GS_WLM_OPERATOR_HISTORY]
 ---
 

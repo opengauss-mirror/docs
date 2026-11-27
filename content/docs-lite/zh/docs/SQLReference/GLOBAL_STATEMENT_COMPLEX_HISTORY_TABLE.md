@@ -1,5 +1,5 @@
 ---
-description: 显示各个节点执行作业结束后的负载管理记录。此数据是从内核中转储到系统表中的数据。具体的字段请参考GLOBAL\_STATEMENT\_COMPLEX\_HISTORY中的字段。.
+description: 显示各个节点执行作业结束后的负载管理记录。此数据是从内核中转储到系统表中的数据。具体的字段请参考GLOBAL_STATEMENT_COMPLEX_HISTORY中的字段。.
 keywords: [openGauss, GLOBAL_STATEMENT_COMPLEX_HISTORY_TABLE]
 ---
 

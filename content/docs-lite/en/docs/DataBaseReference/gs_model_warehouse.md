@@ -1,5 +1,5 @@
 ---
-description: GS\_MODEL\_WAREHOUSE stores AI engine training models, including the models and detailed description of the training process.
+description: GS_MODEL_WAREHOUSE stores AI engine training models, including the models and detailed description of the training process.
 keywords: [openGauss, GS_MODEL_WAREHOUSE]
 ---
 

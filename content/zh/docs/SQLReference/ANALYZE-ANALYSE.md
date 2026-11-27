@@ -1,5 +1,5 @@
 ---
-description: 用于收集与数据库中普通表内容相关的统计信息，统计结果存储在系统表PG\_STATISTIC下。执行计划生成器会使用这些统计数据，以确定最有效的执行计划。.
+description: 用于收集与数据库中普通表内容相关的统计信息，统计结果存储在系统表PG_STATISTIC下。执行计划生成器会使用这些统计数据，以确定最有效的执行计划。.
 keywords: [openGauss, ANALYZE  ANALYSE]
 ---
 

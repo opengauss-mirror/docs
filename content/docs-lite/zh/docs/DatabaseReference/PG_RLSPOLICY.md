@@ -1,5 +1,5 @@
 ---
-description: PG\_RLSPOLICY系统表存储行级访问控制策略。.
+description: PG_RLSPOLICY系统表存储行级访问控制策略。.
 keywords: [openGauss, PG_RLSPOLICY]
 ---
 

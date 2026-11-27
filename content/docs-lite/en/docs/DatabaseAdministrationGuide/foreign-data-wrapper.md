@@ -1,5 +1,5 @@
 ---
-description: The foreign data wrapper \(FDW\) of openGauss can implement cross-database operations between openGauss databases and remote databases or between openGauss databases themselves. Currently, the followi.
+description: The foreign data wrapper (FDW) of openGauss can implement cross-database operations between openGauss databases and remote databases or between openGauss databases themselves. Currently, the followi.
 keywords: [openGauss, Foreign Data Wrapper]
 ---
 

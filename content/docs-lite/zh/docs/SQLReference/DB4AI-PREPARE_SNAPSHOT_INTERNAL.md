@@ -1,5 +1,5 @@
 ---
-description: PREPARE\_SNAPSHOT\_INTERNAL是db4ai.prepare\_snapshot函数的内置执行函数。函数存在信息校验，无法直接调用。.
+description: PREPARE_SNAPSHOT_INTERNAL是db4ai.prepare_snapshot函数的内置执行函数。函数存在信息校验，无法直接调用。.
 keywords: [openGauss, DB4AI.PREPARE_SNAPSHOT_INTERNAL]
 ---
 

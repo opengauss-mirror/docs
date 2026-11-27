@@ -1,5 +1,5 @@
 ---
-description: GS\_SESSION\_MEMORY\_CONTEXT displays statistics on memory usage of all sessions based on the MemoryContext node. This view is valid only when enable\_thread\_pool is set to on. If the.
+description: GS_SESSION_MEMORY_CONTEXT displays statistics on memory usage of all sessions based on the MemoryContext node. This view is valid only when enable_thread_pool is set to on. If the.
 keywords: [openGauss, GS_SESSION_MEMORY_CONTEXT]
 ---
 

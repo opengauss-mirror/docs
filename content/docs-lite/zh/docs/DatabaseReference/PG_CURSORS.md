@@ -1,5 +1,5 @@
 ---
-description: PG\_CURSORS视图列出了当前可用的游标。.
+description: PG_CURSORS视图列出了当前可用的游标。.
 keywords: [openGauss, PG_CURSORS]
 ---
 

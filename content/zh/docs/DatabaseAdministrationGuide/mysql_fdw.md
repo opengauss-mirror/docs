@@ -1,5 +1,5 @@
 ---
-description: mysql\_fdw是一款开源插件。openGauss基于开源的mysql\_fdw Release 2.5.3 版本进行开发适配。.
+description: mysql_fdw是一款开源插件。openGauss基于开源的mysql_fdw Release 2.5.3 版本进行开发适配。.
 keywords: [openGauss, mysql_fdw]
 ---
 

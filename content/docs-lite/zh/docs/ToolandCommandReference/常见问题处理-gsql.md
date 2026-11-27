@@ -1,5 +1,5 @@
 ---
-description: - 开启了log\_hostname，但是配置了错误的DNS导致的连接性能问题。.
+description: 开启了log_hostname，但是配置了错误的DNS导致的连接性能问题。.
 keywords: [openGauss, 常见问题处理]
 ---
 

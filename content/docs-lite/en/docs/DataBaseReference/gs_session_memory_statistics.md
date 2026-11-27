@@ -1,5 +1,5 @@
 ---
-description: GS\_SESSION\_MEMORY\_STATISTICS displays load management information about memory usage of ongoing complex jobs executed by the current user.
+description: GS_SESSION_MEMORY_STATISTICS displays load management information about memory usage of ongoing complex jobs executed by the current user.
 keywords: [openGauss, GS_SESSION_MEMORY_STATISTICS]
 ---
 

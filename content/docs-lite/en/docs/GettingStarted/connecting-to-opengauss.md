@@ -1,5 +1,5 @@
 ---
-description: - gsql Connection and Usage.
+description: gsql Connection and Usage.
 keywords: [openGauss, Connecting to openGauss]
 ---
 

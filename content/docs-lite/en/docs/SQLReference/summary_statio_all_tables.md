@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_STATIO\_ALL\_TABLES contains I/O statistics about each table \(including TOAST tables\) in databases in openGauss.
+description: SUMMARY_STATIO_ALL_TABLES contains I/O statistics about each table (including TOAST tables) in databases in openGauss.
 keywords: [openGauss, SUMMARY_STATIO_ALL_TABLES]
 ---
 

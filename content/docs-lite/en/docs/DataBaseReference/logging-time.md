@@ -1,5 +1,5 @@
 ---
-description: Parameter description: Specifies which level of messages will be sent to the client. Each level covers all the levels following it. The lower the level is, the fewer messages are sent.
+description: 'Parameter description: Specifies which level of messages will be sent to the client. Each level covers all the levels following it. The lower the level is, the fewer messages are sent.'
 keywords: [openGauss, Logging Time]
 ---
 

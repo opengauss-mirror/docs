@@ -1,5 +1,5 @@
 ---
-description: PG\_DB\_ROLE\_SETTING系统表存储数据库运行时每个角色与数据绑定的配置项的默认值 。.
+description: PG_DB_ROLE_SETTING系统表存储数据库运行时每个角色与数据绑定的配置项的默认值 。.
 keywords: [openGauss, PG_DB_ROLE_SETTING]
 ---
 

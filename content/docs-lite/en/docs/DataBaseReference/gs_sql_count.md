@@ -1,5 +1,5 @@
 ---
-description: GS\_SQL\_COUNT displays statistics about five types of running statements \(SELECT, INSERT, UPDATE, DELETE, and MERGE INTO\) on the current node of the database.
+description: GS_SQL_COUNT displays statistics about five types of running statements (SELECT, INSERT, UPDATE, DELETE, and MERGE INTO) on the current node of the database.
 keywords: [openGauss, GS_SQL_COUNT]
 ---
 

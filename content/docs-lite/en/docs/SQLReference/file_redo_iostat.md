@@ -1,5 +1,5 @@
 ---
-description: FILE\_REDO\_IOSTAT records statistics about redo logs \(WALs\) on the current node.
+description: FILE_REDO_IOSTAT records statistics about redo logs (WALs) on the current node.
 keywords: [openGauss, FILE_REDO_IOSTAT]
 ---
 

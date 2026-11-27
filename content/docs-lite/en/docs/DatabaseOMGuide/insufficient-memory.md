@@ -1,5 +1,5 @@
 ---
-description: The client or logs contain the error message memory usage reach the max\_dynamic\_memory.
+description: The client or logs contain the error message memory usage reach the max_dynamic_memory.
 keywords: [openGauss, Insufficient Memory]
 ---
 

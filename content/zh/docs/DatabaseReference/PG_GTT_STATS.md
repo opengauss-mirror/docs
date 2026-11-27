@@ -1,5 +1,5 @@
 ---
-description: PG\_GTT\_STATS视图查看当前会话所有全局临时表单列统计信息，调用pg\_get\_gtt\_statistics函数。.
+description: PG_GTT_STATS视图查看当前会话所有全局临时表单列统计信息，调用pg_get_gtt_statistics函数。.
 keywords: [openGauss, PG_GTT_STATS]
 ---
 

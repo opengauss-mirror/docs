@@ -1,5 +1,5 @@
 ---
-description: \_PG\_FOREIGN\_SERVERS displays information about a foreign server. Only the sysadmin user has the permission to view this view.
+description: _PG_FOREIGN_SERVERS displays information about a foreign server. Only the sysadmin user has the permission to view this view.
 keywords: [openGauss, _PG_FOREIGN_SERVERS]
 ---
 

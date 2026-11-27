@@ -1,5 +1,5 @@
 ---
-description: Open Database Connectivity \(ODBC\) is a Microsoft API for accessing databases based on the X/OPEN CLI. Applications interact with the database through the APIs provided by ODBC, which enhances their.
+description: Open Database Connectivity (ODBC) is a Microsoft API for accessing databases based on the X/OPEN CLI. Applications interact with the database through the APIs provided by ODBC, which enhances their.
 keywords: [openGauss, ODBC]
 ---
 

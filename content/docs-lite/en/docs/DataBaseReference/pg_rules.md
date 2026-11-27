@@ -1,5 +1,5 @@
 ---
-description: PG\_RULES provides access to query useful information about rewrite rules.
+description: PG_RULES provides access to query useful information about rewrite rules.
 keywords: [openGauss, PG_RULES]
 ---
 

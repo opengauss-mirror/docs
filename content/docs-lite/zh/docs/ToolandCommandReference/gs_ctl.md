@@ -1,5 +1,5 @@
 ---
-description: gs\_ctl是openGauss提供的数据库服务控制工具，可以用来启停数据库服务和查询数据库状态。主要供数据库管理模块调用。.
+description: gs_ctl是openGauss提供的数据库服务控制工具，可以用来启停数据库服务和查询数据库状态。主要供数据库管理模块调用。.
 keywords: [openGauss, gs_ctl]
 ---
 

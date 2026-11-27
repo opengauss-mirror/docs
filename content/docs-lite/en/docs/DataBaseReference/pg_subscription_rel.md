@@ -1,5 +1,5 @@
 ---
-description: The system catalog PG\_SUBSCRIPTION\_REL contains the status of each replicated table in each subscription. It is a many-to-many mapping.
+description: The system catalog PG_SUBSCRIPTION_REL contains the status of each replicated table in each subscription. It is a many-to-many mapping.
 keywords: [openGauss, PG_SUBSCRIPTION_REL]
 ---
 

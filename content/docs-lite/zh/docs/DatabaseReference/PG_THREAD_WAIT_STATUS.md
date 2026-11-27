@@ -1,5 +1,5 @@
 ---
-description: 通过PG\_THREAD\_WAIT\_STATUS视图可以检测当前实例中工作线程（backend thread）以及辅助线程（auxiliary thread）的阻塞等待情况。.
+description: 通过PG_THREAD_WAIT_STATUS视图可以检测当前实例中工作线程（backend thread）以及辅助线程（auxiliary thread）的阻塞等待情况。.
 keywords: [openGauss, PG_THREAD_WAIT_STATUS]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: SUMMARY\_STAT\_ALL\_TABLES displays statistics about one row for each table \(including TOAST tables\) in a database in openGauss.
+description: SUMMARY_STAT_ALL_TABLES displays statistics about one row for each table (including TOAST tables) in a database in openGauss.
 keywords: [openGauss, SUMMARY_STAT_ALL_TABLES]
 ---
 

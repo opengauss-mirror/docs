@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_CANDIDATE\_STATUS displays the number of candidate buffers and buffer eviction information of all instances in the database.
+description: GLOBAL_CANDIDATE_STATUS displays the number of candidate buffers and buffer eviction information of all instances in the database.
 keywords: [openGauss, GLOBAL_CANDIDATE_STATUS]
 ---
 

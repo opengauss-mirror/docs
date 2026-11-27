@@ -1,5 +1,5 @@
 ---
-description: debug端调试过程中，调用info\_locals，打印当前存储过程内变量。该函数入参frameno表示查询遍历的栈层数，支持无入参调用，缺省为查看最上层栈变量。.
+description: debug端调试过程中，调用info_locals，打印当前存储过程内变量。该函数入参frameno表示查询遍历的栈层数，支持无入参调用，缺省为查看最上层栈变量。.
 keywords: [openGauss, DBE_PLDEBUGGER.info_locals]
 ---
 

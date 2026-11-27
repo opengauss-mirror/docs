@@ -1,5 +1,5 @@
 ---
-description: 参数说明： log\_dir决定存放cm\_server日志文件的目录。 它可以是绝对路径，或者是相对路径（相对于$GAUSSLOG的路径）。通过cm\_ctl设置绝对路径时需要将路径用''把路径包含起来，例如：cm\_ctl set --param --server -k log\_dir="'/log/dir'"。.
+description: 参数说明： log_dir决定存放cm_server日志文件的目录。 它可以是绝对路径，或者是相对路径（相对于$GAUSSLOG的路径）。通过cm_ctl设置绝对路径时需要将路径用''把路径包含起来，例如：cm_ctl set --param --server -k log_dir="'/log/dir'"。.
 keywords: [openGauss, cm_server参数]
 ---
 

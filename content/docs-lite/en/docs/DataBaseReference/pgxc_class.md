@@ -1,5 +1,5 @@
 ---
-description: PGXC\_CLASS records the replicated or distributed information for each table. The PGXC\_CLASS system catalog has specific meanings only in distributed scenarios. openGauss can only query th.
+description: PGXC_CLASS records the replicated or distributed information for each table. The PGXC_CLASS system catalog has specific meanings only in distributed scenarios. openGauss can only query th.
 keywords: [openGauss, PGXC_CLASS]
 ---
 

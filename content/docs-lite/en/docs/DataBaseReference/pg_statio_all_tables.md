@@ -1,5 +1,5 @@
 ---
-description: PG\_STATIO\_ALL\_TABLES contains I/O statistics for each table \(including the TOAST table\) in the current database.
+description: PG_STATIO_ALL_TABLES contains I/O statistics for each table (including the TOAST table) in the current database.
 keywords: [openGauss, PG_STATIO_ALL_TABLES]
 ---
 

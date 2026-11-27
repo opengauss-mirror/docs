@@ -1,5 +1,5 @@
 ---
-description: GS\_MATVIEWS视图提供了关于数据库中每一个物化视图的信息。.
+description: GS_MATVIEWS视图提供了关于数据库中每一个物化视图的信息。.
 keywords: [openGauss, GS_MATVIEWS]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Introduces GS\_WLM\_RESOURCE\_POOL in openGauss, covering .
+description: Introduces GS_WLM_RESOURCE_POOL in openGauss, covering .
 keywords: [openGauss, GS_WLM_RESOURCE_POOL]
 ---
 

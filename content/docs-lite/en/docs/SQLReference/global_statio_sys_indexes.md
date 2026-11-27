@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_STATIO\_SYS\_INDEXES displays I/O status information about all system catalog indexes in namespaces on each node.
+description: GLOBAL_STATIO_SYS_INDEXES displays I/O status information about all system catalog indexes in namespaces on each node.
 keywords: [openGauss, GLOBAL_STATIO_SYS_INDEXES]
 ---
 

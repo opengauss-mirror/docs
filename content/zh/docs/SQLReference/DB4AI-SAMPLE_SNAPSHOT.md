@@ -1,5 +1,5 @@
 ---
-description: SAMPLE\_SNAPSHOT是DB4AI特性用于对基数据进行采样生成快照的接口函数。通过语法SAMPLE SNAPSHOT调用。.
+description: SAMPLE_SNAPSHOT是DB4AI特性用于对基数据进行采样生成快照的接口函数。通过语法SAMPLE SNAPSHOT调用。.
 keywords: [openGauss, DB4AI.SAMPLE_SNAPSHOT]
 ---
 

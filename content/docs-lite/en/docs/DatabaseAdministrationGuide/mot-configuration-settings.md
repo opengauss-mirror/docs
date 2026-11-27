@@ -1,5 +1,5 @@
 ---
-description: MOT is provided preconfigured to creating working MOT Tables. For the optimal results, it is advised to customize the MOT configuration \(defined in the file named mot.conf\) according to your ap.
+description: MOT is provided preconfigured to creating working MOT Tables. For the optimal results, it is advised to customize the MOT configuration (defined in the file named mot.conf) according to your ap.
 keywords: [openGauss, MOT Configuration Settings]
 ---
 

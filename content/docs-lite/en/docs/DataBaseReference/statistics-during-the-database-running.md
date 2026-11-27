@@ -1,5 +1,5 @@
 ---
-description: - Query and Index Statistics Collector.
+description: Query and Index Statistics Collector.
 keywords: [openGauss, Statistics During the Database Running]
 ---
 

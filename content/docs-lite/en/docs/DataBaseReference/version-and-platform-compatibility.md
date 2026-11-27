@@ -1,5 +1,5 @@
 ---
-description: - Compatibility with Earlier Versions.
+description: Compatibility with Earlier Versions.
 keywords: [openGauss, Version and Platform Compatibility]
 ---
 

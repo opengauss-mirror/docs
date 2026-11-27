@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_TRANSACTIONS\_RUNNING\_XACTS displays information about the running transactions on each node in the cluster.
+description: GLOBAL_TRANSACTIONS_RUNNING_XACTS displays information about the running transactions on each node in the cluster.
 keywords: [openGauss, GLOBAL_TRANSACTIONS_RUNNING_XACTS]
 ---
 

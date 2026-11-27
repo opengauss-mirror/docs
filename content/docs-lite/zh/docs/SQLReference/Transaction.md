@@ -1,5 +1,5 @@
 ---
-description: - TRANSACTIONS\_PREPARED\_XACTS.
+description: TRANSACTIONS_PREPARED_XACTS.
 keywords: [openGauss, Transaction]
 ---
 

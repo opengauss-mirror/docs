@@ -1,5 +1,5 @@
 ---
-description: PG\_SETTINGS displays information about parameters of the running database.
+description: PG_SETTINGS displays information about parameters of the running database.
 keywords: [openGauss, PG_SETTINGS]
 ---
 

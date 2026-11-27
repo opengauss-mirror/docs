@@ -1,5 +1,5 @@
 ---
-description: STATIO\_ALL\_TABLES视图将包含数据库中每个表（包括TOAST表）的一行，显示出特定表I/O的统计。.
+description: STATIO_ALL_TABLES视图将包含数据库中每个表（包括TOAST表）的一行，显示出特定表I/O的统计。.
 keywords: [openGauss, STATIO_ALL_TABLES]
 ---
 

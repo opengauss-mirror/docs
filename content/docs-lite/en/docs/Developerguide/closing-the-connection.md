@@ -1,5 +1,5 @@
 ---
-description: After you complete required data operations in a database, close the database connection. Call the close method such as connection.close\(\) to close the connection.
+description: After you complete required data operations in a database, close the database connection. Call the close method such as connection.close() to close the connection.
 keywords: [openGauss, Closing the Connection]
 ---
 

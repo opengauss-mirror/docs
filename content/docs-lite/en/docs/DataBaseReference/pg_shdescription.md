@@ -1,5 +1,5 @@
 ---
-description: PG\_SHDESCRIPTION records optional comments for shared database objects. Descriptions can be manipulated with the COMMENT command and viewed with psql's \\d commands.
+description: PG_SHDESCRIPTION records optional comments for shared database objects. Descriptions can be manipulated with the COMMENT command and viewed with psql's \d commands.
 keywords: [openGauss, PG_SHDESCRIPTION]
 ---
 

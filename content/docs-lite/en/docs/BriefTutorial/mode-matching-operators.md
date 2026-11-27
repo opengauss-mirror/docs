@@ -1,5 +1,5 @@
 ---
-description: There are three separate approaches to mode matching provided by the database: traditional SQL LIKE operator, SIMILAR TO operator, and POSIX-style regular expression. Besides these basic operators, so.
+description: 'There are three separate approaches to mode matching provided by the database: traditional SQL LIKE operator, SIMILAR TO operator, and POSIX-style regular expression. Besides these basic operators, so.'
 keywords: [openGauss, Mode Matching Operators]
 ---
 

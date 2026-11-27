@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_STATEMENT\_COMPLEX\_HISTORY\_TABLE displays load management information about completed jobs executed on each node. Data is dumped from the kernel to this system catalog. For details abou.
+description: GLOBAL_STATEMENT_COMPLEX_HISTORY_TABLE displays load management information about completed jobs executed on each node. Data is dumped from the kernel to this system catalog. For details abou.
 keywords: [openGauss, GLOBAL_STATEMENT_COMPLEX_HISTORY_TABLE]
 ---
 

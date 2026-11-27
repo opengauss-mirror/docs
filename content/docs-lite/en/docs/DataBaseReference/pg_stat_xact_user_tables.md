@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_XACT\_USER\_TABLES displays transaction status information of the user table in the namespace.
+description: PG_STAT_XACT_USER_TABLES displays transaction status information of the user table in the namespace.
 keywords: [openGauss, PG_STAT_XACT_USER_TABLES]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: PG\_STAT\_USER\_INDEXES视图显示数据库中用户自定义普通表和toast表的索引状态信息。.
+description: PG_STAT_USER_INDEXES视图显示数据库中用户自定义普通表和toast表的索引状态信息。.
 keywords: [openGauss, PG_STAT_USER_INDEXES]
 ---
 

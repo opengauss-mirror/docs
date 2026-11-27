@@ -1,5 +1,5 @@
 ---
-description: PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID displays resource usage of all users. Only administrators can query this view. This view is valid only when [use\_workload\_manager](workload-management.md#e.
+description: PG_TOTAL_USER_RESOURCE_INFO_OID displays resource usage of all users. Only administrators can query this view. This view is valid only when [use_workload_manager](workload-management.md#e.
 keywords: [openGauss, PG_TOTAL_USER_RESOURCE_INFO_OID]
 ---
 

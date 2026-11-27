@@ -1,5 +1,5 @@
 ---
-description: The following information is displayed in the MPP\_TABLES view:.
+description: The following information is displayed in the MPP_TABLES view:.
 keywords: [openGauss, MPP_TABLES]
 ---
 

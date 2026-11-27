@@ -1,5 +1,5 @@
 ---
-description: PG\_AGGREGATE records information about aggregate functions. Each entry in PG\_AGGREGATE is an extension of an entry in PG\_PROC. The PG\_PROC entry carries the aggregate's name, inpu.
+description: PG_AGGREGATE records information about aggregate functions. Each entry in PG_AGGREGATE is an extension of an entry in PG_PROC. The PG_PROC entry carries the aggregate's name, inpu.
 keywords: [openGauss, PG_AGGREGATE]
 ---
 

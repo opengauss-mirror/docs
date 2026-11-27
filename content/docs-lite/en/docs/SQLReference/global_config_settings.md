@@ -1,5 +1,5 @@
 ---
-description: GLOBAL\_CONFIG\_SETTINGS displays information about parameters of running databases on each node.
+description: GLOBAL_CONFIG_SETTINGS displays information about parameters of running databases on each node.
 keywords: [openGauss, GLOBAL_CONFIG_SETTINGS]
 ---
 

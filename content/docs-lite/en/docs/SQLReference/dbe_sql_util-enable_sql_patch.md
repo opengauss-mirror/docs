@@ -1,5 +1,5 @@
 ---
-description: enable\_sql\_patch is an interface function used to enable an SQL patch and return whether the execution is successful.
+description: enable_sql_patch is an interface function used to enable an SQL patch and return whether the execution is successful.
 keywords: [openGauss, DBE_SQL_UTIL.enable_sql_patch]
 ---
 

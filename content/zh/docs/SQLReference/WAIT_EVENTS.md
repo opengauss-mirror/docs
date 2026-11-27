@@ -1,5 +1,5 @@
 ---
-description: WAIT\_EVENTS显示当前节点的event的等待相关的统计信息。具体事件信息见等待状态列表.
+description: WAIT_EVENTS显示当前节点的event的等待相关的统计信息。具体事件信息见等待状态列表.
 keywords: [openGauss, WAIT_EVENTS]
 ---
 

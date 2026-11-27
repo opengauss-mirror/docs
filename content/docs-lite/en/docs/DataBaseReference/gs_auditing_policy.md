@@ -1,5 +1,5 @@
 ---
-description: GS\_AUDITING\_POLICY records the main information about the unified audit. Each record corresponds to a design policy. Only the system administrator or security policy administrator can access th.
+description: GS_AUDITING_POLICY records the main information about the unified audit. Each record corresponds to a design policy. Only the system administrator or security policy administrator can access th.
 keywords: [openGauss, GS_AUDITING_POLICY]
 ---
 
