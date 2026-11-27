@@ -1,9 +1,9 @@
 ---
-description: This document describes the openGauss error codes GAUSS-06231 -- GAUSS-0640, covering their meanings and troubleshooting methods.
+description: This document describes the openGauss error codes GAUSS-06231 -- GAUSS-06240, covering their meanings and troubleshooting methods.
 keywords: [openGauss, GAUSS, error codes]
 ---
 
-# GAUSS-06231 -- GAUSS-0640<a name="EN-US_TOPIC_0302073576"></a>
+# GAUSS-06231 -- GAUSS-06240<a name="EN-US_TOPIC_0302073576"></a>
 
 GAUSS-06231: "There is no exist vararrno with 0"
 
