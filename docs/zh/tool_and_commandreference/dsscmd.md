@@ -99,6 +99,21 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     >- dsscmd adv支持在线和全离线操作。-f参数表示强制离线，全离线由用户侧保证，可通过cm_ctl query -Cvid进行查询。
     >- 在不带CM的集群的场景（即维护模式）下，在线adv之后需要用户手动注册（dsscmd reghl）。
 
+- 刷新卷组中已有卷的容量（底层磁盘扩容后）
+
+    ```
+    dsscmd extv <-g vg_name> <-v vol_path> [-f] [-D DSS_HOME] [-U UDS:socket_domain]
+    ```
+
+    >[!NOTE]说明
+    >- 此处的vg\_name为卷组名，不需要以‘+’开头。
+    >- vol\_path须为已加入该卷组的卷设备路径（入口卷或`dsscmd adv`添加的非入口卷均可）。
+    >- 本命令不改变卷组成员关系，仅在底层设备已扩容后，重新探测设备大小并更新DSS元数据中的size/free；只允许增大，不支持缩容。
+    >- 执行前请确认内核已识别新容量，例如使用`blockdev --getsize64 <vol_path>`查询；若尚未识别，可能需要先对设备做rescan。
+    >- dsscmd extv支持在线和全离线操作。-f参数表示强制离线，全离线由用户侧保证，可通过cm_ctl query -Cvid进行查询。
+    >- 若探测到的设备大小与元数据中当前size一致，命令仍成功，但会打印Warning提示size未变化，并建议核对内核是否已看到新容量。
+    >- 若卷组上存在离线adv/rmv/repl未完成留下的中间态，extv会失败，需先执行`dsscmd rollback`后再重试。
+
 - 新建目录
 
     ```
@@ -514,6 +529,19 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 
     ```
     dsscmd adv -g data -v /dev/tpcc_adv -f -D /home/ss_test/dss_home
+    ```
+
+- 底层磁盘扩容后，在线刷新卷组data中卷/dev/tpcc_data的容量元数据。
+
+    ```
+    blockdev --getsize64 /dev/tpcc_data
+    dsscmd extv -g data -v /dev/tpcc_data -U UDS:/home/ss_test/dss_home/.dss_unix_d_socket
+    ```
+
+- 集群停机后，离线刷新卷组data中卷/dev/tpcc_adv的容量元数据，-D指定dss\_home。
+
+    ```
+    dsscmd extv -g data -v /dev/tpcc_adv -f -D /home/ss_test/dss_home
     ```
 
 - 离线替换卷组中的卷dev/tpcc_adv，-D指定dss\_home。
