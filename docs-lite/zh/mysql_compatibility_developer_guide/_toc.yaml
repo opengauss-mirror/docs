@@ -15,6 +15,8 @@ sections:
     href: ./hikaricp_development.md
   - label: 基于Mybatis开发
     href: ./mybatis_development.md
+  - label: 基于 GORM 开发
+    href: ./gorm_development.md
   - label: 基于Peewee开发
     href: ./peewee_development.md
   - label: 基于Mybatis-plus开发
